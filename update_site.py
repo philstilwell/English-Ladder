@@ -2,7 +2,7 @@ import os
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-from google import genai
+import google.generativeai as genai
 from datetime import datetime
 
 # --- 1. Configuration & Secrets ---
@@ -10,7 +10,8 @@ STATIC_APP_KEY = os.environ.get("STATIC_APP_KEY")
 STATIC_SITE_ID = os.environ.get("STATIC_SITE_ID")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-client = genai.Client(api_key=GEMINI_API_KEY)
+# Using the older, stable library
+genai.configure(api_key=GEMINI_API_KEY)
 
 # --- 2. Fetch Daily News ---
 def get_daily_news():
@@ -43,16 +44,13 @@ def generate_lesson_html(news_text):
     <p>[3-5 MCQs with a hidden answer key]</p>
     """
     
-    # Updated model string to the standard version
-    response = client.models.generate_content(
-        model="gemini-1.5-pro",
-        contents=prompt
-    )
+    # Using the older syntax with the 1.5 flash model
+    model = genai.GenerativeModel('gemini-1.5-flash')
+    response = model.generate_content(prompt)
     return response.text.strip()
 
 # --- 4. Update the Static Site ---
 def update_static_site(new_lesson_html):
-    # CLEANED URL - No brackets or extra formatting
     api_url = f"https://api.static.app/v1/sites/{STATIC_SITE_ID}/files/index.html"
     headers = {
         "Authorization": f"Bearer {STATIC_APP_KEY}",

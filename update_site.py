@@ -45,7 +45,7 @@ def generate_lesson_html(news_text):
     """
     
     # Using the older syntax with the 1.5 flash model
-    model = genai.GenerativeModel('gemini-1.5-flash')
+    model = genai.GenerativeModel('gemini-pro')
     response = model.generate_content(prompt)
     return response.text.strip()
 

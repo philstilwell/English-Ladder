@@ -43,6 +43,7 @@ def generate_lesson_html(news_text):
     <p>[3-5 MCQs with a hidden answer key]</p>
     """
     
+    # Updated model string to the standard version
     response = client.models.generate_content(
         model="gemini-1.5-flash", 
         contents=prompt

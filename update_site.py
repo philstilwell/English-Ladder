@@ -45,7 +45,7 @@ def generate_lesson_html(news_text):
     
     # Updated model string to the standard version
     response = client.models.generate_content(
-        model="gemini-1.5-flash-002",
+        model="gemini-1.5-pro",
         contents=prompt
     )
     return response.text.strip()

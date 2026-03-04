@@ -2,7 +2,7 @@ import os
 import requests
 import feedparser
 from bs4 import BeautifulSoup
-import google.generativeai as genai
+from google import genai
 from datetime import datetime
 
 # --- 1. Configuration & Secrets ---
@@ -10,22 +10,19 @@ STATIC_APP_KEY = os.environ.get("STATIC_APP_KEY")
 STATIC_SITE_ID = os.environ.get("STATIC_SITE_ID")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 
-genai.configure(api_key=GEMINI_API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
-# --- 2. Fetch Daily News (Using an RSS Feed) ---
+# --- 2. Fetch Daily News ---
 def get_daily_news():
-    # Using a standard world news RSS feed
     feed_url = "http://feeds.bbci.co.uk/news/world/rss.xml"
     feed = feedparser.parse(feed_url)
-    
-    # Grab the top story
+    if not feed.entries:
+        return "No news found today."
     top_entry = feed.entries[0]
     return f"Title: {top_entry.title}\nSummary: {top_entry.description}"
 
-# --- 3. Generate ESL Content with Gemini ---
+# --- 3. Generate ESL Content ---
 def generate_lesson_html(news_text):
-    model = genai.GenerativeModel('gemini-2.5-flash') # Or gemini-2.5-pro
-    
     today_str = datetime.now().strftime("%B %d, %Y")
     
     prompt = f"""
@@ -33,72 +30,67 @@ def generate_lesson_html(news_text):
     {news_text}
     
     Write a 3-part advanced ESL lesson. 
-    Format the output STRICTLY as raw HTML (no markdown blocks like ```html).
+    Format the output STRICTLY as raw HTML (no markdown blocks).
     Wrap the entire lesson in a single <article class="daily-lesson"> tag.
     
     Structure:
     <h2>📅 {today_str} - [Catchy Title]</h2>
     <h3>I. The News Brief</h3>
-    <p>[Formal summary of the event using advanced vocabulary]</p>
+    <p>[Formal summary using advanced vocabulary]</p>
     <h3>II. Vocabulary & Grammar Focus</h3>
-    <p>[Define 3-4 advanced terms and 1 advanced grammar concept used in the brief]</p>
-    <h3>III. Comprehension & Mastery Quiz</h3>
-    <p>[3-5 multiple choice questions with a hidden/revealable answer key at the bottom]</p>
+    <p>[Define 3-4 advanced terms and 1 advanced grammar concept]</p>
+    <h3>III. Mastery Quiz</h3>
+    <p>[3-5 MCQs with a hidden answer key]</p>
     """
     
-    response = model.generate_content(prompt)
+    response = client.models.generate_content(
+        model="gemini-2.0-flash", 
+        contents=prompt
+    )
     return response.text.strip()
 
-# --- 4. Update the Static Site HTML ---
+# --- 4. Update the Static Site ---
 def update_static_site(new_lesson_html):
-    api_url = f"[https://api.static.app/v1/sites/](https://api.static.app/v1/sites/){STATIC_SITE_ID}/files/index.html"
+    # CLEANED URL - No brackets or extra formatting
+    api_url = f"https://api.static.app/v1/sites/{STATIC_SITE_ID}/files/index.html"
     headers = {
         "Authorization": f"Bearer {STATIC_APP_KEY}",
         "Content-Type": "text/html"
     }
 
-    # A. Get the current index.html
+    print(f"Connecting to: {api_url}")
     response = requests.get(api_url, headers={"Authorization": f"Bearer {STATIC_APP_KEY}"})
+    
     if response.status_code != 200:
-        print("Failed to fetch current site HTML")
+        print(f"Failed to fetch site. Status: {response.status_code}")
         return
 
-    current_html = response.text
-    soup = BeautifulSoup(current_html, "html.parser")
-
-    # B. Find the container holding the lessons (Assuming a <div id="lesson-container">)
+    soup = BeautifulSoup(response.text, "html.parser")
     container = soup.find(id="lesson-container")
     
     if not container:
-        print("Could not find lesson container in HTML. Make sure your index.html has a <div id='lesson-container'>")
+        print("Error: Could not find <div id='lesson-container'> in your index.html")
         return
 
-    # C. Insert the new lesson at the top
     new_lesson_soup = BeautifulSoup(new_lesson_html, "html.parser")
     container.insert(0, new_lesson_soup)
 
-    # D. Enforce the 7-day rolling window
     lessons = container.find_all("article", class_="daily-lesson")
     if len(lessons) > 7:
         for old_lesson in lessons[7:]:
-            old_lesson.decompose() # Removes the HTML element
+            old_lesson.decompose()
 
-    # E. Push the updated HTML back to Static.app
-    updated_html = str(soup)
-    put_response = requests.put(api_url, headers=headers, data=updated_html)
+    put_response = requests.put(api_url, headers=headers, data=str(soup))
     
     if put_response.status_code == 200:
         print("Successfully updated Static.app!")
     else:
-        print(f"Failed to push update: {put_response.text}")
+        print(f"Failed to push: {put_response.text}")
 
-# --- 5. Main Execution ---
 if __name__ == "__main__":
     print("Fetching news...")
-    news_text = get_daily_news()
-    
+    news = get_daily_news()
     print("Generating ESL lesson...")
-    lesson_html = generate_lesson_html(news_text)
-    
+    lesson = generate_lesson_html(news)
     print("Updating Static.app...")
-    update_static_site(lesson_html)
+    update_static_site(lesson)

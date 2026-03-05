@@ -2,14 +2,16 @@ name: Daily ESL Lesson Generator
 
 on:
   schedule:
-    # Runs at 10:00 UTC (6:00 AM EST) every day
-    - cron: '0 10 * * *'
-  workflow_dispatch: # Allows you to run it manually from the GitHub interface by clicking a button
+    # Runs at 12:00 UTC (8:00 AM EST) every day
+    - cron: '0 12 * * *'
+  workflow_dispatch:
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write # This gives the action permission to save files to your repo
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -20,13 +22,17 @@ jobs:
           python-version: '3.10'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 feedparser google-generativeai
+        run: pip install requests beautifulsoup4 feedparser google-generativeai
 
-      - name: Run update script
+      - name: Run Python Script
         env:
-          STATIC_APP_KEY: ${{ secrets.STATIC_APP_KEY }}
-          STATIC_SITE_ID: ${{ secrets.STATIC_SITE_ID }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python update_site.py
+
+      - name: Commit updated index.html
+        run: |
+          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "actions@github.com"
+          git add index.html
+          git commit -m "Auto-update daily lesson" || echo "No changes to commit"
+          git push

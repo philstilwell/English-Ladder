@@ -40,3 +40,41 @@ The system relies on five interconnected components, visualized in the project i
 **File:** `.gitattributes`
 
 * **Simple Purpose:** A behind-the-scenes system file. Its only job is to tell GitHub’s technical systems: *"Treat this repository as a Python project when you are running your internal calculations and statistics."
+
+---
+
+Step 2: Save and Test
+After correcting your index.html file in VS Code, save the file (Cmd+S).
+Go back to your terminal and run the script one more time:
+
+Bash
+python3 update_site.py
+What this does: This command tells your Mac to execute the script using Python 3. It will fetch the latest news, generate the lesson, find the <div id="lesson-container">, and safely inject the new HTML. If successful, the terminal will print Successfully updated local index.html!.
+
+Step 3: Increase the Git POST Buffer (If Needed)
+If your previous automated or manual pushes failed with an error: RPC failed; HTTP 400 curl 22, your Git memory buffer is too small to handle the upload. Run this command to fix it:
+
+Bash
+git config http.postBuffer 524288000
+What this does: This modifies your local Git configuration to allow a 500MB buffer size for HTTP POST requests, giving Git enough memory to successfully transfer the data to GitHub without timing out.
+
+Step 4: Stage, Commit, and Push (The Full Sync Command)
+Once the local file is updated, you must send it to GitHub. You can stage the file, save the snapshot, and upload it all at once by copying and pasting this full command into your Terminal:
+
+Bash
+git add index.html && git commit -m "Manual update to index.html and container fix" && git push origin main
+What this does: The && symbols link three separate Git commands together so they run perfectly in sequence:
+
+git add index.html stages your updated file.
+
+git commit -m "..." permanently saves the snapshot with a generic, reusable message.
+
+git push origin main securely uploads your committed snapshot to your live repository on GitHub.
+
+Step 5: Verify the Live Site
+Wait 1 to 2 minutes for the GitHub Pages deployment to complete on the server.
+
+Open your live website in your browser.
+
+Perform a Hard Refresh (Cmd + Shift + R on Mac) to force the browser to clear its saved cache and display your newly injected lesson.
+

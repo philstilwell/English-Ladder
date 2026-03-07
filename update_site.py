@@ -31,7 +31,7 @@ def generate_lesson_html(news_text):
     
     IMPORTANT REQUIREMENTS:
     1. The reading passage in Section I MUST be a minimum of 7 sentences long.
-    2. Section III must be an interactive multiple-choice quiz. Use the exact inline JavaScript provided in the structure below so that when a student clicks an option, they receive immediate correct/incorrect feedback. Do NOT provide a separate answer key section.
+    2. Section III must be an interactive 7-item multiple-choice quiz. Use the exact inline JavaScript provided in the structure below so that when a student clicks an option, they receive immediate correct/incorrect feedback. Do NOT provide a separate answer key section.
     
     Structure:
     <summary class="lesson-date">📅 {today_str} - [Catchy Title]</summary>
@@ -123,4 +123,3 @@ if __name__ == "__main__":
     lesson = generate_lesson_html(news)
     print("Updating local HTML file...")
     update_local_html(lesson)
-    

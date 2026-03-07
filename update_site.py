@@ -29,6 +29,10 @@ def generate_lesson_html(news_text):
     Format the output STRICTLY as raw HTML (no markdown blocks like ```html).
     Wrap the entire lesson in a single <details class="daily-lesson"> tag.
     
+    IMPORTANT REQUIREMENTS:
+    1. The reading passage in Section I MUST be a minimum of 7 sentences long.
+    2. Section III must be an interactive multiple-choice quiz. Use the exact inline JavaScript provided in the structure below so that when a student clicks an option, they receive immediate correct/incorrect feedback. Do NOT provide a separate answer key section.
+    
     Structure:
     <summary class="lesson-date">📅 {today_str} - [Catchy Title]</summary>
     <div class="lesson-description">[1-sentence overview]</div>
@@ -36,22 +40,31 @@ def generate_lesson_html(news_text):
         <div class="header"><h2>Advanced ESL: [Topic]</h2></div>
         <div class="section">
             <h2>I. The News Brief</h2>
-            <p>[Formal summary using advanced vocabulary]</p>
+            <p>[Write a formal summary using advanced vocabulary. MUST BE AT LEAST 7 SENTENCES LONG.]</p>
         </div>
         <div class="section">
             <h2>II. Vocabulary & Grammar Focus</h2>
-            <div class="vocab-box">[Define 3-4 advanced terms and 1 advanced grammar concept]</div>
+            <div class="vocab-box">
+                <span class="vocab-term">1. [Term] (part of speech):</span> [Definition]<br>
+                <span class="vocab-term">2. [Term] (part of speech):</span> [Definition]<br>
+                <span class="vocab-term">3. [Term] (part of speech):</span> [Definition]<br>
+                <span class="vocab-term">4. [Term] (part of speech):</span> [Definition]
+            </div>
+            <p><strong>Advanced Grammar: [Concept]</strong><br>[Brief explanation and example from text]</p>
         </div>
         <div class="section">
             <h2>III. Comprehension & Mastery Quiz</h2>
+            <p><em>Click on an option to check your answer.</em></p>
             <div class="quiz-card">
-                <ol>
-                    <li class="quiz-question">[Question 1] <ol class="quiz-options"><li>[Option A]</li><li>[Option B]</li></ol></li>
-                </ol>
-                <details class="answer-key">
-                    <summary class="answer-summary">🔍 Reveal Answers</summary>
-                    <div class="answer-content"><p>[Answers]</p></div>
-                </details>
+                <div class="quiz-question" style="margin-bottom: 25px;">
+                    <p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">[Question Number]. [Question Text]</p>
+                    <div style="display: flex; flex-direction: column; gap: 8px;">
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">a) [Option A]</button>
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='✅ <strong>Correct:</strong> [Explain why this option is right]'; this.parentElement.nextElementSibling.style.color='#2e8b57';">b) [Option B]</button>
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">c) [Option C]</button>
+                    </div>
+                    <div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -110,3 +123,4 @@ if __name__ == "__main__":
     lesson = generate_lesson_html(news)
     print("Updating local HTML file...")
     update_local_html(lesson)
+    

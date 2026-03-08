@@ -31,7 +31,8 @@ def generate_lesson_html(news_text):
     
     IMPORTANT REQUIREMENTS:
     1. The reading passage in Section I MUST be a minimum of 7 sentences long.
-    2. Section III must be an interactive 7-item multiple-choice quiz. Use the exact inline JavaScript provided in the structure below so that when a student clicks an option, they receive immediate correct/incorrect feedback. Toggle the answer boxes light green (correct) or light red when clicked. Do NOT provide a separate answer key section.
+    2. Section III must be an interactive 7-item multiple-choice quiz. 
+    3. Use the exact inline JavaScript provided in the structure below so that when a student clicks an option, the button's background changes color (green for correct, red for incorrect) and they receive immediate feedback. Do NOT provide a separate answer key section.
     
     Structure:
     <summary class="lesson-date">📅 {today_str} - [Catchy Title]</summary>
@@ -59,13 +60,13 @@ def generate_lesson_html(news_text):
                 <div class="quiz-question" style="margin-bottom: 25px;">
                     <p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">[Question Number]. [Question Text]</p>
                     <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">a) [Option A]</button>
-                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='✅ <strong>Correct:</strong> [Explain why this option is right]'; this.parentElement.nextElementSibling.style.color='#2e8b57';">b) [Option B]</button>
-                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">c) [Option C]</button>
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="Array.from(this.parentElement.children).forEach(btn => btn.style.backgroundColor='#fff'); this.style.backgroundColor='#ffe6e6'; this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">a) [Option A]</button>
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="Array.from(this.parentElement.children).forEach(btn => btn.style.backgroundColor='#fff'); this.style.backgroundColor='#e6ffe6'; this.parentElement.nextElementSibling.innerHTML='✅ <strong>Correct:</strong> [Explain why this option is right]'; this.parentElement.nextElementSibling.style.color='#2e8b57';">b) [Option B]</button>
+                        <button style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" onclick="Array.from(this.parentElement.children).forEach(btn => btn.style.backgroundColor='#fff'); this.style.backgroundColor='#ffe6e6'; this.parentElement.nextElementSibling.innerHTML='❌ <strong>Incorrect:</strong> [Explain why this option is wrong]'; this.parentElement.nextElementSibling.style.color='#b22222';">c) [Option C]</button>
                     </div>
                     <div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
                 </div>
-            </div>
+                </div>
         </div>
     </div>
     """
@@ -123,3 +124,4 @@ if __name__ == "__main__":
     lesson = generate_lesson_html(news)
     print("Updating local HTML file...")
     update_local_html(lesson)
+    

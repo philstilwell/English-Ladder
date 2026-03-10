@@ -158,12 +158,166 @@
             margin: 5px 0;
         }
     </style>
-</head>
+<script>
+    function checkAnswer(btn) {
+        let optionsContainer = btn.parentElement;
+        Array.from(optionsContainer.children).forEach(b => {
+            b.style.backgroundColor = '#fff';
+        });
+        btn.style.backgroundColor = btn.dataset.bg;
+        let feedbackDiv = optionsContainer.nextElementSibling;
+        feedbackDiv.innerHTML = btn.dataset.feedback;
+        feedbackDiv.style.color = btn.dataset.color;
+    }
+    </script></head>
 <body>
 <h1>English Ladder: Daily English News Index</h1>
 <div class="index-container">
 <p>Click on a date below to expand the full advanced ESL lesson for that day.</p>
 <div id="lesson-container"><details class="daily-lesson">
+<summary class="lesson-date">📅 March 10, 2026 - Trump's Elusive Rhetoric on War's End</summary>
+<div class="lesson-description">This lesson delves into the complexities of presidential communication regarding international conflict and its economic repercussions.</div>
+<div class="lesson-content">
+<div class="header"><h2>Advanced ESL: Analyzing Ambiguous Political Discourse</h2></div>
+<div class="section">
+<h2>I. The News Brief</h2>
+<p>The US President's recent pronouncements regarding the conclusion of an unspecified conflict have generated considerable ambiguity, leaving observers grappling with a multitude of unanswered questions. His efforts were ostensibly directed at assuaging anxieties surrounding global oil prices and volatile financial markets, both of which are highly sensitive to geopolitical instability. However, rather than providing definitive reassurances, the President's public statements have been characterized by an unfortunate dearth of specificity and an inconsistent narrative. This rhetorical imprecision has inadvertently exacerbated uncertainty, undermining attempts to stabilize economic indicators. Experts and policymakers are now tasked with deciphering the underlying intent behind these equivocal remarks, a challenge compounded by the potential for misinterpretation on the international stage. The administration's communication strategy appears to prioritize calming immediate economic jitters over offering a transparent and coherent articulation of its foreign policy objectives. Consequently, the prevailing sentiment remains one of apprehension, fueled by the persistent lack of clarity surrounding the pathway to the conflict's resolution.</p>
+</div>
+<div class="section">
+<h2>II. Vocabulary &amp; Grammar Focus</h2>
+<div class="vocab-box">
+<span class="vocab-term">1. Ambiguity (noun):</span> The quality of being open to more than one interpretation; inexactness.<br/>
+<span class="vocab-term">2. Assuaging (verb):</span> Making an unpleasant feeling less intense; soothing.<br/>
+<span class="vocab-term">3. Exacerbated (verb):</span> Made (a problem, bad situation, or negative feeling) worse.<br/>
+<span class="vocab-term">4. Equivocal (adjective):</span> Open to more than one interpretation; deliberately vague or misleading.
+            </div>
+<p><strong>Advanced Grammar: The Subjunctive Mood in Formal Contexts</strong><br/>The subjunctive mood is often used in formal English to express wishes, proposals, demands, or situations that are hypothetical or contrary to fact. In clauses following verbs like 'suggest,' 'recommend,' 'insist,' or impersonal expressions like 'it is imperative that,' the base form of the verb is used, even for third-person singular subjects. For example, in our context, one might say: "It is imperative that the administration <strong>provide</strong> a more transparent and coherent articulation of its foreign policy objectives." (Notice 'provide' instead of 'provides').</p>
+</div>
+<div class="section">
+<h2>III. Comprehension &amp; Mastery Quiz</h2>
+<p><em>Click on an option to check your answer.</em></p>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">1. What is the primary issue discussed concerning the US President's statements?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While he might be aiming for a peace treaty, the text focuses on the *nature* of his communication about it." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) His efforts to secure a peace treaty.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The news highlights 'mixed messages' and a 'lack of clarity' as the core problem." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) The lack of clarity and mixed messages regarding a war's conclusion.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The lesson focuses on international affairs and economic stability related to conflict, not domestic unemployment." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) The impact of his policies on domestic unemployment rates.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">2. The word "ambiguity" in the news brief most closely means:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; Ambiguity signifies a lack of certainty and precision." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Certainty and precision.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; Ambiguity implies that something can be interpreted in several ways, lacking a single, clear meaning." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Openness to multiple interpretations.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; A strong, clear declaration is the opposite of ambiguous." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) A strong, clear declaration.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">3. What was the stated intention behind the President's comments, according to the brief?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The text states he 'tried to soothe nerves,' implying he wanted to reduce, not incite, volatility." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) To incite further market volatility.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While political figures often do this, the brief specifies his comments were aimed at economic concerns." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) To address domestic political rivals.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The brief explicitly mentions 'assuaging anxieties surrounding global oil prices and volatile financial markets.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) To calm concerns over global oil prices and financial markets.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">4. Which of the following best describes the effect of the President's rhetorical imprecision?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The text states it 'exacerbated uncertainty,' which would hinder, not lead to, immediate recovery." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) It led to immediate economic recovery.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The brief states it 'exacerbated uncertainty, undermining attempts to stabilize economic indicators' and made deciphering intent a 'challenge compounded by the potential for misinterpretation.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) It deepened uncertainty and complicated analysis for experts.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The 'lack of clarity' would likely impede, rather than unify, international opinion." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) It successfully unified international opinion on the conflict.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">5. The lesson suggests that the administration's communication strategy prioritized:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The brief notes a 'dearth of specificity' and an 'inconsistent narrative,' which contradicts comprehensive articulation." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Comprehensive foreign policy articulation.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The text states the strategy 'appears to prioritize calming immediate economic jitters over offering a transparent and coherent articulation.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Calming immediate economic concerns.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The lesson highlights a 'persistent lack of clarity surrounding the pathway to the conflict's resolution,' suggesting the opposite." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Providing definitive long-term geopolitical solutions.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">6. In the context of the advanced grammar point, which sentence correctly uses the subjunctive mood?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; In the subjunctive mood, for 'it is important that,' the verb takes its base form, without the '-s' for third person singular." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) It is important that the President <i>clarifies</i> his position.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Clarify' is the base form of the verb, correctly used in the subjunctive mood after 'it is important that.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) It is important that the President <i>clarify</i> his position.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; This uses the future tense, not the subjunctive mood, which typically uses the base form of the verb." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) It is important that the President <i>will clarify</i> his position.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">7. If the President's statements were "coherent," they would be characterized by:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While complex, coherent means logical and consistent, not necessarily open to multiple (possibly conflicting) interpretations." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) A complex and multi-layered interpretation.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Coherent' means logical, consistent, and forming a united, understandable whole." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Logical consistency and clear understanding.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; This describes vagueness or ambiguity, which is the opposite of coherence." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Deliberate vagueness to avoid commitment.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="daily-lesson">
 <summary class="lesson-date">📅 March 09, 2026 - Iran's Shifting Power: The Ascent of Mojtaba Khamenei</summary>
 <div class="lesson-description">This lesson delves into the anticipated leadership transition in Iran, focusing on the potential implications of Mojtaba Khamenei's expected rise to the position of Supreme Leader.</div>
 <div class="lesson-content">

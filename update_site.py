@@ -1,4 +1,5 @@
 import os
+import re
 import feedparser
 from bs4 import BeautifulSoup
 import google.generativeai as genai
@@ -87,14 +88,16 @@ def generate_lesson_html(news_text):
     model = genai.GenerativeModel('gemini-2.5-flash')
     response = model.generate_content(prompt)
     
-    # Strip out any potential markdown blocks Gemini might accidentally include
     raw_html = response.text.strip()
-    if raw_html.startswith("```html"):
-        raw_html = raw_html[7:]
-    if raw_html.endswith("```"):
-        raw_html = raw_html[:-3]
+    
+    # Safely extract HTML even if the AI included text before/after the backticks
+    # We use a variable for backticks to prevent markdown parser issues
+    backticks = "`" * 3
+    match = re.search(fr'{backticks}(?:html)?\s*(.*?)\s*{backticks}', raw_html, re.DOTALL | re.IGNORECASE)
+    if match:
+        raw_html = match.group(1).strip()
         
-    return raw_html.strip()
+    return raw_html
 
 # --- 4. Update the Local HTML File ---
 def update_local_html(new_lesson_html):
@@ -151,7 +154,16 @@ def update_local_html(new_lesson_html):
 
     # Insert the new lesson
     new_lesson_soup = BeautifulSoup(new_lesson_html, "html.parser")
-    container.insert(0, new_lesson_soup)
+    
+    # Safely extract the actual lesson tag rather than inserting a full Document object
+    new_lesson_tag = new_lesson_soup.find("details", class_="daily-lesson")
+    
+    if not new_lesson_tag:
+        print("Error: Could not extract `<details class='daily-lesson'>` from the AI response.")
+        print("Raw output snippet:", new_lesson_html[:200] + "...") 
+        return
+        
+    container.insert(0, new_lesson_tag)
 
     # Keep only the 7 most recent lessons to prevent the page from getting too long
     lessons = container.find_all("details", class_="daily-lesson")
@@ -172,4 +184,3 @@ if __name__ == "__main__":
     lesson = generate_lesson_html(news)
     print("Updating local HTML file...")
     update_local_html(lesson)
-    

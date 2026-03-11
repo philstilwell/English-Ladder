@@ -158,12 +158,309 @@
             margin: 5px 0;
         }
     </style>
-</head>
+<script>
+    function checkAnswer(btn) {
+        let optionsContainer = btn.parentElement;
+        Array.from(optionsContainer.children).forEach(b => {
+            b.style.backgroundColor = '#fff';
+        });
+        btn.style.backgroundColor = btn.dataset.bg;
+        let feedbackDiv = optionsContainer.nextElementSibling;
+        feedbackDiv.innerHTML = btn.dataset.feedback;
+        feedbackDiv.style.color = btn.dataset.color;
+    }
+    </script></head>
 <body>
 <h1>English Ladder: Daily English News Index</h1>
 <div class="index-container">
 <p>Click on a date below to expand the full advanced ESL lesson for that day.</p>
 <div id="lesson-container"><details class="daily-lesson">
+<summary class="lesson-date">📅 March 11, 2026 - G7's Unified Front: Stabilizing Markets with Strategic Oil Release</summary>
+<div class="lesson-description">This advanced ESL lesson explores the G7's recent decision to potentially release strategic oil reserves to combat soaring prices amidst escalating geopolitical tensions.</div>
+<div class="lesson-content">
+<div class="header"><h2>Advanced ESL: Global Economics &amp; Geopolitics</h2></div>
+<div class="section">
+<h2>I. The News Brief</h2>
+<p>The Group of Seven (G7), a formidable intergovernmental political forum comprising the world's leading advanced economies, has reportedly expressed its unequivocal support for a prospective, unprecedented release of strategic oil reserves. This decisive maneuver is being contemplated as an urgent measure to counteract the precipitous surge in global oil prices. The escalating geopolitical tensions, particularly exacerbated by the recent onset of conflict involving the United States, Israel, and Iran, have significantly destabilized international energy markets. Consequently, consumers worldwide are grappling with elevated costs, threatening economic stability and growth prospects. Such a coordinated release aims to augment supply, thereby alleviating the inflationary pressures currently afflicting economies across the globe. Experts suggest that a record release could provide a much-needed temporary reprieve, although long-term solutions require broader geopolitical de-escalation. The G7's endorsement underscores the collective recognition of the dire economic ramifications stemming from prolonged market volatility and the imperative for concerted international action.</p>
+</div>
+<div class="section">
+<h2>II. Vocabulary &amp; Grammar Focus</h2>
+<div class="vocab-box">
+<span class="vocab-term">1. Formidable (adj):</span> Inspiring fear or respect through being impressively large, powerful, intense, or capable.<br/>
+<span class="vocab-term">2. Precipitous (adj):</span> Dangerously high or steep; (of a change to a worse situation or condition) sudden and dramatic.<br/>
+<span class="vocab-term">3. Exacerbated (verb):</span> Made (a problem, bad situation, or negative feeling) worse.<br/>
+<span class="vocab-term">4. Alleviating (verb):</span> Making (suffering, deficiency, or a problem) less severe.
+            </div>
+<p><strong>Advanced Grammar: Nominalization</strong><br/>Nominalization is the process of forming a noun from another part of speech, typically a verb or adjective. This technique is frequently used in formal, academic, and journalistic writing to condense information and express concepts more abstractly. For example, in the sentence, 'This decisive maneuver is being contemplated as an urgent measure to counteract the <strong>precipitous surge</strong> in global oil prices,' the noun 'surge' is derived from the verb 'to surge', making the language more formal and precise. Other examples from the text include 'release' (from 'to release'), 'de-escalation' (from 'to de-escalate'), and 'volatility' (from 'volatile').</p>
+</div>
+<div class="section">
+<h2>III. Comprehension &amp; Mastery Quiz</h2>
+<p><em>Click on an option to check your answer.</em></p>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">1. What is the primary goal of the G7's contemplated action?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The text indicates the G7 aims to curb prices, not to instigate further conflicts." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) To initiate new international conflicts
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The text explicitly states the action is 'in bid to curb soaring prices'." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) To curb soaring global oil prices
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The action aims to increase supply to meet demand, not necessarily to increase overall demand for oil." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) To significantly increase demand for oil
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">2. What is identified as the primary catalyst for the recent surge in oil prices?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While G7 meetings address such issues, they are not the cause of the price surge." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Routine G7 summit discussions
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The text explicitly mentions the 'onset of conflict involving the United States, Israel, and Iran' as the cause." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Geopolitical tensions, specifically the US-Israel war with Iran
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The summary indicates a 'surge in prices,' implying a supply-demand imbalance, not record production." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Record levels of global oil production
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">3. In the context of the news brief, what does 'precipitous surge' most accurately mean?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; 'Precipitous' implies suddenness and a significant increase, not a decrease." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) A slow and steady decline
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; 'Precipitous' suggests a rapid, dramatic change, not a gradual one." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) A gradual and minor increase
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Precipitous' means sudden and dramatic, which aligns with a rapid, significant rise." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) A sudden and dramatic increase
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">4. How is the release of strategic oil reserves expected to alleviate inflationary pressures?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; Releasing reserves aims to increase supply, not decrease overall demand." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) By decreasing overall energy demand
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The brief states it aims to 'augment supply, thereby alleviating the inflationary pressures'." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) By augmenting the global supply of oil
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While a possible government action, the brief specifically mentions increasing supply to counter inflation, not direct subsidies." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) By directly subsidizing consumer fuel costs
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">5. What is the defining characteristic of the G7 nations, as described in the text?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The G7 is an economic forum, not primarily a military alliance, though its members may have military ties." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) They form a leading global military alliance
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The text defines the G7 as 'comprising the world's leading advanced economies'." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) They are the world's leading advanced economies
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The G7 is an intergovernmental forum, meaning it consists of governments, not a non-governmental organization." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) They operate as a global non-governmental organization
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">6. In the context of long-term solutions, what does 'geopolitical de-escalation' primarily refer to?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; De-escalation means reducing, not increasing, military presence and tensions." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Increasing military presence in conflict zones
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'De-escalation' means reducing the intensity or severity of a conflict or dangerous situation, i.e., reducing tensions." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Reducing international tensions and conflicts
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While relevant to oil supply, de-escalation refers to political and military tensions, not exploration efforts." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Expanding global oil exploration efforts
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">7. Which vocabulary term best describes the G7's clear and strong backing for the oil release?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; 'Formidable' describes the G7's power, but not the nature of their support itself." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Formidable
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; 'Exacerbated' means made worse, which is the opposite of a positive welcome or support." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Exacerbated
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Unequivocal' means leaving no doubt, clear and unambiguous, perfectly describing strong support." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Unequivocal
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="daily-lesson">
+<summary class="lesson-date">📅 March 10, 2026 - Trump's Elusive Rhetoric on War's End</summary>
+<div class="lesson-description">This lesson delves into the complexities of presidential communication regarding international conflict and its economic repercussions.</div>
+<div class="lesson-content">
+<div class="header"><h2>Advanced ESL: Analyzing Ambiguous Political Discourse</h2></div>
+<div class="section">
+<h2>I. The News Brief</h2>
+<p>The US President's recent pronouncements regarding the conclusion of an unspecified conflict have generated considerable ambiguity, leaving observers grappling with a multitude of unanswered questions. His efforts were ostensibly directed at assuaging anxieties surrounding global oil prices and volatile financial markets, both of which are highly sensitive to geopolitical instability. However, rather than providing definitive reassurances, the President's public statements have been characterized by an unfortunate dearth of specificity and an inconsistent narrative. This rhetorical imprecision has inadvertently exacerbated uncertainty, undermining attempts to stabilize economic indicators. Experts and policymakers are now tasked with deciphering the underlying intent behind these equivocal remarks, a challenge compounded by the potential for misinterpretation on the international stage. The administration's communication strategy appears to prioritize calming immediate economic jitters over offering a transparent and coherent articulation of its foreign policy objectives. Consequently, the prevailing sentiment remains one of apprehension, fueled by the persistent lack of clarity surrounding the pathway to the conflict's resolution.</p>
+</div>
+<div class="section">
+<h2>II. Vocabulary &amp; Grammar Focus</h2>
+<div class="vocab-box">
+<span class="vocab-term">1. Ambiguity (noun):</span> The quality of being open to more than one interpretation; inexactness.<br/>
+<span class="vocab-term">2. Assuaging (verb):</span> Making an unpleasant feeling less intense; soothing.<br/>
+<span class="vocab-term">3. Exacerbated (verb):</span> Made (a problem, bad situation, or negative feeling) worse.<br/>
+<span class="vocab-term">4. Equivocal (adjective):</span> Open to more than one interpretation; deliberately vague or misleading.
+            </div>
+<p><strong>Advanced Grammar: The Subjunctive Mood in Formal Contexts</strong><br/>The subjunctive mood is often used in formal English to express wishes, proposals, demands, or situations that are hypothetical or contrary to fact. In clauses following verbs like 'suggest,' 'recommend,' 'insist,' or impersonal expressions like 'it is imperative that,' the base form of the verb is used, even for third-person singular subjects. For example, in our context, one might say: "It is imperative that the administration <strong>provide</strong> a more transparent and coherent articulation of its foreign policy objectives." (Notice 'provide' instead of 'provides').</p>
+</div>
+<div class="section">
+<h2>III. Comprehension &amp; Mastery Quiz</h2>
+<p><em>Click on an option to check your answer.</em></p>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">1. What is the primary issue discussed concerning the US President's statements?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While he might be aiming for a peace treaty, the text focuses on the *nature* of his communication about it." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) His efforts to secure a peace treaty.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The news highlights 'mixed messages' and a 'lack of clarity' as the core problem." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) The lack of clarity and mixed messages regarding a war's conclusion.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The lesson focuses on international affairs and economic stability related to conflict, not domestic unemployment." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) The impact of his policies on domestic unemployment rates.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">2. The word "ambiguity" in the news brief most closely means:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; Ambiguity signifies a lack of certainty and precision." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Certainty and precision.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; Ambiguity implies that something can be interpreted in several ways, lacking a single, clear meaning." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Openness to multiple interpretations.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; A strong, clear declaration is the opposite of ambiguous." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) A strong, clear declaration.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">3. What was the stated intention behind the President's comments, according to the brief?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The text states he 'tried to soothe nerves,' implying he wanted to reduce, not incite, volatility." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) To incite further market volatility.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While political figures often do this, the brief specifies his comments were aimed at economic concerns." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) To address domestic political rivals.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The brief explicitly mentions 'assuaging anxieties surrounding global oil prices and volatile financial markets.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) To calm concerns over global oil prices and financial markets.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">4. Which of the following best describes the effect of the President's rhetorical imprecision?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The text states it 'exacerbated uncertainty,' which would hinder, not lead to, immediate recovery." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) It led to immediate economic recovery.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The brief states it 'exacerbated uncertainty, undermining attempts to stabilize economic indicators' and made deciphering intent a 'challenge compounded by the potential for misinterpretation.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) It deepened uncertainty and complicated analysis for experts.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The 'lack of clarity' would likely impede, rather than unify, international opinion." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) It successfully unified international opinion on the conflict.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">5. The lesson suggests that the administration's communication strategy prioritized:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The brief notes a 'dearth of specificity' and an 'inconsistent narrative,' which contradicts comprehensive articulation." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) Comprehensive foreign policy articulation.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; The text states the strategy 'appears to prioritize calming immediate economic jitters over offering a transparent and coherent articulation.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Calming immediate economic concerns.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; The lesson highlights a 'persistent lack of clarity surrounding the pathway to the conflict's resolution,' suggesting the opposite." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Providing definitive long-term geopolitical solutions.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">6. In the context of the advanced grammar point, which sentence correctly uses the subjunctive mood?</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; In the subjunctive mood, for 'it is important that,' the verb takes its base form, without the '-s' for third person singular." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) It is important that the President <i>clarifies</i> his position.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Clarify' is the base form of the verb, correctly used in the subjunctive mood after 'it is important that.'" onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) It is important that the President <i>clarify</i> his position.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; This uses the future tense, not the subjunctive mood, which typically uses the base form of the verb." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) It is important that the President <i>will clarify</i> his position.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+<div class="quiz-card">
+<div class="quiz-question" style="margin-bottom: 25px;">
+<p style="font-weight: bold; color: #8b4513; margin-bottom: 10px;">7. If the President's statements were "coherent," they would be characterized by:</p>
+<div style="display: flex; flex-direction: column; gap: 8px;">
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; While complex, coherent means logical and consistent, not necessarily open to multiple (possibly conflicting) interpretations." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            a) A complex and multi-layered interpretation.
+                        </button>
+<button data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ &lt;strong&gt;Correct:&lt;/strong&gt; 'Coherent' means logical, consistent, and forming a united, understandable whole." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            b) Logical consistency and clear understanding.
+                        </button>
+<button data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ &lt;strong&gt;Incorrect:&lt;/strong&gt; This describes vagueness or ambiguity, which is the opposite of coherence." onclick="checkAnswer(this)" style="text-align: left; padding: 10px; border: 1px solid #d2b48c; border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;">
+                            c) Deliberate vagueness to avoid commitment.
+                        </button>
+</div>
+<div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
+</div>
+</div>
+</div>
+</div>
+</details><details class="daily-lesson">
 <summary class="lesson-date">📅 March 09, 2026 - Iran's Shifting Power: The Ascent of Mojtaba Khamenei</summary>
 <div class="lesson-description">This lesson delves into the anticipated leadership transition in Iran, focusing on the potential implications of Mojtaba Khamenei's expected rise to the position of Supreme Leader.</div>
 <div class="lesson-content">
@@ -593,98 +890,7 @@
 </div>
 </div>
 </details>
-<details class="daily-lesson">
-<summary class="lesson-date">📅 March 4, 2026 - Energy Shocks &amp; Geopolitical Friction</summary>
-<div class="lesson-description">Explores the economic fallout of military operations and the surge in global energy prices. Students analyze participle clauses and domain-specific economic vocabulary.</div>
-<div class="lesson-content">
-<div class="header">
-<h2>Advanced ESL: Geopolitical Shockwaves</h2>
-</div>
-<div class="section">
-<h2>I. Critical Reading: Global Supply Chains</h2>
-<p>In a dramatic escalation of ongoing geopolitical hostilities, the global economy is bracing for severe supply shocks. As of this morning, Brent crude oil has skyrocketed to an alarming $82 per barrel, and European natural gas prices have surged by an unprecedented 80% since late Friday afternoon. The catalyst for this market turbulence is multifaceted: allied forces have intensified preemptive strikes against high-value strategic sites, while a submarine reportedly sank a military vessel in the Indian Ocean. Consequently, the Strait of Hormuz—the world's most vital energy artery, responsible for transporting a fifth of the globe's oil—has been effectively paralyzed. Commercial shipping firms are rapidly invoking 'force majeure' clauses to legally bypass their contractual obligations, citing the unpredictable hazards of navigating active conflict zones. While critics vehemently argue that such unilateral military actions destabilize the region, proponents insist these measures are a compassionate necessity to ensure long-term global security and strategic deterrence.</p>
-</div>
-<div class="section">
-<h2>II. Vocabulary &amp; Grammar Focus</h2>
-<div class="vocab-box">
-<span class="vocab-term">1. Force Majeure (legal noun):</span> Unforeseeable circumstances that prevent someone from fulfilling a contract (often related to acts of war or natural disasters).<br/>
-<span class="vocab-term">2. Supply Shock (economic noun):</span> An event that suddenly increases or decreases the supply of a commodity or service, heavily impacting its price.<br/>
-<span class="vocab-term">3. Multifaceted (adjective):</span> Having many different aspects, features, or sides.<br/>
-<span class="vocab-term">4. Preemptive strike (collocation):</span> A surprise attack launched with the stated intention of countering an anticipated enemy offensive.
-                        </div>
-<p><strong>Advanced Grammar: Participle Clauses</strong><br/>
-                        To pack more information into a single sentence smoothly, the writer relies on participle clauses (using -ing verbs to link ideas). For example: <em>"Commercial shipping firms are invoking 'force majeure' clauses... <strong>citing</strong> the unpredictable hazards."</em></p>
-</div>
-<div class="section">
-<h2>III. Comprehension &amp; Mastery Quiz</h2>
-<div class="quiz-card">
-<ol>
-<li class="quiz-question">According to the text, what price did Brent crude oil reach?
-                                    <ol class="quiz-options">
-<li>$80 per barrel</li>
-<li>$82 per barrel</li>
-<li>It increased by 80%</li>
-</ol>
-</li>
-<li class="quiz-question">Why are commercial shipping firms invoking 'force majeure' clauses?
-                                    <ol class="quiz-options">
-<li>To protest the rising cost of natural gas.</li>
-<li>To legally bypass contracts due to the hazards of conflict zones.</li>
-<li>To demand military escorts through the Strait of Hormuz.</li>
-</ol>
-</li>
-<li class="quiz-question">What do proponents of the military actions argue?
-                                    <ol class="quiz-options">
-<li>That the actions are necessary for long-term security and deterrence.</li>
-<li>That the strikes will immediately lower oil prices.</li>
-<li>That unilateral actions dangerously destabilize the region.</li>
-</ol>
-</li>
-<li class="quiz-question">Which vocabulary term describes a sudden, drastic change in the availability of a commodity?
-                                    <ol class="quiz-options">
-<li>Preemptive strike</li>
-<li>Supply shock</li>
-<li>Market turbulence</li>
-</ol>
-</li>
-<li class="quiz-question">If a problem is described as "multifaceted," it means it:
-                                    <ol class="quiz-options">
-<li>Has many different aspects or sides.</li>
-<li>Is impossible to solve.</li>
-<li>Involves multiple military factions.</li>
-</ol>
-</li>
-<li class="quiz-question">Which of the following correctly combines these sentences using a participle clause: <em>"The ships bypassed the strait. They cited unpredictable hazards."</em>
-<ol class="quiz-options">
-<li>The ships bypassed the strait, citing unpredictable hazards.</li>
-<li>Because they cited unpredictable hazards, the ships bypassed the strait.</li>
-<li>The ships bypassing the strait cited unpredictable hazards.</li>
-</ol>
-</li>
-<li class="quiz-question">Identify the participle clause in this sentence: <em>"Allied forces intensified strikes, paralyzing the energy artery."</em>
-<ol class="quiz-options">
-<li>Allied forces</li>
-<li>intensified strikes</li>
-<li>paralyzing the energy artery</li>
-</ol>
-</li>
-</ol>
-<details class="answer-key">
-<summary class="answer-summary">🔍 Reveal Answers</summary>
-<div class="answer-content">
-<p><strong>1.</strong> b ($82 per barrel)</p>
-<p><strong>2.</strong> b (To legally bypass contracts due to the hazards of conflict zones)</p>
-<p><strong>3.</strong> a (That the actions are necessary for long-term security and deterrence)</p>
-<p><strong>4.</strong> b (Supply shock)</p>
-<p><strong>5.</strong> a (Has many different aspects or sides)</p>
-<p><strong>6.</strong> a (The ships bypassed the strait, citing unpredictable hazards)</p>
-<p><strong>7.</strong> c (paralyzing the energy artery)</p>
-</div>
-</details>
-</div>
-</div>
-</div>
-</details>
+
 </div>
 </div>
 </body>

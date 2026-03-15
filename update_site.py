@@ -34,7 +34,8 @@ def generate_lesson_html(news_text):
     1. The reading passage in Section I MUST be a minimum of 7 sentences long.
     2. Section III must be an interactive 7-item multiple-choice quiz. 
     3. Use the exact inline structure provided below. Do not alter the onclick="checkAnswer(this)" call.
-    4. CRITICAL: When filling in the data-feedback attribute, DO NOT use double quotes (") in your explanations, as it will break the HTML attribute. Single quotes and apostrophes are perfectly fine. Do NOT provide a separate answer key section.
+    4. Ensure the position of the correct answwer in the quiz is randomized.
+    5. CRITICAL: When filling in the data-feedback attribute, DO NOT use double quotes (") in your explanations, as it will break the HTML attribute. Single quotes and apostrophes are perfectly fine. Do NOT provide a separate answer key section.
     
     Structure:
     <summary class="lesson-date">📅 {today_str} - [Catchy Title]</summary>

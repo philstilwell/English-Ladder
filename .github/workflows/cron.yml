@@ -3,7 +3,7 @@ name: Daily ESL Lesson Generator
 on:
   schedule:
     # Runs at 12:00 UTC (8:00 AM EST) every day
-    - cron: '0 12 * * *'
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 jobs:

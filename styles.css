@@ -68,16 +68,15 @@ a {
     justify-content: space-between;
     gap: 28px;
     overflow: hidden;
-    background:
-        linear-gradient(
-            140deg,
-            rgba(255, 243, 166, 0.96),
-            rgba(244, 180, 0, 0.9) 33%,
-            rgba(147, 197, 253, 0.94) 33%,
-            rgba(59, 130, 246, 0.92) 66%,
-            rgba(154, 230, 180, 0.95) 66%,
-            rgba(56, 161, 105, 0.9)
-        );
+    background: linear-gradient(
+        135deg,
+        #fff3a6 0%,
+        #fff3a6 33%,
+        #93c5fd 33%,
+        #93c5fd 66%,
+        #9ae6b4 66%,
+        #9ae6b4 100%
+    );
 }
 
 .hub-hero-copy {
@@ -94,7 +93,7 @@ a {
 
 .hub-hero-image {
     display: block;
-    height: clamp(175px, 24vw, 294px);
+    height: 5cm;
     width: auto;
     filter: drop-shadow(0 18px 26px rgba(15, 23, 42, 0.18));
 }
@@ -446,7 +445,7 @@ summary.lesson-date:hover {
     }
 
     .hub-hero-image {
-        height: clamp(154px, 35vw, 224px);
+        height: 5cm;
     }
 
     .hub-grid {

@@ -1,3 +1,5 @@
+import argparse
+import html
 import os
 import re
 from datetime import datetime, timezone
@@ -12,6 +14,7 @@ MODEL_NAME = "gemini-2.5-flash"
 LESSON_LIMIT = 7
 NEWS_FEED_URL = "http://feeds.bbci.co.uk/news/world/rss.xml"
 MAX_GENERATION_ATTEMPTS = 3
+DEFAULT_RELEASE_HOUR_UTC = 10
 
 LEVELS = [
     {
@@ -291,6 +294,93 @@ def extract_exact_quotes(text):
     ]
 
 
+def parse_summary_parts(summary_tag):
+    date_node = summary_tag.find(class_="lesson-date-text")
+    title_node = summary_tag.find(class_="lesson-title-text")
+    if date_node and title_node:
+        return (
+            normalize_text(date_node.get_text(" ", strip=True)),
+            normalize_text(title_node.get_text(" ", strip=True)),
+        )
+
+    summary_text = normalize_text(summary_tag.get_text(" ", strip=True))
+    if summary_text.startswith("📅"):
+        summary_text = normalize_text(summary_text[1:])
+
+    if " - " not in summary_text:
+        raise ValueError(f"Could not split lesson summary into date and title: {summary_text}")
+
+    date_text, title_text = summary_text.split(" - ", 1)
+    return normalize_text(date_text), normalize_text(title_text)
+
+
+def fallback_release_datetime(date_text):
+    release_date = datetime.strptime(date_text, "%B %d, %Y")
+    return release_date.replace(
+        hour=DEFAULT_RELEASE_HOUR_UTC,
+        minute=0,
+        second=0,
+        microsecond=0,
+        tzinfo=timezone.utc,
+    )
+
+
+def get_release_datetime(summary_tag, date_text, default_release_dt=None):
+    release_iso = summary_tag.get("data-release-iso")
+    if release_iso:
+        try:
+            return datetime.fromisoformat(release_iso.replace("Z", "+00:00")).astimezone(timezone.utc)
+        except ValueError:
+            pass
+
+    if default_release_dt is not None:
+        return default_release_dt.astimezone(timezone.utc)
+
+    return fallback_release_datetime(date_text)
+
+
+def format_elapsed_text(release_dt, now_dt=None):
+    now_dt = (now_dt or datetime.now(timezone.utc)).astimezone(timezone.utc)
+    elapsed_seconds = max(0, int((now_dt - release_dt).total_seconds()))
+    days = elapsed_seconds // 86400
+    hours = (elapsed_seconds % 86400) // 3600
+    day_label = "day" if days == 1 else "days"
+    hour_label = "hour" if hours == 1 else "hours"
+    return f"[{days} {day_label}, {hours} {hour_label} old]"
+
+
+def rebuild_summary_markup(summary_tag, release_dt, date_text, title_text):
+    release_iso = release_dt.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    elapsed_text = format_elapsed_text(release_dt)
+    markup = BeautifulSoup(
+        (
+            f'<span class="lesson-date-prefix">📅</span> '
+            f'<span class="lesson-date-text">{html.escape(date_text)}</span> '
+            f'<span class="lesson-age">{html.escape(elapsed_text)}</span> '
+            f'<span class="lesson-separator">-</span> '
+            f'<span class="lesson-title-text">{html.escape(title_text)}</span>'
+        ),
+        "html.parser",
+    )
+    summary_tag.clear()
+    for node in list(markup.contents):
+        summary_tag.append(node)
+    summary_tag["data-release-iso"] = release_iso
+
+
+def normalize_lesson_summary(summary_tag, default_release_dt=None):
+    date_text, title_text = parse_summary_parts(summary_tag)
+    release_dt = get_release_datetime(summary_tag, date_text, default_release_dt=default_release_dt)
+    rebuild_summary_markup(summary_tag, release_dt, date_text, title_text)
+
+
+def refresh_all_lesson_summaries(soup, default_release_dt=None):
+    for lesson in soup.find_all("details", class_="daily-lesson"):
+        summary_tag = lesson.find("summary", class_="lesson-date")
+        if summary_tag:
+            normalize_lesson_summary(summary_tag, default_release_dt=default_release_dt)
+
+
 def validate_generated_lesson(new_lesson_html, level):
     issues = []
     soup = BeautifulSoup(new_lesson_html, "html.parser")
@@ -391,7 +481,7 @@ def generate_lesson_html(model, news_text, level):
     )
 
 
-def update_level_page(file_path, new_lesson_html):
+def update_level_page(file_path, new_lesson_html, release_dt):
     page_path = Path(file_path)
     if not page_path.exists():
         raise FileNotFoundError(f"{file_path} not found.")
@@ -418,6 +508,8 @@ def update_level_page(file_path, new_lesson_html):
 
     new_summary = new_lesson_tag.find("summary", class_="lesson-date")
     new_summary_text = new_summary.get_text(" ", strip=True) if new_summary else None
+    if new_summary:
+        normalize_lesson_summary(new_summary, default_release_dt=release_dt)
 
     for existing in list(container.find_all("details", class_="daily-lesson")):
         existing_summary = existing.find("summary", class_="lesson-date")
@@ -434,22 +526,57 @@ def update_level_page(file_path, new_lesson_html):
     for old_lesson in lessons[LESSON_LIMIT:]:
         old_lesson.decompose()
 
+    refresh_all_lesson_summaries(soup)
+
     with page_path.open("w", encoding="utf-8") as file:
         file.write(str(soup))
 
     print(f"Updated {file_path}.")
 
 
+def refresh_existing_pages():
+    for level in LEVELS:
+        page_path = Path(level["file_path"])
+        if not page_path.exists():
+            raise FileNotFoundError(f"{level['file_path']} not found.")
+
+        with page_path.open("r", encoding="utf-8") as file:
+            soup = BeautifulSoup(file, "html.parser")
+
+        refresh_all_lesson_summaries(soup)
+
+        with page_path.open("w", encoding="utf-8") as file:
+            file.write(str(soup))
+
+        print(f"Refreshed summary metadata in {level['file_path']}.")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--refresh-summaries",
+        action="store_true",
+        help="Update lesson summary metadata and elapsed-time markup without generating new lessons.",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
+    if args.refresh_summaries:
+        refresh_existing_pages()
+        return
+
     print("Fetching news...")
     news = get_daily_news()
     model = configure_gemini()
+    release_dt = datetime.now(timezone.utc)
 
     for level in LEVELS:
         print(f"Generating {level['name'].lower()} lesson...")
         lesson_html = generate_lesson_html(model, news, level)
         print(f"Updating {level['file_path']}...")
-        update_level_page(level["file_path"], lesson_html)
+        update_level_page(level["file_path"], lesson_html, release_dt)
 
     print("Finished updating all lesson pages.")
 

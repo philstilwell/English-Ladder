@@ -63,6 +63,11 @@ a {
 }
 
 .hub-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 28px;
+    overflow: hidden;
     background:
         linear-gradient(
             140deg,
@@ -73,6 +78,25 @@ a {
             rgba(154, 230, 180, 0.95) 66%,
             rgba(56, 161, 105, 0.9)
         );
+}
+
+.hub-hero-copy {
+    flex: 1 1 560px;
+    min-width: 0;
+}
+
+.hub-hero-visual {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.hub-hero-image {
+    display: block;
+    height: clamp(250px, 34vw, 420px);
+    width: auto;
+    filter: drop-shadow(0 18px 26px rgba(15, 23, 42, 0.18));
 }
 
 .page-hero h1,
@@ -412,6 +436,19 @@ summary.lesson-date:hover {
 }
 
 @media (max-width: 800px) {
+    .hub-hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hub-hero-visual {
+        align-self: center;
+    }
+
+    .hub-hero-image {
+        height: clamp(220px, 50vw, 320px);
+    }
+
     .hub-grid {
         grid-template-columns: 1fr;
     }

@@ -1,80 +1,70 @@
-# English Ladder 🧗‍♂️
+# English Ladder
 
-Welcome to the **English Ladder** project! This repository hosts a website that **automatically publishes a new, advanced ESL lesson every single day.**
+English Ladder is a self-updating ESL website that publishes a daily news lesson at three difficulty levels:
 
-The system is completely self-sustaining. Every morning, it pulls the latest breaking news headlines, uses state-of-the-art Gemini AI (Google AI Studio utilizing Nano Banana Pro) to shape that news into a complete curriculum, updates the website files, and deploys the changes live.
+- Beginner: CEFR A1-A2
+- Intermediate: CEFR B1-B2
+- Advanced: CEFR C1-Higher
 
-## How the Core Files Work Together (The Dynamic Cycle)
+Each level keeps a rolling 7-day archive. Every daily run uses the same news story, but the lesson difficulty and page theme change for the target learner.
 
-The system relies on five interconnected components, visualized in the project infographic.
+## Site Structure
 
-### 1. The Schedule/Alarm Clock ⏰
+- `index.html`
+  The hub page. Learners choose Beginner, Intermediate, or Advanced from a red, white, and blue level selector.
 
-**File:** `.github/workflows/cron.yml`
+- `beginner.html`
+  The yellow beginner archive page for A1-A2 learners.
 
-* **Simple Purpose:** This file contains the schedule for the entire operation. It is an automated command that tells GitHub: *"Wake up every single day at exactly 12:00 UTC (8:00 AM EST) and run our robot worker script."* It is the initial **"DAILY LAUNCH"**.
+- `intermediate.html`
+  The blue intermediate archive page for B1-B2 learners.
 
-### 2. The Robot Worker (Automation Script) 🤖
+- `advanced.html`
+  The green advanced archive page for C1-higher learners.
 
-**File:** `update_site.py`
+- `styles.css`
+  Shared styling for the hub and all lesson pages.
 
-* **Simple Purpose:** This Python script does all the heavy lifting in a sequential process.
-* **Fetch:** It connects to the live BBC World News RSS feed and gets the very latest headlines.
-* **Generate:** It sends those news summaries and a complex curriculum prompt to the Gemini AI in Google AI Studio.
-* **Parse:** Once the AI generates the ESL content (News Brief, Vocabulary, and Quiz), this Python script takes that raw text and structures it perfectly for a website.
+- `app.js`
+  Shared quiz interaction for every lesson page.
 
-### 3. The Website (The Living Document) 🌐
+## Automation
 
-**File:** `index.html`
+- `.github/workflows/cron.yml`
+  Runs the daily automation at `10:00 UTC` and supports manual runs with `workflow_dispatch`.
 
-* **Simple Purpose:** This **IS** the actual website. This file stores the current daily lesson and a rolling archive of the seven most recent lessons. When the `update_site.py` script finishes its work, it automatically **injects** the fresh lesson at the very top of this file and decomps (removes) any lessons that are older than 7 days, keeping the page lean and fast.
+- `update_site.py`
+  Fetches the top BBC World News RSS item, sends it to Gemini, generates three CEFR-specific HTML lessons, and updates the three rolling archive pages.
 
-### 4. The Project Portrait (Visual Guide) 🗺️
+## How the Daily Update Works
 
-**File:** `English-Ladder.png`
+1. GitHub Actions starts the workflow.
+2. `update_site.py` fetches the latest BBC World News headline and summary.
+3. Gemini creates:
+   - one beginner lesson
+   - one intermediate lesson
+   - one advanced lesson
+4. The script inserts each lesson at the top of its matching page.
+5. Older lessons beyond the newest 7 are removed automatically.
+6. GitHub Actions commits the updated lesson pages back to the repository.
 
-* **Simple Purpose:** This is the detailed **PNG infographic** that visualizes exactly how all these parts fit together and work dynamically in a circular, self-sustaining ecosystem. It maps out the journey from the daily launch to the automatic deployment on the web.
+## Local Run
 
-### 5. The System ID Card 🏷️
+Set your Gemini API key, then run:
 
-**File:** `.gitattributes`
-
-* **Simple Purpose:** A behind-the-scenes system file. Its only job is to tell GitHub’s technical systems: *"Treat this repository as a Python project when you are running your internal calculations and statistics."
-
----
-
-Step 2: Save and Test
-After correcting your index.html file in VS Code, save the file (Cmd+S).
-Go back to your terminal and run the script one more time:
-
-Bash
+```bash
 python3 update_site.py
-What this does: This command tells your Mac to execute the script using Python 3. It will fetch the latest news, generate the lesson, find the <div id="lesson-container">, and safely inject the new HTML. If successful, the terminal will print Successfully updated local index.html!.
+```
 
-Step 3: Increase the Git POST Buffer (If Needed)
-If your previous automated or manual pushes failed with an error: RPC failed; HTTP 400 curl 22, your Git memory buffer is too small to handle the upload. Run this command to fix it:
+This updates:
 
-Bash
-git config http.postBuffer 524288000
-What this does: This modifies your local Git configuration to allow a 500MB buffer size for HTTP POST requests, giving Git enough memory to successfully transfer the data to GitHub without timing out.
+- `beginner.html`
+- `intermediate.html`
+- `advanced.html`
 
-Step 4: Stage, Commit, and Push (The Full Sync Command)
-Once the local file is updated, you must send it to GitHub. You can stage the file, save the snapshot, and upload it all at once by copying and pasting this full command into your Terminal:
+## Deployment Notes
 
-Bash
-git add index.html && git commit -m "Manual update to index.html and container fix" && git push origin main
-What this does: The && symbols link three separate Git commands together so they run perfectly in sequence:
+- `CNAME`
+  Points the site to `englishladder.com`.
 
-git add index.html stages your updated file.
-
-git commit -m "..." permanently saves the snapshot with a generic, reusable message.
-
-git push origin main securely uploads your committed snapshot to your live repository on GitHub.
-
-Step 5: Verify the Live Site
-Wait 1 to 2 minutes for the GitHub Pages deployment to complete on the server.
-
-Open your live website in your browser.
-
-Perform a Hard Refresh (Cmd + Shift + R on Mac) to force the browser to clear its saved cache and display your newly injected lesson.
-
+The hub page remains the root entry point, and the three lesson pages stay linked from there.

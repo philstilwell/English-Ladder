@@ -19,9 +19,9 @@ LEVELS = [
         "file_path": "beginner.html",
         "cefr": "A1-A2",
         "header_label": "Beginner ESL",
-        "sentence_count": 6,
-        "vocabulary_count": 4,
-        "quiz_count": 6,
+        "sentence_count": 10,
+        "vocabulary_count": 5,
+        "quiz_count": 10,
         "overview_instruction": "Write the overview in one short and simple sentence.",
         "difficulty_instruction": (
             "Aim for strong A1-A2 level English, especially A2 rather than pre-A1. "
@@ -29,12 +29,13 @@ LEVELS = [
             "but, after, while, or so, and slightly richer verbs than childlike phrases."
         ),
         "reading_instruction": (
-            "Write exactly 6 short sentences in clear, simple English. Use very easy "
+            "Write exactly 10 short sentences in clear, simple English. Use very easy "
             "vocabulary, short clauses, and direct meaning for CEFR A1-A2 learners."
         ),
         "vocabulary_instruction": (
-            "Choose exactly 4 useful words or short phrases that already appear in the "
-            "News Brief exactly as written, and define them in very simple English."
+            "Choose exactly 5 useful words or short phrases that already appear in the "
+            "News Brief exactly as written, define them in very simple English, and "
+            "make sure those same 5 terms appear in bold font inside the News Brief."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
@@ -45,7 +46,7 @@ LEVELS = [
             "exact quotation from the News Brief."
         ),
         "quiz_instruction": (
-            "Make exactly 6 quiz questions that are short, direct, and easy to "
+            "Make exactly 10 quiz questions that are short, direct, and easy to "
             "understand. Every question must test the News Brief, the vocabulary box, "
             "or the grammar point from this same lesson. Keep each answer choice brief "
             "and beginner-friendly."
@@ -56,22 +57,23 @@ LEVELS = [
         "file_path": "intermediate.html",
         "cefr": "B1-B2",
         "header_label": "Intermediate ESL",
-        "sentence_count": 8,
+        "sentence_count": 10,
         "vocabulary_count": 5,
-        "quiz_count": 8,
+        "quiz_count": 10,
         "overview_instruction": "Write the overview in one clear sentence.",
         "difficulty_instruction": (
             "Aim for true B1-B2 classroom English with natural detail, more precise "
             "verbs, and clear sentence links, but keep the meaning easy to follow."
         ),
         "reading_instruction": (
-            "Write exactly 8 sentences using natural CEFR B1-B2 English. Add moderate "
+            "Write exactly 10 sentences using natural CEFR B1-B2 English. Add moderate "
             "detail, but keep the meaning easy to follow."
         ),
         "vocabulary_instruction": (
             "Choose exactly 5 helpful words or phrases that already appear in the News "
             "Brief exactly as written, and define them in clear everyday English for "
-            "intermediate learners."
+            "intermediate learners. Make sure those same 5 terms appear in bold font "
+            "inside the News Brief."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
@@ -82,7 +84,7 @@ LEVELS = [
             "quotation from the News Brief."
         ),
         "quiz_instruction": (
-            "Make exactly 8 quiz questions that are thoughtful but readable for CEFR "
+            "Make exactly 10 quiz questions that are thoughtful but readable for CEFR "
             "B1-B2 learners. Every question must test the News Brief, the vocabulary "
             "box, or the grammar point from this same lesson. Use short explanations "
             "in the feedback."
@@ -94,7 +96,7 @@ LEVELS = [
         "cefr": "C1-Higher",
         "header_label": "Advanced ESL",
         "sentence_count": 10,
-        "vocabulary_count": 7,
+        "vocabulary_count": 5,
         "quiz_count": 10,
         "overview_instruction": "Write the overview in one polished sentence.",
         "difficulty_instruction": (
@@ -105,8 +107,9 @@ LEVELS = [
             "Write exactly 10 sentences in a formal summary using advanced vocabulary."
         ),
         "vocabulary_instruction": (
-            "Choose exactly 7 advanced terms or phrases that already appear in the News "
-            "Brief exactly as written, and define them precisely."
+            "Choose exactly 5 advanced terms or phrases that already appear in the News "
+            "Brief exactly as written, define them precisely, and make sure those same "
+            "5 terms appear in bold font inside the News Brief."
         ),
         "grammar_label": "Advanced Grammar",
         "grammar_instruction": (
@@ -172,6 +175,7 @@ Important requirements:
 6. Section III must be an interactive {level["quiz_count"]}-item multiple-choice quiz.
 7. The News Brief, vocabulary list, grammar point, and quiz must all match one another closely.
 8. Every vocabulary term must appear naturally in the News Brief exactly as written in the vocabulary list.
+9. Wrap every vocabulary term in <strong>...</strong> in the News Brief.
 9. The grammar point must be clearly present in the News Brief, and the grammar explanation must quote exact words from the News Brief.
 10. Every quiz question must be highly relevant to the News Brief, the vocabulary list, or the grammar explanation in this same lesson.
 11. Do not use generic questions that could fit a different lesson.
@@ -182,7 +186,7 @@ Important requirements:
 16. {level["quiz_instruction"]}
 17. The News Brief must contain exactly {level["sentence_count"]} sentences.
 18. The vocabulary section must contain exactly {level["vocabulary_count"]} terms.
-19. Before finalizing, silently check that every vocabulary term appears in the News Brief, the grammar example is quoted from the News Brief, and the quiz count is correct.
+19. Before finalizing, silently check that every vocabulary term appears in bold in the News Brief, the grammar example is quoted from the News Brief, and the quiz count is correct.
 
 Revision feedback:
 {revision_feedback or "None. This is the first draft."}
@@ -270,6 +274,16 @@ def extract_vocab_terms(soup):
     return terms
 
 
+def extract_bold_terms(tag):
+    if not tag:
+        return []
+    return [
+        normalize_text(node.get_text(" ", strip=True))
+        for node in tag.find_all(["strong", "b"])
+        if normalize_text(node.get_text(" ", strip=True))
+    ]
+
+
 def extract_exact_quotes(text):
     return [
         normalize_text(match)
@@ -309,11 +323,20 @@ def validate_generated_lesson(new_lesson_html, level):
         )
 
     normalized_brief = normalize_for_match(brief_text)
+    bold_terms = {
+        normalize_for_match(term)
+        for term in extract_bold_terms(brief_paragraph)
+        if normalize_for_match(term)
+    }
     for term in vocab_terms:
         normalized_term = normalize_for_match(term)
         if normalized_term and normalized_term not in normalized_brief:
             issues.append(
                 f"The vocabulary term '{term}' must appear in the News Brief exactly as written."
+            )
+        if normalized_term and normalized_term not in bold_terms:
+            issues.append(
+                f"The vocabulary term '{term}' must appear in bold in the News Brief."
             )
 
     grammar_paragraph = sections[1].find_all("p")

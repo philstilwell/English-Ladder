@@ -18,14 +18,16 @@ LEVELS = [
         "file_path": "beginner.html",
         "cefr": "A1-A2",
         "header_label": "Beginner ESL",
+        "sentence_count": 6,
+        "vocabulary_count": 4,
         "overview_instruction": "Write the overview in one short and simple sentence.",
         "reading_instruction": (
-            "Write 5 or 6 short sentences in clear, simple English. Use very easy "
+            "Write exactly 6 short sentences in clear, simple English. Use very easy "
             "vocabulary, short clauses, and direct meaning for CEFR A1-A2 learners."
         ),
         "vocabulary_instruction": (
-            "Choose 4 useful words or short phrases from the news and define them in "
-            "very simple English."
+            "Choose exactly 4 useful words or short phrases from the news and define "
+            "them in very simple English."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
@@ -43,14 +45,16 @@ LEVELS = [
         "file_path": "intermediate.html",
         "cefr": "B1-B2",
         "header_label": "Intermediate ESL",
+        "sentence_count": 8,
+        "vocabulary_count": 5,
         "overview_instruction": "Write the overview in one clear sentence.",
         "reading_instruction": (
-            "Write 6 or 7 sentences using natural CEFR B1-B2 English. Add moderate "
+            "Write exactly 8 sentences using natural CEFR B1-B2 English. Add moderate "
             "detail, but keep the meaning easy to follow."
         ),
         "vocabulary_instruction": (
-            "Choose 4 helpful words or phrases from the news and define them in clear "
-            "everyday English for intermediate learners."
+            "Choose exactly 5 helpful words or phrases from the news and define them in "
+            "clear everyday English for intermediate learners."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
@@ -68,13 +72,15 @@ LEVELS = [
         "file_path": "advanced.html",
         "cefr": "C1-Higher",
         "header_label": "Advanced ESL",
+        "sentence_count": 10,
+        "vocabulary_count": 7,
         "overview_instruction": "Write the overview in one polished sentence.",
         "reading_instruction": (
-            "Write a formal summary using advanced vocabulary. The reading passage must "
-            "be at least 7 sentences long."
+            "Write exactly 10 sentences in a formal summary using advanced vocabulary."
         ),
         "vocabulary_instruction": (
-            "Choose 4 advanced terms or phrases from the news and define them precisely."
+            "Choose exactly 7 advanced terms or phrases from the news and define them "
+            "precisely."
         ),
         "grammar_label": "Advanced Grammar",
         "grammar_instruction": (
@@ -110,6 +116,13 @@ def get_daily_news():
 
 def build_prompt(news_text, level):
     today_str = datetime.now(timezone.utc).strftime("%B %d, %Y")
+    vocab_lines = []
+    for index in range(1, level["vocabulary_count"] + 1):
+        suffix = "<br>" if index < level["vocabulary_count"] else ""
+        vocab_lines.append(
+            f'                <span class="vocab-term">{index}. [Term] (part of speech):</span> [Definition]{suffix}'
+        )
+    vocab_html = "\n".join(vocab_lines)
 
     return f"""
 You are an ESL curriculum writer creating a lesson for CEFR {level["cefr"]} learners.
@@ -132,6 +145,8 @@ Important requirements:
 8. When writing data-feedback explanations, do not use double quotes inside the explanation text.
 9. Do not provide a separate answer key section.
 10. {level["quiz_instruction"]}
+11. The News Brief must contain exactly {level["sentence_count"]} sentences.
+12. The vocabulary section must contain exactly {level["vocabulary_count"]} terms.
 
 Structure:
 <details class="daily-lesson">
@@ -146,10 +161,7 @@ Structure:
         <div class="section">
             <h2>II. Vocabulary & Grammar Focus</h2>
             <div class="vocab-box">
-                <span class="vocab-term">1. [Term] (part of speech):</span> [Definition]<br>
-                <span class="vocab-term">2. [Term] (part of speech):</span> [Definition]<br>
-                <span class="vocab-term">3. [Term] (part of speech):</span> [Definition]<br>
-                <span class="vocab-term">4. [Term] (part of speech):</span> [Definition]
+{vocab_html}
             </div>
             <p><strong>{level["grammar_label"]}: [Concept]</strong><br>[Brief explanation and example from the text]</p>
         </div>

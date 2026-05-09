@@ -64,7 +64,15 @@ a {
 
 .hub-hero {
     background:
-        linear-gradient(140deg, rgba(198, 40, 40, 0.96), rgba(183, 28, 28, 0.92) 32%, rgba(255, 255, 255, 0.96) 32%, rgba(255, 255, 255, 0.96) 66%, rgba(30, 58, 138, 0.95) 66%, rgba(30, 58, 138, 0.92));
+        linear-gradient(
+            140deg,
+            rgba(255, 243, 166, 0.96),
+            rgba(244, 180, 0, 0.9) 33%,
+            rgba(147, 197, 253, 0.94) 33%,
+            rgba(59, 130, 246, 0.92) 66%,
+            rgba(154, 230, 180, 0.95) 66%,
+            rgba(56, 161, 105, 0.9)
+        );
 }
 
 .page-hero h1,
@@ -281,6 +289,46 @@ summary.lesson-date:hover {
 .hub-card.advanced-card .hub-pill {
     background: #dcfce7;
     color: #166534;
+}
+
+.hub-resource {
+    margin-top: 24px;
+    padding: 28px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(233, 244, 255, 0.92));
+    border: 1px solid rgba(147, 197, 253, 0.55);
+    box-shadow: 0 18px 32px rgba(30, 58, 138, 0.12);
+}
+
+.hub-resource h2 {
+    margin: 0 0 10px;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    color: #183153;
+}
+
+.hub-resource p {
+    margin: 0;
+    max-width: 720px;
+    color: #355070;
+}
+
+.hub-resource-link {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    background: linear-gradient(135deg, #2563eb, #2f855a);
+    color: #ffffff;
+    box-shadow: 0 14px 24px rgba(37, 99, 235, 0.24);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.hub-resource-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 28px rgba(37, 99, 235, 0.3);
 }
 
 .theme-hub {

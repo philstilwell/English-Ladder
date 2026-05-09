@@ -12,6 +12,13 @@ a {
     color: inherit;
 }
 
+a:focus-visible,
+summary.lesson-date:focus-visible,
+.quiz-card button:focus-visible {
+    outline: 3px solid var(--accent-strong);
+    outline-offset: 4px;
+}
+
 .page-shell {
     max-width: 1040px;
     margin: 0 auto;

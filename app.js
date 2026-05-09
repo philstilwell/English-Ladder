@@ -3,12 +3,20 @@ function checkAnswer(btn) {
 
     Array.from(optionsContainer.children).forEach((button) => {
         button.style.backgroundColor = "#fff";
+        button.setAttribute("aria-pressed", "false");
     });
 
     btn.style.backgroundColor = btn.dataset.bg;
+    btn.setAttribute("aria-pressed", "true");
     const feedbackDiv = optionsContainer.nextElementSibling;
-    feedbackDiv.innerHTML = btn.dataset.feedback;
+    feedbackDiv.textContent = sanitizeFeedback(btn.dataset.feedback || "");
     feedbackDiv.style.color = btn.dataset.color;
+}
+
+function sanitizeFeedback(feedback) {
+    const temp = document.createElement("div");
+    temp.innerHTML = feedback;
+    return temp.textContent.trim();
 }
 
 const DEFAULT_RELEASE_HOUR_UTC = 10;

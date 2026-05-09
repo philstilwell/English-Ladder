@@ -1,20 +1,22 @@
 import argparse
 import html
+import json
 import os
 import re
 from datetime import datetime, timezone
 from pathlib import Path
 
 import feedparser
-import google.generativeai as genai
 from bs4 import BeautifulSoup
 
 
 MODEL_NAME = "gemini-2.5-flash"
 LESSON_LIMIT = 7
-NEWS_FEED_URL = "http://feeds.bbci.co.uk/news/world/rss.xml"
+NEWS_FEED_URL = "https://feeds.bbci.co.uk/news/world/rss.xml"
 MAX_GENERATION_ATTEMPTS = 3
 DEFAULT_RELEASE_HOUR_UTC = 10
+FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
+SAFE_BUTTON_HANDLER = "checkAnswer(this)"
 
 LEVELS = [
     {
@@ -38,15 +40,14 @@ LEVELS = [
         "vocabulary_instruction": (
             "Choose exactly 5 useful words or short phrases that already appear in the "
             "News Brief exactly as written, define them in very simple English, and "
-            "make sure those same 5 terms appear in bold font inside the News Brief."
+            "make sure those same 5 terms appear naturally in the News Brief."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
             "Choose one basic grammar point such as simple past, simple present, "
             "because, can, there is/there are, or basic comparatives. Explain it in "
             "simple English only if that grammar point appears clearly in the News "
-            "Brief at least twice. Include 'Example from the text:' followed by an "
-            "exact quotation from the News Brief."
+            "Brief. Include one exact quote from the News Brief."
         ),
         "quiz_instruction": (
             "Make exactly 10 quiz questions that are short, direct, and easy to "
@@ -75,16 +76,15 @@ LEVELS = [
         "vocabulary_instruction": (
             "Choose exactly 5 helpful words or phrases that already appear in the News "
             "Brief exactly as written, and define them in clear everyday English for "
-            "intermediate learners. Make sure those same 5 terms appear in bold font "
-            "inside the News Brief."
+            "intermediate learners. Make sure those same 5 terms appear naturally in "
+            "the News Brief."
         ),
         "grammar_label": "Grammar Focus",
         "grammar_instruction": (
             "Choose one useful mid-level grammar point such as passive voice, relative "
             "clauses, present perfect, conditionals, or reporting verbs. Explain it "
-            "clearly only if that grammar point appears clearly in the News Brief at "
-            "least twice. Include 'Example from the text:' followed by an exact "
-            "quotation from the News Brief."
+            "clearly only if that grammar point appears clearly in the News Brief. "
+            "Include one exact quote from the News Brief."
         ),
         "quiz_instruction": (
             "Make exactly 10 quiz questions that are thoughtful but readable for CEFR "
@@ -112,13 +112,13 @@ LEVELS = [
         "vocabulary_instruction": (
             "Choose exactly 5 advanced terms or phrases that already appear in the News "
             "Brief exactly as written, define them precisely, and make sure those same "
-            "5 terms appear in bold font inside the News Brief."
+            "5 terms appear naturally in the News Brief."
         ),
         "grammar_label": "Advanced Grammar",
         "grammar_instruction": (
             "Choose one advanced grammar or style feature only if it appears clearly in "
-            "the News Brief at least twice. Explain it briefly and include 'Example "
-            "from the text:' followed by an exact quotation from the News Brief."
+            "the News Brief. Explain it briefly and include one exact quote from the "
+            "News Brief."
         ),
         "quiz_instruction": (
             "Make exactly 10 quiz questions that are appropriately challenging for "
@@ -134,8 +134,10 @@ def configure_gemini():
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         raise RuntimeError("GEMINI_API_KEY is not set.")
-    genai.configure(api_key=api_key)
-    return genai.GenerativeModel(MODEL_NAME)
+
+    from google import genai
+
+    return genai.Client(api_key=api_key)
 
 
 def get_daily_news():
@@ -144,30 +146,113 @@ def get_daily_news():
         raise RuntimeError("No news found today.")
 
     top_entry = feed.entries[0]
-    summary_html = getattr(top_entry, "description", "")
+    summary_html = getattr(top_entry, "summary", "") or getattr(top_entry, "description", "")
     clean_summary = BeautifulSoup(summary_html, "html.parser").get_text(" ", strip=True)
-    return f"Title: {top_entry.title}\nSummary: {clean_summary}"
+    return {
+        "title": normalize_text(getattr(top_entry, "title", "")),
+        "summary": clean_summary,
+        "link": normalize_text(getattr(top_entry, "link", "")),
+    }
 
 
-def build_prompt(news_text, level, revision_feedback=None):
-    today_str = datetime.now(timezone.utc).strftime("%B %d, %Y")
-    vocab_lines = []
-    for index in range(1, level["vocabulary_count"] + 1):
-        suffix = "<br>" if index < level["vocabulary_count"] else ""
-        vocab_lines.append(
-            f'                <span class="vocab-term">{index}. [Term] (part of speech):</span> [Definition]{suffix}'
-        )
-    vocab_html = "\n".join(vocab_lines)
+def build_response_schema(level):
+    return {
+        "type": "object",
+        "additionalProperties": False,
+        "required": [
+            "title",
+            "overview",
+            "topic",
+            "news_brief_sentences",
+            "vocabulary",
+            "grammar",
+            "quiz",
+        ],
+        "properties": {
+            "title": {"type": "string", "minLength": 4, "maxLength": 140},
+            "overview": {"type": "string", "minLength": 12, "maxLength": 220},
+            "topic": {"type": "string", "minLength": 4, "maxLength": 140},
+            "news_brief_sentences": {
+                "type": "array",
+                "minItems": level["sentence_count"],
+                "maxItems": level["sentence_count"],
+                "items": {"type": "string", "minLength": 6, "maxLength": 320},
+            },
+            "vocabulary": {
+                "type": "array",
+                "minItems": level["vocabulary_count"],
+                "maxItems": level["vocabulary_count"],
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": ["term", "part_of_speech", "definition"],
+                    "properties": {
+                        "term": {"type": "string", "minLength": 2, "maxLength": 80},
+                        "part_of_speech": {"type": "string", "minLength": 2, "maxLength": 40},
+                        "definition": {"type": "string", "minLength": 6, "maxLength": 220},
+                    },
+                },
+            },
+            "grammar": {
+                "type": "object",
+                "additionalProperties": False,
+                "required": ["concept", "explanation", "example_quote"],
+                "properties": {
+                    "concept": {"type": "string", "minLength": 3, "maxLength": 80},
+                    "explanation": {"type": "string", "minLength": 12, "maxLength": 420},
+                    "example_quote": {"type": "string", "minLength": 6, "maxLength": 220},
+                },
+            },
+            "quiz": {
+                "type": "array",
+                "minItems": level["quiz_count"],
+                "maxItems": level["quiz_count"],
+                "items": {
+                    "type": "object",
+                    "additionalProperties": False,
+                    "required": [
+                        "question",
+                        "options",
+                        "correct_option_index",
+                        "option_feedback",
+                    ],
+                    "properties": {
+                        "question": {"type": "string", "minLength": 6, "maxLength": 220},
+                        "options": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {"type": "string", "minLength": 1, "maxLength": 160},
+                        },
+                        "correct_option_index": {
+                            "type": "integer",
+                            "minimum": 0,
+                            "maximum": 2,
+                        },
+                        "option_feedback": {
+                            "type": "array",
+                            "minItems": 3,
+                            "maxItems": 3,
+                            "items": {"type": "string", "minLength": 8, "maxLength": 220},
+                        },
+                    },
+                },
+            },
+        },
+    }
 
+
+def build_prompt(news_item, level, revision_feedback=None):
     return f"""
 You are an ESL curriculum writer creating a lesson for CEFR {level["cefr"]} learners.
 
-Use the following news:
-{news_text}
+Source news:
+Headline: {news_item["title"]}
+Summary: {news_item["summary"]}
+Link: {news_item["link"] or "Not provided"}
 
-Write a 3-part {level["name"].lower()} ESL lesson.
-Return ONLY raw HTML. Do not add markdown fences. Do not add explanations before or after the HTML.
-Wrap the entire lesson in a single <details class="daily-lesson"> tag.
+Return only JSON that matches the supplied schema.
+Use plain text only in every JSON string. Do not include HTML, Markdown, code fences, numbered lists, or angle brackets.
 
 Important requirements:
 1. {level["overview_instruction"]}
@@ -178,82 +263,26 @@ Important requirements:
 6. Section III must be an interactive {level["quiz_count"]}-item multiple-choice quiz.
 7. The News Brief, vocabulary list, grammar point, and quiz must all match one another closely.
 8. Every vocabulary term must appear naturally in the News Brief exactly as written in the vocabulary list.
-9. Wrap every vocabulary term in <strong>...</strong> in the News Brief.
-9. The grammar point must be clearly present in the News Brief, and the grammar explanation must quote exact words from the News Brief.
+9. The grammar example quote must be copied exactly from the News Brief.
 10. Every quiz question must be highly relevant to the News Brief, the vocabulary list, or the grammar explanation in this same lesson.
 11. Do not use generic questions that could fit a different lesson.
-12. Use the exact inline structure shown below and do not alter onclick="checkAnswer(this)".
-13. In each quiz-question div, randomize the position of the correct answer.
-14. When writing data-feedback explanations, do not use double quotes inside the explanation text.
-15. Do not provide a separate answer key section.
+12. The news_brief_sentences array must contain exactly {level["sentence_count"]} complete sentences.
+13. The vocabulary array must contain exactly {level["vocabulary_count"]} terms.
+14. Each quiz item must have exactly 3 options, 1 correct_option_index, and 3 aligned option_feedback strings.
+15. Keep the lesson factually grounded in the supplied headline and summary.
 16. {level["quiz_instruction"]}
-17. The News Brief must contain exactly {level["sentence_count"]} sentences.
-18. The vocabulary section must contain exactly {level["vocabulary_count"]} terms.
-19. Before finalizing, silently check that every vocabulary term appears in bold in the News Brief, the grammar example is quoted from the News Brief, and the quiz count is correct.
 
 Revision feedback:
 {revision_feedback or "None. This is the first draft."}
-
-Structure:
-<details class="daily-lesson">
-    <summary class="lesson-date">📅 {today_str} - [Catchy Title]</summary>
-    <div class="lesson-description">[1-sentence overview]</div>
-    <div class="lesson-content">
-        <div class="header"><h2>{level["header_label"]}: [Topic]</h2></div>
-        <div class="section">
-            <h2>I. The News Brief</h2>
-            <p>[News summary]</p>
-        </div>
-        <div class="section">
-            <h2>II. Vocabulary & Grammar Focus</h2>
-            <div class="vocab-box">
-{vocab_html}
-            </div>
-            <p><strong>{level["grammar_label"]}: [Concept]</strong><br>[Brief explanation and example from the text]</p>
-        </div>
-        <div class="section">
-            <h2>III. Comprehension & Mastery Quiz</h2>
-            <p><em>Click on an option to check your answer.</em></p>
-            <div class="quiz-card">
-                <div class="quiz-question" style="margin-bottom: 25px;">
-                    <p style="font-weight: bold; color: var(--quiz-question); margin-bottom: 10px;">[Question Number]. [Question Text]</p>
-                    <div style="display: flex; flex-direction: column; gap: 8px;">
-                        <button style="text-align: left; padding: 10px; border: 1px solid var(--button-border); border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;"
-                                data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ <strong>Incorrect:</strong> [Explain why this option is wrong]"
-                                onclick="checkAnswer(this)">
-                            a) [Option A]
-                        </button>
-                        <button style="text-align: left; padding: 10px; border: 1px solid var(--button-border); border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;"
-                                data-bg="#e6ffe6" data-color="#2e8b57" data-feedback="✅ <strong>Correct:</strong> [Explain why this option is right]"
-                                onclick="checkAnswer(this)">
-                            b) [Option B]
-                        </button>
-                        <button style="text-align: left; padding: 10px; border: 1px solid var(--button-border); border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;"
-                                data-bg="#ffe6e6" data-color="#b22222" data-feedback="❌ <strong>Incorrect:</strong> [Explain why this option is wrong]"
-                                onclick="checkAnswer(this)">
-                            c) [Option C]
-                        </button>
-                    </div>
-                    <div class="feedback" style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</details>
 """
 
 
-def extract_lesson_html(raw_text):
-    raw_html = raw_text.strip()
-    backticks = "`" * 3
-    match = re.search(
-        fr"{backticks}(?:html)?\s*(.*?)\s*{backticks}",
-        raw_html,
-        re.DOTALL | re.IGNORECASE,
-    )
+def extract_json_text(raw_text):
+    raw_text = raw_text.strip()
+    match = re.search(r"```(?:json)?\s*(.*?)\s*```", raw_text, re.DOTALL | re.IGNORECASE)
     if match:
         return match.group(1).strip()
-    return raw_html
+    return raw_text
 
 
 def normalize_text(text):
@@ -265,33 +294,29 @@ def normalize_for_match(text):
     return re.sub(r"\s+", " ", cleaned).strip()
 
 
-def extract_vocab_terms(soup):
-    terms = []
-    for span in soup.find_all("span", class_="vocab-term"):
-        label = span.get_text(" ", strip=True).split(":", 1)[0]
-        label = re.sub(r"^\s*\d+\.\s*", "", label)
-        label = re.sub(r"\s*\([^)]*\)\s*$", "", label)
-        label = normalize_text(label)
-        if label:
-            terms.append(label)
-    return terms
+def sentence_has_terminal_punctuation(text):
+    return bool(re.search(r"[.!?]['\")\]]*$", text.strip()))
 
 
-def extract_bold_terms(tag):
-    if not tag:
-        return []
-    return [
-        normalize_text(node.get_text(" ", strip=True))
-        for node in tag.find_all(["strong", "b"])
-        if normalize_text(node.get_text(" ", strip=True))
-    ]
+def strip_markup(text):
+    return normalize_text(BeautifulSoup(text, "html.parser").get_text(" ", strip=True))
 
 
-def extract_exact_quotes(text):
-    return [
-        normalize_text(match)
-        for match in re.findall(r"[\"'“”‘’]([^\"'“”‘’]{6,220})[\"'“”‘’]", text)
-    ]
+def flatten_strings(value):
+    if isinstance(value, str):
+        yield value
+        return
+    if isinstance(value, list):
+        for item in value:
+            yield from flatten_strings(item)
+        return
+    if isinstance(value, dict):
+        for item in value.values():
+            yield from flatten_strings(item)
+
+
+def contains_markup(text):
+    return "<" in text or ">" in text
 
 
 def parse_summary_parts(summary_tag):
@@ -349,8 +374,17 @@ def format_elapsed_text(release_dt, now_dt=None):
     return f"[{days} {day_label}, {hours} {hour_label} old]"
 
 
+def lesson_key_from_release_dt(release_dt):
+    return release_dt.astimezone(timezone.utc).date().isoformat()
+
+
 def rebuild_summary_markup(summary_tag, release_dt, date_text, title_text):
-    release_iso = release_dt.astimezone(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+    release_iso = (
+        release_dt.astimezone(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
     elapsed_text = format_elapsed_text(release_dt)
     markup = BeautifulSoup(
         (
@@ -372,98 +406,361 @@ def normalize_lesson_summary(summary_tag, default_release_dt=None):
     date_text, title_text = parse_summary_parts(summary_tag)
     release_dt = get_release_datetime(summary_tag, date_text, default_release_dt=default_release_dt)
     rebuild_summary_markup(summary_tag, release_dt, date_text, title_text)
+    return release_dt
 
 
-def refresh_all_lesson_summaries(soup, default_release_dt=None):
-    for lesson in soup.find_all("details", class_="daily-lesson"):
-        summary_tag = lesson.find("summary", class_="lesson-date")
-        if summary_tag:
-            normalize_lesson_summary(summary_tag, default_release_dt=default_release_dt)
+def sanitize_existing_lesson_markup(lesson_tag):
+    for forbidden in list(lesson_tag.find_all(FORBIDDEN_TAGS)):
+        forbidden.decompose()
+
+    for tag in lesson_tag.find_all(True):
+        attrs_to_remove = []
+        for attr_name, attr_value in list(tag.attrs.items()):
+            if attr_name.lower().startswith("on"):
+                if tag.name == "button" and attr_name == "onclick" and attr_value == SAFE_BUTTON_HANDLER:
+                    continue
+                attrs_to_remove.append(attr_name)
+        for attr_name in attrs_to_remove:
+            del tag[attr_name]
+
+    for button in lesson_tag.find_all("button"):
+        button["type"] = "button"
+        if button.get("data-feedback"):
+            button["data-feedback"] = strip_markup(button["data-feedback"])
+
+    for feedback_div in lesson_tag.find_all("div", class_="feedback"):
+        feedback_div["role"] = "status"
+        feedback_div["aria-live"] = "polite"
 
 
-def validate_generated_lesson(new_lesson_html, level):
+def upgrade_lesson_markup(lesson_tag, default_release_dt=None):
+    sanitize_existing_lesson_markup(lesson_tag)
+    summary_tag = lesson_tag.find("summary", class_="lesson-date")
+    if not summary_tag:
+        return None
+
+    release_dt = normalize_lesson_summary(summary_tag, default_release_dt=default_release_dt)
+    lesson_tag["data-lesson-key"] = lesson_key_from_release_dt(release_dt)
+    return release_dt
+
+
+def refresh_page_markup(soup, default_release_dt=None):
+    container = soup.find(id="lesson-container")
+    if not container:
+        return
+
+    seen_keys = set()
+    for lesson_tag in list(container.find_all("details", class_="daily-lesson")):
+        release_dt = upgrade_lesson_markup(lesson_tag, default_release_dt=default_release_dt)
+        lesson_key = lesson_tag.get("data-lesson-key")
+        if lesson_key and lesson_key in seen_keys:
+            lesson_tag.decompose()
+            continue
+        if lesson_key:
+            seen_keys.add(lesson_key)
+
+    lessons = container.find_all("details", class_="daily-lesson")
+    for old_lesson in lessons[LESSON_LIMIT:]:
+        old_lesson.decompose()
+
+
+def parse_lesson_response(response):
+    parsed = getattr(response, "parsed", None)
+    if isinstance(parsed, dict):
+        return parsed
+
+    raw_text = extract_json_text(getattr(response, "text", "") or "")
+    if not raw_text:
+        raise ValueError("The model response was empty.")
+    return json.loads(raw_text)
+
+
+def validate_lesson_data(lesson_data, level):
     issues = []
-    soup = BeautifulSoup(new_lesson_html, "html.parser")
-    lesson_tag = soup.find("details", class_="daily-lesson")
-    if not lesson_tag:
-        return ["The lesson is missing the outer details.daily-lesson wrapper."]
+    if not isinstance(lesson_data, dict):
+        return ["The model response must be a JSON object."]
 
-    sections = lesson_tag.find_all("div", class_="section")
-    if len(sections) < 3:
-        issues.append("The lesson must contain all three main sections.")
-        return issues
+    all_strings = list(flatten_strings(lesson_data))
+    for text in all_strings:
+        if contains_markup(text):
+            issues.append("All lesson fields must be plain text without HTML or angle brackets.")
+            break
 
-    brief_paragraph = sections[0].find("p")
-    brief_text = normalize_text(brief_paragraph.get_text(" ", strip=True)) if brief_paragraph else ""
-    if not brief_text:
-        issues.append("The News Brief paragraph is missing.")
-    else:
-        sentence_count = len(
-            [part for part in re.split(r"(?<=[.!?])\s+", brief_text) if part.strip()]
+    title = normalize_text(str(lesson_data.get("title", "")))
+    overview = normalize_text(str(lesson_data.get("overview", "")))
+    topic = normalize_text(str(lesson_data.get("topic", "")))
+    if not title:
+        issues.append("The lesson title is missing.")
+    if not overview:
+        issues.append("The lesson overview is missing.")
+    if not topic:
+        issues.append("The lesson topic is missing.")
+
+    sentences = lesson_data.get("news_brief_sentences")
+    if not isinstance(sentences, list) or len(sentences) != level["sentence_count"]:
+        issues.append(
+            f"The News Brief must contain exactly {level['sentence_count']} sentences."
         )
-        if sentence_count != level["sentence_count"]:
-            issues.append(
-                f"The News Brief must contain exactly {level['sentence_count']} sentences."
-            )
+        sentences = []
 
-    vocab_terms = extract_vocab_terms(sections[1])
-    if len(vocab_terms) != level["vocabulary_count"]:
+    normalized_sentences = []
+    for sentence in sentences:
+        if not isinstance(sentence, str) or not normalize_text(sentence):
+            issues.append("Every News Brief sentence must be a non-empty string.")
+            continue
+        cleaned_sentence = normalize_text(sentence)
+        normalized_sentences.append(cleaned_sentence)
+        if not sentence_has_terminal_punctuation(cleaned_sentence):
+            issues.append("Every News Brief sentence must end with normal sentence punctuation.")
+
+    brief_text = " ".join(normalized_sentences)
+    normalized_brief = normalize_for_match(brief_text)
+
+    vocabulary = lesson_data.get("vocabulary")
+    if not isinstance(vocabulary, list) or len(vocabulary) != level["vocabulary_count"]:
         issues.append(
             f"The vocabulary section must contain exactly {level['vocabulary_count']} terms."
         )
+        vocabulary = []
 
-    normalized_brief = normalize_for_match(brief_text)
-    bold_terms = {
-        normalize_for_match(term)
-        for term in extract_bold_terms(brief_paragraph)
-        if normalize_for_match(term)
-    }
-    for term in vocab_terms:
+    vocab_terms = []
+    seen_terms = set()
+    for item in vocabulary:
+        if not isinstance(item, dict):
+            issues.append("Each vocabulary entry must be an object.")
+            continue
+        term = normalize_text(str(item.get("term", "")))
+        part_of_speech = normalize_text(str(item.get("part_of_speech", "")))
+        definition = normalize_text(str(item.get("definition", "")))
+        if not term or not part_of_speech or not definition:
+            issues.append("Each vocabulary entry must include a term, part_of_speech, and definition.")
+            continue
         normalized_term = normalize_for_match(term)
+        if normalized_term in seen_terms:
+            issues.append("Vocabulary terms must be unique.")
+        seen_terms.add(normalized_term)
+        vocab_terms.append(term)
         if normalized_term and normalized_term not in normalized_brief:
             issues.append(
                 f"The vocabulary term '{term}' must appear in the News Brief exactly as written."
             )
-        if normalized_term and normalized_term not in bold_terms:
-            issues.append(
-                f"The vocabulary term '{term}' must appear in bold in the News Brief."
-            )
 
-    grammar_paragraph = sections[1].find_all("p")
-    grammar_text = normalize_text(grammar_paragraph[-1].get_text(" ", strip=True)) if grammar_paragraph else ""
-    if "Example from the text:" not in grammar_text:
-        issues.append("The grammar explanation must include 'Example from the text:'.")
-    else:
-        quotes = extract_exact_quotes(grammar_text)
-        if not quotes:
-            issues.append("The grammar explanation must include an exact quoted example from the News Brief.")
-        elif brief_text and not any(normalize_text(quote) in brief_text for quote in quotes):
-            issues.append("The quoted grammar example must come from the News Brief.")
+    grammar = lesson_data.get("grammar")
+    if not isinstance(grammar, dict):
+        issues.append("The grammar section must be an object.")
+        grammar = {}
 
-    quiz_questions = lesson_tag.find_all("div", class_="quiz-question")
-    if len(quiz_questions) != level["quiz_count"]:
+    grammar_concept = normalize_text(str(grammar.get("concept", "")))
+    grammar_explanation = normalize_text(str(grammar.get("explanation", "")))
+    example_quote = normalize_text(str(grammar.get("example_quote", "")))
+    if not grammar_concept or not grammar_explanation or not example_quote:
+        issues.append("The grammar section must include concept, explanation, and example_quote.")
+    elif brief_text and normalize_text(example_quote) not in brief_text:
+        issues.append("The grammar example quote must come directly from the News Brief.")
+
+    quiz = lesson_data.get("quiz")
+    if not isinstance(quiz, list) or len(quiz) != level["quiz_count"]:
         issues.append(
             f"The quiz must contain exactly {level['quiz_count']} questions."
         )
-    for quiz_question in quiz_questions:
-        buttons = quiz_question.find_all("button")
-        if len(buttons) != 3:
+        quiz = []
+
+    for question in quiz:
+        if not isinstance(question, dict):
+            issues.append("Each quiz item must be an object.")
+            continue
+
+        prompt = normalize_text(str(question.get("question", "")))
+        options = question.get("options")
+        correct_index = question.get("correct_option_index")
+        feedback = question.get("option_feedback")
+
+        if not prompt:
+            issues.append("Each quiz item must include a question.")
+        if not isinstance(options, list) or len(options) != 3:
             issues.append("Each quiz question must have exactly three answer options.")
-            break
+            continue
+        if not isinstance(feedback, list) or len(feedback) != 3:
+            issues.append("Each quiz question must include three aligned feedback strings.")
+        if not isinstance(correct_index, int) or correct_index not in (0, 1, 2):
+            issues.append("Each quiz question must have a correct_option_index between 0 and 2.")
 
-    return issues
+        normalized_options = [normalize_text(str(option)) for option in options]
+        if len(set(normalize_for_match(option) for option in normalized_options if option)) != 3:
+            issues.append("Each quiz question must have three distinct answer options.")
+
+        for option in normalized_options:
+            if not option:
+                issues.append("Quiz answer options cannot be empty.")
+
+        if isinstance(feedback, list):
+            for explanation in feedback:
+                if not isinstance(explanation, str) or not normalize_text(explanation):
+                    issues.append("Quiz feedback explanations cannot be empty.")
+                    break
+
+    return list(dict.fromkeys(issues))
 
 
-def generate_lesson_html(model, news_text, level):
+def highlight_terms_in_text(text, terms):
+    placeholder_map = {}
+    result = text
+
+    for term in sorted({normalize_text(term) for term in terms if normalize_text(term)}, key=len, reverse=True):
+        pattern = re.compile(rf"(?<!\w){re.escape(term)}(?!\w)", re.IGNORECASE)
+
+        def replacer(match):
+            placeholder = f"__TERM_PLACEHOLDER_{len(placeholder_map)}__"
+            placeholder_map[placeholder] = f"<strong>{html.escape(match.group(0))}</strong>"
+            return placeholder
+
+        result = pattern.sub(replacer, result)
+
+    escaped = html.escape(result)
+    for placeholder, rendered in placeholder_map.items():
+        escaped = escaped.replace(placeholder, rendered)
+    return escaped
+
+
+def render_summary_html(title, release_dt):
+    date_text = release_dt.strftime("%B %d, %Y")
+    release_iso = (
+        release_dt.astimezone(timezone.utc)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+    return (
+        f'<summary class="lesson-date" data-release-iso="{release_iso}">'
+        f'<span class="lesson-date-prefix">📅</span> '
+        f'<span class="lesson-date-text">{html.escape(date_text)}</span> '
+        f'<span class="lesson-age">{html.escape(format_elapsed_text(release_dt))}</span> '
+        f'<span class="lesson-separator">-</span> '
+        f'<span class="lesson-title-text">{html.escape(title)}</span>'
+        f"</summary>"
+    )
+
+
+def render_quiz_question_html(question_number, item):
+    option_labels = ["a", "b", "c"]
+    buttons = []
+    options = item["options"]
+    feedback = item["option_feedback"]
+    correct_index = item["correct_option_index"]
+
+    for index, option_text in enumerate(options):
+        is_correct = index == correct_index
+        data_bg = "#e6ffe6" if is_correct else "#ffe6e6"
+        data_color = "#2e8b57" if is_correct else "#b22222"
+        feedback_prefix = "Correct: " if is_correct else "Incorrect: "
+        feedback_text = feedback_prefix + normalize_text(feedback[index])
+        buttons.append(
+            (
+                '<button type="button" '
+                'style="text-align: left; padding: 10px; border: 1px solid var(--button-border); '
+                'border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" '
+                f'data-bg="{data_bg}" data-color="{data_color}" '
+                f'data-feedback="{html.escape(feedback_text, quote=True)}" '
+                f'onclick="{SAFE_BUTTON_HANDLER}">'
+                f"{option_labels[index]}) {html.escape(normalize_text(option_text))}"
+                "</button>"
+            )
+        )
+
+    return (
+        '<div class="quiz-card">'
+        '<div class="quiz-question" style="margin-bottom: 25px;">'
+        f'<p style="font-weight: bold; color: var(--quiz-question); margin-bottom: 10px;">'
+        f"{question_number}. {html.escape(normalize_text(item['question']))}</p>"
+        '<div style="display: flex; flex-direction: column; gap: 8px;">'
+        + "".join(buttons)
+        + '</div>'
+        '<div class="feedback" role="status" aria-live="polite" '
+        'style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>'
+        "</div>"
+        "</div>"
+    )
+
+
+def render_lesson_html(lesson_data, level, release_dt):
+    lesson_key = lesson_key_from_release_dt(release_dt)
+    brief_sentences = [normalize_text(sentence) for sentence in lesson_data["news_brief_sentences"]]
+    vocab_terms = [normalize_text(item["term"]) for item in lesson_data["vocabulary"]]
+    brief_text = " ".join(brief_sentences)
+    highlighted_brief = highlight_terms_in_text(brief_text, vocab_terms)
+
+    vocab_lines = []
+    for index, item in enumerate(lesson_data["vocabulary"], start=1):
+        suffix = "<br/>" if index < len(lesson_data["vocabulary"]) else ""
+        vocab_lines.append(
+            f'<span class="vocab-term">{index}. {html.escape(normalize_text(item["term"]))} '
+            f'({html.escape(normalize_text(item["part_of_speech"]))}):</span> '
+            f'{html.escape(normalize_text(item["definition"]))}{suffix}'
+        )
+
+    grammar = lesson_data["grammar"]
+    grammar_html = (
+        f'<p><strong>{html.escape(level["grammar_label"])}: '
+        f'{html.escape(normalize_text(grammar["concept"]))}</strong><br/>'
+        f'{html.escape(normalize_text(grammar["explanation"]))}<br/>'
+        f'Example from the text: "{html.escape(normalize_text(grammar["example_quote"]))}"</p>'
+    )
+
+    quiz_html = "".join(
+        render_quiz_question_html(index, item)
+        for index, item in enumerate(lesson_data["quiz"], start=1)
+    )
+
+    return (
+        f'<details class="daily-lesson" data-lesson-key="{lesson_key}">'
+        f"{render_summary_html(normalize_text(lesson_data['title']), release_dt)}"
+        f'<div class="lesson-description">{html.escape(normalize_text(lesson_data["overview"]))}</div>'
+        '<div class="lesson-content">'
+        f'<div class="header"><h2>{html.escape(level["header_label"])}: '
+        f'{html.escape(normalize_text(lesson_data["topic"]))}</h2></div>'
+        '<div class="section">'
+        '<h2>I. The News Brief</h2>'
+        f"<p>{highlighted_brief}</p>"
+        "</div>"
+        '<div class="section">'
+        '<h2>II. Vocabulary &amp; Grammar Focus</h2>'
+        '<div class="vocab-box">'
+        + "".join(vocab_lines)
+        + "</div>"
+        + grammar_html
+        + "</div>"
+        '<div class="section">'
+        '<h2>III. Comprehension &amp; Mastery Quiz</h2>'
+        '<p><em>Click on an option to check your answer.</em></p>'
+        + quiz_html
+        + "</div>"
+        "</div>"
+        "</details>"
+    )
+
+
+def generate_lesson_html(client, news_item, level, release_dt):
     revision_feedback = None
     issues = []
 
     for attempt in range(MAX_GENERATION_ATTEMPTS):
-        response = model.generate_content(build_prompt(news_text, level, revision_feedback))
-        lesson_html = extract_lesson_html(response.text)
-        issues = validate_generated_lesson(lesson_html, level)
-        if not issues:
-            return lesson_html
+        response = client.models.generate_content(
+            model=MODEL_NAME,
+            contents=build_prompt(news_item, level, revision_feedback),
+            config={
+                "response_mime_type": "application/json",
+                "response_json_schema": build_response_schema(level),
+            },
+        )
+
+        try:
+            lesson_data = parse_lesson_response(response)
+        except (json.JSONDecodeError, ValueError) as exc:
+            issues = [f"The model response was not valid JSON: {exc}"]
+        else:
+            issues = validate_lesson_data(lesson_data, level)
+            if not issues:
+                return render_lesson_html(lesson_data, level, release_dt)
 
         issue_lines = "\n".join(f"- {issue}" for issue in issues)
         revision_feedback = (
@@ -481,7 +778,7 @@ def generate_lesson_html(model, news_text, level):
     )
 
 
-def update_level_page(file_path, new_lesson_html, release_dt):
+def update_level_page(file_path, new_lesson_html, default_release_dt=None):
     page_path = Path(file_path)
     if not page_path.exists():
         raise FileNotFoundError(f"{file_path} not found.")
@@ -499,34 +796,15 @@ def update_level_page(file_path, new_lesson_html, release_dt):
         snippet = new_lesson_html[:200].replace("\n", " ")
         raise RuntimeError(
             "Could not extract <details class='daily-lesson'> "
-            f"from the AI response for {file_path}. Snippet: {snippet}..."
+            f"from the rendered lesson for {file_path}. Snippet: {snippet}..."
         )
 
     empty_state = soup.find(id="empty-state")
     if empty_state:
         empty_state.decompose()
 
-    new_summary = new_lesson_tag.find("summary", class_="lesson-date")
-    new_summary_text = new_summary.get_text(" ", strip=True) if new_summary else None
-    if new_summary:
-        normalize_lesson_summary(new_summary, default_release_dt=release_dt)
-
-    for existing in list(container.find_all("details", class_="daily-lesson")):
-        existing_summary = existing.find("summary", class_="lesson-date")
-        if (
-            new_summary_text
-            and existing_summary
-            and existing_summary.get_text(" ", strip=True) == new_summary_text
-        ):
-            existing.decompose()
-
     container.insert(0, new_lesson_tag)
-
-    lessons = container.find_all("details", class_="daily-lesson")
-    for old_lesson in lessons[LESSON_LIMIT:]:
-        old_lesson.decompose()
-
-    refresh_all_lesson_summaries(soup)
+    refresh_page_markup(soup, default_release_dt=default_release_dt)
 
     with page_path.open("w", encoding="utf-8") as file:
         file.write(str(soup))
@@ -543,40 +821,46 @@ def refresh_existing_pages():
         with page_path.open("r", encoding="utf-8") as file:
             soup = BeautifulSoup(file, "html.parser")
 
-        refresh_all_lesson_summaries(soup)
+        refresh_page_markup(soup)
 
         with page_path.open("w", encoding="utf-8") as file:
             file.write(str(soup))
 
-        print(f"Refreshed summary metadata in {level['file_path']}.")
+        print(f"Refreshed lesson markup in {level['file_path']}.")
 
 
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--refresh-pages",
         "--refresh-summaries",
+        dest="refresh_pages",
         action="store_true",
-        help="Update lesson summary metadata and elapsed-time markup without generating new lessons.",
+        help="Normalize lesson markup, accessibility metadata, and dedupe archive entries without generating new lessons.",
     )
     return parser.parse_args()
 
 
 def main():
     args = parse_args()
-    if args.refresh_summaries:
+    if args.refresh_pages:
         refresh_existing_pages()
         return
 
     print("Fetching news...")
-    news = get_daily_news()
-    model = configure_gemini()
+    news_item = get_daily_news()
+    client = configure_gemini()
     release_dt = datetime.now(timezone.utc)
 
-    for level in LEVELS:
-        print(f"Generating {level['name'].lower()} lesson...")
-        lesson_html = generate_lesson_html(model, news, level)
-        print(f"Updating {level['file_path']}...")
-        update_level_page(level["file_path"], lesson_html, release_dt)
+    try:
+        for level in LEVELS:
+            print(f"Generating {level['name'].lower()} lesson...")
+            lesson_html = generate_lesson_html(client, news_item, level, release_dt)
+            print(f"Updating {level['file_path']}...")
+            update_level_page(level["file_path"], lesson_html, default_release_dt=release_dt)
+    finally:
+        if hasattr(client, "close"):
+            client.close()
 
     print("Finished updating all lesson pages.")
 

@@ -11,7 +11,7 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 ## Site Structure
 
 - `index.html`
-  The hub page. Learners choose Beginner, Intermediate, or Advanced from a red, white, and blue level selector.
+  The hub page. Learners choose Beginner, Intermediate, or Advanced from the level selector.
 
 - `beginner.html`
   The yellow beginner archive page for A1-A2 learners.
@@ -31,10 +31,16 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 ## Automation
 
 - `.github/workflows/cron.yml`
-  Runs the daily automation at `10:00 UTC` and supports manual runs with `workflow_dispatch`.
+  Runs the daily automation at `10:00 UTC`, supports manual runs with `workflow_dispatch`, installs pinned dependencies, and runs the test suite before publishing lesson updates.
 
 - `update_site.py`
-  Fetches the top BBC World News RSS item, sends it to Gemini, generates three CEFR-specific HTML lessons, and updates the three rolling archive pages.
+  Fetches the top BBC World News RSS item over HTTPS, requests structured JSON lesson data from Gemini, renders the HTML locally, sanitizes existing lesson markup, and updates the three rolling archive pages.
+
+- `requirements.txt`
+  Pins the runtime dependencies used by GitHub Actions.
+
+- `tests/test_update_site.py`
+  Covers lesson validation, summary parsing, duplicate-day replacement, and legacy markup cleanup.
 
 ## How the Daily Update Works
 
@@ -44,7 +50,7 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
    - one beginner lesson
    - one intermediate lesson
    - one advanced lesson
-4. The script inserts each lesson at the top of its matching page.
+4. The script validates the JSON lesson data, renders safe HTML from fixed templates, and replaces any same-day lesson instead of creating duplicates.
 5. Older lessons beyond the newest 7 are removed automatically.
 6. GitHub Actions commits the updated lesson pages back to the repository.
 
@@ -61,6 +67,12 @@ This updates:
 - `beginner.html`
 - `intermediate.html`
 - `advanced.html`
+
+To normalize existing lesson markup without calling Gemini:
+
+```bash
+python3 update_site.py --refresh-pages
+```
 
 ## Deployment Notes
 

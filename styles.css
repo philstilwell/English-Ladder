@@ -70,11 +70,13 @@ summary.lesson-date:focus-visible,
 }
 
 .hub-hero {
+    position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     gap: 28px;
-    overflow: hidden;
+    overflow: visible;
+    padding-top: 44px;
     background: linear-gradient(
         135deg,
         #fff3a6 0%,
@@ -89,6 +91,8 @@ summary.lesson-date:focus-visible,
 .hub-hero-copy {
     flex: 1 1 560px;
     min-width: 0;
+    position: relative;
+    z-index: 1;
 }
 
 .hub-hero-visual {
@@ -96,6 +100,9 @@ summary.lesson-date:focus-visible,
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    align-self: stretch;
+    margin-top: -58px;
+    margin-right: -6px;
 }
 
 .hub-hero-image {
@@ -461,14 +468,18 @@ summary.lesson-date:hover {
     .hub-hero {
         flex-direction: column;
         align-items: flex-start;
+        overflow: hidden;
+        padding-top: 30px;
     }
 
     .hub-hero-visual {
         align-self: center;
+        margin-top: -12px;
+        margin-right: 0;
     }
 
     .hub-hero-image {
-        height: 5cm;
+        height: 3.8cm;
     }
 
     .hub-grid {

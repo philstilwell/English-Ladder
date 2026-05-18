@@ -491,3 +491,122 @@ summary.lesson-date:hover {
         align-items: flex-start;
     }
 }
+
+@media (max-width: 560px) {
+    .page-shell {
+        padding: 14px 10px 28px;
+    }
+
+    .top-nav {
+        gap: 8px;
+        margin-bottom: 16px;
+        padding: 10px 12px;
+        border-radius: 14px;
+    }
+
+    .page-hero,
+    .hub-hero {
+        padding: 20px 18px;
+        margin-bottom: 18px;
+        border-radius: 20px;
+    }
+
+    .hub-hero {
+        gap: 16px;
+        padding-top: 24px;
+    }
+
+    .hub-hero-image {
+        height: 3.2cm;
+    }
+
+    .page-hero p,
+    .hub-hero p {
+        font-size: 1rem;
+    }
+
+    .index-container {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    #lesson-container {
+        margin-top: 14px;
+    }
+
+    .empty-state {
+        padding: 14px 16px;
+        border-radius: 14px;
+    }
+
+    details.daily-lesson {
+        padding: 12px;
+        margin-bottom: 12px;
+        border-radius: 15px;
+    }
+
+    summary.lesson-date {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .lesson-description {
+        margin-bottom: 10px;
+        font-size: 0.93rem;
+    }
+
+    .lesson-content {
+        padding-top: 16px;
+        margin-top: 8px;
+    }
+
+    .header {
+        padding: 14px 12px;
+        border-radius: 14px;
+    }
+
+    .section {
+        margin-bottom: 20px;
+        padding-left: 12px;
+        border-left-width: 4px;
+    }
+
+    .section h2 {
+        font-size: 1rem;
+    }
+
+    .vocab-box {
+        padding: 14px 12px;
+        margin: 14px 0;
+    }
+
+    .quiz-card {
+        padding: 14px 12px;
+        border-radius: 14px;
+    }
+
+    .quiz-question {
+        margin-bottom: 18px !important;
+    }
+
+    .hub-card {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .hub-card h2 {
+        margin: 12px 0 8px;
+        font-size: 1.5rem;
+    }
+
+    .hub-resource {
+        margin-top: 18px;
+        padding: 20px 18px;
+        border-radius: 18px;
+    }
+
+    .hub-resource-link {
+        margin-top: 14px;
+        padding: 11px 18px;
+    }
+}

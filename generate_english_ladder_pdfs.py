@@ -30,7 +30,7 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parent
 DETAIL_DIR = ROOT / "grammar-concepts"
-OUTPUT_DIR = ROOT / "output" / "pdf"
+OUTPUT_DIR = ROOT / "pdf"
 STUDENT_DIR = OUTPUT_DIR / "students"
 TEACHER_DIR = OUTPUT_DIR / "teachers"
 LADDER_IMAGE = ROOT / "English-Ladder.png"

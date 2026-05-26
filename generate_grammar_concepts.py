@@ -16,6 +16,9 @@ from bs4.element import NavigableString, Tag
 ROOT = Path(__file__).resolve().parent
 DETAIL_DIR = ROOT / "grammar-concepts"
 ASSET_DIR = ROOT / "assets" / "grammar-concepts"
+PDF_DIR = ROOT / "pdf"
+STUDENT_PDF_DIR = PDF_DIR / "students"
+TEACHER_PDF_DIR = PDF_DIR / "teachers"
 INDEX_URL = "https://stilwellfiles.wordpress.com/english-grammar-concepts/"
 
 
@@ -121,6 +124,10 @@ def clean_text(value: str) -> str:
 def clean_url(url: str) -> str:
     parts = urllib.parse.urlsplit(url)
     return urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+
+
+def slugify(text: str) -> str:
+    return re.sub(r"-{2,}", "-", re.sub(r"[^a-z0-9]+", "-", text.lower())).strip("-")
 
 
 def split_embedded_labels(line: str) -> list[tuple[str, str]]:
@@ -667,6 +674,13 @@ def render_focus_pills(sections: list[Section]) -> str:
     return f"<ul class=\"grammar-focus-list\">{inner}</ul>"
 
 
+def pdf_filenames(entry: ConceptEntry) -> tuple[str, str]:
+    title_slug = slugify(entry.title)
+    student_name = f"{Path(entry.slug).stem}-{title_slug}-student-workbook.pdf"
+    teacher_name = f"{Path(entry.slug).stem}-{title_slug}-teaching-guide.pdf"
+    return student_name, teacher_name
+
+
 def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None, next_entry: ConceptEntry | None) -> str:
     intro_html = "".join(render_paragraph(paragraph) for paragraph in entry.intro)
     practice_html = ""
@@ -697,6 +711,7 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         if next_entry
         else "<span></span>"
     )
+    student_pdf_name, teacher_pdf_name = pdf_filenames(entry)
 
     body = textwrap.dedent(
         f"""\
@@ -722,6 +737,10 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         <p class="eyebrow">{html.escape(entry.label)}</p>
         <h1>{html.escape(entry.title)}</h1>
         <p>This rebuilt lesson keeps the original concept image, tightens the structure, and turns the explanation into a clearer self-study guide.</p>
+        <div class="grammar-download-links">
+        <a class="grammar-download-link" href="../pdf/students/{html.escape(student_pdf_name)}">Student PDF</a>
+        <a class="grammar-download-link grammar-download-link-secondary" href="../pdf/teachers/{html.escape(teacher_pdf_name)}">Teaching Guide PDF</a>
+        </div>
         {render_focus_pills(entry.sections)}
         </div>
         <div class="grammar-hero-art">

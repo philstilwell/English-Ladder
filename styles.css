@@ -655,6 +655,41 @@ body.lightbox-open {
     color: #6a4315;
 }
 
+.grammar-download-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0 0;
+}
+
+.grammar-download-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(138, 75, 8, 0.18);
+    background: linear-gradient(135deg, #b45309, #92400e);
+    box-shadow: 0 14px 24px rgba(146, 64, 14, 0.18);
+    color: #ffffff;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+}
+
+.grammar-download-link:hover,
+.grammar-download-link:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 18px 28px rgba(146, 64, 14, 0.22);
+}
+
+.grammar-download-link-secondary {
+    color: #6a4315;
+    background: rgba(255, 255, 255, 0.78);
+}
+
 .grammar-layout {
     display: grid;
     gap: 18px;
@@ -972,6 +1007,14 @@ body.lightbox-open {
 
     .grammar-overview-item {
         display: block;
+    }
+
+    .grammar-download-links {
+        width: 100%;
+    }
+
+    .grammar-download-link {
+        width: 100%;
     }
 
     .grammar-thumb {

@@ -341,8 +341,13 @@ def render_list(items: list[str]) -> str:
     return f"<ul>{inner}</ul>"
 
 
-def render_section(section: Section) -> str:
-    parts = [f"<section class=\"grammar-section\"><h2>{html.escape(section.title)}</h2>"]
+def section_anchor_id(section: Section, index: int) -> str:
+    base = slugify(section.title) or "section"
+    return f"section-{index + 1:02d}-{base}"
+
+
+def render_section(section: Section, section_id: str) -> str:
+    parts = [f"<section class=\"grammar-section\" id=\"{html.escape(section_id)}\"><h2>{html.escape(section.title)}</h2>"]
     for block in section.blocks:
         if block["type"] == "subheading":
             parts.append(f"<h3>{html.escape(block['text'])}</h3>")
@@ -664,12 +669,16 @@ def render_showcase(showcase_title: str | None, blocks: list[ShowcaseBlock]) -> 
 
 
 def render_focus_pills(sections: list[Section]) -> str:
-    pills = sections[:6]
+    pills = list(enumerate(sections[:6]))
     if not pills:
         return ""
     inner = "".join(
-        f"<li>{html.escape(section.title)}</li>"
-        for section in pills
+        (
+            "<li>"
+            f"<a href=\"#{html.escape(section_anchor_id(section, index))}\">{html.escape(section.title)}</a>"
+            "</li>"
+        )
+        for index, section in pills
     )
     return f"<ul class=\"grammar-focus-list\">{inner}</ul>"
 
@@ -683,6 +692,10 @@ def pdf_filenames(entry: ConceptEntry) -> tuple[str, str]:
 
 def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None, next_entry: ConceptEntry | None) -> str:
     intro_html = "".join(render_paragraph(paragraph) for paragraph in entry.intro)
+    rendered_sections = "".join(
+        render_section(section, section_anchor_id(section, index))
+        for index, section in enumerate(entry.sections)
+    )
     practice_html = ""
     if entry.practice_items:
         practice_intro = (
@@ -760,7 +773,7 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         <h2>Core Idea</h2>
         {intro_html}
         </section>
-        {''.join(render_section(section) for section in entry.sections)}
+        {rendered_sections}
         {practice_html}
         {showcase_html}
         <section class="grammar-support grammar-footer-nav">

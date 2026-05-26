@@ -273,9 +273,15 @@ def parse_concept(path: Path) -> ConceptData:
         practice_intro = normalize_text(intro_node.get_text(" ", strip=True)) if intro_node else ""
         for card in practice.select(".practice-card"):
             label_node = card.select_one(".practice-item-label")
-            prompt_node = card.find("p", recursive=False)
-            answer_node = card.select_one(".practice-answer > p")
-            if not label_node or not prompt_node or not answer_node:
+            prompt_lines = [
+                normalize_text(node.get_text(" ", strip=True))
+                for node in card.find_all("p", recursive=False)
+            ]
+            correct_nodes = [
+                normalize_text(node.get_text(" ", strip=True))
+                for node in card.select(".practice-feedback-item-correct")
+            ]
+            if not label_node or not prompt_lines or not correct_nodes:
                 continue
             label_text = normalize_text(label_node.get_text(" ", strip=True))
             match = re.search(r"(\d+)", label_text)
@@ -292,9 +298,9 @@ def parse_concept(path: Path) -> ConceptData:
                 PracticeItem(
                     number=number,
                     label=label_text,
-                    prompt=normalize_text(prompt_node.get_text(" ", strip=True)),
+                    prompt=normalize_text(" ".join(prompt_lines)),
                     options=[option for option in options if option],
-                    answer=normalize_text(answer_node.get_text(" ", strip=True)),
+                    answer=normalize_text(" ".join(correct_nodes)),
                     notes=[note for note in notes if note],
                 )
             )

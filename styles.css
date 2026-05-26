@@ -862,6 +862,47 @@ body.lightbox-open {
     margin-bottom: 6px;
 }
 
+.practice-feedback {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.practice-feedback-label {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.practice-feedback-label-correct {
+    color: #3f6a55;
+}
+
+.practice-feedback-label-incorrect {
+    color: #8b5b55;
+}
+
+.practice-feedback-list {
+    margin: 0;
+    padding-left: 18px;
+}
+
+.practice-feedback-item {
+    margin: 0 0 4px;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.practice-feedback-item-correct {
+    color: #3f6a55;
+}
+
+.practice-feedback-item-incorrect {
+    color: #8b5b55;
+}
+
 .practice-notes p {
     margin-top: 6px;
     color: var(--muted);

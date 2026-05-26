@@ -35,6 +35,10 @@ LABEL_LINES = {
     "Incorrect:",
 }
 
+LABEL_PATTERN = re.compile(
+    r"(Answer:|Explanation:|Feedback:|Alternative:|Correct:|Incorrect:)"
+)
+
 
 @dataclass
 class PracticeItem:
@@ -117,6 +121,21 @@ def clean_text(value: str) -> str:
 def clean_url(url: str) -> str:
     parts = urllib.parse.urlsplit(url)
     return urllib.parse.urlunsplit((parts.scheme, parts.netloc, parts.path, "", ""))
+
+
+def split_embedded_labels(line: str) -> list[tuple[str, str]]:
+    parts = LABEL_PATTERN.split(line)
+    segments: list[tuple[str, str]] = []
+    for part in parts:
+        if not part:
+            continue
+        if part in LABEL_LINES:
+            segments.append(("label", part[:-1]))
+            continue
+        cleaned = clean_text(part)
+        if cleaned:
+            segments.append(("text", cleaned))
+    return segments
 
 
 def find_first_columns(content: Tag) -> Tag:
@@ -254,23 +273,23 @@ def parse_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | N
             mode = "prompt"
 
             for line in chunk:
-                if line in LABEL_LINES:
-                    label = line[:-1]
-                    if line == "Answer:":
-                        mode = "answer"
-                    else:
-                        note_sections.append((label, []))
-                        mode = "notes"
-                    continue
+                for kind, value in split_embedded_labels(line):
+                    if kind == "label":
+                        if value == "Answer":
+                            mode = "answer"
+                        else:
+                            note_sections.append((value, []))
+                            mode = "notes"
+                        continue
 
-                if mode == "prompt":
-                    prompt_lines.append(line)
-                elif mode == "answer":
-                    answer_lines.append(line)
-                else:
-                    if not note_sections:
-                        note_sections.append(("Note", []))
-                    note_sections[-1][1].append(line)
+                    if mode == "prompt":
+                        prompt_lines.append(value)
+                    elif mode == "answer":
+                        answer_lines.append(value)
+                    else:
+                        if not note_sections:
+                            note_sections.append(("Note", []))
+                        note_sections[-1][1].append(value)
 
             practice_items.append(
                 PracticeItem(
@@ -332,12 +351,199 @@ def line_is_option(line: str) -> bool:
     return bool(re.match(r"^(?:[A-Da-d][).]|[ivxIVX]+[).])\s", line))
 
 
+def split_prompt_lines(lines: list[str]) -> tuple[list[str], list[str]]:
+    option_lines = [line for line in lines if line_is_option(line)]
+    stem_lines = [line for line in lines if line not in option_lines]
+    return stem_lines, option_lines
+
+
+def option_prefix(line: str) -> str | None:
+    match = re.match(r"^\s*([A-Za-z0-9ivxIVX]+[).])\s+", line)
+    return match.group(1).lower() if match else None
+
+
+def strip_option_prefix(line: str) -> str:
+    return re.sub(r"^\s*[A-Za-z0-9ivxIVX]+[).]\s+", "", line).strip()
+
+
+def normalize_feedback_text(line: str) -> str:
+    lowered = line.lower().strip()
+    lowered = lowered.replace('"', "").replace("'", "")
+    lowered = re.sub(r"^[^a-z0-9]+|[^a-z0-9]+$", "", lowered)
+    lowered = re.sub(r"\s+", " ", lowered)
+    return lowered
+
+
+def parse_answer_text(answer_lines: list[str]) -> tuple[str, list[tuple[str, list[str]]]]:
+    answer_text = clean_text(" ".join(answer_lines))
+    if not answer_text:
+        return "", []
+
+    match = re.match(
+        r"^The correct (?:answer|sentence|choice|response) is\s+(.+?)(?:\s*\.\s+|(?=\s*[\"“])|$)(.*)$",
+        answer_text,
+        flags=re.IGNORECASE,
+    )
+    if match:
+        correct_text = clean_text(match.group(1).strip(" ."))
+        remainder = clean_text(match.group(2))
+        extra_notes = [("Explanation", [remainder])] if remainder else []
+        return correct_text, extra_notes
+
+    return answer_text, []
+
+
+def split_answer_fragments(answer_text: str, slot_count: int) -> list[str]:
+    base_text = strip_option_prefix(answer_text)
+    if slot_count <= 1:
+        return [base_text] if base_text else []
+
+    fragments = [
+        fragment.strip(" .")
+        for fragment in re.split(r"\s*[,;/]\s*", base_text)
+        if fragment.strip(" .")
+    ]
+    if len(fragments) == slot_count:
+        return fragments
+
+    return [base_text] if base_text else []
+
+
+def build_completed_answers(stem_lines: list[str], answer_text: str) -> list[str]:
+    if not stem_lines or not answer_text:
+        return []
+
+    blank_pattern = re.compile(r"_{2,}")
+    prepared_lines = [
+        re.sub(r"(_{2,})\s*\([^)]+\)", r"\1", line)
+        for line in stem_lines
+    ]
+    blank_count = sum(len(blank_pattern.findall(line)) for line in prepared_lines)
+    choice_pattern = re.compile(r"(?:\([^)]*\)\s*)+")
+    choice_count = 0 if blank_count else sum(len(choice_pattern.findall(line)) for line in prepared_lines)
+    slot_count = blank_count or choice_count
+    if not slot_count:
+        return []
+
+    fragments = split_answer_fragments(answer_text, slot_count)
+    if len(fragments) != slot_count:
+        return []
+
+    fragment_index = 0
+    completed_lines: list[str] = []
+
+    for line in prepared_lines:
+        if blank_count:
+            def replace_blank(match: re.Match[str]) -> str:
+                nonlocal fragment_index
+                replacement = fragments[fragment_index]
+                fragment_index += 1
+                return replacement
+
+            completed = blank_pattern.sub(replace_blank, line)
+        else:
+            def replace_choice(match: re.Match[str]) -> str:
+                nonlocal fragment_index
+                replacement = fragments[fragment_index]
+                fragment_index += 1
+                return replacement
+
+            completed = choice_pattern.sub(replace_choice, line, count=1)
+
+        completed_lines.append(clean_text(completed))
+
+    if fragment_index != slot_count:
+        return []
+
+    combined = clean_text(" ".join(line for line in completed_lines if line))
+    return [combined] if combined else []
+
+
+def find_matching_option(answer_text: str, option_lines: list[str]) -> str | None:
+    if not answer_text or not option_lines:
+        return None
+
+    answer_label = option_prefix(answer_text)
+    answer_body = normalize_feedback_text(strip_option_prefix(answer_text))
+
+    for option in option_lines:
+        if answer_label and option_prefix(option) == answer_label:
+            return option
+
+    for option in option_lines:
+        option_body = normalize_feedback_text(strip_option_prefix(option))
+        if answer_body and option_body == answer_body:
+            return option
+
+    for option in option_lines:
+        option_body = normalize_feedback_text(strip_option_prefix(option))
+        if answer_body and (answer_body in option_body or option_body in answer_body):
+            return option
+
+    return None
+
+
+def derive_correct_answers(item: PracticeItem) -> list[str]:
+    stem_lines, option_lines = split_prompt_lines(item.prompt_lines)
+    answer_text, _ = parse_answer_text(item.answer_lines)
+    matched_option = find_matching_option(answer_text, option_lines)
+    if matched_option:
+        return [matched_option]
+
+    completed = build_completed_answers(stem_lines, answer_text)
+    if completed:
+        return completed
+
+    return [strip_option_prefix(answer_text)] if answer_text else []
+
+
+def extract_quoted_terms(text: str) -> list[str]:
+    terms = re.findall(r"[\"“]([^\"”]+)[\"”]", text)
+    return [clean_text(term) for term in terms if clean_text(term)]
+
+
+def derive_incorrect_answers(item: PracticeItem, correct_answers: list[str]) -> list[str]:
+    _, option_lines = split_prompt_lines(item.prompt_lines)
+    answer_text, extra_notes = parse_answer_text(item.answer_lines)
+    note_sections = item.note_sections + extra_notes
+    incorrect: list[str] = []
+    matched_option = find_matching_option(answer_text, option_lines)
+
+    if option_lines:
+        incorrect.extend(option for option in option_lines if option != matched_option)
+
+    correct_context = " ".join(correct_answers + [answer_text]).lower()
+
+    for label, lines in note_sections:
+        if label.lower() == "incorrect":
+            incorrect.extend(lines)
+        for line in lines:
+            for term in extract_quoted_terms(line):
+                normalized_term = normalize_feedback_text(term)
+                if not normalized_term:
+                    continue
+                if normalized_term in normalize_feedback_text(correct_context):
+                    continue
+                incorrect.append(term)
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for line in incorrect:
+        cleaned = clean_text(line)
+        normalized = normalize_feedback_text(strip_option_prefix(cleaned))
+        if not cleaned or not normalized or normalized in seen:
+            continue
+        seen.add(normalized)
+        deduped.append(cleaned)
+
+    return deduped
+
+
 def render_prompt(lines: list[str]) -> str:
     if not lines:
         return "<p>Review the concept and then reveal the answer.</p>"
 
-    option_lines = [line for line in lines if line_is_option(line)]
-    stem_lines = [line for line in lines if line not in option_lines]
+    stem_lines, option_lines = split_prompt_lines(lines)
     rendered: list[str] = []
 
     if stem_lines:
@@ -351,15 +557,54 @@ def render_prompt(lines: list[str]) -> str:
     return "".join(rendered)
 
 
-def render_notes(note_sections: list[tuple[str, list[str]]]) -> str:
-    if not note_sections:
+def render_notes(note_sections: list[tuple[str, list[str]]], extra_notes: list[tuple[str, list[str]]] | None = None) -> str:
+    combined_sections = list(note_sections)
+    if extra_notes:
+        combined_sections.extend(extra_notes)
+
+    filtered_sections = [
+        (label, lines)
+        for label, lines in combined_sections
+        if lines and label.lower() not in {"correct", "incorrect"}
+    ]
+
+    if not filtered_sections:
         return ""
 
     parts = ["<div class=\"practice-notes\">"]
-    for label, lines in note_sections:
-        if not lines:
-            continue
+    for label, lines in filtered_sections:
         parts.append(f"<p><strong>{html.escape(label)}:</strong> {html.escape(' '.join(lines))}</p>")
+    parts.append("</div>")
+    return "".join(parts)
+
+
+def render_feedback_block(item: PracticeItem) -> str:
+    answer_text, extra_notes = parse_answer_text(item.answer_lines)
+    correct_answers = derive_correct_answers(item)
+    incorrect_answers = derive_incorrect_answers(item, correct_answers)
+
+    if not correct_answers and not incorrect_answers:
+        answer_html = html.escape(answer_text) if answer_text else "See explanation below."
+        return f"<p>{answer_html}</p>{render_notes(item.note_sections, extra_notes)}"
+
+    parts = ["<div class=\"practice-feedback\">"]
+
+    if correct_answers:
+        parts.append("<p class=\"practice-feedback-label practice-feedback-label-correct\">Correct answer</p>")
+        parts.append("<ul class=\"practice-feedback-list practice-feedback-list-correct\">")
+        for line in correct_answers:
+            parts.append(f"<li class=\"practice-feedback-item practice-feedback-item-correct\">{html.escape(line)}</li>")
+        parts.append("</ul>")
+
+    if incorrect_answers:
+        parts.append("<p class=\"practice-feedback-label practice-feedback-label-incorrect\">Incorrect answer")
+        parts.append("s</p>" if len(incorrect_answers) != 1 else "</p>")
+        parts.append("<ul class=\"practice-feedback-list practice-feedback-list-incorrect\">")
+        for line in incorrect_answers:
+            parts.append(f"<li class=\"practice-feedback-item practice-feedback-item-incorrect\">{html.escape(line)}</li>")
+        parts.append("</ul>")
+
+    parts.append(render_notes(item.note_sections, extra_notes))
     parts.append("</div>")
     return "".join(parts)
 
@@ -367,7 +612,6 @@ def render_notes(note_sections: list[tuple[str, list[str]]]) -> str:
 def render_practice_items(items: list[PracticeItem]) -> str:
     cards = []
     for item in items:
-        answer_html = " ".join(html.escape(line) for line in item.answer_lines) or "See note."
         cards.append(
             textwrap.dedent(
                 f"""
@@ -376,8 +620,7 @@ def render_practice_items(items: list[PracticeItem]) -> str:
                 {render_prompt(item.prompt_lines)}
                 <details class="practice-answer">
                 <summary>Reveal answer</summary>
-                <p>{answer_html}</p>
-                {render_notes(item.note_sections)}
+                {render_feedback_block(item)}
                 </details>
                 </article>
                 """

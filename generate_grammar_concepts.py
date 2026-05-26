@@ -458,6 +458,9 @@ def build_completed_answers(stem_lines: list[str], answer_text: str) -> list[str
                 nonlocal fragment_index
                 replacement = fragments[fragment_index]
                 fragment_index += 1
+                next_char = match.string[match.end():match.end() + 1]
+                if next_char and not next_char.isspace() and next_char not in ",.;:!?)]}":
+                    return f"{replacement} "
                 return replacement
 
             completed = choice_pattern.sub(replace_choice, line, count=1)

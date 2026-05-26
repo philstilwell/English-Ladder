@@ -42,16 +42,16 @@ MARGIN_BOTTOM = 0.58 * inch
 CONTENT_WIDTH = PAGE_WIDTH - (2 * MARGIN_X)
 
 PALETTE = {
-    "paper": colors.HexColor("#FBF7EF"),
-    "cream": colors.HexColor("#FFF4DE"),
-    "cream_alt": colors.HexColor("#F7EAD0"),
+    "paper": colors.HexColor("#FCF8F3"),
+    "cream": colors.HexColor("#FBE8DF"),
+    "cream_alt": colors.HexColor("#F6D7CC"),
     "white": colors.HexColor("#FFFFFF"),
     "ink": colors.HexColor("#2E2519"),
-    "muted": colors.HexColor("#6A573D"),
-    "accent": colors.HexColor("#B96A12"),
-    "accent_dark": colors.HexColor("#8A4B08"),
+    "muted": colors.HexColor("#725646"),
+    "accent": colors.HexColor("#CE5D3B"),
+    "accent_dark": colors.HexColor("#9B3D28"),
     "sage": colors.HexColor("#3A7B62"),
-    "line": colors.HexColor("#D9C4A0"),
+    "line": colors.HexColor("#D9B8AA"),
 }
 
 
@@ -333,8 +333,8 @@ def build_styles():
             name="CoverTitle",
             parent=styles["Heading1"],
             fontName="Helvetica-Bold",
-            fontSize=24,
-            leading=28,
+            fontSize=25,
+            leading=29,
             textColor=PALETTE["ink"],
             spaceAfter=10,
         )
@@ -344,8 +344,8 @@ def build_styles():
             name="CoverSubhead",
             parent=styles["BodyText"],
             fontName="Helvetica-Bold",
-            fontSize=10.5,
-            leading=13,
+            fontSize=10.8,
+            leading=13.4,
             textColor=PALETTE["accent_dark"],
             spaceAfter=12,
         )
@@ -355,8 +355,8 @@ def build_styles():
             name="BodyCopy",
             parent=styles["BodyText"],
             fontName="Helvetica",
-            fontSize=10.1,
-            leading=15.2,
+            fontSize=10.4,
+            leading=15.8,
             textColor=PALETTE["ink"],
             spaceAfter=7,
         )
@@ -366,8 +366,8 @@ def build_styles():
             name="BodyMuted",
             parent=styles["BodyText"],
             fontName="Helvetica",
-            fontSize=9.4,
-            leading=13,
+            fontSize=9.5,
+            leading=13.7,
             textColor=PALETTE["muted"],
             spaceAfter=6,
         )
@@ -377,8 +377,8 @@ def build_styles():
             name="SectionTitle",
             parent=styles["Heading2"],
             fontName="Helvetica-Bold",
-            fontSize=15,
-            leading=18,
+            fontSize=16.8,
+            leading=20.4,
             textColor=PALETTE["accent_dark"],
             spaceBefore=14,
             spaceAfter=8,
@@ -389,8 +389,8 @@ def build_styles():
             name="Subheading",
             parent=styles["Heading3"],
             fontName="Helvetica-Bold",
-            fontSize=10.6,
-            leading=13.2,
+            fontSize=11.1,
+            leading=14,
             textColor=PALETTE["ink"],
             spaceBefore=6,
             spaceAfter=4,
@@ -401,8 +401,8 @@ def build_styles():
             name="CardHeading",
             parent=styles["Heading3"],
             fontName="Helvetica-Bold",
-            fontSize=11.2,
-            leading=14,
+            fontSize=11.8,
+            leading=14.8,
             textColor=PALETTE["accent_dark"],
             spaceAfter=6,
         )
@@ -412,8 +412,8 @@ def build_styles():
             name="TinyCaps",
             parent=styles["BodyText"],
             fontName="Helvetica-Bold",
-            fontSize=8.2,
-            leading=10,
+            fontSize=8.4,
+            leading=10.2,
             textColor=PALETTE["accent_dark"],
             spaceAfter=4,
             alignment=TA_LEFT,
@@ -424,8 +424,8 @@ def build_styles():
             name="PracticePrompt",
             parent=styles["BodyText"],
             fontName="Helvetica-Bold",
-            fontSize=10,
-            leading=14.2,
+            fontSize=10.3,
+            leading=14.8,
             textColor=PALETTE["ink"],
             spaceAfter=8,
         )
@@ -435,8 +435,8 @@ def build_styles():
             name="OptionLine",
             parent=styles["BodyText"],
             fontName="Helvetica",
-            fontSize=9.1,
-            leading=12.3,
+            fontSize=9.3,
+            leading=12.8,
             textColor=PALETTE["ink"],
             spaceAfter=4,
         )
@@ -446,10 +446,9 @@ def build_styles():
             name="GuideList",
             parent=styles["BodyText"],
             fontName="Helvetica",
-            fontSize=9.6,
-            leading=14,
+            fontSize=9.9,
+            leading=15.2,
             textColor=PALETTE["ink"],
-            leftIndent=10,
             spaceAfter=4,
         )
     )
@@ -458,8 +457,8 @@ def build_styles():
             name="AnswerKey",
             parent=styles["BodyText"],
             fontName="Helvetica-Bold",
-            fontSize=9.2,
-            leading=12,
+            fontSize=9.6,
+            leading=13,
             textColor=PALETTE["ink"],
         )
     )
@@ -468,10 +467,42 @@ def build_styles():
             name="DialogueLine",
             parent=styles["BodyText"],
             fontName="Helvetica",
-            fontSize=9.5,
-            leading=13.5,
+            fontSize=9.7,
+            leading=14.2,
             textColor=PALETTE["ink"],
             spaceAfter=4,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="PanelTitle",
+            parent=styles["Heading2"],
+            fontName="Helvetica-Bold",
+            fontSize=14.2,
+            leading=17.4,
+            textColor=PALETTE["accent_dark"],
+            spaceAfter=8,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="AnswerBody",
+            parent=styles["BodyText"],
+            fontName="Helvetica",
+            fontSize=10.3,
+            leading=15,
+            textColor=PALETTE["ink"],
+            spaceAfter=0,
+        )
+    )
+    styles.add(
+        ParagraphStyle(
+            name="StageLabel",
+            parent=styles["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=9.6,
+            leading=12,
+            textColor=PALETTE["accent_dark"],
         )
     )
     return styles
@@ -523,7 +554,7 @@ def card(flowables: list, width: float, background=PALETTE["white"], border=PALE
         TableStyle(
             [
                 ("BACKGROUND", (0, 0), (-1, -1), background),
-                ("BOX", (0, 0), (-1, -1), 1.0, border),
+                ("BOX", (0, 0), (-1, -1), 1.15, border),
                 ("INNERGRID", (0, 0), (-1, -1), 0, colors.white),
                 ("LEFTPADDING", (0, 0), (-1, -1), padding),
                 ("RIGHTPADDING", (0, 0), (-1, -1), padding),
@@ -535,18 +566,59 @@ def card(flowables: list, width: float, background=PALETTE["white"], border=PALE
     return table
 
 
-def bullet_list(items: list[str], style: ParagraphStyle) -> ListFlowable:
-    entries = [ListItem(Paragraph(item, style), leftIndent=0) for item in items]
-    return ListFlowable(
-        entries,
-        bulletType="bullet",
-        bulletFontName="Helvetica-Bold",
-        bulletFontSize=6,
-        bulletOffsetY=2,
-        leftIndent=12,
-        spaceBefore=2,
-        spaceAfter=6,
+def bullet_list(items: list[str], style: ParagraphStyle, width: float = CONTENT_WIDTH) -> Table:
+    bullet_style = ParagraphStyle(
+        name=f"BulletMark-{id(style)}-{int(width)}",
+        parent=style,
+        fontName="Helvetica-Bold",
+        fontSize=11,
+        leading=13,
+        textColor=PALETTE["accent_dark"],
+        spaceAfter=0,
     )
+    rows = [
+        [Paragraph("&bull;", bullet_style), Paragraph(item, style)]
+        for item in items
+    ]
+    table = Table(rows, colWidths=[0.18 * inch, max(0.2 * inch, width - (0.18 * inch))], hAlign="LEFT")
+    table.setStyle(
+        TableStyle(
+            [
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                ("LEFTPADDING", (0, 0), (-1, -1), 0),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+                ("TOPPADDING", (0, 0), (-1, -1), 2),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 4),
+            ]
+        )
+    )
+    return table
+
+
+def story_panel(title: str, flowables: list, styles, width: float = CONTENT_WIDTH, background=colors.HexColor("#FFFDF9")) -> Table:
+    panel_items = [
+        Paragraph(title, styles["PanelTitle"]),
+        HRFlowable(width="100%", color=PALETTE["line"], thickness=0.85, spaceBefore=0, spaceAfter=10),
+        *flowables,
+    ]
+    return card(panel_items, width, background=background, border=PALETTE["line"], padding=14)
+
+
+def section_banner(title: str, styles, width: float = CONTENT_WIDTH, background=colors.HexColor("#FFF5EF")) -> Table:
+    banner = Table([[Paragraph(title, styles["PanelTitle"])]], colWidths=[width])
+    banner.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), background),
+                ("BOX", (0, 0), (-1, -1), 1.0, PALETTE["line"]),
+                ("LEFTPADDING", (0, 0), (-1, -1), 12),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 12),
+                ("TOPPADDING", (0, 0), (-1, -1), 8),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 8),
+            ]
+        )
+    )
+    return banner
 
 
 def rule_summary(section: Section) -> list[tuple[str, str]]:
@@ -563,9 +635,9 @@ def rule_summary(section: Section) -> list[tuple[str, str]]:
 
 
 def section_story(section: Section, styles) -> list:
-    story = [
-        Paragraph(section.title, styles["SectionTitle"]),
-        HRFlowable(width="100%", color=PALETTE["line"], thickness=0.7, spaceBefore=0, spaceAfter=10),
+    story: list = [
+        section_banner(section.title, styles, background=colors.HexColor("#FFF7F1")),
+        Spacer(1, 0.08 * inch),
     ]
     for block in section.blocks:
         if block.kind == "subheading" and block.text:
@@ -573,27 +645,28 @@ def section_story(section: Section, styles) -> list:
         elif block.kind == "paragraph" and block.text:
             story.append(Paragraph(block.text, styles["BodyCopy"]))
         elif block.kind == "list" and block.items:
-            story.append(bullet_list(block.items, styles["BodyCopy"]))
-    story.append(Spacer(1, 0.08 * inch))
+            story.append(bullet_list(block.items, styles["BodyCopy"], CONTENT_WIDTH - 12))
+    story.append(Spacer(1, 0.12 * inch))
     return story
 
 
 def support_story(section: SupportSection, styles) -> list:
-    story = [
-        Paragraph(section.title, styles["SectionTitle"]),
-        HRFlowable(width="100%", color=PALETTE["line"], thickness=0.7, spaceBefore=0, spaceAfter=10),
+    story: list = [
+        section_banner(section.title, styles, background=colors.HexColor("#FFF4ED")),
+        Spacer(1, 0.08 * inch),
     ]
     for block in section.blocks:
         if block.kind == "paragraph" and block.text:
             story.append(Paragraph(block.text, styles["BodyCopy"]))
         elif block.kind == "list" and block.items:
-            story.append(bullet_list(block.items, styles["BodyCopy"]))
+            story.append(bullet_list(block.items, styles["BodyCopy"], CONTENT_WIDTH - 12))
     for showcase in section.cards:
         card_items = [Paragraph(showcase.title, styles["CardHeading"])]
         for paragraph in showcase.paragraphs:
             card_items.append(Paragraph(paragraph, styles["DialogueLine"]))
-        story.append(card(card_items, CONTENT_WIDTH, background=colors.HexColor("#FFFDF8"), border=PALETTE["line"], padding=12))
+        story.append(card(card_items, CONTENT_WIDTH, background=colors.HexColor("#FFFFFF"), border=PALETTE["line"], padding=12))
         story.append(Spacer(1, 0.1 * inch))
+    story.append(Spacer(1, 0.12 * inch))
     return story
 
 
@@ -738,11 +811,30 @@ def answer_review_story(items: list[PracticeItem], styles, include_notes: bool =
         return [Paragraph("No practice items were available on this page.", styles["BodyCopy"])]
 
     story: list = []
-    for item in items:
-        story.append(Paragraph(f"<b>{item.label}</b> {item.answer}", styles["BodyCopy"]))
+    for index, item in enumerate(items):
+        answer_flow = [Paragraph(item.answer, styles["AnswerBody"])]
         if include_notes and item.notes:
-            story.append(Paragraph(item.notes[0], styles["BodyMuted"]))
-        story.append(HRFlowable(width="100%", color=PALETTE["line"], thickness=0.55, spaceBefore=2, spaceAfter=8))
+            answer_flow.append(Spacer(1, 0.04 * inch))
+            answer_flow.append(Paragraph(item.notes[0], styles["BodyMuted"]))
+        row = Table(
+            [[pill_table(item.label.upper(), width_hint=1.08 * inch), answer_flow]],
+            colWidths=[1.2 * inch, CONTENT_WIDTH - 1.2 * inch],
+        )
+        row.setStyle(
+            TableStyle(
+                [
+                    ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FFFDF9") if index % 2 == 0 else colors.HexColor("#FFF8F2")),
+                    ("BOX", (0, 0), (-1, -1), 1.0, PALETTE["line"]),
+                    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+                    ("LEFTPADDING", (0, 0), (-1, -1), 12),
+                    ("RIGHTPADDING", (0, 0), (-1, -1), 12),
+                    ("TOPPADDING", (0, 0), (-1, -1), 10),
+                    ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
+                ]
+            )
+        )
+        story.append(row)
+        story.append(Spacer(1, 0.09 * inch))
     return story
 
 
@@ -771,8 +863,10 @@ def draw_page(canvas, doc, footer_label: str, cover: bool = False):
         canvas.setStrokeColor(PALETTE["line"])
         canvas.line(MARGIN_X, 30, PAGE_WIDTH - MARGIN_X, 30)
 
-        ladder_width = 0.22 * inch
-        ladder_height = ladder_width * (582 / 167)
+        ladder_source_width, ladder_source_height = image_size(LADDER_IMAGE)
+        scale = min((0.44 * inch) / ladder_source_width, (0.72 * inch) / ladder_source_height)
+        ladder_width = ladder_source_width * scale
+        ladder_height = ladder_source_height * scale
         canvas.drawImage(
             str(LADDER_IMAGE),
             PAGE_WIDTH - MARGIN_X - ladder_width,
@@ -803,8 +897,8 @@ def build_cover_story(data: ConceptData, styles, edition_label: str, intro_text:
         Paragraph(intro_text, styles["BodyCopy"]),
     ]
 
-    ladder = fitted_image(LADDER_IMAGE, 1.15 * inch, 4.8 * inch)
-    hero = Table([[title_block, ladder]], colWidths=[5.55 * inch, 1.05 * inch])
+    ladder = fitted_image(LADDER_IMAGE, 1.55 * inch, 3.6 * inch)
+    hero = Table([[title_block, ladder]], colWidths=[5.05 * inch, 1.55 * inch])
     hero.setStyle(
         TableStyle(
             [
@@ -859,9 +953,8 @@ def build_student_story(data: ConceptData, styles) -> list:
     )
     story.append(PageBreak())
 
-    story.append(Paragraph("Core Idea", styles["SectionTitle"]))
     core_card_items = [Paragraph(paragraph, styles["BodyCopy"]) for paragraph in data.core_idea]
-    story.append(card(core_card_items, CONTENT_WIDTH, background=colors.HexColor("#FFFCF4"), border=PALETTE["line"], padding=14))
+    story.append(story_panel("Core Idea", core_card_items, styles, background=colors.HexColor("#FFFBF7")))
     story.append(Spacer(1, 0.18 * inch))
 
     rules = rule_summary(data.sections[0]) if data.sections else []
@@ -989,38 +1082,54 @@ def build_teacher_story(data: ConceptData, styles) -> list:
             ]
         )
     )
-    story.append(Paragraph("At a Glance", styles["SectionTitle"]))
-    story.append(overview)
+    story.append(story_panel("At a Glance", [overview], styles, background=colors.HexColor("#FFFDF9")))
     story.append(Spacer(1, 0.2 * inch))
 
-    story.append(Paragraph("Suggested Lesson Flow", styles["SectionTitle"]))
+    flow_rows = []
     for stage, text in build_lesson_arc(data):
-        story.append(Paragraph(stage, styles["Subheading"]))
-        story.append(Paragraph(text, styles["BodyCopy"]))
-
-    story.append(Paragraph("Likely Learner Errors", styles["SectionTitle"]))
-    story.append(card([bullet_list(build_error_items(data), styles["GuideList"])], CONTENT_WIDTH, background=colors.HexColor("#FFFDF8"), border=PALETTE["line"], padding=12))
+        flow_rows.append(
+            [
+                Paragraph(stage, styles["StageLabel"]),
+                Paragraph(text, styles["BodyCopy"]),
+            ]
+        )
+    flow_table = Table(flow_rows, colWidths=[1.25 * inch, CONTENT_WIDTH - 1.25 * inch - 28])
+    flow_table.setStyle(
+        TableStyle(
+            [
+                ("BACKGROUND", (0, 0), (-1, -1), colors.HexColor("#FFFDF9")),
+                ("BOX", (0, 0), (-1, -1), 1.0, PALETTE["line"]),
+                ("INNERGRID", (0, 0), (-1, -1), 0.7, PALETTE["line"]),
+                ("LEFTPADDING", (0, 0), (-1, -1), 10),
+                ("RIGHTPADDING", (0, 0), (-1, -1), 10),
+                ("TOPPADDING", (0, 0), (-1, -1), 9),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 9),
+                ("VALIGN", (0, 0), (-1, -1), "TOP"),
+            ]
+        )
+    )
+    story.append(story_panel("Suggested Lesson Flow", [flow_table], styles, background=colors.HexColor("#FFF8F3")))
     story.append(Spacer(1, 0.18 * inch))
 
-    story.append(Paragraph("Differentiation and Delivery Notes", styles["SectionTitle"]))
-    story.append(card([bullet_list(build_support_items(data), styles["GuideList"])], CONTENT_WIDTH, background=colors.HexColor("#FFFDF8"), border=PALETTE["line"], padding=12))
+    story.append(story_panel("Likely Learner Errors", [bullet_list(build_error_items(data), styles["GuideList"], CONTENT_WIDTH - 32)], styles, background=colors.HexColor("#FFFDF8")))
     story.append(Spacer(1, 0.18 * inch))
 
-    story.append(Paragraph("Model Language from the Concept Sheet", styles["SectionTitle"]))
+    story.append(story_panel("Differentiation and Delivery Notes", [bullet_list(build_support_items(data), styles["GuideList"], CONTENT_WIDTH - 32)], styles, background=colors.HexColor("#FFF8F3")))
+    story.append(Spacer(1, 0.18 * inch))
+
     model_examples = extract_examples(data)
     if model_examples:
-        story.append(card([bullet_list(model_examples, styles["GuideList"])], CONTENT_WIDTH, background=PALETTE["white"], border=PALETTE["line"], padding=12))
+        story.append(story_panel("Model Language from the Concept Sheet", [bullet_list(model_examples, styles["GuideList"], CONTENT_WIDTH - 32)], styles, background=PALETTE["white"]))
 
     if data.support_sections:
         story.append(Spacer(1, 0.18 * inch))
-        story.append(Paragraph("Dialogue or Showcase Ideas", styles["SectionTitle"]))
         showcase_points = []
         for support in data.support_sections:
             if support.cards:
                 showcase_points.extend(card.title for card in support.cards[:4])
         showcase_points = [point for point in showcase_points if point]
         if showcase_points:
-            story.append(card([bullet_list(showcase_points[:6], styles["GuideList"])], CONTENT_WIDTH, background=colors.HexColor("#FFFDF8"), border=PALETTE["line"], padding=12))
+            story.append(story_panel("Dialogue or Showcase Ideas", [bullet_list(showcase_points[:6], styles["GuideList"], CONTENT_WIDTH - 32)], styles, background=colors.HexColor("#FFFDF8")))
 
     story.append(PageBreak())
     story.append(Paragraph("Answer Key", styles["SectionTitle"]))
@@ -1030,8 +1139,7 @@ def build_teacher_story(data: ConceptData, styles) -> list:
     feedback_cues = build_feedback_cues(data)
     if feedback_cues:
         story.append(Spacer(1, 0.18 * inch))
-        story.append(Paragraph("Feedback Cues", styles["SectionTitle"]))
-        story.append(card([bullet_list(feedback_cues, styles["GuideList"])], CONTENT_WIDTH, background=colors.HexColor("#FFFDF8"), border=PALETTE["line"], padding=12))
+        story.append(story_panel("Feedback Cues", [bullet_list(feedback_cues, styles["GuideList"], CONTENT_WIDTH - 32)], styles, background=colors.HexColor("#FFFDF8")))
     return story
 
 

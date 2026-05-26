@@ -17,6 +17,10 @@ on:
     - cron: '0 10 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: daily-esl-lesson-generator-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -25,7 +29,30 @@ jobs:
       
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        id: checkout
+        uses: actions/checkout@v6
+        continue-on-error: true
+
+      - name: Fallback checkout
+        if: steps.checkout.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          echo "actions/checkout failed; attempting manual checkout fallback."
+          find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+          git init .
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          for attempt in 1 2 3; do
+            echo "Manual checkout attempt ${attempt}..."
+            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch --no-tags --depth=1 origin "${GITHUB_SHA}" \
+              && git checkout --force -B "${GITHUB_REF_NAME}" FETCH_HEAD; then
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Manual checkout fallback failed after 3 attempts." >&2
+          exit 1
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -48,9 +75,15 @@ jobs:
         run: python update_site.py
 
       - name: Commit updated lesson pages
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           git add beginner.html intermediate.html advanced.html
-          git commit -m "Auto-update daily lessons [skip ci]" || echo "No changes to commit"
-          git push
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Auto-update daily lessons [skip ci]"
+          git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"

@@ -464,6 +464,312 @@ summary.lesson-date:hover {
     --quiz-question: #1f7a4a;
 }
 
+.theme-grammar-index,
+.theme-grammar-detail {
+    --page-bg: #fffdf8;
+    --page-bg-alt: #f4efe3;
+    --page-glow: rgba(180, 83, 9, 0.12);
+    --surface: rgba(255, 255, 255, 0.95);
+    --surface-alt: #fbf4e7;
+    --text: #2f2517;
+    --muted: #6e5a41;
+    --accent: #c27c1d;
+    --accent-strong: #8a4b08;
+    --border: rgba(194, 124, 29, 0.22);
+    --shadow: rgba(102, 59, 13, 0.12);
+    --nav-bg: rgba(255, 251, 244, 0.88);
+    --hero-start: #fff4da;
+    --hero-end: #f6dfb5;
+    --quiz-card: #ffffff;
+    --button-border: #d9b985;
+    --quiz-question: #8a4b08;
+    overflow-x: hidden;
+}
+
+.grammar-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    padding: 30px;
+    margin-bottom: 24px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.82), transparent 36%),
+        linear-gradient(135deg, var(--hero-start), var(--hero-end));
+    box-shadow: 0 18px 42px var(--shadow);
+    overflow: hidden;
+}
+
+.grammar-hero-copy {
+    flex: 1 1 520px;
+    min-width: 0;
+}
+
+.grammar-hero-copy h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    line-height: 1.08;
+    color: #3a2811;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.grammar-hero-copy > p {
+    margin: 0;
+    max-width: 760px;
+    color: #5e4830;
+}
+
+.grammar-detail-hero .grammar-hero-copy > p {
+    max-width: 620px;
+}
+
+.grammar-hero-art {
+    flex: 0 0 auto;
+}
+
+.grammar-hero-image {
+    display: block;
+    width: min(100%, 360px);
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 20px;
+    box-shadow: 0 18px 36px rgba(102, 59, 13, 0.16);
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.grammar-stat-list,
+.grammar-focus-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+}
+
+.grammar-stat-list li,
+.grammar-focus-list li {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.74);
+    border: 1px solid rgba(138, 75, 8, 0.12);
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #6a4315;
+}
+
+.grammar-layout {
+    display: grid;
+    gap: 18px;
+}
+
+.grammar-overview-card,
+.grammar-section,
+.grammar-practice,
+.grammar-support {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 24px;
+    box-shadow: 0 18px 32px var(--shadow);
+}
+
+.grammar-overview-card h2,
+.grammar-section h2,
+.grammar-practice h2,
+.grammar-support h2 {
+    margin: 0 0 12px;
+    color: var(--accent-strong);
+    font-size: 1.35rem;
+}
+
+.grammar-section h3,
+.showcase-card h3,
+.practice-card h3 {
+    margin: 18px 0 10px;
+    color: #5a370d;
+    font-size: 1.05rem;
+}
+
+.grammar-section h3:first-of-type,
+.showcase-card h3:first-of-type,
+.practice-card h3:first-of-type {
+    margin-top: 0;
+}
+
+.grammar-section p,
+.grammar-overview-card p,
+.grammar-practice p,
+.grammar-support p,
+.showcase-card p,
+.practice-card p {
+    margin: 0 0 12px;
+}
+
+.grammar-section p:last-child,
+.grammar-overview-card p:last-child,
+.grammar-practice p:last-child,
+.grammar-support p:last-child,
+.showcase-card p:last-child,
+.practice-card p:last-child {
+    margin-bottom: 0;
+}
+
+.grammar-section ul,
+.practice-options {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.grammar-overview-list {
+    display: grid;
+    gap: 18px;
+}
+
+.grammar-overview-item {
+    display: grid;
+    grid-template-columns: minmax(180px, 230px) minmax(0, 1fr);
+    gap: 22px;
+    align-items: center;
+    padding: 22px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 18px 32px var(--shadow);
+    overflow: hidden;
+}
+
+.grammar-thumb {
+    display: block;
+    text-decoration: none;
+}
+
+.grammar-thumb img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+    box-shadow: 0 14px 28px rgba(102, 59, 13, 0.12);
+    background: #ffffff;
+}
+
+.grammar-overview-label {
+    margin: 0 0 10px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+}
+
+.grammar-overview-copy h2 {
+    margin: 0 0 10px;
+    font-size: clamp(1.4rem, 2.2vw, 2rem);
+    line-height: 1.16;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.grammar-overview-copy h2 a {
+    text-decoration: none;
+}
+
+.grammar-overview-copy h2 a:hover {
+    text-decoration: underline;
+}
+
+.grammar-overview-copy p:last-of-type {
+    color: var(--muted);
+}
+
+.grammar-cta {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 11px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    background: linear-gradient(135deg, #b45309, #92400e);
+    box-shadow: 0 12px 22px rgba(146, 64, 14, 0.22);
+}
+
+.practice-grid,
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.practice-card,
+.showcase-card {
+    height: 100%;
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(194, 124, 29, 0.18);
+    background: var(--surface-alt);
+}
+
+.practice-card h3 {
+    margin-bottom: 12px;
+}
+
+.practice-answer {
+    margin-top: 14px;
+    border-top: 1px dashed rgba(138, 75, 8, 0.25);
+    padding-top: 14px;
+}
+
+.practice-answer summary {
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--accent-strong);
+}
+
+.practice-answer[open] summary {
+    margin-bottom: 10px;
+}
+
+.practice-notes p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.grammar-page-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    font-weight: 700;
+}
+
+.grammar-page-links a {
+    text-decoration: none;
+}
+
+.grammar-page-links a:hover {
+    text-decoration: underline;
+}
+
+.grammar-resource {
+    background: linear-gradient(135deg, rgba(255, 249, 240, 0.96), rgba(253, 240, 213, 0.96));
+    border-color: rgba(194, 124, 29, 0.35);
+    box-shadow: 0 18px 32px rgba(146, 64, 14, 0.12);
+}
+
+.grammar-resource h2,
+.grammar-resource p {
+    color: #4d2e0a;
+}
+
+.grammar-resource-link {
+    background: linear-gradient(135deg, #b45309, #92400e);
+    box-shadow: 0 14px 24px rgba(146, 64, 14, 0.24);
+}
+
 @media (max-width: 800px) {
     .hub-hero {
         flex-direction: column;
@@ -484,6 +790,34 @@ summary.lesson-date:hover {
 
     .hub-grid {
         grid-template-columns: 1fr;
+    }
+
+    .grammar-hero,
+    .grammar-overview-item {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grammar-overview-item {
+        display: block;
+    }
+
+    .grammar-thumb {
+        display: block;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 16px;
+    }
+
+    .grammar-hero-art {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .grammar-hero-image {
+        width: min(100%, 320px);
     }
 
     .top-nav {
@@ -608,5 +942,59 @@ summary.lesson-date:hover {
     .hub-resource-link {
         margin-top: 14px;
         padding: 11px 18px;
+    }
+
+    .grammar-hero,
+    .grammar-overview-item,
+    .grammar-overview-card,
+    .grammar-section,
+    .grammar-practice,
+    .grammar-support {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .grammar-hero {
+        gap: 18px;
+    }
+
+    .grammar-hero-copy h1 {
+        font-size: clamp(1.55rem, 7.5vw, 2.15rem);
+    }
+
+    .grammar-stat-list,
+    .grammar-focus-list {
+        gap: 8px;
+    }
+
+    .grammar-stat-list li,
+    .grammar-focus-list li {
+        padding: 7px 11px;
+        font-size: 0.84rem;
+    }
+
+    .grammar-overview-item {
+        gap: 16px;
+    }
+
+    .grammar-overview-copy h2 {
+        font-size: 1.18rem;
+        line-height: 1.12;
+    }
+
+    .practice-grid,
+    .showcase-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .practice-card,
+    .showcase-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .grammar-page-links {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }

@@ -701,28 +701,39 @@ summary.lesson-date:hover {
 .showcase-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    gap: 10px;
 }
 
 .practice-card,
 .showcase-card {
     height: 100%;
-    padding: 14px 15px;
+    padding: 12px 13px;
     border-radius: 18px;
-    border: 1px solid rgba(194, 124, 29, 0.24);
-    background: #fffdf9;
-    box-shadow: 0 10px 18px rgba(102, 59, 13, 0.08);
+    border: 1px solid rgba(194, 124, 29, 0.3);
+    background: linear-gradient(180deg, #fffefb 0%, #fff8ed 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.92),
+        0 8px 16px rgba(102, 59, 13, 0.06);
 }
 
-.practice-card h3 {
+.practice-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.practice-item-label {
     display: inline-flex;
     align-items: center;
-    margin: 0 0 10px;
-    padding: 5px 10px;
+    align-self: flex-start;
+    width: max-content;
+    margin: 0;
+    padding: 5px 10px 4px;
     border-radius: 999px;
-    background: rgba(194, 124, 29, 0.1);
+    border: 1px solid rgba(194, 124, 29, 0.22);
+    background: #fff3dd;
     color: var(--accent-strong);
-    font-size: 0.84rem;
+    font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.08em;
     line-height: 1;
@@ -731,31 +742,35 @@ summary.lesson-date:hover {
 
 .practice-card p,
 .practice-card li {
-    font-size: 0.96rem;
-    line-height: 1.5;
+    font-size: 0.94rem;
+    line-height: 1.42;
+}
+
+.practice-card > p {
+    margin: 0;
 }
 
 .practice-answer {
-    margin-top: 10px;
+    margin-top: auto;
     border-top: 1px dashed rgba(138, 75, 8, 0.25);
-    padding-top: 10px;
+    padding-top: 8px;
 }
 
 .practice-answer summary {
     cursor: pointer;
     font-weight: 800;
     color: var(--accent-strong);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
 }
 
 .practice-answer[open] summary {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
 .practice-notes p {
-    margin-top: 8px;
+    margin-top: 6px;
     color: var(--muted);
-    font-size: 0.92rem;
+    font-size: 0.88rem;
 }
 
 .grammar-page-links {
@@ -1009,7 +1024,7 @@ summary.lesson-date:hover {
 
     .practice-card,
     .showcase-card {
-        padding: 12px;
+        padding: 11px;
         border-radius: 14px;
     }
 

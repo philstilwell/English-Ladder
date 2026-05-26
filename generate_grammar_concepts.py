@@ -372,7 +372,7 @@ def render_practice_items(items: list[PracticeItem]) -> str:
             textwrap.dedent(
                 f"""
                 <article class="practice-card">
-                <h3>Item {item.number:02d}</h3>
+                <h3 class="practice-item-label">Item {item.number:02d}</h3>
                 {render_prompt(item.prompt_lines)}
                 <details class="practice-answer">
                 <summary>Reveal answer</summary>

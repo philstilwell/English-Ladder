@@ -465,6 +465,7 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         <title>English Ladder | {html.escape(entry.title)}</title>
         <link href="../favicon.png" rel="icon" type="image/png">
         <link href="../styles.css" rel="stylesheet">
+        <script defer src="../app.js"></script>
         {CLOUDFLARE_SNIPPET}
         </head>
         <body class="theme-grammar-detail">
@@ -481,7 +482,15 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         {render_focus_pills(entry.sections)}
         </div>
         <div class="grammar-hero-art">
+        <button
+        aria-label="Open larger version of the concept image"
+        class="grammar-image-trigger"
+        data-lightbox-alt="{html.escape(entry.title)} concept image"
+        data-lightbox-src="../assets/grammar-concepts/{html.escape(entry.image_name)}"
+        type="button">
         <img alt="{html.escape(entry.title)} concept image" class="grammar-hero-image" src="../assets/grammar-concepts/{html.escape(entry.image_name)}">
+        <span class="grammar-image-hint">Click to enlarge</span>
+        </button>
         </div>
         </section>
         <div class="grammar-layout">
@@ -498,6 +507,13 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         {next_link}
         </div>
         </section>
+        </div>
+        <div class="image-lightbox" hidden>
+        <button aria-label="Close enlarged image" class="image-lightbox-backdrop" data-lightbox-close type="button"></button>
+        <div aria-label="Enlarged concept image" aria-modal="true" class="image-lightbox-dialog" role="dialog">
+        <button aria-label="Close enlarged image" class="image-lightbox-close" data-lightbox-close type="button">Close</button>
+        <img alt="" class="image-lightbox-image" src="">
+        </div>
         </div>
         </main>
         </body>

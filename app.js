@@ -113,5 +113,54 @@ function updateLessonAges() {
     });
 }
 
+function setupConceptImageLightbox() {
+    const trigger = document.querySelector(".grammar-image-trigger");
+    const lightbox = document.querySelector(".image-lightbox");
+
+    if (!trigger || !lightbox) {
+        return;
+    }
+
+    const image = lightbox.querySelector(".image-lightbox-image");
+    const closeElements = lightbox.querySelectorAll("[data-lightbox-close]");
+    const closeButton = lightbox.querySelector(".image-lightbox-close");
+
+    function closeLightbox() {
+        lightbox.hidden = true;
+        document.body.classList.remove("lightbox-open");
+        if (image) {
+            image.removeAttribute("src");
+        }
+        document.removeEventListener("keydown", handleKeydown);
+        trigger.focus();
+    }
+
+    function handleKeydown(event) {
+        if (event.key === "Escape") {
+            closeLightbox();
+        }
+    }
+
+    trigger.addEventListener("click", () => {
+        if (!image) {
+            return;
+        }
+
+        image.src = trigger.dataset.lightboxSrc || "";
+        image.alt = trigger.dataset.lightboxAlt || trigger.querySelector("img")?.alt || "";
+        lightbox.hidden = false;
+        document.body.classList.add("lightbox-open");
+        document.addEventListener("keydown", handleKeydown);
+        if (closeButton) {
+            closeButton.focus();
+        }
+    });
+
+    closeElements.forEach((element) => {
+        element.addEventListener("click", closeLightbox);
+    });
+}
+
 updateLessonAges();
 window.setInterval(updateLessonAges, 300000);
+setupConceptImageLightbox();

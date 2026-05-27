@@ -900,14 +900,14 @@ body.lightbox-open {
     align-self: flex-start;
     width: max-content;
     margin: 0;
-    padding: 5px 10px 4px;
+    padding: 3px 8px 2px;
     border-radius: 999px;
-    border: 2px solid rgba(194, 124, 29, 0.24);
+    border: 1.5px solid rgba(194, 124, 29, 0.24);
     background: #fff3dd;
     color: var(--accent-strong);
-    font-size: 0.78rem;
+    font-size: 0.66rem;
     font-weight: 800;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     line-height: 1;
     text-transform: uppercase;
 }

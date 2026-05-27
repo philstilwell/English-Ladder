@@ -42,6 +42,13 @@ LABEL_PATTERN = re.compile(
     r"(Answer:|Explanation:|Feedback:|Alternative:|Correct:|Incorrect:)"
 )
 
+INLINE_CHILD_MARKER_PATTERN = re.compile(
+    r"(?=\b(?:Examples?|Example Sentences?|Similar Sentences?|Similar Sentence|"
+    r"Ways to say it|Formal Alternative|Formal|Informal|Alternative|"
+    r"Important|Rule|Explanation|Context)\s*:)",
+    flags=re.IGNORECASE,
+)
+
 
 @dataclass
 class PracticeItem:
@@ -205,20 +212,165 @@ def parse_sections(column: Tag) -> tuple[str, list[str], list[Section]]:
             continue
 
         if block.name in {"ul", "ol"}:
-            items = [
-                clean_text(item.get_text(" ", strip=True))
-                for item in block.find_all("li", recursive=False)
-            ]
-            items = [item for item in items if item]
+            items = parse_list_items(block)
             if not items:
                 continue
             if current_section is None:
                 current_section = Section(title="Key Points", blocks=[])
                 sections.append(current_section)
                 seen_section = True
-            current_section.blocks.append({"type": "list", "items": items})
+            list_block = {
+                "type": "list",
+                "items": group_list_items(items),
+            }
+            if (
+                current_section.blocks
+                and current_section.blocks[-1]["type"] == "list"
+                and should_merge_list_blocks(current_section.blocks[-1], list_block)
+            ):
+                current_section.blocks[-1]["items"][-1]["children"].extend(list_block["items"])
+                current_section.blocks[-1]["items"] = group_list_items(current_section.blocks[-1]["items"])
+                if (
+                    len(current_section.blocks) >= 2
+                    and current_section.blocks[-2]["type"] == "list"
+                    and should_concatenate_list_blocks(current_section.blocks[-2], current_section.blocks[-1])
+                ):
+                    current_section.blocks[-2]["items"].extend(current_section.blocks[-1]["items"])
+                    current_section.blocks.pop()
+            elif (
+                current_section.blocks
+                and current_section.blocks[-1]["type"] == "list"
+                and should_concatenate_list_blocks(current_section.blocks[-1], list_block)
+            ):
+                current_section.blocks[-1]["items"].extend(list_block["items"])
+            else:
+                current_section.blocks.append(list_block)
 
     return title, intro, sections
+
+
+def direct_list_text(item: Tag) -> tuple[str, bool]:
+    parts: list[str] = []
+    saw_strong = False
+    for child in item.contents:
+        if isinstance(child, Tag) and child.name in {"ul", "ol"}:
+            continue
+        if isinstance(child, NavigableString):
+            parts.append(str(child))
+            continue
+        if isinstance(child, Tag):
+            if child.name in {"strong", "b"}:
+                saw_strong = True
+            parts.append(child.get_text(" ", strip=False))
+    return clean_text("".join(parts)), saw_strong
+
+
+def split_inline_children(text: str) -> tuple[str, list[dict[str, object]]]:
+    parts = [clean_text(part) for part in INLINE_CHILD_MARKER_PATTERN.split(text) if clean_text(part)]
+    if len(parts) <= 1:
+        return text, []
+    return parts[0], [{"text": part, "children": [], "strong": False} for part in parts[1:]]
+
+
+def parse_list_items(block: Tag) -> list[dict[str, object]]:
+    items: list[dict[str, object]] = []
+    for item in block.find_all("li", recursive=False):
+        text, saw_strong = direct_list_text(item)
+        if not text:
+            continue
+        text, inline_children = split_inline_children(text)
+        children: list[dict[str, object]] = inline_children
+        for nested in item.find_all(["ul", "ol"], recursive=False):
+            children.extend(parse_list_items(nested))
+        items.append(
+            {
+                "text": text,
+                "children": group_list_items(children) if children else [],
+                "strong": saw_strong,
+            }
+        )
+    return items
+
+
+def is_focus_label(item: dict[str, object]) -> bool:
+    text = clean_text(str(item["text"]))
+    if not text:
+        return False
+    if text.endswith(":"):
+        return True
+    if "/" in text and len(re.findall(r"[A-Za-z0-9]+", text)) <= 6:
+        return True
+    if item.get("strong") and len(text.split()) <= 5 and not re.search(r"[.!?]", text):
+        return True
+    return False
+
+
+def looks_like_example_item(item: dict[str, object]) -> bool:
+    text = clean_text(str(item["text"]))
+    if not text:
+        return False
+    if text.startswith(("“", "\"")):
+        return True
+    if re.match(
+        r"^(?:Examples?|Example Sentences?|Similar Sentences?|Similar Sentence|"
+        r"Ways to say it|Formal Alternative|Formal|Informal|Alternative|"
+        r"Important|Rule|Explanation|Context)\s*:",
+        text,
+        flags=re.IGNORECASE,
+    ):
+        return True
+    return bool(re.search(r"[.!?)]", text) and len(text.split()) >= 5)
+
+
+def is_explicit_example_item(item: dict[str, object]) -> bool:
+    text = clean_text(str(item["text"]))
+    return bool(re.match(r"^(?:Examples?|Example Sentences?)\s*:", text, flags=re.IGNORECASE))
+
+
+def group_list_items(items: list[dict[str, object]]) -> list[dict[str, object]]:
+    grouped: list[dict[str, object]] = []
+    current_parent: dict[str, object] | None = None
+
+    for item in items:
+        if item["children"]:
+            item["children"] = group_list_items(item["children"])
+
+        if is_focus_label(item):
+            grouped.append(item)
+            current_parent = item
+            continue
+
+        if current_parent and is_explicit_example_item(item):
+            current_parent["children"].append(item)
+            continue
+
+        if current_parent and looks_like_example_item(item):
+            current_parent["children"].append(item)
+            continue
+
+        grouped.append(item)
+        current_parent = None
+
+    return grouped
+
+
+def should_merge_list_blocks(previous_block: dict[str, object], new_block: dict[str, object]) -> bool:
+    previous_items = previous_block["items"]
+    new_items = new_block["items"]
+    if len(previous_items) != 1 or not new_items:
+        return False
+    anchor = previous_items[-1]
+    if anchor["children"] or not is_focus_label(anchor):
+        return False
+    return all(looks_like_example_item(item) or item["children"] for item in new_items)
+
+
+def should_concatenate_list_blocks(previous_block: dict[str, object], new_block: dict[str, object]) -> bool:
+    previous_items = previous_block["items"]
+    new_items = new_block["items"]
+    if not previous_items or not new_items:
+        return False
+    return all(item["children"] for item in previous_items + new_items)
 
 
 def extract_number(label: str) -> int:
@@ -336,9 +488,28 @@ def render_paragraph(text: str) -> str:
     return f"<p>{html.escape(text)}</p>"
 
 
-def render_list(items: list[str]) -> str:
-    inner = "".join(f"<li>{html.escape(item)}</li>" for item in items)
-    return f"<ul>{inner}</ul>"
+def render_list(items: list[dict[str, object]], depth: int = 0) -> str:
+    tag_name = "ul"
+    rendered_items: list[str] = []
+
+    for item in items:
+        text = html.escape(str(item["text"]))
+        item_classes = []
+        if item["children"]:
+            item_classes.append("grammar-list-parent")
+        label_classes = []
+        if depth == 0 and (item["children"] or item.get("strong") or is_focus_label(item)):
+            label_classes.append("grammar-list-label")
+        class_attr = f' class="{" ".join(item_classes)}"' if item_classes else ""
+        if label_classes:
+            label_html = f'<span class="{" ".join(label_classes)}">{text}</span>'
+        else:
+            label_html = text
+
+        child_html = render_list(item["children"], depth=depth + 1) if item["children"] else ""
+        rendered_items.append(f"<li{class_attr}>{label_html}{child_html}</li>")
+
+    return f"<{tag_name}>{''.join(rendered_items)}</{tag_name}>"
 
 
 def section_anchor_id(section: Section, index: int) -> str:

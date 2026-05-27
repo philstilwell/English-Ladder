@@ -774,6 +774,27 @@ body.lightbox-open {
     padding-left: 20px;
 }
 
+.grammar-section li {
+    margin: 0 0 10px;
+}
+
+.grammar-section li:last-child {
+    margin-bottom: 0;
+}
+
+.grammar-section ul ul,
+.grammar-section ol ul,
+.grammar-section ul ol,
+.grammar-section ol ol {
+    margin-top: 10px;
+    padding-left: 24px;
+}
+
+.grammar-list-label {
+    font-weight: 800;
+    color: #4a2d0a;
+}
+
 .grammar-overview-list {
     display: grid;
     gap: 18px;

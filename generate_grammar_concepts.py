@@ -29,6 +29,10 @@ CLOUDFLARE_SNIPPET = (
     "<!-- End Cloudflare Web Analytics -->"
 )
 
+PLACEHOLDER_ANSWER_LINES = {
+    "See explanation below.",
+}
+
 LABEL_LINES = {
     "Answer:",
     "Explanation:",
@@ -41,6 +45,10 @@ LABEL_LINES = {
 LABEL_PATTERN = re.compile(
     r"(Answer:|Explanation:|Feedback:|Alternative:|Correct:|Incorrect:)"
 )
+ITEM_MARKER_RE = re.compile(r"^#?\s*(\d+)\s*:\s*")
+OPTION_PREFIX_RE = re.compile(
+    r"^\s*(?:\(([A-Za-z0-9ivxIVX]+)\)|([A-Za-z0-9ivxIVX]+)[).])\s+(.*)$"
+)
 
 INLINE_CHILD_MARKER_PATTERN = re.compile(
     r"(?=\b(?:Examples?|Example Sentences?|Similar Sentences?|Similar Sentence|"
@@ -48,6 +56,14 @@ INLINE_CHILD_MARKER_PATTERN = re.compile(
     r"Important|Rule|Explanation|Context)\s*:)",
     flags=re.IGNORECASE,
 )
+PRACTICE_ANSWER_OVERRIDES: dict[int, dict[int, list[str]]] = {
+    30: {
+        10: [
+            "c) I’m studying French in order to read Voltaire.",
+            "Feedback: Option c) is correct. “In order to” is followed directly by a verb, not by “that” or a subject. Options a), b), and d) are grammatically incorrect.",
+        ],
+    },
+}
 
 
 @dataclass
@@ -150,6 +166,55 @@ def split_embedded_labels(line: str) -> list[tuple[str, str]]:
         if cleaned:
             segments.append(("text", cleaned))
     return segments
+
+
+def extract_text_lines(node: Tag, skip_summary: bool = False) -> list[str]:
+    soup = BeautifulSoup(str(node), "html.parser")
+    clone = soup.find(node.name)
+    if clone is None:
+        return []
+
+    if skip_summary:
+        for summary in clone.find_all("summary"):
+            summary.extract()
+
+    for br in clone.find_all("br"):
+        br.replace_with("\n")
+
+    text = clone.get_text("\n", strip=True)
+    return [clean_text(line) for line in text.splitlines() if clean_text(line)]
+
+
+def extract_text_lines_without_details(node: Tag) -> list[str]:
+    soup = BeautifulSoup(str(node), "html.parser")
+    clone = soup.find(node.name)
+    if clone is None:
+        return []
+
+    for detail in clone.find_all("details"):
+        detail.extract()
+
+    for br in clone.find_all("br"):
+        br.replace_with("\n")
+
+    text = clone.get_text("\n", strip=True)
+    return [clean_text(line) for line in text.splitlines() if clean_text(line)]
+
+
+def strip_item_marker(lines: list[str]) -> tuple[int | None, list[str]]:
+    if not lines:
+        return None, []
+
+    first = lines[0]
+    match = ITEM_MARKER_RE.match(first)
+    if not match:
+        return None, lines
+
+    remainder = clean_text(first[match.end():])
+    stripped = lines[1:]
+    if remainder:
+        stripped = [remainder, *stripped]
+    return int(match.group(1)), stripped
 
 
 def find_first_columns(content: Tag) -> Tag:
@@ -404,7 +469,125 @@ def pull_intro_from_sections(sections: list[Section]) -> list[str]:
     return []
 
 
-def parse_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | None, list[ShowcaseBlock]]:
+def parse_structured_practice(column: Tag) -> tuple[str | None, list[PracticeItem]] | None:
+    prompt_blocks = []
+    for paragraph in column.find_all("p"):
+        lines = extract_text_lines(paragraph)
+        number, _ = strip_item_marker(lines)
+        if number is not None:
+            prompt_blocks.append(paragraph)
+
+    if not prompt_blocks:
+        return None
+
+    container = prompt_blocks[0].parent if isinstance(prompt_blocks[0].parent, Tag) else column
+    intro_parts: list[str] = []
+    items: list[PracticeItem] = []
+    current_item: PracticeItem | None = None
+    current_mode = "prompt"
+
+    for child in column.find_all(recursive=False):
+        if child == container:
+            break
+        if child.name == "p":
+            text = clean_text(child.get_text(" ", strip=True))
+            if text and text != "Quiz":
+                intro_parts.append(text)
+
+    for child in container.children:
+        if not isinstance(child, Tag):
+            continue
+
+        if child.name == "p":
+            lines = extract_text_lines(child)
+            number, prompt_lines = strip_item_marker(lines)
+            if number is not None:
+                if child.find("details") is not None:
+                    prompt_only_lines = extract_text_lines_without_details(child)
+                    _, prompt_lines = strip_item_marker(prompt_only_lines)
+                    inline_answer_lines = [
+                        line
+                        for detail in child.find_all("details")
+                        for line in extract_text_lines(detail, skip_summary=True)
+                        if line not in PLACEHOLDER_ANSWER_LINES
+                    ]
+                else:
+                    inline_answer_lines = []
+                if current_item is not None:
+                    items.append(current_item)
+                current_item = PracticeItem(
+                    number=number,
+                    prompt_lines=prompt_lines,
+                    answer_lines=inline_answer_lines,
+                    note_sections=[],
+                )
+                current_mode = "prompt"
+                continue
+
+            text = clean_text(child.get_text(" ", strip=True))
+            if current_item is None:
+                if text and text != "Quiz":
+                    intro_parts.append(text)
+                continue
+
+            for line in prompt_lines:
+                segments = split_embedded_labels(line)
+                for kind, value in segments:
+                    if kind == "label":
+                        if value == "Answer":
+                            current_mode = "answer"
+                        else:
+                            current_item.note_sections.append((value, []))
+                            current_mode = "notes"
+                        continue
+
+                    if current_mode == "prompt":
+                        current_item.prompt_lines.append(value)
+                    elif current_mode == "answer":
+                        if value not in PLACEHOLDER_ANSWER_LINES:
+                            current_item.answer_lines.append(value)
+                    else:
+                        if not current_item.note_sections:
+                            current_item.note_sections.append(("Note", []))
+                        current_item.note_sections[-1][1].append(value)
+            continue
+
+        if current_item is None:
+            continue
+
+        if child.name == "details":
+            detail_lines = [
+                line
+                for line in extract_text_lines(child, skip_summary=True)
+                if line not in PLACEHOLDER_ANSWER_LINES
+            ]
+            current_item.answer_lines.extend(detail_lines)
+            if detail_lines:
+                current_mode = "answer"
+            continue
+
+        if child.name in {"ul", "ol"}:
+            option_lines = [
+                clean_text(item.get_text(" ", strip=True))
+                for item in child.find_all("li", recursive=False)
+                if clean_text(item.get_text(" ", strip=True))
+            ]
+            for option in option_lines:
+                if option not in current_item.prompt_lines:
+                    current_item.prompt_lines.append(option)
+            continue
+
+    if current_item is not None:
+        items.append(current_item)
+
+    if not items:
+        return None
+
+    intro_text = " ".join(intro_parts) if intro_parts else None
+    return intro_text, items
+
+
+def parse_flat_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | None, list[ShowcaseBlock]]:
     raw_lines = [clean_text(line) for line in column.get_text("\n", strip=True).splitlines()]
     lines = [line for line in raw_lines if line and line != ":"]
     if not lines:
@@ -484,6 +667,15 @@ def parse_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | N
     return None, [], showcase_title, showcase_blocks
 
 
+def parse_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | None, list[ShowcaseBlock]]:
+    structured = parse_structured_practice(column)
+    if structured is not None:
+        practice_intro, practice_items = structured
+        return practice_intro, practice_items, None, []
+
+    return parse_flat_practice(column)
+
+
 def render_paragraph(text: str) -> str:
     return f"<p>{html.escape(text)}</p>"
 
@@ -531,7 +723,7 @@ def render_section(section: Section, section_id: str) -> str:
 
 
 def line_is_option(line: str) -> bool:
-    return bool(re.match(r"^(?:[A-Da-d][).]|[ivxIVX]+[).])\s", line))
+    return bool(OPTION_PREFIX_RE.match(line))
 
 
 def split_prompt_lines(lines: list[str]) -> tuple[list[str], list[str]]:
@@ -541,12 +733,15 @@ def split_prompt_lines(lines: list[str]) -> tuple[list[str], list[str]]:
 
 
 def option_prefix(line: str) -> str | None:
-    match = re.match(r"^\s*([A-Za-z0-9ivxIVX]+[).])\s+", line)
-    return match.group(1).lower() if match else None
+    match = OPTION_PREFIX_RE.match(line)
+    if not match:
+        return None
+    return (match.group(1) or match.group(2) or "").lower()
 
 
 def strip_option_prefix(line: str) -> str:
-    return re.sub(r"^\s*[A-Za-z0-9ivxIVX]+[).]\s+", "", line).strip()
+    match = OPTION_PREFIX_RE.match(line)
+    return match.group(3).strip() if match else line.strip()
 
 
 def normalize_feedback_text(line: str) -> str:
@@ -558,9 +753,57 @@ def normalize_feedback_text(line: str) -> str:
 
 
 def parse_answer_text(answer_lines: list[str]) -> tuple[str, list[tuple[str, list[str]]]]:
-    answer_text = clean_text(" ".join(answer_lines))
-    if not answer_text:
-        return "", []
+    main_lines: list[str] = []
+    note_sections: list[tuple[str, list[str]]] = []
+    current_note: tuple[str, list[str]] | None = None
+
+    for index, raw_line in enumerate(answer_lines):
+        line = clean_text(raw_line)
+        if not line:
+            continue
+
+        if index > 0 and line_is_option(line) and current_note is None:
+            continue
+
+        segments = split_embedded_labels(line)
+        if any(kind == "label" for kind, _ in segments):
+            current_note = None
+            text_buffer: list[str] = []
+            for kind, value in segments:
+                if kind == "label":
+                    current_note = (value, [])
+                    note_sections.append(current_note)
+                    continue
+
+                if current_note is None:
+                    text_buffer.append(value)
+                else:
+                    current_note[1].append(value)
+
+            if text_buffer:
+                main_lines.append(clean_text(" ".join(text_buffer)))
+            continue
+
+        if current_note is not None:
+            current_note[1].append(line)
+        else:
+            main_lines.append(line)
+
+    answer_text = clean_text(" ".join(main_lines))
+
+    explicit_correct_lines: list[str] = []
+    remaining_notes: list[tuple[str, list[str]]] = []
+    for label, lines in note_sections:
+        if label.lower() == "correct":
+            explicit_correct_lines.extend(lines)
+            continue
+        remaining_notes.append((label, lines))
+    if explicit_correct_lines:
+        if not answer_text:
+            return clean_text(" ".join(explicit_correct_lines)), remaining_notes
+        note_sections = remaining_notes
+    elif not answer_text:
+        return "", note_sections
 
     match = re.match(
         r"^The correct (?:answer|sentence|choice|response) is\s+(.+?)(?:\s*\.\s+|(?=\s*[\"“])|$)(.*)$",
@@ -570,10 +813,88 @@ def parse_answer_text(answer_lines: list[str]) -> tuple[str, list[tuple[str, lis
     if match:
         correct_text = clean_text(match.group(1).strip(" ."))
         remainder = clean_text(match.group(2))
-        extra_notes = [("Explanation", [remainder])] if remainder else []
-        return correct_text, extra_notes
+        if remainder:
+            note_sections.append(("Explanation", [remainder]))
+        return correct_text, note_sections
 
-    return answer_text, []
+    match = re.match(
+        r"^(.*?)(?:\s+)?Correct answer:\s*([A-Za-z0-9ivxIVX]+)\s*$",
+        answer_text,
+        flags=re.IGNORECASE,
+    )
+    if match:
+        remainder = clean_text(match.group(1))
+        label = clean_text(match.group(2))
+        if remainder:
+            note_sections.append(("Explanation", [remainder]))
+        return f"{label})", note_sections
+
+    return answer_text, note_sections
+
+
+def extract_quoted_sentences(text: str) -> list[str]:
+    sentences = []
+    for term in extract_quoted_terms(text):
+        if len(term.split()) >= 2:
+            sentences.append(term)
+    return sentences
+
+
+def is_boolean_status_answer(text: str) -> bool:
+    lowered = normalize_feedback_text(text)
+    return lowered.startswith(("correct", "incorrect", "true", "false"))
+
+
+def option_map(option_lines: list[str]) -> dict[str, str]:
+    mapping: dict[str, str] = {}
+    for option in option_lines:
+        prefix = option_prefix(option)
+        if prefix:
+            mapping[prefix] = option
+    return mapping
+
+
+def extract_additional_correct_options(
+    note_sections: list[tuple[str, list[str]]],
+    option_lines: list[str],
+) -> list[str]:
+    if not option_lines:
+        return []
+
+    mapping = option_map(option_lines)
+    additional: list[str] = []
+
+    prefixes = list(mapping)
+    prefix_pattern = "|".join(sorted((re.escape(prefix) for prefix in prefixes), key=len, reverse=True))
+    mention_pattern = re.compile(
+        rf"(?<![A-Za-z0-9])(?:option\s+)?(?:\(({prefix_pattern})\)|({prefix_pattern})[).]?)(?=\s|,|;|:|$)",
+        re.IGNORECASE,
+    )
+
+    for _, lines in note_sections:
+        for line in lines:
+            for segment in re.split(r"(?<=[.!?])\s+", line):
+                lowered = segment.lower()
+                if "correct" not in lowered and "acceptable" not in lowered:
+                    continue
+                if "both" not in lowered and "also" not in lowered:
+                    continue
+
+                for left, right in mention_pattern.findall(segment):
+                    prefix = (left or right).lower()
+                    option = mapping.get(prefix)
+                    if option:
+                        additional.append(option)
+
+    seen: set[str] = set()
+    deduped: list[str] = []
+    for option in additional:
+        normalized = normalize_feedback_text(option)
+        if normalized in seen:
+            continue
+        seen.add(normalized)
+        deduped.append(option)
+    return deduped
 
 
 def split_answer_fragments(answer_text: str, slot_count: int) -> list[str]:
@@ -650,11 +971,26 @@ def find_matching_option(answer_text: str, option_lines: list[str]) -> str | Non
         return None
 
     answer_label = option_prefix(answer_text)
+    if not answer_label:
+        bare_label_match = re.match(r"^\(?([A-Za-z0-9ivxIVX]+)\)?[).]?$", answer_text.strip())
+        if bare_label_match:
+            answer_label = bare_label_match.group(1).lower()
     answer_body = normalize_feedback_text(strip_option_prefix(answer_text))
+    lowered_answer = normalize_feedback_text(answer_text)
 
     for option in option_lines:
         if answer_label and option_prefix(option) == answer_label:
             return option
+
+    if lowered_answer.startswith(("incorrect", "false")):
+        for option in option_lines:
+            if normalize_feedback_text(strip_option_prefix(option)) in {"incorrect", "false"}:
+                return option
+
+    if lowered_answer.startswith(("correct", "true")):
+        for option in option_lines:
+            if normalize_feedback_text(strip_option_prefix(option)) in {"correct", "true"}:
+                return option
 
     for option in option_lines:
         option_body = normalize_feedback_text(strip_option_prefix(option))
@@ -671,10 +1007,54 @@ def find_matching_option(answer_text: str, option_lines: list[str]) -> str | Non
 
 def derive_correct_answers(item: PracticeItem) -> list[str]:
     stem_lines, option_lines = split_prompt_lines(item.prompt_lines)
-    answer_text, _ = parse_answer_text(item.answer_lines)
+    answer_text, extra_notes = parse_answer_text(item.answer_lines)
+    correct_option_lines: list[str] = []
     matched_option = find_matching_option(answer_text, option_lines)
     if matched_option:
-        return [matched_option]
+        correct_option_lines.append(matched_option)
+
+    additional_correct_options = extract_additional_correct_options(extra_notes, option_lines)
+    for option in additional_correct_options:
+        if option not in correct_option_lines:
+            correct_option_lines.append(option)
+
+    display_option_lines = list(correct_option_lines)
+    if (
+        additional_correct_options
+        and any(normalize_feedback_text(strip_option_prefix(option)).startswith("both") for option in correct_option_lines)
+    ):
+        display_option_lines = additional_correct_options
+
+    quoted_sentences = extract_quoted_sentences(answer_text)
+    prompt_has_blank = any("____" in line for line in stem_lines)
+    answer_has_only_fragments = (
+        len(item.answer_lines) > 1
+        and not any(line_is_option(line) for line in item.answer_lines)
+        and not extra_notes
+    )
+
+    if prompt_has_blank and quoted_sentences:
+        return quoted_sentences
+
+    if prompt_has_blank and display_option_lines:
+        completed_lines: list[str] = []
+        for option in display_option_lines:
+            completed_lines.extend(build_completed_answers(stem_lines, option))
+        if completed_lines:
+            return completed_lines
+
+    if prompt_has_blank and answer_has_only_fragments and answer_text:
+        return [answer_text]
+
+    if quoted_sentences and is_boolean_status_answer(answer_text):
+        answers = [*display_option_lines, *quoted_sentences]
+        return list(dict.fromkeys(answers))
+
+    if quoted_sentences and option_prefix(answer_text):
+        return quoted_sentences
+
+    if display_option_lines:
+        return display_option_lines
 
     completed = build_completed_answers(stem_lines, answer_text)
     if completed:
@@ -694,19 +1074,25 @@ def derive_incorrect_answers(item: PracticeItem, correct_answers: list[str]) -> 
     note_sections = item.note_sections + extra_notes
     incorrect: list[str] = []
     matched_option = find_matching_option(answer_text, option_lines)
+    additional_correct_options = extract_additional_correct_options(note_sections, option_lines)
+    correct_option_lines = {line for line in additional_correct_options}
+    if matched_option:
+        correct_option_lines.add(matched_option)
 
     if option_lines:
-        incorrect.extend(option for option in option_lines if option != matched_option)
+        incorrect.extend(option for option in option_lines if option not in correct_option_lines)
 
     correct_context = " ".join(correct_answers + [answer_text]).lower()
 
     for label, lines in note_sections:
-        if label.lower() == "incorrect":
+        if label.lower() == "incorrect" and not option_lines:
             incorrect.extend(lines)
+        if option_lines:
+            continue
         for line in lines:
             for term in extract_quoted_terms(line):
                 normalized_term = normalize_feedback_text(term)
-                if not normalized_term:
+                if not normalized_term or len(term.split()) < 1:
                     continue
                 if normalized_term in normalize_feedback_text(correct_context):
                     continue
@@ -1055,6 +1441,11 @@ def parse_entry(label: str, source_url: str) -> ConceptEntry:
     if not intro:
         intro = pull_intro_from_sections(sections)
     practice_intro, practice_items, showcase_title, showcase_blocks = parse_practice(right_column)
+
+    for item in practice_items:
+        overrides = PRACTICE_ANSWER_OVERRIDES.get(number, {}).get(item.number)
+        if overrides:
+            item.answer_lines = overrides.copy()
 
     return ConceptEntry(
         number=number,

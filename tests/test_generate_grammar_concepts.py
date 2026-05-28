@@ -1,5 +1,7 @@
 import importlib.util
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -257,6 +259,60 @@ class GenerateGrammarConceptsTests(unittest.TestCase):
             ["a) I lived in New York after moving to Tokyo."],
             ggc.derive_incorrect_answers(item, correct_answers),
         )
+
+    def test_public_item_bank_is_opt_in(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            bank_dir = Path(temp_dir)
+            (bank_dir / "concept-01.json").write_text(
+                json.dumps(
+                    {
+                        "concept_number": 1,
+                        "concept_title": "Sample",
+                        "assessment_intro": "Generated bank intro.",
+                        "assessment_sets": [
+                            {
+                                "id": "core-grammar",
+                                "title": "Core Grammar Forms",
+                                "description": "Generated assessment items.",
+                                "items": [
+                                    {
+                                        "id": "sample-001",
+                                        "focus_area": "grammar",
+                                        "item_type": "gap_fill",
+                                        "cefr_level": "unrated",
+                                        "difficulty": "unrated",
+                                        "source_status": "experimental",
+                                        "subskill": "sample",
+                                        "weakness_tag": "sample",
+                                        "question": "She lives ___ Tokyo.",
+                                        "options": ["in", "on", "at", "by"],
+                                        "correct_index": 0,
+                                        "explanation": "'In' is used with cities.",
+                                    }
+                                ],
+                            }
+                        ],
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            original_dir = ggc.PUBLIC_ITEM_BANK_DIR
+            original_flag = ggc.USE_PUBLIC_ITEM_BANK
+            try:
+                ggc.PUBLIC_ITEM_BANK_DIR = bank_dir
+                ggc.USE_PUBLIC_ITEM_BANK = False
+                self.assertIsNone(ggc.load_public_item_bank(1))
+
+                ggc.USE_PUBLIC_ITEM_BANK = True
+                loaded = ggc.load_public_item_bank(1)
+                self.assertIsNotNone(loaded)
+                intro, practice_sets = loaded
+                self.assertEqual("Generated bank intro.", intro)
+                self.assertEqual(1, len(practice_sets[0].items))
+            finally:
+                ggc.PUBLIC_ITEM_BANK_DIR = original_dir
+                ggc.USE_PUBLIC_ITEM_BANK = original_flag
 
     def test_correct_note_section_can_supply_fill_in_answer(self):
         item = ggc.PracticeItem(

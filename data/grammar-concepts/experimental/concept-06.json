@@ -1,0 +1,1691 @@
+{
+  "concept_number": 6,
+  "concept_title": "Noun/Verb Confusion: Understanding the Difference",
+  "assessment_intro": "These assessment sets check grammar, vocabulary, meaning, and test-style decision-making across this concept.",
+  "assessment_sets": [
+    {
+      "id": "core-grammar",
+      "title": "Core Grammar Forms",
+      "description": "Target the core form, structure, and sentence-building errors learners make with this concept.",
+      "items": [
+        {
+          "id": "c06-s01-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "verb-used-instead-of-noun-phrase",
+          "question": "He made a quick __________ to the conference room before the meeting started.",
+          "options": [
+            "visit",
+            "visited",
+            "visiting",
+            "visit to"
+          ],
+          "correct_index": 3,
+          "explanation": "As a noun, 'visit' needs 'to': 'a visit to the conference room.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i002",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "noun-used-instead-of-verb",
+          "question": "Can you __________ the document for errors before we submit it?",
+          "options": [
+            "review",
+            "make review of",
+            "do review",
+            "review to"
+          ],
+          "correct_index": 0,
+          "explanation": "'Review' is correctly used as a verb here, without extra words.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i003",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "noun/verb structural control",
+          "weakness_tag": "verb-needed-instead-of-noun-phrase",
+          "question": "Select the correct sentence:",
+          "options": [
+            "They will discuss the proposal tomorrow.",
+            "They will have discuss of the proposal tomorrow.",
+            "They will make discuss about the proposal tomorrow.",
+            "They will do a discuss tomorrow."
+          ],
+          "correct_index": 0,
+          "explanation": "'Discuss' is a verb; the other options misuse noun forms or add unnecessary words.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i004",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun/verb error spotting",
+          "weakness_tag": "noun-phrase-used-instead-of-verb",
+          "question": "Find the error: We need to make a reply to the client as soon as possible.",
+          "options": [
+            "No error",
+            "make a reply to",
+            "client",
+            "as soon as possible"
+          ],
+          "correct_index": 1,
+          "explanation": "'Reply' should be used as a verb: 'reply to the client.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i005",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "verb-used-instead-of-required-noun-phrase",
+          "question": "The police conducted a thorough __________ of the scene.",
+          "options": [
+            "investigate",
+            "investigating",
+            "investigation",
+            "investigate to"
+          ],
+          "correct_index": 2,
+          "explanation": "'Investigation' is the correct noun form after 'conducted a thorough.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i006",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "collocational control of noun/verb forms",
+          "weakness_tag": "collocation-noun-vs-verb",
+          "question": "Which phrase completes the sentence naturally? The company will __________ to improve customer satisfaction.",
+          "options": [
+            "take action",
+            "action",
+            "make action",
+            "actioning"
+          ],
+          "correct_index": 0,
+          "explanation": "'Take action' is the correct collocation; the others are incorrect or unidiomatic.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "noun-needed-instead-of-verb",
+          "question": "After the long journey, everyone needed a short __________ before starting work.",
+          "options": [
+            "rest",
+            "rested",
+            "resting",
+            "rests"
+          ],
+          "correct_index": 0,
+          "explanation": "'Rest' is needed as a noun here; verb forms don't fit grammatically.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "verb-instead-of-noun-phrase",
+          "question": "The manager will __________ the team\u2019s suggestions at the meeting tomorrow.",
+          "options": [
+            "consider",
+            "make a consideration of",
+            "give a consider",
+            "consideration"
+          ],
+          "correct_index": 0,
+          "explanation": "'Consider' is the correct verb. Only the verb form fits this sentence.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i009",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "collocation",
+          "weakness_tag": "noun-phrase-vs-verb-collocation",
+          "question": "We should __________ a decision by the end of the week.",
+          "options": [
+            "make",
+            "decide",
+            "decision",
+            "deciding"
+          ],
+          "correct_index": 0,
+          "explanation": "'Make a decision' is the correct collocation, not 'decide' or 'decision' here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i010",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "error-detection-verb-needed",
+          "question": "Find the error: She gave a help to her friend with the assignment.",
+          "options": [
+            "She gave a help to her friend with the assignment.",
+            "She helped her friend with the assignment.",
+            "She give a help to her friend with the assignment.",
+            "She is help her friend with the assignment."
+          ],
+          "correct_index": 1,
+          "explanation": "'Helped' is the correct verb; 'gave a help' is incorrect in standard English.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i011",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "sentence-choice-noun-vs-verb",
+          "question": "Which sentence is correct?",
+          "options": [
+            "They will discuss the proposal tomorrow.",
+            "They will make a discuss the proposal tomorrow.",
+            "They will discussion the proposal tomorrow.",
+            "They will give a discuss the proposal tomorrow."
+          ],
+          "correct_index": 0,
+          "explanation": "'Discuss' is a verb here; the other options misuse the noun or phrase.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i012",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "best-rewrite-noun-vs-verb",
+          "question": "Choose the best rewrite: He will make a suggestion to improve the process.",
+          "options": [
+            "He will suggest improvements to the process.",
+            "He will suggestion to improve the process.",
+            "He will make suggest to the process.",
+            "He will make suggestions to improving the process."
+          ],
+          "correct_index": 0,
+          "explanation": "'Suggest' is the correct verb form for this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb structure control",
+          "weakness_tag": "noun-phrase-vs-verb-structure",
+          "question": "To improve your skills, you should __________ feedback from your teacher regularly.",
+          "options": [
+            "seek",
+            "make a seek for",
+            "do a seek",
+            "seeking"
+          ],
+          "correct_index": 0,
+          "explanation": "'Seek' is the correct verb form; the noun phrases are not natural here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i014",
+          "focus_area": "grammar",
+          "item_type": "collocation_choice",
+          "subskill": "collocation with noun/verb forms",
+          "weakness_tag": "verb-vs-noun-collocation",
+          "question": "Which option best completes the sentence? The committee will __________ a final decision tomorrow.",
+          "options": [
+            "reach",
+            "do a reach",
+            "make a reach to",
+            "reaching"
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Reach a decision\u2019 is the correct collocation; the other options are incorrect forms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i015",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "form identification",
+          "weakness_tag": "error-detection-verb-instead-of-noun-phrase",
+          "question": "Find the error: The team will present their report after they complete the analyze.",
+          "options": [
+            "complete the analyze",
+            "present their report",
+            "after they",
+            "the team will"
+          ],
+          "correct_index": 0,
+          "explanation": "'Analyze' is a verb; the noun form 'analysis' should be used here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i016",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "sentence building",
+          "weakness_tag": "sentence-choice-noun-vs-verb-usage",
+          "question": "Select the sentence that uses the correct form:\n",
+          "options": [
+            "We need to discuss the proposal before giving our response.",
+            "We need to response the proposal before giving our discuss.",
+            "We need to response the proposal before giving our response.",
+            "We need to discuss the proposal before giving our discuss."
+          ],
+          "correct_index": 0,
+          "explanation": "'Discuss' is a verb and 'response' is a noun; this is the only correct combination.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i017",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "sentence rewriting",
+          "weakness_tag": "best-rewrite-noun-vs-verb-pattern",
+          "question": "Choose the best rewrite: She will make a recommendation about the changes.",
+          "options": [
+            "She will recommend the changes.",
+            "She will recommendation the changes.",
+            "She will make a recommend about the changes.",
+            "She will make a recommendation to change."
+          ],
+          "correct_index": 0,
+          "explanation": "'Recommend' is the verb needed; the other options misuse the noun/verb forms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction in context",
+          "weakness_tag": "noun-instead-of-verb",
+          "question": "If you want to join the club, you need to __________ an application online.",
+          "options": [
+            "submit",
+            "submission",
+            "make submit",
+            "make a submission"
+          ],
+          "correct_index": 0,
+          "explanation": "'Submit' is the correct verb; 'submission' is a noun and does not fit here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i019",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "verb/noun phrase collocation",
+          "weakness_tag": "noun-phrase-instead-of-verb",
+          "question": "The teacher asked the students to __________ their homework by Friday.",
+          "options": [
+            "hand in",
+            "handing in",
+            "make a hand in",
+            "hand in a"
+          ],
+          "correct_index": 0,
+          "explanation": "'Hand in' is the correct verb phrase; the others are not standard in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i020",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun/verb structural substitution",
+          "weakness_tag": "verb-instead-of-noun",
+          "question": "Find the error: The lawyer will file a claim for the client tomorrow.",
+          "options": [
+            "No error",
+            "file should be filing",
+            "claim should be claiming",
+            "No error, both are correct"
+          ],
+          "correct_index": 0,
+          "explanation": "There is no error; 'file a claim' uses the noun correctly after the verb.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i021",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "noun/verb pattern selection",
+          "weakness_tag": "verb-vs-noun-pattern-choice",
+          "question": "Choose the best rewrite: She will give an explanation about the results.",
+          "options": [
+            "She will explain the results.",
+            "She will explanation the results.",
+            "She will make explain the results.",
+            "She will make an explain about the results."
+          ],
+          "correct_index": 0,
+          "explanation": "'Explain' is the correct verb; the other options use incorrect forms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s01-i022",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction",
+          "weakness_tag": "noun-vs-verb-form-choice",
+          "question": "The IT department will __________ the new software next week.",
+          "options": [
+            "install",
+            "make an install",
+            "installation",
+            "do installation"
+          ],
+          "correct_index": 0,
+          "explanation": "'Install' is the correct verb form; the other options use incorrect noun phrases for this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "meaning-and-contrast",
+      "title": "Meaning and Contrast",
+      "description": "Target close contrasts, meaning shifts, and high-confusion choices that strong distractors can expose.",
+      "items": [
+        {
+          "id": "c06-s02-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-instructions",
+          "weakness_tag": "verb-vs-noun-instructions",
+          "question": "Please __________ your password to continue accessing your account.",
+          "options": [
+            "enter",
+            "make an entry of",
+            "entry",
+            "do an enter"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'enter' is needed here, not a noun or awkward phrase.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i002",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "noun-vs-verb-collocation",
+          "weakness_tag": "noun-collocation-required",
+          "question": "Which option best completes the sentence? The museum allows __________ to the exhibition for free.",
+          "options": [
+            "access",
+            "accessing",
+            "to access",
+            "accesses"
+          ],
+          "correct_index": 0,
+          "explanation": "'Access' is the correct noun form after 'allows.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i003",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun-vs-verb-agreement",
+          "weakness_tag": "verb-used-instead-of-noun",
+          "question": "Find the error: The director will discuss about the progress at the meeting.",
+          "options": [
+            "director",
+            "discuss about",
+            "progress",
+            "meeting"
+          ],
+          "correct_index": 1,
+          "explanation": "'Discuss' is a verb; 'about' is not needed with 'discuss.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i004",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "noun-phrase-vs-verb-choice",
+          "weakness_tag": "noun-phrase-vs-verb-choice",
+          "question": "Which sentence uses research correctly as a verb?",
+          "options": [
+            "She will make a research on this topic.",
+            "She will research this topic.",
+            "She will do a research this topic.",
+            "She will researching this topic."
+          ],
+          "correct_index": 1,
+          "explanation": "'Research' is a verb here; 'make a research' is incorrect in English.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i005",
+          "focus_area": "vocabulary",
+          "item_type": "best_rewrite",
+          "subskill": "noun-vs-verb-rewrite",
+          "weakness_tag": "best-verb-vs-noun-rewrite",
+          "question": "Choose the best rewrite:\nOriginal: We need to do an improvement to the process.",
+          "options": [
+            "We need to improve the process.",
+            "We need to make an improvement of the process.",
+            "We need to improvement the process.",
+            "We need to do improvement for the process."
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'improve' is more natural and correct here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i006",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-invitation",
+          "weakness_tag": "noun-vs-verb-invitation",
+          "question": "They sent out invitations to __________ more people to the event.",
+          "options": [
+            "invite",
+            "invitation",
+            "invitations",
+            "inviting"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'invite' is needed after 'to' in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-form-in-context",
+          "weakness_tag": "noun-vs-verb-reporting",
+          "question": "The journalist will __________ the story live from the scene.",
+          "options": [
+            "report",
+            "make a report on",
+            "reporting",
+            "give report"
+          ],
+          "correct_index": 0,
+          "explanation": "Here, the verb 'report' is needed for the intended action, not a noun phrase.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "verb-vs-noun-phrase-choice",
+          "weakness_tag": "verb-vs-noun-approval",
+          "question": "Before moving forward, we need to __________ from the supervisor.",
+          "options": [
+            "get approval",
+            "approve",
+            "approval",
+            "approving"
+          ],
+          "correct_index": 0,
+          "explanation": "'Get approval' is the correct noun phrase for this structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i009",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "verb-instead-of-noun",
+          "weakness_tag": "error-detection-verb-instead-of-noun",
+          "question": "Find the error: She will advise about the problem for the team\u2019s advice.",
+          "options": [
+            "advise about the problem",
+            "for the team\u2019s advice",
+            "She will",
+            "No error"
+          ],
+          "correct_index": 0,
+          "explanation": "'Advise' is a verb, but the sentence requires a noun phrase.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i010",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "noun-vs-verb-collocation",
+          "weakness_tag": "sentence-choice-noun-vs-verb-invitation",
+          "question": "Which sentence uses the correct form?",
+          "options": [
+            "They will invite everyone to the meeting.",
+            "They will make an invite everyone to the meeting.",
+            "They will giving an invitation to everyone to the meeting.",
+            "They will invitation everyone to the meeting."
+          ],
+          "correct_index": 0,
+          "explanation": "Only the first uses the verb 'invite' correctly in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i011",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "verb-vs-noun-collocation",
+          "weakness_tag": "best-rewrite-verb-vs-noun-support",
+          "question": "Choose the best rewrite: Original: She gave a support to the project.",
+          "options": [
+            "She supported the project.",
+            "She support the project.",
+            "She give a support to the project.",
+            "She supporting the project."
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'supported' is correct; the noun phrase is unnecessary here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i012",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-shift-noun-vs-verb",
+          "weakness_tag": "meaning-in-context-verb-vs-noun-visit",
+          "question": "Choose the correct completion: We plan to __________ the museum this weekend.",
+          "options": [
+            "visit",
+            "make a visit to",
+            "visiting",
+            "give a visit"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'visit' fits this structure; noun phrases are not natural here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb form selection",
+          "weakness_tag": "gapfill-noun-vs-verb-approval",
+          "question": "The manager refused to __________ the request for extra time.",
+          "options": [
+            "approve",
+            "give approval",
+            "approval",
+            "approving"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'approve' is required after 'refused to' for correct verb structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i014",
+          "focus_area": "vocabulary",
+          "item_type": "sentence_choice",
+          "subskill": "collocation",
+          "weakness_tag": "sentence-choice-verb-vs-noun-collocation",
+          "question": "Which sentence uses the correct form of 'permit'?",
+          "options": [
+            "He will permit you to enter the building.",
+            "He will give permit you to enter the building.",
+            "He will make a permit you to enter the building.",
+            "He will permitting you to enter the building."
+          ],
+          "correct_index": 0,
+          "explanation": "'Permit' is used as a verb here; noun forms are not correct in this structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i015",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun/verb confusion",
+          "weakness_tag": "error-detection-noun-for-verb",
+          "question": "Find the error: The company will arrangement the delivery for next week.",
+          "options": [
+            "company",
+            "arrangement",
+            "delivery",
+            "next"
+          ],
+          "correct_index": 1,
+          "explanation": "'Arrangement' is a noun; the verb 'arrange' should be used here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i016",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "verb/noun phrase pattern",
+          "weakness_tag": "collocation-choice-noun-vs-verb-decision",
+          "question": "Choose the most natural completion: The board will __________ on the proposal tomorrow.",
+          "options": [
+            "decide",
+            "make a decide",
+            "decision",
+            "do a decision"
+          ],
+          "correct_index": 0,
+          "explanation": "'Decide' is the correct verb; noun forms would require different structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i017",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning and usage",
+          "weakness_tag": "meaning-in-context-verb-noun-contrast",
+          "question": "In which sentence is 'change' used as a noun?",
+          "options": [
+            "We expect a big change in policy.",
+            "They will change the schedule soon.",
+            "She changed her mind yesterday.",
+            "Can you change this for me?"
+          ],
+          "correct_index": 0,
+          "explanation": "Only 'a big change' uses 'change' as a noun; others use it as a verb.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-in-explanation-context",
+          "weakness_tag": "noun-vs-verb-explanation-choice",
+          "question": "He always tries to __________ things clearly to his classmates.",
+          "options": [
+            "explain",
+            "make an explanation of",
+            "give explanation",
+            "explanation"
+          ],
+          "correct_index": 0,
+          "explanation": "'Explain' is the correct verb; the other choices use noun forms incorrectly in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i019",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "verb-vs-noun-in-reporting",
+          "weakness_tag": "verb-vs-noun-report-choice",
+          "question": "Which sentence uses the correct noun or verb form?",
+          "options": [
+            "She will report the accident to the manager.",
+            "She will make report the accident to the manager.",
+            "She will reporting the accident to the manager.",
+            "She will report about the accident to the manager."
+          ],
+          "correct_index": 0,
+          "explanation": "'Report' as a verb fits here. The other options are ungrammatical or use the noun incorrectly.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i020",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "noun-vs-verb-invitation-collocation",
+          "weakness_tag": "noun-vs-verb-invite-choice",
+          "question": "Choose the most natural completion: I want to __________ my friends to the ceremony.",
+          "options": [
+            "invite",
+            "send invitation",
+            "make an invite",
+            "invitation"
+          ],
+          "correct_index": 0,
+          "explanation": "'Invite' is the correct verb. The other options use noun forms incorrectly or unnaturally.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i021",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "noun-vs-verb-approval-error",
+          "weakness_tag": "noun-vs-verb-approval-error",
+          "question": "Find the error: The manager will approval the new budget next week.",
+          "options": [
+            "No error",
+            "approval should be approve",
+            "manager should be managers",
+            "budget should be budgets"
+          ],
+          "correct_index": 1,
+          "explanation": "'Approval' is a noun; the verb 'approve' is needed in this sentence.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s02-i022",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "noun-vs-verb-permit-permission",
+          "weakness_tag": "noun-vs-verb-permit-choice",
+          "question": "In the context of rules, which option best completes the sentence? The school does not __________ students to use phones during class.",
+          "options": [
+            "permit",
+            "permission",
+            "give permit",
+            "make permission"
+          ],
+          "correct_index": 0,
+          "explanation": "'Permit' is the correct verb; the other forms are incorrect or unnatural in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary-and-usage",
+      "title": "Vocabulary and Usage",
+      "description": "Target collocation, lexical choice, word class, register, and other vocabulary-linked weaknesses tied to this concept.",
+      "items": [
+        {
+          "id": "c06-s03-i001",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "collocation and lexical choice",
+          "weakness_tag": "noun-vs-verb-application-choice",
+          "question": "Which option best completes the sentence?\n\nThe company will __________ your application next week.",
+          "options": [
+            "process",
+            "make a process of",
+            "do a processing",
+            "processing"
+          ],
+          "correct_index": 0,
+          "explanation": "'Process' is the correct verb; noun phrases like 'make a process of' are not standard here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i002",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "meaning in context",
+          "weakness_tag": "verb-noun-choice-context",
+          "question": "Which sentence uses the correct form of 'review'?",
+          "options": [
+            "She gave a review the document carefully.",
+            "She review the document carefully.",
+            "She reviewed the document carefully.",
+            "She made a review the document carefully."
+          ],
+          "correct_index": 2,
+          "explanation": "'Reviewed' is the correct past tense verb form for this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i003",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "word class and collocation",
+          "weakness_tag": "noun-vs-verb-collocation-choice",
+          "question": "Choose the most natural completion:\n\nWe need to __________ feedback from our clients.",
+          "options": [
+            "collect",
+            "do a collection of",
+            "make a collect",
+            "collection"
+          ],
+          "correct_index": 0,
+          "explanation": "'Collect' is the correct verb; the other options misuse noun forms or collocations.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i004",
+          "focus_area": "vocabulary",
+          "item_type": "error_detection",
+          "subskill": "word class",
+          "weakness_tag": "noun-vs-verb-error-detection",
+          "question": "Find the error:\n\nHe will suggestion a new plan at the meeting.",
+          "options": [
+            "He",
+            "will",
+            "suggestion",
+            "plan"
+          ],
+          "correct_index": 2,
+          "explanation": "'Suggestion' is a noun; the verb 'suggest' is needed here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i005",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "register and lexical choice",
+          "weakness_tag": "noun-phrase-vs-verb-instructions",
+          "question": "Choose the best rewrite:\n\nOriginal: Please make a confirmation of your attendance.",
+          "options": [
+            "Please confirm your attendance.",
+            "Please confirmation your attendance.",
+            "Please do a confirm of your attendance.",
+            "Please make a confirm your attendance."
+          ],
+          "correct_index": 0,
+          "explanation": "'Confirm' as a verb is most natural and correct in instructions.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i006",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning in context",
+          "weakness_tag": "verb-noun-difference-context",
+          "question": "In the sentence, which word is used as a verb?\n\nThey plan to update the website next month.",
+          "options": [
+            "plan",
+            "update",
+            "website",
+            "month"
+          ],
+          "correct_index": 1,
+          "explanation": "'Update' is the verb in this sentence; the others are nouns.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i007",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "collocation",
+          "weakness_tag": "gapfill-verb-vs-noun-feedback",
+          "question": "Please __________ your feedback before the end of the day.",
+          "options": [
+            "submit",
+            "make a submit",
+            "submission",
+            "do a submission"
+          ],
+          "correct_index": 0,
+          "explanation": "'Submit' is the correct verb form; 'submission' is a noun and needs extra words.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i008",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "word class",
+          "weakness_tag": "collocation-choice-noun-vs-verb-transport",
+          "question": "Which phrase best completes the sentence? The company will __________ the goods tomorrow.",
+          "options": [
+            "transport",
+            "make a transport",
+            "do a transport",
+            "transportation"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'transport' fits the sentence; the noun 'transportation' is incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i009",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "lexical choice",
+          "weakness_tag": "error-detection-verb-noun-confusion",
+          "question": "Find the error: She will explanation the new policy at the meeting.",
+          "options": [
+            "She will explanation the new policy at the meeting.",
+            "She will explain the new policy at the meeting.",
+            "She will be explaining the new policy at the meeting.",
+            "She explained the new policy at the meeting."
+          ],
+          "correct_index": 0,
+          "explanation": "'Explanation' is a noun; the verb 'explain' is needed.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i010",
+          "focus_area": "vocabulary",
+          "item_type": "best_rewrite",
+          "subskill": "register/usage",
+          "weakness_tag": "best-rewrite-verb-vs-noun-payment",
+          "question": "Choose the best rewrite: Original: I will do a payment tomorrow.",
+          "options": [
+            "I will pay tomorrow.",
+            "I will payment tomorrow.",
+            "I will be a payment tomorrow.",
+            "I will do payment tomorrow."
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'pay' is correct; the noun 'payment' needs a different structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i011",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning in context",
+          "weakness_tag": "meaning-in-context-verb-noun-balance",
+          "question": "Which option best completes the sentence? It's important to __________ work and rest.",
+          "options": [
+            "balance",
+            "make a balance",
+            "do a balance",
+            "balancing"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'balance' is needed here to match the context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i012",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "word form",
+          "weakness_tag": "word-form-choice-noun-vs-verb-complaint",
+          "question": "Choose the correct word to complete the sentence: If you have a problem, please __________ to the manager.",
+          "options": [
+            "complain",
+            "complaint",
+            "make a complain",
+            "do a complaint"
+          ],
+          "correct_index": 0,
+          "explanation": "'Complain' is the verb; 'complaint' is the noun form.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i013",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-noun-vs-verb-progress",
+          "question": "Which option best completes the sentence? The team hopes to __________ quickly on the new design.",
+          "options": [
+            "progress",
+            "make a progress",
+            "do a progress",
+            "give progress"
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Progress\u2019 is used as a verb here; noun forms require an article and are unidiomatic.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i014",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "word form",
+          "weakness_tag": "word-form-choice-noun-vs-verb-increase",
+          "question": "Choose the correct form to complete the sentence: The prices __________ every year.",
+          "options": [
+            "increase",
+            "make an increase",
+            "give increase",
+            "do increase"
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Increase\u2019 as a verb is correct; the other options misuse the noun or collocation.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i015",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "lexical choice",
+          "weakness_tag": "gapfill-noun-vs-verb-offer",
+          "question": "Fill the gap with the most natural option: She decided to __________ her help to the committee.",
+          "options": [
+            "offer",
+            "make an offer",
+            "do an offer",
+            "give offer"
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Offer\u2019 as a verb is correct; noun forms require a different structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i016",
+          "focus_area": "vocabulary",
+          "item_type": "sentence_choice",
+          "subskill": "word class",
+          "weakness_tag": "sentence-choice-verb-vs-noun-suggestion",
+          "question": "Which sentence uses the correct form of 'suggest'?",
+          "options": [
+            "I suggest meeting earlier tomorrow.",
+            "I make a suggest meeting earlier tomorrow.",
+            "I do a suggestion meeting earlier tomorrow.",
+            "I give suggest meeting earlier tomorrow."
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Suggest\u2019 is used as a verb; the other options are incorrect noun/verb combinations.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i017",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning in context",
+          "weakness_tag": "meaning-in-context-verb-noun-order",
+          "question": "In the sentence, which word is used as a noun? The customer placed an order yesterday.",
+          "options": [
+            "order",
+            "placed",
+            "customer",
+            "yesterday"
+          ],
+          "correct_index": 0,
+          "explanation": "\u2018Order\u2019 is a noun here, meaning a request for goods or services.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i018",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "noun/verb distinction in collocations",
+          "weakness_tag": "noun-vs-verb-support-choice",
+          "question": "Which option best completes the sentence? The charity relies on public __________ to continue its work.",
+          "options": [
+            "support",
+            "supporting",
+            "to support",
+            "supported"
+          ],
+          "correct_index": 0,
+          "explanation": "'Support' is a noun here; the charity needs 'support' from the public.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i019",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "correct word form in context",
+          "weakness_tag": "verb-noun-choice-access",
+          "question": "Fill the gap with the best option: Only authorized staff can __________ the confidential documents.",
+          "options": [
+            "access",
+            "give access",
+            "accessing",
+            "accessibility"
+          ],
+          "correct_index": 0,
+          "explanation": "'Access' is needed as a verb; 'give access' would require a different sentence structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i020",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "appropriate formality and usage",
+          "weakness_tag": "register-choice-verb-vs-noun-permit",
+          "question": "Choose the most appropriate completion for a formal letter: We kindly request you to __________ us entry to the building.",
+          "options": [
+            "permit",
+            "permission",
+            "permitting",
+            "permit to"
+          ],
+          "correct_index": 0,
+          "explanation": "'Permit' is the correct verb form for this formal request.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i021",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "natural phrase choice with visit",
+          "weakness_tag": "collocation-choice-noun-vs-verb-visit",
+          "question": "Which phrase best completes the sentence? They decided to __________ their grandparents over the weekend.",
+          "options": [
+            "visit",
+            "make a visit",
+            "do a visit",
+            "visiting"
+          ],
+          "correct_index": 0,
+          "explanation": "'Visit' is the correct verb; the other options are awkward or incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s03-i022",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "choosing correct noun or verb form",
+          "weakness_tag": "word-form-choice-noun-vs-verb-invite",
+          "question": "Select the correct word to complete the sentence: She sent me an __________ to her birthday party.",
+          "options": [
+            "invitation",
+            "invite",
+            "inviting",
+            "invited"
+          ],
+          "correct_index": 0,
+          "explanation": "'Invitation' is the noun; 'invite' is informal or a verb, not used in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "mixed-diagnostic",
+      "title": "Mixed Diagnostic Set",
+      "description": "Mix grammar and vocabulary weaknesses in assessment-style items that feel like placement or progress-test questions.",
+      "items": [
+        {
+          "id": "c06-s04-i001",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb form selection",
+          "weakness_tag": "noun-vs-verb-request-choice",
+          "question": "Which option best completes the sentence? If you need help, please __________ assistance at the front desk.",
+          "options": [
+            "request",
+            "make a request for",
+            "requested",
+            "give a request"
+          ],
+          "correct_index": 0,
+          "explanation": "'Request' is the correct verb form; the other options are ungrammatical or awkward in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i002",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "verb/noun collocation",
+          "weakness_tag": "collocation-choice-noun-vs-verb-report",
+          "question": "Choose the most natural completion: The manager will __________ the issue to the director tomorrow.",
+          "options": [
+            "report",
+            "make a report",
+            "give report",
+            "reporting"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'report' fits naturally here; 'make a report' needs 'on,' and others are incorrect.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i003",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "verb/noun confusion",
+          "weakness_tag": "error-detection-verb-noun-confusion-discussion",
+          "question": "Find the error: We will discussion the new schedule at the meeting.",
+          "options": [
+            "We will discussion the new schedule at the meeting.",
+            "We will discuss the new schedule at the meeting.",
+            "We will be discussing the new schedule at the meeting.",
+            "We will have a discussion about the new schedule at the meeting."
+          ],
+          "correct_index": 0,
+          "explanation": "'Discussion' is a noun; the verb 'discuss' should be used after 'will.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i004",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "noun/verb meaning in context",
+          "weakness_tag": "meaning-in-context-verb-noun-influence",
+          "question": "Which word is used as a verb in this sentence? His words influence many people.",
+          "options": [
+            "words",
+            "influence",
+            "many",
+            "people"
+          ],
+          "correct_index": 1,
+          "explanation": "'Influence' is the verb showing action in this sentence.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i005",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "verb/noun rewrite",
+          "weakness_tag": "best-rewrite-verb-vs-noun-choice-movement",
+          "question": "Choose the best rewrite: Original: We need to do a movement to the new office.",
+          "options": [
+            "We need to move to the new office.",
+            "We need to making a movement to the new office.",
+            "We need to have a move to the new office.",
+            "We need to movement to the new office."
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'move' is correct here; 'movement' is not used for changing location.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i006",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "noun/verb word form selection",
+          "weakness_tag": "word-form-choice-noun-vs-verb-refund",
+          "question": "Choose the correct form to complete the sentence: If the product is faulty, we will __________ your money.",
+          "options": [
+            "refund",
+            "make a refund",
+            "giving a refund",
+            "refunding"
+          ],
+          "correct_index": 0,
+          "explanation": "'Refund' is the correct verb form after 'will'; others are ungrammatical here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i007",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-confusion-instructions",
+          "weakness_tag": "gapfill-noun-vs-verb-permission",
+          "question": "Which option best completes the sentence? Students must __________ the teacher before leaving the classroom.",
+          "options": [
+            "ask permission from",
+            "permission",
+            "permit",
+            "make a permission"
+          ],
+          "correct_index": 0,
+          "explanation": "The correct structure is 'ask permission from'; 'permission' alone or other forms are not standard here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i008",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "noun-vs-verb-use-in-context",
+          "weakness_tag": "error-detection-verb-noun-confusion-invite",
+          "question": "Find the error in this sentence: We will invitation our colleagues to the event.",
+          "options": [
+            "No error",
+            "invitation",
+            "colleagues",
+            "event"
+          ],
+          "correct_index": 1,
+          "explanation": "'Invitation' is a noun, but a verb is needed: 'invite our colleagues.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i009",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "noun-vs-verb-choice-in-collocations",
+          "weakness_tag": "collocation-choice-noun-vs-verb-approval",
+          "question": "Which phrase is most natural in this context? The manager refused to __________ the proposal.",
+          "options": [
+            "give approval to",
+            "approval",
+            "approve",
+            "make an approval"
+          ],
+          "correct_index": 2,
+          "explanation": "'Approve' is the correct verb; the other choices are noun-based or awkward.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i010",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "noun-vs-verb-in-formal-writing",
+          "weakness_tag": "sentence-choice-verb-vs-noun-information",
+          "question": "Which sentence uses the correct form of 'inform'?\n",
+          "options": [
+            "Please inform us if you have any questions.",
+            "Please make an inform us if you have any questions.",
+            "Please information us if you have any questions.",
+            "Please give inform if you have any questions."
+          ],
+          "correct_index": 0,
+          "explanation": "'Inform' is the correct verb; other options misuse the noun or structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i011",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "noun-vs-verb-meaning-in-sentence",
+          "weakness_tag": "meaning-in-context-verb-noun-effect",
+          "question": "In the sentence, which word is used as a noun? The new law had a strong effect on the community.",
+          "options": [
+            "law",
+            "had",
+            "effect",
+            "community"
+          ],
+          "correct_index": 2,
+          "explanation": "'Effect' is a noun here, not a verb; the verb would be 'affect.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i012",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "noun-vs-verb-application",
+          "weakness_tag": "gapfill-noun-vs-verb-transport",
+          "question": "Which option best completes the sentence? The company will __________ the goods tomorrow morning.",
+          "options": [
+            "transport",
+            "make transport",
+            "do a transport",
+            "transportation"
+          ],
+          "correct_index": 0,
+          "explanation": "'Transport' is the correct verb; the other options are incorrect noun forms or phrases.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i013",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "noun-vs-verb-collocation",
+          "weakness_tag": "error-detection-verb-noun-confusion-approval",
+          "question": "Find the error: The committee will approval the new policy next week.",
+          "options": [
+            "No error",
+            "approval",
+            "committee",
+            "policy"
+          ],
+          "correct_index": 1,
+          "explanation": "'Approval' is a noun; the verb form 'approve' is needed here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i014",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "context-appropriate-noun-vs-verb",
+          "weakness_tag": "sentence-choice-verb-vs-noun-response",
+          "question": "Which sentence uses 'response' correctly?",
+          "options": [
+            "We response quickly to emails.",
+            "The response was very helpful.",
+            "They response to every comment.",
+            "Please response soon."
+          ],
+          "correct_index": 1,
+          "explanation": "'Response' is a noun. Only option 2 uses it correctly in context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i015",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "verb-vs-noun-phrase-selection",
+          "weakness_tag": "collocation-choice-noun-vs-verb-application",
+          "question": "Choose the most natural completion: She will __________ for the job online.",
+          "options": [
+            "apply",
+            "do an apply",
+            "make an application",
+            "application"
+          ],
+          "correct_index": 0,
+          "explanation": "'Apply' is the correct verb form; the others are awkward or incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i016",
+          "focus_area": "mixed",
+          "item_type": "word_form_choice",
+          "subskill": "noun-vs-verb-selection-in-context",
+          "weakness_tag": "word-form-choice-noun-vs-verb-arrival",
+          "question": "Select the correct word to complete the sentence: The team's __________ was delayed by traffic.",
+          "options": [
+            "arrival",
+            "arrive",
+            "arriving",
+            "arrives"
+          ],
+          "correct_index": 0,
+          "explanation": "'Arrival' is the noun needed after 'team's'; the others are verb forms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i017",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "noun/verb distinction in context",
+          "weakness_tag": "gapfill-noun-vs-verb-progress",
+          "question": "Choose the best option to complete the sentence: The company will __________ the new system next month.",
+          "options": [
+            "launch",
+            "make a launch",
+            "give launch",
+            "launching"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'launch' is correct; noun forms need extra words, which are not natural here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i018",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "choosing noun or verb for balance",
+          "weakness_tag": "sentence-choice-verb-noun-balance",
+          "question": "Which sentence uses the correct form of 'balance'?",
+          "options": [
+            "She tries to balance her work and family life.",
+            "She tries to give balance her work and family life.",
+            "She tries to balance her work and family life to.",
+            "She tries to make a balance her work and family life."
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'balance' fits directly; noun forms require different structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i019",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "identifying noun/verb confusion errors",
+          "weakness_tag": "error-detection-verb-noun-confusion-offer",
+          "question": "Find the error: We will make an offer you a discount on your next purchase.",
+          "options": [
+            "We will make an offer you a discount",
+            "We will offer you a discount",
+            "We will make you a discount",
+            "No error"
+          ],
+          "correct_index": 1,
+          "explanation": "'Offer' as a verb is correct; 'make an offer you' is incorrect structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i020",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation with noun/verb forms",
+          "weakness_tag": "collocation-choice-noun-vs-verb-choice-review",
+          "question": "Which option best completes the sentence? Please __________ the document before sending it.",
+          "options": [
+            "review",
+            "make a review of",
+            "give a review to",
+            "do review"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'review' is natural here; noun forms would need a different structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c06-s04-i021",
+          "focus_area": "mixed",
+          "item_type": "word_form_choice",
+          "subskill": "choosing correct word form in context",
+          "weakness_tag": "word-form-choice-noun-vs-verb-response",
+          "question": "Select the correct word to complete the sentence: We expect everyone to __________ to the survey by Friday.",
+          "options": [
+            "respond",
+            "give a response",
+            "do a respond",
+            "response"
+          ],
+          "correct_index": 0,
+          "explanation": "The verb 'respond' is correct after 'to'; noun forms are not used this way.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    }
+  ],
+  "schema_version": 2,
+  "publication_status": "experimental",
+  "target_public_item_count": 24
+}

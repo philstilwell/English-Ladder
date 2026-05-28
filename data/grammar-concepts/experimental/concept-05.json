@@ -1,0 +1,1691 @@
+{
+  "concept_number": 5,
+  "concept_title": "Grammar Concepts: Using By and Through",
+  "assessment_intro": "These assessment sets check grammar, vocabulary, meaning, and test-style decision-making across this concept.",
+  "assessment_sets": [
+    {
+      "id": "core-grammar",
+      "title": "Core Grammar Forms",
+      "description": "Target the core form, structure, and sentence-building errors learners make with this concept.",
+      "items": [
+        {
+          "id": "c05-s01-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "using by before -ing verbs",
+          "weakness_tag": "by+gerund-method",
+          "question": "He improved his English _____ practicing with native speakers every day.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show means or method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i002",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "using through before noun phrases",
+          "weakness_tag": "through+noun-medium",
+          "question": "The artist gained recognition _____ social media platforms.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase to indicate the medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i003",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "distinguishing by+ing from through+noun",
+          "weakness_tag": "error-detect-mixup",
+          "question": "Identify the error: She managed stress through meditating every morning.",
+          "options": [
+            "No error",
+            "Replace 'through' with 'by'",
+            "Replace 'meditating' with 'meditation'",
+            "Replace 'every' with 'each'"
+          ],
+          "correct_index": 1,
+          "explanation": "'By' should be used before an -ing verb, not 'through'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i004",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "choosing correct preposition structure",
+          "weakness_tag": "sentence-choice-structure",
+          "question": "Which sentence is correct?",
+          "options": [
+            "He learned Spanish by immersive classes.",
+            "He learned Spanish through immersive classes.",
+            "He learned Spanish by immersive class.",
+            "He learned Spanish through immersing classes."
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' fits with a noun phrase ('immersive classes').",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i005",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocational accuracy",
+          "weakness_tag": "collocation-by-through",
+          "question": "Choose the best completion: She solved the puzzle _____ guessing the answer.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used with -ing forms to express how something is done.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i006",
+          "focus_area": "grammar",
+          "item_type": "meaning_in_context",
+          "subskill": "preposition meaning distinction",
+          "weakness_tag": "meaning-by-vs-through",
+          "question": "Which word best completes the sentence? He got the information _____ a friend.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' indicates receiving something via a medium or intermediary.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund for cause/effect",
+          "weakness_tag": "by+gerund-cause-effect",
+          "question": "She lost weight _____ following a healthy diet and exercising regularly.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before a gerund to show the method or cause of an action.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "through+noun for process",
+          "weakness_tag": "through+noun-process",
+          "question": "He advanced his career _____ dedication and hard work.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun to indicate the process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i009",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "distinguishing by/through",
+          "weakness_tag": "error-detect-by-through-confusion",
+          "question": "Identify the error: They improved communication by regular meetings.",
+          "options": [
+            "No error",
+            "Replace 'by' with 'through'",
+            "Replace 'by' with 'using'",
+            "Replace 'by' with 'with'"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' fits before 'regular meetings' (a noun phrase), not 'by'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i010",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "by/through sentence structure",
+          "weakness_tag": "sentence-choice-instrumental-method",
+          "question": "Which sentence uses the correct structure?",
+          "options": [
+            "He learned to cook by internet videos.",
+            "He learned to cook through watching videos.",
+            "He learned to cook by watching videos.",
+            "He learned to cook through to watch videos."
+          ],
+          "correct_index": 2,
+          "explanation": "'By' must be followed by a gerund to show method: 'by watching videos.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i011",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation with by/through",
+          "weakness_tag": "collocation-choice-method-medium",
+          "question": "Choose the correct word: She gained confidence _____ experience.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through experience' is the standard collocation for gaining confidence.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i012",
+          "focus_area": "grammar",
+          "item_type": "register_choice",
+          "subskill": "formal/informal preposition use",
+          "weakness_tag": "register-choice-formal-instrumental",
+          "question": "Which option is most natural in formal writing? He submitted the application _____ the online portal.",
+          "options": [
+            "by",
+            "through",
+            "using",
+            "with"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through the online portal' is the most formal and standard phrasing.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund-method",
+          "weakness_tag": "by+gerund-creative",
+          "question": "Complete the sentence: The chef impressed the judges _____ adding an unexpected spice to the dish.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method or how something is done.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i014",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "through+noun-medium",
+          "weakness_tag": "through+noun-experience",
+          "question": "Complete the sentence: She overcame her fear _____ therapy and support from friends.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is correct before a noun phrase indicating the process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i015",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "error-detect-misuse",
+          "weakness_tag": "detect-by-through-swap",
+          "question": "Identify the error: The team succeeded through working together closely.",
+          "options": [
+            "No error",
+            "Replace 'through' with 'by'",
+            "Replace 'together' with 'as a group'",
+            "Replace 'succeeded' with 'was successful'"
+          ],
+          "correct_index": 1,
+          "explanation": "'By' is needed before an -ing verb to show the means or method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i016",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "sentence-structure-method",
+          "weakness_tag": "sentence-choice-method",
+          "question": "Which sentence correctly uses 'by' or 'through'?\n",
+          "options": [
+            "He solved the issue by talking to the manager.",
+            "He solved the issue through talking to the manager.",
+            "He solved the issue by the manager.",
+            "He solved the issue through to talk to the manager."
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is correct before an -ing verb to indicate the method used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i017",
+          "focus_area": "grammar",
+          "item_type": "meaning_in_context",
+          "subskill": "through+noun-process",
+          "weakness_tag": "meaning-through-process",
+          "question": "Choose the best option: The company grew _____ a period of rapid innovation.",
+          "options": [
+            "through",
+            "by",
+            "using",
+            "with"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is used for a process or period acting as a medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund-instructional",
+          "weakness_tag": "by+gerund-instructional",
+          "question": "She taught herself to play the guitar _____ watching online tutorials.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method or means.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i019",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "through+noun-obstacle",
+          "weakness_tag": "through+noun-obstacle",
+          "question": "They found a solution _____ teamwork and persistence.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before nouns to indicate the process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i020",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "detect-by-through-instrumental",
+          "weakness_tag": "error-detect-instrumental-choice",
+          "question": "Identify the error: He learned to cook by a professional chef.",
+          "options": [
+            "Correct as written.",
+            "'By' should be 'through'.",
+            "'By' should be 'with'.",
+            "'By' should be 'using'."
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct with noun phrases showing the source or process.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i021",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-in-context-by-through",
+          "weakness_tag": "meaning-in-context-process",
+          "question": "Choose the best option: He got stronger _____ months of physical therapy.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' shows the process or medium (months of therapy) leading to the result.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s01-i022",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by-vs-through-method-medium",
+          "weakness_tag": "by+gerund-achievement",
+          "question": "How did the scientist make her discovery? She made her discovery _____ conducting careful experiments.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method of achievement.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "meaning-and-contrast",
+      "title": "Meaning and Contrast",
+      "description": "Target close contrasts, meaning shifts, and high-confusion choices that strong distractors can expose.",
+      "items": [
+        {
+          "id": "c05-s02-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund",
+          "weakness_tag": "by+gerund-skill-development",
+          "question": "She improved her public speaking skills _____ practicing in front of a mirror every evening.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method of improvement.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i002",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "through+noun",
+          "weakness_tag": "through+noun-challenge",
+          "question": "He gained resilience _____ difficult circumstances during his childhood.",
+          "options": [
+            "by",
+            "through",
+            "via",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase to show the process or experience.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i003",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "by/through confusion",
+          "weakness_tag": "error-detect-by-through-inappropriate",
+          "question": "Identify the error: She achieved fluency by an intensive language course.",
+          "options": [
+            "No error",
+            "'by' should be 'through'",
+            "'intensive' should be 'intensively'",
+            "'course' should be 'courses'"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct before a noun phrase like 'an intensive language course.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i004",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "by/through nuance",
+          "weakness_tag": "sentence-choice-nuance-method-medium",
+          "question": "Which sentence uses the correct preposition?",
+          "options": [
+            "He solved the problem through trying different approaches.",
+            "He solved the problem by trying different approaches.",
+            "He solved the problem with trying different approaches.",
+            "He solved the problem via trying different approaches."
+          ],
+          "correct_index": 1,
+          "explanation": "'By' matches with an -ing verb to show the method used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i005",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation-by-through",
+          "weakness_tag": "collocation-choice-career-advancement",
+          "question": "Choose the best word: She advanced her career _____ networking events and professional connections.",
+          "options": [
+            "by",
+            "through",
+            "using",
+            "by means of"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' fits with noun phrases indicating process or medium, like 'networking events.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i006",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-by-vs-through",
+          "weakness_tag": "meaning-in-context-communication",
+          "question": "Which option best completes the sentence? They communicated _____ exchanging handwritten letters over many years.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is correct before an -ing verb to indicate the method of communication.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "method-vs-medium",
+          "weakness_tag": "by-through-passive-learning",
+          "question": "Complete the sentence: He learned most of his English _____ watching television shows.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before gerunds to indicate the method or means of learning.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "process-vs-action",
+          "weakness_tag": "through-by-process-vs-action",
+          "question": "Choose the correct word: The team reached their goal _____ a series of challenging negotiations.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is used before noun phrases to indicate the process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i009",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "preposition-choice-instrumental",
+          "weakness_tag": "instrumental-prep-best-rewrite",
+          "question": "Which sentence is the most natural and correct?",
+          "options": [
+            "She fixed the problem by a new tool.",
+            "She fixed the problem through using a new tool.",
+            "She fixed the problem by using a new tool.",
+            "She fixed the problem with by a new tool."
+          ],
+          "correct_index": 2,
+          "explanation": "'By using' is the natural structure for expressing the means or method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i010",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-shift",
+          "weakness_tag": "meaning-in-context-obstacle",
+          "question": "Which option best completes the sentence? She managed to succeed _____ many setbacks and failures.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is used to show overcoming obstacles or challenges.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i011",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "structure-correction",
+          "weakness_tag": "error-detect-by-through-structure",
+          "question": "Identify the error:\nHe improved his pronunciation through practicing every day.",
+          "options": [
+            "No error",
+            "'through' should be 'by'",
+            "'practicing' should be 'practice'",
+            "'his' should be 'him'"
+          ],
+          "correct_index": 1,
+          "explanation": "'By' is required before an -ing verb to indicate method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i012",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-communication",
+          "question": "Choose the option that best fits the sentence: They kept in touch _____ regular emails.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is commonly used to indicate the medium of communication.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund as method",
+          "weakness_tag": "by+gerund-creative-process",
+          "question": "Fill in the blank: The author developed her unique style _____ experimenting with different genres.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show method or means.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i014",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "through+noun as medium",
+          "weakness_tag": "through+noun-communication-channel",
+          "question": "Select the best option: The announcement was made _____ official channels.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is correct with noun phrases indicating a medium or channel.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i015",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "detect misuse of 'by'/'through'",
+          "weakness_tag": "error-detect-by-through-swap-institution",
+          "question": "Identify the error: She entered the university by a scholarship.",
+          "options": [
+            "No error",
+            "by \u2192 through",
+            "by \u2192 with",
+            "by \u2192 using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used with noun phrases like 'a scholarship', not 'by'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i016",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "choose correct preposition for method/achievement",
+          "weakness_tag": "meaning-in-context-achievement-method",
+          "question": "Choose the word that best completes the sentence: He became fluent in Spanish _____ practicing every day.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' + -ing verb expresses the method used to achieve fluency.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i017",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "formal vs. informal instrumental prepositions",
+          "weakness_tag": "register-choice-instrumental-method",
+          "question": "Which option is most appropriate in formal writing? The data was collected _____ electronic surveys.",
+          "options": [
+            "through",
+            "by",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is preferred in formal contexts with noun phrases denoting medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "by+gerund-method",
+          "weakness_tag": "by+gerund-innovation-method",
+          "question": "Complete the sentence: The artist developed a new style _____ experimenting with different materials.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before a gerund to indicate the method used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i019",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "through+noun-medium",
+          "weakness_tag": "through+noun-medium-process",
+          "question": "Fill in the blank: The information was shared _____ an internal newsletter.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct before a noun phrase to indicate the medium or channel.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i020",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "error-detection-by-through",
+          "weakness_tag": "error-detect-by-through-reversal",
+          "question": "Identify the error: She improved her writing through practicing every day.",
+          "options": [
+            "No error",
+            "'through' should be 'by'",
+            "'practicing' should be 'practice'",
+            "'improved' should be 'improves'"
+          ],
+          "correct_index": 1,
+          "explanation": "'By practicing' is correct; 'through' is not used before a gerund here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i021",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-in-context-physical-access",
+          "weakness_tag": "meaning-in-context-physical-access",
+          "question": "Which option best completes the sentence? The hikers reached the valley _____ a dense forest.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used to indicate movement across or within a physical space.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s02-i022",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation-by-through-technology",
+          "weakness_tag": "collocation-choice-by-through-technology",
+          "question": "Choose the correct word: The company increased efficiency _____ adopting new technology.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By adopting' uses the gerund to show the method; 'by' is correct here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary-and-usage",
+      "title": "Vocabulary and Usage",
+      "description": "Target collocation, lexical choice, word class, register, and other vocabulary-linked weaknesses tied to this concept.",
+      "items": [
+        {
+          "id": "c05-s03-i001",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-by-through-artistic-growth",
+          "question": "Which word best completes the sentence? The musician developed her style _____ years of dedicated practice.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase to indicate a process or medium, as in 'through years of practice.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i002",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning in context",
+          "weakness_tag": "meaning-in-context-invention-method",
+          "question": "Select the most appropriate completion: The inventor solved the problem _____ experimenting with different materials.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing forms to show the method used to achieve something.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i003",
+          "focus_area": "mixed",
+          "item_type": "word_form_choice",
+          "subskill": "word class",
+          "weakness_tag": "word-form-choice-through-by-technology-access",
+          "question": "Choose the correct word to complete the sentence: Many people access information _____ online platforms.",
+          "options": [
+            "through",
+            "by",
+            "using",
+            "with"
+          ],
+          "correct_index": 0,
+          "explanation": "'Through' is used to indicate the medium or channel, such as 'through online platforms.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i004",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "preposition use",
+          "weakness_tag": "gap-fill-by-through-experience",
+          "question": "Complete the sentence: She learned important lessons _____ making mistakes.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing verbs to show the method or way something was done.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i005",
+          "focus_area": "vocabulary",
+          "item_type": "best_rewrite",
+          "subskill": "register",
+          "weakness_tag": "best-rewrite-instrumental-prep-register",
+          "question": "Which rewrite is most natural and accurate? The report was sent _____ email.",
+          "options": [
+            "by",
+            "through",
+            "via",
+            "using"
+          ],
+          "correct_index": 2,
+          "explanation": "'Via' is the most natural preposition for sending information by email in formal contexts.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i006",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "collocation",
+          "weakness_tag": "error-detection-by-through-incorrect-collocation",
+          "question": "Identify the error: He succeeded through working hard every day.",
+          "options": [
+            "No error",
+            "'through' should be 'by'",
+            "'working' should be 'work'",
+            "'every day' should be 'everyday'"
+          ],
+          "correct_index": 1,
+          "explanation": "'By' is correct before an -ing verb to indicate method: 'by working hard.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i007",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-improvement-method",
+          "question": "Choose the best word to complete the sentence: He improved his public speaking skills _____ attending workshops regularly.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used with -ing verbs to show the method; here, 'attending' is the method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i008",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning",
+          "weakness_tag": "meaning-in-context-support",
+          "question": "Which word best completes the sentence? She managed to finish the project _____ the help of her colleagues.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before noun phrases to indicate the medium or means, such as 'the help.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i009",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-transport",
+          "question": "Select the word that best fits the sentence: The goods were delivered _____ a network of distributors.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct for delivery via a process or system, like 'a network.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i010",
+          "focus_area": "mixed",
+          "item_type": "word_form_choice",
+          "subskill": "word class",
+          "weakness_tag": "word-form-choice-access",
+          "question": "Choose the correct option: She accessed the files _____ logging into the secure server.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing forms to show the method of action.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i011",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "register",
+          "weakness_tag": "register-choice-formal-writing",
+          "question": "Which option is most appropriate in formal writing? The funds were raised _____ community initiatives.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is preferred in formal registers when describing means via a noun phrase.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i012",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "phrase choice",
+          "weakness_tag": "best-rewrite-by-through-clarity",
+          "question": "Which sentence is most natural and clear?",
+          "options": [
+            "She solved the puzzle by a clever idea.",
+            "She solved the puzzle through thinking carefully.",
+            "She solved the puzzle by thinking carefully.",
+            "She solved the puzzle by a careful thought."
+          ],
+          "correct_index": 2,
+          "explanation": "'By' + -ing verb ('by thinking carefully') is the correct and natural structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i013",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "collocation",
+          "weakness_tag": "gap-fill-by-through-skill-development",
+          "question": "Fill in the blank: She improved her negotiation skills _____ attending several professional workshops.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before '-ing' verbs to indicate method or means.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i014",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning",
+          "weakness_tag": "meaning-in-context-by-through-communication",
+          "question": "Which option best completes the sentence? The message was delivered _____ an intermediary.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used for a process or medium, such as 'an intermediary'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i015",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-by-through-funding",
+          "question": "Choose the correct word: The organization supported the project _____ raising donations from the public.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' fits before '-ing' verbs to show the method used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i016",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "word form",
+          "weakness_tag": "word-form-choice-by-through-access",
+          "question": "Select the best option: Many people learn about new products _____ social media.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase to indicate the medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i017",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "register",
+          "weakness_tag": "best-rewrite-by-through-instruction",
+          "question": "Which sentence correctly uses by to show method?",
+          "options": [
+            "The teacher explained the concept by clear examples.",
+            "The teacher explained the concept through giving examples.",
+            "The teacher explained the concept by giving examples.",
+            "The teacher explained the concept through clear explaining."
+          ],
+          "correct_index": 2,
+          "explanation": "'By giving examples' is the correct and natural method expression.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i018",
+          "focus_area": "vocabulary",
+          "item_type": "gap_fill",
+          "subskill": "collocation",
+          "weakness_tag": "gap-fill-by-through-networking",
+          "question": "Complete the sentence: She found her current job _____ networking at industry events.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase to indicate the process or medium, such as 'networking'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i019",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-by-through-luck",
+          "question": "Which word best completes the sentence? He got the opportunity _____ a stroke of luck.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is natural with noun phrases like 'a stroke of luck' indicating the medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i020",
+          "focus_area": "mixed",
+          "item_type": "register_choice",
+          "subskill": "register",
+          "weakness_tag": "register-choice-informal-instruction",
+          "question": "Which option is most appropriate in informal conversation? He fixed the problem _____ trying different solutions.",
+          "options": [
+            "by",
+            "through",
+            "using",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' + -ing is most idiomatic and informal for describing method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i021",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning",
+          "weakness_tag": "meaning-in-context-by-through-accident",
+          "question": "Choose the word that best fits: She discovered the error _____ accidentally opening the wrong file.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "by means of"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing verbs to show the method or cause of discovery.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s03-i022",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "word form",
+          "weakness_tag": "word-form-choice-by-through-translation",
+          "question": "Select the most natural completion: He learned new phrases _____ translating articles from English.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is correct before the -ing verb 'translating' to indicate the means.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "mixed-diagnostic",
+      "title": "Mixed Diagnostic Set",
+      "description": "Mix grammar and vocabulary weaknesses in assessment-style items that feel like placement or progress-test questions.",
+      "items": [
+        {
+          "id": "c05-s04-i001",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "method-description",
+          "weakness_tag": "gap-fill-by-through-problem-solving",
+          "question": "Choose the correct word to complete the sentence: The scientist solved the equation _____ applying a new formula.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing verbs to indicate method; 'by applying' is correct.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i002",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "collocation",
+          "weakness_tag": "collocation-choice-by-through-persistence",
+          "question": "Select the word that best completes the sentence: She achieved her goals _____ persistence and hard work.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before noun phrases to show process or means.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i003",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "preposition-pattern",
+          "weakness_tag": "error-detection-by-through-incorrect-pattern",
+          "question": "Identify the error: He improved his English by a six-week immersion program.",
+          "options": [
+            "No error",
+            "'by' should be 'through'",
+            "'by' should be 'with'",
+            "'program' should be 'programming'"
+          ],
+          "correct_index": 1,
+          "explanation": "Use 'through' before a noun phrase describing a process or program.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i004",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning",
+          "weakness_tag": "meaning-in-context-by-through-observation",
+          "question": "Which word best fits the meaning? She learned about the problem _____ observing the process carefully.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' + -ing verb expresses the means or method used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i005",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "phrase-choice",
+          "weakness_tag": "best-rewrite-by-through-influence",
+          "question": "Which sentence correctly uses the inspired by pattern?",
+          "options": [
+            "He was inspired by his mentor's advice.",
+            "He was inspired through his mentor's advice.",
+            "He was inspired by his mentor advice.",
+            "He was inspired with his mentor's advice."
+          ],
+          "correct_index": 0,
+          "explanation": "'Inspired by' is the idiomatic and natural collocation.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i006",
+          "focus_area": "grammar",
+          "item_type": "register_choice",
+          "subskill": "register",
+          "weakness_tag": "register-choice-formal-process",
+          "question": "Which option is most appropriate in formal writing? The application was reviewed _____ a multi-step evaluation process.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used formally to indicate process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i007",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "preposition-choice-method-vs-medium",
+          "weakness_tag": "gap-fill-by-through-technology",
+          "question": "Complete the sentence: The company increased its sales _____ launching a new online platform.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to describe the method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i008",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "incorrect-pattern",
+          "weakness_tag": "error-detection-by-through-process",
+          "question": "Identify the error: She managed to recover her password by the help of customer service.",
+          "options": [
+            "No error",
+            "'by' should be 'through'",
+            "'by' should be 'with'",
+            "'by' should be 'using'"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct before a noun phrase indicating the process or medium.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i009",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "method-vs-medium",
+          "weakness_tag": "collocation-choice-by-through-research",
+          "question": "Choose the word that best completes the sentence: The scientist made the discovery _____ conducting extensive research.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i010",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "medium-vs-method",
+          "weakness_tag": "meaning-in-context-by-through-training",
+          "question": "Which option best completes the sentence? She gained valuable skills _____ a rigorous training program.",
+          "options": [
+            "by",
+            "through",
+            "using",
+            "with"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is used before a noun phrase indicating the process.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i011",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "method-vs-medium",
+          "weakness_tag": "best-rewrite-by-through-clarity-communication",
+          "question": "Which rewrite is most natural and accurate?",
+          "options": [
+            "She explained the problem by clear communication.",
+            "She explained the problem through clear communication.",
+            "She explained the problem by communicating clearly.",
+            "She explained the problem through communicating clearly."
+          ],
+          "correct_index": 2,
+          "explanation": "'By' + -ing verb ('communicating clearly') is the correct method structure.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i012",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "method-instrument-distinction",
+          "weakness_tag": "gap-fill-by-through-payment-method",
+          "question": "Complete the sentence: She paid for her groceries _____ using her smartphone app.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "via"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before an -ing verb to show the method of payment.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i013",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "medium-vs-method",
+          "weakness_tag": "sentence-choice-by-through-information-channel",
+          "question": "Which sentence is most natural and correct?",
+          "options": [
+            "He sent the documents by email.",
+            "He sent the documents through emailing.",
+            "He sent the documents by email address.",
+            "He sent the documents through email address."
+          ],
+          "correct_index": 0,
+          "explanation": "'By email' is the standard collocation to indicate the medium used.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i014",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "collocation-medium-process",
+          "weakness_tag": "collocation-choice-by-through-support",
+          "question": "Which word best completes the sentence? The students received extra help _____ a tutoring program.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through a program' expresses the process or medium providing support.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i015",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "incorrect-pattern",
+          "weakness_tag": "error-detection-by-through-verb-noun-mismatch",
+          "question": "Identify the error in this sentence: He improved his pronunciation through practicing every day.",
+          "options": [
+            "No error.",
+            "'Through' should be 'by'.",
+            "'Practicing' should be 'practice'.",
+            "'Improved' should be 'improves'."
+          ],
+          "correct_index": 1,
+          "explanation": "'By practicing' is correct; 'by' is used before an -ing verb for method.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i016",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "distinguishing-method-medium",
+          "weakness_tag": "meaning-in-context-by-through-communication-channel",
+          "question": "Choose the option that best completes the sentence: She reached her friend _____ calling him late at night.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By calling' correctly expresses the method used to reach her friend.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i017",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "preposition-method",
+          "weakness_tag": "gap-fill-by-through-experimentation",
+          "question": "Complete the sentence: The scientist solved the puzzle _____ experimenting with different chemicals.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 0,
+          "explanation": "'By' is used before -ing verbs to show method (by experimenting).",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i018",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "collocation-medium",
+          "weakness_tag": "collocation-choice-by-through-referral",
+          "question": "Choose the correct word: She got the apartment _____ a friend's referral.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' is correct with noun phrases indicating the medium or process.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i019",
+          "focus_area": "mixed",
+          "item_type": "error_detection",
+          "subskill": "pattern-choice",
+          "weakness_tag": "error-detection-by-through-verb-noun-pattern",
+          "question": "Identify the error: He improved his public speaking by practice every week.",
+          "options": [
+            "No error",
+            "Change 'by' to 'through'",
+            "Change 'practice' to 'practicing'",
+            "Change 'by' to 'with'"
+          ],
+          "correct_index": 2,
+          "explanation": "'By' requires an -ing form: 'by practicing every week.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i020",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "sentence-pattern",
+          "weakness_tag": "sentence-choice-by-through-communication",
+          "question": "Which sentence is most natural and accurate?",
+          "options": [
+            "She contacted him by sending an email.",
+            "She contacted him through sending an email.",
+            "She contacted him with sending an email.",
+            "She contacted him via sending an email."
+          ],
+          "correct_index": 0,
+          "explanation": "'By' + -ing verb is standard for showing method (by sending an email).",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c05-s04-i021",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "meaning-choice",
+          "weakness_tag": "meaning-in-context-by-through-negotiation",
+          "question": "Choose the word that best completes the sentence: They reached an agreement _____ negotiation.",
+          "options": [
+            "by",
+            "through",
+            "with",
+            "using"
+          ],
+          "correct_index": 1,
+          "explanation": "'Through' fits with noun phrases indicating the process (through negotiation).",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    }
+  ],
+  "schema_version": 2,
+  "publication_status": "experimental",
+  "target_public_item_count": 24
+}

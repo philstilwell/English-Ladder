@@ -876,6 +876,21 @@ body.lightbox-open {
     align-items: start;
 }
 
+.practice-set + .practice-set {
+    margin-top: 18px;
+}
+
+.practice-set h3 {
+    margin: 0 0 8px;
+    color: var(--accent-strong);
+    font-size: 1.02rem;
+}
+
+.practice-set > p {
+    margin: 0 0 12px;
+    color: var(--muted);
+}
+
 .practice-card,
 .showcase-card {
     height: auto;

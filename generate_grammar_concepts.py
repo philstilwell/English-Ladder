@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import html
+import json
+import os
 import re
 import ssl
 import textwrap
@@ -19,7 +21,17 @@ ASSET_DIR = ROOT / "assets" / "grammar-concepts"
 PDF_DIR = ROOT / "pdf"
 STUDENT_PDF_DIR = PDF_DIR / "students"
 TEACHER_PDF_DIR = PDF_DIR / "teachers"
+ITEM_BANK_ROOT = ROOT / "data" / "grammar-concepts"
+PUBLIC_ITEM_BANK_DIR = ITEM_BANK_ROOT / "public"
+EXPERIMENTAL_ITEM_BANK_DIR = ITEM_BANK_ROOT / "experimental"
 INDEX_URL = "https://stilwellfiles.wordpress.com/english-grammar-concepts/"
+
+USE_PUBLIC_ITEM_BANK = os.environ.get("ENGLISH_LADDER_USE_PUBLIC_ITEM_BANK", "").lower() in {
+    "1",
+    "true",
+    "yes",
+    "on",
+}
 
 
 CLOUDFLARE_SNIPPET = (
@@ -75,6 +87,14 @@ class PracticeItem:
 
 
 @dataclass
+class PracticeSet:
+    key: str
+    title: str
+    description: str | None
+    items: list[PracticeItem]
+
+
+@dataclass
 class ShowcaseBlock:
     title: str
     lines: list[str]
@@ -99,6 +119,7 @@ class ConceptEntry:
     sections: list[Section]
     practice_intro: str | None
     practice_items: list[PracticeItem]
+    practice_sets: list[PracticeSet]
     showcase_title: str | None
     showcase_blocks: list[ShowcaseBlock]
     preview: str
@@ -676,6 +697,62 @@ def parse_practice(column: Tag) -> tuple[str | None, list[PracticeItem], str | N
     return parse_flat_practice(column)
 
 
+def option_label(index: int) -> str:
+    return f"{chr(ord('a') + index)})"
+
+
+def format_bank_option(index: int, option: str) -> str:
+    return f"{option_label(index)} {clean_text(option)}"
+
+
+def practice_item_from_bank(raw_item: dict[str, object], number: int) -> PracticeItem:
+    question = clean_text(str(raw_item["question"]))
+    options = [clean_text(str(option)) for option in raw_item["options"]]
+    correct_index = int(raw_item["correct_index"])
+    explanation = clean_text(str(raw_item["explanation"]))
+
+    prompt_lines = [question, *(format_bank_option(index, option) for index, option in enumerate(options))]
+    answer_lines = [format_bank_option(correct_index, options[correct_index])]
+    if explanation:
+        answer_lines.append(f"Feedback: {explanation}")
+
+    return PracticeItem(
+        number=number,
+        prompt_lines=prompt_lines,
+        answer_lines=answer_lines,
+        note_sections=[],
+    )
+
+
+def load_public_item_bank(entry_number: int) -> tuple[str | None, list[PracticeSet]] | None:
+    if not USE_PUBLIC_ITEM_BANK:
+        return None
+
+    path = PUBLIC_ITEM_BANK_DIR / f"concept-{entry_number:02d}.json"
+    if not path.exists():
+        return None
+
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    intro = clean_text(str(payload.get("assessment_intro", ""))) or None
+    practice_sets: list[PracticeSet] = []
+    next_number = 1
+
+    for index, raw_set in enumerate(payload.get("assessment_sets", []), start=1):
+        raw_items = raw_set.get("items", [])
+        items = [practice_item_from_bank(raw_item, next_number + offset) for offset, raw_item in enumerate(raw_items)]
+        next_number += len(items)
+        practice_sets.append(
+            PracticeSet(
+                key=clean_text(str(raw_set.get("id", f"set-{index:02d}"))),
+                title=clean_text(str(raw_set.get("title", f"Set {index:02d}"))),
+                description=clean_text(str(raw_set.get("description", ""))) or None,
+                items=items,
+            )
+        )
+
+    return intro, practice_sets
+
+
 def render_paragraph(text: str) -> str:
     return f"<p>{html.escape(text)}</p>"
 
@@ -1201,6 +1278,18 @@ def render_practice_items(items: list[PracticeItem]) -> str:
     return "".join(cards)
 
 
+def render_practice_set(practice_set: PracticeSet) -> str:
+    description_html = render_paragraph(practice_set.description) if practice_set.description else ""
+    return (
+        "<section class=\"practice-set\">"
+        f"<h3>{html.escape(practice_set.title)}</h3>"
+        f"{description_html}"
+        "<div class=\"practice-grid\">"
+        f"{render_practice_items(practice_set.items)}"
+        "</div></section>"
+    )
+
+
 def render_showcase(showcase_title: str | None, blocks: list[ShowcaseBlock]) -> str:
     if not blocks:
         return ""
@@ -1263,13 +1352,20 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
             if entry.practice_intro
             else "<p>Use these prompts to check the concept before moving on.</p>"
         )
+        practice_sets = entry.practice_sets or [
+            PracticeSet(
+                key="practice-check",
+                title="Practice Check",
+                description=None,
+                items=entry.practice_items,
+            )
+        ]
         practice_html = (
             "<section class=\"grammar-practice\">"
             "<h2>Practice Check</h2>"
             f"{practice_intro}"
-            "<div class=\"practice-grid\">"
-            f"{render_practice_items(entry.practice_items)}"
-            "</div></section>"
+            f"{''.join(render_practice_set(practice_set) for practice_set in practice_sets)}"
+            "</section>"
         )
 
     showcase_html = render_showcase(entry.showcase_title, entry.showcase_blocks)
@@ -1447,6 +1543,24 @@ def parse_entry(label: str, source_url: str) -> ConceptEntry:
         if overrides:
             item.answer_lines = overrides.copy()
 
+    practice_sets = []
+    if practice_items:
+        practice_sets.append(
+            PracticeSet(
+                key="practice-check",
+                title="Practice Check",
+                description=None,
+                items=practice_items,
+            )
+        )
+
+    local_bank = load_public_item_bank(number)
+    if local_bank is not None:
+        local_intro, local_sets = local_bank
+        practice_intro = local_intro
+        practice_sets = local_sets
+        practice_items = [item for practice_set in practice_sets for item in practice_set.items]
+
     return ConceptEntry(
         number=number,
         label=label,
@@ -1459,6 +1573,7 @@ def parse_entry(label: str, source_url: str) -> ConceptEntry:
         sections=sections,
         practice_intro=practice_intro,
         practice_items=practice_items,
+        practice_sets=practice_sets,
         showcase_title=showcase_title,
         showcase_blocks=showcase_blocks,
         preview=build_preview(intro),

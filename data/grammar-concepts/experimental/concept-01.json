@@ -1,0 +1,1691 @@
+{
+  "concept_number": 1,
+  "concept_title": "Understanding Prepositions: in/on/at",
+  "assessment_intro": "These assessment sets check grammar, vocabulary, meaning, and test-style decision-making across this concept.",
+  "assessment_sets": [
+    {
+      "id": "core-grammar",
+      "title": "Core Grammar Forms",
+      "description": "Target the core form, structure, and sentence-building errors learners make with this concept.",
+      "items": [
+        {
+          "id": "c01-s01-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: city/country",
+          "weakness_tag": "in_city_country",
+          "question": "My cousin lives ___ Brazil.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for countries and large places, not 'on' or 'at'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i002",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: surface",
+          "weakness_tag": "on_surface",
+          "question": "There is a notebook ___ the desk.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for surfaces; 'in' and 'at' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i003",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time: clock time",
+          "weakness_tag": "at_time",
+          "question": "The meeting starts ___ 9:00 AM.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for exact times; 'in' and 'on' are not.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i004",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: street",
+          "weakness_tag": "on_street",
+          "question": "The bakery is ___ Elm Street.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is standard for street addresses, not 'in' or 'at'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i005",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: building/enclosed space",
+          "weakness_tag": "in_building",
+          "question": "They are ___ the library right now.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is correct for enclosed spaces like buildings.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i006",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "time: date",
+          "weakness_tag": "on_date",
+          "question": "Which sentence correctly uses a preposition with a clock time?",
+          "options": [
+            "Her birthday is in July 12th.",
+            "Her birthday is on July 12th.",
+            "Her birthday is at July 12th.",
+            "Her birthday is by July 12th."
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for specific dates; 'in' and 'at' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time expressions",
+          "weakness_tag": "in_month_year",
+          "question": "My birthday is ___ July.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for months and years, not 'on' or 'at'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: specific places",
+          "weakness_tag": "at_specific_place",
+          "question": "Let's meet ___ the bus stop after school.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is correct for specific points or places like 'the bus stop'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i009",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time expressions",
+          "weakness_tag": "on_day_of_week",
+          "question": "We have English class ___ Monday.",
+          "options": [
+            "on",
+            "at",
+            "in",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for days of the week.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i010",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location: enclosed space",
+          "weakness_tag": "in_enclosed_space",
+          "question": "The children are playing ___ the garden.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is correct for enclosed or defined spaces like 'the garden'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i011",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time expressions",
+          "weakness_tag": "error_detection_time",
+          "question": "Find the error: The concert is at Saturday evening.",
+          "options": [
+            "No error",
+            "'at' should be 'on'",
+            "'Saturday' should be 'Saturdays'",
+            "'evening' should be 'night'"
+          ],
+          "correct_index": 1,
+          "explanation": "Use 'on' for days: 'on Saturday evening' is correct.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i012",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "prepositions with public transport",
+          "weakness_tag": "collocation_choice_transport",
+          "question": "He forgot his bag ___ the train.",
+          "options": [
+            "on",
+            "at",
+            "in",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is correct for public transport: 'on the train'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "prepositions of time",
+          "weakness_tag": "in_season",
+          "question": "Many people travel ___ summer to enjoy the beach.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "We use 'in' for seasons, like 'in summer.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i014",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "prepositions of location",
+          "weakness_tag": "on_floor_of_building",
+          "question": "Her office is ___ the third floor.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "We use 'on' for floors of a building: 'on the third floor.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i015",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "prepositions of location",
+          "weakness_tag": "at_address_number",
+          "question": "The restaurant is ___ 25 King Avenue.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "to"
+          ],
+          "correct_index": 0,
+          "explanation": "We use 'at' for specific addresses: 'at 25 King Avenue.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i016",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "prepositions of place",
+          "weakness_tag": "error_detection_location",
+          "question": "Find the error: She waited in the bus stop for her friend.",
+          "options": [
+            "No error",
+            "in",
+            "on",
+            "at"
+          ],
+          "correct_index": 1,
+          "explanation": "The correct preposition is 'at the bus stop,' not 'in.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i017",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "prepositions of time",
+          "weakness_tag": "on_specific_date",
+          "question": "Our final exam is ___ June 15th.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "We use 'on' for specific dates: 'on June 15th.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location",
+          "weakness_tag": "in_room",
+          "question": "Please leave your shoes ___ the hallway before entering.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for enclosed spaces like rooms or hallways.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i019",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location",
+          "weakness_tag": "on_transport_surface",
+          "question": "There are many advertisements ___ the side of the bus.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "to"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is correct for surfaces, such as the side of a vehicle.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i020",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "information and other uses",
+          "weakness_tag": "at_event",
+          "question": "I met her ___ the conference last year.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for events or specific gatherings.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i021",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time",
+          "weakness_tag": "error_detection_month",
+          "question": "Find the error: The course begins on October every year.",
+          "options": [
+            "No error",
+            "The error is 'on'\u2014should be 'in'",
+            "The error is 'October'\u2014should be 'Octobers'",
+            "The error is 'every'\u2014should be 'each'"
+          ],
+          "correct_index": 1,
+          "explanation": "'In' is used with months, not 'on'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s01-i022",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "time",
+          "weakness_tag": "collocation_choice_timeofday",
+          "question": "Choose the correct preposition: She always drinks coffee ___ the morning.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In the morning' is the standard collocation for time of day.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "meaning-and-contrast",
+      "title": "Meaning and Contrast",
+      "description": "Target close contrasts, meaning shifts, and high-confusion choices that strong distractors can expose.",
+      "items": [
+        {
+          "id": "c01-s02-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location_general_rules",
+          "weakness_tag": "in_vs_on_vs_at_geographical",
+          "question": "She spent her summer vacation ___ Italy with her family.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for countries. 'On' is for islands, not countries, and 'at' is for specific points.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i002",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "surface_vs_enclosed_vs_point",
+          "weakness_tag": "on_vs_in_vs_at_surface",
+          "question": "The remote control is ___ the couch, can you see it?",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is correct for surfaces. 'In' suggests inside, 'at' suggests a point, 'over' is not contact.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i003",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time_specificity",
+          "weakness_tag": "at_vs_on_vs_in_time",
+          "question": "The movie starts ___ 7:30 this evening.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for precise times. 'On' is for days, 'in' for months/years.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i004",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "surface_vs_point",
+          "weakness_tag": "error_detection_on_surface",
+          "question": "Find the error: The painting is in the wall near the door.",
+          "options": [
+            "No error.",
+            "'in' should be 'on'.",
+            "'near' should be 'at'.",
+            "'the' should be 'a'."
+          ],
+          "correct_index": 1,
+          "explanation": "'On the wall' is correct. 'In the wall' means inside, which is not intended.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i005",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "time_expression",
+          "weakness_tag": "rewrite_time_preposition",
+          "question": "Which is the best way to complete the sentence? We have a meeting ___ Friday afternoon.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for days and their parts, like 'on Friday afternoon'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i006",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "public_transport_collocation",
+          "weakness_tag": "on_vs_in_vs_at_transport",
+          "question": "Choose the correct preposition: He left his umbrella ___ the bus.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for public transport vehicles like buses, trains, and planes.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i007",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location_general",
+          "weakness_tag": "in_country",
+          "question": "She studied abroad ___ Canada for two years.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for countries; 'on' and 'at' are not correct for this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i008",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time_specific",
+          "weakness_tag": "at_clock_time",
+          "question": "The meeting starts ___ 4:00 PM sharp.",
+          "options": [
+            "on",
+            "at",
+            "in",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'At' is used for precise times; 'on' and 'in' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i009",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "location_enclosed",
+          "weakness_tag": "error_detection_in_room",
+          "question": "Find the error: The students are on the classroom waiting for the teacher.",
+          "options": [
+            "on the classroom",
+            "for the teacher",
+            "waiting",
+            "No error"
+          ],
+          "correct_index": 0,
+          "explanation": "'In the classroom' is correct because a classroom is an enclosed space.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i010",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "location_transport",
+          "weakness_tag": "collocation_choice_on_plane",
+          "question": "Which is correct? She forgot her passport ___ the plane.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'On the plane' is standard for public transport vehicles.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i011",
+          "focus_area": "grammar",
+          "item_type": "best_rewrite",
+          "subskill": "location_event",
+          "weakness_tag": "best_rewrite_at_event",
+          "question": "Choose the best rewrite: We met each other ___ the wedding.",
+          "options": [
+            "in the wedding",
+            "on the wedding",
+            "at the wedding",
+            "by the wedding"
+          ],
+          "correct_index": 2,
+          "explanation": "'At the wedding' is correct for events; 'in' and 'on' are not used here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i012",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "preposition_of_location",
+          "weakness_tag": "at_vs_on_vs_in_public_place",
+          "question": "We agreed to meet ___ the museum entrance at noon.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for specific points or locations, like an entrance.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i013",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time_prepositions",
+          "weakness_tag": "in_vs_on_vs_at_month_year",
+          "question": "Her birthday is ___ July 1999.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for months and years; 'on' is for dates, 'at' for times.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i014",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location_prepositions",
+          "weakness_tag": "on_vs_in_vs_at_street",
+          "question": "The bakery is ___ Green Street.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'On' is used for streets; 'in' is for areas, 'at' for specific addresses.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i015",
+          "focus_area": "grammar",
+          "item_type": "sentence_choice",
+          "subskill": "location_prepositions",
+          "weakness_tag": "at_vs_in_vs_on_building",
+          "question": "Which is correct?",
+          "options": [
+            "He arrived at the library just before closing.",
+            "He arrived on the library just before closing.",
+            "He arrived in the library just before closing.",
+            "He arrived by the library just before closing."
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for points or locations; 'in' would mean inside, but 'arrived at' is standard.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i016",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "time_collocation",
+          "weakness_tag": "collocation_choice_season",
+          "question": "Choose the correct preposition: Many birds migrate ___ autumn.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for seasons; 'on' for days, 'at' for times.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i017",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "time_vs_event",
+          "weakness_tag": "meaning_in_context_event_time",
+          "question": "Which sentence is correct?",
+          "options": [
+            "The ceremony starts in 5:00 PM.",
+            "The ceremony starts on 5:00 PM.",
+            "The ceremony starts at 5:00 PM.",
+            "The ceremony starts by 5:00 PM."
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for clock times; 'in' and 'on' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i018",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location_preposition_building",
+          "weakness_tag": "in_vs_on_vs_at_building",
+          "question": "Complete the sentence: We met ___ the city museum entrance before the tour.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for specific meeting points like an entrance.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i019",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "time_preposition_day_of_week",
+          "weakness_tag": "collocation_choice_day",
+          "question": "Which preposition best completes the sentence? My piano lesson is ___ Tuesday evening.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "for"
+          ],
+          "correct_index": 1,
+          "explanation": "We use 'on' with days of the week; 'in' and 'at' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i020",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "location_preposition_surface",
+          "weakness_tag": "error_detection_surface",
+          "question": "Choose the best correction: He put the groceries in the kitchen table.",
+          "options": [
+            "He put the groceries on the kitchen table.",
+            "He put the groceries at the kitchen table.",
+            "He put the groceries by the kitchen table.",
+            "No correction is needed."
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is correct for surfaces like tables; 'in' is a common learner error.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i021",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "time_preposition_year",
+          "weakness_tag": "sentence_choice_year",
+          "question": "Choose the sentence that uses the correct preposition for a year.",
+          "options": [
+            "The company was founded at 1998.",
+            "The company was founded on 1998.",
+            "The company was founded in 1998.",
+            "The company was founded by 1998."
+          ],
+          "correct_index": 2,
+          "explanation": "'In' is used for years; 'at' and 'on' are incorrect, 'by' changes the meaning.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s02-i022",
+          "focus_area": "grammar",
+          "item_type": "meaning_in_context",
+          "subskill": "location_preposition_transport",
+          "weakness_tag": "meaning_in_context_transport",
+          "question": "Which preposition correctly completes the sentence? There were many people ___ the train during rush hour.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for public transport like trains; 'in' and 'at' are incorrect in this context.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "vocabulary-and-usage",
+      "title": "Vocabulary and Usage",
+      "description": "Target collocation, lexical choice, word class, register, and other vocabulary-linked weaknesses tied to this concept.",
+      "items": [
+        {
+          "id": "c01-s03-i001",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "surface prepositions",
+          "weakness_tag": "collocation_choice_surface",
+          "question": "Choose the preposition that best completes the sentence: The cat is sleeping ___ the sofa.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for surfaces; 'on the sofa' is the natural collocation.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i002",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "months and dates",
+          "weakness_tag": "collocation_choice_month",
+          "question": "Which preposition correctly completes the sentence? My birthday is ___ March.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used with months; 'in March' is correct.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i003",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "event and occasion",
+          "weakness_tag": "register_choice_event",
+          "question": "Which preposition is appropriate in this formal invitation? Please join us ___ the conference.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is standard for events in formal and neutral English.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i004",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "location/building",
+          "weakness_tag": "meaning_in_context_building",
+          "question": "Which preposition best fits? She is waiting ___ the library entrance.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At the entrance' points to a specific location, not inside.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i005",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "time expressions",
+          "weakness_tag": "word_form_choice_time",
+          "question": "Select the correct preposition: The class starts ___ noon.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "to"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for specific times; 'at noon' is correct.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i006",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "city/country prepositions",
+          "weakness_tag": "collocation_choice_city",
+          "question": "Which preposition completes the sentence correctly? They arrived ___ Paris last night.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for cities; 'in Paris' is the standard collocation.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i007",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "correct preposition for objects on surfaces",
+          "weakness_tag": "collocation_choice_surface_object",
+          "question": "Select the correct preposition: There is a glass ___ the shelf.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for objects resting on surfaces.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i008",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "preposition for seasons",
+          "weakness_tag": "meaning_in_context_season",
+          "question": "Which preposition best completes the sentence? Many people travel ___ summer.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for months, years, and seasons like 'in summer.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i009",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "preposition for specific days/events",
+          "weakness_tag": "gap_fill_event_day",
+          "question": "Complete the sentence: The concert is ___ Saturday night.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is correct for specific days and dates.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i010",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "formal register in addresses",
+          "weakness_tag": "register_choice_official_address",
+          "question": "Which preposition is most appropriate in this formal address? Headquarters is located ___ Fifth Avenue.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for street names in both formal and informal registers.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i011",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "rewriting time prepositions",
+          "weakness_tag": "best_rewrite_time_expression",
+          "question": "Which is the best rewrite? We will meet ___ noon.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for precise times like 'at noon.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i012",
+          "focus_area": "vocabulary",
+          "item_type": "word_form_choice",
+          "subskill": "preposition for enclosed spaces",
+          "weakness_tag": "word_form_choice_enclosed_space",
+          "question": "Choose the correct preposition: She is waiting ___ the lobby.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is correct for enclosed spaces like 'the lobby.'",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i013",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "transport preposition collocation",
+          "weakness_tag": "collocation_choice_transport_mode",
+          "question": "Which preposition best completes the sentence? She left her umbrella ___ the bus.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "We use 'on' for public transport like buses, trains, and planes.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i014",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "time preposition selection",
+          "weakness_tag": "meaning_in_context_specific_time",
+          "question": "Choose the correct preposition: The meeting starts ___ 3:30 PM.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for precise clock times.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i015",
+          "focus_area": "vocabulary",
+          "item_type": "register_choice",
+          "subskill": "location preposition register",
+          "weakness_tag": "register_choice_room_location",
+          "question": "Which preposition is most appropriate for this sentence? Please wait ___ the conference room.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'In' is used for enclosed spaces like rooms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i016",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "surface preposition gap fill",
+          "weakness_tag": "gap_fill_surface_object",
+          "question": "Complete the sentence: There is a magazine ___ the coffee table.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for objects resting on surfaces.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i017",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "date preposition error detection",
+          "weakness_tag": "error_detection_date_expression",
+          "question": "Find the error in this sentence: The exam is in April 10th.",
+          "options": [
+            "No error",
+            "'in' should be 'on'",
+            "'in' should be 'at'",
+            "'in' should be 'by'"
+          ],
+          "correct_index": 1,
+          "explanation": "We use 'on' for specific dates, not 'in'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i018",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "location_preposition",
+          "weakness_tag": "collocation_choice_country",
+          "question": "Which preposition best completes the sentence? She grew up ___ Canada.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for countries; 'on', 'at', and 'by' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i019",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "date_expression",
+          "weakness_tag": "meaning_in_context_date",
+          "question": "Choose the preposition that fits this context: The meeting is ___ July 15th each year.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "over"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is correct for specific dates; 'in' and 'at' do not fit.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i020",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "enclosed_space",
+          "weakness_tag": "gap_fill_enclosed_space",
+          "question": "Fill the gap: We had lunch ___ the cafeteria.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for enclosed spaces like cafeterias.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i021",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "street_preposition",
+          "weakness_tag": "collocation_choice_street",
+          "question": "Which preposition is correct? The bakery is ___ Oak Street.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used with street names; 'in', 'at', and 'to' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s03-i022",
+          "focus_area": "mixed",
+          "item_type": "best_rewrite",
+          "subskill": "clock_time_expression",
+          "weakness_tag": "best_rewrite_clock_time",
+          "question": "Which is the best way to express this time? We meet ___ 8:00 AM.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is correct for clock times; 'in', 'on', and 'by' are not.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    },
+    {
+      "id": "mixed-diagnostic",
+      "title": "Mixed Diagnostic Set",
+      "description": "Mix grammar and vocabulary weaknesses in assessment-style items that feel like placement or progress-test questions.",
+      "items": [
+        {
+          "id": "c01-s04-i001",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "time expression: days",
+          "weakness_tag": "gap_fill_specific_day",
+          "question": "Choose the correct preposition: The meeting is ___ Monday morning.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used for days and dates, including 'Monday morning'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i002",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "location: rooms/buildings",
+          "weakness_tag": "sentence_choice_room_activity",
+          "question": "Select the sentence with the correct preposition for the location.",
+          "options": [
+            "She is in the kitchen making breakfast.",
+            "She is on the kitchen making breakfast.",
+            "She is at the kitchen making breakfast.",
+            "She is by the kitchen making breakfast."
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is correct for enclosed spaces like rooms.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i003",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time expression: seasons",
+          "weakness_tag": "error_detection_season_expression",
+          "question": "Find the error in this sentence: They usually travel at winter.",
+          "options": [
+            "'at' should be 'in'",
+            "'at' should be 'on'",
+            "'at' should be 'by'",
+            "No error"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for seasons, not 'at'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i004",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "location: surfaces",
+          "weakness_tag": "collocation_choice_surface_appliance",
+          "question": "Which preposition best completes the sentence? The keys are ___ the fridge.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "over"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for surfaces like the top of a fridge.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i005",
+          "focus_area": "grammar",
+          "item_type": "word_form_choice",
+          "subskill": "time expression: clock time",
+          "weakness_tag": "word_form_choice_clock_time",
+          "question": "Choose the correct preposition: The show starts ___ 7:45.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "to"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for specific clock times.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i006",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "location: public events",
+          "weakness_tag": "meaning_in_context_public_event",
+          "question": "Which preposition completes the sentence correctly? I met her ___ the concert last night.",
+          "options": [
+            "at",
+            "in",
+            "on",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for events like concerts.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i007",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "location",
+          "weakness_tag": "gap_fill_building_entry",
+          "question": "Complete the sentence: I will meet you ___ the library entrance at 3 PM.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 2,
+          "explanation": "'At' is used for specific points or entry locations, such as entrances.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i008",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time",
+          "weakness_tag": "error_detection_month_expression",
+          "question": "Find the error: The conference is on March every year.",
+          "options": [
+            "No error.",
+            "'on' should be 'in'.",
+            "'every' should be 'each'.",
+            "'March' should be 'the March'."
+          ],
+          "correct_index": 1,
+          "explanation": "'In' is used with months, not 'on'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i009",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "location",
+          "weakness_tag": "collocation_choice_mode_transport",
+          "question": "Which preposition is correct? She reads the news ___ the train every morning.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is used with public transport like trains and buses.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i010",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "time",
+          "weakness_tag": "sentence_choice_day_expression",
+          "question": "Select the sentence with the correct preposition for a day:",
+          "options": [
+            "The exam is in Tuesday.",
+            "The exam is on Tuesday.",
+            "The exam is at Tuesday.",
+            "The exam is by Tuesday."
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is the correct preposition for days of the week.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i011",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "location",
+          "weakness_tag": "meaning_in_context_room_location",
+          "question": "Choose the best preposition: The children are playing ___ the garden.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for enclosed or defined areas like gardens.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i012",
+          "focus_area": "mixed",
+          "item_type": "gap_fill",
+          "subskill": "location_city_country",
+          "weakness_tag": "gap_fill_city_location",
+          "question": "Choose the correct preposition: The conference will be held ___ Paris next month.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for cities; 'on' and 'at' are not correct for city locations.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i013",
+          "focus_area": "mixed",
+          "item_type": "collocation_choice",
+          "subskill": "time_day_date",
+          "weakness_tag": "collocation_choice_day_of_week",
+          "question": "Which preposition best completes the sentence? The exam is ___ Friday.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is standard with days of the week; 'in' and 'at' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i014",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time_month_year",
+          "weakness_tag": "error_detection_year_expression",
+          "question": "Find the error in this sentence: The company was founded at 1998.",
+          "options": [
+            "No error",
+            "'at' should be 'in'",
+            "'at' should be 'on'",
+            "'at' should be removed"
+          ],
+          "correct_index": 1,
+          "explanation": "'In' is used for years, not 'at'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i015",
+          "focus_area": "vocabulary",
+          "item_type": "meaning_in_context",
+          "subskill": "location_surface",
+          "weakness_tag": "meaning_in_context_surface_location",
+          "question": "Which preposition best fits the meaning? The cat is sleeping ___ the sofa.",
+          "options": [
+            "on",
+            "in",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for surfaces; 'in' is for enclosed spaces.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i016",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "location_building_event",
+          "weakness_tag": "sentence_choice_event_location",
+          "question": "Select the sentence that uses the correct preposition for an event location.",
+          "options": [
+            "We will meet at the museum for the tour.",
+            "We will meet in the museum for the tour.",
+            "We will meet on the museum for the tour.",
+            "We will meet by the museum for the tour."
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is standard for event locations; 'in' changes the meaning.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i017",
+          "focus_area": "grammar",
+          "item_type": "gap_fill",
+          "subskill": "location_and_time_prepositions",
+          "weakness_tag": "gap_fill_month_year",
+          "question": "Complete the sentence: My birthday is ___ May 1995.",
+          "options": [
+            "in",
+            "on",
+            "at",
+            "by"
+          ],
+          "correct_index": 0,
+          "explanation": "'In' is used for months and years, not 'on', 'at', or 'by'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i018",
+          "focus_area": "mixed",
+          "item_type": "sentence_choice",
+          "subskill": "location_prepositions",
+          "weakness_tag": "sentence_choice_surface_vs_enclosed",
+          "question": "Select the sentence that uses the correct preposition for a surface location:",
+          "options": [
+            "The coins are at the table.",
+            "The coins are on the table.",
+            "The coins are in the table.",
+            "The coins are by the table."
+          ],
+          "correct_index": 1,
+          "explanation": "'On' is correct for surfaces; 'in' and 'at' are incorrect here.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i019",
+          "focus_area": "grammar",
+          "item_type": "error_detection",
+          "subskill": "time_prepositions",
+          "weakness_tag": "error_detection_specific_time",
+          "question": "Find the error in this sentence: The train leaves in 5:30 PM.",
+          "options": [
+            "No error.",
+            "'in' should be 'at'",
+            "'5:30 PM' should be 'on 5:30 PM'",
+            "'leaves' should be 'leave'"
+          ],
+          "correct_index": 1,
+          "explanation": "Use 'at' for specific clock times, not 'in' or 'on'.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i020",
+          "focus_area": "vocabulary",
+          "item_type": "collocation_choice",
+          "subskill": "location_prepositions",
+          "weakness_tag": "collocation_choice_building",
+          "question": "Which preposition best completes the phrase? She arrived ___ the museum.",
+          "options": [
+            "at",
+            "on",
+            "in",
+            "to"
+          ],
+          "correct_index": 0,
+          "explanation": "'At' is used for points such as buildings; 'in' would mean inside, not arrival.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        },
+        {
+          "id": "c01-s04-i021",
+          "focus_area": "mixed",
+          "item_type": "meaning_in_context",
+          "subskill": "location_prepositions",
+          "weakness_tag": "meaning_in_context_street_vs_city",
+          "question": "Choose the correct option for the blank: He lives ___ King Street, but works ___ London.",
+          "options": [
+            "on / in",
+            "at / at",
+            "in / on",
+            "in / at"
+          ],
+          "correct_index": 0,
+          "explanation": "'On' is used for streets; 'in' is used for cities.",
+          "cefr_level": "unrated",
+          "difficulty": "unrated",
+          "source_status": "experimental"
+        }
+      ]
+    }
+  ],
+  "schema_version": 2,
+  "publication_status": "experimental",
+  "target_public_item_count": 24
+}

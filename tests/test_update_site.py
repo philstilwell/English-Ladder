@@ -127,6 +127,23 @@ class UpdateSiteTests(unittest.TestCase):
         self.assertEqual(10, len(correct_positions))
         self.assertGreater(len(set(correct_positions)), 1)
 
+    def test_render_lesson_html_strips_markdown_bold_markers(self):
+        release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
+        lesson_data = build_valid_lesson_data()
+        lesson_data["news_brief_sentences"][0] = "Maria saw a **market** near the station."
+
+        lesson_html = update_site.render_lesson_html(
+            lesson_data,
+            update_site.LEVELS[0],
+            release_dt,
+        )
+        soup = BeautifulSoup(lesson_html, "html.parser")
+        news_brief = soup.select_one(".section p")
+
+        self.assertIsNotNone(news_brief)
+        self.assertNotIn("**", str(news_brief))
+        self.assertIn("<strong>market</strong>", str(news_brief))
+
     def test_refresh_page_markup_dedupes_and_sanitizes_legacy_markup(self):
         page_html = """
         <!DOCTYPE html>
@@ -170,6 +187,29 @@ class UpdateSiteTests(unittest.TestCase):
         feedback = lesson.find("div", class_="feedback")
         self.assertEqual("status", feedback["role"])
         self.assertEqual("polite", feedback["aria-live"])
+
+    def test_refresh_page_markup_strips_markdown_around_existing_strong_terms(self):
+        page_html = """
+        <!DOCTYPE html>
+        <html><body>
+        <div id="lesson-container">
+          <details class="daily-lesson">
+            <summary class="lesson-date">📅 May 09, 2026 - Legacy Title</summary>
+            <div class="section">
+              <p>Maria saw a **<strong>market</strong>** near the station.</p>
+            </div>
+          </details>
+        </div>
+        </body></html>
+        """
+        soup = BeautifulSoup(page_html, "html.parser")
+
+        update_site.refresh_page_markup(soup)
+
+        news_brief = soup.select_one(".section p")
+        self.assertIsNotNone(news_brief)
+        self.assertNotIn("**", str(news_brief))
+        self.assertIn("<strong>market</strong>", str(news_brief))
 
 
 if __name__ == "__main__":

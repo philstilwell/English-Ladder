@@ -287,7 +287,20 @@ def extract_json_text(raw_text):
     return raw_text
 
 
+def strip_markdown_emphasis(text):
+    text = str(text)
+    for _ in range(3):
+        updated = re.sub(r"\*\*([^*\n]+?)\*\*", r"\1", text)
+        updated = re.sub(r"__([^_\n]+?)__", r"\1", updated)
+        updated = re.sub(r"(?<!\*)\*([^*\n]+?)\*(?!\*)", r"\1", updated)
+        if updated == text:
+            break
+        text = updated
+    return text.replace("**", "")
+
+
 def normalize_text(text):
+    text = strip_markdown_emphasis(text)
     return re.sub(r"\s+", " ", text.strip())
 
 
@@ -433,6 +446,11 @@ def sanitize_existing_lesson_markup(lesson_tag):
     for feedback_div in lesson_tag.find_all("div", class_="feedback"):
         feedback_div["role"] = "status"
         feedback_div["aria-live"] = "polite"
+
+    for text_node in list(lesson_tag.find_all(string=True)):
+        cleaned_text = strip_markdown_emphasis(str(text_node))
+        if cleaned_text != str(text_node):
+            text_node.replace_with(cleaned_text)
 
     randomize_existing_quiz_options(lesson_tag)
 
@@ -669,7 +687,7 @@ def validate_lesson_data(lesson_data, level):
 
 def highlight_terms_in_text(text, terms):
     placeholder_map = {}
-    result = text
+    result = normalize_text(text)
 
     for term in sorted({normalize_text(term) for term in terms if normalize_text(term)}, key=len, reverse=True):
         pattern = re.compile(rf"(?<!\w){re.escape(term)}(?!\w)", re.IGNORECASE)

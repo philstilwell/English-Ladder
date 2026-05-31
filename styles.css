@@ -1071,9 +1071,10 @@ body.lightbox-open {
 
 .grammar-focus-list a {
     display: block;
-    padding: 8px 14px;
+    padding: 5px 14px;
     font-size: 0.92rem;
     font-weight: 700;
+    line-height: 1.1;
     color: #6a4315;
     text-decoration: none;
 }
@@ -2305,9 +2306,13 @@ body.lightbox-open {
         gap: 8px;
     }
 
-    .grammar-stat-list li,
-    .grammar-focus-list a {
+    .grammar-stat-list li {
         padding: 7px 11px;
+        font-size: 0.84rem;
+    }
+
+    .grammar-focus-list a {
+        padding: 5px 11px;
         font-size: 0.84rem;
     }
 

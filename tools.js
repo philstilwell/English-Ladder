@@ -495,14 +495,19 @@
             message: "After in, use the -ing form: interested in learning.",
             href: "grammar-concepts/concept-03.html",
         });
+        apply(/\b(suggested|recommended) that (I|you|he|she|we|they) to ([a-z]+)\b/gi, "$1 that $2 $3", {
+            label: "Verb pattern after suggested/recommended",
+            message: "After suggested or recommended that + subject, use the base verb without to: suggested that I apply.",
+            href: "grammar-concepts/concept-17.html",
+        });
         apply(/\bsuggested me to\b/gi, "suggested that I", {
-            label: "Suggest pattern",
-            message: "Suggest usually takes that + subject + base verb, not object + to.",
+            label: "Verb pattern after suggested",
+            message: "Use suggested that + subject + base verb: suggested that I apply.",
             href: "grammar-concepts/concept-17.html",
         });
         apply(/\brecommended me to\b/gi, "recommended that I", {
-            label: "Recommend pattern",
-            message: "Recommended that I is often cleaner than recommended me to in formal English.",
+            label: "Verb pattern after recommended",
+            message: "Use recommended that + subject + base verb: recommended that I apply.",
             href: "grammar-concepts/concept-17.html",
         });
         apply(/\bdiscuss about\b/gi, "discuss", {
@@ -555,13 +560,13 @@
             return;
         }
         const extra = level === "advanced"
-            ? "For advanced style, also check whether your verb choice shows the exact relationship: cause, contrast, recommendation, or concession."
-            : "Read the revised sentence aloud and check whether the main verb pattern feels complete.";
+            ? "Also check whether the verb shows the exact relationship: cause, contrast, recommendation, or concession."
+            : "Read the example aloud. Make sure the verb pattern and preposition fit the meaning.";
         result.innerHTML = `
-            <h3>Repair result</h3>
+            <h3>Sentence feedback</h3>
             <div class="before-after">
-                <p><strong>Original</strong><br>${escapeHtml($("#repair-input").value.trim())}</p>
-                <p><strong>Suggested revision</strong><br>${escapeHtml(sentenceCase(revised))}</p>
+                <p><strong>Your sentence</strong><br>${escapeHtml($("#repair-input").value.trim())}</p>
+                <p><strong>Try this sentence</strong><br>${escapeHtml(sentenceCase(revised))}</p>
             </div>
             ${issues.length ? `
                 <div class="result-list">
@@ -573,7 +578,7 @@
                         </article>
                     `).join("")}
                 </div>
-            ` : `<p class="result-note">No high-confidence repair pattern was found. ${escapeHtml(extra)}</p>`}
+            ` : `<p class="result-note">I do not see a common error this tool can fix. ${escapeHtml(extra)}</p>`}
         `;
     }
 

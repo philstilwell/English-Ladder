@@ -724,6 +724,277 @@ def practice_item_from_bank(raw_item: dict[str, object], number: int) -> Practic
     )
 
 
+def custom_practice_for_entry(entry_number: int) -> tuple[str, list[PracticeSet]] | None:
+    custom_sets: dict[int, tuple[str, list[PracticeSet]]] = {
+        42: (
+            "Practice building clear explanations of unfamiliar objects by choosing the best category, definition, example, or extra information.",
+            [
+                PracticeSet(
+                    key="explanation-builder",
+                    title="Explanation Builder Quiz",
+                    description="Choose the sentence or structure that best helps someone understand a new concept.",
+                    items=[
+                        PracticeItem(
+                            number=1,
+                            prompt_lines=[
+                                "Which order is best for a clear cold explanation?",
+                                "a) Examples, extra information, category, definition",
+                                "b) Category, definition, examples, extra information",
+                                "c) Extra information, examples, definition, category",
+                                "d) Definition, opinion, examples, category",
+                            ],
+                            answer_lines=[
+                                "b) Category, definition, examples, extra information",
+                                "Feedback: This order moves from general meaning to useful details.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=2,
+                            prompt_lines=[
+                                "Complete the general-domain sentence: A tablet is a type of ___.",
+                                "a) computer",
+                                "b) meal",
+                                "c) instruction",
+                                "d) package",
+                            ],
+                            answer_lines=[
+                                "a) computer",
+                                "Feedback: A general domain names the larger category the new word belongs to.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=3,
+                            prompt_lines=[
+                                "Choose the best definition sentence.",
+                                "a) A thermos is nice and many people like it.",
+                                "b) A thermos is a container that keeps drinks hot or cold.",
+                                "c) A thermos is sometimes on a table.",
+                                "d) A thermos is an example of camping.",
+                            ],
+                            answer_lines=[
+                                "b) A thermos is a container that keeps drinks hot or cold.",
+                                "Feedback: A strong definition gives the category and the main function.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=4,
+                            prompt_lines=[
+                                "Which sentence gives examples?",
+                                "a) A laptop is a type of computer.",
+                                "b) It is small enough to carry.",
+                                "c) Apple, Dell, and Lenovo make many laptops.",
+                                "d) Laptops can be useful in coffee shops.",
+                            ],
+                            answer_lines=[
+                                "c) Apple, Dell, and Lenovo make many laptops.",
+                                "Feedback: Examples name specific cases inside the category.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=5,
+                            prompt_lines=[
+                                "Complete the extra-information sentence: Tablets are often used ___ reading e-books and taking notes.",
+                                "a) for",
+                                "b) unless",
+                                "c) despite",
+                                "d) although",
+                            ],
+                            answer_lines=[
+                                "a) for",
+                                "Feedback: 'For' introduces a purpose or use.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=6,
+                            prompt_lines=[
+                                "Which sentence is the best opening for explaining 'e-book'?",
+                                "a) An e-book is very modern.",
+                                "b) An e-book is a type of book.",
+                                "c) E-books are popular with many people.",
+                                "d) I read an e-book yesterday.",
+                            ],
+                            answer_lines=[
+                                "b) An e-book is a type of book.",
+                                "Feedback: The opening should classify the concept before adding details.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=7,
+                            prompt_lines=[
+                                "What is the main problem with this explanation? 'It is good, and people use it a lot.'",
+                                "a) It gives too many examples.",
+                                "b) It is too formal.",
+                                "c) It lacks a clear category and definition.",
+                                "d) It uses the wrong article.",
+                            ],
+                            answer_lines=[
+                                "c) It lacks a clear category and definition.",
+                                "Feedback: A useful explanation should say what the object is and what it does.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=8,
+                            prompt_lines=[
+                                "Which sentence adds useful extra information about a thermos?",
+                                "a) A thermos is a noun.",
+                                "b) Some thermoses keep drinks hot for several hours.",
+                                "c) Thermos starts with the letter T.",
+                                "d) The word thermos is not very long.",
+                            ],
+                            answer_lines=[
+                                "b) Some thermoses keep drinks hot for several hours.",
+                                "Feedback: Extra information adds practical details after the basic definition.",
+                            ],
+                            note_sections=[],
+                        ),
+                    ],
+                )
+            ],
+        ),
+        44: (
+            "Practice the language of asking for advice, giving suggestions, accepting ideas, and rejecting ideas politely.",
+            [
+                PracticeSet(
+                    key="advice-dialogue",
+                    title="Advice Dialogue Quiz",
+                    description="Choose the line that best fits each role in a polite advice conversation.",
+                    items=[
+                        PracticeItem(
+                            number=1,
+                            prompt_lines=[
+                                "Which line is the best polite request for advice?",
+                                "a) Tell me the answer now.",
+                                "b) Could you give me some advice on an issue?",
+                                "c) You must solve my problem.",
+                                "d) I already know what to do.",
+                            ],
+                            answer_lines=[
+                                "b) Could you give me some advice on an issue?",
+                                "Feedback: 'Could you' makes the request polite and cooperative.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=2,
+                            prompt_lines=[
+                                "Role B wants to suggest a possible solution. Which line fits best?",
+                                "a) It seems to me that making a weekly schedule might help.",
+                                "b) I am not interested in this problem.",
+                                "c) Why did you make this mistake?",
+                                "d) That is impossible, so stop trying.",
+                            ],
+                            answer_lines=[
+                                "a) It seems to me that making a weekly schedule might help.",
+                                "Feedback: This gives advice while leaving room for discussion.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=3,
+                            prompt_lines=[
+                                "Which line rejects advice politely and gives a reason?",
+                                "a) No. Bad idea.",
+                                "b) I am afraid that will not work because my schedule changes every week.",
+                                "c) You are wrong about everything.",
+                                "d) I do not like advice.",
+                            ],
+                            answer_lines=[
+                                "b) I am afraid that will not work because my schedule changes every week.",
+                                "Feedback: A polite rejection explains the problem with the suggestion.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=4,
+                            prompt_lines=[
+                                "Which line accepts advice cautiously?",
+                                "a) Yes, that might be worth trying.",
+                                "b) I refuse to think about it.",
+                                "c) That is definitely perfect forever.",
+                                "d) Why are you speaking?",
+                            ],
+                            answer_lines=[
+                                "a) Yes, that might be worth trying.",
+                                "Feedback: 'Might be worth trying' shows tentative acceptance.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=5,
+                            prompt_lines=[
+                                "Which line belongs to the advice giver?",
+                                "a) I am having trouble saving money.",
+                                "b) What do you recommend I do?",
+                                "c) How about tracking your expenses for one month?",
+                                "d) I am afraid that will not work.",
+                            ],
+                            answer_lines=[
+                                "c) How about tracking your expenses for one month?",
+                                "Feedback: The advice giver proposes a possible action.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=6,
+                            prompt_lines=[
+                                "Complete the suggestion: Would it be possible for you ___ earlier?",
+                                "a) leaving",
+                                "b) to leave",
+                                "c) left",
+                                "d) leave",
+                            ],
+                            answer_lines=[
+                                "b) to leave",
+                                "Feedback: 'Would it be possible for you' is followed by 'to' plus the base verb.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=7,
+                            prompt_lines=[
+                                "After rejecting one suggestion, which line keeps the conversation moving?",
+                                "a) Do you have any other suggestions?",
+                                "b) I will never ask again.",
+                                "c) This conversation is over forever.",
+                                "d) Your first idea failed.",
+                            ],
+                            answer_lines=[
+                                "a) Do you have any other suggestions?",
+                                "Feedback: This invites another solution and keeps the dialogue constructive.",
+                            ],
+                            note_sections=[],
+                        ),
+                        PracticeItem(
+                            number=8,
+                            prompt_lines=[
+                                "Which mini-dialogue follows the advice pattern best?",
+                                "a) A: I need advice. B: Try a budget. A: That might be worth trying.",
+                                "b) A: Try a budget. B: I need advice. A: That might be worth trying.",
+                                "c) A: I need advice. B: That might be worth trying. A: Try a budget.",
+                                "d) A: That might be worth trying. B: I need advice. A: Try a budget.",
+                            ],
+                            answer_lines=[
+                                "a) A: I need advice. B: Try a budget. A: That might be worth trying.",
+                                "Feedback: The pattern is request, suggestion, then response to the suggestion.",
+                            ],
+                            note_sections=[],
+                        ),
+                    ],
+                )
+            ],
+        ),
+    }
+
+    return custom_sets.get(entry_number)
+
+
 def load_public_item_bank(entry_number: int) -> tuple[str | None, list[PracticeSet]] | None:
     if not USE_PUBLIC_ITEM_BANK:
         return None
@@ -1361,7 +1632,7 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
             )
         ]
         practice_html = (
-            "<section class=\"grammar-practice\">"
+            "<section class=\"grammar-practice\" id=\"practice-check\">"
             "<h2>Practice Check</h2>"
             f"{practice_intro}"
             f"{''.join(render_practice_set(practice_set) for practice_set in practice_sets)}"
@@ -1457,6 +1728,11 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
 def render_index_page(entries: list[ConceptEntry]) -> str:
     cards = []
     for entry in entries:
+        practice_link = (
+            f'<a class="grammar-cta grammar-cta-secondary" href="grammar-concepts/{html.escape(entry.slug)}#practice-check">Start practice</a>'
+            if entry.practice_items
+            else ""
+        )
         cards.append(
             textwrap.dedent(
                 f"""
@@ -1468,7 +1744,10 @@ def render_index_page(entries: list[ConceptEntry]) -> str:
                 <p class="grammar-overview-label">{html.escape(entry.label)}</p>
                 <h2><a href="grammar-concepts/{html.escape(entry.slug)}">{html.escape(entry.title)}</a></h2>
                 <p>{html.escape(entry.preview)}</p>
+                <div class="grammar-card-actions">
                 <a class="grammar-cta" href="grammar-concepts/{html.escape(entry.slug)}">Open concept</a>
+                {practice_link}
+                </div>
                 </div>
                 </article>
                 """
@@ -1497,15 +1776,15 @@ def render_index_page(entries: list[ConceptEntry]) -> str:
         <div class="grammar-hero-copy">
         <p class="eyebrow">English Ladder</p>
         <h1>English Grammar<br>Concepts</h1>
-        <p>These 44 grammar concept pages rebuild the original Stilwell Files set into a fully local English Ladder study section. Each page keeps the original image while using a cleaner structure, clearer navigation, and practice or example panels that are easier to review on phones.</p>
+        <p>These 44 grammar concept pages rebuild the original Stilwell Files set into a fully local English Ladder study section. Each page keeps the original image while using a cleaner structure, clearer navigation, and direct practice links that are easier to use on phones.</p>
         <ul class="grammar-stat-list">
         <li>44 concept pages</li>
+        <li>Direct practice links</li>
         <li>Local image assets</li>
-        <li>Improved mobile reading</li>
         </ul>
         </div>
         </section>
-        <section class="grammar-overview-list">
+        <section class="grammar-overview-list" id="grammar-practice-list">
         {''.join(cards)}
         </section>
         </main>
@@ -1553,6 +1832,11 @@ def parse_entry(label: str, source_url: str) -> ConceptEntry:
                 items=practice_items,
             )
         )
+    else:
+        custom_practice = custom_practice_for_entry(number)
+        if custom_practice is not None:
+            practice_intro, practice_sets = custom_practice
+            practice_items = [item for practice_set in practice_sets for item in practice_set.items]
 
     local_bank = load_public_item_bank(number)
     if local_bank is not None:

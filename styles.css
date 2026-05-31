@@ -384,6 +384,36 @@ summary.lesson-date:hover {
     box-shadow: 0 18px 28px rgba(37, 99, 235, 0.3);
 }
 
+.practice-resource {
+    background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.32), transparent 34%),
+        linear-gradient(135deg, rgba(255, 251, 235, 0.96), rgba(236, 253, 245, 0.94));
+    border-color: rgba(245, 158, 11, 0.42);
+}
+
+.practice-resource-link {
+    background: linear-gradient(135deg, #b45309, #2f855a);
+    box-shadow: 0 14px 24px rgba(180, 83, 9, 0.22);
+}
+
+.efsp-resource {
+    background:
+        radial-gradient(circle at top right, rgba(244, 180, 0, 0.2), transparent 34%),
+        linear-gradient(135deg, rgba(239, 246, 255, 0.98), rgba(230, 244, 241, 0.96));
+    border-color: rgba(31, 111, 102, 0.32);
+    box-shadow: 0 18px 32px rgba(21, 78, 73, 0.12);
+}
+
+.efsp-resource h2,
+.efsp-resource p {
+    color: #183153;
+}
+
+.efsp-resource-link {
+    background: linear-gradient(135deg, #1f6f66, #255c99);
+    box-shadow: 0 14px 24px rgba(31, 111, 102, 0.22);
+}
+
 .theme-hub {
     --page-bg: #fffdf8;
     --page-bg-alt: #eef4ff;
@@ -484,6 +514,247 @@ summary.lesson-date:hover {
     --button-border: #d9b985;
     --quiz-question: #8a4b08;
     overflow-x: hidden;
+}
+
+.theme-efsp {
+    --page-bg: #f8fbfa;
+    --page-bg-alt: #eef4ff;
+    --page-glow: rgba(31, 111, 102, 0.14);
+    --surface: rgba(255, 255, 255, 0.94);
+    --surface-alt: #e6f4f1;
+    --text: #1d2d2a;
+    --muted: #4d6761;
+    --accent: #c8842e;
+    --accent-strong: #1f6f66;
+    --border: rgba(31, 111, 102, 0.24);
+    --shadow: rgba(21, 78, 73, 0.12);
+    --nav-bg: rgba(255, 255, 255, 0.86);
+    --hero-start: #e6f4f1;
+    --hero-end: #e8f0f9;
+    --quiz-card: #ffffff;
+    --button-border: #9fc8c0;
+    --quiz-question: #154e49;
+}
+
+.efsp-hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 28px;
+    padding: 30px;
+    margin-bottom: 24px;
+    border-radius: 26px;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.86), transparent 34%),
+        linear-gradient(135deg, var(--hero-start), var(--hero-end));
+    box-shadow: 0 18px 42px var(--shadow);
+    overflow: hidden;
+}
+
+.efsp-hero-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.efsp-hero-copy h1 {
+    margin: 0 0 12px;
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+    line-height: 1.08;
+    color: #154e49;
+}
+
+.efsp-hero-copy > p {
+    margin: 0;
+    max-width: 760px;
+    color: #3e5b55;
+}
+
+.efsp-hero-visual {
+    flex: 0 0 260px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 32%;
+}
+
+.efsp-hero-image {
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    filter: drop-shadow(0 18px 26px rgba(15, 23, 42, 0.16));
+}
+
+.efsp-stat-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 18px 0 0;
+    padding: 0;
+}
+
+.efsp-stat-list li {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(31, 111, 102, 0.16);
+    color: #154e49;
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.efsp-feature,
+.efsp-section,
+.efsp-detail {
+    margin-bottom: 24px;
+    padding: 24px;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow: 0 18px 32px var(--shadow);
+}
+
+.efsp-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+    gap: 24px;
+    align-items: center;
+}
+
+.efsp-feature h2,
+.efsp-section h2,
+.efsp-detail h2 {
+    margin: 0 0 10px;
+    color: #154e49;
+    font-size: clamp(1.55rem, 3vw, 2.25rem);
+    line-height: 1.14;
+}
+
+.efsp-feature p,
+.efsp-section p,
+.efsp-detail p,
+.efsp-curriculum-card p,
+.efsp-pathway-grid p,
+.efsp-detail-grid li {
+    color: var(--muted);
+}
+
+.efsp-feature-copy p,
+.efsp-detail > p {
+    margin: 0;
+    max-width: 760px;
+}
+
+.efsp-download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.efsp-download-link,
+.efsp-card-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 11px 16px;
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #ffffff;
+    background: linear-gradient(135deg, #1f6f66, #255c99);
+    box-shadow: 0 14px 24px rgba(31, 111, 102, 0.2);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.efsp-download-link:hover,
+.efsp-card-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 28px rgba(31, 111, 102, 0.26);
+}
+
+.efsp-curriculum-grid,
+.efsp-pathway-grid,
+.efsp-detail-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.efsp-curriculum-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 18px;
+}
+
+.efsp-pathway-grid,
+.efsp-detail-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 18px;
+}
+
+.efsp-detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.efsp-curriculum-card,
+.efsp-pathway-grid article,
+.efsp-detail-grid article {
+    padding: 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(31, 111, 102, 0.18);
+    background: linear-gradient(180deg, #ffffff 0%, #f4fbf9 100%);
+}
+
+.efsp-curriculum-card-ready {
+    border-top: 6px solid #c8842e;
+}
+
+.efsp-card-label {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #f7ead8;
+    color: #85561f;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.efsp-curriculum-card h3,
+.efsp-pathway-grid h3,
+.efsp-detail-grid h3 {
+    margin: 12px 0 8px;
+    color: #154e49;
+    font-size: 1.16rem;
+    line-height: 1.22;
+}
+
+.efsp-curriculum-card p,
+.efsp-pathway-grid p {
+    margin: 0;
+}
+
+.efsp-card-link {
+    margin-top: 14px;
+}
+
+.efsp-detail-grid ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.efsp-detail-grid li {
+    margin-bottom: 8px;
+}
+
+.efsp-framework {
+    background:
+        radial-gradient(circle at top left, rgba(200, 132, 46, 0.14), transparent 34%),
+        var(--surface);
 }
 
 .grammar-hero {
@@ -868,6 +1139,25 @@ body.lightbox-open {
     box-shadow: 0 12px 22px rgba(146, 64, 14, 0.22);
 }
 
+.grammar-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 14px;
+}
+
+.grammar-card-actions .grammar-cta {
+    margin-top: 0;
+}
+
+.grammar-cta-secondary {
+    color: #6a4315;
+    background: #fff7ed;
+    border: 1px solid rgba(180, 83, 9, 0.28);
+    box-shadow: none;
+}
+
 .practice-grid,
 .showcase-grid {
     display: grid;
@@ -1056,10 +1346,24 @@ body.lightbox-open {
     }
 
     .grammar-hero,
+    .efsp-hero,
     .grammar-overview-item {
         grid-template-columns: 1fr;
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .efsp-hero-visual {
+        width: 100%;
+        max-width: none;
+        flex-basis: auto;
+        justify-content: center;
+    }
+
+    .efsp-feature,
+    .efsp-pathway-grid,
+    .efsp-detail-grid {
+        grid-template-columns: 1fr;
     }
 
     .grammar-overview-item {
@@ -1231,6 +1535,13 @@ body.lightbox-open {
     }
 
     .grammar-hero,
+    .efsp-hero,
+    .efsp-feature,
+    .efsp-section,
+    .efsp-detail,
+    .efsp-curriculum-card,
+    .efsp-pathway-grid article,
+    .efsp-detail-grid article,
     .grammar-overview-item,
     .grammar-overview-card,
     .grammar-section,
@@ -1242,6 +1553,23 @@ body.lightbox-open {
 
     .grammar-hero {
         gap: 18px;
+    }
+
+    .efsp-hero {
+        gap: 18px;
+    }
+
+    .efsp-hero-copy h1 {
+        font-size: clamp(1.65rem, 7.5vw, 2.25rem);
+    }
+
+    .efsp-hero-image {
+        max-width: 145px;
+    }
+
+    .efsp-download-grid,
+    .efsp-curriculum-grid {
+        grid-template-columns: 1fr;
     }
 
     .grammar-image-hint {

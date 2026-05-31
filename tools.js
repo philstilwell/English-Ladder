@@ -751,6 +751,19 @@
     }
 
     function wireEvents() {
+        const toolPanels = $$(".tool-panel");
+        toolPanels.forEach((panel) => {
+            panel.addEventListener("toggle", () => {
+                if (!panel.open) {
+                    return;
+                }
+                toolPanels.forEach((otherPanel) => {
+                    if (otherPanel !== panel) {
+                        otherPanel.open = false;
+                    }
+                });
+            });
+        });
         $("#diagnostic-submit")?.addEventListener("click", runDiagnostic);
         $("#diagnostic-reset")?.addEventListener("click", resetDiagnostic);
         $("#repair-run")?.addEventListener("click", runSentenceRepair);

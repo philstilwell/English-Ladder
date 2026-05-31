@@ -80,10 +80,31 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
-          git add beginner.html intermediate.html advanced.html
-          if git diff --cached --quiet; then
-            echo "No changes to commit"
-            exit 0
-          fi
-          git commit -m "Auto-update daily lessons [skip ci]"
-          git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"
+          lesson_snapshot="$(mktemp -d)"
+          cp beginner.html intermediate.html advanced.html "${lesson_snapshot}/"
+
+          for attempt in 1 2 3; do
+            echo "Preparing lesson update push attempt ${attempt}..."
+            git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            cp "${lesson_snapshot}/beginner.html" beginner.html
+            cp "${lesson_snapshot}/intermediate.html" intermediate.html
+            cp "${lesson_snapshot}/advanced.html" advanced.html
+
+            git add beginner.html intermediate.html advanced.html
+            if git diff --cached --quiet; then
+              echo "No changes to commit"
+              exit 0
+            fi
+
+            git commit -m "Auto-update daily lessons [skip ci]"
+            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+
+            echo "Push attempt ${attempt} failed; retrying after refreshing ${GITHUB_REF_NAME}..."
+            sleep $((attempt * 5))
+          done
+
+          echo "Failed to push lesson update after 3 attempts." >&2
+          exit 1

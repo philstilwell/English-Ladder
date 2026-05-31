@@ -421,7 +421,7 @@
                 ${ranked.map(([key, count]) => `
                     <article>
                         <strong>${escapeHtml(labelForWeakness(key))}</strong>
-                        <p>${count} signal${count === 1 ? "" : "s"} from your answers.</p>
+                        <p>${escapeHtml(diagnosticFeedback(key, count))}</p>
                         <div class="inline-link-list">
                             ${(conceptPaths[key] || []).slice(0, 4).map(([number, title, href]) => `<a href="${href}">${escapeHtml(number)}: ${escapeHtml(title)}</a>`).join("")}
                         </div>
@@ -440,6 +440,18 @@
             quantity: "Quantity, countability, and degree",
             usage: "Verb patterns and lexical choice",
         }[key] || key;
+    }
+
+    function diagnosticFeedback(key, count) {
+        const missed = `You missed ${count} question${count === 1 ? "" : "s"}`;
+        return {
+            prepositions: `${missed} about choosing the right preposition for places, dates, days, or exact times.`,
+            tense: `${missed} about matching verb tense to time, such as past events, recent actions, or ongoing situations.`,
+            wordForm: `${missed} about choosing the correct word form, such as noun vs verb or -ing vs -ed adjectives.`,
+            clauses: `${missed} about connecting ideas in a sentence, including words like while, because, that, which, even if, and only.`,
+            quantity: `${missed} about countable and uncountable nouns, including words like few, little, many, much, so, and such.`,
+            usage: `${missed} about natural verb patterns and word choice, such as suggest, recommend, say, tell, refuse, and reject.`,
+        }[key] || `${missed} in this skill area.`;
     }
 
     function resetDiagnostic() {

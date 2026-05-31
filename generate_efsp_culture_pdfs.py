@@ -21,12 +21,15 @@ from reportlab.platypus import (
 
 ROOT = Path(__file__).resolve().parent
 OUTPUT_DIR = ROOT / "pdf" / "efsp"
+BRAND_LOGO_PATH = ROOT / "assets" / "english-ladder-pdf-logo.png"
 
 PAGE_WIDTH, PAGE_HEIGHT = letter
 MARGIN_X = 0.68 * inch
 MARGIN_TOP = 0.72 * inch
 MARGIN_BOTTOM = 0.58 * inch
 CONTENT_WIDTH = PAGE_WIDTH - (2 * MARGIN_X)
+BRAND_LOGO_WIDTH = 0.14 * inch
+BRAND_LOGO_HEIGHT = 0.2 * inch
 
 PALETTE = {
     "paper": colors.HexColor("#FBFAF7"),
@@ -317,6 +320,22 @@ def draw_page(canvas, doc, title: str, first: bool = False) -> None:
         canvas.setFont("Helvetica", 7.5)
         canvas.setFillColor(PALETTE["muted"])
         canvas.drawString(MARGIN_X, PAGE_HEIGHT - 0.38 * inch, title[:82])
+    if BRAND_LOGO_PATH.exists():
+        canvas.drawImage(
+            str(BRAND_LOGO_PATH),
+            MARGIN_X,
+            0.22 * inch,
+            width=BRAND_LOGO_WIDTH,
+            height=BRAND_LOGO_HEIGHT,
+            preserveAspectRatio=True,
+            mask="auto",
+        )
+        brand_x = MARGIN_X + BRAND_LOGO_WIDTH + 0.08 * inch
+    else:
+        brand_x = MARGIN_X
+    canvas.setFont("Helvetica-Bold", 7.5)
+    canvas.setFillColor(PALETTE["muted"])
+    canvas.drawString(brand_x, 0.34 * inch, "English Ladder")
     canvas.setFont("Helvetica", 7.5)
     canvas.setFillColor(PALETTE["muted"])
     canvas.drawRightString(PAGE_WIDTH - MARGIN_X, 0.34 * inch, f"Page {doc.page}")

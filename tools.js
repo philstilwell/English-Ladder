@@ -193,44 +193,6 @@
         },
     };
 
-    const collocationData = {
-        make: {
-            good: ["make a decision", "make progress", "make an effort", "make a mistake"],
-            traps: ["make homework", "make a photo", "make a meeting"],
-            note: "Use make for creating, deciding, progress, and mistakes.",
-        },
-        take: {
-            good: ["take responsibility", "take notes", "take a break", "take a risk"],
-            traps: ["take a decision", "take progress", "take a mistake"],
-            note: "Use take for responsibility, notes, breaks, risks, and actions you accept.",
-        },
-        raise: {
-            good: ["raise a concern", "raise a question", "raise awareness", "raise an issue"],
-            traps: ["raise a mistake", "raise a decision", "raise a meeting"],
-            note: "Use raise when bringing a topic into discussion.",
-        },
-        issue: {
-            good: ["serious issue", "technical issue", "address an issue", "raise an issue"],
-            traps: ["do an issue", "make an issue", "strong issue"],
-            note: "Issue often means a problem, topic, or matter for discussion.",
-        },
-        risk: {
-            good: ["reduce risk", "manage risk", "significant risk", "risk assessment"],
-            traps: ["do risk", "bigly risk", "riskful plan"],
-            note: "Risk combines with verbs like reduce, manage, assess, and identify.",
-        },
-        concern: {
-            good: ["main concern", "address a concern", "express concern", "growing concern"],
-            traps: ["do a concern", "make concern", "concernful"],
-            note: "Concern can be a worry, a point to discuss, or something that affects someone.",
-        },
-        proposal: {
-            good: ["submit a proposal", "review a proposal", "draft proposal", "proposal for change"],
-            traps: ["do a proposal", "proposal of changing", "proposal to change about"],
-            note: "Proposal often pairs with submit, review, draft, approve, reject, and for.",
-        },
-    };
-
     const state = {
         lessons: { ...fallbackLessons },
         recorder: null,
@@ -379,7 +341,7 @@
         if (!ranked.length) {
             result.innerHTML = `
                 <h3>Strong diagnostic result</h3>
-                <p class="result-note">You chose the natural sentence each time. Try a higher level daily lesson, then use the Register Transformer or Collocation Builder for precision work.</p>
+                <p class="result-note">You chose the natural sentence each time. Try a higher level daily lesson, then use the Register Transformer for precision work.</p>
             `;
             return;
         }
@@ -703,66 +665,6 @@
         }[scenario] || scenario;
     }
 
-    function startCollocation() {
-        const word = $("#collocation-word")?.value || "make";
-        const mode = $("#collocation-mode")?.value || "quiz";
-        const data = collocationData[word];
-        const result = $("#collocation-results");
-        if (!result) {
-            return;
-        }
-        if (mode === "sentence") {
-            const phrase = data.good[Math.floor(Math.random() * data.good.length)];
-            result.innerHTML = `
-                <h3>${escapeHtml(word)} sentence builder</h3>
-                <p class="result-note">${escapeHtml(data.note)}</p>
-                <label class="tool-field tool-field-wide">
-                    <span>Use this phrase: ${escapeHtml(phrase)}</span>
-                    <textarea id="collocation-sentence" rows="4"></textarea>
-                </label>
-                <div class="tool-actions">
-                    <button class="tool-button" id="collocation-check" type="button" data-phrase="${escapeHtml(phrase)}">Check sentence</button>
-                </div>
-                <div id="collocation-feedback"></div>
-            `;
-            $("#collocation-check")?.addEventListener("click", checkCollocationSentence);
-            return;
-        }
-        const correct = data.good[Math.floor(Math.random() * data.good.length)];
-        const choices = shuffled([...data.traps.slice(0, 2), correct]);
-        result.innerHTML = `
-            <h3>Choose the natural collocation with "${escapeHtml(word)}"</h3>
-            <div class="choice-stack">
-                ${choices.map((choice) => `<button class="choice-button" type="button" data-correct="${choice === correct}">${escapeHtml(choice)}</button>`).join("")}
-            </div>
-            <p class="result-note">${escapeHtml(data.note)}</p>
-            <div id="collocation-feedback"></div>
-        `;
-        $$(".choice-button", result).forEach((button) => {
-            button.addEventListener("click", () => {
-                const feedback = $("#collocation-feedback");
-                if (feedback) {
-                    feedback.innerHTML = button.dataset.correct === "true"
-                        ? `<p class="success-note">Correct. "${escapeHtml(button.textContent)}" is natural.</p>`
-                        : `<p class="result-note">Not natural here. Try another option.</p>`;
-                }
-            });
-        });
-    }
-
-    function checkCollocationSentence() {
-        const phrase = $("#collocation-check")?.dataset.phrase || "";
-        const value = $("#collocation-sentence")?.value || "";
-        const feedback = $("#collocation-feedback");
-        if (!feedback) {
-            return;
-        }
-        const includesPhrase = normalizeText(value).includes(normalizeText(phrase));
-        feedback.innerHTML = includesPhrase
-            ? `<p class="success-note">Good. Your sentence includes the target collocation naturally enough for practice.</p>`
-            : `<p class="result-note">Try again and include the full phrase "${escapeHtml(phrase)}".</p>`;
-    }
-
     function playDictation(rate) {
         const sentence = $("#dictation-sentence")?.value;
         if (sentence) {
@@ -915,7 +817,6 @@
         $("#phrase-build")?.addEventListener("click", buildPhraseCoach);
         $("#phrase-scenario")?.addEventListener("change", buildPhraseCoach);
         $("#phrase-tone")?.addEventListener("change", buildPhraseCoach);
-        $("#collocation-start")?.addEventListener("click", startCollocation);
         $$("[data-dictation-rate]").forEach((button) => {
             button.addEventListener("click", () => playDictation(button.dataset.dictationRate));
         });
@@ -947,7 +848,6 @@
         renderDiagnostic();
         wireEvents();
         buildPhraseCoach();
-        startCollocation();
         buildNewsTask();
         transformRegister();
         hydrateLessons();

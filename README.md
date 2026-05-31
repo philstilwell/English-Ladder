@@ -14,7 +14,7 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
   The hub page. Learners choose Beginner, Intermediate, or Advanced from the level selector and can jump into the study library.
 
 - `tools.html`
-  A static ESL tools page with diagnostics, sentence repair, pronunciation shadowing, news-skill prompts, workplace phrase coaching, dictation, and register practice.
+  A static ESL tools page with diagnostics, sentence repair, pronunciation shadowing, news-skill prompts, workplace phrase coaching, and register practice.
 
 - `beginner.html`
   The yellow beginner archive page for A1-A2 learners.

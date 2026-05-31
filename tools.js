@@ -283,12 +283,10 @@
             const label = `${level.charAt(0).toUpperCase() + level.slice(1)}: ${sentence}`;
             return `<option value="${escapeHtml(sentence)}">${escapeHtml(label)}</option>`;
         }).join("");
-        ["#shadow-sentence", "#dictation-sentence"].forEach((selector) => {
-            const select = $(selector);
-            if (select) {
-                select.innerHTML = options;
-            }
-        });
+        const shadowSelect = $("#shadow-sentence");
+        if (shadowSelect) {
+            shadowSelect.innerHTML = options;
+        }
     }
 
     function renderDiagnostic() {
@@ -665,59 +663,6 @@
         }[scenario] || scenario;
     }
 
-    function playDictation(rate) {
-        const sentence = $("#dictation-sentence")?.value;
-        if (sentence) {
-            speakText(sentence, rate);
-        }
-    }
-
-    function playDictationWords() {
-        const sentence = $("#dictation-sentence")?.value || "";
-        const words = sentence.split(/\s+/).filter(Boolean);
-        let index = 0;
-        function next() {
-            if (index >= words.length) {
-                return;
-            }
-            speakText(words[index], 0.72);
-            index += 1;
-            window.setTimeout(next, 850);
-        }
-        next();
-    }
-
-    function checkDictation() {
-        const answer = $("#dictation-sentence")?.value || "";
-        const typed = $("#dictation-input")?.value || "";
-        const result = $("#dictation-results");
-        if (!result) {
-            return;
-        }
-        const answerWords = normalizeText(answer).split(" ").filter(Boolean);
-        const typedWords = normalizeText(typed).split(" ").filter(Boolean);
-        let matches = 0;
-        answerWords.forEach((word, index) => {
-            if (typedWords[index] === word) {
-                matches += 1;
-            }
-        });
-        const percent = answerWords.length ? Math.round((matches / answerWords.length) * 100) : 0;
-        const missing = answerWords.filter((word) => !typedWords.includes(word)).slice(0, 8);
-        result.innerHTML = `
-            <h3>${percent}% word-position match</h3>
-            <p class="result-note">${missing.length ? `Review these words: ${escapeHtml(missing.join(", "))}.` : "Strong match. Replay at natural speed and shadow the sentence."}</p>
-        `;
-    }
-
-    function showDictationAnswer() {
-        const answer = $("#dictation-sentence")?.value || "";
-        const result = $("#dictation-results");
-        if (result) {
-            result.innerHTML = `<h3>Answer</h3><p>${escapeHtml(answer)}</p>`;
-        }
-    }
-
     function transformRegister() {
         const input = $("#register-input")?.value.trim() || "";
         const target = $("#register-target")?.value || "neutral";
@@ -817,12 +762,6 @@
         $("#phrase-build")?.addEventListener("click", buildPhraseCoach);
         $("#phrase-scenario")?.addEventListener("change", buildPhraseCoach);
         $("#phrase-tone")?.addEventListener("change", buildPhraseCoach);
-        $$("[data-dictation-rate]").forEach((button) => {
-            button.addEventListener("click", () => playDictation(button.dataset.dictationRate));
-        });
-        $("#dictation-word")?.addEventListener("click", playDictationWords);
-        $("#dictation-check")?.addEventListener("click", checkDictation);
-        $("#dictation-show")?.addEventListener("click", showDictationAnswer);
         $("#register-run")?.addEventListener("click", transformRegister);
         $$("[data-sample-target]").forEach((button) => {
             button.addEventListener("click", () => {

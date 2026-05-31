@@ -233,9 +233,6 @@
 
     const state = {
         lessons: { ...fallbackLessons },
-        vocabDeck: [],
-        vocabIndex: 0,
-        vocabRevealed: false,
         recorder: null,
         recordChunks: [],
         recordStream: null,
@@ -295,41 +292,13 @@
             const current = doc.querySelector(".daily-lesson");
             const headline = current?.querySelector(".lesson-title-text")?.textContent?.trim() || fallbackLessons[level].headline;
             const brief = current?.querySelector(".section p")?.textContent?.trim() || fallbackLessons[level].brief;
-            const vocabulary = extractVocabulary(current?.querySelector(".vocab-box"));
             return {
                 headline,
                 brief,
-                vocabulary: vocabulary.length ? vocabulary : fallbackLessons[level].vocabulary,
             };
         } catch (_error) {
             return fallbackLessons[level];
         }
-    }
-
-    function extractVocabulary(vocabBox) {
-        if (!vocabBox) {
-            return [];
-        }
-        const clone = vocabBox.cloneNode(true);
-        clone.querySelectorAll("br").forEach((breakNode) => {
-            breakNode.replaceWith("\n");
-        });
-        const text = clone.innerText || clone.textContent || "";
-        return text
-            .split(/\n+/)
-            .map((line) => line.trim())
-            .filter(Boolean)
-            .map((line) => {
-                const match = line.match(/^\d+\.\s*(.+?):\s*(.+)$/);
-                if (!match) {
-                    return null;
-                }
-                return {
-                    term: match[1].replace(/\s*\([^)]*\)\s*$/, "").trim(),
-                    definition: match[2].trim(),
-                };
-            })
-            .filter(Boolean);
     }
 
     async function hydrateLessons() {
@@ -339,7 +308,6 @@
             state.lessons[level] = loaded[index];
         });
         populateSentenceSelects();
-        renderVocabCard();
     }
 
     function populateSentenceSelects() {
@@ -654,91 +622,6 @@
         }
     }
 
-    function getReviewState() {
-        try {
-            return JSON.parse(localStorage.getItem("englishLadderVocabReview") || "{}");
-        } catch (_error) {
-            return {};
-        }
-    }
-
-    function saveReviewState(reviewState) {
-        localStorage.setItem("englishLadderVocabReview", JSON.stringify(reviewState));
-    }
-
-    function loadVocabDeck() {
-        const level = $("#vocab-level")?.value || "intermediate";
-        state.vocabDeck = state.lessons[level].vocabulary.map((card) => ({
-            ...card,
-            id: `${level}:${card.term}`,
-        }));
-        state.vocabIndex = 0;
-        state.vocabRevealed = false;
-        renderVocabCard();
-    }
-
-    function currentDueDeck() {
-        const reviewState = getReviewState();
-        const now = Date.now();
-        return state.vocabDeck.filter((card) => !reviewState[card.id] || reviewState[card.id].due <= now);
-    }
-
-    function renderVocabCard() {
-        if (!state.vocabDeck.length) {
-            const level = $("#vocab-level")?.value || "intermediate";
-            state.vocabDeck = fallbackLessons[level].vocabulary.map((card) => ({ ...card, id: `${level}:${card.term}` }));
-        }
-        const due = currentDueDeck();
-        const card = due[state.vocabIndex % Math.max(due.length, 1)];
-        const cardNode = $("#vocab-card");
-        const result = $("#vocab-results");
-        if (!cardNode) {
-            return;
-        }
-        if (!due.length) {
-            cardNode.innerHTML = `<p class="result-note">No cards are due right now.</p>`;
-            if (result) {
-                result.innerHTML = `<p class="tool-metric">${state.vocabDeck.length} cards scheduled for later review.</p>`;
-            }
-            return;
-        }
-        const mode = $("#vocab-mode")?.value || "term";
-        const front = mode === "term" ? card.term : card.definition;
-        const back = mode === "term" ? card.definition : card.term;
-        cardNode.innerHTML = `
-            <p class="vocab-card-label">${state.vocabIndex + 1} of ${due.length} due</p>
-            <h3>${escapeHtml(front)}</h3>
-            <p ${state.vocabRevealed ? "" : "hidden"}>${escapeHtml(back)}</p>
-        `;
-        if (result) {
-            result.innerHTML = `<p class="tool-metric">${state.vocabDeck.length} cards in this deck.</p>`;
-        }
-    }
-
-    function rateVocabCard(days) {
-        const due = currentDueDeck();
-        const card = due[state.vocabIndex % Math.max(due.length, 1)];
-        if (!card) {
-            return;
-        }
-        const reviewState = getReviewState();
-        reviewState[card.id] = {
-            due: Date.now() + days * 86400000,
-            last: Date.now(),
-        };
-        saveReviewState(reviewState);
-        state.vocabIndex += 1;
-        state.vocabRevealed = false;
-        renderVocabCard();
-    }
-
-    function resetVocabReview() {
-        localStorage.removeItem("englishLadderVocabReview");
-        state.vocabIndex = 0;
-        state.vocabRevealed = false;
-        renderVocabCard();
-    }
-
     function buildNewsTask() {
         const level = $("#news-level")?.value || "intermediate";
         const skill = $("#news-skill")?.value || "summary";
@@ -1027,15 +910,6 @@
         $("#shadow-speak")?.addEventListener("click", playShadowModel);
         $("#shadow-record")?.addEventListener("click", startRecording);
         $("#shadow-stop")?.addEventListener("click", stopRecording);
-        $("#vocab-load")?.addEventListener("click", loadVocabDeck);
-        $("#vocab-reset")?.addEventListener("click", resetVocabReview);
-        $("#vocab-reveal")?.addEventListener("click", () => {
-            state.vocabRevealed = true;
-            renderVocabCard();
-        });
-        $("#vocab-again")?.addEventListener("click", () => rateVocabCard(0));
-        $("#vocab-good")?.addEventListener("click", () => rateVocabCard(1));
-        $("#vocab-know")?.addEventListener("click", () => rateVocabCard(7));
         $("#news-build")?.addEventListener("click", buildNewsTask);
         $("#news-draft")?.addEventListener("input", updateWordCount);
         $("#phrase-build")?.addEventListener("click", buildPhraseCoach);

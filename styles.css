@@ -1095,8 +1095,8 @@ body.lightbox-open {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 11px 18px;
+    min-height: 0;
+    padding: 7px 18px;
     border-radius: 999px;
     border: 1px solid rgba(138, 75, 8, 0.18);
     background: linear-gradient(135deg, #b45309, #92400e);
@@ -1105,6 +1105,7 @@ body.lightbox-open {
     font-size: 0.92rem;
     font-weight: 800;
     letter-spacing: 0.03em;
+    line-height: 1.1;
     text-decoration: none;
 }
 

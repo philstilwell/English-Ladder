@@ -1519,13 +1519,14 @@ body.lightbox-open {
 }
 
 .tools-jump-grid a {
-    position: relative;
     display: grid;
     align-items: center;
+    align-content: center;
     justify-content: center;
     justify-items: center;
-    min-height: 64px;
-    padding: 14px 12px 12px;
+    gap: 9px;
+    min-height: 76px;
+    padding: 12px;
     border-radius: 10px;
     border: 1px solid rgba(31, 111, 102, 0.12);
     background: rgba(255, 255, 255, 0.88);
@@ -1539,12 +1540,10 @@ body.lightbox-open {
 }
 
 .tools-jump-number {
-    position: absolute;
-    top: 8px;
-    left: 8px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex: 0 0 auto;
     width: 28px;
     height: 28px;
     border: 1px solid rgba(146, 64, 14, 0.12);
@@ -1559,8 +1558,10 @@ body.lightbox-open {
 .tools-jump-label {
     display: block;
     max-width: 100%;
-    padding: 10px 4px 0;
-    overflow-wrap: anywhere;
+    min-width: 0;
+    padding: 0 4px;
+    overflow-wrap: normal;
+    word-break: normal;
 }
 
 .tools-jump-grid a:hover {

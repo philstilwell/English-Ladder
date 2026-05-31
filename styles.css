@@ -1519,19 +1519,18 @@ body.lightbox-open {
 }
 
 .tools-jump-grid a {
-    display: grid;
+    display: flex;
     align-items: center;
-    align-content: center;
     justify-content: center;
-    justify-items: center;
-    gap: 9px;
-    min-height: 76px;
-    padding: 12px;
+    gap: 16px;
+    box-sizing: border-box;
+    min-height: 56px;
+    padding: 10px 14px;
     border-radius: 10px;
     border: 1px solid rgba(31, 111, 102, 0.12);
     background: rgba(255, 255, 255, 0.88);
     color: #24324f;
-    text-align: center;
+    text-align: left;
     text-decoration: none;
     font-size: 0.86rem;
     font-weight: 800;
@@ -1559,7 +1558,6 @@ body.lightbox-open {
     display: block;
     max-width: 100%;
     min-width: 0;
-    padding: 0 4px;
     overflow-wrap: normal;
     word-break: normal;
 }

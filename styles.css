@@ -409,7 +409,9 @@ summary.lesson-date:hover {
     color: #183153;
 }
 
-.efsp-resource-link {
+.hub-resource-link.efsp-resource-link {
+    padding: 9px 18px;
+    line-height: 1.2;
     background: linear-gradient(135deg, #1f6f66, #255c99);
     box-shadow: 0 14px 24px rgba(31, 111, 102, 0.22);
 }
@@ -658,13 +660,14 @@ summary.lesson-date:hover {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 11px 16px;
+    min-height: 36px;
+    padding: 8px 14px;
     border-radius: 999px;
     text-align: center;
     text-decoration: none;
     font-weight: 800;
     letter-spacing: 0.03em;
+    line-height: 1.2;
     color: #ffffff;
     background: linear-gradient(135deg, #1f6f66, #255c99);
     box-shadow: 0 14px 24px rgba(31, 111, 102, 0.2);

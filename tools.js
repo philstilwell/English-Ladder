@@ -762,6 +762,15 @@
         $("#phrase-build")?.addEventListener("click", buildPhraseCoach);
         $("#phrase-scenario")?.addEventListener("change", buildPhraseCoach);
         $("#phrase-tone")?.addEventListener("change", buildPhraseCoach);
+        $$(".tools-jump-grid a[href^='#']").forEach((link) => {
+            link.addEventListener("click", () => {
+                const targetId = link.getAttribute("href")?.slice(1);
+                const target = targetId ? document.getElementById(targetId) : null;
+                if (target?.tagName.toLowerCase() === "details") {
+                    target.open = true;
+                }
+            });
+        });
         $("#register-run")?.addEventListener("click", transformRegister);
         $$("[data-sample-target]").forEach((button) => {
             button.addEventListener("click", () => {

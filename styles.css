@@ -1519,11 +1519,13 @@ body.lightbox-open {
 }
 
 .tools-jump-grid a {
-    display: flex;
+    position: relative;
+    display: grid;
     align-items: center;
     justify-content: center;
-    min-height: 44px;
-    padding: 9px 10px;
+    justify-items: center;
+    min-height: 64px;
+    padding: 14px 12px 12px;
     border-radius: 10px;
     border: 1px solid rgba(31, 111, 102, 0.12);
     background: rgba(255, 255, 255, 0.88);
@@ -1534,6 +1536,31 @@ body.lightbox-open {
     font-weight: 800;
     line-height: 1.15;
     transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+
+.tools-jump-number {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid rgba(146, 64, 14, 0.12);
+    border-radius: 8px;
+    background: linear-gradient(135deg, #fff7ed, #e6f4f1);
+    color: #7c3f0d;
+    font-size: 0.72rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.tools-jump-label {
+    display: block;
+    max-width: 100%;
+    padding: 10px 4px 0;
+    overflow-wrap: anywhere;
 }
 
 .tools-jump-grid a:hover {

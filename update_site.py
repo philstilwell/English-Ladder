@@ -1,4 +1,5 @@
 import argparse
+import hashlib
 import html
 import json
 import os
@@ -17,6 +18,7 @@ MAX_GENERATION_ATTEMPTS = 3
 DEFAULT_RELEASE_HOUR_UTC = 10
 FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
 SAFE_BUTTON_HANDLER = "checkAnswer(this)"
+QUIZ_OPTION_LABELS = ["a", "b", "c"]
 
 LEVELS = [
     {
@@ -432,6 +434,69 @@ def sanitize_existing_lesson_markup(lesson_tag):
         feedback_div["role"] = "status"
         feedback_div["aria-live"] = "polite"
 
+    randomize_existing_quiz_options(lesson_tag)
+
+
+def strip_option_label(text):
+    return re.sub(r"^\s*[a-c]\)\s*", "", normalize_text(text), flags=re.IGNORECASE)
+
+
+def quiz_option_sort_key(question_text, option_text, feedback_text=""):
+    seed_text = "|".join(
+        [
+            normalize_for_match(question_text),
+            normalize_for_match(strip_option_label(option_text)),
+            normalize_for_match(feedback_text),
+        ]
+    )
+    return hashlib.sha256(seed_text.encode("utf-8")).hexdigest()
+
+
+def shuffled_quiz_options(question_text, options, feedback, correct_index):
+    entries = []
+    for index, option_text in enumerate(options):
+        entries.append(
+            {
+                "option_text": normalize_text(option_text),
+                "feedback_text": normalize_text(feedback[index]),
+                "is_correct": index == correct_index,
+                "sort_key": quiz_option_sort_key(
+                    question_text,
+                    option_text,
+                    feedback[index],
+                ),
+            }
+        )
+    return sorted(entries, key=lambda entry: entry["sort_key"])
+
+
+def randomize_existing_quiz_options(lesson_tag):
+    for quiz_question in lesson_tag.select(".quiz-question"):
+        buttons = quiz_question.find_all("button")
+        if len(buttons) < 2:
+            continue
+
+        button_parent = buttons[0].parent
+        if not button_parent or any(button.parent != button_parent for button in buttons):
+            continue
+
+        question_tag = quiz_question.find("p")
+        question_text = question_tag.get_text(" ", strip=True) if question_tag else ""
+        ordered_buttons = sorted(
+            buttons,
+            key=lambda button: quiz_option_sort_key(
+                question_text,
+                button.get_text(" ", strip=True),
+                button.get("data-feedback", ""),
+            ),
+        )
+
+        for new_index, button in enumerate(ordered_buttons):
+            option_text = strip_option_label(button.get_text(" ", strip=True))
+            button.clear()
+            button.append(f"{QUIZ_OPTION_LABELS[new_index]}) {option_text}")
+            button_parent.append(button)
+
 
 def upgrade_lesson_markup(lesson_tag, default_release_dt=None):
     sanitize_existing_lesson_markup(lesson_tag)
@@ -642,18 +707,20 @@ def render_summary_html(title, release_dt):
 
 
 def render_quiz_question_html(question_number, item):
-    option_labels = ["a", "b", "c"]
     buttons = []
-    options = item["options"]
-    feedback = item["option_feedback"]
-    correct_index = item["correct_option_index"]
+    shuffled_options = shuffled_quiz_options(
+        item["question"],
+        item["options"],
+        item["option_feedback"],
+        item["correct_option_index"],
+    )
 
-    for index, option_text in enumerate(options):
-        is_correct = index == correct_index
+    for index, entry in enumerate(shuffled_options):
+        is_correct = entry["is_correct"]
         data_bg = "#e6ffe6" if is_correct else "#ffe6e6"
         data_color = "#2e8b57" if is_correct else "#b22222"
         feedback_prefix = "Correct: " if is_correct else "Incorrect: "
-        feedback_text = feedback_prefix + normalize_text(feedback[index])
+        feedback_text = feedback_prefix + entry["feedback_text"]
         buttons.append(
             (
                 '<button type="button" '
@@ -662,7 +729,7 @@ def render_quiz_question_html(question_number, item):
                 f'data-bg="{data_bg}" data-color="{data_color}" '
                 f'data-feedback="{html.escape(feedback_text, quote=True)}" '
                 f'onclick="{SAFE_BUTTON_HANDLER}">'
-                f"{option_labels[index]}) {html.escape(normalize_text(option_text))}"
+                f'{QUIZ_OPTION_LABELS[index]}) {html.escape(entry["option_text"])}'
                 "</button>"
             )
         )

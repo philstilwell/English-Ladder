@@ -106,6 +106,27 @@ class UpdateSiteTests(unittest.TestCase):
             self.assertEqual("2026-05-09", lessons[0]["data-lesson-key"])
             self.assertIn("Second Title", lessons[0].get_text(" ", strip=True))
 
+    def test_render_lesson_html_randomizes_quiz_option_positions(self):
+        release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
+        lesson_html = update_site.render_lesson_html(
+            build_valid_lesson_data(),
+            update_site.LEVELS[0],
+            release_dt,
+        )
+        soup = BeautifulSoup(lesson_html, "html.parser")
+
+        correct_positions = []
+        for quiz_question in soup.select(".quiz-question"):
+            buttons = quiz_question.find_all("button")
+            for index, button in enumerate(buttons):
+                if button["data-bg"] == "#e6ffe6":
+                    correct_positions.append(index)
+                    self.assertIn("The correct fact", button.get_text(" ", strip=True))
+                    self.assertIn("This option matches", button["data-feedback"])
+
+        self.assertEqual(10, len(correct_positions))
+        self.assertGreater(len(set(correct_positions)), 1)
+
     def test_refresh_page_markup_dedupes_and_sanitizes_legacy_markup(self):
         page_html = """
         <!DOCTYPE html>

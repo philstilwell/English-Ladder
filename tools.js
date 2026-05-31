@@ -266,6 +266,15 @@
         return trimmed ? trimmed.charAt(0).toUpperCase() + trimmed.slice(1) : "";
     }
 
+    function shuffled(values) {
+        const result = [...values];
+        for (let index = result.length - 1; index > 0; index -= 1) {
+            const swapIndex = Math.floor(Math.random() * (index + 1));
+            [result[index], result[swapIndex]] = [result[swapIndex], result[index]];
+        }
+        return result;
+    }
+
     function splitSentences(text) {
         return String(text)
             .replace(/\s+/g, " ")
@@ -357,20 +366,23 @@
         if (!container) {
             return;
         }
-        container.innerHTML = diagnosticQuestions.map((question, index) => `
+        container.innerHTML = diagnosticQuestions.map((question, index) => {
+            const options = shuffled(question.options.map((option, optionIndex) => ({ ...option, optionIndex })));
+            return `
             <article class="diagnostic-card">
                 <h3>Question ${index + 1}</h3>
                 <p>${escapeHtml(question.prompt)}</p>
                 <div class="choice-stack">
-                    ${question.options.map((option, optionIndex) => `
+                    ${options.map((option) => `
                         <label class="choice-row">
-                            <input type="radio" name="diagnostic-${index}" value="${optionIndex}">
+                            <input type="radio" name="diagnostic-${index}" value="${option.optionIndex}">
                             <span>${escapeHtml(option.text)}</span>
                         </label>
                     `).join("")}
                 </div>
             </article>
-        `).join("");
+        `;
+        }).join("");
     }
 
     function runDiagnostic() {
@@ -817,7 +829,7 @@
             return;
         }
         const correct = data.good[Math.floor(Math.random() * data.good.length)];
-        const choices = [...data.traps.slice(0, 2), correct].sort(() => Math.random() - 0.5);
+        const choices = shuffled([...data.traps.slice(0, 2), correct]);
         result.innerHTML = `
             <h3>Choose the natural collocation with "${escapeHtml(word)}"</h3>
             <div class="choice-stack">

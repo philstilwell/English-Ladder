@@ -126,6 +126,9 @@ class UpdateSiteTests(unittest.TestCase):
 
         self.assertEqual(10, len(correct_positions))
         self.assertGreater(len(set(correct_positions)), 1)
+        self.assertNotIn("margin-bottom: 25px", lesson_html)
+        self.assertNotIn("padding: 10px", lesson_html)
+        self.assertIn("padding: 7px 10px", lesson_html)
 
     def test_render_lesson_html_strips_markdown_bold_markers(self):
         release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
@@ -183,10 +186,15 @@ class UpdateSiteTests(unittest.TestCase):
         self.assertEqual("button", button["type"])
         self.assertNotIn("<", button["data-feedback"])
         self.assertNotIn(">", button["data-feedback"])
+        self.assertIn("padding: 7px 10px", button["style"])
+
+        quiz_question = lesson.find("div", class_="quiz-question")
+        self.assertEqual(update_site.QUIZ_QUESTION_STYLE, quiz_question["style"])
 
         feedback = lesson.find("div", class_="feedback")
         self.assertEqual("status", feedback["role"])
         self.assertEqual("polite", feedback["aria-live"])
+        self.assertEqual(update_site.QUIZ_FEEDBACK_STYLE, feedback["style"])
 
     def test_refresh_page_markup_strips_markdown_around_existing_strong_terms(self):
         page_html = """

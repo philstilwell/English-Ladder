@@ -19,6 +19,15 @@ DEFAULT_RELEASE_HOUR_UTC = 10
 FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
 SAFE_BUTTON_HANDLER = "checkAnswer(this)"
 QUIZ_OPTION_LABELS = ["a", "b", "c"]
+QUIZ_BUTTON_STYLE = (
+    "text-align: left; padding: 7px 10px; border: 1px solid var(--button-border); "
+    "border-radius: 6px; background: #fff; cursor: pointer; font-size: 1em; "
+    "line-height: 1.25; transition: 0.2s;"
+)
+QUIZ_QUESTION_STYLE = "margin-bottom: 0;"
+QUIZ_PROMPT_STYLE = "font-weight: bold; color: var(--quiz-question); margin: 0 0 8px;"
+QUIZ_OPTIONS_STYLE = "display: flex; flex-direction: column; gap: 6px;"
+QUIZ_FEEDBACK_STYLE = "margin-top: 8px; font-size: 0.95em; line-height: 1.25; min-height: 0;"
 
 LEVELS = [
     {
@@ -453,6 +462,7 @@ def sanitize_existing_lesson_markup(lesson_tag):
             text_node.replace_with(cleaned_text)
 
     randomize_existing_quiz_options(lesson_tag)
+    tighten_existing_quiz_spacing(lesson_tag)
 
 
 def strip_option_label(text):
@@ -514,6 +524,31 @@ def randomize_existing_quiz_options(lesson_tag):
             button.clear()
             button.append(f"{QUIZ_OPTION_LABELS[new_index]}) {option_text}")
             button_parent.append(button)
+
+
+def tighten_existing_quiz_spacing(lesson_tag):
+    for quiz_question in lesson_tag.select(".quiz-question"):
+        quiz_question["style"] = QUIZ_QUESTION_STYLE
+
+        question_tag = quiz_question.find("p")
+        if question_tag:
+            question_tag["style"] = QUIZ_PROMPT_STYLE
+
+        buttons = quiz_question.find_all("button")
+        if buttons:
+            button_parent = buttons[0].parent
+            if (
+                button_parent
+                and button_parent != quiz_question
+                and all(button.parent == button_parent for button in buttons)
+            ):
+                button_parent["style"] = QUIZ_OPTIONS_STYLE
+            for button in buttons:
+                button["style"] = QUIZ_BUTTON_STYLE
+
+        feedback_div = quiz_question.find("div", class_="feedback")
+        if feedback_div:
+            feedback_div["style"] = QUIZ_FEEDBACK_STYLE
 
 
 def upgrade_lesson_markup(lesson_tag, default_release_dt=None):
@@ -742,8 +777,7 @@ def render_quiz_question_html(question_number, item):
         buttons.append(
             (
                 '<button type="button" '
-                'style="text-align: left; padding: 10px; border: 1px solid var(--button-border); '
-                'border-radius: 5px; background: #fff; cursor: pointer; font-size: 1em; transition: 0.2s;" '
+                f'style="{html.escape(QUIZ_BUTTON_STYLE, quote=True)}" '
                 f'data-bg="{data_bg}" data-color="{data_color}" '
                 f'data-feedback="{html.escape(feedback_text, quote=True)}" '
                 f'onclick="{SAFE_BUTTON_HANDLER}">'
@@ -754,14 +788,14 @@ def render_quiz_question_html(question_number, item):
 
     return (
         '<div class="quiz-card">'
-        '<div class="quiz-question" style="margin-bottom: 25px;">'
-        f'<p style="font-weight: bold; color: var(--quiz-question); margin-bottom: 10px;">'
+        f'<div class="quiz-question" style="{html.escape(QUIZ_QUESTION_STYLE, quote=True)}">'
+        f'<p style="{html.escape(QUIZ_PROMPT_STYLE, quote=True)}">'
         f"{question_number}. {html.escape(normalize_text(item['question']))}</p>"
-        '<div style="display: flex; flex-direction: column; gap: 8px;">'
+        f'<div style="{html.escape(QUIZ_OPTIONS_STYLE, quote=True)}">'
         + "".join(buttons)
         + '</div>'
         '<div class="feedback" role="status" aria-live="polite" '
-        'style="margin-top: 12px; font-size: 0.95em; min-height: 1.5em;"></div>'
+        f'style="{html.escape(QUIZ_FEEDBACK_STYLE, quote=True)}"></div>'
         "</div>"
         "</div>"
     )

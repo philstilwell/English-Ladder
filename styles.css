@@ -237,7 +237,7 @@ summary.lesson-date:hover {
 }
 
 .section {
-    margin-bottom: 28px;
+    margin-bottom: 22px;
     border-left: 5px solid var(--accent);
     padding-left: 18px;
 }
@@ -266,8 +266,35 @@ summary.lesson-date:hover {
 .quiz-card {
     background: var(--quiz-card);
     border: 1px solid var(--border);
-    padding: 24px;
-    border-radius: 18px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+.quiz-card .quiz-question {
+    margin-bottom: 0 !important;
+}
+
+.quiz-card .quiz-question > p {
+    line-height: 1.25;
+    margin-top: 0 !important;
+    margin-bottom: 8px !important;
+}
+
+.quiz-card .quiz-question > div {
+    gap: 6px !important;
+}
+
+.quiz-card button {
+    padding: 7px 10px !important;
+    border-radius: 6px !important;
+    line-height: 1.25;
+}
+
+.quiz-card .feedback {
+    margin-top: 8px !important;
+    min-height: 0 !important;
+    line-height: 1.25;
 }
 
 .quiz-card button:hover {
@@ -2157,7 +2184,7 @@ body.lightbox-open {
     }
 
     .section {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         padding-left: 12px;
         border-left-width: 4px;
     }
@@ -2172,12 +2199,16 @@ body.lightbox-open {
     }
 
     .quiz-card {
-        padding: 14px 12px;
-        border-radius: 14px;
+        padding: 11px 10px;
+        border-radius: 12px;
     }
 
     .quiz-question {
-        margin-bottom: 18px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .quiz-card button {
+        padding: 6px 9px !important;
     }
 
     .hub-card {

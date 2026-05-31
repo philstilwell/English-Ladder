@@ -544,23 +544,27 @@ summary.lesson-date:hover {
 }
 
 .theme-tools {
-    --page-bg: #f8fbfa;
-    --page-bg-alt: #fff8ed;
-    --page-glow: rgba(31, 111, 102, 0.12);
+    --page-bg: #f6faf9;
+    --page-bg-alt: #fffaf2;
+    --page-glow: rgba(37, 99, 235, 0.11);
     --surface: rgba(255, 255, 255, 0.96);
-    --surface-alt: #f1f5ff;
+    --surface-alt: #eef7ff;
     --text: #20253a;
-    --muted: #556070;
+    --muted: #506070;
     --accent: #2563eb;
     --accent-strong: #1f6f66;
-    --border: rgba(99, 102, 241, 0.2);
-    --shadow: rgba(67, 56, 202, 0.12);
+    --border: rgba(79, 114, 171, 0.18);
+    --shadow: rgba(28, 57, 105, 0.12);
     --nav-bg: rgba(255, 255, 255, 0.88);
     --hero-start: #e0f2fe;
     --hero-end: #ede9fe;
     --quiz-card: #ffffff;
     --button-border: #c7d2fe;
     --quiz-question: #4c1d95;
+}
+
+.theme-tools .page-shell {
+    max-width: 1120px;
 }
 
 .theme-beginner {
@@ -1458,16 +1462,32 @@ body.lightbox-open {
 }
 
 .tools-hero {
+    position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(280px, 360px);
-    gap: 24px;
-    align-items: end;
-    padding: 30px;
-    margin-bottom: 24px;
-    border-radius: 26px;
-    border: 1px solid var(--border);
-    background: linear-gradient(135deg, #e0f2fe 0%, #fff7ed 52%, #e6f4f1 100%);
-    box-shadow: 0 18px 42px var(--shadow);
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    gap: 28px;
+    align-items: center;
+    padding: 34px;
+    margin-bottom: 22px;
+    border-radius: 24px;
+    border: 1px solid rgba(79, 114, 171, 0.2);
+    background:
+        linear-gradient(135deg, rgba(224, 242, 254, 0.92) 0%, rgba(255, 247, 237, 0.82) 52%, rgba(230, 244, 241, 0.94) 100%);
+    box-shadow: 0 22px 50px rgba(28, 57, 105, 0.13);
+    overflow: hidden;
+}
+
+.tools-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-top: 5px solid rgba(31, 111, 102, 0.22);
+    pointer-events: none;
+}
+
+.tools-hero-copy {
+    position: relative;
+    z-index: 1;
 }
 
 .tools-hero-copy h1 {
@@ -1481,58 +1501,104 @@ body.lightbox-open {
     max-width: 720px;
     margin: 0;
     color: #3d4a5c;
+    font-size: 1.05rem;
+    line-height: 1.65;
 }
 
 .tools-jump-grid {
+    position: relative;
+    z-index: 1;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid rgba(31, 111, 102, 0.13);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.56);
+    backdrop-filter: blur(12px);
 }
 
 .tools-jump-grid a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 42px;
-    padding: 8px 10px;
-    border-radius: 12px;
-    border: 1px solid rgba(31, 111, 102, 0.16);
-    background: rgba(255, 255, 255, 0.82);
+    min-height: 44px;
+    padding: 9px 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(31, 111, 102, 0.12);
+    background: rgba(255, 255, 255, 0.88);
     color: #24324f;
     text-align: center;
     text-decoration: none;
     font-size: 0.86rem;
     font-weight: 800;
     line-height: 1.15;
-    transition: transform 0.18s ease, background 0.18s ease;
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .tools-jump-grid a:hover {
     transform: translateY(-2px);
     background: #ffffff;
+    border-color: rgba(37, 99, 235, 0.28);
+    color: #1f4fb5;
 }
 
 .tools-stack {
     display: grid;
-    gap: 14px;
+    gap: 12px;
 }
 
 .tool-panel {
-    border: 1px solid var(--border);
-    border-radius: 22px;
-    background: var(--surface);
-    box-shadow: 0 16px 30px var(--shadow);
+    border: 1px solid rgba(79, 114, 171, 0.17);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 14px 28px rgba(28, 57, 105, 0.09);
     overflow: hidden;
     scroll-margin-top: 18px;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.tool-panel[open] {
+    border-color: rgba(31, 111, 102, 0.24);
+    box-shadow: 0 18px 36px rgba(28, 57, 105, 0.12);
+}
+
+.tool-panel:hover {
+    transform: translateY(-1px);
+    border-color: rgba(37, 99, 235, 0.22);
 }
 
 .tool-panel summary {
     display: flex;
     align-items: center;
     gap: 14px;
-    padding: 18px 20px;
+    position: relative;
+    padding: 18px 56px 18px 20px;
     cursor: pointer;
     list-style: none;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 255, 0.78));
+}
+
+.tool-panel summary::after {
+    content: "+";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(79, 114, 171, 0.18);
+    border-radius: 50%;
+    background: #ffffff;
+    color: #1f6f66;
+    font-weight: 900;
+    transform: translateY(-50%);
+}
+
+.tool-panel[open] summary::after {
+    content: "-";
 }
 
 .tool-panel summary::-webkit-details-marker {
@@ -1561,30 +1627,33 @@ body.lightbox-open {
     flex: 0 0 auto;
     width: 42px;
     height: 42px;
-    border-radius: 12px;
-    background: #f7ead8;
-    color: #85561f;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #fff7ed, #e6f4f1);
+    color: #7c3f0d;
     font-weight: 900;
+    box-shadow: inset 0 0 0 1px rgba(146, 64, 14, 0.1);
 }
 
 .tool-body {
-    padding: 0 20px 22px;
-    border-top: 1px solid rgba(99, 102, 241, 0.14);
+    padding: 0 22px 24px;
+    border-top: 1px solid rgba(79, 114, 171, 0.12);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(248, 251, 255, 0.9));
 }
 
 .diagnostic-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-    padding-top: 18px;
+    gap: 14px;
+    padding-top: 20px;
 }
 
 .diagnostic-card,
 .result-list article {
     padding: 16px;
-    border-radius: 16px;
-    border: 1px solid rgba(99, 102, 241, 0.16);
+    border-radius: 12px;
+    border: 1px solid rgba(79, 114, 171, 0.14);
     background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    box-shadow: 0 10px 18px rgba(28, 57, 105, 0.05);
 }
 
 .diagnostic-card h3,
@@ -1602,7 +1671,7 @@ body.lightbox-open {
 
 .choice-stack {
     display: grid;
-    gap: 8px;
+    gap: 9px;
 }
 
 .choice-row {
@@ -1612,33 +1681,45 @@ body.lightbox-open {
     width: 100%;
     min-height: 44px;
     padding: 10px 12px;
-    border: 1px solid var(--button-border);
-    border-radius: 12px;
+    border: 1px solid rgba(79, 114, 171, 0.18);
+    border-radius: 10px;
     background: #ffffff;
     color: #24324f;
     font: inherit;
     line-height: 1.35;
     text-align: left;
     cursor: pointer;
+    transition: border-color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.choice-row:hover {
+    transform: translateY(-1px);
+    border-color: rgba(31, 111, 102, 0.26);
+    background: #fbfdff;
 }
 
 .choice-row input {
     margin-top: 5px;
+    accent-color: #1f6f66;
 }
 
 .tool-form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    padding-top: 18px;
+    gap: 16px;
+    padding-top: 20px;
 }
 
 .tool-field {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    gap: 8px;
     color: #24324f;
     font-weight: 800;
+}
+
+.tool-field span {
+    font-size: 0.9rem;
 }
 
 .tool-field-wide {
@@ -1650,16 +1731,28 @@ body.lightbox-open {
 .tool-field input {
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid var(--button-border);
-    border-radius: 12px;
-    padding: 11px 12px;
+    border: 1px solid rgba(79, 114, 171, 0.22);
+    border-radius: 10px;
+    padding: 12px 13px;
     background: #ffffff;
     color: #20253a;
     font: inherit;
     line-height: 1.45;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.tool-field select:focus,
+.tool-field textarea:focus,
+.tool-field input:focus {
+    border-color: rgba(37, 99, 235, 0.52);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    outline: none;
 }
 
 .tool-field textarea {
+    min-height: 120px;
     resize: vertical;
 }
 
@@ -1675,8 +1768,8 @@ body.lightbox-open {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 42px;
-    padding: 9px 15px;
+    min-height: 44px;
+    padding: 10px 17px;
     border: 1px solid rgba(31, 111, 102, 0.18);
     border-radius: 999px;
     background: linear-gradient(135deg, #1f6f66, #2563eb);
@@ -1685,7 +1778,8 @@ body.lightbox-open {
     font: inherit;
     font-weight: 900;
     line-height: 1.1;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    box-shadow: 0 12px 24px rgba(31, 111, 102, 0.14);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .tool-button:hover {
@@ -1703,11 +1797,17 @@ body.lightbox-open {
 .tool-button-secondary {
     background: #ffffff;
     color: #24324f;
-    border-color: var(--button-border);
+    border-color: rgba(79, 114, 171, 0.22);
+    box-shadow: 0 8px 18px rgba(28, 57, 105, 0.06);
+}
+
+.tool-button-secondary:hover {
+    border-color: rgba(37, 99, 235, 0.24);
 }
 
 .tool-results {
     margin-top: 16px;
+    padding-top: 2px;
 }
 
 .tool-results h3 {
@@ -1734,7 +1834,7 @@ body.lightbox-open {
 
 .result-list {
     display: grid;
-    gap: 10px;
+    gap: 12px;
     margin-top: 12px;
 }
 
@@ -1761,8 +1861,9 @@ body.lightbox-open {
     display: inline-flex;
     align-items: center;
     min-height: 34px;
-    padding: 6px 10px;
+    padding: 6px 11px;
     border-radius: 999px;
+    border: 1px solid rgba(146, 64, 14, 0.1);
     background: #fff7ed;
     color: #92400e;
     text-decoration: none;
@@ -1777,17 +1878,18 @@ body.lightbox-open {
 .before-after {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 12px;
 }
 
 .before-after p {
     min-height: 90px;
     margin: 0;
-    padding: 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(99, 102, 241, 0.16);
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(79, 114, 171, 0.14);
     background: #ffffff;
     color: var(--muted);
+    box-shadow: 0 8px 16px rgba(28, 57, 105, 0.05);
 }
 
 .before-after strong {
@@ -1806,15 +1908,15 @@ body.lightbox-open {
 .phrase-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 9px;
 }
 
 .phrase-chip {
     display: inline-flex;
     align-items: center;
     min-height: 42px;
-    padding: 9px 12px;
-    border: 1px solid rgba(31, 111, 102, 0.2);
+    padding: 9px 13px;
+    border: 1px solid rgba(31, 111, 102, 0.18);
     border-radius: 999px;
     background: #ffffff;
     color: #24324f;
@@ -1822,6 +1924,14 @@ body.lightbox-open {
     font: inherit;
     font-weight: 800;
     line-height: 1.15;
+    box-shadow: 0 8px 16px rgba(28, 57, 105, 0.05);
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.phrase-chip:hover {
+    transform: translateY(-1px);
+    border-color: rgba(31, 111, 102, 0.32);
+    background: #f9fffd;
 }
 
 .phrase-chip-copied {
@@ -2079,7 +2189,7 @@ body.lightbox-open {
 
     .tool-panel summary {
         align-items: flex-start;
-        padding: 15px;
+        padding: 15px 52px 15px 15px;
     }
 
     .tool-body {

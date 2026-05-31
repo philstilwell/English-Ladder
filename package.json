@@ -1,0 +1,28 @@
+{
+  "name": "english-ladder",
+  "version": "1.0.0",
+  "description": "A self-updating ESL website with daily lessons, grammar concepts, EFSP materials, and study tools.",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "check:js": "node --check tools.js",
+    "test": "python3 -m unittest discover -s tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philstilwell/English-Ladder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/philstilwell/English-Ladder/issues"
+  },
+  "homepage": "https://github.com/philstilwell/English-Ladder#readme",
+  "devDependencies": {
+    "playwright": "^1.60.0"
+  }
+}

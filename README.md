@@ -11,7 +11,10 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 ## Site Structure
 
 - `index.html`
-  The hub page. Learners choose Beginner, Intermediate, or Advanced from the level selector.
+  The hub page. Learners choose Beginner, Intermediate, or Advanced from the level selector and can jump into the study library.
+
+- `tools.html`
+  A static ESL tools page with diagnostics, sentence repair, pronunciation shadowing, vocabulary review, news-skill prompts, workplace phrase coaching, collocations, dictation, and register practice.
 
 - `beginner.html`
   The yellow beginner archive page for A1-A2 learners.
@@ -27,6 +30,9 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 
 - `app.js`
   Shared quiz interaction for every lesson page.
+
+- `tools.js`
+  Client-side behavior for the ESL study tools.
 
 ## Automation
 

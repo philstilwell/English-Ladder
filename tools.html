@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>English Ladder | ESL Study Tools</title>
+<link href="favicon.png" rel="icon" type="image/png">
+<link href="styles.css" rel="stylesheet">
+<script defer src="tools.js"></script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "c9c5fc6fc0f947efb5b32e0139ad4459"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="theme-tools">
+<main class="page-shell">
+<nav class="top-nav">
+<a href="index.html">Back to Level Hub</a>
+<span>ESL study tools</span>
+</nav>
+
+<section class="tools-hero">
+<div class="tools-hero-copy">
+<p class="eyebrow">English Ladder</p>
+<h1>ESL Study Tools</h1>
+<p>Practice with diagnostics, sentence repair, pronunciation, vocabulary review, news tasks, workplace phrases, collocations, dictation, and register control.</p>
+</div>
+<nav class="tools-jump-grid" aria-label="Tool shortcuts">
+<a href="#grammar-diagnostic">Diagnostic</a>
+<a href="#sentence-repair">Sentence repair</a>
+<a href="#pronunciation-shadowing">Shadowing</a>
+<a href="#vocabulary-deck">Vocabulary deck</a>
+<a href="#news-skills">News skills</a>
+<a href="#phrase-coach">Phrase coach</a>
+<a href="#collocation-builder">Collocations</a>
+<a href="#dictation-ladder">Dictation</a>
+<a href="#register-transformer">Register</a>
+</nav>
+</section>
+
+<div class="tools-stack">
+<details class="tool-panel" id="grammar-diagnostic" open>
+<summary>
+<span class="tool-number">01</span>
+<span>
+<strong>Grammar Diagnostic Map</strong>
+<small>Get a study path through the grammar concepts.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div id="diagnostic-questions" class="diagnostic-grid"></div>
+<div class="tool-actions">
+<button class="tool-button" id="diagnostic-submit" type="button">Map my study path</button>
+<button class="tool-button tool-button-secondary" id="diagnostic-reset" type="button">Reset</button>
+</div>
+<div class="tool-results" id="diagnostic-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="sentence-repair">
+<summary>
+<span class="tool-number">02</span>
+<span>
+<strong>Sentence Repair Lab</strong>
+<small>Check common ESL patterns and connect them to lessons.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field tool-field-wide">
+<span>Your sentence</span>
+<textarea id="repair-input" rows="5">I am interesting in improve my English at Monday.</textarea>
+</label>
+<label class="tool-field">
+<span>Level</span>
+<select id="repair-level">
+<option value="beginner">Beginner</option>
+<option value="intermediate" selected>Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="repair-run" type="button">Repair sentence</button>
+<button class="tool-button tool-button-secondary" data-sample-target="repair-input" data-sample-value="She suggested me to apply for the role in Friday.">Use sample</button>
+</div>
+<div class="tool-results" id="repair-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="pronunciation-shadowing">
+<summary>
+<span class="tool-number">03</span>
+<span>
+<strong>Pronunciation Shadowing Tool</strong>
+<small>Listen, repeat, record, and compare your rhythm.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field tool-field-wide">
+<span>Sentence</span>
+<select id="shadow-sentence"></select>
+</label>
+<label class="tool-field">
+<span>Voice speed</span>
+<select id="shadow-rate">
+<option value="0.75">Slow</option>
+<option value="0.92" selected>Natural</option>
+<option value="1.05">Fast</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="shadow-speak" type="button">Play model</button>
+<button class="tool-button tool-button-secondary" id="shadow-record" type="button">Record</button>
+<button class="tool-button tool-button-secondary" id="shadow-stop" type="button" disabled>Stop</button>
+</div>
+<audio id="shadow-playback" class="tool-audio" controls hidden></audio>
+<div class="tool-results" id="shadow-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="vocabulary-deck">
+<summary>
+<span class="tool-number">04</span>
+<span>
+<strong>Vocabulary Memory Deck</strong>
+<small>Review lesson vocabulary with spaced practice.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field">
+<span>Source level</span>
+<select id="vocab-level">
+<option value="beginner">Beginner</option>
+<option value="intermediate" selected>Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+</label>
+<label class="tool-field">
+<span>Card side</span>
+<select id="vocab-mode">
+<option value="term" selected>Term first</option>
+<option value="definition">Definition first</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="vocab-load" type="button">Load today's deck</button>
+<button class="tool-button tool-button-secondary" id="vocab-reset" type="button">Reset review</button>
+</div>
+<div class="vocab-review-card" id="vocab-card" aria-live="polite"></div>
+<div class="tool-actions">
+<button class="tool-button tool-button-secondary" id="vocab-reveal" type="button">Reveal</button>
+<button class="tool-button tool-button-secondary" id="vocab-again" type="button">Again</button>
+<button class="tool-button tool-button-secondary" id="vocab-good" type="button">Good</button>
+<button class="tool-button tool-button-secondary" id="vocab-know" type="button">Know it</button>
+</div>
+<div class="tool-results" id="vocab-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="news-skills">
+<summary>
+<span class="tool-number">05</span>
+<span>
+<strong>Same News, Different Skill</strong>
+<small>Turn one daily story into reading, speaking, and writing practice.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field">
+<span>Level</span>
+<select id="news-level">
+<option value="beginner">Beginner</option>
+<option value="intermediate" selected>Intermediate</option>
+<option value="advanced">Advanced</option>
+</select>
+</label>
+<label class="tool-field">
+<span>Skill</span>
+<select id="news-skill">
+<option value="summary">Summarize it</option>
+<option value="discussion">Discuss it</option>
+<option value="opinion">Write an opinion</option>
+<option value="coworker">Explain it to a coworker</option>
+<option value="email">Turn it into an email</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="news-build" type="button">Build task</button>
+</div>
+<div class="tool-results" id="news-results" aria-live="polite"></div>
+<label class="tool-field tool-field-wide writing-pad">
+<span>Practice draft</span>
+<textarea id="news-draft" rows="6"></textarea>
+</label>
+<p class="tool-metric" id="news-word-count">0 words</p>
+</div>
+</details>
+
+<details class="tool-panel" id="phrase-coach">
+<summary>
+<span class="tool-number">06</span>
+<span>
+<strong>Workplace Phrase Coach</strong>
+<small>Practice useful phrases by situation and tone.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field">
+<span>Situation</span>
+<select id="phrase-scenario">
+<option value="disagree">Disagree in a meeting</option>
+<option value="clarify">Ask for clarification</option>
+<option value="pushback">Push back on a request</option>
+<option value="problem">Report a problem</option>
+<option value="bad-news">Soften bad news</option>
+</select>
+</label>
+<label class="tool-field">
+<span>Tone</span>
+<select id="phrase-tone">
+<option value="polite">Polite</option>
+<option value="direct">Direct</option>
+<option value="diplomatic" selected>Diplomatic</option>
+<option value="firm">Firm</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="phrase-build" type="button">Show phrases</button>
+</div>
+<div class="tool-results" id="phrase-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="collocation-builder">
+<summary>
+<span class="tool-number">07</span>
+<span>
+<strong>Collocation Builder</strong>
+<small>Choose natural word partners and build sentences.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field">
+<span>Word</span>
+<select id="collocation-word">
+<option value="make">make</option>
+<option value="take">take</option>
+<option value="raise">raise</option>
+<option value="issue">issue</option>
+<option value="risk">risk</option>
+<option value="concern">concern</option>
+<option value="proposal">proposal</option>
+</select>
+</label>
+<label class="tool-field">
+<span>Practice type</span>
+<select id="collocation-mode">
+<option value="quiz">Choose a partner</option>
+<option value="sentence">Sentence builder</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="collocation-start" type="button">Start practice</button>
+</div>
+<div class="tool-results" id="collocation-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="dictation-ladder">
+<summary>
+<span class="tool-number">08</span>
+<span>
+<strong>Listening Dictation Ladder</strong>
+<small>Hear a sentence, type it, and compare the words.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field tool-field-wide">
+<span>Sentence</span>
+<select id="dictation-sentence"></select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" data-dictation-rate="0.95" type="button">Normal speed</button>
+<button class="tool-button tool-button-secondary" data-dictation-rate="0.68" type="button">Slow speed</button>
+<button class="tool-button tool-button-secondary" id="dictation-word" type="button">Word by word</button>
+</div>
+<label class="tool-field tool-field-wide">
+<span>What you heard</span>
+<textarea id="dictation-input" rows="4"></textarea>
+</label>
+<div class="tool-actions">
+<button class="tool-button" id="dictation-check" type="button">Check dictation</button>
+<button class="tool-button tool-button-secondary" id="dictation-show" type="button">Show answer</button>
+</div>
+<div class="tool-results" id="dictation-results" aria-live="polite"></div>
+</div>
+</details>
+
+<details class="tool-panel" id="register-transformer">
+<summary>
+<span class="tool-number">09</span>
+<span>
+<strong>Register Transformer</strong>
+<small>Shift a sentence between casual, neutral, academic, business, and diplomatic English.</small>
+</span>
+</summary>
+<div class="tool-body">
+<div class="tool-form-grid">
+<label class="tool-field tool-field-wide">
+<span>Sentence</span>
+<textarea id="register-input" rows="4">I think this plan has problems and we need to fix it soon.</textarea>
+</label>
+<label class="tool-field">
+<span>Register</span>
+<select id="register-target">
+<option value="casual">Casual</option>
+<option value="neutral" selected>Neutral</option>
+<option value="academic">Academic</option>
+<option value="business">Business</option>
+<option value="diplomatic">Diplomatic</option>
+</select>
+</label>
+</div>
+<div class="tool-actions">
+<button class="tool-button" id="register-run" type="button">Transform</button>
+<button class="tool-button tool-button-secondary" data-sample-target="register-input" data-sample-value="This is wrong and your team must change it.">Use sample</button>
+</div>
+<div class="tool-results" id="register-results" aria-live="polite"></div>
+</div>
+</details>
+</div>
+</main>
+</body>
+</html>

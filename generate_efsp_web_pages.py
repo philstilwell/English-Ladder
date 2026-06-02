@@ -1,0 +1,537 @@
+from __future__ import annotations
+
+import html
+import importlib
+import json
+import re
+from pathlib import Path
+from typing import Any
+
+from generate_efsp_industry_batch_pdfs import INDUSTRIES, pdf_name, term_definition
+
+
+ROOT = Path(__file__).resolve().parent
+
+
+STANDARD_TRACKS = [
+    {
+        "module": "generate_efsp_ai_development_pdfs",
+        "title": "AI Development English",
+        "slug": "ai-development",
+        "summary": "High-level technical English for AI engineers, researchers, product managers, data specialists, and safety teams.",
+        "roles": "AI engineers, researchers, product managers, data specialists, safety teams, and AI-adjacent leaders",
+        "pdf_slug": "ai-development",
+    },
+    {
+        "module": "generate_efsp_general_it_pdfs",
+        "title": "General IT English",
+        "slug": "general-it",
+        "summary": "Technical workplace English for IT operations, service desk, infrastructure, cloud, endpoint, security, and platform teams.",
+        "roles": "IT operations, service desk, infrastructure, cloud, endpoint, security, and platform teams",
+        "pdf_slug": "general-it",
+    },
+    {
+        "module": "generate_efsp_law_pdfs",
+        "title": "Law English",
+        "slug": "law",
+        "summary": "Legal workplace English for client intake, privilege, litigation, discovery, contracts, compliance, settlement, and advocacy.",
+        "roles": "lawyers, paralegals, compliance staff, contracts specialists, legal operations teams, and law-adjacent professionals",
+        "pdf_slug": "law",
+    },
+    {
+        "module": "generate_efsp_finance_pdfs",
+        "title": "Finance English",
+        "slug": "finance",
+        "summary": "Professional English for accounting, FP&A, treasury, banking, investments, audit, risk, and corporate finance.",
+        "roles": "accounting, FP&A, treasury, banking, investments, audit, risk, corporate finance, and finance-adjacent teams",
+        "pdf_slug": "finance",
+    },
+    {
+        "module": "generate_efsp_financial_advice_pdfs",
+        "title": "Financial Advice English",
+        "slug": "financial-advice",
+        "summary": "Client-facing English for discovery, recommendations, disclosures, risk profiling, retirement planning, and difficult conversations.",
+        "roles": "financial advisors, planners, wealth-management teams, retirement specialists, paraplanners, and client-service staff",
+        "pdf_slug": "financial-advice",
+    },
+    {
+        "module": "generate_efsp_marketing_pdfs",
+        "title": "Marketing English",
+        "slug": "marketing",
+        "summary": "Professional English for audience strategy, positioning, campaign briefs, channels, attribution, compliance, and brand risk.",
+        "roles": "brand, product marketing, growth, content, SEO, lifecycle, demand generation, marketing operations, social, and agency teams",
+        "pdf_slug": "marketing",
+    },
+    {
+        "module": "generate_efsp_real_estate_pdfs",
+        "title": "Real Estate English",
+        "slug": "real-estate",
+        "summary": "Real estate English for agency, fair housing, buyer and seller consultations, pricing, offers, disclosures, financing, and closing.",
+        "roles": "real estate agents, brokers, transaction coordinators, property managers, leasing teams, and commercial real estate staff",
+        "pdf_slug": "real-estate",
+    },
+    {
+        "module": "generate_efsp_corporate_strategy_pdfs",
+        "title": "Corporate Strategy English",
+        "slug": "corporate-strategy",
+        "summary": "Executive-level English for strategic diagnosis, tradeoffs, portfolio choices, growth, M&A, uncertainty, KPIs, and board narratives.",
+        "roles": "corporate strategy, CEO office, transformation, corporate development, strategic finance, product strategy, and internal consulting teams",
+        "pdf_slug": "corporate-strategy",
+    },
+    {
+        "module": "generate_efsp_pharmaceutical_pdfs",
+        "title": "Pharmaceutical English",
+        "slug": "pharmaceutical",
+        "summary": "Pharmaceutical English for drug development, regulatory strategy, trials, safety, CMC, quality, labeling, medical affairs, access, and launch.",
+        "roles": "clinical development, regulatory affairs, pharmacovigilance, quality, CMC, manufacturing, medical affairs, market access, and compliance teams",
+        "pdf_slug": "pharmaceutical",
+    },
+]
+
+
+CULTURE_TRACK = {
+    "title": "Cultural Leadership in US Branches",
+    "slug": "cultural-leadership-us-branches",
+    "summary": "Practical leadership English for Japanese and Chinese managers navigating US directness, pushback, meetings, feedback, and branch tension.",
+    "roles": "Japanese and Chinese managers, cross-border leaders, HR partners, and senior facilitators",
+    "pdfs": [
+        ("Instructor Guide", "pdf/efsp/efsp-cultural-leadership-in-us-branches-instructor-guide.pdf"),
+        ("Participant Workbook", "pdf/efsp/efsp-cultural-leadership-in-us-branches-participant-workbook.pdf"),
+        ("Scenario Cards", "pdf/efsp/efsp-cultural-leadership-scenario-cards.pdf"),
+        ("Quick Reference", "pdf/efsp/efsp-american-pushback-quick-reference.pdf"),
+    ],
+}
+
+
+def e(text: Any) -> str:
+    return html.escape(str(text), quote=True)
+
+
+def strip_module_number(title: str) -> str:
+    return re.sub(r"^Module\s+\d+\.\s*", "", title).strip()
+
+
+def pdfs_for_standard(pdf_slug: str) -> list[tuple[str, str]]:
+    return [
+        ("Instructor Guide", f"pdf/efsp/efsp-{pdf_slug}-english-instructor-guide.pdf"),
+        ("Participant Workbook", f"pdf/efsp/efsp-{pdf_slug}-english-participant-workbook.pdf"),
+        ("Dialogue Lab", f"pdf/efsp/efsp-{pdf_slug}-dialogue-lab.pdf"),
+        ("Jargon Guide", f"pdf/efsp/efsp-{pdf_slug}-jargon-quick-reference.pdf"),
+    ]
+
+
+def flatten_jargon(groups: list[tuple[str, list[tuple[str, str]]]]) -> list[dict[str, str]]:
+    terms = []
+    for group, items in groups:
+        for term, definition in items:
+            terms.append({"term": term, "definition": definition, "group": group})
+    return terms
+
+
+def model_line(dialogue: dict[str, Any] | None) -> str:
+    if not dialogue:
+        return "I understand the pressure, but I want to separate urgency from evidence, risk, owner, and decision rights before we commit."
+    for speaker, line in dialogue.get("dialogue", []):
+        if str(speaker).lower() == "esl learner":
+            return line
+    if dialogue.get("dialogue"):
+        return dialogue["dialogue"][-1][1]
+    return "Let's define the risk, the evidence, the owner, and the next decision."
+
+
+def normalize_standard_track(spec: dict[str, str]) -> dict[str, Any]:
+    mod = importlib.import_module(spec["module"])
+    jargon = flatten_jargon(getattr(mod, "JARGON_GROUPS", []))
+    dialogues = getattr(mod, "DIALOGUES", [])
+    modules = []
+    for index, module in enumerate(getattr(mod, "MODULES", [])):
+        dialogue = dialogues[index % len(dialogues)] if dialogues else None
+        terms = [item["term"] for item in jargon[index * 4 : (index + 1) * 4]] or [
+            concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]
+        ]
+        modules.append(
+            {
+                "title": strip_module_number(module["title"]),
+                "focus": module.get("big_idea", ""),
+                "goals": module.get("objectives", [])[:4],
+                "activities": module.get("activities", [])[:3],
+                "outputs": module.get("outputs", [])[:3],
+                "terms": terms,
+                "scenario": dialogue.get("setting", module.get("big_idea", "")) if dialogue else module.get("big_idea", ""),
+                "pressure": dialogue["dialogue"][0][1] if dialogue and dialogue.get("dialogue") else module.get("activities", [""])[0],
+                "model": model_line(dialogue),
+                "notes": dialogue.get("notes", []) if dialogue else module.get("concepts", [])[:2],
+            }
+        )
+    phrases = []
+    for group, items in getattr(mod, "PHRASE_BANK", {}).items():
+        for phrase in items:
+            phrases.append({"group": group, "phrase": phrase})
+    return {
+        "title": spec["title"],
+        "slug": spec["slug"],
+        "summary": spec["summary"],
+        "roles": spec["roles"],
+        "pdfs": pdfs_for_standard(spec["pdf_slug"]),
+        "modules": modules,
+        "jargon": jargon,
+        "phrases": phrases,
+    }
+
+
+def normalize_culture_track() -> dict[str, Any]:
+    mod = importlib.import_module("generate_efsp_culture_pdfs")
+    modules = []
+    jargon = []
+    for module in getattr(mod, "MODULES", []):
+        terms = [concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]]
+        for term, concept in zip(terms, module.get("concepts", [])[:4]):
+            jargon.append({"term": term, "definition": concept, "group": strip_module_number(module["title"])})
+        modules.append(
+            {
+                "title": strip_module_number(module["title"]),
+                "focus": module.get("big_idea", ""),
+                "goals": module.get("objectives", [])[:4],
+                "activities": module.get("activities", [])[:3],
+                "outputs": module.get("outputs", [])[:3],
+                "terms": terms,
+                "scenario": module.get("big_idea", ""),
+                "pressure": module.get("activities", [""])[0],
+                "model": "I hear the challenge. Let's test the idea directly, keep it about the work, and decide what evidence would change the plan.",
+                "notes": module.get("concepts", [])[:2],
+            }
+        )
+    phrases = []
+    for group, items in getattr(mod, "PHRASE_BANK", {}).items():
+        for phrase in items:
+            phrases.append({"group": group, "phrase": phrase})
+    return {**CULTURE_TRACK, "modules": modules, "jargon": jargon, "phrases": phrases}
+
+
+def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
+    modules = []
+    jargon = []
+    for module in profile["modules"]:
+        for term in module["terms"]:
+            jargon.append(
+                {
+                    "term": term,
+                    "definition": term_definition(term, profile, module),
+                    "group": module["title"],
+                }
+            )
+        modules.append(
+            {
+                "title": module["title"],
+                "focus": module["skill"],
+                "goals": [
+                    f"Use these terms accurately: {', '.join(module['terms'])}.",
+                    f"Explain the constraint: {module['constraint']}",
+                    f"Respond to pressure: {module['pressure']}",
+                ],
+                "activities": [
+                    "Define the stakeholder, decision, evidence gap, operating constraint, and cost of being wrong.",
+                    "Build a pushback response that moves from clarification to evidence to consequence to decision.",
+                    f"Draft a {module['output']} with facts, caveats, owner, and next step.",
+                ],
+                "outputs": [module["output"]],
+                "terms": module["terms"],
+                "scenario": module["scenario"],
+                "pressure": module["pressure"],
+                "model": (
+                    f"I understand the goal, but we need to separate urgency from control. "
+                    f"For this decision, I need to confirm {module['terms'][0]}, {module['terms'][1]}, "
+                    "the owner, and the evidence standard before we commit."
+                ),
+                "notes": [module["constraint"], f"Output: {module['output']}"],
+            }
+        )
+    return {
+        "title": profile["title"],
+        "slug": profile["slug"],
+        "summary": profile["summary"],
+        "roles": profile["roles"],
+        "pdfs": [
+            ("Instructor Guide", f"pdf/efsp/{pdf_name(profile, 'english-instructor-guide')}"),
+            ("Participant Workbook", f"pdf/efsp/{pdf_name(profile, 'english-participant-workbook')}"),
+            ("Dialogue Lab", f"pdf/efsp/{pdf_name(profile, 'dialogue-lab')}"),
+            ("Jargon Guide", f"pdf/efsp/{pdf_name(profile, 'jargon-quick-reference')}"),
+        ],
+        "modules": modules,
+        "jargon": jargon,
+        "phrases": [
+            {"group": "Pushback", "phrase": "I understand the urgency. The risk is that we move faster than the evidence or process supports."},
+            {"group": "Decision", "phrase": "If we accept this risk, we should name the owner, document the assumption, and define the trigger for escalation."},
+            {"group": "Scope", "phrase": "That may be possible, but not under the current scope, timeline, or approval path."},
+        ],
+    }
+
+
+def all_tracks() -> list[dict[str, Any]]:
+    tracks = [normalize_culture_track()]
+    tracks.extend(normalize_standard_track(spec) for spec in STANDARD_TRACKS)
+    tracks.extend(normalize_batch_track(profile) for profile in INDUSTRIES)
+    return tracks
+
+
+def json_script(data: dict[str, Any]) -> str:
+    payload = json.dumps(data, ensure_ascii=True).replace("</", "<\\/")
+    return f'<script id="efsp-page-data" type="application/json">{payload}</script>'
+
+
+def pdf_links(pdfs: list[tuple[str, str]]) -> str:
+    return "\n".join(f'<a class="efsp-download-link" href="{e(href)}">{e(label)}</a>' for label, href in pdfs)
+
+
+def render_module_summaries(track: dict[str, Any]) -> str:
+    items = []
+    for index, module in enumerate(track["modules"], start=1):
+        terms = ", ".join(module["terms"][:4])
+        items.append(
+            f"""<article class="efsp-module-summary">
+<span class="efsp-module-number">{index}</span>
+<h3>{e(module['title'])}</h3>
+<p>{e(module['focus'])}</p>
+<p class="efsp-term-line">{e(terms)}</p>
+</article>"""
+        )
+    return "\n".join(items)
+
+
+def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) -> str:
+    module_summaries = render_module_summaries(track)
+    related = [item for item in tracks if item["slug"] != track["slug"]][:6]
+    related_links = "\n".join(
+        f'<a href="efsp-{e(item["slug"])}.html">{e(item["title"])}</a>' for item in related
+    )
+    page_data = {
+        "title": track["title"],
+        "modules": track["modules"],
+        "jargon": track["jargon"],
+        "phrases": track["phrases"],
+    }
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>English Ladder | {e(track['title'])}</title>
+<link href="favicon.png" rel="icon" type="image/png">
+<link href="styles.css" rel="stylesheet">
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="theme-efsp">
+<main class="page-shell">
+<nav class="top-nav">
+<a href="efsp.html">Back to EFSP Directory</a>
+<span>{e(track['title'])}</span>
+</nav>
+
+<section class="efsp-industry-hero">
+<div>
+<p class="eyebrow">English for Special Purposes</p>
+<h1>{e(track['title'])}</h1>
+<p>{e(track['summary'])}</p>
+<ul class="efsp-stat-list">
+<li>{len(track['modules'])} modules</li>
+<li>{len(track['jargon'])} field terms</li>
+<li>Interactive practice</li>
+</ul>
+</div>
+<img alt="English Ladder logo" class="efsp-industry-logo" src="English-Ladder.png">
+</section>
+
+<section class="efsp-pdf-strip">
+<div>
+<p class="eyebrow">Printable Curriculum</p>
+<h2>Download the full materials</h2>
+</div>
+<div class="efsp-download-grid" aria-label="{e(track['title'])} PDF downloads">
+{pdf_links(track['pdfs'])}
+</div>
+</section>
+
+<section class="efsp-workbench" data-efsp-workbench>
+<div class="efsp-workbench-copy">
+<p class="eyebrow">Web Practice Lab</p>
+<h2>Practice the decisions, not only the vocabulary</h2>
+<p>Use the activities below to rehearse how a professional in this field clarifies risk, pushes back, and turns pressure into a concrete next step.</p>
+</div>
+<div class="efsp-module-picker" data-module-buttons></div>
+<div class="efsp-practice-layout">
+<article class="efsp-practice-panel">
+<p class="eyebrow">Module Focus</p>
+<h3 data-module-title></h3>
+<p data-module-focus></p>
+<ul data-module-goals></ul>
+</article>
+<article class="efsp-practice-panel">
+<p class="eyebrow">Scenario Coach</p>
+<h3>Respond under pressure</h3>
+<p class="efsp-scenario-text" data-scenario-text></p>
+<label class="efsp-field-label" for="scenario-response">Your professional response</label>
+<textarea id="scenario-response" data-response-input rows="5"></textarea>
+<div class="efsp-tool-row">
+<button type="button" class="efsp-tool-button" data-action="compare-response">Compare</button>
+<button type="button" class="efsp-tool-button efsp-tool-button-secondary" data-action="clear-response">Clear</button>
+</div>
+<div class="efsp-feedback" data-response-feedback></div>
+</article>
+<article class="efsp-practice-panel">
+<p class="eyebrow">Jargon Flashcard</p>
+<h3 data-card-term></h3>
+<p data-card-definition hidden></p>
+<div class="efsp-tool-row">
+<button type="button" class="efsp-tool-button" data-action="reveal-card">Reveal</button>
+<button type="button" class="efsp-tool-button efsp-tool-button-secondary" data-action="next-card">Next</button>
+</div>
+</article>
+<article class="efsp-practice-panel">
+<p class="eyebrow">Pushback Builder</p>
+<h3>Build a four-step response</h3>
+<label class="efsp-field-label" for="pushback-fact">Evidence or fact</label>
+<input id="pushback-fact" data-builder-fact type="text">
+<label class="efsp-field-label" for="pushback-risk">Risk or consequence</label>
+<input id="pushback-risk" data-builder-risk type="text">
+<label class="efsp-field-label" for="pushback-next">Decision or next step</label>
+<input id="pushback-next" data-builder-next type="text">
+<div class="efsp-builder-preview" data-builder-preview></div>
+</article>
+<article class="efsp-practice-panel">
+<p class="eyebrow">Dialogue Coach</p>
+<h3>Model line</h3>
+<p data-model-line></p>
+<details>
+<summary>Language notes</summary>
+<ul data-language-notes></ul>
+</details>
+</article>
+<article class="efsp-practice-panel">
+<p class="eyebrow">Progress</p>
+<h3>Practice checklist</h3>
+<label><input type="checkbox" data-progress-item> I used at least two field terms accurately.</label>
+<label><input type="checkbox" data-progress-item> I named the evidence or policy boundary.</label>
+<label><input type="checkbox" data-progress-item> I gave a concrete next step.</label>
+<label><input type="checkbox" data-progress-item> I avoided overpromising.</label>
+<meter min="0" max="4" value="0" data-progress-meter></meter>
+<p data-progress-label>0 of 4 complete</p>
+</article>
+</div>
+</section>
+
+<section class="efsp-section">
+<p class="eyebrow">Student PDF in Web Form</p>
+<h2>Module map</h2>
+<div class="efsp-module-summary-grid">
+{module_summaries}
+</div>
+</section>
+
+<section class="efsp-section">
+<p class="eyebrow">More EFSP Tracks</p>
+<h2>Related pages</h2>
+<div class="efsp-related-links">
+{related_links}
+</div>
+</section>
+</main>
+{json_script(page_data)}
+<script src="app.js"></script>
+</body>
+</html>
+"""
+
+
+def render_directory(tracks: list[dict[str, Any]]) -> str:
+    links = []
+    for track in tracks:
+        links.append(
+            f"""<a class="efsp-directory-link" href="efsp-{e(track['slug'])}.html" data-efsp-directory-link data-search="{e(track['title'] + ' ' + track['summary'] + ' ' + track['roles'])}">
+<span>{e(track['title'])}</span>
+<small>{e(track['summary'])}</small>
+</a>"""
+        )
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>English Ladder | English for Special Purposes</title>
+<link href="favicon.png" rel="icon" type="image/png">
+<link href="styles.css" rel="stylesheet">
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="theme-efsp">
+<main class="page-shell">
+<nav class="top-nav">
+<a href="index.html">Back to Level Hub</a>
+<span>English for Special Purposes curricula</span>
+</nav>
+
+<section class="efsp-hero efsp-directory-hero">
+<div class="efsp-hero-copy">
+<p class="eyebrow">English for Special Purposes</p>
+<h1>Industry-specific English practice labs</h1>
+<p>Choose an EFSP track to open a dedicated web page with practical module summaries, PDF downloads, and interactive activities built from the curriculum materials.</p>
+<ul class="efsp-stat-list">
+<li>{len(tracks)} tracks</li>
+<li>160 PDFs</li>
+<li>Interactive web practice</li>
+<li>Instructor-ready materials</li>
+</ul>
+</div>
+<div class="efsp-hero-visual">
+<img alt="English Ladder illustration" class="efsp-hero-image" src="English-Ladder.png">
+</div>
+</section>
+
+<section class="efsp-section efsp-directory-section">
+<div class="efsp-directory-header">
+<div>
+<p class="eyebrow">Curriculum Directory</p>
+<h2>Open an industry page</h2>
+</div>
+<label class="efsp-search-label" for="efsp-search">Search tracks</label>
+<input id="efsp-search" class="efsp-directory-search" type="search" placeholder="Search by industry, role, or situation" data-efsp-search>
+</div>
+<p class="efsp-directory-count" data-efsp-directory-count>{len(tracks)} tracks shown</p>
+<div class="efsp-directory-list">
+{''.join(links)}
+</div>
+</section>
+
+<section class="efsp-section efsp-framework">
+<p class="eyebrow">How To Use These Pages</p>
+<h2>Web practice plus printable depth</h2>
+<div class="efsp-pathway-grid">
+<article>
+<h3>Browse</h3>
+<p>Use each page for a fast, practical view of the modules, situations, jargon, and decision language.</p>
+</article>
+<article>
+<h3>Practice</h3>
+<p>Use the web activities to rehearse pushback, scenario responses, jargon recall, and model dialogue lines.</p>
+</article>
+<article>
+<h3>Print</h3>
+<p>Download the PDFs when you need the full instructor guide, participant workbook, dialogue lab, or reference material.</p>
+</article>
+</div>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
+"""
+
+
+def main() -> None:
+    tracks = all_tracks()
+    (ROOT / "efsp.html").write_text(render_directory(tracks))
+    for track in tracks:
+        (ROOT / f"efsp-{track['slug']}.html").write_text(render_industry_page(track, tracks))
+    print(f"Generated {len(tracks)} EFSP industry pages plus efsp.html")
+
+
+if __name__ == "__main__":
+    main()

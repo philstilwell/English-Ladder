@@ -283,6 +283,13 @@ def pdf_links(pdfs: list[tuple[str, str]]) -> str:
     return "\n".join(f'<a class="efsp-download-link" href="{e(href)}">{e(label)}</a>' for label, href in pdfs)
 
 
+def participant_workbook_href(pdfs: list[tuple[str, str]]) -> str:
+    for label, href in pdfs:
+        if label == "Participant Workbook":
+            return href
+    return pdfs[0][1]
+
+
 def render_module_summaries(track: dict[str, Any]) -> str:
     items = []
     for index, module in enumerate(track["modules"], start=1):
@@ -300,6 +307,7 @@ def render_module_summaries(track: dict[str, Any]) -> str:
 
 def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) -> str:
     module_summaries = render_module_summaries(track)
+    student_pdf = participant_workbook_href(track["pdfs"])
     related = [item for item in tracks if item["slug"] != track["slug"]][:6]
     related_links = "\n".join(
         f'<a href="efsp-{e(item["slug"])}.html">{e(item["title"])}</a>' for item in related
@@ -420,8 +428,13 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 </section>
 
 <section class="efsp-section">
+<div class="efsp-section-action-header">
+<div>
 <p class="eyebrow">Student PDF in Web Form</p>
 <h2>Module map</h2>
+</div>
+<a class="efsp-student-pdf-link" href="{e(student_pdf)}">Open Participant Workbook PDF</a>
+</div>
 <div class="efsp-module-summary-grid">
 {module_summaries}
 </div>

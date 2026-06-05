@@ -51,7 +51,15 @@ def m(
     }
 
 
-def profile(title: str, slug: str, roles: str, summary: str, modules: list[dict], sources: list[str]) -> dict:
+def profile(
+    title: str,
+    slug: str,
+    roles: str,
+    summary: str,
+    modules: list[dict],
+    sources: list[str],
+    term_definitions: dict[str, str] | None = None,
+) -> dict:
     return {
         "title": title,
         "slug": slug,
@@ -59,6 +67,7 @@ def profile(title: str, slug: str, roles: str, summary: str, modules: list[dict]
         "summary": summary,
         "modules": modules,
         "sources": sources,
+        "term_definitions": term_definitions or {},
     }
 
 
@@ -118,6 +127,44 @@ TERM_DEFINITIONS = {
     "triage": "Sorting issues by urgency, severity, risk, owner, and next action.",
     "variance": "Difference between actual and expected performance, cost, timing, quality, or volume.",
     "workflow": "Sequence of steps, roles, handoffs, systems, and decisions used to complete work.",
+}
+
+
+SEMICONDUCTOR_TERM_DEFINITIONS = {
+    "binning": "Sorting tested semiconductor units into performance, power, speed, or quality categories.",
+    "burn-in": "Stress testing used to screen for early-life failures before product release or shipment.",
+    "capacity allocation": "Decision process for assigning limited foundry, tool, test, or assembly capacity across products or customers.",
+    "cleanroom": "Controlled manufacturing environment designed to limit particles, humidity, electrostatic risk, and contamination.",
+    "CMP": "Chemical mechanical planarization; a process that smooths wafer surfaces for later manufacturing steps.",
+    "contamination control": "Practices used to prevent particles, residues, metals, organics, moisture, or handling errors from affecting wafers or devices.",
+    "critical dimension": "A measured feature size on a wafer that must stay within specification for device performance and yield.",
+    "defect density": "Number or rate of defects on a wafer, die, layer, lot, or process area.",
+    "deposition": "Process of adding material layers to a wafer by physical, chemical, epitaxial, or atomic-layer methods.",
+    "die": "Individual semiconductor device cut from a processed wafer.",
+    "ESD": "Electrostatic discharge; sudden electrical discharge that can damage sensitive semiconductor devices.",
+    "etch": "Process that removes selected material from a wafer using wet chemistry or plasma-based methods.",
+    "excursion": "Manufacturing event or trend outside expected control limits, specifications, or normal process behavior.",
+    "fab": "Semiconductor fabrication facility where wafers are processed through manufacturing steps.",
+    "foundry": "Semiconductor manufacturer that fabricates chips for external customers or design companies.",
+    "lithography": "Patterning process that transfers circuit features to a wafer using light, masks, and photoresist.",
+    "metrology": "Measurement discipline used to verify process, dimension, film, defect, and device characteristics.",
+    "node": "Technology generation or process family, often associated with feature size, performance, density, and design rules.",
+    "package": "Protective and electrical interface that connects a semiconductor die to a board or system.",
+    "particle": "Small contaminant that can create defects, yield loss, reliability risk, or process instability.",
+    "PDK": "Process design kit; foundry-provided design rules, models, and files used to design chips for a process.",
+    "photoresist": "Light-sensitive material used in lithography to define patterns on a wafer.",
+    "preventive maintenance": "Planned equipment service performed to reduce unplanned downtime, drift, contamination, safety risk, or tool instability.",
+    "process flow": "Ordered sequence of semiconductor manufacturing steps, layers, inspections, holds, and decision points.",
+    "process window": "Range of process conditions under which results meet specification with acceptable margin.",
+    "qualification": "Evidence-based approval that a process, product, tool, package, supplier, or change meets defined requirements.",
+    "recipe": "Controlled equipment parameters used to run a process step on a wafer, lot, or tool.",
+    "reticle": "Photomask used in lithography to project circuit patterns onto a wafer.",
+    "SPC": "Statistical process control; use of control charts and limits to monitor process stability.",
+    "tape-out": "Final release of a chip design to the foundry for mask generation and fabrication.",
+    "tool matching": "Effort to make similar manufacturing tools produce equivalent results within defined limits.",
+    "tool uptime": "Percentage of time equipment is available and qualified for production use.",
+    "wafer": "Thin semiconductor substrate, usually silicon, on which integrated circuits are fabricated.",
+    "yield": "Share of wafers, die, units, or lots that meet requirements after manufacturing, test, or qualification.",
 }
 
 
@@ -274,6 +321,24 @@ INDUSTRIES = [
             m("Systems Integration and Interface Control", "Manage cross-disciplinary dependencies.", "A software change affects hardware timing.", "Ask teams to coordinate informally.", "Interfaces, timing assumptions, version control, and regression testing need governance.", "interface-control update", ["interface control", "integration", "regression test", "configuration management"], ("Systems engineer", "Software lead")),
         ],
         ["Engineering standards and applicable codes.", "Company design-control, test, and quality procedures.", "Customer specifications and contractual requirements."],
+    ),
+    profile(
+        "Semiconductor English",
+        "semiconductor",
+        "semiconductor process engineers, yield engineers, product engineers, equipment engineers, fab supervisors, quality teams, test and packaging teams, foundry coordinators, supply planners, applications engineers, and technical program managers",
+        "A semiconductor English curriculum for wafer fabrication, lithography, process integration, deposition and etch, metrology, yield learning, cleanroom discipline, equipment uptime, packaging, reliability qualification, foundry communication, and customer pressure.",
+        [
+            m("Wafer Fabrication Flow and Process Integration", "Explain the fab process as a controlled sequence of dependencies, not a simple production line.", "A program manager asks why one wafer lot cannot skip a hold and move directly to the next module.", "Release the lot to protect the customer schedule.", "Process flow, route control, layer dependency, and integration risk must be confirmed before movement.", "lot-disposition recommendation", ["wafer", "fab", "process flow", "node"], ("Program manager", "Process integration engineer")),
+            m("Lithography, Reticles, and Critical Dimensions", "Discuss patterning risk with enough precision for engineers and enough clarity for non-specialists.", "A customer asks whether a critical-dimension trend is only a measurement artifact.", "Tell them the lithography module is under control.", "Reticle status, photoresist behavior, exposure conditions, metrology repeatability, and control limits need review.", "lithography risk update", ["lithography", "photoresist", "reticle", "critical dimension"], ("Customer quality lead", "Lithography engineer")),
+            m("Deposition, Etch, CMP, and Process Windows", "Connect process module changes to downstream device performance.", "A team wants to widen an etch recipe to improve throughput.", "Approve the recipe because cycle time improves.", "Deposition uniformity, etch selectivity, CMP margin, and the qualified process window must be protected.", "process-window tradeoff memo", ["deposition", "etch", "CMP", "process window"], ("Operations director", "Module process owner")),
+            m("Metrology, SPC, and Yield Learning", "Use data language that separates signal, noise, and urgent excursion.", "A dashboard shows yield loss after a new metrology sampling plan.", "Call it a bad lot and move on.", "SPC trends, sampling change, tool history, defect signatures, and product mix must be separated.", "yield-learning brief", ["metrology", "SPC", "yield", "excursion"], ("Yield engineer", "Fab area manager")),
+            m("Defect Density and Cleanroom Contamination", "Escalate contamination risk without creating blame or panic.", "A particle excursion appears after maintenance in a critical bay.", "Restart production and watch the next few lots.", "Defect density, cleanroom protocol, contamination source, containment, and affected-lot traceability require action.", "contamination containment note", ["defect density", "particle", "cleanroom", "contamination control"], ("Cleanroom supervisor", "Manufacturing quality engineer")),
+            m("Equipment Uptime, Recipes, and Tool Matching", "Discuss equipment pressure without sacrificing process control.", "A high-demand tool is repeatedly down and a second tool is almost matched.", "Move all lots to the second tool immediately.", "Tool uptime, preventive maintenance status, recipe qualification, tool matching evidence, and bottleneck risk must be balanced.", "tool-qualification escalation", ["tool uptime", "preventive maintenance", "recipe", "tool matching"], ("Equipment engineer", "Production planner")),
+            m("Packaging, Test, and Reliability Qualification", "Explain post-fab risk using test and reliability language.", "A product team wants to ship early units before reliability stress testing is complete.", "Ship the units because electrical test passed.", "Package interaction, binning criteria, burn-in results, qualification status, and customer-use conditions are not interchangeable.", "qualification readiness update", ["package", "binning", "burn-in", "qualification"], ("Product engineer", "Business unit manager")),
+            m("Foundry, Tape-Out, PDK, and Capacity Communication", "Handle customer and executive pressure around constrained foundry schedules.", "A customer asks for a guaranteed tape-out and wafer-start date despite capacity constraints.", "Promise the date to protect the relationship.", "Foundry allocation, PDK readiness, mask schedule, change freeze, and capacity allocation need documented assumptions.", "foundry customer update", ["foundry", "tape-out", "PDK", "capacity allocation"], ("Foundry coordinator", "Customer program manager")),
+        ],
+        ["Company process-control plans, fab SOPs, and manufacturing quality procedures.", "SEMI, JEDEC, AEC-Q, and customer qualification expectations where applicable.", "Foundry documentation, PDK release notes, customer quality agreements, and approved communication procedures."],
+        SEMICONDUCTOR_TERM_DEFINITIONS,
     ),
     profile(
         "Software Product Management English",
@@ -636,6 +701,8 @@ INDUSTRIES = [
 
 
 def term_definition(term: str, prof: dict, module: dict) -> str:
+    if term in prof.get("term_definitions", {}):
+        return prof["term_definitions"][term]
     if term in TERM_DEFINITIONS:
         return TERM_DEFINITIONS[term]
     return (

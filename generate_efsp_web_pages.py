@@ -457,6 +457,7 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 
 def render_directory(tracks: list[dict[str, Any]]) -> str:
     links = []
+    pdf_count = sum(len(track["pdfs"]) for track in tracks)
     for track in tracks:
         links.append(
             f"""<a class="efsp-directory-link" href="efsp-{e(track['slug'])}.html" data-efsp-directory-link data-search="{e(track['title'] + ' ' + track['summary'] + ' ' + track['roles'])}">
@@ -488,7 +489,7 @@ def render_directory(tracks: list[dict[str, Any]]) -> str:
 <p>Choose an EFSP track to open a dedicated web page with practical module summaries, PDF downloads, and interactive activities built from the curriculum materials.</p>
 <ul class="efsp-stat-list">
 <li>{len(tracks)} tracks</li>
-<li>160 PDFs</li>
+<li>{pdf_count} PDFs</li>
 <li>Interactive web practice</li>
 <li>Instructor-ready materials</li>
 </ul>

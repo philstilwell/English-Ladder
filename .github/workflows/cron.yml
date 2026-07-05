@@ -26,6 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # This gives the action permission to save files to your repo
+      pages: write # This lets the workflow request a Pages rebuild if deployment flakes.
       
     steps:
       - name: Checkout repository
@@ -108,3 +109,168 @@ jobs:
 
           echo "Failed to push lesson update after 3 attempts." >&2
           exit 1
+
+      - name: Verify live Pages deployment
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SITE_ORIGIN: https://englishladder.com
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import subprocess
+          import sys
+          import time
+          from pathlib import Path
+
+          SITE_ORIGIN = os.environ["SITE_ORIGIN"].rstrip("/")
+          REPOSITORY = os.environ["GITHUB_REPOSITORY"]
+          GH_TOKEN = os.environ["GH_TOKEN"]
+          LESSON_FILES = ("beginner.html", "intermediate.html", "advanced.html")
+          CHECK_INTERVAL_SECONDS = 30
+          DEPLOY_TIMEOUT_SECONDS = 20 * 60
+          FIRST_REBUILD_AFTER_SECONDS = 2 * 60
+          REBUILD_INTERVAL_SECONDS = 3 * 60
+          MAX_REBUILD_REQUESTS = 3
+
+          TOP_LESSON_PATTERN = re.compile(
+              r'<span class="lesson-date-text">([^<]+)</span>.*?'
+              r'<span class="lesson-title-text">([^<]+)</span>',
+              re.DOTALL,
+          )
+
+          def top_lesson_from_html(html):
+              match = TOP_LESSON_PATTERN.search(html)
+              if not match:
+                  raise ValueError("Could not find the top lesson date and title.")
+              return tuple(part.strip() for part in match.groups())
+
+          def expected_lessons():
+              lessons = {}
+              for file_name in LESSON_FILES:
+                  html = Path(file_name).read_text(encoding="utf-8")
+                  lessons[file_name] = top_lesson_from_html(html)
+              return lessons
+
+          def fetch_live_lesson(file_name):
+              cache_buster = int(time.time())
+              url = f"{SITE_ORIGIN}/{file_name}?deploy-check={cache_buster}"
+              result = subprocess.run(
+                  [
+                      "curl",
+                      "--fail",
+                      "--silent",
+                      "--show-error",
+                      "--location",
+                      "--max-time",
+                      "30",
+                      "--header",
+                      "Cache-Control: no-cache",
+                      "--header",
+                      "Pragma: no-cache",
+                      "--user-agent",
+                      "english-ladder-deploy-check",
+                      url,
+                  ],
+                  check=False,
+                  capture_output=True,
+                  text=True,
+              )
+              if result.returncode != 0:
+                  raise RuntimeError(result.stderr.strip() or result.stdout.strip())
+              return top_lesson_from_html(result.stdout)
+
+          def request_pages_rebuild():
+              url = f"https://api.github.com/repos/{REPOSITORY}/pages/builds"
+              result = subprocess.run(
+                  [
+                      "curl",
+                      "--fail-with-body",
+                      "--silent",
+                      "--show-error",
+                      "--location",
+                      "--request",
+                      "POST",
+                      "--max-time",
+                      "30",
+                      "--header",
+                      "Accept: application/vnd.github+json",
+                      "--header",
+                      f"Authorization: Bearer {GH_TOKEN}",
+                      "--header",
+                      "X-GitHub-Api-Version: 2022-11-28",
+                      "--user-agent",
+                      "english-ladder-deploy-check",
+                      url,
+                  ],
+                  check=False,
+                  capture_output=True,
+                  text=True,
+              )
+              if result.returncode == 0:
+                  print("Requested a GitHub Pages rebuild.")
+                  if result.stdout.strip():
+                      print(result.stdout.strip())
+                  return True
+              print(
+                  "Could not request a GitHub Pages rebuild: "
+                  f"{result.stderr.strip() or result.stdout.strip()}",
+                  file=sys.stderr,
+              )
+              return False
+
+          expected = expected_lessons()
+          for file_name, (date_text, title_text) in expected.items():
+              print(f"Expecting {file_name}: {date_text} - {title_text}")
+
+          deadline = time.monotonic() + DEPLOY_TIMEOUT_SECONDS
+          next_rebuild_at = time.monotonic() + FIRST_REBUILD_AFTER_SECONDS
+          rebuild_requests = 0
+          last_mismatches = []
+
+          while time.monotonic() < deadline:
+              last_mismatches = []
+              for file_name, expected_top in expected.items():
+                  try:
+                      live_top = fetch_live_lesson(file_name)
+                  except Exception as error:
+                      last_mismatches.append(
+                          f"{file_name}: could not read live page ({error})"
+                      )
+                      continue
+
+                  if live_top != expected_top:
+                      last_mismatches.append(
+                          f"{file_name}: live {live_top[0]} - {live_top[1]} "
+                          f"but expected {expected_top[0]} - {expected_top[1]}"
+                      )
+
+              if not last_mismatches:
+                  print("Live GitHub Pages deployment matches the generated lessons.")
+                  sys.exit(0)
+
+              print("Live pages are not current yet:")
+              for mismatch in last_mismatches:
+                  print(f"- {mismatch}")
+
+              now = time.monotonic()
+              if (
+                  now >= next_rebuild_at
+                  and rebuild_requests < MAX_REBUILD_REQUESTS
+              ):
+                  rebuild_requests += 1
+                  print(
+                      "Requesting GitHub Pages rebuild "
+                      f"{rebuild_requests}/{MAX_REBUILD_REQUESTS}."
+                  )
+                  request_pages_rebuild()
+                  next_rebuild_at = now + REBUILD_INTERVAL_SECONDS
+
+              time.sleep(CHECK_INTERVAL_SECONDS)
+
+          print("GitHub Pages did not publish the generated lessons in time.", file=sys.stderr)
+          for mismatch in last_mismatches:
+              print(f"- {mismatch}", file=sys.stderr)
+          sys.exit(1)
+          PY

@@ -1,3 +1,4 @@
+import json
 import tempfile
 import unittest
 from datetime import datetime, timezone
@@ -146,6 +147,46 @@ class UpdateSiteTests(unittest.TestCase):
         self.assertIsNotNone(news_brief)
         self.assertNotIn("**", str(news_brief))
         self.assertIn("<strong>market</strong>", str(news_brief))
+
+    def test_archive_daily_lessons_writes_all_levels_json(self):
+        release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
+        news_item = {
+            "title": "Source News Title",
+            "summary": "A short source summary for the generated ESL lessons.",
+            "link": "https://example.com/source-news",
+        }
+        level_lessons = {
+            level["name"].lower(): build_valid_lesson_data(f"{level['name']} Title")
+            for level in update_site.LEVELS
+        }
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            archive_dir = Path(temp_dir) / "archive" / "lessons"
+
+            archive_path = update_site.archive_daily_lessons(
+                news_item,
+                level_lessons,
+                release_dt,
+                archive_dir=archive_dir,
+            )
+
+            self.assertEqual(archive_dir / "2026-05-09.json", archive_path)
+            archive_data = json.loads(archive_path.read_text(encoding="utf-8"))
+
+        self.assertEqual(update_site.ARCHIVE_SCHEMA_VERSION, archive_data["schema_version"])
+        self.assertEqual("2026-05-09", archive_data["release_date"])
+        self.assertEqual("2026-05-09T19:00:00Z", archive_data["release_iso"])
+        self.assertEqual(update_site.MODEL_NAME, archive_data["model"])
+        self.assertEqual(update_site.NEWS_SOURCE_NAME, archive_data["source"]["name"])
+        self.assertEqual(update_site.NEWS_FEED_URL, archive_data["source"]["feed_url"])
+        self.assertEqual("Source News Title", archive_data["source"]["title"])
+        self.assertEqual(
+            {"beginner", "intermediate", "advanced"},
+            set(archive_data["levels"]),
+        )
+        self.assertEqual("Beginner Title", archive_data["levels"]["beginner"]["lesson"]["title"])
+        self.assertEqual("Intermediate", archive_data["levels"]["intermediate"]["name"])
+        self.assertEqual("C1-Higher", archive_data["levels"]["advanced"]["cefr"])
 
     def test_refresh_page_markup_dedupes_and_sanitizes_legacy_markup(self):
         page_html = """

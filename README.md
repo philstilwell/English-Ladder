@@ -34,6 +34,9 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 - `tools.js`
   Client-side behavior for the ESL study tools.
 
+- `archive/lessons/YYYY-MM-DD.json`
+  Durable JSON archive files for each generated daily lesson set. Each file stores the source news item, release metadata, model name, and the validated structured lesson data for Beginner, Intermediate, and Advanced.
+
 ## Automation
 
 - `.github/workflows/cron.yml`
@@ -57,8 +60,9 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
    - one intermediate lesson
    - one advanced lesson
 4. The script validates the JSON lesson data, renders safe HTML from fixed templates, and replaces any same-day lesson instead of creating duplicates.
-5. Older lessons beyond the newest 7 are removed automatically.
-6. GitHub Actions commits the updated lesson pages back to the repository.
+5. The validated structured lesson data for all three levels is written to `archive/lessons/YYYY-MM-DD.json`.
+6. Older lessons beyond the newest 7 are removed from the live lesson pages automatically.
+7. GitHub Actions commits the updated lesson pages and JSON archive files back to the repository.
 
 ## Local Run
 
@@ -73,6 +77,7 @@ This updates:
 - `beginner.html`
 - `intermediate.html`
 - `advanced.html`
+- `archive/lessons/YYYY-MM-DD.json`
 
 To normalize existing lesson markup without calling Gemini:
 

@@ -13,7 +13,10 @@ from bs4 import BeautifulSoup
 
 MODEL_NAME = "gemini-2.5-flash"
 LESSON_LIMIT = 7
+ARCHIVE_SCHEMA_VERSION = 1
+ARCHIVE_DIR = Path("archive/lessons")
 NEWS_FEED_URL = "https://feeds.bbci.co.uk/news/world/rss.xml"
+NEWS_SOURCE_NAME = "BBC World News RSS"
 MAX_GENERATION_ATTEMPTS = 3
 DEFAULT_RELEASE_HOUR_UTC = 10
 FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
@@ -402,13 +405,17 @@ def lesson_key_from_release_dt(release_dt):
     return release_dt.astimezone(timezone.utc).date().isoformat()
 
 
-def rebuild_summary_markup(summary_tag, release_dt, date_text, title_text):
-    release_iso = (
+def release_iso_from_datetime(release_dt):
+    return (
         release_dt.astimezone(timezone.utc)
         .replace(microsecond=0)
         .isoformat()
         .replace("+00:00", "Z")
     )
+
+
+def rebuild_summary_markup(summary_tag, release_dt, date_text, title_text):
+    release_iso = release_iso_from_datetime(release_dt)
     elapsed_text = format_elapsed_text(release_dt)
     markup = BeautifulSoup(
         (
@@ -742,12 +749,7 @@ def highlight_terms_in_text(text, terms):
 
 def render_summary_html(title, release_dt):
     date_text = release_dt.strftime("%B %d, %Y")
-    release_iso = (
-        release_dt.astimezone(timezone.utc)
-        .replace(microsecond=0)
-        .isoformat()
-        .replace("+00:00", "Z")
-    )
+    release_iso = release_iso_from_datetime(release_dt)
     return (
         f'<summary class="lesson-date" data-release-iso="{release_iso}">'
         f'<span class="lesson-date-prefix">📅</span> '
@@ -858,7 +860,7 @@ def render_lesson_html(lesson_data, level, release_dt):
     )
 
 
-def generate_lesson_html(client, news_item, level, release_dt):
+def generate_lesson(client, news_item, level, release_dt):
     revision_feedback = None
     issues = []
 
@@ -879,7 +881,7 @@ def generate_lesson_html(client, news_item, level, release_dt):
         else:
             issues = validate_lesson_data(lesson_data, level)
             if not issues:
-                return render_lesson_html(lesson_data, level, release_dt)
+                return lesson_data, render_lesson_html(lesson_data, level, release_dt)
 
         issue_lines = "\n".join(f"- {issue}" for issue in issues)
         revision_feedback = (
@@ -895,6 +897,52 @@ def generate_lesson_html(client, news_item, level, release_dt):
         f"Could not generate a valid {level['name'].lower()} lesson after "
         f"{MAX_GENERATION_ATTEMPTS} attempts: {'; '.join(issues)}"
     )
+
+
+def generate_lesson_html(client, news_item, level, release_dt):
+    _, lesson_html = generate_lesson(client, news_item, level, release_dt)
+    return lesson_html
+
+
+def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCHIVE_DIR):
+    archive_dir = Path(archive_dir)
+    archive_dir.mkdir(parents=True, exist_ok=True)
+
+    archived_levels = {}
+    for level in LEVELS:
+        level_key = level["name"].lower()
+        lesson_data = level_lessons.get(level_key)
+        if lesson_data is None:
+            raise ValueError(f"Missing archive data for {level['name']} lesson.")
+        archived_levels[level_key] = {
+            "name": level["name"],
+            "cefr": level["cefr"],
+            "file_path": level["file_path"],
+            "lesson": lesson_data,
+        }
+
+    release_date = lesson_key_from_release_dt(release_dt)
+    archive_data = {
+        "schema_version": ARCHIVE_SCHEMA_VERSION,
+        "release_date": release_date,
+        "release_iso": release_iso_from_datetime(release_dt),
+        "model": MODEL_NAME,
+        "source": {
+            "name": NEWS_SOURCE_NAME,
+            "feed_url": NEWS_FEED_URL,
+            "title": normalize_text(news_item.get("title", "")),
+            "summary": normalize_text(news_item.get("summary", "")),
+            "link": normalize_text(news_item.get("link", "")),
+        },
+        "levels": archived_levels,
+    }
+
+    archive_path = archive_dir / f"{release_date}.json"
+    with archive_path.open("w", encoding="utf-8") as file:
+        json.dump(archive_data, file, ensure_ascii=False, indent=2)
+        file.write("\n")
+
+    return archive_path
 
 
 def update_level_page(file_path, new_lesson_html, default_release_dt=None):
@@ -972,11 +1020,16 @@ def main():
     release_dt = datetime.now(timezone.utc)
 
     try:
+        level_lessons = {}
         for level in LEVELS:
             print(f"Generating {level['name'].lower()} lesson...")
-            lesson_html = generate_lesson_html(client, news_item, level, release_dt)
+            lesson_data, lesson_html = generate_lesson(client, news_item, level, release_dt)
+            level_lessons[level["name"].lower()] = lesson_data
             print(f"Updating {level['file_path']}...")
             update_level_page(level["file_path"], lesson_html, default_release_dt=release_dt)
+
+        archive_path = archive_daily_lessons(news_item, level_lessons, release_dt)
+        print(f"Archived generated lesson JSON to {archive_path}.")
     finally:
         if hasattr(client, "close"):
             client.close()

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-05",
+  "release_iso": "2026-07-05T17:55:14Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Iran's supreme leader absent as senior officials attend ayatollah's funeral",
+    "summary": "Mojtaba Khamenei has not been seen in public since the attack which killed his father at the outset of the US-Israel war with Iran.",
+    "link": "https://www.bbc.co.uk/news/articles/cevllyj9vv3o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Iran's Leader Absent from Important Funeral",
+        "overview": "Iran's top leader was not at an important funeral for an ayatollah.",
+        "topic": "Iranian politics and a leader's absence from a funeral",
+        "news_brief_sentences": [
+          "An important religious leader in Iran died.",
+          "Many senior officials went to his funeral.",
+          "But Iran's supreme leader was absent.",
+          "The supreme leader is named Mojtaba Khamenei.",
+          "He has not been seen in public since an attack.",
+          "This attack killed his father.",
+          "The attack happened when a war started.",
+          "This war is between the US, Israel, and Iran.",
+          "People noticed the supreme leader did not attend the funeral.",
+          "His absence is a topic of discussion."
+        ],
+        "vocabulary": [
+          {
+            "term": "supreme leader",
+            "part_of_speech": "noun phrase",
+            "definition": "The most important leader of a country or group."
+          },
+          {
+            "term": "senior officials",
+            "part_of_speech": "noun phrase",
+            "definition": "Important people who work for the government or an organization."
+          },
+          {
+            "term": "absent",
+            "part_of_speech": "adjective",
+            "definition": "Not present; not in a place where someone should be."
+          },
+          {
+            "term": "attend",
+            "part_of_speech": "verb",
+            "definition": "To go to an event, a meeting, or a place."
+          },
+          {
+            "term": "funeral",
+            "part_of_speech": "noun",
+            "definition": "A ceremony for burying or burning a dead person."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished in the past. We often add \"-ed\" to regular verbs, or use special forms for irregular verbs. This tense tells us that an action is complete.",
+          "example_quote": "An important religious leader in Iran died."
+        },
+        "quiz": [
+          {
+            "question": "Who was absent from the funeral?",
+            "options": [
+              "Many senior officials",
+              "Iran's supreme leader",
+              "An important religious leader"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, senior officials were there.",
+              "Correct! The supreme leader was not present.",
+              "No, he was the person who died."
+            ]
+          },
+          {
+            "question": "What is a \"funeral\"?",
+            "options": [
+              "A party",
+              "A sad ceremony for a dead person",
+              "A sports event"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a funeral is not a party.",
+              "Yes, a funeral is a ceremony for someone who has died.",
+              "No, it's not a sports event."
+            ]
+          },
+          {
+            "question": "What did many senior officials do?",
+            "options": [
+              "They went to a meeting.",
+              "They attended the funeral.",
+              "They stayed home."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief says they went to the funeral, not a meeting.",
+              "That's right! Senior officials attended the funeral.",
+              "No, they were at the funeral."
+            ]
+          },
+          {
+            "question": "What does \"absent\" mean?",
+            "options": [
+              "Happy",
+              "Present",
+              "Not there"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'absent' does not mean happy.",
+              "No, 'present' is the opposite of 'absent'.",
+              "Yes, 'absent' means someone is not in a place."
+            ]
+          },
+          {
+            "question": "Who is Mojtaba Khamenei?",
+            "options": [
+              "An important religious leader",
+              "Iran's supreme leader",
+              "A senior official"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Mojtaba Khamenei is not the deceased religious leader.",
+              "Correct! He is Iran's supreme leader.",
+              "No, he holds a higher position than a regular senior official."
+            ]
+          },
+          {
+            "question": "When did the attack that killed Mojtaba Khamenei's father happen?",
+            "options": [
+              "After the war finished.",
+              "At the outset of a war.",
+              "During the funeral."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the attack was not after the war.",
+              "Yes, the attack happened when the war started.",
+              "No, the attack happened earlier, not during the funeral."
+            ]
+          },
+          {
+            "question": "Which countries are mentioned in the war?",
+            "options": [
+              "Iran, Russia, and China",
+              "US, Israel, and Iran",
+              "US, Iran, and Europe"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Russia and China are not mentioned in this news.",
+              "That's right! The war is between the US, Israel, and Iran.",
+              "No, Europe is not mentioned in this context."
+            ]
+          },
+          {
+            "question": "What does the simple past tense describe?",
+            "options": [
+              "Future actions",
+              "Current actions",
+              "Finished past actions"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the simple past tense is not for future actions.",
+              "No, it's not for current actions.",
+              "Yes, the simple past tense describes actions that are completed in the past."
+            ]
+          },
+          {
+            "question": "In the sentence \"An important religious leader in Iran died,\" which word is in the simple past tense?",
+            "options": [
+              "important",
+              "died",
+              "leader"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'important' is an adjective.",
+              "Correct! 'Died' is the past tense of 'die'.",
+              "No, 'leader' is a noun."
+            ]
+          },
+          {
+            "question": "What word means \"to go to an event\"?",
+            "options": [
+              "Skip",
+              "Attend",
+              "Leave"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'skip' means to not go to an event.",
+              "Yes, 'attend' means to go to an event or place.",
+              "No, 'leave' means to go away from an event."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Iran: Supreme Leader Absent from Funeral as Son Disappears After Father's Death",
+        "overview": "Senior Iranian officials recently attended an ayatollah's funeral, but Iran's supreme leader was notably absent, while Mojtaba Khamenei, a prominent figure, has not been seen publicly since his father's death at the outset of the US-Israel war with Iran.",
+        "topic": "Middle East Politics and Geopolitics",
+        "news_brief_sentences": [
+          "Senior Iranian officials recently gathered for the funeral of an influential ayatollah, drawing international attention.",
+          "However, Iran's supreme leader was notably absent from this important public event, sparking various discussions.",
+          "This significant absence has led to numerous speculations among political observers and analysts.",
+          "Separately, Mojtaba Khamenei, who is a prominent figure in Iran, has not been seen publicly for some time.",
+          "His disappearance began following an attack that tragically killed his father, a significant event.",
+          "This incident occurred at the very outset of a major conflict involving the US and Israel in relation to Iran.",
+          "The ongoing conflict has significantly impacted the political landscape and regional stability.",
+          "Such unusual public absences of key individuals often suggest underlying shifts or important internal events within a government.",
+          "Many are observing closely for any further official announcements or new developments regarding the situation.",
+          "The complex situation highlights the deep political complexities and continued tensions within the Middle East."
+        ],
+        "vocabulary": [
+          {
+            "term": "absent",
+            "part_of_speech": "adjective",
+            "definition": "Not present in a place or at an event; missing."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority or trust in an organization or government."
+          },
+          {
+            "term": "ayatollah",
+            "part_of_speech": "noun",
+            "definition": "A high-ranking cleric in the Shia Islamic religious hierarchy, often with significant religious and political influence."
+          },
+          {
+            "term": "outset",
+            "part_of_speech": "noun",
+            "definition": "The beginning or start of something, especially a process or event."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Present Perfect)",
+          "explanation": "The passive voice is used when the focus is on the action itself or the object receiving the action, rather than the person or thing performing the action. The Present Perfect Passive is formed with 'has/have been' + the past participle of the main verb. It is often used in news to report events where the agent is unknown, unimportant, or the focus is on the result.",
+          "example_quote": "Mojtaba Khamenei, who is a prominent figure in Iran, has not been seen publicly for some time."
+        },
+        "quiz": [
+          {
+            "question": "What significant event did senior Iranian officials attend, according to the news brief?",
+            "options": [
+              "A political summit.",
+              "An ayatollah's funeral.",
+              "A military parade."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text mentions a funeral, not a summit.",
+              "Correct. The news brief states they gathered for 'the funeral of an influential ayatollah'.",
+              "Incorrect. The event was a funeral for a religious leader."
+            ]
+          },
+          {
+            "question": "Who was notably 'absent' from the public event mentioned in the news brief?",
+            "options": [
+              "Mojtaba Khamenei.",
+              "Iran's supreme leader.",
+              "Senior Iranian officials."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Mojtaba Khamenei's absence is mentioned separately, but the supreme leader was absent from the funeral.",
+              "Correct. The news brief highlights that 'Iran's supreme leader was notably absent' from the funeral.",
+              "Incorrect. Senior officials were present at the funeral."
+            ]
+          },
+          {
+            "question": "What does 'absent' mean in the context of the supreme leader not being at the funeral?",
+            "options": [
+              "He was very busy.",
+              "He was not present.",
+              "He arrived late."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Absent' means not in a particular place, regardless of busyness.",
+              "Correct. 'Absent' means not present in a place or at an event.",
+              "Incorrect. 'Absent' implies not being there at all, not just being late."
+            ]
+          },
+          {
+            "question": "What is the reason given for Mojtaba Khamenei's public disappearance?",
+            "options": [
+              "He is on a diplomatic mission.",
+              "He is ill.",
+              "Following an attack that killed his father."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief does not mention a diplomatic mission.",
+              "Incorrect. His health is not cited as the reason for his disappearance.",
+              "Correct. The news brief states his disappearance 'began following an attack that tragically killed his father'."
+            ]
+          },
+          {
+            "question": "The attack that led to Mojtaba Khamenei's father's death happened at the 'outset' of a major conflict. What does 'outset' signify?",
+            "options": [
+              "The conclusion of the conflict.",
+              "The beginning of the conflict.",
+              "The midpoint of the conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Outset' refers to the start, not the end.",
+              "Correct. 'Outset' means the beginning or start of something.",
+              "Incorrect. The word 'outset' clearly indicates the initial phase."
+            ]
+          },
+          {
+            "question": "Which of the following sentences from the news brief is an example of the Present Perfect Passive voice?",
+            "options": [
+              "Senior Iranian officials recently gathered for the funeral.",
+              "Mojtaba Khamenei, who is a prominent figure in Iran, has not been seen publicly for some time.",
+              "The ongoing conflict has significantly impacted the political landscape."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence is in the simple past active voice.",
+              "Correct. 'Has not been seen' is an example of the Present Perfect Passive, focusing on the action's recipient.",
+              "Incorrect. This sentence uses the Present Perfect active voice, focusing on the actor (the conflict)."
+            ]
+          },
+          {
+            "question": "According to the vocabulary, what is an 'ayatollah'?",
+            "options": [
+              "A military commander.",
+              "A high-ranking religious cleric.",
+              "A government economist."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An ayatollah is a religious leader, not military.",
+              "Correct. An 'ayatollah' is defined as a high-ranking cleric in the Shia Islamic religious hierarchy.",
+              "Incorrect. An ayatollah's role is religious, not economic."
+            ]
+          },
+          {
+            "question": "What kind of 'conflict' is mentioned in the news brief?",
+            "options": [
+              "A minor sports rivalry.",
+              "A serious disagreement or fight.",
+              "A friendly cultural exchange."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text refers to a 'major conflict', implying seriousness.",
+              "Correct. 'Conflict' refers to a serious disagreement or argument, often leading to fighting.",
+              "Incorrect. A conflict indicates tension and disagreement, not friendliness."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'officials' attending the funeral. What does this term usually refer to?",
+            "options": [
+              "Ordinary citizens.",
+              "People in positions of authority.",
+              "Foreign tourists."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Officials' typically hold specific government roles, unlike ordinary citizens.",
+              "Correct. 'Officials' are defined as people who hold a position of authority in an organization or government.",
+              "Incorrect. The text specifies Iranian officials, not foreign tourists."
+            ]
+          },
+          {
+            "question": "What do the 'unusual public absences' discussed in the news brief generally suggest?",
+            "options": [
+              "A stable political period.",
+              "A period of national celebration.",
+              "Underlying shifts or significant internal events."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The text implies uncertainty and complexities, not stability.",
+              "Incorrect. Absences in this context usually point to serious issues, not celebrations.",
+              "Correct. The news brief suggests these absences 'often suggest underlying shifts or important internal events within a government'."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Iran's Leadership: Absence, Reclusion, and Heightened Tensions",
+        "overview": "A recent high-profile funeral in Iran was notably missed by the Supreme Leader, coinciding with the sustained public absence of Mojtaba Khamenei following the reported death of his father, all against a backdrop of escalating regional conflicts.",
+        "topic": "Iranian Political Dynamics, Leadership Stability, and Regional Tensions",
+        "news_brief_sentences": [
+          "A notable absence marked a recent ayatollah's funeral in Iran, as the country's Supreme Leader did not attend, sparking considerable speculation.",
+          "Senior Iranian officials were present, underscoring the gravity of the spiritual leader's passing, yet the supreme authority's non-attendance remained conspicuously significant.",
+          "This unusual omission from a high-profile religious observance has led analysts to scrutinize the underlying dynamics within the Iranian political establishment.",
+          "Concurrently, Mojtaba Khamenei, a prominent figure and son of a high-ranking cleric, has maintained a low public profile, fueling further conjecture.",
+          "His disappearance from public view reportedly follows an attack which tragically claimed the life of his father, an event shrouded in official silence.",
+          "The timing of these developments is particularly salient, unfolding at the outset of heightened tensions related to the US-Israel conflict with Iran.",
+          "Such an unprecedented convergence of events inevitably generates an environment of uncertainty and prompts questions regarding leadership stability.",
+          "The absence of the Supreme Leader, coupled with Mojtaba Khamenei's reclusion, suggests potential internal shifts or security concerns that warrant close observation.",
+          "Observers are keenly watching for any discernible indications of a power vacuum or a subtle recalibration of influence within the Islamic Republic.",
+          "The lack of transparent communication from Tehran regarding these high-stakes occurrences only exacerbates the ambient air of mystery surrounding the nation's leadership."
+        ],
+        "vocabulary": [
+          {
+            "term": "conspicuously significant",
+            "part_of_speech": "adjective phrase",
+            "definition": "Clearly noticeable and important, drawing particular attention due to its prominence or unusual nature."
+          },
+          {
+            "term": "scrutinize",
+            "part_of_speech": "verb",
+            "definition": "To examine or inspect something very carefully and thoroughly, often with a critical eye, to understand its details or implications."
+          },
+          {
+            "term": "fueling further conjecture",
+            "part_of_speech": "verb phrase",
+            "definition": "Causing or contributing to the growth of further speculation, guesses, or hypotheses based on incomplete information."
+          },
+          {
+            "term": "shrouded in official silence",
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Kept secret or obscured by a lack of public disclosure or commentary from official sources, making it difficult to ascertain facts."
+          },
+          {
+            "term": "exacerbates",
+            "part_of_speech": "verb",
+            "definition": "To make a problem, bad situation, or negative feeling worse or more severe."
+          }
+        ],
+        "grammar": {
+          "concept": "Advanced Connective: 'Coupled with'",
+          "explanation": "'Coupled with' is an advanced linking phrase used to indicate that two or more elements are combined or occur together, often implying a synergistic effect or a strong correlation. It suggests that one event or situation, when combined with another, leads to a particular outcome or implication, making the combined effect more pronounced or significant.",
+          "example_quote": "The absence of the Supreme Leader, coupled with Mojtaba Khamenei's reclusion, suggests potential internal shifts or security concerns that warrant close observation."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary observation regarding the Supreme Leader in the news brief?",
+            "options": [
+              "He delivered a eulogy at the funeral.",
+              "He was conspicuously absent from an ayatollah's funeral.",
+              "He appointed Mojtaba Khamenei as his successor."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly states his absence, not his presence or participation.",
+              "Correct. The news brief highlights the Supreme Leader's conspicuous absence from a significant funeral, sparking speculation.",
+              "Incorrect. The brief mentions Mojtaba Khamenei's reclusion but does not discuss succession plans or appointments."
+            ]
+          },
+          {
+            "question": "According to the news brief, what event reportedly led to Mojtaba Khamenei's public absence?",
+            "options": [
+              "His appointment to a new government role.",
+              "An attack that tragically claimed the life of his father.",
+              "A diplomatic mission abroad."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention any new government role for Mojtaba Khamenei.",
+              "Correct. The brief states his disappearance follows 'an attack which tragically claimed the life of his father.'",
+              "Incorrect. There is no mention of Mojtaba Khamenei undertaking a diplomatic mission."
+            ]
+          },
+          {
+            "question": "The phrase 'conspicuously significant' implies that the Supreme Leader's non-attendance was:",
+            "options": [
+              "Barely noticed and of minor importance.",
+              "Clearly noticeable and highly important, drawing particular attention.",
+              "A private matter with no public implications."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Conspicuously significant' means it was very noticeable and held great importance, not minor.",
+              "Correct. 'Conspicuously significant' denotes something that is clearly visible or obvious and holds considerable importance or meaning.",
+              "Incorrect. The brief emphasizes the public speculation and analysis resulting from his absence, indicating it was not a private matter."
+            ]
+          },
+          {
+            "question": "When analysts 'scrutinize' the underlying dynamics, what are they doing?",
+            "options": [
+              "Accepting the official narrative without question.",
+              "Examining details very carefully and thoroughly to understand implications.",
+              "Ignoring the situation as irrelevant."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Scrutinize' implies a critical and deep examination, not passive acceptance.",
+              "Correct. To 'scrutinize' means to examine something with great care and attention to detail, especially for flaws or to understand its true nature.",
+              "Incorrect. The brief explicitly states analysts are actively involved in understanding the situation, not ignoring it."
+            ]
+          },
+          {
+            "question": "What does the statement 'fueling further conjecture' about Mojtaba Khamenei's absence suggest?",
+            "options": [
+              "His reclusion has led to confirmed facts being disseminated.",
+              "His absence is increasing certainty and clarity among observers.",
+              "His absence is contributing to more speculation and guesses."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Conjecture' refers to speculation, not confirmed facts.",
+              "Incorrect. 'Conjecture' indicates a lack of certainty, not increased clarity.",
+              "Correct. 'Fueling further conjecture' means his absence is causing or intensifying more speculation, hypotheses, or theories due to a lack of concrete information."
+            ]
+          },
+          {
+            "question": "If an event is 'shrouded in official silence,' it means that:",
+            "options": [
+              "It was openly discussed by government spokespersons.",
+              "There is a lack of official information or public comment about it.",
+              "It occurred during a period of national mourning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Shrouded in official silence' means the opposite: a lack of discussion.",
+              "Correct. This phrase indicates that official sources have provided no public statements or details, leaving the event obscure or mysterious.",
+              "Incorrect. While it might occur during mourning, the phrase specifically refers to the *lack of official information*, not the emotional state."
+            ]
+          },
+          {
+            "question": "The word 'exacerbates' in the brief means the lack of transparent communication:",
+            "options": [
+              "Alleviates the mystery.",
+              "Reduces the severity of the situation.",
+              "Makes the mystery worse or more intense."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Exacerbates' means to make worse, not to alleviate.",
+              "Incorrect. 'Exacerbates' implies an increase in severity, not a reduction.",
+              "Correct. To 'exacerbate' means to make a problem or a bad situation worse, in this case, intensifying the mystery."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The absence of the Supreme Leader, coupled with Mojtaba Khamenei's reclusion, suggests potential internal shifts,' what does 'coupled with' indicate?",
+            "options": [
+              "A contrast between the two situations.",
+              "That the two situations are separate and unrelated.",
+              "That the two situations are combined, creating a joint effect or implication."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Coupled with' suggests combination, not contrast.",
+              "Incorrect. The phrase links the two situations as contributing factors to a single outcome.",
+              "Correct. 'Coupled with' is used to show that two elements are combined, and their joint occurrence has a specific outcome or implication, often amplifying the effect."
+            ]
+          },
+          {
+            "question": "What do observers hope to find 'discernible indications' of, according to the news brief?",
+            "options": [
+              "New international alliances for Iran.",
+              "A power vacuum or recalibration of influence.",
+              "Relaxation of regional tensions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief focuses on internal dynamics and leadership, not international alliances.",
+              "Correct. The brief states observers are looking for 'discernible indications of a power vacuum or a subtle recalibration of influence.'",
+              "Incorrect. The brief notes 'heightened tensions,' not relaxation."
+            ]
+          },
+          {
+            "question": "The news brief generally conveys an atmosphere of:",
+            "options": [
+              "Resolved political stability.",
+              "Absolute transparency and clarity.",
+              "Uncertainty, speculation, and potential internal shifts."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief discusses 'unprecedented convergence of events' and 'questions regarding leadership stability,' indicating instability.",
+              "Incorrect. The brief explicitly mentions 'lack of transparent communication' and 'shrouded in official silence,' indicating a lack of clarity.",
+              "Correct. The brief repeatedly uses terms like 'speculation,' 'conjecture,' 'uncertainty,' 'mystery,' and 'internal shifts,' painting a picture of ambiguity and potential change."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

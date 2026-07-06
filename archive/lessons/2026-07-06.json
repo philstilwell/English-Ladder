@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-06",
+  "release_iso": "2026-07-06T13:39:23Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Ukraine warns of interceptor missile shortage as 19 killed in Kyiv region",
+    "summary": "President Zelensky says Sunday's \"massive Russian attack\" on Kyiv consisted of 68 missiles and 351 strike drones.",
+    "link": "https://www.bbc.co.uk/news/articles/cewqqnd7zdwo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Ukraine: Massive Attack on Kyiv Reported",
+        "overview": "Ukraine reports a large attack on Kyiv with many missiles and drones.",
+        "topic": "Conflict in Ukraine",
+        "news_brief_sentences": [
+          "Sunday was a difficult day for Ukraine.",
+          "There was a massive Russian attack on Kyiv.",
+          "President Zelensky spoke about this event.",
+          "He said Russia used 68 missiles.",
+          "Russia also used 351 strike drones.",
+          "These attacks caused many deaths.",
+          "Nineteen people were killed in the Kyiv region.",
+          "Ukraine now warns of an interceptor missile shortage.",
+          "They need more interceptor missiles to defend the country.",
+          "This is a big problem because Ukraine uses them to stop incoming threats."
+        ],
+        "vocabulary": [
+          {
+            "term": "massive",
+            "part_of_speech": "adjective",
+            "definition": "very big or very strong"
+          },
+          {
+            "term": "attack",
+            "part_of_speech": "noun",
+            "definition": "a violent act to hurt or damage someone or something"
+          },
+          {
+            "term": "missiles",
+            "part_of_speech": "noun",
+            "definition": "weapons that fly through the air to hit a target"
+          },
+          {
+            "term": "strike drones",
+            "part_of_speech": "noun phrase",
+            "definition": "unmanned flying machines that can hit targets"
+          },
+          {
+            "term": "shortage",
+            "part_of_speech": "noun",
+            "definition": "not having enough of something that is needed"
+          }
+        ],
+        "grammar": {
+          "concept": "Using \"because\"",
+          "explanation": "We use \"because\" to explain why something happened or why something is true. It connects a reason to a result.",
+          "example_quote": "This is a big problem because Ukraine uses them to stop incoming threats."
+        },
+        "quiz": [
+          {
+            "question": "What happened in Kyiv on Sunday?",
+            "options": [
+              "A big party",
+              "A massive Russian attack",
+              "A football game"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's not right. The news says it was an attack.",
+              "Correct! A massive attack occurred.",
+              "That's not right. It was not a game."
+            ]
+          },
+          {
+            "question": "How many missiles did Russia use?",
+            "options": [
+              "19",
+              "351",
+              "68"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 19 is the number of people killed.",
+              "No, 351 is the number of strike drones.",
+              "Yes, 68 missiles were used."
+            ]
+          },
+          {
+            "question": "What are \"strike drones\"?",
+            "options": [
+              "Small animals",
+              "Flying machines that hit targets",
+              "Types of food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they are not animals.",
+              "Yes, they are unmanned flying machines that hit targets.",
+              "No, they are not food."
+            ]
+          },
+          {
+            "question": "What is Ukraine worried about?",
+            "options": [
+              "A shortage of food",
+              "A shortage of interceptor missiles",
+              "Too much rain"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news does not mention food.",
+              "Yes, Ukraine warns about a shortage of interceptor missiles.",
+              "No, the news does not mention rain."
+            ]
+          },
+          {
+            "question": "How many people were killed in the Kyiv region?",
+            "options": [
+              "68",
+              "19",
+              "351"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 68 is the number of missiles.",
+              "That's right, 19 people died.",
+              "No, 351 is the number of strike drones."
+            ]
+          },
+          {
+            "question": "What does \"massive\" mean in the news?",
+            "options": [
+              "Very small",
+              "Very big",
+              "Very fast"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"massive\" means the opposite of small.",
+              "Correct, \"massive\" means very big.",
+              "No, the word \"massive\" describes size, not speed."
+            ]
+          },
+          {
+            "question": "Why is the interceptor missile shortage a problem for Ukraine?",
+            "options": [
+              "Because they want to play a game",
+              "Because they need them to stop attacks",
+              "Because they need them for a party"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it's not about a game.",
+              "Yes, Ukraine needs missiles to stop threats.",
+              "No, it's not about a party."
+            ]
+          },
+          {
+            "question": "Who is President Zelensky?",
+            "options": [
+              "A news reporter",
+              "The President of Ukraine",
+              "A pilot"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he is not just a reporter.",
+              "Correct, he is the President.",
+              "No, he is not a pilot."
+            ]
+          },
+          {
+            "question": "What part of speech is the word \"attack\" in the phrase \"massive Russian attack\"?",
+            "options": [
+              "Verb",
+              "Adjective",
+              "Noun"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it is not used as a verb in this phrase.",
+              "No, \"massive\" is the adjective.",
+              "Yes, \"attack\" here is a noun."
+            ]
+          },
+          {
+            "question": "What is the main topic of this news?",
+            "options": [
+              "Weather in Ukraine",
+              "Conflict in Ukraine",
+              "Sports in Ukraine"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it is not about weather.",
+              "Yes, the news is about the conflict.",
+              "No, it is not about sports."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukraine Faces Interceptor Missile Shortage After Massive Kyiv Attack",
+        "overview": "Ukraine has issued a serious warning about a potential interceptor missile shortage following a significant Russian attack on Kyiv that involved numerous missiles and drones.",
+        "topic": "Ukraine-Russia conflict and military defense",
+        "news_brief_sentences": [
+          "Ukraine has issued a serious warning about a potential **interceptor missile shortage** following a large-scale attack.",
+          "On Sunday, the capital city of Kyiv experienced what President Zelensky described as a \"**massive** Russian attack.\"",
+          "This **onslaught** involved a significant number of aerial weapons, specifically 68 missiles and 351 **strike drones**.",
+          "The Ukrainian President's statement emphasized the sheer scale and intensity of the recent aggression.",
+          "Such widespread attacks place immense strain on Ukraine's air defense capabilities and existing **stockpiles**.",
+          "The immediate concern is the depletion of crucial defensive munitions needed to counter future threats.",
+          "Ukrainian officials are urgently trying to address the declining reserves to maintain effective protection for their cities.",
+          "The warning highlights the critical need for continued international support to supply more air defense systems.",
+          "Nineteen people were reportedly killed in the Kyiv region as a direct result of this attack.",
+          "This incident underscores the ongoing challenges Ukraine faces in protecting its civilian population and infrastructure."
+        ],
+        "vocabulary": [
+          {
+            "term": "interceptor missile shortage",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation where a country does not have enough missiles designed to stop enemy attacks in the air, creating a lack of vital defensive weapons."
+          },
+          {
+            "term": "massive",
+            "part_of_speech": "adjective",
+            "definition": "Something extremely large in size, amount, or degree; very big or powerful."
+          },
+          {
+            "term": "strike drones",
+            "part_of_speech": "noun phrase",
+            "definition": "Unmanned aerial vehicles that are designed to attack targets, often equipped with bombs or missiles."
+          },
+          {
+            "term": "onslaught",
+            "part_of_speech": "noun",
+            "definition": "A fierce or destructive attack, often sudden and overwhelming, usually involving many forces or actions."
+          },
+          {
+            "term": "stockpiles",
+            "part_of_speech": "noun",
+            "definition": "Large accumulated reserves of something, especially supplies or weapons, kept for future use."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used when we tell someone what another person said, thought, or felt. Instead of using direct speech (quotation marks), we often use verbs like 'say', 'tell', 'warn', 'describe', 'emphasize', or 'report' followed by a 'that'-clause (which can sometimes be omitted) or an infinitive/gerund. The tense in the reported clause often shifts backwards.",
+          "example_quote": "President Zelensky described as a \"massive Russian attack.\""
+        },
+        "quiz": [
+          {
+            "question": "What is Ukraine primarily warning about according to the news brief?",
+            "options": [
+              "A shortage of food supplies.",
+              "An interceptor missile shortage.",
+              "A lack of international support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The news brief focuses on military equipment.",
+              "Correct! Ukraine is concerned about not having enough interceptor missiles.",
+              "This is incorrect. While support is mentioned, the direct warning is about missiles."
+            ]
+          },
+          {
+            "question": "How did President Zelensky characterize the Russian attack on Kyiv?",
+            "options": [
+              "A minor skirmish.",
+              "A targeted defensive action.",
+              "A massive Russian attack."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. He used much stronger language to describe the attack.",
+              "This is incorrect. The attack was described as Russian, not defensive.",
+              "Correct! He called it a 'massive Russian attack,' highlighting its large scale."
+            ]
+          },
+          {
+            "question": "What does the term 'interceptor missile shortage' mean?",
+            "options": [
+              "An excess of missiles for defense.",
+              "A lack of missiles designed to stop incoming attacks.",
+              "A problem with missile manufacturing."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. A shortage means there are not enough.",
+              "Correct! It refers to a situation where there aren't enough missiles to intercept enemy threats.",
+              "This is incorrect. The term describes the number of available missiles, not the production process."
+            ]
+          },
+          {
+            "question": "Which of the following describes an 'onslaught'?",
+            "options": [
+              "A peaceful negotiation.",
+              "A fierce and overwhelming attack.",
+              "A diplomatic discussion."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. An onslaught implies aggression, not peace.",
+              "Correct! An onslaught refers to a strong and often destructive attack.",
+              "This is incorrect. An onslaught is military aggression, not a discussion."
+            ]
+          },
+          {
+            "question": "What were 'strike drones' designed to do in the context of the news?",
+            "options": [
+              "Transport humanitarian aid.",
+              "Collect weather data.",
+              "Attack targets."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. Strike drones are offensive weapons.",
+              "This is incorrect. Their purpose is military action, not meteorology.",
+              "Correct! Strike drones are used to attack specific targets."
+            ]
+          },
+          {
+            "question": "Why are Ukraine's existing 'stockpiles' mentioned in the brief?",
+            "options": [
+              "To show they have plenty of resources.",
+              "To highlight the strain on their reserves.",
+              "To explain their manufacturing capabilities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The context suggests a problem with reserves.",
+              "Correct! The massive attacks are depleting their stored weapons.",
+              "This is incorrect. The brief talks about existing supplies, not how they are made."
+            ]
+          },
+          {
+            "question": "Which verb in the quote 'President Zelensky described as a 'massive Russian attack'' is an example of a reporting verb?",
+            "options": [
+              "President",
+              "described",
+              "attack"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'President' is a noun.",
+              "Correct! 'Described' is used to report what Zelensky said or how he characterized the event.",
+              "This is incorrect. 'Attack' is a noun here."
+            ]
+          },
+          {
+            "question": "When we use reporting verbs like 'said' or 'described', what grammatical structure are we typically using?",
+            "options": [
+              "Direct speech.",
+              "Active voice.",
+              "Reported speech."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. Direct speech uses exact words in quotation marks.",
+              "This is incorrect. While it can be in active voice, the primary concept is reporting.",
+              "Correct! Reporting verbs introduce reported speech, conveying what someone said without using their exact words."
+            ]
+          },
+          {
+            "question": "How many missiles and strike drones were involved in Sunday's attack on Kyiv?",
+            "options": [
+              "68 missiles and 351 strike drones.",
+              "19 missiles and 68 strike drones.",
+              "351 missiles and 68 strike drones."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The brief states 68 missiles and 351 strike drones.",
+              "This is incorrect. The numbers are swapped and refer to different elements.",
+              "This is incorrect. The numbers are swapped and refer to different elements."
+            ]
+          },
+          {
+            "question": "What was the reported human cost in the Kyiv region from this attack?",
+            "options": [
+              "No casualties were reported.",
+              "Nineteen people were killed.",
+              "Several hundred injured people."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The brief specifically mentions casualties.",
+              "Correct! The news brief states that nineteen people were killed.",
+              "This is incorrect. While injuries might occur, the brief reports fatalities."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Ukraine Grapples with Missile Shortage Amidst Escalating Aerial Assaults on Kyiv",
+        "overview": "Ukraine is facing a critical deficit of interceptor missiles, exacerbating the vulnerability of its capital, Kyiv, following a devastating \"massive Russian attack\" that reportedly involved numerous missiles and hundreds of strike drones, resulting in significant casualties.",
+        "topic": "Geopolitical conflict, military strategy, aerial warfare, and humanitarian impact in Ukraine.",
+        "news_brief_sentences": [
+          "Ukrainian authorities have issued a stark warning regarding a looming shortage of interceptor missiles, a development that could critically undermine their defensive capabilities.",
+          "This announcement comes in the wake of a recent escalation of hostilities, particularly targeting the Kyiv region.",
+          "President Zelensky characterized Sunday's assault as a \"massive Russian attack,\" highlighting its unprecedented scale and intensity.",
+          "The offensive reportedly comprised an overwhelming barrage of 68 missiles and an alarming 351 strike drones.",
+          "Such sustained aerial bombardment underscores the persistent threat faced by Ukrainian urban centres.",
+          "The sheer volume of munitions expended places immense strain on Ukraine's air defence systems, necessitating a constant replenishment of resources.",
+          "Tragically, these devastating attacks have exacted a heavy human toll, with at least 19 fatalities reported in the Kyiv region alone.",
+          "The precarious situation concerning interceptor missile supplies raises profound concerns about Ukraine's ability to repel future incursions effectively.",
+          "This strategic vulnerability could have far-reaching implications for the conflict's trajectory and the safety of civilian populations.",
+          "International allies are now under increased pressure to provide urgent military aid to address this critical defensive shortfall."
+        ],
+        "vocabulary": [
+          {
+            "term": "escalation of hostilities",
+            "part_of_speech": "noun phrase",
+            "definition": "A rapid increase in the intensity or severity of armed conflict, often leading to more widespread or intense fighting."
+          },
+          {
+            "term": "sustained aerial bombardment",
+            "part_of_speech": "noun phrase",
+            "definition": "Continuous or prolonged attacks from the air using bombs, missiles, or other munitions, indicating an enduring offensive effort."
+          },
+          {
+            "term": "precarious situation",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation that is not safely or securely held in place; uncertain, unstable, or potentially dangerous, lacking security or stability."
+          },
+          {
+            "term": "repel future incursions",
+            "part_of_speech": "verb phrase",
+            "definition": "To drive back or resist subsequent attacks, invasions, or hostile entries, thereby preventing their success or advance."
+          },
+          {
+            "term": "have far-reaching implications",
+            "part_of_speech": "verb phrase",
+            "definition": "To have significant and widespread consequences or effects that will be felt over a long period or across a broad scope, influencing many aspects."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice for Emphasis or De-emphasis of Agent",
+          "explanation": "The passive voice is frequently employed in news reporting to shift focus to the action or the recipient of the action, rather than the agent performing it. This is particularly useful when the agent is obvious, unknown, or less important, lending a more formal, objective, and analytical tone to the reporting. It allows for the impact or outcome to be foregrounded.",
+          "example_quote": "Tragically, these devastating attacks have exacted a heavy human toll, with at least 19 fatalities reported in the Kyiv region alone."
+        },
+        "quiz": [
+          {
+            "question": "Based on the news brief, what primary concern have Ukrainian authorities recently expressed regarding their defence capabilities?",
+            "options": [
+              "A severe shortage of medical supplies for wounded civilians.",
+              "A critical deficit of interceptor missiles for air defence.",
+              "An urgent need for more ground troops to defend urban centres."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While important, the news brief specifically highlights concerns about interceptor missiles, not medical supplies as the primary issue.",
+              "Correct. The brief explicitly warns of a \"looming shortage of interceptor missiles,\" critically undermining defensive capabilities.",
+              "The brief focuses on air defence challenges and missile shortages, not a specific need for more ground troops."
+            ]
+          },
+          {
+            "question": "How did President Zelensky describe Sunday's attack on Kyiv?",
+            "options": [
+              "A minor skirmish with limited strategic importance.",
+              "A \"massive Russian attack\" of unprecedented scale.",
+              "A precision strike exclusively targeting military infrastructure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states the attack was of \"unprecedented scale and intensity,\" contradicting the idea of a minor skirmish.",
+              "Correct. President Zelensky is quoted as characterizing it as a \"massive Russian attack\" to highlight its severity.",
+              "The context implies broader devastation and casualties, not just precision military targeting, as indicated by civilian fatalities."
+            ]
+          },
+          {
+            "question": "What does the phrase \"escalation of hostilities\" signify in the context of the news brief?",
+            "options": [
+              "A diplomatic effort to reduce military tensions between warring parties.",
+              "A rapid increase in the intensity and severity of armed conflict.",
+              "A temporary pause in military operations for humanitarian aid delivery."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Escalation\" implies an increase in conflict, not a reduction through diplomacy.",
+              "Correct. \"Escalation of hostilities\" means a significant worsening of the conflict, as noted in the brief.",
+              "An \"escalation\" is the opposite of a pause; it indicates a heightening of military actions."
+            ]
+          },
+          {
+            "question": "The news brief refers to \"sustained aerial bombardment.\" What aspect of the attacks does \"sustained\" emphasize?",
+            "options": [
+              "That the attacks were intermittent and occurred only briefly.",
+              "That the attacks were limited to a single, specific geographical target.",
+              "That the attacks were continuous or prolonged over a period of time."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Sustained\" explicitly denotes continuity and endurance, not intermittence or brevity.",
+              "While targets might be specific, \"sustained\" primarily refers to the duration, not just the scope, of the bombardment.",
+              "Correct. \"Sustained\" highlights the continuous and prolonged nature of the aerial attacks, placing immense strain on defences."
+            ]
+          },
+          {
+            "question": "According to the grammar explanation, what is a primary reason for using the passive voice in news reporting, as exemplified in the brief?",
+            "options": [
+              "To explicitly assign blame to the responsible party for the actions.",
+              "To focus on the action or its recipient rather than the agent.",
+              "To simplify complex sentences for readers with lower proficiency."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice often de-emphasizes the agent, thus not primarily for assigning explicit blame.",
+              "Correct. The explanation states the passive voice focuses on the action or the recipient, allowing for objectivity or when the agent is less important.",
+              "While it can sometimes simplify, the core purpose explained is about shifting focus, not primarily about simplifying language for a general audience."
+            ]
+          },
+          {
+            "question": "What defines a \"precarious situation\" according to the vocabulary provided?",
+            "options": [
+              "A situation that is stable, secure, and easily predictable.",
+              "A situation that is uncertain, unstable, or potentially dangerous.",
+              "A situation where a positive outcome is virtually guaranteed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The definition clearly states that a precarious situation is unstable and lacks security, directly contradicting stability.",
+              "Correct. A \"precarious situation\" is characterized by uncertainty, instability, and potential danger, as defined.",
+              "A precarious situation inherently involves risk and uncertainty, making a guaranteed positive outcome impossible."
+            ]
+          },
+          {
+            "question": "The news brief discusses Ukraine's ability to \"repel future incursions.\" What does the verb \"repel\" mean in this context?",
+            "options": [
+              "To invite or welcome subsequent attacks or invasions.",
+              "To successfully drive back or resist subsequent attacks or invasions.",
+              "To ignore or overlook incoming threats and allow them to proceed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Repel\" means to push away, not to invite or welcome.",
+              "Correct. To \"repel future incursions\" means to defend against and push back subsequent hostile entries effectively.",
+              "\"Repel\" implies active defence and resistance, not passive ignoring of threats."
+            ]
+          },
+          {
+            "question": "If a strategic vulnerability could \"have far-reaching implications,\" what kind of consequences are anticipated?",
+            "options": [
+              "Immediate but localized effects that quickly dissipate.",
+              "Significant and widespread consequences that will be felt in the distant future.",
+              "Minor and easily contained repercussions without broader impact."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Far-reaching\" specifically means extensive and long-term, not immediate and localized.",
+              "Correct. \"Have far-reaching implications\" suggests significant and widespread effects that extend into the future.",
+              "\"Far-reaching\" indicates major and broad consequences, not minor or easily contained ones."
+            ]
+          },
+          {
+            "question": "What specific numbers of missiles and strike drones were reported in Sunday's \"massive Russian attack\" on Kyiv?",
+            "options": [
+              "Approximately 351 missiles and 68 strike drones were used in the assault.",
+              "Exactly 68 missiles and 351 strike drones constituted the offensive.",
+              "Around 19 missiles and an unspecified number of drones were involved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The numbers of missiles and drones are reversed in this option; it was 68 missiles and 351 drones.",
+              "Correct. The news brief precisely states the attack comprised \"68 missiles and an alarming 351 strike drones.\"",
+              "19 refers to the number of fatalities, not the munitions, and the numbers of munitions were specified."
+            ]
+          },
+          {
+            "question": "In the example quote for the passive voice, \"Tragically, these devastating attacks have exacted a heavy human toll, with at least 19 fatalities reported in the Kyiv region alone,\" which word exemplifies the passive voice as explained?",
+            "options": [
+              "\"exacted\"",
+              "\"reported\"",
+              "\"devastating\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Exacted\" is an active verb in this sentence, describing what the attacks did.",
+              "Correct. \"Reported\" is a past participle used in the passive construction, indicating that fatalities were made known without specifying who did the reporting.",
+              "\"Devastating\" is an adjective modifying \"attacks,\" not a verb in the passive voice."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

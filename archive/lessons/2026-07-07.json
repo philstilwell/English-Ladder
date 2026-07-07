@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-07",
+  "release_iso": "2026-07-07T12:22:39Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Zelensky to press Nato for air defence systems after intense Russian strikes",
+    "summary": "The Ukrainian president will use the Nato meeting in Turkey to argue he needs more interceptor missiles.",
+    "link": "https://www.bbc.co.uk/news/articles/c9d227e5zj6o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Zelensky Asks Nato for More Air Defence",
+        "overview": "Ukrainian President Zelensky will ask Nato for more air defence systems in Turkey.",
+        "topic": "Zelensky's Request for Air Defence",
+        "news_brief_sentences": [
+          "President Zelensky is from Ukraine.",
+          "He wants to speak with Nato.",
+          "Nato is a group of countries.",
+          "Zelensky will go to a meeting in Turkey.",
+          "He will ask for help there.",
+          "Ukraine needs more air defence systems.",
+          "Russia made intense strikes on Ukraine.",
+          "These strikes used missiles.",
+          "Ukraine needs interceptor missiles.",
+          "These missiles can stop Russian attacks."
+        ],
+        "vocabulary": [
+          {
+            "term": "meeting",
+            "part_of_speech": "noun",
+            "definition": "When people come together to talk about something important."
+          },
+          {
+            "term": "ask for",
+            "part_of_speech": "verb phrase",
+            "definition": "To say you want or need something from another person or group."
+          },
+          {
+            "term": "air defence systems",
+            "part_of_speech": "noun phrase",
+            "definition": "Special machines or weapons that protect a place from attacks coming from the sky, like planes or missiles."
+          },
+          {
+            "term": "intense strikes",
+            "part_of_speech": "noun phrase",
+            "definition": "Very strong and heavy attacks, often with many bombs or missiles."
+          },
+          {
+            "term": "interceptor missiles",
+            "part_of_speech": "noun phrase",
+            "definition": "Special rockets that are launched to hit and destroy other enemy rockets or aircraft in the air."
+          }
+        ],
+        "grammar": {
+          "concept": "Future with 'will'",
+          "explanation": "We use 'will' to talk about things that we plan to do or expect to happen in the future. It helps us speak about actions or decisions that have not happened yet.",
+          "example_quote": "Zelensky will go to a meeting in Turkey."
+        },
+        "quiz": [
+          {
+            "question": "Who wants to speak with Nato?",
+            "options": [
+              "President Zelensky",
+              "Nato",
+              "Russia"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! President Zelensky wants to speak with Nato.",
+              "Incorrect. Nato is the group Zelensky wants to speak to.",
+              "Incorrect. Russia is making strikes, not speaking with Nato in this context."
+            ]
+          },
+          {
+            "question": "Where will Zelensky go for the meeting?",
+            "options": [
+              "Ukraine",
+              "Russia",
+              "Turkey"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, Ukraine is Zelensky's country. The meeting is in a different place.",
+              "No, Russia is not where the meeting will be.",
+              "That's right! The meeting will be in Turkey."
+            ]
+          },
+          {
+            "question": "What does Ukraine need more of?",
+            "options": [
+              "Money",
+              "air defence systems",
+              "food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This lesson does not mention money. Ukraine needs protection from attacks.",
+              "Yes, Ukraine needs more air defence systems to protect itself.",
+              "This lesson does not mention food. Ukraine needs systems to stop attacks."
+            ]
+          },
+          {
+            "question": "What does 'meeting' mean?",
+            "options": [
+              "A place to eat",
+              "When people come together to talk",
+              "A new car"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a meeting is not usually a place to eat in this context.",
+              "Correct! A meeting is when people gather to discuss things.",
+              "No, a meeting is not a car."
+            ]
+          },
+          {
+            "question": "What word means to say you want something from someone?",
+            "options": [
+              "give",
+              "ask for",
+              "find"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'give' is the opposite of asking for something.",
+              "Yes, 'ask for' means to request something.",
+              "No, 'find' means to locate something, not to request it."
+            ]
+          },
+          {
+            "question": "Why does Ukraine need air defence systems?",
+            "options": [
+              "To build new houses",
+              "To protect from attacks",
+              "To make friends"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not why air defence systems are needed. They are for safety.",
+              "Correct! Air defence systems protect from attacks from the sky.",
+              "This is not the purpose of air defence systems. They are for security."
+            ]
+          },
+          {
+            "question": "What type of strikes did Russia make?",
+            "options": [
+              "Small strikes",
+              "Intense strikes",
+              "Friendly strikes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says the strikes were not small, they were very strong.",
+              "That's right, Russia made very strong and heavy attacks, called intense strikes.",
+              "No, the strikes were not friendly; they were attacks."
+            ]
+          },
+          {
+            "question": "What do 'interceptor missiles' do?",
+            "options": [
+              "Build roads",
+              "Stop other rockets in the air",
+              "Deliver letters"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not the function of interceptor missiles. They are for defence.",
+              "Yes, interceptor missiles are special rockets that can stop other rockets or planes.",
+              "This is not the function of interceptor missiles. They are for protection."
+            ]
+          },
+          {
+            "question": "Which sentence uses 'will' to talk about the future?",
+            "options": [
+              "President Zelensky is from Ukraine.",
+              "He wants to speak with Nato.",
+              "He will ask for help there."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses 'is', which is present tense, talking about a fact.",
+              "This sentence uses 'wants', which is present tense, talking about a desire.",
+              "Correct! 'Will' shows a future action that Zelensky plans to do."
+            ]
+          },
+          {
+            "question": "When we use 'will', what kind of things do we talk about?",
+            "options": [
+              "Past events",
+              "Future plans or expectations",
+              "Daily routines"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'will' is not for past events. We use other verb forms for the past.",
+              "Correct! 'Will' is used for future plans or things we expect to happen.",
+              "No, 'will' is not usually for daily routines, which often use the simple present tense."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukraine's Urgent Appeal: Zelensky to Press NATO for Air Defence Systems",
+        "overview": "Ukrainian President Zelensky plans to urge NATO for more air defence systems, including interceptor missiles, during a meeting in Turkey following recent intense Russian attacks.",
+        "topic": "International Military Aid and Ukraine's Defence Needs",
+        "news_brief_sentences": [
+          "Ukrainian President Volodymyr Zelensky is preparing to press NATO leaders for increased military assistance.",
+          "His main focus will be securing additional air defence systems for his country.",
+          "This urgent request comes after a period of intense Russian strikes across Ukraine.",
+          "These attacks have highlighted Ukraine's critical need for better protection against aerial threats.",
+          "Zelensky specifically aims to receive more interceptor missiles to counter incoming projectiles.",
+          "He plans to argue his case strongly during an upcoming NATO meeting held in Turkey.",
+          "The President believes these systems are vital for safeguarding Ukrainian cities and infrastructure.",
+          "The ongoing conflict continues to demonstrate the importance of robust aerial protection.",
+          "International support in this area is crucial for Ukraine's ability to defend itself effectively.",
+          "Therefore, the outcome of this meeting could significantly impact the course of the war."
+        ],
+        "vocabulary": [
+          {
+            "term": "press",
+            "part_of_speech": "verb",
+            "definition": "To strongly urge someone to do something or to make a demand forcefully, often to persuade them."
+          },
+          {
+            "term": "air defence systems",
+            "part_of_speech": "noun phrase",
+            "definition": "Military equipment and strategies used to protect against attacks from aircraft or missiles, often designed to detect and destroy threats."
+          },
+          {
+            "term": "intense",
+            "part_of_speech": "adjective",
+            "definition": "Very strong, extreme, or severe; describing feelings, efforts, or actions that are felt or done to a high degree."
+          },
+          {
+            "term": "interceptor missiles",
+            "part_of_speech": "noun phrase",
+            "definition": "Guided missiles specifically designed to detect and destroy incoming enemy missiles or aircraft while they are in flight."
+          },
+          {
+            "term": "argue",
+            "part_of_speech": "verb",
+            "definition": "To give reasons or evidence in support of an idea, action, or theory, often with the aim of persuading others."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced Relative Clauses",
+          "explanation": "Reduced relative clauses help make sentences more concise by removing the relative pronoun (like 'which', 'who', 'that') and the verb 'to be' when they are followed by a participle (present or past). They provide essential or non-essential information about a noun.",
+          "example_quote": "He plans to argue his case strongly during an upcoming NATO meeting held in Turkey."
+        },
+        "quiz": [
+          {
+            "question": "What is President Zelensky's primary request from NATO during the upcoming meeting?",
+            "options": [
+              "Financial aid for humanitarian efforts.",
+              "More air defence systems.",
+              "Ground troops to assist in combat."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While important, the article specifically highlights his request for military hardware.",
+              "Correct! The news brief clearly states his main focus is securing additional air defence systems.",
+              "The article does not mention a request for ground troops from NATO."
+            ]
+          },
+          {
+            "question": "In the sentence 'Zelensky is preparing to press NATO leaders,' what does 'press' mean?",
+            "options": [
+              "To publish a statement.",
+              "To apply physical force.",
+              "To strongly urge or demand."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This meaning of 'press' is unrelated to the context of diplomatic negotiations.",
+              "This is a literal meaning, but not the figurative sense used in the news brief.",
+              "Exactly! In this context, 'press' means to make a forceful demand or appeal."
+            ]
+          },
+          {
+            "question": "According to the news brief, why is Zelensky making this urgent request for air defence systems?",
+            "options": [
+              "To prepare for a large-scale counter-offensive.",
+              "Due to recent intense Russian strikes.",
+              "To improve international relations with Turkey."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article focuses on defensive needs, not offensive preparations, as the immediate reason.",
+              "Correct! The news brief explicitly states the request follows a period of intense Russian strikes.",
+              "While diplomatic relations are important, this is not given as the reason for the specific military request."
+            ]
+          },
+          {
+            "question": "What are 'interceptor missiles' designed to do?",
+            "options": [
+              "Destroy enemy ground targets.",
+              "Defend naval vessels at sea.",
+              "Detect and destroy incoming aerial threats."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Interceptor missiles are primarily for air-to-air or ground-to-air defence, not ground targets.",
+              "While some interceptors might have naval applications, their primary role is not limited to that.",
+              "Yes, interceptor missiles are specifically designed to stop missiles or aircraft in flight."
+            ]
+          },
+          {
+            "question": "Which phrase from the news brief contains a reduced relative clause?",
+            "options": [
+              "increased military assistance",
+              "intense Russian strikes",
+              "a NATO meeting held in Turkey"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is a noun phrase with an adjective, not a reduced relative clause.",
+              "This is a noun phrase with an adjective, not a reduced relative clause.",
+              "Correct! 'held in Turkey' is a reduced relative clause, meaning 'which is held in Turkey'."
+            ]
+          },
+          {
+            "question": "Where is the upcoming NATO meeting, where Zelensky will argue his case, expected to take place?",
+            "options": [
+              "In Ukraine.",
+              "In Turkey.",
+              "At NATO headquarters in Brussels."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states the meeting will be held elsewhere, not in Ukraine.",
+              "That's right! The article explicitly mentions the NATO meeting will be held in Turkey.",
+              "While NATO has headquarters in Brussels, the article specifies Turkey for this meeting."
+            ]
+          },
+          {
+            "question": "If Russian strikes are described as 'intense,' what does that imply about them?",
+            "options": [
+              "They are rare and infrequent.",
+              "They are very strong and severe.",
+              "They are easily defended against."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'intense' suggests the opposite of rare or infrequent.",
+              "Yes, 'intense' means very strong, extreme, or severe, indicating a high level of activity or impact.",
+              "The context of Ukraine's 'critical need' for defence suggests they are not easily defended against."
+            ]
+          },
+          {
+            "question": "What does Zelensky plan to 'argue' during the NATO meeting?",
+            "options": [
+              "To debate the historical causes of the conflict.",
+              "To present reasons why Ukraine needs more interceptor missiles.",
+              "To criticize NATO's past decisions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While possibly relevant, the article focuses on his immediate military needs.",
+              "Correct! To 'argue his case' means he will provide reasons to persuade others about Ukraine's need for specific aid.",
+              "The news brief indicates he will focus on his current needs, not past criticisms."
+            ]
+          },
+          {
+            "question": "Which of these sentences correctly uses a reduced relative clause with a past participle?",
+            "options": [
+              "The documents, storing in the vault, are secure.",
+              "The decisions, made by the committee, were final.",
+              "The student, learning quickly, passed the exam."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'storing' is a present participle, but it should be 'stored' for a passive meaning.",
+              "Exactly! 'made by the committee' is a reduced relative clause from 'which were made by the committee'.",
+              "'learning' is a present participle used actively, not a past participle in a passive reduced relative clause."
+            ]
+          },
+          {
+            "question": "The news brief states that international support is 'crucial' for Ukraine's defence. What does 'crucial' imply?",
+            "options": [
+              "It is somewhat helpful but not essential.",
+              "It is very important and absolutely necessary.",
+              "It is a minor aspect of their defence strategy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Crucial' signifies a much higher level of importance than 'somewhat helpful'.",
+              "Correct! 'Crucial' means extremely important or essential, highlighting its vital role.",
+              "The word 'crucial' indicates it is a major and critical aspect, not minor."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Zelensky's Urgent Appeal to Nato for Enhanced Air Defence Amidst Intensified Russian Strikes",
+        "overview": "Ukrainian President Volodymyr Zelensky is set to advocate for an urgent increase in advanced air defence systems, including more interceptor missiles, during an upcoming Nato meeting in Turkey, following a period of sustained and intense Russian aerial aggression.",
+        "topic": "International Relations, Military Aid, Geopolitics, Ukraine Conflict, Air Defence",
+        "news_brief_sentences": [
+          "President Volodymyr Zelensky is poised to make a fervent appeal to Nato members for advanced air defence systems.",
+          "This urgent request comes in the wake of relentless and intense Russian strikes targeting Ukrainian infrastructure and cities.",
+          "The Ukrainian leader specifically intends to press Nato for additional interceptor missiles, deemed crucial for safeguarding civilian lives and strategic assets.",
+          "He will leverage an upcoming Nato meeting in Turkey as a platform to articulate Ukraine's pressing security requirements.",
+          "Kyiv has consistently highlighted the existential threat posed by persistent aerial assaults, necessitating robust countermeasures.",
+          "The objective is to significantly enhance Ukraine's ability to defend its airspace and effectively intercept incoming projectiles.",
+          "This diplomatic offensive underscores the ongoing escalation of hostilities and the critical need for international solidarity.",
+          "For Zelensky, securing these vital assets is imperative to mitigate further damage and and prevent humanitarian catastrophe.",
+          "The discussions at the summit are expected to focus on both immediate military aid and long-term strategies for bolstering Ukraine's defence capacity.",
+          "Securing advanced air defence remains a cornerstone of Ukraine's broader strategy to repel aggression and protect its sovereignty."
+        ],
+        "vocabulary": [
+          {
+            "term": "fervent appeal",
+            "part_of_speech": "noun phrase",
+            "definition": "An intense, passionate, and heartfelt request or plea."
+          },
+          {
+            "term": "interceptor missiles",
+            "part_of_speech": "noun phrase",
+            "definition": "Missiles specifically designed to detect, track, and destroy incoming ballistic missiles or other aerial threats before they reach their targets."
+          },
+          {
+            "term": "crucial",
+            "part_of_speech": "adjective",
+            "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
+          },
+          {
+            "term": "bolstering",
+            "part_of_speech": "verb (present participle)",
+            "definition": "The act of supporting, strengthening, or reinforcing something that is weakening or needs improvement."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from another part of speech, such as a verb or adjective. It is frequently employed in formal English, especially in news reporting and academic writing, to create more concise and objective sentences by focusing on the event or concept rather than the actor or action. This stylistic choice enhances density and formality.",
+          "example_quote": "This diplomatic offensive underscores the ongoing escalation of hostilities and the critical need for international solidarity."
+        },
+        "quiz": [
+          {
+            "question": "What is President Zelensky's primary objective at the upcoming Nato meeting?",
+            "options": [
+              "To negotiate a new peace treaty with Russia.",
+              "To secure additional air defence systems and interceptor missiles.",
+              "To discuss Ukraine's potential membership in Nato."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article focuses on military aid, not peace negotiations.",
+              "Correct. The news brief explicitly states his intent to press Nato for more air defence systems and interceptor missiles.",
+              "Incorrect. While a broader topic, the specific focus of this meeting, as per the brief, is air defence systems."
+            ]
+          },
+          {
+            "question": "The phrase 'fervent appeal' suggests Zelensky's request is characterized by:",
+            "options": [
+              "Hesitation and uncertainty.",
+              "Strong emotion and urgency.",
+              "Indifference and formality."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Fervent' implies strong feeling, the opposite of hesitation.",
+              "Correct. 'Fervent' means intensely passionate, indicating a strong and urgent request.",
+              "Incorrect. 'Fervent' contradicts indifference, and while formal, it's also deeply emotional."
+            ]
+          },
+          {
+            "question": "Why is the acquisition of 'interceptor missiles' considered 'crucial' for Ukraine?",
+            "options": [
+              "To launch retaliatory strikes against Russian targets.",
+              "To safeguard civilian lives and strategic assets from aerial attacks.",
+              "To strengthen Ukraine's ground offensive capabilities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief specifies interceptor missiles for defense, not offense.",
+              "Correct. The article states they are 'deemed crucial for safeguarding civilian lives and strategic assets.'",
+              "Incorrect. Interceptor missiles are primarily for air defense, not ground operations."
+            ]
+          },
+          {
+            "question": "The term 'escalation' in the context of the news brief refers to:",
+            "options": [
+              "A decrease in diplomatic efforts.",
+              "An increase in the intensity of hostilities.",
+              "A reduction in international support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Escalation' means an increase, not a decrease.",
+              "Correct. 'Escalation' specifically points to an increase in the seriousness or intensity of conflicts.",
+              "Incorrect. While related to international affairs, 'escalation' directly refers to the conflict itself."
+            ]
+          },
+          {
+            "question": "What is the function of nominalization in the sentence: 'This diplomatic offensive underscores the ongoing escalation of hostilities'?",
+            "options": [
+              "To emphasize the actor performing the action.",
+              "To make the sentence more colloquial and informal.",
+              "To present the increase in conflict as a concise, abstract concept."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Nominalization typically de-emphasizes the actor by turning actions into nouns.",
+              "Incorrect. Nominalization is a feature of formal, not informal, writing.",
+              "Correct. 'Escalation' is a noun derived from 'escalate,' making the concept of increasing hostilities more abstract and dense."
+            ]
+          },
+          {
+            "question": "The Nato meeting where Zelensky will make his appeal is taking place in which country?",
+            "options": [
+              "Ukraine",
+              "Turkey",
+              "Poland"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The meeting is not in Ukraine, but a Nato member state.",
+              "Correct. The news brief explicitly states the upcoming Nato meeting will be held in Turkey.",
+              "Incorrect. While Poland is a significant ally, the meeting is specified to be in Turkey."
+            ]
+          },
+          {
+            "question": "What does 'bolstering' Ukraine's defence capacity imply?",
+            "options": [
+              "Removing existing defence systems.",
+              "Weakening its military strength.",
+              "Strengthening or reinforcing its ability to defend itself."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Bolstering' means to strengthen, not remove.",
+              "Incorrect. 'Bolstering' implies making something stronger, not weaker.",
+              "Correct. 'Bolstering' means to support or strengthen, directly implying an increase in defence capability."
+            ]
+          },
+          {
+            "question": "According to the brief, what is the primary cause for Zelensky's urgent request for air defence?",
+            "options": [
+              "A planned Ukrainian military exercise.",
+              "Intense Russian strikes targeting Ukrainian infrastructure and cities.",
+              "A decline in international financial aid to Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief attributes the urgency to Russian aggression, not exercises.",
+              "Correct. The brief clearly states the request comes 'in the wake of relentless and intense Russian strikes.'",
+              "Incorrect. While financial aid is important, the immediate cause for the air defence request is Russian strikes."
+            ]
+          },
+          {
+            "question": "The phrase 'diplomatic offensive' in the brief suggests that Zelensky's actions are:",
+            "options": [
+              "A passive acceptance of the situation.",
+              "An aggressive military strategy.",
+              "A proactive and strategic diplomatic effort."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Offensive' implies proactive action, not passive acceptance.",
+              "Incorrect. 'Diplomatic offensive' refers to political action, not direct military engagement.",
+              "Correct. 'Diplomatic offensive' indicates a concerted, strategic effort through diplomacy to achieve a specific goal."
+            ]
+          },
+          {
+            "question": "Which of the following vocabulary terms from the lesson is correctly defined?",
+            "options": [
+              "'Crucial' means of minor importance.",
+              "'Fervent appeal' is a hesitant request.",
+              "'Escalation' is an increase in intensity."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Crucial' means extremely important, not minor.",
+              "Incorrect. A 'fervent appeal' is an intense and passionate request, not hesitant.",
+              "Correct. 'Escalation' accurately describes an increase in the intensity or seriousness of a situation."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

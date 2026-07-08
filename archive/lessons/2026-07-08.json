@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-08",
+  "release_iso": "2026-07-08T11:43:08Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump says ceasefire is 'over' after US and Iran trade strikes",
+    "summary": "Speaking ahead of a Nato summit, the president says US negotiators can keep talking with the Iranians \"if they want\".",
+    "link": "https://www.bbc.co.uk/news/articles/clyw8w1g409o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US and Iran: Ceasefire is Over",
+        "overview": "The president says the fighting between the US and Iran has stopped.",
+        "topic": "International Relations, Conflict, Diplomacy",
+        "news_brief_sentences": [
+          "President Trump talked about the situation.",
+          "He said a ceasefire is \"over\".",
+          "A ceasefire means stopping a fight.",
+          "The US and Iran had strikes before this.",
+          "Strikes are military actions or attacks.",
+          "President Trump was at a Nato summit.",
+          "A summit is a meeting of important leaders.",
+          "US negotiators can keep talking with the Iranians.",
+          "Negotiators try to find solutions.",
+          "They can talk if Iran wants to."
+        ],
+        "vocabulary": [
+          {
+            "term": "ceasefire",
+            "part_of_speech": "noun",
+            "definition": "when fighting stops between two sides."
+          },
+          {
+            "term": "over",
+            "part_of_speech": "adjective",
+            "definition": "finished; not happening anymore."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "attacks, often by military forces."
+          },
+          {
+            "term": "summit",
+            "part_of_speech": "noun",
+            "definition": "a very important meeting, usually for leaders."
+          },
+          {
+            "term": "negotiators",
+            "part_of_speech": "noun",
+            "definition": "people who talk to find an agreement."
+          }
+        ],
+        "grammar": {
+          "concept": "The word 'can'",
+          "explanation": "We use 'can' to say that something is possible or someone has the ability to do something. It shows possibility or permission.",
+          "example_quote": "US negotiators can keep talking with the Iranians."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump say about the ceasefire?",
+            "options": [
+              "It is starting.",
+              "It is over.",
+              "It is easy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says the ceasefire is 'over', not starting.",
+              "Yes, President Trump said the ceasefire is 'over'. This means it has ended.",
+              "No, the news does not say it is easy. It says it is 'over', meaning finished."
+            ]
+          },
+          {
+            "question": "What is a ceasefire?",
+            "options": [
+              "A new attack.",
+              "When fighting stops.",
+              "A big meeting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a ceasefire is when fighting stops, not a new attack.",
+              "Correct! A ceasefire is an agreement to stop fighting.",
+              "No, a ceasefire is not a big meeting. A summit is a big meeting."
+            ]
+          },
+          {
+            "question": "What happened before the ceasefire was 'over'?",
+            "options": [
+              "A new agreement.",
+              "The US and Iran had strikes.",
+              "A peace meeting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news states there were strikes before the ceasefire was declared 'over'.",
+              "Yes, the US and Iran had strikes, which are like attacks, before this announcement.",
+              "No, the news mentions strikes, not a peace meeting, happening before this."
+            ]
+          },
+          {
+            "question": "What does 'strikes' mean in this news?",
+            "options": [
+              "Friendly visits.",
+              "Military actions or attacks.",
+              "Happy talks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'strikes' in this context are not friendly visits.",
+              "Correct! 'Strikes' here mean military actions or attacks.",
+              "No, 'strikes' are not happy talks; they are a form of military action."
+            ]
+          },
+          {
+            "question": "Where was President Trump when he spoke?",
+            "options": [
+              "At a Nato summit.",
+              "At his home.",
+              "In Iran."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, President Trump was at a Nato summit when he talked about the ceasefire.",
+              "No, the news says he was at a Nato summit, not at his home.",
+              "No, President Trump was at a Nato summit, not in Iran."
+            ]
+          },
+          {
+            "question": "What is a 'summit'?",
+            "options": [
+              "A small party.",
+              "An important meeting.",
+              "A fun game."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a summit is a serious, important meeting, not a small party.",
+              "Correct! A summit is a meeting of important leaders or people.",
+              "No, a summit is an important meeting, not a fun game."
+            ]
+          },
+          {
+            "question": "Who can talk with the Iranians?",
+            "options": [
+              "US negotiators.",
+              "Iranian soldiers.",
+              "Nato leaders."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the news says US negotiators can keep talking with the Iranians.",
+              "No, the news specifically mentions US negotiators, not Iranian soldiers.",
+              "No, the news mentions US negotiators, not Nato leaders, in this context."
+            ]
+          },
+          {
+            "question": "What do 'negotiators' do?",
+            "options": [
+              "They fight wars.",
+              "They make music.",
+              "They talk to find solutions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, negotiators talk to find solutions, they do not fight wars.",
+              "No, negotiators work to find agreements, not make music.",
+              "Yes, negotiators are people who talk and work to find an agreement or solution."
+            ]
+          },
+          {
+            "question": "In the sentence \"US negotiators can keep talking,\" what does \"can\" mean?",
+            "options": [
+              "It is forbidden.",
+              "It is a possibility.",
+              "It is very difficult."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'can' means it is possible, not forbidden.",
+              "Yes, 'can' means it is possible for the negotiators to talk.",
+              "No, 'can' means it is possible or they have the ability, not that it is very difficult."
+            ]
+          },
+          {
+            "question": "When can US negotiators talk with the Iranians?",
+            "options": [
+              "Only tomorrow.",
+              "If Iran wants to.",
+              "Never."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says they can talk if Iran wants to, not only tomorrow.",
+              "Yes, the news states they can talk if Iran wants to talk.",
+              "No, the news says it is possible for them to talk, not never."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Trump Declares Ceasefire 'Over' Amid US-Iran Strikes Ahead of Nato Summit",
+        "overview": "President Trump announced the end of a ceasefire with Iran following mutual military strikes, stating that US negotiators are still open to discussions with Iranian officials.",
+        "topic": "International Relations and Geopolitics",
+        "news_brief_sentences": [
+          "US President Donald Trump recently declared that the ceasefire between the United States and Iran is now \"over\".",
+          "This declaration came shortly after both nations engaged in trade strikes, exchanging military actions against each other.",
+          "The President made his comments while speaking ahead of an important Nato summit.",
+          "During his remarks, Trump emphasized that American negotiators remain prepared to continue discussions with Iran.",
+          "He added that talks can proceed \"if they want,\" indicating an open invitation for dialogue.",
+          "The situation highlights ongoing tensions in the region, despite previous efforts to reduce conflict.",
+          "High-ranking officials from both sides are closely monitoring developments.",
+          "International observers are concerned about the potential for further escalation after these military exchanges.",
+          "The President's statement suggests a shift in diplomatic strategy regarding Iran.",
+          "Global leaders at the Nato summit are likely to discuss the implications of these recent events."
+        ],
+        "vocabulary": [
+          {
+            "term": "ceasefire",
+            "part_of_speech": "noun",
+            "definition": "A temporary stop in fighting agreed by all sides involved in a war or conflict."
+          },
+          {
+            "term": "trade strikes",
+            "part_of_speech": "verb phrase",
+            "definition": "To exchange attacks or military actions with an opponent, usually meaning both sides have launched attacks."
+          },
+          {
+            "term": "negotiators",
+            "part_of_speech": "noun",
+            "definition": "People who discuss something formally with another party to reach an agreement."
+          },
+          {
+            "term": "summit",
+            "part_of_speech": "noun",
+            "definition": "An official meeting or conference between leaders, especially of governments or countries, to discuss important issues."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority in an organization or government and perform duties."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to describe what someone said or thought. They are often followed by 'that' and then a clause (subject + verb). Using different reporting verbs (like 'declare', 'emphasize', 'add') can give more specific information about the speaker's intention or tone, rather than just using 'said'.",
+          "example_quote": "US President Donald Trump recently declared that the ceasefire between the United States and Iran is now \"over\"."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump recently declare regarding the US and Iran?",
+            "options": [
+              "The ceasefire is starting soon.",
+              "The ceasefire is \"over\".",
+              "The ceasefire will continue."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect; the President stated the opposite.",
+              "Correct. Trump explicitly said the ceasefire between the US and Iran is finished.",
+              "This is incorrect; his statement indicated an end to the ceasefire."
+            ]
+          },
+          {
+            "question": "What does the term \"ceasefire\" mean in the context of the news brief?",
+            "options": [
+              "A permanent end to all conflict.",
+              "A temporary stop in fighting agreed by all sides.",
+              "A declaration of war by one nation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A ceasefire is typically temporary, not permanent.",
+              "Correct. A ceasefire is a temporary halt to military actions.",
+              "This is incorrect; a ceasefire is about stopping fighting, not starting war."
+            ]
+          },
+          {
+            "question": "When did President Trump make his declaration about the ceasefire?",
+            "options": [
+              "After the Nato summit.",
+              "Before an important Nato summit.",
+              "During a meeting with Iranian officials."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states he spoke 'ahead of' the summit.",
+              "Correct. He made his comments while speaking ahead of a Nato summit.",
+              "The news brief doesn't mention a meeting with Iranian officials at that time."
+            ]
+          },
+          {
+            "question": "What does it mean when countries \"trade strikes\" according to the vocabulary?",
+            "options": [
+              "They exchange goods and services.",
+              "They engage in diplomatic negotiations.",
+              "They exchange military attacks with each other."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This refers to economic exchange, not military action.",
+              "This describes talks, not physical attacks.",
+              "Correct. 'Trade strikes' means both sides have launched military actions against each other."
+            ]
+          },
+          {
+            "question": "What did President Trump say about US negotiators and potential talks with Iran?",
+            "options": [
+              "US negotiators will not talk with Iran.",
+              "US negotiators remain prepared to continue discussions.",
+              "US negotiators have already concluded talks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This contradicts Trump's statement about willingness to talk.",
+              "Correct. Trump stated that negotiators are ready to continue talks 'if they want'.",
+              "The news brief indicates an ongoing openness to talks, not a conclusion."
+            ]
+          },
+          {
+            "question": "What is a \"summit\" as described in the vocabulary?",
+            "options": [
+              "A small, informal discussion.",
+              "An official meeting between leaders.",
+              "A military training exercise."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Summits are typically official and involve important leaders.",
+              "Correct. A summit is an official meeting of leaders to discuss important issues.",
+              "This term refers to meetings, not military exercises."
+            ]
+          },
+          {
+            "question": "In the sentence, \"Trump emphasized that American negotiators remain prepared,\" what type of verb is \"emphasized\"?",
+            "options": [
+              "An action verb.",
+              "A linking verb.",
+              "A reporting verb."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While 'emphasized' is an action, in this context, it functions specifically as a reporting verb.",
+              "Linking verbs connect a subject to a description.",
+              "Correct. 'Emphasized' is used here to report what Trump said or stressed."
+            ]
+          },
+          {
+            "question": "Who are \"officials\" in the context of the news brief?",
+            "options": [
+              "Ordinary citizens watching the news.",
+              "People holding positions of authority in government or organizations.",
+              "Journalists reporting on the events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While citizens follow news, 'officials' implies a specific role.",
+              "Correct. Officials are people with authority in a government or organization.",
+              "Journalists report, but they are not the 'officials' being referred to here."
+            ]
+          },
+          {
+            "question": "Which of the following sentences uses a reporting verb similar to those explained in the grammar section?",
+            "options": [
+              "The sun is shining brightly today.",
+              "She announced that the meeting would be postponed.",
+              "They ran quickly to catch the bus."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence describes a state of being, not reported speech.",
+              "Correct. 'Announced that' is a classic example of a reporting verb followed by a 'that' clause.",
+              "This sentence uses an action verb and adverb, not a reporting verb structure."
+            ]
+          },
+          {
+            "question": "What did Trump indicate with his statement, \"if they want,\" regarding future talks with Iran?",
+            "options": [
+              "He was forcing Iran to negotiate.",
+              "He was closing the door to all future discussions.",
+              "He was offering an open invitation for dialogue."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase implies choice, not force.",
+              "This is incorrect; he expressed continued openness to talks.",
+              "Correct. 'If they want' suggests that the option for talks is available to Iran."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US-Iran Tensions Escalate: Trump Declares Ceasefire Over Amid Trade Strikes and Diplomatic Uncertainty",
+        "overview": "President Trump announced the termination of a de facto ceasefire with Iran following retaliatory strikes, signaling a volatile shift in diplomatic relations while leaving a narrow opening for future negotiations amidst escalating regional instability.",
+        "topic": "Geopolitical Tensions, US-Iran Relations, International Diplomacy, Ceasefires, and Presidential Rhetoric",
+        "news_brief_sentences": [
+          "In a significant escalation of geopolitical tensions, President Donald Trump declared an existing \"ceasefire\" with Iran to be \"over.\"",
+          "This pronouncement followed a series of retaliatory military actions between the United States and Iran.",
+          "The president's remarks were made just prior to a crucial NATO summit, where alliance solidarity on such matters would likely be a prominent discussion point.",
+          "Trump indicated that American negotiators remain open to dialogue with their Iranian counterparts \"if they want.\"",
+          "However, this conditional offer for future engagement stands in stark contrast to the immediate cessation of the informal truce.",
+          "The exchange of strikes underscores the volatile nature of the relationship, which has been fraught with contention.",
+          "Such an abrupt abrogation of an understanding, however informal, could precipitate further regional instability.",
+          "Observers are now assessing the ramifications of this declaration on broader Middle Eastern security and global oil markets.",
+          "The administration's stance appears to signal a hardening position, yet simultaneously offers a cautious diplomatic aperture.",
+          "The international community is keenly watching for any developments that might either de-escalate or further exacerbate the ongoing standoff."
+        ],
+        "vocabulary": [
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "An increase in the intensity, seriousness, or magnitude of a conflict or situation."
+          },
+          {
+            "term": "pronouncement",
+            "part_of_speech": "noun",
+            "definition": "A formal or authoritative announcement or declaration, often by a high-ranking official."
+          },
+          {
+            "term": "retaliatory",
+            "part_of_speech": "adjective",
+            "definition": "Pertaining to or characterized by an action taken in return for an injury or offense, often involving aggression."
+          },
+          {
+            "term": "abrogation",
+            "part_of_speech": "noun",
+            "definition": "The formal repeal, cancellation, or abolition of a law, right, or an agreement by an authoritative act."
+          },
+          {
+            "term": "aperture",
+            "part_of_speech": "noun",
+            "definition": "An opening, hole, or gap; metaphorically, an opportunity or a window for engagement or insight."
+          }
+        ],
+        "grammar": {
+          "concept": "Adverbial Clause of Concession (However + Adjective/Adverb)",
+          "explanation": "An adverbial clause of concession introduced by 'however' followed by an adjective or adverb serves to express a contrast or a point that limits or modifies the main statement. It acknowledges a condition or characteristic while emphasizing that, despite this, the main assertion remains true or significant. This structure adds nuance by allowing for the recognition of a mitigating factor without undermining the primary claim.",
+          "example_quote": "Such an abrupt abrogation of an understanding, however informal, could precipitate further regional instability."
+        },
+        "quiz": [
+          {
+            "question": "What key event is cited as immediately preceding President Trump's declaration that the ceasefire with Iran was \"over\"?",
+            "options": [
+              "A major NATO summit in Europe",
+              "A series of retaliatory military actions",
+              "The initiation of new diplomatic talks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While a NATO summit was mentioned in context, it was not the direct cause of the declaration.",
+              "Correct. The news brief explicitly states the pronouncement followed \"retaliatory military actions between the United States and Iran.\"",
+              "The brief suggests an *opening* for talks, not that they had just occurred prior to the declaration."
+            ]
+          },
+          {
+            "question": "Which option best defines the term \"escalation\" as used in the phrase \"significant escalation of geopolitical tensions\"?",
+            "options": [
+              "A decrease in diplomatic efforts",
+              "A notable increase in the severity of conflict",
+              "A period of de-intensified political discourse"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Escalation implies an increase in intensity, not a reduction in diplomatic engagement.",
+              "Correct. \"Escalation\" refers to a marked increase in the intensity or seriousness of a situation, such as political conflict.",
+              "This option describes the opposite of an escalation; de-intensification would mean a reduction in severity."
+            ]
+          },
+          {
+            "question": "According to the news brief, what condition did President Trump mention regarding the possibility of future negotiations with Iran?",
+            "options": [
+              "That Iran first agrees to a permanent cessation of hostilities",
+              "If Iranian counterparts \"want\" to engage in dialogue",
+              "Only after international sanctions against Iran are lifted"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not specify a permanent cessation of hostilities as a prerequisite for talks.",
+              "Correct. The brief states Trump indicated negotiators are open to dialogue \"if they want\" to continue discussions.",
+              "Lifting sanctions is not mentioned as a condition for renewed negotiations in this particular news brief."
+            ]
+          },
+          {
+            "question": "The president's \"pronouncement\" that the ceasefire was over is best interpreted as a/an:",
+            "options": [
+              "Casual suggestion or hint",
+              "Provisional or tentative proposal",
+              "Formal and authoritative declaration"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Pronouncement\" typically carries a sense of formality and authority, not casualness.",
+              "A pronouncement is generally definitive and authoritative, not tentative or provisional.",
+              "Correct. A \"pronouncement\" is a formal or authoritative announcement, reflecting the gravity of the president's statement."
+            ]
+          },
+          {
+            "question": "In the sentence, \"Such an abrupt abrogation of an understanding, however informal, could precipitate further regional instability,\" what does \"however informal\" primarily convey?",
+            "options": [
+              "The understanding was entirely without consequence due to its lack of formality.",
+              "The informality of the understanding would lessen the impact of its termination.",
+              "Despite its informal nature, the understanding's termination still carries significant risks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The clause acknowledges informality but implies it still had weight, not that it was inconsequential.",
+              "The clause suggests the opposite; it's a concession that implies even informal agreements can have serious consequences.",
+              "Correct. It acts as a concession, highlighting that even an informal agreement's termination can lead to instability."
+            ]
+          },
+          {
+            "question": "The description \"retaliatory military actions\" implies that these actions were:",
+            "options": [
+              "Initiated without any prior provocation",
+              "Planned as a preemptive first strike",
+              "Carried out in response to previous hostile acts"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Retaliatory\" by definition means in response to something, not unprovoked.",
+              "A retaliatory strike is a response, not necessarily a preemptive first strike.",
+              "Correct. \"Retaliatory\" actions are taken in return for an injury or offense, indicating a responsive nature."
+            ]
+          },
+          {
+            "question": "What potential consequence of the declaration on \"broader Middle Eastern security and global oil markets\" is mentioned by observers?",
+            "options": [
+              "A guarantee of immediate stability and calm",
+              "Significant but presently uncertain ramifications",
+              "No discernible impact on regional or global dynamics"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests potential instability, contradicting any guarantee of immediate calm.",
+              "Correct. Observers are \"assessing the ramifications,\" indicating uncertainty but significant potential effects on security and markets.",
+              "The phrase \"assessing the ramifications\" clearly implies there will be effects, making this option incorrect."
+            ]
+          },
+          {
+            "question": "If an agreement faces \"abrogation,\" what is its likely outcome?",
+            "options": [
+              "It will be subject to further negotiation and amendment.",
+              "It will be reinforced and strengthened by the parties.",
+              "It will be officially cancelled or revoked by authority."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Abrogation means termination, not renegotiation or amendment.",
+              "Abrogation signifies abolishing or repealing, the opposite of strengthening.",
+              "Correct. \"Abrogation\" means the formal repeal or abolition of a law, right, or agreement by an authoritative act."
+            ]
+          },
+          {
+            "question": "What duality is evident in the administration's stance on US-Iran relations, as presented in the news brief?",
+            "options": [
+              "It is solely focused on military solutions without diplomatic avenues.",
+              "It simultaneously hardens its position while offering a diplomatic opening.",
+              "It has completely closed all existing channels for discussion and engagement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions a \"diplomatic aperture,\" which contradicts a sole focus on military solutions.",
+              "Correct. The brief notes a \"hardening position, yet simultaneously offers a cautious diplomatic aperture.\"",
+              "The phrase \"diplomatic aperture\" indicates an opening for discussion, not a complete closure of channels."
+            ]
+          },
+          {
+            "question": "In the context of \"cautious diplomatic aperture,\" what does the term \"aperture\" signify?",
+            "options": [
+              "A definitive closing of all communication channels",
+              "An opening or opportunity for engagement and dialogue",
+              "A final and binding agreement reached between parties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Aperture refers to an opening, which is the opposite of closing communication channels.",
+              "Correct. Metaphorically, a diplomatic aperture represents an opening, an opportunity, or a window for further engagement.",
+              "An aperture signifies a potential opening for discussion, not a completed or final agreement."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

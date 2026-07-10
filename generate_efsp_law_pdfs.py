@@ -5,6 +5,7 @@ from pathlib import Path
 
 from reportlab.platypus import PageBreak, Paragraph, Spacer
 
+from generate_efsp_guarded_activities import add_answer_key, add_cloze_exercise, make_dialogue_cloze
 from generate_efsp_culture_pdfs import (
     S,
     box,
@@ -790,7 +791,7 @@ def participant_workbook() -> Path:
             ]
         )
     )
-    story.append(lines(6))
+    story.append(p("Use the guided dialogue activities below. Every item has four choices and a rationale in the answer key; no open-ended writing is required."))
     story += h1("Legal Matter Language")
     story.append(
         table(
@@ -807,37 +808,22 @@ def participant_workbook() -> Path:
         )
     )
     story += h1("Practice Pages")
-    for module, task in zip(MODULES, WORKBOOK_TASKS):
+    answer_key: list[dict[str, str]] = []
+    for index, module in enumerate(MODULES):
+        dialogue = DIALOGUES[index % len(DIALOGUES)]
         story.append(PageBreak())
         story.append(h2(module["title"]))
         story.append(p(module["big_idea"]))
         story.append(h3("What you should be able to do"))
         story.append(bullets(module["objectives"]))
-        story.append(h3("Practice task"))
-        story.append(box("Situation", [task], "blue"))
-        story.append(h3("Facts, authority, and missing information"))
-        story.append(lines(4))
-        story.append(h3("Careful professional language"))
-        story.append(lines(4))
-        story.append(h3("Final legal-workplace response"))
-        story.append(lines(4))
+        add_cloze_exercise(story, make_dialogue_cloze(dialogue), answer_key)
     story.append(PageBreak())
     story += h1("Phrase Bank")
     for title, phrases in PHRASE_BANK.items():
         story.append(h2(title))
         story.append(bullets(phrases))
-    story += h1("Personal Action Plan")
-    story.append(
-        table(
-            [
-                ["Situation", "Term or phrase I will practice", "Evidence I used it well"],
-                ["", "", ""],
-                ["", "", ""],
-                ["", "", ""],
-            ],
-            [2.2 * 72, 2.4 * 72, 2.4 * 72],
-        )
-    )
+    story.append(PageBreak())
+    add_answer_key(story, answer_key)
     return build_pdf(
         "efsp-law-english-participant-workbook.pdf",
         "EFSP Law English - Participant Workbook",
@@ -872,6 +858,7 @@ def dialogue_lab() -> Path:
             "amber",
         )
     )
+    answer_key: list[dict[str, str]] = []
     for item in DIALOGUES:
         story.append(PageBreak())
         story.append(Paragraph(esc(item["title"]), S["CardTitle"]))
@@ -882,8 +869,7 @@ def dialogue_lab() -> Path:
         story.append(table(rows, [1.25 * 72, 5.75 * 72]))
         story.append(h3("Language notes"))
         story.append(bullets(item["notes"]))
-        story.append(h3("Role-play variation"))
-        story.append(lines(4))
+        add_cloze_exercise(story, make_dialogue_cloze(item), answer_key, show_context=False)
         story.append(h3("Observer checklist"))
         story.append(
             bullets(
@@ -895,6 +881,8 @@ def dialogue_lab() -> Path:
                 ]
             )
         )
+    story.append(PageBreak())
+    add_answer_key(story, answer_key)
     return build_pdf(
         "efsp-law-dialogue-lab.pdf",
         "EFSP Law Dialogue Lab",

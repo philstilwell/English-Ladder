@@ -7,6 +7,12 @@ from pathlib import Path
 from reportlab.lib.units import inch
 from reportlab.platypus import PageBreak, Paragraph, Spacer
 
+from generate_efsp_guarded_activities import (
+    add_answer_key,
+    add_cloze_exercise,
+    make_dialogue_cloze,
+    make_module_cloze,
+)
 from generate_efsp_culture_pdfs import (
     CONTENT_WIDTH,
     S,
@@ -16,7 +22,6 @@ from generate_efsp_culture_pdfs import (
     h1,
     h2,
     h3,
-    lines,
     p,
     table,
 )
@@ -59,6 +64,9 @@ def profile(
     modules: list[dict],
     sources: list[str],
     term_definitions: dict[str, str] | None = None,
+    collocations: list[tuple[str, str]] | None = None,
+    dialogues: list[dict] | None = None,
+    nomenclature: list[tuple[str, str, str]] | None = None,
 ) -> dict:
     return {
         "title": title,
@@ -68,6 +76,9 @@ def profile(
         "modules": modules,
         "sources": sources,
         "term_definitions": term_definitions or {},
+        "collocations": collocations or [],
+        "dialogues": dialogues or [],
+        "nomenclature": nomenclature or [],
     }
 
 
@@ -166,6 +177,208 @@ SEMICONDUCTOR_TERM_DEFINITIONS = {
     "wafer": "Thin semiconductor substrate, usually silicon, on which integrated circuits are fabricated.",
     "yield": "Share of wafers, die, units, or lots that meet requirements after manufacturing, test, or qualification.",
 }
+
+
+SEMICONDUCTOR_COLLOCATIONS = [
+    ("put a lot on hold", "Stop a wafer lot from moving until the hold reason, owner, risk, and release condition are clear."),
+    ("release a lot", "Allow a held lot to continue only after route, disposition, and risk acceptance have been documented."),
+    ("open an excursion", "Start a formal investigation when SPC, defect, yield, or tool behavior moves outside expected limits."),
+    ("contain affected lots", "Identify, quarantine, or restrict lots that may share the same exposure, tool path, material, or time window."),
+    ("verify lot genealogy", "Trace where a lot has been, which tools touched it, and which lots share possible exposure."),
+    ("quarantine suspect material", "Physically or systemically prevent wafers, chemicals, parts, or finished units from being used or shipped."),
+    ("review SPC charts", "Look at control charts, rules, limits, and trends before deciding whether a signal is real."),
+    ("separate signal from noise", "Avoid reacting to a single data point until sampling, repeatability, and tool history are checked."),
+    ("tighten the process window", "Reduce allowed process variation when yield, reliability, or margin is at risk."),
+    ("run split lots", "Process comparable lots or wafers under different conditions to isolate a variable or compare paths."),
+    ("qualify a recipe", "Generate evidence that a controlled tool recipe meets process, quality, and reliability requirements."),
+    ("match a tool", "Show that two tools produce equivalent results within approved limits for a given process step."),
+    ("move lots to the matched tool", "Transfer work to an alternate tool only within the approved matching, recipe, and product constraints."),
+    ("pull in preventive maintenance", "Move planned maintenance earlier to reduce drift, contamination, safety, or downtime risk."),
+    ("recover tool uptime", "Restore qualified equipment availability without bypassing restart, monitor, or qualification requirements."),
+    ("check chamber history", "Review recent maintenance, cleans, alarms, consumables, recipes, and abnormal events for a process chamber."),
+    ("confirm metrology repeatability", "Repeat or cross-check measurements before treating a trend as a process problem."),
+    ("hold shipment", "Prevent finished units from leaving until quality, reliability, customer, or compliance questions are resolved."),
+    ("screen for early-life failure", "Use burn-in, stress, or test screening to identify infant mortality risk before release."),
+    ("bin devices by speed and power", "Sort parts into usable categories after test, often tied to customer specifications or price."),
+    ("perform failure analysis", "Investigate failed die, packages, or returned units to identify physical, electrical, process, or use-related causes."),
+    ("close the 8D", "Complete the structured customer problem-solving report with verified root cause and effective corrective action."),
+    ("freeze the mask set", "Stop design changes so masks, reticles, wafer starts, and downstream schedules can proceed."),
+    ("release the PDK", "Publish foundry design rules, models, and files for a process after readiness checks are complete."),
+    ("lock the tape-out package", "Finalize the files, checks, signoffs, and assumptions needed for mask generation."),
+    ("allocate wafer starts", "Assign constrained foundry capacity or fab starts across products, customers, or priorities."),
+    ("approve a deviation", "Permit a controlled exception only after impact, owner, duration, and risk acceptance are documented."),
+    ("issue a customer quality notice", "Give customers a factual update about risk, containment, impact, and next action without speculation."),
+]
+
+
+SEMICONDUCTOR_DIALOGUES = [
+    {
+        "title": "Lot Hold vs Customer Expedite",
+        "setting": "A strategic customer is waiting for units, but a wafer lot is on hold after an inline monitor showed abnormal film thickness.",
+        "turns": [
+            ("Customer program manager", "Can we release the lot today? The customer is escalating and the ship date is already tight."),
+            ("Process integration engineer", "I understand the schedule pressure, but the hold code is tied to a film-thickness excursion after deposition."),
+            ("Customer program manager", "Is it a real excursion or just a metrology artifact?"),
+            ("Process integration engineer", "That is exactly what we need to confirm. I want repeat metrology, chamber history, and lot genealogy before release."),
+            ("Customer program manager", "What is the fastest responsible option?"),
+            ("Process integration engineer", "We can contain the affected lots, run a split on one lower-risk lot, and prepare a deviation request if quality agrees."),
+            ("Customer program manager", "So I should not promise shipment today."),
+            ("Process integration engineer", "Right. Say the lot is under controlled disposition, with an update after repeat measurement and quality review."),
+        ],
+        "coach_notes": [
+            "The learner does not say no; the learner names hold code, excursion, metrology, genealogy, containment, and disposition.",
+            "The response gives the commercial team usable customer language without pretending the risk is solved.",
+        ],
+        "collocations": ["put a lot on hold", "confirm metrology repeatability", "verify lot genealogy", "approve a deviation"],
+    },
+    {
+        "title": "Critical Dimension Drift on a Customer Call",
+        "setting": "A customer quality lead challenges whether a CD trend is real before a corrective action report is due.",
+        "turns": [
+            ("Customer quality lead", "Your report shows CD drift, but we think the trend could be measurement noise."),
+            ("Lithography engineer", "That is a fair question. We are checking metrology repeatability before we call it a process shift."),
+            ("Customer quality lead", "What are you comparing?"),
+            ("Lithography engineer", "The same layer across the last three lots, the reference wafer, reticle history, exposure dose, focus data, and CD-SEM repeat runs."),
+            ("Customer quality lead", "Can you state whether product performance is affected?"),
+            ("Lithography engineer", "Not yet. We can say the drift is within electrical guardband so far, but we are not closing the excursion until SPC and yield correlation are complete."),
+            ("Customer quality lead", "When will we have a decision?"),
+            ("Lithography engineer", "By 5 p.m. tomorrow, we will provide either a release recommendation or a containment plan with affected-lot IDs."),
+        ],
+        "coach_notes": [
+            "The learner distinguishes measurement repeatability, process shift, electrical impact, and customer disposition.",
+            "The dialogue trains a precise but cautious answer: what is known, what is being checked, and when the decision comes.",
+        ],
+        "collocations": ["review SPC charts", "confirm metrology repeatability", "separate signal from noise", "contain affected lots"],
+    },
+    {
+        "title": "Particle Excursion After Maintenance",
+        "setting": "Production wants to restart a tool after maintenance, but defect maps show a new particle signature.",
+        "turns": [
+            ("Production planner", "The tool is back up. Can we load the backlog now?"),
+            ("Manufacturing quality engineer", "Not until we close the restart checks. The monitor wafer shows a particle signature that was not present before maintenance."),
+            ("Production planner", "If we wait, the area will miss the shift target."),
+            ("Manufacturing quality engineer", "I understand. The tradeoff is that restarting too early could contaminate multiple high-value lots."),
+            ("Production planner", "What do you need before release?"),
+            ("Manufacturing quality engineer", "A clean monitor run, chamber history, maintenance notes, and a lot list for any material exposed during the suspect window."),
+            ("Production planner", "Can we at least run engineering material?"),
+            ("Manufacturing quality engineer", "Possibly, if the module owner approves the route and quality agrees that the risk is contained."),
+        ],
+        "coach_notes": [
+            "The learner uses contamination-control language without blaming the maintenance team.",
+            "The practical move is to define the restart condition, not simply defend quality in general terms.",
+        ],
+        "collocations": ["quarantine suspect material", "check chamber history", "contain affected lots", "recover tool uptime"],
+    },
+    {
+        "title": "Tool Matching Under Capacity Pressure",
+        "setting": "A bottleneck tool is down, and operations wants to move production to an alternate tool that is almost matched.",
+        "turns": [
+            ("Operations director", "We need to move all lots to Tool B. The matched-tool report looked close enough."),
+            ("Module process owner", "Tool B is close for monitor wafers, but product-lot data are still limited for this layer."),
+            ("Operations director", "How much risk are we really talking about?"),
+            ("Module process owner", "The main risks are uniformity, selectivity, and downstream CMP margin. If those shift, yield loss may appear several steps later."),
+            ("Operations director", "What is your recommendation?"),
+            ("Module process owner", "Move low-risk lots first, run enhanced metrology, and keep critical customer lots on hold until the first product split clears."),
+            ("Operations director", "Give me language for the morning standup."),
+            ("Module process owner", "Say Tool B is under controlled qualification, not fully released for unrestricted product movement."),
+        ],
+        "coach_notes": [
+            "The learner explains why almost matched is not the same as unrestricted production release.",
+            "The line 'under controlled qualification' gives leaders a concise phrase for operations updates.",
+        ],
+        "collocations": ["match a tool", "move lots to the matched tool", "run split lots", "qualify a recipe"],
+    },
+    {
+        "title": "Reliability Qualification vs Early Shipment",
+        "setting": "A business unit wants to ship early units after electrical test, before reliability stress is complete.",
+        "turns": [
+            ("Business unit manager", "Electrical test passed. Can we ship early samples while reliability finishes?"),
+            ("Product engineer", "We can discuss sample release, but electrical pass is not the same as reliability qualification."),
+            ("Business unit manager", "The customer only needs a few units for bring-up."),
+            ("Product engineer", "Then we should label them clearly as engineering samples, define use limits, and avoid treating them as qualified product."),
+            ("Business unit manager", "What is the unresolved risk?"),
+            ("Product engineer", "Package interaction, burn-in results, early-life failure rate, and bin stability are still open."),
+            ("Business unit manager", "What can I tell sales?"),
+            ("Product engineer", "Tell them sample release may be possible with restrictions, but production shipment waits for qualification review."),
+        ],
+        "coach_notes": [
+            "The learner separates sample release, production shipment, electrical test, and reliability qualification.",
+            "This is useful for sales and business conversations where 'passed test' is often overextended.",
+        ],
+        "collocations": ["screen for early-life failure", "bin devices by speed and power", "hold shipment", "perform failure analysis"],
+    },
+    {
+        "title": "Foundry Capacity and Tape-Out Commitment",
+        "setting": "A customer asks for a guaranteed tape-out and wafer-start date while PDK updates and foundry capacity are still moving.",
+        "turns": [
+            ("Customer program manager", "We need a firm wafer-start date before our executive review. Can you guarantee the slot?"),
+            ("Foundry coordinator", "I can confirm the current allocation request, but I cannot guarantee the slot until the tape-out package and change freeze are complete."),
+            ("Customer program manager", "What is blocking the commitment?"),
+            ("Foundry coordinator", "PDK version signoff, mask data checks, final DRC closure, and capacity allocation approval."),
+            ("Customer program manager", "That sounds like too many caveats."),
+            ("Foundry coordinator", "The caveats are the conditions for a reliable commitment. If any of them move, the wafer-start date can move with them."),
+            ("Customer program manager", "What should our executive slide say?"),
+            ("Foundry coordinator", "Say the target slot is requested, with commitment pending PDK signoff, mask package lock, and foundry allocation confirmation."),
+        ],
+        "coach_notes": [
+            "The learner protects the relationship by giving a usable target while refusing a false guarantee.",
+            "The dialogue models conditional commitment language common in foundry and customer-program work.",
+        ],
+        "collocations": ["freeze the mask set", "release the PDK", "lock the tape-out package", "allocate wafer starts"],
+    },
+]
+
+
+SEMICONDUCTOR_NOMENCLATURE = [
+    ("Fab logistics", "FOUP", "Front opening unified pod used to transport and protect wafers in automated fab environments."),
+    ("Fab logistics", "lot traveler", "Record or system route showing where the lot goes, what has been done, and what instructions apply."),
+    ("Fab logistics", "hold code", "System code that explains why material is blocked from movement or shipment."),
+    ("Fab logistics", "WIP", "Work in process; material currently moving through manufacturing, test, assembly, or disposition."),
+    ("Fab logistics", "queue time", "Time a lot waits between process steps; excessive queue time can affect quality or cycle time."),
+    ("Fab logistics", "lot genealogy", "Traceable history of tools, materials, routes, rework, holds, and related lots."),
+    ("Process control", "control wafer", "Wafer used to monitor process or tool behavior without risking production material."),
+    ("Process control", "split lot", "Lot divided or compared across conditions to test a process variable or disposition path."),
+    ("Process control", "golden tool", "Reference tool whose performance is treated as the comparison point for matching."),
+    ("Process control", "chamber matching", "Effort to align performance across chambers in the same or similar equipment."),
+    ("Process control", "inline monitor", "Measurement taken during manufacturing to catch drift before final test or yield loss."),
+    ("Process control", "PCM", "Process control monitor structures or measurements used to evaluate process health."),
+    ("Lithography", "overlay", "Alignment accuracy between patterned layers on the wafer."),
+    ("Lithography", "dose", "Exposure energy applied during lithography."),
+    ("Lithography", "focus", "Exposure focus condition that affects printed feature quality."),
+    ("Lithography", "OPC", "Optical proximity correction used to adjust mask patterns for printing behavior."),
+    ("Lithography", "CD-SEM", "Critical-dimension scanning electron microscope used to measure small patterned features."),
+    ("Lithography", "scatterometry", "Optical metrology method used to infer feature profiles, dimensions, or film characteristics."),
+    ("Films and etch", "film thickness", "Measured thickness of a deposited or grown layer."),
+    ("Films and etch", "sheet resistance", "Electrical resistance measurement used to monitor thin films or implants."),
+    ("Films and etch", "selectivity", "How much faster one material is removed than another during etch or CMP."),
+    ("Films and etch", "uniformity", "Degree to which a process result is consistent across wafer, lot, tool, or chamber."),
+    ("Films and etch", "end-point detection", "Method for determining when an etch or process step has reached the target condition."),
+    ("Films and etch", "slurry", "Abrasive chemical mixture used in CMP."),
+    ("Films and etch", "post-CMP clean", "Cleaning step used to remove residue, particles, or contamination after CMP."),
+    ("Test and sort", "wafer sort", "Electrical testing of die while still on the wafer."),
+    ("Test and sort", "die sort", "Classification of die after wafer-level testing."),
+    ("Test and sort", "probe card", "Test interface that contacts wafer pads during wafer sort."),
+    ("Test and sort", "parametric test", "Electrical measurement of device or process parameters, often used to monitor margins."),
+    ("Test and sort", "guardband", "Extra margin used to reduce risk when specification, process, or use conditions vary."),
+    ("Reliability", "infant mortality", "Early-life failures that appear soon after device use or stress."),
+    ("Reliability", "FIT rate", "Failures in time; reliability measure often expressed as failures per billion device hours."),
+    ("Reliability", "electromigration", "Reliability failure mechanism caused by metal movement under current stress."),
+    ("Reliability", "TDDB", "Time-dependent dielectric breakdown; reliability mechanism affecting insulating layers."),
+    ("Reliability", "HCI", "Hot carrier injection; reliability mechanism that can degrade transistor performance."),
+    ("Reliability", "NBTI", "Negative-bias temperature instability; reliability mechanism affecting transistor threshold behavior."),
+    ("Packaging", "wire bond", "Electrical connection made by bonding fine wires between die and package leads or substrate."),
+    ("Packaging", "flip chip", "Package approach where die are connected face-down through bumps."),
+    ("Packaging", "underfill", "Material placed under flip-chip die to improve mechanical reliability."),
+    ("Packaging", "bump", "Conductive connection point used in advanced packages or wafer-level packaging."),
+    ("Packaging", "TSV", "Through-silicon via used to connect vertically through silicon in advanced packages."),
+    ("Packaging", "substrate", "Package platform that supports the die and routes signals to the board."),
+    ("Quality and customer", "MRB", "Material review board that decides disposition for nonconforming or suspect material."),
+    ("Quality and customer", "deviation", "Approved exception from a normal requirement, route, specification, or process condition."),
+    ("Quality and customer", "rework", "Additional approved processing intended to bring material back into requirement."),
+    ("Quality and customer", "scrap", "Disposition for material that cannot be used or recovered acceptably."),
+    ("Quality and customer", "FA", "Failure analysis; structured investigation of why a device, die, package, or system failed."),
+    ("Quality and customer", "decapsulation", "Removal of package material to inspect die, bonds, or physical evidence during FA."),
+]
 
 
 INDUSTRIES = [
@@ -339,6 +552,9 @@ INDUSTRIES = [
         ],
         ["Company process-control plans, fab SOPs, and manufacturing quality procedures.", "SEMI, JEDEC, AEC-Q, and customer qualification expectations where applicable.", "Foundry documentation, PDK release notes, customer quality agreements, and approved communication procedures."],
         SEMICONDUCTOR_TERM_DEFINITIONS,
+        SEMICONDUCTOR_COLLOCATIONS,
+        SEMICONDUCTOR_DIALOGUES,
+        SEMICONDUCTOR_NOMENCLATURE,
     ),
     profile(
         "Software Product Management English",
@@ -837,6 +1053,125 @@ def add_phrase_bank(story: list, prof: dict) -> None:
     )
 
 
+def chunks(items: list, size: int) -> list[list]:
+    return [items[index : index + size] for index in range(0, len(items), size)]
+
+
+def add_practical_collocations(story: list, prof: dict) -> None:
+    collocations = prof.get("collocations", [])
+    if not collocations:
+        return
+    story += h1("Practical Collocations and Field Moves")
+    story.append(
+        p(
+            "These phrases are intentionally practical. Learners should rehearse them as complete workplace moves: what they mean, when to use them, what evidence they require, and what decision they support."
+        )
+    )
+    for index, group in enumerate(chunks(collocations, 10), start=1):
+        story.append(h2(f"Collocation set {index}"))
+        rows = [["Collocation", "How it works in the field"]]
+        rows.extend([[phrase, use] for phrase, use in group])
+        story.append(table(rows, [1.85 * inch, CONTENT_WIDTH - 1.85 * inch]))
+
+
+def add_specialized_nomenclature(story: list, prof: dict) -> None:
+    nomenclature = prof.get("nomenclature", [])
+    if not nomenclature:
+        return
+    story += h1("Specialized Nomenclature Expansion")
+    story.append(
+        p(
+            "Use this expansion set for learners who already know the general module terms and need the more specific nouns, acronyms, and measurement language that appear in fab, test, packaging, reliability, and customer-quality conversations."
+        )
+    )
+    by_category: dict[str, list[tuple[str, str]]] = {}
+    for category, term, meaning in nomenclature:
+        by_category.setdefault(category, []).append((term, meaning))
+    for category, items in by_category.items():
+        story.append(h2(category))
+        rows = [["Term", "Working meaning"]]
+        rows.extend([[term, meaning] for term, meaning in items])
+        story.append(table(rows, [1.45 * inch, CONTENT_WIDTH - 1.45 * inch]))
+
+
+def add_expanded_dialogues(story: list, prof: dict) -> None:
+    dialogues = prof.get("dialogues", [])
+    if not dialogues:
+        return
+    story += h1("Additional Practical Dialogues")
+    story.append(
+        p(
+            "These dialogues are written for advanced role-play. Learners should practice the first version as written, then replace the technical facts with a similar problem from their own role."
+        )
+    )
+    for index, dialogue in enumerate(dialogues, start=1):
+        story.append(h2(f"{index}. {dialogue['title']}"))
+        story.append(box("Setting", [dialogue["setting"]], "blue"))
+        rows = [["Speaker", "Line"]]
+        rows.extend([[speaker, line] for speaker, line in dialogue["turns"]])
+        story.append(table(rows, [1.55 * inch, CONTENT_WIDTH - 1.55 * inch]))
+        story.append(h3("Coach notes"))
+        story.append(bullets(dialogue.get("coach_notes", [])))
+        if dialogue.get("collocations"):
+            story.append(h3("Target collocations"))
+            story.append(bullets(dialogue["collocations"]))
+
+
+def add_participant_practical_drills(story: list, prof: dict, answer_key: list[dict[str, str]]) -> None:
+    collocations = prof.get("collocations", [])
+    dialogues = prof.get("dialogues", [])
+    nomenclature = prof.get("nomenclature", [])
+    if not (collocations or dialogues or nomenclature):
+        return
+    story += h1("Practical Semiconductor Language Lab")
+    story.append(
+        p(
+            "Use these guided selections to practice the exact language used in fab, yield, qualification, and foundry conversations. Each answer is bounded by the situation and includes a rationale in the answer key."
+        )
+    )
+    if collocations:
+        story.append(h2("Collocation completion"))
+        add_cloze_exercise(
+            story,
+            make_dialogue_cloze(
+                {
+                    "title": "Lot release language",
+                    "setting": "A customer is asking for an urgent shipment update while the lot remains under review.",
+                    "dialogue": [
+                        ("Customer program manager", "Can we promise shipment today?"),
+                        ("ESL learner", "Before we release the lot, we need to confirm the evidence, owner, and decision condition."),
+                    ],
+                    "notes": ["release is the controlled act of allowing held material to continue through the approved route."],
+                },
+                [phrase for phrase, _use in collocations],
+            ),
+            answer_key,
+        )
+    if dialogues:
+        story.append(h2("Additional dialogue completions"))
+        for dialogue in dialogues[:3]:
+            add_cloze_exercise(story, make_dialogue_cloze(dialogue), answer_key)
+    if nomenclature:
+        story.append(h2("Nomenclature completion"))
+        target_term = nomenclature[0][1]
+        add_cloze_exercise(
+            story,
+            make_dialogue_cloze(
+                {
+                    "title": "Fab logistics terminology",
+                    "setting": "An operator is preparing material for the next approved process step.",
+                    "dialogue": [
+                        ("Manufacturing lead", "How will the wafers move through the automated bay?"),
+                        ("ESL learner", f"The wafers will remain in the {target_term} until the approved route and tool are confirmed."),
+                    ],
+                    "notes": [f"{target_term} is the logistics term used for this controlled wafer-handling context."],
+                },
+                [term for _category, term, _meaning in nomenclature],
+            ),
+            answer_key,
+        )
+
+
 def add_assessment(story: list, prof: dict) -> None:
     story += h1("Assessment and Coaching")
     story.append(h2("Performance rubric"))
@@ -866,6 +1201,9 @@ def instructor_guide(prof: dict) -> Path:
     add_module_plans(story, prof)
     add_jargon(story, prof)
     add_phrase_bank(story, prof)
+    add_practical_collocations(story, prof)
+    add_expanded_dialogues(story, prof)
+    add_specialized_nomenclature(story, prof)
     add_assessment(story, prof)
     return build_pdf(pdf_name(prof, "english-instructor-guide"), f"EFSP {prof['title']} - Instructor Guide", story)
 
@@ -879,27 +1217,19 @@ def participant_workbook(prof: dict) -> Path:
     story += h1("How to Use This Workbook")
     story.append(
         p(
-            "For each module, define the terms, identify the decision pressure, write a careful response, and practice the conversation aloud. Strong answers are specific, calm, evidence-aware, and tied to owner and next step."
+            "For each module, read a workplace scenario and complete a bounded dialogue. Choose one of four options, then use the answer key to see why the selected phrase fits the evidence, risk, owner, and next step."
         )
     )
+    answer_key: list[dict[str, str]] = []
+    all_outputs = [item["output"] for item in prof["modules"]]
     for index, module in enumerate(prof["modules"], start=1):
         story.append(h2(f"Module {index}. {module['title']}"))
         story.append(box("Situation", [module["scenario"], f"Stakeholder pressure: {module['pressure']}", f"Constraint: {module['constraint']}"], "blue"))
         story.append(h3("Terms to use"))
         story.append(bullets(module["terms"]))
-        story.append(h3("Evidence, owner, or policy boundary"))
-        story.append(lines(4))
-        story.append(h3("Pushback sentence"))
-        story.append(lines(3))
-        story.append(h3(f"Draft the {module['output']}"))
-        story.append(lines(5))
-    story += h1("Capstone Simulation")
-    story.append(
-        p(
-            f"Lead a cross-functional meeting in {prof['title'].replace(' English', '').lower()}. Choose four modules from this workbook, connect the risks, and prepare a five-minute update with decision, evidence, constraint, owner, and next step."
-        )
-    )
-    story.append(lines(8))
+        add_cloze_exercise(story, make_module_cloze(module, all_outputs), answer_key)
+    add_participant_practical_drills(story, prof, answer_key)
+    add_answer_key(story, answer_key)
     return build_pdf(pdf_name(prof, "english-participant-workbook"), f"EFSP {prof['title']} - Participant Workbook", story)
 
 
@@ -912,9 +1242,11 @@ def dialogue_lab(prof: dict) -> Path:
     story += h1("Dialogue Practice Method")
     story.append(
         p(
-            "Read each exchange once for meaning, once for tone, and once for decision structure. Then replace the ESL learner line with a version from the learner's own workplace."
+            "Read each exchange once for meaning, once for tone, and once for decision structure. Then complete the missing language by selecting one of four options and check the rationale at the end."
         )
     )
+    answer_key: list[dict[str, str]] = []
+    all_outputs = [item["output"] for item in prof["modules"]]
     for index, module in enumerate(prof["modules"], start=1):
         speaker_a, speaker_b = module["speakers"]
         story.append(h2(f"{index}. {module['title']}"))
@@ -943,8 +1275,7 @@ def dialogue_lab(prof: dict) -> Path:
                 ]
             )
         )
-        story.append(h3("Role-play variation"))
-        story.append(lines(3))
+        add_cloze_exercise(story, make_module_cloze(module, all_outputs), answer_key, show_context=False)
         story.append(h3("Observer checklist"))
         story.append(
             bullets(
@@ -955,6 +1286,8 @@ def dialogue_lab(prof: dict) -> Path:
                 ]
             )
         )
+    add_expanded_dialogues(story, prof)
+    add_answer_key(story, answer_key)
     return build_pdf(pdf_name(prof, "dialogue-lab"), f"EFSP {prof['title']} - Dialogue Lab", story)
 
 
@@ -966,6 +1299,8 @@ def jargon_guide(prof: dict) -> Path:
     )
     add_jargon(story, prof)
     add_phrase_bank(story, prof)
+    add_practical_collocations(story, prof)
+    add_specialized_nomenclature(story, prof)
     story += h1("Contrast Pairs")
     rows = [["Do not confuse", "Useful distinction"]]
     for module in prof["modules"]:
@@ -1104,7 +1439,9 @@ def main() -> None:
     args = parser.parse_args()
     paths = generate_all()
     if not args.skip_html:
-        update_html()
+        from generate_efsp_web_pages import main as generate_web_pages
+
+        generate_web_pages()
     for path in paths:
         print(path.relative_to(ROOT))
 

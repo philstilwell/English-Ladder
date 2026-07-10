@@ -5,6 +5,7 @@ from pathlib import Path
 
 from reportlab.platypus import PageBreak, Paragraph, Spacer, Table, TableStyle
 
+from generate_efsp_guarded_activities import add_answer_key, add_cloze_exercise, make_dialogue_cloze
 from generate_efsp_culture_pdfs import (
     CONTENT_WIDTH,
     PALETTE,
@@ -706,7 +707,7 @@ def participant_workbook() -> Path:
         "When you disagree technically in English, do you become too vague, too quiet, too detailed, or too blunt?",
         "What is one AI failure you recently had to explain?",
     ]))
-    story.append(lines(6))
+    story.append(p("Use the guided dialogue activities below. Every item has four choices and a rationale in the answer key; no open-ended writing is required."))
     story += h1("AI Stack Language")
     story.append(
         table([
@@ -719,32 +720,22 @@ def participant_workbook() -> Path:
             ["Evaluation", "measure, slice, regress, calibrate, inspect", "The average improved, but the high-risk slice regressed."],
         ], [1.15 * 72, 2.15 * 72, 3.7 * 72]))
     story += h1("Practice Pages")
-    for module, task in zip(MODULES, WORKBOOK_TASKS):
+    answer_key: list[dict[str, str]] = []
+    for index, module in enumerate(MODULES):
+        dialogue = DIALOGUES[index % len(DIALOGUES)]
         story.append(PageBreak())
         story.append(h2(module["title"]))
         story.append(p(module["big_idea"]))
         story.append(h3("What you should be able to do"))
         story.append(bullets(module["objectives"]))
-        story.append(h3("Practice task"))
-        story.append(box("Situation", [task], "blue"))
-        story.append(h3("Your response"))
-        story.append(lines(8))
-        story.append(h3("Clarification questions"))
-        story.append(lines(4))
-        story.append(h3("Final professional sentence"))
-        story.append(lines(2))
+        add_cloze_exercise(story, make_dialogue_cloze(dialogue), answer_key)
     story.append(PageBreak())
     story += h1("Phrase Bank")
     for title, phrases in PHRASE_BANK.items():
         story.append(h2(title))
         story.append(bullets(phrases))
-    story += h1("Personal Action Plan")
-    story.append(table([
-        ["Situation", "Phrase or term I will practice", "Evidence I used it well"],
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-    ], [2.2 * 72, 2.4 * 72, 2.4 * 72]))
+    story.append(PageBreak())
+    add_answer_key(story, answer_key)
     return build_pdf(
         "efsp-ai-development-english-participant-workbook.pdf",
         "EFSP AI Development English - Participant Workbook",
@@ -768,6 +759,7 @@ def dialogue_lab() -> Path:
     story.append(box("Facilitator guardrail", [
         "Do not let learners hide behind jargon. Ask them to define the term in plain English and connect it to a user, metric, risk, or engineering decision."
     ], "amber"))
+    answer_key: list[dict[str, str]] = []
     for item in DIALOGUES:
         story.append(PageBreak())
         story.append(Paragraph(esc(item["title"]), S["CardTitle"]))
@@ -778,8 +770,7 @@ def dialogue_lab() -> Path:
         story.append(table(rows, [1.25 * 72, 5.75 * 72]))
         story.append(h3("Language notes"))
         story.append(bullets(item["notes"]))
-        story.append(h3("Role-play variation"))
-        story.append(lines(4))
+        add_cloze_exercise(story, make_dialogue_cloze(item), answer_key, show_context=False)
         story.append(h3("Observer checklist"))
         story.append(bullets([
             "Did the learner use the key terms accurately?",
@@ -787,6 +778,8 @@ def dialogue_lab() -> Path:
             "Did the learner distinguish model, data, retrieval, prompt, evaluation, or serving issues?",
             "Did the learner make a clear recommendation or next step?",
         ]))
+    story.append(PageBreak())
+    add_answer_key(story, answer_key)
     return build_pdf(
         "efsp-ai-development-dialogue-lab.pdf",
         "EFSP AI Development Dialogue Lab",

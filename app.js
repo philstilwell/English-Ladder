@@ -219,17 +219,17 @@ function setupEfspIndustryPage() {
     const title = workbench.querySelector("[data-module-title]");
     const focus = workbench.querySelector("[data-module-focus]");
     const goals = workbench.querySelector("[data-module-goals]");
-    const scenario = workbench.querySelector("[data-scenario-text]");
-    const response = workbench.querySelector("[data-response-input]");
-    const feedback = workbench.querySelector("[data-response-feedback]");
+    const clozeTitle = workbench.querySelector("[data-cloze-title]");
+    const clozeSetting = workbench.querySelector("[data-cloze-setting]");
+    const clozeLines = workbench.querySelector("[data-cloze-lines]");
+    const clozeOptions = workbench.querySelector("[data-cloze-options]");
+    const clozeFeedback = workbench.querySelector("[data-cloze-feedback]");
+    const clozeRationale = workbench.querySelector("[data-cloze-rationale]");
+    const clozeNotes = workbench.querySelector("[data-cloze-notes]");
     const cardTerm = workbench.querySelector("[data-card-term]");
     const cardDefinition = workbench.querySelector("[data-card-definition]");
     const modelLine = workbench.querySelector("[data-model-line]");
     const notes = workbench.querySelector("[data-language-notes]");
-    const builderFact = workbench.querySelector("[data-builder-fact]");
-    const builderRisk = workbench.querySelector("[data-builder-risk]");
-    const builderNext = workbench.querySelector("[data-builder-next]");
-    const builderPreview = workbench.querySelector("[data-builder-preview]");
     const progressItems = Array.from(workbench.querySelectorAll("[data-progress-item]"));
     const progressMeter = workbench.querySelector("[data-progress-meter]");
     const progressLabel = workbench.querySelector("[data-progress-label]");
@@ -280,15 +280,62 @@ function setupEfspIndustryPage() {
         cardDefinition.hidden = true;
     }
 
-    function renderBuilder() {
-        if (!builderPreview) {
-            return;
-        }
+    function renderCloze() {
         const module = modules[activeModule];
-        const fact = builderFact?.value.trim() || "the evidence is incomplete";
-        const risk = builderRisk?.value.trim() || module.pressure || "the decision may create avoidable risk";
-        const next = builderNext?.value.trim() || "confirm the owner and next step";
-        builderPreview.textContent = `I understand the urgency. Based on ${fact}, the risk is ${risk}. I recommend we ${next} before we commit.`;
+        const cloze = module.cloze || {};
+        const options = Array.isArray(cloze.options) ? cloze.options : [];
+        const turns = Array.isArray(cloze.turns) ? cloze.turns : [];
+        if (clozeTitle) {
+            clozeTitle.textContent = cloze.title || "Guided dialogue completion";
+        }
+        if (clozeSetting) {
+            clozeSetting.textContent = cloze.setting || module.scenario || "";
+        }
+        if (clozeLines) {
+            clozeLines.textContent = "";
+            turns.forEach((turn) => {
+                const row = document.createElement("div");
+                row.className = "efsp-dialogue-line";
+                const speaker = document.createElement("strong");
+                speaker.textContent = turn[0] || "Speaker";
+                const line = document.createElement("span");
+                line.textContent = turn[1] || "";
+                row.append(speaker, line);
+                clozeLines.append(row);
+            });
+        }
+        if (clozeOptions) {
+            clozeOptions.textContent = "";
+            options.forEach((option, index) => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = "efsp-choice-button";
+                button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+                button.addEventListener("click", () => {
+                    const correct = index === cloze.correct_index;
+                    clozeOptions.querySelectorAll("button").forEach((choice, choiceIndex) => {
+                        choice.dataset.state = choiceIndex === cloze.correct_index ? "correct" : choiceIndex === index ? "incorrect" : "";
+                        choice.setAttribute("aria-pressed", choiceIndex === index ? "true" : "false");
+                    });
+                    if (clozeFeedback) {
+                        clozeFeedback.textContent = correct
+                            ? `Correct. ${cloze.explanation || ""}`
+                            : `Not quite. The correct answer is ${String.fromCharCode(65 + cloze.correct_index)}. ${cloze.answer || ""}. ${cloze.explanation || ""}`;
+                    }
+                    if (clozeRationale) {
+                        clozeRationale.textContent = cloze.explanation || "";
+                    }
+                });
+                clozeOptions.append(button);
+            });
+        }
+        if (clozeFeedback) {
+            clozeFeedback.textContent = "";
+        }
+        if (clozeRationale) {
+            clozeRationale.textContent = "Choose an option to see the workplace rationale.";
+        }
+        renderList(clozeNotes, module.notes || []);
     }
 
     function renderProgress() {
@@ -309,18 +356,12 @@ function setupEfspIndustryPage() {
             focus.textContent = module.focus;
         }
         renderList(goals, module.goals || []);
-        if (scenario) {
-            scenario.textContent = `${module.scenario} Pressure: ${module.pressure}`;
-        }
         if (modelLine) {
             modelLine.textContent = module.model;
         }
         renderList(notes, module.notes || []);
-        if (feedback) {
-            feedback.textContent = "";
-        }
         renderModuleButtons();
-        renderBuilder();
+        renderCloze();
     }
 
     workbench.querySelectorAll("[data-action]").forEach((button) => {
@@ -333,28 +374,7 @@ function setupEfspIndustryPage() {
                 activeCard = (activeCard + 1) % Math.max(jargon.length, 1);
                 renderCard();
             }
-            if (action === "clear-response") {
-                if (response) {
-                    response.value = "";
-                }
-                if (feedback) {
-                    feedback.textContent = "";
-                }
-            }
-            if (action === "compare-response" && feedback) {
-                const module = modules[activeModule];
-                const answer = (response?.value || "").toLowerCase();
-                const matchedTerms = (module.terms || []).filter((term) => answer.includes(String(term).toLowerCase()));
-                const termText = matchedTerms.length ? `You used: ${matchedTerms.join(", ")}.` : "Try adding at least one field term from this module.";
-                feedback.textContent = `${termText} Model line: ${module.model}`;
-            }
         });
-    });
-
-    [builderFact, builderRisk, builderNext].forEach((input) => {
-        if (input) {
-            input.addEventListener("input", renderBuilder);
-        }
     });
 
     progressItems.forEach((item) => {

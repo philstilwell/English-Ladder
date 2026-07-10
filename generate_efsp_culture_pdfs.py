@@ -904,6 +904,51 @@ SCENARIOS = [
 ]
 
 
+def add_culture_cloze(story: list, scenario: dict, answer_key: list[dict[str, str]]) -> None:
+    story.append(h3("Guided dialogue completion"))
+    story.append(box("Situation", [scenario["context"]], "blue"))
+    story.append(
+        table(
+            [
+                ["Speaker", "Line"],
+                ["US colleague", scenario["colleague"]],
+                ["Manager", "I want the strongest objection. Challenge the ________, not the person."],
+            ],
+            [1.35 * inch, CONTENT_WIDTH - 1.35 * inch],
+        )
+    )
+    story.append(h3("Choose the missing language"))
+    story.append(
+        table(
+            [
+                ["Option", "Phrase"],
+                ["A", "manager"],
+                ["B", "plan"],
+                ["C", "hierarchy"],
+                ["D", "emotion"],
+            ],
+            [0.75 * inch, CONTENT_WIDTH - 0.75 * inch],
+        )
+    )
+    answer_key.append(
+        {
+            "title": scenario["title"],
+            "answer": "B. plan",
+            "explanation": "The manager keeps direct debate focused on the work. This preserves useful dissent while setting a clear boundary against personal attack.",
+        }
+    )
+
+
+def add_culture_answer_key(story: list, answer_key: list[dict[str, str]]) -> None:
+    if not answer_key:
+        return
+    story += h1("Answer Key and Rationale")
+    story.append(p("Check each answer after completing the dialogue. The rationale identifies the leadership principle behind the selected phrase."))
+    for entry in answer_key:
+        story.append(h2(entry["title"]))
+        story.append(table([["Correct answer", "Why it fits"], [entry["answer"], entry["explanation"]]], [2.0 * inch, CONTENT_WIDTH - 2.0 * inch]))
+
+
 def add_course_opening(story: list) -> None:
     story += h1("Purpose and Teaching Position")
     story.append(
@@ -1104,30 +1149,21 @@ def add_assessment(story: list) -> None:
     )
 
 
-def add_workbook_module_pages(story: list) -> None:
+def add_workbook_module_pages(story: list, answer_key: list[dict[str, str]]) -> None:
     story += h1("Module Practice Pages")
     story.append(
         p(
-            "Use these pages during class, coaching, or self-study. The goal is not to memorize perfect sentences. The goal is to build a repeatable leadership move: read the situation, name the business issue, choose the right level of directness, and preserve dignity."
+            "Use these pages during class, coaching, or self-study. Each activity is a bounded dialogue completion with four options and a rationale in the answer key."
         )
     )
-    for module, task in zip(MODULES, WORKBOOK_TASKS):
+    for index, module in enumerate(MODULES):
+        scenario = SCENARIOS[index % len(SCENARIOS)]
         story.append(PageBreak())
         story.append(h2(module["title"]))
         story.append(p(module["big_idea"]))
         story.append(h3("What you should be able to do"))
         story.append(bullets(module["objectives"]))
-        story.append(h3("Practice situation"))
-        story.append(box("Scenario", [task["scenario"]], "blue"))
-        story.append(h3("Your leadership moves"))
-        story.append(bullets(task["practice"], numbered=True))
-        story.append(lines(7))
-        story.append(h3("Reflection"))
-        story.append(p(task["reflection"]))
-        story.append(lines(4))
-        story.append(h3("Transfer to your branch"))
-        story.append(p("Where will you use this skill in the next two weeks?"))
-        story.append(lines(3))
+        add_culture_cloze(story, scenario, answer_key)
 
 
 def instructor_guide() -> Path:
@@ -1168,7 +1204,8 @@ def participant_workbook() -> Path:
         "What behavior from American employees feels most disrespectful to you?",
         "What behavior from you might American employees misunderstand?",
     ]))
-    story.append(lines(5))
+    story.append(p("Use the guided dialogue activities below. Every item has four choices and a rationale in the answer key; no open-ended writing is required."))
+    answer_key: list[dict[str, str]] = []
     story += h1("The Main Cultural Reframe")
     story.append(
         p(
@@ -1198,16 +1235,8 @@ def participant_workbook() -> Path:
             [1.1 * inch, 2.15 * inch, 3.8 * inch],
         )
     )
-    story.append(h2("Practice: build your ladder"))
-    story.append(p("Situation: A US colleague says your team's plan is too slow and asks you to skip a review step."))
-    story.append(p("Level 1 - clarify:"))
-    story.append(lines(2))
-    story.append(p("Level 2 - evidence:"))
-    story.append(lines(2))
-    story.append(p("Level 3 - consequence:"))
-    story.append(lines(2))
-    story.append(p("Level 4 - decision:"))
-    story.append(lines(2))
+    story.append(h2("Guided pushback completion"))
+    add_culture_cloze(story, SCENARIOS[3], answer_key)
     story += h1("Meeting Leadership Moves")
     story.append(h2("Open the meeting mode"))
     story.append(
@@ -1254,17 +1283,8 @@ def participant_workbook() -> Path:
         ["You need to be more proactive.", "When the customer changed the deadline, I needed you to alert the team the same day."],
         ["Your attitude is bad.", "In today's meeting you interrupted twice and said the plan was stupid. Challenge is welcome; personal wording is not."],
     ], [3.25 * inch, 3.75 * inch]))
-    story.append(h2("Planner"))
-    story.append(p("Behavior I observed:"))
-    story.append(lines(2))
-    story.append(p("Business impact:"))
-    story.append(lines(2))
-    story.append(p("Expectation from now on:"))
-    story.append(lines(2))
-    story.append(p("Support or resources I can provide:"))
-    story.append(lines(2))
-    story.append(p("Follow-up date or consequence:"))
-    story.append(lines(2))
+    story.append(h2("Guided feedback completion"))
+    add_culture_cloze(story, SCENARIOS[10], answer_key)
     story += h1("Cross-Border Translation")
     story.append(
         p(
@@ -1287,21 +1307,15 @@ def participant_workbook() -> Path:
         "Reset: 'In the next review, I will open with risks before we discuss dates.'",
         "Invite: 'What do you need from me so you can raise concerns early?'",
     ], numbered=True))
-    story.append(h2("My repair script"))
-    story.append(lines(8))
-    story += h1("Personal Action Plan")
-    story.append(p("Choose three behaviors to practice in the next 30 days. Make them visible and measurable."))
-    story.append(table([
-        ["Behavior", "Situation where I will use it", "How I will know it worked"],
-        ["", "", ""],
-        ["", "", ""],
-        ["", "", ""],
-    ], [2.1 * inch, 2.45 * inch, 2.45 * inch]))
-    add_workbook_module_pages(story)
+    story.append(h2("Guided repair completion"))
+    add_culture_cloze(story, SCENARIOS[16], answer_key)
+    add_workbook_module_pages(story, answer_key)
     story.append(h2("Phrase bank"))
     for title, phrases in PHRASE_BANK.items():
         story.append(h3(title))
         story.append(bullets(phrases))
+    story.append(PageBreak())
+    add_culture_answer_key(story, answer_key)
     return build_pdf(
         "efsp-cultural-leadership-in-us-branches-participant-workbook.pdf",
         "EFSP Cultural Leadership in US Branches - Participant Workbook",
@@ -1331,6 +1345,7 @@ def scenario_cards() -> Path:
     story.append(box("Facilitator guardrail", [
         "Do not reward aggression for its own sake. The target is calm authority, useful challenge, and relationship-safe directness."
     ], "amber"))
+    answer_key: list[dict[str, str]] = []
     for scenario in SCENARIOS:
         story.append(PageBreak())
         story.append(Paragraph(esc(scenario["title"]), S["CardTitle"]))
@@ -1350,8 +1365,9 @@ def scenario_cards() -> Path:
             "What phrase changed the emotional direction of the exchange?",
             "What should be documented or followed up after this situation?",
         ]))
-        story.append(h3("Replay line"))
-        story.append(lines(3))
+        add_culture_cloze(story, scenario, answer_key)
+    story.append(PageBreak())
+    add_culture_answer_key(story, answer_key)
     return build_pdf(
         "efsp-cultural-leadership-scenario-cards.pdf",
         "EFSP Cultural Leadership Scenario Cards",

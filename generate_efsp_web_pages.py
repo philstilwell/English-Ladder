@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 from typing import Any
 
+from generate_efsp_guarded_activities import make_dialogue_cloze, make_module_cloze
 from generate_efsp_industry_batch_pdfs import INDUSTRIES, pdf_name, term_definition
 
 
@@ -161,6 +162,18 @@ def normalize_standard_track(spec: dict[str, str]) -> dict[str, Any]:
                 "pressure": dialogue["dialogue"][0][1] if dialogue and dialogue.get("dialogue") else module.get("activities", [""])[0],
                 "model": model_line(dialogue),
                 "notes": dialogue.get("notes", []) if dialogue else module.get("concepts", [])[:2],
+                "cloze": make_dialogue_cloze(dialogue, terms)
+                if dialogue
+                else make_module_cloze(
+                    {
+                        "title": strip_module_number(module["title"]),
+                        "scenario": module.get("big_idea", ""),
+                        "pressure": module.get("activities", [""])[0],
+                        "terms": terms,
+                        "outputs": module.get("outputs", []),
+                    },
+                    module.get("outputs", []),
+                ),
             }
         )
     phrases = []
@@ -183,7 +196,9 @@ def normalize_culture_track() -> dict[str, Any]:
     mod = importlib.import_module("generate_efsp_culture_pdfs")
     modules = []
     jargon = []
-    for module in getattr(mod, "MODULES", []):
+    source_modules = getattr(mod, "MODULES", [])
+    all_outputs = [output for module in source_modules for output in module.get("outputs", [])]
+    for module in source_modules:
         terms = [concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]]
         for term, concept in zip(terms, module.get("concepts", [])[:4]):
             jargon.append({"term": term, "definition": concept, "group": strip_module_number(module["title"])})
@@ -199,6 +214,16 @@ def normalize_culture_track() -> dict[str, Any]:
                 "pressure": module.get("activities", [""])[0],
                 "model": "I hear the challenge. Let's test the idea directly, keep it about the work, and decide what evidence would change the plan.",
                 "notes": module.get("concepts", [])[:2],
+                "cloze": make_module_cloze(
+                    {
+                        "title": strip_module_number(module["title"]),
+                        "scenario": module.get("big_idea", ""),
+                        "pressure": module.get("activities", [""])[0],
+                        "terms": terms,
+                        "outputs": module.get("outputs", []),
+                    },
+                    all_outputs,
+                ),
             }
         )
     phrases = []
@@ -211,6 +236,7 @@ def normalize_culture_track() -> dict[str, Any]:
 def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
     modules = []
     jargon = []
+    all_outputs = [module["output"] for module in profile["modules"]]
     for module in profile["modules"]:
         for term in module["terms"]:
             jargon.append(
@@ -244,6 +270,7 @@ def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
                     "the owner, and the evidence standard before we commit."
                 ),
                 "notes": [module["constraint"], f"Output: {module['output']}"],
+                "cloze": make_module_cloze(module, all_outputs),
             }
         )
     return {
@@ -263,6 +290,27 @@ def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
             {"group": "Pushback", "phrase": "I understand the urgency. The risk is that we move faster than the evidence or process supports."},
             {"group": "Decision", "phrase": "If we accept this risk, we should name the owner, document the assumption, and define the trigger for escalation."},
             {"group": "Scope", "phrase": "That may be possible, but not under the current scope, timeline, or approval path."},
+        ],
+        "collocations": [
+            {"phrase": phrase, "use": use}
+            for phrase, use in profile.get("collocations", [])
+        ],
+        "extra_dialogues": [
+            {
+                "title": dialogue["title"],
+                "setting": dialogue["setting"],
+                "turns": [
+                    {"speaker": speaker, "line": line}
+                    for speaker, line in dialogue.get("turns", [])
+                ],
+                "coach_notes": dialogue.get("coach_notes", []),
+                "collocations": dialogue.get("collocations", []),
+            }
+            for dialogue in profile.get("dialogues", [])
+        ],
+        "nomenclature": [
+            {"category": category, "term": term, "meaning": meaning}
+            for category, term, meaning in profile.get("nomenclature", [])
         ],
     }
 
@@ -305,8 +353,102 @@ def render_module_summaries(track: dict[str, Any]) -> str:
     return "\n".join(items)
 
 
+def render_practical_expansion(track: dict[str, Any]) -> str:
+    collocations = track.get("collocations", [])
+    dialogues = track.get("extra_dialogues", [])
+    nomenclature = track.get("nomenclature", [])
+    if not (collocations or dialogues or nomenclature):
+        return ""
+
+    collocation_html = ""
+    if collocations:
+        collocation_html = "\n".join(
+            f"""<li>
+<strong>{e(item['phrase'])}</strong>
+<span>{e(item['use'])}</span>
+</li>"""
+            for item in collocations
+        )
+        collocation_html = f"""<article class="efsp-expansion-panel">
+<h3>Collocation rehearsal</h3>
+<p>Practice these as complete field moves: say the phrase, name the evidence it requires, then add the owner and next action.</p>
+<ul class="efsp-collocation-list">
+{collocation_html}
+</ul>
+</article>"""
+
+    dialogue_html = ""
+    if dialogues:
+        dialogue_items = []
+        for dialogue in dialogues:
+            turns = "\n".join(
+                f"""<div class="efsp-dialogue-turn">
+<strong>{e(turn['speaker'])}</strong>
+<span>{e(turn['line'])}</span>
+</div>"""
+                for turn in dialogue["turns"]
+            )
+            targets = ", ".join(dialogue.get("collocations", []))
+            dialogue_items.append(
+                f"""<details class="efsp-dialogue-preview">
+<summary>{e(dialogue['title'])}</summary>
+<p>{e(dialogue['setting'])}</p>
+<div class="efsp-dialogue-turns">
+{turns}
+</div>
+<p class="efsp-target-line">Target collocations: {e(targets)}</p>
+</details>"""
+            )
+        dialogue_html = f"""<article class="efsp-expansion-panel">
+<h3>Dialogue rehearsal</h3>
+<p>Open a situation, assign roles, then replace one technical fact with a similar issue from the learner's workplace.</p>
+{''.join(dialogue_items)}
+</article>"""
+
+    nomenclature_html = ""
+    if nomenclature:
+        by_category: dict[str, list[dict[str, str]]] = {}
+        for item in nomenclature:
+            by_category.setdefault(item["category"], []).append(item)
+        category_blocks = []
+        for category, items in by_category.items():
+            rows = "\n".join(
+                f"""<tr>
+<th scope="row">{e(item['term'])}</th>
+<td>{e(item['meaning'])}</td>
+</tr>"""
+                for item in items
+            )
+            category_blocks.append(
+                f"""<details class="efsp-nomenclature-group">
+<summary>{e(category)} <span>{len(items)} terms</span></summary>
+<table class="efsp-nomenclature-table">
+<tbody>
+{rows}
+</tbody>
+</table>
+</details>"""
+            )
+        nomenclature_html = f"""<article class="efsp-expansion-panel">
+<h3>Specialized nomenclature</h3>
+<p>Use the categories for sorting practice: term, plain-English meaning, business risk, and where the term appears in a real meeting.</p>
+{''.join(category_blocks)}
+</article>"""
+
+    return f"""<section class="efsp-section efsp-practical-expansion">
+<p class="eyebrow">Practical Language Expansion</p>
+<h2>Collocations, dialogues, and specialized nomenclature</h2>
+<div class="efsp-expansion-grid">
+{collocation_html}
+{dialogue_html}
+{nomenclature_html}
+</div>
+</section>"""
+
+
 def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) -> str:
     module_summaries = render_module_summaries(track)
+    practical_expansion = render_practical_expansion(track)
     student_pdf = participant_workbook_href(track["pdfs"])
     related = [item for item in tracks if item["slug"] != track["slug"]][:6]
     related_links = "\n".join(
@@ -318,6 +460,9 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
         "jargon": track["jargon"],
         "phrases": track["phrases"],
     }
+    for key in ["collocations", "extra_dialogues", "nomenclature"]:
+        if track.get(key):
+            page_data[key] = track[key]
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -342,7 +487,7 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <p>{e(track['summary'])}</p>
 <ul class="efsp-stat-list">
 <li>{len(track['modules'])} modules</li>
-<li>{len(track['jargon'])} field terms</li>
+<li>{len(track['jargon']) + len(track.get('nomenclature', []))} field terms</li>
 <li>Interactive practice</li>
 </ul>
 </div>
@@ -362,8 +507,8 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <section class="efsp-workbench" data-efsp-workbench>
 <div class="efsp-workbench-copy">
 <p class="eyebrow">Web Practice Lab</p>
-<h2>Practice the decisions, not only the vocabulary</h2>
-<p>Use the activities below to rehearse how a professional in this field clarifies risk, pushes back, and turns pressure into a concrete next step.</p>
+<h2>Complete the dialogue, then test the decision</h2>
+<p>Use the guided activities below to choose the precise language a professional uses to clarify risk, protect the process, and move to a concrete next step.</p>
 </div>
 <div class="efsp-module-picker" data-module-buttons></div>
 <div class="efsp-practice-layout">
@@ -374,16 +519,13 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <ul data-module-goals></ul>
 </article>
 <article class="efsp-practice-panel">
-<p class="eyebrow">Scenario Coach</p>
-<h3>Respond under pressure</h3>
-<p class="efsp-scenario-text" data-scenario-text></p>
-<label class="efsp-field-label" for="scenario-response">Your professional response</label>
-<textarea id="scenario-response" data-response-input rows="5"></textarea>
-<div class="efsp-tool-row">
-<button type="button" class="efsp-tool-button" data-action="compare-response">Compare</button>
-<button type="button" class="efsp-tool-button efsp-tool-button-secondary" data-action="clear-response">Clear</button>
-</div>
-<div class="efsp-feedback" data-response-feedback></div>
+<p class="eyebrow">Guided Dialogue</p>
+<h3 data-cloze-title></h3>
+<p class="efsp-scenario-text" data-cloze-setting></p>
+<div class="efsp-dialogue-lines" data-cloze-lines></div>
+<p class="efsp-field-label">Choose the missing language</p>
+<div class="efsp-choice-grid" data-cloze-options></div>
+<div class="efsp-feedback" data-cloze-feedback></div>
 </article>
 <article class="efsp-practice-panel">
 <p class="eyebrow">Jargon Flashcard</p>
@@ -395,15 +537,10 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 </div>
 </article>
 <article class="efsp-practice-panel">
-<p class="eyebrow">Pushback Builder</p>
-<h3>Build a four-step response</h3>
-<label class="efsp-field-label" for="pushback-fact">Evidence or fact</label>
-<input id="pushback-fact" data-builder-fact type="text">
-<label class="efsp-field-label" for="pushback-risk">Risk or consequence</label>
-<input id="pushback-risk" data-builder-risk type="text">
-<label class="efsp-field-label" for="pushback-next">Decision or next step</label>
-<input id="pushback-next" data-builder-next type="text">
-<div class="efsp-builder-preview" data-builder-preview></div>
+<p class="eyebrow">Answer Rationale</p>
+<h3>Why the strongest phrase fits</h3>
+<p data-cloze-rationale>Choose an option to see the workplace rationale.</p>
+<ul data-cloze-notes></ul>
 </article>
 <article class="efsp-practice-panel">
 <p class="eyebrow">Dialogue Coach</p>
@@ -439,7 +576,7 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 {module_summaries}
 </div>
 </section>
-
+{practical_expansion}
 <section class="efsp-section">
 <p class="eyebrow">More EFSP Tracks</p>
 <h2>Related pages</h2>

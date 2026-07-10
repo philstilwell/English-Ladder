@@ -88,6 +88,30 @@ class UpdateSiteTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "YYYY-MM-DD"):
             update_site.release_datetime_from_date("2026-7-9")
 
+    def test_archive_path_for_release_dt_uses_release_date(self):
+        release_dt = datetime(2026, 7, 9, 10, 0, tzinfo=timezone.utc)
+
+        archive_path = update_site.archive_path_for_release_dt(
+            release_dt,
+            archive_dir=Path("custom-archive"),
+        )
+
+        self.assertEqual(Path("custom-archive") / "2026-07-09.json", archive_path)
+
+    def test_archive_exists_for_release_dt_checks_archive_file(self):
+        release_dt = datetime(2026, 7, 9, 10, 0, tzinfo=timezone.utc)
+
+        with tempfile.TemporaryDirectory() as temp_dir:
+            archive_dir = Path(temp_dir)
+            self.assertFalse(update_site.archive_exists_for_release_dt(release_dt, archive_dir))
+
+            update_site.archive_path_for_release_dt(release_dt, archive_dir).write_text(
+                "{}",
+                encoding="utf-8",
+            )
+
+            self.assertTrue(update_site.archive_exists_for_release_dt(release_dt, archive_dir))
+
     def test_update_level_page_replaces_same_day_lesson(self):
         page_html = """<!DOCTYPE html><html><body><div id="lesson-container"></div></body></html>"""
         release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)

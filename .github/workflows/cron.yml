@@ -13,8 +13,11 @@ on:
       - 'app.js'
       - 'index.html'
   schedule:
-    # Runs every day at 10:00 UTC
+    # Primary daily run at 10:00 UTC, with later no-op fallbacks if the
+    # GitHub-hosted runner pool fails before the job starts.
     - cron: '0 10 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
       release_date:
@@ -79,10 +82,14 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
+          SKIP_EXISTING: ${{ github.event_name == 'schedule' && '1' || '' }}
         run: |
           args=()
           if [ -n "${RELEASE_DATE}" ]; then
             args+=(--release-date "${RELEASE_DATE}")
+          fi
+          if [ -n "${SKIP_EXISTING}" ]; then
+            args+=(--skip-existing)
           fi
           python update_site.py "${args[@]}"
 

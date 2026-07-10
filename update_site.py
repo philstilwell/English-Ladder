@@ -419,6 +419,14 @@ def lesson_key_from_release_dt(release_dt):
     return release_dt.astimezone(timezone.utc).date().isoformat()
 
 
+def archive_path_for_release_dt(release_dt, archive_dir=ARCHIVE_DIR):
+    return Path(archive_dir) / f"{lesson_key_from_release_dt(release_dt)}.json"
+
+
+def archive_exists_for_release_dt(release_dt, archive_dir=ARCHIVE_DIR):
+    return archive_path_for_release_dt(release_dt, archive_dir=archive_dir).exists()
+
+
 def release_iso_from_datetime(release_dt):
     return (
         release_dt.astimezone(timezone.utc)
@@ -951,7 +959,7 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
         "levels": archived_levels,
     }
 
-    archive_path = archive_dir / f"{release_date}.json"
+    archive_path = archive_path_for_release_dt(release_dt, archive_dir=archive_dir)
     with archive_path.open("w", encoding="utf-8") as file:
         json.dump(archive_data, file, ensure_ascii=False, indent=2)
         file.write("\n")
@@ -1026,6 +1034,11 @@ def parse_args():
             "format. The release time is 10:00 UTC."
         ),
     )
+    parser.add_argument(
+        "--skip-existing",
+        action="store_true",
+        help="Exit without generating if the release date already has a JSON archive.",
+    )
     return parser.parse_args()
 
 
@@ -1035,14 +1048,20 @@ def main():
         refresh_existing_pages()
         return
 
-    print("Fetching news...")
-    news_item = get_daily_news()
-    client = configure_gemini()
     if args.release_date:
         release_dt = release_datetime_from_date(args.release_date)
         print(f"Using explicit release date {args.release_date}.")
     else:
         release_dt = datetime.now(timezone.utc)
+
+    if args.skip_existing and archive_exists_for_release_dt(release_dt):
+        archive_path = archive_path_for_release_dt(release_dt)
+        print(f"Archive {archive_path} already exists; skipping lesson generation.")
+        return
+
+    print("Fetching news...")
+    news_item = get_daily_news()
+    client = configure_gemini()
 
     try:
         level_lessons = {}

@@ -40,7 +40,7 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 ## Automation
 
 - `.github/workflows/cron.yml`
-  Runs the daily automation at `10:00 UTC`, supports manual runs with `workflow_dispatch`, installs pinned dependencies, and runs the test suite before publishing lesson updates.
+  Runs the daily automation at `10:00 UTC`, with no-op fallback attempts at `13:00 UTC` and `16:00 UTC` in case GitHub does not assign a hosted runner. It supports manual runs with `workflow_dispatch`, installs pinned dependencies, and runs the test suite before publishing lesson updates.
 
 - `update_site.py`
   Fetches the top BBC World News RSS item over HTTPS, requests structured JSON lesson data from Gemini, renders the HTML locally, sanitizes existing lesson markup, and updates the three rolling archive pages.
@@ -63,6 +63,8 @@ Each level keeps a rolling 7-day archive. Every daily run uses the same news sto
 5. The validated structured lesson data for all three levels is written to `archive/lessons/YYYY-MM-DD.json`.
 6. Older lessons beyond the newest 7 are removed from the live lesson pages automatically.
 7. GitHub Actions commits the updated lesson pages and JSON archive files back to the repository.
+
+Scheduled fallback runs use `--skip-existing`, so if the primary run already created that date's JSON archive, the fallback exits before calling Gemini and only continues through the live Pages verification.
 
 ## Local Run
 

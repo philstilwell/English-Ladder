@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "release_date": "2026-07-10",
-  "release_iso": "2026-07-10T18:02:07Z",
+  "release_iso": "2026-07-10T18:36:49Z",
   "model": "gemini-2.5-flash",
   "source": {
     "name": "BBC World News RSS",
@@ -16,192 +16,192 @@
       "cefr": "A1-A2",
       "file_path": "beginner.html",
       "lesson": {
-        "title": "Wildfire in Spain: Sad News from Southern Almería",
-        "overview": "A terrible wildfire in southern Spain has caused many deaths and left people missing.",
-        "topic": "Natural Disasters and Community Impact: Understanding Wildfires",
+        "title": "Wildfire in Spain: Sad News from Los Gallardos",
+        "overview": "A big fire in southern Spain caused many deaths and some people are still missing.",
+        "topic": "Wildfire disaster in southern Spain",
         "news_brief_sentences": [
-          "A wildfire started in southern Spain.",
-          "The fire was near Los Gallardos in Almería.",
-          "It was a very big and dangerous fire.",
-          "Sadly, at least 12 people died because of the fire.",
-          "Also, 23 people are still missing.",
+          "There was a big wildfire in southern Spain.",
+          "This fire happened near Los Gallardos.",
+          "Los Gallardos is a place in Almería.",
+          "At least 12 people are dead because of the fire.",
+          "Also, 23 people are missing.",
           "A local official spoke about the fire.",
           "He said some victims might be British.",
-          "Four of the people who died may be from Britain.",
-          "The fire caused much sadness and worry in the area.",
-          "Authorities are working to find the missing people and help everyone."
+          "Four of the victims may be from Britain.",
+          "The fire broke out suddenly.",
+          "It is a very sad situation for everyone."
         ],
         "vocabulary": [
           {
             "term": "wildfire",
             "part_of_speech": "noun",
-            "definition": "A large, uncontrolled fire that burns in a natural area, like a forest or a field."
+            "definition": "A large, uncontrolled fire in a natural area like a forest."
           },
           {
-            "term": "died",
-            "part_of_speech": "verb (past tense)",
-            "definition": "Stopped living; passed away. This word describes when a living thing stops its life."
+            "term": "dead",
+            "part_of_speech": "adjective",
+            "definition": "Not alive anymore; passed away."
           },
           {
             "term": "missing",
             "part_of_speech": "adjective",
-            "definition": "Not able to be found; people do not know where someone or something is."
+            "definition": "Not found; people do not know where they are."
           },
           {
-            "term": "local official",
-            "part_of_speech": "noun phrase",
-            "definition": "A person who works for the government in a specific, small area, like a town or city."
+            "term": "broke out",
+            "part_of_speech": "verb phrase",
+            "definition": "Started suddenly and violently."
           },
           {
-            "term": "victims",
-            "part_of_speech": "noun",
-            "definition": "People who are hurt, killed, or suffer because of an accident, crime, or natural disaster."
+            "term": "sad",
+            "part_of_speech": "adjective",
+            "definition": "Feeling unhappy or showing sorrow."
           }
         ],
         "grammar": {
           "concept": "Simple Past Tense",
-          "explanation": "We use the simple past tense to talk about actions that finished in the past. It tells us something happened and is now complete. Many regular verbs add '-ed' to the base form, but some verbs are irregular.",
-          "example_quote": "A wildfire started in southern Spain."
+          "explanation": "We use the simple past tense to talk about actions or events that finished in the past. It describes things that already happened.",
+          "example_quote": "The fire broke out suddenly."
         },
         "quiz": [
           {
             "question": "Where did the wildfire happen?",
             "options": [
-              "In northern Spain",
-              "In southern Spain",
-              "In central Spain"
+              "Northern Spain",
+              "Southern Spain",
+              "Western Spain"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, the news says the fire was in southern Spain.",
-              "That's right! The wildfire broke out in southern Spain, near Almería.",
-              "No, the report specifies the southern part of Spain."
+              "No, the news says it was in southern Spain.",
+              "Yes, the wildfire was in southern Spain.",
+              "No, the news says it was in southern Spain."
             ]
           },
           {
-            "question": "How many people died in the fire?",
+            "question": "What is a \"wildfire\"?",
             "options": [
-              "10 people",
-              "12 people",
-              "23 people"
+              "A small kitchen fire",
+              "A big fire in nature",
+              "A fire in a city building"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The news brief states a different number of deaths.",
-              "Correct! Sadly, at least 12 people died because of the fire.",
-              "23 people are missing, not the number of deaths."
+              "No, a wildfire is usually much larger and in natural areas.",
+              "Yes, a wildfire is a large, uncontrolled fire in a natural area.",
+              "No, wildfires happen in natural areas, not usually in city buildings."
             ]
           },
           {
-            "question": "How many people are still missing?",
+            "question": "How many people are reported dead?",
             "options": [
-              "12 people",
-              "20 people",
-              "23 people"
+              "At least 12",
+              "Exactly 23",
+              "Only 4"
             ],
-            "correct_option_index": 2,
+            "correct_option_index": 0,
             "option_feedback": [
-              "12 people died, but a different number are missing.",
-              "This is not the correct number of missing people reported.",
-              "Exactly! The news brief says 23 people are still missing."
+              "Yes, at least 12 people are reported dead.",
+              "No, 23 people are missing, not dead.",
+              "No, 4 people might be British, not the total dead."
             ]
           },
           {
-            "question": "What does the word \"wildfire\" mean?",
-            "options": [
-              "A small camp fire",
-              "A big, uncontrolled fire in nature",
-              "A fire inside a house"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "A wildfire is much larger and more dangerous than a small camp fire.",
-              "Yes, a wildfire is a large, uncontrolled fire that burns in forests or natural areas.",
-              "Wildfires happen outside in nature, not typically inside houses."
-            ]
-          },
-          {
-            "question": "If someone is \"missing\", what does it mean?",
+            "question": "What does \"missing\" mean in this news?",
             "options": [
               "They are found",
-              "People do not know where they are",
+              "People don't know where they are",
               "They are at home"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, if someone is found, they are no longer missing.",
-              "That's correct! When someone is missing, people don't know their location.",
-              "Being missing means their whereabouts are unknown, so they are not necessarily at home."
+              "No, 'missing' means they are not found.",
+              "Yes, if someone is missing, people do not know where they are.",
+              "No, if they are missing, they are not at home."
             ]
           },
           {
-            "question": "Who is a \"local official\"?",
+            "question": "Where did the fire start?",
             "options": [
-              "A visitor from another country",
-              "A person who works for the government in a local area",
-              "A person who sells food"
+              "Near Madrid",
+              "Near Los Gallardos",
+              "Near London"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "A local official works for the government, not necessarily a visitor.",
-              "Correct! A local official is someone with a government job in a specific region or town.",
-              "While they might live locally, their job is with the government, not typically selling food."
+              "No, the news mentions Los Gallardos in Almería.",
+              "Yes, the fire broke out near Los Gallardos.",
+              "No, the fire was in Spain, not London."
             ]
           },
           {
-            "question": "Who are \"victims\" in this news story?",
+            "question": "What does \"broke out\" mean?",
             "options": [
-              "People who started the fire",
-              "People who helped others",
-              "People who were hurt or died in the fire"
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "Victims are those who suffered from the event, not those who caused it.",
-              "Helpers are heroes, not victims. Victims are the ones affected negatively.",
-              "You got it! Victims are the people who suffered harm or death because of the wildfire."
-            ]
-          },
-          {
-            "question": "Which word from the news brief is in the simple past tense?",
-            "options": [
-              "started",
-              "is",
-              "helping"
-            ],
-            "correct_option_index": 0,
-            "option_feedback": [
-              "That's right! 'Started' shows an action that happened in the past.",
-              "'Is' is in the simple present tense, not past.",
-              "'Helping' is a present participle, not the simple past tense."
-            ]
-          },
-          {
-            "question": "Why do we use \"died\" (simple past) in \"12 people died\"?",
-            "options": [
-              "The action is happening now",
-              "The action will happen soon",
-              "The action finished in the past"
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "No, 'died' tells us the action is already complete.",
-              "This is not correct. 'Died' refers to an event that has already occurred.",
-              "Yes! We use the simple past tense like 'died' to talk about actions that are complete and in the past."
-            ]
-          },
-          {
-            "question": "What did the local official say about some victims?",
-            "options": [
-              "They might be tourists",
-              "They might be British",
-              "They are all Spanish"
+              "Ended slowly",
+              "Started suddenly",
+              "Went out"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The official specifically mentioned a nationality, not just 'tourists'.",
-              "That's correct! The local official said some of the victims might be British.",
-              "The official suggested some victims might be British, implying not all are Spanish."
+              "No, 'broke out' means it started, not ended.",
+              "Yes, 'broke out' means the fire started suddenly.",
+              "No, 'went out' means the fire stopped, but 'broke out' means it began."
+            ]
+          },
+          {
+            "question": "How many people are missing?",
+            "options": [
+              "12",
+              "23",
+              "4"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 12 people are dead, not missing.",
+              "Yes, 23 people are missing.",
+              "No, 4 people might be British, not the total missing."
+            ]
+          },
+          {
+            "question": "The sentence \"The fire broke out suddenly\" uses which grammar tense?",
+            "options": [
+              "Present Simple",
+              "Future Simple",
+              "Past Simple"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'broke out' talks about an event that finished in the past.",
+              "No, this sentence is not about the future.",
+              "Yes, 'broke out' is the past simple form of 'break out', showing a past action."
+            ]
+          },
+          {
+            "question": "What word describes the situation when people feel unhappy about many deaths?",
+            "options": [
+              "Happy",
+              "Excited",
+              "Sad"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, happy is the opposite of how people feel about this event.",
+              "No, excited is not the right feeling for this news.",
+              "Yes, 'sad' describes feeling unhappy, which is correct for this situation."
+            ]
+          },
+          {
+            "question": "Who might some of the victims be, according to a local official?",
+            "options": [
+              "Spanish",
+              "British",
+              "French"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The official mentioned British victims, not necessarily Spanish for this specific detail.",
+              "Yes, the local official said four of the victims may be British.",
+              "No, the news mentioned British victims, not French."
             ]
           }
         ]
@@ -212,192 +212,192 @@
       "cefr": "B1-B2",
       "file_path": "intermediate.html",
       "lesson": {
-        "title": "Southern Spain Wildfire: Devastating Casualties and Ongoing Search",
-        "overview": "A wildfire in southern Spain has tragically resulted in at least twelve deaths and left twenty-three people missing, with some victims potentially being British nationals.",
-        "topic": "Wildfire disaster and its human impact in Southern Spain",
+        "title": "Wildfire Tragedy in Southern Spain: Victims and Missing Persons Reported",
+        "overview": "A devastating wildfire in southern Spain has resulted in at least 12 fatalities and 23 people reported missing, with four of the victims potentially being British.",
+        "topic": "Natural Disasters and Public Safety: Wildfire Incident in Spain",
         "news_brief_sentences": [
-          "A devastating wildfire has swept through a region in southern Spain, causing significant loss of life.",
-          "The tragic incident occurred near Los Gallardos, a town located in the province of Almería.",
-          "Authorities have confirmed that at least twelve people are now reported as dead due to the inferno.",
-          "Additionally, search efforts are underway for twenty-three individuals who are currently missing.",
-          "The fire, which broke out suddenly, spread rapidly through the dry landscape.",
-          "Strong winds contributed to the quick expansion of the blaze, making containment extremely difficult.",
-          "A local official said four of the victims may be British nationals.",
-          "This wildfire represents a major crisis for the region, triggering extensive emergency operations.",
-          "Emergency services, including firefighters and police, are working tirelessly in the affected zones.",
-          "The community is profoundly affected by the catastrophe, and efforts are focused on support and recovery."
+          "A large wildfire recently broke out near Los Gallardos in Almería, a region in southern Spain.",
+          "This tragic incident has led to a significant loss of life and a high number of missing persons.",
+          "Authorities have confirmed that at least twelve people are dead as a direct consequence of the fire.",
+          "Furthermore, a considerable number, specifically twenty-three individuals, have been reported missing since the blaze began.",
+          "A local official indicated that four of the victims who perished might be British nationals.",
+          "The fire broke out unexpectedly, causing widespread concern among residents and holidaymakers.",
+          "Emergency services are working tirelessly to locate the missing and to manage the ongoing crisis.",
+          "Investigations will likely determine the exact cause of the fire and assess the full extent of the damage.",
+          "The community is deeply affected by the tragic events, hoping for news about the missing individuals.",
+          "This disaster underscores the dangers of wildfires, especially in dry, warm climates like southern Spain."
         ],
         "vocabulary": [
           {
-            "term": "wildfire",
-            "part_of_speech": "noun",
-            "definition": "A large, uncontrolled fire that spreads quickly through a natural area like a forest or bushland."
-          },
-          {
-            "term": "missing",
-            "part_of_speech": "adjective",
-            "definition": "Not able to be found; gone and not present in a place or situation."
-          },
-          {
             "term": "broke out",
-            "part_of_speech": "phrasal verb",
-            "definition": "Started suddenly, often referring to a fire, war, or disease."
+            "part_of_speech": "verb phrase",
+            "definition": "Started suddenly and often violently, usually referring to a fire, war, or disease."
           },
           {
-            "term": "victims",
-            "part_of_speech": "noun",
-            "definition": "People who have been hurt, killed, or suffered as a result of a crime, accident, or other event."
-          },
-          {
-            "term": "local official",
+            "term": "tragic incident",
             "part_of_speech": "noun phrase",
-            "definition": "A person who holds an elected or appointed position in the government of a city, town, or small region."
+            "definition": "A very sad, unfortunate, or terrible event that causes suffering or distress."
+          },
+          {
+            "term": "perished",
+            "part_of_speech": "verb",
+            "definition": "Died, especially in a sudden, violent, or unexpected way, often referring to a disaster."
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "Emphasizes or highlights the importance or truth of something, drawing attention to it."
+          },
+          {
+            "term": "ongoing crisis",
+            "part_of_speech": "noun phrase",
+            "definition": "A serious and difficult situation or period of danger that is currently happening and continuing."
           }
         ],
         "grammar": {
-          "concept": "Reporting Verbs",
-          "explanation": "Reporting verbs are used to convey what someone else has said, thought, or felt. They allow us to share information without directly quoting every word. Common reporting verbs include 'said', 'told', 'stated', 'reported', or 'suggested'. Often, 'that' is used to introduce the reported clause, but it can sometimes be omitted.",
-          "example_quote": "A local official said four of the victims may be British nationals."
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the performer of the action. It's often used when the agent is unknown, unimportant, or obvious, or when describing unfortunate events. We form it with a form of 'to be' followed by a past participle verb.",
+          "example_quote": "specifically twenty-three individuals, have been reported missing since the blaze began."
         },
         "quiz": [
           {
-            "question": "What is the primary topic of the news brief?",
+            "question": "What kind of disaster occurred in southern Spain, according to the news brief?",
             "options": [
-              "A devastating wildfire in southern Spain",
-              "A search for missing British tourists",
-              "New fire safety regulations in Almería"
+              "A wildfire",
+              "A flood",
+              "An earthquake"
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "Correct! The central theme of the news brief is the devastating wildfire and its human impact.",
-              "While some victims may be British, the core focus is on the wildfire itself, not solely British tourists.",
-              "The brief discusses a disaster, not new regulations; emergency responses are mentioned."
+              "Correct: The news brief clearly states a wildfire broke out in the region.",
+              "Incorrect: The news brief focuses on a wildfire, not a flood.",
+              "Incorrect: There is no mention of an earthquake in the news report."
             ]
           },
           {
-            "question": "How many people are reported as dead due to the wildfire?",
+            "question": "How many people are confirmed dead in the incident?",
             "options": [
-              "Exactly 23 people",
-              "At least 12 people",
-              "Around 4 British nationals"
+              "23",
+              "12",
+              "4"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Twenty-three is the number of missing people, not the confirmed deaths.",
-              "That's right, the news brief clearly states that at least twelve people have died.",
-              "Four is the number of potential British victims, not the total confirmed dead."
+              "Incorrect: 23 individuals were reported missing, not dead.",
+              "Correct: The authorities confirmed that at least twelve people are dead.",
+              "Incorrect: Four victims might be British, but this is not the total death count."
             ]
           },
           {
-            "question": "In the context of the news, what does it mean if someone is 'missing'?",
+            "question": "What does the term 'broke out' mean in the context of the news brief?",
             "options": [
-              "They have lost all their belongings",
-              "Their current location is unknown",
-              "They are confirmed to be injured"
+              "Stopped suddenly",
+              "Started suddenly",
+              "Spread slowly"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The brief doesn't mention lost possessions; 'missing' refers to people whose whereabouts are unknown.",
-              "Correct! 'Missing' means that people are gone and their current location cannot be determined.",
-              "While some might be injured, 'missing' specifically means they haven't been located yet."
+              "Incorrect: 'Broke out' means something started, not stopped.",
+              "Correct: When a fire 'breaks out,' it means it started suddenly.",
+              "Incorrect: The term implies a sudden beginning, not a slow spread."
             ]
           },
           {
-            "question": "According to the brief, where did the tragic fire 'broke out'?",
+            "question": "Which nationality might some of the victims who perished be?",
             "options": [
-              "In the city center of Almería",
-              "Near Los Gallardos in Almería province",
-              "In a remote, unpopulated forest"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Almería is the province; more specifically, the fire started near Los Gallardos.",
-              "Precisely! The news brief mentions the fire broke out near Los Gallardos, a town in Almería.",
-              "The brief states it was near Los Gallardos, indicating it was close to a populated area."
-            ]
-          },
-          {
-            "question": "What factors contributed to the wildfire's rapid spread?",
-            "options": [
-              "Heavy rain and cool temperatures",
-              "Dry conditions and strong winds",
-              "Intentional human actions"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "On the contrary, the brief mentions dry conditions and strong winds, which would worsen a fire.",
-              "That's correct! Dry conditions and strong winds are explicitly mentioned as factors in the fire's rapid expansion.",
-              "The brief does not provide information about intentional actions; it mentions natural factors like wind and dryness."
-            ]
-          },
-          {
-            "question": "Who made the statement about some of the 'victims' potentially being British nationals?",
-            "options": [
-              "The national government spokesperson",
-              "A local official",
-              "An eyewitness from the community"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "The brief specifies a 'local official' made this particular statement, not a national spokesperson.",
-              "Correct! A local official provided this information in the news brief.",
-              "While there may be eyewitnesses, the brief attributes this specific report to a local official."
-            ]
-          },
-          {
-            "question": "In the sentence 'A local official said four of the victims may be British nationals,' what is the grammatical function of the word 'said'?",
-            "options": [
-              "It describes a direct command",
-              "It is a reporting verb",
-              "It functions as an auxiliary verb"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "No, 'said' is used to report a statement, not to give a direct command.",
-              "Exactly! 'Said' is a reporting verb used to convey what a local official communicated.",
-              "While 'said' is a verb, its specific role here is to report speech, not to help form a tense."
-            ]
-          },
-          {
-            "question": "According to the news brief, what does this 'wildfire' represent for the region?",
-            "options": [
-              "A minor environmental issue",
-              "A significant tourist attraction",
-              "A major crisis"
+              "Spanish",
+              "French",
+              "British"
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The devastation and casualties clearly indicate it is far more than a minor issue.",
-              "A wildfire causing deaths and missing people is a disaster, not a tourist attraction.",
-              "You are right! The news brief describes the wildfire as a major crisis for the region, prompting extensive operations."
+              "Incorrect: While the fire is in Spain, the specific nationality mentioned for some victims is not Spanish.",
+              "Incorrect: The report does not mention any French victims.",
+              "Correct: A local official indicated that four of the victims who perished might be British nationals."
             ]
           },
           {
-            "question": "What is the definition of 'victims' as used in the news brief about the wildfire?",
+            "question": "What is the meaning of 'underscores' as used in the news brief?",
             "options": [
-              "People who actively fought against the fire",
-              "People who have suffered harm, injury, or death",
-              "People who provided emergency medical assistance"
+              "Hides",
+              "Emphasizes",
+              "Ignores"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Firefighters and volunteers helped, but 'victims' refers to those who suffered harm, not those who fought the fire.",
-              "That's correct! Victims are individuals who have been negatively affected, in this case, by injury or death from the fire.",
-              "Medical personnel provide assistance; 'victims' are those who receive the assistance due to harm."
+              "Incorrect: 'Underscores' means to highlight, not to hide.",
+              "Correct: 'Underscores' means to emphasize or highlight the importance of something.",
+              "Incorrect: The word suggests importance, not ignoring."
             ]
           },
           {
-            "question": "Which of the following describes the immediate focus of emergency services as mentioned in the brief?",
+            "question": "How many individuals have been reported missing since the blaze began?",
             "options": [
-              "Long-term recovery planning",
-              "Determining the financial cost of the damage",
-              "Working tirelessly in the affected zones"
+              "10",
+              "12",
+              "23"
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "While recovery is important, the brief highlights their immediate, tireless work in affected zones.",
-              "Financial assessments usually come later; the immediate focus is on the human impact and containment.",
-              "Correct! The brief states that emergency services are working tirelessly in the affected zones to respond to the disaster."
+              "Incorrect: The news brief states 23 individuals are missing.",
+              "Incorrect: 12 people are confirmed dead, not missing.",
+              "Correct: The news brief explicitly states that twenty-three individuals have been reported missing."
+            ]
+          },
+          {
+            "question": "In the passive voice, what is the typical grammatical structure used?",
+            "options": [
+              "Subject + verb + object",
+              "Subject + 'to be' + past participle",
+              "Verb + object + subject"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: This describes an active voice structure.",
+              "Correct: The passive voice is formed with a form of the verb 'to be' followed by the past participle.",
+              "Incorrect: This is not a standard grammatical structure for the passive voice."
+            ]
+          },
+          {
+            "question": "What does 'tragic incident' refer to in the context of the lesson?",
+            "options": [
+              "A happy event",
+              "A terrible accident",
+              "A planned celebration"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Tragic' means very sad or unfortunate.",
+              "Correct: A 'tragic incident' describes a very sad or terrible event, such as a wildfire with fatalities.",
+              "Incorrect: The word 'tragic' clearly indicates a negative event."
+            ]
+          },
+          {
+            "question": "Which part of Spain did the wildfire occur in?",
+            "options": [
+              "Northern Spain",
+              "Central Spain",
+              "Southern Spain"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The report specifies Almería, which is in the south.",
+              "Incorrect: The location mentioned is not central Spain.",
+              "Correct: The wildfire broke out near Los Gallardos, Almería, which is a region in southern Spain."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "\"A local official indicated that four of the victims...\"",
+              "\"Emergency services are working tirelessly...\"",
+              "\"specifically twenty-three individuals, have been reported missing...\""
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: This sentence uses an active verb 'indicated.'",
+              "Incorrect: This sentence uses an active present continuous verb 'are working.'",
+              "Correct: 'Have been reported' is an example of the present perfect passive voice."
             ]
           }
         ]
@@ -408,192 +408,192 @@
       "cefr": "C1-Higher",
       "file_path": "advanced.html",
       "lesson": {
-        "title": "Devastating Wildfire in Southern Spain Claims Lives, Leaves Many Missing",
-        "overview": "A catastrophic wildfire in southern Spain has resulted in a significant loss of life and numerous disappearances, prompting an urgent response from emergency services and generating international concern regarding potential British casualties.",
-        "topic": "Disastrous Wildfire Impact and International Concern in Southern Spain",
+        "title": "Southern Spain Wildfire: Deadly Blaze Claims Lives, Search for Missing Intensifies",
+        "overview": "A devastating wildfire in southern Spain has resulted in multiple fatalities and numerous missing persons, prompting extensive rescue operations and raising concerns about international victims.",
+        "topic": "Wildfire Disaster and Emergency Response in Southern Spain",
         "news_brief_sentences": [
-          "The Iberian Peninsula is grappling with the severe aftermath of a virulent wildfire that erupted in southern Spain.",
-          "This catastrophic incident, which commenced near Los Gallardos in Almería, has led to profound tragedy.",
-          "Initial reports confirm a grim toll of at least twelve fatalities, casting a somber shadow over the region.",
-          "Furthermore, twenty-three individuals remain unaccounted for, intensifying anxieties among residents and rescue teams.",
-          "Local authorities are coordinating extensive search and rescue operations across the scorched landscape.",
-          "It is understood that four of the victims may be British nationals, intensifying international concern.",
-          "This potential development has prompted diplomatic engagement and offers of assistance from the UK.",
-          "The sheer scale of the conflagration necessitated immediate and large-scale evacuations, displacing many from their homes.",
-          "Investigators are now working to ascertain the precise cause of this devastating outbreak.",
-          "The community, alongside emergency personnel, faces a formidable task in managing the recovery efforts and supporting those affected."
+          "A catastrophic wildfire has ravaged a region in southern Spain, leading to a significant human toll.",
+          "Initial reports confirm at least twelve fatalities and twenty-three individuals currently unaccounted for in the aftermath of the blaze.",
+          "The conflagration, which erupted near Los Gallardos in Almería, has presented formidable challenges for emergency services.",
+          "Local authorities are grappling with the arduous task of victim identification and locating those still missing.",
+          "A local official indicated that four of the confirmed victims may be British nationals, pending further verification.",
+          "This revelation underscores the potential international dimension of the tragedy, highlighting the popular tourist appeal of the area.",
+          "Rescue operations have been intensified, with extensive resources deployed across the affected terrain.",
+          "The sheer scale of the devastation has prompted urgent calls for both regional and national support.",
+          "This incident marks a particularly grim milestone for the area, often prone to seasonal fires but rarely with such a devastating loss of life.",
+          "The community is bracing for what is anticipated to be a protracted period of recovery and investigation into the fire's origins."
         ],
         "vocabulary": [
           {
-            "term": "virulent",
-            "part_of_speech": "adjective",
-            "definition": "Extremely severe or harmful in its effects; highly destructive or impactful."
-          },
-          {
-            "term": "catastrophic incident",
+            "term": "catastrophic wildfire",
             "part_of_speech": "noun phrase",
-            "definition": "An event causing great and often sudden damage or suffering; a major disaster with devastating consequences."
+            "definition": "An extremely destructive and extensive uncontrolled fire, causing immense damage and often leading to loss of life and property."
           },
           {
-            "term": "grim toll",
-            "part_of_speech": "noun phrase",
-            "definition": "A disheartening or somber number of casualties, deaths, or negative consequences resulting from an event."
+            "term": "unaccounted for",
+            "part_of_speech": "adjective phrase",
+            "definition": "Not included in a tally or report; not known where they are, typically implying they are missing and their status is unknown."
           },
           {
-            "term": "local authorities",
-            "part_of_speech": "noun phrase",
-            "definition": "The administrative body or elected officials responsible for the public services, control, and governance of a specific geographical area."
-          },
-          {
-            "term": "ascertain the precise cause",
+            "term": "grappling with",
             "part_of_speech": "verb phrase",
-            "definition": "To find out or determine with exactness and certainty the reason or origin of something."
+            "definition": "Dealing with or struggling to overcome a difficult problem or challenge, often one that requires significant effort and resilience."
+          },
+          {
+            "term": "intensified",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Made or become more extreme, severe, or stronger; often referring to efforts, operations, or phenomena."
+          },
+          {
+            "term": "grim milestone",
+            "part_of_speech": "noun phrase",
+            "definition": "A significant and often unwelcome event or point in time that serves as a marker of a serious or tragic development."
           }
         ],
         "grammar": {
-          "concept": "Impersonal Passive Voice for Reporting",
-          "explanation": "The impersonal passive voice is frequently used in formal news reporting to present information that is generally accepted, widely reported, or understood, without explicitly stating who is doing the reporting. It creates a sense of objectivity and formal distance, often using constructions like 'It is understood that...', 'It is said that...', or 'It is believed that...'.",
-          "example_quote": "It is understood that four of the victims may be British nationals, intensifying international concern."
+          "concept": "Modals of Possibility and Speculation",
+          "explanation": "Modals like 'may', 'might', 'could', and 'must' are used to express varying degrees of certainty or possibility about present or future events, or to make deductions about past events. 'May' and 'might' suggest that something is possible but not certain, while 'could' indicates possibility in a weaker sense. In the given context, 'may be' expresses a degree of uncertainty regarding the nationality of the victims, indicating it is a possibility rather than a confirmed fact.",
+          "example_quote": "A local official indicated that four of the confirmed victims may be British nationals, pending further verification."
         },
         "quiz": [
           {
-            "question": "What does the term 'virulent' imply about the wildfire mentioned in the news brief?",
+            "question": "According to the news brief, what is the current confirmed human toll of the wildfire?",
             "options": [
-              "It was easily contained and minor.",
-              "It was extremely severe and harmful.",
-              "It occurred in a remote, unpopulated area."
+              "Twenty-three fatalities and twelve missing individuals.",
+              "Twelve fatalities and twenty-three individuals unaccounted for.",
+              "Four British nationals among twelve confirmed fatalities."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. 'Virulent' indicates a severe and harmful nature, not an easily contained one.",
-              "Correct. 'Virulent' means extremely severe or harmful, accurately describing the destructive nature of the wildfire.",
-              "Incorrect. While it might have been remote, 'virulent' specifically describes its harmful intensity, not its location."
+              "This option reverses the numbers of dead and missing. The brief states twelve fatalities and twenty-three unaccounted for.",
+              "Correct. The news brief precisely states twelve fatalities and twenty-three individuals currently unaccounted for.",
+              "While four British nationals may be among the victims, this option only provides a partial and slightly inaccurate summary of the total toll."
             ]
           },
           {
-            "question": "According to the brief, what is the 'grim toll' primarily referring to?",
+            "question": "What does the term 'catastrophic wildfire' imply about the fire in southern Spain?",
             "options": [
-              "The emotional distress of the community.",
-              "The number of fatalities reported.",
-              "The financial cost of the damage."
+              "It was a relatively small fire that caused some property damage.",
+              "It was an extremely destructive fire causing immense damage and potential loss of life.",
+              "It was a natural fire that helped regenerate the ecosystem."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. While distress is present, 'grim toll' specifically refers to the number of deaths.",
-              "Correct. The 'grim toll' refers directly to the reported number of fatalities, specifically twelve.",
-              "Incorrect. The brief does not mention the financial cost, and 'grim toll' is used for casualties."
+              "Incorrect. 'Catastrophic' indicates extensive and severe damage, not a small fire.",
+              "Correct. A 'catastrophic wildfire' specifically denotes an extremely destructive fire with immense negative impacts.",
+              "Incorrect. The context of 'catastrophic' clearly points to a negative, destructive event, not ecological benefit."
             ]
           },
           {
-            "question": "Which phrase best defines a 'catastrophic incident' in the context of the news?",
+            "question": "In the sentence 'four of the confirmed victims may be British nationals,' what does 'may be' primarily convey?",
             "options": [
-              "A minor inconvenience causing slight disruption.",
-              "An event resulting in significant, widespread damage or suffering.",
-              "A planned emergency drill to test readiness."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. A 'catastrophic incident' describes a major disaster, not a minor inconvenience.",
-              "Correct. A 'catastrophic incident' denotes an event causing great and often sudden damage or suffering.",
-              "Incorrect. This term refers to an actual disaster, not a drill or exercise."
-            ]
-          },
-          {
-            "question": "Why are 'local authorities' particularly busy following the wildfire?",
-            "options": [
-              "They are planning a local festival.",
-              "They are coordinating search and rescue operations.",
-              "They are issuing permits for new construction."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. Their immediate focus is on the disaster response, not celebratory events.",
-              "Correct. 'Local authorities' are actively involved in coordinating the critical search and rescue efforts.",
-              "Incorrect. Their primary role in this context is emergency management, not construction permits."
-            ]
-          },
-          {
-            "question": "What is the purpose of investigators attempting to 'ascertain the precise cause' of the wildfire?",
-            "options": [
-              "To predict future weather patterns.",
-              "To understand why it started and prevent recurrence.",
-              "To identify the specific individuals responsible for fighting the fire."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. While weather is a factor, the phrase means determining the origin of this specific event.",
-              "Correct. To 'ascertain the precise cause' means to discover exactly what initiated the fire, which is crucial for prevention.",
-              "Incorrect. This phrase relates to the origin of the fire, not the personnel involved in combating it."
-            ]
-          },
-          {
-            "question": "Which statement accurately reflects the initial casualties reported in the brief?",
-            "options": [
-              "At least 23 people are confirmed dead, with 12 missing.",
-              "At least 12 people are confirmed dead, with 23 missing.",
-              "Over 30 people have been confirmed dead."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. The numbers are reversed; 12 dead and 23 missing.",
-              "Correct. The brief explicitly states 'at least twelve fatalities' and 'twenty-three individuals remain unaccounted for.'",
-              "Incorrect. This option overstates the confirmed fatalities and does not account for the missing."
-            ]
-          },
-          {
-            "question": "The grammar point discussed focuses on the impersonal passive voice. Which of these uses it effectively?",
-            "options": [
-              "They understood the situation quickly.",
-              "It is understood that the situation is complex.",
-              "We understand the gravity of the situation."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. This uses the active voice with a personal pronoun.",
-              "Correct. 'It is understood that...' is a classic construction of the impersonal passive voice, common in formal reporting.",
-              "Incorrect. This is an active voice construction, focusing on 'we' as the agent."
-            ]
-          },
-          {
-            "question": "What is a key reason the impersonal passive voice, as exemplified by 'It is understood that...', is used in news reporting?",
-            "options": [
-              "To make the report more emotional and personal.",
-              "To emphasize the reporter's personal opinion.",
-              "To maintain objectivity and present widely accepted information."
+              "Absolute certainty of their nationality.",
+              "A strong command or directive about their nationality.",
+              "A possibility or degree of speculation regarding their nationality."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. The impersonal passive voice typically creates distance and objectivity, not emotional closeness.",
-              "Incorrect. It aims for impartiality rather than highlighting personal opinion.",
-              "Correct. The impersonal passive voice is used to convey information as generally known or accepted, adding a layer of formal objectivity."
+              "Incorrect. 'May be' expresses possibility, not absolute certainty.",
+              "Incorrect. 'May be' is not used to give commands; it expresses likelihood or permission.",
+              "Correct. 'May be' functions as a modal of possibility, indicating that something is a plausible outcome or fact but not yet confirmed."
             ]
           },
           {
-            "question": "The news brief mentions that the conflagration 'necessitated immediate and large-scale evacuations.' What does 'necessitated' imply?",
+            "question": "Where did the conflagration initially erupt, according to the news brief?",
             "options": [
-              "The evacuations were optional but recommended.",
-              "The evacuations were legally forbidden.",
-              "The evacuations were absolutely required due to the severity."
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "Incorrect. 'Necessitated' implies a mandatory requirement, not an option.",
-              "Incorrect. This word means the opposite of being forbidden; it made them essential.",
-              "Correct. 'Necessitated' means that the conditions made the large-scale evacuations absolutely essential or unavoidable."
-            ]
-          },
-          {
-            "question": "The phrase 'intensifying anxieties' suggests what about the current emotional state regarding the missing individuals?",
-            "options": [
-              "Anxieties are lessening due to positive news.",
-              "Anxieties were already present and are now growing stronger.",
-              "There was no anxiety until this point."
+              "Near Barcelona, Spain.",
+              "Near Los Gallardos in Almería.",
+              "In a remote, unnamed mountainous region."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. 'Intensifying' means increasing, not lessening.",
-              "Correct. 'Intensifying anxieties' implies that worries existed previously and are now becoming more pronounced or severe.",
-              "Incorrect. The word 'intensifying' means something is increasing from an existing state, not starting anew."
+              "Incorrect. The news brief specifically mentions Almería, not Barcelona.",
+              "Correct. The brief clearly states the fire erupted near Los Gallardos in Almería.",
+              "Incorrect. The brief provides a specific location, indicating it's not simply a remote, unnamed area."
+            ]
+          },
+          {
+            "question": "What does it mean for local authorities to be 'grappling with' the task of victim identification?",
+            "options": [
+              "They are effortlessly completing the task without any issues.",
+              "They are struggling to deal with a difficult and challenging task.",
+              "They are celebrating a successful completion of the identification process."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Grappling with' implies difficulty, not effortlessness.",
+              "Correct. 'Grappling with' signifies a struggle or strenuous effort to handle a complex or demanding situation.",
+              "Incorrect. 'Grappling with' refers to the ongoing challenge, not a successful resolution."
+            ]
+          },
+          {
+            "question": "What is suggested about the British nationals mentioned in the report?",
+            "options": [
+              "They have been definitively identified as victims.",
+              "They are suspected to be among the dead, pending official confirmation.",
+              "They are currently receiving treatment for their injuries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief uses 'may be' and 'pending further verification,' indicating it's not definitive.",
+              "Correct. The phrasing 'may be British nationals, pending further verification' indicates speculation rather than confirmation.",
+              "Incorrect. The brief refers to them as 'victims' and 'fatalities', not injured persons receiving treatment."
+            ]
+          },
+          {
+            "question": "The term 'unaccounted for' primarily refers to individuals who are:",
+            "options": [
+              "Receiving medical attention.",
+              "Missing and whose status is currently unknown.",
+              "Found safe but not yet identified."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unaccounted for' means their whereabouts are unknown, not necessarily that they are receiving medical care.",
+              "Correct. 'Unaccounted for' implies missing individuals whose current status and location are unknown.",
+              "Incorrect. If they were found safe, they would no longer be considered 'unaccounted for'."
+            ]
+          },
+          {
+            "question": "What kind of challenges has the conflagration presented for emergency services?",
+            "options": [
+              "Minor logistical issues that were quickly resolved.",
+              "Formidable challenges in their response and management.",
+              "Opportunities for new training exercises."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief uses 'formidable challenges,' implying significant difficulties.",
+              "Correct. The brief states the conflagration 'has presented formidable challenges for emergency services,' indicating severe difficulties.",
+              "Incorrect. The primary focus is on the difficulties and tragic consequences, not training opportunities."
+            ]
+          },
+          {
+            "question": "When rescue operations are described as having been 'intensified,' it means they have been:",
+            "options": [
+              "Scaled back due to exhaustion.",
+              "Made more extreme or forceful in their efforts.",
+              "Temporarily paused for strategic planning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Intensified' means the opposite of being scaled back.",
+              "Correct. 'Intensified' implies that efforts, in this case, rescue operations, have been increased in strength or severity.",
+              "Incorrect. 'Intensified' suggests an increase in activity, not a pause."
+            ]
+          },
+          {
+            "question": "The incident being a 'grim milestone' implies what about the event for the area?",
+            "options": [
+              "It is a celebratory occasion marking progress.",
+              "It is a welcome achievement in overcoming a challenge.",
+              "It is a significant and tragic event, marking a serious development."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Grim' suggests a negative and serious connotation, not celebratory.",
+              "Incorrect. A 'grim milestone' is usually negative, not a welcome achievement.",
+              "Correct. A 'grim milestone' indicates a significant, often tragic, event that marks a serious and unwelcome turning point or development."
             ]
           }
         ]

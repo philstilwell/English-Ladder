@@ -5,7 +5,7 @@ from pathlib import Path
 
 from reportlab.platypus import PageBreak, Paragraph, Spacer
 
-from generate_efsp_guarded_activities import add_answer_key, add_cloze_exercise, make_dialogue_cloze
+from generate_efsp_guarded_activities import add_answer_key, add_cloze_exercise, bounded_activity_instruction, make_dialogue_cloze
 from generate_efsp_culture_pdfs import (
     S,
     box,
@@ -265,6 +265,12 @@ MODULES = [
         ],
     },
 ]
+
+
+COURSE_OBJECTIVES = [bounded_activity_instruction(item) for item in COURSE_OBJECTIVES]
+for _module in MODULES:
+    _module["objectives"] = [bounded_activity_instruction(item) for item in _module["objectives"]]
+    _module["activities"] = [bounded_activity_instruction(item) for item in _module["activities"]]
 
 
 JARGON_GROUPS = [
@@ -713,7 +719,7 @@ def add_module_details(story: list) -> None:
         story.append(h3("Core concepts"))
         story.append(bullets(module["concepts"]))
         story.append(h3("Activities"))
-        story.append(bullets(module["activities"], numbered=True))
+        story.append(bullets([bounded_activity_instruction(activity) for activity in module["activities"]], numbered=True))
         story.append(h3("Learner outputs"))
         story.append(bullets(module["outputs"]))
         story.append(

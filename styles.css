@@ -1129,6 +1129,53 @@ summary.lesson-date:hover {
     border-top: 1px solid rgba(31, 111, 102, 0.14);
 }
 
+.efsp-activity-steps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 12px 0 10px;
+}
+
+.efsp-activity-step {
+    min-height: 32px;
+    padding: 6px 9px;
+    border: 1px solid rgba(31, 111, 102, 0.24);
+    border-radius: 6px;
+    background: #ffffff;
+    color: #154e49;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+}
+
+.efsp-activity-step:hover,
+.efsp-activity-step:focus-visible,
+.efsp-activity-step[aria-pressed="true"] {
+    border-color: #255c99;
+    background: #e8f0f9;
+    color: #174d82;
+    outline: none;
+}
+
+.efsp-card-contrast,
+.efsp-card-example {
+    margin: 10px 0 0;
+    padding-left: 10px;
+    border-left: 3px solid #6f9f96;
+    color: #315a55;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
+.efsp-card-collocations {
+    margin: 10px 0 0;
+    padding-left: 20px;
+    color: #174d82;
+}
+
 .efsp-dialogue-line {
     display: grid;
     grid-template-columns: minmax(118px, 0.3fr) minmax(0, 1fr);

@@ -12,6 +12,7 @@ from generate_efsp_guarded_activities import (
     add_cloze_exercise,
     make_dialogue_cloze,
     make_module_cloze,
+    term_learning_fields,
 )
 from generate_efsp_culture_pdfs import (
     CONTENT_WIDTH,
@@ -139,6 +140,64 @@ TERM_DEFINITIONS = {
     "variance": "Difference between actual and expected performance, cost, timing, quality, or volume.",
     "workflow": "Sequence of steps, roles, handoffs, systems, and decisions used to complete work.",
 }
+
+TERM_DEFINITIONS.update(
+    {
+        "5 Whys": "Root-cause method that repeatedly asks why a problem occurred until the team reaches a controllable underlying cause.",
+        "510(k)": "US FDA premarket submission that typically demonstrates substantial equivalence to a legally marketed predicate device.",
+        "8D": "Eight-discipline problem-solving report used to contain a problem, identify root cause, implement corrective action, and prevent recurrence.",
+        "A/B test": "Controlled comparison of two variants to estimate the effect of a change on a defined outcome.",
+        "ACH": "US electronic bank-transfer network used for direct deposits, bill payments, and account-to-account transfers.",
+        "AML": "Anti-money laundering controls used to detect, investigate, and report suspicious financial activity.",
+        "airworthiness": "Condition in which an aircraft conforms to approved design and is safe for operation under applicable rules.",
+        "assay": "Laboratory procedure used to measure the presence, amount, activity, or quality of a biological target.",
+        "attack surface": "Set of systems, interfaces, identities, and entry points an attacker could attempt to exploit.",
+        "authorization": "Required approval from a payer, regulator, manager, or system before a service, transaction, or action can proceed.",
+        "beneficial owner": "Natural person who ultimately owns or controls an entity or receives its economic benefit.",
+        "biomarker": "Measurable biological characteristic used to indicate a condition, response, exposure, or disease-related process.",
+        "clean claim": "Insurance claim submitted with the required data and documentation so it can be processed without avoidable delay or rejection.",
+        "clinical deterioration": "Worsening patient condition that requires prompt reassessment, communication, and possible escalation of care.",
+        "CMC": "Chemistry, manufacturing, and controls information that shows how a drug substance or product is made and consistently controlled.",
+        "coding": "Assignment of standardized diagnostic, procedure, or service codes used for records, billing, reporting, or reimbursement.",
+        "constructability": "Extent to which a design can be built safely, efficiently, and reliably using available methods, materials, and sequencing.",
+        "critical dimension": "Measured feature size that must remain within specification for a product, component, or semiconductor device to perform as intended.",
+        "CVE": "Common Vulnerabilities and Exposures identifier used to reference a publicly known cybersecurity vulnerability.",
+        "CVSS": "Common Vulnerability Scoring System, a standardized method for expressing the severity and characteristics of a vulnerability.",
+        "data subject request": "Request from an individual to access, correct, delete, restrict, or otherwise exercise rights over personal data.",
+        "denial": "Decision by an insurer, payer, regulator, or authority not to approve, pay, or grant a requested item or claim.",
+        "design intent": "Functional, aesthetic, performance, and user objectives the design must preserve as details are developed.",
+        "due diligence": "Structured review of facts, risks, obligations, and evidence before a transaction, onboarding, investment, or decision.",
+        "eligibility": "Rules that determine whether a person, account, provider, service, or request qualifies for a program, benefit, or action.",
+        "FMEA": "Failure mode and effects analysis, a structured method for identifying how a process or product can fail and prioritizing controls.",
+        "freedom to operate": "Assessment of whether a product or activity can proceed without infringing another party's enforceable intellectual-property rights.",
+        "HCAHPS": "US standardized patient-experience survey used by hospitals for public reporting and quality improvement.",
+        "identity verification": "Process of confirming that a requester is the person or authorized representative entitled to act or receive information.",
+        "in vitro": "Performed outside a living organism, typically in a laboratory vessel, cell system, or controlled assay.",
+        "in vivo": "Performed in a living organism, such as an animal or human study participant.",
+        "KYC": "Know-your-customer process used to verify a customer's identity, ownership, and risk profile.",
+        "lot traceability": "Ability to follow a production lot through materials, process steps, tools, inspections, and downstream customers or products.",
+        "MEL": "Minimum equipment list identifying aircraft equipment that may be inoperative under specified conditions while the aircraft remains dispatchable.",
+        "minimum necessary": "HIPAA principle requiring use or disclosure of only the minimum protected health information needed for the purpose.",
+        "no-show": "Scheduled patient, customer, or guest who does not arrive or cancel in time for the appointment or reservation to be reused.",
+        "non-retaliation": "Requirement that people are not punished or disadvantaged for making a good-faith report, complaint, or participation in an investigation.",
+        "patient stratification": "Grouping patients by characteristics that may affect disease course, treatment response, safety, or trial analysis.",
+        "process window": "Range of operating conditions within which a process produces acceptable results with adequate performance margin.",
+        "protected health information": "Individually identifiable health information protected by HIPAA when held or transmitted by covered entities or business associates.",
+        "rapid response": "Clinical team activated to assess and stabilize a patient showing signs of acute deterioration before a full emergency event.",
+        "readmission": "Return of a patient to a hospital or facility within a defined period after discharge, often tracked as an outcome measure.",
+        "referral": "Order, recommendation, or routing process that directs a patient or case to another clinician, service, or specialist.",
+        "RFI": "Request for information used to resolve an ambiguity, conflict, or missing detail in contract documents or a project scope.",
+        "SBAR": "Situation, background, assessment, recommendation; a structured format for concise clinical communication and escalation.",
+        "sensitivity": "Ability of a test, model, or process to correctly identify true positives or detect a change in an input.",
+        "specificity": "Ability of a test, model, or process to correctly identify true negatives and avoid false positives.",
+        "surrogate endpoint": "Measure expected to predict clinical benefit but not itself a direct measure of how a patient feels, functions, or survives.",
+        "tech transfer": "Controlled transfer of product, process, method, or manufacturing knowledge between teams, sites, or organizations.",
+        "translatability": "Likelihood that a finding in one model, setting, or population will predict results in the intended real-world or clinical setting.",
+        "underwriting": "Evaluation of risk and terms used to decide whether and on what conditions to issue insurance, extend credit, or accept an investment exposure.",
+        "vital signs": "Core clinical measurements such as temperature, pulse, respiratory rate, blood pressure, and oxygen saturation used to assess patient status.",
+        "wire transfer": "Electronic movement of funds between financial institutions, usually with irreversible settlement characteristics once released.",
+    }
+)
 
 
 SEMICONDUCTOR_TERM_DEFINITIONS = {
@@ -916,15 +975,48 @@ INDUSTRIES = [
 ]
 
 
+TERM_MEANING_RULES = [
+    (("rate", "ratio", "margin", "yield", "score", "index", "turnover", "variance", "runway"), "a measurable indicator used to quantify performance, exposure, capacity, quality, or change over time"),
+    (("plan", "roadmap", "strategy", "program", "agenda", "playbook"), "a structured course of action that assigns priorities, sequencing, assumptions, and responsible roles"),
+    (("policy", "standard", "protocol", "procedure", "guideline", "requirement", "criteria"), "an approved rule or decision framework that sets what is permitted, required, or acceptable"),
+    (("audit", "review", "assessment", "analysis", "inspection", "evaluation", "study"), "a structured examination of evidence, process, or results used to reach a defensible conclusion"),
+    (("report", "memo", "brief", "notice", "statement", "update", "readout", "letter"), "a workplace communication artifact that records facts, interpretation, and the decision or action requested"),
+    (("request", "intake", "referral", "ticket", "order", "submission", "filing"), "a formal intake or routing mechanism that starts work, seeks a decision, or transfers responsibility"),
+    (("evidence", "record", "log", "trail", "documentation", "provenance", "traceability"), "information that can be checked to support a claim, decision, investigation, or compliance conclusion"),
+    (("risk", "hazard", "threat", "exposure", "failure", "defect", "incident", "exception", "deviation"), "a condition or event that can create harm, loss, noncompliance, delay, or unacceptable performance"),
+    (("control", "monitoring", "validation", "verification", "assurance", "safeguard", "check"), "a repeatable control mechanism used to prevent, detect, or confirm conditions before work proceeds"),
+    (("contract", "agreement", "term sheet", "license", "endorsement", "waiver", "indemnity"), "a negotiated legal or commercial arrangement that allocates rights, obligations, remedies, or risk"),
+    (("data", "metric", "dashboard", "model", "cohort", "sample", "signal", "attribution"), "a defined information asset or analytical construct used to measure, explain, or predict an outcome"),
+    (("capacity", "staffing", "inventory", "allocation", "schedule", "queue", "throughput", "lead time"), "an operational constraint that affects how much work can be completed, by whom, and by when"),
+    (("customer", "client", "patient", "guest", "student", "employee", "vendor", "supplier", "partner"), "a stakeholder category whose needs, eligibility, experience, or obligations affect the decision"),
+    (("quality", "safety", "security", "privacy", "compliance", "ethics", "reliability"), "a performance or governance dimension that must be protected through defined evidence, thresholds, and accountability"),
+    (("training", "onboarding", "enablement", "attestation", "credential", "competency"), "a capability or authorization process used to prepare, verify, or document that a person can perform a role"),
+    (("governance", "committee", "approval", "authority", "decision rights", "RACI", "owner"), "a decision-accountability mechanism that clarifies who recommends, approves, performs, and accepts risk"),
+    (("design", "specification", "drawing", "blueprint", "architecture", "interface", "configuration"), "a controlled description of how a product, service, system, or built asset is intended to work"),
+    (("claim", "message", "voice", "campaign", "creative", "positioning", "audience"), "a communication or market-facing element that must match evidence, audience, channel, and approval boundaries"),
+]
+
+
+def _contextual_term_definition(term: str, prof: dict, module: dict) -> str:
+    lower = term.casefold()
+    purpose = next(
+        (meaning for triggers, meaning in TERM_MEANING_RULES if any(trigger in lower for trigger in triggers)),
+        "a field-specific concept used to locate the relevant fact, boundary, or decision variable",
+    )
+    skill = module["skill"].rstrip(".")
+    industry = prof["title"].replace(" English", "").lower()
+    return (
+        f"In {industry}, {term} is {purpose}. "
+        f"Use it when teams need to {skill[:1].lower() + skill[1:]}."
+    )
+
+
 def term_definition(term: str, prof: dict, module: dict) -> str:
     if term in prof.get("term_definitions", {}):
         return prof["term_definitions"][term]
     if term in TERM_DEFINITIONS:
         return TERM_DEFINITIONS[term]
-    return (
-        f"Working {prof['title'].replace(' English', '').lower()} term used in {module['title'].lower()}; "
-        "define the owner, evidence source, governing document, risk, and decision impact before using it in a meeting."
-    )
+    return _contextual_term_definition(term, prof, module)
 
 
 def pdf_name(prof: dict, kind: str) -> str:
@@ -963,7 +1055,7 @@ def add_course_opening(story: list, prof: dict) -> None:
             "Core language challenge",
             [
                 "Advanced learners do not only need vocabulary. They need the ability to ask which standard applies, who owns the decision, what evidence is sufficient, what risk is being accepted, and how to disagree without sounding vague, defensive, or reckless.",
-                "Each module trains a realistic workplace pressure point with role-specific terms, decision language, pushback practice, and a written output learners can adapt to their own work.",
+                "Each module trains a realistic workplace pressure point with role-specific terms, decision language, pushback practice, and bounded decision activities learners can apply to their own work.",
             ],
             "amber",
         )
@@ -976,7 +1068,7 @@ def add_course_opening(story: list, prof: dict) -> None:
                 "Turn vague requests into specific questions about evidence, owner, deadline, constraint, risk, and decision rights.",
                 "Push back on unsafe, unsupported, noncompliant, unrealistic, or poorly scoped proposals while preserving professional trust.",
                 "Handle realistic dialogues from the field, including conflict, uncertainty, documentation gaps, customer or stakeholder pressure, and cross-functional disagreement.",
-                "Produce concise workplace outputs: briefing notes, escalation updates, meeting scripts, risk memos, decision records, and follow-up messages.",
+                "Select language that produces concise workplace outputs: briefing notes, escalation updates, meeting scripts, risk memos, decision records, and follow-up messages.",
             ]
         )
     )
@@ -994,7 +1086,7 @@ def add_module_plans(story: list, prof: dict) -> None:
                     f"Use these terms accurately: {', '.join(module['terms'])}.",
                     f"Explain the workplace tension: {module['constraint']}",
                     f"Respond professionally when a stakeholder says: {module['pressure']}",
-                    f"Draft a usable {module['output']} with facts, caveats, owner, and next step.",
+                    f"Select the evidence, tradeoff, owner, and decision required for a {module['output']}.",
                 ]
             )
         )
@@ -1004,10 +1096,10 @@ def add_module_plans(story: list, prof: dict) -> None:
         story.append(
             bullets(
                 [
-                    "Terminology drill: define each term, then use it in one sentence from the learner's own role.",
-                    "Risk map: identify the stakeholder, the decision, the evidence gap, the operating constraint, and the cost of being wrong.",
-                    "Pushback ladder: move from clarifying question to evidence-based objection to consequence to decision request.",
-                    f"Output lab: draft and revise a {module['output']}.",
+                    "Terminology selection: distinguish the term that names the decision variable from three plausible alternatives.",
+                    "Risk triage: select the stakeholder, decision, evidence gap, operating constraint, and cost of being wrong from a bounded scenario set.",
+                    "Pushback ladder: choose the strongest sequence from clarification to evidence-based objection to consequence to decision request.",
+                    f"Decision artifact check: select the facts, caveat, owner, and next action that belong in a {module['output']}.",
                 ],
                 numbered=True,
             )
@@ -1023,9 +1115,18 @@ def add_jargon(story: list, prof: dict) -> None:
     )
     for module in prof["modules"]:
         story.append(h2(module["title"]))
-        rows = [["Term", "Working meaning"]]
-        rows.extend([[term, term_definition(term, prof, module)] for term in module["terms"]])
-        story.append(table(rows, [1.65 * inch, CONTENT_WIDTH - 1.65 * inch]))
+        rows = [["Term", "Working meaning", "Collocations", "Contrast and workplace line"]]
+        for term in module["terms"]:
+            card = term_learning_fields(term, term_definition(term, prof, module), module["scenario"])
+            rows.append(
+                [
+                    term,
+                    card["definition"],
+                    "; ".join(card["collocations"]),
+                    f"Contrast: {card['contrast']}\nExample: {card['example']}",
+                ]
+            )
+        story.append(table(rows, [1.15 * inch, 2.25 * inch, 1.35 * inch, CONTENT_WIDTH - 4.75 * inch]))
 
 
 def add_phrase_bank(story: list, prof: dict) -> None:
@@ -1182,7 +1283,7 @@ def add_assessment(story: list, prof: dict) -> None:
                 ["Terminology", "Recognizes terms but uses them loosely.", "Uses field terms accurately in context.", "Defines terms, connects them to evidence, and explains decision impact."],
                 ["Pushback", "Disagrees vaguely or avoids disagreement.", "Names concern with evidence and next step.", "Balances urgency, relationship, risk, owner, and decision rights."],
                 ["Scenario judgment", "Focuses on one stakeholder's preference.", "Identifies constraint, risk, and process.", "Guides the group toward a documented, realistic decision."],
-                ["Written output", "Writes general summaries.", "Produces clear notes with facts and owner.", "Creates concise, decision-ready workplace communication."],
+                ["Decision communication", "Selects language without linking it to the decision.", "Chooses language that names facts, owner, and next step.", "Distinguishes evidence, tradeoff, authority, and escalation in a decision-ready response."],
             ],
             [1.2 * inch, 1.85 * inch, 1.95 * inch, 2.0 * inch],
         )

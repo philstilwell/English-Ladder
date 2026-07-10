@@ -215,6 +215,7 @@ function setupEfspIndustryPage() {
 
     let activeModule = 0;
     let activeCard = 0;
+    let activeActivity = 0;
     const moduleButtons = workbench.querySelector("[data-module-buttons]");
     const title = workbench.querySelector("[data-module-title]");
     const focus = workbench.querySelector("[data-module-focus]");
@@ -222,12 +223,18 @@ function setupEfspIndustryPage() {
     const clozeTitle = workbench.querySelector("[data-cloze-title]");
     const clozeSetting = workbench.querySelector("[data-cloze-setting]");
     const clozeLines = workbench.querySelector("[data-cloze-lines]");
+    const clozeSteps = workbench.querySelector("[data-cloze-steps]");
+    const clozeInstruction = workbench.querySelector("[data-cloze-instruction]");
+    const clozePrompt = workbench.querySelector("[data-cloze-prompt]");
     const clozeOptions = workbench.querySelector("[data-cloze-options]");
     const clozeFeedback = workbench.querySelector("[data-cloze-feedback]");
     const clozeRationale = workbench.querySelector("[data-cloze-rationale]");
     const clozeNotes = workbench.querySelector("[data-cloze-notes]");
     const cardTerm = workbench.querySelector("[data-card-term]");
     const cardDefinition = workbench.querySelector("[data-card-definition]");
+    const cardContrast = workbench.querySelector("[data-card-contrast]");
+    const cardCollocations = workbench.querySelector("[data-card-collocations]");
+    const cardExample = workbench.querySelector("[data-card-example]");
     const modelLine = workbench.querySelector("[data-model-line]");
     const notes = workbench.querySelector("[data-language-notes]");
     const progressItems = Array.from(workbench.querySelectorAll("[data-progress-item]"));
@@ -247,6 +254,7 @@ function setupEfspIndustryPage() {
             button.setAttribute("aria-pressed", index === activeModule ? "true" : "false");
             button.addEventListener("click", () => {
                 activeModule = index;
+                activeActivity = 0;
                 renderModule();
             });
             moduleButtons.append(button);
@@ -273,20 +281,45 @@ function setupEfspIndustryPage() {
         if (!card) {
             cardTerm.textContent = "No terms available";
             cardDefinition.textContent = "";
+            if (cardContrast) cardContrast.textContent = "";
+            if (cardCollocations) cardCollocations.textContent = "";
+            if (cardExample) cardExample.textContent = "";
             return;
         }
         cardTerm.textContent = card.term;
         cardDefinition.textContent = card.definition;
+        if (cardContrast) {
+            cardContrast.textContent = card.contrast || "";
+        }
+        if (cardCollocations) {
+            cardCollocations.textContent = "";
+            (Array.isArray(card.collocations) ? card.collocations : []).forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                cardCollocations.append(li);
+            });
+        }
+        if (cardExample) {
+            cardExample.textContent = card.example || "";
+        }
         cardDefinition.hidden = true;
+        if (cardContrast) cardContrast.hidden = true;
+        if (cardCollocations) cardCollocations.hidden = true;
+        if (cardExample) cardExample.hidden = true;
     }
 
     function renderCloze() {
         const module = modules[activeModule];
         const cloze = module.cloze || {};
-        const options = Array.isArray(cloze.options) ? cloze.options : [];
+        const activities = Array.isArray(cloze.activities) && cloze.activities.length > 0
+            ? cloze.activities
+            : [cloze];
+        activeActivity = Math.min(activeActivity, activities.length - 1);
+        const activity = activities[activeActivity] || {};
+        const options = Array.isArray(activity.options) ? activity.options : [];
         const turns = Array.isArray(cloze.turns) ? cloze.turns : [];
         if (clozeTitle) {
-            clozeTitle.textContent = cloze.title || "Guided dialogue completion";
+            clozeTitle.textContent = cloze.title || "Guided decision practice";
         }
         if (clozeSetting) {
             clozeSetting.textContent = cloze.setting || module.scenario || "";
@@ -304,6 +337,27 @@ function setupEfspIndustryPage() {
                 clozeLines.append(row);
             });
         }
+        if (clozeSteps) {
+            clozeSteps.textContent = "";
+            activities.forEach((item, index) => {
+                const button = document.createElement("button");
+                button.type = "button";
+                button.className = "efsp-activity-step";
+                button.textContent = item.title || `Stage ${index + 1}`;
+                button.setAttribute("aria-pressed", index === activeActivity ? "true" : "false");
+                button.addEventListener("click", () => {
+                    activeActivity = index;
+                    renderCloze();
+                });
+                clozeSteps.append(button);
+            });
+        }
+        if (clozeInstruction) {
+            clozeInstruction.textContent = activity.instruction || "Choose the strongest answer.";
+        }
+        if (clozePrompt) {
+            clozePrompt.textContent = activity.prompt || "";
+        }
         if (clozeOptions) {
             clozeOptions.textContent = "";
             options.forEach((option, index) => {
@@ -312,18 +366,19 @@ function setupEfspIndustryPage() {
                 button.className = "efsp-choice-button";
                 button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
                 button.addEventListener("click", () => {
-                    const correct = index === cloze.correct_index;
+                    const correct = index === activity.correct_index;
+                    const optionFeedback = Array.isArray(activity.option_feedback) ? activity.option_feedback[index] : "";
                     clozeOptions.querySelectorAll("button").forEach((choice, choiceIndex) => {
-                        choice.dataset.state = choiceIndex === cloze.correct_index ? "correct" : choiceIndex === index ? "incorrect" : "";
+                        choice.dataset.state = choiceIndex === activity.correct_index ? "correct" : choiceIndex === index ? "incorrect" : "";
                         choice.setAttribute("aria-pressed", choiceIndex === index ? "true" : "false");
                     });
                     if (clozeFeedback) {
                         clozeFeedback.textContent = correct
-                            ? `Correct. ${cloze.explanation || ""}`
-                            : `Not quite. The correct answer is ${String.fromCharCode(65 + cloze.correct_index)}. ${cloze.answer || ""}. ${cloze.explanation || ""}`;
+                            ? `Correct. ${optionFeedback || activity.explanation || ""}`
+                            : `Not quite. ${optionFeedback || `The strongest answer is ${String.fromCharCode(65 + activity.correct_index)}. ${activity.answer || ""}.`}`;
                     }
                     if (clozeRationale) {
-                        clozeRationale.textContent = cloze.explanation || "";
+                        clozeRationale.textContent = activity.explanation || "";
                     }
                 });
                 clozeOptions.append(button);
@@ -368,7 +423,11 @@ function setupEfspIndustryPage() {
         button.addEventListener("click", () => {
             const action = button.dataset.action;
             if (action === "reveal-card" && cardDefinition) {
-                cardDefinition.hidden = !cardDefinition.hidden;
+                const shouldReveal = cardDefinition.hidden;
+                cardDefinition.hidden = !shouldReveal;
+                if (cardContrast) cardContrast.hidden = !shouldReveal;
+                if (cardCollocations) cardCollocations.hidden = !shouldReveal;
+                if (cardExample) cardExample.hidden = !shouldReveal;
             }
             if (action === "next-card") {
                 activeCard = (activeCard + 1) % Math.max(jargon.length, 1);

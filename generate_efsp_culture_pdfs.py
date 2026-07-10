@@ -595,6 +595,20 @@ MODULES = [
 ]
 
 
+def _bounded_culture_instruction(text: str) -> str:
+    clean = text.strip()
+    for prefix in ("Write ", "Draft ", "Rewrite "):
+        if clean.startswith(prefix):
+            outcome = clean[len(prefix):].rstrip(".")
+            return f"Guided language selection: choose the evidence, boundary, and next move for {outcome[:1].lower() + outcome[1:]}"
+    return clean.replace("teams draft", "teams select rules for")
+
+
+for _module in MODULES:
+    _module["objectives"] = [_bounded_culture_instruction(item) for item in _module["objectives"]]
+    _module["activities"] = [_bounded_culture_instruction(item) for item in _module["activities"]]
+
+
 WORKBOOK_TASKS = [
     {
         "scenario": "A US employee says very little in a one-on-one but strongly challenges the plan in a larger meeting.",
@@ -904,38 +918,103 @@ SCENARIOS = [
 ]
 
 
-def add_culture_cloze(story: list, scenario: dict, answer_key: list[dict[str, str]]) -> None:
-    story.append(h3("Guided dialogue completion"))
-    story.append(box("Situation", [scenario["context"]], "blue"))
-    story.append(
-        table(
-            [
-                ["Speaker", "Line"],
-                ["US colleague", scenario["colleague"]],
-                ["Manager", "I want the strongest objection. Challenge the ________, not the person."],
-            ],
-            [1.35 * inch, CONTENT_WIDTH - 1.35 * inch],
-        )
-    )
-    story.append(h3("Choose the missing language"))
-    story.append(
-        table(
-            [
-                ["Option", "Phrase"],
-                ["A", "manager"],
-                ["B", "plan"],
-                ["C", "hierarchy"],
-                ["D", "emotion"],
-            ],
-            [0.75 * inch, CONTENT_WIDTH - 0.75 * inch],
-        )
-    )
+CULTURE_LANGUAGE_MOVES = [
+    "I hear the concern. What failure mode do you see under load?",
+    "Here is what is fixed. Here is where your input can still change the execution.",
+    "I cannot commit to that date without a scope or staffing option we can support.",
+    "I want one specific objection from each function before we close the discussion.",
+    "Let us check the data source now; if it is wrong, we will correct the record before approval.",
+    "Informality is not the issue. I need us to agree on the decision and follow-through.",
+    "I am not approving this as proposed. Here are the conditions that would change that answer.",
+    "Let her finish the point. Then I will come back to your concern.",
+    "That wording is personal. Restate the concern as a customer, cost, quality, or timing risk.",
+    "We can consider a controlled pilot, with a named risk owner and review date.",
+    "I should have raised this earlier. Here are the observed examples and the expectation going forward.",
+    "Let us test the regulatory detail on its merits, then decide how it affects the plan.",
+    "Before I infer tone from the email, I want to clarify the customer impact and deadline.",
+    "The global control is fixed; the local workflow is open if it protects the same outcome.",
+    "Let us define what counts as urgent, who is on call, and what can wait until business hours.",
+    "Confidence is useful evidence only when it is paired with relevant examples and results.",
+    "I shut down the discussion too quickly. I want to hear the concern and set a better process next time.",
+    "We will take objections for ten minutes, then choose an option, owner, and review date.",
+]
+
+
+def _culture_choice_table(options: list[str]) -> list:
+    rows = [["Option", "Phrase"]]
+    rows.extend([[chr(65 + index), option] for index, option in enumerate(options)])
+    return [table(rows, [0.75 * inch, CONTENT_WIDTH - 0.75 * inch])]
+
+
+def _culture_answer(answer_key: list[dict[str, str]], scenario: dict, stage: str, options: list[str], correct_index: int, explanation: str) -> None:
     answer_key.append(
         {
-            "title": scenario["title"],
-            "answer": "B. plan",
-            "explanation": "The manager keeps direct debate focused on the work. This preserves useful dissent while setting a clear boundary against personal attack.",
+            "title": f"{scenario['title']} - {stage}",
+            "answer": f"{chr(65 + correct_index)}. {options[correct_index]}",
+            "explanation": explanation,
         }
+    )
+
+
+def add_culture_cloze(story: list, scenario: dict, answer_key: list[dict[str, str]]) -> None:
+    index = int(scenario["title"].split(".", 1)[0]) - 1
+    move = CULTURE_LANGUAGE_MOVES[index]
+    story.append(h3("Three-step leadership decision practice"))
+    story.append(box("Situation", [scenario["context"]], "blue"))
+    story.append(table([["Speaker", "Line"], ["US colleague", scenario["colleague"]], ["Manager", "________"]], [1.35 * inch, CONTENT_WIDTH - 1.35 * inch]))
+
+    story.append(h3("1. Choose the strongest manager line"))
+    story.append(p("Choose the response that preserves useful directness while setting a clear leadership boundary."))
+    line_options = [
+        move,
+        "We have discussed this long enough. Please stop challenging the decision.",
+        "I will decide later; for now, let us avoid the difficult part of the discussion.",
+        "Your tone is the main issue, so the business concern does not need to be examined.",
+    ]
+    story += _culture_choice_table(line_options)
+    _culture_answer(
+        answer_key,
+        scenario,
+        "Strongest manager line",
+        line_options,
+        0,
+        "The strongest line keeps the conversation concrete: it identifies a process, evidence, condition, or decision boundary instead of treating directness itself as disloyalty.",
+    )
+
+    story.append(h3("2. Diagnose the cultural risk"))
+    story.append(p("Choose the interpretation that avoids turning a style difference into a personal judgment."))
+    diagnosis_options = [
+        "Separate the colleague's communication style from the underlying work concern, then decide whether a process boundary is needed.",
+        "Assume direct disagreement proves disrespect for the manager.",
+        "Treat silence as agreement and move on without inviting a specific concern.",
+        "Use hierarchy to end the discussion before the evidence is visible.",
+    ]
+    story += _culture_choice_table(diagnosis_options)
+    _culture_answer(
+        answer_key,
+        scenario,
+        "Cultural diagnosis",
+        diagnosis_options,
+        0,
+        "This interpretation makes room for the possibility that an intense, direct, informal, or quiet behavior has a legitimate business meaning. It still leaves the manager free to set a boundary when the process or wording becomes harmful.",
+    )
+
+    story.append(h3("3. Select the next leadership move"))
+    story.append(p("Choose the next step that turns the exchange into a fair, observable management process."))
+    next_options = [
+        scenario["manager"],
+        "Close the issue without naming what is fixed, open, risky, or owned.",
+        "Make a personal judgment about the colleague rather than testing the work concern.",
+        "Delay the discussion indefinitely and leave expectations unclear.",
+    ]
+    story += _culture_choice_table(next_options)
+    _culture_answer(
+        answer_key,
+        scenario,
+        "Next leadership move",
+        next_options,
+        0,
+        "The manager's next move should make the process visible: clarify the facts, protect dignity, name the decision rights, and specify what will happen next.",
     )
 
 

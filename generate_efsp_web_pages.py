@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from generate_efsp_guarded_activities import make_dialogue_cloze, make_module_cloze
+from generate_efsp_guarded_activities import bounded_activity_instruction, make_dialogue_cloze, make_module_cloze, term_learning_fields
 from generate_efsp_industry_batch_pdfs import INDUSTRIES, pdf_name, term_definition
 
 
@@ -125,7 +125,7 @@ def flatten_jargon(groups: list[tuple[str, list[tuple[str, str]]]]) -> list[dict
     terms = []
     for group, items in groups:
         for term, definition in items:
-            terms.append({"term": term, "definition": definition, "group": group})
+            terms.append({**term_learning_fields(term, definition, group), "group": group})
     return terms
 
 
@@ -154,7 +154,7 @@ def normalize_standard_track(spec: dict[str, str]) -> dict[str, Any]:
             {
                 "title": strip_module_number(module["title"]),
                 "focus": module.get("big_idea", ""),
-                "goals": module.get("objectives", [])[:4],
+                "goals": [bounded_activity_instruction(item) for item in module.get("objectives", [])[:4]],
                 "activities": module.get("activities", [])[:3],
                 "outputs": module.get("outputs", [])[:3],
                 "terms": terms,
@@ -197,33 +197,36 @@ def normalize_culture_track() -> dict[str, Any]:
     modules = []
     jargon = []
     source_modules = getattr(mod, "MODULES", [])
-    all_outputs = [output for module in source_modules for output in module.get("outputs", [])]
-    for module in source_modules:
+    scenarios = getattr(mod, "SCENARIOS", [])
+    language_moves = getattr(mod, "CULTURE_LANGUAGE_MOVES", [])
+    for index, module in enumerate(source_modules):
         terms = [concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]]
         for term, concept in zip(terms, module.get("concepts", [])[:4]):
-            jargon.append({"term": term, "definition": concept, "group": strip_module_number(module["title"])})
+            jargon.append({**term_learning_fields(term, concept, module["big_idea"]), "group": strip_module_number(module["title"])})
+        scenario = scenarios[index % len(scenarios)] if scenarios else {}
+        move = language_moves[index % len(language_moves)] if language_moves else "I want the strongest objection. Challenge the plan, not the person."
+        dialogue = {
+            "title": scenario.get("title", strip_module_number(module["title"])),
+            "setting": scenario.get("context", module.get("big_idea", "")),
+            "dialogue": [
+                ("US colleague", scenario.get("colleague", module.get("activities", [""])[0])),
+                ("ESL learner", move),
+            ],
+            "notes": [scenario.get("observer", "Keep the discussion focused on the work, the evidence, and a clear decision.")],
+        }
         modules.append(
             {
                 "title": strip_module_number(module["title"]),
                 "focus": module.get("big_idea", ""),
-                "goals": module.get("objectives", [])[:4],
+                "goals": [bounded_activity_instruction(item) for item in module.get("objectives", [])[:4]],
                 "activities": module.get("activities", [])[:3],
                 "outputs": module.get("outputs", [])[:3],
                 "terms": terms,
-                "scenario": module.get("big_idea", ""),
-                "pressure": module.get("activities", [""])[0],
-                "model": "I hear the challenge. Let's test the idea directly, keep it about the work, and decide what evidence would change the plan.",
-                "notes": module.get("concepts", [])[:2],
-                "cloze": make_module_cloze(
-                    {
-                        "title": strip_module_number(module["title"]),
-                        "scenario": module.get("big_idea", ""),
-                        "pressure": module.get("activities", [""])[0],
-                        "terms": terms,
-                        "outputs": module.get("outputs", []),
-                    },
-                    all_outputs,
-                ),
+                "scenario": dialogue["setting"],
+                "pressure": dialogue["dialogue"][0][1],
+                "model": move,
+                "notes": [scenario.get("observer", ""), *module.get("concepts", [])[:1]],
+                "cloze": make_dialogue_cloze(dialogue, terms),
             }
         )
     phrases = []
@@ -241,8 +244,7 @@ def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
         for term in module["terms"]:
             jargon.append(
                 {
-                    "term": term,
-                    "definition": term_definition(term, profile, module),
+                    **term_learning_fields(term, term_definition(term, profile, module), module["scenario"]),
                     "group": module["title"],
                 }
             )
@@ -256,18 +258,17 @@ def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
                     f"Respond to pressure: {module['pressure']}",
                 ],
                 "activities": [
-                    "Define the stakeholder, decision, evidence gap, operating constraint, and cost of being wrong.",
-                    "Build a pushback response that moves from clarification to evidence to consequence to decision.",
-                    f"Draft a {module['output']} with facts, caveats, owner, and next step.",
+                    "Select the field term that names the decision variable in context.",
+                    "Choose the strongest evidence-based pushback response.",
+                    f"Choose the facts, owner, and next decision that belong in a {module['output']}.",
                 ],
                 "outputs": [module["output"]],
                 "terms": module["terms"],
                 "scenario": module["scenario"],
                 "pressure": module["pressure"],
                 "model": (
-                    f"I understand the goal, but we need to separate urgency from control. "
-                    f"For this decision, I need to confirm {module['terms'][0]}, {module['terms'][1]}, "
-                    "the owner, and the evidence standard before we commit."
+                    f"I understand the urgency. Before we act, I need to verify {module['terms'][0]} and "
+                    f"{module['terms'][1]} against the stated constraint, then I can recommend the next decision."
                 ),
                 "notes": [module["constraint"], f"Output: {module['output']}"],
                 "cloze": make_module_cloze(module, all_outputs),
@@ -507,8 +508,8 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <section class="efsp-workbench" data-efsp-workbench>
 <div class="efsp-workbench-copy">
 <p class="eyebrow">Web Practice Lab</p>
-<h2>Complete the dialogue, then test the decision</h2>
-<p>Use the guided activities below to choose the precise language a professional uses to clarify risk, protect the process, and move to a concrete next step.</p>
+<h2>Rehearse the language, response, and decision</h2>
+<p>Work through a three-step sequence: identify the field language, choose the strongest response, then select the next controlled decision move.</p>
 </div>
 <div class="efsp-module-picker" data-module-buttons></div>
 <div class="efsp-practice-layout">
@@ -519,11 +520,13 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <ul data-module-goals></ul>
 </article>
 <article class="efsp-practice-panel">
-<p class="eyebrow">Guided Dialogue</p>
+<p class="eyebrow">Guided Decision Lab</p>
 <h3 data-cloze-title></h3>
 <p class="efsp-scenario-text" data-cloze-setting></p>
 <div class="efsp-dialogue-lines" data-cloze-lines></div>
-<p class="efsp-field-label">Choose the missing language</p>
+<div class="efsp-activity-steps" data-cloze-steps aria-label="Practice stages"></div>
+<p class="efsp-field-label" data-cloze-instruction></p>
+<p data-cloze-prompt></p>
 <div class="efsp-choice-grid" data-cloze-options></div>
 <div class="efsp-feedback" data-cloze-feedback></div>
 </article>
@@ -531,6 +534,9 @@ def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) ->
 <p class="eyebrow">Jargon Flashcard</p>
 <h3 data-card-term></h3>
 <p data-card-definition hidden></p>
+<p class="efsp-card-contrast" data-card-contrast hidden></p>
+<ul class="efsp-card-collocations" data-card-collocations hidden></ul>
+<p class="efsp-card-example" data-card-example hidden></p>
 <div class="efsp-tool-row">
 <button type="button" class="efsp-tool-button" data-action="reveal-card">Reveal</button>
 <button type="button" class="efsp-tool-button efsp-tool-button-secondary" data-action="next-card">Next</button>

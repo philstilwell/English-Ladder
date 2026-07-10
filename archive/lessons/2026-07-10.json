@@ -1,14 +1,14 @@
 {
   "schema_version": 1,
   "release_date": "2026-07-10",
-  "release_iso": "2026-07-10T12:21:01Z",
+  "release_iso": "2026-07-10T18:02:07Z",
   "model": "gemini-2.5-flash",
   "source": {
     "name": "BBC World News RSS",
     "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
-    "title": "Huge crowds in Mashhad as Iran's late supreme leader is buried",
-    "summary": "Ali Khamenei was buried at the Imam Reza shrine, Iran's holiest Shia Muslim site, ending six days of public mourning ceremonies.",
-    "link": "https://www.bbc.co.uk/news/articles/c5yzm8m4peeo?at_medium=RSS&at_campaign=rss"
+    "title": "Wildfire in southern Spain leaves at least 12 dead and 23 missing",
+    "summary": "A local official said four of the victims may be British after a fire broke out near Los Gallardos, Almería.",
+    "link": "https://www.bbc.co.uk/news/articles/c8e2382jk7jo?at_medium=RSS&at_campaign=rss"
   },
   "levels": {
     "beginner": {
@@ -16,192 +16,192 @@
       "cefr": "A1-A2",
       "file_path": "beginner.html",
       "lesson": {
-        "title": "Iran's Former Leader Buried After Public Mourning",
-        "overview": "Iran's late supreme leader, Ali Khamenei, was buried in Mashhad after six days of public mourning.",
-        "topic": "World News: Burial of Iran's Late Supreme Leader and Public Mourning",
+        "title": "Wildfire in Spain: Sad News from Southern Almería",
+        "overview": "A terrible wildfire in southern Spain has caused many deaths and left people missing.",
+        "topic": "Natural Disasters and Community Impact: Understanding Wildfires",
         "news_brief_sentences": [
-          "Ali Khamenei was Iran's late supreme leader.",
-          "People showed great sadness for his death.",
-          "There were six days of public mourning ceremonies.",
-          "Huge crowds gathered in the city of Mashhad.",
-          "Ali Khamenei was buried there at the Imam Reza shrine.",
-          "This shrine is Iran's holiest Shia Muslim site.",
-          "Many people came to say goodbye to their leader.",
-          "The burial marked the end of the ceremonies.",
-          "It was a very important event for the country.",
-          "The public mourning has now finished."
+          "A wildfire started in southern Spain.",
+          "The fire was near Los Gallardos in Almería.",
+          "It was a very big and dangerous fire.",
+          "Sadly, at least 12 people died because of the fire.",
+          "Also, 23 people are still missing.",
+          "A local official spoke about the fire.",
+          "He said some victims might be British.",
+          "Four of the people who died may be from Britain.",
+          "The fire caused much sadness and worry in the area.",
+          "Authorities are working to find the missing people and help everyone."
         ],
         "vocabulary": [
           {
-            "term": "late",
+            "term": "wildfire",
+            "part_of_speech": "noun",
+            "definition": "A large, uncontrolled fire that burns in a natural area, like a forest or a field."
+          },
+          {
+            "term": "died",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Stopped living; passed away. This word describes when a living thing stops its life."
+          },
+          {
+            "term": "missing",
             "part_of_speech": "adjective",
-            "definition": "Describes someone who has recently died."
+            "definition": "Not able to be found; people do not know where someone or something is."
           },
           {
-            "term": "leader",
+            "term": "local official",
+            "part_of_speech": "noun phrase",
+            "definition": "A person who works for the government in a specific, small area, like a town or city."
+          },
+          {
+            "term": "victims",
             "part_of_speech": "noun",
-            "definition": "A person who guides or commands a group, country, or organization."
-          },
-          {
-            "term": "buried",
-            "part_of_speech": "verb (past participle)",
-            "definition": "Placed in the ground after death, often in a ceremony."
-          },
-          {
-            "term": "shrine",
-            "part_of_speech": "noun",
-            "definition": "A holy or sacred place, often visited by religious people."
-          },
-          {
-            "term": "mourning",
-            "part_of_speech": "noun",
-            "definition": "The act of showing great sadness and grief for someone who has died."
+            "definition": "People who are hurt, killed, or suffer because of an accident, crime, or natural disaster."
           }
         ],
         "grammar": {
-          "concept": "Simple Past Tense (was/were)",
-          "explanation": "We use the simple past tense to talk about actions or states that happened and finished in the past. 'Was' is for singular subjects (he, she, it, I) and 'were' is for plural subjects (we, you, they).",
-          "example_quote": "Ali Khamenei was Iran's late supreme leader."
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. It tells us something happened and is now complete. Many regular verbs add '-ed' to the base form, but some verbs are irregular.",
+          "example_quote": "A wildfire started in southern Spain."
         },
         "quiz": [
           {
-            "question": "Who was Ali Khamenei?",
+            "question": "Where did the wildfire happen?",
             "options": [
-              "A famous singer",
-              "Iran's late supreme leader",
-              "A football player"
+              "In northern Spain",
+              "In southern Spain",
+              "In central Spain"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, the news brief states he was Iran's leader, not a singer.",
-              "Yes, the news brief clearly says Ali Khamenei was Iran's late supreme leader.",
-              "No, the news brief does not mention him as a football player."
+              "No, the news says the fire was in southern Spain.",
+              "That's right! The wildfire broke out in southern Spain, near Almería.",
+              "No, the report specifies the southern part of Spain."
             ]
           },
           {
-            "question": "What does 'late' mean when we say 'late supreme leader'?",
+            "question": "How many people died in the fire?",
             "options": [
-              "Not on time",
-              "Recently died",
-              "Happened at night"
+              "10 people",
+              "12 people",
+              "23 people"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "That's one meaning of 'late', but not in this context. Here it means someone who has passed away.",
-              "Correct! When talking about a person, 'late' can mean they have recently died.",
-              "No, 'late' in this context means someone who has died, not a time of day."
+              "The news brief states a different number of deaths.",
+              "Correct! Sadly, at least 12 people died because of the fire.",
+              "23 people are missing, not the number of deaths."
             ]
           },
           {
-            "question": "How many days of public mourning were there?",
+            "question": "How many people are still missing?",
             "options": [
-              "Two days",
-              "Four days",
-              "Six days"
+              "12 people",
+              "20 people",
+              "23 people"
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. The news brief mentions a longer period of mourning.",
-              "Not quite. Read the news brief again for the correct number of days.",
-              "That's right! The public mourning ceremonies lasted for six days."
+              "12 people died, but a different number are missing.",
+              "This is not the correct number of missing people reported.",
+              "Exactly! The news brief says 23 people are still missing."
             ]
           },
           {
-            "question": "Where was Ali Khamenei buried?",
+            "question": "What does the word \"wildfire\" mean?",
             "options": [
-              "In a large park",
-              "At the Imam Reza shrine",
-              "In a private garden"
+              "A small camp fire",
+              "A big, uncontrolled fire in nature",
+              "A fire inside a house"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, the news brief specifies a holy site, not a park.",
-              "Correct! He was buried at the Imam Reza shrine in Mashhad.",
-              "Incorrect. The news brief mentions a public and holy site."
+              "A wildfire is much larger and more dangerous than a small camp fire.",
+              "Yes, a wildfire is a large, uncontrolled fire that burns in forests or natural areas.",
+              "Wildfires happen outside in nature, not typically inside houses."
             ]
           },
           {
-            "question": "What is the Imam Reza shrine?",
+            "question": "If someone is \"missing\", what does it mean?",
             "options": [
-              "A sports stadium",
-              "A shopping center",
-              "Iran's holiest Shia Muslim site"
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "No, it is not a sports stadium.",
-              "That's wrong. It is a very important religious place.",
-              "Yes, the news brief says it is Iran's holiest Shia Muslim site."
-            ]
-          },
-          {
-            "question": "What does 'leader' mean?",
-            "options": [
-              "Someone who follows rules",
-              "Someone who sells things",
-              "Someone who guides or commands"
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "No, a leader usually makes rules or guides others, rather than just following them.",
-              "That's not what 'leader' means. A leader usually has a political or group role.",
-              "Exactly! A leader is a person who guides or commands a group or country."
-            ]
-          },
-          {
-            "question": "Why did huge crowds gather in Mashhad?",
-            "options": [
-              "For a music concert",
-              "For a market day",
-              "To show sadness for the late leader"
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "The news brief mentions mourning, not a concert.",
-              "No, the crowds were there for a very serious and sad event.",
-              "Yes, the huge crowds gathered to mourn and say goodbye to their late leader."
-            ]
-          },
-          {
-            "question": "The sentence 'Ali Khamenei was Iran's late supreme leader' uses which grammar concept?",
-            "options": [
-              "Future tense",
-              "Simple past tense",
-              "Present continuous tense"
+              "They are found",
+              "People do not know where they are",
+              "They are at home"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, 'was' talks about something that happened in the past.",
-              "Correct! 'Was' is the simple past tense of 'to be', showing a past state.",
-              "Incorrect. The verb 'was' is not used for present continuous actions."
+              "No, if someone is found, they are no longer missing.",
+              "That's correct! When someone is missing, people don't know their location.",
+              "Being missing means their whereabouts are unknown, so they are not necessarily at home."
             ]
           },
           {
-            "question": "What does 'mourning' involve?",
+            "question": "Who is a \"local official\"?",
             "options": [
-              "Celebrating a birthday",
-              "Showing sadness for a death",
-              "Having a big party"
+              "A visitor from another country",
+              "A person who works for the government in a local area",
+              "A person who sells food"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, mourning is about sadness, not celebration.",
-              "Right! Mourning is the act of showing sadness and grief after someone dies.",
-              "That's wrong. Mourning is a serious and sad event, not a party."
+              "A local official works for the government, not necessarily a visitor.",
+              "Correct! A local official is someone with a government job in a specific region or town.",
+              "While they might live locally, their job is with the government, not typically selling food."
             ]
           },
           {
-            "question": "When did the public mourning ceremonies end?",
+            "question": "Who are \"victims\" in this news story?",
             "options": [
-              "After the burial",
-              "Before the burial",
-              "Next week"
+              "People who started the fire",
+              "People who helped others",
+              "People who were hurt or died in the fire"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Victims are those who suffered from the event, not those who caused it.",
+              "Helpers are heroes, not victims. Victims are the ones affected negatively.",
+              "You got it! Victims are the people who suffered harm or death because of the wildfire."
+            ]
+          },
+          {
+            "question": "Which word from the news brief is in the simple past tense?",
+            "options": [
+              "started",
+              "is",
+              "helping"
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "Yes, the burial marked the end of the mourning ceremonies.",
-              "No, the ceremonies continued until the leader was buried.",
-              "Incorrect. The news brief says the ceremonies are now finished."
+              "That's right! 'Started' shows an action that happened in the past.",
+              "'Is' is in the simple present tense, not past.",
+              "'Helping' is a present participle, not the simple past tense."
+            ]
+          },
+          {
+            "question": "Why do we use \"died\" (simple past) in \"12 people died\"?",
+            "options": [
+              "The action is happening now",
+              "The action will happen soon",
+              "The action finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'died' tells us the action is already complete.",
+              "This is not correct. 'Died' refers to an event that has already occurred.",
+              "Yes! We use the simple past tense like 'died' to talk about actions that are complete and in the past."
+            ]
+          },
+          {
+            "question": "What did the local official say about some victims?",
+            "options": [
+              "They might be tourists",
+              "They might be British",
+              "They are all Spanish"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The official specifically mentioned a nationality, not just 'tourists'.",
+              "That's correct! The local official said some of the victims might be British.",
+              "The official suggested some victims might be British, implying not all are Spanish."
             ]
           }
         ]
@@ -212,192 +212,192 @@
       "cefr": "B1-B2",
       "file_path": "intermediate.html",
       "lesson": {
-        "title": "Iran Concludes Six Days of National Mourning for Supreme Leader",
-        "overview": "Iran concluded six days of public mourning for its late supreme leader, Ali Khamenei, who was buried at the Imam Reza shrine, a holy Shia Muslim site.",
-        "topic": "Iranian national mourning and religious ceremonies after the death of a leader",
+        "title": "Southern Spain Wildfire: Devastating Casualties and Ongoing Search",
+        "overview": "A wildfire in southern Spain has tragically resulted in at least twelve deaths and left twenty-three people missing, with some victims potentially being British nationals.",
+        "topic": "Wildfire disaster and its human impact in Southern Spain",
         "news_brief_sentences": [
-          "Iran has recently observed a significant period of national mourning following the passing of its supreme leader, Ali Khamenei.",
-          "The official mourning ceremonies lasted for six days, drawing huge crowds in various cities across the nation.",
-          "Thousands of people congregated to pay their final respects to the late leader during this solemn time.",
-          "Ali Khamenei was buried at the Imam Reza shrine, which is considered Iran's holiest Shia Muslim site.",
-          "This highly sacred shrine is located in Mashhad, a major city in northeastern Iran.",
-          "The enormous public gatherings highlighted the widespread impact of his passing.",
-          "Many citizens expressed their grief and participated in the religious rites surrounding the event.",
-          "The Imam Reza shrine holds immense religious importance for Shia Muslims worldwide.",
-          "Reports indicated that huge crowds were present in Mashhad to witness the burial ceremonies.",
-          "With the burial now complete, the extensive period of public mourning has officially ended."
+          "A devastating wildfire has swept through a region in southern Spain, causing significant loss of life.",
+          "The tragic incident occurred near Los Gallardos, a town located in the province of Almería.",
+          "Authorities have confirmed that at least twelve people are now reported as dead due to the inferno.",
+          "Additionally, search efforts are underway for twenty-three individuals who are currently missing.",
+          "The fire, which broke out suddenly, spread rapidly through the dry landscape.",
+          "Strong winds contributed to the quick expansion of the blaze, making containment extremely difficult.",
+          "A local official said four of the victims may be British nationals.",
+          "This wildfire represents a major crisis for the region, triggering extensive emergency operations.",
+          "Emergency services, including firefighters and police, are working tirelessly in the affected zones.",
+          "The community is profoundly affected by the catastrophe, and efforts are focused on support and recovery."
         ],
         "vocabulary": [
           {
-            "term": "supreme leader",
-            "part_of_speech": "noun phrase",
-            "definition": "The highest political and religious authority in Iran, holding ultimate power and influence."
+            "term": "wildfire",
+            "part_of_speech": "noun",
+            "definition": "A large, uncontrolled fire that spreads quickly through a natural area like a forest or bushland."
           },
           {
-            "term": "national mourning",
-            "part_of_speech": "noun phrase",
-            "definition": "A period when a country officially remembers and expresses sadness for a significant loss, often a public figure."
-          },
-          {
-            "term": "pay their final respects",
-            "part_of_speech": "verb phrase",
-            "definition": "To show honor and sadness at a funeral or memorial service for someone who has died."
-          },
-          {
-            "term": "holiest",
+            "term": "missing",
             "part_of_speech": "adjective",
-            "definition": "Most sacred or religious; highly respected and revered in a spiritual context."
+            "definition": "Not able to be found; gone and not present in a place or situation."
           },
           {
-            "term": "congregated",
-            "part_of_speech": "verb",
-            "definition": "Gathered together in a crowd or group, often for a specific purpose or event."
+            "term": "broke out",
+            "part_of_speech": "phrasal verb",
+            "definition": "Started suddenly, often referring to a fire, war, or disease."
+          },
+          {
+            "term": "victims",
+            "part_of_speech": "noun",
+            "definition": "People who have been hurt, killed, or suffered as a result of a crime, accident, or other event."
+          },
+          {
+            "term": "local official",
+            "part_of_speech": "noun phrase",
+            "definition": "A person who holds an elected or appointed position in the government of a city, town, or small region."
           }
         ],
         "grammar": {
-          "concept": "Passive Voice",
-          "explanation": "The passive voice is used when the action of the verb is more important than who or what performs the action, or when the agent (the one doing the action) is unknown or less important. It is formed using a form of the verb 'to be' followed by the past participle of the main verb.",
-          "example_quote": "Ali Khamenei was buried at the Imam Reza shrine, which is considered Iran's holiest Shia Muslim site."
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to convey what someone else has said, thought, or felt. They allow us to share information without directly quoting every word. Common reporting verbs include 'said', 'told', 'stated', 'reported', or 'suggested'. Often, 'that' is used to introduce the reported clause, but it can sometimes be omitted.",
+          "example_quote": "A local official said four of the victims may be British nationals."
         },
         "quiz": [
           {
-            "question": "What significant event recently happened in Iran, as described in the news brief?",
+            "question": "What is the primary topic of the news brief?",
             "options": [
-              "A new leader was elected.",
-              "A period of national mourning concluded.",
-              "A major religious festival began."
+              "A devastating wildfire in southern Spain",
+              "A search for missing British tourists",
+              "New fire safety regulations in Almería"
             ],
-            "correct_option_index": 1,
+            "correct_option_index": 0,
             "option_feedback": [
-              "Incorrect. The news brief mentions the passing of a leader, not an election.",
-              "Correct! The news brief focuses on the end of a national mourning period for Ali Khamenei.",
-              "Incorrect. The events described were related to a burial and mourning, not a festival's start."
+              "Correct! The central theme of the news brief is the devastating wildfire and its human impact.",
+              "While some victims may be British, the core focus is on the wildfire itself, not solely British tourists.",
+              "The brief discusses a disaster, not new regulations; emergency responses are mentioned."
             ]
           },
           {
-            "question": "How long did the official mourning ceremonies for Ali Khamenei last?",
+            "question": "How many people are reported as dead due to the wildfire?",
             "options": [
-              "One day.",
-              "Three days.",
-              "Six days."
+              "Exactly 23 people",
+              "At least 12 people",
+              "Around 4 British nationals"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Twenty-three is the number of missing people, not the confirmed deaths.",
+              "That's right, the news brief clearly states that at least twelve people have died.",
+              "Four is the number of potential British victims, not the total confirmed dead."
+            ]
+          },
+          {
+            "question": "In the context of the news, what does it mean if someone is 'missing'?",
+            "options": [
+              "They have lost all their belongings",
+              "Their current location is unknown",
+              "They are confirmed to be injured"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief doesn't mention lost possessions; 'missing' refers to people whose whereabouts are unknown.",
+              "Correct! 'Missing' means that people are gone and their current location cannot be determined.",
+              "While some might be injured, 'missing' specifically means they haven't been located yet."
+            ]
+          },
+          {
+            "question": "According to the brief, where did the tragic fire 'broke out'?",
+            "options": [
+              "In the city center of Almería",
+              "Near Los Gallardos in Almería province",
+              "In a remote, unpopulated forest"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Almería is the province; more specifically, the fire started near Los Gallardos.",
+              "Precisely! The news brief mentions the fire broke out near Los Gallardos, a town in Almería.",
+              "The brief states it was near Los Gallardos, indicating it was close to a populated area."
+            ]
+          },
+          {
+            "question": "What factors contributed to the wildfire's rapid spread?",
+            "options": [
+              "Heavy rain and cool temperatures",
+              "Dry conditions and strong winds",
+              "Intentional human actions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "On the contrary, the brief mentions dry conditions and strong winds, which would worsen a fire.",
+              "That's correct! Dry conditions and strong winds are explicitly mentioned as factors in the fire's rapid expansion.",
+              "The brief does not provide information about intentional actions; it mentions natural factors like wind and dryness."
+            ]
+          },
+          {
+            "question": "Who made the statement about some of the 'victims' potentially being British nationals?",
+            "options": [
+              "The national government spokesperson",
+              "A local official",
+              "An eyewitness from the community"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief specifies a 'local official' made this particular statement, not a national spokesperson.",
+              "Correct! A local official provided this information in the news brief.",
+              "While there may be eyewitnesses, the brief attributes this specific report to a local official."
+            ]
+          },
+          {
+            "question": "In the sentence 'A local official said four of the victims may be British nationals,' what is the grammatical function of the word 'said'?",
+            "options": [
+              "It describes a direct command",
+              "It is a reporting verb",
+              "It functions as an auxiliary verb"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'said' is used to report a statement, not to give a direct command.",
+              "Exactly! 'Said' is a reporting verb used to convey what a local official communicated.",
+              "While 'said' is a verb, its specific role here is to report speech, not to help form a tense."
+            ]
+          },
+          {
+            "question": "According to the news brief, what does this 'wildfire' represent for the region?",
+            "options": [
+              "A minor environmental issue",
+              "A significant tourist attraction",
+              "A major crisis"
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. The ceremonies lasted longer than a single day.",
-              "Incorrect. The news brief specifies a different duration for the mourning period.",
-              "Correct! The news brief states the official mourning ceremonies lasted for six days."
+              "The devastation and casualties clearly indicate it is far more than a minor issue.",
+              "A wildfire causing deaths and missing people is a disaster, not a tourist attraction.",
+              "You are right! The news brief describes the wildfire as a major crisis for the region, prompting extensive operations."
             ]
           },
           {
-            "question": "Where was Ali Khamenei buried?",
+            "question": "What is the definition of 'victims' as used in the news brief about the wildfire?",
             "options": [
-              "In the capital city of Tehran.",
-              "At the Imam Reza shrine in Mashhad.",
-              "In his hometown cemetery."
+              "People who actively fought against the fire",
+              "People who have suffered harm, injury, or death",
+              "People who provided emergency medical assistance"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. The burial location was a specific shrine, not just the capital.",
-              "Correct! He was buried at the Imam Reza shrine in Mashhad, a holiest Shia Muslim site.",
-              "Incorrect. The news brief specifies the Imam Reza shrine as the burial place."
+              "Firefighters and volunteers helped, but 'victims' refers to those who suffered harm, not those who fought the fire.",
+              "That's correct! Victims are individuals who have been negatively affected, in this case, by injury or death from the fire.",
+              "Medical personnel provide assistance; 'victims' are those who receive the assistance due to harm."
             ]
           },
           {
-            "question": "What does the term 'supreme leader' mean in the context of Iran?",
+            "question": "Which of the following describes the immediate focus of emergency services as mentioned in the brief?",
             "options": [
-              "The country's head of the military.",
-              "The highest political and religious authority.",
-              "The leader of the parliament."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. While influential, the supreme leader's role is broader than just the military.",
-              "Correct! The supreme leader holds the ultimate political and religious power in Iran.",
-              "Incorrect. The supreme leader is distinct from the head of the legislative body."
-            ]
-          },
-          {
-            "question": "What is implied when people 'pay their final respects'?",
-            "options": [
-              "They are protesting against a decision.",
-              "They are celebrating a victory.",
-              "They are showing honor and sadness for someone who died."
+              "Long-term recovery planning",
+              "Determining the financial cost of the damage",
+              "Working tirelessly in the affected zones"
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. This phrase is associated with mourning, not protest.",
-              "Incorrect. 'Paying final respects' relates to loss, not celebration.",
-              "Correct! It means showing honor and sadness at a funeral or memorial."
-            ]
-          },
-          {
-            "question": "The phrase 'national mourning' refers to:",
-            "options": [
-              "A private family gathering.",
-              "A country's official period of sadness for a loss.",
-              "A holiday for shopping."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. National mourning involves the entire country, not just a private family.",
-              "Correct! It's when a whole country officially remembers and expresses sorrow for a significant loss.",
-              "Incorrect. National mourning is a solemn period, not a shopping holiday."
-            ]
-          },
-          {
-            "question": "What does it mean if a site is described as 'holiest'?",
-            "options": [
-              "It is the newest site.",
-              "It is the most sacred or religious.",
-              "It is the largest site in the country."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. 'Holiest' refers to religious significance, not age.",
-              "Correct! 'Holiest' means it is the most sacred or revered in a spiritual sense.",
-              "Incorrect. Size is not the primary meaning of 'holiest'; religious importance is."
-            ]
-          },
-          {
-            "question": "When thousands of people 'congregated' in Mashhad, what did they do?",
-            "options": [
-              "They left the city.",
-              "They spread out across the region.",
-              "They gathered together in a crowd."
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "Incorrect. 'Congregated' means to come together, not to leave.",
-              "Incorrect. This word implies coming together, not dispersing.",
-              "Correct! 'Congregated' means they gathered together in a large group."
-            ]
-          },
-          {
-            "question": "In the sentence 'Ali Khamenei was buried at the Imam Reza shrine,' why is the passive voice used?",
-            "options": [
-              "To emphasize who performed the burial.",
-              "To highlight the action of burying rather than the specific people who did it.",
-              "To make the sentence shorter."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. The passive voice generally de-emphasizes the agent (who did it).",
-              "Correct! The passive voice often emphasizes the action or the receiver of the action, rather than the person performing it.",
-              "Incorrect. While it can sometimes be shorter, the main reason here is focus on the action."
-            ]
-          },
-          {
-            "question": "Which of the following sentences from the news brief uses the passive voice?",
-            "options": [
-              "Thousands of people congregated to pay their final respects.",
-              "The official mourning ceremonies lasted for six days.",
-              "Ali Khamenei was buried at the Imam Reza shrine."
-            ],
-            "correct_option_index": 2,
-            "option_feedback": [
-              "Incorrect. This sentence is in the active voice; 'people' is the subject performing 'congregated'.",
-              "Incorrect. This sentence is also in the active voice; 'ceremonies' is the subject performing 'lasted'.",
-              "Correct! 'Was buried' is an example of the passive voice (form of 'to be' + past participle)."
+              "While recovery is important, the brief highlights their immediate, tireless work in affected zones.",
+              "Financial assessments usually come later; the immediate focus is on the human impact and containment.",
+              "Correct! The brief states that emergency services are working tirelessly in the affected zones to respond to the disaster."
             ]
           }
         ]
@@ -408,192 +408,192 @@
       "cefr": "C1-Higher",
       "file_path": "advanced.html",
       "lesson": {
-        "title": "Iran Observes Six Days of Profound Mourning for Late Supreme Leader",
-        "overview": "The nation of Iran recently concluded six days of intense public mourning ceremonies culminating in the interment of its late supreme leader, Ali Khamenei, at the revered Imam Reza shrine in Mashhad.",
-        "topic": "The funeral and burial rites of Iran's supreme leader, Ali Khamenei, and the associated national mourning period.",
+        "title": "Devastating Wildfire in Southern Spain Claims Lives, Leaves Many Missing",
+        "overview": "A catastrophic wildfire in southern Spain has resulted in a significant loss of life and numerous disappearances, prompting an urgent response from emergency services and generating international concern regarding potential British casualties.",
+        "topic": "Disastrous Wildfire Impact and International Concern in Southern Spain",
         "news_brief_sentences": [
-          "Iran recently concluded a period of profound national mourning, marking the passing of its late supreme leader, Ali Khamenei.",
-          "The solemn burial of the revered leader took place following an extensive six-day period of public ceremonies.",
-          "Immense crowds converged on Mashhad, a city of considerable religious significance, to participate in the final rites.",
-          "The Imam Reza shrine, widely acknowledged as Iran's revered holiest Shia Muslim site, served as the ultimate resting place.",
-          "This sacred interment formally concluded the widespread public mourning ceremonies that had captivated the nation.",
-          "The sheer scale of public attendance underscored the deep veneration many held for the departed figure.",
-          "The elaborate funerary proceedings reflected the nation's enduring cultural and religious traditions surrounding such a monumental loss.",
-          "Observing these rituals across multiple cities highlighted the collective national sentiment and respect.",
-          "Thousands gathered, demonstrating their solidarity and expressing grief for the former spiritual head of the Islamic Republic.",
-          "The selection of the esteemed shrine for the burial further solidifies the late leader's spiritual legacy within the country's fabric."
+          "The Iberian Peninsula is grappling with the severe aftermath of a virulent wildfire that erupted in southern Spain.",
+          "This catastrophic incident, which commenced near Los Gallardos in Almería, has led to profound tragedy.",
+          "Initial reports confirm a grim toll of at least twelve fatalities, casting a somber shadow over the region.",
+          "Furthermore, twenty-three individuals remain unaccounted for, intensifying anxieties among residents and rescue teams.",
+          "Local authorities are coordinating extensive search and rescue operations across the scorched landscape.",
+          "It is understood that four of the victims may be British nationals, intensifying international concern.",
+          "This potential development has prompted diplomatic engagement and offers of assistance from the UK.",
+          "The sheer scale of the conflagration necessitated immediate and large-scale evacuations, displacing many from their homes.",
+          "Investigators are now working to ascertain the precise cause of this devastating outbreak.",
+          "The community, alongside emergency personnel, faces a formidable task in managing the recovery efforts and supporting those affected."
         ],
         "vocabulary": [
           {
-            "term": "profound national mourning",
-            "part_of_speech": "adjective phrase",
-            "definition": "A period of deep sorrow and public grief observed nationwide, typically following the death of a highly significant figure."
-          },
-          {
-            "term": "solemn burial",
-            "part_of_speech": "noun phrase",
-            "definition": "A burial ceremony conducted with great seriousness, formality, and reverence, reflecting deep respect and gravity."
-          },
-          {
-            "term": "immense crowds",
-            "part_of_speech": "noun phrase",
-            "definition": "Extremely large gatherings of people, often suggesting a vast number or a significant turnout for an event."
-          },
-          {
-            "term": "revered",
+            "term": "virulent",
             "part_of_speech": "adjective",
-            "definition": "Held in deep respect and awe, often due to sacredness, historical importance, or widespread admiration."
+            "definition": "Extremely severe or harmful in its effects; highly destructive or impactful."
           },
           {
-            "term": "interment",
-            "part_of_speech": "noun",
-            "definition": "The ritual act of burying a dead body, or the state of being buried, typically performed with ceremonial formality."
+            "term": "catastrophic incident",
+            "part_of_speech": "noun phrase",
+            "definition": "An event causing great and often sudden damage or suffering; a major disaster with devastating consequences."
+          },
+          {
+            "term": "grim toll",
+            "part_of_speech": "noun phrase",
+            "definition": "A disheartening or somber number of casualties, deaths, or negative consequences resulting from an event."
+          },
+          {
+            "term": "local authorities",
+            "part_of_speech": "noun phrase",
+            "definition": "The administrative body or elected officials responsible for the public services, control, and governance of a specific geographical area."
+          },
+          {
+            "term": "ascertain the precise cause",
+            "part_of_speech": "verb phrase",
+            "definition": "To find out or determine with exactness and certainty the reason or origin of something."
           }
         ],
         "grammar": {
-          "concept": "Reduced Relative Clauses",
-          "explanation": "Reduced relative clauses are a sophisticated grammatical structure where the relative pronoun (e.g., who, which, that) and sometimes the auxiliary verb (e.g., is, are, was, were) are omitted, making the sentence more concise and formal. The clause often begins with a present participle (-ing form), a past participle (-ed form), or sometimes just an adjective or noun phrase. They provide additional information about a noun without using a full relative clause, characteristic of advanced English writing.",
-          "example_quote": "The sheer scale of public attendance underscored the deep veneration many held for the departed figure."
+          "concept": "Impersonal Passive Voice for Reporting",
+          "explanation": "The impersonal passive voice is frequently used in formal news reporting to present information that is generally accepted, widely reported, or understood, without explicitly stating who is doing the reporting. It creates a sense of objectivity and formal distance, often using constructions like 'It is understood that...', 'It is said that...', or 'It is believed that...'.",
+          "example_quote": "It is understood that four of the victims may be British nationals, intensifying international concern."
         },
         "quiz": [
           {
-            "question": "Which phrase best captures the atmosphere of the funeral period described in the news brief?",
+            "question": "What does the term 'virulent' imply about the wildfire mentioned in the news brief?",
             "options": [
-              "casual observance",
-              "profound national mourning",
-              "brief local gathering"
+              "It was easily contained and minor.",
+              "It was extremely severe and harmful.",
+              "It occurred in a remote, unpopulated area."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. 'Casual observance' implies a lack of seriousness, which contradicts the tone of the brief.",
-              "Correct! 'Profound national mourning' accurately conveys the widespread and deeply felt grief mentioned.",
-              "Incorrect. 'Brief local gathering' does not reflect the six-day, nationwide nature of the events described."
+              "Incorrect. 'Virulent' indicates a severe and harmful nature, not an easily contained one.",
+              "Correct. 'Virulent' means extremely severe or harmful, accurately describing the destructive nature of the wildfire.",
+              "Incorrect. While it might have been remote, 'virulent' specifically describes its harmful intensity, not its location."
             ]
           },
           {
-            "question": "What does the term 'interment' specifically refer to in the context of the news brief?",
+            "question": "According to the brief, what is the 'grim toll' primarily referring to?",
             "options": [
-              "a public address",
-              "the burial of a body",
-              "a memorial service"
+              "The emotional distress of the community.",
+              "The number of fatalities reported.",
+              "The financial cost of the damage."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. 'Interment' refers to the burial, not a speech.",
-              "Correct! 'Interment' is a formal term for the act of burying a deceased person.",
-              "Incorrect. While a memorial service might accompany an interment, the term itself specifically means burial."
+              "Incorrect. While distress is present, 'grim toll' specifically refers to the number of deaths.",
+              "Correct. The 'grim toll' refers directly to the reported number of fatalities, specifically twelve.",
+              "Incorrect. The brief does not mention the financial cost, and 'grim toll' is used for casualties."
             ]
           },
           {
-            "question": "According to the news brief, where was Ali Khamenei ultimately laid to rest?",
+            "question": "Which phrase best defines a 'catastrophic incident' in the context of the news?",
             "options": [
-              "Tehran's Grand Mosque",
-              "The Imam Reza shrine in Mashhad",
-              "Qom's Fatima Masumeh Shrine"
+              "A minor inconvenience causing slight disruption.",
+              "An event resulting in significant, widespread damage or suffering.",
+              "A planned emergency drill to test readiness."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. The news brief specifies the Imam Reza shrine.",
-              "Correct! The Imam Reza shrine in Mashhad is explicitly mentioned as the burial site.",
-              "Incorrect. The news brief identifies the Imam Reza shrine, not the Fatima Masumeh Shrine."
+              "Incorrect. A 'catastrophic incident' describes a major disaster, not a minor inconvenience.",
+              "Correct. A 'catastrophic incident' denotes an event causing great and often sudden damage or suffering.",
+              "Incorrect. This term refers to an actual disaster, not a drill or exercise."
             ]
           },
           {
-            "question": "The news brief mentions 'immense crowds'. What does 'immense' imply about the gatherings?",
+            "question": "Why are 'local authorities' particularly busy following the wildfire?",
             "options": [
-              "They were small but significant.",
-              "They were unusually quiet.",
-              "They were exceptionally large."
+              "They are planning a local festival.",
+              "They are coordinating search and rescue operations.",
+              "They are issuing permits for new construction."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Their immediate focus is on the disaster response, not celebratory events.",
+              "Correct. 'Local authorities' are actively involved in coordinating the critical search and rescue efforts.",
+              "Incorrect. Their primary role in this context is emergency management, not construction permits."
+            ]
+          },
+          {
+            "question": "What is the purpose of investigators attempting to 'ascertain the precise cause' of the wildfire?",
+            "options": [
+              "To predict future weather patterns.",
+              "To understand why it started and prevent recurrence.",
+              "To identify the specific individuals responsible for fighting the fire."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While weather is a factor, the phrase means determining the origin of this specific event.",
+              "Correct. To 'ascertain the precise cause' means to discover exactly what initiated the fire, which is crucial for prevention.",
+              "Incorrect. This phrase relates to the origin of the fire, not the personnel involved in combating it."
+            ]
+          },
+          {
+            "question": "Which statement accurately reflects the initial casualties reported in the brief?",
+            "options": [
+              "At least 23 people are confirmed dead, with 12 missing.",
+              "At least 12 people are confirmed dead, with 23 missing.",
+              "Over 30 people have been confirmed dead."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The numbers are reversed; 12 dead and 23 missing.",
+              "Correct. The brief explicitly states 'at least twelve fatalities' and 'twenty-three individuals remain unaccounted for.'",
+              "Incorrect. This option overstates the confirmed fatalities and does not account for the missing."
+            ]
+          },
+          {
+            "question": "The grammar point discussed focuses on the impersonal passive voice. Which of these uses it effectively?",
+            "options": [
+              "They understood the situation quickly.",
+              "It is understood that the situation is complex.",
+              "We understand the gravity of the situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This uses the active voice with a personal pronoun.",
+              "Correct. 'It is understood that...' is a classic construction of the impersonal passive voice, common in formal reporting.",
+              "Incorrect. This is an active voice construction, focusing on 'we' as the agent."
+            ]
+          },
+          {
+            "question": "What is a key reason the impersonal passive voice, as exemplified by 'It is understood that...', is used in news reporting?",
+            "options": [
+              "To make the report more emotional and personal.",
+              "To emphasize the reporter's personal opinion.",
+              "To maintain objectivity and present widely accepted information."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. 'Immense' suggests a very large size, not smallness.",
-              "Incorrect. 'Immense' relates to size, not audibility.",
-              "Correct! 'Immense' means extremely large, indicating a vast number of people attended."
+              "Incorrect. The impersonal passive voice typically creates distance and objectivity, not emotional closeness.",
+              "Incorrect. It aims for impartiality rather than highlighting personal opinion.",
+              "Correct. The impersonal passive voice is used to convey information as generally known or accepted, adding a layer of formal objectivity."
             ]
           },
           {
-            "question": "In the phrase 'the revered Imam Reza shrine,' what does 'revered' signify?",
+            "question": "The news brief mentions that the conflagration 'necessitated immediate and large-scale evacuations.' What does 'necessitated' imply?",
             "options": [
-              "Recently built",
-              "Highly respected or sacred",
-              "Controversial or disputed"
+              "The evacuations were optional but recommended.",
+              "The evacuations were legally forbidden.",
+              "The evacuations were absolutely required due to the severity."
             ],
-            "correct_option_index": 1,
+            "correct_option_index": 2,
             "option_feedback": [
-              "Incorrect. 'Revered' refers to respect, not age or construction status.",
-              "Correct! 'Revered' indicates that the shrine is held in deep respect and awe, signifying its sacred status.",
-              "Incorrect. 'Revered' implies honor and respect, the opposite of controversial."
+              "Incorrect. 'Necessitated' implies a mandatory requirement, not an option.",
+              "Incorrect. This word means the opposite of being forbidden; it made them essential.",
+              "Correct. 'Necessitated' means that the conditions made the large-scale evacuations absolutely essential or unavoidable."
             ]
           },
           {
-            "question": "Which of the following best describes a 'solemn burial'?",
+            "question": "The phrase 'intensifying anxieties' suggests what about the current emotional state regarding the missing individuals?",
             "options": [
-              "A festive and celebratory event.",
-              "A deeply serious and respectful ceremony.",
-              "A quick, informal procedure."
+              "Anxieties are lessening due to positive news.",
+              "Anxieties were already present and are now growing stronger.",
+              "There was no anxiety until this point."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Incorrect. 'Solemn' indicates seriousness, not festivity.",
-              "Correct! A 'solemn burial' is characterized by seriousness, formality, and deep respect.",
-              "Incorrect. 'Solemn' implies formality and reverence, not speed or informality."
-            ]
-          },
-          {
-            "question": "In the sentence 'The sheer scale of public attendance underscored the deep veneration many held for the departed figure,' what type of grammatical structure is 'many held for the departed figure'?",
-            "options": [
-              "A dependent clause",
-              "A reduced relative clause",
-              "An adverbial phrase"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. While it functions as a type of clause, it's more specific.",
-              "Correct! This is an example of a reduced relative clause, where 'who' or 'that' has been omitted for conciseness.",
-              "Incorrect. This structure modifies 'veneration' by describing 'many', not acting as an adverbial phrase."
-            ]
-          },
-          {
-            "question": "What was the duration of the public mourning ceremonies mentioned in the brief?",
-            "options": [
-              "Four days",
-              "Six days",
-              "One week"
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. The brief explicitly states a different duration.",
-              "Correct! The news brief clearly states the ceremonies lasted for six days.",
-              "Incorrect. While 'one week' is close, the brief specifically mentions 'six days'."
-            ]
-          },
-          {
-            "question": "The news brief suggests Ali Khamenei's passing marks a 'pivotal moment.' What does this imply about its significance?",
-            "options": [
-              "It will have no lasting impact.",
-              "It represents a critical turning point.",
-              "It is a minor, inconsequential event."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. A 'pivotal moment' implies significant impact.",
-              "Correct! A 'pivotal moment' suggests a crucial point that will lead to significant changes or developments.",
-              "Incorrect. 'Pivotal' means critically important, not minor."
-            ]
-          },
-          {
-            "question": "The lesson's grammar point discusses how reduced relative clauses contribute to writing. What is their primary effect?",
-            "options": [
-              "They add redundancy to sentences.",
-              "They make writing more concise and formal.",
-              "They simplify complex ideas for beginners."
-            ],
-            "correct_option_index": 1,
-            "option_feedback": [
-              "Incorrect. Reduced relative clauses aim for conciseness, not redundancy.",
-              "Correct! Reduced relative clauses help create more concise and formal writing, suitable for advanced English.",
-              "Incorrect. While they simplify structure, their primary effect is conciseness and formality, not simplifying for beginners."
+              "Incorrect. 'Intensifying' means increasing, not lessening.",
+              "Correct. 'Intensifying anxieties' implies that worries existed previously and are now becoming more pronounced or severe.",
+              "Incorrect. The word 'intensifying' means something is increasing from an existing state, not starting anew."
             ]
           }
         ]

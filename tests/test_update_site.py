@@ -79,6 +79,15 @@ class UpdateSiteTests(unittest.TestCase):
         self.assertEqual("May 09, 2026", date_text)
         self.assertEqual("Structured Title", title_text)
 
+    def test_release_datetime_from_date_uses_default_utc_release_time(self):
+        release_dt = update_site.release_datetime_from_date("2026-07-09")
+
+        self.assertEqual(datetime(2026, 7, 9, 10, 0, tzinfo=timezone.utc), release_dt)
+
+    def test_release_datetime_from_date_requires_iso_date(self):
+        with self.assertRaisesRegex(ValueError, "YYYY-MM-DD"):
+            update_site.release_datetime_from_date("2026-7-9")
+
     def test_update_level_page_replaces_same_day_lesson(self):
         page_html = """<!DOCTYPE html><html><body><div id="lesson-container"></div></body></html>"""
         release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)

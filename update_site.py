@@ -391,6 +391,20 @@ def get_release_datetime(summary_tag, date_text, default_release_dt=None):
     return fallback_release_datetime(date_text)
 
 
+def release_datetime_from_date(release_date_text):
+    if not re.fullmatch(r"\d{4}-\d{2}-\d{2}", release_date_text):
+        raise ValueError("Release date must use YYYY-MM-DD format.")
+
+    release_date = datetime.strptime(release_date_text, "%Y-%m-%d")
+    return release_date.replace(
+        hour=DEFAULT_RELEASE_HOUR_UTC,
+        minute=0,
+        second=0,
+        microsecond=0,
+        tzinfo=timezone.utc,
+    )
+
+
 def format_elapsed_text(release_dt, now_dt=None):
     now_dt = (now_dt or datetime.now(timezone.utc)).astimezone(timezone.utc)
     elapsed_seconds = max(0, int((now_dt - release_dt).total_seconds()))
@@ -1005,6 +1019,13 @@ def parse_args():
         action="store_true",
         help="Normalize lesson markup, accessibility metadata, and dedupe archive entries without generating new lessons.",
     )
+    parser.add_argument(
+        "--release-date",
+        help=(
+            "Use a specific UTC release date for generated lessons, in YYYY-MM-DD "
+            "format. The release time is 10:00 UTC."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -1017,7 +1038,11 @@ def main():
     print("Fetching news...")
     news_item = get_daily_news()
     client = configure_gemini()
-    release_dt = datetime.now(timezone.utc)
+    if args.release_date:
+        release_dt = release_datetime_from_date(args.release_date)
+        print(f"Using explicit release date {args.release_date}.")
+    else:
+        release_dt = datetime.now(timezone.utc)
 
     try:
         level_lessons = {}

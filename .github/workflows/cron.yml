@@ -16,6 +16,11 @@ on:
     # Runs every day at 10:00 UTC
     - cron: '0 10 * * *'
   workflow_dispatch:
+    inputs:
+      release_date:
+        description: 'Optional backfill release date in YYYY-MM-DD format'
+        required: false
+        type: string
 
 concurrency:
   group: daily-esl-lesson-generator-${{ github.ref }}
@@ -73,7 +78,13 @@ jobs:
       - name: Run Python Script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python update_site.py
+          RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
+        run: |
+          args=()
+          if [ -n "${RELEASE_DATE}" ]; then
+            args+=(--release-date "${RELEASE_DATE}")
+          fi
+          python update_site.py "${args[@]}"
 
       - name: Commit updated lesson pages
         env:

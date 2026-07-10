@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-10",
+  "release_iso": "2026-07-10T12:21:01Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Huge crowds in Mashhad as Iran's late supreme leader is buried",
+    "summary": "Ali Khamenei was buried at the Imam Reza shrine, Iran's holiest Shia Muslim site, ending six days of public mourning ceremonies.",
+    "link": "https://www.bbc.co.uk/news/articles/c5yzm8m4peeo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Iran's Former Leader Buried After Public Mourning",
+        "overview": "Iran's late supreme leader, Ali Khamenei, was buried in Mashhad after six days of public mourning.",
+        "topic": "World News: Burial of Iran's Late Supreme Leader and Public Mourning",
+        "news_brief_sentences": [
+          "Ali Khamenei was Iran's late supreme leader.",
+          "People showed great sadness for his death.",
+          "There were six days of public mourning ceremonies.",
+          "Huge crowds gathered in the city of Mashhad.",
+          "Ali Khamenei was buried there at the Imam Reza shrine.",
+          "This shrine is Iran's holiest Shia Muslim site.",
+          "Many people came to say goodbye to their leader.",
+          "The burial marked the end of the ceremonies.",
+          "It was a very important event for the country.",
+          "The public mourning has now finished."
+        ],
+        "vocabulary": [
+          {
+            "term": "late",
+            "part_of_speech": "adjective",
+            "definition": "Describes someone who has recently died."
+          },
+          {
+            "term": "leader",
+            "part_of_speech": "noun",
+            "definition": "A person who guides or commands a group, country, or organization."
+          },
+          {
+            "term": "buried",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Placed in the ground after death, often in a ceremony."
+          },
+          {
+            "term": "shrine",
+            "part_of_speech": "noun",
+            "definition": "A holy or sacred place, often visited by religious people."
+          },
+          {
+            "term": "mourning",
+            "part_of_speech": "noun",
+            "definition": "The act of showing great sadness and grief for someone who has died."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense (was/were)",
+          "explanation": "We use the simple past tense to talk about actions or states that happened and finished in the past. 'Was' is for singular subjects (he, she, it, I) and 'were' is for plural subjects (we, you, they).",
+          "example_quote": "Ali Khamenei was Iran's late supreme leader."
+        },
+        "quiz": [
+          {
+            "question": "Who was Ali Khamenei?",
+            "options": [
+              "A famous singer",
+              "Iran's late supreme leader",
+              "A football player"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief states he was Iran's leader, not a singer.",
+              "Yes, the news brief clearly says Ali Khamenei was Iran's late supreme leader.",
+              "No, the news brief does not mention him as a football player."
+            ]
+          },
+          {
+            "question": "What does 'late' mean when we say 'late supreme leader'?",
+            "options": [
+              "Not on time",
+              "Recently died",
+              "Happened at night"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's one meaning of 'late', but not in this context. Here it means someone who has passed away.",
+              "Correct! When talking about a person, 'late' can mean they have recently died.",
+              "No, 'late' in this context means someone who has died, not a time of day."
+            ]
+          },
+          {
+            "question": "How many days of public mourning were there?",
+            "options": [
+              "Two days",
+              "Four days",
+              "Six days"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief mentions a longer period of mourning.",
+              "Not quite. Read the news brief again for the correct number of days.",
+              "That's right! The public mourning ceremonies lasted for six days."
+            ]
+          },
+          {
+            "question": "Where was Ali Khamenei buried?",
+            "options": [
+              "In a large park",
+              "At the Imam Reza shrine",
+              "In a private garden"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief specifies a holy site, not a park.",
+              "Correct! He was buried at the Imam Reza shrine in Mashhad.",
+              "Incorrect. The news brief mentions a public and holy site."
+            ]
+          },
+          {
+            "question": "What is the Imam Reza shrine?",
+            "options": [
+              "A sports stadium",
+              "A shopping center",
+              "Iran's holiest Shia Muslim site"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it is not a sports stadium.",
+              "That's wrong. It is a very important religious place.",
+              "Yes, the news brief says it is Iran's holiest Shia Muslim site."
+            ]
+          },
+          {
+            "question": "What does 'leader' mean?",
+            "options": [
+              "Someone who follows rules",
+              "Someone who sells things",
+              "Someone who guides or commands"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a leader usually makes rules or guides others, rather than just following them.",
+              "That's not what 'leader' means. A leader usually has a political or group role.",
+              "Exactly! A leader is a person who guides or commands a group or country."
+            ]
+          },
+          {
+            "question": "Why did huge crowds gather in Mashhad?",
+            "options": [
+              "For a music concert",
+              "For a market day",
+              "To show sadness for the late leader"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief mentions mourning, not a concert.",
+              "No, the crowds were there for a very serious and sad event.",
+              "Yes, the huge crowds gathered to mourn and say goodbye to their late leader."
+            ]
+          },
+          {
+            "question": "The sentence 'Ali Khamenei was Iran's late supreme leader' uses which grammar concept?",
+            "options": [
+              "Future tense",
+              "Simple past tense",
+              "Present continuous tense"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'was' talks about something that happened in the past.",
+              "Correct! 'Was' is the simple past tense of 'to be', showing a past state.",
+              "Incorrect. The verb 'was' is not used for present continuous actions."
+            ]
+          },
+          {
+            "question": "What does 'mourning' involve?",
+            "options": [
+              "Celebrating a birthday",
+              "Showing sadness for a death",
+              "Having a big party"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, mourning is about sadness, not celebration.",
+              "Right! Mourning is the act of showing sadness and grief after someone dies.",
+              "That's wrong. Mourning is a serious and sad event, not a party."
+            ]
+          },
+          {
+            "question": "When did the public mourning ceremonies end?",
+            "options": [
+              "After the burial",
+              "Before the burial",
+              "Next week"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the burial marked the end of the mourning ceremonies.",
+              "No, the ceremonies continued until the leader was buried.",
+              "Incorrect. The news brief says the ceremonies are now finished."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Iran Concludes Six Days of National Mourning for Supreme Leader",
+        "overview": "Iran concluded six days of public mourning for its late supreme leader, Ali Khamenei, who was buried at the Imam Reza shrine, a holy Shia Muslim site.",
+        "topic": "Iranian national mourning and religious ceremonies after the death of a leader",
+        "news_brief_sentences": [
+          "Iran has recently observed a significant period of national mourning following the passing of its supreme leader, Ali Khamenei.",
+          "The official mourning ceremonies lasted for six days, drawing huge crowds in various cities across the nation.",
+          "Thousands of people congregated to pay their final respects to the late leader during this solemn time.",
+          "Ali Khamenei was buried at the Imam Reza shrine, which is considered Iran's holiest Shia Muslim site.",
+          "This highly sacred shrine is located in Mashhad, a major city in northeastern Iran.",
+          "The enormous public gatherings highlighted the widespread impact of his passing.",
+          "Many citizens expressed their grief and participated in the religious rites surrounding the event.",
+          "The Imam Reza shrine holds immense religious importance for Shia Muslims worldwide.",
+          "Reports indicated that huge crowds were present in Mashhad to witness the burial ceremonies.",
+          "With the burial now complete, the extensive period of public mourning has officially ended."
+        ],
+        "vocabulary": [
+          {
+            "term": "supreme leader",
+            "part_of_speech": "noun phrase",
+            "definition": "The highest political and religious authority in Iran, holding ultimate power and influence."
+          },
+          {
+            "term": "national mourning",
+            "part_of_speech": "noun phrase",
+            "definition": "A period when a country officially remembers and expresses sadness for a significant loss, often a public figure."
+          },
+          {
+            "term": "pay their final respects",
+            "part_of_speech": "verb phrase",
+            "definition": "To show honor and sadness at a funeral or memorial service for someone who has died."
+          },
+          {
+            "term": "holiest",
+            "part_of_speech": "adjective",
+            "definition": "Most sacred or religious; highly respected and revered in a spiritual context."
+          },
+          {
+            "term": "congregated",
+            "part_of_speech": "verb",
+            "definition": "Gathered together in a crowd or group, often for a specific purpose or event."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the action of the verb is more important than who or what performs the action, or when the agent (the one doing the action) is unknown or less important. It is formed using a form of the verb 'to be' followed by the past participle of the main verb.",
+          "example_quote": "Ali Khamenei was buried at the Imam Reza shrine, which is considered Iran's holiest Shia Muslim site."
+        },
+        "quiz": [
+          {
+            "question": "What significant event recently happened in Iran, as described in the news brief?",
+            "options": [
+              "A new leader was elected.",
+              "A period of national mourning concluded.",
+              "A major religious festival began."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief mentions the passing of a leader, not an election.",
+              "Correct! The news brief focuses on the end of a national mourning period for Ali Khamenei.",
+              "Incorrect. The events described were related to a burial and mourning, not a festival's start."
+            ]
+          },
+          {
+            "question": "How long did the official mourning ceremonies for Ali Khamenei last?",
+            "options": [
+              "One day.",
+              "Three days.",
+              "Six days."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The ceremonies lasted longer than a single day.",
+              "Incorrect. The news brief specifies a different duration for the mourning period.",
+              "Correct! The news brief states the official mourning ceremonies lasted for six days."
+            ]
+          },
+          {
+            "question": "Where was Ali Khamenei buried?",
+            "options": [
+              "In the capital city of Tehran.",
+              "At the Imam Reza shrine in Mashhad.",
+              "In his hometown cemetery."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The burial location was a specific shrine, not just the capital.",
+              "Correct! He was buried at the Imam Reza shrine in Mashhad, a holiest Shia Muslim site.",
+              "Incorrect. The news brief specifies the Imam Reza shrine as the burial place."
+            ]
+          },
+          {
+            "question": "What does the term 'supreme leader' mean in the context of Iran?",
+            "options": [
+              "The country's head of the military.",
+              "The highest political and religious authority.",
+              "The leader of the parliament."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While influential, the supreme leader's role is broader than just the military.",
+              "Correct! The supreme leader holds the ultimate political and religious power in Iran.",
+              "Incorrect. The supreme leader is distinct from the head of the legislative body."
+            ]
+          },
+          {
+            "question": "What is implied when people 'pay their final respects'?",
+            "options": [
+              "They are protesting against a decision.",
+              "They are celebrating a victory.",
+              "They are showing honor and sadness for someone who died."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This phrase is associated with mourning, not protest.",
+              "Incorrect. 'Paying final respects' relates to loss, not celebration.",
+              "Correct! It means showing honor and sadness at a funeral or memorial."
+            ]
+          },
+          {
+            "question": "The phrase 'national mourning' refers to:",
+            "options": [
+              "A private family gathering.",
+              "A country's official period of sadness for a loss.",
+              "A holiday for shopping."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. National mourning involves the entire country, not just a private family.",
+              "Correct! It's when a whole country officially remembers and expresses sorrow for a significant loss.",
+              "Incorrect. National mourning is a solemn period, not a shopping holiday."
+            ]
+          },
+          {
+            "question": "What does it mean if a site is described as 'holiest'?",
+            "options": [
+              "It is the newest site.",
+              "It is the most sacred or religious.",
+              "It is the largest site in the country."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Holiest' refers to religious significance, not age.",
+              "Correct! 'Holiest' means it is the most sacred or revered in a spiritual sense.",
+              "Incorrect. Size is not the primary meaning of 'holiest'; religious importance is."
+            ]
+          },
+          {
+            "question": "When thousands of people 'congregated' in Mashhad, what did they do?",
+            "options": [
+              "They left the city.",
+              "They spread out across the region.",
+              "They gathered together in a crowd."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Congregated' means to come together, not to leave.",
+              "Incorrect. This word implies coming together, not dispersing.",
+              "Correct! 'Congregated' means they gathered together in a large group."
+            ]
+          },
+          {
+            "question": "In the sentence 'Ali Khamenei was buried at the Imam Reza shrine,' why is the passive voice used?",
+            "options": [
+              "To emphasize who performed the burial.",
+              "To highlight the action of burying rather than the specific people who did it.",
+              "To make the sentence shorter."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice generally de-emphasizes the agent (who did it).",
+              "Correct! The passive voice often emphasizes the action or the receiver of the action, rather than the person performing it.",
+              "Incorrect. While it can sometimes be shorter, the main reason here is focus on the action."
+            ]
+          },
+          {
+            "question": "Which of the following sentences from the news brief uses the passive voice?",
+            "options": [
+              "Thousands of people congregated to pay their final respects.",
+              "The official mourning ceremonies lasted for six days.",
+              "Ali Khamenei was buried at the Imam Reza shrine."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This sentence is in the active voice; 'people' is the subject performing 'congregated'.",
+              "Incorrect. This sentence is also in the active voice; 'ceremonies' is the subject performing 'lasted'.",
+              "Correct! 'Was buried' is an example of the passive voice (form of 'to be' + past participle)."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Iran Observes Six Days of Profound Mourning for Late Supreme Leader",
+        "overview": "The nation of Iran recently concluded six days of intense public mourning ceremonies culminating in the interment of its late supreme leader, Ali Khamenei, at the revered Imam Reza shrine in Mashhad.",
+        "topic": "The funeral and burial rites of Iran's supreme leader, Ali Khamenei, and the associated national mourning period.",
+        "news_brief_sentences": [
+          "Iran recently concluded a period of profound national mourning, marking the passing of its late supreme leader, Ali Khamenei.",
+          "The solemn burial of the revered leader took place following an extensive six-day period of public ceremonies.",
+          "Immense crowds converged on Mashhad, a city of considerable religious significance, to participate in the final rites.",
+          "The Imam Reza shrine, widely acknowledged as Iran's revered holiest Shia Muslim site, served as the ultimate resting place.",
+          "This sacred interment formally concluded the widespread public mourning ceremonies that had captivated the nation.",
+          "The sheer scale of public attendance underscored the deep veneration many held for the departed figure.",
+          "The elaborate funerary proceedings reflected the nation's enduring cultural and religious traditions surrounding such a monumental loss.",
+          "Observing these rituals across multiple cities highlighted the collective national sentiment and respect.",
+          "Thousands gathered, demonstrating their solidarity and expressing grief for the former spiritual head of the Islamic Republic.",
+          "The selection of the esteemed shrine for the burial further solidifies the late leader's spiritual legacy within the country's fabric."
+        ],
+        "vocabulary": [
+          {
+            "term": "profound national mourning",
+            "part_of_speech": "adjective phrase",
+            "definition": "A period of deep sorrow and public grief observed nationwide, typically following the death of a highly significant figure."
+          },
+          {
+            "term": "solemn burial",
+            "part_of_speech": "noun phrase",
+            "definition": "A burial ceremony conducted with great seriousness, formality, and reverence, reflecting deep respect and gravity."
+          },
+          {
+            "term": "immense crowds",
+            "part_of_speech": "noun phrase",
+            "definition": "Extremely large gatherings of people, often suggesting a vast number or a significant turnout for an event."
+          },
+          {
+            "term": "revered",
+            "part_of_speech": "adjective",
+            "definition": "Held in deep respect and awe, often due to sacredness, historical importance, or widespread admiration."
+          },
+          {
+            "term": "interment",
+            "part_of_speech": "noun",
+            "definition": "The ritual act of burying a dead body, or the state of being buried, typically performed with ceremonial formality."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced Relative Clauses",
+          "explanation": "Reduced relative clauses are a sophisticated grammatical structure where the relative pronoun (e.g., who, which, that) and sometimes the auxiliary verb (e.g., is, are, was, were) are omitted, making the sentence more concise and formal. The clause often begins with a present participle (-ing form), a past participle (-ed form), or sometimes just an adjective or noun phrase. They provide additional information about a noun without using a full relative clause, characteristic of advanced English writing.",
+          "example_quote": "The sheer scale of public attendance underscored the deep veneration many held for the departed figure."
+        },
+        "quiz": [
+          {
+            "question": "Which phrase best captures the atmosphere of the funeral period described in the news brief?",
+            "options": [
+              "casual observance",
+              "profound national mourning",
+              "brief local gathering"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Casual observance' implies a lack of seriousness, which contradicts the tone of the brief.",
+              "Correct! 'Profound national mourning' accurately conveys the widespread and deeply felt grief mentioned.",
+              "Incorrect. 'Brief local gathering' does not reflect the six-day, nationwide nature of the events described."
+            ]
+          },
+          {
+            "question": "What does the term 'interment' specifically refer to in the context of the news brief?",
+            "options": [
+              "a public address",
+              "the burial of a body",
+              "a memorial service"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Interment' refers to the burial, not a speech.",
+              "Correct! 'Interment' is a formal term for the act of burying a deceased person.",
+              "Incorrect. While a memorial service might accompany an interment, the term itself specifically means burial."
+            ]
+          },
+          {
+            "question": "According to the news brief, where was Ali Khamenei ultimately laid to rest?",
+            "options": [
+              "Tehran's Grand Mosque",
+              "The Imam Reza shrine in Mashhad",
+              "Qom's Fatima Masumeh Shrine"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies the Imam Reza shrine.",
+              "Correct! The Imam Reza shrine in Mashhad is explicitly mentioned as the burial site.",
+              "Incorrect. The news brief identifies the Imam Reza shrine, not the Fatima Masumeh Shrine."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'immense crowds'. What does 'immense' imply about the gatherings?",
+            "options": [
+              "They were small but significant.",
+              "They were unusually quiet.",
+              "They were exceptionally large."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Immense' suggests a very large size, not smallness.",
+              "Incorrect. 'Immense' relates to size, not audibility.",
+              "Correct! 'Immense' means extremely large, indicating a vast number of people attended."
+            ]
+          },
+          {
+            "question": "In the phrase 'the revered Imam Reza shrine,' what does 'revered' signify?",
+            "options": [
+              "Recently built",
+              "Highly respected or sacred",
+              "Controversial or disputed"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Revered' refers to respect, not age or construction status.",
+              "Correct! 'Revered' indicates that the shrine is held in deep respect and awe, signifying its sacred status.",
+              "Incorrect. 'Revered' implies honor and respect, the opposite of controversial."
+            ]
+          },
+          {
+            "question": "Which of the following best describes a 'solemn burial'?",
+            "options": [
+              "A festive and celebratory event.",
+              "A deeply serious and respectful ceremony.",
+              "A quick, informal procedure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Solemn' indicates seriousness, not festivity.",
+              "Correct! A 'solemn burial' is characterized by seriousness, formality, and deep respect.",
+              "Incorrect. 'Solemn' implies formality and reverence, not speed or informality."
+            ]
+          },
+          {
+            "question": "In the sentence 'The sheer scale of public attendance underscored the deep veneration many held for the departed figure,' what type of grammatical structure is 'many held for the departed figure'?",
+            "options": [
+              "A dependent clause",
+              "A reduced relative clause",
+              "An adverbial phrase"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While it functions as a type of clause, it's more specific.",
+              "Correct! This is an example of a reduced relative clause, where 'who' or 'that' has been omitted for conciseness.",
+              "Incorrect. This structure modifies 'veneration' by describing 'many', not acting as an adverbial phrase."
+            ]
+          },
+          {
+            "question": "What was the duration of the public mourning ceremonies mentioned in the brief?",
+            "options": [
+              "Four days",
+              "Six days",
+              "One week"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly states a different duration.",
+              "Correct! The news brief clearly states the ceremonies lasted for six days.",
+              "Incorrect. While 'one week' is close, the brief specifically mentions 'six days'."
+            ]
+          },
+          {
+            "question": "The news brief suggests Ali Khamenei's passing marks a 'pivotal moment.' What does this imply about its significance?",
+            "options": [
+              "It will have no lasting impact.",
+              "It represents a critical turning point.",
+              "It is a minor, inconsequential event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'pivotal moment' implies significant impact.",
+              "Correct! A 'pivotal moment' suggests a crucial point that will lead to significant changes or developments.",
+              "Incorrect. 'Pivotal' means critically important, not minor."
+            ]
+          },
+          {
+            "question": "The lesson's grammar point discusses how reduced relative clauses contribute to writing. What is their primary effect?",
+            "options": [
+              "They add redundancy to sentences.",
+              "They make writing more concise and formal.",
+              "They simplify complex ideas for beginners."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Reduced relative clauses aim for conciseness, not redundancy.",
+              "Correct! Reduced relative clauses help create more concise and formal writing, suitable for advanced English.",
+              "Incorrect. While they simplify structure, their primary effect is conciseness and formality, not simplifying for beginners."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

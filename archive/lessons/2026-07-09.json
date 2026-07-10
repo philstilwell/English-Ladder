@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-09",
+  "release_iso": "2026-07-09T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US and Iran trade attacks as Khamenei is buried",
+    "summary": "Centcom says it hit 90 Iranian targets in the latest round of strikes, with the Iranian health ministry saying 14 people were killed since Tuesday.",
+    "link": "https://www.bbc.co.uk/news/articles/cz75zjj5wp8o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US and Iran Trade Attacks: News for Learners",
+        "overview": "The United States and Iran recently exchanged military attacks.",
+        "topic": "International Conflict and Military Actions",
+        "news_brief_sentences": [
+          "The United States and Iran are in conflict.",
+          "They recently trade attacks.",
+          "This happened while Khamenei was buried.",
+          "Centcom is a US military group.",
+          "Centcom says it hit 90 Iranian targets.",
+          "These were the latest strikes.",
+          "The Iranian health ministry spoke.",
+          "It says 14 people were killed.",
+          "The deaths happened since Tuesday.",
+          "This situation is very serious."
+        ],
+        "vocabulary": [
+          {
+            "term": "trade attacks",
+            "part_of_speech": "verb phrase",
+            "definition": "To attack each other."
+          },
+          {
+            "term": "buried",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Put a dead person in the ground."
+          },
+          {
+            "term": "hit",
+            "part_of_speech": "verb (past simple)",
+            "definition": "To strike something with force."
+          },
+          {
+            "term": "targets",
+            "part_of_speech": "noun",
+            "definition": "Places or things chosen to be attacked."
+          },
+          {
+            "term": "latest",
+            "part_of_speech": "adjective",
+            "definition": "The newest or most recent one."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense for Finished Actions",
+          "explanation": "We use the simple past tense to talk about actions that finished at a specific time in the past. Many verbs add -ed, but some common verbs are irregular and change their form completely.",
+          "example_quote": "Centcom says it hit 90 Iranian targets."
+        },
+        "quiz": [
+          {
+            "question": "What countries are in conflict according to the news?",
+            "options": [
+              "US and Iran",
+              "US and Europe",
+              "Iran and China"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The news states the US and Iran are in conflict.",
+              "No, Europe is not mentioned in this news.",
+              "Incorrect. The news is about the US and Iran."
+            ]
+          },
+          {
+            "question": "What does 'trade attacks' mean?",
+            "options": [
+              "Exchange money",
+              "Attack each other",
+              "Buy and sell things"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it does not mean to exchange money.",
+              "Yes, 'trade attacks' means to attack one another.",
+              "Incorrect. It is not about buying and selling."
+            ]
+          },
+          {
+            "question": "Who was buried while the attacks happened?",
+            "options": [
+              "Centcom leader",
+              "Khamenei",
+              "An unknown soldier"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says Centcom is a group, not a person being buried.",
+              "That's right! Khamenei was buried.",
+              "The news specifies Khamenei."
+            ]
+          },
+          {
+            "question": "How many Iranian targets did Centcom say it hit?",
+            "options": [
+              "14",
+              "90",
+              "20"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "14 people were killed, not targets hit.",
+              "Correct! Centcom reported hitting 90 targets.",
+              "The news mentions 90 targets, not 20."
+            ]
+          },
+          {
+            "question": "What does 'hit' mean in 'Centcom says it hit 90 Iranian targets'?",
+            "options": [
+              "To miss",
+              "To strike with force",
+              "To find"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'hit' means the opposite of miss.",
+              "Yes, 'hit' means to strike or impact something.",
+              "Incorrect. 'Hit' in this context means to attack."
+            ]
+          },
+          {
+            "question": "What part of speech is 'targets'?",
+            "options": [
+              "Verb",
+              "Noun",
+              "Adjective"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Targets' is not an action word.",
+              "Correct! 'Targets' is a noun, a thing or place.",
+              "No, 'targets' describes a thing, it does not describe a noun."
+            ]
+          },
+          {
+            "question": "When did the 14 deaths happen?",
+            "options": [
+              "Last year",
+              "Since Tuesday",
+              "Next week"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news says the deaths were more recent than last year.",
+              "Exactly! The deaths happened since Tuesday.",
+              "Incorrect. The deaths are already in the past, not future."
+            ]
+          },
+          {
+            "question": "The word 'latest' means:",
+            "options": [
+              "The oldest",
+              "The newest",
+              "The smallest"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'latest' means the most recent, not the oldest.",
+              "That's right! 'Latest' means the most recent or newest.",
+              "Incorrect. 'Latest' refers to time, not size."
+            ]
+          },
+          {
+            "question": "'Centcom says it hit 90 Iranian targets.' Which verb is in the simple past tense?",
+            "options": [
+              "says",
+              "hit",
+              "targets"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Says' is in the simple present tense.",
+              "Correct! 'Hit' is the simple past form of 'to hit'.",
+              "No, 'targets' is a noun here, not a verb."
+            ]
+          },
+          {
+            "question": "Which sentence uses a simple past verb?",
+            "options": [
+              "They are in conflict.",
+              "14 people were killed.",
+              "This situation is serious."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Are' is simple present.",
+              "Excellent! 'Were killed' is in the simple past passive voice.",
+              "'Is' is simple present."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US and Iran Trade Attacks Amidst Heightened Tensions",
+        "overview": "Recent reports indicate increased military actions between the US and Iran following the burial of Khamenei, resulting in casualties and an escalation of hostilities.",
+        "topic": "International Conflict and Diplomacy",
+        "news_brief_sentences": [
+          "The United States and Iran continue to trade attacks amidst heightened tensions in the Middle East.",
+          "This dangerous escalation of hostilities occurred during a sensitive period, linked to the burial of Khamenei.",
+          "Centcom, the US Central Command, confirmed its military forces launched strikes in the region.",
+          "Specifically, Centcom stated that approximately 90 Iranian targets were struck in these recent operations.",
+          "These actions represent the latest round of military engagement between the two nations.",
+          "The Iranian health ministry has also provided details regarding the human impact of these events.",
+          "They reported that 14 people were killed since Tuesday due to the ongoing conflict.",
+          "Such incidents highlight the deep political disagreements and military confrontations between the countries.",
+          "The international community is closely monitoring these developments, urging for restraint.",
+          "Efforts towards de-escalation are seen as crucial to prevent a broader regional conflict."
+        ],
+        "vocabulary": [
+          {
+            "term": "trade attacks",
+            "part_of_speech": "verb phrase",
+            "definition": "To engage in a mutual exchange of military assaults or hostile actions against each other."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase in the intensity, seriousness, or scope of a conflict or situation."
+          },
+          {
+            "term": "struck",
+            "part_of_speech": "verb",
+            "definition": "To hit forcefully, often used in a military context when bombs or missiles hit a target."
+          },
+          {
+            "term": "targets",
+            "part_of_speech": "noun",
+            "definition": "Specific places, people, or objects chosen to be attacked during military operations."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb",
+            "definition": "To cause the death of a person or animal, often in violent situations such as conflict."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object that receives the action, rather than the subject performing the action. It is often employed in news reports when the agent (the one doing the action) is unknown, less important, or obvious from the context.",
+          "example_quote": "They reported that 14 people were killed since Tuesday due to the ongoing conflict."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "Environmental changes in the Middle East",
+              "Recent military exchanges between the US and Iran",
+              "Economic agreements between various countries"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This news brief focuses on military actions, not environmental issues.",
+              "Correct! The brief details the exchange of attacks between the US and Iran.",
+              "The brief discusses conflict and casualties, not economic agreements."
+            ]
+          },
+          {
+            "question": "What does the phrase 'trade attacks' mean in the context of the news?",
+            "options": [
+              "To buy and sell weapons",
+              "To exchange military strikes or hostile actions",
+              "To negotiate peace treaties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Trading attacks means exchanging hostilities, not weapons sales.",
+              "Exactly! It refers to both sides attacking each other.",
+              "The phrase means mutual aggression, not peaceful negotiations."
+            ]
+          },
+          {
+            "question": "Who confirmed that US forces launched strikes in the region?",
+            "options": [
+              "The Iranian health ministry",
+              "Centcom, the US Central Command",
+              "The international community"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Iranian health ministry reported casualties, not US strikes.",
+              "Correct! Centcom confirmed its forces were involved in the strikes.",
+              "The international community monitors the situation but did not confirm the strikes."
+            ]
+          },
+          {
+            "question": "What does 'escalation' imply about the conflict?",
+            "options": [
+              "It is becoming less intense",
+              "It is becoming more serious or widespread",
+              "It has completely stopped"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Escalation means the opposite; it implies an increase in intensity.",
+              "That's right! An escalation suggests the conflict is growing in severity.",
+              "Escalation means the conflict is intensifying, not stopping."
+            ]
+          },
+          {
+            "question": "How many Iranian targets were reported to have been struck by US forces?",
+            "options": [
+              "Around 14 targets",
+              "Approximately 90 targets",
+              "More than 200 targets"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "14 refers to the number of people killed, not targets.",
+              "Correct! Centcom stated that about 90 Iranian targets were struck.",
+              "The brief mentions 90 targets, not a higher number."
+            ]
+          },
+          {
+            "question": "In the sentence '14 people were killed since Tuesday,' which grammatical concept is used?",
+            "options": [
+              "Present Perfect tense",
+              "Conditional clause",
+              "The Passive Voice"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While there's a time reference, the structure highlights the action's recipient.",
+              "This sentence structure is not a conditional clause.",
+              "Exactly! The focus is on the people who received the action, making it passive voice."
+            ]
+          },
+          {
+            "question": "What does 'targets' refer to in the context of military action?",
+            "options": [
+              "Peace negotiations",
+              "Objects or places chosen for attack",
+              "Diplomatic agreements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Targets in this context are related to attacks, not peace talks.",
+              "Yes, 'targets' are the specific places or objects military forces aim to hit.",
+              "Targets are for military actions, not diplomatic agreements."
+            ]
+          },
+          {
+            "question": "Which of these sentences is an example of the passive voice?",
+            "options": [
+              "Centcom confirmed its forces launched strikes.",
+              "The international community is monitoring developments.",
+              "14 people were killed since Tuesday."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the active voice, with Centcom as the subject.",
+              "This sentence is in the active voice, focusing on the community's action.",
+              "Correct! 'Were killed' focuses on the people who received the action, typical of the passive voice."
+            ]
+          },
+          {
+            "question": "What is a suitable synonym for 'struck' in this news brief?",
+            "options": [
+              "Ignored",
+              "Negotiated",
+              "Hit"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Struck implies an attack, not ignoring something.",
+              "Struck is about hitting, not negotiating.",
+              "That's right! In this military context, 'struck' means 'hit'."
+            ]
+          },
+          {
+            "question": "What significant event in Iran was mentioned as happening around the time of the attacks?",
+            "options": [
+              "A major election",
+              "The burial of Khamenei",
+              "A large cultural festival"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief mentions a burial, not an election.",
+              "Correct! The brief states the escalation occurred during the burial of Khamenei.",
+              "The brief specifies a burial, not a cultural festival."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Escalating Tensions: US and Iran Exchange Strikes Amidst High-Profile Burial",
+        "overview": "The ongoing geopolitical friction between the United States and Iran has intensified significantly, marked by a recent surge in retaliatory military actions from both sides against the somber backdrop of a major Iranian figure's interment.",
+        "topic": "Geopolitical Conflict and Retaliatory Military Actions in the Middle East",
+        "news_brief_sentences": [
+          "The enduring geopolitical friction between the United States and Iran has markedly intensified in recent days.",
+          "This surge in reciprocal military engagements unfolds against the somber backdrop of a high-profile Iranian figure's burial, specifically referencing Khamenei's interment.",
+          "US Central Command (Centcom) confirmed a latest round of strikes, hitting approximately 90 targets linked to Iranian forces.",
+          "These extensive operations underscore a severe escalation of hostilities in the already volatile region.",
+          "Concurrently, Iranian health authorities have reported a tragic human toll, confirming 14 fatalities since Tuesday's initial confrontations.",
+          "The cycle of hostility between these nations appears to be deepening, with significant implications for regional stability.",
+          "Observers note that the timing of these attacks, during a period of national mourning, could further inflame prevailing tensions.",
+          "Both sides assert their actions are defensive measures, yet the aggressive exchanges persist unabated.",
+          "The precise nature of the targeted sites and the specific affiliations of the casualties remain subjects of intense scrutiny.",
+          "International bodies continue to urge restraint, fearing broader destabilization as these powerful actors confront each other."
+        ],
+        "vocabulary": [
+          {
+            "term": "reciprocal military engagements",
+            "part_of_speech": "noun phrase",
+            "definition": "Military actions or conflicts that are exchanged between two opposing sides, often in response to each other's prior actions."
+          },
+          {
+            "term": "latest round of strikes",
+            "part_of_speech": "noun phrase",
+            "definition": "The most recent series or phase of military attacks, typically implying that there have been previous instances of such actions."
+          },
+          {
+            "term": "escalation of hostilities",
+            "part_of_speech": "noun phrase",
+            "definition": "A rapid and significant increase in the intensity, scope, or severity of conflicts or aggressive actions between warring parties."
+          },
+          {
+            "term": "cycle of hostility",
+            "part_of_speech": "noun phrase",
+            "definition": "A recurring pattern of animosity, aggression, and retaliation between entities, which perpetuates conflict over an extended period."
+          },
+          {
+            "term": "prevailing tensions",
+            "part_of_speech": "noun phrase",
+            "definition": "The current, widespread, and dominant state of strained relations or profound unease within a particular situation or geographical region."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from a verb or adjective, commonly used in formal and academic writing to condense information and achieve a more objective tone. It transforms actions or qualities into abstract concepts, often making sentences more concise and allowing writers to discuss events as entities rather than processes. This technique frequently appears in news reports to summarize complex situations.",
+          "example_quote": "This surge in reciprocal military engagements unfolds against the somber backdrop of a high-profile Iranian figure's burial, specifically referencing Khamenei's interment."
+        },
+        "quiz": [
+          {
+            "question": "What is the central theme of the news brief regarding US-Iran relations?",
+            "options": [
+              "A focus on international peace negotiations.",
+              "An intensification of military conflicts and exchanges.",
+              "A summary of economic sanctions against both nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The brief details military actions, not peace negotiations.",
+              "Correct. The text explicitly describes a 'markedly intensified' situation involving 'reciprocal military engagements'.",
+              "This is incorrect. Economic sanctions are not the primary focus of this news report."
+            ]
+          },
+          {
+            "question": "Which term from the vocabulary best describes military actions exchanged between two opposing sides?",
+            "options": [
+              "Unilateral declarations",
+              "Reciprocal military engagements",
+              "Ceasefire negotiations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Unilateral declarations are actions taken by one side alone, not mutual exchanges.",
+              "Correct. 'Reciprocal military engagements' precisely refers to military actions exchanged in response.",
+              "Ceasefire negotiations are discussions to halt fighting, not the actual military actions themselves."
+            ]
+          },
+          {
+            "question": "How many targets did US Central Command (Centcom) reportedly hit in its most recent operations?",
+            "options": [
+              "Exactly 14 Iranian-linked sites.",
+              "Approximately 90 targets linked to Iranian forces.",
+              "An unspecified but large number of targets."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "14 refers to the number of fatalities, not the targets hit by Centcom.",
+              "Correct. The news brief states Centcom confirmed 'hitting approximately 90 targets linked to Iranian forces'.",
+              "The number is specified as 'approximately 90', not left unspecified."
+            ]
+          },
+          {
+            "question": "What significant event coincided with the recent surge in US-Iran attacks, as mentioned in the brief?",
+            "options": [
+              "The conclusion of a major international summit.",
+              "The burial of a high-profile Iranian figure.",
+              "A breakthrough in regional diplomatic talks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief makes no mention of an international summit.",
+              "Correct. The text states the surge 'unfolds against the somber backdrop of a high-profile Iranian figure's burial'.",
+              "There is no indication of diplomatic breakthroughs; rather, the situation is escalating."
+            ]
+          },
+          {
+            "question": "What does the phrase 'escalation of hostilities' convey about the nature of the conflict?",
+            "options": [
+              "A reduction in aggressive actions.",
+              "A significant increase in the intensity and scope of the conflict.",
+              "A temporary pause in military operations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "An 'escalation' signifies an increase, not a reduction, in aggression.",
+              "Correct. 'Escalation of hostilities' means a rapid increase in the severity and scope of conflicts.",
+              "An escalation suggests ongoing and intensifying actions, not a pause."
+            ]
+          },
+          {
+            "question": "According to Iranian health authorities, how many fatalities resulted from the confrontations since Tuesday?",
+            "options": [
+              "Approximately 90 individuals.",
+              "Precisely 14 people.",
+              "A figure that remains undisclosed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "90 refers to the number of targets hit by Centcom, not fatalities.",
+              "Correct. The brief explicitly states 'confirming 14 fatalities since Tuesday's initial confrontations'.",
+              "The number of fatalities is specifically mentioned as 14."
+            ]
+          },
+          {
+            "question": "Which word from the grammar example quote 'This surge in reciprocal military engagements unfolds against the somber backdrop of a high-profile Iranian figure's burial' best exemplifies nominalization?",
+            "options": [
+              "'unfolds'",
+              "'surge'",
+              "'somber'"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Unfolds' is a verb, not a nominalized form.",
+              "Correct. 'Surge' is used here as a noun, derived from the verb 'to surge', illustrating nominalization.",
+              "'Somber' is an adjective describing the backdrop, not an example of nominalization."
+            ]
+          },
+          {
+            "question": "What does the 'cycle of hostility' primarily suggest about the ongoing conflict?",
+            "options": [
+              "It is a singular, isolated event.",
+              "It involves a recurring pattern of aggression and retaliation.",
+              "It indicates a path towards imminent peace."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A 'cycle' implies repetition and continuity, not a one-time event.",
+              "Correct. A 'cycle of hostility' denotes a recurring pattern of animosity and retaliatory actions.",
+              "A cycle of hostility is characterized by aggression, not a move towards peace."
+            ]
+          },
+          {
+            "question": "What do the 'prevailing tensions' mentioned in the brief indicate about the current situation?",
+            "options": [
+              "A sudden but temporary disagreement.",
+              "A dominant and widespread state of unease or strained relations.",
+              "A historical conflict that has now been definitively resolved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Prevailing' suggests an ongoing and widespread condition, not something sudden and temporary.",
+              "Correct. 'Prevailing tensions' refer to the current and dominant state of strained relations or unease within the region.",
+              "While rooted in history, 'prevailing' implies current, unresolved issues, not a definitive resolution."
+            ]
+          },
+          {
+            "question": "The news brief implies that the timing of the recent attacks could have what consequence?",
+            "options": [
+              "A decrease in regional military presence.",
+              "Further destabilization and increased friction.",
+              "The immediate withdrawal of all foreign forces."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text suggests deepening hostility, not a decrease in military presence.",
+              "Correct. The brief notes that attacks during mourning 'could further inflame prevailing tensions' and fears 'broader destabilization'.",
+              "There is no indication of an immediate withdrawal; rather, the situation is escalating."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

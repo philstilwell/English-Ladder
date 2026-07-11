@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-11",
+  "release_iso": "2026-07-11T10:57:44Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US wants Iran to pledge to stop shooting at ships in Strait of Hormuz",
+    "summary": "Vice-President JD Vance is among US officials expected to take part in negotiations resuming on Saturday in Oman.",
+    "link": "https://www.bbc.co.uk/news/articles/crelyq79x71o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Wants Iran to Stop Shooting at Ships",
+        "overview": "The US wants Iran to promise to stop attacking ships.",
+        "topic": "US and Iran Negotiations on Shipping",
+        "news_brief_sentences": [
+          "The US wants Iran to make a pledge.",
+          "This pledge means Iran will stop shooting at ships.",
+          "Iran should not attack ships in the future.",
+          "These ships travel through the Strait of Hormuz.",
+          "The US wants peace in this important area.",
+          "Vice-President JD Vance is an important US official.",
+          "He will join other US officials.",
+          "They will take part in important talks.",
+          "These talks are called negotiations.",
+          "The negotiations will start again on Saturday in Oman."
+        ],
+        "vocabulary": [
+          {
+            "term": "pledge",
+            "part_of_speech": "noun",
+            "definition": "a serious promise to do something"
+          },
+          {
+            "term": "shooting",
+            "part_of_speech": "verb",
+            "definition": "attacking with a weapon, like a gun"
+          },
+          {
+            "term": "ships",
+            "part_of_speech": "noun",
+            "definition": "large boats that carry things or people on the sea"
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "people who have important jobs in a government"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          }
+        ],
+        "grammar": {
+          "concept": "Want to + verb",
+          "explanation": "We use 'want to' when we talk about something we wish for or hope to do. It shows a desire for an action. For example, 'I want to eat pizza' means I desire pizza.",
+          "example_quote": "The US wants Iran to make a pledge."
+        },
+        "quiz": [
+          {
+            "question": "What does the US want Iran to make?",
+            "options": [
+              "a meal",
+              "a pledge",
+              "a game"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, the news is not about food.",
+              "Correct, a pledge is a serious promise.",
+              "Incorrect, this is not about playing games."
+            ]
+          },
+          {
+            "question": "What should Iran stop doing, according to the US?",
+            "options": [
+              "cooking",
+              "reading",
+              "shooting at ships"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect, the news is not about cooking.",
+              "Incorrect, the news is not about reading.",
+              "Correct, Iran should stop shooting at ships."
+            ]
+          },
+          {
+            "question": "What travels through the Strait of Hormuz?",
+            "options": [
+              "cars",
+              "ships",
+              "planes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, cars travel on roads, not in the sea.",
+              "Correct, ships travel through the Strait of Hormuz.",
+              "Incorrect, planes fly in the air, not on the sea."
+            ]
+          },
+          {
+            "question": "Who are people with important jobs in a government?",
+            "options": [
+              "students",
+              "officials",
+              "teachers"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, students learn in school.",
+              "Correct, officials have important government jobs.",
+              "Incorrect, teachers work in schools."
+            ]
+          },
+          {
+            "question": "What are formal talks between groups to agree on something called?",
+            "options": [
+              "parties",
+              "negotiations",
+              "holidays"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, parties are social events.",
+              "Correct, negotiations are formal talks to reach an agreement.",
+              "Incorrect, holidays are days off from work."
+            ]
+          },
+          {
+            "question": "Who is an important US official joining the talks?",
+            "options": [
+              "Vice-President JD Vance",
+              "a tourist",
+              "a singer"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct, Vice-President JD Vance will take part in the talks.",
+              "Incorrect, a tourist is not involved in these official talks.",
+              "Incorrect, a singer is not part of these government discussions."
+            ]
+          },
+          {
+            "question": "Where will the negotiations start again?",
+            "options": [
+              "in London",
+              "in Oman",
+              "in New York"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, London is not mentioned in the news.",
+              "Correct, the talks will happen in Oman.",
+              "Incorrect, New York is not mentioned in the news."
+            ]
+          },
+          {
+            "question": "When will the negotiations resume?",
+            "options": [
+              "on Monday",
+              "on Saturday",
+              "next month"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, Monday is not the day mentioned.",
+              "Correct, the negotiations will start again on Saturday.",
+              "Incorrect, the specific day is Saturday, not a month."
+            ]
+          },
+          {
+            "question": "What does 'wants to' express in the sentence 'The US wants Iran to make a pledge'?",
+            "options": [
+              "a past event",
+              "a desire or hope",
+              "a question"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, 'wants to' is not about the past.",
+              "Correct, 'wants to' shows a desire or hope for an action.",
+              "Incorrect, this is a statement, not a question."
+            ]
+          },
+          {
+            "question": "Which country does the US want to make a pledge?",
+            "options": [
+              "France",
+              "China",
+              "Iran"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect, France is not mentioned in the news.",
+              "Incorrect, China is not mentioned in the news.",
+              "Correct, the US wants Iran to make a pledge."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Seeks Iran's Pledge on Shipping Safety in Strait of Hormuz",
+        "overview": "The United States is pushing Iran to formally promise to stop military actions against ships in the Strait of Hormuz, with high-level negotiations set to restart in Oman.",
+        "topic": "International Diplomacy and Maritime Security",
+        "news_brief_sentences": [
+          "The United States is pressing Iran to pledge an end to any hostile actions against vessels in the vital Strait of Hormuz.",
+          "This critical demand follows recent incidents that have raised global concerns about maritime safety.",
+          "High-level US officials are preparing for important diplomatic meetings this weekend.",
+          "Vice-President JD Vance is among US officials expected to take part in negotiations resuming on Saturday in Oman.",
+          "These negotiations aim to secure a formal commitment from Iran.",
+          "The US wants Iran to pledge to stop shooting at ships in the important shipping lane.",
+          "International observers are closely monitoring these diplomatic efforts to ensure regional stability.",
+          "The discussions will focus on establishing clear protocols for preventing future conflicts.",
+          "It is hoped that a lasting agreement can be reached to protect international shipping.",
+          "The Strait of Hormuz is a strategically important waterway for global oil shipments."
+        ],
+        "vocabulary": [
+          {
+            "term": "pledge",
+            "part_of_speech": "verb",
+            "definition": "To formally promise or commit to do something, often in a serious or official way."
+          },
+          {
+            "term": "Strait of Hormuz",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority in an organization or government, responsible for specific duties."
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "Formal discussions between people trying to reach an agreement or resolve a dispute."
+          },
+          {
+            "term": "resuming",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Starting again after a pause or interruption; continuing from where something left off."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the action is more important than the agent (the person or thing doing the action), or when the agent is unknown or not important. In this construction, the subject receives the action. Here, 'expected to take part' emphasizes the state of being expected rather than who is doing the expecting.",
+          "example_quote": "Vice-President JD Vance is among US officials expected to take part in negotiations resuming on Saturday in Oman."
+        },
+        "quiz": [
+          {
+            "question": "What is the main demand the US is making to Iran regarding the Strait of Hormuz?",
+            "options": [
+              "To increase oil production",
+              "To pledge to stop military actions against ships",
+              "To build new shipping canals"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not mention increasing oil production as a demand.",
+              "Correct! The US wants Iran to formally promise to end hostile actions.",
+              "Building new canals is not the demand mentioned in the brief."
+            ]
+          },
+          {
+            "question": "Where are the upcoming negotiations scheduled to take place?",
+            "options": [
+              "In the United States",
+              "In Oman",
+              "In the Strait of Hormuz"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While US officials are involved, the talks will not be in the US.",
+              "Correct! The negotiations are scheduled to resume in Oman.",
+              "The Strait is the area of concern, not the location for talks."
+            ]
+          },
+          {
+            "question": "Who is specifically mentioned as being among the US officials participating in the talks?",
+            "options": [
+              "The US President",
+              "The Secretary of State",
+              "Vice-President JD Vance"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief specifies the Vice-President, not the President.",
+              "The Secretary of State is not named in this brief.",
+              "Correct! Vice-President JD Vance is explicitly mentioned."
+            ]
+          },
+          {
+            "question": "What does the word 'pledge' mean in the context of the news brief?",
+            "options": [
+              "To strongly object to something",
+              "To officially investigate an incident",
+              "To make a formal promise or commitment"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Pledging is about making a promise, not objecting.",
+              "The term 'pledge' relates to a promise, not an investigation.",
+              "Correct! To pledge means to formally promise to do something."
+            ]
+          },
+          {
+            "question": "Why is the Strait of Hormuz considered strategically important?",
+            "options": [
+              "It is a popular tourist destination.",
+              "It serves as a crucial waterway for global oil shipments.",
+              "It is rich in fishing resources."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief emphasizes its strategic shipping importance, not tourism.",
+              "Correct! It is vital for transporting oil around the world.",
+              "While it might have fishing, its strategic importance is for oil shipments."
+            ]
+          },
+          {
+            "question": "In the sentence, 'High-level US officials are preparing for important diplomatic meetings...', what is the role of 'officials'?",
+            "options": [
+              "It describes an action.",
+              "It names a group of people.",
+              "It modifies another noun."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Officials' is a noun, not a verb, so it doesn't describe an action.",
+              "Correct! 'Officials' is a noun referring to people in positions of authority.",
+              "While it can be part of a noun phrase, here it directly names the group."
+            ]
+          },
+          {
+            "question": "What does it mean for negotiations to be 'resuming'?",
+            "options": [
+              "They are coming to an end.",
+              "They are being postponed indefinitely.",
+              "They are starting again after a break."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Resuming implies continuation, not an end.",
+              "The word 'resuming' indicates a restart, not a delay.",
+              "Correct! 'Resuming' means the discussions are starting again after a pause."
+            ]
+          },
+          {
+            "question": "Consider the quote: 'Vice-President JD Vance is among US officials expected to take part...' What grammar concept is highlighted by 'expected to take part'?",
+            "options": [
+              "The future simple tense",
+              "The passive voice",
+              "A conditional clause"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This construction is not primarily about the future simple tense.",
+              "Correct! 'Are expected to' is a common use of the passive voice to report expectations.",
+              "There is no 'if' clause, so it's not a conditional statement."
+            ]
+          },
+          {
+            "question": "What is the primary objective of the diplomatic 'negotiations' mentioned in the brief?",
+            "options": [
+              "To establish new trade agreements.",
+              "To secure a formal commitment from Iran on maritime safety.",
+              "To plan a joint military exercise."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief focuses on maritime safety, not new trade agreements.",
+              "Correct! The negotiations aim to get a formal promise from Iran regarding safety.",
+              "The purpose is diplomatic discussions, not military planning."
+            ]
+          },
+          {
+            "question": "The news brief indicates that the discussions will focus on establishing what for preventing future conflicts?",
+            "options": [
+              "New military bases",
+              "Clear protocols",
+              "Economic sanctions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The discussions are about diplomatic solutions, not military installations.",
+              "Correct! The talks aim to establish clear protocols for conflict prevention.",
+              "Economic sanctions are not mentioned as the focus of these discussions."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US Seeks Iranian Assurance on Maritime Security in Strait of Hormuz Amid Diplomatic Talks",
+        "overview": "The United States aims to secure a formal commitment from Iran to cease aggressions against shipping in the strategically vital Strait of Hormuz, with high-level US officials, including Vice-President JD Vance, engaging in diplomatic negotiations set to resume in Oman.",
+        "topic": "International Relations, Maritime Security, US-Iran Diplomacy",
+        "news_brief_sentences": [
+          "The United States has articulated a clear expectation for Iran to pledge formally that it will desist from any further hostile actions against commercial and naval vessels transiting the Strait of Hormuz.",
+          "This imperative arises from escalating concerns regarding regional maritime security, a critical issue for global trade and stability.",
+          "Vice-President JD Vance is slated to be a key participant among American dignitaries in the upcoming diplomatic overtures.",
+          "These crucial negotiations are poised to resume on Saturday in Oman, indicating a persistent effort to de-escalate tensions.",
+          "The Strait of Hormuz, a narrow waterway connecting the Persian Gulf to the open sea, remains an exceptionally strategic chokepoint for global oil shipments.",
+          "Incidents involving Iranian forces and international shipping have intermittently heightened anxieties, underscoring the urgency of these discussions.",
+          "Washington seeks not merely a temporary lull but a binding assurance that future maritime transit will proceed unimpeded and without threat.",
+          "The diplomatic efforts in Oman represent a concerted attempt to establish a more stable operational environment in this volatile region.",
+          "Achieving a durable resolution necessitates a significant shift in Iran's posture towards international shipping lanes.",
+          "Therefore, the focus of these high-stakes talks is unequivocally on securing an explicit and verifiable commitment from Tehran regarding its conduct."
+        ],
+        "vocabulary": [
+          {
+            "term": "pledge formally",
+            "part_of_speech": "verb phrase",
+            "definition": "To make a solemn and binding promise or commitment, usually in an official or public capacity, to do or refrain from doing something."
+          },
+          {
+            "term": "maritime security",
+            "part_of_speech": "noun phrase",
+            "definition": "The protection of ships, ports, and sea lanes from threats such as piracy, terrorism, and other unlawful acts, ensuring safe passage and trade."
+          },
+          {
+            "term": "diplomatic overtures",
+            "part_of_speech": "noun phrase",
+            "definition": "Initial approaches or proposals made by one government or state to another, typically with the aim of initiating negotiations, establishing relations, or resolving disputes."
+          },
+          {
+            "term": "strategic chokepoint",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow passage, such as a strait or canal, that is critically important for transportation and trade, where control can confer significant military or economic advantage."
+          },
+          {
+            "term": "binding assurance",
+            "part_of_speech": "noun phrase",
+            "definition": "A firm and legally enforceable guarantee or promise that something will be done or will happen, creating an obligation."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verb Structures with Infinitives (e.g., 'is slated to be')",
+          "explanation": "Advanced English often uses passive reporting verbs followed by an infinitive to convey expectations, plans, or predictions in a formal and concise manner. This construction allows for the presentation of information as generally understood or officially planned without explicitly stating the agent of the expectation. It adds a layer of formality and objectivity, typical of news reporting.",
+          "example_quote": "Vice-President JD Vance is slated to be a key participant among American dignitaries in the upcoming diplomatic overtures."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary objective of the US regarding Iran's actions in the Strait of Hormuz?",
+            "options": [
+              "To negotiate a temporary truce during global trade events.",
+              "To obtain a formal commitment from Iran to cease hostile actions against shipping.",
+              "To establish permanent military bases in the Strait to deter Iran."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While a truce might be a short-term outcome, the US seeks a more enduring and formal commitment, not just a temporary lull.",
+              "Correct. The US seeks a 'pledge formally' and 'binding assurance' from Iran to stop shooting at ships, ensuring long-term maritime security.",
+              "The brief focuses on diplomatic negotiations and commitments, not on establishing new permanent military bases."
+            ]
+          },
+          {
+            "question": "Which US official is specifically mentioned as participating in the upcoming negotiations?",
+            "options": [
+              "The US Secretary of State.",
+              "Vice-President JD Vance.",
+              "The US Ambassador to Oman."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief specifically names Vice-President JD Vance, not the Secretary of State, as a key participant.",
+              "Correct. The news brief explicitly states that 'Vice-President JD Vance is slated to be a key participant'.",
+              "While an ambassador might be involved, the brief highlights the participation of Vice-President JD Vance."
+            ]
+          },
+          {
+            "question": "Where are the crucial negotiations between the US and Iran set to resume?",
+            "options": [
+              "In an undisclosed location.",
+              "In Oman.",
+              "In the Persian Gulf."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The location is explicitly stated in the news brief, making 'undisclosed' incorrect.",
+              "Correct. The brief clearly states that 'These crucial negotiations are poised to resume on Saturday in Oman'.",
+              "The negotiations are in Oman, not physically within the Persian Gulf itself, although the Strait is key to the Gulf."
+            ]
+          },
+          {
+            "question": "What does the phrase 'pledge formally' imply about the nature of the commitment sought from Iran?",
+            "options": [
+              "It implies an informal verbal agreement with no legal weight.",
+              "It suggests a solemn and officially binding promise or declaration.",
+              "It means a temporary ceasefire without future obligations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Formally' denotes an official and serious nature, not an informal one.",
+              "Correct. To 'pledge formally' means to make a serious, official, and usually binding promise or commitment.",
+              "This implies a lack of permanence, whereas 'pledge formally' seeks a more enduring commitment."
+            ]
+          },
+          {
+            "question": "Why is the Strait of Hormuz referred to as an 'exceptionally strategic chokepoint'?",
+            "options": [
+              "Because it is a popular tourist destination for cruise ships.",
+              "Because its narrow passage is crucial for global oil shipments and trade.",
+              "Because it is the largest and widest waterway in the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The strategic importance of the Strait is not related to tourism, but rather to its economic and geopolitical significance.",
+              "Correct. The brief highlights its importance 'for global oil shipments', making it a vital and vulnerable passage.",
+              "Incorrect. The term 'chokepoint' specifically implies a narrow passage, not a wide one."
+            ]
+          },
+          {
+            "question": "What is the significance of the phrase 'diplomatic overtures' in the context of the news brief?",
+            "options": [
+              "It refers to military maneuvers designed to intimidate.",
+              "It describes initial proposals aimed at resolving disputes through negotiation.",
+              "It means a public declaration of war against Iran."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Overtures' in this context refer to diplomatic, not military, actions.",
+              "Correct. 'Diplomatic overtures' are initial approaches made by one party to another to open negotiations or resolve issues.",
+              "This is an extreme and incorrect interpretation; diplomatic overtures are about peaceful resolution, not war."
+            ]
+          },
+          {
+            "question": "What does the US specifically seek with a 'binding assurance' from Iran?",
+            "options": [
+              "A non-committal agreement that can be easily revoked.",
+              "A formal and legally enforceable guarantee of future conduct.",
+              "A verbal promise subject to immediate change."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Binding' implies enforceability and permanence, the opposite of easily revocable.",
+              "Correct. A 'binding assurance' is a strong, official guarantee that creates an obligation, not a casual promise.",
+              "This describes a weak commitment, not the strong 'binding assurance' the US is seeking."
+            ]
+          },
+          {
+            "question": "In the sentence 'Vice-President JD Vance is slated to be a key participant...', what does 'is slated to be' convey?",
+            "options": [
+              "That he has already participated.",
+              "That he is expected or scheduled to participate.",
+              "That he might participate, but it's uncertain."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Slated to be' indicates a future or planned event, not one that has already happened.",
+              "Correct. 'Is slated to be' is a formal way of saying someone is scheduled or expected to do something.",
+              "Incorrect. The phrase implies a definite plan or expectation, not mere uncertainty."
+            ]
+          },
+          {
+            "question": "What is the primary concern that drives the US's focus on 'maritime security' in the Strait of Hormuz?",
+            "options": [
+              "The desire to control all shipping traffic in the region.",
+              "Escalating threats from Iran against commercial and naval vessels.",
+              "Protecting marine wildlife in the area."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The primary concern outlined is the safety of vessels, not control over all traffic, which would be an overreach.",
+              "Correct. The brief states the imperative arises from 'escalating concerns regarding regional maritime security' due to Iranian actions.",
+              "While environmental concerns exist, the news brief focuses on threats to shipping and stability, not marine life."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the overall tone of the news brief?",
+            "options": [
+              "Informal and speculative.",
+              "Alarmist and confrontational.",
+              "Formal and analytical, focusing on diplomatic efforts and strategic importance."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The language used, including advanced vocabulary and complex sentences, is formal, not informal or speculative.",
+              "While tensions are present, the brief maintains a neutral, objective stance, focusing on diplomatic processes rather than being excessively alarmist or confrontational.",
+              "Correct. The brief employs formal language, analyzes the situation's strategic importance, and details diplomatic efforts, reflecting an analytical news-reporting style."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-12",
+  "release_iso": "2026-07-12T11:06:11Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US launches fresh strikes as Iran closes Strait of Hormuz",
+    "summary": "The strikes follow an attack on a Cyprus -flagged vessel travelling through the critical waterway.",
+    "link": "https://www.bbc.co.uk/news/articles/cj9gkpp0dkeo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Launches Strikes as Iran Closes Strait of Hormuz",
+        "overview": "The US recently launched attacks because of an incident involving a ship near Iran.",
+        "topic": "International shipping and country actions",
+        "news_brief_sentences": [
+          "The US launches new strikes.",
+          "These strikes are happening after an attack.",
+          "A ship, or vessel, was attacked.",
+          "This vessel had a flag from Cyprus.",
+          "It was moving in an important waterway.",
+          "This waterway is the Strait of Hormuz.",
+          "Iran sometimes closes this Strait.",
+          "The US launches the strikes because of the attack on the vessel.",
+          "The waterway is critical for many ships.",
+          "This area is important for international travel."
+        ],
+        "vocabulary": [
+          {
+            "term": "launches",
+            "part_of_speech": "verb",
+            "definition": "starts or sends out something new, like an attack."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "attacks, usually by military planes or missiles."
+          },
+          {
+            "term": "vessel",
+            "part_of_speech": "noun",
+            "definition": "a ship or large boat."
+          },
+          {
+            "term": "waterway",
+            "part_of_speech": "noun",
+            "definition": "a path over water where ships can travel."
+          },
+          {
+            "term": "closes",
+            "part_of_speech": "verb",
+            "definition": "shuts something, so nothing can go through."
+          }
+        ],
+        "grammar": {
+          "concept": "Using \"because\" to show reason",
+          "explanation": "We use \"because\" to explain why something happens. It tells us the reason for an action. For example, \"I am happy because it is sunny.\" The sun is the reason I am happy.",
+          "example_quote": "The US launches the strikes because of the attack on the vessel."
+        },
+        "quiz": [
+          {
+            "question": "What does the US launch?",
+            "options": [
+              "new strikes",
+              "old ships",
+              "big parties"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The US launches new strikes.",
+              "Incorrect. The news brief mentions new strikes.",
+              "Incorrect. This is not mentioned in the news."
+            ]
+          },
+          {
+            "question": "Why does the US launch strikes?",
+            "options": [
+              "for fun",
+              "because of an attack",
+              "to open the Strait"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the reason is an attack.",
+              "Yes, the strikes are because of an attack.",
+              "No, they launch strikes because of an attack."
+            ]
+          },
+          {
+            "question": "What is a \"vessel\"?",
+            "options": [
+              "a type of bird",
+              "a big ship",
+              "a small island"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a vessel is a ship.",
+              "Correct, a vessel is a ship or boat.",
+              "No, a vessel is a ship."
+            ]
+          },
+          {
+            "question": "Where was the vessel moving?",
+            "options": [
+              "in a desert",
+              "in an important waterway",
+              "in the sky"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was in a waterway.",
+              "Right, it was in an important waterway.",
+              "No, it was in a waterway."
+            ]
+          },
+          {
+            "question": "What is the name of the important waterway?",
+            "options": [
+              "Pacific Ocean",
+              "Suez Canal",
+              "Strait of Hormuz"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news mentions the Strait of Hormuz.",
+              "No, it's the Strait of Hormuz.",
+              "That's right! It's the Strait of Hormuz."
+            ]
+          },
+          {
+            "question": "What does \"launches\" mean?",
+            "options": [
+              "stops",
+              "starts",
+              "waits"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it means to start.",
+              "Yes, \"launches\" means to start something.",
+              "No, it means to start."
+            ]
+          },
+          {
+            "question": "What does Iran sometimes do to the Strait?",
+            "options": [
+              "opens it",
+              "builds on it",
+              "closes it"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, Iran sometimes closes it.",
+              "No, Iran sometimes closes it.",
+              "Correct, Iran sometimes closes the Strait."
+            ]
+          },
+          {
+            "question": "The sentence \"The US launches the strikes because of the attack\" tells us:",
+            "options": [
+              "the time of the strikes",
+              "the reason for the strikes",
+              "the color of the strikes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it explains the reason.",
+              "Correct, \"because of\" explains the reason.",
+              "No, it explains the reason."
+            ]
+          },
+          {
+            "question": "What are \"strikes\"?",
+            "options": [
+              "a game",
+              "attacks",
+              "a type of fish"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"strikes\" are attacks.",
+              "Yes, \"strikes\" means attacks.",
+              "No, \"strikes\" are attacks."
+            ]
+          },
+          {
+            "question": "Which country's flag was on the attacked vessel?",
+            "options": [
+              "US",
+              "Iran",
+              "Cyprus"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it was not the US flag.",
+              "No, it was not the Iran flag.",
+              "Correct, the vessel had a Cyprus flag."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Strikes and the Strait of Hormuz: Escalating Tensions",
+        "overview": "The United States has launched new military strikes in response to an attack on a ship, which occurred as Iran announced the closure of the Strait of Hormuz, a crucial shipping lane.",
+        "topic": "International Relations, Maritime Security, and Geopolitics in the Middle East",
+        "news_brief_sentences": [
+          "Recent events have seen the United States undertake fresh strikes in the region.",
+          "These actions come shortly after Iran declared its intention to close the vital Strait of Hormuz.",
+          "The Strait of Hormuz is a critical waterway for global oil shipments.",
+          "The US strikes follow a recent attack on a Cyprus-flagged vessel.",
+          "This vessel was travelling through the critical waterway when the incident occurred.",
+          "Such incidents escalate tensions in the already volatile Middle East.",
+          "The attack on the Cyprus-flagged vessel has raised concerns about maritime security.",
+          "International observers are closely watching how these developments unfold.",
+          "The closure of the Strait of Hormuz would significantly impact global trade and oil prices.",
+          "Diplomatic efforts are urgently needed to de-escalate the situation and prevent further conflict."
+        ],
+        "vocabulary": [
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, often from the air or with missiles, aimed at a target."
+          },
+          {
+            "term": "declared",
+            "part_of_speech": "verb",
+            "definition": "Stated something officially, publicly, or strongly."
+          },
+          {
+            "term": "vessel",
+            "part_of_speech": "noun",
+            "definition": "A ship or large boat, typically used for transporting goods or people by sea."
+          },
+          {
+            "term": "critical",
+            "part_of_speech": "adjective",
+            "definition": "Extremely important or essential for the success or stability of something."
+          },
+          {
+            "term": "escalate",
+            "part_of_speech": "verb",
+            "definition": "To increase rapidly in intensity, severity, or magnitude."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is often used when the focus is on the action itself rather than on who or what is performing it. It's formed with a form of the verb 'to be' followed by the past participle of the main verb. We use it when the agent (the one performing the action) is unknown, unimportant, or obvious from the context.",
+          "example_quote": "Diplomatic efforts are urgently needed to de-escalate the situation and prevent further conflict."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary reason for the recent US strikes mentioned in the news?",
+            "options": [
+              "To support Iran's new policies.",
+              "In response to an attack on a Cyprus-flagged vessel.",
+              "To close the Strait of Hormuz."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The strikes are not related to supporting Iranian policies.",
+              "Correct! The strikes were a direct response to the attack on the vessel.",
+              "Incorrect. The US strikes are not about closing the Strait of Hormuz; Iran declared that."
+            ]
+          },
+          {
+            "question": "According to the news, what did Iran declare its intention to do?",
+            "options": [
+              "Open new trade routes.",
+              "Close the Strait of Hormuz.",
+              "Launch fresh strikes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news states Iran's intention to close a waterway, not open new routes.",
+              "Correct! Iran declared its intention to close the Strait of Hormuz.",
+              "Incorrect. The US launched strikes, not Iran."
+            ]
+          },
+          {
+            "question": "What does the term 'vessel' refer to in the context of the news brief?",
+            "options": [
+              "A military base.",
+              "A ship or large boat.",
+              "An airspace zone."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A vessel is not a military base.",
+              "Correct! In maritime contexts, a vessel is a ship or large boat.",
+              "Incorrect. A vessel is a type of transport, not a geographical zone."
+            ]
+          },
+          {
+            "question": "Why is the Strait of Hormuz described as a 'critical waterway'?",
+            "options": [
+              "It is a popular tourist destination.",
+              "It is essential for global oil shipments.",
+              "It hosts important diplomatic meetings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Its importance is economic and strategic, not touristic.",
+              "Correct! The Strait is crucial for transporting much of the world's oil.",
+              "Incorrect. While strategically important, its primary description as 'critical' relates to oil shipments."
+            ]
+          },
+          {
+            "question": "What does it mean for tensions to 'escalate' in the Middle East?",
+            "options": [
+              "They are decreasing slowly.",
+              "They are remaining stable.",
+              "They are increasing rapidly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Escalate' means the opposite of decreasing.",
+              "Incorrect. If tensions escalate, they are not stable.",
+              "Correct! To escalate means to increase rapidly in intensity or magnitude."
+            ]
+          },
+          {
+            "question": "What type of ship was attacked, according to the news brief?",
+            "options": [
+              "A US Navy destroyer.",
+              "A Cyprus-flagged vessel.",
+              "An Iranian oil tanker."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news specifies a Cyprus-flagged vessel was attacked.",
+              "Correct! The attack was on a Cyprus-flagged vessel.",
+              "Incorrect. The news does not mention an Iranian oil tanker being attacked."
+            ]
+          },
+          {
+            "question": "Which of the following best describes 'fresh strikes'?",
+            "options": [
+              "Peace negotiations.",
+              "New military attacks.",
+              "Trade agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Strikes refer to military action, not diplomacy.",
+              "Correct! 'Fresh strikes' means new military attacks.",
+              "Incorrect. Strikes are military actions, not trade agreements."
+            ]
+          },
+          {
+            "question": "What impact would the closure of the Strait of Hormuz have, according to the news brief?",
+            "options": [
+              "It would only affect local fishermen.",
+              "It would significantly impact global trade and oil prices.",
+              "It would lead to new tourist opportunities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The impact would be much wider than just local fishermen.",
+              "Correct! Its closure would have major global economic consequences due to its role in oil transport.",
+              "Incorrect. The closure of a critical waterway in a conflict zone is unlikely to create tourism."
+            ]
+          },
+          {
+            "question": "In the sentence 'Diplomatic efforts are urgently needed to de-escalate the situation,' which word indicates the passive voice?",
+            "options": [
+              "urgently",
+              "are needed",
+              "de-escalate"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Urgently' is an adverb describing how something is needed.",
+              "Correct! 'Are needed' is formed with 'to be' + past participle, indicating the passive voice.",
+              "Incorrect. 'De-escalate' is an active verb describing an action."
+            ]
+          },
+          {
+            "question": "When is the passive voice typically used, as explained in the grammar section?",
+            "options": [
+              "When the performer of the action is the main focus.",
+              "When the action itself is more important, or the performer is unknown/obvious.",
+              "Only when talking about past events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice shifts focus away from the performer to the action or its receiver.",
+              "Correct! The passive voice emphasizes the action or the receiver of the action when the agent is less important.",
+              "Incorrect. The passive voice can be used in various tenses, not just past events."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Escalating Tensions: US Strikes and Iran's Strategic Maneuvers in the Strait of Hormuz",
+        "overview": "Amid heightened regional instability, the United States has initiated new military actions following an assault on a Cyprus-flagged vessel, coinciding with Iran's strategic closure of the Strait of Hormuz, a pivotal maritime artery.",
+        "topic": "Geopolitical tensions in the Middle East, maritime security, and international relations concerning critical waterways.",
+        "news_brief_sentences": [
+          "The Middle East is currently grappling with renewed volatility as the United States has launched fresh strikes in response to recent maritime aggression.",
+          "This assertive military action follows a concerning incident involving an attack on a Cyprus-flagged vessel navigating the region's critical waterway.",
+          "Simultaneously, Iran has reportedly moved to close the Strait of Hormuz, a strategic choke point with profound geopolitical ramifications.",
+          "The Strait, recognized globally as a vital maritime artery for global oil shipments, faces a potential disruption that could send ripples through international markets.",
+          "Observers suggest Iran's strategic maneuver may be a retaliatory measure or a projection of influence in the tumultuous region.",
+          "Such actions underscore the pervasive regional instability that characterizes the current geopolitical landscape.",
+          "The sequence of events creates a precarious situation demanding concerted international attention and diplomatic engagement.",
+          "Analysts are closely monitoring developments, aware that any miscalculation could further exacerbate an already tense environment.",
+          "The international community is urging restraint and emphasizing the urgent need for de-escalation efforts to prevent a broader conflict.",
+          "Such critical maritime flashpoints perpetually test global diplomatic resolve."
+        ],
+        "vocabulary": [
+          {
+            "term": "critical waterway",
+            "part_of_speech": "noun phrase",
+            "definition": "A crucially important sea passage or river for trade, military, or strategic reasons, essential for global commerce or security."
+          },
+          {
+            "term": "geopolitical ramifications",
+            "part_of_speech": "noun phrase",
+            "definition": "The widespread consequences or implications of political actions that significantly affect international relations, global power dynamics, and regional stability."
+          },
+          {
+            "term": "maritime artery",
+            "part_of_speech": "noun phrase",
+            "definition": "A main route or channel for sea-based trade and transportation, serving as a vital conduit for global commerce, particularly for critical goods like oil."
+          },
+          {
+            "term": "strategic maneuver",
+            "part_of_speech": "noun phrase",
+            "definition": "A carefully planned and executed action or movement designed to achieve a particular military, political, or economic objective, often with significant implications."
+          },
+          {
+            "term": "regional instability",
+            "part_of_speech": "noun phrase",
+            "definition": "A widespread state of unrest, unpredictability, and insecurity within a specific geographic area, often characterized by political turmoil and conflict."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases for Conciseness and Detail",
+          "explanation": "Participial phrases, formed with present (-ing) or past (-ed/-en) participles, act as adjectives, modifying nouns or pronouns. They efficiently add descriptive information about an action, state, or circumstance without needing a new clause. This technique enhances sentence conciseness and flow, allowing writers to convey complex details economically. They can describe simultaneous actions, causes, or results, adding sophistication to advanced writing.",
+          "example_quote": "This assertive military action follows a concerning incident involving an attack on a Cyprus-flagged vessel navigating the region's critical waterway."
+        },
+        "quiz": [
+          {
+            "question": "According to the news brief, what direct event prompted the US to launch fresh strikes?",
+            "options": [
+              "Iran's closure of the Strait of Hormuz",
+              "An attack on a Cyprus-flagged vessel",
+              "Widespread regional instability"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: While related, the brief states the US strikes followed the vessel attack, which likely influenced Iran's subsequent actions.",
+              "Correct: The brief explicitly states that the US strikes followed 'an attack on a Cyprus-flagged vessel'.",
+              "Incorrect: Regional instability is the broader context, but not the direct trigger for this specific military action by the US."
+            ]
+          },
+          {
+            "question": "The phrase 'critical waterway' in the news brief refers to a passage that is:",
+            "options": [
+              "Of minor strategic importance for local traffic only",
+              "A popular destination for recreational boating",
+              "Crucially important for strategic, military, or economic reasons"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The term 'critical' signifies extreme importance, contradicting the idea of minor strategic value.",
+              "Incorrect: The brief emphasizes the geopolitical and maritime importance, not its use for recreation.",
+              "Correct: A 'critical waterway' is indispensable due to its strategic, military, or economic significance, as highlighted in the brief."
+            ]
+          },
+          {
+            "question": "What does the news brief suggest about the 'geopolitical ramifications' of events in the Strait of Hormuz?",
+            "options": [
+              "They are limited to the immediate surrounding countries.",
+              "They primarily concern environmental protection policies.",
+              "They have broad international consequences affecting global power dynamics."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The term 'geopolitical ramifications' implies widespread global impact, not just local effects.",
+              "Incorrect: While environmental issues may be present, 'geopolitical ramifications' specifically relate to political and international power effects.",
+              "Correct: 'Geopolitical ramifications' denote wide-ranging international consequences, impacting global political and economic systems."
+            ]
+          },
+          {
+            "question": "How is Iran's action regarding the Strait of Hormuz characterized in the news brief?",
+            "options": [
+              "As an accidental disruption to shipping lanes",
+              "As a humanitarian effort for regional aid",
+              "As a carefully planned strategic maneuver"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The brief refers to it as a 'strategic maneuver', implying deliberate intent, not an accident.",
+              "Incorrect: The context is military and political tensions, not humanitarian aid.",
+              "Correct: The brief explicitly describes Iran's action as a 'strategic maneuver', indicating a calculated move."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The Strait, recognized globally as a vital maritime artery for global oil shipments...', what is the function of the participial phrase 'recognized globally'?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It introduces a new independent clause.",
+              "It modifies 'The Strait' by adding descriptive information about its status."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: 'Faces' is the main verb of the sentence. Participial phrases provide additional description.",
+              "Incorrect: Participial phrases typically function within a clause, adding detail, rather than introducing a new independent clause.",
+              "Correct: 'Recognized globally' is a past participial phrase modifying 'The Strait', providing essential background about its global perception."
+            ]
+          },
+          {
+            "question": "Which phrase from the news brief best conveys the economic significance of the Strait of Hormuz?",
+            "options": [
+              "strategic choke point",
+              "regional instability",
+              "vital maritime artery for global oil shipments"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: While 'strategic choke point' highlights its military and geographical importance, it doesn't directly convey economic value as clearly as the other option.",
+              "Incorrect: 'Regional instability' describes the political climate, not the economic role of the Strait itself.",
+              "Correct: The phrase 'vital maritime artery for global oil shipments' directly explains its critical role in the global energy economy."
+            ]
+          },
+          {
+            "question": "What is indicated by the news brief's use of the term 'regional instability'?",
+            "options": [
+              "A period of unprecedented economic growth.",
+              "A state of widespread unrest, unpredictability, and insecurity.",
+              "The establishment of lasting peace agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Instability' implies disruption and uncertainty, which generally hinders, rather than promotes, economic growth.",
+              "Correct: 'Regional instability' refers to a prevalent condition of turmoil, uncertainty, and insecurity across a geographic area.",
+              "Incorrect: 'Instability' is the opposite of lasting peace; it suggests ongoing conflict or potential for it."
+            ]
+          },
+          {
+            "question": "The brief mentions that any miscalculation could 'further exacerbate an already tense environment'. What does 'exacerbate' mean in this context?",
+            "options": [
+              "To relieve or lessen the tension.",
+              "To significantly worsen an existing problem or situation.",
+              "To ignore or overlook a minor issue."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Exacerbate' means to make something worse, not to relieve or lessen it.",
+              "Correct: 'Exacerbate' means to make a bad situation or negative feeling even worse or more intense.",
+              "Incorrect: 'Exacerbate' implies intensifying a problem, not ignoring it, especially when referring to a tense environment."
+            ]
+          },
+          {
+            "question": "What is the primary objective of 'de-escalation efforts' as mentioned in the news brief?",
+            "options": [
+              "To intensify military operations.",
+              "To prevent a broader conflict.",
+              "To promote economic sanctions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: De-escalation aims to reduce, not intensify, military actions and tensions.",
+              "Correct: 'De-escalation efforts' are aimed at reducing the level of conflict or tension to avert wider military engagement.",
+              "Incorrect: While sanctions can be a tool in international relations, the direct goal of de-escalation is to prevent conflict, not primarily to impose sanctions."
+            ]
+          },
+          {
+            "question": "Which of the following statements about the Strait of Hormuz is NOT supported by the news brief?",
+            "options": [
+              "It is a strategic choke point.",
+              "It is solely used by military vessels.",
+              "Its potential disruption could affect international markets."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The brief explicitly calls it a 'strategic choke point', which is supported.",
+              "Correct: The brief mentions 'global oil shipments', indicating it's used by commercial vessels, not 'solely' military ones.",
+              "Incorrect: The brief states disruption 'could send ripples through international markets', which is supported."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

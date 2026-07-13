@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-13",
+  "release_iso": "2026-07-13T12:27:20Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "At least 27 killed, 25 critically injured after fire engulfs Bangkok bar",
+    "summary": "Firefighters arrived at the scene in the Chatuchak district to find patrons running through flames to escape.",
+    "link": "https://www.bbc.co.uk/news/articles/c24yev53q06o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Bangkok Bar Fire: Many People Killed and Injured",
+        "overview": "A terrible fire happened at a bar in Bangkok, causing many deaths and injuries.",
+        "topic": "News about a tragic bar fire in Bangkok, Thailand",
+        "news_brief_sentences": [
+          "A big fire started in a bar in Bangkok.",
+          "The fire happened in the Chatuchak district.",
+          "Many people were at the bar.",
+          "At least 27 people were killed.",
+          "25 people were critically injured.",
+          "Firefighters came to the scene quickly.",
+          "They saw patrons trying to escape the fire.",
+          "People were running through flames.",
+          "It was a very dangerous situation.",
+          "The firefighters helped many people."
+        ],
+        "vocabulary": [
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past participle)",
+            "definition": "died because of something bad that happened."
+          },
+          {
+            "term": "injured",
+            "part_of_speech": "verb (past participle)",
+            "definition": "hurt physically in an accident or attack."
+          },
+          {
+            "term": "firefighters",
+            "part_of_speech": "noun",
+            "definition": "people who stop fires and help others."
+          },
+          {
+            "term": "scene",
+            "part_of_speech": "noun",
+            "definition": "the place where something happened."
+          },
+          {
+            "term": "patrons",
+            "part_of_speech": "noun",
+            "definition": "customers who visit a bar, restaurant, or shop."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add '-ed' to regular verbs. Irregular verbs change their form.",
+          "example_quote": "Firefighters came to the scene quickly."
+        },
+        "quiz": [
+          {
+            "question": "Where did the big fire happen?",
+            "options": [
+              "In a restaurant",
+              "In a bar",
+              "In a shop"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says it was a bar.",
+              "Yes, the fire was in a bar in Bangkok.",
+              "No, the fire was in a bar, not a shop."
+            ]
+          },
+          {
+            "question": "How many people were killed in the fire?",
+            "options": [
+              "25",
+              "27",
+              "Over 50"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 25 people were injured, not killed.",
+              "Yes, at least 27 people died because of the fire.",
+              "No, the news says 27 people were killed, not more than 50."
+            ]
+          },
+          {
+            "question": "Who came to help stop the fire?",
+            "options": [
+              "Doctors",
+              "Police",
+              "Firefighters"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Doctors help injured people, but firefighters stop fires.",
+              "Police help with crime, but firefighters deal with fires.",
+              "Yes, firefighters arrived at the scene to help."
+            ]
+          },
+          {
+            "question": "What does 'injured' mean?",
+            "options": [
+              "Very happy",
+              "Hurt physically",
+              "Not able to talk"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'injured' means hurt.",
+              "Yes, to be injured means to be hurt in your body.",
+              "No, 'injured' means hurt, not unable to talk."
+            ]
+          },
+          {
+            "question": "Which word is in the simple past tense?",
+            "options": [
+              "comes",
+              "coming",
+              "came"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Comes' is simple present.",
+              "'Coming' is present participle.",
+              "Yes, 'came' is the past tense of 'come'."
+            ]
+          },
+          {
+            "question": "Which district did the fire happen in?",
+            "options": [
+              "Bangkok district",
+              "Chatuchak district",
+              "Thailand district"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Bangkok is the city, not the specific district mentioned.",
+              "Yes, the fire was in the Chatuchak district of Bangkok.",
+              "Thailand is the country, not the specific district."
+            ]
+          },
+          {
+            "question": "Who are the 'patrons' mentioned in the news?",
+            "options": [
+              "The bar owners",
+              "The customers",
+              "The police officers"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, patrons are customers, not owners.",
+              "Yes, patrons are people who visit a place like a bar.",
+              "No, patrons are customers, not police."
+            ]
+          },
+          {
+            "question": "What were people doing to escape the fire?",
+            "options": [
+              "Sleeping",
+              "Eating food",
+              "Running through flames"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, they were trying to escape, not sleep.",
+              "No, they were running to escape, not eating.",
+              "Yes, the news says patrons were running through flames."
+            ]
+          },
+          {
+            "question": "'Firefighters came to the scene quickly.' What does 'scene' mean here?",
+            "options": [
+              "A movie theatre",
+              "The place where it happened",
+              "A beautiful view"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'scene' in this context is not a movie theatre.",
+              "Yes, the scene is the location of the event.",
+              "No, it's not about a beautiful view in this news story."
+            ]
+          },
+          {
+            "question": "Why do we use 'happened' (simple past) in 'The fire happened in the Chatuchak district'?",
+            "options": [
+              "To talk about the future",
+              "To talk about a finished action in the past",
+              "To talk about something happening now"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, simple past is for the past, not the future.",
+              "Yes, 'happened' describes an event that finished before now.",
+              "No, simple past is not for actions happening now."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Tragic Bangkok Bar Fire Results in Multiple Fatalities and Serious Injuries",
+        "overview": "A devastating fire at a Bangkok bar resulted in at least 27 deaths and 25 critical injuries, prompting an emergency response and ongoing investigation.",
+        "topic": "Emergency Response and Safety After a Bar Fire in Thailand",
+        "news_brief_sentences": [
+          "A severe fire engulfed a popular bar located in Bangkok's Chatuchak district, causing a tragic incident.",
+          "The blaze resulted in a significant loss of life, with numerous people unable to escape the inferno.",
+          "Reports indicate that many patrons were still inside the establishment when the fire broke out unexpectedly.",
+          "Emergency services were promptly dispatched to the scene, responding to urgent calls for help.",
+          "Upon their arrival, firefighters faced a chaotic situation as people desperately tried to flee the burning building.",
+          "Eyewitnesses described seeing individuals running through flames to get outside and find safety.",
+          "Tragically, at least 27 lives were lost, and 25 individuals were critically injured in the incident.",
+          "Medical teams were immediately dispatched to provide urgent care at the scene.",
+          "They were quickly transported to various hospitals where they are currently receiving treatment.",
+          "Investigations are ongoing to determine the exact cause of this devastating fire and prevent future tragedies."
+        ],
+        "vocabulary": [
+          {
+            "term": "engulfed",
+            "part_of_speech": "verb",
+            "definition": "To completely surround or cover something quickly and intensely."
+          },
+          {
+            "term": "patrons",
+            "part_of_speech": "noun",
+            "definition": "Customers or regular visitors of a particular establishment, such as a restaurant or bar."
+          },
+          {
+            "term": "dispatched",
+            "part_of_speech": "verb",
+            "definition": "Sent off to a destination or for a special purpose, especially quickly."
+          },
+          {
+            "term": "firefighters",
+            "part_of_speech": "noun",
+            "definition": "People whose job is to put out fires and rescue people from dangerous situations."
+          },
+          {
+            "term": "critically injured",
+            "part_of_speech": "adjective phrase",
+            "definition": "Very seriously hurt or wounded, in a life-threatening or extremely dangerous condition."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the object receiving the action, rather than the person or thing performing it. We form it using a form of the verb 'to be' followed by the past participle of the main verb. It is particularly useful when the agent (who did the action) is unknown, unimportant, or obvious from the context, or when we want to sound more formal.",
+          "example_quote": "Medical teams were immediately dispatched to provide urgent care at the scene."
+        },
+        "quiz": [
+          {
+            "question": "What caused the tragic incident in Bangkok's Chatuchak district?",
+            "options": [
+              "A severe flood",
+              "A major earthquake",
+              "A severe fire"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news brief mentions a severe fire, not a flood.",
+              "Incorrect. The news brief clearly states a fire was the cause.",
+              "Correct! The news brief specifies that a severe fire engulfed the bar."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the word 'engulfed' as used in the news brief?",
+            "options": [
+              "Slightly damaged",
+              "Completely surrounded or covered",
+              "Partially blocked"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'engulfed' implies a much more complete and intense covering.",
+              "That's right! 'Engulfed' means to completely surround or cover something, like the bar by the fire.",
+              "Incorrect. 'Engulfed' means fully covered, not partially blocked."
+            ]
+          },
+          {
+            "question": "Who were the 'patrons' mentioned in the news brief?",
+            "options": [
+              "The firefighters on duty",
+              "The owners of the bar",
+              "Customers or visitors of the bar"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the firefighters were the rescuers, not the patrons.",
+              "Incorrect. The owners manage the business, but patrons are the customers.",
+              "Exactly! Patrons are the people who visit and spend money at an establishment like a bar."
+            ]
+          },
+          {
+            "question": "What happened to the emergency services when they were 'dispatched'?",
+            "options": [
+              "They were called off",
+              "They were sent to the scene",
+              "They arrived too late"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'dispatched' means they were sent, not called off.",
+              "Correct! To be 'dispatched' means to be sent to a specific location for a purpose.",
+              "Incorrect. The news brief says they were promptly dispatched, implying timely action."
+            ]
+          },
+          {
+            "question": "What did eyewitnesses observe people doing to escape the burning building?",
+            "options": [
+              "Waiting for help inside",
+              "Running through flames",
+              "Calling for taxis"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the brief states people were actively trying to escape, not waiting inside.",
+              "That's right! Eyewitnesses saw individuals running through the flames to reach safety.",
+              "Incorrect. The urgency of the situation would not allow for calling taxis."
+            ]
+          },
+          {
+            "question": "How many individuals were reported as 'critically injured' in the fire?",
+            "options": [
+              "At least 27",
+              "25",
+              "An unknown number"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 27 refers to those who lost their lives.",
+              "Correct! The news brief states 25 individuals were critically injured.",
+              "Incorrect. The number of critically injured people is specified."
+            ]
+          },
+          {
+            "question": "In the sentence 'Medical teams were immediately dispatched', why is the passive voice used?",
+            "options": [
+              "To emphasize who sent the teams",
+              "To highlight the action of being sent and the recipient",
+              "To make the sentence shorter"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the passive voice often hides or de-emphasizes the agent.",
+              "That's right! The passive voice focuses on the action of being dispatched and the medical teams, rather than who did the dispatching.",
+              "While it can sometimes shorten a sentence, the primary reason here is focus, not just length."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "A severe fire engulfed a popular bar.",
+              "Medical teams were immediately dispatched to provide urgent care.",
+              "Investigations are ongoing to determine the exact cause."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is an active voice sentence, showing the fire performing the action.",
+              "Correct! 'Were dispatched' is a form of 'to be' + past participle, indicating the passive voice.",
+              "This sentence uses an active construction, focusing on 'investigations' as the subject performing the action."
+            ]
+          },
+          {
+            "question": "What is the primary role of 'firefighters' as mentioned in the news brief?",
+            "options": [
+              "To investigate the cause of fires",
+              "To treat injured people",
+              "To put out fires and assist in rescues"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While they may assist, their primary role is not investigation.",
+              "No, medical teams treat injured people; firefighters' main role is different.",
+              "Exactly! Firefighters are crucial for extinguishing fires and rescuing individuals from danger."
+            ]
+          },
+          {
+            "question": "What are the authorities currently doing regarding the fire incident?",
+            "options": [
+              "Reopening the bar",
+              "Concluding all investigations",
+              "Conducting ongoing investigations"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the bar would not be reopened during an investigation after such a tragedy.",
+              "Incorrect. The news brief states investigations are 'ongoing', meaning they are still happening.",
+              "Correct! The news brief mentions that 'Investigations are ongoing' to find the cause of the fire."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Tragic Blaze Engulfs Bangkok Bar, Resulting in Significant Casualties",
+        "overview": "A catastrophic fire at a Bangkok bar led to a high death toll and numerous critical injuries, prompting an immediate emergency response.",
+        "topic": "Nightclub Fire Disaster in Bangkok",
+        "news_brief_sentences": [
+          "A horrific fire tragically engulfed a bustling bar in Bangkok's Chatuchak district, causing widespread panic and a significant loss of life.",
+          "The devastating blaze erupted unexpectedly, trapping many patrons within the premises as flames rapidly spread.",
+          "Emergency services, including a large contingent of firefighters, swiftly arrived at the scene to confront the inferno.",
+          "Witnesses described a harrowing escape as individuals desperately ran through the consuming flames to reach safety outside.",
+          "Initial reports confirmed that at least 27 people were killed, marking a profound tragedy for the city.",
+          "Additionally, 25 individuals sustained critically injured, requiring immediate and intensive medical attention.",
+          "The sheer intensity of the fire made rescue efforts exceedingly challenging for first responders.",
+          "Investigators are currently working to ascertain the precise cause of the inferno, with early speculations focusing on electrical faults.",
+          "The incident has prompted urgent calls for stricter fire safety regulations in entertainment venues across Thailand.",
+          "This calamity serves as a somber reminder of the constant dangers inherent in crowded public spaces if safety protocols are compromised."
+        ],
+        "vocabulary": [
+          {
+            "term": "engulfed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "To completely surround or cover something, often in a destructive or overwhelming manner, as with flames or a flood."
+          },
+          {
+            "term": "devastating blaze",
+            "part_of_speech": "noun phrase",
+            "definition": "A very destructive and intense fire that causes extensive damage and often significant loss of life."
+          },
+          {
+            "term": "patrons",
+            "part_of_speech": "noun",
+            "definition": "Regular customers of a business, especially a restaurant, bar, or theater."
+          },
+          {
+            "term": "harrowing escape",
+            "part_of_speech": "noun phrase",
+            "definition": "A deeply distressing or frightening experience of getting away from danger, characterized by great difficulty and fear."
+          },
+          {
+            "term": "critically injured",
+            "part_of_speech": "adjective phrase",
+            "definition": "Having sustained injuries so severe that the condition is unstable and life-threatening, requiring immediate and intensive medical care."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from a verb or an adjective, often to make writing more formal or to focus on the action or state itself rather than the actor. It helps condense information and create more sophisticated sentence structures, commonly seen in academic and news writing.",
+          "example_quote": "Witnesses described a harrowing escape as individuals desperately ran through the consuming flames to reach safety outside."
+        },
+        "quiz": [
+          {
+            "question": "What was the immediate consequence of the fire at the Bangkok bar?",
+            "options": [
+              "Minor property damage only.",
+              "Significant casualties and critical injuries.",
+              "A swift and uneventful evacuation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief clearly states a high death toll and many critical injuries.",
+              "Correct. The news details 27 killed and 25 critically injured, indicating severe consequences.",
+              "Incorrect. The escape was described as 'harrowing' and involved running through flames, indicating it was far from uneventful."
+            ]
+          },
+          {
+            "question": "Which district in Bangkok was the scene of the fire?",
+            "options": [
+              "Sukhumvit district",
+              "Silom district",
+              "Chatuchak district"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief specifically mentions a different district.",
+              "Incorrect. The news brief specifies the location as Chatuchak district.",
+              "Correct. The article explicitly states the fire occurred in Bangkok's Chatuchak district."
+            ]
+          },
+          {
+            "question": "What does the term 'engulfed' imply about the fire's nature?",
+            "options": [
+              "The fire was easily contained and localized.",
+              "The fire completely surrounded and consumed the bar.",
+              "The fire was only visible from a distance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Engulfed' suggests extensive and overwhelming coverage, not easy containment.",
+              "Correct. 'Engulfed' means the fire entirely surrounded and covered the building, indicating its rapid and destructive spread.",
+              "Incorrect. While it might be visible, 'engulfed' focuses on the complete takeover of the structure by fire."
+            ]
+          },
+          {
+            "question": "Why were rescue efforts particularly challenging, according to the news brief?",
+            "options": [
+              "Lack of emergency personnel.",
+              "The sheer intensity of the fire.",
+              "Inadequate water supply for firefighters."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention a lack of emergency personnel.",
+              "Correct. The brief states, 'The sheer intensity of the fire made rescue efforts exceedingly challenging.'",
+              "Incorrect. The news brief does not specify an inadequate water supply as a challenge."
+            ]
+          },
+          {
+            "question": "What is 'nominalization' as explained in the grammar section?",
+            "options": [
+              "Using adjectives to describe nouns.",
+              "Forming a noun from a verb or adjective.",
+              "The act of giving something a name."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While adjectives describe nouns, that is not nominalization.",
+              "Correct. Nominalization is the process of converting verbs or adjectives into nouns, like 'escape' from 'to escape'.",
+              "Incorrect. While related to naming, nominalization is a specific grammatical transformation."
+            ]
+          },
+          {
+            "question": "How did some individuals manage a 'harrowing escape' from the fire?",
+            "options": [
+              "They used designated emergency exits swiftly.",
+              "They were guided out by firefighters.",
+              "They ran desperately through the consuming flames."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The description indicates a more desperate and dangerous escape.",
+              "Incorrect. The brief mentions running through flames independently.",
+              "Correct. The news brief explicitly states they 'ran through the consuming flames' in a 'harrowing escape'."
+            ]
+          },
+          {
+            "question": "What does the phrase 'critically injured' specifically indicate about the victims' condition?",
+            "options": [
+              "They received minor burns that healed quickly.",
+              "Their injuries were non-life-threatening but required medical attention.",
+              "Their injuries were life-threatening and required intensive care."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Critically injured' implies severe, life-threatening damage.",
+              "Incorrect. The term implies a much graver condition than non-life-threatening.",
+              "Correct. 'Critically injured' denotes severe, unstable, and life-threatening injuries demanding immediate, intensive medical care."
+            ]
+          },
+          {
+            "question": "What type of locations are at risk if fire safety protocols are compromised, according to the brief?",
+            "options": [
+              "Private residences.",
+              "Government buildings.",
+              "Crowded public spaces like entertainment venues."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While possible, the brief specifically focuses on a different type of location.",
+              "Incorrect. The news brief's concluding sentence points to a different category.",
+              "Correct. The brief concludes by highlighting the dangers in 'crowded public spaces if safety protocols are compromised'."
+            ]
+          },
+          {
+            "question": "What is the primary focus of investigators after the fire?",
+            "options": [
+              "To rebuild the bar quickly.",
+              "To ascertain the precise cause of the inferno.",
+              "To interview all witnesses multiple times."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Rebuilding is a future step, not the immediate investigative focus.",
+              "Correct. The brief states investigators are working 'to ascertain the precise cause of the inferno'.",
+              "Incorrect. While interviewing witnesses is part of it, the main goal is determining the cause."
+            ]
+          },
+          {
+            "question": "Which of the following phrases is an example of nominalization from the news brief?",
+            "options": [
+              "desperately ran",
+              "harrowing escape",
+              "consuming flames"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Desperately ran' uses an adverb and a verb, not nominalization.",
+              "Correct. 'Escape' is a noun formed from the verb 'to escape,' illustrating nominalization.",
+              "Incorrect. 'Consuming flames' uses a participle functioning as an adjective, not a nominalization of a verb or adjective."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

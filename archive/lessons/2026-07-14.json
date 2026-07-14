@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-14",
+  "release_iso": "2026-07-14T11:20:16Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Bangkok fire investigation finds locked doors and flammable decor as deaths climb to 30",
+    "summary": "Survivors and first responders reported locked doors and a lack of signage marking emergency exits.",
+    "link": "https://www.bbc.co.uk/news/articles/clyxyzlp9p2o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Bangkok Fire: Locked Doors and Many Deaths",
+        "overview": "A fire in Bangkok caused many deaths because doors were locked and escape was difficult.",
+        "topic": "Fire Safety and Tragic Accidents in Bangkok",
+        "news_brief_sentences": [
+          "There was a terrible fire in Bangkok.",
+          "Many people died in the fire.",
+          "An investigation started to find out why.",
+          "Reports say that some doors were locked.",
+          "People could not escape easily because of the locked doors.",
+          "There was also flammable decor inside the building.",
+          "This decor helped the fire spread quickly.",
+          "There were no clear signs for emergency exits.",
+          "Survivors said it was hard to find a way out.",
+          "The number of deaths climbed to 30 people."
+        ],
+        "vocabulary": [
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "A careful look to find facts and reasons about something."
+          },
+          {
+            "term": "locked",
+            "part_of_speech": "adjective",
+            "definition": "Closed with a key or lock, so you cannot open it."
+          },
+          {
+            "term": "flammable decor",
+            "part_of_speech": "noun phrase",
+            "definition": "Things in a room that can catch fire easily and burn quickly."
+          },
+          {
+            "term": "emergency exits",
+            "part_of_speech": "noun phrase",
+            "definition": "Special doors or ways to leave a place quickly when there is danger, like a fire."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who live through a dangerous event, such as a fire or accident."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense (e.g., 'said')",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished in the past. For example, 'said' is the past form of 'say'. It tells us what people spoke about before now.",
+          "example_quote": "Survivors said it was hard to find a way out."
+        },
+        "quiz": [
+          {
+            "question": "What kind of event happened in Bangkok?",
+            "options": [
+              "A big concert",
+              "A terrible fire",
+              "A new building opening"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief is about a serious event, not a concert.",
+              "Correct! A very serious fire occurred in Bangkok.",
+              "Incorrect. The news brief talks about a fire, not a new building being opened."
+            ]
+          },
+          {
+            "question": "Why did an 'investigation' begin?",
+            "options": [
+              "To plan a party",
+              "To find out why the fire happened",
+              "To buy new furniture"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An investigation helps to discover facts about a problem, not to plan a party.",
+              "Correct! An investigation aims to understand the reasons behind the fire.",
+              "Incorrect. The purpose of the investigation was to understand the fire, not to buy furniture."
+            ]
+          },
+          {
+            "question": "What does it mean if doors were 'locked'?",
+            "options": [
+              "They were open for everyone",
+              "They were closed with a key, so people could not open them",
+              "They were made of wood"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Locked' means the opposite of open.",
+              "Correct! Locked doors prevent entry or exit without a key or code.",
+              "Incorrect. The material of the door is not related to being locked."
+            ]
+          },
+          {
+            "question": "What helped the fire spread quickly?",
+            "options": [
+              "Water from the rain",
+              "Flammable decor inside",
+              "Strong wind outside"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Water helps put out fires, not spread them.",
+              "Correct! Flammable decor easily catches fire and helps it spread.",
+              "Incorrect. The news brief mentioned inside factors, not outside wind."
+            ]
+          },
+          {
+            "question": "What are 'emergency exits' for?",
+            "options": [
+              "Buying tickets",
+              "Leaving a building quickly when there is danger",
+              "Storing things"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Emergency exits are not for buying tickets.",
+              "Correct! They are special ways to escape a building fast in an emergency.",
+              "Incorrect. Emergency exits are for safety, not for storage."
+            ]
+          },
+          {
+            "question": "Who are the 'survivors' of the fire?",
+            "options": [
+              "The people who started the fire",
+              "The people who escaped the fire alive",
+              "The people who put out the fire"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Survivors are people who lived, not necessarily those who started the event.",
+              "Correct! Survivors are those who lived through a dangerous event.",
+              "Incorrect. Firefighters put out the fire; survivors are those who escaped alive."
+            ]
+          },
+          {
+            "question": "Why was it hard for people to escape during the fire?",
+            "options": [
+              "The lights were too bright",
+              "Some doors were locked",
+              "There was too much food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention bright lights as an escape problem.",
+              "Correct! Locked doors made it very difficult for people to get out.",
+              "Incorrect. The news brief does not mention food as an issue for escape."
+            ]
+          },
+          {
+            "question": "What does the simple past tense, like in 'said', tell us?",
+            "options": [
+              "Something will happen in the future",
+              "Something is happening right now",
+              "Something happened and finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The simple past tense does not talk about the future.",
+              "Incorrect. The simple present tense describes actions happening now.",
+              "Correct! The simple past tense is used for actions that are completed in the past."
+            ]
+          },
+          {
+            "question": "In the sentence 'Survivors said it was hard to find a way out,' what is the past tense verb?",
+            "options": [
+              "find",
+              "was",
+              "said"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Find' is a present tense verb.",
+              "Incorrect. 'Was' is also a past tense verb, but 'said' directly relates to the action of speaking in the past.",
+              "Correct! 'Said' is the past tense form of the verb 'say'."
+            ]
+          },
+          {
+            "question": "What was missing that could have helped people find their way out?",
+            "options": [
+              "More music",
+              "Clear signs for emergency exits",
+              "More seats"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Music would not help people escape a fire.",
+              "Correct! The news brief stated there were no clear signs for emergency exits.",
+              "Incorrect. More seats would not help people find their way out in an emergency."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Bangkok Fire Probe Reveals Dangerous Safety Failures",
+        "overview": "An ongoing investigation into a deadly Bangkok fire has uncovered serious safety violations, including locked exits and flammable materials, leading to many fatalities.",
+        "topic": "Fire Safety and Investigations",
+        "news_brief_sentences": [
+          "A tragic fire incident in Bangkok is currently under intense investigation by authorities.",
+          "The grim discovery of at least 30 fatalities has shocked the community.",
+          "Initial reports from survivors and first responders highlighted several critical safety concerns.",
+          "Crucially, investigators found evidence of locked doors that prevented quick escape during the emergency.",
+          "This issue was compounded by a lack of clear signage marking the emergency exits.",
+          "Such conditions can significantly impede evacuation efforts in a crowded venue.",
+          "Furthermore, the investigation is also scrutinizing the presence of highly flammable decor within the building.",
+          "These materials likely contributed to the rapid spread of the fire, intensifying the danger.",
+          "Authorities are working to understand how these severe safety breaches occurred.",
+          "The ongoing probe aims to prevent similar devastating incidents from happening in the future."
+        ],
+        "vocabulary": [
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "An official examination of facts to discover the truth about something, especially a crime or accident."
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
+          },
+          {
+            "term": "highlighted",
+            "part_of_speech": "verb",
+            "definition": "Drew special attention to something, making it more noticeable or important."
+          },
+          {
+            "term": "signage",
+            "part_of_speech": "noun",
+            "definition": "Signs, especially public signs, used for display or guidance."
+          },
+          {
+            "term": "flammable",
+            "part_of_speech": "adjective",
+            "definition": "Easily set on fire and capable of burning rapidly."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the result of the action, rather than on the agent (the person or thing doing the action). We use it when the agent is unknown, obvious, or less important. It is formed with a form of 'to be' + past participle.",
+          "example_quote": "A tragic fire incident in Bangkok is currently under intense investigation by authorities."
+        },
+        "quiz": [
+          {
+            "question": "What is the main subject of the news brief?",
+            "options": [
+              "A new building opening in Bangkok",
+              "A fire investigation in Bangkok",
+              "Tourist attractions in Thailand"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief focuses on the aftermath of a fire, not a new opening.",
+              "Correct! The brief details the ongoing investigation into a fire.",
+              "Incorrect. While Bangkok is mentioned, the focus is on a specific incident, not general tourism."
+            ]
+          },
+          {
+            "question": "How many fatalities were initially discovered?",
+            "options": [
+              "Around 10",
+              "At least 30",
+              "Exactly 50"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The number mentioned was significantly higher than 10.",
+              "That's right. The brief states there were 'at least 30 fatalities'.",
+              "Incorrect. The brief specifies 'at least 30', not exactly 50."
+            ]
+          },
+          {
+            "question": "What did survivors and first responders highlight as a safety concern?",
+            "options": [
+              "Lack of parking spaces",
+              "Locked doors and poor signage",
+              "Too many security guards"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief doesn't mention parking spaces.",
+              "Correct. These were critical safety concerns mentioned in the brief.",
+              "Incorrect. The brief focuses on issues like locked doors and emergency exits, not security guard numbers."
+            ]
+          },
+          {
+            "question": "What does the word 'investigation' mean in this context?",
+            "options": [
+              "A party or celebration",
+              "An official inquiry to discover facts",
+              "A new construction project"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, an investigation is a serious and formal process, not a celebration.",
+              "Exactly. An investigation is a formal process to find out what happened.",
+              "Incorrect. The term refers to studying an incident, not building something new."
+            ]
+          },
+          {
+            "question": "What kind of materials were also being scrutinized by the investigation?",
+            "options": [
+              "Waterproof flooring",
+              "Highly flammable decor",
+              "Soundproofing panels"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief highlights materials that easily burn, not waterproof ones.",
+              "Correct. Flammable decor was identified as a factor in the fire's spread.",
+              "Incorrect. The focus was on materials that could contribute to fire intensity, not sound."
+            ]
+          },
+          {
+            "question": "Which term means 'deaths caused by an accident or disaster'?",
+            "options": [
+              "Survivals",
+              "Injuries",
+              "Fatalities"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Survival means continuing to live, which is the opposite.",
+              "Incorrect. Injuries are physical harm, not deaths.",
+              "Correct! Fatalities specifically refers to deaths from an incident."
+            ]
+          },
+          {
+            "question": "What does 'signage' refer to in the brief?",
+            "options": [
+              "The signature of the building owner",
+              "Public signs for guidance",
+              "A secret code"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Signage refers to visible signs, not a signature.",
+              "Correct. The brief mentions a lack of clear signs marking emergency exits.",
+              "Incorrect. It refers to informational signs, not a secret code."
+            ]
+          },
+          {
+            "question": "In the sentence 'A tragic fire incident in Bangkok is currently under intense investigation by authorities,' what is the grammar concept being used?",
+            "options": [
+              "Present Perfect",
+              "Conditional Sentence",
+              "Passive Voice"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The present perfect describes actions completed in the past with current relevance.",
+              "Incorrect. A conditional sentence expresses a hypothetical situation and its outcome.",
+              "That's right! The focus is on the action (being investigated) rather than who is doing it."
+            ]
+          },
+          {
+            "question": "Why is the passive voice often used in news reporting, as seen in the brief?",
+            "options": [
+              "To make the report sound more personal",
+              "To avoid mentioning the authorities",
+              "To focus on the event or action itself"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The passive voice generally makes reports sound more objective or formal, not personal.",
+              "Incorrect. The passive voice can be used even when authorities are known or mentioned later.",
+              "Exactly. The passive voice emphasizes what happened, not necessarily who did it."
+            ]
+          },
+          {
+            "question": "What is the ultimate goal of the ongoing probe, according to the news brief?",
+            "options": [
+              "To rebuild the venue quickly",
+              "To punish all those involved severely",
+              "To prevent similar devastating incidents"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While rebuilding might happen, the stated goal of the probe is prevention.",
+              "Incorrect. The primary goal mentioned is prevention, not solely punishment.",
+              "Correct. The brief states the probe aims 'to prevent similar devastating incidents from happening'."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Bangkok Blaze Reveals Critical Safety Lapses as Death Toll Mounts",
+        "overview": "The ongoing inquiry into the devastating Bangkok fire underscores severe safety derelictions, including secured exits and combustible interior elements, as the tragic death toll continues to rise.",
+        "topic": "Fire Safety Negligence and Its Fatal Consequences in Bangkok",
+        "news_brief_sentences": [
+          "A tragic fire in Bangkok has led to the death of 30 individuals, with the casualty count regrettably expected to increase.",
+          "Initial findings from the ongoing investigation into the nightclub blaze reveal egregious safety derelictions.",
+          "Survivors recounted harrowing experiences, reporting that numerous exit doors were inexplicably locked during the frantic evacuation.",
+          "First responders further corroborated these accounts, highlighting a conspicuous absence of proper signage indicating emergency egress points.",
+          "The probe also points to the presence of highly combustible decorative materials within the venue, which significantly exacerbated the fire's rapid spread.",
+          "This confluence of factors, specifically the lack of clear escape routes and the rapid ignition of interior furnishings, trapped many patrons.",
+          "Such flagrant disregard for safety protocols is now under intense scrutiny by regulatory authorities.",
+          "The authorities are facing mounting pressure to ascertain the precise culpability for these preventable fatalities.",
+          "This incident serves as a stark reminder of the imperative need for rigorous enforcement of fire safety standards globally.",
+          "Calls for comprehensive audits of similar establishments are intensifying to avert future catastrophes of this magnitude."
+        ],
+        "vocabulary": [
+          {
+            "term": "derelictions",
+            "part_of_speech": "noun",
+            "definition": "Failures to fulfill one's duties or obligations, especially those related to safety or responsibility, often through neglect."
+          },
+          {
+            "term": "corroborated",
+            "part_of_speech": "verb",
+            "definition": "Confirmed or supported a statement, theory, or finding with evidence or authority, making it more certain."
+          },
+          {
+            "term": "combustible",
+            "part_of_speech": "adjective",
+            "definition": "Capable of catching fire and burning easily; pertaining to materials that are flammable and can readily ignite."
+          },
+          {
+            "term": "exacerbated",
+            "part_of_speech": "verb",
+            "definition": "Made a problem, bad situation, or negative feeling worse or more severe; intensified a negative condition."
+          },
+          {
+            "term": "culpability",
+            "part_of_speech": "noun",
+            "definition": "Responsibility for a fault or wrong; the state of being blameworthy or deserving of reproach for an action or omission."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from a verb or adjective, often used in formal writing to condense information and express abstract concepts. It allows for more concise and sophisticated sentence structures, transforming actions or qualities into entities.",
+          "example_quote": "Initial findings from the ongoing investigation into the nightclub blaze reveal egregious safety derelictions."
+        },
+        "quiz": [
+          {
+            "question": "What were the primary safety deficiencies identified in the Bangkok fire investigation?",
+            "options": [
+              "Inadequate ventilation and excessive overcrowding.",
+              "Locked exit doors and the use of highly combustible decor.",
+              "Insufficient fire extinguisher availability and poorly trained staff."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While overcrowding can be an issue, the news brief specifically highlighted locked doors and flammable materials.",
+              "Correct. The investigation specifically pointed to locked doors and combustible decorative elements as critical factors contributing to the tragedy.",
+              "The brief did not mention these specific issues, focusing instead on structural and material safety failures."
+            ]
+          },
+          {
+            "question": "The word \"derelictions\" in the news brief most closely refers to:",
+            "options": [
+              "Acts of heroism.",
+              "Failures in duty.",
+              "Architectural designs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Derelictions\" implies a failure or neglect, not a heroic act.",
+              "Correct. \"Derelictions\" signifies a failure to meet obligations or duties, particularly in safety and responsibility.",
+              "While related to a building, the term itself refers to the failure to maintain standards, not the design elements."
+            ]
+          },
+          {
+            "question": "According to the news brief, what role did emergency exit signage play in the incident?",
+            "options": [
+              "It was clearly marked and helped guide survivors.",
+              "It was entirely absent, complicating evacuation efforts.",
+              "It was present but obscured by smoke."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly states a \"conspicuous absence\" of proper signage, contradicting this option.",
+              "Correct. First responders \"highlighted a conspicuous absence of proper signage,\" severely hindering evacuation.",
+              "The news brief indicates a lack of signage, not that it was present but merely obscured during the fire."
+            ]
+          },
+          {
+            "question": "What does it mean if decorative materials are described as \"combustible\"?",
+            "options": [
+              "They are resistant to fire.",
+              "They burn easily and rapidly.",
+              "They emit toxic fumes when heated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Combustible\" means the opposite of fire-resistant; it indicates flammability.",
+              "Correct. \"Combustible\" specifically means capable of catching fire and burning easily, contributing to rapid fire spread.",
+              "While some combustible materials may emit toxic fumes, the primary definition relates to their inherent flammability."
+            ]
+          },
+          {
+            "question": "How did the presence of combustible decorative materials *exacerbate* the fire?",
+            "options": [
+              "They contained the fire to a smaller area.",
+              "They made the situation worse by speeding up the fire's spread.",
+              "They alerted staff to the fire earlier."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Exacerbate\" means to worsen, not to contain or limit the fire's impact.",
+              "Correct. \"Exacerbated\" means to make a bad situation worse, in this case, by accelerating the fire's rapid spread.",
+              "The news brief suggests they worsened the fire, not aided in early detection or mitigation."
+            ]
+          },
+          {
+            "question": "What does the term \"culpability\" refer to in the context of the fire investigation?",
+            "options": [
+              "The courage of the survivors.",
+              "The architectural integrity of the building.",
+              "Responsibility for wrongful actions or failures."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Culpability\" refers to blameworthiness or fault, not bravery.",
+              "While related to the building's safety, \"culpability\" specifically addresses who is at fault for the failures, not the structure itself.",
+              "Correct. \"Culpability\" precisely means responsibility for a fault or wrongdoing, implying blameworthiness for the incident."
+            ]
+          },
+          {
+            "question": "Which of the following phrases is an example of nominalization?",
+            "options": [
+              "\"The fire spread rapidly.\"",
+              "\"They corroborated the accounts.\"",
+              "\"Egregious safety derelictions.\""
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses a verb (\"spread\") but doesn't transform it into a noun in a formal way for abstract meaning.",
+              "\"Corroborated\" is a verb here; nominalization would turn it into a noun like \"corroboration\" to express the action as a concept.",
+              "Correct. \"Derelictions\" is a noun formed from the verb \"to neglect,\" illustrating nominalization by abstracting the failure into a concept."
+            ]
+          },
+          {
+            "question": "Why is the incident described as a \"stark reminder of the imperative need for rigorous enforcement\"?",
+            "options": [
+              "Because lax enforcement directly contributed to the severity of the disaster.",
+              "Because the enforcement agencies acted quickly after the fire.",
+              "Because the public is now demanding less regulation."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The \"stark reminder\" emphasizes that the severity was due to a failure in rigorous enforcement of safety standards.",
+              "The phrase points to a *need* for enforcement, implying it was lacking before, not that it was strong or effective after the fact.",
+              "The brief explicitly calls for \"rigorous enforcement,\" directly contradicting the idea of demanding less regulation."
+            ]
+          },
+          {
+            "question": "What is the overall tone of the news brief regarding the fire?",
+            "options": [
+              "Optimistic and reassuring.",
+              "Neutral and purely factual.",
+              "Grave and critical of safety standards."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "With a climbing death toll and descriptions like \"egregious safety derelictions,\" the tone is far from optimistic.",
+              "While factual elements are present, words like \"harrowing,\" \"egregious,\" and \"flagrant disregard\" inject a critical and grave tone.",
+              "Correct. The language used, such as \"egregious safety derelictions\" and \"flagrant disregard,\" indicates a serious and critical perspective on safety failures."
+            ]
+          },
+          {
+            "question": "The news brief implies that the \"confluence of factors\" specifically refers to:",
+            "options": [
+              "The large number of patrons present and the time of night.",
+              "The locked escape routes and the rapid ignition of interior furnishings.",
+              "The slow response time of emergency services and inadequate water pressure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While these might be contributing elements, the brief explicitly defines the \"confluence of factors\" otherwise.",
+              "Correct. The brief explicitly states, \"This confluence of factors, specifically the lack of clear escape routes and the rapid ignition of interior furnishings, trapped many patrons.\"",
+              "These factors were not specifically highlighted as the \"confluence\" in the brief's detailed explanation."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

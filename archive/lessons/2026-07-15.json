@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-15",
+  "release_iso": "2026-07-15T14:55:51Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Iran threatens to block more trade routes as US launches fresh strikes",
+    "summary": "US President Donald Trump vowed to strike Iran's bridges and power plants next week if the country does not return to talks.",
+    "link": "https://www.bbc.co.uk/news/articles/c9323zgq6wvo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US and Iran Tensions Increase",
+        "overview": "The US President promised to attack Iran's infrastructure if the country does not agree to talks.",
+        "topic": "International Conflict, Geopolitics, Current Events",
+        "news_brief_sentences": [
+          "There are growing tensions between the United States and Iran.",
+          "US President Donald Trump recently spoke about the situation.",
+          "He vowed to take strong action against Iran.",
+          "He said the US would strike next week if no agreement is reached.",
+          "The planned strikes would target Iran's important bridges.",
+          "They would also target the country's power plants.",
+          "This action depends on if Iran does not return to talks.",
+          "Iran has also threatened to block important trade routes.",
+          "Blocking trade routes could stop many ships from moving.",
+          "This situation is serious for global stability and trade."
+        ],
+        "vocabulary": [
+          {
+            "term": "tensions",
+            "part_of_speech": "noun",
+            "definition": "feelings of anger or disagreement between people or countries."
+          },
+          {
+            "term": "vowed",
+            "part_of_speech": "verb",
+            "definition": "promised very strongly to do something."
+          },
+          {
+            "term": "strike",
+            "part_of_speech": "verb",
+            "definition": "to attack something or someone, often with military force."
+          },
+          {
+            "term": "bridges",
+            "part_of_speech": "noun",
+            "definition": "structures built over water or roads to allow people and vehicles to cross."
+          },
+          {
+            "term": "talks",
+            "part_of_speech": "noun",
+            "definition": "formal discussions between groups or countries to solve problems."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional Sentences (If + Simple Present)",
+          "explanation": "We use 'if' with the simple present tense to talk about a condition and a possible result. The condition must happen first for the result to be possible. For example, if A happens, then B will happen.",
+          "example_quote": "if Iran does not return to talks"
+        },
+        "quiz": [
+          {
+            "question": "What kind of feelings exist between the US and Iran?",
+            "options": [
+              "Friendship",
+              "Tensions",
+              "Happiness"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news talks about problems, not friendship.",
+              "Yes, 'tensions' means disagreement or anger between countries.",
+              "No, the situation is serious, not happy."
+            ]
+          },
+          {
+            "question": "Who made a promise about striking Iran?",
+            "options": [
+              "Iran's President",
+              "Donald Trump",
+              "A news reporter"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says the US President made the promise.",
+              "Yes, US President Donald Trump vowed to strike Iran.",
+              "No, a reporter only tells the news, they don't make promises like this."
+            ]
+          },
+          {
+            "question": "What does the word 'vowed' mean in this news?",
+            "options": [
+              "Asked politely",
+              "Promised strongly",
+              "Refused to do"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'vowed' is a much stronger word than 'asked politely'.",
+              "Yes, 'vowed' means to make a very strong promise.",
+              "No, 'vowed' means a promise, not a refusal."
+            ]
+          },
+          {
+            "question": "What does 'strike' mean when talking about a country's actions?",
+            "options": [
+              "To hit with a hand",
+              "To attack",
+              "To play music"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, in this context, 'strike' means a military action, not a physical hit.",
+              "Yes, 'strike' means to attack, often with military force.",
+              "No, 'strike' has a different meaning here, not related to music."
+            ]
+          },
+          {
+            "question": "Which places did the US President say they would strike?",
+            "options": [
+              "Parks and schools",
+              "Houses and cars",
+              "Bridges and power plants"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news mentioned specific types of infrastructure.",
+              "No, these are not the targets mentioned in the news.",
+              "Yes, the news brief says the US would strike Iran's bridges and power plants."
+            ]
+          },
+          {
+            "question": "What are 'bridges' in the news brief?",
+            "options": [
+              "Big ships",
+              "Structures over water",
+              "Important roads"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, bridges are not ships.",
+              "Yes, bridges are structures built to cross over water or roads.",
+              "No, bridges are not just roads; they are specific structures."
+            ]
+          },
+          {
+            "question": "What must Iran do to avoid the US strike, according to the news?",
+            "options": [
+              "Build more bridges",
+              "Return to talks",
+              "Buy more power plants"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, building bridges is not the condition mentioned.",
+              "Yes, the US President said the strike depends on if Iran does not return to talks.",
+              "No, buying power plants is not what the news brief says."
+            ]
+          },
+          {
+            "question": "What does 'talks' refer to in the news brief?",
+            "options": [
+              "Friendly chats",
+              "Formal discussions",
+              "Loud arguments"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'talks' in this context are more serious than friendly chats.",
+              "Yes, 'talks' means formal discussions between countries.",
+              "No, while there is tension, 'talks' refer to attempts at discussion, not just arguments."
+            ]
+          },
+          {
+            "question": "What will happen 'if Iran does not return to talks'?",
+            "options": [
+              "The US will strike.",
+              "Iran will build new bridges.",
+              "Both countries will be friends."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the news brief states that the US will strike if Iran does not return to talks.",
+              "No, this is not the result mentioned in the news for that condition.",
+              "No, the news brief describes escalating tensions, not friendship."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'if' in a sentence like 'If A happens, B will happen'?",
+            "options": [
+              "When",
+              "Because",
+              "Condition"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'if' implies a condition, not just a time.",
+              "No, 'if' does not explain a reason; it introduces a condition.",
+              "Yes, 'if' introduces a condition that must be met for something else to happen."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US-Iran Tensions Escalate: Threats Over Trade Routes and Potential Strikes",
+        "overview": "Tensions between the US and Iran are escalating, with Iran threatening to block crucial trade routes and the US vowing strikes if diplomatic talks do not resume.",
+        "topic": "International Relations and Geopolitics: US-Iran Conflict",
+        "news_brief_sentences": [
+          "Recent events highlight a significant escalation in the ongoing conflict between the United States and Iran.",
+          "Iran has threatened to block crucial international trade routes, specifically mentioning the Strait of Hormuz.",
+          "This action would severely disrupt global oil shipments and have widespread economic implications.",
+          "In response, US President Donald Trump has vowed to strike key Iranian infrastructure, including bridges and power plants.",
+          "The President's warning specified that US forces would launch fresh strikes if Iran does not agree to new diplomatic talks.",
+          "Such military actions carry the risk of further destabilizing the already tense Middle East region.",
+          "International observers are closely watching the situation, urging both nations to return to talks and de-escalate.",
+          "The ultimate goal for many global leaders is to find a peaceful resolution to the dispute.",
+          "However, both sides appear firm in their positions, making immediate reconciliation challenging.",
+          "The global community remains concerned about the potential for wider conflict and its impact on stability."
+        ],
+        "vocabulary": [
+          {
+            "term": "threatened to block",
+            "part_of_speech": "verb phrase",
+            "definition": "To state an intention to stop something, often by preventing access or movement, like closing a passage."
+          },
+          {
+            "term": "trade routes",
+            "part_of_speech": "noun phrase",
+            "definition": "Established paths or channels used for moving goods and merchandise between different regions or countries for commercial purposes."
+          },
+          {
+            "term": "vowed to strike",
+            "part_of_speech": "verb phrase",
+            "definition": "To make a serious and determined promise or solemn declaration to attack or initiate a military action against someone or something."
+          },
+          {
+            "term": "fresh strikes",
+            "part_of_speech": "noun phrase",
+            "definition": "New or recent military attacks, often implying a continuation or renewal of previous actions or a completely new offensive."
+          },
+          {
+            "term": "return to talks",
+            "part_of_speech": "verb phrase",
+            "definition": "To resume or restart diplomatic negotiations or discussions after a period of suspension, disagreement, or breakdown in communication."
+          }
+        ],
+        "grammar": {
+          "concept": "Conditional Sentences (Type 1)",
+          "explanation": "Type 1 conditional sentences describe real and possible situations in the future. They are formed with 'if' + simple present in the condition clause, and 'will' + base verb in the result clause. They express what will happen if a certain condition is met, highlighting a direct cause and effect relationship for future events.",
+          "example_quote": "The President's warning specified that US forces would launch fresh strikes if Iran does not agree to new diplomatic talks."
+        },
+        "quiz": [
+          {
+            "question": "What did Iran threaten to do in response to US actions?",
+            "options": [
+              "To launch missiles at US bases",
+              "To block crucial international trade routes",
+              "To withdraw from international agreements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not mentioned in the news brief. Iran's specific threat was different.",
+              "Correct! The news brief clearly states Iran threatened to block trade routes.",
+              "While a possibility in some situations, the news brief specifically mentions blocking trade routes."
+            ]
+          },
+          {
+            "question": "According to the news brief, what did US President Donald Trump vow to strike if Iran does not return to talks?",
+            "options": [
+              "Oil tankers and naval ships",
+              "Bridges and power plants",
+              "Military training camps"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief specified different infrastructure targets for potential strikes.",
+              "That's right! The President threatened to strike bridges and power plants.",
+              "This type of target was not explicitly mentioned in the news brief."
+            ]
+          },
+          {
+            "question": "What is the meaning of the phrase 'threatened to block' as used in the news brief?",
+            "options": [
+              "Promised to allow passage",
+              "Stated an intention to stop access or movement",
+              "Decided to protect a route"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the opposite of what 'threatened to block' means.",
+              "Correct. It means they announced their intention to prevent passage or movement.",
+              "While related to routes, 'block' means to stop, not to protect in this context."
+            ]
+          },
+          {
+            "question": "Which sentence best explains what 'fresh strikes' refers to in the context of the article?",
+            "options": [
+              "A series of peaceful protests",
+              "New or recent military attacks",
+              "Attempts at diplomatic negotiations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Strikes' in this context refers to military action, not protests.",
+              "Precisely! 'Fresh strikes' means new or recently launched military attacks.",
+              "This phrase describes military action, not diplomatic discussions."
+            ]
+          },
+          {
+            "question": "In the conditional sentence 'US forces would launch fresh strikes if Iran does not agree to new diplomatic talks,' what does the 'if' clause represent?",
+            "options": [
+              "A past consequence",
+              "A certain future event",
+              "A condition for a future action"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Conditional sentences like this refer to future possibilities, not past events.",
+              "The 'if' clause introduces a condition, but the outcome is not certain.",
+              "That's correct. The 'if' clause sets the condition under which the main action might occur."
+            ]
+          },
+          {
+            "question": "What is the primary condition for the US to potentially launch strikes, according to President Trump's statement?",
+            "options": [
+              "If Iran increases its oil production",
+              "If Iran attacks US allies",
+              "If Iran does not return to new diplomatic talks"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief does not mention oil production as the condition for strikes.",
+              "While this could be a reason, the news brief specifies a different condition.",
+              "Yes, the President's vow to strike is conditional on Iran's refusal to return to talks."
+            ]
+          },
+          {
+            "question": "If two nations 'return to talks,' what are they attempting to do?",
+            "options": [
+              "To end all communication permanently",
+              "To restart negotiations and discussions",
+              "To declare a state of war"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the opposite of 'returning to talks,' which implies resuming communication.",
+              "Correct! 'Return to talks' means to resume diplomatic discussions to find a solution.",
+              "Returning to talks is usually an effort to avoid conflict, not to declare war."
+            ]
+          },
+          {
+            "question": "Why would Iran blocking crucial international trade routes be a significant concern globally?",
+            "options": [
+              "It would primarily affect local fishing industries.",
+              "It would disrupt global oil shipments and have widespread economic implications.",
+              "It would only impact tourism in the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The impact would be far broader than just local fishing.",
+              "Absolutely. Blocking these routes, especially the Strait of Hormuz, impacts global energy and economy.",
+              "While tourism might be affected, the main concern is much larger, especially regarding oil."
+            ]
+          },
+          {
+            "question": "Which of the following sentences is an example of a Type 1 Conditional sentence?",
+            "options": [
+              "If I had known, I would have helped you.",
+              "If it rains tomorrow, we will cancel the outdoor event.",
+              "If she were taller, she could reach the shelf."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is a Type 3 conditional, referring to an unreal past situation.",
+              "That's right! This sentence uses 'if' + simple present and 'will' + base verb for a real future possibility.",
+              "This is a Type 2 conditional, describing an unreal or hypothetical present situation."
+            ]
+          },
+          {
+            "question": "What are 'trade routes' fundamentally used for in international commerce?",
+            "options": [
+              "Conducting military exercises",
+              "Transporting goods and merchandise between countries",
+              "Establishing cultural exchange programs"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While militaries might use these routes, their fundamental purpose is trade.",
+              "Correct! Trade routes are essential for the movement of commercial goods globally.",
+              "Trade routes facilitate economic activity, not primarily cultural exchanges, though those might follow."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US-Iran Tensions Escalate: Threats of Strikes and Trade Route Blockades Amid Diplomatic Impasse",
+        "overview": "The Middle East faces increasing instability as heightened geopolitical tensions between the United States and Iran threaten a broader conflict, with both nations engaging in aggressive rhetoric and strategic posturing.",
+        "topic": "International Relations, Geopolitics, US-Iran Conflict, Diplomacy, Military Strategy",
+        "news_brief_sentences": [
+          "The geopolitical landscape in the Middle East remains profoundly volatile, marked by a significant escalation of tensions between the United States and Iran.",
+          "Recent reports confirm that the U.S. has launched fresh strikes, eliciting a robust response from Tehran.",
+          "In a direct countermeasure, Iran has issued a stern warning, explicitly threatening to block more crucial international trade routes.",
+          "This retaliatory declaration underscores the deepening impasse in diplomatic discourse between the two nuclear-capable states.",
+          "Concurrently, U.S. President Donald Trump has asserted his intent to escalate military pressure if dialogue does not resume promptly.",
+          "He reportedly vowed to target Iran's vital infrastructure, including specific mentions of bridges and power plants.",
+          "These potential strikes are contingent upon Iran's decision regarding a swift return to negotiations.",
+          "The explicit ultimatum signals a definitive shift in strategic posturing, carrying substantial global ramifications for energy markets and regional stability.",
+          "Such heightened aggressive rhetoric from both sides exacerbates international fears of a broader, more destructive regional conflict.",
+          "The international community is closely observing the situation, urgently calling for de-escalation to avert a catastrophic military confrontation."
+        ],
+        "vocabulary": [
+          {
+            "term": "volatile",
+            "part_of_speech": "adjective",
+            "definition": "Liable to change rapidly and unpredictably, especially for the worse; characterized by rapid and extreme changes."
+          },
+          {
+            "term": "issued a stern warning",
+            "part_of_speech": "phrase",
+            "definition": "To give a very serious and firm caution or threat, indicating severe consequences if certain actions are taken or not taken."
+          },
+          {
+            "term": "asserted his intent",
+            "part_of_speech": "phrase",
+            "definition": "To state or declare one's firm purpose, aim, or plan with confidence and conviction, often in the face of opposition or doubt."
+          },
+          {
+            "term": "contingent upon",
+            "part_of_speech": "phrase",
+            "definition": "Dependent on; conditional on; subject to something else happening or being true."
+          },
+          {
+            "term": "avert",
+            "part_of_speech": "verb",
+            "definition": "To turn away or aside; to prevent something undesirable from happening, such as a danger or catastrophe."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases for Consequence or Detail",
+          "explanation": "Participial phrases, typically starting with an -ing (present participle) or -ed (past participle) verb, are used to add descriptive detail, provide background information, or indicate a consequence of the main clause. They can concisely convey additional information without needing a separate clause, making sentences more sophisticated and compact. When indicating consequence, they often follow a comma.",
+          "example_quote": "The explicit ultimatum signals a definitive shift in strategic posturing, carrying substantial global ramifications for energy markets and regional stability."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary condition for the U.S. President to potentially strike Iranian infrastructure?",
+            "options": [
+              "Iran's blocking of international trade routes.",
+              "Iran's refusal to return to diplomatic negotiations.",
+              "Iran's recent launch of fresh military strikes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While Iran has threatened this, it is not the explicit condition for the U.S. strikes mentioned in the brief.",
+              "Correct! The news brief clearly states the strikes are 'contingent upon Iran's decision regarding a swift return to negotiations.'",
+              "The U.S. initiated the fresh strikes, not Iran, according to the brief; this option reverses the actors."
+            ]
+          },
+          {
+            "question": "Which of the following best defines the term 'volatile' as used in the news brief?",
+            "options": [
+              "Stable and predictable.",
+              "Prone to rapid and unpredictable change.",
+              "Calm and unchanging."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the opposite of 'volatile,' which describes a highly unstable situation.",
+              "Precisely! 'Volatile' accurately captures the unpredictable and rapidly changing nature of the geopolitical landscape.",
+              "This definition contradicts the meaning of 'volatile' in the context of international tensions."
+            ]
+          },
+          {
+            "question": "What specific types of infrastructure did President Trump reportedly threaten to target in Iran?",
+            "options": [
+              "Oil refineries and military barracks.",
+              "Bridges and power plants.",
+              "Naval ports and communication centers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions vital infrastructure but specifies bridges and power plants, not oil refineries or military barracks.",
+              "Exactly! The news brief explicitly states President Trump 'vowed to target Iran's vital infrastructure, specifically mentioning bridges and power plants.'",
+              "While plausible targets, the brief specifically highlighted bridges and power plants."
+            ]
+          },
+          {
+            "question": "When Iran 'issued a stern warning,' what was the characteristic tone of their message?",
+            "options": [
+              "Tentative and uncertain.",
+              "Serious and threatening.",
+              "Conciliatory and diplomatic."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A 'stern warning' implies firmness, not hesitation or uncertainty.",
+              "Correct! 'Stern' indicates a serious, firm, and often threatening tone, which aligns with the meaning of the phrase.",
+              "A 'stern warning' is generally not conciliatory; it conveys strong disapproval or a threat."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The explicit ultimatum signals a definitive shift in strategic posturing, carrying substantial global ramifications for energy markets and regional stability,' what function does the participial phrase 'carrying substantial global ramifications' serve?",
+            "options": [
+              "It describes the location of the shift.",
+              "It provides a consequence or effect of the shift.",
+              "It states the reason behind the shift."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase does not indicate a geographical location but rather an outcome.",
+              "Absolutely! The participial phrase effectively communicates the significant impacts or results stemming from the strategic shift.",
+              "While related, the phrase focuses on the ramifications (effects) rather than the direct cause or motivation for the shift."
+            ]
+          },
+          {
+            "question": "If President Trump 'asserted his intent' to escalate military pressure, what does this imply about his plans?",
+            "options": [
+              "He considered escalating but made no firm decision.",
+              "He firmly declared his purpose to escalate.",
+              "He expressed regret about any potential escalation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To 'assert intent' means to state it firmly, not to merely consider it.",
+              "Correct! 'Asserted his intent' signifies a strong, clear declaration of his purpose or plan.",
+              "The phrase indicates a firm declaration of a future action, not an expression of regret."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is the international community's primary call regarding the U.S.-Iran tensions?",
+            "options": [
+              "To support U.S. military actions.",
+              "To enforce new economic sanctions on Iran.",
+              "To urge de-escalation and prevent a military confrontation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief states the international community is calling for de-escalation, not supporting military actions.",
+              "While sanctions are a tool, the brief emphasizes de-escalation rather than new economic measures.",
+              "That's right! The brief highlights the international community's urgent call 'for de-escalation to avert a catastrophic military confrontation.'"
+            ]
+          },
+          {
+            "question": "What does the phrase 'contingent upon' mean in the context of the potential U.S. strikes?",
+            "options": [
+              "The strikes are certain to happen regardless of other factors.",
+              "The strikes are dependent on Iran's return to negotiations.",
+              "The strikes are unrelated to Iran's actions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This suggests independence, which is the opposite of 'contingent upon.'",
+              "Correct! The strikes are conditional; their occurrence relies entirely on Iran's decision to negotiate.",
+              "This is incorrect; 'contingent upon' explicitly means there is a dependency on specific conditions."
+            ]
+          },
+          {
+            "question": "What specific retaliatory action has Iran threatened in response to U.S. strikes?",
+            "options": [
+              "To launch cyberattacks against U.S. targets.",
+              "To block additional crucial international trade routes.",
+              "To withdraw from all international treaties."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions blocking trade routes, not cyberattacks, as Iran's explicit threat.",
+              "Exactly! The news brief states Iran has 'explicitly threatening to block more crucial international trade routes.'",
+              "While a possibility in such conflicts, the brief specifically mentions the threat to block trade routes."
+            ]
+          },
+          {
+            "question": "To 'avert a catastrophic military confrontation' signifies which action?",
+            "options": [
+              "To initiate a military confrontation.",
+              "To observe a military confrontation closely.",
+              "To prevent a military confrontation from occurring."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is the opposite of averting; to avert means to prevent.",
+              "While observation might be part of the process, 'avert' specifically means to prevent the confrontation, not just watch it.",
+              "Precisely! To 'avert' means to successfully prevent something undesirable, such as a large-scale military conflict."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

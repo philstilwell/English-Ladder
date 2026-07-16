@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-16",
+  "release_iso": "2026-07-16T11:27:51Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Protests in Ukraine's cities against Zelensky's removal of defence minister",
+    "summary": "Ukraine's president has not explained Mykhailo Fedorov's dismissal, which is causing great upset among civil society and the military.",
+    "link": "https://www.bbc.co.uk/news/articles/cdx76069n3do?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Protests in Ukraine: Defence Minister Removed",
+        "overview": "People in Ukraine are unhappy because the president removed a minister.",
+        "topic": "Government changes and public reaction in Ukraine",
+        "news_brief_sentences": [
+          "There are protests in Ukraine's cities.",
+          "People are showing they are unhappy.",
+          "They are protesting against President Zelensky.",
+          "He removed the defence minister.",
+          "The minister's name is Mykhailo Fedorov.",
+          "The president has not explained this.",
+          "His dismissal is causing great upset.",
+          "Many people are sad and angry.",
+          "This includes civil society and the military.",
+          "People want to know why the minister left."
+        ],
+        "vocabulary": [
+          {
+            "term": "protests",
+            "part_of_speech": "noun",
+            "definition": "When people gather to show they are unhappy about something."
+          },
+          {
+            "term": "removed",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Took someone out of their job or position."
+          },
+          {
+            "term": "defence minister",
+            "part_of_speech": "noun phrase",
+            "definition": "An important person in the government who manages the country's army."
+          },
+          {
+            "term": "dismissal",
+            "part_of_speech": "noun",
+            "definition": "The act of firing someone from a job."
+          },
+          {
+            "term": "upset",
+            "part_of_speech": "adjective",
+            "definition": "Feeling unhappy or angry about something."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Continuous Tense",
+          "explanation": "We use the present continuous tense to talk about actions that are happening now, at the moment of speaking. We form it with 'to be' (am, is, are) + verb-ing.",
+          "example_quote": "His dismissal is causing great upset."
+        },
+        "quiz": [
+          {
+            "question": "What is happening in Ukraine's cities?",
+            "options": [
+              "People are buying food.",
+              "People are having protests.",
+              "People are watching movies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they are not buying food.",
+              "Correct! People are protesting.",
+              "No, they are not watching movies."
+            ]
+          },
+          {
+            "question": "Who did President Zelensky remove?",
+            "options": [
+              "His family member.",
+              "The defence minister.",
+              "A football player."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was not his family member.",
+              "Yes, he removed the defence minister.",
+              "No, it was not a football player."
+            ]
+          },
+          {
+            "question": "What does the word \"protests\" mean?",
+            "options": [
+              "Public gatherings to show unhappiness.",
+              "Parties for celebrations.",
+              "Meetings for work."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! Protests are when people show unhappiness.",
+              "No, protests are not parties.",
+              "No, protests are not work meetings."
+            ]
+          },
+          {
+            "question": "Why are people upset?",
+            "options": [
+              "Because of good news.",
+              "Because the president removed someone.",
+              "Because it is raining."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they are not upset about good news.",
+              "Correct! They are upset about the removal.",
+              "No, the weather is not the reason."
+            ]
+          },
+          {
+            "question": "What is a \"defence minister\"?",
+            "options": [
+              "A person who helps the police.",
+              "A government leader for the army.",
+              "A person who sings songs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, this person is not just helping police.",
+              "Yes, this person manages the country's army.",
+              "No, this person does not sing songs."
+            ]
+          },
+          {
+            "question": "In the sentence, \"His dismissal is causing great upset,\" what does \"is causing\" tell us?",
+            "options": [
+              "Something happened in the past.",
+              "Something will happen in the future.",
+              "Something is happening now."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it does not mean past.",
+              "No, it does not mean future.",
+              "Yes, 'is causing' means it is happening at this moment."
+            ]
+          },
+          {
+            "question": "Has President Zelensky explained his decision?",
+            "options": [
+              "Yes, he explained everything.",
+              "No, he has not explained it.",
+              "He explained it yesterday."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he has not explained it.",
+              "Correct! The brief says he has not explained it.",
+              "No, it says he has not explained it at all."
+            ]
+          },
+          {
+            "question": "What does \"removed\" mean in this news?",
+            "options": [
+              "Put something in a new place.",
+              "Took someone out of their job.",
+              "Cleaned something very well."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it's not about moving an object.",
+              "Yes, 'removed' here means taking someone out of their position.",
+              "No, it's not about cleaning."
+            ]
+          },
+          {
+            "question": "Who is also upset, besides civil society?",
+            "options": [
+              "The military.",
+              "The children.",
+              "The teachers."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! The military is also upset.",
+              "No, children are not mentioned.",
+              "No, teachers are not mentioned."
+            ]
+          },
+          {
+            "question": "What does the word \"upset\" mean?",
+            "options": [
+              "Feeling happy.",
+              "Feeling tired.",
+              "Feeling unhappy or angry."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it does not mean happy.",
+              "No, it does not mean tired.",
+              "Correct! Upset means unhappy or angry."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukrainian Protests Erupt Over Defence Minister's Dismissal",
+        "overview": "Protests have broken out across Ukrainian cities following President Zelensky's unexplained decision to remove the defence minister, causing significant unrest among citizens and military personnel.",
+        "topic": "Political Unrest and Public Reaction in Ukraine",
+        "news_brief_sentences": [
+          "Citizens in several Ukrainian cities have begun to stage protests.",
+          "These demonstrations are a reaction to President Zelensky's recent removal of the defence minister.",
+          "Mykhailo Fedorov's dismissal has sparked considerable public outrage.",
+          "Many people are demanding a clear explanation for this unexpected decision.",
+          "The president, however, has not yet offered any official reason for the change.",
+          "This lack of transparency is causing great upset among various groups.",
+          "Both members of the military and broader civil society are expressing their concerns.",
+          "The situation highlights growing tensions between the government and the public.",
+          "Such significant changes without justification can undermine public trust.",
+          "International observers are closely monitoring the developments in Ukraine."
+        ],
+        "vocabulary": [
+          {
+            "term": "protests",
+            "part_of_speech": "noun",
+            "definition": "Public expressions of disapproval, often involving demonstrations or marches, against a policy or action."
+          },
+          {
+            "term": "removal",
+            "part_of_speech": "noun",
+            "definition": "The act of taking someone or something away from their position or place."
+          },
+          {
+            "term": "dismissal",
+            "part_of_speech": "noun",
+            "definition": "The official act of ending someone's employment or removing them from a position."
+          },
+          {
+            "term": "civil society",
+            "part_of_speech": "noun phrase",
+            "definition": "The part of society made up of non-governmental organizations and institutions that manifest the will of citizens, such as charities, community groups, and NGOs."
+          },
+          {
+            "term": "great upset",
+            "part_of_speech": "noun phrase",
+            "definition": "A strong feeling of distress, anger, or sadness caused by a difficult or disappointing situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Simple",
+          "explanation": "The Present Perfect Simple is used to talk about actions or states that happened at an unspecified time in the past but have a connection to the present, or actions that started in the past and continue up to now. It often emphasizes the result of an action rather than when it happened.",
+          "example_quote": "The president, however, has not yet offered any official reason for the change."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary reason for the protests in Ukrainian cities?",
+            "options": [
+              "A protest against new taxes",
+              "President Zelensky's removal of the defence minister",
+              "Disagreement over international policy"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief does not mention new taxes.",
+              "Correct. The protests are directly related to the defence minister's dismissal.",
+              "No, the protests are focused on an internal political decision, not international policy."
+            ]
+          },
+          {
+            "question": "Which word best describes public expressions of disapproval against a policy or action?",
+            "options": [
+              "Celebrations",
+              "Protests",
+              "Negotiations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, celebrations show approval, not disapproval.",
+              "Correct. Protests are public demonstrations of disapproval.",
+              "Negotiations are discussions to reach an agreement, not expressions of disapproval."
+            ]
+          },
+          {
+            "question": "Who is the Ukrainian president mentioned in the news brief?",
+            "options": [
+              "Mykhailo Fedorov",
+              "Volodymyr Zelensky",
+              "Dmytro Kuleba"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Mykhailo Fedorov is the defence minister who was removed.",
+              "Correct. Volodymyr Zelensky is the Ukrainian president.",
+              "Dmytro Kuleba is not mentioned in this news brief."
+            ]
+          },
+          {
+            "question": "What is the meaning of \"dismissal\" in the context of the news?",
+            "options": [
+              "A formal meeting",
+              "An official removal from a position",
+              "A public announcement"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a formal meeting is not the definition of dismissal.",
+              "Correct. Dismissal means officially being removed from a job or position.",
+              "A public announcement is a way of sharing information, not the act of removal itself."
+            ]
+          },
+          {
+            "question": "In the sentence \"The president, however, has not yet offered any official reason for the change,\" what does the use of the Present Perfect indicate?",
+            "options": [
+              "An action completed in the distant past",
+              "An action that is still ongoing",
+              "An action that happened at an unspecified time in the past and has current relevance"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the Present Perfect connects to the present, not just the distant past.",
+              "Not quite. While there's an ongoing state of 'no explanation,' the Present Perfect emphasizes the past action (or lack thereof) with current effect.",
+              "Correct. The Present Perfect shows a past action (or non-action) with a clear link or result in the present."
+            ]
+          },
+          {
+            "question": "Who among the following groups is expressing concerns about the defence minister's removal?",
+            "options": [
+              "Only international observers",
+              "Both the military and civil society",
+              "Only government officials"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "International observers are monitoring, but the concern is from internal groups.",
+              "Correct. The news brief states both the military and broader civil society are expressing concerns.",
+              "No, the news brief indicates concern from the public and military, not only government officials."
+            ]
+          },
+          {
+            "question": "Which phrase best defines \"civil society\"?",
+            "options": [
+              "Government institutions only",
+              "Non-governmental organizations and community groups",
+              "Military organizations and their leaders"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, government institutions are separate from civil society.",
+              "Correct. Civil society includes groups like charities and community organizations that are independent of the government.",
+              "While the military is part of society, 'civil society' refers specifically to non-governmental organizations."
+            ]
+          },
+          {
+            "question": "What is President Zelensky's stance regarding the defence minister's removal?",
+            "options": [
+              "He has provided a detailed explanation.",
+              "He has not yet offered any official reason.",
+              "He has promised an explanation soon."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief states he has not explained the dismissal.",
+              "Correct. The president has not yet given an official reason for the change.",
+              "The news brief does not mention any promise of a future explanation."
+            ]
+          },
+          {
+            "question": "If something causes \"great upset,\" what kind of feeling is most likely involved?",
+            "options": [
+              "Joy and excitement",
+              "Mild inconvenience",
+              "Strong distress or anger"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'great upset' implies negative feelings, not positive ones.",
+              "Mild inconvenience is too weak; 'great upset' is a strong reaction.",
+              "Correct. 'Great upset' means intense feelings of distress, anger, or sadness."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Present Perfect Simple correctly?",
+            "options": [
+              "They are protested since morning.",
+              "They have protested since morning.",
+              "They protested since morning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect; 'are protested' uses a passive construction with an incorrect tense.",
+              "Correct. 'Have protested since morning' correctly uses the Present Perfect Simple to describe an action that started in the past and continues to the present.",
+              "This is incorrect; 'protested' is Simple Past and usually requires a specific past time reference, or 'since' would require Present Perfect."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Ukraine Faces Internal Strife Over Unexplained Ministerial Dismissal",
+        "overview": "President Zelensky's unexplained dismissal of Defence Minister Mykhailo Fedorov has sparked widespread discontent across Ukrainian civil society and military sectors, prompting public protests.",
+        "topic": "Ukrainian political instability following a high-profile ministerial dismissal",
+        "news_brief_sentences": [
+          "Recent political developments in Ukraine have precipitated considerable domestic unrest.",
+          "President Volodymyr Zelensky's decision to remove Defence Minister Mykhailo Fedorov has ignited widespread discontent.",
+          "Crucially, the executive office has offered no substantive rationale for this high-profile unexplained dismissal.",
+          "This lack of transparency is reportedly a primary driver of the burgeoning protests erupting in various Ukrainian cities.",
+          "The move has caused significant consternation not only within the armed forces but also among broader civil society.",
+          "Analysts are closely monitoring the potential political ramifications of this controversial change in leadership.",
+          "Many citizens and military personnel demand clarity regarding the motives behind such a critical personnel alteration during wartime.",
+          "The absence of an official explanation fuels speculation and undermines public trust in the government's decision-making processes.",
+          "Such internal divisions could potentially detract from the nation's unified stance against external pressures.",
+          "The government faces an urgent imperative to address these grievances to prevent further erosion of national cohesion."
+        ],
+        "vocabulary": [
+          {
+            "term": "precipitated",
+            "part_of_speech": "verb",
+            "definition": "To cause an event or situation, typically a bad one, to happen suddenly, unexpectedly, or prematurely."
+          },
+          {
+            "term": "widespread discontent",
+            "part_of_speech": "noun phrase",
+            "definition": "A general feeling of dissatisfaction or unhappiness that is prevalent across a large area or among many people."
+          },
+          {
+            "term": "unexplained dismissal",
+            "part_of_speech": "noun phrase",
+            "definition": "The act of removing someone from a position or employment without providing any clear or official reason for the action."
+          },
+          {
+            "term": "civil society",
+            "part_of_speech": "noun phrase",
+            "definition": "The aggregate of non-governmental organizations and institutions that manifest the interests and will of citizens, distinct from the state and the market."
+          },
+          {
+            "term": "political ramifications",
+            "part_of_speech": "noun phrase",
+            "definition": "The unforeseen or undesirable consequences or developments that arise from a political action, decision, or event."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from a verb or an adjective, often used in formal and academic writing to condense information and express abstract concepts. It allows for a more concise and sophisticated style, shifting focus from the actor or action to the concept itself, thereby enhancing the formality and density of expression.",
+          "example_quote": "The absence of an official explanation fuels speculation and undermines public trust in the government's decision-making processes."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as the primary catalyst for the widespread unrest in Ukraine, according to the news brief?",
+            "options": [
+              "President Zelensky's recent public address to the nation.",
+              "The unexplained removal of Defence Minister Mykhailo Fedorov.",
+              "New economic sanctions imposed by international bodies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not attribute the unrest to a presidential address.",
+              "Correct. The lack of explanation for Minister Fedorov's dismissal is pinpointed as the central cause of discontent and protests.",
+              "Incorrect. The news brief makes no mention of international sanctions as a factor contributing to the current protests."
+            ]
+          },
+          {
+            "question": "The term 'precipitated' in the context of the news brief suggests that the political developments:",
+            "options": [
+              "Were gradually resolved through diplomatic channels.",
+              "Were caused suddenly and often unexpectedly.",
+              "Were meticulously planned and fully anticipated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Precipitated' indicates a sudden causation, not a gradual resolution.",
+              "Correct. 'Precipitated' means to cause an event, especially an undesirable one, to happen abruptly or prematurely.",
+              "Incorrect. While events might be anticipated, 'precipitated' refers to the swift causation of the event itself."
+            ]
+          },
+          {
+            "question": "Which societal groups are explicitly mentioned in the news brief as being particularly upset by the minister's dismissal?",
+            "options": [
+              "Only foreign diplomats and international observers.",
+              "Elements of civil society and the military.",
+              "Agricultural workers and university students across the country."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief focuses on domestic discontent, not solely foreign concerns.",
+              "Correct. The text highlights significant consternation within the armed forces and broader civil society.",
+              "Incorrect. These specific groups are not singled out in the news brief as being particularly affected by this event."
+            ]
+          },
+          {
+            "question": "Regarding the 'unexplained dismissal,' what does the news brief emphasize?",
+            "options": [
+              "It was followed by a comprehensive official statement explaining the reasons.",
+              "It lacks any clear or publicly communicated justification from the executive office.",
+              "It was met with an overwhelming wave of public approval and support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly states there was 'no substantive rationale' or explanation provided.",
+              "Correct. The text underscores that no substantive rationale has been offered for this high-profile removal, leading to discontent.",
+              "Incorrect. The brief details widespread discontent and protests, which contradicts the idea of overwhelming public support."
+            ]
+          },
+          {
+            "question": "According to the grammar explanation, a key characteristic of nominalization in formal writing is its ability to:",
+            "options": [
+              "Primarily employ the active voice for directness.",
+              "Form a noun from a verb or an adjective to condense information.",
+              "Simplify complex sentence structures for greater accessibility."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While related to style, nominalization itself is about word formation, not primarily about voice.",
+              "Correct. Nominalization is defined as the process of converting verbs or adjectives into nouns, often for conciseness and abstraction.",
+              "Incorrect. Nominalization frequently makes sentences denser and more formal, rather than simplifying them."
+            ]
+          },
+          {
+            "question": "How does the 'lack of transparency' contribute to the unfolding situation in Ukraine, as per the news brief?",
+            "options": [
+              "It is fostering a stronger sense of national unity and cohesion.",
+              "It serves as a primary impetus for the escalating public protests.",
+              "It is effectively clarifying the government's underlying motives."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief indicates that such issues could 'detract from the nation's unified stance,' not strengthen it.",
+              "Correct. The news brief explicitly states that the lack of transparency is a 'primary driver of the burgeoning protests.'",
+              "Incorrect. The brief suggests the lack of transparency fuels speculation and undermines trust, not that it clarifies motives."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what do 'political ramifications' specifically refer to?",
+            "options": [
+              "Officially sanctioned government communiqués or statements.",
+              "Unforeseen or undesirable consequences resulting from a political action.",
+              "Pre-scheduled legislative reforms and policy changes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Ramifications refer to the outcomes or consequences, not official announcements.",
+              "Correct. 'Political ramifications' denotes the often unforeseen or undesirable consequences that arise from political decisions or events.",
+              "Incorrect. The term specifically refers to the outcomes of actions, not planned legislative agendas."
+            ]
+          },
+          {
+            "question": "The news brief indicates that both ordinary citizens and military personnel are collectively demanding what from the government?",
+            "options": [
+              "An immediate increase in national defence spending.",
+              "The swift resignation of President Volodymyr Zelensky.",
+              "Clarity regarding the motives behind the recent personnel alteration."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While military issues are relevant, the specific demand mentioned is for clarity, not primarily for increased spending.",
+              "Incorrect. The brief mentions demands for clarity concerning the dismissal, not for the President's resignation.",
+              "Correct. The text clearly states that 'Many citizens and military personnel demand clarity regarding the motives behind such a critical personnel alteration.'"
+            ]
+          },
+          {
+            "question": "Which option best defines 'civil society' as it is used and affected in the news brief?",
+            "options": [
+              "Organizations that are direct extensions of the governmental apparatus.",
+              "The collective of non-governmental organizations and individuals acting in the public interest.",
+              "The highest echelons of the country's military command structure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Civil society is generally understood to be distinct from direct government entities.",
+              "Correct. Civil society encompasses the non-governmental sphere where citizens organize and act on their interests.",
+              "Incorrect. While the military is also affected, civil society refers to broader non-state actors and organizations."
+            ]
+          },
+          {
+            "question": "The nominalization in the example quote, 'The absence of an official explanation,' primarily serves to achieve what in formal communication?",
+            "options": [
+              "To make the writing more colloquial and accessible to a general audience.",
+              "To condense information and shift focus onto abstract concepts or states.",
+              "To explicitly highlight the direct actions and responsibilities of specific individuals."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Nominalization typically makes writing more formal and less conversational, not colloquial.",
+              "Correct. Nominalization allows for greater conciseness and directs attention to the concept (e.g., 'absence') rather than the actor or action.",
+              "Incorrect. Nominalization often de-emphasizes the actor by converting the action into a noun, thereby making the subject more abstract."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-17",
+  "release_iso": "2026-07-17T11:17:15Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US launches new strikes as Iran says civilian infrastructure hit",
+    "summary": "Tehran says the US strikes hit bridges, while the US boards a ship in the Strait of Hormuz.",
+    "link": "https://www.bbc.co.uk/news/articles/c151gdjwd10o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Actions: Strikes and a Ship Boarding",
+        "overview": "The US launched new strikes and boarded a ship, while Iran reported damage to civilian structures.",
+        "topic": "Geopolitics: US and Iran",
+        "news_brief_sentences": [
+          "The United States launched new strikes.",
+          "These strikes happened recently.",
+          "Iran says the US strikes hit bridges.",
+          "Bridges are part of civilian infrastructure.",
+          "Tehran is the capital city of Iran.",
+          "The US also boarded a ship.",
+          "This ship was in the Strait of Hormuz.",
+          "The Strait of Hormuz is an important sea area.",
+          "The US acted because of recent events.",
+          "Iran says its infrastructure was hit."
+        ],
+        "vocabulary": [
+          {
+            "term": "launched",
+            "part_of_speech": "verb (past tense)",
+            "definition": "started something new, like an attack."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun (plural)",
+            "definition": "attacks, often by planes or missiles."
+          },
+          {
+            "term": "hit",
+            "part_of_speech": "verb (past tense)",
+            "definition": "made contact with something with force."
+          },
+          {
+            "term": "civilian infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "public buildings and systems like roads or bridges, used by everyone, not the military."
+          },
+          {
+            "term": "boarded",
+            "part_of_speech": "verb (past tense)",
+            "definition": "went onto a ship or plane."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions or events that started and finished in the past. We often add \"-ed\" to regular verbs. For irregular verbs, the form changes.",
+          "example_quote": "The US also boarded a ship."
+        },
+        "quiz": [
+          {
+            "question": "What did the United States do?",
+            "options": [
+              "Flew planes",
+              "Launched new strikes",
+              "Talked to Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Flying planes might be part of it, but \"launched new strikes\" is what the text says.",
+              "Correct! The news brief says \"The United States launched new strikes.\"",
+              "The text does not say they talked to Iran."
+            ]
+          },
+          {
+            "question": "What did Iran say the US strikes hit?",
+            "options": [
+              "Ships",
+              "Bridges",
+              "Airports"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The strikes did not hit ships, but the US boarded a ship.",
+              "Correct! Iran reported that the US strikes hit bridges.",
+              "The news brief does not mention airports."
+            ]
+          },
+          {
+            "question": "What does \"launched\" mean in \"The United States launched new strikes\"?",
+            "options": [
+              "Stopped",
+              "Started",
+              "Finished"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Launched\" does not mean stopped.",
+              "Correct! \"Launched\" means started.",
+              "\"Launched\" means started, not finished."
+            ]
+          },
+          {
+            "question": "What are \"strikes\"?",
+            "options": [
+              "Meetings",
+              "Attacks",
+              "Agreements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Strikes\" are not meetings.",
+              "Correct! \"Strikes\" means attacks.",
+              "\"Strikes\" are not agreements."
+            ]
+          },
+          {
+            "question": "Where was the ship that the US boarded?",
+            "options": [
+              "In a port",
+              "In the Strait of Hormuz",
+              "Near the US"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text says \"in the Strait of Hormuz,\" not specifically a port.",
+              "Correct! The ship was in the Strait of Hormuz.",
+              "The Strait of Hormuz is not near the US."
+            ]
+          },
+          {
+            "question": "What does \"hit\" mean in \"Iran says the US strikes hit bridges\"?",
+            "options": [
+              "Missed",
+              "Broke",
+              "Made contact with"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Hit\" means made contact, not missed.",
+              "While hitting might break something, the primary meaning of \"hit\" here is making contact.",
+              "Correct! \"Hit\" means to make contact with force."
+            ]
+          },
+          {
+            "question": "What is \"civilian infrastructure\"?",
+            "options": [
+              "Military bases",
+              "Public systems like bridges",
+              "US government buildings"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Civilian infrastructure is for the public, not just military.",
+              "Correct! It includes things like roads and bridges for everyone.",
+              "It is public systems, not only US government buildings."
+            ]
+          },
+          {
+            "question": "Which word shows a past action?",
+            "options": [
+              "Says",
+              "Launches",
+              "Boarded"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Says\" is a present action.",
+              "\"Launches\" is a present action.",
+              "Correct! \"Boarded\" is a past action."
+            ]
+          },
+          {
+            "question": "What is the example sentence for the Simple Past Tense?",
+            "options": [
+              "\"Iran says the US strikes hit bridges.\"",
+              "\"The US also boarded a ship.\"",
+              "\"The United States launched new strikes.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence has \"says\" (present) and \"hit\" (past, but irregular and could be present).",
+              "Correct! \"The US also boarded a ship\" clearly uses the simple past tense \"boarded\" as the grammar example.",
+              "While it uses past tense, \"The US also boarded a ship\" was specifically chosen for the grammar example."
+            ]
+          },
+          {
+            "question": "Why did the US act, according to the news brief?",
+            "options": [
+              "For a meeting",
+              "Because of recent events",
+              "To help Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text does not say the US acted for a meeting.",
+              "Correct! The news brief states, \"The US acted because of recent events.\"",
+              "The text does not say the US acted to help Iran."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Launches New Strikes Amid Tensions with Iran",
+        "overview": "The United States has carried out fresh military strikes, while Iran claims these actions have damaged civilian infrastructure and the US has boarded a ship in a key waterway.",
+        "topic": "International relations, military actions, and escalating tensions between the US and Iran.",
+        "news_brief_sentences": [
+          "The United States recently launched new military strikes in the region, intensifying existing tensions.",
+          "These actions follow previous warnings from the US regarding regional stability and maritime security.",
+          "Iran quickly responded, asserting that the American strikes specifically targeted civilian infrastructure.",
+          "According to Tehran, bridges were among the structures hit, causing concern for the local population.",
+          "Such incidents often escalate diplomatic disagreements into more serious confrontations.",
+          "Separately, the US military confirmed that it had boarded a commercial vessel in the Strait of Hormuz.",
+          "The Strait of Hormuz is a crucial maritime gateway for global oil shipments.",
+          "This boarding operation occurred as part of ongoing efforts to prevent illegal activities in the international waters.",
+          "Iran condemned both the strikes and the boarding, calling them violations of its sovereignty.",
+          "The international community is closely watching these developments, hoping to de-escalate the volatile situation."
+        ],
+        "vocabulary": [
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, usually carried out from the air or with missiles."
+          },
+          {
+            "term": "civilian infrastructure",
+            "part_of_speech": "noun",
+            "definition": "Public facilities and services that support a society, such as roads, bridges, power grids, and water systems, used by ordinary people."
+          },
+          {
+            "term": "maritime gateway",
+            "part_of_speech": "noun",
+            "definition": "An important sea route or passage that ships use to enter or exit a region, often critical for trade."
+          },
+          {
+            "term": "international waters",
+            "part_of_speech": "noun",
+            "definition": "Areas of the sea that are not under the exclusive control or jurisdiction of any single country, open to all nations."
+          },
+          {
+            "term": "de-escalate",
+            "part_of_speech": "verb",
+            "definition": "To reduce the intensity, severity, or danger of a conflict, dispute, or tense situation."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the doer of the action. It is formed with a form of the verb 'to be' and the past participle of the main verb. We often use it when the doer of the action is unknown, unimportant, or obvious from the context.",
+          "example_quote": "According to Tehran, bridges were among the structures hit, causing concern for the local population."
+        },
+        "quiz": [
+          {
+            "question": "What did the United States recently launch in the region?",
+            "options": [
+              "New diplomatic talks",
+              "New military strikes",
+              "New economic sanctions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The news specifically mentions military actions, not diplomatic talks.",
+              "Correct: The United States recently launched new military strikes, increasing tensions.",
+              "Incorrect: While sanctions are a tool, the news brief reports actual military strikes."
+            ]
+          },
+          {
+            "question": "What did Iran assert that the American strikes specifically targeted?",
+            "options": [
+              "Military bases",
+              "Civilian infrastructure",
+              "Oil tankers"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: Iran claimed the strikes hit facilities used by ordinary people, not military sites.",
+              "Correct: Iran quickly responded, asserting that the American strikes specifically targeted civilian infrastructure.",
+              "Incorrect: The focus of Iran's claim was on public facilities like bridges."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does the word 'strikes' mean?",
+            "options": [
+              "Worker protests for better conditions",
+              "Military attacks or bombardments",
+              "Successful attempts or achievements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: While 'strikes' can mean worker protests, in this military context it refers to attacks.",
+              "Correct: In this news, 'strikes' refers to military attacks, often from the air.",
+              "Incorrect: This is another meaning of 'strikes,' but not the one used when discussing military actions."
+            ]
+          },
+          {
+            "question": "Which of these is the best example of 'civilian infrastructure' as described?",
+            "options": [
+              "A national army barracks",
+              "A government ministry building",
+              "A public road or bridge"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: Army barracks are military infrastructure, not civilian.",
+              "Incorrect: While public, a government building is not typically classified as general civilian infrastructure like roads.",
+              "Correct: Public roads and bridges are prime examples of civilian infrastructure, used by everyday people."
+            ]
+          },
+          {
+            "question": "Where did the US military confirm it had boarded a commercial vessel?",
+            "options": [
+              "Near Iran's coastline",
+              "In the Strait of Hormuz",
+              "In the Arabian Sea"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The news specifies a particular narrow waterway, not just a general coastal area.",
+              "Correct: The US military boarded a commercial vessel in the Strait of Hormuz, a key shipping lane.",
+              "Incorrect: The Strait of Hormuz is the specific location mentioned, which connects to the Arabian Sea."
+            ]
+          },
+          {
+            "question": "What is the significance of a 'maritime gateway' according to the news?",
+            "options": [
+              "It's a desert trading route for goods.",
+              "It's an important sea passage for global shipments.",
+              "It's a major airport for international flights."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Maritime' refers to the sea, not desert trading routes.",
+              "Correct: A maritime gateway, like the Strait of Hormuz, is a crucial sea route for global trade.",
+              "Incorrect: A maritime gateway refers to sea travel, not air travel or airports."
+            ]
+          },
+          {
+            "question": "In the sentence 'bridges were among the structures hit', why is the passive voice used?",
+            "options": [
+              "To emphasize who performed the action of hitting.",
+              "To focus on the bridges and the action they received.",
+              "To suggest a future possibility for the bridges."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: The passive voice typically minimizes or omits the doer of the action.",
+              "Correct: The passive voice is used here to highlight the bridges and the fact that they were affected.",
+              "Incorrect: The passive voice in this context describes a past event, not a future possibility."
+            ]
+          },
+          {
+            "question": "What characteristic defines 'international waters'?",
+            "options": [
+              "They are under the strict control of a single naval power.",
+              "They are areas of the sea not controlled by any specific country.",
+              "They are restricted zones for military vessels only."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: International waters are by definition not under the control of just one country.",
+              "Correct: International waters are sections of the sea that do not belong to the jurisdiction of any one nation.",
+              "Incorrect: Commercial and other civilian vessels also operate freely in international waters."
+            ]
+          },
+          {
+            "question": "What is the main goal when countries try to 'de-escalate' a volatile situation?",
+            "options": [
+              "To increase the tension and conflict.",
+              "To introduce new threats or challenges.",
+              "To reduce the intensity or danger of the situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: 'De-escalate' means the opposite; it aims to lessen tension, not increase it.",
+              "Incorrect: De-escalation aims to calm things down, not to create new problems.",
+              "Correct: To de-escalate means to make a tense or dangerous situation less severe and more peaceful."
+            ]
+          },
+          {
+            "question": "Which of these sentences from the news brief clearly uses the passive voice?",
+            "options": [
+              "The United States recently launched new military strikes in the region.",
+              "According to Tehran, bridges were among the structures hit, causing concern.",
+              "Iran condemned both the strikes and the boarding, calling them violations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Launched' is an active verb, indicating the US as the doer of the action.",
+              "Correct: 'Were hit' uses 'to be' + past participle, focusing on the structures rather than the doer of the action.",
+              "Incorrect: 'Condemned' and 'calling' are active verbs, showing Iran as the subject performing the action."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US Strikes and Iran's Claims: Escalating Tensions in the Middle East",
+        "overview": "The United States recently conducted military strikes in the Middle East in response to attacks on Red Sea shipping, while Iran simultaneously accused the US of damaging civilian infrastructure and US forces boarded a vessel in the strategically vital Strait of Hormuz, heightening regional volatility.",
+        "topic": "Middle East Geopolitics, US Military Actions, Iran-US Tensions, Maritime Security",
+        "news_brief_sentences": [
+          "The United States has recently launched a series of retaliatory strikes in the Middle East, primarily targeting Houthi facilities in Yemen.",
+          "These military actions are a direct response to persistent assaults on international commercial shipping routes in the Red Sea, underscoring Washington's determination to uphold maritime security.",
+          "Concurrently, Tehran has vociferously accused the US of targeting civilian infrastructure, specifically claiming significant damage to crucial bridges.",
+          "This assertion by Iran is eliciting substantial international concern regarding the precision and broader implications of the current military engagements.",
+          "Such grave accusations are poised to exacerbate the already volatile regional dynamics, potentially creating far-reaching geopolitical reverberations.",
+          "Amidst these heightened tensions, a separate incident involved US forces boarding a commercial vessel in the Strait of Hormuz, a globally vital maritime chokepoint.",
+          "The precise circumstances and justification for this boarding operation, including details about the ship or its cargo, remain largely undisclosed.",
+          "This dual-front engagement strategy vividly illustrates the intricate and precarious geopolitical landscape now characteristic of the wider region.",
+          "Analysts suggest these intertwined events represent a delicate balancing act by major powers to de-escalate without projecting weakness.",
+          "The international community is closely monitoring the situation, urging all parties to prioritize diplomatic channels to avert a more extensive regional conflagration."
+        ],
+        "vocabulary": [
+          {
+            "term": "retaliatory strikes",
+            "part_of_speech": "noun phrase",
+            "definition": "Military actions undertaken as a direct response to an attack or aggression, intended as a countermeasure or punishment."
+          },
+          {
+            "term": "underscoring",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Emphasizing or highlighting the importance of something; serving to stress a point or demonstrate a particular quality."
+          },
+          {
+            "term": "eliciting",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Drawing forth, evoking, or provoking a response, reaction, emotion, or action from someone or something."
+          },
+          {
+            "term": "reverberations",
+            "part_of_speech": "noun",
+            "definition": "Far-reaching and often indirect effects or consequences of an event or action, spreading throughout a system or region."
+          },
+          {
+            "term": "maritime chokepoint",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow, critical navigational channel in a body of water where sea traffic is concentrated, making it strategically vulnerable to disruption."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participle Clauses",
+          "explanation": "A present participle clause (beginning with an -ing verb) functions as an adverbial phrase, providing additional information about the main clause. It often indicates a simultaneous action, a consequence, a reason, or a description, offering a concise way to add detail without a separate subordinate clause. It implies the same subject as the main clause.",
+          "example_quote": "This assertion by Iran is eliciting substantial international concern regarding the precision and broader implications of the current military engagements."
+        },
+        "quiz": [
+          {
+            "question": "What specific type of infrastructure did Iran claim was hit by US strikes?",
+            "options": [
+              "Oil refineries and pipelines",
+              "Communication networks and data centers",
+              "Crucial bridges and transportation routes"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While potential targets in conflict zones, these were not the specific civilian infrastructures Iran accused the US of hitting.",
+              "The news brief does not mention communication networks as the specific target of Iran's accusation.",
+              "Correct. Iran specifically claimed that US military operations damaged crucial bridges, which falls under civilian infrastructure."
+            ]
+          },
+          {
+            "question": "The US actions are described as 'underscoring Washington's determination.' What does 'underscoring' imply in this context?",
+            "options": [
+              "Minimizing Washington's commitment to the region.",
+              "Emphasizing Washington's unwavering resolve and seriousness.",
+              "Questioning Washington's motives behind the military actions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Underscoring' means to emphasize, not to minimize.",
+              "Correct. 'Underscoring' highlights and emphasizes Washington's strong resolve to protect maritime security.",
+              "Incorrect. 'Underscoring' points to a strong resolve, not a questioning of motives."
+            ]
+          },
+          {
+            "question": "What is the primary characteristic of a 'maritime chokepoint' as described in the news brief?",
+            "options": [
+              "It is a large, open area of sea for naval drills.",
+              "It is a narrow, critical shipping lane vulnerable to disruption.",
+              "It is an internationally recognized zone for fishing."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This definition does not align with the strategic importance and vulnerability of a 'maritime chokepoint'.",
+              "Correct. A 'maritime chokepoint' is a vital, narrow sea passage where traffic is concentrated, making it strategically significant.",
+              "While some areas are designated for fishing, this is not the defining characteristic of a 'maritime chokepoint' in geopolitical terms."
+            ]
+          },
+          {
+            "question": "The phrase 'eliciting substantial international concern' suggests that Iran's assertion:",
+            "options": [
+              "Was immediately confirmed as fact by global bodies.",
+              "Generated a significant and widespread global reaction of worry.",
+              "Was largely ignored by the international community."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief states 'eliciting concern', not confirmation, implying a reaction of worry rather than verification.",
+              "Correct. 'Eliciting' means drawing forth a response, and 'substantial concern' points to a significant global reaction of worry.",
+              "Incorrect. 'Substantial concern' indicates a notable reaction, not dismissal or ignoring."
+            ]
+          },
+          {
+            "question": "What does the term 'geopolitical reverberations' imply regarding the conflict's potential effects?",
+            "options": [
+              "Limited and localized impacts only within the immediate vicinity of strikes.",
+              "Immediate and predictable military escalation across all borders.",
+              "Far-reaching, complex, and indirect political and strategic consequences."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Reverberations' typically imply widespread and indirect effects, not limited ones.",
+              "While escalation is a risk, 'reverberations' refer more broadly to widespread indirect consequences, not just military escalation.",
+              "Correct. 'Reverberations' denote widespread and indirect effects, suggesting complex and far-reaching political and strategic consequences beyond immediate impact."
+            ]
+          },
+          {
+            "question": "In the sentence 'These military actions are a direct response..., underscoring Washington's determination...', what grammatical role does the participle clause 'underscoring Washington's determination' play?",
+            "options": [
+              "It functions as the subject of the sentence.",
+              "It acts as an adverbial phrase, adding information about the main action.",
+              "It serves as an adjective modifying 'military actions'."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A participle clause cannot be the subject of a sentence in this construction.",
+              "Correct. The participle clause provides additional context or consequence related to the main action of the military strikes.",
+              "While participles can function adjectivally, in this structure, 'underscoring' modifies the entire preceding clause as an adverbial phrase."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses a present participle clause to add descriptive information about the main clause?",
+            "options": [
+              "The diplomat, explaining the policy, addressed the press.",
+              "Explaining the policy, the diplomat was addressed by the press.",
+              "The diplomat was explaining the policy, addressed the press."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. 'Explaining the policy' describes the diplomat's action while addressing the press.",
+              "Incorrect. The participle clause 'Explaining the policy' refers to the diplomat, but the main clause implies the press addressed the diplomat, creating a misleading meaning.",
+              "Incorrect. This sentence is grammatically awkward and lacks a clear subject for 'addressed' if it's meant to be parallel."
+            ]
+          },
+          {
+            "question": "What was the primary stated motivation for the US launching 'retaliatory strikes'?",
+            "options": [
+              "To establish new trade agreements in the region.",
+              "To safeguard international navigation and shipping routes.",
+              "To prevent Iran from acquiring new weapon systems."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not cite trade agreements as the reason for the strikes.",
+              "Correct. The strikes were a direct response to attacks on commercial shipping in the Red Sea, aiming to uphold maritime security.",
+              "While relevant to regional security, this was not the primary stated motivation for these specific retaliatory strikes."
+            ]
+          },
+          {
+            "question": "The news brief describes the geopolitical landscape as 'intricate and precarious'. What does this characterization primarily convey?",
+            "options": [
+              "That the situation is simple but highly dangerous.",
+              "That the situation is complex, delicate, and unstable.",
+              "That the situation is predictable and easily manageable."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Intricate' means complex, so 'simple' is incorrect.",
+              "Correct. 'Intricate' implies complexity, and 'precarious' suggests instability, fragility, and potential danger.",
+              "Incorrect. 'Precarious' directly contradicts the idea of being predictable and manageable."
+            ]
+          },
+          {
+            "question": "What does the international community's response of 'closely monitoring' and 'urging diplomatic channels' primarily signify?",
+            "options": [
+              "A general lack of interest in the regional events.",
+              "A strong preference for de-escalation and peaceful resolution.",
+              "An endorsement of further military intervention by external powers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Closely monitoring' implies significant interest, not a lack thereof.",
+              "Correct. Advocating for diplomatic channels and monitoring closely indicates a desire to avoid wider conflict and resolve issues peacefully.",
+              "Incorrect. Urging diplomatic channels is typically the opposite of endorsing further military intervention."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

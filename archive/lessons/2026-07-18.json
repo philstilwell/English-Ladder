@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-18",
+  "release_iso": "2026-07-18T10:56:50Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US strikes hit Iran for seventh consecutive night",
+    "summary": "Iran has retaliated against US allies in the region, with Kuwait reporting that a power and water plant had been hit.",
+    "link": "https://www.bbc.co.uk/news/articles/cy748n8zx8ro?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Strikes and Iran's Response: A News Brief",
+        "overview": "The US launched military attacks against Iran for seven nights, and Iran responded by attacking US allies.",
+        "topic": "International Conflict and Retaliation",
+        "news_brief_sentences": [
+          "The US attacked targets in Iran.",
+          "These attacks happened for the seventh consecutive night.",
+          "Iran then fought back.",
+          "Iran retaliated against countries that help the US.",
+          "These helping countries are called US allies.",
+          "These events are happening in the Middle East region.",
+          "Kuwait is one of these US allies.",
+          "Kuwait said that a power and water plant was hit.",
+          "This means a factory that makes electricity and water was attacked.",
+          "There is a lot of tension in the region because of these actions."
+        ],
+        "vocabulary": [
+          {
+            "term": "consecutive",
+            "part_of_speech": "adjective",
+            "definition": "Happening one after another without any break."
+          },
+          {
+            "term": "retaliated",
+            "part_of_speech": "verb",
+            "definition": "To fight back or attack someone because they attacked you first."
+          },
+          {
+            "term": "allies",
+            "part_of_speech": "noun",
+            "definition": "Countries or groups that work together and help each other, often in a war."
+          },
+          {
+            "term": "region",
+            "part_of_speech": "noun",
+            "definition": "A large area of land, usually without exact borders, like the Middle East."
+          },
+          {
+            "term": "plant",
+            "part_of_speech": "noun",
+            "definition": "A factory or a place where power, water, or other things are made."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished at a specific time in the past. We often add '-ed' to regular verbs, or use different forms for irregular verbs. It tells us what occurred.",
+          "example_quote": "Kuwait said that a power and water plant was hit."
+        },
+        "quiz": [
+          {
+            "question": "How many nights did the US attack Iran, as mentioned in the news?",
+            "options": [
+              "Six nights",
+              "Seven nights",
+              "Eight nights"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says the attacks happened for a different number of nights. Please check the brief again.",
+              "That's correct! The US attacks happened for the seventh consecutive night.",
+              "Not quite. The news brief mentions a specific number of consecutive nights for the attacks."
+            ]
+          },
+          {
+            "question": "What does 'consecutive' mean in 'seventh consecutive night'?",
+            "options": [
+              "Happening only once",
+              "Happening one after another",
+              "Happening at different times"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Consecutive' means it happened many times without stopping.",
+              "Exactly! 'Consecutive' means happening one after another without any breaks.",
+              "No, 'consecutive' means they were not separated by time."
+            ]
+          },
+          {
+            "question": "Who retaliated against US allies?",
+            "options": [
+              "The US",
+              "Iran",
+              "Kuwait"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's not right. The US was the one attacking first.",
+              "Correct! Iran retaliated against US allies in the region.",
+              "No, Kuwait was a country that was attacked, not the one that retaliated."
+            ]
+          },
+          {
+            "question": "What is an 'ally'?",
+            "options": [
+              "An enemy country",
+              "A country that helps another country",
+              "A small town"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An ally is not an enemy; it's the opposite.",
+              "That's right! An ally is a country that supports and helps another country.",
+              "No, an ally is a country, not a small town."
+            ]
+          },
+          {
+            "question": "Which country reported that a power and water plant was hit?",
+            "options": [
+              "Iran",
+              "The US",
+              "Kuwait"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "That's not correct. Iran was the one who retaliated.",
+              "No, the US was involved in the initial strikes.",
+              "Yes, Kuwait reported that one of its essential facilities was hit."
+            ]
+          },
+          {
+            "question": "What does it mean if Iran 'retaliated'?",
+            "options": [
+              "They apologized",
+              "They attacked back",
+              "They sent a letter"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'retaliated' means to do something in return for a past action, often negative.",
+              "Correct! 'Retaliated' means Iran fought back or attacked in return.",
+              "That's not what 'retaliated' means. It's about an action, not a communication."
+            ]
+          },
+          {
+            "question": "The news brief talks about events in a specific 'region'. What kind of area is a region?",
+            "options": [
+              "A very small city",
+              "A specific country",
+              "A large area of land"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a region is much larger than a very small city.",
+              "Incorrect. A region is bigger than just one specific country.",
+              "That's correct! A region is a large area of land, like the Middle East."
+            ]
+          },
+          {
+            "question": "What is a 'plant' in the context of the news brief?",
+            "options": [
+              "A green thing that grows in the ground",
+              "A factory that makes power or water",
+              "A small house"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news uses 'plant' to mean a type of building, not a growing thing.",
+              "Yes, in this news, a 'plant' is a building where power or water is produced.",
+              "Incorrect. A plant in this context is much bigger and has a specific function."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Simple Past Tense to describe a finished action?",
+            "options": [
+              "The US attacked targets in Iran.",
+              "Iran then fought back.",
+              "Both A and B"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While 'attacked' is simple past, there is another correct option.",
+              "While 'fought back' is simple past, there is another correct option.",
+              "That's right! Both 'attacked' and 'fought back' are verbs in the simple past tense, showing actions completed in the past."
+            ]
+          },
+          {
+            "question": "What caused the tension in the region, according to the news?",
+            "options": [
+              "New trade agreements",
+              "Military actions and retaliation",
+              "Sporting events"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, trade agreements usually reduce tension, not create it.",
+              "Correct! The US strikes and Iran's retaliation created the tension.",
+              "Incorrect. Sporting events are not mentioned as a cause for conflict in the news."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Middle East Tensions Escalate: US Strikes and Iranian Retaliation",
+        "overview": "Tensions in the Middle East have risen sharply after the United States carried out air strikes for seven consecutive nights, prompting Iran to retaliate against US allies in the region, including a power and water plant in Kuwait.",
+        "topic": "International Conflict and Regional Security in the Middle East",
+        "news_brief_sentences": [
+          "Recent developments indicate a significant escalation of military activity in the Middle East.",
+          "The United States has conducted targeted air strikes for seven consecutive nights in the region.",
+          "These ongoing strikes are part of a broader response to previous incidents involving regional actors.",
+          "In reaction to the US actions, Iran has retaliated against several US allies in the area.",
+          "Kuwait, a key US ally, has reported that one of its critical infrastructure sites was attacked.",
+          "Specifically, a power and water plant in Kuwait had been hit during these retaliatory actions.",
+          "This incident marks a concerning shift towards more direct engagement in the simmering conflict.",
+          "The repeated attacks are fueling fears about the overall stability and security of the Middle East.",
+          "International bodies are closely observing the situation, urging all parties to exercise restraint.",
+          "Further escalation could have severe implications for global energy markets and regional populations."
+        ],
+        "vocabulary": [
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, usually from the air, aimed at specific targets or locations."
+          },
+          {
+            "term": "consecutive",
+            "part_of_speech": "adjective",
+            "definition": "Following one after another without interruption; happening in a row."
+          },
+          {
+            "term": "retaliated",
+            "part_of_speech": "verb",
+            "definition": "Taken action in return for an attack or injury; responded with a similar aggressive act."
+          },
+          {
+            "term": "allies",
+            "part_of_speech": "noun",
+            "definition": "Countries, organizations, or people that have formally agreed to cooperate and support each other, especially in war or conflict."
+          },
+          {
+            "term": "plant",
+            "part_of_speech": "noun",
+            "definition": "A large industrial facility or factory where goods are made or energy/services are produced, such as a power plant or a water treatment plant."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice (Past Perfect)",
+          "explanation": "The passive voice is used when the focus is on the action and the object receiving it, rather than the performer of the action. The past perfect passive is formed with 'had been' + the past participle of the main verb, and it indicates an action completed before a specific point in the past. It often highlights the result or impact of an action without necessarily naming who did it.",
+          "example_quote": "Specifically, a power and water plant in Kuwait had been hit during these retaliatory actions."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "Economic sanctions against Iran",
+              "Military escalation between the US and Iran",
+              "New trade agreements in the Middle East"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not directly mentioned as the main topic of these specific events.",
+              "Correct! The news brief focuses on the US strikes and Iran's responses, showing military escalation.",
+              "The brief discusses military conflicts, not trade agreements."
+            ]
+          },
+          {
+            "question": "How many consecutive nights have the US strikes occurred?",
+            "options": [
+              "Five nights",
+              "Seven nights",
+              "Ten nights"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states a different number for the duration of the strikes.",
+              "That's right! The US has conducted strikes for seven consecutive nights.",
+              "The number of nights mentioned in the brief is lower than ten."
+            ]
+          },
+          {
+            "question": "What does the word 'retaliated' mean in the context of the news brief?",
+            "options": [
+              "Started a new negotiation",
+              "Withdrew from conflict",
+              "Responded with an attack"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "To retaliate means to take action in return, not to negotiate.",
+              "Retaliating involves responding, not withdrawing from a situation.",
+              "Correct! Iran 'retaliated' by responding to the US strikes with its own attacks."
+            ]
+          },
+          {
+            "question": "Which country confirmed that a critical infrastructure site was affected?",
+            "options": [
+              "Iran",
+              "United States",
+              "Kuwait"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Iran was involved in the retaliation, but did not report its own infrastructure being hit in this context.",
+              "The US carried out strikes, but Kuwait confirmed the damage to its facility.",
+              "Exactly! Kuwait reported that its power and water plant had been hit."
+            ]
+          },
+          {
+            "question": "What kind of 'plant' was hit in Kuwait, according to the news brief?",
+            "options": [
+              "An agricultural plant",
+              "A manufacturing facility",
+              "A power and water plant"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The text specifies an industrial facility, not a type of vegetation.",
+              "While it is a facility, the brief specifies its exact function.",
+              "That's correct! The news brief specifically mentions a power and water plant."
+            ]
+          },
+          {
+            "question": "What is the purpose of using the passive voice in the sentence 'a power and water plant in Kuwait had been hit'?",
+            "options": [
+              "To emphasize who caused the damage",
+              "To focus on the action and the affected object",
+              "To express a future possibility"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice often deemphasizes or omits the actor, not emphasizes them.",
+              "Correct! The passive voice highlights that the plant was affected without necessarily naming the attacker.",
+              "The past perfect passive tense describes a past event, not a future one."
+            ]
+          },
+          {
+            "question": "What does 'consecutive' imply about the US strikes?",
+            "options": [
+              "They happened at random times.",
+              "They occurred on separate occasions.",
+              "They took place without interruption over several nights."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The word 'consecutive' means they were not random.",
+              "If they were consecutive, they were not separate but rather one after another.",
+              "Correct! 'Consecutive' means they followed one after another for seven nights straight."
+            ]
+          },
+          {
+            "question": "What is meant by 'US allies' in the news brief?",
+            "options": [
+              "Countries that are enemies of the US",
+              "Countries that have agreements to support the US",
+              "Countries geographically close to the US"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Allies are partners, not enemies.",
+              "Exactly! US allies are countries that have formed partnerships and support agreements with the United States.",
+              "Geographical proximity is not the defining factor for being an ally."
+            ]
+          },
+          {
+            "question": "The sentence 'A power and water plant in Kuwait had been hit' uses which grammatical structure?",
+            "options": [
+              "Present Simple Active",
+              "Past Perfect Passive",
+              "Future Perfect Active"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence describes a past action completed before another past event, and is in the passive voice.",
+              "That's right! 'Had been hit' is the construction for the past perfect passive voice.",
+              "The sentence refers to a past event, not a future one, and is in the passive voice."
+            ]
+          },
+          {
+            "question": "What is the primary concern arising from the escalating cycle of violence?",
+            "options": [
+              "A decrease in oil prices",
+              "Increased tourism in the region",
+              "Instability and security concerns in the Middle East"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Escalating conflict typically leads to higher, not lower, oil prices.",
+              "Conflict generally discourages, rather than increases, tourism.",
+              "Correct! The brief highlights fears about regional stability and security due to the intensifying attacks."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US-Iran Escalation: Seventh Consecutive Night of Strikes and Regional Retaliation",
+        "overview": "The persistent military engagements between the United States and Iran have further intensified regional instability, marked by a seventh consecutive night of US strikes and Iran's subsequent retaliation against US allies, including an attack on critical infrastructure in Kuwait.",
+        "topic": "Geopolitical Escalation in the Middle East",
+        "news_brief_sentences": [
+          "For the seventh consecutive night, the United States has conducted military strikes against targets linked to Iran, indicating a sustained campaign of pressure.",
+          "This recent series of actions follows mounting tensions between Washington and Tehran in the volatile Middle East.",
+          "In a significant development, Iran has retaliated against US allies in the region, extending the scope of the ongoing conflict.",
+          "Kuwait, a key regional partner, reported that a crucial power and water plant had been hit by these Iranian-backed actions.",
+          "The targeting of such critical infrastructure highlights a concerning shift towards broader economic and civilian disruption.",
+          "Analysts fear these tit-for-tat exchanges could lead to further escalation, drawing more actors into the protracted regional rivalry.",
+          "The strikes and counter-strikes have significant regional repercussions, threatening stability and international shipping lanes.",
+          "These incidents underscore the complex web of alliances and rivalries that characterize the geopolitical landscape of the Gulf.",
+          "International bodies are expressing growing concern over the potential for miscalculation and an uncontrollable expansion of hostilities.",
+          "De-escalation efforts are urgently needed to prevent a full-blown military confrontation that could destabilize the global economy."
+        ],
+        "vocabulary": [
+          {
+            "term": "consecutive",
+            "part_of_speech": "adjective",
+            "definition": "Following one another continuously in an unbroken sequence, without interruption."
+          },
+          {
+            "term": "retaliated",
+            "part_of_speech": "verb",
+            "definition": "To make an attack or assault in return for a similar attack; to respond with a counter-action, often punitive in nature."
+          },
+          {
+            "term": "critical infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "Essential facilities and systems required for the functioning of a society or economy, such as power grids, water supplies, communication networks, or transportation systems."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "An increase in the intensity, seriousness, or extent of something, often referring to a conflict, crisis, or dispute."
+          },
+          {
+            "term": "regional repercussions",
+            "part_of_speech": "noun phrase",
+            "definition": "The widespread and often negative consequences or effects that arise within a specific geographical area as a result of an event, action, or decision."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses (present participle for consequence/simultaneous action)",
+          "explanation": "Participle clauses, especially those beginning with a present participle (-ing form), are used to provide additional information, often describing an action that occurs simultaneously with the main verb or as a direct consequence of it. They effectively condense information and create a more sophisticated sentence structure, particularly useful in formal writing to show cause, effect, or concurrent events.",
+          "example_quote": "Analysts fear these tit-for-tat exchanges could lead to further escalation, drawing more actors into the protracted regional rivalry."
+        },
+        "quiz": [
+          {
+            "question": "What does the use of the word 'consecutive' in the news brief primarily suggest about the US strikes?",
+            "options": [
+              "That the strikes were highly successful in achieving their immediate goals.",
+              "That the strikes occurred on multiple, uninterrupted nights, indicating persistence.",
+              "That the strikes were a one-time event that will not be repeated soon."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not directly implied by 'consecutive'; the term refers to continuity, not necessarily success.",
+              "Correct. 'Consecutive' means following continuously, emphasizing the sustained nature of the strikes over several nights.",
+              "Incorrect. 'Consecutive' explicitly states that the strikes occurred repeatedly over multiple nights."
+            ]
+          },
+          {
+            "question": "According to the news brief, how did Iran respond to the US military actions?",
+            "options": [
+              "Iran initiated diplomatic talks to de-escalate tensions.",
+              "Iran retaliated by striking US allies' critical infrastructure.",
+              "Iran deployed additional troops to its borders as a defensive measure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions 'de-escalation efforts' as needed, but not as Iran's immediate response.",
+              "Correct. The brief explicitly states that Iran 'retaliated against US allies in the region,' hitting a power and water plant.",
+              "This action is not mentioned in the brief as Iran's direct response to the US strikes."
+            ]
+          },
+          {
+            "question": "What is the primary concern raised by the targeting of 'critical infrastructure'?",
+            "options": [
+              "It signals a shift towards disrupting essential societal services and potentially civilian life.",
+              "It indicates a preference for targeting military bases over strategic financial assets.",
+              "It suggests that the conflict is limited to uninhabited desert regions."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The brief notes this highlights 'a concerning shift towards broader economic and civilian disruption'.",
+              "The brief focuses on the 'critical infrastructure' itself, not a comparison to other targets.",
+              "The targeting of a power and water plant in Kuwait suggests impacts beyond uninhabited regions."
+            ]
+          },
+          {
+            "question": "In the sentence 'Analysts fear these tit-for-tat exchanges could lead to further escalation, drawing more actors into the protracted regional rivalry,' what does the participle clause 'drawing more actors...' convey?",
+            "options": [
+              "It describes an action that happened before the escalation.",
+              "It presents an alternative outcome if escalation is avoided.",
+              "It expresses a consequence or result of the potential escalation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Participle clauses with present participles typically denote simultaneous actions or consequences, not prior events.",
+              "The clause describes an outcome linked to 'further escalation,' not an alternative to it.",
+              "Correct. The participle clause 'drawing more actors into the protracted regional rivalry' indicates a direct consequence of the feared 'further escalation'."
+            ]
+          },
+          {
+            "question": "The term 'escalation' in the context of the news brief refers to:",
+            "options": [
+              "A peaceful resolution reached through diplomatic channels.",
+              "An increase in the intensity and seriousness of the ongoing conflict.",
+              "A decrease in military activities in the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Escalation implies an increase in conflict, not a peaceful resolution.",
+              "Correct. 'Escalation' means an increase in the intensity or seriousness of a situation, especially a conflict.",
+              "Incorrect. Escalation is the opposite of a decrease in military activities."
+            ]
+          },
+          {
+            "question": "What are 'regional repercussions' according to the news brief?",
+            "options": [
+              "Effects that are limited to the immediate vicinity of the strikes.",
+              "Widespread consequences affecting stability and international interests in the area.",
+              "Reactions from countries outside the Middle East region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Regional' implies broader geographical impact, not just immediate vicinity.",
+              "Correct. The brief states they threaten 'stability and international shipping lanes', indicating widespread consequences.",
+              "The term 'regional' specifically refers to the Middle Eastern region itself, not outside countries' reactions."
+            ]
+          },
+          {
+            "question": "Which specific country, an ally of the US, reported being hit by Iranian-backed actions?",
+            "options": [
+              "Saudi Arabia",
+              "Kuwait",
+              "United Arab Emirates"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Saudi Arabia is a US ally, but Kuwait is specifically mentioned in the brief as having its plant hit.",
+              "Correct. The brief explicitly states, 'Kuwait... reported that a crucial power and water plant had been hit'.",
+              "While a US ally, the UAE is not mentioned in the brief as having been hit in this specific instance."
+            ]
+          },
+          {
+            "question": "The news brief describes the geopolitical landscape of the Gulf as characterized by a 'complex web of alliances and rivalries'. What does this phrase imply?",
+            "options": [
+              "That all countries in the Gulf region share common objectives and strong military alliances.",
+              "That regional relationships are intricate, involving both cooperative and confrontational elements.",
+              "That international organizations effectively mediate all disputes in the Gulf."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Rivalries' explicitly contradicts the idea of all countries sharing common objectives.",
+              "Correct. 'Complex web' and 'alliances and rivalries' together suggest intricate, multifaceted relationships.",
+              "While international bodies are concerned, the brief doesn't imply they effectively mediate all disputes."
+            ]
+          },
+          {
+            "question": "What is indicated by the phrase 'protracted regional rivalry' from the grammar example sentence?",
+            "options": [
+              "A newly emerged conflict between regional powers.",
+              "A short-term disagreement that will likely be resolved soon.",
+              "An ongoing, long-lasting competition or conflict between regional actors."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Protracted' implies long-standing, not newly emerged.",
+              "Incorrect. 'Protracted' means extended in time, the opposite of short-term.",
+              "Correct. 'Protracted' means lasting for a long time or longer than expected, indicating an enduring rivalry."
+            ]
+          },
+          {
+            "question": "According to the news brief, what urgent action is needed to prevent a full-blown military confrontation?",
+            "options": [
+              "Increased military aid to US allies in the region.",
+              "Further intensification of US strikes against Iranian targets.",
+              "De-escalation efforts from all parties involved."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief highlights the dangers of escalation, not the need for increased military aid.",
+              "This would likely lead to further escalation, which the brief states should be prevented.",
+              "Correct. The brief explicitly concludes by stating, 'De-escalation efforts are urgently needed to prevent a full-blown military confrontation'."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

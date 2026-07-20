@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-20",
+  "release_iso": "2026-07-20T12:11:12Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US soldier killed and one injured after Iranian attack in Iraq",
+    "summary": "The US military reports another death a day after two of its soldiers were killed in Jordan.",
+    "link": "https://www.bbc.co.uk/news/articles/cgk417jp83po?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Soldiers Killed and Injured in Recent Attacks",
+        "overview": "Recent attacks have caused deaths and injuries among US soldiers in different countries.",
+        "topic": "Military incidents and soldier casualties",
+        "news_brief_sentences": [
+          "A US soldier was killed in Iraq.",
+          "Another soldier was injured there.",
+          "This happened after an attack.",
+          "The attack was by Iran.",
+          "The US military gave this news.",
+          "This death follows other deaths.",
+          "Two US soldiers died earlier.",
+          "They were killed in Jordan.",
+          "This happened just one day before.",
+          "These events show ongoing conflict."
+        ],
+        "vocabulary": [
+          {
+            "term": "killed",
+            "part_of_speech": "verb",
+            "definition": "Died because of a violent event or action."
+          },
+          {
+            "term": "injured",
+            "part_of_speech": "verb",
+            "definition": "Hurt physically in an accident or an attack."
+          },
+          {
+            "term": "attack",
+            "part_of_speech": "noun",
+            "definition": "A violent act meant to cause harm or damage."
+          },
+          {
+            "term": "military",
+            "part_of_speech": "noun",
+            "definition": "The official armed forces of a country, like the army, navy, or air force."
+          },
+          {
+            "term": "soldiers",
+            "part_of_speech": "noun",
+            "definition": "People who serve in an army and fight in wars."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Simple Verbs",
+          "explanation": "We use past simple verbs to talk about actions that started and finished in the past. We often add '-ed' to verbs, like 'happened'. Some verbs change, like 'kill' becomes 'killed' and 'is' becomes 'was'.",
+          "example_quote": "A US soldier was killed in Iraq."
+        },
+        "quiz": [
+          {
+            "question": "What happened to a US soldier in Iraq?",
+            "options": [
+              "The soldier went home.",
+              "The soldier was killed.",
+              "The soldier ate food."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says something different happened.",
+              "That is correct. A US soldier was killed in Iraq.",
+              "This is not mentioned in the news story."
+            ]
+          },
+          {
+            "question": "Who caused the attack in Iraq?",
+            "options": [
+              "The US military",
+              "Iran",
+              "Jordan"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the US military reported the news, but did not cause the attack.",
+              "That is right. The news says the attack was by Iran.",
+              "No, Jordan is another country where soldiers died, not who caused the attack in Iraq."
+            ]
+          },
+          {
+            "question": "How many US soldiers died in Jordan?",
+            "options": [
+              "One",
+              "Two",
+              "Three"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Look again at the news. More than one soldier died in Jordan.",
+              "Correct. Two US soldiers were killed in Jordan.",
+              "No, the news mentions two soldiers, not three."
+            ]
+          },
+          {
+            "question": "What does 'killed' mean?",
+            "options": [
+              "To be strong",
+              "To die because of violence",
+              "To sleep"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'killed' means something happened to end a life.",
+              "Yes, 'killed' means someone died because of a violent action.",
+              "No, 'killed' is not related to sleeping."
+            ]
+          },
+          {
+            "question": "What does 'injured' mean?",
+            "options": [
+              "To be happy",
+              "To be hurt physically",
+              "To be safe"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'injured' means you are hurt, not happy.",
+              "Correct. 'Injured' means to be hurt physically.",
+              "No, if you are injured, you are not safe."
+            ]
+          },
+          {
+            "question": "Where did the first soldier mentioned in the news brief die?",
+            "options": [
+              "Jordan",
+              "Iraq",
+              "Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the first death mentioned was not in Jordan.",
+              "That's right. The news brief starts with a soldier killed in Iraq.",
+              "No, Iran caused the attack, but the soldier died in Iraq."
+            ]
+          },
+          {
+            "question": "What kind of organization is the 'military'?",
+            "options": [
+              "A cooking school",
+              "An army or armed forces",
+              "A music band"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the military is not a cooking school.",
+              "Yes, the 'military' refers to a country's armed forces like the army.",
+              "No, the military is not a music band."
+            ]
+          },
+          {
+            "question": "The word 'soldiers' refers to:",
+            "options": [
+              "People who teach in schools",
+              "People who work in the army",
+              "People who drive cars"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'soldiers' are not teachers.",
+              "Correct. 'Soldiers' are people who work in the army.",
+              "No, 'soldiers' are not people who typically drive cars for work."
+            ]
+          },
+          {
+            "question": "Which verb from the news brief is in the past simple tense?",
+            "options": [
+              "is",
+              "happened",
+              "show"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'is' is a present tense verb.",
+              "Yes, 'happened' is a past simple verb, showing an action that finished.",
+              "No, 'show' is a present tense verb."
+            ]
+          },
+          {
+            "question": "The sentence 'Two US soldiers died earlier' means they died:",
+            "options": [
+              "now",
+              "in the future",
+              "before today"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'earlier' means not now.",
+              "No, 'earlier' means in the past, not the future.",
+              "That's right. 'Earlier' means the action happened before the present time."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Soldier Killed in Iraq Following Iranian Attack",
+        "overview": "A recent Iranian attack in Iraq resulted in the death of one US soldier and injury to another, occurring just a day after two more soldiers were killed in Jordan.",
+        "topic": "Military conflict in the Middle East and US casualties",
+        "news_brief_sentences": [
+          "A US soldier was killed and another was injured following an Iranian attack in Iraq, according to recent reports.",
+          "This specific incident has increased the tensions already present in the Middle East.",
+          "The US military officially confirmed the casualty, which is a sad loss of life for the nation.",
+          "Crucially, this event happened only a day after two other American soldiers lost their lives in a separate attack in Jordan.",
+          "These tragic incidents underscore the dangerous conditions faced by military personnel deployed to conflict zones.",
+          "Authorities are currently conducting detailed investigations into the precise nature of these assaults.",
+          "The attack in Iraq reportedly involved advanced weaponry, indicating a deliberate and well-planned operation.",
+          "Many observers believe these violent actions could significantly complicate ongoing diplomatic efforts.",
+          "The Pentagon has indicated that it is evaluating various response options to protect its forces.",
+          "Such repeated attacks pose a serious threat to regional stability and could lead to wider conflict as retaliation is considered."
+        ],
+        "vocabulary": [
+          {
+            "term": "tensions",
+            "part_of_speech": "noun",
+            "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
+          },
+          {
+            "term": "casualty",
+            "part_of_speech": "noun",
+            "definition": "A person injured or killed in an accident, war, or other violent event."
+          },
+          {
+            "term": "complicate",
+            "part_of_speech": "verb",
+            "definition": "To make something more difficult or complex to deal with, solve, or understand."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or argument, often leading to fighting between groups or nations."
+          },
+          {
+            "term": "retaliation",
+            "part_of_speech": "noun",
+            "definition": "The act of hurting someone or doing something bad to them because they have hurt you or done something bad to you; an act of revenge."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object of the action, rather than on who or what is performing the action. It is often used in news reports when the 'doer' is unknown, unimportant, or when the action is more significant. The structure is usually 'be' verb + past participle.",
+          "example_quote": "A US soldier was killed and another was injured following an Iranian attack in Iraq, according to recent reports."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the news report?",
+            "options": [
+              "A new peace treaty between the US and Iran.",
+              "Recent military casualties involving US soldiers in the Middle East.",
+              "Economic sanctions imposed on Iraq."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The report focuses on military incidents and losses, not a peace treaty.",
+              "Correct. The article highlights the deaths and injuries of US soldiers in recent attacks.",
+              "Incorrect. The article does not discuss economic sanctions or their impact."
+            ]
+          },
+          {
+            "question": "Where did the Iranian attack that resulted in one US soldier's death and one injury take place?",
+            "options": [
+              "Jordan",
+              "Iraq",
+              "The Pentagon"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the attack that killed one soldier happened in Iraq, though another incident occurred in Jordan.",
+              "Yes, the report clearly states the Iranian attack that caused these casualties occurred in Iraq.",
+              "The Pentagon is the headquarters in the US, not a location where this specific attack happened."
+            ]
+          },
+          {
+            "question": "What does the term \"tensions\" mean in the context of the news brief?",
+            "options": [
+              "Friendly relationships between countries.",
+              "Periods of calm and peaceful negotiations.",
+              "A state of hostility or disagreement between parties."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'tensions' means the opposite of friendly relationships; it implies strain.",
+              "No, 'tensions' suggests a lack of peace and a situation that is not calm.",
+              "Correct. In international relations, tensions indicate strained or hostile feelings and potential conflict."
+            ]
+          },
+          {
+            "question": "According to the report, a \"casualty\" refers to:",
+            "options": [
+              "An unexpected celebration or party.",
+              "A person who is injured or killed in an event like a war.",
+              "A successful diplomatic meeting or agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's incorrect. A casualty is not a celebration; it describes harm or loss.",
+              "Yes, a casualty is a person harmed or lost in an accident or conflict, as mentioned in the report.",
+              "No, a casualty describes harm to individuals, not a successful meeting or diplomatic event."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "The US military officially confirmed the casualty.",
+              "Authorities are currently conducting detailed investigations.",
+              "A US soldier was killed and another was injured."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses the active voice, with 'The US military' as the subject performing the action.",
+              "This sentence uses the active voice, with 'Authorities' as the subject, actively conducting the investigation.",
+              "Correct. 'Was killed' and 'was injured' are examples of the passive voice, focusing on the action and its recipient."
+            ]
+          },
+          {
+            "question": "How much time passed between the attack in Jordan and the attack in Iraq mentioned in the report?",
+            "options": [
+              "A week later",
+              "Several months later",
+              "Just a day later"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The report specifies a much shorter timeframe, not a week, between the two incidents.",
+              "The report indicates the events were very close together in time, not several months apart.",
+              "That's right. The attack in Iraq occurred 'just a day after' the Jordan incident, showing a quick succession of events."
+            ]
+          },
+          {
+            "question": "If actions \"complicate\" diplomatic efforts, what do they do?",
+            "options": [
+              "They make them easier to resolve or simplify them.",
+              "They introduce new and effective solutions.",
+              "They make them more difficult or complex to achieve."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'complicate' means the opposite of making things easier; it creates challenges.",
+              "That's incorrect. Complicating doesn't typically create new solutions but new problems or obstacles.",
+              "Yes, 'complicate' means to make a situation harder to handle, understand, or solve, slowing progress."
+            ]
+          },
+          {
+            "question": "Why is the passive voice often used in news reports like this one?",
+            "options": [
+              "To emphasize the specific person who performed the action.",
+              "To make the report sound more informal and conversational.",
+              "To focus on the action and its impact rather than the doer."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the passive voice typically de-emphasizes the doer or makes them less important.",
+              "The passive voice does not inherently make a report more informal; it's common in formal news.",
+              "Correct. It shifts the focus to what happened and who was affected, which is common in news reporting."
+            ]
+          },
+          {
+            "question": "What is meant by \"wider conflict\" in the news brief?",
+            "options": [
+              "An international sporting event or competition.",
+              "Increased fighting or war involving more parties or a larger area.",
+              "A large-scale cultural festival or celebration."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, conflict refers to fighting or serious disagreement, not sports or friendly competitions.",
+              "Yes, 'wider conflict' implies a larger scale of fighting or war, potentially involving more countries.",
+              "Incorrect. Conflict refers to disagreement or fighting, not a festival or cultural gathering."
+            ]
+          },
+          {
+            "question": "What does \"retaliation\" refer to when considering response options?",
+            "options": [
+              "An act of forgiveness or reconciliation.",
+              "A friendly negotiation or diplomatic discussion.",
+              "An act of revenge or a counter-attack in response to an offense."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, retaliation is about striking back or punishing, not forgiveness or making peace.",
+              "That's not correct. Retaliation is typically a hostile response, not a friendly negotiation.",
+              "Yes, retaliation means responding to an attack with a counter-attack or punishment, often an aggressive act."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Escalating Tensions: US Soldier Killed in Iraq Amidst Regional Unrest",
+        "overview": "This lesson examines the latest fatalities among US service members in Iraq following an Iranian attack, contextualizing it within the broader pattern of regional instability and recent casualties in Jordan.",
+        "topic": "Middle East Geopolitics, US Military Presence, Iran-US Tensions, Regional Security, International Relations",
+        "news_brief_sentences": [
+          "A recent assault perpetrated by Iranian-backed militias has resulted in the tragic death of a US soldier and injuries to another within Iraqi territory.",
+          "This grave incident occurs merely a day after two American military personnel were killed in a separate, equally concerning attack in Jordan, further highlighting an alarming escalation.",
+          "The US military has formally confirmed the latest casualty, underscoring the persistent perils confronting forces deployed across the volatile Middle East.",
+          "Such actions are widely perceived as direct challenges to American presence and regional security infrastructure, often attributed to Tehran's proxy networks.",
+          "Analysts suggest these intermittent strikes signify a dangerous phase of retaliatory exchanges, potentially precipitating broader conflict.",
+          "The ongoing cycle of violence threatens to destabilize an already fragile geopolitical landscape, demanding robust diplomatic and security responses.",
+          "Officials are deliberating on the appropriate measures to deter future aggression and bolster the safety of personnel stationed abroad.",
+          "The incident precipitates renewed scrutiny of the efficacy of current deterrence strategies and the overall strategic posture in the region.",
+          "These repeated acts of hostility constitute a clear indictment of peace efforts and regional stability initiatives.",
+          "The cumulative impact of these fatalities demands an urgent reassessment of engagement parameters and protective protocols for international forces."
+        ],
+        "vocabulary": [
+          {
+            "term": "perpetrated",
+            "part_of_speech": "verb",
+            "definition": "To carry out or commit (a harmful, illegal, or immoral action)."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase; a rise in the intensity or seriousness of something, often a conflict or situation."
+          },
+          {
+            "term": "geopolitical",
+            "part_of_speech": "adjective",
+            "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
+          },
+          {
+            "term": "bolster",
+            "part_of_speech": "verb",
+            "definition": "To support or strengthen; to reinforce or make something stronger or more effective."
+          },
+          {
+            "term": "indictment",
+            "part_of_speech": "noun",
+            "definition": "A formal accusation or a strong indication that something is bad or wrong; a severe criticism."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization for Formal Tone",
+          "explanation": "Nominalization involves converting verbs or adjectives into nouns to create a more formal, abstract, and often concise style, common in academic and journalistic writing. It condenses complex ideas into noun phrases, shifting focus from the actor to the action or concept itself.",
+          "example_quote": "Such actions are widely perceived as direct challenges to American presence and regional security infrastructure, often attributed to Tehran's proxy networks."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary implication of the term 'perpetrated' in the news brief?",
+            "options": [
+              "It suggests the action was accidental or unintentional.",
+              "It implies a deliberate and harmful act committed by a specific entity.",
+              "It highlights the investigative process to identify the culprits."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Perpetrated' strongly indicates intentionality, not accident.",
+              "Correct. 'Perpetrated' is used for carrying out harmful or illegal actions deliberately.",
+              "Incorrect. While identifying culprits is part of the aftermath, 'perpetrated' focuses on the act itself and its intentional nature."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'alarming escalation.' What does 'escalation' primarily refer to in this context?",
+            "options": [
+              "A sudden, unexpected decrease in military activity.",
+              "A gradual de-escalation of regional tensions through diplomacy.",
+              "An intensified increase in the frequency and severity of attacks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Escalation' signifies an increase, not a decrease.",
+              "Incorrect. 'Escalation' suggests a worsening situation, contrary to de-escalation.",
+              "Correct. 'Escalation' describes a rise in the intensity or seriousness of a conflict or situation."
+            ]
+          },
+          {
+            "question": "How does the phrase 'geopolitical landscape' contribute to the tone of the news brief?",
+            "options": [
+              "It makes the discussion seem more personal and emotional.",
+              "It emphasizes the broad, international, and power-related aspects of the situation.",
+              "It narrows the focus to local issues within Iraq and Jordan."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Geopolitical' tends to depersonalize, focusing on broader forces.",
+              "Correct. 'Geopolitical' frames the events in terms of international relations and geographical influence, lending a formal, analytical tone.",
+              "Incorrect. 'Geopolitical landscape' broadens the scope beyond just local concerns."
+            ]
+          },
+          {
+            "question": "What is the intended effect of using 'bolster' in the sentence, 'Officials are deliberating on the appropriate measures to deter future aggression and bolster the safety of personnel stationed abroad'?",
+            "options": [
+              "To imply a weakening of security measures.",
+              "To suggest a reduction in international cooperation.",
+              "To indicate a strengthening or reinforcing of existing safety protocols."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Bolster' means to strengthen, not weaken.",
+              "Incorrect. 'Bolster' refers to strengthening safety, not reducing cooperation.",
+              "Correct. 'Bolster' means to support or strengthen, implying an effort to enhance safety."
+            ]
+          },
+          {
+            "question": "In the context of 'These repeated acts of hostility constitute a clear indictment of peace efforts,' what does 'indictment' signify?",
+            "options": [
+              "A strong endorsement or approval of peace initiatives.",
+              "A formal legal charge brought against the perpetrators.",
+              "A severe criticism or strong indication that peace efforts have failed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Indictment' implies condemnation, not endorsement.",
+              "Incorrect. While it can be a legal term, here it's used figuratively to mean a strong condemnation.",
+              "Correct. In this context, 'indictment' means a strong criticism or a sign that something is fundamentally flawed or has failed."
+            ]
+          },
+          {
+            "question": "The sentence 'Such actions are widely perceived as direct challenges to American presence and regional security infrastructure' employs nominalization. What is the effect of using 'challenges' instead of 'challenge' (verb)?",
+            "options": [
+              "It makes the sentence more active and dynamic.",
+              "It emphasizes the nature of the obstacles themselves rather than the act of challenging.",
+              "It reduces the formality of the language."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Nominalization often makes sentences more abstract, not necessarily more active.",
+              "Correct. By using 'challenges' as a noun, the focus shifts to the inherent nature of these acts as threats or obstacles.",
+              "Incorrect. Nominalization generally increases formality."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the overall tone of the news brief?",
+            "options": [
+              "Informal and anecdotal.",
+              "Objective and analytical.",
+              "Sensationalist and alarmist."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The language is formal and uses advanced vocabulary.",
+              "Correct. The brief uses formal language, sophisticated vocabulary, and analytical phrasing to discuss serious geopolitical events.",
+              "Incorrect. While the events are serious, the tone is measured and analytical rather than sensational."
+            ]
+          },
+          {
+            "question": "Why does the news brief emphasize the previous attack in Jordan when discussing the incident in Iraq?",
+            "options": [
+              "To highlight the unique nature of the Iraq attack.",
+              "To draw a connection to a pattern of escalating regional aggression.",
+              "To suggest that the Jordan attack was more severe."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The mention of Jordan suggests a link, not a unique incident.",
+              "Correct. Connecting the two incidents emphasizes a broader trend of increased hostility and regional instability.",
+              "Incorrect. The brief does not make a comparative judgment about the severity of the attacks."
+            ]
+          },
+          {
+            "question": "The phrase 'strategic posture' (in 'renewed scrutiny of the efficacy of current deterrence strategies and the overall strategic posture in the region') refers to:",
+            "options": [
+              "The physical stance of military personnel on guard.",
+              "The overall positioning, deployment, and approach of military forces and policies.",
+              "A defensive formation adopted during combat."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Strategic posture' in this context refers to a broader policy and deployment, not individual physical stances.",
+              "Correct. 'Strategic posture' refers to the overall military and political stance, including deployment, readiness, and doctrine, in a given region.",
+              "Incorrect. While related to military, 'strategic posture' is a broader concept than a specific combat formation."
+            ]
+          },
+          {
+            "question": "What does the sentence 'The cumulative impact of these fatalities demands an urgent reassessment of engagement parameters and protective protocols' primarily convey?",
+            "options": [
+              "That current security measures are perfectly adequate.",
+              "That a comprehensive review of military rules and safety procedures is immediately necessary.",
+              "That military operations should cease entirely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Demands an urgent reassessment' implies inadequacy, not adequacy.",
+              "Correct. The statement calls for an immediate and thorough evaluation of how forces operate and are protected.",
+              "Incorrect. It calls for reassessment of parameters and protocols, not a complete cessation of operations."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

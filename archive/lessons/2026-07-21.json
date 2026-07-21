@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-21",
+  "release_iso": "2026-07-21T11:43:18Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump slaps 50% tariffs on Canada and Carney vows to 'intensify' trade talks",
+    "summary": "The duties mark a major escalation in trade tensions between the North American neighbours.",
+    "link": "https://www.bbc.co.uk/news/articles/cg4dzq3x3e1o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "USA Puts High Taxes on Canadian Products: Trade Problems Grow",
+        "overview": "This news is about new taxes on products from Canada by the USA, which are causing problems between the two countries.",
+        "topic": "International Trade Disputes and Tariffs",
+        "news_brief_sentences": [
+          "President Trump made a new decision.",
+          "He put new taxes on goods from Canada.",
+          "These taxes are called tariffs.",
+          "The tariffs are very high, 50%.",
+          "This is a big problem for trade.",
+          "Trade tensions are growing between the two countries.",
+          "Canada and the USA are North American neighbours.",
+          "Mark Carney wants to talk more.",
+          "He wants to intensify trade talks.",
+          "They hope to solve the trade issues soon."
+        ],
+        "vocabulary": [
+          {
+            "term": "tariffs",
+            "part_of_speech": "noun",
+            "definition": "Special taxes on things that countries buy from other countries."
+          },
+          {
+            "term": "goods",
+            "part_of_speech": "noun",
+            "definition": "Things that people make or grow to sell, like cars or food."
+          },
+          {
+            "term": "trade",
+            "part_of_speech": "noun",
+            "definition": "The buying and selling of goods and services between people or countries."
+          },
+          {
+            "term": "tensions",
+            "part_of_speech": "noun",
+            "definition": "A feeling of anger or disagreement between people or countries."
+          },
+          {
+            "term": "intensify",
+            "part_of_speech": "verb",
+            "definition": "To make something stronger or more serious."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense",
+          "explanation": "We use the simple present tense for things that happen regularly, or for facts and general truths. It describes what is true now. For example, 'The sun rises every day.'",
+          "example_quote": "The tariffs are very high, 50%."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump do to goods from Canada?",
+            "options": [
+              "He bought many goods.",
+              "He put new taxes on goods.",
+              "He sent goods to Canada."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he added taxes, not bought.",
+              "Correct! He put tariffs, which are new taxes.",
+              "No, the news is about taxes on imports from Canada."
+            ]
+          },
+          {
+            "question": "What are these new taxes called in the news?",
+            "options": [
+              "Bills",
+              "Tariffs",
+              "Prices"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Bills are different. They are requests for payment.",
+              "Correct! The news brief calls them tariffs, which are taxes on imports.",
+              "Prices are what you pay for things, not the extra tax."
+            ]
+          },
+          {
+            "question": "What does 'goods' mean in this news?",
+            "options": [
+              "Bad things",
+              "Products like cars or food",
+              "Good ideas"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'goods' in trade means products.",
+              "Correct! Goods are things countries buy and sell.",
+              "'Goods' here means physical items, not ideas."
+            ]
+          },
+          {
+            "question": "What percentage are the new tariffs?",
+            "options": [
+              "10%",
+              "25%",
+              "50%"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the taxes are much higher than 10%.",
+              "Not 25%, it's double that.",
+              "Correct! The tariffs are very high, 50%."
+            ]
+          },
+          {
+            "question": "What is growing between Canada and the USA?",
+            "options": [
+              "Friendship",
+              "Trade tensions",
+              "New buildings"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Unfortunately, the news says there are problems, not just friendship.",
+              "Correct! The news says trade tensions are growing because of the tariffs.",
+              "The news is about trade issues, not construction."
+            ]
+          },
+          {
+            "question": "What does 'trade' mean?",
+            "options": [
+              "Playing games",
+              "Buying and selling things",
+              "Going on holiday"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Trade' is business between countries, not playing games.",
+              "Correct! Trade is about countries buying and selling goods.",
+              "That's tourism, not trade. Trade is about commerce."
+            ]
+          },
+          {
+            "question": "Mark Carney wants to 'intensify' trade talks. What does 'intensify' mean?",
+            "options": [
+              "To make talks stop",
+              "To make talks stronger or more serious",
+              "To make talks secret"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he wants more talks, not to stop them.",
+              "Correct! He wants to have more serious and strong discussions.",
+              "The word means to increase intensity, not secrecy or privacy."
+            ]
+          },
+          {
+            "question": "Which tense is used in 'The tariffs are very high'?",
+            "options": [
+              "Simple Past",
+              "Simple Present",
+              "Future Simple"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the simple past describes things that happened before.",
+              "Correct! 'Are' shows a present fact or general truth.",
+              "The future simple uses 'will' to talk about future actions."
+            ]
+          },
+          {
+            "question": "What is the relationship between Canada and the USA according to the news?",
+            "options": [
+              "They are old rivals.",
+              "They are North American neighbours.",
+              "They are far apart."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While there are tensions, the news highlights their geographical link.",
+              "Correct! The news states they are North American neighbours.",
+              "No, they share a very long border and are close geographically."
+            ]
+          },
+          {
+            "question": "Why do they hope to solve the trade issues soon?",
+            "options": [
+              "Because they want more problems.",
+              "Because trade tensions are growing.",
+              "Because they like taxes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No one wants more problems, they want solutions.",
+              "Correct! They want to fix the growing problems between them.",
+              "Taxes (tariffs) are the cause of the problem, not something they like."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Imposes 50% Tariffs on Canada, Escalating Trade Tensions",
+        "overview": "This lesson explains how recent US tariffs on Canada have significantly increased trade disagreements between the two North American neighbours, prompting Canada to intensify talks.",
+        "topic": "International Trade Disputes and Economic Relations between the US and Canada",
+        "news_brief_sentences": [
+          "The United States, under President Trump, recently imposed significant 50% tariffs on goods imported from Canada.",
+          "These new duties represent a substantial increase in taxes on specific Canadian products entering the US market.",
+          "The decision by the US government has led to a major escalation in existing trade disagreements between the two nations.",
+          "This move highlights the strained economic relationship currently affecting the North American neighbours.",
+          "In response, Canada's representative, Carney, vows to actively work towards resolving these issues.",
+          "He stated his intention to intensify ongoing trade talks with American officials.",
+          "Such protectionist measures often aim to protect domestic industries but can provoke retaliatory actions.",
+          "Economists are closely watching the situation, concerned about the potential negative impact on both economies.",
+          "The increased trade tensions could disrupt supply chains and raise prices for consumers in both countries.",
+          "Both sides hope to reach a resolution quickly to avoid further economic damage."
+        ],
+        "vocabulary": [
+          {
+            "term": "tariffs",
+            "part_of_speech": "noun",
+            "definition": "Taxes or duties paid on a particular class of imports or exports."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "An increase in the intensity or seriousness of something, such as a conflict or a problem."
+          },
+          {
+            "term": "vows",
+            "part_of_speech": "verb",
+            "definition": "To make a solemn promise or commitment to do something, often with strong determination."
+          },
+          {
+            "term": "intensify",
+            "part_of_speech": "verb",
+            "definition": "To become or make something more intense, stronger, or more extreme."
+          },
+          {
+            "term": "trade tensions",
+            "part_of_speech": "noun phrase",
+            "definition": "Strained relations between countries that result from disagreements over trade policies, such as tariffs or quotas."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Tense",
+          "explanation": "The Present Perfect tense is used to describe actions or states that began in the past and continue into the present, or have an effect on the present. It often connects a past event to its current relevance without specifying a precise past time. It's formed with 'has/have' + past participle.",
+          "example_quote": "The decision by the US government has led to a major escalation in existing trade disagreements between the two nations."
+        },
+        "quiz": [
+          {
+            "question": "What percentage of tariffs did the US recently impose on Canadian goods?",
+            "options": [
+              "25%",
+              "50%",
+              "75%"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article specifies a higher tariff percentage.",
+              "Correct! The US imposed 50% tariffs on goods from Canada.",
+              "Incorrect. The tariff percentage mentioned in the news brief is different."
+            ]
+          },
+          {
+            "question": "According to the news brief, what does 'tariffs' refer to?",
+            "options": [
+              "Agreements",
+              "Taxes on imports",
+              "Negotiations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Tariffs are not agreements but rather a type of charge.",
+              "Correct. Tariffs are taxes or duties applied to goods entering a country.",
+              "Incorrect. While related to trade, tariffs are not negotiations themselves."
+            ]
+          },
+          {
+            "question": "Who vows to intensify trade talks with American officials?",
+            "options": [
+              "President Trump",
+              "Economists",
+              "Carney"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. President Trump's administration imposed the tariffs.",
+              "Incorrect. Economists are concerned, but not the one vowing to intensify talks.",
+              "Correct! Canada's representative, Carney, made this commitment."
+            ]
+          },
+          {
+            "question": "What is the primary effect of the US government's decision, as stated in the brief?",
+            "options": [
+              "Improved trade relations",
+              "A major escalation in trade disagreements",
+              "Reduced taxes for consumers"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The tariffs have worsened, not improved, trade relations.",
+              "Correct. The decision has led to a significant increase in trade disagreements.",
+              "Incorrect. Increased tariffs usually lead to higher prices, not reduced taxes."
+            ]
+          },
+          {
+            "question": "What does it mean to 'intensify' trade talks?",
+            "options": [
+              "To end the talks",
+              "To make the talks more casual",
+              "To make the talks more active and focused"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. To intensify means the opposite of ending something.",
+              "Incorrect. Intensifying means making something stronger, not more casual.",
+              "Correct. To intensify means to make something more active, serious, or focused."
+            ]
+          },
+          {
+            "question": "The sentence 'The decision by the US government has led to a major escalation...' uses which grammar concept?",
+            "options": [
+              "Passive Voice",
+              "Present Perfect",
+              "Conditional Clause"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While useful, passive voice is not the primary concept exemplified here.",
+              "Correct. 'Has led' is an example of the Present Perfect tense, showing a past action with present results.",
+              "Incorrect. There is no 'if' clause or implied condition in this sentence structure."
+            ]
+          },
+          {
+            "question": "What is a characteristic use of the Present Perfect tense?",
+            "options": [
+              "To describe a specific completed action in the past.",
+              "To show an action started in the past and continues or affects the present.",
+              "To talk about future plans."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. That describes the Simple Past tense more accurately.",
+              "Correct. The Present Perfect connects past events to their present relevance.",
+              "Incorrect. The Present Perfect does not typically describe future plans."
+            ]
+          },
+          {
+            "question": "What negative consequence could increased 'trade tensions' bring?",
+            "options": [
+              "Smoother supply chains",
+              "Lower prices for consumers",
+              "Disrupted supply chains and higher prices"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Trade tensions typically make supply chains less smooth.",
+              "Incorrect. Tensions and tariffs usually lead to increased costs and prices.",
+              "Correct. The brief states that trade tensions could disrupt supply chains and raise prices."
+            ]
+          },
+          {
+            "question": "What do 'escalation in trade disagreements' refer to?",
+            "options": [
+              "A decrease in problems",
+              "A worsening or increase in conflicts",
+              "A peaceful resolution"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Escalation means an increase, not a decrease.",
+              "Correct. An escalation means the conflict or problem becomes more serious.",
+              "Incorrect. Escalation indicates a worsening situation, not a resolution."
+            ]
+          },
+          {
+            "question": "Why are economists concerned about the situation?",
+            "options": [
+              "They expect a quick resolution.",
+              "They are worried about a positive impact on trade.",
+              "They are concerned about the potential negative impact on both economies."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While a resolution is hoped for, their immediate concern is not about it being quick.",
+              "Incorrect. The concern is about negative impacts, not positive ones.",
+              "Correct. Economists fear the negative economic consequences for both the US and Canada."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US Imposes 50% Tariffs on Canada, Escalating Trade Tensions",
+        "overview": "The United States' recent imposition of stringent 50% tariffs on Canadian imports marks a substantial escalation in trade tensions between the North American neighbours, prompting a vow from Mark Carney to intensify diplomatic talks.",
+        "topic": "International Trade Disputes and Diplomacy",
+        "news_brief_sentences": [
+          "The United States recently imposed stringent 50% tariffs on specific imports originating from Canada, marking a significant escalation in bilateral trade relations.",
+          "This unilateral decision by the Trump administration has exacerbated existing trade friction between the North American neighbours.",
+          "The newly instated duties are poised to affect various economic sectors, potentially disrupting established supply chains and leading to increased costs for consumers.",
+          "Such protectionist measures typically aim to safeguard domestic industries but often risk precipitating retaliatory actions from affected countries.",
+          "In response to these developments, Mark Carney, a prominent figure, has unequivocally vowed to 'intensify' ongoing trade negotiations.",
+          "His commitment underscores a pressing need for diplomatic engagement to de-escalate the burgeoning dispute through concerted efforts.",
+          "Analysts suggest that the imposition of these considerable tariffs could further entrench the economic standoff, making resolution more challenging.",
+          "The traditionally robust bilateral relationship now faces unprecedented strain as these significant economic pressures mount.",
+          "Resolving these profound disagreements will necessitate delicate diplomacy and a mutual willingness to compromise from both Washington and Ottawa.",
+          "The global economic community is closely observing how these critical North American neighbours navigate this contentious period."
+        ],
+        "vocabulary": [
+          {
+            "term": "imposed stringent 50% tariffs",
+            "part_of_speech": "Verb phrase + adjective + noun phrase",
+            "definition": "Formally applied strict taxes of fifty percent on imported goods, making them significantly more expensive for buyers."
+          },
+          {
+            "term": "exacerbated existing trade friction",
+            "part_of_speech": "Verb phrase + adjective + noun phrase",
+            "definition": "Made already present disagreements or tensions in economic exchange relations significantly worse and more intense."
+          },
+          {
+            "term": "established supply chains",
+            "part_of_speech": "Adjective + noun phrase",
+            "definition": "The well-organized and long-standing networks and processes by which goods are produced, distributed, and delivered to consumers."
+          },
+          {
+            "term": "precipitating retaliatory actions",
+            "part_of_speech": "Verb phrase + adjective + noun phrase",
+            "definition": "Causing or bringing about swift counter-measures or punitive responses, usually in reaction to an initial hostile or adverse action."
+          },
+          {
+            "term": "unequivocally vowed to 'intensify'",
+            "part_of_speech": "Adverb + verb phrase",
+            "definition": "Declared in an unambiguous and absolute manner a strong promise to make something stronger, more severe, or more concentrated."
+          }
+        ],
+        "grammar": {
+          "concept": "Gerunds after specific verbs",
+          "explanation": "Certain verbs in English are typically followed by a gerund (the -ing form of a verb) when another verb acts as their object, rather than an infinitive. The verb 'risk' is a prime example, indicating the possibility or danger of a particular action or outcome occurring. This construction effectively conveys potential negative consequences.",
+          "example_quote": "Such protectionist measures typically aim to safeguard domestic industries but often risk precipitating retaliatory actions from affected countries."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary reason for the recent escalation in trade tensions between the US and Canada?",
+            "options": [
+              "A cultural dispute",
+              "The imposition of 50% tariffs by the US",
+              "A disagreement over environmental policies"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention a cultural dispute as the cause of trade tensions.",
+              "Correct. The news brief explicitly states that the US 'imposed stringent 50% tariffs' leading to escalation.",
+              "Incorrect. Environmental policies are not cited as the cause of the trade escalation in the provided news."
+            ]
+          },
+          {
+            "question": "Which of the following best defines the phrase 'exacerbated existing trade friction' as used in the news brief?",
+            "options": [
+              "Improved previous trade agreements",
+              "Made ongoing trade disagreements significantly worse",
+              "Introduced new trade partnerships"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Exacerbated' means to make worse, not improve.",
+              "Correct. 'Exacerbated existing trade friction' means to intensify or worsen already present disagreements in trade.",
+              "Incorrect. The phrase refers to worsening existing issues, not creating new partnerships."
+            ]
+          },
+          {
+            "question": "In the sentence 'Such measures often risk precipitating retaliatory actions,' what grammatical rule applies to 'precipitating'?",
+            "options": [
+              "It is a present participle modifying 'actions'.",
+              "It is an infinitive used as a noun.",
+              "It is a gerund functioning as the object of the verb 'risk'."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While it ends in -ing, in this context it is not modifying a noun directly; it's the object of 'risk'.",
+              "Incorrect. 'To precipitate' would be the infinitive form, but 'risk' requires a gerund.",
+              "Correct. 'Risk' is one of the verbs that must be followed by a gerund when another verb is its object."
+            ]
+          },
+          {
+            "question": "What is a potential negative consequence for consumers mentioned in the news brief due to the tariffs?",
+            "options": [
+              "Reduced product variety",
+              "Disruption of established supply chains leading to increased costs",
+              "New trade agreements for consumers"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While possible, the news brief specifically highlights increased costs.",
+              "Correct. The brief states tariffs could disrupt 'established supply chains and leading to increased costs for consumers'.",
+              "Incorrect. New trade agreements are not mentioned as a direct negative consequence for consumers from the tariffs."
+            ]
+          },
+          {
+            "question": "When Mark Carney 'unequivocally vowed to 'intensify' ongoing trade negotiations,' what does 'unequivocally' imply about his commitment?",
+            "options": [
+              "It suggests he has doubts about the negotiations.",
+              "It means his promise was clear, absolute, and without ambiguity.",
+              "It indicates he will reconsider his stance later."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unequivocally' means without doubt or ambiguity.",
+              "Correct. 'Unequivocally' emphasizes the absolute and clear nature of his promise.",
+              "Incorrect. An unequivocal vow suggests a firm and unchanging commitment in the immediate context."
+            ]
+          },
+          {
+            "question": "What kind of actions might the tariffs risk 'precipitating' from affected countries?",
+            "options": [
+              "Diplomatic apologies",
+              "Retaliatory actions",
+              "Unilateral disarmament"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Diplomatic apologies are not typically precipitated by tariffs; counter-measures are more likely.",
+              "Correct. The news brief states that protectionist measures often 'risk precipitating retaliatory actions'.",
+              "Incorrect. Unilateral disarmament is entirely unrelated to trade disputes and tariffs."
+            ]
+          },
+          {
+            "question": "Which term describes the systems by which goods are produced and delivered, now potentially disrupted by tariffs?",
+            "options": [
+              "Political frameworks",
+              "Established supply chains",
+              "Financial regulations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Political frameworks relate to governance, not directly to goods production and delivery.",
+              "Correct. The news brief mentions that tariffs could disrupt 'established supply chains'.",
+              "Incorrect. Financial regulations relate to economic rules, not the logistics of goods."
+            ]
+          },
+          {
+            "question": "How was the bilateral relationship between the US and Canada characterized before the recent economic pressures?",
+            "options": [
+              "Strained and contentious",
+              "Traditionally robust",
+              "Weak and unstable"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states it 'now faces unprecedented strain', implying it wasn't always so.",
+              "Correct. The news brief describes it as 'The traditionally robust bilateral relationship'.",
+              "Incorrect. 'Weak and unstable' contradicts the description of it being 'traditionally robust'."
+            ]
+          },
+          {
+            "question": "According to the news brief, what will be necessary to resolve the profound disagreements between Washington and Ottawa?",
+            "options": [
+              "Unilateral demands from one side",
+              "Increased economic competition",
+              "Delicate diplomacy and a mutual willingness to compromise"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Unilateral demands are unlikely to foster resolution in a bilateral dispute.",
+              "Incorrect. Increased competition would likely exacerbate, not resolve, the disagreements.",
+              "Correct. The brief explicitly states 'Resolving these profound disagreements will necessitate delicate diplomacy and a mutual willingness to compromise'."
+            ]
+          },
+          {
+            "question": "The phrase 'imposed stringent 50% tariffs' refers to:",
+            "options": [
+              "A voluntary reduction in trade barriers.",
+              "The formal application of strict, high taxes on imported goods.",
+              "A friendly agreement to share resources equally."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Tariffs' are taxes, not a reduction in barriers. 'Stringent' implies strictness.",
+              "Correct. 'Imposed stringent 50% tariffs' means strictly applying a 50% tax on imports.",
+              "Incorrect. Tariffs are taxes meant to restrict trade, not to promote equal sharing."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

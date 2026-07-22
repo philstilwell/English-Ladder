@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-22",
+  "release_iso": "2026-07-22T11:43:24Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Ukrainian drones hit more sites of Russian online retailer Wildberries",
+    "summary": "Logistics hubs belonging to Wildberries in the Krasnodar and Stavropol regions were struck overnight.",
+    "link": "https://www.bbc.co.uk/news/articles/c36de9n4pxpo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Ukrainian Drones Target Russian Online Retailer Wildberries",
+        "overview": "Ukrainian drones recently attacked storage buildings belonging to the Russian online company Wildberries.",
+        "topic": "News of Drone Attacks and Online Retailers",
+        "news_brief_sentences": [
+          "Ukrainian drones flew into Russia.",
+          "They hit some buildings.",
+          "These buildings belong to Wildberries.",
+          "Wildberries is a Russian online retailer.",
+          "The drones struck logistics hubs.",
+          "Logistics hubs help store and send many products.",
+          "This attack happened overnight.",
+          "It was in two regions of Russia.",
+          "One region is called Krasnodar.",
+          "The other region is Stavropol."
+        ],
+        "vocabulary": [
+          {
+            "term": "drones",
+            "part_of_speech": "noun",
+            "definition": "Flying machines that can be controlled from far away without a person inside."
+          },
+          {
+            "term": "hit",
+            "part_of_speech": "verb",
+            "definition": "To strike something or make strong contact with it, often with force."
+          },
+          {
+            "term": "online retailer",
+            "part_of_speech": "noun",
+            "definition": "A business that sells products directly to customers over the internet."
+          },
+          {
+            "term": "logistics hubs",
+            "part_of_speech": "noun",
+            "definition": "Large centers where goods are organized, stored, and prepared for shipping and delivery."
+          },
+          {
+            "term": "overnight",
+            "part_of_speech": "adverb",
+            "definition": "During the entire night, from evening until the next morning."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the Simple Past Tense to talk about actions or events that finished at a specific time in the past. We often add '-ed' to regular verbs, but many common verbs have irregular past tense forms.",
+          "example_quote": "This attack happened overnight."
+        },
+        "quiz": [
+          {
+            "question": "Which company's buildings were hit by drones?",
+            "options": [
+              "Wildberries",
+              "Amazon",
+              "AliExpress"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, Wildberries is the Russian online retailer mentioned in the news.",
+              "No, Amazon was not mentioned in this news story.",
+              "No, AliExpress was not the company in this news."
+            ]
+          },
+          {
+            "question": "What kind of company is Wildberries?",
+            "options": [
+              "An airline",
+              "An online retailer",
+              "A food shop"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Wildberries is not an airline.",
+              "Correct! Wildberries sells things to people using the internet.",
+              "No, Wildberries is not a food shop."
+            ]
+          },
+          {
+            "question": "What is the main purpose of 'logistics hubs'?",
+            "options": [
+              "To make drones",
+              "To store and send products",
+              "To train pilots"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, logistics hubs are not for making drones.",
+              "That's right! They are big places for products to be stored and sent.",
+              "No, training pilots is not the purpose of logistics hubs."
+            ]
+          },
+          {
+            "question": "When did the drone attack happen?",
+            "options": [
+              "In the morning",
+              "Overnight",
+              "In the afternoon"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says it happened at a different time, not the morning.",
+              "Yes, the attack took place during the night.",
+              "No, the attack did not happen in the afternoon."
+            ]
+          },
+          {
+            "question": "What does the word 'hit' mean in this news?",
+            "options": [
+              "To miss something",
+              "To strike something",
+              "To see something"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'hit' means the opposite of to miss.",
+              "Correct! 'Hit' means to make strong contact with something.",
+              "No, 'hit' is not the same as to see."
+            ]
+          },
+          {
+            "question": "What did Ukraine use to attack the buildings?",
+            "options": [
+              "Cars",
+              "Boats",
+              "Drones"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, cars were not mentioned as being used in the attack.",
+              "No, boats were not part of this event.",
+              "That's right! Drones are flying machines used in the attack."
+            ]
+          },
+          {
+            "question": "What does the Simple Past Tense describe?",
+            "options": [
+              "Future actions",
+              "Actions happening now",
+              "Actions finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the Simple Past Tense is not used for the future.",
+              "No, actions happening now use a different verb tense.",
+              "Correct! It describes actions that already happened and are finished."
+            ]
+          },
+          {
+            "question": "In 'This attack happened overnight,' which word is in the Simple Past Tense?",
+            "options": [
+              "This",
+              "Happened",
+              "Overnight"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'This' is not a verb in the past tense.",
+              "Yes, 'happened' shows an action that was completed in the past.",
+              "No, 'overnight' is an adverb, not a past tense verb."
+            ]
+          },
+          {
+            "question": "Which of these is one of the regions mentioned in the news?",
+            "options": [
+              "Moscow",
+              "Krasnodar",
+              "Siberia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Moscow was not specifically mentioned as a target in the news.",
+              "Correct! Krasnodar was one of the two regions where the attack happened.",
+              "No, Siberia is a very large area, but not one of the specific regions mentioned as hit."
+            ]
+          },
+          {
+            "question": "The sentence 'Ukrainian drones flew into Russia' uses which verb tense?",
+            "options": [
+              "Present Continuous",
+              "Simple Past",
+              "Future Simple"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'flew' is not present continuous.",
+              "Yes, 'flew' is the past tense of the verb 'fly'.",
+              "No, this sentence talks about a past action, not a future one."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukrainian Drones Strike Wildberries Logistics Hubs in Southern Russia",
+        "overview": "Ukrainian drones targeted and successfully hit several logistics hubs belonging to the Russian online retailer Wildberries across the Krasnodar and Stavropol regions overnight.",
+        "topic": "Recent Drone Attacks on Commercial Infrastructure",
+        "news_brief_sentences": [
+          "Overnight, Ukrainian drones carried out strikes against several locations in southern Russia.",
+          "The primary targets of these attacks were logistics hubs operated by Wildberries, a major Russian online retailer.",
+          "These crucial facilities, responsible for storing and distributing goods, are located in the Krasnodar and Stavropol regions.",
+          "Reports indicate that the drones successfully hit more sites connected to the company's operations.",
+          "This incident marks a significant escalation, focusing on civilian commercial infrastructure rather than purely military targets.",
+          "Wildberries is a popular online retailer, and its operations have likely been disrupted by these events.",
+          "The strikes highlight the growing reach and capability of Ukrainian drone technology in the ongoing conflict.",
+          "Such attacks can have considerable economic consequences, affecting supply chains and consumer access to goods.",
+          "Authorities in the affected regions are currently assessing the extent of the damage caused by the drone strikes.",
+          "The specific impact on the retailer's ability to deliver products to customers remains to be fully determined."
+        ],
+        "vocabulary": [
+          {
+            "term": "logistics hubs",
+            "part_of_speech": "noun phrase",
+            "definition": "Central points where goods are stored, sorted, and sent out for delivery."
+          },
+          {
+            "term": "hit",
+            "part_of_speech": "verb",
+            "definition": "To make physical contact with something, often causing damage."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise."
+          },
+          {
+            "term": "operations",
+            "part_of_speech": "noun",
+            "definition": "The activities or processes of a business or organization."
+          },
+          {
+            "term": "retailer",
+            "part_of_speech": "noun",
+            "definition": "A person or business that sells goods to the public in relatively small quantities for use or consumption rather than for resale."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Passive",
+          "explanation": "The Present Perfect Passive is used to describe an action that started in the past and has a result or impact in the present, where the focus is on the object that received the action, not who performed it. It is formed with 'has/have been' + the past participle of the main verb.",
+          "example_quote": "Wildberries is a popular online retailer, and its operations have likely been disrupted by these events."
+        },
+        "quiz": [
+          {
+            "question": "What was the main target of the Ukrainian drone attacks mentioned in the news?",
+            "options": [
+              "Military bases",
+              "Logistics hubs of an online retailer",
+              "Government buildings"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The article specifically mentions commercial targets.",
+              "Correct! The drones targeted logistics hubs of Wildberries.",
+              "This is incorrect. The news brief does not mention government buildings."
+            ]
+          },
+          {
+            "question": "Where did these drone strikes against Wildberries logistics hubs take place?",
+            "options": [
+              "Near Moscow",
+              "In Ukraine",
+              "In the Krasnodar and Stavropol regions"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The attacks occurred in southern Russia.",
+              "Incorrect. Ukrainian drones carried out the attacks in Russia.",
+              "Correct! The strikes were reported in Krasnodar and Stavropol."
+            ]
+          },
+          {
+            "question": "What does the term \"logistics hubs\" refer to in the context of the news?",
+            "options": [
+              "Military command centers",
+              "Central points for storing and distributing goods",
+              "Residential areas"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. Logistics hubs are commercial, not military.",
+              "Correct! They are crucial facilities for handling products.",
+              "This is incorrect. The definition refers to commercial facilities."
+            ]
+          },
+          {
+            "question": "The news brief states that the drones \"hit\" more sites. What does \"hit\" mean here?",
+            "options": [
+              "Visited",
+              "Caused damage to by impact",
+              "Bypassed"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The word implies an aggressive action, not a visit.",
+              "Correct! 'Hit' indicates physical contact causing harm or damage.",
+              "Incorrect. 'Hit' means to strike, not to go around."
+            ]
+          },
+          {
+            "question": "Why is the focus on \"commercial infrastructure\" considered a significant escalation?",
+            "options": [
+              "Because it targets military support systems.",
+              "Because it affects civilian economic targets.",
+              "Because it signals the end of the conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While indirectly affecting support, the direct targets were commercial.",
+              "Correct! Striking commercial facilities affects daily life and the economy.",
+              "Incorrect. The news brief does not suggest the conflict is ending."
+            ]
+          },
+          {
+            "question": "What does \"operations\" mean when referring to Wildberries' operations?",
+            "options": [
+              "Surgical procedures",
+              "The business activities of the company",
+              "Medical facilities"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'Operations' in this context is not medical.",
+              "Correct! It refers to how the company functions and conducts its business.",
+              "This is incorrect. This definition is not relevant to a retailer."
+            ]
+          },
+          {
+            "question": "Which of the following best defines a \"retailer\"?",
+            "options": [
+              "A company that manufactures goods.",
+              "A business that sells goods directly to the public.",
+              "A government agency regulating trade."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A retailer sells, but doesn't necessarily manufacture.",
+              "Correct! Wildberries is an example of an online retailer.",
+              "Incorrect. A retailer is a business, not a government body."
+            ]
+          },
+          {
+            "question": "In the sentence, \"its operations have likely been disrupted by these events,\" what does the passive voice highlight?",
+            "options": [
+              "Who caused the disruption.",
+              "The disruption itself and its effect on operations.",
+              "The future plans of Wildberries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While implied, the passive voice emphasizes the result.",
+              "Correct! The passive voice focuses on what happened to the operations.",
+              "Incorrect. The sentence discusses a current impact, not future plans."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Present Perfect Passive?",
+            "options": [
+              "\"Overnight, Ukrainian drones carried out strikes against several locations in southern Russia.\"",
+              "\"Wildberries is a popular online retailer, and its operations have likely been disrupted by these events.\"",
+              "\"The specific impact on the retailer's ability to deliver products to customers remains to be fully determined.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses the past simple active voice.",
+              "Correct! \"have been disrupted\" is an example of the Present Perfect Passive.",
+              "This sentence uses a passive infinitive (\"to be determined\"), not the present perfect passive."
+            ]
+          },
+          {
+            "question": "What potential consequence of these drone attacks is mentioned in the news brief?",
+            "options": [
+              "Increased military presence in Ukraine.",
+              "Economic consequences, affecting supply chains.",
+              "A new peace treaty between the warring nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This might be a broader consequence, but not explicitly stated as a direct one from these attacks.",
+              "Correct! The article mentions potential disruptions to supply chains and consumer goods.",
+              "Incorrect. The news brief does not suggest any peace treaty discussions."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Ukrainian Drone Strikes Target Wildberries Logistics: Escalation of Economic Warfare",
+        "overview": "Ukrainian forces have intensified their drone operations, specifically targeting the Russian online retailer Wildberries' logistics infrastructure in the Krasnodar and Stavropol regions, underscoring a broadening scope of economic disruption tactics.",
+        "topic": "Geopolitical conflict, economic impact, drone warfare, logistics disruption, regional security",
+        "news_brief_sentences": [
+          "Ukrainian drone attacks have reportedly intensified, with recent strikes specifically targeting the logistics infrastructure of Wildberries, a prominent Russian online retailer.",
+          "These operations signify a deliberate expansion of targets beyond military assets, indicating a focus on economic disruption within Russia.",
+          "Facilities described as crucial logistics hubs in the Krasnodar and Stavropol regions were struck overnight, according to initial reports.",
+          "The precise extent of damage to these vital supply chain nodes remains under immediate assessment.",
+          "Such persistent targeting of civilian economic entities underscores a calculated strategy to exert pressure on Russia's war economy.",
+          "Analysts suggest these attacks aim to impede the flow of goods and services, potentially causing widespread inconvenience and financial repercussions for the civilian population.",
+          "The repeated targeting of commercial properties marks a notable escalation in the conflict's scope, moving beyond traditional battlegrounds.",
+          "This development necessitates a reassessment of infrastructure vulnerability within Russia's domestic landscape.",
+          "Furthermore, the selection of Wildberries' facilities highlights the evolving nature of warfare, where civilian commerce can become a strategic target.",
+          "The cumulative effect of these drone strikes aims to undermine public confidence and destabilize everyday life through logistical impediments."
+        ],
+        "vocabulary": [
+          {
+            "term": "logistics infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "The organizational framework and physical facilities, such as transportation, warehousing, and communication networks, required for the complex operation of moving and storing goods."
+          },
+          {
+            "term": "economic disruption",
+            "part_of_speech": "noun phrase",
+            "definition": "A significant disturbance or interruption to the normal functioning of an economy, often leading to negative consequences like reduced productivity or financial instability."
+          },
+          {
+            "term": "struck overnight",
+            "part_of_speech": "verb phrase",
+            "definition": "Attacked or hit during the nighttime hours, often implying a sudden and unexpected assault."
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "Emphasizes, highlights, or draws particular attention to a fact, idea, or situation."
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "noun",
+            "definition": "The unintended and often negative consequences or effects of an action or event, especially when experienced long after."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses (Present Participle)",
+          "explanation": "Participle clauses, especially those beginning with a present participle (-ing form), are used to reduce the length of sentences, provide additional information, or express cause and effect. They often replace a relative clause or a clause of time/reason, making the writing more formal and concise by linking two actions or ideas performed by the same subject.",
+          "example_quote": "These operations signify a deliberate expansion of targets beyond military assets, indicating a focus on economic disruption within Russia."
+        },
+        "quiz": [
+          {
+            "question": "Based on the news brief, what is the primary objective behind Ukraine's recent drone strikes on Wildberries' facilities?",
+            "options": [
+              "To directly damage military supply lines.",
+              "To exert economic pressure and cause disruption within Russia.",
+              "To capture strategic commercial assets."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief clearly states a focus beyond military assets, towards economic disruption.",
+              "The brief explicitly mentions 'economic disruption' and to 'exert pressure on Russia's war economy.'",
+              "There is no indication of an objective to capture assets in the brief."
+            ]
+          },
+          {
+            "question": "Which term best describes the general nature of the Wildberries' sites targeted by the drones?",
+            "options": [
+              "Residential complexes.",
+              "Cultural heritage sites.",
+              "Logistics infrastructure."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief specifies 'logistics infrastructure' and 'logistics hubs,' not residential areas.",
+              "The targets are described as commercial logistics sites, not cultural heritage.",
+              "The news explicitly states 'logistics infrastructure' and 'logistics hubs' were targeted."
+            ]
+          },
+          {
+            "question": "According to the brief, what is a likely consequence of the persistent targeting of civilian economic entities?",
+            "options": [
+              "A swift resolution of the conflict.",
+              "Increased international trade with Russia.",
+              "Widespread inconvenience and financial repercussions for civilians."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief implies prolonged pressure, not a swift resolution.",
+              "There is no mention of increased trade; rather, the focus is on disruption.",
+              "The brief explicitly states 'widespread inconvenience and financial repercussions for the civilian population.'"
+            ]
+          },
+          {
+            "question": "What does the phrase 'struck overnight' imply about the drone attacks?",
+            "options": [
+              "They occurred during daylight hours.",
+              "They were sudden and happened during the night.",
+              "They were meticulously planned over several days."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Overnight' specifically refers to the night-time.",
+              "The phrase 'struck overnight' denotes an attack that occurred during the night, often implying a degree of surprise or timing.",
+              "While they may be planned, the phrase itself doesn't directly convey the planning duration."
+            ]
+          },
+          {
+            "question": "The repeated targeting of commercial properties indicates what about the conflict's scope?",
+            "options": [
+              "A reduction in military engagements.",
+              "A notable escalation.",
+              "A focus on humanitarian aid."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions an 'escalation,' not a reduction in engagements.",
+              "The brief states, 'The repeated targeting of commercial properties marks a notable escalation in the conflict's scope.'",
+              "Humanitarian aid is not the focus of these drone attacks."
+            ]
+          },
+          {
+            "question": "In the sentence, 'Such persistent targeting of civilian economic entities underscores a calculated strategy,' what is the function of the word 'underscores'?",
+            "options": [
+              "It questions the strategy's validity.",
+              "It diminishes the importance of the strategy.",
+              "It emphasizes or highlights the strategy."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Underscores' means to emphasize, not to question.",
+              "'Underscores' means to emphasize, not diminish.",
+              "'Underscores' in this context means to emphasize or highlight the calculated nature of the strategy."
+            ]
+          },
+          {
+            "question": "Which of the following best defines 'economic disruption' as used in the news brief?",
+            "options": [
+              "A boom in economic activity and growth.",
+              "A temporary halt to all financial transactions.",
+              "A significant disturbance affecting normal economic operations."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Economic disruption implies negative effects, not a boom.",
+              "While it can involve halts, it's more broadly a 'significant disturbance,' not necessarily a complete cessation of all transactions.",
+              "The definition provided for 'economic disruption' refers to a significant disturbance to normal economic functioning."
+            ]
+          },
+          {
+            "question": "The use of the participle clause 'indicating a focus on economic disruption' in the sentence 'These operations signify a deliberate expansion of targets beyond military assets, indicating a focus on economic disruption within Russia' primarily serves to:",
+            "options": [
+              "Introduce a contrasting idea.",
+              "Provide additional information about the operations' purpose.",
+              "Suggest a chronological sequence of events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "It's providing more detail, not a contrast.",
+              "The participle clause clarifies the result or purpose of the expansion of targets, adding explanatory information concisely.",
+              "While events happen chronologically, the participle clause's primary role here is to elaborate on the significance, not merely sequence."
+            ]
+          },
+          {
+            "question": "What is a potential long-term effect of these drone strikes, concerning 'public confidence and everyday life'?",
+            "options": [
+              "A boost in consumer spending.",
+              "A destabilization of everyday life through logistical impediments.",
+              "Increased investment in domestic infrastructure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests undermining confidence, not boosting spending.",
+              "The brief states the aim is to 'undermine public confidence and destabilize everyday life through logistical impediments.'",
+              "While a reassessment of vulnerability is mentioned, increased investment is not explicitly stated as an aim or immediate effect related to undermining confidence."
+            ]
+          },
+          {
+            "question": "In the context of the news, what are 'repercussions' likely to be for the civilian population?",
+            "options": [
+              "Positive outcomes and benefits.",
+              "Unintended and negative consequences.",
+              "Clear and predictable direct impacts."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief links repercussions with 'widespread inconvenience and financial' issues, which are negative.",
+              "The definition of 'repercussions' in the vocabulary section refers to unintended and often negative consequences.",
+              "Repercussions often refer to broader, sometimes less predictable, consequences, not just direct impacts."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

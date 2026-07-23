@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-23",
+  "release_iso": "2026-07-23T11:46:35Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US signs landmark nuclear deal with Saudi Arabia",
+    "summary": "The US Department of Energy says the \"peaceful\" co-operation agreement will give US firms \"great access\" to the Saudi nuclear energy programme.",
+    "link": "https://www.bbc.co.uk/news/articles/cj03r59z73po?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US and Saudi Arabia Make Nuclear Energy Agreement",
+        "overview": "The United States and Saudi Arabia signed an agreement for peaceful nuclear energy use.",
+        "topic": "International Cooperation on Nuclear Energy",
+        "news_brief_sentences": [
+          "The United States signed an important paper.",
+          "This is a nuclear deal with Saudi Arabia.",
+          "It is a new agreement for both countries.",
+          "The US Department of Energy says this is important.",
+          "They said it is for \"peaceful\" co-operation.",
+          "US companies can now have \"great access\" to Saudi Arabia.",
+          "They can join Saudi Arabia's nuclear energy program.",
+          "This program helps Saudi Arabia make power.",
+          "The agreement will help US companies too.",
+          "Both countries will work together on this project."
+        ],
+        "vocabulary": [
+          {
+            "term": "nuclear deal",
+            "part_of_speech": "noun",
+            "definition": "An official agreement about how to use nuclear power safely or for peaceful reasons."
+          },
+          {
+            "term": "agreement",
+            "part_of_speech": "noun",
+            "definition": "A formal decision or promise made by two or more people or groups to do something."
+          },
+          {
+            "term": "co-operation",
+            "part_of_speech": "noun",
+            "definition": "The act of working together with others to achieve a shared goal or to help each other."
+          },
+          {
+            "term": "access",
+            "part_of_speech": "noun",
+            "definition": "The ability or right to enter, use, or get something, like a place or an opportunity."
+          },
+          {
+            "term": "nuclear energy",
+            "part_of_speech": "noun",
+            "definition": "Power that is created when atoms are split apart, often used to produce electricity."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense for facts",
+          "explanation": "We use the Simple Present tense to talk about things that are always true or happen regularly. It is used for facts and general statements that do not change.",
+          "example_quote": "The US Department of Energy says this is important."
+        },
+        "quiz": [
+          {
+            "question": "What kind of agreement did the US sign with Saudi Arabia?",
+            "options": [
+              "A travel deal",
+              "A nuclear deal",
+              "A food deal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief talks about energy, not travel.",
+              "Yes, the US signed a 'nuclear deal' with Saudi Arabia for energy.",
+              "No, the agreement is about power, not food supplies."
+            ]
+          },
+          {
+            "question": "What does 'nuclear deal' mean in this news?",
+            "options": [
+              "A small party",
+              "An official agreement about nuclear power",
+              "A type of food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a 'nuclear deal' is a serious international agreement.",
+              "Correct! It is an official agreement about using nuclear power.",
+              "No, 'nuclear deal' is about energy, not something to eat."
+            ]
+          },
+          {
+            "question": "Which country signed the agreement with the US?",
+            "options": [
+              "Canada",
+              "Saudi Arabia",
+              "Mexico"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief mentions a country in the Middle East.",
+              "Yes, the US signed the agreement with Saudi Arabia.",
+              "The news brief talks about a different country."
+            ]
+          },
+          {
+            "question": "What is the new 'agreement' about?",
+            "options": [
+              "Building new cars",
+              "Learning a new language",
+              "Peaceful nuclear energy"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the agreement is about power generation.",
+              "This agreement is not about education.",
+              "Correct! The agreement is about peaceful nuclear energy co-operation."
+            ]
+          },
+          {
+            "question": "What does the US Department of Energy say about the agreement?",
+            "options": [
+              "It is very old",
+              "It is not important",
+              "It is important"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief describes it as new.",
+              "No, they said it is important for both countries.",
+              "Yes, the US Department of Energy says this agreement is important."
+            ]
+          },
+          {
+            "question": "What does 'co-operation' mean in the news brief?",
+            "options": [
+              "Fighting with others",
+              "Working together",
+              "Staying alone"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'co-operation' is about working in peace.",
+              "That's right! 'Co-operation' means working together with others.",
+              "No, it means doing things with other people or groups."
+            ]
+          },
+          {
+            "question": "Who will get 'great access' to Saudi Arabia's nuclear energy program?",
+            "options": [
+              "US companies",
+              "Students",
+              "Tourists"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! US companies will have great access to the program.",
+              "No, the agreement is for businesses, not students.",
+              "No, this deal is not about tourism."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'access' in this story?",
+            "options": [
+              "A small path",
+              "The ability to enter or use something",
+              "A type of food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'access' here means more than just a physical path.",
+              "Yes, 'access' means the right or ability to enter or use something, like a program.",
+              "No, 'access' is not related to food in this context."
+            ]
+          },
+          {
+            "question": "What does Saudi Arabia's 'nuclear energy' program help to make?",
+            "options": [
+              "New cars",
+              "Electric power",
+              "Books"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, nuclear energy is not used for making cars.",
+              "Exactly! Nuclear energy programs help to make electric power.",
+              "No, this program is about energy, not making books."
+            ]
+          },
+          {
+            "question": "In the sentence 'The US Department of Energy says this is important,' what tense is the word 'says'?",
+            "options": [
+              "Simple Past",
+              "Simple Present",
+              "Future Tense"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'said' is the Simple Past form. 'Says' is different.",
+              "Yes, 'says' is in the Simple Present tense, used for facts or general truths.",
+              "No, 'will say' would be the Future Tense."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US and Saudi Arabia Reach Landmark Nuclear Co-operation Agreement",
+        "overview": "The United States and Saudi Arabia have signed a significant agreement for peaceful nuclear co-operation, granting US companies considerable access to Saudi Arabia's nuclear energy development.",
+        "topic": "International Relations, Nuclear Energy, Trade",
+        "news_brief_sentences": [
+          "The United States and Saudi Arabia have recently signed a landmark nuclear deal.",
+          "This significant agreement focuses on peaceful nuclear co-operation between the two nations.",
+          "The US Department of Energy announced the details of this important pact.",
+          "Officials stated that the deal aims to support Saudi Arabia's development of nuclear energy.",
+          "Crucially, it will provide US firms with significant access to the Saudi nuclear energy programme.",
+          "This level of engagement suggests a strong commitment to energy collaboration.",
+          "The pact highlights a strategic partnership in a critical technological sector.",
+          "Experts believe this could boost American presence in the Saudi energy market.",
+          "Both countries anticipate long-term benefits from this joint initiative.",
+          "The arrangement is seen as a step towards diversifying Saudi Arabia's energy sources."
+        ],
+        "vocabulary": [
+          {
+            "term": "landmark",
+            "part_of_speech": "adjective",
+            "definition": "an important or historic event or stage that marks a turning point"
+          },
+          {
+            "term": "co-operation",
+            "part_of_speech": "noun",
+            "definition": "the process of working together to achieve a common goal"
+          },
+          {
+            "term": "agreement",
+            "part_of_speech": "noun",
+            "definition": "a formal decision or promise made between two or more people, groups, or countries"
+          },
+          {
+            "term": "access",
+            "part_of_speech": "noun",
+            "definition": "the opportunity or right to use or approach something"
+          },
+          {
+            "term": "programme",
+            "part_of_speech": "noun",
+            "definition": "a plan of things to be done, especially in a series or sequence"
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "We use the passive voice when the focus is on the action itself and the object of the action, rather than the subject performing the action. It's often used when the doer of the action is unknown, unimportant, or obvious from the context, or when we want to sound more formal. The structure is usually \"to be\" + past participle.",
+          "example_quote": "The arrangement is seen as a step towards diversifying Saudi Arabia's energy sources."
+        },
+        "quiz": [
+          {
+            "question": "What is the main focus of the nuclear deal between the US and Saudi Arabia?",
+            "options": [
+              "Military defense strategies",
+              "Peaceful energy co-operation",
+              "Space exploration initiatives"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article mentions energy, not military defense.",
+              "Correct! The deal is specifically for \"peaceful\" nuclear co-operation.",
+              "Incorrect. Space exploration is not mentioned in the article."
+            ]
+          },
+          {
+            "question": "What does the term \"landmark\" mean in the context of this deal?",
+            "options": [
+              "A geographical border",
+              "A significant and important event",
+              "A small, temporary agreement"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Landmark\" here refers to importance, not a physical border.",
+              "Exactly! A \"landmark\" deal is a very important and notable one.",
+              "Incorrect. The deal is described as \"landmark,\" meaning it is significant and not small or temporary."
+            ]
+          },
+          {
+            "question": "Which US government department announced the details of the agreement?",
+            "options": [
+              "The Department of State",
+              "The Department of Energy",
+              "The Department of Defense"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The Department of Energy, not State, made the announcement.",
+              "Correct! The US Department of Energy was responsible for the announcement.",
+              "Incorrect. The Department of Energy announced the deal, not Defense."
+            ]
+          },
+          {
+            "question": "What will US firms gain from this co-operation agreement?",
+            "options": [
+              "Exclusive military contracts",
+              "Great access to Saudi oil reserves",
+              "Significant access to the Saudi nuclear energy programme"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The deal is about nuclear energy, not military contracts.",
+              "Incorrect. The focus is on nuclear energy, not oil reserves.",
+              "That's right! US firms will have \"great access\" to the nuclear energy programme."
+            ]
+          },
+          {
+            "question": "In the sentence, \"The arrangement is seen as a step towards diversifying Saudi Arabia's energy sources,\" which word is the past participle in the passive voice structure?",
+            "options": [
+              "arrangement",
+              "seen",
+              "diversifying"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Arrangement\" is the subject of the passive sentence.",
+              "Yes, \"seen\" is the past participle of the verb \"to see,\" forming the passive voice.",
+              "Incorrect. \"Diversifying\" is a present participle, part of a prepositional phrase, not the main verb in the passive construction."
+            ]
+          },
+          {
+            "question": "What is the main purpose of \"co-operation\" as defined in the lesson?",
+            "options": [
+              "To compete with others",
+              "To work together for a common goal",
+              "To establish a monopoly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Co-operation is about working together, not competing.",
+              "Correct! Co-operation means working together.",
+              "Incorrect. Co-operation focuses on shared goals, not creating a monopoly."
+            ]
+          },
+          {
+            "question": "What kind of partnership does the pact highlight between the US and Saudi Arabia?",
+            "options": [
+              "A casual arrangement",
+              "A temporary understanding",
+              "A strategic partnership"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The term \"strategic partnership\" indicates it's more than casual.",
+              "Incorrect. The deal is described as \"landmark\" and \"strategic,\" implying it's not temporary.",
+              "Indeed, the news brief states it highlights a strategic partnership."
+            ]
+          },
+          {
+            "question": "According to the news brief, what do both countries anticipate from this joint initiative?",
+            "options": [
+              "Immediate disagreements",
+              "Long-term benefits",
+              "Financial losses"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text suggests a positive outlook, not disagreements.",
+              "Exactly! Both countries anticipate long-term benefits from this initiative.",
+              "Incorrect. The expectation is \"long-term benefits,\" not financial losses."
+            ]
+          },
+          {
+            "question": "Why is Saudi Arabia interested in this nuclear energy programme?",
+            "options": [
+              "To develop nuclear weapons",
+              "To diversify its energy sources",
+              "To export nuclear technology"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The deal is for \"peaceful\" co-operation, not weapons development.",
+              "That's right! The arrangement is seen as a step towards diversifying Saudi Arabia's energy sources.",
+              "Incorrect. The article mentions diversifying energy sources, not exporting technology."
+            ]
+          },
+          {
+            "question": "Which statement best describes the role of the subject in a passive voice sentence?",
+            "options": [
+              "The subject performs the action.",
+              "The subject receives the action.",
+              "The subject is always a person."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. That describes the active voice, where the subject performs the action.",
+              "Precisely! In the passive voice, the subject receives or is affected by the action.",
+              "Incorrect. The subject can be a thing or an idea, not just a person."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US and Saudi Arabia Forge Landmark Nuclear Energy Accord",
+        "overview": "The United States and Saudi Arabia have finalized a significant agreement for peaceful nuclear cooperation, granting American firms enhanced access to the Kingdom's emerging nuclear energy sector and underscoring a commitment to non-proliferation.",
+        "topic": "International Relations, Nuclear Energy, US-Saudi Arabia Diplomacy",
+        "news_brief_sentences": [
+          "The United States and Saudi Arabia have officially formalized a landmark agreement on nuclear energy cooperation.",
+          "This bilateral cooperation seeks to facilitate the peaceful development of nuclear power within the Kingdom.",
+          "The US Department of Energy emphasized that this accord will significantly enhance American firms' unfettered access to Saudi Arabia's burgeoning nuclear energy programme.",
+          "Such an arrangement is poised to bolster economic ties and foster technological exchange between the two nations.",
+          "A critical facet of the deal involves robust provisions to safeguard against proliferation, ensuring adherence to international non-proliferation standards.",
+          "Observers note the agreement represents a strategic imperative for both countries amidst evolving geopolitical landscapes.",
+          "The initiative aims to support Saudi Arabia's ambitious Vision 2030, diversifying its energy portfolio beyond hydrocarbons.",
+          "Detractors, however, raise concerns regarding the transparency and long-term implications of sharing advanced nuclear technology.",
+          "Despite these apprehensions, proponents argue that strict oversight mechanisms are in place to mitigate potential risks.",
+          "The pact signifies a deepening of engagement, potentially reshaping energy security dynamics in the Middle East."
+        ],
+        "vocabulary": [
+          {
+            "term": "landmark agreement",
+            "part_of_speech": "noun phrase",
+            "definition": "A significant and influential formal decision or treaty that marks an important stage or turning point in relations or a field."
+          },
+          {
+            "term": "bilateral cooperation",
+            "part_of_speech": "noun phrase",
+            "definition": "Collaboration or joint action between two countries, typically involving mutual benefits or shared objectives."
+          },
+          {
+            "term": "unfettered access",
+            "part_of_speech": "noun phrase",
+            "definition": "Complete and unrestricted freedom or opportunity to approach, enter, or use something without any limitations or controls."
+          },
+          {
+            "term": "bolster economic ties",
+            "part_of_speech": "verb phrase",
+            "definition": "To strengthen, support, or improve the financial and commercial relationships between entities, usually nations."
+          },
+          {
+            "term": "safeguard against proliferation",
+            "part_of_speech": "verb phrase",
+            "definition": "To protect or take measures to prevent the rapid increase or spread of something, particularly nuclear weapons or technology."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Clauses for Additional Information",
+          "explanation": "Participial clauses, often introduced by a present participle (-ing form of a verb) or a past participle (-ed form), add supplementary information to the main clause. They can describe a consequence, a concurrent action, or provide further detail, offering a more concise and formal way to convey complex ideas than separate sentences or full clauses joined by conjunctions. They help to create a more sophisticated sentence structure by showing a relationship of cause, effect, or simultaneity.",
+          "example_quote": "A critical facet of the deal involves robust provisions to safeguard against proliferation, ensuring adherence to international non-proliferation standards."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary objective of the nuclear energy agreement between the US and Saudi Arabia?",
+            "options": [
+              "To establish a joint military nuclear programme.",
+              "To facilitate Saudi Arabia's peaceful nuclear power development.",
+              "To exclusively export American nuclear technology to Saudi Arabia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The agreement explicitly focuses on peaceful cooperation, not military applications.",
+              "Correct. The primary goal is to aid Saudi Arabia in developing nuclear power for peaceful purposes.",
+              "Incorrect. While it grants US firms access, the overarching objective is the peaceful development of nuclear power within the Kingdom."
+            ]
+          },
+          {
+            "question": "Which phrase best defines a 'landmark agreement' in the context of the news brief?",
+            "options": [
+              "A routine bureaucratic formality.",
+              "A significant and influential treaty.",
+              "A preliminary discussion document."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'landmark agreement' implies historical importance, not routine status.",
+              "Correct. A 'landmark agreement' is a highly significant and influential formal accord.",
+              "Incorrect. It is described as formalized and influential, not merely preliminary."
+            ]
+          },
+          {
+            "question": "The term 'bilateral cooperation' implies a partnership between how many parties?",
+            "options": [
+              "More than two countries.",
+              "A single global organization.",
+              "Two countries or entities."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Bilateral' specifically refers to two parties, not multiple.",
+              "Incorrect. 'Bilateral' refers to an agreement between two distinct entities, not a single global body.",
+              "Correct. 'Bilateral' refers to relationships, agreements, or cooperation involving two parties, in this case, two nations."
+            ]
+          },
+          {
+            "question": "What does 'unfettered access' mean for American firms regarding Saudi Arabia's nuclear programme?",
+            "options": [
+              "Limited and restricted entry.",
+              "Complete and unrestricted opportunity.",
+              "Conditional access based on specific approvals."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unfettered' means without restrictions, the opposite of limited.",
+              "Correct. 'Unfettered access' signifies full and unrestricted opportunity without limitations.",
+              "Incorrect. The term 'unfettered' suggests freedom from conditions, implying open access."
+            ]
+          },
+          {
+            "question": "The agreement aims to 'bolster economic ties'. What is the most accurate interpretation of this phrase?",
+            "options": [
+              "To weaken economic connections.",
+              "To strengthen and improve financial relationships.",
+              "To sever existing trade agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Bolster' means to strengthen, not to weaken.",
+              "Correct. To 'bolster economic ties' means to fortify and enhance financial and commercial links.",
+              "Incorrect. The aim is to strengthen, not to sever or break off, economic relationships."
+            ]
+          },
+          {
+            "question": "What is the primary purpose of measures to 'safeguard against proliferation' in the nuclear deal?",
+            "options": [
+              "To encourage the widespread adoption of nuclear weapons.",
+              "To prevent the spread of nuclear weapons technology.",
+              "To limit commercial nuclear energy production."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Safeguarding against proliferation directly aims to prevent, not encourage, the spread of such technology.",
+              "Correct. This phrase refers to preventing the uncontrolled spread of nuclear weapons or technology.",
+              "Incorrect. While related to nuclear energy, the specific focus is on preventing proliferation, not limiting peaceful production."
+            ]
+          },
+          {
+            "question": "In the sentence 'A critical facet of the deal involves robust provisions to safeguard against proliferation, ensuring adherence to international non-proliferation standards,' what is the function of the participial clause 'ensuring adherence...?'",
+            "options": [
+              "It acts as a primary subject of the sentence.",
+              "It introduces a condition for the main clause.",
+              "It provides additional information about the provisions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The primary subject is 'A critical facet'.",
+              "Incorrect. While it relates to the provisions, it describes an outcome or consequence, not a condition.",
+              "Correct. The participial clause clarifies the result or detail associated with the 'robust provisions'."
+            ]
+          },
+          {
+            "question": "According to the news brief, what Saudi Arabian initiative does the nuclear deal support?",
+            "options": [
+              "The Kingdom's industrial diversification plan.",
+              "Vision 2030, aimed at diversifying its energy portfolio.",
+              "A military alliance to enhance regional security."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While it might involve industrial diversification, Vision 2030 is the specific initiative mentioned.",
+              "Correct. The brief explicitly states the deal supports Vision 2030 and its energy diversification goals.",
+              "Incorrect. The deal is framed as peaceful cooperation, not a military alliance."
+            ]
+          },
+          {
+            "question": "What is one concern raised by detractors of the nuclear deal?",
+            "options": [
+              "The slow pace of technological exchange.",
+              "Lack of transparency and long-term implications of sharing technology.",
+              "Insufficient access for American firms."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention the pace of exchange as a detractor's concern.",
+              "Correct. Detractors specifically voice concerns about transparency and the long-term impact of shared nuclear technology.",
+              "Incorrect. The brief states US firms gain 'unfettered access', which would not be a detractor's concern."
+            ]
+          },
+          {
+            "question": "How might this pact affect energy security dynamics in the Middle East?",
+            "options": [
+              "It is expected to significantly reduce oil production.",
+              "It signifies a deepening of engagement, potentially reshaping dynamics.",
+              "It will lead to immediate widespread nuclear power adoption across the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not indicate it will significantly reduce oil production.",
+              "Correct. The pact is described as deepening engagement and potentially reshaping energy security dynamics.",
+              "Incorrect. While it signifies a shift, immediate widespread adoption is not stated as a direct or immediate outcome."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

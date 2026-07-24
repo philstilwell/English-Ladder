@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-24",
+  "release_iso": "2026-07-24T11:37:21Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Tens of thousands evacuated from French tourist spot as wildfires spread",
+    "summary": "The fire has raged in the region for several days with officials now ordering the evacuation of the entire Cap Ferret peninsula.",
+    "link": "https://www.bbc.co.uk/news/articles/cdx82rl5g0do?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Wildfires Spread in France: Thousands Evacuated",
+        "overview": "Thousands of people left a French tourist area because of big fires.",
+        "topic": "Wildfires and Evacuations in France",
+        "news_brief_sentences": [
+          "Big fires are burning in France.",
+          "These are called wildfires.",
+          "The wildfires started several days ago.",
+          "They spread quickly in the area.",
+          "This area is a popular tourist spot.",
+          "Many people were on holiday there.",
+          "Officials told people to leave.",
+          "They ordered everyone to evacuate.",
+          "Tens of thousands of people left the area.",
+          "The fires are still a big danger."
+        ],
+        "vocabulary": [
+          {
+            "term": "wildfires",
+            "part_of_speech": "noun",
+            "definition": "Large, uncontrolled fires that burn in natural areas, often in forests or dry fields."
+          },
+          {
+            "term": "spread",
+            "part_of_speech": "verb",
+            "definition": "To move or extend over a larger area, or to become wider or more common."
+          },
+          {
+            "term": "tourist spot",
+            "part_of_speech": "noun phrase",
+            "definition": "A place that many people visit for holidays, recreation, or sightseeing."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who have an important position or authority, especially in a government or organization."
+          },
+          {
+            "term": "evacuate",
+            "part_of_speech": "verb",
+            "definition": "To leave a dangerous place quickly and safely, often because of an emergency like a fire or flood."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the Simple Past tense to talk about actions that started and finished at a specific time in the past. We often add '-ed' to regular verbs, but many common verbs have irregular forms, like 'tell' becoming 'told'.",
+          "example_quote": "Officials told people to leave."
+        },
+        "quiz": [
+          {
+            "question": "What is burning in France?",
+            "options": [
+              "Old houses",
+              "Wildfires",
+              "Rubbish piles"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says that wildfires are burning, not old houses.",
+              "Correct! Large wildfires are burning in a part of France.",
+              "Not rubbish piles, the news is about natural wildfires."
+            ]
+          },
+          {
+            "question": "Where are the fires happening?",
+            "options": [
+              "In a big city center",
+              "In a popular tourist spot",
+              "In a factory area"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the fires are in a different kind of place, not a city center.",
+              "Yes, the fires are in an area popular with people on holiday.",
+              "The news says the fires are in a tourist spot, not a factory area."
+            ]
+          },
+          {
+            "question": "What does 'wildfires' mean?",
+            "options": [
+              "Small kitchen fires",
+              "Controlled campfires",
+              "Large fires in nature"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, wildfires are much bigger than small kitchen fires.",
+              "Wildfires are not controlled; they are dangerous.",
+              "Correct! Wildfires are big, uncontrolled fires that burn in natural environments."
+            ]
+          },
+          {
+            "question": "How long have the wildfires been burning?",
+            "options": [
+              "A few hours",
+              "One day",
+              "Several days"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news says they started more than just a few hours ago.",
+              "The fires have been burning for longer than one day.",
+              "That's right, the wildfires started many days ago and are still active."
+            ]
+          },
+          {
+            "question": "What does it mean to 'evacuate'?",
+            "options": [
+              "To build a house",
+              "To leave a dangerous place",
+              "To plant trees"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'evacuate' means to move away from danger, not to build something.",
+              "Yes, to evacuate means to quickly leave an unsafe area to find safety.",
+              "To evacuate is not about planting trees; it's about leaving for safety."
+            ]
+          },
+          {
+            "question": "Who told people to leave the area?",
+            "options": [
+              "Other tourists",
+              "Local children",
+              "Officials"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, tourists usually follow orders, they don't give them.",
+              "Local children do not have the authority to tell people to leave.",
+              "Correct! People in authority, called officials, gave the order to leave."
+            ]
+          },
+          {
+            "question": "In the sentence 'Officials told people to leave,' which word is in the Simple Past tense?",
+            "options": [
+              "Officials",
+              "told",
+              "leave"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'Officials' is a noun, not a verb in the past tense.",
+              "That's right! 'Told' is the past tense form of the verb 'to tell'.",
+              "No, 'leave' is the base form of the verb, not the past tense."
+            ]
+          },
+          {
+            "question": "What did tens of thousands of people do?",
+            "options": [
+              "They went swimming",
+              "They stayed in their hotels",
+              "They left the area"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, people were leaving for safety, not swimming.",
+              "Staying in hotels would be dangerous; they had to leave.",
+              "Correct! A very large number of people moved away from the danger."
+            ]
+          },
+          {
+            "question": "If wildfires 'spread' quickly, what are they doing?",
+            "options": [
+              "Getting smaller",
+              "Moving to a larger area",
+              "Stopping completely"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'spread' means to get bigger, not smaller.",
+              "Yes, when fires spread, they cover more land and move to new places.",
+              "If fires spread, they are definitely not stopping."
+            ]
+          },
+          {
+            "question": "In the quote 'Officials told people to leave,' when did the officials tell the people?",
+            "options": [
+              "They are telling now",
+              "They will tell tomorrow",
+              "They told in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'told' is a past tense verb, so the action is not happening now.",
+              "The verb 'told' means it happened already, not in the future.",
+              "Correct! The Simple Past tense verb 'told' shows the action happened before now."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "French Tourist Spot Evacuated as Wildfires Spread Rapidly",
+        "overview": "Wildfires in France have led to the evacuation of tens of thousands of people from the popular Cap Ferret peninsula, a significant tourist destination.",
+        "topic": "Wildfires, Emergency Evacuations, French Tourism, Environmental Disasters",
+        "news_brief_sentences": [
+          "Tens of thousands of people were evacuated from the Cap Ferret peninsula in France due to rapidly spreading wildfires.",
+          "The fire has raged across the region for several days, causing extensive damage and widespread concern.",
+          "Officials have recently confirmed the urgent need to move both residents and tourists to safety.",
+          "They are ordering the complete evacuation of the entire peninsula to ensure no one remains in harm's way.",
+          "This French tourist spot is well-known for its beautiful beaches and traditionally attracts many visitors during summer.",
+          "Emergency services are working tirelessly to contain the blaze and protect any remaining property from destruction.",
+          "The scale of these evacuations underscores the serious impact of the extreme summer heat and dry conditions on the region.",
+          "Local authorities are advising everyone to follow instructions carefully and remain calm during this challenging time.",
+          "The rapid spread of the fire has made containment particularly difficult for the dedicated teams of firefighters.",
+          "Many families had to leave their holidays abruptly, hoping to return when the danger has completely passed."
+        ],
+        "vocabulary": [
+          {
+            "term": "evacuated",
+            "part_of_speech": "verb",
+            "definition": "To move people from a dangerous place to a safer one, especially in an emergency."
+          },
+          {
+            "term": "raged",
+            "part_of_speech": "verb",
+            "definition": "Burned fiercely and violently, often in an uncontrolled or very intense manner, like a strong fire or storm."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority or responsibility in an organization, government, or public body."
+          },
+          {
+            "term": "ordering",
+            "part_of_speech": "verb",
+            "definition": "Giving an authoritative command or instruction to do something, often with formal power behind the directive."
+          },
+          {
+            "term": "peninsula",
+            "part_of_speech": "noun",
+            "definition": "A piece of land almost surrounded by water but connected to the mainland on one side, typically extending into the sea or a lake."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "We use the passive voice when the action is more important than the person or thing doing it, or when we don't know or don't want to say who performed the action. It is formed with a form of 'to be' (e.g., is, are, was, were) plus the past participle of the main verb. This construction shifts the focus from the doer to the receiver of the action.",
+          "example_quote": "Tens of thousands of people were evacuated from the Cap Ferret peninsula in France due to rapidly spreading wildfires."
+        },
+        "quiz": [
+          {
+            "question": "What is the main reason for the large-scale evacuations in the Cap Ferret peninsula?",
+            "options": [
+              "A severe flood warning",
+              "Rapidly spreading wildfires",
+              "An unexpected volcanic eruption"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief mentions fires, not floods, as the cause.",
+              "Correct! The primary cause for the evacuations is the uncontrolled wildfires.",
+              "Incorrect. The news brief does not mention any volcanic activity."
+            ]
+          },
+          {
+            "question": "The Cap Ferret region is described as a 'French tourist spot.' What does this imply?",
+            "options": [
+              "It is a location mainly for industrial activities.",
+              "It is a popular place for visitors and holidays.",
+              "It is primarily a residential area with no attractions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'tourist spot' indicates recreational purposes, not industrial.",
+              "That's right! A 'tourist spot' suggests it's a popular destination for travelers and vacations.",
+              "Incorrect. While people live there, the term highlights its appeal to non-residents."
+            ]
+          },
+          {
+            "question": "What does it mean if a fire has 'raged' for several days?",
+            "options": [
+              "It has been burning weakly and inconsistently.",
+              "It has been burning fiercely and violently.",
+              "It has been completely under control by firefighters."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Raged' implies intense burning, not weak.",
+              "Correct! 'Raged' indicates the fire has been burning strongly and destructively.",
+              "Incorrect. If a fire has 'raged,' it suggests it was not under control."
+            ]
+          },
+          {
+            "question": "Who is 'ordering' the complete evacuation of the Cap Ferret peninsula?",
+            "options": [
+              "Local residents themselves",
+              "Government officials",
+              "International relief organizations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While residents comply, they are not the ones giving the command.",
+              "Correct! The news states that 'officials' are responsible for issuing the evacuation orders.",
+              "Incorrect. The authority for local evacuations typically lies with government officials."
+            ]
+          },
+          {
+            "question": "What is a 'peninsula'?",
+            "options": [
+              "A large body of saltwater completely surrounded by land.",
+              "A piece of land entirely surrounded by water.",
+              "A piece of land almost surrounded by water but connected to the mainland."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This describes a lake or sea, not a landform.",
+              "Incorrect. This describes an island, which is different from a peninsula.",
+              "Correct! A peninsula is land connected to a larger landmass on one side and surrounded by water on the others."
+            ]
+          },
+          {
+            "question": "In the sentence, 'Tens of thousands of people were evacuated...', which grammatical voice is used?",
+            "options": [
+              "The active voice",
+              "The passive voice",
+              "The imperative voice"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The active voice would focus on who did the evacuating.",
+              "Correct! The construction 'were evacuated' (form of 'to be' + past participle) indicates the passive voice.",
+              "Incorrect. The imperative voice is used for commands, which is not the case here."
+            ]
+          },
+          {
+            "question": "Why might news reports use the passive voice, as seen in the example quote?",
+            "options": [
+              "To highlight the specific individuals who performed the action.",
+              "To focus on the action and what happened, rather than who did it.",
+              "To create a sense of personal responsibility among readers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice often de-emphasizes the actor.",
+              "Exactly! It shifts attention to the event itself and its impact.",
+              "Incorrect. While news can evoke feelings, this is not the grammatical purpose of the passive voice."
+            ]
+          },
+          {
+            "question": "The news brief mentions the evacuations 'underscore the serious impact.' What does 'underscore' mean in this context?",
+            "options": [
+              "To make something less important.",
+              "To highlight or emphasize something.",
+              "To draw a line beneath a word."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Underscore' means to stress, not diminish, importance.",
+              "Correct! It means the evacuations strongly emphasize the severe effects of the conditions.",
+              "Incorrect. While literally true, in this context, it refers to emphasizing an idea."
+            ]
+          },
+          {
+            "question": "How long had the wildfires been active in the region before the large-scale evacuations?",
+            "options": [
+              "For several hours",
+              "For several days",
+              "For several weeks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies a longer period than just a few hours.",
+              "That's right! The fire had 'raged across the region for several days.'",
+              "Incorrect. The duration mentioned in the news is days, not weeks."
+            ]
+          },
+          {
+            "question": "What is the general feeling or atmosphere conveyed by the news report about the wildfires?",
+            "options": [
+              "A sense of relaxation and leisure",
+              "A mood of urgency and seriousness",
+              "An atmosphere of celebration and joy"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The situation described is far from relaxing, involving an emergency.",
+              "Correct! Terms like 'rapidly spreading,' 'raged,' and 'urgent need' convey a serious and pressing situation.",
+              "Incorrect. Evacuations due to wildfires do not create a celebratory mood."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Evacuation as Wildfires Rage Unabated Across French Tourist Peninsula",
+        "overview": "Amidst a severe European heatwave, extensive wildfires have compelled the mandatory evacuation of tens of thousands from the Cap Ferret peninsula, a highly-regarded French tourist hotspot, underscoring the region's increasing environmental vulnerability.",
+        "topic": "French Wildfire Evacuations and Environmental Impact",
+        "news_brief_sentences": [
+          "Amidst escalating heatwaves across Europe, extensive wildfires have necessitated the urgent evacuation of tens of thousands from a prominent French tourist destination.",
+          "The inferno, which has raged unabated for several days, continues to pose a significant threat to communities within the Gironde region.",
+          "Authorities have consequently issued a mandatory evacuation order encompassing the entirety of the picturesque Cap Ferret peninsula.",
+          "This popular coastal area, renowned for its oyster farming and pristine beaches, typically serves as a summer haven for both domestic and international visitors.",
+          "The decision to completely clear the peninsula underscores the dire nature of the ongoing environmental crisis.",
+          "Firefighting crews, supported by aerial water bombers, are strenuously engaged in efforts to contain the rapidly advancing flames.",
+          "However, persistent strong winds and exceptionally dry conditions are exacerbating the challenge, making containment particularly arduous for emergency services.",
+          "Residents and holidaymakers were instructed to depart immediately, carrying minimal belongings, as the conflagration drew perilously close to populated zones.",
+          "Local prefectural officials emphasised that public safety remains the paramount concern in these unprecedented circumstances.",
+          "The widespread destruction caused by these blazes highlights the increasing vulnerability of natural landscapes to climate-induced extreme weather events."
+        ],
+        "vocabulary": [
+          {
+            "term": "Amidst",
+            "part_of_speech": "Preposition",
+            "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
+          },
+          {
+            "term": "raged unabated",
+            "part_of_speech": "Verb phrase",
+            "definition": "Continued with full, uncontrolled force without any reduction in intensity or without stopping."
+          },
+          {
+            "term": "dire nature",
+            "part_of_speech": "Noun phrase",
+            "definition": "An extremely serious, urgent, or terrible quality or character of a situation."
+          },
+          {
+            "term": "strenuously engaged",
+            "part_of_speech": "Adverb + adjective",
+            "definition": "Involved in an activity with great effort, energy, or determination."
+          },
+          {
+            "term": "prefectural officials",
+            "part_of_speech": "Adjective + noun",
+            "definition": "Government administrators operating at a local or regional administrative level, particularly in countries like France where prefects are key authorities."
+          }
+        ],
+        "grammar": {
+          "concept": "Complex Noun Phrases",
+          "explanation": "Advanced English often employs complex noun phrases to convey a lot of information concisely. These phrases consist of a head noun modified by various elements like adjectives, adverbs, participles, or prepositional phrases, creating a dense, descriptive unit. They are crucial for a sophisticated, academic, or journalistic writing style, allowing for nuanced expression.",
+          "example_quote": "the increasing vulnerability of natural landscapes to climate-induced extreme weather events"
+        },
+        "quiz": [
+          {
+            "question": "According to the news brief, what is the primary cause that necessitated the large-scale evacuation in France?",
+            "options": [
+              "A major infrastructure failure",
+              "Spreading and uncontrolled wildfires",
+              "A sudden political unrest"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief clearly states that extensive wildfires are the cause.",
+              "Correct. The brief explicitly mentions \"extensive wildfires\" as the reason for the urgent evacuation.",
+              "Incorrect. There is no mention of political unrest in the provided news summary."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does the phrase \"raged unabated\" imply about the wildfires?",
+            "options": [
+              "They were finally brought under control.",
+              "Their intensity decreased significantly over time.",
+              "They continued with full, unreduced force."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. \"Unabated\" means without reduction, so they were not controlled.",
+              "Incorrect. \"Unabated\" directly implies no decrease in intensity.",
+              "Correct. \"Raged unabated\" means the fires maintained their full destructive power without stopping or weakening."
+            ]
+          },
+          {
+            "question": "What makes the Cap Ferret peninsula a particularly significant location according to the news brief?",
+            "options": [
+              "It is a major industrial hub.",
+              "It is a renowned tourist destination.",
+              "It houses the country's main administrative offices."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief describes it as a tourist spot, not industrial.",
+              "Correct. The brief highlights it as a \"prominent French tourist destination,\" \"renowned for its oyster farming and pristine beaches.\"",
+              "Incorrect. The brief mentions \"prefectural officials\" but not that this area houses main administrative offices."
+            ]
+          },
+          {
+            "question": "Considering the grammar explanation, what is the head noun in the complex noun phrase \"the increasing vulnerability of natural landscapes to climate-induced extreme weather events\"?",
+            "options": [
+              "vulnerability",
+              "landscapes",
+              "events"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. \"Vulnerability\" is the central concept being modified by \"increasing,\" \"natural landscapes,\" and \"climate-induced extreme weather events.\"",
+              "Incorrect. While \"landscapes\" is a noun in the phrase, the core subject of the vulnerability is \"vulnerability\" itself.",
+              "Incorrect. \"Events\" describes a type of weather, but the phrase's focus is on the \"vulnerability.\""
+            ]
+          },
+          {
+            "question": "When the news brief refers to the \"dire nature\" of the environmental crisis, what characteristic is being emphasized?",
+            "options": [
+              "Its positive environmental impact.",
+              "Its extremely serious and urgent quality.",
+              "Its trivial and easily manageable aspect."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Dire\" means severe, so it cannot be positive.",
+              "Correct. \"Dire nature\" signifies an extremely serious, urgent, or terrible situation, which aligns with the crisis.",
+              "Incorrect. \"Dire\" implies the opposite of trivial or manageable."
+            ]
+          },
+          {
+            "question": "Besides the fires themselves, what two primary factors are identified as \"exacerbating the challenge\" for firefighters?",
+            "options": [
+              "Lack of equipment and manpower.",
+              "Persistent strong winds and exceptionally dry conditions.",
+              "Public interference and media distraction."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention a lack of resources, but rather environmental factors.",
+              "Correct. The brief explicitly states, \"persistent strong winds and exceptionally dry conditions are exacerbating the challenge.\"",
+              "Incorrect. There is no mention of public interference or media distraction in the brief."
+            ]
+          },
+          {
+            "question": "If firefighting crews are described as \"strenuously engaged\" in efforts, what does this imply about their work?",
+            "options": [
+              "They are working with minimal effort.",
+              "They are involved in the efforts with great physical and mental exertion.",
+              "They are nearing the end of their task."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Strenuously\" means with great effort, not minimal.",
+              "Correct. \"Strenuously engaged\" means they are applying great effort, energy, and determination to their tasks.",
+              "Incorrect. This phrase describes the manner of their engagement, not the stage of their task."
+            ]
+          },
+          {
+            "question": "Who are the \"prefectural officials\" mentioned in the news brief, specifically in the context of the French situation?",
+            "options": [
+              "Local culinary experts.",
+              "Environmental activists.",
+              "Regional government administrators."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. They are not culinary experts.",
+              "Incorrect. While concerned with the environment, their role is administrative.",
+              "Correct. \"Prefectural officials\" refers to government administrators at a local or regional level, common in France."
+            ]
+          },
+          {
+            "question": "The first sentence mentions the evacuation occurring \"Amidst escalating heatwaves.\" What is the closest meaning of \"Amidst\" in this context?",
+            "options": [
+              "Following",
+              "Because of",
+              "In the midst of"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While a sequence, \"amidst\" describes the surrounding conditions, not just a succession.",
+              "Incorrect. While related to cause, \"amidst\" more precisely describes the circumstances or background.",
+              "Correct. \"Amidst\" means in the middle of or surrounded by, indicating the heatwaves were the prevailing condition during the evacuation."
+            ]
+          },
+          {
+            "question": "What overarching theme does the news brief suggest these wildfires highlight regarding natural landscapes?",
+            "options": [
+              "Their inherent resilience to all environmental changes.",
+              "Their increasing susceptibility to climate-induced extreme weather.",
+              "Their capacity for rapid self-regeneration after destruction."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief mentions \"increasing vulnerability,\" which is the opposite of inherent resilience.",
+              "Correct. The brief concludes by highlighting \"the increasing vulnerability of natural landscapes to climate-induced extreme weather events.\"",
+              "Incorrect. While regeneration can occur, the brief's focus is on the immediate vulnerability and destruction, not recovery."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

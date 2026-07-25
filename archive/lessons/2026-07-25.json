@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-25",
+  "release_iso": "2026-07-25T11:03:46Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump takes swipes at press during White House Correspondents' Dinner",
+    "summary": "The event celebrated press freedom after the first dinner was cancelled by a shooting in April.",
+    "link": "https://www.bbc.co.uk/news/articles/cd7le4ylev2o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Trump Speaks at Dinner for Press",
+        "overview": "Donald Trump attended a special dinner for journalists.",
+        "topic": "President Trump and the White House Correspondents' Dinner",
+        "news_brief_sentences": [
+          "This year, the White House Correspondents' Dinner happened.",
+          "President Trump was there.",
+          "He spoke at the event.",
+          "He made some critical remarks about the press.",
+          "The dinner is usually a time for fun.",
+          "It also celebrates press freedom.",
+          "Last year, the dinner was cancelled.",
+          "This was because of a shooting.",
+          "The shooting happened in April.",
+          "So, this year's event was very important for journalists."
+        ],
+        "vocabulary": [
+          {
+            "term": "press",
+            "part_of_speech": "noun",
+            "definition": "Press means newspapers, TV, and radio people. They report the news."
+          },
+          {
+            "term": "event",
+            "part_of_speech": "noun",
+            "definition": "An event is something important that happens, like a party or meeting."
+          },
+          {
+            "term": "celebrates",
+            "part_of_speech": "verb",
+            "definition": "When you celebrate, you do something special because you are happy about something."
+          },
+          {
+            "term": "cancelled",
+            "part_of_speech": "verb",
+            "definition": "If something is cancelled, it means it will not happen."
+          },
+          {
+            "term": "journalists",
+            "part_of_speech": "noun",
+            "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add '-ed' to regular verbs. Irregular verbs change their form. It tells us when something finished.",
+          "example_quote": "The shooting happened in April."
+        },
+        "quiz": [
+          {
+            "question": "What kind of dinner was mentioned in the news?",
+            "options": [
+              "A family dinner",
+              "A dinner for journalists",
+              "A birthday dinner"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was not a family dinner.",
+              "Yes, it was for people who work in the news, like journalists.",
+              "No, it was not a birthday dinner."
+            ]
+          },
+          {
+            "question": "Who spoke at the event?",
+            "options": [
+              "Donald Trump",
+              "Many actors",
+              "The Queen"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, President Trump was at the dinner and spoke.",
+              "No, actors were not the main guests mentioned.",
+              "No, the Queen did not attend this event."
+            ]
+          },
+          {
+            "question": "What does the word 'press' mean in this news brief?",
+            "options": [
+              "A machine to make juice",
+              "News reporters and media",
+              "A type of button"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'press' here does not mean a juice machine.",
+              "Yes, 'press' refers to people who report the news, like journalists.",
+              "No, 'press' here is not a button."
+            ]
+          },
+          {
+            "question": "What does the dinner usually celebrate?",
+            "options": [
+              "New cars",
+              "Press freedom",
+              "Summer holidays"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the dinner does not celebrate new cars.",
+              "Yes, the event celebrates the freedom of the news media.",
+              "No, it is not about summer holidays."
+            ]
+          },
+          {
+            "question": "Why was the dinner 'cancelled' last year?",
+            "options": [
+              "Bad weather",
+              "A shooting",
+              "Too many guests"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the dinner was not cancelled because of bad weather.",
+              "Yes, a shooting event caused the cancellation.",
+              "No, it was not cancelled because of too many guests."
+            ]
+          },
+          {
+            "question": "When did the shooting happen, according to the news?",
+            "options": [
+              "In January",
+              "In April",
+              "In December"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the shooting was not in January.",
+              "Yes, the shooting happened in April.",
+              "No, the shooting was not in December."
+            ]
+          },
+          {
+            "question": "Who are 'journalists'?",
+            "options": [
+              "People who teach at school",
+              "People who write and report news",
+              "People who build houses"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, journalists are not teachers.",
+              "Yes, journalists report news for papers, TV, or radio.",
+              "No, journalists do not build houses."
+            ]
+          },
+          {
+            "question": "The sentence 'The shooting happened in April' uses which tense?",
+            "options": [
+              "Present Simple",
+              "Future Simple",
+              "Past Simple"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'happened' is not present simple. It finished.",
+              "No, 'happened' is not future simple. It is about something that already occurred.",
+              "Yes, 'happened' is a finished action, so it is past simple."
+            ]
+          },
+          {
+            "question": "What is an 'event' in the context of the news brief?",
+            "options": [
+              "A small object",
+              "A special gathering or occasion",
+              "A type of fruit"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, an 'event' is not a small object.",
+              "Yes, an 'event' is a planned important occasion like the dinner.",
+              "No, an 'event' is not a type of fruit."
+            ]
+          },
+          {
+            "question": "What did President Trump make about the press?",
+            "options": [
+              "A new law",
+              "Critical remarks",
+              "A funny joke"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he did not make a new law about the press.",
+              "Yes, he made some critical remarks, meaning he said negative things.",
+              "No, the news brief does not say he made a funny joke."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Trump Criticizes Press at White House Correspondents' Dinner",
+        "overview": "President Trump used the White House Correspondents' Dinner to criticize the press, despite the event's traditional role in celebrating journalistic freedom.",
+        "topic": "US Politics, Media Criticism, Press Freedom",
+        "news_brief_sentences": [
+          "The annual White House Correspondents' Dinner recently took place, an event traditionally celebrating press freedom and journalism.",
+          "This year, however, President Trump used the occasion to take swipes at various news organizations.",
+          "His remarks generated significant discussion regarding the relationship between the presidency and the media.",
+          "Many attendees felt his comments overshadowed the true purpose of the evening.",
+          "The dinner also served as a moment to commemorate the first such event that was sadly cancelled due to a shooting in April.",
+          "The cancellation highlighted the serious challenges journalists sometimes face, even within secure environments.",
+          "Despite the controversies, the event continued its tradition of recognizing outstanding reporting.",
+          "Journalists and public figures gathered, though the atmosphere was notably different compared to previous years.",
+          "The President's criticisms were delivered during a speech, drawing both cheers and criticism from the audience.",
+          "Ultimately, the dinner aimed to uphold the importance of a free press, even with the ongoing tensions."
+        ],
+        "vocabulary": [
+          {
+            "term": "take swipes at",
+            "part_of_speech": "verb phrase",
+            "definition": "To criticize someone or something quickly and sharply, often without much warning."
+          },
+          {
+            "term": "overshadowed",
+            "part_of_speech": "verb",
+            "definition": "To make something else seem less important, successful, or noticeable by comparison."
+          },
+          {
+            "term": "commemorate",
+            "part_of_speech": "verb",
+            "definition": "To officially remember and show respect for a great person or event, often with a ceremony or monument."
+          },
+          {
+            "term": "cancelled",
+            "part_of_speech": "verb",
+            "definition": "To decide that a planned event or arrangement will not happen, stopping it from taking place."
+          },
+          {
+            "term": "uphold",
+            "part_of_speech": "verb",
+            "definition": "To support something that you believe is right, and to make sure that it continues to exist or be respected."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the recipient of the action rather than the doer of the action. It is formed using a form of the verb 'to be' followed by the past participle of the main verb. We often use it when the agent (the person or thing performing the action) is unknown, unimportant, or obvious from the context, or when we want to emphasize the object of the action. For example, 'The event was cancelled' highlights the event itself.",
+          "example_quote": "The dinner also served as a moment to commemorate the first such event that was sadly cancelled due to a shooting in April."
+        },
+        "quiz": [
+          {
+            "question": "What was a significant difference about this year's White House Correspondents' Dinner, according to the news brief?",
+            "options": [
+              "It was held in a new location.",
+              "President Trump used it to criticize the media.",
+              "It focused solely on entertainment acts."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not mention a change in location for the event.",
+              "Correct. The brief states that President Trump used the occasion to 'take swipes at various news organizations'.",
+              "While there might be entertainment, the brief highlights Trump's criticisms as a key aspect, not solely entertainment."
+            ]
+          },
+          {
+            "question": "What does the phrase 'to take swipes at' mean in the context of the news brief?",
+            "options": [
+              "To physically attack someone.",
+              "To make quick, sharp criticisms.",
+              "To offer sincere compliments."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is a metaphorical expression, not a literal physical attack.",
+              "Correct. 'To take swipes at' means to criticize someone or something quickly and sharply.",
+              "This is the opposite meaning. The phrase indicates criticism, not compliments."
+            ]
+          },
+          {
+            "question": "Why was a previous White House Correspondents' Dinner 'cancelled'?",
+            "options": [
+              "Due to scheduling conflicts.",
+              "Because of a severe weather event.",
+              "As a result of a shooting incident."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief does not mention scheduling conflicts as the reason for cancellation.",
+              "The brief specifies a shooting, not bad weather, as the cause of the cancellation.",
+              "Correct. The brief clearly states that an earlier dinner 'was sadly cancelled due to a shooting in April'."
+            ]
+          },
+          {
+            "question": "What traditional purpose of the dinner did President Trump's remarks potentially 'overshadow'?",
+            "options": [
+              "The celebration of press freedom and journalism.",
+              "The announcement of new government policies.",
+              "The fundraising efforts for charities."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The brief mentions that Trump's comments overshadowed 'the true purpose of the evening', which is 'celebrating press freedom and journalism'.",
+              "The dinner's traditional purpose is not to announce government policies.",
+              "While some events have charitable aspects, the primary purpose mentioned was celebrating press freedom."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "President Trump used the occasion to take swipes at news organizations.",
+              "Journalists and public figures gathered at the event.",
+              "The first such event that was sadly cancelled due to a shooting."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the active voice, with 'President Trump' as the subject performing the action.",
+              "This sentence is also in the active voice, with 'Journalists and public figures' performing the action.",
+              "Correct. 'was sadly cancelled' uses the 'to be' verb + past participle, which is the structure of the passive voice."
+            ]
+          },
+          {
+            "question": "What does it mean to 'commemorate' an event?",
+            "options": [
+              "To ignore or forget about an important past event.",
+              "To remember and honor an event officially and respectfully.",
+              "To predict the outcome of a future event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Commemorating means to remember and honor, not to forget or ignore.",
+              "Correct. To 'commemorate' means to officially remember and show respect for an important person or event.",
+              "Commemorating relates to past events, not predicting future ones."
+            ]
+          },
+          {
+            "question": "What was the general atmosphere like at this year's dinner, according to the news brief?",
+            "options": [
+              "Completely harmonious and lighthearted.",
+              "Unchanged from previous years.",
+              "Notably different, with ongoing tensions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief suggests tension and criticism, not complete harmony.",
+              "The brief explicitly states the atmosphere was 'notably different compared to previous years'.",
+              "Correct. The brief mentions the atmosphere was 'notably different' and notes 'ongoing tensions'."
+            ]
+          },
+          {
+            "question": "What does the verb 'uphold' signify in the context of 'uphold the importance of a free press'?",
+            "options": [
+              "To challenge or diminish its value.",
+              "To neglect or disregard its significance.",
+              "To support and maintain its value or existence."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Upholding means to support, not to challenge or lessen value.",
+              "This is the opposite of upholding; to uphold means to actively support and preserve.",
+              "Correct. To 'uphold' means to support something that is considered right and to ensure its continuation."
+            ]
+          },
+          {
+            "question": "In the passive voice, when is the agent (the doer of the action) often mentioned?",
+            "options": [
+              "Never, the agent is always omitted.",
+              "Only when the agent is unknown.",
+              "After the verb, often introduced by 'by'."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The agent can be mentioned in the passive voice, usually with 'by'.",
+              "The agent is often omitted if unknown or unimportant, but can be mentioned if relevant.",
+              "Correct. The agent, if included in a passive sentence, typically follows the verb and is introduced by 'by'."
+            ]
+          },
+          {
+            "question": "Despite the controversies, what was one continuing aspect of the dinner mentioned in the brief?",
+            "options": [
+              "Its focus solely on political debates.",
+              "Its tradition of recognizing outstanding reporting.",
+              "Its role in fundraising for political parties."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief highlights criticism, not a sole focus on political debates.",
+              "Correct. The brief states that 'the event continued its tradition of recognizing outstanding reporting'.",
+              "The brief does not mention fundraising for political parties as a continuing aspect of the dinner."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Trump's Critique and Press Freedom at the White House Correspondents' Dinner",
+        "overview": "The annual White House Correspondents' Dinner, traditionally a celebration of press freedom, was marked by former President Trump's critical remarks aimed at the media, contrasting with the event's underlying purpose and its historical context following a previous cancellation.",
+        "topic": "US Politics, Media Relations, and Press Freedom",
+        "news_brief_sentences": [
+          "The recent White House Correspondents' Dinner unfolded amidst a charged atmosphere, traditionally a prestigious gathering affirming journalistic integrity.",
+          "During the event, former President Donald Trump delivered sharp criticisms, taking swipes at various media outlets and individual journalists.",
+          "His remarks underscored the often contentious relationship between political figures and the press, a recurring theme throughout his presidency.",
+          "The dinner, a symbolic occasion, annually convenes journalists, politicians, and public figures to celebrate the First Amendment and a free press.",
+          "Despite Trump's direct broadsides, the event's underlying purpose remained a steadfast tribute to the indispensable role of independent journalism.",
+          "This year's gathering held particular significance, following the unprecedented cancellation of a previous dinner due to an earlier tragic shooting incident in April.",
+          "The decision to proceed this time was perceived by many as a powerful testament to resilience and an unwavering commitment to democratic principles.",
+          "Such gatherings often serve as a vital forum for dialogue, even when marked by overt political friction and differing perspectives on media's function.",
+          "The sustained focus on press freedom at the dinner subtly countered the former President's criticisms, reinforcing the values the institution represents.",
+          "Ultimately, the occasion highlighted both the persistent challenges faced by the media and its enduring importance in a democratic society, irrespective of political leanings."
+        ],
+        "vocabulary": [
+          {
+            "term": "taking swipes at",
+            "part_of_speech": "verb phrase",
+            "definition": "Delivering critical, often verbal, attacks or disparaging remarks towards someone or something."
+          },
+          {
+            "term": "contentious relationship",
+            "part_of_speech": "noun phrase",
+            "definition": "A state of ongoing disagreement, opposition, or conflict between parties, often characterized by dispute and friction."
+          },
+          {
+            "term": "symbolic occasion",
+            "part_of_speech": "noun phrase",
+            "definition": "An event or ceremony that represents or signifies a deeper meaning, principle, or tradition beyond its immediate presence."
+          },
+          {
+            "term": "steadfast tribute",
+            "part_of_speech": "noun phrase",
+            "definition": "A firm, unwavering expression of respect, admiration, or honor paid to an individual, principle, or institution."
+          },
+          {
+            "term": "unwavering commitment",
+            "part_of_speech": "noun phrase",
+            "definition": "A resolute and persistent dedication to a cause, belief, or action, showing no signs of hesitation or deviation."
+          }
+        ],
+        "grammar": {
+          "concept": "Use of 'Amidst' to convey context",
+          "explanation": "'Amidst' is a more formal preposition, often used to indicate being in the middle of or surrounded by something, especially a state, condition, or a group of people. It adds a nuanced sense of context or atmosphere to the surrounding events, typically found in elevated or literary prose, offering a richer description than 'among' or 'in the middle of'.",
+          "example_quote": "The recent White House Correspondents' Dinner unfolded amidst a charged atmosphere, traditionally a prestigious gathering affirming journalistic integrity."
+        },
+        "quiz": [
+          {
+            "question": "What was a key characteristic of former President Trump's remarks at the White House Correspondents' Dinner?",
+            "options": [
+              "He offered effusive praise for the press.",
+              "He delivered sharp criticisms and disparaging comments.",
+              "He maintained a strictly neutral stance on media."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The News Brief clearly states he was \"taking swipes at\" the press, indicating criticism, not praise.",
+              "The brief mentions Trump \"delivered sharp criticisms, taking swipes at various media outlets,\" which accurately describes his remarks.",
+              "His remarks were overtly critical, signifying anything but neutrality, as detailed in the news summary."
+            ]
+          },
+          {
+            "question": "What does the phrase \"taking swipes at\" imply in the context of the News Brief?",
+            "options": [
+              "Making playful gestures towards.",
+              "Delivering sharp criticisms or attacks.",
+              "Attempting to physically strike."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Taking swipes at\" is used metaphorically for verbal criticism, not literal playfulness.",
+              "This idiom, as explained in the vocabulary, means to make critical or disparaging remarks, aligning with the context of Trump's comments.",
+              "The term refers to verbal attacks, not physical actions, especially in the context of a public speech."
+            ]
+          },
+          {
+            "question": "How is the relationship between political figures and the press often characterized according to the News Brief?",
+            "options": [
+              "As always harmonious and collaborative.",
+              "As frequently contentious and fraught with disagreement.",
+              "As generally indifferent and detached."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The News Brief refers to a \"contentious relationship,\" indicating it is not always harmonious.",
+              "The brief explicitly states that Trump's remarks \"underscored the often contentious relationship\" between politicians and the press.",
+              "The term \"contentious\" implies active disagreement and friction, not indifference."
+            ]
+          },
+          {
+            "question": "What is the primary function of the White House Correspondents' Dinner, aside from political remarks?",
+            "options": [
+              "To host a private fundraiser for political campaigns.",
+              "To celebrate the First Amendment and a free press.",
+              "To announce new government policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While some events might involve fundraising, the primary stated purpose in the brief is celebrating press freedom.",
+              "The brief highlights that the dinner is a \"symbolic occasion\" to \"celebrate the First Amendment and a free press.\"",
+              "The event is a social gathering focused on media, not a platform for policy announcements."
+            ]
+          },
+          {
+            "question": "The News Brief mentions the dinner as a \"symbolic occasion.\" What does this emphasize about the event?",
+            "options": [
+              "Its purely ceremonial and meaningless nature.",
+              "Its representation of deeper principles and traditions.",
+              "Its sole purpose as a social gathering."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A \"symbolic occasion\" carries significant meaning, not meaninglessness, as it represents something greater.",
+              "As defined, a \"symbolic occasion\" represents or signifies a deeper meaning or principle, which is consistent with its portrayal in the brief.",
+              "While it is a social gathering, the term \"symbolic\" points to its representational and principled aspects beyond mere socializing."
+            ]
+          },
+          {
+            "question": "Despite Trump's criticisms, what did the event's \"underlying purpose\" remain as?",
+            "options": [
+              "A call for stricter media regulations.",
+              "A steadfast tribute to independent journalism.",
+              "An opportunity for political campaigning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief states the purpose was a \"steadfast tribute to independent journalism,\" not stricter regulations.",
+              "The News Brief explicitly states its underlying purpose remained a \"steadfast tribute to the indispensable role of independent journalism.\"",
+              "The context of the dinner focuses on press freedom, not political campaigning."
+            ]
+          },
+          {
+            "question": "Why did this year's White House Correspondents' Dinner hold \"particular significance\"?",
+            "options": [
+              "It was the first dinner ever held.",
+              "It followed a previous cancellation due to a shooting incident.",
+              "A new President was inaugurated on the same day."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions a \"previous dinner,\" indicating it's not the first ever.",
+              "The brief explicitly states it held significance \"following the unprecedented cancellation of a previous dinner due to an earlier tragic shooting incident.\"",
+              "The brief does not mention a presidential inauguration coinciding with the event."
+            ]
+          },
+          {
+            "question": "The decision to proceed with the dinner was seen as an \"unwavering commitment\" to what?",
+            "options": [
+              "Political divisiveness.",
+              "Democratic principles and resilience.",
+              "Avoiding public scrutiny."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The commitment was to principles, not divisiveness, even if friction was present.",
+              "The News Brief characterizes it as \"a powerful testament to resilience and an unwavering commitment to democratic principles.\"",
+              "Proceeding with a public event would increase, not avoid, public scrutiny."
+            ]
+          },
+          {
+            "question": "In the sentence \"The recent White House Correspondents' Dinner unfolded amidst a charged atmosphere,\" what does \"amidst\" primarily convey?",
+            "options": [
+              "A sense of direct opposition to the atmosphere.",
+              "The setting or context within which the event occurred.",
+              "A brief pause in the atmosphere."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Amidst\" conveys being surrounded by, not in opposition to, the atmosphere.",
+              "As explained in the grammar section, \"amidst\" indicates being in the middle of or surrounded by a particular state or condition, setting the context for the event.",
+              "\"Amidst\" describes the prevailing environment, not a temporary interruption of it."
+            ]
+          },
+          {
+            "question": "What was the ultimate takeaway from the occasion, according to the final sentence of the News Brief?",
+            "options": [
+              "That the media's role is diminished by political criticism.",
+              "That political leanings are irrelevant to the media's function.",
+              "That both challenges and enduring importance characterize the media's role in a democracy."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The sentence emphasizes the media's \"enduring importance,\" not a diminished role.",
+              "The sentence mentions \"irrespective of political leanings,\" which applies to the importance of the media, not necessarily the irrelevance of leanings to the function itself.",
+              "The brief concludes, \"Ultimately, the occasion highlighted both the persistent challenges faced by the media and its enduring importance in a democratic society.\""
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

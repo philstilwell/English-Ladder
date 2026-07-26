@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-26",
+  "release_iso": "2026-07-26T11:14:54Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "What we know so far about the Berlin Pride ramming attack",
+    "summary": "A police manhunt is underway after a suspect rammed a car into a crowd at a Pride event in the German capital on Saturday night.",
+    "link": "https://www.bbc.co.uk/news/articles/cevmdxz4872o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Berlin Pride Attack: Police Search for Suspect",
+        "overview": "Police are looking for a person after a car hit people at a Pride event in Berlin, Germany.",
+        "topic": "Safety at Public Events and Police Investigations",
+        "news_brief_sentences": [
+          "A bad event happened in Berlin, Germany.",
+          "It was on Saturday night.",
+          "Many people were at a Pride event.",
+          "A car rammed into the crowd of people.",
+          "This made many people scared.",
+          "Police started a manhunt for a suspect.",
+          "The suspect drove the car.",
+          "Police are now looking for this person.",
+          "The event happened in the German capital.",
+          "Police want to find out why this happened."
+        ],
+        "vocabulary": [
+          {
+            "term": "rammed",
+            "part_of_speech": "verb",
+            "definition": "hit something very hard with force"
+          },
+          {
+            "term": "crowd",
+            "part_of_speech": "noun",
+            "definition": "a large group of people together in one place"
+          },
+          {
+            "term": "manhunt",
+            "part_of_speech": "noun",
+            "definition": "a big search by police for a person"
+          },
+          {
+            "term": "suspect",
+            "part_of_speech": "noun",
+            "definition": "a person who police think did a crime"
+          },
+          {
+            "term": "capital",
+            "part_of_speech": "noun",
+            "definition": "the most important city in a country, where the government is"
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense (Regular Verbs)",
+          "explanation": "We use the simple past tense to talk about actions or events that are finished. For many verbs, we add -ed at the end to make them past tense. For example, 'walk' becomes 'walked', 'start' becomes 'started', and 'ram' becomes 'rammed'.",
+          "example_quote": "A car rammed into the crowd of people."
+        },
+        "quiz": [
+          {
+            "question": "Where did the bad event happen?",
+            "options": [
+              "London",
+              "Berlin",
+              "Paris"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the event was not in London.",
+              "Yes, the event happened in Berlin, Germany.",
+              "No, Paris is not correct. The event was in Berlin."
+            ]
+          },
+          {
+            "question": "When did the event happen?",
+            "options": [
+              "Friday morning",
+              "Saturday night",
+              "Sunday afternoon"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was not on Friday morning.",
+              "Yes, the event happened on Saturday night.",
+              "No, Sunday afternoon is incorrect."
+            ]
+          },
+          {
+            "question": "What hit the crowd of people?",
+            "options": [
+              "A bus",
+              "A bicycle",
+              "A car"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it was not a bus.",
+              "No, it was not a bicycle.",
+              "Yes, a car rammed into the crowd."
+            ]
+          },
+          {
+            "question": "What does 'rammed' mean in this news?",
+            "options": [
+              "cleaned very fast",
+              "hit very hard",
+              "stopped very slowly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'rammed' means to hit something forcefully, not clean.",
+              "Yes, 'rammed' means to hit something very hard.",
+              "No, 'rammed' means a forceful hit, not a slow stop."
+            ]
+          },
+          {
+            "question": "What is a 'crowd'?",
+            "options": [
+              "one person",
+              "a small animal",
+              "many people together"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a crowd is not just one person.",
+              "No, a crowd is people, not an animal.",
+              "Yes, a crowd is a large group of people."
+            ]
+          },
+          {
+            "question": "Why did police start a 'manhunt'?",
+            "options": [
+              "to find a lost pet",
+              "to search for a suspect",
+              "to buy new equipment"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a manhunt is not for a lost pet.",
+              "Yes, a manhunt is a big search for a suspect.",
+              "No, a manhunt is not to buy equipment."
+            ]
+          },
+          {
+            "question": "Who is a 'suspect'?",
+            "options": [
+              "a police officer",
+              "a person who police think did a crime",
+              "a happy visitor"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a suspect is not a police officer.",
+              "Yes, a suspect is someone police believe committed a crime.",
+              "No, a suspect is not just a happy visitor."
+            ]
+          },
+          {
+            "question": "Berlin is the 'capital' of which country?",
+            "options": [
+              "France",
+              "Germany",
+              "Spain"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Berlin is not the capital of France.",
+              "Yes, Berlin is the capital city of Germany.",
+              "No, Berlin is not the capital of Spain."
+            ]
+          },
+          {
+            "question": "Which word from the news is in the simple past tense?",
+            "options": [
+              "happens",
+              "will happen",
+              "happened"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'happens' is present tense.",
+              "No, 'will happen' is future tense.",
+              "Yes, 'happened' shows an action finished in the past."
+            ]
+          },
+          {
+            "question": "The sentence 'A car rammed into the crowd' tells us about an action that is...",
+            "options": [
+              "happening now",
+              "finished in the past",
+              "will happen soon"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, this action is not happening now.",
+              "Yes, 'rammed' shows an action that is completed.",
+              "No, this action is not something that will happen soon."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Berlin Pride Attack: Police Search for Suspect After Car Rams Crowd",
+        "overview": "Police are currently searching for a suspect who deliberately drove a car into a crowd at a Pride event in Berlin on Saturday night.",
+        "topic": "Public Safety and Investigations",
+        "news_brief_sentences": [
+          "A shocking incident unfolded at a Pride event in the German capital on Saturday night.",
+          "A suspect deliberately rammed a car into a large crowd celebrating in the streets.",
+          "This act of violence immediately led to a significant police response in the area.",
+          "Authorities have launched a manhunt for the individual responsible for the attack.",
+          "Eyewitnesses recounted scenes of chaos and fear as the vehicle struck attendees.",
+          "Emergency services quickly arrived at the scene to provide medical assistance to those affected.",
+          "Several people sustained injuries, though the full extent of the casualties is still being assessed.",
+          "The police are now conducting an investigation to uncover the motive behind the incident.",
+          "This event has raised concerns about public safety at large gatherings.",
+          "The community is seeking answers and hopes for justice to be served quickly."
+        ],
+        "vocabulary": [
+          {
+            "term": "rammed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "forcefully hit something with a vehicle or other object, often causing damage."
+          },
+          {
+            "term": "manhunt",
+            "part_of_speech": "noun",
+            "definition": "an organized search for a person, especially a criminal, by a large number of people."
+          },
+          {
+            "term": "assistance",
+            "part_of_speech": "noun",
+            "definition": "the provision of money, resources, or help to support someone or something."
+          },
+          {
+            "term": "casualties",
+            "part_of_speech": "noun (plural)",
+            "definition": "people killed or injured in a war, accident, or other disaster or incident."
+          },
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "a formal inquiry or systematic examination to discover and examine the facts of an incident, crime, or situation."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice (Present Continuous)",
+          "explanation": "The passive voice is used when the focus is on the action and the object receiving the action, rather than the subject performing it. The present continuous passive is formed with \"is/are being\" + past participle, indicating an ongoing action. It is often used when the doer of the action is unknown, unimportant, or obvious from the context.",
+          "example_quote": "the full extent of the casualties is still being assessed."
+        },
+        "quiz": [
+          {
+            "question": "Where did the incident described in the news brief occur?",
+            "options": [
+              "A Pride event in Berlin",
+              "A sporting event in Germany",
+              "A political rally in the capital"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The incident took place at a Pride event in Berlin.",
+              "Incorrect. The news brief specifies a Pride event, not a sporting event.",
+              "Incorrect. While it was in the capital, it was specifically a Pride event."
+            ]
+          },
+          {
+            "question": "What did the suspect do with a car at the event?",
+            "options": [
+              "Parked it illegally",
+              "Rammed it into a crowd",
+              "Used it to block a street"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief clearly states the car was rammed into a crowd.",
+              "Correct! The suspect deliberately rammed the car into people.",
+              "Incorrect. The action was more aggressive than simply blocking a street."
+            ]
+          },
+          {
+            "question": "What does the term \"manhunt\" mean in the context of the news brief?",
+            "options": [
+              "A large search for lost items",
+              "An organized search for a person, especially a criminal",
+              "A public demonstration by men"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A manhunt is specifically for a person, typically a criminal, not lost items.",
+              "Correct! A manhunt is a focused search for an individual, often a suspect.",
+              "Incorrect. This term refers to a search operation, not a public gathering."
+            ]
+          },
+          {
+            "question": "What kind of situation did eyewitnesses describe after the vehicle struck attendees?",
+            "options": [
+              "Calm and orderly evacuation",
+              "Scenes of chaos and fear",
+              "Minor traffic disruption"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The event was described as shocking, not calm.",
+              "Correct! Eyewitnesses recounted moments of chaos and fear.",
+              "Incorrect. The incident was a deliberate attack, not just a traffic issue."
+            ]
+          },
+          {
+            "question": "What type of \"assistance\" did emergency services provide at the scene?",
+            "options": [
+              "Collecting evidence",
+              "Providing medical help",
+              "Directing traffic"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While police do this, emergency services primarily offered medical assistance.",
+              "Correct! Emergency services focused on giving medical help to the injured.",
+              "Incorrect. Their main role was not traffic control but attending to casualties."
+            ]
+          },
+          {
+            "question": "According to the news, what are \"casualties\"?",
+            "options": [
+              "Spectators who enjoyed the event",
+              "People injured or killed in an incident",
+              "Volunteers helping at the event"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Casualties refer to those harmed, not just attendees.",
+              "Correct! Casualties are individuals who have been injured or killed.",
+              "Incorrect. Volunteers are helpers, not necessarily casualties."
+            ]
+          },
+          {
+            "question": "What is the purpose of the \"investigation\" mentioned in the news brief?",
+            "options": [
+              "To organize future events",
+              "To uncover the motive behind the incident",
+              "To find new event locations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An investigation aims to understand the past incident, not plan future ones.",
+              "Correct! The investigation's goal is to discover why the attack happened.",
+              "Incorrect. The investigation is focused on the incident itself, not logistics."
+            ]
+          },
+          {
+            "question": "The news brief states this event raised concerns about public \"safety\". What does \"safety\" mean?",
+            "options": [
+              "The absence of danger or risk",
+              "The speed of public transport",
+              "The number of attendees at an event"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Safety refers to being protected from harm or danger.",
+              "Incorrect. Safety in this context relates to protection from harm, not transport.",
+              "Incorrect. While related to events, safety is about protection, not just attendance figures."
+            ]
+          },
+          {
+            "question": "In the sentence \"the full extent of the casualties is still being assessed,\" what grammatical structure is used?",
+            "options": [
+              "Present Perfect",
+              "Future Simple Passive",
+              "Present Continuous Passive"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The structure \"is being assessed\" is not the Present Perfect.",
+              "Incorrect. This structure refers to an ongoing action, not a future one.",
+              "Correct! This sentence uses the present continuous form of the passive voice."
+            ]
+          },
+          {
+            "question": "Why is the passive voice particularly useful in the phrase \"the full extent of the casualties is still being assessed\"?",
+            "options": [
+              "It emphasizes who is doing the assessing.",
+              "It focuses on the action of assessment and the object being assessed.",
+              "It makes the sentence longer and more formal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice often de-emphasizes the doer.",
+              "Correct! The passive voice places emphasis on the action and the casualties, not necessarily on who is assessing them.",
+              "Incorrect. While it can sound formal, its primary grammatical function is not just to extend sentence length."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Berlin Pride Ramming Attack Prompts Extensive Manhunt",
+        "overview": "A significant police investigation is currently underway in Berlin following a deliberate vehicle ramming incident that targeted participants at a Pride event in the German capital on Saturday night, prompting widespread concern.",
+        "topic": "Vehicle Ramming Attack at Berlin Pride Event and Police Response",
+        "news_brief_sentences": [
+          "A comprehensive police manhunt is underway in Berlin following a grave incident at a recent Pride event.",
+          "On Saturday night, an unidentified suspect deliberately rammed a vehicle into a crowd of participants, causing immediate alarm and disruption.",
+          "The unknown perpetrator fled the scene promptly after the egregious act, prompting urgent law enforcement mobilisation.",
+          "Authorities are currently piecing together the precise timeline of events that began unfolding in the German capital.",
+          "The incident occurred amidst festive celebrations for the LGBTQ+ community, tragically marring the occasion.",
+          "Security forces have intensified their efforts to apprehend the individual responsible for this targeted assault.",
+          "Investigators are examining all available evidence, including witness statements and surveillance footage, to identify the culprit.",
+          "The gravity of the situation has prompted increased public vigilance and calls for enhanced security measures at public gatherings.",
+          "This shocking act underscores ongoing concerns regarding the safety of public events and the potential for politically or ideologically motivated violence.",
+          "The wider community is now awaiting further details from the extensive and ongoing investigation into the incident."
+        ],
+        "vocabulary": [
+          {
+            "term": "manhunt",
+            "part_of_speech": "noun",
+            "definition": "A systematic and intensive search by police or military for a person, especially a criminal or fugitive."
+          },
+          {
+            "term": "suspect",
+            "part_of_speech": "noun",
+            "definition": "A person thought to be guilty of a crime or offence."
+          },
+          {
+            "term": "rammed",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Forcefully struck or pushed something, often with a vehicle, typically causing damage or injury through violent impact."
+          },
+          {
+            "term": "perpetrator",
+            "part_of_speech": "noun",
+            "definition": "A person who carries out a harmful, illegal, or immoral act."
+          },
+          {
+            "term": "egregious",
+            "part_of_speech": "adjective",
+            "definition": "Outstandingly bad, shocking, or reprehensible, often used to describe severe mistakes or offenses."
+          }
+        ],
+        "grammar": {
+          "concept": "Idiomatic Phrasing: 'is underway'",
+          "explanation": "The phrase 'is underway' is a formal and idiomatic expression used to indicate that an event, process, or activity is currently happening or in progress. It functions as a predicative adjective, meaning it describes the state of the subject (e.g., 'the manhunt') and conveys a sense of continuation. This construction is frequently encountered in news reports and official statements, offering a concise way to communicate ongoing actions.",
+          "example_quote": "A comprehensive police manhunt is underway in Berlin following a grave incident at a recent Pride event."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary objective of the police operations described in the news brief?",
+            "options": [
+              "To monitor future public events for security breaches.",
+              "To apprehend the individual responsible for the vehicle ramming.",
+              "To reconstruct the Pride event schedule from Saturday night."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While security is a concern, the immediate objective is to find the person responsible.",
+              "Correct. The news brief clearly states a 'manhunt is underway' to apprehend the suspect.",
+              "Incorrect. Reconstructing the schedule is part of the investigation, but not the primary objective."
+            ]
+          },
+          {
+            "question": "Based on the news brief, what does the term 'manhunt' imply about the police search?",
+            "options": [
+              "It is a casual, routine inquiry.",
+              "It is a widespread, systematic search for a criminal.",
+              "It is a local, limited search within a small area."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Manhunt' suggests an intensive and systematic effort, not a casual one.",
+              "Precisely. A 'manhunt' refers to a comprehensive and systematic search, usually for a criminal or fugitive.",
+              "Incorrect. The term 'manhunt' typically implies a broad and far-reaching search, not a limited one."
+            ]
+          },
+          {
+            "question": "When did the vehicle ramming incident occur in Berlin?",
+            "options": [
+              "Last Sunday afternoon.",
+              "During the week, a few days ago.",
+              "On Saturday night."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief specifies a different time for the incident.",
+              "Incorrect. The exact timing mentioned in the brief is more precise.",
+              "Accurate. The news brief clearly states the incident took place 'On Saturday night'."
+            ]
+          },
+          {
+            "question": "Who is currently the subject of the police's intensive search and investigation?",
+            "options": [
+              "The event organizers for the Pride celebration.",
+              "An eyewitness who saw the incident unfold.",
+              "An unidentified suspect who fled the scene."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The police are not primarily seeking the organizers in this context.",
+              "Incorrect. While witnesses are important, the main target of the search is different.",
+              "Correct. The news brief states police are looking for an 'unidentified suspect' and 'unknown perpetrator'."
+            ]
+          },
+          {
+            "question": "In the sentence 'A comprehensive police manhunt is underway...', what does 'is underway' signify about the manhunt?",
+            "options": [
+              "It has recently concluded successfully.",
+              "It is in its initial planning stages.",
+              "It is currently in progress."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Is underway' means the opposite of being concluded.",
+              "Incorrect. 'Is underway' implies it has already begun, not that it's in planning.",
+              "Excellent. 'Is underway' is an idiomatic expression indicating that an action or process is currently happening or in progress."
+            ]
+          },
+          {
+            "question": "How does the news brief describe the action of the vehicle hitting the crowd?",
+            "options": [
+              "The vehicle accidentally veered into the crowd.",
+              "The suspect deliberately rammed the vehicle into participants.",
+              "The vehicle slowly approached the crowd and stopped."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief emphasizes the intentionality of the act.",
+              "Correct. The brief explicitly states the suspect 'deliberately rammed a vehicle into a crowd'.",
+              "Incorrect. 'Rammed' suggests a forceful and aggressive impact, not a slow approach."
+            ]
+          },
+          {
+            "question": "Which community's event was targeted by the ramming incident in Berlin?",
+            "options": [
+              "A local cultural festival.",
+              "A Pride event for the LGBTQ+ community.",
+              "A political protest march."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies the exact type of event targeted.",
+              "Precisely. The incident occurred amidst festive celebrations for 'the LGBTQ+ community's Pride event'.",
+              "Incorrect. While it was a public gathering, the specific nature is detailed in the brief."
+            ]
+          },
+          {
+            "question": "What immediate action did the 'perpetrator' take after committing the 'egregious act'?",
+            "options": [
+              "The perpetrator immediately surrendered to authorities.",
+              "The perpetrator remained at the scene to assist victims.",
+              "The perpetrator promptly fled the scene."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief states the opposite of surrender.",
+              "Incorrect. The brief indicates the perpetrator did not stay.",
+              "Correct. The news brief explicitly states: 'The unknown perpetrator fled the scene promptly after the egregious act'."
+            ]
+          },
+          {
+            "question": "Which of the following best describes an 'egregious' act?",
+            "options": [
+              "A minor and insignificant error.",
+              "An unintentional but regrettable mistake.",
+              "An outstandingly bad or shocking offense."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Egregious' denotes something far more serious than a minor error.",
+              "Incorrect. The term implies a significant, often intentional, wrongdoing.",
+              "Exactly. 'Egregious' means outstandingly bad, shocking, or reprehensible, perfectly describing the attack."
+            ]
+          },
+          {
+            "question": "According to the news brief, what broader concern does this incident 'underscore'?",
+            "options": [
+              "The need for more entertainment options in the city.",
+              "The potential for politically or ideologically motivated violence.",
+              "The inadequacy of public transportation at night."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This is not a concern highlighted by the brief.",
+              "Correct. The brief explicitly states the act 'underscores ongoing concerns regarding... the potential for politically or ideologically motivated violence'.",
+              "Incorrect. While a logistical point, it's not the broader societal concern emphasized by the incident."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

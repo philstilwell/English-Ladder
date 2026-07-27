@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-27",
+  "release_iso": "2026-07-27T12:51:46Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Oil price dives as US and Iran pause attacks",
+    "summary": "The US says attacks on Iran have been halted to give \"talks some space\", raising hopes of a resolution to the conflict.",
+    "link": "https://www.bbc.co.uk/news/articles/clyj834jn5lo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Oil Price Change: US and Iran Talks",
+        "overview": "The price of oil went down because the US and Iran stopped fighting to talk.",
+        "topic": "International News: Oil Prices and Diplomacy",
+        "news_brief_sentences": [
+          "The price of oil went down today.",
+          "This happened because of news from the US and Iran.",
+          "The US and Iran will **pause attacks** for now.",
+          "They want to have **talks** about the situation.",
+          "The US said it **halted** military actions.",
+          "They stopped to give space for these **talks**.",
+          "Many people have **hopes** for peace.",
+          "This decision gives **hopes** that the **conflict** can end.",
+          "A peaceful **resolution** might be possible soon.",
+          "This news helps calm the situation between the two countries."
+        ],
+        "vocabulary": [
+          {
+            "term": "pause attacks",
+            "part_of_speech": "verb phrase",
+            "definition": "To stop fighting or hurting someone for a short time."
+          },
+          {
+            "term": "talks",
+            "part_of_speech": "noun",
+            "definition": "Formal discussions between people or countries to solve problems."
+          },
+          {
+            "term": "halted",
+            "part_of_speech": "verb",
+            "definition": "Stopped completely; brought to a stop."
+          },
+          {
+            "term": "hopes",
+            "part_of_speech": "noun",
+            "definition": "Feelings of wanting good things to happen in the future."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or fight between people or groups."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense for News",
+          "explanation": "We often use the Simple Present tense to talk about news headlines or current events that are happening now or are generally true. It makes the news sound fresh and immediate.",
+          "example_quote": "The price of oil went down today."
+        },
+        "quiz": [
+          {
+            "question": "What happened to the price of oil?",
+            "options": [
+              "It went up.",
+              "It stayed the same.",
+              "It went down."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news says the price went down. Please read the first sentence again.",
+              "That's not right. The price changed; it did not stay the same.",
+              "Correct! The news brief clearly states that the price of oil went down."
+            ]
+          },
+          {
+            "question": "Why did the oil price change?",
+            "options": [
+              "Because of bad weather.",
+              "Because the US and Iran stopped fighting.",
+              "Because people bought more oil."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news does not mention weather. It talks about the US and Iran.",
+              "Exactly! The oil price changed because the US and Iran decided to stop their attacks.",
+              "The news doesn't say people bought more oil. It's about the US and Iran's actions."
+            ]
+          },
+          {
+            "question": "What does 'pause attacks' mean?",
+            "options": [
+              "To start attacking more.",
+              "To stop fighting for a while.",
+              "To attack quietly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'pause' means to stop, not to start more.",
+              "You got it! 'Pause attacks' means to stop fighting or hurting for a period of time.",
+              "Attacking quietly is not the meaning of 'pause attacks'."
+            ]
+          },
+          {
+            "question": "What do the US and Iran want to have?",
+            "options": [
+              "More fights.",
+              "New weapons.",
+              "Talks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, they stopped fighting to do something else.",
+              "They are not looking for new weapons, but for a solution.",
+              "That's correct! They want to have 'talks' to discuss the situation."
+            ]
+          },
+          {
+            "question": "What did the US say it 'halted'?",
+            "options": [
+              "Its food supply.",
+              "Military actions.",
+              "Its economy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news does not mention food supply. It's about actions.",
+              "Yes, the US 'halted' military actions to allow for discussions.",
+              "The news is not about the economy, but about stopping conflict."
+            ]
+          },
+          {
+            "question": "Why did the US stop its actions?",
+            "options": [
+              "To make a new plan.",
+              "To give space for talks.",
+              "Because of a holiday."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While they might make a plan, the main reason given is for talks.",
+              "Right! The US stopped to give space for the 'talks' to happen.",
+              "The news does not mention a holiday."
+            ]
+          },
+          {
+            "question": "What do people have because of this news?",
+            "options": [
+              "Fears.",
+              "Hopes.",
+              "Doubts."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brings positive feelings, not fears.",
+              "Correct! Many people have 'hopes' for peace because of this news.",
+              "The news is presented positively, suggesting hopes, not doubts."
+            ]
+          },
+          {
+            "question": "What word means a serious disagreement or fight?",
+            "options": [
+              "Peace.",
+              "Friendship.",
+              "Conflict."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Peace is the opposite of a fight. Try again.",
+              "Friendship is about being close, not fighting. Look at the vocabulary list.",
+              "Yes, 'conflict' means a serious disagreement or fight, as defined in the vocabulary."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Simple Present tense for a current event?",
+            "options": [
+              "The price of oil went down today.",
+              "The US said it halted military actions.",
+              "This news helps calm the situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses the past tense 'went down'.",
+              "This sentence uses the past tense 'said' and 'halted'.",
+              "Correct! 'This news helps calm the situation' uses 'helps' in the Simple Present tense, showing an ongoing effect."
+            ]
+          },
+          {
+            "question": "What might be possible soon because of the talks?",
+            "options": [
+              "More problems.",
+              "A peaceful resolution.",
+              "A new attack."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the 'talks' are for solving problems, not creating more.",
+              "That's right! The news brief mentions that a peaceful 'resolution' might be possible soon.",
+              "The purpose of talks is to prevent new attacks, not to start them."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Oil Prices Dive as US and Iran Pause Attacks for Talks",
+        "overview": "Oil prices have significantly dropped following the United States' decision to pause attacks on Iran, which is expected to create an opportunity for diplomatic talks aimed at resolving the conflict.",
+        "topic": "International Relations, Energy Markets, and Diplomacy",
+        "news_brief_sentences": [
+          "The global oil price has significantly dived recently, indicating a major shift in market dynamics.",
+          "This sudden drop follows a crucial development in the ongoing tensions between the United States and Iran.",
+          "The US government officially stated that its attacks on Iran have been halted.",
+          "This strategic decision was primarily made to give talks some space for diplomatic discussions.",
+          "Leaders hope this temporary pause will allow for a peaceful resolution to the conflict between the two nations.",
+          "Consequently, the global oil market reacted strongly to this unexpected news of de-escalation.",
+          "Many economic analysts believe that a period of reduced military action could help stabilize the volatile region.",
+          "The halt in attacks offers a critical opportunity for both nations to engage in constructive dialogue.",
+          "International observers are expressing cautious optimism about the prospects for achieving lasting peace.",
+          "Ultimately, the aim is to find a long-term solution that benefits all parties involved and prevents further unrest in the area."
+        ],
+        "vocabulary": [
+          {
+            "term": "dived",
+            "part_of_speech": "verb",
+            "definition": "dropped suddenly and quickly, like a sharp fall in value or level, often used for markets or prices."
+          },
+          {
+            "term": "halted",
+            "part_of_speech": "verb",
+            "definition": "stopped completely or brought to a stop, especially in a formal or official manner, usually an activity or process."
+          },
+          {
+            "term": "give talks some space",
+            "part_of_speech": "phrase",
+            "definition": "to create an opportunity or a suitable environment for discussions and negotiations to happen without interruption or immediate pressure."
+          },
+          {
+            "term": "pause",
+            "part_of_speech": "noun",
+            "definition": "a temporary stop or break in an activity, action, or speech, allowing for a moment of rest or reflection before continuing."
+          },
+          {
+            "term": "resolution to the conflict",
+            "part_of_speech": "phrase",
+            "definition": "a successful way of solving a serious disagreement or problem between opposing groups or countries, leading to an end to hostilities."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself or on the object of the action, rather than on the performer of the action. It's often used when the agent is unknown, unimportant, or obvious from the context. It is formed with a form of 'to be' + the past participle of the main verb.",
+          "example_quote": "The US government officially stated that its attacks on Iran have been halted."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary factor mentioned for the recent drop in global oil prices?",
+            "options": [
+              "Increased oil production in various countries.",
+              "A temporary halt in attacks between the US and Iran.",
+              "A new international agreement on fuel consumption."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not refer to increased oil production as the cause.",
+              "Correct. The news clearly links the oil price drop to the pause in US-Iran attacks.",
+              "Incorrect. There is no mention of a new agreement on fuel consumption."
+            ]
+          },
+          {
+            "question": "When an oil price has 'dived,' what does that generally mean?",
+            "options": [
+              "It remained stable for an extended period.",
+              "It experienced a sudden and significant decrease.",
+              "It slowly increased over several days."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Dived' indicates a rapid change, not stability.",
+              "Correct. To 'dive' in this context means to drop sharply and quickly.",
+              "Incorrect. 'Dived' means a decrease, not an increase, and a sudden one at that."
+            ]
+          },
+          {
+            "question": "Why did the US government state that its attacks on Iran have been 'halted'?",
+            "options": [
+              "To gather more intelligence for future actions.",
+              "To allow for diplomatic discussions to take place.",
+              "Due to pressure from international sanctions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The reason given was for talks, not intelligence gathering.",
+              "Correct. The decision was made to 'give talks some space' for diplomacy.",
+              "Incorrect. The news brief does not mention international sanctions as the reason for the halt."
+            ]
+          },
+          {
+            "question": "What is the intended outcome of giving 'talks some space' between the US and Iran?",
+            "options": [
+              "To prepare for a larger military exercise.",
+              "To find a peaceful resolution to the conflict.",
+              "To allow both sides to regroup and rearm."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The phrase implies an effort towards peace, not military preparation.",
+              "Correct. The goal is to reach a 'resolution to the conflict' through discussions.",
+              "Incorrect. The purpose is for diplomacy, not to prepare for further hostilities."
+            ]
+          },
+          {
+            "question": "In the news, a 'pause' in attacks refers to:",
+            "options": [
+              "A permanent cessation of all military activities.",
+              "A temporary stop in hostilities to allow for other actions.",
+              "An escalation of covert operations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'pause' suggests a temporary break, not a permanent end.",
+              "Correct. A 'pause' means a short, temporary break from an activity.",
+              "Incorrect. A 'pause' implies a reduction in activity, not an escalation."
+            ]
+          },
+          {
+            "question": "In the sentence, 'its attacks on Iran have been halted,' what does the passive voice primarily emphasize?",
+            "options": [
+              "The identity of the party that stopped the attacks.",
+              "The fact that the attacks are no longer occurring.",
+              "The location where the attacks were stopped."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While we know the US is involved, the passive voice emphasizes the action itself.",
+              "Correct. The passive voice focuses on the action of stopping and its result, which is that the attacks ceased.",
+              "Incorrect. The sentence doesn't highlight the geographical location of the halt."
+            ]
+          },
+          {
+            "question": "Which of the following sentences correctly uses the passive voice?",
+            "options": [
+              "Diplomats discussed the terms of the agreement.",
+              "The solution to the problem will be found soon.",
+              "Analysts observed the market changes closely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence uses the active voice, focusing on who performed the action.",
+              "Correct. 'Will be found' is formed with 'will be' + past participle, indicating the passive voice.",
+              "Incorrect. This sentence uses the active voice, focusing on who performed the observation."
+            ]
+          },
+          {
+            "question": "The phrase 'resolution to the conflict' suggests an outcome where:",
+            "options": [
+              "The conflict is temporarily postponed.",
+              "The disagreement is successfully settled.",
+              "One side completely dominates the other."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A resolution means a final solution, not a temporary delay.",
+              "Correct. A 'resolution' implies finding a way to solve the problem or disagreement.",
+              "Incorrect. A resolution aims for a shared solution, not one-sided domination."
+            ]
+          },
+          {
+            "question": "According to the news brief, how did the global oil market react to the announcement of paused attacks?",
+            "options": [
+              "It remained unaffected.",
+              "It experienced a strong decline in prices.",
+              "It showed a slight recovery in value."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The market 'reacted strongly' and prices 'dived', showing it was affected.",
+              "Correct. The global oil price 'dived' and the market 'reacted strongly' to the news.",
+              "Incorrect. The prices 'dived', meaning they decreased, not recovered."
+            ]
+          },
+          {
+            "question": "What is a common reason for using the passive voice in English?",
+            "options": [
+              "To always specify who performed the action clearly.",
+              "To place emphasis on the action or the receiver of the action.",
+              "To make sentences shorter and less formal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice often obscures or omits the agent.",
+              "Correct. The passive voice helps to highlight the action itself or the object experiencing the action.",
+              "Incorrect. Passive sentences can sometimes be longer and are used in formal contexts."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Geopolitical Tensions Ease: Oil Market Reacts to US-Iran Truce",
+        "overview": "Global oil markets have experienced a significant downturn following a declared cessation of hostilities between the United States and Iran, fostering optimism for diplomatic progress and a potential de-escalation of the protracted regional conflict.",
+        "topic": "International Relations, Geopolitics, Energy Markets, Diplomacy",
+        "news_brief_sentences": [
+          "Global oil prices witnessed a precipitous decline as diplomatic overtures emerged between the United States and Iran.",
+          "This abrupt market shift stems from Washington's declaration of a halt to offensive actions against Tehran.",
+          "The US administration indicated that this pause is intended to create an environment conducive to negotiations.",
+          "Such a de-escalation has immediately ignited speculation among analysts regarding a potential diplomatic resolution to the longstanding hostilities.",
+          "Market participants reacted swiftly to the prospect of reduced geopolitical risk, leading to the sharp fall in crude futures.",
+          "The suspension of military engagements marks a critical juncture in the volatile relations between the two nations.",
+          "Hopes are now considerably elevated for the resumption of constructive dialogue, which could avert further escalation.",
+          "The international community largely welcomes this development, viewing it as a pivotal step towards regional stability.",
+          "However, experts caution that the path to a lasting accord remains fraught with complex challenges.",
+          "Nevertheless, the immediate impact on global energy prices underscores the profound interdependence of geopolitics and economic stability."
+        ],
+        "vocabulary": [
+          {
+            "term": "precipitous decline",
+            "part_of_speech": "adjective + noun",
+            "definition": "A very sudden, steep, and significant drop or fall in value, quantity, or level."
+          },
+          {
+            "term": "halt to offensive actions",
+            "part_of_speech": "noun phrase",
+            "definition": "A complete cessation or suspension of military attacks, aggressive movements, or hostile activities initiated by one side against another."
+          },
+          {
+            "term": "create an environment conducive to",
+            "part_of_speech": "verb phrase",
+            "definition": "To establish conditions or circumstances that are favorable, suitable, or helpful for a particular outcome, activity, or development to occur."
+          },
+          {
+            "term": "speculation among analysts",
+            "part_of_speech": "noun phrase",
+            "definition": "The forming of theories, conjectures, or predictions by experts about a particular subject, especially in financial markets, without having firm evidence."
+          },
+          {
+            "term": "avert further escalation",
+            "part_of_speech": "verb phrase",
+            "definition": "To prevent a potentially worsening situation or an increase in the intensity, severity, or extent of a conflict or negative development."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun from a verb or adjective, often used in formal and academic writing to condense information and express abstract concepts. It transforms an action or quality into a concept, allowing for a more dense and formal style, and can shift the focus from the agent of an action to the action itself.",
+          "example_quote": "Global oil prices witnessed a precipitous decline as diplomatic overtures emerged between the United States and Iran."
+        },
+        "quiz": [
+          {
+            "question": "What was the immediate global market reaction to the US decision to pause attacks on Iran?",
+            "options": [
+              "Oil prices surged dramatically.",
+              "Oil prices experienced a significant downturn.",
+              "Stock markets remained largely unaffected."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief explicitly states oil prices witnessed a precipitous decline, not a surge.",
+              "Correct. The news brief highlights a \"precipitous decline\" in oil prices, reflecting reduced geopolitical risk.",
+              "Incorrect. While not explicitly stated for all stock markets, the significant impact on oil prices suggests broader market reactions."
+            ]
+          },
+          {
+            "question": "What does 'precipitous decline' most accurately describe in the context of the news brief?",
+            "options": [
+              "A gradual and expected decrease.",
+              "A sudden and substantial drop.",
+              "A minor fluctuation in value."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Precipitous\" implies suddenness and steepness, not a gradual trend.",
+              "Correct. \"Precipitous decline\" refers to a very sudden and significant drop, as explained in the vocabulary.",
+              "Incorrect. A precipitous decline suggests a major movement, far beyond a minor fluctuation."
+            ]
+          },
+          {
+            "question": "The US administration's rationale for halting offensive actions was primarily to:",
+            "options": [
+              "Prepare for more intensive military operations.",
+              "Facilitate an environment conducive to negotiations.",
+              "Await a response from other international bodies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly states the pause is to create space for talks, not to prepare for further attacks.",
+              "Correct. The brief mentions the US intended to \"create an environment conducive to negotiations\" by pausing actions.",
+              "Incorrect. While international bodies might be involved, the direct reason stated was for direct talks between the US and Iran."
+            ]
+          },
+          {
+            "question": "Which term best describes the general feeling among analysts following the de-escalation?",
+            "options": [
+              "Widespread skepticism regarding any talks.",
+              "Certainty of a swift resolution.",
+              "Speculation about a potential diplomatic resolution."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief mentions \"speculation among analysts\" regarding a potential resolution, indicating some hope, not widespread skepticism.",
+              "Incorrect. While hopes are elevated, the situation is complex, and certainty of a swift resolution is not implied.",
+              "Correct. The news brief states that the de-escalation ignited \"speculation among analysts regarding a potential diplomatic resolution.\""
+            ]
+          },
+          {
+            "question": "What does the phrase 'create an environment conducive to' imply about the conditions for talks?",
+            "options": [
+              "That talks can only happen under duress.",
+              "That conditions are being made favorable for discussions.",
+              "That an immediate agreement is guaranteed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Conducive to\" suggests favorable conditions, not conditions of duress.",
+              "Correct. To \"create an environment conducive to\" means to establish circumstances that are favorable for something to occur, like negotiations.",
+              "Incorrect. While hopes are raised, \"conducive to\" only means favorable, not a guarantee of outcome or immediate agreement."
+            ]
+          },
+          {
+            "question": "What is the primary purpose of nominalization, as exemplified by 'decline' from 'to decline'?",
+            "options": [
+              "To make sentences less formal.",
+              "To transform verbs or adjectives into nouns for abstract concepts.",
+              "To add emotional emphasis to a statement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Nominalization generally contributes to a more formal and abstract style, not less formal.",
+              "Correct. Nominalization is used to form nouns from other parts of speech, often condensing information and making writing more abstract and formal.",
+              "Incorrect. While sentence structure can affect tone, nominalization's primary function is grammatical transformation and stylistic density, not emotional emphasis."
+            ]
+          },
+          {
+            "question": "The news brief mentions that hopes are considerably elevated for what specific outcome?",
+            "options": [
+              "A new round of military exercises.",
+              "The resumption of constructive dialogue.",
+              "Increased sanctions against Iran."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief focuses on a de-escalation and talks, not military exercises.",
+              "Correct. The brief states, \"Hopes are now considerably elevated for the resumption of constructive dialogue.\"",
+              "Incorrect. The context is about pausing attacks and giving space for talks, suggesting a move away from increased sanctions."
+            ]
+          },
+          {
+            "question": "What does 'avert further escalation' mean in the context of the US-Iran situation?",
+            "options": [
+              "To encourage the conflict to intensify.",
+              "To prevent the situation from worsening.",
+              "To ensure the conflict remains unresolved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Avert\" means to prevent, not to encourage intensification of the conflict.",
+              "Correct. To \"avert further escalation\" means to prevent the conflict from becoming more intense or severe.",
+              "Incorrect. Preventing escalation is a step towards resolution or de-escalation, not a guarantee of it remaining unresolved."
+            ]
+          },
+          {
+            "question": "According to the news brief, what does the immediate impact on global energy prices underscore?",
+            "options": [
+              "The irrelevance of geopolitics to economic stability.",
+              "The profound interdependence of geopolitics and economic stability.",
+              "The isolation of energy markets from international events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief's conclusion states the opposite, emphasizing interdependence.",
+              "Correct. The final sentence highlights \"the profound interdependence of geopolitics and economic stability.\"",
+              "Incorrect. The rapid market reaction clearly shows energy markets are highly sensitive to international events, not isolated."
+            ]
+          },
+          {
+            "question": "In the example quote for nominalization, 'Global oil prices witnessed a precipitous decline as diplomatic overtures emerged between the United States and Iran,' which word functions as a nominalization of a verb?",
+            "options": [
+              "precipitous",
+              "decline",
+              "emerged"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Precipitous\" is an adjective modifying \"decline,\" not a noun formed from a verb.",
+              "Correct. \"Decline\" is a noun formed from the verb \"to decline,\" illustrating the concept of nominalization.",
+              "Incorrect. \"Emerged\" is a verb in the past simple tense, describing an action, not a nominalization."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

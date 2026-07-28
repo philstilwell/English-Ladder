@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-28",
+  "release_iso": "2026-07-28T11:51:51Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Zelensky to press Trump on air defences while in Washington",
+    "summary": "Ukraine's leader is hoping to firm up US commitments to bolstering Kyiv's anti-ballistic missile defences, as Russia has escalated deadly attacks.",
+    "link": "https://www.bbc.co.uk/news/articles/c9v4g7e047zo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Ukraine's Leader Visits Washington for Air Defences",
+        "overview": "Ukraine's leader will talk with Trump about air defenses.",
+        "topic": "Ukraine and US Talks on Air Defences",
+        "news_brief_sentences": [
+          "Ukraine's leader, Mr. Zelensky, went to Washington.",
+          "He wants to talk with Mr. Trump.",
+          "Mr. Zelensky hopes to get more air defences.",
+          "These are systems to protect Ukraine from missiles.",
+          "Russia has escalated its attacks on Ukraine.",
+          "These attacks have been very dangerous and caused deadly attacks.",
+          "Ukraine needs strong commitments from the US.",
+          "These commitments mean the US promises to help.",
+          "Mr. Zelensky wants to make sure the help is firm.",
+          "So, Ukraine can protect its people better."
+        ],
+        "vocabulary": [
+          {
+            "term": "leader",
+            "part_of_speech": "noun",
+            "definition": "A person who guides or commands a group."
+          },
+          {
+            "term": "air defences",
+            "part_of_speech": "noun phrase",
+            "definition": "Systems that protect a country from attacks by planes or missiles in the sky."
+          },
+          {
+            "term": "commitments",
+            "part_of_speech": "noun",
+            "definition": "Strong promises to do something or give something."
+          },
+          {
+            "term": "escalated",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Became more intense, larger, or more serious."
+          },
+          {
+            "term": "deadly attacks",
+            "part_of_speech": "noun phrase",
+            "definition": "Violent actions that can cause death or serious harm."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense for Wants and Hopes",
+          "explanation": "We use the Simple Present tense to talk about things we want or hope for. It shows a desire or intention. For example, 'He wants help' or 'She hopes to visit.' Remember to add '-s' for 'he', 'she', 'it' forms, like 'wants' or 'hopes'.",
+          "example_quote": "He wants to talk with Mr. Trump."
+        },
+        "quiz": [
+          {
+            "question": "Who is Mr. Zelensky in the news story?",
+            "options": [
+              "A country's leader",
+              "A famous singer",
+              "A sports player"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Mr. Zelensky is the leader of Ukraine.",
+              "That's not right. Mr. Zelensky is not a singer.",
+              "No, he is not a sports player in this story."
+            ]
+          },
+          {
+            "question": "Why did Mr. Zelensky go to Washington?",
+            "options": [
+              "To visit friends",
+              "To ask for help",
+              "To go shopping"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he did not go there to visit friends.",
+              "Yes, he went to ask for help with air defences.",
+              "No, his visit was not for shopping."
+            ]
+          },
+          {
+            "question": "What are \"air defences\" for?",
+            "options": [
+              "To protect from missiles",
+              "To fly planes",
+              "To clean the air"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Exactly! Air defences protect from attacks like missiles.",
+              "No, they are not for flying planes.",
+              "No, they do not clean the air."
+            ]
+          },
+          {
+            "question": "What does it mean if Russia \"escalated\" its attacks?",
+            "options": [
+              "The attacks stopped",
+              "The attacks became bigger",
+              "The attacks became smaller"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the attacks did not stop.",
+              "Correct! 'Escalated' means the attacks became more serious.",
+              "No, they did not become smaller."
+            ]
+          },
+          {
+            "question": "What kind of attacks did Russia make on Ukraine?",
+            "options": [
+              "Friendly attacks",
+              "Deadly attacks",
+              "Funny attacks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's not correct. The attacks were not friendly.",
+              "That's right, they were deadly attacks, meaning they caused harm.",
+              "No, the attacks were not funny."
+            ]
+          },
+          {
+            "question": "What does Mr. Zelensky want from the US?",
+            "options": [
+              "New clothes",
+              "Strong commitments",
+              "A new car"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he is not asking for clothes.",
+              "Yes, he wants strong commitments for help.",
+              "No, he is not asking for a car."
+            ]
+          },
+          {
+            "question": "What does the word \"commitments\" mean?",
+            "options": [
+              "Strong promises",
+              "Small gifts",
+              "Many questions"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Commitments are strong promises to do something.",
+              "No, commitments are not small gifts.",
+              "No, they are not many questions."
+            ]
+          },
+          {
+            "question": "Which country is Mr. Zelensky the leader of?",
+            "options": [
+              "Russia",
+              "Ukraine",
+              "United States"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he is not the leader of Russia.",
+              "Yes, Mr. Zelensky is the leader of Ukraine.",
+              "No, he is not the leader of the United States."
+            ]
+          },
+          {
+            "question": "In the sentence 'He wants to talk,' what does 'wants' tell us about Mr. Zelensky?",
+            "options": [
+              "Something he did in the past",
+              "Something he likes to eat",
+              "Something he desires now"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'wants' does not tell us about the past.",
+              "No, it does not tell us about food.",
+              "Correct! 'Wants' shows what he desires or intends in the present."
+            ]
+          },
+          {
+            "question": "What is the main purpose of Mr. Zelensky's visit?",
+            "options": [
+              "To go on vacation",
+              "To buy food",
+              "To get protection for Ukraine"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, he did not go for vacation.",
+              "No, he did not go to buy food.",
+              "Exactly! He wants to secure more protection for his country."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukraine's Leader Zelensky Seeks US Air Defence Commitments in Washington",
+        "overview": "Ukraine's President Zelensky will meet with former President Trump in Washington to strengthen US support for anti-ballistic missile defenses amidst intensified Russian attacks.",
+        "topic": "International Relations, Military Aid, Ukraine-US Diplomacy",
+        "news_brief_sentences": [
+          "Ukraine's President Volodymyr Zelensky is visiting Washington with a key objective.",
+          "He aims to press former US President Donald Trump on strengthening air defence systems.",
+          "Improved anti-ballistic missile defences are desperately needed to protect Kyiv's cities.",
+          "Russia has recently escalated its military actions, leading to more deadly attacks on Ukraine.",
+          "Zelensky is particularly hoping to firm up commitments from the United States.",
+          "These commitments are crucial for bolstering Ukraine's ability to counter Russian aggression.",
+          "The discussions will focus on how more advanced protective measures can be provided by the US.",
+          "Securing these systems is vital for reducing civilian casualties and protecting infrastructure.",
+          "This diplomatic effort highlights Ukraine's ongoing need for strong international support.",
+          "The outcome of these talks could significantly impact the ongoing conflict and future aid."
+        ],
+        "vocabulary": [
+          {
+            "term": "press",
+            "part_of_speech": "verb",
+            "definition": "To try to persuade someone forcefully to do something or to address a particular issue with urgency."
+          },
+          {
+            "term": "defences",
+            "part_of_speech": "noun",
+            "definition": "Actions or systems, especially military ones, used to protect against attack or harm."
+          },
+          {
+            "term": "escalated",
+            "part_of_speech": "verb",
+            "definition": "Increased rapidly in intensity, amount, or seriousness, often referring to conflicts or problems."
+          },
+          {
+            "term": "firm up",
+            "part_of_speech": "phrasal verb",
+            "definition": "To make something, like an agreement or a plan, more definite, certain, or robust."
+          },
+          {
+            "term": "bolstering",
+            "part_of_speech": "verb",
+            "definition": "The act of supporting, strengthening, or making something stronger or more effective."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Present Simple)",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object that receives the action, rather than the subject performing the action. It is formed with a form of 'to be' (e.g., is, are) followed by the past participle of the main verb. For example, 'The house is built.'",
+          "example_quote": "Improved anti-ballistic missile defences are desperately needed to protect Kyiv's cities."
+        },
+        "quiz": [
+          {
+            "question": "What is President Zelensky's main goal during his visit to Washington?",
+            "options": [
+              "To discuss cultural exchange programs.",
+              "To strengthen air defence systems for Ukraine.",
+              "To negotiate new trade agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief focuses on military aid, not cultural programs.",
+              "Correct. Zelensky aims to secure more robust air defence commitments from the US.",
+              "Incorrect. The primary objective is related to military defence, not trade."
+            ]
+          },
+          {
+            "question": "In the context of diplomacy, what does it mean for Zelensky to 'press' Donald Trump?",
+            "options": [
+              "To physically push him for a photo opportunity.",
+              "To strongly persuade or urge him on an issue.",
+              "To hold a joint press conference with him."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Press' in this context means to exert diplomatic influence, not physical action.",
+              "Correct. To 'press' someone means to urge them strongly or to make demands.",
+              "Incorrect. While related to news, 'press' here means to apply persuasive pressure."
+            ]
+          },
+          {
+            "question": "Why are improved anti-ballistic missile 'defences' crucial for Kyiv?",
+            "options": [
+              "To improve public infrastructure like roads.",
+              "To provide protection against military attacks.",
+              "To create new job opportunities for engineers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Defences are related to military protection, not general infrastructure.",
+              "Correct. Defences are systems designed to protect cities and people from military threats.",
+              "Incorrect. While new systems might create jobs, their main purpose is protection."
+            ]
+          },
+          {
+            "question": "What has Russia recently 'escalated' according to the news brief?",
+            "options": [
+              "Its peace talks with Ukraine.",
+              "Its humanitarian aid efforts.",
+              "Its military actions and deadly attacks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief indicates an increase in conflict, not peace talks.",
+              "Incorrect. Russia's actions are described as deadly attacks, not aid.",
+              "Correct. Russia has increased the intensity and seriousness of its military attacks."
+            ]
+          },
+          {
+            "question": "Zelensky is hoping to 'firm up' US commitments. What does 'firm up' mean here?",
+            "options": [
+              "To physically harden the commitments.",
+              "To make the commitments more definite and certain.",
+              "To put the commitments in writing for the first time."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Firm up' is not a literal physical action in this context.",
+              "Correct. To 'firm up' commitments means to make them more solid, definite, or certain.",
+              "Incorrect. It implies strengthening existing or expected commitments, not necessarily initiating them."
+            ]
+          },
+          {
+            "question": "What is the purpose of 'bolstering' Ukraine's ability to counter Russian aggression?",
+            "options": [
+              "To weaken Ukraine's military capacity.",
+              "To strengthen and support Ukraine's ability to resist.",
+              "To limit Ukraine's military operations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Bolstering' means the opposite of weakening.",
+              "Correct. 'Bolstering' means to give something more strength, support, or reinforcement.",
+              "Incorrect. The goal is to strengthen, not limit, Ukraine's capacity."
+            ]
+          },
+          {
+            "question": "Which grammar concept is demonstrated in the sentence: 'Improved anti-ballistic missile defences are desperately needed'?",
+            "options": [
+              "Present Perfect tense.",
+              "Passive Voice.",
+              "First Conditional."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The sentence uses 'are needed,' which is not the present perfect tense.",
+              "Correct. 'Are needed' is an example of the passive voice, focusing on the defences rather than who needs them.",
+              "Incorrect. The sentence does not express a conditional 'if-then' relationship."
+            ]
+          },
+          {
+            "question": "In the passive voice sentence 'Improved anti-ballistic missile defences are desperately needed,' who is performing the action of 'needing'?",
+            "options": [
+              "Kyiv's cities are doing the needing.",
+              "The defences themselves are needing.",
+              "The agent (who needs them) is not explicitly stated."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Kyiv's cities are the recipients of the protection, not the ones doing the needing.",
+              "Incorrect. The defences are the object that is needed, not the subject performing the action.",
+              "Correct. In the passive voice, the performer of the action (the agent) is often omitted or less important."
+            ]
+          },
+          {
+            "question": "According to the news brief, what types of attacks have escalated on Ukraine?",
+            "options": [
+              "Economic cyberattacks.",
+              "Diplomatic disagreements.",
+              "Deadly military attacks."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Cyberattacks are not specified as the type of escalated attacks in the brief.",
+              "Incorrect. The escalation refers to physical military actions, not diplomatic issues.",
+              "Correct. The brief explicitly states Russia has escalated 'deadly attacks' on Ukraine."
+            ]
+          },
+          {
+            "question": "What could significantly impact the ongoing conflict and future aid, according to the final sentence of the brief?",
+            "options": [
+              "Changes in global weather patterns.",
+              "The outcome of Zelensky's talks in Washington.",
+              "New discoveries in space exploration."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Weather patterns are not mentioned as a factor influencing the conflict in the brief.",
+              "Correct. The brief concludes that the outcome of these diplomatic talks could significantly impact the conflict.",
+              "Incorrect. Space exploration is not relevant to the current political and military situation described."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Zelensky Seeks Firm US Air Defence Commitments Amid Escalated Russian Attacks",
+        "overview": "Ukraine's leader, Volodymyr Zelensky, is reportedly aiming to secure robust American commitments for bolstering Kyiv's anti-ballistic missile capabilities during his Washington visit, as Russia's aggressive military actions have intensified.",
+        "topic": "Diplomatic Efforts for Enhanced Air Defence Capabilities in Ukraine",
+        "news_brief_sentences": [
+          "Ukrainian President Volodymyr Zelensky is currently in Washington, D.C., undertaking crucial diplomatic efforts to reinforce his nation's defensive posture.",
+          "A primary objective of his visit is to firm up commitments from the United States regarding enhanced air defence systems for Ukraine.",
+          "Kyiv's strategic imperative is to bolster its anti-ballistic missile capabilities, a response to the escalating intensity of Russian aggression.",
+          "Recent weeks have seen a spate of deadly attacks perpetrated by Russian forces, underscoring the urgent need for more robust protection.",
+          "Zelensky intends to press former President Donald Trump specifically on this issue, highlighting the critical role of US military aid.",
+          "The discussions are expected to revolve around securing both advanced weaponry and ongoing financial support to counter the pervasive threat.",
+          "Ukraine seeks to acquire state-of-the-art interceptors and radar systems to effectively mitigate further civilian casualties and infrastructure damage.",
+          "This diplomatic initiative is paramount for safeguarding Ukrainian cities from aerial assaults, which have become increasingly sophisticated.",
+          "The efficacy of these defensive measures is directly linked to the sustained commitment and logistical support from international partners.",
+          "Ultimately, Zelensky's engagements aim to solidify a long-term strategy for Ukraine's security against persistent external pressures."
+        ],
+        "vocabulary": [
+          {
+            "term": "firm up",
+            "part_of_speech": "verb",
+            "definition": "To make something more definite, settled, or secure; to strengthen or confirm a plan or agreement."
+          },
+          {
+            "term": "bolster",
+            "part_of_speech": "verb",
+            "definition": "To support or strengthen something; to improve the effectiveness or condition of something."
+          },
+          {
+            "term": "spate",
+            "part_of_speech": "noun",
+            "definition": "A large number of similar things or events appearing or occurring in quick succession; a sudden outpouring."
+          },
+          {
+            "term": "press",
+            "part_of_speech": "verb",
+            "definition": "To try strongly to persuade or compel someone to do something; to apply persistent influence or demand."
+          },
+          {
+            "term": "mitigate",
+            "part_of_speech": "verb",
+            "definition": "To make something less severe, serious, or painful; to alleviate or lessen the impact of adverse conditions."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases (functioning as adverbs or adjectives)",
+          "explanation": "Participial phrases, typically beginning with a present participle (-ing) or past participle (-ed), add descriptive detail to a sentence. When functioning adverbially, they explain how, why, or when an action occurs, often providing background or concurrent information to the main verb's action. They allow for more concise and sophisticated sentence structures, linking ideas smoothly by showing a relationship between the participle and the main clause's subject.",
+          "example_quote": "Ukrainian President Volodymyr Zelensky is currently in Washington, D.C., undertaking crucial diplomatic efforts to reinforce his nation's defensive posture."
+        },
+        "quiz": [
+          {
+            "question": "What is President Zelensky's primary objective during his Washington visit, according to the brief?",
+            "options": [
+              "To discuss economic sanctions against Russia.",
+              "To secure commitments for enhanced air defence systems.",
+              "To negotiate a peace treaty with Russian representatives."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While economic sanctions might be discussed broadly, the brief explicitly states his focus is on securing air defence commitments.",
+              "Correct. The brief clearly states his primary objective is to \"firm up commitments from the United States regarding enhanced air defence systems.\"",
+              "Incorrect. The brief does not mention any plans to negotiate a peace treaty during this visit; the focus is on strengthening defence."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does the phrase \"firm up commitments\" most closely mean?",
+            "options": [
+              "To question the commitments' validity.",
+              "To make the commitments more certain and robust.",
+              "To publicize the existing commitments."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Firm up\" implies strengthening and securing, not questioning.",
+              "Correct. To \"firm up\" means to make something more definite, settled, or secure, which aligns with securing robust American commitments.",
+              "Incorrect. While publicizing might occur, the core meaning of \"firm up\" is about solidifying, not merely announcing."
+            ]
+          },
+          {
+            "question": "The word \"bolster\" in the brief refers to:",
+            "options": [
+              "Weakening an existing structure.",
+              "Supporting or strengthening something.",
+              "Replacing old equipment entirely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Bolster\" means to strengthen, not weaken.",
+              "Correct. \"Bolster\" means to support or strengthen, fitting the context of improving anti-ballistic missile capabilities.",
+              "Incorrect. While new equipment might be involved in bolstering, the term itself means to strengthen, not necessarily replace everything."
+            ]
+          },
+          {
+            "question": "What does \"a spate of deadly attacks\" imply about the attacks?",
+            "options": [
+              "They were isolated incidents.",
+              "They occurred sporadically over a long period.",
+              "They happened frequently and in quick succession."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. A \"spate\" suggests a series of occurrences, not isolated ones.",
+              "Incorrect. A \"spate\" indicates rapid succession, not sporadic over a long time.",
+              "Correct. A \"spate\" refers to a large number of similar things happening quickly one after another, indicating intensity."
+            ]
+          },
+          {
+            "question": "When Zelensky intends to \"press\" Donald Trump, what is he likely doing?",
+            "options": [
+              "Ignoring Trump's political influence.",
+              "Avoiding a direct conversation with him.",
+              "Strongly urging or persuading him on an issue."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. To \"press\" someone indicates an active engagement and leveraging influence.",
+              "Incorrect. \"Press\" implies direct interaction and persuasion, not avoidance.",
+              "Correct. To \"press\" someone means to try to persuade them forcefully or apply strong influence to achieve a goal."
+            ]
+          },
+          {
+            "question": "The purpose of acquiring advanced systems is to \"mitigate further civilian casualties.\" What is the intended effect?",
+            "options": [
+              "To exaggerate the number of casualties.",
+              "To reduce the severity or impact of casualties.",
+              "To fully eliminate all potential harm."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Mitigate\" means to lessen the impact, not exaggerate it.",
+              "Correct. To \"mitigate\" means to make something less severe, serious, or painful, aiming to lessen harm.",
+              "Incorrect. While the goal is to reduce harm, \"mitigate\" suggests lessening, not necessarily complete elimination, which is often an impossible promise in conflict."
+            ]
+          },
+          {
+            "question": "In the sentence, \"Ukrainian President Volodymyr Zelensky is currently in Washington, D.C., undertaking crucial diplomatic efforts,\" what function does the participial phrase \"undertaking crucial diplomatic efforts\" serve?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It provides additional information about the President's actions.",
+              "It defines Washington, D.C."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The main verb is \"is.\" A participial phrase cannot be the main verb without an auxiliary.",
+              "Correct. The participial phrase functions adverbially, describing what Zelensky is doing while he is in Washington.",
+              "Incorrect. The phrase describes Zelensky's actions, not the location itself."
+            ]
+          },
+          {
+            "question": "What is cited as the primary reason for Kyiv's urgent need to bolster its anti-ballistic missile capabilities?",
+            "options": [
+              "Upcoming international sporting events.",
+              "The escalating intensity of Russian aggression and deadly attacks.",
+              "A desire to export advanced defence technology."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention sporting events; it directly links the need to Russian aggression.",
+              "Correct. The brief explicitly states this need is \"a response to the escalating intensity of Russian aggression\" and \"a spate of deadly attacks.\"",
+              "Incorrect. The focus is on acquiring, not exporting, defence technology for national security."
+            ]
+          },
+          {
+            "question": "Besides general U.S. commitments, whom does Zelensky specifically intend to lobby regarding air defence?",
+            "options": [
+              "The current U.S. Secretary of State.",
+              "Former President Donald Trump.",
+              "The Speaker of the House."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While he might interact with the Secretary of State, the brief specifically mentions pressing former President Trump.",
+              "Correct. The brief clearly states, \"Zelensky intends to press former President Donald Trump specifically on this issue.\"",
+              "Incorrect. The brief does not mention the Speaker of the House in this context."
+            ]
+          },
+          {
+            "question": "The phrase \"pervasive threat\" in the brief suggests that the threat is:",
+            "options": [
+              "Easily contained and isolated.",
+              "Widespread and persistent.",
+              "Limited to specific geographic regions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Pervasive\" means spread throughout, the opposite of easily contained or isolated.",
+              "Correct. \"Pervasive\" implies that something is present throughout an area or group of people and is therefore widespread and often persistent.",
+              "Incorrect. A pervasive threat suggests it is not limited to specific regions but extends broadly."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

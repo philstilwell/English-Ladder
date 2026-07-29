@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-29",
+  "release_iso": "2026-07-29T11:56:12Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "More than 100 aftershocks hit Japan after powerful quake that killed 13",
+    "summary": "People are being urged to stay alert, with earthquake aftershocks potentially reaching magnitude 7, officials say",
+    "link": "https://www.bbc.co.uk/news/articles/cgk43y21j0do?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "More than 100 Aftershocks Hit Japan After Powerful Quake that Killed 13",
+        "overview": "Japan experienced many earthquakes, and people need to stay safe.",
+        "topic": "Earthquakes and Safety in Japan",
+        "news_brief_sentences": [
+          "Japan had a powerful earthquake recently.",
+          "This earthquake killed 13 people.",
+          "After the main quake, there were many smaller quakes.",
+          "These smaller quakes are called aftershocks.",
+          "More than 100 aftershocks hit the country.",
+          "Officials say these aftershocks could be strong.",
+          "Some aftershocks might reach magnitude 7.",
+          "People are urged to stay alert.",
+          "Staying alert means being ready for danger.",
+          "It is important to stay safe in affected areas."
+        ],
+        "vocabulary": [
+          {
+            "term": "earthquake",
+            "part_of_speech": "noun",
+            "definition": "A sudden strong shaking of the ground."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Caused someone to die."
+          },
+          {
+            "term": "aftershocks",
+            "part_of_speech": "noun",
+            "definition": "Smaller earthquakes that happen after a big one."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People in important positions, often in the government."
+          },
+          {
+            "term": "alert",
+            "part_of_speech": "adjective",
+            "definition": "Watching and ready for danger or something important."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished in the past. We often add '-ed' to regular verbs. For irregular verbs, the form changes.",
+          "example_quote": "More than 100 aftershocks hit the country."
+        },
+        "quiz": [
+          {
+            "question": "What happened in Japan recently?",
+            "options": [
+              "A big party",
+              "A powerful earthquake",
+              "A new restaurant"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is not about a party.",
+              "Yes, Japan experienced a powerful earthquake.",
+              "No, the news is not about food."
+            ]
+          },
+          {
+            "question": "How many people did the earthquake kill?",
+            "options": [
+              "10",
+              "13",
+              "100"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 10 is not the correct number.",
+              "Yes, the earthquake killed 13 people.",
+              "100 is the number of aftershocks, not deaths."
+            ]
+          },
+          {
+            "question": "What are smaller quakes that happen after a big one called?",
+            "options": [
+              "Main shocks",
+              "Aftershocks",
+              "Small quakes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, main shock is the big one.",
+              "Yes, they are called aftershocks.",
+              "This is not the specific term used."
+            ]
+          },
+          {
+            "question": "What does 'alert' mean in the news?",
+            "options": [
+              "To be sleeping",
+              "To be watching and ready for danger",
+              "To be sad"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, being alert means the opposite of sleeping.",
+              "Yes, to be alert means you are ready for danger.",
+              "No, it does not mean to be sad."
+            ]
+          },
+          {
+            "question": "Who said that aftershocks could be strong?",
+            "options": [
+              "Children",
+              "Officials",
+              "Tourists"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, children usually do not give official warnings.",
+              "Yes, officials are the people in charge who gave the warning.",
+              "No, tourists do not usually give such warnings."
+            ]
+          },
+          {
+            "question": "Which word means 'caused someone to die'?",
+            "options": [
+              "Alert",
+              "Killed",
+              "Hit"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Alert means ready for danger.",
+              "Yes, 'killed' means caused someone to die.",
+              "Hit means to strike something, not necessarily to cause death."
+            ]
+          },
+          {
+            "question": "When do we use the Simple Past Tense?",
+            "options": [
+              "For future actions",
+              "For actions happening now",
+              "For actions that finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, future actions use different tenses.",
+              "No, actions happening now use the present continuous.",
+              "Yes, we use the simple past tense for actions that are complete."
+            ]
+          },
+          {
+            "question": "In the sentence \"This earthquake killed 13 people\", which word is in the Simple Past Tense?",
+            "options": [
+              "This",
+              "Earthquake",
+              "Killed"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'This' is a determiner, not a verb.",
+              "'Earthquake' is a noun.",
+              "Yes, 'killed' is the past simple form of 'kill'."
+            ]
+          },
+          {
+            "question": "\"A sudden strong shaking of the ground\" is the definition of which word?",
+            "options": [
+              "Aftershock",
+              "Earthquake",
+              "Alert"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Aftershock is a smaller quake after a big one.",
+              "Yes, this defines an earthquake.",
+              "Alert means ready for danger."
+            ]
+          },
+          {
+            "question": "Why are people urged to stay alert?",
+            "options": [
+              "Because it is sunny",
+              "Because aftershocks could be strong",
+              "Because it is evening"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The weather is not the reason for the alert.",
+              "Yes, people need to be ready because the aftershocks might be powerful.",
+              "The time of day is not the reason."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Japan Struck by Powerful Quake and Over 100 Aftershocks",
+        "overview": "Following a powerful earthquake that killed 13 people, over 100 aftershocks have hit Japan, leading officials to urge residents to remain vigilant against further seismic activity.",
+        "topic": "Natural Disasters: Earthquakes and Aftershocks in Japan",
+        "news_brief_sentences": [
+          "Japan recently experienced a powerful earthquake which tragically resulted in 13 fatalities.",
+          "The initial tremor was followed by more than 100 aftershocks, causing ongoing concern among residents.",
+          "Authorities have since issued warnings, urging the public to remain vigilant.",
+          "These aftershocks have the potential to reach a significant magnitude, possibly up to 7.",
+          "People in the affected regions are advised to stay alert for any further seismic activity.",
+          "The country's officials are closely monitoring the situation to ensure public safety.",
+          "Residents have been asked to prepare for potential emergencies and understand evacuation routes.",
+          "Buildings and infrastructure are being carefully inspected for damage caused by the tremors.",
+          "Many families are facing displacement and disruption to their daily lives due to the ongoing quakes.",
+          "The government emphasizes the importance of following safety guidelines during this critical period."
+        ],
+        "vocabulary": [
+          {
+            "term": "earthquake",
+            "part_of_speech": "noun",
+            "definition": "A sudden violent shaking of the ground, often causing great destruction, as a result of movements within the Earth's crust."
+          },
+          {
+            "term": "aftershocks",
+            "part_of_speech": "noun",
+            "definition": "Smaller earthquakes that follow the main shock of a large earthquake and originate at or near the same location."
+          },
+          {
+            "term": "vigilant",
+            "part_of_speech": "adjective",
+            "definition": "Keeping careful watch for possible danger or difficulties; alert and watchful."
+          },
+          {
+            "term": "magnitude",
+            "part_of_speech": "noun",
+            "definition": "A measure of the size or power of an earthquake."
+          },
+          {
+            "term": "seismic",
+            "part_of_speech": "adjective",
+            "definition": "Relating to or caused by earthquakes or other vibrations of the Earth's crust."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the doer. We often use it when the agent (the person or thing doing the action) is unknown, unimportant, or obvious from the context. It is formed using a form of 'to be' + past participle (e.g., was followed, are advised).",
+          "example_quote": "The initial tremor was followed by more than 100 aftershocks, causing ongoing concern among residents."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary concern for officials in Japan after the powerful earthquake?",
+            "options": [
+              "Rebuilding damaged infrastructure.",
+              "Preventing further aftershocks.",
+              "Urging residents to stay alert for more seismic activity."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While rebuilding is important, the immediate concern is safety from ongoing seismic events.",
+              "Aftershocks are natural; the concern is being prepared for them.",
+              "Correct. Officials are primarily focused on public safety and vigilance against potential aftershocks."
+            ]
+          },
+          {
+            "question": "What does the term \"earthquake\" refer to?",
+            "options": [
+              "A strong gust of wind.",
+              "A sudden shaking of the ground.",
+              "A large flood."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A strong gust of wind is a weather phenomenon, not an earthquake.",
+              "Correct. An earthquake is a violent shaking of the Earth's surface.",
+              "A large flood is related to water, not ground movement."
+            ]
+          },
+          {
+            "question": "How many aftershocks hit Japan after the powerful quake?",
+            "options": [
+              "Exactly 13.",
+              "More than 100.",
+              "Up to 7."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "13 refers to the number of fatalities, not aftershocks.",
+              "Correct. The news brief states \"more than 100 aftershocks.\"",
+              "Up to 7 refers to the potential magnitude of aftershocks, not their number."
+            ]
+          },
+          {
+            "question": "If officials urge people to remain \"vigilant,\" what do they want residents to do?",
+            "options": [
+              "Go on holiday.",
+              "Be attentive and watchful for danger.",
+              "Ignore the warnings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Going on holiday is the opposite of being vigilant during a crisis.",
+              "Correct. To be vigilant means to be alert and watchful for possible danger.",
+              "Ignoring warnings would put residents at risk, which is not what officials advise."
+            ]
+          },
+          {
+            "question": "In the sentence \"The initial tremor was followed by more than 100 aftershocks,\" which grammatical concept is used?",
+            "options": [
+              "Present Perfect.",
+              "Conditional statement.",
+              "Passive Voice."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Present Perfect describes an action completed in the past with current relevance, not this structure.",
+              "A conditional statement uses 'if' to describe possible situations and their outcomes.",
+              "Correct. The action (following) is done to the subject ('tremor'), indicating the passive voice."
+            ]
+          },
+          {
+            "question": "What is the potential maximum magnitude mentioned for the aftershocks?",
+            "options": [
+              "Magnitude 13.",
+              "Magnitude 7.",
+              "Magnitude 100."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Magnitude 13 is incorrect; 13 refers to fatalities.",
+              "Correct. The article states aftershocks could potentially reach magnitude 7.",
+              "Magnitude 100 is far too high and refers to the number of aftershocks, not their strength."
+            ]
+          },
+          {
+            "question": "What does the \"magnitude\" of an earthquake refer to?",
+            "options": [
+              "The duration of the quake.",
+              "The depth of the quake.",
+              "The size or power of the quake."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Duration is how long it lasts, not its magnitude.",
+              "Depth refers to how far below the surface it originates.",
+              "Correct. Magnitude is a measure of the earthquake's strength or size."
+            ]
+          },
+          {
+            "question": "Which sentence below uses the passive voice to highlight the action rather than the actor?",
+            "options": [
+              "Officials are monitoring the situation.",
+              "Residents must follow safety guidelines.",
+              "Buildings are being carefully inspected."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Officials are monitoring\" uses active voice.",
+              "\"Residents must follow\" uses active voice with a modal verb.",
+              "Correct. \"Buildings are being carefully inspected\" uses the passive voice, focusing on the inspection of buildings rather than who is doing the inspecting."
+            ]
+          },
+          {
+            "question": "When the news mentions \"seismic activity,\" what kind of events is it describing?",
+            "options": [
+              "Weather-related events like storms.",
+              "Events related to ground movement and earthquakes.",
+              "Volcanic eruptions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Weather-related events are meteorological, not seismic.",
+              "Correct. Seismic activity refers specifically to movements of the Earth's crust, including earthquakes.",
+              "While often linked geologically, seismic activity primarily refers to tremors and quakes, not eruptions themselves."
+            ]
+          },
+          {
+            "question": "Why are people being urged to stay alert?",
+            "options": [
+              "To avoid traffic jams.",
+              "Because aftershocks could continue and be strong.",
+              "To prepare for a typhoon."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Traffic is not the primary reason for these specific warnings.",
+              "Correct. The warnings are due to the potential for ongoing and powerful aftershocks.",
+              "The news brief specifically mentions aftershocks, not typhoons."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Japan Grapples with Extensive Aftershocks Following Devastating Quake",
+        "overview": "Japan is currently contending with a series of potent aftershocks after a powerful earthquake claimed 13 lives, prompting urgent warnings for residents to maintain heightened vigilance against potential further seismic activity.",
+        "topic": "Seismic Activity and Disaster Preparedness in Japan",
+        "news_brief_sentences": [
+          "Japan is presently contending with the profound repercussions of a powerful earthquake that tragically claimed 13 lives.",
+          "The initial seismic event has been succeeded by an extensive series of over 100 aftershocks, exacerbating an already precarious situation.",
+          "Officials are vehemently urging the populace to maintain extreme vigilance, given the persistent threat posed by these subsequent tremors.",
+          "There is particular apprehension regarding forecasts indicating that some aftershocks could reach a significant magnitude 7.",
+          "This sustained geological instability underscores the inherent vulnerabilities of the archipelago to seismic activity.",
+          "The immediate aftermath revealed considerable damage to infrastructure and residential areas across affected prefectures.",
+          "Emergency services are currently engaged in arduous rescue and relief operations, frequently hampered by ongoing earth movements.",
+          "The authorities have underscored the critical importance of continuous public awareness and adherence to safety protocols.",
+          "The cumulative impact of the initial quake and the ensuing aftershocks presents a formidable challenge to comprehensive recovery efforts.",
+          "Citizens are advised to strictly observe all official directives to mitigate potential further harm during this tumultuous period."
+        ],
+        "vocabulary": [
+          {
+            "term": "exacerbating",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Making a problem, bad situation, or negative feeling worse or more severe."
+          },
+          {
+            "term": "precarious",
+            "part_of_speech": "adjective",
+            "definition": "Not securely held or in position; dangerously likely to fall or collapse; or, a situation that is uncertain or unstable."
+          },
+          {
+            "term": "vehemently",
+            "part_of_speech": "adverb",
+            "definition": "In a forceful, passionate, or intense manner; with great feeling or strong emotion."
+          },
+          {
+            "term": "mitigate",
+            "part_of_speech": "verb",
+            "definition": "To make something less severe, serious, or painful; to lessen the gravity of a situation or effect."
+          },
+          {
+            "term": "tumultuous",
+            "part_of_speech": "adjective",
+            "definition": "Marked by disturbance and disorder; characterized by confusion, commotion, or uproar; often refers to a period of time."
+          }
+        ],
+        "grammar": {
+          "concept": "Use of 'Given' to introduce context or reason",
+          "explanation": "The word 'given' can function as a preposition or a conjunction to introduce a fact, circumstance, or consideration that provides context or reason for the main clause. It essentially means 'considering' or 'in light of', adding a sophisticated nuance to expressions of cause and effect or situational dependency. This construction allows for concise yet comprehensive contextualisation.",
+          "example_quote": "Officials are vehemently urging the populace to maintain extreme vigilance, given the persistent threat posed by these subsequent tremors."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the News Brief?",
+            "options": [
+              "The historical frequency of earthquakes in Japan.",
+              "The ongoing aftershocks and official warnings following a major earthquake in Japan.",
+              "International aid efforts dispatched to Japan after the quake."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While historical context is relevant to seismic activity, the brief focuses on current events.",
+              "Correct. The brief details the persistent aftershocks and the authorities' urgent calls for vigilance, highlighting the immediate crisis.",
+              "The brief mentions rescue operations but does not elaborate on international aid specifics."
+            ]
+          },
+          {
+            "question": "The phrase 'exacerbating an already precarious situation' in the News Brief implies what?",
+            "options": [
+              "The aftershocks are improving the recovery efforts.",
+              "The situation was already unstable, and the aftershocks are making it worse.",
+              "The situation is stable, but the aftershocks are causing minor disruptions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'Exacerbating' means making something worse, not better.",
+              "Correct. 'Exacerbating' means worsening, and 'precarious' indicates an unstable or dangerous prior state.",
+              "This contradicts the meaning of 'exacerbating' and 'precarious', which describe a deteriorating and unstable state."
+            ]
+          },
+          {
+            "question": "How are officials described as communicating their warnings regarding vigilance?",
+            "options": [
+              "Hesitantly and cautiously.",
+              "Casually and informally.",
+              "Forcefully and intensely."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief states officials are 'vehemently urging', indicating strong and not hesitant communication.",
+              "The term 'vehemently' suggests a formal and intense approach, not casual communication.",
+              "Correct. 'Vehemently' signifies a forceful, passionate, and intense manner of urging."
+            ]
+          },
+          {
+            "question": "What does the News Brief suggest citizens should do to 'mitigate potential further harm'?",
+            "options": [
+              "Relocate permanently to a different country.",
+              "Observe all official directives and safety protocols.",
+              "Rely solely on personal judgment during the crisis."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While some might choose this, the brief's advice for citizens is to adhere to official directives for immediate safety.",
+              "Correct. The brief explicitly states that citizens are advised to 'strictly observe all official directives to mitigate potential further harm'.",
+              "The brief emphasizes adhering to official protocols, which implies not relying solely on individual judgment in a crisis."
+            ]
+          },
+          {
+            "question": "Which word best describes the current period in Japan, as used in the News Brief?",
+            "options": [
+              "Serene",
+              "Stable",
+              "Tumultuous"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The term 'serene' implies calm and peace, which is contrary to the described situation.",
+              "The news brief explicitly highlights ongoing instability, making 'stable' an inaccurate description.",
+              "Correct. The brief refers to this as a 'tumultuous period,' reflecting the disturbance and disorder."
+            ]
+          },
+          {
+            "question": "In the sentence 'Officials are vehemently urging the populace to maintain extreme vigilance, given the persistent threat posed by these subsequent tremors,' what function does 'given' serve?",
+            "options": [
+              "It acts as a past participle of the verb 'to give'.",
+              "It introduces the reason or context for the urging.",
+              "It signifies a gift or donation from officials."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While 'given' can be a past participle, in this context, it functions differently, introducing a causal element.",
+              "Correct. 'Given' introduces the specific circumstance – the persistent threat – that provides the reason for the officials' urging.",
+              "This interpretation is incorrect; 'given' here is not about a physical offering but about providing context."
+            ]
+          },
+          {
+            "question": "What is the forecast magnitude of some of the potential aftershocks?",
+            "options": [
+              "Magnitude 5",
+              "Magnitude 6",
+              "Magnitude 7"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief specifically mentions a higher potential magnitude.",
+              "The brief indicates that some aftershocks could be more powerful than magnitude 6.",
+              "Correct. The brief states there is 'particular apprehension regarding forecasts indicating that some aftershocks could reach a significant magnitude 7'."
+            ]
+          },
+          {
+            "question": "The News Brief indicates that rescue operations are 'frequently hampered by' what?",
+            "options": [
+              "Lack of equipment.",
+              "Ongoing earth movements.",
+              "Insufficient personnel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not specify a lack of equipment as a hindrance.",
+              "Correct. The brief states that rescue operations are 'frequently hampered by ongoing earth movements'.",
+              "The brief mentions arduous operations but does not attribute hindrances to insufficient personnel."
+            ]
+          },
+          {
+            "question": "What does 'sustained geological instability' imply for the region?",
+            "options": [
+              "The region is expected to become seismically dormant.",
+              "The region is inherently prone to earthquakes and related seismic events.",
+              "Geological conditions are improving rapidly, reducing future risks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the opposite of what 'sustained geological instability' suggests for a seismically active region.",
+              "Correct. 'Sustained geological instability' points to the long-term, inherent predisposition of the area to seismic activity.",
+              "This contradicts the term 'instability' and the overall tone of the brief regarding ongoing threats."
+            ]
+          },
+          {
+            "question": "What is the reported death toll from the initial powerful earthquake?",
+            "options": [
+              "More than 100 people.",
+              "Exactly 7 people.",
+              "13 lives."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "More than 100 refers to aftershocks, not the death toll.",
+              "The brief specifies a different number for the fatalities.",
+              "Correct. The brief states that the earthquake 'tragically claimed 13 lives'."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

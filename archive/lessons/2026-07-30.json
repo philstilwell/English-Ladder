@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-30",
+  "release_iso": "2026-07-30T11:46:34Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "US launches 'heavy' strikes on Iran after attempted attack on American troops",
+    "summary": "After a short period of relative calm when hostilities were paused, both sides have now restarted missile attacks.",
+    "link": "https://www.bbc.co.uk/news/articles/c74gwdzywmeo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Strikes Iran: New Attacks Start Again",
+        "overview": "The US and Iran have started fighting again with missile attacks after a quiet time.",
+        "topic": "US and Iran: Renewed Attacks",
+        "news_brief_sentences": [
+          "The United States launched new strikes.",
+          "These strikes were on Iran.",
+          "It happened after an attempted attack.",
+          "American troops were the target.",
+          "There was a short period of calm before.",
+          "Hostilities between the two countries were paused then.",
+          "But now, both sides have restarted missile attacks.",
+          "The US wants to protect its troops.",
+          "This situation can be dangerous.",
+          "Many people hope for peace soon."
+        ],
+        "vocabulary": [
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Sudden strong attacks, often by military planes or missiles."
+          },
+          {
+            "term": "attack",
+            "part_of_speech": "noun",
+            "definition": "When someone tries to hurt another person or country."
+          },
+          {
+            "term": "troops",
+            "part_of_speech": "noun",
+            "definition": "Groups of soldiers working together."
+          },
+          {
+            "term": "calm",
+            "part_of_speech": "noun",
+            "definition": "A time when things are quiet and peaceful, without fighting."
+          },
+          {
+            "term": "paused",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Stopped for a short time, then started again."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished before now. For many verbs, we add '-ed' to the end. For others, the word changes.",
+          "example_quote": "The United States launched new strikes."
+        },
+        "quiz": [
+          {
+            "question": "What did the United States launch?",
+            "options": [
+              "New strikes",
+              "Peace talks",
+              "Food aid"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! The US launched new strikes.",
+              "No, they launched new strikes, not peace talks.",
+              "Incorrect. The news says 'new strikes'."
+            ]
+          },
+          {
+            "question": "Where did the US launch strikes?",
+            "options": [
+              "In Syria",
+              "On Iran",
+              "In America"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the strikes were on Iran.",
+              "Correct! The strikes were on Iran.",
+              "Incorrect. The strikes were on Iran, not America."
+            ]
+          },
+          {
+            "question": "What happened before the new strikes?",
+            "options": [
+              "A long war",
+              "A period of calm",
+              "More attacks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, there was a period of calm.",
+              "Yes, there was a short period of calm.",
+              "Incorrect. The text says a 'period of calm'."
+            ]
+          },
+          {
+            "question": "What does 'troops' mean?",
+            "options": [
+              "New missiles",
+              "Groups of soldiers",
+              "Peace agreements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'troops' means groups of soldiers.",
+              "Exactly! 'Troops' are groups of soldiers.",
+              "Incorrect. 'Troops' means groups of soldiers."
+            ]
+          },
+          {
+            "question": "What does it mean if hostilities were 'paused'?",
+            "options": [
+              "They became stronger",
+              "They stopped for a short time",
+              "They finished completely"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'paused' means they stopped for a short time.",
+              "That's right! 'Paused' means stopped for a short time.",
+              "Incorrect. 'Paused' means a temporary stop."
+            ]
+          },
+          {
+            "question": "Which word means 'sudden strong attacks'?",
+            "options": [
+              "Calm",
+              "Troops",
+              "Strikes"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'calm' is a time without fighting.",
+              "Incorrect. 'Troops' are soldiers.",
+              "Yes, 'strikes' are sudden strong attacks."
+            ]
+          },
+          {
+            "question": "What kind of attacks did both sides restart?",
+            "options": [
+              "Missile attacks",
+              "Cyber attacks",
+              "Trade attacks"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Both sides restarted missile attacks.",
+              "No, the news mentions missile attacks.",
+              "Incorrect. The news says 'missile attacks'."
+            ]
+          },
+          {
+            "question": "The sentence 'The United States launched new strikes' uses which grammar tense?",
+            "options": [
+              "Present continuous",
+              "Future simple",
+              "Simple past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'launched' indicates a past action, not present continuous.",
+              "Incorrect. This sentence describes an action that finished.",
+              "Correct! 'Launched' is the simple past tense of 'launch'."
+            ]
+          },
+          {
+            "question": "What does 'attack' mean in this news?",
+            "options": [
+              "A friendly visit",
+              "An attempt to hurt",
+              "A new trade deal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, an 'attack' is not a friendly visit.",
+              "Yes, an 'attack' is when someone tries to hurt another.",
+              "Incorrect. An 'attack' means an attempt to hurt."
+            ]
+          },
+          {
+            "question": "Why did the US launch strikes, according to the news?",
+            "options": [
+              "To start a long war",
+              "After an attempted attack on its troops",
+              "To help a different country"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the reason given was an attempted attack on troops.",
+              "That's right! It was after an attempted attack on American troops.",
+              "Incorrect. The reason was an attempted attack on American troops."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US Launches 'Heavy' Strikes on Iran Amid Renewed Hostilities",
+        "overview": "The United States has launched significant military strikes against Iran following a period of calm, as both nations have resumed missile attacks.",
+        "topic": "Geopolitical conflict and renewed military actions in the Middle East.",
+        "news_brief_sentences": [
+          "The United States has recently launched several heavy military strikes on Iran.",
+          "These actions came after an attempted attack on American troops, escalating tensions in the region.",
+          "Prior to this, there had been a short period of relative calm, creating hope for de-escalation.",
+          "During that time, hostilities were paused, indicating a temporary halt in the conflict between the two nations.",
+          "However, this lull has now ended, with both sides resuming their aggressive postures.",
+          "Reports confirm that both the US and Iran have restarted missile attacks, making the situation more volatile.",
+          "The US justified its strikes as a necessary defensive measure following the threat to its personnel.",
+          "International bodies are expressing concern about the renewed conflict and its potential impact on regional stability.",
+          "This rapid return to conflict follows a brief moment where de-escalation seemed possible.",
+          "The world is closely observing these developments, hoping for a peaceful resolution despite the recent events."
+        ],
+        "vocabulary": [
+          {
+            "term": "launched",
+            "part_of_speech": "verb",
+            "definition": "To start or set in motion something, often a large-scale project or an attack."
+          },
+          {
+            "term": "heavy",
+            "part_of_speech": "adjective",
+            "definition": "Referring to something intense, significant, or powerful in its impact, like a strong attack."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, often by air, against a specific target."
+          },
+          {
+            "term": "short period of relative calm",
+            "part_of_speech": "phrase",
+            "definition": "A brief time when a difficult situation becomes less active or intense, suggesting a temporary peace."
+          },
+          {
+            "term": "hostilities were paused",
+            "part_of_speech": "phrase",
+            "definition": "The fighting or aggressive actions between two groups stopped temporarily."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is a grammatical construction used when the focus is on the action or the result of the action, rather than on the agent (who or what performs the action). It is formed using a form of the verb 'to be' (e.g., is, are, was, were) followed by the past participle of the main verb. It's often used in news to report events objectively without naming the specific actor, or when the actor is less important or unknown.",
+          "example_quote": "hostilities were paused"
+        },
+        "quiz": [
+          {
+            "question": "What prompted the US to launch strikes on Iran?",
+            "options": [
+              "An attempted attack on American troops",
+              "A request from international allies",
+              "Iran launching a satellite"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The US responded to a specific threat against its forces.",
+              "Incorrect. The news brief mentions an attempted attack on American troops, not a request from allies.",
+              "Incorrect. Satellite launches were not mentioned as the cause for these strikes in the news brief."
+            ]
+          },
+          {
+            "question": "What is the best synonym for 'launched' as used in the news brief?",
+            "options": [
+              "Began",
+              "Stopped",
+              "Received"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Exactly! 'Launched' means to start an action, in this case, a military operation.",
+              "Incorrect. 'Stopped' is the opposite of launched.",
+              "Incorrect. 'Received' means to get something, not to initiate it."
+            ]
+          },
+          {
+            "question": "How did the situation between the US and Iran change after a 'short period of relative calm'?",
+            "options": [
+              "Both sides restarted missile attacks",
+              "They signed a peace treaty",
+              "Economic sanctions were lifted"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The period of calm ended with renewed military actions.",
+              "Incorrect. The news brief states both sides restarted missile attacks, not that a peace treaty was signed.",
+              "Incorrect. The news brief does not mention the lifting of economic sanctions."
+            ]
+          },
+          {
+            "question": "When the news brief says the US launched 'heavy' strikes, it means the strikes were:",
+            "options": [
+              "Intense and significant",
+              "Light and insignificant",
+              "Difficult to lift"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! 'Heavy' in this context refers to the strong impact or scale of the strikes.",
+              "Incorrect. 'Heavy' here means powerful and significant, not light.",
+              "Incorrect. This is a common meaning for physical objects, but not for military actions in this context."
+            ]
+          },
+          {
+            "question": "In the sentence 'hostilities were paused,' what does the passive voice emphasize?",
+            "options": [
+              "The action of pausing",
+              "Who paused the hostilities",
+              "The reason for the pause"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The passive voice often emphasizes the action itself, rather than who performed it.",
+              "Incorrect. The passive voice generally de-emphasizes the agent (who performed the action).",
+              "Incorrect. While context might imply it, the passive voice itself focuses on the action, not the reason."
+            ]
+          },
+          {
+            "question": "Which of these best describes 'strikes' as used in the news brief?",
+            "options": [
+              "Military attacks",
+              "Workers stopping work",
+              "People hitting something"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Precisely! In this context, 'strikes' refers to military attacks, often by air.",
+              "Incorrect. While 'strike' can mean workers stopping work, that is not its meaning in this news report.",
+              "Incorrect. While 'strikes' can involve hitting, in this military context, it means planned attacks."
+            ]
+          },
+          {
+            "question": "What was the state of hostilities between the two nations *before* the recent US strikes?",
+            "options": [
+              "They were paused",
+              "They were ongoing intensely",
+              "A peace agreement was being negotiated"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The news states that hostilities were paused for a short period.",
+              "Incorrect. Hostilities were paused, indicating a temporary halt, not intense ongoing conflict.",
+              "Incorrect. The news brief does not mention ongoing peace negotiations, but rather a temporary calm."
+            ]
+          },
+          {
+            "question": "If a situation has a 'short period of relative calm,' what is happening?",
+            "options": [
+              "Things are less active or intense for a brief time",
+              "Everyone is celebrating a holiday",
+              "There is no conflict at all"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! It means a brief time with less tension, not complete peace.",
+              "Incorrect. This phrase indicates a reduction in conflict, not necessarily a celebration.",
+              "Incorrect. 'Relative calm' suggests a reduction in intensity, not a complete absence of conflict."
+            ]
+          },
+          {
+            "question": "If you wanted to emphasize *who* launched the strikes, which grammatical voice would you primarily use?",
+            "options": [
+              "Active voice",
+              "Passive voice",
+              "Subjunctive mood"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The active voice (e.g., 'The US launched...') clearly states the agent.",
+              "Incorrect. The passive voice typically de-emphasizes the agent, focusing on the action.",
+              "Incorrect. The subjunctive mood expresses wishes or hypothetical situations, not the agent of an action."
+            ]
+          },
+          {
+            "question": "What does the news brief indicate about the current state of missile attacks?",
+            "options": [
+              "Both sides have restarted them",
+              "Only one side is launching them",
+              "They have completely stopped"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The news brief explicitly states that both sides have restarted missile attacks.",
+              "Incorrect. The news brief clearly states that *both* sides have restarted missile attacks.",
+              "Incorrect. The news brief indicates that missile attacks have restarted, not stopped."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US-Iran Hostilities Reignite: A Return to Tit-for-Tat Regional Confrontation",
+        "overview": "Following a brief respite from conflict, the United States and Iran have recommenced missile exchanges, signaling a concerning return to a volatile cycle of reciprocal military actions that imperils regional stability.",
+        "topic": "Geopolitical Escalation and Renewed Conflict in the Middle East",
+        "news_brief_sentences": [
+          "The United States has initiated a series of significant strikes against targets in Iran, marking a concerning escalation in regional hostilities.",
+          "These substantial military actions follow an attempted assault on American personnel, thereby precipitating a robust, retaliatory response from Washington.",
+          "This development shatters a recent period characterized by a relative calm, during which de-escalation efforts appeared to foster a temporary cessation of overt conflict.",
+          "However, the fragile pause in belligerent actions has demonstrably ended, with both nations now re-engaging in missile exchanges.",
+          "Observers note a return to the precarious tit-for-tat dynamic that has historically destabilized the region.",
+          "The renewed confrontations underscore the persistent challenges in achieving sustained peace and security amidst entrenched geopolitical rivalries.",
+          "Such deliberate military posture adjustments invariably heighten tensions across the broader Middle Eastern theatre.",
+          "Concerns are mounting that the re-commencement of these strikes could undermine any future diplomatic overtures aimed at long-term stability.",
+          "Analysts are closely monitoring the scope and intensity of these latest engagements to gauge potential wider implications for international relations.",
+          "The cycle of provocation and reprisal perpetuates a volatile environment, demanding immediate and concerted international attention."
+        ],
+        "vocabulary": [
+          {
+            "term": "retaliatory response",
+            "part_of_speech": "noun phrase",
+            "definition": "A reaction or counterattack made in return for an injury or wrongdoing, often characterized by a strong and punitive nature."
+          },
+          {
+            "term": "relative calm",
+            "part_of_speech": "noun phrase",
+            "definition": "A period of comparative peace or tranquility, implying that while not entirely free from underlying tension, overt conflict or unrest has diminished."
+          },
+          {
+            "term": "belligerent actions",
+            "part_of_speech": "noun phrase",
+            "definition": "Hostile or aggressive deeds, typically referring to acts of warfare or combat between opposing parties."
+          },
+          {
+            "term": "diplomatic overtures",
+            "part_of_speech": "noun phrase",
+            "definition": "Initiatives or proposals put forth by one state or party to another, often with the aim of opening negotiations, establishing relations, or resolving disputes."
+          },
+          {
+            "term": "heighten tensions",
+            "part_of_speech": "verb phrase",
+            "definition": "To increase or intensify feelings of strain, animosity, or disagreement, especially in a political or international context, leading to a more precarious situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participle Clauses",
+          "explanation": "A present participle clause (verb+ing) can function as an adverbial phrase, providing additional information about the main clause. It often describes a concurrent action, a result, or a cause, acting similarly to a relative clause or an adverbial clause of reason/result. These clauses provide conciseness and add sophistication to sentence structure.",
+          "example_quote": "The cycle of provocation and reprisal perpetuates a volatile environment, demanding immediate and concerted international attention."
+        },
+        "quiz": [
+          {
+            "question": "What specifically precipitated the United States' robust retaliatory response?",
+            "options": [
+              "Ongoing diplomatic negotiations with Iran.",
+              "An attempted assault on American personnel.",
+              "Increased economic sanctions by Iran."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief indicates a disruption of calm, not ongoing negotiations as the cause for strikes.",
+              "Correct. The brief clearly states that the strikes followed 'an attempted assault on American personnel,' leading to a 'retaliatory response.'",
+              "Incorrect. While economic factors can play a role, the immediate trigger mentioned was a direct attack."
+            ]
+          },
+          {
+            "question": "How did the recent period before the strikes relate to overt conflict?",
+            "options": [
+              "It was a time of intense and continuous warfare.",
+              "It was characterized by a relative calm with a cessation of overt conflict.",
+              "It saw a significant increase in international interventions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief mentions a 'relative calm' and 'cessation of overt conflict' prior to the recent events.",
+              "Correct. The news brief describes a 'recent period characterized by a relative calm, during which de-escalation efforts appeared to foster a temporary cessation of overt conflict.'",
+              "Incorrect. The period was one of reduced conflict, not increased interventions."
+            ]
+          },
+          {
+            "question": "Which of the following best describes 'belligerent actions' in the context of the news brief?",
+            "options": [
+              "Acts of kindness and goodwill between nations.",
+              "Hostile or aggressive military deeds.",
+              "Economic agreements and trade deals."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Belligerent' implies hostility, not kindness or goodwill.",
+              "Correct. 'Belligerent actions' refers to hostile or aggressive military deeds, as seen in the resumption of missile exchanges.",
+              "Incorrect. 'Belligerent actions' are hostile, not related to economic agreements."
+            ]
+          },
+          {
+            "question": "What is the primary objective of 'diplomatic overtures' as suggested by the brief?",
+            "options": [
+              "To enforce stricter military sanctions.",
+              "To undermine existing peace treaties.",
+              "To achieve long-term stability and resolve disputes."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Diplomatic overtures are generally aimed at de-escalation and peace, not further sanctions.",
+              "Incorrect. Diplomatic overtures aim to resolve, not undermine, peace.",
+              "Correct. The brief states that renewed strikes could 'undermine any future diplomatic overtures aimed at long-term stability,' implying their purpose is stability."
+            ]
+          },
+          {
+            "question": "What effect do 'military posture adjustments' typically have on regional relations?",
+            "options": [
+              "They invariably lead to increased trust and cooperation.",
+              "They consistently result in de-escalation efforts.",
+              "They invariably heighten tensions across the broader theatre."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief indicates such adjustments 'invariably heighten tensions,' not build trust.",
+              "Incorrect. The news brief specifies these actions 'heighten tensions,' which is counter to de-escalation.",
+              "Correct. The brief explicitly states, 'Such deliberate military posture adjustments invariably heighten tensions across the broader Middle Eastern theatre.'"
+            ]
+          },
+          {
+            "question": "In the sentence, 'The cycle of provocation and reprisal perpetuates a volatile environment, demanding immediate and concerted international attention,' what does the participle clause 'demanding immediate and concerted international attention' primarily function as?",
+            "options": [
+              "A conditional statement.",
+              "An adverbial phrase of result or commentary.",
+              "A definition of 'volatile environment'."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The clause does not express a condition; it describes the consequence or an additional aspect of the perpetuated environment.",
+              "Correct. The present participle clause 'demanding...' functions as an adverbial phrase, explaining a consequence or providing commentary on the volatile environment.",
+              "Incorrect. The clause describes an action or a result of the volatile environment, rather than defining the environment itself."
+            ]
+          },
+          {
+            "question": "According to the news brief, what kind of dynamic characterizes the renewed confrontations?",
+            "options": [
+              "A collaborative security dynamic.",
+              "A precarious tit-for-tat dynamic.",
+              "A stable bilateral negotiation dynamic."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief clearly refers to a 'precarious tit-for-tat dynamic,' not a collaborative one.",
+              "Correct. The news brief states, 'Observers note a return to the precarious tit-for-tat dynamic that has historically destabilized the region.'",
+              "Incorrect. The situation is described as 'precarious' and 'tit-for-tat,' which implies instability, not stable negotiation."
+            ]
+          },
+          {
+            "question": "What is a significant concern regarding the re-commencement of these strikes mentioned in the brief?",
+            "options": [
+              "That it will lead to new trade agreements.",
+              "That it could undermine future diplomatic overtures.",
+              "That it will resolve long-standing geopolitical rivalries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief highlights negative implications, not positive economic outcomes.",
+              "Correct. The brief explicitly states, 'Concerns are mounting that the re-commencement of these strikes could undermine any future diplomatic overtures aimed at long-term stability.'",
+              "Incorrect. The brief suggests the strikes perpetuate a volatile environment, not resolve rivalries."
+            ]
+          },
+          {
+            "question": "What does the phrase 'entrenched geopolitical rivalries' imply about the region's challenges?",
+            "options": [
+              "They are easily resolved through casual discussions.",
+              "They are deeply rooted and long-standing, making peace difficult.",
+              "They are recent developments with simple solutions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Entrenched' suggests deep-rootedness, not easy resolution.",
+              "Correct. 'Entrenched' implies deeply established and difficult-to-change rivalries, making the pursuit of sustained peace challenging.",
+              "Incorrect. 'Entrenched' means long-standing, not recent, and implies complexity, not simple solutions."
+            ]
+          },
+          {
+            "question": "What is the implied demand of the 'volatile environment' perpetuated by the cycle of provocation and reprisal?",
+            "options": [
+              "Increased regional isolation.",
+              "Immediate and concerted international attention.",
+              "Unilateral military disarmament."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The environment 'demands immediate and concerted international attention,' not isolation.",
+              "Correct. The final sentence states the 'volatile environment, demanding immediate and concerted international attention.'",
+              "Incorrect. The brief indicates a need for 'international attention' rather than specific disarmament actions."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

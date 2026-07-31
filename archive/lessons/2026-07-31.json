@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-07-31",
+  "release_iso": "2026-07-31T11:53:20Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "About 49,000 migrants enter Spanish territory of Ceuta in 24 hours, officials say",
+    "summary": "The estimated number of arrivals is more than half of the population of the city, which is about 83,600.",
+    "link": "https://www.bbc.co.uk/news/articles/cx2kp639yx4o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Many Migrants Enter Ceuta: A News Lesson",
+        "overview": "Nearly 49,000 migrants arrived in the Spanish city of Ceuta very quickly.",
+        "topic": "Migration to Ceuta: A Rapid Influx",
+        "news_brief_sentences": [
+          "About 49,000 migrants came to Ceuta.",
+          "Ceuta is a Spanish territory.",
+          "They entered in just 24 hours.",
+          "This happened very quickly.",
+          "Officials say this information is correct.",
+          "The city of Ceuta has about 83,600 people.",
+          "So, many new people arrived.",
+          "The number of arrivals is more than half of the city's population.",
+          "This was a very big event for the city.",
+          "People from other places often want to live in Europe."
+        ],
+        "vocabulary": [
+          {
+            "term": "migrants",
+            "part_of_speech": "noun",
+            "definition": "People who move from one country or area to live in another."
+          },
+          {
+            "term": "Spanish territory",
+            "part_of_speech": "noun phrase",
+            "definition": "An area of land controlled by the country of Spain."
+          },
+          {
+            "term": "entered",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Went into a place or country."
+          },
+          {
+            "term": "officials say",
+            "part_of_speech": "phrase",
+            "definition": "Important people in the government or an organization share this information."
+          },
+          {
+            "term": "city of Ceuta",
+            "part_of_speech": "noun phrase",
+            "definition": "A city in North Africa that belongs to Spain."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished at a specific time in the past. Many verbs add '-ed' to form the simple past, like 'talked' or 'walked'. Some verbs are irregular and change completely, such as 'come' becomes 'came' or 'go' becomes 'went'.",
+          "example_quote": "They entered in just 24 hours."
+        },
+        "quiz": [
+          {
+            "question": "How many migrants arrived in Ceuta?",
+            "options": [
+              "About 49,000",
+              "About 24,000",
+              "About 83,000"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The news brief states about 49,000 migrants arrived.",
+              "Not quite. Check the number of migrants mentioned in the news brief.",
+              "This is the city's total population, not the number of migrants."
+            ]
+          },
+          {
+            "question": "What is Ceuta?",
+            "options": [
+              "A large boat",
+              "A Spanish territory",
+              "A type of animal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Ceuta is a place, not a boat.",
+              "Yes, Ceuta is a Spanish territory in North Africa.",
+              "Incorrect. Ceuta is a city, not an animal."
+            ]
+          },
+          {
+            "question": "How fast did the migrants enter Ceuta?",
+            "options": [
+              "In one week",
+              "In 24 hours",
+              "In one month"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was a much shorter time. Read the news brief again.",
+              "That's right! They entered in just 24 hours.",
+              "It happened much faster than a month."
+            ]
+          },
+          {
+            "question": "Who said the information was correct?",
+            "options": [
+              "The migrants",
+              "The city residents",
+              "Officials"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief states 'officials say', not the migrants.",
+              "The news brief mentions 'officials say', not the city residents.",
+              "Correct. Officials say the information is true."
+            ]
+          },
+          {
+            "question": "What is a 'migrant'?",
+            "options": [
+              "Someone who stays home",
+              "Someone who moves to a new place",
+              "Someone who works at sea"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a migrant travels and lives in a new place.",
+              "Yes, a migrant moves from one area to live in another.",
+              "This is not the correct definition of a migrant."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'entered'?",
+            "options": [
+              "Left a place",
+              "Came into a place",
+              "Stayed outside a place"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'entered' is the opposite of leaving.",
+              "That's right! 'Entered' means to go into a place.",
+              "This means not going in. 'Entered' means to go in."
+            ]
+          },
+          {
+            "question": "What is the approximate population of the city of Ceuta?",
+            "options": [
+              "About 49,000",
+              "About 83,600",
+              "About 24,000"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the number of migrants, not the total population.",
+              "Correct! The city of Ceuta has about 83,600 people.",
+              "This number is too low for the city's population."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past tense?",
+            "options": [
+              "Migrants come to Ceuta.",
+              "They entered in just 24 hours.",
+              "Ceuta is a Spanish territory."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses the simple present tense.",
+              "Yes, 'entered' is the simple past form of 'enter'.",
+              "This sentence uses the simple present tense of 'to be'."
+            ]
+          },
+          {
+            "question": "The number of arrivals was ______ half of the city's population.",
+            "options": [
+              "less than",
+              "exactly",
+              "more than"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the number was higher than half.",
+              "It was not an exact amount and it was more than half.",
+              "Yes, the news brief says it was more than half."
+            ]
+          },
+          {
+            "question": "Why do people from other places often want to live in Europe?",
+            "options": [
+              "To visit the mountains",
+              "To find better opportunities",
+              "To learn a new language"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While some may visit mountains, this is not the main reason for migration.",
+              "Many people seek better opportunities, like jobs or safety, in Europe.",
+              "Learning a new language can be a reason, but finding better opportunities is a broader and often primary motivator for migration."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Massive Migrant Influx Overwhelms Spanish Enclave of Ceuta",
+        "overview": "About 49,000 migrants entered the Spanish territory of Ceuta in just 24 hours, significantly exceeding half of the city's total population.",
+        "topic": "Migration to Spanish territories",
+        "news_brief_sentences": [
+          "Spanish officials have reported an unprecedented influx of migrants into the territory of Ceuta.",
+          "In a single 24-hour period, approximately 49,000 individuals entered the Spanish enclave from Morocco.",
+          "This massive movement represents a significant challenge for the local authorities and aid organizations.",
+          "The city of Ceuta, situated on the North African coast, is home to about 83,600 residents.",
+          "Consequently, the estimated number of arrivals constitutes more than half of the city's total population.",
+          "Many migrants undertook dangerous journeys, including swimming around breakwaters to reach the territory.",
+          "Spanish border forces and emergency services were quickly overwhelmed by the sheer scale of the situation.",
+          "This rapid influx has prompted urgent discussions between Spain and Morocco regarding border security.",
+          "Humanitarian groups are now providing essential aid and support to the thousands of people who have arrived.",
+          "The situation clearly highlights the complex and ongoing issues surrounding migration routes into European territories."
+        ],
+        "vocabulary": [
+          {
+            "term": "influx",
+            "part_of_speech": "noun",
+            "definition": "A large number of people or things arriving at a place or situation at the same time."
+          },
+          {
+            "term": "territory",
+            "part_of_speech": "noun",
+            "definition": "An area of land that is controlled by a particular country or ruler."
+          },
+          {
+            "term": "enclave",
+            "part_of_speech": "noun",
+            "definition": "A small area or group that is different from the larger area or group surrounding it."
+          },
+          {
+            "term": "constitutes",
+            "part_of_speech": "verb",
+            "definition": "To be considered to be something, or to form or make up something."
+          },
+          {
+            "term": "overwhelmed",
+            "part_of_speech": "adjective",
+            "definition": "Unable to deal with something because it is too much or too difficult to manage."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when we want to focus on the action itself and the person or thing affected by it, rather than the person or thing performing the action. It is formed using a form of the verb 'to be' followed by the past participle of the main verb. It is often employed when the agent (the one doing the action) is unknown, unimportant, or obvious from the context.",
+          "example_quote": "Spanish border forces and emergency services were quickly overwhelmed by the sheer scale of the situation."
+        },
+        "quiz": [
+          {
+            "question": "Approximately how many migrants entered the territory of Ceuta in 24 hours?",
+            "options": [
+              "Around 83,600 people",
+              "Approximately 49,000 individuals",
+              "Less than 10,000 migrants"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This number represents the total population of Ceuta, not the number of arrivals.",
+              "That's correct! The news brief states approximately 49,000 people arrived in Ceuta.",
+              "This number is too low; the actual number was much higher."
+            ]
+          },
+          {
+            "question": "What is Ceuta's geographical relationship to Morocco, as described in the news brief?",
+            "options": [
+              "It is a neighboring country",
+              "It is a Spanish enclave",
+              "It is a large island near Morocco"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Ceuta is not a country itself, but a part of Spain.",
+              "Exactly! The news brief refers to Ceuta as a 'Spanish enclave' surrounded by Moroccan territory.",
+              "Ceuta is on the North African coast, not an island."
+            ]
+          },
+          {
+            "question": "What does the word 'influx' mean in the context of the news brief?",
+            "options": [
+              "A sudden departure of people",
+              "A large number of people arriving",
+              "A small number of people leaving"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "An 'influx' refers to people coming in, not leaving.",
+              "Correct! An 'influx' describes a large number of people arriving in a place.",
+              "An 'influx' indicates a large arrival, not a small departure."
+            ]
+          },
+          {
+            "question": "The news brief states that the estimated number of arrivals 'constitutes more than half' of Ceuta's population. What does 'constitutes' mean here?",
+            "options": [
+              "Exceeds",
+              "Forms or makes up",
+              "Is separate from"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the number does exceed, 'constitutes' specifically means it forms a part or the whole of something.",
+              "That's right! 'Constitutes' means that the number of arrivals makes up or is considered to be more than half.",
+              "The number of arrivals is directly related to, not separate from, the population proportion."
+            ]
+          },
+          {
+            "question": "When the news brief says 'Spanish border forces and emergency services were quickly overwhelmed', what does 'overwhelmed' imply?",
+            "options": [
+              "They felt very happy",
+              "They were unable to cope with the large number of arrivals",
+              "They successfully managed the situation with ease"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Being 'overwhelmed' means they were struggling, not feeling happy.",
+              "Correct! 'Overwhelmed' means they had too much to deal with and couldn't manage effectively.",
+              "The word 'overwhelmed' suggests difficulty, not ease of management."
+            ]
+          },
+          {
+            "question": "Which grammar concept is used in the sentence: 'Spanish border forces and emergency services were quickly overwhelmed by the sheer scale of the situation.'?",
+            "options": [
+              "The Present Perfect",
+              "The Passive Voice",
+              "The Conditional Type 1"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The sentence uses 'were overwhelmed,' which is not a form of the Present Perfect tense.",
+              "Excellent! This sentence is an example of the passive voice, focusing on the action and its recipient.",
+              "This sentence does not express a conditional situation."
+            ]
+          },
+          {
+            "question": "In the passive voice, what is the usual focus of the sentence?",
+            "options": [
+              "The person or thing performing the action",
+              "The action itself and the person or thing affected by it",
+              "The time when the action happened"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice often deemphasizes or omits the agent (the performer of the action).",
+              "Precisely! The passive voice shifts focus to the action and what or who receives it.",
+              "While time is part of a sentence, it's not the primary focus of the passive voice structure."
+            ]
+          },
+          {
+            "question": "According to the news brief, what was one dangerous way migrants reached the territory?",
+            "options": [
+              "By flying in small planes",
+              "By swimming around breakwaters",
+              "By taking direct bus routes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not mention migrants arriving by plane.",
+              "Yes, the text specifically mentions migrants 'swimming around breakwaters' as a dangerous journey.",
+              "The brief highlights dangerous methods like swimming, not safe bus routes."
+            ]
+          },
+          {
+            "question": "What is the total population of the city of Ceuta mentioned in the news brief?",
+            "options": [
+              "About 49,000 residents",
+              "Around 83,600 residents",
+              "Approximately 140,000 residents"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is the number of migrants who arrived, not the total population of the city.",
+              "Correct! The news brief states that Ceuta has a population of around 83,600 residents.",
+              "This number is not mentioned in the brief regarding Ceuta's population."
+            ]
+          },
+          {
+            "question": "What kind of organizations are mentioned as providing aid and support to the migrants?",
+            "options": [
+              "Military organizations",
+              "Business corporations",
+              "Humanitarian groups"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief highlights civil support, not military involvement in aid provision.",
+              "The news brief mentions aid and support from humanitarian organizations, not business corporations.",
+              "That's right! 'Humanitarian groups' are mentioned as providing essential aid and support."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Unprecedented Migratory Influx Overwhelms Spanish Enclave of Ceuta",
+        "overview": "The Spanish enclave of Ceuta has witnessed an unprecedented and substantial migratory influx, with approximately 49,000 individuals arriving within a single 24-hour period, profoundly challenging the city's resources and demographic balance.",
+        "topic": "Mass migration, border control, humanitarian crisis, and demographic impact on Spanish territories.",
+        "news_brief_sentences": [
+          "The autonomous Spanish city of Ceuta experienced an extraordinary humanitarian and logistical challenge as an estimated 49,000 migrants entered its territory within a 24-hour span.",
+          "This unprecedented migratory influx, confirmed by official sources, represents a dramatic surge in arrivals for the small North African enclave.",
+          "Such a volume of new entrants significantly surpasses the city's capacity to provide immediate support and integration.",
+          "Officials reported that the number of new arrivals constitutes more than half of Ceuta's pre-existing population, which stands at approximately 83,600 residents.",
+          "The sheer scale of this movement has triggered widespread international concern regarding border security and human rights.",
+          "Many migrants, including a significant number of minors, reportedly swam around border fences or scaled them to reach Spanish soil.",
+          "This situation has placed immense pressure on local services and emergency personnel striving to process and accommodate the new arrivals.",
+          "The swiftness and magnitude of the event underscore the persistent challenges faced by European nations in managing cross-border movements.",
+          "Authorities are now confronted with the complex task of repatriating individuals while addressing humanitarian needs.",
+          "The demographic implications of such a rapid population shift are considerable, prompting urgent calls for coordinated European action to address the crisis at its roots."
+        ],
+        "vocabulary": [
+          {
+            "term": "unprecedented migratory influx",
+            "part_of_speech": "noun phrase",
+            "definition": "A movement of people into a new area that is greater or more significant than anything that has happened before, indicating a novel and extraordinary scale."
+          },
+          {
+            "term": "surpasses the city's capacity",
+            "part_of_speech": "verb phrase",
+            "definition": "Exceeds the maximum amount that a city can effectively contain, cope with, or provide for, indicating an overwhelming demand on resources."
+          },
+          {
+            "term": "triggered widespread international concern",
+            "part_of_speech": "verb phrase",
+            "definition": "Caused or initiated a broad feeling of worry, anxiety, or unease among many countries globally, indicating significant geopolitical and humanitarian interest."
+          },
+          {
+            "term": "demographic implications",
+            "part_of_speech": "noun phrase",
+            "definition": "The potential future effects or consequences related to changes in a population's structure, size, distribution, or other statistical characteristics."
+          },
+          {
+            "term": "confronted with the complex task",
+            "part_of_speech": "verb phrase",
+            "definition": "Faced directly with a difficult, intricate, or challenging assignment or responsibility that requires careful management and problem-solving."
+          }
+        ],
+        "grammar": {
+          "concept": "Complex Noun Phrases and Compound Adjectives",
+          "explanation": "Advanced English frequently employs complex noun phrases and compound adjectives to convey detailed information efficiently and precisely. These structures combine multiple words, often hyphenated when used as adjectives modifying a noun, or naturally linked within noun phrases, to create a single, dense descriptive unit that enhances specificity and conciseness in formal writing.",
+          "example_quote": "The autonomous Spanish city of Ceuta experienced an extraordinary humanitarian and logistical challenge as an estimated 49,000 migrants entered its territory within a 24-hour span."
+        },
+        "quiz": [
+          {
+            "question": "What is the most accurate description of the event in Ceuta based on the news brief?",
+            "options": [
+              "A gradual increase in migration over several weeks.",
+              "A sudden and massive arrival of migrants within a day.",
+              "A planned and organized resettlement program."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief emphasizes the event's rapid, overwhelming nature, stating arrivals occurred 'within a 24-hour span', contradicting a gradual increase.",
+              "Correct. The brief explicitly states 'an estimated 49,000 migrants entered its territory within a 24-hour span,' highlighting the sudden and immense scale.",
+              "Incorrect. The brief describes an 'extraordinary humanitarian and logistical challenge,' suggesting an unplanned, urgent situation rather than an organized program."
+            ]
+          },
+          {
+            "question": "According to the brief, how does the number of new arrivals compare to Ceuta's existing population?",
+            "options": [
+              "It is a minor fraction, easily absorbed by the city.",
+              "It roughly equals the city's total population.",
+              "It represents more than half of the city's residents."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief states the arrivals constitute 'more than half of Ceuta's pre-existing population,' indicating a significant impact, not a minor one.",
+              "Incorrect. While substantial, the number of arrivals, 49,000, is 'more than half' of the 83,600 population, not nearly equal to it.",
+              "Correct. The brief explicitly mentions that 'the number of new arrivals constitutes more than half of Ceuta's pre-existing population.'"
+            ]
+          },
+          {
+            "question": "What does the phrase 'unprecedented migratory influx' imply about the situation in Ceuta?",
+            "options": [
+              "Migration levels have been consistently high for years.",
+              "The scale of migration is unlike anything seen before there.",
+              "The migrants are highly organized and coordinated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unprecedented' specifically means 'never done or known before,' directly contradicting the idea of consistent high levels.",
+              "Correct. 'Unprecedented migratory influx' directly means a migration of people on a scale that has not occurred previously, signifying its unique and extraordinary severity.",
+              "Incorrect. The term focuses on the volume and novelty of the arrivals, not the internal organization or planning of the migrants themselves."
+            ]
+          },
+          {
+            "question": "When the brief states the influx 'surpasses the city's capacity,' what is it emphasizing?",
+            "options": [
+              "Ceuta has very limited physical space for expansion.",
+              "The city lacks sufficient resources and infrastructure to manage the situation.",
+              "The migrants are moving too quickly for officials to track effectively."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While space might be a factor, 'capacity' in this context refers more broadly to the city's ability to cope with new arrivals, including resources and services, not just physical room.",
+              "Correct. 'Surpasses the city's capacity' means the volume of arrivals exceeds the city's ability to provide adequate support, infrastructure, and public services for them.",
+              "Incorrect. While speed is a factor in the event, 'surpasses capacity' relates to the city's limits in managing the sheer number of people, not solely their movement speed."
+            ]
+          },
+          {
+            "question": "The phrase 'triggered widespread international concern' suggests that the events in Ceuta have led to:",
+            "options": [
+              "A local debate on the effectiveness of border security only.",
+              "Increased interest from global media outlets but no official action.",
+              "Serious worries and active discussions among numerous countries globally."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'International concern' indicates a scope far beyond a purely local debate, involving multiple nations.",
+              "Incorrect. 'Widespread international concern' is stronger than mere media interest; it implies active worry and potential diplomatic or humanitarian engagement from many nations.",
+              "Correct. 'Triggered widespread international concern' directly means that the events caused significant alarm and discussion across many nations worldwide, signaling a global impact."
+            ]
+          },
+          {
+            "question": "What does 'demographic implications' refer to in the context of the news brief?",
+            "options": [
+              "The immediate need for emergency housing and medical supplies.",
+              "The long-term effects on the population's structure, size, and social dynamics.",
+              "The financial cost of managing the crisis and border security."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While emergency housing is a consequence, 'demographic implications' specifically refers to broader, long-term population changes, not just immediate logistical needs.",
+              "Correct. 'Demographic implications' concerns the future consequences related to the changes in a population's composition, size, and distribution due to the significant influx.",
+              "Incorrect. Financial costs are an economic implication, not primarily a demographic one, though they are certainly related to managing the crisis."
+            ]
+          },
+          {
+            "question": "The statement 'Authorities are now confronted with the complex task of repatriating individuals' signifies that:",
+            "options": [
+              "Repatriation is a straightforward process requiring minimal effort.",
+              "The authorities are facing a challenging and intricate duty to return migrants.",
+              "All migrants will be immediately sent back without due process."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Complex task' implies the opposite of straightforward, highlighting the substantial difficulties and intricacies involved in the process.",
+              "Correct. 'Confronted with the complex task' means officials are faced with a difficult and complicated responsibility, specifically the return of individuals to their home countries, which often involves legal and humanitarian considerations.",
+              "Incorrect. The term 'complex task' refers to the difficulty of repatriation and the need for careful management, not necessarily its immediate and absolute execution without due process."
+            ]
+          },
+          {
+            "question": "In the phrase 'extraordinary humanitarian and logistical challenge,' what linguistic feature is prominently displayed?",
+            "options": [
+              "An adverbial clause modifying 'experienced.'",
+              "A series of simple adjectives describing a noun.",
+              "A complex noun phrase utilizing multiple modifiers."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This structure is a noun phrase, not an adverbial clause, which typically modifies a verb, adjective, or another adverb.",
+              "Incorrect. While 'extraordinary,' 'humanitarian,' and 'logistical' are adjectives, their combined function with 'challenge' forms a complex, cohesive unit, not just a list of simple, independent adjectives.",
+              "Correct. 'Extraordinary humanitarian and logistical challenge' is a sophisticated noun phrase where multiple adjectives and conjuncted terms combine to precisely describe the multifaceted nature of the 'challenge.'"
+            ]
+          },
+          {
+            "question": "The term '24-hour span' from the news brief is an example of what grammatical construction?",
+            "options": [
+              "A prepositional phrase indicating duration.",
+              "A gerund phrase functioning as a noun.",
+              "A compound adjective modifying a noun."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. A prepositional phrase starts with a preposition (e.g., 'within a 24-hour span'). Here, '24-hour' directly modifies 'span' as an adjective.",
+              "Incorrect. A gerund phrase would involve an -ing verb functioning as a noun (e.g., 'understanding the challenge').",
+              "Correct. '24-hour' is a hyphenated compound adjective, formed by a number and a noun, working together to describe the duration of the 'span.'"
+            ]
+          },
+          {
+            "question": "The news brief highlights the situation as a 'humanitarian and logistical challenge.' What specific aspect does 'logistical' refer to here?",
+            "options": [
+              "The ethical dilemmas of migration policies.",
+              "The practical problems of organizing resources, transport, and accommodation.",
+              "The emotional impact on the local population."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Logistical' primarily refers to the practical organization and implementation, not ethical dilemmas, which fall under 'humanitarian' or policy concerns.",
+              "Correct. 'Logistical challenge' pertains to the practical difficulties in organizing, managing, and distributing resources, personnel, facilities, and movement for the large number of arrivals.",
+              "Incorrect. While an emotional impact exists, 'logistical' specifically addresses the practical, organizational aspects of managing the crisis, not emotional responses."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

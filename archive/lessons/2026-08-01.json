@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-01",
+  "release_iso": "2026-08-01T11:11:48Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Spain attacks 'selfish' response of some EU countries to Ceuta migrant crossings",
+    "summary": "Italy has temporarily suspended the Schengen arrangement with Spain as Prime Minister Giorgia Meloni called scenes in Ceuta \"shocking\".",
+    "link": "https://www.bbc.co.uk/news/articles/cx2v91xn1z9o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Spain and Italy Disagree on Migrant Crossings",
+        "overview": "Spain and Italy are having a disagreement about people crossing borders into Europe.",
+        "topic": "International Relations and Migration",
+        "news_brief_sentences": [
+          "Spain is upset with some countries in the European Union.",
+          "Spain thinks some EU countries have a \"selfish response\" to a problem.",
+          "This problem is about \"migrant crossings\" in Ceuta.",
+          "Many people tried to cross the border near Ceuta.",
+          "Italy's leader, Prime Minister Giorgia Meloni, talked about this.",
+          "She said the situation in Ceuta was \"shocking\".",
+          "Because of this, Italy \"temporarily suspended\" a special rule.",
+          "This rule is called the \"Schengen arrangement\".",
+          "Italy stopped this arrangement with Spain for a short time.",
+          "Spain and Italy need to find a solution for these important issues."
+        ],
+        "vocabulary": [
+          {
+            "term": "selfish response",
+            "part_of_speech": "noun phrase",
+            "definition": "When someone acts only for themselves, without thinking about others or their problems."
+          },
+          {
+            "term": "migrant crossings",
+            "part_of_speech": "noun phrase",
+            "definition": "When people move from one country to another, often by crossing a border or sea."
+          },
+          {
+            "term": "shocking",
+            "part_of_speech": "adjective",
+            "definition": "Something very surprising and upsetting, in a bad way."
+          },
+          {
+            "term": "temporarily suspended",
+            "part_of_speech": "verb phrase",
+            "definition": "Stopped for a short period of time; not permanently stopped."
+          },
+          {
+            "term": "Schengen arrangement",
+            "part_of_speech": "noun phrase",
+            "definition": "A special agreement between many European countries that allows people to travel freely between them without passport checks."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add '-ed' to regular verbs. Irregular verbs change their form completely. For example, 'to suspend' becomes 'suspended'.",
+          "example_quote": "Italy \"temporarily suspended\" a special rule."
+        },
+        "quiz": [
+          {
+            "question": "Which country is upset about the 'selfish response' of some EU countries?",
+            "options": [
+              "Italy",
+              "Spain",
+              "Ceuta"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Italy is the country that suspended an agreement.",
+              "Correct! Spain is unhappy with some EU countries' actions.",
+              "Incorrect. Ceuta is a place where migrant crossings happened."
+            ]
+          },
+          {
+            "question": "What is the problem in Ceuta about?",
+            "options": [
+              "new roads",
+              "migrant crossings",
+              "school tests"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention new roads.",
+              "Correct! The problem is about many people trying to cross the border.",
+              "Incorrect. School tests are not related to this news."
+            ]
+          },
+          {
+            "question": "Who is Giorgia Meloni?",
+            "options": [
+              "A teacher",
+              "Italy's Prime Minister",
+              "A Spanish singer"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief says she is a leader.",
+              "Correct! She is the leader of Italy.",
+              "Incorrect. She is not mentioned as a Spanish singer in the news."
+            ]
+          },
+          {
+            "question": "What did Italy do to the 'Schengen arrangement'?",
+            "options": [
+              "Signed it",
+              "Ignored it",
+              "Temporarily suspended it"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Italy took action to stop it, not sign it again.",
+              "Incorrect. 'Temporarily suspended' means they stopped it for a while.",
+              "Correct! Italy stopped the agreement for a short time."
+            ]
+          },
+          {
+            "question": "What does 'selfish response' mean?",
+            "options": [
+              "Helping everyone",
+              "Thinking only about yourself",
+              "Sharing everything"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A selfish response is not about helping everyone.",
+              "Correct! It means acting only for your own benefit, not considering others.",
+              "Incorrect. A selfish response is the opposite of sharing everything."
+            ]
+          },
+          {
+            "question": "Which word means 'very surprising and upsetting'?",
+            "options": [
+              "Happy",
+              "Shocking",
+              "Calm"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Happy is the opposite of upsetting.",
+              "Correct! 'Shocking' means very surprising and upsetting.",
+              "Incorrect. Calm means peaceful, not surprising or upsetting."
+            ]
+          },
+          {
+            "question": "The 'Schengen arrangement' is about...",
+            "options": [
+              "food prices",
+              "free travel in Europe",
+              "sports events"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not link Schengen to food prices.",
+              "Correct! It is a rule for easy travel between European countries.",
+              "Incorrect. Sports events are not related to this agreement."
+            ]
+          },
+          {
+            "question": "In the sentence 'Italy temporarily suspended a special rule,' which word is in the simple past tense?",
+            "options": [
+              "temporarily",
+              "suspended",
+              "special"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Temporarily' is an adverb, not a verb.",
+              "Correct! 'Suspended' is the past tense form of the verb 'to suspend'.",
+              "Incorrect. 'Special' is an adjective, describing the rule."
+            ]
+          },
+          {
+            "question": "What does it mean if something is 'temporarily suspended'?",
+            "options": [
+              "It started forever",
+              "It stopped for a long time",
+              "It stopped for a short time"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Temporarily suspended' means it paused, not started.",
+              "Incorrect. 'Temporarily' means for a short time, not a long time.",
+              "Correct! It means it is stopped for a limited period, not permanently."
+            ]
+          },
+          {
+            "question": "Where did the 'migrant crossings' happen?",
+            "options": [
+              "In Rome",
+              "Near Ceuta",
+              "In Madrid"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Rome is a city in Italy, but the crossings were in a different location.",
+              "Correct! The news brief specifically mentions migrant crossings in Ceuta.",
+              "Incorrect. Madrid is a city in Spain, but the crossings were near Ceuta."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "EU Tensions Rise Over Migrant Crossings in Ceuta",
+        "overview": "Spain is criticizing some EU countries, especially Italy, for their reactions to recent migrant crossings into Ceuta, leading to a temporary suspension of the Schengen arrangement.",
+        "topic": "EU Migration Crisis and Diplomatic Tensions",
+        "news_brief_sentences": [
+          "Significant diplomatic tensions have recently escalated between Spain and some other European Union countries.",
+          "These disagreements stem from the recent increase in migrant crossings into Ceuta, a Spanish territory bordering Morocco.",
+          "Spain has publicly criticized what it views as a \"selfish response\" from certain EU nations regarding this humanitarian situation.",
+          "Italy, in particular, has reacted strongly, with its Prime Minister Giorgia Meloni describing the scenes in Ceuta as \"shocking.\"",
+          "In a significant diplomatic move, Italy has temporarily suspended the Schengen arrangement with Spain.",
+          "This means that regular passport-free travel between Italy and Spain will be interrupted, and border controls will be reinstated for a period.",
+          "The Schengen arrangement typically allows for free movement of people across the internal borders of its participating member states.",
+          "Spain stresses the importance of a unified and cooperative response from all EU members when addressing complex migration issues.",
+          "The Spanish government believes that showing solidarity is crucial during such challenging times.",
+          "This ongoing dispute highlights the deep-seated challenges and differing perspectives within the EU concerning shared responsibilities for border management and migration policies."
+        ],
+        "vocabulary": [
+          {
+            "term": "selfish",
+            "part_of_speech": "adjective",
+            "definition": "Thinking only about yourself and not considering other people's needs or feelings."
+          },
+          {
+            "term": "response",
+            "part_of_speech": "noun",
+            "definition": "An answer or reaction to something that has been said or done."
+          },
+          {
+            "term": "migrant crossings",
+            "part_of_speech": "noun phrase",
+            "definition": "The act of people moving from one country or area to another, often by crossing a border or stretch of water."
+          },
+          {
+            "term": "temporarily suspended",
+            "part_of_speech": "verb phrase",
+            "definition": "Stopped or interrupted for a limited period of time; not permanently ended."
+          },
+          {
+            "term": "Schengen arrangement",
+            "part_of_speech": "noun phrase",
+            "definition": "An agreement among many European countries that allows people to travel freely between them without passport checks at internal borders."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Tense",
+          "explanation": "The Present Perfect tense is used to describe an action that began in the past and continues into the present, or an action completed in the past with a result that affects the present. It is formed with 'has' or 'have' followed by the past participle of the main verb.",
+          "example_quote": "Italy has temporarily suspended the Schengen arrangement with Spain."
+        },
+        "quiz": [
+          {
+            "question": "What is the main subject of the news brief?",
+            "options": [
+              "Spain's economic growth initiatives",
+              "Diplomatic tensions over migrant crossings",
+              "Italy's new national travel policies"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This topic is not discussed in the news brief.",
+              "Correct, the article details the disagreements and reactions to migrant flows.",
+              "While Italy took action, it's a consequence of the main issue, not the main subject."
+            ]
+          },
+          {
+            "question": "Where are the 'migrant crossings' mentioned in the brief primarily taking place?",
+            "options": [
+              "Across the Italian border with France",
+              "Into Ceuta, a Spanish territory",
+              "Between all EU member countries"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief focuses on a different geographical location.",
+              "Correct, Ceuta is specifically mentioned as the location of the migrant crossings.",
+              "The brief highlights a specific point of entry, not a general situation across all borders."
+            ]
+          },
+          {
+            "question": "How did Spain characterize the reaction of some EU nations to the migrant situation?",
+            "options": [
+              "As a helpful solution-oriented approach",
+              "As a 'selfish response'",
+              "As a unified and cooperative effort"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Spain expressed criticism, not approval, of the reaction.",
+              "Correct, Spain publicly criticized what it viewed as a 'selfish response'.",
+              "Spain suggested a lack of unity rather than a cooperative effort."
+            ]
+          },
+          {
+            "question": "Which country 'temporarily suspended' an agreement with Spain?",
+            "options": [
+              "Morocco",
+              "Italy",
+              "All EU member states"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Morocco is mentioned in relation to Ceuta, but not for suspending an agreement.",
+              "Correct, Italy took the action to temporarily suspend the Schengen arrangement.",
+              "Only Italy is specified as taking this diplomatic step."
+            ]
+          },
+          {
+            "question": "What does the phrase 'temporarily suspended' mean in this context?",
+            "options": [
+              "Permanently ended",
+              "Stopped for a limited period of time",
+              "Continued without any changes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'temporarily' indicates it is not permanent.",
+              "Correct, 'temporarily' implies a halt for a non-permanent duration.",
+              "It means the opposite; the activity or agreement was interrupted."
+            ]
+          },
+          {
+            "question": "What is the main function of the 'Schengen arrangement' mentioned in the news?",
+            "options": [
+              "To manage international trade policies",
+              "To allow free movement without internal border checks",
+              "To establish a common currency across Europe"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This arrangement primarily deals with movement of people, not trade.",
+              "Correct, the Schengen arrangement facilitates passport-free travel within its member states.",
+              "A common currency (the Euro) is a different aspect of European integration."
+            ]
+          },
+          {
+            "question": "In the sentence, 'Italy has temporarily suspended the Schengen arrangement,' which tense is 'has temporarily suspended'?",
+            "options": [
+              "Past Simple",
+              "Present Simple",
+              "Present Perfect"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Past Simple would be 'Italy temporarily suspended'.",
+              "Present Simple would be 'Italy suspends'.",
+              "Correct, the structure 'has/have + past participle' indicates the Present Perfect tense."
+            ]
+          },
+          {
+            "question": "According to Spain, why is a 'unified and cooperative response' important regarding migration?",
+            "options": [
+              "To increase economic competition among states",
+              "To show solidarity and share responsibilities",
+              "To establish stricter individual country borders"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Economic competition is not the focus of Spain's argument here.",
+              "Correct, Spain emphasizes the need for collective action and shared burden.",
+              "Spain argues for collective EU management, not stricter individual borders."
+            ]
+          },
+          {
+            "question": "What does it mean if someone has a 'selfish' response?",
+            "options": [
+              "They consider everyone's needs equally.",
+              "They prioritize their own interests only.",
+              "They react impulsively without thinking."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This describes an unselfish or altruistic response.",
+              "Correct, a selfish response focuses solely on one's own needs or benefits.",
+              "While a selfish person might react impulsively, the core meaning relates to self-interest."
+            ]
+          },
+          {
+            "question": "According to the news, what did Italian Prime Minister Giorgia Meloni say about the scenes in Ceuta?",
+            "options": [
+              "They were inspiring.",
+              "They were 'shocking.'",
+              "They were well-managed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news does not indicate that she found them inspiring.",
+              "Correct, the summary explicitly states she called the scenes 'shocking.'",
+              "Her comment 'shocking' suggests she did not view them as well-managed."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Spain's Criticism of EU Migrant Response Amidst Schengen Suspension",
+        "overview": "Spain has vehemently criticized certain European Union nations for their perceived lack of solidarity regarding migrant crossings in Ceuta, a situation further complicated by Italy's temporary suspension of the Schengen arrangement.",
+        "topic": "European Union migrant policy and international relations",
+        "news_brief_sentences": [
+          "Spain has publicly condemned what it describes as the 'selfish' response from some European Union member states concerning the significant influx of migrants arriving in Ceuta.",
+          "This diplomatic broadside highlights deepening fissures within the bloc regarding shared responsibilities for border management and humanitarian aid.",
+          "The contention intensified following Italy's decision to temporarily suspend the Schengen arrangement with Spain, a move that signals escalating tensions.",
+          "Italian Prime Minister Giorgia Meloni characterized the scenes witnessed in Ceuta as \"shocking,\" underscoring her government's grave concerns.",
+          "Her remarks underscore a broader dissatisfaction with the distribution of the burden associated with unprecedented migrant crossings.",
+          "The suspension implies a serious breach in the principle of free movement, a cornerstone of European integration.",
+          "Spain views the temporary suspension of Schengen arrangements as an uncooperative measure that undermines collective security efforts.",
+          "Such unilateral actions by individual states exacerbate the existing challenges of managing migratory flows effectively across the continent.",
+          "The ongoing crisis in Ceuta necessitates a more unified and comprehensive strategy from all EU members, rather than fragmented national approaches.",
+          "Brussels is now under increasing pressure to mediate these disputes and foster a more equitable and robust framework for addressing migration."
+        ],
+        "vocabulary": [
+          {
+            "term": "selfish response",
+            "part_of_speech": "noun phrase",
+            "definition": "A reaction or action primarily motivated by self-interest, often disregarding the needs or well-being of others involved in a shared issue or crisis."
+          },
+          {
+            "term": "diplomatic broadside",
+            "part_of_speech": "noun phrase",
+            "definition": "A strong, often public and critical attack, censure, or expression of disapproval delivered by one government or official against another, usually concerning policy or actions."
+          },
+          {
+            "term": "deepening fissures",
+            "part_of_speech": "noun phrase",
+            "definition": "Increasingly apparent or severe cracks, divisions, or disagreements within a group, organization, or political entity, indicating growing instability or discord."
+          },
+          {
+            "term": "temporarily suspend",
+            "part_of_speech": "verb phrase",
+            "definition": "To halt or cease an activity, agreement, or operation for a limited or indefinite period, with the understanding or possibility that it may resume later."
+          },
+          {
+            "term": "unprecedented migrant crossings",
+            "part_of_speech": "noun phrase",
+            "definition": "An exceptionally high or never-before-seen number of individuals moving across national borders, typically in search of refuge, asylum, or new opportunities."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced Relative Clauses (Past Participle)",
+          "explanation": "Reduced relative clauses, particularly those using a past participle, offer a concise way to provide additional information about a noun. They function as adjectives, simplifying complex sentences by omitting the relative pronoun (e.g., 'which', 'that') and the 'be' verb, while still conveying a passive meaning. For instance, 'the burden which is associated with' becomes 'the burden associated with'.",
+          "example_quote": "Her remarks underscore a broader dissatisfaction with the distribution of the burden associated with unprecedented migrant crossings."
+        },
+        "quiz": [
+          {
+            "question": "What did Spain condemn regarding some EU member states' actions concerning Ceuta migrant arrivals?",
+            "options": [
+              "Their 'selfish' response.",
+              "Their financial contributions.",
+              "Their border security technology."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Spain explicitly criticized the 'selfish' response of some EU countries regarding migrant influxes.",
+              "Incorrect. Financial contributions were not the specific focus of Spain's condemnation as outlined in the brief.",
+              "Incorrect. The news brief does not mention border security technology as the point of contention."
+            ]
+          },
+          {
+            "question": "What action did Italy take concerning the Schengen arrangement with Spain?",
+            "options": [
+              "Permanently abolished it.",
+              "Temporarily suspended it.",
+              "Expanded its scope."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The arrangement was not abolished permanently; the action taken was temporary.",
+              "Correct. Italy made the decision to 'temporarily suspend' the Schengen arrangement with Spain.",
+              "Incorrect. The action was a suspension, which restricts, rather than expands, the arrangement."
+            ]
+          },
+          {
+            "question": "How did Italian Prime Minister Giorgia Meloni describe the scenes in Ceuta?",
+            "options": [
+              "Unsurprising.",
+              "Shocking.",
+              "Manageable."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Meloni's description implied a strong negative reaction to the events.",
+              "Correct. She characterized the scenes witnessed in Ceuta as 'shocking', indicating grave concern.",
+              "Incorrect. Her remarks conveyed serious alarm, not a sense of manageability."
+            ]
+          },
+          {
+            "question": "The term 'diplomatic broadside' in the brief refers to:",
+            "options": [
+              "A military maneuver.",
+              "A public, critical attack.",
+              "A friendly negotiation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While 'broadside' can have military connotations, here it is used in a diplomatic context.",
+              "Correct. A 'diplomatic broadside' signifies a strong, public and critical attack by one government against another.",
+              "Incorrect. The term describes a confrontation or criticism, not a cordial negotiation."
+            ]
+          },
+          {
+            "question": "What do 'deepening fissures' within the EU bloc indicate?",
+            "options": [
+              "Improved cooperation.",
+              "Growing internal divisions.",
+              "Architectural instability of buildings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Fissures' suggest division and disagreement, not enhanced cooperation.",
+              "Correct. 'Deepening fissures' signifies increasing internal disagreements and instability within the political entity.",
+              "Incorrect. The term is used metaphorically in this context to describe political or social divisions, not physical structures."
+            ]
+          },
+          {
+            "question": "What does the phrase 'unprecedented migrant crossings' imply?",
+            "options": [
+              "A decrease in migrant numbers.",
+              "A normal level of migration.",
+              "An exceptionally high number of migrants."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Unprecedented' means never before seen, suggesting an increase, not a decrease.",
+              "Incorrect. It implies an extraordinary situation, not a normal or average level of migration.",
+              "Correct. 'Unprecedented' highlights that the number of crossings is unusually high and not previously encountered."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the principle undermined by the Schengen suspension?",
+            "options": [
+              "Economic protectionism.",
+              "Free movement.",
+              "National sovereignty."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While related to economic consequences, the core principle of Schengen is freedom of movement.",
+              "Correct. The brief states the suspension is a 'breach in the principle of free movement', a cornerstone of European integration.",
+              "Incorrect. While national sovereignty is always a factor, the direct principle challenged by Schengen suspension is free movement."
+            ]
+          },
+          {
+            "question": "In the sentence 'Her remarks underscore a broader dissatisfaction with the distribution of the burden associated with unprecedented migrant crossings,' what grammatical function does 'associated with' serve?",
+            "options": [
+              "An adverbial phrase.",
+              "A coordinating conjunction.",
+              "A reduced relative clause."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. It modifies 'burden', functioning as an adjective, not an adverb modifying a verb or adjective.",
+              "Incorrect. It connects to 'burden' by providing additional information, rather than linking two independent clauses or equal grammatical elements.",
+              "Correct. 'Associated with' functions as a reduced relative clause, meaning 'which is associated with', modifying 'burden'."
+            ]
+          },
+          {
+            "question": "According to the brief, what type of strategy is needed from EU members for the crisis in Ceuta?",
+            "options": [
+              "Fragmented national approaches.",
+              "A unified and comprehensive strategy.",
+              "Bilateral agreements only."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly states that such approaches 'exacerbate' existing challenges, making them unsuitable.",
+              "Correct. The brief calls for 'a more unified and comprehensive strategy' from all EU members.",
+              "Incorrect. The emphasis is on collective and comprehensive action from all members, not solely bilateral arrangements."
+            ]
+          },
+          {
+            "question": "What is Brussels now under increasing pressure to do regarding the current disputes?",
+            "options": [
+              "Increase national border controls.",
+              "Mediate disputes and foster a robust framework.",
+              "Ignore the current tensions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While border controls are part of the broader issue, the pressure on Brussels is to mediate the political disagreements.",
+              "Correct. The brief states Brussels is under pressure to 'mediate these disputes and foster a more equitable and robust framework' for addressing migration.",
+              "Incorrect. Ignoring the tensions would be counterproductive to resolving the ongoing crisis within the EU."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

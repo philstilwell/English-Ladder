@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-02",
+  "release_iso": "2026-08-02T11:12:07Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump cancels Iran strikes subject to deal being made 'rapidly'",
+    "summary": "The US president claims Iran and other Middle Eastern countries asked Washington to hold off on any attack as the \"perimeters\" of a deal had been agreed.",
+    "link": "https://www.bbc.co.uk/news/articles/cjwx74qgld2o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Trump Cancels Iran Strikes for a Deal",
+        "overview": "US President Trump decided not to attack Iran because a deal was possible.",
+        "topic": "International Relations: US and Iran Conflict Resolution",
+        "news_brief_sentences": [
+          "President Trump had a plan.",
+          "He wanted to strike Iran.",
+          "But he changed his mind.",
+          "He cancels the strikes.",
+          "He says Iran asked for this.",
+          "Other Middle Eastern countries also asked.",
+          "They wanted Washington to hold off on an attack.",
+          "A new deal was discussed.",
+          "The perimeters of this deal were agreed.",
+          "Trump hopes the deal will be made rapidly."
+        ],
+        "vocabulary": [
+          {
+            "term": "cancels",
+            "part_of_speech": "verb",
+            "definition": "stops something that was planned"
+          },
+          {
+            "term": "hold off",
+            "part_of_speech": "phrasal verb",
+            "definition": "to wait to do something"
+          },
+          {
+            "term": "deal",
+            "part_of_speech": "noun",
+            "definition": "an agreement between people or groups"
+          },
+          {
+            "term": "perimeters",
+            "part_of_speech": "noun",
+            "definition": "the limits or basic parts of something"
+          },
+          {
+            "term": "rapidly",
+            "part_of_speech": "adverb",
+            "definition": "very quickly"
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished in the past. Many regular past tense verbs end with '-ed', like 'asked' or 'wanted'.",
+          "example_quote": "He wanted to strike Iran."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump plan to do first?",
+            "options": [
+              "attack Iran",
+              "visit Iran",
+              "help Iran"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! He planned to strike Iran.",
+              "Incorrect. He planned an attack, not a visit.",
+              "Incorrect. He planned an attack, not help."
+            ]
+          },
+          {
+            "question": "What does 'cancels' mean in this news?",
+            "options": [
+              "starts",
+              "stops",
+              "finishes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Not starts. 'Cancels' means to stop something planned.",
+              "Correct! It means to stop something that was planned.",
+              "Incorrect. 'Finishes' implies completion, 'cancels' means to call off."
+            ]
+          },
+          {
+            "question": "Who asked Washington to hold off on an attack?",
+            "options": [
+              "only Iran",
+              "only Washington",
+              "Iran and other countries"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Not only Iran. Other countries also asked.",
+              "No, Washington was asked.",
+              "Correct! Iran and other Middle Eastern countries asked."
+            ]
+          },
+          {
+            "question": "If you 'hold off' on something, what do you do?",
+            "options": [
+              "do it now",
+              "wait to do it",
+              "do it quickly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'hold off' means to wait.",
+              "Correct! You wait to do it.",
+              "No, 'hold off' means to wait, not do it quickly."
+            ]
+          },
+          {
+            "question": "What was discussed between the countries?",
+            "options": [
+              "a new meal",
+              "a new deal",
+              "a new plan"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Not a meal. They talked about an agreement.",
+              "Correct! They discussed a new agreement or 'deal'.",
+              "While a 'plan' might be part of it, the specific term mentioned is 'deal'."
+            ]
+          },
+          {
+            "question": "In 'He wanted to strike Iran,' what tense is 'wanted'?",
+            "options": [
+              "present",
+              "future",
+              "past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'wanted' is not in the present.",
+              "No, 'wanted' is not about the future.",
+              "Correct! 'Wanted' is in the simple past tense."
+            ]
+          },
+          {
+            "question": "What do 'perimeters' refer to in the context of the deal?",
+            "options": [
+              "the colors",
+              "the limits",
+              "the prices"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it doesn't mean colors.",
+              "Correct! 'Perimeters' means the basic limits or parts.",
+              "No, it's not about prices."
+            ]
+          },
+          {
+            "question": "How quickly does Trump hope the deal will be made?",
+            "options": [
+              "slowly",
+              "sometimes",
+              "very quickly"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'rapidly' means fast, not slowly.",
+              "No, 'rapidly' means fast, not sometimes.",
+              "Correct! He hopes the deal will be made 'rapidly,' which means very quickly."
+            ]
+          },
+          {
+            "question": "Why did Trump cancel the strikes?",
+            "options": [
+              "because he was tired",
+              "because a deal was possible",
+              "because he had no weapons"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news does not say he was tired.",
+              "Correct! He canceled the strikes because a deal was discussed and seemed possible.",
+              "The news does not say he had no weapons."
+            ]
+          },
+          {
+            "question": "Which word shows a past action?",
+            "options": [
+              "ask",
+              "hopes",
+              "asked"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Ask' is present tense.",
+              "'Hopes' is present tense.",
+              "Correct! 'Asked' shows an action that happened in the past."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US President Cancels Iran Strikes Amidst Deal Discussions",
+        "overview": "US President Trump has reportedly canceled planned strikes against Iran following requests from Middle Eastern countries, as an agreement's perimeters were discussed.",
+        "topic": "International Relations, Diplomacy, US Foreign Policy, and Middle East Conflicts",
+        "news_brief_sentences": [
+          "US President Donald Trump recently announced he cancels planned military actions against Iran.",
+          "This decision follows a period of escalating tensions in the Middle East region.",
+          "The President claims that both Iran and other Middle Eastern nations approached Washington.",
+          "They reportedly asked the United States to hold off on any potential strikes.",
+          "Trump indicated that these countries requested a delay because the general perimeters of a diplomatic deal had been discussed.",
+          "The President suggested that an initial agreement's boundaries were already laid out.",
+          "This diplomatic effort aims to de-escalate the conflict and prevent further military engagement.",
+          "International observers are closely monitoring the situation as discussions continue.",
+          "The sudden cancellation highlights the complexities of foreign policy and international negotiations.",
+          "It also suggests a willingness from various parties to seek a resolution through dialogue."
+        ],
+        "vocabulary": [
+          {
+            "term": "cancels",
+            "part_of_speech": "verb",
+            "definition": "To decide or announce that something arranged will not happen."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, usually from the air."
+          },
+          {
+            "term": "claims",
+            "part_of_speech": "verb",
+            "definition": "To state something is true, often without proof."
+          },
+          {
+            "term": "hold off",
+            "part_of_speech": "phrasal verb",
+            "definition": "To delay doing something or to prevent something from happening."
+          },
+          {
+            "term": "perimeters",
+            "part_of_speech": "noun",
+            "definition": "The outer limits or boundaries of an area or situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Perfect Passive",
+          "explanation": "The Past Perfect Passive is used to talk about an action that was completed before another past action, and the focus is on the action itself rather than who performed it. It's formed with 'had + been + past participle.'",
+          "example_quote": "the general perimeters of a diplomatic deal had been discussed."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump announce regarding planned actions against Iran?",
+            "options": [
+              "He initiated new economic sanctions.",
+              "He announced the cancellation of planned military actions.",
+              "He scheduled more military exercises in the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention new sanctions being initiated.",
+              "Correct. President Trump announced he 'cancels planned military actions against Iran.'",
+              "Incorrect. The focus was on cancelling actions, not scheduling more exercises."
+            ]
+          },
+          {
+            "question": "In the news brief, what is the meaning of the word 'cancels'?",
+            "options": [
+              "To postpone or delay an event.",
+              "To officially stop something from happening.",
+              "To reschedule something for a later date."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Cancels' implies stopping completely, not just delaying.",
+              "Correct. To cancel means to decide or announce that something arranged will not happen.",
+              "Incorrect. Rescheduling means it will still happen, just at a different time."
+            ]
+          },
+          {
+            "question": "Who reportedly asked Washington to 'hold off' on potential strikes?",
+            "options": [
+              "Only Iran's government.",
+              "Iran and other Middle Eastern nations.",
+              "The United Nations Security Council."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief specifies more than just Iran.",
+              "Correct. The brief states 'Iran and other Middle Eastern nations approached Washington.'",
+              "Incorrect. The news brief does not mention the UN Security Council."
+            ]
+          },
+          {
+            "question": "What does the word 'strikes' refer to in the context of this news?",
+            "options": [
+              "Labor protests by workers.",
+              "Military attacks, often from the air.",
+              "Good luck or successful events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Worker protests are not relevant to military news.",
+              "Correct. In this context, 'strikes' refers to military attacks.",
+              "Incorrect. This is a different meaning of the word 'strikes'."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the meaning of 'perimeters' in 'perimeters of a diplomatic deal'?",
+            "options": [
+              "The small details of the agreement.",
+              "The general outlines or boundaries of the deal.",
+              "The difficulties encountered during negotiations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Perimeters' refers to the broader framework, not specific details.",
+              "Correct. 'Perimeters' means the outer limits or boundaries of an area or situation.",
+              "Incorrect. The word describes the scope, not the challenges."
+            ]
+          },
+          {
+            "question": "What does the President 'claims' regarding the reason for the request to delay action?",
+            "options": [
+              "That the US military was not ready.",
+              "That an election was imminent in Iran.",
+              "That the perimeters of a diplomatic deal had been discussed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief does not mention the US military's readiness.",
+              "Incorrect. There is no mention of an imminent election.",
+              "Correct. Trump 'indicated that these countries requested a delay because the general perimeters of a diplomatic deal had been discussed.'"
+            ]
+          },
+          {
+            "question": "What does 'hold off' mean in the sentence, 'They reportedly asked the United States to hold off on any potential strikes.'?",
+            "options": [
+              "To proceed immediately with something.",
+              "To delay or refrain from doing something.",
+              "To prepare for something quickly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Hold off' means the opposite of proceeding immediately.",
+              "Correct. To 'hold off' means to delay doing something or to prevent something from happening.",
+              "Incorrect. This phrase implies delay, not quick preparation."
+            ]
+          },
+          {
+            "question": "In the example sentence 'the general perimeters of a diplomatic deal had been discussed,' what grammatical concept is used?",
+            "options": [
+              "Present Perfect Simple.",
+              "Past Perfect Passive.",
+              "Future Perfect Active."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The structure 'had been discussed' points to a different tense and voice.",
+              "Correct. This is an example of the Past Perfect Passive, focusing on a completed action before another past event.",
+              "Incorrect. This tense is not formed with 'had been' and refers to a future action."
+            ]
+          },
+          {
+            "question": "What is the primary goal of the diplomatic effort mentioned in the news brief?",
+            "options": [
+              "To increase military strength in the region.",
+              "To resolve conflicts through peaceful dialogue.",
+              "To implement stricter economic penalties."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The effort aims to avoid military action, not increase it.",
+              "Correct. The brief states the effort 'aims to de-escalate the conflict and prevent further military engagement.'",
+              "Incorrect. The focus of this specific diplomatic effort is not on penalties."
+            ]
+          },
+          {
+            "question": "When someone 'claims' something, as in 'The President claims that both Iran...', what is implied about the statement?",
+            "options": [
+              "It is an undisputed fact supported by concrete evidence.",
+              "It is stated as true, but may not have full proof yet.",
+              "It is a demand for something that is rightfully theirs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Claims' often implies a lack of complete verification.",
+              "Correct. 'Claims' means to state something is true, often without definitive proof.",
+              "Incorrect. This is a different meaning of 'claim', not relevant to stating facts."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US President Trump Halts Iran Strikes Amid Claims of Rapid Deal Progress",
+        "overview": "US President Trump called off planned military strikes against Iran, asserting that the action was contingent on a swift agreement after Iran and regional allies reportedly requested a pause, citing an understanding on the 'perimeters' of a potential deal.",
+        "topic": "Geopolitical Tensions and Diplomacy between the United States and Iran",
+        "news_brief_sentences": [
+          "Recent geopolitical tensions between the United States and Iran reached a critical juncture with President Trump's eleventh-hour decision to cancel Iran strikes.",
+          "This abrupt reversal came despite earlier indications of imminent military action following heightened regional instability.",
+          "The President's announcement stipulated that the cessation of hostilities was subject to a comprehensive deal being rapidly concluded.",
+          "He asserted that various Middle Eastern nations, including Iran, had directly appealed to Washington to hold off on any punitive measures.",
+          "According to Trump, these countries indicated that the perimeters of a potential diplomatic resolution had already been largely established and acknowledged.",
+          "This claim suggests a significant, albeit unconfirmed, diplomatic breakthrough underlying the sudden de-escalation of military intent.",
+          "The precise nature and scope of the alleged agreement's perimeters remain undisclosed, fueling extensive speculation among international observers.",
+          "Skeptics question the veracity of the President's assertion regarding the widespread regional appeal for restraint and a rapid agreement.",
+          "The intricate diplomatic landscape underscores the volatile nature of Middle Eastern geopolitics and the delicate balance of power dynamics.",
+          "Ultimately, the decision to halt military intervention hinges precariously on the swift materialization of a verifiable and substantive accord between the parties."
+        ],
+        "vocabulary": [
+          {
+            "term": "cancel Iran strikes",
+            "part_of_speech": "verb phrase",
+            "definition": "To stop or call off planned military attacks targeting Iran."
+          },
+          {
+            "term": "subject to",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Dependent on something else happening or being true; conditional upon a specific condition being met."
+          },
+          {
+            "term": "asserted",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Stated a fact or belief confidently and forcefully, often without offering proof."
+          },
+          {
+            "term": "hold off on",
+            "part_of_speech": "phrasal verb",
+            "definition": "To delay or postpone doing something, especially to wait before taking action."
+          },
+          {
+            "term": "perimeters",
+            "part_of_speech": "noun",
+            "definition": "The outer limits or boundaries of an area, an idea, or an agreement; the scope or extent of something."
+          }
+        ],
+        "grammar": {
+          "concept": "\"Subject to\" as a conditional phrase",
+          "explanation": "The phrase \"subject to\" is a formal expression used to introduce a condition or prerequisite. It means 'dependent on' or 'conditional upon' something else occurring or being true. This construction is commonly found in official, legal, or diplomatic contexts to specify that an action or agreement will only proceed if the stated condition is met, thereby highlighting a contingency. It functions to make a statement contingent on a future event or circumstance.",
+          "example_quote": "The President's announcement stipulated that the cessation of hostilities was subject to a comprehensive deal being rapidly concluded."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary condition President Trump set for his decision to cancel Iran strikes?",
+            "options": [
+              "A formal apology from Iran",
+              "A rapid conclusion of a comprehensive deal",
+              "The withdrawal of US troops from the region"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not mention an apology as the primary condition for halting strikes.",
+              "Correct. The news brief explicitly states the cancellation was 'subject to a comprehensive deal being rapidly concluded'.",
+              "The withdrawal of US troops was not cited as a condition for the immediate cancellation of strikes."
+            ]
+          },
+          {
+            "question": "According to Trump, who appealed to Washington to 'hold off on' any military action?",
+            "options": [
+              "The United Nations Security Council",
+              "Iran and other Middle Eastern countries",
+              "European diplomatic envoys"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief attributes the appeal to specific regional actors, not the UN Security Council.",
+              "Correct. The news brief clearly states 'Iran and other Middle Eastern countries' made the request.",
+              "While Europe might be involved, the brief specifies Iran and other Middle Eastern nations."
+            ]
+          },
+          {
+            "question": "Which option best describes the meaning of 'asserted' as used in the news brief?",
+            "options": [
+              "Humbly suggested",
+              "Stated confidently as fact",
+              "Questioned doubtfully"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Asserted' implies a strong, confident declaration, not a humble suggestion.",
+              "Correct. To assert means to state something confidently and forcefully, often as if it were a fact.",
+              "The term 'asserted' signifies a declaration, not an expression of doubt."
+            ]
+          },
+          {
+            "question": "In the context of the alleged diplomatic resolution, what do 'perimeters' primarily refer to?",
+            "options": [
+              "Military defense zones",
+              "The outer limits or scope of the agreement",
+              "Detailed legal provisions of the treaty"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While 'perimeters' can refer to physical boundaries, in this diplomatic context it refers to the conceptual scope.",
+              "Correct. 'Perimeters' signifies the established boundaries or extent of the proposed diplomatic resolution.",
+              "The brief implies general outlines, not necessarily the specific, detailed legal clauses of a treaty."
+            ]
+          },
+          {
+            "question": "What does the phrase 'hold off on' imply about the US military action?",
+            "options": [
+              "It was permanently abandoned.",
+              "It was delayed or postponed.",
+              "It was intensified immediately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase 'hold off on' suggests a temporary delay, not permanent abandonment, especially given the conditionality.",
+              "Correct. 'Hold off on' means to delay or postpone doing something, in this case, the planned military action.",
+              "This option implies escalation, which is the opposite of 'hold off on'."
+            ]
+          },
+          {
+            "question": "Why did the countries reportedly ask Washington to 'hold off on' attacks?",
+            "options": [
+              "They needed time to prepare their defenses.",
+              "They claimed the perimeters of a deal had been agreed.",
+              "They wanted to involve more international mediators."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly states the reason for the appeal was progress on a deal, not defensive preparations.",
+              "Correct. The news brief states the appeal was made because 'the perimeters of a potential diplomatic resolution had already been largely established'.",
+              "The brief does not mention the involvement of more international mediators as the reason for the request to hold off."
+            ]
+          },
+          {
+            "question": "In the sentence 'The President's announcement stipulated that the cessation of hostilities was subject to a comprehensive deal being rapidly concluded,' what grammatical function does 'subject to' serve?",
+            "options": [
+              "It introduces an illustrative example.",
+              "It indicates a necessary prerequisite.",
+              "It expresses a strong preference."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Subject to' introduces a condition, not an example.",
+              "Correct. As explained in the grammar section, 'subject to' functions to state a condition or prerequisite for an action.",
+              "While it reflects a strong condition, its grammatical role is to set a requirement, not merely a preference."
+            ]
+          },
+          {
+            "question": "The news brief mentions an 'eleventh-hour decision'. What does this phrase mean?",
+            "options": [
+              "A decision made exactly at 11:00 AM",
+              "A decision made at the last possible moment",
+              "A decision involving eleven different parties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase is an idiom, not a literal time reference.",
+              "Correct. An 'eleventh-hour decision' refers to one made at the very last moment, just before it's too late.",
+              "The number 'eleven' in this idiom refers to timing, not the number of involved parties."
+            ]
+          },
+          {
+            "question": "The phrase 'fueling extensive speculation' implies what about the situation?",
+            "options": [
+              "It provided clear, definitive answers.",
+              "It reduced uncertainty and guesswork.",
+              "It caused increased guessing and theorizing."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase implies a lack of clear information, leading to speculation, not definitive answers.",
+              "This is the opposite of 'fueling speculation,' which increases, rather than reduces, uncertainty.",
+              "Correct. To 'fuel speculation' means to encourage or intensify conjectures and theories due to incomplete information."
+            ]
+          },
+          {
+            "question": "What aspect of the news brief contributes most to its formal and analytical tone?",
+            "options": [
+              "The use of colloquialisms and slang.",
+              "The precise vocabulary and complex sentence structures.",
+              "Frequent use of emotional adjectives."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief employs advanced and formal language, not colloquialisms or slang, which would suggest an informal tone.",
+              "Correct. The sophisticated vocabulary and intricate sentence construction are characteristic of a formal, analytical news style.",
+              "The brief maintains an objective tone, avoiding frequent emotional adjectives that would imply sensationalism."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

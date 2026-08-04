@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-04",
+  "release_iso": "2026-08-04T11:58:29Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "More than 150 migrants rescued after boat catches fire in Channel",
+    "summary": "The boat was attempting to cross to the UK when its engine caught fire, according to French authorities.",
+    "link": "https://www.bbc.co.uk/news/articles/c4gkpeppjyqo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Migrants Rescued After Boat Fire in the Channel",
+        "overview": "French authorities reported that a boat carrying over 150 migrants caught fire while trying to cross to the UK.",
+        "topic": "Migrant Boat Incident in the Channel",
+        "news_brief_sentences": [
+          "A boat was in the Channel.",
+          "More than 150 people were on the boat.",
+          "These people were migrants.",
+          "They wanted to cross to the UK.",
+          "But the boat's engine caught fire.",
+          "The fire started while the boat was moving.",
+          "French authorities said this happened.",
+          "Many people helped the migrants.",
+          "They rescued more than 150 people.",
+          "Now, everyone is safe after the fire."
+        ],
+        "vocabulary": [
+          {
+            "term": "Channel",
+            "part_of_speech": "noun",
+            "definition": "A narrow sea area between two land areas, like the one between France and the UK."
+          },
+          {
+            "term": "migrants",
+            "part_of_speech": "noun",
+            "definition": "People who move from one country to live in another, often for safety or a better life."
+          },
+          {
+            "term": "cross",
+            "part_of_speech": "verb",
+            "definition": "To go from one side to the other side of something, like a sea or a road."
+          },
+          {
+            "term": "engine caught fire",
+            "part_of_speech": "phrase",
+            "definition": "When the part of a machine that makes it move starts burning."
+          },
+          {
+            "term": "rescued",
+            "part_of_speech": "verb",
+            "definition": "Saved someone from a dangerous situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished at a specific time in the past. We often add '-ed' to regular verbs. For irregular verbs, the form changes. This tense tells us 'what happened'.",
+          "example_quote": "They rescued more than 150 people."
+        },
+        "quiz": [
+          {
+            "question": "Where was the boat in the news?",
+            "options": [
+              "In a big lake",
+              "In the Channel",
+              "In a small river"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the boat was in a sea area, not a lake.",
+              "Yes, the boat was in the Channel, which is between France and the UK.",
+              "That's incorrect. The boat was not in a river."
+            ]
+          },
+          {
+            "question": "What happened to the boat's engine?",
+            "options": [
+              "It got very cold",
+              "It caught fire",
+              "It stopped working"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The engine did not get cold; it had a more serious problem.",
+              "Correct! The boat's engine caught fire.",
+              "The engine did not just stop; it started burning."
+            ]
+          },
+          {
+            "question": "How many migrants were rescued?",
+            "options": [
+              "Less than 50",
+              "Exactly 100",
+              "More than 150"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the number was much higher than 50.",
+              "The news brief states a higher number than 100.",
+              "That's right! More than 150 people were rescued."
+            ]
+          },
+          {
+            "question": "What does the word 'migrants' mean?",
+            "options": [
+              "People who travel for holidays",
+              "People who move to a new country",
+              "People who fish in the sea"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'migrants' are not just people on holiday.",
+              "Yes, 'migrants' are people who move from one country to another to live.",
+              "This is not the correct definition of 'migrants'."
+            ]
+          },
+          {
+            "question": "What did the people on the boat want to do?",
+            "options": [
+              "Go back to France",
+              "Cross to the UK",
+              "Stay in the Channel"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they wanted to travel to a different country.",
+              "Correct! They wanted to cross to the UK.",
+              "They wanted to leave the Channel, not stay there."
+            ]
+          },
+          {
+            "question": "Who reported that the boat's engine caught fire?",
+            "options": [
+              "The UK police",
+              "French authorities",
+              "The rescued people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief mentions French authorities, not UK police.",
+              "Yes, French authorities said the engine caught fire.",
+              "The news brief does not say the rescued people reported it."
+            ]
+          },
+          {
+            "question": "When did the fire start?",
+            "options": [
+              "Before the boat left",
+              "While the boat was moving",
+              "After the boat arrived"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the fire happened during the journey.",
+              "That's right! The fire started while the boat was moving.",
+              "The fire happened before the boat could arrive at its destination."
+            ]
+          },
+          {
+            "question": "What does it mean to be 'rescued'?",
+            "options": [
+              "To be saved from danger",
+              "To find a new boat",
+              "To get lost at sea"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! 'Rescued' means saved from a dangerous situation.",
+              "No, 'rescued' means saved, not found a new boat.",
+              "If you are 'rescued', you are saved, not lost."
+            ]
+          },
+          {
+            "question": "In the sentence 'They rescued more than 150 people', which tense is 'rescued'?",
+            "options": [
+              "Present tense",
+              "Future tense",
+              "Simple Past tense"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'rescued' describes an action that is already finished.",
+              "This is not the future. The action has already happened.",
+              "Yes, 'rescued' is in the simple past tense because the action is complete."
+            ]
+          },
+          {
+            "question": "What is the 'Channel' in this news story?",
+            "options": [
+              "A type of boat",
+              "A narrow sea area",
+              "A big city"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it's not a type of boat itself.",
+              "Correct! The Channel is a narrow area of sea between two landmasses.",
+              "It's a geographical feature, not a city."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "More Than 150 Migrants Rescued After Boat Catches Fire in Channel",
+        "overview": "Over 150 migrants were safely rescued in the English Channel after their boat's engine caught fire while attempting to cross to the UK.",
+        "topic": "Maritime incidents, migrant crossings, and rescue operations in the English Channel",
+        "news_brief_sentences": [
+          "French authorities reported a significant incident involving a migrant boat in the English Channel.",
+          "More than 150 individuals were attempting to cross to the United Kingdom when the engine on their vessel suddenly caught fire.",
+          "This dangerous situation unfolded near the coast of France, prompting an urgent rescue operation.",
+          "Fortunately, various agencies quickly responded to the emergency, working together to safely evacuate everyone on board.",
+          "The incident highlights the inherent risks associated with these perilous Channel crossings.",
+          "After the fire broke out, the boat became disabled, leaving the passengers stranded in the busy shipping lane.",
+          "French officials confirmed that the migrants were rescued and brought back to French ports.",
+          "Investigations are currently underway to determine the exact cause of the engine malfunction.",
+          "Incidents like this frequently occur as people try to reach the UK, often using small and unsuitable boats.",
+          "Efforts are continuously being made by maritime authorities to intercept such crossings and ensure safety."
+        ],
+        "vocabulary": [
+          {
+            "term": "caught fire",
+            "part_of_speech": "verb phrase",
+            "definition": "Started burning, usually unintentionally or suddenly."
+          },
+          {
+            "term": "rescue operation",
+            "part_of_speech": "noun phrase",
+            "definition": "An organized effort or mission to save people from a dangerous or life-threatening situation."
+          },
+          {
+            "term": "safely evacuate",
+            "part_of_speech": "verb phrase",
+            "definition": "To move people out of a dangerous place to a safe one, ensuring that no harm comes to them during the process."
+          },
+          {
+            "term": "migrants were rescued",
+            "part_of_speech": "passive voice phrase",
+            "definition": "Describes the act of migrants being saved from danger by other people or organizations, focusing on the migrants as the recipients of the action."
+          },
+          {
+            "term": "intercept",
+            "part_of_speech": "verb",
+            "definition": "To stop someone or something from reaching their intended destination or from completing their journey."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the recipient of the action rather than the doer. We often use it when we don't know who performed the action, or when the doer is obvious or unimportant. It is formed with a form of the verb 'to be' followed by the past participle of the main verb.",
+          "example_quote": "French officials confirmed that the migrants were rescued and brought back to French ports."
+        },
+        "quiz": [
+          {
+            "question": "What was the main reason for the rescue operation in the English Channel described in the news brief?",
+            "options": [
+              "The boat was overcrowded with passengers.",
+              "The engine on the migrant boat caught fire.",
+              "The boat experienced a severe leak and began sinking."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Overcrowding wasn't mentioned as the primary reason for this specific rescue.",
+              "Correct! The engine catching fire was the direct cause of the emergency, prompting the rescue.",
+              "While dangerous, the news brief states the boat caught fire, not that it was sinking."
+            ]
+          },
+          {
+            "question": "Approximately how many individuals were attempting to cross to the UK when the incident occurred?",
+            "options": [
+              "Exactly 150 people.",
+              "Fewer than 100 people.",
+              "More than 150 people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief specifies 'More than 150', not an exact number.",
+              "The article clearly indicates a much larger number of individuals were involved.",
+              "Correct! The news brief explicitly states that 'More than 150 individuals' were on board."
+            ]
+          },
+          {
+            "question": "What does it mean if a boat's engine 'caught fire'?",
+            "options": [
+              "The engine was repaired and started working.",
+              "The engine was successfully stopped by authorities.",
+              "The engine started burning or ignited unexpectedly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "When an engine 'catches fire', it's burning, not being repaired.",
+              "This phrase means it began to burn, not that it was stopped.",
+              "Correct! 'Caught fire' means that something started burning or ignited, often accidentally."
+            ]
+          },
+          {
+            "question": "What is the primary goal of a 'rescue operation' as described in the news brief?",
+            "options": [
+              "To prevent illegal crossings from happening.",
+              "To provide food and water to migrants.",
+              "To save people from a dangerous or life-threatening situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While related, stopping crossings is a different objective from a 'rescue operation'.",
+              "Providing supplies might happen, but the core purpose of a 'rescue operation' is to save lives.",
+              "Correct! A 'rescue operation' is an organized effort specifically aimed at saving people from danger."
+            ]
+          },
+          {
+            "question": "When people are 'safely evacuated', what does the word 'safely' imply about their removal?",
+            "options": [
+              "They left quickly but might still have been harmed.",
+              "They were moved out of danger without experiencing any harm.",
+              "They were forced to leave without their personal belongings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'safely' indicates that no harm occurred during the evacuation.",
+              "Correct! 'Safely evacuated' means that people were moved to safety without suffering any injury or harm.",
+              "The term 'safely' refers to their well-being, not necessarily their possessions."
+            ]
+          },
+          {
+            "question": "In the sentence, 'French officials confirmed that the migrants were rescued,' which grammatical voice is used for 'were rescued'?",
+            "options": [
+              "Active voice, focusing on the doer.",
+              "Passive voice, focusing on the recipient of the action.",
+              "Conditional voice, expressing a hypothetical situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The sentence structure 'were rescued' uses the passive voice, not the active.",
+              "Correct! The passive voice ('were rescued') puts the focus on the migrants as the ones receiving the action.",
+              "The conditional voice uses 'would' or 'could' and doesn't apply to this sentence structure."
+            ]
+          },
+          {
+            "question": "Why might the news brief use the passive voice in a sentence like 'the migrants were rescued'?",
+            "options": [
+              "To emphasize the rescuers who performed the action.",
+              "To emphasize the migrants, who are the focus of the action.",
+              "To make the sentence shorter and less formal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice often shifts emphasis away from the doer, not towards them.",
+              "Correct! The passive voice highlights the migrants, who are the important subject of the rescue event.",
+              "The passive voice can sometimes be more formal and is not primarily used for brevity in this context."
+            ]
+          },
+          {
+            "question": "What does it mean for maritime authorities to 'intercept' a crossing?",
+            "options": [
+              "To assist the boat in reaching its desired destination.",
+              "To stop the boat from completing its journey or reaching its destination.",
+              "To provide medical supplies and other aid to people on the boat."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To 'intercept' means to stop, not to assist in reaching a destination.",
+              "Correct! To 'intercept' means to stop something or someone from continuing on their path or reaching their goal.",
+              "While aid might be given after an interception, the act of 'intercepting' itself refers to stopping the journey."
+            ]
+          },
+          {
+            "question": "What is highlighted as an 'inherent risk' associated with Channel crossings according to the news brief?",
+            "options": [
+              "The high cost of the journey for migrants.",
+              "The danger of unsuitable boats and incidents like fires.",
+              "The language barrier between migrants and authorities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief focuses on the physical dangers, not financial costs.",
+              "Correct! The incident with the fire and the mention of 'perilous Channel crossings' highlight these dangers.",
+              "While a factor in communication, language barriers are not the 'inherent risk' emphasized by the boat fire incident."
+            ]
+          },
+          {
+            "question": "Based on the news brief, where were the rescued migrants taken after the incident?",
+            "options": [
+              "Directly to the United Kingdom.",
+              "Back to French ports.",
+              "To an international refugee camp."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states they were brought 'back to French ports', not to the UK.",
+              "Correct! French officials confirmed that the migrants were rescued and brought back to French ports.",
+              "The news brief specifically mentions French ports, not an international refugee camp."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Large-scale Maritime Rescue Effort Follows English Channel Boat Fire",
+        "overview": "French authorities orchestrated a significant rescue operation in the English Channel after a vessel carrying over 150 migrants caught fire while undertaking a perilous journey to the United Kingdom.",
+        "topic": "Humanitarian Crises and Maritime Safety in the English Channel",
+        "news_brief_sentences": [
+          "A large-scale maritime rescue operation unfolded in the English Channel today, saving over 150 migrants from a vessel that caught fire.",
+          "The incident occurred as the boat was undertaking the perilous journey from France, attempting to reach the United Kingdom.",
+          "French maritime authorities confirmed that the engine of the overcrowded dinghy ignited, quickly becoming engulfed in flames.",
+          "The swift intervention of rescue teams was critical in preventing a potential catastrophe at sea.",
+          "Initial reports indicate that the blaze necessitated immediate evacuation of all aboard, comprising a significant number of vulnerable individuals.",
+          "Multiple French naval and coastguard assets were deployed to the scene following a distress call.",
+          "All 150-plus occupants were safely brought to shore, demonstrating the coordinated efforts of emergency services.",
+          "This event underscores the extreme dangers associated with unauthorised crossings of one of the world's busiest shipping lanes.",
+          "Such incidents frequently highlight the moral and logistical complexities faced by nations bordering the Channel.",
+          "Investigations are ongoing to determine the precise cause of the engine fire and the circumstances leading to this alarming episode."
+        ],
+        "vocabulary": [
+          {
+            "term": "perilous journey",
+            "part_of_speech": "noun phrase",
+            "definition": "A dangerous or risky trip, often implying significant hazards or threats that could lead to injury or death."
+          },
+          {
+            "term": "swift intervention",
+            "part_of_speech": "noun phrase",
+            "definition": "Quick and decisive action taken to prevent or mitigate a negative outcome or emergency, often by an authority or rescue service."
+          },
+          {
+            "term": "engulfed in flames",
+            "part_of_speech": "adjective phrase",
+            "definition": "Completely surrounded or covered by fire, indicating an intense and widespread blaze that leaves little untouched."
+          },
+          {
+            "term": "maritime authorities",
+            "part_of_speech": "noun phrase",
+            "definition": "Official bodies or agencies responsible for regulating, policing, and ensuring safety in shipping, sea-related activities, and coastal waters."
+          },
+          {
+            "term": "vulnerable individuals",
+            "part_of_speech": "noun phrase",
+            "definition": "People who are particularly susceptible to harm, exploitation, or negative circumstances due to their situation, age, health, or lack of resources."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Added Information and Concision",
+          "explanation": "Participle clauses, formed with present participles (-ing forms) or past participles (-ed forms), are used to add information about the main clause, often describing an action that happens at the same time or as a result of the main action. They provide concision and can replace longer subordinate clauses, making sentences more sophisticated and fluid. They function adverbially, providing context, reason, or consequence without needing a full conjunction and subject.",
+          "example_quote": "French maritime authorities confirmed that the engine of the overcrowded dinghy ignited, quickly becoming engulfed in flames."
+        },
+        "quiz": [
+          {
+            "question": "Based on the news brief, what was the primary outcome of the maritime rescue operation?",
+            "options": [
+              "A new policy on Channel crossings was established.",
+              "Over 150 migrants were saved from a burning vessel.",
+              "International tensions escalated due to border disputes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not mention policy changes as a direct outcome of this incident.",
+              "Correct. The central focus of the report was the successful rescue of a significant number of migrants from the burning boat.",
+              "The brief describes a rescue effort, not a situation where international tensions escalated."
+            ]
+          },
+          {
+            "question": "What does the phrase \"perilous journey\" imply about the migrants' attempt to cross the Channel?",
+            "options": [
+              "It was a well-organized and safe passage.",
+              "It involved significant dangers and risks.",
+              "It was a routine and uneventful trip."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This contradicts the definition of 'perilous,' which specifically means full of danger or risk.",
+              "Correct. 'Perilous' means full of danger or risk, accurately reflecting the extreme hazards associated with such crossings.",
+              "The term 'perilous' strongly suggests the opposite of routine or uneventful, highlighting the severe risks."
+            ]
+          },
+          {
+            "question": "The News Brief mentions \"swift intervention.\" What does this highlight about the rescue teams' actions?",
+            "options": [
+              "Their delayed response to the emergency.",
+              "Their quick and decisive action.",
+              "Their cautious and hesitant approach."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Swift' means happening quickly or promptly, making a delayed response incorrect.",
+              "Correct. 'Swift intervention' emphasizes the rapid and effective response by the rescue personnel to prevent further harm.",
+              "This option is incorrect as 'swift' implies promptness and determination, not hesitation or caution."
+            ]
+          },
+          {
+            "question": "Which part of speech is \"engulfed\" in the phrase \"engulfed in flames\"?",
+            "options": [
+              "A verb in past tense.",
+              "A past participle acting as an adjective.",
+              "An adverb modifying \"in flames.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While 'engulfed' can be a past tense verb, here it functions as part of an adjective phrase describing the dinghy's state.",
+              "Correct. 'Engulfed' is a past participle used adjectivally to describe the state of being completely covered by flames.",
+              "'Engulfed' describes the state of the boat, not how or when 'in flames' occurred; it's not an adverb here."
+            ]
+          },
+          {
+            "question": "According to the News Brief, who confirmed the details about the engine igniting?",
+            "options": [
+              "The rescued migrants.",
+              "British border patrols.",
+              "French maritime authorities."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief explicitly states 'French maritime authorities confirmed,' not the migrants themselves.",
+              "While British authorities might be involved in Channel operations, the brief specifically credits French authorities for this confirmation.",
+              "Correct. The brief explicitly states, 'French maritime authorities confirmed that the engine of the overcrowded dinghy ignited.'"
+            ]
+          },
+          {
+            "question": "What does the term \"vulnerable individuals\" primarily emphasize in the context of the rescue?",
+            "options": [
+              "The migrants' criminal intent.",
+              "Their susceptibility to harm and need for protection.",
+              "Their exceptional physical strength."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term 'vulnerable' refers to susceptibility to harm, not any criminal intent.",
+              "Correct. 'Vulnerable' highlights that these individuals are at risk and require support, protection, and special consideration.",
+              "This is antithetical to the meaning of 'vulnerable,' which implies weakness or susceptibility, not strength."
+            ]
+          },
+          {
+            "question": "In the sentence, \"French maritime authorities confirmed that the engine of the overcrowded dinghy ignited, quickly becoming engulfed in flames,\" what function does the participle clause \"quickly becoming engulfed in flames\" serve?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It describes a simultaneous or consequent action, adding information concisely.",
+              "It introduces a new, unrelated topic."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The main verb of the sentence is 'confirmed'; participle clauses provide additional detail, not the primary action.",
+              "Correct. The participle clause efficiently describes the immediate consequence of the engine igniting, making the sentence more fluid.",
+              "The clause is directly related to the engine's ignition, providing crucial additional detail, not a new topic."
+            ]
+          },
+          {
+            "question": "What specific detail about the boat's fire is mentioned in the news brief?",
+            "options": [
+              "The electrical system malfunctioned.",
+              "The engine of the dinghy ignited.",
+              "A passenger started the fire deliberately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief specifies the 'engine' as the source of the fire, not the general electrical system.",
+              "Correct. The brief explicitly states that 'the engine of the overcrowded dinghy ignited.'",
+              "There is no mention in the brief of any deliberate action by a passenger causing the fire."
+            ]
+          },
+          {
+            "question": "The News Brief implies that Channel crossings, particularly unauthorised ones, are generally:",
+            "options": [
+              "Safe and routine maritime activities.",
+              "Fraught with extreme dangers and logistical complexities.",
+              "Primarily a matter for tourist agencies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly states 'extreme dangers associated with unauthorised crossings,' contradicting this.",
+              "Correct. The text discusses a 'perilous journey' and 'extreme dangers,' highlighting the inherent risks and challenges.",
+              "The context of the news is serious humanitarian and safety issues, not commercial tourism."
+            ]
+          },
+          {
+            "question": "What kind of assets were deployed to the scene by French authorities following the distress call?",
+            "options": [
+              "Commercial fishing vessels.",
+              "Naval and coastguard assets.",
+              "Civilian transport ships."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief specifically mentions 'French naval and coastguard assets,' not commercial vessels.",
+              "Correct. The brief clearly states that 'Multiple French naval and coastguard assets were deployed to the scene.'",
+              "The brief specifies military and coastguard resources, which are distinct from general civilian transport ships."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

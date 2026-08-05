@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-05",
+  "release_iso": "2026-08-05T11:52:24Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Russian strike kills at least 17 as Zelensky says interceptors could have saved lives",
+    "summary": "The Russia defence ministry said it had struck logistics hubs and supply centres in Kyiv and the surrounding region.",
+    "link": "https://www.bbc.co.uk/news/articles/c330pxyvzzyo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "News from Ukraine: A Russian Strike Kills at Least 17",
+        "overview": "A recent Russian attack caused deaths and hit important places in Ukraine.",
+        "topic": "Current Events: Russian-Ukrainian Conflict",
+        "news_brief_sentences": [
+          "A Russian strike happened recently.",
+          "This attack killed at least 17 people.",
+          "President Zelensky talked about the strike.",
+          "He said special interceptors could have saved lives.",
+          "The Russia defence ministry gave a statement.",
+          "They said their forces struck targets.",
+          "These targets were in Kyiv.",
+          "They also struck places in the surrounding region.",
+          "The ministry mentioned logistics hubs and supply centres.",
+          "These were important places that were hit."
+        ],
+        "vocabulary": [
+          {
+            "term": "strike",
+            "part_of_speech": "noun",
+            "definition": "An attack, often from the air, using bombs or missiles."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb, past tense",
+            "definition": "Made someone die; ended a life."
+          },
+          {
+            "term": "interceptors",
+            "part_of_speech": "noun",
+            "definition": "Special equipment or planes designed to stop incoming attacks or missiles."
+          },
+          {
+            "term": "ministry",
+            "part_of_speech": "noun",
+            "definition": "A department of a government, like a defence ministry or education ministry."
+          },
+          {
+            "term": "hubs",
+            "part_of_speech": "noun",
+            "definition": "Central places where many things meet, are stored, or move from."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. It describes things that happened at a specific time before now. For most regular verbs, we add -ed to the base form.",
+          "example_quote": "This attack killed at least 17 people."
+        },
+        "quiz": [
+          {
+            "question": "What happened recently in Ukraine?",
+            "options": [
+              "A Russian strike",
+              "A big party",
+              "A new building opened"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! A Russian strike took place. This is what the news brief is about.",
+              "That's not right. The news talks about an attack, not a party.",
+              "Incorrect. The news talks about an attack, not a new building."
+            ]
+          },
+          {
+            "question": "How many people did the attack kill at least?",
+            "options": [
+              "7 people",
+              "17 people",
+              "70 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The number was higher than 7.",
+              "Yes, the news brief states that at least 17 people were killed.",
+              "No, that number is too high. The news mentions 17 people."
+            ]
+          },
+          {
+            "question": "Who talked about the strike and interceptors?",
+            "options": [
+              "The Russia defence ministry",
+              "President Zelensky",
+              "A reporter"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The ministry talked about where they struck, not interceptors.",
+              "Correct! President Zelensky mentioned interceptors.",
+              "No, the news brief names President Zelensky, not a reporter."
+            ]
+          },
+          {
+            "question": "What is an 'interceptor'?",
+            "options": [
+              "A type of car",
+              "Special equipment to stop attacks",
+              "A person who helps people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it's not a car in this news context.",
+              "Correct! Interceptors are special devices used to stop incoming attacks.",
+              "That is not the meaning of an interceptor here."
+            ]
+          },
+          {
+            "question": "Where did the Russia defence ministry say they struck?",
+            "options": [
+              "Only Kyiv",
+              "In Ukraine but not Kyiv",
+              "In Kyiv and the surrounding region"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is only partly correct. They struck more than just Kyiv.",
+              "This is incorrect. The strike was in Kyiv.",
+              "Correct! The news brief says they struck targets in Kyiv and the surrounding region."
+            ]
+          },
+          {
+            "question": "What does the word 'ministry' mean?",
+            "options": [
+              "A type of food",
+              "A government department",
+              "A small shop"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a ministry is not food.",
+              "Correct! A ministry is a part of the government.",
+              "That is incorrect. A ministry is a governmental body."
+            ]
+          },
+          {
+            "question": "What kind of places did the ministry mention they hit?",
+            "options": [
+              "Schools and hospitals",
+              "Logistics hubs and supply centres",
+              "Parks and museums"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief did not mention these places.",
+              "Correct! They mentioned logistics hubs and supply centres.",
+              "These places were not mentioned in the news brief."
+            ]
+          },
+          {
+            "question": "What is 'hubs' in this news?",
+            "options": [
+              "Wheels of a car",
+              "Central places for many things",
+              "Places to sleep"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it is not about car parts here.",
+              "Correct! Hubs are central points for movement or activities.",
+              "That is not the definition of hubs in this context."
+            ]
+          },
+          {
+            "question": "In the sentence 'A Russian strike happened recently,' what tense is 'happened'?",
+            "options": [
+              "Future Tense",
+              "Present Tense",
+              "Simple Past Tense"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, future tense talks about things that will happen.",
+              "Incorrect. Present tense is for actions happening now.",
+              "Correct! 'Happened' describes an action that finished in the past."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense?",
+            "options": [
+              "President Zelensky speaks.",
+              "The ministry will say.",
+              "This attack killed people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses the simple present tense. It is not past.",
+              "This sentence uses the future tense. It is not past.",
+              "Correct! 'Killed' shows an action that finished in the past."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Russian Strikes and Interceptors: A Look at Recent Events in Ukraine",
+        "overview": "Recent Russian military actions have resulted in at least 17 deaths, prompting President Zelensky to highlight the potential life-saving capability of interceptor systems.",
+        "topic": "The ongoing conflict in Ukraine, focusing on Russian strikes and the need for air defense systems.",
+        "news_brief_sentences": [
+          "A recent Russian strike tragically resulted in the deaths of at least 17 people.",
+          "This devastating attack occurred in Ukraine, causing significant loss of life.",
+          "President Zelensky responded to the incident, expressing deep concern.",
+          "He emphasized that modern interceptors could have potentially saved many lives during the assault.",
+          "Zelensky's statement highlighted the urgent need for more advanced air defence systems in the country.",
+          "Meanwhile, the Russian defence ministry officially acknowledged its involvement in military operations.",
+          "The ministry claimed responsibility for targeting specific locations in and around Kyiv.",
+          "Their stated objectives were to hit logistics hubs and supply centres.",
+          "These targets, according to the ministry, are vital for Ukraine's military operations.",
+          "The attacks were concentrated in the capital city of Kyiv and its surrounding region, demonstrating the broad scope of the conflict."
+        ],
+        "vocabulary": [
+          {
+            "term": "strike",
+            "part_of_speech": "noun",
+            "definition": "A military attack, often sudden and forceful, usually by air."
+          },
+          {
+            "term": "interceptors",
+            "part_of_speech": "noun",
+            "definition": "Aircraft or missiles designed to prevent enemy attacks by shooting down their missiles or planes."
+          },
+          {
+            "term": "defence ministry",
+            "part_of_speech": "noun phrase",
+            "definition": "A government department responsible for national military and security affairs."
+          },
+          {
+            "term": "logistics hubs",
+            "part_of_speech": "noun phrase",
+            "definition": "Central places where the organization and movement of supplies and equipment are managed."
+          },
+          {
+            "term": "supply centres",
+            "part_of_speech": "noun phrase",
+            "definition": "Locations where goods and materials are stored and distributed to other places."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to convey what someone else has said or thought, often providing more specific information about the speaker's intention or manner than just 'said'. They introduce reported speech or thoughts, like 'emphasized,' 'claimed,' or 'acknowledged,' adding nuance to the communication.",
+          "example_quote": "He emphasized that modern interceptors could have potentially saved many lives during the assault."
+        },
+        "quiz": [
+          {
+            "question": "How many people were killed in the recent Russian strike mentioned in the news?",
+            "options": [
+              "At least 17",
+              "Exactly 17",
+              "Up to 10"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The news brief states 'at least 17 people' were tragically killed.",
+              "Incorrect. The news specifies a minimum number of casualties, not an exact count.",
+              "Incorrect. The number mentioned in the news brief is significantly higher than 10."
+            ]
+          },
+          {
+            "question": "What did President Zelensky suggest could have saved lives during the attack?",
+            "options": [
+              "Negotiations",
+              "Modern interceptors",
+              "Emergency medical teams"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While important, negotiations were not mentioned as a direct life-saving measure during the attack.",
+              "Correct! Zelensky highlighted that modern interceptors could have potentially saved many lives.",
+              "Incorrect. Emergency medical teams respond after an attack, but Zelensky spoke of preventing loss of life during it."
+            ]
+          },
+          {
+            "question": "What specific locations did the Russian defence ministry claim to target?",
+            "options": [
+              "Residential areas",
+              "Logistics hubs and supply centres",
+              "Cultural heritage sites"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies military-related targets, not residential areas.",
+              "Correct! The defence ministry stated their objectives were to hit logistics hubs and supply centres.",
+              "Incorrect. The targets mentioned in the news brief were not cultural sites."
+            ]
+          },
+          {
+            "question": "What is the meaning of the term 'strike' as used in the news brief?",
+            "options": [
+              "A labor protest",
+              "A sudden military attack",
+              "A successful business deal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A labor protest is a different meaning of 'strike' in a social context.",
+              "Correct! In this context, 'strike' refers to a military attack, often sudden and forceful.",
+              "Incorrect. This meaning is unrelated to the context of the news brief about military actions."
+            ]
+          },
+          {
+            "question": "If someone 'emphasized' something, what does that mean?",
+            "options": [
+              "They whispered it softly",
+              "They said it with special importance",
+              "They denied it strongly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Emphasizing implies clarity and importance, not speaking softly.",
+              "Correct! To emphasize means to give something special importance or attention when speaking or writing.",
+              "Incorrect. Denying is the opposite of emphasizing a point; it means to state that something is not true."
+            ]
+          },
+          {
+            "question": "Which government body officially acknowledged its involvement in military operations?",
+            "options": [
+              "The Ukrainian Parliament",
+              "The Russian defence ministry",
+              "NATO headquarters"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This refers to the Russian side's actions, not the Ukrainian Parliament.",
+              "Correct! The Russian defence ministry officially acknowledged its involvement in military operations.",
+              "Incorrect. NATO was not mentioned as acknowledging involvement in this specific context."
+            ]
+          },
+          {
+            "question": "What are 'logistics hubs' primarily used for in this context?",
+            "options": [
+              "Tourist accommodations",
+              "Managing the movement of supplies and equipment",
+              "Public transportation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Logistics hubs are not facilities for tourist accommodations.",
+              "Correct! Logistics hubs manage the organization and movement of supplies and equipment, especially for military purposes.",
+              "Incorrect. While important, logistics hubs in this military context are not primarily about public transport."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The ministry claimed responsibility for targeting specific locations,' what kind of verb is 'claimed'?",
+            "options": [
+              "An action verb",
+              "A linking verb",
+              "A reporting verb"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While it indicates an action, its specific function here is to report speech or an assertion.",
+              "Incorrect. Linking verbs connect the subject to a complement, such as 'is' or 'seems', which is not the case for 'claimed'.",
+              "Correct! 'Claimed' is a reporting verb, used to convey what someone else has said or asserted, often without direct quotation."
+            ]
+          },
+          {
+            "question": "What is the role of 'interceptors' in a military context, according to the news?",
+            "options": [
+              "To deliver humanitarian aid",
+              "To prevent enemy attacks by shooting down missiles",
+              "To gather intelligence secretly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Interceptors have a defensive role against incoming threats, not aid delivery.",
+              "Correct! Interceptors are designed to prevent attacks by shooting down enemy missiles or aircraft.",
+              "Incorrect. While intelligence is vital, interceptors have a direct defensive function in stopping attacks."
+            ]
+          },
+          {
+            "question": "The attacks mentioned in the news brief were concentrated in which main city and its surrounding area?",
+            "options": [
+              "Moscow",
+              "Kyiv",
+              "Lviv"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Moscow is the capital of Russia, not the target city mentioned in the news.",
+              "Correct! The news brief states the attacks were concentrated in Kyiv and its surrounding region.",
+              "Incorrect. While Lviv is an important city in Ukraine, Kyiv was the main city specified in this news report."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Devastating Russian Strikes and the Call for Enhanced Air Defence",
+        "overview": "Recent Russian military actions, targeting critical logistical infrastructure in Kyiv and its environs, have resulted in at least 17 fatalities, prompting Ukrainian President Zelensky to underscore the urgent necessity of advanced interceptor systems to mitigate civilian casualties.",
+        "topic": "Geopolitical Conflict and Air Defence Vulnerabilities",
+        "news_brief_sentences": [
+          "A recent barrage of Russian strikes has tragically claimed the lives of at least 17 individuals, exacerbating the already dire humanitarian situation in Ukraine.",
+          "Ukrainian President Volodymyr Zelensky has vociferously asserted that more sophisticated air defence interceptor systems could have demonstrably averted this tragic loss of life.",
+          "The Russian defence ministry, through official channels, confirmed its forces had targeted logistical hubs and crucial supply centres.",
+          "These strategic targets were located specifically within Kyiv and its immediate surrounding region, aiming to cripple operational support.",
+          "Such operations highlight the ongoing tactical objective of disrupting supply lines and undermining defensive capabilities.",
+          "Zelensky's remarks serve to underscore a persistent international plea for more robust military assistance, especially in advanced air defence technology.",
+          "The continuous conflict continues to exact a severe toll on civilian populations and vital national infrastructure.",
+          "The critical vulnerability of Ukrainian cities against incoming projectiles, due to insufficient interception capabilities, remains a paramount concern.",
+          "International observers are closely monitoring the escalating humanitarian crisis, expressing growing apprehension regarding future developments.",
+          "The urgent need for effective protective measures against aerial assaults cannot be overstated in the current tumultuous geopolitical climate."
+        ],
+        "vocabulary": [
+          {
+            "term": "exacerbating",
+            "part_of_speech": "Verb (present participle)",
+            "definition": "Making a problem, bad situation, or negative feeling worse."
+          },
+          {
+            "term": "vociferously asserted",
+            "part_of_speech": "Adverbial phrase",
+            "definition": "Stated or declared something loudly, forcefully, and emphatically, often in opposition to others."
+          },
+          {
+            "term": "demonstrably averted",
+            "part_of_speech": "Adverbial phrase",
+            "definition": "Prevented something clearly and visibly, with evidence or proof that the prevention occurred."
+          },
+          {
+            "term": "logistical hubs",
+            "part_of_speech": "Noun phrase",
+            "definition": "Central points or facilities where operations related to the organized movement, storage, and supply of goods, equipment, or people are coordinated."
+          },
+          {
+            "term": "geopolitical climate",
+            "part_of_speech": "Noun phrase",
+            "definition": "The prevailing political and economic relationships and conditions between nations, especially as they relate to geographical factors and their impact on international affairs."
+          }
+        ],
+        "grammar": {
+          "concept": "Modal Perfect for Hypothetical Past Actions (could have + past participle)",
+          "explanation": "The modal perfect structure 'could have' followed by a past participle is used to discuss past possibilities or abilities that were not realized, often implying a missed opportunity or a different outcome if circumstances had been different. It expresses what was possible but did not occur.",
+          "example_quote": "more sophisticated air defence interceptor systems could have demonstrably averted this tragic loss of life."
+        },
+        "quiz": [
+          {
+            "question": "What was the confirmed target of the Russian strikes, according to their defence ministry's official communique?",
+            "options": [
+              "Major government administrative buildings.",
+              "Logistical hubs and crucial supply centres.",
+              "Residential areas within the city limits."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While significant, government buildings were not the stated primary targets by the Russian defence ministry.",
+              "Correct. The Russian defence ministry explicitly confirmed targeting 'logistical hubs and crucial supply centres' in Kyiv and its region.",
+              "The official statement did not specify residential areas as targets, rather focusing on strategic infrastructure."
+            ]
+          },
+          {
+            "question": "President Zelensky 'vociferously asserted' that improved air defence interceptors could have saved lives. What does 'vociferously asserted' convey about his statement?",
+            "options": [
+              "He stated it quietly and with significant reservation.",
+              "He expressed it loudly, forcefully, and emphatically.",
+              "He delivered the statement with uncertainty and hesitation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'vociferously' implies a strong, loud declaration, not quiet reservation.",
+              "Correct. To 'vociferously assert' means to state something with great volume, force, and conviction, leaving no doubt about the speaker's stance.",
+              "This is incorrect. 'Vociferously' denotes strong conviction, not hesitation or uncertainty."
+            ]
+          },
+          {
+            "question": "The news brief mentions the strikes 'exacerbating the already dire humanitarian situation'. What is the meaning of 'exacerbating' in this context?",
+            "options": [
+              "Significantly improving the humanitarian situation.",
+              "Making an existing bad situation even worse.",
+              "Stabilizing or maintaining the status quo of the situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'exacerbating' means to intensify or worsen, not to improve.",
+              "Correct. To 'exacerbate' a situation means to make an already difficult or negative circumstance even more severe or intense.",
+              "This is the opposite of 'exacerbating', which indicates a worsening, not a stabilization."
+            ]
+          },
+          {
+            "question": "According to President Zelensky, what could have 'demonstrably averted' the tragic loss of life?",
+            "options": [
+              "A stronger diplomatic response from international bodies.",
+              "Enhanced and more sophisticated air defence interceptor systems.",
+              "Earlier warnings for civilian evacuation procedures."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While diplomacy is crucial, Zelensky specifically pointed to a military capability.",
+              "Correct. Zelensky explicitly stated that 'more sophisticated air defence interceptor systems could have demonstrably averted this tragic loss of life.'",
+              "The focus of Zelensky's statement was on active protection, not just evacuation warnings."
+            ]
+          },
+          {
+            "question": "The news brief refers to 'logistical hubs'. What is their primary function in a military context?",
+            "options": [
+              "Primary locations for troop training and recruitment.",
+              "Command centres for military strategy and intelligence.",
+              "Central points for coordinating the movement and supply of resources."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While related to military operations, logistical hubs are not primarily for training or recruitment.",
+              "Command centres have a different primary function, focused on decision-making rather than physical supply chain management.",
+              "Correct. 'Logistical hubs' are crucial for organizing and managing the flow of equipment, personnel, and provisions to support ongoing operations."
+            ]
+          },
+          {
+            "question": "What is the grammatical function of 'could have demonstrably averted' in the example quote provided?",
+            "options": [
+              "It expresses a definite past action that occurred.",
+              "It signifies a past possibility or an unfulfilled hypothetical condition.",
+              "It describes a future obligation or recommendation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the 'modal perfect' structure 'could have' indicates a possibility that did not actualize, not a definite past event.",
+              "Correct. 'Could have + past participle' is used to talk about things that were possible in the past but did not happen, or to express a missed opportunity.",
+              "This structure relates to the past, not future obligations or recommendations."
+            ]
+          },
+          {
+            "question": "What 'critical vulnerability' for Ukrainian cities is highlighted in the news brief?",
+            "options": [
+              "The scarcity of international humanitarian aid.",
+              "The inadequacy of medical infrastructure.",
+              "Insufficient interception capabilities against incoming projectiles."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While humanitarian aid is important, the text specifically identifies a different critical vulnerability.",
+              "The brief does not specifically highlight medical infrastructure as the 'critical vulnerability' in this context.",
+              "Correct. The news brief states, 'The inability to adequately intercept incoming projectiles remains a critical vulnerability for Ukrainian cities.'"
+            ]
+          },
+          {
+            "question": "The news brief mentions the 'tumultuous geopolitical climate'. What does this phrase primarily refer to?",
+            "options": [
+              "The unpredictable and severe weather patterns in the region.",
+              "The unstable and complex political and economic relationships between nations.",
+              "The fluctuating public opinion regarding international policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'geopolitical' refers to international relations, not literal weather conditions.",
+              "Correct. The 'geopolitical climate' describes the dynamic and often volatile international political and economic landscape.",
+              "While public opinion can be influenced, the term 'geopolitical climate' refers to the broader, more systemic relationships between states."
+            ]
+          },
+          {
+            "question": "What is a key implication of the Russian defence ministry's statement about targeting 'logistical hubs'?",
+            "options": [
+              "They were targeting only non-military civilian facilities.",
+              "They aimed to disrupt the movement and supply lines supporting Ukrainian operations.",
+              "They were primarily seeking to cause civilian panic and mass displacement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Logistical hubs, while potentially civilian in nature, are targeted for their strategic value, not solely as non-military facilities.",
+              "Correct. Targeting logistical hubs is a common military strategy to impede an adversary's ability to sustain operations by cutting off supplies and movement.",
+              "While civilian impact is a tragic consequence, the stated military objective of targeting logistics is to disrupt operations, not primarily to induce panic."
+            ]
+          },
+          {
+            "question": "Considering the overall tone and content, what is a primary concern conveyed by the news brief?",
+            "options": [
+              "The effectiveness of international sanctions on Russia.",
+              "The immediate need for enhanced protective measures against aerial attacks.",
+              "The long-term economic recovery plan for Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While important, international sanctions are not the central focus of this particular news brief's concern.",
+              "Correct. The brief strongly emphasizes Zelensky's plea for interceptors and highlights the 'urgent need for effective protective measures against aerial assaults.'",
+              "Economic recovery is a future challenge, but the brief prioritizes the immediate crisis of ongoing strikes and defensive needs."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

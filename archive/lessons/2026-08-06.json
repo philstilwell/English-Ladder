@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-06",
+  "release_iso": "2026-08-06T11:58:22Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "In Odesa, no-one is safe from Russia's new Black Sea strikes",
+    "summary": "Blackened ships and smashed docks mark Russia's recent surge of attacks on Ukraine's coastline.",
+    "link": "https://www.bbc.co.uk/news/articles/cy8ev4y172yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Russia's Attacks on Ukraine's Black Sea Coast",
+        "overview": "Russia recently attacked Ukraine's coast, damaging ships and docks in cities like Odesa.",
+        "topic": "War in Ukraine: Black Sea Region Attacks",
+        "news_brief_sentences": [
+          "Russia is attacking Ukraine.",
+          "These attacks are happening on the Black Sea coastline.",
+          "Odesa is a city in Ukraine located on the Black Sea.",
+          "Russia used new strikes against cities like Odesa.",
+          "Many ships are now blackened from these recent attacks.",
+          "The docks in the ports are smashed and broken.",
+          "This shows a recent surge of attacks by Russia.",
+          "The news says no-one is safe from these strikes.",
+          "People in Odesa are in danger.",
+          "The attacks caused much damage to the port area."
+        ],
+        "vocabulary": [
+          {
+            "term": "attacks",
+            "part_of_speech": "noun",
+            "definition": "When an army or country tries to hurt another country or people with force."
+          },
+          {
+            "term": "coastline",
+            "part_of_speech": "noun",
+            "definition": "The land next to the sea or ocean."
+          },
+          {
+            "term": "smashed",
+            "part_of_speech": "adjective",
+            "definition": "Broken into many pieces or badly damaged with force."
+          },
+          {
+            "term": "surge",
+            "part_of_speech": "noun",
+            "definition": "A sudden and strong increase in something, like a lot of activity at once."
+          },
+          {
+            "term": "safe",
+            "part_of_speech": "adjective",
+            "definition": "Not in danger or protected from harm."
+          }
+        ],
+        "grammar": {
+          "concept": "The verb 'to be' (is)",
+          "explanation": "We use the verb 'is' to talk about one person, one animal, or one thing. It tells us what something is, or what its state is right now. For example, 'The cat is small' or 'He is happy'.",
+          "example_quote": "no-one is safe"
+        },
+        "quiz": [
+          {
+            "question": "What is happening on the Black Sea coastline?",
+            "options": [
+              "People are on vacation.",
+              "Russia is making attacks.",
+              "There is a big party."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's not correct. The news talks about serious events, not holidays.",
+              "Correct! Russia is attacking the Black Sea coastline.",
+              "That's not right. The article describes conflict, not celebrations."
+            ]
+          },
+          {
+            "question": "Which city in Ukraine is mentioned in the news?",
+            "options": [
+              "Kyiv",
+              "Lviv",
+              "Odesa"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, Kyiv is the capital, but Odesa is in the news brief.",
+              "Incorrect. The article specifically names a port city on the Black Sea.",
+              "That's right! Odesa is a city on the Black Sea coastline."
+            ]
+          },
+          {
+            "question": "What does 'attacks' mean in this news story?",
+            "options": [
+              "Friendly visits",
+              "Acts of war",
+              "Peaceful talks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'attacks' means something negative and violent, not friendly.",
+              "Correct! 'Attacks' means acts of war or using force against someone.",
+              "That's not it. 'Attacks' means fighting, not discussions."
+            ]
+          },
+          {
+            "question": "What happened to the docks?",
+            "options": [
+              "They were repaired.",
+              "They were built new.",
+              "They were smashed and broken."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news says the docks are damaged.",
+              "That's incorrect. The docks were hurt, not made new.",
+              "Yes, the news says the docks were 'smashed and broken'."
+            ]
+          },
+          {
+            "question": "What does 'coastline' refer to?",
+            "options": [
+              "A big forest",
+              "Land next to the sea",
+              "A high mountain"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a coastline is not a forest. Think about the sea.",
+              "Correct! The coastline is the land that touches the sea.",
+              "That's not right. A coastline is flat land near water, not a mountain."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'smashed'?",
+            "options": [
+              "Very clean",
+              "Badly damaged",
+              "Painted nicely"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'smashed' means broken, not clean.",
+              "That's right! 'Smashed' means badly damaged or broken into pieces.",
+              "Incorrect. 'Smashed' describes damage, not appearance."
+            ]
+          },
+          {
+            "question": "What does 'surge' mean in 'a recent surge of attacks'?",
+            "options": [
+              "A slow decrease",
+              "A sudden increase",
+              "A small pause"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a surge is the opposite of a decrease.",
+              "Correct! 'Surge' means a quick and strong increase.",
+              "That's not right. A surge means more activity, not a stop."
+            ]
+          },
+          {
+            "question": "According to the news, who is safe in Odesa?",
+            "options": [
+              "Everyone is safe.",
+              "No-one is safe.",
+              "Only soldiers are safe."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states the opposite. People are in danger.",
+              "That's correct! The news says 'no-one is safe' in Odesa.",
+              "Incorrect. The article clearly states that safety is a major concern for everyone."
+            ]
+          },
+          {
+            "question": "In the phrase 'no-one is safe', what does 'is' tell us?",
+            "options": [
+              "An action that will happen later",
+              "A state of being right now",
+              "Something that happened in the past"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'is' tells us about the present moment, not the future.",
+              "Yes, 'is' describes the current state or condition of 'no-one'.",
+              "That's incorrect. 'Is' is used for the present, not the past."
+            ]
+          },
+          {
+            "question": "What does 'safe' mean?",
+            "options": [
+              "In danger",
+              "Protected from harm",
+              "Feeling worried"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'safe' means the opposite of being in danger.",
+              "That's right! 'Safe' means protected and not in danger.",
+              "Incorrect. 'Safe' describes a condition of security, not an emotion."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Russia's Intensified Black Sea Strikes Threaten Odesa's Coastline",
+        "overview": "Russia has recently increased its attacks on Ukraine's Black Sea coast, causing significant damage to ships and port infrastructure, especially around Odesa.",
+        "topic": "Military conflict and its impact on Black Sea infrastructure in Ukraine",
+        "news_brief_sentences": [
+          "Odesa, a vital Ukrainian port city, is facing a severe threat from Russia's intensified Black Sea strikes.",
+          "Recent aerial attacks have caused widespread destruction along Ukraine's southern coastline.",
+          "Images show many blackened ships and badly smashed docks after the bombardments.",
+          "These strikes represent a significant surge in Russia's military campaign in the region.",
+          "The port infrastructure, crucial for Ukraine's economy, has been severely damaged.",
+          "Residents and international observers are concerned about the impact on maritime trade.",
+          "Grain exports, vital for global food security, are particularly at risk due to these attacks.",
+          "The repeated targeting of port facilities demonstrates a clear strategy to disrupt Ukrainian shipping.",
+          "Despite defenses, no area in Odesa seems completely safe from these aerial assaults.",
+          "The international community continues to monitor the situation, calling for an end to the aggression."
+        ],
+        "vocabulary": [
+          {
+            "term": "intensified",
+            "part_of_speech": "adjective",
+            "definition": "Made stronger or more extreme in degree, force, or amount."
+          },
+          {
+            "term": "blackened",
+            "part_of_speech": "adjective",
+            "definition": "Made dark or dirty, often by smoke, fire, or corrosion, indicating damage."
+          },
+          {
+            "term": "smashed",
+            "part_of_speech": "adjective",
+            "definition": "Violently broken into many pieces or severely damaged by forceful impact."
+          },
+          {
+            "term": "surge",
+            "part_of_speech": "noun",
+            "definition": "A sudden, powerful, and often large increase or movement of something."
+          },
+          {
+            "term": "impact",
+            "part_of_speech": "noun",
+            "definition": "The powerful effect that something has on a situation, person, or object."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Passive Voice",
+          "explanation": "The Present Perfect Passive Voice is used to describe an action that started in the past and continues to the present, or a past action with a present result, where the focus is on the action itself or the receiver of the action, not necessarily who performed it. It is formed with 'has/have been' + the past participle of the main verb.",
+          "example_quote": "The port infrastructure, crucial for Ukraine's economy, has been severely damaged."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the news brief regarding the situation in Odesa?",
+            "options": [
+              "Ukraine's economic growth strategies",
+              "Russia's military attacks on coastal infrastructure",
+              "New trade agreements in the Black Sea"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief highlights military actions and their destructive consequences.",
+              "Correct. The news brief focuses on Russia's ongoing military strikes against Ukraine's coast.",
+              "Incorrect. The article discusses disruption to trade, not new agreements."
+            ]
+          },
+          {
+            "question": "If military strikes have 'intensified,' what does that mean?",
+            "options": [
+              "They have become less frequent or strong.",
+              "They have become stronger or more frequent.",
+              "They have completely stopped."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Intensified' means an increase, not a decrease.",
+              "Correct. 'Intensified' indicates that something has increased in strength, degree, or frequency.",
+              "Incorrect. The word 'intensified' implies ongoing and increasing activity, not a stop."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'blackened ships.' What does 'blackened' most likely describe?",
+            "options": [
+              "Ships that are painted black for stealth.",
+              "Ships that have been damaged by fire or smoke.",
+              "Ships that are old and have dirty exteriors."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The context suggests damage, not camouflage.",
+              "Correct. 'Blackened' often refers to surfaces discolored by fire, explosions, or smoke, indicating damage.",
+              "Incorrect. While they might be old, 'blackened' specifically points to the effects of the attacks."
+            ]
+          },
+          {
+            "question": "In the sentence 'The port infrastructure has been severely damaged,' why is the Present Perfect Passive voice used?",
+            "options": [
+              "To emphasize who caused the damage.",
+              "To focus on the state of the infrastructure and the result of the action.",
+              "To indicate that the damage will happen in the future."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice generally de-emphasizes the actor.",
+              "Correct. The Present Perfect Passive highlights the lasting impact on the infrastructure.",
+              "Incorrect. The present perfect refers to past actions with present relevance, not future events."
+            ]
+          },
+          {
+            "question": "What specific type of physical damage is explicitly mentioned in the news brief?",
+            "options": [
+              "Destroyed residential buildings and schools.",
+              "Blackened ships and smashed docks.",
+              "Damaged bridges and railway lines."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While possible in conflict, these specific examples are not mentioned in the brief.",
+              "Correct. The brief explicitly states 'blackened ships and badly smashed docks.'",
+              "Incorrect. The brief focuses on port-related infrastructure."
+            ]
+          },
+          {
+            "question": "What does it mean if docks are 'smashed'?",
+            "options": [
+              "They have been carefully repaired and rebuilt.",
+              "They have been violently broken or severely damaged.",
+              "They have been reinforced with new materials."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Smashed' implies destruction, not repair.",
+              "Correct. 'Smashed' means broken into pieces or severely damaged by force.",
+              "Incorrect. The term suggests destruction, not strengthening."
+            ]
+          },
+          {
+            "question": "What potential consequence is highlighted regarding the attacks on port facilities?",
+            "options": [
+              "An increase in tourism to Odesa.",
+              "A disruption of Ukrainian shipping and vital grain exports.",
+              "The creation of new jobs in the shipping industry."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The context of conflict and damage is unlikely to lead to increased tourism.",
+              "Correct. The brief mentions concerns about the impact on maritime trade and grain exports.",
+              "Incorrect. The destruction of facilities would likely lead to job losses, not creation."
+            ]
+          },
+          {
+            "question": "A 'surge' in Russia's military campaign refers to:",
+            "options": [
+              "A period of reduced military activity.",
+              "A sudden, powerful increase or strong movement in activity.",
+              "A temporary pause for peace talks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'surge' implies an increase, not a reduction.",
+              "Correct. A 'surge' indicates a rapid and significant increase in military operations.",
+              "Incorrect. A 'surge' means increased activity, not a pause."
+            ]
+          },
+          {
+            "question": "Which of the following sentences correctly uses the Present Perfect Passive Voice?",
+            "options": [
+              "The supplies are delivered to the port regularly.",
+              "The supplies have been delivered to the port.",
+              "The supplies delivered to the port yesterday."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This is the simple present passive.",
+              "Correct. 'Have been delivered' is the correct formation for the Present Perfect Passive.",
+              "Incorrect. This sentence is grammatically incomplete and not passive."
+            ]
+          },
+          {
+            "question": "In the context of 'the impact on maritime trade,' what does 'impact' mean?",
+            "options": [
+              "The physical route taken by trade ships.",
+              "The strong effect or influence on trade.",
+              "The total financial value of the trade."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Impact' refers to the effect, not the physical route.",
+              "Correct. 'Impact' refers to the powerful effect or influence that something has on a situation.",
+              "Incorrect. While related, 'impact' focuses on the effect, not directly the value."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Odesa Under Siege: Analyzing Russia's Intensified Black Sea Strikes",
+        "overview": "Recent escalated Russian assaults on Ukraine's coastline, particularly in Odesa, have left a devastating trail of blackened vessels and demolished port infrastructure, underscoring the severe and pervasive threat to the region.",
+        "topic": "Russian Black Sea Attacks on Odesa and Ukrainian Coastal Infrastructure",
+        "news_brief_sentences": [
+          "The recent surge of attacks by Russia on Ukraine's Black Sea coastline has fundamentally altered the security landscape, particularly impacting Odesa.",
+          "These unrelenting barrages have devastated critical port infrastructure and left numerous maritime vessels severely damaged.",
+          "The pervasive threat now extends beyond military targets, encompassing civilian areas and commercial shipping routes.",
+          "Eyewitness accounts report blackened ships and smashed docks, stark indicators of the destructive power employed.",
+          "The strategic significance of Odesa as a vital port for grain exports makes it a primary, albeit contentious, target in the ongoing conflict.",
+          "International observers have noted the escalation of hostilities, with a discernible shift towards broader coastal interdiction efforts.",
+          "The economic ramifications for Ukraine, heavily reliant on Black Sea trade, are profound and will likely have long-term global impacts.",
+          "These recent strikes represent a severe challenge to maritime navigation and the established norms of international law.",
+          "The collateral damage to civilian infrastructure and the humanitarian implications are causes for significant international alarm.",
+          "Consequently, the populace in Odesa faces an unprecedented level of insecurity, where no-one is truly safe from the renewed assault."
+        ],
+        "vocabulary": [
+          {
+            "term": "surge of attacks",
+            "part_of_speech": "noun phrase",
+            "definition": "A sudden, powerful increase in the number or intensity of military offensives or hostile actions."
+          },
+          {
+            "term": "unrelenting barrages",
+            "part_of_speech": "noun phrase",
+            "definition": "Continuous and intense series of artillery fire, missile strikes, or overwhelming assaults that do not cease or lessen."
+          },
+          {
+            "term": "pervasive threat",
+            "part_of_speech": "noun phrase",
+            "definition": "A danger or menace that is present throughout an area or group of people, affecting every part and hard to avoid."
+          },
+          {
+            "term": "escalation of hostilities",
+            "part_of_speech": "noun phrase",
+            "definition": "A rapid or gradual increase in the intensity, scope, or severity of armed conflict or aggressive actions."
+          },
+          {
+            "term": "collateral damage",
+            "part_of_speech": "noun phrase",
+            "definition": "Injury inflicted on non-combatant personnel or damage inflicted on non-military property, unintentionally, during military operations."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participles as Adverbial Phrases",
+          "explanation": "Present participles (verb + -ing) can function as adverbial phrases, providing additional information about the main clause, such as cause, result, or accompanying circumstances. They often replace subordinate clauses, adding conciseness and sophistication to writing by showing how an action is performed or its consequences.",
+          "example_quote": "The pervasive threat now extends beyond military targets, encompassing civilian areas and commercial shipping routes."
+        },
+        "quiz": [
+          {
+            "question": "What does the phrase 'surge of attacks' imply about Russia's recent military actions in the Black Sea?",
+            "options": [
+              "A gradual decline in aggression",
+              "A sudden intensification of assaults",
+              "A sustained period of peaceful coexistence"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: A 'surge' implies an increase, not a decline.",
+              "Correct: A 'surge' indicates a rapid and significant increase in military activity.",
+              "Incorrect: 'Surge of attacks' clearly denotes conflict, not peace."
+            ]
+          },
+          {
+            "question": "Which characteristic best defines 'unrelenting barrages' as described in the news brief?",
+            "options": [
+              "Intermittent and sporadic shelling",
+              "Consistent and continuous bombardment",
+              "Limited and targeted strikes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Unrelenting' means without ceasing, so intermittent is the opposite.",
+              "Correct: 'Unrelenting' signifies continuousness, and 'barrages' refers to heavy bombardment.",
+              "Incorrect: The term implies a widespread, sustained assault, not necessarily limited."
+            ]
+          },
+          {
+            "question": "The news brief states the 'pervasive threat' now extends beyond military targets. What does 'pervasive' suggest about the threat's nature?",
+            "options": [
+              "It is localized to specific military zones.",
+              "It is widespread and hard to avoid.",
+              "It is easily contained and isolated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: 'Pervasive' means spread throughout, so it contradicts localization.",
+              "Correct: 'Pervasive' indicates that the threat is present throughout and affects every part.",
+              "Incorrect: A pervasive threat is inherently difficult to contain due to its widespread nature."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does 'collateral damage' primarily refer to?",
+            "options": [
+              "Intentional targeting of civilian infrastructure",
+              "Unintended harm to non-military assets",
+              "Damage caused by friendly fire incidents"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: Collateral damage is typically unintended, not an intentional targeting strategy.",
+              "Correct: 'Collateral damage' specifically denotes unintended harm to non-military targets during military operations.",
+              "Incorrect: While friendly fire is unintended, 'collateral damage' has a broader scope, often referring to civilian property or lives affected by primary targets."
+            ]
+          },
+          {
+            "question": "What is the core meaning conveyed by 'escalation of hostilities'?",
+            "options": [
+              "A decrease in the intensity of conflict",
+              "A complete cessation of warfare",
+              "An increase in the severity or scope of conflict"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: 'Escalation' means an increase, not a decrease.",
+              "Incorrect: The phrase refers to an ongoing conflict becoming more severe, not ending.",
+              "Correct: 'Escalation' signifies an increase, and 'hostilities' refers to conflict, meaning increased severity."
+            ]
+          },
+          {
+            "question": "In the sentence 'The pervasive threat now extends beyond military targets, encompassing civilian areas and commercial shipping routes,' what function does 'encompassing' serve?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It modifies 'threat' as an adjective.",
+              "It functions as an adverbial phrase explaining the extent of the threat."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The main verb of the sentence is 'extends'.",
+              "Incorrect: While participles can be adjectives, here 'encompassing' provides additional information about the extent of the action of extending.",
+              "Correct: 'Encompassing' is a present participle functioning as an adverbial phrase, detailing what the pervasive threat includes."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is a primary reason Odesa is a significant target in the conflict?",
+            "options": [
+              "Its historical architecture and cultural landmarks.",
+              "Its role as a vital port for grain exports.",
+              "Its large tourism industry along the Black Sea."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect: While Odesa may have historical architecture, the brief emphasizes its strategic port function.",
+              "Correct: The brief explicitly states Odesa's 'strategic significance... as a vital port for grain exports'.",
+              "Incorrect: The brief does not mention tourism as a reason for its targeting."
+            ]
+          },
+          {
+            "question": "What is a reported consequence of the recent strikes on Odesa's infrastructure?",
+            "options": [
+              "An improvement in regional maritime security.",
+              "Stable economic conditions for Ukraine due to resilient trade routes.",
+              "Devastated critical port infrastructure and damaged maritime vessels."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The strikes clearly destabilize security and create a 'pervasive threat'.",
+              "Incorrect: The brief states 'economic ramifications for Ukraine... are profound', indicating instability.",
+              "Correct: The brief explicitly mentions 'devastated critical port infrastructure and left numerous maritime vessels severely damaged'."
+            ]
+          },
+          {
+            "question": "What does the news brief imply about the safety of the populace in Odesa?",
+            "options": [
+              "Safety measures have effectively protected all residents.",
+              "Only military personnel are at significant risk.",
+              "No-one is truly safe from the renewed assault."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: The brief indicates widespread insecurity, not effective protection.",
+              "Incorrect: The brief mentions the threat extending to 'civilian areas', indicating risk beyond military personnel.",
+              "Correct: The final sentence and the headline emphasize that 'no-one is truly safe from the renewed assault', highlighting widespread insecurity."
+            ]
+          },
+          {
+            "question": "The news brief describes the impact of the strikes as 'fundamentally altered the security landscape'. Which option best captures the meaning of 'fundamentally altered' in this context?",
+            "options": [
+              "Slightly modified the security situation.",
+              "Changed the security landscape in minor ways.",
+              "Profoundly and extensively transformed the security situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect: 'Fundamentally' suggests a deep, basic change, not a slight modification.",
+              "Incorrect: 'Fundamentally' implies a major, significant change, not minor adjustments.",
+              "Correct: 'Fundamentally' means in a basic or essential way, indicating a deep and far-reaching transformation of the security situation."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

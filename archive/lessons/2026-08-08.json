@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-08",
+  "release_iso": "2026-08-08T10:23:26Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Child among three killed in Russian missile attacks near Kyiv",
+    "summary": "Russia continued its overnight attacks after President Volodymyr Zelensky warned of Ukraine's dwindling supplies of missile interceptors.",
+    "link": "https://www.bbc.co.uk/news/articles/cz7dy8gq99eo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "News: Missile Attacks Near Kyiv",
+        "overview": "Russian missile attacks near Kyiv killed three people, including a child.",
+        "topic": "Current events in Ukraine: Russian missile attacks",
+        "news_brief_sentences": [
+          "Russia made missile attacks near Kyiv.",
+          "Three people died in these attacks.",
+          "A child was among the people killed.",
+          "Russia continued these attacks overnight.",
+          "President Zelensky warned about a problem.",
+          "Ukraine has less supplies of important weapons.",
+          "These weapons are called missile interceptors.",
+          "The number of interceptors is dwindling.",
+          "This means Ukraine has fewer missile interceptors now.",
+          "The attacks happened after President Zelensky spoke."
+        ],
+        "vocabulary": [
+          {
+            "term": "missile attacks",
+            "part_of_speech": "noun phrase",
+            "definition": "When a country shoots rockets or bombs at another country or place."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Made someone or something die."
+          },
+          {
+            "term": "warned",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Told someone about a danger or problem before it happened."
+          },
+          {
+            "term": "supplies",
+            "part_of_speech": "noun",
+            "definition": "Things that people need and have available, like food or weapons."
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Kept doing something without stopping."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions or events that started and finished in the past. It tells us what happened. We often add \"-ed\" to regular verbs, but some verbs are irregular.",
+          "example_quote": "Russia continued these attacks overnight."
+        },
+        "quiz": [
+          {
+            "question": "What happened near Kyiv?",
+            "options": [
+              "There was a party.",
+              "There were missile attacks.",
+              "There was a big market."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The news talks about serious attacks.",
+              "Correct! Russia made missile attacks near Kyiv.",
+              "This is incorrect. The news describes conflict, not a market."
+            ]
+          },
+          {
+            "question": "How many people died in the attacks?",
+            "options": [
+              "One child.",
+              "Three people.",
+              "Many soldiers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A child died, but also two adults.",
+              "Correct! Three people, including a child, were killed.",
+              "The news says \"three people,\" not \"many soldiers.\""
+            ]
+          },
+          {
+            "question": "What does \"killed\" mean in this news?",
+            "options": [
+              "Made someone happy.",
+              "Made someone famous.",
+              "Made someone die."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Killed\" means something very different from \"made someone happy.\"",
+              "\"Killed\" means someone lost their life, not gained fame.",
+              "Correct! To be killed means to die because of an action."
+            ]
+          },
+          {
+            "question": "Who is President Zelensky?",
+            "options": [
+              "A reporter.",
+              "The President of Ukraine.",
+              "A Russian leader."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "President Zelensky is a national leader, not a reporter.",
+              "Correct! President Volodymyr Zelensky warned about the supplies.",
+              "He is the leader of Ukraine, not Russia."
+            ]
+          },
+          {
+            "question": "What did President Zelensky \"warned\" about?",
+            "options": [
+              "New attacks starting.",
+              "Dwindling missile interceptor supplies.",
+              "The weather forecast."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "He warned about supplies, not new attacks.",
+              "Correct! He warned that Ukraine had less supplies of interceptors.",
+              "The news does not mention the weather."
+            ]
+          },
+          {
+            "question": "What are \"supplies\" in this news story?",
+            "options": [
+              "Friends and family.",
+              "Things that people need, like weapons.",
+              "Special holidays."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Supplies\" refers to objects or materials, not people.",
+              "Correct! Ukraine's supplies of missile interceptors are important items.",
+              "\"Supplies\" are essential items, not special events."
+            ]
+          },
+          {
+            "question": "When did Russia \"continued\" its attacks?",
+            "options": [
+              "Only during the day.",
+              "Overnight.",
+              "Only in the morning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news specifically states the attacks continued overnight.",
+              "Correct! Russia continued its attacks during the night.",
+              "The news states \"overnight,\" not just the morning."
+            ]
+          },
+          {
+            "question": "The attacks happened ________ President Zelensky spoke.",
+            "options": [
+              "before",
+              "during",
+              "after"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news says the attacks continued \"after\" his warning.",
+              "The attacks continued \"after\" he spoke, not while he was speaking.",
+              "Correct! The news says the attacks happened after President Zelensky warned."
+            ]
+          },
+          {
+            "question": "In \"Russia continued these attacks overnight,\" which word is in the Simple Past Tense?",
+            "options": [
+              "Russia",
+              "continued",
+              "overnight"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Russia\" is a noun, the subject of the sentence.",
+              "Correct! \"Continued\" shows an action that finished in the past.",
+              "\"Overnight\" tells us when the action happened, not the verb itself."
+            ]
+          },
+          {
+            "question": "What does \"dwindling\" mean for missile interceptor supplies?",
+            "options": [
+              "They are increasing.",
+              "They are staying the same.",
+              "They are getting less."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Dwindling\" means the opposite of increasing.",
+              "\"Dwindling\" means the number is changing, specifically decreasing.",
+              "Correct! \"Dwindling\" means there are fewer and fewer of them."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Russian Missile Attacks Kill Three, Including Child, Near Kyiv",
+        "overview": "Russian missile attacks near Kyiv resulted in the deaths of three people, including a child, after President Zelensky warned about Ukraine's limited missile interceptors.",
+        "topic": "Russian missile attacks in Ukraine and their impact on civilians and defenses.",
+        "news_brief_sentences": [
+          "Russian forces carried out fresh missile attacks in areas surrounding Kyiv overnight, causing significant destruction.",
+          "Tragically, three civilians were killed in these strikes, and a young child was identified among the victims.",
+          "The attacks intensified concerns about the ongoing conflict and its severe human cost.",
+          "President Volodymyr Zelensky had previously issued a stark warning regarding Ukraine's dwindling supplies of crucial missile interceptors.",
+          "He emphasized that without sufficient aerial defense systems, Russia could launch more devastating aerial assaults.",
+          "The President's statement underscored the urgent need for international support to bolster Ukraine's defensive capabilities.",
+          "These overnight attacks demonstrate Russia's continued aggression and disregard for civilian lives.",
+          "Rescuers quickly responded to the affected sites, working tirelessly to search for survivors and manage the aftermath.",
+          "The international community has widely condemned the escalating violence and the targeting of non-combatants.",
+          "Ukraine continues to appeal for more advanced defensive weaponry to counter these persistent onslaughts."
+        ],
+        "vocabulary": [
+          {
+            "term": "dwindling supplies",
+            "part_of_speech": "noun phrase",
+            "definition": "Becoming smaller or less in amount as time passes; gradually decreasing availability."
+          },
+          {
+            "term": "aerial assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Attacks carried out using aircraft, missiles, or drones from the sky rather than from the ground."
+          },
+          {
+            "term": "counter",
+            "part_of_speech": "verb",
+            "definition": "To act in opposition to something; to take action in response to an attack or threat to defend yourself."
+          },
+          {
+            "term": "onslaughts",
+            "part_of_speech": "noun",
+            "definition": "A fierce or destructive attack, often sustained and overwhelming in its intensity."
+          },
+          {
+            "term": "condemned",
+            "part_of_speech": "verb, past participle",
+            "definition": "Expressed strong disapproval of something, especially on moral or ethical grounds; officially declared wrong."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and what is being acted upon, rather than who or what is performing the action. It's formed with a form of the verb 'to be' (e.g., is, are, was, were) followed by the past participle of the main verb. News reports often use the passive voice to maintain objectivity and highlight the event.",
+          "example_quote": "Tragically, three civilians were killed in these strikes, and a young child was identified among the victims."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary cause of death mentioned near Kyiv?",
+            "options": [
+              "Ground combat operations",
+              "Russian missile attacks",
+              "A building collapse due to old age"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifically mentions missile attacks, not ground combat.",
+              "Correct. The article states that Russian missile attacks were responsible for the deaths.",
+              "Incorrect. While destruction occurred, the cause of death was attributed to missile attacks."
+            ]
+          },
+          {
+            "question": "How many people were reported killed in the attacks mentioned in the news?",
+            "options": [
+              "Only one child",
+              "Three adults only",
+              "Three people, including a child"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. A child was among the victims, but not the only one.",
+              "Incorrect. The report specifies a child was among the three killed.",
+              "Correct. The news brief clearly states three civilians were killed, including a young child."
+            ]
+          },
+          {
+            "question": "What specific concern did President Zelensky express before the attacks intensified?",
+            "options": [
+              "A lack of international humanitarian aid.",
+              "Dwindling supplies of missile interceptors.",
+              "Insufficient global condemnation of the conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. His warning was about defense systems, not humanitarian aid.",
+              "Correct. President Zelensky warned about Ukraine's dwindling supplies of missile interceptors.",
+              "Incorrect. While condemnation is important, Zelensky's warning was about military supplies."
+            ]
+          },
+          {
+            "question": "What does the phrase 'dwindling supplies' mean in the context of the news brief?",
+            "options": [
+              "Increasing availability of resources.",
+              "Becoming smaller or less in amount.",
+              "Being restocked very quickly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Dwindling' means the opposite of increasing.",
+              "Correct. 'Dwindling supplies' means the amount of something is decreasing over time.",
+              "Incorrect. If supplies are dwindling, they are not being restocked quickly enough."
+            ]
+          },
+          {
+            "question": "What kind of attacks are described by the term 'aerial assaults'?",
+            "options": [
+              "Attacks carried out by ground troops.",
+              "Attacks launched from naval ships.",
+              "Attacks conducted from the sky using aircraft or missiles."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Aerial' refers to the air, not land.",
+              "Incorrect. 'Aerial' does not refer to the sea.",
+              "Correct. 'Aerial assaults' are attacks launched from aircraft or missiles from above."
+            ]
+          },
+          {
+            "question": "What action did rescuers take immediately after the attacks?",
+            "options": [
+              "They began rebuilding damaged infrastructure.",
+              "They responded to affected sites and searched for survivors.",
+              "They organized international appeals for more aid."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Rebuilding is a longer-term task; their immediate action was search and rescue.",
+              "Correct. The brief states rescuers responded quickly to search for survivors and manage the aftermath.",
+              "Incorrect. While appeals might happen, this was not the rescuers' direct action at the scene."
+            ]
+          },
+          {
+            "question": "When is the passive voice typically used, according to the grammar explanation?",
+            "options": [
+              "When the subject performing the action is the main focus.",
+              "When the action and its object are more important than the performer.",
+              "Only when talking about past events or history."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. That describes the active voice, where the subject is highlighted.",
+              "Correct. The passive voice focuses on the action and what is being acted upon.",
+              "Incorrect. The passive voice can be used in various tenses, not just past events."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "\"Russian forces carried out fresh missile attacks...\"",
+              "\"...a young child was identified among the victims.\"",
+              "\"President Volodymyr Zelensky had previously issued a stark warning...\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence uses the active voice (Russian forces carried out...).",
+              "Correct. \"Was identified\" is an example of the past simple passive voice.",
+              "Incorrect. This sentence uses the past perfect active voice (Zelensky had issued...)."
+            ]
+          },
+          {
+            "question": "What does it mean to 'condemn' an action, as used in the news brief?",
+            "options": [
+              "To praise or express approval of it.",
+              "To express strong disapproval of it.",
+              "To simply understand and accept it."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. To condemn means the opposite of praising or approving.",
+              "Correct. To condemn means to express very strong disapproval, often on moral grounds.",
+              "Incorrect. Condemnation implies disagreement and moral judgment, not acceptance."
+            ]
+          },
+          {
+            "question": "What is Ukraine appealing for to 'counter these persistent onslaughts'?",
+            "options": [
+              "More diplomatic negotiation efforts.",
+              "Advanced defensive weaponry.",
+              "Increased economic sanctions against Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While diplomacy is a strategy, the brief mentions military defense.",
+              "Correct. The brief states Ukraine continues to appeal for more advanced defensive weaponry to counter attacks.",
+              "Incorrect. Sanctions are an economic measure, not a direct way to counter physical attacks."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Deadly Russian Missile Attacks Escalate Near Kyiv Amid Interceptor Shortages",
+        "overview": "Overnight Russian missile strikes near Kyiv tragically claimed three lives, including a child, as President Zelensky concurrently highlighted Ukraine's critical and dwindling supplies of missile interceptors.",
+        "topic": "Geopolitical conflict, missile warfare, humanitarian crisis, military logistics",
+        "news_brief_sentences": [
+          "Russian forces persisted in their aerial bombardment campaigns targeting regions surrounding Ukraine's capital, Kyiv, during the overnight hours.",
+          "These unrelenting assaults tragically resulted in the deaths of three individuals, among them a young child, underscoring the severe human cost of the ongoing conflict.",
+          "The devastating impact of these missile strikes has amplified humanitarian concerns, particularly for vulnerable civilian populations residing in proximity to the capital.",
+          "The latest escalation follows a stern warning issued by President Volodymyr Zelensky regarding Ukraine's critical military preparedness.",
+          "Zelensky had explicitly cautioned about the nation's dwindling supplies of missile interceptors, essential for defending against such aerial threats.",
+          "This pronouncement raises significant questions about the long-term viability of Ukraine's air defense capabilities against continuous Russian aggression.",
+          "The persistent strikes indicate a strategic objective to exert pressure on Ukrainian infrastructure and civilian morale.",
+          "International observers are closely monitoring the situation, noting the immediate and profound implications for regional stability.",
+          "The urgent need for replenished defensive armaments is becoming increasingly apparent with each successive attack.",
+          "These tragic events serve as a stark reminder of the devastating consequences of prolonged warfare and the imperative for sustained international support."
+        ],
+        "vocabulary": [
+          {
+            "term": "persisted",
+            "part_of_speech": "verb",
+            "definition": "To continue steadfastly or tenaciously, especially in the face of opposition or difficulty, without giving up."
+          },
+          {
+            "term": "unrelenting assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Continuous and intense attacks or aggressive actions that do not lessen in severity, frequency, or effort, indicating a sustained and forceful offensive."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase; a rise in intensity, severity, or extent, particularly in a conflict, dangerous situation, or the level of engagement."
+          },
+          {
+            "term": "dwindling supplies",
+            "part_of_speech": "noun phrase",
+            "definition": "Stocks or provisions that are steadily decreasing in quantity or becoming smaller in amount, indicating a critical shortage or depletion."
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "adjective",
+            "definition": "Of vital importance; crucial or essential; something that commands or urges with authority and cannot be disregarded."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Perfect Tense for Background Events",
+          "explanation": "The Past Perfect tense (had + past participle) is used to indicate an action that was completed at some point before another action or event in the past. It serves to establish a clear sequence of past events, showing which action occurred first, thereby providing essential background or context for subsequent past actions.",
+          "example_quote": "Zelensky had explicitly cautioned about the nation's dwindling supplies of missile interceptors, essential for defending against such aerial threats."
+        },
+        "quiz": [
+          {
+            "question": "What was a direct and tragic consequence of the recent Russian missile attacks near Kyiv, as highlighted in the news brief?",
+            "options": [
+              "Widespread infrastructure collapse",
+              "The displacement of thousands of residents",
+              "Three fatalities, including a child"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While infrastructure damage is common, the brief specifically emphasizes the human cost.",
+              "The brief details immediate fatalities rather than the broader impact of displacement.",
+              "Correct. The news brief explicitly states that these attacks tragically resulted in three deaths, among them a young child."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does the verb 'persisted' most effectively convey about the Russian aerial bombardment campaigns?",
+            "options": [
+              "They were sporadic and infrequent",
+              "They continued steadfastly despite ongoing circumstances",
+              "They were remarkably precise in targeting"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Persisted' implies continuation, which contradicts the idea of sporadic or infrequent actions.",
+              "Correct. 'Persisted' indicates that the campaigns continued tenaciously, suggesting a sustained and uninterrupted effort.",
+              "While precision might be a characteristic, 'persisted' primarily refers to the ongoing nature, not the accuracy, of the attacks."
+            ]
+          },
+          {
+            "question": "Which critical issue did President Zelensky warn about prior to the recent missile attacks, according to the news brief?",
+            "options": [
+              "A decrease in international financial aid",
+              "A severe shortage of missile interceptors",
+              "The exhaustion of military personnel"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief discusses international support broadly, but Zelensky's specific warning was about a different military resource.",
+              "Correct. Zelensky's warning explicitly concerned Ukraine's dwindling supplies of missile interceptors, vital for air defense.",
+              "While troop morale is always a factor, the specific warning highlighted in the brief was regarding defensive armaments."
+            ]
+          },
+          {
+            "question": "In the sentence 'Zelensky had explicitly cautioned about the nation's dwindling supplies...', why is the Past Perfect tense ('had cautioned') used?",
+            "options": [
+              "To express a hypothetical situation in the past",
+              "To describe an action completed before another past event",
+              "To emphasize the ongoing nature of a past warning"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Past Perfect does not express hypotheticals; it clarifies the sequence of past events.",
+              "Correct. The Past Perfect 'had cautioned' indicates that Zelensky's warning occurred at a point in the past before the recent attacks, providing background context.",
+              "The Past Perfect focuses on an action completed before a specific past point, not necessarily on its continuous nature."
+            ]
+          },
+          {
+            "question": "What does the phrase 'unrelenting assaults' imply about the nature of the attacks mentioned in the news brief?",
+            "options": [
+              "They were easily repelled by defense systems",
+              "They were continuous and severe, showing no signs of stopping",
+              "They were temporary measures with limited impact"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Unrelenting' implies persistence and intensity, not easy repulsion.",
+              "Correct. 'Unrelenting assaults' refers to attacks that are continuous and intense, indicating a sustained and forceful offensive without a break.",
+              "The term 'unrelenting' signifies persistence and severity, directly contradicting the idea of temporary or limited measures."
+            ]
+          },
+          {
+            "question": "What significant concern does the news brief raise regarding Ukraine's air defense capabilities following Zelensky's warning?",
+            "options": [
+              "The immediate deployment of more advanced interceptor technology",
+              "Questions about the long-term viability against continuous Russian aggression",
+              "A shift in strategy towards exclusively offensive military operations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief discusses critical shortages, not the immediate deployment of new systems.",
+              "Correct. The brief explicitly states that the pronouncement 'raises significant questions about the long-term viability of Ukraine's air defense capabilities against continuous Russian aggression'.",
+              "The brief focuses on defensive challenges rather than a shift to an exclusively offensive posture."
+            ]
+          },
+          {
+            "question": "In the context of the conflict, what does the term 'escalation' primarily signify?",
+            "options": [
+              "A gradual de-escalation of military activities",
+              "A significant increase in intensity or severity",
+              "A successful diplomatic resolution"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Escalation' means an increase, which is the opposite of de-escalation.",
+              "Correct. 'Escalation' refers to a rapid increase in the intensity, severity, or extent of a situation, such as military conflict.",
+              "Diplomatic resolution aims to reduce conflict, whereas 'escalation' implies an increase in hostilities."
+            ]
+          },
+          {
+            "question": "The news brief concludes by suggesting that the tragic events near Kyiv serve as a 'stark reminder' of what broader consequence?",
+            "options": [
+              "The effectiveness of international sanctions",
+              "The devastating consequences of prolonged warfare",
+              "The limited reach of modern missile technology"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While sanctions are relevant, the brief's concluding reminder is about the impact of the conflict itself.",
+              "Correct. The final sentence emphasizes that these tragic events are a 'stark reminder of the devastating consequences of prolonged warfare'.",
+              "The brief highlights the impact of missile attacks, not necessarily their limited reach."
+            ]
+          },
+          {
+            "question": "If a nation is experiencing 'dwindling supplies' of a crucial resource, what is the most accurate description of the situation?",
+            "options": [
+              "The resource is being rapidly replenished",
+              "The quantity of the resource is steadily decreasing",
+              "The resource is being stored for future use without consumption"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Dwindling' implies a reduction, not replenishment or increase.",
+              "Correct. 'Dwindling supplies' indicates that the quantity of the resource is progressively getting smaller, suggesting a critical shortage.",
+              "'Dwindling' means decreasing in quantity, which contradicts the idea of being stored without use."
+            ]
+          },
+          {
+            "question": "When the news brief mentions 'the imperative for sustained international support,' what does 'imperative' convey about this support?",
+            "options": [
+              "It is merely a suggestion for consideration",
+              "It is crucial and urgently necessary",
+              "It is conditional upon certain political agreements"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Imperative' implies critical necessity, not a casual suggestion.",
+              "Correct. 'Imperative' means something is of vital importance or urgently needed, making sustained international support crucial and non-negotiable.",
+              "The term 'imperative' stresses the necessity itself, rather than conditions for the support."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

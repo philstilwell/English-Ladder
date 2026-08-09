@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-09",
+  "release_iso": "2026-08-09T10:25:43Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Israel accused of weaponising archaeology at ancient West Bank sites",
+    "summary": "Israel is planning large-scale land expropriations in historic, Palestinian areas of the West Bank.",
+    "link": "https://www.bbc.co.uk/news/articles/c20d8qre98do?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "News: Israel and West Bank Sites",
+        "overview": "Israel plans to take land in the West Bank, which makes some people unhappy.",
+        "topic": "Land and Archaeology in the West Bank",
+        "news_brief_sentences": [
+          "There is news about Israel and the West Bank.",
+          "Israel is accused of weaponising archaeology.",
+          "This means using old sites in a bad way.",
+          "These sites are ancient and important.",
+          "Israel is planning large-scale land expropriations.",
+          "This means taking a lot of land.",
+          "The land is in historic Palestinian areas.",
+          "The West Bank is a special place.",
+          "Many people are worried about these plans.",
+          "Some say Israel uses archaeology to control land."
+        ],
+        "vocabulary": [
+          {
+            "term": "accused of",
+            "part_of_speech": "verb phrase",
+            "definition": "told that you did something wrong or bad."
+          },
+          {
+            "term": "weaponising",
+            "part_of_speech": "verb",
+            "definition": "using something as a weapon to hurt or control others, not for its original purpose."
+          },
+          {
+            "term": "ancient",
+            "part_of_speech": "adjective",
+            "definition": "very, very old; from a long time ago."
+          },
+          {
+            "term": "planning",
+            "part_of_speech": "verb",
+            "definition": "thinking about what you will do in the future and making arrangements for it."
+          },
+          {
+            "term": "land expropriations",
+            "part_of_speech": "noun phrase",
+            "definition": "when a government takes private land for public use or other reasons, sometimes without agreement."
+          }
+        ],
+        "grammar": {
+          "concept": "The Verb 'To Be' and Present Continuous",
+          "explanation": "We use 'is' for one thing or person, and 'are' for many things or people. We often use 'is' or 'are' with a verb ending in '-ing' to talk about actions happening now or plans for the future.",
+          "example_quote": "Israel is planning large-scale land expropriations."
+        },
+        "quiz": [
+          {
+            "question": "What is Israel accused of doing with archaeology?",
+            "options": [
+              "Building new schools",
+              "Weaponising old sites",
+              "Finding new animals"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news is not about building schools.",
+              "Yes, the news says Israel is accused of weaponising archaeology.",
+              "The news does not mention finding animals."
+            ]
+          },
+          {
+            "question": "What does 'ancient' mean in the news?",
+            "options": [
+              "Very new",
+              "Very old",
+              "Very fast"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'ancient' means the opposite of new.",
+              "Correct! 'Ancient' means very, very old.",
+              "'Ancient' describes age, not speed."
+            ]
+          },
+          {
+            "question": "Israel is planning large-scale _______.",
+            "options": [
+              "New parks",
+              "Land expropriations",
+              "Big parties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news mentions land, not parks.",
+              "Yes, the news says Israel is planning large-scale land expropriations.",
+              "This is not what the news says Israel is planning."
+            ]
+          },
+          {
+            "question": "What is the West Bank?",
+            "options": [
+              "A new shopping mall",
+              "A historic Palestinian area",
+              "A big river"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news talks about historic areas, not a shopping mall.",
+              "Correct! It is described as a historic Palestinian area.",
+              "The news does not say it is a river."
+            ]
+          },
+          {
+            "question": "What does it mean to be 'accused of' something?",
+            "options": [
+              "To be praised for good work",
+              "To be told you did something wrong",
+              "To be given a prize"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'accused of' means to be blamed.",
+              "Yes, it means someone says you did something bad.",
+              "'Accused of' is not about receiving a prize."
+            ]
+          },
+          {
+            "question": "Which word means 'using something like a weapon'?",
+            "options": [
+              "Building",
+              "Weaponising",
+              "Learning"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Building is creating, not using as a weapon.",
+              "Correct! 'Weaponising' means using something in a harmful way.",
+              "Learning is gaining knowledge, not using as a weapon."
+            ]
+          },
+          {
+            "question": "What verb form is 'planning' in the sentence 'Israel is planning land expropriations'?",
+            "options": [
+              "Simple past",
+              "Simple present",
+              "Present continuous"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, simple past would be 'planned.'",
+              "Simple present would be 'plans.' This is for an ongoing action or future plan.",
+              "Yes, 'is planning' shows an action happening now or a future plan."
+            ]
+          },
+          {
+            "question": "What is Israel planning to do in historic Palestinian areas?",
+            "options": [
+              "To build new hospitals",
+              "To take land",
+              "To make peace"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions taking land, not building hospitals.",
+              "Yes, the news says Israel is planning land expropriations, which means taking land.",
+              "The brief does not say they are planning to make peace."
+            ]
+          },
+          {
+            "question": "Why are many people worried about these plans?",
+            "options": [
+              "Because they are expensive.",
+              "Because it involves taking land in historic areas.",
+              "Because the weather is bad."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not mention expense as the reason for worry.",
+              "Correct! The concern is about taking land in important historic areas.",
+              "The weather is not related to this news story."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple present tense or present continuous for a plan?",
+            "options": [
+              "Israel took land last year.",
+              "Israel is planning large-scale land expropriations.",
+              "Israel will take land tomorrow."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is simple past tense.",
+              "Yes, 'is planning' shows a current plan using the present continuous.",
+              "This is future tense using 'will.'"
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Israel's Archaeology Plans Spark West Bank Land Dispute",
+        "overview": "Israel faces accusations of using archaeological projects as a tool to justify extensive land seizures in historical Palestinian territories of the West Bank.",
+        "topic": "Geopolitics, Archaeology, and Land Disputes in the West Bank",
+        "news_brief_sentences": [
+          "Israel is currently accused of a controversial strategy in the West Bank.",
+          "The nation is allegedly weaponising the field of archaeology to support its territorial claims.",
+          "Critics argue that ancient sites in the West Bank are becoming tools for political ends.",
+          "These accusations concern plans for large-scale land expropriations in historical Palestinian areas.",
+          "Such actions could significantly alter the demographic and cultural landscape of the region.",
+          "The international community is closely monitoring the situation regarding these ancient territories.",
+          "Many believe that historical narratives should not be exploited for modern political gain.",
+          "Palestinian residents are deeply concerned about losing their ancestral lands and heritage.",
+          "These disputed areas have long been a source of tension and conflict.",
+          "The debate highlights complex issues surrounding land rights, history, and international law."
+        ],
+        "vocabulary": [
+          {
+            "term": "accused",
+            "part_of_speech": "verb",
+            "definition": "To say that someone has done something wrong or illegal."
+          },
+          {
+            "term": "weaponising",
+            "part_of_speech": "verb (gerund)",
+            "definition": "Turning something typically neutral or peaceful into a weapon or a tool for conflict."
+          },
+          {
+            "term": "archaeology",
+            "part_of_speech": "noun",
+            "definition": "The study of human history and prehistory through the excavation of sites and the analysis of artifacts."
+          },
+          {
+            "term": "large-scale",
+            "part_of_speech": "adjective",
+            "definition": "Involving a lot of people, things, or money; extensive."
+          },
+          {
+            "term": "expropriations",
+            "part_of_speech": "noun",
+            "definition": "The act of a government taking private property for public use, often with compensation."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself rather than who or what is performing the action. It is formed with a form of 'to be' + the past participle of the main verb. We often use it when the agent (doer) is unknown, unimportant, or obvious, or when we want to shift emphasis to the action or recipient of the action.",
+          "example_quote": "Israel is currently accused of a controversial strategy in the West Bank."
+        },
+        "quiz": [
+          {
+            "question": "What is Israel accused of doing in the West Bank?",
+            "options": [
+              "Developing new educational programs.",
+              "Using archaeology to support land claims.",
+              "Restoring ancient historical monuments for tourism."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief mentions weaponising archaeology for territorial claims, not educational programs.",
+              "Correct. The brief states Israel is accused of weaponising archaeology to support its territorial claims.",
+              "While archaeology is involved, the accusation is about land claims, not just tourism restoration."
+            ]
+          },
+          {
+            "question": "What does the term \"weaponising\" mean in this context?",
+            "options": [
+              "Using weapons to protect archaeological sites.",
+              "Turning something peaceful into a tool for conflict.",
+              "Creating new military technologies from ancient discoveries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term implies using something non-military as a weapon, not literal weapons.",
+              "Correct. Weaponising means using something, like archaeology, as a means to achieve a political or territorial goal.",
+              "There is no mention of military technologies or new discoveries in the brief."
+            ]
+          },
+          {
+            "question": "What field of study is central to the accusations against Israel?",
+            "options": [
+              "Geology",
+              "Anthropology",
+              "Archaeology"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Geology is the study of the Earth's physical structure, not directly mentioned in the brief.",
+              "Anthropology studies human societies and cultures, but archaeology is the specific focus here.",
+              "Correct. The news brief specifically states Israel is \"weaponising the field of archaeology.\""
+            ]
+          },
+          {
+            "question": "What kind of land actions are mentioned regarding the historical Palestinian areas?",
+            "options": [
+              "Small-scale land purchases.",
+              "Large-scale land expropriations.",
+              "Voluntary land exchanges."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions \"large-scale\" actions, not small ones.",
+              "Correct. The news brief highlights \"large-scale land expropriations\" as part of the plans.",
+              "The term \"expropriations\" suggests involuntary taking, not voluntary exchanges."
+            ]
+          },
+          {
+            "question": "Which adjective describes the sites in the West Bank that are part of this controversy?",
+            "options": [
+              "Modern",
+              "Deserted",
+              "Ancient"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief refers to historical and ancient sites, not modern ones.",
+              "While some might be deserted, \"ancient\" is the specific term used in the brief.",
+              "Correct. The news brief refers to \"ancient sites\" and \"ancient territories.\""
+            ]
+          },
+          {
+            "question": "In the sentence \"Israel is currently accused of a controversial strategy,\" why is the passive voice used?",
+            "options": [
+              "To emphasize the subject \"Israel.\"",
+              "To highlight the action of accusing rather than who is doing the accusing.",
+              "To show that Israel is actively performing the accusation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice often deemphasizes the subject, focusing instead on the action.",
+              "Correct. The passive voice focuses on the action (\"accused\") and what is being done, rather than specifying who exactly is doing the accusing.",
+              "The sentence indicates Israel is receiving the accusation, not making it."
+            ]
+          },
+          {
+            "question": "What might be a consequence of the proposed large-scale actions?",
+            "options": [
+              "A decrease in global tensions.",
+              "Significant changes to the demographic and cultural landscape.",
+              "More archaeological discoveries for international museums."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The context suggests an increase in tensions, not a decrease.",
+              "Correct. The brief states such actions \"could significantly alter the demographic and cultural landscape.\"",
+              "While discoveries might happen, the brief focuses on the social and political impact."
+            ]
+          },
+          {
+            "question": "Who is deeply concerned about losing ancestral lands, according to the news brief?",
+            "options": [
+              "Archaeologists.",
+              "International observers.",
+              "Palestinian residents."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Archaeologists are involved in the field, but the concern about land loss is for residents.",
+              "International observers are monitoring, but Palestinian residents are directly affected.",
+              "Correct. The brief states, \"Palestinian residents are deeply concerned about losing their ancestral lands and heritage.\""
+            ]
+          },
+          {
+            "question": "The news brief states, \"The debate highlights complex issues surrounding land rights, history, and international law.\" What does \"highlights\" mean here?",
+            "options": [
+              "Complicates.",
+              "Emphasizes.",
+              "Resolves."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "It doesn't make the issues more complicated, but brings them to attention.",
+              "Correct. To highlight something means to draw attention to it or emphasize its importance.",
+              "The debate does not resolve the issues; it brings them to the forefront for discussion."
+            ]
+          },
+          {
+            "question": "What is the primary reason why the international community is monitoring the situation?",
+            "options": [
+              "To participate in archaeological digs.",
+              "To ensure historical narratives are not exploited.",
+              "To promote tourism to ancient sites."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Their role is monitoring the political situation, not participating in excavations.",
+              "Correct. The brief mentions concerns that \"historical narratives should not be exploited for modern political gain.\"",
+              "While tourism might be a byproduct, the main concern is the geopolitical implications and fairness."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Israel Faces Accusations of Weaponising Archaeology in West Bank Land Disputes",
+        "overview": "Israel is currently confronting significant international scrutiny over allegations that it is strategically employing archaeological endeavors to facilitate extensive land expropriations within historically Palestinian territories of the West Bank.",
+        "topic": "International relations, archaeology, land disputes, human rights, Middle East conflict",
+        "news_brief_sentences": [
+          "Recent reports highlight grave allegations against Israel, asserting its deliberate strategy to weaponise archaeology for political objectives in the West Bank.",
+          "The core of the controversy revolves around Israel's purported plans for large-scale land expropriations in historically Palestinian areas.",
+          "Critics argue that these archaeological initiatives are not merely academic but serve to underpin claims of sovereignty and justify territorial expansion.",
+          "Such actions are perceived by many as a systematic effort to alter the demographic and historical landscape of the contested region.",
+          "This practice allegedly undergirds Israel's control over significant cultural and historical sites within the occupied territories.",
+          "International law broadly considers the West Bank as occupied territory, rendering unilateral changes to its status highly contentious.",
+          "The accusations suggest that archaeological findings are being selectively presented to bolster a particular historical narrative.",
+          "This strategy could further entrench the Israeli presence and complicate future negotiations for a two-state solution.",
+          "Opponents contend that these efforts undermine Palestinian claims to their ancestral heritage and perpetuate cycles of dispossession.",
+          "The international community is closely monitoring these developments, urging adherence to humanitarian law and established norms regarding occupied land."
+        ],
+        "vocabulary": [
+          {
+            "term": "weaponise",
+            "part_of_speech": "verb",
+            "definition": "To adapt or use something (which was not originally a weapon) as a weapon; in this context, to use archaeology as a tool for political or territorial gain."
+          },
+          {
+            "term": "expropriations",
+            "part_of_speech": "noun",
+            "definition": "The action by the state or an authority of taking property from its owner for public use or benefit, often with or without compensation; here, referring to land."
+          },
+          {
+            "term": "underpin",
+            "part_of_speech": "verb",
+            "definition": "To support, justify, or form the basis for an idea, system, or theory; to strengthen or corroborate a claim or argument."
+          },
+          {
+            "term": "contested",
+            "part_of_speech": "adjective",
+            "definition": "Disputed or argued over; referred to something that is the subject of disagreement or controversy, especially regarding ownership or legitimacy."
+          },
+          {
+            "term": "perpetuate",
+            "part_of_speech": "verb",
+            "definition": "To make something, typically an undesirable situation or an unfounded belief, continue indefinitely; to maintain a situation or condition."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization (converting verbs/adjectives into nouns)",
+          "explanation": "Nominalization is a sophisticated stylistic device where a verb or adjective is transformed into a noun, often making the sentence more formal and concise by abstracting actions or qualities. It allows for dense information packaging, shifting focus from the actor to the action or concept itself, common in academic and journalistic writing.",
+          "example_quote": "Critics argue that these archaeological initiatives are not merely academic but serve to underpin claims of sovereignty and justify territorial expansion."
+        },
+        "quiz": [
+          {
+            "question": "Which of the following best describes the main accusation against Israel in the news brief?",
+            "options": [
+              "Israel is destroying historical sites in the West Bank.",
+              "Israel is using archaeology as a pretext for land seizures.",
+              "Israel is unfairly compensating Palestinians for land acquisition."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While damage to sites might occur, the core accusation is about the strategic misuse of archaeology.",
+              "Correct. The brief explicitly states Israel is accused of 'weaponising archaeology' for 'large-scale land expropriations'.",
+              "The brief focuses on the alleged justification for taking land, not specifically on the compensation aspect."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does it mean to 'weaponise archaeology'?",
+            "options": [
+              "To physically damage archaeological sites.",
+              "To use archaeological discoveries to create weapons.",
+              "To employ archaeological findings to further political or territorial objectives."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is an overly literal interpretation; 'weaponise' here implies a strategic misuse.",
+              "This is not implied by the context; the term refers to the strategic application of archaeology.",
+              "Correct. The brief clarifies that archaeology is allegedly used to 'underpin claims of sovereignty and justify territorial expansion'."
+            ]
+          },
+          {
+            "question": "What is the primary legal status of the West Bank according to international law, as mentioned in the brief?",
+            "options": [
+              "Disputed territory",
+              "Occupied territory",
+              "Palestinian autonomous zone"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While it is disputed, international law more specifically designates it as occupied.",
+              "Correct. The brief states, 'International law broadly considers the West Bank as occupied territory'.",
+              "The brief notes it is 'historically Palestinian areas' but does not use this term for its legal status."
+            ]
+          },
+          {
+            "question": "The term 'expropriations' in the news brief refers to:",
+            "options": [
+              "The excavation of ancient artifacts.",
+              "The legal process of land ownership transfer.",
+              "The taking of privately owned land by public authority."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This term is related to land acquisition, not specifically excavation.",
+              "While it involves transfer, 'expropriation' specifically implies a taking by authority, not just a general transfer.",
+              "Correct. 'Large-scale land expropriations' refers to the state taking land, as per the definition."
+            ]
+          },
+          {
+            "question": "How do critics view Israel's archaeological initiatives, according to the news brief?",
+            "options": [
+              "As purely scientific endeavors.",
+              "As a means to strengthen claims and justify expansion.",
+              "As a necessary step for cultural preservation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly states critics argue they are 'not merely academic'.",
+              "Correct. Critics see them as serving to 'underpin claims of sovereignty and justify territorial expansion'.",
+              "The brief indicates these actions are contentious and not viewed as neutral preservation."
+            ]
+          },
+          {
+            "question": "Which word from the vocabulary list best describes the West Bank in the context of ownership and control, as per the brief?",
+            "options": [
+              "Expropriations",
+              "Contested",
+              "Perpetuate"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Expropriations' are actions, not a description of the region itself.",
+              "Correct. The brief refers to the 'contested region', highlighting the ongoing dispute over it.",
+              "'Perpetuate' describes continuing a situation, not the status of the land."
+            ]
+          },
+          {
+            "question": "The nominalization 'expansion' in the example quote 'justify territorial expansion' derives from which verb?",
+            "options": [
+              "Expand",
+              "Explode",
+              "Expanse"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. 'Expansion' is the noun form of the verb 'to expand'.",
+              "'Explode' is a different verb with a different meaning and noun form ('explosion').",
+              "'Expanse' is a noun, but it refers to a wide area, not the act of growing larger."
+            ]
+          },
+          {
+            "question": "What is the stated effect of using nominalization in formal writing, according to the grammar explanation?",
+            "options": [
+              "To make sentences more direct and personal.",
+              "To abstract actions and make writing more concise and formal.",
+              "To simplify complex ideas for a wider audience."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Nominalization tends to make writing less direct and personal.",
+              "Correct. It allows for 'dense information packaging, shifting focus from the actor to the action or concept itself'.",
+              "While it can convey complex ideas, its primary effect isn't simplification but rather formal abstraction."
+            ]
+          },
+          {
+            "question": "According to the brief, what potential long-term consequence could these actions have on a future peace solution?",
+            "options": [
+              "It could accelerate the peace process.",
+              "It could make negotiations for a two-state solution more difficult.",
+              "It would have no impact on political negotiations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests the opposite, that it would complicate efforts.",
+              "Correct. The brief states this strategy could 'complicate future negotiations for a two-state solution'.",
+              "The brief clearly implies a significant negative impact on negotiations."
+            ]
+          },
+          {
+            "question": "The word 'undergirds' in the sentence 'This practice allegedly undergirds Israel's control...' means that the practice:",
+            "options": [
+              "Undermines or weakens that control.",
+              "Provides the fundamental support or basis for that control.",
+              "Is completely unrelated to that control."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'undergirds' implies strengthening, not weakening.",
+              "Correct. 'Undergirds' means to support or form the basis of something, as per the definition.",
+              "The context implies a direct and foundational relationship between the practice and the control."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

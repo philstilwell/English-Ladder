@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-11",
+  "release_iso": "2026-08-11T10:43:22Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump hid in catering truck in secret plane swap over Iran threat, reports say",
+    "summary": "The US president was part of a ruse where reporters were falsely told he was with them on Air Force One leaving a Nato summit in Turkey.",
+    "link": "https://www.bbc.co.uk/news/articles/cm2g90vvy62o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "President Trump's Secret Plane Swap",
+        "overview": "President Trump used a clever plan to change planes secretly after a meeting in Turkey.",
+        "topic": "International News: President Trump's Secret Travel",
+        "news_brief_sentences": [
+          "President Trump was at a Nato summit in Turkey.",
+          "After the summit, he needed to fly home.",
+          "Reporters were told he would fly on Air Force One.",
+          "But this was not true; it was a ruse.",
+          "President Trump had a secret plan to leave.",
+          "He hid inside a catering truck at the airport.",
+          "The truck took him to a different plane.",
+          "This plane swap was done very secretly.",
+          "Reports said there was an Iran threat.",
+          "The secret plane swap kept him safe from the threat."
+        ],
+        "vocabulary": [
+          {
+            "term": "Nato summit",
+            "part_of_speech": "noun phrase",
+            "definition": "A big meeting for leaders from different countries that are part of NATO, an alliance."
+          },
+          {
+            "term": "Air Force One",
+            "part_of_speech": "noun",
+            "definition": "The special airplane that the President of the United States uses for travel."
+          },
+          {
+            "term": "ruse",
+            "part_of_speech": "noun",
+            "definition": "A trick or a clever plan used to make someone believe something that is not true."
+          },
+          {
+            "term": "catering truck",
+            "part_of_speech": "noun",
+            "definition": "A vehicle that brings food and drinks to airplanes for passengers."
+          },
+          {
+            "term": "Iran threat",
+            "part_of_speech": "noun phrase",
+            "definition": "A danger or warning coming from the country of Iran."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened in the past and are now finished. Many past tense verbs end with '-ed', like 'walked' or 'talked'. Some verbs are irregular, like 'was' (from 'is') or 'hid' (from 'hide').",
+          "example_quote": "He hid inside a catering truck at the airport."
+        },
+        "quiz": [
+          {
+            "question": "Where was President Trump before his secret plane swap?",
+            "options": [
+              "At a Nato summit",
+              "On Air Force One",
+              "In a catering truck"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's correct! He was at a Nato summit in Turkey.",
+              "No, he was not on Air Force One yet. That was part of the trick.",
+              "No, he hid in the catering truck later, after the summit."
+            ]
+          },
+          {
+            "question": "What is 'Air Force One'?",
+            "options": [
+              "A type of car",
+              "A special plane for the US President",
+              "A military base"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Air Force One is not a car.",
+              "Yes, Air Force One is the special airplane for the President of the United States.",
+              "No, Air Force One is not a military base."
+            ]
+          },
+          {
+            "question": "What did reporters think about President Trump's travel?",
+            "options": [
+              "He would take a train.",
+              "He would fly on Air Force One.",
+              "He would drive home."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief does not say he would take a train.",
+              "That's right! Reporters were told he would fly on Air Force One.",
+              "Incorrect. The news brief is about air travel, not driving."
+            ]
+          },
+          {
+            "question": "What is a 'ruse' according to the vocabulary?",
+            "options": [
+              "A type of flower",
+              "A clever trick",
+              "A country"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's not correct. A ruse is not a flower.",
+              "Correct! A ruse is a trick or a clever plan.",
+              "No, a ruse is not a country."
+            ]
+          },
+          {
+            "question": "Where did President Trump hide at the airport?",
+            "options": [
+              "In the pilot's seat",
+              "In a catering truck",
+              "In the airport lounge"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he did not hide in the pilot's seat.",
+              "Yes, he hid inside a catering truck. This was part of his secret plan.",
+              "Incorrect. He hid in a truck, not the lounge."
+            ]
+          },
+          {
+            "question": "Why did President Trump use a secret plane swap?",
+            "options": [
+              "To avoid traffic",
+              "Because of a Nato summit",
+              "Due to an Iran threat"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, avoiding traffic is not mentioned as the reason.",
+              "The summit was before the swap, but not the reason for the secrecy.",
+              "Correct! Reports said there was an Iran threat, so he needed a secret plan."
+            ]
+          },
+          {
+            "question": "Which word from the sentence 'He hid inside a catering truck' is in the simple past tense?",
+            "options": [
+              "He",
+              "hid",
+              "truck"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'He' is a pronoun, not a verb in the past tense.",
+              "That's correct! 'Hid' is the simple past tense of 'hide'.",
+              "'Truck' is a noun, not a verb."
+            ]
+          },
+          {
+            "question": "What does a 'catering truck' do?",
+            "options": [
+              "Carries passengers",
+              "Delivers food and drinks to planes",
+              "Cleans airplanes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a catering truck does not carry passengers.",
+              "That's right! A catering truck brings food and drinks to airplanes.",
+              "Incorrect. Cleaning airplanes is a different job."
+            ]
+          },
+          {
+            "question": "What does 'Iran threat' mean?",
+            "options": [
+              "A friendly message from Iran",
+              "A danger from Iran",
+              "A trip to Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a threat is not a friendly message.",
+              "Correct! An Iran threat means a danger or warning coming from Iran.",
+              "Incorrect. It's not about a trip."
+            ]
+          },
+          {
+            "question": "What kind of meeting is a 'Nato summit'?",
+            "options": [
+              "A family picnic",
+              "A meeting for country leaders",
+              "A music concert"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a Nato summit is not a family picnic.",
+              "Correct! It's a big meeting for leaders from different countries.",
+              "Incorrect. It's a political meeting, not a concert."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Trump's Secret Departure: A Ruse Over Iran Threat",
+        "overview": "Former US President Donald Trump reportedly used a deceptive plan involving a catering truck and a secret plane swap to leave a NATO summit in Turkey, misleading reporters due to concerns over a potential threat from Iran.",
+        "topic": "Presidential Security and Deception Tactics",
+        "news_brief_sentences": [
+          "Former US President Donald Trump reportedly used an unusual method to depart a NATO summit in Turkey secretly.",
+          "He was involved in a ruse, a deceptive plan, to mislead reporters about his travel arrangements.",
+          "Journalists were falsely told he would be on Air Force One with them as they left the summit.",
+          "However, a secret plane swap was carried out, allowing for his discreet departure.",
+          "According to reports, Trump hid inside a catering truck during this complex operation.",
+          "This particular maneuver was reportedly prompted by concerns about a potential threat from Iran.",
+          "The extraordinary lengths taken highlight the intense security considerations for world leaders.",
+          "Reporters, who were led to believe he was on their plane, did not discover the deception until later.",
+          "The main goal was to ensure the president's safety, especially when leaving a sensitive area.",
+          "Such an incident illustrates the elaborate strategies sometimes necessary for presidential security protocols."
+        ],
+        "vocabulary": [
+          {
+            "term": "ruse",
+            "part_of_speech": "noun",
+            "definition": "A trick or act that is used to fool someone or to hide the truth."
+          },
+          {
+            "term": "discreet",
+            "part_of_speech": "adjective",
+            "definition": "Careful in what you say or do, so that you do not embarrass or offend people or tell secrets; not drawing attention to itself."
+          },
+          {
+            "term": "maneuver",
+            "part_of_speech": "noun",
+            "definition": "A movement or series of moves requiring skill and care, often used to achieve a particular goal or avoid something."
+          },
+          {
+            "term": "prompted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Caused someone to do something or caused something to happen; to provoke or inspire an action."
+          },
+          {
+            "term": "deception",
+            "part_of_speech": "noun",
+            "definition": "The act of hiding the truth, especially to get an advantage or to make someone believe something that is not true."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the action of the verb is more important than who or what is performing the action, or when the agent is unknown or less important. The subject of the sentence receives the action rather than performing it. It's often formed with a form of 'to be' (e.g., is, are, was, were) followed by the past participle of the main verb.",
+          "example_quote": "Reporters, who were led to believe he was on their plane, did not discover the deception until later."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary purpose of the 'ruse' mentioned in the news brief?",
+            "options": [
+              "To surprise the summit attendees with a magic trick.",
+              "To mislead reporters about President Trump's travel plans.",
+              "To test the new security features of Air Force One."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's incorrect. The ruse was a serious security measure, not a performance.",
+              "Correct! The ruse was a deceptive plan specifically designed to hide the president's true departure method from the press.",
+              "Incorrect. The news brief states the ruse was about misleading reporters, not testing aircraft features."
+            ]
+          },
+          {
+            "question": "How did President Trump reportedly leave the NATO summit without being noticed?",
+            "options": [
+              "He used a secret tunnel under the airport.",
+              "He departed openly on Air Force One with the reporters.",
+              "He hid in a catering truck during a secret plane swap."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief does not mention a secret tunnel.",
+              "Incorrect. Reporters were told he would be on Air Force One, but this was part of the deception.",
+              "Correct! The report states he hid in a catering truck as part of a secret plane swap for a discreet departure."
+            ]
+          },
+          {
+            "question": "What does the term 'discreet' mean in the context of the news brief?",
+            "options": [
+              "Careful and not drawing attention to itself.",
+              "Loud and attention-grabbing.",
+              "Accidental and unplanned."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! A discreet departure is one that is careful and avoids being noticed.",
+              "No, 'loud' is the opposite of discreet. The departure was meant to be secret.",
+              "Incorrect. The departure was a planned security measure, not accidental."
+            ]
+          },
+          {
+            "question": "What caused the 'maneuver' of hiding President Trump in a catering truck?",
+            "options": [
+              "A desire for a unique travel experience.",
+              "Concerns over a potential threat from Iran.",
+              "A shortage of available official transport."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief indicates a serious security reason, not a personal preference.",
+              "Correct! The news brief clearly states the maneuver was prompted by concerns about Iran.",
+              "Incorrect. The news brief mentions a security threat, not logistical issues with transport."
+            ]
+          },
+          {
+            "question": "In the sentence 'Journalists were falsely told he would be on Air Force One,' what grammatical voice is 'were told'?",
+            "options": [
+              "Active voice.",
+              "Passive voice.",
+              "Direct speech."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's incorrect. In active voice, the subject performs the action. Here, the journalists received the action of being told.",
+              "Correct! 'Were told' uses a form of 'to be' and a past participle, making it passive voice, focusing on the action received by the journalists.",
+              "No, direct speech would be quoting someone directly. This is about how the verb is constructed."
+            ]
+          },
+          {
+            "question": "What was the immediate effect of the ruse on the reporters?",
+            "options": [
+              "They immediately understood President Trump's plan.",
+              "They were correctly informed about his travel.",
+              "They were falsely led to believe he was on their plane."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The whole point of the ruse was to deceive them.",
+              "No, the news brief explicitly states they were 'falsely told'.",
+              "Correct! The ruse successfully created the false belief that Trump was with them."
+            ]
+          },
+          {
+            "question": "Which term best describes the act of 'hiding the truth, especially to get an advantage,' as seen in the president's departure?",
+            "options": [
+              "Transparency.",
+              "Deception.",
+              "Confirmation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Transparency means being open and honest, the opposite of this situation.",
+              "Correct! 'Deception' is defined as hiding the truth, which perfectly matches the president's actions.",
+              "No, confirmation means verifying something is true, which was not the case here."
+            ]
+          },
+          {
+            "question": "From the grammar explanation, which part of 'Reporters, who were led to believe he was on their plane' is an example of the passive voice?",
+            "options": [
+              "'Reporters, who'",
+              "'were led'",
+              "'to believe he was'"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is part of the subject and relative clause, not the passive verb construction itself.",
+              "Correct! 'Were led' uses the verb 'to be' and a past participle, showing the action being done to the reporters.",
+              "This phrase is part of the infinitive complement, not the passive voice verb form."
+            ]
+          },
+          {
+            "question": "What does the news brief suggest about presidential security measures?",
+            "options": [
+              "They are always straightforward and public.",
+              "They can sometimes involve complex and unusual tactics.",
+              "They are rarely necessary for high-profile figures."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This incident demonstrates the opposite – that they can be far from straightforward.",
+              "Correct! The incident with the catering truck shows that security can be very complex and involve unusual methods.",
+              "No, the news brief implies that extreme measures are sometimes necessary due to high-profile threats."
+            ]
+          },
+          {
+            "question": "The word 'prompted' in the brief means the security measure was:",
+            "options": [
+              "Delayed by.",
+              "Caused by.",
+              "Ignored by."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Delayed by' has the opposite meaning.",
+              "Correct! 'Prompted by' means that the concerns about Iran caused or triggered the security measure.",
+              "No, 'ignored by' would mean it had no effect, which is not true here."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Diplomatic Deception: Trump's Covert Departure Amidst Geopolitical Tensions",
+        "overview": "Reports indicate that the US President engaged in an elaborate ruse, involving a clandestine plane swap and a covert departure, to evade press scrutiny following a NATO summit in Turkey, ostensibly due to an unspecified Iranian threat.",
+        "topic": "Geopolitical maneuvers, presidential security protocols, media deception, and diplomatic summit logistics.",
+        "news_brief_sentences": [
+          "Recent reports have unveiled a remarkable incident involving the US President's departure from a NATO summit in Turkey.",
+          "The President reportedly employed an elaborate ruse to conceal his true whereabouts and travel plans.",
+          "This sophisticated deception entailed a covert departure, during which he was whisked away in a catering truck.",
+          "The unconventional exit preceded a secret plane swap, designed to evade press scrutiny and potential security threats.",
+          "Reporters covering the summit were deliberately misled, being falsely informed that the President was on Air Force One with them.",
+          "This strategic dissimulation aimed to mask the President's actual flight path amidst concerns regarding an unspecified Iranian threat.",
+          "The elaborate security maneuver highlights the intricate logistical challenges associated with presidential travel.",
+          "Such highly sensitive operations are often dictated by stringent security protocols.",
+          "Analysts suggest the incident underscores the complexities of high-stakes geopolitical tensions and presidential security.",
+          "The episode has prompted discussions regarding transparency and the balance between security imperatives and public information."
+        ],
+        "vocabulary": [
+          {
+            "term": "ruse",
+            "part_of_speech": "noun",
+            "definition": "A trick or stratagem, often cunningly planned, intended to mislead or deceive someone."
+          },
+          {
+            "term": "covert departure",
+            "part_of_speech": "noun phrase",
+            "definition": "The act of leaving a place secretly and without being observed or detected."
+          },
+          {
+            "term": "evade press scrutiny",
+            "part_of_speech": "verb phrase",
+            "definition": "To successfully avoid intense public observation, examination, and criticism from journalists and media outlets."
+          },
+          {
+            "term": "dissimulation",
+            "part_of_speech": "noun",
+            "definition": "The concealment of one's thoughts, feelings, or character; pretense; the act of hiding one's true intentions."
+          },
+          {
+            "term": "geopolitical tensions",
+            "part_of_speech": "noun phrase",
+            "definition": "Strained relationships or conflicts between nations or regions, influenced by geographical factors, power dynamics, and political ideologies."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses (Present Participle)",
+          "explanation": "Participle clauses, often introduced by an -ing form (present participle) or -ed form (past participle), can reduce complex sentences, providing additional information about time, reason, or manner. A present participle clause (starting with -ing) can describe an action happening at the same time as the main verb, or an action that is a result or cause of the main action. It modifies the subject of the main clause, making the sentence more concise and fluid.",
+          "example_quote": "Reporters covering the summit were deliberately misled, being falsely informed that the President was on Air Force One with them."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary purpose of the elaborate ruse employed by the US President?",
+            "options": [
+              "To test the responsiveness of his security team.",
+              "To confuse geopolitical adversaries.",
+              "To conceal his actual travel plans and avoid media attention."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief indicates the ruse was for secrecy, not a security test.",
+              "Incorrect. While related to security, the specific aim was primarily about avoiding media and concealing plans.",
+              "Correct. The brief clearly states the ruse was 'to conceal his true whereabouts and travel plans' and 'to evade press scrutiny'."
+            ]
+          },
+          {
+            "question": "Which term best describes the President's exit from the NATO summit, as detailed in the news brief?",
+            "options": [
+              "Public procession.",
+              "Covert departure.",
+              "Routine escort."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A public procession would contradict the secretive nature of the event described.",
+              "Correct. The news brief explicitly mentions a 'covert departure' involving a catering truck and a secret plane swap.",
+              "Incorrect. The method described was highly unusual and deliberately secretive, not a routine escort."
+            ]
+          },
+          {
+            "question": "How were reporters deliberately misled regarding the President's whereabouts during his exit?",
+            "options": [
+              "They were told he had already left earlier than scheduled.",
+              "They were informed he was on Air Force One with them.",
+              "They were given a false itinerary for his public appearances."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief specifies a different false premise given to the reporters.",
+              "Correct. The news brief states, 'Reporters covering the summit were deliberately misled, being falsely informed that the President was on Air Force One with them.'",
+              "Incorrect. The deception was specifically about his immediate departure, not his future itinerary."
+            ]
+          },
+          {
+            "question": "The term 'dissimulation' in the news brief refers to which action?",
+            "options": [
+              "The open disclosure of strategic plans.",
+              "The concealment of true intentions or actions.",
+              "The dissemination of factual information."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Dissimulation is the opposite of disclosure; it involves hiding information.",
+              "Correct. Dissimulation involves hiding one's true intentions or actions, as explained in the vocabulary and used in the brief.",
+              "Incorrect. Dissimulation implies hiding, not distributing, factual information."
+            ]
+          },
+          {
+            "question": "What primary concern motivated the security maneuver involving the catering truck and plane swap?",
+            "options": [
+              "Budgetary constraints on presidential travel.",
+              "Concerns over an unspecified Iranian threat.",
+              "A desire for a dramatic exit for public relations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention budget issues; it focuses entirely on security implications.",
+              "Correct. The brief explicitly states the deception aimed to mask his path 'amidst concerns regarding an unspecified Iranian threat.'",
+              "Incorrect. The purpose was secrecy and security, not generating public drama or media attention."
+            ]
+          },
+          {
+            "question": "In the sentence 'Reporters covering the summit were deliberately misled, being falsely informed that the President was on Air Force One with them,' what does the participle clause 'being falsely informed' primarily explain?",
+            "options": [
+              "The President's true feelings at the time.",
+              "The manner or reason for the reporters being misled.",
+              "A future event planned by the reporters."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The clause describes the reporters' situation or the action done to them, not the President's emotions.",
+              "Correct. The participle clause clarifies *how* the reporters were misled or the condition of being misled, adding detail to the main action.",
+              "Incorrect. Participle clauses in this context typically refer to concurrent or causal actions, not future plans."
+            ]
+          },
+          {
+            "question": "What does 'evade press scrutiny' mean in the context of the news brief regarding the President's departure?",
+            "options": [
+              "To seek detailed media attention.",
+              "To deliberately avoid being observed or questioned by the media.",
+              "To cooperate fully with journalists' requests."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Evading means avoiding, not actively seeking, media attention.",
+              "Correct. 'Evade press scrutiny' refers to the act of avoiding observation and critical examination from the media, which was the purpose of the deception.",
+              "Incorrect. The action described is the direct opposite of full cooperation with the press."
+            ]
+          },
+          {
+            "question": "The incident is said to highlight the complexities of 'high-stakes geopolitical tensions.' What does this phrase refer to?",
+            "options": [
+              "Simple disagreements between local politicians.",
+              "Serious and impactful conflicts or strained relationships between countries.",
+              "Minor economic disputes among allied nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'High-stakes geopolitical tensions' implies significant international issues, not local disagreements.",
+              "Correct. Geopolitical tensions refer to significant and potentially dangerous strained relationships between nations, often with severe consequences.",
+              "Incorrect. 'High-stakes' implies far more critical issues than minor economic disputes."
+            ]
+          },
+          {
+            "question": "According to the brief, what often dictates highly sensitive presidential travel operations?",
+            "options": [
+              "Public relations opportunities for positive media coverage.",
+              "Stringent security protocols and concerns.",
+              "Political campaign schedules and upcoming elections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The focus of the brief is on security and secrecy, not public relations.",
+              "Correct. The brief states, 'Such highly sensitive operations are often dictated by stringent security protocols.'",
+              "Incorrect. While relevant to presidents, the brief specifically attributes the dictates to security protocols for such sensitive operations."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the overall tone of the news brief provided for this lesson?",
+            "options": [
+              "Sensational and exaggerated, aiming to shock.",
+              "Informative and analytical, presenting facts and context.",
+              "Humorous and anecdotal, focusing on lighthearted aspects."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While the story is unusual, the brief maintains a formal, analytical tone without exaggeration.",
+              "Correct. The brief presents facts and analysis in a formal, informative manner suitable for C1+ learners, focusing on the implications.",
+              "Incorrect. The topic and presentation are serious, focusing on security and diplomacy, not humor or personal stories."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

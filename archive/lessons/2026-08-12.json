@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-12",
+  "release_iso": "2026-08-12T10:54:35Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Rescuers scramble for survivors with 180 dead in Colombia earthquake",
+    "summary": "Colombia experienced a number of aftershocks on Tuesday, as efforts continued to free survivors trapped in rubble and buildings.",
+    "link": "https://www.bbc.co.uk/news/articles/c20dqd9qwq4o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Colombia Earthquake: Rescuers Work After Deadly Event",
+        "overview": "Rescuers are looking for people after a big earthquake in Colombia.",
+        "topic": "Natural Disasters: Earthquakes and Rescue Efforts",
+        "news_brief_sentences": [
+          "Colombia had a big earthquake.",
+          "About 180 people died because of it.",
+          "Many buildings fell down from the earthquake.",
+          "Aftershocks also happened on Tuesday.",
+          "Rescuers are looking for people.",
+          "They want to find survivors who are alive.",
+          "Some people are trapped in the fallen rubble.",
+          "The rescuers are working to free them.",
+          "These rescue efforts continued all day.",
+          "People hope to save more survivors."
+        ],
+        "vocabulary": [
+          {
+            "term": "earthquake",
+            "part_of_speech": "noun",
+            "definition": "When the ground shakes suddenly and strongly."
+          },
+          {
+            "term": "rescuers",
+            "part_of_speech": "noun",
+            "definition": "People who help to save others from danger."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who are still alive after a dangerous event."
+          },
+          {
+            "term": "trapped",
+            "part_of_speech": "adjective",
+            "definition": "Unable to move or get out of a place."
+          },
+          {
+            "term": "rubble",
+            "part_of_speech": "noun",
+            "definition": "Broken pieces of buildings, like stones and bricks."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. Many verbs add \"-ed\" for the past, like \"happened\". Other verbs change their form, like \"had\" from \"have\" or \"fell\" from \"fall\".",
+          "example_quote": "Aftershocks also happened on Tuesday."
+        },
+        "quiz": [
+          {
+            "question": "What happened in Colombia?",
+            "options": [
+              "A big party",
+              "A big earthquake",
+              "A new school opened"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is about a serious event.",
+              "Yes, Colombia experienced a big earthquake.",
+              "That's not what the news brief states."
+            ]
+          },
+          {
+            "question": "About how many people died?",
+            "options": [
+              "50 people",
+              "180 people",
+              "10 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That number is too low according to the news.",
+              "That's correct, about 180 people died.",
+              "The number mentioned was much higher."
+            ]
+          },
+          {
+            "question": "What are rescuers doing?",
+            "options": [
+              "Building new houses",
+              "Looking for survivors",
+              "Eating lunch"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Their main job is to find people, not build.",
+              "Right, rescuers are looking for people who are still alive.",
+              "That's not what the news brief tells us about rescuers."
+            ]
+          },
+          {
+            "question": "What is an \"earthquake\"?",
+            "options": [
+              "A type of food",
+              "When the ground shakes",
+              "A big mountain"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, an earthquake is a natural event.",
+              "Yes, an earthquake is when the ground shakes suddenly.",
+              "An earthquake is about movement of the ground, not a landform."
+            ]
+          },
+          {
+            "question": "Who are \"rescuers\"?",
+            "options": [
+              "People who sell clothes",
+              "People who save others from danger",
+              "People who live in Colombia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That is not the definition of rescuers.",
+              "Exactly, rescuers are people who help to save others.",
+              "While they might live there, their job is to rescue."
+            ]
+          },
+          {
+            "question": "What does \"trapped\" mean?",
+            "options": [
+              "Able to run fast",
+              "Unable to move or get out",
+              "Very happy"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it means the opposite of being free to move.",
+              "Correct, if you are trapped, you cannot move or leave a place.",
+              "Trapped describes a physical situation, not an emotion."
+            ]
+          },
+          {
+            "question": "What is \"rubble\"?",
+            "options": [
+              "A new park",
+              "Broken pieces of buildings",
+              "A type of animal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, rubble is not a place for recreation.",
+              "That's right, rubble is the broken pieces from fallen buildings.",
+              "Rubble refers to debris, not living creatures."
+            ]
+          },
+          {
+            "question": "Which verb is in the Simple Past Tense from the news brief?",
+            "options": [
+              "are looking",
+              "happened",
+              "to save"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is present continuous, not simple past.",
+              "Correct! 'Happened' tells us something finished in the past.",
+              "This is an infinitive, not a simple past verb form."
+            ]
+          },
+          {
+            "question": "When did aftershocks happen in Colombia?",
+            "options": [
+              "Next week",
+              "On Tuesday",
+              "Yesterday morning"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says they already happened.",
+              "Yes, the news brief mentions aftershocks happened on Tuesday.",
+              "The news specifies Tuesday, not a general 'yesterday'."
+            ]
+          },
+          {
+            "question": "What is the main challenge for rescuers when people are \"trapped\"?",
+            "options": [
+              "Finding food for them",
+              "Freeing them from rubble",
+              "Asking them questions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While important, the immediate challenge is movement.",
+              "Yes, the main challenge is getting trapped people out of the rubble.",
+              "Communication is secondary to physical extraction."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Colombia Earthquake: Rescuers Scramble for Survivors After Deadly Tremor and Aftershocks",
+        "overview": "Colombia recently experienced a powerful earthquake, killing at least 180 people and prompting extensive rescue efforts amidst ongoing aftershocks.",
+        "topic": "Natural Disasters and Emergency Response",
+        "news_brief_sentences": [
+          "A powerful earthquake recently struck Colombia, causing immense destruction and tragic loss of life.",
+          "Emergency rescue teams are currently scrambling to find and free individuals.",
+          "Initial reports confirm that at least 180 people have died as a direct result of the disaster.",
+          "Many buildings and infrastructure have collapsed, covering areas with vast amounts of rubble.",
+          "The focus remains on locating survivors who might be trapped beneath the debris.",
+          "On Tuesday, the affected region experienced a number of significant aftershocks.",
+          "These subsequent tremors caused further instability and complicated the ongoing rescue operations.",
+          "Government agencies have mobilised extensive resources to aid in the immediate emergency response.",
+          "Specialized teams are working around the clock, desperately searching for any signs of life.",
+          "International organizations are also preparing to offer essential assistance to Colombia during this critical period."
+        ],
+        "vocabulary": [
+          {
+            "term": "scrambling",
+            "part_of_speech": "verb",
+            "definition": "Moving quickly and with difficulty, often using hands as well as feet, or acting urgently to do something."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who continue to live after an accident, disaster, or difficult situation."
+          },
+          {
+            "term": "rubble",
+            "part_of_speech": "noun",
+            "definition": "Broken pieces of stone, brick, or other materials from buildings that have been destroyed or damaged."
+          },
+          {
+            "term": "aftershocks",
+            "part_of_speech": "noun",
+            "definition": "Smaller earthquakes that follow a larger earthquake in the same area."
+          },
+          {
+            "term": "mobilised",
+            "part_of_speech": "verb",
+            "definition": "To bring together and prepare resources or people for a particular purpose, especially in an emergency."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself rather than who or what is performing it. It's formed with a form of 'to be' and the past participle of the main verb. We often use it when the agent (the one doing the action) is unknown, unimportant, or obvious, or when we want to emphasize the receiver of the action.",
+          "example_quote": "The focus remains on locating survivors who might be trapped beneath the debris."
+        },
+        "quiz": [
+          {
+            "question": "How many people are reported to have died in the Colombian earthquake, according to initial reports?",
+            "options": [
+              "Fewer than 100",
+              "Exactly 180",
+              "At least 180"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief mentions a higher number.",
+              "Incorrect. The news brief uses the phrase 'at least,' suggesting it could be more.",
+              "Correct. The news brief states, 'at least 180 people have died as a direct result of the disaster.'"
+            ]
+          },
+          {
+            "question": "What does it mean when rescue teams are 'scrambling'?",
+            "options": [
+              "They are moving slowly and carefully.",
+              "They are eating quickly before starting work.",
+              "They are moving quickly and urgently to find people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Scrambling' suggests fast, urgent movement.",
+              "Incorrect. While eating is important, 'scrambling' refers to their actions in the rescue.",
+              "Correct. 'Scrambling' implies a rapid, urgent effort, often in difficult conditions, to achieve a goal."
+            ]
+          },
+          {
+            "question": "What natural phenomenon complicated rescue operations on Tuesday?",
+            "options": [
+              "Heavy rainfall",
+              "Significant aftershocks",
+              "A sudden sandstorm"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Heavy rainfall was not mentioned as a complication in the brief.",
+              "Correct. The news brief explicitly states that 'significant aftershocks' occurred, complicating rescue efforts.",
+              "Incorrect. A sandstorm was not mentioned as affecting Colombia."
+            ]
+          },
+          {
+            "question": "What is 'rubble' typically made of in the context of a collapsed building?",
+            "options": [
+              "Piles of personal belongings",
+              "Broken pieces of stone, brick, and other building materials",
+              "New construction supplies"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While belongings might be present, 'rubble' refers to the destroyed building structure.",
+              "Correct. Rubble consists of the broken fragments from destroyed or damaged buildings.",
+              "Incorrect. Rubble comes from destroyed buildings, not new, unused materials."
+            ]
+          },
+          {
+            "question": "In the sentence 'survivors who might be trapped,' why is 'trapped' used in the passive voice?",
+            "options": [
+              "To emphasize that the survivors are performing the action of trapping.",
+              "Because the focus is on the state of the survivors, not on who or what trapped them.",
+              "To indicate a future possibility for the survivors."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The survivors are experiencing the action, not performing it.",
+              "Correct. The passive voice focuses on the experience of being trapped, with the agent (who trapped them) being less important or unknown.",
+              "Incorrect. While it indicates a possibility, the grammatical reason for the passive voice is the focus on the state."
+            ]
+          },
+          {
+            "question": "What is the primary focus of the rescue teams mentioned in the news brief?",
+            "options": [
+              "Collecting donations for the victims",
+              "Rebuilding collapsed infrastructure",
+              "Locating and freeing individuals trapped beneath debris"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While important, collecting donations is not the primary focus of active rescue teams.",
+              "Incorrect. Rebuilding happens after the immediate rescue phase is complete.",
+              "Correct. The brief states, 'The focus remains on locating survivors who might be trapped beneath the debris.'"
+            ]
+          },
+          {
+            "question": "What are 'aftershocks' in the context of an earthquake?",
+            "options": [
+              "The first, most powerful tremor.",
+              "Smaller earthquakes that occur after a larger one in the same area.",
+              "Strong winds that follow a major earthquake."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The initial large earthquake is not an aftershock.",
+              "Correct. Aftershocks are subsequent, smaller tremors that can occur for days or weeks after a main earthquake.",
+              "Incorrect. Aftershocks are seismic events, not weather phenomena like strong winds."
+            ]
+          },
+          {
+            "question": "Who has 'mobilised extensive resources' to aid the emergency response?",
+            "options": [
+              "International charities only",
+              "Local volunteer groups",
+              "Government agencies"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While international organizations are preparing to help, the brief states government agencies have mobilised resources.",
+              "Incorrect. Local volunteer groups contribute, but government agencies are described as mobilising extensive resources.",
+              "Correct. The news brief specifies, 'Government agencies have mobilised extensive resources to aid in the immediate emergency response.'"
+            ]
+          },
+          {
+            "question": "Which word best describes people who survived the earthquake disaster?",
+            "options": [
+              "Victims",
+              "Witnesses",
+              "Survivors"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Victims' refers to those who suffered, which includes those who died, not just those who lived.",
+              "Incorrect. 'Witnesses' are people who saw the event, not necessarily those who remained alive through it.",
+              "Correct. 'Survivors' are people who continue to live after a dangerous event like an earthquake."
+            ]
+          },
+          {
+            "question": "According to the news, what is the international community doing?",
+            "options": [
+              "They are withdrawing all support from Colombia.",
+              "They are preparing to offer essential assistance.",
+              "They have already sent all necessary aid."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states they are preparing to offer assistance, not withdrawing support.",
+              "Correct. The news brief mentions that 'International organizations are also preparing to offer essential assistance to Colombia.'",
+              "Incorrect. The text says they are 'preparing' to offer assistance, not that they have already completed it."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Colombia Earthquake: Rescuers Scramble Amid Dire Prospects for Survivors",
+        "overview": "Colombia is grappling with the devastating aftermath of a major earthquake and subsequent aftershocks, as rescue teams undertake a desperate scramble for survivors amid extensive rubble and a rising death toll.",
+        "topic": "Natural Disaster and Rescue Efforts",
+        "news_brief_sentences": [
+          "Following a catastrophic earthquake, rescuers are engaged in a desperate scramble for survivors across affected regions of Colombia.",
+          "The seismic event has tragically claimed 180 lives, with the death toll potentially increasing as recovery operations continue.",
+          "Throughout Tuesday, a series of powerful aftershocks compounded the challenge, further jeopardizing ongoing rescue missions.",
+          "Emergency teams are meticulously sifting through immense piles of rubble, hoping to locate individuals still entombed beneath collapsed structures.",
+          "The dire prospects for those trapped diminish significantly with each passing hour, intensifying the urgency of sustained efforts.",
+          "Specialist urban search and rescue units, alongside local volunteers, have mobilized extensively across the hardest-hit areas.",
+          "The precarious stability of damaged buildings presents a constant threat to personnel working tirelessly on site.",
+          "Authorities are appealing for international aid and specialized equipment to assist in the complex recovery and relief mission.",
+          "Despite the immense challenges, the collective resolve to locate and extract any remaining survivors remains steadfast.",
+          "This unfolding tragedy underscores the imperative for robust disaster preparedness and rapid response mechanisms in earthquake-prone nations."
+        ],
+        "vocabulary": [
+          {
+            "term": "scramble",
+            "part_of_speech": "noun",
+            "definition": "A rushed and disordered struggle or movement, especially to achieve something or get somewhere."
+          },
+          {
+            "term": "aftershocks",
+            "part_of_speech": "noun",
+            "definition": "Smaller earthquakes that follow a larger earthquake in the same area, caused by the readjustment of the earth's crust after the main shock."
+          },
+          {
+            "term": "rubble",
+            "part_of_speech": "noun",
+            "definition": "Waste or rough fragments of stone, brick, concrete, or other material, especially as debris from the demolition of buildings."
+          },
+          {
+            "term": "entombed",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Buried or trapped within something, often implying being sealed off and unable to escape."
+          },
+          {
+            "term": "dire prospects",
+            "part_of_speech": "noun phrase",
+            "definition": "Extremely serious or urgent outlooks; a grim or terrible future possibility."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Participles as Adjectives",
+          "explanation": "Past participles (e.g., 'trapped,' 'entombed') can function as adjectives to describe nouns, often conveying a state or condition resulting from an action. This provides a concise way to add detail to a noun without using a relative clause, enhancing formal writing.",
+          "example_quote": "Emergency teams are meticulously sifting through immense piles of rubble, hoping to locate individuals still entombed beneath collapsed structures."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the 'scramble' mentioned in the news brief?",
+            "options": [
+              "A frantic search for resources.",
+              "A desperate effort to find survivors.",
+              "A hurried attempt to assess damage."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While resources are needed, the 'scramble' specifically refers to finding people.",
+              "Correct. The term 'scramble' highlights the urgent and often disordered search for survivors.",
+              "Incorrect. Damage assessment is part of recovery, but the 'scramble' emphasizes immediate life-saving efforts."
+            ]
+          },
+          {
+            "question": "According to the news brief, what consequence did 'aftershocks' have on the rescue efforts?",
+            "options": [
+              "They provided an opportunity for teams to regroup.",
+              "They worsened the challenges and risked operations.",
+              "They significantly reduced the amount of rubble."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Aftershocks typically hinder, not help, rescue operations.",
+              "Correct. The brief states 'aftershocks compounded the challenge, further jeopardizing rescue operations'.",
+              "Incorrect. Aftershocks are more likely to create more rubble or destabilize existing debris, not reduce it."
+            ]
+          },
+          {
+            "question": "Which word best describes the condition of individuals 'entombed' beneath collapsed structures?",
+            "options": [
+              "Liberated",
+              "Encouraged",
+              "Trapped"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Liberated' means freed, which is the opposite of 'entombed'.",
+              "Incorrect. 'Entombed' describes a physical state of being trapped, not an emotional one.",
+              "Correct. To be 'entombed' means to be enclosed or trapped within something, like a tomb."
+            ]
+          },
+          {
+            "question": "What does the phrase 'dire prospects' suggest about the situation for trapped individuals?",
+            "options": [
+              "Their chances of survival are improving rapidly.",
+              "Their future looks very serious and grim.",
+              "There is a strong possibility of immediate rescue."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Dire' implies a negative and worsening situation.",
+              "Correct. 'Dire prospects' indicates a very serious and often bleak outlook for their survival.",
+              "Incorrect. 'Dire' suggests the opposite of a strong possibility of immediate rescue."
+            ]
+          },
+          {
+            "question": "In the sentence 'Emergency teams are meticulously sifting through immense piles of rubble...', what does 'rubble' refer to?",
+            "options": [
+              "Natural geological formations.",
+              "Remnants of demolished or collapsed buildings.",
+              "Construction materials for new buildings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Rubble specifically comes from destroyed structures, not natural formations.",
+              "Correct. 'Rubble' consists of broken pieces of buildings, such as stone, brick, and concrete.",
+              "Incorrect. Rubble is debris from destruction, not fresh materials for construction."
+            ]
+          },
+          {
+            "question": "The grammar point discusses 'Past Participles as Adjectives'. Which of the following sentences uses a past participle as an adjective?",
+            "options": [
+              "The rescuers worked tirelessly.",
+              "The earthquake had shaken the city.",
+              "The collapsed building was a hazard."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Tirelessly' is an adverb here.",
+              "Incorrect. 'Shaken' is part of a perfect verb tense, not an adjective directly modifying a noun.",
+              "Correct. 'Collapsed' is a past participle acting as an adjective describing the 'building'."
+            ]
+          },
+          {
+            "question": "Why is the use of 'entombed' as a past participle acting as an adjective effective in the news brief?",
+            "options": [
+              "It emphasizes the active role of the individuals.",
+              "It provides a concise and vivid description of their state.",
+              "It suggests a temporary and easily resolved situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Entombed' suggests a passive state of being trapped, not an active role.",
+              "Correct. Using a past participle like 'entombed' as an adjective efficiently conveys the trapped condition of the individuals.",
+              "Incorrect. 'Entombed' implies a serious, often difficult-to-resolve situation, not an easy one."
+            ]
+          },
+          {
+            "question": "What is the implied emotional state of the rescuers engaged in a 'desperate scramble'?",
+            "options": [
+              "Calm and methodical.",
+              "Anxious and urgent.",
+              "Optimistic and leisurely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Desperate scramble' indicates a lack of calm and methodical approach.",
+              "Correct. 'Desperate scramble' strongly suggests a feeling of anxiety and an urgent need to act quickly.",
+              "Incorrect. 'Desperate' contradicts optimism and 'scramble' contradicts leisureliness."
+            ]
+          },
+          {
+            "question": "What is the ultimate goal expressed by the news brief despite the 'immense challenges'?",
+            "options": [
+              "To rebuild the damaged infrastructure immediately.",
+              "To locate and extract any remaining survivors.",
+              "To conduct a thorough investigation into the cause."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Rebuilding is a later stage; the immediate goal is life-saving.",
+              "Correct. The brief explicitly states 'the resolve to locate and extract any remaining survivors remains steadfast'.",
+              "Incorrect. Investigation is important, but the immediate focus is on finding survivors."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief best exemplifies the concept of 'past participles as adjectives'?",
+            "options": [
+              "The nation continues to reel from the seismic event.",
+              "The precarious stability of damaged buildings presents a constant threat.",
+              "Authorities are appealing for international aid and specialized equipment."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence uses 'seismic' as an adjective, not a past participle.",
+              "Correct. 'Damaged' is the past participle of 'damage' acting as an adjective to describe 'buildings'.",
+              "Incorrect. This sentence does not contain a past participle functioning as a direct adjective to a noun in the same way."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

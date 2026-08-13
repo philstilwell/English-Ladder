@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-13",
+  "release_iso": "2026-08-13T10:55:46Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Putin can no longer claim victory in Ukraine, Nobel Peace Prize winner tells BBC",
+    "summary": "In an exclusive interview with the BBC’s Steve Rosenberg, Dmitry Muratov says the Kremlin leader can only \"destroy Ukraine, not conquer it\", with the war now in its fifth year.",
+    "link": "https://www.bbc.co.uk/news/articles/c74grmy2v7ko?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Nobel Winner: Putin Cannot Win in Ukraine",
+        "overview": "A Nobel Peace Prize winner says Russia's leader cannot win the war in Ukraine.",
+        "topic": "The war in Ukraine and statements by a Nobel Peace Prize winner.",
+        "news_brief_sentences": [
+          "Dmitry Muratov is a Nobel Peace Prize winner.",
+          "He had an interview with the BBC.",
+          "He talked about the war in Ukraine.",
+          "This war has continued for five years.",
+          "Muratov said that Russia's leader can only destroy Ukraine.",
+          "He believes Russia cannot conquer Ukraine.",
+          "The leader of Russia cannot claim victory.",
+          "This news is from a very respected person.",
+          "The war is very serious for everyone.",
+          "Muratov shared his strong opinion."
+        ],
+        "vocabulary": [
+          {
+            "term": "Nobel Peace Prize winner",
+            "part_of_speech": "noun phrase",
+            "definition": "A person who gets a special international award for working to make peace in the world."
+          },
+          {
+            "term": "interview",
+            "part_of_speech": "noun",
+            "definition": "A meeting where someone asks questions to another person to get information."
+          },
+          {
+            "term": "war",
+            "part_of_speech": "noun",
+            "definition": "A period of fighting between countries or groups, often with armies."
+          },
+          {
+            "term": "destroy",
+            "part_of_speech": "verb",
+            "definition": "To break something completely so it cannot be used or exist anymore."
+          },
+          {
+            "term": "conquer",
+            "part_of_speech": "verb",
+            "definition": "To take control of a country or a city by fighting and winning."
+          }
+        ],
+        "grammar": {
+          "concept": "Modal Verb: Can (Ability/Possibility)",
+          "explanation": "We use the word 'can' to talk about what is possible or what people are able to do. It shows ability or a general truth. For example, 'I can swim' means I have the ability. 'It can be cold in winter' means it is possible.",
+          "example_quote": "Russia's leader can only destroy Ukraine."
+        },
+        "quiz": [
+          {
+            "question": "Who is Dmitry Muratov, according to the news?",
+            "options": [
+              "A BBC reporter",
+              "A Nobel Peace Prize winner",
+              "The leader of Russia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he was interviewed by the BBC, not a reporter.",
+              "Yes, Dmitry Muratov is a Nobel Peace Prize winner, recognized for his work for peace.",
+              "No, he spoke about the leader of Russia, but he is not that leader."
+            ]
+          },
+          {
+            "question": "What did Dmitry Muratov have with the BBC?",
+            "options": [
+              "A celebration",
+              "An interview",
+              "A meeting about sports"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief does not mention a celebration.",
+              "Yes, he had an interview where he shared his thoughts on the war.",
+              "No, the news brief talks about the war, not sports."
+            ]
+          },
+          {
+            "question": "What is the main topic Muratov talked about?",
+            "options": [
+              "A new film",
+              "The war in Ukraine",
+              "His future plans"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is not about a film.",
+              "Yes, he spoke about the ongoing war in Ukraine.",
+              "No, the news brief focuses on the current conflict, not his personal future."
+            ]
+          },
+          {
+            "question": "How long has the war in Ukraine continued?",
+            "options": [
+              "One year",
+              "Five years",
+              "Ten years"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the war has been going on for a longer time.",
+              "Yes, the news brief states the war has continued for five years.",
+              "No, the news brief mentions five years, not ten years."
+            ]
+          },
+          {
+            "question": "What does Muratov say Russia's leader can only do to Ukraine?",
+            "options": [
+              "Help rebuild it",
+              "Destroy it",
+              "Visit it often"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Muratov believes the leader causes damage, not help.",
+              "Yes, he says Russia's leader can only destroy Ukraine, meaning break it completely.",
+              "No, the news brief is about conflict, not tourism."
+            ]
+          },
+          {
+            "question": "What does the word 'conquer' mean in this lesson?",
+            "options": [
+              "To make new friends",
+              "To take control of a country by fighting",
+              "To build new buildings"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'conquer' is not about friendship.",
+              "Yes, 'conquer' means to take full control of a place after fighting.",
+              "No, 'conquer' is about control, not construction."
+            ]
+          },
+          {
+            "question": "The sentence 'Russia's leader can only destroy Ukraine' uses 'can' to talk about what?",
+            "options": [
+              "A past event",
+              "An ability or possibility",
+              "A command"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'can' is not used for past events in this context.",
+              "Yes, 'can' shows what is possible or what someone is able to do.",
+              "No, 'can' is not a command in this sentence; it's about what is possible."
+            ]
+          },
+          {
+            "question": "Muratov says Russia's leader cannot achieve what in Ukraine?",
+            "options": [
+              "Talk to the BBC",
+              "Claim victory",
+              "Meet new people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the leader can talk, but the focus is on winning the war.",
+              "Yes, Muratov believes Russia's leader cannot claim victory in this war.",
+              "No, meeting people is not the main point of his statement."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'destroy'?",
+            "options": [
+              "To make something new",
+              "To break something completely",
+              "To fix something old"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'destroy' is the opposite of making something new.",
+              "Yes, 'destroy' means to break something completely so it cannot be used.",
+              "No, 'destroy' means to ruin, not to fix."
+            ]
+          },
+          {
+            "question": "What does Dmitry Muratov's title 'Nobel Peace Prize winner' tell us about him?",
+            "options": [
+              "He is a famous chef",
+              "He received a special award for peace efforts",
+              "He is a sports champion"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, his title is not related to cooking.",
+              "Yes, it means he won a very important award for working towards peace.",
+              "No, this title is for peace, not for sports."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Nobel Laureate Dmitry Muratov: Putin Cannot Claim Victory in Ukraine",
+        "overview": "Nobel Peace Prize winner Dmitry Muratov has stated that Russian President Vladimir Putin cannot achieve victory in Ukraine but can only destroy the country, with the conflict now in its fifth year.",
+        "topic": "International Conflict, Geopolitics, Nobel Laureates, War in Ukraine",
+        "news_brief_sentences": [
+          "Dmitry Muratov, a distinguished Nobel Peace Prize winner, recently shared his strong views regarding the ongoing conflict in Ukraine.",
+          "He spoke during an exclusive interview with the BBC’s Steve Rosenberg, offering critical insights into the war.",
+          "Muratov firmly believes that President Putin can no longer claim victory in Ukraine, despite Russia's military efforts.",
+          "The devastating conflict has now continued for a considerable period, entering its fifth year.",
+          "According to Muratov's assessment, the objective of the Kremlin leader has fundamentally changed.",
+          "He argues that Putin's forces are now primarily focused on the destruction of Ukraine.",
+          "Muratov emphasizes that it is impossible for Russia to truly conquer the nation through military means.",
+          "His perspective highlights the immense human cost and the unlikelihood of a decisive Russian triumph.",
+          "The Russian journalist's comments underline the devastating nature of modern warfare and its impact.",
+          "These statements provide an important voice against the conflict and its declared aims."
+        ],
+        "vocabulary": [
+          {
+            "term": "Nobel Peace Prize winner",
+            "part_of_speech": "noun phrase",
+            "definition": "A person who has received the prestigious international award for outstanding contributions to peace."
+          },
+          {
+            "term": "exclusive interview",
+            "part_of_speech": "noun phrase",
+            "definition": "A discussion with a person, published or broadcast only by one media organization."
+          },
+          {
+            "term": "claim victory",
+            "part_of_speech": "verb phrase",
+            "definition": "To state officially or publicly that one has won a battle, game, or competition."
+          },
+          {
+            "term": "Kremlin leader",
+            "part_of_speech": "noun phrase",
+            "definition": "A common way to refer to the President of Russia, as the Kremlin is the official residence and workplace of the Russian head of state."
+          },
+          {
+            "term": "conquer",
+            "part_of_speech": "verb",
+            "definition": "To take control of a country or city by force, usually with an army; to defeat an enemy or opponent."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to convey what someone else has said or thought. Common reporting verbs include 'say,' 'tell,' 'believe,' 'argue,' and 'emphasize.' They introduce either direct speech (e.g., He said, 'It's late.') or indirect speech (e.g., He said that it was late.), often leading to changes in tense and pronouns in indirect speech.",
+          "example_quote": "Muratov firmly believes that President Putin can no longer claim victory in Ukraine, despite Russia's military efforts."
+        },
+        "quiz": [
+          {
+            "question": "What is Dmitry Muratov's main message about the conflict in Ukraine?",
+            "options": [
+              "Putin will soon achieve a clear victory.",
+              "Putin can only destroy Ukraine, not conquer it.",
+              "The war will end peacefully very soon."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Muratov specifically states the opposite, that victory is not possible for Putin.",
+              "Correct. Muratov believes Putin's forces can destroy but not truly take control of Ukraine.",
+              "Incorrect. The news brief does not suggest an immediate peaceful end to the war."
+            ]
+          },
+          {
+            "question": "How long has the war in Ukraine been ongoing, according to the news brief?",
+            "options": [
+              "Less than a year.",
+              "Exactly three years.",
+              "It has entered its fifth year."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The conflict has been ongoing for a much longer period than a year.",
+              "Incorrect. The article states it has entered its fifth year, not exactly three.",
+              "Correct. The news brief clearly states that the conflict is now in its fifth year."
+            ]
+          },
+          {
+            "question": "Who conducted the exclusive interview with Dmitry Muratov?",
+            "options": [
+              "A journalist from The New York Times.",
+              "Steve Rosenberg of the BBC.",
+              "A representative from the Kremlin."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The interview was with the BBC, not The New York Times.",
+              "Correct. The news brief specifies that Steve Rosenberg from the BBC conducted the interview.",
+              "Incorrect. Muratov is critical of the Kremlin, so it is unlikely a Kremlin representative would interview him exclusively."
+            ]
+          },
+          {
+            "question": "What does the term 'claim victory' mean in the context of the news brief?",
+            "options": [
+              "To surrender to an opponent.",
+              "To officially announce winning a conflict.",
+              "To negotiate a peace agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Claim victory' means to state you have won, not to give up.",
+              "Correct. To 'claim victory' means to publicly declare success or triumph in a competition or war.",
+              "Incorrect. This term refers to winning, not to the process of making peace."
+            ]
+          },
+          {
+            "question": "According to Dmitry Muratov, what has happened to the Kremlin leader's objective?",
+            "options": [
+              "It has shifted towards peace talks.",
+              "It has fundamentally changed.",
+              "It remains exactly the same as at the start."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Muratov suggests destruction, not peace talks, as the shifted objective.",
+              "Correct. Muratov believes the objective has shifted from conquering to merely destroying Ukraine.",
+              "Incorrect. The news brief states his objective has 'fundamentally changed'."
+            ]
+          },
+          {
+            "question": "Which of the following is an example of a reporting verb?",
+            "options": [
+              "Russia",
+              "firmly",
+              "believes"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Russia' is a noun, not a reporting verb.",
+              "Incorrect. 'Firmly' is an adverb, describing how someone does something.",
+              "Correct. 'Believes' is a reporting verb used to convey someone's thoughts or opinions."
+            ]
+          },
+          {
+            "question": "What does Dmitry Muratov's status as a 'Nobel Peace Prize winner' imply about his statements?",
+            "options": [
+              "He supports military action.",
+              "His opinions carry significant international weight.",
+              "He is an expert in military strategy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Nobel Peace Prize winners typically advocate for peace, not military action.",
+              "Correct. Being a Nobel Peace Prize winner means his words often have considerable influence and credibility on global issues.",
+              "Incorrect. His expertise is in peace and journalism, not necessarily military strategy."
+            ]
+          },
+          {
+            "question": "What does Muratov say Putin cannot do to Ukraine?",
+            "options": [
+              "Negotiate with it.",
+              "Attack its infrastructure.",
+              "Truly conquer the nation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief does not discuss negotiation in this context.",
+              "Incorrect. Muratov implies destruction, which includes attacking infrastructure, but the key point is about ultimate control.",
+              "Correct. Muratov specifically states that Putin cannot 'truly conquer' Ukraine, emphasizing destruction over victory."
+            ]
+          },
+          {
+            "question": "In the sentence 'Muratov firmly believes that President Putin can no longer claim victory in Ukraine,' what word is acting as a reporting verb?",
+            "options": [
+              "firmly",
+              "believes",
+              "claim"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Firmly' is an adverb modifying the verb 'believes'.",
+              "Correct. 'Believes' is the reporting verb, indicating Muratov's thought or opinion.",
+              "Incorrect. 'Claim' is part of the verb phrase 'claim victory', but 'believes' is the main reporting verb for Muratov's overall stance."
+            ]
+          },
+          {
+            "question": "What is the 'Kremlin leader' a common way to refer to?",
+            "options": [
+              "The head of the Ukrainian military.",
+              "The President of Russia.",
+              "A commander in the Russian army."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The Kremlin is associated with Russia, not Ukraine.",
+              "Correct. The term 'Kremlin leader' is frequently used to refer to the President of Russia.",
+              "Incorrect. While related to Russia, it specifically refers to the head of state, not a military commander."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Muratov: Putin's Ukraine War Strategy Shifts to Destruction, Not Conquest",
+        "overview": "Nobel Peace Prize laureate Dmitry Muratov contends that after four years, Russian President Vladimir Putin's military objectives in Ukraine have irrevocably shifted from achieving outright victory to merely enacting widespread destruction, rendering true conquest impossible.",
+        "topic": "Geopolitical Analysis of the Russia-Ukraine War and International Perspectives",
+        "news_brief_sentences": [
+          "Dmitry Muratov, the esteemed Nobel Peace Prize winner, has asserted unequivocally that Russian President Vladimir Putin is no longer in a position to claim a genuine victory in Ukraine.",
+          "In a candid interview with the BBC, Muratov conveyed his firm belief that the Kremlin's strategic aims have fundamentally transformed.",
+          "The ongoing conflict, now in its fifth year, underscores the protracted and devastating nature of the hostilities.",
+          "Muratov posited that Putin can now only aspire to decimate Ukraine, not truly conquer it.",
+          "This assessment highlights a significant recalibration of potential outcomes as perceived by international observers.",
+          "The journalist's pronouncement reflects a broader sentiment among many analysts concerning the irreversible damage inflicted upon the nation.",
+          "Furthermore, Muratov's perspective suggests that the initial aspirations of a swift and decisive triumph have evaporated.",
+          "The sheer scale of destruction wrought by the invasion precludes any notion of a truly successful occupation in the traditional sense.",
+          "His comments serve as a poignant reminder of the war's grim reality and the immense human cost.",
+          "This unflinching appraisal challenges the narrative often propagated by official Russian sources regarding their military objectives."
+        ],
+        "vocabulary": [
+          {
+            "term": "decimate",
+            "part_of_speech": "verb",
+            "definition": "To reduce drastically in number or strength; to destroy a large proportion of something."
+          },
+          {
+            "term": "irreversible",
+            "part_of_speech": "adjective",
+            "definition": "Impossible to reverse or undo; permanent."
+          },
+          {
+            "term": "evaporated",
+            "part_of_speech": "verb (past participle)",
+            "definition": "To vanish, disappear, or fade away gradually, as if turning into vapor."
+          },
+          {
+            "term": "sheer scale",
+            "part_of_speech": "noun phrase",
+            "definition": "The immense or extensive size, degree, or magnitude of something, emphasizing its overwhelming nature."
+          },
+          {
+            "term": "unflinching appraisal",
+            "part_of_speech": "noun phrase",
+            "definition": "A resolute, steadfast, and honest evaluation or assessment, made without hesitation, fear, or shrinking from harsh realities."
+          }
+        ],
+        "grammar": {
+          "concept": "Formal Verbs of Reporting/Attribution",
+          "explanation": "In advanced English, especially in formal writing and news analysis, using a diverse range of sophisticated verbs to attribute statements or ideas adds nuance and precision. 'Posited' implies that someone put forward a theory, idea, or statement for consideration, often with a degree of intellectual formality, rather than merely stating or saying.",
+          "example_quote": "Muratov posited that Putin can now only aspire to decimate Ukraine, not truly conquer it."
+        },
+        "quiz": [
+          {
+            "question": "According to Dmitry Muratov, what has become of Russia's original objective in Ukraine?",
+            "options": [
+              "It has been achieved, leading to victory.",
+              "It has fundamentally transformed, focusing on destruction rather than conquest.",
+              "It remains unchanged despite the war's duration."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Muratov explicitly states Putin can no longer claim victory.",
+              "Correct. Muratov argues the focus is now on decimation, not conquest.",
+              "Incorrect. Muratov's assessment highlights a significant shift in strategic aims."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the meaning of 'decimate' as used in the news brief?",
+            "options": [
+              "To fully integrate a foreign territory.",
+              "To destroy a significant portion of something.",
+              "To provide aid and support during a conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. That refers to conquest or assimilation.",
+              "Correct. 'Decimate' means to drastically reduce or destroy a large part.",
+              "Incorrect. 'Decimate' implies destruction, not assistance."
+            ]
+          },
+          {
+            "question": "How long has the conflict in Ukraine been ongoing, according to the news brief?",
+            "options": [
+              "Three years.",
+              "Four years.",
+              "Five years."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief specifies a longer duration.",
+              "Incorrect. While close, the text explicitly states its current duration.",
+              "Correct. The news brief clearly states the war is now in its fifth year."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does 'irreversible' imply about the damage inflicted upon Ukraine?",
+            "options": [
+              "It is temporary and can be easily repaired.",
+              "It can only be undone with significant international aid.",
+              "It is permanent and cannot be reversed or undone."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Irreversible' denotes permanency.",
+              "Incorrect. The term suggests beyond repair, even with aid.",
+              "Correct. 'Irreversible' means something cannot be changed back or undone."
+            ]
+          },
+          {
+            "question": "What is the primary function of the verb 'posited' in the sentence 'Muratov posited that Putin can now only aspire to decimate Ukraine'?",
+            "options": [
+              "To express a strong command or instruction.",
+              "To formally attribute a statement or idea for consideration.",
+              "To describe a physical action or movement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Posited' is used for attributing statements, not giving orders.",
+              "Correct. 'Posited' is a formal verb used to introduce an idea or theory.",
+              "Incorrect. 'Posited' is an intellectual action, not a physical one."
+            ]
+          },
+          {
+            "question": "When the news brief states that initial aspirations have 'evaporated,' what does it mean?",
+            "options": [
+              "They have become stronger and more resolute.",
+              "They have slowly disappeared or faded away.",
+              "They have been realized ahead of schedule."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Evaporated' implies vanishing, not strengthening.",
+              "Correct. To 'evaporate' in this context means to vanish or disappear gradually.",
+              "Incorrect. The term suggests failure to realize, not premature success."
+            ]
+          },
+          {
+            "question": "What is Dmitry Muratov's significant international recognition mentioned in the news brief?",
+            "options": [
+              "He is a renowned military strategist.",
+              "He is a Nobel Peace Prize winner.",
+              "He is the current President of Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While he comments on strategy, his specific recognition is different.",
+              "Correct. The brief identifies him as the Nobel Peace Prize winner.",
+              "Incorrect. He is a journalist and laureate, not a head of state."
+            ]
+          },
+          {
+            "question": "The phrase 'sheer scale' of destruction emphasizes what aspect of the invasion's impact?",
+            "options": [
+              "The precise, surgical nature of the damage.",
+              "The limited and localized extent of the damage.",
+              "The immense and overwhelming magnitude of the damage."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Sheer scale' implies vastness, not precision.",
+              "Incorrect. The phrase contradicts the idea of limited damage.",
+              "Correct. 'Sheer scale' highlights the extreme and extensive magnitude of something."
+            ]
+          },
+          {
+            "question": "According to Muratov, what is the current, revised goal Putin can realistically pursue in Ukraine?",
+            "options": [
+              "To rebuild the nation.",
+              "To completely destroy Ukraine.",
+              "To establish a long-term peaceful resolution."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Muratov suggests destruction, not rebuilding.",
+              "Correct. Muratov states Putin can only 'decimate' or 'destroy' Ukraine.",
+              "Incorrect. The brief does not suggest a peaceful resolution as Putin's current goal."
+            ]
+          },
+          {
+            "question": "What quality does an 'unflinching appraisal' suggest about Muratov's assessment?",
+            "options": [
+              "It is hesitant and filled with doubt.",
+              "It is biased and overly optimistic.",
+              "It is resolute, honest, and made without fear or hesitation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Unyielding' suggests the opposite of hesitation.",
+              "Incorrect. 'Unflinching' implies objectivity and frankness, not bias.",
+              "Correct. An 'unflinching appraisal' is a steadfast and honest evaluation without hesitation or fear."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-14",
+  "release_iso": "2026-08-14T10:51:38Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "'Unprecedented' rain in Japan kills eight people",
+    "summary": "The storm cut power to more than 20,000 households and left 7,000 people stranded at Tokyo's Narita airport.",
+    "link": "https://www.bbc.co.uk/news/articles/cq561gpen8lo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Heavy Rain in Japan: Deaths and Disruptions",
+        "overview": "Strong rain in Japan caused problems, including deaths and power cuts.",
+        "topic": "Natural Disasters and Weather Events",
+        "news_brief_sentences": [
+          "Japan had very heavy rain recently.",
+          "This rain was \"unprecedented\", meaning it was very unusual.",
+          "Eight people were killed because of the strong rain.",
+          "The weather caused a big storm.",
+          "This storm cut power to many homes.",
+          "More than 20,000 households lost electricity.",
+          "Also, 7,000 people were stranded at Narita airport.",
+          "They could not leave the airport.",
+          "The strong rain made many problems for people.",
+          "It shows how dangerous bad weather can be."
+        ],
+        "vocabulary": [
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "Never happened before; very unusual."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Caused someone to die."
+          },
+          {
+            "term": "storm",
+            "part_of_speech": "noun",
+            "definition": "Very bad weather with strong wind and rain."
+          },
+          {
+            "term": "cut power",
+            "part_of_speech": "verb phrase",
+            "definition": "Stopped electricity from working."
+          },
+          {
+            "term": "stranded",
+            "part_of_speech": "adjective",
+            "definition": "Unable to leave a place because of a problem."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add '-ed' to regular verbs. Irregular verbs change their form, like 'is' becoming 'was' or 'are' becoming 'were'.",
+          "example_quote": "Eight people were killed because of the strong rain."
+        },
+        "quiz": [
+          {
+            "question": "What happened in Japan recently?",
+            "options": [
+              "A big earthquake",
+              "Very heavy rain",
+              "A strong snow storm"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is about rain, not an earthquake.",
+              "Yes, the news says Japan had very heavy rain.",
+              "No, the news talks about rain, not snow."
+            ]
+          },
+          {
+            "question": "What does \"unprecedented\" mean in the news?",
+            "options": [
+              "Happened many times",
+              "Very usual",
+              "Never happened before"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "That's not right; \"unprecedented\" means new and unusual.",
+              "Incorrect. \"Unprecedented\" means unusual, not usual.",
+              "Correct! \"Unprecedented\" means something new and has not happened before."
+            ]
+          },
+          {
+            "question": "How many people were killed because of the rain?",
+            "options": [
+              "Seven",
+              "Eight",
+              "Twenty"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, seven thousand people were stranded, not killed.",
+              "Yes, the news says eight people were killed.",
+              "No, twenty thousand households lost power."
+            ]
+          },
+          {
+            "question": "What did the storm do to many homes?",
+            "options": [
+              "Built new homes",
+              "Cut power",
+              "Cleaned the homes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The storm caused damage, it didn't build homes.",
+              "Correct. The storm stopped the electricity in homes.",
+              "The storm caused damage, it didn't clean homes."
+            ]
+          },
+          {
+            "question": "Where were 7,000 people \"stranded\"?",
+            "options": [
+              "At their homes",
+              "At the train station",
+              "At Narita airport"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, they were trying to travel.",
+              "Not a train station, but another travel hub.",
+              "Yes, the news says 7,000 people were stranded at Narita airport."
+            ]
+          },
+          {
+            "question": "What is a \"storm\"?",
+            "options": [
+              "A sunny day",
+              "A hot summer",
+              "Very bad weather with strong wind and rain"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A storm is the opposite of a sunny day.",
+              "A storm is not just hot weather.",
+              "Yes, a storm is very bad weather with strong wind and rain."
+            ]
+          },
+          {
+            "question": "What tense do we use for finished actions in the past?",
+            "options": [
+              "Simple Present",
+              "Simple Past",
+              "Future Simple"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, simple present is for current or habitual actions.",
+              "Yes, we use the simple past for actions that finished in the past.",
+              "No, future simple is for actions that will happen."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense?",
+            "options": [
+              "It rains today.",
+              "Eight people are killed.",
+              "Eight people were killed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the simple present tense.",
+              "This is present tense, not past.",
+              "Correct! \"were killed\" is the simple past passive form."
+            ]
+          },
+          {
+            "question": "What did \"cut power\" mean for 20,000 households?",
+            "options": [
+              "They got more electricity",
+              "They lost electricity",
+              "They paid for electricity"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'cut power' means the opposite.",
+              "Yes, 'cut power' means the electricity stopped working.",
+              "Paying for electricity is not related to 'cut power'."
+            ]
+          },
+          {
+            "question": "Why were people \"stranded\" at the airport?",
+            "options": [
+              "They wanted to stay",
+              "The weather made them unable to leave",
+              "They were waiting for food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they were stuck, not choosing to stay.",
+              "Yes, \"stranded\" means they could not leave because of the situation, like bad weather.",
+              "No, the news does not mention food problems at the airport."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Japan's Unprecedented Rain Causes Fatalities and Disruptions",
+        "overview": "Japan recently experienced extreme rainfall, which led to eight fatalities and significant disruptions, including widespread power outages and thousands of travelers being stranded at an airport.",
+        "topic": "Extreme Weather in Japan: Fatalities, Power Outages, and Travel Disruptions",
+        "news_brief_sentences": [
+          "Japan experienced unprecedented heavy rainfall over the weekend, leading to severe disruptions across several regions.",
+          "This extreme weather event unfortunately resulted in the deaths of eight individuals.",
+          "The powerful storm cut power to a significant number of residents in affected areas.",
+          "More than 20,000 households were left without electricity due to the severe conditions.",
+          "The intense rainfall also caused widespread travel chaos, affecting thousands of people.",
+          "Approximately 7,000 individuals were left stranded at Tokyo's Narita airport.",
+          "Many flights were cancelled, and train services were suspended, severely impacting travel plans.",
+          "Local authorities issued urgent warnings for potential landslides and flooding as the rain continued.",
+          "Emergency response teams worked tirelessly to restore essential services and assist those impacted by the storm.",
+          "The Japanese government has initiated efforts to assess the full extent of the damage caused by these extreme weather conditions."
+        ],
+        "vocabulary": [
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "Never done or known before; something new and without an earlier example."
+          },
+          {
+            "term": "cut power",
+            "part_of_speech": "verb phrase",
+            "definition": "To stop the supply of electricity to an area or building."
+          },
+          {
+            "term": "households",
+            "part_of_speech": "noun",
+            "definition": "All the people who live together in one house or flat."
+          },
+          {
+            "term": "stranded",
+            "part_of_speech": "adjective",
+            "definition": "Left in a place without any way of leaving it, usually in a difficult situation."
+          },
+          {
+            "term": "airport",
+            "part_of_speech": "noun",
+            "definition": "A place where aircraft take off and land, with buildings for passengers and cargo."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the doer. We often use it when we don't know or don't want to say who performed the action. It is formed with a form of the verb 'to be' followed by the past participle of the main verb.",
+          "example_quote": "Approximately 7,000 individuals were left stranded at Tokyo's Narita airport."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary cause of the disruptions in Japan mentioned in the news brief?",
+            "options": [
+              "A major earthquake",
+              "Unprecedented heavy rainfall",
+              "A severe heatwave"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifically mentions heavy rainfall, not an earthquake.",
+              "Correct! The article states 'unprecedented heavy rainfall' caused the problems.",
+              "Incorrect. The news brief describes a storm with rain, not extreme heat."
+            ]
+          },
+          {
+            "question": "How many people unfortunately died as a result of this weather event?",
+            "options": [
+              "Seven individuals",
+              "Eight individuals",
+              "Twenty individuals"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Not quite. The news brief specifies a slightly higher number.",
+              "That's right. The article states 'eight individuals' died.",
+              "No, the number of fatalities mentioned was much lower."
+            ]
+          },
+          {
+            "question": "What does the word 'unprecedented' mean in the context of the news brief?",
+            "options": [
+              "Expected and normal",
+              "Never done or known before",
+              "Slightly unusual"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unprecedented' means it was completely new, not normal.",
+              "Correct! It refers to something that has not happened or been experienced before.",
+              "Not quite. 'Unprecedented' implies something much more significant than 'slightly unusual'."
+            ]
+          },
+          {
+            "question": "How many households lost electricity due to the storm?",
+            "options": [
+              "Around 7,000 households",
+              "More than 20,000 households",
+              "Exactly 8,000 households"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 7,000 refers to people stranded, not households without power.",
+              "Correct! The news brief clearly states 'More than 20,000 households were left without electricity'.",
+              "No, the figure given for households without power was much higher."
+            ]
+          },
+          {
+            "question": "What happened to approximately 7,000 individuals at Tokyo's Narita airport?",
+            "options": [
+              "They were welcomed by the mayor.",
+              "They were left stranded.",
+              "They received free flights."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The situation was negative, not a welcoming event.",
+              "That's correct. The news brief states they 'were left stranded' at the airport.",
+              "No, they were unable to travel, so free flights were not the outcome."
+            ]
+          },
+          {
+            "question": "Which phrase means to stop the supply of electricity?",
+            "options": [
+              "restore power",
+              "cut power",
+              "gain power"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Restore power' means to bring it back.",
+              "Correct! 'Cut power' means to interrupt or stop the electricity supply.",
+              "Incorrect. 'Gain power' has a different meaning, often related to control."
+            ]
+          },
+          {
+            "question": "What does the grammar concept 'Passive Voice' typically emphasize?",
+            "options": [
+              "The person or thing performing the action.",
+              "The action itself or the receiver of the action.",
+              "The time when the action happened."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice generally de-emphasizes the doer of the action.",
+              "Correct! The passive voice shifts focus to what happened or who was affected.",
+              "No, while tense is part of a verb, the passive voice focuses on the action's recipient."
+            ]
+          },
+          {
+            "question": "Which of the following sentences from the news brief is an example of the passive voice?",
+            "options": [
+              "Emergency response teams worked tirelessly.",
+              "The Japanese government has initiated efforts.",
+              "Approximately 7,000 individuals were left stranded."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This sentence uses active voice, showing what the teams did.",
+              "Incorrect. This is an active voice sentence, showing what the government did.",
+              "Correct! 'Were left stranded' uses 'to be' + past participle, focusing on the individuals receiving the action."
+            ]
+          },
+          {
+            "question": "What are 'households' as defined in the vocabulary section?",
+            "options": [
+              "Only one person living alone",
+              "All the people who live together in one house or flat",
+              "Buildings for business only"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Households can include more than one person.",
+              "Correct! This is the precise definition provided for 'households'.",
+              "Incorrect. Households specifically refer to residential units, not businesses."
+            ]
+          },
+          {
+            "question": "Why were people 'stranded' at Tokyo's Narita airport?",
+            "options": [
+              "Because they missed their alarm clocks.",
+              "Due to flight cancellations and suspended train services.",
+              "They simply preferred to stay at the airport."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The cause was related to the storm's impact on travel, not personal oversight.",
+              "Correct! The news brief mentions 'Many flights were cancelled, and train services were suspended'.",
+              "Incorrect. Being 'stranded' implies being stuck against one's will, not by choice."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Japan Grapples with Deadly, Unprecedented Rainfall",
+        "overview": "Japan has recently faced an extraordinary weather event, as torrential and unprecedented rainfall led to a tragic loss of life, widespread power outages, and significant travel disruption, particularly at a major international airport.",
+        "topic": "Natural Disasters and Extreme Weather Events in Japan",
+        "news_brief_sentences": [
+          "Japan is currently contending with the aftermath of an unprecedented weather phenomenon, as torrential rainfall has caused significant fatalities and extensive infrastructure damage.",
+          "The severe meteorological event has tragically resulted in eight confirmed deaths across various regions, underscoring the formidable power of the downpour.",
+          "Beyond the grim human cost, the deluge has severely impacted daily life for tens of thousands of residents.",
+          "Authorities reported that the storm effectively cut power to more than 20,000 households, plunging communities into darkness and disrupting essential services.",
+          "This widespread electrical failure compounded the challenges faced by emergency response teams operating in adverse conditions.",
+          "Furthermore, the severe weather led to considerable transportation chaos, most notably at Tokyo's Narita International Airport.",
+          "A significant consequence was that approximately 7,000 travellers found themselves stranded at the airport, unable to proceed with their journeys due to flight cancellations and ground transport issues.",
+          "The situation at Narita underscored the broader disruption caused by the extreme precipitation across the Kanto region.",
+          "Emergency services have been mobilised to address immediate needs, including rescue operations and the restoration of critical utilities.",
+          "The government is now assessing the full scale of the devastation and coordinating recovery efforts following this natural disaster which claimed a grim toll of lives."
+        ],
+        "vocabulary": [
+          {
+            "term": "Unprecedented",
+            "part_of_speech": "Adjective",
+            "definition": "Never having happened or existed before; exceptional in its scale or nature, especially in a negative or challenging context."
+          },
+          {
+            "term": "Torrential rainfall",
+            "part_of_speech": "Noun phrase",
+            "definition": "Extremely heavy and abundant rain that falls very quickly and continuously, often leading to flooding."
+          },
+          {
+            "term": "Cut power",
+            "part_of_speech": "Verb phrase",
+            "definition": "To interrupt or stop the supply of electricity to a place, often due to an outage or deliberate action."
+          },
+          {
+            "term": "Stranded",
+            "part_of_speech": "Adjective",
+            "definition": "Left without the means to move from somewhere; stuck in an isolated or difficult position, often due to travel disruptions."
+          },
+          {
+            "term": "Grim toll",
+            "part_of_speech": "Noun phrase",
+            "definition": "The distressing or tragic number of deaths, casualties, or negative consequences resulting from an event."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Consequence",
+          "explanation": "Present participle clauses (starting with -ing verbs) can be used to add information about the result or consequence of the action in the main clause. They often replace a clause introduced by 'and as a result' or 'which resulted in'. This construction creates a more concise and formal sentence structure, often seen in journalistic writing.",
+          "example_quote": "Authorities reported that the storm effectively cut power to more than 20,000 households, plunging communities into darkness and disrupting essential services."
+        },
+        "quiz": [
+          {
+            "question": "What was one of the immediate and widespread consequences of the torrential rainfall in Japan?",
+            "options": [
+              "A massive increase in air traffic.",
+              "Widespread electrical outages.",
+              "A significant boost to local tourism."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The storm led to considerable transportation chaos and stranded travelers.",
+              "Correct. The news brief explicitly states that power was cut to over 20,000 households, leading to widespread electrical outages.",
+              "Incorrect. The disruption and fatalities would likely deter, not boost, tourism."
+            ]
+          },
+          {
+            "question": "In the context of the news, what does 'unprecedented' primarily imply about the weather event?",
+            "options": [
+              "It was expected and common for the season.",
+              "It occurred previously on a larger scale.",
+              "It was unique and never experienced before."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Unprecedented' means it has not happened before.",
+              "Incorrect. 'Unprecedented' suggests it's new, not that it occurred before.",
+              "Correct. 'Unprecedented' directly means something that has never happened or existed before, emphasizing its unique and unusual nature."
+            ]
+          },
+          {
+            "question": "How many fatalities were confirmed as a direct result of the severe meteorological event?",
+            "options": [
+              "More than twenty thousand.",
+              "Seven thousand.",
+              "Eight."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 20,000 refers to households that lost power, not deaths.",
+              "Incorrect. 7,000 refers to people stranded at Narita airport.",
+              "Correct. The news brief clearly states that the event 'tragically resulted in eight confirmed deaths.'"
+            ]
+          },
+          {
+            "question": "When 7,000 travellers were 'stranded' at Narita Airport, what does this indicate about their situation?",
+            "options": [
+              "They were happily waiting for their flights to resume.",
+              "They were left without means to continue their journey.",
+              "They had voluntarily decided to stay at the airport."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Being 'stranded' implies being stuck, often involuntarily and with inconvenience.",
+              "Correct. To be 'stranded' means to be left somewhere without the means to move from there, typically due to unforeseen circumstances.",
+              "Incorrect. The phrase 'stranded' implies they were unable to leave due to circumstances beyond their control, not a voluntary choice."
+            ]
+          },
+          {
+            "question": "In the sentence 'Authorities reported that the storm effectively cut power to more than 20,000 households, plunging communities into darkness,' what does the participle clause 'plunging communities into darkness' signify?",
+            "options": [
+              "It describes the primary cause of the power cut.",
+              "It introduces a contrasting idea to the power cut.",
+              "It expresses a direct consequence of the power cut."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The power cut is the cause, and the plunging into darkness is the result.",
+              "Incorrect. Participle clauses in this context typically indicate result or additional information, not contrast.",
+              "Correct. The present participle clause 'plunging...' clearly indicates the immediate effect or result of the power being cut."
+            ]
+          },
+          {
+            "question": "What is the most accurate synonym for 'cut power' as used in the news brief?",
+            "options": [
+              "Increased electricity supply.",
+              "Restored power connections.",
+              "Disconnected electricity."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Cut power' means to stop the supply, not increase it.",
+              "Incorrect. 'Cut power' is the opposite of restoring power.",
+              "Correct. To 'cut power' means to stop the flow of electricity, effectively disconnecting the supply."
+            ]
+          },
+          {
+            "question": "What was the primary reason for the large number of people stranded at Narita International Airport?",
+            "options": [
+              "A major festival was taking place.",
+              "Flight cancellations and ground transport issues due to severe weather.",
+              "Airport staff went on strike."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief mentions the severe weather and its consequences as the cause.",
+              "Correct. The news brief explicitly links the stranded travelers to 'flight cancellations and ground transport issues' resulting from the weather.",
+              "Incorrect. The news brief makes no mention of a strike."
+            ]
+          },
+          {
+            "question": "Which scenario best illustrates the meaning of 'torrential rainfall'?",
+            "options": [
+              "A gentle drizzle lasting several hours.",
+              "A brief, light shower in the morning.",
+              "Heavy, continuous downpours leading to flooding."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. A gentle drizzle is the opposite of torrential.",
+              "Incorrect. Torrential rainfall is typically heavy and prolonged, not brief and light.",
+              "Correct. 'Torrential rainfall' refers to extremely heavy rain that falls rapidly and continuously, often resulting in significant water accumulation and flooding."
+            ]
+          },
+          {
+            "question": "If you were to rewrite the sentence 'The severe meteorological event has tragically resulted in eight confirmed deaths... underscoring the formidable power of the downpour' without a participle clause, which option maintains a similar meaning and formality?",
+            "options": [
+              "...because it underscored the formidable power of the downpour.",
+              "...and this underscores the formidable power of the downpour.",
+              "...so that it underscored the formidable power of the downpour."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Because it underscored' implies a cause, not a consequence or additional information.",
+              "Correct. The participle clause 'underscoring' acts similarly to 'and this underscores,' presenting an additional, often consequential, piece of information in a formal style.",
+              "Incorrect. 'So that' typically introduces purpose or result in a different structural way."
+            ]
+          },
+          {
+            "question": "The phrase 'grim toll of lives' in the news brief refers to:",
+            "options": [
+              "The optimistic outlook on the recovery efforts.",
+              "The tragic number of deaths caused by the disaster.",
+              "The challenging financial cost of the damage."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Grim' implies something unpleasant or depressing, not optimistic.",
+              "Correct. A 'grim toll' specifically refers to a distressing count of casualties or deaths from an unfortunate event.",
+              "Incorrect. While financial costs might be part of the disaster, 'grim toll of lives' specifically refers to human fatalities."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

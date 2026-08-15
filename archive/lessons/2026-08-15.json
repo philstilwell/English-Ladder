@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-15",
+  "release_iso": "2026-08-15T10:15:27Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Powerful 7.7-magnitude earthquake kills at least 38 in Indonesia",
+    "summary": "A search and rescue operation is under way to find survivors in Flores, an island in eastern Indonesia.",
+    "link": "https://www.bbc.co.uk/news/articles/c5y0zz63gero?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Indonesia Earthquake: Rescue Efforts Underway",
+        "overview": "A strong earthquake hit Indonesia, and rescue workers are looking for survivors.",
+        "topic": "Natural Disasters: Earthquakes and Rescue",
+        "news_brief_sentences": [
+          "A powerful earthquake hit Indonesia.",
+          "It was a 7.7-magnitude earthquake.",
+          "This earthquake killed at least 38 people.",
+          "Many people died in the disaster.",
+          "The earthquake happened in eastern Indonesia.",
+          "The place is an island called Flores.",
+          "Now, a search and rescue operation is under way.",
+          "Workers want to find survivors.",
+          "They are looking for people who are still alive.",
+          "This operation is very important for the people of Flores."
+        ],
+        "vocabulary": [
+          {
+            "term": "powerful",
+            "part_of_speech": "adjective",
+            "definition": "very strong; having great strength or force."
+          },
+          {
+            "term": "earthquake",
+            "part_of_speech": "noun",
+            "definition": "A sudden violent shaking of the ground, sometimes causing great destruction."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Caused someone or something to die; took life away."
+          },
+          {
+            "term": "rescue operation",
+            "part_of_speech": "noun phrase",
+            "definition": "Organized work to save people from danger or a difficult situation."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who are still alive after a dangerous event or accident."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense (Regular Verbs)",
+          "explanation": "We use the simple past tense to talk about actions that started and finished in the past. For many verbs, we add '-ed' to the end to make them past tense.",
+          "example_quote": "This earthquake killed at least 38 people."
+        },
+        "quiz": [
+          {
+            "question": "What kind of natural event happened in Indonesia?",
+            "options": [
+              "A big flood",
+              "An earthquake",
+              "A strong wind"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief talks about ground shaking, not water.",
+              "That's right! A powerful earthquake hit Indonesia.",
+              "Not a strong wind. The ground shook greatly."
+            ]
+          },
+          {
+            "question": "How strong was the earthquake that hit Indonesia?",
+            "options": [
+              "7.7-magnitude",
+              "3.8-magnitude",
+              "10.0-magnitude"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The news brief stated it was a 7.7-magnitude earthquake.",
+              "No, 38 is the number of people who died, not the earthquake's strength.",
+              "This number is too high. The actual magnitude was 7.7."
+            ]
+          },
+          {
+            "question": "According to the news, how many people did the earthquake kill at least?",
+            "options": [
+              "At least 7 people",
+              "At least 38 people",
+              "At least 10 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Please check the news brief again. The number was higher.",
+              "Yes, the powerful earthquake killed at least 38 people.",
+              "This number is not correct based on the news brief."
+            ]
+          },
+          {
+            "question": "Where exactly did the earthquake happen in Indonesia?",
+            "options": [
+              "The capital city",
+              "An island called Flores",
+              "The western part"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief specifies a different location.",
+              "That's right! It happened on an island named Flores.",
+              "No, the news says it was in eastern Indonesia, specifically Flores."
+            ]
+          },
+          {
+            "question": "What is currently happening in Flores after the earthquake?",
+            "options": [
+              "A party",
+              "A search and rescue operation",
+              "A holiday"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, people are in danger, so there is no party.",
+              "Correct! A search and rescue operation is under way to find people.",
+              "This is not a time for a holiday. People need help."
+            ]
+          },
+          {
+            "question": "What does the word \"powerful\" mean in the news brief?",
+            "options": [
+              "Very small",
+              "Very strong",
+              "Very quiet"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a powerful earthquake is not small; it is the opposite.",
+              "Exactly! \"Powerful\" means very strong, like a powerful earthquake.",
+              "Powerful does not mean quiet. It refers to great force."
+            ]
+          },
+          {
+            "question": "Who are \"survivors\" in the context of this news?",
+            "options": [
+              "People who helped",
+              "People who are still alive",
+              "People who left the island"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, survivors are not necessarily the ones who helped.",
+              "You got it! Survivors are people who lived through the dangerous event.",
+              "This is not necessarily true. Survivors are those who are alive, regardless of movement."
+            ]
+          },
+          {
+            "question": "What does \"killed\" mean in the sentence: \"This earthquake killed at least 38 people\"?",
+            "options": [
+              "Made them laugh",
+              "Caused them to die",
+              "Made them tired"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"killed\" has a much more serious meaning.",
+              "Correct. \"Killed\" means the earthquake caused the death of these people.",
+              "Being killed is more than just being tired; it means losing life."
+            ]
+          },
+          {
+            "question": "Which word describes the work done to save people from danger?",
+            "options": [
+              "Operation",
+              "Search",
+              "Rescue"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "An operation is a general plan or action, but not specifically about saving.",
+              "Search means to look for something, but not necessarily to save.",
+              "Yes, \"rescue\" means to save someone from a dangerous situation."
+            ]
+          },
+          {
+            "question": "In the sentence, \"This earthquake killed at least 38 people,\" which word shows the action finished in the past?",
+            "options": [
+              "earthquake",
+              "killed",
+              "people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Earthquake\" is the subject of the sentence, not the action word.",
+              "That's right! \"Killed\" is the simple past tense of \"kill\", showing the action is complete.",
+              "\"People\" is a noun, telling us who, not when the action happened."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Indonesia Hit by Powerful 7.7-Magnitude Earthquake: Rescue Efforts Underway",
+        "overview": "A devastating 7.7-magnitude earthquake has struck eastern Indonesia, resulting in at least 38 deaths and prompting a major search and rescue operation on Flores island to find survivors.",
+        "topic": "Natural Disasters and Emergency Response",
+        "news_brief_sentences": [
+          "A **powerful** 7.7-**magnitude** earthquake has recently struck eastern Indonesia, near the island of Flores.",
+          "This devastating seismic event tragically **kills** at least 38 people, causing profound sorrow.",
+          "The earthquake's strong tremors led to significant destruction across the affected region.",
+          "Local authorities and international aid groups immediately launched a large-scale rescue **operation**.",
+          "Their primary goal is to locate and assist any remaining **survivors** trapped under rubble.",
+          "Many homes and crucial infrastructure **were severely damaged** by the force of the quake.",
+          "The search and rescue teams are working tirelessly around the clock in challenging conditions.",
+          "Access to some remote areas on Flores island remains difficult, complicating aid efforts.",
+          "Medical supplies and emergency shelter are urgently needed for those displaced by the disaster.",
+          "The full extent of the damage is still being assessed as rescue efforts continue."
+        ],
+        "vocabulary": [
+          {
+            "term": "powerful",
+            "part_of_speech": "adjective",
+            "definition": "Having great physical strength or force; very strong or intense, like a strong earthquake."
+          },
+          {
+            "term": "magnitude",
+            "part_of_speech": "noun",
+            "definition": "A measure of the energy released by an earthquake, often indicated on a scale like the Richter scale."
+          },
+          {
+            "term": "kills",
+            "part_of_speech": "verb",
+            "definition": "Causes the death of a person, animal, or other living thing."
+          },
+          {
+            "term": "operation",
+            "part_of_speech": "noun",
+            "definition": "A planned activity or series of actions for a specific purpose, such as a rescue mission."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who remain alive after an event in which others have died, especially a disaster or accident."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the object receiving the action, rather than the person or thing performing the action. It's often formed with 'to be' + past participle. For example, instead of 'The earthquake damaged homes,' we can say 'Homes were damaged by the earthquake' to emphasize the homes.",
+          "example_quote": "Many homes and crucial infrastructure were severely damaged by the force of the quake."
+        },
+        "quiz": [
+          {
+            "question": "What was the magnitude of the earthquake that struck eastern Indonesia?",
+            "options": [
+              "A 6.5-magnitude",
+              "A 7.7-magnitude",
+              "A 8.1-magnitude"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The earthquake was more powerful than 6.5-magnitude.",
+              "That's correct! The earthquake had a powerful 7.7-magnitude.",
+              "Incorrect. The magnitude reported was 7.7, not 8.1."
+            ]
+          },
+          {
+            "question": "Which Indonesian island is particularly affected by the rescue operation?",
+            "options": [
+              "Sumatra",
+              "Java",
+              "Flores"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Sumatra is a different island far from the reported event.",
+              "Incorrect. Java is a major island but not the primary focus of this rescue.",
+              "Correct. Flores is the island where the main search and rescue operation is concentrated."
+            ]
+          },
+          {
+            "question": "According to the news brief, how many people were tragically killed by the earthquake?",
+            "options": [
+              "At least 18 people",
+              "At least 28 people",
+              "At least 38 people"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The death toll was higher than 18.",
+              "Incorrect. The number of fatalities was higher than 28.",
+              "Correct. The earthquake tragically kills at least 38 people."
+            ]
+          },
+          {
+            "question": "What is the primary goal of the large-scale rescue operation?",
+            "options": [
+              "To rebuild damaged infrastructure",
+              "To assess economic losses",
+              "To locate and assist survivors"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Rebuilding is a long-term goal, not the immediate primary goal of rescue.",
+              "Incorrect. Assessing economic losses comes after the immediate rescue efforts.",
+              "Correct. The main goal is to find and help any people who survived and might be trapped."
+            ]
+          },
+          {
+            "question": "What does the word 'powerful' describe in the context of the earthquake?",
+            "options": [
+              "The gentle nature of the tremors",
+              "The weak impact on infrastructure",
+              "The great strength or intensity of the earthquake"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Powerful' means the opposite of gentle.",
+              "Incorrect. A powerful earthquake would have a strong, not weak, impact.",
+              "Correct. 'Powerful' indicates the earthquake had great force and intensity, causing significant damage."
+            ]
+          },
+          {
+            "question": "In the sentence 'Many homes and crucial infrastructure were severely damaged by the force of the quake,' what is the grammatical structure used?",
+            "options": [
+              "Present perfect tense",
+              "Passive voice",
+              "Conditional sentence"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence does not use the present perfect tense.",
+              "Correct. The sentence 'were severely damaged' is an example of the passive voice, focusing on the action received.",
+              "Incorrect. This sentence is not expressing a condition or consequence."
+            ]
+          },
+          {
+            "question": "What is the meaning of the term 'survivors' as used in the news brief?",
+            "options": [
+              "People who caused the disaster",
+              "People who remained alive after the event",
+              "People who provided medical aid"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Survivors are victims of the event, not its cause.",
+              "Correct. Survivors are those who stayed alive despite the dangerous event.",
+              "Incorrect. While medical aid is important, 'survivors' refers to those who endured the event."
+            ]
+          },
+          {
+            "question": "What challenges are complicating the aid efforts in the affected region?",
+            "options": [
+              "Lack of volunteers",
+              "Difficulty accessing some remote areas",
+              "Heavy rainfall"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention a lack of volunteers.",
+              "Correct. The news brief states that access to some remote areas remains difficult.",
+              "Incorrect. While possible in real life, heavy rainfall is not mentioned as a complication in the brief."
+            ]
+          },
+          {
+            "question": "Which of these is an example of the active voice?",
+            "options": [
+              "Homes were damaged.",
+              "Aid efforts are complicated.",
+              "The earthquake kills people."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Were damaged' is in the passive voice.",
+              "Incorrect. 'Are complicated' is in the passive voice.",
+              "Correct. 'The earthquake kills people' shows the subject (earthquake) performing the action (kills)."
+            ]
+          },
+          {
+            "question": "What is still being assessed as rescue efforts continue?",
+            "options": [
+              "The history of earthquakes in Indonesia",
+              "The political impact of the disaster",
+              "The full extent of the damage"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While interesting, this is not what the brief states is currently being assessed.",
+              "Incorrect. The political impact is not mentioned as being assessed in the brief.",
+              "Correct. The brief states, 'The full extent of the damage is still being assessed as rescue efforts continue.'"
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Indonesia Grapples with Aftermath of Devastating 7.7-Magnitude Quake",
+        "overview": "Eastern Indonesia is confronting the grave repercussions of a colossal 7.7-magnitude earthquake, precipitating an intensive search and rescue mission to locate survivors amidst the widespread devastation.",
+        "topic": "Natural Disaster Response and Seismic Activity in the Indonesian Archipelago",
+        "news_brief_sentences": [
+          "A devastating 7.7-magnitude earthquake has struck eastern Indonesia, claiming at least 38 lives and precipitating a massive humanitarian response.",
+          "The seismic event, centered near Flores island, has inflicted significant structural damage and widespread disruption.",
+          "Authorities have launched unremitting efforts to locate survivors trapped under rubble and provide immediate aid to affected regions.",
+          "The sheer power of the quake has rendered many areas inaccessible, complicating the already perilous conditions for rescue teams.",
+          "Concerns are mounting for the well-being of residents in remote villages, where communication lines remain severely disrupted.",
+          "The Indonesian archipelago, situated on the Pacific Ring of Fire, is highly susceptible to such powerful geological tremors.",
+          "International aid agencies are preparing to deploy resources, acknowledging the scale of the unfolding catastrophe.",
+          "The immediate aftermath has left grief-stricken communities grappling with immense loss and uncertainty.",
+          "This tragic incident is reverberating across the nation, highlighting the persistent threat posed by natural hazards.",
+          "Emergency services are working around the clock, prioritizing the urgent extraction of any remaining survivors."
+        ],
+        "vocabulary": [
+          {
+            "term": "precipitating",
+            "part_of_speech": "Verb (present participle)",
+            "definition": "Causing an event or situation, typically one that is unwelcome or undesirable, to happen suddenly, unexpectedly, or prematurely."
+          },
+          {
+            "term": "unremitting efforts",
+            "part_of_speech": "Noun phrase",
+            "definition": "Persistent and continuous endeavors without interruption or abatement, often in the face of difficulties."
+          },
+          {
+            "term": "perilous conditions",
+            "part_of_speech": "Noun phrase",
+            "definition": "Extremely hazardous or dangerous circumstances that involve great risk to safety or well-being."
+          },
+          {
+            "term": "grief-stricken communities",
+            "part_of_speech": "Noun phrase",
+            "definition": "Groups of people suffering from intense sorrow, typically due to a significant loss or tragedy."
+          },
+          {
+            "term": "reverberating across",
+            "part_of_speech": "Verb phrase",
+            "definition": "Having a far-reaching and lasting effect or impact on a wide area or group of people."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participle Clause for Consequence/Result",
+          "explanation": "In formal English, a present participle clause (starting with an -ing form) can be used after a main clause to indicate a consequence or result of the action described in the main clause. This construction offers a concise and sophisticated way to link cause and effect, often implying that the actions occur simultaneously or in immediate succession.",
+          "example_quote": "A devastating 7.7-magnitude earthquake has struck eastern Indonesia, claiming at least 38 lives and precipitating a massive humanitarian response."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the ongoing operations in Flores following the earthquake?",
+            "options": [
+              "Conducting extensive geological surveys.",
+              "Locating survivors and providing aid.",
+              "Rebuilding damaged infrastructure immediately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While geological surveys might occur later, the immediate priority is finding survivors, as stated in the news.",
+              "Correct. The text explicitly mentions 'unremitting efforts to locate survivors trapped under rubble and provide immediate aid.'",
+              "Infrastructure rebuilding is a long-term goal; the urgent task is rescue and humanitarian assistance."
+            ]
+          },
+          {
+            "question": "The term 'precipitating' in the brief most closely implies what about the humanitarian response?",
+            "options": [
+              "It was delayed due to the earthquake.",
+              "It was caused or triggered by the earthquake.",
+              "It was anticipated before the earthquake."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Precipitating' means to cause something to happen, not to delay it.",
+              "Correct. The earthquake directly caused the 'massive humanitarian response' to begin.",
+              "While disaster preparedness exists, 'precipitating' refers to the immediate causation, not prior anticipation."
+            ]
+          },
+          {
+            "question": "Why are remote villages a particular concern for authorities?",
+            "options": [
+              "They are likely to have experienced less damage.",
+              "Communication lines are severely disrupted there.",
+              "They have an overabundance of rescue personnel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests widespread disruption, and remote areas often suffer more from lack of access and communication.",
+              "Correct. The text states: 'Concerns are mounting for the well-being of residents in remote villages, where communication lines remain severely disrupted.'",
+              "This is contrary to what would typically happen in a disaster in remote areas; access is usually limited."
+            ]
+          },
+          {
+            "question": "What does the phrase 'unremitting efforts' suggest about the rescue operations?",
+            "options": [
+              "They are sporadic and infrequent.",
+              "They are persistent and continuous.",
+              "They are nearing their completion."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Unremitting' means never stopping or slackening, which is the opposite of sporadic.",
+              "Correct. 'Unremitting efforts' implies continuous, persistent work without interruption or reduction in intensity.",
+              "The phrase describes the nature of the effort, not its stage of completion, and the situation implies ongoing, intense work."
+            ]
+          },
+          {
+            "question": "Which of the following best describes 'perilous conditions' for rescue teams?",
+            "options": [
+              "Environment with minor challenges.",
+              "Situations involving great risk or danger.",
+              "Optimal and safe working environments."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Perilous' specifically means full of danger or risk, going beyond minor challenges.",
+              "Correct. 'Perilous conditions' refers to extremely dangerous and hazardous circumstances.",
+              "This is the opposite of the meaning of 'perilous.'"
+            ]
+          },
+          {
+            "question": "The grammar point discussed, 'Present Participle Clause for Consequence/Result,' primarily serves to:",
+            "options": [
+              "Introduce a new subject to the sentence.",
+              "Connect two unrelated ideas formally.",
+              "Indicate a consequence or result concisely."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Participle clauses typically share the subject of the main clause, not introduce a new one.",
+              "This type of clause specifically connects a result to the action of the main clause, making the ideas related.",
+              "Correct. The explanation states it 'creates a concise and sophisticated way to link cause and effect.'"
+            ]
+          },
+          {
+            "question": "What characteristic defines 'grief-stricken communities' in the context of the news?",
+            "options": [
+              "Communities that are actively rebuilding homes.",
+              "Communities experiencing profound sorrow due to loss.",
+              "Communities that are organizing protest rallies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While rebuilding is part of recovery, 'grief-stricken' refers specifically to emotional state, not physical action.",
+              "Correct. 'Grief-stricken' means overwhelmed with sorrow, typically from a significant loss.",
+              "There is no indication of protest; the focus is on their emotional state after a tragedy."
+            ]
+          },
+          {
+            "question": "The phrase 'reverberating across the nation' implies what about the earthquake's impact?",
+            "options": [
+              "Its effects are localized to Flores island.",
+              "It has a widespread and significant national impact.",
+              "It is causing sound waves to travel nationwide."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Reverberating across the nation' implies effects beyond a single island.",
+              "Correct. The phrase means the impact is far-reaching and widely felt throughout the country.",
+              "While earthquakes produce sound waves, 'reverberating' here is metaphorical, referring to widespread impact, not literal sound."
+            ]
+          },
+          {
+            "question": "According to the news brief, what makes the Indonesian archipelago particularly vulnerable to such earthquakes?",
+            "options": [
+              "Its high population density.",
+              "Its location on the Pacific Ring of Fire.",
+              "Its proximity to major shipping lanes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Population density affects casualty numbers, but not the geological susceptibility to earthquakes.",
+              "Correct. The brief states, 'The Indonesian archipelago, situated on the Pacific Ring of Fire, is highly susceptible to such powerful geological tremors.'",
+              "Shipping lanes are unrelated to seismic activity."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief contains an example of the Present Participle Clause for Consequence/Result?",
+            "options": [
+              "\"Authorities have launched unremitting efforts to locate survivors trapped under rubble.\"",
+              "\"The seismic event, centered near Flores island, has inflicted significant structural damage.\"",
+              "\"A devastating 7.7-magnitude earthquake has struck eastern Indonesia, claiming at least 38 lives and precipitating a massive humanitarian response.\""
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence does not use a participle clause to show consequence.",
+              "This sentence uses a past participle 'centered' adjectivally, not as a consequence clause.",
+              "Correct. 'claiming... and precipitating...' are present participle clauses showing the results of the earthquake."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

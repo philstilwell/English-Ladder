@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-16",
+  "release_iso": "2026-08-16T10:15:27Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Five killed as Russia launches fresh aerial attacks across Ukraine",
+    "summary": "Ukrainian President Volodymyr Zelensky accuses Russia of targeting civilian infrastructure, while Moscow reports that a warehouse was hit.",
+    "link": "https://www.bbc.co.uk/news/articles/c1411pgje8xo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "News from Ukraine: Attacks and Accusations",
+        "overview": "Russia launched new attacks in Ukraine, and five people died.",
+        "topic": "War in Ukraine",
+        "news_brief_sentences": [
+          "Russia launched new aerial attacks.",
+          "Five people were killed in these attacks.",
+          "The attacks happened across Ukraine.",
+          "Ukrainian President Volodymyr Zelensky spoke about the attacks.",
+          "He accuses Russia of targeting civilian infrastructure.",
+          "Civilian infrastructure means things like houses and roads.",
+          "Moscow reports that a warehouse was hit.",
+          "Aerial attacks come from the air.",
+          "Zelensky said Russia attacked places where people live, while Moscow said a warehouse was hit.",
+          "So, Ukraine accuses Russia, while Russia reports a different story."
+        ],
+        "vocabulary": [
+          {
+            "term": "accuses",
+            "part_of_speech": "verb",
+            "definition": "to say that someone did something wrong."
+          },
+          {
+            "term": "reports",
+            "part_of_speech": "verb",
+            "definition": "to give information about something, often in the news."
+          },
+          {
+            "term": "aerial",
+            "part_of_speech": "adjective",
+            "definition": "from or in the air."
+          },
+          {
+            "term": "across",
+            "part_of_speech": "preposition",
+            "definition": "in or to every part of a place."
+          },
+          {
+            "term": "civilian infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "buildings and systems that help people in a city, like homes, roads, and hospitals."
+          }
+        ],
+        "grammar": {
+          "concept": "Using 'while' to show contrast",
+          "explanation": "We use the word 'while' to connect two different ideas or actions that happen at the same time. It shows a contrast between them.",
+          "example_quote": "Zelensky said Russia attacked places where people live, while Moscow said a warehouse was hit."
+        },
+        "quiz": [
+          {
+            "question": "How many people were killed in the attacks?",
+            "options": [
+              "Two",
+              "Five",
+              "Ten"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says five people were killed.",
+              "Yes, the news brief states five people died.",
+              "That's not correct. The news brief mentions five deaths."
+            ]
+          },
+          {
+            "question": "Who launched new aerial attacks in Ukraine?",
+            "options": [
+              "Ukraine",
+              "Russia",
+              "NATO"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Ukraine was attacked. Russia launched the attacks.",
+              "Correct! Russia launched the new attacks.",
+              "Incorrect. The news brief says Russia launched the attacks."
+            ]
+          },
+          {
+            "question": "What does it mean when President Zelensky 'accuses' Russia?",
+            "options": [
+              "He praises Russia",
+              "He says Russia did something wrong",
+              "He helps Russia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'accuses' means to say someone did something wrong.",
+              "Yes, to 'accuse' means to state someone is responsible for a bad act.",
+              "No, 'accuses' has a negative meaning, not helping."
+            ]
+          },
+          {
+            "question": "What did President Zelensky accuse Russia of targeting?",
+            "options": [
+              "Military bases",
+              "Civilian infrastructure",
+              "Empty fields"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, he specifically accused them of targeting places for people.",
+              "That's right! He said Russia targeted civilian infrastructure.",
+              "Incorrect. He mentioned places like homes and roads."
+            ]
+          },
+          {
+            "question": "What is an example of 'civilian infrastructure'?",
+            "options": [
+              "A tank",
+              "A hospital",
+              "A soldier"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A tank is military, not civilian infrastructure.",
+              "Yes, a hospital is a part of civilian infrastructure.",
+              "A soldier is a person, not infrastructure. Try again."
+            ]
+          },
+          {
+            "question": "In the sentence 'Zelensky spoke, while Moscow reported,' what does 'while' show?",
+            "options": [
+              "Agreement",
+              "Similarity",
+              "Contrast"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'while' in this context shows two different ideas.",
+              "Not similarity. 'While' highlights a difference.",
+              "Correct! 'While' is used here to show a contrast between their statements."
+            ]
+          },
+          {
+            "question": "When Moscow 'reports' something, what are they doing?",
+            "options": [
+              "Hiding information",
+              "Giving information",
+              "Asking questions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'reports' means to share news, not hide it.",
+              "That's right! To 'report' is to give information.",
+              "Incorrect. 'Reports' is about giving news, not asking questions."
+            ]
+          },
+          {
+            "question": "What did Moscow report was hit?",
+            "options": [
+              "A school",
+              "A market",
+              "A warehouse"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news brief says Moscow reported something else.",
+              "Incorrect. Moscow reported a different type of building.",
+              "Yes, Moscow reported that a warehouse was hit."
+            ]
+          },
+          {
+            "question": "What kind of attacks are 'aerial' attacks?",
+            "options": [
+              "From the ground",
+              "From the sea",
+              "From the air"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'aerial' refers to things happening high up.",
+              "That's not right. 'Aerial' means related to the sky.",
+              "Exactly! 'Aerial' means from or in the air."
+            ]
+          },
+          {
+            "question": "Where did the attacks happen 'across' Ukraine?",
+            "options": [
+              "In one city only",
+              "In all parts of Ukraine",
+              "On the border only"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'across' means a wider area than just one city.",
+              "Yes, 'across' Ukraine means in many or all parts of the country.",
+              "Incorrect. 'Across' suggests a broader impact than just the border."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Russia Launches Fresh Aerial Attacks Across Ukraine, Casualties Reported",
+        "overview": "Recent reports indicate that five people were killed as Russia initiated new aerial attacks across Ukraine, leading to accusations of targeting civilian areas.",
+        "topic": "International Conflict and Geopolitics",
+        "news_brief_sentences": [
+          "Russia has recently launched a series of fresh aerial attacks across various regions of Ukraine.",
+          "Tragically, these assaults have resulted in the deaths of at least five people.",
+          "Ukrainian President Volodymyr Zelensky quickly condemned the strikes.",
+          "He openly accused Russia of deliberately targeting civilian infrastructure.",
+          "This includes residential buildings and other non-military sites within Ukrainian cities.",
+          "The Ukrainian authorities are still assessing the full extent of the damage.",
+          "Meanwhile, Moscow presented a different account of the events.",
+          "Russian officials reported that a warehouse was hit during their operations.",
+          "These renewed attacks intensify the ongoing conflict and raise international concern.",
+          "The international community continues to urge a peaceful resolution, but the attacks persist."
+        ],
+        "vocabulary": [
+          {
+            "term": "launched",
+            "part_of_speech": "verb",
+            "definition": "To start something, especially a military operation or a new project."
+          },
+          {
+            "term": "aerial attacks",
+            "part_of_speech": "noun phrase",
+            "definition": "Military operations or strikes carried out using aircraft."
+          },
+          {
+            "term": "condemned",
+            "part_of_speech": "verb",
+            "definition": "Expressed strong disapproval of something, often publicly."
+          },
+          {
+            "term": "civilian infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "The basic facilities and systems that serve a country's people, like roads, hospitals, and power grids, not military targets."
+          },
+          {
+            "term": "intensify",
+            "part_of_speech": "verb",
+            "definition": "To become or make something stronger or more extreme."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object of the action, rather than the subject (the one performing the action). It is formed with a form of 'to be' + the past participle. We often use it when we don't know who performed the action, or when the actor is less important, as seen in news reports.",
+          "example_quote": "Russian officials reported that a warehouse was hit during their operations."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the news report?",
+            "options": [
+              "New political negotiations between Russia and Ukraine",
+              "Recent aerial attacks by Russia across Ukraine",
+              "Economic sanctions imposed on Russia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article does not discuss new political negotiations.",
+              "Correct! The report centers on Russia's latest offensive in Ukraine.",
+              "Incorrect. Economic sanctions are not the main topic of this news."
+            ]
+          },
+          {
+            "question": "How many fatalities are mentioned as a direct result of these attacks?",
+            "options": [
+              "Ten people",
+              "At least five people",
+              "Several military personnel"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies a lower number of deaths.",
+              "That's right, the news brief states 'at least five people' were killed.",
+              "Incorrect. The brief mentions people, implying civilians, not just military personnel."
+            ]
+          },
+          {
+            "question": "What did Ukrainian President Volodymyr Zelensky accuse Russia of doing?",
+            "options": [
+              "Stealing military equipment from Ukraine",
+              "Targeting civilian infrastructure deliberately",
+              "Blocking humanitarian aid to affected regions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article does not mention stealing military equipment.",
+              "Exactly! Zelensky accused Russia of deliberately attacking civilian sites.",
+              "Incorrect. The brief doesn't discuss blockages of humanitarian aid."
+            ]
+          },
+          {
+            "question": "What did Moscow report was hit during their operations?",
+            "options": [
+              "A Ukrainian government building",
+              "A Ukrainian military base",
+              "A warehouse"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Moscow's report did not specify a government building.",
+              "Incorrect. Moscow's report claimed a warehouse was hit, not a military base.",
+              "Yes, Moscow stated that a warehouse was the target hit during their operations."
+            ]
+          },
+          {
+            "question": "In the sentence 'Russia has recently **launched** a series of fresh aerial attacks...', what does 'launched' mean?",
+            "options": [
+              "Ended",
+              "Started",
+              "Delayed"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Launched' means to start, not to end.",
+              "Correct. To launch an attack means to begin or initiate it.",
+              "Incorrect. 'Launched' means to start, not to delay."
+            ]
+          },
+          {
+            "question": "The word '**condemned**' in the news brief means that President Zelensky:",
+            "options": [
+              "Praised Russia's actions",
+              "Strongly disapproved of Russia's actions",
+              "Requested more information from Russia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Condemning actions is the opposite of praising them.",
+              "That's right. To condemn means to express strong disapproval, especially publicly.",
+              "Incorrect. While information might be requested, condemning means strong disapproval."
+            ]
+          },
+          {
+            "question": "What does the term '**civilian infrastructure**' refer to in the context of the news?",
+            "options": [
+              "Military bases and weapon factories",
+              "Roads, hospitals, and power grids for the general public",
+              "Border defense systems"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Civilian infrastructure relates to non-military public services.",
+              "Yes, it refers to essential public facilities like roads, hospitals, and power systems.",
+              "Incorrect. This term refers to public utilities, not defense systems."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief contains an example of the passive voice?",
+            "options": [
+              "\"Ukrainian President Volodymyr Zelensky quickly condemned the strikes.\"",
+              "\"Russian officials reported that a warehouse was hit during their operations.\"",
+              "\"The international community continues to urge a peaceful resolution.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence is in the active voice.",
+              "Correct! 'was hit' is an example of the passive voice, focusing on the action's recipient.",
+              "Incorrect. This sentence is in the active voice."
+            ]
+          },
+          {
+            "question": "If the ongoing conflict were to '**intensify**', what would happen?",
+            "options": [
+              "It would become less severe or ease.",
+              "It would become stronger or more extreme.",
+              "It would come to a peaceful and quick end."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. To intensify means to become stronger, not less severe.",
+              "That's right, 'intensify' means to make or become stronger or more extreme.",
+              "Incorrect. Intensifying conflict implies it becomes more severe, not that it ends peacefully."
+            ]
+          },
+          {
+            "question": "What is the overall sentiment of the international community regarding the renewed attacks, according to the brief?",
+            "options": [
+              "They are largely indifferent to the situation.",
+              "They are intensifying their own military actions.",
+              "They continue to urge a peaceful resolution."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The text implies concern, not indifference from the international community.",
+              "Incorrect. The text mentions urging peace, not increasing military actions.",
+              "Correct. The brief states the international community 'continues to urge a peaceful resolution.'"
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Russia Escalates Aerial Attacks Amidst Civilian Targeting Accusations",
+        "overview": "Amidst renewed aerial bombardment across Ukraine, President Zelensky condemns Russia's alleged targeting of civilian infrastructure, a claim Moscow disputes by reporting an attack on a warehouse.",
+        "topic": "Russia-Ukraine Conflict, Aerial Attacks, Civilian Casualties, International Law, Disinformation",
+        "news_brief_sentences": [
+          "A fresh spate of aerial assaults perpetrated by Russia has resulted in the tragic deaths of five individuals across various Ukrainian regions.",
+          "These renewed attacks underscore the escalating intensity of the conflict and its devastating human cost.",
+          "Ukrainian President Volodymyr Zelensky has vehemently accused Russian forces of intentionally targeting critical civilian infrastructure.",
+          "He asserts that such actions constitute egregious violations of international law and humanitarian principles.",
+          "Conversely, Moscow has proffered an alternative narrative, stating that its strikes were aimed at a specific warehouse.",
+          "This stark discrepancy in accounts highlights the ongoing challenge of verifiable reporting amidst active combat.",
+          "International observers are closely monitoring the situation to ascertain the objective truth behind these latest events.",
+          "The continuous bombardment exacerbates the already dire humanitarian crisis faced by millions within Ukraine.",
+          "Such persistent aggression by Russia draws widespread condemnation from the global community.",
+          "Calls for a lasting and diplomatic resolution to the devastating conflict are growing increasingly urgent."
+        ],
+        "vocabulary": [
+          {
+            "term": "aerial assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Attacks conducted using aircraft or missiles from the air."
+          },
+          {
+            "term": "perpetrated",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Carried out or committed (a harmful, illegal, or immoral action)."
+          },
+          {
+            "term": "vehemently accused",
+            "part_of_speech": "verb phrase",
+            "definition": "Strongly and intensely criticized or blamed someone for an action, often with strong feelings."
+          },
+          {
+            "term": "egregious violations",
+            "part_of_speech": "noun phrase",
+            "definition": "Extremely bad or shocking breaches of rules, laws, or principles."
+          },
+          {
+            "term": "proffered an alternative narrative",
+            "part_of_speech": "verb phrase",
+            "definition": "Offered a different version or account of events, typically to contradict a previously presented one."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases for Consequence or Manner",
+          "explanation": "Participial phrases (present or past participle) can be used to add extra information about the main clause, often describing the manner in which something is done, a consequence, or providing further context, creating more sophisticated sentence structures.",
+          "example_quote": "Conversely, Moscow has proffered an alternative narrative, stating that its strikes were aimed at a specific warehouse."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary cause of deaths mentioned in the news brief?",
+            "options": [
+              "Ground combat",
+              "Aerial assaults",
+              "Naval blockades"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Ground combat is not the primary cause mentioned for these specific deaths.",
+              "Correct. The brief explicitly states that 'aerial assaults perpetrated by Russia have resulted in the tragic deaths'.",
+              "Naval blockades are not mentioned as the cause of these specific casualties."
+            ]
+          },
+          {
+            "question": "What does President Zelensky vehemently accuse Russia of targeting?",
+            "options": [
+              "Military installations",
+              "Civilian infrastructure",
+              "Logistics hubs"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While military installations might be targets, the brief states Zelensky 'vehemently accused Russian forces of intentionally targeting critical civilian infrastructure'.",
+              "Correct. The news brief clearly states Zelensky accuses Russia of targeting 'critical civilian infrastructure'.",
+              "Logistics hubs are not specifically mentioned as Zelensky's accusation point, though a warehouse was mentioned by Russia."
+            ]
+          },
+          {
+            "question": "Which phrase best defines 'aerial assaults' as used in the news brief?",
+            "options": [
+              "Unprovoked ground attacks",
+              "Attacks conducted from the air",
+              "Underwater military operations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Aerial' refers to air, so ground attacks are incorrect.",
+              "Correct. 'Aerial assaults' specifically refer to attacks originating from the air, such as missiles or aircraft.",
+              "'Aerial' does not relate to underwater operations."
+            ]
+          },
+          {
+            "question": "In the context of 'assaults perpetrated by Russia,' what does 'perpetrated' imply?",
+            "options": [
+              "Financed",
+              "Carried out",
+              "Observed"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While Russia might finance actions, 'perpetrated' directly means to carry out the act.",
+              "Correct. 'Perpetrated' means that Russia actively carried out or committed the assaults.",
+              "Observed means to witness, not to perform, the action."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'vehemently accused' when President Zelensky uses it?",
+            "options": [
+              "Mildly suggests",
+              "Strongly condemns and blames",
+              "Reluctantly implies"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Mildly suggests' is the opposite of 'vehemently'.",
+              "Correct. 'Vehemently' signifies strong emotion and intensity in the accusation, meaning a powerful condemnation and blame.",
+              "'Reluctantly implies' suggests hesitation, which contradicts 'vehemently'."
+            ]
+          },
+          {
+            "question": "When the brief mentions 'egregious violations,' what kind of violations are being referred to?",
+            "options": [
+              "Minor errors",
+              "Uncommon practices",
+              "Extremely bad breaches"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Egregious' means remarkably bad, far from minor.",
+              "'Uncommon practices' does not capture the severe nature implied by 'egregious'.",
+              "Correct. 'Egregious' describes violations that are shockingly bad or flagrant, representing severe breaches."
+            ]
+          },
+          {
+            "question": "What did Moscow do by 'proffering an alternative narrative'?",
+            "options": [
+              "Agreed with Ukraine's statement",
+              "Confirmed previous reports",
+              "Offered a different version of events"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Alternative narrative' implies a disagreement, not agreement.",
+              "'Proffered an alternative' indicates a new or different account, not a confirmation.",
+              "Correct. To 'proffer an alternative narrative' means to present a different account or explanation for the events in question."
+            ]
+          },
+          {
+            "question": "In the sentence 'Conversely, Moscow has proffered an alternative narrative, stating that its strikes were aimed at a specific warehouse,' what is the function of the phrase 'stating that...'?",
+            "options": [
+              "It introduces a direct quote.",
+              "It acts as a defining relative clause.",
+              "It provides additional information or clarification."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "It's not a direct quote as it's not enclosed in quotation marks and is integrated as a participial phrase.",
+              "While similar in function, it's a participial phrase modifying the preceding clause, not a defining relative clause directly modifying a noun.",
+              "Correct. The participial phrase 'stating that...' clarifies what the 'alternative narrative' entailed, adding extra context to the main action."
+            ]
+          },
+          {
+            "question": "The 'discrepancy in accounts' between Ukraine and Russia implies what?",
+            "options": [
+              "Both sides agree on the facts.",
+              "The exact truth is difficult to determine.",
+              "Only one side's claims are credible."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Discrepancy' means a lack of compatibility or similarity between two facts, implying disagreement, not agreement.",
+              "Correct. A 'discrepancy in accounts' directly indicates that it is challenging to 'ascertain the objective truth' due to conflicting reports.",
+              "The brief states 'discrepancy in accounts underscores the challenge of ascertaining objective truth', not that only one side is credible."
+            ]
+          },
+          {
+            "question": "What is the overall sentiment conveyed by the news brief regarding the conflict?",
+            "options": [
+              "A sense of imminent resolution",
+              "Increasing concern over escalation and humanitarian impact",
+              "Optimism about diplomatic breakthroughs"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions 'persistent aggression' and 'urgent need for a diplomatic resolution', indicating resolution is not imminent.",
+              "Correct. Phrases like 'escalating intensity', 'devastating human cost', 'dire humanitarian crisis', and 'persistent aggression' clearly convey increasing concern.",
+              "The brief mentions 'urgent need for a diplomatic resolution' and 'growing increasingly urgent', suggesting optimism is not the prevailing sentiment."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

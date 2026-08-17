@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-17",
+  "release_iso": "2026-08-17T10:24:27Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump says US to reduce military drills with South Korea after it stayed out of Iran war",
+    "summary": "Trump cites his \"very good relationship\" with North Korea's leader in deciding to downsize the exercises.",
+    "link": "https://www.bbc.co.uk/news/articles/cx2lll7zvn0o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US Reduces Military Drills with South Korea",
+        "overview": "President Trump decided to make military exercises with South Korea smaller.",
+        "topic": "International Relations and Military Decisions",
+        "news_brief_sentences": [
+          "President Trump made a new announcement.",
+          "The United States will reduce its military drills with South Korea.",
+          "South Korea stayed out of the Iran war.",
+          "This was one reason for the President's choice.",
+          "President Trump said he has a very good relationship with North Korea's leader.",
+          "He also cites this friendship.",
+          "It is another reason for the change.",
+          "The decision is to downsize these exercises.",
+          "This means the joint training will become smaller.",
+          "The countries will still work together, but less often."
+        ],
+        "vocabulary": [
+          {
+            "term": "reduce",
+            "part_of_speech": "verb",
+            "definition": "To make something smaller or less."
+          },
+          {
+            "term": "military drills",
+            "part_of_speech": "noun phrase",
+            "definition": "Practice exercises for soldiers and armies."
+          },
+          {
+            "term": "very good relationship",
+            "part_of_speech": "noun phrase",
+            "definition": "When two people or countries are good friends."
+          },
+          {
+            "term": "cites",
+            "part_of_speech": "verb",
+            "definition": "To give a reason for something or to mention something."
+          },
+          {
+            "term": "downsize",
+            "part_of_speech": "verb",
+            "definition": "To make something smaller."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. For regular verbs, we often add '-ed'. Some verbs are irregular and change their form, like 'stay' becoming 'stayed'.",
+          "example_quote": "South Korea stayed out of the Iran war."
+        },
+        "quiz": [
+          {
+            "question": "What did President Trump announce about military drills?",
+            "options": [
+              "He announced more drills.",
+              "He announced no changes.",
+              "He announced fewer drills."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. The news says the opposite.",
+              "No, there is a change mentioned in the news.",
+              "Yes, the news says the US will reduce military drills."
+            ]
+          },
+          {
+            "question": "Which country will the US reduce military drills with?",
+            "options": [
+              "North Korea",
+              "South Korea",
+              "Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The relationship with North Korea is a reason, not the country for drills.",
+              "Correct. The drills are with South Korea.",
+              "Iran is mentioned, but not for drills."
+            ]
+          },
+          {
+            "question": "What does the word 'reduce' mean in this news?",
+            "options": [
+              "To make bigger",
+              "To make smaller",
+              "To stop completely"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'reduce' means the opposite of bigger.",
+              "Yes, 'reduce' means to make something smaller or less.",
+              "It means smaller, not necessarily stopping altogether."
+            ]
+          },
+          {
+            "question": "What was one reason for reducing the drills, according to the news?",
+            "options": [
+              "South Korea joined the Iran war.",
+              "South Korea stayed out of the Iran war.",
+              "South Korea started a new war."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says South Korea did not join the war.",
+              "Correct. South Korea's decision not to join the Iran war was a reason.",
+              "The news does not say South Korea started a new war."
+            ]
+          },
+          {
+            "question": "What kind of 'relationship' does Trump have with North Korea's leader?",
+            "options": [
+              "A difficult one",
+              "A very good one",
+              "No relationship"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news states the opposite.",
+              "Correct. The news says he has a 'very good relationship'.",
+              "He clearly has one, and it's good."
+            ]
+          },
+          {
+            "question": "What is a 'military drill'?",
+            "options": [
+              "A tool for building things",
+              "A practice for soldiers",
+              "A type of dance"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A drill can be a tool, but not in this context.",
+              "Yes, 'military drills' are practice exercises for armies.",
+              "This is not what 'military drill' means."
+            ]
+          },
+          {
+            "question": "What does President Trump 'cite' as another reason for the change?",
+            "options": [
+              "A new movie",
+              "His good relationship with North Korea's leader",
+              "A sports game"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news is not about movies.",
+              "Correct. He cites his 'very good relationship' with North Korea's leader.",
+              "This is not related to the news."
+            ]
+          },
+          {
+            "question": "Which word from the news brief is in the simple past tense?",
+            "options": [
+              "reduce",
+              "stayed",
+              "announcement"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Reduce' is a present tense verb.",
+              "Correct. 'Stayed' is the past tense of 'stay'.",
+              "'Announcement' is a noun."
+            ]
+          },
+          {
+            "question": "The word 'downsize' means the same as what other word in the news?",
+            "options": [
+              "increase",
+              "reduce",
+              "continue"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'downsize' means to make smaller, not bigger.",
+              "Yes, 'downsize' means to make smaller, just like 'reduce'.",
+              "It doesn't mean to keep things the same."
+            ]
+          },
+          {
+            "question": "In the sentence 'South Korea stayed out of the Iran war,' what kind of action does 'stayed out' describe?",
+            "options": [
+              "An action happening now.",
+              "An action that will happen in the future.",
+              "An action that finished in the past."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Stayed out' is past tense, so it's not happening now.",
+              "This describes something that already happened, not future.",
+              "Correct. The simple past tense describes finished actions."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "US to Reduce Military Drills with South Korea Amidst Diplomatic Shifts",
+        "overview": "President Trump announced that the United States will decrease its military exercises with South Korea, citing positive relations with North Korea's leader and South Korea's non-involvement in the Iran conflict.",
+        "topic": "International Relations, US Foreign Policy, Military Exercises, Diplomacy",
+        "news_brief_sentences": [
+          "President Trump announced that the United States plans to reduce its joint military drills with South Korea.",
+          "This decision follows South Korea's choice to have stayed out of a recent conflict involving Iran.",
+          "Trump specifically cites his \"very good relationship\" with North Korea's leader as a major reason.",
+          "He believes this positive relationship contributes to regional peace and stability.",
+          "The US President indicated that the scope of these joint exercises will be smaller in the future.",
+          "For many years, North Korea has considered these large-scale annual operations as a direct threat.",
+          "Reducing the size of the drills is seen by some as a diplomatic gesture towards Pyongyang.",
+          "This change reflects a potential shift in US foreign policy regarding the Korean Peninsula.",
+          "The Pentagon will likely work with South Korea to adjust the scale and frequency of future training.",
+          "International observers are closely watching how this development will impact security dynamics in East Asia."
+        ],
+        "vocabulary": [
+          {
+            "term": "reduce",
+            "part_of_speech": "verb",
+            "definition": "To make something smaller in amount, size, or intensity."
+          },
+          {
+            "term": "military drills",
+            "part_of_speech": "noun phrase",
+            "definition": "Organized training sessions for soldiers to practice fighting and prepare for real conflicts."
+          },
+          {
+            "term": "stayed out of",
+            "part_of_speech": "phrasal verb",
+            "definition": "To intentionally avoid becoming involved in a situation or conflict."
+          },
+          {
+            "term": "cites",
+            "part_of_speech": "verb",
+            "definition": "Mentions something as a reason, example, or support for an argument or statement."
+          },
+          {
+            "term": "exercises",
+            "part_of_speech": "noun",
+            "definition": "Planned activities, especially for military training, that help people practice skills."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to tell what someone else has said or thought. They help us summarize or convey information from another source. Common examples include 'say,' 'tell,' 'state,' 'announce,' 'claim,' and 'cites.' They often introduce a clause that contains the reported speech or idea, sometimes using 'that' as a connector.",
+          "example_quote": "Trump specifically cites his \"very good relationship\" with North Korea's leader as a major reason."
+        },
+        "quiz": [
+          {
+            "question": "What is one primary reason President Trump gave for reducing military drills with South Korea?",
+            "options": [
+              "Economic disputes with Seoul",
+              "His relationship with North Korea's leader",
+              "A request from the South Korean government"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief does not mention economic disputes as a reason.",
+              "Correct. Trump specifically cited his \"very good relationship\" with North Korea's leader.",
+              "Incorrect. The decision was presented as Trump's initiative, not a request from South Korea."
+            ]
+          },
+          {
+            "question": "What does it mean to \"reduce\" military drills?",
+            "options": [
+              "To increase their frequency",
+              "To make them smaller or less intense",
+              "To cancel them permanently"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Increasing frequency is the opposite of reducing them.",
+              "Correct. To reduce something means to decrease its size, amount, or intensity.",
+              "Incorrect. Reducing drills means making them smaller, not necessarily cancelling them entirely."
+            ]
+          },
+          {
+            "question": "How did South Korea's actions regarding the Iran conflict factor into Trump's decision?",
+            "options": [
+              "They provided military support in the conflict",
+              "They offered mediation services",
+              "They remained uninvolved in the conflict"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief states South Korea chose not to get involved.",
+              "Incorrect. Mediation was not mentioned in relation to their non-involvement.",
+              "Correct. South Korea \"stayed out of\" the recent conflict involving Iran."
+            ]
+          },
+          {
+            "question": "In the sentence, \"President Trump announced that the United States plans to reduce...\", what kind of verb is 'announced'?",
+            "options": [
+              "A linking verb",
+              "A modal verb",
+              "A reporting verb"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Linking verbs connect the subject to a complement.",
+              "Incorrect. Modal verbs express possibility or necessity (e.g., 'can', 'should').",
+              "Correct. 'Announced' is a reporting verb used to convey what someone has said."
+            ]
+          },
+          {
+            "question": "What is the main purpose of \"military drills\" as described in the brief?",
+            "options": [
+              "To demonstrate advanced weaponry",
+              "To practice combat skills and prepare for conflict",
+              "To attract new recruits to the army"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While new weapons might be present, the main goal is training.",
+              "Correct. Military drills are organized training sessions for soldiers to prepare for conflicts.",
+              "Incorrect. Recruiting is a separate function, not the primary purpose of drills."
+            ]
+          },
+          {
+            "question": "Historically, how has North Korea generally viewed the joint US-South Korea military exercises?",
+            "options": [
+              "As a symbol of regional stability",
+              "As a necessary measure for defense",
+              "As a direct threat to their security"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. North Korea has not seen them as a symbol of stability.",
+              "Incorrect. This is the opposite of North Korea's historical perspective.",
+              "Correct. North Korea has often viewed these large-scale operations as a direct threat."
+            ]
+          },
+          {
+            "question": "What does it mean if President Trump \"cites\" his relationship with North Korea's leader?",
+            "options": [
+              "He is ignoring the relationship",
+              "He is using it as a reason for his decision",
+              "He is criticizing the relationship"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. To cite means to mention or refer to, not to ignore.",
+              "Correct. When someone 'cites' something, they mention it as a reason or support for their statement.",
+              "Incorrect. 'Cites' in this context means he is presenting it as a positive factor."
+            ]
+          },
+          {
+            "question": "Which part of the grammar example quote, \"Trump specifically cites his 'very good relationship' with North Korea's leader as a major reason,\" acts as a reporting verb?",
+            "options": [
+              "'very good relationship'",
+              "'cites'",
+              "'as a major reason'"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This phrase describes the nature of the bond.",
+              "Correct. 'Cites' is the verb that reports what Trump has mentioned.",
+              "Incorrect. This phrase explains the role of the relationship, not the reporting verb itself."
+            ]
+          },
+          {
+            "question": "What kind of foreign policy shift might this decision signal for the US?",
+            "options": [
+              "A move towards increased military confrontation",
+              "A greater emphasis on diplomatic engagement",
+              "A complete withdrawal from East Asian affairs"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Reducing drills suggests a move away from military confrontation.",
+              "Correct. The decision indicates a potential shift towards diplomacy and de-escalation.",
+              "Incorrect. The US is adjusting its approach, not withdrawing entirely from the region."
+            ]
+          },
+          {
+            "question": "If South Korea \"stayed out of\" the Iran conflict, what did it do?",
+            "options": [
+              "It provided secret intelligence to one side",
+              "It actively participated in military operations",
+              "It chose not to become involved"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This implies secret involvement, which is not what 'stayed out of' means.",
+              "Incorrect. This means the opposite; they did not participate.",
+              "Correct. To 'stay out of' a conflict means to deliberately avoid participation or involvement."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US to Scale Back Military Drills with South Korea Amid Shifting Diplomatic Landscape",
+        "overview": "President Trump's administration has announced a significant reduction in joint military exercises with South Korea, a strategic move influenced by improved relations with North Korea and a broader recalibration of US foreign policy in a complex geopolitical environment.",
+        "topic": "International Relations and Diplomatic Strategy",
+        "news_brief_sentences": [
+          "President Donald Trump recently declared the United States would significantly downsize the exercises conducted jointly with South Korea.",
+          "This unilateral decision reportedly stems from his publicly stated \"very good relationship\" with North Korean leader Kim Jong Un.",
+          "The announcement comes after the US notably avoided direct military engagement in the recent Iran crisis, a factor implicitly linked by Trump.",
+          "Such a move is interpreted as a strategic effort to continue ameliorating relations on the tumultuous Korean Peninsula.",
+          "Trump has consistently articulated concerns regarding the considerable financial outlay associated with extensive military maneuvers.",
+          "The broader geopolitical landscape is thus being reshaped by Washington's evolving diplomatic priorities and strategic recalibrations.",
+          "Critics are quick to highlight potential risks, suggesting that reduced military posturing could inadvertently embolden regional adversaries.",
+          "Conversely, supporters maintain that these steps are crucial for fostering de-escalation and building trust in increasingly tense environments.",
+          "The precise implications and future ramifications of these scaled-back drills remain subjects of intense international debate.",
+          "The administration seeks to navigate these straitened circumstances through diplomacy, hoping to stabilize the volatile regional dynamics."
+        ],
+        "vocabulary": [
+          {
+            "term": "downsize the exercises",
+            "part_of_speech": "verb phrase",
+            "definition": "To reduce the scale, scope, or frequency of military training activities or maneuvers."
+          },
+          {
+            "term": "unilateral decision",
+            "part_of_speech": "noun phrase",
+            "definition": "A choice or policy made by one party or nation without the agreement or consultation of others involved."
+          },
+          {
+            "term": "ameliorating relations",
+            "part_of_speech": "verb phrase",
+            "definition": "The act of making diplomatic or personal relationships better, more agreeable, or less hostile."
+          },
+          {
+            "term": "geopolitical landscape",
+            "part_of_speech": "noun phrase",
+            "definition": "The complex set of international political, economic, and strategic factors that characterize a particular region or the world at a given time."
+          },
+          {
+            "term": "straitened circumstances",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation of difficulty, especially financial difficulty, or restricted resources and options."
+          }
+        ],
+        "grammar": {
+          "concept": "Reduced Relative Clauses (Past Participle)",
+          "explanation": "Reduced relative clauses, often featuring a past participle, offer a concise way to embed descriptive information about a noun. They function by omitting the relative pronoun (e.g., 'which,' 'that') and the 'to be' verb, resulting in a more economical and sophisticated sentence structure common in formal writing. This compression helps to maintain a fluent and professional tone while conveying complex details.",
+          "example_quote": "President Donald Trump recently declared the United States would significantly downsize the exercises conducted jointly with South Korea."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as a primary motivation for the US decision to downsize military drills with South Korea?",
+            "options": [
+              "A desire to mitigate the financial burden of the drills.",
+              "President Trump's improved relationship with North Korea's leader.",
+              "Concerns about regional military imbalance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While financial concerns were articulated, the news brief emphasizes Trump's relationship with Kim Jong Un as the direct driver for the decision.",
+              "Correct. The news brief explicitly states the decision 'reportedly stems from his publicly stated \"very good relationship\" with North Korean leader Kim Jong Un.'",
+              "The news brief mentions critics' concerns about emboldening adversaries, but this is not cited as a primary motivation for the *reduction*."
+            ]
+          },
+          {
+            "question": "The term 'unilateral decision' implies that the reduction in military exercises was:",
+            "options": [
+              "Agreed upon by both the US and South Korea.",
+              "Initiated solely by the United States.",
+              "Proposed by a third-party mediator."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term 'unilateral' indicates that the decision was made without explicit joint agreement, suggesting it was not mutually agreed upon.",
+              "Correct. A 'unilateral decision' is one made by a single party without the consent or active participation of others involved.",
+              "The news brief gives no indication of a third-party mediator's involvement in this specific decision."
+            ]
+          },
+          {
+            "question": "What does the phrase 'ameliorating relations' suggest in the context of the Korean Peninsula?",
+            "options": [
+              "A move towards military confrontation.",
+              "An effort to worsen existing diplomatic ties.",
+              "An attempt to improve or make better the current diplomatic situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The word 'ameliorating' means to make better, indicating the opposite of a move towards confrontation.",
+              "To 'ameliorate' means to improve, so this option is incorrect as it suggests making things worse.",
+              "Correct. 'Ameliorating relations' means actively working to improve the quality or friendliness of diplomatic relationships."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the 'geopolitical landscape' as presented in the news brief?",
+            "options": [
+              "A static and predictable global environment.",
+              "A complex and changing international political and strategic situation.",
+              "Primarily focused on domestic economic policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief describes 'evolving diplomatic priorities and strategic recalibrations,' indicating a dynamic rather than static environment.",
+              "Correct. 'Geopolitical landscape' refers to the intricate and shifting global political and strategic factors at play.",
+              "While domestic policies can influence geopolitics, the term 'geopolitical landscape' specifically refers to international dynamics, not primarily domestic ones."
+            ]
+          },
+          {
+            "question": "The action to 'downsize the exercises' specifically refers to:",
+            "options": [
+              "Increasing the number of military personnel involved.",
+              "Reducing the scope and frequency of military drills.",
+              "Expanding the geographical area of joint operations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To 'downsize' means to reduce, not increase, the number of personnel.",
+              "Correct. To 'downsize the exercises' means to reduce their size, scale, or frequency, making them less extensive.",
+              "This option contradicts the meaning of 'downsize,' which implies a reduction, not an expansion."
+            ]
+          },
+          {
+            "question": "What does the news brief indicate about 'straitened circumstances'?",
+            "options": [
+              "They represent a period of unprecedented economic prosperity.",
+              "They involve conditions of financial difficulty or limited options.",
+              "They refer to a relaxation of international tensions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term 'straitened' directly implies difficulty or limitation, not prosperity.",
+              "Correct. 'Straitened circumstances' describes a situation where resources are limited or difficulties are present, especially financially or strategically.",
+              "This is incorrect; 'straitened circumstances' typically imply difficulty or tension, not relaxation."
+            ]
+          },
+          {
+            "question": "How did the US's stance on the Iran crisis factor into the decision regarding South Korea drills, according to the news brief?",
+            "options": [
+              "It was the sole reason for the reduction.",
+              "It was entirely unrelated to the decision.",
+              "It was an implicitly linked factor alongside other considerations."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief states it was an 'implicitly linked factor,' not the sole reason, as the NK relationship was also highlighted.",
+              "The news brief explicitly mentions the Iran crisis as a factor, stating it was 'implicitly linked by Trump.'",
+              "Correct. The news brief positions the US's avoidance of direct military engagement in Iran as an 'implicitly linked factor,' suggesting it was part of the broader context, but not the exclusive cause."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief contains a reduced relative clause using a past participle?",
+            "options": [
+              "\"The announcement comes after the US notably avoided direct military engagement in the recent Iran crisis.\"",
+              "\"President Donald Trump recently declared the United States would significantly downsize the exercises conducted jointly with South Korea.\"",
+              "\"Critics are quick to highlight potential risks, suggesting that reduced military posturing could inadvertently embolden regional adversaries.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses an adverbial clause of time ('after the US avoided'), not a reduced relative clause.",
+              "Correct. 'conducted jointly with South Korea' is a reduced relative clause, meaning 'which are conducted jointly with South Korea'.",
+              "This sentence uses a present participle clause ('suggesting that...'), but it modifies the preceding clause, not a noun directly as a reduced relative clause would here."
+            ]
+          },
+          {
+            "question": "What is one potential negative consequence of the reduced military drills, according to critics in the news brief?",
+            "options": [
+              "An increase in financial expenditure for the US.",
+              "A decline in diplomatic efforts.",
+              "The possible emboldening of regional adversaries."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reduction is partly aimed at *reducing* financial outlay, not increasing it.",
+              "The news brief actually suggests a *rise* in diplomatic efforts to navigate the situation.",
+              "Correct. Critics fear that 'reduced military posturing could inadvertently embolden regional adversaries,' as stated in the brief."
+            ]
+          },
+          {
+            "question": "What is the overall tone of the news brief regarding the US decision to reduce drills?",
+            "options": [
+              "Unquestionably positive and optimistic.",
+              "Neutral, reporting on the decision and its various interpretations.",
+              "Strongly negative and alarmist."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief presents both criticisms and justifications, indicating a balanced rather than solely positive view.",
+              "Correct. The brief presents the decision, its stated reasons, and contrasting viewpoints from both critics and supporters, maintaining a neutral reporting stance.",
+              "While potential risks are mentioned, the brief also includes arguments from supporters, avoiding a 'strongly negative and alarmist' tone."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

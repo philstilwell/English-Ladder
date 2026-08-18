@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-18",
+  "release_iso": "2026-08-18T10:20:08Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Russia warns UK will pay for supplying drones to Ukraine",
+    "summary": "Russia accuses the UK of escalating the Ukraine war after British-made drones were used, but the MoD says it stands against Russian aggression.",
+    "link": "https://www.bbc.co.uk/news/articles/cy5dz0kkn0wo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Russia Warns UK Over Drones for Ukraine",
+        "overview": "Russia is angry because the UK gave drones to Ukraine.",
+        "topic": "International relations and military aid",
+        "news_brief_sentences": [
+          "Russia warns the United Kingdom.",
+          "The UK supplied drones to Ukraine.",
+          "Russia says the UK will pay for this action.",
+          "British-made drones were used in the conflict.",
+          "Russia says the UK is making the war worse.",
+          "Russia accuses the UK of this dangerous action.",
+          "The UK Ministry of Defence responded to Russia.",
+          "The MoD says it stands against Russian aggression.",
+          "The UK supports Ukraine against Russian actions.",
+          "This is a big international disagreement."
+        ],
+        "vocabulary": [
+          {
+            "term": "warns",
+            "part_of_speech": "verb",
+            "definition": "Tells someone about a possible danger or problem."
+          },
+          {
+            "term": "supplied",
+            "part_of_speech": "verb",
+            "definition": "Gave something to someone; provided something."
+          },
+          {
+            "term": "will pay",
+            "part_of_speech": "phrase",
+            "definition": "Will suffer consequences or face punishment for an action."
+          },
+          {
+            "term": "accuses",
+            "part_of_speech": "verb",
+            "definition": "Says someone did something wrong or is responsible for something bad."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Angry or violent behavior towards another country or person."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense",
+          "explanation": "We use the simple present tense for facts, habits, and things that are true now. It shows actions that happen regularly or are generally true, like 'The sun rises in the east' or 'I drink coffee every day'.",
+          "example_quote": "Russia warns the United Kingdom."
+        },
+        "quiz": [
+          {
+            "question": "What country warns the UK in the news brief?",
+            "options": [
+              "Ukraine",
+              "Russia",
+              "The MoD"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Ukraine is receiving aid. Russia is warning the UK.",
+              "Correct! Russia is warning the United Kingdom.",
+              "No, the MoD is the UK's Ministry of Defence."
+            ]
+          },
+          {
+            "question": "What did the UK supplied to Ukraine?",
+            "options": [
+              "Money",
+              "Drones",
+              "Food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief mentions military equipment. Try again.",
+              "Yes, the UK supplied drones to Ukraine, according to the news.",
+              "No, the news brief talks about military aid, not food."
+            ]
+          },
+          {
+            "question": "What does 'warns' mean in the sentence 'Russia warns the United Kingdom'?",
+            "options": [
+              "Tells a joke",
+              "Tells about danger",
+              "Tells a secret"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'warns' means to give notice of a possible problem.",
+              "Right, 'warns' means to tell someone about a possible danger or problem.",
+              "No, 'warns' is about possible danger, not a secret."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Simple Present tense?",
+            "options": [
+              "The UK supplied drones to Ukraine.",
+              "Russia accuses the UK of this action.",
+              "British-made drones were used in the conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Supplied' is in the past tense. Think about verbs that describe current facts or habits.",
+              "Correct! 'Accuses' is a simple present verb, showing a current action or statement.",
+              "'Were used' is in the past tense. Look for verbs that show present actions."
+            ]
+          },
+          {
+            "question": "Why is Russia angry with the UK, according to the news?",
+            "options": [
+              "The UK built a new city.",
+              "The UK helped Ukraine with drones.",
+              "The UK started a new business."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief is about military aid, not city construction.",
+              "Correct, Russia is angry because the UK supplied drones to Ukraine.",
+              "No, the news brief is about a military issue, not business."
+            ]
+          },
+          {
+            "question": "If a country 'supplied' weapons, what did it do?",
+            "options": [
+              "Bought them",
+              "Hid them",
+              "Gave them"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While buying can be part of the process, 'supplied' specifically means to provide or give.",
+              "No, 'supplied' means to provide or give, not hide.",
+              "Yes, 'supplied' means to give or provide something, like weapons in this case."
+            ]
+          },
+          {
+            "question": "Who responded to Russia's warning?",
+            "options": [
+              "Ukraine",
+              "The MoD",
+              "The drones"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, Ukraine is the country receiving aid, not the one responding.",
+              "That's right, the UK Ministry of Defence (MoD) responded to Russia.",
+              "No, drones are objects; they cannot respond."
+            ]
+          },
+          {
+            "question": "What does 'aggression' mean in the phrase 'Russian aggression'?",
+            "options": [
+              "Friendly help",
+              "Angry or violent behavior",
+              "Calm discussion"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'aggression' is not about friendly help.",
+              "Correct, 'aggression' means angry or violent behavior towards another country or person.",
+              "No, 'aggression' implies conflict, not calm discussion."
+            ]
+          },
+          {
+            "question": "What is the main idea of this news story?",
+            "options": [
+              "Countries are planning a party.",
+              "Russia and the UK have a serious disagreement.",
+              "Drones are very expensive to build."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is about a serious international conflict.",
+              "Exactly, the story is about a disagreement between Russia and the UK regarding military aid.",
+              "No, the cost of drones is not the main point of this news."
+            ]
+          },
+          {
+            "question": "When Russia says the UK 'will pay' for its actions, what does it mean?",
+            "options": [
+              "The UK will give Russia money.",
+              "The UK will suffer negative consequences.",
+              "The UK will buy something for Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'will pay' in this context means facing punishment or consequences, not monetary payment.",
+              "Yes, 'will pay' here means the UK will face negative results or punishment for its actions.",
+              "No, 'will pay' refers to consequences, not making a purchase for Russia."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Russia Warns UK Over Drone Supplies to Ukraine",
+        "overview": "Russia has issued a strong warning to the United Kingdom, accusing it of intensifying the conflict in Ukraine by supplying drones, while the UK maintains its opposition to Russian aggression.",
+        "topic": "International Relations, Military Aid, and Escalation of Conflict",
+        "news_brief_sentences": [
+          "Russia warns the United Kingdom, stating there will be consequences for its actions in Ukraine.",
+          "The warning follows reports that British-made drones were used in the ongoing conflict.",
+          "Moscow explicitly accuses the UK of actively escalating the war by supplying these military unmanned aircraft.",
+          "This development has further strained already tense diplomatic relations between the two countries.",
+          "The Russian Foreign Ministry suggested that the UK would 'pay' for its involvement.",
+          "Conversely, the British Ministry of Defence (MoD) has publicly responded to Russia's claims.",
+          "The MoD affirmed its stance, declaring it stands firmly against Russian aggression.",
+          "They emphasized their continued support for Ukraine's defense against the invasion.",
+          "International observers are closely watching how this exchange will impact the broader geopolitical landscape.",
+          "The situation highlights the growing tensions surrounding military aid to Ukraine from Western nations."
+        ],
+        "vocabulary": [
+          {
+            "term": "warns",
+            "part_of_speech": "verb",
+            "definition": "To tell someone about a possible danger or problem, so they can be prepared or avoid it."
+          },
+          {
+            "term": "accuses",
+            "part_of_speech": "verb",
+            "definition": "To state that someone has done something wrong or is responsible for a bad situation."
+          },
+          {
+            "term": "escalating",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Becoming more intense, serious, or severe; increasing rapidly."
+          },
+          {
+            "term": "supplying",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Providing something that is needed or wanted, often in large quantities."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Forceful and often violent behavior or attitudes toward another person or country, especially when unprovoked."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Past Simple)",
+          "explanation": "The passive voice is used when the focus is on the action itself and the recipient of the action, rather than on who or what performed it. We often use it when the agent (the one performing the action) is unknown, unimportant, or obvious. It is formed with a form of 'to be' and the past participle of the main verb.",
+          "example_quote": "British-made drones were used in the ongoing conflict."
+        },
+        "quiz": [
+          {
+            "question": "What is the main reason Russia is warning the United Kingdom?",
+            "options": [
+              "For purchasing drones from Ukraine.",
+              "For supplying drones to Ukraine.",
+              "For refusing to negotiate peace."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect; the UK is accused of supplying, not purchasing, military equipment.",
+              "That's right! Russia believes the UK is escalating the war by providing drones.",
+              "While peace is a topic, the specific warning concerns the supply of military aid."
+            ]
+          },
+          {
+            "question": "In the context of the news, what does the word 'escalating' mean?",
+            "options": [
+              "Making the situation less serious.",
+              "Making the situation more intense or worse.",
+              "Making the situation calmer."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'escalating' implies making things more serious, not less.",
+              "Correct! When a conflict is escalating, it is becoming more severe.",
+              "That's the opposite; 'escalating' does not mean making something calmer."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the passive voice?",
+            "options": [
+              "Russia warns the United Kingdom.",
+              "British-made drones were used in the ongoing conflict.",
+              "The MoD affirmed its stance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence is in the active voice, with 'Russia' performing the action.",
+              "Exactly! 'were used' is an example of the past simple passive voice.",
+              "This sentence is also in the active voice, with 'The MoD' performing the action."
+            ]
+          },
+          {
+            "question": "What is the British Ministry of Defence's (MoD) official position regarding Russian actions?",
+            "options": [
+              "It supports Russia's involvement in the conflict.",
+              "It states it stands against Russian aggression.",
+              "It remains completely neutral on the matter."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the MoD clearly stated its opposition to Russia's actions.",
+              "Correct! The MoD publicly declared its stance against Russian aggression.",
+              "The MoD has taken a clear side by stating its opposition to Russian aggression."
+            ]
+          },
+          {
+            "question": "What is the best definition for the word 'accuses' as used in the brief?",
+            "options": [
+              "To praise someone for their actions.",
+              "To state that someone has done something wrong.",
+              "To offer help to someone."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Accuses' means to blame, not to praise.",
+              "That's right! To accuse someone is to say they are responsible for a wrongdoing.",
+              "This definition is incorrect; 'accuses' carries a negative connotation."
+            ]
+          },
+          {
+            "question": "According to the news brief, what kind of military equipment has caused the latest tensions?",
+            "options": [
+              "Tanks supplied by Ukraine.",
+              "Drones supplied by the UK.",
+              "Missiles developed by Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news focuses on equipment supplied *to* Ukraine, not *by* Ukraine.",
+              "That's correct! British-made drones used in the conflict are at the heart of the dispute.",
+              "While Russia develops missiles, the current tension is about UK-supplied drones."
+            ]
+          },
+          {
+            "question": "Why is the passive voice often used in news reporting?",
+            "options": [
+              "To clearly identify the person who performed the action.",
+              "To make the report sound more personal and emotional.",
+              "To focus on the event or outcome rather than who did it."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The passive voice often obscures the agent, focusing instead on the action.",
+              "It typically makes reporting sound more formal and objective, not personal.",
+              "Exactly! The passive voice shifts the emphasis to what happened or what was affected."
+            ]
+          },
+          {
+            "question": "What does the term 'supplying' mean in the context of the news story?",
+            "options": [
+              "Receiving goods from another country.",
+              "Selling goods to another country for profit.",
+              "Providing necessary goods or equipment to someone."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Supplying' means giving, not receiving.",
+              "While selling can be a form of supplying, the core meaning is providing, especially needed items.",
+              "That's right! 'Supplying' means to give or provide something that is needed."
+            ]
+          },
+          {
+            "question": "How have diplomatic relations between the UK and Russia been affected by these events?",
+            "options": [
+              "They have improved significantly.",
+              "They have remained unchanged.",
+              "They have become more strained."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news indicates worsening relations, not improvement.",
+              "The brief states that relations have been 'further strained.'",
+              "Correct! The exchange of warnings and accusations has increased tension."
+            ]
+          },
+          {
+            "question": "Which option best defines 'aggression' based on the news brief?",
+            "options": [
+              "A peaceful negotiation process.",
+              "Friendly communication between nations.",
+              "Forceful or hostile action by one country against another."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, aggression is the opposite of peaceful negotiation.",
+              "This describes cooperation, not aggression.",
+              "Correct! 'Aggression' refers to hostile or violent behavior, especially between states."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Russia Warns UK Over Drone Supplies to Ukraine, Accusing London of Escalating Conflict",
+        "overview": "Russia has issued a stark warning to the United Kingdom, accusing it of escalating the ongoing conflict in Ukraine by supplying drones, while the UK's Ministry of Defence firmly stands against Russian aggression.",
+        "topic": "International Relations, Geopolitics, Military Aid, Ukraine Conflict, Diplomatic Tensions",
+        "news_brief_sentences": [
+          "The Kremlin has issued a stern warning to the United Kingdom, asserting that London will face repercussions for its continued provision of drones to Ukraine.",
+          "This diplomatic demarche follows reports that British-manufactured unmanned aerial vehicles have been actively deployed in the ongoing conflict.",
+          "Moscow views the UK's military assistance as a direct provocation, significantly contributing to the escalation of hostilities in the region.",
+          "Russian officials articulated their position, suggesting such actions contravene international efforts to de-escalate the protracted conflict.",
+          "The Ministry of Defence in London swiftly rebutted these allegations, reaffirming its unwavering commitment to supporting Ukraine's sovereignty.",
+          "A spokesperson for the MoD underscored the legality of their defensive aid, characterizing it as a necessary measure against unwarranted aggression.",
+          "The UK maintains that its provisions are essential for Ukraine's self-defence, rejecting the notion that they constitute an act of aggression or escalation.",
+          "This latest exchange underscores the profound geopolitical tensions exacerbated by the conflict, with both sides trading accusations.",
+          "International observers are closely monitoring the rhetoric, concerned about its potential to further destabilise the fragile security landscape.",
+          "The ongoing dispute highlights a critical juncture in diplomatic relations between major global powers amidst a volatile geopolitical climate."
+        ],
+        "vocabulary": [
+          {
+            "term": "demarche",
+            "part_of_speech": "noun",
+            "definition": "A formal step or statement made by one government to another, often expressing protest or demanding action."
+          },
+          {
+            "term": "provocation",
+            "part_of_speech": "noun",
+            "definition": "An action or speech that makes someone annoyed or angry, especially deliberately."
+          },
+          {
+            "term": "escalation of hostilities",
+            "part_of_speech": "phrase",
+            "definition": "A rapid increase in the intensity or severity of violent conflict or warfare."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
+          },
+          {
+            "term": "exacerbated",
+            "part_of_speech": "verb",
+            "definition": "Made a problem, bad situation, or negative feeling worse."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs for Nuance",
+          "explanation": "C1 learners can enhance their writing by using a diverse range of reporting verbs beyond 'said' or 'stated'. Verbs like 'asserting,' 'rebutted,' 'articulated,' and 'underscored' convey specific intentions and attitudes, adding nuance and precision to the reported speech or action. This allows for a more sophisticated analysis of diplomatic exchanges and political statements.",
+          "example_quote": "The Kremlin has issued a stern warning to the United Kingdom, asserting that London will face repercussions for its continued provision of drones to Ukraine."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary concern Russia expresses regarding the UK's actions?",
+            "options": [
+              "The financial cost of the drones.",
+              "The UK's lack of diplomatic communication.",
+              "The escalation of hostilities due to military aid."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While costs are a factor in conflict, Russia's main accusation is about the impact on the conflict's intensity, not the expense.",
+              "Incorrect. The brief highlights a diplomatic demarche and rebuttals, indicating communication, not a lack thereof, is the issue.",
+              "Correct. Russia explicitly views the UK's military assistance, specifically drone provisions, as contributing to the 'escalation of hostilities'."
+            ]
+          },
+          {
+            "question": "Which word best describes the formal step taken by the Kremlin as mentioned in the brief?",
+            "options": [
+              "Declaration",
+              "Demarche",
+              "Negotiation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While a declaration is a statement, 'demarche' specifically refers to a formal diplomatic step or protest.",
+              "Correct. The term 'demarche' is used in the brief to describe the formal diplomatic warning issued by the Kremlin.",
+              "Incorrect. Negotiations imply discussions towards an agreement, whereas a demarche is typically a formal statement of position or protest."
+            ]
+          },
+          {
+            "question": "How does the UK's Ministry of Defence respond to Russia's accusations?",
+            "options": [
+              "They offer to withdraw military aid.",
+              "They deny the allegations and reaffirm support for Ukraine.",
+              "They express regret for the drones' deployment."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states the UK 'rebutted these allegations' and reaffirmed commitment to Ukraine, not withdrawal.",
+              "Correct. The MoD 'swiftly rebutted these allegations, reaffirming its unwavering commitment to supporting Ukraine's sovereignty.'",
+              "Incorrect. The UK 'underscored the legality of their defensive aid,' indicating no regret, but rather justification."
+            ]
+          },
+          {
+            "question": "What does the term 'provocation' imply in the context of Russia's view of UK aid?",
+            "options": [
+              "A helpful contribution to peace.",
+              "An action intended to incite anger or conflict.",
+              "A necessary strategic defence."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Russia sees it as detrimental to efforts to de-escalate, not a contribution to peace.",
+              "Correct. Russia views the UK's assistance as a direct 'provocation,' meaning an action intended to anger or trigger a response.",
+              "Incorrect. While the UK might see it as strategic defence for Ukraine, Russia perceives it as an aggressive incitement."
+            ]
+          },
+          {
+            "question": "The phrase 'escalation of hostilities' refers to what in the conflict?",
+            "options": [
+              "A reduction in military activity.",
+              "An increase in the intensity or spread of conflict.",
+              "A diplomatic effort to resolve disputes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Escalation' means an increase, not a reduction, in severity.",
+              "Correct. 'Escalation of hostilities' precisely means an intensification or worsening of the armed conflict.",
+              "Incorrect. This phrase describes a worsening of conflict, which is contrary to diplomatic efforts for resolution."
+            ]
+          },
+          {
+            "question": "Which reporting verb from the grammar explanation best fits a statement of strong disagreement?",
+            "options": [
+              "Asserting",
+              "Underscored",
+              "Rebutted"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Asserting' means stating a fact or belief confidently, not necessarily disagreeing with another's statement.",
+              "Incorrect. 'Underscored' means to emphasize something, which is different from disagreeing with a claim.",
+              "Correct. 'Rebutted' specifically means to claim or prove that (evidence or an accusation) is false, making it ideal for strong disagreement."
+            ]
+          },
+          {
+            "question": "According to the brief, what is the UK's stance on its provision of aid to Ukraine?",
+            "options": [
+              "It is a form of aggression.",
+              "It is a necessary measure for self-defence.",
+              "It is a neutral act to observe the conflict."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The UK explicitly rejects the notion that its aid constitutes an act of aggression.",
+              "Correct. The UK characterizes its aid as 'a necessary measure against unwarranted aggression' and 'essential for Ukraine's self-defence.'",
+              "Incorrect. Providing defensive aid is an active involvement, not a neutral observation."
+            ]
+          },
+          {
+            "question": "The geopolitical tensions are described as 'exacerbated' by the conflict. What does 'exacerbated' mean in this context?",
+            "options": [
+              "Lessened or alleviated.",
+              "Made worse or more severe.",
+              "Completely resolved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Exacerbated' implies a negative change, not a lessening.",
+              "Correct. 'Exacerbated' means the tensions have been made worse or more intense by the ongoing conflict.",
+              "Incorrect. The brief indicates ongoing tensions, not their resolution."
+            ]
+          },
+          {
+            "question": "In the sentence 'Russian officials articulated their position, suggesting such actions contravene international efforts...', what is the function of 'articulated'?",
+            "options": [
+              "To question their position.",
+              "To state their position clearly and effectively.",
+              "To reluctantly accept a position."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Articulated' suggests clear expression, not questioning.",
+              "Correct. 'Articulated' is a sophisticated reporting verb indicating that the officials expressed their position distinctly and coherently.",
+              "Incorrect. There is no indication of reluctance; 'articulated' implies a clear statement of their viewpoint."
+            ]
+          },
+          {
+            "question": "What is the broader concern among international observers highlighted in the brief?",
+            "options": [
+              "The potential for a new trade agreement.",
+              "The risk of further destabilizing the security landscape.",
+              "The success of peace initiatives."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The focus is on security implications, not trade agreements.",
+              "Correct. Observers are worried about the 'potential to further destabilise the fragile security landscape' due to the ongoing dispute.",
+              "Incorrect. The brief points to worsening tensions and destabilisation, not successful peace efforts."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

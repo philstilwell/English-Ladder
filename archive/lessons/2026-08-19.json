@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-19",
+  "release_iso": "2026-08-19T10:20:53Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Sacked Ukrainian defence minister calls for presidential election",
+    "summary": "Martial law has been in place in Ukraine since February 2022, under which elections are suspended.",
+    "link": "https://www.bbc.co.uk/news/articles/cdew8n9erlwo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Ukraine: Minister Sacked, Calls for Election Under Martial Law",
+        "overview": "A Ukrainian minister wants an election, but existing martial law prevents it from happening now.",
+        "topic": "Politics and Current Events in Ukraine",
+        "news_brief_sentences": [
+          "Ukraine has special rules called martial law.",
+          "These rules started in February 2022.",
+          "Under martial law, normal elections cannot happen.",
+          "Elections are suspended, which means stopped for a time.",
+          "A Ukrainian defence minister was recently sacked.",
+          "He lost his job as the defence minister.",
+          "His name is Oleksii Reznikov.",
+          "He now wants new elections for the president.",
+          "But martial law makes new elections impossible now.",
+          "So, there will be no new presidential election yet."
+        ],
+        "vocabulary": [
+          {
+            "term": "martial law",
+            "part_of_speech": "noun phrase",
+            "definition": "Special rules when the military controls a country, often during an emergency."
+          },
+          {
+            "term": "sacked",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Fired from a job; told to leave work."
+          },
+          {
+            "term": "elections",
+            "part_of_speech": "noun",
+            "definition": "Times when people choose their leaders by voting."
+          },
+          {
+            "term": "suspended",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Stopped for a certain period of time."
+          },
+          {
+            "term": "defence minister",
+            "part_of_speech": "noun phrase",
+            "definition": "A high-ranking government official responsible for the country's military and security."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense (Actions that finished in the past)",
+          "explanation": "We use the Simple Past Tense to talk about actions or situations that began and ended at a specific time in the past. You often see time words like 'yesterday,' 'last week,' or a specific year like 'in 2022' with this tense. Many regular verbs end with '-ed' in the past, but some verbs are irregular, like 'start' becoming 'started' or 'is' becoming 'was'.",
+          "example_quote": "These rules started in February 2022."
+        },
+        "quiz": [
+          {
+            "question": "What kind of special rules does Ukraine have?",
+            "options": [
+              "Election law",
+              "Martial law",
+              "Presidential law"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'Election law' is not mentioned as the special rule. Try again!",
+              "That's correct! Ukraine has 'martial law' in place.",
+              "No, 'Presidential law' is not the term used. Look for the special rules mentioned."
+            ]
+          },
+          {
+            "question": "When did martial law begin in Ukraine?",
+            "options": [
+              "Last month",
+              "February 2022",
+              "After the election"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Not 'last month'. The news provides a specific time. Review the brief.",
+              "Yes, the news brief states that martial law started in February 2022.",
+              "No, martial law began before any recent election discussions. Check the date."
+            ]
+          },
+          {
+            "question": "What happens to normal elections under martial law?",
+            "options": [
+              "They become faster",
+              "They are suspended",
+              "They choose the military leader"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, normal elections do not become faster. What does 'suspended' mean?",
+              "Correct! Under martial law, normal elections are 'suspended', meaning they are stopped.",
+              "No, elections under martial law do not choose a military leader. They are stopped."
+            ]
+          },
+          {
+            "question": "What does it mean if someone is 'sacked' from their job?",
+            "options": [
+              "They got a promotion",
+              "They lost their job",
+              "They took a long vacation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'sacked' means the opposite of getting a promotion. Try again.",
+              "That's right! 'Sacked' means someone was fired or lost their job.",
+              "No, 'sacked' does not mean taking a vacation. Think about losing a position."
+            ]
+          },
+          {
+            "question": "Who was the Ukrainian 'defence minister' mentioned in the news?",
+            "options": [
+              "The president",
+              "Oleksii Reznikov",
+              "A general"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the president is a different role. Read the name carefully.",
+              "Correct! Oleksii Reznikov was the defence minister who was sacked.",
+              "No, the news names a specific person, not just 'a general'."
+            ]
+          },
+          {
+            "question": "What does the sacked minister want?",
+            "options": [
+              "More martial law",
+              "A new job",
+              "New presidential elections"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, he wants the opposite of more martial law. What kind of political event does he want?",
+              "While he might want a new job, his main request in the news is different.",
+              "Yes, the sacked minister wants new presidential elections."
+            ]
+          },
+          {
+            "question": "Why can't new presidential elections happen now?",
+            "options": [
+              "Because the minister is sacked",
+              "Because of martial law",
+              "Because people don't want them"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, his sacking is not the reason elections can't happen. What is the main barrier?",
+              "Correct! Martial law is the reason why new elections are not possible at this time.",
+              "No, the news does not say people don't want elections. What is the official reason?"
+            ]
+          },
+          {
+            "question": "What does 'suspended' mean in the context of elections?",
+            "options": [
+              "They are made easier",
+              "They are permanently stopped",
+              "They are stopped for a period"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'suspended' does not mean they are easier. Think about stopping an activity.",
+              "Not 'permanently stopped'. 'Suspended' means for a specific or temporary period.",
+              "That's right! 'Suspended' means they are stopped for a certain amount of time."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense to talk about something that finished in the past?",
+            "options": [
+              "Ukraine has special rules.",
+              "These rules started in February 2022.",
+              "Elections are suspended."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Has' is present tense. Look for an action that happened and finished.",
+              "Correct! 'Started' is the simple past tense, showing an action that finished in the past.",
+              "'Are suspended' is present tense. We need a past action."
+            ]
+          },
+          {
+            "question": "What is the primary effect of martial law on elections?",
+            "options": [
+              "It allows more voting",
+              "It stops elections",
+              "It changes election dates"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, martial law does not allow more voting. What is its main impact?",
+              "Yes, the main effect of martial law is that it stops elections.",
+              "While dates might change, the more significant impact is that elections are completely stopped."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Ukraine's Sacked Defence Minister Calls for Presidential Election Amidst Martial Law",
+        "overview": "This lesson explores the recent call for a presidential election in Ukraine by a sacked defence minister, considering the current suspension of elections under martial law.",
+        "topic": "Ukrainian Politics and the Impact of Martial Law on Elections",
+        "news_brief_sentences": [
+          "Ukraine's recently sacked defence minister has issued a notable public statement.",
+          "He has specifically called for the organisation of a presidential election in Ukraine.",
+          "This significant appeal occurs while the nation remains under strict martial law.",
+          "Martial law has been an official state in Ukraine since February 2022, due to ongoing conflict.",
+          "Under these special wartime regulations, all national elections are currently suspended.",
+          "The former minister's suggestion directly questions the temporary political order.",
+          "His remarks have sparked considerable debate across various political spheres.",
+          "Implementing an election would necessitate a review of the existing legal framework.",
+          "Discussions are ongoing regarding the practicalities and timing of such a major vote.",
+          "The ultimate decision on conducting elections will require careful consideration by the government."
+        ],
+        "vocabulary": [
+          {
+            "term": "sacked",
+            "part_of_speech": "adjective",
+            "definition": "Removed from a job or position, usually suddenly and often without notice."
+          },
+          {
+            "term": "called for",
+            "part_of_speech": "phrasal verb",
+            "definition": "To publicly demand or request something, especially something important or necessary."
+          },
+          {
+            "term": "martial law",
+            "part_of_speech": "noun",
+            "definition": "Temporary rule by military forces over civilians, usually during an emergency or war, when normal laws are set aside."
+          },
+          {
+            "term": "suspended",
+            "part_of_speech": "adjective",
+            "definition": "Temporarily stopped or postponed, often referring to an activity, a process, or someone's duties."
+          },
+          {
+            "term": "legal framework",
+            "part_of_speech": "noun phrase",
+            "definition": "The system of laws, rules, and regulations that provides the structure for how an organization, country, or activity operates."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice (Present Simple)",
+          "explanation": "We use the passive voice to talk about an action when the focus is on the action itself or on the person or thing that receives the action, rather than on the person or thing that performs it. For the present simple passive, we form it with 'is' or 'are' + the past participle of the main verb. It's often used when the agent (who did it) is unknown, unimportant, or obvious from the context.",
+          "example_quote": "Under these special wartime regulations, all national elections are currently suspended."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary topic discussed in the news brief?",
+            "options": [
+              "The ongoing military conflict in Ukraine.",
+              "A former minister's appeal for elections during martial law.",
+              "The resignation of Ukraine's defence minister."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While part of the context, the main focus is the election call.",
+              "Correct! The brief highlights the call for a presidential election despite martial law.",
+              "The minister was 'sacked,' meaning dismissed, not that he resigned voluntarily."
+            ]
+          },
+          {
+            "question": "What has Ukraine's former defence minister specifically requested?",
+            "options": [
+              "A review of wartime regulations.",
+              "A national referendum on martial law.",
+              "A presidential election."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While related, his direct request was not for a general review of regulations.",
+              "This is not mentioned as his specific request in the news brief.",
+              "Correct. He has explicitly 'called for' the organisation of a presidential election."
+            ]
+          },
+          {
+            "question": "According to the news brief, why are national elections currently not taking place in Ukraine?",
+            "options": [
+              "There is a lack of suitable candidates.",
+              "They are suspended under martial law.",
+              "The government has postponed them indefinitely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not provide information about candidate availability.",
+              "Exactly! Under 'martial law,' national elections are currently 'suspended.'",
+              "While postponed, the direct reason stated in the brief is martial law."
+            ]
+          },
+          {
+            "question": "When was martial law officially put in place in Ukraine?",
+            "options": [
+              "Since February 2022.",
+              "Before the full-scale invasion.",
+              "Recently, after the minister's statement."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The news brief states that 'Martial law has been an official state in Ukraine since February 2022.'",
+              "Martial law was implemented concurrently with the full-scale invasion, not before it.",
+              "Martial law was established long before the former minister made his recent statement."
+            ]
+          },
+          {
+            "question": "What does it mean if a minister was 'sacked,' as mentioned in the news brief?",
+            "options": [
+              "He retired from his position.",
+              "He was dismissed from his job.",
+              "He moved to a different ministry."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Sacked' implies being forced to leave, not choosing to retire.",
+              "That's right! To be 'sacked' means to be officially removed or fired from a job.",
+              "The term 'sacked' refers to dismissal, not a transfer within the government."
+            ]
+          },
+          {
+            "question": "In the sentence, 'He has specifically called for the organisation of a presidential election,' what does 'called for' mean?",
+            "options": [
+              "He asked informally for it.",
+              "He publicly demanded or requested it.",
+              "He made a phone call about it."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Called for' implies a strong, public demand, not just an informal ask.",
+              "Correct. To 'call for' something means to publicly demand or strongly request it.",
+              "This is a phrasal verb and does not literally refer to making a telephone call."
+            ]
+          },
+          {
+            "question": "What is a characteristic of 'martial law,' as described in the news brief?",
+            "options": [
+              "It promotes free and open elections.",
+              "It allows for temporary military rule.",
+              "It ensures all civilian laws remain unchanged."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "On the contrary, under 'martial law,' elections are typically 'suspended.'",
+              "Yes, 'martial law' involves temporary rule by military forces and changes to normal civilian laws.",
+              "Under 'martial law,' civilian laws can be set aside or significantly modified, not always unchanged."
+            ]
+          },
+          {
+            "question": "The news brief states that national elections are 'currently suspended.' What is the best synonym for 'suspended' in this context?",
+            "options": [
+              "Cancelled permanently.",
+              "Postponed temporarily.",
+              "Rescheduled immediately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Suspended' implies a temporary stop, not a permanent cancellation.",
+              "Correct. 'Suspended' means they are temporarily stopped or put on hold.",
+              "They are stopped for a period, not immediately rescheduled for a new date."
+            ]
+          },
+          {
+            "question": "What would 'necessitate a review of the existing legal framework' mean if an election were held during martial law?",
+            "options": [
+              "The current system of laws would need examination and possible changes.",
+              "The election process would be entirely new.",
+              "Politicians would need legal advice."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! The 'legal framework' refers to the established system of laws that would need to be checked and potentially altered.",
+              "While there might be new aspects, the core idea is scrutinizing and potentially changing existing laws.",
+              "While politicians might need advice, this isn't the direct meaning of 'review of the existing legal framework.'"
+            ]
+          },
+          {
+            "question": "In the sentence, 'all national elections are currently suspended,' why is the passive voice used?",
+            "options": [
+              "To emphasize who suspended the elections.",
+              "To focus on the action and the elections, not necessarily who suspended them.",
+              "To describe a future event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The passive voice generally de-emphasizes or omits the agent (who performs the action).",
+              "Correct. The passive voice helps us focus on the 'suspended' elections rather than the specific entity that suspended them.",
+              "This sentence describes a present situation, not something that will happen in the future."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Ukrainian Election Calls Amidst Martial Law: A Constitutional Conundrum",
+        "overview": "The imperative for a presidential election in Ukraine, championed by the former defence minister, faces immediate constitutional hurdles due to the ongoing imposition of martial law which inherently suspends such democratic processes.",
+        "topic": "The interplay between martial law, constitutional governance, and democratic electoral processes in Ukraine's current political landscape.",
+        "news_brief_sentences": [
+          "The former Ukrainian defence minister has recently voiced a compelling appeal for a presidential election to be held, sparking considerable debate within the political establishment.",
+          "This proposition comes at a particularly delicate juncture, given the nation's steadfast adherence to martial law, instituted following the full-scale invasion.",
+          "The legal framework of Ukraine explicitly stipulates that under the conditions of martial law, all electoral processes are unequivocally suspended.",
+          "Since its initial imposition in February 2022, martial law has been continuously prolonged, effectively deferring any national polls indefinitely.",
+          "The minister's advocacy thus confronts significant constitutional impediments, challenging the prevailing legal consensus regarding wartime governance.",
+          "Observers note that his pronouncement might reflect a growing domestic discourse concerning the duration of the current political status quo.",
+          "However, any immediate moves to conduct an election would necessitate a fundamental re-evaluation of the existing wartime legislation.",
+          "Such a dramatic shift could potentially undermine national stability and divert concentrated efforts required for defense.",
+          "Consequently, the call for elections, while politically significant, is widely understood to be legally untenable under the present circumstances.",
+          "The government remains committed to maintaining the constitutional order until the cessation of hostilities permits a definitive return to peacetime democratic processes."
+        ],
+        "vocabulary": [
+          {
+            "term": "compelling appeal",
+            "part_of_speech": "noun phrase",
+            "definition": "A strong, forceful request or plea that is difficult to ignore or resist, often due to its logical or emotional weight."
+          },
+          {
+            "term": "delicate juncture",
+            "part_of_speech": "noun phrase",
+            "definition": "A critical or sensitive point in time where careful handling is required due to potential difficulties or significant implications."
+          },
+          {
+            "term": "explicitly stipulates",
+            "part_of_speech": "adverb + verb",
+            "definition": "States clearly and precisely as a condition or requirement, leaving no room for ambiguity or interpretation."
+          },
+          {
+            "term": "constitutional impediments",
+            "part_of_speech": "noun phrase",
+            "definition": "Obstacles or barriers rooted in the fundamental laws or principles of a nation, making certain actions legally difficult or impossible."
+          },
+          {
+            "term": "legally untenable",
+            "part_of_speech": "adverb + adjective",
+            "definition": "Impossible to maintain or defend under the current legal framework or system, lacking legal basis or justification."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Consequence or Result",
+          "explanation": "Participle clauses can be used to describe the result or consequence of the action in the main clause, often beginning with 'effectively' or 'consequently'. They offer a concise and sophisticated way to link actions and their outcomes, common in formal writing.",
+          "example_quote": "Since its initial imposition in February 2022, martial law has been continuously prolonged, effectively deferring any national polls indefinitely."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary obstacle to holding a presidential election in Ukraine, according to the news brief?",
+            "options": [
+              "Lack of political will from the government.",
+              "The ongoing imposition of martial law.",
+              "Insufficient international support for elections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief highlights constitutional impediments, not a lack of political will, as the primary barrier.",
+              "Correct. Martial law, in place since February 2022, explicitly suspends electoral processes, making an election legally untenable.",
+              "The news brief does not mention international support as a factor for the suspension of elections."
+            ]
+          },
+          {
+            "question": "What does the phrase 'compelling appeal' suggest about the former minister's call for elections?",
+            "options": [
+              "It was a reluctant suggestion.",
+              "It was a forceful and significant request.",
+              "It was a poorly received proposition."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A 'compelling appeal' suggests a strong, persuasive request, not a reluctant one.",
+              "Correct. 'Compelling appeal' indicates a strong, forceful, and difficult-to-ignore request or plea.",
+              "The phrase itself does not imply how the proposition was received, only its inherent forcefulness."
+            ]
+          },
+          {
+            "question": "The news brief states the proposition comes at a 'delicate juncture.' What does this imply about the current situation?",
+            "options": [
+              "It is a moment of great stability.",
+              "It is a time requiring careful consideration due to complexities.",
+              "It is a favorable period for political change."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A 'delicate juncture' implies sensitivity and complexity, not stability.",
+              "Correct. A 'delicate juncture' signifies a critical or sensitive point in time needing careful handling.",
+              "The term 'delicate' suggests challenges, making it an unfavorable period for abrupt political changes."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is the meaning of the legal framework 'explicitly stipulates'?",
+            "options": [
+              "It vaguely suggests a condition.",
+              "It clearly and precisely states a requirement.",
+              "It implicitly allows for exceptions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To 'explicitly stipulate' means to state something clearly and without ambiguity, not vaguely.",
+              "Correct. 'Explicitly stipulates' means to state clearly and precisely as a condition or requirement.",
+              "This phrase implies a strict condition, not one that implicitly allows for exceptions."
+            ]
+          },
+          {
+            "question": "What are 'constitutional impediments' in the context of the former minister's advocacy?",
+            "options": [
+              "Minor political disagreements.",
+              "Obstacles based on the nation's fundamental laws.",
+              "Financial challenges in organizing elections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Constitutional impediments' refer to legal barriers, not just minor political disagreements.",
+              "Correct. These are obstacles or barriers rooted in the fundamental laws or principles of the nation.",
+              "The term 'constitutional' specifically refers to legal framework, not financial aspects."
+            ]
+          },
+          {
+            "question": "Why is the call for elections considered 'legally untenable' under present circumstances?",
+            "options": [
+              "The government lacks the infrastructure to conduct elections.",
+              "It is impossible to maintain or defend under the current legal framework.",
+              "Public opinion does not support holding elections at this time."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief emphasizes legal and constitutional reasons, not logistical ones, for the situation being 'legally untenable'.",
+              "Correct. 'Legally untenable' means it is impossible to maintain or defend under the current legal framework due to lack of legal basis.",
+              "The news brief discusses legal barriers, not public opinion, as the reason for it being 'legally untenable'."
+            ]
+          },
+          {
+            "question": "In the sentence 'martial law has been continuously prolonged, effectively deferring any national polls indefinitely,' what does the participle clause 'effectively deferring any national polls indefinitely' describe?",
+            "options": [
+              "The cause of martial law's prolongation.",
+              "A condition that must be met before elections.",
+              "The direct result or consequence of martial law's prolongation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The clause describes the outcome, not the cause, of martial law's prolongation.",
+              "This describes a condition, but not the direct result of the continuous prolongation.",
+              "Correct. This participle clause explains the consequence or result of martial law being continuously prolonged, meaning it defers elections."
+            ]
+          },
+          {
+            "question": "What potential negative consequence is mentioned if immediate moves were made to conduct an election?",
+            "options": [
+              "Reduced international aid.",
+              "Undermining national stability.",
+              "A decline in voter participation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not explicitly mention a reduction in international aid as a direct consequence of holding elections.",
+              "Correct. The text states such a shift 'could potentially undermine national stability and divert concentrated efforts required for defense.'",
+              "While possible, the news brief highlights national stability as the primary concern, not voter participation rates."
+            ]
+          },
+          {
+            "question": "What is the government's current stance regarding the constitutional order?",
+            "options": [
+              "It is open to immediate changes in the constitutional order.",
+              "It is committed to maintaining it until hostilities cease.",
+              "It plans to re-evaluate it based on the former minister's call."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The government is committed to maintaining the constitutional order, not to immediate changes.",
+              "Correct. The government is committed to maintaining the constitutional order until the cessation of hostilities.",
+              "While the call sparks debate, the government's commitment to the current constitutional order is until the cessation of hostilities."
+            ]
+          },
+          {
+            "question": "The news brief implies that the former minister's pronouncement reflects:",
+            "options": [
+              "A unique, isolated opinion.",
+              "A growing domestic discussion about the current political status.",
+              "International pressure for immediate elections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states it 'might reflect a growing domestic discourse,' not an isolated opinion.",
+              "Correct. The text suggests his pronouncement 'might reflect a growing domestic discourse regarding the duration of the current political status quo.'",
+              "The news brief focuses on domestic factors and constitutional impediments, not international pressure."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

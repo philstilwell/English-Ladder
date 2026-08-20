@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-20",
+  "release_iso": "2026-08-20T10:21:43Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "At least 13 killed in Kyiv as Ukraine grapples with air defence shortages",
+    "summary": "Apartment blocks and warehouses were targeted in the \"massive attack\" on Thursday, officials say.",
+    "link": "https://www.bbc.co.uk/news/articles/c98vzmden5yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Kyiv Attack: Many People Died",
+        "overview": "A big attack happened in Kyiv, Ukraine, and many buildings were hit.",
+        "topic": "Air Attacks and City Safety",
+        "news_brief_sentences": [
+          "Kyiv, a big city in Ukraine, had a very serious attack.",
+          "This attack happened on Thursday.",
+          "At least 13 people were killed.",
+          "Apartment blocks in the city faced damage.",
+          "Warehouses also faced damage from the attack.",
+          "Officials said it was a \"massive attack.\"",
+          "Many buildings were targeted during the attack.",
+          "Ukraine currently has problems with air defence systems.",
+          "They need more protection from such attacks in the future.",
+          "The situation in Kyiv is very sad for many people."
+        ],
+        "vocabulary": [
+          {
+            "term": "attack",
+            "part_of_speech": "noun",
+            "definition": "A strong, harmful action against a place or people."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb",
+            "definition": "To take away someone's life."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "Important people who work for the government or a company."
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb",
+            "definition": "Chosen as a place or thing to hit or hurt."
+          },
+          {
+            "term": "air defence",
+            "part_of_speech": "noun",
+            "definition": "Systems or weapons that protect a country from attacks from the sky."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. It often tells us \"when\" something happened, like an event that is now over.",
+          "example_quote": "This attack happened on Thursday."
+        },
+        "quiz": [
+          {
+            "question": "What happened in Kyiv on Thursday?",
+            "options": [
+              "A big party started",
+              "A very serious attack happened",
+              "A new park opened"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says there was an attack, not a party.",
+              "Correct! The news brief states that a very serious attack occurred.",
+              "No, the news brief does not mention a new park."
+            ]
+          },
+          {
+            "question": "How many people were killed in the attack?",
+            "options": [
+              "Exactly 10 people",
+              "More than 20 people",
+              "At least 13 people"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief specifies a different number.",
+              "That's too high. The news brief says 'at least 13'.",
+              "Correct! The news brief mentions that at least 13 people died."
+            ]
+          },
+          {
+            "question": "What kind of buildings were hit in the attack?",
+            "options": [
+              "Schools and hospitals",
+              "Apartment blocks and warehouses",
+              "Libraries and museums"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief specifies different types of buildings.",
+              "Yes, apartment blocks and warehouses faced damage.",
+              "No, the news brief does not mention these buildings."
+            ]
+          },
+          {
+            "question": "Who said it was a 'massive attack'?",
+            "options": [
+              "Tourists",
+              "Officials",
+              "Children"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says 'officials' made this statement.",
+              "Correct! The officials described the event as a 'massive attack'.",
+              "No, children did not make this official statement."
+            ]
+          },
+          {
+            "question": "What does 'air defence' protect a country from?",
+            "options": [
+              "Rainfall",
+              "Attacks from the sky",
+              "Traffic jams"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'air defence' is not for weather protection.",
+              "Yes, 'air defence' helps protect from attacks coming from above.",
+              "No, 'air defence' does not relate to traffic problems."
+            ]
+          },
+          {
+            "question": "What does it mean if people were 'killed'?",
+            "options": [
+              "They moved to a new city",
+              "They lost their lives",
+              "They became very happy"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'killed' means something more serious in this context.",
+              "Correct! 'Killed' means someone's life was taken away.",
+              "No, 'killed' has a very different and sad meaning."
+            ]
+          },
+          {
+            "question": "When do we use the Simple Past Tense?",
+            "options": [
+              "For actions happening now",
+              "For future actions tomorrow",
+              "For actions that finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the Simple Past Tense is not for actions happening right now.",
+              "Incorrect. The Simple Past Tense is not for future events.",
+              "Correct! We use the Simple Past Tense to talk about actions that are already over."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Simple Past Tense?",
+            "options": [
+              "Ukraine currently has problems.",
+              "This attack happened on Thursday.",
+              "Many buildings are targeted."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'has' is present tense. Look for a past tense verb.",
+              "Yes, 'happened' is the past form of 'happen', showing a finished action.",
+              "No, 'are targeted' is present tense, not simple past."
+            ]
+          },
+          {
+            "question": "What does it mean when buildings were 'targeted'?",
+            "options": [
+              "They were painted",
+              "They were chosen to be hit",
+              "They were bought"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'targeted' means something different in this news.",
+              "Correct! 'Targeted' means they were specifically chosen to be attacked.",
+              "No, 'targeted' does not mean they were bought."
+            ]
+          },
+          {
+            "question": "Why does Ukraine need more protection?",
+            "options": [
+              "Because it is very cold there",
+              "Because of the attacks",
+              "Because many tourists visit"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief does not mention the cold weather as the reason.",
+              "Yes, the news brief says Ukraine needs more protection from such attacks.",
+              "No, tourist visits are not the reason for needing air defence."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Kyiv Under Attack: Ukraine Grapples with Air Defence Shortages Amid Deadly Strikes",
+        "overview": "Kyiv endured a devastating attack on Thursday that resulted in at least 13 deaths and extensive damage to buildings, highlighting Ukraine's ongoing struggle with insufficient air defence capabilities.",
+        "topic": "Conflict and Defence in Ukraine",
+        "news_brief_sentences": [
+          "Kyiv experienced a devastating night on Thursday following a massive attack.",
+          "Tragically, at least 13 people were killed as a direct result of these strikes.",
+          "Many residential apartment blocks and commercial warehouses were targeted during the assault.",
+          "These structures sustained significant damage, highlighting the intensity of the offensive.",
+          "Ukraine currently grapples with severe air defence shortages across the country.",
+          "The lack of sufficient protective systems makes cities more vulnerable to aerial bombardments.",
+          "According to officials, the capital suffered extensive damage from the large-scale missile and drone barrage.",
+          "Emergency services immediately responded to the sites, working to rescue survivors and clear debris.",
+          "Such incidents underscore the ongoing challenges faced by Ukrainian forces in protecting civilian areas.",
+          "The government continues to seek international support to strengthen its defensive capabilities."
+        ],
+        "vocabulary": [
+          {
+            "term": "massive attack",
+            "part_of_speech": "noun phrase",
+            "definition": "A very large, powerful, and intense military action or assault, typically involving many resources or forces."
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Chosen or selected as the object of an attack or an action; directed towards a specific aim."
+          },
+          {
+            "term": "grapples with",
+            "part_of_speech": "verb phrase",
+            "definition": "To struggle or contend with a difficult problem or situation, trying hard to overcome it."
+          },
+          {
+            "term": "air defence shortages",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation where there are not enough systems, equipment, or resources to protect against attacks from the sky, such as missiles or aircraft."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a public office or have authority in an organization or government, often speaking on behalf of it."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object of the action, rather than the subject performing the action. It's formed with a form of 'to be' + the past participle of the main verb. It is very common in news reporting when the 'doer' of the action is unknown, unimportant, or obvious from the context.",
+          "example_quote": "Many residential apartment blocks and commercial warehouses were targeted during the assault."
+        },
+        "quiz": [
+          {
+            "question": "What was the main outcome of the attack on Kyiv mentioned in the news brief?",
+            "options": [
+              "A peace treaty was signed.",
+              "At least 13 people were killed.",
+              "New air defence systems were deployed."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention a peace treaty.",
+              "Correct! The news brief clearly states that at least 13 people died.",
+              "Incorrect. The brief mentions shortages, not new deployments."
+            ]
+          },
+          {
+            "question": "Which types of buildings were specifically mentioned as being targeted?",
+            "options": [
+              "Schools and hospitals.",
+              "Government offices and military bases.",
+              "Residential apartment blocks and commercial warehouses."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. These were not the specific targets mentioned.",
+              "Incorrect. The news brief highlighted different types of structures.",
+              "Correct! Apartment blocks and warehouses were explicitly stated as targets."
+            ]
+          },
+          {
+            "question": "What does the phrase 'grapples with' mean in the context of Ukraine's situation?",
+            "options": [
+              "To easily solve a problem.",
+              "To struggle or contend with a difficult issue.",
+              "To ignore a challenging situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Grapples with' implies difficulty, not ease.",
+              "Correct! It means to struggle or deal with a difficult problem.",
+              "Incorrect. 'Grapples with' suggests actively engaging with a problem, not ignoring it."
+            ]
+          },
+          {
+            "question": "What does 'air defence shortages' refer to?",
+            "options": [
+              "Too many air defence systems.",
+              "A lack of protective systems against aerial attacks.",
+              "A surplus of air defence personnel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Shortages' means a lack, not an abundance.",
+              "Correct! It means there are not enough systems to defend against air attacks.",
+              "Incorrect. The term specifically refers to systems, not personnel."
+            ]
+          },
+          {
+            "question": "According to the news brief, who reported on the damage in Kyiv?",
+            "options": [
+              "Journalists.",
+              "Witnesses.",
+              "Officials."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While journalists report, the brief specifically mentions another source.",
+              "Incorrect. The information was attributed to a different group.",
+              "Correct! The brief states the information came 'According to officials'."
+            ]
+          },
+          {
+            "question": "In the sentence 'Many residential apartment blocks and commercial warehouses were targeted', why is the passive voice used?",
+            "options": [
+              "To emphasize who performed the action.",
+              "To focus on the buildings that received the action.",
+              "To make the sentence shorter."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice deemphasizes the doer.",
+              "Correct! It highlights the buildings (the objects) rather than the attackers (the subjects).",
+              "Incorrect. While it can sometimes shorten sentences, its primary purpose here is focus."
+            ]
+          },
+          {
+            "question": "What is the primary function of the passive voice in news reporting?",
+            "options": [
+              "To always hide the identity of the actor.",
+              "To emphasize the action and its object, often when the actor is unknown or less important.",
+              "To make the news sound more dramatic."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While it can hide the actor, its main function is emphasis on the action/object.",
+              "Correct! It focuses on what happened and to whom, not necessarily who did it.",
+              "Incorrect. While news can be dramatic, that's not the grammatical function of passive voice."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief clearly uses the passive voice?",
+            "options": [
+              "Kyiv experienced a devastating night.",
+              "Emergency services immediately responded.",
+              "Many residential apartment blocks and commercial warehouses were targeted."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This sentence uses the active voice ('Kyiv' is the subject performing 'experienced').",
+              "Incorrect. This sentence uses the active voice ('Emergency services' is the subject performing 'responded').",
+              "Correct! 'were targeted' uses 'to be' + past participle, focusing on the buildings."
+            ]
+          },
+          {
+            "question": "What kind of international support is the Ukrainian government seeking?",
+            "options": [
+              "Cultural exchange programs.",
+              "Financial aid for tourism.",
+              "Assistance to strengthen its defensive capabilities."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief focuses on military defence.",
+              "Incorrect. Tourism aid is not mentioned in this context.",
+              "Correct! They aim to strengthen defensive capabilities, as stated in the brief."
+            ]
+          },
+          {
+            "question": "Why are cities like Kyiv described as 'more vulnerable' due to air defence shortages?",
+            "options": [
+              "Because they have too many protective systems.",
+              "Because they lack sufficient protection against aerial attacks.",
+              "Because they are geographically isolated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Shortages' implies a lack, not an abundance.",
+              "Correct! A lack of defensive systems makes them easier targets for attacks from the air.",
+              "Incorrect. Geographic isolation is not mentioned as the reason for vulnerability here."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Kyiv Endures Devastating Aerial Assault Amidst Critical Air Defence Shortages",
+        "overview": "Kyiv recently experienced a significant aerial attack targeting civilian infrastructure, highlighting Ukraine's critical vulnerabilities due to dwindling air defence capabilities and underscoring the urgent need for international support.",
+        "topic": "The ongoing conflict in Ukraine, focusing on aerial bombardments and the critical importance of air defence systems.",
+        "news_brief_sentences": [
+          "Kyiv was subjected to a **massive attack** on Thursday, marking one of the most intense aerial bombardments the capital has endured recently.",
+          "Ukrainian officials confirmed that the sustained assault involved a barrage of missiles and drones, overwhelming certain defensive positions.",
+          "Apartment blocks and various warehouses across the city were directly **targeted**, resulting in extensive structural damage and civilian casualties.",
+          "Tragically, at least 13 individuals perished in the onslaught, further exacerbating the human toll of the protracted conflict.",
+          "Ukraine continues to **grapple with** critical shortages in its sophisticated air defence systems, a vulnerability acutely exploited by the recent offensive.",
+          "The ongoing strain on military resources renders the nation susceptible to such destructive incursions, posing a severe challenge to urban safety.",
+          "Experts suggest that the frequency and scale of these attacks underscore the urgent **imperative** for accelerated military aid from Western allies.",
+          "Without substantial reinforcement, Ukraine's **dwindling capabilities** risk further erosion, potentially altering the strategic landscape.",
+          "These relentless aerial campaigns aim to destabilize civilian life and exert psychological pressure on the Ukrainian populace.",
+          "The international community watches closely as Kyiv assesses the full extent of the damage and renews appeals for robust global assistance."
+        ],
+        "vocabulary": [
+          {
+            "term": "massive attack",
+            "part_of_speech": "noun phrase",
+            "definition": "A very large-scale, intense, and destructive offensive, typically involving a significant number of military assets or munitions."
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Singled out or directed at a specific object, person, or area, often with hostile intent or as an objective."
+          },
+          {
+            "term": "grapple with",
+            "part_of_speech": "phrasal verb",
+            "definition": "To struggle or contend with a difficult problem, situation, or adversary, often implying a prolonged effort to overcome it."
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "noun",
+            "definition": "An urgent need or command; something that is absolutely essential or crucial and must be done."
+          },
+          {
+            "term": "dwindling capabilities",
+            "part_of_speech": "noun phrase",
+            "definition": "A gradual reduction or decline in the capacity, power, or effectiveness of a system, resource, or entity over time."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases (Present Participle)",
+          "explanation": "A present participial phrase, beginning with an -ing verb, acts as an adjective to modify a noun or pronoun, adding descriptive information or explaining the result or consequence of an action. It can often replace a relative clause or an adverbial clause, making sentences more concise and sophisticated.",
+          "example_quote": "Ukraine continues to grapple with critical shortages in its sophisticated air defence systems, a vulnerability acutely exploited by the recent offensive."
+        },
+        "quiz": [
+          {
+            "question": "Which specific urban structures were reported as directly targeted during the recent aerial assault on Kyiv?",
+            "options": [
+              "Government buildings and military installations.",
+              "Apartment blocks and various warehouses.",
+              "Schools and hospitals in the city centre."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While government buildings and military installations are often targets in conflicts, the news brief specifically mentions different structures.",
+              "Correct! The news brief clearly states that 'Apartment blocks and various warehouses across the city were directly targeted.'",
+              "The news brief does not specify schools or hospitals as the primary targets of this particular attack, though civilian areas were affected."
+            ]
+          },
+          {
+            "question": "What does the phrase 'grapple with' signify in the context of Ukraine's air defence challenges?",
+            "options": [
+              "To easily overcome a minor issue.",
+              "To vigorously struggle or contend with a difficult problem.",
+              "To completely ignore a pressing concern."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'Grapple with' implies a significant and challenging struggle, not an easy resolution.",
+              "That's right! 'Grapple with' accurately conveys the intense struggle Ukraine faces in managing its air defence shortages.",
+              "This is incorrect. 'Grapple with' denotes engagement with a problem, not avoidance."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'dwindling capabilities'. What is the most accurate interpretation of this term?",
+            "options": [
+              "An increase in military strength and resources.",
+              "A gradual and concerning reduction in available resources or power.",
+              "A stable and unchanging level of operational readiness."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Dwindling' indicates a decrease, not an increase.",
+              "Correct! 'Dwindling capabilities' refers to the gradual decline in Ukraine's capacity to defend itself due to shortages.",
+              "Incorrect. 'Dwindling' implies change and reduction, not stability."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is the 'urgent imperative' highlighted by the attacks?",
+            "options": [
+              "For Ukraine to surrender immediately.",
+              "For accelerated military aid from Western allies.",
+              "For a complete withdrawal of all foreign support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief discusses strengthening defence, not surrender.",
+              "Absolutely! The text states that the attacks 'underscore the urgent imperative for accelerated military aid from Western allies.'",
+              "This contradicts the brief, which calls for more support, not withdrawal."
+            ]
+          },
+          {
+            "question": "How many casualties were reported in the recent aerial assault on Kyiv?",
+            "options": [
+              "At least 13 individuals.",
+              "More than 50 people.",
+              "A negligible number of casualties."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The news brief explicitly states, 'Tragically, at least 13 individuals perished in the onslaught.'",
+              "The news brief reports a specific number of casualties which is lower than 50.",
+              "Incorrect. The news brief reports a significant number of fatalities, making 'negligible' inaccurate."
+            ]
+          },
+          {
+            "question": "In the sentence 'Apartment blocks and various warehouses across the city were directly targeted...', what does 'targeted' specifically imply?",
+            "options": [
+              "They were accidentally hit during general bombardment.",
+              "They were deliberately selected as objects for attack.",
+              "They were protected from the attack."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Targeted' suggests intentional selection, not accidental impact.",
+              "Precisely. 'Targeted' means these locations were specifically chosen as objectives for the assault.",
+              "Incorrect. If they were targeted, they were definitely not protected; they were the focus of the attack."
+            ]
+          },
+          {
+            "question": "What is the primary function of the participial phrase 'a vulnerability acutely exploited by the recent offensive' in the example quote?",
+            "options": [
+              "To describe the timing of the offensive.",
+              "To act as an adverbial modifier to 'grapple with'.",
+              "To provide additional descriptive information about 'critical shortages' as a noun."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While related to the offensive, its primary function is not to indicate time.",
+              "The phrase functions more as an adjective modifying a noun than an adverb modifying a verb.",
+              "Correct! The participial phrase functions adjectivally, explaining the nature of the 'vulnerability' that stems from the shortages."
+            ]
+          },
+          {
+            "question": "Which of the following sentences best demonstrates the proper use of a present participial phrase functioning adjectivally?",
+            "options": [
+              "Running quickly, he caught the bus.",
+              "The student, studying diligently, passed the exam.",
+              "She hoped, wishing for success, to win."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is an adverbial participial phrase, describing how he caught the bus.",
+              "This is correct. 'Studying diligently' modifies 'The student', providing more information about her state or action.",
+              "While 'wishing for success' is a participial phrase, its placement makes it slightly awkward and less clearly adjectival to 'She' than the correct option."
+            ]
+          },
+          {
+            "question": "What does the news brief imply about the general impact of these aerial campaigns on the Ukrainian populace?",
+            "options": [
+              "They aim to improve morale and unity.",
+              "They seek to destabilize civilian life and exert psychological pressure.",
+              "They are designed to encourage immediate retaliation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The nature of the attacks suggests the opposite effect on morale.",
+              "Correct. The brief explicitly states, 'These relentless aerial campaigns aim to destabilize civilian life and exert psychological pressure on the Ukrainian populace.'",
+              "While retaliation might occur, the stated aim in the brief focuses on psychological and social destabilization."
+            ]
+          },
+          {
+            "question": "Which of the following is an example of a 'massive attack' in military terms?",
+            "options": [
+              "A single sniper shot.",
+              "A coordinated bombardment involving multiple missile and drone barrages over a wide area.",
+              "A small reconnaissance mission."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A single sniper shot is a precise strike, not typically described as a 'massive attack'.",
+              "Precisely. A 'massive attack' implies a large-scale, coordinated offensive with significant resources, aligning with missile and drone barrages.",
+              "A reconnaissance mission is for gathering information, not an offensive 'massive attack'."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-21",
+  "release_iso": "2026-08-21T10:21:47Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Israel re-establishes closed West Bank settlement, defying growing international protests",
+    "summary": "Thirty \"pioneer families\" have arrived on a wave of nationalism driven by Israel's government, but the rapid change has left nearby Palestinian residents fearful.",
+    "link": "https://www.bbc.co.uk/news/articles/cn7n0l4p0kzo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Israel Re-establishes West Bank Settlement",
+        "overview": "Israel has reopened a settlement in the West Bank, causing concern for local people.",
+        "topic": "International news, Middle East, Israel-Palestine conflict, settlements",
+        "news_brief_sentences": [
+          "Israel has reopened a place in the West Bank.",
+          "This place is called a settlement.",
+          "The settlement was closed for a long time.",
+          "Now, Israel re-establishes it.",
+          "Many countries around the world disagree with this.",
+          "There are international protests about the decision.",
+          "Thirty pioneer families have come to live in the settlement.",
+          "The Israeli government supports these new families.",
+          "People living nearby, who are Palestinian residents, are worried.",
+          "They feel fearful about the future."
+        ],
+        "vocabulary": [
+          {
+            "term": "settlement",
+            "part_of_speech": "noun",
+            "definition": "A place where people start to live, often in a new area."
+          },
+          {
+            "term": "re-establishes",
+            "part_of_speech": "verb",
+            "definition": "To start something again that was stopped or closed before."
+          },
+          {
+            "term": "international protests",
+            "part_of_speech": "noun phrase",
+            "definition": "When many people from different countries show they are unhappy about something."
+          },
+          {
+            "term": "pioneer families",
+            "part_of_speech": "noun phrase",
+            "definition": "The first families to move to and live in a new area."
+          },
+          {
+            "term": "fearful",
+            "part_of_speech": "adjective",
+            "definition": "Feeling afraid or worried about something bad happening."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense",
+          "explanation": "We use the simple present tense to talk about facts, habits, or things that are true now. We also use it for things that happen regularly.",
+          "example_quote": "Now, Israel re-establishes it."
+        },
+        "quiz": [
+          {
+            "question": "What did Israel do with a place in the West Bank?",
+            "options": [
+              "It closed it.",
+              "It reopened it.",
+              "It built a new road."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Israel did not close it.",
+              "Correct! Israel re-established the settlement.",
+              "Incorrect. The news brief does not mention a new road."
+            ]
+          },
+          {
+            "question": "What is the place in the West Bank called?",
+            "options": [
+              "A market",
+              "A settlement",
+              "A school"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. It is not called a market.",
+              "Correct! The place is called a settlement.",
+              "Incorrect. The news brief does not say it is a school."
+            ]
+          },
+          {
+            "question": "What does 're-establishes' mean in this news?",
+            "options": [
+              "To close something",
+              "To start something again",
+              "To move something away"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. It means the opposite of closing.",
+              "Correct! To re-establish means to start something again after it was stopped.",
+              "Incorrect. It means to make it active again, not move it away."
+            ]
+          },
+          {
+            "question": "How did other countries react to Israel's decision?",
+            "options": [
+              "They agreed with Israel.",
+              "They sent gifts.",
+              "They showed international protests."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Many countries disagreed.",
+              "Incorrect. The news brief does not mention gifts.",
+              "Correct! Many countries showed their disapproval with international protests."
+            ]
+          },
+          {
+            "question": "Who are 'pioneer families' in this story?",
+            "options": [
+              "Families who left the area",
+              "The first families to live there",
+              "Families visiting for holidays"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. They are not families who left.",
+              "Correct! Pioneer families are the first ones to settle in a new place.",
+              "Incorrect. They are not visitors but new residents."
+            ]
+          },
+          {
+            "question": "How do Palestinian residents nearby feel about these changes?",
+            "options": [
+              "Happy",
+              "Excited",
+              "Fearful"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. They are not happy.",
+              "Incorrect. They are not excited about this situation.",
+              "Correct! The Palestinian residents feel fearful."
+            ]
+          },
+          {
+            "question": "Which word describes feeling afraid or worried?",
+            "options": [
+              "Calm",
+              "Brave",
+              "Fearful"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Calm is the opposite of worried.",
+              "Incorrect. Brave means not afraid.",
+              "Correct! Fearful means feeling afraid or worried."
+            ]
+          },
+          {
+            "question": "What tense is used in the sentence 'Now, Israel re-establishes it.'?",
+            "options": [
+              "Simple Past",
+              "Simple Future",
+              "Simple Present"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This action is happening now, not in the past.",
+              "Incorrect. This action is not about the future.",
+              "Correct! 'Re-establishes' is in the simple present tense."
+            ]
+          },
+          {
+            "question": "What does the Simple Present Tense tell us?",
+            "options": [
+              "Something that happened yesterday",
+              "Facts or things that are true now",
+              "Something that will happen tomorrow"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. That describes the simple past tense.",
+              "Correct! The simple present tense is for facts and current truths.",
+              "Incorrect. That describes the simple future tense."
+            ]
+          },
+          {
+            "question": "Who supports the new families coming to the settlement?",
+            "options": [
+              "International organizations",
+              "The Palestinian residents",
+              "The Israeli government"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. International organizations showed protests.",
+              "Incorrect. Palestinian residents are worried, not supportive.",
+              "Correct! The Israeli government supports these families."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Israel Re-establishes West Bank Settlement Amid International Protests",
+        "overview": "Israel has re-established a previously closed West Bank settlement, prompting international concern and causing fear among local Palestinian residents.",
+        "topic": "Geopolitics, Israeli-Palestinian Conflict, International Relations",
+        "news_brief_sentences": [
+          "A significant geopolitical development has recently unfolded in the West Bank.",
+          "Israel re-establishes a previously closed West Bank settlement, a move that has drawn considerable attention.",
+          "This action is proceeding while defying growing international protests and widespread disapproval from various nations.",
+          "Around thirty pioneer families have already arrived to reside in the re-established location.",
+          "Their arrival is seen as part of a wave of nationalism strongly supported by the current Israeli government.",
+          "This rapid and significant change, however, has generated considerable apprehension.",
+          "Nearby Palestinian residents have become increasingly fearful about their safety and future living conditions.",
+          "International bodies are expressing serious concerns regarding the legality and long-term implications of this decision.",
+          "The re-establishment of the settlement raises crucial questions about the potential for peace in the broader region.",
+          "Global tensions are likely to escalate as more countries formulate their responses to Israel's controversial announcement."
+        ],
+        "vocabulary": [
+          {
+            "term": "re-establishes",
+            "part_of_speech": "verb",
+            "definition": "to start or set up something again after it has been stopped or closed"
+          },
+          {
+            "term": "settlement",
+            "part_of_speech": "noun",
+            "definition": "a place where people come to live and build homes, often in a new area or a disputed territory"
+          },
+          {
+            "term": "defying",
+            "part_of_speech": "verb (present participle)",
+            "definition": "openly refusing to obey someone or something, often in a bold or provocative way"
+          },
+          {
+            "term": "nationalism",
+            "part_of_speech": "noun",
+            "definition": "a strong feeling of pride and loyalty towards one's own country, often believing it is superior to others"
+          },
+          {
+            "term": "fearful",
+            "part_of_speech": "adjective",
+            "definition": "feeling afraid or worried about something, often about a possible danger or negative outcome"
+          }
+        ],
+        "grammar": {
+          "concept": "The Present Perfect Tense",
+          "explanation": "The Present Perfect tense connects the past with the present. It describes an action or state that happened at an unspecified time in the past, or an action that started in the past and continues into the present. We form it with 'have/has' + the past participle of the main verb. It is often used to talk about experiences, recent actions, or changes over time that are still relevant now.",
+          "example_quote": "This rapid and significant change, however, has generated considerable apprehension."
+        },
+        "quiz": [
+          {
+            "question": "What is the main action Israel has taken in the West Bank according to the news brief?",
+            "options": [
+              "It has withdrawn from a settlement.",
+              "It has re-established a settlement.",
+              "It has created a new city."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Israel has not withdrawn from a settlement.",
+              "Correct. The news states Israel 're-establishes' a previously closed West Bank settlement.",
+              "Incorrect. The brief specifies a re-establishment, not a new city."
+            ]
+          },
+          {
+            "question": "Which word best describes the international community's reaction to Israel's action?",
+            "options": [
+              "Supportive",
+              "Indifferent",
+              "Protesting"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief mentions 'growing international protests'.",
+              "Incorrect. The brief highlights protests, not indifference.",
+              "Correct. The news states Israel is 'defying growing international protests'."
+            ]
+          },
+          {
+            "question": "What does the term \"re-establishes\" mean in the context of the news?",
+            "options": [
+              "To destroy something completely.",
+              "To stop an activity permanently.",
+              "To start something again after a pause."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Re-establishes' means to set something up again, not destroy.",
+              "Incorrect. It means to begin again, not stop permanently.",
+              "Correct. 'Re-establishes' implies bringing something back into existence after it was closed."
+            ]
+          },
+          {
+            "question": "How many \"pioneer families\" have arrived at the settlement?",
+            "options": [
+              "Fewer than ten",
+              "Exactly thirty",
+              "More than fifty"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifies a higher number of families.",
+              "Correct. The news brief clearly states 'Around thirty pioneer families' have arrived.",
+              "Incorrect. The number mentioned is exactly thirty, not more than fifty."
+            ]
+          },
+          {
+            "question": "What emotion are nearby Palestinian residents reportedly feeling due to these developments?",
+            "options": [
+              "Optimistic",
+              "Fearful",
+              "Neutral"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief explicitly mentions a negative emotion.",
+              "Correct. The brief states residents have become 'increasingly fearful'.",
+              "Incorrect. The brief describes a strong emotional reaction, not neutrality."
+            ]
+          },
+          {
+            "question": "What is meant by \"defying\" in the phrase \"defying growing international protests\"?",
+            "options": [
+              "Ignoring and openly resisting.",
+              "Agreeing with all opinions.",
+              "Seeking approval from others."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. To defy means to openly resist or refuse to obey, often despite opposition.",
+              "Incorrect. Defying means resisting, not agreeing with opinions.",
+              "Incorrect. Defying is the opposite of seeking approval; it implies resistance."
+            ]
+          },
+          {
+            "question": "The arrival of the \"pioneer families\" reflects a wave of what?",
+            "options": [
+              "Pacifism",
+              "International cooperation",
+              "Nationalism"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief states the opposite of pacifism.",
+              "Incorrect. The action described is controversial and not about cooperation.",
+              "Correct. The news brief connects their arrival to 'a wave of nationalism'."
+            ]
+          },
+          {
+            "question": "Which of the following sentences uses the Present Perfect tense correctly?",
+            "options": [
+              "They will arrive next week.",
+              "She arrives every day.",
+              "He has arrived safely."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This sentence uses the future simple tense.",
+              "Incorrect. This sentence uses the present simple tense.",
+              "Correct. 'Has arrived' is an example of the Present Perfect tense."
+            ]
+          },
+          {
+            "question": "Based on the news brief, what is a consequence of the rapid change in the West Bank?",
+            "options": [
+              "Increased regional stability.",
+              "Reduced global tensions.",
+              "Significant apprehension among residents."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief suggests the opposite of stability.",
+              "Incorrect. The brief indicates rising tensions.",
+              "Correct. The news states this change 'has generated considerable apprehension' and left residents 'fearful'."
+            ]
+          },
+          {
+            "question": "In the sentence \"This rapid and significant change, however, has generated considerable apprehension,\" what does \"has generated\" indicate?",
+            "options": [
+              "A future possibility.",
+              "An ongoing past action.",
+              "A past action with present relevance."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Has generated' refers to something that has already happened.",
+              "Incorrect. While it started in the past, the emphasis is on the result now.",
+              "Correct. The Present Perfect, 'has generated', shows a past action with a clear connection to the present situation."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Israel Re-establishes West Bank Settlement Amidst Mounting International Condemnation",
+        "overview": "Israel has controversially re-established a previously closed settlement in the West Bank, sparking renewed international protests and instilling palpable apprehension among local Palestinian residents, driven by a wave of nationalism within the Israeli government.",
+        "topic": "Israeli-Palestinian Conflict, West Bank Settlements, International Relations, Nationalism",
+        "news_brief_sentences": [
+          "Israel has proceeded to re-establish a previously closed settlement in the West Bank, defying a growing chorus of international protests.",
+          "This contentious move involves the arrival of approximately thirty \"pioneer families\" at the site.",
+          "The decision appears to be significantly influenced by a wave of nationalism actively promoted by the current Israeli government.",
+          "Such unilateral actions routinely draw considerable international condemnation, exacerbating diplomatic tensions.",
+          "The rapid implementation of this policy has inevitably left nearby Palestinian residents grappling with palpable apprehension.",
+          "Critics argue that these settlements constitute a significant impediment to the prospect of a two-state solution.",
+          "The reoccupation signifies a stark challenge to the international community's efforts to de-escalate regional conflicts.",
+          "Many observers view this re-establishment as a deliberate provocation, further entrenching the dispute over territorial claims.",
+          "The presence of these new residents underscores the enduring complexity of the Israeli-Palestinian dynamic.",
+          "Consequently, the humanitarian implications for the displaced and affected Palestinian communities remain a profound concern."
+        ],
+        "vocabulary": [
+          {
+            "term": "defying",
+            "part_of_speech": "verb",
+            "definition": "To openly resist or refuse to obey, often challenging authority, conventions, or expectations."
+          },
+          {
+            "term": "contentious",
+            "part_of_speech": "adjective",
+            "definition": "Likely to cause an argument or disagreement; controversial and disputed."
+          },
+          {
+            "term": "unilateral actions",
+            "part_of_speech": "noun phrase",
+            "definition": "Decisions or measures taken by one party or country without the agreement or consultation of others, particularly in international affairs."
+          },
+          {
+            "term": "palpable apprehension",
+            "part_of_speech": "noun phrase",
+            "definition": "A feeling of fear or anxiety that is so intense or strong that it can almost be physically felt or sensed; tangible dread or unease."
+          },
+          {
+            "term": "impediment",
+            "part_of_speech": "noun",
+            "definition": "A hindrance or obstruction in doing something; something that delays or blocks progress."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Phrases for Consequence or Manner",
+          "explanation": "Participial phrases, typically beginning with a present participle (-ing form) or a past participle (-ed/-en form), function as modifiers, adding descriptive detail about the manner in which an action occurs or, as seen in the news brief, indicating a consequence or result of the main clause's action. They provide a concise way to link related ideas, often implying cause-and-effect or simultaneity.",
+          "example_quote": "Such unilateral actions routinely draw considerable international condemnation, exacerbating diplomatic tensions."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary catalyst for the international protests mentioned in the news brief?",
+            "options": [
+              "The establishment of new economic zones by Israel.",
+              "The re-establishment of a previously closed West Bank settlement.",
+              "A shift in regional security alliances."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief focuses on the settlement issue, not new economic zones.",
+              "Correct. The re-establishment of the West Bank settlement is the central point of international contention.",
+              "Incorrect. While regional security is a broader context, the specific cause for protest detailed is the settlement."
+            ]
+          },
+          {
+            "question": "Which option best defines 'defying' as it is used in the first sentence of the news brief?",
+            "options": [
+              "Acknowledging and respecting.",
+              "Openly resisting or challenging.",
+              "Reluctantly accepting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Defying' implies opposition, not acknowledgement or respect.",
+              "Correct. 'Defying' means to openly go against or challenge a rule, authority, or expectation.",
+              "Incorrect. 'Defying' indicates a direct confrontation or challenge, not hesitant acceptance."
+            ]
+          },
+          {
+            "question": "According to the news brief, what factor significantly influenced the Israeli government's decision regarding the settlement?",
+            "options": [
+              "Pressure from international organizations.",
+              "A wave of nationalism within the government.",
+              "Recent archaeological discoveries at the site."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states the government is 'defying' international protests, not bowing to pressure.",
+              "Correct. The text explicitly mentions the decision was 'driven by a wave of nationalism'.",
+              "Incorrect. Archaeological findings are not mentioned as a factor in the brief."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does the term 'contentious move' most accurately convey?",
+            "options": [
+              "A universally acclaimed decision.",
+              "An action likely to provoke strong disagreement or argument.",
+              "A strategic maneuver that garnered little attention."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Contentious' implies dispute, not universal acclaim.",
+              "Correct. A 'contentious move' is by its nature controversial and likely to cause conflict or debate.",
+              "Incorrect. 'Contentious' actions are typically highly visible and attract significant attention due to their controversial nature."
+            ]
+          },
+          {
+            "question": "Which phrase is synonymous with 'unilateral actions' as described in the news brief?",
+            "options": [
+              "Collaborative efforts.",
+              "Independent decisions.",
+              "Consensus-based policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unilateral' implies single-party action, not collaboration.",
+              "Correct. 'Unilateral actions' are decisions made by one party acting alone, without the agreement of others.",
+              "Incorrect. 'Unilateral' actions are not typically based on broad consensus."
+            ]
+          },
+          {
+            "question": "What specific emotional state is attributed to nearby Palestinian residents in the news brief due to the policy's implementation?",
+            "options": [
+              "Reserved optimism.",
+              "Profound indifference.",
+              "Palpable apprehension."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief describes a negative emotional state, not optimism.",
+              "Incorrect. The brief explicitly states a strong negative reaction, not indifference.",
+              "Correct. The news brief uses the phrase 'grappling with palpable apprehension' to describe their emotional state."
+            ]
+          },
+          {
+            "question": "Regarding the grammar point, what function does the participial phrase 'exacerbating diplomatic tensions' serve in the example sentence?",
+            "options": [
+              "It introduces the subject of the sentence.",
+              "It acts as the direct object of the verb.",
+              "It describes a consequence or result of the main action."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The subject is 'unilateral actions'.",
+              "Incorrect. A participial phrase rarely functions as a direct object.",
+              "Correct. The phrase illustrates the negative outcome or result of the international condemnation."
+            ]
+          },
+          {
+            "question": "What is the best interpretation of 'palpable apprehension' in the context of the article?",
+            "options": [
+              "A slight feeling of unease that is easily dismissed.",
+              "A deep, almost tangible sense of fear or worry.",
+              "An unspoken understanding of future events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Palpable' implies a strong, almost physical sensation, not a slight feeling.",
+              "Correct. 'Palpable' means intense enough to be felt, and 'apprehension' is fear or anxiety.",
+              "Incorrect. While it relates to future events, 'palpable apprehension' describes a present, intense emotional state."
+            ]
+          },
+          {
+            "question": "The news brief states that settlements constitute a significant 'impediment' to a two-state solution. Which word can replace 'impediment' without changing the meaning?",
+            "options": [
+              "Facilitator.",
+              "Obstacle.",
+              "Precedent."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A facilitator aids progress, which is the opposite of an impediment.",
+              "Correct. An 'impediment' is something that hinders or blocks progress, making 'obstacle' a fitting synonym.",
+              "Incorrect. A precedent is an earlier event or action regarded as an example, not necessarily a hindrance."
+            ]
+          },
+          {
+            "question": "Based on the overall tone and content of the news brief, what is the most significant takeaway regarding the re-establishment of the settlement?",
+            "options": [
+              "It signifies a period of decreased geopolitical tensions in the region.",
+              "It highlights the enduring complexity and contentious nature of the Israeli-Palestinian conflict.",
+              "It represents a universally accepted step towards regional stability."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief explicitly mentions 'international protests' and 'exacerbating diplomatic tensions', indicating increased tensions.",
+              "Correct. The news brief consistently highlights resistance, nationalism, fear, and challenges to peace, all pointing to the conflict's deep complexities.",
+              "Incorrect. The article details 'defying international protests' and 'international condemnation', showing it is not universally accepted."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

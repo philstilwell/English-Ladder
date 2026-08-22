@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-22",
+  "release_iso": "2026-08-22T10:15:18Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Canada says it will match US tariffs 'dollar for dollar' as trade talks break down",
+    "summary": "A new 50% levy on $20bn of Canadian imports comes into force after a last-minute breakdown in trade talks.",
+    "link": "https://www.bbc.co.uk/news/articles/cvgvyy4x2mvo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Canada and US Trade Dispute: New Tariffs Announced",
+        "overview": "Canada and the US are having problems with trade.",
+        "topic": "International Trade Relations and Tariffs between Canada and the United States",
+        "news_brief_sentences": [
+          "Canada and the US have a disagreement about money and goods.",
+          "The US will put new taxes on things from Canada. These taxes are called tariffs.",
+          "The US will put a 50% tax on some Canadian imports.",
+          "This new levy is on $20 billion worth of goods.",
+          "Canada does not like these new taxes.",
+          "So, Canada says it will put its own tariffs on US goods.",
+          "Canada wants to match the US taxes \"dollar for dollar\".",
+          "This happened because trade talks between the two countries stopped.",
+          "The talks broke down at the last minute.",
+          "Now, both countries will have new taxes on each other's products."
+        ],
+        "vocabulary": [
+          {
+            "term": "tariffs",
+            "part_of_speech": "noun",
+            "definition": "extra taxes on things that come from another country"
+          },
+          {
+            "term": "imports",
+            "part_of_speech": "noun",
+            "definition": "goods that one country buys from another country"
+          },
+          {
+            "term": "levy",
+            "part_of_speech": "noun",
+            "definition": "a tax or fee that a government makes people pay"
+          },
+          {
+            "term": "trade talks",
+            "part_of_speech": "noun phrase",
+            "definition": "meetings where countries discuss how they will buy and sell goods"
+          },
+          {
+            "term": "broke down",
+            "part_of_speech": "phrasal verb (past tense)",
+            "definition": "failed or stopped working, used for a past event"
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add '-ed' to regular verbs. Some verbs are irregular and change completely.",
+          "example_quote": "This happened because trade talks between the two countries stopped."
+        },
+        "quiz": [
+          {
+            "question": "What are tariffs?",
+            "options": [
+              "Free gifts from other countries.",
+              "Extra taxes on goods from other countries.",
+              "Meetings between countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Tariffs are not free gifts, they are a type of tax.",
+              "Correct! Tariffs are taxes governments put on imported goods.",
+              "Incorrect. Meetings are trade talks, not tariffs."
+            ]
+          },
+          {
+            "question": "What does Canada plan to do about the US tariffs?",
+            "options": [
+              "Buy more US goods.",
+              "Put its own tariffs on US goods.",
+              "Stop all trade with the US."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Canada plans to match the tariffs, not buy more goods.",
+              "Correct! Canada will also put new taxes on US products \"dollar for dollar\".",
+              "Incorrect. The news says Canada will match tariffs, not stop all trade."
+            ]
+          },
+          {
+            "question": "How much tax will the US put on some Canadian imports?",
+            "options": [
+              "10%",
+              "20%",
+              "50%"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief states a 50% levy, not 10%.",
+              "Incorrect. The news states a 50% tax.",
+              "Correct! The US will put a 50% tax on some goods from Canada."
+            ]
+          },
+          {
+            "question": "What does the word \"imports\" mean?",
+            "options": [
+              "Goods sold to other countries.",
+              "Goods bought from other countries.",
+              "Money exchanged between countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Goods sold to other countries are exports.",
+              "Correct! Imports are products that a country brings in from another country.",
+              "Incorrect. Imports refer to goods, not just money."
+            ]
+          },
+          {
+            "question": "Why did the trade talks between Canada and the US stop?",
+            "options": [
+              "They agreed on everything.",
+              "They broke down at the last minute.",
+              "They needed a break for lunch."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The talks broke down, meaning they failed to agree.",
+              "Correct! The talks failed, which led to the new tariffs.",
+              "Incorrect. The phrase \"broke down\" means they failed, not just paused."
+            ]
+          },
+          {
+            "question": "What is a \"levy\"?",
+            "options": [
+              "A special kind of gift.",
+              "A type of government tax.",
+              "A friendly discussion."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A levy is a mandatory payment, not a gift.",
+              "Correct! A levy is another word for a tax or a fee imposed by the government.",
+              "Incorrect. A levy is a tax, not a discussion."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense correctly?",
+            "options": [
+              "Canada will match US tariffs.",
+              "Trade talks stop tomorrow.",
+              "The talks broke down yesterday."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. This sentence uses the future simple tense.",
+              "Incorrect. This sentence uses the simple present for a future event.",
+              "Correct! \"Broke down\" is the past tense of \"break down\", showing a finished action."
+            ]
+          },
+          {
+            "question": "What were \"trade talks\" about in the news?",
+            "options": [
+              "Discussing new holiday plans.",
+              "Talking about buying and selling goods.",
+              "Sharing personal opinions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Trade talks are about economic agreements, not holidays.",
+              "Correct! Trade talks are meetings where countries discuss economic agreements, like buying and selling.",
+              "Incorrect. Trade talks are formal discussions about commerce, not personal opinions."
+            ]
+          },
+          {
+            "question": "In the sentence \"The talks broke down at the last minute,\" what does \"broke down\" mean?",
+            "options": [
+              "They finished successfully.",
+              "They stopped working or failed.",
+              "They started new ideas."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. If talks 'break down', they do not finish successfully.",
+              "Correct! \"Broke down\" means the discussions failed or ended without agreement.",
+              "Incorrect. It means the opposite of starting new ideas in this context."
+            ]
+          },
+          {
+            "question": "The US tariffs are on how many dollars worth of Canadian imports?",
+            "options": [
+              "$10 billion.",
+              "$20 billion.",
+              "$50 billion."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The amount mentioned in the news brief is $20 billion.",
+              "Correct! The new levy is on $20 billion of Canadian imports.",
+              "Incorrect. The news brief specifies $20 billion, not $50 billion."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Canada Responds to US Tariffs After Trade Talks Collapse",
+        "overview": "Canada has announced it will impose matching tariffs on US imports following the US decision to implement a new 50% levy on Canadian goods, after trade negotiations failed at the last minute.",
+        "topic": "International Trade Disputes and Tariffs",
+        "news_brief_sentences": [
+          "Canada has declared its intention to match US tariffs 'dollar for dollar' in response to a new US levy.",
+          "This significant development follows a complete breakdown in crucial trade talks between the two nations.",
+          "The United States decided to implement a 50% levy on $20 billion worth of Canadian imports.",
+          "This new tariff measure has officially come into force, impacting various Canadian goods.",
+          "Canadian officials expressed disappointment that a last-minute agreement could not be reached.",
+          "The discussions aimed to resolve ongoing disputes regarding trade practices and policies.",
+          "However, all efforts to find common ground ultimately failed.",
+          "The decision to impose matching tariffs highlights the escalating tensions in the economic relationship.",
+          "Experts are now watching closely to see how these reciprocal actions will affect consumers and businesses.",
+          "Both countries face economic consequences as trade relations become increasingly strained."
+        ],
+        "vocabulary": [
+          {
+            "term": "match",
+            "part_of_speech": "verb",
+            "definition": "To do something similar to what another person or country has done, often in response, such as imposing similar taxes or rules."
+          },
+          {
+            "term": "breakdown",
+            "part_of_speech": "noun",
+            "definition": "A failure of a system or relationship, often referring to negotiations or discussions that stop without success."
+          },
+          {
+            "term": "levy",
+            "part_of_speech": "noun",
+            "definition": "An official tax, fee, or fine that is demanded from a person or company by a government or organization."
+          },
+          {
+            "term": "come into force",
+            "part_of_speech": "phrase",
+            "definition": "To begin to have legal effect or to be officially implemented, usually referring to a new law, rule, or policy."
+          },
+          {
+            "term": "escalating",
+            "part_of_speech": "adjective",
+            "definition": "Becoming more intense, serious, or severe over time, often used to describe conflicts, prices, or problems."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself rather than on who or what is performing the action. It is formed with a form of the verb 'to be' and the past participle of the main verb. It is often used in news reporting when the agent is unknown, less important, or obvious, or when we want to emphasize the result of an action.",
+          "example_quote": "Canadian officials expressed disappointment that a last-minute agreement could not be reached."
+        },
+        "quiz": [
+          {
+            "question": "What is the main reason for Canada's decision to impose matching tariffs?",
+            "options": [
+              "To reduce its own import costs.",
+              "Because the US implemented a new levy on Canadian goods.",
+              "To encourage more trade talks."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Canada is imposing tariffs in response to US actions, not to reduce its own import costs directly.",
+              "Correct. Canada is reacting to the US putting a new tax on its imports by doing the same.",
+              "Incorrect. The tariffs are a consequence of trade talks breaking down, not an effort to restart them."
+            ]
+          },
+          {
+            "question": "What happened to the trade talks between Canada and the US?",
+            "options": [
+              "They were successfully concluded.",
+              "They reached a temporary agreement.",
+              "They experienced a complete breakdown."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The talks did not succeed; they failed at the last minute.",
+              "Incorrect. No temporary agreement was mentioned; the talks broke down entirely.",
+              "Correct. The news brief states there was a \"complete breakdown\" in the trade talks."
+            ]
+          },
+          {
+            "question": "What does the term \"levy\" mean in the context of the news brief?",
+            "options": [
+              "A type of trade agreement.",
+              "An official tax or fee.",
+              "A new product category."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A levy is a tax, not an agreement.",
+              "Correct. A levy is an official tax or fee imposed by a government.",
+              "Incorrect. The term refers to a financial charge, not a new type of goods."
+            ]
+          },
+          {
+            "question": "When a new tariff \"comes into force,\" what does that mean?",
+            "options": [
+              "It is being discussed.",
+              "It is about to expire.",
+              "It officially begins to apply."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. \"Come into force\" means it is active, not still under discussion.",
+              "Incorrect. It means it is starting, not ending.",
+              "Correct. When something comes into force, it becomes legally effective or implemented."
+            ]
+          },
+          {
+            "question": "Which word describes the relationship between Canada and the US after these trade actions?",
+            "options": [
+              "Collaborative.",
+              "Strained.",
+              "Harmonious."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Collaborative\" means working together, which is the opposite of the current situation.",
+              "Correct. The relationship is described as \"strained\" and tensions are \"escalating.\"",
+              "Incorrect. \"Harmonious\" implies peace and agreement, which is not the case here."
+            ]
+          },
+          {
+            "question": "In the sentence \"A last-minute agreement could not be reached,\" why is the passive voice used?",
+            "options": [
+              "To emphasize who failed to reach the agreement.",
+              "To focus on the agreement itself and the fact it wasn't made.",
+              "To suggest the agreement was easy to reach."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice generally de-emphasizes the agent or doesn't mention it.",
+              "Correct. The passive voice highlights the outcome (no agreement) rather than focusing on who failed.",
+              "Incorrect. The use of \"could not\" already implies difficulty, and the passive voice doesn't change that."
+            ]
+          },
+          {
+            "question": "The news brief mentions \"escalating tensions.\" What does \"escalating\" imply about the tensions?",
+            "options": [
+              "They are becoming less important.",
+              "They are decreasing gradually.",
+              "They are becoming more serious."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. \"Escalating\" means increasing, not becoming less important.",
+              "Incorrect. \"Escalating\" means growing, not decreasing.",
+              "Correct. \"Escalating\" means growing in intensity or severity."
+            ]
+          },
+          {
+            "question": "What is Canada doing when it says it will \"match\" US tariffs?",
+            "options": [
+              "It is accepting the US tariffs without response.",
+              "It is imposing tariffs of the same type and amount on US goods.",
+              "It is offering to lower its own tariffs."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Matching\" implies a reciprocal action, not passive acceptance.",
+              "Correct. To \"match\" tariffs means to respond with similar tariffs on the other country's goods.",
+              "Incorrect. Matching tariffs is a retaliatory measure, not a concession."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief is an example of the passive voice?",
+            "options": [
+              "Canada has declared its intention to match US tariffs.",
+              "Canadian officials expressed disappointment that a last-minute agreement could not be reached.",
+              "Experts are now watching closely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence uses the active voice (\"Canada has declared\").",
+              "Correct. \"could not be reached\" is a passive construction focusing on the agreement, not who reached it.",
+              "Incorrect. This sentence uses the active voice (\"Experts are watching\")."
+            ]
+          },
+          {
+            "question": "What is the most likely consequence if trade relations continue to be strained?",
+            "options": [
+              "Increased cooperation between the two countries.",
+              "Negative economic effects for both nations.",
+              "A quick resolution to all disputes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Strained relations typically lead to less cooperation, not more.",
+              "Correct. The news brief mentions \"economic consequences\" for both countries, suggesting negative effects.",
+              "Incorrect. \"Strained\" implies ongoing difficulty, making a quick resolution unlikely."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Canada and US Trade Dispute Escalates as Tariffs Come into Force",
+        "overview": "The latest trade negotiations between Canada and the United States have collapsed, leading to Canada's declaration that it will reciprocate the newly imposed 50% tariff on $20 billion worth of its imports, signalling a significant escalation in bilateral economic tensions.",
+        "topic": "International Trade Relations and Economic Sanctions",
+        "news_brief_sentences": [
+          "The ongoing trade dialogue between Canada and the United States has reached a critical juncture, culminating in the breakdown of last-minute negotiations.",
+          "Consequently, Canada has formally declared its intent to reciprocate US tariffs, vowing a 'dollar for dollar' response.",
+          "This comes as a new 50% levy on $20 billion of Canadian imports officially comes into force.",
+          "The sudden collapse of talks signifies a notable escalation in the economic dispute between the two nations.",
+          "Experts fear that this development will further strain already tense bilateral relations, impacting various sectors of both economies.",
+          "The Canadian government views the US action as an unjustified imposition, necessitating a firm countermeasure.",
+          "Despite previous attempts to avert a full-blown trade war, both sides appear to have reached an impasse.",
+          "The imposition of these significant duties reflects a broader trend of protectionist policies in global trade.",
+          "Businesses reliant on cross-border supply chains are now bracing for the immediate economic repercussions of these punitive tariffs.",
+          "This latest development underscores the volatile nature of international trade agreements and their profound geopolitical implications."
+        ],
+        "vocabulary": [
+          {
+            "term": "reciprocate",
+            "part_of_speech": "Verb",
+            "definition": "To respond to a gesture or action by making a corresponding one; to return a favour or action in kind."
+          },
+          {
+            "term": "levy",
+            "part_of_speech": "Noun",
+            "definition": "An act of collecting a tax, fee, or fine; also, the tax, fee, or fine itself, often officially imposed by a government or authority."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "Noun",
+            "definition": "A rapid increase; a rise in the intensity or seriousness of something, especially a conflict or dispute."
+          },
+          {
+            "term": "bilateral",
+            "part_of_speech": "Adjective",
+            "definition": "Involving two parties, countries, or sides; relating to or affecting two sides, typically in terms of agreements or relations."
+          },
+          {
+            "term": "impasse",
+            "part_of_speech": "Noun",
+            "definition": "A situation in which no progress is possible, especially because of disagreement; a deadlock or stalemate that prevents further action."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Sentence Reduction and Cohesion",
+          "explanation": "Participle clauses, using -ing or -ed forms, are advanced grammatical structures that combine sentences, provide additional information, or show cause/effect in a concise and formal manner. They often replace relative clauses or adverbial clauses, enhancing textual cohesion and sophistication by subordinating one action or description to another.",
+          "example_quote": "The ongoing trade dialogue between Canada and the United States has reached a critical juncture, culminating in the breakdown of last-minute negotiations."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary reason for Canada's decision to match US tariffs, according to the news brief?",
+            "options": [
+              "To initiate a broader trade war with the US.",
+              "To reciprocate a new 50% tariff imposed by the US on Canadian imports.",
+              "To protest general protectionist policies worldwide."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While it may lead to one, the immediate stated reason for Canada's action is a direct response to specific US tariffs.",
+              "Correct. Canada's action is explicitly described as a 'dollar for dollar' response to the new 50% US levy on its imports.",
+              "Incorrect. While the brief mentions broader protectionist trends, Canada's action is a specific reaction to US tariffs, not a general protest."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does it mean for Canada to 'reciprocate' US tariffs?",
+            "options": [
+              "To support the US tariffs as beneficial.",
+              "To impose similar, matching tariffs on US imports.",
+              "To negotiate a completely new trade agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. To 'reciprocate' means to respond in kind, not to express support for the original action.",
+              "Correct. To 'reciprocate' here means Canada will return the action by imposing equivalent tariffs on US goods.",
+              "Incorrect. 'Reciprocate' refers to mirroring the punitive action, not to initiating new, unrelated negotiations."
+            ]
+          },
+          {
+            "question": "What value of Canadian imports will be subject to the new 50% US levy mentioned in the news brief?",
+            "options": [
+              "Approximately $50 billion.",
+              "Precisely $20 billion.",
+              "An unspecified but substantial amount."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The tariff rate is 50%, but the specified value of imports affected is $20 billion.",
+              "Correct. The news brief explicitly states a 'new 50% levy on $20 billion of Canadian imports'.",
+              "Incorrect. The exact value of imports subject to the levy is clearly specified in the news brief."
+            ]
+          },
+          {
+            "question": "Which of the following best defines 'levy' as it is used in the news brief?",
+            "options": [
+              "A financial loan provided by the government.",
+              "A form of economic assistance or subsidy.",
+              "An official tax, charge, or imposition."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. A levy is a charge or tax, not a loan that is expected to be repaid.",
+              "Incorrect. A subsidy is financial aid, which is the opposite of a levy, which is a financial burden.",
+              "Correct. In this context, a 'levy' refers to an official tax or imposition of a charge by a government."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The ongoing trade dialogue... culminating in the breakdown...', what is the function of the participle clause 'culminating in...'?",
+            "options": [
+              "To introduce a completely new and unrelated idea.",
+              "To provide the consequence or result of the dialogue reaching a critical juncture.",
+              "To express the main action or subject of the sentence."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Participle clauses typically link closely related ideas for cohesion, rather than introducing unrelated concepts.",
+              "Correct. 'Culminating in' indicates the outcome or final stage of the trade dialogue reaching its critical point, providing additional information about the main clause.",
+              "Incorrect. The main action is 'has reached a critical juncture'; the participle clause offers subordinate, explanatory information about this main action."
+            ]
+          },
+          {
+            "question": "The news brief mentions a 'notable escalation in the economic dispute.' What does 'escalation' imply about the dispute?",
+            "options": [
+              "It is nearing a peaceful and prompt resolution.",
+              "It is becoming more intense and serious, worsening the situation.",
+              "It has been temporarily paused or suspended indefinitely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An escalation indicates an increase in severity, moving further away from a quick resolution.",
+              "Correct. 'Escalation' means a rapid increase in intensity or seriousness, making the dispute more severe and problematic.",
+              "Incorrect. 'Escalation' implies heightened activity and intensity, which is the opposite of pausing or suspending a dispute."
+            ]
+          },
+          {
+            "question": "According to the news brief, what are businesses reliant on cross-border supply chains preparing for?",
+            "options": [
+              "Anticipated opportunities for increased profits due to new market conditions.",
+              "The immediate negative economic repercussions of the imposed tariffs.",
+              "Significant government subsidies to offset potential losses."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Tariffs typically present challenges and costs for businesses relying on imports, not opportunities for increased profits.",
+              "Correct. The brief states these businesses are 'bracing for the immediate economic repercussions of these punitive tariffs,' indicating negative impacts.",
+              "Incorrect. The brief does not mention government subsidies; instead, it highlights the negative consequences businesses are preparing for."
+            ]
+          },
+          {
+            "question": "The phrase 'strained bilateral relations' suggests that the relationship between Canada and the US is:",
+            "options": [
+              "Undergoing a period of mutual strengthening and improved cooperation.",
+              "Characterized by strong diplomatic ties and collaborative efforts.",
+              "Experiencing tension and being adversely affected by disagreements."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Strained' implies difficulties and tension, not an improvement or strengthening of relations.",
+              "Incorrect. 'Strained' relations are the opposite of strong and cooperative; they indicate difficulties and friction.",
+              "Correct. 'Strained' describes a relationship under stress or tension, and 'bilateral' confirms it involves the two nations."
+            ]
+          },
+          {
+            "question": "What is the implication of both sides having 'reached an impasse' in the trade talks?",
+            "options": [
+              "They have discovered a creative and mutually beneficial solution.",
+              "No further progress can be made due to fundamental disagreement.",
+              "They have agreed to a temporary suspension of discussions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. An impasse signifies a deadlock where progress has halted, not the discovery of a solution.",
+              "Correct. An 'impasse' means a deadlock, a situation where no further progress is possible because of a fundamental disagreement.",
+              "Incorrect. While talks may be suspended, 'impasse' specifically refers to a lack of progress due to disagreement, rather than an agreed-upon pause."
+            ]
+          },
+          {
+            "question": "According to the news brief, what broader trend do the significant duties imposed by the US and Canada reflect?",
+            "options": [
+              "An increase in global free trade agreements and open markets.",
+              "A growing movement towards protectionist policies in international trade.",
+              "The strengthening of multilateral economic alliances and cooperation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Tariffs and duties are characteristic of protectionism, which restricts free trade, rather than promoting it.",
+              "Correct. The brief explicitly states these duties reflect 'a broader trend of protectionist policies in global trade.'",
+              "Incorrect. Protectionist actions and bilateral disputes often weaken, rather than strengthen, multilateral economic alliances."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

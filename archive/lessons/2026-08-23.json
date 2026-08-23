@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-23",
+  "release_iso": "2026-08-23T10:15:42Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Trump says Canada wants 'benefits' of being US state after trade talks collapse",
+    "summary": "Canada's PM said he was \"reluctantly\" announcing retaliatory tariffs and accused the US of starting a trade war.",
+    "link": "https://www.bbc.co.uk/news/articles/cx272np7vgyo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "US and Canada Trade Conflict Begins",
+        "overview": "The US and Canada have started a trade war over new import taxes on goods.",
+        "topic": "International Trade and Politics",
+        "news_brief_sentences": [
+          "President Trump from the US talked about Canada.",
+          "He said Canada wants to enjoy the benefits of being a US state.",
+          "Trade talks between the US and Canada did not succeed.",
+          "The discussions *collapsed*, meaning they failed completely.",
+          "Canada's Prime Minister announced new taxes on goods from the US.",
+          "These are *retaliatory tariffs*, taxes made as a punishment.",
+          "He said Canada was *reluctantly* introducing these new tariffs.",
+          "The Prime Minister *accused* the US of starting a problem.",
+          "He stated that the US started a *trade war* between the countries.",
+          "This means both nations are putting higher taxes on each other's products."
+        ],
+        "vocabulary": [
+          {
+            "term": "collapsed",
+            "part_of_speech": "verb",
+            "definition": "Stopped working or failed suddenly; fell down."
+          },
+          {
+            "term": "retaliatory tariffs",
+            "part_of_speech": "noun phrase",
+            "definition": "Special taxes placed on imported goods from another country as a form of punishment or response."
+          },
+          {
+            "term": "reluctantly",
+            "part_of_speech": "adverb",
+            "definition": "To do something unwillingly or without really wanting to."
+          },
+          {
+            "term": "accused",
+            "part_of_speech": "verb",
+            "definition": "Said that someone did something wrong or was guilty of something."
+          },
+          {
+            "term": "trade war",
+            "part_of_speech": "noun phrase",
+            "definition": "When countries put high taxes or restrictions on each other's goods, causing economic conflict."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished at a specific time in the past. For regular verbs, we often add '-ed'. For irregular verbs, the form changes.",
+          "example_quote": "Canada's Prime Minister announced new taxes on goods from the US."
+        },
+        "quiz": [
+          {
+            "question": "What happened to the trade talks between the US and Canada?",
+            "options": [
+              "They went very well.",
+              "They collapsed and failed.",
+              "They started next week."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the talks did not go well.",
+              "That's right! The talks collapsed, meaning they failed.",
+              "No, the news says they already happened and failed."
+            ]
+          },
+          {
+            "question": "What are 'retaliatory tariffs'?",
+            "options": [
+              "Low taxes on all goods.",
+              "Special taxes as a punishment.",
+              "Free trade agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they are not low taxes.",
+              "Correct! They are taxes put on goods as a response or punishment.",
+              "No, they are the opposite of free trade."
+            ]
+          },
+          {
+            "question": "How did Canada's Prime Minister feel about announcing the new taxes?",
+            "options": [
+              "Very happy.",
+              "Completely willing.",
+              "Reluctantly, not wanting to."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, he did not feel happy about it.",
+              "No, he was not completely willing to do it.",
+              "That's correct! He announced them reluctantly, meaning he didn't want to."
+            ]
+          },
+          {
+            "question": "What does it mean if someone 'accused' another country?",
+            "options": [
+              "They praised the country.",
+              "They said the country did something wrong.",
+              "They offered help to the country."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'accused' is not praising.",
+              "Yes, to accuse means to say someone did something wrong.",
+              "No, 'accused' is not about offering help."
+            ]
+          },
+          {
+            "question": "What did Canada's Prime Minister say the US started?",
+            "options": [
+              "A friendly game.",
+              "A new business deal.",
+              "A trade war."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, it was not a friendly game.",
+              "No, it was not a new business deal.",
+              "Correct! He said the US started a trade war."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the Simple Past Tense?",
+            "options": [
+              "President Trump talks about Canada.",
+              "Canada's Prime Minister announced new taxes.",
+              "This means both nations are placing taxes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'talks' is simple present tense.",
+              "Yes, 'announced' shows an action completed in the past.",
+              "No, 'are placing' is present continuous tense."
+            ]
+          },
+          {
+            "question": "What does the word 'collapsed' mean in the news story?",
+            "options": [
+              "Became very strong.",
+              "Successfully finished.",
+              "Failed or fell apart."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'collapsed' does not mean it became strong.",
+              "No, it means the opposite of successfully finished.",
+              "That's right! The talks collapsed, meaning they failed."
+            ]
+          },
+          {
+            "question": "What kind of taxes did Canada's Prime Minister announce?",
+            "options": [
+              "Monthly income taxes.",
+              "Retaliatory tariffs.",
+              "Small local taxes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, these are not income taxes.",
+              "Correct! He announced retaliatory tariffs on US goods.",
+              "No, the news talks about international trade taxes."
+            ]
+          },
+          {
+            "question": "Which word describes doing something without wanting to do it?",
+            "options": [
+              "Happily.",
+              "Eagerly.",
+              "Reluctantly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'happily' means with pleasure.",
+              "No, 'eagerly' means with strong desire.",
+              "Yes, 'reluctantly' means unwillingly or without wanting to."
+            ]
+          },
+          {
+            "question": "What is a 'trade war' according to the news brief?",
+            "options": [
+              "A military conflict.",
+              "When countries put high taxes on each other's goods.",
+              "A competition for the best products."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it is an economic conflict, not a military one.",
+              "That's correct! It's an economic conflict where countries tax each other's goods.",
+              "No, it's more serious than just a competition."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Trump's Trade War: Canada Responds to US Tariffs",
+        "overview": "Trade relations between the United States and Canada have deteriorated following the collapse of trade talks, leading to retaliatory tariffs and accusations of a trade war.",
+        "topic": "International Trade Disputes and Political Rhetoric",
+        "news_brief_sentences": [
+          "Recent trade discussions between the United States and Canada have collapsed, leading to significant tensions.",
+          "US President Donald Trump suggested Canada desires the benefits of being a US state without the associated responsibilities.",
+          "This statement came after the latest round of trade talks failed to produce an agreement.",
+          "In response to American actions, Canadian Prime Minister Justin Trudeau declared he was \"reluctantly\" announcing new retaliatory tariffs.",
+          "These tariffs are a direct measure against duties imposed by the US on Canadian steel and aluminum.",
+          "Trudeau further accused the United States of initiating a trade war.",
+          "The Canadian government views the US tariffs as unfair and a violation of existing trade agreements.",
+          "The decision to implement counter-tariffs underscores Canada's commitment to protecting its domestic industries.",
+          "Such protectionist policies often lead to increased prices for consumers in both countries.",
+          "The ongoing dispute highlights the growing challenges in international economic relations."
+        ],
+        "vocabulary": [
+          {
+            "term": "collapsed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Stopped working or failed suddenly and completely."
+          },
+          {
+            "term": "benefits",
+            "part_of_speech": "noun",
+            "definition": "Advantages or good effects that something has."
+          },
+          {
+            "term": "trade talks",
+            "part_of_speech": "noun phrase",
+            "definition": "Formal discussions and negotiations between countries about agreements concerning buying and selling goods."
+          },
+          {
+            "term": "retaliatory tariffs",
+            "part_of_speech": "noun phrase",
+            "definition": "Taxes placed on imported goods as a punishment or response to similar taxes from another country."
+          },
+          {
+            "term": "accused",
+            "part_of_speech": "verb, past simple",
+            "definition": "Stated that someone has done something wrong or illegal."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to tell what someone else has said or thought. They allow us to convey information without directly quoting every word. Common reporting verbs include 'say', 'tell', 'ask', but others like 'suggested', 'declared', and 'accused' provide more specific meaning about the speaker's intent or attitude. We often use a 'that'-clause after many reporting verbs, although 'that' can sometimes be omitted.",
+          "example_quote": "Trudeau further accused the United States of initiating a trade war."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary consequence of the recent trade discussions between the US and Canada?",
+            "options": [
+              "They resulted in a new trade agreement.",
+              "They collapsed, leading to tensions.",
+              "They established new partnership benefits."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The talks did not result in an agreement, but rather failed.",
+              "Correct. The trade discussions 'collapsed,' meaning they failed and created significant tension.",
+              "Incorrect. The discussions did not establish new benefits; they led to conflict."
+            ]
+          },
+          {
+            "question": "According to President Trump, what does Canada desire from its relationship with the US?",
+            "options": [
+              "To impose more tariffs on US goods.",
+              "The benefits of being a US state without the responsibilities.",
+              "To initiate a global trade war."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Trump did not suggest Canada wanted to impose more tariffs in this context.",
+              "Correct. Trump indicated Canada wanted the advantages of being a US state without the associated duties.",
+              "Incorrect. Initiating a trade war was not Trump's primary accusation in this statement."
+            ]
+          },
+          {
+            "question": "What does the term \"collapsed\" mean in the context of the trade talks?",
+            "options": [
+              "They were highly successful and finished quickly.",
+              "They fell apart or failed completely.",
+              "They were postponed temporarily for further planning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Collapsed' means the opposite of successful in this context.",
+              "Correct. When talks 'collapse,' they stop working or fail entirely.",
+              "Incorrect. 'Collapsed' implies a failure, not just a delay or postponement."
+            ]
+          },
+          {
+            "question": "Why did Canadian Prime Minister Justin Trudeau announce new \"retaliatory tariffs\"?",
+            "options": [
+              "To accept US trade demands.",
+              "To punish the US for its earlier tariffs.",
+              "To promote new free trade agreements immediately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Retaliatory tariffs are a response to, not an acceptance of, demands.",
+              "Correct. Trudeau announced tariffs as a direct counter-measure to US duties, thus punishing the US.",
+              "Incorrect. Retaliatory tariffs usually go against the spirit of promoting free trade."
+            ]
+          },
+          {
+            "question": "Which reporting verb best describes Trudeau's action of stating the US started a trade war?",
+            "options": [
+              "Suggested",
+              "Declared",
+              "Accused"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While 'suggested' is a reporting verb, 'accused' more precisely describes blaming someone for an action.",
+              "While 'declared' is a reporting verb, 'accused' more precisely describes blaming someone for an action.",
+              "Correct. 'Accused' means blaming someone for doing something wrong, which fits Trudeau's statement."
+            ]
+          },
+          {
+            "question": "What is the primary function of \"reporting verbs\" in English grammar?",
+            "options": [
+              "To describe actions happening in the future.",
+              "To convey what someone said or thought.",
+              "To link independent clauses in a complex sentence."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Reporting verbs are not specifically for future events; they can report past speech.",
+              "Correct. Reporting verbs summarize or relate speech and thoughts without direct quotation.",
+              "Incorrect. While they can connect ideas, their primary function is to report speech or thought."
+            ]
+          },
+          {
+            "question": "The phrase \"trade talks\" refers to:",
+            "options": [
+              "Casual conversations among business partners.",
+              "Formal negotiations between different countries.",
+              "Public speeches about economic policy changes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Trade talks' are more formal than casual conversations.",
+              "Correct. They are official discussions aiming for agreements on trade matters.",
+              "Incorrect. While related to policy, they are specific negotiations, not general speeches."
+            ]
+          },
+          {
+            "question": "How did Trudeau feel about announcing retaliatory tariffs?",
+            "options": [
+              "He was enthusiastic about the decision.",
+              "He announced them reluctantly.",
+              "He seemed completely indifferent to the consequences."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states he was \"reluctantly\" announcing them, not enthusiastically.",
+              "Correct. The news brief explicitly mentions he was \"reluctantly\" announcing them, meaning he did it unwillingly.",
+              "Incorrect. His statement shows he was not indifferent; he expressed a specific feeling."
+            ]
+          },
+          {
+            "question": "What does it mean to \"accuse\" someone, as Trudeau accused the US?",
+            "options": [
+              "To praise them highly for their actions.",
+              "To make a formal complaint or state they are responsible for something wrong.",
+              "To politely ask them to reconsider their position."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Accusing is the opposite of praising someone.",
+              "Correct. To accuse means to state that someone has done something wrong, often formally.",
+              "Incorrect. Accusing is stronger than a polite request; it implies blame."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses a reporting verb to describe President Trump's comment?",
+            "options": [
+              "These tariffs are a direct measure against duties imposed by the US.",
+              "US President Donald Trump suggested Canada desires the benefits of being a US state.",
+              "The Canadian government views the US tariffs as unfair and a violation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This sentence describes the tariffs, not Trump's comment with a reporting verb.",
+              "Correct. 'Suggested' is a reporting verb used here to convey Trump's statement.",
+              "Incorrect. 'Views' describes the government's opinion, not directly reporting a statement by Trump with a common reporting verb in this context."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "US-Canada Trade Spat: Trump's 'State Benefits' Remark Ignites Retaliatory Tariffs",
+        "overview": "Amidst collapsing trade negotiations, President Trump's assertion that Canada seeks the 'benefits' of a U.S. state has prompted Canada's reluctant announcement of retaliatory tariffs, escalating an economic conflict.",
+        "topic": "International Trade Disputes and Economic Relations",
+        "news_brief_sentences": [
+          "Recent bilateral trade negotiations between the United States and Canada have precipitously collapsed, marking a significant downturn in economic relations.",
+          "President Trump posited that Canada desires the full 'benefits' of being a U.S. state without assuming the reciprocal duties.",
+          "This assertive declaration followed a period of strained discussions aimed at resolving burgeoning tariff disputes.",
+          "In response, Canadian Prime Minister Justin Trudeau reluctantly announced the intention to enact retaliatory measures.",
+          "He affirmed Canada's commitment to implement these tariffs, underscoring the necessity to safeguard national economic interests amidst escalating tensions.",
+          "Trudeau unequivocally accused the U.S. administration of unilaterally instigating a trade war through its protectionist policies.",
+          "The impending imposition of these new duties threatens to further exacerbate bilateral relations and disrupt established supply chains.",
+          "Observers are now bracing for a protracted period of economic uncertainty and potential escalation of these trade hostilities.",
+          "The Canadian government considers the US stance an unwarranted imposition on its sovereignty and economic autonomy, seeking to accrue an unfair advantage.",
+          "This emerging dispute underscores a significant shift in global trade dynamics, moving away from multilateral consensus towards more confrontational approaches."
+        ],
+        "vocabulary": [
+          {
+            "term": "precipitously collapsed",
+            "part_of_speech": "adverbial phrase",
+            "definition": "To fall apart or fail suddenly and rapidly, often without warning or gradual decline."
+          },
+          {
+            "term": "posited",
+            "part_of_speech": "verb",
+            "definition": "To put forward or assume as a fact or as a basis for argument, often a controversial claim or idea."
+          },
+          {
+            "term": "retaliatory measures",
+            "part_of_speech": "noun phrase",
+            "definition": "Actions taken in response to an injury or wrong, often as a form of revenge or punishment, especially in international relations."
+          },
+          {
+            "term": "instigating a trade war",
+            "part_of_speech": "verb phrase",
+            "definition": "To initiate or provoke a severe economic conflict between countries, characterized by protectionist policies and tariffs."
+          },
+          {
+            "term": "accrue",
+            "part_of_speech": "verb",
+            "definition": "To accumulate or receive something, typically financial benefits or advantages, over time."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Adjectives (Present Participles)",
+          "explanation": "Present participles (verb + -ing) can function as adjectives, describing a noun by indicating an ongoing action, state, or characteristic related to it. They often convey a dynamic or evolving quality, providing a concise and sophisticated way to describe nouns.",
+          "example_quote": "This assertive declaration followed a period of strained discussions aimed at resolving burgeoning tariff disputes."
+        },
+        "quiz": [
+          {
+            "question": "What does President Trump's statement imply about Canada's desired relationship with the U.S.?",
+            "options": [
+              "Canada wishes for a full economic merger with the U.S.",
+              "Canada wants the advantages of a U.S. state without the associated responsibilities.",
+              "Canada seeks a preferential trade agreement above other nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Trump's comment specifically refers to 'benefits of being a U.S. state,' implying a desire for privileges without full integration.",
+              "Correct. The phrase 'benefits of being a US state' combined with the context of trade talks collapse strongly suggests an aspiration for advantages without the full commitment or duties.",
+              "Incorrect. While a preferential agreement might be desired, Trump's specific phrasing targets the perceived imbalance of privileges and obligations."
+            ]
+          },
+          {
+            "question": "In the context of the news brief, what does 'precipitously collapsed' suggest about the trade negotiations?",
+            "options": [
+              "They ended gradually after a long period of discussion.",
+              "They concluded successfully, but with some minor disagreements.",
+              "They failed suddenly and unexpectedly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Precipitously' indicates a sudden and rapid change, not a gradual one.",
+              "Incorrect. 'Collapsed' clearly denotes failure, not success.",
+              "Correct. 'Precipitously' means suddenly or abruptly, and 'collapsed' means to fail completely. Thus, the negotiations failed suddenly."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the Canadian Prime Minister's approach to the retaliatory tariffs?",
+            "options": [
+              "He enthusiastically embraced the idea of imposing new tariffs.",
+              "He announced the tariffs with regret but deemed them necessary.",
+              "He rejected the concept of retaliatory tariffs outright."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief states he expressed 'profound reluctance' to enact the tariffs.",
+              "Correct. He was 'reluctantly' announcing them, meaning with regret, but still affirmed Canada's intention, indicating necessity.",
+              "Incorrect. He affirmed Canada's intention to implement them, despite his reluctance."
+            ]
+          },
+          {
+            "question": "When the article states Trudeau 'unequivocally accused' the U.S., it means he:",
+            "options": [
+              "Made a vague suggestion about U.S. actions.",
+              "Expressed his accusation in a clear and unambiguous way.",
+              "Hesitated to place blame directly on the U.S."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unequivocally' means without ambiguity or doubt, the opposite of vague.",
+              "Correct. 'Unequivocally' signifies that the accusation was made in a clear, unambiguous, and absolute manner.",
+              "Incorrect. The term 'unequivocally' suggests a direct and strong statement, not hesitation."
+            ]
+          },
+          {
+            "question": "What is the primary function of a 'present participle' when it acts as an adjective, as seen in 'burgeoning tariff disputes'?",
+            "options": [
+              "To describe an action that has already been completed.",
+              "To indicate an ongoing action or developing state of a noun.",
+              "To express a strong command or imperative."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Past participles often describe completed actions. Present participles describe ongoing ones.",
+              "Correct. Present participles acting as adjectives (like 'burgeoning') describe an ongoing, developing, or active quality of the noun.",
+              "Incorrect. Participle adjectives are descriptive, not commanding."
+            ]
+          },
+          {
+            "question": "If a country 'posited' a particular view, what did it do?",
+            "options": [
+              "It firmly denied that view.",
+              "It presented or assumed that view as a fact or basis for argument.",
+              "It questioned the validity of that view."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Posit' means to put forward as a fact or basis, not to deny.",
+              "Correct. To 'posit' means to put forward or assume as a fact or as a basis for argument, aligning with President Trump's declaration.",
+              "Incorrect. While a posited view can be questioned, the act of positing itself is to assert, not to question."
+            ]
+          },
+          {
+            "question": "The term 'retaliatory measures' refers to actions taken:",
+            "options": [
+              "To initiate friendly discussions.",
+              "In response to an injury or wrong, typically as revenge or punishment.",
+              "To prevent any further conflict or escalation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Retaliatory actions are generally hostile, not friendly.",
+              "Correct. 'Retaliatory' implies acting in return for an injury, particularly a perceived wrong, aligning with Canada's tariff response to U.S. policies.",
+              "Incorrect. Retaliation often escalates conflict, rather than preventing it."
+            ]
+          },
+          {
+            "question": "What does the Canadian government's perspective on the U.S. stance, as stated in the news, suggest about their economic goals?",
+            "options": [
+              "They are willing to concede economic autonomy for trade benefits.",
+              "They prioritize maintaining their sovereignty and economic independence.",
+              "They are open to becoming an economic dependency of the U.S."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief states they view it as an 'unwarranted imposition on its sovereignty and economic autonomy.'",
+              "Correct. Their concern about 'unwarranted imposition on its sovereignty and economic autonomy' highlights a strong desire to maintain independence.",
+              "Incorrect. This contradicts their stated view of the U.S. stance as an 'unwarranted imposition.'"
+            ]
+          },
+          {
+            "question": "If the U.S. is accused of 'instigating a trade war,' what is implied about its role?",
+            "options": [
+              "The U.S. is merely a passive participant in the trade conflict.",
+              "The U.S. is considered the initiator or primary cause of the trade war.",
+              "The U.S. is attempting to mediate a resolution to the trade dispute."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Instigating' means to bring about or initiate, which is an active role.",
+              "Correct. To 'instigate' means to bring about or initiate an action or event, especially a bad one, placing the U.S. as the primary actor in starting the trade war.",
+              "Incorrect. Instigating a war is the opposite of mediating a resolution."
+            ]
+          },
+          {
+            "question": "The news brief mentions that the Canadian government believes the U.S. is seeking to 'accrue an unfair advantage.' What does 'accrue' mean in this context?",
+            "options": [
+              "To lose or forfeit something over time.",
+              "To criticize or diminish the value of something.",
+              "To accumulate or receive something, often over a period of time."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Accrue' means to gather or accumulate, not to lose.",
+              "Incorrect. While related to value, 'accrue' specifically refers to the gathering of something.",
+              "Correct. 'Accrue' means to accumulate or gather something over time, in this case, an unfair advantage."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

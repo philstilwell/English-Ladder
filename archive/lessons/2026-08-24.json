@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-24",
+  "release_iso": "2026-08-24T10:30:27Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Divorce, smartphones and control - BBC sees how Taliban run Afghanistan",
+    "summary": "Five years after the Taliban’s return, the BBC follows senior figures as the group reshapes the country.",
+    "link": "https://www.bbc.co.uk/news/articles/ckgvk9p2n7ko?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Taliban's Rule and Changes in Afghanistan",
+        "overview": "The BBC reports on how the Taliban controls Afghanistan and reshapes the country five years after their return.",
+        "topic": "Taliban's governance and its impact on Afghanistan, reported by the BBC.",
+        "news_brief_sentences": [
+          "The Taliban returned to power in Afghanistan.",
+          "This important event happened five years ago.",
+          "The BBC news team is following senior figures of the Taliban.",
+          "They want to see how this group runs the country.",
+          "The Taliban is reshaping Afghanistan's daily life.",
+          "They control many aspects, including divorce rules.",
+          "Smartphones and technology are also under their control.",
+          "BBC reporters are observing the actions of these leaders.",
+          "The group makes decisions that affect all people.",
+          "This report shows how the Taliban controls everyday activities."
+        ],
+        "vocabulary": [
+          {
+            "term": "returned",
+            "part_of_speech": "verb",
+            "definition": "To come back to a place or a position after being away."
+          },
+          {
+            "term": "group",
+            "part_of_speech": "noun",
+            "definition": "A number of people or things that are together in one place or are connected in some way."
+          },
+          {
+            "term": "leaders",
+            "part_of_speech": "noun",
+            "definition": "Important people who guide or direct a group or country."
+          },
+          {
+            "term": "controls",
+            "part_of_speech": "verb",
+            "definition": "To have the power to make decisions about something and decide what happens."
+          },
+          {
+            "term": "reshaping",
+            "part_of_speech": "verb",
+            "definition": "To change the form or character of something in a significant way."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions or events that happened at a specific time in the past and are now finished. For regular verbs, we often add '-ed'. For irregular verbs, the form changes.",
+          "example_quote": "The Taliban returned to power in Afghanistan."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the BBC report?",
+            "options": [
+              "How the Taliban runs Afghanistan",
+              "How people use smartphones",
+              "New divorce laws"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! The report is about the Taliban's control.",
+              "Not quite. Smartphone control is one small part, but not the main topic.",
+              "Incorrect. Divorce laws are part of what they control, but not the overall focus."
+            ]
+          },
+          {
+            "question": "When did the Taliban come back to power in Afghanistan?",
+            "options": [
+              "One year ago",
+              "Five years ago",
+              "Last month"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says it was longer than one year.",
+              "That's right! The brief states this happened five years ago.",
+              "Incorrect. The news brief specifies a longer period than last month."
+            ]
+          },
+          {
+            "question": "Who is following the senior figures of the Taliban?",
+            "options": [
+              "Afghan citizens",
+              "BBC news team",
+              "Smartphone users"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Not according to the news brief. The BBC is reporting.",
+              "Correct! The BBC news team is observing their actions.",
+              "This is not mentioned in the brief as the group following the Taliban."
+            ]
+          },
+          {
+            "question": "What does the word 'returned' mean in this news brief?",
+            "options": [
+              "Left a place",
+              "Came back to a place",
+              "Never went away"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That's the opposite meaning. 'Returned' means to come back.",
+              "Exactly! 'Returned' means to come back to a place or position.",
+              "Incorrect. 'Returned' indicates coming back after being away."
+            ]
+          },
+          {
+            "question": "The news brief mentions the Taliban as a 'group'. What is a group?",
+            "options": [
+              "One person",
+              "Many separate things",
+              "A number of people or things together"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a group is usually more than one.",
+              "Not quite. A group is connected, not just separate things.",
+              "Correct! A group is a number of people or things together."
+            ]
+          },
+          {
+            "question": "What does it mean if the Taliban 'controls' smartphones?",
+            "options": [
+              "They make smartphones",
+              "They decide how people use smartphones",
+              "They dislike smartphones"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not say they make phones, only that they control them.",
+              "Yes, 'controls' means they have power and make decisions about their use.",
+              "The brief only states they control them, not their feelings about them."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense?",
+            "options": [
+              "The BBC is following leaders.",
+              "The Taliban returned to power.",
+              "They control many things."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is present continuous tense, not simple past.",
+              "Correct! 'Returned' is the past tense of 'return', showing a finished action.",
+              "This is simple present tense, describing a current action or state."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is one thing the Taliban controls?",
+            "options": [
+              "Weather",
+              "Divorce rules",
+              "The BBC"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief does not mention control over the weather.",
+              "Right! The brief states they control divorce rules.",
+              "The BBC is reporting on the Taliban, not controlled by them."
+            ]
+          },
+          {
+            "question": "What does 'leaders' mean in the context of the Taliban?",
+            "options": [
+              "Regular citizens",
+              "Important people who guide the group",
+              "People who are against the group"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Leaders are usually important, not regular citizens.",
+              "Correct! Leaders are important people who guide and direct a group.",
+              "No, leaders guide the group, they are not against it."
+            ]
+          },
+          {
+            "question": "What is the Taliban doing to Afghanistan's daily life?",
+            "options": [
+              "Ignoring it",
+              "Reshaping it",
+              "Keeping it the same"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the brief indicates they are actively changing things.",
+              "Correct! The brief says they are 'reshaping' daily life.",
+              "Incorrect. The word 'reshaping' means they are changing it."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "The Taliban's Rule: Reshaping Afghanistan Five Years On",
+        "overview": "Five years after their return to power, the BBC investigated how the Taliban are governing Afghanistan, observing senior figures as they reshape the country's social and political landscape.",
+        "topic": "The Taliban's governance of Afghanistan, including social control and technological influence.",
+        "news_brief_sentences": [
+          "The BBC recently produced an in-depth report documenting the Taliban's approach to governance in Afghanistan.",
+          "This comprehensive investigation takes place five years after the group’s return to power, marking a period of profound national change.",
+          "During their visit, BBC journalists observed senior figures within the Taliban administration, gaining direct insights into their methods.",
+          "The report highlights how the Taliban are attempting to reshape the country, influencing areas such as divorce laws and the pervasive use of smartphones.",
+          "Leaders are actively implementing their interpretations of Islamic law, which profoundly impacts the daily lives of Afghan citizens.",
+          "For example, new legal frameworks are being established concerning family matters, showcasing their strict adherence to religious doctrines.",
+          "Interestingly, despite their often conservative stance, the Taliban also utilize modern technology like smartphones for administrative purposes and public outreach.",
+          "This duality indicates a complex strategy, blending traditional values with contemporary tools to maintain and exert control.",
+          "The international community continues to monitor these developments closely, expressing ongoing concerns about human rights and social freedoms.",
+          "Ultimately, the BBC's findings offer a clear picture of how the Taliban are systematically reshaping Afghanistan according to their distinct ideology."
+        ],
+        "vocabulary": [
+          {
+            "term": "in-depth report",
+            "part_of_speech": "noun phrase",
+            "definition": "A detailed and thorough study or analysis of a particular topic."
+          },
+          {
+            "term": "governance",
+            "part_of_speech": "noun",
+            "definition": "The way that an organization, country, or system is controlled and managed."
+          },
+          {
+            "term": "senior figures",
+            "part_of_speech": "noun phrase",
+            "definition": "Important and powerful people in an organization or government."
+          },
+          {
+            "term": "conservative stance",
+            "part_of_speech": "noun phrase",
+            "definition": "A position or attitude that favors traditional values and is resistant to change."
+          },
+          {
+            "term": "duality",
+            "part_of_speech": "noun",
+            "definition": "The state of having two parts, often opposite or contrasting, existing at the same time."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and what is affected by it, rather than on who or what is performing the action. It's often formed with a form of 'to be' + past participle. This structure is common when the agent is unknown, unimportant, or obvious, or when we want to emphasize the object of the action.",
+          "example_quote": "new legal frameworks are being established concerning family matters"
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the BBC's recent in-depth report on Afghanistan?",
+            "options": [
+              "The history of the country's civil war.",
+              "The Taliban's methods of governance five years after returning to power.",
+              "The economic impact of international sanctions on Afghanistan."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The report specifically examines the Taliban's current governance, not historical conflicts.",
+              "Correct! The report investigates how the Taliban are controlling and managing Afghanistan today.",
+              "While economic impacts might be mentioned, the core focus is on how the Taliban run the country."
+            ]
+          },
+          {
+            "question": "How long after the Taliban's return to power does the BBC investigation take place?",
+            "options": [
+              "One year.",
+              "Three years.",
+              "Five years."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief clearly states \"five years after the group’s return to power.\"",
+              "This is incorrect; the report covers a five-year period.",
+              "Correct! The report reflects on the changes implemented by the Taliban over half a decade."
+            ]
+          },
+          {
+            "question": "Which areas are specifically mentioned as being influenced by the Taliban's efforts to reshape Afghanistan?",
+            "options": [
+              "Military defense and trade agreements.",
+              "Divorce laws and smartphone usage.",
+              "Educational curricula and healthcare systems."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief highlights social control aspects, not primarily military or trade.",
+              "Correct! The report specifically notes changes in divorce laws and the use of smartphones.",
+              "While these are important, the brief explicitly mentions divorce and smartphones."
+            ]
+          },
+          {
+            "question": "What does the term \"in-depth report\" mean in the context of the news brief?",
+            "options": [
+              "A brief summary of events.",
+              "A detailed and thorough study of a topic.",
+              "A preliminary announcement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"In-depth\" suggests more than a brief summary; it implies thoroughness.",
+              "Correct! An \"in-depth report\" provides a comprehensive and detailed analysis.",
+              "This is incorrect; \"in-depth\" indicates a completed investigation, not an announcement."
+            ]
+          },
+          {
+            "question": "The news brief states \"senior figures within the Taliban administration were observed.\" What does \"senior figures\" refer to?",
+            "options": [
+              "Older members of the community.",
+              "Important and powerful people in the government.",
+              "Experienced teachers in schools."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While they might be older, \"senior\" here refers to their position of authority.",
+              "Correct! \"Senior figures\" are high-ranking officials or leaders within an organization.",
+              "The context refers to the Taliban administration, not the education system."
+            ]
+          },
+          {
+            "question": "What is meant by the \"conservative stance\" of the Taliban regarding technology?",
+            "options": [
+              "Their willingness to adopt all modern technologies without hesitation.",
+              "Their general resistance to change, despite using some modern tools.",
+              "Their complete rejection of all forms of digital communication."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief notes a \"duality,\" suggesting a careful, not unhesitating, approach.",
+              "Correct! A \"conservative stance\" implies a preference for traditional values, even if some modern tools are selectively used.",
+              "This is incorrect, as the brief states they \"utilize technology like smartphones.\""
+            ]
+          },
+          {
+            "question": "The news brief mentions the \"duality\" in the Taliban's approach. What does \"duality\" mean here?",
+            "options": [
+              "Their unified and consistent ideology.",
+              "The state of having two contrasting aspects, like using modern tech while enforcing traditional values.",
+              "Their open collaboration with international partners."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Duality\" suggests two distinct parts, not necessarily a unified approach.",
+              "Correct! The \"duality\" refers to the contrast between their traditional values and their use of modern technology.",
+              "The brief mentions monitoring by the international community, not collaboration."
+            ]
+          },
+          {
+            "question": "In the sentence \"new legal frameworks are being established concerning family matters,\" which option correctly identifies the grammatical structure of \"are being established\"?",
+            "options": [
+              "Present Perfect Active",
+              "Present Continuous Passive",
+              "Simple Present Active"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This structure uses 'have/has been' + past participle; this is incorrect.",
+              "Correct! \"Are being established\" is the present continuous form of the passive voice.",
+              "This structure would be 'establish' or 'establishes'; this is incorrect."
+            ]
+          },
+          {
+            "question": "Which sentence below uses the passive voice?",
+            "options": [
+              "The Taliban leaders implement strict laws.",
+              "The report offers a clear picture.",
+              "Daily lives are profoundly impacted by their interpretations."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the active voice, with \"leaders\" performing the action.",
+              "This is also active voice, with \"the report\" performing the action.",
+              "Correct! \"Are impacted\" uses 'to be' + past participle, with the focus on \"daily lives\" as the receiver of the action."
+            ]
+          },
+          {
+            "question": "The BBC's report documents the Taliban's approach to \"governance.\" What does \"governance\" refer to?",
+            "options": [
+              "The geographical boundaries of the country.",
+              "The way a country or system is controlled and managed.",
+              "The traditional customs and rituals of a society."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Governance\" is about management and control, not just physical boundaries.",
+              "Correct! \"Governance\" describes the system of ruling and managing a nation or organization.",
+              "While customs might be influenced, \"governance\" is specifically about how power is exercised and decisions are made."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "The Taliban's Governance in Afghanistan: Control, Societal Shifts, and International Observation",
+        "overview": "This lesson explores the multifaceted realities of Taliban rule in Afghanistan five years after their resurgence, examining their methods of control, the ongoing societal transformations, and the BBC's perspective on their administration.",
+        "topic": "The Taliban's Administration and Societal Impact in Afghanistan Five Years On",
+        "news_brief_sentences": [
+          "Five years since the Taliban's unexpected return to governance, the group has demonstrably intensified efforts to solidify its control across Afghanistan.",
+          "The BBC recently secured unprecedented access to senior figures, offering a critical lens into the evolving dynamics of their administration.",
+          "This period reveals a pervasive system of control influencing almost every facet of Afghan society, from judicial processes to technological engagement.",
+          "Societal structures are undergoing profound transformations, with traditional interpretations of Islamic law actively recalibrating public and private life.",
+          "Despite widespread international condemnation, the de facto authorities maintain an unwavering resolve to implement their distinct vision for the nation, often diverging from global norms.",
+          "The report illuminates the complex interplay between deeply ingrained customs and the pervasive influence of modern tools, such as smartphones, which pose unique challenges to their authoritative doctrine.",
+          "Observations indicate a profound reticence among the populace to openly challenge the established order, a reflection of the severe repercussions associated with dissent.",
+          "The administration's focus on internal stability, coupled with stringent social directives, underscores a concerted drive to remould the national identity in accordance with their ideological tenets.",
+          "Internationally, the Taliban frequently adopts a defensive posture regarding human rights concerns, complicating their precarious standing on the global diplomatic stage.",
+          "The BBC's comprehensive investigation thus highlights the enduring capacity of the Taliban to reshape Afghanistan's trajectory, even as the global community grapples with persistent humanitarian exigencies."
+        ],
+        "vocabulary": [
+          {
+            "term": "recalibrating",
+            "part_of_speech": "verb",
+            "definition": "The act of making precise adjustments to a system or process to ensure accuracy or alignment with new standards or circumstances."
+          },
+          {
+            "term": "reticence",
+            "part_of_speech": "noun",
+            "definition": "The quality or state of being reserved, reluctant, or disinclined to speak freely; quietness or uncommunicativeness, often due to caution or fear."
+          },
+          {
+            "term": "remould",
+            "part_of_speech": "verb",
+            "definition": "To change the shape, form, or structure of something significantly, often with the intention of giving it a new or improved character or ideology."
+          },
+          {
+            "term": "defensive posture",
+            "part_of_speech": "noun phrase",
+            "definition": "A position or attitude adopted to protect oneself or one's interests from perceived threats or criticism, often characterized by caution, resistance, or justification."
+          },
+          {
+            "term": "humanitarian exigencies",
+            "part_of_speech": "noun phrase",
+            "definition": "Urgent needs or demands related to human welfare, especially those arising from a crisis, disaster, or severe deprivation, requiring immediate attention and aid."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization and Abstract Nouns",
+          "explanation": "Nominalization is the process of forming a noun from another part of speech, typically a verb or adjective. In advanced English, abstract nouns derived from verbs (e.g., 'condemn' to 'condemnation') or adjectives (e.g., 'resolve' as a noun) are frequently employed to express complex ideas concisely. This linguistic technique lends formality and sophistication to writing, allowing speakers and writers to discuss actions or qualities as conceptual entities rather than as direct actions or attributes, thereby elevating the discourse.",
+          "example_quote": "Despite widespread international condemnation, the de facto authorities maintain an unwavering resolve to implement their distinct vision for the nation, often diverging from global norms."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary focus of the BBC's recent access to the Taliban, as described in the news brief?",
+            "options": [
+              "To document the history of their resurgence five years ago.",
+              "To understand the evolving dynamics of their current administration.",
+              "To expose specific instances of international condemnation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While their resurgence is mentioned, the core focus is on their current governance mechanisms and changes.",
+              "Correct. The brief explicitly states the BBC provides a 'critical lens into the evolving dynamics of their administration,' highlighting current processes.",
+              "Incorrect. International condemnation is mentioned in the brief as a context, but it is not the primary objective of the BBC's access."
+            ]
+          },
+          {
+            "question": "The term 'recalibrating' in the news brief refers to what action by the Taliban regarding societal structures?",
+            "options": [
+              "Ignoring existing legal frameworks completely.",
+              "Making precise adjustments to align with new standards or circumstances.",
+              "Completely dismantling all previous customs without replacement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Recalibrating' implies adjustment and re-alignment, not outright disregard for existing structures.",
+              "Correct. 'Recalibrating' means to make precise adjustments to ensure accuracy or alignment with new standards, in this case, new Islamic law interpretations.",
+              "Incorrect. The term suggests a reshaping or adjustment rather than a wholesale demolition without any new framework."
+            ]
+          },
+          {
+            "question": "According to the news brief, what challenge do modern technologies like smartphones present for the Taliban's authoritative doctrine?",
+            "options": [
+              "They are primarily used by the Taliban for enforcing strict social directives.",
+              "They complicate the regime's efforts to control information and societal discourse.",
+              "They are mainly utilized for facilitating international diplomatic engagements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While technology can be used for control, the brief explicitly frames smartphones as posing 'unique challenges' to their doctrine.",
+              "Correct. The brief states smartphones 'pose unique challenges to their authoritative doctrine,' implying difficulties in maintaining absolute control.",
+              "Incorrect. The brief does not suggest that smartphones' primary role in this context is for international diplomacy."
+            ]
+          },
+          {
+            "question": "Which grammar concept is exemplified by words like 'condemnation' and 'resolve' as discussed in this lesson?",
+            "options": [
+              "The frequent use of passive voice constructions.",
+              "The process of nominalization and the use of abstract nouns.",
+              "The deployment of rhetorical questions to engage the reader."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While passive voice is a grammatical feature, 'condemnation' and 'resolve' specifically illustrate a different concept.",
+              "Correct. 'Condemnation' (from 'condemn') and 'resolve' (as a noun meaning determination) are prime examples of nominalization, forming abstract nouns.",
+              "Incorrect. The brief employs direct statements and analyses, not rhetorical questions, to convey information."
+            ]
+          },
+          {
+            "question": "What does 'reticence' among the populace signify in the context of challenging the new order, according to the brief?",
+            "options": [
+              "An eagerness to actively embrace the new administration's policies.",
+              "A reluctance to speak freely or openly due to potential severe repercussions.",
+              "An active engagement in public discourse and critical debate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Reticence' implies withholding, which is the opposite of eager embrace.",
+              "Correct. 'Reticence' in this context points to a disinclination to speak openly, directly linked to the fear of 'severe repercussions associated with dissent.'",
+              "Incorrect. The brief explicitly states that 'reticence' exists among the populace, contrasting with open challenges or active public discourse."
+            ]
+          },
+          {
+            "question": "How does the Taliban's administration aim to 'remould' the national identity, based on the news brief?",
+            "options": [
+              "By promoting diverse cultural expressions and traditions.",
+              "By aligning it strictly with their specific ideological tenets.",
+              "By encouraging rapid integration into international cultural norms."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief suggests a move towards a specific ideology, not a promotion of diverse expressions.",
+              "Correct. The brief states they aim to 'remould the national identity in accordance with their ideological tenets,' emphasizing a specific alignment.",
+              "Incorrect. The brief implies a distinct, often divergent, vision for the nation, not rapid international cultural integration."
+            ]
+          },
+          {
+            "question": "When the Taliban adopts a 'defensive posture' on the global stage, what does it primarily suggest?",
+            "options": [
+              "They are actively seeking robust international military alliances.",
+              "They are protecting their interests by resisting external criticism, especially on human rights.",
+              "They are preparing for widespread humanitarian aid distribution to other nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'defensive posture' in diplomacy usually relates to safeguarding policies and image, not forming military alliances.",
+              "Correct. A 'defensive posture' implies a protective stance against perceived threats or criticism, particularly concerning human rights issues.",
+              "Incorrect. While humanitarian exigencies are mentioned, a 'defensive posture' refers to their stance on criticisms, not their aid efforts."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'humanitarian exigencies.' What does this phrase specifically refer to?",
+            "options": [
+              "The urgent need for international military intervention.",
+              "Urgent and pressing demands related to human welfare in a crisis.",
+              "The formal requirements for bilateral diplomatic negotiations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Humanitarian' specifically denotes concerns for human welfare, not military action.",
+              "Correct. 'Humanitarian exigencies' refers to critical and urgent needs concerning human welfare, typically in a situation of crisis or deprivation.",
+              "Incorrect. While related to global issues, 'exigencies' refer to urgent needs, not merely procedural requirements for negotiations."
+            ]
+          },
+          {
+            "question": "The example quote 'Despite widespread international condemnation, the de facto authorities maintain an unwavering resolve to implement their distinct vision for the nation, often diverging from global norms' primarily illustrates which point?",
+            "options": [
+              "The Taliban's willingness to conform to international norms under pressure.",
+              "The significant influence of the international community over the Taliban's policies.",
+              "The Taliban's determination to pursue its agenda despite external disapproval."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The phrase 'diverging from global norms' directly contradicts a willingness to conform.",
+              "Incorrect. The quote emphasizes the Taliban's 'unwavering resolve' despite 'condemnation,' indicating limited external influence on their core agenda.",
+              "Correct. The quote highlights their 'unwavering resolve' and 'defiance of global norms' despite 'international condemnation,' clearly demonstrating their strong determination."
+            ]
+          },
+          {
+            "question": "What is a key characteristic of the Taliban's approach to nation-building, as described in the brief?",
+            "options": [
+              "Decentralization of power to local communities and provincial authorities.",
+              "A pervasive system of control influencing almost every facet of daily life.",
+              "Rapid and enthusiastic integration into the global economic system."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief describes a strong, centralizing 'pervasive system of control,' not decentralization.",
+              "Correct. The brief explicitly states their approach is 'characterized by a pervasive system of control, influencing almost every facet of Afghan society.'",
+              "Incorrect. The brief suggests a complex, often defensive, relationship with the global stage, not rapid or enthusiastic integration."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

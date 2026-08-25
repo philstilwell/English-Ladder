@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-25",
+  "release_iso": "2026-08-25T10:23:48Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Iran says it is 'fully prepared' to counter widened US economic sanctions",
+    "summary": "The US calls its latest sanctions on Iran an \"economic D-Day\", but Tehran says it has a plan to address them.",
+    "link": "https://www.bbc.co.uk/news/articles/c0qxew81y83o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Iran Responds to US Sanctions",
+        "overview": "Iran says it is ready for new money rules from the US.",
+        "topic": "US-Iran Economic Tensions",
+        "news_brief_sentences": [
+          "The United States announced new economic sanctions on Iran.",
+          "These special rules affect Iran's money system.",
+          "The US wants to put pressure on Iran's economy.",
+          "The US called its latest sanctions an \"economic D-Day.\"",
+          "But Iran says it is fully prepared to face them.",
+          "Iran's leaders have a plan to address these challenges.",
+          "They want to counter the negative effects of the US actions.",
+          "Iran states it has ways to manage the new money rules.",
+          "This situation creates tension between the two countries.",
+          "Iran aims to protect its financial system and people."
+        ],
+        "vocabulary": [
+          {
+            "term": "sanctions",
+            "part_of_speech": "noun",
+            "definition": "Official orders to stop trade or money with a country."
+          },
+          {
+            "term": "economy",
+            "part_of_speech": "noun",
+            "definition": "The system of how a country makes, spends, and manages money and goods."
+          },
+          {
+            "term": "fully prepared",
+            "part_of_speech": "adjective",
+            "definition": "Completely ready for something to happen."
+          },
+          {
+            "term": "address",
+            "part_of_speech": "verb",
+            "definition": "To deal with a problem or situation."
+          },
+          {
+            "term": "counter",
+            "part_of_speech": "verb",
+            "definition": "To act against something to reduce its effect or stop it."
+          }
+        ],
+        "grammar": {
+          "concept": "The Verb \"To Be\" (Simple Present)",
+          "explanation": "The verb \"to be\" helps describe who or what someone or something is, or its state. In the simple present, we use \"is\" for singular subjects like \"Iran\" and \"it\". We use \"are\" for plural subjects and \"am\" for \"I.\"",
+          "example_quote": "Iran says it is fully prepared to face them."
+        },
+        "quiz": [
+          {
+            "question": "What did the United States announce for Iran?",
+            "options": [
+              "New friends",
+              "Economic sanctions",
+              "A big party"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the US did not announce new friends.",
+              "Yes, the US announced new economic sanctions.",
+              "No, this news is serious, not about a party."
+            ]
+          },
+          {
+            "question": "What does \"sanctions\" mean in this news?",
+            "options": [
+              "Happy gifts",
+              "Special rules about money",
+              "New games to play"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, sanctions are not happy gifts. They are serious rules.",
+              "Yes, sanctions are special rules often about trade or money.",
+              "No, sanctions are not about games; they are about serious economic actions."
+            ]
+          },
+          {
+            "question": "What is the main topic of this news story?",
+            "options": [
+              "A new movie",
+              "Rules between US and Iran about money",
+              "A sports event"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is not about a movie.",
+              "Yes, the news is about the economic rules and tension between the US and Iran.",
+              "No, there is no sports event mentioned in this news."
+            ]
+          },
+          {
+            "question": "How did the US describe its latest sanctions?",
+            "options": [
+              "A small problem",
+              "An \"economic D-Day\"",
+              "A friendly offer"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the US called it a much stronger term than a small problem.",
+              "Yes, the US called its latest sanctions an \"economic D-Day.\"",
+              "No, the US actions are not a friendly offer."
+            ]
+          },
+          {
+            "question": "What does it mean if Iran is \"fully prepared\"?",
+            "options": [
+              "They are sad",
+              "They are completely ready",
+              "They are confused"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'fully prepared' means ready, not sad.",
+              "Yes, 'fully prepared' means completely ready for a situation.",
+              "No, if you are 'fully prepared', you are not confused."
+            ]
+          },
+          {
+            "question": "What does Iran have to \"address\" these challenges?",
+            "options": [
+              "A new song",
+              "A plan",
+              "A long vacation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a new song will not help address challenges.",
+              "Yes, Iran has a plan to address, or deal with, the challenges.",
+              "No, a vacation is not a way to address serious economic issues."
+            ]
+          },
+          {
+            "question": "What does Iran want to \"counter\"?",
+            "options": [
+              "The positive effects",
+              "The negative effects of US actions",
+              "New friendships"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they would not want to counter positive effects.",
+              "Yes, Iran wants to counter, or act against, the negative effects of the US actions.",
+              "No, the news is not about countering new friendships."
+            ]
+          },
+          {
+            "question": "The word \"economy\" in the news is about what?",
+            "options": [
+              "Animals in a zoo",
+              "How a country manages money",
+              "Different types of food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the economy is not about animals.",
+              "Yes, the economy is about how a country makes, spends, and manages money and goods.",
+              "No, the economy is not about food types."
+            ]
+          },
+          {
+            "question": "In the sentence \"Iran says it is fully prepared,\" what does \"is\" tell us?",
+            "options": [
+              "A past action",
+              "A state of being or condition",
+              "A future plan"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'is' shows something in the present, not the past.",
+              "Yes, 'is' shows a present state of being or condition for Iran.",
+              "No, 'is' describes the current situation, not a future plan."
+            ]
+          },
+          {
+            "question": "Which sentence uses the verb \"to be\" correctly for a singular subject?",
+            "options": [
+              "They are ready.",
+              "We am happy.",
+              "Iran is strong."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is correct for a plural subject, but the question asks for singular.",
+              "No, 'I am happy' is correct. 'We are happy' for plural.",
+              "Yes, 'Iran is strong' uses 'is' correctly for the singular subject 'Iran'."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Iran 'Fully Prepared' to Counter New US Economic Sanctions",
+        "overview": "Iran has stated its readiness to address the United States' recent 'economic D-Day' sanctions with a comprehensive plan, signaling a continued standoff between the two nations.",
+        "topic": "International Relations and Economic Sanctions",
+        "news_brief_sentences": [
+          "New and widened economic sanctions have recently been announced against Iran by the United States.",
+          "These measures are intended to significantly increase pressure on the Iranian economy.",
+          "US officials have dramatically described these as an \"economic D-Day\", indicating their severity.",
+          "However, Iran's government has declared itself fully prepared to counter these new financial restrictions.",
+          "Tehran claims it possesses a specific plan to address the impact of the increased pressure effectively.",
+          "The Iranian leadership asserts that these punitive actions will not achieve their intended effect.",
+          "They believe their strategies will help mitigate any severe economic damage to the country.",
+          "This ongoing tension highlights the complex relationship between the two nations.",
+          "Both countries continue to pursue their respective national interests through various means.",
+          "The international community is watching closely to see how these latest developments unfold."
+        ],
+        "vocabulary": [
+          {
+            "term": "widened",
+            "part_of_speech": "adjective",
+            "definition": "Made larger or more extensive in scope or area."
+          },
+          {
+            "term": "fully prepared",
+            "part_of_speech": "adjective phrase",
+            "definition": "Completely ready for a particular situation or task."
+          },
+          {
+            "term": "counter",
+            "part_of_speech": "verb",
+            "definition": "To react to something with an opposing action or argument."
+          },
+          {
+            "term": "address",
+            "part_of_speech": "verb",
+            "definition": "To deal with a problem or situation; to think about and begin to solve it."
+          },
+          {
+            "term": "unfold",
+            "part_of_speech": "verb",
+            "definition": "To develop or happen over a period of time; to become clear or revealed."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object that receives the action, rather than the person or thing performing the action. It is formed using a form of 'to be' (e.g., is, are, was, were, has been) followed by the past participle of the main verb. This structure is useful when the doer is unknown, unimportant, or when you want to emphasize the action or its receiver.",
+          "example_quote": "New and widened economic sanctions have recently been announced against Iran by the United States."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "Iran's new economic trade agreements",
+              "The United States' new sanctions against Iran",
+              "A cultural exchange between Iran and the US"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The brief discusses sanctions, not trade agreements.",
+              "That's right! The article focuses on the US imposing new economic sanctions on Iran and Iran's reaction.",
+              "This is incorrect. The brief is about economic and political tensions, not cultural exchanges."
+            ]
+          },
+          {
+            "question": "What phrase did US officials use to describe the new sanctions?",
+            "options": [
+              "An 'economic lifeline'",
+              "An 'economic D-Day'",
+              "An 'economic recovery plan'"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Lifeline' suggests support, while the sanctions are punitive.",
+              "Correct! US officials dramatically called the new measures an 'economic D-Day' to emphasize their severity.",
+              "Incorrect. The sanctions are designed to pressure Iran, not to aid in recovery."
+            ]
+          },
+          {
+            "question": "What does Iran claim to possess to deal with the sanctions?",
+            "options": [
+              "New military alliances",
+              "A specific plan",
+              "Increased oil production"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While they might have these, the brief specifically mentions a plan for economic response.",
+              "Exactly! Iran claims to have a 'specific plan' to address the impact of the increased pressure.",
+              "The brief does not mention increased oil production as their primary response."
+            ]
+          },
+          {
+            "question": "According to the brief, what does the word 'widened' mean in the context of sanctions?",
+            "options": [
+              "Made narrower or more focused",
+              "Made larger or more extensive",
+              "Made less effective"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Widened' means the opposite of narrower.",
+              "Correct. 'Widened' means the sanctions now cover a larger area or more aspects of the economy.",
+              "Incorrect. 'Widened' refers to the scope, not the effectiveness, though that might be an aim."
+            ]
+          },
+          {
+            "question": "If Iran is 'fully prepared' to counter the sanctions, what does 'fully prepared' imply?",
+            "options": [
+              "They are hoping for the best but have no strategy.",
+              "They are completely ready and have a strategy to deal with them.",
+              "They are scared and giving up."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Fully prepared' suggests they have taken action and have a strategy.",
+              "That's right! 'Fully prepared' means they are entirely ready and have plans in place to respond.",
+              "Incorrect. 'Fully prepared' implies confidence and readiness to face the challenge."
+            ]
+          },
+          {
+            "question": "What does it mean for Iran to 'counter' the sanctions?",
+            "options": [
+              "To ignore them completely",
+              "To respond with an opposing action or strategy",
+              "To accept them without resistance"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Counter' implies a response, not ignoring.",
+              "Correct! To 'counter' means to take action against or in opposition to something.",
+              "Incorrect. If they are 'countering', they are not accepting them passively."
+            ]
+          },
+          {
+            "question": "When Iran aims to 'address' the impact of the pressure, what are they trying to do?",
+            "options": [
+              "To avoid mentioning the issue",
+              "To deal with and manage the problem",
+              "To make the situation worse"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Address' means to confront or deal with, not avoid.",
+              "Exactly! To 'address' an issue means to deal with it, to manage or resolve it.",
+              "Incorrect. They want to mitigate, not worsen, the impact."
+            ]
+          },
+          {
+            "question": "What does it mean for 'latest developments unfold'?",
+            "options": [
+              "They are hidden or kept secret",
+              "They are developing and becoming clear over time",
+              "They are immediately finished"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unfold' suggests revealing, not hiding.",
+              "That's right! 'Unfold' means events are happening and revealing themselves gradually.",
+              "Incorrect. 'Unfold' implies a process, not an immediate end."
+            ]
+          },
+          {
+            "question": "In the sentence 'New and widened economic sanctions have recently been announced against Iran by the United States,' which part is the subject performing the action?",
+            "options": [
+              "New and widened economic sanctions",
+              "The United States",
+              "Iran"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'New and widened economic sanctions' are the receiver of the action in this passive sentence.",
+              "Correct! Although the sentence is in the passive voice, the 'by the United States' phrase tells us who performed the action.",
+              "Incorrect. Iran is the object or receiver of the action, not the one announcing the sanctions."
+            ]
+          },
+          {
+            "question": "Which of the following sentences uses the passive voice?",
+            "options": [
+              "Tehran claims it possesses a specific plan.",
+              "The US announced new sanctions.",
+              "Their strategies will be believed to mitigate damage."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the active voice because 'Tehran' is performing the action 'claims'.",
+              "This sentence is in the active voice because 'The US' is performing the action 'announced'.",
+              "Correct! This sentence uses 'will be' + past participle ('believed'), making it passive. The focus is on the strategies being believed, not who believes them."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Iran 'Fully Prepared' to Counter US Sanctions Amid 'Economic D-Day' Designation",
+        "overview": "Iran asserts its readiness to effectively counteract heightened US economic sanctions, which Washington provocatively labels an 'economic D-Day', by deploying a comprehensive strategy designed to navigate these intensified financial pressures.",
+        "topic": "International relations, economic sanctions, geopolitical tensions, Iran-US relations",
+        "news_brief_sentences": [
+          "Iran has unequivocally stated its readiness to counter intensified economic sanctions recently imposed by the United States.",
+          "Washington describes its latest punitive measures as an \"economic D-Day,\" signaling a severe escalation in financial pressure.",
+          "However, Tehran contends it possesses a comprehensive strategy to navigate these significant challenges.",
+          "The Islamic Republic asserts that it has developed various mechanisms to mitigate the impact of these unilateral restrictions effectively.",
+          "This declaration comes amidst persistent tensions between the two nations regarding Iran's nuclear ambitions and regional influence.",
+          "Iranian officials have consistently maintained that such coercive tactics will not compel them to alter their sovereign policies.",
+          "Instead, they view these actions as a direct assault on their national sovereignty and economic resilience.",
+          "The government claims to have meticulously studied past sanctions regimes to formulate a robust defense against current and future pressures.",
+          "Furthermore, authorities indicate that they are prepared for a prolonged period of economic confrontation with the West.",
+          "This proactive stance underscores Iran's determination to resist external economic pressure and maintain its independent trajectory."
+        ],
+        "vocabulary": [
+          {
+            "term": "counter",
+            "part_of_speech": "verb",
+            "definition": "To oppose, react against, or take action to neutralize or reduce the effect of something, especially a threat or attack."
+          },
+          {
+            "term": "contends",
+            "part_of_speech": "verb",
+            "definition": "To assert something as a position in an argument or to struggle to surmount a difficulty or opposition."
+          },
+          {
+            "term": "comprehensive strategy",
+            "part_of_speech": "noun phrase",
+            "definition": "A detailed and far-reaching plan designed to address all aspects of a particular situation or achieve a specific long-term goal."
+          },
+          {
+            "term": "mitigate",
+            "part_of_speech": "verb",
+            "definition": "To make something less severe, serious, or painful; to alleviate or soften the impact of an adverse condition."
+          },
+          {
+            "term": "resilience",
+            "part_of_speech": "noun",
+            "definition": "The capacity to recover quickly from difficulties; toughness, or the ability of an economy or system to withstand or recover from shocks."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participle Clauses for Consequence/Result",
+          "explanation": "A present participle clause (starting with -ing form of a verb) can be used to describe an action or event that happens as a result or consequence of the main clause's action. It typically follows the main clause and adds explanatory detail, indicating what the result of the preceding statement is, creating a more concise and sophisticated sentence structure.",
+          "example_quote": "Washington describes its latest punitive measures as an \"economic D-Day,\" signaling a severe escalation in financial pressure."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary objective of Iran's 'comprehensive strategy' as mentioned in the news brief?",
+            "options": [
+              "To negotiate a new nuclear deal with the United States.",
+              "To navigate the challenges posed by intensified US economic sanctions.",
+              "To launch retaliatory military actions against US interests."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not directly stated in the news brief; Iran's focus is on economic countermeasures.",
+              "Correct. The brief explicitly states Tehran 'contends it possesses a comprehensive strategy to navigate these challenges'.",
+              "The news brief focuses on economic countermeasures, not military retaliation."
+            ]
+          },
+          {
+            "question": "In the context of the article, what does it mean for Iran to 'counter' the US sanctions?",
+            "options": [
+              "To respond with diplomatic condemnation.",
+              "To actively oppose and find ways to neutralize their economic impact.",
+              "To publicly ignore the sanctions altogether."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While diplomacy might be involved, 'counter' implies more active resistance than mere condemnation.",
+              "Precisely. To 'counter' sanctions means to take actions to oppose and lessen their intended negative effects.",
+              "Ignoring sanctions is not a form of 'countering' them; it would likely allow their full impact."
+            ]
+          },
+          {
+            "question": "How does Washington characterize its latest sanctions on Iran?",
+            "options": [
+              "As a necessary diplomatic tool.",
+              "As an 'economic D-Day'.",
+              "As a minor adjustment to existing policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While they might consider it a tool, the specific characterization is more dramatic.",
+              "Correct. The article directly quotes Washington's description of the sanctions as an 'economic D-Day'.",
+              "The phrase 'economic D-Day' clearly indicates a significant and severe escalation, not a minor adjustment."
+            ]
+          },
+          {
+            "question": "What does Iran 'contend' regarding the US sanctions?",
+            "options": [
+              "That they are fundamentally illegal under international law.",
+              "That it possesses a comprehensive strategy to navigate the challenges.",
+              "That the US is misinformed about Iran's economic situation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While this might be Iran's broader stance, the brief specifically mentions what Iran 'contends' about its preparedness.",
+              "Correct. The news brief states, 'Tehran contends it possesses a comprehensive strategy to navigate these challenges'.",
+              "The article does not explicitly state Iran contends misinformation, but rather its capacity to manage the situation."
+            ]
+          },
+          {
+            "question": "Which of the following is an example of a present participle clause acting as a consequence, as explained in the grammar section?",
+            "options": [
+              "Having studied diligently, she passed the exam easily.",
+              "The car, speeding down the highway, was pulled over by the police.",
+              "The decision led to widespread protests, impacting the government's approval ratings."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is a perfect participle clause indicating a prior action, not a direct consequence.",
+              "This is a present participle clause providing additional information about the subject, not a consequence of the main action.",
+              "Correct. 'Impacting the government's approval ratings' describes a direct result of 'The decision led to widespread protests'."
+            ]
+          },
+          {
+            "question": "What is Iran's stance on external economic pressure, according to the news brief?",
+            "options": [
+              "They are actively seeking dialogue to alleviate it.",
+              "They are determined to resist it and maintain their independent trajectory.",
+              "They expect it to compel them to alter their sovereign policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief highlights resistance and preparedness, not active seeking of dialogue as the primary stance.",
+              "Correct. The article states, 'This proactive stance underscores Iran's determination to resist external economic pressure'.",
+              "Iran explicitly 'maintained that such coercive tactics will not compel them to alter their sovereign policies'."
+            ]
+          },
+          {
+            "question": "The news brief mentions Iran's mechanisms to 'mitigate' the impact of unilateral restrictions. What does 'mitigate' imply here?",
+            "options": [
+              "To escalate the severity of the restrictions.",
+              "To completely eliminate the sanctions' effects.",
+              "To lessen the harshness or adverse effects of the sanctions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Mitigation aims to reduce, not increase, severity.",
+              "Mitigate implies reduction, not necessarily complete elimination.",
+              "Correct. To mitigate means to make something less severe or painful."
+            ]
+          },
+          {
+            "question": "Why is 'resilience' an important term in the context of Iran's response to sanctions?",
+            "options": [
+              "Because it indicates Iran's willingness to accept the sanctions.",
+              "It highlights Iran's ability to recover from economic difficulties caused by the sanctions.",
+              "It refers to the flexible nature of Iran's economic policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Resilience implies resistance and recovery, not acceptance.",
+              "Correct. The term 'resilience' emphasizes Iran's capacity to withstand and bounce back from the economic pressures.",
+              "While flexibility might be a factor, 'resilience' specifically refers to the ability to recover from shocks."
+            ]
+          },
+          {
+            "question": "According to the article, what has Iran done to prepare for a robust defense against current and future pressures?",
+            "options": [
+              "Signed new trade agreements with Western nations.",
+              "Sought mediation from the United Nations.",
+              "Meticulously studied past sanctions regimes."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news brief does not mention new trade agreements with Western nations.",
+              "The brief focuses on internal preparation, not external mediation for this specific point.",
+              "Correct. The article states, 'The government claims to have meticulously studied past sanctions regimes'."
+            ]
+          },
+          {
+            "question": "In the grammar example, 'signaling a severe escalation in financial pressure' is a participle clause that describes:",
+            "options": [
+              "The time when Washington described its measures.",
+              "A result or consequence of Washington describing its measures as 'economic D-Day'.",
+              "A condition under which Washington's measures were described."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The clause describes a consequence, not a temporal relationship.",
+              "Correct. The participle clause indicates the direct outcome or result of the US's characterization of the sanctions.",
+              "This clause expresses a consequence, not a condition for the main action."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

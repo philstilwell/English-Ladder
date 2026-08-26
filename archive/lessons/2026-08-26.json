@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-26",
+  "release_iso": "2026-08-26T10:27:33Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "At least 17 killed as flash flood sweeps part of Nepal-Tibet border",
+    "summary": "The flood in Rasuwa - an area north of Kathmandu bordering Tibet - is feared to have swept away villages.",
+    "link": "https://www.bbc.co.uk/news/articles/cx2zyerv2lmo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Flash Flood in Nepal Kills Many, Sweeps Away Villages",
+        "overview": "A flash flood in Nepal killed many people and damaged villages near the Tibet border.",
+        "topic": "Natural Disaster News: Flash Flood in Nepal",
+        "news_brief_sentences": [
+          "Nepal had a very sudden flash flood.",
+          "The flood happened in an area north of Kathmandu.",
+          "This area is close to the Tibet border.",
+          "At least 17 people were killed by the flood.",
+          "Many people feel sad about this terrible news.",
+          "The big flood might have swept away villages.",
+          "Some homes are now missing in the affected places.",
+          "The flood happened quickly after very heavy rain.",
+          "News reports feared more damage to other areas.",
+          "The government will now help the people affected by the water."
+        ],
+        "vocabulary": [
+          {
+            "term": "flash flood",
+            "part_of_speech": "noun",
+            "definition": "A very sudden and powerful flood that happens quickly, often after heavy rain."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Caused someone or something to die."
+          },
+          {
+            "term": "border",
+            "part_of_speech": "noun",
+            "definition": "A line that separates two countries, states, or areas."
+          },
+          {
+            "term": "swept away",
+            "part_of_speech": "verb phrase (past tense)",
+            "definition": "Carried away by water or wind with great force."
+          },
+          {
+            "term": "feared",
+            "part_of_speech": "verb (simple past)",
+            "definition": "Thought that something bad or dangerous might happen."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense for Finished Actions",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished completely in the past. For regular verbs, we usually add '-ed'. For irregular verbs, the form changes.",
+          "example_quote": "At least 17 people were killed by the flood."
+        },
+        "quiz": [
+          {
+            "question": "What kind of natural event happened in Nepal?",
+            "options": [
+              "A big earthquake",
+              "A sudden flash flood",
+              "A strong fire"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news is about water, not ground shaking.",
+              "Yes, the news brief clearly states a 'flash flood' happened.",
+              "No, the news did not mention a fire."
+            ]
+          },
+          {
+            "question": "How many people were killed by the flood, at least?",
+            "options": [
+              "7 people",
+              "17 people",
+              "70 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Look closely at the number given in the news brief.",
+              "That's correct! The news brief says 'At least 17 people were killed'.",
+              "The number reported was smaller than 70."
+            ]
+          },
+          {
+            "question": "Where did the flash flood happen?",
+            "options": [
+              "Near the Tibet border",
+              "In Kathmandu city",
+              "South of Kathmandu"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Exactly! The flood was in an area near the Tibet border.",
+              "No, it was in an area *north* of Kathmandu, not directly in the city.",
+              "The brief says it was north of Kathmandu, not south."
+            ]
+          },
+          {
+            "question": "What does 'flash flood' mean?",
+            "options": [
+              "A slow, calm river",
+              "A quick, powerful flood",
+              "A small, dry area"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a flash flood is very fast and dangerous.",
+              "Correct! A flash flood is a sudden and strong rush of water.",
+              "No, a flash flood involves a lot of water, not a dry area."
+            ]
+          },
+          {
+            "question": "What does it mean if villages were 'swept away'?",
+            "options": [
+              "They were built again",
+              "They moved to a new place",
+              "They were carried away by water"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'swept away' means they were removed by force, not rebuilt.",
+              "The villages did not move by themselves; they were destroyed.",
+              "That's right! The water took them away with great force."
+            ]
+          },
+          {
+            "question": "What is a 'border'?",
+            "options": [
+              "A big mountain",
+              "A line between two places",
+              "A type of water"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, a border is not a mountain.",
+              "Correct! A border is a line that marks the edge of an area or country.",
+              "No, a border is a geographical line, not water."
+            ]
+          },
+          {
+            "question": "In the sentence 'The flood happened quickly', which word is in the simple past tense?",
+            "options": [
+              "The",
+              "happened",
+              "quickly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'The' is an article, not a verb.",
+              "Yes, 'happened' is the past tense form of the verb 'to happen', showing a finished action.",
+              "No, 'quickly' describes how something happened; it's an adverb."
+            ]
+          },
+          {
+            "question": "What did news reports 'feared'?",
+            "options": [
+              "More rain next year",
+              "More damage to areas",
+              "The government would not help"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news did not mention rain next year specifically.",
+              "That's right! News reports feared there could be more damage.",
+              "No, the news brief said the government *will* help."
+            ]
+          },
+          {
+            "question": "What does 'killed' mean in 'At least 17 people were killed'?",
+            "options": [
+              "They survived",
+              "They died",
+              "They escaped"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'killed' means the opposite of surviving.",
+              "Correct! 'Killed' means they lost their lives.",
+              "No, 'killed' means they did not escape alive."
+            ]
+          },
+          {
+            "question": "The sentence 'Many people feel sad' uses which verb tense for 'feel'?",
+            "options": [
+              "Simple past tense",
+              "Simple present tense",
+              "Future tense"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'feel' is not in the past tense here.",
+              "Yes, 'feel' describes an action happening now, so it's simple present tense.",
+              "No, 'feel' does not talk about something that will happen later."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Deadly Flash Flood Strikes Nepal-Tibet Border Region, Causing Widespread Devastation",
+        "overview": "A severe flash flood along the Nepal-Tibet border in Rasuwa district has tragically claimed at least 17 lives and is feared to have swept away entire villages.",
+        "topic": "Natural Disasters and Emergency Response in Himalayan Regions",
+        "news_brief_sentences": [
+          "A powerful flash flood recently struck a remote region along the Nepal-Tibet border, causing significant destruction.",
+          "The disaster primarily affected Rasuwa, a district situated to the north of Nepal's capital city, Kathmandu.",
+          "Authorities have confirmed that at least 17 people have been killed by the fast-moving waters.",
+          "There are serious fears that numerous villages in the affected area may have been completely swept away.",
+          "Local officials are currently assessing the extent of the damage, which appears widespread.",
+          "The challenging mountainous terrain makes search and rescue operations particularly difficult for emergency teams.",
+          "Many residents are currently displaced, and the exact number of missing individuals remains unknown.",
+          "Flash floods are a recurring danger in this Himalayan region, often intensified during the monsoon season.",
+          "Such sudden natural events frequently result in tragic loss of life and severe damage to infrastructure.",
+          "International organizations are closely observing the situation, ready to provide humanitarian assistance if needed."
+        ],
+        "vocabulary": [
+          {
+            "term": "flash flood",
+            "part_of_speech": "noun",
+            "definition": "A sudden and rapid flood, typically caused by heavy rain or melting snow, often occurring in a short period of time."
+          },
+          {
+            "term": "swept away",
+            "part_of_speech": "verb phrase",
+            "definition": "To be carried rapidly by a strong force, usually water or wind, often leading to loss or destruction."
+          },
+          {
+            "term": "assessing",
+            "part_of_speech": "verb",
+            "definition": "Evaluating or estimating the nature, ability, or quality of something, usually to understand its importance or value."
+          },
+          {
+            "term": "terrain",
+            "part_of_speech": "noun",
+            "definition": "A stretch of land, especially with regard to its physical features, like whether it is rocky, mountainous, or flat."
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object of the action, rather than the subject performing the action. It's frequently used in news reporting when the agent (who or what performed the action) is unknown, unimportant, or obvious, or when we want to emphasize the outcome. It is formed with a form of 'to be' followed by the past participle of the main verb.",
+          "example_quote": "Authorities have confirmed that at least 17 people have been killed by the fast-moving waters."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "A political dispute between Nepal and Tibet",
+              "A devastating natural disaster in a border region",
+              "New trade agreements in the Himalayan mountains"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news focuses on a natural disaster, not political issues.",
+              "Correct! The brief details a severe flash flood and its consequences.",
+              "Incorrect. The news is about a disaster, not economic or trade developments."
+            ]
+          },
+          {
+            "question": "Where did the flash flood primarily occur?",
+            "options": [
+              "In the capital city of Kathmandu",
+              "In a remote district north of Kathmandu bordering Tibet",
+              "Along the southern border of Nepal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The disaster affected Rasuwa, which is north of Kathmandu, not Kathmandu itself.",
+              "Correct! The news brief specifies Rasuwa, a district bordering Tibet and north of Kathmandu.",
+              "Incorrect. The news states the disaster was along the Nepal-Tibet border, which is in the north."
+            ]
+          },
+          {
+            "question": "According to the news brief, how many people have been confirmed dead?",
+            "options": [
+              "Exactly 10 people",
+              "At least 17 people",
+              "Over 20 people"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief states 'at least 17' people.",
+              "Correct! The news brief clearly states that 'at least 17 people have been killed'.",
+              "Incorrect. While the number might increase, the confirmed number is 'at least 17'."
+            ]
+          },
+          {
+            "question": "What does the phrase 'swept away' mean in the context of the news brief?",
+            "options": [
+              "To be rebuilt quickly",
+              "To be carried off by a strong current",
+              "To be gently moved aside"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Swept away' implies destruction or loss, not rebuilding.",
+              "Correct! In this context, it means villages were destroyed and carried off by the floodwaters.",
+              "Incorrect. The phrase indicates a powerful, destructive force, not a gentle movement."
+            ]
+          },
+          {
+            "question": "Why are search and rescue operations particularly difficult?",
+            "options": [
+              "Due to a lack of trained personnel",
+              "Because of challenging mountainous terrain",
+              "Due to severe political unrest"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief mentions the physical environment, not a shortage of staff.",
+              "Correct! The news brief highlights the 'challenging mountainous terrain' as a major obstacle.",
+              "Incorrect. The difficulty is attributed to the landscape, not political instability."
+            ]
+          },
+          {
+            "question": "What does 'assessing' mean when local officials are assessing the damage?",
+            "options": [
+              "Ignoring the damage",
+              "Repairing the damage immediately",
+              "Evaluating the extent or nature of the damage"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Assessing' means to carefully examine, not ignore.",
+              "Incorrect. Assessing is about understanding the problem before repairs begin.",
+              "Correct! Officials are evaluating how much damage occurred and what type it is."
+            ]
+          },
+          {
+            "question": "The sentence 'at least 17 people have been killed by the fast-moving waters' is an example of what grammar concept?",
+            "options": [
+              "The Present Perfect tense",
+              "The Passive Voice",
+              "A Conditional sentence"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While it uses Present Perfect, the primary grammar concept highlighted in the lesson is the Passive Voice.",
+              "Correct! The sentence uses 'have been killed,' which is a form of 'to be' plus a past participle, indicating the passive voice.",
+              "Incorrect. A conditional sentence expresses a hypothetical situation with 'if' clauses, which this sentence does not."
+            ]
+          },
+          {
+            "question": "What type of assistance are international organizations ready to provide?",
+            "options": [
+              "Military support",
+              "Financial investments for businesses",
+              "Humanitarian aid"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. International organizations are generally focused on relief, not military intervention.",
+              "Incorrect. The focus is on immediate help for affected people, not business funding.",
+              "Correct! They are prepared to offer 'humanitarian assistance', which focuses on human welfare and aid."
+            ]
+          },
+          {
+            "question": "What makes flash floods a 'recurring danger' in the Himalayan region?",
+            "options": [
+              "Frequent earthquakes",
+              "Intense monsoon seasons",
+              "Volcanic eruptions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief mentions monsoon seasons as a factor, not earthquakes.",
+              "Correct! The brief states that flash floods are 'often intensified during the monsoon season'.",
+              "Incorrect. The text does not mention volcanic activity as a cause for floods."
+            ]
+          },
+          {
+            "question": "What is the purpose of using the passive voice in news reports, as explained in the grammar section?",
+            "options": [
+              "To hide information from readers",
+              "To focus on the action and its object, not always the agent",
+              "To make sentences sound more complex"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The passive voice is often used for clarity or emphasis, not to conceal information.",
+              "Correct! The passive voice shifts focus from who did the action to what happened and to whom.",
+              "Incorrect. While it can add formality, the primary purpose is about focus, not just complexity."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Devastating Flash Flood Claims Lives Near Nepal-Tibet Border",
+        "overview": "A sudden and powerful flash flood in Nepal's Rasuwa district, bordering Tibet, has resulted in at least seventeen fatalities and is feared to have obliterated entire villages, underscoring the severe hazards posed by extreme weather events in the Himalayan region.",
+        "topic": "Natural Disasters and Environmental Impact in the Himalayan Region",
+        "news_brief_sentences": [
+          "Initial reports confirm a catastrophic flash flood has inundated a section of the Nepal-Tibet border region, leading to significant loss of life.",
+          "The immediate aftermath suggests at least seventeen individuals have perished in the sudden deluge.",
+          "The affected area, identified as Rasuwa district, lies strategically north of Kathmandu and directly abuts the Tibetan border.",
+          "Concerns are mounting that the torrential downpour has entirely swept away several remote villages, causing widespread destruction.",
+          "Rescue efforts are presumed to be underway, though challenging terrain and ongoing environmental instability likely impede access.",
+          "Authorities are grappling with the potential scale of the disaster, as communication lines might be severely disrupted in the remote locale.",
+          "The incident highlights the acute vulnerability of Himalayan communities to extreme weather phenomena, often exacerbated by climate change.",
+          "Further assessments are crucial to ascertain the full extent of human suffering and infrastructural damage.",
+          "The rapid onset of the flood, a characteristic of flash flood events, provided little warning, intensifying the humanitarian crisis.",
+          "This tragedy underscores the urgent necessity for robust disaster preparedness and early warning systems in such susceptible areas."
+        ],
+        "vocabulary": [
+          {
+            "term": "torrential downpour",
+            "part_of_speech": "noun phrase",
+            "definition": "An extremely heavy and rapid fall of rain, often causing severe flooding."
+          },
+          {
+            "term": "swept away",
+            "part_of_speech": "phrasal verb",
+            "definition": "Carried off or removed forcibly by a powerful current of water or air; completely destroyed or displaced."
+          },
+          {
+            "term": "remote locale",
+            "part_of_speech": "noun phrase",
+            "definition": "A distant or isolated place, often difficult to access and far from urban centers."
+          },
+          {
+            "term": "flash flood events",
+            "part_of_speech": "noun phrase",
+            "definition": "Occurrences of sudden and rapid flooding in low-lying areas, typically caused by intense rainfall over a short period."
+          },
+          {
+            "term": "underscores the urgent necessity",
+            "part_of_speech": "verb phrase",
+            "definition": "Emphasizes or highlights the critical and immediate need for something."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization for formal tone",
+          "explanation": "Nominalization is the process of forming nouns from verbs or adjectives, commonly employed in formal and academic writing to condense information, create a more abstract style, and emphasize actions or concepts rather than the agents performing them. It transforms sentences by making the main subject the result of an action.",
+          "example_quote": "The rapid onset of the flood, a characteristic of flash flood events, provided little warning, intensifying the humanitarian crisis."
+        },
+        "quiz": [
+          {
+            "question": "What primary environmental factor is identified as the direct cause of the fatalities and destruction?",
+            "options": [
+              "A persistent drought",
+              "A torrential downpour",
+              "A volcanic eruption"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifically mentions a 'torrential downpour' as the cause, which leads to flash floods.",
+              "Correct. The news brief explicitly states that a 'torrential downpour' was responsible for the devastating flash flood.",
+              "Incorrect. Volcanic eruptions are not mentioned; the disaster is attributed to heavy rainfall."
+            ]
+          },
+          {
+            "question": "Which of the following best defines 'swept away' as used in the news brief?",
+            "options": [
+              "Gently relocated",
+              "Completely destroyed or displaced by force",
+              "Carefully preserved"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Swept away' implies a forceful and destructive action, not gentle relocation.",
+              "Correct. The phrase 'swept away' in this context means to be forcibly removed, destroyed, or displaced by the floodwaters.",
+              "Incorrect. The term signifies destruction, not preservation."
+            ]
+          },
+          {
+            "question": "The disaster occurred in 'Rasuwa district,' which is characterized as a 'remote locale.' What does this characteristic imply about rescue operations?",
+            "options": [
+              "They are easily accessible due to its location.",
+              "They face significant logistical challenges and impediments.",
+              "They are unnecessary as the area is uninhabited."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A 'remote locale' suggests difficult access, hindering easy operations.",
+              "Correct. The description 'remote locale' directly implies that access would be difficult, posing significant challenges to rescue efforts.",
+              "Incorrect. The brief explicitly mentions fatalities and villages, indicating habitation."
+            ]
+          },
+          {
+            "question": "According to the brief, what is a key characteristic of 'flash flood events' that contributed to the crisis?",
+            "options": [
+              "Their predictability over long periods.",
+              "Their gradual development, allowing for evacuation.",
+              "Their rapid onset, providing little warning."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Flash floods are known for being sudden and unpredictable, not predictable over long periods.",
+              "Incorrect. The brief highlights their rapid onset, which means they develop quickly, not gradually.",
+              "Correct. The news brief states that 'The rapid onset of the flood, a characteristic of flash flood events, provided little warning,' which exacerbated the crisis."
+            ]
+          },
+          {
+            "question": "What action does the phrase 'underscores the urgent necessity' suggest regarding disaster preparedness?",
+            "options": [
+              "It diminishes the importance of preparedness.",
+              "It highlights the critical and immediate need for preparedness.",
+              "It suggests preparedness is a long-term, non-urgent goal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The phrase implies a heightened importance, not a diminished one.",
+              "Correct. 'Underscores the urgent necessity' means to emphasize the critical and immediate importance of disaster preparedness.",
+              "Incorrect. The word 'urgent' contradicts the idea of a non-urgent, long-term goal."
+            ]
+          },
+          {
+            "question": "Which of the following grammatical concepts is exemplified by the phrase 'The rapid onset of the flood' from the news brief?",
+            "options": [
+              "Passive Voice",
+              "Nominalization",
+              "Subjunctive Mood"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While passive voice changes the subject-verb relationship, 'onset' is a noun derived from a verb, pointing to nominalization.",
+              "Correct. 'Onset' is a noun formed from the verb 'to set on,' which is a classic example of nominalization, making the writing more formal and concise.",
+              "Incorrect. The subjunctive mood expresses wishes, possibilities, or hypothetical situations, which is not the primary feature of 'onset' here."
+            ]
+          },
+          {
+            "question": "The brief states the affected area 'directly abuts the Tibetan border.' What does 'directly abuts' convey?",
+            "options": [
+              "It is far away from the border.",
+              "It shares a common boundary with the border.",
+              "It is parallel to but not touching the border."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Abuts' means to be next to or share a boundary, not far away.",
+              "Correct. 'Directly abuts' signifies that Rasuwa district is immediately adjacent to and shares a boundary with the Tibetan border.",
+              "Incorrect. 'Abuts' implies direct contact, not just proximity."
+            ]
+          },
+          {
+            "question": "What is the implied challenge for rescue efforts in the Rasuwa district mentioned in the brief?",
+            "options": [
+              "Excessive bureaucratic red tape.",
+              "Challenging terrain and ongoing environmental instability.",
+              "Lack of available rescue personnel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention bureaucratic issues. The challenges are physical and environmental.",
+              "Correct. The news brief explicitly states that 'challenging terrain and ongoing environmental instability likely impede access' for rescue efforts.",
+              "Incorrect. The brief focuses on terrain and instability as impediments, not a lack of personnel."
+            ]
+          },
+          {
+            "question": "Why is further assessment deemed 'crucial' according to the news brief?",
+            "options": [
+              "To determine the political implications.",
+              "To ascertain the full extent of human suffering and infrastructural damage.",
+              "To identify the exact date of the next flood."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While political implications might arise, the brief specifies humanitarian and infrastructural concerns for assessment.",
+              "Correct. The brief states 'Further assessments are crucial to ascertain the full extent of human suffering and infrastructural damage,' highlighting the need to understand the disaster's impact.",
+              "Incorrect. Predicting the exact date of future natural disasters is generally not feasible through post-event assessment."
+            ]
+          },
+          {
+            "question": "The news brief mentions that communication lines 'might be severely disrupted.' What does this suggest about information flow?",
+            "options": [
+              "Information is flowing freely and quickly.",
+              "Information gathering is likely hampered and slow.",
+              "Information is intentionally being withheld by authorities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Disrupted lines mean communication is impeded, not flowing freely.",
+              "Correct. If communication lines are 'severely disrupted,' it implies that gathering and disseminating information will be difficult and slow, hindering accurate assessments.",
+              "Incorrect. The brief suggests disruption due to the disaster, not intentional withholding by authorities."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

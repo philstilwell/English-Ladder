@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-27",
+  "release_iso": "2026-08-27T20:05:14Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Collapsed glacier likely caused devastating Nepal-Tibet floods, scientists say",
+    "summary": "Preliminary investigations by scientists have pointed to a collapsed glacier as the cause, highlighting the issue of rapidly melting Himalayan ice.",
+    "link": "https://www.bbc.co.uk/news/articles/cly464k252yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Glacier Collapse Causes Devastating Nepal-Tibet Floods",
+        "overview": "Scientists believe a fallen glacier caused big floods in Nepal and Tibet.",
+        "topic": "Natural Disasters and Climate Change",
+        "news_brief_sentences": [
+          "Big floods happened in Nepal and Tibet.",
+          "These floods caused much damage.",
+          "Scientists are studying the reason for the floods.",
+          "They think a glacier collapsed.",
+          "A glacier is a very big piece of ice.",
+          "When a glacier melts or breaks, it can be dangerous.",
+          "The collapsed glacier caused the water to rise very fast.",
+          "This led to devastating floods in the region.",
+          "Scientists are doing preliminary investigations.",
+          "They see that Himalayan ice is melting quickly."
+        ],
+        "vocabulary": [
+          {
+            "term": "collapsed",
+            "part_of_speech": "verb",
+            "definition": "fell down suddenly"
+          },
+          {
+            "term": "glacier",
+            "part_of_speech": "noun",
+            "definition": "a very large area of ice, moving slowly"
+          },
+          {
+            "term": "floods",
+            "part_of_speech": "noun",
+            "definition": "a lot of water covering land that is usually dry"
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "causing a lot of damage and destruction"
+          },
+          {
+            "term": "preliminary investigations",
+            "part_of_speech": "noun phrase",
+            "definition": "first studies or checks to find out something"
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that are finished. We use it for things that happened before now. For many verbs, we add -ed. For some verbs, the word changes completely.",
+          "example_quote": "Big floods happened in Nepal and Tibet."
+        },
+        "quiz": [
+          {
+            "question": "Where did the big floods happen?",
+            "options": [
+              "Africa and Europe",
+              "Nepal and Tibet",
+              "America and Asia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news talks about floods in Nepal and Tibet.",
+              "Correct! The news says the floods were in Nepal and Tibet.",
+              "Incorrect. The news talks about floods in Nepal and Tibet."
+            ]
+          },
+          {
+            "question": "What did scientists think caused the floods?",
+            "options": [
+              "A big storm",
+              "A collapsed glacier",
+              "Heavy rain"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says a collapsed glacier was the cause.",
+              "Yes, scientists believe a collapsed glacier caused the floods.",
+              "Not heavy rain, but a glacier, according to scientists."
+            ]
+          },
+          {
+            "question": "What does 'collapsed' mean in the news?",
+            "options": [
+              "grew bigger",
+              "fell down",
+              "moved slowly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'collapsed' means it fell down.",
+              "Correct! 'Collapsed' means something fell down suddenly.",
+              "It means it fell down, not moved slowly."
+            ]
+          },
+          {
+            "question": "What is a glacier?",
+            "options": [
+              "A big river",
+              "A tall mountain",
+              "A very big piece of ice"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a glacier is a large body of ice.",
+              "Not a mountain, but a large body of ice.",
+              "Yes, a glacier is a very big piece of ice."
+            ]
+          },
+          {
+            "question": "What are 'floods'?",
+            "options": [
+              "Fires in a forest",
+              "A lot of water covering dry land",
+              "Strong winds"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, floods are about water, not fires.",
+              "Correct! Floods happen when a lot of water covers land.",
+              "Floods are water, not wind."
+            ]
+          },
+          {
+            "question": "The news says the floods were 'devastating'. What does 'devastating' mean?",
+            "options": [
+              "very helpful",
+              "causing a lot of damage",
+              "very small"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it means causing a lot of damage.",
+              "Yes, 'devastating' means causing great damage.",
+              "It means causing a lot of damage, not small."
+            ]
+          },
+          {
+            "question": "What are 'preliminary investigations'?",
+            "options": [
+              "Final results",
+              "First studies to find something",
+              "Big parties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they are not the final results, but the first studies.",
+              "That's right! They are the first studies.",
+              "Not parties, but early studies."
+            ]
+          },
+          {
+            "question": "What is melting quickly in the Himalayas?",
+            "options": [
+              "Rocks",
+              "Trees",
+              "Ice"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news talks about ice melting.",
+              "It's about ice, not trees.",
+              "Correct! The news mentions Himalayan ice is melting quickly."
+            ]
+          },
+          {
+            "question": "In the sentence 'Big floods happened in Nepal and Tibet', which word is in the simple past tense?",
+            "options": [
+              "Big",
+              "happened",
+              "Nepal"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'big' describes the floods, not a verb in past tense.",
+              "Yes, 'happened' is the simple past form of 'happen'.",
+              "'Nepal' is a place, not a verb."
+            ]
+          },
+          {
+            "question": "Why do scientists do preliminary investigations?",
+            "options": [
+              "To cause more floods",
+              "To find out information",
+              "To stop glaciers from melting"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they investigate to find causes, not to cause floods.",
+              "Correct! They do them to find out information or a cause.",
+              "Their aim is to understand, not directly stop melting."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Collapsed Glacier Causes Devastating Nepal-Tibet Floods",
+        "overview": "Scientists have concluded that a collapsed glacier was the likely cause of severe floods in the Nepal-Tibet border region, bringing renewed attention to rapidly melting Himalayan ice.",
+        "topic": "Environmental disaster, climate change, and glacial melt in the Himalayas.",
+        "news_brief_sentences": [
+          "Recent reports confirm that severe floods in the Nepal-Tibet border region were likely caused by a collapsed glacier.",
+          "These devastating floods have resulted in widespread damage and significant disruption for local communities.",
+          "Scientists have undertaken preliminary investigations to determine the precise origins of this recent natural disaster.",
+          "Their initial findings strongly indicate that a substantial mass of ice detached, triggering an immense surge of water.",
+          "This catastrophic event is highlighting the critical global concern regarding climate change and its severe impact on mountainous glacial areas.",
+          "The Himalayan region, often referred to as the 'Third Pole,' is experiencing rapidly melting ice formations at an alarming rate.",
+          "Experts are cautioning that such glacial collapses could become increasingly frequent as global temperatures continue to rise.",
+          "The sheer destructive power of these sudden floods often leaves affected communities with minimal time to react or prepare.",
+          "Governments in the impacted areas are currently evaluating the long-term environmental and socio-economic consequences.",
+          "Furthermore, international organizations are providing assistance to help reduce future risks from similar climatic events."
+        ],
+        "vocabulary": [
+          {
+            "term": "collapsed glacier",
+            "part_of_speech": "noun phrase",
+            "definition": "A large mass of ice that has broken apart and fallen down, usually due to instability or melting."
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "preliminary investigations",
+            "part_of_speech": "noun phrase",
+            "definition": "Initial studies or examinations conducted to gather basic facts or information before a more detailed analysis."
+          },
+          {
+            "term": "highlighting",
+            "part_of_speech": "verb",
+            "definition": "Drawing special attention to something important or making it more noticeable."
+          },
+          {
+            "term": "rapidly melting",
+            "part_of_speech": "adverb + verb",
+            "definition": "Changing from a solid to a liquid state very quickly, often due to high temperatures."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action and the object of the action, rather than the subject performing the action. It's often used when the agent (who or what performs the action) is unknown, unimportant, or obvious, or when we want to be more formal. The structure is 'be' + past participle.",
+          "example_quote": "Recent reports confirm that severe floods in the Nepal-Tibet border region were likely caused by a collapsed glacier."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as the main probable cause of the Nepal-Tibet floods?",
+            "options": [
+              "Heavy rainfall",
+              "A collapsed glacier",
+              "An earthquake"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Heavy rainfall was not mentioned as the primary cause in the news brief.",
+              "Correct! A collapsed glacier is stated as the likely cause of the severe floods.",
+              "An earthquake was not indicated as the cause of the floods in this report."
+            ]
+          },
+          {
+            "question": "What does the word 'devastating' imply about the floods in the news brief?",
+            "options": [
+              "They were small in scale",
+              "They caused widespread damage",
+              "They were easily contained"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'devastating' means the opposite of small, indicating severe impact.",
+              "Precisely! 'Devastating' signifies that the floods caused extensive damage and disruption.",
+              "The brief clearly states the floods caused widespread damage, not that they were easily contained."
+            ]
+          },
+          {
+            "question": "What is the purpose of 'preliminary investigations' as mentioned in the news?",
+            "options": [
+              "To conclude the findings without further research",
+              "To delay providing any information",
+              "To determine the initial origins of the disaster"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Preliminary investigations are initial steps, not the final conclusions.",
+              "This is incorrect; they are meant to find initial facts, not to delay information.",
+              "Exactly! Preliminary investigations are conducted to understand the initial causes or origins of an event."
+            ]
+          },
+          {
+            "question": "Why is the event described as 'highlighting' a global concern?",
+            "options": [
+              "Because it is a minor local issue",
+              "Because it draws attention to climate change impacts",
+              "Because it only affects one country"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'highlighting' means it emphasizes a significant issue, not a minor one.",
+              "Correct! The event is highlighting the broader global concern of climate change and its effects.",
+              "While specific to a region, the brief states it's highlighting a global concern, implying wider relevance."
+            ]
+          },
+          {
+            "question": "What phenomenon is the Himalayan region currently experiencing according to the brief?",
+            "options": [
+              "Unusually stable ice formations",
+              "Rapidly melting ice formations",
+              "New glacier formation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief states the opposite; the ice is not stable.",
+              "That's right! The Himalayan region is experiencing rapidly melting ice formations.",
+              "No, the brief mentions melting, not new glacier formation."
+            ]
+          },
+          {
+            "question": "In the sentence 'Severe floods in the Nepal-Tibet border region were likely caused by a collapsed glacier,' which part is the agent (the doer of the action)?",
+            "options": [
+              "Severe floods",
+              "A collapsed glacier",
+              "Nepal-Tibet border region"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'Severe floods' is the subject of the passive verb, not the agent.",
+              "Correct! 'A collapsed glacier' is the agent that performed the action of causing the floods.",
+              "This is the location where the floods occurred, not the agent of the action."
+            ]
+          },
+          {
+            "question": "What is a potential future risk mentioned in relation to rising global temperatures?",
+            "options": [
+              "A decrease in glacial collapses",
+              "More frequent glacial collapses",
+              "Stabilization of ice formations"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests the opposite trend due to rising temperatures.",
+              "Correct! Experts warn that glacial collapses could become more frequent.",
+              "No, rising temperatures are linked to instability, not stabilization, of ice formations."
+            ]
+          },
+          {
+            "question": "What do international organizations offer in response to similar climatic events?",
+            "options": [
+              "Ignoring the risks",
+              "Support to mitigate future risks",
+              "New research studies only"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief indicates active involvement, not ignoring the risks.",
+              "Exactly! They are offering support to help mitigate (reduce) future risks.",
+              "While research may be part of it, the brief specifically mentions offering 'support to help mitigate future risks'."
+            ]
+          },
+          {
+            "question": "What is the primary characteristic of the 'destructive power' of these sudden floods?",
+            "options": [
+              "They are easily predictable",
+              "They allow communities ample reaction time",
+              "They leave communities with little time to react"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief implies the opposite, suggesting they are not easily predictable.",
+              "No, the news brief explicitly states the destructive power leaves little time, not ample time.",
+              "That's right! The floods are so powerful that communities have very little time to respond."
+            ]
+          },
+          {
+            "question": "In which part of the world are these floods and melting glaciers occurring?",
+            "options": [
+              "The Andes mountains",
+              "The Alps in Europe",
+              "The Nepal-Tibet border region (Himalayas)"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The Andes are in South America, not mentioned in this news.",
+              "The Alps are in Europe, which is not the region discussed in the brief.",
+              "Correct! The news specifically mentions the Nepal-Tibet border region in the Himalayas."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Himalayan Glacier Collapse Implicated in Devastating Nepal-Tibet Floods",
+        "overview": "Preliminary scientific investigations suggest that a major glacial collapse precipitated the catastrophic floods across Nepal and Tibet, underscoring the escalating environmental threat posed by the rapid ablation of Himalayan ice.",
+        "topic": "Climate Change Impacts: Glacier Collapse and Himalayan Flooding",
+        "news_brief_sentences": [
+          "Scientists have concluded that a collapsed glacier is the probable cause of devastating floods that recently impacted regions across Nepal and Tibet.",
+          "These preliminary investigations highlight a critical issue: the escalating rate of rapidly melting Himalayan ice, a direct consequence of climate change.",
+          "The disaster, which precipitated widespread destruction and loss, underscores the profound implications of cryospheric changes in high-mountain environments.",
+          "Experts indicate that glacial lake outburst floods (GLOFs) are becoming more frequent as global temperatures rise, accelerating the ablation of ancient ice masses.",
+          "The scale of the damage has been described as catastrophic, with infrastructure severely compromised and communities displaced.",
+          "Such events pose significant threats to downstream populations who rely on glacial meltwater but are also highly vulnerable to sudden, immense discharges.",
+          "Further research is imperative to accurately model future risks and develop early warning systems for these high-altitude hazards.",
+          "The incident serves as a stark reminder of the urgent need for global climate action and regional adaptation strategies.",
+          "Understanding the precise mechanisms of glacial collapse and subsequent flood generation is crucial for mitigating future humanitarian crises.",
+          "This specific event exemplifies the complex and interconnected ecological ramifications of planetary warming on fragile ecosystems."
+        ],
+        "vocabulary": [
+          {
+            "term": "preliminary investigations",
+            "part_of_speech": "noun phrase",
+            "definition": "Initial inquiries or studies conducted to gather basic facts or information before a more thorough or definitive analysis can be performed."
+          },
+          {
+            "term": "precipitated",
+            "part_of_speech": "verb",
+            "definition": "Caused (an event or situation, typically one that is bad or undesirable) to happen suddenly, unexpectedly, or prematurely."
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
+          },
+          {
+            "term": "ablation",
+            "part_of_speech": "noun",
+            "definition": "The process of loss of surface material from a glacier or snowfield through melting, evaporation, or calving."
+          },
+          {
+            "term": "profound implications",
+            "part_of_speech": "noun phrase",
+            "definition": "Significant and far-reaching consequences or effects that may not be immediately obvious but will have a deep impact."
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Consequence or Additional Information",
+          "explanation": "Participle clauses (often beginning with an -ing verb) are used to condense information, adding detail about a cause, effect, or simultaneous action, often after a comma. They provide a more sophisticated way to link ideas than simply using 'and' or another conjunction, creating a more cohesive and flowing sentence structure, particularly common in formal writing to describe outcomes or accompanying circumstances.",
+          "example_quote": "The disaster, which precipitated widespread destruction and loss, underscores the profound implications of cryospheric changes in high-mountain environments."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as the likely primary cause of the Nepal-Tibet floods?",
+            "options": [
+              "Excessive monsoon rains",
+              "A collapsed glacier",
+              "An earthquake causing landslides"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While heavy rains can cause floods, the brief specifically attributes this event to a different geological phenomenon.",
+              "Correct! Scientific preliminary investigations pointed to a collapsed glacier as the direct cause.",
+              "The brief mentions geological hazards but specifically names a collapsed glacier, not an earthquake, as the trigger."
+            ]
+          },
+          {
+            "question": "The term 'preliminary investigations' implies that the findings are:",
+            "options": [
+              "Conclusive and definitive",
+              "Initial and subject to further review",
+              "Widely disputed by other scientists"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'preliminary' suggests that the investigations are just the first stage, not the final word.",
+              "Correct! 'Preliminary' indicates an initial phase of study, meaning further work might be needed to confirm or expand on these findings.",
+              "The brief doesn't suggest disputes but rather a current stage of scientific inquiry."
+            ]
+          },
+          {
+            "question": "What does the word 'precipitated' convey in the context of the disaster?",
+            "options": [
+              "It prevented the disaster from occurring.",
+              "It slowed down the onset of the disaster.",
+              "It caused the disaster to happen suddenly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. 'Precipitated' means to cause an event, not prevent it.",
+              "No, 'precipitated' implies a rapid or sudden initiation, not a slowing down.",
+              "Correct! 'Precipitated' means to cause an event, especially a negative one, to happen suddenly or unexpectedly."
+            ]
+          },
+          {
+            "question": "The floods are described as 'catastrophic'. This suggests they caused:",
+            "options": [
+              "Minor inconveniences",
+              "Limited local damage",
+              "Widespread and disastrous destruction"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'catastrophic' implies severe, widespread impact, not minor inconveniences.",
+              "Incorrect. 'Catastrophic' denotes extensive damage, far beyond just localized effects.",
+              "Correct! 'Catastrophic' indicates an event causing immense, widespread, and devastating damage or suffering."
+            ]
+          },
+          {
+            "question": "According to the brief, what environmental issue is highlighted by the glacial collapse?",
+            "options": [
+              "Desertification in arid regions",
+              "Rapidly melting Himalayan ice",
+              "Increased volcanic activity"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief focuses on ice melt, not desertification, as the highlighted issue.",
+              "Correct! The melting of Himalayan ice is directly linked to the glacial collapse and subsequent floods.",
+              "Volcanic activity is not mentioned in the brief as a contributing factor or highlighted issue."
+            ]
+          },
+          {
+            "question": "What is meant by the 'ablation' of ancient ice masses?",
+            "options": [
+              "The formation of new ice",
+              "The loss of ice through melting, evaporation, or calving",
+              "The movement of glaciers across land"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'ablation' refers to the reduction of ice, not its formation.",
+              "Correct! Ablation is the scientific term for the loss of ice from a glacier or snowfield's surface.",
+              "While glaciers do move, 'ablation' specifically describes the process of ice loss, not general movement."
+            ]
+          },
+          {
+            "question": "What kind of populations are particularly threatened by such glacial events?",
+            "options": [
+              "Coastal communities reliant on fishing",
+              "Downstream populations in river valleys",
+              "High-altitude mountaineering expeditions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief specifies populations affected by glacial meltwater and floods, not coastal fishing communities.",
+              "Correct! The brief highlights the vulnerability of 'downstream populations' to sudden discharges from glacial events.",
+              "While mountaineers face risks, the brief emphasizes communities living in the path of potential floods."
+            ]
+          },
+          {
+            "question": "In the sentence 'The disaster... underscores the profound implications of cryospheric changes...', what does 'profound implications' suggest?",
+            "options": [
+              "Minor and easily reversible effects.",
+              "Deep and significant long-term consequences.",
+              "Temporary and localized impacts."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'profound' indicates something very significant, not minor or easily reversed.",
+              "Correct! 'Profound implications' refers to consequences that are deep, far-reaching, and likely to have a lasting impact.",
+              "The term 'profound' suggests effects beyond temporary or localized, indicating widespread and lasting impact."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the function of the participle clause in the sentence: 'The disaster... underscores the profound implications...'?",
+            "options": [
+              "It introduces a new, unrelated topic.",
+              "It provides additional, qualifying information about the disaster.",
+              "It states the primary cause of the disaster."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Participle clauses are used to link related ideas smoothly, not to introduce unrelated topics.",
+              "Correct! The participle clause 'underscores the profound implications...' adds an important consequence or understanding related to the main subject.",
+              "While related to the disaster, the clause 'underscores...' describes the significance of the event, not its initial cause."
+            ]
+          },
+          {
+            "question": "What does the news brief emphasize as crucial for mitigating future humanitarian crises in these regions?",
+            "options": [
+              "Increased tourism to boost local economies.",
+              "Accurately modeling future risks and developing early warning systems.",
+              "Relocating all residents from mountain areas immediately."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief focuses on scientific and preparedness measures, not tourism, as the key to mitigation.",
+              "Correct! The brief states that 'further research is imperative to accurately model future risks and develop early warning systems'.",
+              "While relocation might be part of an extreme response, the brief emphasizes risk modeling and early warnings as crucial mitigation steps."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

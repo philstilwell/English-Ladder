@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-28",
+  "release_iso": "2026-08-28T00:42:53Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Collapsed glacier likely caused devastating Nepal-Tibet floods, scientists say",
+    "summary": "Preliminary investigations by scientists have pointed to a collapsed glacier as the cause, highlighting the issue of rapidly melting Himalayan ice.",
+    "link": "https://www.bbc.co.uk/news/articles/cly464k252yo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Collapsed Glacier Causes Devastating Floods in Nepal-Tibet",
+        "overview": "A broken glacier in the mountains caused very bad floods in Nepal and Tibet.",
+        "topic": "Glaciers, Floods, and Climate Change in the Himalayas",
+        "news_brief_sentences": [
+          "A big glacier collapsed in the mountains.",
+          "This happened near Nepal and Tibet.",
+          "The collapsed glacier likely caused devastating floods there.",
+          "Many scientists looked into this problem.",
+          "Scientists say the floods were very bad.",
+          "The floods destroyed many things.",
+          "Ice in the Himalayan mountains is melting fast.",
+          "This melting Himalayan ice is a serious issue.",
+          "Scientists are still studying what happened.",
+          "They want to understand why the glacier fell."
+        ],
+        "vocabulary": [
+          {
+            "term": "collapsed glacier",
+            "part_of_speech": "noun phrase",
+            "definition": "A large piece of ice that broke into pieces and fell down from a mountain."
+          },
+          {
+            "term": "likely caused",
+            "part_of_speech": "verb phrase",
+            "definition": "Probably made something happen or was the main reason for an event."
+          },
+          {
+            "term": "devastating floods",
+            "part_of_speech": "noun phrase",
+            "definition": "Very destructive overflows of water that cause great harm and damage."
+          },
+          {
+            "term": "scientists say",
+            "part_of_speech": "verb phrase",
+            "definition": "Researchers or experts share their findings or give their professional opinions."
+          },
+          {
+            "term": "melting Himalayan ice",
+            "part_of_speech": "noun phrase",
+            "definition": "Frozen water in the high mountains of the Himalayas that is turning into liquid water."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions or events that started and finished at a specific time in the past. For regular verbs, we often add '-ed', but many verbs have special past forms.",
+          "example_quote": "The collapsed glacier likely caused devastating floods there."
+        },
+        "quiz": [
+          {
+            "question": "What happened to a big glacier in the mountains near Nepal and Tibet?",
+            "options": [
+              "It grew bigger.",
+              "It collapsed.",
+              "It moved to another country."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief says it did not grow bigger.",
+              "Yes, the news brief states that a large glacier collapsed.",
+              "No, the glacier did not move, it broke apart."
+            ]
+          },
+          {
+            "question": "Who is looking into the problem of the floods?",
+            "options": [
+              "Tourists",
+              "Farmers",
+              "Scientists"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, tourists are usually visiting, not investigating.",
+              "No, farmers work with land, but scientists are investigating this.",
+              "That's right! Scientists are investigating the cause of the floods."
+            ]
+          },
+          {
+            "question": "What does 'collapsed glacier' mean?",
+            "options": [
+              "A glacier that got smaller.",
+              "A glacier that broke and fell down.",
+              "A glacier that is very old."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. It's not just about size.",
+              "Correct! A collapsed glacier is one that broke into pieces and fell.",
+              "This is not the meaning of 'collapsed'."
+            ]
+          },
+          {
+            "question": "What did the collapsed glacier 'likely caused'?",
+            "options": [
+              "More snow",
+              "New trees",
+              "Devastating floods"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news brief says it caused something else.",
+              "Incorrect. The collapsed glacier caused a different event.",
+              "Yes, the collapsed glacier probably made the devastating floods happen."
+            ]
+          },
+          {
+            "question": "What is happening to the Himalayan ice?",
+            "options": [
+              "It is freezing more.",
+              "It is melting fast.",
+              "It is getting stronger."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the ice is not freezing more, it is warming.",
+              "Correct! The news brief explains that the ice is turning to water quickly.",
+              "This is not correct. The ice is actually weakening."
+            ]
+          },
+          {
+            "question": "Which word is a verb in the Simple Past Tense in this sentence: 'The collapsed glacier likely caused devastating floods there.'?",
+            "options": [
+              "glacier",
+              "caused",
+              "devastating"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'glacier' is a noun, a thing.",
+              "Excellent! 'Caused' is the past tense form of the verb 'to cause'.",
+              "No, 'devastating' is an adjective, it describes something."
+            ]
+          },
+          {
+            "question": "What kind of floods did the collapsed glacier create?",
+            "options": [
+              "Small floods",
+              "Devastating floods",
+              "Helpful floods"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief describes them as very destructive.",
+              "That's right! The floods were very destructive, or devastating.",
+              "No, floods usually do not help, especially devastating ones."
+            ]
+          },
+          {
+            "question": "What does 'scientists say' mean?",
+            "options": [
+              "Animals are talking.",
+              "Experts are reporting information.",
+              "Kids are asking questions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect, animals do not 'say' in this context.",
+              "Correct! It means that experts or researchers are giving their findings.",
+              "No, 'scientists say' means they are giving facts or opinions, not just asking."
+            ]
+          },
+          {
+            "question": "What is 'melting Himalayan ice' doing?",
+            "options": [
+              "It is making mountains grow.",
+              "It is turning into water.",
+              "It is becoming stronger."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, melting ice does not make mountains grow.",
+              "Yes, 'melting' means turning into liquid water.",
+              "No, melting ice indicates it is not becoming stronger."
+            ]
+          },
+          {
+            "question": "Which sentence uses the Simple Past Tense?",
+            "options": [
+              "The glacier is collapsing.",
+              "The glacier will collapse.",
+              "The glacier collapsed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'is collapsing' is present continuous.",
+              "No, 'will collapse' is future tense.",
+              "Correct! 'Collapsed' shows an action that finished in the past."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Himalayan Glacier Collapse Triggers Devastating Nepal-Tibet Floods",
+        "overview": "Scientists have indicated that a collapsed glacier is the likely cause of recent devastating floods in Nepal and Tibet, highlighting concerns about rapidly melting Himalayan ice.",
+        "topic": "Environmental disasters, climate change, glaciology",
+        "news_brief_sentences": [
+          "Recent preliminary investigations by scientists have revealed the likely cause of the severe floods.",
+          "These initial studies have pointed to a collapsed glacier as the main reason for the disaster.",
+          "The event resulted in devastating floods across certain areas of Nepal and Tibet.",
+          "This incident clearly highlights the concerning issue of rapidly melting ice in the Himalayan region.",
+          "Experts are increasingly worried about how climate change impacts these crucial ice formations.",
+          "The sudden influx of water caused significant damage to infrastructure and local communities.",
+          "Such events demonstrate the urgent need for better disaster preparedness in vulnerable mountain regions.",
+          "Scientists believe warmer temperatures contribute significantly to glacial instability.",
+          "Understanding these geological processes is essential for mitigating future risks to human settlements.",
+          "The global scientific community is calling for more attention to the environmental changes occurring in high-altitude areas."
+        ],
+        "vocabulary": [
+          {
+            "term": "preliminary investigations",
+            "part_of_speech": "noun phrase",
+            "definition": "Initial studies or examinations done to discover facts or details about something before a full analysis."
+          },
+          {
+            "term": "pointed to",
+            "part_of_speech": "phrasal verb",
+            "definition": "Indicated or suggested something as the cause, reason, or evidence for a situation."
+          },
+          {
+            "term": "collapsed glacier",
+            "part_of_speech": "noun phrase",
+            "definition": "A large mass of ice that has suddenly broken apart, fallen down, or lost its structural integrity."
+          },
+          {
+            "term": "devastating floods",
+            "part_of_speech": "noun phrase",
+            "definition": "Extremely destructive and damaging overflows of water that cause widespread harm."
+          },
+          {
+            "term": "rapidly melting",
+            "part_of_speech": "adverb + verb",
+            "definition": "Dissolving or turning into liquid very quickly, often due to increased temperatures."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Tense",
+          "explanation": "The Present Perfect tense connects past actions to the present moment. It describes an action that started in the past and continues to the present, or a past action whose result is relevant now. It is formed with 'has/have' followed by the past participle of the main verb.",
+          "example_quote": "Recent preliminary investigations by scientists have revealed the likely cause of the severe floods."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as the likely primary cause of the floods in Nepal and Tibet?",
+            "options": [
+              "Heavy rainfall",
+              "A collapsed glacier",
+              "An earthquake"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While rainfall can cause floods, the brief specifically mentions a collapsed glacier as the cause.",
+              "Correct! Scientists' preliminary investigations pointed to a collapsed glacier as the main reason.",
+              "Earthquakes can cause various disasters, but the news brief focuses on glacial collapse."
+            ]
+          },
+          {
+            "question": "Which issue is highlighted by the recent incident in the Himalayas?",
+            "options": [
+              "Tourism challenges in mountain regions",
+              "Rapidly melting ice formations",
+              "Lack of international aid"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news does not discuss tourism challenges, but rather environmental concerns.",
+              "Correct! The incident underscores the critical issue of rapidly melting ice in the Himalayas.",
+              "The news brief highlights environmental issues, not international aid deficiencies."
+            ]
+          },
+          {
+            "question": "What does the phrase \"preliminary investigations\" mean in the context of the news brief?",
+            "options": [
+              "Final and conclusive research",
+              "Initial studies or examinations",
+              "Public opinion polls"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Preliminary means 'before' or 'initial', so it's not final research.",
+              "Correct! Preliminary investigations are the initial studies conducted to gather information.",
+              "The investigations are scientific studies, not surveys of public opinion."
+            ]
+          },
+          {
+            "question": "The news brief states that studies have \"pointed to\" a collapsed glacier. What does \"pointed to\" suggest?",
+            "options": [
+              "They ignored the glacier",
+              "They physically touched the glacier",
+              "They indicated it as the cause"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "To 'point to' something means to draw attention to it as a reason or cause, not to ignore it.",
+              "This is not a literal physical action in this context; it's about evidence.",
+              "Correct! 'Pointed to' means that the evidence suggested or indicated the glacier as the reason."
+            ]
+          },
+          {
+            "question": "What kind of impact did the \"devastating floods\" have according to the news?",
+            "options": [
+              "Minor inconveniences",
+              "Widespread destruction and damage",
+              "Temporary water shortages"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'devastating' implies a much more severe impact than minor inconveniences.",
+              "Correct! Devastating floods cause extensive harm, as mentioned by the damage to infrastructure and communities.",
+              "Floods typically involve too much water, not shortages."
+            ]
+          },
+          {
+            "question": "Which grammatical tense is used in the sentence: \"Preliminary investigations by scientists have revealed the likely cause\"?",
+            "options": [
+              "Simple Past",
+              "Present Perfect",
+              "Past Continuous"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Simple Past would be 'revealed'. The structure 'have revealed' indicates a different tense.",
+              "Correct! 'Have revealed' is an example of the Present Perfect tense, connecting a past action to the present result.",
+              "Past Continuous uses 'was/were + -ing' (e.g., 'were revealing'), which is not present here."
+            ]
+          },
+          {
+            "question": "What does the term \"rapidly melting\" describe in the context of Himalayan ice?",
+            "options": [
+              "Ice that is freezing quickly",
+              "Ice that is dissolving very slowly",
+              "Ice that is turning into liquid very quickly"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Melting is the opposite of freezing.",
+              "The word 'rapidly' means quickly, not slowly.",
+              "Correct! 'Rapidly melting' refers to ice that is transforming into water at a fast rate."
+            ]
+          },
+          {
+            "question": "According to the grammar explanation, what is the role of the Present Perfect tense?",
+            "options": [
+              "To describe actions completed at a specific time in the past",
+              "To describe future actions or predictions",
+              "To connect past actions to the present or show a result relevant now"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This describes the Simple Past tense, not the Present Perfect.",
+              "This describes future tenses or modal verbs, not the Present Perfect.",
+              "Correct! The Present Perfect links past events to the present, often focusing on the current relevance or ongoing nature."
+            ]
+          },
+          {
+            "question": "What does the news brief suggest is a significant factor contributing to glacial instability?",
+            "options": [
+              "Increased seismic activity",
+              "Warmer temperatures",
+              "Volcanic eruptions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While seismic activity can impact glaciers, the brief specifically mentions temperature.",
+              "Correct! The brief states that 'warmer temperatures contribute significantly to glacial instability'.",
+              "The news brief does not mention volcanic eruptions."
+            ]
+          },
+          {
+            "question": "Why is understanding geological processes important according to the news brief?",
+            "options": [
+              "To improve tourism brochures",
+              "To mitigate future risks to human settlements",
+              "To identify new mineral deposits"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief emphasizes safety and risk reduction, not tourism promotion.",
+              "Correct! Understanding these processes is essential for reducing the severity of future disasters in populated areas.",
+              "The focus is on environmental hazards and safety, not resource extraction."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Himalayan Glacier Collapse Triggers Devastating Floods in Nepal-Tibet",
+        "overview": "Recent scientific preliminary investigations corroborate that a calamitous glacial collapse in the Himalayas instigated the devastating floods affecting Nepal and Tibet, underscoring the urgent repercussions of accelerated ice melt in the region.",
+        "topic": "Glacial melt and its catastrophic environmental impacts in the Himalayas",
+        "news_brief_sentences": [
+          "Scientists have launched preliminary investigations into the recent catastrophic flooding in the Nepal-Tibet border region.",
+          "These initial findings strongly suggest that a massive glacial collapse is the primary cause of the widespread devastation.",
+          "The incident has tragically impacted local communities, leading to significant loss and disruption across the affected areas.",
+          "Researchers meticulously examined satellite imagery and geological data to corroborate their early hypotheses.",
+          "This calamitous event serves as a stark reminder of the fragile ecosystems prevalent in high-altitude environments.",
+          "The rapidly warming global climate is accelerating the melt rate of glaciers throughout the Himalayan range.",
+          "Such rapid ice loss significantly amplifies the risk of similar natural disasters, posing an existential threat to downstream populations.",
+          "The sheer volume of water released by the glacial failure effectively instigated the devastating torrents.",
+          "Experts are now calling for urgent international cooperation to mitigate the severe repercussions of climate change in this vulnerable region.",
+          "Understanding these complex geological and meteorological phenomena is paramount for developing effective early warning systems and adaptive strategies."
+        ],
+        "vocabulary": [
+          {
+            "term": "preliminary investigations",
+            "part_of_speech": "noun phrase",
+            "definition": "Initial inquiries or studies conducted to gather basic information before more thorough research or action can proceed."
+          },
+          {
+            "term": "corroborate",
+            "part_of_speech": "verb",
+            "definition": "To confirm or give strong support to a statement, theory, or finding, often through additional evidence."
+          },
+          {
+            "term": "calamitous",
+            "part_of_speech": "adjective",
+            "definition": "Involving or causing sudden and great damage, distress, or disaster; highly unfortunate or disastrous."
+          },
+          {
+            "term": "instigated",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Brought about or initiated an action or event, especially a negative or problematic one, often implying a catalyst role."
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "noun (plural)",
+            "definition": "Unintended, usually unwelcome, and far-reaching consequences or effects of an event or action."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Participle Clauses for Adjective Phrases",
+          "explanation": "Past participle clauses (often beginning with an -ed verb form) can function as adjective phrases to concisely describe or provide additional information about a noun. They often replace relative clauses, making sentences more sophisticated and efficient. The participle clause indicates a completed action that affects the noun it modifies.",
+          "example_quote": "The sheer volume of water released by the glacial failure effectively instigated the devastating torrents."
+        },
+        "quiz": [
+          {
+            "question": "What did preliminary investigations by scientists identify as the primary cause of the Nepal-Tibet floods?",
+            "options": [
+              "Unusually heavy monsoon rainfall.",
+              "A collapsed glacier.",
+              "Extensive human-induced deforestation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The news brief specifically attributes the floods to a glacial event, not rainfall.",
+              "Correct. The preliminary investigations strongly suggest a massive glacial collapse as the cause.",
+              "Incorrect. The news brief focuses on glacial melt and its geological consequences, not deforestation."
+            ]
+          },
+          {
+            "question": "Which of the following terms is the best synonym for 'corroborate' as used in the news brief?",
+            "options": [
+              "Disprove.",
+              "Validate.",
+              "Speculate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Disprove' means to prove false, which is the opposite of 'corroborate'.",
+              "Correct. 'Validate' means to confirm or give support to, closely matching 'corroborate'.",
+              "Incorrect. 'Speculate' means to form a theory without firm evidence, whereas 'corroborate' implies confirming with evidence."
+            ]
+          },
+          {
+            "question": "In the sentence, 'The sheer volume of water released by the glacial failure effectively instigated the devastating torrents,' what is the grammatical function of 'released by the glacial failure'?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It is a past participle clause describing 'water'.",
+              "It is an adverbial clause of purpose."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Instigated' is the main verb of the sentence.",
+              "Correct. 'Released by the glacial failure' is a past participle clause modifying the noun 'water', providing descriptive information.",
+              "Incorrect. An adverbial clause of purpose typically uses 'to' or 'in order to', which is not the structure here."
+            ]
+          },
+          {
+            "question": "According to the news brief, what does the accelerated melt rate of Himalayan glaciers primarily amplify?",
+            "options": [
+              "The region's biodiversity.",
+              "The risk of similar natural disasters.",
+              "The potential for hydroelectric power generation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The brief does not mention biodiversity in relation to accelerated melt.",
+              "Correct. The text explicitly states that rapid ice loss 'amplifies the risk of similar natural disasters'.",
+              "Incorrect. While related to water, the brief emphasizes disaster risk, not power generation potential."
+            ]
+          },
+          {
+            "question": "What does the word 'calamitous' imply about the glacial event described?",
+            "options": [
+              "It was a minor and manageable incident.",
+              "It was a highly destructive and disastrous event.",
+              "It was a predictable and anticipated natural occurrence."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Calamitous' means causing great damage or distress, not minor inconvenience.",
+              "Correct. 'Calamitous' refers to an event causing sudden and great damage or disaster.",
+              "Incorrect. The term implies an event with severe negative consequences, not a predictable one."
+            ]
+          },
+          {
+            "question": "What specific types of data did researchers use to corroborate their early hypotheses about the glacial collapse?",
+            "options": [
+              "Historical climate records and local reports.",
+              "Satellite imagery and geological data.",
+              "Aerial photographs and seismic readings."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While possibly relevant, the brief specifies different types of data.",
+              "Correct. The news brief states researchers 'examined satellite imagery and geological data'.",
+              "Incorrect. The brief explicitly mentions satellite imagery and geological data, not aerial photos and seismic readings."
+            ]
+          },
+          {
+            "question": "When the glacial failure 'instigated' the devastating torrents, what is being communicated?",
+            "options": [
+              "The glacial failure merely observed the torrents.",
+              "The glacial failure was the direct cause that initiated the torrents.",
+              "The glacial failure delayed the onset of the torrents."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Instigated' means to cause or initiate, not to observe passively.",
+              "Correct. 'Instigated' implies that the glacial failure directly brought about or initiated the torrents.",
+              "Incorrect. 'Instigated' refers to starting an event, not delaying it."
+            ]
+          },
+          {
+            "question": "Which sentence below uses a past participle clause in a similar descriptive manner to the grammar example: 'The sheer volume of water released by the glacial failure effectively instigated the devastating torrents.'?",
+            "options": [
+              "Rising temperatures, causing widespread melt, impact glaciers globally.",
+              "The ice, affected by warming trends, recedes rapidly.",
+              "Scientists, having studied the data, issued a stern warning."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This uses a present participle clause ('causing') to describe 'temperatures'.",
+              "Correct. 'Affected by warming trends' is a past participle clause describing 'ice', similar to how 'released by the glacial failure' describes 'water'.",
+              "Incorrect. This uses a perfect participle clause ('having studied') to indicate a completed action before the main verb."
+            ]
+          },
+          {
+            "question": "What urgent action are experts calling for to address the climate change repercussions in the Himalayan region?",
+            "options": [
+              "Imposing strict travel restrictions to the area.",
+              "Establishing more local community-led conservation projects.",
+              "Fostering urgent international cooperation to mitigate the severe repercussions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The brief does not mention travel restrictions as the primary call to action.",
+              "Incorrect. While valuable, the main emphasis is on broader international efforts.",
+              "Correct. The brief explicitly states experts 'are now calling for urgent international cooperation to mitigate the severe repercussions of climate change'."
+            ]
+          },
+          {
+            "question": "In the context of climate change in the Himalayas, what does the term 'repercussions' refer to?",
+            "options": [
+              "The initial causes contributing to global warming.",
+              "The unforeseen and often negative consequences of climate change.",
+              "The positive outcomes of environmental protection policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Repercussions' refers to effects or consequences, not the initial causes.",
+              "Correct. 'Repercussions' denotes the often unwelcome or unforeseen consequences or effects of an event or action.",
+              "Incorrect. 'Repercussions' typically carries a negative connotation, referring to unwelcome consequences, not positive outcomes."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-29",
+  "release_iso": "2026-08-29T00:19:39Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Footage of Tibet floods isn't being shown in China - and we know little about victims there",
+    "summary": "Some of the most dramatic footage from the deadly flash flooding is hidden from public view in China.",
+    "link": "https://www.bbc.co.uk/news/articles/cx2z415w2gpo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Tibet Floods: Hidden News",
+        "overview": "Floods happened in Tibet, but people in China cannot see all the news.",
+        "topic": "Natural Disasters and Information Control",
+        "news_brief_sentences": [
+          "Tibet recently had big floods.",
+          "These floods caused much damage.",
+          "Many people were victims of the floods.",
+          "There is video footage about these events.",
+          "This footage shows very bad scenes.",
+          "But this video is hidden in China.",
+          "People in China cannot see it.",
+          "It is not for public view.",
+          "So, we know little about the victims.",
+          "Getting information about the floods is difficult."
+        ],
+        "vocabulary": [
+          {
+            "term": "floods",
+            "part_of_speech": "noun",
+            "definition": "Too much water that covers land that is usually dry."
+          },
+          {
+            "term": "victims",
+            "part_of_speech": "noun",
+            "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
+          },
+          {
+            "term": "footage",
+            "part_of_speech": "noun",
+            "definition": "Part of a film or video recording that shows an event."
+          },
+          {
+            "term": "hidden",
+            "part_of_speech": "adjective",
+            "definition": "Kept secret or put in a place where it cannot be seen or found."
+          },
+          {
+            "term": "public view",
+            "part_of_speech": "noun phrase",
+            "definition": "When something is shown to many people, not kept secret or private."
+          }
+        ],
+        "grammar": {
+          "concept": "\"There is\" and \"There are\"",
+          "explanation": "We use \"There is\" for one thing, and \"There are\" for many things. It tells us that something exists or is in a place. For example, \"There is a book on the table.\" \"There are two cats in the garden.\"",
+          "example_quote": "There is video footage about these events."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of this news?",
+            "options": [
+              "New movies in China",
+              "Floods in Tibet",
+              "Happy news from Asia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This news is not about movies.",
+              "Yes, the news is about floods in Tibet.",
+              "This news is not happy, and it's specific to Tibet."
+            ]
+          },
+          {
+            "question": "What is hidden in China?",
+            "options": [
+              "Old books",
+              "Food",
+              "Flood footage"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news does not talk about old books.",
+              "The news is not about food being hidden.",
+              "Yes, the video of the floods is hidden."
+            ]
+          },
+          {
+            "question": "Who are \"victims\" in the news?",
+            "options": [
+              "People who play games",
+              "People who are hurt by the floods",
+              "People who watch TV"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Victims are not people who play games.",
+              "Correct, victims are people who suffer from something bad, like a flood.",
+              "Victims are not just people watching TV."
+            ]
+          },
+          {
+            "question": "What does \"footage\" mean?",
+            "options": [
+              "A type of shoe",
+              "Video of an event",
+              "A written story"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Footage is not a type of shoe.",
+              "Correct, footage means video or film of an event.",
+              "Footage is not a written story, it is visual."
+            ]
+          },
+          {
+            "question": "If something is not for \"public view\", what does it mean?",
+            "options": [
+              "Many people can see it",
+              "It is a secret",
+              "It is very famous"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, if it is not for public view, many people cannot see it.",
+              "Yes, \"not for public view\" means it is kept secret.",
+              "Fame is not related to public view in this context."
+            ]
+          },
+          {
+            "question": "Why do people know little about the victims?",
+            "options": [
+              "The news is hidden",
+              "There are no victims",
+              "Everyone is busy"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct, information is hard to get because the news is not shown.",
+              "No, there are victims from the floods.",
+              "The news does not say everyone is busy."
+            ]
+          },
+          {
+            "question": "What is the meaning of \"hidden\"?",
+            "options": [
+              "Shown to everyone",
+              "Not seen",
+              "Very big"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"hidden\" means the opposite of shown to everyone.",
+              "Correct, if something is hidden, it cannot be seen.",
+              "\"Hidden\" describes visibility, not size."
+            ]
+          },
+          {
+            "question": "What are \"floods\"?",
+            "options": [
+              "Too much water on land",
+              "A big fire",
+              "Dry weather"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, \"floods\" mean there is too much water on the land.",
+              "This news is about water, not fire.",
+              "Floods are about too much water, not dry weather."
+            ]
+          },
+          {
+            "question": "What does \"There is\" tell us?",
+            "options": [
+              "Something is moving",
+              "Something exists",
+              "Something is finished"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"There is\" tells us about existence, not movement.",
+              "Correct, \"There is\" tells us that something exists or is present.",
+              "\"There is\" does not mean something is finished."
+            ]
+          },
+          {
+            "question": "Where did the floods happen?",
+            "options": [
+              "In China",
+              "In Tibet",
+              "In Japan"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news says the floods were in Tibet, not China generally.",
+              "Yes, the news says the floods happened in Tibet.",
+              "The news is not about Japan."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "China's Hidden Flood Footage: Lack of Information on Tibet Victims",
+        "overview": "This lesson explores how dramatic footage of deadly flash flooding in Tibet is being hidden from public view in China, leading to a lack of information about the victims.",
+        "topic": "Media censorship and natural disaster reporting in China",
+        "news_brief_sentences": [
+          "Deadly flash flooding has recently caused significant devastation in parts of Tibet.",
+          "However, some of the most dramatic footage depicting the severe impact of these floods is being kept hidden from public view within China.",
+          "This means Chinese citizens have very limited access to the full visual scope of the disaster.",
+          "International news agencies and human rights groups report that details about the victims and the overall extent of the damage remain scarce.",
+          "Such tight control over media by the government often leads to the suppression of critical or negative news.",
+          "Consequently, the world knows very little about the actual number of casualties or the families deeply affected.",
+          "This practice is widely believed to be an attempt to manage public perception and prevent unrest.",
+          "Many people outside China are largely unaware of the true humanitarian crisis unfolding in the region.",
+          "This restricted information flow raises serious concerns about freedom of the press and the public's right to information.",
+          "Therefore, getting a complete picture of the Tibet floods and their consequences is extremely difficult through official channels."
+        ],
+        "vocabulary": [
+          {
+            "term": "dramatic footage",
+            "part_of_speech": "noun phrase",
+            "definition": "Exciting or shocking film or video shown to the public that captures an important event."
+          },
+          {
+            "term": "hidden from public view",
+            "part_of_speech": "adjective phrase",
+            "definition": "Kept secret or intentionally not allowed to be seen by ordinary people or the general population."
+          },
+          {
+            "term": "scarce",
+            "part_of_speech": "adjective",
+            "definition": "Not enough of something; very little is available or accessible."
+          },
+          {
+            "term": "control over media",
+            "part_of_speech": "noun phrase",
+            "definition": "The power or authority to decide what news and information is shown, published, or broadcast."
+          },
+          {
+            "term": "unaware",
+            "part_of_speech": "adjective",
+            "definition": "Not knowing or realizing that something is happening or that something exists."
+          }
+        ],
+        "grammar": {
+          "concept": "The Passive Voice",
+          "explanation": "We use the passive voice when the action is more important than the person or thing doing the action, or when we don't know or don't want to mention who performed the action. It is formed with a form of 'to be' + the past participle of the main verb. In the continuous form, it uses 'to be' + 'being' + past participle.",
+          "example_quote": "some of the most dramatic footage depicting the severe impact of these floods is being kept hidden from public view within China."
+        },
+        "quiz": [
+          {
+            "question": "What is currently being withheld from public view in China regarding the Tibet floods?",
+            "options": [
+              "Aid supplies for victims",
+              "Detailed government reports",
+              "Dramatic footage of the floods"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Aid supplies are not mentioned as being withheld in the brief.",
+              "While reports might be limited, the brief specifically mentions footage.",
+              "Correct! The news brief highlights that dramatic footage is hidden from public view."
+            ]
+          },
+          {
+            "question": "In the news brief, what does the term 'dramatic footage' refer to?",
+            "options": [
+              "Exciting theatrical performances",
+              "Official government documents",
+              "Striking video of the flood impact"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Dramatic footage in this context means powerful visuals, not theatre.",
+              "This term specifically refers to video, not written documents.",
+              "Exactly. 'Dramatic footage' describes powerful and impactful video recordings of the floods."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is a key consequence of the government's control over media in China regarding the floods?",
+            "options": [
+              "Faster disaster recovery efforts",
+              "Limited public access to the disaster's full scope",
+              "Increased international aid"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests information is limited, not that recovery is faster.",
+              "Correct! Media control means citizens cannot see the full extent of the disaster.",
+              "Increased aid is not mentioned as a result of media control; rather, it suggests the opposite."
+            ]
+          },
+          {
+            "question": "In the sentence 'some of the most dramatic footage... is being kept hidden,' which grammar point is prominently used?",
+            "options": [
+              "Present Perfect Tense",
+              "Passive Voice",
+              "Conditional Sentence"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not an example of the Present Perfect, which uses 'has/have' + past participle.",
+              "Correct! The structure 'is being kept' shows the continuous passive voice.",
+              "This sentence structure is not a conditional sentence, which uses 'if' clauses."
+            ]
+          },
+          {
+            "question": "What does it mean if information about victims and damage is described as 'scarce' in the news brief?",
+            "options": [
+              "It is widely available",
+              "There is very little of it",
+              "It is incorrect or unreliable"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Scarce means the opposite of widely available; it means rare.",
+              "That's right. 'Scarce' implies that there is not much information accessible or available.",
+              "The term 'scarce' refers to quantity, not accuracy or reliability."
+            ]
+          },
+          {
+            "question": "Why is it difficult for people outside official channels to understand the full extent of the Tibet floods?",
+            "options": [
+              "Lack of international interest in the region",
+              "Limited historical data on such events",
+              "Restricted information flow from official sources"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief implies the difficulty is due to official restrictions, not lack of interest.",
+              "Historical data is not mentioned as the primary reason for current difficulties.",
+              "Exactly. The news brief points to restricted information flow as the main challenge."
+            ]
+          },
+          {
+            "question": "When something is 'hidden from public view', what does it primarily mean?",
+            "options": [
+              "It is promoted to a wide audience",
+              "It is not allowed for general observation",
+              "It is available only to experts or specialists"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Hidden from public view means it is concealed, not promoted.",
+              "Yes, this phrase means that ordinary people are not permitted to see it.",
+              "While experts might have access, the key point is that the general public cannot see it."
+            ]
+          },
+          {
+            "question": "Which of these sentences is also an example of the passive voice?",
+            "options": [
+              "The government controls the media.",
+              "The media is controlled by the government.",
+              "The government has controlled the media."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence is in the active voice, with 'the government' performing the action.",
+              "Correct! The subject 'media' receives the action 'is controlled', indicating the passive voice.",
+              "This is in the active voice, present perfect tense, not passive."
+            ]
+          },
+          {
+            "question": "If many people are described as 'unaware' of the humanitarian crisis, what does it mean?",
+            "options": [
+              "They are actively working to help the victims",
+              "They know nothing about the crisis",
+              "They are deliberately ignoring the situation"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Being unaware means not knowing, not necessarily helping or ignoring.",
+              "That's correct. 'Unaware' means they lack knowledge or understanding of the situation.",
+              "Being unaware implies a lack of knowledge, not intentional ignoring."
+            ]
+          },
+          {
+            "question": "What do some people believe is the government's intention behind its control over media information about the floods?",
+            "options": [
+              "To encourage international aid efforts",
+              "To manage public perception and prevent unrest",
+              "To accurately report on the number of casualties"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests control is to manage public perception, not encourage aid.",
+              "Correct. The news brief states it is believed to be an attempt to manage public perception.",
+              "The brief implies the opposite; control is not to report accurately, but to limit information."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "China's Information Control: Obscuring Tibet Flood Devastation",
+        "overview": "This lesson explores the Chinese government's deliberate suppression of distressing footage and information regarding the catastrophic flash floods in Tibet, highlighting the opacity surrounding disaster management and victim accountability within the region.",
+        "topic": "Chinese media censorship and human rights concerns during natural disasters in Tibet",
+        "news_brief_sentences": [
+          "Recent catastrophic flash floods have inflicted severe devastation across parts of Tibet, leading to significant loss of life and widespread destruction.",
+          "Despite the gravity of the humanitarian situation, a stark lack of comprehensive reporting has characterized the official Chinese media response.",
+          "Many of the most harrowing visual accounts depicting the disaster's impact remain hidden from public view within China, raising profound questions about transparency.",
+          "Independent observers and international journalists face considerable challenges in accessing and verifying information from the affected areas.",
+          "This deliberate information control by authorities is consistent with patterns observed in previous crises, where sensitive events are often downplayed or censored.",
+          "Consequently, there is a paucity of credible detail regarding the exact number of casualties, the extent of damage, and the efficacy of relief efforts.",
+          "The opacity surrounding these events prevents a full understanding of the human cost and hinders effective international humanitarian assessment.",
+          "Such selective dissemination of information stifles public discourse and limits the potential for external aid or scrutiny.",
+          "Concerns are mounting that the official narrative may significantly downplay the severity of the disaster, minimizing its perceived impact.",
+          "Ultimately, the global community possesses scant knowledge about the true scale of the tragedy and the fate of its victims in Tibet due to these restrictions."
+        ],
+        "vocabulary": [
+          {
+            "term": "hidden from public view",
+            "part_of_speech": "phrase, adjective",
+            "definition": "Deliberately kept secret or out of sight from the general population, often due to censorship or intentional concealment."
+          },
+          {
+            "term": "information control",
+            "part_of_speech": "noun",
+            "definition": "The systematic management and restriction of the flow of information, typically exercised by a government or powerful entity to influence perception."
+          },
+          {
+            "term": "paucity of credible detail",
+            "part_of_speech": "phrase, noun",
+            "definition": "A marked scarcity or insufficient amount of trustworthy and verifiable specific facts or particulars, leading to incomplete understanding."
+          },
+          {
+            "term": "opacity surrounding",
+            "part_of_speech": "phrase, noun",
+            "definition": "The state of being difficult to understand or lacking in transparency regarding a particular situation, event, or decision-making process."
+          },
+          {
+            "term": "scant knowledge",
+            "part_of_speech": "phrase, noun",
+            "definition": "Very little or insufficient understanding or information about something, often implying a deficiency in what is known."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization for Formal Tone",
+          "explanation": "Nominalization involves converting verbs or adjectives into nouns, a common feature in formal English, especially in news reporting and academic writing. This technique often makes sentences more concise, abstract, and can create a sense of objectivity by shifting focus from actions to concepts or states.",
+          "example_quote": "This deliberate information control by authorities is consistent with patterns observed in previous crises, where sensitive events are often downplayed or censored."
+        },
+        "quiz": [
+          {
+            "question": "What is the core issue highlighted concerning the Tibet floods, according to the news brief?",
+            "options": [
+              "The slow response of international aid organizations.",
+              "The geographical challenges of providing relief in mountainous regions.",
+              "The government's suppression of information and lack of transparency."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While relief efforts are mentioned, the primary focus is on information control, not the speed of international aid.",
+              "The brief acknowledges challenges but emphasizes the deliberate concealment of information as the main problem.",
+              "The article explicitly details how the government's deliberate information control leads to a lack of public knowledge and transparency."
+            ]
+          },
+          {
+            "question": "The phrase 'hidden from public view' in the context of flood footage primarily suggests:",
+            "options": [
+              "The footage was stored in secure government archives.",
+              "The footage was deemed too sensitive for broadcast.",
+              "The footage was intentionally kept inaccessible by authorities."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While storage might be relevant, the phrase emphasizes the *reason* for inaccessibility, which is deliberate concealment.",
+              "The brief implies a deliberate act of suppression rather than mere editorial judgment about sensitivity.",
+              "This phrase highlights the active and intentional concealment of visual evidence by the authorities, preventing public access."
+            ]
+          },
+          {
+            "question": "Which of the following best explains 'paucity of credible detail' as used in the news brief?",
+            "options": [
+              "The overwhelming quantity of unverified reports circulating online.",
+              "The scarcity of trustworthy and specific facts about the disaster.",
+              "The challenge of gathering information due to the remote location of Tibet."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase refers to a lack of *credible* detail, not an abundance of *unverified* reports.",
+              "This accurately defines 'paucity of credible detail' as a significant lack of reliable and verifiable information.",
+              "While remoteness might be a factor, the phrase specifically refers to the *absence* of reliable specific details, not just difficulty in acquisition."
+            ]
+          },
+          {
+            "question": "The news brief states that 'information control' by Chinese authorities is characterized as:",
+            "options": [
+              "A novel approach implemented solely for the Tibet floods.",
+              "A consistent and recurring pattern in managing crises.",
+              "A temporary measure to prevent public panic and misinformation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly mentions that this control is 'consistent with patterns observed in previous crises,' not a new approach.",
+              "The text confirms that 'information control' represents a 'consistent pattern' of official behavior during sensitive events.",
+              "The brief describes it as a consistent pattern, not merely a temporary measure, regardless of its intended effect."
+            ]
+          },
+          {
+            "question": "What does 'opacity surrounding these events' signify in the context of the news brief?",
+            "options": [
+              "The atmospheric conditions that obscured visibility during the floods.",
+              "The clear and comprehensive understanding of the disaster's true impact.",
+              "The lack of transparency and clarity regarding the facts of the situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This refers to informational obscurity, not literal environmental conditions like fog or haze.",
+              "The brief highlights a distinct lack of understanding, directly contradicting the idea of clear comprehension.",
+              "This phrase means there is a significant lack of openness and clarity, making it difficult to fully grasp the truth about the events."
+            ]
+          },
+          {
+            "question": "According to the news brief, how does the Chinese government's information policy impact the global community?",
+            "options": [
+              "It fosters rapid international humanitarian assessment and aid.",
+              "It results in scant knowledge about the disaster's actual scale.",
+              "It ensures that official reports are accurately and promptly disseminated globally."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The policy hinders, rather than fosters, effective international assessment by restricting information.",
+              "The brief explicitly states that the global community possesses 'scant knowledge' due to these restrictions.",
+              "The policy is presented as limiting accurate and comprehensive information, rather than guaranteeing it."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief best exemplifies the grammar point 'Nominalization for Formal Tone'?",
+            "options": [
+              "Recent catastrophic flash floods have inflicted severe devastation across parts of Tibet.",
+              "This deliberate information control by authorities is consistent with patterns observed in previous crises.",
+              "Independent observers and international journalists face considerable challenges in accessing and verifying information."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While formal, this sentence uses standard subject-verb structure; 'devastation' is a noun but not a direct nominalization of an action in this specific construction.",
+              "This sentence uses the noun phrase 'information control,' a clear nominalization of 'to control information,' making the language more formal and abstract.",
+              "This sentence describes actions; while formal, it doesn't prominently feature a key nominalization in the way 'information control' does."
+            ]
+          },
+          {
+            "question": "What is the primary effect of nominalization in formal writing, as discussed in the grammar explanation?",
+            "options": [
+              "To make sentences more direct by emphasizing the actor.",
+              "To simplify complex ideas for a broader audience.",
+              "To lend a more formal and abstract quality by converting verbs/adjectives to nouns."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Nominalization often distances from specific actors and emphasizes concepts, rather than making sentences more direct or actor-focused.",
+              "While it can be concise, the primary aim of nominalization in formal contexts is to add formality and abstraction, which can sometimes increase complexity.",
+              "Nominalization achieves a formal and abstract tone by transforming active verbs or descriptive adjectives into nouns, as explained in the lesson."
+            ]
+          },
+          {
+            "question": "According to the news brief, what is a direct consequence of the 'selective dissemination of information'?",
+            "options": [
+              "It encourages greater transparency in official government reports.",
+              "It enhances the accuracy and reliability of global media coverage.",
+              "It stifles public discourse and limits potential external aid or scrutiny."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief indicates that selective dissemination leads to a lack of transparency, not greater transparency.",
+              "The selective dissemination is shown to hinder, not enhance, accurate and reliable global coverage.",
+              "The text explicitly states that such selective dissemination 'stifles public discourse and limits the potential for external aid or scrutiny.'"
+            ]
+          },
+          {
+            "question": "What specific type of information is largely absent due to the 'paucity of credible detail'?",
+            "options": [
+              "Historical data on previous flood events in Tibet.",
+              "Accurate figures for casualties, damage, and relief effectiveness.",
+              "Climatic projections for future extreme weather in the region."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief focuses on current disaster data, not historical flood records, as being absent.",
+              "The news brief specifically mentions the lack of 'exact number of casualties, the extent of damage, and the efficacy of relief efforts'.",
+              "While relevant, climatic projections are not the specific 'credible detail' highlighted as missing in the context of the immediate disaster."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

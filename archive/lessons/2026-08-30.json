@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-30",
+  "release_iso": "2026-08-30T14:36:10Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Iceland votes against restarting talks on joining EU",
+    "summary": "Broadcaster RUV reports that 52.8% of voters rejected the government's proposal to resume talks.",
+    "link": "https://www.bbc.co.uk/news/articles/c70le8ed1plo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Iceland Votes Against EU Talks",
+        "overview": "Iceland decided not to restart discussions about joining the European Union.",
+        "topic": "Iceland and the European Union",
+        "news_brief_sentences": [
+          "Iceland had a special event.",
+          "People voted about joining the EU.",
+          "The EU is the European Union.",
+          "Many countries are members of the EU.",
+          "The government wanted to restart talks.",
+          "But most people said \"no\" to this.",
+          "About 52.8% of voters rejected the idea.",
+          "They voted against resuming discussions.",
+          "A broadcaster called RUV reported this news.",
+          "So, Iceland will not talk about joining the EU now."
+        ],
+        "vocabulary": [
+          {
+            "term": "voted",
+            "part_of_speech": "verb",
+            "definition": "To choose something in an election or meeting by casting a ballot."
+          },
+          {
+            "term": "joining",
+            "part_of_speech": "verb",
+            "definition": "Becoming a member of a group or organization, like a club or a union."
+          },
+          {
+            "term": "EU",
+            "part_of_speech": "noun",
+            "definition": "The European Union, a group of many European countries that work together."
+          },
+          {
+            "term": "rejected",
+            "part_of_speech": "verb",
+            "definition": "To refuse to accept something; to say 'no' to an idea or a proposal."
+          },
+          {
+            "term": "restart",
+            "part_of_speech": "verb",
+            "definition": "To begin something again after it has stopped, like starting a game over."
+          }
+        ],
+        "grammar": {
+          "concept": "The Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. For regular verbs, we often add '-ed' to the base form. For irregular verbs, the form changes completely. It tells us something happened at a specific time before now.",
+          "example_quote": "About 52.8% of voters rejected the idea."
+        },
+        "quiz": [
+          {
+            "question": "What was the main topic of the vote in Iceland?",
+            "options": [
+              "A new bridge",
+              "Joining the EU",
+              "A holiday"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the vote was about joining a political group, not infrastructure.",
+              "Yes, people voted to decide if Iceland should join the European Union.",
+              "No, the vote was a serious political decision, not about leisure."
+            ]
+          },
+          {
+            "question": "What does the abbreviation \"EU\" stand for?",
+            "options": [
+              "Eastern Union",
+              "European Universe",
+              "European Union"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. The EU refers to a group of nations, not a geographical direction.",
+              "This is incorrect. The EU is an organization of countries, not a large space.",
+              "Yes, EU means European Union, a group of countries in Europe."
+            ]
+          },
+          {
+            "question": "What did the government want to do?",
+            "options": [
+              "Stop all talks",
+              "Restart talks about joining the EU",
+              "Build a new road"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the government actually wanted to begin talks again.",
+              "Yes, the government hoped to restart discussions about EU membership.",
+              "No, the news brief mentions talks about the EU, not construction."
+            ]
+          },
+          {
+            "question": "How many voters rejected the government's idea?",
+            "options": [
+              "100%",
+              "A small number",
+              "More than half"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news brief says 52.8%, which is not everyone.",
+              "No, 52.8% is not a small amount; it's a majority.",
+              "Yes, 52.8% is more than half of the voters, meaning the majority said no."
+            ]
+          },
+          {
+            "question": "What does \"rejected\" mean in the news brief?",
+            "options": [
+              "Accepted",
+              "Said \"yes\"",
+              "Said \"no\""
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, \"rejected\" means the opposite of accepted.",
+              "No, saying \"yes\" is the opposite of rejecting something.",
+              "Yes, to \"reject\" means to refuse to accept something or say \"no\" to it."
+            ]
+          },
+          {
+            "question": "Which word from the news brief is in the simple past tense?",
+            "options": [
+              "Joining",
+              "Rejecting",
+              "Reported"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, \"joining\" is a continuous form, not the simple past.",
+              "No, \"rejecting\" is a continuous form, not the simple past.",
+              "Yes, \"reported\" is the simple past form of the verb \"to report\"."
+            ]
+          },
+          {
+            "question": "Who reported the news about the vote?",
+            "options": [
+              "The President",
+              "A broadcaster called RUV",
+              "The voters"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news brief does not mention the President reporting the news.",
+              "Yes, the news brief states that a broadcaster named RUV shared this information.",
+              "No, the voters participated in the event, but RUV reported on it."
+            ]
+          },
+          {
+            "question": "What does \"restart\" mean in \"restart talks\"?",
+            "options": [
+              "To stop",
+              "To begin again",
+              "To finish quickly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"restart\" means the opposite of stopping something.",
+              "Yes, \"restart\" means to start something that had stopped, once more.",
+              "No, \"restart\" refers to beginning anew, not necessarily quickly finishing."
+            ]
+          },
+          {
+            "question": "Why will Iceland not talk about joining the EU now?",
+            "options": [
+              "Because the government agreed",
+              "Because most people voted no",
+              "Because the EU left"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the government wanted talks, but the people decided otherwise.",
+              "Yes, the majority of voters rejected the idea, so the talks will not happen now.",
+              "No, the news brief states that Iceland will not talk about joining, not that the EU left."
+            ]
+          },
+          {
+            "question": "The simple past tense is used for actions that are...",
+            "options": [
+              "happening now",
+              "happening in the future",
+              "finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, actions happening now use the present tense.",
+              "No, future actions use different tenses, like the future simple.",
+              "Yes, the simple past tense is used to describe actions that were completed at a specific time in the past."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Iceland Votes Against Restarting EU Membership Talks",
+        "overview": "Icelandic voters have decided against restarting negotiations to join the European Union, with a majority rejecting the government's proposal.",
+        "topic": "Iceland's relationship with the European Union and the outcome of a national vote.",
+        "news_brief_sentences": [
+          "Iceland recently held a significant national vote to decide its future relationship with the European Union.",
+          "The central question put to the electorate was whether the government should restart talks concerning potential EU membership.",
+          "Broadcaster RUV reports that the national vote's results have now been revealed to the public.",
+          "A considerable majority of Icelandic voters rejected the government's proposal to resume talks.",
+          "Specifically, 52.8% of citizens who participated cast their ballots against continuing the discussions.",
+          "This outcome clearly shows a strong public sentiment favouring Iceland's ongoing independent path outside the European Union.",
+          "The government had initiated the idea of re-engaging with the EU to understand where the public stood on the matter.",
+          "However, the electorate's decision has made the nation's position unequivocally clear for now.",
+          "This vote marks a pivotal moment for Iceland's foreign policy and its long-term economic direction.",
+          "Consequently, the government will now need to carefully consider these definitive results when planning its future diplomatic strategies."
+        ],
+        "vocabulary": [
+          {
+            "term": "restart talks",
+            "part_of_speech": "verb phrase",
+            "definition": "To begin official discussions or negotiations again after a period of stopping."
+          },
+          {
+            "term": "broadcaster",
+            "part_of_speech": "noun",
+            "definition": "A company or person whose business is to transmit television or radio programs, especially news."
+          },
+          {
+            "term": "rejected",
+            "part_of_speech": "verb",
+            "definition": "To refuse to accept, agree to, or consider something that has been offered or suggested."
+          },
+          {
+            "term": "proposal",
+            "part_of_speech": "noun",
+            "definition": "A suggestion or plan that is formally presented for consideration or discussion."
+          },
+          {
+            "term": "resume talks",
+            "part_of_speech": "verb phrase",
+            "definition": "To continue discussions, conversations, or negotiations after a temporary interruption."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to tell others what someone else has said or written. They allow us to convey information from a source without always using direct quotations. Common reporting verbs include 'report,' 'say,' 'state,' 'announce,' and 'claim.' They are often followed by a 'that' clause, although 'that' can sometimes be omitted.",
+          "example_quote": "Broadcaster RUV reports that the national vote's results have now been revealed to the public."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary issue Icelanders voted on?",
+            "options": [
+              "Starting new trade agreements with Asian countries.",
+              "Restarting negotiations to join the European Union.",
+              "Electing a new national leader."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The vote concerned their relationship with the European Union.",
+              "Correct. The central question was about resuming discussions for potential EU membership.",
+              "Incorrect. The vote focused on a specific policy decision, not leadership."
+            ]
+          },
+          {
+            "question": "Which phrase means to begin discussions again after a pause?",
+            "options": [
+              "End talks",
+              "Restart talks",
+              "Delay talks"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'End talks' means to stop them completely.",
+              "Correct. 'Restart talks' means to commence discussions once more after an interruption.",
+              "Incorrect. 'Delay talks' suggests postponing them, not necessarily starting again."
+            ]
+          },
+          {
+            "question": "According to the News Brief, who reported the results of the national vote?",
+            "options": [
+              "The Icelandic government itself.",
+              "A foreign news agency.",
+              "Broadcaster RUV."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The news brief specifically mentions a different source.",
+              "Incorrect. The local 'broadcaster RUV' was credited with the report.",
+              "Correct. Broadcaster RUV was the source cited for revealing the vote's results."
+            ]
+          },
+          {
+            "question": "What percentage of voters rejected the government's proposal?",
+            "options": [
+              "Around 47%",
+              "Exactly 50%",
+              "52.8%"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. That percentage would represent those who supported the proposal.",
+              "Incorrect. The majority against the proposal was more than half.",
+              "Correct. A specific majority of 52.8% voted against resuming talks."
+            ]
+          },
+          {
+            "question": "What is a 'proposal' in the context of the news brief?",
+            "options": [
+              "A final law that has been passed.",
+              "A formal suggestion or plan put forward.",
+              "A heated argument between politicians."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. A proposal is still in the suggestion stage, not a final law.",
+              "Correct. The government's 'proposal' was a plan presented for public consideration.",
+              "Incorrect. A proposal is a formal plan, not necessarily a disagreement."
+            ]
+          },
+          {
+            "question": "What did the vote's outcome indicate about public sentiment in Iceland?",
+            "options": [
+              "A desire for closer ties with the European Union.",
+              "A strong preference for independence outside the EU.",
+              "Uncertainty about the nation's future direction."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The majority voted against restarting talks, indicating the opposite.",
+              "Correct. The rejection of the proposal suggests a public wish to maintain independence from the EU.",
+              "Incorrect. The vote provided a clear decision, indicating a firm stance rather than uncertainty."
+            ]
+          },
+          {
+            "question": "In the sentence 'Broadcaster RUV reports that the national vote's results have now been revealed,' which word functions as a reporting verb?",
+            "options": [
+              "Broadcaster",
+              "Reports",
+              "Revealed"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Broadcaster' is the noun referring to the source.",
+              "Correct. 'Reports' is the verb used to introduce the information from RUV.",
+              "Incorrect. 'Revealed' is part of the reported clause, describing the action of the results."
+            ]
+          },
+          {
+            "question": "What happened to the government's proposal in the vote?",
+            "options": [
+              "It was accepted unanimously.",
+              "It was put aside for a later vote.",
+              "It was rejected by the majority of voters."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The proposal was not accepted; it was turned down.",
+              "Incorrect. The news brief clearly states it was rejected, not merely postponed.",
+              "Correct. The proposal to resume talks was 'rejected' by 52.8% of the voters."
+            ]
+          },
+          {
+            "question": "What does 'resume talks' mean?",
+            "options": [
+              "To end all discussions permanently.",
+              "To continue discussions after they were stopped.",
+              "To start new talks on a completely different subject."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Resume' means to continue, not to end.",
+              "Correct. 'Resume talks' means to pick up where discussions left off after an interruption.",
+              "Incorrect. It implies continuing existing talks, not starting new ones on a different topic."
+            ]
+          },
+          {
+            "question": "Why is 'reports' considered a reporting verb in the example sentence?",
+            "options": [
+              "It expresses the speaker's personal feelings about the news.",
+              "It introduces information attributed to a specific source, RUV.",
+              "It directly quotes someone's exact words without any changes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Reporting verbs aim for neutrality, not personal feelings.",
+              "Correct. 'Reports' is used to convey what Broadcaster RUV stated, attributing the information.",
+              "Incorrect. While reporting verbs can introduce quotes, here it introduces paraphrased information."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Iceland Rejects Resumption of EU Accession Talks Amidst Sovereignty and Economic Concerns",
+        "overview": "Icelandic voters have definitively rejected the government's proposal to restart negotiations for European Union membership, underscoring enduring national sentiment against ceding sovereignty.",
+        "topic": "International Relations and Geopolitics: European Union Expansion and National Self-Determination",
+        "news_brief_sentences": [
+          "Icelandic voters have overwhelmingly rejected a government initiative to resume accession negotiations with the European Union.",
+          "The national broadcaster RUV reported that 52.8% of participants in the recent ballot opposed the proposition.",
+          "This pivotal decision reaffirms the nation's consistent reluctance to join the bloc.",
+          "The outcome reflects deep-seated concerns regarding national sovereignty, particularly over vital fishing resources.",
+          "Many Icelanders perceive EU membership as potentially compromising their unique economic and regulatory frameworks.",
+          "The result also indicates a lack of widespread political consensus for closer integration with the continent.",
+          "Previous attempts at accession talks have stalled due to intractable disagreements on key policy areas.",
+          "Analysts suggest the vote solidifies Iceland's independent geopolitical alignment and its focus on existing trade relationships.",
+          "This public mandate highlights a clear voter sentiment prioritising self-governance over the perceived benefits of EU inclusion.",
+          "The government is now expected to respect this decisive expression of the populace, abandoning future efforts to pursue full membership aspirations."
+        ],
+        "vocabulary": [
+          {
+            "term": "overwhelmingly rejected",
+            "part_of_speech": "adverb + verb (phrase)",
+            "definition": "Dismissed or turned down by a very large majority, indicating a decisive public or group opinion against something."
+          },
+          {
+            "term": "pivotal decision",
+            "part_of_speech": "adjective + noun (phrase)",
+            "definition": "A critically important choice or judgment that determines the future course of events or significantly alters a situation."
+          },
+          {
+            "term": "sovereignty",
+            "part_of_speech": "noun",
+            "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "political consensus",
+            "part_of_speech": "adjective + noun (phrase)",
+            "definition": "A general agreement or unity of opinion among various political groups, parties, or stakeholders on a particular issue."
+          },
+          {
+            "term": "voter sentiment",
+            "part_of_speech": "noun + noun (phrase)",
+            "definition": "The general mood, attitude, or collective opinion of the electorate regarding a specific issue, policy, or political candidate."
+          }
+        ],
+        "grammar": {
+          "concept": "Use of Participial Phrases for Elaboration",
+          "explanation": "Participial phrases, typically beginning with a present participle (-ing form) or a past participle (-ed form), act as adjectives or adverbs to add detailed information about a noun or verb in a concise manner. They enhance sentence fluidity and complexity by providing additional context or description without introducing a new independent clause, often replacing a relative clause or a separate sentence.",
+          "example_quote": "This public mandate highlights a clear voter sentiment prioritising self-governance over the perceived benefits of EU inclusion."
+        },
+        "quiz": [
+          {
+            "question": "What was the primary outcome of the recent ballot in Iceland, according to the news brief?",
+            "options": [
+              "A decision to immediately join the EU.",
+              "A rejection of restarting EU accession talks.",
+              "An endorsement of closer economic ties with Europe."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect; the vote was decisively against joining the EU.",
+              "Correct. The majority of voters opposed the government's proposal to resume negotiations for EU membership.",
+              "While potentially an indirect effect, the direct outcome was a rejection of formal accession, not specifically an endorsement of closer ties."
+            ]
+          },
+          {
+            "question": "In the news brief, what does it mean that voters \"overwhelmingly rejected\" the government initiative?",
+            "options": [
+              "A small minority of voters disapproved of the plan.",
+              "The vote was very close, indicating almost an equal split.",
+              "A very large majority of voters said no to the proposal."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is the opposite of what \"overwhelmingly\" implies; it suggests a strong majority.",
+              "\"Overwhelmingly\" signifies a significant and decisive majority, not a close vote.",
+              "Correct. \"Overwhelmingly rejected\" means that a substantial majority of voters disapproved of the initiative."
+            ]
+          },
+          {
+            "question": "What percentage of voters reportedly opposed the proposal, according to the national broadcaster RUV?",
+            "options": [
+              "47.2%",
+              "52.8%",
+              "60.0%"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This percentage would imply a narrow approval or a different outcome.",
+              "Correct. The news brief specifically states that 52.8% of participants opposed the proposition.",
+              "The reported figure was lower than 60%, indicating a different distribution of votes."
+            ]
+          },
+          {
+            "question": "Which of the following best describes a \"pivotal decision\" as used in the news brief?",
+            "options": [
+              "A minor, inconsequential choice that has little impact.",
+              "A decision that can be easily reversed or changed in the near future.",
+              "A critically important choice determining a future direction or outcome."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This contradicts the meaning of \"pivotal,\" which signifies extreme importance.",
+              "A pivotal decision often has significant and long-lasting implications, making it difficult to reverse easily.",
+              "Correct. A pivotal decision is one that plays a crucial role in shaping subsequent events or developments."
+            ]
+          },
+          {
+            "question": "Consider the sentence: \"This public mandate highlights a clear voter sentiment prioritising self-governance over the perceived benefits of EU inclusion.\" What function does the participial phrase \"prioritising self-governance\" serve?",
+            "options": [
+              "It acts as the main verb of the sentence.",
+              "It describes and elaborates on the \"voter sentiment.\"",
+              "It introduces a new independent clause with its own subject and verb."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The main verb in the sentence is \"highlights\"; the participial phrase functions differently.",
+              "Correct. The participial phrase functions adjectivally to provide more specific information about the nature of the \"voter sentiment.\"",
+              "Participial phrases typically modify elements within a clause and do not introduce new independent clauses."
+            ]
+          },
+          {
+            "question": "According to the news brief, what are some of the deep-seated concerns that the Icelandic vote outcome reflects?",
+            "options": [
+              "The high cost of living within the European Union member states.",
+              "National sovereignty, especially over vital fishing resources.",
+              "A general lack of cultural compatibility with the European continent."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While economic factors can be concerns, the brief specifically emphasizes sovereignty.",
+              "Correct. The brief explicitly mentions concerns regarding national sovereignty and control over fishing resources.",
+              "The brief focuses more on economic, regulatory, and governance frameworks rather than cultural compatibility."
+            ]
+          },
+          {
+            "question": "What does \"sovereignty\" primarily refer to in the context of a nation deciding whether to join the EU?",
+            "options": [
+              "Its artistic and cultural heritage, preserving national identity.",
+              "Its ability to govern itself independently without external control.",
+              "Its economic competitiveness in the global financial markets."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While important for national identity, sovereignty specifically concerns governing authority.",
+              "Correct. Sovereignty refers to a nation's supreme and independent right to govern its territory and people without outside interference.",
+              "Economic competitiveness is a related, but distinct, concept from a nation's self-governing authority."
+            ]
+          },
+          {
+            "question": "What did previous attempts at EU accession talks with Iceland indicate, as mentioned in the news brief?",
+            "options": [
+              "They progressed smoothly towards a final agreement.",
+              "They stalled due to intractable disagreements on key policy areas.",
+              "They were put on hold temporarily due to a change in government leadership."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief explicitly states that talks did not progress smoothly but rather stalled.",
+              "Correct. The news brief notes that previous discussions failed because of unresolved and difficult-to-settle disagreements.",
+              "The brief attributes the stall to \"intractable disagreements,\" not solely to a change in government."
+            ]
+          },
+          {
+            "question": "If there is a lack of widespread \"political consensus\" for closer integration with the continent, what does that imply?",
+            "options": [
+              "All major political parties are in full agreement on the issue.",
+              "There is significant disagreement and division among various political groups.",
+              "The general public is largely uninterested in the topic of integration."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Lack of consensus\" means the opposite of general agreement among political parties.",
+              "Correct. A lack of political consensus indicates substantial division and differing opinions among political factions.",
+              "Political consensus refers to agreement among political groups, not necessarily the public's level of interest."
+            ]
+          },
+          {
+            "question": "The news brief states the public mandate highlights a clear \"voter sentiment.\" What is another way to describe this phrase?",
+            "options": [
+              "The government's official and declared policy position.",
+              "The general feeling or attitude of the electorate on an issue.",
+              "A detailed historical record of past election results."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Voter sentiment refers to the public's views, distinct from the government's official policy.",
+              "Correct. \"Voter sentiment\" refers to the prevailing mood, opinions, and attitudes of the voting population.",
+              "While related to elections, voter sentiment specifically describes current attitudes rather than historical data."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-08-31",
+  "release_iso": "2026-08-31T17:19:57Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "Nepal rescuers blast hillside in search of hydropower workers as families wait anxiously",
+    "summary": "Rescuers have resorted to explosives as they struggle to reach trapped workers, as the flooding death toll reaches 939.",
+    "link": "https://www.bbc.co.uk/news/articles/c5ylvgq9q71o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Nepal Rescuers Search for Missing Workers After Flood",
+        "overview": "Rescuers in Nepal are trying to find workers after a big flood.",
+        "topic": "Rescue Efforts and Flooding in Nepal",
+        "news_brief_sentences": [
+          "A big flood happened in Nepal.",
+          "Many people lost their lives.",
+          "The death toll is now 939.",
+          "Rescuers are looking for missing workers.",
+          "These workers were at a hydropower project.",
+          "They are trapped inside a hillside.",
+          "Rescuers use explosives to clear the way.",
+          "They struggle to reach the workers.",
+          "Families of the workers wait anxiously.",
+          "They hope to find their loved ones."
+        ],
+        "vocabulary": [
+          {
+            "term": "rescuers",
+            "part_of_speech": "noun",
+            "definition": "People who save others from danger."
+          },
+          {
+            "term": "trapped",
+            "part_of_speech": "adjective",
+            "definition": "Cannot move or get out of a place."
+          },
+          {
+            "term": "explosives",
+            "part_of_speech": "noun",
+            "definition": "Things that can blow up to make a big noise or destroy something."
+          },
+          {
+            "term": "struggle",
+            "part_of_speech": "verb",
+            "definition": "To try very hard to do something difficult."
+          },
+          {
+            "term": "anxiously",
+            "part_of_speech": "adverb",
+            "definition": "In a worried or nervous way."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the Simple Past Tense to talk about actions that finished at a specific time in the past. We often add '-ed' to regular verbs or use a different form for irregular verbs.",
+          "example_quote": "A big flood happened in Nepal."
+        },
+        "quiz": [
+          {
+            "question": "What kind of natural event happened in Nepal?",
+            "options": [
+              "A big fire",
+              "A big flood",
+              "A strong wind"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "That is not correct. The news brief talks about water.",
+              "Yes, that's right! A big flood caused problems in Nepal.",
+              "No, the news brief mentions a flood, not strong wind."
+            ]
+          },
+          {
+            "question": "According to the news, how many people died?",
+            "options": [
+              "993",
+              "939",
+              "399"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Look at the number carefully in the news brief. It's a different order.",
+              "That's correct. The death toll reached 939.",
+              "The number is higher than 399. Check the news brief again."
+            ]
+          },
+          {
+            "question": "Who are the 'rescuers' in the news story?",
+            "options": [
+              "People who are lost",
+              "People who help others from danger",
+              "People who make food"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'rescuers' are not lost; they are helping others.",
+              "Correct! Rescuers try to save people who are in danger.",
+              "No, 'rescuers' do not make food; they save lives."
+            ]
+          },
+          {
+            "question": "Where were the missing workers when the flood happened?",
+            "options": [
+              "At home",
+              "At a hydropower project",
+              "At a school"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief mentions a specific work location, not home.",
+              "Yes, they were working at a hydropower project.",
+              "No, the workers were not at a school. They were at a different kind of place."
+            ]
+          },
+          {
+            "question": "What does it mean if the workers are 'trapped'?",
+            "options": [
+              "They are playing a game",
+              "They are very happy",
+              "They cannot move or get out"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'trapped' means they are stuck, not playing.",
+              "If they are trapped, they are in a difficult situation, not happy.",
+              "That's right. 'Trapped' means they are stuck and cannot leave."
+            ]
+          },
+          {
+            "question": "What do rescuers use to clear the way for the workers?",
+            "options": [
+              "Water guns",
+              "Loud music",
+              "Explosives"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Water guns are not strong enough to clear a hillside.",
+              "Loud music would not help clear a path for rescuers.",
+              "Correct! They use 'explosives' to make a path."
+            ]
+          },
+          {
+            "question": "If the rescuers 'struggle', what are they doing?",
+            "options": [
+              "They find it very easy",
+              "They are trying very hard because it is difficult",
+              "They are sleeping"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, if you struggle, it means it is not easy.",
+              "Yes, 'struggle' means to try hard when something is difficult.",
+              "No, 'struggle' means to work hard, not to sleep."
+            ]
+          },
+          {
+            "question": "In the sentence 'A big flood happened in Nepal,' when did the flood happen?",
+            "options": [
+              "It is happening now",
+              "It will happen in the future",
+              "It finished in the past"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The verb 'happened' tells us it is not happening at this moment.",
+              "No, 'happened' is a past tense verb, not future.",
+              "Correct! 'Happened' tells us the flood is an event that finished in the past."
+            ]
+          },
+          {
+            "question": "How do the families wait for news about their loved ones?",
+            "options": [
+              "Happily",
+              "Calmly",
+              "Anxiously"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the families are worried, not happy.",
+              "They are not calm; they are worried about their family members.",
+              "That's right. They wait 'anxiously' because they are worried."
+            ]
+          },
+          {
+            "question": "What do the families hope for?",
+            "options": [
+              "More rain",
+              "To find their loved ones",
+              "To move to a new country"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, they do not want more rain, especially after a flood.",
+              "Correct! They hope to find their family members who are missing.",
+              "The news brief talks about finding people, not moving to a new country."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Nepal Flooding Aftermath: Rescuers Use Explosives to Reach Trapped Hydropower Workers",
+        "overview": "Rescuers in Nepal are using explosives to clear debris and reach hydropower workers trapped after severe flooding, while concerned families anxiously await updates.",
+        "topic": "Humanitarian crisis and rescue efforts following a natural disaster in Nepal.",
+        "news_brief_sentences": [
+          "Nepal is currently dealing with the aftermath of severe flooding, which has tragically caused a significant death toll, now reaching 939 people.",
+          "The disaster has specifically impacted a hydropower project, where several workers remain trapped beneath rubble and mud.",
+          "Rescue teams are working tirelessly around the clock, facing extremely difficult conditions as they attempt to reach the stranded individuals.",
+          "To clear the massive amounts of debris, rescuers have resorted to using explosives to blast away parts of the hillside.",
+          "This dangerous method shows the extreme urgency and the challenging environment in which the rescue operations are taking place.",
+          "Meanwhile, families of the missing workers are gathered nearby, waiting anxiously for any updates about their loved ones.",
+          "Their hopes are mixed with fear, as the situation on the ground remains highly perilous.",
+          "The coordinated efforts involve engineering experts and local volunteers, all struggling against unstable terrain and the risk of further landslides.",
+          "The fate of those still trapped is uncertain, and the clock is ticking as conditions worsen.",
+          "International organizations are closely monitoring the situation, ready to offer support to the affected regions and rescue teams."
+        ],
+        "vocabulary": [
+          {
+            "term": "death toll",
+            "part_of_speech": "noun",
+            "definition": "The total number of people who have died in a particular accident, war, or disaster."
+          },
+          {
+            "term": "trapped",
+            "part_of_speech": "adjective",
+            "definition": "Unable to escape from a place or situation, or unable to move."
+          },
+          {
+            "term": "resorted to",
+            "part_of_speech": "phrasal verb",
+            "definition": "Used a particular method or action because there was no other possible choice."
+          },
+          {
+            "term": "anxiously",
+            "part_of_speech": "adverb",
+            "definition": "In a worried or nervous way, especially about something that is going to happen."
+          },
+          {
+            "term": "perilous",
+            "part_of_speech": "adjective",
+            "definition": "Extremely dangerous or risky; full of danger."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Tense",
+          "explanation": "The Present Perfect tense connects past actions or events to the present. It describes something that happened at an indefinite time in the past, or an action that started in the past and continues to the present, often highlighting its current relevance or result.",
+          "example_quote": "Nepal is currently dealing with the aftermath of severe flooding, which has tragically caused a significant death toll, now reaching 939 people."
+        },
+        "quiz": [
+          {
+            "question": "What is the main focus of the news report from Nepal?",
+            "options": [
+              "New construction methods for hydropower plants.",
+              "The ongoing rescue mission for trapped workers after severe flooding.",
+              "A debate about the use of explosives in construction."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The report focuses on rescue, not new construction methods.",
+              "Correct. The main topic is the rescue of workers and the impact of the floods.",
+              "While explosives are mentioned, the focus is on their use in rescue, not a general debate."
+            ]
+          },
+          {
+            "question": "The phrase \"death toll\" in the news brief refers to:",
+            "options": [
+              "The financial cost of the disaster.",
+              "The total number of people who have died.",
+              "The number of injured people."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Death toll\" specifically refers to fatalities, not financial cost.",
+              "Correct. It's the total count of those who have died in the incident.",
+              "This term does not include injured people, only those who have died."
+            ]
+          },
+          {
+            "question": "Why are rescuers using explosives in Nepal, according to the news brief?",
+            "options": [
+              "To create new paths for roads.",
+              "To clear debris and reach trapped workers.",
+              "To signal for more help from other regions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief states explosives are used to clear debris to reach workers, not for new roads.",
+              "Correct. Explosives are a drastic measure to clear rubble blocking access to the trapped workers.",
+              "There is no mention of explosives being used for signaling in the news brief."
+            ]
+          },
+          {
+            "question": "In the sentence \"Nepal is currently dealing with the aftermath of severe flooding, which has tragically caused a significant death toll,\" what does \"has tragically caused\" imply?",
+            "options": [
+              "The flooding is causing deaths at this exact moment.",
+              "The flooding caused deaths in the past, and the result (the death toll) is relevant now.",
+              "The flooding will cause deaths in the future."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The present continuous \"is causing\" would imply it's happening at this exact moment.",
+              "Correct. The present perfect connects the past event (flooding causing deaths) to its present consequence (the current death toll).",
+              "The present perfect tense does not refer to future events."
+            ]
+          },
+          {
+            "question": "If someone is \"trapped\" beneath rubble and mud, it means they are:",
+            "options": [
+              "Working hard on a project.",
+              "Unable to escape from their current location.",
+              "Feeling very tired and exhausted."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Trapped\" means unable to leave, not necessarily working.",
+              "Correct. To be trapped means you cannot get out of a place or situation.",
+              "While being trapped might make one tired, the meaning refers to being stuck, not fatigue."
+            ]
+          },
+          {
+            "question": "Who is waiting \"anxiously\" near the disaster site, as mentioned in the news brief?",
+            "options": [
+              "International journalists covering the event.",
+              "Government officials assessing the damage.",
+              "Families of the missing workers."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief mentions families waiting anxiously, not specifically journalists.",
+              "While officials might be there, the brief highlights the families' anxious wait.",
+              "Correct. The news states that \"families of the missing workers are gathered nearby, waiting anxiously.\""
+            ]
+          },
+          {
+            "question": "When rescuers \"have resorted to using explosives,\" it means they:",
+            "options": [
+              "Chose explosives as their very first option.",
+              "Used explosives because other methods were not possible or had failed.",
+              "Are experimenting with new demolition tools."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Resorted to\" implies it's a final or necessary choice, not usually the first.",
+              "Correct. It means they used this method because it was the only or best remaining option given the difficult circumstances.",
+              "The phrase indicates a necessary action, not an experiment or trial."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses the Present Perfect tense to describe a current situation resulting from a past event?",
+            "options": [
+              "They are rescuing workers yesterday.",
+              "They have rescued many workers since morning.",
+              "They will rescue workers tomorrow."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This uses past simple with a future marker, which is grammatically incorrect.",
+              "Correct. \"Have rescued\" connects a past action (rescue) to the present, indicating a completed action with current relevance.",
+              "This sentence uses the future simple tense, not the present perfect."
+            ]
+          },
+          {
+            "question": "If someone is waiting \"anxiously\" for news, how do they most likely feel?",
+            "options": [
+              "Calm and relaxed about the situation.",
+              "Worried and nervous about what will happen.",
+              "Excited and happy for an announcement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Waiting anxiously is the opposite of feeling calm and relaxed.",
+              "Correct. \"Anxiously\" describes a state of worry or nervousness, especially about what will happen.",
+              "\"Anxiously\" does not describe excitement or happiness; it implies concern."
+            ]
+          },
+          {
+            "question": "The news brief states that the situation on the ground remains \"highly perilous.\" What does \"perilous\" suggest about the situation?",
+            "options": [
+              "It is very peaceful and calm.",
+              "It is extremely dangerous and risky.",
+              "It is full of new opportunities and hopes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Perilous\" means dangerous, which is the opposite of peaceful.",
+              "Correct. \"Perilous\" means extremely dangerous or risky, describing the severe conditions.",
+              "While a challenging situation might present opportunities, \"perilous\" specifically refers to the danger, not opportunities."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Nepal's Hydropower Disaster: Rescuers Battle Terrain Amidst Rising Flood Toll",
+        "overview": "Authorities in Nepal are deploying extreme measures, including controlled explosions, to extricate hydropower workers stranded by severe flooding, as the national death toll tragically climbs to 939.",
+        "topic": "Humanitarian Crisis and Rescue Operations in Nepal Following Catastrophic Flooding",
+        "news_brief_sentences": [
+          "The devastating impact of recent torrential rainfall has plunged Nepal into a profound humanitarian crisis, with hundreds confirmed dead.",
+          "Amidst the widespread destruction, a critical and perilous rescue operation is underway to reach hydropower workers entombed by landslides.",
+          "Rescuers are contending with an extremely volatile environment, necessitating the strategic use of explosives to clear debris and create access points.",
+          "This drastic measure underscores the exigency of the situation and the formidable challenges confronting emergency teams.",
+          "Families of the stranded individuals are enduring an agonizing wait, their hopes tethered to the intermittent updates from the disaster zones.",
+          "The overall death toll attributed to the extensive flooding and subsequent landslides has tragically escalated to 939 across the affected regions.",
+          "Beyond immediate rescue efforts, concerns are mounting over the long-term displacement of communities and the potential for a public health crisis.",
+          "Government agencies and international aid organizations are coordinating to mobilise resources for both the ongoing search and future rehabilitation.",
+          "The resilience of local communities is being severely tested as they grapple with the unprecedented scale of destruction and loss.",
+          "This unfolding catastrophe highlights the urgent need for enhanced infrastructure resilience and robust disaster preparedness mechanisms in vulnerable areas."
+        ],
+        "vocabulary": [
+          {
+            "term": "contending with",
+            "part_of_speech": "verb phrase",
+            "definition": "Dealing with or struggling against a difficulty, problem, or opponent, often implying significant challenge."
+          },
+          {
+            "term": "exigency",
+            "part_of_speech": "noun",
+            "definition": "An urgent need or demand; a pressing necessity or requirement that demands immediate action."
+          },
+          {
+            "term": "agonizing wait",
+            "part_of_speech": "noun phrase",
+            "definition": "A period of intense anxiety, distress, and emotional suffering while anticipating an uncertain or difficult outcome."
+          },
+          {
+            "term": "death toll",
+            "part_of_speech": "noun phrase",
+            "definition": "The total number of people who have died as a result of a particular event, such as an accident, disaster, or conflict."
+          },
+          {
+            "term": "mobilise resources",
+            "part_of_speech": "verb phrase",
+            "definition": "To organize and prepare assets, funds, personnel, or supplies for a specific purpose or large-scale effort."
+          }
+        ],
+        "grammar": {
+          "concept": "Absolute Construction",
+          "explanation": "An absolute construction is a phrase that modifies an entire sentence, not just a single word. It typically consists of a noun or pronoun followed by a participle (present or past) and any related modifiers, providing additional detail or context. These constructions are syntactically independent but semantically connected to the main clause, often describing a cause, condition, or accompanying circumstance.",
+          "example_quote": "Families of the stranded individuals are enduring an agonizing wait, their hopes tethered to the intermittent updates from the disaster zones."
+        },
+        "quiz": [
+          {
+            "question": "What is the specific focus of the critical rescue operation in Nepal, as detailed in the news brief?",
+            "options": [
+              "Recovering bodies from submerged villages after the flooding.",
+              "Evacuating all residents from the disaster-stricken areas.",
+              "Reaching hydropower workers trapped by landslides."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While body recovery is tragically part of disaster response, the brief emphasizes an active search for living individuals.",
+              "Evacuation is crucial in disasters, but the specific 'critical and perilous rescue operation' targets a particular group of trapped individuals.",
+              "Correct. The news brief explicitly states the operation aims 'to reach hydropower workers entombed by landslides.'"
+            ]
+          },
+          {
+            "question": "The news brief mentions rescuers are 'contending with an extremely volatile environment.' What does 'contending with' imply here?",
+            "options": [
+              "They are peacefully coexisting with the environment.",
+              "They are actively struggling against difficult and unstable conditions.",
+              "They are merely observing the environmental challenges from a safe distance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Contending with' signifies struggle and challenge, not peaceful coexistence.",
+              "Correct. 'Contending with' means to struggle, compete, or deal with a difficulty, indicating a challenging and unstable situation.",
+              "Incorrect. The phrase implies direct engagement and struggle, not passive observation."
+            ]
+          },
+          {
+            "question": "Why are explosives being strategically used by rescuers in the operation?",
+            "options": [
+              "To warn local populations about impending dangers.",
+              "To clear debris and create necessary access points.",
+              "To divert the course of floodwaters away from affected sites."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While warnings are important, the brief specifies a different purpose for the explosives.",
+              "Correct. The brief states explosives are used for 'clearing debris and creating access points' due to the 'extremely volatile environment.'",
+              "Diverting floodwaters is a complex engineering task, not the stated primary use of explosives in this rescue context."
+            ]
+          },
+          {
+            "question": "What does the phrase 'the exigency of the situation' signify in the news brief?",
+            "options": [
+              "The routine and predictable nature of the disaster response.",
+              "The urgent and pressing need for immediate action and resources.",
+              "The minor inconveniences faced by the rescue teams."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Exigency' implies urgency, not routine or predictability.",
+              "Correct. 'Exigency' refers to an urgent need or demand, highlighting the critical and time-sensitive nature of the disaster.",
+              "Incorrect. The use of 'exigency' in this context points to significant, not minor, challenges."
+            ]
+          },
+          {
+            "question": "The families of stranded individuals are said to be enduring an 'agonizing wait.' What emotion does this phrase primarily convey?",
+            "options": [
+              "Optimistic anticipation for a positive outcome.",
+              "Extreme distress, anxiety, and profound suffering.",
+              "Calm patience while awaiting further instructions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Agonizing' implies intense suffering, not simple optimism.",
+              "Correct. An 'agonizing wait' indicates a period of intense emotional suffering, distress, and anxiety due to uncertainty.",
+              "Incorrect. 'Agonizing' contradicts the idea of calm patience; it suggests deep emotional pain."
+            ]
+          },
+          {
+            "question": "What precise number is given for the 'death toll' from the extensive flooding and landslides?",
+            "options": [
+              "Hundreds of people have tragically died.",
+              "Exactly 939 individuals.",
+              "Over a thousand people have been confirmed dead."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While true in a general sense, the brief provides a more specific figure.",
+              "Correct. The news brief explicitly states the 'death toll ... has tragically escalated to 939 across the affected regions.'",
+              "The brief specifies 939, which is not yet over a thousand."
+            ]
+          },
+          {
+            "question": "What is the meaning of 'mobilise resources' in the context of government agencies and international aid organizations?",
+            "options": [
+              "To restrict the flow of aid and personnel to disaster zones.",
+              "To organize and prepare available assets, personnel, and funds for action.",
+              "To distribute financial donations directly to individual victims without coordination."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Mobilise' means to prepare for deployment, not to restrict.",
+              "Correct. 'Mobilise resources' means to gather, organize, and prepare assets, personnel, or funds for a specific, often large-scale, operation or effort.",
+              "While direct aid might be part of the effort, 'mobilise resources' refers to the broader organizational process of preparing all necessary means."
+            ]
+          },
+          {
+            "question": "In the sentence 'Families of the stranded individuals are enduring an agonizing wait, their hopes tethered to the intermittent updates from the disaster zones,' what grammar concept is demonstrated by 'their hopes tethered to the intermittent updates'?",
+            "options": [
+              "A conditional clause expressing a hypothetical situation.",
+              "An absolute construction providing additional context.",
+              "A gerund phrase acting as the subject of the sentence."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. This structure does not express a condition or hypothesis, and it is not a subordinate clause introduced by a conjunction.",
+              "Correct. 'Their hopes tethered to the intermittent updates' is an absolute construction, syntactically independent yet providing descriptive context to the main clause.",
+              "Incorrect. A gerund phrase functions as a noun; this structure modifies the entire main clause rather than acting as a nominal element."
+            ]
+          },
+          {
+            "question": "Beyond immediate rescue, what long-term concerns are explicitly mentioned as mounting in the news brief?",
+            "options": [
+              "The need for greater investment in tourism infrastructure.",
+              "The potential for a public health crisis and community displacement.",
+              "The reconstruction of ancient cultural heritage sites."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While economic recovery is important, the brief specifies different long-term concerns.",
+              "Correct. The brief explicitly states 'concerns are mounting over the long-term displacement of communities and the potential for a public health crisis.'",
+              "The brief focuses on human and infrastructure impacts, not specifically the reconstruction of ancient sites."
+            ]
+          },
+          {
+            "question": "The news brief concludes by highlighting the urgent need for enhanced 'infrastructure resilience.' What does this term refer to in the context of the disaster?",
+            "options": [
+              "The ability of infrastructure to collapse quickly for safety.",
+              "The capacity of essential systems to resist, absorb, and recover from damage.",
+              "The immediate deployment of rescue personnel after an event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Resilience means the opposite of quick collapse; it refers to the ability to withstand and recover.",
+              "Correct. 'Infrastructure resilience' refers to the capability of critical systems (like roads, power grids, communications) to withstand, absorb, and effectively recover from disruptions caused by disasters.",
+              "While important for disaster response, 'infrastructure resilience' specifically refers to the inherent robustness and recovery capability of physical structures and systems, not just the human response."
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

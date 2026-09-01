@@ -1,0 +1,603 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-01",
+  "release_iso": "2026-09-01T14:26:33Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "title": "'I've never been to Afghanistan': Six million deportees forced to start over under the Taliban",
+    "summary": "As of August, the number forced to return this year from Pakistan and Iran had reached another million.",
+    "link": "https://www.bbc.co.uk/news/articles/c2e074nn8eko?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "People Forced to Return to Afghanistan: A Difficult New Start",
+        "overview": "Many people are forced to leave Pakistan and Iran and return to Afghanistan, facing challenges to start their lives again.",
+        "topic": "Forced returns to Afghanistan under the Taliban",
+        "news_brief_sentences": [
+          "Many people are leaving Pakistan and Iran.",
+          "They are forced to return to Afghanistan.",
+          "These people are called \"deportees.\"",
+          "Six million people have been forced to go back.",
+          "This year, one million more people returned.",
+          "They must start over in Afghanistan.",
+          "The Taliban group controls Afghanistan now.",
+          "Some deportees say, \"I've never been to Afghanistan.\"",
+          "They feel like strangers in their own country.",
+          "This situation is very difficult for them."
+        ],
+        "vocabulary": [
+          {
+            "term": "forced",
+            "part_of_speech": "verb",
+            "definition": "To make someone do something they do not want to do."
+          },
+          {
+            "term": "deportees",
+            "part_of_speech": "noun",
+            "definition": "People who are made to leave a country by the government."
+          },
+          {
+            "term": "return",
+            "part_of_speech": "verb",
+            "definition": "To go back to a place where you were before."
+          },
+          {
+            "term": "start over",
+            "part_of_speech": "verb phrase",
+            "definition": "To begin something again from the beginning, usually after a problem or change."
+          },
+          {
+            "term": "controls",
+            "part_of_speech": "verb",
+            "definition": "To have power over a place, a group of people, or a situation."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Present Tense",
+          "explanation": "We use the simple present tense to talk about things that are always true, facts, or habits. We also use it to talk about situations happening now or regularly.",
+          "example_quote": "The Taliban group controls Afghanistan now."
+        },
+        "quiz": [
+          {
+            "question": "Where are many people forced to return according to the news?",
+            "options": [
+              "Pakistan",
+              "Iran",
+              "Afghanistan"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Pakistan is a country they are leaving, not returning to.",
+              "Iran is also a country they are leaving.",
+              "Correct! Many people are forced to go back to Afghanistan."
+            ]
+          },
+          {
+            "question": "What does the word \"forced\" mean?",
+            "options": [
+              "To make someone do something",
+              "To ask someone to do something",
+              "To help someone do something"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! If you are forced, someone makes you do it.",
+              "No, \"forced\" means to compel, not just to ask.",
+              "No, \"forced\" means to make someone, not to help them."
+            ]
+          },
+          {
+            "question": "How many people in total have been forced to go back to Afghanistan as mentioned?",
+            "options": [
+              "One million",
+              "Six million",
+              "Seven million"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "One million is the number from this year, not the total.",
+              "Correct! Six million people have been forced to return.",
+              "This number is higher than what is mentioned in the news brief."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple present tense?",
+            "options": [
+              "They will start over.",
+              "They started over.",
+              "They start over."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the future tense.",
+              "This sentence is in the past tense.",
+              "Correct! \"They start over\" is an example of the simple present tense."
+            ]
+          },
+          {
+            "question": "Who are \"deportees\"?",
+            "options": [
+              "People who travel for fun",
+              "People who must leave a country",
+              "People who want to stay in a country"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, deportees are not traveling for enjoyment; they are sent away.",
+              "That's correct! \"Deportees\" are people made to leave a country.",
+              "No, deportees are made to leave, even if they want to stay."
+            ]
+          },
+          {
+            "question": "How do some deportees feel about Afghanistan, their own country?",
+            "options": [
+              "Happy to be home",
+              "Excited for a new life",
+              "Like strangers"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the news says the situation is difficult, not happy.",
+              "No, they face many challenges, not excitement for a new life.",
+              "Correct! Some feel like they don't know the country, like strangers."
+            ]
+          },
+          {
+            "question": "What does the word \"return\" mean?",
+            "options": [
+              "To go away from a place",
+              "To go back to a place",
+              "To stay in a place"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"To go away\" is the opposite of \"return.\"",
+              "Correct! \"Return\" means to come or go back to a place.",
+              "\"To stay\" means not to leave or return."
+            ]
+          },
+          {
+            "question": "Which group \"controls Afghanistan now,\" according to the news?",
+            "options": [
+              "The old government",
+              "A different army",
+              "The Taliban group"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The news mentions a specific group controlling Afghanistan now.",
+              "The news mentions a specific group controlling Afghanistan now.",
+              "Correct! The news brief states, \"The Taliban group controls Afghanistan now.\""
+            ]
+          },
+          {
+            "question": "If you \"start over,\" what do you do?",
+            "options": [
+              "Finish something important",
+              "Begin something again from the beginning",
+              "Take a long break from work"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"start over\" means to begin again, not to finish.",
+              "That's right! \"Start over\" means to begin something again from the start.",
+              "No, \"start over\" is about beginning, not taking a break."
+            ]
+          },
+          {
+            "question": "In the sentence, \"The Taliban group controls Afghanistan now,\" which word is a verb in the simple present tense?",
+            "options": [
+              "group",
+              "now",
+              "controls"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Group\" is a noun, not a verb.",
+              "\"Now\" is an adverb, telling us when.",
+              "Correct! \"Controls\" is the verb showing an action or state in the simple present tense."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Forced Deportations: Millions Start Over Under the Taliban",
+        "overview": "Millions of people are being forced to return to Afghanistan from neighboring countries, facing difficult new lives under the Taliban.",
+        "topic": "Humanitarian crisis and forced migration in Afghanistan.",
+        "news_brief_sentences": [
+          "Millions of Afghans are currently facing a challenging situation as they are forced to return to their home country.",
+          "These deportees include many who have never lived in Afghanistan, having spent their entire lives in neighboring countries like Pakistan and Iran.",
+          "As of August this year, the number of individuals compelled to come back has tragically reached another million.",
+          "Many families must now start over from scratch, trying to build new lives in unfamiliar regions of Afghanistan.",
+          "The returnees often possess limited resources and no existing support networks within the country.",
+          "Living under the Taliban administration presents unique difficulties, including restrictions and economic instability.",
+          "This massive influx of people is straining already scarce resources and basic services across the nation.",
+          "Humanitarian agencies are deeply concerned, calling the situation an escalating humanitarian crisis.",
+          "These agencies are working to provide essential aid, but the scale of the need is overwhelming.",
+          "The long-term impact on both the returning individuals and Afghanistan's society remains a significant worry for international observers."
+        ],
+        "vocabulary": [
+          {
+            "term": "deportees",
+            "part_of_speech": "noun",
+            "definition": "People who have been officially and legally ordered to leave a country and sent back to their home country."
+          },
+          {
+            "term": "forced to return",
+            "part_of_speech": "verb phrase",
+            "definition": "To be made to go back to a place against your will or choice, often by official command or legal requirement."
+          },
+          {
+            "term": "start over",
+            "part_of_speech": "verb phrase",
+            "definition": "To begin something again from the very beginning, especially after a major life change, such as moving to a new place."
+          },
+          {
+            "term": "under the Taliban",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Describing the situation or conditions when a place is controlled or governed by the Taliban group."
+          },
+          {
+            "term": "humanitarian crisis",
+            "part_of_speech": "noun phrase",
+            "definition": "A severe situation where many people are suffering and need urgent help, often due to war, natural disaster, or large-scale displacement."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action and the object of the action rather than the subject performing the action. It's often formed with a form of 'to be' + past participle, and the agent (who did it) is either unknown, unimportant, or obvious, or we want to avoid mentioning them. It emphasizes what happened to someone or something.",
+          "example_quote": "Millions of Afghans are currently facing a challenging situation as they are forced to return to their home country."
+        },
+        "quiz": [
+          {
+            "question": "What is the main issue discussed in the news brief?",
+            "options": [
+              "The economic growth in Afghanistan.",
+              "The increasing number of Afghans being forced to return home.",
+              "New educational programs for Afghan children."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news brief focuses on people returning, not economic growth.",
+              "Correct. The central theme is the forced return of millions of Afghans.",
+              "While education is important, it's not the main topic of this news."
+            ]
+          },
+          {
+            "question": "By what time this year had the number of people compelled to come back reached another million?",
+            "options": [
+              "July",
+              "August",
+              "September"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article specifically states the number reached another million by August.",
+              "Correct. The brief mentions 'As of August this year'.",
+              "The news brief does not specify September; it states August."
+            ]
+          },
+          {
+            "question": "According to the brief, what challenge do many deportees face?",
+            "options": [
+              "Finding luxurious new homes immediately.",
+              "Building new lives in an unfamiliar country.",
+              "Starting new businesses with government support."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief suggests hardship, not luxury.",
+              "Correct. Many deportees have no prior experience of Afghanistan and must start over.",
+              "The brief highlights lack of resources and instability, not government business support."
+            ]
+          },
+          {
+            "question": "What does the phrase 'start over' mean in the context of the news brief?",
+            "options": [
+              "To pause life temporarily.",
+              "To begin a new phase of life from the beginning.",
+              "To finish an old task quickly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "It implies a complete beginning, not a pause.",
+              "Correct. It means to begin a new life from scratch after a significant change.",
+              "It's about starting new, not finishing old tasks."
+            ]
+          },
+          {
+            "question": "What is mentioned as a specific difficulty for returnees living 'under the Taliban'?",
+            "options": [
+              "Abundant job opportunities.",
+              "Restrictions and economic instability.",
+              "Easy access to international travel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief mentions a lack of job opportunities.",
+              "Correct. The brief states 'restrictions and economic instability' are unique difficulties.",
+              "The brief suggests difficulty and instability, not easy international travel."
+            ]
+          },
+          {
+            "question": "What term describes a severe situation where many people need urgent help due to widespread suffering?",
+            "options": [
+              "Economic boom",
+              "Political debate",
+              "Humanitarian crisis"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "An economic boom is a period of prosperity, the opposite of this situation.",
+              "A political debate is a discussion of political issues, not widespread suffering.",
+              "Correct. This matches the definition of 'humanitarian crisis' given in the vocabulary."
+            ]
+          },
+          {
+            "question": "Which grammar point is highlighted by the sentence 'Millions of Afghans are currently facing a challenging situation as they are forced to return to their home country'?",
+            "options": [
+              "Present Perfect tense",
+              "Conditional sentences",
+              "Passive Voice"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While 'are facing' is present continuous, 'are forced' specifically demonstrates the passive voice.",
+              "The sentence does not use 'if' clauses or express hypothetical situations.",
+              "Correct. The phrase 'are forced to return' is an example of the passive voice."
+            ]
+          },
+          {
+            "question": "Why are international organizations concerned about the situation?",
+            "options": [
+              "They believe Afghanistan is becoming too peaceful.",
+              "They see it as an escalating humanitarian crisis.",
+              "They are worried about tourism numbers decreasing."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief describes hardship and crisis, not peace.",
+              "Correct. The brief explicitly states they call it an 'escalating humanitarian crisis.'",
+              "The main concern is the well-being of the people, not tourism."
+            ]
+          },
+          {
+            "question": "What does 'forced to return' imply about the individuals' choice?",
+            "options": [
+              "They willingly chose to go back.",
+              "They had no personal choice in the matter.",
+              "They were excited to relocate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The word 'forced' indicates a lack of willingness.",
+              "Correct. 'Forced' means they were compelled to do it against their will.",
+              "The context suggests hardship and compulsion, not excitement."
+            ]
+          },
+          {
+            "question": "Which countries are primarily mentioned as the origin of these deportations?",
+            "options": [
+              "India and China",
+              "Pakistan and Iran",
+              "Turkey and Russia"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not mention India or China as origins for these specific deportations.",
+              "Correct. The news brief specifically names Pakistan and Iran.",
+              "These countries are not mentioned as the primary origin for these deportations in the brief."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Mass Deportations Exacerbate Humanitarian Crisis in Taliban-Ruled Afghanistan",
+        "overview": "Millions of individuals, many of whom have never known Afghanistan as home, are being forcibly returned from neighboring countries, exacerbating humanitarian challenges under the Taliban administration.",
+        "topic": "Forced Repatriation, Displacement, and Humanitarian Crisis in Afghanistan",
+        "news_brief_sentences": [
+          "Afghanistan is currently grappling with the formidable challenge of mass involuntary repatriation, as millions are being forcibly returned from neighboring nations.",
+          "This displacement includes a significant number of individuals, often referred to as 'deportees,' who possess no prior lived experience within Afghanistan itself.",
+          "Many of these individuals have spent their entire lives abroad, making their coerced return an arduous proposition to 'start over' in an unfamiliar homeland.",
+          "The sheer scale of this movement represents an unprecedented influx of people into a nation already contending with severe economic and social instability.",
+          "Reports indicate that by August of this year alone, an additional million people had been compelled to leave Pakistan and Iran, swelling the ranks of those recently deported.",
+          "These dire circumstances present immense logistical and humanitarian challenges for the de facto authorities.",
+          "The returning population often arrives with minimal possessions, lacking established networks or livelihoods to aid their reintegration.",
+          "Consequently, the country's already strained resources are pushed to their breaking point, intensifying the risk of widespread destitution and deprivation.",
+          "The international community faces a pressing humanitarian imperative to address the multifaceted needs arising from this large-scale displacement.",
+          "Understanding the profound personal impact on these individuals, many of whom declare, \"I've never been to Afghanistan,\" is crucial for crafting effective aid strategies."
+        ],
+        "vocabulary": [
+          {
+            "term": "involuntary repatriation",
+            "part_of_speech": "noun phrase",
+            "definition": "The act of returning people to their country of origin against their will or without their full consent, typically enforced by external authorities."
+          },
+          {
+            "term": "unprecedented influx",
+            "part_of_speech": "noun phrase",
+            "definition": "A sudden, large-scale arrival or flow of people or things that has never happened before or been experienced previously."
+          },
+          {
+            "term": "dire circumstances",
+            "part_of_speech": "noun phrase",
+            "definition": "Extremely serious, urgent, or terrible conditions that involve great suffering or danger."
+          },
+          {
+            "term": "strained resources",
+            "part_of_speech": "noun phrase",
+            "definition": "Limited assets, supplies, or capabilities that are being used to their maximum capacity or beyond, leading to difficulty in meeting demands."
+          },
+          {
+            "term": "humanitarian imperative",
+            "part_of_speech": "noun phrase",
+            "definition": "A moral principle or urgent necessity to take action to alleviate human suffering and protect human dignity, especially during crises."
+          }
+        ],
+        "grammar": {
+          "concept": "Nominalization",
+          "explanation": "Nominalization is the process of forming a noun or noun phrase from another part of speech, often a verb or adjective. It condenses information, creating more formal and concise sentences, typical in academic or news writing by converting actions or qualities into entities.",
+          "example_quote": "Afghanistan is currently grappling with the formidable challenge of mass involuntary repatriation, as millions are being forcibly returned from neighboring nations."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary challenge Afghanistan is grappling with, according to the news brief?",
+            "options": [
+              "A severe political uprising.",
+              "The formidable challenge of mass involuntary repatriation.",
+              "A sudden increase in foreign investment."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This option is not mentioned as the primary challenge in the brief.",
+              "Correct. The brief explicitly states Afghanistan is grappling with 'mass involuntary repatriation.'",
+              "The brief highlights economic instability, not increased foreign investment."
+            ]
+          },
+          {
+            "question": "What does the phrase 'involuntary repatriation' refer to in the context of the news?",
+            "options": [
+              "Voluntary return of citizens seeking refuge.",
+              "The forced return of individuals to their country of origin.",
+              "A program for economic migrants to settle abroad."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Involuntary' implies it is not voluntary.",
+              "Precisely. It describes the coercive return of people to their native country.",
+              "This describes a different phenomenon; 'repatriation' refers to returning to one's home country."
+            ]
+          },
+          {
+            "question": "By August of the current year, how many additional people had been compelled to return from Pakistan and Iran?",
+            "options": [
+              "Six million.",
+              "Hundreds of thousands.",
+              "An additional million."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Six million refers to the overall deportees mentioned in the headline, not the additional number by August.",
+              "The number is specified more precisely than 'hundreds of thousands'.",
+              "Correct. The brief explicitly states 'an additional million' by August from Pakistan and Iran."
+            ]
+          },
+          {
+            "question": "The news brief mentions 'dire circumstances.' What does this phrase imply about the situation?",
+            "options": [
+              "The situation is improving steadily.",
+              "The conditions are extremely serious and challenging.",
+              "The circumstances are merely inconvenient but manageable."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Dire' suggests a severe negative situation, not improvement.",
+              "Exactly. 'Dire circumstances' indicates very severe, urgent, or terrible conditions.",
+              "This understates the severity; 'dire' means extremely serious."
+            ]
+          },
+          {
+            "question": "Which of the following best describes an 'unprecedented influx'?",
+            "options": [
+              "A gradual and expected increase.",
+              "A sudden, large-scale arrival not seen before.",
+              "A controlled and planned migration."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. 'Unprecedented' means never before, and 'influx' suggests a rapid flow.",
+              "Correct. An 'unprecedented influx' signifies a rapid, large-scale arrival that is novel in its magnitude.",
+              "The term implies a lack of prior experience and often a lack of control."
+            ]
+          },
+          {
+            "question": "What is the consequence of the 'strained resources' in Afghanistan?",
+            "options": [
+              "Enhanced economic growth.",
+              "Increased foreign aid allocations.",
+              "Intensified risk of widespread destitution and deprivation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Strained resources typically hinder, rather than enhance, economic growth.",
+              "While possibly needed, strained resources do not directly cause increased aid allocations; they indicate a lack.",
+              "Precisely. The brief states strained resources push the country 'to their breaking point, intensifying the risk of widespread destitution and deprivation.'"
+            ]
+          },
+          {
+            "question": "What is the 'humanitarian imperative' mentioned in the brief?",
+            "options": [
+              "A requirement for military intervention.",
+              "A moral duty to alleviate suffering and protect dignity.",
+              "A diplomatic effort to broker peace treaties."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term refers to humanitarian aid, not necessarily military action.",
+              "Correct. A humanitarian imperative is a strong moral obligation to provide aid and alleviate suffering.",
+              "While related to international affairs, the term specifically points to moral action concerning human welfare."
+            ]
+          },
+          {
+            "question": "In the sentence 'Afghanistan is currently grappling with the formidable challenge of mass involuntary repatriation,' what is an example of nominalization?",
+            "options": [
+              "'grappling'",
+              "'formidable'",
+              "'repatriation'"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "'Grappling' is a verb, not a noun formed from another part of speech.",
+              "'Formidable' is an adjective, not a nominalized form.",
+              "Correct. 'Repatriation' is a noun formed from the verb 'repatriate', condensing the action into an entity."
+            ]
+          },
+          {
+            "question": "Many 'deportees' state, 'I've never been to Afghanistan.' What does this highlight about their situation?",
+            "options": [
+              "Their deep familiarity with Afghan culture.",
+              "The unfamiliarity and challenge of their coerced return.",
+              "Their enthusiasm to start a new life in Afghanistan."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This contradicts their statement of never having been there.",
+              "Correct. Their declaration emphasizes the profound unfamiliarity and difficulty of being forced to 'start over' in a country they do not know.",
+              "The context of forced return and dire circumstances makes 'enthusiasm' unlikely."
+            ]
+          },
+          {
+            "question": "What kind of challenges do the returning populations often face upon arrival in Afghanistan?",
+            "options": [
+              "Immediate access to stable employment.",
+              "Existing extensive support networks.",
+              "Minimal possessions and lack of established networks or livelihoods."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief states they lack livelihoods, suggesting employment is not readily available.",
+              "The brief specifically mentions 'lacking established networks'.",
+              "Precisely. The brief highlights they arrive 'with minimal possessions, lacking established networks or livelihoods.'"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

@@ -61,7 +61,7 @@
       const next = document.createElement("button");
       next.type = "button";
       next.className = "primary-button";
-      next.textContent = ["Practice these words →", "Discuss the story →", "Finish lesson ✓"][index];
+      next.textContent = ["Check your understanding →", "Discuss the story →", "Finish lesson ✓"][index];
       next.addEventListener("click", () => {
         if (index < 2) showStage(index + 1, true);
         else {

@@ -12,5 +12,15 @@
     "directory": "./.cf-site",
     "html_handling": "none",
     "not_found_handling": "404-page"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "englishladder.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.englishladder.com",
+      "custom_domain": true
+    }
+  ]
 }

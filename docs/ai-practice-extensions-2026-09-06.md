@@ -42,6 +42,8 @@ The use of explicit tasks, bounded output and clearly separated context is infor
 
 Automated checks compare the published web context to every original case and dialogue, verify printable prompt endings and links, exercise copying and its failure path, and check that learner drafts are not included. The complete PDF audit checks font embedding, text bounds, glyphs, page counts, bookmarks and file checksums. Representative printed pages and desktop/mobile layouts are inspected visually.
 
+Release checks on 6 September 2026 passed: 69 Python checks and 47 browser-logic checks, the 297-page site audit, and all 164 work PDFs (3,785 pages, all fonts embedded, no audit failures). Actual Chrome checks confirmed copying, exact lesson selection, printable prompt text, the fallback without JavaScript, and no horizontal overflow at 390-pixel mobile width. The [complete document audit](work-ai-document-audit-2026-09-06.json) records the file and page results.
+
 No paid AI calls are required to compose or publish these materials. Actual tutoring behavior has not been benchmarked across external AI services; a script is a carefully specified request, not a guarantee that every model will follow it. A useful future evaluation would run the same anonymized learner attempts through selected services and assess factual preservation, waiting for responses, terminology and feedback quality.
 
 General grammar lessons, news reading and other parts of the site are natural later locations for the same approach. Their extensions should carry their own source passage and learning target rather than reuse a workplace case. This release concentrates on the English for Work materials and their four companion guides.

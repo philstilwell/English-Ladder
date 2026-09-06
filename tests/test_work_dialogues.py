@@ -38,6 +38,16 @@ class DialoguePublicationTests(unittest.TestCase):
                 self.assertIn('Eight more situations to make your own',text)
                 self.assertEqual(len(reader.pages),meta['pages'])
 
+    def test_course_pages_preserve_shared_site_features(self):
+        from bs4 import BeautifulSoup
+        for t in load_tracks():
+            with self.subTest(course=t['slug']):
+                soup=BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(),'html.parser')
+                self.assertIsNotNone(soup.select_one('script[src*="site.js"]'))
+                self.assertIsNotNone(soup.select_one('link[rel="canonical"]'))
+                self.assertIsNotNone(soup.select_one('.site-footer a[href="continue.html"]'))
+                self.assertIn('complete workplace dialogues',soup.select('.work-download')[2].get_text())
+
     def test_technical_regressions(self):
         groups=load_dialogues()
         it=' '.join(v for d in groups['general-it'] for _,v in d['dialogue'])

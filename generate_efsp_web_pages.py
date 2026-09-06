@@ -119,6 +119,11 @@ def main():
     (ROOT / 'efsp.html').write_text(render_directory(tracks))
     for t in tracks:
         (ROOT / f'efsp-{t["slug"]}.html').write_text(render_industry_page(t, tracks))
+    # Keep the shared navigation, saved-learning controls, metadata and asset versions
+    # when this generator is run independently of the full editorial build.
+    from editorial import decorate_page
+    for path in [ROOT / 'efsp.html', *[ROOT / f'efsp-{t["slug"]}.html' for t in tracks]]:
+        decorate_page(path)
     print(f'Generated {len(tracks)} course pages and the directory.')
 
 

@@ -60,6 +60,8 @@ def build_pages():
     categories=''.join(f'<option>{e(cat)}</option>' for cat in sorted({c['category'] for c in concepts}))
     content=f'''<section class="page-hero"><p class="eyebrow">Understand it. Use it.</p><h1>Grammar for real conversations</h1><p>Compare natural examples, then check your understanding with multiple-choice practice.</p><p>New to the library? Start with <a href="grammar-concepts/concept-01.html">in, on, and at</a>, <a href="grammar-concepts/concept-20.html">asking about prices</a>, or <a href="grammar-concepts/concept-44.html">asking for advice</a>.</p></section><section data-library><div class="library-filters"><label>Find a topic<input type="search" data-library-search placeholder="Try dates, advice, or questions"></label><label>Topic<select data-library-category><option value="">All topics</option>{categories}</select></label><label>Level<select data-library-level><option value="">All levels</option><option value="A1">A1</option><option value="A2">A2</option><option value="B1">B1</option><option value="B2">B2</option></select></label></div><p data-library-count role="status">44 lessons</p><p data-library-empty hidden>No lessons match. Try a shorter search or another level.</p><div class="library-grid">{''.join(cards)}</div></section>'''
     path=ROOT/'grammar-concepts.html';path.write_text(document('Grammar lessons',content,'theme-grammar-index',current='grammar-concepts.html'));decorate_page(path)
+    from seo import build_html_sitemap, write_sitemaps
+    build_html_sitemap();write_sitemaps()
 
 if __name__ == '__main__':
     build_pages()

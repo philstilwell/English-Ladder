@@ -8,10 +8,11 @@
   },
   "scripts": {
     "build": "python3 editorial.py",
-    "check:js": "node --check app.js && node --check learning.js && node --check tools.js && node --check us-life.js && node --check work.js && node --check work-ai.js && node --check site.js",
+    "check:js": "node --check app.js && node --check learning.js && node --check tools.js && node --check us-life.js && node --check work.js && node --check work-ai.js && node --check work-ready.js && node --check site.js",
     "test": "python3 -m unittest discover -s tests && node --test tests/*.test.cjs",
     "build:work": "python3 generate_work_documents.py && python3 generate_efsp_web_pages.py",
-    "check:site": "python3 audit_site.py",
+    "check:site": "python3 audit_site.py && python3 audit_seo.py",
+    "build:seo": "python3 seo.py",
     "build:grammar": "python3 grammar_curriculum.py && python3 grammar_documents.py"
   },
   "repository": {

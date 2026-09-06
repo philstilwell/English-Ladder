@@ -1,0 +1,17 @@
+.seo-breadcrumbs { margin: .8rem 0 1.6rem; color: #526372; font-size: .82rem; }
+.seo-breadcrumbs ol { display: flex; flex-wrap: wrap; gap: .3rem .6rem; list-style: none; padding: 0; margin: 0; }
+.seo-breadcrumbs li { display: inline; }
+.seo-breadcrumbs li + li::before { content: '/'; margin-right: .6rem; color: #6b7a86; }
+.seo-breadcrumbs a { text-underline-offset: .2em; }
+.seo-related { border-top: 1px solid #cbd5dc; padding: 1.6rem 0; margin-top: 2.5rem; }
+.seo-related h2 { font-size: 1.35rem; }
+.seo-related ul, .seo-directory ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem 2rem; padding-left: 1.25rem; }
+.seo-related a, .seo-directory a { text-underline-offset: .18em; }
+.seo-directory { margin: 2.5rem 0; }
+.seo-directory h3 { margin-top: 2rem; }
+.seo-category-links { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1rem 0 2rem; }
+.seo-category-links a { padding: .6rem .9rem; border: 1px solid #bacbd7; border-radius: .4rem; font-size: .9rem; text-decoration: none; }
+.seo-category-links a:hover { background: #e9eff5; }
+.seo-breadcrumbs a:focus-visible, .seo-category-links a:focus-visible, .seo-related a:focus-visible, .seo-directory a:focus-visible { outline: 3px solid #b96b29; outline-offset: 3px; }
+@media (max-width: 650px) { .seo-related ul, .seo-directory ul { grid-template-columns: 1fr; } .seo-breadcrumbs { font-size: .78rem; } }
+@media print { .seo-breadcrumbs, .seo-related { display: none; } }

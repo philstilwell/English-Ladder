@@ -311,8 +311,11 @@ def publish_editorial_pages():
     build_credits()
     from site_quality import publish_quality_pages
     publish_quality_pages()
+    from seo import build_category_pages, build_html_sitemap, write_sitemaps
+    build_category_pages();build_html_sitemap()
     for path in [*ROOT.glob("*.html"), *ROOT.glob("grammar-concepts/*.html"), *ROOT.glob("stories/*/*.html")]:
         decorate_page(path)
+    write_sitemaps()
 
 
 if __name__ == "__main__":

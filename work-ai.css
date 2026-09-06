@@ -15,8 +15,16 @@
 .work-ai-invitation p { margin: .2rem 0 .6rem; }
 .work-ai-invitation nav { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; }
 .work-ai-invitation a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
+.finished-prompts { margin-top: 1.5rem; }
+.finished-prompt, .finished-dialogue { margin: .7rem 0; border: 1px solid #c7d5de; border-radius: .5rem; padding: .8rem 1rem; background: #f5f8fa; }
+.finished-prompt summary, .finished-dialogue > summary { cursor: pointer; font-weight: 650; line-height: 1.6; }
+.finished-prompt-body { margin-top: .8rem; }
+.finished-prompt pre { white-space: pre-wrap; overflow-wrap: anywhere; max-height: 26rem; overflow: auto; font-size: .92rem; line-height: 1.65; font-family: inherit; padding: 1rem; background: #fff; border: 1px solid #c7d5de; }
+.finished-prompt [role="status"] { font-size: .9rem; }
 @media (max-width: 850px) { .work-ai-controls { grid-template-columns: 1fr; } .work-ai-preview textarea { max-height: 18rem; } }
 @media print {
+  .finished-prompt pre { max-height: none; overflow: visible; }
+  .finished-prompt button, .finished-prompt [role="status"] { display: none !important; }
   .work-ai-controls, .work-ai-actions, .work-ai-status, .work-ai-preview summary, .work-ai-preview textarea { display: none !important; }
   .work-ai-print { display: block; white-space: pre-wrap; overflow-wrap: anywhere; font: 9pt/1.5 sans-serif; }
   .work-ai-preview { border: 0; padding: 0; }

@@ -15,17 +15,6 @@ def enhance_page(soup,path,prefix):
         tag=soup.new_tag('script',src=prefix+'site.js?v=20260906b',defer=True);soup.head.append(tag)
     if not soup.select_one('link[href*="site.css"]'):
         soup.head.append(soup.new_tag('link',rel='stylesheet',href=prefix+'site.css?v=20260906b'))
-    title=soup.title.get_text(' ',strip=True) if soup.title else 'English Ladder'
-    hero=soup.select_one('.page-hero > p:not(.eyebrow), .feature-copy > p:not(.eyebrow), .work-hero > div > p:not(.eyebrow), .tools-hero-copy > p:not(.eyebrow)')
-    description=hero.get_text(' ',strip=True) if hero else f'{title.replace(" | English Ladder", "").replace("English Ladder | ", "")}. Clear examples, practical English, and activities you can use.'
-    description=' '.join(description.split())[:190]
-    for selector in ['meta[name="description"]','link[rel="canonical"]','meta[property^="og:"]']:
-        for tag in soup.select(selector):tag.decompose()
-    soup.head.append(soup.new_tag('meta',attrs={'name':'description','content':description}))
-    canonical=ORIGIN+('' if relative=='index.html' else relative)
-    soup.head.append(soup.new_tag('link',rel='canonical',href=canonical))
-    for prop,value in [('title',title),('description',description),('url',canonical),('type','website'),('site_name','English Ladder'),('image',ORIGIN+'assets/brand/ladder-mark.png')]:
-        soup.head.append(soup.new_tag('meta',attrs={'property':'og:'+prop,'content':value}))
     for a in soup.select('.site-links a'):
         if a.get_text(strip=True)=='Daily news':a['data-level-link']=''
     footer=soup.select_one('.site-footer')
@@ -67,6 +56,8 @@ def enhance_page(soup,path,prefix):
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
             tag[attr]=asset+('?v=20260906-choices2' if Path(asset).name in {'site.js','site.css'} else '?v=20260906-quality1')
+    from seo import enhance_page as enhance_search
+    enhance_search(soup,path,prefix)
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page
@@ -118,13 +109,11 @@ def build_information_pages():
             path.write_text(str(s))
 
 def write_sitemap():
-    paths=sorted([*ROOT.glob('*.html'),*ROOT.glob('grammar-concepts/*.html'),*ROOT.glob('stories/*/*.html'),*ROOT.glob('news/*/*.html')])
-    urls=''.join(f'<url><loc>{ORIGIN}{"" if p.name=="index.html" else p.relative_to(ROOT).as_posix()}</loc></url>' for p in paths if p.name not in ['404.html','continue.html'])
-    (ROOT/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls+'</urlset>\n')
-    (ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\nSitemap: '+ORIGIN+'sitemap.xml\n')
+    from seo import write_sitemaps
+    return write_sitemaps()
 
 def publish_quality_pages():
-    build_news_archive();build_information_pages();write_sitemap()
+    build_news_archive();build_information_pages()
 
 def rebuild_news_levels():
     """Rebuild rolling pages from archived data using the current renderer."""

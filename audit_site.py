@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parent
 
 def audit():
-    failures=[];paths=sorted([*ROOT.glob('*.html'),*ROOT.glob('grammar-concepts/*.html'),*ROOT.glob('stories/*/*.html'),*ROOT.glob('news/*/*.html')]);documents={}
+    from seo import published_pages
+    failures=[];paths=published_pages();documents={}
     for path in paths:
         s=BeautifulSoup(path.read_text(),'html.parser');documents[path.resolve()]=s
         if len(s.select('h1'))!=1:failures.append(f'{path.name}: expected one main heading')

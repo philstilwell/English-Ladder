@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-06",
+  "release_iso": "2026-09-06T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "title": "Aviation faces hotter, stormier skies – and passengers might have to accept more disruption",
+    "summary": "Are people going to have to increasingly accept more delays and diversions as the effects of climate change intensify?",
+    "link": "https://www.bbc.co.uk/news/articles/cm274p8m88lo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "prediction": "What problems do you think extreme weather can cause for airplanes and passengers?",
+        "discussion": [
+          "The news brief talks about 'hotter, stormier skies'. What does this mean for flying, and how might it affect a flight you take?",
+          "Have you ever experienced a flight delay or cancellation due to weather? How did it affect your plans?"
+        ],
+        "title": "Hotter Skies, More Disruption for Air Travel",
+        "overview": "Climate change could make flying more difficult with delays and bad weather.",
+        "topic": "Climate Change Impact on Air Travel and Passengers",
+        "news_brief_sentences": [
+          "Air travel is important for many people.",
+          "But flying might change in the future.",
+          "Climate change is making the Earth hotter.",
+          "It also brings more storms and bad weather.",
+          "This could make flights face hotter, stormier skies.",
+          "Planes might have delays or change their routes.",
+          "Passengers might have to accept more disruption.",
+          "This disruption will happen more often.",
+          "The effects of climate change are getting stronger.",
+          "So, flying could become more difficult for everyone."
+        ],
+        "vocabulary": [
+          {
+            "term": "Air travel",
+            "part_of_speech": "noun",
+            "definition": "When people fly in airplanes to different places."
+          },
+          {
+            "term": "Climate change",
+            "part_of_speech": "noun",
+            "definition": "Big changes in Earth's weather, like getting hotter or having more storms."
+          },
+          {
+            "term": "Stormier skies",
+            "part_of_speech": "noun phrase",
+            "definition": "When the weather in the air has more storms, like heavy rain or strong winds."
+          },
+          {
+            "term": "Delays",
+            "part_of_speech": "noun",
+            "definition": "When something happens later than planned, like a flight leaving late."
+          },
+          {
+            "term": "Disruption",
+            "part_of_speech": "noun",
+            "definition": "A problem that stops something from continuing as usual, like a flight cancellation."
+          }
+        ],
+        "grammar": {
+          "concept": "Modals: Might / Could",
+          "explanation": "We use 'might' or 'could' to talk about things that are possible in the future, but not certain. They mean 'it is possible that this will happen'.",
+          "example_quote": "This could make flights face hotter, stormier skies."
+        },
+        "quiz": [
+          {
+            "question": "What is making the Earth hotter and bringing more storms?",
+            "options": [
+              "Air travel",
+              "Climate change",
+              "Passenger problems"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, air travel is a topic, not the cause of warming.",
+              "Yes, climate change is causing these weather changes.",
+              "No, passenger problems are a result, not the cause of the weather."
+            ]
+          },
+          {
+            "question": "What kind of weather might flights face because of climate change?",
+            "options": [
+              "Calm and sunny skies",
+              "Hotter, stormier skies",
+              "Clear, cold air"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news says the weather will be worse, not better.",
+              "Yes, flights may face hotter, stormier skies in the future.",
+              "No, cold air is not mentioned as a main effect of climate change here."
+            ]
+          },
+          {
+            "question": "What does 'delays' mean for flights?",
+            "options": [
+              "Flying very fast",
+              "Leaving later than planned",
+              "Arriving earlier than planned"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, delays mean slower or later, not faster.",
+              "Yes, delays mean the flight departs or arrives behind schedule.",
+              "No, arriving earlier is the opposite of a delay."
+            ]
+          },
+          {
+            "question": "What is 'disruption' in air travel?",
+            "options": [
+              "An easy flight",
+              "A problem that stops normal travel",
+              "A new plane"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, disruption usually means difficulty, not ease.",
+              "Yes, disruption is an event that interrupts the normal flow of travel.",
+              "No, a new plane is not the definition of disruption."
+            ]
+          },
+          {
+            "question": "What will happen more often with flights due to climate change?",
+            "options": [
+              "Fewer problems",
+              "More disruption",
+              "Cheaper tickets"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the news suggests more problems, not fewer.",
+              "Yes, the article indicates that disruption will become more frequent.",
+              "No, ticket prices are not discussed in relation to climate change effects on flights."
+            ]
+          },
+          {
+            "question": "When we use 'might' or 'could', what does it tell us about an event?",
+            "options": [
+              "It will definitely happen",
+              "It is possible but not certain",
+              "It already happened"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'might' and 'could' suggest possibility, not certainty.",
+              "Yes, these words mean something is possible in the future.",
+              "No, these words talk about future possibilities, not past events."
+            ]
+          },
+          {
+            "question": "Which sentence uses 'could' to talk about a future possibility?",
+            "options": [
+              "Air travel is important for many people.",
+              "This could make flights face hotter, stormier skies.",
+              "The effects are getting stronger."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, this sentence describes a present fact, not a future possibility.",
+              "Yes, 'could make' shows a possible future outcome for flights.",
+              "No, this sentence talks about something happening now, not a future possibility."
+            ]
+          },
+          {
+            "question": "According to the news, what might passengers have to accept?",
+            "options": [
+              "Faster flights",
+              "More disruption",
+              "New travel rules"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the article does not mention faster flights.",
+              "Yes, passengers might need to accept more frequent disruptions to air travel.",
+              "No, new travel rules are not the main point of acceptance here."
+            ]
+          },
+          {
+            "question": "Why could flying become more difficult for everyone?",
+            "options": [
+              "Because planes are getting old",
+              "Because of stronger climate change effects",
+              "Because people don't want to fly"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the article does not mention old planes as the reason.",
+              "Yes, intensifying climate change effects are making flying harder.",
+              "No, passenger desire to fly is not cited as a reason for difficulty."
+            ]
+          },
+          {
+            "question": "What is 'Air travel'?",
+            "options": [
+              "Driving a car",
+              "Traveling by ship",
+              "Flying in airplanes"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, air travel is not about cars.",
+              "No, air travel is not about ships.",
+              "Yes, air travel specifically refers to journeys made by plane."
+            ]
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "prediction": "Before reading, what kinds of problems do you think climate change could cause for air travel?",
+        "discussion": [
+          "Explain in your own words why passengers might need to accept more disruption in air travel, according to the news brief.",
+          "Have you ever experienced a flight delay or diversion? How did it affect your plans, and what do you think airlines can do to improve the passenger experience during these events?"
+        ],
+        "title": "Climate Change and Air Travel: Expecting More Disruption",
+        "overview": "Aviation is predicted to face increased challenges like delays and diversions due to intensifying climate change effects.",
+        "topic": "Environmental Impacts on Air Travel",
+        "news_brief_sentences": [
+          "The effects of climate change are becoming more apparent globally.",
+          "This has significant implications for the **aviation** industry, which deals with air travel.",
+          "Experts predict that flights will increasingly face hotter, stormier skies.",
+          "Such challenging weather conditions are likely to lead to more frequent operational issues.",
+          "Indeed, **passengers might have to accept more disruption** to their travel plans.",
+          "This often means experiencing unexpected **delays** before takeoff or during flights.",
+          "Furthermore, flights might experience more **diversions**, meaning they land at a different airport than originally planned.",
+          "These problems are expected to become more severe as climate change continues to **intensify**.",
+          "Airlines are already looking into new strategies to manage these environmental challenges.",
+          "Ultimately, travelers must prepare for a future with less predictable air journeys."
+        ],
+        "vocabulary": [
+          {
+            "term": "aviation",
+            "part_of_speech": "noun",
+            "definition": "The activity of flying aircraft, or the industry that involves designing and flying planes."
+          },
+          {
+            "term": "disruption",
+            "part_of_speech": "noun",
+            "definition": "A disturbance or problem that interrupts an event, activity, or process, causing it to stop or not continue as usual."
+          },
+          {
+            "term": "delays",
+            "part_of_speech": "noun (plural)",
+            "definition": "Situations in which something happens later than planned or expected, causing a wait or hold-up."
+          },
+          {
+            "term": "diversions",
+            "part_of_speech": "noun (plural)",
+            "definition": "Changes in the planned route of a flight, often to an alternative airport due to unexpected circumstances."
+          },
+          {
+            "term": "intensify",
+            "part_of_speech": "verb",
+            "definition": "To become stronger, more extreme, or more concentrated, or to make something stronger or more extreme."
+          }
+        ],
+        "grammar": {
+          "concept": "Modals of Obligation: 'might have to'",
+          "explanation": "The modal phrase 'might have to' is used to express a possible future obligation or necessity. It suggests that something will probably be necessary due to external circumstances, but it is not a definite or certain requirement. It indicates a less strong or less certain obligation compared to 'must' or 'have to'.",
+          "example_quote": "passengers might have to accept more disruption"
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "New airplane designs",
+              "The impact of climate change on air travel",
+              "How to book cheaper flights"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The news brief focuses on environmental impacts, not aircraft design.",
+              "That's right! The brief discusses how climate change affects the aviation industry.",
+              "This is incorrect. The news brief does not provide information about booking cheaper flights."
+            ]
+          },
+          {
+            "question": "According to the brief, what is making skies 'hotter, stormier'?",
+            "options": [
+              "Increased air traffic",
+              "New flying routes",
+              "The effects of climate change"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. The brief links changing weather to climate change, not air traffic.",
+              "This is incorrect. New routes are not mentioned as the cause of weather changes.",
+              "Exactly! The brief states that climate change is causing these more challenging weather conditions."
+            ]
+          },
+          {
+            "question": "What does the term 'aviation' refer to in the context of the news brief?",
+            "options": [
+              "The study of birds",
+              "The industry of air travel and flying aircraft",
+              "The design of airports"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'Aviation' is specifically about aircraft and air travel, not birds.",
+              "That's correct! Aviation refers to the entire industry related to air travel and flying.",
+              "This is incorrect. While related, aviation is broader than just airport design; it includes the act of flying itself."
+            ]
+          },
+          {
+            "question": "What kind of problem is 'disruption' as described in the article?",
+            "options": [
+              "A planned change",
+              "A smooth process",
+              "A disturbance that interrupts an activity"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. Disruption refers to an unexpected problem, not a planned change.",
+              "This is incorrect. Disruption means the opposite of a smooth process.",
+              "Precisely! Disruption is a problem or disturbance that stops or interrupts a normal activity or process."
+            ]
+          },
+          {
+            "question": "What does the news brief suggest passengers might have to 'accept more' of?",
+            "options": [
+              "Faster flights",
+              "New airport services",
+              "Disruption to their travel plans"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. The brief suggests more problems, not faster travel.",
+              "This is incorrect. New services are not the focus of what passengers must accept more of.",
+              "That's right! The article states passengers might have to accept more disruption, like delays and diversions."
+            ]
+          },
+          {
+            "question": "What is the definition of 'diversions' in air travel?",
+            "options": [
+              "Entertaining activities on board",
+              "Changes in the planned flight route to another airport",
+              "Special food options during the flight"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. While 'diversions' can mean entertainment in other contexts, in air travel it refers to route changes.",
+              "Correct! Diversions mean a flight has to land at a different airport than originally intended.",
+              "This is incorrect. 'Diversions' in aviation specifically relates to a change in the flight's destination, not meal services."
+            ]
+          },
+          {
+            "question": "Which sentence from the news brief uses the grammar concept 'might have to'?",
+            "options": [
+              "The effects of climate change are becoming more apparent globally.",
+              "Indeed, passengers might have to accept more disruption to their travel plans.",
+              "Airlines are already looking into new strategies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses the present continuous, not 'might have to'.",
+              "Yes, this is the correct sentence, using 'might have to' to express a future possibility of necessity.",
+              "This sentence uses the present continuous, not 'might have to'."
+            ]
+          },
+          {
+            "question": "What does 'intensify' mean regarding climate change effects?",
+            "options": [
+              "To become less noticeable",
+              "To stop completely",
+              "To become stronger or more extreme"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. 'Intensify' means the opposite of becoming less noticeable.",
+              "This is incorrect. 'Intensify' means to increase, not to stop.",
+              "That's right! When climate change effects intensify, they become more severe and powerful."
+            ]
+          },
+          {
+            "question": "According to the brief, what are airlines doing in response to these challenges?",
+            "options": [
+              "Ignoring the problems",
+              "Looking into new strategies to manage them",
+              "Reducing the number of flights"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. The brief states airlines are actively seeking solutions.",
+              "Exactly! Airlines are exploring new strategies to cope with environmental challenges.",
+              "This is incorrect. The brief mentions managing challenges, not necessarily reducing flights overall."
+            ]
+          },
+          {
+            "question": "What does 'might have to' convey about the obligation of passengers to accept disruption?",
+            "options": [
+              "It is a definite, certain obligation.",
+              "It is a possible or probable future necessity.",
+              "It is an option, not an obligation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is incorrect. 'Might' softens the obligation, making it less definite than 'must' or 'have to'.",
+              "Correct! 'Might have to' indicates a future obligation that is possible or probable, but not absolutely certain.",
+              "This is incorrect. While it expresses possibility, 'have to' still implies a necessity or obligation, not just an option."
+            ]
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "prediction": "Before reading, consider: How might intensified weather conditions directly impact the operational strategies and economic viability of airlines worldwide?",
+        "discussion": [
+          "Explain how the aviation industry's approach to operational resilience might need to adapt in response to increasingly unpredictable weather events.",
+          "What personal measures, if any, do you currently take or would consider taking to mitigate potential travel disruptions caused by extreme weather?"
+        ],
+        "title": "Aviation Grapples with Climate Change: The Era of Increased Disruption",
+        "overview": "The aviation industry is poised to encounter escalating operational challenges, including more frequent delays and diversions, as the profound impacts of global climate change lead to increasingly volatile weather patterns.",
+        "topic": "Climate Change Impact on Aviation",
+        "news_brief_sentences": [
+          "The global aviation sector faces an increasingly volatile future due to the escalating effects of climate change.",
+          "Forecasts indicate a rise in hotter, stormier skies, presenting significant operational challenges for air travel.",
+          "Airlines will need to contend with more frequent and severe weather phenomena, ranging from intense heatwaves to powerful storms.",
+          "Consequently, passengers may have to increasingly accept more widespread delays, diversions, and even cancellations.",
+          "The repercussions extend beyond mere inconvenience, potentially impacting airline profitability and operational efficiency.",
+          "Mitigating these adverse conditions requires substantial investment in infrastructure and adaptive strategies across the industry.",
+          "It is becoming paramount for the sector to develop robust resilience plans and innovative technologies to cope with meteorological shifts.",
+          "Aviation stakeholders are urged to collaborate on sustainable solutions to lessen its environmental footprint and adapt effectively.",
+          "Ultimately, adapting to these unprecedented meteorological shifts is an imperative for ensuring future air travel reliability.",
+          "This evolving climate reality necessitates a proactive rather than reactive stance from all involved parties to maintain safe and efficient operations."
+        ],
+        "vocabulary": [
+          {
+            "term": "increasingly accept",
+            "part_of_speech": "verb phrase",
+            "definition": "To gradually come to terms with or agree to something that may be undesirable or unavoidable, signifying a growing trend of acceptance."
+          },
+          {
+            "term": "contend with",
+            "part_of_speech": "verb phrase",
+            "definition": "To deal with a difficult situation or problem; to struggle to overcome a challenge or adversity."
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "noun",
+            "definition": "Unintended and unwelcome consequences of an event or action, often felt over a prolonged period and across various domains."
+          },
+          {
+            "term": "adverse conditions",
+            "part_of_speech": "noun phrase",
+            "definition": "Unfavorable or harmful circumstances or environmental factors that create difficulties or hinder progress."
+          },
+          {
+            "term": "paramount",
+            "part_of_speech": "adjective",
+            "definition": "More important than anything else; of supreme importance or concern."
+          }
+        ],
+        "grammar": {
+          "concept": "Adverbs Modifying Verb Phrases",
+          "explanation": "Adverbs often modify single verbs, but they can also modify entire verb phrases, providing extra detail about how the action is performed or its degree. In advanced English, placing adverbs like 'increasingly' before the main verb in a verb phrase (e.g., 'may have to increasingly accept') emphasizes the progressive nature or growing intensity of the action, adding a nuanced layer of meaning about change over time.",
+          "example_quote": "Consequently, passengers may have to increasingly accept more widespread delays, diversions, and even cancellations."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary factor driving the challenges faced by the aviation sector?",
+            "options": [
+              "Economic downturns affecting travel demand",
+              "The escalating effects of climate change",
+              "Outdated aircraft technology requiring upgrades"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While economic factors can influence aviation, the brief specifically highlights climate change as the main challenge.",
+              "Correct. The news brief explicitly states 'the escalating effects of climate change' as the core issue for aviation.",
+              "Aircraft technology is not mentioned as the primary driver of current challenges in the provided brief."
+            ]
+          },
+          {
+            "question": "What does the phrase 'hotter, stormier skies' in the news brief primarily signify for aviation?",
+            "options": [
+              "A forecast of reduced air travel demand due to discomfort",
+              "An increase in severe and frequent weather phenomena",
+              "A shift towards more unpredictable flight paths and altitudes"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase describes meteorological changes, not directly passenger comfort or demand.",
+              "Precisely. It indicates a rise in intense heatwaves and powerful storms, leading to operational difficulties.",
+              "While flight paths might be affected, the phrase itself directly refers to the nature of the weather conditions."
+            ]
+          },
+          {
+            "question": "According to the brief, what might passengers 'increasingly accept' as climate change intensifies?",
+            "options": [
+              "Higher ticket prices for sustainable travel options",
+              "More widespread delays, diversions, and cancellations",
+              "Stricter baggage restrictions to reduce carbon footprint"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Higher ticket prices are not mentioned as something passengers must increasingly accept in this context.",
+              "Correct. The brief explicitly states passengers 'may have to increasingly accept more widespread delays, diversions, and even cancellations.'",
+              "Baggage restrictions are unrelated to the disruptions caused by 'hotter, stormier skies' as discussed."
+            ]
+          },
+          {
+            "question": "Which of the following best defines 'contend with' as used in the news brief?",
+            "options": [
+              "To negotiate favorable terms with",
+              "To deal with a difficult situation or problem",
+              "To compete against successfully"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While 'negotiate' involves interaction, 'contend with' implies facing a challenge, not necessarily a negotiation.",
+              "Correct. 'Contend with' means to face and deal with something challenging, like severe weather phenomena.",
+              "This definition implies direct competition, which isn't the primary meaning in the context of facing weather."
+            ]
+          },
+          {
+            "question": "What are the 'repercussions' mentioned in the text that extend beyond mere inconvenience?",
+            "options": [
+              "Increased carbon emissions from diverted flights",
+              "Impacts on airline profitability and operational efficiency",
+              "A decline in public interest in air travel"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While possible, increased carbon emissions are not specified as the primary 'repercussions' beyond inconvenience.",
+              "Correct. The brief states these 'repercussions' include 'impacting airline profitability and operational efficiency.'",
+              "A decline in public interest is not directly stated as a repercussion, although it could be an indirect effect."
+            ]
+          },
+          {
+            "question": "Why is it becoming 'paramount' for the aviation sector to develop robust resilience plans?",
+            "options": [
+              "To satisfy stricter international travel regulations",
+              "To ensure future air travel reliability amidst meteorological shifts",
+              "To gain a competitive edge over rival airlines"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While regulations exist, the paramount importance is linked to reliability concerning meteorological shifts.",
+              "Correct. The brief explicitly states it is 'paramount for ensuring future air travel reliability' given the evolving climate.",
+              "While a competitive edge might be a byproduct, the fundamental reason for developing resilience is reliability, not competition."
+            ]
+          },
+          {
+            "question": "What type of stance is necessitated from all involved parties by the evolving climate reality?",
+            "options": [
+              "A cautious and conservative financial stance",
+              "A proactive rather than reactive stance",
+              "A collaborative and research-oriented stance"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The brief does not specify a financial stance, but rather an operational and strategic one.",
+              "Correct. The brief concludes that this reality 'necessitates a proactive rather than reactive stance.'",
+              "While collaboration and research are part of solutions, the core stance described is proactive rather than reactive."
+            ]
+          },
+          {
+            "question": "In the sentence 'passengers may have to increasingly accept more widespread delays...', what does the adverb 'increasingly' emphasize?",
+            "options": [
+              "The current high frequency of delays",
+              "The growing intensity or progressive nature of the acceptance",
+              "The reluctance of passengers to accept disruptions"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "It refers to a future trend, not necessarily the current frequency.",
+              "Correct. 'Increasingly' modifies the verb phrase 'have to accept,' highlighting that this acceptance will grow over time.",
+              "The adverb 'increasingly' describes the trend of acceptance, not the passenger's reluctance."
+            ]
+          },
+          {
+            "question": "What are 'adverse conditions' specifically mentioned as requiring substantial investment to mitigate?",
+            "options": [
+              "Economic downturns and market fluctuations",
+              "Unfavorable weather and environmental factors",
+              "Outdated aviation infrastructure and technology"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Economic conditions are not the 'adverse conditions' the brief refers to in the context of mitigation.",
+              "Correct. The brief discusses mitigating 'these adverse conditions' in the context of hotter, stormier skies and weather phenomena.",
+              "While infrastructure might need updates, the 'adverse conditions' themselves relate to the weather, not the infrastructure's age."
+            ]
+          },
+          {
+            "question": "Beyond inconvenience, what broader impact do intensifying climate effects have on the aviation industry?",
+            "options": [
+              "A decrease in regulatory oversight",
+              "Increased demand for longer-haul flights",
+              "Potential impact on airline profitability and operational efficiency"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The brief does not suggest a decrease in regulatory oversight; in fact, regulation might increase.",
+              "The brief does not mention an increased demand for longer-haul flights. Instead, it focuses on disruptions.",
+              "Correct. The brief states that the repercussions 'potentially impacting airline profitability and operational efficiency.'"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

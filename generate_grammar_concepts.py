@@ -129,7 +129,7 @@ def build_ssl_context() -> ssl.SSLContext:
     try:
         import certifi
     except ImportError:
-        return ssl._create_unverified_context()
+        return ssl.create_default_context()
     return ssl.create_default_context(cafile=certifi.where())
 
 
@@ -1880,29 +1880,9 @@ def load_entries() -> list[ConceptEntry]:
     return entries
 
 
-def main() -> None:
-    from editorial import decorate_page
-    entries = load_entries()
-    DETAIL_DIR.mkdir(exist_ok=True)
-    ASSET_DIR.mkdir(parents=True, exist_ok=True)
-
-    for entry in entries:
-        download_image(entry.image_url, ASSET_DIR / entry.image_name)
-
-    for index, entry in enumerate(entries):
-        previous_entry = entries[index - 1] if index > 0 else None
-        next_entry = entries[index + 1] if index + 1 < len(entries) else None
-        (DETAIL_DIR / entry.slug).write_text(
-            render_detail_page(entry, previous_entry, next_entry),
-            encoding="utf-8",
-        )
-        decorate_page(DETAIL_DIR / entry.slug)
-
-    (ROOT / "grammar-concepts.html").write_text(
-        render_index_page(entries),
-        encoding="utf-8",
-    )
-    decorate_page(ROOT / "grammar-concepts.html")
+def main():
+    from grammar_curriculum import build_pages
+    build_pages()
 
 
 if __name__ == "__main__":

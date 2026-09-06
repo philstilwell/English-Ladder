@@ -60,7 +60,7 @@ class EditorialTests(unittest.TestCase):
                 url = urlparse(ref)
                 if not ref or url.scheme or url.netloc:
                     continue
-                target = (path.parent / unquote(url.path)).resolve() if url.path else path
+                target = ((ROOT / unquote(url.path).lstrip("/")) if url.path.startswith("/") else (path.parent / unquote(url.path))).resolve() if url.path else path
                 if not target.exists():
                     failures.append(f"{path.relative_to(ROOT)}: {ref}")
                 elif url.fragment and target in parsed and not parsed[target].find(id=unquote(url.fragment)):

@@ -267,7 +267,7 @@ h1, h2, h3 { text-wrap: pretty; }
 .learning-flow button { font-weight: 600; }
 .learning-flow button[aria-current="step"] { background: #fff; color: var(--accent-strong); box-shadow: 0 1px 4px #202d4514; }
 .prediction { border-radius: 0 8px 8px 0; }
-.stage-actions > .primary-button:first-child:not(:last-child) { background: #fff; border-color: var(--border); color: var(--accent-strong); }
+
 button:disabled { cursor: default; opacity: .7; }
 input, textarea, select { accent-color: var(--accent); }
 /* Keep flexible children and long study labels inside narrow screens. */

@@ -1,0 +1,64 @@
+/* Shared controls and readable teaching layouts. English Ladder keeps cobalt. */
+:root { --learning-blue:#2445eb; --learning-ink:#172432; --learning-line:#d4dce5; }
+[hidden] { display:none !important; }
+html { scroll-padding-top:24px; }
+.site-footer { flex-wrap:wrap; gap:16px 24px; }
+.site-header,.site-links,.stage-actions,.grammar-page-links { min-width:0; flex-wrap:wrap; }
+main,section,article,aside,fieldset,.work-hero>*,.grammar-hero>* { min-width:0; }
+h1,h2,h3,.work-hero h1,.grammar-hero h1 { overflow-wrap:anywhere; }
+button,input,select,textarea { max-width:100%; }
+textarea { box-sizing:border-box; display:block; width:100%; padding:14px; margin:8px 0 18px; font:inherit; line-height:1.6; color:var(--learning-ink); background:#fff; border:1px solid #8996a6; border-radius:8px; }
+button,a,input,textarea,select,summary { scroll-margin:30px; }
+:focus-visible { outline:3px solid #2445eb; outline-offset:4px; }
+.secondary-button { display:inline-flex; align-items:center; justify-content:center; min-height:44px; box-sizing:border-box; border:1px solid #8996a6; border-radius:8px; background:#fff; color:#243649; padding:11px 18px; font:inherit; font-weight:650; line-height:1.4; text-decoration:none; cursor:pointer; }
+.primary-button { min-height:44px; border-radius:8px; }
+.stage-actions { justify-content:flex-start; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0; align-items:center; }
+.reading-width { max-width:760px; margin:36px auto; }
+.muted,.archive-notice { color:#536273; font-size:.9rem; }
+.archive-notice { max-width:75ch; border-left:3px solid #a3afc0; padding:10px 16px; }
+.breadcrumb { display:flex; flex-wrap:wrap; gap:18px; padding:22px 0 0; font-size:.85rem; }
+.curriculum-page .page-hero { max-width:100%; padding-bottom:22px; }
+.curriculum-page .page-hero h1 { max-width:1000px; font-size:clamp(2.25rem,5vw,4.4rem); }
+.curriculum-page .page-hero>p:not(.eyebrow) { max-width:72ch; }
+.concept-comparisons { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:16px 0 48px; }
+.concept-comparison { border:1px solid #d4dbf6; background:#f0f3ff; border-radius:12px; padding:24px; }
+.concept-comparison .eyebrow { color:#2445c1; font-size:.74rem; letter-spacing:.07em; }
+.concept-example { font-size:clamp(1.12rem,1.9vw,1.6rem); line-height:1.45; color:#172432; font-weight:650; }
+.concept-comparison>p:last-child { font-size:.9rem; color:#43536b; }
+.concept-explanation { font-size:1.08rem; line-height:1.8; }
+.grammar-response { padding:26px 0; border-top:1px solid var(--learning-line); }
+.grammar-response h3 { font-size:1.13rem; line-height:1.6; }
+.grammar-response label,.transfer-task label { font-size:.9rem; }
+.grammar-response details,.transfer-task details,[data-learning-words] details { background:#f3f5f8; padding:16px 20px; border-radius:8px; }
+.grammar-response summary,.transfer-task summary,[data-learning-words] summary { cursor:pointer; font-weight:650; min-height:24px; }
+.transfer-task { padding:28px; box-sizing:border-box; background:#f0f3ff; border-radius:12px; }
+.library-filters { display:flex; flex-wrap:wrap; align-items:end; gap:16px; margin:20px 0; padding:22px; background:#f0f3f7; border-radius:12px; }
+.library-filters label { display:grid; gap:8px; flex:1 1 170px; font-size:.88rem; font-weight:650; }
+.library-filters label:first-child { flex-grow:2; }
+.library-filters input,.library-filters select { width:100%; box-sizing:border-box; min-height:46px; padding:10px 12px; border:1px solid #8996a6; border-radius:6px; background:#fff; font:inherit; }
+.library-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin:22px 0 56px; }
+.library-card { padding:24px; border:1px solid var(--learning-line); border-radius:12px; background:#fff; }
+.library-card h2 { font-size:1.35rem; line-height:1.35; margin:10px 0; }
+.library-card h2 a { text-decoration:none; color:#172432; }
+.library-card h2 a:hover { color:#2445eb; text-decoration:underline; }
+.library-card>p { font-size:.95rem; line-height:1.6; }
+.library-card .eyebrow,.library-category { font-size:.75rem; color:#536273; }
+.study-controls { margin:32px auto; max-width:760px; padding:18px 22px; border:1px solid #c6d0dc; border-radius:10px; font-size:.9rem; }
+.study-controls summary { cursor:pointer; min-height:26px; font-weight:650; }
+.study-controls label { display:flex; align-items:center; gap:10px; margin-top:20px; }
+.save-word { margin:7px 0 7px 10px; padding:7px 10px; min-height:36px; border:1px solid #8797c9; border-radius:6px; color:#2445c1; background:#fff; font:inherit; font-size:.75rem; cursor:pointer; }
+.information-page { line-height:1.8; margin-top:0; }
+.information-page h2 { margin-top:32px; font-size:1.5rem; }
+.news-permalink .page-hero { padding-bottom:20px; }
+.permanent-lesson-link,.next-study { display:block; margin:18px 0; }
+.work-button { border-radius:8px; }
+.work-page .work-button:not(.work-button-secondary) { background:#2445eb; }
+.work-glossary-disclosure { margin-top:30px; }
+.work-glossary-disclosure>summary { font-size:1.35rem; font-weight:650; cursor:pointer; padding:18px 0; }
+.us-life-module.english-only { grid-template-columns:minmax(0,1fr); }
+.life-unit-controls { display:flex; gap:14px; align-items:center; flex-wrap:wrap; padding:20px 0; }
+.life-unit-controls select { font:inherit; min-height:44px; width:min(100%,460px); padding:8px; }
+.life-practice { grid-column:1 / -1; padding:24px; background:#f0f3ff; border-radius:10px; }
+@media(max-width:850px) { .library-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .concept-comparisons { grid-template-columns:1fr; gap:12px; } .concept-comparison { padding:20px; } }
+@media(max-width:600px) { .library-grid { grid-template-columns:1fr; gap:14px; } .library-card { padding:20px; } .work-hero h1 { font-size:clamp(2rem,8.5vw,2.8rem); } .work-hero { grid-template-columns:minmax(0,1fr); } .stage-actions>* { max-width:100%; } .reading-width { margin:26px auto; } .transfer-task { padding:20px; } .page-hero h1 { overflow-wrap:anywhere; } }
+@media print { .study-controls,.save-word,.library-filters,.life-unit-controls { display:none; } .concept-comparisons { display:block; } .concept-comparison { break-inside:avoid; margin-bottom:12px; } }

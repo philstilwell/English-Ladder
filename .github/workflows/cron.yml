@@ -52,6 +52,10 @@ jobs:
       - name: Checkout repository
         id: checkout
         uses: actions/checkout@v6
+        with:
+          # A delayed schedule must see archives/images saved by an earlier run,
+          # not the older commit that was current when GitHub queued this job.
+          ref: ${{ github.ref_name }}
         continue-on-error: true
 
       - name: Fallback checkout
@@ -66,7 +70,7 @@ jobs:
           git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
           for attempt in 1 2 3; do
             echo "Manual checkout attempt ${attempt}..."
-            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch --no-tags --depth=1 origin "${GITHUB_SHA}" \
+            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch --no-tags --depth=1 origin "${GITHUB_REF_NAME}" \
               && git checkout --force -B "${GITHUB_REF_NAME}" FETCH_HEAD; then
               exit 0
             fi

@@ -6,7 +6,10 @@
   document.querySelectorAll('input[name="feature-level"]').forEach((input) => {
     input.addEventListener("change", () => {
       if (featureStart && ["beginner", "intermediate", "advanced"].includes(input.value)) {
-        featureStart.href = `stories/city-trees/${input.value}.html`;
+        const href = input.dataset.lessonHref;
+        if (href && /^(?:stories\/[a-z-]+\/)?(?:beginner|intermediate|advanced)\.html(?:#lesson-\d{4}-\d{2}-\d{2})?$/.test(href)) {
+          featureStart.setAttribute("href", href);
+        }
       }
     });
   });

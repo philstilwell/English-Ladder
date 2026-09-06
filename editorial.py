@@ -119,7 +119,7 @@ def decorate_page(path):
     if not soup.head or not soup.body or not soup.find("main"):
         return
     prefix = "../" * len(path.relative_to(ROOT).parent.parts)
-    if not soup.select_one('link[href$="editorial.css"]'):
+    if not soup.find("link", href=re.compile(r"(^|/)editorial\.css(?:\?|$)")):
         soup.head.append(fragment(f'<link rel="stylesheet" href="{prefix}editorial.css">').link)
     for element in soup.select(".site-header, .skip-link"):
         element.decompose()
@@ -211,39 +211,59 @@ def level_links(current, story=None):
 
 
 def build_homepage():
-    archives = sorted((ROOT / "archive/lessons").glob("*.json"), reverse=True)
-    latest = json.loads(archives[0].read_text()) if archives else None
-    news = ""
+    from daily_images import latest_lesson, image_for_lesson
+    _, latest = latest_lesson(ROOT)
+    title = "Can trees cool a city?"
+    overview = "A little shade can make a big difference. Explore how trees change the places we live."
+    eyebrow = "Nature &amp; city life · 5-minute lesson"
+    urls = {level: f"stories/city-trees/{level}.html" for level in ("beginner", "intermediate", "advanced")}
+    visual = '<figure class="feature-photo"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="A tree-filled urban park surrounded by city buildings." fetchpriority="high"><figcaption>Green space in the city. Photograph by <a href="https://unsplash.com/photos/an-aerial-view-of-a-park-with-trees-and-buildings-in-the-background-_YEJI5nZBPk">Leo_Visions / Unsplash</a>.</figcaption></figure>'
+    daily_class = ""
     if latest:
         brief = latest["levels"]["beginner"]["lesson"]
+        title, overview = brief["title"], brief["overview"]
         date = latest["release_date"]
-        links = "".join(f'<a href="{level}.html#lesson-{date}">{level.title()} →</a>' for level in ["beginner", "intermediate", "advanced"])
-        news = f'<section aria-labelledby="latest-heading"><div class="section-heading"><h2 id="latest-heading">In the news</h2><span class="text-link">{date}</span></div><article class="news-strip"><p class="eyebrow">Latest story</p><div><h3>{html.escape(brief["title"])}</h3><p>{html.escape(brief["overview"])}</p><div class="news-levels">{links}</div></div><a class="text-link" href="beginner.html">More news →</a></article></section>'
+        from datetime import date as calendar_date
+        date_label = calendar_date.fromisoformat(date).strftime("%B %d, %Y").replace(" 0", " ")
+        eyebrow = f'Latest news lesson · <time datetime="{date}">{date_label}</time>'
+        urls = {level: f'{level}.html#lesson-{date}' for level in urls}
+        daily_class = " feature-story--daily"
+        picture = image_for_lesson(latest, ROOT)
+        if picture:
+            visual = f'<figure class="feature-photo"><img src="{picture["path"]}" width="{picture["width"]}" height="{picture["height"]}" alt="{html.escape(picture["alt"], quote=True)}" fetchpriority="high"><figcaption>AI-generated illustration · Inspired by this lesson; not a news photograph.</figcaption></figure>'
+        else:
+            words = "".join(f'<li>{html.escape(str(item["term"]))}</li>' for item in brief.get("vocabulary", [])[:5] if "term" in item)
+            question = html.escape(brief.get("prediction") or "Look at the headline. What do you think you will learn?")
+            visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><p class="eyebrow">Before you read</p><h2>{question}</h2><p>Read a real story. Learn useful words. Share your ideas.</p><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
+    title, overview = html.escape(title), html.escape(overview)
     content = f'''<div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
-<section class="feature-story" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">Nature &amp; city life · 5-minute lesson</p><h1 id="feature-title">Can trees cool a city?</h1><p>A little shade can make a big difference. Explore how trees change the places we live.</p>
+<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h1 id="feature-title">{title}</h1><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
-<label class="level-option"><input type="radio" name="feature-level" value="beginner" checked><span>Beginner</span></label>
-<label class="level-option"><input type="radio" name="feature-level" value="intermediate"><span>Intermediate</span></label>
-<label class="level-option"><input type="radio" name="feature-level" value="advanced"><span>Advanced</span></label></div></fieldset>
-<a class="primary-link" id="feature-start" href="stories/city-trees/beginner.html">Start lesson <span aria-hidden="true">→</span></a><a class="level-help" href="https://englishroad.com" target="_blank" rel="noopener noreferrer">Not sure of your level? ↗</a>
-<noscript><p>Also available in <a href="stories/city-trees/intermediate.html">Intermediate</a> and <a href="stories/city-trees/advanced.html">Advanced</a> English.</p></noscript></div></div>
-<figure class="feature-photo"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="A tree-filled urban park surrounded by city buildings." fetchpriority="high"><figcaption>Green space in the city. Photograph by <a href="https://unsplash.com/photos/an-aerial-view-of-a-park-with-trees-and-buildings-in-the-background-_YEJI5nZBPk">Leo_Visions / Unsplash</a>.</figcaption></figure></section>
-{news}
+<label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>
+<label class="level-option"><input type="radio" name="feature-level" value="intermediate" data-lesson-href="{urls['intermediate']}"><span>Intermediate</span></label>
+<label class="level-option"><input type="radio" name="feature-level" value="advanced" data-lesson-href="{urls['advanced']}"><span>Advanced</span></label></div></fieldset>
+<a class="primary-link" id="feature-start" href="{urls['beginner']}">Start lesson <span aria-hidden="true">→</span></a><a class="level-help" href="https://englishroad.com" target="_blank" rel="noopener noreferrer">Not sure of your level? ↗</a>
+<noscript><p>Also available in <a href="{urls['intermediate']}">Intermediate</a> and <a href="{urls['advanced']}">Advanced</a> English.</p></noscript></div></div>
+{visual}</section>
 <section aria-labelledby="explore-heading"><div class="section-heading"><h2 id="explore-heading">English beyond the headlines</h2><span class="text-link">Everyday situations. Useful words.</span></div><div class="explore-grid">
 <a class="explore-story" href="stories/food-market/beginner.html"><img src="assets/editorial/food-market.webp" width="1000" height="692" alt="Shoppers and colorful fruit stalls at an indoor market." loading="lazy"><div><span class="eyebrow">Food &amp; conversation</span><h3>A small question. A new conversation.</h3><p>Visit a market and practice asking for what you need.</p><span class="text-link">Try the lesson →</span></div></a>
-<a class="explore-story" href="us-life.html"><span class="conversation-preview" aria-hidden="true">Hello.<br><em>Let’s talk.</em></span><div><span class="eyebrow">Everyday English</span><h3>Find your words in a new place.</h3><p>Practice the conversations that help you settle into life in the US.</p><span class="text-link">Explore everyday English →</span></div></a></div></section>
+<a class="explore-story" href="stories/city-trees/beginner.html"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="Trees surround a green urban park." loading="lazy"><div><span class="eyebrow">Nature &amp; city life</span><h3>Can trees cool a city?</h3><p>Explore how a little shade changes the places we live.</p><span class="text-link">Try the lesson →</span></div></a></div></section>
 <section class="study-paths" aria-labelledby="paths-heading"><div class="section-heading"><h2 id="paths-heading">What would you like to practice?</h2></div><div class="path-grid">
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
 <a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 visual guides to how English works.</p></a>
 <a class="path-link" href="efsp.html"><span class="path-number">03 / Work</span><h3>Speak up at work →</h3><p>Practice meetings and conversations for your job.</p></a>
 <a class="path-link" href="us-life.html"><span class="path-number">04 / Daily life</span><h3>Feel more at home →</h3><p>Useful English for getting settled in the US.</p></a></div></section>'''
-    (ROOT / "index.html").write_text(document("Discover a world of English", content, current="index.html"), encoding="utf-8")
+    page = document("Discover a world of English", content, current="index.html")
+    # A returning visitor must not run the old selector that always opened the tree story.
+    page = page.replace('src="learning.js"', 'src="learning.js?v=20260906"')
+    page = page.replace('href="editorial.css"', 'href="editorial.css?v=20260906"')
+    (ROOT / "index.html").write_text(page, encoding="utf-8")
 
 
 def build_credits():
     credits = json.loads((ROOT / "assets/editorial/credits.json").read_text())
     items = "".join(f'<li><a href="{item["source_page"]}">{html.escape(item["alt"])}</a> — {html.escape(item["creator"])}. <a href="{item["license_url"]}">{item["license"]}</a>. Resized and compressed for this site.</li>' for item in credits)
-    (ROOT / "photo-credits.html").write_text(document("Photo credits", f'<section class="page-hero"><p class="eyebrow">Behind the photographs</p><h1>Photo credits</h1><p>Real places, photographed by real people.</p></section><ul>{items}</ul>'), encoding="utf-8")
+    (ROOT / "photo-credits.html").write_text(document("Photo credits", f'<section class="page-hero"><p class="eyebrow">Behind the photographs</p><h1>Photo credits</h1><p>Photographs and illustrations used in our lessons.</p></section><section><h2>Daily news illustrations</h2><p>The featured daily image is generated with Google Gemini for that lesson and labeled as an AI-generated illustration. It illustrates the topic and does not document the reported event. Each image is saved with its generation details.</p></section><section><h2>Evergreen story photographs</h2><ul>{items}</ul></section>'), encoding="utf-8")
 
 
 def build_stories():

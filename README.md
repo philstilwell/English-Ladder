@@ -8,7 +8,7 @@ English Ladder is a self-updating ESL website that publishes a daily news lesson
 
 Each level keeps a rolling 7-day archive. Every daily run uses the same news story at three reading levels. All pages share an editorial design with warm white surfaces, charcoal text, cobalt controls, and compact level labels.
 
-The homepage features a short illustrated story, links to the latest daily news at each level, and routes into the existing study library. Two evergreen stories (city trees and a fictional market conversation) each have three distinct reading levels. These are clearly separated from current news. Photography is served locally; sources and reuse details are recorded in `assets/editorial/credits.json` and shown on `photo-credits.html`.
+Discover features the latest complete daily news lesson, its actual publication date, and a matching Gemini illustration. Its level selector links to that same dated lesson at all three levels. It never labels an older lesson as today's story or selects future-dated or incomplete archives. Two evergreen stories (city trees and a fictional market conversation) remain below the main feature, each with three reading levels. Photography and generated illustrations are served locally; their different origins are explained in `photo-credits.html`.
 
 ## Guided lessons
 
@@ -106,11 +106,14 @@ The courses provide intermediate-to-advanced language practice. Suggested B1, B2
 4. The script validates the JSON lesson data, renders safe HTML from fixed templates, and replaces any same-day lesson instead of creating duplicates.
 5. The validated structured lesson data for all three levels is written to `archive/lessons/YYYY-MM-DD.json`.
 6. Older lessons beyond the newest 7 are removed from the live lesson pages automatically.
-7. GitHub Actions commits the updated lesson pages, homepage, and JSON archive files back to the repository.
+7. `daily_images.py` requests one 4:3 conceptual illustration from `gemini-2.5-flash-image`, compresses it to WebP, and saves the image and its generation record in `assets/news/`. The record includes the prompt, model, story fingerprint, dimensions, checksum, and attempt count. The same illustration accompanies all three level choices on Discover, labeled as AI-generated and not a news photograph.
+8. GitHub Actions commits the updated lesson pages, homepage, archives, and images. Deployment verification checks Discover's headline, date, all level links, and the exact image file as well as the daily lesson pages.
 
-Push-triggered runs only rebuild existing content with `--refresh-pages`; they never call Gemini. Scheduled runs retain `--skip-existing`, and manual generation remains available. The redesign adds no paid image or audio service and makes no extra model requests per daily run.
+Push-triggered runs only rebuild existing content with `--refresh-pages`; they never call Gemini. Scheduled runs retain `--skip-existing`, and manual generation remains available. There is now one additional image request per daily story. At Google's published September 6, 2026 rate of approximately $0.039 per image, budget about $1.20 per 30 days plus small prompt charges. The maximum of three attempts per release date bounds image output charges at about $3.60 per 30 days if every attempt were billed. Text-generation costs are unchanged. See [Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-2.5-flash-image).
 
-Scheduled fallback runs use `--skip-existing`, so if the primary run already created that date's JSON archive, the fallback exits before calling Gemini and only continues through the live Pages verification.
+Scheduled fallback runs never regenerate an existing date's lesson text. They reuse its successful image without another paid call, or retry a missing/failed image once, up to three attempts total per release date. Image failures produce a workflow warning and a useful text preview on Discover, without substituting an unrelated photograph or blocking the lesson. Saved images are checked against the story and file checksum before reuse. After the attempt limit, review `assets/news/YYYY-MM-DD.json` and resolve the provider error before deliberately resetting its attempt count.
+
+To create the first daily feature image (or recover a missing latest image) without regenerating lessons, run the **Daily ESL Lesson Generator** manually with **refresh_feature** enabled. Its command is `python update_site.py --refresh-feature`; it uses the existing `GEMINI_API_KEY` repository secret. Ordinary `python editorial.py` and `npm run build` remain offline. The local checks cover archive rollover, future/incomplete archives, image reuse and failure limits, a changed story on an existing date, escaped markup, no-JavaScript links, and deployment verification.
 
 ## Local Run
 

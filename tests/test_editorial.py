@@ -49,7 +49,8 @@ class EditorialTests(unittest.TestCase):
         parsed = {path.resolve(): BeautifulSoup(path.read_text(), "html.parser") for path in paths}
         failures = []
         for path, soup in parsed.items():
-            self.assertIsNotNone(soup.select_one('link[href$="editorial.css"]'), str(path))
+            self.assertTrue(any(urlparse(link["href"]).path.endswith("editorial.css")
+                                for link in soup.select("link[href]")), str(path))
             self.assertEqual(1, len(soup.select(".site-header")), str(path))
             self.assertEqual(1, len(soup.select("#main-content")), str(path))
             ids = [tag["id"] for tag in soup.select("[id]")]

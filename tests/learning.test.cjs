@@ -20,11 +20,24 @@ function load(file, hash = "") {
 
 test("homepage level choice opens the same story at all three levels", () => {
   const dom = load("index.html");
+  const date = dom.window.document.querySelector(".feature-story time").getAttribute("datetime");
   for (const level of ["beginner", "intermediate", "advanced"]) {
     dom.window.document.querySelector(`input[value="${level}"]`).click();
-    assert.equal(dom.window.document.querySelector("#feature-start").getAttribute("href"), `stories/city-trees/${level}.html`);
+    assert.equal(dom.window.document.querySelector("#feature-start").getAttribute("href"), `${level}.html#lesson-${date}`);
   }
   dom.window.close();
+});
+
+test("feature selector uses the newly published date and rejects an external destination", () => {
+  const dom = load("index.html");
+  const input = dom.window.document.querySelector('input[value="advanced"]');
+  input.dataset.lessonHref = "advanced.html#lesson-2030-01-02";
+  input.click();
+  const link = dom.window.document.querySelector("#feature-start");
+  assert.equal(link.getAttribute("href"), "advanced.html#lesson-2030-01-02");
+  input.dataset.lessonHref = "https://example.com/";
+  input.dispatchEvent(new dom.window.Event("change"));
+  assert.equal(link.getAttribute("href"), "advanced.html#lesson-2030-01-02");
 });
 
 for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["city-trees", "food-market"].flatMap(story => ["beginner", "intermediate", "advanced"].map(level => `stories/${story}/${level}.html`))]) {

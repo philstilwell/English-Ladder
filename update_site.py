@@ -1076,6 +1076,10 @@ def refresh_existing_pages():
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
+        "--refresh-feature", action="store_true",
+        help="Create a missing image for the latest published lesson and rebuild Discover; do not generate lesson text.",
+    )
+    parser.add_argument(
         "--refresh-pages",
         "--refresh-summaries",
         dest="refresh_pages",
@@ -1099,6 +1103,14 @@ def parse_args():
 
 def main():
     args = parse_args()
+    if args.refresh_feature:
+        from daily_images import latest_lesson, ensure_daily_image
+        archive_path, _ = latest_lesson()
+        if archive_path:
+            ensure_daily_image(archive_path)
+        from editorial import publish_editorial_pages
+        publish_editorial_pages()
+        return
     if args.refresh_pages:
         refresh_existing_pages()
         from editorial import publish_editorial_pages
@@ -1113,7 +1125,11 @@ def main():
 
     if args.skip_existing and archive_exists_for_release_dt(release_dt):
         archive_path = archive_path_for_release_dt(release_dt)
-        print(f"Archive {archive_path} already exists; skipping lesson generation.")
+        print(f"Archive {archive_path} already exists; checking its illustration without regenerating lessons.")
+        from daily_images import ensure_daily_image
+        ensure_daily_image(archive_path)
+        from editorial import publish_editorial_pages
+        publish_editorial_pages()
         return
 
     print("Fetching news...")
@@ -1131,6 +1147,8 @@ def main():
 
         archive_path = archive_daily_lessons(news_item, level_lessons, release_dt)
         print(f"Archived generated lesson JSON to {archive_path}.")
+        from daily_images import ensure_daily_image
+        ensure_daily_image(archive_path)
         from editorial import publish_editorial_pages
         publish_editorial_pages()
     finally:

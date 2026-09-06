@@ -152,12 +152,23 @@ To normalize existing lesson markup without calling Gemini:
 python3 update_site.py --refresh-pages
 ```
 
-## Deployment Notes
+## Hosting and publishing
 
-- `CNAME`
-  Points the site to `englishladder.com`.
+Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains the registrar, GitHub stores the source, and the existing daily GitHub Actions schedule continues to create lessons. Static hosting adds $0/month at the current scale; existing Gemini generation and domain renewals remain separate.
 
-The hub page remains the root entry point, and the three lesson pages stay linked from there.
+Cloudflare's existing GitHub integration builds the `main` branch. `wrangler.jsonc` runs JavaScript and site/search checks, then `cloudflare/build.cjs` copies only public assets into ignored `.cf-site/`. Every HTML/CSS local reference is checked against the upload. Python sources, project notes, credentials, tests, and dependencies are excluded. All current `.html`, PDF, image, prompt-text, sitemap, and lesson-data addresses are preserved.
+
+The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Bot commits intentionally omit `[skip ci]` so Cloudflare receives them; GitHub's own `GITHUB_TOKEN` prevents recursive GitHub Actions runs. The final job waits for the complete deployed file manifest, then verifies every public file byte for byte on both the Cloudflare preview and the main domain. A manual `deploy_only` run checks publishing without generating paid content.
+
+```sh
+node cloudflare/build.cjs
+node cloudflare/verify.cjs https://englishladder.philstilwell.workers.dev
+node cloudflare/verify.cjs https://englishladder.com
+```
+
+Preview addresses carry `X-Robots-Tag: noindex, nofollow`. The public domain keeps its authored indexing policy. Missing pages return a real 404; browser caches revalidate files so lessons and scripts stay current. Learner progress stays in the same browser storage on the same public domain. `deployment.json` lists only the deployed source revision and public-file fingerprints.
+
+Cloudflare retains previous Worker versions for rollback. Keep the existing GitHub Pages deployment available during domain migration; the previous Namecheap DNS points to GitHub's four apex A addresses (`185.199.108.153` through `185.199.111.153`) and `www` points to `philstilwell.github.io`. Check the intended origin before restoring DNS.
 
 ## Reviewed grammar and site validation
 

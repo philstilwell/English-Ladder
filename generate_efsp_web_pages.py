@@ -683,10 +683,14 @@ def render_directory(tracks: list[dict[str, Any]]) -> str:
 
 
 def main() -> None:
+    from editorial import decorate_page
     tracks = all_tracks()
     (ROOT / "efsp.html").write_text(render_directory(tracks))
+    decorate_page(ROOT / "efsp.html")
     for track in tracks:
-        (ROOT / f"efsp-{track['slug']}.html").write_text(render_industry_page(track, tracks))
+        page_path = ROOT / f"efsp-{track['slug']}.html"
+        page_path.write_text(render_industry_page(track, tracks))
+        decorate_page(page_path)
     print(f"Generated {len(tracks)} EFSP industry pages plus efsp.html")
 
 

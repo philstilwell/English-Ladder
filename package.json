@@ -7,8 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "check:js": "node --check tools.js",
-    "test": "python3 -m unittest discover -s tests"
+    "build": "python3 editorial.py",
+    "check:js": "node --check app.js && node --check learning.js && node --check tools.js && node --check us-life.js",
+    "test": "python3 -m unittest discover -s tests && node --test tests/learning.test.cjs"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/philstilwell/English-Ladder#readme",
   "devDependencies": {
+    "jsdom": "^26.1.0",
     "playwright": "^1.60.0"
   }
 }

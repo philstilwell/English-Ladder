@@ -1881,6 +1881,7 @@ def load_entries() -> list[ConceptEntry]:
 
 
 def main() -> None:
+    from editorial import decorate_page
     entries = load_entries()
     DETAIL_DIR.mkdir(exist_ok=True)
     ASSET_DIR.mkdir(parents=True, exist_ok=True)
@@ -1895,11 +1896,13 @@ def main() -> None:
             render_detail_page(entry, previous_entry, next_entry),
             encoding="utf-8",
         )
+        decorate_page(DETAIL_DIR / entry.slug)
 
     (ROOT / "grammar-concepts.html").write_text(
         render_index_page(entries),
         encoding="utf-8",
     )
+    decorate_page(ROOT / "grammar-concepts.html")
 
 
 if __name__ == "__main__":

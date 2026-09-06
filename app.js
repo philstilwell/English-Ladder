@@ -10,7 +10,7 @@ function checkAnswer(btn) {
     btn.setAttribute("aria-pressed", "true");
     const feedbackDiv = optionsContainer.nextElementSibling;
     feedbackDiv.textContent = sanitizeFeedback(btn.dataset.feedback || "");
-    feedbackDiv.style.color = btn.dataset.color;
+    feedbackDiv.style.color = btn.dataset.bg === "#e6ffe6" ? "#1c5b36" : "#9c2525";
 }
 
 function sanitizeFeedback(feedback) {

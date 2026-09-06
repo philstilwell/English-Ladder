@@ -12,6 +12,11 @@ on:
       - 'styles.css'
       - 'app.js'
       - 'index.html'
+      - 'editorial.py'
+      - 'editorial.css'
+      - 'learning.js'
+      - 'story_lessons.py'
+      - 'assets/editorial/**'
   schedule:
     # Primary daily run at 10:00 UTC, with later no-op fallbacks if the
     # GitHub-hosted runner pool fails before the job starts.
@@ -73,6 +78,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set up Node for interaction checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Check learning interactions
+        run: |
+          npm ci --ignore-scripts
+          npm run check:js
+          node --test tests/learning.test.cjs
+
       - name: Run checks
         run: |
           python -m py_compile update_site.py
@@ -83,7 +100,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
           SKIP_EXISTING: ${{ github.event_name == 'schedule' && '1' || '' }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
+          if [ "${EVENT_NAME}" = "push" ]; then
+            python update_site.py --refresh-pages
+            exit 0
+          fi
           args=()
           if [ -n "${RELEASE_DATE}" ]; then
             args+=(--release-date "${RELEASE_DATE}")
@@ -100,7 +122,7 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           lesson_snapshot="$(mktemp -d)"
-          cp beginner.html intermediate.html advanced.html "${lesson_snapshot}/"
+          cp beginner.html intermediate.html advanced.html index.html "${lesson_snapshot}/"
           if [ -d archive ]; then
             mkdir -p "${lesson_snapshot}/archive"
             cp -R archive/. "${lesson_snapshot}/archive/"
@@ -113,12 +135,13 @@ jobs:
             cp "${lesson_snapshot}/beginner.html" beginner.html
             cp "${lesson_snapshot}/intermediate.html" intermediate.html
             cp "${lesson_snapshot}/advanced.html" advanced.html
+            cp "${lesson_snapshot}/index.html" index.html
             if [ -d "${lesson_snapshot}/archive" ]; then
               mkdir -p archive
               cp -R "${lesson_snapshot}/archive/." archive/
             fi
 
-            git add beginner.html intermediate.html advanced.html archive
+            git add beginner.html intermediate.html advanced.html index.html archive
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

@@ -1,6 +1,7 @@
 """Editorial search copy and useful subject groupings, maintained with the lessons."""
 
 PAGES = {
+    'ai-practice.html': ('Copy-and-Paste AI Prompts for English Practice', 'Copy complete AI prompts for English vocabulary, grammar, reading, workplace dialogues and everyday conversation. Every prompt includes the learning material.'),
     'index.html': ('Free English Lessons, Grammar & Workplace English', 'Learn English with free news lessons at three levels, 44 grammar guides, workplace dialogues, printable PDFs and practical everyday conversation activities.'),
     'efsp.html': ('English for Work: 41 Free Professional English Courses', 'Choose from 41 professional English courses with 328 workplace lessons, 368 dialogues, vocabulary, AI practice prompts and 164 free printable guides.'),
     'grammar-concepts.html': ('English Grammar Practice: 44 Lessons & Free PDFs', 'Study 44 English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'),

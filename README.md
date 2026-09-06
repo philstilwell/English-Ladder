@@ -119,6 +119,18 @@ Queued runs fetch the latest branch at startup so they see archives and images s
 
 To create the first daily feature image (or recover a missing latest image) without regenerating lessons, run the **Daily ESL Lesson Generator** manually with **refresh_feature** enabled. Its command is `python update_site.py --refresh-feature`; it uses the existing `GEMINI_API_KEY` repository secret. Ordinary `python editorial.py` and `npm run build` remain offline. The local checks cover archive rollover, future/incomplete archives, image reuse and failure limits, a changed story on an existing date, escaped markup, no-JavaScript links, and deployment verification.
 
+## Optional AI practice extensions
+
+`ai-practice.html` explains how to use the prompt extensions available throughout the curriculum. Each grammar lesson, workplace case and glossary, daily or evergreen reading, everyday-life unit, and study tool includes copyable prompts. My learning also provides a retrieval-practice starter. The 252 grammar and workplace PDF guides include complete prompts matched to their teaching purpose and direct links to the corresponding web extensions.
+
+`ai_extensions.py` contains the authored teaching instructions and builds the prompts from the published lesson context. It runs locally without calling an AI service. `site_quality.py` applies these extensions during publication, including scheduled daily lessons. Rebuilding replaces old prompt blocks rather than retaining outdated context. `ai-practice.js` copies the selected visible prompt and offers manual text selection if clipboard access fails; it never reads drafts, recordings, saved answers, or account information.
+
+The grammar and general-study prompts specify one question at a time, three answer choices, feedback tied to the selected option, retry handling, and a short transfer activity. The workplace chooser also supports original conversations, writing feedback, complete new scripts, and classroom adaptations. Vocabulary practice includes natural word partnerships and contextual contrasts. Dialogue practice branches from the learner's choices. Reading practice separates evidence, inference, missing information, and clearly labeled fictional extensions. Workplace prompts preserve case facts and remain language practice. Pronunciation prompts do not pretend to assess audio they have not heard. Teacher prompts produce classroom materials with separate answer keys.
+
+AI responses still depend on the student's chosen service. The site does not claim that a prompt guarantees accuracy, diagnose a certified level, upload learner work, or require an AI account to use the curriculum. Students can inspect the complete text before copying it and use the regular lessons without these optional extensions.
+
+When changing the prompt source, rebuild the web pages and both PDF collections. The workplace PDF manifest records the workplace prompt source checksum. Run the regular tests and the document audit; the AI extension tests cover curriculum-wide placement, lesson context, fresh daily publishing, repeatable builds, exclusion of private writing, exact copied text, and clipboard fallback.
+
 ## Local Run
 
 Set your Gemini API key, then run:
@@ -174,3 +186,11 @@ The practice text tools provide contextual suggestions and edited sample compari
 All 44 grammar lessons now use four multiple-choice activities each (176 in total). Every option has its own explanation; selecting an incorrect option cannot display generic model feedback as if the written answer had been checked. There are no grammar text-answer fields, including in the application activity. Completion requires all four current selections to be correct. Optional browser saving restores selected options and their feedback, keyed to the question contents so an edited question cannot inherit a stale answer. Old written drafts are not used for grading.
 
 The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and saved-choice restoration.
+
+## Search publishing and complete work prompts
+
+Every indexable page has a distinct title and description, canonical address, sharing metadata, and structured data appropriate to its actual content. Six professional subject pages and `sitemap.html` provide ordinary links through the curriculum. `sitemap.xml` points to five maps covering HTML lessons and PDFs. `content/seo-index.json` preserves modification dates across unchanged rebuilds; keep it in version control.
+
+Run `python3 seo.py` to refresh search metadata and discovery pages, or use the normal editorial build. `python3 audit_seo.py` verifies metadata, structured-data references, indexing policy, category coverage, reachability, and the complete sitemap inventory. The publishing workflow runs it before saving generated pages.
+
+`python3 generate_efsp_web_pages.py` also publishes complete prompts beneath each work lesson and for every Conversation Lab dialogue. The 41 downloadable collections in `prompts/work/` contain fully assembled prompts with their actual reference material. `work_ready_prompts.py` handles this presentation without changing the shared PDF prompt source. Read the [September 6 audit and maintenance notes](docs/seo-improvements-2026-09-06.md) for scope, checks, and remaining search-performance measurements.

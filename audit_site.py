@@ -19,7 +19,13 @@ def audit():
             if not image.has_attr('alt'):failures.append(f'{path.name}: image lacks alternative text')
         for textarea in s.select('.discussion textarea'):
             if not textarea.has_attr('data-study-draft'):failures.append(f'{path.name}: lesson notes lack the shared saving control')
+        for owner in s.select('.work-module,.us-life-module,.tool-panel,.daily-lesson'):
+            if not owner.select_one('[data-ai-extension],[data-ai-preset]'):failures.append(f'{path.name}: a learning activity has no AI extension')
+        for button in s.select('[data-ai-copy-text]'):
+            prompt=s.find(id=button['data-ai-copy-text'])
+            if not prompt or not prompt.get_text(strip=True):failures.append(f'{path.name}: a copy button has no prompt text')
         if 'curriculum-page' in s.body.get('class',[]):
+            if not s.select_one('[data-ai-extension]'):failures.append(f'{path.name}: grammar AI extension missing')
             if s.select('textarea,input[type="text"],[contenteditable="true"]'):failures.append(f'{path.name}: grammar answers must be multiple choice')
             questions=s.select('[data-choice-question]')
             if len(questions)!=4:failures.append(f'{path.name}: expected four multiple-choice activities')

@@ -13,7 +13,7 @@ import re
 from datetime import date
 from functools import lru_cache
 from pathlib import Path
-from urllib.parse import urljoin, urlparse, unquote
+from urllib.parse import urlparse
 from xml.etree import ElementTree as ET
 
 from bs4 import BeautifulSoup
@@ -83,7 +83,7 @@ def profile(path, soup):
                   title='', description='', level='', teaches=[], pdfs=[], date='')
     if relative in PAGES:
         result['title'], result['description'] = PAGES[relative]
-        if relative in {'index.html', 'efsp.html', 'grammar-concepts.html', 'archive.html', 'sitemap.html', *[v+'.html' for v in LEVELS]}:
+        if relative in {'index.html', 'efsp.html', 'grammar-concepts.html', 'archive.html', 'sitemap.html', 'ai-practice.html', *[v+'.html' for v in LEVELS]}:
             result['kind'] = 'collection'
         if relative == 'about.html': result['kind'] = 'about'
         if path.stem in LEVELS: result['level'] = LEVELS[path.stem]
@@ -296,7 +296,7 @@ def enhance_page(soup, path, prefix):
     soup.head.append(script)
     if not soup.select_one('link[href*="seo.css"]'):
         soup.head.append(soup.new_tag('link',rel='stylesheet',href=prefix+'seo.css?v=20260906-seo1'))
-    for section in soup.select('section[data-ai-workshop]'): section['data-nosnippet']=''
+    for section in soup.select('section[data-ai-workshop], [data-ai-extension] .ai-extension-body'): section['data-nosnippet']=''
     add_navigation(soup,path,p)
 
 
@@ -320,7 +320,7 @@ def build_html_sitemap():
     from editorial import document,decorate_page
     def links(items):return '<ul>'+''.join(f'<li><a href="{href}">{html.escape(name)}</a></li>' for name,href in items)+'</ul>'
     body='<section class="page-hero"><p class="eyebrow">Find your next lesson</p><h1>Browse all English lessons</h1><p>Choose a subject, profession or reading level. Lessons and printable guides are free to use without an English Ladder account.</p></section>'
-    body+='<section class="seo-directory"><h2>Reading, conversation and practice</h2>'+links([(PAGES[p][0],p) for p in ['beginner.html','intermediate.html','advanced.html','archive.html','us-life.html','tools.html']])+links([('Food market: beginner reading','stories/food-market/beginner.html'),('Food market: intermediate reading','stories/food-market/intermediate.html'),('Food market: advanced reading','stories/food-market/advanced.html'),('City trees: beginner reading','stories/city-trees/beginner.html'),('City trees: intermediate reading','stories/city-trees/intermediate.html'),('City trees: advanced reading','stories/city-trees/advanced.html')])+'</section>'
+    body+='<section class="seo-directory"><h2>Reading, conversation and practice</h2>'+links([(PAGES[p][0],p) for p in ['beginner.html','intermediate.html','advanced.html','archive.html','us-life.html','tools.html','ai-practice.html']])+links([('Food market: beginner reading','stories/food-market/beginner.html'),('Food market: intermediate reading','stories/food-market/intermediate.html'),('Food market: advanced reading','stories/food-market/advanced.html'),('City trees: beginner reading','stories/city-trees/beginner.html'),('City trees: intermediate reading','stories/city-trees/intermediate.html'),('City trees: advanced reading','stories/city-trees/advanced.html')])+'</section>'
     body+='<section class="seo-directory"><h2>English grammar lessons</h2><p><a href="grammar-concepts.html">Search and filter all 44 grammar topics</a></p>'+links([(c['title'],grammar_url(n))for n,c in grammar().items()])+'</section>'
     body+='<section class="seo-directory"><h2>English for Work</h2>'
     for name,c in CATEGORIES.items():

@@ -90,7 +90,7 @@ def audit():
                     if href == seo.ORIGIN + 'index.html':
                         href = seo.ORIGIN
                     check(href == entry['item'], f'{relative}: inconsistent breadcrumb destination')
-            for section in soup.select('.finished-prompts, .finished-dialogue-library, [data-ai-workshop]'):
+            for section in soup.select('.finished-prompts, .finished-dialogue-library, [data-ai-workshop], [data-ai-extension] .ai-extension-body'):
                 check(section.has_attr('data-nosnippet'), f'{relative}: AI instructions may enter search snippets')
         except (AttributeError, KeyError, TypeError, ValueError, OSError) as error:
             failures.append(f'{relative}: {error}')

@@ -56,6 +56,18 @@ def build(c,teacher=False):
     story.extend([p('Continue learning','label'),p(f'Web lesson and related topics: englishladder.com/grammar-concepts/concept-{c["number"]:02}.html')])
     if teacher:
         story.extend([PageBreak(),h('A practical teaching sequence','teaching'),p('1. Notice (2 minutes)','label'),p('Read the comparison examples with the learners. Point out the meaning and form that distinguish each pattern.'),p('2. Choose (4 minutes)','label'),p('Learners select one option for each of the three checks. Keep the answer key covered. Use the selected option’s explanation rather than presenting a generic model as feedback.'),p('3. Apply (5 minutes)','label'),p(c['application']['prompt']),p('Learners choose the response that fits this situation. All responses in this activity are multiple choice; do not replace the choices with a written-answer task.'),p('4. Review (3 minutes)','label'),p('Compare selected options with the key. Use the option-specific notes to explain why a distractor does not fit. Let learners change their selection and try again.'),p('Scope of the answer key','label'),p('Each question has one correct option among the choices shown. This does not mean that every other way to express the idea is wrong. Preserve the qualifications in the teaching notes.'),p('Feedback criteria','label'),p('Check both grammatical form and the stated situation. A correct option answers this question; four correct choices do not certify a learner’s overall proficiency.')])
+    from ai_extensions import grammar_prompts, prompt as ai_prompt
+    extension=grammar_prompts(c)[0]
+    if teacher:
+        extension=ai_prompt('teacher',{'lesson':c['title'],'study_level':c['level'],'goal':c['goal'],'grammar_focus':c['rules'],'examples':c['cards']})
+    story.extend([PageBreak(),h('Extend this lesson with AI','ai-practice'),p('Optional: copy the complete prompt below into the AI you prefer. All learner answers remain multiple choice. AI explanations can be wrong; compare them with this lesson. Your chosen service may have its own fees and privacy rules.','small'),p('This lesson also has online prompts for fresh examples, branching dialogue, and retrieval practice.','small')])
+    url=f'https://englishladder.com/grammar-concepts/concept-{c["number"]:02}.html#ai-grammar'
+    story.append(Paragraph(f'<link href="{url}" color="#2445eb">Open this lesson\'s AI extensions</link>',styles['body']))
+    story.append(p('Copy from the next paragraph through the study material.','label'))
+    instructions,material=extension['text'].split('\n\nLESSON MATERIAL\n',1)
+    prompt_paragraph=lambda part: Paragraph(html.escape(clean(part)).replace('\n','<br/>'),styles['small'])
+    story.extend(prompt_paragraph(part) for part in instructions.split('\n\n'))
+    story.append(KeepTogether([p('LESSON MATERIAL','label'),*[prompt_paragraph(part) for part in material.split('\n\n')]]))
     folder='teachers' if teacher else 'students';name=c['pdfs'][1 if teacher else 0];path=ROOT/'pdf'/folder/name;path.parent.mkdir(parents=True,exist_ok=True)
     doc=Doc(str(path),pagesize=letter,leftMargin=54,rightMargin=54,topMargin=54,bottomMargin=54,title=c['title']+(' - Teaching guide' if teacher else ' - Learner workbook'),author='English Ladder',subject=c['goal'],initialFontName='Ladder')
     doc.build(story,onFirstPage=page,onLaterPages=page,canvasmaker=partial(Canvas,initialFontName='Ladder'))

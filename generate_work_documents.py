@@ -123,7 +123,7 @@ def decorate(canvas, doc):
     canvas.line(MARGIN, 39, PAGE_W - MARGIN, 39)
     canvas.drawImage(str(ROOT / 'assets/brand/ladder-mark.png'), MARGIN, 16, width=16, height=16, mask='auto')
     canvas.drawString(MARGIN + 23, 21, 'English Ladder  |  English for Work')
-    canvas.drawRightString(PAGE_W - MARGIN, 21, f'{REVISION}  |  {doc.page}')
+    canvas.drawRightString(PAGE_W - MARGIN, 21, f'{getattr(doc, "revision", REVISION)}  |  {doc.page}')
     canvas.restoreState()
 
 
@@ -235,19 +235,11 @@ def workbook(t):
 
 
 def conversation(t):
-    story = cover(t, 'Conversation lab', 'Use these role cards to practice a response, handle a follow-up, and repeat with a new communication challenge.')
-    story += [heading('How to use the conversation lab', 'conversation-method'),
-              p('1. Read the shared case. Spend two minutes noting the facts and your first response.'),
-              p('2. Assign roles. The responding professional uses role A; the listener uses role B. Read your own role privately before you begin.'),
-              p('3. Speak for 45-60 seconds. The listener asks a follow-up instead of simply agreeing. Continue until the meaning and next action are clear.'),
-              p('4. Reveal the model response. Identify one useful expression and compare it with your own wording.'),
-              p('5. Switch roles. Use the second-round challenge and speak again with fewer notes.'),
-              p('If you are studying alone', 'h2'), p('Speak both roles aloud. Leave a pause after the question, then answer without looking at the model. You can also write a four-turn exchange and read it back for clarity.'),
-              p('Useful conversation repair', 'h2'), *bullets(['Could you say that another way?', 'When you say that, which part do you mean?', 'Let me check that I understood correctly.', 'I need a moment to separate what is confirmed from what is still unknown.']),
-              p('Feedback', 'h2'), p('Judge whether the listener understands the situation and can identify the next action or unresolved question. Correct one meaning issue and one useful language pattern, then repeat.'), PageBreak()]
+    from work_dialogues import gallery
+    story = gallery(t)
     for m in t['modules']:
         w = m['workshop']
-        story += [p(f'CONVERSATION {m["number"]:02d}', 'kicker'), heading(m['title'], m['id']), box('Shared case', m['brief']),
+        story += [p(f'ROLE-PLAY CASE {m["number"]:02d}', 'kicker'), heading(m['title'], m['id']), box('Shared case', m['brief']),
                   p('Role A | Responding professional', 'h2'), p(w['goal'] + ' Use only the facts given. Choose two relevant terms and be ready to explain one of them in ordinary words.'),
                   p('Role B | Listener', 'h2'), p(w['role_b']),
                   p('Useful expressions', 'h2'), *[p(frame, 'small') for frame in w['frames']],
@@ -293,9 +285,11 @@ BUILDERS = [teacher, workbook, conversation, phrasebook]
 KINDS = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Phrasebook']
 
 
-def build_track(track):
+def build_track(track, kinds=None):
     result = {}
     for index, (_label, href) in enumerate(track['pdfs']):
+        if kinds and index not in kinds:
+            continue
         path = ROOT / href
         path.parent.mkdir(parents=True, exist_ok=True)
         handle, temp = tempfile.mkstemp(suffix='.pdf', dir=path.parent)
@@ -306,6 +300,9 @@ def build_track(track):
                                author='English Ladder', subject=f'English for Work - edition {REVISION}',
                                initialFontName='Work', pageCompression=1)
             doc.course_title, doc.kind = track['title'], KINDS[index]
+            if index == 2:
+                from work_dialogues import EDITION
+                doc.revision = EDITION
             doc.build(BUILDERS[index](track), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
             reader = PdfReader(temp)
             assert len(reader.pages) > 3
@@ -313,13 +310,16 @@ def build_track(track):
             result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
                                 bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                                 content_hash=content_hash())
+            if index == 2:
+                from work_dialogues import dialogue_hash, load_dialogues, EDITION
+                result[href].update(dialogue_hash=dialogue_hash(), dialogue_count=len(load_dialogues()[track['slug']]), dialogue_edition=EDITION)
         finally:
             if os.path.exists(temp):
                 os.unlink(temp)
     return result
 
 
-def main(slugs=None):
+def main(slugs=None, kinds=None):
     tracks = load_tracks()
     validate_tracks(tracks)
     if slugs:
@@ -328,16 +328,18 @@ def main(slugs=None):
             raise ValueError(f'Unknown courses: {sorted(unknown)}')
         tracks = [t for t in tracks if t['slug'] in slugs]
     manifest_path = ROOT / 'content/work/documents.json'
-    documents = json.loads(manifest_path.read_text()).get('documents', {}) if slugs and manifest_path.exists() else {}
+    documents = json.loads(manifest_path.read_text()).get('documents', {}) if (slugs or kinds) and manifest_path.exists() else {}
     for t in tracks:
-        result = build_track(t)
+        result = build_track(t, kinds)
         documents.update(result)
         print(f'{t["slug"]}: ' + ', '.join(str(v['pages']) + ' pages' for v in result.values()), flush=True)
     manifest_path.write_text(json.dumps(dict(revision=REVISION, content_hash=content_hash(), documents=documents), indent=2) + '\n')
-    print(f'Built {len(tracks) * 4} PDFs.', flush=True)
+    print(f'Built {len(tracks) * (len(kinds) if kinds else 4)} PDFs.', flush=True)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--course', action='append', help='A course slug; repeat to build several courses.')
-    main(parser.parse_args().course)
+    parser.add_argument('--kind', choices=['conversation'], help='Rebuild only Conversation Labs, preserving other PDF assets.')
+    args = parser.parse_args()
+    main(args.course, [2] if args.kind else None)

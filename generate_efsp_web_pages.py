@@ -40,7 +40,10 @@ def pdf_links(track):
         meta = manifest.get(href, {})
         size = f" · {meta['pages']} pages" if meta.get('pages') else ''
         version = meta.get('sha256', REVISION)[:12]
-        cards.append(f'<a class="work-download" href="{e(href)}?v={e(version)}"><span class="work-kicker">PDF{size}</span><strong>{labels[i]}</strong><span>{descriptions[i]}</span><span class="work-download-action">Open document ↗</span></a>')
+        description = descriptions[i]
+        if i == 2 and meta.get('dialogue_count'):
+            description = f"{meta['dialogue_count']} complete workplace dialogues, professional vocabulary, and eight additional role-play cases."
+        cards.append(f'<a class="work-download" href="{e(href)}?v={e(version)}"><span class="work-kicker">PDF{size}</span><strong>{labels[i]}</strong><span>{description}</span><span class="work-download-action">Open document ↗</span></a>')
     return ''.join(cards)
 
 

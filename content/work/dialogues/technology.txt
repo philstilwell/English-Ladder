@@ -1,0 +1,259 @@
+[software-product-management]
+Discovery interview review|A product team interprets customer interviews.|Product manager|User researcher
+1: Five interviewees asked for exports. Does that make exports our top priority?
+2: First understand the job they're trying to do. Three wanted audit evidence; two wanted spreadsheet analysis.
+1: Those may require different solutions. What did they actually do when export wasn't available?
+2: They copied records manually. I have examples, but this small sample doesn't establish prevalence.
+1: I'll separate the needs and check support data before prioritizing.
+2: I'll recruit users from the missing segments so we can test those patterns further.
+
+Roadmap commitment|Sales asks product to promise a feature date.|Sales director|Product manager
+1: Can I tell the prospect advanced permissions will ship in October?
+2: It's a discovery item, not a committed delivery milestone. We haven't assessed the authorization changes yet.
+1: They need a timeline for their buying committee.
+2: Tell them we're evaluating the requirement and arrange a discussion about their access model.
+1: Could an existing role configuration meet the immediate need?
+2: Let's have the solutions engineer verify that. We shouldn't promise either a workaround or a release without evidence.
+
+Acceptance criteria|A product owner and engineer refine a story.|Product owner|Software engineer
+1: The story says users can search orders. What should happen when no orders match?
+2: We need an explicit empty state, plus rules for partial matches and access restrictions.
+1: Let's add examples to the acceptance criteria before estimating.
+2: Include canceled orders and customer accounts with more than one organization.
+1: I'll confirm the intended behavior with support and design.
+2: Then we can split any unresolved behavior into separate work instead of hiding it in the estimate.
+
+Prioritization tradeoff|A team weighs reliability work against a new feature.|Product manager|Engineering lead
+1: The new integration scores well for potential revenue. Why prioritize retry handling first?
+2: Failed retries affect current customers and will also affect that integration. The reliability work is a dependency.
+1: Can we quantify the frequency and customer impact?
+2: I'll bring failure rates, support volume, and the affected workflows, with the measurement period.
+1: I'll compare that evidence with the integration's opportunity assumptions.
+2: Let's make the dependency visible so the prioritization discussion isn't just a contest between two scores.
+
+Interpreting activation|A product analyst questions an apparent improvement.|Product analyst|Product manager
+1: Activation rose from 30 to 38 percent, but the event definition changed last week.
+2: Then we can't attribute the increase to onboarding yet. Can we reconstruct a comparable series?
+1: I can apply the old definition to the new cohort if the underlying events are complete.
+2: Show both definitions and any tracking gaps.
+1: I'll also separate new accounts from existing users returning to the flow.
+2: Good. We'll hold the success claim until we have a consistent comparison.
+
+Launch readiness|Product and support review a release checklist.|Product manager|Support lead
+1: Engineering is ready to deploy. What remains for customer readiness?
+2: The help article is drafted, but our team hasn't tested the escalation workflow.
+1: Is that a launch blocker or can it follow the release?
+2: For this billing change, we need the workflow and training in place before customers use it.
+1: I'll add those acceptance items and owners to the launch checklist.
+2: I'll confirm support readiness after the rehearsal, including how we identify and escalate incorrect charges.
+
+Experiment readout|A team reviews a checkout experiment.|Experiment analyst|Product manager
+1: Variant B increased checkout starts, but completed purchases didn't improve.
+2: Did we agree that purchases were the primary metric before the test?
+1: Yes. Starts were secondary, and error rate was a guardrail.
+2: Then the readout should say the primary outcome didn't improve, with uncertainty shown.
+1: I'll include sample sizes, the analysis window, and the error-rate results.
+2: Let's investigate the drop-off before deciding whether to revise the variant or stop work on it.
+
+Retiring a feature|Product and account management plan a feature retirement.|Product manager|Account manager
+1: We want to retire the legacy export. Which customers still depend on it?
+2: Usage is low, but two large accounts use it for a monthly reporting process.
+1: A low daily count may hide important periodic use. Can we understand their migration needs?
+2: I'll arrange calls and check the contractual commitments with the relevant team.
+1: We'll prepare alternatives and a support plan before setting a retirement date.
+2: Then I can communicate the actual transition steps and escalate any unresolved customer requirement.
+
+[cybersecurity]
+Incident triage|Security reviews an unusual sign-in alert.|SOC analyst|Incident lead
+1: The alert shows an unfamiliar location and repeated failed sign-ins. Compromise isn't confirmed.
+2: What do the successful sign-ins and device records show?
+1: One success from an unmanaged device. I'm preserving the logs under our incident process.
+2: Correlate the activity and follow the approved containment and escalation playbook.
+1: I'll document the evidence, uncertainty, and affected account without sharing credentials.
+2: I'll assign incident coordination and confirm when stakeholders should receive the next factual update.
+
+Vulnerability priority|Security and operations review a critical-severity finding.|Vulnerability analyst|Service owner
+1: The scanner rated this critical. Is the affected service externally reachable?
+2: The asset inventory says internal, but the exposure mapping needs confirmation.
+1: Severity is one input. We also need exploitability, business impact, and compensating controls.
+2: I'll verify the actual deployment and patch compatibility with the platform team.
+1: I'll check the advisory and our approved remediation requirements.
+2: Then we'll agree on an owner and schedule, escalating any exception through the risk process.
+
+Privileged access review|An application team requests permanent administrator access.|Application lead|Identity engineer
+1: Our support team wants standing administrator rights to reduce ticket delays.
+2: Which tasks require elevated privileges, and how often?
+1: Mostly configuration changes during escalations. Routine support doesn't need them.
+2: Then let's assess time-limited access with approval and logging for those specific tasks.
+1: That could work if the request process fits our support hours.
+2: I'll map the workflow with you and test it before we propose a controlled access change.
+
+Threat-model workshop|A team reviews a new external integration.|Security architect|Software engineer
+1: Where does untrusted input cross into the service, and what authority does that request carry?
+2: At the partner endpoint. The service then calls our account system with its own identity.
+1: That trust boundary deserves attention. How do we restrict what the partner can request?
+2: The design includes scoped operations, but the authorization checks need review.
+1: Let's document abuse cases and verify controls against them.
+2: I'll update the data-flow diagram and link the open security questions to the design review.
+
+A risk exception|A project asks to delay a required security control.|Project manager|Security risk lead
+1: The release date is fixed. Can you approve skipping the control for a month?
+2: I can assess the request, but risk acceptance belongs to the designated authority.
+1: What should the exception request contain?
+2: Scope, exposure, reason, compensating controls, owner, expiry, and the remediation plan.
+1: I'll assemble that and identify what changes if approval is refused.
+2: We'll record the decision explicitly. A submitted request doesn't authorize the exception.
+
+Audit evidence|A control owner prepares access-review evidence.|Control owner|Security auditor
+1: Here's a screenshot showing the review dashboard is green.
+2: I also need evidence of the review period, population, reviewer, decisions, and follow-up.
+1: The underlying export includes accounts that were disabled after the review.
+2: Keep the timing clear. We need to distinguish review results from later remediation.
+1: I'll provide the approved records through the controlled evidence channel.
+2: I'll assess them against the control requirement and identify any remaining evidence gaps.
+
+Executive incident update|A security lead briefs an executive during an investigation.|Security lead|Chief operating officer
+1: We have confirmed unauthorized account activity. The full scope is still under investigation.
+2: Does that mean customer data were taken?
+1: We haven't established that. We're reviewing access and transfer evidence with the response team.
+2: What decisions do you need from me now?
+1: Confirm the business contact for continuity coordination; communications and legal are reviewing external obligations.
+2: I'll assign that contact. Keep the next update clear about confirmed facts, open questions, and operational effects.
+
+Vendor security review|Procurement asks whether a vendor's certification is sufficient.|Procurement manager|Third-party security analyst
+1: The vendor sent a certificate. Can we close the security review?
+2: First check its scope, validity, and relevance to the service and data we're purchasing.
+1: They also use subcontractors for support.
+2: Then we need the approved information about access, locations, and responsibilities in that arrangement.
+1: I'll ask for the missing evidence through the vendor review process.
+2: I'll document remaining risks and required decisions rather than treat one certificate as blanket assurance.
+
+[data-analytics-business-intelligence]
+Agreeing on a metric|An analyst and stakeholder define active customers.|BI analyst|Sales operations manager
+1: Does active customer mean a signed contract or a purchase in the reporting period?
+2: For this dashboard, at least one completed purchase in the last 90 days.
+1: Should canceled and fully refunded orders count?
+2: No. Let's write those exclusions into the definition.
+1: I'll document the time zone, source tables, and refresh schedule too.
+2: Send the definition for review before building the chart so other teams can use the same measure.
+
+Dashboard refresh failure|A stakeholder reports stale dashboard figures.|Business stakeholder|Data engineer
+1: The dashboard hasn't changed since yesterday. Have sales stopped?
+2: No conclusion about sales follows from that. The scheduled data load failed overnight.
+1: Can you show users the last successful refresh time?
+2: Yes. I'll mark the dashboard as stale and investigate the failed job.
+1: I'll pause this morning's performance comparison until the data are current.
+2: I'll confirm the repaired load and completeness checks before telling you the dashboard is ready.
+
+Duplicate records|An analyst finds a sudden increase after a data join.|Data analyst|Analytics engineer
+1: Revenue doubles after I join orders to shipments. The source order total hasn't changed.
+2: Is the join one-to-many? An order can have several shipments.
+1: Yes. I'm repeating the order amount for each shipment row.
+2: Aggregate at the intended grain before comparing, and check the join keys.
+1: I'll reconcile distinct orders and revenue to the source totals.
+2: Document the grain in the model so future reports don't repeat the same error.
+
+Clarifying a request|A manager asks for every available customer field.|Analytics lead|Marketing manager
+1: What decision will the customer extract support?
+2: We want to understand which onboarding step has the highest drop-off.
+1: Then we may need event counts by step rather than a broad personal-data export.
+2: Agreed. Could we also compare acquisition channels?
+1: Yes, subject to data availability and access rules. I'll propose the smallest useful dataset.
+2: I'll confirm the decision and reporting period so we can review whether the analysis answers the question.
+
+Association and causation|A team reviews a regional sales comparison.|Analyst|Regional manager
+1: Regions using the new script sold more, but the comparison is observational.
+2: Can we say the script caused the increase?
+1: Not from this alone. Those regions also had different staffing and customer mixes.
+2: What would strengthen the evidence?
+1: A suitable experimental or carefully justified comparison design, with its limitations explicit.
+2: For now, describe the association accurately and recommend how to evaluate the script more rigorously.
+
+Experiment imbalance|An analyst checks an experiment before interpreting results.|Experiment analyst|Product lead
+1: The allocation ratio differs sharply from the planned split. We need to investigate that first.
+2: Could the favorable result still be real?
+1: Possibly, but assignment or logging problems could bias it. Significance doesn't fix a broken design.
+2: I'll keep the rollout decision pending.
+1: I'll review eligibility, assignment, and event completeness with engineering.
+2: Bring the validity findings alongside the outcome metrics, so the decision reflects the quality of the evidence.
+
+Data access request|A department requests access to a restricted dataset.|Department analyst|Data steward
+1: I need the employee-level dataset for a turnover report. What access is appropriate?
+2: Start with the purpose and required fields. An aggregated dataset may meet the need.
+1: I only need trends by department and tenure band.
+2: Then let's assess that output and any small-group disclosure concerns under our policy.
+1: I'll submit the request with the audience and retention period.
+2: I'll route it for the required approval and confirm the permitted dataset and handling conditions.
+
+An executive readout|An analyst prepares a concise performance explanation.|Senior analyst|Finance director
+1: Orders fell eight percent, while revenue fell three percent. Higher average order value offset part of the volume decline.
+2: Is that price or product mix?
+1: The current bridge suggests mix, but I still need to reconcile discount effects.
+2: Lead with the confirmed movement, then identify that open question.
+1: I'll include the comparison period, reconciliation status, and the largest contributing categories.
+2: Good. Recommend the next analysis without presenting an unverified driver as a settled explanation.
+
+[telecommunications]
+Outage bridge|Network operations coordinates a service interruption.|NOC engineer|Incident coordinator
+1: We have loss-of-signal alarms on the eastern ring. Several enterprise circuits are affected.
+2: Do we have a confirmed fault location or only correlated alarms?
+1: Only the alarms so far. Field verification is pending.
+2: Keep the suspected cause separate from confirmed impact. Who owns field coordination?
+1: The duty field supervisor. I'll provide circuit IDs and the latest topology information.
+2: I'll maintain the incident timeline and issue the next update without inventing a restoration time.
+
+Fiber deployment dependency|A rollout team encounters a blocked construction segment.|Deployment manager|Civil works coordinator
+1: The fiber crew is booked for Monday. Is the duct route ready?
+2: Not on the final segment. The permit condition requires clarification before excavation proceeds.
+1: Can the crew complete an independent section instead?
+2: Yes, if the revised work package and access arrangements are approved.
+1: I'll resequence the plan and flag the blocked dependency.
+2: I'll pursue the permit clarification and confirm which sections are actually released for work.
+
+Capacity or coverage?|Engineers investigate complaints in a busy area.|Radio engineer|Network planner
+1: Signal strength looks acceptable, but users report slow data during the evening peak.
+2: That could be capacity rather than coverage. What do utilization and throughput trends show?
+1: Utilization rises at the same times, but we still need to check backhaul and interference.
+2: Compare the affected cells with neighboring sites and the same time windows.
+1: I'll prepare the evidence before proposing additional capacity.
+2: Include the assumptions and constraints so we don't choose a remedy from signal strength alone.
+
+Provisioning mismatch|A service activation fails despite a completed order status.|Provisioning specialist|Service delivery manager
+1: The order is marked complete, but the customer's circuit isn't passing the acceptance test.
+2: Which stage failed: configuration, physical connectivity, or test validation?
+1: The port configuration doesn't match the approved service profile.
+2: Route the correction through the authorized change process and retain the test results.
+1: I'll verify the configuration and repeat the agreed acceptance checks after the change.
+2: I'll keep customer acceptance pending and explain the next confirmed step to the account team.
+
+Field dispatch handoff|A technician receives an incomplete fault ticket.|Field technician|Dispatch coordinator
+1: I have the site address, but no access contact or equipment reference.
+2: I'll obtain both before confirming the visit. The ticket currently lists only the customer's billing address.
+1: Please also confirm whether any access restrictions or hazards are recorded.
+2: I'll check the work order and required site arrangements.
+1: Once those are complete, I can assess the tools and skills needed for the job.
+2: I'll update the ticket and send you the verified work location before dispatch.
+
+Emergency-service change review|A network change has potential emergency-service implications.|Change manager|Compliance specialist
+1: This routing change affects a service used for emergency calling. Can it follow the ordinary release schedule?
+2: It needs the applicable specialist review, testing, and coordination before approval.
+1: The current change record doesn't identify that dependency.
+2: Add the affected services and ask the responsible engineering team to define the required evidence.
+1: I'll keep implementation pending and update the review group.
+2: Record the approval conditions clearly; a successful general connectivity test isn't enough to close this issue.
+
+Churn-risk discussion|A service manager responds to a customer's repeated interruptions.|Account manager|Service assurance lead
+1: The customer is considering leaving after three outages. Can we promise there won't be another?
+2: No. We can explain the confirmed incidents, completed improvements, and remaining work accurately.
+1: They also want a service-credit review.
+2: Route that against the actual agreement and incident records; don't promise an amount before review.
+1: I'll arrange a meeting around the recovery actions and communication plan.
+2: I'll bring the evidence and identify who owns each outstanding reliability action.
+
+Equipment end of support|A network team plans replacement of aging equipment.|Network planner|Vendor manager
+1: The router family reaches end of support next year. Does that mean it stops operating then?
+2: No, but the vendor's support and update arrangements change. We need to verify the exact notice and dates.
+1: I'll map installed units and service dependencies.
+2: I'll confirm replacement options, lead times, and contractual support conditions.
+1: Then we can prioritize migration by exposure and business impact.
+2: Include test, rollback, and maintenance-window requirements in the plan before committing customer dates.

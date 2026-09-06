@@ -1,0 +1,5465 @@
+{
+  "summary": {
+    "courses": 41,
+    "dialogues": 368,
+    "turns": 2384,
+    "words": 31460,
+    "minimum_per_course": 8,
+    "maximum_per_course": 14,
+    "pdf_files": 41,
+    "pages": 942,
+    "all_fonts_embedded": true,
+    "dialogue_hash": "4e1394c8b8b126960e679e7b06bf1b627befed684a8fe814f84a2190ba8c87c9",
+    "failures": []
+  },
+  "documents": [
+    {
+      "path": "pdf/efsp/efsp-cultural-leadership-scenario-cards.pdf",
+      "pages": 22,
+      "words": 4304,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 130,
+          "body_bottom": 512.2
+        },
+        {
+          "page": 2,
+          "words": 95,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 254,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 211,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 5,
+          "words": 211,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 207,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 7,
+          "words": 210,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 199,
+          "body_bottom": 440.5
+        },
+        {
+          "page": 9,
+          "words": 215,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 214,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 203,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 203,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 15,
+          "words": 217,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 217,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 213,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 210,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 212,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 153,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-ai-development-dialogue-lab.pdf",
+      "pages": 24,
+      "words": 4983,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 130,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 118,
+          "body_bottom": 375.9
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 234,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 5,
+          "words": 233,
+          "body_bottom": 494.1
+        },
+        {
+          "page": 6,
+          "words": 227,
+          "body_bottom": 520.8
+        },
+        {
+          "page": 7,
+          "words": 267,
+          "body_bottom": 597.6
+        },
+        {
+          "page": 8,
+          "words": 236,
+          "body_bottom": 557.5
+        },
+        {
+          "page": 9,
+          "words": 224,
+          "body_bottom": 490.4
+        },
+        {
+          "page": 10,
+          "words": 222,
+          "body_bottom": 505.6
+        },
+        {
+          "page": 11,
+          "words": 237,
+          "body_bottom": 552.0
+        },
+        {
+          "page": 12,
+          "words": 212,
+          "body_bottom": 505.6
+        },
+        {
+          "page": 13,
+          "words": 245,
+          "body_bottom": 567.2
+        },
+        {
+          "page": 14,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 15,
+          "words": 212,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 201,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 213,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 22,
+          "words": 215,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 23,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 24,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-general-it-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5553,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 129,
+          "body_bottom": 478.2
+        },
+        {
+          "page": 2,
+          "words": 130,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 267,
+          "body_bottom": 567.2
+        },
+        {
+          "page": 5,
+          "words": 260,
+          "body_bottom": 579.9
+        },
+        {
+          "page": 6,
+          "words": 240,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 7,
+          "words": 231,
+          "body_bottom": 539.7
+        },
+        {
+          "page": 8,
+          "words": 231,
+          "body_bottom": 559.2
+        },
+        {
+          "page": 9,
+          "words": 240,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 10,
+          "words": 226,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 11,
+          "words": 251,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 12,
+          "words": 249,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 13,
+          "words": 224,
+          "body_bottom": 513.6
+        },
+        {
+          "page": 14,
+          "words": 234,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 15,
+          "words": 234,
+          "body_bottom": 561.0
+        },
+        {
+          "page": 16,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 215,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 209,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 204,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 209,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 22,
+          "words": 218,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 217,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-law-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5565,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 129,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 138,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 265,
+          "body_bottom": 599.4
+        },
+        {
+          "page": 5,
+          "words": 253,
+          "body_bottom": 576.2
+        },
+        {
+          "page": 6,
+          "words": 232,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 7,
+          "words": 238,
+          "body_bottom": 576.2
+        },
+        {
+          "page": 8,
+          "words": 238,
+          "body_bottom": 490.4
+        },
+        {
+          "page": 9,
+          "words": 213,
+          "body_bottom": 515.4
+        },
+        {
+          "page": 10,
+          "words": 233,
+          "body_bottom": 553.8
+        },
+        {
+          "page": 11,
+          "words": 230,
+          "body_bottom": 561.0
+        },
+        {
+          "page": 12,
+          "words": 229,
+          "body_bottom": 530.6
+        },
+        {
+          "page": 13,
+          "words": 236,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 14,
+          "words": 246,
+          "body_bottom": 552.0
+        },
+        {
+          "page": 15,
+          "words": 262,
+          "body_bottom": 591.4
+        },
+        {
+          "page": 16,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 217,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 23,
+          "words": 215,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 217,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 156,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-finance-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5448,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 129,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 137,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 251,
+          "body_bottom": 599.4
+        },
+        {
+          "page": 5,
+          "words": 226,
+          "body_bottom": 553.8
+        },
+        {
+          "page": 6,
+          "words": 250,
+          "body_bottom": 563.5
+        },
+        {
+          "page": 7,
+          "words": 225,
+          "body_bottom": 506.6
+        },
+        {
+          "page": 8,
+          "words": 222,
+          "body_bottom": 553.8
+        },
+        {
+          "page": 9,
+          "words": 227,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 10,
+          "words": 228,
+          "body_bottom": 537.0
+        },
+        {
+          "page": 11,
+          "words": 233,
+          "body_bottom": 524.5
+        },
+        {
+          "page": 12,
+          "words": 215,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 13,
+          "words": 232,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 14,
+          "words": 223,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 15,
+          "words": 242,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 16,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 209,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 216,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 21,
+          "words": 205,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 211,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 216,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 153,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-financial-advice-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5733,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 130,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 144,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 288,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 5,
+          "words": 250,
+          "body_bottom": 574.4
+        },
+        {
+          "page": 6,
+          "words": 273,
+          "body_bottom": 593.9
+        },
+        {
+          "page": 7,
+          "words": 256,
+          "body_bottom": 564.7
+        },
+        {
+          "page": 8,
+          "words": 242,
+          "body_bottom": 546.8
+        },
+        {
+          "page": 9,
+          "words": 255,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 10,
+          "words": 254,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 11,
+          "words": 241,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 12,
+          "words": 242,
+          "body_bottom": 524.5
+        },
+        {
+          "page": 13,
+          "words": 261,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 14,
+          "words": 246,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 15,
+          "words": 234,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 16,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 211,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 205,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 222,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 220,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 154,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-marketing-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5451,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 131,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 146,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 249,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 244,
+          "body_bottom": 559.2
+        },
+        {
+          "page": 5,
+          "words": 235,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 6,
+          "words": 230,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 7,
+          "words": 224,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 8,
+          "words": 235,
+          "body_bottom": 559.2
+        },
+        {
+          "page": 9,
+          "words": 220,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 10,
+          "words": 228,
+          "body_bottom": 509.3
+        },
+        {
+          "page": 11,
+          "words": 238,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 12,
+          "words": 224,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 13,
+          "words": 227,
+          "body_bottom": 509.3
+        },
+        {
+          "page": 14,
+          "words": 232,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 15,
+          "words": 228,
+          "body_bottom": 524.5
+        },
+        {
+          "page": 16,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 18,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 209,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 212,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 220,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 148,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-real-estate-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5651,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 134,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 139,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 275,
+          "body_bottom": 614.6
+        },
+        {
+          "page": 5,
+          "words": 250,
+          "body_bottom": 584.2
+        },
+        {
+          "page": 6,
+          "words": 263,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 7,
+          "words": 252,
+          "body_bottom": 596.7
+        },
+        {
+          "page": 8,
+          "words": 235,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 9,
+          "words": 233,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 10,
+          "words": 233,
+          "body_bottom": 509.3
+        },
+        {
+          "page": 11,
+          "words": 227,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 12,
+          "words": 239,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 13,
+          "words": 241,
+          "body_bottom": 559.2
+        },
+        {
+          "page": 14,
+          "words": 252,
+          "body_bottom": 553.8
+        },
+        {
+          "page": 15,
+          "words": 264,
+          "body_bottom": 571.7
+        },
+        {
+          "page": 16,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 209,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 205,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 19,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 205,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 227,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-corporate-strategy-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5526,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 142,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 251,
+          "body_bottom": 509.3
+        },
+        {
+          "page": 5,
+          "words": 223,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 6,
+          "words": 240,
+          "body_bottom": 509.3
+        },
+        {
+          "page": 7,
+          "words": 264,
+          "body_bottom": 584.2
+        },
+        {
+          "page": 8,
+          "words": 240,
+          "body_bottom": 564.7
+        },
+        {
+          "page": 9,
+          "words": 231,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 10,
+          "words": 225,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 11,
+          "words": 231,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 12,
+          "words": 258,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 13,
+          "words": 222,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 14,
+          "words": 229,
+          "body_bottom": 528.8
+        },
+        {
+          "page": 15,
+          "words": 233,
+          "body_bottom": 524.5
+        },
+        {
+          "page": 16,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 206,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 217,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 211,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 206,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 220,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-pharmaceutical-dialogue-lab.pdf",
+      "pages": 26,
+      "words": 5521,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 129,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 148,
+          "body_bottom": 422.3
+        },
+        {
+          "page": 3,
+          "words": 247,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 236,
+          "body_bottom": 549.5
+        },
+        {
+          "page": 5,
+          "words": 255,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 6,
+          "words": 226,
+          "body_bottom": 534.3
+        },
+        {
+          "page": 7,
+          "words": 240,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 8,
+          "words": 224,
+          "body_bottom": 544.0
+        },
+        {
+          "page": 9,
+          "words": 269,
+          "body_bottom": 631.4
+        },
+        {
+          "page": 10,
+          "words": 229,
+          "body_bottom": 524.5
+        },
+        {
+          "page": 11,
+          "words": 231,
+          "body_bottom": 552.2
+        },
+        {
+          "page": 12,
+          "words": 234,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 13,
+          "words": 229,
+          "body_bottom": 569.0
+        },
+        {
+          "page": 14,
+          "words": 219,
+          "body_bottom": 553.8
+        },
+        {
+          "page": 15,
+          "words": 246,
+          "body_bottom": 571.7
+        },
+        {
+          "page": 16,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 17,
+          "words": 218,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 215,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 216,
+          "body_bottom": 683.1
+        },
+        {
+          "page": 21,
+          "words": 219,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 23,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 206,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 26,
+          "words": 146,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-healthcare-administration-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4272,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 542.6
+        },
+        {
+          "page": 2,
+          "words": 90,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 248,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 201,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 207,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 210,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 211,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 203,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 10,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 197,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 218,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 220,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 210,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 157,
+          "body_bottom": 521.5
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-nursing-allied-health-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4363,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 138,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 96,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 221,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 212,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 197,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 7,
+          "words": 209,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 202,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 9,
+          "words": 210,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 220,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 210,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 225,
+          "body_bottom": 658.1
+        },
+        {
+          "page": 14,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 214,
+          "body_bottom": 658.1
+        },
+        {
+          "page": 16,
+          "words": 217,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 217,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 154,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-biotechnology-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4131,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 131,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 247,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 201,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 5,
+          "words": 199,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 6,
+          "words": 195,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 198,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 199,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 9,
+          "words": 192,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 10,
+          "words": 198,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 11,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 204,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 146,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-medical-devices-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4219,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 134,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 90,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 248,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 195,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 5,
+          "words": 213,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 202,
+          "body_bottom": 505.6
+        },
+        {
+          "page": 7,
+          "words": 213,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 191,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 9,
+          "words": 204,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 10,
+          "words": 191,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 11,
+          "words": 215,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 203,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 214,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 159,
+          "body_bottom": 546.5
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-manufacturing-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4334,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 129,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 92,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 245,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 221,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 5,
+          "words": 227,
+          "body_bottom": 545.0
+        },
+        {
+          "page": 6,
+          "words": 214,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 7,
+          "words": 214,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 8,
+          "words": 211,
+          "body_bottom": 532.5
+        },
+        {
+          "page": 9,
+          "words": 227,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 10,
+          "words": 220,
+          "body_bottom": 545.0
+        },
+        {
+          "page": 11,
+          "words": 213,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 212,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 144,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-supply-chain-logistics-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4363,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 92,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 252,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 218,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 5,
+          "words": 212,
+          "body_bottom": 499.4
+        },
+        {
+          "page": 6,
+          "words": 199,
+          "body_bottom": 502.1
+        },
+        {
+          "page": 7,
+          "words": 218,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 8,
+          "words": 217,
+          "body_bottom": 532.5
+        },
+        {
+          "page": 9,
+          "words": 221,
+          "body_bottom": 545.0
+        },
+        {
+          "page": 10,
+          "words": 229,
+          "body_bottom": 560.2
+        },
+        {
+          "page": 11,
+          "words": 218,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 215,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 199,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 219,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 151,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-human-resources-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4228,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 135,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 197,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 206,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 203,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 7,
+          "words": 198,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 8,
+          "words": 194,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 200,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 10,
+          "words": 209,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 205,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 200,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 14,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 15,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 218,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-project-management-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4275,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 91,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 204,
+          "body_bottom": 517.3
+        },
+        {
+          "page": 5,
+          "words": 206,
+          "body_bottom": 517.3
+        },
+        {
+          "page": 6,
+          "words": 219,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 7,
+          "words": 204,
+          "body_bottom": 471.7
+        },
+        {
+          "page": 8,
+          "words": 205,
+          "body_bottom": 499.4
+        },
+        {
+          "page": 9,
+          "words": 216,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 10,
+          "words": 207,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 11,
+          "words": 210,
+          "body_bottom": 499.4
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 200,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 211,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 215,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 210,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-engineering-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4233,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 130,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 95,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 245,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 215,
+          "body_bottom": 517.3
+        },
+        {
+          "page": 5,
+          "words": 214,
+          "body_bottom": 545.0
+        },
+        {
+          "page": 6,
+          "words": 214,
+          "body_bottom": 514.6
+        },
+        {
+          "page": 7,
+          "words": 201,
+          "body_bottom": 532.5
+        },
+        {
+          "page": 8,
+          "words": 200,
+          "body_bottom": 499.4
+        },
+        {
+          "page": 9,
+          "words": 211,
+          "body_bottom": 545.0
+        },
+        {
+          "page": 10,
+          "words": 221,
+          "body_bottom": 529.8
+        },
+        {
+          "page": 11,
+          "words": 201,
+          "body_bottom": 502.1
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 193,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 202,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 198,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 144,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-semiconductor-dialogue-lab.pdf",
+      "pages": 28,
+      "words": 5775,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 139,
+          "body_bottom": 508.6
+        },
+        {
+          "page": 2,
+          "words": 125,
+          "body_bottom": 468.7
+        },
+        {
+          "page": 3,
+          "words": 245,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 198,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 201,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 7,
+          "words": 205,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 195,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 201,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 196,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 11,
+          "words": 194,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 12,
+          "words": 279,
+          "body_bottom": 594.9
+        },
+        {
+          "page": 13,
+          "words": 283,
+          "body_bottom": 625.3
+        },
+        {
+          "page": 14,
+          "words": 251,
+          "body_bottom": 567.2
+        },
+        {
+          "page": 15,
+          "words": 250,
+          "body_bottom": 578.1
+        },
+        {
+          "page": 16,
+          "words": 241,
+          "body_bottom": 582.4
+        },
+        {
+          "page": 17,
+          "words": 267,
+          "body_bottom": 619.9
+        },
+        {
+          "page": 18,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 19,
+          "words": 210,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 20,
+          "words": 196,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 21,
+          "words": 206,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 22,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 23,
+          "words": 206,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 24,
+          "words": 205,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 25,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 26,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 27,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 28,
+          "words": 144,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-software-product-management-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4228,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 87,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 206,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 202,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 6,
+          "words": 190,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 7,
+          "words": 206,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 205,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 9,
+          "words": 200,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 10,
+          "words": 197,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 11,
+          "words": 209,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 202,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 215,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 214,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-cybersecurity-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4109,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 87,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 249,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 192,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 194,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 190,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 198,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 8,
+          "words": 189,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 9,
+          "words": 189,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 199,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 200,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 199,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 194,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 202,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 148,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-data-analytics-business-intelligence-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4204,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 139,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 94,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 253,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 206,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 5,
+          "words": 194,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 6,
+          "words": 199,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 7,
+          "words": 195,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 8,
+          "words": 186,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 9,
+          "words": 193,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 10,
+          "words": 205,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 197,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 12,
+          "words": 76,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 200,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 206,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 15,
+          "words": 210,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 219,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 245,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 152,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-education-administration-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4179,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 91,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 191,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 5,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 194,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 8,
+          "words": 191,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 9,
+          "words": 202,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 196,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 203,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 155,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-higher-education-research-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4264,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 139,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 95,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 252,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 206,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 205,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 215,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 194,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 203,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 10,
+          "words": 204,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 11,
+          "words": 206,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 198,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 205,
+          "body_bottom": 608.6
+        },
+        {
+          "page": 15,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 218,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 214,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 157,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-hospitality-tourism-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4258,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 91,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 207,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 5,
+          "words": 208,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 207,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 7,
+          "words": 205,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 197,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 9,
+          "words": 195,
+          "body_bottom": 455.7
+        },
+        {
+          "page": 10,
+          "words": 201,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 204,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 225,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 213,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 198,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-aviation-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4202,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 134,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 89,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 249,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 211,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 202,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 202,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 7,
+          "words": 210,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 8,
+          "words": 203,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 10,
+          "words": 203,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 202,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 15,
+          "words": 194,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 18,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 203,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 154,
+          "body_bottom": 506.5
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-construction-architecture-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4197,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 131,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 247,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 202,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 200,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 205,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 211,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 200,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 190,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 11,
+          "words": 195,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 206,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 215,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 146,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-energy-utilities-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4224,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 508.6
+        },
+        {
+          "page": 2,
+          "words": 88,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 247,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 201,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 210,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 197,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 203,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 195,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 10,
+          "words": 209,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 194,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 214,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 213,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 151,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-environmental-consulting-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4187,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 134,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 87,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 205,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 198,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 192,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 7,
+          "words": 194,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 195,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 9,
+          "words": 205,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 10,
+          "words": 205,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 209,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 196,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 154,
+          "body_bottom": 478.8
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-insurance-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4173,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 133,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 198,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 5,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 7,
+          "words": 215,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 200,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 189,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 10,
+          "words": 194,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 11,
+          "words": 199,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 196,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 214,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 15,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 205,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 20,
+          "words": 206,
+          "body_bottom": 650.1
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-banking-operations-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4249,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 140,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 90,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 199,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 5,
+          "words": 206,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 206,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 7,
+          "words": 201,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 8,
+          "words": 207,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 9,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 10,
+          "words": 203,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 207,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 197,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 214,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 219,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 156,
+          "body_bottom": 491.3
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-retail-ecommerce-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4209,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 139,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 88,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 186,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 5,
+          "words": 197,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 6,
+          "words": 196,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 197,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 8,
+          "words": 196,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 9,
+          "words": 203,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 10,
+          "words": 219,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 200,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 216,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 199,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 206,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 216,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-media-entertainment-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4150,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 201,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 5,
+          "words": 199,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 6,
+          "words": 206,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 7,
+          "words": 194,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 8,
+          "words": 199,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 191,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 10,
+          "words": 196,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 11,
+          "words": 194,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 199,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 17,
+          "words": 195,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 18,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-telecommunications-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4178,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 134,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 89,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 249,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 195,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 197,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 6,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 7,
+          "words": 200,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 8,
+          "words": 201,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 206,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 10,
+          "words": 205,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 195,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 211,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 15,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 197,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 208,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 148,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-government-public-administration-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4239,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 138,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 90,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 252,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 211,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 5,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 192,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 7,
+          "words": 193,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 8,
+          "words": 197,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 205,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 10,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 206,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 209,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 14,
+          "words": 226,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 151,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-nonprofit-ngo-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4272,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 140,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 91,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 251,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 209,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 205,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 6,
+          "words": 196,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 203,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 214,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 199,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 10,
+          "words": 207,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 206,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 74,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 215,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 14,
+          "words": 203,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 220,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 217,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 209,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 243,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 150,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-consulting-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4139,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 132,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 88,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 249,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 210,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 5,
+          "words": 183,
+          "body_bottom": 455.7
+        },
+        {
+          "page": 6,
+          "words": 194,
+          "body_bottom": 453.0
+        },
+        {
+          "page": 7,
+          "words": 191,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 8,
+          "words": 193,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 9,
+          "words": 194,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 10,
+          "words": 185,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 11,
+          "words": 205,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 12,
+          "words": 72,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 199,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 204,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 15,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 207,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 205,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 217,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 241,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 148,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-sales-business-development-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4165,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 137,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 86,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 252,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 196,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 5,
+          "words": 192,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 6,
+          "words": 191,
+          "body_bottom": 455.7
+        },
+        {
+          "page": 7,
+          "words": 197,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 8,
+          "words": 192,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 9,
+          "words": 202,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 10,
+          "words": 202,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 192,
+          "body_bottom": 470.9
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 205,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 16,
+          "words": 212,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 206,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 19,
+          "words": 201,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 151,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-customer-success-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4268,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 136,
+          "body_bottom": 493.4
+        },
+        {
+          "page": 2,
+          "words": 88,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 250,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 210,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 221,
+          "body_bottom": 520.8
+        },
+        {
+          "page": 6,
+          "words": 208,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 7,
+          "words": 195,
+          "body_bottom": 486.1
+        },
+        {
+          "page": 8,
+          "words": 204,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 9,
+          "words": 210,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 10,
+          "words": 210,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 11,
+          "words": 207,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 12,
+          "words": 73,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 201,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 14,
+          "words": 210,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 15,
+          "words": 207,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 16,
+          "words": 206,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 211,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 200,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 213,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 217,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 21,
+          "words": 242,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 149,
+          "body_bottom": 436.1
+        }
+      ]
+    },
+    {
+      "path": "pdf/efsp/efsp-legal-operations-compliance-dialogue-lab.pdf",
+      "pages": 22,
+      "words": 4242,
+      "fonts": [
+        [
+          "/AAAAAA+BitstreamVeraSans-Bold",
+          true
+        ],
+        [
+          "/AAAAAA+BitstreamVeraSans-Roman",
+          true
+        ]
+      ],
+      "failures": [],
+      "page_details": [
+        {
+          "page": 1,
+          "words": 142,
+          "body_bottom": 527.4
+        },
+        {
+          "page": 2,
+          "words": 92,
+          "body_bottom": 329.5
+        },
+        {
+          "page": 3,
+          "words": 253,
+          "body_bottom": 522.8
+        },
+        {
+          "page": 4,
+          "words": 211,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 5,
+          "words": 204,
+          "body_bottom": 513.8
+        },
+        {
+          "page": 6,
+          "words": 205,
+          "body_bottom": 468.2
+        },
+        {
+          "page": 7,
+          "words": 201,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 8,
+          "words": 205,
+          "body_bottom": 501.3
+        },
+        {
+          "page": 9,
+          "words": 206,
+          "body_bottom": 529.0
+        },
+        {
+          "page": 10,
+          "words": 201,
+          "body_bottom": 498.6
+        },
+        {
+          "page": 11,
+          "words": 207,
+          "body_bottom": 483.4
+        },
+        {
+          "page": 12,
+          "words": 75,
+          "body_bottom": 182.8
+        },
+        {
+          "page": 13,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 14,
+          "words": 208,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 15,
+          "words": 207,
+          "body_bottom": 625.1
+        },
+        {
+          "page": 16,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 17,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 18,
+          "words": 204,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 19,
+          "words": 202,
+          "body_bottom": 641.6
+        },
+        {
+          "page": 20,
+          "words": 208,
+          "body_bottom": 666.6
+        },
+        {
+          "page": 21,
+          "words": 244,
+          "body_bottom": 594.8
+        },
+        {
+          "page": 22,
+          "words": 159,
+          "body_bottom": 478.8
+        }
+      ]
+    }
+  ]
+}

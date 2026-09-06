@@ -1,0 +1,259 @@
+[insurance]
+Underwriting information|An underwriter asks a broker about incomplete risk information.|Underwriter|Broker
+1: The application lists a warehouse, but the survey mentions light manufacturing. What activities actually take place?
+2: I'll confirm the operations and obtain an updated description from the client.
+1: We need that before assessing the risk and proposing terms.
+2: Should I tell them the current indication is still available?
+1: Explain that it was based on the information supplied and remains subject to review.
+2: I'll send the verified details and distinguish the request for terms from confirmed cover.
+
+Coverage wording|A claims team reviews an ambiguous policy reference.|Claims handler|Coverage specialist
+1: The claim summary says this loss is covered, but it doesn't identify the policy wording.
+2: We need the applicable policy, endorsements, circumstances, and jurisdictional context before reaching that conclusion.
+1: I'll gather the documents and separate reported facts from assumptions.
+2: Note any unresolved questions and follow the authorized coverage-review process.
+1: I'll tell the broker the assessment is pending rather than promise payment.
+2: I'll provide the reviewed explanation and its basis when the decision is authorized.
+
+Claims intake and reserve|A handler discusses an early loss estimate.|Claims handler|Claims supervisor
+1: The initial estimate is $40,000, but we haven't received the contractor's breakdown.
+2: Record it as preliminary and apply our reserving process using the available evidence.
+1: The customer asked whether that figure is the settlement offer.
+2: Explain that an internal estimate or reserve isn't an agreed settlement or coverage decision.
+1: I'll request the missing supporting information and document the conversation.
+2: Review the estimate when new evidence arrives and preserve the reason for any change.
+
+A disputed decision|A claims team prepares to explain a reviewed decision.|Claims supervisor|Customer relations specialist
+1: The customer disputes the decision and says our letter didn't explain the relevant clause clearly.
+2: We should check the approved reasoning and explain it in plain language, with the applicable review route.
+1: There may also be new evidence that wasn't included in the original assessment.
+2: Route that for proper review before repeating the earlier conclusion as final.
+1: I'll acknowledge the concern and identify what is being reconsidered.
+2: I'll ensure the response follows the complaint process and accurately states the current status.
+
+Renewal discussion|A broker and underwriter review changed terms.|Broker|Underwriter
+1: The renewal premium increased despite no reported claims this year. What are the main drivers?
+2: The indication reflects the reviewed exposure and pricing factors, not claims experience alone.
+1: Can you explain the specific changes and any differences in limits or deductibles?
+2: I'll provide an accurate comparison of the proposed terms and the information used.
+1: I'll review the client's updated needs and discuss the options without implying identical cover.
+2: Confirm any revised information before we finalize terms through the normal binding process.
+
+Fraud referral|A handler flags inconsistent information.|Claims handler|Special investigations liaison
+1: The reported dates don't match the repair records. I don't know why.
+2: Document the discrepancy and refer it under our process without labeling the claimant dishonest.
+1: Should I ask for clarification before making the referral?
+2: Follow the applicable handling instructions and preserve the original evidence.
+1: I'll keep the factual timeline separate from possible explanations.
+2: I'll confirm the appropriate next steps and information-sharing limits for the review.
+
+Pricing assumptions|An actuarial team reviews a model update.|Actuarial analyst|Pricing manager
+1: The proposed rate change is sensitive to the loss-trend assumption.
+2: Show the sensitivity range and explain which experience periods informed the assumption.
+1: The recent period is sparse, so the estimate has substantial uncertainty.
+2: Make that visible. Don't let a single point estimate imply more precision than the data support.
+1: I'll document the model version, exclusions, and review questions.
+2: We'll assess the proposal through the appropriate actuarial and pricing governance before any implementation.
+
+Complaint handling|A service team reviews a delayed response.|Complaints officer|Policy-service manager
+1: The customer's complaint was acknowledged, but nobody recorded ownership of the investigation.
+2: I'll identify the responsible handler and verify the applicable response requirements.
+1: They also report receiving two contradictory explanations of the policy change.
+2: We'll retrieve those communications and review them against the actual policy records.
+1: I'll give an accurate update and explain the next step through the complaint process.
+2: I'll make sure the final response addresses both the substantive issue and the communication failure.
+
+[banking-operations]
+Account-opening discrepancy|Bank staff reconcile identity information.|Account-opening analyst|Branch manager
+1: The application address differs from the identity document. The required verification is incomplete.
+2: Follow our customer-identification process and ask for the appropriate clarification or documentation.
+1: The customer wants the account opened immediately because they're traveling.
+2: Explain the outstanding requirement clearly. Don't bypass it or promise approval before review.
+1: I'll record the discrepancy and the requested next step through the approved system.
+2: I'll support the escalation if the circumstances require specialist review under the bank's process.
+
+Monitoring alert review|Analysts discuss an unusual activity alert.|AML analyst|Review supervisor
+1: The alert shows activity outside the account's expected pattern, but that doesn't establish wrongdoing.
+2: Review the relevant customer information and transaction context under our monitoring procedures.
+1: I'll document what is known, what differs, and what evidence is missing.
+2: Keep speculation separate from the factual analysis and use the designated escalation channel.
+1: I'll submit the case for the required review without discussing internal reporting decisions externally.
+2: I'll assess the documented work and confirm the appropriate next steps under our process.
+
+Loan documentation gap|Loan operations checks a file before processing.|Loan operations specialist|Credit officer
+1: The approval record is present, but a required signed document is missing from the file.
+2: Check whether the current approval includes any conditions that remain outstanding.
+1: It does. Should I treat the approval itself as permission to proceed?
+2: No. Confirm the conditions through the authorized process before taking the next operational step.
+1: I'll list the missing item and route the request to the responsible team.
+2: I'll clarify the approval conditions and document any further authorized decision.
+
+Payment exception|Operations investigates a payment with inconsistent details.|Payments analyst|Operations supervisor
+1: The beneficiary name and the supporting instruction don't match. The payment is in the exception queue.
+2: Preserve the instruction and follow the approved verification route before making any change.
+1: The requester sent a new bank detail by email and says it's urgent.
+2: Urgency doesn't verify the change. Use the bank's independent confirmation process.
+1: I'll record the discrepancy and the steps taken without exposing account details in the team chat.
+2: I'll review the exception and ensure the authorized outcome is recorded before processing continues.
+
+A fraud-related customer call|A branch employee consults the fraud team.|Branch adviser|Fraud operations specialist
+1: A customer reports a transfer they say they didn't authorize. What should I record?
+2: The reported facts, transaction reference, and contact details through the approved intake process.
+1: They're asking whether we can guarantee recovery.
+2: Don't guarantee an outcome. Explain the immediate reporting and review steps accurately and follow the escalation procedure.
+1: I'll connect the customer through the designated channel and document the handoff.
+2: I'll confirm receipt and coordinate the case under our fraud-response process.
+
+Control reconciliation|An operations team finds an unexplained difference.|Reconciliation analyst|Control manager
+1: The settlement total differs from the ledger by $8,500. I haven't identified the cause.
+2: Keep the exception visible. Which batches and timestamps have you compared?
+1: Today's batches. One posting may have crossed the reporting cutoff, but that remains a hypothesis.
+2: Check the source references and subsequent postings before proposing an adjustment.
+1: I'll document the investigation and retain the original reconciliation.
+2: Route any adjustment through the approval process with the supporting evidence and reason clearly stated.
+
+Exam evidence request|Bank staff prepare materials for a regulatory examination.|Exam coordinator|Control owner
+1: The request asks for evidence of control operation during the quarter, not just the current procedure.
+2: I'll provide dated review records, exceptions, approvals, and follow-up evidence through the approved channel.
+1: Flag missing records rather than recreating them as if they existed at the time.
+2: Understood. I'll distinguish verified evidence from unresolved gaps.
+1: I'll track the request, responsible owner, and response status.
+2: I'll review the package for accuracy and permitted disclosure before submission.
+
+Fair complaint handling|A team reviews a service complaint involving fees.|Complaints specialist|Branch manager
+1: The customer says the fee was never explained. What records show the disclosure and the actual charge?
+2: I'll retrieve the account terms, relevant communication, and transaction history.
+1: We should consider their specific concern rather than assume the standard letter answers it.
+2: Agreed. I'll also check whether staff provided inconsistent information.
+1: I'll explain the review process and current status without promising an unapproved refund.
+2: We'll document the findings and any authorized remedy through the complaint process.
+
+[legal-operations-compliance]
+Contract intake|Legal operations clarifies an incomplete request.|Legal operations coordinator|Business requester
+1: Before we assign the contract, we need the counterparty, value, deadline, and business purpose.
+2: The sales team asked for a review today, but I haven't received the latest draft.
+1: Please obtain the current version and explain the reason for the requested date.
+2: I'll also identify the business owner and any nonstandard terms already discussed.
+1: Then we can triage it using the actual risk and workload.
+2: I'll tell the team the review is requested, not completed or guaranteed for today.
+
+Policy into a control|Compliance and operations implement a new requirement.|Compliance manager|Process owner
+1: The policy is approved. What control will show that the process actually follows it?
+2: A documented review before release, with a named reviewer and retained evidence.
+1: Define the population, frequency, exception route, and records needed.
+2: I'll map those to the workflow and check that the team has capacity.
+1: We'll test the design before treating the control as operating effectively.
+2: I'll prepare a sample case so we can check the process and evidence together.
+
+Audit evidence gap|A control owner responds to an audit request.|Internal auditor|Compliance analyst
+1: The attestation says all cases were reviewed, but the evidence covers only the sampled cases.
+2: I'll clarify whether the control requires full-population review or sampling, and provide the approved methodology.
+1: Good. The statement should match what was actually done.
+2: I'll preserve the existing records and identify any unsupported claim.
+1: We'll assess the gap and agree on the appropriate reporting and follow-up.
+2: I'll record an owner and due date for each authorized corrective action.
+
+Investigation intake|A compliance coordinator prepares an allegation summary.|Investigation coordinator|Legal counsel
+1: The manager wants the summary to call this a confirmed policy violation.
+2: Has the investigation reached that finding, or are we still recording an allegation?
+1: Still an allegation. We have an interview account and documents requiring review.
+2: Use neutral wording and follow the approved investigation and confidentiality process.
+1: I'll separate reported information, observed evidence, and unanswered questions.
+2: I'll review the scope and next steps without treating an initial report as a final conclusion.
+
+Privacy request routing|Operations receives a request concerning personal data.|Privacy operations analyst|System owner
+1: We received a request relating to personal data in your system. We need to identify the relevant records through the approved process.
+2: Should my team send a complete export directly to the requester?
+1: No. Verification, scope, applicable rights, and disclosure review need coordination first.
+2: I'll map the systems and retention arrangements without transmitting unnecessary data.
+1: I'll confirm the authorized search and response requirements with the privacy team.
+2: We'll preserve the records and provide the required information through the designated channel.
+
+Third-party due diligence|A compliance team reviews a proposed intermediary.|Business development manager|Compliance reviewer
+1: The intermediary can help us enter the market quickly. Can we sign while due diligence continues?
+2: We need to follow the applicable approval process and assess any conditions before committing.
+1: Their ownership information is incomplete, but they say it's commercially sensitive.
+2: Document the gap and seek the required information through the review process.
+1: I'll explain that the assessment is pending and avoid promising an exception.
+2: I'll identify the remaining questions and route the risk decision to the authorized reviewers.
+
+Training attestation|A policy owner questions what a completion figure means.|Policy owner|Learning coordinator
+1: The dashboard says 98 percent completed training. Does that establish understanding?
+2: It establishes the recorded completion measure. Understanding and application require other evidence.
+1: We also need to check who is missing from the assigned population.
+2: I'll reconcile the roster and distinguish incomplete assignments from data errors.
+1: Let's review the knowledge checks and questions staff are raising.
+2: I'll prepare that evidence so we can target follow-up rather than rely only on a completion percentage.
+
+Risk committee reporting|A compliance lead prepares a risk update.|Compliance lead|Risk committee secretary
+1: This issue is marked closed because the new procedure was approved, but effectiveness hasn't been tested.
+2: Separate implementation from evidence that the control works.
+1: I'll report the actual stage, residual uncertainty, and the planned effectiveness review.
+2: Include the decision or oversight you need from the committee.
+1: I'll identify the accountable owner and any overdue dependencies.
+2: Then the minutes can record the committee's actual decision rather than imply closure from discussion alone.
+
+[semiconductor]
+Wafer-start priorities|A fab planning team reviews competing lot priorities.|Production planner|Fab operations lead
+1: Two customer expedites need the same bottleneck tool. Which wafer starts are actually committed?
+2: Check the confirmed allocation and downstream constraints before reprioritizing either lot.
+1: One request is an engineering split, not production demand.
+2: Keep that distinction visible. Its process requirements may differ from the production flow.
+1: I'll compare cycle-time impact and the approved priority rules.
+2: Bring the options to the scheduling review so the decision and affected commitments are documented.
+
+Lithography overlay trend|Engineers investigate an overlay shift.|Lithography engineer|Process integration engineer
+1: Overlay moved toward the control limit after the alignment update. Critical dimension remains stable.
+2: Separate the overlay trend from the CD result. Which layers and tools are affected?
+1: Two layers on one scanner. Repeat measurements are pending.
+2: Review the measurement consistency and tool history under the excursion process.
+1: I'll preserve the wafer maps and identify the affected lot interval.
+2: We'll use the verified evidence to determine the next process-control actions through the authorized review.
+
+Etch process window|A module team considers a throughput improvement.|Etch engineer|Integration engineer
+1: The proposed recipe reduces cycle time, but selectivity drops at the edge of the tested window.
+2: What happens to profile and downstream margin across the relevant material stack?
+1: We don't have complete data yet. The throughput gain alone doesn't establish suitability.
+2: Then frame this as a proposal requiring further characterization and qualification.
+1: I'll prepare the split results and identify the unanswered integration questions.
+2: I'll coordinate the review before any change is applied to the production flow.
+
+Metrology sampling change|A yield review coincides with revised sampling.|Yield engineer|Metrology engineer
+1: Reported defects increased after we changed the sampling plan. Is the process getting worse?
+2: The sampling change may affect what we detect. We need a comparable basis before drawing that conclusion.
+1: Can we compare overlapping sites and the same product mix?
+2: Yes. I'll document the plan versions and check measurement consistency.
+1: I'll keep the apparent increase separate from a confirmed process shift in the yield report.
+2: Then we can decide whether further investigation is needed using comparable evidence.
+
+Particle excursion|A cleanroom team reviews an abnormal particle signal.|Contamination-control engineer|Equipment engineer
+1: Particle counts rose after maintenance in this bay. We haven't established the source.
+2: I'll provide the maintenance record and tool status. Which lots overlap the interval?
+1: The traceability review is underway under the excursion process.
+2: Keep the affected scope provisional until the records are reconciled.
+1: I'll preserve the measurements and coordinate the required containment review.
+2: I'll support the investigation and avoid treating temporal coincidence as a confirmed root cause.
+
+Tool matching review|A planner asks to move production to another tool.|Equipment engineer|Production planner
+1: The alternate tool is available, but matching qualification is incomplete.
+2: Can it process the waiting lots if the recipe name is the same?
+1: A matching name doesn't establish equivalent process performance. We need the required qualification evidence.
+2: I'll keep that capacity out of the confirmed production plan for now.
+1: I'll identify the remaining tests and review status.
+2: Once the authorized qualification decision is recorded, we'll reassess the schedule and communicate the usable capacity.
+
+Package reliability status|A product team reviews shipment readiness.|Product engineer|Reliability engineer
+1: Electrical test passed. Can we describe the samples as fully qualified?
+2: Not yet. The planned package reliability work is still open.
+1: The customer wants to know what evidence is available now.
+2: State the completed electrical results separately from pending stress testing and qualification decisions.
+1: I'll prepare a status table with the actual test conditions and limits.
+2: I'll review the reliability wording so it doesn't imply that passing one test closes all qualification requirements.
+
+Tape-out readiness|A design team checks a foundry submission package.|Design lead|Foundry interface engineer
+1: Are we ready to commit the tape-out date?
+2: The design review is nearly complete, but the PDK version and signoff checklist need reconciliation.
+1: One block was checked against an earlier rule deck.
+2: Then verify the required checks with the current approved package before declaring readiness.
+1: I'll identify the affected block and update the signoff status.
+2: I'll confirm submission requirements and capacity arrangements separately; tape-out readiness doesn't guarantee a wafer-start date.

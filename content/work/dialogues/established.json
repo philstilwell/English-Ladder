@@ -1,0 +1,4338 @@
+{
+  "semiconductor": [
+    {
+      "title": "Lot Hold vs Customer Expedite",
+      "setting": "A strategic customer is waiting for units, but a wafer lot is on hold after an inline monitor showed abnormal film thickness.",
+      "turns": [
+        [
+          "Customer program manager",
+          "Can we release the lot today? The customer is escalating and the ship date is already tight."
+        ],
+        [
+          "Process integration engineer",
+          "I understand the schedule pressure, but the hold code is tied to a film-thickness excursion after deposition."
+        ],
+        [
+          "Customer program manager",
+          "Is it a real excursion or just a metrology artifact?"
+        ],
+        [
+          "Process integration engineer",
+          "That is exactly what we need to confirm. I want repeat metrology, chamber history, and lot genealogy before release."
+        ],
+        [
+          "Customer program manager",
+          "What is the fastest responsible option?"
+        ],
+        [
+          "Process integration engineer",
+          "We can contain the affected lots, run a split on one lower-risk lot, and prepare a deviation request if quality agrees."
+        ],
+        [
+          "Customer program manager",
+          "So I should not promise shipment today."
+        ],
+        [
+          "Process integration engineer",
+          "Right. Say the lot is under controlled disposition, with an update after repeat measurement and quality review."
+        ]
+      ],
+      "coach_notes": [
+        "The learner does not say no; the learner names hold code, excursion, metrology, genealogy, containment, and disposition.",
+        "The response gives the commercial team usable customer language without pretending the risk is solved."
+      ],
+      "collocations": [
+        "put a lot on hold",
+        "confirm metrology repeatability",
+        "verify lot genealogy",
+        "approve a deviation"
+      ],
+      "notes": [
+        "The learner does not say no; the learner names hold code, excursion, metrology, genealogy, containment, and disposition.",
+        "The response gives the commercial team usable customer language without pretending the risk is solved."
+      ]
+    },
+    {
+      "title": "Critical Dimension Drift on a Customer Call",
+      "setting": "A customer quality lead challenges whether a CD trend is real before a corrective action report is due.",
+      "turns": [
+        [
+          "Customer quality lead",
+          "Your report shows CD drift, but we think the trend could be measurement noise."
+        ],
+        [
+          "Lithography engineer",
+          "That is a fair question. We are checking metrology repeatability before we call it a process shift."
+        ],
+        [
+          "Customer quality lead",
+          "What are you comparing?"
+        ],
+        [
+          "Lithography engineer",
+          "The same layer across the last three lots, the reference wafer, reticle history, exposure dose, focus data, and CD-SEM repeat runs."
+        ],
+        [
+          "Customer quality lead",
+          "Can you state whether product performance is affected?"
+        ],
+        [
+          "Lithography engineer",
+          "Not yet. The available electrical test results remain within their limits, but that does not resolve the CD trend. We are checking the relationship between the dimensional measurements, process-control data, and electrical results before drawing a conclusion."
+        ],
+        [
+          "Customer quality lead",
+          "When will we have a decision?"
+        ],
+        [
+          "Lithography engineer",
+          "By 5 p.m. tomorrow, we will provide either a release recommendation or a containment plan with affected-lot IDs."
+        ]
+      ],
+      "coach_notes": [
+        "The learner distinguishes measurement repeatability, process shift, electrical impact, and customer disposition.",
+        "The dialogue trains a precise but cautious answer: what is known, what is being checked, and when the decision comes."
+      ],
+      "collocations": [
+        "review SPC charts",
+        "confirm metrology repeatability",
+        "separate signal from noise",
+        "contain affected lots"
+      ],
+      "notes": [
+        "The learner distinguishes measurement repeatability, process shift, electrical impact, and customer disposition.",
+        "The dialogue trains a precise but cautious answer: what is known, what is being checked, and when the decision comes."
+      ]
+    },
+    {
+      "title": "Particle Excursion After Maintenance",
+      "setting": "Production wants to restart a tool after maintenance, but defect maps show a new particle signature.",
+      "turns": [
+        [
+          "Production planner",
+          "The tool is back up. Can we load the backlog now?"
+        ],
+        [
+          "Manufacturing quality engineer",
+          "Not until we close the restart checks. The monitor wafer shows a particle signature that was not present before maintenance."
+        ],
+        [
+          "Production planner",
+          "If we wait, the area will miss the shift target."
+        ],
+        [
+          "Manufacturing quality engineer",
+          "I understand. The tradeoff is that restarting too early could contaminate multiple high-value lots."
+        ],
+        [
+          "Production planner",
+          "What do you need before release?"
+        ],
+        [
+          "Manufacturing quality engineer",
+          "A clean monitor run, chamber history, maintenance notes, and a lot list for any material exposed during the suspect window."
+        ],
+        [
+          "Production planner",
+          "Can we at least run engineering material?"
+        ],
+        [
+          "Manufacturing quality engineer",
+          "Possibly, if the module owner approves the route and quality agrees that the risk is contained."
+        ]
+      ],
+      "coach_notes": [
+        "The learner uses contamination-control language without blaming the maintenance team.",
+        "The practical move is to define the restart condition, not simply defend quality in general terms."
+      ],
+      "collocations": [
+        "quarantine suspect material",
+        "check chamber history",
+        "contain affected lots",
+        "recover tool uptime"
+      ],
+      "notes": [
+        "The learner uses contamination-control language without blaming the maintenance team.",
+        "The practical move is to define the restart condition, not simply defend quality in general terms."
+      ]
+    },
+    {
+      "title": "Tool Matching Under Capacity Pressure",
+      "setting": "A bottleneck tool is down, and operations wants to move production to an alternate tool that is almost matched.",
+      "turns": [
+        [
+          "Operations director",
+          "We need to move all lots to Tool B. The matched-tool report looked close enough."
+        ],
+        [
+          "Module process owner",
+          "Tool B is close for monitor wafers, but product-lot data are still limited for this layer."
+        ],
+        [
+          "Operations director",
+          "How much risk are we really talking about?"
+        ],
+        [
+          "Module process owner",
+          "The main risks are uniformity, selectivity, and downstream CMP margin. If those shift, yield loss may appear several steps later."
+        ],
+        [
+          "Operations director",
+          "What is your recommendation?"
+        ],
+        [
+          "Module process owner",
+          "Keep product movement within the current authorized qualification status. I will propose the additional characterization and review needed before requesting any expanded release of Tool B."
+        ],
+        [
+          "Operations director",
+          "Give me language for the morning standup."
+        ],
+        [
+          "Module process owner",
+          "Say Tool B is under controlled qualification, not fully released for unrestricted product movement."
+        ]
+      ],
+      "coach_notes": [
+        "The learner explains why almost matched is not the same as unrestricted production release.",
+        "The line 'under controlled qualification' gives leaders a concise phrase for operations updates."
+      ],
+      "collocations": [
+        "match a tool",
+        "move lots to the matched tool",
+        "run split lots",
+        "qualify a recipe"
+      ],
+      "notes": [
+        "The learner explains why almost matched is not the same as unrestricted production release.",
+        "The line 'under controlled qualification' gives leaders a concise phrase for operations updates."
+      ]
+    },
+    {
+      "title": "Reliability Qualification vs Early Shipment",
+      "setting": "A business unit wants to ship early units after electrical test, before reliability stress is complete.",
+      "turns": [
+        [
+          "Business unit manager",
+          "Electrical test passed. Can we ship early samples while reliability finishes?"
+        ],
+        [
+          "Product engineer",
+          "We can discuss sample release, but electrical pass is not the same as reliability qualification."
+        ],
+        [
+          "Business unit manager",
+          "The customer only needs a few units for bring-up."
+        ],
+        [
+          "Product engineer",
+          "Then we should label them clearly as engineering samples, define use limits, and avoid treating them as qualified product."
+        ],
+        [
+          "Business unit manager",
+          "What is the unresolved risk?"
+        ],
+        [
+          "Product engineer",
+          "Package interaction, burn-in results, early-life failure rate, and bin stability are still open."
+        ],
+        [
+          "Business unit manager",
+          "What can I tell sales?"
+        ],
+        [
+          "Product engineer",
+          "Tell them sample release may be possible with restrictions, but production shipment waits for qualification review."
+        ]
+      ],
+      "coach_notes": [
+        "The learner separates sample release, production shipment, electrical test, and reliability qualification.",
+        "This is useful for sales and business conversations where 'passed test' is often overextended."
+      ],
+      "collocations": [
+        "screen for early-life failure",
+        "bin devices by speed and power",
+        "hold shipment",
+        "perform failure analysis"
+      ],
+      "notes": [
+        "The learner separates sample release, production shipment, electrical test, and reliability qualification.",
+        "This is useful for sales and business conversations where 'passed test' is often overextended."
+      ]
+    },
+    {
+      "title": "Foundry Capacity and Tape-Out Commitment",
+      "setting": "A customer asks for a guaranteed tape-out and wafer-start date while PDK updates and foundry capacity are still moving.",
+      "turns": [
+        [
+          "Customer program manager",
+          "We need a firm wafer-start date before our executive review. Can you guarantee the slot?"
+        ],
+        [
+          "Foundry coordinator",
+          "I can confirm the current allocation request, but I cannot guarantee the slot until the tape-out package and change freeze are complete."
+        ],
+        [
+          "Customer program manager",
+          "What is blocking the commitment?"
+        ],
+        [
+          "Foundry coordinator",
+          "PDK version signoff, mask data checks, final DRC closure, and capacity allocation approval."
+        ],
+        [
+          "Customer program manager",
+          "That sounds like too many caveats."
+        ],
+        [
+          "Foundry coordinator",
+          "The caveats are the conditions for a reliable commitment. If any of them move, the wafer-start date can move with them."
+        ],
+        [
+          "Customer program manager",
+          "What should our executive slide say?"
+        ],
+        [
+          "Foundry coordinator",
+          "Say the target slot is requested, with commitment pending PDK signoff, mask package lock, and foundry allocation confirmation."
+        ]
+      ],
+      "coach_notes": [
+        "The learner protects the relationship by giving a usable target while refusing a false guarantee.",
+        "The dialogue models conditional commitment language common in foundry and customer-program work."
+      ],
+      "collocations": [
+        "freeze the mask set",
+        "release the PDK",
+        "lock the tape-out package",
+        "allocate wafer starts"
+      ],
+      "notes": [
+        "The learner protects the relationship by giving a usable target while refusing a false guarantee.",
+        "The dialogue models conditional commitment language common in foundry and customer-program work."
+      ]
+    }
+  ],
+  "finance": [
+    {
+      "title": "Monthly Close: Revenue Miss or Timing Issue?",
+      "setting": "Finance reviews monthly results before sending the executive package.",
+      "dialogue": [
+        [
+          "Controller",
+          "Revenue is 4 percent below forecast. Is this a real miss or timing?"
+        ],
+        [
+          "FP&A lead",
+          "Part of it is timing. Two enterprise renewals slipped into next month."
+        ],
+        [
+          "Finance business partner",
+          "Can we separate accounting timing from underlying demand? Revenue recognition depends on the actual contracts, performance, and applicable accounting policy, not just signature date. Let's reconcile those details before calling this a timing-only variance."
+        ],
+        [
+          "Controller",
+          "What should the commentary say?"
+        ],
+        [
+          "Finance business partner",
+          "The renewals are one reported driver, but the accounting bridge still needs verification. We should also assess the SMB churn data before drawing a conclusion about recurring demand."
+        ],
+        [
+          "Controller",
+          "I will reconcile renewal timing with the revenue-recognition entries before we finalize the bridge."
+        ],
+        [
+          "Finance business partner",
+          "Please include the churn evidence and distinguish confirmed drivers from the open analysis."
+        ]
+      ],
+      "notes": [
+        "Good finance commentary separates accounting timing from business demand.",
+        "A variance explanation should state driver, recurrence, confidence, and risk."
+      ]
+    },
+    {
+      "title": "Forecast Review: Aggressive Sales Assumptions",
+      "setting": "A business unit submits a forecast that assumes a sharp Q4 recovery.",
+      "dialogue": [
+        [
+          "Business owner",
+          "The pipeline supports the forecast. We just need the team to execute."
+        ],
+        [
+          "CFO",
+          "Pipeline is not the same as committed revenue."
+        ],
+        [
+          "Finance business partner",
+          "The upside case is possible, but the base case should reflect conversion rate, sales-cycle length, and historical slippage. What evidence supports a conversion rate above the trailing average?"
+        ],
+        [
+          "Business owner",
+          "We have a new campaign."
+        ],
+        [
+          "Finance business partner",
+          "Then I would model the campaign as a sensitivity, not the base case, until we see qualified leads converting."
+        ],
+        [
+          "Business owner",
+          "I will supply historical conversion and slippage by stage."
+        ],
+        [
+          "Finance business partner",
+          "Then we can compare a defensible base case with the proposed upside."
+        ]
+      ],
+      "notes": [
+        "Respectful pushback focuses on assumptions and evidence.",
+        "Finance language can separate base case, upside case, and sensitivity."
+      ]
+    },
+    {
+      "title": "Cash Runway: Profit Is Not Cash",
+      "setting": "A startup leadership team reviews runway after slower collections.",
+      "dialogue": [
+        [
+          "CEO",
+          "We are close to breakeven, so why is cash still tight?"
+        ],
+        [
+          "Treasury",
+          "Collections slowed, and prepaid annual contracts are lower than planned."
+        ],
+        [
+          "Finance business partner",
+          "The income statement improved, but working capital moved against us. DSO increased, and deferred revenue growth slowed, so cash came in later than revenue recognition suggests."
+        ],
+        [
+          "CEO",
+          "What levers do we have?"
+        ],
+        [
+          "Finance business partner",
+          "We can assess collections, spending timing, and funding scenarios with the responsible teams. The cash forecast should show assumptions and constraints explicitly, including any financing that is not yet available."
+        ],
+        [
+          "CEO",
+          "I will update the receipts schedule and identify what remains unconfirmed."
+        ],
+        [
+          "Finance business partner",
+          "Bring that alongside the downside cash outlook so management can assess actual flexibility."
+        ]
+      ],
+      "notes": [
+        "Finance learners must explain why net income, EBITDA, and cash can diverge.",
+        "Runway updates should include levers and confidence level."
+      ]
+    },
+    {
+      "title": "Covenant Monitoring: Early Warning",
+      "setting": "Treasury sees leverage approaching a covenant threshold.",
+      "dialogue": [
+        [
+          "Treasurer",
+          "If Q3 EBITDA lands at the downside case, leverage gets close to the covenant."
+        ],
+        [
+          "Business unit CFO",
+          "But we will not breach unless Q4 is also weak."
+        ],
+        [
+          "Finance business partner",
+          "True, but we should treat this as an early warning. The lender conversation is easier before a breach than after one."
+        ],
+        [
+          "Treasurer",
+          "What do we need?"
+        ],
+        [
+          "Finance business partner",
+          "A rolling covenant forecast, downside mitigation plan, and a decision on whether to seek an amendment, add equity cushion, or reduce discretionary spend."
+        ],
+        [
+          "Treasurer",
+          "I will check the definitions and thresholds in the actual loan agreement."
+        ],
+        [
+          "Finance business partner",
+          "Use those in the forecast and route any proposed lender discussion through the authorized team."
+        ]
+      ],
+      "notes": [
+        "Covenant language should be precise: near breach, projected breach, actual breach, waiver, or amendment.",
+        "Early communication can preserve credibility with lenders."
+      ]
+    },
+    {
+      "title": "Investment Committee: Duration and Spread Risk",
+      "setting": "A portfolio manager explains fixed-income underperformance.",
+      "dialogue": [
+        [
+          "Client",
+          "Why did we underperform if the bond portfolio is conservative?"
+        ],
+        [
+          "Portfolio manager",
+          "Rates moved higher, and credit spreads widened at the same time."
+        ],
+        [
+          "Finance business partner",
+          "The portfolio stayed within mandate, but duration exposure hurt absolute returns, and spread widening hurt relative performance versus short-duration peers."
+        ],
+        [
+          "Client",
+          "Should we reduce risk now?"
+        ],
+        [
+          "Finance business partner",
+          "We can shorten duration, improve credit quality, or hold the allocation if your horizon supports it. The tradeoff is lower rate sensitivity versus potential income and reinvestment opportunity."
+        ],
+        [
+          "Client",
+          "I will compare the options against the mandate and current objectives."
+        ],
+        [
+          "Finance business partner",
+          "Please include the risks and assumptions before requesting an investment decision."
+        ]
+      ],
+      "notes": [
+        "Client communication should explain performance without making hindsight sound easy.",
+        "Use mandate, benchmark, horizon, and tradeoff language."
+      ]
+    },
+    {
+      "title": "Credit Underwriting: Strong Growth, Weak Coverage",
+      "setting": "A bank credit committee reviews a borrower seeking a larger facility.",
+      "dialogue": [
+        [
+          "Relationship manager",
+          "The borrower is growing fast and wants more capacity."
+        ],
+        [
+          "Credit officer",
+          "Growth is good, but cash conversion is weak."
+        ],
+        [
+          "Finance business partner",
+          "Revenue growth does not automatically support more debt. DSCR is below our target in the downside case, and customer concentration increases repayment risk."
+        ],
+        [
+          "Relationship manager",
+          "What structure would make it approvable?"
+        ],
+        [
+          "Finance business partner",
+          "We can evaluate structures and conditions through credit review, but none of those changes guarantees approval. Let's compare the downside cash flows and risk implications before recommending terms."
+        ],
+        [
+          "Relationship manager",
+          "I will collect the updated borrower records and confirm their reporting period."
+        ],
+        [
+          "Finance business partner",
+          "Then credit can assess the request using the complete file."
+        ]
+      ],
+      "notes": [
+        "Credit language should distinguish growth story from repayment capacity.",
+        "Approvals often depend on structure, reporting, and mitigants."
+      ]
+    },
+    {
+      "title": "M&A Diligence: EBITDA Add-Back Challenge",
+      "setting": "Corporate development reviews seller-adjusted EBITDA.",
+      "dialogue": [
+        [
+          "Seller advisor",
+          "The adjusted EBITDA add-backs are standard. These costs are non-recurring."
+        ],
+        [
+          "Buyer finance",
+          "Some of them appear to be ongoing operating costs."
+        ],
+        [
+          "Finance business partner",
+          "We can accept one-time legal settlement costs if documented, but the customer support add-back looks recurring. Removing it lowers EBITDA and increases the purchase multiple."
+        ],
+        [
+          "Deal lead",
+          "How should we proceed?"
+        ],
+        [
+          "Finance business partner",
+          "Request support for each add-back and assess its effect on normalized earnings and valuation. Working-capital mechanisms and contingent consideration address different deal questions and need their own analysis and qualified review."
+        ],
+        [
+          "Seller advisor",
+          "I will request documentary support for each disputed adjustment."
+        ],
+        [
+          "Finance business partner",
+          "Keep the seller's assertion separate from the buyer's verified analysis."
+        ]
+      ],
+      "notes": [
+        "Diligence language should be skeptical but not hostile.",
+        "Adjusted EBITDA affects valuation, leverage, and covenant forecasts."
+      ]
+    },
+    {
+      "title": "Pricing and Margin: Discounting Pressure",
+      "setting": "Sales wants approval for a large discount to close a strategic customer.",
+      "dialogue": [
+        [
+          "Sales",
+          "If we approve the discount, we close the logo this quarter."
+        ],
+        [
+          "Finance",
+          "The discount compresses gross margin and sets a pricing precedent."
+        ],
+        [
+          "Finance business partner",
+          "Can we separate strategic value from unit economics? The deal may be worth doing, but the base price should not become the reference point for renewals or similar customers."
+        ],
+        [
+          "Sales",
+          "What is the finance recommendation?"
+        ],
+        [
+          "Finance business partner",
+          "I would compare the proposed terms and longer-term margin effects before recommending approval. Any discount, volume commitment, or renewal provision still needs the required commercial authorization."
+        ],
+        [
+          "Sales",
+          "I will send the full proposed commercial terms for review."
+        ],
+        [
+          "Finance business partner",
+          "Include the renewal assumptions so the evaluation covers more than the initial booking."
+        ]
+      ],
+      "notes": [
+        "Finance pushback should name both revenue upside and margin risk.",
+        "Deal approval language often includes conditions, not only yes or no."
+      ]
+    },
+    {
+      "title": "Audit Issue: Control Deficiency or Material Weakness?",
+      "setting": "An audit team finds repeated manual journal-entry approvals after posting.",
+      "dialogue": [
+        [
+          "Auditor",
+          "Approvals occurred after posting in several samples."
+        ],
+        [
+          "Controller",
+          "The entries were correct, so I do not see the issue."
+        ],
+        [
+          "Finance business partner",
+          "Accuracy helps, but the control objective is timely review before posting. A correct entry can still reveal an operating deficiency."
+        ],
+        [
+          "Controller",
+          "Are you saying it is a material weakness?"
+        ],
+        [
+          "Finance business partner",
+          "Not from this evidence alone. We need to assess frequency, magnitude, compensating controls, and whether a material misstatement could reasonably occur."
+        ],
+        [
+          "Auditor",
+          "I will gather the sampling details and the control-design evidence."
+        ],
+        [
+          "Finance business partner",
+          "That will support a properly scoped assessment instead of a premature severity label."
+        ]
+      ],
+      "notes": [
+        "Control language should separate error outcome from control design or operation.",
+        "Do not jump from deficiency to material weakness without analysis."
+      ]
+    },
+    {
+      "title": "FX Hedge Debate",
+      "setting": "A multinational company faces euro-denominated costs and dollar revenue.",
+      "dialogue": [
+        [
+          "Operations",
+          "The euro moved against us. Can treasury just lock the rate?"
+        ],
+        [
+          "Treasury",
+          "We can hedge part of the exposure, but hedging has cost and forecast risk."
+        ],
+        [
+          "Finance business partner",
+          "The exposure is not only today's spot rate. We need forecasted euro costs, timing, confidence, hedge ratio, and whether the hedge qualifies for the accounting treatment we expect."
+        ],
+        [
+          "Operations",
+          "So what do you recommend?"
+        ],
+        [
+          "Finance business partner",
+          "We should assess eligible hedging options against the treasury policy, exposure evidence, costs, and accounting requirements with qualified reviewers before recommending or executing a transaction."
+        ],
+        [
+          "Operations",
+          "I will reconcile the forecast exposure with the purchase schedule."
+        ],
+        [
+          "Finance business partner",
+          "Show the uncertainty in amount and timing before treasury reviews the alternatives."
+        ]
+      ],
+      "notes": [
+        "Hedging reduces certain risks but can create cost, accounting, and forecast challenges.",
+        "Use exposure, hedge ratio, timing, and accounting-treatment language."
+      ]
+    },
+    {
+      "title": "Performance Presentation: Fair, Accurate, Complete",
+      "setting": "A wealth team prepares a client deck after a strong quarter.",
+      "dialogue": [
+        [
+          "Advisor",
+          "Let's lead with our best-performing strategy."
+        ],
+        [
+          "Compliance",
+          "Only if the performance presentation is balanced and not misleading."
+        ],
+        [
+          "Finance business partner",
+          "We should include benchmark, time period, fees basis, relevant risks, and whether the result is representative. A single strong quarter without context may create a misleading impression."
+        ],
+        [
+          "Advisor",
+          "Can we still use it?"
+        ],
+        [
+          "Finance business partner",
+          "Potentially, after compliance review of the actual material and applicable requirements. Those presentation elements help provide context but do not automatically make a communication compliant."
+        ],
+        [
+          "Advisor",
+          "I will submit the complete slide and supporting figures to compliance."
+        ],
+        [
+          "Finance business partner",
+          "Keep its publication status pending until the required review is complete."
+        ]
+      ],
+      "notes": [
+        "Investment performance language carries compliance and ethics risk.",
+        "Strong performance still needs context, risk, fees, and representativeness."
+      ]
+    },
+    {
+      "title": "Board Update: Liquidity, Leverage, and Capital Allocation",
+      "setting": "The CFO briefs the board before approving a buyback and acquisition pipeline.",
+      "dialogue": [
+        [
+          "Board member",
+          "Can we fund the buyback and still pursue the acquisition?"
+        ],
+        [
+          "CFO",
+          "It depends on the downside case and debt capacity."
+        ],
+        [
+          "Finance business partner",
+          "Base case supports both, but the downside case tightens liquidity and pushes leverage close to our target ceiling. The decision is not only affordability; it is flexibility if revenue slows or rates stay higher."
+        ],
+        [
+          "Board member",
+          "What is management's recommendation?"
+        ],
+        [
+          "Finance business partner",
+          "Authorize a smaller buyback tranche now, preserve capacity for diligence, and revisit after Q2 cash conversion and covenant forecast are updated."
+        ],
+        [
+          "Board member",
+          "I will bring the smaller tranche and alternative scenarios to the decision meeting."
+        ],
+        [
+          "Finance business partner",
+          "Include the required authorizations and preserve room to reassess as the evidence changes."
+        ]
+      ],
+      "notes": [
+        "Board finance updates need recommendation, tradeoff, downside case, and decision trigger.",
+        "Capital allocation language connects cash, strategy, risk, and optionality."
+      ]
+    }
+  ],
+  "general-it": [
+    {
+      "title": "Service Desk Escalation: 'VPN Is Broken'",
+      "setting": "A remote employee reports that the VPN connects, but the finance system will not load.",
+      "dialogue": [
+        [
+          "User",
+          "The VPN is broken again. I cannot get to finance."
+        ],
+        [
+          "Service desk",
+          "I understand the impact. Can I confirm one detail: does the VPN show connected, or does the connection fail completely?"
+        ],
+        [
+          "User",
+          "It says connected."
+        ],
+        [
+          "IT operations engineer",
+          "Then we should avoid calling this a VPN outage yet. It may be DNS, routing, firewall, or the finance app itself. Are other internal sites loading?"
+        ],
+        [
+          "User",
+          "The intranet loads, but finance times out."
+        ],
+        [
+          "IT operations engineer",
+          "Thank you. I will update the ticket as 'VPN connected; finance app unreachable over VPN for one user.' I am checking whether this is user-specific or app-wide before escalating."
+        ],
+        [
+          "User",
+          "I will check the application status with the service owner."
+        ],
+        [
+          "IT operations engineer",
+          "Please keep the ticket scope precise while we determine how many users are affected."
+        ]
+      ],
+      "notes": [
+        "Good triage narrows the scope before assigning blame.",
+        "The learner validates the user's frustration while changing the technical description."
+      ]
+    },
+    {
+      "title": "P1 Incident Bridge: DNS or Application Outage?",
+      "setting": "Multiple users cannot reach a customer portal after a DNS change.",
+      "dialogue": [
+        [
+          "Incident commander",
+          "We need a clear status. Is the portal down?"
+        ],
+        [
+          "Network engineer",
+          "The application servers are healthy. DNS queries are returning the old address for some users."
+        ],
+        [
+          "IT operations engineer",
+          "Current evidence points to inconsistent name resolution after the change. Let's compare resolver responses and the change timeline, then assess mitigation through the authorized incident and change process. Lowering a TTL now would not retroactively expire records already cached elsewhere."
+        ],
+        [
+          "App owner",
+          "Can we say the application is not the cause?"
+        ],
+        [
+          "IT operations engineer",
+          "We can say current evidence points to DNS propagation, not application health. We should avoid final root-cause language until we review the change timeline and resolver logs."
+        ],
+        [
+          "Incident commander",
+          "I will compare the resolver evidence with the approved change record."
+        ],
+        [
+          "IT operations engineer",
+          "Then we can evaluate mitigation without calling the root cause final too early."
+        ]
+      ],
+      "notes": [
+        "Separate service impact from component health.",
+        "Use 'current evidence points to...' when the root cause is not fully confirmed."
+      ]
+    },
+    {
+      "title": "Access Review: Urgent Admin Permission",
+      "setting": "A senior manager asks for admin rights to fix a reporting dashboard before a board meeting.",
+      "dialogue": [
+        [
+          "Manager",
+          "Just give me admin access for today. I know what I am doing."
+        ],
+        [
+          "IT lead",
+          "We want to help with the deadline, but permanent admin rights are not the right control."
+        ],
+        [
+          "IT operations engineer",
+          "We can assess a time-limited privileged session with approval, logging, and a defined task scope under our access process. We need to verify that the access expires as intended."
+        ],
+        [
+          "Manager",
+          "That sounds slow."
+        ],
+        [
+          "IT operations engineer",
+          "I can help submit the request and identify the authorized reviewer. I cannot promise approval or an exception before that review."
+        ],
+        [
+          "Manager",
+          "I will specify the task and duration in the request."
+        ],
+        [
+          "IT operations engineer",
+          "That gives the reviewer a clear scope for the access decision."
+        ]
+      ],
+      "notes": [
+        "Least privilege can be framed as protection, not obstruction.",
+        "Offer a controlled path rather than only saying no."
+      ]
+    },
+    {
+      "title": "Patch Window Negotiation",
+      "setting": "Security wants to patch a critical vulnerability; operations worries about downtime during month-end close.",
+      "dialogue": [
+        [
+          "Security",
+          "This CVE is being actively exploited. We need the patch tonight."
+        ],
+        [
+          "Operations",
+          "Tonight is month-end close. If the ERP system is down, finance cannot finish."
+        ],
+        [
+          "IT operations engineer",
+          "We have two risks: exploitation if we wait, and business disruption if the patch fails. Can we test the patch in staging now, apply compensating controls tonight, and schedule production for the first safe window?"
+        ],
+        [
+          "Security",
+          "What controls?"
+        ],
+        [
+          "IT operations engineer",
+          "Restrict exposure, increase monitoring, block known indicators, and require rollback approval before any production change. If exploitation evidence appears, we move to emergency change."
+        ],
+        [
+          "Security",
+          "I will confirm the testing and business constraints with the service owner."
+        ],
+        [
+          "IT operations engineer",
+          "Record the authorized plan and escalation triggers in the change record."
+        ]
+      ],
+      "notes": [
+        "High-level IT English often balances two real risks instead of pretending one side is irrational.",
+        "Compensating controls reduce risk when the ideal fix is delayed."
+      ]
+    },
+    {
+      "title": "Cloud Cost Spike",
+      "setting": "Finance notices a 38 percent increase in monthly cloud spend.",
+      "dialogue": [
+        [
+          "Finance",
+          "Why did cloud cost jump? Did IT approve this?"
+        ],
+        [
+          "Cloud engineer",
+          "Most of the increase is compute in the analytics environment and log retention in production."
+        ],
+        [
+          "IT operations engineer",
+          "The immediate issue is spend, but the operational issue is ownership. Several resources have no cost-center tags, so we cannot assign accountability confidently."
+        ],
+        [
+          "Finance",
+          "Can you cut it today?"
+        ],
+        [
+          "IT operations engineer",
+          "We can stop idle non-production instances today, reduce excessive log retention where policy allows, and bring a tagging enforcement plan by Friday. I would not delete storage until owners confirm retention requirements."
+        ],
+        [
+          "Finance",
+          "I will identify resource owners before any cost reduction changes."
+        ],
+        [
+          "IT operations engineer",
+          "Include retention and availability requirements in the proposed actions."
+        ]
+      ],
+      "notes": [
+        "Cost conversations need evidence, ownership, and guardrails.",
+        "Do not promise savings by deleting resources without retention review."
+      ]
+    },
+    {
+      "title": "Kubernetes Incident: Crashing Pods",
+      "setting": "A containerized internal tool fails after a deployment.",
+      "dialogue": [
+        [
+          "Developer",
+          "The deployment is broken. The pods keep restarting."
+        ],
+        [
+          "Platform engineer",
+          "The readiness probe is failing, and the logs show missing environment variables. We still need to check the container termination reason."
+        ],
+        [
+          "IT operations engineer",
+          "A failed readiness probe can remove a pod from service endpoints; it does not itself explain container restarts. Let's inspect termination events and any liveness or startup probe failures before assigning a cause."
+        ],
+        [
+          "Developer",
+          "Should we roll back?"
+        ],
+        [
+          "IT operations engineer",
+          "Let's compare rollback and configuration repair using the incident procedure, evidence, and approved recovery options. The missing configuration is a finding; the full failure sequence still needs confirmation."
+        ],
+        [
+          "Developer",
+          "I will capture the termination reason and current deployment configuration."
+        ],
+        [
+          "IT operations engineer",
+          "Bring those to the incident lead so recovery follows the evidence."
+        ]
+      ],
+      "notes": [
+        "The learner distinguishes platform behavior from application configuration.",
+        "Incident language should prioritize restoration, then investigation."
+      ]
+    },
+    {
+      "title": "Phishing and Possible Account Compromise",
+      "setting": "A user clicked a suspicious link and entered credentials.",
+      "dialogue": [
+        [
+          "User",
+          "I think I made a mistake. I entered my password on a weird page."
+        ],
+        [
+          "Service desk",
+          "Thank you for reporting quickly. Please do not change anything else yet."
+        ],
+        [
+          "IT operations engineer",
+          "We will follow the approved account-compromise response, including authorized containment and evidence handling. I will connect you with security through the established channel and explain the reporting steps."
+        ],
+        [
+          "User",
+          "Am I in trouble?"
+        ],
+        [
+          "IT operations engineer",
+          "The priority is containment and evidence. Reporting quickly helps us protect your account and other users."
+        ],
+        [
+          "User",
+          "I will stay on the approved support channel."
+        ],
+        [
+          "IT operations engineer",
+          "Thank you. We will confirm the handoff to security and explain the next steps."
+        ]
+      ],
+      "notes": [
+        "Good security communication reduces shame so users report faster.",
+        "Containment steps should be specific but not overly alarming."
+      ]
+    },
+    {
+      "title": "Backup Restore Test: RPO Mismatch",
+      "setting": "A restore test shows that the system can recover, but with more data loss than expected.",
+      "dialogue": [
+        [
+          "Business owner",
+          "The restore worked, so are we good?"
+        ],
+        [
+          "Database admin",
+          "The restore completed, but the latest usable backup is six hours old."
+        ],
+        [
+          "IT operations engineer",
+          "The restore completed within our recovery-time target, but the latest recovered data are older than the agreed recovery-point objective. We need to report those two results separately."
+        ],
+        [
+          "Business owner",
+          "I did not understand that difference."
+        ],
+        [
+          "IT operations engineer",
+          "RTO is the recovery-time objective. RPO describes the acceptable recovery point, commonly expressed as a time-based data-loss window. We need to review the recovery design against the business requirements and escalate the gap."
+        ],
+        [
+          "Business owner",
+          "I will confirm the business recovery targets in writing."
+        ],
+        [
+          "IT operations engineer",
+          "Then we can review the tested results against the agreed requirements."
+        ]
+      ],
+      "notes": [
+        "RTO and RPO are often misunderstood; define them in business language.",
+        "A successful restore can still fail the business requirement."
+      ]
+    },
+    {
+      "title": "Change Advisory: Firewall Rule Request",
+      "setting": "A project team wants a broad firewall opening before a launch.",
+      "dialogue": [
+        [
+          "Project lead",
+          "We need to open the firewall to the vendor range today, or the launch slips."
+        ],
+        [
+          "Security architect",
+          "The requested range is too broad."
+        ],
+        [
+          "IT operations engineer",
+          "Can we narrow by source, destination, port, protocol, and time window? If the vendor cannot provide that, we should treat this as a high-risk exception with monitoring and an expiration date."
+        ],
+        [
+          "Project lead",
+          "What is the business impact of waiting?"
+        ],
+        [
+          "IT operations engineer",
+          "Launch delay is one impact. The other impact is exposing internal services more widely than necessary. The decision should name both risks and the owner who accepts the exception."
+        ],
+        [
+          "Project lead",
+          "I will ask the vendor for the specific connectivity requirements."
+        ],
+        [
+          "IT operations engineer",
+          "We can assess the narrowed request through the normal security review."
+        ]
+      ],
+      "notes": [
+        "A change review is not only a technical approval; it records risk ownership.",
+        "Use precise constraint language: source, destination, port, protocol, duration."
+      ]
+    },
+    {
+      "title": "Post-Incident Review: Blame vs Learning",
+      "setting": "A failed manual change caused an outage. The team is reviewing what happened.",
+      "dialogue": [
+        [
+          "Manager",
+          "Who made the change?"
+        ],
+        [
+          "Engineer",
+          "I did, but I followed the old runbook."
+        ],
+        [
+          "IT operations engineer",
+          "The action matters, but the improvement question is broader. Why did the runbook allow a manual step without peer review, validation, or rollback verification?"
+        ],
+        [
+          "Manager",
+          "So what should the action items be?"
+        ],
+        [
+          "IT operations engineer",
+          "Update the runbook, add automated validation, require peer review for that command, and create an alert that detects the bad state within two minutes."
+        ],
+        [
+          "Manager",
+          "I will draft those actions with owners and verification criteria."
+        ],
+        [
+          "IT operations engineer",
+          "Review them against the actual failure sequence before treating the investigation as complete."
+        ]
+      ],
+      "notes": [
+        "Root-cause language should include process and detection gaps.",
+        "Action items need owners, due dates, and verification, not just good intentions."
+      ]
+    },
+    {
+      "title": "Vendor Escalation: SaaS Degradation",
+      "setting": "A critical SaaS vendor reports a regional degradation affecting SSO logins.",
+      "dialogue": [
+        [
+          "Business stakeholder",
+          "Why can't IT fix this?"
+        ],
+        [
+          "Vendor manager",
+          "The issue is in the vendor's region. We do not control their identity gateway."
+        ],
+        [
+          "IT operations engineer",
+          "Our role is mitigation and communication. We are checking alternate login paths, monitoring the vendor status page, and collecting affected-user counts so we can escalate with evidence."
+        ],
+        [
+          "Stakeholder",
+          "When will it be fixed?"
+        ],
+        [
+          "IT operations engineer",
+          "The vendor has not provided an ETA. I will give the next update in 30 minutes, or sooner if the status changes."
+        ],
+        [
+          "Business stakeholder",
+          "I will collect the affected-user counts and current service impact."
+        ],
+        [
+          "IT operations engineer",
+          "That will make the vendor escalation and our next stakeholder update more useful."
+        ]
+      ],
+      "notes": [
+        "When a vendor owns the fix, IT can still own communication, impact tracking, and mitigations.",
+        "Avoid inventing ETAs under pressure."
+      ]
+    },
+    {
+      "title": "Executive Update: Risk, Impact, and Decision",
+      "setting": "A CIO asks for a short update during a major email outage.",
+      "dialogue": [
+        [
+          "CIO",
+          "Give me the short version."
+        ],
+        [
+          "IT operations engineer",
+          "Email delivery is delayed for about 40 percent of users in this fictional incident. Current checks show queued mail, but we have not reconciled every message. We are investigating the filtering-service dependency with the vendor and reviewing approved continuity options."
+        ],
+        [
+          "CIO",
+          "What decision do you need?"
+        ],
+        [
+          "IT operations engineer",
+          "We need an authorized decision on the available continuity options after security and service owners assess them. I will describe the operational effect and control implications of each option before requesting approval."
+        ],
+        [
+          "CIO",
+          "I will confirm the business owners needed for that decision."
+        ],
+        [
+          "IT operations engineer",
+          "I will bring the assessed options and keep the incident status current."
+        ]
+      ],
+      "notes": [
+        "Executive updates should include impact, confidence, mitigation, risk, and requested decision.",
+        "A short update can still be technically precise."
+      ]
+    }
+  ],
+  "pharmaceutical": [
+    {
+      "title": "TPP Debate: Scientifically Interesting vs Clinically Meaningful",
+      "setting": "A discovery team wants to advance a compound, but the development team is uncertain about the patient and evidence logic.",
+      "dialogue": [
+        [
+          "Discovery lead",
+          "The biomarker response is strong. We should move quickly."
+        ],
+        [
+          "Clinical development",
+          "The biology is promising, but the clinical target is not clear yet."
+        ],
+        [
+          "Development program specialist",
+          "Before we commit to the next study, we need a sharper TPP: target population, expected clinical benefit, dose rationale, safety assumptions, comparator, endpoint, and differentiation from standard of care."
+        ],
+        [
+          "Discovery lead",
+          "The mechanism is novel."
+        ],
+        [
+          "Development program specialist",
+          "Novel mechanism helps, but it does not replace evidence that patients, regulators, physicians, and payers will consider meaningful."
+        ],
+        [
+          "Discovery lead",
+          "I will revise the target product profile around the development question."
+        ],
+        [
+          "Development program specialist",
+          "Keep the evidence gaps visible so the next study has a clear purpose."
+        ]
+      ],
+      "notes": [
+        "Scientific excitement should be connected to patient and development logic.",
+        "TPP language keeps the team from confusing mechanism with product value."
+      ]
+    },
+    {
+      "title": "IND Readiness: CMC Is Not Just a Detail",
+      "setting": "A team wants to file an IND quickly, but CMC documentation is incomplete.",
+      "dialogue": [
+        [
+          "Program lead",
+          "Clinical is ready. Let's file the IND next month."
+        ],
+        [
+          "CMC lead",
+          "The stability package and analytical validation are not complete."
+        ],
+        [
+          "Development program specialist",
+          "An IND is not only a protocol. We need enough nonclinical, clinical, and CMC information to support safe human dosing and product quality. If CMC is incomplete, the clinical timeline may not be credible."
+        ],
+        [
+          "Program lead",
+          "Can we explain that the data are coming?"
+        ],
+        [
+          "Development program specialist",
+          "We can propose a plan, but we should not present future work as current readiness. Let's identify the minimum data needed and the regulatory risk of filing early."
+        ],
+        [
+          "Program lead",
+          "I will reconcile the CMC milestones with the submission plan."
+        ],
+        [
+          "Development program specialist",
+          "Then regulatory can assess readiness using the actual available package."
+        ]
+      ],
+      "notes": [
+        "Regulatory readiness must include quality and manufacturing evidence.",
+        "Use 'minimum data needed' and 'regulatory risk' instead of blame."
+      ]
+    },
+    {
+      "title": "Endpoint Debate: Convenient vs Clinically Relevant",
+      "setting": "The team is choosing a primary endpoint for a Phase 2 trial.",
+      "dialogue": [
+        [
+          "Clinical operations",
+          "The biomarker endpoint is easier to measure and faster."
+        ],
+        [
+          "Medical lead",
+          "But it may not persuade physicians."
+        ],
+        [
+          "Development program specialist",
+          "We should separate operational convenience from clinical relevance. If the biomarker is the primary endpoint, we need a strong rationale that it predicts patient benefit or supports the development decision."
+        ],
+        [
+          "Statistician",
+          "The study is not powered for the clinical endpoint."
+        ],
+        [
+          "Development program specialist",
+          "Then we should be explicit: the study may be decision-enabling for dose and signal, but not definitive for clinical benefit."
+        ],
+        [
+          "Clinical operations",
+          "I will document what this study can and cannot establish."
+        ],
+        [
+          "Development program specialist",
+          "Use that distinction consistently in the protocol rationale and readout."
+        ]
+      ],
+      "notes": [
+        "Endpoint language should name what the study can and cannot prove.",
+        "Operationally convenient endpoints may still need clinical justification."
+      ]
+    },
+    {
+      "title": "Enrollment Rescue: Protocol Burden and Site Reality",
+      "setting": "Enrollment is behind plan and the team is considering more sites.",
+      "dialogue": [
+        [
+          "Clinical operations",
+          "We are 40 percent behind enrollment. We should activate more sites."
+        ],
+        [
+          "Site manager",
+          "The current sites say the visit schedule is too burdensome."
+        ],
+        [
+          "Development program specialist",
+          "More sites may help, but only if the protocol is feasible. We should examine screen failure reasons, visit burden, competing trials, eligibility criteria, and patient travel before adding cost."
+        ],
+        [
+          "Program lead",
+          "We need speed."
+        ],
+        [
+          "Development program specialist",
+          "Agreed, but speed without feasibility will only create more underperforming sites. Let's propose a rescue plan with root cause, amendment options, and site-support actions."
+        ],
+        [
+          "Clinical operations",
+          "I will compile the screen-failure reasons and site feedback."
+        ],
+        [
+          "Development program specialist",
+          "Any proposed protocol change must follow the required review and approval process."
+        ]
+      ],
+      "notes": [
+        "Enrollment rescue should start with root cause, not only site count.",
+        "Protocol burden language helps connect operations to data quality."
+      ]
+    },
+    {
+      "title": "Safety Signal: Possible Liver Risk",
+      "setting": "Several liver enzyme elevations have appeared across studies.",
+      "dialogue": [
+        [
+          "Safety physician",
+          "We have a cluster of ALT elevations."
+        ],
+        [
+          "Clinical lead",
+          "Are they related to the drug?"
+        ],
+        [
+          "Development program specialist",
+          "We should not jump to causality, but we also should not minimize it. Let's review timing, dose relationship, dechallenge, rechallenge, baseline risk factors, concomitant medications, seriousness, and whether the pattern changes the risk-benefit assessment."
+        ],
+        [
+          "Regulatory affairs",
+          "Do we need to notify FDA?"
+        ],
+        [
+          "Development program specialist",
+          "Let's assess seriousness, expectedness, reasonable possibility, and reporting timelines against the protocol, regulations, and safety SOPs."
+        ],
+        [
+          "Safety physician",
+          "I will route the case information promptly through pharmacovigilance."
+        ],
+        [
+          "Development program specialist",
+          "Record the evidence and follow-up without implying causality has already been established."
+        ]
+      ],
+      "notes": [
+        "Safety language should be calm, structured, and urgent where needed.",
+        "Avoid both premature causality and premature reassurance."
+      ]
+    },
+    {
+      "title": "Data Readout: Statistically Significant but Modest Effect",
+      "setting": "A Phase 3 trial met the primary endpoint, but the effect size is small and safety events increased.",
+      "dialogue": [
+        [
+          "Executive",
+          "The primary endpoint met the prespecified statistical criterion. Can we call this a major breakthrough?"
+        ],
+        [
+          "Biostatistician",
+          "The effect is statistically significant, but the confidence interval is narrow around a modest benefit."
+        ],
+        [
+          "Development program specialist",
+          "We can say the primary endpoint was met, but we should not overstate clinical impact. The communication needs effect size, clinical relevance, safety profile, population, and comparison to current options."
+        ],
+        [
+          "Commercial",
+          "But we need a strong launch message."
+        ],
+        [
+          "Development program specialist",
+          "A strong message must still be supportable. Overclaiming now may create regulatory, credibility, and MLR risk later."
+        ],
+        [
+          "Executive",
+          "I will revise the claim to reflect the effect size and uncertainty."
+        ],
+        [
+          "Development program specialist",
+          "Submit the complete context for the required medical, legal, and regulatory review."
+        ]
+      ],
+      "notes": [
+        "Positive data still need clinical and safety context.",
+        "Commercial excitement must stay inside evidence boundaries."
+      ]
+    },
+    {
+      "title": "Quality Deviation: Batch Release Pressure",
+      "setting": "A batch is needed for launch supply, but an OOS result is under investigation.",
+      "dialogue": [
+        [
+          "Supply lead",
+          "If we do not release this batch, launch inventory is at risk."
+        ],
+        [
+          "Quality",
+          "The OOS investigation is not closed."
+        ],
+        [
+          "Development program specialist",
+          "The open investigation needs the required quality assessment and authorized disposition. We should not promise release while that process remains unresolved; supply planning needs an accurate statement of the current status."
+        ],
+        [
+          "Supply lead",
+          "Can we release with a memo?"
+        ],
+        [
+          "Development program specialist",
+          "A memo is not a substitute for the applicable quality process. The authorized quality team must assess the evidence and determine the appropriate disposition under the current requirements."
+        ],
+        [
+          "Supply lead",
+          "I will communicate the pending batch status to supply planning."
+        ],
+        [
+          "Development program specialist",
+          "Quality will provide the authorized disposition through the controlled process."
+        ]
+      ],
+      "notes": [
+        "Quality decisions must not be framed as paperwork obstacles.",
+        "Use documentation and process language rather than personal disagreement."
+      ]
+    },
+    {
+      "title": "Promotional Claim Review: Subgroup Data",
+      "setting": "Marketing wants to use a subgroup result in launch materials.",
+      "dialogue": [
+        [
+          "Marketing",
+          "The subgroup response looks impressive. Can we make it the headline?"
+        ],
+        [
+          "Medical reviewer",
+          "It was exploratory and not powered."
+        ],
+        [
+          "Development program specialist",
+          "The subgroup may be scientifically interesting, but as a promotional headline it could be misleading. We need to check whether the claim is consistent with approved labeling, adequately supported, and presented with appropriate context and risk information."
+        ],
+        [
+          "Marketing",
+          "Can we say 'especially effective' in that subgroup?"
+        ],
+        [
+          "Development program specialist",
+          "Not unless that claim is supported and approved. We can discuss a balanced, label-consistent statement or keep the subgroup in scientific exchange if appropriate."
+        ],
+        [
+          "Marketing",
+          "I will remove the unsupported headline from the draft."
+        ],
+        [
+          "Development program specialist",
+          "Keep the exploratory analysis clearly identified in any material submitted for review."
+        ]
+      ],
+      "notes": [
+        "MLR language should distinguish evidence interest from promotional support.",
+        "A true statement can still be misleading without context."
+      ]
+    },
+    {
+      "title": "MSL Boundary: Unsolicited Off-Label Question",
+      "setting": "A physician asks an MSL about an off-label use during a scientific exchange.",
+      "dialogue": [
+        [
+          "Physician",
+          "Have you seen data for use in younger patients?"
+        ],
+        [
+          "MSL",
+          "That is outside the approved indication."
+        ],
+        [
+          "Development program specialist",
+          "I can route your unsolicited scientific question through our approved medical-information process. We need to distinguish the current approved indication from any other use and provide an appropriately reviewed, balanced response."
+        ],
+        [
+          "Physician",
+          "So you have data?"
+        ],
+        [
+          "Development program specialist",
+          "I will confirm what information is available and arrange a response through that process, including study design, limitations, and the relevant context. I cannot promise a particular conclusion before reviewing the evidence."
+        ],
+        [
+          "Physician",
+          "I will record the question and preferred response channel."
+        ],
+        [
+          "Development program specialist",
+          "The designated medical-information team can then provide the appropriately reviewed response."
+        ]
+      ],
+      "notes": [
+        "Boundary language should be clear without shutting down legitimate scientific exchange.",
+        "Balance and context matter in medical affairs conversations."
+      ]
+    },
+    {
+      "title": "Payer Evidence: Value Story Is Not the Same as Label",
+      "setting": "Market access is preparing for payer discussions after approval.",
+      "dialogue": [
+        [
+          "Market access",
+          "Payers will ask why this deserves preferred formulary status."
+        ],
+        [
+          "HEOR",
+          "We have clinical data but limited real-world outcomes."
+        ],
+        [
+          "Development program specialist",
+          "The payer value story should connect eligible population, clinical benefit, safety, budget impact, comparator, adherence, and unmet need. We should not imply outcomes we have not measured."
+        ],
+        [
+          "Commercial",
+          "Can we say it reduces hospitalizations?"
+        ],
+        [
+          "Development program specialist",
+          "Only if the evidence supports that claim for the relevant population and context. Otherwise, we can frame it as a hypothesis or evidence-generation need."
+        ],
+        [
+          "Market access",
+          "I will separate measured outcomes from modeled assumptions."
+        ],
+        [
+          "Development program specialist",
+          "That makes the evidence-generation needs clear without implying unobserved benefits."
+        ]
+      ],
+      "notes": [
+        "Market access language must separate approved label, evidence, and economic hypothesis.",
+        "Payer communication should avoid unsupported outcomes claims."
+      ]
+    },
+    {
+      "title": "Biosimilar Discussion: Similar Is Not Identical",
+      "setting": "A cross-functional team is preparing educational material on a biosimilar.",
+      "dialogue": [
+        [
+          "Commercial",
+          "Can we say it is the same as the reference product?"
+        ],
+        [
+          "Regulatory affairs",
+          "Biosimilar language is more specific than that."
+        ],
+        [
+          "Development program specialist",
+          "We should say highly similar with no clinically meaningful differences in safety, purity, and potency, consistent with the approved biosimilar framework. 'Same' may oversimplify and create confusion."
+        ],
+        [
+          "Medical affairs",
+          "What about interchangeability?"
+        ],
+        [
+          "Development program specialist",
+          "Interchangeability has a specific regulatory meaning. We should use it only if the product has that designation and the material explains it accurately."
+        ],
+        [
+          "Commercial",
+          "I will verify the current product status and jurisdiction-specific terminology."
+        ],
+        [
+          "Development program specialist",
+          "Use the reviewed wording consistently in the final material."
+        ]
+      ],
+      "notes": [
+        "Biosimilar language needs regulatory precision.",
+        "Avoid simplifying technical terms into misleading equivalence."
+      ]
+    },
+    {
+      "title": "Launch Readiness: Approval Is Not Enough",
+      "setting": "The team is two months from expected approval and launch readiness is uneven.",
+      "dialogue": [
+        [
+          "General manager",
+          "If approval comes on time, we launch immediately."
+        ],
+        [
+          "Launch lead",
+          "Supply, MLR materials, medical training, payer coverage, and PV intake process still have open risks."
+        ],
+        [
+          "Development program specialist",
+          "Approval is necessary but not sufficient for launch. We need a readiness view across label, supply, quality release, safety reporting, medical information, field training, access, and promotional materials."
+        ],
+        [
+          "General manager",
+          "What is the critical path?"
+        ],
+        [
+          "Development program specialist",
+          "Supply release, final label-dependent MLR approval, safety intake readiness, and payer communication are the main dependencies. I recommend a weekly risk review until launch decision."
+        ],
+        [
+          "General manager",
+          "I will assign owners to the open readiness items."
+        ],
+        [
+          "Development program specialist",
+          "Bring the evidence of completion to the launch review before requesting a decision."
+        ]
+      ],
+      "notes": [
+        "Launch readiness requires cross-functional dependency language.",
+        "Approval timing should not hide supply, safety, or compliance readiness risk."
+      ]
+    }
+  ],
+  "real-estate": [
+    {
+      "title": "Buyer Consultation: Agreement Before Touring",
+      "setting": "A buyer wants to see a house immediately but has not discussed representation or compensation.",
+      "dialogue": [
+        [
+          "Buyer",
+          "Can you show me the house this afternoon? I do not want to sign anything yet."
+        ],
+        [
+          "Agent",
+          "Before arranging representation and a tour, let's review the applicable law, brokerage policy, and any agreement requirements. I will explain the services, term, and compensation arrangements clearly."
+        ],
+        [
+          "Transaction adviser",
+          "This agreement is not meant to pressure you. It defines who I represent, what I can do for you, and what compensation we agree to. We can keep the term narrow if you only want to evaluate this property."
+        ],
+        [
+          "Buyer",
+          "So I have to pay you?"
+        ],
+        [
+          "Transaction adviser",
+          "Compensation is negotiable and may be paid in different ways depending on the offer and transaction. The important point is that we discuss it clearly before we start representation."
+        ],
+        [
+          "Buyer",
+          "I will review the proposed services and ask about anything unclear."
+        ],
+        [
+          "Transaction adviser",
+          "We can document the arrangement only after the relevant terms and requirements are understood."
+        ]
+      ],
+      "notes": [
+        "Explain agreement and compensation calmly before advice becomes transaction-specific.",
+        "Use transparent language without implying compensation is fixed or required by law."
+      ]
+    },
+    {
+      "title": "Fair Housing Question: 'Is This a Good Neighborhood?'",
+      "setting": "A buyer asks for subjective neighborhood advice that could lead to steering.",
+      "dialogue": [
+        [
+          "Buyer",
+          "Is this a good neighborhood for families like us?"
+        ],
+        [
+          "Agent",
+          "I can help you compare objective information, but I cannot steer you based on who lives here."
+        ],
+        [
+          "Transaction adviser",
+          "Let's define what 'good' means for you: commute time, budget, property condition, parks, school district boundaries, noise, transit, or walkability. I can point you to public resources so you can evaluate the area using your own priorities."
+        ],
+        [
+          "Buyer",
+          "But would you live here?"
+        ],
+        [
+          "Transaction adviser",
+          "I should not substitute my personal preference for your decision. I can give you property facts and objective sources, and you can decide whether the area fits your needs."
+        ],
+        [
+          "Buyer",
+          "I will compare the objective information against the buyer's stated priorities."
+        ],
+        [
+          "Transaction adviser",
+          "Keep the discussion focused on property facts and the buyer's own criteria."
+        ]
+      ],
+      "notes": [
+        "Do not shame the client; redirect to objective criteria.",
+        "Avoid statements that imply preference based on protected-class characteristics."
+      ]
+    },
+    {
+      "title": "Listing Presentation: Seller Wants an Unrealistic Price",
+      "setting": "A seller wants to list far above the CMA range because a neighbor got a high price last year.",
+      "dialogue": [
+        [
+          "Seller",
+          "My neighbor sold for more last year. I want to list at that number plus 10 percent."
+        ],
+        [
+          "Listing agent",
+          "The market has changed since then."
+        ],
+        [
+          "Transaction adviser",
+          "We can test a premium only if the evidence supports it. The closest recent comps show lower closed prices, longer DOM, and seller concessions. If we list too high, we may reduce urgency and help competing listings look more attractive."
+        ],
+        [
+          "Seller",
+          "I do not want to leave money on the table."
+        ],
+        [
+          "Transaction adviser",
+          "Neither do I. My recommendation is a price that creates serious buyer activity and gives us leverage. We can also agree now on a review point if showings or feedback are weak."
+        ],
+        [
+          "Seller",
+          "I will prepare the comparable-sales evidence and a proposed review point."
+        ],
+        [
+          "Transaction adviser",
+          "Make the assumptions and market dates clear in the pricing discussion."
+        ]
+      ],
+      "notes": [
+        "Pricing pushback should protect the relationship and the market logic.",
+        "Use data, timing, and adjustment plan instead of arguing over ego."
+      ]
+    },
+    {
+      "title": "Multiple Offers: Stronger Terms vs Higher Price",
+      "setting": "A buyer wants to win in a competitive situation but does not understand the risk of waiving protections.",
+      "dialogue": [
+        [
+          "Buyer",
+          "Let's waive everything and offer over asking."
+        ],
+        [
+          "Agent",
+          "That may strengthen the offer, but it changes your risk."
+        ],
+        [
+          "Transaction adviser",
+          "We should compare price, appraisal gap, inspection rights, financing contingency, earnest money, closing date, and seller priorities. A stronger offer is not just a higher price. It is also certainty and clean terms."
+        ],
+        [
+          "Buyer",
+          "Can we waive inspection?"
+        ],
+        [
+          "Transaction adviser",
+          "Waiving or changing inspection protections can have significant consequences. Let's review the actual contract, applicable local requirements, and qualified advice before you choose or authorize any strategy."
+        ],
+        [
+          "Buyer",
+          "I will ask for a comparison of the actual contractual options."
+        ],
+        [
+          "Transaction adviser",
+          "We will coordinate qualified review before you authorize any change to protections."
+        ]
+      ],
+      "notes": [
+        "Protect the distinction between competitiveness and risk.",
+        "Do not make waiver decisions sound routine or harmless."
+      ]
+    },
+    {
+      "title": "Inspection Negotiation: Repair Credit",
+      "setting": "An inspection found roof and electrical issues. The buyer is angry and wants the seller to fix everything.",
+      "dialogue": [
+        [
+          "Buyer",
+          "This house has problems. Ask them to fix every item."
+        ],
+        [
+          "Agent",
+          "We need to separate major issues from normal maintenance."
+        ],
+        [
+          "Transaction adviser",
+          "The strongest request will focus on safety, systems, and cost. Instead of sending a long emotional list, we can ask for a licensed electrician to address the panel issue and request a credit toward the roof repair, supported by the inspection report and estimate."
+        ],
+        [
+          "Buyer",
+          "What if they refuse?"
+        ],
+        [
+          "Transaction adviser",
+          "Then we evaluate your contract options, your appetite for repairs, and whether a revised price or credit makes the risk acceptable."
+        ],
+        [
+          "Buyer",
+          "I will gather the inspection references and estimates."
+        ],
+        [
+          "Transaction adviser",
+          "Then we can frame a specific request and review the available contractual options."
+        ]
+      ],
+      "notes": [
+        "Convert anger into specific, document-supported requests.",
+        "Separate inspection facts from negotiation strategy."
+      ]
+    },
+    {
+      "title": "Low Appraisal: Contract Price Is Higher Than Appraised Value",
+      "setting": "The appraisal comes in below contract price and financing is affected.",
+      "dialogue": [
+        [
+          "Lender",
+          "The appraisal is twenty thousand below contract price."
+        ],
+        [
+          "Buyer",
+          "Does that mean the deal is dead?"
+        ],
+        [
+          "Transaction adviser",
+          "Not automatically. We have several paths: challenge the appraisal if there are factual issues, renegotiate price, increase down payment, use an appraisal-gap clause if one exists, or cancel if the contract allows it."
+        ],
+        [
+          "Buyer",
+          "What should we do?"
+        ],
+        [
+          "Transaction adviser",
+          "First, let's review the appraisal with the lender and compare it to our comps. Then we can choose a negotiation position based on your cash, contract rights, and risk tolerance."
+        ],
+        [
+          "Lender",
+          "I will ask the lender to explain the appraisal implications."
+        ],
+        [
+          "Transaction adviser",
+          "We will assess the options against the actual contract and your verified resources."
+        ]
+      ],
+      "notes": [
+        "Low appraisal language should be calm and options-based.",
+        "Do not promise the appraisal can be changed."
+      ]
+    },
+    {
+      "title": "Financing Delay: Underwriting Conditions",
+      "setting": "Closing is approaching but the lender still needs documentation.",
+      "dialogue": [
+        [
+          "Seller agent",
+          "Are your buyers clear to close? We need certainty."
+        ],
+        [
+          "Buyer agent",
+          "The file is still in underwriting."
+        ],
+        [
+          "Transaction adviser",
+          "The lender has issued conditional approval and is waiting on two documents from the buyer. We expect an update tomorrow afternoon. I do not want to overpromise, so I will send a written status update by 4 p.m. with any impact on closing."
+        ],
+        [
+          "Seller agent",
+          "Should we issue a notice?"
+        ],
+        [
+          "Transaction adviser",
+          "I understand your concern. Please send any contract notice through the proper channel. Meanwhile, I will keep the timeline, owner, and dependency clear for everyone."
+        ],
+        [
+          "Seller agent",
+          "I will track the outstanding documents with the lender."
+        ],
+        [
+          "Transaction adviser",
+          "Keep every party informed of confirmed changes through the proper transaction channels."
+        ]
+      ],
+      "notes": [
+        "Use precise status language: condition, owner, deadline, impact.",
+        "Avoid blaming lender or buyer while uncertainty remains."
+      ]
+    },
+    {
+      "title": "RESPA Risk: Referral Benefit",
+      "setting": "A settlement-service provider offers valuable benefits for referrals.",
+      "dialogue": [
+        [
+          "Vendor",
+          "If you send us your buyers, we can sponsor your client event and give you premium tickets."
+        ],
+        [
+          "Agent",
+          "That sounds generous, but we need to be careful."
+        ],
+        [
+          "Transaction adviser",
+          "I cannot agree to benefits tied to settlement-service referrals. Any proposed arrangement needs broker and compliance review under the applicable rules and our policy before we discuss acceptance."
+        ],
+        [
+          "Vendor",
+          "Everyone does it."
+        ],
+        [
+          "Transaction adviser",
+          "Our policy is to protect clients and avoid referral-kickback risk. I can share your public information with clients if they ask for options, but I cannot trade referrals for benefits."
+        ],
+        [
+          "Vendor",
+          "I will send any proposed arrangement to the broker for review."
+        ],
+        [
+          "Transaction adviser",
+          "Keep acceptance pending and do not link any benefit to referrals."
+        ]
+      ],
+      "notes": [
+        "Referral pressure requires direct, documented refusal.",
+        "Use broker and compliance review rather than improvising."
+      ]
+    },
+    {
+      "title": "Seller Disclosure: Known Water Intrusion",
+      "setting": "A seller wants to avoid disclosing a past water problem because it was repaired.",
+      "dialogue": [
+        [
+          "Seller",
+          "Do we really need to mention the basement leak? It was fixed two years ago."
+        ],
+        [
+          "Agent",
+          "Known property issues can create disclosure duties."
+        ],
+        [
+          "Transaction adviser",
+          "I cannot tell you how to complete the legal disclosure form, but I can tell you not to hide known facts. Let's review the form instructions, gather repair records, and if you are unsure, ask your attorney before we publish or respond to buyers."
+        ],
+        [
+          "Seller",
+          "I am afraid buyers will panic."
+        ],
+        [
+          "Transaction adviser",
+          "Clear disclosure with documentation can reduce surprises later. A hidden issue can create a much larger trust and contract problem."
+        ],
+        [
+          "Seller",
+          "I will assemble the repair records and form instructions."
+        ],
+        [
+          "Transaction adviser",
+          "Qualified advice can resolve the disclosure questions before the response is finalized."
+        ]
+      ],
+      "notes": [
+        "Do not complete legal disclosure decisions for the client.",
+        "Encourage truth, documentation, and expert review."
+      ]
+    },
+    {
+      "title": "Lead-Based Paint Disclosure",
+      "setting": "A pre-1978 home is going under contract and documents are incomplete.",
+      "dialogue": [
+        [
+          "Transaction coordinator",
+          "The lead disclosure form is missing the buyer acknowledgment."
+        ],
+        [
+          "Agent",
+          "Can we just send it after signatures?"
+        ],
+        [
+          "Transaction adviser",
+          "We need to check the applicable lead-disclosure requirements, including whether this property and transaction are covered and when the required steps must occur. Route the incomplete file to the responsible broker or compliance reviewer before proceeding."
+        ],
+        [
+          "Agent",
+          "The seller does not know of any lead paint."
+        ],
+        [
+          "Transaction adviser",
+          "A lack of known lead information does not by itself resolve the disclosure question. Let's verify the applicable forms, information, timing, acknowledgments, and any inspection-related requirements with the authorized reviewer."
+        ],
+        [
+          "Transaction coordinator",
+          "I will flag the incomplete item in the transaction checklist."
+        ],
+        [
+          "Transaction adviser",
+          "The responsible reviewer should confirm the applicable steps before the file proceeds."
+        ]
+      ],
+      "notes": [
+        "Lead disclosure is a document and timing conversation, not only a knowledge conversation.",
+        "Use process language and file discipline."
+      ]
+    },
+    {
+      "title": "Dual Agency or Same-Brokerage Conflict",
+      "setting": "A buyer wants to make an offer on a listing held by the same brokerage.",
+      "dialogue": [
+        [
+          "Buyer",
+          "Can you still represent me if your office has the listing?"
+        ],
+        [
+          "Agent",
+          "It depends on state law, brokerage policy, and the agency structure."
+        ],
+        [
+          "Transaction adviser",
+          "We need to disclose the relationship clearly and explain whether this is dual agency, designated agency, or another permitted arrangement. You should understand what advice I can and cannot give before you decide whether to consent."
+        ],
+        [
+          "Buyer",
+          "Will you tell me what the seller will accept?"
+        ],
+        [
+          "Transaction adviser",
+          "I cannot share confidential information from another client or side. My role and limits must be clear before we proceed."
+        ],
+        [
+          "Buyer",
+          "I will request a clear explanation of the permitted representation structure."
+        ],
+        [
+          "Transaction adviser",
+          "Document the required disclosures and decisions through the applicable process."
+        ]
+      ],
+      "notes": [
+        "Conflict language should be explicit, not casual.",
+        "Confidentiality survives pressure from the other side."
+      ]
+    },
+    {
+      "title": "Commercial Lease: NNN and TI Allowance",
+      "setting": "A small business owner is reviewing a commercial lease proposal.",
+      "dialogue": [
+        [
+          "Tenant",
+          "The rent looks affordable. It says NNN, CAM, and TI allowance. What does that mean?"
+        ],
+        [
+          "Commercial agent",
+          "Those terms affect your real occupancy cost."
+        ],
+        [
+          "Transaction adviser",
+          "Base rent is only one part. NNN usually means you may pay taxes, insurance, and maintenance in addition to base rent. CAM covers common area maintenance. A TI allowance is landlord contribution toward tenant improvements, but the lease will define conditions and repayment risk."
+        ],
+        [
+          "Tenant",
+          "So can I sign the LOI?"
+        ],
+        [
+          "Transaction adviser",
+          "An LOI can frame the deal, but you should review lease language with legal and financial advisors before committing. Let's compare total occupancy cost, term, options, buildout timeline, and exit risk."
+        ],
+        [
+          "Tenant",
+          "I will prepare a total-occupancy-cost comparison using the draft lease."
+        ],
+        [
+          "Transaction adviser",
+          "Flag assumptions and obtain the appropriate legal and financial review before commitment."
+        ]
+      ],
+      "notes": [
+        "Commercial terms need plain-English financial consequences.",
+        "Refer legal and tax interpretation to qualified advisors."
+      ]
+    }
+  ],
+  "marketing": [
+    {
+      "title": "Campaign Brief: 'We Need Awareness'",
+      "setting": "A VP asks for a campaign but cannot define the target audience or business outcome.",
+      "dialogue": [
+        [
+          "VP",
+          "We need a big awareness campaign next month."
+        ],
+        [
+          "Marketing lead",
+          "Awareness among whom, and what should they do after seeing it?"
+        ],
+        [
+          "Marketing strategist",
+          "Before we brief creative, we need to define the audience, insight, message, channel, budget, and measurement. Awareness for executives is different from awareness for end users."
+        ],
+        [
+          "VP",
+          "Just make noise in the market."
+        ],
+        [
+          "Marketing strategist",
+          "We can create visibility, but to spend responsibly we need a specific audience and a signal of success, such as branded search lift, site visits from target accounts, or sales conversations."
+        ],
+        [
+          "VP",
+          "Start with target-account engagement; I will confirm the audience and budget with the team."
+        ],
+        [
+          "Marketing strategist",
+          "I will build the brief around that objective and explain which measures can and cannot demonstrate campaign impact."
+        ]
+      ],
+      "notes": [
+        "Good marketers turn vague requests into strategic questions.",
+        "Awareness should still have audience, channel, and measurement discipline."
+      ]
+    },
+    {
+      "title": "Positioning Debate: Product Feature vs Customer Problem",
+      "setting": "Product wants the homepage headline to lead with a technical feature.",
+      "dialogue": [
+        [
+          "Product manager",
+          "The headline should say 'AI-powered orchestration layer.' That is the feature."
+        ],
+        [
+          "Content lead",
+          "Customers may not know why that matters."
+        ],
+        [
+          "Marketing strategist",
+          "Can we lead with the customer problem and use the feature as proof? The buyer cares about reducing manual handoffs and missed approvals. 'AI-powered orchestration' supports the claim, but it should not be the whole message."
+        ],
+        [
+          "Product manager",
+          "But competitors say similar things."
+        ],
+        [
+          "Marketing strategist",
+          "Then the proof matters even more: workflow examples, time saved, integration depth, and customer evidence."
+        ],
+        [
+          "Product manager",
+          "I will gather specific workflow examples that the product can substantiate."
+        ],
+        [
+          "Marketing strategist",
+          "Then we can write a customer-centered headline and use the technical capability as supporting evidence."
+        ]
+      ],
+      "notes": [
+        "Positioning should connect product capability to customer value.",
+        "A feature can be a proof point, not necessarily the main message."
+      ]
+    },
+    {
+      "title": "Paid Search: ROAS Looks Good, Sales Quality Is Weak",
+      "setting": "Marketing reports strong ad-platform ROAS, but sales says leads are poor.",
+      "dialogue": [
+        [
+          "Performance marketer",
+          "Google Ads shows a 5.2 ROAS. We should scale budget."
+        ],
+        [
+          "Sales director",
+          "The leads are not converting to qualified opportunities."
+        ],
+        [
+          "Marketing strategist",
+          "Platform ROAS is useful, but we need to reconcile it with CRM revenue, lead quality, and sales-cycle stage. Are these conversions high-intent demo requests or low-intent content downloads?"
+        ],
+        [
+          "Performance marketer",
+          "Mostly webinar registrations."
+        ],
+        [
+          "Marketing strategist",
+          "Then I would not scale yet. Let's separate acquisition cost by conversion type and optimize toward qualified pipeline, not only form fills."
+        ],
+        [
+          "Performance marketer",
+          "I will check how conversion values were assigned to those registrations."
+        ],
+        [
+          "Marketing strategist",
+          "Good. A platform value isn't automatically realized revenue; reconcile it with the relevant CRM outcomes before scaling."
+        ]
+      ],
+      "notes": [
+        "ROAS can be misleading if conversion quality is weak.",
+        "Marketing and sales need shared definitions for conversion and quality."
+      ]
+    },
+    {
+      "title": "Attribution Fight: Last Click vs Influenced Pipeline",
+      "setting": "The CFO questions whether marketing really created pipeline.",
+      "dialogue": [
+        [
+          "CFO",
+          "Sales says they sourced this opportunity. Marketing says it influenced it. Which is true?"
+        ],
+        [
+          "Marketing ops",
+          "Both can be true under different attribution models."
+        ],
+        [
+          "Marketing strategist",
+          "Last-click attribution shows the final touch before conversion. Influenced pipeline shows that marketing touched the account during the buying journey. Neither model alone proves causality."
+        ],
+        [
+          "CFO",
+          "So what should I trust?"
+        ],
+        [
+          "Marketing strategist",
+          "Trust the model for the question it can answer. For budget decisions, we should combine attribution, incrementality tests, sales feedback, and pipeline quality."
+        ],
+        [
+          "CFO",
+          "Show the definitions beside both pipeline figures in the report."
+        ],
+        [
+          "Marketing strategist",
+          "I will also separate descriptive attribution from evidence about incremental impact so the budget discussion uses each measure appropriately."
+        ]
+      ],
+      "notes": [
+        "Attribution explains credit rules, not necessarily causal impact.",
+        "Executive language should clarify what the model can and cannot prove."
+      ]
+    },
+    {
+      "title": "Creative Review: Taste vs Brief",
+      "setting": "A senior stakeholder dislikes a social ad concept because it does not match their personal taste.",
+      "dialogue": [
+        [
+          "Stakeholder",
+          "I do not like this. It feels too informal."
+        ],
+        [
+          "Designer",
+          "The brief asked for approachable and direct."
+        ],
+        [
+          "Marketing strategist",
+          "Can we evaluate it against the brief? The target audience is first-time managers, the objective is webinar registration, and the tone is meant to reduce intimidation. The question is whether this creative makes the next step feel accessible."
+        ],
+        [
+          "Stakeholder",
+          "But our brand is premium."
+        ],
+        [
+          "Marketing strategist",
+          "Agreed. We can preserve premium through layout and proof, while keeping the language human enough for the audience."
+        ],
+        [
+          "Stakeholder",
+          "Bring a revision that keeps the approachable language but strengthens the visual hierarchy."
+        ],
+        [
+          "Marketing strategist",
+          "We can compare both versions against the audience, action, and brand criteria in the approved brief."
+        ]
+      ],
+      "notes": [
+        "Creative feedback should reference audience, brief, objective, and brand system.",
+        "Taste language is weaker than criteria-based feedback."
+      ]
+    },
+    {
+      "title": "MQL Definition: Marketing and Sales Disagree",
+      "setting": "Sales rejects many leads that marketing counts as MQLs.",
+      "dialogue": [
+        [
+          "Sales manager",
+          "These MQLs are not ready. They downloaded one guide and never replied."
+        ],
+        [
+          "Demand gen",
+          "They meet the scoring threshold."
+        ],
+        [
+          "Marketing strategist",
+          "Then the score may be overweighting engagement and underweighting fit or buying intent. We should define MQL as fit plus behavior, and create a recycle path for leads that are interested but not sales-ready."
+        ],
+        [
+          "Sales manager",
+          "What changes?"
+        ],
+        [
+          "Marketing strategist",
+          "Add firmographic fit, require stronger intent for handoff, and create feedback reasons when sales rejects a lead."
+        ],
+        [
+          "Sales manager",
+          "I will provide examples of accepted and rejected leads with reasons."
+        ],
+        [
+          "Marketing strategist",
+          "That feedback can help us review the scoring model and agree on a workable handoff definition."
+        ]
+      ],
+      "notes": [
+        "Lifecycle definitions need shared ownership.",
+        "A rejected lead should produce feedback, not only blame."
+      ]
+    },
+    {
+      "title": "SEO and Legal Review: Claim Too Strong",
+      "setting": "A content article uses a bold claim that legal says is unsupported.",
+      "dialogue": [
+        [
+          "SEO manager",
+          "This headline will rank and convert."
+        ],
+        [
+          "Legal",
+          "The claim 'cuts costs in half' needs substantiation."
+        ],
+        [
+          "Marketing strategist",
+          "Can we keep the search intent but adjust the claim? For example, 'ways to reduce support costs' is safer than promising a specific result unless we have evidence that result is typical."
+        ],
+        [
+          "SEO manager",
+          "Will that weaken the headline?"
+        ],
+        [
+          "Marketing strategist",
+          "Maybe, but an unsupported claim creates regulatory and trust risk. We can strengthen the article with a case study, methodology, and clearer qualifiers."
+        ],
+        [
+          "SEO manager",
+          "I will revise the headline and include the evidence behind the case study."
+        ],
+        [
+          "Marketing strategist",
+          "We will review the exact claim and its context before treating the content as ready to publish."
+        ]
+      ],
+      "notes": [
+        "SEO pressure does not remove claim-substantiation requirements.",
+        "Good revision protects usefulness and compliance."
+      ]
+    },
+    {
+      "title": "Email Readout: Open Rate Is Up, Revenue Is Flat",
+      "setting": "Lifecycle marketing reviews an email campaign with a high open rate but low revenue impact.",
+      "dialogue": [
+        [
+          "Lifecycle marketer",
+          "Open rate increased by 12 percent after the new subject line."
+        ],
+        [
+          "VP Marketing",
+          "Did it produce more revenue?"
+        ],
+        [
+          "Marketing strategist",
+          "Open rate is a weak success metric by itself, especially with privacy-related measurement noise. Click rate, conversion, unsubscribe rate, and downstream revenue tell us more about intent."
+        ],
+        [
+          "Lifecycle marketer",
+          "So was the test a failure?"
+        ],
+        [
+          "Marketing strategist",
+          "Not necessarily, but a higher measured open rate doesn't establish increased attention or business value. Let's check measurement validity and downstream outcomes before interpreting the test."
+        ],
+        [
+          "Lifecycle marketer",
+          "I will check the tracking changes and compare downstream conversions."
+        ],
+        [
+          "Marketing strategist",
+          "Include unsubscribe behavior and the sample size so the readout explains more than a movement in measured opens."
+        ]
+      ],
+      "notes": [
+        "Email metrics require caveats.",
+        "Open rate can be useful, but it should not be the only decision metric."
+      ]
+    },
+    {
+      "title": "Influencer Campaign: Disclosure and Authenticity",
+      "setting": "A brand manager wants an influencer to make the post feel organic.",
+      "dialogue": [
+        [
+          "Brand manager",
+          "Can the creator avoid saying it is sponsored? It performs better if it feels natural."
+        ],
+        [
+          "Social lead",
+          "That creates disclosure risk."
+        ],
+        [
+          "Marketing strategist",
+          "If there is payment, free product, or another material connection, the audience needs a clear disclosure. We can still make the content authentic, but not hidden."
+        ],
+        [
+          "Brand manager",
+          "Will that hurt engagement?"
+        ],
+        [
+          "Marketing strategist",
+          "Possibly, but undisclosed sponsorship creates legal and trust risk. Let's optimize the creative, not hide the relationship."
+        ],
+        [
+          "Brand manager",
+          "I will put the proposed disclosure into the creator brief."
+        ],
+        [
+          "Marketing strategist",
+          "Have the actual placement and wording reviewed under the applicable requirements; disclosure needs to work in the finished content."
+        ]
+      ],
+      "notes": [
+        "Influencer language should separate authenticity from undisclosed advertising.",
+        "Material connection disclosure is a key compliance concept."
+      ]
+    },
+    {
+      "title": "Agency Budget: More Spend or Better Brief?",
+      "setting": "An agency asks for more paid budget after campaign performance stalls.",
+      "dialogue": [
+        [
+          "Agency",
+          "We are seeing diminishing returns. Additional budget will help us find new audiences."
+        ],
+        [
+          "Client",
+          "Why should we spend more if performance is worse?"
+        ],
+        [
+          "Marketing strategist",
+          "Before increasing spend, let's diagnose the constraint: audience saturation, creative fatigue, landing page conversion, offer relevance, or targeting. More budget may amplify the same problem."
+        ],
+        [
+          "Agency",
+          "We can test new creative."
+        ],
+        [
+          "Marketing strategist",
+          "Good. Please bring a test plan with hypothesis, audience, budget, decision rule, and what we will pause if the test underperforms."
+        ],
+        [
+          "Agency",
+          "I will bring two creative hypotheses and a clearly bounded test budget."
+        ],
+        [
+          "Marketing strategist",
+          "Specify the comparison, success measure, and decision timing so we can assess what the test actually tells us."
+        ]
+      ],
+      "notes": [
+        "Budget requests need diagnosis and decision criteria.",
+        "A test plan should include what will change after the result."
+      ]
+    },
+    {
+      "title": "A/B Test: Inconclusive Result",
+      "setting": "A landing-page test shows a small lift but insufficient sample size.",
+      "dialogue": [
+        [
+          "Growth marketer",
+          "Variant B is up 6 percent. Let's ship it."
+        ],
+        [
+          "Analyst",
+          "The sample is too small to call a winner."
+        ],
+        [
+          "Marketing strategist",
+          "The direction is promising, but the result is inconclusive. We can extend the test, combine it with qualitative review, or ship only if the implementation cost is low and downside risk is minimal."
+        ],
+        [
+          "Growth marketer",
+          "I need a decision today."
+        ],
+        [
+          "Marketing strategist",
+          "Then frame it as a business decision under uncertainty, not a proven test result."
+        ],
+        [
+          "Growth marketer",
+          "I will describe the result as inconclusive in the decision note."
+        ],
+        [
+          "Marketing strategist",
+          "Also record the cost and downside assumptions if the team chooses to act before stronger evidence is available."
+        ]
+      ],
+      "notes": [
+        "A test readout should protect the difference between signal and proof.",
+        "Sometimes the decision is practical, but the evidence label must stay honest."
+      ]
+    },
+    {
+      "title": "Social Backlash: Holding Statement",
+      "setting": "A campaign receives criticism for appearing insensitive.",
+      "dialogue": [
+        [
+          "Community manager",
+          "Negative comments are accelerating. Do we delete them?"
+        ],
+        [
+          "Comms lead",
+          "Not unless they violate policy. We need a response path."
+        ],
+        [
+          "Marketing strategist",
+          "First, pause scheduled promotion, capture examples, confirm facts, and align with legal and customer support. The public holding statement should acknowledge concern without speculating or blaming."
+        ],
+        [
+          "VP",
+          "What can we say now?"
+        ],
+        [
+          "Marketing strategist",
+          "We are listening to the feedback, reviewing the campaign, and will share an update when we have confirmed next steps. Internally, we need an owner for response timing and approval."
+        ],
+        [
+          "Community manager",
+          "I will name the response owner and check the scheduled content."
+        ],
+        [
+          "Marketing strategist",
+          "Make sure the published statement matches verified facts and that incoming questions reach the appropriate team."
+        ]
+      ],
+      "notes": [
+        "Crisis language should be calm, factual, and coordinated.",
+        "Do not delete or respond impulsively without policy and escalation guidance."
+      ]
+    }
+  ],
+  "corporate-strategy": [
+    {
+      "title": "CEO Request: 'We Need a Strategy'",
+      "setting": "The CEO asks the strategy team for a strategy, but the request sounds like a list of initiatives.",
+      "dialogue": [
+        [
+          "CEO",
+          "We need a strategy for next year. Give me the top twenty initiatives."
+        ],
+        [
+          "Strategy lead",
+          "We can build the initiative list, but first we need the strategic choice behind it."
+        ],
+        [
+          "Strategy manager",
+          "If the output is only a project list, we may miss the real decision. Are we trying to defend the core, enter a new segment, improve margins, or shift resources toward higher-growth businesses?"
+        ],
+        [
+          "CEO",
+          "All of the above."
+        ],
+        [
+          "Strategy manager",
+          "Then the first decision is prioritization. We should define the few choices that matter most, the tradeoffs they imply, and the resources that must move."
+        ],
+        [
+          "CEO",
+          "Start by comparing the core choices and the resource constraints."
+        ],
+        [
+          "Strategy manager",
+          "I will prepare a short decision paper before translating the chosen direction into initiatives."
+        ]
+      ],
+      "notes": [
+        "Strategy language should separate choices from activities.",
+        "A broad CEO request often needs reframing before analysis begins."
+      ]
+    },
+    {
+      "title": "Where-to-Play Debate: Enterprise vs Mid-Market",
+      "setting": "A leadership team is debating whether to prioritize enterprise customers or mid-market customers.",
+      "dialogue": [
+        [
+          "CRO",
+          "Enterprise logos create credibility. We should focus there."
+        ],
+        [
+          "Product head",
+          "Mid-market customers adopt faster and need fewer custom features."
+        ],
+        [
+          "Strategy manager",
+          "The where-to-play choice affects product roadmap, sales motion, implementation cost, pricing, and support model. Enterprise may increase contract value, but mid-market may improve velocity and margins."
+        ],
+        [
+          "CRO",
+          "Can we do both?"
+        ],
+        [
+          "Strategy manager",
+          "Possibly, but not with the same operating model. If we choose both, we need explicit segmentation and different service levels, not one vague strategy."
+        ],
+        [
+          "CRO",
+          "Show the economics and service requirements for each segment separately."
+        ],
+        [
+          "Strategy manager",
+          "I will identify the capabilities that can be shared and where distinct operating arrangements would be needed."
+        ]
+      ],
+      "notes": [
+        "Where-to-play choices change capabilities and economics.",
+        "Doing both can be valid only if the operating model supports it."
+      ]
+    },
+    {
+      "title": "Five Forces: Growth Does Not Mean Profit",
+      "setting": "A team wants to enter a fast-growing market but has not examined industry structure.",
+      "dialogue": [
+        [
+          "Business unit GM",
+          "The market is growing 18 percent. We should enter quickly."
+        ],
+        [
+          "Analyst",
+          "Growth is strong, but supplier power and buyer power are also high."
+        ],
+        [
+          "Strategy manager",
+          "Market growth is attractive, but the profit pool may be weak. If buyers can switch easily, suppliers control key inputs, and substitutes are improving, growth may not translate into returns."
+        ],
+        [
+          "GM",
+          "So you are saying no?"
+        ],
+        [
+          "Strategy manager",
+          "Not necessarily. I am saying entry needs a clear position, a barrier we can build, and economics that survive competitive pressure."
+        ],
+        [
+          "Business unit GM",
+          "I will bring evidence on switching costs and supplier concentration."
+        ],
+        [
+          "Strategy manager",
+          "That will help test the entry thesis instead of treating market growth as proof of attractive returns."
+        ]
+      ],
+      "notes": [
+        "Industry attractiveness requires more than growth rate.",
+        "Use Five Forces to discuss value capture, not just competition."
+      ]
+    },
+    {
+      "title": "Portfolio Review: Protect the Core or Fund the New Bet",
+      "setting": "A mature business funds the company, but a new opportunity needs investment.",
+      "dialogue": [
+        [
+          "Core BU leader",
+          "Our unit generates the cash. Cutting our budget will damage the business."
+        ],
+        [
+          "Innovation lead",
+          "Without investment, the new platform will miss the window."
+        ],
+        [
+          "Strategy manager",
+          "The portfolio question is not which team deserves funding. It is what role each business plays. The core must remain healthy, but some resources may need to shift if the new platform is the stronger future value pool."
+        ],
+        [
+          "Core BU leader",
+          "That sounds like punishing performance."
+        ],
+        [
+          "Strategy manager",
+          "I would frame it as funding enterprise value. We should define the minimum investment to protect the core and the incremental investment needed to test the new platform's thesis."
+        ],
+        [
+          "Core BU leader",
+          "Let's agree on what investment protects the core before debating the remainder."
+        ],
+        [
+          "Strategy manager",
+          "I will compare that floor with the staged funding needed to test the new platform, including the consequences of deferral."
+        ]
+      ],
+      "notes": [
+        "Portfolio language should reduce personal defensiveness.",
+        "Resource allocation must connect to enterprise value, not politics."
+      ]
+    },
+    {
+      "title": "Resource Allocation: Everyone Wants Flat Growth",
+      "setting": "Every business unit requests a similar budget increase despite different performance and market opportunities.",
+      "dialogue": [
+        [
+          "CFO",
+          "Every BU is asking for 8 percent more. That is not a strategy."
+        ],
+        [
+          "BU leader",
+          "We all have growth plans."
+        ],
+        [
+          "Strategy manager",
+          "Equal increases may feel fair, but they ignore opportunity cost. We should allocate based on market attractiveness, advantage, capital intensity, confidence in execution, and strategic role."
+        ],
+        [
+          "BU leader",
+          "My team will see that as a cut."
+        ],
+        [
+          "Strategy manager",
+          "Then we need transparent decision rules. Some units may get growth capital, some may get productivity targets, and some may need option funding rather than full-scale investment."
+        ],
+        [
+          "CFO",
+          "I will ask each unit to use the same assumptions and explain its strategic role."
+        ],
+        [
+          "Strategy manager",
+          "Then we can compare opportunity cost and execution capacity without assuming an equal increase is the best allocation."
+        ]
+      ],
+      "notes": [
+        "Fairness language can hide strategic inertia.",
+        "Decision rules help make resource shifts defensible."
+      ]
+    },
+    {
+      "title": "Market Entry: Build, Buy, or Partner",
+      "setting": "The company wants to enter an adjacent market but lacks several capabilities.",
+      "dialogue": [
+        [
+          "Corporate development",
+          "We can acquire a player and accelerate entry."
+        ],
+        [
+          "Operations",
+          "Integration could distract the organization for two years."
+        ],
+        [
+          "Strategy manager",
+          "The route depends on speed, control, capability gap, integration risk, and economics. Build gives control but may be slow. Buy gives access but may overpay. Partner creates optionality but limits control."
+        ],
+        [
+          "CEO",
+          "What do you recommend?"
+        ],
+        [
+          "Strategy manager",
+          "Start with a partnership to validate demand and operating requirements, while screening acquisition targets if the thesis proves attractive."
+        ],
+        [
+          "Corporate development",
+          "Bring the pilot objectives, exit conditions, and capability gaps for the partnership option."
+        ],
+        [
+          "Strategy manager",
+          "I will compare those with the acquisition and build alternatives before presenting the recommended route as a decision."
+        ]
+      ],
+      "notes": [
+        "Build-buy-partner language should compare route, not just preference.",
+        "Options can be a strategy under uncertainty."
+      ]
+    },
+    {
+      "title": "M&A Synergy Challenge",
+      "setting": "A deal team presents synergy estimates that sound optimistic.",
+      "dialogue": [
+        [
+          "Deal lead",
+          "The acquisition creates 60 million in annual synergies."
+        ],
+        [
+          "CFO",
+          "Where exactly do those synergies come from?"
+        ],
+        [
+          "Strategy manager",
+          "We should separate revenue synergies, cost synergies, tax or procurement benefits, and capability synergies. Each needs an owner, timing, one-time cost, and confidence level."
+        ],
+        [
+          "Deal lead",
+          "The revenue synergies are strategic."
+        ],
+        [
+          "Strategy manager",
+          "Strategic is not enough. Which customers, which products, which channel, what attach rate, and what evidence tells us the combined company can capture it?"
+        ],
+        [
+          "Deal lead",
+          "I will ask each synergy owner for the evidence and implementation cost."
+        ],
+        [
+          "Strategy manager",
+          "Separate uncertain revenue opportunities from more directly assessable cost actions, and avoid counting the same benefit twice."
+        ]
+      ],
+      "notes": [
+        "Synergy language should move from headline value to source, timing, owner, and evidence.",
+        "Revenue synergies usually need especially careful challenge."
+      ]
+    },
+    {
+      "title": "Scenario Planning: Regulatory Uncertainty",
+      "setting": "A new regulation could change the economics of a business model.",
+      "dialogue": [
+        [
+          "General counsel",
+          "We do not know how the rule will be finalized."
+        ],
+        [
+          "Strategy director",
+          "Then we need scenarios."
+        ],
+        [
+          "Strategy manager",
+          "Let's build only scenarios that would change our decision. For each one, we need trigger indicators, financial impact, operational implications, and moves that are no-regrets across scenarios."
+        ],
+        [
+          "CEO",
+          "What can we do now?"
+        ],
+        [
+          "Strategy manager",
+          "We can reduce exposure in the highest-risk product, invest in compliance capability, and create an option to shift the model if the strict scenario becomes more likely."
+        ],
+        [
+          "General counsel",
+          "Identify what evidence would make us switch from one plan to another."
+        ],
+        [
+          "Strategy manager",
+          "I will define observable triggers and review points, with the regulatory questions routed to the appropriate advisers."
+        ]
+      ],
+      "notes": [
+        "Scenario planning should guide decisions, not decorate decks.",
+        "Use trigger indicators to avoid passive waiting."
+      ]
+    },
+    {
+      "title": "Strategy vs Operational Effectiveness",
+      "setting": "A cost-reduction program is being presented as the company's strategy.",
+      "dialogue": [
+        [
+          "COO",
+          "Our strategy is to improve productivity by 12 percent."
+        ],
+        [
+          "Strategy lead",
+          "That is important, but it may be operational effectiveness rather than strategy."
+        ],
+        [
+          "Strategy manager",
+          "Productivity improvement can support strategy, but it does not answer where we will compete differently or how we will win. We need to connect the cost program to a position: lower-cost leadership, reinvestment in growth, or a more focused operating model."
+        ],
+        [
+          "COO",
+          "So the cost program is not strategic?"
+        ],
+        [
+          "Strategy manager",
+          "It can be strategic if it enables a choice. By itself, it is an initiative with financial benefit."
+        ],
+        [
+          "COO",
+          "I will explain what the productivity gain would enable us to do differently."
+        ],
+        [
+          "Strategy manager",
+          "That links the operational program to a strategic choice and makes its role in the wider plan clearer."
+        ]
+      ],
+      "notes": [
+        "Operational improvement can be valuable without being the whole strategy.",
+        "The learner should avoid sounding dismissive while clarifying the distinction."
+      ]
+    },
+    {
+      "title": "KPI Conflict: Activity Metrics vs Strategic Outcomes",
+      "setting": "A transformation dashboard shows many green projects, but business results are flat.",
+      "dialogue": [
+        [
+          "Transformation office",
+          "Ninety percent of initiatives are on track."
+        ],
+        [
+          "CEO",
+          "Then why is margin not improving?"
+        ],
+        [
+          "Strategy manager",
+          "The dashboard may be tracking activity rather than value. We need to link initiatives to value drivers: price, volume, mix, cost-to-serve, retention, working capital, and capital intensity."
+        ],
+        [
+          "Transformation office",
+          "The teams like milestone tracking."
+        ],
+        [
+          "Strategy manager",
+          "Milestones are useful, but the executive dashboard should show whether strategic outcomes are moving, not just whether workstreams are busy."
+        ],
+        [
+          "Transformation office",
+          "Keep the milestones, but add the value-driver measures and their owners."
+        ],
+        [
+          "Strategy manager",
+          "I will check the definitions and timing so the dashboard can distinguish completed activity from realized outcomes."
+        ]
+      ],
+      "notes": [
+        "Green status can hide weak value delivery.",
+        "Strategic KPIs should connect to value drivers."
+      ]
+    },
+    {
+      "title": "Board Deck: Too Much Analysis, No Decision",
+      "setting": "The strategy team has a 70-page deck but no clear board decision.",
+      "dialogue": [
+        [
+          "Board chair",
+          "What decision do you need from us?"
+        ],
+        [
+          "Strategy VP",
+          "We wanted to share the full market analysis."
+        ],
+        [
+          "Strategy manager",
+          "The analysis supports one decision: whether to shift 200 million from legacy expansion to the digital platform over three years. The board needs the strategic logic, downside case, risk controls, and milestones for releasing capital."
+        ],
+        [
+          "Board chair",
+          "Then lead with that."
+        ],
+        [
+          "Strategy manager",
+          "Agreed. We can move the market detail to appendix and open with the choice, recommendation, and resource implications."
+        ],
+        [
+          "Board chair",
+          "Include the conditions for releasing each tranche of capital."
+        ],
+        [
+          "Strategy manager",
+          "I will show the proposed milestones, downside assumptions, and decisions requiring board authority in the opening pages."
+        ]
+      ],
+      "notes": [
+        "Board communication should be decision-led.",
+        "Appendix detail should support the recommendation, not bury it."
+      ]
+    },
+    {
+      "title": "Sunk Cost: Politically Protected Initiative",
+      "setting": "A senior sponsor wants to continue a failing initiative because the company has already invested heavily.",
+      "dialogue": [
+        [
+          "Sponsor",
+          "We have spent two years on this. We cannot stop now."
+        ],
+        [
+          "CFO",
+          "The economics have deteriorated."
+        ],
+        [
+          "Strategy manager",
+          "The prior investment is real, but the decision should be based on future value, remaining cost, strategic fit, and alternatives. Continuing only because we already spent money would increase opportunity cost."
+        ],
+        [
+          "Sponsor",
+          "Stopping will look like failure."
+        ],
+        [
+          "Strategy manager",
+          "We can position the recommendation as disciplined reallocation. The learning still has value, but the next dollar may create more value elsewhere."
+        ],
+        [
+          "Sponsor",
+          "I will review the remaining commitments and the cost of stopping."
+        ],
+        [
+          "Strategy manager",
+          "Compare those with the future value of continuing and the alternatives, while treating prior spending as history rather than a reason by itself."
+        ]
+      ],
+      "notes": [
+        "Sunk-cost language needs tact because identity and politics are involved.",
+        "Reallocation framing can protect dignity while changing course."
+      ]
+    }
+  ],
+  "law": [
+    {
+      "title": "Client Intake: Strong Emotions, Missing Facts",
+      "setting": "A potential client calls after receiving a demand letter from a former business partner.",
+      "dialogue": [
+        [
+          "Client",
+          "They are lying. Can you tell them we will sue immediately?"
+        ],
+        [
+          "Legal team",
+          "I understand this feels urgent. Before we discuss strategy, I need to gather facts and run a conflict check."
+        ],
+        [
+          "Associate counsel",
+          "Can you send the demand letter, the contract, and any recent emails with the former partner? Also, please list the company names and individuals involved so we can check conflicts."
+        ],
+        [
+          "Client",
+          "So do we have a case?"
+        ],
+        [
+          "Associate counsel",
+          "I cannot assess that responsibly from one call. After we review the documents and confirm scope, we can identify claims, defenses, deadlines, and practical options."
+        ],
+        [
+          "Client",
+          "I can send the letter and contract through your secure intake channel. What else do you need before deciding whether to act?"
+        ],
+        [
+          "Associate counsel",
+          "The party names for the conflict check and the relevant dates. We will explain any engagement terms before undertaking representation."
+        ]
+      ],
+      "notes": [
+        "Good intake language protects trust without promising an outcome.",
+        "Conflict checks and engagement scope should come before substantive commitments."
+      ]
+    },
+    {
+      "title": "Partner Assignment: Research Memo Under Pressure",
+      "setting": "A partner asks for a quick memo on whether a forum-selection clause is enforceable.",
+      "dialogue": [
+        [
+          "Partner",
+          "I need an answer by noon. Is the forum-selection clause enforceable?"
+        ],
+        [
+          "Associate counsel",
+          "I can give you a short answer by noon. To focus the research, which jurisdiction controls, and are we challenging enforcement or defending it?"
+        ],
+        [
+          "Partner",
+          "Defending it in federal court. The contract chooses Delaware law but the case was filed in California."
+        ],
+        [
+          "Associate counsel",
+          "Understood. I'll assess the governing procedural framework, relevant federal and state authority, the clause wording, and procedural posture. I'll identify binding and persuasive sources and flag contrary authority rather than assume one jurisdiction label settles the question."
+        ],
+        [
+          "Partner",
+          "Focus the initial memo on the procedural options and flag what you cannot verify by noon."
+        ],
+        [
+          "Associate counsel",
+          "I will distinguish the preliminary answer from any research still in progress and identify the source for each proposition."
+        ]
+      ],
+      "notes": [
+        "Clarify jurisdiction, posture, desired use, and deadline before researching.",
+        "A legal memo should say how strong the answer is and why."
+      ]
+    },
+    {
+      "title": "Contract Redline: Indemnity and Liability Cap",
+      "setting": "A SaaS vendor and enterprise customer negotiate risk allocation.",
+      "dialogue": [
+        [
+          "Sales lead",
+          "The customer rejected our limitation of liability. Can we just accept?"
+        ],
+        [
+          "Lawyer",
+          "Not without understanding the exposure."
+        ],
+        [
+          "Associate counsel",
+          "The issue is not only the cap amount. Their redline excludes confidentiality, data security, IP infringement, and indemnity claims from the cap. That could create uncapped exposure."
+        ],
+        [
+          "Sales lead",
+          "What is a reasonable fallback?"
+        ],
+        [
+          "Associate counsel",
+          "We can offer a super-cap for data security and IP claims, tied to a multiple of fees, while keeping consequential damages excluded. I would not accept unlimited liability without executive approval."
+        ],
+        [
+          "Sales lead",
+          "I will send the business rationale and the complete redline to the review team."
+        ],
+        [
+          "Associate counsel",
+          "Include the customer's stated concern so we can assess appropriate alternatives without accepting unreviewed exposure."
+        ]
+      ],
+      "notes": [
+        "Contract comments should connect clause language to business risk.",
+        "Fallback language helps business teams negotiate without giving away the legal position too early."
+      ]
+    },
+    {
+      "title": "Discovery Meet-and-Confer: Overbroad Requests",
+      "setting": "Opposing counsel requests all communications from five years across every product line.",
+      "dialogue": [
+        [
+          "Opposing counsel",
+          "Your objections are boilerplate. We need all communications to understand the pattern."
+        ],
+        [
+          "Associate counsel",
+          "We disagree that the request is proportional as drafted. It covers unrelated products, custodians, and time periods. We can propose targeted custodians, search terms, and a three-year window tied to the claims."
+        ],
+        [
+          "Opposing counsel",
+          "You are withholding relevant evidence."
+        ],
+        [
+          "Associate counsel",
+          "We are not refusing discovery. We are asking to tailor the scope to nonprivileged, relevant, and proportional material. If you identify specific gaps, we can discuss them."
+        ],
+        [
+          "Opposing counsel",
+          "Send the proposed custodians and date range. We can identify any concrete gaps in that approach."
+        ],
+        [
+          "Associate counsel",
+          "I will circulate a written proposal and preserve our positions while we seek a workable, appropriately scoped process."
+        ]
+      ],
+      "notes": [
+        "Meet-and-confer language should be firm, record-conscious, and professional.",
+        "Avoid personal accusations; keep the discussion on scope, burden, relevance, and proportionality."
+      ]
+    },
+    {
+      "title": "Deposition Prep: Nervous Witness",
+      "setting": "A product manager will be deposed about an internal defect report.",
+      "dialogue": [
+        [
+          "Witness",
+          "What if I do not remember? I do not want to look unprepared."
+        ],
+        [
+          "Associate counsel",
+          "If you do not remember, say that. Do not guess. Listen to the full question, answer only that question, and ask for clarification if a term is unclear."
+        ],
+        [
+          "Witness",
+          "Can I explain the whole background?"
+        ],
+        [
+          "Associate counsel",
+          "Only if the question asks for it. Your job is to testify truthfully, not to volunteer every fact. If privileged legal advice comes up, pause so counsel can address it."
+        ],
+        [
+          "Witness",
+          "If the question assumes something I disagree with, should I still answer yes or no?"
+        ],
+        [
+          "Associate counsel",
+          "Ask for clarification and answer truthfully. We can practice identifying an unclear premise without inventing or rehearsing facts."
+        ]
+      ],
+      "notes": [
+        "Deposition prep language must be ethical: truthful, clear, and non-coaching as to substance.",
+        "Learners should avoid scripts that tell a witness what facts to say."
+      ]
+    },
+    {
+      "title": "Privilege Review: Copying a Lawyer Is Not Magic",
+      "setting": "A review team is deciding whether internal emails are privileged.",
+      "dialogue": [
+        [
+          "Reviewer",
+          "Legal is copied, so this is privileged."
+        ],
+        [
+          "Associate counsel",
+          "Maybe, but not automatically. We need to ask whether the email seeks or gives legal advice, who received it, and whether confidentiality was maintained."
+        ],
+        [
+          "Reviewer",
+          "This one discusses pricing strategy with counsel copied."
+        ],
+        [
+          "Associate counsel",
+          "That may be business advice rather than legal advice. Let's tag it for senior review instead of making the privilege call ourselves."
+        ],
+        [
+          "Reviewer",
+          "I will mark the mixed business and legal discussion for the designated reviewer."
+        ],
+        [
+          "Associate counsel",
+          "Preserve the context and recipients. The review needs the actual communication, not simply the fact that counsel was copied."
+        ]
+      ],
+      "notes": [
+        "Privilege calls are jurisdiction- and fact-sensitive.",
+        "Escalation language is better than overconfident privilege conclusions."
+      ]
+    },
+    {
+      "title": "Motion Strategy: Dismiss or Summary Judgment?",
+      "setting": "The team discusses whether to challenge a weak claim early.",
+      "dialogue": [
+        [
+          "Client",
+          "The claim is false. Can we file a motion to dismiss?"
+        ],
+        [
+          "Lawyer",
+          "A motion to dismiss usually tests legal sufficiency, not whether the facts are true."
+        ],
+        [
+          "Associate counsel",
+          "If the complaint fails to state a required element, dismissal may be worth researching. If our argument depends on evidence outside the pleadings, summary judgment may be the better later vehicle."
+        ],
+        [
+          "Client",
+          "So we wait?"
+        ],
+        [
+          "Associate counsel",
+          "We should evaluate cost, timing, likelihood of success, and whether an early motion educates the court or only delays discovery."
+        ],
+        [
+          "Client",
+          "I will ask the litigation team to compare the procedural options and likely costs."
+        ],
+        [
+          "Associate counsel",
+          "We will assess those against the actual pleadings, evidence, rules, and your objectives before recommending a filing."
+        ]
+      ],
+      "notes": [
+        "Procedural posture changes the available argument.",
+        "A client-friendly explanation should distinguish legal sufficiency from factual proof."
+      ]
+    },
+    {
+      "title": "Settlement Caucus: Risk, Cost, and Authority",
+      "setting": "During mediation, the client wants to reject a settlement offer on principle.",
+      "dialogue": [
+        [
+          "Client",
+          "I would rather go to trial than pay them anything."
+        ],
+        [
+          "Associate counsel",
+          "That is a valid business position, but let's separate principle from decision risk. Trial could vindicate the company, but it also means legal fees, management distraction, uncertainty, and potential adverse precedent."
+        ],
+        [
+          "Client",
+          "What range do you recommend?"
+        ],
+        [
+          "Associate counsel",
+          "I recommend reviewing a range based on the evidence, cost, and downside exposure before seeking the client's settlement instructions. Proposed confidentiality, release, and other terms need case-specific legal assessment and explicit authority."
+        ],
+        [
+          "Client",
+          "I want to understand that range before giving any settlement authority."
+        ],
+        [
+          "Associate counsel",
+          "We will review the assumptions and terms together and record your instructions explicitly."
+        ]
+      ],
+      "notes": [
+        "Settlement language should respect client values while surfacing decision consequences.",
+        "Authority, release, confidentiality, and non-admission terms often matter as much as amount."
+      ]
+    },
+    {
+      "title": "Compliance Review: Advertising Claim Substantiation",
+      "setting": "Marketing wants to launch an ad saying a product is 'clinically proven' to improve focus.",
+      "dialogue": [
+        [
+          "Marketing",
+          "Competitors make stronger claims than this. Can we approve it?"
+        ],
+        [
+          "Associate counsel",
+          "We need substantiation for the express and implied claims before launch. 'Clinically proven' suggests reliable evidence, not just user testimonials."
+        ],
+        [
+          "Marketing",
+          "We have a small internal survey."
+        ],
+        [
+          "Associate counsel",
+          "That may support customer satisfaction, but probably not a clinical efficacy claim. A safer path is to revise the claim to match the evidence or obtain stronger support before release."
+        ],
+        [
+          "Marketing",
+          "I will provide the survey methods and draft wording for review."
+        ],
+        [
+          "Associate counsel",
+          "We will assess what those materials support and identify any revision or further substantiation needed before publication."
+        ]
+      ],
+      "notes": [
+        "Compliance review often turns on what a reasonable consumer may take from the claim.",
+        "The legal team should propose a compliant alternative, not only block the campaign."
+      ]
+    },
+    {
+      "title": "Board Briefing: Material Risk and Disclosure",
+      "setting": "An in-house legal team briefs executives on a regulatory inquiry.",
+      "dialogue": [
+        [
+          "CFO",
+          "Do we have to disclose this inquiry?"
+        ],
+        [
+          "General counsel",
+          "We need a materiality analysis before answering."
+        ],
+        [
+          "Associate counsel",
+          "Current facts: the regulator requested documents, no allegations have been filed, potential exposure is uncertain, and the issue relates to a growing product line. The disclosure question depends on likelihood, magnitude, existing public statements, and investor significance."
+        ],
+        [
+          "CFO",
+          "Can we say it is not material?"
+        ],
+        [
+          "Associate counsel",
+          "I would not say that yet. We can say legal is assessing materiality and will update the disclosure committee after reviewing the request and business impact."
+        ],
+        [
+          "CFO",
+          "I will provide the relevant business figures and current public statements."
+        ],
+        [
+          "Associate counsel",
+          "That context will help the disclosure team assess the issue without prejudging materiality."
+        ]
+      ],
+      "notes": [
+        "Materiality language should not be rushed.",
+        "Board and executive updates need known facts, unknowns, timing, owner, and decision path."
+      ]
+    },
+    {
+      "title": "Internal Investigation: Neutral Interviewing",
+      "setting": "Legal interviews an employee about a possible policy violation.",
+      "dialogue": [
+        [
+          "Employee",
+          "Am I being accused of something?"
+        ],
+        [
+          "Associate counsel",
+          "We are gathering facts about a concern that was reported. I am not here to argue with you or make a final decision today."
+        ],
+        [
+          "Employee",
+          "Should I delete my personal notes?"
+        ],
+        [
+          "Associate counsel",
+          "No. Please preserve documents and messages that may relate to this topic. If you are unsure whether something is relevant, ask before deleting or changing it."
+        ],
+        [
+          "Employee",
+          "Can you tell me what other people said?"
+        ],
+        [
+          "Associate counsel",
+          "I cannot share interview details. I can ask you about your own recollection and any documents that may help us understand the timeline."
+        ],
+        [
+          "Employee",
+          "I can describe what I remember and identify the records that may help."
+        ],
+        [
+          "Associate counsel",
+          "Please distinguish what you observed directly from what you heard later. We will follow the approved process for further questions."
+        ]
+      ],
+      "notes": [
+        "Investigation questions should avoid suggesting the desired answer.",
+        "Preservation language should be simple, direct, and documented."
+      ]
+    },
+    {
+      "title": "Oral Argument: Answering the Hard Question",
+      "setting": "Moot-court exercise about an invented contract. For this exercise, subsection (b) covers notice before termination; subsection (c) addresses post-termination conduct and its remedy. The advocates are testing a hypothetical reading, not describing an actual statute.",
+      "dialogue": [
+        [
+          "Judge",
+          "Counsel, does your reading make subsection (c) unnecessary?"
+        ],
+        [
+          "Associate counsel",
+          "No, Your Honor. Subsection (c) still does work in two situations. First, it covers post-termination conduct. Second, it supplies the remedy when the notice period has expired."
+        ],
+        [
+          "Judge",
+          "But the other side says that is not in the text."
+        ],
+        [
+          "Associate counsel",
+          "Respectfully, the text supports it when subsections (b) and (c) are read together. If the Court disagrees, our narrower fallback is that dismissal should be without prejudice because the defect is curable."
+        ],
+        [
+          "Judge",
+          "Counsel, explain how your fallback preserves the issue for a revised pleading in this exercise."
+        ],
+        [
+          "Associate counsel",
+          "Our proposed fallback allows an amendment addressing the identified defect; it does not ask the Court to treat the current pleading as sufficient."
+        ]
+      ],
+      "notes": [
+        "Advocacy language should answer directly, then explain.",
+        "Fallback arguments preserve credibility when the main argument faces pressure."
+      ]
+    }
+  ],
+  "ai-development": [
+    {
+      "title": "Standup: RAG Latency Spike",
+      "setting": "Morning standup for a document assistant.",
+      "dialogue": [
+        [
+          "PM",
+          "Are we still on track for the pilot on Friday?"
+        ],
+        [
+          "Engineer",
+          "Functionally, yes. The blocker is latency. P95 went from 4.2 seconds to 8.7 after we added reranking."
+        ],
+        [
+          "AI technical lead",
+          "So the answer quality improved, but the serving path is too slow. Is the bottleneck retrieval, reranking, or generation?"
+        ],
+        [
+          "Engineer",
+          "Mostly reranking. The generator time is stable."
+        ],
+        [
+          "AI technical lead",
+          "Then my proposal is to keep reranking for high-risk queries only and use the faster path for simple FAQ queries. I can bring an ablation by end of day."
+        ],
+        [
+          "PM",
+          "Include the quality tradeoff for each query class, not only the average latency."
+        ],
+        [
+          "AI technical lead",
+          "I will compare like-for-like traffic and document the routing assumptions before recommending a pilot configuration."
+        ]
+      ],
+      "notes": [
+        "P95 means the 95th percentile request latency.",
+        "Ablation means testing the effect of removing or changing one component."
+      ]
+    },
+    {
+      "title": "Design Review: Prompt Fix or Fine-Tune?",
+      "setting": "Design review for a customer-support summarizer.",
+      "dialogue": [
+        [
+          "Researcher",
+          "We should fine-tune. The model keeps missing refund-policy exceptions."
+        ],
+        [
+          "Product manager",
+          "Would fine-tuning actually solve that, or is the policy changing too often?"
+        ],
+        [
+          "AI technical lead",
+          "I would separate style from facts. If the issue is current policy knowledge, RAG may be safer. If the issue is summary format, a prompt or fine-tune could help."
+        ],
+        [
+          "Researcher",
+          "Good point. The examples show both problems."
+        ],
+        [
+          "AI technical lead",
+          "Let's run two eval slices: factual policy coverage and format compliance. Then we can choose the adaptation method with evidence."
+        ],
+        [
+          "Researcher",
+          "I will label the examples by failure type so we can compare the two eval slices."
+        ],
+        [
+          "AI technical lead",
+          "Keep the policy version fixed for that comparison; otherwise the adaptation results will be hard to interpret."
+        ]
+      ],
+      "notes": [
+        "Eval slice means a subset of test cases focused on one behavior.",
+        "Adaptation method means the way the team changes model behavior: prompt, retrieval, fine-tuning, or product logic."
+      ]
+    },
+    {
+      "title": "Data Meeting: Label Ambiguity",
+      "setting": "Annotation guideline meeting for safety classification.",
+      "dialogue": [
+        [
+          "Data lead",
+          "Annotators disagree on whether this is medical advice or general wellness information."
+        ],
+        [
+          "AI technical lead",
+          "For this project, we need an agreed annotation rule and worked examples that distinguish the categories. Let's have the domain reviewers resolve the boundary cases before treating the labels as reliable ground truth."
+        ],
+        [
+          "Reviewer",
+          "What about borderline cases?"
+        ],
+        [
+          "AI technical lead",
+          "We should add a borderline tag and route those to expert review. Otherwise the ground truth will be noisy."
+        ],
+        [
+          "Data lead",
+          "Who resolves cases where the reviewers still disagree?"
+        ],
+        [
+          "AI technical lead",
+          "Let's assign an adjudication owner and record the rationale, then test the revised guidance on a held-out sample."
+        ]
+      ],
+      "notes": [
+        "Noisy labels are labels that are inconsistent, wrong, or ambiguous.",
+        "Ground truth should be as consistent as possible, but it is often a human-created artifact."
+      ]
+    },
+    {
+      "title": "Incident Update: Tool-Calling Failure",
+      "setting": "Incident channel after an agent booked duplicate appointments.",
+      "dialogue": [
+        [
+          "Support",
+          "Customers are seeing duplicate calendar events."
+        ],
+        [
+          "AI technical lead",
+          "We found the immediate cause. The model retried the booking tool after a timeout, but the first call had actually succeeded."
+        ],
+        [
+          "Engineering manager",
+          "Mitigation?"
+        ],
+        [
+          "AI technical lead",
+          "We paused the affected workflow and are reviewing retry handling and idempotency with the responsible engineers. We need to verify the complete fix, including how duplicate requests are identified, before resuming it."
+        ],
+        [
+          "Support",
+          "What should we tell customers?"
+        ],
+        [
+          "AI technical lead",
+          "Say we are investigating duplicate events and will provide a verified update. Any correction or deletion needs the appropriate user authorization and checks; we shouldn't promise that records have already been repaired."
+        ],
+        [
+          "Support",
+          "I will identify affected records without changing them until the correction plan is authorized."
+        ],
+        [
+          "AI technical lead",
+          "Good. Preserve the incident evidence and distinguish confirmed duplicates from records that only look similar."
+        ]
+      ],
+      "notes": [
+        "Non-idempotent means repeating the action can create a different or duplicate result.",
+        "An idempotency key helps the system recognize that a retry belongs to the same intended action."
+      ]
+    },
+    {
+      "title": "Eval Readout: Better Average, Worse Edge Cases",
+      "setting": "Release meeting for a model upgrade.",
+      "dialogue": [
+        [
+          "PM",
+          "The average score is up. Can we ship?"
+        ],
+        [
+          "AI technical lead",
+          "I recommend a hold. The overall pass rate improved from 86% to 89%, but the legal-disclaimer slice regressed by 11 points."
+        ],
+        [
+          "Researcher",
+          "Is that statistically meaningful?"
+        ],
+        [
+          "AI technical lead",
+          "The sample is small, so I would not overclaim. But the failures are severe enough to block release until we inspect them."
+        ],
+        [
+          "PM",
+          "What is the next step?"
+        ],
+        [
+          "AI technical lead",
+          "Human review of the failed slice today, then a targeted prompt or policy fix before we rerun the regression suite."
+        ],
+        [
+          "PM",
+          "Keep the launch decision pending and show the severe failures at the review."
+        ],
+        [
+          "AI technical lead",
+          "I will include the sample size, criteria, and rerun results so the release owner can evaluate the actual evidence."
+        ]
+      ],
+      "notes": [
+        "Do not report a metric without explaining the subset, sample size, and severity of failures.",
+        "A release can be blocked by a small number of severe failures."
+      ]
+    },
+    {
+      "title": "Security Review: Prompt Injection",
+      "setting": "Security review for a browsing agent.",
+      "dialogue": [
+        [
+          "Security engineer",
+          "The page contains text telling the agent to ignore the system instructions."
+        ],
+        [
+          "AI technical lead",
+          "That is prompt injection from untrusted content. The model should treat page text as data, not instructions."
+        ],
+        [
+          "Developer",
+          "Can we just add a stronger system prompt?"
+        ],
+        [
+          "AI technical lead",
+          "A stronger prompt helps, but it is not enough. We need tool permissions, allowlists, confirmation for risky actions, and logging for suspicious instructions."
+        ],
+        [
+          "Security engineer",
+          "I will map the tools and the authority each one has."
+        ],
+        [
+          "AI technical lead",
+          "Then we can test the trust boundaries and permission controls instead of relying on a prompt change as complete protection."
+        ]
+      ],
+      "notes": [
+        "Prompt injection is a system-design problem, not only a wording problem.",
+        "Untrusted content should not be allowed to silently change goals or permissions."
+      ]
+    },
+    {
+      "title": "Customer Call: Hallucination Report",
+      "setting": "Customer reports that the assistant invented a policy.",
+      "dialogue": [
+        [
+          "Customer",
+          "The answer cited a policy that does not exist."
+        ],
+        [
+          "AI technical lead",
+          "Thank you. We should call that an unsupported answer, not a confirmed policy source. Can you share the prompt, output, and timestamp?"
+        ],
+        [
+          "Customer",
+          "Yes. Does this mean the model is unreliable?"
+        ],
+        [
+          "AI technical lead",
+          "It means our grounding failed in this case. We will check whether retrieval missed the right document, whether the prompt allowed unsupported claims, or whether the citation validator failed."
+        ],
+        [
+          "Customer",
+          "I can provide the example through your approved support channel."
+        ],
+        [
+          "AI technical lead",
+          "Please include only the information needed for the investigation. We will explain what failed and what the evidence supports."
+        ]
+      ],
+      "notes": [
+        "Use calm, precise failure language with customers.",
+        "Do not blame the model before investigating retrieval, prompt, validation, and UI layers."
+      ]
+    },
+    {
+      "title": "Product Planning: Model Choice",
+      "setting": "Planning meeting for a high-volume summarization feature.",
+      "dialogue": [
+        [
+          "Finance",
+          "The larger model is too expensive for this volume."
+        ],
+        [
+          "AI technical lead",
+          "We can test a smaller model with a stricter prompt and a post-generation validator. The question is whether quality remains above the release threshold."
+        ],
+        [
+          "PM",
+          "What would you measure?"
+        ],
+        [
+          "AI technical lead",
+          "Summary faithfulness, key-point coverage, latency, cost per thousand requests, and human escalation rate."
+        ],
+        [
+          "Finance",
+          "Can you bring options?"
+        ],
+        [
+          "AI technical lead",
+          "Yes. I will compare three paths: larger model, smaller model with validation, and hybrid routing for complex cases."
+        ],
+        [
+          "Finance",
+          "Show costs under the same traffic mix and quality threshold."
+        ],
+        [
+          "AI technical lead",
+          "I will include failure rates, escalation workload, and latency distributions so the comparison reflects the whole serving path."
+        ]
+      ],
+      "notes": [
+        "Hybrid routing sends different requests to different models or paths based on complexity or risk.",
+        "Cost discussions should include quality and operational risk, not only token price."
+      ]
+    },
+    {
+      "title": "Research Sync: Benchmark vs Product Eval",
+      "setting": "Research team proposes a model because it performs well on a public benchmark.",
+      "dialogue": [
+        [
+          "Researcher",
+          "This checkpoint is strong on the benchmark."
+        ],
+        [
+          "AI technical lead",
+          "That is promising, but the benchmark may not represent our user traffic. We need a product eval before we switch."
+        ],
+        [
+          "Researcher",
+          "What gap do you expect?"
+        ],
+        [
+          "AI technical lead",
+          "Our users ask mixed-language, document-grounded questions with messy formatting. The public benchmark may not test retrieval grounding or citation quality."
+        ],
+        [
+          "Researcher",
+          "I will add representative messy documents and mixed-language questions to the test set."
+        ],
+        [
+          "AI technical lead",
+          "Check for evaluation leakage and document the sampling approach before interpreting the checkpoint comparison."
+        ]
+      ],
+      "notes": [
+        "Benchmark strength is useful evidence, not a release decision by itself.",
+        "Product evals should resemble the actual distribution of user tasks."
+      ]
+    },
+    {
+      "title": "Executive Briefing: Risk and Confidence",
+      "setting": "Briefing a VP before an AI feature launch.",
+      "dialogue": [
+        [
+          "VP",
+          "Are we confident enough to launch?"
+        ],
+        [
+          "AI technical lead",
+          "We are confident for the internal beta, not for general availability. The main remaining risks are unsupported answers in long-tail documents and latency during peak usage."
+        ],
+        [
+          "VP",
+          "What controls are in place?"
+        ],
+        [
+          "AI technical lead",
+          "We have source citations, a refusal path for low-confidence retrieval, human review for escalations, and daily sampling of traces."
+        ],
+        [
+          "VP",
+          "What would make you stop the beta?"
+        ],
+        [
+          "AI technical lead",
+          "A severe unsupported answer, repeated privacy exposure, or P95 latency above ten seconds for more than one hour."
+        ],
+        [
+          "VP",
+          "Make those stop criteria explicit in the beta plan and identify the release owner."
+        ],
+        [
+          "AI technical lead",
+          "I will confirm the approved thresholds and response process; the numbers in this scenario are team-specific criteria, not universal safety standards."
+        ]
+      ],
+      "notes": [
+        "Executives need decision-grade confidence, not all technical detail.",
+        "Name launch scope: internal beta, limited pilot, general availability, or rollback."
+      ]
+    }
+  ],
+  "financial-advice": [
+    {
+      "title": "First Meeting: The Client Wants the Hot Stock",
+      "setting": "A new client asks the advisor to buy a popular stock immediately before discovery is complete.",
+      "dialogue": [
+        [
+          "Client",
+          "I want to put half my account into this stock before it runs higher."
+        ],
+        [
+          "Advisor",
+          "I hear the urgency. Before I can make or support a recommendation, I need to understand your goals, risk profile, time horizon, liquidity needs, and current holdings."
+        ],
+        [
+          "Financial planner",
+          "If this is an unsolicited decision, we can discuss process, but I do not want to treat a concentrated position as suitable or in your best interest without the facts."
+        ],
+        [
+          "Client",
+          "So you are saying no?"
+        ],
+        [
+          "Financial planner",
+          "I am saying we should slow the decision enough to understand the risk. Concentration can create large gains, but it can also damage the plan if the position moves against you."
+        ],
+        [
+          "Client",
+          "I can bring my current holdings and explain what this money is for."
+        ],
+        [
+          "Financial planner",
+          "We will verify those facts and discuss the decision within the applicable advice and account process before recommending a course of action."
+        ]
+      ],
+      "notes": [
+        "The learner validates urgency without endorsing the trade.",
+        "Use concentration, suitability, best interest, and discovery language carefully."
+      ]
+    },
+    {
+      "title": "Explaining Fees and Conflicts",
+      "setting": "A prospect compares a fee-based advisory account with a transaction-based brokerage account.",
+      "dialogue": [
+        [
+          "Prospect",
+          "Which account is cheaper?"
+        ],
+        [
+          "Advisor",
+          "It depends on services, trading pattern, account size, and how you want advice delivered."
+        ],
+        [
+          "Financial planner",
+          "A fee-based account may make sense if you want ongoing advice and monitoring. A transaction-based account may cost less if you rarely trade. We should also discuss conflicts: how the firm and advisor are compensated can affect recommendations."
+        ],
+        [
+          "Prospect",
+          "That sounds like a conflict."
+        ],
+        [
+          "Financial planner",
+          "It can be, which is why we disclose it and manage it. The important question is which account type fits your needs, not only which fee sounds lower in isolation."
+        ],
+        [
+          "Prospect",
+          "Please show me the actual charges under each arrangement using the same assumptions."
+        ],
+        [
+          "Financial planner",
+          "We will compare the current disclosures, services, costs, and conflicts, including circumstances in which the comparison changes."
+        ]
+      ],
+      "notes": [
+        "Fee language should be clear, balanced, and not defensive.",
+        "A lower fee is not automatically the better relationship if services differ."
+      ]
+    },
+    {
+      "title": "Risk Profile: Tolerance vs Capacity",
+      "setting": "A client scores aggressive on a questionnaire but needs cash in three years for a home purchase.",
+      "dialogue": [
+        [
+          "Client",
+          "I can handle risk. I want the highest return possible."
+        ],
+        [
+          "Advisor",
+          "Your answers show high risk tolerance, but your home-purchase goal gives you lower risk capacity for that money."
+        ],
+        [
+          "Financial planner",
+          "We can separate buckets. Long-term retirement assets may accept more volatility, but the down-payment funds need a shorter time horizon and higher liquidity."
+        ],
+        [
+          "Client",
+          "So I cannot be aggressive?"
+        ],
+        [
+          "Financial planner",
+          "We need to assess each goal separately before recommending an allocation. Willingness to accept losses is different from your ability to absorb them without missing the home-purchase timeline."
+        ],
+        [
+          "Client",
+          "The house funds are needed next year; the retirement funds have a much longer horizon."
+        ],
+        [
+          "Financial planner",
+          "That distinction belongs in the plan. We will assess liquidity needs and potential loss separately for each goal."
+        ]
+      ],
+      "notes": [
+        "Risk tolerance and risk capacity are different and often conflict.",
+        "Goal-based buckets can help explain why one client may need multiple allocations."
+      ]
+    },
+    {
+      "title": "Market Drawdown: Client Wants to Sell Everything",
+      "setting": "A retired client calls after a sharp market decline.",
+      "dialogue": [
+        [
+          "Client",
+          "I cannot watch this anymore. Sell everything and move to cash."
+        ],
+        [
+          "Advisor",
+          "I understand why this feels painful. Before we act, let's look at your income plan, cash reserve, allocation, and what selling now would do to recovery potential."
+        ],
+        [
+          "Financial planner",
+          "The current records show twelve months of planned withdrawals in short-term assets; let's verify that the amount still fits your needs. Selling the long-term holdings would realize losses and change future exposure. Holding them does not guarantee recovery."
+        ],
+        [
+          "Client",
+          "What if the market keeps falling?"
+        ],
+        [
+          "Financial planner",
+          "That is possible. We can review whether your plan still fits your risk capacity, but I would separate a disciplined adjustment from a panic sale."
+        ],
+        [
+          "Client",
+          "Our spending needs have increased since the last review."
+        ],
+        [
+          "Financial planner",
+          "Then let's update the plan inputs first. Any recommendation should reflect your current circumstances, not just the earlier allocation."
+        ]
+      ],
+      "notes": [
+        "Behavioral coaching validates emotion and returns to plan.",
+        "Avoid predicting the market; focus on goals, liquidity, and process."
+      ]
+    },
+    {
+      "title": "Retirement Income: RMD and Withdrawal Strategy",
+      "setting": "A client approaching RMD age wants to know how much to withdraw.",
+      "dialogue": [
+        [
+          "Client",
+          "The custodian sent an RMD estimate. Should I take only that amount?"
+        ],
+        [
+          "Advisor",
+          "The RMD is a minimum required amount for certain accounts, not necessarily your ideal spending strategy."
+        ],
+        [
+          "Financial planner",
+          "We should coordinate the RMD with your cash-flow need, taxable income, charitable goals, and other accounts. For tax specifics, we should confirm with your CPA."
+        ],
+        [
+          "Client",
+          "Can I take it from any account?"
+        ],
+        [
+          "Financial planner",
+          "That depends on the account type and IRS rules. We can help organize the question and coordinate with the custodian and tax advisor before you act."
+        ],
+        [
+          "Client",
+          "I have the custodian's notice and statements for the relevant accounts."
+        ],
+        [
+          "Financial planner",
+          "Bring those to the review. We will coordinate account-specific questions with the custodian and qualified tax adviser."
+        ]
+      ],
+      "notes": [
+        "RMD conversations require careful referral and account-specific language.",
+        "Do not turn a minimum distribution rule into a complete retirement-income recommendation."
+      ]
+    },
+    {
+      "title": "Rollover Conversation: Four Options, Not One Shortcut",
+      "setting": "A client changed jobs and asks whether to roll a 401(k) into an IRA.",
+      "dialogue": [
+        [
+          "Client",
+          "Should I roll the old 401(k) into an IRA with you?"
+        ],
+        [
+          "Advisor",
+          "We should compare the options before deciding."
+        ],
+        [
+          "Financial planner",
+          "The common options are leaving assets in the old plan, rolling to the new employer plan if allowed, rolling to an IRA, or cashing out. We need to compare fees, investment choices, services, creditor protections, tax impact, and your need for advice."
+        ],
+        [
+          "Client",
+          "Which one do you recommend?"
+        ],
+        [
+          "Financial planner",
+          "I can make a recommendation after we document the facts and alternatives. Because an IRA rollover may increase advisory fees, we need to be especially clear about the rationale."
+        ],
+        [
+          "Client",
+          "Please include the old plan's actual fees and available services in the comparison."
+        ],
+        [
+          "Financial planner",
+          "Yes. We need the current plan information and your circumstances before documenting a recommendation and its rationale."
+        ]
+      ],
+      "notes": [
+        "Rollover language should compare alternatives and conflicts.",
+        "Cash-out consequences should be discussed carefully and often with tax guidance."
+      ]
+    },
+    {
+      "title": "Annuity Tradeoff: Guarantee vs Liquidity",
+      "setting": "A client asks about buying an annuity after seeing an advertisement promising lifetime income.",
+      "dialogue": [
+        [
+          "Client",
+          "This annuity says I can get guaranteed income for life. Why would I not do it?"
+        ],
+        [
+          "Advisor",
+          "Income guarantees can be valuable, but the tradeoffs matter."
+        ],
+        [
+          "Financial planner",
+          "We need to review fees, surrender period, liquidity limits, inflation risk, insurer strength, tax treatment, and whether the benefit fits your income need better than other options."
+        ],
+        [
+          "Client",
+          "But the guarantee sounds safe."
+        ],
+        [
+          "Financial planner",
+          "It may reduce one type of risk, longevity risk, but it can introduce other constraints. The right question is which risk you are trying to solve and what flexibility you are willing to give up."
+        ],
+        [
+          "Client",
+          "I want to see how the surrender conditions affect access to my money."
+        ],
+        [
+          "Financial planner",
+          "We will review the actual contract, costs, guarantees, limitations, and alternatives rather than rely on the headline description."
+        ]
+      ],
+      "notes": [
+        "Product language should be balanced: benefit, cost, risk, constraint, fit.",
+        "Guarantee language must be used carefully and with approved materials."
+      ]
+    },
+    {
+      "title": "Concentrated Employer Stock",
+      "setting": "A technology executive has most of their net worth in employer stock and resists diversification.",
+      "dialogue": [
+        [
+          "Client",
+          "This stock made me wealthy. I do not want to sell."
+        ],
+        [
+          "Advisor",
+          "That history matters, and so does the concentration risk going forward."
+        ],
+        [
+          "Financial planner",
+          "Your salary, bonus, unvested equity, and portfolio are all tied to the same company. Diversifying does not mean you lack confidence; it means you are protecting the wealth already created."
+        ],
+        [
+          "Client",
+          "What if I sell and it doubles?"
+        ],
+        [
+          "Financial planner",
+          "That regret risk is real. We can build a staged diversification plan, use price or time triggers, and coordinate tax strategy with your CPA."
+        ],
+        [
+          "Client",
+          "Please show the effect of several approaches before I decide."
+        ],
+        [
+          "Financial planner",
+          "We will compare the risks and relevant tax questions with qualified input, without promising that any approach avoids regret or loss."
+        ]
+      ],
+      "notes": [
+        "Concentrated-stock conversations often involve identity and regret.",
+        "A staged plan can address tax, emotion, and risk management."
+      ]
+    },
+    {
+      "title": "Tax-Loss Harvesting: Useful but Not Magic",
+      "setting": "A client asks whether selling losses means the portfolio did not really lose money.",
+      "dialogue": [
+        [
+          "Client",
+          "If we harvest losses, does that cancel the market loss?"
+        ],
+        [
+          "Advisor",
+          "No. The investment loss remains real. Tax-loss harvesting may have tax consequences or benefits depending on the facts and applicable rules; it does not cancel an economic loss."
+        ],
+        [
+          "Financial planner",
+          "We should avoid letting the tax benefit drive the investment decision by itself. We also need to watch wash-sale rules and keep the portfolio aligned with your target allocation."
+        ],
+        [
+          "Client",
+          "So it helps but does not fix everything."
+        ],
+        [
+          "Financial planner",
+          "Exactly. It is a tool, not a strategy by itself."
+        ],
+        [
+          "Client",
+          "Can we review that with my tax adviser before making a change?"
+        ],
+        [
+          "Financial planner",
+          "Yes. We will coordinate the relevant facts and assess the investment and tax implications together."
+        ]
+      ],
+      "notes": [
+        "Tax-loss harvesting requires careful explanation and tax referral language.",
+        "Do not imply tax treatment is guaranteed for a specific client without proper review."
+      ]
+    },
+    {
+      "title": "Family Pressure and Trusted Contact",
+      "setting": "An older client says a relative wants them to withdraw a large amount urgently.",
+      "dialogue": [
+        [
+          "Client",
+          "My nephew says I should send him money today for an investment."
+        ],
+        [
+          "Advisor",
+          "That sounds important. Can we slow down and understand the purpose, amount, and whether anyone is pressuring you?"
+        ],
+        [
+          "Financial planner",
+          "Your choice is yours, but because this is unusual and urgent, I want to protect you from possible financial exploitation. With your permission, we can involve your trusted contact or another professional you rely on."
+        ],
+        [
+          "Client",
+          "I do not want to get anyone in trouble."
+        ],
+        [
+          "Financial planner",
+          "The goal is not to accuse anyone. The goal is to make sure the decision is truly yours and that you understand the risk before assets leave the account."
+        ],
+        [
+          "Client",
+          "I would like to discuss the request privately before doing anything."
+        ],
+        [
+          "Financial planner",
+          "We can do that and follow the firm's applicable safeguarding and escalation process, explaining the next steps and their limits."
+        ]
+      ],
+      "notes": [
+        "Elder-risk language should be respectful, protective, and firm.",
+        "Follow firm policy for trusted contact and escalation."
+      ]
+    },
+    {
+      "title": "Client Complaint: 'You Never Told Me About the Fees'",
+      "setting": "A client expresses dissatisfaction after seeing advisory fees on a statement.",
+      "dialogue": [
+        [
+          "Client",
+          "You never told me about these fees."
+        ],
+        [
+          "Advisor",
+          "I am sorry this feels surprising. I want to understand exactly what you are seeing and review what was disclosed."
+        ],
+        [
+          "Financial planner",
+          "I also need to treat your concern seriously and follow our firm's process. I will document your concern, provide the fee schedule again, and ask the supervisor to review the account history."
+        ],
+        [
+          "Client",
+          "Are you saying this is my fault?"
+        ],
+        [
+          "Financial planner",
+          "No. I am saying we should review the facts carefully and make sure your concern is handled through the proper channel."
+        ],
+        [
+          "Client",
+          "Please explain when I should expect the next update on the review."
+        ],
+        [
+          "Financial planner",
+          "I will confirm the complaint process and update arrangements, and make sure the designated team acknowledges your concern."
+        ]
+      ],
+      "notes": [
+        "Complaint language should not argue, blame, or dismiss.",
+        "Many firms require escalation when a client expresses dissatisfaction."
+      ]
+    },
+    {
+      "title": "Annual Review: Plan Change, Not Product Pitch",
+      "setting": "An advisor leads an annual review after the client had a new child and changed jobs.",
+      "dialogue": [
+        [
+          "Advisor",
+          "Before we look at performance, let's update what changed in your life this year."
+        ],
+        [
+          "Client",
+          "We had a baby, changed jobs, and may buy a larger home."
+        ],
+        [
+          "Financial planner",
+          "Those changes affect emergency reserves, insurance needs, beneficiary designations, education planning, risk capacity, and cash-flow assumptions. The portfolio review should come after we update the plan inputs."
+        ],
+        [
+          "Client",
+          "Does that mean we need new investments?"
+        ],
+        [
+          "Financial planner",
+          "Maybe, but first we update the facts. Product changes should follow the plan, not lead it."
+        ],
+        [
+          "Advisor",
+          "I will bring updated income figures and our expected housing budget."
+        ],
+        [
+          "Financial planner",
+          "Those inputs will help us assess the plan and identify questions for other qualified professionals before considering product changes."
+        ]
+      ],
+      "notes": [
+        "Good annual reviews begin with client facts, not performance slides.",
+        "Planning changes may affect investment, insurance, estate, and cash-flow conversations."
+      ]
+    }
+  ]
+}

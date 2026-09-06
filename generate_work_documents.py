@@ -43,6 +43,7 @@ pdfmetrics.registerFontFamily('Work', normal='Work', bold='Work-Bold', italic='W
 STYLES = {
     'body': ParagraphStyle('WorkBody', fontName='Work', fontSize=10.5, leading=15.2, textColor=INK, spaceAfter=8),
     'small': ParagraphStyle('WorkSmall', fontName='Work', fontSize=8.8, leading=12.5, textColor=MUTED, spaceAfter=7),
+    'prompt': ParagraphStyle('WorkPrompt', fontName='Work', fontSize=9.3, leading=13.8, textColor=INK, spaceAfter=7),
     'title': ParagraphStyle('WorkTitle', fontName='Work-Bold', fontSize=30, leading=34, textColor=INK, spaceAfter=20),
     'h1': ParagraphStyle('WorkH1', fontName='Work-Bold', fontSize=20, leading=25, textColor=INK, spaceAfter=14, keepWithNext=True),
     'h2': ParagraphStyle('WorkH2', fontName='Work-Bold', fontSize=12.4, leading=16, textColor=BLUE, spaceBefore=12, spaceAfter=8, keepWithNext=True),
@@ -140,11 +141,13 @@ def cover(t, kind, purpose):
 
 
 def course_map(t):
+    from work_ai_prompts import pdf_link
     story = [heading('Your course at a glance', 'course-map'), p('Use the lesson numbers to match this document with the website and the other guides.')]
     for m in t['modules']:
         story += [p(f'{m["number"]:02d}  {m["title"]}', 'term'), p(m['workshop']['goal'], 'small')]
     story += [p('Choose your pace', 'h2'), p('Quick practice: spend 15 minutes reading one case and saying a response. Full lesson: allow 45-60 minutes for language work, conversation, writing, and revision.'),
-              p('Level support', 'h2'), p('B1 learners can use the frames and a partner. B2 learners can try a response before reading the model. C1 learners can add the harder follow-up and reduce preparation time. These are teaching suggestions, not certified CEFR level ratings.'), PageBreak()]
+              p('Level support', 'h2'), p('B1 learners can use the frames and a partner. B2 learners can try a response before reading the model. C1 learners can add the harder follow-up and reduce preparation time. These are teaching suggestions, not certified CEFR level ratings.'),
+              pdf_link(t, 'roleplay', 'module-1', 'After practicing: open the AI prompt workshop, or use the prompts at the end of this guide.'), PageBreak()]
     return story
 
 
@@ -171,6 +174,7 @@ def assessment_page():
 
 
 def teacher(t):
+    from work_ai_prompts import pdf_link
     story = cover(t, "Teacher's guide", 'Teach practical workplace communication with specific cases, clear language targets, and a repeatable feedback process.')
     story += course_map(t)
     story += [heading('A 60-minute lesson that works', 'teaching-plan'), p('Prepare the case and the learner pages. Keep the model response hidden until learners have attempted their own. Choose two field terms that are important to understanding the case.')]
@@ -195,12 +199,13 @@ def teacher(t):
                   p('Language-check answers', 'h2')]
         for i, q in enumerate(w['questions']):
             story += [p(f'{i+1}. {chr(65+q["correct_index"])} - {q["answer"]} ' + q['feedback'][q['correct_index']], 'small')]
-        story.append(PageBreak())
+        story += [pdf_link(t, 'teacher', m['id'], 'AI extension: adapt this lesson for your learners and available time.'), PageBreak()]
     story += assessment_page() + [PageBreak()] + reference_page(t)
     return story
 
 
 def workbook(t):
+    from work_ai_prompts import pdf_link
     story = cover(t, 'Learner workbook', 'Work with realistic cases, develop your own response, and use the answer section after you have tried the tasks.') + course_map(t)
     for m in t['modules']:
         w = m['workshop']
@@ -220,7 +225,7 @@ def workbook(t):
         story += [p('5. Say it', 'h2'), p(m['speaking_task'], 'small'), p('Partner: ' + w['role_b'], 'small'),
                   p('6. Write it', 'h2'), p(m['writing_task'], 'small'), WritingLines(7, 21),
                   p('Check: facts accurate | meaning clear | tone appropriate | next action or question explicit', 'small'),
-                  p('After checking the answer section, revise one sentence and try the spoken response again.', 'small'), PageBreak()]
+                  pdf_link(t, 'writing', m['id'], 'After revising your response: open the AI extension for feedback on your own draft.'), PageBreak()]
     story += [heading('Answer workshop', 'answers'), p('Try the tasks first. The model is one acceptable response, not a script to memorize. Your written version needs a subject line, an opening, and appropriate context. Assess it using the four criteria at the end.')]
     for m in t['modules']:
         w = m['workshop']
@@ -236,6 +241,7 @@ def workbook(t):
 
 def conversation(t):
     from work_dialogues import gallery
+    from work_ai_prompts import url as ai_url
     story = gallery(t)
     for m in t['modules']:
         w = m['workshop']
@@ -245,12 +251,14 @@ def conversation(t):
                   p('Useful expressions', 'h2'), *[p(frame, 'small') for frame in w['frames']],
                   p('Cover this until after your first attempt', 'h2'), p(m['model'], 'quote'),
                   p('Second round', 'h2'), p(w['challenge']),
-                  p('Debrief', 'h2'), p('Which phrase helped the listener? Which case fact needed clarification? Write one better follow-up question, then repeat the exchange.', 'small'), WritingLines(1), PageBreak()]
+                  Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", m["id"], True), quote=True)}" color="#174c69">Debrief and extend with AI</link>', STYLES['h2']),
+                  p('Which phrase helped the listener? Which case fact needed clarification? Write one better follow-up question, then repeat the exchange.', 'small'), WritingLines(1), PageBreak()]
     story += assessment_page() + [PageBreak()] + reference_page(t)
     return story
 
 
 def phrasebook(t):
+    from work_ai_prompts import pdf_link
     story = cover(t, 'Vocabulary & phrasebook', 'Keep precise meanings and useful expressions close. Retrieve the words, then use them in a complete message.')
     story += [heading('Make vocabulary usable', 'vocabulary-method'), p('Knowing a definition is a start. To use a term well, explain it in plain English, connect it to a case, and choose a natural sentence around it.'),
               *bullets(['Read five terms, cover their definitions, and recall the meanings.', 'Sort a pair you might confuse and explain the difference.', 'Use one term in a sentence about a fictional case.', 'Ask a partner to explain the sentence without repeating the specialist word.', 'Return to the same terms on another day and test recall again.']),
@@ -276,7 +284,8 @@ def phrasebook(t):
         story += [KeepTogether([p(w['title'], 'h2'), *[p(frame) for frame in w['frames']], p(w['explanation'], 'small')])]
     story += [PageBreak(), heading('Model responses in context', 'model-responses'), p('Read the situation first. Cover the model, say your own response, and compare the two for meaning and tone.')]
     for m in t['modules']:
-        story += [KeepTogether([p(f'{m["number"]:02d} | {m["title"]}', 'h2'), p(m['brief'], 'small'), p(m['model'], 'quote'), p('Try it again: ' + m['workshop']['challenge'], 'small')])]
+        story += [KeepTogether([p(f'{m["number"]:02d} | {m["title"]}', 'h2'), p(m['brief'], 'small'), p(m['model'], 'quote'), p('Try it again: ' + m['workshop']['challenge'], 'small'),
+                                pdf_link(t, 'vocabulary', m['id'], 'AI extension: build and retrieve vocabulary from this case.')])]
     story += [PageBreak()] + reference_page(t)
     return story
 
@@ -286,6 +295,7 @@ KINDS = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Phrasebook'
 
 
 def build_track(track, kinds=None):
+    from work_ai_prompts import pdf_appendix, prompt_hash, EDITION as AI_EDITION
     result = {}
     for index, (_label, href) in enumerate(track['pdfs']):
         if kinds and index not in kinds:
@@ -303,13 +313,14 @@ def build_track(track, kinds=None):
             if index == 2:
                 from work_dialogues import EDITION
                 doc.revision = EDITION
-            doc.build(BUILDERS[index](track), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
+            doc.revision = AI_EDITION
+            doc.build(BUILDERS[index](track) + pdf_appendix(track, index), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
             reader = PdfReader(temp)
             assert len(reader.pages) > 3
             os.replace(temp, path)
             result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
                                 bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
-                                content_hash=content_hash())
+                                content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=2, ai_prompt_edition=AI_EDITION)
             if index == 2:
                 from work_dialogues import dialogue_hash, load_dialogues, EDITION
                 result[href].update(dialogue_hash=dialogue_hash(), dialogue_count=len(load_dialogues()[track['slug']]), dialogue_edition=EDITION)

@@ -66,6 +66,7 @@ def validate_dialogues(groups):
 
 
 def gallery(t):
+    from work_ai_prompts import url as ai_url
     # Import at rendering time so normal curriculum loading stays lightweight.
     from reportlab.platypus import PageBreak, Paragraph, Spacer, KeepTogether
     from generate_work_documents import p, heading, cover, STYLES, box, WritingLines
@@ -111,7 +112,7 @@ def gallery(t):
             # This directs attention to actual utterances, with no fabricated terminology.
             question=next((v for _,v in d['dialogue'] if '?' in v),d['dialogue'][0][1])
             story.append(p('Discuss this wording: "'+question+'" What does it help the other professional clarify?', 'small'))
-        story += [p('Rehearse and extend', 'h2'),
+        story += [Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", f"dialogue-{i}", True), quote=True)}" color="#174c69">Rehearse and extend with AI</link>', STYLES['h2']),
                   p('Explain the issue and the agreed next step without reading. Identify any point still awaiting evidence, agreement, or approval. Then replay the exchange with a changed constraint and a new ending.', 'small'),
                   p('Observer: note one natural professional expression and one place where the follow-up made the meaning clearer.', 'small'),
                   WritingLines(1,20),PageBreak()]

@@ -1,0 +1,24 @@
+.work-ai { border-top: 3px solid var(--work-blue, #174c69); scroll-margin-top: 6rem; }
+.work-ai-controls { display: grid; grid-template-columns: 1.15fr 1.6fr 1fr; gap: 1rem; margin: 1.6rem 0 1rem; }
+.work-ai-controls[hidden], .work-ai-actions[hidden] { display: none; }
+.work-ai-controls label { display: grid; gap: .45rem; font-weight: 650; font-size: .9rem; min-width: 0; }
+.work-ai-controls select { width: 100%; min-width: 0; }
+.work-ai-description { font-weight: 650; color: #174c69; }
+.work-ai-preview { margin: 1.2rem 0; border: 1px solid #c7d5de; border-radius: .75rem; background: #f4f7f9; padding: 1rem; }
+.work-ai-preview summary { cursor: pointer; font-weight: 650; padding: .2rem 0 .7rem; }
+.work-ai-preview textarea { margin-top: .5rem; max-height: 24rem; font-family: inherit; line-height: 1.65; background: #fff; color: #172c3d; padding: 1rem; }
+.work-ai-actions { display: flex; flex-wrap: wrap; gap: .7rem 1.3rem; align-items: center; }
+.work-ai-actions a { display: inline-flex; align-items: center; min-height: 44px; cursor: pointer; }
+.work-ai-status { min-height: 1.6em; font-size: .9rem; font-weight: 600; }
+.work-ai-print { display: none; }
+.work-ai-invitation { border-left: 3px solid #88a8bc; padding: .35rem 0 .35rem 1rem; margin: 1.5rem 0 0; }
+.work-ai-invitation p { margin: .2rem 0 .6rem; }
+.work-ai-invitation nav { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; }
+.work-ai-invitation a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
+@media (max-width: 850px) { .work-ai-controls { grid-template-columns: 1fr; } .work-ai-preview textarea { max-height: 18rem; } }
+@media print {
+  .work-ai-controls, .work-ai-actions, .work-ai-status, .work-ai-preview summary, .work-ai-preview textarea { display: none !important; }
+  .work-ai-print { display: block; white-space: pre-wrap; overflow-wrap: anywhere; font: 9pt/1.5 sans-serif; }
+  .work-ai-preview { border: 0; padding: 0; }
+  .work-ai { break-before: page; }
+}

@@ -1,0 +1,539 @@
+{
+  "date": "2026-09-06",
+  "grammar_lessons": 44,
+  "activities": 176,
+  "options": 528,
+  "pdfs": 88,
+  "pages": 484,
+  "failures": [],
+  "documents": [
+    {
+      "path": "pdf/students/concept-01-understanding-prepositions-in-on-at-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "73cc9dfd023effb76f016be1ff9f29567ed0e6bae53340ac46b0dc765dae42e7",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-01-understanding-prepositions-in-on-at-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "b08642f2e83b1e6a260a5524ac89c2a573207582482d948ab953d7babfa06c99",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-02-understanding-how-to-express-going-places-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "2ae7902468bd76bdf1e36d9826a0ac933a0688f67313a19d8229384bc4b9a8ba",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-02-understanding-how-to-express-going-places-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "33b9bb11a53f8c5f9ed1924c40bb9a4c644ced48bfbef7edf0954ae83fbedcfd",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-03-understanding-the-use-of-ing-and-ed-with-emotion-words-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "d331ad18b6a895d36c033bdfb2924e21780c90aeb0d431ac592b67ae22fb94a0",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-03-understanding-the-use-of-ing-and-ed-with-emotion-words-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "6dfcb217931e782f4c701d9b81b5f1c7aaad6a4dd73b865cdff6358dda8d2771",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-04-grammar-concepts-while-and-during-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "d044364ddecd216cd9a1745c2d644d8d4e01e996f962836365502163732f67a1",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-04-grammar-concepts-while-and-during-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "a08286c60e3d27b9465b033c4743bcbc70f6ef6211eace7fd1cb19dda4dafbca",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-05-grammar-concepts-using-by-and-through-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "610bb6012270f20bc7d3724ca3d8e6e1920977a103bad24125260d9c8cc7dc94",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-05-grammar-concepts-using-by-and-through-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "cc9c96edb6fc5e37bbba8ea61f49425c6654e823f167f078a09fdac36b8fd285",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-06-noun-verb-confusion-understanding-the-difference-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "d01593e04c8104bf29e76fb6d29666c74802e729a4c586b952b4cc2c45256e53",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-06-noun-verb-confusion-understanding-the-difference-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "563c20ec25bb6ccf17ad0b4d04584e58e9a1f2e0772b63e9f0f760cda784355f",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-07-understanding-the-use-of-about-with-verbs-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "e4836a4ed509ae2a56e9965c5dcfe4a771657c71a94c1b40b4b94efa0bb01110",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-07-understanding-the-use-of-about-with-verbs-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "999d767a66da64f9ee2b07236a66f6e0fd4b6288eccb3b35bde86578ee1f6428",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-08-expressing-optimism-or-pessimism-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "464b943b2e8ba469f7325e307eeb25d026cecdd3319fd51fa6741f947b7ed621",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-08-expressing-optimism-or-pessimism-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "4593cd579175c03f0c0c5caf39ac0fdcf6e3c5933c3ca7a6bc4f3c8c777b9add",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-09-concept-09-causal-phrases-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "78fdb193869b5c98032b888d097184d4f29e158e63fc52234df096d6c839c17b",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-09-concept-09-causal-phrases-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "6c8c19145b818aabea759954dce45ccfbf8eda2bdb7a5cef8e676e00aa3091e4",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-10-adjective-order-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "4cb02ac9132b71e5c6a36b9971fbbb9613724751df48d53e556286e36cac524f",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-10-adjective-order-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "16915db47434f0d67ce48de898d8be9d1f982ba9b03983b0485b1f7ad91d138b",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-11-understanding-go-come-and-bring-take-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "5bff6bf484ff8e0ce9659b7e6b8531c835d919f1b32a629c5847d04746e9395b",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-11-understanding-go-come-and-bring-take-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "ca81d88ff7c7374f2555f322c93b578b7f649668e251ab305390c84815833124",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-12-that-vs-which-understanding-essential-and-non-essential-information-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "72dd22443f0ed41d5a29406af2179114ec8dd76d2401b86ca716c92b5a9f25d3",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-12-that-vs-which-understanding-essential-and-non-essential-information-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "28c824da4afd5ba775ecf8592f88aa3d01ec0ec906f5d98970dc592e9a164024",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-13-allow-vs-prohibit-understanding-usage-in-different-contexts-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "135060a0e108dc91a230696515083bf46c00c38691f57a4b09b61ba076af8fa8",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-13-allow-vs-prohibit-understanding-usage-in-different-contexts-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "cd4d4d71a4d2267e3dce373d3c714307ef37d73a7dead18129303cf3f44f918f",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-14-understanding-events-tenses-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "4c1848a0b7369a8034b6442fff4ad0cb51aeb639ab608c4208e6cb7ae84567e3",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-14-understanding-events-tenses-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "3ad704268da9a711e1c3a2545b7ecafb58f8e34312597435f8c0b330ab4499e7",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-15-understanding-referencing-dates-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "b68ea84fa826895864eddd2912dcfc2bd9afecbc0ba3eaf4b76f1b73c52f5ddd",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-15-understanding-referencing-dates-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "1144891aa04351caf9517046f1c4e0f24d0b40e87603e3bc97d1de5ef1114f30",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-16-understanding-the-use-of-recently-and-lately-in-present-perfect-progressive-tense-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "eaa3ae58c345ed0eab416b252c51882399aab35cd31786f51dd5dd6b86abd376",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-16-understanding-the-use-of-recently-and-lately-in-present-perfect-progressive-tense-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "98001dda0b1a368cb3c8e0418d071a3edaf7eb97e3efadc605f7b85eb13460b9",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-17-understanding-the-usage-of-recommend-and-suggest-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "e765f654aa5947929f4d4c637974455e659db20903d5e75977885a16258654a2",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-17-understanding-the-usage-of-recommend-and-suggest-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "090b660738fd57fbb20952a4c608a8a992d65c53053887caf2556a04c1e2183c",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-18-understanding-the-position-of-only-in-a-sentence-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "ccc3f0175100feb616812f223cd2abee6aa156b711d132776f6b6a4e4716e717",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-18-understanding-the-position-of-only-in-a-sentence-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "ff9d611773961374d688d22c4c3f3305e28d6a96bd12852b1cd85502a367dc6a",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-19-directions-locations-a-detailed-explanation-for-non-native-english-speakers-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "3db9858c2064d4e86a161c1296b6b2ebc290446d74bd8f6438cedcb4a89f2ad2",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-19-directions-locations-a-detailed-explanation-for-non-native-english-speakers-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "b9f4218d7a72ee6d73c51ffc60abd88c315199fb74ff1408990fe8a117d0c745",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-20-grammar-concepts-20-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "c75d7cbb5a3a9141af5ae55ce8e95d070d3bfca1573872a4c21016b5aa838fef",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-20-grammar-concepts-20-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "5584a7a3483ffcaa0294299a302176d14ec40a3a86b22b942d42e7376aaa28e4",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-21-example-sentences-for-uncountable-nouns-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "ebfe103db4d534ebc0f1b99f424eb48565edd1a46f3d35a054c852bb92a104ee",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-21-example-sentences-for-uncountable-nouns-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "874d0c62e85d2298f993dbadad0a784b0cfac1f74d21e6edb1d95904fd16b86a",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-22-measurements-shapes-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "0c6f8e0907dda9268d81820480b35e29d23ebdd170c9517770986546bdec73ce",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-22-measurements-shapes-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "7cf4040dd87b31c6105e0aa55612513e9cade3fa88ec250bcd560eb1cd686ade",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-23-concept-23-all-each-every-none-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "e970ade36e9f2d8f26770d43197235c08f5aff55d8db03c5f01b98d953b9256f",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-23-concept-23-all-each-every-none-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "1d11280e0c11107b0657a12ed8544cec0b3f575e754225e17fcfb038edcde335",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-24-accusing-blaming-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "f20f823197b9c5fe1a1e522118064e44bd4c00eb042181ef164c2a74172e4e6b",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-24-accusing-blaming-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "7a4cf5058bc799a3ea6cf6a48a2d0f159b42bf300a73da9a1e54426843f0a1a1",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-25-concept-25-negatives-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "b06e1c4a73d4d179d4225bda1b32036252cbeb1a083358fa0661a9375445e688",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-25-concept-25-negatives-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "c8b771660bc7990ebf879a2dfb94c6bc9b43b7088ee24df25452070a4e2bef8a",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-26-understanding-the-past-perfect-tense-had-verb-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "f427a975731cd709917d4d56915211740736c48b28025c73bc432658746781e8",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-26-understanding-the-past-perfect-tense-had-verb-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "53178323cfb9561bc54398f48086e98452599c82bc8516adfc71ddbc64cc8da3",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-27-few-and-little-with-without-a-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "57582b998d3c5f65746fd2dc0fd444f96e76cbbf65fd5f7d429c6d0877bc2d64",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-27-few-and-little-with-without-a-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "d0624c07bc4530ef59828717517cba8022327f422dba8a735738d90abe8e2118",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-28-understanding-the-use-of-this-that-and-it-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "24379f1cc89b5e3e24dc18597cfd25766a41ab4ca2109c176e379fc2c04e79d8",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-28-understanding-the-use-of-this-that-and-it-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "7ca3010c9ddf218246828a995c81ad97a05281be2ff82ae81c2a04e83aef875d",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-29-concept-to-x-for-xing-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "bc1e399a8040e03352eee9387de625577e9079b7f96fbbee43738e548c1c05f5",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-29-concept-to-x-for-xing-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "d51c20d8e9030feb3621c7e1290fd7ba1e586424fc48aa3751232b38f3edd732",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-30-the-dual-function-of-so-in-english-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "d9cef4a348de43de59d03700b19280550d5d67c265820ac746224f9af203a0f0",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-30-the-dual-function-of-so-in-english-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "bb527f662ec465061dfd928a04f0d8de80ea318a9cf7b5c48c453028d63850e6",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-31-times-dates-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "cf5b9804698e49f97e76d32733752a19ff536f39de9fbd1fde6be494677f3554",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-31-times-dates-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "e5a81b09b0a41a050eab53435c5f75cee66c13eafefdad04f47113cff8f2758a",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-32-even-if-vs-even-though-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "07ad3367c1ade344f7fc0f9482986782da8859850f0939bf3f056f6f148dc9bf",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-32-even-if-vs-even-though-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "bddde38714b0efb50153a67acc06be1758905c5451326efae1dd5e4d1e25c93c",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-33-the-use-of-care-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "d9b07df57575b5c3cebf5328326d99065a605d6302dcc310c4720512a5e4f31a",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-33-the-use-of-care-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "cdbed255a3cd7571a6b5b3bdaab8e49372f2ec64ed49bfa0a4eb8152a6ccd9ab",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-34-the-use-of-success-and-its-different-parts-of-speech-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "621c1929906d31f3891cb3cdf051976efb8a0dd6680976f5ed43a9046222e267",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-34-the-use-of-success-and-its-different-parts-of-speech-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "8dd47c4769f187cab54d707e525fb068f70faa13538d14d77f688f26e70e3567",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-35-explanation-of-was-able-to-vs-could-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "f0ee9f89dee62ecb8907af66f32fe3e818fd66eb77721b7dfb0e1875e5251a67",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-35-explanation-of-was-able-to-vs-could-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "7a4e05402c61b3c11bc3fc11aa8dcc457f3644eb0cf6d4396336caf592d1df3f",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-36-speak-talk-say-tell-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "8952c1cb4e7e04a52d00c80888d3b86d3cf808415766b827465094258a304c9e",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-36-speak-talk-say-tell-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "3ad68b2451ae5c80acd26959cc03648dcb3886de9ad7d8cf275fb2966b7fab8e",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-37-almost-vs-most-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "23ea0d3eacd6882bba143df659dcbff484d7365aa11b1c8874fa0a0fea66966a",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-37-almost-vs-most-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "729bdefd03165157f1aba7b2ba5bc685edfe17520ef63d8ba1ddae40db926b1e",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-38-affect-and-effect-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "894ddc2a678ac8a4f8f405926cb78a1fcc3bdf6398e2b0ebdc038a60600900d4",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-38-affect-and-effect-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "d56438bc49899609ee5d69cef1fe0cc1ddc9a72954d4f627efbc193515b317c6",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-39-sensory-terms-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "709d1f56be3f1e826f36e7a8ef456c11eddb6594b124417d30a21e0bb51b8faa",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-39-sensory-terms-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "aeac97ebd037c30586348aa639be0fd9e03a9626b3455781f740e3bd6208ee0a",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-40-so-and-such-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "dd2a648973f27053a6eb1adb09ce361fa41dfb7408d884fc6b0ba2d8d79fef99",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-40-so-and-such-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "8d357d99ec08c251dd1940904a4d58176ea5480d5a35aef07f8bdf6106cfeb48",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-41-refuse-vs-reject-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "c5c6345618c0418cc663a8e785cb3e8f7f662abc9cf2b5834dd166bea9944367",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-41-refuse-vs-reject-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "cf017f435fddf6c83cba26fc4bfaa8faa87011444f173859d2acdcba6ebcc1cb",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-42-cold-explanations-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "74d1eda3d16dbee4722305cb655c0cc22745f161917188ea1927448f6e29240f",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-42-cold-explanations-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "547185fa21e1fd24f7b029a4a1f0bf93b68523680a88cad66bb0bf3fd2845066",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-43-describing-trends-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "0ed133e9c0859f7bea0be2b44542ca7a5064ea84365d061f749045545bc02bff",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-43-describing-trends-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "98d7ac281fc756b4714c47c7510af567f429be1716d6bbbcd61629b1448d458e",
+      "issues": []
+    },
+    {
+      "path": "pdf/students/concept-44-requesting-advice-student-workbook.pdf",
+      "pages": 5,
+      "sha256": "5401464c4d3ded423cd0b1c0b104de952e69b5b9870ebfd2c0c5aa6858995efc",
+      "issues": []
+    },
+    {
+      "path": "pdf/teachers/concept-44-requesting-advice-teaching-guide.pdf",
+      "pages": 6,
+      "sha256": "7f1df897760ff2a03a1c87446ef6996ea26526aa00a50414a28b7010f3628dac",
+      "issues": []
+    }
+  ]
+}

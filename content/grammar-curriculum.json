@@ -1,5 +1,5 @@
 {
-  "revision": "2026-09-06",
+  "revision": "2026-09-06-multiple-choice",
   "description": "Locally maintained grammar lessons. Level ranges are study guidance, not certification.",
   "concepts": [
     {
@@ -31,28 +31,91 @@
       ],
       "checks": [
         {
-          "prompt": "The call starts ___ 10:15.",
-          "answer": "at",
-          "explanation": "An exact time takes at."
+          "prompt": "The call starts ___ 10:15 a.m.",
+          "options": [
+            {
+              "text": "on",
+              "correct": false,
+              "feedback": "Use at for a clock time; on introduces a day or date."
+            },
+            {
+              "text": "in",
+              "correct": false,
+              "feedback": "Use at for a precise clock time; in is used for periods such as a month."
+            },
+            {
+              "text": "at",
+              "correct": true,
+              "feedback": "An exact time takes at."
+            }
+          ]
         },
         {
-          "prompt": "The keys are ___ the kitchen table.",
-          "answer": "on",
-          "explanation": "The keys are resting on a surface."
+          "prompt": "The keys are resting on the table surface, not below it or inside it. Choose: The keys are ___ the kitchen table.",
+          "options": [
+            {
+              "text": "under",
+              "correct": false,
+              "feedback": "Under would put the keys below the table. They are resting on its surface."
+            },
+            {
+              "text": "on",
+              "correct": true,
+              "feedback": "The keys are resting on a surface."
+            },
+            {
+              "text": "in",
+              "correct": false,
+              "feedback": "In would place the keys inside something. The sentence describes a surface."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: We met in Monday.",
-          "answer": "We met on Monday.",
-          "explanation": "Use on with a named day."
+          "prompt": "Choose the correction: We met in Monday.",
+          "options": [
+            {
+              "text": "We met to Monday.",
+              "correct": false,
+              "feedback": "To does not introduce the day when a meeting happened."
+            },
+            {
+              "text": "We met at Monday.",
+              "correct": false,
+              "feedback": "Use on before a day of the week."
+            },
+            {
+              "text": "We met on Monday.",
+              "correct": true,
+              "feedback": "Use on with a named day."
+            }
+          ]
         }
       ],
-      "transfer": "Write an invitation with a place, a day, and a time.",
-      "model": "Meet me at the library on Saturday at eleven.",
       "pdfs": [
         "concept-01-understanding-prepositions-in-on-at-student-workbook.pdf",
         "concept-01-understanding-prepositions-in-on-at-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You want to invite a friend to the library on Saturday at eleven. Which invitation uses the correct prepositions?",
+        "options": [
+          {
+            "text": "Meet me in the library in Saturday on eleven.",
+            "correct": false,
+            "feedback": "Use on Saturday and at eleven. In the library is possible, but the time phrases here are wrong."
+          },
+          {
+            "text": "Meet me at the library at Saturday in eleven.",
+            "correct": false,
+            "feedback": "Use on for Saturday and at for the clock time."
+          },
+          {
+            "text": "Meet me at the library on Saturday at eleven.",
+            "correct": true,
+            "feedback": "At introduces the place and clock time; on introduces the day."
+          }
+        ]
+      }
     },
     {
       "number": 2,
@@ -83,28 +146,91 @@
       ],
       "checks": [
         {
-          "prompt": "I am tired. I want to go ___ . (home / to home)",
-          "answer": "home",
-          "explanation": "Home is a destination adverb here."
+          "prompt": "I am tired. I want to go ___ .",
+          "options": [
+            {
+              "text": "to home",
+              "correct": false,
+              "feedback": "Go home does not take to in this meaning."
+            },
+            {
+              "text": "home",
+              "correct": true,
+              "feedback": "Home is a destination adverb here."
+            },
+            {
+              "text": "at home",
+              "correct": false,
+              "feedback": "At home describes a location; go home describes movement."
+            }
+          ]
         },
         {
           "prompt": "Add the missing word: We went ___ the museum.",
-          "answer": "to",
-          "explanation": "Museum is a noun naming a destination."
+          "options": [
+            {
+              "text": "at",
+              "correct": false,
+              "feedback": "Go to names the destination; at describes location."
+            },
+            {
+              "text": "to",
+              "correct": true,
+              "feedback": "Museum is a noun naming a destination."
+            },
+            {
+              "text": "in",
+              "correct": false,
+              "feedback": "Use to for this destination after went."
+            }
+          ]
         },
         {
           "prompt": "Does go to the school always mean attend classes?",
-          "answer": "No. It can mean visit the school building.",
-          "explanation": "The article can highlight a particular place rather than the routine activity."
+          "options": [
+            {
+              "text": "Yes. It always means being a student there.",
+              "correct": false,
+              "feedback": "Someone can go to the school to visit its building without attending classes."
+            },
+            {
+              "text": "No. It can mean visit the school building.",
+              "correct": true,
+              "feedback": "The article can highlight a particular place rather than the routine activity."
+            },
+            {
+              "text": "No. It always means working there.",
+              "correct": false,
+              "feedback": "The phrase alone does not tell us the purpose of the visit."
+            }
+          ]
         }
       ],
-      "transfer": "Describe two places you go on a normal day.",
-      "model": "I go to work at eight. I go home at five.",
       "pdfs": [
         "concept-02-understanding-how-to-express-going-places-in-english-student-workbook.pdf",
         "concept-02-understanding-how-to-express-going-places-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair correctly describes a daily journey to work and back home?",
+        "options": [
+          {
+            "text": "I go work at eight. I go to home at five.",
+            "correct": false,
+            "feedback": "Use go to work and go home."
+          },
+          {
+            "text": "I go to work at eight. I go home at five.",
+            "correct": true,
+            "feedback": "Go to work uses to; go home does not."
+          },
+          {
+            "text": "I go to work at eight. I go at home at five.",
+            "correct": false,
+            "feedback": "At home describes location; movement home uses go home."
+          }
+        ]
+      }
     },
     {
       "number": 3,
@@ -136,27 +262,90 @@
       "checks": [
         {
           "prompt": "The long wait made me feel ___ . (bored / boring)",
-          "answer": "bored",
-          "explanation": "Describe the feeling of the person waiting."
+          "options": [
+            {
+              "text": "bored",
+              "correct": true,
+              "feedback": "Describe the feeling of the person waiting."
+            },
+            {
+              "text": "boring",
+              "correct": false,
+              "feedback": "Boring describes what causes boredom. Bored describes the feeling here."
+            },
+            {
+              "text": "bore",
+              "correct": false,
+              "feedback": "After feel, use the adjective bored to describe this feeling."
+            }
+          ]
         },
         {
           "prompt": "Can a person be interesting?",
-          "answer": "Yes. A person can cause interest.",
-          "explanation": "The distinction is feeling versus cause, not person versus thing."
+          "options": [
+            {
+              "text": "No. Only objects can be interesting.",
+              "correct": false,
+              "feedback": "People can cause interest too: an interesting speaker."
+            },
+            {
+              "text": "Yes. It means the person feels interested.",
+              "correct": false,
+              "feedback": "Interesting describes the effect on others; interested describes the feeling."
+            },
+            {
+              "text": "Yes. A person can cause interest.",
+              "correct": true,
+              "feedback": "The distinction is feeling versus cause, not person versus thing."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: I am interested in learn Spanish.",
-          "answer": "I am interested in learning Spanish.",
-          "explanation": "A verb after this preposition uses the -ing form."
+          "prompt": "Choose the correction: I am interested in learn Spanish.",
+          "options": [
+            {
+              "text": "I am interesting in learning Spanish.",
+              "correct": false,
+              "feedback": "Interested describes your feeling. Interesting describes what causes interest."
+            },
+            {
+              "text": "I am interested in learning Spanish.",
+              "correct": true,
+              "feedback": "A verb after this preposition uses the -ing form."
+            },
+            {
+              "text": "I am interested in to learn Spanish.",
+              "correct": false,
+              "feedback": "After in, use the -ing form: learning."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an activity and how you feel about it.",
-      "model": "The class is challenging, but I feel excited about learning.",
       "pdfs": [
         "concept-03-understanding-the-use-of-ing-and-ed-with-emotion-words-student-workbook.pdf",
         "concept-03-understanding-the-use-of-ing-and-ed-with-emotion-words-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Choose the sentence that describes an activity and the learner’s feeling correctly.",
+        "options": [
+          {
+            "text": "The class is challenging, but I feel excited about to learn.",
+            "correct": false,
+            "feedback": "After about, use learning, not to learn."
+          },
+          {
+            "text": "The class is challenging, but I feel exciting about learning.",
+            "correct": false,
+            "feedback": "Excited describes the learner’s feeling here."
+          },
+          {
+            "text": "The class is challenging, but I feel excited about learning.",
+            "correct": true,
+            "feedback": "Challenging describes the class; excited describes the feeling."
+          }
+        ]
+      }
     },
     {
       "number": 4,
@@ -187,28 +376,91 @@
       ],
       "checks": [
         {
-          "prompt": "I took notes ___ the meeting.",
-          "answer": "during",
-          "explanation": "The meeting is a noun phrase."
+          "prompt": "Choose the word meaning at some point in the meeting: I took notes ___ the meeting.",
+          "options": [
+            {
+              "text": "during",
+              "correct": true,
+              "feedback": "The meeting is a noun phrase."
+            },
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "For the meeting can mean intended for it; during identifies when the note-taking happened."
+            },
+            {
+              "text": "while",
+              "correct": false,
+              "feedback": "While normally introduces a clause here. The meeting is a noun phrase."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: During I was reading, it began to rain.",
-          "answer": "While I was reading, it began to rain.",
-          "explanation": "I was reading is a clause."
+          "prompt": "Choose the correction: During I was reading, it began to rain.",
+          "options": [
+            {
+              "text": "While during I was reading, it began to rain.",
+              "correct": false,
+              "feedback": "Use while before the clause; do not add during."
+            },
+            {
+              "text": "While I was reading, it began to rain.",
+              "correct": true,
+              "feedback": "I was reading is a clause."
+            },
+            {
+              "text": "During reading I was, it began to rain.",
+              "correct": false,
+              "feedback": "The clause needs its usual order: I was reading, introduced by while."
+            }
+          ]
         },
         {
-          "prompt": "Which means a duration: during the lesson or for an hour?",
-          "answer": "for an hour",
-          "explanation": "During identifies the surrounding event; for gives the length."
+          "prompt": "Which phrase states a measured duration: during the lesson or for an hour?",
+          "options": [
+            {
+              "text": "for an hour",
+              "correct": true,
+              "feedback": "During identifies the surrounding event; for gives the length."
+            },
+            {
+              "text": "Both phrases give a measured length of time.",
+              "correct": false,
+              "feedback": "Only for an hour gives a measured duration."
+            },
+            {
+              "text": "during the lesson",
+              "correct": false,
+              "feedback": "This identifies the period when something happened, not its measured length."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an interruption during an activity.",
-      "model": "A friend called while I was making lunch.",
       "pdfs": [
         "concept-04-grammar-concepts-while-and-during-student-workbook.pdf",
         "concept-04-grammar-concepts-while-and-during-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "A call interrupted your lunch preparation. Which sentence connects the two events correctly?",
+        "options": [
+          {
+            "text": "A friend called while I was making lunch.",
+            "correct": true,
+            "feedback": "While introduces the background clause I was making lunch."
+          },
+          {
+            "text": "A friend called during I was making lunch.",
+            "correct": false,
+            "feedback": "During takes a noun phrase; while introduces this clause."
+          },
+          {
+            "text": "A friend called while was I making lunch.",
+            "correct": false,
+            "feedback": "Use normal statement order after while: I was making lunch."
+          }
+        ]
+      }
     },
     {
       "number": 5,
@@ -240,27 +492,90 @@
       "checks": [
         {
           "prompt": "Complete with an -ing form: I checked the time by ___ at my phone.",
-          "answer": "looking",
-          "explanation": "By looking explains the method."
+          "options": [
+            {
+              "text": "look",
+              "correct": false,
+              "feedback": "By takes the -ing form when followed by this action: by looking."
+            },
+            {
+              "text": "looked",
+              "correct": false,
+              "feedback": "Looked is not the -ing form required after by in this pattern."
+            },
+            {
+              "text": "looking",
+              "correct": true,
+              "feedback": "By looking explains the method."
+            }
+          ]
         },
         {
           "prompt": "We found our apartment through an agency. How did the agency help?",
-          "answer": "The agency connected us with the apartment or its owner.",
-          "explanation": "Through identifies the intermediary: someone or an organization that helps connect two sides."
+          "options": [
+            {
+              "text": "The agency connected us with the apartment or its owner.",
+              "correct": true,
+              "feedback": "Through identifies the intermediary: someone or an organization that helps connect two sides."
+            },
+            {
+              "text": "The agency tells us how long the search lasted.",
+              "correct": false,
+              "feedback": "Through an agency identifies who helped connect the two sides, not a duration."
+            },
+            {
+              "text": "The agency was the route we physically walked through.",
+              "correct": false,
+              "feedback": "Here through identifies an intermediary, not a physical passage."
+            }
+          ]
         },
         {
-          "prompt": "Is by always followed by an -ing verb? Give a counterexample.",
-          "answer": "No: by train, by email, or by Friday.",
-          "explanation": "The form depends on the meaning and phrase."
+          "prompt": "Is by always followed by an -ing verb? Choose the statement with a valid example.",
+          "options": [
+            {
+              "text": "No. By can only be followed by a person.",
+              "correct": false,
+              "feedback": "By email, by train, and by Friday do not name people."
+            },
+            {
+              "text": "Yes. Every use of by must have an -ing verb.",
+              "correct": false,
+              "feedback": "Phrases such as by train and by Friday show that other patterns are possible."
+            },
+            {
+              "text": "No: by train, by email, or by Friday.",
+              "correct": true,
+              "feedback": "The form depends on the meaning and phrase."
+            }
+          ]
         }
       ],
-      "transfer": "Explain one way you learn and one process that has helped you improve.",
-      "model": "I learn phrases by writing examples. I gain confidence through regular conversations.",
       "pdfs": [
         "concept-05-grammar-concepts-using-by-and-through-student-workbook.pdf",
         "concept-05-grammar-concepts-using-by-and-through-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair correctly describes a learning method and a process that builds confidence?",
+        "options": [
+          {
+            "text": "I learn phrases by writing examples. I gain confidence through regular conversations.",
+            "correct": true,
+            "feedback": "By writing describes the method; through conversations identifies a helpful process."
+          },
+          {
+            "text": "I learn phrases by writing examples. I gain confidence through to converse.",
+            "correct": false,
+            "feedback": "Through to converse is not this pattern. Use through conversations or through conversing."
+          },
+          {
+            "text": "I learn phrases by write examples. I gain confidence through regular conversations.",
+            "correct": false,
+            "feedback": "Use the -ing form after by in this method phrase: by writing."
+          }
+        ]
+      }
     },
     {
       "number": 6,
@@ -292,27 +607,90 @@
       "checks": [
         {
           "prompt": "We need to ___ today. (decision / decide)",
-          "answer": "decide",
-          "explanation": "To is followed by the base verb in this pattern."
+          "options": [
+            {
+              "text": "decision",
+              "correct": false,
+              "feedback": "After need to, use the verb decide. Decision is a noun."
+            },
+            {
+              "text": "decisive",
+              "correct": false,
+              "feedback": "Decisive is an adjective. This position needs a verb."
+            },
+            {
+              "text": "decide",
+              "correct": true,
+              "feedback": "To is followed by the base verb in this pattern."
+            }
+          ]
         },
         {
           "prompt": "Please make a ___ . (choice / choose)",
-          "answer": "choice",
-          "explanation": "A introduces a noun phrase."
+          "options": [
+            {
+              "text": "choice",
+              "correct": true,
+              "feedback": "A introduces a noun phrase."
+            },
+            {
+              "text": "choosing",
+              "correct": false,
+              "feedback": "The usual expression for this meaning is make a choice."
+            },
+            {
+              "text": "choose",
+              "correct": false,
+              "feedback": "Make a takes a noun here: choice. Choose is a verb."
+            }
+          ]
         },
         {
           "prompt": "Identify the verb: They work at a school.",
-          "answer": "work",
-          "explanation": "Work tells what they do."
+          "options": [
+            {
+              "text": "They",
+              "correct": false,
+              "feedback": "They is the subject pronoun; work is the verb."
+            },
+            {
+              "text": "school",
+              "correct": false,
+              "feedback": "School is a noun in the phrase at a school."
+            },
+            {
+              "text": "work",
+              "correct": true,
+              "feedback": "Work tells what they do."
+            }
+          ]
         }
       ],
-      "transfer": "Use one word family in two sentences.",
-      "model": "We discussed the problem. The discussion was useful.",
       "pdfs": [
         "concept-06-noun-verb-confusion-understanding-the-difference-student-workbook.pdf",
         "concept-06-noun-verb-confusion-understanding-the-difference-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair uses a verb and its related noun correctly?",
+        "options": [
+          {
+            "text": "We discussion the problem. The discussion was useful.",
+            "correct": false,
+            "feedback": "The first sentence needs the verb discussed."
+          },
+          {
+            "text": "We discussed the problem. The discuss was useful.",
+            "correct": false,
+            "feedback": "After the, this sentence needs the noun discussion."
+          },
+          {
+            "text": "We discussed the problem. The discussion was useful.",
+            "correct": true,
+            "feedback": "Discussed is the past-tense verb; discussion is the noun."
+          }
+        ]
+      }
     },
     {
       "number": 7,
@@ -343,28 +721,91 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: We discussed about the price.",
-          "answer": "We discussed the price.",
-          "explanation": "Discuss takes a direct object for its topic."
+          "prompt": "Choose the correction: We discussed about the price.",
+          "options": [
+            {
+              "text": "We discussed the price.",
+              "correct": true,
+              "feedback": "Discuss takes a direct object for its topic."
+            },
+            {
+              "text": "We discussed on the price.",
+              "correct": false,
+              "feedback": "Discuss takes its topic directly: discussed the price."
+            },
+            {
+              "text": "We discussed to the price.",
+              "correct": false,
+              "feedback": "Do not insert to between discuss and its topic."
+            }
+          ]
         },
         {
           "prompt": "Does think about tell us how long someone thinks?",
-          "answer": "No. It introduces the topic.",
-          "explanation": "Duration needs additional context, such as for ten minutes."
+          "options": [
+            {
+              "text": "Yes. It means thinking for a long time.",
+              "correct": false,
+              "feedback": "About identifies the topic, not the amount of time spent thinking."
+            },
+            {
+              "text": "Yes. It means thinking briefly.",
+              "correct": false,
+              "feedback": "The phrase does not specify how long the thinking lasts."
+            },
+            {
+              "text": "No. It introduces the topic.",
+              "correct": true,
+              "feedback": "Duration needs additional context, such as for ten minutes."
+            }
+          ]
         },
         {
           "prompt": "What does about mean in about twenty people?",
-          "answer": "Approximately.",
-          "explanation": "This is a quantity meaning, not a topic."
+          "options": [
+            {
+              "text": "Fewer than.",
+              "correct": false,
+              "feedback": "About means approximately; the number could be a little higher or lower."
+            },
+            {
+              "text": "Approximately.",
+              "correct": true,
+              "feedback": "This is a quantity meaning, not a topic."
+            },
+            {
+              "text": "Exactly.",
+              "correct": false,
+              "feedback": "About makes the number approximate, rather than exact."
+            }
+          ]
         }
       ],
-      "transfer": "Write one sentence with talk about and another with discuss.",
-      "model": "We talked about the schedule. We discussed a possible change.",
       "pdfs": [
         "concept-07-understanding-the-use-of-about-with-verbs-student-workbook.pdf",
         "concept-07-understanding-the-use-of-about-with-verbs-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair correctly introduces the topic after talk and after discuss?",
+        "options": [
+          {
+            "text": "We talked about the schedule. We discussed a possible change.",
+            "correct": true,
+            "feedback": "Talked about uses about; discussed takes its topic directly."
+          },
+          {
+            "text": "We talked about the schedule. We discussed about a possible change.",
+            "correct": false,
+            "feedback": "Discuss normally takes its topic directly, without about."
+          },
+          {
+            "text": "We talked about the schedule. We discussed to a possible change.",
+            "correct": false,
+            "feedback": "Do not add to between discussed and the topic."
+          }
+        ]
+      }
     },
     {
       "number": 8,
@@ -396,27 +837,90 @@
       "checks": [
         {
           "prompt": "Which expresses a wish: I hope we win / I expect we will win?",
-          "answer": "I hope we win.",
-          "explanation": "Hope identifies a desired outcome."
+          "options": [
+            {
+              "text": "I hope we win.",
+              "correct": true,
+              "feedback": "Hope identifies a desired outcome."
+            },
+            {
+              "text": "Both sentences say only what I wish for.",
+              "correct": false,
+              "feedback": "Expect adds a prediction or belief, rather than only a wish."
+            },
+            {
+              "text": "I expect we will win.",
+              "correct": false,
+              "feedback": "Expect reports a belief about what will happen; hope expresses the wish."
+            }
+          ]
         },
         {
-          "prompt": "Rewrite as a possibility: The office will close early.",
-          "answer": "The office might close early.",
-          "explanation": "Might reduces the certainty. May or could also works."
+          "prompt": "Choose the sentence that expresses possibility: The office will close early.",
+          "options": [
+            {
+              "text": "The office must close early.",
+              "correct": false,
+              "feedback": "Must can express necessity or a strong deduction, not a cautious possibility."
+            },
+            {
+              "text": "The office might close early.",
+              "correct": true,
+              "feedback": "Might reduces the certainty. May or could also works."
+            },
+            {
+              "text": "The office definitely will close early.",
+              "correct": false,
+              "feedback": "Definitely increases certainty. The task asks for possibility."
+            }
+          ]
         },
         {
           "prompt": "Does I expect a problem mean I want one?",
-          "answer": "No. It expresses a belief, not a wish.",
-          "explanation": "An expectation can be unwelcome."
+          "options": [
+            {
+              "text": "Yes. Expect means want.",
+              "correct": false,
+              "feedback": "You can expect something you do not want."
+            },
+            {
+              "text": "No. It expresses a belief, not a wish.",
+              "correct": true,
+              "feedback": "An expectation can be unwelcome."
+            },
+            {
+              "text": "No. It guarantees a problem will occur.",
+              "correct": false,
+              "feedback": "Expect reports a belief, not a guarantee."
+            }
+          ]
         }
       ],
-      "transfer": "Write a hope and a cautious prediction about tomorrow.",
-      "model": "I hope the weather is good. It might rain in the afternoon.",
       "pdfs": [
         "concept-08-expressing-optimism-or-pessimism-in-english-student-workbook.pdf",
         "concept-08-expressing-optimism-or-pessimism-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The forecast is uncertain. Which pair separates a wish from a cautious prediction?",
+        "options": [
+          {
+            "text": "I expect the weather is good. It will definitely rain in the afternoon.",
+            "correct": false,
+            "feedback": "Expect is a belief, and definitely rain is not a cautious prediction."
+          },
+          {
+            "text": "I hope the weather is good. Rain is guaranteed in the afternoon.",
+            "correct": false,
+            "feedback": "Guaranteed makes the uncertain forecast sound certain."
+          },
+          {
+            "text": "I hope the weather is good. It might rain in the afternoon.",
+            "correct": true,
+            "feedback": "Hope states a wish; might states a possibility."
+          }
+        ]
+      }
     },
     {
       "number": 9,
@@ -448,27 +952,90 @@
       "checks": [
         {
           "prompt": "We stopped ___ the heavy rain.",
-          "answer": "because of",
-          "explanation": "The heavy rain is a noun phrase."
+          "options": [
+            {
+              "text": "so",
+              "correct": false,
+              "feedback": "So introduces a result, whereas the rain is the reason here."
+            },
+            {
+              "text": "because",
+              "correct": false,
+              "feedback": "Because normally takes a clause; the heavy rain is a noun phrase."
+            },
+            {
+              "text": "because of",
+              "correct": true,
+              "feedback": "The heavy rain is a noun phrase."
+            }
+          ]
         },
         {
           "prompt": "Join with so: The shop was closed. We came back later.",
-          "answer": "The shop was closed, so we came back later.",
-          "explanation": "Put the result after so."
+          "options": [
+            {
+              "text": "The shop was closed so of we came back later.",
+              "correct": false,
+              "feedback": "So connects the two clauses directly; do not add of."
+            },
+            {
+              "text": "We came back later, so the shop was closed.",
+              "correct": false,
+              "feedback": "This reverses the stated reason and result."
+            },
+            {
+              "text": "The shop was closed, so we came back later.",
+              "correct": true,
+              "feedback": "Put the result after so."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: Because I was tired, so I went home.",
-          "answer": "Because I was tired, I went home.",
-          "explanation": "Alternatively: I was tired, so I went home."
+          "prompt": "Choose the correction: Because I was tired, so I went home.",
+          "options": [
+            {
+              "text": "Because of I was tired, I went home.",
+              "correct": false,
+              "feedback": "Because of takes a noun phrase; I was tired is a clause."
+            },
+            {
+              "text": "Because I was tired, so of I went home.",
+              "correct": false,
+              "feedback": "Use because for the reason without so of."
+            },
+            {
+              "text": "Because I was tired, I went home.",
+              "correct": true,
+              "feedback": "Alternatively: I was tired, so I went home."
+            }
+          ]
         }
       ],
-      "transfer": "Explain a recent decision with because or because of.",
-      "model": "I took the bus because my bicycle needed a repair.",
       "pdfs": [
         "concept-09-concept-09-causal-phrases-student-workbook.pdf",
         "concept-09-concept-09-causal-phrases-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Your bicycle needed repair, so you took the bus. Which sentence gives that reason correctly?",
+        "options": [
+          {
+            "text": "My bicycle needed a repair because I took the bus.",
+            "correct": false,
+            "feedback": "This reverses the stated cause and decision."
+          },
+          {
+            "text": "I took the bus because my bicycle needed a repair.",
+            "correct": true,
+            "feedback": "Because introduces the clause giving the reason."
+          },
+          {
+            "text": "I took the bus because of my bicycle needed a repair.",
+            "correct": false,
+            "feedback": "Because of takes a noun phrase, not this full clause."
+          }
+        ]
+      }
     },
     {
       "number": 10,
@@ -499,28 +1066,91 @@
       ],
       "checks": [
         {
-          "prompt": "Put in a natural order: bag / leather / small / a",
-          "answer": "a small leather bag",
-          "explanation": "Size normally comes before material."
+          "prompt": "Choose the natural order: bag / leather / small / a",
+          "options": [
+            {
+              "text": "small a leather bag",
+              "correct": false,
+              "feedback": "The article a normally comes before these adjectives."
+            },
+            {
+              "text": "a small leather bag",
+              "correct": true,
+              "feedback": "Size normally comes before material."
+            },
+            {
+              "text": "a leather small bag",
+              "correct": false,
+              "feedback": "Size normally comes before material in this neutral description."
+            }
+          ]
         },
         {
-          "prompt": "Put in order: wooden / old / an / table",
-          "answer": "an old wooden table",
-          "explanation": "Age normally comes before material."
+          "prompt": "Choose the natural order: wooden / old / an / table",
+          "options": [
+            {
+              "text": "an old wooden table",
+              "correct": true,
+              "feedback": "Age normally comes before material."
+            },
+            {
+              "text": "an wooden old table",
+              "correct": false,
+              "feedback": "Age normally comes before material, and an does not fit before wooden."
+            },
+            {
+              "text": "old an wooden table",
+              "correct": false,
+              "feedback": "The article comes first: an old wooden table."
+            }
+          ]
         },
         {
           "prompt": "Must every description include all adjective categories?",
-          "answer": "No. Choose only useful details.",
-          "explanation": "The order is guidance for the adjectives you need."
+          "options": [
+            {
+              "text": "No. Choose only useful details.",
+              "correct": true,
+              "feedback": "The order is guidance for the adjectives you need."
+            },
+            {
+              "text": "No. You can only use one adjective for an object.",
+              "correct": false,
+              "feedback": "Two or more useful adjectives can be natural."
+            },
+            {
+              "text": "Yes. Each object needs every adjective category.",
+              "correct": false,
+              "feedback": "Descriptions need useful information, not every possible category."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an object using two useful adjectives.",
-      "model": "I keep my notes in a small blue notebook.",
       "pdfs": [
         "concept-10-adjective-order-in-english-student-workbook.pdf",
         "concept-10-adjective-order-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The notebook is small and blue. Which description has the natural neutral order?",
+        "options": [
+          {
+            "text": "I keep my notes in small a blue notebook.",
+            "correct": false,
+            "feedback": "The article a comes before the adjectives."
+          },
+          {
+            "text": "I keep my notes in a large red notebook.",
+            "correct": false,
+            "feedback": "This changes the stated size and color."
+          },
+          {
+            "text": "I keep my notes in a small blue notebook.",
+            "correct": true,
+            "feedback": "Size normally comes before color in this description."
+          }
+        ]
+      }
     },
     {
       "number": 11,
@@ -552,27 +1182,90 @@
       "checks": [
         {
           "prompt": "You are at home inviting a friend. Complete: Please ___ over.",
-          "answer": "come",
-          "explanation": "The friend moves toward you."
+          "options": [
+            {
+              "text": "take",
+              "correct": false,
+              "feedback": "Take normally needs something or someone being moved; it does not fit come over."
+            },
+            {
+              "text": "go",
+              "correct": false,
+              "feedback": "The speaker is inviting the friend toward the speaker’s home, so come fits."
+            },
+            {
+              "text": "come",
+              "correct": true,
+              "feedback": "The friend moves toward you."
+            }
+          ]
         },
         {
           "prompt": "You are leaving home for class. Complete: I must ___ my book with me.",
-          "answer": "take",
-          "explanation": "You carry the book away from your current location."
+          "options": [
+            {
+              "text": "take",
+              "correct": true,
+              "feedback": "You carry the book away from your current location."
+            },
+            {
+              "text": "taken",
+              "correct": false,
+              "feedback": "Must takes the base verb take, not the past participle taken."
+            },
+            {
+              "text": "taking",
+              "correct": false,
+              "feedback": "Must takes a base verb, so use take rather than taking."
+            }
+          ]
         },
         {
           "prompt": "Can come refer to the listener’s location?",
-          "answer": "Yes: I am coming to your office.",
-          "explanation": "The viewpoint can be the listener or a shared destination."
+          "options": [
+            {
+              "text": "Yes: I am coming to your office.",
+              "correct": true,
+              "feedback": "The viewpoint can be the listener or a shared destination."
+            },
+            {
+              "text": "Yes. Come always means movement away from both people.",
+              "correct": false,
+              "feedback": "Come normally uses the speaker’s, listener’s, or an agreed destination as its viewpoint."
+            },
+            {
+              "text": "No. Come can only mean movement to the speaker.",
+              "correct": false,
+              "feedback": "Come can also refer to movement toward the listener."
+            }
+          ]
         }
       ],
-      "transfer": "Invite someone somewhere and say what to bring.",
-      "model": "Come to my house for lunch. Please bring a drink.",
       "pdfs": [
         "concept-11-understanding-go-come-and-bring-take-student-workbook.pdf",
         "concept-11-understanding-go-come-and-bring-take-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You are inviting someone to your house and asking them to carry a drink there. Which wording fits?",
+        "options": [
+          {
+            "text": "Come to my house for lunch. Please bringing a drink.",
+            "correct": false,
+            "feedback": "After please, use the base verb bring."
+          },
+          {
+            "text": "Come to my house for lunch. Please bring a drink.",
+            "correct": true,
+            "feedback": "Come and bring use the host’s destination as the viewpoint."
+          },
+          {
+            "text": "Come my house for lunch. Please bring a drink.",
+            "correct": false,
+            "feedback": "Come needs to before my house."
+          }
+        ]
+      }
     },
     {
       "number": 12,
@@ -604,27 +1297,90 @@
       "checks": [
         {
           "prompt": "Choose for extra information: My laptop, ___ is new, works well.",
-          "answer": "which",
-          "explanation": "A non-defining clause uses which for things."
+          "options": [
+            {
+              "text": "that",
+              "correct": false,
+              "feedback": "Use which for this extra-information clause set off by commas."
+            },
+            {
+              "text": "what",
+              "correct": false,
+              "feedback": "What does not replace which after the noun my laptop here."
+            },
+            {
+              "text": "which",
+              "correct": true,
+              "feedback": "A non-defining clause uses which for things."
+            }
+          ]
         },
         {
           "prompt": "Can which introduce a defining clause about a thing?",
-          "answer": "Yes, although some style guides prefer that.",
-          "explanation": "Do not mark all defining uses of which as ungrammatical."
+          "options": [
+            {
+              "text": "Yes, although some style guides prefer that.",
+              "correct": true,
+              "feedback": "Do not mark all defining uses of which as ungrammatical."
+            },
+            {
+              "text": "Yes, but every defining which clause needs commas.",
+              "correct": false,
+              "feedback": "Commas mark extra information; a defining clause normally has no commas."
+            },
+            {
+              "text": "No. Which is restricted to extra information in every variety of English.",
+              "correct": false,
+              "feedback": "Which can also introduce a defining clause, especially in British English."
+            }
+          ]
         },
         {
-          "prompt": "Add punctuation for extra information: Our office which opened in May is nearby.",
-          "answer": "Our office, which opened in May, is nearby.",
-          "explanation": "The commas mark the additional detail."
+          "prompt": "Choose the punctuation for extra information: Our office which opened in May is nearby.",
+          "options": [
+            {
+              "text": "Our office, which opened in May is nearby.",
+              "correct": false,
+              "feedback": "Close the extra-information clause with a comma after May."
+            },
+            {
+              "text": "Our office, which opened in May, is nearby.",
+              "correct": true,
+              "feedback": "The commas mark the additional detail."
+            },
+            {
+              "text": "Our office which opened in May, is nearby.",
+              "correct": false,
+              "feedback": "Use a comma on both sides of the extra-information clause."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an object with one extra detail in a which clause.",
-      "model": "My bag, which has a green label, is under the chair.",
       "pdfs": [
         "concept-12-that-vs-which-understanding-essential-and-non-essential-information-student-workbook.pdf",
         "concept-12-that-vs-which-understanding-essential-and-non-essential-information-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The green label is extra information about your bag. Which version shows this correctly?",
+        "options": [
+          {
+            "text": "My bag, which has a green label is under the chair.",
+            "correct": false,
+            "feedback": "Add a closing comma after label."
+          },
+          {
+            "text": "My bag, what has a green label, is under the chair.",
+            "correct": false,
+            "feedback": "Use which, not what, after the noun my bag."
+          },
+          {
+            "text": "My bag, which has a green label, is under the chair.",
+            "correct": true,
+            "feedback": "Which introduces the extra information, enclosed by two commas."
+          }
+        ]
+      }
     },
     {
       "number": 13,
@@ -656,27 +1412,90 @@
       "checks": [
         {
           "prompt": "Complete: They allow us ___ leave early.",
-          "answer": "to",
-          "explanation": "Use allow someone to do something."
+          "options": [
+            {
+              "text": "from",
+              "correct": false,
+              "feedback": "From would require a different pattern, such as prevent someone from doing something."
+            },
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "Allow someone to do something is the pattern here."
+            },
+            {
+              "text": "to",
+              "correct": true,
+              "feedback": "Use allow someone to do something."
+            }
+          ]
         },
         {
           "prompt": "Complete: The rule prohibits staff from ___ here. (smoke)",
-          "answer": "smoking",
-          "explanation": "Use from + -ing."
+          "options": [
+            {
+              "text": "to smoke",
+              "correct": false,
+              "feedback": "Use from smoking, not from to smoke."
+            },
+            {
+              "text": "smoke",
+              "correct": false,
+              "feedback": "From is followed by the -ing form in this pattern."
+            },
+            {
+              "text": "smoking",
+              "correct": true,
+              "feedback": "Use from + -ing."
+            }
+          ]
         },
         {
           "prompt": "Does You do not have to wait mean waiting is forbidden?",
-          "answer": "No. Waiting is not required.",
-          "explanation": "Use must not wait if it is prohibited."
+          "options": [
+            {
+              "text": "No. It means you are required to wait.",
+              "correct": false,
+              "feedback": "The negative do not have to means waiting is optional."
+            },
+            {
+              "text": "No. Waiting is not required.",
+              "correct": true,
+              "feedback": "Use must not wait if it is prohibited."
+            },
+            {
+              "text": "Yes. It means you must not wait.",
+              "correct": false,
+              "feedback": "Do not have to removes necessity; must not expresses prohibition."
+            }
+          ]
         }
       ],
-      "transfer": "Write one permission and one restriction for a shared space.",
-      "model": "You may use the kitchen. You must not leave the door unlocked.",
       "pdfs": [
         "concept-13-allow-vs-prohibit-understanding-usage-in-different-contexts-student-workbook.pdf",
         "concept-13-allow-vs-prohibit-understanding-usage-in-different-contexts-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The kitchen is available, but leaving the door unlocked is forbidden. Which notice gives both rules?",
+        "options": [
+          {
+            "text": "You may use the kitchen. You do not have to leave the door unlocked.",
+            "correct": false,
+            "feedback": "Do not have to means not required; it does not forbid leaving the door unlocked."
+          },
+          {
+            "text": "You may use the kitchen. You must not leave the door unlocked.",
+            "correct": true,
+            "feedback": "May gives permission; must not gives the restriction."
+          },
+          {
+            "text": "You must not use the kitchen. You may leave the door unlocked.",
+            "correct": false,
+            "feedback": "This reverses both rules."
+          }
+        ]
+      }
     },
     {
       "number": 14,
@@ -708,27 +1527,90 @@
       "checks": [
         {
           "prompt": "Choose: At eight yesterday, I ___ dinner. (was cooking / cook)",
-          "answer": "was cooking",
-          "explanation": "An activity was in progress at a past time."
+          "options": [
+            {
+              "text": "cook",
+              "correct": false,
+              "feedback": "The time is in the past. Was cooking presents an activity in progress then."
+            },
+            {
+              "text": "am cooking",
+              "correct": false,
+              "feedback": "Am cooking refers to the present, not eight yesterday."
+            },
+            {
+              "text": "was cooking",
+              "correct": true,
+              "feedback": "An activity was in progress at a past time."
+            }
+          ]
         },
         {
           "prompt": "Which happened during the walk: I was walking when it began to rain?",
-          "answer": "It began to rain.",
-          "explanation": "The walk is the background activity."
+          "options": [
+            {
+              "text": "It began to rain.",
+              "correct": true,
+              "feedback": "The walk is the background activity."
+            },
+            {
+              "text": "The walking began after the rain stopped.",
+              "correct": false,
+              "feedback": "The sentence says the rain began during the walk."
+            },
+            {
+              "text": "The walk had already ended.",
+              "correct": false,
+              "feedback": "Was walking presents the walk as ongoing when the rain began."
+            }
+          ]
         },
         {
           "prompt": "Does was reading when the phone rang prove the reading stopped?",
-          "answer": "No. The sentence does not state that.",
-          "explanation": "The reader may have continued."
+          "options": [
+            {
+              "text": "Yes. Every past continuous action stops at the next event.",
+              "correct": false,
+              "feedback": "The grammatical form alone does not establish that outcome."
+            },
+            {
+              "text": "No. The sentence does not state that.",
+              "correct": true,
+              "feedback": "The reader may have continued."
+            },
+            {
+              "text": "Yes. The phone call necessarily ended the reading.",
+              "correct": false,
+              "feedback": "When links the events but does not state whether the person stopped reading."
+            }
+          ]
         }
       ],
-      "transfer": "Write two sentences about a past event and its background.",
-      "model": "I was working at home yesterday. A neighbor knocked on the door.",
       "pdfs": [
         "concept-14-understanding-events-tenses-in-english-student-workbook.pdf",
         "concept-14-understanding-events-tenses-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "A neighbor knocked while you were working at home yesterday. Which pair reports that background and event?",
+        "options": [
+          {
+            "text": "I was working at home yesterday. A neighbor knocked on the door.",
+            "correct": true,
+            "feedback": "Was working gives the ongoing background; knocked gives the event."
+          },
+          {
+            "text": "I am working at home yesterday. A neighbor knocks on the door.",
+            "correct": false,
+            "feedback": "Yesterday needs past-time forms for these reported events."
+          },
+          {
+            "text": "I will work at home tomorrow. A neighbor may knock on the door.",
+            "correct": false,
+            "feedback": "This changes the account into a future possibility."
+          }
+        ]
+      }
     },
     {
       "number": 15,
@@ -760,27 +1642,90 @@
       "checks": [
         {
           "prompt": "The appointment is ___ 6 September.",
-          "answer": "on",
-          "explanation": "Use on with a particular date."
+          "options": [
+            {
+              "text": "in",
+              "correct": false,
+              "feedback": "Use on for a specific date; in fits a month or year."
+            },
+            {
+              "text": "on",
+              "correct": true,
+              "feedback": "Use on with a particular date."
+            },
+            {
+              "text": "at",
+              "correct": false,
+              "feedback": "At fits a clock time, not the date 6 September."
+            }
+          ]
         },
         {
           "prompt": "Which means no later than: by Friday / until Friday?",
-          "answer": "by Friday",
-          "explanation": "Until describes a continuing action or state."
+          "options": [
+            {
+              "text": "until Friday",
+              "correct": false,
+              "feedback": "Until gives the end of a continuing period. By gives a deadline."
+            },
+            {
+              "text": "by Friday",
+              "correct": true,
+              "feedback": "Until describes a continuing action or state."
+            },
+            {
+              "text": "Both phrases always set the same deadline.",
+              "correct": false,
+              "feedback": "By and until differ: a deadline versus the end of a continuing period."
+            }
+          ]
         },
         {
           "prompt": "Complete: I have worked here ___ 2024.",
-          "answer": "since",
-          "explanation": "The year is a starting point."
+          "options": [
+            {
+              "text": "during",
+              "correct": false,
+              "feedback": "During identifies a period, whereas since identifies the starting point here."
+            },
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "For gives a duration such as two years; 2024 is a starting point."
+            },
+            {
+              "text": "since",
+              "correct": true,
+              "feedback": "The year is a starting point."
+            }
+          ]
         }
       ],
-      "transfer": "Write a clear deadline with a date and a time.",
-      "model": "Please reply by 10 September at 3 p.m. New York time.",
       "pdfs": [
         "concept-15-understanding-referencing-dates-in-english-student-workbook.pdf",
         "concept-15-understanding-referencing-dates-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You need one reply no later than 3 p.m. New York time on 10 September. Which deadline is clear?",
+        "options": [
+          {
+            "text": "Please reply by 10 September at 3 p.m. New York time.",
+            "correct": true,
+            "feedback": "By gives the latest allowed time, including date and time zone."
+          },
+          {
+            "text": "Please reply on 10 September at three.",
+            "correct": false,
+            "feedback": "This leaves a.m./p.m. and the time zone unspecified."
+          },
+          {
+            "text": "Please reply until 10 September at 3 p.m. New York time.",
+            "correct": false,
+            "feedback": "Until suggests continuing over a period rather than the deadline for one reply."
+          }
+        ]
+      }
     },
     {
       "number": 16,
@@ -812,27 +1757,90 @@
       "checks": [
         {
           "prompt": "Choose for a single visit: I visited Rome ___ . (recently / lately)",
-          "answer": "recently",
-          "explanation": "Recently readily refers to a single past event."
+          "options": [
+            {
+              "text": "recent",
+              "correct": false,
+              "feedback": "Recent is an adjective; this sentence needs an adverb."
+            },
+            {
+              "text": "lately",
+              "correct": false,
+              "feedback": "Recently is the usual choice with this single past-simple visit."
+            },
+            {
+              "text": "recently",
+              "correct": true,
+              "feedback": "Recently readily refers to a single past event."
+            }
+          ]
         },
         {
           "prompt": "Is I have been busy lately a present perfect continuous verb?",
-          "answer": "No. It is present perfect be followed by an adjective.",
-          "explanation": "The continuous form needs an -ing main verb."
+          "options": [
+            {
+              "text": "No. It is present perfect be followed by an adjective.",
+              "correct": true,
+              "feedback": "The continuous form needs an -ing main verb."
+            },
+            {
+              "text": "Yes. Every phrase with have been is continuous.",
+              "correct": false,
+              "feedback": "Continuous forms need an -ing main verb. Busy is an adjective."
+            },
+            {
+              "text": "No. It is the past perfect.",
+              "correct": false,
+              "feedback": "Past perfect would use had; have been is present perfect here."
+            }
+          ]
         },
         {
           "prompt": "Does I have been running lately guarantee future running?",
-          "answer": "No. It describes recent activity.",
-          "explanation": "Future continuation needs more context."
+          "options": [
+            {
+              "text": "No. It describes recent activity.",
+              "correct": true,
+              "feedback": "Future continuation needs more context."
+            },
+            {
+              "text": "Yes. Lately always includes tomorrow.",
+              "correct": false,
+              "feedback": "Lately refers to the recent past, not a guaranteed future."
+            },
+            {
+              "text": "Yes. It promises the person will keep running.",
+              "correct": false,
+              "feedback": "A report of recent activity does not promise future activity."
+            }
+          ]
         }
       ],
-      "transfer": "Write one recent event and one recent habit or state.",
-      "model": "I recently joined a class. I have been studying more lately.",
       "pdfs": [
         "concept-16-understanding-the-use-of-recently-and-lately-in-present-perfect-progressive-tense-student-workbook.pdf",
         "concept-16-understanding-the-use-of-recently-and-lately-in-present-perfect-progressive-tense-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair naturally describes one recent event and a recent repeated activity?",
+        "options": [
+          {
+            "text": "I recently joined a class. I have studying more lately.",
+            "correct": false,
+            "feedback": "The continuous form needs been: have been studying."
+          },
+          {
+            "text": "I lately joined a class. I have been studying more lately.",
+            "correct": false,
+            "feedback": "Recently is the usual choice for this single past-simple event."
+          },
+          {
+            "text": "I recently joined a class. I have been studying more lately.",
+            "correct": true,
+            "feedback": "Recently fits the single event; lately fits the recent pattern of studying."
+          }
+        ]
+      }
     },
     {
       "number": 17,
@@ -863,28 +1871,91 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: She suggested me to apply.",
-          "answer": "She suggested that I apply.",
-          "explanation": "Suggest does not use the person + to-infinitive advice pattern."
+          "prompt": "Choose the correction: She suggested me to apply.",
+          "options": [
+            {
+              "text": "She suggested that I apply.",
+              "correct": true,
+              "feedback": "Suggest does not use the person + to-infinitive advice pattern."
+            },
+            {
+              "text": "She suggested that I to apply.",
+              "correct": false,
+              "feedback": "After suggested that I, use the base verb apply without to."
+            },
+            {
+              "text": "She suggested to me to apply.",
+              "correct": false,
+              "feedback": "Use suggested to me that I apply, or suggested that I apply, for this meaning."
+            }
+          ]
         },
         {
           "prompt": "Complete: I recommend ___ early. (arrive)",
-          "answer": "arriving",
-          "explanation": "Use an -ing form for the activity."
+          "options": [
+            {
+              "text": "arriving",
+              "correct": true,
+              "feedback": "Use an -ing form for the activity."
+            },
+            {
+              "text": "arrive",
+              "correct": false,
+              "feedback": "Recommend takes the -ing form in this pattern: recommend arriving."
+            },
+            {
+              "text": "to arriving",
+              "correct": false,
+              "feedback": "Do not combine to with arriving in this pattern."
+            }
+          ]
         },
         {
           "prompt": "Is I suggest that she should call possible?",
-          "answer": "Yes, especially in British English.",
-          "explanation": "Should + base verb is an accepted alternative."
+          "options": [
+            {
+              "text": "Yes, especially in British English.",
+              "correct": true,
+              "feedback": "Should + base verb is an accepted alternative."
+            },
+            {
+              "text": "Yes, but only when giving advice about the past.",
+              "correct": false,
+              "feedback": "The pattern can give advice about a present or future action."
+            },
+            {
+              "text": "No. Should is forbidden after suggest.",
+              "correct": false,
+              "feedback": "Suggest that someone should do something is an established pattern."
+            }
+          ]
         }
       ],
-      "transfer": "Suggest a practical action to a friend.",
-      "model": "I suggest taking an earlier train so you have time to find the office.",
       "pdfs": [
         "concept-17-understanding-the-usage-of-recommend-and-suggest-student-workbook.pdf",
         "concept-17-understanding-the-usage-of-recommend-and-suggest-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which recommendation uses a standard suggest pattern?",
+        "options": [
+          {
+            "text": "I suggest taking an earlier train so you have time to find the office.",
+            "correct": true,
+            "feedback": "Suggest can take an -ing form: taking."
+          },
+          {
+            "text": "I suggest that you to take an earlier train.",
+            "correct": false,
+            "feedback": "Use suggest that you take, without to."
+          },
+          {
+            "text": "I suggest you should taking an earlier train.",
+            "correct": false,
+            "feedback": "Should takes the base verb take, not taking."
+          }
+        ]
+      }
     },
     {
       "number": 18,
@@ -916,27 +1987,90 @@
       "checks": [
         {
           "prompt": "Which says Sam was the sole recipient: Only Jo called Sam / Jo called only Sam?",
-          "answer": "Jo called only Sam.",
-          "explanation": "Only limits Sam."
+          "options": [
+            {
+              "text": "Only Jo called Sam.",
+              "correct": false,
+              "feedback": "This makes Jo the only caller, not Sam the only recipient."
+            },
+            {
+              "text": "Both sentences make Sam the only recipient.",
+              "correct": false,
+              "feedback": "The position of only changes which person is singled out."
+            },
+            {
+              "text": "Jo called only Sam.",
+              "correct": true,
+              "feedback": "Only limits Sam."
+            }
+          ]
         },
         {
-          "prompt": "Rewrite clearly: No one except Leo replied.",
-          "answer": "Only Leo replied.",
-          "explanation": "Only is next to the person being limited."
+          "prompt": "Choose the sentence with the same meaning: No one except Leo replied.",
+          "options": [
+            {
+              "text": "Leo only replied to Ana.",
+              "correct": false,
+              "feedback": "This introduces Ana and does not say that no one else replied."
+            },
+            {
+              "text": "Only Leo replied.",
+              "correct": true,
+              "feedback": "Only is next to the person being limited."
+            },
+            {
+              "text": "Leo replied only.",
+              "correct": false,
+              "feedback": "This can restrict what Leo did, not identify Leo as the sole person replying."
+            }
+          ]
         },
         {
           "prompt": "Can spoken stress help clarify only?",
-          "answer": "Yes. Stress and context can identify the focus.",
-          "explanation": "In writing, a clearer position may help."
+          "options": [
+            {
+              "text": "Yes. Stress makes written word order irrelevant.",
+              "correct": false,
+              "feedback": "Speech can clarify focus, but careful word order still helps written readers."
+            },
+            {
+              "text": "No. Spoken stress never affects meaning.",
+              "correct": false,
+              "feedback": "Stress can show which part of the sentence only limits."
+            },
+            {
+              "text": "Yes. Stress and context can identify the focus.",
+              "correct": true,
+              "feedback": "In writing, a clearer position may help."
+            }
+          ]
         }
       ],
-      "transfer": "Write two sentences in which moving only changes the meaning.",
-      "model": "Only Ana ordered tea. Ana ordered only tea.",
       "pdfs": [
         "concept-18-understanding-the-position-of-only-in-a-sentence-student-workbook.pdf",
         "concept-18-understanding-the-position-of-only-in-a-sentence-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair moves only so the first sentence limits the person and the second limits the drink?",
+        "options": [
+          {
+            "text": "Ana ordered only tea. Only Ana ordered tea.",
+            "correct": false,
+            "feedback": "These meanings occur in the opposite order."
+          },
+          {
+            "text": "Only Ana ordered tea. Only Ana ordered coffee.",
+            "correct": false,
+            "feedback": "Only limits Ana in both sentences; it does not switch to limiting the drink."
+          },
+          {
+            "text": "Only Ana ordered tea. Ana ordered only tea.",
+            "correct": true,
+            "feedback": "The first singles out Ana; the second singles out tea."
+          }
+        ]
+      }
     },
     {
       "number": 19,
@@ -968,27 +2102,90 @@
       "checks": [
         {
           "prompt": "Which direction combines north and east?",
-          "answer": "northeast",
-          "explanation": "The two compass directions combine into one word."
+          "options": [
+            {
+              "text": "southeast",
+              "correct": false,
+              "feedback": "Southeast combines south and east."
+            },
+            {
+              "text": "northeast",
+              "correct": true,
+              "feedback": "The two compass directions combine into one word."
+            },
+            {
+              "text": "northwest",
+              "correct": false,
+              "feedback": "Northwest combines north and west, not north and east."
+            }
+          ]
         },
         {
           "prompt": "Where is something described as at the bottom of the page?",
-          "answer": "Near the lower edge of the page.",
-          "explanation": "Bottom describes a position on the page."
+          "options": [
+            {
+              "text": "Near the lower edge of the page.",
+              "correct": true,
+              "feedback": "Bottom describes a position on the page."
+            },
+            {
+              "text": "Near the upper edge of the page.",
+              "correct": false,
+              "feedback": "The bottom is the lower edge; the top is the upper edge."
+            },
+            {
+              "text": "Outside the page on its right side.",
+              "correct": false,
+              "feedback": "At the bottom identifies a lower position on the page."
+            }
+          ]
         },
         {
           "prompt": "Does north of the city mean inside the city?",
-          "answer": "Not necessarily. It gives a position relative to the city.",
-          "explanation": "In the north of the city explicitly places it inside the city."
+          "options": [
+            {
+              "text": "No. It tells us the exact distance from the city.",
+              "correct": false,
+              "feedback": "North of gives direction, not a measured distance."
+            },
+            {
+              "text": "Yes. It must be inside the northern part of the city.",
+              "correct": false,
+              "feedback": "North of gives a position relative to the city; inside it is not guaranteed."
+            },
+            {
+              "text": "Not necessarily. It gives a position relative to the city.",
+              "correct": true,
+              "feedback": "In the north of the city explicitly places it inside the city."
+            }
+          ]
         }
       ],
-      "transfer": "Give two clear directions to a feature on a page or map.",
-      "model": "The station is east of the park. Its label is in the top-right corner of the map.",
       "pdfs": [
         "concept-19-directions-locations-a-detailed-explanation-for-non-native-english-speakers-student-workbook.pdf",
         "concept-19-directions-locations-a-detailed-explanation-for-non-native-english-speakers-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The station is east of the park and its label is in the map’s top-right corner. Which description preserves both details?",
+        "options": [
+          {
+            "text": "The station is west of the park. Its label is in the top-right corner of the map.",
+            "correct": false,
+            "feedback": "West reverses the stated direction."
+          },
+          {
+            "text": "The station is east of the park. Its label is in the top-right corner of the map.",
+            "correct": true,
+            "feedback": "The first phrase locates the station; the second locates its label on the map."
+          },
+          {
+            "text": "The station is east of the park. Its label is in the bottom-left corner of the map.",
+            "correct": false,
+            "feedback": "This changes the label’s position."
+          }
+        ]
+      }
     },
     {
       "number": 20,
@@ -1020,27 +2217,90 @@
       "checks": [
         {
           "prompt": "Complete: How much ___ these shoes?",
-          "answer": "are",
-          "explanation": "Shoes is plural."
+          "options": [
+            {
+              "text": "are",
+              "correct": true,
+              "feedback": "Shoes is plural."
+            },
+            {
+              "text": "is",
+              "correct": false,
+              "feedback": "These shoes is plural, so use are."
+            },
+            {
+              "text": "does",
+              "correct": false,
+              "feedback": "With these shoes, use are, or ask How much do these shoes cost?"
+            }
+          ]
         },
         {
-          "prompt": "Correct this: How much does it costs?",
-          "answer": "How much does it cost?",
-          "explanation": "Does carries the third-person ending; cost stays in the base form."
+          "prompt": "Choose the correction: How much does it costs?",
+          "options": [
+            {
+              "text": "How much does it cost?",
+              "correct": true,
+              "feedback": "Does carries the third-person ending; cost stays in the base form."
+            },
+            {
+              "text": "How much do it cost?",
+              "correct": false,
+              "feedback": "It takes does, not do."
+            },
+            {
+              "text": "How much does it costing?",
+              "correct": false,
+              "feedback": "After does, use the base verb cost."
+            }
+          ]
         },
         {
-          "prompt": "Ask whether the price includes delivery.",
-          "answer": "Does the price include delivery?",
-          "explanation": "The question makes the total clearer."
+          "prompt": "Which question asks whether delivery is included in the price?",
+          "options": [
+            {
+              "text": "When will the delivery arrive?",
+              "correct": false,
+              "feedback": "This asks about timing, not what the price includes."
+            },
+            {
+              "text": "How much does delivery cost?",
+              "correct": false,
+              "feedback": "This asks the delivery price, not whether it is included."
+            },
+            {
+              "text": "Does the price include delivery?",
+              "correct": true,
+              "feedback": "The question makes the total clearer."
+            }
+          ]
         }
       ],
-      "transfer": "Write a two-line conversation about a price and an extra charge.",
-      "model": "How much is the desk? It is eighty dollars. Does that include delivery?",
       "pdfs": [
         "concept-20-grammar-concepts-20-student-workbook.pdf",
         "concept-20-grammar-concepts-20-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which exchange asks the price and then checks whether delivery is included?",
+        "options": [
+          {
+            "text": "How much is the desk? It is eighty dollars. Does that include delivery?",
+            "correct": true,
+            "feedback": "How much asks the price; does that include checks what the price covers."
+          },
+          {
+            "text": "How much does the desk costs? It is eighty dollars. Does that include delivery?",
+            "correct": false,
+            "feedback": "After does, use cost without -s."
+          },
+          {
+            "text": "How much is the desk? It is eighty dollars. Delivery is definitely free.",
+            "correct": false,
+            "feedback": "The last sentence assumes free delivery instead of checking."
+          }
+        ]
+      }
     },
     {
       "number": 21,
@@ -1072,27 +2332,90 @@
       "checks": [
         {
           "prompt": "Choose: a useful information / some useful information",
-          "answer": "some useful information",
-          "explanation": "Information is normally uncountable."
+          "options": [
+            {
+              "text": "two useful informations",
+              "correct": false,
+              "feedback": "For individual units, say two pieces of information."
+            },
+            {
+              "text": "some useful information",
+              "correct": true,
+              "feedback": "Information is normally uncountable."
+            },
+            {
+              "text": "a useful information",
+              "correct": false,
+              "feedback": "Information is normally uncountable; use some information or a piece of information."
+            }
+          ]
         },
         {
-          "prompt": "Count two units of advice.",
-          "answer": "two pieces of advice",
-          "explanation": "Use a unit expression rather than advices."
+          "prompt": "Which phrase correctly counts two units of advice?",
+          "options": [
+            {
+              "text": "two pieces of advice",
+              "correct": true,
+              "feedback": "Use a unit expression rather than advices."
+            },
+            {
+              "text": "two advices",
+              "correct": false,
+              "feedback": "Advice is normally uncountable; count pieces of advice."
+            },
+            {
+              "text": "two advice",
+              "correct": false,
+              "feedback": "Use a unit phrase: two pieces of advice."
+            }
+          ]
         },
         {
           "prompt": "Can two coffees be natural in a cafe?",
-          "answer": "Yes. It can mean two servings of coffee.",
-          "explanation": "A word can have a countable use in a particular context."
+          "options": [
+            {
+              "text": "No. Coffee can never be used as a countable noun.",
+              "correct": false,
+              "feedback": "In a cafe, coffees can mean servings."
+            },
+            {
+              "text": "Yes. It always means two types of coffee beans.",
+              "correct": false,
+              "feedback": "Two coffees can simply mean two drinks, not necessarily different types."
+            },
+            {
+              "text": "Yes. It can mean two servings of coffee.",
+              "correct": true,
+              "feedback": "A word can have a countable use in a particular context."
+            }
+          ]
         }
       ],
-      "transfer": "Describe what you need for a new room using a count and an amount.",
-      "model": "I need two chairs and some furniture for storage.",
       "pdfs": [
         "concept-21-example-sentences-for-uncountable-nouns-student-workbook.pdf",
         "concept-21-example-sentences-for-uncountable-nouns-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You need two chairs and an unspecified amount of storage furniture. Which sentence states this correctly?",
+        "options": [
+          {
+            "text": "I need two chair and some furniture for storage.",
+            "correct": false,
+            "feedback": "After two, use plural chairs."
+          },
+          {
+            "text": "I need two chairs and two furnitures for storage.",
+            "correct": false,
+            "feedback": "Use pieces of furniture to count units of furniture."
+          },
+          {
+            "text": "I need two chairs and some furniture for storage.",
+            "correct": true,
+            "feedback": "Chairs is countable; furniture is normally uncountable."
+          }
+        ]
+      }
     },
     {
       "number": 22,
@@ -1123,28 +2446,91 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: a five-meters cable",
-          "answer": "a five-meter cable",
-          "explanation": "Use the singular unit in a compound adjective."
+          "prompt": "Choose the correction: a five-meters cable",
+          "options": [
+            {
+              "text": "a five-meter cable",
+              "correct": true,
+              "feedback": "Use the singular unit in a compound adjective."
+            },
+            {
+              "text": "a five-metered cable",
+              "correct": false,
+              "feedback": "The measurement adjective uses meter, not metered, for this meaning."
+            },
+            {
+              "text": "a five-meters-long cable",
+              "correct": false,
+              "feedback": "In a compound adjective before a noun, use the singular unit: five-meter-long."
+            }
+          ]
         },
         {
           "prompt": "Complete: The pool is two meters ___ . (depth / deep)",
-          "answer": "deep",
-          "explanation": "An adjective follows this measurement."
+          "options": [
+            {
+              "text": "deeply",
+              "correct": false,
+              "feedback": "Deeply is an adverb, not the dimension adjective needed here."
+            },
+            {
+              "text": "depth",
+              "correct": false,
+              "feedback": "The sentence needs the adjective deep. Depth is a noun."
+            },
+            {
+              "text": "deep",
+              "correct": true,
+              "feedback": "An adjective follows this measurement."
+            }
+          ]
         },
         {
           "prompt": "What information is missing from The desk is 120 wide?",
-          "answer": "The unit, such as centimeters.",
-          "explanation": "The number needs a unit to be useful."
+          "options": [
+            {
+              "text": "The unit, such as centimeters.",
+              "correct": true,
+              "feedback": "The number needs a unit to be useful."
+            },
+            {
+              "text": "The desk’s purchase date.",
+              "correct": false,
+              "feedback": "The missing information is the unit used to measure the width."
+            },
+            {
+              "text": "An opinion about the desk’s color.",
+              "correct": false,
+              "feedback": "A numerical dimension needs its measurement unit."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an object using a dimension, a unit, and a shape.",
-      "model": "My desk is 120 centimeters wide. Its top is rectangular.",
       "pdfs": [
         "concept-22-measurements-shapes-student-workbook.pdf",
         "concept-22-measurements-shapes-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The desk is 120 centimeters wide and has a rectangular top. Which description is complete and grammatical?",
+        "options": [
+          {
+            "text": "My desk is 120 centimeters width. Its top is rectangular.",
+            "correct": false,
+            "feedback": "Use wide as the dimension adjective; width is a noun."
+          },
+          {
+            "text": "My desk is 120 wide. Its top is rectangular.",
+            "correct": false,
+            "feedback": "The numerical width needs its unit."
+          },
+          {
+            "text": "My desk is 120 centimeters wide. Its top is rectangular.",
+            "correct": true,
+            "feedback": "The description includes the value, measurement unit, and shape adjective."
+          }
+        ]
+      }
     },
     {
       "number": 23,
@@ -1176,27 +2562,90 @@
       "checks": [
         {
           "prompt": "Complete: Every student ___ a notebook. (has / have)",
-          "answer": "has",
-          "explanation": "Every + singular noun normally takes a singular verb."
+          "options": [
+            {
+              "text": "have",
+              "correct": false,
+              "feedback": "Every student takes singular agreement: has."
+            },
+            {
+              "text": "having",
+              "correct": false,
+              "feedback": "This sentence needs a finite verb: has."
+            },
+            {
+              "text": "has",
+              "correct": true,
+              "feedback": "Every + singular noun normally takes a singular verb."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: Every of the rooms is ready.",
-          "answer": "Each of the rooms is ready.",
-          "explanation": "Alternatively: Every room is ready."
+          "prompt": "Choose the correction: Every of the rooms is ready.",
+          "options": [
+            {
+              "text": "Every of the rooms are ready.",
+              "correct": false,
+              "feedback": "Every of is not the pattern. Use each of or every room."
+            },
+            {
+              "text": "Each of the rooms is ready.",
+              "correct": true,
+              "feedback": "Alternatively: Every room is ready."
+            },
+            {
+              "text": "Each of the room is ready.",
+              "correct": false,
+              "feedback": "After each of the, use the plural noun rooms."
+            }
+          ]
         },
         {
           "prompt": "Must None of the seats are free always be changed to is?",
-          "answer": "No. Plural agreement is accepted with a plural noun.",
-          "explanation": "Meaning and style can guide the choice."
+          "options": [
+            {
+              "text": "Yes. None always requires a singular verb.",
+              "correct": false,
+              "feedback": "With a plural noun, plural agreement with none is accepted."
+            },
+            {
+              "text": "No. None of the seats means all the seats are free.",
+              "correct": false,
+              "feedback": "None of the seats are free means there are no free seats."
+            },
+            {
+              "text": "No. Plural agreement is accepted with a plural noun.",
+              "correct": true,
+              "feedback": "Meaning and style can guide the choice."
+            }
+          ]
         }
       ],
-      "transfer": "Describe what everyone in a group has and what no one has.",
-      "model": "Every student has a pencil. None of the students has a calculator.",
       "pdfs": [
         "concept-23-concept-23-all-each-every-none-student-workbook.pdf",
         "concept-23-concept-23-all-each-every-none-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Every student has a pencil, and there are no calculators in the group. Which pair states this correctly?",
+        "options": [
+          {
+            "text": "Every student has a pencil. None of the students has a calculator.",
+            "correct": true,
+            "feedback": "Every student takes has. None of the students has a calculator is acceptable; have is also possible after none of the students."
+          },
+          {
+            "text": "Every student have a pencil. None of the students has a calculator.",
+            "correct": false,
+            "feedback": "Every student requires singular has."
+          },
+          {
+            "text": "Every student has a pencil. All of the students have a calculator.",
+            "correct": false,
+            "feedback": "The second sentence contradicts the stated absence of calculators."
+          }
+        ]
+      }
     },
     {
       "number": 24,
@@ -1228,27 +2677,90 @@
       "checks": [
         {
           "prompt": "Complete: She accused him ___ copying.",
-          "answer": "of",
-          "explanation": "The pattern is accuse someone of something."
+          "options": [
+            {
+              "text": "to",
+              "correct": false,
+              "feedback": "Accuse someone takes of before the alleged action."
+            },
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "The pattern is accuse someone of something. Blame someone for is a different pattern."
+            },
+            {
+              "text": "of",
+              "correct": true,
+              "feedback": "The pattern is accuse someone of something."
+            }
+          ]
         },
         {
           "prompt": "Complete: They blamed me ___ the mistake.",
-          "answer": "for",
-          "explanation": "Use blame someone for something."
+          "options": [
+            {
+              "text": "for",
+              "correct": true,
+              "feedback": "Use blame someone for something."
+            },
+            {
+              "text": "of",
+              "correct": false,
+              "feedback": "The pattern is blame someone for something; accuse someone of is different."
+            },
+            {
+              "text": "at",
+              "correct": false,
+              "feedback": "Use for to introduce the matter someone is blamed for."
+            }
+          ]
         },
         {
           "prompt": "Does was accused of prove that someone did it?",
-          "answer": "No. It reports an allegation.",
-          "explanation": "Keep the distinction between a claim and an established fact."
+          "options": [
+            {
+              "text": "No. It proves the person did not do it.",
+              "correct": false,
+              "feedback": "The accusation alone proves neither guilt nor innocence."
+            },
+            {
+              "text": "No. It reports an allegation.",
+              "correct": true,
+              "feedback": "Keep the distinction between a claim and an established fact."
+            },
+            {
+              "text": "Yes. An accusation proves the action happened.",
+              "correct": false,
+              "feedback": "An accusation is an allegation, not proof."
+            }
+          ]
         }
       ],
-      "transfer": "Rewrite an accusation as a factual observation and a question.",
-      "model": "The report arrived after the deadline. What caused the delay?",
       "pdfs": [
         "concept-24-accusing-blaming-student-workbook.pdf",
         "concept-24-accusing-blaming-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You only know that the report arrived late. Which response gives that observation and asks for missing information?",
+        "options": [
+          {
+            "text": "The report arrived after the deadline because you ignored it.",
+            "correct": false,
+            "feedback": "The stated facts do not establish that cause."
+          },
+          {
+            "text": "You deliberately delayed the report. Why did you do that?",
+            "correct": false,
+            "feedback": "Deliberately assigns an intention that the facts do not establish."
+          },
+          {
+            "text": "The report arrived after the deadline. What caused the delay?",
+            "correct": true,
+            "feedback": "This states the observed fact and asks about the cause without assigning blame."
+          }
+        ]
+      }
     },
     {
       "number": 25,
@@ -1279,28 +2791,91 @@
       ],
       "checks": [
         {
-          "prompt": "Rewrite for standard formal English: I do not have no time.",
-          "answer": "I do not have any time.",
-          "explanation": "Alternatively: I have no time."
+          "prompt": "Choose the standard formal-English version: I do not have no time.",
+          "options": [
+            {
+              "text": "I do not have any time.",
+              "correct": true,
+              "feedback": "Alternatively: I have no time."
+            },
+            {
+              "text": "I have any time.",
+              "correct": false,
+              "feedback": "Without the negative, this does not express the intended lack of time."
+            },
+            {
+              "text": "I do not have some no time.",
+              "correct": false,
+              "feedback": "For this standard negative, use do not have any time."
+            }
+          ]
         },
         {
           "prompt": "Does Not all seats are taken mean every seat is empty?",
-          "answer": "No. It means at least some seats are free.",
-          "explanation": "Not all and none have different meanings."
+          "options": [
+            {
+              "text": "No. It means every seat is occupied.",
+              "correct": false,
+              "feedback": "That would mean all seats are taken, the opposite of not all."
+            },
+            {
+              "text": "No. It means at least some seats are free.",
+              "correct": true,
+              "feedback": "Not all and none have different meanings."
+            },
+            {
+              "text": "Yes. It means no seats are occupied.",
+              "correct": false,
+              "feedback": "Not all denies that every seat is taken; some can still be occupied."
+            }
+          ]
         },
         {
           "prompt": "Which means prohibited: must not / do not have to?",
-          "answer": "must not",
-          "explanation": "Do not have to removes an obligation."
+          "options": [
+            {
+              "text": "Both mean the action is forbidden.",
+              "correct": false,
+              "feedback": "Must not forbids; do not have to makes the action optional."
+            },
+            {
+              "text": "do not have to",
+              "correct": false,
+              "feedback": "This means not required, not prohibited."
+            },
+            {
+              "text": "must not",
+              "correct": true,
+              "feedback": "Do not have to removes an obligation."
+            }
+          ]
         }
       ],
-      "transfer": "Write a sentence about something optional and something prohibited.",
-      "model": "You do not have to print the form. You must not share your password.",
       "pdfs": [
         "concept-25-concept-25-negatives-student-workbook.pdf",
         "concept-25-concept-25-negatives-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Printing the form is optional; sharing a password is forbidden. Which wording matches?",
+        "options": [
+          {
+            "text": "You must not print the form. You do not have to share your password.",
+            "correct": false,
+            "feedback": "This forbids printing and makes sharing optional, changing both rules."
+          },
+          {
+            "text": "You have to print the form. You must not share your password.",
+            "correct": false,
+            "feedback": "Have to makes printing required, contrary to the stated rule."
+          },
+          {
+            "text": "You do not have to print the form. You must not share your password.",
+            "correct": true,
+            "feedback": "Do not have to removes necessity; must not prohibits an action."
+          }
+        ]
+      }
     },
     {
       "number": 26,
@@ -1332,27 +2907,90 @@
       "checks": [
         {
           "prompt": "Complete: She had ___ before I arrived. (leave)",
-          "answer": "left",
-          "explanation": "Use the past participle after had."
+          "options": [
+            {
+              "text": "leaving",
+              "correct": false,
+              "feedback": "Had leaving is not the past perfect form of leave."
+            },
+            {
+              "text": "left",
+              "correct": true,
+              "feedback": "Use the past participle after had."
+            },
+            {
+              "text": "leave",
+              "correct": false,
+              "feedback": "Had takes the past participle left in this pattern."
+            }
+          ]
         },
         {
           "prompt": "What happened first: I had eaten when the guests arrived?",
-          "answer": "I ate first.",
-          "explanation": "Had eaten places the meal before the arrival."
+          "options": [
+            {
+              "text": "The guests arrived first.",
+              "correct": false,
+              "feedback": "Had eaten places the eating before their arrival."
+            },
+            {
+              "text": "I ate first.",
+              "correct": true,
+              "feedback": "Had eaten places the meal before the arrival."
+            },
+            {
+              "text": "The two actions necessarily started together.",
+              "correct": false,
+              "feedback": "Past perfect places the eating earlier; it does not mean simultaneous starts."
+            }
+          ]
         },
         {
           "prompt": "Is past perfect always required after after?",
-          "answer": "No. After can already make the order clear.",
-          "explanation": "After I finished, I left is natural."
+          "options": [
+            {
+              "text": "No. Past perfect can never be used with after.",
+              "correct": false,
+              "feedback": "Past perfect is possible when emphasizing an earlier completed action."
+            },
+            {
+              "text": "No. After can already make the order clear.",
+              "correct": true,
+              "feedback": "After I finished, I left is natural."
+            },
+            {
+              "text": "Yes. After always requires had.",
+              "correct": false,
+              "feedback": "After can make the sequence clear even with past-simple verbs."
+            }
+          ]
         }
       ],
-      "transfer": "Describe arriving too late for something.",
-      "model": "When I reached the shop, it had already closed.",
       "pdfs": [
         "concept-26-understanding-the-past-perfect-tense-had-verb-student-workbook.pdf",
         "concept-26-understanding-the-past-perfect-tense-had-verb-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The shop closed before you arrived. Which sentence makes that order clear?",
+        "options": [
+          {
+            "text": "The shop closed after I reached it.",
+            "correct": false,
+            "feedback": "After reverses the stated order."
+          },
+          {
+            "text": "When I reached the shop, it had already closed.",
+            "correct": true,
+            "feedback": "Had already closed places the closure before the arrival."
+          },
+          {
+            "text": "When I reached the shop, it would close tomorrow.",
+            "correct": false,
+            "feedback": "This places the closure in the future instead."
+          }
+        ]
+      }
     },
     {
       "number": 27,
@@ -1384,27 +3022,90 @@
       "checks": [
         {
           "prompt": "Choose for an amount: a little advice / a few advice",
-          "answer": "a little advice",
-          "explanation": "Advice is normally uncountable."
+          "options": [
+            {
+              "text": "a little advice",
+              "correct": true,
+              "feedback": "Advice is normally uncountable."
+            },
+            {
+              "text": "a few advice",
+              "correct": false,
+              "feedback": "Advice is normally uncountable; use a little advice or a few pieces of advice."
+            },
+            {
+              "text": "a little advices",
+              "correct": false,
+              "feedback": "Do not add a plural ending to advice in this use."
+            }
+          ]
         },
         {
           "prompt": "Which usually sounds more positive: few friends / a few friends?",
-          "answer": "a few friends",
-          "explanation": "It emphasizes having some friends."
+          "options": [
+            {
+              "text": "few friends",
+              "correct": false,
+              "feedback": "Few often emphasizes a shortage; a few emphasizes that some exist."
+            },
+            {
+              "text": "Both always communicate exactly the same attitude.",
+              "correct": false,
+              "feedback": "Adding a often changes the emphasis from a shortage to a small positive amount."
+            },
+            {
+              "text": "a few friends",
+              "correct": true,
+              "feedback": "It emphasizes having some friends."
+            }
+          ]
         },
         {
           "prompt": "Must little houses mean a small number of houses?",
-          "answer": "No. It normally means small houses.",
-          "explanation": "Little can describe physical size."
+          "options": [
+            {
+              "text": "Yes. Little always counts how many houses there are.",
+              "correct": false,
+              "feedback": "Little before houses normally describes their size."
+            },
+            {
+              "text": "No. It normally means small houses.",
+              "correct": true,
+              "feedback": "Little can describe physical size."
+            },
+            {
+              "text": "No. It normally means expensive houses.",
+              "correct": false,
+              "feedback": "Little describes small size, not price."
+            }
+          ]
         }
       ],
-      "transfer": "Describe a small amount you have and a shortage you face.",
-      "model": "I have a little time this evening, but few free hours this week.",
       "pdfs": [
         "concept-27-few-and-little-with-without-a-student-workbook.pdf",
         "concept-27-few-and-little-with-without-a-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which sentence correctly expresses a small amount of time tonight and a shortage of free hours this week?",
+        "options": [
+          {
+            "text": "I have a little time this evening, but little free hours this week.",
+            "correct": false,
+            "feedback": "Hours is countable and plural, so use few for the shortage."
+          },
+          {
+            "text": "I have a little time this evening, but few free hours this week.",
+            "correct": true,
+            "feedback": "A little goes with uncountable time; few emphasizes a shortage of countable hours."
+          },
+          {
+            "text": "I have a few time this evening, but few free hours this week.",
+            "correct": false,
+            "feedback": "Time is uncountable here, so use a little."
+          }
+        ]
+      }
     },
     {
       "number": 28,
@@ -1436,27 +3137,90 @@
       "checks": [
         {
           "prompt": "Can the same speaker say I lost my key. That was frustrating?",
-          "answer": "Yes. That can refer back to the speaker’s own event.",
-          "explanation": "Pronoun choice is not determined by who first mentioned the idea."
+          "options": [
+            {
+              "text": "No. That can only refer to a physical object.",
+              "correct": false,
+              "feedback": "That can also refer to situations, statements, and events."
+            },
+            {
+              "text": "No. That can only refer to someone else’s event.",
+              "correct": false,
+              "feedback": "That can refer back to an event the same speaker just described."
+            },
+            {
+              "text": "Yes. That can refer back to the speaker’s own event.",
+              "correct": true,
+              "feedback": "Pronoun choice is not determined by who first mentioned the idea."
+            }
+          ]
         },
         {
           "prompt": "What does it refer to in I found a notebook. It was empty?",
-          "answer": "The notebook.",
-          "explanation": "It continues an identified reference."
+          "options": [
+            {
+              "text": "The person who found it.",
+              "correct": false,
+              "feedback": "In this sentence it refers back to the notebook, not the speaker."
+            },
+            {
+              "text": "The act of finding it.",
+              "correct": false,
+              "feedback": "Empty describes the notebook here, not the act of finding it."
+            },
+            {
+              "text": "The notebook.",
+              "correct": true,
+              "feedback": "It continues an identified reference."
+            }
+          ]
         },
         {
           "prompt": "Improve the unclear It was a problem after mentioning two possible problems.",
-          "answer": "Name the problem, for example: The missing address was a problem.",
-          "explanation": "A noun phrase removes the ambiguous reference."
+          "options": [
+            {
+              "text": "That was a problem.",
+              "correct": false,
+              "feedback": "Changing it to that may leave the same uncertainty about which problem is meant."
+            },
+            {
+              "text": "Name the problem, for example: The missing address was a problem.",
+              "correct": true,
+              "feedback": "A noun phrase removes the ambiguous reference."
+            },
+            {
+              "text": "It was definitely a problem.",
+              "correct": false,
+              "feedback": "Definitely strengthens the claim without clarifying what it refers to."
+            }
+          ]
         }
       ],
-      "transfer": "Write two linked sentences with an unambiguous reference.",
-      "model": "The bus was canceled. That meant I had to walk home.",
       "pdfs": [
         "concept-28-understanding-the-use-of-this-that-and-it-student-workbook.pdf",
         "concept-28-understanding-the-use-of-this-that-and-it-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "A canceled bus made you walk home. Which pair refers clearly to that event and its consequence?",
+        "options": [
+          {
+            "text": "The bus was canceled. That meant I had to walk home.",
+            "correct": true,
+            "feedback": "That refers back to the cancellation event."
+          },
+          {
+            "text": "The bus was delayed. That meant I had to walk home.",
+            "correct": false,
+            "feedback": "This changes the stated cancellation into a delay. Preserve the original event."
+          },
+          {
+            "text": "The bus was canceled and the taxi was late. It meant I had to walk home.",
+            "correct": false,
+            "feedback": "It could refer to either the cancellation or the late taxi. Name the event or use a reference that clearly points to the bus cancellation."
+          }
+        ]
+      }
     },
     {
       "number": 29,
@@ -1488,27 +3252,90 @@
       "checks": [
         {
           "prompt": "Complete: I am saving money ___ buy a bike.",
-          "answer": "to",
-          "explanation": "Use the infinitive to express the purpose of saving."
+          "options": [
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "For buy is not the purpose pattern. Use to buy."
+            },
+            {
+              "text": "to",
+              "correct": true,
+              "feedback": "Use the infinitive to express the purpose of saving."
+            },
+            {
+              "text": "for to",
+              "correct": false,
+              "feedback": "Use to buy without adding for in this standard pattern."
+            }
+          ]
         },
         {
           "prompt": "Complete: This tool is for ___ cans. (open)",
-          "answer": "opening",
-          "explanation": "A verb after for takes the -ing form."
+          "options": [
+            {
+              "text": "opened",
+              "correct": false,
+              "feedback": "The function is expressed with for opening, not the past form."
+            },
+            {
+              "text": "open",
+              "correct": false,
+              "feedback": "For takes the -ing form here: for opening."
+            },
+            {
+              "text": "opening",
+              "correct": true,
+              "feedback": "A verb after for takes the -ing form."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: I went to the shop for buy milk.",
-          "answer": "I went to the shop to buy milk.",
-          "explanation": "To buy explains the purpose of the trip."
+          "prompt": "Choose the correction: I went to the shop for buy milk.",
+          "options": [
+            {
+              "text": "I went to the shop to buy milk.",
+              "correct": true,
+              "feedback": "To buy explains the purpose of the trip."
+            },
+            {
+              "text": "I went to the shop to buying milk.",
+              "correct": false,
+              "feedback": "After to in this infinitive, use the base verb buy."
+            },
+            {
+              "text": "I went to the shop for to buy milk.",
+              "correct": false,
+              "feedback": "Use to buy in this standard purpose sentence."
+            }
+          ]
         }
       ],
-      "transfer": "Describe why you did something and the function of an object.",
-      "model": "I bought a bottle to carry water. This small brush is for cleaning it.",
       "pdfs": [
         "concept-29-concept-to-x-for-xing-student-workbook.pdf",
         "concept-29-concept-to-x-for-xing-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair correctly gives a purpose for a bottle and the function of a brush?",
+        "options": [
+          {
+            "text": "I bought a bottle to carry water. This small brush is for cleaning it.",
+            "correct": true,
+            "feedback": "To carry gives the purpose; for cleaning gives the brush’s function."
+          },
+          {
+            "text": "I bought a bottle to carry water. This small brush is for to cleaning it.",
+            "correct": false,
+            "feedback": "Use for cleaning, without to."
+          },
+          {
+            "text": "I bought a bottle for carry water. This small brush is for cleaning it.",
+            "correct": false,
+            "feedback": "Use to carry to express this purpose."
+          }
+        ]
+      }
     },
     {
       "number": 30,
@@ -1540,27 +3367,90 @@
       "checks": [
         {
           "prompt": "Result or purpose: I spoke slowly so that everyone could follow?",
-          "answer": "Purpose.",
-          "explanation": "The speaker intended to help understanding."
+          "options": [
+            {
+              "text": "A guarantee that everyone understood.",
+              "correct": false,
+              "feedback": "A purpose does not guarantee the intended result happened."
+            },
+            {
+              "text": "Result.",
+              "correct": false,
+              "feedback": "So that everyone could follow states the speaker’s aim."
+            },
+            {
+              "text": "Purpose.",
+              "correct": true,
+              "feedback": "The speaker intended to help understanding."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: I called in order to that I could ask.",
-          "answer": "I called so that I could ask.",
-          "explanation": "Alternatively: I called in order to ask."
+          "prompt": "Choose the correction: I called in order to that I could ask.",
+          "options": [
+            {
+              "text": "I called in order that to ask.",
+              "correct": false,
+              "feedback": "Use either in order to ask or so that I could ask."
+            },
+            {
+              "text": "I called so that I could ask.",
+              "correct": true,
+              "feedback": "Alternatively: I called in order to ask."
+            },
+            {
+              "text": "I called so that ask.",
+              "correct": false,
+              "feedback": "So that normally introduces a clause with a subject and verb."
+            }
+          ]
         },
         {
           "prompt": "Does left early so that I could get a seat prove I got one?",
-          "answer": "No. It states a purpose.",
-          "explanation": "The intended result may not have happened."
+          "options": [
+            {
+              "text": "Yes. A purpose clause proves success.",
+              "correct": false,
+              "feedback": "The clause states the aim; it does not establish the actual result."
+            },
+            {
+              "text": "No. It states a purpose.",
+              "correct": true,
+              "feedback": "The intended result may not have happened."
+            },
+            {
+              "text": "No. It proves there were no seats.",
+              "correct": false,
+              "feedback": "The outcome is not stated either way."
+            }
+          ]
         }
       ],
-      "transfer": "Write a purpose sentence and a separate sentence giving the actual result.",
-      "model": "I left early so that I could catch the bus. It was full, so I waited for the next one.",
       "pdfs": [
         "concept-30-the-dual-function-of-so-in-english-student-workbook.pdf",
         "concept-30-the-dual-function-of-so-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You left early to catch a bus, but it was full. Which pair separates your purpose from the actual outcome?",
+        "options": [
+          {
+            "text": "I left early so that I could catch the bus. It was full, so I waited for the next one.",
+            "correct": true,
+            "feedback": "So that gives the aim; so introduces the consequence of the bus being full."
+          },
+          {
+            "text": "I left early because of I could catch the bus. It was full.",
+            "correct": false,
+            "feedback": "Because of does not introduce a full clause."
+          },
+          {
+            "text": "I left early so that I could catch the bus. That proves I got on it.",
+            "correct": false,
+            "feedback": "A purpose clause does not prove success, and the stated outcome says you did not board."
+          }
+        ]
+      }
     },
     {
       "number": 31,
@@ -1591,28 +3481,91 @@
       ],
       "checks": [
         {
-          "prompt": "Write half past two in numbers.",
-          "answer": "2:30",
-          "explanation": "Half past means thirty minutes after the hour."
+          "prompt": "Which time is half past two?",
+          "options": [
+            {
+              "text": "2:30",
+              "correct": true,
+              "feedback": "Half past means thirty minutes after the hour."
+            },
+            {
+              "text": "2:15",
+              "correct": false,
+              "feedback": "Half past means 30 minutes after the hour, not 15."
+            },
+            {
+              "text": "1:30",
+              "correct": false,
+              "feedback": "Half past two is 30 minutes after two, not before it."
+            }
+          ]
         },
         {
-          "prompt": "Write a quarter to six in numbers.",
-          "answer": "5:45",
-          "explanation": "It is fifteen minutes before six."
+          "prompt": "Which time is a quarter to six?",
+          "options": [
+            {
+              "text": "5:45",
+              "correct": true,
+              "feedback": "It is fifteen minutes before six."
+            },
+            {
+              "text": "6:45",
+              "correct": false,
+              "feedback": "6:45 is a quarter to seven, not six."
+            },
+            {
+              "text": "6:15",
+              "correct": false,
+              "feedback": "A quarter to six is 15 minutes before six; 6:15 is a quarter past."
+            }
+          ]
         },
         {
           "prompt": "What should you clarify in Let’s meet at eight if you are in different countries?",
-          "answer": "The date, a.m. or p.m., and time zone.",
-          "explanation": "A complete appointment avoids assumptions."
+          "options": [
+            {
+              "text": "The date, a.m. or p.m., and time zone.",
+              "correct": true,
+              "feedback": "A complete appointment avoids assumptions."
+            },
+            {
+              "text": "Only whether eight is written as a digit or a word.",
+              "correct": false,
+              "feedback": "The possible confusion is the actual date and time zone, not the spelling."
+            },
+            {
+              "text": "Only the length of the meeting.",
+              "correct": false,
+              "feedback": "Duration does not clarify when the meeting starts."
+            }
+          ]
         }
       ],
-      "transfer": "Write an appointment and a question confirming its time zone.",
-      "model": "Let’s meet on 12 September at 10 a.m. Is that London time?",
       "pdfs": [
         "concept-31-times-dates-student-workbook.pdf",
         "concept-31-times-dates-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which message gives an exact appointment date and time and asks about the time zone?",
+        "options": [
+          {
+            "text": "Let’s meet soon. Is that London time?",
+            "correct": false,
+            "feedback": "Soon does not give the required date and clock time."
+          },
+          {
+            "text": "Let’s meet on 12 September at 10 a.m. Is that London time?",
+            "correct": true,
+            "feedback": "It includes the date, clock time, a.m., and a time-zone check."
+          },
+          {
+            "text": "Let’s meet on 12 September at ten. I will see you then.",
+            "correct": false,
+            "feedback": "Ten leaves a.m./p.m. unclear, and no time zone is checked."
+          }
+        ]
+      }
     },
     {
       "number": 32,
@@ -1644,27 +3597,90 @@
       "checks": [
         {
           "prompt": "Which asserts rain occurred: Even if it rained / Even though it rained?",
-          "answer": "Even though it rained.",
-          "explanation": "Even though presents the rain as a fact."
+          "options": [
+            {
+              "text": "Both phrases assert that it rained.",
+              "correct": false,
+              "feedback": "Even if can discuss a condition without asserting it happened."
+            },
+            {
+              "text": "Even if it rained.",
+              "correct": false,
+              "feedback": "Even if presents a condition; even though presents a conceded fact."
+            },
+            {
+              "text": "Even though it rained.",
+              "correct": true,
+              "feedback": "Even though presents the rain as a fact."
+            }
+          ]
         },
         {
           "prompt": "Complete: Even if she ___ late, we will wait. (arrive)",
-          "answer": "arrives",
-          "explanation": "Use present simple for this future condition."
+          "options": [
+            {
+              "text": "arriving",
+              "correct": false,
+              "feedback": "The clause needs a finite verb: she arrives."
+            },
+            {
+              "text": "arrives",
+              "correct": true,
+              "feedback": "Use present simple for this future condition."
+            },
+            {
+              "text": "arrive",
+              "correct": false,
+              "feedback": "She takes arrives in this present-simple conditional clause."
+            }
+          ]
         },
         {
           "prompt": "Does Even if the shop is closed, I will go prove it is closed?",
-          "answer": "No. The closure is treated as a condition.",
-          "explanation": "The sentence does not establish its truth."
+          "options": [
+            {
+              "text": "No. It proves the shop is open.",
+              "correct": false,
+              "feedback": "The sentence does not establish whether the shop is open or closed."
+            },
+            {
+              "text": "No. The closure is treated as a condition.",
+              "correct": true,
+              "feedback": "The sentence does not establish its truth."
+            },
+            {
+              "text": "Yes. Even if asserts that the shop is closed.",
+              "correct": false,
+              "feedback": "Even if presents the closure as a condition, not an established fact."
+            }
+          ]
         }
       ],
-      "transfer": "Write a plan that will remain the same under a possible difficulty.",
-      "model": "Even if the weather is bad, I will go to class.",
       "pdfs": [
         "concept-32-even-if-vs-even-though-student-workbook.pdf",
         "concept-32-even-if-vs-even-though-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The weather may be bad, but you will go to class either way. Which sentence expresses that plan?",
+        "options": [
+          {
+            "text": "Even if the weather is bad, I will go to class.",
+            "correct": true,
+            "feedback": "Even if presents a possible difficulty that will not change the plan."
+          },
+          {
+            "text": "Even though the weather is bad, I will go to class.",
+            "correct": false,
+            "feedback": "Even though presents bad weather as a fact; the prompt gives it as a possibility."
+          },
+          {
+            "text": "If the weather is bad, I will stay home.",
+            "correct": false,
+            "feedback": "This changes the plan when the weather is bad."
+          }
+        ]
+      }
     },
     {
       "number": 33,
@@ -1695,28 +3711,91 @@
       ],
       "checks": [
         {
-          "prompt": "Complete: We care ___ clean water.",
-          "answer": "about",
-          "explanation": "This expresses importance or concern."
+          "prompt": "Choose the phrase that expresses concern for an issue: We care ___ clean water.",
+          "options": [
+            {
+              "text": "about",
+              "correct": true,
+              "feedback": "This expresses importance or concern."
+            },
+            {
+              "text": "of",
+              "correct": false,
+              "feedback": "Care about introduces a concern or issue; care of does not fit this verb phrase."
+            },
+            {
+              "text": "to",
+              "correct": false,
+              "feedback": "Care to normally takes a verb, as in care to join, not the noun phrase clean water."
+            }
+          ]
         },
         {
-          "prompt": "What does care for mean in He cares for his elderly neighbor?",
-          "answer": "Look after.",
-          "explanation": "The context describes providing care."
+          "prompt": "He cares for his elderly neighbor by cooking meals and helping with daily tasks. What does cares for mean here?",
+          "options": [
+            {
+              "text": "Look after.",
+              "correct": true,
+              "feedback": "The context describes providing care."
+            },
+            {
+              "text": "Ask the neighbor for advice.",
+              "correct": false,
+              "feedback": "The phrase describes giving care, not seeking advice."
+            },
+            {
+              "text": "Have no preference about.",
+              "correct": false,
+              "feedback": "Cares for his elderly neighbor here means looks after the neighbor."
+            }
+          ]
         },
         {
-          "prompt": "Offer a polite alternative to I do not care when either restaurant is fine.",
-          "answer": "Either restaurant is fine with me.",
-          "explanation": "This states a preference without sounding dismissive."
+          "prompt": "Choose an alternative to I do not care when either restaurant is fine.",
+          "options": [
+            {
+              "text": "Either restaurant is fine with me.",
+              "correct": true,
+              "feedback": "This states a preference without sounding dismissive."
+            },
+            {
+              "text": "Neither restaurant is acceptable.",
+              "correct": false,
+              "feedback": "This rejects both restaurants; the intended meaning accepts either."
+            },
+            {
+              "text": "I strongly prefer the first restaurant.",
+              "correct": false,
+              "feedback": "This expresses a preference, whereas the intended meaning is no preference."
+            }
+          ]
         }
       ],
-      "transfer": "Write something important to you and a polite way to express no preference.",
-      "model": "I care about arriving on time. Either cafe works for me.",
       "pdfs": [
         "concept-33-the-use-of-care-student-workbook.pdf",
         "concept-33-the-use-of-care-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Punctuality matters to you, but you accept either cafe. Which pair communicates both points?",
+        "options": [
+          {
+            "text": "I care about arriving on time. Neither cafe is acceptable.",
+            "correct": false,
+            "feedback": "Neither rejects both cafes, contrary to the stated preference."
+          },
+          {
+            "text": "I care about arriving on time. Either cafe works for me.",
+            "correct": true,
+            "feedback": "Care about expresses the concern; either cafe accepts both options."
+          },
+          {
+            "text": "I do not care about arriving on time. Either cafe works for me.",
+            "correct": false,
+            "feedback": "This denies the stated importance of punctuality."
+          }
+        ]
+      }
     },
     {
       "number": 34,
@@ -1748,27 +3827,90 @@
       "checks": [
         {
           "prompt": "Complete: The project was ___ . (success / successful)",
-          "answer": "successful",
-          "explanation": "An adjective describes the project."
+          "options": [
+            {
+              "text": "successful",
+              "correct": true,
+              "feedback": "An adjective describes the project."
+            },
+            {
+              "text": "successfully",
+              "correct": false,
+              "feedback": "Successfully is an adverb; was needs successful or a success here."
+            },
+            {
+              "text": "success",
+              "correct": false,
+              "feedback": "Without an article, this position needs successful; a success is another valid pattern."
+            }
+          ]
         },
         {
           "prompt": "Complete: We succeeded in ___ the problem. (solve)",
-          "answer": "solving",
-          "explanation": "Use -ing after in."
+          "options": [
+            {
+              "text": "solve",
+              "correct": false,
+              "feedback": "After in, use the -ing form solving."
+            },
+            {
+              "text": "to solve",
+              "correct": false,
+              "feedback": "Use succeeded in solving, not in to solve."
+            },
+            {
+              "text": "solving",
+              "correct": true,
+              "feedback": "Use -ing after in."
+            }
+          ]
         },
         {
           "prompt": "Choose the adverb: success / successful / successfully",
-          "answer": "successfully",
-          "explanation": "The adverb can describe how an action was completed."
+          "options": [
+            {
+              "text": "successfully",
+              "correct": true,
+              "feedback": "The adverb can describe how an action was completed."
+            },
+            {
+              "text": "success",
+              "correct": false,
+              "feedback": "Success is a noun, not an adverb."
+            },
+            {
+              "text": "successful",
+              "correct": false,
+              "feedback": "Successful is an adjective; successfully is the adverb."
+            }
+          ]
         }
       ],
-      "transfer": "Describe an achievement using two members of this word family.",
-      "model": "We successfully organized the meeting. It was a success because everyone could join.",
       "pdfs": [
         "concept-34-the-use-of-success-and-its-different-parts-of-speech-student-workbook.pdf",
         "concept-34-the-use-of-success-and-its-different-parts-of-speech-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair uses the success word family correctly to describe an achievement?",
+        "options": [
+          {
+            "text": "We successfully organized the meeting. It was a success because everyone could join.",
+            "correct": true,
+            "feedback": "Successfully modifies organized; a success is a noun phrase."
+          },
+          {
+            "text": "We successful organized the meeting. It was a success.",
+            "correct": false,
+            "feedback": "Use the adverb successfully to modify organized."
+          },
+          {
+            "text": "We successfully organized the meeting. It was a successfully.",
+            "correct": false,
+            "feedback": "After a, use the noun success rather than the adverb."
+          }
+        ]
+      }
     },
     {
       "number": 35,
@@ -1799,28 +3941,91 @@
       ],
       "checks": [
         {
-          "prompt": "Choose for a general childhood skill: I ___ swim at seven.",
-          "answer": "could",
-          "explanation": "Was able to is also possible, but could is concise and usual."
+          "prompt": "Choose for a skill you had as a child: When I was seven, I ___ swim.",
+          "options": [
+            {
+              "text": "will",
+              "correct": false,
+              "feedback": "Will refers to the future here. At seven describes an ability in childhood, so use could."
+            },
+            {
+              "text": "can",
+              "correct": false,
+              "feedback": "Can describes present ability. This sentence describes a childhood skill in the past."
+            },
+            {
+              "text": "could",
+              "correct": true,
+              "feedback": "Could describes a general past ability. Was able to can also express past ability."
+            }
+          ]
         },
         {
-          "prompt": "Express a successful one-off result: We ___ get the last two tickets.",
-          "answer": "were able to / managed to",
-          "explanation": "These forms clearly report an actual achievement."
+          "prompt": "Choose the phrase that reports an actual success: Yesterday, we ___ get the last two tickets.",
+          "options": [
+            {
+              "text": "tried to",
+              "correct": false,
+              "feedback": "Tried to reports the attempt, not whether it succeeded. Managed to states the successful result."
+            },
+            {
+              "text": "hoped to",
+              "correct": false,
+              "feedback": "Hoped to tells us what they wanted, but it does not say they succeeded in getting the tickets."
+            },
+            {
+              "text": "managed to",
+              "correct": true,
+              "feedback": "Managed to reports an actual successful result. Were able to can also express that meaning."
+            }
+          ]
         },
         {
           "prompt": "Is I could hear a bell outside natural?",
-          "answer": "Yes. Could commonly occurs with perception verbs.",
-          "explanation": "Do not apply the achievement rule to every past use."
+          "options": [
+            {
+              "text": "Yes. Could commonly occurs with perception verbs.",
+              "correct": true,
+              "feedback": "Do not apply the achievement rule to every past use."
+            },
+            {
+              "text": "No. Hear must always be in a continuous form.",
+              "correct": false,
+              "feedback": "Could hear is a normal way to describe a past perception."
+            },
+            {
+              "text": "No. Could can only describe general skills.",
+              "correct": false,
+              "feedback": "Could is also natural with perception verbs such as hear."
+            }
+          ]
         }
       ],
-      "transfer": "Write one general past ability and one particular success.",
-      "model": "I could cycle when I was young. Yesterday I managed to repair a flat tire.",
       "pdfs": [
         "concept-35-explanation-of-was-able-to-vs-could-student-workbook.pdf",
         "concept-35-explanation-of-was-able-to-vs-could-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair reports a general childhood ability and then a specific successful result yesterday?",
+        "options": [
+          {
+            "text": "I could cycle when I was young. Yesterday I managed to repair a flat tire.",
+            "correct": true,
+            "feedback": "Could describes the past skill; managed to reports the successful repair."
+          },
+          {
+            "text": "I will cycle when I was young. Yesterday I managed to repair a flat tire.",
+            "correct": false,
+            "feedback": "Will does not express the childhood ability in the past."
+          },
+          {
+            "text": "I could cycle when I was young. Yesterday I could have repaired a flat tire, but I did not.",
+            "correct": false,
+            "feedback": "The second sentence explicitly says the repair was not done, so it is not a successful result."
+          }
+        ]
+      }
     },
     {
       "number": 36,
@@ -1851,28 +4056,91 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: She said me the answer.",
-          "answer": "She told me the answer.",
-          "explanation": "Alternatively: She said the answer to me."
+          "prompt": "Choose the correction: She said me the answer.",
+          "options": [
+            {
+              "text": "She said me to the answer.",
+              "correct": false,
+              "feedback": "Say does not take a person directly in this pattern. Use She told me the answer."
+            },
+            {
+              "text": "She told to me the answer.",
+              "correct": false,
+              "feedback": "Tell takes the recipient directly here: told me the answer."
+            },
+            {
+              "text": "She told me the answer.",
+              "correct": true,
+              "feedback": "Alternatively: She said the answer to me."
+            }
+          ]
         },
         {
           "prompt": "Complete: Do you ___ Korean?",
-          "answer": "speak",
-          "explanation": "Speak is the usual verb for language ability."
+          "options": [
+            {
+              "text": "speak",
+              "correct": true,
+              "feedback": "Speak is the usual verb for language ability."
+            },
+            {
+              "text": "say",
+              "correct": false,
+              "feedback": "Speak is used for knowing or using a language."
+            },
+            {
+              "text": "tell",
+              "correct": false,
+              "feedback": "Tell normally communicates a message; speak Korean names a language ability."
+            }
+          ]
         },
         {
           "prompt": "Does tell always need a listener?",
-          "answer": "No. Common phrases include tell a story and tell the truth.",
-          "explanation": "Learn the whole phrase with its meaning."
+          "options": [
+            {
+              "text": "No. Tell can never name a listener.",
+              "correct": false,
+              "feedback": "Tell me and tell the team are normal patterns."
+            },
+            {
+              "text": "Yes. Every use must name a listener.",
+              "correct": false,
+              "feedback": "Expressions such as tell the truth do not need an explicit listener."
+            },
+            {
+              "text": "No. Common phrases include tell a story and tell the truth.",
+              "correct": true,
+              "feedback": "Learn the whole phrase with its meaning."
+            }
+          ]
         }
       ],
-      "transfer": "Report a short message and identify who received it.",
-      "model": "My colleague told me that the room had changed.",
       "pdfs": [
         "concept-36-speak-talk-say-tell-student-workbook.pdf",
         "concept-36-speak-talk-say-tell-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Your colleague gave you a message about a new room. Which report is grammatical and names the recipient?",
+        "options": [
+          {
+            "text": "My colleague said me that the room had changed.",
+            "correct": false,
+            "feedback": "Say does not take me directly in this pattern; use told me or said to me."
+          },
+          {
+            "text": "My colleague told to me that the room had changed.",
+            "correct": false,
+            "feedback": "Tell takes the recipient directly here: told me."
+          },
+          {
+            "text": "My colleague told me that the room had changed.",
+            "correct": true,
+            "feedback": "Told me names the recipient and introduces the reported message."
+          }
+        ]
+      }
     },
     {
       "number": 37,
@@ -1903,28 +4171,91 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: Almost people arrived on time.",
-          "answer": "Most people arrived on time.",
-          "explanation": "If nearly everyone arrived on time, use Almost all the people instead."
+          "prompt": "Choose the correction: Almost people arrived on time.",
+          "options": [
+            {
+              "text": "Most people arrived on time.",
+              "correct": true,
+              "feedback": "If nearly everyone arrived on time, use Almost all the people instead."
+            },
+            {
+              "text": "Most people almosts arrived on time.",
+              "correct": false,
+              "feedback": "Almost does not take an -s ending, and the intended claim is about most people."
+            },
+            {
+              "text": "Almost of the people arrived on time.",
+              "correct": false,
+              "feedback": "Use most of the people or almost all of the people, not almost of."
+            }
+          ]
         },
         {
           "prompt": "Complete: Most ___ them agreed.",
-          "answer": "of",
-          "explanation": "Use of before a pronoun such as them."
+          "options": [
+            {
+              "text": "to",
+              "correct": false,
+              "feedback": "Use of between most and an object pronoun such as them."
+            },
+            {
+              "text": "from",
+              "correct": false,
+              "feedback": "Most of them identifies a proportion of that group."
+            },
+            {
+              "text": "of",
+              "correct": true,
+              "feedback": "Use of before a pronoun such as them."
+            }
+          ]
         },
         {
           "prompt": "Which suggests a larger share: most / almost all?",
-          "answer": "almost all",
-          "explanation": "It means nearly the entire group."
+          "options": [
+            {
+              "text": "Neither; both mean exactly half.",
+              "correct": false,
+              "feedback": "Most means more than half and almost all means nearly everyone or everything."
+            },
+            {
+              "text": "most",
+              "correct": false,
+              "feedback": "Most means a majority; almost all normally suggests close to the whole group."
+            },
+            {
+              "text": "almost all",
+              "correct": true,
+              "feedback": "It means nearly the entire group."
+            }
+          ]
         }
       ],
-      "transfer": "Describe a group using most, then describe something nearly finished.",
-      "model": "Most of my classmates walk to school. Our project is almost finished.",
       "pdfs": [
         "concept-37-almost-vs-most-student-workbook.pdf",
         "concept-37-almost-vs-most-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which pair correctly describes a majority of classmates and a nearly finished project?",
+        "options": [
+          {
+            "text": "Most of my classmates walk to school. Our project is almost finished.",
+            "correct": true,
+            "feedback": "Most of refers to a proportion of the group; almost means nearly."
+          },
+          {
+            "text": "Almost my classmates walk to school. Our project is almost finished.",
+            "correct": false,
+            "feedback": "Use most of my classmates or almost all of my classmates."
+          },
+          {
+            "text": "Most of my classmates walk to school. Our project is most finished.",
+            "correct": false,
+            "feedback": "Use almost finished to mean nearly complete."
+          }
+        ]
+      }
     },
     {
       "number": 38,
@@ -1955,28 +4286,91 @@
       ],
       "checks": [
         {
-          "prompt": "Complete: The weather can ___ travel.",
-          "answer": "affect",
-          "explanation": "A verb is needed after can."
+          "prompt": "Choose the verb meaning influence: The weather can ___ travel.",
+          "options": [
+            {
+              "text": "affect",
+              "correct": true,
+              "feedback": "A verb is needed after can."
+            },
+            {
+              "text": "affection",
+              "correct": false,
+              "feedback": "Affection is a noun meaning fondness, not the verb influence."
+            },
+            {
+              "text": "effect",
+              "correct": false,
+              "feedback": "The usual verb meaning influence is affect; effect as a verb means bring about."
+            }
+          ]
         },
         {
-          "prompt": "Complete: What ___ did the change have?",
-          "answer": "effect",
-          "explanation": "This question asks about the result as a noun."
+          "prompt": "Choose the noun meaning result: What ___ did the change have?",
+          "options": [
+            {
+              "text": "affect",
+              "correct": false,
+              "feedback": "This sentence needs the noun effect meaning result or influence."
+            },
+            {
+              "text": "effective",
+              "correct": false,
+              "feedback": "Effective is an adjective; the question asks what effect the change had."
+            },
+            {
+              "text": "effect",
+              "correct": true,
+              "feedback": "This question asks about the result as a noun."
+            }
+          ]
         },
         {
           "prompt": "Is effect never a verb?",
-          "answer": "No. Effect change means bring change about.",
-          "explanation": "That formal use is less common than the noun."
+          "options": [
+            {
+              "text": "No. Effect change means bring change about.",
+              "correct": true,
+              "feedback": "That formal use is less common than the noun."
+            },
+            {
+              "text": "No. As a verb, effect always means notice.",
+              "correct": false,
+              "feedback": "The verb effect means bring about, not notice."
+            },
+            {
+              "text": "Yes. Effect is only ever a noun.",
+              "correct": false,
+              "feedback": "Effect can be a formal verb meaning bring about, as in effect change."
+            }
+          ]
         }
       ],
-      "transfer": "Describe a possible influence without claiming certainty.",
-      "model": "The new timetable may affect my journey to work.",
       "pdfs": [
         "concept-38-affect-and-effect-student-workbook.pdf",
         "concept-38-affect-and-effect-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "The timetable’s influence on your journey is uncertain. Which sentence preserves that uncertainty?",
+        "options": [
+          {
+            "text": "The new timetable may affect my journey to work.",
+            "correct": true,
+            "feedback": "May keeps the outcome possible rather than certain, and affect means influence."
+          },
+          {
+            "text": "The new timetable will definitely shorten my journey to work.",
+            "correct": false,
+            "feedback": "This asserts a particular outcome and certainty not provided in the prompt."
+          },
+          {
+            "text": "The new timetable may affection my journey to work.",
+            "correct": false,
+            "feedback": "Affection is a noun, not the verb needed after may."
+          }
+        ]
+      }
     },
     {
       "number": 39,
@@ -2008,27 +4402,90 @@
       "checks": [
         {
           "prompt": "Complete: Please listen ___ the announcement.",
-          "answer": "to",
-          "explanation": "Listen takes to before the object."
+          "options": [
+            {
+              "text": "at",
+              "correct": false,
+              "feedback": "Listen takes to before the thing you intentionally attend to."
+            },
+            {
+              "text": "to",
+              "correct": true,
+              "feedback": "Listen takes to before the object."
+            },
+            {
+              "text": "for to",
+              "correct": false,
+              "feedback": "Use listen to the announcement without for."
+            }
+          ]
         },
         {
-          "prompt": "Choose for a moving event: We ___ the game.",
-          "answer": "watched",
-          "explanation": "Watch is natural for following a game."
+          "prompt": "Choose the verb for viewing the game as it happened: We ___ the game.",
+          "options": [
+            {
+              "text": "watched",
+              "correct": true,
+              "feedback": "Watch is natural for following a game."
+            },
+            {
+              "text": "listened",
+              "correct": false,
+              "feedback": "Listen would need to and would describe attending to sound rather than watching."
+            },
+            {
+              "text": "looked",
+              "correct": false,
+              "feedback": "With the game as the direct object, watch fits. Look would need at."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: I heard to a loud noise.",
-          "answer": "I heard a loud noise.",
-          "explanation": "Hear takes the object directly."
+          "prompt": "Choose the correction: I heard to a loud noise.",
+          "options": [
+            {
+              "text": "I listened a loud noise.",
+              "correct": false,
+              "feedback": "Listen needs to; hear takes its object directly."
+            },
+            {
+              "text": "I heard at a loud noise.",
+              "correct": false,
+              "feedback": "Hear takes a loud noise directly, without at."
+            },
+            {
+              "text": "I heard a loud noise.",
+              "correct": true,
+              "feedback": "Hear takes the object directly."
+            }
+          ]
         }
       ],
-      "transfer": "Describe a sound you noticed and what you then paid attention to.",
-      "model": "I heard a voice outside. I listened to the announcement.",
       "pdfs": [
         "concept-39-sensory-terms-student-workbook.pdf",
         "concept-39-sensory-terms-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You first noticed a voice, then paid attention to an announcement. Which pair fits?",
+        "options": [
+          {
+            "text": "I heard a voice outside. I listened the announcement.",
+            "correct": false,
+            "feedback": "Listen needs to before the object."
+          },
+          {
+            "text": "I heard a voice outside. I listened to the announcement.",
+            "correct": true,
+            "feedback": "Heard describes noticing sound; listened to describes deliberate attention."
+          },
+          {
+            "text": "I heard to a voice outside. I listened to the announcement.",
+            "correct": false,
+            "feedback": "Hear takes its object directly, without to."
+          }
+        ]
+      }
     },
     {
       "number": 40,
@@ -2060,27 +4517,90 @@
       "checks": [
         {
           "prompt": "Complete: It was ___ a useful lesson.",
-          "answer": "such",
-          "explanation": "A useful lesson is a noun phrase."
+          "options": [
+            {
+              "text": "such as",
+              "correct": false,
+              "feedback": "Such as introduces examples, not this degree expression."
+            },
+            {
+              "text": "so",
+              "correct": false,
+              "feedback": "Use such before a noun phrase with a: such a useful lesson."
+            },
+            {
+              "text": "such",
+              "correct": true,
+              "feedback": "A useful lesson is a noun phrase."
+            }
+          ]
         },
         {
           "prompt": "Complete: The room was ___ quiet.",
-          "answer": "so",
-          "explanation": "Quiet is an adjective without a following noun."
+          "options": [
+            {
+              "text": "such",
+              "correct": false,
+              "feedback": "Before the adjective quiet alone, use so."
+            },
+            {
+              "text": "such a",
+              "correct": false,
+              "feedback": "Such a needs a following noun phrase, such as such a quiet room."
+            },
+            {
+              "text": "so",
+              "correct": true,
+              "feedback": "Quiet is an adjective without a following noun."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: We had such much work.",
-          "answer": "We had so much work.",
-          "explanation": "Use so before the quantity word much."
+          "prompt": "Choose the correction: We had such much work.",
+          "options": [
+            {
+              "text": "We had such many work.",
+              "correct": false,
+              "feedback": "The pattern is so much work."
+            },
+            {
+              "text": "We had so much work.",
+              "correct": true,
+              "feedback": "Use so before the quantity word much."
+            },
+            {
+              "text": "We had so many work.",
+              "correct": false,
+              "feedback": "Work is uncountable in this meaning, so use much rather than many."
+            }
+          ]
         }
       ],
-      "transfer": "Describe something memorable with so or such and explain the result.",
-      "model": "The instructions were so clear that I finished without help.",
       "pdfs": [
         "concept-40-so-and-such-student-workbook.pdf",
         "concept-40-so-and-such-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which sentence uses so correctly and gives the result of clear instructions?",
+        "options": [
+          {
+            "text": "The instructions were so clearly that I finished without help.",
+            "correct": false,
+            "feedback": "Were needs the adjective clear for this description, not the adverb clearly."
+          },
+          {
+            "text": "The instructions were so clear that I finished without help.",
+            "correct": true,
+            "feedback": "So modifies the adjective clear; that introduces the result."
+          },
+          {
+            "text": "The instructions were such clear that I finished without help.",
+            "correct": false,
+            "feedback": "Use so before clear alone, or such clear instructions with a noun."
+          }
+        ]
+      }
     },
     {
       "number": 41,
@@ -2112,27 +4632,90 @@
       "checks": [
         {
           "prompt": "Complete: He refused ___ answer.",
-          "answer": "to",
-          "explanation": "Use refuse to do something."
+          "options": [
+            {
+              "text": "from",
+              "correct": false,
+              "feedback": "Use refused to answer, not refused from answer."
+            },
+            {
+              "text": "for",
+              "correct": false,
+              "feedback": "Refuse takes a to-infinitive for the action: refused to answer."
+            },
+            {
+              "text": "to",
+              "correct": true,
+              "feedback": "Use refuse to do something."
+            }
+          ]
         },
         {
-          "prompt": "Correct this: They rejected to meet us.",
-          "answer": "They refused to meet us.",
-          "explanation": "Reject does not take this to-infinitive pattern."
+          "prompt": "Choose the correction: They rejected to meet us.",
+          "options": [
+            {
+              "text": "They refused meet us.",
+              "correct": false,
+              "feedback": "Refuse needs to before the infinitive: refused to meet."
+            },
+            {
+              "text": "They rejected meeting to us.",
+              "correct": false,
+              "feedback": "This is not a correct replacement for the stated decision not to meet."
+            },
+            {
+              "text": "They refused to meet us.",
+              "correct": true,
+              "feedback": "Reject does not take this to-infinitive pattern."
+            }
+          ]
         },
         {
           "prompt": "Can refuse take a noun?",
-          "answer": "Yes: refuse an invitation or refuse help.",
-          "explanation": "Its patterns are broader than refuse to do."
+          "options": [
+            {
+              "text": "No. Refuse must always take a to-infinitive.",
+              "correct": false,
+              "feedback": "Refuse can take a noun, such as help or an invitation."
+            },
+            {
+              "text": "Yes: refuse an invitation or refuse help.",
+              "correct": true,
+              "feedback": "Its patterns are broader than refuse to do."
+            },
+            {
+              "text": "Yes, but only the noun answer.",
+              "correct": false,
+              "feedback": "Many nouns can follow refuse, including help and an invitation."
+            }
+          ]
         }
       ],
-      "transfer": "Decline an invitation politely without adding a false reason.",
-      "model": "Thank you for inviting me, but I cannot join you this time.",
       "pdfs": [
         "concept-41-refuse-vs-reject-student-workbook.pdf",
         "concept-41-refuse-vs-reject-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "You cannot attend an event and have given no reason. Which reply declines politely without inventing one?",
+        "options": [
+          {
+            "text": "Thank you for inviting me. I look forward to joining you.",
+            "correct": false,
+            "feedback": "This accepts the invitation rather than declining."
+          },
+          {
+            "text": "Thank you for inviting me, but I cannot join because I am ill.",
+            "correct": false,
+            "feedback": "The prompt does not establish illness; the reply invents a reason."
+          },
+          {
+            "text": "Thank you for inviting me, but I cannot join you this time.",
+            "correct": true,
+            "feedback": "This declines courteously without adding an unsupported explanation."
+          }
+        ]
+      }
     },
     {
       "number": 42,
@@ -2164,27 +4747,90 @@
       "checks": [
         {
           "prompt": "Which opening is clearer for a beginner: A commuter is a person ... / A commuter is an intermodal participant ...?",
-          "answer": "A commuter is a person ...",
-          "explanation": "A familiar category gives the listener a starting point."
+          "options": [
+            {
+              "text": "Both are equally easy for every beginner.",
+              "correct": false,
+              "feedback": "A simple familiar category such as person gives a beginner a clearer starting point."
+            },
+            {
+              "text": "A commuter is an intermodal participant ...",
+              "correct": false,
+              "feedback": "This replaces an unfamiliar word with another difficult expression."
+            },
+            {
+              "text": "A commuter is a person ...",
+              "correct": true,
+              "feedback": "A familiar category gives the listener a starting point."
+            }
+          ]
         },
         {
-          "prompt": "Explain borrow in one simple sentence.",
-          "answer": "Borrow means use something for a time and then return it.",
-          "explanation": "Include the temporary use and expected return."
+          "prompt": "Which sentence explains borrow?",
+          "options": [
+            {
+              "text": "Borrow means give someone something for a time.",
+              "correct": false,
+              "feedback": "That describes lend from the owner’s perspective, not borrow from the user’s."
+            },
+            {
+              "text": "Borrow means use something for a time and then return it.",
+              "correct": true,
+              "feedback": "Include the temporary use and expected return."
+            },
+            {
+              "text": "Borrow means keep something permanently without returning it.",
+              "correct": false,
+              "feedback": "Borrowing normally involves temporary use and returning the item."
+            }
+          ]
         },
         {
           "prompt": "Why might an example alone be insufficient?",
-          "answer": "It may not show what all uses have in common.",
-          "explanation": "A short definition gives the general meaning."
+          "options": [
+            {
+              "text": "It may not show what all uses have in common.",
+              "correct": true,
+              "feedback": "A short definition gives the general meaning."
+            },
+            {
+              "text": "An example always gives a complete definition.",
+              "correct": false,
+              "feedback": "An example illustrates one case and may leave the wider meaning unclear."
+            },
+            {
+              "text": "Definitions should never contain examples.",
+              "correct": false,
+              "feedback": "Examples can help, especially alongside a short general explanation."
+            }
+          ]
         }
       ],
-      "transfer": "Explain a familiar service to someone who has never used it.",
-      "model": "A delivery locker is a secure place to collect a package. You use a code to open its door.",
       "pdfs": [
         "concept-42-cold-explanations-student-workbook.pdf",
         "concept-42-cold-explanations-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Which explanation gives a beginner a simple category and the basic use of a delivery locker?",
+        "options": [
+          {
+            "text": "A delivery locker is an asynchronous fulfillment endpoint.",
+            "correct": false,
+            "feedback": "This relies on difficult technical terms and gives no simple action."
+          },
+          {
+            "text": "A delivery locker is a secure place to collect a package. You use a code to open its door.",
+            "correct": true,
+            "feedback": "The explanation identifies the kind of place and gives a concrete action."
+          },
+          {
+            "text": "A delivery locker is a place where you buy a package and choose its contents.",
+            "correct": false,
+            "feedback": "This confuses collecting a delivered package with shopping."
+          }
+        ]
+      }
     },
     {
       "number": 43,
@@ -2216,27 +4862,90 @@
       "checks": [
         {
           "prompt": "Attendance rose from 20 to 30. How much did it rise by?",
-          "answer": "10 people",
-          "explanation": "Subtract the starting count from the ending count."
+          "options": [
+            {
+              "text": "30 people",
+              "correct": false,
+              "feedback": "30 is the final total. The increase is 30 minus 20."
+            },
+            {
+              "text": "20 people",
+              "correct": false,
+              "feedback": "20 is the starting total, not the amount of increase."
+            },
+            {
+              "text": "10 people",
+              "correct": true,
+              "feedback": "Subtract the starting count from the ending count."
+            }
+          ]
         },
         {
-          "prompt": "Correct the preposition: Sales rose by 500 to 600.",
-          "answer": "Sales rose from 500 to 600.",
-          "explanation": "From and to give the starting and ending values."
+          "prompt": "Choose the correction: Sales rose by 500 to 600.",
+          "options": [
+            {
+              "text": "Sales rose to 500 from 600.",
+              "correct": false,
+              "feedback": "This reverses the starting and finishing values and describes a fall."
+            },
+            {
+              "text": "Sales rose from 500 to 600.",
+              "correct": true,
+              "feedback": "From and to give the starting and ending values."
+            },
+            {
+              "text": "Sales rose from 500 by 600.",
+              "correct": false,
+              "feedback": "This says the increase was 600, which would give a final value of 1100."
+            }
+          ]
         },
         {
           "prompt": "A rate rises from 10% to 12%. How many percentage points is that?",
-          "answer": "2 percentage points",
-          "explanation": "Subtract the percentages; the relative increase is 20%."
+          "options": [
+            {
+              "text": "12 percentage points",
+              "correct": false,
+              "feedback": "12% is the final rate. Subtract 10 from 12 to find the percentage-point increase."
+            },
+            {
+              "text": "2 percentage points",
+              "correct": true,
+              "feedback": "Subtract the percentages; the relative increase is 20%."
+            },
+            {
+              "text": "20 percentage points",
+              "correct": false,
+              "feedback": "20% is the relative increase from 10 to 12, not the percentage-point difference."
+            }
+          ]
         }
       ],
-      "transfer": "Describe a fictional trend with a unit, period, and no unsupported cause.",
-      "model": "Bus use rose from 80 to 100 journeys per day in July. The reason is not yet clear.",
       "pdfs": [
         "concept-43-describing-trends-student-workbook.pdf",
         "concept-43-describing-trends-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "Bus use increased from 80 to 100 journeys per day in July. The cause is unknown. Which report preserves those facts?",
+        "options": [
+          {
+            "text": "Bus use rose by 100 journeys per day in July because fares fell.",
+            "correct": false,
+            "feedback": "The increase was 20, not 100, and the cause is invented."
+          },
+          {
+            "text": "Bus fares rose from 80 to 100 dollars per day in July.",
+            "correct": false,
+            "feedback": "This changes both the thing measured and its unit."
+          },
+          {
+            "text": "Bus use rose from 80 to 100 journeys per day in July. The reason is not yet clear.",
+            "correct": true,
+            "feedback": "The report includes the values, unit, period, and uncertainty about cause."
+          }
+        ]
+      }
     },
     {
       "number": 44,
@@ -2267,28 +4976,92 @@
       ],
       "checks": [
         {
-          "prompt": "Correct this: Can you give me an advice?",
-          "answer": "Can you give me some advice?",
-          "explanation": "Advice is normally uncountable."
+          "prompt": "Choose the correction: Can you give me an advice?",
+          "options": [
+            {
+              "text": "Can you give me some advices?",
+              "correct": false,
+              "feedback": "Advice is normally uncountable, so do not add -s."
+            },
+            {
+              "text": "Can you give me some advice?",
+              "correct": true,
+              "feedback": "Advice is normally uncountable."
+            },
+            {
+              "text": "Can you give me a advice?",
+              "correct": false,
+              "feedback": "Advice is not normally used with a; use some advice or a piece of advice."
+            }
+          ]
         },
         {
           "prompt": "Which question is more focused: What should I do? / Which bus goes to the station?",
-          "answer": "Which bus goes to the station?",
-          "explanation": "It specifies the information needed."
+          "options": [
+            {
+              "text": "What should I do?",
+              "correct": false,
+              "feedback": "This gives no specific decision or goal. The bus question identifies the information needed."
+            },
+            {
+              "text": "Which bus goes to the station?",
+              "correct": true,
+              "feedback": "It specifies the information needed."
+            },
+            {
+              "text": "Both questions identify exactly the same problem.",
+              "correct": false,
+              "feedback": "Only the bus question gives a specific destination and information need."
+            }
+          ]
         },
         {
           "prompt": "What should you do before advising if the deadline is unclear?",
-          "answer": "Ask when the person needs to finish or arrive.",
-          "explanation": "Clarify the missing constraint."
+          "options": [
+            {
+              "text": "Assume the deadline is today.",
+              "correct": false,
+              "feedback": "An assumption can lead to unsuitable advice. Ask about the timing."
+            },
+            {
+              "text": "Recommend the quickest option without asking.",
+              "correct": false,
+              "feedback": "The timing affects which advice fits the person’s needs."
+            },
+            {
+              "text": "Ask when the person needs to finish or arrive.",
+              "correct": true,
+              "feedback": "Clarify the missing constraint."
+            }
+          ]
         }
       ],
-      "transfer": "Write a short exchange with context, a question, and an option with a reason.",
-      "model": "I need a quiet place to study. Where would you suggest? You could try the library because it has a quiet room.",
       "pdfs": [
         "concept-44-requesting-advice-student-workbook.pdf",
         "concept-44-requesting-advice-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06"
+      "reviewed": "2026-09-06",
+      "application": {
+        "prompt": "A learner needs a quiet study place. Which exchange gives a relevant option with a reason?",
+        "options": [
+          {
+            "text": "I need a quiet place to study. You must go somewhere immediately.",
+            "correct": false,
+            "feedback": "This gives no specific option or reason and adds unsupported urgency."
+          },
+          {
+            "text": "I need a quiet place to study. Try the loud music bar because it has live bands.",
+            "correct": false,
+            "feedback": "The suggested reason conflicts with the need for quiet."
+          },
+          {
+            "text": "I need a quiet place to study. Where would you suggest? You could try the library because it has a quiet room.",
+            "correct": true,
+            "feedback": "The question gives the need; the suggestion and reason directly address quiet study."
+          }
+        ]
+      }
     }
-  ]
+  ],
+  "interaction": "multiple-choice-only"
 }

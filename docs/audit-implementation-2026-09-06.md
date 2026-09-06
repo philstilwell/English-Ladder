@@ -31,6 +31,8 @@ The September 6 aviation illustration was visually checked against the corrected
 - Visually reviewed key phone and desktop pages and tested the reading/practice/discussion flow, grammar search, level links, saved words, restored notes, and clearing temporary learning data in a browser.
 - Checked all **252 PDFs, totaling 2,961 pages**, for embedded font resources, bookmarks, and text beyond page edges. No failures. Rendered and visually reviewed representative covers, practice pages, long titles, and teacher pages. The [complete document check](document-validation-2026-09-06.json) lists every PDF and its result.
 
+Published verification: all **297 HTML pages and 267 linked assets**, including every PDF, returned HTTP 200 and matched the tested files byte for byte. Both [Pages deployment](https://github.com/philstilwell/English-Ladder/actions/runs/34059735256) and [the daily publishing workflow](https://github.com/philstilwell/English-Ladder/actions/runs/34059735745) passed for implementation revision `f1e5921`. See the [live-file verification record](live-validation-2026-09-06.json).
+
 The reproducible checks are `npm test`, `npm run check:js`, `python3 audit_site.py`, and `python3 audit_documents.py`. PDF checks require the document dependencies. `python3 update_site.py --refresh-pages` rebuilds existing lessons without paid calls.
 
 ## Costs and remaining limits

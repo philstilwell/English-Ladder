@@ -117,6 +117,18 @@ Queued runs fetch the latest branch at startup so they see archives and images s
 
 To create the first daily feature image (or recover a missing latest image) without regenerating lessons, run the **Daily ESL Lesson Generator** manually with **refresh_feature** enabled. Its command is `python update_site.py --refresh-feature`; it uses the existing `GEMINI_API_KEY` repository secret. Ordinary `python editorial.py` and `npm run build` remain offline. The local checks cover archive rollover, future/incomplete archives, image reuse and failure limits, a changed story on an existing date, escaped markup, no-JavaScript links, and deployment verification.
 
+## Optional AI practice extensions
+
+`ai-practice.html` explains how to use the prompt extensions available throughout the curriculum. Each grammar lesson, workplace case and glossary, daily or evergreen reading, everyday-life unit, and study tool includes copyable prompts. My learning also provides a retrieval-practice starter. The 252 grammar and workplace PDF guides include complete prompts matched to their teaching purpose and direct links to the corresponding web extensions.
+
+`ai_extensions.py` contains the authored teaching instructions and builds the prompts from the published lesson context. It runs locally without calling an AI service. `site_quality.py` applies these extensions during publication, including scheduled daily lessons. Rebuilding replaces old prompt blocks rather than retaining outdated context. `ai-practice.js` copies the selected visible prompt and offers manual text selection if clipboard access fails; it never reads drafts, recordings, saved answers, or account information.
+
+The prompts specify one question at a time, three answer choices, feedback tied to the selected option, retry handling, and a short transfer activity. Vocabulary practice includes natural word partnerships and contextual contrasts. Dialogue practice branches from the learner's choices. Reading practice separates evidence, inference, missing information, and clearly labeled fictional extensions. Workplace prompts preserve case facts and remain language practice. Pronunciation prompts do not pretend to assess audio they have not heard. Teacher prompts produce classroom materials with separate answer keys.
+
+AI responses still depend on the student's chosen service. The site does not claim that a prompt guarantees accuracy, diagnose a certified level, upload learner work, or require an AI account to use the curriculum. Students can inspect the complete text before copying it and use the regular lessons without these optional extensions.
+
+When changing the prompt source, rebuild the web pages and both PDF collections. The workplace PDF manifest includes the prompt source in its content checksum. Run the regular tests and the document audit; the AI extension tests cover curriculum-wide placement, lesson context, fresh daily publishing, repeatable builds, exclusion of private writing, exact copied text, and clipboard fallback.
+
 ## Local Run
 
 Set your Gemini API key, then run:

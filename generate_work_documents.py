@@ -285,6 +285,23 @@ BUILDERS = [teacher, workbook, conversation, phrasebook]
 KINDS = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Phrasebook']
 
 
+def ai_extension_pages(track, kind):
+    from ai_extensions import work_print_prompt
+    extension = work_print_prompt(track, kind)
+    url = f'https://englishladder.com/efsp-{track["slug"]}.html#ai-module-1'
+    story = [PageBreak(), heading('Extend this course with AI', 'ai-practice'),
+        p(extension['title'], 'h2'),
+        p('Optional: copy the complete prompt below into the AI you prefer. This starter uses the first course case. Every lesson on the website also has its own vocabulary, grammar, dialogue, and message prompts. No upload is needed.', 'small'),
+        p('AI explanations can be wrong; check them against the course. Use fictional details only. Your chosen service may have its own fees and privacy rules.', 'small'),
+        Paragraph(f'<link href="{url}" color="#174c69">Open the lesson prompts on English Ladder</link>', STYLES['body']),
+        p('Copy from the next paragraph through the study material.', 'h2')]
+    instructions,material = extension['text'].split('\n\nLESSON MATERIAL\n',1)
+    prompt_paragraph = lambda part: Paragraph(html.escape(clean(part)).replace('\n','<br/>'),STYLES['small'])
+    story.extend(prompt_paragraph(part) for part in instructions.split('\n\n'))
+    story.append(KeepTogether([p('LESSON MATERIAL','h2'),*[prompt_paragraph(part) for part in material.split('\n\n')]]))
+    return story
+
+
 def build_track(track, kinds=None):
     result = {}
     for index, (_label, href) in enumerate(track['pdfs']):
@@ -303,7 +320,7 @@ def build_track(track, kinds=None):
             if index == 2:
                 from work_dialogues import EDITION
                 doc.revision = EDITION
-            doc.build(BUILDERS[index](track), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
+            doc.build(BUILDERS[index](track) + ai_extension_pages(track,index), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
             reader = PdfReader(temp)
             assert len(reader.pages) > 3
             os.replace(temp, path)

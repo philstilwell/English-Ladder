@@ -323,7 +323,7 @@ def load_tracks():
 
 
 def content_hash():
-    files = [CONTENT / "courses.json", CONTENT / "cases.txt", CONTENT / "glossary.txt", Path(__file__), ROOT / 'ai_extensions.py']
+    files = [CONTENT / "courses.json", CONTENT / "cases.txt", CONTENT / "glossary.txt", Path(__file__)]
     return hashlib.sha256(b"".join(p.read_bytes() for p in files)).hexdigest()
 
 

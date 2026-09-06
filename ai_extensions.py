@@ -2,14 +2,14 @@
 from __future__ import annotations
 
 import html
-import json
 from functools import lru_cache
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 REVISION = '2026-09-06-ai1'
-INTRO = ('Copy a prompt and paste it into the AI you prefer. It includes the lesson context; '
-         'you do not need to upload the page. These are optional extensions after your regular practice.')
+INTRO = ('Choose an activity, copy its complete prompt, and paste it into the AI you prefer. '
+         'The instructions and lesson material are already written and included. '
+         'No prompt writing or assembly is required. These are optional extensions after your regular practice.')
 NOTICE = ('Copying sends nothing to an AI. Only the published lesson material is included, not your notes or answers. '
           'Check AI explanations against the lesson; AI can make mistakes. Your chosen service may have its own fees and privacy rules.')
 
@@ -80,26 +80,6 @@ def grammar_prompts(c):
     return [prompt(mode, context) for mode in ['grammar', 'dialogue', 'review']]
 
 
-def work_context(t, m):
-    return {'course': t['title'], 'lesson': m['title'], 'study_level': 'B2; shorten to B1 if needed',
-        'goal': m['workshop']['goal'], 'fictional_case': m['brief'],
-        'vocabulary': m['vocabulary'], 'grammar_and_communication': m['workshop']['explanation'],
-        'useful_expressions': m['workshop']['frames'], 'listener_role': m['workshop']['role_b']}
-
-
-def work_prompts(t, m):
-    return [prompt(mode, work_context(t, m), boundary=WORK_BOUNDARY) for mode in ['vocabulary', 'grammar', 'dialogue', 'message']]
-
-
-def work_print_prompt(t, kind):
-    # One complete, course-specific starter per printed guide; every lesson has its own web extensions.
-    mode = ['teacher', 'grammar', 'dialogue', 'vocabulary'][kind]
-    context = work_context(t, t['modules'][0])
-    if kind == 3:
-        context['vocabulary'] = t['jargon'][:6]
-    return prompt(mode, context, boundary=WORK_BOUNDARY)
-
-
 def e(value):
     return html.escape(str(value), quote=True)
 
@@ -108,7 +88,7 @@ def panel(key, prompts, *, heading=3):
     cards = []
     for item in prompts:
         ident = f'{key}-{item["mode"]}'
-        cards.append(f'''<article class="ai-prompt-card" data-ai-card><h{heading}>{e(item['title'])}</h{heading}><p>{e(item['description'])}</p><details class="ai-prompt-preview"><summary>Read the prompt</summary><pre id="{e(ident)}" class="ai-prompt-text" tabindex="0">{e(item['text'])}</pre></details><button type="button" class="secondary-button ai-copy" data-ai-copy="{e(ident)}" aria-label="Copy prompt: {e(item['title'])}" hidden>Copy prompt</button><p class="ai-copy-status" data-ai-status role="status" aria-live="polite"></p></article>''')
+        cards.append(f'''<article class="ai-prompt-card" data-ai-card><h{heading}>{e(item['title'])}</h{heading}><p>{e(item['description'])}</p><details class="ai-prompt-preview"><summary>Read the prompt</summary><pre id="{e(ident)}" class="ai-prompt-text" tabindex="0">{e(item['text'])}</pre></details><button type="button" class="secondary-button ai-copy" data-ai-copy-text="{e(ident)}" aria-label="Copy prompt: {e(item['title'])}" hidden>Copy prompt</button><p class="ai-copy-status" data-ai-copy-status role="status" aria-live="polite"></p></article>''')
     return f'''<details class="ai-extension" id="{e(key)}" data-ai-extension><summary><span class="ai-extension-label">Extend this lesson with AI</span><span class="ai-extension-hint">Copy a guided practice prompt</span></summary><div class="ai-extension-body"><p>{INTRO}</p><div class="ai-prompt-grid">{''.join(cards)}</div><p class="ai-extension-note">{NOTICE}</p><noscript><p>Open “Read the prompt”, select its text, and copy it manually.</p></noscript></div></details>'''
 
 
@@ -142,7 +122,7 @@ def enhance_page(soup, path, prefix):
     """Idempotently publish extensions from curriculum text, never learner inputs."""
     from bs4 import BeautifulSoup
     # Rebuild our blocks so future changes to lesson wording cannot leave stale prompts.
-    for old in soup.select('[data-ai-extension], [data-ai-library-link]'):
+    for old in soup.select('[data-ai-extension], [data-ai-library-link], [data-ai-ready]'):
         old.decompose()
     def append(parent, key, prompts, heading=3):
         parent.append(BeautifulSoup(panel(key, prompts, heading=heading), 'html.parser').details)
@@ -156,10 +136,11 @@ def enhance_page(soup, path, prefix):
     if path.name.startswith('efsp-'):
         t = tracks_by_slug().get(path.stem.removeprefix('efsp-'))
         if t:
-            for m in t['modules']:
-                module = soup.find(id=m['id'])
-                if module:
-                    append(module.select_one('.work-module-body') or module, 'ai-' + m['id'], work_prompts(t, m), 4)
+            workshop = soup.select_one('[data-ai-workshop]')
+            if workshop:
+                ready=soup.new_tag('p',attrs={'data-ai-ready':'','class':'ai-library-link'})
+                ready.string='Ready to paste: the complete prompt is already written for you, including the selected lesson or dialogue. Choose an activity and copy it; no prompt writing or assembly is required.'
+                workshop.select_one('.work-section-heading').insert_after(ready)
             glossary = soup.find(id='vocabulary')
             if glossary:
                 append(glossary, 'ai-field-vocabulary', [prompt('vocabulary', {'course': t['title'], 'study_level': 'B1-B2', 'vocabulary': t['jargon']}, boundary=WORK_BOUNDARY)])
@@ -216,7 +197,7 @@ def build_library():
         ('Study tools', 'tools.html', 'Extend sentence work, pronunciation, tone, and reading skills.'),
         ('Review', 'continue.html', 'Return to what you learned and try a guided retrieval session.')]
     cards = ''.join(f'<article class="library-card"><h2><a href="{href}">{label}</a></h2><p>{description}</p></article>' for label, href, description in links)
-    body = f'''<section class="page-hero"><p class="eyebrow">A next step for every lesson</p><h1>Take your English further with AI</h1><p>Ready for another example, a new conversation, or a fresh challenge? Use a carefully written prompt that carries your lesson into the AI you prefer.</p></section><section class="reading-width"><h2>Three simple steps</h2><ol><li>Finish an activity, then open <strong>Extend this lesson with AI</strong>.</li><li>Choose a focus. Read the prompt if you like, then select <strong>Copy prompt</strong>.</li><li>Paste it into your chosen AI. Choose A, B, or C as it guides you through practice.</li></ol><p>The prompts ask for short explanations, one question at a time, and feedback on your choice. They preserve the lesson's meaning and ask the AI to distinguish a genuine mistake from another natural way of saying something.</p><p>{NOTICE}</p><p>You can use the lessons without AI. If copying is unavailable, open the prompt and select its text manually. The PDF guides also include a complete prompt and a link to their lesson extensions.</p></section><section><h2>Find prompts in your curriculum</h2><div class="library-grid">{cards}</div></section>'''
+    body = f'''<section class="page-hero"><p class="eyebrow">A next step for every lesson</p><h1>Take your English further with AI</h1><p>Ready for another example, a new conversation, or a fresh challenge? Use a carefully written prompt that carries your lesson into the AI you prefer.</p></section><section class="reading-width"><h2>Three simple steps</h2><ol><li>Finish an activity, then open <strong>Extend this lesson with AI</strong>.</li><li>Choose a focus. Read the prompt if you like, then select <strong>Copy prompt</strong>.</li><li>Paste it into your chosen AI and follow the guided activity. Grammar checks use A, B, or C; workplace prompts also support original conversation and writing practice.</li></ol><p>The prompts ask for focused explanations, staged practice, and feedback tied to your response. They preserve the lesson's meaning and ask the AI to distinguish a genuine mistake from another natural way of saying something.</p><p>{NOTICE}</p><p>You can use the lessons without AI. If copying is unavailable, open the prompt and select its text manually. The PDF guides also include a complete prompt and a link to their lesson extensions.</p></section><section><h2>Find prompts in your curriculum</h2><div class="library-grid">{cards}</div></section>'''
     path = ROOT/'ai-practice.html'
     path.write_text(document('AI practice prompts', body))
     decorate_page(path)

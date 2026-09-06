@@ -4,6 +4,7 @@ Read-only with respect to PDFs. Writes a compact JSON report to docs/.
 Requires requirements-documents.txt plus pdfplumber for geometry checks.
 """
 from concurrent.futures import ProcessPoolExecutor
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -48,7 +49,7 @@ def audit_one(item):
                 failures=sorted(set(failures)), page_details=pages)
 
 
-def main():
+def main(output='docs/work-document-audit-2026-09-05.json'):
     manifest=json.loads((ROOT/'content/work/documents.json').read_text())
     assert manifest['content_hash']==content_hash(), 'Regenerate documents after curriculum changes'
     with ProcessPoolExecutor(max_workers=4) as pool:
@@ -56,9 +57,12 @@ def main():
     failures=[{'path':r['path'],'issues':r['failures']} for r in rows if r['failures']]
     summary=dict(files=len(rows),pages=sum(r['pages'] for r in rows),words=sum(r['words'] for r in rows),
                  all_fonts_embedded=all(all(f[1] for f in r['fonts']) for r in rows),failures=failures)
-    (ROOT/'docs/work-document-audit-2026-09-05.json').write_text(json.dumps(dict(summary=summary,documents=rows),indent=2)+'\n')
+    (ROOT/output).write_text(json.dumps(dict(summary=summary,documents=rows),indent=2)+'\n')
     print(json.dumps(summary,indent=2))
     if failures:raise SystemExit(1)
 
 
-if __name__=='__main__':main()
+if __name__=='__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--output', default='docs/work-document-audit-2026-09-05.json', help='JSON audit report path relative to the repository.')
+    main(parser.parse_args().output)

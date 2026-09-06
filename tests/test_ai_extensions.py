@@ -1,4 +1,5 @@
 import unittest
+import json
 from pathlib import Path
 from bs4 import BeautifulSoup
 
@@ -22,13 +23,13 @@ class AIExtensionTests(unittest.TestCase):
         for t in load_tracks():
             soup = BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
             self.assertTrue(soup.select_one('#vocabulary #ai-field-vocabulary'))
+            data=json.loads(soup.select_one('[data-ai-data]').text)
             for m in t['modules']:
-                prompts = soup.find(id=m['id']).select('.ai-prompt-text')
-                self.assertEqual(4, len(prompts))
-                for node in prompts:
-                    self.assertIn(m['brief'], node.text)
-                    self.assertIn(m['vocabulary'][0]['definition'], node.text)
-                    self.assertIn('not professional advice', node.text)
+                self.assertEqual(4, len(soup.find(id=m['id']).select('[data-ai-preset]')))
+                self.assertFalse(soup.find(id=m['id']).select('[data-ai-extension]'))
+                context=next(c['text'] for c in data['contexts'] if c['id']==m['id'])
+                self.assertIn(m['brief'], context)
+                self.assertIn(m['vocabulary'][0]['definition'], context)
 
     def test_reading_everyday_tools_and_review_coverage(self):
         paths = [*ROOT.glob('news/*/*.html'), *ROOT.glob('stories/*/*.html'), *[ROOT/(level+'.html') for level in ['beginner','intermediate','advanced']]]
@@ -75,16 +76,18 @@ class AIExtensionTests(unittest.TestCase):
             soup = BeautifulSoup(ai.panel('test', [item]), 'html.parser')
             self.assertFalse(soup.select('img,textarea,input'))
             self.assertIn('<img src=x', soup.pre.text)
-            self.assertTrue(soup.select_one('[data-ai-copy]').has_attr('hidden'))
+            self.assertTrue(soup.select_one('[data-ai-copy-text]').has_attr('hidden'))
             self.assertTrue(soup.select_one('noscript'))
 
     def test_print_prompts_are_tailored_to_the_guide_purpose(self):
-        t = load_tracks()[0]
-        for kind, mode in enumerate(['teacher', 'grammar', 'dialogue', 'vocabulary']):
-            item = ai.work_print_prompt(t, kind)
-            self.assertEqual(mode, item['mode'])
-            self.assertIn(t['modules'][0]['brief'], item['text'])
-            self.assertIn(t['title'], item['text'])
+        c=load_curriculum()[34]
+        student=ai.grammar_prompts(c)[0]
+        teacher=ai.prompt('teacher',{'lesson':c['title'],'grammar_focus':c['rules']})
+        self.assertIn('question 1 only',student['text'])
+        self.assertIn('teacher-only answer key',teacher['text'])
+        for item in [student,teacher]:
+            self.assertIn(c['title'],item['text'])
+            self.assertIn(c['rules'][0],item['text'])
 
     def test_a_new_daily_lesson_gets_fresh_prompts_when_published(self):
         from copy import deepcopy

@@ -1,9 +1,9 @@
 /* Copy published, inspectable prompt text. No AI requests, account, or draft access. */
 (() => {
-  document.querySelectorAll('[data-ai-copy]').forEach(button => {
+  document.querySelectorAll('[data-ai-copy-text]').forEach(button => {
     const card = button.closest('[data-ai-card]');
-    const prompt = document.getElementById(button.dataset.aiCopy);
-    const status = card?.querySelector('[data-ai-status]');
+    const prompt = document.getElementById(button.dataset.aiCopyText);
+    const status = card?.querySelector('[data-ai-copy-status]');
     if (!prompt || !status) return;
     button.hidden = false;
     button.addEventListener('click', async () => {

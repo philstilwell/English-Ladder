@@ -187,20 +187,12 @@ All 44 grammar lessons now use four multiple-choice activities each (176 in tota
 
 The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and saved-choice restoration.
 
-## Search and sharing metadata
+## Search publishing and complete work prompts
 
-`seo.py` derives search titles, descriptions, canonical addresses, social previews, breadcrumb navigation, and structured lesson information from the published curriculum. Level editions have distinct titles and remain independently indexable. Grammar and work pages identify their actual topics and linked PDF editions. Lesson photographs and saved daily illustrations are reused with their captions and credits; this publishing code never calls an image generator or another paid service.
+Every indexable page has a distinct title and description, canonical address, sharing metadata, and structured data appropriate to its actual content. Six professional subject pages and `sitemap.html` provide ordinary links through the curriculum. `sitemap.xml` points to five maps covering HTML lessons and PDFs. `content/seo-index.json` preserves modification dates across unchanged rebuilds; keep it in version control.
 
-The homepage describes the site before introducing its current featured story. Contextual grammar links help readers continue with related teaching material. Repeated AI tutor instructions are excluded from search snippets using `data-nosnippet`, while their full copyable text remains available to readers. `continue.html` and `404.html` use `noindex, follow`; the ordinary lessons remain indexable.
+Run `python3 seo.py` to refresh search metadata and discovery pages, or use the normal editorial build. `python3 audit_seo.py` verifies metadata, structured-data references, indexing policy, category coverage, reachability, and the complete sitemap inventory. The publishing workflow runs it before saving generated pages.
 
-The final publishing pass builds `sitemap.xml` from the canonical public pages and their linked PDF guides, including visible lesson images. `content/seo-state.json` records a content fingerprint and modification date. Rebuilding the same material or updating a relative age label does not advance its date. First-seen PDF dates are omitted because the publisher has no reliable original modification date; subsequent byte changes are tracked. Keep this state file in version control so daily runs retain those dates.
+`python3 generate_efsp_web_pages.py` also publishes complete prompts beneath each work lesson and for every Conversation Lab dialogue. The 41 downloadable collections in `prompts/work/` contain fully assembled prompts with their actual reference material. `work_ready_prompts.py` handles this presentation without changing the shared PDF prompt source. Read the [September 6 audit and maintenance notes](docs/seo-improvements-2026-09-06.md) for scope, checks, and remaining search-performance measurements.
 
-After editing any curriculum, generator, or search configuration, finish with:
-
-```bash
-python3 update_site.py --refresh-pages
-python3 audit_site.py
-python3 -m unittest discover -s tests -p 'test_*.py'
-```
-
-The scheduled publisher uses the same path and commits the search state with the new lessons. The audit rejects duplicate titles/descriptions, incorrect canonical addresses, missing sharing images, invalid breadcrumb correspondence, and sitemap omissions. `python3 seo.py` prints the dedicated search audit. See [the September 2026 search release](docs/seo-improvements-2026-09-06.md) for the baseline, scope, and measurement limits.
+`seo_lessons.py` supplies existing credited lesson imagery, the related-grammar map, and content fingerprints that ignore elapsed-age labels and runtime status text. News search titles include their release date so future stories can reuse a headline without duplicating metadata. The final sitemap pass synchronizes page modification dates and includes lesson images in the XML maps.

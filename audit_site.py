@@ -6,7 +6,8 @@ from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parent
 
 def audit():
-    failures=[];paths=sorted([*ROOT.glob('*.html'),*ROOT.glob('grammar-concepts/*.html'),*ROOT.glob('stories/*/*.html'),*ROOT.glob('news/*/*.html')]);documents={}
+    from seo import published_pages
+    failures=[];paths=published_pages();documents={}
     for path in paths:
         s=BeautifulSoup(path.read_text(),'html.parser');documents[path.resolve()]=s
         if len(s.select('h1'))!=1:failures.append(f'{path.name}: expected one main heading')
@@ -50,8 +51,8 @@ def audit():
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']
             failures.extend(f'{path.name}/{config["name"]}: {issue}' for issue in [*validate_lesson_data(lesson,config),*validate_evidence(lesson,data['source'])])
-    from seo import audit_search
-    audit_search(ROOT)
+    from audit_seo import audit as audit_search
+    audit_search()
     if failures:raise AssertionError('\n'.join(failures[:60]))
     print(f'Passed: {len(paths)} pages, local links, metadata, grammar curriculum, and reviewed news data.')
     return len(paths)

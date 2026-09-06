@@ -51,8 +51,6 @@ def enhance_page(soup,path,prefix):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
     from ai_extensions import enhance_page as enhance_ai
     enhance_ai(soup,path,prefix)
-    from seo import enhance_page as enhance_search
-    enhance_search(soup,path,prefix,ROOT)
     # Give returning readers the current controls instead of cached older files.
     updated_assets={'app.js','learning.js','site.js','tools.js','work.js','us-life.js','styles.css','editorial.css','site.css','work.css','ai-practice.js'}
     for tag in soup.select('script[src],link[rel="stylesheet"][href]'):
@@ -61,6 +59,8 @@ def enhance_page(soup,path,prefix):
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
             version='20260906-seo1' if Path(asset).name in {'site.css','editorial.css'} else ('20260906-ai1' if Path(asset).name=='ai-practice.js' else ('20260906-choices2' if Path(asset).name=='site.js' else '20260906-quality1'))
             tag[attr]=asset+'?v='+version
+    from seo import enhance_page as enhance_search
+    enhance_search(soup,path,prefix)
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page
@@ -112,8 +112,8 @@ def build_information_pages():
             path.write_text(str(s))
 
 def write_sitemap():
-    from seo import publish_search_assets
-    return publish_search_assets(ROOT)
+    from seo import write_sitemaps
+    return write_sitemaps()
 
 def publish_quality_pages():
     from ai_extensions import build_library

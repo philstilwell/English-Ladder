@@ -1,464 +1,413 @@
-"""Search metadata and discovery links derived from the published curriculum.
+"""Offline search publishing: honest metadata, learning-resource graphs and discovery.
 
-Offline only. No invented reviews, qualifications, course enrolments, or dates.
-The final publishing pass writes sitemaps after every page has been decorated.
+No ranking services, AI calls, fabricated reviews, or new PDF exports are involved.
+Run this file after source changes, or use the existing editorial publishing path.
 """
-from collections import Counter
-from datetime import datetime, timezone
+from __future__ import annotations
+
 import hashlib
+import html
 import json
-from pathlib import Path
+import os
 import re
-from urllib.parse import unquote, urljoin, urlparse
-import xml.etree.ElementTree as ET
+from datetime import date
+from functools import lru_cache
+from pathlib import Path
+from urllib.parse import urlparse, urljoin
+from xml.etree import ElementTree as ET
 
 from bs4 import BeautifulSoup
+from PIL import Image
+from seo_content import PAGES, WORK_TOPICS, CATEGORIES, FUNCTION_GRAMMAR
+from seo_lessons import RELATED_GRAMMAR, lesson_image, fingerprint
 
 ROOT = Path(__file__).resolve().parent
 ORIGIN = 'https://englishladder.com/'
 LEVELS = {'beginner': 'A1–A2', 'intermediate': 'B1–B2', 'advanced': 'C1+'}
 NOINDEX = {'404.html', 'continue.html'}
-STATE_PATH = 'content/seo-state.json'
-NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
+SITEMAP_NS = 'http://www.sitemaps.org/schemas/sitemap/0.9'
 IMAGE_NS = 'http://www.google.com/schemas/sitemap-image/1.1'
-
-HUBS = {
-    'index.html': ('Free English Lessons: Grammar, News & Work',
-        'Learn English with daily news at three levels, 44 grammar lessons, workplace conversations, everyday English, free PDF workbooks, and ready-to-copy AI prompts.'),
-    'grammar-concepts.html': ('English Grammar Lessons, Exercises & Free PDFs',
-        'Explore 44 English grammar lessons with clear examples, multiple-choice exercises, answer explanations, free learner workbooks, and teaching guides.'),
-    'efsp.html': ('English for Work: 41 Fields & Free Workbooks',
-        'Practice workplace English in 41 fields with 328 lessons, realistic dialogues, professional vocabulary, AI practice prompts, and 164 free PDF guides.'),
-    'archive.html': ('English News Reading Lessons by Date & Topic',
-        'Browse English news lessons by date, topic, vocabulary, or grammar. Choose beginner, intermediate, or advanced readings with comprehension exercises.'),
-    'tools.html': ('Free English Practice Tools: Grammar, Speaking & Writing',
-        'Practice English grammar, sentence editing, pronunciation, reading, workplace phrases, and formal or casual language with six free study tools.'),
-    'us-life.html': ('Everyday English: 24 Lessons for Life in the US',
-        'Learn everyday English for housing, shopping, transport, appointments, and life in the US. Explore 24 units with useful vocabulary and model conversations.'),
-    'ai-practice.html': ('AI Prompts for Learning English: Ready to Copy',
-        'Copy complete AI prompts for English vocabulary, grammar, reading, workplace dialogues, and review. Lesson context is included; no prompt writing is needed.'),
-    'about.html': ('About English Ladder & Our Teaching Approach',
-        'Meet English Ladder, maintained by Phil Stilwell. Learn how our English lessons are produced, what level labels mean, and how to report a correction.'),
-    'privacy.html': ('Privacy, Saved Practice & Optional AI Use',
-        'Understand how English Ladder handles browser saving, practice notes, recordings, analytics, and optional copy-and-paste AI prompts.'),
-    'photo-credits.html': ('Photo Credits & AI Illustration Information',
-        'Find photographers, source links, and licenses for English Ladder images, plus information about the clearly labeled AI illustrations in daily lessons.'),
-    'continue.html': ('My Learning: Saved English Lessons & Vocabulary',
-        'Return to English lessons and review saved vocabulary on this device. Browser saving is optional and does not create an account.'),
-    '404.html': ('Page Not Found — Find Your English Lesson',
-        'Find an English Ladder lesson by topic or date using the news archive, grammar library, or Discover page.'),
-}
-
-# The relationships are teaching choices, not arbitrary adjacent lesson numbers.
-RELATED_GRAMMAR = {
-    1:[15,19,31], 2:[1,11,19], 3:[6,34,38], 4:[14,9,32], 5:[1,15,29],
-    6:[21,34,38], 7:[33,19,36], 8:[35,26,44], 9:[4,30,32], 10:[3,18,40],
-    11:[2,19,36], 12:[28,25,42], 13:[29,17,41], 14:[4,26,35], 15:[1,16,31],
-    16:[14,15,26], 17:[44,29,36], 18:[25,28,37], 19:[1,2,11], 20:[21,22,31],
-    21:[27,23,37], 22:[20,21,43], 23:[21,27,37], 24:[36,41,9], 25:[18,23,32],
-    26:[14,16,35], 27:[21,23,37], 28:[12,18,42], 29:[13,17,30], 30:[9,29,40],
-    31:[1,15,20], 32:[9,25,30], 33:[7,36,39], 34:[3,6,38], 35:[8,14,26],
-    36:[11,24,42], 37:[21,23,27], 38:[6,34,43], 39:[3,33,36], 40:[10,27,30],
-    41:[13,24,36], 42:[12,28,36], 43:[16,22,38], 44:[8,17,29],
-}
-GRAMMAR_MATCHES = [
-    (r'past perfect',26), (r'past continuous|past progressive',14),
-    (r'could|able to',35), (r'might|possibility|may ',8),
-    (r'cause|because',9), (r'purpose|so that',30), (r'relative clause',12),
-    (r'countable|uncountable',21), (r'quantity|quantifier',23),
-    (r'preposition.*time|in, on|in/on',1), (r'deadline|duration',15),
-    (r'recommend|suggest',17), (r'advice',44), (r'reporting verb|reported speech',36),
-    (r'contrast|although|even though',32), (r'trend|comparative',43),
-]
+ET.register_namespace('', SITEMAP_NS)
+ET.register_namespace('image', IMAGE_NS)
 
 
-def clean(value):
-    return ' '.join(str(value).split())
+def published_pages():
+    return sorted([*ROOT.glob('*.html'), *ROOT.glob('grammar-concepts/*.html'),
+                   *ROOT.glob('english-for-work/*.html'), *ROOT.glob('stories/*/*.html'), *ROOT.glob('news/*/*.html')])
 
 
-def url(relative):
+def canonical(relative):
     return ORIGIN + ('' if relative == 'index.html' else relative)
 
 
-def pages(root=ROOT):
-    return sorted([*root.glob('*.html'), *root.glob('grammar-concepts/*.html'),
-                   *root.glob('stories/*/*.html'), *root.glob('news/*/*.html')])
+def concise(text, limit=185):
+    text = ' '.join(str(text).split())
+    if len(text) <= limit:
+        return text
+    return text[:limit-1].rsplit(' ', 1)[0].rstrip(' ,;:.') + '…'
 
 
-def concepts(root=ROOT):
-    return json.loads((root/'content/grammar-curriculum.json').read_text())['concepts']
+@lru_cache(maxsize=256)
+def _json(path, modified):
+    return json.loads(Path(path).read_text())
 
 
-def reading_data(relative, root=ROOT):
-    parts = Path(relative).parts
-    if len(parts) != 3 or parts[0] not in {'news', 'stories'}:
-        return None, None
-    level = Path(relative).stem
-    if level not in LEVELS:
-        return None, None
-    if parts[0] == 'news':
-        data = json.loads((root/'archive/lessons'/f'{parts[1]}.json').read_text())
-        return data['levels'][level]['lesson'], data
-    from story_lessons import STORIES
-    story = next(s for s in STORIES if s['slug'] == parts[1])
-    return story['levels'][level], None
+def read_json(relative):
+    path = ROOT / relative
+    return _json(str(path), path.stat().st_mtime_ns)
 
 
-def metadata(soup, relative, root=ROOT):
-    heading = clean(soup.h1.get_text(' ', strip=True))
-    info = {'name': heading, 'type': 'WebPage', 'level': '', 'teaches': []}
-    if relative in HUBS:
-        title, description = HUBS[relative]
-        info['name'] = title
-        if relative in {'index.html','grammar-concepts.html','efsp.html','archive.html','ai-practice.html'}:
-            info['type'] = 'CollectionPage'
-        elif relative == 'about.html':
-            info['type'] = 'AboutPage'
-        elif relative in {'tools.html','us-life.html'}:
-            info['resource'] = True
-            info['teaches'] = ['English communication', 'English vocabulary']
-    elif relative in {f'{v}.html' for v in LEVELS}:
-        level = Path(relative).stem
-        title = f'{level.title()} English News Lessons & Reading Practice'
-        description = f'Read the latest seven news lessons in {level} English ({LEVELS[level]}). Build vocabulary, explore grammar, and check comprehension with explained answers.'
-        info.update(type='CollectionPage', level=LEVELS[level], name=title)
+@lru_cache(maxsize=1)
+def tracks():
+    from work_curriculum import load_tracks
+    return {t['slug']: t for t in load_tracks()}
+
+
+def grammar():
+    return {c['number']: c for c in read_json('content/grammar-curriculum.json')['concepts']}
+
+
+def grammar_url(number):
+    return f'grammar-concepts/concept-{number:02d}.html'
+
+
+def category_url(name):
+    return f'english-for-work/{CATEGORIES[name]["slug"]}.html'
+
+
+def local_link(path, relative):
+    return os.path.relpath(ROOT / relative, path.parent).replace(os.sep, '/')
+
+
+def profile(path, soup):
+    relative = path.relative_to(ROOT).as_posix()
+    heading = soup.h1.get_text(' ', strip=True)
+    result = dict(relative=relative, name=heading, kind='page', parent='index.html',
+                  title='', description='', level='', teaches=[], pdfs=[], date='')
+    if relative in PAGES:
+        result['title'], result['description'] = PAGES[relative]
+        if relative in {'index.html', 'efsp.html', 'grammar-concepts.html', 'archive.html', 'sitemap.html', 'ai-practice.html', *[v+'.html' for v in LEVELS]}:
+            result['kind'] = 'collection'
+        if relative == 'about.html': result['kind'] = 'about'
+        if path.stem in LEVELS: result['level'] = LEVELS[path.stem]
+    elif relative.startswith('efsp-'):
+        t = tracks()[path.stem.removeprefix('efsp-')]
+        result.update(kind='work', track=t, parent=category_url(t['category']), level='B1–C1',
+                      title=t['title'] + ': Dialogues & Free PDFs',
+                      description=f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues, exercises and free PDFs.',
+                      teaches=t['outcomes'], pdfs=[(label, href) for label, href in t['pdfs']])
+    elif relative.startswith('english-for-work/'):
+        name, category = next((n,c) for n,c in CATEGORIES.items() if c['slug'] == path.stem)
+        result.update(kind='category', category=name, parent='efsp.html', title=category['title'] + ': Free Courses', description=category['description'])
     elif relative.startswith('grammar-concepts/'):
-        number = int(Path(relative).stem.split('-')[-1])
-        c = concepts(root)[number-1]
-        title = f'{c["title"]}: Grammar & Exercises'
-        description = f'{c["goal"]} {c["level"]} English grammar with examples, multiple-choice exercises, explained answers, and free PDFs.'
-        info.update(resource=True, level=c['level'], teaches=[c['goal']], category=c['category'], number=number)
-    elif relative.startswith('efsp-'):
-        intro = soup.select_one('.work-intro')
-        title = f'{heading}: Lessons & Free PDFs'
-        description = intro.get_text(' ', strip=True)
-        if ' curriculum for ' in description:
-            description = f'Practice {heading} for '+description.split(' curriculum for ',1)[1]
-        description += ' Includes free PDF guides.'
-        info.update(resource=True, level='B1–C1', teaches=[heading])
-    else:
-        lesson, archive = reading_data(relative, root)
-        if lesson:
-            level = Path(relative).stem
-            # Long advanced headlines can use the same story's concise beginner
-            # headline; the visible article heading and teaching text stay intact.
-            headline = archive['levels']['beginner']['lesson']['title'] if archive and len(heading)>65 else heading
-            title = f'{headline} | {level.title()} English'
-            if archive:title += ' · '+archive['release_date']
-            # Describe the lesson, rather than amplifying claims from old reports.
-            when = f' · {Path(relative).parent.name}' if archive else ''
-            description = f'{level.title()} English reading ({LEVELS[level]}){when}: {headline.rstrip(".")}. Includes vocabulary, grammar, and comprehension exercises.'
-            info.update(resource=True, level=LEVELS[level], teaches=[lesson['grammar']['concept'], 'Reading comprehension'], lesson=lesson)
-            if archive:
-                info.update(published=archive['release_date'], source=archive.get('source',{}))
-        else:
-            title = heading
-            p = soup.select_one('main p:not(.eyebrow)')
-            description = p.get_text(' ', strip=True) if p else heading
-    info.update(title=title+' | English Ladder', description=clean(description), canonical=url(relative))
-    return info
-
-
-def breadcrumbs(soup, relative, info):
-    if relative == 'index.html':
-        return []
-    trail = [('English Ladder', ORIGIN)]
-    if relative.startswith('grammar-concepts/'):
-        trail.append(('English grammar', url('grammar-concepts.html')))
-    elif relative.startswith('efsp-'):
-        trail.append(('English for Work', url('efsp.html')))
+        c = grammar()[int(path.stem.split('-')[1])]
+        result.update(kind='grammar', concept=c, parent='grammar-concepts.html', level=c['level'],
+                      title=c['title'] + ': English Grammar Practice',
+                      description=f'{c["goal"]} {c["level"]} English grammar with examples, multiple-choice exercises, explained answers, and free PDFs.',
+                      teaches=[c['goal']], date=c.get('reviewed', ''),
+                      pdfs=[('Learner workbook' if i == 0 else 'Teaching guide', ('pdf/students/' if i == 0 else 'pdf/teachers/')+p) for i,p in enumerate(c['pdfs'])])
     elif relative.startswith('news/'):
-        trail.extend([('News lessons', url('archive.html')),
-                      (Path(relative).stem.title()+' English', url(Path(relative).name))])
+        day = path.parent.name; level = path.stem
+        data = read_json(f'archive/lessons/{day}.json'); lesson = data['levels'][level]['lesson']
+        headline=data['levels']['beginner']['lesson']['title'] if len(lesson['title'])>65 else lesson['title']
+        result.update(kind='news', parent='archive.html', level=LEVELS[level], lesson=lesson, archive=data,
+                      title=f'{headline} | {level.title()} English · {day}',
+                      description=f'{level.title()} English reading ({LEVELS[level]}) · {day}: {headline.rstrip(".")}. Includes vocabulary, grammar, and comprehension exercises.',
+                      teaches=[lesson['grammar']['concept'], *[v['term'] for v in lesson['vocabulary']]],
+                      date=data.get('editorial_review', {}).get('date', lesson.get('editorial_check', {}).get('date', day))[:10])
     elif relative.startswith('stories/'):
-        trail.append(('Everyday English', url('us-life.html')))
-    trail.append((info['name'], info['canonical']))
-    # Replace the old grammar-only trail with the same hierarchy used in schema.
-    for old in soup.select('nav.breadcrumb, [data-seo-breadcrumb]'):
-        old.decompose()
-    nav = soup.new_tag('nav', attrs={'class':'search-breadcrumb','aria-label':'Breadcrumb','data-seo-breadcrumb':''})
-    ol = soup.new_tag('ol')
-    for i,(label,href) in enumerate(trail):
-        li=soup.new_tag('li')
-        child=soup.new_tag('span',attrs={'aria-current':'page'}) if i == len(trail)-1 else soup.new_tag('a',href=urlparse(href).path or '/')
-        child.string=label
-        li.append(child);ol.append(li)
-    nav.append(ol);soup.main.insert(0,nav)
-    return trail
+        from story_lessons import STORIES
+        story = next(s for s in STORIES if s['slug'] == path.parent.name)
+        level = path.stem; lesson = story['levels'][level]
+        topic = {'food-market': 'At the Food Market', 'city-trees': 'Can Trees Cool a City?'}[story['slug']]
+        result.update(kind='story', parent='index.html', story=story, lesson=lesson, level=LEVELS[level],
+                      title=f'{topic} | {level.title()} English Reading',
+                      description=f'{level.title()} English reading practice: {lesson["overview"]} Build vocabulary, study grammar and answer comprehension questions.',
+                      teaches=[lesson['grammar']['concept'], *[v['term'] for v in lesson['vocabulary']]])
+    else:
+        raise ValueError('Add search metadata for new page: ' + relative)
+    result['title'] = result['title'] + ' | English Ladder'
+    result['description'] = ' '.join(result['description'].split())
+    return result
 
 
-def add_related(soup, relative, info, root):
-    for old in soup.select('[data-seo-related]'):
-        old.decompose()
-    numbers = RELATED_GRAMMAR.get(info.get('number'), [])
-    label = 'Build on this grammar'
-    if info.get('lesson'):
-        focus = info['lesson']['grammar']['concept'].lower()
-        numbers = list(dict.fromkeys(n for pattern,n in GRAMMAR_MATCHES if re.search(pattern,focus)))[:2]
-        label = 'Keep practicing this English'
-    if relative.startswith('efsp-'):
-        numbers = [17,30,44]
-        label = 'Useful grammar for work'
-    if not (info.get('resource') or relative in {'index.html','archive.html'}):
-        return
-    curriculum=concepts(root)
-    links=[(url(f'grammar-concepts/concept-{n:02}.html'),curriculum[n-1]['title']) for n in numbers]
-    if info.get('lesson'):
-        links.extend([(url('grammar-concepts.html'),'Explore the grammar library'),(url('archive.html'),'More English reading lessons')])
-    elif not numbers:
-        links=[(url('grammar-concepts.html'),'English grammar exercises'),(url('archive.html'),'English reading practice'),(url('efsp.html'),'Workplace English lessons')]
-        if relative=='us-life.html':
-            links=[(url('stories/food-market/beginner.html'),'English conversation at a food market'),
-                   (url('stories/city-trees/beginner.html'),'Read about trees in the city'),
-                   (url('grammar-concepts.html'),'English grammar exercises')]
-    section=soup.new_tag('section',attrs={'class':'search-related','data-seo-related':''})
-    h=soup.new_tag('h2');h.string=label if numbers or info.get('lesson') else 'Choose your next English lesson';section.append(h)
-    ul=soup.new_tag('ul')
-    for href,text in links:
-        li=soup.new_tag('li');a=soup.new_tag('a',href=urlparse(href).path);a.string=text;li.append(a);ul.append(li)
-    section.append(ul)
-    footer=soup.select_one('.site-footer')
-    footer.insert_before(section) if footer else soup.main.append(section)
+@lru_cache(maxsize=128)
+def _image_size(path, modified):
+    with Image.open(path) as image:
+        return image.size
 
 
-def lesson_image(soup, relative, root):
-    """Use an existing, visible, relevant image. Never generate an image here."""
-    for old in soup.select('[data-seo-lesson-image]'):
-        old.decompose()
-    if relative.startswith('news/'):
-        _, archive = reading_data(relative, root)
-        from daily_images import image_for_lesson
-        image = image_for_lesson(archive, root)
-        if image:
-            figure=soup.new_tag('figure',attrs={'class':'lesson-cover','data-seo-lesson-image':''})
-            figure.append(soup.new_tag('img',src='/'+image['path'],width=image['width'],height=image['height'],alt=image['alt'],loading='lazy',decoding='async'))
-            caption=soup.new_tag('figcaption');caption.string='AI-generated illustration inspired by this lesson; not a photograph of the reported event.';figure.append(caption)
-            soup.select_one('.page-hero').insert_after(figure)
-    elif relative.startswith('stories/'):
-        slug=Path(relative).parent.name
-        credits=json.loads((root/'assets/editorial/credits.json').read_text())
-        credit=next((c for c in credits if c['key']==slug),None)
-        if credit and (root/f'assets/editorial/{slug}.webp').is_file():
-            figure=soup.new_tag('figure',attrs={'class':'lesson-cover','data-seo-lesson-image':''})
-            figure.append(soup.new_tag('img',src=f'/assets/editorial/{slug}.webp',width=credit['width'],height=credit['height'],alt=credit['alt'],loading='lazy',decoding='async'))
-            caption=soup.new_tag('figcaption');caption.append('Photograph by ')
-            link=soup.new_tag('a',href=credit['source_page']);link.string=credit['creator']+' / Unsplash';caption.append(link)
-            caption.append('. ');license_link=soup.new_tag('a',href=credit['license_url']);license_link.string=credit['license'];caption.append(license_link)
-            figure.append(caption);soup.select_one('.page-hero').insert_after(figure)
-    selected=soup.select_one('.feature-photo img, .lesson-cover img, .story-image img, img.story-image')
-    if not selected:
-        selected=next((i for i in soup.select('main img') if 'brand' not in i.get('src','')),None)
-    if selected:
-        return {'url':urljoin(url(relative),selected['src']), 'width':int(selected['width']),
-                'height':int(selected['height']), 'caption':selected.get('alt','')}
-    return {'url':url('assets/brand/ladder-mark.png'),'width':256,'height':256,'caption':'English Ladder logo'}
+def share_image(path, soup, p):
+    # Use an existing image only where it really represents the visible page.
+    image = soup.select_one('.feature-photo img, .lesson-cover img, .reading-photo img, .daily-lesson img.daily-news-image')
+    if image:
+        src = urlparse(image.get('src', '')).path
+        target = (ROOT / src.lstrip('/') if src.startswith('/') else path.parent / src).resolve()
+        if target.is_relative_to(ROOT) and target.is_file():
+            width, height = _image_size(str(target), target.stat().st_mtime_ns)
+            if width >= 600:
+                return dict(url=canonical(target.relative_to(ROOT).as_posix()), width=width, height=height, alt=image.get('alt',''), large=True)
+    return dict(url=ORIGIN+'assets/brand/ladder-mark.png', width=256, height=256,
+                alt='English Ladder: free English lessons and practice', large=False)
 
 
-def collection_items(soup, relative):
-    selectors={
-        'grammar-concepts.html':'.library-card h2 a', 'efsp.html':'[data-work-course-link]',
-        'archive.html':'.library-card h2 a', 'ai-practice.html':'article h2 a',
-        'index.html':'.path-link, .explore-story',
-    }
-    selector=selectors.get(relative,'.permanent-lesson-link a' if relative in {f'{v}.html' for v in LEVELS} else '')
-    items=[]
-    if selector:
-        for a in soup.select(selector):
-            href=urljoin(url(relative),a['href'])
-            title=a.select_one('h2,h3')
-            name=title.get_text(' ',strip=True) if title else a.get_text(' ',strip=True)
-            if relative in {f'{v}.html' for v in LEVELS}:
-                owner=a.find_parent('details',class_='daily-lesson')
-                name=owner.select_one('.lesson-title-text').get_text(' ',strip=True)
-            items.append({'@type':'ListItem','position':len(items)+1,'name':name,'url':href})
-    return items
+def breadcrumbs(p):
+    if p['relative'] == 'index.html': return []
+    chain = [('English lessons', 'index.html')]
+    if p['kind'] == 'work':
+        chain += [('English for Work', 'efsp.html'), (CATEGORIES[p['track']['category']]['title'], p['parent'])]
+    elif p['parent'] != 'index.html':
+        names = {'efsp.html': 'English for Work', 'grammar-concepts.html': 'Grammar lessons', 'archive.html': 'News lesson archive'}
+        chain.append((names[p['parent']], p['parent']))
+    chain.append((p['name'], p['relative']))
+    return chain
 
 
-def schema(soup, relative, info, trail, image, root):
-    canonical=info['canonical']
-    organization={'@type':'Organization','@id':ORIGIN+'#organization','name':'English Ladder',
-                  'url':ORIGIN,'logo':{'@type':'ImageObject','url':url('assets/brand/ladder-mark.png'),'width':256,'height':256}}
-    website={'@type':'WebSite','@id':ORIGIN+'#website','url':ORIGIN,'name':'English Ladder',
-             'alternateName':'EnglishLadder','inLanguage':'en','publisher':{'@id':ORIGIN+'#organization'}}
-    page={'@type':info['type'],'@id':canonical+'#webpage','url':canonical,'name':info['title'],
-          'description':info['description'],'inLanguage':'en','isPartOf':{'@id':ORIGIN+'#website'}}
-    graph=[organization,website,page]
-    if trail:
-        node={'@type':'BreadcrumbList','@id':canonical+'#breadcrumb','itemListElement':[
-            {'@type':'ListItem','position':i+1,'name':label,'item':href} for i,(label,href) in enumerate(trail)]}
-        graph.append(node);page['breadcrumb']={'@id':node['@id']}
-    image_node={'@type':'ImageObject','@id':canonical+'#primaryimage',**image,'contentUrl':image['url']}
-    graph.append(image_node);page['primaryImageOfPage']={'@id':image_node['@id']}
-    if info.get('resource'):
-        resource={'@type':'LearningResource','@id':canonical+'#lesson','name':info['name'],
-                  'description':info['description'],'url':canonical,'inLanguage':'en','isAccessibleForFree':True,
-                  'learningResourceType':'English language lesson','teaches':info['teaches'],
-                  'provider':{'@id':ORIGIN+'#organization'},'mainEntityOfPage':{'@id':page['@id']}}
-        if info.get('level'):resource['educationalLevel']=info['level']
-        if info.get('published'):resource['datePublished']=info['published']
-        source=info.get('source',{}).get('link','')
-        if source.startswith('https://'):resource['citation']=source
-        downloads=[]
-        seen=set()
-        for a in soup.select('a[href]'):
-            href=urljoin(canonical,a['href']).split('?',1)[0]
-            if not href.endswith('.pdf') or not href.startswith(ORIGIN) or href in seen:continue
-            seen.add(href)
-            title=a.select_one('strong')
-            downloads.append({'@type':'LearningResource','name':info['name']+' — '+(title.get_text(' ',strip=True) if title else a.get_text(' ',strip=True)),
-                              'url':href,'encodingFormat':'application/pdf','inLanguage':'en','isAccessibleForFree':True})
-        if downloads:resource['hasPart']=downloads
-        graph.append(resource);page['mainEntity']={'@id':resource['@id']}
-    items=collection_items(soup,relative)
-    if items:
-        listing={'@type':'ItemList','@id':canonical+'#lessons','numberOfItems':len(items),'itemListElement':items}
-        graph.append(listing);page['mainEntity']={'@id':listing['@id']}
+def item_list(items, identity):
+    return {'@type': 'ItemList', '@id': identity, 'numberOfItems': len(items),
+            'itemListElement': [{'@type':'ListItem', 'position':i, 'name':name, 'url':canonical(url)} for i,(name,url) in enumerate(items,1)]}
+
+
+def collection_items(p, soup):
+    if p['kind'] == 'category':
+        return [(t['title'], f'efsp-{t["slug"]}.html') for t in tracks().values() if t['category'] == p['category']]
+    if p['relative'] == 'efsp.html':
+        return [(t['title'], f'efsp-{t["slug"]}.html') for t in tracks().values()]
+    if p['relative'] == 'grammar-concepts.html':
+        return [(c['title'], grammar_url(n)) for n,c in grammar().items()]
+    if p['relative'] in {'archive.html', *[v+'.html' for v in LEVELS]}:
+        level = Path(p['relative']).stem
+        level = level if level in LEVELS else 'beginner'
+        files = sorted((ROOT/'archive/lessons').glob('*.json'), reverse=True)
+        if p['relative'] != 'archive.html': files = files[:7]
+        return [(read_json(f'archive/lessons/{f.name}')['levels'][level]['lesson']['title'], f'news/{f.stem}/{level}.html') for f in files]
+    if p['relative'] in {'index.html', 'sitemap.html'}:
+        return [('English grammar', 'grammar-concepts.html'), ('English for Work', 'efsp.html'),
+                ('English news lessons', 'archive.html'), ('Everyday English in the US', 'us-life.html'), ('English practice tools', 'tools.html')]
+    return []
+
+
+def structured_data(p, soup, image):
+    url = canonical(p['relative']); website = ORIGIN+'#website'; publisher = ORIGIN+'#publisher'
+    graph = [
+        {'@type':'Organization', '@id':publisher, 'name':'English Ladder', 'url':ORIGIN,
+         'logo':{'@type':'ImageObject','url':ORIGIN+'assets/brand/ladder-mark.png','width':256,'height':256}},
+        {'@type':'WebSite','@id':website,'name':'English Ladder','url':ORIGIN,'inLanguage':'en','publisher':{'@id':publisher}},
+    ]
+    page_type = 'CollectionPage' if p['kind'] in {'category','collection'} else ('AboutPage' if p['kind']=='about' else 'WebPage')
+    page = {'@type':page_type,'@id':url+'#webpage','url':url,'name':p['title'],
+            'description':p['description'],'inLanguage':'en','isPartOf':{'@id':website},'publisher':{'@id':publisher}}
+    if image['large']:
+        page['primaryImageOfPage'] = {'@type':'ImageObject','url':image['url'],'width':image['width'],'height':image['height'],'caption':image['alt']}
+    crumbs = breadcrumbs(p)
+    if crumbs:
+        page['breadcrumb'] = {'@id':url+'#breadcrumbs'}
+        graph.append({'@type':'BreadcrumbList','@id':url+'#breadcrumbs','itemListElement':[
+            {'@type':'ListItem','position':i,'name':name,'item':canonical(href)} for i,(name,href) in enumerate(crumbs,1)]})
+    if p['kind'] in {'work', 'grammar', 'news', 'story'}:
+        # Independent self-study materials do not claim Google's instructor-led
+        # Course-list eligibility, ratings, qualifications or enrollment counts.
+        resource = {'@type':'LearningResource','@id':url+'#learning-resource','url':url,
+                    'name':p['name'],'description':p['description'],'inLanguage':'en','isAccessibleForFree':True,
+                    'educationalLevel':p['level'],'learningResourceType':{'work':'Workplace English course materials','grammar':'Grammar lesson','news':'News-based English reading lesson','story':'English reading lesson'}[p['kind']],
+                    'teaches':p['teaches'],'publisher':{'@id':publisher}, 'mainEntityOfPage':{'@id':url+'#webpage'}}
+        if p['date']: resource['dateModified'] = p['date']
+        if p['kind'] == 'news':
+            resource['datePublished'] = p['archive'].get('release_iso', p['archive']['release_date'])
+            source = p['archive'].get('source',{})
+            if source.get('link'): resource['citation'] = source['link']
+        if p['kind'] == 'grammar': resource['timeRequired'] = 'PT15M'
+        if p['kind'] == 'story': resource['timeRequired'] = 'PT5M'
+        if p['kind'] == 'work':
+            resource['hasPart'] = [{'@type':'LearningResource','name':m['title'],'url':url+'#'+m['id'],
+                'learningResourceType':'Workplace case lesson','teaches':m['workshop']['goal']} for m in p['track']['modules']]
+        if p['pdfs']:
+            resource['encoding'] = [{'@type':'MediaObject','name':label,'contentUrl':canonical(href),'encodingFormat':'application/pdf'} for label,href in p['pdfs']]
+        page['mainEntity'] = {'@id':resource['@id']}; graph.append(resource)
+    else:
+        items = collection_items(p,soup)
+        if items:
+            listing = item_list(items,url+'#lesson-list'); graph.append(listing); page['mainEntity'] = {'@id':listing['@id']}
+    graph.append(page)
     return {'@context':'https://schema.org','@graph':graph}
 
 
-def write_schema(soup, data):
-    for old in soup.select('script[data-seo-schema]'):
-        old.decompose()
-    tag=soup.new_tag('script',type='application/ld+json',attrs={'data-seo-schema':''})
-    # Prevent lesson text containing a closing script tag from escaping JSON-LD.
-    tag.string=json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
-    soup.head.append(tag)
+def add_navigation(soup, path, p):
+    for node in soup.select('[data-seo-breadcrumbs], [data-seo-breadcrumb], [data-seo-related], .work-breadcrumb, nav.breadcrumb'):
+        node.decompose()
+    crumbs = breadcrumbs(p)
+    if crumbs and p['relative'] not in NOINDEX:
+        nav = soup.new_tag('nav', attrs={'class':'seo-breadcrumbs','aria-label':'Breadcrumb','data-seo-breadcrumbs':''})
+        ol = soup.new_tag('ol'); nav.append(ol)
+        for index,(name,href) in enumerate(crumbs):
+            li = soup.new_tag('li')
+            if index == len(crumbs)-1:
+                label = soup.new_tag('span',attrs={'aria-current':'page'}); label.string=name
+            else:
+                label = soup.new_tag('a',href=local_link(path,href)); label.string=name
+            li.append(label); ol.append(li)
+        soup.main.insert(0,nav)
+    links = []
+    if p['kind'] == 'grammar':
+        links=[(grammar()[n]['title'],grammar_url(n)) for n in RELATED_GRAMMAR[p['concept']['number']]]
+        heading,intro='Build on this grammar','Compare a related pattern, then apply it in a new situation.'
+    elif p['kind'] == 'work':
+        numbers = []
+        for m in p['track']['modules']:
+            for number in FUNCTION_GRAMMAR.get(m['function'],[]):
+                if number not in numbers: numbers.append(number)
+        links = [(grammar()[n]['title'], grammar_url(n)) for n in numbers[:4]]
+        heading, intro = 'Grammar for your workplace conversations', 'Review a language pattern, then use it in a case from this course.'
+    elif p['kind'] in {'news','story'}:
+        # Explicit term matching avoids misleading automatic topic associations.
+        target = p['lesson']['grammar']['concept'].casefold()
+        for term,number in [('recently',16),('lately',16),('past perfect',26),('even if',32),('even though',32),('relative clause',12),('causal',9),('cause and effect',9),('could',35),('able to',35),('might',8),('suggest',17),('recommend',17)]:
+            if term in target and (grammar()[number]['title'],grammar_url(number)) not in links:
+                links.append((grammar()[number]['title'],grammar_url(number)))
+        if not links: links=[('Explore all 44 grammar lessons', 'grammar-concepts.html')]
+        links += [('Choose another news lesson', 'archive.html'), ('Practice everyday conversations', 'us-life.html')]
+        heading, intro = 'Keep practicing your English', 'Choose a grammar lesson or another reading activity for your next session.'
+    if links:
+        section = soup.new_tag('section',attrs={'class':'seo-related','data-seo-related':''})
+        h = soup.new_tag('h2');h.string=heading;section.append(h)
+        text = soup.new_tag('p');text.string=intro;section.append(text)
+        ul = soup.new_tag('ul')
+        for name,href in links:
+            li=soup.new_tag('li');a=soup.new_tag('a',href=local_link(path,href));a.string=name;li.append(a);ul.append(li)
+        section.append(ul)
+        footer=soup.select_one('.site-footer')
+        if footer: footer.insert_before(section)
+        else: soup.main.append(section)
+    footer=soup.select_one('.site-footer')
+    if footer and not footer.select_one('[data-all-lessons]'):
+        link=soup.new_tag('a',href=local_link(path,'sitemap.html'),attrs={'data-all-lessons':''});link.string='All lessons';footer.append(link)
 
 
-def enhance_page(soup, path, prefix, root=ROOT):
-    relative=path.relative_to(root).as_posix()
-    info=metadata(soup,relative,root)
-    soup.title.string=info['title']
-    soup.html['lang']='en'
-    for old in soup.select('meta[name="description"],link[rel="canonical"],meta[property^="og:"],meta[name^="twitter:"],meta[name="robots"]'):
-        old.decompose()
-    soup.head.append(soup.new_tag('link',rel='canonical',href=info['canonical']))
-    image=lesson_image(soup,relative,root)
-    tags=[('name','description',info['description']),('name','robots','noindex, follow' if relative in NOINDEX else 'index, follow, max-image-preview:large'),
-          ('property','og:title',info['title']),('property','og:description',info['description']),
-          ('property','og:url',info['canonical']),('property','og:type','website'),('property','og:site_name','English Ladder'),
-          ('property','og:locale','en_US'),('property','og:image',image['url']),
-          ('property','og:image:width',str(image['width'])),('property','og:image:height',str(image['height'])),('property','og:image:alt',image['caption']),
-          ('name','twitter:card','summary_large_image' if image['width']>=600 else 'summary'),
-          ('name','twitter:title',info['title']),('name','twitter:description',info['description']),
-          ('name','twitter:image',image['url']),('name','twitter:image:alt',image['caption'])]
-    for key,name,value in tags:soup.head.append(soup.new_tag('meta',attrs={key:name,'content':value}))
-    for a in soup.select('a[href]'):
-        href=urljoin(info['canonical'],a['href'])
-        if href == ORIGIN+'index.html':a['href']='/'
-    # Keep repeated tutor instructions out of snippets without hiding lessons.
-    for node in soup.select('.ai-extension-body, [data-ai-workshop]'):
-        node['data-nosnippet']=''
-    trail=breadcrumbs(soup,relative,info)
-    add_related(soup,relative,info,root)
-    write_schema(soup,schema(soup,relative,info,trail,image,root))
+def enhance_page(soup, path, prefix):
+    path=Path(path);p=profile(path,soup);url=canonical(p['relative'])
+    lesson_image(soup,p['relative'],ROOT)
+    image=share_image(path,soup,p)
+    soup.title.string=p['title']
+    for selector in ['meta[name="description"]','meta[name="robots"]','link[rel="canonical"]','meta[property^="og:"]','meta[name^="twitter:"]','script[data-seo-schema]']:
+        for node in soup.select(selector):node.decompose()
+    def meta(name,value,property=False):
+        soup.head.append(soup.new_tag('meta',attrs={'property' if property else 'name':name,'content':str(value)}))
+    meta('description',p['description'])
+    meta('robots','noindex, follow' if p['relative'] in NOINDEX else 'index, follow, max-image-preview:large')
+    soup.head.append(soup.new_tag('link',rel='canonical',href=url))
+    for name,value in {'title':p['title'],'description':p['description'],'url':url,'type':'website','site_name':'English Ladder',
+                       'locale':'en_US','image':image['url'],'image:width':image['width'],'image:height':image['height'],'image:alt':image['alt']}.items():
+        meta('og:'+name,value,True)
+    for name,value in {'card':'summary_large_image' if image['large'] else 'summary','title':p['title'],'description':p['description'],'image':image['url'],'image:alt':image['alt']}.items():
+        meta('twitter:'+name,value)
+    write_schema(soup,structured_data(p,soup,image))
+    if not soup.select_one('link[href*="seo.css"]'):
+        soup.head.append(soup.new_tag('link',rel='stylesheet',href=prefix+'seo.css?v=20260906-seo1'))
+    for section in soup.select('section[data-ai-workshop], [data-ai-extension] .ai-extension-body'): section['data-nosnippet']=''
+    add_navigation(soup,path,p)
+    for link in soup.select('a[href]'):
+        if urljoin(url,link['href'])==ORIGIN+'index.html':link['href']='/'
 
 
-def fingerprint(soup):
-    # Relative lesson ages and runtime status text do not make an article new.
-    main=BeautifulSoup(str(soup.main),'html.parser')
-    for tag in main.select('.lesson-age, [role="status"], .site-footer, script, input, textarea'):
-        tag.decompose()
-    meaningful=[soup.title.get_text(),soup.select_one('meta[name="description"]')['content'],main.get_text(' ',strip=True),
-                [(i.get('src'),i.get('alt')) for i in main.select('img')],
-                [a.get('href') for a in main.select('a[href]')]]
-    return hashlib.sha256(json.dumps(meaningful,ensure_ascii=False,sort_keys=True).encode()).hexdigest()
+def write_schema(soup,data):
+    for old in soup.select('script[data-seo-schema]'):old.decompose()
+    script=soup.new_tag('script',type='application/ld+json',attrs={'data-seo-schema':''})
+    script.string=json.dumps(data,ensure_ascii=False,separators=(',',':')).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
+    soup.head.append(script)
 
 
-def publish_search_assets(root=ROOT, today=None):
-    today=today or datetime.now(timezone.utc).date().isoformat()
-    state_path=root/STATE_PATH
-    old=json.loads(state_path.read_text()).get('pages',{}) if state_path.exists() else {}
-    state={};urls=[];pdfs=set()
-    for path in pages(root):
-        relative=path.relative_to(root).as_posix()
-        soup=BeautifulSoup(path.read_text(),'html.parser')
-        if relative in NOINDEX:continue
-        digest=fingerprint(soup)
-        previous=old.get(relative,{})
-        # This first release meaningfully revises descriptions, navigation, and lessons.
-        modified=previous['modified'] if previous.get('sha256')==digest else today
-        state[relative]={'sha256':digest,'modified':modified}
-        tag=soup.select_one('script[data-seo-schema]')
-        data=json.loads(tag.string)
-        for node in data['@graph']:
-            if node['@type'] in {'WebPage','CollectionPage','AboutPage','LearningResource'}:
-                node['dateModified']=modified
-        write_schema(soup,data)
-        path.write_text(str(soup),encoding='utf-8')
-        images=[urljoin(url(relative),i['src']) for i in soup.select('main img[src]') if 'brand/' not in i['src']]
-        urls.append((url(relative),modified,sorted(set(images))))
-        for a in soup.select('a[href]'):
-            link=urljoin(url(relative),a['href']).split('?',1)[0]
-            if link.startswith(ORIGIN) and link.endswith('.pdf'):pdfs.add(link)
-    # Include only publicly linked, existing guides. PDF dates use their own bytes.
-    for link in sorted(pdfs):
-        relative=unquote(link[len(ORIGIN):]);path=root/relative
-        if not path.is_file():raise ValueError(f'Missing linked PDF: {relative}')
-        digest=hashlib.sha256(path.read_bytes()).hexdigest();previous=old.get(relative,{})
-        modified=previous['modified'] if previous.get('sha256')==digest else (today if previous else None)
-        state[relative]={'sha256':digest,'modified':modified}
-        # First-seen PDFs have no inferred publication/update date.
-        urls.append((link,modified,[]))
-    ET.register_namespace('',NS);ET.register_namespace('image',IMAGE_NS)
-    tree=ET.Element(f'{{{NS}}}urlset')
-    for address,modified,images in sorted(urls):
-        item=ET.SubElement(tree,f'{{{NS}}}url');ET.SubElement(item,f'{{{NS}}}loc').text=address
-        if modified:ET.SubElement(item,f'{{{NS}}}lastmod').text=modified
-        for source in images:
-            image=ET.SubElement(item,f'{{{IMAGE_NS}}}image');ET.SubElement(image,f'{{{IMAGE_NS}}}loc').text=source
+def build_category_pages():
+    from editorial import document, decorate_page
+    target=ROOT/'english-for-work';target.mkdir(exist_ok=True)
+    for name,c in CATEGORIES.items():
+        group=[t for t in tracks().values() if t['category']==name]
+        cards=''.join(f'<a class="work-course-card" href="../efsp-{t["slug"]}.html"><span class="work-kicker">8 lessons · 4 free guides</span><h3>{html.escape(t["title"])}</h3><p>{html.escape(t["summary"])}</p><span class="work-card-footer">Explore lessons and dialogues →</span></a>' for t in group)
+        grammar_links=''.join(f'<li><a href="../{grammar_url(n)}">{html.escape(grammar()[n]["title"])}</a></li>' for n in c['grammar'])
+        body=f'''<section class="page-hero"><p class="eyebrow">English for Work · {len(group)} professional fields</p><h1>{html.escape(c['title'])}</h1><p>{html.escape(c['intro'])}</p></section>
+<section class="work-section work-two-column"><div><h2>Choose the work you do</h2><p>{html.escape(c['choose'])}</p></div><div><h2>Make the practice practical</h2><p>{html.escape(c['practice'])}</p></div></section>
+<section class="work-section"><h2>Your professional English courses</h2><p>Each course includes eight cases, vocabulary and grammar, complete professional dialogues, speaking and writing practice, four printable guides and AI extension prompts.</p><div class="work-course-grid">{cards}</div></section>
+<section class="work-section work-two-column"><div><h2>Grammar you can use at work</h2><ul>{grammar_links}</ul></div><div><h2>Choose your support</h2><p>These materials suit intermediate to advanced learners. Use B1 sentence frames for support, B2 practice for independence, or C1 challenges for greater precision. These are study suggestions, not certified level assessments.</p><p><a href="../efsp.html">Browse all 41 English for Work courses →</a></p></div></section>'''
+        page=target/(c['slug']+'.html')
+        page.write_text(document(c['title'],body,'theme-efsp work-page','../','efsp.html').replace('</head>','<link rel="stylesheet" href="../work.css?v=20260906-quality1"></head>'))
+        decorate_page(page)
+
+
+def build_html_sitemap():
+    from editorial import document,decorate_page
+    def links(items):return '<ul>'+''.join(f'<li><a href="{href}">{html.escape(name)}</a></li>' for name,href in items)+'</ul>'
+    body='<section class="page-hero"><p class="eyebrow">Find your next lesson</p><h1>Browse all English lessons</h1><p>Choose a subject, profession or reading level. Lessons and printable guides are free to use without an English Ladder account.</p></section>'
+    body+='<section class="seo-directory"><h2>Reading, conversation and practice</h2>'+links([(PAGES[p][0],p) for p in ['beginner.html','intermediate.html','advanced.html','archive.html','us-life.html','tools.html','ai-practice.html']])+links([('Food market: beginner reading','stories/food-market/beginner.html'),('Food market: intermediate reading','stories/food-market/intermediate.html'),('Food market: advanced reading','stories/food-market/advanced.html'),('City trees: beginner reading','stories/city-trees/beginner.html'),('City trees: intermediate reading','stories/city-trees/intermediate.html'),('City trees: advanced reading','stories/city-trees/advanced.html')])+'</section>'
+    body+='<section class="seo-directory"><h2>English grammar lessons</h2><p><a href="grammar-concepts.html">Search and filter all 44 grammar topics</a></p>'+links([(c['title'],grammar_url(n))for n,c in grammar().items()])+'</section>'
+    body+='<section class="seo-directory"><h2>English for Work</h2>'
+    for name,c in CATEGORIES.items():
+        body+=f'<h3><a href="{category_url(name)}">{html.escape(c["title"])}</a></h3>'+links([(t['title'],f'efsp-{t["slug"]}.html')for t in tracks().values()if t['category']==name])
+    body+='</section>'
+    path=ROOT/'sitemap.html';path.write_text(document('Browse all English lessons',body));decorate_page(path)
+
+
+def xml_write(path, tree):
     ET.indent(tree,space='  ')
-    ET.ElementTree(tree).write(root/'sitemap.xml',encoding='utf-8',xml_declaration=True)
-    (root/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: '+ORIGIN+'sitemap.xml\n')
-    state_path.parent.mkdir(parents=True,exist_ok=True)
-    state_path.write_text(json.dumps({'version':1,'pages':state},sort_keys=True,indent=2)+'\n')
-    return len(urls)
+    path.parent.mkdir(parents=True,exist_ok=True)
+    ET.ElementTree(tree).write(path,encoding='utf-8',xml_declaration=True)
+    with path.open('ab') as out:out.write(b'\n')
 
 
-def audit_search(root=ROOT):
-    failures=[];titles=Counter();descriptions=Counter();expected=set();count=0
-    for path in pages(root):
-        relative=path.relative_to(root).as_posix();s=BeautifulSoup(path.read_text(),'html.parser');count+=1
-        for selector in ['title','meta[name="description"]','link[rel="canonical"]','meta[name="robots"]','script[data-seo-schema]',
-                         'meta[property="og:image"]','meta[name="twitter:card"]']:
-            if len(s.select(selector))!=1:failures.append(f'{relative}: expected one {selector}')
-        if not s.select_one('script[data-seo-schema]'):continue
-        canonical=s.select_one('link[rel="canonical"]')['href']
-        if canonical != url(relative):failures.append(f'{relative}: incorrect canonical')
-        if relative not in NOINDEX:
-            titles[s.title.get_text()]+=1;descriptions[s.select_one('meta[name="description"]')['content']]+=1;expected.add(canonical)
-        elif 'noindex' not in s.select_one('meta[name="robots"]')['content']:failures.append(f'{relative}: must not be indexed')
-        data=json.loads(s.select_one('script[data-seo-schema]').string)
-        if data.get('@context')!='https://schema.org':failures.append(f'{relative}: invalid schema context')
-        ids=[node['@id'] for node in data['@graph']]
-        if len(ids)!=len(set(ids)):failures.append(f'{relative}: duplicate schema identifiers')
-        for node in data['@graph']:
-            if node['@type']=='BreadcrumbList':
-                visible=[n.get_text(' ',strip=True) for n in s.select('[data-seo-breadcrumb] li')]
-                if visible!=[n['name'] for n in node['itemListElement']]:failures.append(f'{relative}: breadcrumb mismatch')
-            if node['@type'] in {'Course','NewsArticle','FAQPage','AggregateRating'}:failures.append(f'{relative}: unsupported claim in schema')
-            for field in ['datePublished','dateModified']:
-                if field in node:
-                    try:datetime.strptime(node[field],'%Y-%m-%d')
-                    except ValueError:failures.append(f'{relative}: invalid {field}')
-        preview=s.select_one('meta[property="og:image"]')['content']
-        if not preview.startswith(ORIGIN) or not (root/unquote(preview[len(ORIGIN):])).is_file():
-            failures.append(f'{relative}: missing local sharing image')
-        if s.select_one('meta[property="og:url"]')['content']!=canonical:failures.append(f'{relative}: sharing/canonical URL mismatch')
-        for a in s.select('a[href]'):
-            link=urljoin(canonical,a['href']).split('?',1)[0]
-            if link.startswith(ORIGIN) and link.endswith('.pdf'):expected.add(link)
-    failures.extend(f'Duplicate title ({n}): {title}' for title,n in titles.items() if n>1)
-    failures.extend(f'Duplicate description ({n}): {desc}' for desc,n in descriptions.items() if n>1)
-    tree=ET.parse(root/'sitemap.xml');locations=[n.text for n in tree.findall(f'{{{NS}}}url/{{{NS}}}loc')]
-    if len(locations)!=len(set(locations)):failures.append('Duplicate sitemap URLs')
-    if set(locations)!=expected:failures.append(f'Sitemap differs from indexable pages/linked guides: {set(locations)^expected}')
-    for node in tree.findall(f'{{{NS}}}url/{{{IMAGE_NS}}}image/{{{IMAGE_NS}}}loc'):
-        if not node.text.startswith(ORIGIN) or not (root/unquote(node.text[len(ORIGIN):])).is_file():failures.append(f'Missing sitemap image: {node.text}')
-    if failures:raise AssertionError('\n'.join(failures[:50]))
-    return {'html_pages':count,'indexable_html_pages':len(titles),'sitemap_urls':len(locations),
-            'duplicate_titles':0,'duplicate_descriptions':0,'failures':[]}
+def write_sitemaps(today=None):
+    today=today or date.today().isoformat()
+    manifest_path=ROOT/'content/seo-index.json'
+    previous=json.loads(manifest_path.read_text()).get('resources',{}) if manifest_path.exists() else {}
+    records={};groups={name:[] for name in ['pages','work','grammar','reading','pdfs']};images={}
+    def add(relative,content,group,initial_date=''):
+        fingerprint=hashlib.sha256(content).hexdigest();old=previous.get(relative,{})
+        modified=old.get('lastmod') if old.get('sha256')==fingerprint else (initial_date if not old and initial_date else today)
+        records[relative]={'sha256':fingerprint,'lastmod':modified}
+        groups[group].append((canonical(relative),modified))
+    for path in published_pages():
+        relative=path.relative_to(ROOT).as_posix()
+        soup=BeautifulSoup(path.read_text(),'html.parser')
+        robots=soup.select_one('meta[name="robots"]')
+        if relative in NOINDEX or (robots and 'noindex' in robots.get('content','')):continue
+        can=soup.select_one('link[rel="canonical"]')
+        if not can or can['href']!=canonical(relative):raise ValueError('Noncanonical sitemap page: '+relative)
+        # Deployment timestamps and file mtimes never enter the index. A fresh
+        # checkout or an unchanged daily rebuild leaves lastmod untouched.
+        content=fingerprint(soup).encode()
+        group='work' if relative.startswith(('efsp','english-for-work/')) else 'grammar' if relative.startswith('grammar-concepts') else 'reading' if relative.startswith(('news/','stories/')) else 'pages'
+        add(relative,content,group)
+        images[canonical(relative)]=sorted({urljoin(canonical(relative),i['src']) for i in soup.select('main img[src]') if 'brand/' not in i['src']})
+        schema_tag=soup.select_one('[data-seo-schema]')
+        if schema_tag:
+            data=json.loads(schema_tag.string)
+            for node in data['@graph']:
+                if node['@type'] in {'WebPage','CollectionPage','AboutPage','LearningResource'}:node['dateModified']=records[relative]['lastmod']
+            write_schema(soup,data);path.write_text(str(soup))
+    work=read_json('content/work/documents.json')
+    pdfs={p:meta.get('ai_prompt_edition',work['revision']) for p,meta in work['documents'].items()}
+    for c in grammar().values():
+        pdfs.update({('pdf/students/' if i == 0 else 'pdf/teachers/')+p:c.get('reviewed','') for i,p in enumerate(c['pdfs'])})
+    for path,modified in sorted(pdfs.items()):add(path,(ROOT/path).read_bytes(),'pdfs',modified)
+    index=ET.Element('{'+SITEMAP_NS+'}sitemapindex')
+    for name,items in groups.items():
+        tree=ET.Element('{'+SITEMAP_NS+'}urlset')
+        for url,modified in sorted(items):
+            node=ET.SubElement(tree,'{'+SITEMAP_NS+'}url');ET.SubElement(node,'{'+SITEMAP_NS+'}loc').text=url;ET.SubElement(node,'{'+SITEMAP_NS+'}lastmod').text=modified
+            for source in images.get(url,[]):
+                item=ET.SubElement(node,'{'+IMAGE_NS+'}image');ET.SubElement(item,'{'+IMAGE_NS+'}loc').text=source
+        relative=f'sitemaps/{name}.xml';target=ROOT/relative
+        xml_write(target,tree)
+        node=ET.SubElement(index,'{'+SITEMAP_NS+'}sitemap');ET.SubElement(node,'{'+SITEMAP_NS+'}loc').text=canonical(relative)
+        # Child maps omit index lastmod rather than invent a file publication date.
+    xml_write(ROOT/'sitemap.xml',index)
+    manifest_path.write_text(json.dumps({'resources':records},indent=2,sort_keys=True)+'\n')
+    (ROOT/'robots.txt').write_text('User-agent: *\nAllow: /\n\nSitemap: '+ORIGIN+'sitemap.xml\n')
+    return {name:len(items) for name,items in groups.items()}
 
 
-if __name__=='__main__':
-    print(json.dumps(audit_search(),indent=2))
+def main():
+    from editorial import decorate_page
+    build_category_pages();build_html_sitemap()
+    for path in published_pages():decorate_page(path)
+    print('Published search metadata:',len(published_pages()),'pages;',write_sitemaps())
+
+
+if __name__ == '__main__':main()

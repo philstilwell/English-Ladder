@@ -20,12 +20,20 @@ on:
       - 'site.js'
       - 'site.css'
       - 'site_quality.py'
-      - 'seo.py'
       - 'ai_extensions.py'
       - 'ai-practice.js'
       - 'news_quality.py'
       - 'publish_snapshot.py'
       - 'audit_site.py'
+      - 'audit_seo.py'
+      - 'seo.py'
+      - 'seo_lessons.py'
+      - 'seo_content.py'
+      - 'seo.css'
+      - 'work_ready_prompts.py'
+      - 'work-ready.js'
+      - 'work-ai.css'
+      - 'generate_efsp_web_pages.py'
       - 'story_lessons.py'
       - 'assets/editorial/**'
   schedule:
@@ -141,7 +149,9 @@ jobs:
           python update_site.py "${args[@]}"
 
       - name: Check generated pages
-        run: python audit_site.py
+        run: |
+          python audit_site.py
+          python audit_seo.py
 
       - name: Commit updated lesson pages
         env:
@@ -159,7 +169,8 @@ jobs:
             python publish_snapshot.py restore "${lesson_snapshot}"
             python update_site.py --refresh-pages
             python audit_site.py
-            git add beginner.html intermediate.html advanced.html index.html photo-credits.html archive assets/news news archive.html lesson-data.json sitemap.xml robots.txt content/seo-state.json about.html privacy.html continue.html 404.html
+            python audit_seo.py
+            git add -- '*.html' archive assets/news lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

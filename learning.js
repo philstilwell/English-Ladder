@@ -53,7 +53,7 @@
       if (index > 0) {
         const back = document.createElement("button");
         back.type = "button";
-        back.className = "primary-button";
+        back.className = "secondary-button";
         back.textContent = "← " + (index === 1 ? "Read again" : "Back to practice");
         back.addEventListener("click", () => showStage(index - 1, true));
         actions.append(back);
@@ -69,6 +69,13 @@
           message.hidden = false;
           next.textContent = "Completed ✓";
           next.disabled = true;
+          window.dispatchEvent(new CustomEvent("lesson-practiced", { detail: { lesson } }));
+          if (!panel.querySelector(".next-study")) {
+            const link = document.createElement("a"); link.className = "next-study text-link";
+            const root = new URL(document.querySelector("script[src*=\"site.js\"]")?.src || "site.js", location.href);
+            link.href = new URL("archive.html", root).href; link.textContent = "Choose another story →";
+            panel.append(link);
+          }
         }
       });
       actions.append(next);

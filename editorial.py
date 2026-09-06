@@ -90,6 +90,11 @@ def enhance_lesson(lesson, lesson_data=None, source=None):
     practice.insert(0, fragment(f'<p class="practice-progress" role="status" aria-live="polite">0 of {quiz_count} questions answered</p>').p)
     questions = "".join(f'<li>{html.escape(str(prompt))}</li>' for prompt in prompts)
     discuss.append(fragment(f'<section class="discussion"><h2>Share your ideas</h2><ol>{questions}</ol><p>Try using two words from the story. You can speak to a partner or practice on your own.</p><label for="notes-{key}">Your ideas (optional)</label><textarea id="notes-{key}" placeholder="I think… / One thing I learned is…"></textarea><p class="note-hint">These notes stay on this page. They are not sent or saved.</p><p class="completion-message" role="status" hidden>Lesson complete. You have read the story, practiced, and shared your ideas.</p></section>').section)
+    if source:
+        topic_text = " ".join(str(source.get(k,"")) for k in ("title","summary")).lower()
+        sensitive = any(word in topic_text for word in ("murder", "deaths", "killed", "death toll", "deport", "attack"))
+        if sensitive:
+            read.insert(0, fragment('<aside class="archive-notice"><strong>Choose what you read.</strong> This report includes distressing events. You can choose an everyday story on Discover instead.</aside>').aside)
     if source and safe_url(source.get("link", "")):
         read.append(fragment(f'<p class="lesson-source">Source: <a href="{html.escape(safe_url(source["link"]), quote=True)}" target="_blank" rel="noopener noreferrer">{html.escape(source.get("name") or "Original report")} ↗</a></p>').p)
     content.extend([read, practice, discuss])
@@ -118,7 +123,7 @@ def decorate_page(path):
     soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
     if not soup.head or not soup.body or not soup.find("main"):
         return
-    prefix = "../" * len(path.relative_to(ROOT).parent.parts)
+    prefix = "/" if path.name == "404.html" else "../" * len(path.relative_to(ROOT).parent.parts)
     if not soup.find("link", href=re.compile(r"(^|/)editorial\.css(?:\?|$)")):
         soup.head.append(fragment(f'<link rel="stylesheet" href="{prefix}editorial.css">').link)
     for element in soup.select(".site-header, .skip-link"):
@@ -195,12 +200,14 @@ def decorate_page(path):
             archive = ROOT / "archive" / "lessons" / f"{key}.json"
             data = json.loads(archive.read_text()) if archive.is_file() else {}
             enhance_lesson(lesson, data.get("levels", {}).get(level, {}).get("lesson"), data.get("source"))
-        if not soup.select_one('script[src$="learning.js"]'):
+        if not soup.select_one('script[src*="learning.js"]'):
             soup.head.append(fragment(f'<script defer src="{prefix}learning.js"></script>').script)
     if soup.title:
         for old, new in LABELS.items():
             if old in soup.title.get_text():
                 soup.title.string = soup.title.get_text().replace(old, new)
+    from site_quality import enhance_page
+    enhance_page(soup, path, prefix)
     path.write_text(str(soup), encoding="utf-8")
 
 
@@ -302,7 +309,9 @@ def publish_editorial_pages():
     build_homepage()
     build_stories()
     build_credits()
-    for path in [*ROOT.glob("*.html"), *ROOT.glob("grammar-concepts/*.html")]:
+    from site_quality import publish_quality_pages
+    publish_quality_pages()
+    for path in [*ROOT.glob("*.html"), *ROOT.glob("grammar-concepts/*.html"), *ROOT.glob("stories/*/*.html")]:
         decorate_page(path)
 
 

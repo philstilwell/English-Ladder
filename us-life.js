@@ -2,6 +2,7 @@
     const STORAGE_KEY = "englishLadder.usLife.explanationLanguage";
 
     const languages = {
+        en: { label: "English only", lang: "en" },
         ja: {
             label: "Japanese",
             lang: "ja",
@@ -529,6 +530,9 @@
     }
 
     function renderExplanation(container, languageKey) {
+        container.hidden = languageKey === "en";
+        container.closest(".us-life-module")?.classList.toggle("english-only", languageKey === "en");
+        if (languageKey === "en") return;
         const moduleKey = container.dataset.explanation;
         const language = languages[languageKey] || languages.ja;
         const explanation = explanations[moduleKey]?.[languageKey] || explanations[moduleKey]?.ja;
@@ -569,7 +573,7 @@
         }
 
         const storedLanguage = getStoredLanguage();
-        const initialLanguage = languages[storedLanguage] ? storedLanguage : "ja";
+        const initialLanguage = languages[storedLanguage] ? storedLanguage : "en";
         select.value = initialLanguage;
         renderLanguage(initialLanguage);
 
@@ -580,5 +584,29 @@
         });
     }
 
+    const picker = document.querySelector("#life-language-select");
+    if (picker && !picker.querySelector('option[value="en"]')) { const option = document.createElement("option"); option.value="en"; option.textContent="English only"; picker.prepend(option); }
     setupLanguageSelector();
+    const units = [...document.querySelectorAll(".us-life-module")];
+    if (units.length) {
+        const nav=document.createElement("nav"); nav.className="life-unit-controls"; nav.setAttribute("aria-label","Choose an everyday English unit");
+        const label=document.createElement("label"); label.textContent="Study unit ";
+        const select=document.createElement("select"); select.setAttribute("aria-label","Study unit");
+        units.forEach((unit,index)=>{const option=document.createElement("option"); option.value=unit.id; option.textContent=`${index+1}. ${unit.querySelector("h2").textContent}`; select.append(option);});
+        label.append(select);nav.append(label); document.querySelector(".us-life-module-stack").before(nav);
+        const show=(id,focus=false)=>{ const active=units.find(u=>u.id===id)||units[0]; units.forEach(u=>{u.hidden=u!==active;}); select.value=active.id; if(focus){active.querySelector("h2").tabIndex=-1;active.querySelector("h2").focus();active.scrollIntoView({block:"start"});} };
+        select.addEventListener("change",()=>{location.hash=select.value;});
+        window.addEventListener("hashchange",()=>show(location.hash.slice(1),true));
+        units.forEach((unit,index)=>{
+            const practice=document.createElement("section");practice.className="life-practice";
+            const heading=document.createElement("h3");heading.textContent="Try the conversation";
+            const prompt=document.createElement("p");prompt.textContent="Read the dialogue with a partner or aloud on your own. Change one detail to fit your life. Then cover it and ask one useful question.";
+            const model=document.createElement("p");model.textContent="Start with: "+(explanations[unit.id]?.ja?.practice||"Could you help me, please?");
+            const check=document.createElement("p");check.textContent="Self-check: Did you make your request clear? Could your partner understand the detail you changed?";
+            practice.append(heading,prompt,model,check);
+            if(index+1<units.length){const next=document.createElement("a");next.className="primary-button";next.href="#"+units[index+1].id;next.textContent="Next unit →";practice.append(next);}
+            unit.append(practice);
+        });
+        show(location.hash.slice(1));
+    }
 })();

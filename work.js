@@ -66,7 +66,17 @@
       storageStatus.textContent = 'Saving is off and the saved copy was removed. Your current draft remains on this page.';
     } catch (_) { storageStatus.textContent = 'Saving is off, but this browser could not remove the saved copy. Use browser site-data settings to remove it.'; }
   });
-  course.querySelector('[data-clear-work]').addEventListener('click', () => {
+  course.querySelector('[data-clear-work]').addEventListener('click', event => {
+    const before = {notes: notes.map(n => n.value), complete: complete.map(n => n.checked), enabled: saveToggle.checked};
+    course.querySelector('[data-undo-work]')?.remove();
+    const undo = document.createElement('button'); undo.type='button'; undo.className='work-button work-button-secondary'; undo.dataset.undoWork=''; undo.textContent='Undo clear';
+    undo.addEventListener('click', () => {
+      notes.forEach((note,i) => { note.value=before.notes[i]; updateCount(note); });
+      complete.forEach((input,i) => { input.checked=before.complete[i]; });
+      saveToggle.checked=before.enabled; canStore=true; updateProgress();
+      storageStatus.textContent='Drafts and progress restored on this page.'; save(); undo.remove();
+    });
+    event.target.after(undo);
     notes.forEach(note => { note.value = ''; updateCount(note); });
     complete.forEach(input => { input.checked = false; });
     saveToggle.checked = false;

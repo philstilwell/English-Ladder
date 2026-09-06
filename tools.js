@@ -1,38 +1,8 @@
 (() => {
     const fallbackLessons = {
-        beginner: {
-            headline: "International Cooperation on Naval Technology",
-            brief: "The USA, UK, and Australia are working together. They will develop new underwater drones. The new drones will protect important undersea cables. The drones will also boost naval defence.",
-            vocabulary: [
-                { term: "technology", definition: "New machines or methods made using science." },
-                { term: "military pact", definition: "An official agreement between countries about their armies." },
-                { term: "undersea cables", definition: "Long wires under the ocean that carry information or power." },
-                { term: "boost", definition: "To help something become better or stronger." },
-                { term: "naval defence", definition: "Protection for a country's ships and navy." },
-            ],
-        },
-        intermediate: {
-            headline: "Naval Technology and International Defence Collaboration",
-            brief: "The United States, United Kingdom, and Australia are planning to develop new underwater drone technology together. This initiative falls under the Aukus military pact, a security agreement among the three nations. The primary goal is to protect critical undersea data cables and boost naval defence capabilities.",
-            vocabulary: [
-                { term: "develop", definition: "To create something new or improve something over time." },
-                { term: "technology", definition: "The application of scientific knowledge for practical purposes." },
-                { term: "pact", definition: "A formal agreement or treaty." },
-                { term: "aimed at", definition: "Intended for a particular purpose or goal." },
-                { term: "naval defence", definition: "Protection of a country's sea borders and naval forces." },
-            ],
-        },
-        advanced: {
-            headline: "Advanced Undersea Drone Technology for Defence",
-            brief: "The AUKUS security alliance has announced a significant initiative to jointly develop sophisticated underwater drone technology. The undertaking aims to safeguard critical undersea communication cables, bolster naval defence capabilities, and provide persistent surveillance in contested waters.",
-            vocabulary: [
-                { term: "strategic imperative", definition: "A crucial goal or need with long-term consequences." },
-                { term: "bolster naval defence", definition: "To strengthen the capabilities of a navy." },
-                { term: "maritime domain awareness", definition: "Understanding activities and events in the maritime environment." },
-                { term: "deterring potential adversaries", definition: "Discouraging possible enemies from taking hostile action." },
-                { term: "underpinning security", definition: "Providing the foundation for safety and protection." },
-            ],
-        },
+        beginner: {headline: "A different way to work · practice scenario", brief: "Mina usually takes the bus to work. Today she rides her bike. The weather is dry, and she has time. Tomorrow she may take the bus again."},
+        intermediate: {headline: "Choosing a morning journey · practice scenario", brief: "Mina usually commutes by bus, but today she cycles because the weather is dry. She leaves early so she can travel at a comfortable pace. She will decide how to travel tomorrow after checking the weather."},
+        advanced: {headline: "A flexible commute · practice scenario", brief: "Although Mina normally commutes by bus, dry weather gives her an opportunity to cycle today. Leaving earlier lets her avoid rushing. Her choice is provisional: she will check tomorrow's conditions before deciding whether to cycle again."},
     };
 
     const conceptPaths = {
@@ -122,7 +92,7 @@
             prompt: "Choose the natural sentence.",
             options: [
                 { text: "Few people attended the meeting.", correct: true },
-                { text: "Little people attended the meeting.", weakness: "quantity" },
+                { text: "A few person attended the meeting.", weakness: "quantity" },
                 { text: "Much people attended the meeting.", weakness: "quantity" },
             ],
         },
@@ -198,6 +168,8 @@
         recorder: null,
         recordChunks: [],
         recordStream: null,
+        recordingUrl: null,
+        recordingPending: false,
     };
 
     const $ = (selector, root = document) => root.querySelector(selector);
@@ -243,33 +215,21 @@
             .slice(0, 8);
     }
 
-    async function loadLesson(level) {
-        try {
-            const response = await fetch(`${level}.html`, { cache: "no-store" });
-            if (!response.ok) {
-                throw new Error("Lesson page unavailable");
-            }
-            const html = await response.text();
-            const doc = new DOMParser().parseFromString(html, "text/html");
-            const current = doc.querySelector(".daily-lesson");
-            const headline = current?.querySelector(".lesson-title-text")?.textContent?.trim() || fallbackLessons[level].headline;
-            const brief = current?.querySelector(".section p")?.textContent?.trim() || fallbackLessons[level].brief;
-            return {
-                headline,
-                brief,
-            };
-        } catch (_error) {
-            return fallbackLessons[level];
-        }
-    }
-
     async function hydrateLessons() {
-        const levels = ["beginner", "intermediate", "advanced"];
-        const loaded = await Promise.all(levels.map((level) => loadLesson(level)));
-        levels.forEach((level, index) => {
-            state.lessons[level] = loaded[index];
-        });
-        populateSentenceSelects();
+        if (state.hydrated) return;
+        if (state.lessonLoading) return state.lessonLoading;
+        state.lessonLoading = (async () => {
+            try {
+                const response = await fetch("lesson-data.json");
+                if (!response.ok) throw new Error("Lesson data unavailable");
+                const data = await response.json();
+                if (!["beginner", "intermediate", "advanced"].every(level => typeof data[level]?.brief === "string" && typeof data[level]?.headline === "string")) throw new Error("Incomplete lesson data");
+                for (const level of ["beginner", "intermediate", "advanced"]) state.lessons[level] = data[level];
+                state.hydrated = true;
+            } catch (_) { /* The explicitly fictional practice scenario remains available. */ }
+            populateSentenceSelects();
+        })();
+        try { await state.lessonLoading; } finally { state.lessonLoading = null; }
     }
 
     function populateSentenceSelects() {
@@ -335,11 +295,16 @@
             result.innerHTML = `<p class="result-note">Answer at least one question to build a map.</p>`;
             return;
         }
+        if (answered < diagnosticQuestions.length) {
+            const errors = Object.values(scores).reduce((sum, count) => sum + count, 0);
+            result.innerHTML = `<h3>Keep going</h3><p>${answered} of ${diagnosticQuestions.length} answered; ${answered - errors} correct so far. Answer the remaining questions to see suggested topics.</p>`;
+            return;
+        }
         const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
         if (!ranked.length) {
             result.innerHTML = `
-                <h3>Strong diagnostic result</h3>
-                <p class="result-note">You chose the natural sentence each time. Try a higher level daily lesson, then use the Register Transformer for precision work.</p>
+                <h3>All 10 questions correct</h3>
+                <p class="result-note">You answered this short practice check correctly. It is not a placement test. Choose a lesson that feels useful and try applying the grammar in your own writing.</p>
             `;
             return;
         }
@@ -393,7 +358,8 @@
     }
 
     function runSentenceRepair() {
-        let revised = $("#repair-input")?.value.trim() || "";
+        const original = $("#repair-input")?.value.trim() || "";
+        let revised = original;
         const level = $("#repair-level")?.value || "intermediate";
         const issues = [];
 
@@ -403,8 +369,7 @@
 
         function apply(pattern, replacement, issue) {
             if (pattern.test(revised)) {
-                revised = revised.replace(pattern, replacement);
-                addIssue(issue.label, issue.message, issue.href);
+                addIssue(issue.label, issue.message + " Possible wording: “" + revised.replace(pattern, replacement) + "” Check that this keeps your meaning.", issue.href);
             }
         }
 
@@ -468,11 +433,9 @@
             message: "Use many or few with countable plural nouns such as people.",
             href: "grammar-concepts/concept-27.html",
         });
-        apply(/\blittle people\b/gi, "few people", {
-            label: "Few vs little",
-            message: "Use few with countable plural nouns and little with uncountable nouns.",
-            href: "grammar-concepts/concept-27.html",
-        });
+        if (/\blittle people\b/i.test(original)) {
+            addIssue("Few or little?", "Little people can mean small people. If you mean a small number of people, use few people or a few people. Keep little if size is your meaning.", "grammar-concepts/concept-27.html");
+        }
         apply(/\ba advice\b/gi, "some advice", {
             label: "Uncountable noun",
             message: "Advice is usually uncountable, so use some advice or a piece of advice.",
@@ -494,7 +457,7 @@
             <h3>Sentence feedback</h3>
             <div class="before-after">
                 <p><strong>Your sentence</strong><br>${escapeHtml($("#repair-input").value.trim())}</p>
-                <p><strong>Try this sentence</strong><br>${escapeHtml(sentenceCase(revised))}</p>
+                <p><strong>Check the suggestions below</strong><br>Your original text is unchanged. This tool checks a small set of patterns; it does not assess every sentence.</p>
             </div>
             ${issues.length ? `
                 <div class="result-list">
@@ -506,7 +469,7 @@
                         </article>
                     `).join("")}
                 </div>
-            ` : `<p class="result-note">I do not see a common error this tool can fix. ${escapeHtml(extra)}</p>`}
+            ` : `<p class="result-note">None of this tool’s limited patterns matched. This does not certify the sentence as correct. ${escapeHtml(extra)}</p>`}
         `;
     }
 
@@ -538,25 +501,36 @@
 
     async function startRecording() {
         const result = $("#shadow-results");
+        if (state.recordingPending || state.recorder?.state === "recording") return;
+        state.recordingPending = true;
+        state.recordingCancelled = false;
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+            if (state.recordingCancelled) {
+                stream.getTracks().forEach((track) => track.stop());
+                return;
+            }
             state.recordStream = stream;
             state.recordChunks = [];
-            state.recorder = new MediaRecorder(stream);
+            const mimeType = ["audio/webm;codecs=opus", "audio/mp4", "audio/webm"].find((type) => MediaRecorder.isTypeSupported?.(type));
+            state.recorder = new MediaRecorder(stream, mimeType ? { mimeType } : undefined);
+            state.recorder.addEventListener("error", releaseRecording);
             state.recorder.addEventListener("dataavailable", (event) => {
                 if (event.data.size > 0) {
                     state.recordChunks.push(event.data);
                 }
             });
             state.recorder.addEventListener("stop", () => {
-                const blob = new Blob(state.recordChunks, { type: "audio/webm" });
+                if (state.recordingCancelled) { releaseRecording(); return; }
+                const blob = new Blob(state.recordChunks, { type: state.recorder.mimeType || state.recordChunks[0]?.type || "" });
                 const audio = $("#shadow-playback");
                 if (audio) {
-                    audio.src = URL.createObjectURL(blob);
+                    if (state.recordingUrl) URL.revokeObjectURL(state.recordingUrl);
+                    state.recordingUrl = URL.createObjectURL(blob);
+                    audio.src = state.recordingUrl;
                     audio.hidden = false;
                 }
-                state.recordStream?.getTracks().forEach((track) => track.stop());
-                state.recordStream = null;
+                releaseRecording();
                 $("#shadow-record").disabled = false;
                 $("#shadow-stop").disabled = true;
                 if (result) {
@@ -570,11 +544,25 @@
                 result.innerHTML = `<p class="result-note">Recording...</p>`;
             }
         } catch (_error) {
+            releaseRecording();
             if (result) {
                 result.innerHTML = `<p class="result-note">Microphone recording is not available in this browser session.</p>`;
             }
-        }
+        } finally { state.recordingPending = false; }
     }
+
+    function releaseRecording() {
+        state.recordStream?.getTracks().forEach((track) => track.stop());
+        state.recordStream = null;
+        if ($("#shadow-record")) $("#shadow-record").disabled = false;
+        if ($("#shadow-stop")) $("#shadow-stop").disabled = true;
+    }
+    window.addEventListener("pagehide", () => {
+        state.recordingCancelled = true;
+        releaseRecording();
+        if (state.recordingUrl) URL.revokeObjectURL(state.recordingUrl);
+        state.recordingUrl = null;
+    });
 
     function stopRecording() {
         if (state.recorder && state.recorder.state !== "inactive") {
@@ -582,7 +570,8 @@
         }
     }
 
-    function buildNewsTask() {
+    async function buildNewsTask() {
+        await hydrateLessons();
         const level = $("#news-level")?.value || "intermediate";
         const skill = $("#news-skill")?.value || "summary";
         const lesson = state.lessons[level];
@@ -591,14 +580,15 @@
             return;
         }
         const tasks = {
-            summary: [`Write a ${level === "beginner" ? "3" : "5"} sentence summary.`, "Keep the main event, main people, and reason for importance.", "Use two vocabulary words from the lesson."],
+            summary: [`Write a ${level === "beginner" ? "1–2" : "2–3"} sentence summary.`, "Use only information in the story. Leave out details it does not give.", "Preserve words such as may or might when the outcome is uncertain."],
             discussion: ["Prepare three spoken answers.", "What happened?", "Why does it matter?", "What question would you ask next?"],
-            opinion: ["Write one clear opinion paragraph.", "State your view, give one reason, and add one example.", "End with a cautious prediction."],
+            opinion: ["Write one clear opinion paragraph.", "Label your view as an opinion, give one reason, and add an example.", "Separate your own prediction from what the story reports."],
             coworker: ["Explain the story to a coworker in one minute.", "Use simple context first, then the key detail.", "End with why the coworker should care."],
-            email: ["Write a short email update.", "Use a subject line, one context sentence, two key facts, and one next step.", "Keep the tone neutral and professional."],
+            email: ["Write a short email update.", "Use a subject line and a brief summary. Do not invent facts or official advice.", "Keep the tone neutral and professional."],
         };
         result.innerHTML = `
             <h3>${escapeHtml(lesson.headline)}</h3>
+            ${state.hydrated ? "" : `<p class="result-note">The latest news could not be loaded. This fictional scenario is available for practice.</p>`}
             <p>${escapeHtml(lesson.brief)}</p>
             <div class="result-list">
                 <article>
@@ -674,69 +664,47 @@
             result.innerHTML = `<p class="result-note">Enter a sentence first.</p>`;
             return;
         }
-        const base = cleanRegisterBase(input);
-        const transformed = {
-            casual: casualTransform(base),
-            neutral: neutralTransform(base),
-            academic: academicTransform(base),
-            business: businessTransform(base),
-            diplomatic: diplomaticTransform(base),
-        }[target];
+        const examples = {
+            "I think this plan has problems and we need to fix it soon.": {
+                casual: "I think there are problems with this plan. We need to fix them soon.",
+                neutral: "I think this plan has problems that we need to address soon.",
+                academic: "In my view, this plan has problems that require prompt attention.",
+                business: "I think we need to address the problems in this plan soon.",
+                diplomatic: "I think there are problems with this plan that we need to address soon."
+            },
+            "This is wrong and your team must change it.": {
+                casual: "This is wrong. Your team must change it.",
+                neutral: "This is incorrect, and your team must change it.",
+                academic: "This is incorrect and must be changed by your team.",
+                business: "Your team must change this because it is incorrect.",
+                diplomatic: "This is incorrect. Please make the required change with your team."
+            }
+        };
+        const transformed = examples[input]?.[target] || input;
+        const supported = Boolean(examples[input]);
         const moves = registerMoves(target);
         result.innerHTML = `
             <h3>${escapeHtml(registerLabel(target))}</h3>
             <div class="before-after">
                 <p><strong>Original</strong><br>${escapeHtml(input)}</p>
-                <p><strong>Transformed</strong><br>${escapeHtml(transformed)}</p>
+                <p><strong>${supported ? "One possible version" : "Your wording, preserved"}</strong><br>${escapeHtml(transformed)}</p>
             </div>
             <div class="result-list">
                 <article>
-                    <strong>Register moves</strong>
+                    <strong>${supported ? "Compare the choices" : "Guidance for your sentence"}</strong><p>${supported ? "Compare the wording and decide which fits your audience." : "Custom sentences are not automatically rewritten. Use these prompts to revise your own text, or select Use sample to compare edited examples."}</p>
                     <ul>${moves.map((move) => `<li>${escapeHtml(move)}</li>`).join("")}</ul>
                 </article>
             </div>
         `;
     }
 
-    function cleanRegisterBase(value) {
-        return value
-            .replace(/\bthis is wrong\b/gi, "this may need revision")
-            .replace(/\byour team must\b/gi, "your team should")
-            .replace(/\bhas problems\b/gi, "has some issues")
-            .replace(/\bfix it soon\b/gi, "address it soon")
-            .replace(/\bneed to fix\b/gi, "need to address")
-            .replace(/\s+/g, " ")
-            .trim()
-            .replace(/[.!?]+$/, "");
-    }
-
-    function casualTransform(base) {
-        return sentenceCase(base.replace(/\bI think\b/i, "I feel like").replace(/\bneed to\b/gi, "should")) + ".";
-    }
-
-    function neutralTransform(base) {
-        return sentenceCase(base.replace(/\bmust\b/gi, "should").replace(/\bwrong\b/gi, "not accurate")) + ".";
-    }
-
-    function academicTransform(base) {
-        return `The issue can be framed as follows: ${base.toLowerCase()}, which suggests that further analysis and revision may be required.`;
-    }
-
-    function businessTransform(base) {
-        return `There are several points to address here: ${base.toLowerCase()}. We should align on the next steps soon.`;
-    }
-
-    function diplomaticTransform(base) {
-        return `I see some areas we may want to revisit: ${base.toLowerCase()}. It would be helpful to address them together soon.`;
-    }
-
     function registerMoves(target) {
         return {
-            casual: ["Uses shorter wording.", "Sounds more conversational.", "Reduces formal distance."],
+            casual: ["Uses shorter wording.", "Sounds more conversational.", "Keep obligations such as must if they matter."],
             neutral: ["Keeps the message clear.", "Avoids blame.", "Uses standard workplace wording."],
-            academic: ["Adds analytical framing.", "Uses cautious claims.", "Connects the idea to evidence or revision."],
+            academic: ["Use precise words; longer words are not automatically better.", "Keep names, facts, and the original degree of certainty.", "Add evidence only when you have it."],
             business: ["Focuses on action and alignment.", "Names risk without sounding personal.", "Moves toward next steps."],
-            diplomatic: ["Softens criticism.", "Uses shared responsibility.", "Keeps the relationship protected."],
+            diplomatic: ["Softens criticism.", "Do not change who is responsible.", "Keeps the relationship protected."],
         }[target];
     }
 
@@ -757,6 +725,7 @@
                 if (!panel.open) {
                     return;
                 }
+                if (panel.id === "shadowing-studio") hydrateLessons();
                 toolPanels.forEach((otherPanel) => {
                     if (otherPanel !== panel) {
                         otherPanel.open = false;
@@ -809,8 +778,7 @@
         renderDiagnostic();
         wireEvents();
         buildPhraseCoach();
-        buildNewsTask();
+        populateSentenceSelects();
         transformRegister();
-        hydrateLessons();
     });
 })();

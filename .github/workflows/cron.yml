@@ -17,6 +17,12 @@ on:
       - 'editorial.py'
       - 'editorial.css'
       - 'learning.js'
+      - 'site.js'
+      - 'site.css'
+      - 'site_quality.py'
+      - 'news_quality.py'
+      - 'publish_snapshot.py'
+      - 'audit_site.py'
       - 'story_lessons.py'
       - 'assets/editorial/**'
   schedule:
@@ -131,6 +137,9 @@ jobs:
           fi
           python update_site.py "${args[@]}"
 
+      - name: Check generated pages
+        run: python audit_site.py
+
       - name: Commit updated lesson pages
         env:
           GH_TOKEN: ${{ github.token }}
@@ -138,31 +147,16 @@ jobs:
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           lesson_snapshot="$(mktemp -d)"
-          cp beginner.html intermediate.html advanced.html index.html photo-credits.html "${lesson_snapshot}/"
-          mkdir -p "${lesson_snapshot}/assets/news"
-          cp -R assets/news/. "${lesson_snapshot}/assets/news/"
-          if [ -d archive ]; then
-            mkdir -p "${lesson_snapshot}/archive"
-            cp -R archive/. "${lesson_snapshot}/archive/"
-          fi
+          python publish_snapshot.py capture "${lesson_snapshot}"
 
           for attempt in 1 2 3; do
             echo "Preparing lesson update push attempt ${attempt}..."
             git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch origin "${GITHUB_REF_NAME}"
             git reset --hard "origin/${GITHUB_REF_NAME}"
-            cp "${lesson_snapshot}/beginner.html" beginner.html
-            cp "${lesson_snapshot}/intermediate.html" intermediate.html
-            cp "${lesson_snapshot}/advanced.html" advanced.html
-            cp "${lesson_snapshot}/index.html" index.html
-            cp "${lesson_snapshot}/photo-credits.html" photo-credits.html
-            mkdir -p assets/news
-            cp -R "${lesson_snapshot}/assets/news/." assets/news/
-            if [ -d "${lesson_snapshot}/archive" ]; then
-              mkdir -p archive
-              cp -R "${lesson_snapshot}/archive/." archive/
-            fi
-
-            git add beginner.html intermediate.html advanced.html index.html photo-credits.html archive assets/news
+            python publish_snapshot.py restore "${lesson_snapshot}"
+            python update_site.py --refresh-pages
+            python audit_site.py
+            git add beginner.html intermediate.html advanced.html index.html photo-credits.html archive assets/news news archive.html lesson-data.json sitemap.xml robots.txt about.html privacy.html continue.html 404.html
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

@@ -11,6 +11,7 @@ Each PDF includes a linked scenario index, speaker labels, vocabulary or languag
 - All 41 PDFs and 942 pages passed the font, text-boundary, missing-glyph, page-count, checksum, and bookmark audit.
 - Publication checks verify every complete speaking turn appears in the corresponding PDF and reject stale dialogue editions.
 - Rendered covers, index pages, full scripts, technical vocabulary, long headings, and role-play layouts were visually inspected.
+- All 64 Python checks and 34 JavaScript checks passed after combining this work with the latest site release. Desktop and 390-pixel mobile download cards were checked in Chrome, with no horizontal overflow.
 - Corrected inherited shortcuts about Kubernetes probes, recovery objectives, investment losses, accounting timing, and context-dependent legal/regulatory claims.
 - No paid generation services or new external repositories were used.
 

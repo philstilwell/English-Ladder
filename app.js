@@ -117,15 +117,20 @@ function setupConceptImageLightbox() {
     const trigger = document.querySelector(".grammar-image-trigger");
     const lightbox = document.querySelector(".image-lightbox");
 
-    if (!trigger || !lightbox) {
+    if (!trigger || !lightbox || trigger.dataset.lightboxReady === "true") {
         return;
     }
 
+    trigger.dataset.lightboxReady = "true";
     const image = lightbox.querySelector(".image-lightbox-image");
     const closeElements = lightbox.querySelectorAll("[data-lightbox-close]");
     const closeButton = lightbox.querySelector(".image-lightbox-close");
+    let inactive = [];
+    lightbox.querySelector(".image-lightbox-backdrop")?.setAttribute("tabindex", "-1");
 
     function closeLightbox() {
+        inactive.forEach(([element, previous]) => { element.inert = previous; });
+        inactive = [];
         lightbox.hidden = true;
         document.body.classList.remove("lightbox-open");
         if (image) {
@@ -137,7 +142,19 @@ function setupConceptImageLightbox() {
 
     function handleKeydown(event) {
         if (event.key === "Escape") {
+            event.preventDefault();
             closeLightbox();
+        } else if (event.key === "Tab") {
+            const controls = Array.from(lightbox.querySelectorAll('button, a[href], input, [tabindex="0"]')).filter(element => element.tabIndex !== -1);
+            const first = controls[0];
+            const last = controls[controls.length - 1];
+            if (event.shiftKey && (document.activeElement === first || !lightbox.contains(document.activeElement))) {
+                event.preventDefault();
+                last?.focus();
+            } else if (!event.shiftKey && (document.activeElement === last || !lightbox.contains(document.activeElement))) {
+                event.preventDefault();
+                first?.focus();
+            }
         }
     }
 
@@ -149,6 +166,16 @@ function setupConceptImageLightbox() {
         image.src = trigger.dataset.lightboxSrc || "";
         image.alt = trigger.dataset.lightboxAlt || trigger.querySelector("img")?.alt || "";
         lightbox.hidden = false;
+        let branch = lightbox;
+        while (branch.parentElement && branch !== document.body) {
+            Array.from(branch.parentElement.children).forEach((sibling) => {
+                if (sibling !== branch) {
+                    inactive.push([sibling, sibling.inert]);
+                    sibling.inert = true;
+                }
+            });
+            branch = branch.parentElement;
+        }
         document.body.classList.add("lightbox-open");
         document.addEventListener("keydown", handleKeydown);
         if (closeButton) {

@@ -1170,18 +1170,8 @@ def output_paths(data: ConceptData) -> tuple[Path, Path]:
 
 
 def main():
-    styles = build_styles()
-    concepts = [parse_concept(path) for path in sorted(DETAIL_DIR.glob("concept-*.html"))]
-
-    STUDENT_DIR.mkdir(parents=True, exist_ok=True)
-    TEACHER_DIR.mkdir(parents=True, exist_ok=True)
-
-    for concept in concepts:
-        student_pdf, teacher_pdf = output_paths(concept)
-        build_pdf(student_pdf, build_student_story(concept, styles), f"{concept.title} - Student Workbook")
-        build_pdf(teacher_pdf, build_teacher_story(concept, styles), f"{concept.title} - Teaching Guide")
-        print(student_pdf)
-        print(teacher_pdf)
+    from grammar_documents import build_all
+    build_all()
 
 
 if __name__ == "__main__":

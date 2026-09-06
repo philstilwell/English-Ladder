@@ -35,6 +35,7 @@ def audit():
             value=tag.get('href',tag.get('src',''));url=urlparse(value)
             if not value or url.scheme or url.netloc:continue
             target=(ROOT/url.path.lstrip('/') if url.path.startswith('/') else path.parent/unquote(url.path)).resolve() if url.path else path
+            if target==ROOT.resolve():target=ROOT/'index.html'
             if not target.is_file():failures.append(f'{path.relative_to(ROOT)}: missing {value}');continue
             if url.fragment and target.suffix=='.html' and not url.fragment.startswith('lesson-'):
                 doc=documents.get(target)
@@ -49,6 +50,8 @@ def audit():
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']
             failures.extend(f'{path.name}/{config["name"]}: {issue}' for issue in [*validate_lesson_data(lesson,config),*validate_evidence(lesson,data['source'])])
+    from seo import audit_search
+    audit_search(ROOT)
     if failures:raise AssertionError('\n'.join(failures[:60]))
     print(f'Passed: {len(paths)} pages, local links, metadata, grammar curriculum, and reviewed news data.')
     return len(paths)

@@ -98,3 +98,27 @@ button,a,input,textarea,select,summary { scroll-margin:30px; }
 @media(max-width:850px) { .library-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .concept-comparisons { grid-template-columns:1fr; gap:12px; } .concept-comparison { padding:20px; } }
 @media(max-width:600px) { .library-grid { grid-template-columns:1fr; gap:14px; } .library-card { padding:20px; } .work-hero h1 { font-size:clamp(2rem,8.5vw,2.8rem); } .work-hero { grid-template-columns:minmax(0,1fr); } .stage-actions>* { max-width:100%; } .reading-width { margin:26px auto; } .transfer-task { padding:20px; } .page-hero h1 { overflow-wrap:anywhere; } }
 @media print { .study-controls,.save-word,.library-filters,.life-unit-controls { display:none; } .concept-comparisons { display:block; } .concept-comparison { break-inside:avoid; margin-bottom:12px; } }
+
+/* Search-friendly navigation uses the same restrained teaching layout. */
+.home-intro { max-width:960px; padding:28px 0 30px; }
+.home-intro h1 { font-size:clamp(1.8rem,3.2vw,2.6rem); line-height:1.15; letter-spacing:-.035em; margin:0 0 14px; }
+.home-intro p { max-width:78ch; margin:0; color:#4f5965; line-height:1.75; }
+.home-intro a { text-underline-offset:3px; }
+.search-breadcrumb { padding:22px 0 0; font-size:.82rem; line-height:1.55; color:#536273; }
+.search-breadcrumb ol { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:8px 10px; }
+.search-breadcrumb li { display:flex; align-items:baseline; gap:10px; min-width:0; }
+.search-breadcrumb li+li::before { content:"/"; color:#8996a6; }
+.search-breadcrumb a { display:inline-flex; align-items:center; min-height:32px; text-underline-offset:3px; }
+.search-breadcrumb [aria-current] { overflow-wrap:anywhere; }
+.search-related { border-top:1px solid #d4dce5; padding:28px 0; margin:40px 0 0; }
+.search-related h2 { font-size:1.25rem; margin:0 0 18px; }
+.search-related ul { display:flex; flex-wrap:wrap; gap:12px 24px; list-style:none; padding:0; margin:0; }
+.search-related a { display:inline-flex; align-items:center; min-height:44px; text-underline-offset:4px; line-height:1.5; }
+.lesson-cover { max-width:760px; margin:12px auto 36px; }
+.lesson-cover img { display:block; width:100%; height:auto; max-height:460px; object-fit:cover; border-radius:12px; }
+.lesson-cover figcaption { margin-top:9px; color:#536273; font-size:.8rem; line-height:1.6; }
+@media(max-width:600px) {
+  .home-intro { padding:22px 0; }
+  .search-related ul { display:grid; gap:4px; }
+  .search-breadcrumb a { min-height:44px; }
+}

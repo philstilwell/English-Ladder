@@ -243,8 +243,9 @@ def build_homepage():
             question = html.escape(brief.get("prediction") or "Look at the headline. What do you think you will learn?")
             visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><p class="eyebrow">Before you read</p><h2>{question}</h2><p>Read a real story. Learn useful words. Share your ideas.</p><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
     title, overview = html.escape(title), html.escape(overview)
-    content = f'''<div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
-<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h1 id="feature-title">{title}</h1><p>{overview}</p>
+    content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html">daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
+<div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
+<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title">{title}</h2><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
 <label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>
 <label class="level-option"><input type="radio" name="feature-level" value="intermediate" data-lesson-href="{urls['intermediate']}"><span>Intermediate</span></label>
@@ -257,7 +258,7 @@ def build_homepage():
 <a class="explore-story" href="stories/city-trees/beginner.html"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="Trees surround a green urban park." loading="lazy"><div><span class="eyebrow">Nature &amp; city life</span><h3>Can trees cool a city?</h3><p>Explore how a little shade changes the places we live.</p><span class="text-link">Try the lesson →</span></div></a></div></section>
 <section class="study-paths" aria-labelledby="paths-heading"><div class="section-heading"><h2 id="paths-heading">What would you like to practice?</h2></div><div class="path-grid">
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
-<a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 visual guides to how English works.</p></a>
+<a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 lessons with examples, exercises, and free PDFs.</p></a>
 <a class="path-link" href="efsp.html"><span class="path-number">03 / Work</span><h3>Speak up at work →</h3><p>Practice meetings and conversations for your job.</p></a>
 <a class="path-link" href="us-life.html"><span class="path-number">04 / Daily life</span><h3>Feel more at home →</h3><p>Useful English for getting settled in the US.</p></a></div></section>'''
     page = document("Discover a world of English", content, current="index.html")
@@ -313,6 +314,8 @@ def publish_editorial_pages():
     publish_quality_pages()
     for path in [*ROOT.glob("*.html"), *ROOT.glob("grammar-concepts/*.html"), *ROOT.glob("stories/*/*.html")]:
         decorate_page(path)
+    from site_quality import write_sitemap
+    write_sitemap()
 
 
 if __name__ == "__main__":

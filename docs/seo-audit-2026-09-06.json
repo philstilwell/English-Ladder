@@ -1,0 +1,49 @@
+{
+  "html_pages": 298,
+  "indexable_html_pages": 296,
+  "sitemap_urls": 548,
+  "duplicate_titles": 0,
+  "duplicate_descriptions": 0,
+  "failures": [],
+  "baseline": {
+    "html_pages": 298,
+    "pages_in_duplicate_title_groups": 29,
+    "pages_in_duplicate_description_groups": 66,
+    "pages_with_structured_data": 0,
+    "sitemap_urls": 296
+  },
+  "examples": [
+    {
+      "path": "index.html",
+      "title": "Free English Lessons: Grammar, News & Work | English Ladder",
+      "description": "Learn English with daily news at three levels, 44 grammar lessons, workplace conversations, everyday English, free PDF workbooks, and ready-to-copy AI prompts.",
+      "canonical": "https://englishladder.com/"
+    },
+    {
+      "path": "grammar-concepts/concept-35.html",
+      "title": "Could and was able to: Grammar & Exercises | English Ladder",
+      "description": "Distinguish past ability from a particular achievement. B1\u2013B2 English grammar with examples, multiple-choice exercises, explained answers, and free PDFs.",
+      "canonical": "https://englishladder.com/grammar-concepts/concept-35.html"
+    },
+    {
+      "path": "efsp-manufacturing.html",
+      "title": "Manufacturing English: Lessons & Free PDFs | English Ladder",
+      "description": "Practice Manufacturing English for production meetings, line problems, lean improvement, defects, maintenance, safety, supplier quality, shift handoffs, and root-cause communication. Includes free PDF guides.",
+      "canonical": "https://englishladder.com/efsp-manufacturing.html"
+    },
+    {
+      "path": "news/2026-09-06/beginner.html",
+      "title": "Weather and air travel | Beginner English \u00b7 2026-09-06 | English Ladder",
+      "description": "Beginner English reading (A1\u2013A2) \u00b7 2026-09-06: Weather and air travel. Includes vocabulary, grammar, and comprehension exercises.",
+      "canonical": "https://englishladder.com/news/2026-09-06/beginner.html"
+    }
+  ],
+  "validation": {
+    "python_checks": 87,
+    "javascript_checks": 51,
+    "dedicated_seo_tests": 12,
+    "phone_width_px": 320,
+    "phone_pages_checked": 10,
+    "paid_api_calls": 0
+  }
+}

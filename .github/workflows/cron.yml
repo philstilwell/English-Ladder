@@ -20,6 +20,7 @@ on:
       - 'site.js'
       - 'site.css'
       - 'site_quality.py'
+      - 'seo.py'
       - 'ai_extensions.py'
       - 'ai-practice.js'
       - 'news_quality.py'
@@ -158,7 +159,7 @@ jobs:
             python publish_snapshot.py restore "${lesson_snapshot}"
             python update_site.py --refresh-pages
             python audit_site.py
-            git add beginner.html intermediate.html advanced.html index.html photo-credits.html archive assets/news news archive.html lesson-data.json sitemap.xml robots.txt about.html privacy.html continue.html 404.html
+            git add beginner.html intermediate.html advanced.html index.html photo-credits.html archive assets/news news archive.html lesson-data.json sitemap.xml robots.txt content/seo-state.json about.html privacy.html continue.html 404.html
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

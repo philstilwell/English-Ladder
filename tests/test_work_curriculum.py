@@ -71,7 +71,8 @@ class WorkCurriculumTests(unittest.TestCase):
             for node in soup.select('[href], [src]'):
                 url=urlparse(node.get('href') or node.get('src'))
                 if url.scheme or url.netloc: continue
-                target=path.parent/unquote(url.path) if url.path else path
+                target=(ROOT/unquote(url.path).lstrip('/') if url.path.startswith('/') else path.parent/unquote(url.path)) if url.path else path
+                if target==ROOT:target=ROOT/'index.html'
                 self.assertTrue(target.is_file(),f'{path.name}: {url.geturl()}')
                 if url.fragment and not url.path:
                     self.assertIsNotNone(soup.find(id=url.fragment),f'{path.name}: #{url.fragment}')

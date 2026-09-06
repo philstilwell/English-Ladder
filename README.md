@@ -186,3 +186,21 @@ The practice text tools provide contextual suggestions and edited sample compari
 All 44 grammar lessons now use four multiple-choice activities each (176 in total). Every option has its own explanation; selecting an incorrect option cannot display generic model feedback as if the written answer had been checked. There are no grammar text-answer fields, including in the application activity. Completion requires all four current selections to be correct. Optional browser saving restores selected options and their feedback, keyed to the question contents so an edited question cannot inherit a stale answer. Old written drafts are not used for grading.
 
 The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and saved-choice restoration.
+
+## Search and sharing metadata
+
+`seo.py` derives search titles, descriptions, canonical addresses, social previews, breadcrumb navigation, and structured lesson information from the published curriculum. Level editions have distinct titles and remain independently indexable. Grammar and work pages identify their actual topics and linked PDF editions. Lesson photographs and saved daily illustrations are reused with their captions and credits; this publishing code never calls an image generator or another paid service.
+
+The homepage describes the site before introducing its current featured story. Contextual grammar links help readers continue with related teaching material. Repeated AI tutor instructions are excluded from search snippets using `data-nosnippet`, while their full copyable text remains available to readers. `continue.html` and `404.html` use `noindex, follow`; the ordinary lessons remain indexable.
+
+The final publishing pass builds `sitemap.xml` from the canonical public pages and their linked PDF guides, including visible lesson images. `content/seo-state.json` records a content fingerprint and modification date. Rebuilding the same material or updating a relative age label does not advance its date. First-seen PDF dates are omitted because the publisher has no reliable original modification date; subsequent byte changes are tracked. Keep this state file in version control so daily runs retain those dates.
+
+After editing any curriculum, generator, or search configuration, finish with:
+
+```bash
+python3 update_site.py --refresh-pages
+python3 audit_site.py
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
+
+The scheduled publisher uses the same path and commits the search state with the new lessons. The audit rejects duplicate titles/descriptions, incorrect canonical addresses, missing sharing images, invalid breadcrumb correspondence, and sitemap omissions. `python3 seo.py` prints the dedicated search audit. See [the September 2026 search release](docs/seo-improvements-2026-09-06.md) for the baseline, scope, and measurement limits.

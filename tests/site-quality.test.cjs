@@ -34,11 +34,11 @@ test('grammar topic search and level filter work together',()=>{
  const select=doc.querySelector('[data-library-level]');select.value='A1';change(d,select);assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,0);assert.equal(doc.querySelector('[data-library-empty]').hidden,false);
 });
 test('drafts are optional, restore when opted in, and remain on page after saving is disabled',()=>{
- const d=load('grammar-concepts/concept-05.html');const doc=d.window.document;const note=doc.querySelector('[data-study-draft]');
- note.value='I saved time by booking online.';note.dispatchEvent(new d.window.Event('input'));assert.equal(d.window.localStorage.length,0);
+ const d=load('news/2026-09-06/beginner.html');const doc=d.window.document;const note=doc.querySelector('[data-study-draft]');
+ note.value='I saved time by booking online.';note.dispatchEvent(new d.window.Event('input'));assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);
  const toggle=doc.querySelector('[data-save-study]');toggle.click();
  const raw=d.window.localStorage.getItem('english-ladder-study-v1');assert.match(raw,/booking online/);
- const next=load('grammar-concepts/concept-05.html',{stored:{'english-ladder-study-v1':raw}});assert.equal(next.window.document.querySelector('[data-study-draft]').value,note.value);
+ const next=load('news/2026-09-06/beginner.html',{stored:{'english-ladder-study-v1':raw}});assert.equal(next.window.document.querySelector('[data-study-draft]').value,note.value);
  toggle.click();assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);assert.equal(note.value,'I saved time by booking online.');
 });
 test('saved-word review uses the selected word and its own definition',()=>{

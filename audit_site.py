@@ -18,6 +18,12 @@ def audit():
             if not image.has_attr('alt'):failures.append(f'{path.name}: image lacks alternative text')
         for textarea in s.select('.discussion textarea'):
             if not textarea.has_attr('data-study-draft'):failures.append(f'{path.name}: lesson notes lack the shared saving control')
+        if 'curriculum-page' in s.body.get('class',[]):
+            if s.select('textarea,input[type="text"],[contenteditable="true"]'):failures.append(f'{path.name}: grammar answers must be multiple choice')
+            questions=s.select('[data-choice-question]')
+            if len(questions)!=4:failures.append(f'{path.name}: expected four multiple-choice activities')
+            for q in questions:
+                if len(q.select('input[type="radio"]'))!=3 or len(q.select('[data-choice-correct="true"]'))!=1:failures.append(f'{path.name}: invalid grammar answer choices')
     for path,s in documents.items():
         for tag in s.find_all(['a','img','script','link']):
             value=tag.get('href',tag.get('src',''));url=urlparse(value)

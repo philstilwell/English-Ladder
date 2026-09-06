@@ -64,12 +64,13 @@
     search.addEventListener('input',filter);category?.addEventListener('change',filter);levelFilter?.addEventListener('change',filter);filter();
   });
 
-  const fresh=()=>({enabled:false,history:[],words:[],drafts:{}});
+  const fresh=()=>({enabled:false,history:[],words:[],drafts:{},choices:{}});
   let saved=fresh();
   try {
     const data=JSON.parse(read(STORE_KEY));
     if(data && data.enabled===true && Array.isArray(data.history) && Array.isArray(data.words) && data.drafts && typeof data.drafts==='object' && !Array.isArray(data.drafts)) saved={...data,history:data.history.filter(item=>item && typeof item.url==='string' && typeof item.title==='string').slice(0,20),words:data.words.filter(item=>item && typeof item.term==='string' && typeof item.definition==='string').slice(0,100)};
   } catch (_) { /* Corrupt or unavailable storage does not block study. */ }
+  if (!saved.choices || typeof saved.choices!=='object' || Array.isArray(saved.choices)) saved.choices={};
   const status=message=>document.querySelectorAll('[data-save-status]').forEach(p=>{p.textContent=message;});
   const persist=()=>{
     if (!saved.enabled) return false;
@@ -98,6 +99,44 @@
     const path=lesson ? new URL(lessonInfo(lesson).url,root).pathname : location.pathname;
     return path+':'+input.dataset.studyDraft;
   };
+  const grammarQuestions=[...document.querySelectorAll('[data-choice-question]')];
+  const choiceKey=question=>location.pathname+':'+question.dataset.studyChoice;
+  const keepChoice=(question,option)=>{
+    const key=choiceKey(question);delete saved.choices[key];saved.choices[key]=option.value;
+    const keys=Object.keys(saved.choices);keys.slice(0,Math.max(0,keys.length-256)).forEach(old=>delete saved.choices[old]);
+  };
+  function updateGrammarProgress(){
+    if(!grammarQuestions.length)return;
+    const selected=grammarQuestions.map(q=>q.querySelector('input[type="radio"]:checked')).filter(Boolean);
+    const correct=selected.filter(input=>input.dataset.choiceCorrect==='true').length;
+    const total=grammarQuestions.length;
+    document.querySelector('[data-choice-progress]').textContent=`${correct} of ${total} correct · ${selected.length} answered`;
+    const complete=document.querySelector('[data-complete-study]');complete.disabled=correct!==total;
+    complete.textContent='Mark this lesson practiced';
+    document.querySelector('[data-study-status]').textContent=correct===total?'All answers are correct. You can mark this lesson practiced.':`Answer all ${total} questions correctly to complete this activity.`;
+  }
+  function showChoice(question,option){
+    const correct=option.dataset.choiceCorrect==='true';
+    const feedback=question.querySelector('.choice-feedback');
+    feedback.textContent=(correct?'Correct. ':'Not quite. ')+option.dataset.choiceFeedback+(correct?'':' Choose another answer and try again.');
+    feedback.dataset.result=correct?'correct':'incorrect';feedback.hidden=false;
+    question.querySelectorAll('input[type="radio"]').forEach(input=>{
+      input.closest('label').dataset.choiceResult=input===option?(correct?'correct':'incorrect'):'';
+      if(input===option)input.setAttribute('aria-describedby',feedback.id);else input.removeAttribute('aria-describedby');
+    });
+    updateGrammarProgress();
+  }
+  grammarQuestions.forEach(question=>{
+    const options=[...question.querySelectorAll('input[type="radio"]')];
+    const restored=saved.enabled && options.find(input=>input.value===saved.choices[choiceKey(question)]);
+    if(restored){restored.checked=true;showChoice(question,restored);}
+    options.forEach(option=>option.addEventListener('change',()=>{
+      if(!option.checked)return;
+      showChoice(question,option);
+      if(saved.enabled){keepChoice(question,option);persist();}
+    }));
+  });
+  updateGrammarProgress();
   document.querySelectorAll('[data-study-draft]').forEach(input=>{
     const value=saved.drafts[draftKey(input)] ?? saved.drafts[location.pathname+':'+input.dataset.studyDraft];if(saved.enabled && typeof value==='string')input.value=value.slice(0,8000);
     input.addEventListener('input',()=>{
@@ -113,10 +152,11 @@
       document.querySelectorAll('[data-save-study]').forEach(other=>{other.checked=saved.enabled;});
       if(saved.enabled){
         document.querySelectorAll('[data-study-draft]').forEach(draft=>{saved.drafts[draftKey(draft)]=draft.value;});
+        grammarQuestions.forEach(question=>{const option=question.querySelector('input:checked');if(option)keepChoice(question,option);});
         if(document.querySelector('.daily-lesson,.curriculum-page') || document.body.classList.contains('curriculum-page'))remember(document.querySelector('.daily-lesson[open]')||document.querySelector('.daily-lesson'));
         if(persist())status('Saving is on in this browser only.');
       } else {
-        try{localStorage.removeItem(STORE_KEY);saved=fresh();status('Saving is off. The saved copy was removed; text on this page remains.');}catch(_){status('Saving is off, but the saved copy could not be removed. Use browser site-data settings.');}
+        try{localStorage.removeItem(STORE_KEY);saved=fresh();status('Saving is off. The saved copy was removed; your work on this page remains.');}catch(_){status('Saving is off, but the saved copy could not be removed. Use browser site-data settings.');}
       }
       renderDashboard();
     });

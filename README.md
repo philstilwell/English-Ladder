@@ -149,7 +149,7 @@ The hub page remains the root entry point, and the three lesson pages stay linke
 
 ## Reviewed grammar and site validation
 
-`content/grammar-curriculum.json` is the authoritative teaching source for all 44 concepts. `grammar_curriculum.py` builds readable comparison cards, explanations, three self-check questions, transfer tasks, and the searchable directory. `grammar_documents.py` builds the 88 matching PDF editions at their established URLs. The former grammar generator entry points delegate to these builders, so rebuilding cannot restore the old WordPress explanations or posters.
+`content/grammar-curriculum.json` is the authoritative teaching source for all 44 concepts. `grammar_curriculum.py` builds readable comparison cards, explanations, three multiple-choice checks, a multiple-choice application activity, and the searchable directory. `grammar_documents.py` builds the 88 matching PDF editions at their established URLs. The former grammar generator entry points delegate to these builders, so rebuilding cannot restore the old WordPress explanations or posters.
 
 The PDFs use embedded licensed fonts and bookmarks. They do not claim tagged-PDF conformance; the HTML provides readable equivalents. The new comparison cards contain actual text and replace the old raster diagrams, avoiding both oversized downloads and text locked in images.
 
@@ -168,3 +168,9 @@ PDF generation and validation require `requirements-documents.txt`. All commands
 `news_quality.py` adds a separate automated editorial gate; it is a safeguard, not proof of truth. Source evidence, release dates, available source publication dates, and retrieval dates are retained separately. Older permanent archive pages clearly identify editions that have not received the new editorial review. The latest seven releases were revised against their stored evidence on September 6. The existing climate-and-aviation illustration was visually reviewed and reused for the corrected version of the same story, with that decision recorded in its metadata.
 
 The practice text tools provide contextual suggestions and edited sample comparisons. Custom text is preserved rather than silently rewritten. Audio recording chooses a supported format, releases the microphone on errors or navigation, and removes obsolete playback URLs; no new produced audio or paid imagery was added in this edition.
+
+### Grammar answers are multiple choice
+
+All 44 grammar lessons now use four multiple-choice activities each (176 in total). Every option has its own explanation; selecting an incorrect option cannot display generic model feedback as if the written answer had been checked. There are no grammar text-answer fields, including in the application activity. Completion requires all four current selections to be correct. Optional browser saving restores selected options and their feedback, keyed to the question contents so an edited question cannot inherit a stale answer. Old written drafts are not used for grading.
+
+The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and saved-choice restoration.

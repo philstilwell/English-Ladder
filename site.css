@@ -27,8 +27,23 @@ button,a,input,textarea,select,summary { scroll-margin:30px; }
 .concept-comparison>p:last-child { font-size:.9rem; color:#43536b; }
 .concept-explanation { font-size:1.08rem; line-height:1.8; }
 .grammar-response { padding:26px 0; border-top:1px solid var(--learning-line); }
+.grammar-response[data-choice-question] { border:0; min-width:0; margin:22px 0; padding:0; }
+.grammar-response legend { font-size:1.13rem; line-height:1.6; font-weight:700; margin-bottom:14px; padding:0; width:100%; }
+.grammar-choices { display:grid; gap:10px; }
+.grammar-choice { display:flex; gap:12px; align-items:flex-start; min-height:48px; border:1px solid #8996a6; border-radius:8px; padding:14px 16px; background:#fff; cursor:pointer; font-size:1rem; line-height:1.6; }
+.grammar-choice input { flex:0 0 auto; width:20px; height:20px; margin:3px 0 0; accent-color:var(--learning-blue); }
+.grammar-choice span { min-width:0; overflow-wrap:anywhere; }
+.grammar-choice:hover { border-color:var(--learning-blue); }
+.grammar-choice[data-choice-result="correct"] { border-color:#267243; background:#edf7ef; }
+.grammar-choice[data-choice-result="incorrect"] { border-color:#a33232; background:#fff3f0; }
+.choice-feedback { padding:14px 16px; border-left:3px solid #267243; background:#edf7ef; color:#194e2c; line-height:1.6; }
+.choice-feedback[data-result="incorrect"] { border-color:#a33232; background:#fff3f0; color:#782626; }
+.choice-progress { font-weight:650; color:#43536b; }
+.curriculum-page .primary-button:disabled { opacity:.55; cursor:not-allowed; }
+.curriculum-page .primary-button:disabled:hover { background:var(--accent); }
 .grammar-response h3 { font-size:1.13rem; line-height:1.6; }
 .grammar-response label,.transfer-task label { font-size:.9rem; }
+.grammar-response .grammar-choice { font-size:1rem; }
 .grammar-response details,.transfer-task details,[data-learning-words] details { background:#f3f5f8; padding:16px 20px; border-radius:8px; }
 .grammar-response summary,.transfer-task summary,[data-learning-words] summary { cursor:pointer; font-weight:650; min-height:24px; }
 .transfer-task { padding:28px; box-sizing:border-box; background:#f0f3ff; border-radius:12px; }

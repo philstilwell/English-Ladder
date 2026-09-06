@@ -6,7 +6,7 @@ English Ladder is a self-updating ESL website that publishes a daily news lesson
 - Intermediate: CEFR B1-B2
 - Advanced: CEFR C1-Higher
 
-Each level keeps a rolling 7-day view; `news/YYYY-MM-DD/LEVEL.html` provides permanent lesson addresses and `archive.html` provides search. Every daily run uses the same news story at three reading levels. All pages share an editorial design with warm white surfaces, charcoal text, cobalt controls, and compact level labels.
+Each level keeps a rolling 14-day view; `news/YYYY-MM-DD/LEVEL.html` provides permanent lesson addresses and `archive.html` provides search. Every daily run uses the same news story at three reading levels. All pages share an editorial design with warm white surfaces, charcoal text, cobalt controls, and compact level labels.
 
 Discover features the latest complete daily news lesson, its actual publication date, and a matching Gemini illustration. Its level selector links to that same dated lesson at all three levels. It never labels an older lesson as today's story or selects future-dated or incomplete archives. Two evergreen stories (city trees and a fictional market conversation) remain below the main feature, each with three reading levels. Photography and generated illustrations are served locally; their different origins are explained in `photo-credits.html`.
 
@@ -109,7 +109,7 @@ The courses provide intermediate-to-advanced language practice. Suggested B1, B2
    - a prediction question and two discussion prompts within each lesson, using the same three requests
 4. The script validates the structured lesson and requires an exact evidence excerpt for every reading sentence. A separate Gemini call checks factual support, question correctness, grammar, repetition, and level suitability. Failure leads to a bounded revision attempt; a failed review is never published. All three levels must pass before public pages are changed. Readings may have 3-10 sentences, 3-5 vocabulary terms, and 4-6 purposeful questions, rather than padding a short source to ten sentences and questions.
 5. The validated structured lesson data for all three levels is written to `archive/lessons/YYYY-MM-DD.json`.
-6. Older lessons leave the seven-day view but remain at permanent addresses in the searchable archive.
+6. Older lessons leave the 14-day view but remain at permanent addresses in the searchable archive.
 7. `daily_images.py` requests one 4:3 conceptual illustration from `gemini-2.5-flash-image`, compresses it to WebP, and saves the image and its generation record in `assets/news/`. The record includes the prompt, model, story fingerprint, dimensions, checksum, and attempt count. The same illustration accompanies all three level choices on Discover, labeled as AI-generated and not a news photograph.
 8. GitHub Actions checks the generated pages, then commits the updated lesson pages, homepage, archives, and images. On a push retry it carries changed source data forward and rebuilds HTML from the newest templates; conflicting concurrent source edits fail for review instead of being overwritten. Deployment verification checks Discover's headline, date, all level links, and the exact image file as well as the daily lesson pages.
 

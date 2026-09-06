@@ -42,6 +42,22 @@ class CurriculumSearchTests(unittest.TestCase):
         self.assertIn('production meetings',p['description'])
         self.assertNotEqual('English for Work · Industry & infrastructure',p['description'])
 
+    def test_published_daily_feeds_and_search_data_include_fourteen_lessons(self):
+        archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)
+        self.assertGreater(len(archives),14)
+        expected=[p.stem for p in archives[:14]]
+        for level in seo.LEVELS:
+            with self.subTest(level=level):
+                s=self.page(f'{level}.html')
+                self.assertEqual(expected,[lesson['data-lesson-key'] for lesson in s.select('#lesson-container details.daily-lesson')])
+                self.assertIn('latest 14 news lessons',s.select_one('.index-container > p').get_text())
+                self.assertIn('latest 14 news lessons',s.select_one('meta[name=description]')['content'])
+                graph=json.loads(s.select_one('[data-seo-schema]').string)['@graph']
+                listing=next(n for n in graph if n['@type']=='ItemList')
+                self.assertEqual(14,listing['numberOfItems'])
+                self.assertEqual([seo.ORIGIN+f'news/{day}/{level}.html' for day in expected],[item['url'] for item in listing['itemListElement']])
+                self.assertTrue((ROOT/f'news/{archives[14].stem}/{level}.html').is_file())
+
     def test_grammar_breadcrumbs_match_schema_and_related_patterns(self):
         s=self.enhance('grammar-concepts/concept-35.html')
         graph=json.loads(s.select_one('[data-seo-schema]').string)['@graph']

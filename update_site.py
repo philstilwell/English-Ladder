@@ -13,7 +13,7 @@ from bs4 import BeautifulSoup
 
 
 MODEL_NAME = "gemini-2.5-flash"
-LESSON_LIMIT = 7
+LESSON_LIMIT = 14
 ARCHIVE_SCHEMA_VERSION = 1
 ARCHIVE_DIR = Path("archive/lessons")
 NEWS_FEED_URL = "https://feeds.bbci.co.uk/news/world/rss.xml"

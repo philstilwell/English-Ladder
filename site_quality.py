@@ -122,8 +122,8 @@ def publish_quality_pages():
 
 def rebuild_news_levels():
     """Rebuild rolling pages from archived data using the current renderer."""
-    from update_site import render_lesson_html, LEVELS as CONFIG, release_datetime_from_date
-    archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)[:7]
+    from update_site import render_lesson_html, LEVELS as CONFIG, LESSON_LIMIT, release_datetime_from_date
+    archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)[:LESSON_LIMIT]
     if not archives:return
     for config in CONFIG:
         path=ROOT/config['file_path']

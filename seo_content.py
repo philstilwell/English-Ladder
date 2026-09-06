@@ -1,14 +1,16 @@
 """Editorial search copy and useful subject groupings, maintained with the lessons."""
 
+from update_site import LESSON_LIMIT
+
 PAGES = {
     'ai-practice.html': ('Copy-and-Paste AI Prompts for English Practice', 'Copy complete AI prompts for English vocabulary, grammar, reading, workplace dialogues and everyday conversation. Every prompt includes the learning material.'),
     'index.html': ('Free English Lessons, Grammar & Workplace English', 'Learn English with free news lessons at three levels, 44 grammar guides, workplace dialogues, printable PDFs and practical everyday conversation activities.'),
     'efsp.html': ('English for Work: 41 Free Professional English Courses', 'Choose from 41 professional English courses with 328 workplace lessons, 368 dialogues, vocabulary, AI practice prompts and 164 free printable guides.'),
     'grammar-concepts.html': ('English Grammar Practice: 44 Lessons & Free PDFs', 'Study 44 English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'),
     'archive.html': ('English News Lessons Archive: Read at Three Levels', 'Find English news lessons by date, topic or vocabulary. Read beginner, intermediate and advanced versions with grammar, comprehension questions and discussion.'),
-    'beginner.html': ('Beginner English News Lessons: A1–A2 Reading Practice', 'Read the latest seven news lessons in beginner English. Build A1–A2 vocabulary, practice simple grammar and check your understanding with questions.'),
-    'intermediate.html': ('Intermediate English News Lessons: B1–B2 Practice', 'Practice B1–B2 English with the latest seven news lessons. Explore useful vocabulary, grammar, comprehension questions and guided discussion.'),
-    'advanced.html': ('Advanced English News Lessons: C1+ Reading Practice', 'Read the latest seven news lessons in advanced English. Practice nuanced vocabulary, precise grammar, critical reading and thoughtful discussion at C1+.'),
+    'beginner.html': ('Beginner English News Lessons: A1–A2 Reading Practice', f'Read the latest {LESSON_LIMIT} news lessons in beginner English. Build A1–A2 vocabulary, practice simple grammar and check your understanding with questions.'),
+    'intermediate.html': ('Intermediate English News Lessons: B1–B2 Practice', f'Practice B1–B2 English with the latest {LESSON_LIMIT} news lessons. Explore useful vocabulary, grammar, comprehension questions and guided discussion.'),
+    'advanced.html': ('Advanced English News Lessons: C1+ Reading Practice', f'Read the latest {LESSON_LIMIT} news lessons in advanced English. Practice nuanced vocabulary, precise grammar, critical reading and thoughtful discussion at C1+.'),
     'tools.html': ('English Practice Tools: Grammar, Speaking & Vocabulary', 'Practice English with sentence-repair activities, pronunciation shadowing, workplace phrases, tone exercises and a short learning diagnostic.'),
     'us-life.html': ('Everyday English in the US: 24 Beginner Conversation Units', 'Practice beginner English for housing, shopping, appointments, transport and daily life in the US. Explore 24 units with vocabulary and short dialogues.'),
     'about.html': ('About English Ladder: Lessons, Sources & Corrections', 'Learn how English Ladder creates and reviews its free English lessons, uses source material, explains learning levels and handles corrections.'),

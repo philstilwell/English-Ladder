@@ -176,10 +176,11 @@ def collection_items(p, soup):
     if p['relative'] == 'grammar-concepts.html':
         return [(c['title'], grammar_url(n)) for n,c in grammar().items()]
     if p['relative'] in {'archive.html', *[v+'.html' for v in LEVELS]}:
+        from update_site import LESSON_LIMIT
         level = Path(p['relative']).stem
         level = level if level in LEVELS else 'beginner'
         files = sorted((ROOT/'archive/lessons').glob('*.json'), reverse=True)
-        if p['relative'] != 'archive.html': files = files[:7]
+        if p['relative'] != 'archive.html': files = files[:LESSON_LIMIT]
         return [(read_json(f'archive/lessons/{f.name}')['levels'][level]['lesson']['title'], f'news/{f.stem}/{level}.html') for f in files]
     if p['relative'] in {'index.html', 'sitemap.html'}:
         return [('English grammar', 'grammar-concepts.html'), ('English for Work', 'efsp.html'),

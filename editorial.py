@@ -179,6 +179,7 @@ def decorate_page(path):
         if paragraph:
             paragraph.string = copy
     if path.name in {"beginner.html", "intermediate.html", "advanced.html"} and path.parent == ROOT:
+        from update_site import LESSON_LIMIT
         level = path.stem
         hero = soup.select_one(".page-hero")
         if hero:
@@ -194,7 +195,7 @@ def decorate_page(path):
             badge.string = {"beginner": "Beginner · A1–A2", "intermediate": "Intermediate · B1–B2", "advanced": "Advanced · C1+"}[level]
         intro = soup.select_one(".index-container > p")
         if intro:
-            intro.string = "Your latest seven news lessons. Open a headline to begin."
+            intro.string = f"Your latest {LESSON_LIMIT} news lessons. Open a headline to begin."
         for lesson in soup.select("details.daily-lesson"):
             key = lesson.get("data-lesson-key", "")
             archive = ROOT / "archive" / "lessons" / f"{key}.json"

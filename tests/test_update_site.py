@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from bs4 import BeautifulSoup
@@ -139,6 +139,29 @@ class UpdateSiteTests(unittest.TestCase):
             self.assertEqual(1, len(lessons))
             self.assertEqual("2026-05-09", lessons[0]["data-lesson-key"])
             self.assertIn("Second Title", lessons[0].get_text(" ", strip=True))
+
+    def test_daily_update_keeps_fourteen_latest_lessons(self):
+        release_dt = datetime(2026, 5, 15, 10, 0, tzinfo=timezone.utc)
+        dates = [release_dt - timedelta(days=offset) for offset in range(15)]
+        older_lessons = "".join(
+            update_site.render_lesson_html(
+                build_valid_lesson_data(f"Lesson {day.date()}"), update_site.LEVELS[0], day
+            ) for day in dates[1:]
+        )
+        newest = update_site.render_lesson_html(
+            build_valid_lesson_data("Newest Lesson"), update_site.LEVELS[0], release_dt
+        )
+        with tempfile.TemporaryDirectory() as temp_dir:
+            page = Path(temp_dir) / "beginner.html"
+            page.write_text(f'<html><body><div id="lesson-container">{older_lessons}</div></body></html>')
+            # A new daily release drops only the fifteenth entry; retries do not shrink the feed.
+            for _ in range(2):
+                update_site.update_level_page(page, newest, default_release_dt=release_dt)
+                soup = BeautifulSoup(page.read_text(), "html.parser")
+                self.assertEqual(
+                    [day.date().isoformat() for day in dates[:14]],
+                    [lesson["data-lesson-key"] for lesson in soup.select("details.daily-lesson")],
+                )
 
     def test_render_lesson_html_randomizes_quiz_option_positions(self):
         release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)

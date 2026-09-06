@@ -6,6 +6,7 @@ This command never calls a language model or paid service.
 import html
 import json
 import re
+import struct
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -24,21 +25,34 @@ def safe_url(value):
 
 
 def site_header(prefix="", current=""):
+    if current.startswith("efsp-"):
+        current = "efsp.html"
+    elif current.startswith("concept-"):
+        current = "grammar-concepts.html"
+    elif current in {"intermediate.html", "advanced.html"}:
+        current = "beginner.html"
     links = [("index.html", "Discover"), ("beginner.html", "Daily news"),
              ("grammar-concepts.html", "Grammar"), ("efsp.html", "English for Work")]
     nav = "".join(f'<a href="{prefix}{url}"' + (' aria-current="page"' if current == url else '') + f'>{label}</a>' for url, label in links)
-    return f'<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="brand" href="{prefix}index.html" aria-label="English Ladder home"><span class="brand-mark" aria-hidden="true"></span>English Ladder</a><nav class="site-links" aria-label="Main navigation">{nav}</nav></header>'
+    return f'<a class="skip-link" href="#main-content">Skip to content</a><header class="site-header"><a class="brand" href="{prefix}index.html" aria-label="English Ladder home"><img class="brand-mark" src="{prefix}assets/brand/ladder-mark.png" width="40" height="40" alt="">English Ladder</a><nav class="site-links" aria-label="Main navigation">{nav}</nav></header>'
 
 
 def footer(prefix=""):
     return f'<footer class="site-footer"><span>English for a world worth exploring.</span><a href="{prefix}photo-credits.html">Photo credits</a><a href="https://englishroad.com" target="_blank" rel="noopener noreferrer">Check your English level ↗</a></footer>'
 
 
+def phrase_preview(work=False):
+    label = "In your next meeting" if work else "A little English goes a long way"
+    quote = "Could you walk me through that?" if work else "Could you help me, please?"
+    note = "Ask someone to explain, step by step." if work else "Start a conversation. Make a connection."
+    return f'<aside class="phrase-preview{ " phrase-preview-work" if work else ""}"><p class="eyebrow">{label}</p><blockquote>“{quote}”</blockquote><p class="phrase-preview-note">{note}</p><span class="phrase-preview-caption">Useful words. Real situations.</span></aside>'
+
+
 def document(title, content, body_class="theme-hub", prefix="", current=""):
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} | English Ladder</title><meta name="description" content="Learn English with real stories. Read, practice, and discuss at your level.">
-<link rel="icon" href="{prefix}favicon.png"><link rel="stylesheet" href="{prefix}styles.css"><link rel="stylesheet" href="{prefix}editorial.css">
+<link rel="icon" href="{prefix}assets/brand/favicon.png"><link rel="stylesheet" href="{prefix}styles.css"><link rel="stylesheet" href="{prefix}editorial.css">
 <script defer src="{prefix}app.js"></script><script defer src="{prefix}learning.js"></script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script>
 </head><body class="{body_class}">{site_header(prefix, current)}<main id="main-content" class="page-shell">{content}{footer(prefix)}</main></body></html>'''
@@ -107,9 +121,12 @@ def decorate_page(path):
     prefix = "../" * len(path.relative_to(ROOT).parent.parts)
     if not soup.select_one('link[href$="editorial.css"]'):
         soup.head.append(fragment(f'<link rel="stylesheet" href="{prefix}editorial.css">').link)
-    if not soup.select_one(".site-header"):
-        for element in reversed(list(fragment(site_header(prefix, path.name)).contents)):
-            soup.body.insert(0, element)
+    for element in soup.select(".site-header, .skip-link"):
+        element.decompose()
+    for element in reversed(list(fragment(site_header(prefix, path.name)).contents)):
+        soup.body.insert(0, element)
+    for icon in soup.select('link[rel="icon"]'):
+        icon["href"] = prefix + "assets/brand/favicon.png"
     main = soup.find("main")
     main["id"] = "main-content"
     if not soup.select_one(".site-footer"):
@@ -120,16 +137,32 @@ def decorate_page(path):
         stripped = str(node).strip()
         if stripped in LABELS:
             node.replace_with(str(node).replace(stripped, LABELS[stripped]))
-    for image in soup.select('img[src$="English-Ladder.png"]'):
-        if "efsp-industry-logo" in image.get("class", []):
-            image.decompose()
-        else:
-            image["src"] = prefix + "assets/editorial/everyday-travel.webp"
-            image["alt"] = "Passengers waiting on a subway platform in Japan."
-            image["width"], image["height"] = "1000", "667"
-    for image in soup.select('.efsp-hero-image, .us-life-hero-image'):
-        if image.get("src", "").endswith("everyday-travel.webp") and not image.parent.select_one(".photo-context"):
-            image.parent.append(fragment('<p class="photo-context">Everyday journeys: a subway platform in Japan. Photo by john Applese / Unsplash.</p>').p)
+    for image in soup.select(".efsp-industry-logo"):
+        image.decompose()
+    # Use useful course language instead of an unrelated location photograph.
+    for visual in soup.select(".efsp-hero-visual, .us-life-hero-visual"):
+        visual.clear()
+        is_work = "efsp-hero-visual" in visual.get("class", [])
+        visual.append(fragment(phrase_preview(is_work)).aside)
+    for paragraph in soup.select(".grammar-detail-hero .grammar-hero-copy > p:not(.eyebrow)"):
+        paragraph.string = "See the pattern, explore the examples, and put it into practice."
+    for image in soup.select(".grammar-thumb img, .grammar-hero-image"):
+        image["loading"] = "eager" if "grammar-hero-image" in image.get("class", []) else "lazy"
+        # Intrinsic dimensions prevent the artwork from shifting the surrounding text.
+        image_path = (path.parent / image["src"]).resolve()
+        if image_path.is_file():
+            with image_path.open("rb") as original:
+                header = original.read(24)
+            if header.startswith(b"\x89PNG\r\n\x1a\n"):
+                image["width"], image["height"] = map(str, struct.unpack(">II", header[16:24]))
+    for hint in soup.select(".grammar-image-hint"):
+        hint.string = "View full-size guide ↗"
+    directory_header = soup.select_one(".efsp-directory-header")
+    if directory_header and not directory_header.select_one(".directory-search-field"):
+        search_field = soup.new_tag("div", attrs={"class": "directory-search-field"})
+        for element in directory_header.select(".efsp-search-label, .efsp-directory-search"):
+            search_field.append(element.extract())
+        directory_header.append(search_field)
     intro_copy = {
         "tools.html": (".tools-hero-copy > p:not(.eyebrow)", "Choose a quick activity. Improve a sentence, practice pronunciation, or find words for a conversation."),
         "efsp.html": (".efsp-hero-copy > p:not(.eyebrow)", "Find your field and practice the conversations you have at work. Explore useful phrases, real situations, and printable workbooks."),
@@ -198,7 +231,7 @@ def build_homepage():
 {news}
 <section aria-labelledby="explore-heading"><div class="section-heading"><h2 id="explore-heading">English beyond the headlines</h2><span class="text-link">Everyday situations. Useful words.</span></div><div class="explore-grid">
 <a class="explore-story" href="stories/food-market/beginner.html"><img src="assets/editorial/food-market.webp" width="1000" height="692" alt="Shoppers and colorful fruit stalls at an indoor market." loading="lazy"><div><span class="eyebrow">Food &amp; conversation</span><h3>A small question. A new conversation.</h3><p>Visit a market and practice asking for what you need.</p><span class="text-link">Try the lesson →</span></div></a>
-<a class="explore-story" href="us-life.html"><img src="assets/editorial/everyday-travel.webp" width="1000" height="667" alt="Passengers waiting on a subway platform in Japan." loading="lazy"><div><span class="eyebrow">Everyday English</span><h3>Find your words in a new place.</h3><p>Practice the conversations that help you settle into life in the US.</p><span class="text-link">Explore everyday English →</span></div></a></div></section>
+<a class="explore-story" href="us-life.html"><span class="conversation-preview" aria-hidden="true">Hello.<br><em>Let’s talk.</em></span><div><span class="eyebrow">Everyday English</span><h3>Find your words in a new place.</h3><p>Practice the conversations that help you settle into life in the US.</p><span class="text-link">Explore everyday English →</span></div></a></div></section>
 <section class="study-paths" aria-labelledby="paths-heading"><div class="section-heading"><h2 id="paths-heading">What would you like to practice?</h2></div><div class="path-grid">
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
 <a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 visual guides to how English works.</p></a>

@@ -1,698 +1,122 @@
-from __future__ import annotations
+"""Publish authored English for Work lessons. Offline; no paid service calls.
 
+Run generate_work_documents.py first after curriculum changes, then this file.
+"""
 import html
-import importlib
 import json
-import re
-from pathlib import Path
-from typing import Any
-
-from generate_efsp_guarded_activities import bounded_activity_instruction, make_dialogue_cloze, make_module_cloze, term_learning_fields
-from generate_efsp_industry_batch_pdfs import INDUSTRIES, pdf_name, term_definition
+from editorial import document
+from work_curriculum import ROOT, REVISION, RUBRIC, load_tracks, related_tracks, validate_tracks
 
 
-ROOT = Path(__file__).resolve().parent
+def e(value):
+    return html.escape(str(value), quote=True)
 
 
-STANDARD_TRACKS = [
-    {
-        "module": "generate_efsp_ai_development_pdfs",
-        "title": "AI Development English",
-        "slug": "ai-development",
-        "summary": "High-level technical English for AI engineers, researchers, product managers, data specialists, and safety teams.",
-        "roles": "AI engineers, researchers, product managers, data specialists, safety teams, and AI-adjacent leaders",
-        "pdf_slug": "ai-development",
-    },
-    {
-        "module": "generate_efsp_general_it_pdfs",
-        "title": "General IT English",
-        "slug": "general-it",
-        "summary": "Technical workplace English for IT operations, service desk, infrastructure, cloud, endpoint, security, and platform teams.",
-        "roles": "IT operations, service desk, infrastructure, cloud, endpoint, security, and platform teams",
-        "pdf_slug": "general-it",
-    },
-    {
-        "module": "generate_efsp_law_pdfs",
-        "title": "Law English",
-        "slug": "law",
-        "summary": "Legal workplace English for client intake, privilege, litigation, discovery, contracts, compliance, settlement, and advocacy.",
-        "roles": "lawyers, paralegals, compliance staff, contracts specialists, legal operations teams, and law-adjacent professionals",
-        "pdf_slug": "law",
-    },
-    {
-        "module": "generate_efsp_finance_pdfs",
-        "title": "Finance English",
-        "slug": "finance",
-        "summary": "Professional English for accounting, FP&A, treasury, banking, investments, audit, risk, and corporate finance.",
-        "roles": "accounting, FP&A, treasury, banking, investments, audit, risk, corporate finance, and finance-adjacent teams",
-        "pdf_slug": "finance",
-    },
-    {
-        "module": "generate_efsp_financial_advice_pdfs",
-        "title": "Financial Advice English",
-        "slug": "financial-advice",
-        "summary": "Client-facing English for discovery, recommendations, disclosures, risk profiling, retirement planning, and difficult conversations.",
-        "roles": "financial advisors, planners, wealth-management teams, retirement specialists, paraplanners, and client-service staff",
-        "pdf_slug": "financial-advice",
-    },
-    {
-        "module": "generate_efsp_marketing_pdfs",
-        "title": "Marketing English",
-        "slug": "marketing",
-        "summary": "Professional English for audience strategy, positioning, campaign briefs, channels, attribution, compliance, and brand risk.",
-        "roles": "brand, product marketing, growth, content, SEO, lifecycle, demand generation, marketing operations, social, and agency teams",
-        "pdf_slug": "marketing",
-    },
-    {
-        "module": "generate_efsp_real_estate_pdfs",
-        "title": "Real Estate English",
-        "slug": "real-estate",
-        "summary": "Real estate English for agency, fair housing, buyer and seller consultations, pricing, offers, disclosures, financing, and closing.",
-        "roles": "real estate agents, brokers, transaction coordinators, property managers, leasing teams, and commercial real estate staff",
-        "pdf_slug": "real-estate",
-    },
-    {
-        "module": "generate_efsp_corporate_strategy_pdfs",
-        "title": "Corporate Strategy English",
-        "slug": "corporate-strategy",
-        "summary": "Executive-level English for strategic diagnosis, tradeoffs, portfolio choices, growth, M&A, uncertainty, KPIs, and board narratives.",
-        "roles": "corporate strategy, CEO office, transformation, corporate development, strategic finance, product strategy, and internal consulting teams",
-        "pdf_slug": "corporate-strategy",
-    },
-    {
-        "module": "generate_efsp_pharmaceutical_pdfs",
-        "title": "Pharmaceutical English",
-        "slug": "pharmaceutical",
-        "summary": "Pharmaceutical English for drug development, regulatory strategy, trials, safety, CMC, quality, labeling, medical affairs, access, and launch.",
-        "roles": "clinical development, regulatory affairs, pharmacovigilance, quality, CMC, manufacturing, medical affairs, market access, and compliance teams",
-        "pdf_slug": "pharmaceutical",
-    },
-]
+def ul(items):
+    return '<ul>' + ''.join(f'<li>{e(i)}</li>' for i in items) + '</ul>'
 
 
-CULTURE_TRACK = {
-    "title": "Cultural Leadership in US Branches",
-    "slug": "cultural-leadership-us-branches",
-    "summary": "Practical leadership English for Japanese and Chinese managers navigating US directness, pushback, meetings, feedback, and branch tension.",
-    "roles": "Japanese and Chinese managers, cross-border leaders, HR partners, and senior facilitators",
-    "pdfs": [
-        ("Instructor Guide", "pdf/efsp/efsp-cultural-leadership-in-us-branches-instructor-guide.pdf"),
-        ("Participant Workbook", "pdf/efsp/efsp-cultural-leadership-in-us-branches-participant-workbook.pdf"),
-        ("Scenario Cards", "pdf/efsp/efsp-cultural-leadership-scenario-cards.pdf"),
-        ("Quick Reference", "pdf/efsp/efsp-american-pushback-quick-reference.pdf"),
-    ],
-}
+def all_tracks():
+    return load_tracks()
 
 
-def e(text: Any) -> str:
-    return html.escape(str(text), quote=True)
+def page(title, content, current):
+    result = document(title, content, body_class='theme-efsp work-page', current=current)
+    result = result.replace('Learn English with real stories. Read, practice, and discuss at your level.',
+                            e(f'Practice {title} with realistic workplace cases, speaking, writing, clear vocabulary, and printable teaching guides.'))
+    return result.replace('</head>', '<link rel="stylesheet" href="work.css?v=20260905"><script defer src="work.js?v=20260905"></script></head>')
 
 
-def strip_module_number(title: str) -> str:
-    return re.sub(r"^Module\s+\d+\.\s*", "", title).strip()
+def pdf_links(track):
+    path = ROOT / 'content/work/documents.json'
+    manifest = json.loads(path.read_text()).get('documents', {}) if path.exists() else {}
+    labels = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Vocabulary & phrasebook']
+    descriptions = ['Timed lesson plans, coaching notes, and assessment criteria.',
+                    'Cases, practice, writing space, and a separate answer section.',
+                    'Partner roles, follow-up questions, and repeat-practice challenges.',
+                    'Clear definitions, reusable expressions, and model responses.']
+    cards = []
+    for i, (_old, href) in enumerate(track['pdfs']):
+        meta = manifest.get(href, {})
+        size = f" · {meta['pages']} pages" if meta.get('pages') else ''
+        version = meta.get('sha256', REVISION)[:12]
+        cards.append(f'<a class="work-download" href="{e(href)}?v={e(version)}"><span class="work-kicker">PDF{size}</span><strong>{labels[i]}</strong><span>{descriptions[i]}</span><span class="work-download-action">Open document ↗</span></a>')
+    return ''.join(cards)
 
 
-def pdfs_for_standard(pdf_slug: str) -> list[tuple[str, str]]:
-    return [
-        ("Instructor Guide", f"pdf/efsp/efsp-{pdf_slug}-english-instructor-guide.pdf"),
-        ("Participant Workbook", f"pdf/efsp/efsp-{pdf_slug}-english-participant-workbook.pdf"),
-        ("Dialogue Lab", f"pdf/efsp/efsp-{pdf_slug}-dialogue-lab.pdf"),
-        ("Jargon Guide", f"pdf/efsp/efsp-{pdf_slug}-jargon-quick-reference.pdf"),
-    ]
+def render_quiz(m, q, number):
+    name = f'{m["id"]}-q{number}'
+    choices = ''.join(f'<label><input type="radio" name="{name}" value="{i}"><span>{e(option)}</span></label>' for i, option in enumerate(q['options']))
+    reasons = ''.join(f'<li><strong>{chr(65+i)}. {e(option)}</strong> {e(q["feedback"][i])}</li>' for i, option in enumerate(q['options']))
+    return f'''<div class="work-quiz" data-work-quiz data-correct="{q['correct_index']}">
+<fieldset><legend>{number}. {e(q['prompt'])}</legend>{choices}</fieldset>
+<button type="button" class="work-button work-check" data-check-answer hidden>Check answer</button>
+<p class="work-feedback" data-quiz-feedback role="status" aria-live="polite"></p>
+<details class="work-answer"><summary>Answer and explanations</summary><p><strong>Answer: {chr(65+q['correct_index'])}.</strong> {e(q['answer'])}</p><ol class="work-answer-reasons">{reasons}</ol></details></div>'''
 
 
-def flatten_jargon(groups: list[tuple[str, list[tuple[str, str]]]]) -> list[dict[str, str]]:
-    terms = []
-    for group, items in groups:
-        for term, definition in items:
-            terms.append({**term_learning_fields(term, definition, group), "group": group})
-    return terms
+def render_module(track, m):
+    w = m['workshop']
+    vocab = ''.join(f'<div><dt>{e(j["term"])}</dt><dd>{e(j["definition"])}</dd></div>' for j in m['vocabulary'])
+    quiz = ''.join(render_quiz(m, q, i+1) for i, q in enumerate(w['questions']))
+    checklist = ul([criterion for _name, criterion in RUBRIC])
+    return f'''<details class="work-module" id="{m['id']}" {'open' if m['number']==1 else ''}>
+<summary><span class="work-module-number">{m['number']:02d}</span><span><strong>{e(m['title'])}</strong><small>{e(w['title'])} · 45-60 minutes</small></span><span class="work-expand" aria-hidden="true">+</span></summary>
+<div class="work-module-body"><div class="work-lesson-heading"><p class="work-kicker">Your goal</p><h3>{e(w['goal'])}</h3></div>
+<div class="work-two-column"><section class="work-case"><p class="work-kicker">01 · Read the situation</p><h4>A moment at work</h4><p>{e(m['brief'])}</p><p class="work-prompt">Before you look at the model: what is confirmed, what is missing, and who needs a response?</p></section>
+<section><p class="work-kicker">02 · Find the words</p><h4>Vocabulary for this lesson</h4><dl class="work-vocabulary compact">{vocab}</dl></section></div>
+<section class="work-language"><p class="work-kicker">03 · Notice the language</p><h4>{e(w['title'])}</h4><p>{e(w['explanation'])}</p>{ul(w['frames'])}<div class="work-edit"><p><strong>Improve this:</strong> {e(w['before'])}</p><details><summary>See a clearer version</summary><p><strong>{e(w['after'])}</strong></p><p>{e(w['reason'])}</p></details></div></section>
+<section class="work-checks"><p class="work-kicker">04 · Check your understanding</p><h4>Two short language checks</h4><p>These language patterns recur across courses so you can retrieve and reuse them.</p><div class="work-two-column">{quiz}</div></section>
+<div class="work-two-column work-practice"><section><p class="work-kicker">05 · Say it</p><h4>Practice with a partner</h4><p>{e(m['speaking_task'])}</p><details><summary>Partner's role and follow-up</summary><p>{e(w['role_b'])}</p></details><details><summary>Try a harder second round</summary><p>{e(w['challenge'])}</p></details><p class="work-support"><strong>Studying alone?</strong> Give both sides of the conversation aloud. Pause before answering the follow-up, then repeat with fewer notes.</p></section>
+<section><p class="work-kicker">06 · Write it</p><h4>A message someone can act on</h4><p>{e(m['writing_task'])}</p><label class="work-note-label" for="{m['id']}-note">Your draft</label><textarea id="{m['id']}-note" data-work-note="{m['id']}" rows="7" placeholder="Subject: ...&#10;Start with the purpose of your message."></textarea><p class="work-word-count" data-word-count>0 words · target 70-110</p></section></div>
+<details class="work-model"><summary>Compare with a model response</summary><blockquote>{e(m['model'])}</blockquote><p>This is one possible spoken response, not the only acceptable wording. For your written version, add a subject line, opening, and relevant context without inventing facts.</p><p><strong>Notice:</strong> {e(w['goal'])} Underline the wording that does this. Then identify one detail from the case that the response preserves.</p></details>
+<section class="work-reflect"><h4>Review, then try again</h4>{checklist}<p>Revise one sentence and repeat the response. A useful response can be clear even with a few grammar errors; judge meaning and task completion, not accent.</p><label class="work-completion"><input type="checkbox" data-work-complete="{m['id']}"> I practiced, checked my response, and tried again.</label></section>
+</div></details>'''
 
 
-def model_line(dialogue: dict[str, Any] | None) -> str:
-    if not dialogue:
-        return "I understand the pressure, but I want to separate urgency from evidence, risk, owner, and decision rights before we commit."
-    for speaker, line in dialogue.get("dialogue", []):
-        if str(speaker).lower() == "esl learner":
-            return line
-    if dialogue.get("dialogue"):
-        return dialogue["dialogue"][-1][1]
-    return "Let's define the risk, the evidence, the owner, and the next decision."
+def render_industry_page(t, tracks):
+    modules = ''.join(render_module(t, m) for m in t['modules'])
+    jump = ''.join(f'<a href="#{m["id"]}" title="{e(m["title"])}">{m["number"]:02d}<span class="sr-only"> {e(m["title"])}</span></a>' for m in t['modules'])
+    glossary = ''.join(f'<div data-work-term><dt>{e(j["term"])}</dt><dd>{e(j["definition"])}</dd></div>' for j in sorted(t['jargon'], key=lambda j:j['term'].casefold()))
+    related = ''.join(f'<a href="efsp-{r["slug"]}.html">{e(r["title"])} <span aria-hidden="true">↗</span></a>' for r in related_tracks(t, tracks))
+    extra = ''
+    if t.get('nomenclature'):
+        terms = ''.join(f'<div><dt>{e(n["term"])} <small>({e(n["category"])})</small></dt><dd>{e(n["meaning"])}</dd></div>' for n in t['nomenclature'])
+        extra = f'<section class="work-section"><h2>More specialist terminology</h2><dl class="work-vocabulary work-glossary">{terms}</dl></section>'
+    sources = ''.join(f'<li><a href="{e(s["url"])}">{e(s["title"])}</a></li>' for s in t['sources'])
+    content = f'''<div data-work-course="{e(t['slug'])}">
+<nav class="work-breadcrumb" aria-label="Breadcrumb"><a href="efsp.html">English for Work</a><span aria-hidden="true">/</span><span>{e(t['category'])}</span></nav>
+<section class="work-hero"><div><p class="work-kicker">English for Work · {e(t['category'])}</p><h1>{e(t['title'])}</h1><p class="work-intro">{e(t['summary'])}</p><div class="work-meta"><span>8 practical lessons</span><span>Intermediate to advanced</span><span>4 printable guides</span></div><a class="work-button" href="#lessons">Start practicing <span aria-hidden="true">→</span></a></div>
+<aside class="work-study-card"><p class="work-kicker">Words into action</p><p class="work-study-phrase">Read the situation.<br>Find your words.<br>Make yourself clear.</p><p>For {e(t['roles']).rstrip('.')}.</p><a href="#downloads">Choose your materials ↓</a></aside></section>
+<section class="work-orientation work-two-column"><div><h2>What you will practice</h2>{ul(t['outcomes'][:5])}</div><div><h2>Choose your pace</h2><p><strong>Quick practice · 15 minutes:</strong> read a case, study the useful expressions, and say your response aloud.</p><p><strong>Full lesson · 45-60 minutes:</strong> add the language checks, partner exchange, writing, and revision.</p><p><strong>Level guide:</strong> designed for intermediate to advanced learners. B1 learners can use the sentence frames; B2 learners can work independently; C1 learners can try the harder second round. These are teaching suggestions, not a certified level assessment.</p></div></section>
+<section id="downloads" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Take the lesson with you</p><h2>Four guides. Four useful jobs.</h2></div><span>Revised September 2026</span></div><div class="work-downloads">{pdf_links(t)}</div></section>
+<section id="lessons" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Practice, reflect, repeat</p><h2>Your eight lessons</h2></div><p class="work-progress" data-work-progress role="status">0 of 8 practiced</p></div><div class="work-lesson-tools"><nav class="work-jump" aria-label="Jump to lesson">{jump}</nav><button type="button" class="work-text-button" data-expand-lessons hidden>Open all lessons</button></div><p class="work-scope">{e(t['scope_note'])}</p>
+<div class="work-save-controls" hidden data-storage-controls><label><input type="checkbox" data-save-notes> Save my drafts and progress in this browser</label><button type="button" class="work-text-button" data-clear-work>Clear saved practice</button><p data-storage-status role="status">Saving is off. Use fictional details; practice is not submitted or automatically graded.</p></div>{modules}</section>
+<section class="work-section work-capstone"><p class="work-kicker">Put it together</p><h2>Your final workplace challenge</h2><p>Choose a case you have not rehearsed today. Give a one-minute response, answer two follow-up questions, then write a 70-110 word message. Have your partner introduce the harder second-round challenge. Review the four criteria used in the lessons and repeat the part that needs improvement.</p><p><strong>Compare your progress:</strong> return to your first draft. Identify one improvement in clarity, one in accuracy, and one in how you ask for or explain the next step.</p></section>
+<section id="vocabulary" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Keep the meaning close</p><h2>Your field vocabulary</h2></div><label>Find a term<input type="search" data-vocabulary-search placeholder="Search words and meanings"></label></div><p data-vocabulary-count role="status">{len(t['jargon'])} terms</p><dl class="work-vocabulary work-glossary">{glossary}</dl></section>
+{extra}<section class="work-section work-two-column"><div><h2>For teachers and study partners</h2><p>Ask learners to respond before revealing the model. Give feedback on one meaning issue and one language pattern, then let them repeat. For mixed levels, offer the frames first and remove them in the second round.</p><p>Use the teacher's guide for a 60-minute plan, performance criteria, model answers, and extension tasks. A recorded practice completion is not a proficiency score.</p></div><div><h2>Language notes and further reading</h2><p>The cases and explanations are original teaching material. The references provide language frameworks and selected professional context; use current local guidance for actual work.</p><ul class="work-sources">{sources}</ul><p class="work-small">Course edition: {REVISION}.</p></div></section>
+<section class="work-section"><p class="work-kicker">Continue in your field</p><h2>Related courses</h2><div class="work-related">{related}</div></section></div>'''
+    return page(t['title'], content, f'efsp-{t["slug"]}.html')
 
 
-def normalize_standard_track(spec: dict[str, str]) -> dict[str, Any]:
-    mod = importlib.import_module(spec["module"])
-    jargon = flatten_jargon(getattr(mod, "JARGON_GROUPS", []))
-    dialogues = getattr(mod, "DIALOGUES", [])
-    modules = []
-    for index, module in enumerate(getattr(mod, "MODULES", [])):
-        dialogue = dialogues[index % len(dialogues)] if dialogues else None
-        terms = [item["term"] for item in jargon[index * 4 : (index + 1) * 4]] or [
-            concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]
-        ]
-        modules.append(
-            {
-                "title": strip_module_number(module["title"]),
-                "focus": module.get("big_idea", ""),
-                "goals": [bounded_activity_instruction(item) for item in module.get("objectives", [])[:4]],
-                "activities": module.get("activities", [])[:3],
-                "outputs": module.get("outputs", [])[:3],
-                "terms": terms,
-                "scenario": dialogue.get("setting", module.get("big_idea", "")) if dialogue else module.get("big_idea", ""),
-                "pressure": dialogue["dialogue"][0][1] if dialogue and dialogue.get("dialogue") else module.get("activities", [""])[0],
-                "model": model_line(dialogue),
-                "notes": dialogue.get("notes", []) if dialogue else module.get("concepts", [])[:2],
-                "cloze": make_dialogue_cloze(dialogue, terms)
-                if dialogue
-                else make_module_cloze(
-                    {
-                        "title": strip_module_number(module["title"]),
-                        "scenario": module.get("big_idea", ""),
-                        "pressure": module.get("activities", [""])[0],
-                        "terms": terms,
-                        "outputs": module.get("outputs", []),
-                    },
-                    module.get("outputs", []),
-                ),
-            }
-        )
-    phrases = []
-    for group, items in getattr(mod, "PHRASE_BANK", {}).items():
-        for phrase in items:
-            phrases.append({"group": group, "phrase": phrase})
-    return {
-        "title": spec["title"],
-        "slug": spec["slug"],
-        "summary": spec["summary"],
-        "roles": spec["roles"],
-        "pdfs": pdfs_for_standard(spec["pdf_slug"]),
-        "modules": modules,
-        "jargon": jargon,
-        "phrases": phrases,
-    }
+def render_directory(tracks):
+    options = ''.join(f'<option>{e(g)}</option>' for g in sorted({t['category'] for t in tracks}))
+    cards = ''.join(f'''<a class="work-course-card" href="efsp-{e(t['slug'])}.html" data-work-course-link data-category="{e(t['category'])}" data-search="{e(t['title']+' '+t['summary']+' '+t['roles']+' '+' '.join(m['title'] for m in t['modules']))}"><span class="work-kicker">{e(t['category'])}</span><h3>{e(t['title'])}</h3><p>{e(t['summary'])}</p><span class="work-card-footer">8 lessons · 4 guides <span aria-hidden="true">↗</span></span></a>''' for t in tracks)
+    content = f'''<section class="work-directory-hero"><p class="work-kicker">English for Work</p><h1>Good work.<br>Clearly expressed.</h1><p class="work-intro">Find the words for the work you do. Practice real conversations, write useful messages, and build confidence one situation at a time.</p><div class="work-meta"><span>41 professional fields</span><span>328 practical lessons</span><span>164 printable guides</span></div></section>
+<section class="work-start-paths"><article><span class="work-kicker">On your own</span><h2>Make fifteen minutes count.</h2><p>Choose a case, try a response, and compare it with the model. Add writing and revision when you have more time.</p></article><article><span class="work-kicker">With a class or partner</span><h2>Turn practice into a conversation.</h2><p>Use partner roles, follow-up questions, timed lesson plans, and clear feedback criteria. Every course includes a teacher's guide.</p></article></section>
+<section class="work-section" data-work-directory><div class="work-section-heading"><div><p class="work-kicker">Find your field</p><h2>What do you do?</h2></div><p data-course-count role="status">41 courses</p></div><div class="work-directory-filters"><label>Search by role, topic, or industry<input type="search" data-course-search placeholder="Try nursing, presentations, or customer support"></label><label>Browse a field<select data-course-category><option value="">All fields</option>{options}</select></label></div><p class="work-empty" data-course-empty hidden>No courses match. Try a broader word or choose all fields.</p><div class="work-course-grid">{cards}</div></section>
+<section class="work-section work-two-column"><div><h2>Know what you are practicing.</h2><p>Every lesson combines an original case, relevant vocabulary, a language workshop, short checks with explanations, speaking, writing, and revision. Repeated language patterns help you recall useful expressions in a new context.</p></div><div><h2>Choose the right starting point.</h2><p>These courses suit intermediate to advanced learners. Use the sentence frames for support or add the harder follow-up challenge. For foundational practice, start with <a href="grammar-concepts.html">the grammar guides</a> and <a href="beginner.html">daily reading</a>.</p></div></section>'''
+    return page('English for Work', content, 'efsp.html')
 
 
-def normalize_culture_track() -> dict[str, Any]:
-    mod = importlib.import_module("generate_efsp_culture_pdfs")
-    modules = []
-    jargon = []
-    source_modules = getattr(mod, "MODULES", [])
-    scenarios = getattr(mod, "SCENARIOS", [])
-    language_moves = getattr(mod, "CULTURE_LANGUAGE_MOVES", [])
-    for index, module in enumerate(source_modules):
-        terms = [concept.split(":", 1)[0] for concept in module.get("concepts", [])[:4]]
-        for term, concept in zip(terms, module.get("concepts", [])[:4]):
-            jargon.append({**term_learning_fields(term, concept, module["big_idea"]), "group": strip_module_number(module["title"])})
-        scenario = scenarios[index % len(scenarios)] if scenarios else {}
-        move = language_moves[index % len(language_moves)] if language_moves else "I want the strongest objection. Challenge the plan, not the person."
-        dialogue = {
-            "title": scenario.get("title", strip_module_number(module["title"])),
-            "setting": scenario.get("context", module.get("big_idea", "")),
-            "dialogue": [
-                ("US colleague", scenario.get("colleague", module.get("activities", [""])[0])),
-                ("ESL learner", move),
-            ],
-            "notes": [scenario.get("observer", "Keep the discussion focused on the work, the evidence, and a clear decision.")],
-        }
-        modules.append(
-            {
-                "title": strip_module_number(module["title"]),
-                "focus": module.get("big_idea", ""),
-                "goals": [bounded_activity_instruction(item) for item in module.get("objectives", [])[:4]],
-                "activities": module.get("activities", [])[:3],
-                "outputs": module.get("outputs", [])[:3],
-                "terms": terms,
-                "scenario": dialogue["setting"],
-                "pressure": dialogue["dialogue"][0][1],
-                "model": move,
-                "notes": [scenario.get("observer", ""), *module.get("concepts", [])[:1]],
-                "cloze": make_dialogue_cloze(dialogue, terms),
-            }
-        )
-    phrases = []
-    for group, items in getattr(mod, "PHRASE_BANK", {}).items():
-        for phrase in items:
-            phrases.append({"group": group, "phrase": phrase})
-    return {**CULTURE_TRACK, "modules": modules, "jargon": jargon, "phrases": phrases}
-
-
-def normalize_batch_track(profile: dict[str, Any]) -> dict[str, Any]:
-    modules = []
-    jargon = []
-    all_outputs = [module["output"] for module in profile["modules"]]
-    for module in profile["modules"]:
-        for term in module["terms"]:
-            jargon.append(
-                {
-                    **term_learning_fields(term, term_definition(term, profile, module), module["scenario"]),
-                    "group": module["title"],
-                }
-            )
-        modules.append(
-            {
-                "title": module["title"],
-                "focus": module["skill"],
-                "goals": [
-                    f"Use these terms accurately: {', '.join(module['terms'])}.",
-                    f"Explain the constraint: {module['constraint']}",
-                    f"Respond to pressure: {module['pressure']}",
-                ],
-                "activities": [
-                    "Select the field term that names the decision variable in context.",
-                    "Choose the strongest evidence-based pushback response.",
-                    f"Choose the facts, owner, and next decision that belong in a {module['output']}.",
-                ],
-                "outputs": [module["output"]],
-                "terms": module["terms"],
-                "scenario": module["scenario"],
-                "pressure": module["pressure"],
-                "model": (
-                    f"I understand the urgency. Before we act, I need to verify {module['terms'][0]} and "
-                    f"{module['terms'][1]} against the stated constraint, then I can recommend the next decision."
-                ),
-                "notes": [module["constraint"], f"Output: {module['output']}"],
-                "cloze": make_module_cloze(module, all_outputs),
-            }
-        )
-    return {
-        "title": profile["title"],
-        "slug": profile["slug"],
-        "summary": profile["summary"],
-        "roles": profile["roles"],
-        "pdfs": [
-            ("Instructor Guide", f"pdf/efsp/{pdf_name(profile, 'english-instructor-guide')}"),
-            ("Participant Workbook", f"pdf/efsp/{pdf_name(profile, 'english-participant-workbook')}"),
-            ("Dialogue Lab", f"pdf/efsp/{pdf_name(profile, 'dialogue-lab')}"),
-            ("Jargon Guide", f"pdf/efsp/{pdf_name(profile, 'jargon-quick-reference')}"),
-        ],
-        "modules": modules,
-        "jargon": jargon,
-        "phrases": [
-            {"group": "Pushback", "phrase": "I understand the urgency. The risk is that we move faster than the evidence or process supports."},
-            {"group": "Decision", "phrase": "If we accept this risk, we should name the owner, document the assumption, and define the trigger for escalation."},
-            {"group": "Scope", "phrase": "That may be possible, but not under the current scope, timeline, or approval path."},
-        ],
-        "collocations": [
-            {"phrase": phrase, "use": use}
-            for phrase, use in profile.get("collocations", [])
-        ],
-        "extra_dialogues": [
-            {
-                "title": dialogue["title"],
-                "setting": dialogue["setting"],
-                "turns": [
-                    {"speaker": speaker, "line": line}
-                    for speaker, line in dialogue.get("turns", [])
-                ],
-                "coach_notes": dialogue.get("coach_notes", []),
-                "collocations": dialogue.get("collocations", []),
-            }
-            for dialogue in profile.get("dialogues", [])
-        ],
-        "nomenclature": [
-            {"category": category, "term": term, "meaning": meaning}
-            for category, term, meaning in profile.get("nomenclature", [])
-        ],
-    }
-
-
-def all_tracks() -> list[dict[str, Any]]:
-    tracks = [normalize_culture_track()]
-    tracks.extend(normalize_standard_track(spec) for spec in STANDARD_TRACKS)
-    tracks.extend(normalize_batch_track(profile) for profile in INDUSTRIES)
-    return tracks
-
-
-def json_script(data: dict[str, Any]) -> str:
-    payload = json.dumps(data, ensure_ascii=True).replace("</", "<\\/")
-    return f'<script id="efsp-page-data" type="application/json">{payload}</script>'
-
-
-def pdf_links(pdfs: list[tuple[str, str]]) -> str:
-    return "\n".join(f'<a class="efsp-download-link" href="{e(href)}">{e(label)}</a>' for label, href in pdfs)
-
-
-def participant_workbook_href(pdfs: list[tuple[str, str]]) -> str:
-    for label, href in pdfs:
-        if label == "Participant Workbook":
-            return href
-    return pdfs[0][1]
-
-
-def render_module_summaries(track: dict[str, Any]) -> str:
-    items = []
-    for index, module in enumerate(track["modules"], start=1):
-        terms = ", ".join(module["terms"][:4])
-        items.append(
-            f"""<article class="efsp-module-summary">
-<span class="efsp-module-number">{index}</span>
-<h3>{e(module['title'])}</h3>
-<p>{e(module['focus'])}</p>
-<p class="efsp-term-line">{e(terms)}</p>
-</article>"""
-        )
-    return "\n".join(items)
-
-
-def render_practical_expansion(track: dict[str, Any]) -> str:
-    collocations = track.get("collocations", [])
-    dialogues = track.get("extra_dialogues", [])
-    nomenclature = track.get("nomenclature", [])
-    if not (collocations or dialogues or nomenclature):
-        return ""
-
-    collocation_html = ""
-    if collocations:
-        collocation_html = "\n".join(
-            f"""<li>
-<strong>{e(item['phrase'])}</strong>
-<span>{e(item['use'])}</span>
-</li>"""
-            for item in collocations
-        )
-        collocation_html = f"""<article class="efsp-expansion-panel">
-<h3>Collocation rehearsal</h3>
-<p>Practice these as complete field moves: say the phrase, name the evidence it requires, then add the owner and next action.</p>
-<ul class="efsp-collocation-list">
-{collocation_html}
-</ul>
-</article>"""
-
-    dialogue_html = ""
-    if dialogues:
-        dialogue_items = []
-        for dialogue in dialogues:
-            turns = "\n".join(
-                f"""<div class="efsp-dialogue-turn">
-<strong>{e(turn['speaker'])}</strong>
-<span>{e(turn['line'])}</span>
-</div>"""
-                for turn in dialogue["turns"]
-            )
-            targets = ", ".join(dialogue.get("collocations", []))
-            dialogue_items.append(
-                f"""<details class="efsp-dialogue-preview">
-<summary>{e(dialogue['title'])}</summary>
-<p>{e(dialogue['setting'])}</p>
-<div class="efsp-dialogue-turns">
-{turns}
-</div>
-<p class="efsp-target-line">Target collocations: {e(targets)}</p>
-</details>"""
-            )
-        dialogue_html = f"""<article class="efsp-expansion-panel">
-<h3>Dialogue rehearsal</h3>
-<p>Open a situation, assign roles, then replace one technical fact with a similar issue from the learner's workplace.</p>
-{''.join(dialogue_items)}
-</article>"""
-
-    nomenclature_html = ""
-    if nomenclature:
-        by_category: dict[str, list[dict[str, str]]] = {}
-        for item in nomenclature:
-            by_category.setdefault(item["category"], []).append(item)
-        category_blocks = []
-        for category, items in by_category.items():
-            rows = "\n".join(
-                f"""<tr>
-<th scope="row">{e(item['term'])}</th>
-<td>{e(item['meaning'])}</td>
-</tr>"""
-                for item in items
-            )
-            category_blocks.append(
-                f"""<details class="efsp-nomenclature-group">
-<summary>{e(category)} <span>{len(items)} terms</span></summary>
-<table class="efsp-nomenclature-table">
-<tbody>
-{rows}
-</tbody>
-</table>
-</details>"""
-            )
-        nomenclature_html = f"""<article class="efsp-expansion-panel">
-<h3>Specialized nomenclature</h3>
-<p>Use the categories for sorting practice: term, plain-English meaning, business risk, and where the term appears in a real meeting.</p>
-{''.join(category_blocks)}
-</article>"""
-
-    return f"""<section class="efsp-section efsp-practical-expansion">
-<p class="eyebrow">Practical Language Expansion</p>
-<h2>Collocations, dialogues, and specialized nomenclature</h2>
-<div class="efsp-expansion-grid">
-{collocation_html}
-{dialogue_html}
-{nomenclature_html}
-</div>
-</section>"""
-
-
-def render_industry_page(track: dict[str, Any], tracks: list[dict[str, Any]]) -> str:
-    module_summaries = render_module_summaries(track)
-    practical_expansion = render_practical_expansion(track)
-    student_pdf = participant_workbook_href(track["pdfs"])
-    related = [item for item in tracks if item["slug"] != track["slug"]][:6]
-    related_links = "\n".join(
-        f'<a href="efsp-{e(item["slug"])}.html">{e(item["title"])}</a>' for item in related
-    )
-    page_data = {
-        "title": track["title"],
-        "modules": track["modules"],
-        "jargon": track["jargon"],
-        "phrases": track["phrases"],
-    }
-    for key in ["collocations", "extra_dialogues", "nomenclature"]:
-        if track.get(key):
-            page_data[key] = track[key]
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>English Ladder | {e(track['title'])}</title>
-<link href="favicon.png" rel="icon" type="image/png">
-<link href="styles.css" rel="stylesheet">
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script><!-- End Cloudflare Web Analytics -->
-</head>
-<body class="theme-efsp">
-<main class="page-shell">
-<nav class="top-nav">
-<a href="efsp.html">Back to EFSP Directory</a>
-<span>{e(track['title'])}</span>
-</nav>
-
-<section class="efsp-industry-hero">
-<div>
-<p class="eyebrow">English for Special Purposes</p>
-<h1>{e(track['title'])}</h1>
-<p>{e(track['summary'])}</p>
-<ul class="efsp-stat-list">
-<li>{len(track['modules'])} modules</li>
-<li>{len(track['jargon']) + len(track.get('nomenclature', []))} field terms</li>
-<li>Interactive practice</li>
-</ul>
-</div>
-<img alt="English Ladder logo" class="efsp-industry-logo" src="English-Ladder.png">
-</section>
-
-<section class="efsp-pdf-strip">
-<div>
-<p class="eyebrow">Printable Curriculum</p>
-<h2>Download the full materials</h2>
-</div>
-<div class="efsp-download-grid" aria-label="{e(track['title'])} PDF downloads">
-{pdf_links(track['pdfs'])}
-</div>
-</section>
-
-<section class="efsp-workbench" data-efsp-workbench>
-<div class="efsp-workbench-copy">
-<p class="eyebrow">Web Practice Lab</p>
-<h2>Rehearse the language, response, and decision</h2>
-<p>Work through a three-step sequence: identify the field language, choose the strongest response, then select the next controlled decision move.</p>
-</div>
-<div class="efsp-module-picker" data-module-buttons></div>
-<div class="efsp-practice-layout">
-<article class="efsp-practice-panel">
-<p class="eyebrow">Module Focus</p>
-<h3 data-module-title></h3>
-<p data-module-focus></p>
-<ul data-module-goals></ul>
-</article>
-<article class="efsp-practice-panel">
-<p class="eyebrow">Guided Decision Lab</p>
-<h3 data-cloze-title></h3>
-<p class="efsp-scenario-text" data-cloze-setting></p>
-<div class="efsp-dialogue-lines" data-cloze-lines></div>
-<div class="efsp-activity-steps" data-cloze-steps aria-label="Practice stages"></div>
-<p class="efsp-field-label" data-cloze-instruction></p>
-<p data-cloze-prompt></p>
-<div class="efsp-choice-grid" data-cloze-options></div>
-<div class="efsp-feedback" data-cloze-feedback></div>
-</article>
-<article class="efsp-practice-panel">
-<p class="eyebrow">Jargon Flashcard</p>
-<h3 data-card-term></h3>
-<p data-card-definition hidden></p>
-<p class="efsp-card-contrast" data-card-contrast hidden></p>
-<ul class="efsp-card-collocations" data-card-collocations hidden></ul>
-<p class="efsp-card-example" data-card-example hidden></p>
-<div class="efsp-tool-row">
-<button type="button" class="efsp-tool-button" data-action="reveal-card">Reveal</button>
-<button type="button" class="efsp-tool-button efsp-tool-button-secondary" data-action="next-card">Next</button>
-</div>
-</article>
-<article class="efsp-practice-panel">
-<p class="eyebrow">Answer Rationale</p>
-<h3>Why the strongest phrase fits</h3>
-<p data-cloze-rationale>Choose an option to see the workplace rationale.</p>
-<ul data-cloze-notes></ul>
-</article>
-<article class="efsp-practice-panel">
-<p class="eyebrow">Dialogue Coach</p>
-<h3>Model line</h3>
-<p data-model-line></p>
-<details>
-<summary>Language notes</summary>
-<ul data-language-notes></ul>
-</details>
-</article>
-<article class="efsp-practice-panel">
-<p class="eyebrow">Progress</p>
-<h3>Practice checklist</h3>
-<label><input type="checkbox" data-progress-item> I used at least two field terms accurately.</label>
-<label><input type="checkbox" data-progress-item> I named the evidence or policy boundary.</label>
-<label><input type="checkbox" data-progress-item> I gave a concrete next step.</label>
-<label><input type="checkbox" data-progress-item> I avoided overpromising.</label>
-<meter min="0" max="4" value="0" data-progress-meter></meter>
-<p data-progress-label>0 of 4 complete</p>
-</article>
-</div>
-</section>
-
-<section class="efsp-section">
-<div class="efsp-section-action-header">
-<div>
-<p class="eyebrow">Student PDF in Web Form</p>
-<h2>Module map</h2>
-</div>
-<a class="efsp-student-pdf-link" href="{e(student_pdf)}">Open Participant Workbook PDF</a>
-</div>
-<div class="efsp-module-summary-grid">
-{module_summaries}
-</div>
-</section>
-{practical_expansion}
-<section class="efsp-section">
-<p class="eyebrow">More EFSP Tracks</p>
-<h2>Related pages</h2>
-<div class="efsp-related-links">
-{related_links}
-</div>
-</section>
-</main>
-{json_script(page_data)}
-<script src="app.js"></script>
-</body>
-</html>
-"""
-
-
-def render_directory(tracks: list[dict[str, Any]]) -> str:
-    links = []
-    pdf_count = sum(len(track["pdfs"]) for track in tracks)
-    for track in tracks:
-        links.append(
-            f"""<a class="efsp-directory-link" href="efsp-{e(track['slug'])}.html" data-efsp-directory-link data-search="{e(track['title'] + ' ' + track['summary'] + ' ' + track['roles'])}">
-<span>{e(track['title'])}</span>
-<small>{e(track['summary'])}</small>
-</a>"""
-        )
-    return f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>English Ladder | English for Special Purposes</title>
-<link href="favicon.png" rel="icon" type="image/png">
-<link href="styles.css" rel="stylesheet">
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{{"token": "c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script><!-- End Cloudflare Web Analytics -->
-</head>
-<body class="theme-efsp">
-<main class="page-shell">
-<nav class="top-nav">
-<a href="index.html">Back to Level Hub</a>
-<span>English for Special Purposes curricula</span>
-</nav>
-
-<section class="efsp-hero efsp-directory-hero">
-<div class="efsp-hero-copy">
-<p class="eyebrow">English for Special Purposes</p>
-<h1>Industry-specific English practice labs</h1>
-<p>Choose an EFSP track to open a dedicated web page with practical module summaries, PDF downloads, and interactive activities built from the curriculum materials.</p>
-<ul class="efsp-stat-list">
-<li>{len(tracks)} tracks</li>
-<li>{pdf_count} PDFs</li>
-<li>Interactive web practice</li>
-<li>Instructor-ready materials</li>
-</ul>
-</div>
-<div class="efsp-hero-visual">
-<img alt="English Ladder illustration" class="efsp-hero-image" src="English-Ladder.png">
-</div>
-</section>
-
-<section class="efsp-section efsp-directory-section">
-<div class="efsp-directory-header">
-<div>
-<p class="eyebrow">Curriculum Directory</p>
-<h2>Open an industry page</h2>
-</div>
-<label class="efsp-search-label" for="efsp-search">Search tracks</label>
-<input id="efsp-search" class="efsp-directory-search" type="search" placeholder="Search by industry, role, or situation" data-efsp-search>
-</div>
-<p class="efsp-directory-count" data-efsp-directory-count>{len(tracks)} tracks shown</p>
-<div class="efsp-directory-list">
-{''.join(links)}
-</div>
-</section>
-
-<section class="efsp-section efsp-framework">
-<p class="eyebrow">How To Use These Pages</p>
-<h2>Web practice plus printable depth</h2>
-<div class="efsp-pathway-grid">
-<article>
-<h3>Browse</h3>
-<p>Use each page for a fast, practical view of the modules, situations, jargon, and decision language.</p>
-</article>
-<article>
-<h3>Practice</h3>
-<p>Use the web activities to rehearse pushback, scenario responses, jargon recall, and model dialogue lines.</p>
-</article>
-<article>
-<h3>Print</h3>
-<p>Download the PDFs when you need the full instructor guide, participant workbook, dialogue lab, or reference material.</p>
-</article>
-</div>
-</section>
-</main>
-<script src="app.js"></script>
-</body>
-</html>
-"""
-
-
-def main() -> None:
-    from editorial import decorate_page
+def main():
     tracks = all_tracks()
-    (ROOT / "efsp.html").write_text(render_directory(tracks))
-    decorate_page(ROOT / "efsp.html")
-    for track in tracks:
-        page_path = ROOT / f"efsp-{track['slug']}.html"
-        page_path.write_text(render_industry_page(track, tracks))
-        decorate_page(page_path)
-    print(f"Generated {len(tracks)} EFSP industry pages plus efsp.html")
+    print(validate_tracks(tracks))
+    (ROOT / 'efsp.html').write_text(render_directory(tracks))
+    for t in tracks:
+        (ROOT / f'efsp-{t["slug"]}.html').write_text(render_industry_page(t, tracks))
+    print(f'Generated {len(tracks)} course pages and the directory.')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

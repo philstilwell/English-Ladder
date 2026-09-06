@@ -8,8 +8,9 @@
   },
   "scripts": {
     "build": "python3 editorial.py",
-    "check:js": "node --check app.js && node --check learning.js && node --check tools.js && node --check us-life.js",
-    "test": "python3 -m unittest discover -s tests && node --test tests/learning.test.cjs"
+    "check:js": "node --check app.js && node --check learning.js && node --check tools.js && node --check us-life.js && node --check work.js",
+    "test": "python3 -m unittest discover -s tests && node --test tests/*.test.cjs",
+    "build:work": "python3 generate_work_documents.py && python3 generate_efsp_web_pages.py"
   },
   "repository": {
     "type": "git",

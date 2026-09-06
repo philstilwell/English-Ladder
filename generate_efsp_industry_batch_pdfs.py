@@ -1538,13 +1538,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--skip-html", action="store_true", help="Generate PDFs without updating efsp.html.")
     args = parser.parse_args()
-    paths = generate_all()
+    from generate_work_documents import main as build_current_documents
+    build_current_documents(slugs=[profile["slug"] for profile in INDUSTRIES])
     if not args.skip_html:
         from generate_efsp_web_pages import main as generate_web_pages
 
         generate_web_pages()
-    for path in paths:
-        print(path.relative_to(ROOT))
 
 
 if __name__ == "__main__":

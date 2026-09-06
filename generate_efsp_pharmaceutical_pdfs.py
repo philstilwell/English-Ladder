@@ -939,14 +939,9 @@ def quick_reference() -> Path:
 
 
 def main() -> None:
-    paths = [
-        instructor_guide(),
-        participant_workbook(),
-        dialogue_lab(),
-        quick_reference(),
-    ]
-    for path in paths:
-        print(path)
+    # Rebuild from the current shared curriculum; legacy constants remain for provenance.
+    from generate_work_documents import main as build_current_documents
+    build_current_documents(slugs=["pharmaceutical"])
 
 
 if __name__ == "__main__":

@@ -26,6 +26,31 @@ npm test
 
 Tests cover content consistency, local links and anchors across every page, news selection, and learning interactions using a simulated document environment. They do not substitute for browser layout testing.
 
+## English for Work
+
+The directory at `efsp.html` links to 41 courses containing 328 authored workplace cases and 164 PDFs. Every lesson includes relevant vocabulary, a communication workshop, two language checks with explanations, partner speaking, a written message, a model response, and revision criteria. The 12 shared language workshops recur intentionally across fields for retrieval practice. The cases and model responses are individually authored for each lesson.
+
+`content/work/courses.json` stores the course inventory, lesson topics, vocabulary alignment, and stable download paths. `content/work/cases.txt` contains the 328 original fictional cases and responses. `content/work/glossary.txt` supplies the shared plain-English definitions referenced by the inventory. `work_curriculum.py` combines them with teaching workshops and validates completeness. The culture course now focuses on individual preferences, inclusive participation, and observable behavior rather than national stereotypes.
+
+`generate_efsp_web_pages.py` publishes the complete lessons as readable HTML. `work.js` adds search, answer feedback, word counts, lesson navigation, and optional local draft/progress storage. Saving is off by default; nothing is sent to a grading service. The materials remain readable without JavaScript.
+
+`generate_work_documents.py` publishes four distinct PDFs per course: a teacher's guide, learner workbook, conversation lab, and vocabulary/phrasebook. All fonts are embedded, with licensed Bitstream Vera files in `assets/fonts`. Original download URLs remain valid. Earlier PDF generator command-line entry points now delegate to this shared curriculum, so they cannot silently restore the old published lessons.
+
+To rebuild the complete work-course edition locally, without paid services:
+
+```bash
+python3 -m pip install -r requirements-documents.txt
+python3 generate_work_documents.py
+python3 generate_efsp_web_pages.py
+python3 audit_work_documents.py
+npm test
+npm run check:js
+```
+
+`--course manufacturing` (repeatable) limits PDF generation for a local proof. Rebuild the full set before publication after changing shared content. `content/work/documents.json` records the page counts, file checksums, and curriculum checksum; tests reject stale PDFs. The PDF audit checks every page for embedded fonts, text outside the content area, replacement glyphs, missing bookmarks, and leftover filler. Render representative pages as images and review the actual browser layout as well.
+
+The courses provide intermediate-to-advanced language practice. Suggested B1, B2, and C1 adaptations are teaching guidance, not certified level ratings. Regulated and safety-related courses distinguish fictional communication practice from actual professional procedures.
+
 ## Site Structure
 
 - `index.html`

@@ -94,14 +94,16 @@ test("all tool, workplace, grammar, and language scripts still initialize", asyn
     if (file === "tools.html" || file === "us-life.html") {
       dom.window.eval(fs.readFileSync(path.join(root, file === "tools.html" ? "tools.js" : "us-life.js"), "utf8"));
     }
+    if (file.startsWith("efsp")) dom.window.eval(fs.readFileSync(path.join(root, "work.js"), "utf8"));
     await new Promise(resolve => setImmediate(resolve));
     assert.ok(dom.window.document.querySelector(".site-header"));
     if (file === "efsp.html") {
-      const search = dom.window.document.querySelector("[data-efsp-search]");
-      search.value = "Finance English";
+      const search = dom.window.document.querySelector("[data-course-search]");
+      search.value = "finance";
       search.dispatchEvent(new dom.window.Event("input"));
-      const count = dom.window.document.querySelector("[data-efsp-directory-count]").textContent;
-      assert.match(count, /1 track/);
+      const visible = dom.window.document.querySelectorAll("[data-work-course-link]:not([hidden])");
+      assert.ok(visible.length > 0 && visible.length < 41);
+      assert.equal(dom.window.document.querySelector('a[href="efsp-finance.html"][data-work-course-link]').hidden, false);
     }
     if (file === "tools.html") {
       assert.ok(dom.window.document.querySelector("#diagnostic-questions").children.length);

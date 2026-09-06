@@ -1565,14 +1565,9 @@ def quick_reference() -> Path:
 
 
 def main() -> None:
-    paths = [
-        instructor_guide(),
-        participant_workbook(),
-        scenario_cards(),
-        quick_reference(),
-    ]
-    for path in paths:
-        print(path)
+    # Rebuild from the current shared curriculum; legacy constants remain for provenance.
+    from generate_work_documents import main as build_current_documents
+    build_current_documents(slugs=["cultural-leadership-us-branches"])
 
 
 if __name__ == "__main__":

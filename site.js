@@ -58,6 +58,94 @@
     }
   }));
 
+  // Save only an explicit completion flag, shared by a story's feed and permanent URL.
+  // Separate keys avoid overwriting completions made in another tab.
+  const COMPLETED_PREFIX = 'english-ladder-completed-v1:';
+  const pageCompletions = new Set();
+  const levelNames = {beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'};
+  const levelColors = {beginner: 'yellow', intermediate: 'green', advanced: 'blue'};
+  function validLessonDate(value) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(value || '')) return false;
+    const date = new Date(value+'T00:00:00Z');
+    return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
+  }
+  function lessonIdentity(lesson) {
+    if (!currentLevel) return null;
+    const key = lesson.dataset.lessonKey;
+    const story = location.pathname.match(/\/stories\/([a-z0-9-]+)\/(?:beginner|intermediate|advanced)\.html$/);
+    if (story) return key === story[1] ? `stories/${key}/${currentLevel}.html` : null;
+    if (!validLessonDate(key)) return null;
+    const news = location.pathname.match(/\/news\/([^/]+)\/(?:beginner|intermediate|advanced)\.html$/);
+    if (news && news[1] !== key) return null;
+    return `news/${key}/${currentLevel}.html`;
+  }
+  const isCompleted = identity => pageCompletions.has(identity) || read(COMPLETED_PREFIX+identity) === '1';
+  function showCompletionMarks(title, completedLevels) {
+    if (!title) return;
+    title.querySelector(':scope > .lesson-completion-marks')?.remove();
+    if (!completedLevels.length) return;
+    const marks = document.createElement('span');
+    marks.className = 'lesson-completion-marks';
+    completedLevels.forEach(value => {
+      const mark = document.createElement('span');
+      mark.className = 'lesson-completion-mark';
+      mark.dataset.completedLevel = value;
+      mark.setAttribute('role', 'img');
+      mark.setAttribute('aria-label', `Completed at ${levelNames[value]} level`);
+      mark.title = `Completed at ${levelNames[value]} level`;
+      const check = document.createElement('span');
+      check.setAttribute('aria-hidden', 'true');
+      check.textContent = '✓';
+      mark.append(check);
+      marks.append(mark);
+    });
+    title.prepend(marks);
+  }
+  function refreshCompletions() {
+    document.querySelectorAll('.daily-lesson').forEach(lesson => {
+      const identity = lessonIdentity(lesson);
+      if (!identity) return;
+      const done = isCompleted(identity);
+      showCompletionMarks(lesson.querySelector('.lesson-title-group'), done ? [currentLevel] : []);
+      if (!document.body.classList.contains('daily-feed')) {
+        showCompletionMarks(document.querySelector('.reading-heading h1'), done ? [currentLevel] : []);
+      }
+      const finish = lesson.querySelector('[data-finish-lesson]');
+      if (finish) {
+        finish.disabled = done;
+        finish.textContent = done ? 'Completed ✓' : 'Finish lesson ✓';
+      }
+      const message = lesson.querySelector('.completion-message');
+      if (message) {
+        message.hidden = !done;
+        if (done) {
+          const saved = !pageCompletions.has(identity);
+          message.textContent = `Lesson marked complete. Look for the ${levelColors[currentLevel]} circle beside the title. `+
+            (saved ? 'This marker is saved in this browser.' : 'Your browser could not save this marker; it lasts only on this page.');
+        }
+      }
+    });
+    document.querySelectorAll('[data-news-date]').forEach(card => {
+      const date = card.dataset.newsDate;
+      if (!validLessonDate(date)) return;
+      showCompletionMarks(card.querySelector('h2'), levels.filter(value => isCompleted(`news/${date}/${value}.html`)));
+    });
+  }
+  window.addEventListener('lesson-practiced', event => {
+    const lesson = event.detail?.lesson;
+    if (!lesson || !document.contains(lesson) || !lesson.matches('.daily-lesson')) return;
+    const identity = lessonIdentity(lesson);
+    if (!identity) return;
+    if (write(COMPLETED_PREFIX+identity, '1')) pageCompletions.delete(identity);
+    else pageCompletions.add(identity);
+    refreshCompletions();
+  });
+  window.addEventListener('storage', event => {
+    if (event.key === null || event.key?.startsWith(COMPLETED_PREFIX)) refreshCompletions();
+  });
+  window.addEventListener('pageshow', refreshCompletions);
+  refreshCompletions();
+
   document.querySelectorAll('[data-library]').forEach(library => {
     const search = library.querySelector('[data-library-search]');
     const category = library.querySelector('[data-library-category]');

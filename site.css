@@ -151,6 +151,10 @@ body.theme-advanced { --level-tint:#eef2ff; }
 .level-toolbar .story-levels a:focus-visible { outline:3px solid #234deb; outline-offset:6px; }
 .level-toolbar .level-name,.level-toolbar .level-range { white-space:nowrap; }
 .level-toolbar .level-range { font-size:.82rem; font-weight:500; }
+.lesson-completion-marks { display:inline-flex; align-items:center; gap:4px; margin-inline-end:.45em; vertical-align:.05em; }
+.lesson-completion-mark { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:#234deb; color:#fff; font-size:12px; font-weight:800; line-height:1; letter-spacing:0; }
+.lesson-completion-mark[data-completed-level="beginner"] { background:#efca58; color:#332900; }
+.lesson-completion-mark[data-completed-level="intermediate"] { background:#236b51; }
 @media(pointer:coarse) {
   .level-toolbar .story-levels a { min-height:44px; }
 }

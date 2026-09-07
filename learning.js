@@ -62,6 +62,7 @@
       next.type = "button";
       next.className = "primary-button";
       next.textContent = ["Check your understanding →", "Discuss the story →", "Finish lesson ✓"][index];
+      if (index === 2) next.dataset.finishLesson = "";
       next.addEventListener("click", () => {
         if (index < 2) showStage(index + 1, true);
         else {

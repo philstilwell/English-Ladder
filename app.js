@@ -158,10 +158,11 @@ function setupConceptImageLightbox() {
         }
     }
 
-    trigger.addEventListener("click", () => {
+    trigger.addEventListener("click", (event) => {
         if (!image) {
             return;
         }
+        event.preventDefault();
 
         image.src = trigger.dataset.lightboxSrc || "";
         image.alt = trigger.dataset.lightboxAlt || trigger.querySelector("img")?.alt || "";

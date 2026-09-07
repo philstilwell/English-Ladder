@@ -13,6 +13,31 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class EditorialTests(unittest.TestCase):
+    def test_all_grammar_lessons_and_directory_keep_their_original_graphics(self):
+        from grammar_curriculum import load_curriculum
+        directory=BeautifulSoup((ROOT/'grammar-concepts.html').read_text(),'html.parser')
+        previews=directory.select('[data-library-item] .grammar-thumb img')
+        self.assertEqual(44,len(previews))
+        for concept,preview in zip(load_curriculum(),previews):
+            number=concept['number']
+            image=f'assets/grammar-concepts/concept-{number:02}.png'
+            with self.subTest(concept=number):
+                page=BeautifulSoup((ROOT/f'grammar-concepts/concept-{number:02}.html').read_text(),'html.parser')
+                images=page.select('.concept-graphic img')
+                self.assertEqual(1,len(images))
+                self.assertEqual('../'+image,images[0]['src'])
+                self.assertEqual(('1880','1576'),(images[0]['width'],images[0]['height']))
+                self.assertIn(concept['title'],images[0]['alt'])
+                trigger=images[0].parent
+                self.assertEqual('../'+image,trigger['href'])
+                self.assertEqual(trigger['href'],trigger['data-lightbox-src'])
+                self.assertIsNotNone(page.select_one('.image-lightbox [role="dialog"]'))
+                self.assertEqual('https://englishladder.com/'+image,page.select_one('meta[property="og:image"]')['content'])
+                self.assertEqual(image,preview['src'])
+                self.assertEqual('lazy',preview['loading'])
+                self.assertEqual(f'grammar-concepts/concept-{number:02}.html',preview.parent['href'])
+                self.assertTrue((ROOT/image).is_file())
+
     def test_all_curated_lessons_are_consistent_and_level_specific(self):
         for story in STORIES:
             readings = set()

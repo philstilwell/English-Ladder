@@ -25,6 +25,9 @@ def audit():
             prompt=s.find(id=button['data-ai-copy-text'])
             if not prompt or not prompt.get_text(strip=True):failures.append(f'{path.name}: a copy button has no prompt text')
         if 'curriculum-page' in s.body.get('class',[]):
+            expected=f'../assets/grammar-concepts/{path.stem}.png'
+            graphic=s.select_one('.concept-graphic img')
+            if graphic is None or graphic.get('src')!=expected:failures.append(f'{path.name}: original concept graphic missing or mismatched')
             if not s.select_one('[data-ai-extension]'):failures.append(f'{path.name}: grammar AI extension missing')
             if s.select('textarea,input[type="text"],[contenteditable="true"]'):failures.append(f'{path.name}: grammar answers must be multiple choice')
             questions=s.select('[data-choice-question]')

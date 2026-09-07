@@ -11,6 +11,25 @@ function load(number=35,stored){
  return dom;
 }
 function choice(question,text){return [...question.querySelectorAll('input')].find(input=>input.closest('label').textContent.trim()===text);}
+test('original graphics enlarge, keep keyboard focus, and retain a direct image link',()=>{
+ for(const number of [1,5,35,44]){
+  const d=load(number);const doc=d.window.document;
+  d.window.eval(fs.readFileSync(path.join(root,'app.js'),'utf8'));
+  const trigger=doc.querySelector('.grammar-image-trigger');const box=doc.querySelector('.image-lightbox');
+  const close=box.querySelector('.image-lightbox-close');const fullImage=box.querySelector('a');
+  assert.equal(box.hidden,true);assert.match(trigger.href,new RegExp(`concept-${String(number).padStart(2,'0')}\\.png$`));
+  const click=new d.window.MouseEvent('click',{bubbles:true,cancelable:true});trigger.dispatchEvent(click);
+  assert.equal(click.defaultPrevented,true);assert.equal(box.hidden,false);
+  assert.equal(box.querySelector('img').src,trigger.href);assert.equal(box.querySelector('img').alt,trigger.querySelector('img').alt);
+  assert.equal(doc.activeElement,close);assert.equal(doc.querySelector('.page-hero').inert,true);
+  assert.equal(fullImage.href,trigger.href);assert.equal(fullImage.target,'_blank');
+  close.dispatchEvent(new d.window.KeyboardEvent('keydown',{key:'Tab',shiftKey:true,bubbles:true,cancelable:true}));assert.equal(doc.activeElement,fullImage);
+  fullImage.dispatchEvent(new d.window.KeyboardEvent('keydown',{key:'Tab',bubbles:true,cancelable:true}));assert.equal(doc.activeElement,close);
+  close.dispatchEvent(new d.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));
+  assert.equal(box.hidden,true);assert.equal(doc.activeElement,trigger);assert.ok(!doc.querySelector('.page-hero').inert);
+  assert.equal(box.querySelector('img').getAttribute('src'),null);
+ }
+});
 test('the reported childhood-ability question grades will and could differently',()=>{
  const d=load();const doc=d.window.document;const q=doc.querySelector('[data-choice-question]');
  assert.match(q.textContent,/When I was seven/);assert.equal(doc.querySelector('textarea'),null);

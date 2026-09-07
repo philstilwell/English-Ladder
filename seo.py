@@ -139,7 +139,7 @@ def _image_size(path, modified):
 
 def share_image(path, soup, p):
     # Use an existing image only where it really represents the visible page.
-    image = soup.select_one('.feature-photo img, .lesson-cover img, .reading-photo img, .daily-lesson img.daily-news-image')
+    image = soup.select_one('.feature-photo img, .lesson-cover img, .reading-photo img, .daily-lesson img.daily-news-image, .concept-graphic img')
     if image:
         src = urlparse(image.get('src', '')).path
         target = (ROOT / src.lstrip('/') if src.startswith('/') else path.parent / src).resolve()

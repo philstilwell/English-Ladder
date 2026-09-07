@@ -172,9 +172,9 @@ Cloudflare retains previous Worker versions for rollback. Keep the existing GitH
 
 ## Reviewed grammar and site validation
 
-`content/grammar-curriculum.json` is the authoritative teaching source for all 44 concepts. `grammar_curriculum.py` builds readable comparison cards, explanations, three multiple-choice checks, a multiple-choice application activity, and the searchable directory. `grammar_documents.py` builds the 88 matching PDF editions at their established URLs. The former grammar generator entry points delegate to these builders, so rebuilding cannot restore the old WordPress explanations or posters.
+`content/grammar-curriculum.json` is the authoritative teaching source for all 44 concepts. `grammar_curriculum.py` includes the original numbered graphic from `assets/grammar-concepts/` in each of the 44 lessons, with an enlarged view, a full-resolution link, and matching directory previews. It also builds readable comparison cards, explanations, three multiple-choice checks, a multiple-choice application activity, and the searchable directory. The build requires every original graphic; the site audit rejects missing or mismatched graphics. `grammar_documents.py` builds the 88 matching PDF editions at their established URLs. The former grammar generator entry points delegate to these builders, so rebuilding keeps both the reviewed teaching text and the original graphics.
 
-The PDFs use embedded licensed fonts and bookmarks. They do not claim tagged-PDF conformance; the HTML provides readable equivalents. The new comparison cards contain actual text and replace the old raster diagrams, avoiding both oversized downloads and text locked in images.
+The PDFs use embedded licensed fonts and bookmarks. They do not claim tagged-PDF conformance; the HTML provides readable equivalents. The comparison cards keep the explanations available as selectable text alongside the original graphics in the web lessons.
 
 ```bash
 python3 grammar_curriculum.py

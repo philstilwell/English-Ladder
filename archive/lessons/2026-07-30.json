@@ -234,44 +234,44 @@
         ],
         "vocabulary": [
           {
-            "term": "launched",
-            "part_of_speech": "verb",
-            "definition": "To start or set in motion something, often a large-scale project or an attack."
-          },
-          {
             "term": "heavy",
             "part_of_speech": "adjective",
             "definition": "Referring to something intense, significant, or powerful in its impact, like a strong attack."
           },
           {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "Military attacks, often by air, against a specific target."
-          },
-          {
-            "term": "short period of relative calm",
-            "part_of_speech": "phrase",
-            "definition": "A brief time when a difficult situation becomes less active or intense, suggesting a temporary peace."
-          },
-          {
-            "term": "hostilities were paused",
-            "part_of_speech": "phrase",
-            "definition": "The fighting or aggressive actions between two groups stopped temporarily."
-          },
-          {
-            "term": "attack",
-            "part_of_speech": "noun",
-            "definition": "When someone tries to hurt another person or country."
-          },
-          {
-            "term": "troops",
-            "part_of_speech": "noun",
-            "definition": "Groups of soldiers working together."
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "attempted",
+            "part_of_speech": "adjective",
+            "definition": "tried but not necessarily completed or successful"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "adjective",
+            "definition": "possible, but not yet certain or actual"
+          },
+          {
+            "term": "stability",
+            "part_of_speech": "noun",
+            "definition": "a condition in which things remain steady and do not change suddenly"
+          },
+          {
+            "term": "temporary",
+            "part_of_speech": "adjective",
+            "definition": "intended to last for a limited time"
+          },
+          {
+            "term": "military",
+            "part_of_speech": "adjective",
+            "definition": "connected with a country’s armed forces"
           }
         ],
         "grammar": {
@@ -450,11 +450,6 @@
             "definition": "A reaction or counterattack made in return for an injury or wrongdoing, often characterized by a strong and punitive nature."
           },
           {
-            "term": "relative calm",
-            "part_of_speech": "noun phrase",
-            "definition": "A period of comparative peace or tranquility, implying that while not entirely free from underlying tension, overt conflict or unrest has diminished."
-          },
-          {
             "term": "belligerent actions",
             "part_of_speech": "noun phrase",
             "definition": "Hostile or aggressive deeds, typically referring to acts of warfare or combat between opposing parties."
@@ -468,11 +463,6 @@
             "term": "heighten tensions",
             "part_of_speech": "verb phrase",
             "definition": "To increase or intensify feelings of strain, animosity, or disagreement, especially in a political or international context, leading to a more precarious situation."
-          },
-          {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "Sudden strong attacks, often by military planes or missiles."
           },
           {
             "term": "escalation",
@@ -490,9 +480,19 @@
             "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
           },
           {
-            "term": "Amidst",
-            "part_of_speech": "Preposition",
+            "term": "amidst",
+            "part_of_speech": "preposition",
             "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
+          },
+          {
+            "term": "precipitating",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Causing an event or situation, typically one that is unwelcome or undesirable, to happen suddenly, unexpectedly, or prematurely."
+          },
+          {
+            "term": "reprisal",
+            "part_of_speech": "noun",
+            "definition": "an action intended to punish another party for an earlier act"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 2
     }
   }
 }

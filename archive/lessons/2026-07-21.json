@@ -234,11 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "tariffs",
-            "part_of_speech": "noun",
-            "definition": "Taxes or duties paid on a particular class of imports or exports."
-          },
-          {
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "An increase in the intensity or seriousness of something, such as a conflict or a problem."
@@ -249,21 +244,6 @@
             "definition": "To make a solemn promise or commitment to do something, often with strong determination."
           },
           {
-            "term": "intensify",
-            "part_of_speech": "verb",
-            "definition": "To become or make something more intense, stronger, or more extreme."
-          },
-          {
-            "term": "trade tensions",
-            "part_of_speech": "noun phrase",
-            "definition": "Strained relations between countries that result from disagreements over trade policies, such as tariffs or quotas."
-          },
-          {
-            "term": "goods",
-            "part_of_speech": "noun",
-            "definition": "Things that people make or grow to sell, like cars or food."
-          },
-          {
             "term": "officials",
             "part_of_speech": "noun",
             "definition": "People who hold a position of authority or trust in an organization or government."
@@ -272,6 +252,26 @@
             "term": "response",
             "part_of_speech": "noun",
             "definition": "An answer or reaction to something that has been said or done."
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "consumers",
+            "part_of_speech": "plural noun",
+            "definition": "people who buy goods or services for their own use"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "adjective",
+            "definition": "possible, but not yet certain or actual"
+          },
+          {
+            "term": "domestic",
+            "part_of_speech": "adjective",
+            "definition": "connected with activities inside a particular country"
           }
         ],
         "grammar": {
@@ -445,34 +445,14 @@
         ],
         "vocabulary": [
           {
-            "term": "imposed stringent 50% tariffs",
-            "part_of_speech": "Verb phrase + adjective + noun phrase",
-            "definition": "Formally applied strict taxes of fifty percent on imported goods, making them significantly more expensive for buyers."
-          },
-          {
-            "term": "exacerbated existing trade friction",
-            "part_of_speech": "Verb phrase + adjective + noun phrase",
-            "definition": "Made already present disagreements or tensions in economic exchange relations significantly worse and more intense."
-          },
-          {
             "term": "established supply chains",
-            "part_of_speech": "Adjective + noun phrase",
+            "part_of_speech": "adjective + noun phrase",
             "definition": "The well-organized and long-standing networks and processes by which goods are produced, distributed, and delivered to consumers."
           },
           {
             "term": "precipitating retaliatory actions",
-            "part_of_speech": "Verb phrase + adjective + noun phrase",
+            "part_of_speech": "verb phrase + adjective + noun phrase",
             "definition": "Causing or bringing about swift counter-measures or punitive responses, usually in reaction to an initial hostile or adverse action."
-          },
-          {
-            "term": "unequivocally vowed to 'intensify'",
-            "part_of_speech": "Adverb + verb phrase",
-            "definition": "Declared in an unambiguous and absolute manner a strong promise to make something stronger, more severe, or more concentrated."
-          },
-          {
-            "term": "escalation",
-            "part_of_speech": "noun",
-            "definition": "An increase in the intensity or seriousness of something, such as a conflict or a problem."
           },
           {
             "term": "underscores",
@@ -480,7 +460,7 @@
             "definition": "Emphasizes, highlights, or draws particular attention to a fact, idea, or situation."
           },
           {
-            "term": "Unprecedented",
+            "term": "unprecedented",
             "part_of_speech": "adjective",
             "definition": "not known to have happened before"
           },
@@ -493,6 +473,26 @@
             "term": "contentious",
             "part_of_speech": "adjective",
             "definition": "Likely to cause an argument or disagreement; controversial and disputed."
+          },
+          {
+            "term": "unequivocally",
+            "part_of_speech": "adverb",
+            "definition": "in a way that leaves no uncertainty about the stated position"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          },
+          {
+            "term": "exacerbated",
+            "part_of_speech": "verb",
+            "definition": "made or is making an existing problem more severe"
+          },
+          {
+            "term": "willingness",
+            "part_of_speech": "noun",
+            "definition": "readiness to choose to act or respond"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

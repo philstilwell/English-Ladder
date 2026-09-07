@@ -239,16 +239,6 @@
             "definition": "To try to persuade someone forcefully to do something or to address a particular issue with urgency."
           },
           {
-            "term": "defences",
-            "part_of_speech": "noun",
-            "definition": "Actions or systems, especially military ones, used to protect against attack or harm."
-          },
-          {
-            "term": "escalated",
-            "part_of_speech": "verb",
-            "definition": "Increased rapidly in intensity, amount, or seriousness, often referring to conflicts or problems."
-          },
-          {
             "term": "firm up",
             "part_of_speech": "phrasal verb",
             "definition": "To make something, like an agreement or a plan, more definite, certain, or robust."
@@ -259,19 +249,29 @@
             "definition": "The act of supporting, strengthening, or making something stronger or more effective."
           },
           {
-            "term": "commitments",
-            "part_of_speech": "noun",
-            "definition": "Strong promises to do something or give something."
-          },
-          {
-            "term": "deadly attacks",
-            "part_of_speech": "noun phrase",
-            "definition": "Violent actions that can cause death or serious harm."
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "strengthening",
+            "part_of_speech": "verb",
+            "definition": "making something stronger or more effective"
+          },
+          {
+            "term": "particularly",
+            "part_of_speech": "adverb",
+            "definition": "especially, compared with other people or things"
           }
         ],
         "grammar": {
@@ -445,39 +445,14 @@
         ],
         "vocabulary": [
           {
-            "term": "firm up",
-            "part_of_speech": "verb",
-            "definition": "To make something more definite, settled, or secure; to strengthen or confirm a plan or agreement."
-          },
-          {
-            "term": "bolster",
-            "part_of_speech": "verb",
-            "definition": "To support or strengthen something; to improve the effectiveness or condition of something."
-          },
-          {
             "term": "spate",
             "part_of_speech": "noun",
             "definition": "A large number of similar things or events appearing or occurring in quick succession; a sudden outpouring."
           },
           {
-            "term": "press",
-            "part_of_speech": "verb",
-            "definition": "To try strongly to persuade or compel someone to do something; to apply persistent influence or demand."
-          },
-          {
             "term": "mitigate",
             "part_of_speech": "verb",
             "definition": "To make something less severe, serious, or painful; to alleviate or lessen the impact of adverse conditions."
-          },
-          {
-            "term": "commitments",
-            "part_of_speech": "noun",
-            "definition": "Strong promises to do something or give something."
-          },
-          {
-            "term": "deadly attacks",
-            "part_of_speech": "noun phrase",
-            "definition": "Violent actions that can cause death or serious harm."
           },
           {
             "term": "crucial",
@@ -493,6 +468,31 @@
             "term": "perpetrated",
             "part_of_speech": "verb",
             "definition": "carried out a harmful or illegal act"
+          },
+          {
+            "term": "defensive posture",
+            "part_of_speech": "noun phrase",
+            "definition": "the way a country arranges its forces and capabilities to protect itself"
+          },
+          {
+            "term": "pervasive threat",
+            "part_of_speech": "noun phrase",
+            "definition": "A danger or menace that is present throughout an area or group of people, affecting every part and hard to avoid."
+          },
+          {
+            "term": "aerial assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Attacks conducted using aircraft or missiles from the air."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "noun",
+            "definition": "an action or requirement treated as urgently necessary"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 5
     }
   }
 }

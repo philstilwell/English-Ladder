@@ -234,24 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "earthquake",
-            "part_of_speech": "noun",
-            "definition": "A sudden violent shaking of the ground, often causing great destruction, as a result of movements within the Earth's crust."
-          },
-          {
-            "term": "aftershocks",
-            "part_of_speech": "noun",
-            "definition": "Smaller earthquakes that follow the main shock of a large earthquake and originate at or near the same location."
-          },
-          {
             "term": "vigilant",
             "part_of_speech": "adjective",
             "definition": "Keeping careful watch for possible danger or difficulties; alert and watchful."
-          },
-          {
-            "term": "magnitude",
-            "part_of_speech": "noun",
-            "definition": "A measure of the size or power of an earthquake."
           },
           {
             "term": "seismic",
@@ -259,19 +244,34 @@
             "definition": "Relating to or caused by earthquakes or other vibrations of the Earth's crust."
           },
           {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People in important positions, often in the government."
-          },
-          {
-            "term": "alert",
-            "part_of_speech": "adjective",
-            "definition": "Watching and ready for danger or something important."
-          },
-          {
             "term": "critical",
             "part_of_speech": "adjective",
             "definition": "very important, especially at a difficult or dangerous time"
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "disruption",
+            "part_of_speech": "noun",
+            "definition": "a problem that stops normal activity"
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "plural noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "noun and adjective",
+            "definition": "as a noun: a possibility; as an adjective: possible but not yet certain"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "Marked by disturbance and disorder; characterized by confusion, commotion, or uproar; often refers to a period of time."
           },
           {
-            "term": "earthquake",
-            "part_of_speech": "noun",
-            "definition": "A sudden strong shaking of the ground."
+            "term": "vulnerabilities",
+            "part_of_speech": "plural noun",
+            "definition": "weaknesses that could allow harm or disruption"
           },
           {
-            "term": "aftershocks",
-            "part_of_speech": "noun",
-            "definition": "Smaller earthquakes that happen after a big one."
-          },
-          {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People in important positions, often in the government."
-          },
-          {
-            "term": "magnitude",
-            "part_of_speech": "noun",
-            "definition": "A measure of the size or power of an earthquake."
-          },
-          {
-            "term": "seismic",
+            "term": "comprehensive",
             "part_of_speech": "adjective",
-            "definition": "Relating to or caused by earthquakes or other vibrations of the Earth's crust."
+            "definition": "covering the main relevant parts of a subject or problem"
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "plural noun",
+            "definition": "indirect or continuing consequences, often harmful ones"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "formidable",
+            "part_of_speech": "adjective",
+            "definition": "difficult to overcome because of great strength or scale"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

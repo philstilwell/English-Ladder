@@ -7,7 +7,7 @@ They are contextual editorial judgements, not an automatic CEFR certification or
 an assertion that every word has a single fixed proficiency level.
 """
 
-LANGUAGE_POLICY_VERSION = '2026-09-07'
+LANGUAGE_POLICY_VERSION = '2026-09-07-distinct-vocabulary'
 LEVEL_CHECKS = ('vocabulary', 'register', 'teaching_language', 'challenge')
 
 COMMON_LANGUAGE_POLICY = (
@@ -26,8 +26,12 @@ COMMON_LANGUAGE_POLICY = (
     'at every level. Respect teen and adult learners; avoid baby talk, sensationalism, '
     'patronising praise and gratuitous slang. '
     'Different levels should offer different learning value through meaning, useful '
-    'word combinations, sentence structure and reasoning. Essential words may recur '
-    'across levels when useful; simply lengthening the same lesson or replacing ordinary '
+    'word combinations, sentence structure and reasoning. Each level must teach a separate '
+    'vocabulary target set within the daily edition: do not borrow targets or simple '
+    'inflections from another level, or reuse its teaching word inside a different phrase. '
+    'Shared words can occur naturally in the readings '
+    'without being selected again for teaching. Reserve more abstract and specialised '
+    'targets for the higher levels. Simply lengthening the same lesson or replacing ordinary '
     'words with rare synonyms does not create appropriate progression. '
     'Meet all sentence, vocabulary and quiz minimums without padding or abandoning '
     'the language policy. If the evidence supports too little suitable material, '

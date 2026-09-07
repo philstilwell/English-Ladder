@@ -193,21 +193,6 @@
         ],
         "vocabulary": [
           {
-            "term": "blamed",
-            "part_of_speech": "verb",
-            "definition": "said that someone was responsible"
-          },
-          {
-            "term": "failed",
-            "part_of_speech": "adjective",
-            "definition": "did not succeed"
-          },
-          {
-            "term": "accused",
-            "part_of_speech": "verb",
-            "definition": "said to have done something wrong"
-          },
-          {
             "term": "denies",
             "part_of_speech": "verb",
             "definition": "says that a claim is not true"
@@ -231,6 +216,21 @@
             "term": "restrictions",
             "part_of_speech": "plural noun",
             "definition": "rules that limit what people can do"
+          },
+          {
+            "term": "expressed",
+            "part_of_speech": "verb",
+            "definition": "communicated a feeling, opinion or position"
+          },
+          {
+            "term": "increase",
+            "part_of_speech": "verb",
+            "definition": "to make something greater in amount, strength or level"
+          },
+          {
+            "term": "transport",
+            "part_of_speech": "noun",
+            "definition": "the movement of people or goods from one place to another"
           }
         ],
         "grammar": {
@@ -391,39 +391,19 @@
         ],
         "vocabulary": [
           {
-            "term": "blamed",
-            "part_of_speech": "verb",
-            "definition": "said that someone was responsible"
-          },
-          {
-            "term": "failed",
-            "part_of_speech": "adjective",
-            "definition": "did not succeed"
-          },
-          {
-            "term": "accused",
-            "part_of_speech": "verb",
-            "definition": "said to have done something wrong"
-          },
-          {
             "term": "allegation",
             "part_of_speech": "noun",
             "definition": "a claim of wrongdoing that is being reported or disputed"
           },
           {
-            "term": "cargo aircraft",
-            "part_of_speech": "noun phrase",
-            "definition": "a plane used to transport goods"
-          },
-          {
             "term": "vowed",
             "part_of_speech": "verb",
-            "definition": "made a firm or serious promise"
+            "definition": "promised very strongly to do something."
           },
           {
             "term": "affirmed",
             "part_of_speech": "verb",
-            "definition": "stated or confirmed something clearly"
+            "definition": "states or confirms a position clearly"
           },
           {
             "term": "consulate",
@@ -433,12 +413,32 @@
           {
             "term": "enforcement",
             "part_of_speech": "noun",
-            "definition": "the process of making sure rules or laws are followed"
+            "definition": "the process of putting rules or restrictions into effect"
           },
           {
-            "term": "sanctions",
-            "part_of_speech": "plural noun",
-            "definition": "official restrictions used to put pressure on a country, organisation or person"
+            "term": "cultural institution",
+            "part_of_speech": "noun phrase",
+            "definition": "an organisation established to support cultural activities or exchanges"
+          },
+          {
+            "term": "closure",
+            "part_of_speech": "noun",
+            "definition": "the ending of an institution’s or facility’s operations"
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Singled out or directed at a specific object, person, or area, often with hostile intent or as an objective."
+          },
+          {
+            "term": "alongside",
+            "part_of_speech": "preposition",
+            "definition": "together with or in addition to another measure"
+          },
+          {
+            "term": "prompting",
+            "part_of_speech": "verb",
+            "definition": "causing or encouraging a response or further action"
           }
         ],
         "grammar": {
@@ -636,6 +636,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 5
     }
   }
 }

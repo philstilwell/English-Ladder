@@ -249,29 +249,29 @@
             "definition": "To officially remember and show respect for a great person or event, often with a ceremony or monument."
           },
           {
-            "term": "cancelled",
-            "part_of_speech": "verb",
-            "definition": "To decide that a planned event or arrangement will not happen, stopping it from taking place."
-          },
-          {
             "term": "uphold",
             "part_of_speech": "verb",
             "definition": "To support something that you believe is right, and to make sure that it continues to exist or be respected."
           },
           {
-            "term": "press",
-            "part_of_speech": "noun",
-            "definition": "news organisations and the journalists who work for them"
+            "term": "highlighted",
+            "part_of_speech": "verb",
+            "definition": "Drew special attention to something, making it more noticeable or important."
           },
           {
-            "term": "event",
-            "part_of_speech": "noun",
-            "definition": "An event is something important that happens, like a party or meeting."
+            "term": "outstanding",
+            "part_of_speech": "adjective",
+            "definition": "especially good compared with others of the same kind"
           },
           {
-            "term": "journalists",
-            "part_of_speech": "noun",
-            "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
+            "term": "recognizing",
+            "part_of_speech": "verb",
+            "definition": "publicly acknowledging the value or quality of something"
+          },
+          {
+            "term": "attendees",
+            "part_of_speech": "plural noun",
+            "definition": "people who are present at an organised event"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "taking swipes at",
-            "part_of_speech": "verb phrase",
-            "definition": "Delivering critical, often verbal, attacks or disparaging remarks towards someone or something."
-          },
-          {
             "term": "contentious relationship",
             "part_of_speech": "noun phrase",
             "definition": "A state of ongoing disagreement, opposition, or conflict between parties, often characterized by dispute and friction."
@@ -470,29 +465,34 @@
             "definition": "A resolute and persistent dedication to a cause, belief, or action, showing no signs of hesitation or deviation."
           },
           {
-            "term": "press",
-            "part_of_speech": "noun",
-            "definition": "news organisations and the journalists who work for them"
-          },
-          {
-            "term": "event",
-            "part_of_speech": "noun",
-            "definition": "An event is something important that happens, like a party or meeting."
-          },
-          {
-            "term": "journalists",
-            "part_of_speech": "noun",
-            "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
-          },
-          {
-            "term": "Amidst",
-            "part_of_speech": "Preposition",
+            "term": "amidst",
+            "part_of_speech": "preposition",
             "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
           },
           {
-            "term": "Unprecedented",
+            "term": "unprecedented",
             "part_of_speech": "adjective",
             "definition": "not known to have happened before"
+          },
+          {
+            "term": "atmosphere",
+            "part_of_speech": "noun",
+            "definition": "the mood or feeling that surrounds an event or place"
+          },
+          {
+            "term": "resilience",
+            "part_of_speech": "noun",
+            "definition": "The capacity to recover quickly from difficulties; toughness, or the ability of an economy or system to withstand or recover from shocks."
+          },
+          {
+            "term": "ultimately",
+            "part_of_speech": "adverb",
+            "definition": "finally, after other events or considerations"
+          },
+          {
+            "term": "underlying",
+            "part_of_speech": "adjective",
+            "definition": "less immediately visible but helping to explain the situation"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

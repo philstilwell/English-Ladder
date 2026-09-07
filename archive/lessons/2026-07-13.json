@@ -239,29 +239,9 @@
             "definition": "To completely surround or cover something quickly and intensely."
           },
           {
-            "term": "patrons",
-            "part_of_speech": "noun",
-            "definition": "Customers or regular visitors of a particular establishment, such as a restaurant or bar."
-          },
-          {
             "term": "dispatched",
             "part_of_speech": "verb",
             "definition": "Sent off to a destination or for a special purpose, especially quickly."
-          },
-          {
-            "term": "firefighters",
-            "part_of_speech": "noun",
-            "definition": "People whose job is to put out fires and rescue people from dangerous situations."
-          },
-          {
-            "term": "critically injured",
-            "part_of_speech": "adjective phrase",
-            "definition": "Very seriously hurt or wounded, in a life-threatening or extremely dangerous condition."
-          },
-          {
-            "term": "scene",
-            "part_of_speech": "noun",
-            "definition": "the place where something happened."
           },
           {
             "term": "broke out",
@@ -272,6 +252,26 @@
             "term": "tragic incident",
             "part_of_speech": "noun phrase",
             "definition": "A very sad, unfortunate, or terrible event that causes suffering or distress."
+          },
+          {
+            "term": "emergency services",
+            "part_of_speech": "noun phrase",
+            "definition": "organisations such as firefighters and medical teams that respond to urgent danger"
+          },
+          {
+            "term": "investigations",
+            "part_of_speech": "plural noun",
+            "definition": "careful inquiries intended to find out what happened"
+          },
+          {
+            "term": "unexpectedly",
+            "part_of_speech": "adverb",
+            "definition": "in a way that people did not expect"
+          },
+          {
+            "term": "responding",
+            "part_of_speech": "verb",
+            "definition": "taking action after something has happened"
           }
         ],
         "grammar": {
@@ -445,54 +445,54 @@
         ],
         "vocabulary": [
           {
-            "term": "engulfed",
-            "part_of_speech": "verb (past tense)",
-            "definition": "To completely surround or cover something, often in a destructive or overwhelming manner, as with flames or a flood."
-          },
-          {
             "term": "devastating blaze",
             "part_of_speech": "noun phrase",
             "definition": "A very destructive and intense fire that causes extensive damage and often significant loss of life."
           },
           {
-            "term": "patrons",
+            "term": "inferno",
             "part_of_speech": "noun",
-            "definition": "Regular customers of a business, especially a restaurant, bar, or theater."
+            "definition": "an extremely large and dangerous fire"
           },
           {
-            "term": "harrowing escape",
+            "term": "safety protocols",
             "part_of_speech": "noun phrase",
-            "definition": "A deeply distressing or frightening experience of getting away from danger, characterized by great difficulty and fear."
+            "definition": "established procedures intended to prevent harm"
           },
           {
-            "term": "critically injured",
-            "part_of_speech": "adjective phrase",
-            "definition": "Having sustained injuries so severe that the condition is unstable and life-threatening, requiring immediate and intensive medical care."
-          },
-          {
-            "term": "killed",
+            "term": "compromised",
             "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
+            "definition": "weakened or made less effective"
           },
           {
-            "term": "firefighters",
+            "term": "contingent",
             "part_of_speech": "noun",
-            "definition": "people who stop fires and help others."
+            "definition": "a group of people forming part of a larger operation"
           },
           {
-            "term": "scene",
-            "part_of_speech": "noun",
-            "definition": "the place where something happened."
-          },
-          {
-            "term": "spread",
+            "term": "ascertain",
             "part_of_speech": "verb",
-            "definition": "To move or extend over a larger area, or to become wider or more common."
+            "definition": "to establish a fact by careful inquiry or examination"
           },
           {
-            "term": "rapidly",
-            "part_of_speech": "adverb",
-            "definition": "very quickly"
+            "term": "intensive",
+            "part_of_speech": "adjective",
+            "definition": "involving a high degree of effort, attention or treatment"
+          },
+          {
+            "term": "calamity",
+            "part_of_speech": "noun",
+            "definition": "an event causing severe damage, suffering or loss"
+          },
+          {
+            "term": "inherent",
+            "part_of_speech": "adjective",
+            "definition": "existing as a natural or essential part of something"
+          },
+          {
+            "term": "premises",
+            "part_of_speech": "plural noun",
+            "definition": "the building or property in which an activity takes place"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 9
     }
   }
 }

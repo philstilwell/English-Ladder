@@ -234,21 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "interceptor missile shortage",
-            "part_of_speech": "noun phrase",
-            "definition": "A situation where a country does not have enough missiles designed to stop enemy attacks in the air, creating a lack of vital defensive weapons."
-          },
-          {
-            "term": "massive",
-            "part_of_speech": "adjective",
-            "definition": "Something extremely large in size, amount, or degree; very big or powerful."
-          },
-          {
-            "term": "strike drones",
-            "part_of_speech": "noun phrase",
-            "definition": "Unmanned aerial vehicles that are designed to attack targets, often equipped with bombs or missiles."
-          },
-          {
             "term": "onslaught",
             "part_of_speech": "noun",
             "definition": "A fierce or destructive attack, often sudden and overwhelming, usually involving many forces or actions."
@@ -259,19 +244,34 @@
             "definition": "Large accumulated reserves of something, especially supplies or weapons, kept for future use."
           },
           {
-            "term": "attack",
-            "part_of_speech": "noun",
-            "definition": "a violent act to hurt or damage someone or something"
-          },
-          {
-            "term": "missiles",
-            "part_of_speech": "noun",
-            "definition": "weapons that fly through the air to hit a target"
-          },
-          {
             "term": "officials",
             "part_of_speech": "noun",
             "definition": "People who hold a position of authority or trust in an organization or government."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "large-scale",
+            "part_of_speech": "adjective",
+            "definition": "Involving a lot of people, things, or money; extensive."
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "Emphasizes or highlights the importance or truth of something, drawing attention to it."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Forceful and often violent behavior or attitudes toward another person or country, especially when unprovoked."
+          },
+          {
+            "term": "protection",
+            "part_of_speech": "noun",
+            "definition": "the act of keeping someone or something safe from harm"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "To have significant and widespread consequences or effects that will be felt over a long period or across a broad scope, influencing many aspects."
           },
           {
-            "term": "massive",
-            "part_of_speech": "adjective",
-            "definition": "very big or very strong"
-          },
-          {
-            "term": "attack",
-            "part_of_speech": "noun",
-            "definition": "a violent act to hurt or damage someone or something"
-          },
-          {
-            "term": "missiles",
-            "part_of_speech": "noun",
-            "definition": "weapons that fly through the air to hit a target"
-          },
-          {
-            "term": "strike drones",
+            "term": "air defence systems",
             "part_of_speech": "noun phrase",
-            "definition": "unmanned flying machines that can hit targets"
+            "definition": "Special machines or weapons that protect a place from attacks coming from the sky, like planes or missiles."
           },
           {
-            "term": "shortage",
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "not known to have happened before"
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "causing a lot of damage and destruction"
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "plural noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
+          },
+          {
+            "term": "trajectory",
             "part_of_speech": "noun",
-            "definition": "not having enough of something that is needed"
+            "definition": "the direction in which events or policies appear to be developing"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

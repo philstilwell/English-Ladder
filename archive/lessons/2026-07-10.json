@@ -234,11 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "broke out",
-            "part_of_speech": "verb phrase",
-            "definition": "Started suddenly and often violently, usually referring to a fire, war, or disease."
-          },
-          {
             "term": "tragic incident",
             "part_of_speech": "noun phrase",
             "definition": "A very sad, unfortunate, or terrible event that causes suffering or distress."
@@ -259,19 +254,24 @@
             "definition": "A serious and difficult situation or period of danger that is currently happening and continuing."
           },
           {
-            "term": "wildfire",
-            "part_of_speech": "noun",
-            "definition": "A large, uncontrolled fire in a natural area like a forest."
+            "term": "emergency services",
+            "part_of_speech": "noun phrase",
+            "definition": "organisations such as firefighters and medical teams that respond to urgent danger"
           },
           {
-            "term": "dead",
-            "part_of_speech": "adjective",
-            "definition": "Not alive anymore; passed away."
+            "term": "holidaymakers",
+            "part_of_speech": "plural noun",
+            "definition": "people who are away from home on holiday"
           },
           {
-            "term": "missing",
+            "term": "considerable",
             "part_of_speech": "adjective",
-            "definition": "Not found; people do not know where they are."
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "unexpectedly",
+            "part_of_speech": "adverb",
+            "definition": "in a way that people did not expect"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "catastrophic wildfire",
-            "part_of_speech": "noun phrase",
-            "definition": "An extremely destructive and extensive uncontrolled fire, causing immense damage and often leading to loss of life and property."
-          },
-          {
             "term": "unaccounted for",
             "part_of_speech": "adjective phrase",
             "definition": "Not included in a tally or report; not known where they are, typically implying they are missing and their status is unknown."
@@ -470,16 +465,6 @@
             "definition": "A significant and often unwelcome event or point in time that serves as a marker of a serious or tragic development."
           },
           {
-            "term": "missing",
-            "part_of_speech": "adjective",
-            "definition": "Not found; people do not know where they are."
-          },
-          {
-            "term": "underscores",
-            "part_of_speech": "verb",
-            "definition": "Emphasizes or highlights the importance or truth of something, drawing attention to it."
-          },
-          {
             "term": "sheer scale",
             "part_of_speech": "noun phrase",
             "definition": "The immense or extensive size, degree, or magnitude of something, emphasizing its overwhelming nature."
@@ -490,9 +475,24 @@
             "definition": "A careful look to find facts and reasons about something."
           },
           {
-            "term": "region",
+            "term": "conflagration",
             "part_of_speech": "noun",
-            "definition": "an area of a country or of the world"
+            "definition": "a large and destructive fire"
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "causing a lot of damage and destruction"
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "plural noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

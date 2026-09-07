@@ -239,39 +239,39 @@
             "definition": "Made larger or more extensive in scope or area."
           },
           {
-            "term": "fully prepared",
-            "part_of_speech": "adjective phrase",
-            "definition": "Completely ready for a particular situation or task."
-          },
-          {
-            "term": "counter",
-            "part_of_speech": "verb",
-            "definition": "To react to something with an opposing action or argument."
-          },
-          {
-            "term": "address",
-            "part_of_speech": "verb",
-            "definition": "To deal with a problem or situation; to think about and begin to solve it."
-          },
-          {
             "term": "unfold",
             "part_of_speech": "verb",
             "definition": "To develop or happen over a period of time; to become clear or revealed."
           },
           {
-            "term": "sanctions",
-            "part_of_speech": "plural noun",
-            "definition": "official restrictions used to put pressure on a country, organisation or person"
-          },
-          {
-            "term": "economy",
-            "part_of_speech": "noun",
-            "definition": "The system of how a country makes, spends, and manages money and goods."
-          },
-          {
             "term": "mitigate",
             "part_of_speech": "verb",
             "definition": "To make something less severe, serious, or painful; to alleviate or soften the impact of an adverse condition."
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "rules that limit what people can do"
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority or trust in an organization or government."
+          },
+          {
+            "term": "declared",
+            "part_of_speech": "verb",
+            "definition": "Stated something officially, publicly, or strongly."
+          },
+          {
+            "term": "increase",
+            "part_of_speech": "verb",
+            "definition": "to make something greater in amount, strength or level"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "counter",
-            "part_of_speech": "verb",
-            "definition": "To oppose, react against, or take action to neutralize or reduce the effect of something, especially a threat or attack."
-          },
-          {
             "term": "contends",
             "part_of_speech": "verb",
             "definition": "To assert something as a position in an argument or to struggle to surmount a difficulty or opposition."
@@ -460,19 +455,9 @@
             "definition": "A detailed and far-reaching plan designed to address all aspects of a particular situation or achieve a specific long-term goal."
           },
           {
-            "term": "mitigate",
-            "part_of_speech": "verb",
-            "definition": "To make something less severe, serious, or painful; to alleviate or soften the impact of an adverse condition."
-          },
-          {
             "term": "resilience",
             "part_of_speech": "noun",
             "definition": "The capacity to recover quickly from difficulties; toughness, or the ability of an economy or system to withstand or recover from shocks."
-          },
-          {
-            "term": "sanctions",
-            "part_of_speech": "plural noun",
-            "definition": "official restrictions used to put pressure on a country, organisation or person"
           },
           {
             "term": "escalation",
@@ -490,9 +475,24 @@
             "definition": "Emphasizes, highlights, or draws particular attention to a fact, idea, or situation."
           },
           {
-            "term": "Amidst",
-            "part_of_speech": "Preposition",
+            "term": "amidst",
+            "part_of_speech": "preposition",
             "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
+          },
+          {
+            "term": "unequivocally",
+            "part_of_speech": "adverb",
+            "definition": "in a way that leaves no uncertainty about the stated position"
+          },
+          {
+            "term": "sovereignty",
+            "part_of_speech": "noun",
+            "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "trajectory",
+            "part_of_speech": "noun",
+            "definition": "the direction in which events or policies appear to be developing"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 3
     }
   }
 }

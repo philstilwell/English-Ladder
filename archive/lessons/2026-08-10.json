@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People who hold positions of authority in an organization or government."
-          },
-          {
-            "term": "strike",
-            "part_of_speech": "noun",
-            "definition": "An attack, especially a military one involving bombs or missiles, often carried out from the air."
-          },
-          {
-            "term": "region",
-            "part_of_speech": "noun",
-            "definition": "A large area of a country or the world, often characterized by specific geographic or cultural features."
-          },
-          {
-            "term": "deadliest",
-            "part_of_speech": "adjective",
-            "definition": "Causing the most deaths; most dangerous or destructive in terms of loss of life."
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or war between opposing groups or countries."
-          },
-          {
-            "term": "war",
-            "part_of_speech": "noun",
-            "definition": "A fight between two or more countries, using weapons."
           },
           {
             "term": "escalation",
@@ -272,6 +247,31 @@
             "term": "targets",
             "part_of_speech": "noun",
             "definition": "Specific places, people, or objects chosen to be attacked during military operations."
+          },
+          {
+            "term": "investigations",
+            "part_of_speech": "plural noun",
+            "definition": "careful inquiries intended to find out what happened"
+          },
+          {
+            "term": "highlighting",
+            "part_of_speech": "verb",
+            "definition": "Drawing special attention to something important or making it more noticeable."
+          },
+          {
+            "term": "casualties",
+            "part_of_speech": "noun (plural)",
+            "definition": "people killed or injured in a war, accident, or other disaster or incident."
+          },
+          {
+            "term": "conducting",
+            "part_of_speech": "verb",
+            "definition": "organising and carrying out an activity"
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "plural noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
           }
         ],
         "grammar": {
@@ -455,11 +455,6 @@
             "definition": "The beginning or start of something; often used for significant events or periods."
           },
           {
-            "term": "escalation",
-            "part_of_speech": "noun",
-            "definition": "An increase in the intensity, magnitude, or seriousness of a conflict or situation."
-          },
-          {
             "term": "broader repercussions",
             "part_of_speech": "noun phrase",
             "definition": "More extensive or far-reaching unintended consequences or effects, often negative, that follow an event or action."
@@ -470,29 +465,34 @@
             "definition": "The quality of being never done or known before, making something highly unusual or groundbreaking."
           },
           {
-            "term": "strike",
-            "part_of_speech": "noun",
-            "definition": "An attack, often by military force."
+            "term": "civilian infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "buildings and systems used for ordinary public life, such as homes, roads and water supplies"
           },
           {
-            "term": "region",
-            "part_of_speech": "noun",
-            "definition": "an area of a country or of the world"
+            "term": "geopolitical landscape",
+            "part_of_speech": "noun phrase",
+            "definition": "The complex set of international political, economic, and strategic factors that characterize a particular region or the world at a given time."
           },
           {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People who have an important job in a government or organization."
+            "term": "grim toll",
+            "part_of_speech": "noun phrase",
+            "definition": "The distressing or tragic number of deaths, casualties, or negative consequences resulting from an event."
           },
           {
-            "term": "deadliest",
+            "term": "operational",
             "part_of_speech": "adjective",
-            "definition": "Causing the most deaths; most dangerous or destructive in terms of loss of life."
+            "definition": "relating to how a planned activity is carried out in practice"
           },
           {
-            "term": "conflict",
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "aggression",
             "part_of_speech": "noun",
-            "definition": "A serious disagreement or argument, often involving prolonged fighting or war between opposing groups or countries."
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 6
     }
   }
 }

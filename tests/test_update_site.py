@@ -216,10 +216,10 @@ class UpdateSiteTests(unittest.TestCase):
             "summary": "A short source summary for the generated ESL lessons.",
             "link": "https://example.com/source-news",
         }
-        level_lessons = {
-            level["name"].lower(): build_valid_lesson_data(f"{level['name']} Title")
-            for level in update_site.LEVELS
-        }
+        edition = json.loads((Path(__file__).resolve().parents[1] / 'archive/lessons/2026-09-06.json').read_text())
+        level_lessons = {key: value['lesson'] for key, value in edition['levels'].items()}
+        for level in update_site.LEVELS:
+            level_lessons[level['name'].lower()]['title'] = f"{level['name']} Title"
 
         with tempfile.TemporaryDirectory() as temp_dir:
             archive_dir = Path(temp_dir) / "archive" / "lessons"

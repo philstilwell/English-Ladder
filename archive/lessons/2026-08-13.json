@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "Nobel Peace Prize winner",
-            "part_of_speech": "noun phrase",
-            "definition": "A person who has received the prestigious international award for outstanding contributions to peace."
-          },
-          {
-            "term": "exclusive interview",
-            "part_of_speech": "noun phrase",
-            "definition": "A discussion with a person, published or broadcast only by one media organization."
-          },
-          {
-            "term": "claim victory",
-            "part_of_speech": "verb phrase",
-            "definition": "To state officially or publicly that one has won a battle, game, or competition."
-          },
-          {
             "term": "Kremlin leader",
             "part_of_speech": "noun phrase",
             "definition": "A common way to refer to the President of Russia, as the Kremlin is the official residence and workplace of the Russian head of state."
-          },
-          {
-            "term": "conquer",
-            "part_of_speech": "verb",
-            "definition": "To take control of a country or city by force, usually with an army; to defeat an enemy or opponent."
-          },
-          {
-            "term": "war",
-            "part_of_speech": "noun",
-            "definition": "A period of fighting between countries or groups, often with armies."
           },
           {
             "term": "conflict",
@@ -272,6 +247,31 @@
             "term": "declared",
             "part_of_speech": "verb",
             "definition": "Stated something officially, publicly, or strongly."
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Kept doing something without stopping."
+          },
+          {
+            "term": "regarding",
+            "part_of_speech": "preposition",
+            "definition": "about or in connection with a particular subject"
+          },
+          {
+            "term": "critical",
+            "part_of_speech": "adjective",
+            "definition": "very important, especially at a difficult or dangerous time"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "A resolute, steadfast, and honest evaluation or assessment, made without hesitation, fear, or shrinking from harsh realities."
           },
           {
-            "term": "Nobel Peace Prize winner",
-            "part_of_speech": "noun phrase",
-            "definition": "A person who gets a special international award for working to make peace in the world."
-          },
-          {
-            "term": "interview",
-            "part_of_speech": "noun",
-            "definition": "A meeting where someone asks questions to another person to get information."
-          },
-          {
-            "term": "war",
-            "part_of_speech": "noun",
-            "definition": "A period of fighting between countries or groups, often with armies."
-          },
-          {
-            "term": "conquer",
-            "part_of_speech": "verb",
-            "definition": "To take control of a country or a city by fighting and winning."
-          },
-          {
             "term": "pronouncement",
             "part_of_speech": "noun",
             "definition": "A formal or authoritative announcement or declaration, often by a high-ranking official."
+          },
+          {
+            "term": "recalibration",
+            "part_of_speech": "noun",
+            "definition": "an adjustment to the balance or direction of something"
+          },
+          {
+            "term": "unequivocally",
+            "part_of_speech": "adverb",
+            "definition": "in a way that leaves no uncertainty about the stated position"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "protracted",
+            "part_of_speech": "adjective",
+            "definition": "continuing for an unusually long time"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 4
     }
   }
 }

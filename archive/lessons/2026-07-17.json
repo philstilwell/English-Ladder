@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "Military attacks, usually carried out from the air or with missiles."
-          },
-          {
-            "term": "civilian infrastructure",
-            "part_of_speech": "noun",
-            "definition": "Public facilities and services that support a society, such as roads, bridges, power grids, and water systems, used by ordinary people."
-          },
-          {
             "term": "maritime gateway",
             "part_of_speech": "noun",
             "definition": "An important sea route or passage that ships use to enter or exit a region, often critical for trade."
@@ -259,19 +249,29 @@
             "definition": "To reduce the intensity, severity, or danger of a conflict, dispute, or tense situation."
           },
           {
-            "term": "launched",
-            "part_of_speech": "verb (past tense)",
-            "definition": "started something new, like an attack."
+            "term": "Strait of Hormuz",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
           },
           {
-            "term": "hit",
-            "part_of_speech": "verb (past tense)",
-            "definition": "made contact with something with force."
+            "term": "violations",
+            "part_of_speech": "plural noun",
+            "definition": "actions that break a rule, law or agreement"
           },
           {
-            "term": "boarded",
-            "part_of_speech": "verb (past tense)",
-            "definition": "went onto a ship or plane."
+            "term": "condemned",
+            "part_of_speech": "verb, past participle",
+            "definition": "Expressed strong disapproval of something, especially on moral or ethical grounds; officially declared wrong."
+          },
+          {
+            "term": "operation",
+            "part_of_speech": "noun",
+            "definition": "an organised activity carried out for a particular purpose"
+          },
+          {
+            "term": "regarding",
+            "part_of_speech": "preposition",
+            "definition": "about or in connection with a particular subject"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "retaliatory strikes",
-            "part_of_speech": "noun phrase",
-            "definition": "Military actions undertaken as a direct response to an attack or aggression, intended as a countermeasure or punishment."
-          },
-          {
             "term": "underscoring",
             "part_of_speech": "verb (present participle)",
             "definition": "Emphasizing or highlighting the importance of something; serving to stress a point or demonstrate a particular quality."
@@ -465,24 +460,9 @@
             "definition": "Far-reaching and often indirect effects or consequences of an event or action, spreading throughout a system or region."
           },
           {
-            "term": "maritime chokepoint",
-            "part_of_speech": "noun phrase",
-            "definition": "A narrow, critical navigational channel in a body of water where sea traffic is concentrated, making it strategically vulnerable to disruption."
-          },
-          {
-            "term": "launched",
-            "part_of_speech": "verb (past tense)",
-            "definition": "started something new, like an attack."
-          },
-          {
-            "term": "civilian infrastructure",
-            "part_of_speech": "noun phrase",
-            "definition": "buildings and systems used for ordinary public life, such as homes, roads and water supplies"
-          },
-          {
-            "term": "de-escalate",
-            "part_of_speech": "verb",
-            "definition": "To reduce the intensity, severity, or danger of a conflict, dispute, or tense situation."
+            "term": "chokepoint",
+            "part_of_speech": "noun",
+            "definition": "a narrow passage where movement can easily be restricted"
           },
           {
             "term": "crucial",
@@ -490,9 +470,29 @@
             "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
           },
           {
-            "term": "maritime security",
+            "term": "balancing act",
             "part_of_speech": "noun phrase",
-            "definition": "The protection of ships, ports, and sea lanes from threats such as piracy, terrorism, and other unlawful acts, ensuring safe passage and trade."
+            "definition": "an effort to meet competing demands without giving too much weight to either"
+          },
+          {
+            "term": "geopolitical landscape",
+            "part_of_speech": "noun phrase",
+            "definition": "The complex set of international political, economic, and strategic factors that characterize a particular region or the world at a given time."
+          },
+          {
+            "term": "concurrently",
+            "part_of_speech": "adverb",
+            "definition": "at the same time as another development or activity"
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "retaliatory",
+            "part_of_speech": "adjective",
+            "definition": "Pertaining to or characterized by an action taken in return for an injury or offense, often involving aggression."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 6
     }
   }
 }

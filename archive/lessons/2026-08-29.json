@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "dramatic footage",
-            "part_of_speech": "noun phrase",
-            "definition": "Exciting or shocking film or video shown to the public that captures an important event."
-          },
-          {
-            "term": "hidden from public view",
-            "part_of_speech": "adjective phrase",
-            "definition": "Kept secret or intentionally not allowed to be seen by ordinary people or the general population."
-          },
-          {
             "term": "scarce",
             "part_of_speech": "adjective",
             "definition": "Not enough of something; very little is available or accessible."
@@ -259,19 +249,29 @@
             "definition": "Not knowing or realizing that something is happening or that something exists."
           },
           {
-            "term": "floods",
-            "part_of_speech": "noun",
-            "definition": "Too much water that covers land that is usually dry."
-          },
-          {
-            "term": "victims",
-            "part_of_speech": "noun",
-            "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
-          },
-          {
             "term": "press",
             "part_of_speech": "noun",
             "definition": "news organisations and the journalists who work for them"
+          },
+          {
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "results or effects of actions or events"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "casualties",
+            "part_of_speech": "noun (plural)",
+            "definition": "people killed or injured in a war, accident, or other disaster or incident."
+          },
+          {
+            "term": "affected",
+            "part_of_speech": "verb",
+            "definition": "had an influence on or caused a change in someone or something"
           }
         ],
         "grammar": {
@@ -445,14 +445,9 @@
         ],
         "vocabulary": [
           {
-            "term": "hidden from public view",
-            "part_of_speech": "phrase, adjective",
-            "definition": "Deliberately kept secret or out of sight from the general population, often due to censorship or intentional concealment."
-          },
-          {
-            "term": "information control",
-            "part_of_speech": "noun",
-            "definition": "The systematic management and restriction of the flow of information, typically exercised by a government or powerful entity to influence perception."
+            "term": "censored",
+            "part_of_speech": "verb",
+            "definition": "examined and restricted to prevent certain information from reaching the public"
           },
           {
             "term": "paucity of credible detail",
@@ -470,29 +465,34 @@
             "definition": "Very little or insufficient understanding or information about something, often implying a deficiency in what is known."
           },
           {
-            "term": "floods",
-            "part_of_speech": "noun",
-            "definition": "Too much water that covers land that is usually dry."
-          },
-          {
-            "term": "victims",
-            "part_of_speech": "noun",
-            "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
-          },
-          {
             "term": "catastrophic",
             "part_of_speech": "adjective",
             "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
           },
           {
-            "term": "journalists",
-            "part_of_speech": "noun",
-            "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
+            "term": "official narrative",
+            "part_of_speech": "noun phrase",
+            "definition": "the account or explanation of events presented by authorities"
           },
           {
-            "term": "across",
-            "part_of_speech": "preposition",
-            "definition": "in several parts of an area or throughout an area"
+            "term": "efficacy",
+            "part_of_speech": "noun",
+            "definition": "the ability of an action or method to produce its intended result"
+          },
+          {
+            "term": "comprehensive",
+            "part_of_speech": "adjective",
+            "definition": "covering the main relevant parts of a subject or problem"
+          },
+          {
+            "term": "dissemination",
+            "part_of_speech": "noun",
+            "definition": "the organised spread of information to a wider audience"
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "rules or measures that limit what people can do"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

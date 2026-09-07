@@ -234,24 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "sacked",
-            "part_of_speech": "adjective",
-            "definition": "Removed from a job or position, usually suddenly and often without notice."
-          },
-          {
             "term": "called for",
             "part_of_speech": "phrasal verb",
             "definition": "To publicly demand or request something, especially something important or necessary."
-          },
-          {
-            "term": "martial law",
-            "part_of_speech": "noun",
-            "definition": "Temporary rule by military forces over civilians, usually during an emergency or war, when normal laws are set aside."
-          },
-          {
-            "term": "suspended",
-            "part_of_speech": "adjective",
-            "definition": "Temporarily stopped or postponed, often referring to an activity, a process, or someone's duties."
           },
           {
             "term": "legal framework",
@@ -259,19 +244,34 @@
             "definition": "The system of laws, rules, and regulations that provides the structure for how an organization, country, or activity operates."
           },
           {
-            "term": "elections",
-            "part_of_speech": "noun",
-            "definition": "Times when people choose their leaders by voting."
-          },
-          {
-            "term": "defence minister",
-            "part_of_speech": "noun phrase",
-            "definition": "the government official responsible for the armed forces and national defence"
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "practicalities",
+            "part_of_speech": "plural noun",
+            "definition": "the details that must be dealt with to make a plan work"
+          },
+          {
+            "term": "consideration",
+            "part_of_speech": "noun",
+            "definition": "careful thought about something before making a decision"
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "implementing",
+            "part_of_speech": "verb",
+            "definition": "putting a plan or decision into action"
+          },
+          {
+            "term": "conducting",
+            "part_of_speech": "verb",
+            "definition": "organising and carrying out an activity"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "Impossible to maintain or defend under the current legal framework or system, lacking legal basis or justification."
           },
           {
-            "term": "martial law",
+            "term": "political establishment",
             "part_of_speech": "noun phrase",
-            "definition": "Special rules when the military controls a country, often during an emergency."
+            "definition": "the people and institutions that hold established political influence"
           },
           {
-            "term": "elections",
+            "term": "pronouncement",
             "part_of_speech": "noun",
-            "definition": "Times when people choose their leaders by voting."
+            "definition": "A formal or authoritative announcement or declaration, often by a high-ranking official."
           },
           {
-            "term": "suspended",
-            "part_of_speech": "verb (past participle)",
-            "definition": "Stopped for a certain period of time."
+            "term": "re-evaluation",
+            "part_of_speech": "noun",
+            "definition": "a fresh assessment of something in light of changed circumstances"
           },
           {
-            "term": "defence minister",
-            "part_of_speech": "noun phrase",
-            "definition": "the government official responsible for the armed forces and national defence"
+            "term": "unequivocally",
+            "part_of_speech": "adverb",
+            "definition": "in a way that leaves no uncertainty about the stated position"
           },
           {
-            "term": "legal framework",
-            "part_of_speech": "noun phrase",
-            "definition": "The system of laws, rules, and regulations that provides the structure for how an organization, country, or activity operates."
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

@@ -234,19 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "match",
-            "part_of_speech": "verb",
-            "definition": "To do something similar to what another person or country has done, often in response, such as imposing similar taxes or rules."
-          },
-          {
             "term": "breakdown",
             "part_of_speech": "noun",
             "definition": "A failure of a system or relationship, often referring to negotiations or discussions that stop without success."
-          },
-          {
-            "term": "levy",
-            "part_of_speech": "noun",
-            "definition": "An official tax, fee, or fine that is demanded from a person or company by a government or organization."
           },
           {
             "term": "come into force",
@@ -259,19 +249,29 @@
             "definition": "Becoming more intense, serious, or severe over time, often used to describe conflicts, prices, or problems."
           },
           {
-            "term": "tariffs",
-            "part_of_speech": "noun",
-            "definition": "extra taxes on things that come from another country"
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "results or effects of actions or events"
           },
           {
-            "term": "imports",
+            "term": "agreement",
             "part_of_speech": "noun",
-            "definition": "goods that one country buys from another country"
+            "definition": "a decision or arrangement accepted by the people involved"
           },
           {
-            "term": "trade talks",
-            "part_of_speech": "noun phrase",
-            "definition": "meetings where countries discuss how they will buy and sell goods"
+            "term": "consumers",
+            "part_of_speech": "plural noun",
+            "definition": "people who buy goods or services for their own use"
+          },
+          {
+            "term": "expressed",
+            "part_of_speech": "verb",
+            "definition": "communicated a feeling, opinion or position"
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People who hold a position of authority or trust in an organization or government."
           }
         ],
         "grammar": {
@@ -446,43 +446,18 @@
         "vocabulary": [
           {
             "term": "reciprocate",
-            "part_of_speech": "Verb",
+            "part_of_speech": "verb",
             "definition": "To respond to a gesture or action by making a corresponding one; to return a favour or action in kind."
           },
           {
-            "term": "levy",
-            "part_of_speech": "Noun",
-            "definition": "An act of collecting a tax, fee, or fine; also, the tax, fee, or fine itself, often officially imposed by a government or authority."
-          },
-          {
-            "term": "escalation",
-            "part_of_speech": "Noun",
-            "definition": "A rapid increase; a rise in the intensity or seriousness of something, especially a conflict or dispute."
-          },
-          {
             "term": "bilateral",
-            "part_of_speech": "Adjective",
+            "part_of_speech": "adjective",
             "definition": "Involving two parties, countries, or sides; relating to or affecting two sides, typically in terms of agreements or relations."
           },
           {
             "term": "impasse",
-            "part_of_speech": "Noun",
+            "part_of_speech": "noun",
             "definition": "A situation in which no progress is possible, especially because of disagreement; a deadlock or stalemate that prevents further action."
-          },
-          {
-            "term": "tariffs",
-            "part_of_speech": "noun",
-            "definition": "extra taxes on things that come from another country"
-          },
-          {
-            "term": "imports",
-            "part_of_speech": "noun",
-            "definition": "goods that one country buys from another country"
-          },
-          {
-            "term": "breakdown",
-            "part_of_speech": "noun",
-            "definition": "A failure of a system or relationship, often referring to negotiations or discussions that stop without success."
           },
           {
             "term": "volatile",
@@ -493,6 +468,31 @@
             "term": "avert",
             "part_of_speech": "verb",
             "definition": "To turn away or aside; to prevent something undesirable from happening, such as a danger or catastrophe."
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "plural noun",
+            "definition": "indirect or continuing consequences, often harmful ones"
+          },
+          {
+            "term": "geopolitical",
+            "part_of_speech": "adjective",
+            "definition": "connected with the influence of geography on relations and power between countries"
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

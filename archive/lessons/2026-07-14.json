@@ -234,13 +234,8 @@
         ],
         "vocabulary": [
           {
-            "term": "investigation",
-            "part_of_speech": "noun",
-            "definition": "An official examination of facts to discover the truth about something, especially a crime or accident."
-          },
-          {
             "term": "fatalities",
-            "part_of_speech": "noun",
+            "part_of_speech": "plural noun",
             "definition": "Deaths caused by an accident, disaster, or violence."
           },
           {
@@ -254,24 +249,29 @@
             "definition": "Signs, especially public signs, used for display or guidance."
           },
           {
-            "term": "flammable",
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "devastating",
             "part_of_speech": "adjective",
-            "definition": "Easily set on fire and capable of burning rapidly."
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
           },
           {
-            "term": "locked",
-            "part_of_speech": "adjective",
-            "definition": "Closed with a key or lock, so you cannot open it."
+            "term": "furthermore",
+            "part_of_speech": "adverb",
+            "definition": "used to add another point to what has already been said"
           },
           {
-            "term": "emergency exits",
-            "part_of_speech": "noun phrase",
-            "definition": "Special doors or ways to leave a place quickly when there is danger, like a fire."
+            "term": "conditions",
+            "part_of_speech": "plural noun",
+            "definition": "the circumstances or physical state in a place"
           },
           {
-            "term": "survivors",
-            "part_of_speech": "noun",
-            "definition": "People who live through a dangerous event, such as a fire or accident."
+            "term": "concerns",
+            "part_of_speech": "plural noun",
+            "definition": "feelings of worry about a situation"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "Responsibility for a fault or wrong; the state of being blameworthy or deserving of reproach for an action or omission."
           },
           {
-            "term": "investigation",
-            "part_of_speech": "noun",
-            "definition": "A careful look to find facts and reasons about something."
-          },
-          {
-            "term": "locked",
+            "term": "comprehensive",
             "part_of_speech": "adjective",
-            "definition": "Closed with a key or lock, so you cannot open it."
+            "definition": "covering the main relevant parts of a subject or problem"
           },
           {
-            "term": "survivors",
+            "term": "enforcement",
             "part_of_speech": "noun",
-            "definition": "People who live through a dangerous event, such as a fire or accident."
+            "definition": "the process of putting rules or restrictions into effect"
           },
           {
-            "term": "fatalities",
-            "part_of_speech": "noun",
-            "definition": "Deaths caused by an accident, disaster, or violence."
+            "term": "imperative",
+            "part_of_speech": "adjective",
+            "definition": "urgently necessary or extremely important"
           },
           {
-            "term": "signage",
-            "part_of_speech": "noun",
-            "definition": "Signs, especially public signs, used for display or guidance."
+            "term": "ascertain",
+            "part_of_speech": "verb",
+            "definition": "to establish a fact by careful inquiry or examination"
+          },
+          {
+            "term": "egregious",
+            "part_of_speech": "adjective",
+            "definition": "Outstandingly bad, shocking, or reprehensible, often used to describe severe mistakes or offenses."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

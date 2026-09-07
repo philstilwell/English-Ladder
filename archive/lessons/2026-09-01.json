@@ -193,21 +193,6 @@
         ],
         "vocabulary": [
           {
-            "term": "forced",
-            "part_of_speech": "verb",
-            "definition": "made to do something they did not choose"
-          },
-          {
-            "term": "return",
-            "part_of_speech": "verb",
-            "definition": "go back to a place"
-          },
-          {
-            "term": "never",
-            "part_of_speech": "adverb",
-            "definition": "not at any time"
-          },
-          {
             "term": "aid agencies",
             "part_of_speech": "noun phrase",
             "definition": "organisations that provide help to people in need"
@@ -231,6 +216,21 @@
             "term": "dignity",
             "part_of_speech": "noun",
             "definition": "the worth and respect that every person deserves"
+          },
+          {
+            "term": "foreign aid",
+            "part_of_speech": "noun phrase",
+            "definition": "support, often money or supplies, sent from other countries"
+          },
+          {
+            "term": "set up",
+            "part_of_speech": "phrasal verb",
+            "definition": "established or organised something so that people could use it"
+          },
+          {
+            "term": "difficulties",
+            "part_of_speech": "plural noun",
+            "definition": "problems that make something hard to do"
           }
         ],
         "grammar": {
@@ -391,21 +391,6 @@
         ],
         "vocabulary": [
           {
-            "term": "forced",
-            "part_of_speech": "verb",
-            "definition": "made to do something they did not choose"
-          },
-          {
-            "term": "return",
-            "part_of_speech": "verb",
-            "definition": "go back to a place"
-          },
-          {
-            "term": "never",
-            "part_of_speech": "adverb",
-            "definition": "not at any time"
-          },
-          {
             "term": "expulsions",
             "part_of_speech": "plural noun",
             "definition": "acts of officially forcing people to leave a country or place"
@@ -431,14 +416,29 @@
             "definition": "shelter or protection from danger or hardship"
           },
           {
-            "term": "earn a living",
-            "part_of_speech": "verb phrase",
-            "definition": "make enough money through work to support everyday life"
-          },
-          {
             "term": "voluntary",
             "part_of_speech": "adjective",
             "definition": "done by free choice rather than through force"
+          },
+          {
+            "term": "financial resources",
+            "part_of_speech": "noun phrase",
+            "definition": "money and other funds available to meet needs"
+          },
+          {
+            "term": "safeguard",
+            "part_of_speech": "verb",
+            "definition": "to protect something important against harm or loss"
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "rules or measures that limit what people can do"
+          },
+          {
+            "term": "intensify",
+            "part_of_speech": "verb",
+            "definition": "to make an activity or effect stronger or more extensive"
           }
         ],
         "grammar": {
@@ -636,6 +636,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 4
     }
   }
 }

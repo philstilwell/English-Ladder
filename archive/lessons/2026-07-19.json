@@ -244,26 +244,6 @@
             "definition": "To cause someone or something to die."
           },
           {
-            "term": "targeting",
-            "part_of_speech": "verb",
-            "definition": "To aim at a specific place or thing, often with the intention to attack or hit it."
-          },
-          {
-            "term": "forces",
-            "part_of_speech": "noun",
-            "definition": "A group of people, such as soldiers or police, who are organized for a particular purpose, especially fighting."
-          },
-          {
-            "term": "drones",
-            "part_of_speech": "noun",
-            "definition": "Unmanned aircraft, controlled remotely, often used for surveillance, reconnaissance, or military attacks."
-          },
-          {
-            "term": "soldiers",
-            "part_of_speech": "noun",
-            "definition": "People who work in an army. They fight for their country."
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
@@ -272,6 +252,26 @@
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in the intensity, seriousness, or scope of a conflict or situation."
+          },
+          {
+            "term": "highlighting",
+            "part_of_speech": "verb",
+            "definition": "Drawing special attention to something important or making it more noticeable."
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "operations",
+            "part_of_speech": "plural noun",
+            "definition": "planned activities carried out for a purpose, such as rescue work or military action"
+          },
+          {
+            "term": "meanwhile",
+            "part_of_speech": "adverb",
+            "definition": "during the same period of time as another event"
           }
         ],
         "grammar": {
@@ -455,34 +455,14 @@
             "definition": "A sudden, brief period of intense action or excitement, often involving numerous simultaneous events."
           },
           {
-            "term": "unleashed a series of targeted operations",
-            "part_of_speech": "verb phrase",
-            "definition": "Initiated or released a succession of specific, purposeful military actions or attacks with significant force."
-          },
-          {
             "term": "retaliatory posture",
             "part_of_speech": "noun phrase",
             "definition": "A defensive or aggressive stance adopted in response to an attack or perceived wrongdoing, indicating readiness to strike back."
           },
           {
-            "term": "belligerent exchanges",
-            "part_of_speech": "noun phrase",
-            "definition": "Hostile or aggressive communications or actions between opposing parties, often escalating conflict."
-          },
-          {
-            "term": "drones",
-            "part_of_speech": "noun",
-            "definition": "Flying machines without a pilot. They can carry cameras or weapons."
-          },
-          {
-            "term": "targeting",
-            "part_of_speech": "verb",
-            "definition": "To aim at a specific place or thing, often with the intention to attack or hit it."
-          },
-          {
-            "term": "forces",
-            "part_of_speech": "noun",
-            "definition": "A group of people, such as soldiers or police, who are organized for a particular purpose, especially fighting."
+            "term": "belligerent",
+            "part_of_speech": "adjective",
+            "definition": "hostile and ready to engage in conflict"
           },
           {
             "term": "precipitated",
@@ -493,6 +473,26 @@
             "term": "consecutive",
             "part_of_speech": "adjective",
             "definition": "Following one another continuously in an unbroken sequence, without interruption."
+          },
+          {
+            "term": "profound implications",
+            "part_of_speech": "noun phrase",
+            "definition": "Significant and far-reaching consequences or effects that may not be immediately obvious but will have a deep impact."
+          },
+          {
+            "term": "concurrently",
+            "part_of_speech": "adverb",
+            "definition": "at the same time as another development or activity"
+          },
+          {
+            "term": "geopolitical",
+            "part_of_speech": "adjective",
+            "definition": "connected with the influence of geography on relations and power between countries"
+          },
+          {
+            "term": "operational",
+            "part_of_speech": "adjective",
+            "definition": "relating to how a planned activity is carried out in practice"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 5
     }
   }
 }

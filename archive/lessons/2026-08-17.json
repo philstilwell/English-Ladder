@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "reduce",
-            "part_of_speech": "verb",
-            "definition": "To make something smaller in amount, size, or intensity."
-          },
-          {
-            "term": "military drills",
-            "part_of_speech": "noun phrase",
-            "definition": "Organized training sessions for soldiers to practice fighting and prepare for real conflicts."
-          },
-          {
-            "term": "stayed out of",
-            "part_of_speech": "phrasal verb",
-            "definition": "To intentionally avoid becoming involved in a situation or conflict."
-          },
-          {
-            "term": "cites",
-            "part_of_speech": "verb",
-            "definition": "Mentions something as a reason, example, or support for an argument or statement."
-          },
-          {
             "term": "exercises",
             "part_of_speech": "noun",
             "definition": "Planned activities, especially for military training, that help people practice skills."
-          },
-          {
-            "term": "very good relationship",
-            "part_of_speech": "noun phrase",
-            "definition": "When two people or countries are good friends."
           },
           {
             "term": "conflict",
@@ -270,8 +245,33 @@
           },
           {
             "term": "operations",
+            "part_of_speech": "plural noun",
+            "definition": "planned activities carried out for a purpose, such as rescue work or military action"
+          },
+          {
+            "term": "large-scale",
+            "part_of_speech": "adjective",
+            "definition": "Involving a lot of people, things, or money; extensive."
+          },
+          {
+            "term": "frequency",
             "part_of_speech": "noun",
-            "definition": "The activities or processes of a business or organization."
+            "definition": "how often something happens"
+          },
+          {
+            "term": "indicated",
+            "part_of_speech": "verb",
+            "definition": "showed or made something known"
+          },
+          {
+            "term": "involving",
+            "part_of_speech": "verb",
+            "definition": "including someone or something as part of an event"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "downsize the exercises",
-            "part_of_speech": "verb phrase",
-            "definition": "To reduce the scale, scope, or frequency of military training activities or maneuvers."
-          },
-          {
             "term": "unilateral decision",
             "part_of_speech": "noun phrase",
             "definition": "A choice or policy made by one party or nation without the agreement or consultation of others involved."
@@ -470,11 +465,6 @@
             "definition": "A situation of difficulty, especially financial difficulty, or restricted resources and options."
           },
           {
-            "term": "very good relationship",
-            "part_of_speech": "noun phrase",
-            "definition": "When two people or countries are good friends."
-          },
-          {
             "term": "crucial",
             "part_of_speech": "adjective",
             "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
@@ -493,6 +483,16 @@
             "term": "tumultuous",
             "part_of_speech": "adjective",
             "definition": "Marked by disturbance and disorder; characterized by confusion, commotion, or uproar; often refers to a period of time."
+          },
+          {
+            "term": "ramifications",
+            "part_of_speech": "plural noun",
+            "definition": "the wider, sometimes complicated consequences of an action"
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 2
     }
   }
 }

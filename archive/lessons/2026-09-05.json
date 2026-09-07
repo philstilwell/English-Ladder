@@ -193,21 +193,6 @@
         ],
         "vocabulary": [
           {
-            "term": "mistrial",
-            "part_of_speech": "noun",
-            "definition": "a trial that ends without a valid final decision"
-          },
-          {
-            "term": "jury",
-            "part_of_speech": "noun",
-            "definition": "a group of people who decide facts in a trial"
-          },
-          {
-            "term": "uncertain",
-            "part_of_speech": "adjective",
-            "definition": "not known or not decided"
-          },
-          {
             "term": "testimony",
             "part_of_speech": "noun",
             "definition": "statements given by witnesses as evidence in court"
@@ -231,6 +216,21 @@
             "term": "charges",
             "part_of_speech": "plural noun",
             "definition": "formal accusations that someone has committed a crime"
+          },
+          {
+            "term": "declared",
+            "part_of_speech": "verb",
+            "definition": "Stated something officially, publicly, or strongly."
+          },
+          {
+            "term": "scheduled",
+            "part_of_speech": "verb",
+            "definition": "arranged to take place at a particular time"
+          },
+          {
+            "term": "seek",
+            "part_of_speech": "verb",
+            "definition": "to try to obtain or achieve something"
           }
         ],
         "grammar": {
@@ -391,29 +391,9 @@
         ],
         "vocabulary": [
           {
-            "term": "mistrial",
-            "part_of_speech": "noun",
-            "definition": "a trial that ends without a valid final decision"
-          },
-          {
-            "term": "jury",
-            "part_of_speech": "noun",
-            "definition": "a group of people who decide facts in a trial"
-          },
-          {
-            "term": "uncertain",
-            "part_of_speech": "adjective",
-            "definition": "not known or not decided"
-          },
-          {
             "term": "deliberated",
             "part_of_speech": "verb",
             "definition": "considered and discussed a matter carefully before deciding"
-          },
-          {
-            "term": "testimony",
-            "part_of_speech": "noun",
-            "definition": "statements presented by witnesses as evidence in court"
           },
           {
             "term": "deadlock",
@@ -426,19 +406,39 @@
             "definition": "a formal decision that someone is guilty of a crime"
           },
           {
-            "term": "hearing",
-            "part_of_speech": "noun",
-            "definition": "a court session held to consider a legal matter"
+            "term": "reach agreement",
+            "part_of_speech": "verb phrase",
+            "definition": "arrive at a decision that the participants accept"
           },
           {
-            "term": "prosecutor",
-            "part_of_speech": "noun",
-            "definition": "a lawyer responsible for presenting a criminal case against an accused person"
+            "term": "finding of not guilty",
+            "part_of_speech": "noun phrase",
+            "definition": "a formal decision that a defendant is not guilty of the charge being considered"
           },
           {
-            "term": "charges",
-            "part_of_speech": "plural noun",
-            "definition": "formal accusations of criminal wrongdoing"
+            "term": "refused",
+            "part_of_speech": "verb",
+            "definition": "declined to agree to a request or allow a proposed action"
+          },
+          {
+            "term": "require",
+            "part_of_speech": "verb",
+            "definition": "to make an action necessary through an order, rule or condition"
+          },
+          {
+            "term": "address",
+            "part_of_speech": "verb",
+            "definition": "to deal with an issue or take steps to resolve it"
+          },
+          {
+            "term": "held",
+            "part_of_speech": "verb",
+            "definition": "kept in custody rather than released"
+          },
+          {
+            "term": "existing",
+            "part_of_speech": "adjective",
+            "definition": "already in place at the time being discussed"
           }
         ],
         "grammar": {
@@ -636,6 +636,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 7
     }
   }
 }

@@ -234,36 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "powerful",
-            "part_of_speech": "adjective",
-            "definition": "Having great physical strength or force; very strong or intense, like a strong earthquake."
-          },
-          {
-            "term": "magnitude",
-            "part_of_speech": "noun",
-            "definition": "A measure of the energy released by an earthquake, often indicated on a scale like the Richter scale."
-          },
-          {
-            "term": "kills",
-            "part_of_speech": "verb",
-            "definition": "Causes the death of a person, animal, or other living thing."
-          },
-          {
-            "term": "operation",
-            "part_of_speech": "noun",
-            "definition": "A planned activity or series of actions for a specific purpose, such as a rescue mission."
-          },
-          {
-            "term": "survivors",
-            "part_of_speech": "noun",
-            "definition": "People who remain alive after an event in which others have died, especially a disaster or accident."
-          },
-          {
-            "term": "earthquake",
-            "part_of_speech": "noun",
-            "definition": "A sudden violent shaking of the ground, sometimes causing great destruction."
-          },
-          {
             "term": "struck",
             "part_of_speech": "verb",
             "definition": "hit or affected a place suddenly and forcefully"
@@ -271,7 +241,37 @@
           {
             "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise."
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "emergency shelter",
+            "part_of_speech": "noun phrase",
+            "definition": "a safe temporary place to stay after losing access to home"
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "large-scale",
+            "part_of_speech": "adjective",
+            "definition": "Involving a lot of people, things, or money; extensive."
+          },
+          {
+            "term": "displaced",
+            "part_of_speech": "adjective",
+            "definition": "forced to leave the place where one normally lives"
+          },
+          {
+            "term": "affected",
+            "part_of_speech": "adjective",
+            "definition": "changed or harmed by the event being described"
+          },
+          {
+            "term": "launched",
+            "part_of_speech": "verb (past tense)",
+            "definition": "started something new, like an attack."
           }
         ],
         "grammar": {
@@ -446,53 +446,53 @@
         "vocabulary": [
           {
             "term": "precipitating",
-            "part_of_speech": "Verb (present participle)",
+            "part_of_speech": "verb (present participle)",
             "definition": "Causing an event or situation, typically one that is unwelcome or undesirable, to happen suddenly, unexpectedly, or prematurely."
           },
           {
             "term": "unremitting efforts",
-            "part_of_speech": "Noun phrase",
+            "part_of_speech": "noun phrase",
             "definition": "Persistent and continuous endeavors without interruption or abatement, often in the face of difficulties."
           },
           {
             "term": "perilous conditions",
-            "part_of_speech": "Noun phrase",
+            "part_of_speech": "noun phrase",
             "definition": "Extremely hazardous or dangerous circumstances that involve great risk to safety or well-being."
           },
           {
             "term": "grief-stricken communities",
-            "part_of_speech": "Noun phrase",
+            "part_of_speech": "noun phrase",
             "definition": "Groups of people suffering from intense sorrow, typically due to a significant loss or tragedy."
           },
           {
             "term": "reverberating across",
-            "part_of_speech": "Verb phrase",
+            "part_of_speech": "verb phrase",
             "definition": "Having a far-reaching and lasting effect or impact on a wide area or group of people."
-          },
-          {
-            "term": "powerful",
-            "part_of_speech": "adjective",
-            "definition": "very strong; having great strength or force."
-          },
-          {
-            "term": "earthquake",
-            "part_of_speech": "noun",
-            "definition": "A sudden violent shaking of the ground, sometimes causing great destruction."
-          },
-          {
-            "term": "survivors",
-            "part_of_speech": "noun",
-            "definition": "People who are still alive after a dangerous event or accident."
-          },
-          {
-            "term": "magnitude",
-            "part_of_speech": "noun",
-            "definition": "A measure of the energy released by an earthquake, often indicated on a scale like the Richter scale."
           },
           {
             "term": "grappling with",
             "part_of_speech": "verb phrase",
             "definition": "Dealing with or struggling to overcome a difficult problem or challenge, often one that requires significant effort and resilience."
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "susceptible",
+            "part_of_speech": "adjective",
+            "definition": "particularly likely to be affected or harmed by something"
+          },
+          {
+            "term": "unfolding",
+            "part_of_speech": "adjective",
+            "definition": "developing or becoming apparent over time"
+          },
+          {
+            "term": "seismic",
+            "part_of_speech": "adjective",
+            "definition": "connected with earthquakes or movement within the earth"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 4
     }
   }
 }

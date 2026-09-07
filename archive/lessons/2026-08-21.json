@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "re-establishes",
-            "part_of_speech": "verb",
-            "definition": "to start or set up something again after it has been stopped or closed"
-          },
-          {
-            "term": "settlement",
-            "part_of_speech": "noun",
-            "definition": "a place where people come to live and build homes, often in a new area or a disputed territory"
-          },
-          {
             "term": "defying",
             "part_of_speech": "verb (present participle)",
             "definition": "openly refusing to obey someone or something, often in a bold or provocative way"
@@ -254,24 +244,34 @@
             "definition": "a strong feeling of pride and loyalty towards one's own country, often believing it is superior to others"
           },
           {
-            "term": "fearful",
-            "part_of_speech": "adjective",
-            "definition": "feeling afraid or worried about something, often about a possible danger or negative outcome"
-          },
-          {
-            "term": "international protests",
-            "part_of_speech": "noun phrase",
-            "definition": "public objections from people or governments in several countries"
-          },
-          {
-            "term": "pioneer families",
-            "part_of_speech": "noun phrase",
-            "definition": "The first families to move to and live in a new area."
-          },
-          {
             "term": "escalate",
             "part_of_speech": "verb",
             "definition": "To increase rapidly in intensity, severity, or magnitude."
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "conditions",
+            "part_of_speech": "plural noun",
+            "definition": "the circumstances or physical state in a place"
+          },
+          {
+            "term": "previously",
+            "part_of_speech": "adverb",
+            "definition": "at an earlier time"
+          },
+          {
+            "term": "widespread",
+            "part_of_speech": "adjective",
+            "definition": "happening or existing over a large area or among many people"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "noun",
+            "definition": "the possibility that something could happen"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "defying",
-            "part_of_speech": "verb",
-            "definition": "To openly resist or refuse to obey, often challenging authority, conventions, or expectations."
-          },
-          {
             "term": "contentious",
             "part_of_speech": "adjective",
             "definition": "Likely to cause an argument or disagreement; controversial and disputed."
@@ -470,29 +465,34 @@
             "definition": "A hindrance or obstruction in doing something; something that delays or blocks progress."
           },
           {
-            "term": "settlement",
-            "part_of_speech": "noun",
-            "definition": "A place where people start to live, often in a new area."
-          },
-          {
-            "term": "international protests",
-            "part_of_speech": "noun phrase",
-            "definition": "public objections from people or governments in several countries"
-          },
-          {
-            "term": "pioneer families",
-            "part_of_speech": "noun phrase",
-            "definition": "The first families to move to and live in a new area."
-          },
-          {
-            "term": "nationalism",
-            "part_of_speech": "noun",
-            "definition": "a strong feeling of pride and loyalty towards one's own country, often believing it is superior to others"
-          },
-          {
             "term": "grappling with",
             "part_of_speech": "verb phrase",
             "definition": "Dealing with or struggling to overcome a difficult problem or challenge, often one that requires significant effort and resilience."
+          },
+          {
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
+          },
+          {
+            "term": "exacerbating",
+            "part_of_speech": "verb",
+            "definition": "made or is making an existing problem more severe"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "provocation",
+            "part_of_speech": "noun",
+            "definition": "An action or speech that makes someone annoyed or angry, especially deliberately."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

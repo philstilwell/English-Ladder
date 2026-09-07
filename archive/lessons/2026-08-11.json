@@ -234,11 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "ruse",
-            "part_of_speech": "noun",
-            "definition": "A trick or act that is used to fool someone or to hide the truth."
-          },
-          {
             "term": "discreet",
             "part_of_speech": "adjective",
             "definition": "Careful in what you say or do, so that you do not embarrass or offend people or tell secrets; not drawing attention to itself."
@@ -259,19 +254,24 @@
             "definition": "The act of hiding the truth, especially to get an advantage or to make someone believe something that is not true."
           },
           {
-            "term": "Nato summit",
-            "part_of_speech": "noun phrase",
-            "definition": "A big meeting for leaders from different countries that are part of NATO, an alliance."
-          },
-          {
-            "term": "Air Force One",
-            "part_of_speech": "proper noun",
-            "definition": "the call sign used by a US Air Force aircraft carrying the US president"
-          },
-          {
-            "term": "catering truck",
+            "term": "journalists",
             "part_of_speech": "noun",
-            "definition": "A vehicle that brings food and drinks to airplanes for passengers."
+            "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
+          },
+          {
+            "term": "operation",
+            "part_of_speech": "noun",
+            "definition": "an organised activity carried out for a particular purpose"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "adjective",
+            "definition": "possible, but not yet certain or actual"
+          },
+          {
+            "term": "protocols",
+            "part_of_speech": "plural noun",
+            "definition": "agreed procedures for dealing with a situation"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "ruse",
-            "part_of_speech": "noun",
-            "definition": "A trick or stratagem, often cunningly planned, intended to mislead or deceive someone."
-          },
-          {
             "term": "covert departure",
             "part_of_speech": "noun phrase",
             "definition": "The act of leaving a place secretly and without being observed or detected."
@@ -470,29 +465,34 @@
             "definition": "Strained relationships or conflicts between nations or regions, influenced by geographical factors, power dynamics, and political ideologies."
           },
           {
-            "term": "Nato summit",
-            "part_of_speech": "noun phrase",
-            "definition": "A big meeting for leaders from different countries that are part of NATO, an alliance."
+            "term": "high-stakes",
+            "part_of_speech": "adjective",
+            "definition": "involving potentially serious consequences or major losses and gains"
           },
           {
-            "term": "Air Force One",
-            "part_of_speech": "proper noun",
-            "definition": "the call sign used by a US Air Force aircraft carrying the US president"
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
           },
           {
-            "term": "catering truck",
-            "part_of_speech": "noun",
-            "definition": "A vehicle that brings food and drinks to airplanes for passengers."
+            "term": "intricate",
+            "part_of_speech": "adjective",
+            "definition": "having many connected details that require careful attention"
           },
           {
-            "term": "maneuver",
-            "part_of_speech": "noun",
-            "definition": "A movement or series of moves requiring skill and care, often used to achieve a particular goal or avoid something."
+            "term": "amidst",
+            "part_of_speech": "preposition",
+            "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
           },
           {
-            "term": "prompted",
-            "part_of_speech": "verb (past participle)",
-            "definition": "Caused someone to do something or caused something to happen; to provoke or inspire an action."
+            "term": "entailed",
+            "part_of_speech": "verb",
+            "definition": "involved something as a necessary part or consequence"
+          },
+          {
+            "term": "stringent",
+            "part_of_speech": "adjective",
+            "definition": "strict and allowing little flexibility"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

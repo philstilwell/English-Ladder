@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "threatened to block",
-            "part_of_speech": "verb phrase",
-            "definition": "To state an intention to stop something, often by preventing access or movement, like closing a passage."
-          },
-          {
             "term": "trade routes",
             "part_of_speech": "noun phrase",
             "definition": "Established paths or channels used for moving goods and merchandise between different regions or countries for commercial purposes."
-          },
-          {
-            "term": "vowed to strike",
-            "part_of_speech": "verb phrase",
-            "definition": "To make a serious and determined promise or solemn declaration to attack or initiate a military action against someone or something."
-          },
-          {
-            "term": "fresh strikes",
-            "part_of_speech": "noun phrase",
-            "definition": "New or recent military attacks, often implying a continuation or renewal of previous actions or a completely new offensive."
-          },
-          {
-            "term": "return to talks",
-            "part_of_speech": "verb phrase",
-            "definition": "To resume or restart diplomatic negotiations or discussions after a period of suspension, disagreement, or breakdown in communication."
-          },
-          {
-            "term": "bridges",
-            "part_of_speech": "noun",
-            "definition": "structures built over water or roads to allow people and vehicles to cross."
           },
           {
             "term": "conflict",
@@ -272,6 +247,31 @@
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in the intensity, seriousness, or scope of a conflict or situation."
+          },
+          {
+            "term": "Strait of Hormuz",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "widespread",
+            "part_of_speech": "adjective",
+            "definition": "happening or existing over a large area or among many people"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "To turn away or aside; to prevent something undesirable from happening, such as a danger or catastrophe."
           },
           {
-            "term": "tensions",
-            "part_of_speech": "noun",
-            "definition": "feelings of anger or disagreement between people or countries."
-          },
-          {
-            "term": "vowed",
-            "part_of_speech": "verb",
-            "definition": "promised very strongly to do something."
-          },
-          {
-            "term": "bridges",
-            "part_of_speech": "noun",
-            "definition": "structures built over water or roads to allow people and vehicles to cross."
-          },
-          {
-            "term": "trade routes",
+            "term": "geopolitical landscape",
             "part_of_speech": "noun phrase",
-            "definition": "Established paths or channels used for moving goods and merchandise between different regions or countries for commercial purposes."
+            "definition": "The complex set of international political, economic, and strategic factors that characterize a particular region or the world at a given time."
           },
           {
-            "term": "fresh strikes",
-            "part_of_speech": "noun phrase",
-            "definition": "New or recent military attacks, often implying a continuation or renewal of previous actions or a completely new offensive."
+            "term": "ramifications",
+            "part_of_speech": "plural noun",
+            "definition": "the wider, sometimes complicated consequences of an action"
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
+          },
+          {
+            "term": "concurrently",
+            "part_of_speech": "adverb",
+            "definition": "at the same time as another development or activity"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

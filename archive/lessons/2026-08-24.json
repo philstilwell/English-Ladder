@@ -244,11 +244,6 @@
             "definition": "The way that an organization, country, or system is controlled and managed."
           },
           {
-            "term": "senior figures",
-            "part_of_speech": "noun phrase",
-            "definition": "Important and powerful people in an organization or government."
-          },
-          {
             "term": "conservative stance",
             "part_of_speech": "noun phrase",
             "definition": "A position or attitude that favors traditional values and is resistant to change."
@@ -259,19 +254,24 @@
             "definition": "The state of having two parts, often opposite or contrasting, existing at the same time."
           },
           {
-            "term": "group",
-            "part_of_speech": "noun",
-            "definition": "A number of people or things that are together in one place or are connected in some way."
+            "term": "interpretations",
+            "part_of_speech": "plural noun",
+            "definition": "ways of understanding the meaning of something"
           },
           {
-            "term": "leaders",
+            "term": "investigation",
             "part_of_speech": "noun",
-            "definition": "Important people who guide or direct a group or country."
+            "definition": "An official examination of facts to discover the truth about something, especially a crime or accident."
           },
           {
-            "term": "reshaping",
+            "term": "contemporary",
+            "part_of_speech": "adjective",
+            "definition": "belonging to the present time"
+          },
+          {
+            "term": "implementing",
             "part_of_speech": "verb",
-            "definition": "To change the form or character of something in a significant way."
+            "definition": "putting a plan or decision into action"
           }
         ],
         "grammar": {
@@ -470,21 +470,6 @@
             "definition": "Urgent needs or demands related to human welfare, especially those arising from a crisis, disaster, or severe deprivation, requiring immediate attention and aid."
           },
           {
-            "term": "group",
-            "part_of_speech": "noun",
-            "definition": "A number of people or things that are together in one place or are connected in some way."
-          },
-          {
-            "term": "governance",
-            "part_of_speech": "noun",
-            "definition": "The way that an organization, country, or system is controlled and managed."
-          },
-          {
-            "term": "senior figures",
-            "part_of_speech": "noun phrase",
-            "definition": "Important and powerful people in an organization or government."
-          },
-          {
             "term": "intensified",
             "part_of_speech": "verb (past participle)",
             "definition": "Made or become more extreme, severe, or stronger; often referring to efforts, operations, or phenomena."
@@ -493,6 +478,21 @@
             "term": "underscores",
             "part_of_speech": "verb",
             "definition": "Emphasizes, highlights, or draws particular attention to a fact, idea, or situation."
+          },
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "not known to have happened before"
+          },
+          {
+            "term": "comprehensive",
+            "part_of_speech": "adjective",
+            "definition": "covering the main relevant parts of a subject or problem"
+          },
+          {
+            "term": "repercussions",
+            "part_of_speech": "plural noun",
+            "definition": "indirect or continuing consequences, often harmful ones"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 3
     }
   }
 }

@@ -234,44 +234,44 @@
         ],
         "vocabulary": [
           {
-            "term": "logistics hubs",
-            "part_of_speech": "noun phrase",
-            "definition": "Central points where goods are stored, sorted, and sent out for delivery."
-          },
-          {
-            "term": "hit",
-            "part_of_speech": "verb",
-            "definition": "To make physical contact with something, often causing damage."
-          },
-          {
             "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise."
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
           },
           {
             "term": "operations",
-            "part_of_speech": "noun",
-            "definition": "The activities or processes of a business or organization."
-          },
-          {
-            "term": "retailer",
-            "part_of_speech": "noun",
-            "definition": "A person or business that sells goods to the public in relatively small quantities for use or consumption rather than for resale."
-          },
-          {
-            "term": "drones",
-            "part_of_speech": "noun",
-            "definition": "Flying machines that can be controlled from far away without a person inside."
-          },
-          {
-            "term": "overnight",
-            "part_of_speech": "adverb",
-            "definition": "During the entire night, from evening until the next morning."
+            "part_of_speech": "plural noun",
+            "definition": "planned activities carried out for a purpose, such as rescue work or military action"
           },
           {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "supply chains",
+            "part_of_speech": "plural noun",
+            "definition": "the linked steps through which goods reach customers"
+          },
+          {
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "results or effects of actions or events"
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "plural noun",
+            "definition": "buildings, equipment or services provided for a purpose"
+          },
+          {
+            "term": "assessing",
+            "part_of_speech": "verb",
+            "definition": "to judge a situation after considering the available information"
           }
         ],
         "grammar": {
@@ -445,19 +445,9 @@
         ],
         "vocabulary": [
           {
-            "term": "logistics infrastructure",
-            "part_of_speech": "noun phrase",
-            "definition": "The organizational framework and physical facilities, such as transportation, warehousing, and communication networks, required for the complex operation of moving and storing goods."
-          },
-          {
             "term": "economic disruption",
             "part_of_speech": "noun phrase",
             "definition": "A significant disturbance or interruption to the normal functioning of an economy, often leading to negative consequences like reduced productivity or financial instability."
-          },
-          {
-            "term": "struck overnight",
-            "part_of_speech": "verb phrase",
-            "definition": "Attacked or hit during the nighttime hours, often implying a sudden and unexpected assault."
           },
           {
             "term": "underscores",
@@ -470,21 +460,6 @@
             "definition": "The unintended and often negative consequences or effects of an action or event, especially when experienced long after."
           },
           {
-            "term": "online retailer",
-            "part_of_speech": "noun",
-            "definition": "A business that sells products directly to customers over the internet."
-          },
-          {
-            "term": "logistics hubs",
-            "part_of_speech": "noun",
-            "definition": "Large centers where goods are organized, stored, and prepared for shipping and delivery."
-          },
-          {
-            "term": "operations",
-            "part_of_speech": "noun",
-            "definition": "The activities or processes of a business or organization."
-          },
-          {
             "term": "crucial",
             "part_of_speech": "adjective",
             "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
@@ -493,6 +468,31 @@
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
+          },
+          {
+            "term": "intensified",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Made or become more extreme, severe, or stronger; often referring to efforts, operations, or phenomena."
+          },
+          {
+            "term": "landscape",
+            "part_of_speech": "noun",
+            "definition": "the overall situation and conditions within a country or field of activity"
+          },
+          {
+            "term": "targeting",
+            "part_of_speech": "verb",
+            "definition": "To aim at a specific place or thing, often with the intention to attack or hit it."
+          },
+          {
+            "term": "economic entities",
+            "part_of_speech": "noun phrase",
+            "definition": "businesses or other organisations that take part in economic activity"
+          },
+          {
+            "term": "logistical impediments",
+            "part_of_speech": "noun phrase",
+            "definition": "obstacles to organising or moving supplies and services"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

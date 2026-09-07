@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "flash flood",
-            "part_of_speech": "noun",
-            "definition": "A sudden and rapid flood, typically caused by heavy rain or melting snow, often occurring in a short period of time."
-          },
-          {
-            "term": "swept away",
-            "part_of_speech": "verb phrase",
-            "definition": "To be carried rapidly by a strong force, usually water or wind, often leading to loss or destruction."
-          },
-          {
             "term": "assessing",
             "part_of_speech": "verb",
             "definition": "Evaluating or estimating the nature, ability, or quality of something, usually to understand its importance or value."
@@ -259,19 +249,29 @@
             "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
           },
           {
-            "term": "killed",
-            "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
-          },
-          {
-            "term": "border",
-            "part_of_speech": "noun",
-            "definition": "A line that separates two countries, states, or areas."
-          },
-          {
             "term": "officials",
             "part_of_speech": "noun",
             "definition": "People who hold a position of authority or trust in an organization or government."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "particularly",
+            "part_of_speech": "adverb",
+            "definition": "especially, compared with other people or things"
+          },
+          {
+            "term": "intensified",
+            "part_of_speech": "verb",
+            "definition": "made something stronger or more extreme"
+          },
+          {
+            "term": "assistance",
+            "part_of_speech": "noun",
+            "definition": "help given to someone who needs it"
           }
         ],
         "grammar": {
@@ -450,39 +450,14 @@
             "definition": "An extremely heavy and rapid fall of rain, often causing severe flooding."
           },
           {
-            "term": "swept away",
-            "part_of_speech": "phrasal verb",
-            "definition": "Carried off or removed forcibly by a powerful current of water or air; completely destroyed or displaced."
-          },
-          {
             "term": "remote locale",
             "part_of_speech": "noun phrase",
             "definition": "A distant or isolated place, often difficult to access and far from urban centers."
           },
           {
-            "term": "flash flood events",
-            "part_of_speech": "noun phrase",
-            "definition": "Occurrences of sudden and rapid flooding in low-lying areas, typically caused by intense rainfall over a short period."
-          },
-          {
             "term": "underscores the urgent necessity",
             "part_of_speech": "verb phrase",
             "definition": "Emphasizes or highlights the critical and immediate need for something."
-          },
-          {
-            "term": "border",
-            "part_of_speech": "noun",
-            "definition": "A line that separates two countries, states, or areas."
-          },
-          {
-            "term": "terrain",
-            "part_of_speech": "noun",
-            "definition": "A stretch of land, especially with regard to its physical features, like whether it is rocky, mountainous, or flat."
-          },
-          {
-            "term": "humanitarian",
-            "part_of_speech": "adjective",
-            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
           },
           {
             "term": "crucial",
@@ -493,6 +468,31 @@
             "term": "grappling with",
             "part_of_speech": "verb phrase",
             "definition": "Dealing with or struggling to overcome a difficult problem or challenge, often one that requires significant effort and resilience."
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
+          },
+          {
+            "term": "exacerbated",
+            "part_of_speech": "verb",
+            "definition": "made or is making an existing problem more severe"
+          },
+          {
+            "term": "ascertain",
+            "part_of_speech": "verb",
+            "definition": "to establish a fact by careful inquiry or examination"
+          },
+          {
+            "term": "robust",
+            "part_of_speech": "adjective",
+            "definition": "strong enough to remain effective under pressure"
+          },
+          {
+            "term": "inundated",
+            "part_of_speech": "verb",
+            "definition": "covered or overwhelmed an area with water"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 5
     }
   }
 }

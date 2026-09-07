@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "cancels",
-            "part_of_speech": "verb",
-            "definition": "To decide or announce that something arranged will not happen."
-          },
-          {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "Military attacks, usually from the air."
-          },
-          {
             "term": "claims",
             "part_of_speech": "verb",
             "definition": "To state something is true, often without proof."
-          },
-          {
-            "term": "hold off",
-            "part_of_speech": "phrasal verb",
-            "definition": "To delay doing something or to prevent something from happening."
-          },
-          {
-            "term": "perimeters",
-            "part_of_speech": "noun",
-            "definition": "The outer limits or boundaries of an area or situation."
-          },
-          {
-            "term": "deal",
-            "part_of_speech": "noun",
-            "definition": "an agreement between people or groups"
           },
           {
             "term": "conflict",
@@ -272,6 +247,31 @@
             "term": "negotiations",
             "part_of_speech": "noun",
             "definition": "Formal discussions between people trying to reach an agreement or resolve a dispute."
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "agreement",
+            "part_of_speech": "noun",
+            "definition": "a decision or arrangement accepted by the people involved"
+          },
+          {
+            "term": "indicated",
+            "part_of_speech": "verb",
+            "definition": "showed or made something known"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "cancel Iran strikes",
-            "part_of_speech": "verb phrase",
-            "definition": "To stop or call off planned military attacks targeting Iran."
-          },
-          {
             "term": "subject to",
             "part_of_speech": "prepositional phrase",
             "definition": "Dependent on something else happening or being true; conditional upon a specific condition being met."
@@ -458,26 +453,6 @@
             "term": "asserted",
             "part_of_speech": "verb (past tense)",
             "definition": "Stated a fact or belief confidently and forcefully, often without offering proof."
-          },
-          {
-            "term": "hold off on",
-            "part_of_speech": "phrasal verb",
-            "definition": "To delay or postpone doing something, especially to wait before taking action."
-          },
-          {
-            "term": "perimeters",
-            "part_of_speech": "noun",
-            "definition": "The outer limits or boundaries of an area, an idea, or an agreement; the scope or extent of something."
-          },
-          {
-            "term": "deal",
-            "part_of_speech": "noun",
-            "definition": "an agreement between people or groups"
-          },
-          {
-            "term": "rapidly",
-            "part_of_speech": "adverb",
-            "definition": "very quickly"
           },
           {
             "term": "escalation",
@@ -493,6 +468,31 @@
             "term": "volatile",
             "part_of_speech": "adjective",
             "definition": "Liable to change rapidly and unpredictably, especially for the worse; characterized by rapid and extreme changes."
+          },
+          {
+            "term": "geopolitical tensions",
+            "part_of_speech": "noun phrase",
+            "definition": "Strained relationships or conflicts between nations or regions, influenced by geographical factors, power dynamics, and political ideologies."
+          },
+          {
+            "term": "comprehensive",
+            "part_of_speech": "adjective",
+            "definition": "covering the main relevant parts of a subject or problem"
+          },
+          {
+            "term": "substantive",
+            "part_of_speech": "adjective",
+            "definition": "meaningful and dealing with the actual issue rather than appearances"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "ultimately",
+            "part_of_speech": "adverb",
+            "definition": "finally, after other events or considerations"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

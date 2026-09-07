@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "accused",
-            "part_of_speech": "verb",
-            "definition": "To say that someone has done something wrong or illegal."
-          },
-          {
-            "term": "weaponising",
-            "part_of_speech": "verb (gerund)",
-            "definition": "Turning something typically neutral or peaceful into a weapon or a tool for conflict."
-          },
-          {
-            "term": "archaeology",
-            "part_of_speech": "noun",
-            "definition": "The study of human history and prehistory through the excavation of sites and the analysis of artifacts."
-          },
-          {
             "term": "large-scale",
             "part_of_speech": "adjective",
             "definition": "Involving a lot of people, things, or money; extensive."
-          },
-          {
-            "term": "expropriations",
-            "part_of_speech": "noun",
-            "definition": "The act of a government taking private property for public use, often with compensation."
-          },
-          {
-            "term": "ancient",
-            "part_of_speech": "adjective",
-            "definition": "very, very old; from a long time ago."
           },
           {
             "term": "conflict",
@@ -272,6 +247,31 @@
             "term": "argue",
             "part_of_speech": "verb",
             "definition": "To give reasons or evidence in support of an idea, action, or theory, often with the aim of persuading others."
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "territorial",
+            "part_of_speech": "adjective",
+            "definition": "connected with control or ownership of an area of land"
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "regarding",
+            "part_of_speech": "preposition",
+            "definition": "about or in connection with a particular subject"
+          },
+          {
+            "term": "residents",
+            "part_of_speech": "plural noun",
+            "definition": "people who live in a particular place"
           }
         ],
         "grammar": {
@@ -445,16 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "weaponise",
-            "part_of_speech": "verb",
-            "definition": "To adapt or use something (which was not originally a weapon) as a weapon; in this context, to use archaeology as a tool for political or territorial gain."
-          },
-          {
-            "term": "expropriations",
-            "part_of_speech": "noun",
-            "definition": "The action by the state or an authority of taking property from its owner for public use or benefit, often with or without compensation; here, referring to land."
-          },
-          {
             "term": "underpin",
             "part_of_speech": "verb",
             "definition": "To support, justify, or form the basis for an idea, system, or theory; to strengthen or corroborate a claim or argument."
@@ -470,16 +460,6 @@
             "definition": "To make something, typically an undesirable situation or an unfounded belief, continue indefinitely; to maintain a situation or condition."
           },
           {
-            "term": "archaeology",
-            "part_of_speech": "noun",
-            "definition": "The study of human history and prehistory through the excavation of sites and the analysis of artifacts."
-          },
-          {
-            "term": "large-scale",
-            "part_of_speech": "adjective",
-            "definition": "Involving a lot of people, things, or money; extensive."
-          },
-          {
             "term": "bolster",
             "part_of_speech": "verb",
             "definition": "To support or strengthen; to reinforce or make something stronger or more effective."
@@ -493,6 +473,26 @@
             "term": "sovereignty",
             "part_of_speech": "noun",
             "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          },
+          {
+            "term": "unilateral",
+            "part_of_speech": "adjective",
+            "definition": "undertaken by one side without agreement from the other parties"
+          },
+          {
+            "term": "adherence",
+            "part_of_speech": "noun",
+            "definition": "continued observance of a rule, commitment or principle"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 4
     }
   }
 }

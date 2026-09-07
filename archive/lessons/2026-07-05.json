@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "absent",
-            "part_of_speech": "adjective",
-            "definition": "Not present in a place or at an event; missing."
-          },
-          {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People who hold a position of authority or trust in an organization or government."
-          },
-          {
             "term": "ayatollah",
             "part_of_speech": "noun",
             "definition": "A high-ranking cleric in the Shia Islamic religious hierarchy, often with significant religious and political influence."
@@ -259,19 +249,29 @@
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
           },
           {
-            "term": "supreme leader",
-            "part_of_speech": "noun phrase",
-            "definition": "The most important leader of a country or group."
-          },
-          {
-            "term": "funeral",
-            "part_of_speech": "noun",
-            "definition": "a ceremony held after someone dies"
-          },
-          {
             "term": "killed",
             "part_of_speech": "verb",
             "definition": "caused a person or animal to die"
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "adjective",
+            "definition": "still happening or lasting without stopping"
+          },
+          {
+            "term": "involving",
+            "part_of_speech": "verb",
+            "definition": "including someone or something as part of an event"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
           }
         ],
         "grammar": {
@@ -460,9 +460,9 @@
             "definition": "Causing or contributing to the growth of further speculation, guesses, or hypotheses based on incomplete information."
           },
           {
-            "term": "shrouded in official silence",
-            "part_of_speech": "idiomatic phrase",
-            "definition": "Kept secret or obscured by a lack of public disclosure or commentary from official sources, making it difficult to ascertain facts."
+            "term": "shrouded",
+            "part_of_speech": "verb",
+            "definition": "hidden or kept from being clearly understood"
           },
           {
             "term": "exacerbates",
@@ -470,29 +470,29 @@
             "definition": "To make a problem, bad situation, or negative feeling worse or more severe."
           },
           {
-            "term": "supreme leader",
+            "term": "political establishment",
             "part_of_speech": "noun phrase",
-            "definition": "The most important leader of a country or group."
+            "definition": "the people and institutions that hold established political influence"
           },
           {
-            "term": "attend",
-            "part_of_speech": "verb",
-            "definition": "To go to an event, a meeting, or a place."
+            "term": "power vacuum",
+            "part_of_speech": "noun phrase",
+            "definition": "a situation in which no clear authority is exercising control"
           },
           {
-            "term": "funeral",
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "not known to have happened before"
+          },
+          {
+            "term": "recalibration",
             "part_of_speech": "noun",
-            "definition": "a ceremony held after someone dies"
+            "definition": "an adjustment to the balance or direction of something"
           },
           {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People who hold a position of authority or trust in an organization or government."
-          },
-          {
-            "term": "ayatollah",
-            "part_of_speech": "noun",
-            "definition": "A high-ranking cleric in the Shia Islamic religious hierarchy, often with significant religious and political influence."
+            "term": "concurrently",
+            "part_of_speech": "adverb",
+            "definition": "at the same time as another development or activity"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

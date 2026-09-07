@@ -249,29 +249,29 @@
             "definition": "To make something more difficult or complex to deal with, solve, or understand."
           },
           {
-            "term": "conflict",
-            "part_of_speech": "noun",
-            "definition": "A serious disagreement or argument, often leading to fighting between groups or nations."
-          },
-          {
             "term": "retaliation",
             "part_of_speech": "noun",
             "definition": "The act of hurting someone or doing something bad to them because they have hurt you or done something bad to you; an act of revenge."
           },
           {
-            "term": "killed",
-            "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
+            "term": "investigations",
+            "part_of_speech": "plural noun",
+            "definition": "careful inquiries intended to find out what happened"
           },
           {
-            "term": "injured",
-            "part_of_speech": "verb",
-            "definition": "Hurt physically in an accident or an attack."
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
           },
           {
-            "term": "attack",
-            "part_of_speech": "noun",
-            "definition": "A violent act meant to cause harm or damage."
+            "term": "conditions",
+            "part_of_speech": "plural noun",
+            "definition": "the circumstances or physical state in a place"
+          },
+          {
+            "term": "conducting",
+            "part_of_speech": "verb",
+            "definition": "organising and carrying out an activity"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "A formal accusation or a strong indication that something is bad or wrong; a severe criticism."
           },
           {
-            "term": "killed",
-            "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
-          },
-          {
-            "term": "attack",
+            "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "A violent act meant to cause harm or damage."
+            "definition": "the basic networks and facilities on which an activity or society depends"
           },
           {
-            "term": "military",
-            "part_of_speech": "noun / adjective",
-            "definition": "a country’s armed forces; connected with those forces"
+            "term": "precipitating",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Causing an event or situation, typically one that is unwelcome or undesirable, to happen suddenly, unexpectedly, or prematurely."
           },
           {
-            "term": "casualty",
+            "term": "underscoring",
+            "part_of_speech": "verb (present participle)",
+            "definition": "Emphasizing or highlighting the importance of something; serving to stress a point or demonstrate a particular quality."
+          },
+          {
+            "term": "aggression",
             "part_of_speech": "noun",
-            "definition": "A person injured or killed in an accident, war, or other violent event."
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
           },
           {
-            "term": "conflict",
+            "term": "deterrence",
             "part_of_speech": "noun",
-            "definition": "A serious disagreement or argument, often leading to fighting between groups or nations."
+            "definition": "the use of a credible threat to discourage an action"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 5
     }
   }
 }

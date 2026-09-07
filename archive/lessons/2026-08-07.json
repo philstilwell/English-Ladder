@@ -234,16 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "fined",
-            "part_of_speech": "verb",
-            "definition": "To make someone pay money as punishment for breaking a law or rule."
-          },
-          {
-            "term": "child safety ruling",
-            "part_of_speech": "noun phrase",
-            "definition": "An official decision by a court or authority about protecting children, especially online."
-          },
-          {
             "term": "in addition to",
             "part_of_speech": "prepositional phrase",
             "definition": "Used to say that something extra is included or happening as well as something else."
@@ -254,16 +244,6 @@
             "definition": "Legally commanded or required to give a certain amount of money, usually as a penalty or settlement."
           },
           {
-            "term": "total",
-            "part_of_speech": "noun",
-            "definition": "The complete amount or number of something when everything is added together."
-          },
-          {
-            "term": "social media giant",
-            "part_of_speech": "noun phrase",
-            "definition": "A very big and powerful company that owns many social media websites or apps."
-          },
-          {
             "term": "over",
             "part_of_speech": "preposition",
             "definition": "about or concerning a subject"
@@ -272,6 +252,26 @@
             "term": "penalty",
             "part_of_speech": "noun",
             "definition": "a punishment for breaking a law or rule"
+          },
+          {
+            "term": "particularly",
+            "part_of_speech": "adverb",
+            "definition": "especially, compared with other people or things"
+          },
+          {
+            "term": "previously",
+            "part_of_speech": "adverb",
+            "definition": "at an earlier time"
+          },
+          {
+            "term": "violations",
+            "part_of_speech": "plural noun",
+            "definition": "actions that break a rule, law or agreement"
+          },
+          {
+            "term": "oversight",
+            "part_of_speech": "noun",
+            "definition": "the work of checking that an organisation follows rules and acts properly"
           }
         ],
         "grammar": {
@@ -470,29 +470,29 @@
             "definition": "To make something greater, larger, or more intense by adding to it; to increase the size or value of something."
           },
           {
-            "term": "child safety",
-            "part_of_speech": "noun phrase",
-            "definition": "Keeping children safe from harm or danger."
-          },
-          {
-            "term": "ruling",
-            "part_of_speech": "noun",
-            "definition": "An official decision made by a court or judge."
-          },
-          {
-            "term": "social media giant",
-            "part_of_speech": "noun phrase",
-            "definition": "A very big and powerful company that owns many social media websites or apps."
-          },
-          {
-            "term": "total",
-            "part_of_speech": "noun",
-            "definition": "The whole amount or number of something, when everything is added together."
-          },
-          {
             "term": "crucial",
             "part_of_speech": "adjective",
             "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
+          },
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "not known to have happened before"
+          },
+          {
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "enforcement",
+            "part_of_speech": "noun",
+            "definition": "the process of putting rules or restrictions into effect"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

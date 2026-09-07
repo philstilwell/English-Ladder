@@ -234,44 +234,44 @@
         ],
         "vocabulary": [
           {
-            "term": "collapsed",
-            "part_of_speech": "verb, past participle",
-            "definition": "Stopped working or failed suddenly and completely."
-          },
-          {
-            "term": "benefits",
-            "part_of_speech": "noun",
-            "definition": "Advantages or good effects that something has."
-          },
-          {
-            "term": "trade talks",
-            "part_of_speech": "noun phrase",
-            "definition": "Formal discussions and negotiations between countries about agreements concerning buying and selling goods."
-          },
-          {
-            "term": "retaliatory tariffs",
-            "part_of_speech": "noun phrase",
-            "definition": "Taxes placed on imported goods as a punishment or response to similar taxes from another country."
-          },
-          {
-            "term": "accused",
-            "part_of_speech": "verb, past simple",
-            "definition": "Stated that someone has done something wrong or illegal."
-          },
-          {
-            "term": "reluctantly",
-            "part_of_speech": "adverb",
-            "definition": "without really wanting to do something"
-          },
-          {
-            "term": "trade war",
-            "part_of_speech": "noun phrase",
-            "definition": "When countries put high taxes or restrictions on each other's goods, causing economic conflict."
+            "term": "responsibilities",
+            "part_of_speech": "plural noun",
+            "definition": "duties or tasks that a person or organisation is expected to fulfil"
           },
           {
             "term": "underscores",
             "part_of_speech": "verb",
             "definition": "Emphasizes or highlights the importance or truth of something, drawing attention to it."
+          },
+          {
+            "term": "commitment",
+            "part_of_speech": "noun",
+            "definition": "a firm promise to do something"
+          },
+          {
+            "term": "agreement",
+            "part_of_speech": "noun",
+            "definition": "a decision or arrangement accepted by the people involved"
+          },
+          {
+            "term": "consumers",
+            "part_of_speech": "plural noun",
+            "definition": "people who buy goods or services for their own use"
+          },
+          {
+            "term": "declared",
+            "part_of_speech": "verb",
+            "definition": "Stated something officially, publicly, or strongly."
+          },
+          {
+            "term": "domestic",
+            "part_of_speech": "adjective",
+            "definition": "connected with activities inside a particular country"
+          },
+          {
+            "term": "response",
+            "part_of_speech": "noun",
+            "definition": "An answer or reaction to something that has been said or done."
           }
         ],
         "grammar": {
@@ -445,24 +445,14 @@
         ],
         "vocabulary": [
           {
-            "term": "precipitously collapsed",
-            "part_of_speech": "adverbial phrase",
-            "definition": "To fall apart or fail suddenly and rapidly, often without warning or gradual decline."
-          },
-          {
             "term": "posited",
             "part_of_speech": "verb",
             "definition": "To put forward or assume as a fact or as a basis for argument, often a controversial claim or idea."
           },
           {
-            "term": "retaliatory measures",
+            "term": "reciprocal duties",
             "part_of_speech": "noun phrase",
-            "definition": "Actions taken in response to an injury or wrong, often as a form of revenge or punishment, especially in international relations."
-          },
-          {
-            "term": "instigating a trade war",
-            "part_of_speech": "verb phrase",
-            "definition": "To initiate or provoke a severe economic conflict between countries, characterized by protectionist policies and tariffs."
+            "definition": "obligations that each side owes in return for benefits from the other"
           },
           {
             "term": "accrue",
@@ -470,29 +460,39 @@
             "definition": "To accumulate or receive something, typically financial benefits or advantages, over time."
           },
           {
-            "term": "reluctantly",
-            "part_of_speech": "adverb",
-            "definition": "without really wanting to do something"
-          },
-          {
-            "term": "accused",
-            "part_of_speech": "verb",
-            "definition": "Said that someone did something wrong or was guilty of something."
-          },
-          {
-            "term": "benefits",
-            "part_of_speech": "noun",
-            "definition": "Advantages or good effects that something has."
-          },
-          {
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
           },
           {
-            "term": "underscoring",
-            "part_of_speech": "verb (present participle)",
-            "definition": "Emphasizing or highlighting the importance of something; serving to stress a point or demonstrate a particular quality."
+            "term": "established supply chains",
+            "part_of_speech": "adjective + noun phrase",
+            "definition": "The well-organized and long-standing networks and processes by which goods are produced, distributed, and delivered to consumers."
+          },
+          {
+            "term": "unequivocally",
+            "part_of_speech": "adverb",
+            "definition": "in a way that leaves no uncertainty about the stated position"
+          },
+          {
+            "term": "multilateral",
+            "part_of_speech": "adjective",
+            "definition": "involving several countries or parties"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          },
+          {
+            "term": "sovereignty",
+            "part_of_speech": "noun",
+            "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "burgeoning",
+            "part_of_speech": "adjective",
+            "definition": "growing or developing rapidly"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 7,
+      "advanced": 7
     }
   }
 }

@@ -1,5 +1,5 @@
 """Daily quiz minimums must survive drafting, storage, rebuilding and rendering."""
-from review_fixtures import approved_review
+from review_fixtures import approved_review, draft_response
 import copy
 import json
 import tempfile
@@ -92,7 +92,7 @@ class QuizMinimumTests(unittest.TestCase):
             lesson = self.lesson(config); lesson['quiz'].pop(); calls = []
             def generate(**kwargs):
                 calls.append(kwargs)
-                return SimpleNamespace(text=json.dumps(lesson))
+                return SimpleNamespace(text=json.dumps(draft_response(lesson, kwargs)))
             client = SimpleNamespace(models=SimpleNamespace(generate_content=generate))
             with patch.object(update_site, 'render_lesson_html') as render:
                 with self.assertRaisesRegex(RuntimeError, 'after 3 attempts.*quiz'):
@@ -107,7 +107,8 @@ class QuizMinimumTests(unittest.TestCase):
         responses = iter([short, lesson, approved_review()]); calls=[]
         def generate(**kwargs):
             calls.append(kwargs)
-            return SimpleNamespace(text=json.dumps(next(responses)))
+            value = next(responses)
+            return SimpleNamespace(text=json.dumps(draft_response(value, kwargs, short) if 'quiz' in value else value))
         client = SimpleNamespace(models=SimpleNamespace(generate_content=generate))
         saved, rendered = update_site.generate_lesson(client, self.archive['source'], config, update_site.release_datetime_from_date('2026-09-06'))
         self.assertEqual(10, len(saved['quiz']))

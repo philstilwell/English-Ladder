@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "massive attack",
-            "part_of_speech": "noun phrase",
-            "definition": "A very large, powerful, and intense military action or assault, typically involving many resources or forces."
-          },
-          {
-            "term": "targeted",
-            "part_of_speech": "verb (past participle)",
-            "definition": "Chosen or selected as the object of an attack or an action; directed towards a specific aim."
-          },
-          {
             "term": "grapples with",
             "part_of_speech": "verb phrase",
             "definition": "To struggle or contend with a difficult problem or situation, trying hard to overcome it."
-          },
-          {
-            "term": "air defence shortages",
-            "part_of_speech": "noun phrase",
-            "definition": "A situation where there are not enough systems, equipment, or resources to protect against attacks from the sky, such as missiles or aircraft."
-          },
-          {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "People who hold a public office or have authority in an organization or government, often speaking on behalf of it."
-          },
-          {
-            "term": "killed",
-            "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
           },
           {
             "term": "strikes",
@@ -272,6 +247,31 @@
             "term": "forces",
             "part_of_speech": "noun",
             "definition": "A group of people, such as soldiers or police, who are organized for a particular purpose, especially fighting."
+          },
+          {
+            "term": "emergency services",
+            "part_of_speech": "noun phrase",
+            "definition": "organisations such as firefighters and medical teams that respond to urgent danger"
+          },
+          {
+            "term": "highlighting",
+            "part_of_speech": "verb",
+            "definition": "Drawing special attention to something important or making it more noticeable."
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "large-scale",
+            "part_of_speech": "adjective",
+            "definition": "Involving a lot of people, things, or money; extensive."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who live through a dangerous event, such as a fire or accident."
           }
         ],
         "grammar": {
@@ -445,21 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "massive attack",
-            "part_of_speech": "noun phrase",
-            "definition": "A very large-scale, intense, and destructive offensive, typically involving a significant number of military assets or munitions."
-          },
-          {
-            "term": "targeted",
-            "part_of_speech": "verb (past participle)",
-            "definition": "Singled out or directed at a specific object, person, or area, often with hostile intent or as an objective."
-          },
-          {
-            "term": "grapple with",
-            "part_of_speech": "phrasal verb",
-            "definition": "To struggle or contend with a difficult problem, situation, or adversary, often implying a prolonged effort to overcome it."
-          },
-          {
             "term": "imperative",
             "part_of_speech": "noun",
             "definition": "An urgent need or command; something that is absolutely essential or crucial and must be done."
@@ -468,16 +453,6 @@
             "term": "dwindling capabilities",
             "part_of_speech": "noun phrase",
             "definition": "A gradual reduction or decline in the capacity, power, or effectiveness of a system, resource, or entity over time."
-          },
-          {
-            "term": "officials",
-            "part_of_speech": "noun",
-            "definition": "Important people who work for the government or a company."
-          },
-          {
-            "term": "air defence",
-            "part_of_speech": "noun",
-            "definition": "Systems or weapons that protect a country from attacks from the sky."
           },
           {
             "term": "exacerbating",
@@ -493,6 +468,31 @@
             "term": "missiles",
             "part_of_speech": "noun",
             "definition": "weapons that fly through the air to hit a target"
+          },
+          {
+            "term": "substantial",
+            "part_of_speech": "adjective",
+            "definition": "large in amount, size or importance"
+          },
+          {
+            "term": "protracted",
+            "part_of_speech": "adjective",
+            "definition": "continuing for an unusually long time"
+          },
+          {
+            "term": "extensive",
+            "part_of_speech": "adjective",
+            "definition": "covering a large area or involving many parts"
+          },
+          {
+            "term": "landscape",
+            "part_of_speech": "noun",
+            "definition": "the overall balance of forces and conditions in a situation"
+          },
+          {
+            "term": "sustained",
+            "part_of_speech": "adjective",
+            "definition": "maintained continuously over a period of time"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

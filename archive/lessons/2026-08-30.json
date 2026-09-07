@@ -234,21 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "restart talks",
-            "part_of_speech": "verb phrase",
-            "definition": "To begin official discussions or negotiations again after a period of stopping."
-          },
-          {
-            "term": "broadcaster",
-            "part_of_speech": "noun",
-            "definition": "A company or person whose business is to transmit television or radio programs, especially news."
-          },
-          {
-            "term": "rejected",
-            "part_of_speech": "verb",
-            "definition": "To refuse to accept, agree to, or consider something that has been offered or suggested."
-          },
-          {
             "term": "proposal",
             "part_of_speech": "noun",
             "definition": "A suggestion or plan that is formally presented for consideration or discussion."
@@ -259,11 +244,6 @@
             "definition": "To continue discussions, conversations, or negotiations after a temporary interruption."
           },
           {
-            "term": "EU",
-            "part_of_speech": "noun",
-            "definition": "The European Union, a group of many European countries that work together."
-          },
-          {
             "term": "planning",
             "part_of_speech": "verb",
             "definition": "thinking about what you will do in the future and making arrangements for it."
@@ -272,6 +252,26 @@
             "term": "reports",
             "part_of_speech": "verb",
             "definition": "to give information about something, often in the news."
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "participated",
+            "part_of_speech": "verb",
+            "definition": "took part in an activity"
+          },
+          {
+            "term": "independent",
+            "part_of_speech": "adjective",
+            "definition": "not controlled by another country, organisation or person"
+          },
+          {
+            "term": "electorate",
+            "part_of_speech": "noun",
+            "definition": "all the people who are entitled to vote in an election"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "overwhelmingly rejected",
-            "part_of_speech": "adverb + verb (phrase)",
-            "definition": "Dismissed or turned down by a very large majority, indicating a decisive public or group opinion against something."
-          },
-          {
             "term": "pivotal decision",
             "part_of_speech": "adjective + noun (phrase)",
             "definition": "A critically important choice or judgment that determines the future course of events or significantly alters a situation."
@@ -470,16 +465,6 @@
             "definition": "The general mood, attitude, or collective opinion of the electorate regarding a specific issue, policy, or political candidate."
           },
           {
-            "term": "EU",
-            "part_of_speech": "noun",
-            "definition": "The European Union, a group of many European countries that work together."
-          },
-          {
-            "term": "broadcaster",
-            "part_of_speech": "noun",
-            "definition": "A company or person whose business is to transmit television or radio programs, especially news."
-          },
-          {
             "term": "geopolitical",
             "part_of_speech": "adjective",
             "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
@@ -490,9 +475,24 @@
             "definition": "the ability of a community or country to manage its own affairs"
           },
           {
-            "term": "negotiations",
+            "term": "regulatory frameworks",
+            "part_of_speech": "noun phrase",
+            "definition": "systems of rules through which an activity is controlled"
+          },
+          {
+            "term": "public mandate",
+            "part_of_speech": "noun phrase",
+            "definition": "authority to pursue a policy that is understood to come from voters"
+          },
+          {
+            "term": "intractable",
+            "part_of_speech": "adjective",
+            "definition": "very difficult to resolve or bring under control"
+          },
+          {
+            "term": "accession",
             "part_of_speech": "noun",
-            "definition": "formal talks between groups to agree on something"
+            "definition": "the formal process of joining an organisation or agreement"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

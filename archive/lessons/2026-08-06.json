@@ -235,23 +235,8 @@
         "vocabulary": [
           {
             "term": "intensified",
-            "part_of_speech": "adjective",
-            "definition": "Made stronger or more extreme in degree, force, or amount."
-          },
-          {
-            "term": "blackened",
-            "part_of_speech": "adjective",
-            "definition": "Made dark or dirty, often by smoke, fire, or corrosion, indicating damage."
-          },
-          {
-            "term": "smashed",
-            "part_of_speech": "adjective",
-            "definition": "Violently broken into many pieces or severely damaged by forceful impact."
-          },
-          {
-            "term": "surge",
-            "part_of_speech": "noun",
-            "definition": "A sudden, powerful, and often large increase or movement of something."
+            "part_of_speech": "verb",
+            "definition": "made something stronger or more extreme"
           },
           {
             "term": "impact",
@@ -259,19 +244,34 @@
             "definition": "The powerful effect that something has on a situation, person, or object."
           },
           {
-            "term": "attacks",
-            "part_of_speech": "noun",
-            "definition": "When an army or country tries to hurt another country or people with force."
+            "term": "aerial assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Attacks carried out using aircraft, missiles, or drones from the sky rather than from the ground."
           },
           {
-            "term": "coastline",
+            "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "the edge of the land where it meets the sea"
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
           },
           {
-            "term": "safe",
+            "term": "particularly",
+            "part_of_speech": "adverb",
+            "definition": "especially, compared with other people or things"
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Forceful and often violent behavior or attitudes toward another person or country, especially when unprovoked."
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "plural noun",
+            "definition": "buildings, equipment or services provided for a purpose"
+          },
+          {
+            "term": "widespread",
             "part_of_speech": "adjective",
-            "definition": "Not in danger or protected from harm."
+            "definition": "happening or existing over a large area or among many people"
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "surge of attacks",
-            "part_of_speech": "noun phrase",
-            "definition": "A sudden, powerful increase in the number or intensity of military offensives or hostile actions."
-          },
-          {
             "term": "unrelenting barrages",
             "part_of_speech": "noun phrase",
             "definition": "Continuous and intense series of artillery fire, missile strikes, or overwhelming assaults that do not cease or lessen."
@@ -470,29 +465,34 @@
             "definition": "Injury inflicted on non-combatant personnel or damage inflicted on non-military property, unintentionally, during military operations."
           },
           {
-            "term": "coastline",
-            "part_of_speech": "noun",
-            "definition": "the edge of the land where it meets the sea"
-          },
-          {
-            "term": "smashed",
-            "part_of_speech": "adjective",
-            "definition": "Broken into many pieces or badly damaged with force."
-          },
-          {
-            "term": "safe",
-            "part_of_speech": "adjective",
-            "definition": "Not in danger or protected from harm."
-          },
-          {
-            "term": "blackened",
-            "part_of_speech": "adjective",
-            "definition": "Made dark or dirty, often by smoke, fire, or corrosion, indicating damage."
-          },
-          {
-            "term": "Unprecedented",
+            "term": "unprecedented",
             "part_of_speech": "adjective",
             "definition": "not known to have happened before"
+          },
+          {
+            "term": "ramifications",
+            "part_of_speech": "plural noun",
+            "definition": "the wider, sometimes complicated consequences of an action"
+          },
+          {
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "contentious",
+            "part_of_speech": "adjective",
+            "definition": "likely to cause disagreement or argument"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 5
     }
   }
 }

@@ -239,26 +239,6 @@
             "definition": "dropped suddenly and quickly, like a sharp fall in value or level, often used for markets or prices."
           },
           {
-            "term": "halted",
-            "part_of_speech": "verb",
-            "definition": "stopped completely or brought to a stop, especially in a formal or official manner, usually an activity or process."
-          },
-          {
-            "term": "give talks some space",
-            "part_of_speech": "phrase",
-            "definition": "to create an opportunity or a suitable environment for discussions and negotiations to happen without interruption or immediate pressure."
-          },
-          {
-            "term": "pause",
-            "part_of_speech": "noun",
-            "definition": "a temporary stop or break in an activity, action, or speech, allowing for a moment of rest or reflection before continuing."
-          },
-          {
-            "term": "resolution to the conflict",
-            "part_of_speech": "phrase",
-            "definition": "a successful way of solving a serious disagreement or problem between opposing groups or countries, leading to an end to hostilities."
-          },
-          {
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in the intensity, seriousness, or scope of a conflict or situation."
@@ -272,6 +252,26 @@
             "term": "tensions",
             "part_of_speech": "noun",
             "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
+          },
+          {
+            "term": "temporary",
+            "part_of_speech": "adjective",
+            "definition": "intended to last for a limited time"
           }
         ],
         "grammar": {
@@ -450,11 +450,6 @@
             "definition": "A very sudden, steep, and significant drop or fall in value, quantity, or level."
           },
           {
-            "term": "halt to offensive actions",
-            "part_of_speech": "noun phrase",
-            "definition": "A complete cessation or suspension of military attacks, aggressive movements, or hostile activities initiated by one side against another."
-          },
-          {
             "term": "create an environment conducive to",
             "part_of_speech": "verb phrase",
             "definition": "To establish conditions or circumstances that are favorable, suitable, or helpful for a particular outcome, activity, or development to occur."
@@ -463,21 +458,6 @@
             "term": "speculation among analysts",
             "part_of_speech": "noun phrase",
             "definition": "The forming of theories, conjectures, or predictions by experts about a particular subject, especially in financial markets, without having firm evidence."
-          },
-          {
-            "term": "avert further escalation",
-            "part_of_speech": "verb phrase",
-            "definition": "To prevent a potentially worsening situation or an increase in the intensity, severity, or extent of a conflict or negative development."
-          },
-          {
-            "term": "hopes",
-            "part_of_speech": "noun",
-            "definition": "Feelings of wanting good things to happen in the future."
-          },
-          {
-            "term": "pause",
-            "part_of_speech": "noun",
-            "definition": "a temporary stop or break in an activity, action, or speech, allowing for a moment of rest or reflection before continuing."
           },
           {
             "term": "diplomatic overtures",
@@ -493,6 +473,26 @@
             "term": "geopolitical",
             "part_of_speech": "adjective",
             "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
+          },
+          {
+            "term": "interdependence",
+            "part_of_speech": "noun",
+            "definition": "a relationship in which parties rely on one another"
+          },
+          {
+            "term": "negotiations",
+            "part_of_speech": "noun",
+            "definition": "formal talks between groups to agree on something"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "avert",
+            "part_of_speech": "verb",
+            "definition": "To turn away or aside; to prevent something undesirable from happening, such as a danger or catastrophe."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "ceasefire",
-            "part_of_speech": "noun",
-            "definition": "A temporary stop in fighting agreed by all sides involved in a war or conflict."
-          },
-          {
-            "term": "trade strikes",
-            "part_of_speech": "verb phrase",
-            "definition": "To exchange attacks or military actions with an opponent, usually meaning both sides have launched attacks."
-          },
-          {
-            "term": "negotiators",
-            "part_of_speech": "noun",
-            "definition": "People who discuss something formally with another party to reach an agreement."
-          },
-          {
-            "term": "summit",
-            "part_of_speech": "noun",
-            "definition": "An official meeting or conference between leaders, especially of governments or countries, to discuss important issues."
-          },
-          {
             "term": "officials",
             "part_of_speech": "noun",
             "definition": "People who hold a position of authority in an organization or government and perform duties."
-          },
-          {
-            "term": "over",
-            "part_of_speech": "adjective",
-            "definition": "finished; not happening anymore."
           },
           {
             "term": "escalation",
@@ -272,6 +247,31 @@
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "noun",
+            "definition": "the possibility that something could happen"
+          },
+          {
+            "term": "regarding",
+            "part_of_speech": "preposition",
+            "definition": "about or in connection with a particular subject"
+          },
+          {
+            "term": "declared",
+            "part_of_speech": "verb",
+            "definition": "Stated something officially, publicly, or strongly."
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "escalation",
-            "part_of_speech": "noun",
-            "definition": "An increase in the intensity, seriousness, or magnitude of a conflict or situation."
-          },
-          {
             "term": "pronouncement",
             "part_of_speech": "noun",
             "definition": "A formal or authoritative announcement or declaration, often by a high-ranking official."
@@ -470,29 +465,34 @@
             "definition": "An opening, hole, or gap; metaphorically, an opportunity or a window for engagement or insight."
           },
           {
-            "term": "ceasefire",
-            "part_of_speech": "noun",
-            "definition": "when fighting stops between two sides."
+            "term": "geopolitical tensions",
+            "part_of_speech": "noun phrase",
+            "definition": "Strained relationships or conflicts between nations or regions, influenced by geographical factors, power dynamics, and political ideologies."
           },
           {
-            "term": "over",
+            "term": "regional instability",
+            "part_of_speech": "noun phrase",
+            "definition": "A widespread state of unrest, unpredictability, and insecurity within a specific geographic area, often characterized by political turmoil and conflict."
+          },
+          {
+            "term": "ramifications",
+            "part_of_speech": "plural noun",
+            "definition": "the wider, sometimes complicated consequences of an action"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "cessation",
+            "part_of_speech": "noun",
+            "definition": "the stopping or ending of an activity"
+          },
+          {
+            "term": "existing",
             "part_of_speech": "adjective",
-            "definition": "finished; not happening anymore."
-          },
-          {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "attacks, often by military forces."
-          },
-          {
-            "term": "summit",
-            "part_of_speech": "noun",
-            "definition": "a very important meeting, usually for leaders."
-          },
-          {
-            "term": "negotiators",
-            "part_of_speech": "noun",
-            "definition": "people who talk to find an agreement."
+            "definition": "already in place at the time being discussed"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 6
     }
   }
 }

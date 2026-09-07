@@ -234,34 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "unprecedented",
-            "part_of_speech": "adjective",
-            "definition": "Never done or known before; something new and without an earlier example."
-          },
-          {
-            "term": "cut power",
-            "part_of_speech": "verb phrase",
-            "definition": "To stop the supply of electricity to an area or building."
-          },
-          {
-            "term": "households",
-            "part_of_speech": "noun",
-            "definition": "All the people who live together in one house or flat."
-          },
-          {
-            "term": "stranded",
-            "part_of_speech": "adjective",
-            "definition": "Left in a place without any way of leaving it, usually in a difficult situation."
-          },
-          {
             "term": "airport",
             "part_of_speech": "noun",
             "definition": "A place where aircraft take off and land, with buildings for passengers and cargo."
-          },
-          {
-            "term": "storm",
-            "part_of_speech": "noun",
-            "definition": "Very bad weather with strong wind and rain."
           },
           {
             "term": "intense",
@@ -272,6 +247,31 @@
             "term": "cancelled",
             "part_of_speech": "verb",
             "definition": "To decide that a planned event or arrangement will not happen, stopping it from taking place."
+          },
+          {
+            "term": "conditions",
+            "part_of_speech": "plural noun",
+            "definition": "the circumstances or physical state in a place"
+          },
+          {
+            "term": "widespread",
+            "part_of_speech": "adjective",
+            "definition": "happening or existing over a large area or among many people"
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "verb (past tense)",
+            "definition": "Kept doing something without stopping."
+          },
+          {
+            "term": "potential",
+            "part_of_speech": "adjective",
+            "definition": "possible, but not yet certain or actual"
+          },
+          {
+            "term": "residents",
+            "part_of_speech": "plural noun",
+            "definition": "people who live in a particular place"
           }
         ],
         "grammar": {
@@ -445,44 +445,14 @@
         ],
         "vocabulary": [
           {
-            "term": "Unprecedented",
-            "part_of_speech": "Adjective",
-            "definition": "Never having happened or existed before; exceptional in its scale or nature, especially in a negative or challenging context."
-          },
-          {
-            "term": "Torrential rainfall",
-            "part_of_speech": "Noun phrase",
+            "term": "torrential rainfall",
+            "part_of_speech": "noun phrase",
             "definition": "Extremely heavy and abundant rain that falls very quickly and continuously, often leading to flooding."
           },
           {
-            "term": "Cut power",
-            "part_of_speech": "Verb phrase",
-            "definition": "To interrupt or stop the supply of electricity to a place, often due to an outage or deliberate action."
-          },
-          {
-            "term": "Stranded",
-            "part_of_speech": "Adjective",
-            "definition": "Left without the means to move from somewhere; stuck in an isolated or difficult position, often due to travel disruptions."
-          },
-          {
-            "term": "Grim toll",
-            "part_of_speech": "Noun phrase",
+            "term": "grim toll",
+            "part_of_speech": "noun phrase",
             "definition": "The distressing or tragic number of deaths, casualties, or negative consequences resulting from an event."
-          },
-          {
-            "term": "storm",
-            "part_of_speech": "noun",
-            "definition": "Very bad weather with strong wind and rain."
-          },
-          {
-            "term": "households",
-            "part_of_speech": "noun",
-            "definition": "All the people who live together in one house or flat."
-          },
-          {
-            "term": "airport",
-            "part_of_speech": "noun",
-            "definition": "A place where aircraft take off and land, with buildings for passengers and cargo."
           },
           {
             "term": "underscoring",
@@ -493,6 +463,36 @@
             "term": "disruption",
             "part_of_speech": "noun",
             "definition": "a problem that stops normal activity"
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "the basic networks and facilities on which an activity or society depends"
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "plural noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
+          },
+          {
+            "term": "formidable",
+            "part_of_speech": "adjective",
+            "definition": "difficult to overcome because of great strength or scale"
+          },
+          {
+            "term": "phenomenon",
+            "part_of_speech": "noun",
+            "definition": "an event or process that can be observed"
+          },
+          {
+            "term": "extensive",
+            "part_of_speech": "adjective",
+            "definition": "covering a large area or involving many parts"
+          },
+          {
+            "term": "mobilised",
+            "part_of_speech": "verb",
+            "definition": "organised people or resources so they were ready for action"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 6
     }
   }
 }

@@ -244,24 +244,14 @@
             "definition": "Indicated or suggested something as the cause, reason, or evidence for a situation."
           },
           {
-            "term": "collapsed glacier",
-            "part_of_speech": "noun phrase",
-            "definition": "A large mass of ice that has suddenly broken apart, fallen down, or lost its structural integrity."
-          },
-          {
-            "term": "devastating floods",
-            "part_of_speech": "noun phrase",
-            "definition": "Extremely destructive and damaging overflows of water that cause widespread harm."
-          },
-          {
-            "term": "rapidly melting",
-            "part_of_speech": "adverb + verb",
-            "definition": "Dissolving or turning into liquid very quickly, often due to increased temperatures."
+            "term": "preparedness",
+            "part_of_speech": "noun",
+            "definition": "the state of being ready to deal with a possible event"
           },
           {
             "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "The basic physical and organizational structures and facilities needed for the operation of a society or enterprise."
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
           },
           {
             "term": "influx",
@@ -272,6 +262,16 @@
             "term": "region",
             "part_of_speech": "noun",
             "definition": "an area of a country or of the world"
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "crucial",
+            "part_of_speech": "adjective",
+            "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "preliminary investigations",
-            "part_of_speech": "noun phrase",
-            "definition": "Initial inquiries or studies conducted to gather basic information before more thorough research or action can proceed."
-          },
-          {
             "term": "corroborate",
             "part_of_speech": "verb",
             "definition": "To confirm or give strong support to a statement, theory, or finding, often through additional evidence."
@@ -485,14 +480,19 @@
             "definition": "a problem that stops normal activity"
           },
           {
-            "term": "massive",
-            "part_of_speech": "adjective",
-            "definition": "very big or very strong"
+            "term": "existential threat",
+            "part_of_speech": "noun phrase",
+            "definition": "a danger to the continued existence of a population or system"
           },
           {
-            "term": "launched",
-            "part_of_speech": "verb (past tense)",
-            "definition": "started something new, like an attack."
+            "term": "meticulously",
+            "part_of_speech": "adverb",
+            "definition": "with very careful attention to detail"
+          },
+          {
+            "term": "paramount",
+            "part_of_speech": "adjective",
+            "definition": "more important than other considerations"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 3
     }
   }
 }

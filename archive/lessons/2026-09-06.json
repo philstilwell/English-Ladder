@@ -194,24 +194,9 @@
         ],
         "vocabulary": [
           {
-            "term": "disruption",
-            "part_of_speech": "noun",
-            "definition": "a problem that interrupts normal activity"
-          },
-          {
-            "term": "delays",
-            "part_of_speech": "plural noun",
-            "definition": "times when something happens later than planned"
-          },
-          {
-            "term": "routes",
-            "part_of_speech": "plural noun",
-            "definition": "the ways used to travel from one place to another"
-          },
-          {
             "term": "severe",
             "part_of_speech": "adjective",
-            "definition": "very strong or serious, often causing problems"
+            "definition": "very serious or strong"
           },
           {
             "term": "departures",
@@ -232,6 +217,21 @@
             "term": "forecasts",
             "part_of_speech": "plural noun",
             "definition": "statements about what is likely to happen in the future"
+          },
+          {
+            "term": "air traffic",
+            "part_of_speech": "noun phrase",
+            "definition": "the movement of aircraft through the sky or around airports"
+          },
+          {
+            "term": "radar",
+            "part_of_speech": "noun",
+            "definition": "equipment that uses radio waves to locate objects or weather conditions"
+          },
+          {
+            "term": "available",
+            "part_of_speech": "adjective",
+            "definition": "ready or possible to use"
           }
         ],
         "grammar": {
@@ -392,21 +392,6 @@
         ],
         "vocabulary": [
           {
-            "term": "disruption",
-            "part_of_speech": "noun",
-            "definition": "a problem that interrupts normal activity"
-          },
-          {
-            "term": "delays",
-            "part_of_speech": "plural noun",
-            "definition": "times when something happens later than planned"
-          },
-          {
-            "term": "routes",
-            "part_of_speech": "plural noun",
-            "definition": "the ways used to travel from one place to another"
-          },
-          {
             "term": "aviation",
             "part_of_speech": "noun",
             "definition": "the activity and industry of flying aircraft"
@@ -414,17 +399,12 @@
           {
             "term": "extensive",
             "part_of_speech": "adjective",
-            "definition": "covering a large area or affecting many things"
+            "definition": "covering a large area or involving many parts"
           },
           {
-            "term": "usable",
-            "part_of_speech": "adjective",
-            "definition": "available or suitable for a particular purpose"
-          },
-          {
-            "term": "congestion",
-            "part_of_speech": "noun",
-            "definition": "crowding that slows or obstructs movement"
+            "term": "usable airspace",
+            "part_of_speech": "noun phrase",
+            "definition": "the part of the sky available for aircraft to use safely in the situation described"
           },
           {
             "term": "consequently",
@@ -440,6 +420,26 @@
             "term": "operating costs",
             "part_of_speech": "noun phrase",
             "definition": "the expenses required to keep a business or service running"
+          },
+          {
+            "term": "diversions",
+            "part_of_speech": "plural noun",
+            "definition": "changes that take aircraft away from their intended route or destination"
+          },
+          {
+            "term": "storm cells",
+            "part_of_speech": "plural noun",
+            "definition": "distinct areas of storm activity that aircraft may need to avoid"
+          },
+          {
+            "term": "potential pressures",
+            "part_of_speech": "noun phrase",
+            "definition": "possible demands or strains that could affect how a system operates"
+          },
+          {
+            "term": "airport operations",
+            "part_of_speech": "noun phrase",
+            "definition": "the organised activities needed to keep an airport functioning"
           }
         ],
         "grammar": {
@@ -637,6 +637,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 5
     }
   }
 }

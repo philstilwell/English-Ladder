@@ -239,29 +239,9 @@
             "definition": "To strongly urge someone to do something or to make a demand forcefully, often to persuade them."
           },
           {
-            "term": "air defence systems",
-            "part_of_speech": "noun phrase",
-            "definition": "Military equipment and strategies used to protect against attacks from aircraft or missiles, often designed to detect and destroy threats."
-          },
-          {
-            "term": "intense",
-            "part_of_speech": "adjective",
-            "definition": "Very strong, extreme, or severe; describing feelings, efforts, or actions that are felt or done to a high degree."
-          },
-          {
-            "term": "interceptor missiles",
-            "part_of_speech": "noun phrase",
-            "definition": "Guided missiles specifically designed to detect and destroy incoming enemy missiles or aircraft while they are in flight."
-          },
-          {
             "term": "argue",
             "part_of_speech": "verb",
             "definition": "To give reasons or evidence in support of an idea, action, or theory, often with the aim of persuading others."
-          },
-          {
-            "term": "meeting",
-            "part_of_speech": "noun",
-            "definition": "When people come together to talk about something important."
           },
           {
             "term": "crucial",
@@ -272,6 +252,26 @@
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "basic systems and facilities, such as roads, water supplies and electricity networks"
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "highlighted",
+            "part_of_speech": "verb",
+            "definition": "Drew special attention to something, making it more noticeable or important."
+          },
+          {
+            "term": "assistance",
+            "part_of_speech": "noun",
+            "definition": "help given to someone who needs it"
           }
         ],
         "grammar": {
@@ -450,16 +450,6 @@
             "definition": "An intense, passionate, and heartfelt request or plea."
           },
           {
-            "term": "interceptor missiles",
-            "part_of_speech": "noun phrase",
-            "definition": "Missiles specifically designed to detect, track, and destroy incoming ballistic missiles or other aerial threats before they reach their targets."
-          },
-          {
-            "term": "crucial",
-            "part_of_speech": "adjective",
-            "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
-          },
-          {
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
@@ -470,29 +460,39 @@
             "definition": "The act of supporting, strengthening, or reinforcing something that is weakening or needs improvement."
           },
           {
-            "term": "meeting",
-            "part_of_speech": "noun",
-            "definition": "When people come together to talk about something important."
-          },
-          {
-            "term": "air defence systems",
-            "part_of_speech": "noun phrase",
-            "definition": "Special machines or weapons that protect a place from attacks coming from the sky, like planes or missiles."
-          },
-          {
-            "term": "press",
-            "part_of_speech": "verb",
-            "definition": "To strongly urge someone to do something or to make a demand forcefully, often to persuade them."
-          },
-          {
-            "term": "intense",
-            "part_of_speech": "adjective",
-            "definition": "Very strong, extreme, or severe; describing feelings, efforts, or actions that are felt or done to a high degree."
-          },
-          {
             "term": "underscores",
             "part_of_speech": "verb",
             "definition": "Emphasizes, highlights, or draws particular attention to a fact, idea, or situation."
+          },
+          {
+            "term": "aerial assaults",
+            "part_of_speech": "noun phrase",
+            "definition": "Attacks conducted using aircraft or missiles from the air."
+          },
+          {
+            "term": "countermeasures",
+            "part_of_speech": "plural noun",
+            "definition": "actions intended to oppose or reduce another action or threat"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "sovereignty",
+            "part_of_speech": "noun",
+            "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "adjective",
+            "definition": "urgently necessary or extremely important"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

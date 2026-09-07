@@ -234,34 +234,14 @@
         ],
         "vocabulary": [
           {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "Military attacks, often from the air or with missiles, aimed at a target."
-          },
-          {
             "term": "declared",
             "part_of_speech": "verb",
             "definition": "Stated something officially, publicly, or strongly."
           },
           {
-            "term": "vessel",
-            "part_of_speech": "noun",
-            "definition": "A ship or large boat, typically used for transporting goods or people by sea."
-          },
-          {
-            "term": "critical",
-            "part_of_speech": "adjective",
-            "definition": "Extremely important or essential for the success or stability of something."
-          },
-          {
             "term": "escalate",
             "part_of_speech": "verb",
             "definition": "To increase rapidly in intensity, severity, or magnitude."
-          },
-          {
-            "term": "waterway",
-            "part_of_speech": "noun",
-            "definition": "a path over water where ships can travel."
           },
           {
             "term": "conflict",
@@ -272,6 +252,26 @@
             "term": "Strait of Hormuz",
             "part_of_speech": "noun phrase",
             "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
+          },
+          {
+            "term": "significantly",
+            "part_of_speech": "adverb",
+            "definition": "to a degree that is important or noticeable"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
+          },
+          {
+            "term": "concerns",
+            "part_of_speech": "plural noun",
+            "definition": "feelings of worry about a situation"
+          },
+          {
+            "term": "tensions",
+            "part_of_speech": "noun",
+            "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "critical waterway",
-            "part_of_speech": "noun phrase",
-            "definition": "A crucially important sea passage or river for trade, military, or strategic reasons, essential for global commerce or security."
-          },
-          {
             "term": "geopolitical ramifications",
             "part_of_speech": "noun phrase",
             "definition": "The widespread consequences or implications of political actions that significantly affect international relations, global power dynamics, and regional stability."
@@ -470,29 +465,34 @@
             "definition": "A widespread state of unrest, unpredictability, and insecurity within a specific geographic area, often characterized by political turmoil and conflict."
           },
           {
-            "term": "strikes",
-            "part_of_speech": "noun",
-            "definition": "attacks, usually by military planes or missiles."
-          },
-          {
-            "term": "vessel",
-            "part_of_speech": "noun",
-            "definition": "a ship or large boat"
-          },
-          {
             "term": "precarious situation",
             "part_of_speech": "noun phrase",
             "definition": "A situation that is not safely or securely held in place; uncertain, unstable, or potentially dangerous, lacking security or stability."
           },
           {
-            "term": "escalation",
-            "part_of_speech": "noun",
-            "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
-          },
-          {
             "term": "retaliatory",
             "part_of_speech": "adjective",
             "definition": "Pertaining to or characterized by an action taken in return for an injury or offense, often involving aggression."
+          },
+          {
+            "term": "geopolitical landscape",
+            "part_of_speech": "noun phrase",
+            "definition": "The complex set of international political, economic, and strategic factors that characterize a particular region or the world at a given time."
+          },
+          {
+            "term": "grappling with",
+            "part_of_speech": "verb phrase",
+            "definition": "Dealing with or struggling to overcome a difficult problem or challenge, often one that requires significant effort and resilience."
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
+          },
+          {
+            "term": "tumultuous",
+            "part_of_speech": "adjective",
+            "definition": "Marked by disturbance and disorder; characterized by confusion, commotion, or uproar; often refers to a period of time."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

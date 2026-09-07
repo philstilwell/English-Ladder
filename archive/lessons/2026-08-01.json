@@ -234,36 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "selfish",
-            "part_of_speech": "adjective",
-            "definition": "Thinking only about yourself and not considering other people's needs or feelings."
-          },
-          {
-            "term": "response",
-            "part_of_speech": "noun",
-            "definition": "An answer or reaction to something that has been said or done."
-          },
-          {
-            "term": "migrant crossings",
-            "part_of_speech": "noun phrase",
-            "definition": "The act of people moving from one country or area to another, often by crossing a border or stretch of water."
-          },
-          {
-            "term": "temporarily suspended",
-            "part_of_speech": "verb phrase",
-            "definition": "Stopped or interrupted for a limited period of time; not permanently ended."
-          },
-          {
-            "term": "Schengen arrangement",
-            "part_of_speech": "noun phrase",
-            "definition": "An agreement among many European countries that allows people to travel freely between them without passport checks at internal borders."
-          },
-          {
-            "term": "shocking",
-            "part_of_speech": "adjective",
-            "definition": "Something very surprising and upsetting, in a bad way."
-          },
-          {
             "term": "tensions",
             "part_of_speech": "noun",
             "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
@@ -272,6 +242,36 @@
             "term": "escalated",
             "part_of_speech": "verb",
             "definition": "Increased rapidly in intensity, amount, or seriousness, often referring to conflicts or problems."
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "regarding",
+            "part_of_speech": "preposition",
+            "definition": "about or in connection with a particular subject"
+          },
+          {
+            "term": "territory",
+            "part_of_speech": "noun",
+            "definition": "An area of land that is controlled by a particular country or ruler."
+          },
+          {
+            "term": "increase",
+            "part_of_speech": "noun",
+            "definition": "a rise in number, amount or level"
+          },
+          {
+            "term": "crucial",
+            "part_of_speech": "adjective",
+            "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
+          },
+          {
+            "term": "border",
+            "part_of_speech": "noun",
+            "definition": "A line that separates two countries, states, or areas."
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "selfish response",
-            "part_of_speech": "noun phrase",
-            "definition": "A reaction or action primarily motivated by self-interest, often disregarding the needs or well-being of others involved in a shared issue or crisis."
-          },
-          {
             "term": "diplomatic broadside",
             "part_of_speech": "noun phrase",
             "definition": "A strong, often public and critical attack, censure, or expression of disapproval delivered by one government or official against another, usually concerning policy or actions."
@@ -458,26 +453,6 @@
             "term": "deepening fissures",
             "part_of_speech": "noun phrase",
             "definition": "Increasingly apparent or severe cracks, divisions, or disagreements within a group, organization, or political entity, indicating growing instability or discord."
-          },
-          {
-            "term": "temporarily suspend",
-            "part_of_speech": "verb phrase",
-            "definition": "To halt or cease an activity, agreement, or operation for a limited or indefinite period, with the understanding or possibility that it may resume later."
-          },
-          {
-            "term": "unprecedented migrant crossings",
-            "part_of_speech": "noun phrase",
-            "definition": "An exceptionally high or never-before-seen number of individuals moving across national borders, typically in search of refuge, asylum, or new opportunities."
-          },
-          {
-            "term": "shocking",
-            "part_of_speech": "adjective",
-            "definition": "Something very surprising and upsetting, in a bad way."
-          },
-          {
-            "term": "Schengen arrangement",
-            "part_of_speech": "noun phrase",
-            "definition": "A special agreement between many European countries that allows people to travel freely between them without passport checks."
           },
           {
             "term": "intensified",
@@ -493,6 +468,31 @@
             "term": "unilateral actions",
             "part_of_speech": "noun phrase",
             "definition": "Decisions or measures taken by one party or country without the agreement or consultation of others, particularly in international affairs."
+          },
+          {
+            "term": "comprehensive strategy",
+            "part_of_speech": "noun phrase",
+            "definition": "A detailed and far-reaching plan designed to address all aspects of a particular situation or achieve a specific long-term goal."
+          },
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "not known to have happened before"
+          },
+          {
+            "term": "framework",
+            "part_of_speech": "noun",
+            "definition": "the rules or structure within which decisions and actions take place"
+          },
+          {
+            "term": "existing",
+            "part_of_speech": "adjective",
+            "definition": "already in place at the time being discussed"
+          },
+          {
+            "term": "robust",
+            "part_of_speech": "adjective",
+            "definition": "strong enough to remain effective under pressure"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 5
     }
   }
 }

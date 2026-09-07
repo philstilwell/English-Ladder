@@ -76,11 +76,12 @@ def audit():
                 doc=documents.get(target)
                 if doc is not None and not doc.find(id=unquote(url.fragment)):failures.append(f'{path.name}: missing fragment {value}')
     from grammar_curriculum import load_curriculum
-    from update_site import validate_lesson_data,validate_daily_minimums,normalize_text,LEVELS
+    from update_site import validate_lesson_data,validate_daily_minimums,validate_edition_vocabulary,normalize_text,LEVELS
     from news_quality import validate_evidence
     load_curriculum()
     for path in sorted((ROOT/'archive/lessons').glob('*.json')):
         data=json.loads(path.read_text())
+        failures.extend(f'{path.name}: {issue}' for issue in validate_edition_vocabulary({key:value['lesson'] for key,value in data['levels'].items()}))
         for config in LEVELS:
             level=config['name'].lower();lesson=data['levels'][level]['lesson']
             failures.extend(f'{path.name}/{level}: {issue}' for issue in validate_daily_minimums(lesson,config))

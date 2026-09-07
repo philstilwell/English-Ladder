@@ -193,29 +193,9 @@
         ],
         "vocabulary": [
           {
-            "term": "rescuers",
-            "part_of_speech": "plural noun",
-            "definition": "people who try to bring others to safety"
-          },
-          {
-            "term": "trapped",
-            "part_of_speech": "adjective",
-            "definition": "unable to get out"
-          },
-          {
-            "term": "waiting",
-            "part_of_speech": "verb",
-            "definition": "staying until something happens"
-          },
-          {
             "term": "hydropower",
             "part_of_speech": "noun",
             "definition": "electricity produced using the movement of water"
-          },
-          {
-            "term": "explosives",
-            "part_of_speech": "plural noun",
-            "definition": "materials used to create a powerful blast"
           },
           {
             "term": "pumping",
@@ -231,6 +211,26 @@
             "term": "relatives",
             "part_of_speech": "plural noun",
             "definition": "people who belong to the same family"
+          },
+          {
+            "term": "blocked",
+            "part_of_speech": "verb",
+            "definition": "prevented movement or access through something"
+          },
+          {
+            "term": "operation",
+            "part_of_speech": "noun",
+            "definition": "an organised activity carried out for a particular purpose"
+          },
+          {
+            "term": "specialists",
+            "part_of_speech": "plural noun",
+            "definition": "people with detailed knowledge or skills in a particular area"
+          },
+          {
+            "term": "severe",
+            "part_of_speech": "adjective",
+            "definition": "very serious or strong"
           }
         ],
         "grammar": {
@@ -391,26 +391,6 @@
         ],
         "vocabulary": [
           {
-            "term": "rescuers",
-            "part_of_speech": "plural noun",
-            "definition": "people who try to bring others to safety"
-          },
-          {
-            "term": "trapped",
-            "part_of_speech": "adjective",
-            "definition": "unable to get out"
-          },
-          {
-            "term": "waiting",
-            "part_of_speech": "verb",
-            "definition": "staying until something happens"
-          },
-          {
-            "term": "hydropower",
-            "part_of_speech": "noun",
-            "definition": "electricity generated from the movement of water"
-          },
-          {
             "term": "extensive",
             "part_of_speech": "adjective",
             "definition": "covering a large area or involving many parts"
@@ -431,14 +411,34 @@
             "definition": "people employed by an organisation or serving in its forces"
           },
           {
-            "term": "withdrew",
-            "part_of_speech": "verb",
-            "definition": "moved back from a place or stopped participating"
-          },
-          {
             "term": "accelerate",
             "part_of_speech": "verb",
             "definition": "make an activity or process happen faster"
+          },
+          {
+            "term": "operational",
+            "part_of_speech": "adjective",
+            "definition": "in active use or functioning, rather than still being prepared or built"
+          },
+          {
+            "term": "under construction",
+            "part_of_speech": "prepositional phrase",
+            "definition": "still being built and not yet complete"
+          },
+          {
+            "term": "relies heavily",
+            "part_of_speech": "verb phrase",
+            "definition": "depends to a large extent on someone or something"
+          },
+          {
+            "term": "landscape",
+            "part_of_speech": "noun",
+            "definition": "the physical features and appearance of an area of land"
+          },
+          {
+            "term": "locate",
+            "part_of_speech": "verb",
+            "definition": "to establish the position of something being sought"
           }
         ],
         "grammar": {
@@ -636,6 +636,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 5
     }
   }
 }

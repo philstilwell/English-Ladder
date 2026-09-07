@@ -239,39 +239,39 @@
             "definition": "an important or historic event or stage that marks a turning point"
           },
           {
-            "term": "co-operation",
-            "part_of_speech": "noun",
-            "definition": "the process of working together to achieve a common goal"
-          },
-          {
-            "term": "agreement",
-            "part_of_speech": "noun",
-            "definition": "a formal decision or promise made between two or more people, groups, or countries"
-          },
-          {
-            "term": "access",
-            "part_of_speech": "noun",
-            "definition": "the opportunity or right to use or approach something"
-          },
-          {
             "term": "programme",
             "part_of_speech": "noun",
             "definition": "a plan of things to be done, especially in a series or sequence"
           },
           {
-            "term": "nuclear deal",
-            "part_of_speech": "noun phrase",
-            "definition": "an agreement between countries about nuclear activities and related conditions"
-          },
-          {
-            "term": "nuclear energy",
-            "part_of_speech": "noun",
-            "definition": "Power that is created when atoms are split apart, often used to produce electricity."
-          },
-          {
             "term": "officials",
             "part_of_speech": "noun",
             "definition": "People who hold a position of authority or trust in an organization or government."
+          },
+          {
+            "term": "collaboration",
+            "part_of_speech": "noun",
+            "definition": "the act of working together to achieve something"
+          },
+          {
+            "term": "partnership",
+            "part_of_speech": "noun",
+            "definition": "an arrangement in which people or organisations work together"
+          },
+          {
+            "term": "commitment",
+            "part_of_speech": "noun",
+            "definition": "a firm promise to do something"
+          },
+          {
+            "term": "initiative",
+            "part_of_speech": "noun",
+            "definition": "a new plan or action intended to achieve a particular result"
+          },
+          {
+            "term": "benefits",
+            "part_of_speech": "noun",
+            "definition": "Advantages or good effects that something has."
           }
         ],
         "grammar": {
@@ -445,21 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "landmark agreement",
-            "part_of_speech": "noun phrase",
-            "definition": "A significant and influential formal decision or treaty that marks an important stage or turning point in relations or a field."
-          },
-          {
-            "term": "bilateral cooperation",
-            "part_of_speech": "noun phrase",
-            "definition": "Collaboration or joint action between two countries, typically involving mutual benefits or shared objectives."
-          },
-          {
-            "term": "unfettered access",
-            "part_of_speech": "noun phrase",
-            "definition": "Complete and unrestricted freedom or opportunity to approach, enter, or use something without any limitations or controls."
-          },
-          {
             "term": "bolster economic ties",
             "part_of_speech": "verb phrase",
             "definition": "To strengthen, support, or improve the financial and commercial relationships between entities, usually nations."
@@ -470,29 +455,44 @@
             "definition": "To protect or take measures to prevent the rapid increase or spread of something, particularly nuclear weapons or technology."
           },
           {
-            "term": "nuclear energy",
-            "part_of_speech": "noun",
-            "definition": "Power that is created when atoms are split apart, often used to produce electricity."
-          },
-          {
-            "term": "programme",
-            "part_of_speech": "noun",
-            "definition": "a plan of things to be done, especially in a series or sequence"
-          },
-          {
             "term": "geopolitical",
             "part_of_speech": "adjective",
             "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
           },
           {
-            "term": "Amidst",
-            "part_of_speech": "Preposition",
+            "term": "amidst",
+            "part_of_speech": "preposition",
             "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
           },
           {
             "term": "mitigate",
             "part_of_speech": "verb",
             "definition": "To make something less severe, serious, or painful; to alleviate or lessen the impact of adverse conditions."
+          },
+          {
+            "term": "diversifying",
+            "part_of_speech": "verb",
+            "definition": "broadening the range of activities or resources to reduce dependence on a narrow set"
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "plural noun",
+            "definition": "possible consequences or meanings that follow from a situation"
+          },
+          {
+            "term": "burgeoning",
+            "part_of_speech": "adjective",
+            "definition": "growing or developing rapidly"
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "noun",
+            "definition": "an action or requirement treated as urgently necessary"
+          },
+          {
+            "term": "provisions",
+            "part_of_speech": "plural noun",
+            "definition": "specific requirements or arrangements set out in an agreement"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 5
     }
   }
 }

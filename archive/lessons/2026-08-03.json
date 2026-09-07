@@ -234,36 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "denied",
-            "part_of_speech": "verb",
-            "definition": "To state that something is not true or did not happen."
-          },
-          {
-            "term": "claims",
-            "part_of_speech": "noun",
-            "definition": "Statements that something is true, especially when others might doubt or dispute it."
-          },
-          {
-            "term": "negotiations",
-            "part_of_speech": "noun",
-            "definition": "Formal discussions between people or groups who are trying to reach an agreement or solution."
-          },
-          {
-            "term": "access",
-            "part_of_speech": "noun",
-            "definition": "The right or opportunity to use, enter, or see something."
-          },
-          {
-            "term": "Strait of Hormuz",
-            "part_of_speech": "proper noun",
-            "definition": "A narrow, strategically important waterway connecting the Persian Gulf and the Gulf of Oman, crucial for global oil shipping."
-          },
-          {
-            "term": "talks",
-            "part_of_speech": "noun",
-            "definition": "Meetings or discussions to agree on something."
-          },
-          {
             "term": "region",
             "part_of_speech": "noun",
             "definition": "an area of a country or of the world"
@@ -272,6 +242,36 @@
             "term": "routes",
             "part_of_speech": "plural noun",
             "definition": "the ways used to travel from one place to another"
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "adjective",
+            "definition": "still happening or lasting without stopping"
+          },
+          {
+            "term": "indicated",
+            "part_of_speech": "verb",
+            "definition": "showed or made something known"
+          },
+          {
+            "term": "ensuring",
+            "part_of_speech": "verb",
+            "definition": "making certain that something happens or is provided"
+          },
+          {
+            "term": "waterway",
+            "part_of_speech": "noun",
+            "definition": "a path over water where ships can travel."
+          },
+          {
+            "term": "concern",
+            "part_of_speech": "verb",
+            "definition": "to be about or connected with a particular subject"
+          },
+          {
+            "term": "crucial",
+            "part_of_speech": "adjective",
+            "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
           }
         ],
         "grammar": {
@@ -445,11 +445,6 @@
         ],
         "vocabulary": [
           {
-            "term": "vehemently denied",
-            "part_of_speech": "adverbial phrase",
-            "definition": "To reject or refuse an accusation or statement with intense emotion, passion, or force."
-          },
-          {
             "term": "imminent commencement",
             "part_of_speech": "noun phrase",
             "definition": "The beginning or start of something that is about to happen very soon or is threatening to occur."
@@ -470,29 +465,34 @@
             "definition": "The ability to move or travel through an area without any obstruction, hindrance, or interference."
           },
           {
-            "term": "talks",
-            "part_of_speech": "noun",
-            "definition": "Meetings or discussions to agree on something."
+            "term": "concurrently",
+            "part_of_speech": "adverb",
+            "definition": "at the same time as another development or activity"
           },
           {
-            "term": "claim",
-            "part_of_speech": "noun",
-            "definition": "A statement that someone says is true, but others might not agree."
+            "term": "vehemently",
+            "part_of_speech": "adverb",
+            "definition": "In a forceful, passionate, or intense manner; with great feeling or strong emotion."
           },
           {
-            "term": "negotiations",
-            "part_of_speech": "noun",
-            "definition": "Formal discussions between people to reach an agreement."
+            "term": "bilateral",
+            "part_of_speech": "adjective",
+            "definition": "involving two countries or parties"
           },
           {
-            "term": "access",
-            "part_of_speech": "noun",
-            "definition": "The right or opportunity to use or enter something."
+            "term": "intricate",
+            "part_of_speech": "adjective",
+            "definition": "having many connected details that require careful attention"
           },
           {
-            "term": "Strait of Hormuz",
-            "part_of_speech": "proper noun",
-            "definition": "A narrow, strategically important waterway connecting the Persian Gulf and the Gulf of Oman, crucial for global oil shipping."
+            "term": "paramount",
+            "part_of_speech": "adjective",
+            "definition": "more important than other considerations"
+          },
+          {
+            "term": "mediating role",
+            "part_of_speech": "noun phrase",
+            "definition": "a position in which someone helps other parties communicate or settle a disagreement"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 6
     }
   }
 }

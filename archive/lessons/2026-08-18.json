@@ -234,29 +234,9 @@
         ],
         "vocabulary": [
           {
-            "term": "warns",
-            "part_of_speech": "verb",
-            "definition": "To tell someone about a possible danger or problem, so they can be prepared or avoid it."
-          },
-          {
-            "term": "accuses",
-            "part_of_speech": "verb",
-            "definition": "To state that someone has done something wrong or is responsible for a bad situation."
-          },
-          {
             "term": "escalating",
             "part_of_speech": "verb (present participle)",
             "definition": "Becoming more intense, serious, or severe; increasing rapidly."
-          },
-          {
-            "term": "supplying",
-            "part_of_speech": "verb (present participle)",
-            "definition": "Providing something that is needed or wanted, often in large quantities."
-          },
-          {
-            "term": "aggression",
-            "part_of_speech": "noun",
-            "definition": "Forceful and often violent behavior or attitudes toward another person or country, especially when unprovoked."
           },
           {
             "term": "conflict",
@@ -264,14 +244,34 @@
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
           },
           {
-            "term": "drones",
-            "part_of_speech": "noun",
-            "definition": "Unmanned aircraft, controlled remotely, often used for surveillance, reconnaissance, or military attacks."
-          },
-          {
             "term": "tensions",
             "part_of_speech": "noun",
             "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
+          },
+          {
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "results or effects of actions or events"
+          },
+          {
+            "term": "continued",
+            "part_of_speech": "adjective",
+            "definition": "still happening or lasting without stopping"
+          },
+          {
+            "term": "observers",
+            "part_of_speech": "plural noun",
+            "definition": "people who watch events carefully and report what they notice"
+          },
+          {
+            "term": "military",
+            "part_of_speech": "adjective",
+            "definition": "connected with a country’s armed forces"
+          },
+          {
+            "term": "closely",
+            "part_of_speech": "adverb",
+            "definition": "carefully and with attention to detail"
           }
         ],
         "grammar": {
@@ -455,16 +455,6 @@
             "definition": "An action or speech that makes someone annoyed or angry, especially deliberately."
           },
           {
-            "term": "escalation of hostilities",
-            "part_of_speech": "phrase",
-            "definition": "A rapid increase in the intensity or severity of violent conflict or warfare."
-          },
-          {
-            "term": "aggression",
-            "part_of_speech": "noun",
-            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
-          },
-          {
             "term": "exacerbated",
             "part_of_speech": "verb",
             "definition": "Made a problem, bad situation, or negative feeling worse."
@@ -473,11 +463,6 @@
             "term": "volatile",
             "part_of_speech": "adjective",
             "definition": "Liable to change rapidly and unpredictably, especially for the worse; characterized by rapid and extreme changes."
-          },
-          {
-            "term": "issued a stern warning",
-            "part_of_speech": "phrase",
-            "definition": "To give a very serious and firm caution or threat, indicating severe consequences if certain actions are taken or not taken."
           },
           {
             "term": "geopolitical",
@@ -493,6 +478,21 @@
             "term": "repercussions",
             "part_of_speech": "plural noun",
             "definition": "consequences of an action, usually unwanted or harmful"
+          },
+          {
+            "term": "unwavering commitment",
+            "part_of_speech": "noun phrase",
+            "definition": "A resolute and persistent dedication to a cause, belief, or action, showing no signs of hesitation or deviation."
+          },
+          {
+            "term": "sovereignty",
+            "part_of_speech": "noun",
+            "definition": "Supreme power or authority; the full right and power of a governing body over itself, without external interference."
+          },
+          {
+            "term": "protracted",
+            "part_of_speech": "adjective",
+            "definition": "continuing for an unusually long time"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 3
     }
   }
 }

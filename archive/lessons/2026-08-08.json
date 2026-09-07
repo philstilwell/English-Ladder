@@ -234,11 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "dwindling supplies",
-            "part_of_speech": "noun phrase",
-            "definition": "Becoming smaller or less in amount as time passes; gradually decreasing availability."
-          },
-          {
             "term": "aerial assaults",
             "part_of_speech": "noun phrase",
             "definition": "Attacks carried out using aircraft, missiles, or drones from the sky rather than from the ground."
@@ -259,19 +254,24 @@
             "definition": "Expressed strong disapproval of something, especially on moral or ethical grounds; officially declared wrong."
           },
           {
-            "term": "missile attacks",
-            "part_of_speech": "noun phrase",
-            "definition": "attacks using weapons guided through the air towards targets"
+            "term": "interceptors",
+            "part_of_speech": "noun",
+            "definition": "Aircraft or missiles designed to prevent enemy attacks by shooting down their missiles or planes."
           },
           {
-            "term": "killed",
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "intensified",
             "part_of_speech": "verb",
-            "definition": "caused a person or animal to die"
+            "definition": "made something stronger or more extreme"
           },
           {
-            "term": "continued",
-            "part_of_speech": "verb (past tense)",
-            "definition": "Kept doing something without stopping."
+            "term": "previously",
+            "part_of_speech": "adverb",
+            "definition": "at an earlier time"
           }
         ],
         "grammar": {
@@ -450,19 +450,14 @@
             "definition": "To continue steadfastly or tenaciously, especially in the face of opposition or difficulty, without giving up."
           },
           {
-            "term": "unrelenting assaults",
-            "part_of_speech": "noun phrase",
-            "definition": "Continuous and intense attacks or aggressive actions that do not lessen in severity, frequency, or effort, indicating a sustained and forceful offensive."
+            "term": "unrelenting",
+            "part_of_speech": "adjective",
+            "definition": "continuing without becoming weaker or less severe"
           },
           {
             "term": "escalation",
             "part_of_speech": "noun",
             "definition": "A rapid increase; a rise in intensity, severity, or extent, particularly in a conflict, dangerous situation, or the level of engagement."
-          },
-          {
-            "term": "dwindling supplies",
-            "part_of_speech": "noun phrase",
-            "definition": "Stocks or provisions that are steadily decreasing in quantity or becoming smaller in amount, indicating a critical shortage or depletion."
           },
           {
             "term": "imperative",
@@ -490,9 +485,14 @@
             "definition": "Significant and far-reaching consequences or effects that may not be immediately obvious but will have a deep impact."
           },
           {
-            "term": "attack",
+            "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "a violent act to hurt or damage someone or something"
+            "definition": "the basic networks and facilities on which an activity or society depends"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 3
     }
   }
 }

@@ -234,21 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "collapsed glacier",
-            "part_of_speech": "noun phrase",
-            "definition": "A large mass of ice that has broken apart and fallen down, usually due to instability or melting."
-          },
-          {
-            "term": "devastating",
-            "part_of_speech": "adjective",
-            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
-          },
-          {
-            "term": "preliminary investigations",
-            "part_of_speech": "noun phrase",
-            "definition": "Initial studies or examinations conducted to gather basic facts or information before a more detailed analysis."
-          },
-          {
             "term": "highlighting",
             "part_of_speech": "verb",
             "definition": "Drawing special attention to something important or making it more noticeable."
@@ -259,11 +244,6 @@
             "definition": "Changing from a solid to a liquid state very quickly, often due to high temperatures."
           },
           {
-            "term": "floods",
-            "part_of_speech": "noun",
-            "definition": "a lot of water covering land that is usually dry"
-          },
-          {
             "term": "catastrophic",
             "part_of_speech": "adjective",
             "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
@@ -272,6 +252,26 @@
             "term": "critical",
             "part_of_speech": "adjective",
             "definition": "very important, especially at a difficult or dangerous time"
+          },
+          {
+            "term": "consequences",
+            "part_of_speech": "plural noun",
+            "definition": "results or effects of actions or events"
+          },
+          {
+            "term": "furthermore",
+            "part_of_speech": "adverb",
+            "definition": "used to add another point to what has already been said"
+          },
+          {
+            "term": "assistance",
+            "part_of_speech": "noun",
+            "definition": "help given to someone who needs it"
+          },
+          {
+            "term": "disruption",
+            "part_of_speech": "noun",
+            "definition": "a problem that stops normal activity"
           }
         ],
         "grammar": {
@@ -445,19 +445,9 @@
         ],
         "vocabulary": [
           {
-            "term": "preliminary investigations",
-            "part_of_speech": "noun phrase",
-            "definition": "Initial inquiries or studies conducted to gather basic facts or information before a more thorough or definitive analysis can be performed."
-          },
-          {
             "term": "precipitated",
             "part_of_speech": "verb",
             "definition": "Caused (an event or situation, typically one that is bad or undesirable) to happen suddenly, unexpectedly, or prematurely."
-          },
-          {
-            "term": "catastrophic",
-            "part_of_speech": "adjective",
-            "definition": "Involving or causing sudden, extensive, or disastrous damage or suffering."
           },
           {
             "term": "ablation",
@@ -470,29 +460,39 @@
             "definition": "Significant and far-reaching consequences or effects that may not be immediately obvious but will have a deep impact."
           },
           {
-            "term": "collapsed",
-            "part_of_speech": "verb",
-            "definition": "fell down suddenly"
-          },
-          {
-            "term": "glacier",
+            "term": "infrastructure",
             "part_of_speech": "noun",
-            "definition": "a very large area of ice, moving slowly"
+            "definition": "the basic networks and facilities on which an activity or society depends"
           },
           {
-            "term": "floods",
-            "part_of_speech": "noun",
-            "definition": "a lot of water covering land that is usually dry"
+            "term": "ramifications",
+            "part_of_speech": "plural noun",
+            "definition": "the wider, sometimes complicated consequences of an action"
           },
           {
-            "term": "devastating",
+            "term": "humanitarian",
             "part_of_speech": "adjective",
-            "definition": "causing a lot of damage and destruction"
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
           },
           {
-            "term": "rapidly melting",
-            "part_of_speech": "adverb + verb",
-            "definition": "Changing from a solid to a liquid state very quickly, often due to high temperatures."
+            "term": "compromised",
+            "part_of_speech": "verb",
+            "definition": "weakened or made less effective"
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "emphasises the importance or significance of something"
+          },
+          {
+            "term": "imperative",
+            "part_of_speech": "adjective",
+            "definition": "urgently necessary or extremely important"
+          },
+          {
+            "term": "cryospheric",
+            "part_of_speech": "adjective",
+            "definition": "relating to the frozen parts of Earth, including glaciers and ice sheets"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 7
     }
   }
 }

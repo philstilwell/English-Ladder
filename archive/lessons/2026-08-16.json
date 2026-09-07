@@ -234,34 +234,14 @@
         ],
         "vocabulary": [
           {
-            "term": "launched",
-            "part_of_speech": "verb",
-            "definition": "To start something, especially a military operation or a new project."
-          },
-          {
-            "term": "aerial attacks",
-            "part_of_speech": "noun phrase",
-            "definition": "Military operations or strikes carried out using aircraft."
-          },
-          {
             "term": "condemned",
             "part_of_speech": "verb",
             "definition": "Expressed strong disapproval of something, often publicly."
           },
           {
-            "term": "civilian infrastructure",
-            "part_of_speech": "noun phrase",
-            "definition": "The basic facilities and systems that serve a country's people, like roads, hospitals, and power grids, not military targets."
-          },
-          {
             "term": "intensify",
             "part_of_speech": "verb",
             "definition": "To become or make something stronger or more extreme."
-          },
-          {
-            "term": "across",
-            "part_of_speech": "preposition",
-            "definition": "in several parts of an area or throughout an area"
           },
           {
             "term": "officials",
@@ -272,6 +252,26 @@
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "operations",
+            "part_of_speech": "plural noun",
+            "definition": "planned activities carried out for a purpose, such as rescue work or military action"
+          },
+          {
+            "term": "resolution",
+            "part_of_speech": "noun",
+            "definition": "a solution that brings a disagreement or problem to an end"
+          },
+          {
+            "term": "assessing",
+            "part_of_speech": "verb",
+            "definition": "to judge a situation after considering the available information"
+          },
+          {
+            "term": "meanwhile",
+            "part_of_speech": "adverb",
+            "definition": "during the same period of time as another event"
           }
         ],
         "grammar": {
@@ -445,19 +445,9 @@
         ],
         "vocabulary": [
           {
-            "term": "aerial assaults",
-            "part_of_speech": "noun phrase",
-            "definition": "Attacks conducted using aircraft or missiles from the air."
-          },
-          {
             "term": "perpetrated",
             "part_of_speech": "verb (past participle)",
             "definition": "Carried out or committed (a harmful, illegal, or immoral action)."
-          },
-          {
-            "term": "vehemently accused",
-            "part_of_speech": "verb phrase",
-            "definition": "Strongly and intensely criticized or blamed someone for an action, often with strong feelings."
           },
           {
             "term": "egregious violations",
@@ -470,29 +460,39 @@
             "definition": "Offered a different version or account of events, typically to contradict a previously presented one."
           },
           {
-            "term": "across",
-            "part_of_speech": "preposition",
-            "definition": "in several parts of an area or throughout an area"
-          },
-          {
-            "term": "civilian infrastructure",
-            "part_of_speech": "noun phrase",
-            "definition": "buildings and systems used for ordinary public life, such as homes, roads and water supplies"
-          },
-          {
             "term": "exacerbates",
             "part_of_speech": "verb",
             "definition": "To make a problem, bad situation, or negative feeling worse or more severe."
           },
           {
-            "term": "Amidst",
-            "part_of_speech": "Preposition",
+            "term": "amidst",
+            "part_of_speech": "preposition",
             "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
           },
           {
             "term": "spate",
             "part_of_speech": "noun",
             "definition": "A large number of similar things or events appearing or occurring in quick succession; a sudden outpouring."
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "causing a lot of damage and destruction"
+          },
+          {
+            "term": "aggression",
+            "part_of_speech": "noun",
+            "definition": "Hostile or violent behaviour or attitudes toward another; readiness to attack or confront."
+          },
+          {
+            "term": "vehemently",
+            "part_of_speech": "adverb",
+            "definition": "In a forceful, passionate, or intense manner; with great feeling or strong emotion."
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 4
     }
   }
 }

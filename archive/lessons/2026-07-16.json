@@ -234,44 +234,44 @@
         ],
         "vocabulary": [
           {
-            "term": "protests",
-            "part_of_speech": "noun",
-            "definition": "Public expressions of disapproval, often involving demonstrations or marches, against a policy or action."
-          },
-          {
-            "term": "removal",
-            "part_of_speech": "noun",
-            "definition": "The act of taking someone or something away from their position or place."
-          },
-          {
-            "term": "dismissal",
-            "part_of_speech": "noun",
-            "definition": "The official act of ending someone's employment or removing them from a position."
-          },
-          {
-            "term": "civil society",
-            "part_of_speech": "noun phrase",
-            "definition": "The part of society made up of non-governmental organizations and institutions that manifest the will of citizens, such as charities, community groups, and NGOs."
-          },
-          {
-            "term": "great upset",
-            "part_of_speech": "noun phrase",
-            "definition": "A strong feeling of distress, anger, or sadness caused by a difficult or disappointing situation."
-          },
-          {
-            "term": "defence minister",
-            "part_of_speech": "noun phrase",
-            "definition": "the government official responsible for the armed forces and national defence"
-          },
-          {
             "term": "tensions",
             "part_of_speech": "noun",
             "definition": "A situation in which countries or groups feel angry or hostile towards each other, often without open fighting."
           },
           {
             "term": "military",
+            "part_of_speech": "adjective",
+            "definition": "connected with a country’s armed forces"
+          },
+          {
+            "term": "justification",
             "part_of_speech": "noun",
-            "definition": "The official armed forces of a country, like the army, navy, or air force."
+            "definition": "a reason that explains why an action is considered acceptable"
+          },
+          {
+            "term": "considerable",
+            "part_of_speech": "adjective",
+            "definition": "large enough in amount or degree to be important"
+          },
+          {
+            "term": "transparency",
+            "part_of_speech": "noun",
+            "definition": "openness about decisions and the reasons behind them"
+          },
+          {
+            "term": "explanation",
+            "part_of_speech": "noun",
+            "definition": "information that makes a decision or situation easier to understand"
+          },
+          {
+            "term": "monitoring",
+            "part_of_speech": "verb",
+            "definition": "watching a situation carefully over time to notice changes"
+          },
+          {
+            "term": "demanding",
+            "part_of_speech": "verb",
+            "definition": "asking strongly for something to be done or provided"
           }
         ],
         "grammar": {
@@ -455,29 +455,9 @@
             "definition": "A general feeling of dissatisfaction or unhappiness that is prevalent across a large area or among many people."
           },
           {
-            "term": "unexplained dismissal",
-            "part_of_speech": "noun phrase",
-            "definition": "The act of removing someone from a position or employment without providing any clear or official reason for the action."
-          },
-          {
-            "term": "civil society",
-            "part_of_speech": "noun phrase",
-            "definition": "The aggregate of non-governmental organizations and institutions that manifest the interests and will of citizens, distinct from the state and the market."
-          },
-          {
             "term": "political ramifications",
             "part_of_speech": "noun phrase",
             "definition": "The unforeseen or undesirable consequences or developments that arise from a political action, decision, or event."
-          },
-          {
-            "term": "protests",
-            "part_of_speech": "noun",
-            "definition": "When people gather to show they are unhappy about something."
-          },
-          {
-            "term": "defence minister",
-            "part_of_speech": "noun phrase",
-            "definition": "the government official responsible for the armed forces and national defence"
           },
           {
             "term": "imperative",
@@ -485,14 +465,34 @@
             "definition": "something that is essential and must be done"
           },
           {
-            "term": "military",
-            "part_of_speech": "adjective",
-            "definition": "connected with a country’s armed forces"
-          },
-          {
             "term": "address",
             "part_of_speech": "verb",
             "definition": "To deal with a problem or situation."
+          },
+          {
+            "term": "national cohesion",
+            "part_of_speech": "noun phrase",
+            "definition": "the unity that helps people in a country act as a connected society"
+          },
+          {
+            "term": "detract from",
+            "part_of_speech": "phrasal verb",
+            "definition": "to reduce the strength, value or effectiveness of something"
+          },
+          {
+            "term": "consternation",
+            "part_of_speech": "noun",
+            "definition": "strong concern or alarm caused by an unexpected development"
+          },
+          {
+            "term": "substantive",
+            "part_of_speech": "adjective",
+            "definition": "meaningful and dealing with the actual issue rather than appearances"
+          },
+          {
+            "term": "burgeoning",
+            "part_of_speech": "adjective",
+            "definition": "growing or developing rapidly"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 6,
+      "advanced": 5
     }
   }
 }

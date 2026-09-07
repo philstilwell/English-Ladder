@@ -193,34 +193,19 @@
         ],
         "vocabulary": [
           {
-            "term": "blamed",
-            "part_of_speech": "verb",
-            "definition": "said that someone was responsible"
-          },
-          {
-            "term": "suspicious",
-            "part_of_speech": "adjective",
-            "definition": "making people think something may be wrong"
-          },
-          {
-            "term": "suspect",
-            "part_of_speech": "noun",
-            "definition": "a person or party thought to be responsible"
-          },
-          {
             "term": "defence sites",
             "part_of_speech": "noun phrase",
             "definition": "places used for military protection or related activities"
           },
           {
             "term": "drones",
-            "part_of_speech": "plural noun",
-            "definition": "aircraft that fly without pilots on board"
+            "part_of_speech": "noun",
+            "definition": "Unmanned aircraft, controlled remotely, often used for surveillance, reconnaissance, or military attacks."
           },
           {
             "term": "supplies",
             "part_of_speech": "plural noun",
-            "definition": "materials or equipment needed for an activity"
+            "definition": "things needed for an activity or for people to live and work"
           },
           {
             "term": "reject",
@@ -228,9 +213,24 @@
             "definition": "refuse to accept an idea, claim or proposal"
           },
           {
-            "term": "accidental",
-            "part_of_speech": "adjective",
-            "definition": "happening by chance rather than through a deliberate action"
+            "term": "eventually",
+            "part_of_speech": "adverb",
+            "definition": "at the end of a period of time or a series of events"
+          },
+          {
+            "term": "transport",
+            "part_of_speech": "verb",
+            "definition": "to move people or goods from one place to another"
+          },
+          {
+            "term": "investigations",
+            "part_of_speech": "plural noun",
+            "definition": "careful inquiries intended to find out what happened"
+          },
+          {
+            "term": "involving",
+            "part_of_speech": "verb",
+            "definition": "including someone or something as part of an event"
           }
         ],
         "grammar": {
@@ -391,21 +391,6 @@
         ],
         "vocabulary": [
           {
-            "term": "blamed",
-            "part_of_speech": "verb",
-            "definition": "said that someone was responsible"
-          },
-          {
-            "term": "suspicious",
-            "part_of_speech": "adjective",
-            "definition": "making people think something may be wrong"
-          },
-          {
-            "term": "suspect",
-            "part_of_speech": "noun",
-            "definition": "a person or party thought to be responsible"
-          },
-          {
             "term": "sabotage",
             "part_of_speech": "noun",
             "definition": "deliberate damage intended to disrupt an activity or organisation"
@@ -439,6 +424,21 @@
             "term": "assess",
             "part_of_speech": "verb",
             "definition": "carefully judge or evaluate something"
+          },
+          {
+            "term": "concentration",
+            "part_of_speech": "noun",
+            "definition": "a collection of incidents or activities occurring closely together"
+          },
+          {
+            "term": "interprets",
+            "part_of_speech": "verb",
+            "definition": "offers an explanation of what an event or pattern may mean"
+          },
+          {
+            "term": "willingness",
+            "part_of_speech": "noun",
+            "definition": "readiness to choose to act or respond"
           }
         ],
         "grammar": {
@@ -636,6 +636,21 @@
       "beginner": 2,
       "intermediate": 4,
       "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 4,
+      "advanced": 3
     }
   }
 }

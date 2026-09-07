@@ -234,31 +234,6 @@
         ],
         "vocabulary": [
           {
-            "term": "strike",
-            "part_of_speech": "noun",
-            "definition": "A military attack, often sudden and forceful, usually by air."
-          },
-          {
-            "term": "interceptors",
-            "part_of_speech": "noun",
-            "definition": "Aircraft or missiles designed to prevent enemy attacks by shooting down their missiles or planes."
-          },
-          {
-            "term": "defence ministry",
-            "part_of_speech": "noun phrase",
-            "definition": "A government department responsible for national military and security affairs."
-          },
-          {
-            "term": "logistics hubs",
-            "part_of_speech": "noun phrase",
-            "definition": "Central places where the organization and movement of supplies and equipment are managed."
-          },
-          {
-            "term": "supply centres",
-            "part_of_speech": "noun phrase",
-            "definition": "Locations where goods and materials are stored and distributed to other places."
-          },
-          {
             "term": "conflict",
             "part_of_speech": "noun",
             "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
@@ -272,6 +247,31 @@
             "term": "targets",
             "part_of_speech": "noun",
             "definition": "Specific places, people, or objects chosen to be attacked during military operations."
+          },
+          {
+            "term": "devastating",
+            "part_of_speech": "adjective",
+            "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+          },
+          {
+            "term": "highlighted",
+            "part_of_speech": "verb",
+            "definition": "Drew special attention to something, making it more noticeable or important."
+          },
+          {
+            "term": "operations",
+            "part_of_speech": "plural noun",
+            "definition": "planned activities carried out for a purpose, such as rescue work or military action"
+          },
+          {
+            "term": "meanwhile",
+            "part_of_speech": "adverb",
+            "definition": "during the same period of time as another event"
+          },
+          {
+            "term": "military",
+            "part_of_speech": "adjective",
+            "definition": "connected with a country’s armed forces"
           }
         ],
         "grammar": {
@@ -446,38 +446,23 @@
         "vocabulary": [
           {
             "term": "exacerbating",
-            "part_of_speech": "Verb (present participle)",
+            "part_of_speech": "verb (present participle)",
             "definition": "Making a problem, bad situation, or negative feeling worse."
           },
           {
             "term": "vociferously asserted",
-            "part_of_speech": "Adverbial phrase",
+            "part_of_speech": "adverbial phrase",
             "definition": "Stated or declared something loudly, forcefully, and emphatically, often in opposition to others."
           },
           {
             "term": "demonstrably averted",
-            "part_of_speech": "Adverbial phrase",
+            "part_of_speech": "adverbial phrase",
             "definition": "Prevented something clearly and visibly, with evidence or proof that the prevention occurred."
           },
           {
-            "term": "logistical hubs",
-            "part_of_speech": "Noun phrase",
-            "definition": "Central points or facilities where operations related to the organized movement, storage, and supply of goods, equipment, or people are coordinated."
-          },
-          {
             "term": "geopolitical climate",
-            "part_of_speech": "Noun phrase",
-            "definition": "The prevailing political and economic relationships and conditions between nations, especially as they relate to geographical factors and their impact on international affairs."
-          },
-          {
-            "term": "ministry",
-            "part_of_speech": "noun",
-            "definition": "A department of a government, like a defence ministry or education ministry."
-          },
-          {
-            "term": "supply centres",
             "part_of_speech": "noun phrase",
-            "definition": "Locations where goods and materials are stored and distributed to other places."
+            "definition": "The prevailing political and economic relationships and conditions between nations, especially as they relate to geographical factors and their impact on international affairs."
           },
           {
             "term": "crucial",
@@ -493,6 +478,21 @@
             "term": "aerial assaults",
             "part_of_speech": "noun phrase",
             "definition": "Attacks conducted using aircraft or missiles from the air."
+          },
+          {
+            "term": "infrastructure",
+            "part_of_speech": "noun",
+            "definition": "the basic networks and facilities on which an activity or society depends"
+          },
+          {
+            "term": "humanitarian",
+            "part_of_speech": "adjective",
+            "definition": "Concerned with or seeking to promote human welfare, especially by providing aid and support to people in need."
+          },
+          {
+            "term": "operational",
+            "part_of_speech": "adjective",
+            "definition": "relating to how a planned activity is carried out in practice"
           }
         ],
         "grammar": {
@@ -652,6 +652,21 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 5,
+      "advanced": 3
     }
   }
 }

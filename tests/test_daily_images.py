@@ -3,6 +3,7 @@ import io
 import json
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from datetime import date
 from pathlib import Path
 from types import SimpleNamespace
@@ -38,6 +39,8 @@ def client_with_image():
 
 class DailyImageTests(unittest.TestCase):
     def setUp(self):
+        # Simulated provider failures must not become real GitHub warning annotations.
+        self.enterContext(redirect_stdout(io.StringIO()))
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)

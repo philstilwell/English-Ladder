@@ -39,3 +39,7 @@ The existing limit remains three drafting attempts per level. There are no extra
 Regression tests use saved lesson data and synthetic model responses. They cover absent word forms, exact grammar references, locked-section protection, invalid references, missing source evidence, failed independent reviews, vocabulary reservations, archive protection and rebuild rejection. All stored editions are checked for count, source-text matching and cross-level separation. The regular site audit also compares published vocabulary, definitions and quizzes with the archive data.
 
 No paid generation or image requests were used for this change.
+
+## Live-run review calibration
+
+A subsequent September 7 run exposed contradictory editorial demands: a reviewer treated six quiz questions as a maximum, rejected reused source excerpts, and asked for a grammar example absent from the reading. The reviewer now explicitly distinguishes the curriculum’s requirements from optional stylistic preferences. Additional useful questions, shared supporting excerpts for different reading facts, exact reading quotations, contextual vocabulary/grammar questions and natural beginner sentence frames are permitted. A misleading factual distinction still blocks publication. The writer also receives clearer verbatim-evidence and answer-feedback instructions. No failed review is ignored or automatically converted to approval.

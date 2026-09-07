@@ -100,7 +100,7 @@ class ReadingLengthTests(unittest.TestCase):
                                release_date='2026-09-06', skip_existing=False)
         client = SimpleNamespace(close=lambda: None)
         calls = []
-        def generate(client, news, config, date):
+        def generate(client, news, config, date, **resume):
             calls.append(config['name'])
             if config['name'] == 'Advanced':
                 raise RuntimeError('Advanced reading is below the ten-sentence minimum.')

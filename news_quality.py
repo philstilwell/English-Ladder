@@ -100,10 +100,13 @@ For A1-A2, common beginner words such as "ideas" are acceptable vocabulary targe
 For every blocking issue or failed check, identify the problematic term or field, the violated requirement, and the concrete revision needed. Recheck the actual field before returning the issue, and quote the relevant draft wording accurately. A preferred synonym, sentence rhythm or optional extra explanation is not a blocker unless the current wording violates a stated requirement or causes a concrete meaning, clarity or level problem. Optional polish is not a blocking issue. A general approved flag cannot override a failed or missing level check. Passing the numeric minimums never excuses unsuitable vocabulary or register.
 Approve only if every check passes. If not, list concrete changes, not generic advice. Return the supplied JSON schema.
 \n'''+format_language_policy(level)+'\nDATA:\n'+json.dumps(payload,ensure_ascii=False)
-    response=client.models.generate_content(model=model,contents=prompt,config={
+    from generation_retry import generate_with_retry
+    response=generate_with_retry(client,model=model,contents=prompt,config={
         'response_mime_type':'application/json',
         'response_json_schema':review_response_schema(),
         'max_output_tokens':12288,'thinking_config':{'thinking_budget':8192}})
+    if not isinstance(response.text, str) or not response.text.strip():
+        raise ValueError('Editorial review returned no JSON text.')
     raw=json.loads(response.text)
     issues=validate_editorial_review(raw)
     if not issues and review_record is not None:

@@ -136,7 +136,7 @@ class LessonRepairTests(unittest.TestCase):
         bad = copy.deepcopy(self.lesson); bad['sentence_evidence'] = []
         client, calls = self.simulate([bad, self.lesson, approved_review()])
         u.generate_lesson(client, self.news, self.level, self.date)
-        self.assertIn('news_brief_sentences', calls[1]['config']['response_json_schema']['required'])
+        self.assertIn('reading', calls[1]['config']['response_json_schema']['required'])
         self.assertIn('Previous draft data', calls[1]['contents'])
 
     def test_successful_repair_cannot_bypass_a_failed_editorial_review(self):
@@ -149,7 +149,7 @@ class LessonRepairTests(unittest.TestCase):
                 u.generate_lesson(client, self.news, self.level, self.date)
             render.assert_not_called()
         self.assertEqual(5, len(calls))
-        self.assertIn('news_brief_sentences', calls[3]['config']['response_json_schema']['required'])
+        self.assertIn('reading', calls[3]['config']['response_json_schema']['required'])
         self.assertIn('Previous draft data', calls[3]['contents'])
 
     def test_no_available_vocabulary_requires_new_reading_not_an_invalid_schema(self):
@@ -162,19 +162,31 @@ class LessonRepairTests(unittest.TestCase):
     def test_numbered_source_evidence_is_resolved_before_every_review(self):
         from lesson_evidence import evidence_choices
         choices = evidence_choices(self.news)
-        draft = copy.deepcopy(self.lesson)
-        # Each source excerpt may sit within a larger source paragraph.
-        draft['sentence_evidence'] = [next(i for i, text in enumerate(choices) if ' '.join(quote.split()) in text)
-                                      for quote in self.lesson['sentence_evidence']]
-        client, calls = self.simulate([draft, approved_review()])
+        drafts = []
+        def full_draft(request):
+            drafts.append(draft_response(self.lesson, request, news=self.news))
+            return drafts[-1]
+        client, calls = self.simulate([full_draft, approved_review()])
         saved, _ = u.generate_lesson(client, self.news, self.level, self.date)
-        schema = calls[0]['config']['response_json_schema']['properties']['sentence_evidence']['items']
-        self.assertEqual('integer', schema['type'])
-        self.assertEqual(len(choices) - 1, schema['maximum'])
+        schema = calls[0]['config']['response_json_schema']
+        source_id = schema['properties']['reading']['items']['properties']['source_id']
+        self.assertEqual('integer', source_id['type'])
+        self.assertEqual(len(choices) - 1, source_id['maximum'])
+        self.assertNotIn('sentence_evidence', schema['properties'])
+        self.assertNotIn('news_brief_sentences', schema['properties'])
+        self.assertNotIn('example_quote', schema['properties']['grammar']['properties'])
+        self.assertEqual(set(schema['required']), set(drafts[0]))
+        self.assertEqual(self.lesson['news_brief_sentences'], saved['news_brief_sentences'])
+        self.assertEqual(len(saved['news_brief_sentences']), len(saved['sentence_evidence']))
+        self.assertEqual([choices[entry['source_id']] for entry in drafts[0]['reading']], saved['sentence_evidence'])
+        self.assertEqual(self.lesson['grammar']['example_quote'], saved['grammar']['example_quote'])
+        self.assertNotIn('example_sentence_index', saved['grammar'])
+        self.assertNotIn('reading', saved)
         self.assertTrue(all(isinstance(quote, str) for quote in saved['sentence_evidence']))
         self.assertEqual([], news_quality.validate_evidence(saved, self.news))
         payload = json.loads(calls[1]['contents'].rsplit('\nDATA:\n', 1)[1])
         self.assertEqual(saved['sentence_evidence'], payload['lesson']['sentence_evidence'])
+        self.assertEqual(saved['grammar'], payload['lesson']['grammar'])
 
     def test_evidence_errors_are_reported_even_when_vocabulary_also_fails(self):
         bad = copy.deepcopy(self.lesson)

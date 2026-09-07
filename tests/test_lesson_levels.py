@@ -101,13 +101,15 @@ class LessonLevelTests(unittest.TestCase):
             calls=[]
             def generate(**kwargs):
                 calls.append(kwargs)
-                return SimpleNamespace(text=json.dumps(lesson if len(calls)%2 else review))
+                is_review = 'approved' in kwargs['config']['response_json_schema']['required']
+                return SimpleNamespace(text=json.dumps(review if is_review else lesson))
             client = SimpleNamespace(models=SimpleNamespace(generate_content=generate))
             with patch.object(update_site, 'render_lesson_html') as render:
-                with self.assertRaisesRegex(RuntimeError, 'after 3 attempts'):
+                expected = 'after 3 attempts' if review is failed else 'invalid data twice'
+                with self.assertRaisesRegex(RuntimeError, expected):
                     update_site.generate_lesson(client, self.archive['source'], config, update_site.release_datetime_from_date('2026-09-06'))
                 render.assert_not_called()
-            self.assertEqual(6, len(calls))
+            self.assertEqual(6 if review is failed else 3, len(calls))
 
     def test_a_failed_review_does_not_leave_an_approval_record(self):
         review = approved_review(); review['level_checks']['challenge']['passed'] = False

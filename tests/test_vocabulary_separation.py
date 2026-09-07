@@ -89,7 +89,7 @@ class VocabularySeparationTests(unittest.TestCase):
 
     def test_generation_passes_approved_targets_forward_without_mutating_global_levels(self):
         original = copy.deepcopy(u.LEVELS); calls = []
-        def generate(client, news, config, date):
+        def generate(client, news, config, date, **resume):
             calls.append(copy.deepcopy(config))
             return copy.deepcopy(self.lessons[config['name'].lower()]), '<details></details>'
         args = SimpleNamespace(refresh_feature=False, refresh_pages=False, release_date='2026-09-06', skip_existing=False)

@@ -32,6 +32,10 @@ on:
       - 'news_quality.py'
       - 'lesson_levels.py'
       - 'lesson_evidence.py'
+      - 'lesson_checkpoint.py'
+      - 'lesson_run.py'
+      - 'generation_retry.py'
+      - 'workflow_checkpoint.py'
       - 'publish_snapshot.py'
       - 'audit_site.py'
       - 'audit_seo.py'
@@ -46,8 +50,8 @@ on:
       - 'story_lessons.py'
       - 'assets/editorial/**'
   schedule:
-    # Primary daily run at 10:00 UTC, with later no-op fallbacks if the
-    # GitHub-hosted runner pool fails before the job starts.
+    # Later runs resume saved progress, or only retry a missing illustration
+    # when this date's complete edition has already been published.
     - cron: '0 10 * * *'
     - cron: '0 13 * * *'
     - cron: '0 16 * * *'
@@ -75,8 +79,10 @@ concurrency:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     permissions:
       contents: write # This gives the action permission to save files to your repo
+      actions: read # Restore checkpoints from this workflow's earlier runs.
       
     steps:
       - name: Checkout repository
@@ -113,6 +119,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+          cache: pip
 
       - name: Install dependencies
         run: |
@@ -133,14 +140,39 @@ jobs:
 
       - name: Run checks
         run: |
-          python -m py_compile update_site.py lesson_evidence.py daily_images.py verify_discover.py
+          python -m py_compile update_site.py lesson_evidence.py lesson_checkpoint.py lesson_run.py generation_retry.py workflow_checkpoint.py daily_images.py verify_discover.py
           python -m unittest discover -s tests -p 'test_*.py'
 
+      - name: Resolve daily release date
+        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true'
+        env:
+          REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime, timezone, date
+          from pathlib import Path
+          requested = os.environ.get('REQUESTED_RELEASE_DATE') or datetime.now(timezone.utc).date().isoformat()
+          release = date.fromisoformat(requested).isoformat()
+          needed = not Path(f'archive/lessons/{release}.json').exists()
+          with open(os.environ['GITHUB_ENV'], 'a') as output:
+              output.write(f'RELEASE_DATE={release}\nLESSON_GENERATION_NEEDED={int(needed)}\n')
+              output.write(f"LESSON_STATE_DIR={os.environ['RUNNER_TEMP']}/lesson-state\n")
+          print(f'Daily release: {release}; new lesson text needed: {needed}')
+          PY
+
+      - name: Restore unfinished daily edition
+        if: env.LESSON_GENERATION_NEEDED == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python workflow_checkpoint.py --repo "$GITHUB_REPOSITORY" --branch "$GITHUB_REF_NAME" --date "$RELEASE_DATE" --directory "$LESSON_STATE_DIR" --current-run-id "$GITHUB_RUN_ID"
+
       - name: Run Python Script
+        # Leave time to upload saved progress even when a provider stays slow.
+        timeout-minutes: 30
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
-          SKIP_EXISTING: ${{ github.event_name == 'schedule' && '1' || '' }}
           EVENT_NAME: ${{ github.event_name }}
           DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
           REFRESH_FEATURE: ${{ github.event.inputs.refresh_feature || 'false' }}
@@ -154,14 +186,21 @@ jobs:
             python update_site.py --refresh-feature
             exit 0
           fi
-          args=()
+          # Repeating a manual or scheduled run must not overwrite a complete edition.
+          args=(--skip-existing)
           if [ -n "${RELEASE_DATE}" ]; then
             args+=(--release-date "${RELEASE_DATE}")
           fi
-          if [ -n "${SKIP_EXISTING}" ]; then
-            args+=(--skip-existing)
-          fi
           python -u update_site.py "${args[@]}"
+
+      - name: Retain unfinished daily edition
+        if: always() && env.LESSON_GENERATION_NEEDED == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-state-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/lesson-state/*.json
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Retain lesson review diagnostics
         if: always()

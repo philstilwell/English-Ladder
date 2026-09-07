@@ -1318,6 +1318,25 @@ def apply_lesson_repair(lesson, replacement, fields, level=None):
     return merged
 
 
+def save_lesson_diagnostic(lesson, news_item, level, release_dt, attempt, issues):
+    """Keep reviewable drafts only in an explicitly configured workflow directory."""
+    directory = os.environ.get("LESSON_DIAGNOSTICS_DIR")
+    if not directory:
+        return
+    destination = Path(directory) / lesson_key_from_release_dt(release_dt)
+    destination.mkdir(parents=True, exist_ok=True)
+    record = {
+        "release_date": lesson_key_from_release_dt(release_dt),
+        "level": level["name"], "attempt": attempt,
+        "status": "rejected" if issues else "approved",
+        "issues": issues, "lesson": lesson,
+        "source": {key: news_item.get(key, "") for key in
+                   ("title", "summary", "evidence_text", "link", "source_name", "published", "retrieved_at")},
+    }
+    path = destination / f'{level["name"].lower()}-{attempt}.json'
+    path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
 def generate_lesson(client, news_item, level, release_dt):
     revision_feedback = None
     issues = []
@@ -1365,9 +1384,11 @@ def generate_lesson(client, news_item, level, release_dt):
                     issues = [f"Editorial review could not be validated: {exc}"]
             if not issues:
                 lesson_data["editorial_check"] = {"date": datetime.now(timezone.utc).isoformat(), "model": MODEL_NAME, "status": "passed", "method": "separate evidence, teaching and level suitability review", "generation_attempts": attempt + 1, "repaired_sections": sorted(repaired_sections), **review_record}
+                save_lesson_diagnostic(lesson_data, news_item, level, release_dt, attempt + 1, [])
                 source = {"name": news_item.get("source_name", NEWS_SOURCE_NAME), "link": news_item.get("link", ""), "title": news_item.get("title", ""), "summary": news_item.get("summary", "")}
                 return lesson_data, render_lesson_html(lesson_data, level, release_dt, source)
 
+        save_lesson_diagnostic(lesson_data, news_item, level, release_dt, attempt + 1, issues)
         issue_lines = "\n".join(f"- {issue}" for issue in issues)
         revision_feedback = (
             "Revise the previous draft to fix the issues below. Preserve sound material; update "

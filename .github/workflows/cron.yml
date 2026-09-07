@@ -144,6 +144,7 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
           REFRESH_FEATURE: ${{ github.event.inputs.refresh_feature || 'false' }}
+          LESSON_DIAGNOSTICS_DIR: ${{ runner.temp }}/lesson-diagnostics
         run: |
           if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ]; then
             python update_site.py --refresh-pages
@@ -161,6 +162,15 @@ jobs:
             args+=(--skip-existing)
           fi
           python -u update_site.py "${args[@]}"
+
+      - name: Retain lesson review diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-review-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/lesson-diagnostics
+          retention-days: 7
+          if-no-files-found: ignore
 
       - name: Check generated pages
         run: |

@@ -107,13 +107,64 @@ class ReviewPolicyTests(unittest.TestCase):
 
     def test_review_boundaries_do_not_filter_out_a_returned_rejection(self):
         # Prevent a prompt calibration from becoming a failed-review bypass.
-        issue = 'Reduce the seven quiz questions to exactly six.'
-        rejected = dict(approved_review(), approved=False, issues=[issue])
-        request, issues, record = self.capture_review(review=rejected)
-        self.assertIn('Do not invent additional requirements', request['contents'])
-        self.assertIn('Optional polish is not a blocking issue', request['contents'])
-        self.assertEqual([issue], issues)
-        self.assertEqual({}, record)
+        for issue in (
+            'Reduce the seven quiz questions to exactly six.',
+            'Every simplified reading sentence must equal its source excerpt.',
+            'The vocabulary term supplier is absent from the source article.',
+            'Replace the natural wording with my preferred synonym.',
+        ):
+            with self.subTest(issue=issue):
+                rejected = dict(approved_review(), approved=False, issues=[issue])
+                request, issues, record = self.capture_review(review=rejected)
+                self.assertIn('Do not invent additional requirements', request['contents'])
+                self.assertIn('Optional polish is not a blocking issue', request['contents'])
+                self.assertEqual([issue], issues)
+                self.assertEqual({}, record)
+
+    def test_paired_payload_distinguishes_simplified_reading_from_source_only_excerpts(self):
+        original = copy.deepcopy(self.lesson)
+        request, _, _ = self.capture_review()
+        payload = json.loads(request['contents'].rsplit('\nDATA:\n', 1)[1])
+        pairs = payload['reading_evidence_pairs']
+        self.assertEqual(len(self.lesson['news_brief_sentences']), len(pairs))
+        for index, pair in enumerate(pairs):
+            self.assertEqual(index + 1, pair['reading_sentence_number'])
+            self.assertEqual(self.lesson['news_brief_sentences'][index], pair['learner_reading_sentence'])
+            self.assertEqual(self.lesson['sentence_evidence'][index], pair['source_excerpt_for_fact_check_only'])
+        self.assertNotEqual(pairs[0]['learner_reading_sentence'], pairs[0]['source_excerpt_for_fact_check_only'])
+        self.assertEqual(pairs[0]['source_excerpt_for_fact_check_only'], pairs[1]['source_excerpt_for_fact_check_only'])
+        self.assertEqual(original, payload['lesson'])
+        self.assertEqual(original, self.lesson)
+        prompt = request['contents'].rsplit('\nDATA:\n', 1)[0]
+        self.assertIn('lesson.news_brief_sentences is the only learner-facing News Brief reading', prompt)
+        self.assertIn('internal source material for fact checking, not additional learner reading', prompt)
+        self.assertIn('It does not have to match the source wording exactly', prompt)
+        self.assertIn('each sentence_evidence excerpt must occur in the supplied source', prompt)
+        self.assertIn("grammar.example_quote must occur in the learner's News Brief", prompt)
+
+    def test_vocabulary_is_located_in_the_reading_even_when_the_source_uses_another_word(self):
+        self.lesson['news_brief_sentences'][2] = 'A supplier brings new books.'
+        self.lesson['sentence_evidence'][2] = 'A local company delivers new books.'
+        self.source['evidence_text'] += ' A local company delivers new books.'
+        self.lesson['vocabulary'] = [{'term': 'supplier', 'part_of_speech': 'noun',
+                                      'definition': 'A person or company that provides things.'}]
+        self.assertEqual([], news_quality.validate_evidence(self.lesson, self.source))
+        request, _, _ = self.capture_review()
+        prompt, data = request['contents'].rsplit('\nDATA:\n', 1)
+        payload = json.loads(data)
+        self.assertNotIn('supplier', payload['evidence'])
+        self.assertIn('supplier', payload['reading_evidence_pairs'][2]['learner_reading_sentence'])
+        self.assertIn('Check vocabulary occurrence in lesson.news_brief_sentences, not in sentence_evidence', prompt)
+        self.assertIn('may be taught even if that word is absent from the original source', prompt)
+        self.assertIn('recheck every learner_reading_sentence', prompt)
+
+    def test_reviewer_has_reasoning_room_without_weakening_the_response_contract(self):
+        request, _, _ = self.capture_review()
+        config = request['config']
+        self.assertEqual(8192, config['thinking_config']['thinking_budget'])
+        self.assertEqual(12288, config['max_output_tokens'])
+        self.assertEqual('application/json', config['response_mime_type'])
+        self.assertEqual(news_quality.review_response_schema(), config['response_json_schema'])
 
     def test_material_factual_errors_still_block_even_with_an_overall_pass(self):
         issue = ('Reading sentence 2 changes "would not directly set energy prices" '

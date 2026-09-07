@@ -1,6 +1,8 @@
 """Simulate drafting failures without paid generation or weakened publishing checks."""
 import copy
 import json
+import os
+import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
@@ -31,6 +33,30 @@ class LessonRepairTests(unittest.TestCase):
                 value = value(request)
             return SimpleNamespace(text=json.dumps(value))
         return SimpleNamespace(models=SimpleNamespace(generate_content=generate)), calls
+
+    def test_diagnostics_keep_rejected_and_approved_drafts_outside_public_archive(self):
+        bad = copy.deepcopy(self.lesson)
+        bad['vocabulary'].pop()
+        client, _ = self.simulate([bad, lambda req: draft_response(self.lesson, req, bad), approved_review()])
+        source = dict(self.news, api_key='never copy arbitrary source fields')
+        with tempfile.TemporaryDirectory() as directory, patch.dict(os.environ, {'LESSON_DIAGNOSTICS_DIR': directory}):
+            saved, _ = u.generate_lesson(client, source, self.level, self.date)
+            folder = Path(directory) / '2026-09-06'
+            rejected = json.loads((folder / 'beginner-1.json').read_text())
+            approved = json.loads((folder / 'beginner-2.json').read_text())
+            self.assertEqual('rejected', rejected['status'])
+            self.assertTrue(rejected['issues'])
+            self.assertEqual(bad, rejected['lesson'])
+            self.assertEqual('approved', approved['status'])
+            self.assertEqual([], approved['issues'])
+            self.assertEqual(saved, approved['lesson'])
+            self.assertNotIn('api_key', approved['source'])
+            self.assertEqual(source['evidence_text'], approved['source']['evidence_text'])
+
+    def test_diagnostics_are_disabled_unless_explicitly_configured(self):
+        with patch.dict(os.environ, {}, clear=True), patch.object(u.Path, 'mkdir') as mkdir:
+            u.save_lesson_diagnostic(self.lesson, self.news, self.level, self.date, 1, [])
+        mkdir.assert_not_called()
 
     def test_absent_inflection_is_repaired_without_rewriting_reading_or_grammar(self):
         bad = copy.deepcopy(self.lesson)

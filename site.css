@@ -168,8 +168,6 @@ body { --level-tint:#fff; }
 .daily-feed .daily-lesson[open]>.lesson-description { display:none; }
 .reading-page .learning-flow { margin:4px auto 12px; padding:4px; }
 .reading-page .learning-flow button { padding:8px 16px; min-height:44px; }
-.reading-page .prediction { margin:12px 0 18px; padding:13px 18px; }
-.reading-page .prediction p { font-size:1rem; line-height:1.6; }
 .reading-page .reading-hint { margin:8px 0 12px; }
 .reading-page .learning-panel .section h2 { margin-top:14px; }
 .reading-page .lesson-cover,.reading-page .reading-photo { margin:22px auto 28px; }
@@ -192,7 +190,6 @@ body { --level-tint:#fff; }
   .daily-feed .page-hero.reading-heading { padding:12px 0 4px; }
   .reading-page .learning-flow { max-width:100%; gap:3px; }
   .reading-page .learning-flow button { padding:8px 12px; font-size:.875rem; }
-  .reading-page .prediction { padding:12px 15px; }
 }
 @media(max-width:350px) {
   .level-toolbar .story-levels a { font-size:.74rem; }
@@ -269,8 +266,6 @@ body[class] :is(
 .reading-page.theme-advanced { --lesson-tint:#eef2ff; --lesson-ink:#193cc2; --lesson-line:#cad5fa; }
 .reading-page main { --accent:var(--lesson-ink); --accent-strong:var(--lesson-ink); --surface-alt:var(--lesson-tint); --learning-line:var(--lesson-line); }
 .reading-page .learning-flow { background:var(--lesson-tint); }
-.reading-page .prediction { background:var(--lesson-tint); border-left-color:var(--lesson-action-fill); }
-.reading-page .prediction h3 { color:var(--lesson-ink); }
 .reading-page .word-button:not([aria-expanded="true"]) { background:var(--lesson-tint); color:var(--lesson-ink); border-bottom-color:var(--lesson-ink); }
 .reading-page .word-definition { background:var(--lesson-tint); color:var(--lesson-ink); }
 .reading-page .vocab-box { background:var(--lesson-tint); border-color:var(--lesson-line); }

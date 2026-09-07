@@ -116,9 +116,6 @@ details[open] > summary.lesson-date::after { content: "−"; }
 .learning-panel .section { border: 0; padding: 0; margin-bottom: 28px; }
 .learning-panel .section h2 { text-transform: none; letter-spacing: -.03em; font-size: 1.5rem; color: var(--text); }
 .learning-panel .section > p { font-size: 1.125rem; line-height: 1.85; }
-.prediction { padding: 18px 22px; border-left: 3px solid var(--accent); background: #edf1ff; margin: 20px 0 26px; }
-.prediction h3 { margin: 0 0 6px; font-size: .875rem; color: var(--accent-strong); }
-.prediction p { margin: 0; font-size: 1.05rem; }
 .reading-photo { margin: 0 0 26px; }
 .reading-photo img { display: block; width: 100%; max-height: 400px; object-fit: cover; border-radius: 8px; }
 .word-button { border: 0; border-bottom: 2px dotted var(--accent); background: #edf1ff; color: #173caf; padding: 0 2px; font: inherit; cursor: pointer; }
@@ -273,7 +270,6 @@ h1, h2, h3 { text-wrap: pretty; }
 .learning-flow { background: #eef1f6; border: 0; padding: 6px; border-radius: 10px; width: fit-content; margin: 0 auto 32px; }
 .learning-flow button { font-weight: 600; }
 .learning-flow button[aria-current="step"] { background: #fff; color: var(--accent-strong); box-shadow: 0 1px 4px #202d4514; }
-.prediction { border-radius: 0 8px 8px 0; }
 
 button:disabled { cursor: default; opacity: .7; }
 input, textarea, select { accent-color: var(--accent); }
@@ -334,12 +330,12 @@ input, textarea, select { accent-color: var(--accent); }
   summary.lesson-date { grid-template-columns: 1fr 24px; gap: 8px; font-size: 1.2rem; }
   .lesson-date-text { grid-column: 1; } .lesson-title-group { grid-column: 1; } summary.lesson-date::after { grid-row: 2; grid-column: 2; }
   .lesson-description { margin-left: 0; } .learning-flow { gap: 4px; } .learning-flow button { padding: 10px 12px; }
-  .learning-panel .section > p { font-size: 1.0625rem; } .prediction { padding: 16px; }
+  .learning-panel .section > p { font-size: 1.0625rem; }
   .quiz-card { padding: 16px; } .discussion { padding: 20px; }
   .efsp-hero-visual { display: block; } .reading-photo img { max-height: 280px; }
 }
 @media print {
   body { background: white; color: black; } .site-header, .site-footer, .learning-flow, .stage-actions, .skip-link { display: none !important; }
   .learning-panel[hidden] { display: block !important; } .page-shell { max-width: none; padding: 0; }
-  .word-definition { display: inline !important; } .quiz-card, .prediction { break-inside: avoid; }
+  .word-definition { display: inline !important; } .quiz-card { break-inside: avoid; }
 }

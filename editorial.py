@@ -57,17 +57,13 @@ def document(title, content, body_class="theme-hub", prefix="", current=""):
 </head><body class="{body_class}">{site_header(prefix, current)}<main id="main-content" class="page-shell">{content}{footer(prefix)}</main></body></html>'''
 
 
-def locate_title_instruction(text):
-    """Keep instructions explicit about the title's position without repeating 'above'."""
-    return re.sub(r'\b(Read|Look at) the (title|headline)(?=[.!?])', r'\1 the \2 above', text, flags=re.IGNORECASE)
-
-
 def enhance_lesson(lesson, lesson_data=None, source=None):
     """Enhance generated and older markup once; retain all content without JavaScript."""
     key = lesson.get("data-lesson-key", "lesson")
     lesson["id"] = "lesson-" + key
-    for prompt in lesson.select('.prediction p'):
-        prompt.string = locate_title_instruction(prompt.get_text())
+    # Remove retired pre-reading prompts even from already-enhanced archives.
+    for panel in lesson.select('.prediction'):
+        panel.decompose()
     if lesson.select_one(".learning-panel"):
         return
     content = lesson.select_one(".lesson-content")
@@ -77,12 +73,10 @@ def enhance_lesson(lesson, lesson_data=None, source=None):
     if len(sections) < 3:
         return
     data = lesson_data or {}
-    prediction = locate_title_instruction(data.get("prediction") or "Read the title above. What do you think you will learn?")
     prompts = data.get("discussion") or ["Explain this story to a friend in two sentences.", "Which detail interests you most? Say why."]
     read = fragment('<div class="learning-panel" data-stage="read"></div>').div
     practice = fragment('<div class="learning-panel" data-stage="practice"></div>').div
     discuss = fragment('<div class="learning-panel" data-stage="discuss"></div>').div
-    read.append(fragment(f'<aside class="prediction"><h3>Before you read</h3><p>{html.escape(prediction)}</p></aside>').aside)
     for index, section in enumerate(sections[:3]):
         heading = section.find("h2")
         if heading:
@@ -249,8 +243,7 @@ def build_homepage():
             visual = f'<figure class="feature-photo"><img src="{picture["path"]}" width="{picture["width"]}" height="{picture["height"]}" alt="{html.escape(picture["alt"], quote=True)}" fetchpriority="high"><figcaption>AI-generated illustration · Inspired by this lesson; not a news photograph.</figcaption></figure>'
         else:
             words = "".join(f'<li>{html.escape(str(item["term"]))}</li>' for item in brief.get("vocabulary", [])[:5] if "term" in item)
-            question = html.escape(locate_title_instruction(brief.get("prediction") or "Read the title above. What do you think you will learn?"))
-            visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><p class="eyebrow">Before you read</p><h2>{question}</h2><p>Read a real story. Learn useful words. Share your ideas.</p><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
+            visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><h2>Words in this story</h2><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
     title, overview = html.escape(title), html.escape(overview)
     content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html">daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
 <div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>

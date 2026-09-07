@@ -56,7 +56,7 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260907-completion2','site.css':'20260907-level-palette1','learning.js':'20260907-completion2','app.js':'20260907-title-labels1','editorial.css':'20260907-level-navigation1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260907-completion2','site.css':'20260907-direct-reading1','learning.js':'20260907-completion2','app.js':'20260907-title-labels1','editorial.css':'20260907-direct-reading1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

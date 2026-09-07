@@ -58,14 +58,21 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual("https://example.com/birds", update_site.select_news_entry(entries, ["https://example.com/science"])["link"])
         self.assertIsNone(update_site.select_news_entry([dict(title="Missing evidence", link="javascript:alert(1)")]))
 
-    def test_guided_rendering_is_repeatable_and_escapes_prompt_content(self):
+    def test_guided_rendering_is_repeatable_and_removes_retired_prereading(self):
+        for level in update_site.LEVELS:
+            schema = update_site.build_response_schema(level)
+            self.assertNotIn("prediction", schema["properties"])
+            self.assertNotIn("prediction", schema["required"])
         data = dict(STORIES[0]["levels"]["beginner"])
         data["prediction"] = '<img src=x onerror="alert(1)">'
         lesson = BeautifulSoup(update_site.render_lesson_html(data, update_site.LEVELS[0], datetime(2026, 9, 5, tzinfo=timezone.utc)), "html.parser").details
         before = str(lesson)
+        self.assertIsNone(lesson.select_one(".prediction"))
+        legacy = BeautifulSoup('<aside class="prediction"><h3>Before you read</h3><p>Read the title above.</p></aside>', "html.parser").aside
+        lesson.select_one('[data-stage="read"]').insert(0, legacy)
         editorial.enhance_lesson(lesson, data)
         self.assertEqual(before, str(lesson))
-        self.assertIsNone(lesson.select_one(".prediction img"))
+        self.assertIsNone(lesson.select_one(".prediction"))
         self.assertEqual(3, len(lesson.select(".learning-panel")))
         self.assertEqual(5, len(lesson.select(".quiz-question")))
 

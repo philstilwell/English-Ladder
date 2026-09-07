@@ -98,6 +98,8 @@ class DailyImageTests(unittest.TestCase):
         self.assertEqual("failed", daily_images.read_metadata(self.root / "assets/news/2020-01-02.json")["status"])
         home = self.homepage()
         self.assertIsNotNone(home.select_one(".feature-preview"))
+        self.assertNotIn("Before you read", home.get_text())
+        self.assertNotIn("How do trees help us?", home.get_text())
         self.assertEqual("beginner.html#lesson-2020-01-02", home.select_one("#feature-start")["href"])
 
     def test_empty_image_response_can_be_retried_successfully(self):

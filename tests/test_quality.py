@@ -1,3 +1,4 @@
+from review_fixtures import approved_review
 import copy
 import json
 import tempfile
@@ -28,13 +29,13 @@ class QualityTests(unittest.TestCase):
         self.lesson['sentence_evidence'][0]='An invented quotation that is not in the source.'
         self.assertTrue(any('exact source excerpt' in issue for issue in news_quality.validate_evidence(self.lesson,self.source)))
     def test_a_pass_flag_with_issues_still_fails_review(self):
-        client=SimpleNamespace(models=SimpleNamespace(generate_content=lambda **kw:SimpleNamespace(text=json.dumps({'approved':True,'issues':['This adds an unsupported cause.']}))))
+        client=SimpleNamespace(models=SimpleNamespace(generate_content=lambda **kw:SimpleNamespace(text=json.dumps(dict(approved_review(), issues=['This adds an unsupported cause.'])))))
         self.assertEqual(['This adds an unsupported cause.'],news_quality.review_lesson(client,self.source,self.lesson,update_site.LEVELS[0],'fake'))
     def test_generation_requires_separate_editorial_approval(self):
         calls=[]
         def generate(**kwargs):
             calls.append(kwargs)
-            return SimpleNamespace(text=json.dumps(self.lesson if len(calls)==1 else {'approved':False,'issues':['Unsupported cause in the reading.']}))
+            return SimpleNamespace(text=json.dumps(self.lesson if len(calls)==1 else dict(approved_review(), approved=False, issues=['Unsupported cause in the reading.'])))
         client=SimpleNamespace(models=SimpleNamespace(generate_content=generate))
         with patch.object(update_site,'MAX_GENERATION_ATTEMPTS',1):
             with self.assertRaisesRegex(RuntimeError,'Unsupported cause'):
@@ -50,7 +51,7 @@ class QualityTests(unittest.TestCase):
         calls=[]
         def generate(**kwargs):
             calls.append(kwargs)
-            return SimpleNamespace(text=json.dumps(self.lesson if len(calls)==1 else {'approved':True,'issues':[]}))
+            return SimpleNamespace(text=json.dumps(self.lesson if len(calls)==1 else approved_review()))
         source=dict(self.source,summary=self.source['summary']+' A separate report concerns deaths.')
         client=SimpleNamespace(models=SimpleNamespace(generate_content=generate))
         _,rendered=update_site.generate_lesson(client,source,update_site.LEVELS[0],update_site.release_datetime_from_date('2026-09-06'))

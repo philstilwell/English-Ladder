@@ -1,4 +1,5 @@
 """Publication must never accept a daily reading below the 6/8/10 minimums."""
+from review_fixtures import approved_review
 import copy
 import json
 import tempfile
@@ -62,7 +63,7 @@ class ReadingLengthTests(unittest.TestCase):
         config = update_site.LEVELS[2]
         valid = self.archive['levels']['advanced']['lesson']
         short = dict(valid, news_brief_sentences=valid['news_brief_sentences'][:-1])
-        responses = iter([short, valid, {'approved': True, 'issues': []}])
+        responses = iter([short, valid, approved_review()])
         calls = []
         def generate(**kwargs):
             calls.append(kwargs)

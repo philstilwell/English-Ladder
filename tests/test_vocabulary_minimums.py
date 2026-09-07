@@ -1,4 +1,5 @@
 """Vocabulary minimums are publication requirements, not optional prompt targets."""
+from review_fixtures import approved_review
 import copy
 import json
 import tempfile
@@ -99,7 +100,7 @@ class VocabularyMinimumTests(unittest.TestCase):
     def test_fixed_draft_still_requires_independent_review(self):
         config = update_site.LEVELS[2]; lesson = self.lesson(config)
         short = copy.deepcopy(lesson); short['vocabulary'].pop()
-        responses = iter([short, lesson, {'approved': True, 'issues': []}]); calls = []
+        responses = iter([short, lesson, approved_review()]); calls = []
         def generate(**kwargs):
             calls.append(kwargs)
             return SimpleNamespace(text=json.dumps(next(responses)))

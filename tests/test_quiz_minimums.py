@@ -1,4 +1,5 @@
 """Daily quiz minimums must survive drafting, storage, rebuilding and rendering."""
+from review_fixtures import approved_review
 import copy
 import json
 import tempfile
@@ -103,7 +104,7 @@ class QuizMinimumTests(unittest.TestCase):
     def test_fixed_draft_still_requires_an_independent_editorial_review(self):
         config = update_site.LEVELS[2]; lesson = self.lesson(config)
         short = copy.deepcopy(lesson); short['quiz'].pop()
-        responses = iter([short, lesson, {'approved':True, 'issues':[]}]); calls=[]
+        responses = iter([short, lesson, approved_review()]); calls=[]
         def generate(**kwargs):
             calls.append(kwargs)
             return SimpleNamespace(text=json.dumps(next(responses)))

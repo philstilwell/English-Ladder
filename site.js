@@ -61,7 +61,7 @@
   // Save only an explicit completion flag, shared by a story's feed and permanent URL.
   // Separate keys avoid overwriting completions made in another tab.
   const COMPLETED_PREFIX = 'english-ladder-completed-v1:';
-  const pageCompletions = new Set();
+  const pageCompletionOverrides = new Map();
   const levelNames = {beginner: 'Beginner', intermediate: 'Intermediate', advanced: 'Advanced'};
   const levelColors = {beginner: 'yellow', intermediate: 'green', advanced: 'blue'};
   function validLessonDate(value) {
@@ -79,7 +79,8 @@
     if (news && news[1] !== key) return null;
     return `news/${key}/${currentLevel}.html`;
   }
-  const isCompleted = identity => pageCompletions.has(identity) || read(COMPLETED_PREFIX+identity) === '1';
+  const isCompleted = identity => pageCompletionOverrides.has(identity)
+    ? pageCompletionOverrides.get(identity) : read(COMPLETED_PREFIX+identity) === '1';
   function showCompletionMarks(title, completedLevels) {
     if (!title) return;
     title.querySelector(':scope > .lesson-completion-marks')?.remove();
@@ -101,27 +102,37 @@
     });
     title.prepend(marks);
   }
-  function refreshCompletions() {
+  function refreshCompletions(changedIdentity = null) {
     document.querySelectorAll('.daily-lesson').forEach(lesson => {
       const identity = lessonIdentity(lesson);
       if (!identity) return;
       const done = isCompleted(identity);
-      showCompletionMarks(lesson.querySelector('.lesson-title-group'), done ? [currentLevel] : []);
+      const storyPath = identity.slice(0, identity.lastIndexOf('/')+1);
+      const completedLevels = levels.filter(value => isCompleted(storyPath+value+'.html'));
+      showCompletionMarks(lesson.querySelector('.lesson-title-group'), completedLevels);
       if (!document.body.classList.contains('daily-feed')) {
-        showCompletionMarks(document.querySelector('.reading-heading h1'), done ? [currentLevel] : []);
+        showCompletionMarks(document.querySelector('.reading-heading h1'), completedLevels);
       }
       const finish = lesson.querySelector('[data-finish-lesson]');
       if (finish) {
-        finish.disabled = done;
+        finish.disabled = false;
         finish.textContent = done ? 'Completed ✓' : 'Finish lesson ✓';
+        finish.setAttribute('aria-pressed', String(done));
+        finish.title = done ? 'Mark this level unfinished' : 'Mark this level complete';
       }
       const message = lesson.querySelector('.completion-message');
       if (message) {
-        message.hidden = !done;
+        const saved = !pageCompletionOverrides.has(identity);
+        const justUndone = identity === changedIdentity || !saved;
+        message.hidden = !done && !justUndone;
+        message.dataset.completionState = done ? 'complete' : 'unfinished';
         if (done) {
-          const saved = !pageCompletions.has(identity);
           message.textContent = `Lesson marked complete. Look for the ${levelColors[currentLevel]} circle beside the title. `+
-            (saved ? 'This marker is saved in this browser.' : 'Your browser could not save this marker; it lasts only on this page.');
+            (saved ? 'This marker is saved in this browser. ' : 'Your browser could not save this marker; it lasts only on this page. ')+
+            'Click Completed ✓ to mark this level unfinished.';
+        } else if (justUndone) {
+          message.textContent = `Marked unfinished at ${levelNames[currentLevel]} level. `+
+            (saved ? 'You can click Finish lesson ✓ when you are ready.' : 'Your browser could not save this change; it applies only on this page.');
         }
       }
     });
@@ -136,9 +147,17 @@
     if (!lesson || !document.contains(lesson) || !lesson.matches('.daily-lesson')) return;
     const identity = lessonIdentity(lesson);
     if (!identity) return;
-    if (write(COMPLETED_PREFIX+identity, '1')) pageCompletions.delete(identity);
-    else pageCompletions.add(identity);
-    refreshCompletions();
+    const completed = event.detail.completed;
+    if (typeof completed !== 'boolean') return;
+    let saved = false;
+    try {
+      if (completed) localStorage.setItem(COMPLETED_PREFIX+identity, '1');
+      else localStorage.removeItem(COMPLETED_PREFIX+identity);
+      saved = true;
+    } catch (_) { /* Preserve this page's choice when browser storage is unavailable. */ }
+    if (saved) pageCompletionOverrides.delete(identity);
+    else pageCompletionOverrides.set(identity, completed);
+    refreshCompletions(identity);
   });
   window.addEventListener('storage', event => {
     if (event.key === null || event.key?.startsWith(COMPLETED_PREFIX)) refreshCompletions();

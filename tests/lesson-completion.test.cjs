@@ -56,16 +56,29 @@ function finish(lesson) {
   return button;
 }
 
-function assertBadge(container, level) {
+function assertBadges(container, expectedLevels) {
   const markers = badges(container);
-  assert.equal(markers.length, 1, 'Exactly one completion badge belongs to this title');
-  const marker = markers[0];
-  assert.equal(marker.dataset.completedLevel, level);
-  assert.equal(marker.getAttribute('role'), 'img');
-  assert.equal(marker.getAttribute('aria-label'), `Completed at ${level[0].toUpperCase() + level.slice(1)} level`);
-  const title = container.querySelector('.lesson-title-label, .lesson-title-text, a');
-  assert.ok(title, 'The completion badge accompanies the story title');
-  assert.ok(marker.compareDocumentPosition(title) & 4, 'Completion badge appears before the title');
+  assert.deepEqual(markers.map(marker => marker.dataset.completedLevel), expectedLevels,
+    'Title shows all completed levels once, in Beginner–Intermediate–Advanced order');
+  for (const marker of markers) {
+    const level = marker.dataset.completedLevel;
+    assert.equal(marker.getAttribute('role'), 'img');
+    assert.equal(marker.getAttribute('aria-label'), `Completed at ${level[0].toUpperCase() + level.slice(1)} level`);
+    const title = container.querySelector('.lesson-title-label, .lesson-title-text, a');
+    assert.ok(title, 'The completion badge accompanies the story title');
+    assert.ok(marker.compareDocumentPosition(title) & 4, 'Completion badge appears before the title');
+  }
+}
+
+function assertBadge(container, level) {
+  assertBadges(container, [level]);
+}
+
+function assertButton(lesson, completed) {
+  const button = lesson.querySelector('[data-finish-lesson]');
+  assert.equal(button.disabled, false, 'Completion remains reversible');
+  assert.equal(button.textContent, completed ? 'Completed ✓' : 'Finish lesson ✓');
+  assert.equal(button.getAttribute('aria-pressed'), String(completed));
 }
 
 function archiveTitle(dom, date) {
@@ -82,24 +95,21 @@ test('reading and answering a question do not silently mark a lesson completed',
   lesson.querySelector('[data-bg="#e6ffe6"]').click();
   assert.equal(badges(dom.window.document).length, 0);
   assert.equal(Object.keys(storedValues(dom.window)).some(name => name.startsWith(prefix)), false);
-  assert.equal(lesson.querySelector('[data-finish-lesson]').disabled, false);
+  assertButton(lesson, false);
 });
 
 test('Finish marks the feed title immediately and persists to its permanent lesson and archive', () => {
   const feed = load('beginner.html');
   const lesson = lessonAt(feed);
-  const button = finish(lesson);
-  assert.equal(button.textContent, 'Completed ✓');
-  assert.equal(button.disabled, true);
+  finish(lesson);
+  assertButton(lesson, true);
   assert.equal(lesson.querySelector('.completion-message').hidden, false);
   assertBadge(lesson.querySelector('.lesson-title-group'), 'beginner');
   assert.equal(feed.window.localStorage.getItem(key(dates[0], 'beginner')), '1');
 
   const permanent = load(newsPath(dates[0], 'beginner'), { stored: storedValues(feed.window) });
   assertBadge(permanent.window.document.querySelector('h1'), 'beginner');
-  const restored = lessonAt(permanent).querySelector('[data-finish-lesson]');
-  assert.equal(restored.textContent, 'Completed ✓');
-  assert.equal(restored.disabled, true);
+  assertButton(lessonAt(permanent), true);
   assert.equal(lessonAt(permanent).querySelector('.completion-message').hidden, false);
 
   const archive = load('archive.html', { stored: storedValues(permanent.window) });
@@ -107,21 +117,31 @@ test('Finish marks the feed title immediately and persists to its permanent less
   assert.equal(badges(archiveTitle(archive, dates[1])).length, 0);
 });
 
-test('completion at each level stays isolated from other levels and dates', () => {
+test('all level feeds share a story’s badges while completion buttons remain specific to their level and date', () => {
   let stored = {};
-  for (const level of levels) {
+  for (const [index, level] of levels.entries()) {
     const dom = load(`${level}.html`, { stored });
     const lesson = lessonAt(dom);
-    assert.equal(badges(lesson).length, 0, `Finishing another level does not finish ${level}`);
-    assert.equal(lesson.querySelector('[data-finish-lesson]').disabled, false);
+    assertBadges(lesson.querySelector('.lesson-title-group'), levels.slice(0, index));
+    assertButton(lesson, false);
     finish(lesson);
-    assertBadge(lesson.querySelector('.lesson-title-group'), level);
+    assertBadges(lesson.querySelector('.lesson-title-group'), levels.slice(0, index + 1));
+    assertButton(lesson, true);
     assert.equal(badges(lessonAt(dom, dates[1])).length, 0);
+    assertButton(lessonAt(dom, dates[1]), false);
     stored = storedValues(dom.window);
     assert.equal(stored[key(dates[0], level)], '1');
   }
   assert.deepEqual(Object.keys(stored).filter(name => name.startsWith(prefix)).sort(),
     levels.map(level => key(dates[0], level)).sort());
+  for (const level of levels) {
+    const feed = load(`${level}.html`, { stored });
+    assertBadges(lessonAt(feed).querySelector('.lesson-title-group'), levels);
+    assertButton(lessonAt(feed), true);
+    const permanent = load(newsPath(dates[0], level), { stored });
+    assertBadges(permanent.window.document.querySelector('h1'), levels);
+    assertButton(lessonAt(permanent), true);
+  }
 });
 
 test('archive shows all completed levels in level order regardless of the preferred level', () => {
@@ -129,7 +149,7 @@ test('archive shows all completed levels in level order regardless of the prefer
   stored['english-ladder-level'] = 'advanced';
   const dom = load('archive.html', { stored });
   const title = archiveTitle(dom, dates[0]);
-  assert.deepEqual(badges(title).map(marker => marker.dataset.completedLevel), levels);
+  assertBadges(title, levels);
   assert.match(title.querySelector('a').href, /\/advanced\.html$/);
   for (const marker of badges(title)) assert.ok(marker.compareDocumentPosition(title.querySelector('a')) & 4);
   assert.equal(badges(archiveTitle(dom, dates[1])).length, 0);
@@ -143,26 +163,77 @@ test('finishing a permanent news page restores the same completion in the dated 
   assert.equal(badges(lessonAt(feed, dates[0])).length, 0);
 });
 
-test('evergreen stories use independent story and level identities and restore the visible title', () => {
+test('unmarking and restoring a lesson persists across feed, permalink and archive without changing sibling levels or dates', () => {
+  const stored = Object.fromEntries(levels.map(level => [key(dates[0], level), '1']));
+  stored[key(dates[1], 'intermediate')] = '1';
+  const permanent = load(newsPath(dates[0], 'intermediate'), { stored });
+  const lesson = lessonAt(permanent);
+  assertButton(lesson, true);
+  finish(lesson);
+  assertButton(lesson, false);
+  assertBadges(permanent.window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assert.equal(permanent.window.localStorage.getItem(key(dates[0], 'intermediate')), null);
+  const afterRemoval = storedValues(permanent.window);
+  for (const level of ['beginner', 'advanced']) assert.equal(afterRemoval[key(dates[0], level)], '1');
+  assert.equal(afterRemoval[key(dates[1], 'intermediate')], '1');
+
+  const archive = load('archive.html', { stored: afterRemoval });
+  assertBadges(archiveTitle(archive, dates[0]), ['beginner', 'advanced']);
+  assertBadge(archiveTitle(archive, dates[1]), 'intermediate');
+  const feed = load('intermediate.html', { stored: afterRemoval });
+  assertBadges(lessonAt(feed).querySelector('.lesson-title-group'), ['beginner', 'advanced']);
+  assertButton(lessonAt(feed), false);
+  assertButton(lessonAt(feed, dates[1]), true);
+  finish(lessonAt(feed));
+  assertButton(lessonAt(feed), true);
+  const restored = load(newsPath(dates[0], 'intermediate'), { stored: storedValues(feed.window) });
+  assertBadges(restored.window.document.querySelector('h1'), levels);
+  assertButton(lessonAt(restored), true);
+  const restoredArchive = load('archive.html', { stored: storedValues(feed.window) });
+  assertBadges(archiveTitle(restoredArchive, dates[0]), levels);
+});
+
+test('evergreen headings share level badges only for the same story and keep separate completion buttons', () => {
   const story = load('stories/city-trees/intermediate.html');
   finish(lessonAt(story, 'city-trees'));
   assert.equal(story.window.localStorage.getItem(prefix + 'stories/city-trees/intermediate.html'), '1');
   assertBadge(story.window.document.querySelector('h1'), 'intermediate');
   const stored = storedValues(story.window);
   const reopened = load('stories/city-trees/intermediate.html', { stored });
-  assert.equal(lessonAt(reopened, 'city-trees').querySelector('[data-finish-lesson]').disabled, true);
-  for (const file of ['stories/city-trees/beginner.html', 'stories/food-market/intermediate.html']) {
-    const other = load(file, { stored });
-    assert.equal(badges(other.window.document).length, 0);
-    assert.equal(other.window.document.querySelector('[data-finish-lesson]').disabled, false);
+  assertButton(lessonAt(reopened, 'city-trees'), true);
+  for (const level of ['beginner', 'advanced']) {
+    const other = load(`stories/city-trees/${level}.html`, { stored });
+    assertBadge(other.window.document.querySelector('h1'), 'intermediate');
+    assertButton(lessonAt(other, 'city-trees'), false);
   }
+  const otherStory = load('stories/food-market/intermediate.html', { stored });
+  assert.equal(badges(otherStory.window.document).length, 0);
+  assertButton(lessonAt(otherStory, 'food-market'), false);
+});
+
+test('evergreen completion toggles only the current level of the current story', () => {
+  const stored = Object.fromEntries(levels.map(level => [prefix + `stories/city-trees/${level}.html`, '1']));
+  stored[prefix + 'stories/food-market/beginner.html'] = '1';
+  const story = load('stories/city-trees/beginner.html', { stored });
+  assertBadges(story.window.document.querySelector('h1'), levels);
+  finish(lessonAt(story, 'city-trees'));
+  assertBadges(story.window.document.querySelector('h1'), ['intermediate', 'advanced']);
+  assertButton(lessonAt(story, 'city-trees'), false);
+  assert.equal(story.window.localStorage.getItem(prefix + 'stories/city-trees/beginner.html'), null);
+  const afterRemoval = storedValues(story.window);
+  const sibling = load('stories/city-trees/advanced.html', { stored: afterRemoval });
+  assertBadges(sibling.window.document.querySelector('h1'), ['intermediate', 'advanced']);
+  assertButton(lessonAt(sibling, 'city-trees'), true);
+  const otherStory = load('stories/food-market/beginner.html', { stored: afterRemoval });
+  assertBadge(otherStory.window.document.querySelector('h1'), 'beginner');
+  assertButton(lessonAt(otherStory, 'food-market'), true);
 });
 
 test('malformed completion values cannot mark a lesson as complete', () => {
   for (const value of ['0', 'true', '{"completed":true}', '<img src=x onerror=alert(1)>']) {
     const dom = load(newsPath(dates[0], 'beginner'), { stored: { [key(dates[0], 'beginner')]: value } });
     assert.equal(badges(dom.window.document).length, 0, `Reject malformed stored value ${value}`);
-    assert.equal(dom.window.document.querySelector('[data-finish-lesson]').disabled, false);
+    assertButton(lessonAt(dom), false);
   }
 });
 
@@ -181,14 +252,18 @@ test('invalid dates and a lesson key that disagrees with its permanent URL canno
   }
 });
 
-test('repeated finish clicks and page restores never duplicate completion badges', () => {
+test('repeated completion toggles and page restores never duplicate completion badges', () => {
   const dom = load('intermediate.html');
   const lesson = lessonAt(dom);
   const button = finish(lesson);
   button.click();
+  assert.equal(badges(lesson).length, 0);
+  assertButton(lesson, false);
+  button.click();
   dom.window.dispatchEvent(new dom.window.Event('pageshow'));
   dom.window.dispatchEvent(new dom.window.Event('pageshow'));
   assertBadge(lesson.querySelector('.lesson-title-group'), 'intermediate');
+  assertButton(lesson, true);
   assert.equal(Object.keys(storedValues(dom.window)).filter(name => name.startsWith(prefix)).length, 1);
 });
 
@@ -205,7 +280,14 @@ test('blocked browser storage still marks the current page and explains its temp
   assert.match(lesson.querySelector('.completion-message').textContent, /(?:only|cannot|unavailable|blocked|not saved)/i);
   dom.window.dispatchEvent(new dom.window.Event('pageshow'));
   assertBadge(dom.window.document.querySelector('h1'), 'beginner');
-  assert.equal(lesson.querySelector('[data-finish-lesson]').disabled, true);
+  assertButton(lesson, true);
+  finish(lesson);
+  assert.equal(badges(dom.window.document).length, 0);
+  assertButton(lesson, false);
+  dom.window.dispatchEvent(new dom.window.Event('pageshow'));
+  assert.equal(badges(dom.window.document).length, 0);
+  finish(lesson);
+  assertBadge(dom.window.document.querySelector('h1'), 'beginner');
 });
 
 test('storage quota failure preserves immediate completion without claiming it was saved', () => {
@@ -221,6 +303,46 @@ test('storage quota failure preserves immediate completion without claiming it w
   assert.match(lesson.querySelector('.completion-message').textContent, /(?:this|current) page/i);
   dom.window.dispatchEvent(new dom.window.Event('pageshow'));
   assertBadge(dom.window.document.querySelector('h1'), 'advanced');
+});
+
+test('blocked removal hides only the current level on this page and a later successful retry persists', () => {
+  const stored = Object.fromEntries(levels.map(level => [key(dates[0], level), '1']));
+  let restoreRemoval;
+  const dom = load(newsPath(dates[0], 'intermediate'), {
+    stored,
+    beforeScripts(window) {
+      const removeItem = window.Storage.prototype.removeItem;
+      window.Storage.prototype.removeItem = function () { throw new Error('Removal blocked'); };
+      restoreRemoval = () => { window.Storage.prototype.removeItem = removeItem; };
+    },
+  });
+  const lesson = lessonAt(dom);
+  finish(lesson);
+  assertButton(lesson, false);
+  assertBadges(dom.window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assert.equal(dom.window.localStorage.getItem(key(dates[0], 'intermediate')), '1', 'Failed removal leaves stored data intact');
+  const message = lesson.querySelector('.completion-message');
+  assert.equal(message.hidden, false);
+  assert.match(message.textContent, /(?:this|current) page/i);
+  assert.match(message.textContent, /(?:only|cannot|unavailable|blocked|not saved|could not)/i);
+  dom.window.dispatchEvent(new dom.window.Event('pageshow'));
+  assertBadges(dom.window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assertButton(lesson, false);
+  const separatePage = load(newsPath(dates[0], 'intermediate'), { stored: storedValues(dom.window) });
+  assertBadges(separatePage.window.document.querySelector('h1'), levels);
+  assertButton(lessonAt(separatePage), true);
+
+  restoreRemoval();
+  finish(lesson);
+  assertButton(lesson, true);
+  assertBadges(dom.window.document.querySelector('h1'), levels);
+  finish(lesson);
+  assertButton(lesson, false);
+  assertBadges(dom.window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assert.equal(dom.window.localStorage.getItem(key(dates[0], 'intermediate')), null);
+  const reopened = load(newsPath(dates[0], 'intermediate'), { stored: storedValues(dom.window) });
+  assertBadges(reopened.window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assertButton(lessonAt(reopened), false);
 });
 
 test('cross-tab completion updates read current storage and preserve another completed level', () => {
@@ -241,6 +363,43 @@ test('cross-tab completion updates read current storage and preserve another com
   assert.equal(window.localStorage.getItem(key(dates[0], 'advanced')), null);
 });
 
+test('a completion click honors the visible button state even if another tab changed storage first', () => {
+  const dom = load(newsPath(dates[0], 'beginner'));
+  const lesson = lessonAt(dom);
+  assertButton(lesson, false);
+  // Simulate another tab saving immediately before its storage event reaches this page.
+  dom.window.localStorage.setItem(key(dates[0], 'beginner'), '1');
+  finish(lesson);
+  assertButton(lesson, true);
+  assert.equal(dom.window.localStorage.getItem(key(dates[0], 'beginner')), '1');
+  assertBadge(dom.window.document.querySelector('h1'), 'beginner');
+  dom.window.localStorage.removeItem(key(dates[0], 'beginner'));
+  finish(lesson);
+  assertButton(lesson, false);
+  assert.equal(dom.window.localStorage.getItem(key(dates[0], 'beginner')), null);
+  assert.equal(badges(dom.window.document).length, 0);
+});
+
+test('live storage updates refresh all visible level badges without changing the current level’s completion', () => {
+  const dom = load(newsPath(dates[0], 'intermediate'), { stored: { [key(dates[0], 'beginner')]: '1' } });
+  const { window } = dom;
+  const lesson = lessonAt(dom);
+  assertBadge(window.document.querySelector('h1'), 'beginner');
+  assertButton(lesson, false);
+  window.localStorage.setItem(key(dates[0], 'advanced'), '1');
+  window.dispatchEvent(new window.StorageEvent('storage', { key: key(dates[0], 'advanced'), storageArea: window.localStorage }));
+  assertBadges(window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assertButton(lesson, false);
+  window.localStorage.setItem(key(dates[0], 'intermediate'), '1');
+  window.dispatchEvent(new window.Event('pageshow'));
+  assertBadges(window.document.querySelector('h1'), levels);
+  assertButton(lesson, true);
+  window.localStorage.removeItem(key(dates[0], 'intermediate'));
+  window.dispatchEvent(new window.StorageEvent('storage', { key: key(dates[0], 'intermediate'), storageArea: window.localStorage }));
+  assertBadges(window.document.querySelector('h1'), ['beginner', 'advanced']);
+  assertButton(lesson, false);
+});
+
 test('clearing stored completion removes the indicator and restores the Finish button', () => {
   const dom = load(newsPath(dates[0], 'intermediate'), { stored: { [key(dates[0], 'intermediate')]: '1' } });
   const { window } = dom;
@@ -249,15 +408,14 @@ test('clearing stored completion removes the indicator and restores the Finish b
   window.localStorage.clear();
   window.dispatchEvent(new window.StorageEvent('storage', { key: null, storageArea: window.localStorage }));
   assert.equal(badges(window.document).length, 0);
-  assert.equal(lesson.querySelector('[data-finish-lesson]').textContent, 'Finish lesson ✓');
-  assert.equal(lesson.querySelector('[data-finish-lesson]').disabled, false);
+  assertButton(lesson, false);
   assert.equal(lesson.querySelector('.completion-message').hidden, true);
   finish(lesson);
   assertBadge(window.document.querySelector('h1'), 'intermediate');
   window.localStorage.removeItem(key(dates[0], 'intermediate'));
   window.dispatchEvent(new window.Event('pageshow'));
   assert.equal(badges(window.document).length, 0, 'Returning from browser history rechecks completion');
-  assert.equal(lesson.querySelector('[data-finish-lesson]').disabled, false);
+  assertButton(lesson, false);
 });
 
 test('Finish stores only a completion marker and leaves discussion notes and quiz answers private', () => {

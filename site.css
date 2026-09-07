@@ -1,5 +1,5 @@
 /* Shared controls and readable teaching layouts. English Ladder keeps cobalt. */
-:root { --learning-blue:#2445eb; --learning-ink:#172432; --learning-line:#d4dce5; }
+:root { --learning-blue:#2445eb; --learning-ink:#172432; --learning-line:#d4dce5; --action-padding-block:5px; --action-padding-inline:10px; --action-min-height:40px; }
 [hidden] { display:none !important; }
 html { --masthead-height:120px; scroll-padding-top:calc(var(--masthead-height) + 12px); }
 .site-footer { flex-wrap:wrap; gap:16px 24px; }
@@ -129,10 +129,7 @@ button,a,input,textarea,select,summary { scroll-margin:30px; }
 }
 
 /* One compact, persistent menu keeps the current reading level in view. */
-body { --level-tint:#f7f6f2; }
-body.theme-beginner { --level-tint:#fff8df; }
-body.theme-intermediate { --level-tint:#edf6ef; }
-body.theme-advanced { --level-tint:#eef2ff; }
+body { --level-tint:#fff; }
 .site-masthead { position:sticky; top:0; z-index:60; width:100%; background:var(--level-tint); border-bottom:1px solid #d8dce2; box-shadow:0 2px 8px #20242b08; }
 .site-masthead .site-header { max-width:1200px; margin:0 auto; padding:8px 32px 4px; min-height:56px; gap:12px 24px; border:0; flex-direction:row; align-items:center; }
 .site-masthead .brand { min-height:44px; color:#234deb; font-size:1.125rem; gap:9px; }
@@ -141,7 +138,7 @@ body.theme-advanced { --level-tint:#eef2ff; }
 .site-masthead .site-links a { min-height:44px; padding:5px 0; line-height:1.35; }
 .level-toolbar { max-width:1200px; margin:0 auto; padding:6px 32px 12px; }
 .level-toolbar .story-levels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:600px; margin:0; }
-.level-toolbar .story-levels a { --level-fill:#234deb; --level-ink:#fff; display:flex; align-items:center; justify-content:center; gap:6px; min-width:0; min-height:40px; padding:5px 10px; border:1px solid transparent; border-radius:8px; background:var(--level-fill); color:var(--level-ink); font-size:.875rem; font-weight:600; line-height:1.35; text-align:center; text-decoration:none; }
+.level-toolbar .story-levels a { --level-fill:#234deb; --level-ink:#fff; display:flex; align-items:center; justify-content:center; gap:6px; min-width:0; min-height:var(--action-min-height); padding:var(--action-padding-block) var(--action-padding-inline); border:1px solid transparent; border-radius:8px; background:var(--level-fill); color:var(--level-ink); font-size:.875rem; font-weight:600; line-height:1.35; text-align:center; text-decoration:none; }
 .level-toolbar .story-levels a[data-level-choice="beginner"] { --level-fill:#efca58; --level-ink:#332900; --level-muted-fill:#f0e9cc; --level-muted-ink:#625321; }
 .level-toolbar .story-levels a[data-level-choice="intermediate"] { --level-fill:#236b51; --level-muted-fill:#deebe3; --level-muted-ink:#345d4b; }
 .level-toolbar .story-levels a[data-level-choice="advanced"] { --level-fill:#234deb; --level-muted-fill:#e2e7f7; --level-muted-ink:#435684; }
@@ -155,9 +152,6 @@ body.theme-advanced { --level-tint:#eef2ff; }
 .lesson-completion-mark { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:#234deb; color:#fff; font-size:12px; font-weight:800; line-height:1; letter-spacing:0; }
 .lesson-completion-mark[data-completed-level="beginner"] { background:#efca58; color:#332900; }
 .lesson-completion-mark[data-completed-level="intermediate"] { background:#236b51; }
-@media(pointer:coarse) {
-  .level-toolbar .story-levels a { min-height:44px; }
-}
 .reading-page .page-hero.reading-heading { max-width:100%; padding:22px 0 12px; margin:0; }
 .reading-page .reading-heading h1 { max-width:950px; margin:0 0 8px; font-size:clamp(1.65rem,3.1vw,2.5rem); line-height:1.18; letter-spacing:-.035em; }
 .reading-page .reading-heading>p { margin:6px 0; font-size:.97rem; line-height:1.6; }
@@ -190,7 +184,7 @@ body.theme-advanced { --level-tint:#eef2ff; }
   .site-masthead .site-links a { font-size:.75rem; white-space:nowrap; }
   .level-toolbar { padding:4px 16px 10px; }
   .level-toolbar .story-levels { max-width:none; gap:10px; }
-  .level-toolbar .story-levels a { flex-direction:column; gap:1px; padding:3px 6px; min-height:44px; font-size:.8rem; }
+  .level-toolbar .story-levels a { flex-direction:column; gap:1px; font-size:.8rem; }
   .level-toolbar .level-range { font-size:.73rem; }
   .reading-page .page-hero.reading-heading { padding-top:18px; }
   .reading-page .reading-heading h1 { font-size:1.6rem; }
@@ -209,4 +203,60 @@ body.theme-advanced { --level-tint:#eef2ff; }
   .site-masthead { display:none !important; }
   .reading-page .page-hero.reading-heading { padding-top:0; }
   .reading-page .reading-print-level { display:block; }
+}
+
+/* Text actions share the level menu's spacing, including controls added by JS.
+   Important padding overrides older inline quiz styles and their CSS overrides.
+   Content cards, disclosure panels, images and inline word definitions retain
+   their own layout rather than being treated as text action buttons. */
+body[class] :is(
+  button,
+  input[type="button"], input[type="submit"], input[type="reset"],
+  [role="button"],
+  a:is(.primary-link, .primary-button, .secondary-button, .work-button,
+    .work-text-button, .tool-button, .grammar-cta, .grammar-download-link,
+    .efsp-tool-button, .efsp-download-link, .efsp-card-link,
+    .efsp-student-pdf-link, .hub-resource-link, .resource-link),
+  .story-levels > a, .news-levels > a, .work-jump > a,
+  .tools-jump-grid > a, .us-life-jump-grid > a, .grammar-page-links > a,
+  .efsp-related-links > a, .work-related > a, .seo-category-links > a,
+  .level-option > input + span,
+  .grammar-choice, .work-quiz label
+):not(.word-button, .image-lightbox-backdrop, .grammar-image-trigger, .grammar-thumb) {
+  box-sizing:border-box;
+  padding:var(--action-padding-block) var(--action-padding-inline) !important;
+  min-height:var(--action-min-height);
+}
+.level-option > input + span { display:flex; align-items:center; justify-content:center; }
+.work-text-button { display:inline-flex; align-items:center; justify-content:center; }
+.completion-message[data-completion-state="unfinished"] { color:#43536b; background:#edf0f5; }
+@media(max-width:700px) {
+  :root { --action-padding-block:3px; --action-padding-inline:6px; --action-min-height:44px; }
+}
+@media(pointer:coarse) {
+  :root { --action-min-height:44px; }
+}
+
+/* Filled lesson actions follow the open page's level. Quiz answer feedback and
+   the three independent level choices keep their own meaningful colors. */
+.reading-page { --lesson-action-fill:#234deb; --lesson-action-ink:#fff; --lesson-action-border:#234deb; }
+.reading-page.theme-beginner { --lesson-action-fill:#efca58; --lesson-action-ink:#332900; --lesson-action-border:#80651c; }
+.reading-page.theme-intermediate { --lesson-action-fill:#236b51; --lesson-action-ink:#fff; --lesson-action-border:#236b51; }
+.reading-page.theme-advanced { --lesson-action-fill:#234deb; --lesson-action-ink:#fff; --lesson-action-border:#234deb; }
+.reading-page :is(.primary-button, .primary-link, .ai-copy,
+  .learning-flow button[aria-current="step"], .word-button[aria-expanded="true"]) {
+  background:var(--lesson-action-fill);
+  color:var(--lesson-action-ink);
+  border-color:var(--lesson-action-border);
+}
+.reading-page :is(.primary-button, .primary-link, .ai-copy,
+  .learning-flow button[aria-current="step"], .word-button[aria-expanded="true"]):hover:not(:disabled) {
+  background:var(--lesson-action-fill);
+  color:var(--lesson-action-ink);
+  box-shadow:inset 0 0 0 1px currentColor;
+}
+.reading-page :is(.primary-button, .primary-link, .ai-copy,
+  .learning-flow button[aria-current="step"], .word-button[aria-expanded="true"]):focus-visible {
+  outline:3px solid #20242b;
+  outline-offset:3px;
 }

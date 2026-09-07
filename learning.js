@@ -62,21 +62,28 @@
       next.type = "button";
       next.className = "primary-button";
       next.textContent = ["Check your understanding →", "Discuss the story →", "Finish lesson ✓"][index];
-      if (index === 2) next.dataset.finishLesson = "";
+      if (index === 2) {
+        next.dataset.finishLesson = "";
+        next.setAttribute("aria-pressed", "false");
+      }
       next.addEventListener("click", () => {
         if (index < 2) showStage(index + 1, true);
         else {
           const message = panel.querySelector(".completion-message");
+          const completed = next.getAttribute("aria-pressed") !== "true";
           message.hidden = false;
-          next.textContent = "Completed ✓";
-          next.disabled = true;
-          window.dispatchEvent(new CustomEvent("lesson-practiced", { detail: { lesson } }));
-          if (!panel.querySelector(".next-study")) {
+          message.textContent = completed ? "Lesson marked complete." : "Lesson marked unfinished.";
+          message.dataset.completionState = completed ? "complete" : "unfinished";
+          next.textContent = completed ? "Completed ✓" : "Finish lesson ✓";
+          next.setAttribute("aria-pressed", String(completed));
+          window.dispatchEvent(new CustomEvent("lesson-practiced", { detail: { lesson, completed } }));
+          if (completed && !panel.querySelector(".next-study")) {
             const link = document.createElement("a"); link.className = "next-study text-link";
             const root = new URL(document.querySelector("script[src*=\"site.js\"]")?.src || "site.js", location.href);
             link.href = new URL("archive.html", root).href; link.textContent = "Choose another story →";
             panel.append(link);
           }
+          if (!completed) panel.querySelector(".next-study")?.remove();
         }
       });
       actions.append(next);

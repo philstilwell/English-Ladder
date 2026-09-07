@@ -45,14 +45,14 @@ def audit():
                 doc=documents.get(target)
                 if doc is not None and not doc.find(id=unquote(url.fragment)):failures.append(f'{path.name}: missing fragment {value}')
     from grammar_curriculum import load_curriculum
-    from update_site import validate_lesson_data,validate_reading_length,normalize_text,LEVELS
+    from update_site import validate_lesson_data,validate_daily_minimums,normalize_text,LEVELS
     from news_quality import validate_evidence
     load_curriculum()
     for path in sorted((ROOT/'archive/lessons').glob('*.json')):
         data=json.loads(path.read_text())
         for config in LEVELS:
             level=config['name'].lower();lesson=data['levels'][level]['lesson']
-            failures.extend(f'{path.name}/{level}: {issue}' for issue in validate_reading_length(lesson.get('news_brief_sentences'),config))
+            failures.extend(f'{path.name}/{level}: {issue}' for issue in validate_daily_minimums(lesson,config))
             expected=' '.join(normalize_text(sentence) for sentence in lesson['news_brief_sentences']).split()
             # Check the visible reading itself, so lost/truncated HTML cannot pass
             # just because the JSON source has enough sentences.
@@ -68,6 +68,11 @@ def audit():
                     reading=node.select_one('.section > p')
                 if reading is None or reading.get_text().split()!=expected:
                     failures.append(f'{page.relative_to(ROOT)}: {data["release_date"]} reading does not match its checked sentence data')
+                vocabulary=node.select_one('.vocab-box')
+                expected_vocabulary=' '.join(f'{i}. {normalize_text(item["term"])} ({normalize_text(item["part_of_speech"])}): {normalize_text(item["definition"])}' for i,item in enumerate(lesson['vocabulary'],1))
+                if (vocabulary is None or len(vocabulary.select('.vocab-term'))!=len(lesson['vocabulary'])
+                        or vocabulary.get_text(' ',strip=True).split()!=expected_vocabulary.split()):
+                    failures.append(f'{page.relative_to(ROOT)}: {data["release_date"]} vocabulary does not match its checked items')
         if not data.get('editorial_review') and not all(v['lesson'].get('editorial_check') for v in data['levels'].values()):continue
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']

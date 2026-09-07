@@ -4,6 +4,7 @@ import html
 import json
 import os
 import re
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
@@ -49,7 +50,7 @@ LEVELS = [
         "cefr": "A1-A2",
         "header_label": "Beginner ESL",
         "min_sentence_count": 6,
-        "vocabulary_count": 5,
+        "min_vocabulary_count": 6,
         "quiz_count": 10,
         "overview_instruction": "Write the overview in one short and simple sentence.",
         "difficulty_instruction": (
@@ -62,7 +63,7 @@ LEVELS = [
             "vocabulary, short clauses, and direct meaning for CEFR A1-A2 learners."
         ),
         "vocabulary_instruction": (
-            "Choose 3-5 useful words or short phrases that already appear in the "
+            "Choose at least 6 distinct useful words or short phrases that already appear in the "
             "News Brief exactly as written, define them in very simple English, and "
             "make sure those same terms appear naturally in the News Brief."
         ),
@@ -86,7 +87,7 @@ LEVELS = [
         "cefr": "B1-B2",
         "header_label": "Intermediate ESL",
         "min_sentence_count": 8,
-        "vocabulary_count": 5,
+        "min_vocabulary_count": 8,
         "quiz_count": 10,
         "overview_instruction": "Write the overview in one clear sentence.",
         "difficulty_instruction": (
@@ -98,7 +99,7 @@ LEVELS = [
             "detail, but keep the meaning easy to follow."
         ),
         "vocabulary_instruction": (
-            "Choose 3-5 helpful words or phrases that already appear in the News "
+            "Choose at least 8 distinct helpful words or phrases that already appear in the News "
             "Brief exactly as written, and define them in clear everyday English for "
             "intermediate learners. Make sure those same terms appear naturally in "
             "the News Brief."
@@ -123,7 +124,7 @@ LEVELS = [
         "cefr": "C1-Higher",
         "header_label": "Advanced ESL",
         "min_sentence_count": 10,
-        "vocabulary_count": 5,
+        "min_vocabulary_count": 10,
         "quiz_count": 10,
         "overview_instruction": "Write the overview in one polished sentence.",
         "difficulty_instruction": (
@@ -134,9 +135,9 @@ LEVELS = [
             "Write at least 10 complete, distinct sentences in natural, precise English. Develop the story with supported detail, not repetition."
         ),
         "vocabulary_instruction": (
-            "Choose 3-5 advanced terms or phrases that already appear in the News "
+            "Choose at least 10 distinct advanced terms or phrases that already appear in the News "
             "Brief exactly as written, define them precisely, and make sure those same "
-            "5 terms appear naturally in the News Brief."
+            "terms appear naturally in the News Brief."
         ),
         "grammar_label": "Advanced Grammar",
         "grammar_instruction": (
@@ -284,8 +285,7 @@ def build_response_schema(level):
             },
             "vocabulary": {
                 "type": "array",
-                "minItems": 3,
-                "maxItems": level["vocabulary_count"],
+                "minItems": level["min_vocabulary_count"],
                 "items": {
                     "type": "object",
                     "additionalProperties": False,
@@ -372,7 +372,7 @@ Important requirements:
 10. Every quiz question must be highly relevant to the News Brief, the vocabulary list, or the grammar explanation in this same lesson.
 11. Do not use generic questions that could fit a different lesson.
 12. The {level["name"]} reading MUST contain at least {level["min_sentence_count"]} complete, distinct sentences. This minimum is mandatory, not a target or suggestion. Put exactly one sentence in each news_brief_sentences entry. Titles, overviews, captions, questions, fragments, and repeated or lightly rephrased sentences do not count. Use additional supported details to reach the minimum.
-13. Choose 3-5 useful vocabulary terms. Keep definitions at the learner’s level.
+13. The vocabulary list MUST contain at least {level["min_vocabulary_count"]} distinct, useful items. Each must appear in the reading as a complete word or phrase and include its word class and a clear definition for its meaning here. Blank entries, duplicates, repeated forms used as padding, and words found only in titles or questions do not count. Keep definitions at the learner’s level. This minimum is mandatory; expand the reading with supported content if needed, never weaken the minimum.
 14. Each quiz item must have exactly 3 options, 1 correct_option_index, and 3 aligned option_feedback strings.
 15. Keep the lesson factually grounded in the supplied headline, summary, and article evidence.
 16. {level["quiz_instruction"]}
@@ -446,6 +446,67 @@ def validate_reading_length(sentences, level):
     if len(seen) < minimum:
         issues.append(f"{level['name']} News Brief has {len(seen)} usable sentence entries; at least {minimum} are required.")
     return issues
+
+
+def vocabulary_term_key(term):
+    """Ignore presentation differences when detecting duplicate vocabulary."""
+    text = unicodedata.normalize("NFKC", normalize_text(term)).casefold()
+    return re.sub(r"[\W_]+", " ", text).strip()
+
+
+def vocabulary_term_in_reading(term, reading):
+    def text_form(value):
+        text = unicodedata.normalize("NFKC", normalize_text(value)).casefold()
+        text = text.translate(str.maketrans({'’': "'", '‘': "'", '“': '"', '”': '"', '–': '-', '—': '-', '‑': '-'}))
+        # Quotation marks can surround a term without changing its meaning.
+        # Keep apostrophes inside words, and keep sentence/clause punctuation.
+        return re.sub(r"(?<!\w)['\"]|['\"](?!\w)", "", text)
+    key = text_form(term)
+    # Boundaries prevent 'aid' inside 'said'; preserved punctuation prevents a
+    # supposed phrase from spanning 'traffic. Teams' or 'traffic, teams'.
+    return bool(vocabulary_term_key(term) and re.search(r"(?<!\w)" + re.escape(key) + r"(?!\w)", text_form(reading)))
+
+
+def validate_vocabulary_items(lesson, level):
+    """Only complete, distinct entries actually found in the reading count."""
+    minimum = level["min_vocabulary_count"]
+    items = lesson.get("vocabulary")
+    if not isinstance(items, list):
+        return [f"{level['name']} vocabulary must contain at least {minimum} complete, distinct items."]
+    sentences = lesson.get("news_brief_sentences", [])
+    reading = " ".join(sentence for sentence in sentences if isinstance(sentence, str)) if isinstance(sentences, list) else ""
+    issues = []; seen = set(); valid = set()
+    for number, item in enumerate(items, 1):
+        if not isinstance(item, dict) or any(not isinstance(item.get(field), str) or not item[field].strip()
+                                            for field in ("term", "part_of_speech", "definition")):
+            issues.append(f"Vocabulary item {number} must include a non-empty term, word class, and definition as text.")
+            continue
+        term, word_class, definition = (normalize_text(item[field]) for field in ("term", "part_of_speech", "definition"))
+        key = vocabulary_term_key(term)
+        if (not re.search(r"[a-z]", key) or not re.search(r"[a-z]", word_class, re.I)
+                or len(word_class) < 2 or len(definition) < 6 or not vocabulary_term_key(definition)
+                or vocabulary_term_key(definition) == key
+                or any(contains_markup(value) for value in (term, word_class, definition))):
+            issues.append(f"Vocabulary item {number} needs a usable term, word class, and explanatory definition in plain text.")
+            continue
+        if key in seen:
+            issues.append(f"Vocabulary term '{term}' is duplicated; repeated items cannot satisfy the minimum.")
+            continue
+        seen.add(key)
+        if not vocabulary_term_in_reading(term, reading):
+            issues.append(f"Vocabulary term '{term}' must appear as a complete word or phrase in the News Brief.")
+            continue
+        valid.add(key)
+    if len(valid) < minimum:
+        issues.append(f"{level['name']} vocabulary has {len(valid)} valid, distinct items; at least {minimum} are required.")
+    return issues
+
+
+def validate_daily_minimums(lesson, level):
+    if not isinstance(lesson, dict):
+        return [f"{level['name']} daily lesson is missing or invalid."]
+    return [*validate_reading_length(lesson.get("news_brief_sentences"), level),
+            *validate_vocabulary_items(lesson, level)]
 
 
 def strip_markup(text):
@@ -795,36 +856,7 @@ def validate_lesson_data(lesson_data, level):
             issues.append("Every News Brief sentence must end with normal sentence punctuation.")
 
     brief_text = " ".join(normalized_sentences)
-    normalized_brief = normalize_for_match(brief_text)
-
-    vocabulary = lesson_data.get("vocabulary")
-    if not isinstance(vocabulary, list) or not 3 <= len(vocabulary) <= level["vocabulary_count"]:
-        issues.append(
-            f"The vocabulary section must contain 3 to {level['vocabulary_count']} terms."
-        )
-        vocabulary = []
-
-    vocab_terms = []
-    seen_terms = set()
-    for item in vocabulary:
-        if not isinstance(item, dict):
-            issues.append("Each vocabulary entry must be an object.")
-            continue
-        term = normalize_text(str(item.get("term", "")))
-        part_of_speech = normalize_text(str(item.get("part_of_speech", "")))
-        definition = normalize_text(str(item.get("definition", "")))
-        if not term or not part_of_speech or not definition:
-            issues.append("Each vocabulary entry must include a term, part_of_speech, and definition.")
-            continue
-        normalized_term = normalize_for_match(term)
-        if normalized_term in seen_terms:
-            issues.append("Vocabulary terms must be unique.")
-        seen_terms.add(normalized_term)
-        vocab_terms.append(term)
-        if normalized_term and normalized_term not in normalized_brief:
-            issues.append(
-                f"The vocabulary term '{term}' must appear in the News Brief exactly as written."
-            )
+    issues.extend(validate_vocabulary_items(lesson_data, level))
 
     grammar = lesson_data.get("grammar")
     if not isinstance(grammar, dict):
@@ -1084,9 +1116,9 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
         lesson_data = level_lessons.get(level_key)
         if lesson_data is None:
             raise ValueError(f"Missing archive data for {level['name']} lesson.")
-        issues = validate_reading_length(lesson_data.get("news_brief_sentences"), level)
+        issues = validate_daily_minimums(lesson_data, level)
         if issues:
-            raise ValueError("Refusing to archive a short or invalid reading: " + "; ".join(issues))
+            raise ValueError("Refusing to archive an incomplete or invalid daily lesson: " + "; ".join(issues))
         archived_levels[level_key] = {
             "name": level["name"],
             "cefr": level["cefr"],
@@ -1124,17 +1156,16 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
     return archive_path
 
 
-def require_archive_reading_lengths(archive_dir=ARCHIVE_DIR):
-    """Stop every rebuild before page writes if any daily edition is too short."""
+def require_archive_lesson_minimums(archive_dir=ARCHIVE_DIR):
+    """Stop rebuilds before page writes unless every daily edition meets both minimums."""
     issues = []
     for path in sorted(Path(archive_dir).glob("*.json")):
         data = json.loads(path.read_text())
         for level in LEVELS:
             lesson = data.get("levels", {}).get(level["name"].lower(), {}).get("lesson", {})
-            issues.extend(f"{path.name}: {issue}" for issue in validate_reading_length(
-                lesson.get("news_brief_sentences") if isinstance(lesson, dict) else None, level))
+            issues.extend(f"{path.name}: {issue}" for issue in validate_daily_minimums(lesson, level))
     if issues:
-        raise ValueError("Daily reading length check failed; nothing can be published:\n" + "\n".join(issues))
+        raise ValueError("Daily lesson minimums check failed; nothing can be published:\n" + "\n".join(issues))
 
 
 def update_level_page(file_path, new_lesson_html, default_release_dt=None):
@@ -1219,7 +1250,7 @@ def parse_args():
 def main():
     args = parse_args()
     if args.refresh_feature:
-        require_archive_reading_lengths()
+        require_archive_lesson_minimums()
         from daily_images import latest_lesson, ensure_daily_image
         archive_path, _ = latest_lesson()
         if archive_path:
@@ -1242,7 +1273,7 @@ def main():
         release_dt = datetime.now(timezone.utc)
 
     if args.skip_existing and archive_exists_for_release_dt(release_dt):
-        require_archive_reading_lengths()
+        require_archive_lesson_minimums()
         archive_path = archive_path_for_release_dt(release_dt)
         print(f"Archive {archive_path} already exists; checking its illustration without regenerating lessons.")
         from daily_images import ensure_daily_image

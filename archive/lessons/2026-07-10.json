@@ -56,6 +56,11 @@
             "term": "sad",
             "part_of_speech": "adjective",
             "definition": "Feeling unhappy or showing sorrow."
+          },
+          {
+            "term": "victims",
+            "part_of_speech": "noun",
+            "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "ongoing crisis",
             "part_of_speech": "noun phrase",
             "definition": "A serious and difficult situation or period of danger that is currently happening and continuing."
+          },
+          {
+            "term": "wildfire",
+            "part_of_speech": "noun",
+            "definition": "A large, uncontrolled fire in a natural area like a forest."
+          },
+          {
+            "term": "dead",
+            "part_of_speech": "adjective",
+            "definition": "Not alive anymore; passed away."
+          },
+          {
+            "term": "missing",
+            "part_of_speech": "adjective",
+            "definition": "Not found; people do not know where they are."
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "grim milestone",
             "part_of_speech": "noun phrase",
             "definition": "A significant and often unwelcome event or point in time that serves as a marker of a serious or tragic development."
+          },
+          {
+            "term": "missing",
+            "part_of_speech": "adjective",
+            "definition": "Not found; people do not know where they are."
+          },
+          {
+            "term": "underscores",
+            "part_of_speech": "verb",
+            "definition": "Emphasizes or highlights the importance or truth of something, drawing attention to it."
+          },
+          {
+            "term": "sheer scale",
+            "part_of_speech": "noun phrase",
+            "definition": "The immense or extensive size, degree, or magnitude of something, emphasizing its overwhelming nature."
+          },
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "A careful look to find facts and reasons about something."
+          },
+          {
+            "term": "region",
+            "part_of_speech": "noun",
+            "definition": "an area of a country or of the world"
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.872064+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

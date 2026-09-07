@@ -56,6 +56,11 @@
             "term": "latest",
             "part_of_speech": "adjective",
             "definition": "The newest or most recent one."
+          },
+          {
+            "term": "killed",
+            "part_of_speech": "verb",
+            "definition": "caused a person or animal to die"
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "killed",
             "part_of_speech": "verb",
             "definition": "To cause the death of a person or animal, often in violent situations such as conflict."
+          },
+          {
+            "term": "latest",
+            "part_of_speech": "adjective",
+            "definition": "The newest or most recent one."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Military attacks, often from the air or with missiles, aimed at a target."
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "prevailing tensions",
             "part_of_speech": "noun phrase",
             "definition": "The current, widespread, and dominant state of strained relations or profound unease within a particular situation or geographical region."
+          },
+          {
+            "term": "targets",
+            "part_of_speech": "noun",
+            "definition": "Places or things chosen to be attacked."
+          },
+          {
+            "term": "intensified",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Made or become more extreme, severe, or stronger; often referring to efforts, operations, or phenomena."
+          },
+          {
+            "term": "volatile",
+            "part_of_speech": "adjective",
+            "definition": "Liable to change rapidly and unpredictably, especially for the worse; characterized by rapid and extreme changes."
+          },
+          {
+            "term": "geopolitical",
+            "part_of_speech": "adjective",
+            "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Singled out or directed at a specific object, person, or area, often with hostile intent or as an objective."
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.868967+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

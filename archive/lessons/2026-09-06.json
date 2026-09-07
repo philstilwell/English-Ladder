@@ -51,6 +51,21 @@
             "term": "routes",
             "part_of_speech": "plural noun",
             "definition": "the ways used to travel from one place to another"
+          },
+          {
+            "term": "pilots",
+            "part_of_speech": "plural noun",
+            "definition": "people who fly aircraft"
+          },
+          {
+            "term": "passengers",
+            "part_of_speech": "plural noun",
+            "definition": "people travelling in a vehicle who are not driving or flying it"
+          },
+          {
+            "term": "unexpected",
+            "part_of_speech": "adjective",
+            "definition": "not thought likely to happen"
           }
         ],
         "grammar": {
@@ -164,6 +179,31 @@
             "term": "routes",
             "part_of_speech": "plural noun",
             "definition": "the ways used to travel from one place to another"
+          },
+          {
+            "term": "severe",
+            "part_of_speech": "adjective",
+            "definition": "very strong or serious, often causing problems"
+          },
+          {
+            "term": "departures",
+            "part_of_speech": "plural noun",
+            "definition": "flights or journeys that leave a place"
+          },
+          {
+            "term": "congested",
+            "part_of_speech": "adjective",
+            "definition": "too crowded for traffic to move easily"
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "plural noun",
+            "definition": "buildings, equipment or services provided for a purpose"
+          },
+          {
+            "term": "forecasts",
+            "part_of_speech": "plural noun",
+            "definition": "statements about what is likely to happen in the future"
           }
         ],
         "grammar": {
@@ -281,6 +321,41 @@
             "term": "routes",
             "part_of_speech": "plural noun",
             "definition": "the ways used to travel from one place to another"
+          },
+          {
+            "term": "aviation",
+            "part_of_speech": "noun",
+            "definition": "the activity and industry of flying aircraft"
+          },
+          {
+            "term": "extensive",
+            "part_of_speech": "adjective",
+            "definition": "covering a large area or affecting many things"
+          },
+          {
+            "term": "usable",
+            "part_of_speech": "adjective",
+            "definition": "available or suitable for a particular purpose"
+          },
+          {
+            "term": "congestion",
+            "part_of_speech": "noun",
+            "definition": "crowding that slows or obstructs movement"
+          },
+          {
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
+          },
+          {
+            "term": "fuel consumption",
+            "part_of_speech": "noun phrase",
+            "definition": "the amount of fuel used during an activity"
+          },
+          {
+            "term": "operating costs",
+            "part_of_speech": "noun phrase",
+            "definition": "the expenses required to keep a business or service running"
           }
         ],
         "grammar": {
@@ -372,5 +447,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.993579+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

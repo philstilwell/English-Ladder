@@ -50,6 +50,21 @@
             "term": "never",
             "part_of_speech": "adverb",
             "definition": "not at any time"
+          },
+          {
+            "term": "border",
+            "part_of_speech": "noun",
+            "definition": "the line between two countries"
+          },
+          {
+            "term": "offer",
+            "part_of_speech": "verb",
+            "definition": "say that someone can have something"
+          },
+          {
+            "term": "earn",
+            "part_of_speech": "verb",
+            "definition": "get money for work that you do"
           }
         ],
         "grammar": {
@@ -163,6 +178,31 @@
             "term": "never",
             "part_of_speech": "adverb",
             "definition": "not at any time"
+          },
+          {
+            "term": "aid agencies",
+            "part_of_speech": "noun phrase",
+            "definition": "organisations that provide help to people in need"
+          },
+          {
+            "term": "shelters",
+            "part_of_speech": "plural noun",
+            "definition": "places that provide temporary protection or somewhere to stay"
+          },
+          {
+            "term": "accommodation",
+            "part_of_speech": "noun",
+            "definition": "a place where someone can stay or live"
+          },
+          {
+            "term": "by choice",
+            "part_of_speech": "adverbial phrase",
+            "definition": "because someone decides freely to do something"
+          },
+          {
+            "term": "dignity",
+            "part_of_speech": "noun",
+            "definition": "the worth and respect that every person deserves"
           }
         ],
         "grammar": {
@@ -280,6 +320,41 @@
             "term": "never",
             "part_of_speech": "adverb",
             "definition": "not at any time"
+          },
+          {
+            "term": "expulsions",
+            "part_of_speech": "plural noun",
+            "definition": "acts of officially forcing people to leave a country or place"
+          },
+          {
+            "term": "undocumented",
+            "part_of_speech": "adjective",
+            "definition": "without the official documents required for residence or entry"
+          },
+          {
+            "term": "registered",
+            "part_of_speech": "adjective",
+            "definition": "officially recorded on a list or in a system"
+          },
+          {
+            "term": "temporary",
+            "part_of_speech": "adjective",
+            "definition": "intended to last for a limited time"
+          },
+          {
+            "term": "refuge",
+            "part_of_speech": "noun",
+            "definition": "shelter or protection from danger or hardship"
+          },
+          {
+            "term": "earn a living",
+            "part_of_speech": "verb phrase",
+            "definition": "make enough money through work to support everyday life"
+          },
+          {
+            "term": "voluntary",
+            "part_of_speech": "adjective",
+            "definition": "done by free choice rather than through force"
           }
         ],
         "grammar": {
@@ -371,5 +446,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.985487+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

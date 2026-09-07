@@ -50,6 +50,21 @@
             "term": "waiting",
             "part_of_speech": "verb",
             "definition": "staying until something happens"
+          },
+          {
+            "term": "tunnels",
+            "part_of_speech": "plural noun",
+            "definition": "long passages under the ground"
+          },
+          {
+            "term": "explosives",
+            "part_of_speech": "plural noun",
+            "definition": "materials that can burst with great force"
+          },
+          {
+            "term": "engineers",
+            "part_of_speech": "plural noun",
+            "definition": "people who plan and build machines or structures"
           }
         ],
         "grammar": {
@@ -163,6 +178,31 @@
             "term": "waiting",
             "part_of_speech": "verb",
             "definition": "staying until something happens"
+          },
+          {
+            "term": "hydropower",
+            "part_of_speech": "noun",
+            "definition": "electricity produced using the movement of water"
+          },
+          {
+            "term": "explosives",
+            "part_of_speech": "plural noun",
+            "definition": "materials used to create a powerful blast"
+          },
+          {
+            "term": "pumping",
+            "part_of_speech": "verb",
+            "definition": "moving air or liquid with a machine"
+          },
+          {
+            "term": "withdrew",
+            "part_of_speech": "verb",
+            "definition": "moved back or left a place"
+          },
+          {
+            "term": "relatives",
+            "part_of_speech": "plural noun",
+            "definition": "people who belong to the same family"
           }
         ],
         "grammar": {
@@ -280,6 +320,41 @@
             "term": "waiting",
             "part_of_speech": "verb",
             "definition": "staying until something happens"
+          },
+          {
+            "term": "hydropower",
+            "part_of_speech": "noun",
+            "definition": "electricity generated from the movement of water"
+          },
+          {
+            "term": "extensive",
+            "part_of_speech": "adjective",
+            "definition": "covering a large area or involving many parts"
+          },
+          {
+            "term": "resorted to",
+            "part_of_speech": "verb phrase",
+            "definition": "used an option because other approaches were insufficient or difficult"
+          },
+          {
+            "term": "penetrate",
+            "part_of_speech": "verb",
+            "definition": "pass or break through something"
+          },
+          {
+            "term": "personnel",
+            "part_of_speech": "plural noun",
+            "definition": "people employed by an organisation or serving in its forces"
+          },
+          {
+            "term": "withdrew",
+            "part_of_speech": "verb",
+            "definition": "moved back from a place or stopped participating"
+          },
+          {
+            "term": "accelerate",
+            "part_of_speech": "verb",
+            "definition": "make an activity or process happen faster"
           }
         ],
         "grammar": {
@@ -371,5 +446,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.983811+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

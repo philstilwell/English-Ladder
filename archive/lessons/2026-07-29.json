@@ -56,6 +56,11 @@
             "term": "alert",
             "part_of_speech": "adjective",
             "definition": "Watching and ready for danger or something important."
+          },
+          {
+            "term": "magnitude",
+            "part_of_speech": "noun",
+            "definition": "A measure of the size or power of an earthquake."
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "seismic",
             "part_of_speech": "adjective",
             "definition": "Relating to or caused by earthquakes or other vibrations of the Earth's crust."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People in important positions, often in the government."
+          },
+          {
+            "term": "alert",
+            "part_of_speech": "adjective",
+            "definition": "Watching and ready for danger or something important."
+          },
+          {
+            "term": "critical",
+            "part_of_speech": "adjective",
+            "definition": "very important, especially at a difficult or dangerous time"
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "tumultuous",
             "part_of_speech": "adjective",
             "definition": "Marked by disturbance and disorder; characterized by confusion, commotion, or uproar; often refers to a period of time."
+          },
+          {
+            "term": "earthquake",
+            "part_of_speech": "noun",
+            "definition": "A sudden strong shaking of the ground."
+          },
+          {
+            "term": "aftershocks",
+            "part_of_speech": "noun",
+            "definition": "Smaller earthquakes that happen after a big one."
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "noun",
+            "definition": "People in important positions, often in the government."
+          },
+          {
+            "term": "magnitude",
+            "part_of_speech": "noun",
+            "definition": "A measure of the size or power of an earthquake."
+          },
+          {
+            "term": "seismic",
+            "part_of_speech": "adjective",
+            "definition": "Relating to or caused by earthquakes or other vibrations of the Earth's crust."
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.912666+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

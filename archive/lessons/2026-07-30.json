@@ -56,6 +56,11 @@
             "term": "paused",
             "part_of_speech": "verb (past tense)",
             "definition": "Stopped for a short time, then started again."
+          },
+          {
+            "term": "launched",
+            "part_of_speech": "verb",
+            "definition": "To start or set in motion something, often a large-scale project or an attack."
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "hostilities were paused",
             "part_of_speech": "phrase",
             "definition": "The fighting or aggressive actions between two groups stopped temporarily."
+          },
+          {
+            "term": "attack",
+            "part_of_speech": "noun",
+            "definition": "When someone tries to hurt another person or country."
+          },
+          {
+            "term": "troops",
+            "part_of_speech": "noun",
+            "definition": "Groups of soldiers working together."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "heighten tensions",
             "part_of_speech": "verb phrase",
             "definition": "To increase or intensify feelings of strain, animosity, or disagreement, especially in a political or international context, leading to a more precarious situation."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "Sudden strong attacks, often by military planes or missiles."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
+          },
+          {
+            "term": "volatile",
+            "part_of_speech": "adjective",
+            "definition": "Liable to change rapidly and unpredictably, especially for the worse; characterized by rapid and extreme changes."
+          },
+          {
+            "term": "geopolitical",
+            "part_of_speech": "adjective",
+            "definition": "Relating to politics, especially international relations, as influenced by geographical factors."
+          },
+          {
+            "term": "Amidst",
+            "part_of_speech": "Preposition",
+            "definition": "In the middle of or surrounded by; in the atmosphere or a state of."
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.914846+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

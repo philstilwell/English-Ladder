@@ -92,7 +92,7 @@ class ReadingLengthTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             (Path(directory)/'2026-09-06.json').write_text(json.dumps(data))
             with self.assertRaisesRegex(ValueError, 'Intermediate.*at least 8'):
-                update_site.require_archive_reading_lengths(directory)
+                update_site.require_archive_lesson_minimums(directory)
 
     def test_one_failed_level_prevents_the_whole_daily_edition_from_being_saved(self):
         args = SimpleNamespace(refresh_feature=False, refresh_pages=False,

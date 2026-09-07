@@ -61,8 +61,8 @@ def enhance_page(soup,path,prefix):
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page
-    from update_site import render_lesson_html,render_lesson_title,LEVELS as CONFIG,release_datetime_from_date,require_archive_reading_lengths
-    require_archive_reading_lengths(ROOT/'archive/lessons')
+    from update_site import render_lesson_html,render_lesson_title,LEVELS as CONFIG,release_datetime_from_date,require_archive_lesson_minimums
+    require_archive_lesson_minimums(ROOT/'archive/lessons')
     cards=[];compact={}
     paths=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)
     for path in paths:
@@ -120,8 +120,8 @@ def publish_quality_pages():
 
 def rebuild_news_levels():
     """Rebuild rolling pages from archived data using the current renderer."""
-    from update_site import render_lesson_html, LEVELS as CONFIG, LESSON_LIMIT, release_datetime_from_date,require_archive_reading_lengths
-    require_archive_reading_lengths(ROOT/'archive/lessons')
+    from update_site import render_lesson_html, LEVELS as CONFIG, LESSON_LIMIT, release_datetime_from_date,require_archive_lesson_minimums
+    require_archive_lesson_minimums(ROOT/'archive/lessons')
     archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)[:LESSON_LIMIT]
     if not archives:return
     for config in CONFIG:

@@ -50,6 +50,21 @@
             "term": "accused",
             "part_of_speech": "verb",
             "definition": "said to have done something wrong"
+          },
+          {
+            "term": "drone",
+            "part_of_speech": "noun",
+            "definition": "an aircraft that flies without a pilot inside"
+          },
+          {
+            "term": "recklessly",
+            "part_of_speech": "adverb",
+            "definition": "without enough care for safety or danger"
+          },
+          {
+            "term": "pressure",
+            "part_of_speech": "noun",
+            "definition": "strong efforts to make someone change what they do"
           }
         ],
         "grammar": {
@@ -163,6 +178,31 @@
             "term": "accused",
             "part_of_speech": "verb",
             "definition": "said to have done something wrong"
+          },
+          {
+            "term": "denies",
+            "part_of_speech": "verb",
+            "definition": "says that a claim is not true"
+          },
+          {
+            "term": "cargo",
+            "part_of_speech": "noun",
+            "definition": "goods transported by an aircraft, ship or vehicle"
+          },
+          {
+            "term": "hub",
+            "part_of_speech": "noun",
+            "definition": "a central place where transport or other activities connect"
+          },
+          {
+            "term": "sanctions",
+            "part_of_speech": "plural noun",
+            "definition": "official restrictions used to put pressure on a country, organisation or person"
+          },
+          {
+            "term": "restrictions",
+            "part_of_speech": "plural noun",
+            "definition": "rules that limit what people can do"
           }
         ],
         "grammar": {
@@ -280,6 +320,41 @@
             "term": "accused",
             "part_of_speech": "verb",
             "definition": "said to have done something wrong"
+          },
+          {
+            "term": "allegation",
+            "part_of_speech": "noun",
+            "definition": "a claim of wrongdoing that is being reported or disputed"
+          },
+          {
+            "term": "cargo aircraft",
+            "part_of_speech": "noun phrase",
+            "definition": "a plane used to transport goods"
+          },
+          {
+            "term": "vowed",
+            "part_of_speech": "verb",
+            "definition": "made a firm or serious promise"
+          },
+          {
+            "term": "affirmed",
+            "part_of_speech": "verb",
+            "definition": "stated or confirmed something clearly"
+          },
+          {
+            "term": "consulate",
+            "part_of_speech": "noun",
+            "definition": "an office representing a country and assisting its citizens abroad"
+          },
+          {
+            "term": "enforcement",
+            "part_of_speech": "noun",
+            "definition": "the process of making sure rules or laws are followed"
+          },
+          {
+            "term": "sanctions",
+            "part_of_speech": "plural noun",
+            "definition": "official restrictions used to put pressure on a country, organisation or person"
           }
         ],
         "grammar": {
@@ -371,5 +446,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.987056+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

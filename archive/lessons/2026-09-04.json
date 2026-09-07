@@ -50,6 +50,21 @@
             "term": "suspect",
             "part_of_speech": "noun",
             "definition": "a person or party thought to be responsible"
+          },
+          {
+            "term": "officials",
+            "part_of_speech": "plural noun",
+            "definition": "people with responsible jobs in a government or organisation"
+          },
+          {
+            "term": "claim",
+            "part_of_speech": "noun",
+            "definition": "a statement that someone says is true"
+          },
+          {
+            "term": "accidents",
+            "part_of_speech": "plural noun",
+            "definition": "harmful events that happen without being planned"
           }
         ],
         "grammar": {
@@ -163,6 +178,31 @@
             "term": "suspect",
             "part_of_speech": "noun",
             "definition": "a person or party thought to be responsible"
+          },
+          {
+            "term": "defence sites",
+            "part_of_speech": "noun phrase",
+            "definition": "places used for military protection or related activities"
+          },
+          {
+            "term": "drones",
+            "part_of_speech": "plural noun",
+            "definition": "aircraft that fly without pilots on board"
+          },
+          {
+            "term": "supplies",
+            "part_of_speech": "plural noun",
+            "definition": "materials or equipment needed for an activity"
+          },
+          {
+            "term": "reject",
+            "part_of_speech": "verb",
+            "definition": "refuse to accept an idea, claim or proposal"
+          },
+          {
+            "term": "accidental",
+            "part_of_speech": "adjective",
+            "definition": "happening by chance rather than through a deliberate action"
           }
         ],
         "grammar": {
@@ -280,6 +320,41 @@
             "term": "suspect",
             "part_of_speech": "noun",
             "definition": "a person or party thought to be responsible"
+          },
+          {
+            "term": "sabotage",
+            "part_of_speech": "noun",
+            "definition": "deliberate damage intended to disrupt an activity or organisation"
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "plural noun",
+            "definition": "buildings or equipment provided for particular activities"
+          },
+          {
+            "term": "accusation",
+            "part_of_speech": "noun",
+            "definition": "a statement that someone has done something wrong"
+          },
+          {
+            "term": "ultimately",
+            "part_of_speech": "adverb",
+            "definition": "finally, after other events or considerations"
+          },
+          {
+            "term": "manufacturer",
+            "part_of_speech": "noun",
+            "definition": "a person or business that makes products"
+          },
+          {
+            "term": "vulnerabilities",
+            "part_of_speech": "plural noun",
+            "definition": "weaknesses that could allow harm or disruption"
+          },
+          {
+            "term": "assess",
+            "part_of_speech": "verb",
+            "definition": "carefully judge or evaluate something"
           }
         ],
         "grammar": {
@@ -371,5 +446,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.990350+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

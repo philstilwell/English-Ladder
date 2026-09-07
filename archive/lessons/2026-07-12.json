@@ -56,6 +56,11 @@
             "term": "closes",
             "part_of_speech": "verb",
             "definition": "shuts something, so nothing can go through."
+          },
+          {
+            "term": "critical",
+            "part_of_speech": "adjective",
+            "definition": "very important, especially at a difficult or dangerous time"
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "escalate",
             "part_of_speech": "verb",
             "definition": "To increase rapidly in intensity, severity, or magnitude."
+          },
+          {
+            "term": "waterway",
+            "part_of_speech": "noun",
+            "definition": "a path over water where ships can travel."
+          },
+          {
+            "term": "conflict",
+            "part_of_speech": "noun",
+            "definition": "A serious disagreement or argument, often involving prolonged fighting or hostility between groups or nations."
+          },
+          {
+            "term": "Strait of Hormuz",
+            "part_of_speech": "noun phrase",
+            "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "regional instability",
             "part_of_speech": "noun phrase",
             "definition": "A widespread state of unrest, unpredictability, and insecurity within a specific geographic area, often characterized by political turmoil and conflict."
+          },
+          {
+            "term": "strikes",
+            "part_of_speech": "noun",
+            "definition": "attacks, usually by military planes or missiles."
+          },
+          {
+            "term": "vessel",
+            "part_of_speech": "noun",
+            "definition": "a ship or large boat"
+          },
+          {
+            "term": "precarious situation",
+            "part_of_speech": "noun phrase",
+            "definition": "A situation that is not safely or securely held in place; uncertain, unstable, or potentially dangerous, lacking security or stability."
+          },
+          {
+            "term": "escalation",
+            "part_of_speech": "noun",
+            "definition": "A rapid increase in intensity, seriousness, or scope, often referring to conflicts or crises."
+          },
+          {
+            "term": "retaliatory",
+            "part_of_speech": "adjective",
+            "definition": "Pertaining to or characterized by an action taken in return for an injury or offense, often involving aggression."
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.876284+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

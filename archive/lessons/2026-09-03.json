@@ -50,6 +50,21 @@
             "term": "disruption",
             "part_of_speech": "noun",
             "definition": "a problem that stops normal activity"
+          },
+          {
+            "term": "natural",
+            "part_of_speech": "adjective",
+            "definition": "existing or happening in nature"
+          },
+          {
+            "term": "weather",
+            "part_of_speech": "noun",
+            "definition": "conditions such as rain, heat and wind"
+          },
+          {
+            "term": "improving",
+            "part_of_speech": "verb",
+            "definition": "making something better"
           }
         ],
         "grammar": {
@@ -163,6 +178,31 @@
             "term": "disruption",
             "part_of_speech": "noun",
             "definition": "a problem that stops normal activity"
+          },
+          {
+            "term": "release",
+            "part_of_speech": "verb",
+            "definition": "let something move out or become available"
+          },
+          {
+            "term": "conditions",
+            "part_of_speech": "plural noun",
+            "definition": "the circumstances or physical state in a place"
+          },
+          {
+            "term": "strengthening",
+            "part_of_speech": "verb",
+            "definition": "making something stronger or more effective"
+          },
+          {
+            "term": "forecasts",
+            "part_of_speech": "plural noun",
+            "definition": "statements about what is likely to happen, especially to the weather"
+          },
+          {
+            "term": "global warming",
+            "part_of_speech": "noun phrase",
+            "definition": "the long-term rise in average temperatures around the world"
           }
         ],
         "grammar": {
@@ -280,6 +320,41 @@
             "term": "disruption",
             "part_of_speech": "noun",
             "definition": "a problem that stops normal activity"
+          },
+          {
+            "term": "exceptionally",
+            "part_of_speech": "adverb",
+            "definition": "to an unusual or very high degree"
+          },
+          {
+            "term": "phenomenon",
+            "part_of_speech": "noun",
+            "definition": "an event or process that can be observed"
+          },
+          {
+            "term": "originates",
+            "part_of_speech": "verb",
+            "definition": "begins or comes from a particular place"
+          },
+          {
+            "term": "atmosphere",
+            "part_of_speech": "noun",
+            "definition": "the layer of gases surrounding the Earth"
+          },
+          {
+            "term": "substantial",
+            "part_of_speech": "adjective",
+            "definition": "large in amount, size or importance"
+          },
+          {
+            "term": "exposed to",
+            "part_of_speech": "verb phrase",
+            "definition": "in a position where something harmful may affect someone or something"
+          },
+          {
+            "term": "fisheries",
+            "part_of_speech": "plural noun",
+            "definition": "areas or businesses where fish are caught or raised"
           }
         ],
         "grammar": {
@@ -371,5 +446,14 @@
       "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
       "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
     }
-  ]
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.988789+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  }
 }

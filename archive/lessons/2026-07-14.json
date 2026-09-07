@@ -56,6 +56,11 @@
             "term": "survivors",
             "part_of_speech": "noun",
             "definition": "People who live through a dangerous event, such as a fire or accident."
+          },
+          {
+            "term": "died",
+            "part_of_speech": "verb, past tense of die",
+            "definition": "Stopped living."
           }
         ],
         "grammar": {
@@ -252,6 +257,21 @@
             "term": "flammable",
             "part_of_speech": "adjective",
             "definition": "Easily set on fire and capable of burning rapidly."
+          },
+          {
+            "term": "locked",
+            "part_of_speech": "adjective",
+            "definition": "Closed with a key or lock, so you cannot open it."
+          },
+          {
+            "term": "emergency exits",
+            "part_of_speech": "noun phrase",
+            "definition": "Special doors or ways to leave a place quickly when there is danger, like a fire."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who live through a dangerous event, such as a fire or accident."
           }
         ],
         "grammar": {
@@ -448,6 +468,31 @@
             "term": "culpability",
             "part_of_speech": "noun",
             "definition": "Responsibility for a fault or wrong; the state of being blameworthy or deserving of reproach for an action or omission."
+          },
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "A careful look to find facts and reasons about something."
+          },
+          {
+            "term": "locked",
+            "part_of_speech": "adjective",
+            "definition": "Closed with a key or lock, so you cannot open it."
+          },
+          {
+            "term": "survivors",
+            "part_of_speech": "noun",
+            "definition": "People who live through a dangerous event, such as a fire or accident."
+          },
+          {
+            "term": "fatalities",
+            "part_of_speech": "noun",
+            "definition": "Deaths caused by an accident, disaster, or violence."
+          },
+          {
+            "term": "signage",
+            "part_of_speech": "noun",
+            "definition": "Signs, especially public signs, used for display or guidance."
           }
         ],
         "grammar": {
@@ -598,6 +643,15 @@
           }
         ]
       }
+    }
+  },
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.880323+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
     }
   }
 }

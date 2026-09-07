@@ -32,6 +32,11 @@ def build_valid_lesson_data(title="Market Visit"):
             {"term": "guide", "part_of_speech": "noun", "definition": "a person who shows others around a place"},
             {"term": "prices", "part_of_speech": "noun", "definition": "the amounts of money needed to buy things"},
             {"term": "vendor", "part_of_speech": "noun", "definition": "a person who sells something"},
+            {"term": "visitors", "part_of_speech": "plural noun", "definition": "people who come to see a place"},
+            {"term": "bread", "part_of_speech": "noun", "definition": "a food baked from flour and water"},
+            {"term": "fruit", "part_of_speech": "noun", "definition": "the part of a plant eaten for its sweet or sour flesh"},
+            {"term": "compared", "part_of_speech": "verb", "definition": "looked for differences and similarities"},
+            {"term": "friendly", "part_of_speech": "adjective", "definition": "kind and pleasant to other people"},
         ],
         "grammar": {
             "concept": "Comparatives",

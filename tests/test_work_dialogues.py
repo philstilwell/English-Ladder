@@ -45,7 +45,8 @@ class DialoguePublicationTests(unittest.TestCase):
                 soup=BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(),'html.parser')
                 self.assertIsNotNone(soup.select_one('script[src*="site.js"]'))
                 self.assertIsNotNone(soup.select_one('link[rel="canonical"]'))
-                self.assertIsNotNone(soup.select_one('.site-footer a[href="continue.html"]'))
+                self.assertIsNone(soup.select_one('.site-footer a[href="continue.html"]'))
+                self.assertIsNotNone(soup.select_one('.site-footer a[href="archive.html"]'))
                 self.assertIn('complete workplace dialogues',soup.select('.work-download')[2].get_text())
 
     def test_technical_regressions(self):

@@ -47,13 +47,20 @@ test('completion waits for all four correct choices and a changed answer updates
  qs[3].querySelector('[data-choice-correct="true"]').click();assert.equal(complete.disabled,false);assert.match(doc.querySelector('[data-choice-progress]').textContent,/4 of 4 correct/);
  qs[0].querySelector('[data-choice-correct="false"]').click();assert.equal(complete.disabled,true);assert.match(doc.querySelector('[data-choice-progress]').textContent,/3 of 4 correct/);
 });
-test('selections are saved only after opt-in, restore with matching feedback, and ignore old text answers',()=>{
- const d=load();const doc=d.window.document;const q=doc.querySelector('[data-choice-question]');choice(q,'will').click();assert.equal(d.window.localStorage.getItem(key),null);
- doc.querySelector('[data-save-study]').click();const raw=d.window.localStorage.getItem(key);const data=JSON.parse(raw);assert.equal(Object.keys(data.choices).length,1);
- const next=load(35,raw);const restored=next.window.document.querySelector('[data-choice-question]');assert.equal(choice(restored,'will').checked,true);assert.match(restored.querySelector('.choice-feedback').textContent,/^Not quite/);
- data.choices={};data.drafts={'/grammar-concepts/concept-35.html:grammar-35-1':'will'};
- const old=load(35,JSON.stringify(data));assert.equal(old.window.document.querySelector('input[type="radio"]:checked'),null);assert.equal(old.window.document.querySelector('textarea'),null);
- doc.querySelector('[data-save-study]').click();assert.equal(d.window.localStorage.getItem(key),null);assert.equal(choice(q,'will').checked,true);
+test('grammar choices are page-only even when a previous saved record is present',()=>{
+ const d=load();const doc=d.window.document;const q=doc.querySelector('[data-choice-question]');
+ choice(q,'will').click();assert.equal(d.window.localStorage.getItem(key),null);
+ assert.equal(doc.querySelector('[data-save-study]'),null);
+ const choices=Object.fromEntries([...doc.querySelectorAll('[data-choice-question]')].map(question=>[
+  d.window.location.pathname+':'+question.dataset.studyChoice,question.querySelector('[data-choice-correct="true"]').value
+ ]));
+ const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{},choices});
+ const next=load(35,raw);const nextDoc=next.window.document;
+ assert.equal(nextDoc.querySelector('input[type="radio"]:checked'),null);assert.equal(nextDoc.querySelector('[data-complete-study]').disabled,true);
+ assert.ok([...nextDoc.querySelectorAll('.choice-feedback')].every(feedback=>feedback.hidden));
+ choice(nextDoc.querySelector('[data-choice-question]'),'could').click();
+ assert.match(nextDoc.querySelector('[data-choice-progress]').textContent,/1 of 4 correct/);
+ assert.equal(next.window.localStorage.getItem(key),raw);
 });
 test('unknown saved options cannot create a correct answer or unlock completion',()=>{
  const d=load();const doc=d.window.document;const q=doc.querySelector('[data-choice-question]');

@@ -173,8 +173,9 @@ def enhance_page(soup, path, prefix):
                 append(tool, 'ai-tool-' + key, [prompt(mode, context)])
 
     if path.name == 'continue.html':
-        dashboard = soup.select_one('[data-learning-dashboard]')
-        append(dashboard, 'ai-review', [prompt('review', {'study_level': 'A2-B1', 'grammar_focus': 'Making polite requests and asking for clarification', 'expressions': ['Could you say that again, please?', 'Do you mean the morning or the afternoon?', 'Could we meet on Friday?'], 'scope': 'This starter uses published examples, not my saved words or private notes.'})])
+        review = soup.select_one('[data-review-practice]')
+        if review:
+            append(review, 'ai-review', [prompt('review', {'study_level': 'A2-B1', 'grammar_focus': 'Making polite requests and asking for clarification', 'expressions': ['Could you say that again, please?', 'Do you mean the morning or the afternoon?', 'Could we meet on Friday?'], 'scope': 'This starter uses only the published examples supplied here.'})])
 
     footer = soup.select_one('.site-footer')
     if footer and not footer.find('a', href=prefix+'ai-practice.html'):
@@ -195,7 +196,7 @@ def build_library():
         ('English for Work', 'efsp.html', 'Every workplace case has vocabulary, grammar, dialogue, and message extensions.'),
         ('Everyday English', 'us-life.html', 'Practice the words and conversations in all 24 daily-life units.'),
         ('Study tools', 'tools.html', 'Extend sentence work, pronunciation, tone, and reading skills.'),
-        ('Review', 'continue.html', 'Return to what you learned and try a guided retrieval session.')]
+        ('Review', 'continue.html', 'Review polite requests and clarification with a guided AI practice session.')]
     cards = ''.join(f'<article class="library-card"><h2><a href="{href}">{label}</a></h2><p>{description}</p></article>' for label, href, description in links)
     body = f'''<section class="page-hero"><p class="eyebrow">A next step for every lesson</p><h1>Take your English further with AI</h1><p>Ready for another example, a new conversation, or a fresh challenge? Use a carefully written prompt that carries your lesson into the AI you prefer.</p></section><section class="reading-width"><h2>Three simple steps</h2><ol><li>Finish an activity, then open <strong>Extend this lesson with AI</strong>.</li><li>Choose a focus. Read the prompt if you like, then select <strong>Copy prompt</strong>.</li><li>Paste it into your chosen AI and follow the guided activity. Grammar checks use A, B, or C; workplace prompts also support original conversation and writing practice.</li></ol><p>The prompts ask for focused explanations, staged practice, and feedback tied to your response. They preserve the lesson's meaning and ask the AI to distinguish a genuine mistake from another natural way of saying something.</p><p>{NOTICE}</p><p>You can use the lessons without AI. If copying is unavailable, open the prompt and select its text manually. The PDF guides also include a complete prompt and a link to their lesson extensions.</p></section><section><h2>Find prompts in your curriculum</h2><div class="library-grid">{cards}</div></section>'''
     path = ROOT/'ai-practice.html'

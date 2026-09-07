@@ -17,8 +17,8 @@ def audit():
         if len(ids)!=len(set(ids)):failures.append(f'{path.name}: duplicate page identifier')
         for image in s.find_all('img'):
             if not image.has_attr('alt'):failures.append(f'{path.name}: image lacks alternative text')
-        for textarea in s.select('.discussion textarea'):
-            if not textarea.has_attr('data-study-draft'):failures.append(f'{path.name}: lesson notes lack the shared saving control')
+        if s.select('[data-save-study],[data-study-controls],[data-learning-dashboard],.save-word'):
+            failures.append(f'{path.name}: retired browser-learning controls remain')
         for owner in s.select('.work-module,.us-life-module,.tool-panel,.daily-lesson'):
             if not owner.select_one('[data-ai-extension],[data-ai-preset]'):failures.append(f'{path.name}: a learning activity has no AI extension')
         for button in s.select('[data-ai-copy-text]'):

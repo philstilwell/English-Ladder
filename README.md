@@ -12,9 +12,9 @@ Discover features the latest complete daily news lesson, its actual publication 
 
 ## Guided lessons
 
-`learning.js` adds Read → Practice → Discuss steps, vocabulary definitions that open when selected, quiz progress, and a completion message. Each lesson starts with a prediction question. Optional discussion notes remain on the current page unless the learner enables browser saving. `site.js` then keeps notes, recent lessons, and selected vocabulary on that device only. `continue.html` provides review, export, and recoverable clearing. No writing is transmitted or automatically graded. Without JavaScript, all reading, vocabulary, questions, and discussion prompts remain visible.
+`learning.js` adds Read → Practice → Discuss steps, vocabulary definitions that open when selected, quiz progress, and a completion message. Each lesson starts with a prediction question. Discussion notes and grammar selections remain on the current page. The general browser-saving feature and its saved-word/history controls have been removed; `site.js` no longer reads or writes those learning records. `continue.html` provides a guided review activity with a complete AI prompt. Work courses retain their separate optional draft-saving controls. No writing is transmitted or automatically graded. Without JavaScript, all reading, vocabulary, questions, and discussion prompts remain visible.
 
-`editorial.py` builds the homepage and six curated lesson pages, and applies shared navigation, design, and accessible labels to the library. `site_quality.py` builds permanent news pages, the searchable archive, About, Privacy, My learning, a 404 page, search metadata, and the sitemap. The daily and library generators call these helpers so later updates retain the redesign. `story_lessons.py` contains the curated lesson content and source references.
+`editorial.py` builds the homepage and six curated lesson pages, and applies shared navigation, design, and accessible labels to the library. `site_quality.py` builds permanent news pages, the searchable archive, About, Privacy, guided review, a 404 page, search metadata, and the sitemap. The daily and library generators call these helpers so later updates retain the redesign. `story_lessons.py` contains the curated lesson content and source references.
 
 To rebuild without paid calls:
 
@@ -121,7 +121,7 @@ To create the first daily feature image (or recover a missing latest image) with
 
 ## Optional AI practice extensions
 
-`ai-practice.html` explains how to use the prompt extensions available throughout the curriculum. Each grammar lesson, workplace case and glossary, daily or evergreen reading, everyday-life unit, and study tool includes copyable prompts. My learning also provides a retrieval-practice starter. The 252 grammar and workplace PDF guides include complete prompts matched to their teaching purpose and direct links to the corresponding web extensions.
+`ai-practice.html` explains how to use the prompt extensions available throughout the curriculum. Each grammar lesson, workplace case and glossary, daily or evergreen reading, everyday-life unit, and study tool includes copyable prompts. The guided review page also provides a retrieval-practice starter. The 252 grammar and workplace PDF guides include complete prompts matched to their teaching purpose and direct links to the corresponding web extensions.
 
 `ai_extensions.py` contains the authored teaching instructions and builds the prompts from the published lesson context. It runs locally without calling an AI service. `site_quality.py` applies these extensions during publication, including scheduled daily lessons. Rebuilding replaces old prompt blocks rather than retaining outdated context. `ai-practice.js` copies the selected visible prompt and offers manual text selection if clipboard access fails; it never reads drafts, recordings, saved answers, or account information.
 
@@ -166,7 +166,7 @@ node cloudflare/verify.cjs https://englishladder.philstilwell.workers.dev
 node cloudflare/verify.cjs https://englishladder.com
 ```
 
-Preview addresses carry `X-Robots-Tag: noindex, nofollow`. The public domain keeps its authored indexing policy. Missing pages return a real 404; browser caches revalidate files so lessons and scripts stay current. Learner progress stays in the same browser storage on the same public domain. `deployment.json` lists only the deployed source revision and public-file fingerprints.
+Preview addresses carry `X-Robots-Tag: noindex, nofollow`. The public domain keeps its authored indexing policy. Missing pages return a real 404; browser caches revalidate files so lessons and scripts stay current. Optional work-course drafts stay in the same browser storage on the same public domain. `deployment.json` lists only the deployed source revision and public-file fingerprints.
 
 Cloudflare retains previous Worker versions for rollback. Keep the existing GitHub Pages deployment available during domain migration; the previous Namecheap DNS points to GitHub's four apex A addresses (`185.199.108.153` through `185.199.111.153`) and `www` points to `philstilwell.github.io`. Check the intended origin before restoring DNS.
 
@@ -194,9 +194,9 @@ The practice text tools provide contextual suggestions and edited sample compari
 
 ### Grammar answers are multiple choice
 
-All 44 grammar lessons now use four multiple-choice activities each (176 in total). Every option has its own explanation; selecting an incorrect option cannot display generic model feedback as if the written answer had been checked. There are no grammar text-answer fields, including in the application activity. Completion requires all four current selections to be correct. Optional browser saving restores selected options and their feedback, keyed to the question contents so an edited question cannot inherit a stale answer. Old written drafts are not used for grading.
+All 44 grammar lessons now use four multiple-choice activities each (176 in total). Every option has its own explanation; selecting an incorrect option cannot display generic model feedback as if the written answer had been checked. There are no grammar text-answer fields, including in the application activity. Completion requires all four current selections to be correct. Answers and feedback apply to the current page only; previous browser records are not restored or used for grading.
 
-The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and saved-choice restoration.
+The 88 corresponding PDFs use the same choices and answer keys. Keep questions, options, correctness flags, and feedback together in `content/grammar-curriculum.json`; the loader and site audit reject missing or ambiguous answer-key structures. Editorial review is still needed to ensure only one offered choice fits the actual language and context. `tests/grammar-choices.test.cjs` covers the reported could/will case, attempts versus successful results, all 528 choice interactions, completion, and fresh attempts without restoring or saving choices.
 
 ## Search publishing and complete work prompts
 

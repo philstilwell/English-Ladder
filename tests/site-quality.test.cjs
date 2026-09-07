@@ -33,30 +33,40 @@ test('grammar topic search and level filter work together',()=>{
  assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,1);
  const select=doc.querySelector('[data-library-level]');select.value='A1';change(d,select);assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,0);assert.equal(doc.querySelector('[data-library-empty]').hidden,false);
 });
-test('drafts are optional, restore when opted in, and remain on page after saving is disabled',()=>{
- const d=load('news/2026-09-06/beginner.html');const doc=d.window.document;const note=doc.querySelector('[data-study-draft]');
- note.value='I saved time by booking online.';note.dispatchEvent(new d.window.Event('input'));assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);
- const toggle=doc.querySelector('[data-save-study]');toggle.click();
- const raw=d.window.localStorage.getItem('english-ladder-study-v1');assert.match(raw,/booking online/);
- const next=load('news/2026-09-06/beginner.html',{stored:{'english-ladder-study-v1':raw}});assert.equal(next.window.document.querySelector('[data-study-draft]').value,note.value);
- toggle.click();assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);assert.equal(note.value,'I saved time by booking online.');
+test('news notes work on the current page without saving or restoring old drafts',()=>{
+ const key='english-ladder-study-v1';
+ const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{'/news/2026-09-06/beginner.html:notes-2026-09-06':'An old saved draft'}});
+ const d=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});const doc=d.window.document;const note=doc.querySelector('.discussion textarea');
+ assert.equal(note.value,'');note.value='I saved time by booking online.';note.dispatchEvent(new d.window.Event('input'));
+ assert.equal(note.value,'I saved time by booking online.');assert.equal(d.window.localStorage.getItem(key),raw);
+ assert.match(doc.querySelector('.note-hint').textContent,/not saved when you leave/);
+ assert.equal(doc.querySelector('[data-save-study],[data-study-controls]'),null);
+ const next=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});
+ assert.equal(next.window.document.querySelector('.discussion textarea').value,'');
 });
-test('saved-word review uses the selected word and its own definition',()=>{
- const d=load('beginner.html',{stored:{'english-ladder-study-v1':JSON.stringify({enabled:true,history:[],words:[],drafts:{}})}});const doc=d.window.document;doc.querySelector('.save-word').click();
- const data=JSON.parse(d.window.localStorage.getItem('english-ladder-study-v1'));assert.equal(data.words.length,1);assert.ok(!/^\d/.test(data.words[0].term));assert.ok(data.words[0].definition.length>5);assert.doesNotMatch(data.words[0].definition,/Save word/);
+test('vocabulary definitions still open without saved-word controls or a learning record',()=>{
+ const d=load('beginner.html',{scripts:['learning.js','site.js']});const doc=d.window.document;
+ const term=doc.querySelector('.word-button');term.click();
+ assert.equal(term.getAttribute('aria-expanded'),'true');assert.equal(doc.querySelector('.save-word'),null);
+ assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);
 });
-test('daily lesson notes follow the learner into the permanent archive page',()=>{
- const d=load('beginner.html');const doc=d.window.document;
- doc.querySelector('[data-save-study]').click();
- const note=doc.querySelector('[data-study-draft]');note.value='While I wait, I can read.';note.dispatchEvent(new d.window.Event('input'));
- const date=note.closest('.daily-lesson').dataset.lessonKey;
- const raw=d.window.localStorage.getItem('english-ladder-study-v1');
- const next=load(`news/${date}/beginner.html`,{stored:{'english-ladder-study-v1':raw}});
- assert.equal(next.window.document.querySelector('[data-study-draft]').value,note.value);
+test('the former learning dashboard provides review practice without saved personal data',()=>{
+ const raw=JSON.stringify({enabled:true,history:[{url:'/grammar-concepts/concept-05.html',title:'PRIVATE_SAVED_LESSON'}],words:[{term:'PRIVATE_SAVED_WORD',definition:'private'}],drafts:{}});
+ const d=load('continue.html',{stored:{'english-ladder-study-v1':raw}});const doc=d.window.document;
+ assert.equal(doc.querySelector('h1').textContent,'Review your English');
+ assert.equal(doc.querySelector('[data-learning-dashboard],[data-save-study],[data-export-study],[data-clear-study]'),null);
+ assert.doesNotMatch(doc.body.textContent,/PRIVATE_SAVED|My learning|Turn on saving/);
+ assert.match(doc.querySelector('#ai-review .ai-prompt-text').textContent,/Could you say that again, please/);
+ assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),raw);
 });
-test('clearing saved learning has an undo action',()=>{
- const raw=JSON.stringify({enabled:true,history:[{url:'/grammar-concepts/concept-05.html',title:'By and through'}],words:[],drafts:{}});
- const d=load('continue.html',{stored:{'english-ladder-study-v1':raw}});const doc=d.window.document;doc.querySelector('[data-clear-study]').click();assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);doc.querySelector('[data-undo-study]').click();assert.match(d.window.localStorage.getItem('english-ladder-study-v1'),/By and through/);
+test('grammar feedback and completion work when browser storage is unavailable',()=>{
+ const d=load('grammar-concepts/concept-35.html',{scripts:[]});const w=d.window;const doc=w.document;
+ Object.defineProperty(w,'localStorage',{get(){throw new Error('Storage is blocked');}});
+ w.eval(fs.readFileSync(path.join(root,'site.js'),'utf8'));
+ doc.querySelectorAll('[data-choice-correct="true"]').forEach(input=>input.click());
+ const complete=doc.querySelector('[data-complete-study]');assert.equal(complete.disabled,false);complete.click();
+ assert.equal(complete.textContent,'Practiced ✓');assert.match(doc.querySelector('[data-study-status]').textContent,/Practiced on this page/);
+ assert.doesNotMatch(doc.querySelector('[data-study-status]').textContent,/Turn on|saving/);
 });
 test('a partial diagnostic does not imply proficiency or recommend a higher level',()=>{
  const d=load('tools.html',{scripts:['tools.js']});d.window.document.dispatchEvent(new d.window.Event('DOMContentLoaded'));

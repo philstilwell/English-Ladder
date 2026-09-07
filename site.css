@@ -260,3 +260,25 @@ body[class] :is(
   outline:3px solid #20242b;
   outline-offset:3px;
 }
+
+/* A complete reading palette: pale surfaces and readable accent text accompany
+   the level's filled controls. The shared white masthead stays outside it. */
+.reading-page { --lesson-tint:#eef2ff; --lesson-ink:#193cc2; --lesson-line:#cad5fa; }
+.reading-page.theme-beginner { --lesson-tint:#fff7db; --lesson-ink:#705514; --lesson-line:#decb89; }
+.reading-page.theme-intermediate { --lesson-tint:#edf6ef; --lesson-ink:#225b43; --lesson-line:#c5decd; }
+.reading-page.theme-advanced { --lesson-tint:#eef2ff; --lesson-ink:#193cc2; --lesson-line:#cad5fa; }
+.reading-page main { --accent:var(--lesson-ink); --accent-strong:var(--lesson-ink); --surface-alt:var(--lesson-tint); --learning-line:var(--lesson-line); }
+.reading-page .learning-flow { background:var(--lesson-tint); }
+.reading-page .prediction { background:var(--lesson-tint); border-left-color:var(--lesson-action-fill); }
+.reading-page .prediction h3 { color:var(--lesson-ink); }
+.reading-page .word-button:not([aria-expanded="true"]) { background:var(--lesson-tint); color:var(--lesson-ink); border-bottom-color:var(--lesson-ink); }
+.reading-page .word-definition { background:var(--lesson-tint); color:var(--lesson-ink); }
+.reading-page .vocab-box { background:var(--lesson-tint); border-color:var(--lesson-line); }
+.reading-page .vocab-term { color:var(--lesson-ink); }
+.reading-page :is(.quiz-card, .discussion, .ai-prompt-card) { border-color:var(--lesson-line); }
+.reading-page :is(.ai-extension, .ai-prompt-text) { background:var(--lesson-tint); border-color:var(--lesson-line); }
+.reading-page :is(.ai-extension > summary, .ai-prompt-preview > summary, .ai-copy-status) { color:var(--lesson-ink); }
+.reading-page .completion-message[data-completion-state="complete"] { background:var(--lesson-tint); color:var(--lesson-ink); }
+.reading-page .archive-notice { border-left-color:var(--lesson-line); }
+.reading-page main a:not(.primary-button, .primary-link, .secondary-button, .ai-copy) { color:var(--lesson-ink); }
+body.reading-page main :focus-visible { outline-color:var(--lesson-ink); }

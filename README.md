@@ -6,7 +6,7 @@ English Ladder is a self-updating ESL website that publishes a daily news lesson
 - Intermediate: CEFR B1-B2
 - Advanced: CEFR C1-Higher
 
-Each level keeps a rolling 14-day view; `news/YYYY-MM-DD/LEVEL.html` provides permanent lesson addresses and `archive.html` provides search. Every daily run uses the same news story at three reading levels. All pages share an editorial design with warm white surfaces, a white sticky menu, charcoal text, blue brand details, and compact controls. Leveled reading lessons use yellow, green, or blue action buttons to match the selected level.
+Each level keeps a rolling 14-day view; `news/YYYY-MM-DD/LEVEL.html` provides permanent lesson addresses and `archive.html` provides search. Every daily run uses the same news story at three reading levels. All pages share an editorial design with warm white surfaces, a white sticky menu, charcoal text, blue brand details, and compact controls. Leveled reading lessons use yellow, green, or blue action buttons to match the selected level. Callouts, vocabulary highlights, definitions, and practice panels share matching pale surfaces and readable dark accents.
 
 Discover features the latest complete daily news lesson, its actual publication date, and a matching Gemini illustration. Its level selector links to that same dated lesson at all three levels. It never labels an older lesson as today's story or selects future-dated or incomplete archives. Two evergreen stories (city trees and a fictional market conversation) remain below the main feature, each with three reading levels. Photography and generated illustrations are served locally; their different origins are explained in `photo-credits.html`.
 

@@ -50,11 +50,15 @@ figcaption { color: var(--muted); font-size: .75rem; line-height: 1.5; margin-to
 .level-option { position: relative; }
 .level-option input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .level-option span { display: block; padding: 9px 13px; border: 1px solid #aab2bf; background: #fff; border-radius: 8px; cursor: pointer; font-size: .875rem; }
-.level-option input:checked + span { border-color: var(--accent); color: var(--accent-strong); background: #edf1ff; box-shadow: inset 0 0 0 1px var(--accent); }
+.level-option input:checked + span { border-color: #20242b; box-shadow: inset 0 0 0 1px #20242b; }
+.level-option input[value="beginner"]:checked + span { color: #332900; background: #efca58; }
+.level-option input[value="intermediate"]:checked + span { color: #fff; background: #236b51; }
+.level-option input[value="advanced"]:checked + span { color: #fff; background: #234deb; }
 .level-option input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 3px; }
-.level-option span::before { content: ""; display: inline-block; width: 7px; height: 7px; border-radius: 50%; margin-right: 6px; background: #b68a00; }
-.level-option input[value="intermediate"] + span::before { background: #234deb; }
-.level-option input[value="advanced"] + span::before { background: #28704a; }
+.level-option span::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; background: #efca58; box-shadow: 0 0 0 1px #80651c; }
+.level-option input[value="intermediate"] + span::before { background: #236b51; box-shadow: none; }
+.level-option input[value="advanced"] + span::before { background: #234deb; box-shadow: none; }
+.level-option input:checked + span::before { background: currentColor; box-shadow: none; }
 .primary-link, .primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 24px; min-height: 46px; padding: 12px 22px; background: var(--accent); border: 1px solid var(--accent); color: #fff; text-decoration: none; border-radius: 8px; font-weight: 700; cursor: pointer; }
 .primary-link:hover, .primary-button:hover { background: var(--accent-strong); color: #fff; }
 .text-link { font-size: .875rem; font-weight: 700; }
@@ -88,7 +92,8 @@ figcaption { color: var(--muted); font-size: .75rem; line-height: 1.5; margin-to
 .index-container > p { font-size: .9375rem; }
 .level-badge { display: inline-block; border-radius: 8px; font-size: .8125rem; font-weight: 700; padding: 4px 10px; background: #eaf0ff; color: #173caf; }
 .theme-beginner .level-badge { background: #fff0b6; color: #674c00; }
-.theme-advanced .level-badge { background: #e0f0e6; color: #1c5b36; }
+.theme-intermediate .level-badge { background: #e0f0e6; color: #1c5b36; }
+.theme-advanced .level-badge { background: #eaf0ff; color: #193cc2; }
 details.daily-lesson { border: 0; border-top: 1px solid var(--border); border-radius: 0; margin: 0; padding: 20px 0; box-shadow: none; background: transparent; }
 details.daily-lesson:hover { transform: none; }
 details.daily-lesson[open] { border-color: var(--text); box-shadow: none; }

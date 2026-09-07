@@ -1,6 +1,20 @@
 /* Lesson interactions. Practice answers and notes stay on the current page. */
 (() => {
   'use strict';
+  const masthead = document.querySelector('.site-masthead');
+  if (masthead) {
+    const measureMenu = () => document.documentElement.style.setProperty(
+      '--masthead-height', `${Math.ceil(masthead.getBoundingClientRect().height)}px`);
+    measureMenu();
+    if ('ResizeObserver' in window) new ResizeObserver(measureMenu).observe(masthead);
+    window.addEventListener('resize', measureMenu, {passive: true});
+    window.addEventListener('load', () => {
+      measureMenu();
+      if (/^#lesson-[a-z0-9-]+$/.test(location.hash)) {
+        document.getElementById(location.hash.slice(1))?.scrollIntoView({block: 'start', behavior: 'instant'});
+      }
+    }, {once: true});
+  }
   const levels = ['beginner', 'intermediate', 'advanced'];
   const LEVEL_KEY = 'english-ladder-level';
   const read = key => { try { return localStorage.getItem(key); } catch (_) { return null; } };

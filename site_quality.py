@@ -46,6 +46,8 @@ def enhance_page(soup,path,prefix):
                 lesson.select_one('.lesson-content').append(p)
     for textarea in soup.select('textarea'):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
+    from reading_layout import prepare_reading_layout, finish_reading_layout
+    prepare_reading_layout(soup,path,ROOT,prefix)
     from ai_extensions import enhance_page as enhance_ai
     enhance_ai(soup,path,prefix)
     # Give returning readers the current controls instead of cached older files.
@@ -54,10 +56,11 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260906-page-practice1','site.css':'20260907-grammar-images1','app.js':'20260907-title-labels1','editorial.css':'20260907-title-labels1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260907-level-navigation1','site.css':'20260907-level-navigation1','app.js':'20260907-title-labels1','editorial.css':'20260907-level-navigation1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)
+    finish_reading_layout(soup)
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page

@@ -41,7 +41,7 @@ test("feature selector uses the newly published date and rejects an external des
 });
 
 for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["city-trees", "food-market"].flatMap(story => ["beginner", "intermediate", "advanced"].map(level => `stories/${story}/${level}.html`))]) {
-  test(`${file}: word help, answer correction, navigation, notes, and completion work together`, () => {
+  test(`${file}: word help, answer correction, navigation, speaking activities, and completion work together`, () => {
     const dom = load(file);
     const document = dom.window.document;
     const lesson = document.querySelector(".daily-lesson");
@@ -67,14 +67,15 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
     assert.match(panels[1].querySelector(".practice-progress").textContent, /1 of \d+ questions answered · 0 correct/);
     panels[1].querySelector(".stage-actions button:last-child").click();
     assert.deepEqual(panels.map(p => p.hidden), [true, true, false]);
-    const notes = panels[2].querySelector("textarea");
-    notes.value = "One thing I learned today.";
+    assert.equal(panels[2].querySelector("textarea,.note-hint"), null);
+    const activities = panels[2].querySelector('.discussion-activities').textContent;
+    assert.equal(panels[2].querySelectorAll('.discussion-activities > li').length, 6);
     lesson.querySelector(".learning-flow button").click();
     lesson.querySelector(".learning-flow button:last-child").click();
-    assert.equal(notes.value, "One thing I learned today.");
+    assert.equal(panels[2].querySelector('.discussion-activities').textContent, activities);
     panels[2].querySelector(".stage-actions button:last-child").click();
     assert.equal(panels[2].querySelector(".completion-message").hidden, false);
-    assert.equal(dom.window.localStorage.length, 0, "Optional notes must not be stored");
+    assert.equal(dom.window.localStorage.length, 0, "Speaking activities must not create stored answers");
     dom.window.close();
   });
 }

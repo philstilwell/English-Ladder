@@ -33,16 +33,16 @@ test('grammar topic search and level filter work together',()=>{
  assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,1);
  const select=doc.querySelector('[data-library-level]');select.value='A1';change(d,select);assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,0);assert.equal(doc.querySelector('[data-library-empty]').hidden,false);
 });
-test('news notes work on the current page without saving or restoring old drafts',()=>{
+test('news discussion offers speaking activities without restoring retired writing boxes',()=>{
  const key='english-ladder-study-v1';
  const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{'/news/2026-09-06/beginner.html:notes-2026-09-06':'An old saved draft'}});
- const d=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});const doc=d.window.document;const note=doc.querySelector('.discussion textarea');
- assert.equal(note.value,'');note.value='I saved time by booking online.';note.dispatchEvent(new d.window.Event('input'));
- assert.equal(note.value,'I saved time by booking online.');assert.equal(d.window.localStorage.getItem(key),raw);
- assert.match(doc.querySelector('.note-hint').textContent,/not saved when you leave/);
+ const d=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});const doc=d.window.document;
+ assert.equal(doc.querySelector('.discussion textarea,.discussion label,.discussion .note-hint'),null);
+ assert.equal(doc.querySelectorAll('.discussion-activities > li').length,6);
+ assert.equal(d.window.localStorage.getItem(key),raw);
  assert.equal(doc.querySelector('[data-save-study],[data-study-controls]'),null);
  const next=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});
- assert.equal(next.window.document.querySelector('.discussion textarea').value,'');
+ assert.equal(next.window.document.querySelector('.discussion textarea'),null);
 });
 test('vocabulary definitions still open without saved-word controls or a learning record',()=>{
  const d=load('beginner.html',{scripts:['learning.js','site.js']});const doc=d.window.document;

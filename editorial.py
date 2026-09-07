@@ -57,14 +57,74 @@ def document(title, content, body_class="theme-hub", prefix="", current=""):
 </head><body class="{body_class}">{site_header(prefix, current)}<main id="main-content" class="page-shell">{content}{footer(prefix)}</main></body></html>'''
 
 
-def enhance_lesson(lesson, lesson_data=None, source=None):
+def discussion_section(lesson, data, level):
+    """Build six speaking activities from this lesson's questions and language."""
+    existing = lesson.select('.discussion > ol > li:not([data-discussion-activity])')
+    prompts = data.get('discussion') or [item.get_text(' ', strip=True) for item in existing]
+    if not prompts:
+        prompts = ['What is the story about? Say two things from the story.',
+                   'Which part interests you? Say why. You can start with “I think…”']
+    vocabulary = data.get('vocabulary') or []
+    terms = [item['term'] for item in vocabulary if isinstance(item, dict) and item.get('term')]
+    if not terms:
+        terms = [re.sub(r'^\s*\d+\.\s*|\s*\(.*$', '', term.get_text()).strip()
+                 for term in lesson.select('.vocab-term')]
+    word_bank = ', '.join(f'“{term}”' for term in terms[:3 if level == 'intermediate' else 2])
+    grammar = data.get('grammar') or {}
+    example = grammar.get('example_quote', '')
+    if not example:
+        grammar_text = lesson.select_one('[data-stage="read"] .section:nth-of-type(2) > p')
+        if grammar_text:
+            match = re.search(r'Example from the text:\s*"(.*)"', grammar_text.get_text(' ', strip=True))
+            example = match.group(1) if match else ''
+    activities = {
+        'beginner': [
+            ('Use new words', 'Say what each word means. Then say one short sentence with each word.', word_bank),
+            ('Try the grammar', 'Read the example aloud. Use the same pattern to make a new sentence. Talk about a made-up person.', example),
+            ('Talk with a friend', 'A friend asks about the story. Answer the two questions below. Then change roles. Use only details from the story.', '“What is the story about?” / “Why is it interesting?”'),
+            ('Ask one more question', 'Ask one more question about the story. Can you find the answer in the story? If not, say “We do not know yet.”', '“Who…?” / “Where…?” / “Why…?”'),
+        ],
+        'intermediate': [
+            ('Use the vocabulary', 'Give a 30-second explanation of the story using these words. Then explain one of the words without repeating it.', word_bank),
+            ('Try the grammar', 'Use the pattern in this example to describe a different, imaginary situation. Explain what the pattern helps you express.', example),
+            ('Clear up a misunderstanding', 'Explain one detail to a friend. Your friend asks you to explain it more simply. Answer using the story, then change roles. Keep any invented example separate from the story.', '“Do you mean…?” / “What I mean is…” / “As an imaginary example…”'),
+            ('Ask a useful follow-up', 'Ask a question the story does not answer. Explain why the answer would help someone understand the topic. Your partner suggests where to look, then asks you a question.', '“I would like to know… because…”'),
+        ],
+        'advanced': [
+            ('Choose words precisely', 'Use these terms in a short account of the story. Replace one with a more everyday expression and explain how the tone or precision changes.', word_bank),
+            ('Put the grammar to work', 'Use the pattern in this example in a new, explicitly fictional situation. Explain how it shapes the meaning, emphasis, or degree of certainty.', example),
+            ('Adapt to your audience', 'Give a 20-second explanation to a friend, then a 30-second briefing to a professional audience. Preserve the same facts and uncertainty. Your partner identifies two changes in register; swap roles.', 'Casual: “The main point is…” / Formal: “The account indicates…”'),
+            ('Explore an unanswered question', 'Choose a question the story leaves open. Suggest what evidence would help answer it, and explain how different answers might affect your view. Separate reported facts, your interpretation, and possibilities.', '“The account establishes…; what remains unclear is…”'),
+        ],
+    }[level]
+    questions = ''.join(f'<li>{html.escape(str(prompt))}</li>' for prompt in prompts[:2])
+    for index, (title, instruction, support) in enumerate(activities):
+        hint = f'<p class="discussion-support">{html.escape(support)}</p>' if support else ''
+        questions += (f'<li data-discussion-activity="{index}"><strong>{title}</strong>'
+                      f'<p>{instruction}</p>{hint}</li>')
+    return fragment('<section class="discussion"><h2>Share your ideas</h2>'
+                    '<p>Speak with a partner, or practice both parts on your own.</p>'
+                    f'<ol class="discussion-activities">{questions}</ol>'
+                    '<p class="completion-message" role="status" hidden>Lesson complete. You have read the story, practiced, and shared your ideas.</p></section>').section
+
+
+def enhance_lesson(lesson, lesson_data=None, source=None, level=None):
     """Enhance generated and older markup once; retain all content without JavaScript."""
     key = lesson.get("data-lesson-key", "lesson")
     lesson["id"] = "lesson-" + key
     # Remove retired pre-reading prompts even from already-enhanced archives.
     for panel in lesson.select('.prediction'):
         panel.decompose()
+    data = lesson_data if isinstance(lesson_data, dict) else {}
+    if not level:
+        body = lesson.find_parent('body')
+        level = lesson.get('data-lesson-level') or next((name for name in ('beginner', 'intermediate', 'advanced')
+                    if body and f'theme-{name}' in body.get('class', [])), 'beginner')
+    lesson['data-lesson-level'] = level
     if lesson.select_one(".learning-panel"):
+        discussion = lesson.select_one('.discussion')
+        if discussion:
+            discussion.replace_with(discussion_section(lesson, data, level))
         return
     content = lesson.select_one(".lesson-content")
     if not content:
@@ -72,8 +132,6 @@ def enhance_lesson(lesson, lesson_data=None, source=None):
     sections = content.select(":scope > .section")
     if len(sections) < 3:
         return
-    data = lesson_data or {}
-    prompts = data.get("discussion") or ["Explain this story to a friend in two sentences.", "Which detail interests you most? Say why."]
     read = fragment('<div class="learning-panel" data-stage="read"></div>').div
     practice = fragment('<div class="learning-panel" data-stage="practice"></div>').div
     discuss = fragment('<div class="learning-panel" data-stage="discuss"></div>').div
@@ -88,8 +146,7 @@ def enhance_lesson(lesson, lesson_data=None, source=None):
     read.append(fragment('<p class="reading-hint" data-word-hint hidden>Tap an underlined word in the story to see its meaning.</p>').p)
     quiz_count = len(practice.select(".quiz-question"))
     practice.insert(0, fragment(f'<p class="practice-progress" role="status" aria-live="polite">0 of {quiz_count} questions answered</p>').p)
-    questions = "".join(f'<li>{html.escape(str(prompt))}</li>' for prompt in prompts)
-    discuss.append(fragment(f'<section class="discussion"><h2>Share your ideas</h2><ol>{questions}</ol><p>Try using two words from the story. You can speak to a partner or practice on your own.</p><label for="notes-{key}">Your ideas (optional)</label><textarea id="notes-{key}" placeholder="I think… / One thing I learned is…"></textarea><p class="note-hint">These notes stay on this page. They are not sent or saved.</p><p class="completion-message" role="status" hidden>Lesson complete. You have read the story, practiced, and shared your ideas.</p></section>').section)
+    discuss.append(discussion_section(lesson, data, level))
     if source:
         topic_text = " ".join(str(source.get(k,"")) for k in ("title","summary")).lower()
         sensitive = any(word in topic_text for word in ("murder", "deaths", "killed", "death toll", "deport", "attack"))
@@ -202,7 +259,7 @@ def decorate_page(path):
             key = lesson.get("data-lesson-key", "")
             archive = ROOT / "archive" / "lessons" / f"{key}.json"
             data = json.loads(archive.read_text()) if archive.is_file() else {}
-            enhance_lesson(lesson, data.get("levels", {}).get(level, {}).get("lesson"), data.get("source"))
+            enhance_lesson(lesson, data.get("levels", {}).get(level, {}).get("lesson"), data.get("source"), level=level)
         if not soup.select_one('script[src*="learning.js"]'):
             soup.head.append(fragment(f'<script defer src="{prefix}learning.js"></script>').script)
     if soup.title:

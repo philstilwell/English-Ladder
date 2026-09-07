@@ -418,18 +418,16 @@ test('clearing stored completion removes the indicator and restores the Finish b
   assertButton(lesson, false);
 });
 
-test('Finish stores only a completion marker and leaves discussion notes and quiz answers private', () => {
+test('Finish stores only a completion marker and does not save quiz answers or restore a writing box', () => {
   const dom = load(newsPath(dates[0], 'beginner'));
   const lesson = lessonAt(dom);
-  const note = lesson.querySelector('textarea');
-  note.value = 'PRIVATE_DISCUSSION_NOTE';
-  note.dispatchEvent(new dom.window.Event('input', { bubbles: true }));
+  assert.equal(lesson.querySelector('textarea'), null);
   lesson.querySelector('[data-bg="#e6ffe6"]').click();
   finish(lesson);
   const stored = storedValues(dom.window);
   assert.deepEqual(Object.keys(stored).sort(), ['english-ladder-level', key(dates[0], 'beginner')].sort());
-  assert.doesNotMatch(JSON.stringify(stored), /PRIVATE_DISCUSSION_NOTE|quiz|answer/);
+  assert.doesNotMatch(JSON.stringify(stored), /notes|quiz|answer/);
   const reopened = load(newsPath(dates[0], 'beginner'), { stored });
-  assert.equal(reopened.window.document.querySelector('textarea').value, '');
+  assert.equal(reopened.window.document.querySelector('textarea'), null);
   assert.match(reopened.window.document.querySelector('.practice-progress').textContent, /^0 of \d+ questions answered/);
 });

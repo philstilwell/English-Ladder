@@ -1187,7 +1187,7 @@ def render_lesson_html(lesson_data, level, release_dt, source=None):
     )
     from editorial import enhance_lesson
     soup = BeautifulSoup(markup, "html.parser")
-    enhance_lesson(soup.details, lesson_data, source)
+    enhance_lesson(soup.details, lesson_data, source, level=level['name'].lower())
     return str(soup.details)
 
 

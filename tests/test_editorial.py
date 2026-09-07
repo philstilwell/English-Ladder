@@ -59,10 +59,26 @@ class EditorialTests(unittest.TestCase):
         self.assertIsNone(update_site.select_news_entry([dict(title="Missing evidence", link="javascript:alert(1)")]))
 
     def test_guided_rendering_is_repeatable_and_removes_retired_prereading(self):
+        speaking_activities = set()
         for level in update_site.LEVELS:
             schema = update_site.build_response_schema(level)
             self.assertNotIn("prediction", schema["properties"])
             self.assertNotIn("prediction", schema["required"])
+            data = STORIES[0]['levels'][level['name'].lower()]
+            node = BeautifulSoup(update_site.render_lesson_html(data, level, datetime(2026, 9, 5, tzinfo=timezone.utc)), 'html.parser').details
+            discussion = node.select_one('.discussion')
+            self.assertEqual(6, len(discussion.select('ol > li')))
+            self.assertEqual(data['discussion'], [item.get_text() for item in discussion.select('ol > li')[:2]])
+            self.assertIsNone(discussion.select_one('textarea,label,.note-hint'))
+            self.assertIn(data['vocabulary'][0]['term'], discussion.get_text())
+            self.assertIn(data['grammar']['example_quote'], discussion.get_text())
+            speaking_activities.add(tuple(item.get_text() for item in discussion.select('[data-discussion-activity]')))
+            before = str(node)
+            for element in list(BeautifulSoup('<label for="old-notes">Your ideas (optional)</label><textarea id="old-notes"></textarea><p class="note-hint">Old notes message</p>', 'html.parser').contents):
+                discussion.append(element)
+            editorial.enhance_lesson(node, data)
+            self.assertEqual(before, str(node))
+        self.assertEqual(3, len(speaking_activities))
         data = dict(STORIES[0]["levels"]["beginner"])
         data["prediction"] = '<img src=x onerror="alert(1)">'
         lesson = BeautifulSoup(update_site.render_lesson_html(data, update_site.LEVELS[0], datetime(2026, 9, 5, tzinfo=timezone.utc)), "html.parser").details

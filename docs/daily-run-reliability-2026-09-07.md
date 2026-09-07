@@ -24,6 +24,7 @@ Before requesting lesson text, the workflow saves the selected source. After eac
 | One level fails after earlier levels passed | Save progress and resume the unfinished level on the next run. |
 | The date already has a complete archive | Manual and scheduled workflow runs preserve its text and reuse or recover its illustration through the existing image process. |
 | Push or manual `deploy_only` run | Rebuild and verify existing material without paid generation. |
+| A served file temporarily differs during deployment, or a verification request has a temporary service failure | Retry only the affected request, up to three calls. Every published file must still match its expected checksum. |
 
 Each level has at most **three draft attempts per invocation and six across compatible recovery runs for that date**. The attempt counter is saved before requesting a draft, including requests interrupted before a usable response. Transport retries sit within each draft attempt. Gemini requests have a three-minute timeout, with the SDK's internal retries disabled so they cannot multiply the explicit request limit. Generation has a 30-minute step limit within the 45-minute job, reserving time to upload saved progress after a slow-provider timeout. These are workload limits, not a guaranteed billing ceiling; provider charging and request outcomes can vary.
 
@@ -31,12 +32,16 @@ The writer now returns each reading sentence together with its numbered source r
 
 All publication requirements remain in force: at least **6/8/10 reading sentences, vocabulary items and multiple-choice questions** for Beginner/Intermediate/Advanced; separate vocabulary targets; appropriate language and register; factual support; unambiguous questions; and correct teaching feedback. All three levels must pass before publication.
 
+Publication checks keep exact content comparisons. A fresh deployment manifest does not guarantee that every edge response has updated at that instant. `cloudflare/verify.cjs` retries transient failures and mismatched content at the original public URL; a matching cache-busted variant cannot excuse a stale normal page. Persistent mismatches, permanent errors and incorrectly exposed private paths remain failures. The September 7 verification caught one old lesson response that subsequently matched on both domains without any source edit.
+
+Generated lesson summaries retain a stable absolute date and release timestamp. The existing browser code fills in the current lesson age. Rebuilding at a later hour therefore no longer republishes hundreds of otherwise unchanged lesson pages or inserts a different age into copied AI prompts.
+
 ## Operational limits and verification
 
 A genuine content problem, persistent service outage, runner termination before artifact upload, or unavailable artifact storage can still prevent publication. Recovery reduces repeated work; it does not turn a failed review into an approval. Exhausting the daily draft allowance leaves diagnostics and the last draft for investigation. Do not reset the counter or relax a quality check just to obtain a green run.
 
 Offline tests cover paired evidence, exact grammar references, transient versus permanent failures, approval binding, checkpoint corruption, same-run recovery, interrupted reviews, targeted repairs, and the per-run/per-date attempt limits. They use saved lessons and simulated provider responses without paid generation. They establish recovery behavior, not a guarantee of model accuracy.
 
-Implementation: `generation_retry.py`, `lesson_checkpoint.py`, `lesson_run.py`, `workflow_checkpoint.py`, `lesson_evidence.py`, `update_site.py`, `news_quality.py`, and `.github/workflows/cron.yml`.
+Implementation: `generation_retry.py`, `lesson_checkpoint.py`, `lesson_run.py`, `workflow_checkpoint.py`, `lesson_evidence.py`, `update_site.py`, `news_quality.py`, `cloudflare/verify.cjs`, and `.github/workflows/cron.yml`.
 
 Provider details: [Google Gen AI SDK retry and timeout types](https://github.com/googleapis/python-genai/blob/v1.62.0/google/genai/types.py), [GitHub workflow artifacts](https://docs.github.com/en/rest/actions/artifacts).

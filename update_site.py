@@ -793,12 +793,12 @@ def render_lesson_title(title):
 
 def rebuild_summary_markup(summary_tag, release_dt, date_text, title_text):
     release_iso = release_iso_from_datetime(release_dt)
-    elapsed_text = format_elapsed_text(release_dt)
+    # The browser fills the age from the release date; published text stays stable.
     markup = BeautifulSoup(
         (
             f'<span class="lesson-date-prefix">📅</span> '
             f'<span class="lesson-date-text">{html.escape(date_text)}</span> '
-            f'<span class="lesson-age">{html.escape(elapsed_text)}</span> '
+            '<span class="lesson-age"></span> '
             f'<span class="lesson-separator">-</span> '
             f'{render_lesson_title(title_text)}'
         ),
@@ -1085,7 +1085,7 @@ def render_summary_html(title, release_dt):
         f'<summary class="lesson-date" data-release-iso="{release_iso}">'
         f'<span class="lesson-date-prefix">📅</span> '
         f'<span class="lesson-date-text">{html.escape(date_text)}</span> '
-        f'<span class="lesson-age">{html.escape(format_elapsed_text(release_dt))}</span> '
+        '<span class="lesson-age"></span> '
         f'<span class="lesson-separator">-</span> '
         f'{render_lesson_title(title)}'
         f"</summary>"

@@ -3,6 +3,7 @@ import tempfile
 import unittest
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 
@@ -64,6 +65,58 @@ def build_valid_lesson_data(title="Market Visit"):
 
 
 class UpdateSiteTests(unittest.TestCase):
+    def test_lesson_rendering_and_copyable_prompts_do_not_depend_on_the_build_clock(self):
+        import ai_extensions
+
+        release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
+        build_times = [release_dt + timedelta(hours=2), release_dt + timedelta(days=5, hours=11)]
+        rendered = []
+        prompts = []
+        for now in build_times:
+            with patch.object(update_site, 'datetime', wraps=datetime) as clock:
+                clock.now.return_value = now
+                markup = update_site.render_lesson_html(
+                    build_valid_lesson_data(), update_site.LEVELS[0], release_dt)
+            rendered.append(markup)
+            soup = BeautifulSoup(
+                '<html><head></head><body class="theme-beginner">' + markup + '</body></html>',
+                'html.parser')
+            summary = soup.select_one('summary.lesson-date')
+            self.assertEqual('2026-05-09T19:00:00Z', summary['data-release-iso'])
+            self.assertEqual('May 09, 2026', summary.select_one('.lesson-date-text').get_text())
+            self.assertEqual('', summary.select_one('.lesson-age').get_text())
+            ai_extensions.enhance_page(
+                soup, Path(__file__).resolve().parents[1] / 'news/2026-05-09/beginner.html', '../../')
+            prompt_texts = [node.get_text() for node in soup.select('.ai-prompt-text')]
+            self.assertEqual(3, len(prompt_texts))
+            for text in prompt_texts:
+                self.assertIn('May 09, 2026', text)
+                self.assertIn('Title: Market Visit', text)
+                self.assertNotRegex(text, r'\[\d+ days?, \d+ hours? old\]')
+            prompts.append(prompt_texts)
+        self.assertEqual(rendered[0], rendered[1])
+        self.assertEqual(prompts[0], prompts[1])
+
+    def test_summary_normalization_removes_stale_age_without_using_the_build_clock(self):
+        original = (
+            '<summary class="lesson-date" data-release-iso="2026-05-09T19:00:00Z">'
+            '<span class="lesson-date-text">May 09, 2026</span> '
+            '<span class="lesson-age">[0 days, 9 hours old]</span> '
+            '<span class="lesson-title-text">Market Visit</span></summary>')
+        release_dt = datetime(2026, 5, 9, 19, 0, tzinfo=timezone.utc)
+        summaries = []
+        for now in [release_dt + timedelta(hours=2), release_dt + timedelta(days=5, hours=11)]:
+            summary = BeautifulSoup(original, 'html.parser').summary
+            with patch.object(update_site, 'datetime', wraps=datetime) as clock:
+                clock.now.return_value = now
+                self.assertEqual(release_dt, update_site.normalize_lesson_summary(summary))
+            self.assertEqual('', summary.select_one('.lesson-age').get_text())
+            self.assertEqual('2026-05-09T19:00:00Z', summary['data-release-iso'])
+            summaries.append(str(summary))
+        expected = str(BeautifulSoup(
+            update_site.render_summary_html('Market Visit', release_dt), 'html.parser').summary)
+        self.assertEqual([expected, expected], summaries)
+
     def test_validate_lesson_data_accepts_valid_fixture(self):
         issues = update_site.validate_lesson_data(build_valid_lesson_data(), update_site.LEVELS[0])
         self.assertEqual([], issues)

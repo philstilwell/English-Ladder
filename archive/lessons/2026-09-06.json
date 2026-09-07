@@ -129,6 +129,34 @@
               "This turns a possibility into an unsupported certainty.",
               "Impossible contradicts the possibility expressed by might."
             ]
+          },
+          {
+            "question": "Why do pilots use weather information?",
+            "options": [
+              "To help them avoid dangerous storms",
+              "To make storms move more slowly",
+              "To choose passengers’ seats"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says pilots use weather information to avoid dangerous storms.",
+              "Weather information helps pilots make decisions; it does not slow storms.",
+              "The reading connects weather information to avoiding storms, not choosing seats."
+            ]
+          },
+          {
+            "question": "What do airports need when planes arrive somewhere unexpected?",
+            "options": [
+              "Space and services for passengers",
+              "Fewer places for passengers to wait",
+              "A promise that no more planes will land"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says airports need space and services for these passengers.",
+              "Unexpected arrivals need space; fewer waiting places would not meet that need.",
+              "No such promise is mentioned; the reading describes providing space and services."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -266,6 +294,62 @@
               "Might expresses possibility.",
               "This turns a possibility into an unsupported certainty.",
               "Impossible contradicts the possibility expressed by might."
+            ]
+          },
+          {
+            "question": "Why did some departures have to wait on the ground?",
+            "options": [
+              "The skies were congested.",
+              "Every airport had permanently closed.",
+              "Pilots had stopped receiving all forecasts."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading connects the ground delays to congestion in the skies.",
+              "It describes congestion and delays, not the permanent closure of every airport.",
+              "Pilots use forecasts; the passage does not say forecasts had stopped."
+            ]
+          },
+          {
+            "question": "What happens to the available flight space when aircraft are guided around storms?",
+            "options": [
+              "Less space remains available for other flights.",
+              "All other aircraft gain an extra direct route.",
+              "The storms immediately disappear from the area."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Guiding aircraft around storms reduces the space available for other flights.",
+              "The reading describes reduced space, not a new direct route for everyone.",
+              "Aircraft are redirected around storms; this does not make the storms disappear."
+            ]
+          },
+          {
+            "question": "What does facilities refer to when aircraft land at a different airport?",
+            "options": [
+              "Places and services needed to handle extra arrivals",
+              "The paths aircraft follow between airports",
+              "Predictions of weather later in the day"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Facilities are the places, equipment and services needed to support arrivals.",
+              "Flight paths are routes; facilities are resources at the airport.",
+              "Weather predictions are forecasts, not airport facilities."
+            ]
+          },
+          {
+            "question": "Why can pilots still need to change plans late in a flight?",
+            "options": [
+              "Fast-moving storms can change the situation.",
+              "Radar guarantees that storms stay in the same place.",
+              "Every forecast requires a plane to change airports."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says fast-moving storms can force late changes despite radar and forecasts.",
+              "Radar provides information; it does not keep storms still.",
+              "Forecasts help decisions, but the reading does not say every forecast forces a diversion."
             ]
           }
         ],
@@ -419,6 +503,90 @@
               "This turns a possibility into an unsupported certainty.",
               "Impossible contradicts the possibility expressed by might."
             ]
+          },
+          {
+            "question": "Which sequence explains the ground delays described?",
+            "options": [
+              "Storm avoidance reduced usable airspace, creating congestion.",
+              "Ground delays created storms, which increased usable airspace.",
+              "Extra usable airspace made it impossible to direct aircraft around storms."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Controllers guided planes around storms, reducing usable space and contributing to congestion.",
+              "This reverses the direction of the explanation in the reading.",
+              "The passage reports less usable airspace, not extra space causing the problem."
+            ]
+          },
+          {
+            "question": "What additional demands can a diversion place on the receiving airport?",
+            "options": [
+              "Aircraft parking and passenger facilities",
+              "The construction of a new airport for every diverted flight",
+              "The permanent closure of all road and rail links"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading specifically identifies parking and passenger facilities.",
+              "It describes extra demands at another airport, not building a new airport for every flight.",
+              "Road and rail disruption is a flooding risk, not a necessary consequence of every diversion."
+            ]
+          },
+          {
+            "question": "What limitation of radar and forecasts does the reading highlight?",
+            "options": [
+              "Rapidly moving storms can still require late decisions.",
+              "They are unavailable to pilots during summer.",
+              "They guarantee that every weather-related decision can be made before takeoff."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Useful weather information does not eliminate decisions caused by rapidly moving storms.",
+              "The passage says pilots have access to radar and forecasts; it gives no summer exception.",
+              "The text expressly allows for decisions late in a flight."
+            ]
+          },
+          {
+            "question": "How may longer diversions affect airlines financially?",
+            "options": [
+              "Extra fuel use may increase operating costs.",
+              "They necessarily eliminate the need for fuel.",
+              "They guarantee lower costs on every route."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading links longer diversions to possible increases in fuel consumption and operating costs.",
+              "Longer diversions may use more fuel, not eliminate its use.",
+              "The passage describes possible added costs, not guaranteed savings."
+            ]
+          },
+          {
+            "question": "How can flooding disrupt a journey even before a passenger reaches the airport?",
+            "options": [
+              "It can block road or rail access.",
+              "It always forces passengers to change their flight date.",
+              "It removes the need for ground transport."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The passage explicitly includes blocked road and rail access as a flooding risk.",
+              "A date change is not stated as inevitable; the specified risk is disrupted access.",
+              "Flooding can interfere with access, not remove the need to reach the airport."
+            ]
+          },
+          {
+            "question": "What does consequently signal in the sentence about congestion?",
+            "options": [
+              "The ground delay follows as a result of congestion.",
+              "The ground delay contradicts the presence of congestion.",
+              "The ground delay is the definition of a weather forecast."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Consequently introduces a result: congestion left departures waiting.",
+              "Consequently marks a consequence, not a contrast.",
+              "The word links cause and result; it does not introduce a definition of a forecast."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -455,6 +623,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.153595+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

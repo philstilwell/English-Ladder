@@ -128,6 +128,34 @@
               "The phrase alone does not establish proof.",
               "An accusation is a claim; this option denies that."
             ]
+          },
+          {
+            "question": "What made the explosive drone safe?",
+            "options": [
+              "A robot",
+              "A Ukrainian transport plane",
+              "A new airport route"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says a robot made the drone safe.",
+              "Ukrainian planes use the airport, but a robot made the drone safe.",
+              "The reading does not say a route change made the drone safe."
+            ]
+          },
+          {
+            "question": "What does Russia say about the attack?",
+            "options": [
+              "It did not carry out the attack.",
+              "It carried out the attack.",
+              "It asked Germany to carry out the attack."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Russia says it did not carry out the attack.",
+              "This reverses Russia’s denial.",
+              "The reading does not say Russia asked Germany to attack."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -265,6 +293,62 @@
               "Keep the allegation separate from proof.",
               "The phrase alone does not establish proof.",
               "An accusation is a claim; this option denies that."
+            ]
+          },
+          {
+            "question": "Why is Leipzig airport described as an important hub?",
+            "options": [
+              "It is used by Ukrainian transport aircraft.",
+              "It is where European ministers issue all visas.",
+              "It is the headquarters of every Nato member."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading links the airport’s role as a Nato hub to Ukrainian transport aircraft.",
+              "Visa restrictions are being discussed, but no airport visa headquarters is described.",
+              "The reading calls it a transport hub, not the headquarters of all Nato members."
+            ]
+          },
+          {
+            "question": "How was the explosive drone made safe?",
+            "options": [
+              "A robot was used.",
+              "It was flown away in a cargo plane.",
+              "Ministers removed the visa restrictions."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A robot was used to make the explosive drone safe.",
+              "The reading mentions a cargo plane as the alleged target, not as a way to remove the drone.",
+              "Visa policy is a separate issue; it did not make the drone safe."
+            ]
+          },
+          {
+            "question": "What are European ministers discussing?",
+            "options": [
+              "Stronger enforcement of sanctions and further visa restrictions",
+              "Ending sanctions and removing all visa restrictions",
+              "Replacing the airport with a military headquarters"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "These are the two measures listed in the reading.",
+              "This reverses both measures: stronger enforcement and further restrictions are being discussed.",
+              "No plan to replace the airport is mentioned."
+            ]
+          },
+          {
+            "question": "What does denies mean in the sentence about Russia?",
+            "options": [
+              "Says that the claim is not true",
+              "Accepts that the claim is true",
+              "Asks for the claim to be explained more slowly"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Denies reports Russia’s rejection of the claim.",
+              "Accepting a claim is the opposite of denying it.",
+              "Denying rejects a claim; it does not simply request clarification."
             ]
           }
         ],
@@ -418,6 +502,90 @@
               "The phrase alone does not establish proof.",
               "An accusation is a claim; this option denies that."
             ]
+          },
+          {
+            "question": "Which sequence matches the announcements about institutions?",
+            "options": [
+              "Berlin announced closures; Moscow then announced closures of German cultural centres.",
+              "Moscow closed Leipzig airport; Berlin then closed German centres.",
+              "Berlin announced the closure of Nato; Moscow then reopened its consulate."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The passage presents Moscow’s announcement as a response to Berlin’s planned closures.",
+              "Moscow did not announce the closure of Leipzig airport in this reading.",
+              "The reported plans concern a consulate and cultural institutions, not Nato’s closure."
+            ]
+          },
+          {
+            "question": "What does tighter enforcement of sanctions refer to?",
+            "options": [
+              "Applying existing restrictions more strictly",
+              "Automatically withdrawing every existing restriction",
+              "Treating every accusation as a proven criminal offence"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Enforcement concerns putting rules into effect; tighter means more strict application.",
+              "Withdrawing restrictions reverses the meaning of tighter enforcement.",
+              "Enforcement does not turn an allegation into proof."
+            ]
+          },
+          {
+            "question": "Which practical detail is reported independently of the dispute over responsibility?",
+            "options": [
+              "A robot was used to make an explosive drone safe.",
+              "Russia admitted sending the drone.",
+              "A court issued a final ruling on responsibility."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The robot’s use is stated as an event, while responsibility remains disputed in the account.",
+              "Moscow rejects the allegation; it does not admit responsibility.",
+              "The reading reports no final court ruling."
+            ]
+          },
+          {
+            "question": "What does Nato’s affirmation of support indicate here?",
+            "options": [
+              "It has stated support for Germany.",
+              "It has withdrawn its earlier support for Germany.",
+              "It has transferred control of Leipzig airport to Moscow."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Affirmed means stated or confirmed; the support is for Germany.",
+              "Withdrawing support is the opposite of affirming it.",
+              "No transfer of control is described."
+            ]
+          },
+          {
+            "question": "Which description best captures Leipzig’s role in the passage?",
+            "options": [
+              "A Nato transport hub regularly used by Ukrainian aircraft",
+              "A cultural centre used for German-Russian exchanges",
+              "A consulate responsible for issuing Russian visas"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The airport is described as an important hub used by Ukrainian transport aircraft.",
+              "Cultural institutions appear elsewhere in the response, but they are not the airport’s role.",
+              "A consulate is among the planned closures; it is not a description of Leipzig airport."
+            ]
+          },
+          {
+            "question": "Which wording preserves the status of the ministers’ proposed measures?",
+            "options": [
+              "Ministers are considering additional visa restrictions.",
+              "Ministers have already imposed every proposed visa restriction.",
+              "Ministers have decided that no visa restrictions will be discussed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Considering accurately describes a measure under discussion, without claiming it is already imposed.",
+              "The reading reports consideration, not the completed imposition of every proposal.",
+              "The reading explicitly says additional restrictions are being considered."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.152406+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

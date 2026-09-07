@@ -1,9 +1,40 @@
 """No network or paid calls: validate generated pages, links, and reviewed data."""
 import json
+import re
 from pathlib import Path
 from urllib.parse import urlparse,unquote
 from bs4 import BeautifulSoup
 ROOT=Path(__file__).resolve().parent
+
+def validate_rendered_quiz(node, lesson):
+    """Check the learner's actual choices and progress total, including shuffling."""
+    from update_site import normalize_text
+    issues=[]
+    practice=node.select_one('.learning-panel[data-stage="practice"]')
+    if practice is None:return ['quiz practice panel is missing']
+    questions=practice.select('.quiz-question')
+    source=lesson['quiz']
+    if len(questions)!=len(source):issues.append('quiz question count does not match its checked items')
+    progress=practice.select_one('.practice-progress')
+    if progress is None or progress.get_text(' ',strip=True)!=f'0 of {len(source)} questions answered':
+        issues.append('quiz progress total does not match its checked items')
+    if practice.select('textarea,input[type="text"],[contenteditable="true"]'):
+        issues.append('quiz responses must be multiple choice')
+    for number,(question,item) in enumerate(zip(questions,source),1):
+        prompt=question.find('p',recursive=False)
+        if prompt is None or prompt.get_text(' ',strip=True)!=f'{number}. {normalize_text(item["question"])}':
+            issues.append(f'quiz question {number} does not match its checked prompt')
+        expected=[]
+        for index,(option,feedback) in enumerate(zip(item['options'],item['option_feedback'])):
+            correct=index==item['correct_option_index']
+            expected.append((normalize_text(option),'#e6ffe6' if correct else '#ffe6e6',
+                             normalize_text(('Correct: ' if correct else 'Incorrect: ')+feedback)))
+        actual=[(normalize_text(re.sub(r'^[abc]\)\s*','',button.get_text(' ',strip=True))),
+                 button.get('data-bg',''),normalize_text(button.get('data-feedback','')))
+                for button in question.select('button')]
+        if sorted(actual)!=sorted(expected):
+            issues.append(f'quiz question {number} choices, answer key or feedback do not match its checked items')
+    return issues
 
 def audit():
     from seo import published_pages
@@ -73,6 +104,8 @@ def audit():
                 if (vocabulary is None or len(vocabulary.select('.vocab-term'))!=len(lesson['vocabulary'])
                         or vocabulary.get_text(' ',strip=True).split()!=expected_vocabulary.split()):
                     failures.append(f'{page.relative_to(ROOT)}: {data["release_date"]} vocabulary does not match its checked items')
+                failures.extend(f'{page.relative_to(ROOT)}: {data["release_date"]} {issue}'
+                                for issue in validate_rendered_quiz(node,lesson))
         if not data.get('editorial_review') and not all(v['lesson'].get('editorial_check') for v in data['levels'].values()):continue
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']

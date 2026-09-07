@@ -128,6 +128,34 @@
               "Certainly changes the warning into a certainty.",
               "This adds an unsupported past claim about every problem."
             ]
+          },
+          {
+            "question": "Where does El Niño start?",
+            "options": [
+              "In the Pacific Ocean",
+              "In the Atlantic Ocean",
+              "In the Indian Ocean"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says this weather event starts in the Pacific Ocean.",
+              "The reading names the Pacific, not the Atlantic.",
+              "The reading names the Pacific, not the Indian Ocean."
+            ]
+          },
+          {
+            "question": "How can El Niño change rain in different places?",
+            "options": [
+              "Some places get less rain and others get more.",
+              "Every place gets less rain.",
+              "Every place gets the same amount of rain."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says the effects on rain can differ from place to place.",
+              "Some places may get more rain, so this is not true for every place.",
+              "The reading describes different amounts of rain, not the same amount everywhere."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -265,6 +293,62 @@
               "Could preserves a possibility.",
               "Certainly changes the warning into a certainty.",
               "This adds an unsupported past claim about every problem."
+            ]
+          },
+          {
+            "question": "What allows warmer Pacific water to spread eastwards?",
+            "options": [
+              "Changes in winds",
+              "Stronger medical support",
+              "The sharing of forecasts"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading identifies changes in winds as the cause of the warmer water’s eastward spread.",
+              "Medical support is part of preparation; it does not move the ocean water.",
+              "Forecasts help communities prepare, but the reading attributes the water’s movement to winds."
+            ]
+          },
+          {
+            "question": "How do the possible effects differ between regions?",
+            "options": [
+              "Some may become dry while others have heavier rain.",
+              "All regions are expected to become equally dry.",
+              "Only the Pacific Ocean can experience any effects."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The passage contrasts dry conditions in some regions with heavier rain and flooding in others.",
+              "That removes the contrast between dry and wetter regions.",
+              "The reading says this Pacific event affects weather in other regions."
+            ]
+          },
+          {
+            "question": "What does forecasts mean in the WMO sentence?",
+            "options": [
+              "Predictions about future weather",
+              "Records of medical treatment already given",
+              "Reports proving exactly what will happen everywhere"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Forecasts predict weather and help communities prepare.",
+              "The WMO is sharing weather forecasts, not medical treatment records.",
+              "A forecast is a prediction; it does not prove an exact future outcome everywhere."
+            ]
+          },
+          {
+            "question": "How does the reading relate El Niño risks to global warming?",
+            "options": [
+              "These risks are additional to long-term global warming’s effects.",
+              "El Niño replaces all the effects of global warming.",
+              "Long-term global warming has ended because El Niño has begun."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "On top of means in addition to the effects already associated with global warming.",
+              "The passage describes added risks, not replacement of one set of effects by another.",
+              "The reading gives no suggestion that global warming has ended."
             ]
           }
         ],
@@ -418,6 +502,90 @@
               "Certainly changes the warning into a certainty.",
               "This adds an unsupported past claim about every problem."
             ]
+          },
+          {
+            "question": "Which process links the Pacific event to weather farther away?",
+            "options": [
+              "Ocean heat enters the atmosphere and can alter wider weather patterns.",
+              "Medical preparations redirect warmer ocean currents.",
+              "Forecasts prevent heat from leaving the ocean."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading describes heat released into the atmosphere affecting weather beyond the Pacific.",
+              "Medical arrangements respond to possible effects; they do not redirect currents.",
+              "Forecasts inform communities; the reading does not say they stop heat transfer."
+            ]
+          },
+          {
+            "question": "Which pairing matches the regional contrast in the reading?",
+            "options": [
+              "Drier parts of South East Asia; wetter parts of eastern Africa",
+              "Wetter parts of South East Asia; drier parts of southern Brazil",
+              "Drier parts of southern Brazil; wetter parts of Central America"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "South East Asia is among the drier regions; eastern Africa is among those that may get heavier rain.",
+              "This reverses the directions given for South East Asia and southern Brazil.",
+              "This reverses the directions given for southern Brazil and Central America."
+            ]
+          },
+          {
+            "question": "What does exposed to mean in the reference to communities?",
+            "options": [
+              "At risk of experiencing extreme weather",
+              "Responsible for producing the weather forecasts",
+              "Already fully protected from every weather threat"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Exposed to describes vulnerability to the weather, not certainty of harm.",
+              "The communities receive forecasts; exposed to does not mean they produce them.",
+              "Exposure means facing a risk, not having complete protection from it."
+            ]
+          },
+          {
+            "question": "Why are fisheries mentioned in the account of Australia?",
+            "options": [
+              "They are among the interests threatened by marine conditions.",
+              "They are responsible for creating El Niño in the Pacific.",
+              "They have replaced the country’s weather warning systems."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading gives risks to fisheries as an example of marine threats addressed by warning systems.",
+              "The passage describes an ocean and atmosphere process, not a process caused by fisheries.",
+              "Australia has introduced warning systems; fisheries have not replaced them."
+            ]
+          },
+          {
+            "question": "What role does global warming have in the final sentence?",
+            "options": [
+              "It is a background condition that could intensify El Niño’s effects.",
+              "It guarantees identical El Niño effects in every country.",
+              "It is described as ending when El Niño develops."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The final sentence presents global warming as a background that could make the effects stronger.",
+              "The reading uses could and describes regional differences, not a universal guarantee.",
+              "The event is unfolding against global warming, not bringing it to an end."
+            ]
+          },
+          {
+            "question": "Which sentence uses could correctly to make a new forecast about a wet region?",
+            "options": [
+              "Heavier rain could damage local roads.",
+              "Heavier rain could damages local roads.",
+              "Heavier rain could damaged local roads."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Could is followed by the base form damage and expresses a possible result.",
+              "After could, use damage without the third-person ending -s.",
+              "After could, use the base form damage, not the past form damaged."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.152689+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

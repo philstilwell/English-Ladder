@@ -128,6 +128,34 @@
               "These expressions have different meanings.",
               "A suspicion does not rule responsibility out."
             ]
+          },
+          {
+            "question": "What do Russian officials say about Germany’s claim?",
+            "options": [
+              "They say it is wrong.",
+              "They say it is correct.",
+              "They say Germany has made no claim."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says Russian officials call the claim wrong.",
+              "This is the opposite of their response in the reading.",
+              "Germany has made a claim, and Russian officials reject it."
+            ]
+          },
+          {
+            "question": "What does accidents mean in the sentence about fires?",
+            "options": [
+              "Events that were not planned",
+              "Attacks that were carefully planned",
+              "Reports that have not been written yet"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Accidents are events that happen without being planned.",
+              "A planned attack is not an accident.",
+              "Accidents describes possible causes of the fires, not unfinished reports."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -265,6 +293,62 @@
               "Being suspected does not establish guilt.",
               "These expressions have different meanings.",
               "A suspicion does not rule responsibility out."
+            ]
+          },
+          {
+            "question": "What is Leipzig airport used to transport in this reading?",
+            "options": [
+              "Military supplies for Ukraine",
+              "Russian officials to every investigation",
+              "All fire-damaged equipment from European factories"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading specifically mentions military supplies for Ukraine.",
+              "It does not describe the airport as transporting officials to investigations.",
+              "The reading does not say all damaged equipment is sent through Leipzig."
+            ]
+          },
+          {
+            "question": "What does reject mean in the sentence about Russian officials?",
+            "options": [
+              "Say that they do not accept the accusation",
+              "Agree that the accusation is correct",
+              "Ask Germany to repeat the accusation word for word"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Reject means refuse to accept the accusation.",
+              "Agreement would be the opposite of rejection.",
+              "Rejection denies or refuses a claim; it is not merely a request to repeat it."
+            ]
+          },
+          {
+            "question": "Why does the reading mention that some fires may have been accidental?",
+            "options": [
+              "To show that not every fire has been established as an attack",
+              "To confirm that every investigation has finished",
+              "To state that every fire was definitely an accident"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Possible accidental causes limit what can be concluded about the fires.",
+              "Some investigations are explicitly still continuing.",
+              "May signals a possibility for some fires, not certainty about all of them."
+            ]
+          },
+          {
+            "question": "Which sentence reports the source’s position without presenting it as an established fact?",
+            "options": [
+              "According to the report, Russia is the main suspect.",
+              "The report proves Russia caused every incident.",
+              "Every investigation has confirmed Russia’s responsibility."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "According to the report attributes the suspicion to the source and preserves its status.",
+              "The reading does not prove responsibility for every incident.",
+              "Some investigations are still continuing; universal confirmation is not reported."
             ]
           }
         ],
@@ -418,6 +502,90 @@
               "These expressions have different meanings.",
               "A suspicion does not rule responsibility out."
             ]
+          },
+          {
+            "question": "What contrast is made between the incidents in Estonia and Slovakia?",
+            "options": [
+              "Estonia is investigating a fire; Slovak police report preventing a fire attack.",
+              "Both countries report that all attempted fires were prevented.",
+              "Slovakia is investigating a completed factory fire; Estonia reports preventing it."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Estonia’s account follows a factory fire and arrests, while Slovak police report prevention.",
+              "The Estonian account concerns a fire that occurred, not only a prevented attempt.",
+              "This reverses the two accounts in the passage."
+            ]
+          },
+          {
+            "question": "How do the two analysts’ interpretations differ?",
+            "options": [
+              "One stresses pressure on Ukraine’s supporters; the other stresses testing weaknesses and responses.",
+              "One attributes every fire to accidents; the other says all investigations are complete.",
+              "One says Ukraine no longer receives supplies; the other says every factory has closed."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "These are the two interpretations explicitly attributed to analysts.",
+              "Neither analyst is described as concluding that every fire was accidental or every inquiry complete.",
+              "Neither analyst makes these claims about all supplies or factories."
+            ]
+          },
+          {
+            "question": "What does vulnerabilities mean in the second analyst’s interpretation?",
+            "options": [
+              "Weak points that could be exploited",
+              "Proofs that a suspect has been convicted",
+              "Measures that guarantee a government will respond"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Vulnerabilities are weaknesses that a campaign might probe or exploit.",
+              "A vulnerability is a weakness, not legal proof of responsibility.",
+              "The passage distinguishes weaknesses from governments’ willingness to respond."
+            ]
+          },
+          {
+            "question": "Why should the analysts’ explanations remain attributed to them?",
+            "options": [
+              "They are interpretations of the suspected campaign’s purpose.",
+              "They are court findings that resolve every incident.",
+              "They are direct admissions by those responsible."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text presents what analysts think the campaign may be intended to achieve.",
+              "The reading reports interpretations, not final court findings.",
+              "No admission by perpetrators is quoted in the reading."
+            ]
+          },
+          {
+            "question": "What does ultimately contribute to the sentence about accidental fires?",
+            "options": [
+              "The judgement may come at a later stage.",
+              "The judgement has already been made for every fire.",
+              "The judgement can only concern the largest fire."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Ultimately points to an eventual judgement, while may preserves uncertainty.",
+              "May ultimately be judged does not announce a completed judgement.",
+              "Ultimately concerns an eventual outcome, not the size of the fire."
+            ]
+          },
+          {
+            "question": "What role does Leipzig airport play in the supply chain described?",
+            "options": [
+              "It is used by Ukraine to transport military supplies.",
+              "It manufactures the drones targeted in Slovakia.",
+              "It houses the investigators examining the Estonian fire."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading states that Ukraine uses Leipzig to transport military supplies.",
+              "The drone manufacturer is in the Slovak account, not described as part of Leipzig airport.",
+              "No claim is made that the Estonian investigators are based at Leipzig."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.153076+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

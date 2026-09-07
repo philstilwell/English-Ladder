@@ -43,7 +43,7 @@ class EditorialTests(unittest.TestCase):
             readings = set()
             for level in update_site.LEVELS:
                 data = story["levels"][level["name"].lower()]
-                config = dict(level, min_sentence_count=6, min_vocabulary_count=3, quiz_count=5)
+                config = dict(level, min_sentence_count=6, min_vocabulary_count=3, min_quiz_count=5)
                 self.assertEqual([], update_site.validate_lesson_data(data, config))
                 readings.add(tuple(data["news_brief_sentences"]))
             self.assertEqual(3, len(readings))

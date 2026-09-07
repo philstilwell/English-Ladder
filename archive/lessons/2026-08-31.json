@@ -128,6 +128,34 @@
               "Waited last year places the activity in the past.",
               "Will wait next month describes a future activity."
             ]
+          },
+          {
+            "question": "What filled the tunnels after the floods?",
+            "options": [
+              "Mud",
+              "Air from the engineers",
+              "Explosives from the teams"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The floods filled the tunnels with mud.",
+              "Engineers are sending air in now. The floods brought mud.",
+              "Rescuers used explosives later to break through the hillside."
+            ]
+          },
+          {
+            "question": "What are engineers sending into the tunnels?",
+            "options": [
+              "Air",
+              "News for families",
+              "Workers from other countries"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says engineers are sending air into the tunnels.",
+              "Families are waiting for news. Engineers are sending air.",
+              "Other teams are helping, but the reading says engineers are sending air."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -265,6 +293,62 @@
               "Are waiting describes an activity in progress.",
               "Waited last year places the activity in the past.",
               "Will wait next month describes a future activity."
+            ]
+          },
+          {
+            "question": "Who is leading the rescue operation?",
+            "options": [
+              "Chinese and Nepalese military teams",
+              "Relatives of the missing workers",
+              "International specialists working without local teams"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Chinese and Nepalese military teams lead, with help from international specialists.",
+              "Relatives have asked for a faster rescue; they are not described as leading it.",
+              "International specialists are helping the Chinese and Nepalese teams."
+            ]
+          },
+          {
+            "question": "What happened when one team entered a tunnel?",
+            "options": [
+              "It left without finding anyone.",
+              "It found all the missing workers.",
+              "It stayed inside after finding the workers."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The team withdrew after finding nobody inside.",
+              "The reading says the team found nobody in that tunnel.",
+              "The team withdrew; it did not stay after finding workers."
+            ]
+          },
+          {
+            "question": "What does pumping mean in the sentence about the engineers?",
+            "options": [
+              "Moving air into the tunnels using equipment",
+              "Digging new entrances into the hillside",
+              "Measuring how much mud is in the tunnels"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Here, pumping means using equipment to move air into the tunnels.",
+              "Breaking through the hillside is a different part of the rescue.",
+              "Pumping describes moving air, not measuring mud."
+            ]
+          },
+          {
+            "question": "What have relatives asked the rescue teams to do?",
+            "options": [
+              "Move faster",
+              "Wait for another flood",
+              "Stop searching the tunnels"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Relatives have called for the rescue to move faster.",
+              "They want faster action, not another period of waiting.",
+              "They have asked for a faster rescue, not an end to the search."
             ]
           }
         ],
@@ -418,6 +502,90 @@
               "Waited last year places the activity in the past.",
               "Will wait next month describes a future activity."
             ]
+          },
+          {
+            "question": "Why have some tunnel entrances become difficult to locate?",
+            "options": [
+              "The landscape has changed.",
+              "The entrances were never recorded in the report.",
+              "The teams have been ordered to avoid the hillside."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "An engineer links the difficulty to changes in the landscape.",
+              "The reading does not attribute the problem to missing records.",
+              "No order to avoid the hillside is reported; the landscape has changed."
+            ]
+          },
+          {
+            "question": "Which projects have been affected?",
+            "options": [
+              "Both operating projects and projects under construction",
+              "Only projects that already produce electricity",
+              "Only projects that have not yet opened"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly includes operational projects and facilities still under construction.",
+              "Operational projects are affected, but so are unfinished facilities.",
+              "Facilities under construction are affected, but operational projects are too."
+            ]
+          },
+          {
+            "question": "What does Nepal’s reliance on hydropower help explain?",
+            "options": [
+              "Why damage to this industry matters to the country",
+              "Why all electricity supplies have already stopped",
+              "Why international specialists cannot help with the rescue"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Heavy reliance on hydropower explains the industry’s national importance without claiming an outage.",
+              "The reading describes dependence on hydropower; it does not report a total power failure.",
+              "International specialists are helping, and dependence on hydropower does not prevent that."
+            ]
+          },
+          {
+            "question": "What does withdrew mean in the account of the team that entered a tunnel?",
+            "options": [
+              "Pulled back from the tunnel",
+              "Brought workers out of the tunnel",
+              "Extended the search farther inside the tunnel"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Withdrew means moved back or left; this team found nobody there.",
+              "The team did not find anyone, so the sentence does not describe a successful extraction.",
+              "Withdrew describes pulling back, not moving farther in."
+            ]
+          },
+          {
+            "question": "How are specialists from other countries involved?",
+            "options": [
+              "They support an operation led by Chinese and Nepalese military personnel.",
+              "They lead the operation while the military teams only observe.",
+              "They replaced the military teams after the first tunnel search."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading identifies military leadership and international specialist support.",
+              "Leadership is assigned to Chinese and Nepalese military personnel, not the specialists.",
+              "No replacement of the leadership is reported."
+            ]
+          },
+          {
+            "question": "What can be concluded from one team finding nobody in one tunnel?",
+            "options": [
+              "That search was unsuccessful; it does not settle the fate of all missing workers.",
+              "All missing workers have been shown to be elsewhere.",
+              "The rescue operation has established that nobody is trapped."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The result concerns one tunnel; the wider search and uncertainty continue.",
+              "A search of one tunnel does not establish where every missing worker is.",
+              "The reading still describes workers believed to be trapped and an ongoing search."
+            ]
           }
         ],
         "sentence_evidence": [
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.151151+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

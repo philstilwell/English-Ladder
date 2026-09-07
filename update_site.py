@@ -51,7 +51,7 @@ LEVELS = [
         "header_label": "Beginner ESL",
         "min_sentence_count": 6,
         "min_vocabulary_count": 6,
-        "quiz_count": 10,
+        "min_quiz_count": 6,
         "overview_instruction": "Write the overview in one short and simple sentence.",
         "difficulty_instruction": (
             "Aim for strong A1-A2 level English, especially A2 rather than pre-A1. "
@@ -75,7 +75,7 @@ LEVELS = [
             "Brief. Include one exact quote from the News Brief."
         ),
         "quiz_instruction": (
-            "Make 4-6 quiz questions that are short, direct, and easy to "
+            "Make at least 6 distinct quiz questions that are short, direct, and easy to "
             "understand. Every question must test the News Brief, the vocabulary box, "
             "or the grammar point from this same lesson. Keep each answer choice brief "
             "and beginner-friendly."
@@ -88,7 +88,7 @@ LEVELS = [
         "header_label": "Intermediate ESL",
         "min_sentence_count": 8,
         "min_vocabulary_count": 8,
-        "quiz_count": 10,
+        "min_quiz_count": 8,
         "overview_instruction": "Write the overview in one clear sentence.",
         "difficulty_instruction": (
             "Aim for true B1-B2 classroom English with natural detail, more precise "
@@ -112,7 +112,7 @@ LEVELS = [
             "Include one exact quote from the News Brief."
         ),
         "quiz_instruction": (
-            "Make 4-6 quiz questions that are thoughtful but readable for CEFR "
+            "Make at least 8 distinct quiz questions that are thoughtful but readable for CEFR "
             "B1-B2 learners. Every question must test the News Brief, the vocabulary "
             "box, or the grammar point from this same lesson. Use short explanations "
             "in the feedback."
@@ -125,7 +125,7 @@ LEVELS = [
         "header_label": "Advanced ESL",
         "min_sentence_count": 10,
         "min_vocabulary_count": 10,
-        "quiz_count": 10,
+        "min_quiz_count": 10,
         "overview_instruction": "Write the overview in one polished sentence.",
         "difficulty_instruction": (
             "Aim for precise C1+ English with nuanced vocabulary, cohesive argument, "
@@ -146,7 +146,7 @@ LEVELS = [
             "News Brief."
         ),
         "quiz_instruction": (
-            "Make 4-6 quiz questions that are appropriately challenging for "
+            "Make at least 10 distinct quiz questions that are appropriately challenging for "
             "advanced learners. Every question must test the News Brief, the vocabulary "
             "box, or the grammar point from this same lesson, with concise but "
             "specific feedback."
@@ -309,8 +309,7 @@ def build_response_schema(level):
             },
             "quiz": {
                 "type": "array",
-                "minItems": 4,
-                "maxItems": level["quiz_count"],
+                "minItems": level["min_quiz_count"],
                 "items": {
                     "type": "object",
                     "additionalProperties": False,
@@ -365,7 +364,7 @@ Important requirements:
 3. {level["reading_instruction"]}
 4. {level["vocabulary_instruction"]}
 5. {level["grammar_instruction"]}
-6. Write 4-6 purposeful multiple-choice questions, never padding to meet a count. Mix main idea, detail, vocabulary in context, and a fresh grammar application. Advanced questions can test supported inference.
+6. The quiz MUST contain at least {level["min_quiz_count"]} complete, distinct multiple-choice questions. This is a hard minimum with no upper count limit. Mix main idea, different supporting details, vocabulary in context, and a fresh grammar application. Advanced questions can test supported inference. Repeated or lightly reworded questions about the same point, incomplete items, and generic filler cannot satisfy the minimum. If the reading cannot support enough purposeful questions, develop it using the supplied evidence; never invent facts or waive the minimum.
 7. The News Brief, vocabulary list, grammar point, and quiz must all match one another closely.
 8. Every vocabulary term must appear naturally in the News Brief exactly as written in the vocabulary list.
 9. The grammar example quote must be copied exactly from the News Brief.
@@ -502,11 +501,67 @@ def validate_vocabulary_items(lesson, level):
     return issues
 
 
+def quiz_question_key(prompt):
+    """Ignore presentation and leading numbering, but preserve numbers in meaning."""
+    text = unicodedata.normalize("NFKC", normalize_text(prompt)).casefold()
+    text = re.sub(r"^(?:question\s+)?\(?\d+\s*[.):\-]\s*", "", text)
+    return re.sub(r"[\W_]+", " ", text).strip()
+
+
+def validate_quiz_items(lesson, level):
+    """Only complete, distinct multiple-choice questions satisfy the minimum."""
+    minimum = level["min_quiz_count"]
+    quiz = lesson.get("quiz")
+    if not isinstance(quiz, list):
+        return [f"{level['name']} quiz must contain at least {minimum} complete, distinct multiple-choice questions."]
+    issues = []; seen = set(); valid = set()
+
+    def usable_text(value):
+        return (isinstance(value, str) and bool(re.search(r"[^\W_]", normalize_text(value)))
+                and not contains_markup(value))
+
+    for number, item in enumerate(quiz, 1):
+        prefix = f"Quiz item {number}"
+        if not isinstance(item, dict):
+            issues.append(f"{prefix} must be an object containing a question, three options, an answer key, and three explanations.")
+            continue
+        prompt = item.get("question")
+        if (not usable_text(prompt) or len(normalize_text(prompt)) < 6
+                or not re.search(r"[a-z]", quiz_question_key(prompt))):
+            issues.append(f"{prefix} needs a non-empty question in plain text.")
+            continue
+        key = quiz_question_key(prompt)
+        if key in seen:
+            issues.append(f"{prefix} duplicates another question; repeated questions cannot satisfy the minimum.")
+            continue
+        seen.add(key)
+        item_issues = []
+        options = item.get("options")
+        if (not isinstance(options, list) or len(options) != 3
+                or any(not usable_text(option) for option in options)
+                or len({vocabulary_term_key(option) for option in options}) != 3):
+            item_issues.append(f"{prefix} must have exactly three distinct, non-empty answer options in plain text.")
+        correct_index = item.get("correct_option_index")
+        if type(correct_index) is not int or correct_index not in (0, 1, 2):
+            item_issues.append(f"{prefix} must have one correct_option_index: the integer 0, 1, or 2.")
+        feedback = item.get("option_feedback")
+        if (not isinstance(feedback, list) or len(feedback) != 3
+                or any(not usable_text(explanation) or len(normalize_text(explanation)) < 8 for explanation in feedback)):
+            item_issues.append(f"{prefix} must include three non-empty, aligned feedback explanations in plain text.")
+        issues.extend(item_issues)
+        if not item_issues:
+            valid.add(key)
+    if len(valid) < minimum:
+        issues.append(f"{level['name']} quiz has {len(valid)} valid, distinct questions; at least {minimum} are required.")
+    return issues
+
+
 def validate_daily_minimums(lesson, level):
     if not isinstance(lesson, dict):
         return [f"{level['name']} daily lesson is missing or invalid."]
     return [*validate_reading_length(lesson.get("news_brief_sentences"), level),
-            *validate_vocabulary_items(lesson, level)]
+            *validate_vocabulary_items(lesson, level),
+            *validate_quiz_items(lesson, level)]
 
 
 def strip_markup(text):
@@ -871,46 +926,7 @@ def validate_lesson_data(lesson_data, level):
     elif brief_text and normalize_text(example_quote) not in brief_text:
         issues.append("The grammar example quote must come directly from the News Brief.")
 
-    quiz = lesson_data.get("quiz")
-    if not isinstance(quiz, list) or not 4 <= len(quiz) <= level["quiz_count"]:
-        issues.append(
-            f"The quiz must contain 4 to {level['quiz_count']} questions."
-        )
-        quiz = []
-
-    for question in quiz:
-        if not isinstance(question, dict):
-            issues.append("Each quiz item must be an object.")
-            continue
-
-        prompt = normalize_text(str(question.get("question", "")))
-        options = question.get("options")
-        correct_index = question.get("correct_option_index")
-        feedback = question.get("option_feedback")
-
-        if not prompt:
-            issues.append("Each quiz item must include a question.")
-        if not isinstance(options, list) or len(options) != 3:
-            issues.append("Each quiz question must have exactly three answer options.")
-            continue
-        if not isinstance(feedback, list) or len(feedback) != 3:
-            issues.append("Each quiz question must include three aligned feedback strings.")
-        if not isinstance(correct_index, int) or correct_index not in (0, 1, 2):
-            issues.append("Each quiz question must have a correct_option_index between 0 and 2.")
-
-        normalized_options = [normalize_text(str(option)) for option in options]
-        if len(set(normalize_for_match(option) for option in normalized_options if option)) != 3:
-            issues.append("Each quiz question must have three distinct answer options.")
-
-        for option in normalized_options:
-            if not option:
-                issues.append("Quiz answer options cannot be empty.")
-
-        if isinstance(feedback, list):
-            for explanation in feedback:
-                if not isinstance(explanation, str) or not normalize_text(explanation):
-                    issues.append("Quiz feedback explanations cannot be empty.")
-                    break
+    issues.extend(validate_quiz_items(lesson_data, level))
 
     return list(dict.fromkeys(issues))
 
@@ -1157,7 +1173,7 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
 
 
 def require_archive_lesson_minimums(archive_dir=ARCHIVE_DIR):
-    """Stop rebuilds before page writes unless every daily edition meets both minimums."""
+    """Stop rebuilds before page writes unless every daily edition meets all three minimums."""
     issues = []
     for path in sorted(Path(archive_dir).glob("*.json")):
         data = json.loads(path.read_text())

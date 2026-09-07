@@ -88,15 +88,15 @@
             ]
           },
           {
-            "question": "What is important about the person quoted in the headline?",
+            "question": "What does the reading say about some people arriving in Afghanistan?",
             "options": [
-              "They say they have never been to Afghanistan.",
+              "They have never been to Afghanistan.",
               "They say they chose a holiday in Afghanistan.",
               "They say they are opening a travel company."
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The headline includes this statement about their experience.",
+              "The reading says some people have never been to Afghanistan.",
               "The report describes forced return, not a chosen holiday.",
               "The supplied report does not say this."
             ]
@@ -127,6 +127,34 @@
               "Use been after have in this pattern.",
               "Be is the base form, not the required participle.",
               "Went is past simple; this pattern needs been."
+            ]
+          },
+          {
+            "question": "Who crossed the border with Nazia?",
+            "options": [
+              "Her children",
+              "Her teachers",
+              "Her employers"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Nazia crossed the border with her children.",
+              "The reading mentions her children, not teachers.",
+              "The reading says her children came with her, not employers."
+            ]
+          },
+          {
+            "question": "What do aid groups offer families?",
+            "options": [
+              "A place to stay for a short time",
+              "A paid job for every adult",
+              "A new home to keep forever"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Aid groups offer a place to stay for a short time.",
+              "Some families have no way to earn money. A job for everyone is not promised.",
+              "The place to stay is for a short time, not forever."
             ]
           }
         ],
@@ -226,15 +254,15 @@
             ]
           },
           {
-            "question": "What is important about the person quoted in the headline?",
+            "question": "What does the reading say about some people arriving in Afghanistan?",
             "options": [
-              "They say they have never been to Afghanistan.",
+              "They have never been to Afghanistan.",
               "They say they chose a holiday in Afghanistan.",
               "They say they are opening a travel company."
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The headline includes this statement about their experience.",
+              "The reading says some people have never been to Afghanistan.",
               "The report describes forced return, not a chosen holiday.",
               "The supplied report does not say this."
             ]
@@ -265,6 +293,62 @@
               "Use been after have in this pattern.",
               "Be is the base form, not the required participle.",
               "Went is past simple; this pattern needs been."
+            ]
+          },
+          {
+            "question": "How long do the shelters provide accommodation?",
+            "options": [
+              "Only a few nights",
+              "Until every family finds paid work",
+              "For as long as each family chooses"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says the shelters provide accommodation for only a few nights.",
+              "The reading does not link the length of a stay to finding work.",
+              "The shelters offer a limited stay, not an open-ended one."
+            ]
+          },
+          {
+            "question": "What is making support for new arrivals harder?",
+            "options": [
+              "Cuts in foreign aid",
+              "A fall in the number of people arriving",
+              "A requirement that every arrival already has a job"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading directly links cuts in foreign aid to difficulties supporting arrivals.",
+              "The reading does not describe fewer arrivals as the cause.",
+              "No such job requirement is described; the stated difficulty is reduced aid."
+            ]
+          },
+          {
+            "question": "What does the UN refugee agency say about returns?",
+            "options": [
+              "People should choose to return and be safe and treated with dignity.",
+              "People should return only if shelters can employ them.",
+              "People should be removed regardless of their wishes or safety."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The agency calls for choice, safety and dignity.",
+              "The reading does not make employment by a shelter a condition for return.",
+              "Forced return without regard for safety conflicts with the agency’s stated position."
+            ]
+          },
+          {
+            "question": "What does accommodation mean in the sentence about shelters?",
+            "options": [
+              "A place where people can stay",
+              "Money earned by doing a job",
+              "Permission to cross an international border"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Accommodation means a place to stay, which the shelters provide temporarily.",
+              "Money earned from work is income, not accommodation.",
+              "The word refers to a place to stay, not border permission."
             ]
           }
         ],
@@ -378,15 +462,15 @@
             ]
           },
           {
-            "question": "What is important about the person quoted in the headline?",
+            "question": "What does the reading say about some people arriving in Afghanistan?",
             "options": [
-              "They say they have never been to Afghanistan.",
+              "They have never been to Afghanistan.",
               "They say they chose a holiday in Afghanistan.",
               "They say they are opening a travel company."
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The headline includes this statement about their experience.",
+              "The reading says some people have never been to Afghanistan.",
               "The report describes forced return, not a chosen holiday.",
               "The supplied report does not say this."
             ]
@@ -417,6 +501,90 @@
               "Use been after have in this pattern.",
               "Be is the base form, not the required participle.",
               "Went is past simple; this pattern needs been."
+            ]
+          },
+          {
+            "question": "Which people does the report describe as facing removal from Pakistan?",
+            "options": [
+              "Registered Afghans as well as undocumented migrants",
+              "Only people who have never held any registration",
+              "Only people who have recently entered Afghanistan"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading expressly includes registered Afghans alongside undocumented migrants.",
+              "That excludes registered Afghans, whom the report also describes as facing removal.",
+              "People entering Afghanistan are arrivals there; the removal described is from Pakistan."
+            ]
+          },
+          {
+            "question": "What limitation of the shelters does the reading highlight?",
+            "options": [
+              "Short stays leave longer-term housing needs unresolved.",
+              "Shelters are available only to families who already own homes.",
+              "Shelters guarantee accommodation until permanent housing is found."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A few nights of refuge do not resolve the longer-term housing need identified in the reading.",
+              "The shelters are described as helping families arriving without accommodation.",
+              "The few-night limit contradicts a guarantee of accommodation until permanent housing is found."
+            ]
+          },
+          {
+            "question": "How do reductions in international aid affect the situation described?",
+            "options": [
+              "They add pressure to an already difficult support effort.",
+              "They remove the need for temporary shelters.",
+              "They ensure that families can immediately earn a living."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says aid reductions are adding pressure to the response.",
+              "Housing needs remain; reduced aid does not remove them.",
+              "Interviewees describe few immediate earning opportunities, not guaranteed work."
+            ]
+          },
+          {
+            "question": "What additional concern did one mother raise?",
+            "options": [
+              "Girls’ future under restrictions on education",
+              "A new requirement for children to work in shelters",
+              "A ban on all families crossing the border together"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The mother voiced concern about girls under the Taliban’s restrictions on education.",
+              "No requirement for children to work in shelters is reported.",
+              "No such ban is reported; Nazia crossed with her children."
+            ]
+          },
+          {
+            "question": "What does voluntary mean in the agency’s position on returns?",
+            "options": [
+              "Chosen freely by the people returning",
+              "Organised entirely by unpaid aid workers",
+              "Completed without any financial cost"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Voluntary describes the returnees’ free choice, not the staffing or cost of the process.",
+              "Voluntary modifies returns here; it does not describe aid workers’ pay.",
+              "A freely chosen action may still involve costs; voluntary concerns choice."
+            ]
+          },
+          {
+            "question": "Why might the word return be misleading about Nazia’s personal experience?",
+            "options": [
+              "Afghanistan was unfamiliar to her even though the movement is described as a return.",
+              "She had already made several visits to Afghanistan.",
+              "She had crossed from Afghanistan to Pakistan with her children."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Nazia was born in Pakistan and entered a country unfamiliar to her.",
+              "The reading does not describe previous visits; it stresses unfamiliarity.",
+              "The direction given is from Pakistan into Afghanistan, not the reverse."
             ]
           }
         ],
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.152078+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

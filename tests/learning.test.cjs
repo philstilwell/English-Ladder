@@ -125,3 +125,27 @@ test("all tool, workplace, grammar, and language scripts still initialize", asyn
     dom.window.close();
   }
 });
+
+for (const [level, minimum] of [["beginner", 6], ["intermediate", 8], ["advanced", 10]]) {
+  test(`${level}: every daily quiz meets its minimum and all questions update the score`, () => {
+    const dom = load(`${level}.html`);
+    const lessons = [...dom.window.document.querySelectorAll(".daily-lesson")];
+    for (const lesson of lessons) {
+      const questions = [...lesson.querySelectorAll(".quiz-question")];
+      assert.ok(questions.length >= minimum, `${lesson.dataset.lessonKey} needs ${minimum}+ questions`);
+      const progress = lesson.querySelector(".practice-progress");
+      assert.match(progress.textContent, new RegExp(`^0 of ${questions.length} questions answered`));
+    }
+    const lesson = lessons[0]; lesson.open = true;
+    lesson.querySelectorAll(".learning-flow button")[1].click();
+    const questions = [...lesson.querySelectorAll(".quiz-question")];
+    const total = questions.length;
+    const progress = lesson.querySelector(".practice-progress");
+    questions.at(-1).querySelector('[data-bg="#e6ffe6"]').click();
+    assert.match(progress.textContent, new RegExp(`1 of ${total} questions answered · 1 correct`));
+    for (const question of questions) question.querySelector('[data-bg="#e6ffe6"]').click();
+    assert.match(progress.textContent, new RegExp(`${total} of ${total} questions answered · ${total} correct`));
+    questions.at(-1).querySelector('[data-bg="#ffe6e6"]').click();
+    assert.match(progress.textContent, new RegExp(`${total} of ${total} questions answered · ${total - 1} correct`));
+  });
+}

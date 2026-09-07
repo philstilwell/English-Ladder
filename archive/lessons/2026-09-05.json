@@ -74,7 +74,7 @@
         },
         "quiz": [
           {
-            "question": "Why was a mistrial declared, according to the headline?",
+            "question": "Why was a mistrial declared, according to the reading?",
             "options": [
               "The jury could not agree",
               "The report says a final guilty verdict was reached",
@@ -83,12 +83,12 @@
             "correct_option_index": 0,
             "option_feedback": [
               "A deadlocked jury could not reach agreement.",
-              "The headline reports a mistrial, not this final verdict.",
+              "The reading reports a mistrial, not this final verdict.",
               "A mistrial concerns a trial that did take place."
             ]
           },
           {
-            "question": "What is still uncertain in the summary?",
+            "question": "What is still uncertain in the reading?",
             "options": [
               "The legal outcome",
               "Whether the case concerns children",
@@ -96,9 +96,9 @@
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The summary leaves the outcome unresolved.",
-              "The summary identifies the deaths of her children.",
-              "The headline explicitly mentions the jury."
+              "The reading leaves the outcome unresolved.",
+              "The reading identifies the deaths of her children.",
+              "The reading explicitly mentions the jury."
             ]
           },
           {
@@ -127,6 +127,34 @@
               "Use remains with the singular subject and an adjective.",
               "This pattern needs the adjective uncertain.",
               "The singular subject takes remains here."
+            ]
+          },
+          {
+            "question": "What did Clancy’s lawyer try to do?",
+            "options": [
+              "Stop the mistrial",
+              "Move the case to another country",
+              "Cancel every later court meeting"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Her lawyer tried to stop the mistrial, but the attempt failed.",
+              "The reading does not describe a plan to move the case to another country.",
+              "The reading says another meeting is planned; it does not say the lawyer tried to cancel all meetings."
+            ]
+          },
+          {
+            "question": "When is another court meeting planned?",
+            "options": [
+              "Later in the month",
+              "One year after the trial",
+              "Before the jury began discussing the case"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says the next meeting is planned for later in the month.",
+              "The reading says later in the month, not a year later.",
+              "The planned meeting is a next step, after the jury’s discussions."
             ]
           }
         ],
@@ -212,7 +240,7 @@
         },
         "quiz": [
           {
-            "question": "Why was a mistrial declared, according to the headline?",
+            "question": "Why was a mistrial declared, according to the reading?",
             "options": [
               "The jury could not agree",
               "The report says a final guilty verdict was reached",
@@ -221,12 +249,12 @@
             "correct_option_index": 0,
             "option_feedback": [
               "A deadlocked jury could not reach agreement.",
-              "The headline reports a mistrial, not this final verdict.",
+              "The reading reports a mistrial, not this final verdict.",
               "A mistrial concerns a trial that did take place."
             ]
           },
           {
-            "question": "What is still uncertain in the summary?",
+            "question": "What is still uncertain in the reading?",
             "options": [
               "The legal outcome",
               "Whether the case concerns children",
@@ -234,9 +262,9 @@
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The summary leaves the outcome unresolved.",
-              "The summary identifies the deaths of her children.",
-              "The headline explicitly mentions the jury."
+              "The reading leaves the outcome unresolved.",
+              "The reading identifies the deaths of her children.",
+              "The reading explicitly mentions the jury."
             ]
           },
           {
@@ -265,6 +293,62 @@
               "Use remains with the singular subject and an adjective.",
               "This pattern needs the adjective uncertain.",
               "The singular subject takes remains here."
+            ]
+          },
+          {
+            "question": "What happened before the jury’s week of discussions?",
+            "options": [
+              "Several weeks of testimony",
+              "A decision to cancel all later hearings",
+              "A second trial with a different jury"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading puts weeks of testimony before the week of jury discussions.",
+              "Another hearing is scheduled; the reading does not say later hearings were cancelled.",
+              "A possible new trial is still being considered, not described as already completed."
+            ]
+          },
+          {
+            "question": "What is the next hearing intended to consider?",
+            "options": [
+              "The next steps in the case",
+              "A verdict the jury has already agreed on",
+              "A new law about how long all trials must last"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The hearing is scheduled to consider next steps after the mistrial.",
+              "The jury could not agree on a verdict.",
+              "The reading describes this case’s next steps, not the creation of a new law."
+            ]
+          },
+          {
+            "question": "What does the prosecutor say the legal team will discuss?",
+            "options": [
+              "Whether to seek another trial",
+              "Whether to remove all future court hearings from the calendar",
+              "Whether the first jury had already agreed"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The prosecutor says the team will discuss seeking another trial.",
+              "The reading schedules another hearing and does not report a plan to cancel every future one.",
+              "The jury’s failure to agree is already stated; the discussion concerns a possible new trial."
+            ]
+          },
+          {
+            "question": "What does testimony mean in this account?",
+            "options": [
+              "Evidence given by people in court",
+              "The final punishment ordered by a judge",
+              "The date written on a hearing notice"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Testimony is evidence given by people in court and heard before jury discussions.",
+              "Testimony is evidence, not a punishment.",
+              "A hearing date is scheduling information, not testimony."
             ]
           }
         ],
@@ -364,7 +448,7 @@
         },
         "quiz": [
           {
-            "question": "Why was a mistrial declared, according to the headline?",
+            "question": "Why was a mistrial declared, according to the reading?",
             "options": [
               "The jury could not agree",
               "The report says a final guilty verdict was reached",
@@ -373,12 +457,12 @@
             "correct_option_index": 0,
             "option_feedback": [
               "A deadlocked jury could not reach agreement.",
-              "The headline reports a mistrial, not this final verdict.",
+              "The reading reports a mistrial, not this final verdict.",
               "A mistrial concerns a trial that did take place."
             ]
           },
           {
-            "question": "What is still uncertain in the summary?",
+            "question": "What is still uncertain in the reading?",
             "options": [
               "The legal outcome",
               "Whether the case concerns children",
@@ -386,9 +470,9 @@
             ],
             "correct_option_index": 0,
             "option_feedback": [
-              "The summary leaves the outcome unresolved.",
-              "The summary identifies the deaths of her children.",
-              "The headline explicitly mentions the jury."
+              "The reading leaves the outcome unresolved.",
+              "The reading identifies the deaths of her children.",
+              "The reading explicitly mentions the jury."
             ]
           },
           {
@@ -417,6 +501,90 @@
               "Use remains with the singular subject and an adjective.",
               "This pattern needs the adjective uncertain.",
               "The singular subject takes remains here."
+            ]
+          },
+          {
+            "question": "Which sequence matches the account of the jury’s work?",
+            "options": [
+              "Weeks of testimony, followed by a week of deliberations",
+              "A week of deliberations, followed by weeks of testimony",
+              "A completed second trial, followed by the first trial’s testimony"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Jurors deliberated for a week after hearing several weeks of testimony.",
+              "This reverses the order given in the passage.",
+              "No completed second trial is reported."
+            ]
+          },
+          {
+            "question": "What did the state’s highest court refuse to require?",
+            "options": [
+              "Further deliberations by the jury",
+              "Attendance at the already scheduled later hearing",
+              "The prosecutor’s discussion of whether to seek a retrial"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The court refused a request to require the jury to continue deliberating.",
+              "The reported refusal concerns the jury’s deliberations, not attendance at the later hearing.",
+              "The legal team’s possible retrial discussion is a separate next step."
+            ]
+          },
+          {
+            "question": "What does conviction mean in the contrast with a finding of not guilty?",
+            "options": [
+              "A formal finding of guilt",
+              "A strongly held personal belief",
+              "A decision to postpone a hearing"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "In this legal context, conviction refers to a finding of guilt.",
+              "Conviction can mean a firm belief elsewhere, but the contrast with not guilty identifies the legal sense.",
+              "Postponing a hearing changes its timing; it is not a conviction."
+            ]
+          },
+          {
+            "question": "Which statement accurately reports Clancy’s situation after the mistrial?",
+            "options": [
+              "She remains held on the existing charges.",
+              "All existing charges have been withdrawn.",
+              "She has been released following a finding of not guilty."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly says she remains held on the existing charges.",
+              "The passage states that the existing charges remain; it does not report withdrawal.",
+              "The deadlock produced no finding of not guilty, and the reading says she remains held."
+            ]
+          },
+          {
+            "question": "Which wording accurately describes the possibility of another trial?",
+            "options": [
+              "The legal team will consider whether to seek one.",
+              "The legal team has already completed another trial.",
+              "The legal team has definitively ruled out another trial."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Consider whether preserves the unresolved decision reported by the prosecutor.",
+              "The passage reports a decision still to be considered, not a completed trial.",
+              "The team has not ruled it out in the account; it will consider the question."
+            ]
+          },
+          {
+            "question": "Choose the natural form for a new sentence using remain + adjective.",
+            "options": [
+              "The timing of any new trial remains unclear.",
+              "The timing of any new trial remains unclearly.",
+              "The timing of any new trial remains to unclear."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Unclear is an adjective describing the continuing state, like uncertain in the lesson.",
+              "After remains in this pattern, use the adjective unclear, not the adverb unclearly.",
+              "The pattern is remain plus an adjective; to does not belong before unclear."
             ]
           }
         ],
@@ -454,6 +622,20 @@
       "beginner": 6,
       "intermediate": 8,
       "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.153350+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
     }
   }
 }

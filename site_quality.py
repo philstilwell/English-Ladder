@@ -54,14 +54,14 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260906-page-practice1','site.css':'20260907-grammar-images1','app.js':'20260907-grammar-images1','editorial.css':'20260906-seo1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260906-page-practice1','site.css':'20260907-grammar-images1','app.js':'20260907-title-labels1','editorial.css':'20260907-title-labels1','ai-practice.js':'20260906-ai1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page
-    from update_site import render_lesson_html,LEVELS as CONFIG,release_datetime_from_date
+    from update_site import render_lesson_html,render_lesson_title,LEVELS as CONFIG,release_datetime_from_date
     cards=[];compact={}
     paths=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)
     for path in paths:
@@ -77,7 +77,7 @@ def build_news_archive():
             content=str(lesson_soup)
             reviewed=data.get('editorial_review',{}).get('date') or lesson.get('editorial_check',{}).get('date','')[:10]
             notice=(f'Teaching text revised {reviewed}; this summary is limited to the saved source evidence.' if reviewed else 'Archive lesson. This older lesson has not yet received the September 2026 editorial review. Check the linked source for context.')
-            body=f'<section class="page-hero"><p class="eyebrow">News archive · <time datetime="{date}">{date}</time> · {e(category)}</p><h1>{e(lesson["title"])}</h1><p>{e(lesson["overview"])}</p>{level_links(level)}<p class="archive-notice">{e(notice)}</p><a href="../../archive.html">Browse the archive</a></section>{content}'
+            body=f'<section class="page-hero"><p class="eyebrow">News archive · <time datetime="{date}">{date}</time> · {e(category)}</p><h1>{render_lesson_title(lesson["title"])}</h1><p>{e(lesson["overview"])}</p>{level_links(level)}<p class="archive-notice">{e(notice)}</p><a href="../../archive.html">Browse the archive</a></section>{content}'
             target=ROOT/'news'/date/f'{level}.html';target.parent.mkdir(parents=True,exist_ok=True)
             target.write_text(document(lesson['title'],body,f'theme-{level} news-permalink','../../',f'{level}.html'))
             decorate_page(target)

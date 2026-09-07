@@ -58,10 +58,17 @@ def document(title, content, body_class="theme-hub", prefix="", current=""):
 </head><body class="{body_class}">{site_header(prefix, current)}<main id="main-content" class="page-shell">{content}{footer(prefix)}</main></body></html>'''
 
 
+def locate_title_instruction(text):
+    """Keep instructions explicit about the title's position without repeating 'above'."""
+    return re.sub(r'\b(Read|Look at) the (title|headline)(?=[.!?])', r'\1 the \2 above', text, flags=re.IGNORECASE)
+
+
 def enhance_lesson(lesson, lesson_data=None, source=None):
     """Enhance generated and older markup once; retain all content without JavaScript."""
     key = lesson.get("data-lesson-key", "lesson")
     lesson["id"] = "lesson-" + key
+    for prompt in lesson.select('.prediction p'):
+        prompt.string = locate_title_instruction(prompt.get_text())
     if lesson.select_one(".learning-panel"):
         return
     content = lesson.select_one(".lesson-content")
@@ -71,7 +78,7 @@ def enhance_lesson(lesson, lesson_data=None, source=None):
     if len(sections) < 3:
         return
     data = lesson_data or {}
-    prediction = data.get("prediction") or "Look at the title. What do you think you will learn?"
+    prediction = locate_title_instruction(data.get("prediction") or "Read the title above. What do you think you will learn?")
     prompts = data.get("discussion") or ["Explain this story to a friend in two sentences.", "Which detail interests you most? Say why."]
     read = fragment('<div class="learning-panel" data-stage="read"></div>').div
     practice = fragment('<div class="learning-panel" data-stage="practice"></div>').div
@@ -241,12 +248,12 @@ def build_homepage():
             visual = f'<figure class="feature-photo"><img src="{picture["path"]}" width="{picture["width"]}" height="{picture["height"]}" alt="{html.escape(picture["alt"], quote=True)}" fetchpriority="high"><figcaption>AI-generated illustration · Inspired by this lesson; not a news photograph.</figcaption></figure>'
         else:
             words = "".join(f'<li>{html.escape(str(item["term"]))}</li>' for item in brief.get("vocabulary", [])[:5] if "term" in item)
-            question = html.escape(brief.get("prediction") or "Look at the headline. What do you think you will learn?")
+            question = html.escape(locate_title_instruction(brief.get("prediction") or "Read the title above. What do you think you will learn?"))
             visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><p class="eyebrow">Before you read</p><h2>{question}</h2><p>Read a real story. Learn useful words. Share your ideas.</p><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
     title, overview = html.escape(title), html.escape(overview)
     content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html">daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
 <div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
-<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title">{title}</h2><p>{overview}</p>
+<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-label">Title: </span><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
 <label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>
 <label class="level-option"><input type="radio" name="feature-level" value="intermediate" data-lesson-href="{urls['intermediate']}"><span>Intermediate</span></label>
@@ -279,7 +286,7 @@ def build_credits():
 def build_stories():
     from datetime import datetime, timezone
     from story_lessons import STORIES
-    from update_site import LEVELS, render_lesson_html, validate_lesson_data
+    from update_site import LEVELS, render_lesson_html, render_lesson_title, validate_lesson_data
     credits = {item["key"]: item for item in json.loads((ROOT / "assets/editorial/credits.json").read_text())}
     for story in STORIES:
         for level in LEVELS:
@@ -302,7 +309,7 @@ def build_stories():
                 title = "Benefits of trees" if "benefits" in source_url else "Caring for new trees"
                 lesson.select_one('[data-stage="read"]').append(fragment(f'<p class="lesson-source">Read more: <a href="{source_url}" target="_blank" rel="noopener noreferrer">{title} — US Environmental Protection Agency ↗</a></p>').p)
             badge = {"beginner": "Beginner · A1–A2", "intermediate": "Intermediate · B1–B2", "advanced": "Advanced · C1+"}[name]
-            content = f'<section class="page-hero"><p class="eyebrow">{story["category"]} · 5-minute lesson</p><h1>{html.escape(data["title"])}</h1><p>{html.escape(data["overview"])}</p><span class="level-badge">{badge}</span>{level_links(name, story["slug"])}</section>{lesson}'
+            content = f'<section class="page-hero"><p class="eyebrow">{story["category"]} · 5-minute lesson</p><h1>{render_lesson_title(data["title"])}</h1><p>{html.escape(data["overview"])}</p><span class="level-badge">{badge}</span>{level_links(name, story["slug"])}</section>{lesson}'
             path = ROOT / "stories" / story["slug"] / f"{name}.html"
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(document(data["title"], content, f'theme-{name} story-page', "../../"), encoding="utf-8")

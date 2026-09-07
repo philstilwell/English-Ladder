@@ -81,7 +81,7 @@ def local_link(path, relative):
 
 def profile(path, soup):
     relative = path.relative_to(ROOT).as_posix()
-    heading = soup.h1.get_text(' ', strip=True)
+    heading = (soup.h1.select_one('.lesson-title-text') or soup.h1).get_text(' ', strip=True)
     result = dict(relative=relative, name=heading, kind='page', parent='index.html',
                   title='', description='', level='', teaches=[], pdfs=[], date='')
     if relative in PAGES:

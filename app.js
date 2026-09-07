@@ -62,8 +62,21 @@ function extractLessonParts(summary) {
     };
 }
 
+function labelLessonTitle(title) {
+    if (title.parentElement?.classList.contains("lesson-title-group")) return title.parentElement;
+    const group = document.createElement("span");
+    group.className = "lesson-title-group";
+    const label = document.createElement("span");
+    label.className = "lesson-title-label";
+    label.textContent = "Title: ";
+    title.replaceWith(group);
+    group.append(label, title);
+    return group;
+}
+
 function ensureSummaryMarkup(summary, parts) {
     if (summary.querySelector(".lesson-date-text") && summary.querySelector(".lesson-title-text")) {
+        labelLessonTitle(summary.querySelector(".lesson-title-text"));
         return;
     }
 
@@ -88,7 +101,7 @@ function ensureSummaryMarkup(summary, parts) {
     titleSpan.className = "lesson-title-text";
     titleSpan.textContent = parts.titleText;
 
-    summary.append(prefix, document.createTextNode(" "), dateSpan, document.createTextNode(" "), ageSpan, document.createTextNode(" "), separator, document.createTextNode(" "), titleSpan);
+    summary.append(prefix, document.createTextNode(" "), dateSpan, document.createTextNode(" "), ageSpan, document.createTextNode(" "), separator, document.createTextNode(" "), labelLessonTitle(titleSpan));
 }
 
 function updateLessonAges() {

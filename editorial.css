@@ -97,6 +97,8 @@ summary.lesson-date::after { content: "+"; color: var(--accent); font-size: 1.4r
 details[open] > summary.lesson-date::after { content: "−"; }
 .lesson-date-text { color: var(--muted); font-size: .875rem; font-weight: 400; padding-top: 3px; }
 .lesson-date-prefix, .lesson-age, .lesson-separator { display: none; }
+.lesson-title-label { white-space:nowrap; }
+.lesson-title-group { min-width:0; }
 .lesson-description { margin-left: 151px; font-style: normal; max-width: 65ch; }
 .lesson-content { border: 0; padding: 10px 0 0; }
 .lesson-content > .header { background: transparent; padding: 0; text-align: left; border-radius: 0; }
@@ -325,7 +327,7 @@ input, textarea, select { accent-color: var(--accent); }
   .path-grid { grid-template-columns: 1fr 1fr; gap: 20px; } .path-link { margin: 0; padding-right: 12px; } .path-link:nth-child(2) { border: 0; }
   .page-hero, .tools-hero, .grammar-hero, .efsp-hero, .us-life-hero, .efsp-industry-hero { padding: 24px 0; }
   summary.lesson-date { grid-template-columns: 1fr 24px; gap: 8px; font-size: 1.2rem; }
-  .lesson-date-text { grid-column: 1; } .lesson-title-text { grid-column: 1; } summary.lesson-date::after { grid-row: 2; grid-column: 2; }
+  .lesson-date-text { grid-column: 1; } .lesson-title-group { grid-column: 1; } summary.lesson-date::after { grid-row: 2; grid-column: 2; }
   .lesson-description { margin-left: 0; } .learning-flow { gap: 4px; } .learning-flow button { padding: 10px 12px; }
   .learning-panel .section > p { font-size: 1.0625rem; } .prediction { padding: 16px; }
   .quiz-card { padding: 16px; } .discussion { padding: 20px; }

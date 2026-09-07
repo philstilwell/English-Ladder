@@ -31,6 +31,7 @@ on:
       - 'ai-practice.js'
       - 'news_quality.py'
       - 'lesson_levels.py'
+      - 'lesson_evidence.py'
       - 'publish_snapshot.py'
       - 'audit_site.py'
       - 'audit_seo.py'
@@ -132,7 +133,7 @@ jobs:
 
       - name: Run checks
         run: |
-          python -m py_compile update_site.py daily_images.py verify_discover.py
+          python -m py_compile update_site.py lesson_evidence.py daily_images.py verify_discover.py
           python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Run Python Script
@@ -159,7 +160,7 @@ jobs:
           if [ -n "${SKIP_EXISTING}" ]; then
             args+=(--skip-existing)
           fi
-          python update_site.py "${args[@]}"
+          python -u update_site.py "${args[@]}"
 
       - name: Check generated pages
         run: |

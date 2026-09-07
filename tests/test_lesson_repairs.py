@@ -133,6 +133,44 @@ class LessonRepairTests(unittest.TestCase):
         issues = u.validate_lesson_data(bad, level)
         self.assertEqual((), u.local_repair_fields(bad, self.news, level, issues))
 
+    def test_numbered_source_evidence_is_resolved_before_every_review(self):
+        from lesson_evidence import evidence_choices
+        choices = evidence_choices(self.news)
+        draft = copy.deepcopy(self.lesson)
+        # Each source excerpt may sit within a larger source paragraph.
+        draft['sentence_evidence'] = [next(i for i, text in enumerate(choices) if ' '.join(quote.split()) in text)
+                                      for quote in self.lesson['sentence_evidence']]
+        client, calls = self.simulate([draft, approved_review()])
+        saved, _ = u.generate_lesson(client, self.news, self.level, self.date)
+        schema = calls[0]['config']['response_json_schema']['properties']['sentence_evidence']['items']
+        self.assertEqual('integer', schema['type'])
+        self.assertEqual(len(choices) - 1, schema['maximum'])
+        self.assertTrue(all(isinstance(quote, str) for quote in saved['sentence_evidence']))
+        self.assertEqual([], news_quality.validate_evidence(saved, self.news))
+        payload = json.loads(calls[1]['contents'].rsplit('\nDATA:\n', 1)[1])
+        self.assertEqual(saved['sentence_evidence'], payload['lesson']['sentence_evidence'])
+
+    def test_evidence_errors_are_reported_even_when_vocabulary_also_fails(self):
+        bad = copy.deepcopy(self.lesson)
+        bad['vocabulary'].pop()
+        bad['sentence_evidence'][0] = 'This quote was never in the source.'
+        client, calls = self.simulate([bad, self.lesson, approved_review()])
+        u.generate_lesson(client, self.news, self.level, self.date)
+        self.assertIn('Beginner vocabulary has', calls[1]['contents'])
+        self.assertIn('Sentence 1 has no valid exact source excerpt', calls[1]['contents'])
+
+    def test_overlong_discussion_is_repaired_without_rewriting_the_lesson(self):
+        bad = copy.deepcopy(self.lesson)
+        bad['discussion'][1] = 'An excessively long discussion prompt. ' * 8
+        client, calls = self.simulate([bad, lambda req: draft_response(self.lesson, req, bad), approved_review()])
+        saved, _ = u.generate_lesson(client, self.news, self.level, self.date)
+        self.assertEqual(['discussion'], calls[1]['config']['response_json_schema']['required'])
+        self.assertIn('Discussion prompt 2', calls[1]['contents'])
+        self.assertIn('10 and 220 characters', calls[1]['contents'])
+        for field in ('news_brief_sentences', 'sentence_evidence', 'vocabulary', 'grammar', 'quiz'):
+            self.assertEqual(self.lesson[field], saved[field])
+        self.assertEqual(self.lesson['discussion'], saved['discussion'])
+
 
 if __name__ == '__main__':
     unittest.main()

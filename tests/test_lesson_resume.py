@@ -31,6 +31,8 @@ class LessonResumeTests(unittest.TestCase):
         self.lesson = self.lessons['beginner']
         choices = evidence_choices(self.source)
         self.model_draft = copy.deepcopy(self.lesson)
+        # Historical editions include a retired field that new drafts no longer request.
+        self.model_draft.pop('prediction', None)
         sentences = self.model_draft.pop('news_brief_sentences')
         evidence = self.model_draft.pop('sentence_evidence')
         self.model_draft['reading'] = [

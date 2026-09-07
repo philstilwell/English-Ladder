@@ -34,12 +34,6 @@ USE_PUBLIC_ITEM_BANK = os.environ.get("ENGLISH_LADDER_USE_PUBLIC_ITEM_BANK", "")
 }
 
 
-CLOUDFLARE_SNIPPET = (
-    "<!-- Cloudflare Web Analytics --><script defer "
-    "src='https://static.cloudflareinsights.com/beacon.min.js' "
-    "data-cf-beacon='{\"token\": \"c9c5fc6fc0f947efb5b32e0139ad4459\"}'></script>"
-    "<!-- End Cloudflare Web Analytics -->"
-)
 
 PLACEHOLDER_ANSWER_LINES = {
     "See explanation below.",
@@ -1664,7 +1658,6 @@ def render_detail_page(entry: ConceptEntry, previous_entry: ConceptEntry | None,
         <link href="../favicon.png" rel="icon" type="image/png">
         <link href="../styles.css" rel="stylesheet">
         <script defer src="../app.js"></script>
-        {CLOUDFLARE_SNIPPET}
         </head>
         <body class="theme-grammar-detail">
         <main class="page-shell">
@@ -1764,7 +1757,6 @@ def render_index_page(entries: list[ConceptEntry]) -> str:
         <title>English Ladder | Grammar Concepts</title>
         <link href="favicon.png" rel="icon" type="image/png">
         <link href="styles.css" rel="stylesheet">
-        {CLOUDFLARE_SNIPPET}
         </head>
         <body class="theme-grammar-index">
         <main class="page-shell">

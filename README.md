@@ -154,6 +154,8 @@ python3 update_site.py --refresh-pages
 
 ## Hosting and publishing
 
+Cloudflare Web Analytics uses **Automatic setup** for the public domain. Cloudflare injects the beacon as pages are served; do not embed it in HTML or page generators. The earlier manual analytics record is retained for historical traffic, while new visits appear in the automatic record.
+
 Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains the registrar, GitHub stores the source, and the existing daily GitHub Actions schedule continues to create lessons. Static hosting adds $0/month at the current scale; existing Gemini generation and domain renewals remain separate.
 
 Cloudflare's existing GitHub integration builds the `main` branch. `wrangler.jsonc` runs JavaScript and site/search checks, then `cloudflare/build.cjs` copies only public assets into ignored `.cf-site/`. Every HTML/CSS local reference is checked against the upload. Python sources, project notes, credentials, tests, and dependencies are excluded. All current `.html`, PDF, image, prompt-text, sitemap, and lesson-data addresses are preserved.

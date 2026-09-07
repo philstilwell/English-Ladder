@@ -54,7 +54,6 @@ def document(title, content, body_class="theme-hub", prefix="", current=""):
 <title>{html.escape(title)} | English Ladder</title><meta name="description" content="Learn English with real stories. Read, practice, and discuss at your level.">
 <link rel="icon" href="{prefix}assets/brand/favicon.png"><link rel="stylesheet" href="{prefix}styles.css"><link rel="stylesheet" href="{prefix}editorial.css">
 <script defer src="{prefix}app.js"></script><script defer src="{prefix}learning.js"></script>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{{"token":"c9c5fc6fc0f947efb5b32e0139ad4459"}}'></script>
 </head><body class="{body_class}">{site_header(prefix, current)}<main id="main-content" class="page-shell">{content}{footer(prefix)}</main></body></html>'''
 
 

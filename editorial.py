@@ -291,7 +291,7 @@ def build_stories():
         for level in LEVELS:
             name = level["name"].lower()
             data = story["levels"][name]
-            config = dict(level, sentence_count=6, vocabulary_count=3, quiz_count=5)
+            config = dict(level, min_sentence_count=6, vocabulary_count=3, quiz_count=5)
             issues = validate_lesson_data(data, config)
             if issues:
                 raise ValueError(f'{story["slug"]}/{name}: {issues}')

@@ -41,11 +41,11 @@ class QualityTests(unittest.TestCase):
                 update_site.generate_lesson(client,self.source,update_site.LEVELS[0],update_site.release_datetime_from_date('2026-09-06'))
         self.assertEqual(2,len(calls))
         self.assertIn('Review an English lesson for publication',calls[1]['contents'])
-    def test_short_evidence_does_not_require_ten_sentences(self):
-        self.assertEqual(4,len(self.lesson['news_brief_sentences']))
-        self.assertEqual([],update_site.validate_lesson_data(self.lesson,update_site.LEVELS[0]))
-        self.lesson['news_brief_sentences']=self.lesson['news_brief_sentences'][:2]
-        self.assertTrue(update_site.validate_lesson_data(self.lesson,update_site.LEVELS[0]))
+    def test_short_source_never_waives_the_level_minimum(self):
+        for level in update_site.LEVELS:
+            lesson=copy.deepcopy(self.data['levels'][level['name'].lower()]['lesson'])
+            lesson['news_brief_sentences']=lesson['news_brief_sentences'][:level['min_sentence_count']-1]
+            self.assertTrue(any('at least' in issue for issue in update_site.validate_lesson_data(lesson,level)))
     def test_newly_generated_lessons_retain_source_topic_notices(self):
         calls=[]
         def generate(**kwargs):

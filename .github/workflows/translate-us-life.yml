@@ -1,0 +1,45 @@
+name: Translate Everyday English explanations
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: translate-us-life
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install existing project dependencies
+        run: pip install -r requirements.txt
+      - name: Translate and separately edit the public sidebars
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python -u us_life_translations.py --budget 2
+      - name: Preserve translations and spending records
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: us-life-translations-${{ github.run_id }}
+          path: data/us-life-translations/
+          include-hidden-files: true
+          retention-days: 14
+      - name: Save reviewed translations and resumable progress
+        if: always()
+        run: |
+          git config user.name 'GitHub Actions Bot'
+          git config user.email 'actions@github.com'
+          git add data/us-life-translations
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Prepare reviewed Everyday English translations'
+          git pull --rebase origin main
+          git push origin HEAD:main

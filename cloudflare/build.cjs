@@ -13,7 +13,7 @@ const paths = cp.execFileSync('git', ['ls-files', '-z', '--cached', '--others', 
 const files = [...new Set(paths)].filter(file => {
   // Translation records are build inputs. Their reviewed definitions are already
   // embedded in each lesson; browsers never fetch the working records separately.
-  if (file.startsWith('data/vocabulary-translations/')) return false;
+  if (file.startsWith('data/vocabulary-translations/') || file.startsWith('data/us-life-translations/')) return false;
   const parts = file.split('/');
   if (parts.some(part => part.startsWith('.'))) return false;
   if (parts.length > 1) return publicDirs.has(parts[0]) && extensions.has(path.extname(file));

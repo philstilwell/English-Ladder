@@ -21,7 +21,7 @@ def enhance_page(soup,path,prefix):
     if footer:
         for a in footer.select('a[href]'):
             if Path(a['href']).name=='continue.html':a.decompose()
-        for target,label in [('archive.html','News archive'),('about.html','About & corrections'),('privacy.html','Privacy')]:
+        for target,label in [('study-routes.html','Study routes'),('archive.html','News archive'),('about.html','About & corrections'),('privacy.html','Privacy')]:
             if not footer.find('a',href=prefix+target):
                 a=soup.new_tag('a',href=prefix+target);a.string=label;footer.append(a)
     for a in soup.select('a.explore-story'):
@@ -54,6 +54,8 @@ def enhance_page(soup,path,prefix):
         enhance_life_languages(soup)
     from ai_extensions import enhance_page as enhance_ai
     enhance_ai(soup,path,prefix)
+    from study_routes import enhance_page as enhance_routes
+    enhance_routes(soup,relative,prefix)
     # Give returning readers the current controls instead of cached older files.
     updated_assets={'app.js','learning.js','site.js','tools.js','work.js','us-life.js','styles.css','editorial.css','site.css','work.css','ai-practice.js','work-ai.js','work-ready.js'}
     for tag in soup.select('script[src],link[rel="stylesheet"][href]'):
@@ -122,6 +124,8 @@ def write_sitemap():
 
 def publish_quality_pages():
     from ai_extensions import build_library
+    from study_routes import build_page
+    build_page()
     build_library()
     build_news_archive();build_information_pages()
 

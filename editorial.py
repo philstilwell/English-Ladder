@@ -305,7 +305,7 @@ def build_homepage():
             visual = f'<aside class="feature-preview" aria-label="Inside this lesson"><h2>Words in this story</h2><ul aria-label="Words to explore">{words}</ul><span class="feature-preview-steps">Read / Practice / Discuss</span></aside>'
     title, overview = html.escape(title), html.escape(overview)
     content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html" data-level-link>daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
-<div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
+<div class="issue-line"><a href="study-routes.html">Not sure where to start? Choose a study route →</a><span>Real stories · Three English levels</span></div>
 <section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
 <label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>

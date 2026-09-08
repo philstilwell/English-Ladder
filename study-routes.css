@@ -1,0 +1,24 @@
+.route-intro, .study-route-list, .route-browse { max-width: 920px; margin-inline: auto; }
+.route-intro { padding-block: 24px 12px; }
+.route-intro h1 { font-size: clamp(1.8rem, 4vw, 2.8rem); line-height: 1.15; margin: 0 0 16px; }
+.route-goals { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-bottom: 16px; }
+.route-goals a { font-weight: 700; text-underline-offset: .2em; }
+.study-route-list { display: grid; gap: 24px; }
+.study-route-card { border: 1px solid #d6dbe3; border-radius: 12px; padding: clamp(18px, 3vw, 28px); background: #fff; scroll-margin-top: calc(var(--masthead-height, 100px) + 20px); }
+.study-route-card h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin: 0 0 12px; }
+.study-route-card p { margin: 0 0 14px; }
+.study-route-card .route-meta { color: #565f6c; font-size: .9rem; }
+.study-route-steps { margin-bottom: 0; padding-left: 1.5em; }
+.study-route-steps li { padding-left: .3em; margin-top: 16px; }
+.study-route-steps a { font-weight: 700; text-underline-offset: .2em; }
+.study-route-steps p { font-size: .95rem; margin: 4px 0 0; }
+.route-level-choice { border: 0; margin: 18px 0; padding: 0; }
+.route-level-choice legend { font-weight: 700; margin-bottom: 8px; }
+.route-level-choice .level-options { flex-wrap: wrap; }
+.route-browse { padding-block: 16px; }
+.study-route-progress { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 18px; margin: 12px 0 20px; padding: 12px 0; border-bottom: 1px solid #d6dbe3; font-size: .85rem; line-height: 1.5; color: #565f6c; }
+.study-route-progress a { font-weight: 600; }
+.study-route-next { margin-top: 24px; padding-top: 16px; border-top: 1px solid #d6dbe3; }
+.study-route-next p { font-size: .95rem; margin: 0 0 12px; }
+.study-route-next .primary-button { white-space: normal; text-align: left; max-width: 100%; }
+@media print { .study-route-progress, .study-route-next { display: none; } }

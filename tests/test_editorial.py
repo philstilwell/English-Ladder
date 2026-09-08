@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class EditorialTests(unittest.TestCase):
     def test_superseded_graphic_rules_have_visible_and_enlarged_corrections(self):
-        from grammar_curriculum import GRAPHIC_CORRECTIONS, clarify_original_graphic
+        from grammar_curriculum import GRAPHIC_CORRECTIONS, GRAPHIC_EXAMPLES, clarify_original_graphic
         for key, text in GRAPHIC_CORRECTIONS.items():
             page = BeautifulSoup((ROOT / 'grammar-concepts' / (key + '.html')).read_text(), 'html.parser')
             clarify_original_graphic(page, key)
@@ -24,6 +24,11 @@ class EditorialTests(unittest.TestCase):
             self.assertEqual(2, len(page.select('[data-graphic-correction]')))
             self.assertIn(text, page.select_one('#graphic-correction').get_text())
             self.assertIn(text, page.select_one('.image-lightbox #lightbox-graphic-correction').get_text())
+            for note in page.select('[data-graphic-correction]'):
+                self.assertEqual('Exceptions and useful limits', note.strong.get_text())
+                for _, example, explanation in GRAPHIC_EXAMPLES[key]:
+                    self.assertIn(example, note.get_text())
+                    self.assertIn(explanation, note.get_text())
             self.assertEqual('graphic-correction', page.select_one('.concept-graphic img')['aria-describedby'])
 
     def test_all_grammar_lessons_and_directory_keep_their_original_graphics(self):

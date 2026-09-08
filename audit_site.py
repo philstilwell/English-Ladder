@@ -59,12 +59,15 @@ def audit():
             expected=f'../assets/grammar-concepts/{path.stem}.png'
             graphic=s.select_one('.concept-graphic img')
             if graphic is None or graphic.get('src')!=expected:failures.append(f'{path.name}: original concept graphic missing or mismatched')
-            from grammar_curriculum import GRAPHIC_CORRECTIONS
+            from grammar_curriculum import GRAPHIC_CORRECTIONS, GRAPHIC_EXAMPLES
             if path.stem in GRAPHIC_CORRECTIONS:
                 for identifier in ['graphic-correction', 'lightbox-graphic-correction']:
                     note=s.find(id=identifier)
                     if note is None or GRAPHIC_CORRECTIONS[path.stem] not in note.get_text():
-                        failures.append(f'{path.name}: missing correction to the original graphic')
+                        failures.append(f'{path.name}: missing exceptions and limits for the original graphic')
+                    elif any(example not in note.get_text() or explanation not in note.get_text()
+                             for _, example, explanation in GRAPHIC_EXAMPLES[path.stem]):
+                        failures.append(f'{path.name}: missing an example explaining the original graphic’s limits')
             if not s.select_one('[data-ai-extension]'):failures.append(f'{path.name}: grammar AI extension missing')
             if s.select('textarea,input[type="text"],[contenteditable="true"]'):failures.append(f'{path.name}: grammar answers must be multiple choice')
             questions=s.select('[data-choice-question]')

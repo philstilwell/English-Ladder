@@ -10,7 +10,7 @@ The site has a coherent visual identity and an extensive curriculum. The most ur
 | --- | --- |
 | Today’s intermediate lesson contained 243 words, a 42-word sentence, dense entertainment quotations, and an unsuitable cluster of ornate vocabulary. | Rewrote the lesson as connected, accessible reporting with transferable vocabulary. Replaced the dependent grammar explanation, questions, feedback, discussion and generated AI context. |
 | Today’s advanced quiz accepted a speculation about a sprinter’s baking temperament and treated another valid participial construction as wrong. It also attributed the lesson writer’s wording to a named critic. | Rewrote the advanced lesson and its checks. Questions now distinguish reported facts, a critic’s view, figurative language and unknown outcomes. The grammar task has a single clear answer. |
-| The original graphics for concepts 07, 16 and 28 contradict their corrected teaching text. | Added specific corrections immediately before each retained graphic and inside its enlarged view. Their image files remain unchanged. The publication audit now requires these corrections. Replacing the inaccurate image text remains a recommended next step. |
+| The original graphics for concepts 07, 16 and 28 contain overbroad rules. | Retained the originals at the user's request. Clear “Exceptions and useful limits” notes now accompany each graphic and its enlarged view, with three examples per concept. The publication audit requires the explanations and examples. |
 | Discover’s introductory “daily reading” link always opened Beginner. | It now follows the selected level, like the main navigation and story links. |
 | Everyday English’s handling of page anchors could reset a chosen unit when using the skip link. Its introductory material also delays reaching the controls on a phone. | Non-unit anchors retain the current unit. A direct “Choose language and unit” link bypasses the introduction. |
 | A language-interaction test required a dated lesson’s translations to exist, contradicting the intended English fallback during translation delays. | The interaction test uses its own translation fixture. A separate regression checks that missing definitions remain English while the AI prompt still honors the selected explanation language. This does not waive translation validation. |
@@ -63,13 +63,13 @@ Start with a weekly human review of recent lessons and a targeted pass through o
 
 **Success measure:** fewer published corrections, a growing set of calibrated examples, and no recurrence of the confirmed quiz and level errors.
 
-### 2. Replace the contradictory graphics, then refresh the remaining visual library
+### 2. Retain the graphics and explain their exceptions and limits
 
-First update concepts 07, 16 and 28 so the image itself agrees with the teaching text. Keep the recognizable visual reference function while replacing overbroad rules, distracting decorative elements and text that is difficult to read on a phone. Review each graphic’s wording before generating its replacement. Use Gemini for new imagery, with an estimate before paid work.
+**User decision, 8 September 2026:** keep the original graphics and explain the exceptions clearly. This replaces the earlier recommendation to regenerate concepts 07, 16 and 28. All 44 original image files remain unchanged.
 
-For the other concepts, use consistent typography and a small number of focused examples; pair every image with selectable text. The current correction notes are a practical safeguard, not the ideal permanent presentation.
+Each of the three affected graphics has a visible “Exceptions and useful limits” note, repeated in its enlarged view. Short examples explain why about does not determine duration, why recently/lately do not require one tense or predict future activity, and why this/that are not assigned to different speakers. These are selectable text alongside the retained visual reference.
 
-**Success measure:** every image, webpage and corresponding guide teaches the same qualified rule; students can use the explanation without reading tiny image text.
+**Success measure:** students can see the original graphic and understand the limits of its generalizations from clear examples beside it, including when viewing it enlarged.
 
 ### 3. Turn the large library into a few clear study routes
 
@@ -105,7 +105,7 @@ Measure starts, reaching practice and useful next-page choices only if an approp
 
 ## Suggested order
 
-1. Calibrate editorial review and replace the three contradictory graphics.
+1. Retain the original graphics with clear explanations of exceptions and limits. Editorial calibration is deferred at the user's request.
 2. Pilot one guided study route with a few representative learners.
 3. Add a small retrieval/listening sequence and test its usefulness.
 4. Use observed learner behavior and loading measurements to choose the next accessibility, performance and evergreen-content work.

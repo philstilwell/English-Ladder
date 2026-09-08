@@ -270,6 +270,13 @@ body[class] :is(
 .reading-page .word-definition { background:var(--lesson-tint); color:var(--lesson-ink); }
 .reading-page .vocab-box { background:var(--lesson-tint); border-color:var(--lesson-line); }
 .reading-page .vocab-term { color:var(--lesson-ink); }
+.vocabulary-languages { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 6px; }
+.vocabulary-language { font:inherit; font-size:.9rem; font-weight:600; cursor:pointer; border:1px solid var(--lesson-line); border-radius:6px; background:var(--lesson-tint); color:var(--lesson-ink); }
+.vocabulary-language:hover { border-color:var(--lesson-ink); }
+.reading-page .vocabulary-language[aria-pressed="true"] { background:var(--lesson-action-fill); color:var(--lesson-action-ink); border-color:var(--lesson-action-border); }
+.vocabulary-language-status { font-size:.85rem; color:var(--muted); margin:0 0 10px; }
+.vocab-definition { overflow-wrap:anywhere; }
+@media print { .vocabulary-languages { display:none; } }
 .reading-page :is(.quiz-card, .discussion, .ai-prompt-card) { border-color:var(--lesson-line); }
 .reading-page :is(.ai-extension, .ai-prompt-text) { background:var(--lesson-tint); border-color:var(--lesson-line); }
 .reading-page :is(.ai-extension > summary, .ai-prompt-preview > summary, .ai-copy-status) { color:var(--lesson-ink); }

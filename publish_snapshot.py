@@ -5,6 +5,7 @@ import subprocess
 import sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parent
+SOURCE_FOLDERS = ['archive/lessons', 'assets/news', 'data/vocabulary-translations']
 
 def digest(data):return hashlib.sha256(data).hexdigest() if data is not None else None
 
@@ -14,11 +15,11 @@ def tracked_version(path):
 
 def allowed(path):
     p=Path(path)
-    return not p.is_absolute() and '..' not in p.parts and (path.startswith('archive/lessons/') or path.startswith('assets/news/'))
+    return not p.is_absolute() and '..' not in p.parts and any(path.startswith(folder + '/') for folder in SOURCE_FOLDERS)
 
 def capture(destination):
     destination=Path(destination);destination.mkdir(parents=True,exist_ok=True);manifest=[]
-    for folder in ['archive/lessons','assets/news']:
+    for folder in SOURCE_FOLDERS:
         for file in sorted((ROOT/folder).rglob('*')):
             if not file.is_file():continue
             name=file.relative_to(ROOT).as_posix();data=file.read_bytes();baseline=tracked_version(name)

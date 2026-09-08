@@ -1137,13 +1137,16 @@ def render_lesson_html(lesson_data, level, release_dt, source=None):
     brief_text = " ".join(brief_sentences)
     highlighted_brief = highlight_terms_in_text(brief_text, vocab_terms)
 
+    from vocabulary_translations import lesson_definitions
+    translations = lesson_definitions(lesson_data, level['name'].lower())
     vocab_lines = []
     for index, item in enumerate(lesson_data["vocabulary"], start=1):
         suffix = "<br/>" if index < len(lesson_data["vocabulary"]) else ""
         vocab_lines.append(
             f'<span class="vocab-term">{index}. {html.escape(normalize_text(item["term"]))} '
             f'({html.escape(normalize_text(item["part_of_speech"]))}):</span> '
-            f'{html.escape(normalize_text(item["definition"]))}{suffix}'
+            f'<span class="vocab-definition" lang="en" data-translations="{html.escape(json.dumps(translations[index - 1] if translations else {}, ensure_ascii=False), quote=True)}">'
+            f'{html.escape(normalize_text(item["definition"]))}</span>{suffix}'
         )
 
     grammar = lesson_data["grammar"]

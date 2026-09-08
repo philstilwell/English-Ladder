@@ -2,6 +2,29 @@
 (() => {
   "use strict";
   const stages = ["read", "practice", "discuss"];
+  const definitionLanguages = { en: "English", ja: "Japanese", ko: "Korean", "zh-Hans": "Chinese", es: "Spanish", "pt-BR": "Portuguese" };
+  const languageKey = "english-ladder-vocabulary-language-v1";
+  const vocabularyViews = [];
+  function supportedLanguage(value) {
+    return Object.hasOwn(definitionLanguages, value) ? value : "en";
+  }
+  function savedLanguage() {
+    try { return supportedLanguage(localStorage.getItem(languageKey)); } catch { return "en"; }
+  }
+  let definitionLanguage = savedLanguage();
+  function changeDefinitionLanguage(language, save = false) {
+    definitionLanguage = supportedLanguage(language);
+    if (save) {
+      try { localStorage.setItem(languageKey, definitionLanguage); } catch { /* The controls still work on this page. */ }
+    }
+    vocabularyViews.forEach(update => update(definitionLanguage));
+  }
+  window.addEventListener("storage", (event) => {
+    if (event.key === languageKey || event.key === null) changeDefinitionLanguage(savedLanguage());
+  });
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) changeDefinitionLanguage(savedLanguage());
+  });
   const featureStart = document.querySelector("#feature-start");
   document.querySelectorAll('input[name="feature-level"]').forEach((input) => {
     input.addEventListener("change", () => {
@@ -100,13 +123,23 @@
         definition += sibling.textContent;
         sibling = sibling.nextSibling;
       }
-      if (label && definition.trim()) vocabulary.set(label.toLowerCase(), definition.trim());
+      const span = term.nextElementSibling?.classList.contains("vocab-definition") ? term.nextElementSibling : null;
+      const definitions = { en: span ? span.textContent.trim() : definition.trim() };
+      if (span) {
+        try {
+          const translations = JSON.parse(span.dataset.translations || "{}");
+          for (const language of Object.keys(definitionLanguages).filter(value => value !== "en")) {
+            if (typeof translations?.[language] === "string" && translations[language].trim()) definitions[language] = translations[language];
+          }
+        } catch { /* Damaged or missing translations leave the English definition readable. */ }
+      }
+      if (label && definitions.en) vocabulary.set(label.toLowerCase(), { definitions, span, popups: [] });
     });
     const reading = panels[0].querySelector(".section");
     let wordCount = 0;
     reading?.querySelectorAll("p strong").forEach((word, index) => {
-      const definition = vocabulary.get(word.textContent.trim().toLowerCase());
-      if (!definition) return;
+      const entry = vocabulary.get(word.textContent.trim().toLowerCase());
+      if (!entry) return;
       const button = document.createElement("button");
       button.type = "button";
       button.className = "word-button";
@@ -115,7 +148,9 @@
       const explanation = document.createElement("span");
       explanation.className = "word-definition";
       explanation.id = `word-${lessonIndex}-${index}`;
-      explanation.textContent = ` (${definition}) `;
+      explanation.textContent = ` (${entry.definitions.en}) `;
+      explanation.lang = "en";
+      entry.popups.push(explanation);
       explanation.hidden = true;
       button.setAttribute("aria-controls", explanation.id);
       button.addEventListener("click", () => {
@@ -128,6 +163,55 @@
       word.replaceWith(button, explanation);
       wordCount += 1;
     });
+    const vocabularyBox = lesson.querySelector(".vocab-box");
+    if (vocabularyBox && [...vocabulary.values()].some(entry => entry.span)) {
+      vocabularyBox.id = `vocabulary-${lessonIndex}`;
+      const controls = document.createElement("div");
+      controls.className = "vocabulary-languages";
+      controls.setAttribute("role", "group");
+      controls.setAttribute("aria-label", "Definition language");
+      const languageButtons = Object.entries(definitionLanguages).map(([language, label]) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "vocabulary-language";
+        button.dataset.definitionLanguage = language;
+        button.textContent = label;
+        button.setAttribute("aria-controls", vocabularyBox.id);
+        if (language === "zh-Hans" || language === "pt-BR") {
+          button.title = language === "zh-Hans" ? "Simplified Chinese" : "Brazilian Portuguese";
+          button.setAttribute("aria-label", button.title);
+        }
+        button.addEventListener("click", () => changeDefinitionLanguage(language, true));
+        controls.append(button);
+        return button;
+      });
+      const status = document.createElement("p");
+      status.className = "vocabulary-language-status";
+      status.setAttribute("role", "status");
+      status.setAttribute("aria-live", "polite");
+      status.setAttribute("aria-atomic", "true");
+      vocabularyBox.before(controls, status);
+      function updateVocabulary(language) {
+        let missing = 0;
+        for (const entry of vocabulary.values()) {
+          const actualLanguage = entry.definitions[language] ? language : "en";
+          if (actualLanguage !== language) missing += 1;
+          if (entry.span) {
+            entry.span.textContent = entry.definitions[actualLanguage];
+            entry.span.lang = actualLanguage;
+          }
+          for (const popup of entry.popups) {
+            popup.textContent = ` (${entry.definitions[actualLanguage]}) `;
+            popup.lang = actualLanguage;
+          }
+        }
+        languageButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.definitionLanguage === language)));
+        const label = { "zh-Hans": "Simplified Chinese", "pt-BR": "Brazilian Portuguese" }[language] || definitionLanguages[language];
+        status.textContent = missing ? `${label}: ${missing} ${missing === 1 ? "definition is" : "definitions are"} unavailable. English is shown instead.` : `Definitions in ${label}.`;
+      }
+      vocabularyViews.push(updateVocabulary);
+      updateVocabulary(definitionLanguage);
+    }
     const hint = panels[0].querySelector("[data-word-hint]");
     if (hint && wordCount) {
       hint.hidden = false;

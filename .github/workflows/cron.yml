@@ -36,6 +36,7 @@ on:
       - 'lesson_checkpoint.py'
       - 'lesson_run.py'
       - 'generation_retry.py'
+      - 'vocabulary_translations.py'
       - 'workflow_checkpoint.py'
       - 'publish_snapshot.py'
       - 'audit_site.py'
@@ -58,6 +59,11 @@ on:
     - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
+      translate_archive:
+        description: 'Fill missing reviewed vocabulary translations; no new lessons or images ($10 cumulative initial budget)'
+        required: false
+        type: boolean
+        default: false
       deploy_only:
         description: 'Rebuild existing pages and verify hosting without generating lessons or images'
         required: false
@@ -80,7 +86,7 @@ concurrency:
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     permissions:
       contents: write # This gives the action permission to save files to your repo
       actions: read # Restore checkpoints from this workflow's earlier runs.
@@ -145,7 +151,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Resolve daily release date
-        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true'
+        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_archive != 'true'
         env:
           REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
         run: |
@@ -177,9 +183,10 @@ jobs:
           EVENT_NAME: ${{ github.event_name }}
           DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
           REFRESH_FEATURE: ${{ github.event.inputs.refresh_feature || 'false' }}
+          TRANSLATE_ARCHIVE: ${{ github.event.inputs.translate_archive || 'false' }}
           LESSON_DIAGNOSTICS_DIR: ${{ runner.temp }}/lesson-diagnostics
         run: |
-          if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ]; then
+          if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ] || [ "${TRANSLATE_ARCHIVE}" = "true" ]; then
             python update_site.py --refresh-pages
             exit 0
           fi
@@ -193,6 +200,37 @@ jobs:
             args+=(--release-date "${RELEASE_DATE}")
           fi
           python -u update_site.py "${args[@]}"
+
+      - name: Prepare reviewed vocabulary translations
+        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true'
+        id: translations
+        timeout-minutes: 40
+        # Translation trouble must never block the English lesson. Save partial work below.
+        continue-on-error: true
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          TRANSLATE_ARCHIVE: ${{ github.event.inputs.translate_archive || 'false' }}
+        run: |
+          if [ "${TRANSLATE_ARCHIVE}" = "true" ]; then
+            python -u vocabulary_translations.py --all --budget 10 --budget-key initial-backfill
+          else
+            # Include the latest three editions to recover a recent service outage.
+            python -u vocabulary_translations.py --budget 0.30
+          fi
+
+      - name: Retain vocabulary translation progress
+        if: always() && steps.translations.outcome != 'skipped'
+        uses: actions/upload-artifact@v4
+        with:
+          name: vocabulary-translations-${{ github.run_id }}-${{ github.run_attempt }}
+          path: data/vocabulary-translations/
+          include-hidden-files: true
+          retention-days: 14
+          if-no-files-found: ignore
+
+      - name: Refresh translated definitions
+        if: steps.translations.outcome == 'success' || steps.translations.outcome == 'failure'
+        run: python update_site.py --refresh-pages
 
       - name: Retain unfinished daily edition
         if: always() && env.LESSON_GENERATION_NEEDED == '1'
@@ -234,7 +272,7 @@ jobs:
             python update_site.py --refresh-pages
             python audit_site.py
             python audit_seo.py
-            git add -- '*.html' archive assets/news lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
+            git add -- '*.html' archive assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

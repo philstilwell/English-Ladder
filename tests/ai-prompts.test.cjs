@@ -24,7 +24,7 @@ test('copying uses the exact chosen published prompt, with no answer or draft fi
   button.click(); await settle();
   assert.equal(copied,prompt.textContent);
   assert.match(copied,/six-line exchange/);
-  assert.match(copied,/Could commonly describes a general past ability/);
+  assert.match(copied,/“Could” commonly describes a general past ability/);
   assert.match(button.closest('[data-ai-card]').querySelector('[data-ai-copy-status]').textContent,/Prompt copied/);
   assert.equal(doc.querySelectorAll('textarea,input[type="text"]').length,0);
   dom.window.close();

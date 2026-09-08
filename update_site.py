@@ -355,6 +355,7 @@ def build_response_schema(level, news_item=None):
 
 def build_prompt(news_item, level, revision_feedback=None):
     from lesson_evidence import evidence_choices
+    from teaching_typography import GUIDANCE
     return f"""
 You are an ESL curriculum writer creating a lesson for CEFR {level["cefr"]} learners.
 
@@ -366,6 +367,7 @@ Numbered source passages: {json.dumps(dict(enumerate(evidence_choices(news_item)
 
 Return only JSON that matches the supplied schema.
 Use plain text only in every JSON string. Do not include HTML, Markdown, code fences, numbered lists, or angle brackets.
+{GUIDANCE}
 
 {format_language_policy(level)}
 
@@ -1089,6 +1091,7 @@ def render_summary_html(title, release_dt):
 
 
 def render_quiz_question_html(question_number, item):
+    from teaching_typography import teaching_text
     buttons = []
     shuffled_options = shuffled_quiz_options(
         item["question"],
@@ -1102,7 +1105,7 @@ def render_quiz_question_html(question_number, item):
         data_bg = "#e6ffe6" if is_correct else "#ffe6e6"
         data_color = "#2e8b57" if is_correct else "#b22222"
         feedback_prefix = "Correct: " if is_correct else "Incorrect: "
-        feedback_text = feedback_prefix + entry["feedback_text"]
+        feedback_text = feedback_prefix + teaching_text(entry["feedback_text"])
         buttons.append(
             (
                 '<button type="button" '
@@ -1119,7 +1122,7 @@ def render_quiz_question_html(question_number, item):
         '<div class="quiz-card">'
         f'<div class="quiz-question" style="{html.escape(QUIZ_QUESTION_STYLE, quote=True)}">'
         f'<p style="{html.escape(QUIZ_PROMPT_STYLE, quote=True)}">'
-        f"{question_number}. {html.escape(normalize_text(item['question']))}</p>"
+        f"{question_number}. {html.escape(teaching_text(normalize_text(item['question'])))}</p>"
         f'<div style="{html.escape(QUIZ_OPTIONS_STYLE, quote=True)}">'
         + "".join(buttons)
         + '</div>'
@@ -1131,6 +1134,7 @@ def render_quiz_question_html(question_number, item):
 
 
 def render_lesson_html(lesson_data, level, release_dt, source=None):
+    from teaching_typography import teaching_text
     lesson_key = lesson_key_from_release_dt(release_dt)
     brief_sentences = [normalize_text(sentence) for sentence in lesson_data["news_brief_sentences"]]
     vocab_terms = [normalize_text(item["term"]) for item in lesson_data["vocabulary"]]
@@ -1153,7 +1157,7 @@ def render_lesson_html(lesson_data, level, release_dt, source=None):
     grammar_html = (
         f'<p><strong>{html.escape(level["grammar_label"])}: '
         f'{html.escape(normalize_text(grammar["concept"]))}</strong><br/>'
-        f'{html.escape(normalize_text(grammar["explanation"]))}<br/>'
+        f'{html.escape(teaching_text(normalize_text(grammar["explanation"])))}<br/>'
         f'Example from the text: "{html.escape(normalize_text(grammar["example_quote"]))}"</p>'
     )
 

@@ -340,10 +340,10 @@
         return {
             prepositions: `${missed} about choosing the right preposition for places, dates, days, or exact times.`,
             tense: `${missed} about matching verb tense to time, such as past events, recent actions, or ongoing situations.`,
-            wordForm: `${missed} about choosing the correct word form, such as noun vs verb or -ing vs -ed adjectives.`,
-            clauses: `${missed} about connecting ideas in a sentence, including words like while, because, that, which, even if, and only.`,
-            quantity: `${missed} about countable and uncountable nouns, including words like few, little, many, much, so, and such.`,
-            usage: `${missed} about natural verb patterns and word choice, such as suggest, recommend, say, tell, refuse, and reject.`,
+            wordForm: `${missed} about choosing the correct word form, such as noun vs verb or “-ing” vs “-ed” adjectives.`,
+            clauses: `${missed} about connecting ideas in a sentence, including words like “while”, “because”, “that”, “which”, “even if”, and “only”.`,
+            quantity: `${missed} about countable and uncountable nouns, including words like “few”, “little”, “many”, “much”, “so”, and “such”.`,
+            usage: `${missed} about natural verb patterns and word choice, such as “suggest”, “recommend”, “say”, “tell”, “refuse”, and “reject”.`,
         }[key] || `${missed} in this skill area.`;
     }
 
@@ -375,70 +375,70 @@
 
         apply(/\binteresting in\b/gi, "interested in", {
             label: "Emotion adjectives",
-            message: "Use interested for the person's feeling and interesting for the thing that creates the feeling.",
+            message: "Use “interested” for the person's feeling and “interesting” for the thing that creates the feeling.",
             href: "grammar-concepts/concept-03.html",
         });
         apply(/\binterested in improve\b/gi, "interested in improving", {
             label: "Verb after preposition",
-            message: "After in, use the -ing form: interested in improving.",
+            message: "After “in”, use the “-ing” form: “interested in improving”.",
             href: "grammar-concepts/concept-03.html",
         });
         apply(/\binterested in learn\b/gi, "interested in learning", {
             label: "Verb after preposition",
-            message: "After in, use the -ing form: interested in learning.",
+            message: "After “in”, use the “-ing” form: “interested in learning”.",
             href: "grammar-concepts/concept-03.html",
         });
         apply(/\b(suggested|recommended) that (I|you|he|she|we|they) to ([a-z]+)\b/gi, "$1 that $2 $3", {
-            label: "Verb pattern after suggested/recommended",
-            message: "After suggested or recommended that + subject, use the base verb without to: suggested that I apply.",
+            label: "Verb pattern after “suggested”/“recommended”",
+            message: "After “suggested” or “recommended” + “that” + subject, use the base verb without “to”: “suggested that I apply”.",
             href: "grammar-concepts/concept-17.html",
         });
         apply(/\bsuggested me to\b/gi, "suggested that I", {
-            label: "Verb pattern after suggested",
-            message: "Use suggested that + subject + base verb: suggested that I apply.",
+            label: "Verb pattern after “suggested”",
+            message: "Use “suggested that” + subject + base verb: “suggested that I apply”.",
             href: "grammar-concepts/concept-17.html",
         });
         apply(/\brecommended me to\b/gi, "recommended that I", {
-            label: "Verb pattern after recommended",
-            message: "Use recommended that + subject + base verb: recommended that I apply.",
+            label: "Verb pattern after “recommended”",
+            message: "Use “recommended that” + subject + base verb: “recommended that I apply”.",
             href: "grammar-concepts/concept-17.html",
         });
         apply(/\bdiscuss about\b/gi, "discuss", {
             label: "Verb pattern",
-            message: "Discuss normally takes a direct object: discuss the issue.",
+            message: "“Discuss” normally takes a direct object: “discuss the issue”.",
             href: "grammar-concepts/concept-07.html",
         });
         apply(/\bexplain me\b/gi, "explain to me", {
             label: "Verb pattern",
-            message: "Use explain something to someone or explain to someone.",
+            message: "Use “explain something to someone” or “explain to someone”.",
             href: "grammar-concepts/concept-36.html",
         });
         apply(/\bat (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/gi, "on $1", {
             label: "Dates and days",
-            message: "Use on with days of the week.",
+            message: "Use “on” with days of the week.",
             href: "grammar-concepts/concept-01.html",
         });
         apply(/\bin (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/gi, "on $1", {
             label: "Dates and days",
-            message: "Use on with days of the week.",
+            message: "Use “on” with days of the week.",
             href: "grammar-concepts/concept-01.html",
         });
         apply(/\bon (\d{4})\b/g, "in $1", {
             label: "Years",
-            message: "Use in with years.",
+            message: "Use “in” with years.",
             href: "grammar-concepts/concept-15.html",
         });
         apply(/\bmuch people\b/gi, "many people", {
             label: "Countable nouns",
-            message: "Use many or few with countable plural nouns such as people.",
+            message: "Use “many” or “few” with countable plural nouns such as “people”.",
             href: "grammar-concepts/concept-27.html",
         });
         if (/\blittle people\b/i.test(original)) {
-            addIssue("Few or little?", "Little people can mean small people. If you mean a small number of people, use few people or a few people. Keep little if size is your meaning.", "grammar-concepts/concept-27.html");
+            addIssue("“Few” or “little”?", "“Little people” can mean small people. If you mean a small number of people, use “few people” or “a few people”. Keep “little” if size is your meaning.", "grammar-concepts/concept-27.html");
         }
         apply(/\ba advice\b/gi, "some advice", {
             label: "Uncountable noun",
-            message: "Advice is usually uncountable, so use some advice or a piece of advice.",
+            message: "“Advice” is usually uncountable, so use “some advice” or “a piece of advice”.",
             href: "grammar-concepts/concept-21.html",
         });
 
@@ -580,7 +580,7 @@
             return;
         }
         const tasks = {
-            summary: [`Write a ${level === "beginner" ? "1–2" : "2–3"} sentence summary.`, "Use only information in the story. Leave out details it does not give.", "Preserve words such as may or might when the outcome is uncertain."],
+            summary: [`Write a ${level === "beginner" ? "1–2" : "2–3"} sentence summary.`, "Use only information in the story. Leave out details it does not give.", "Preserve words such as “may” or “might” when the outcome is uncertain."],
             discussion: ["Prepare three spoken answers.", "What happened?", "Why does it matter?", "What question would you ask next?"],
             opinion: ["Write one clear opinion paragraph.", "Label your view as an opinion, give one reason, and add an example.", "Separate your own prediction from what the story reports."],
             coworker: ["Explain the story to a coworker in one minute.", "Use simple context first, then the key detail.", "End with why the coworker should care."],
@@ -691,7 +691,7 @@
             </div>
             <div class="result-list">
                 <article>
-                    <strong>${supported ? "Compare the choices" : "Guidance for your sentence"}</strong><p>${supported ? "Compare the wording and decide which fits your audience." : "Custom sentences are not automatically rewritten. Use these prompts to revise your own text, or select Use sample to compare edited examples."}</p>
+                    <strong>${supported ? "Compare the choices" : "Guidance for your sentence"}</strong><p>${supported ? "Compare the wording and decide which fits your audience." : "Custom sentences are not automatically rewritten. Use these prompts to revise your own text, or select “Use sample” to compare edited examples."}</p>
                     <ul>${moves.map((move) => `<li>${escapeHtml(move)}</li>`).join("")}</ul>
                 </article>
             </div>

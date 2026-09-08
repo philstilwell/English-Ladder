@@ -33,8 +33,8 @@ test('original graphics enlarge, keep keyboard focus, and retain a direct image 
 test('the reported childhood-ability question grades will and could differently',()=>{
  const d=load();const doc=d.window.document;const q=doc.querySelector('[data-choice-question]');
  assert.match(q.textContent,/When I was seven/);assert.equal(doc.querySelector('textarea'),null);
- choice(q,'will').click();const feedback=q.querySelector('.choice-feedback');assert.match(feedback.textContent,/^Not quite\. Will refers to the future/);assert.equal(feedback.dataset.result,'incorrect');assert.match(doc.querySelector('[data-choice-progress]').textContent,/0 of 4 correct/);
- choice(q,'could').click();assert.match(feedback.textContent,/^Correct\. Could describes a general past ability/);assert.equal(feedback.dataset.result,'correct');assert.match(doc.querySelector('[data-choice-progress]').textContent,/1 of 4 correct/);
+ choice(q,'will').click();const feedback=q.querySelector('.choice-feedback');assert.match(feedback.textContent,/^Not quite\. “Will” refers to the future/);assert.equal(feedback.dataset.result,'incorrect');assert.match(doc.querySelector('[data-choice-progress]').textContent,/0 of 4 correct/);
+ choice(q,'could').click();assert.match(feedback.textContent,/^Correct\. “Could” describes a general past ability/);assert.equal(feedback.dataset.result,'correct');assert.match(doc.querySelector('[data-choice-progress]').textContent,/1 of 4 correct/);
  assert.equal(q.querySelectorAll('input:checked').length,1);
  assert.ok(![...q.querySelectorAll('[data-choice-correct="false"]')].some(o=>/was able/.test(o.closest('label').textContent)));
 });

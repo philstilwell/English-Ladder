@@ -9,34 +9,34 @@ ROOT = Path(__file__).resolve().parent
 
 # Keep the original graphics. Explain exceptions and limits alongside them.
 GRAPHIC_CORRECTIONS = {
-    'concept-07': 'In talk about and think about, about introduces the topic. It does not tell us how long the activity lasts. Keep these limits in mind when using the graphic:',
-    'concept-16': 'Recently and lately refer to a recent time. They do not automatically require have/has been + a verb ending in -ing, or mean that an activity will continue. Notice these different patterns:',
-    'concept-28': 'This, that, and it depend on what you are referring to and how you present it. This and that are not reserved for different speakers. Compare these examples:',
+    'concept-07': 'In “talk about” and “think about”, “about” introduces the topic. It does not tell us how long the activity lasts. Keep these limits in mind when using the graphic:',
+    'concept-16': '“Recently” and “lately” refer to a recent time. They do not automatically require “have/has been” + a verb ending in “-ing”, or mean that an activity will continue. Notice these different patterns:',
+    'concept-28': '“This”, “that”, and “it” depend on what you are referring to and how you present it. “This” and “that” are not reserved for different speakers. Compare these examples:',
 }
 GRAPHIC_EXAMPLES = {
     'concept-07': [
         ('A short conversation.', 'We talked about the plan for thirty seconds.',
-         'About introduces the plan as the topic, even though the conversation was short.'),
+         '“About” introduces the plan as the topic, even though the conversation was short.'),
         ('A different meaning.', 'We walked about the town.',
-         'Here, about means around.'),
+         'Here, “about” means “around”.'),
         ('A different verb pattern.', 'We discussed the plan for an hour.',
-         'Discuss normally takes its topic directly, without about. The length of the discussion does not change this pattern.'),
+         '“Discuss” normally takes its topic directly, without “about”. The length of the discussion does not change this pattern.'),
     ],
     'concept-16': [
         ('A single finished event.', 'I recently bought a bicycle.',
-         'Recently works with a finished action. Lately is not normally used for a single event like this.'),
+         '“Recently” works with a finished action. “Lately” is not normally used for a single event like this.'),
         ('A recent state.', 'I have been tired lately.',
-         'This describes a state, not an activity in progress. Lately often goes with recent states or repeated activities.'),
+         'This describes a state, not an activity in progress. “Lately” often goes with recent states or repeated activities.'),
         ('An activity that may have just stopped.', 'I have been running, so I need a rest.',
-         'Have been running can explain a present result even after the running has stopped. It does not promise future activity.'),
+         '“Have been running” can explain a present result even after the running has stopped. It does not promise future activity.'),
     ],
     'concept-28': [
         ('Your own earlier idea.', 'I missed the train. That made me late.',
-         'That can refer to something you have just said yourself.'),
+         '“That” can refer to something you have just said yourself.'),
         ('Another person’s idea.', 'A: We could meet online. B: This could work well.',
-         'This can also refer to someone else’s suggestion; here it brings that suggestion into focus.'),
+         '“This” can also refer to someone else’s suggestion; here it brings that suggestion into focus.'),
         ('An established reference.', 'I bought a bag. It is light.',
-         'It refers back to the bag. It does not have to introduce an idea that comes later in the sentence.'),
+         '“It” refers back to the bag. This pronoun does not have to introduce an idea that comes later in the sentence.'),
     ],
 }
 

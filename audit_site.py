@@ -9,6 +9,7 @@ ROOT=Path(__file__).resolve().parent
 def validate_rendered_quiz(node, lesson):
     """Check the learner's actual choices and progress total, including shuffling."""
     from update_site import normalize_text
+    from teaching_typography import teaching_text
     issues=[]
     practice=node.select_one('.learning-panel[data-stage="practice"]')
     if practice is None:return ['quiz practice panel is missing']
@@ -22,13 +23,13 @@ def validate_rendered_quiz(node, lesson):
         issues.append('quiz responses must be multiple choice')
     for number,(question,item) in enumerate(zip(questions,source),1):
         prompt=question.find('p',recursive=False)
-        if prompt is None or prompt.get_text(' ',strip=True)!=f'{number}. {normalize_text(item["question"])}':
+        if prompt is None or prompt.get_text(' ',strip=True)!=f'{number}. {teaching_text(normalize_text(item["question"]))}':
             issues.append(f'quiz question {number} does not match its checked prompt')
         expected=[]
         for index,(option,feedback) in enumerate(zip(item['options'],item['option_feedback'])):
             correct=index==item['correct_option_index']
             expected.append((normalize_text(option),'#e6ffe6' if correct else '#ffe6e6',
-                             normalize_text(('Correct: ' if correct else 'Incorrect: ')+feedback)))
+                             normalize_text(('Correct: ' if correct else 'Incorrect: ')+teaching_text(normalize_text(feedback)))))
         actual=[(normalize_text(re.sub(r'^[abc]\)\s*','',button.get_text(' ',strip=True))),
                  button.get('data-bg',''),normalize_text(button.get('data-feedback','')))
                 for button in question.select('button')]

@@ -13,7 +13,7 @@ INTRO = ('Choose an activity, copy its complete prompt, and paste it into the AI
 NOTICE = ('Copying sends nothing to an AI. Only the published lesson material is included, not your notes or answers. '
           'Check AI explanations against the lesson; AI can make mistakes. Your chosen service may have its own fees and privacy rules.')
 
-CONTRACT = """You are my patient English practice tutor. Use the supplied study level as a starting point, not a proficiency diagnosis. Keep explanations brief and use familiar words. Define any necessary grammar term.
+CONTRACT = """You are my patient English practice tutor. Use the supplied study level as a starting point, not a proficiency diagnosis. Keep explanations brief and use familiar words. Define any necessary grammar term. Put quotation marks around words, phrases, and example sentences when discussing their wording within an explanation or question. Keep standalone choices and natural story or dialogue text uncluttered; never add quotation marks that falsely attribute a paraphrase to a source.
 
 For every question requiring my response, offer three labeled choices, A, B, and C, then stop and wait. Do not ask for typed sentences, personal details, or an open-ended answer. Give one question at a time. Keep the answer and explanation hidden until I choose. Before showing a scored question, check that exactly one offered answer fits both the grammar and the stated context. If two choices work, revise the question; never mark a natural alternative wrong just because it differs from your model. Vary the correct letter.
 
@@ -109,8 +109,8 @@ def tracks_by_slug():
 
 
 TOOL_CONTEXTS = {
-    'grammar-diagnostic': ('grammar', {'study_level': 'A2-B1', 'grammar_focus': 'Prepositions of time: in, on, at; contrast dates, clock times, and months.', 'examples': ['at 9 a.m.', 'on Monday', 'in September']}),
-    'sentence-repair': ('grammar', {'study_level': 'A2-B1', 'grammar_focus': 'Interested describes a feeling; interesting describes what causes it. Use interested in + noun or -ing form. Use on with a named weekday.', 'sample': 'I am interested in improving my English on Mondays.'}),
+    'grammar-diagnostic': ('grammar', {'study_level': 'A2-B1', 'grammar_focus': 'Prepositions of time: “in”, “on”, “at”; contrast dates, clock times, and months.', 'examples': ['at 9 a.m.', 'on Monday', 'in September']}),
+    'sentence-repair': ('grammar', {'study_level': 'A2-B1', 'grammar_focus': '“Interested” describes a feeling; “interesting” describes what causes it. Use “interested in” + noun or “-ing” form. Use “on” with a named weekday.', 'sample': 'I am interested in improving my English on Mondays.'}),
     'pronunciation-shadowing': ('pronunciation', {'study_level': 'A2-B1', 'samples': ['Could you say that again, please?', 'I wanted the blue folder, not the green one.', 'Could we meet on Friday morning?']}),
     'news-skills': ('reading', {'study_level': 'B1', 'fictional_reading': 'Mina usually takes the bus to work. Today the weather is dry, so she plans to cycle. She leaves ten minutes earlier to avoid rushing. She has not decided how to travel tomorrow.'}),
     'phrase-coach': ('dialogue', {'study_level': 'B1-B2', 'fictional_case': 'Your team suggests launching on Friday. You know that a required review is unfinished. No approval date has been confirmed.', 'goal': 'Disagree politely, explain the known limitation, and ask for clarification without promising a launch date.', 'useful_expressions': ['I see the benefit. My concern is...', 'Could we confirm... before deciding?']}),

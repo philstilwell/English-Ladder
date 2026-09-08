@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "utilities",
+    "english_context": "Unit 04 Home Setup, Utilities, and Maintenance Goal: set up home services and report problems clearly. Daily Life English The heater is not working. There is a leak under the sink. When will the technician come? I need to set up electricity and internet. Vocabulary utility a home service like electricity or water bill a request for payment maintenance repair work for a home or building leak water coming out where it should not appointment window a range of time for a visit trash pickup the day trash is collected US Customs Report repair problems early. Use photos when possible. Some apartments require you to sort trash, recycling, and large items. Utility bills usually arrive every month. Late payment can add fees. Dialogue Student: Hello, I need to report a repair. Manager: What is the problem? Student: There is water under the kitchen sink. Manager: Can a technician come tomorrow morning? Student: Yes. Please send me the time by text.",
+    "japanese_explanation": {
+      "heading": "家の問題は早く、具体的に伝える",
+      "points": [
+        "水漏れ、暖房、電気、虫、鍵の問題は早めに連絡します。場所、問題、いつ始まったかを短く言えると対応が早くなります。",
+        "修理の人が来る時間は、午前9時から午後1時のように幅があることがあります。予定を空けておきましょう。",
+        "ゴミ、リサイクル、大型ゴミのルールは地域や建物で違います。近所や管理人に聞くのが普通です。"
+      ],
+      "practice": "There is a leak under the sink."
+    },
+    "existing_simplified_chinese": {
+      "heading": "家里出问题要早说、说具体",
+      "points": [
+        "漏水、暖气、电、虫子、钥匙问题要尽早联系。能说清地点、问题和开始时间，处理会更快。",
+        "维修人员上门常常给一个时间段，比如上午9点到下午1点。那段时间要留在家或安排人开门。",
+        "垃圾、回收和大件垃圾规则每个城市或公寓不同。问邻居或管理员很正常。"
+      ],
+      "practice": "There is a leak under the sink."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "家の問題は早く、具体的に伝える",
+      "points": [
+        "水漏れ、暖房、電気、虫、鍵の問題は早めに連絡します。場所、問題、いつ始まったかを短く言えると対応が早くなります。",
+        "修理の人が来る時間は、午前9時から午後1時のように幅があることがあります。予定を空けておきましょう。",
+        "ゴミ、リサイクル、大型ゴミのルールは地域や建物で違います。近所や管理人に聞くのが普通です。"
+      ]
+    },
+    "ko": {
+      "heading": "집 문제는 빨리 구체적으로 알리세요",
+      "points": [
+        "누수, 난방, 전기, 벌레, 열쇠 문제는 조속히 연락하세요. 장소, 문제, 언제 시작되었는지 간략하게 알려주면 더욱 빠르게 처리됩니다.",
+        "수리 기사가 방문하는 시간은 오전 9시부터 오후 1시처럼 시간대가 정해져 있을 수 있습니다. 일정을 비워두세요.",
+        "쓰레기, 재활용품, 대형 쓰레기 배출 규칙은 지역이나 건물마다 다릅니다. 이웃이나 관리인에게 물어보는 것이 일반적입니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "家里出问题要早说、说具体",
+      "points": [
+        "漏水、暖气、电、虫子、钥匙问题要尽早联系。能说清地点、问题和开始时间，处理会更快。",
+        "维修人员上门常常给一个时间段，比如上午9点到下午1点。那段时间要留在家或安排人开门。",
+        "垃圾、回收和大件垃圾规则每个城市或公寓不同。问邻居或管理员很正常。"
+      ]
+    },
+    "es": {
+      "heading": "Reporte los problemas del hogar con prontitud y especificidad",
+      "points": [
+        "Los problemas de fugas de agua, calefacción, electricidad, plagas o llaves deben reportarse con anticipación. Si puede indicar brevemente la ubicación, el problema y cuándo comenzó, la respuesta será más rápida.",
+        "La hora de llegada del personal de reparaciones puede tener un intervalo, como de 9 a.m. a 1 p.m. Asegúrese de tener su horario disponible.",
+        "Las reglas para la basura, el reciclaje y los artículos voluminosos varían según la región o el edificio. Es común preguntar a los vecinos o al administrador."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Comunique problemas domésticos cedo e especificamente",
+      "points": [
+        "Para vazamentos de água, aquecimento, eletricidade, pragas ou problemas com chaves, entre em contato o mais rápido possível. Se puder informar brevemente o local, o problema e quando começou, a resposta será mais rápida.",
+        "O horário de chegada do técnico de reparos pode ser uma janela, como das 9h às 13h. Certifique-se de ter sua agenda disponível.",
+        "As regras para lixo, reciclagem e itens volumosos variam de acordo com a região ou o edifício. É comum perguntar aos vizinhos ou ao síndico/administrador."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:11.788117+00:00"
+  }
+}

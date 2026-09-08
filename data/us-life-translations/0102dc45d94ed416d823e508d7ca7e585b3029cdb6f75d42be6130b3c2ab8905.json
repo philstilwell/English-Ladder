@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "housing",
+    "english_context": "Unit 03 Housing and Renting Goal: rent a room or apartment, ask about costs, and understand house rules. Daily Life English How much is the rent each month? Is the deposit refundable? Are utilities included? Can I see the lease before I sign? Vocabulary rent money you pay to live in a place lease a rental contract deposit money paid before moving in landlord the person or company that owns the rental tenant the person who rents the place roommate a person who lives in the same home US Customs Read the lease before you sign. Ask questions in writing. Take photos when you move in. Keep proof of damage you did not make. Quiet hours, guest rules, parking, pets, and trash rules are common. Dialogue Student: Is this room still available? Landlord: Yes. The rent is $850 a month. Student: Are utilities included? Landlord: Water is included. Electricity is separate. Student: Can I review the lease tonight?",
+    "japanese_explanation": {
+      "heading": "契約前に確認すること",
+      "points": [
+        "家賃だけでなく、保証金、光熱費、駐車場、洗濯、ペット、解約条件も確認します。英語が難しければ、署名前に時間をもらいましょう。",
+        "アメリカでは書面の記録が大切です。質問、修理依頼、支払いの証拠はメールや写真で残すと安心です。",
+        "ルームメイトと住む場合は、掃除、静かな時間、来客、共有品のルールを早めに話します。"
+      ],
+      "practice": "Can I see the lease before I sign?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "签约前要确认的事",
+      "points": [
+        "不要只看房租。还要确认押金、水电费、停车、洗衣、宠物和提前搬走的规则。如果英文难，签字前可以要求时间阅读。",
+        "在美国，书面记录很重要。问题、维修请求和付款证明最好用邮件、短信或照片保存。",
+        "如果和室友同住，要早点说清楚打扫、安静时间、客人和公共用品的规则。"
+      ],
+      "practice": "Can I see the lease before I sign?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "契約前に確認すること",
+      "points": [
+        "家賃だけでなく、保証金、光熱費、駐車場、洗濯、ペット、解約条件も確認します。英語が難しければ、署名前に時間をもらいましょう。",
+        "アメリカでは書面の記録が大切です。質問、修理依頼、支払いの証拠はメールや写真で残すと安心です。",
+        "ルームメイトと住む場合は、掃除、静かな時間、来客、共有品のルールを早めに話します。"
+      ]
+    },
+    "ko": {
+      "heading": "계약 전에 확인할 사항",
+      "points": [
+        "집세뿐만 아니라 보증금, 공과금, 주차, 세탁, 반려동물, 계약 해지 조건도 확인하세요. 영어가 어렵다면 서명하기 전에 시간을 달라고 요청하세요.",
+        "미국에서는 서면 기록이 중요합니다. 질문, 수리 요청, 지불 증거는 이메일이나 사진으로 남겨두는 것이 안전합니다.",
+        "룸메이트와 함께 사는 경우, 청소, 조용한 시간, 방문객, 공용 물품에 대한 규칙을 미리 이야기하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "签约前要确认的事",
+      "points": [
+        "不要只看房租。还要确认押金、水电费、停车、洗衣、宠物和提前搬走的规则。如果英文难，签字前可以要求时间阅读。",
+        "在美国，书面记录很重要。问题、维修请求和付款证明最好用邮件或照片保存。",
+        "如果和室友同住，要早点说清楚打扫、安静时间、客人和公共用品的规则。"
+      ]
+    },
+    "es": {
+      "heading": "Cosas a verificar antes de firmar un contrato",
+      "points": [
+        "Además del alquiler, verifique el depósito, los servicios públicos, el estacionamiento, la lavandería, las mascotas y las condiciones de rescisión. Si el inglés es difícil, pida tiempo para revisar antes de firmar.",
+        "En Estados Unidos, los registros escritos son importantes. Es seguro guardar pruebas de preguntas, solicitudes de reparación y pagos por correo electrónico o fotos.",
+        "Si vive con un compañero de cuarto, hable con anticipación sobre las reglas de limpieza, horas de silencio, visitas y artículos compartidos."
+      ]
+    },
+    "pt-BR": {
+      "heading": "O que verificar antes de assinar o contrato",
+      "points": [
+        "Além do aluguel, verifique a caução, as contas de consumo (água, luz, gás), estacionamento, lavanderia, animais de estimação e as condições de rescisão. Se o inglês for difícil, peça tempo para ler antes de assinar.",
+        "Nos EUA, os registros por escrito são importantes. É mais seguro guardar comprovantes de perguntas, pedidos de reparos e pagamentos por e-mail ou fotos.",
+        "Se for morar com um colega de quarto, converse com antecedência sobre as regras de limpeza, horários de silêncio, visitas e itens compartilhados."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:11.934531+00:00"
+  }
+}

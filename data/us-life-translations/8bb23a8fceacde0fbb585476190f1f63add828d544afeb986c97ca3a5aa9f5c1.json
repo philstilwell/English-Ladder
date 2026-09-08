@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "community",
+    "english_context": "Unit 16 Community, Neighbors, and Social Customs Goal: build a simple support network and understand friendly everyday behavior. Daily Life English Nice to meet you. I just moved in. Do you know where the library is? Could you recommend a local doctor? Thank you for your help. I appreciate it. Vocabulary neighbor a person who lives near you library a public place with books, computers, and programs community center a place with local services and activities recommend say something is good or useful small talk short friendly conversation personal space comfortable distance between people US Customs People often use small talk about weather, weekends, pets, or local places. A smile and \"How are you?\" can be a greeting, not a long question. Libraries and community centers can help with English, forms, computers, and local information. Dialogue Student: Hi, I just moved in next door. Neighbor: Welcome to the building. Student: Thank you. Do you know when trash pickup is? Neighbor: Tuesday morning. Put bins outside Monday night. Student: That helps a lot. Thank you.",
+    "japanese_explanation": {
+      "heading": "小さな会話が助けになる",
+      "points": [
+        "近所の人との短い挨拶は大切です。深い関係を作らなくても、困った時に質問しやすくなります。",
+        "How are you? は長い答えを求めていないことが多いです。Good, thanks. How about you? で十分です。",
+        "図書館やコミュニティセンターは、英語、パソコン、書類、地域情報の助けになることがあります。"
+      ],
+      "practice": "Nice to meet you. I just moved in."
+    },
+    "existing_simplified_chinese": {
+      "heading": "小对话也能带来帮助",
+      "points": [
+        "和邻居简单打招呼很有用。即使不是很亲近，以后遇到问题也更容易开口问。",
+        "How are you? 很多时候只是问候，不一定需要长回答。Good, thanks. How about you? 就够了。",
+        "图书馆和社区中心可能提供英语、电脑、表格和本地信息方面的帮助。"
+      ],
+      "practice": "Nice to meet you. I just moved in."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "小さな会話が助けになる",
+      "points": [
+        "近所の人との短い挨拶は大切です。深い関係を作らなくても、困った時に質問しやすくなります。",
+        "How are you? は長い答えを求めていないことが多いです。Good, thanks. How about you? で十分です。",
+        "図書館やコミュニティセンターは、英語、パソコン、書類、地域情報の助けになることがあります。"
+      ]
+    },
+    "ko": {
+      "heading": "작은 대화가 도움이 될 수 있습니다",
+      "points": [
+        "이웃과의 짧은 인사는 중요합니다. 깊은 관계를 맺지 않아도 어려울 때 질문하기 쉬워집니다.",
+        "How are you?는 긴 대답을 요구하지 않는 경우가 많습니다. Good, thanks. How about you?로 충분합니다.",
+        "도서관이나 커뮤니티 센터는 영어, 컴퓨터, 서류, 지역 정보에 대한 도움을 줄 수 있습니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "小对话也能带来帮助",
+      "points": [
+        "和邻居简单打招呼很有用。即使不是很亲近，以后遇到问题也更容易开口问。",
+        "How are you? 很多时候只是问候，不一定需要长回答。Good, thanks. How about you? 就够了。",
+        "图书馆和社区中心可能提供英语、电脑、表格和本地信息方面的帮助。"
+      ]
+    },
+    "es": {
+      "heading": "Las conversaciones breves pueden ser de ayuda",
+      "points": [
+        "Los saludos breves con los vecinos son importantes. Incluso sin establecer una relación profunda, será más fácil hacer preguntas cuando necesite ayuda.",
+        "How are you? a menudo no requiere una respuesta larga. Good, thanks. How about you? es suficiente.",
+        "Las bibliotecas y los centros comunitarios pueden ayudar con inglés, computadoras, formularios e información local."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Pequenas conversas podem ajudar",
+      "points": [
+        "Cumprimentos breves com vizinhos são importantes. Mesmo sem criar um relacionamento profundo, será mais fácil fazer perguntas quando precisar de ajuda.",
+        "How are you? muitas vezes não exige uma resposta longa. Good, thanks. How about you? é suficiente.",
+        "Bibliotecas e centros comunitários podem ajudar com inglês, computadores, formulários e informações locais."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:54.032050+00:00"
+  }
+}

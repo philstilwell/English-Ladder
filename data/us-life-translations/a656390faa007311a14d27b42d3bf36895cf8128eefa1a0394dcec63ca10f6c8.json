@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "service-problems",
+    "english_context": "Unit 24 Lost Items, Help Desks, and Service Problems Goal: explain a problem calmly, ask for the next step, and keep proof. Daily Life English I lost my wallet. Who should I speak with? Can I get a case number? Could you please write that down for me? Vocabulary help desk a place or person who helps with problems lost and found a place for missing items case number a number used to track a problem manager a person who can make decisions complaint a report about a problem follow up contact again later about the same issue US Customs Stay calm and specific. Say what happened, when it happened, and what you need now. Ask for a receipt, email, ticket number, or case number after reporting a problem. If the first person cannot help, politely ask who can make the decision. Dialogue Student: Excuse me, I left my backpack on the bus. Staff: What bus route and what time? Student: Route 12 at about 4:30 p.m. Staff: Please fill out this lost item form. Student: Thank you. Can I get a case number?",
+    "japanese_explanation": {
+      "heading": "問題は落ち着いて、具体的に伝える",
+      "points": [
+        "困った時は、何が起きたか、いつ起きたか、今何をしてほしいかを短く伝えます。",
+        "case number、receipt、email、ticket number は後で確認するために大切です。必ずメモや写真で残しましょう。",
+        "最初の人が助けられない時は、怒らずに Who should I speak with? と聞くと次につながりやすいです。"
+      ],
+      "practice": "Can I get a case number?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "遇到问题要冷静、具体地说明",
+      "points": [
+        "有问题时，简短说明发生了什么、什么时候发生、现在需要对方做什么。",
+        "case number、receipt、email 和 ticket number 对后续查询很重要，要保存或拍照。",
+        "如果第一个人不能帮忙，不要生气。问 Who should I speak with? 会更容易找到负责的人。"
+      ],
+      "practice": "Can I get a case number?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "問題は落ち着いて、具体的に伝える",
+      "points": [
+        "困った時は、何が起きたか、いつ起きたか、今何をしてほしいかを短く伝えます。",
+        "case number、receipt、email、ticket number は後で確認するために大切です。必ずメモや写真で残しましょう。",
+        "最初の人が助けられない時は、怒らずに Who should I speak with? と聞くと次につながりやすいです。"
+      ]
+    },
+    "ko": {
+      "heading": "문제는 침착하고 구체적으로 전달하기",
+      "points": [
+        "문제가 생겼을 때는 무슨 일이 있었는지, 언제 일어났는지, 지금 무엇을 원하는지 간결하게 전달하세요.",
+        "case number, receipt, email, ticket number는 나중에 확인하는 데 중요합니다. 반드시 메모나 사진으로 남겨두세요.",
+        "처음 응대한 사람이 도와줄 수 없을 때는 화내지 말고 Who should I speak with?라고 물어보면 다음 단계로 진행하기 쉽습니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "遇到问题要冷静、具体地说明",
+      "points": [
+        "遇到问题时，请简要说明发生了什么、何时发生以及您现在需要什么。",
+        "case number、receipt、email和ticket number对于日后查询非常重要。请务必用便签或照片记录下来。",
+        "如果第一个人帮不上忙，不要生气。问Who should I speak with?会更容易找到负责的人。"
+      ]
+    },
+    "es": {
+      "heading": "Explique el problema con calma y de forma específica",
+      "points": [
+        "Cuando tenga un problema, explique brevemente qué pasó, cuándo pasó y qué necesita ahora.",
+        "El case number, receipt, email y ticket number son importantes para consultas futuras. Asegúrese de anotarlos o tomarles una foto.",
+        "Si la primera persona no puede ayudarle, pregunte Who should I speak with? sin enfadarse; esto facilitará que le dirijan a la persona adecuada."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Comunique o problema com calma e de forma específica",
+      "points": [
+        "Quando tiver um problema, diga brevemente o que aconteceu, quando aconteceu e o que você precisa agora.",
+        "O case number, receipt, email e ticket number são importantes para futuras verificações. Certifique-se de anotá-los ou fotografá-los.",
+        "Se a primeira pessoa não puder ajudar, perguntar Who should I speak with? sem ficar com raiva facilita a conexão com o próximo responsável."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:26.379415+00:00"
+  }
+}

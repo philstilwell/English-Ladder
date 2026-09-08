@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "money",
+    "english_context": "Unit 05 Money, Banking, and Payments Goal: pay safely, understand bank words, and avoid common money mistakes. Daily Life English I would like to open a checking account. Do you accept cash? Can I pay by card? I think this charge is wrong. Vocabulary checking account a bank account for daily spending debit card a card that uses money from your account credit card a card that lets you borrow and pay later fee extra money you must pay receipt proof that you paid scam a dishonest trick to take money US Customs Keep receipts for returns, rent, deposits, and large payments. Never pay a stranger with gift cards, crypto, or wire transfer for an emergency call. Ask about monthly fees, ATM fees, minimum balances, and overdraft fees. Dialogue Student: I want to open a checking account. Banker: Do you have an ID and proof of address? Student: Yes. I have my passport and lease. Banker: Great. Do you want a debit card? Student: Yes, please. Are there monthly fees?",
+    "japanese_explanation": {
+      "heading": "お金の安全を守る",
+      "points": [
+        "銀行口座、デビットカード、クレジットカードは便利ですが、手数料を確認しましょう。特に毎月の手数料、ATM手数料、残高不足の手数料です。",
+        "電話やメッセージで、ギフトカード、暗号資産、送金アプリで急に払えと言われたら詐欺を疑います。",
+        "家賃、保証金、大きな買い物は必ずレシートや確認メールを残してください。"
+      ],
+      "practice": "Are there any monthly fees?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "保护自己的钱",
+      "points": [
+        "银行账户、借记卡和信用卡很方便，但要确认费用，特别是月费、ATM费和透支费。",
+        "如果有人打电话或发信息，让你马上用礼品卡、加密货币或转账软件付款，要警惕诈骗。",
+        "房租、押金和大额购物一定要保存收据或确认邮件。"
+      ],
+      "practice": "Are there any monthly fees?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "お金の安全を守る",
+      "points": [
+        "銀行口座、デビットカード、クレジットカードは便利ですが、手数料を確認しましょう。特に毎月の手数料、ATM手数料、残高不足の手数料です。",
+        "電話やメッセージで、ギフトカード、暗号資産、送金アプリで急に払えと言われたら詐欺を疑います。",
+        "家賃、保証金、大きな買い物は必ずレシートや確認メールを残してください。"
+      ]
+    },
+    "ko": {
+      "heading": "돈을 안전하게 관리하기",
+      "points": [
+        "은행 계좌, 직불 카드, 신용 카드는 편리하지만, 수수료를 확인하세요. 특히 월별 수수료, ATM 수수료, 잔액 부족 수수료를요.",
+        "전화나 메시지로 기프트 카드, 암호화폐, 송금 앱으로 즉시 결제하라고 요구받으면 사기를 의심하세요.",
+        "집세, 보증금, 큰 금액의 구매에 대해서는 반드시 영수증이나 확인 이메일을 보관하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "保护自己的钱",
+      "points": [
+        "银行账户、借记卡和信用卡很方便，但要确认费用，特别是月费、ATM费和透支费。",
+        "如果有人打电话或发信息，让你马上用礼品卡、加密货币或转账软件付款，要警惕诈骗。",
+        "房租、押金和大额购物一定要保存收据或确认邮件。"
+      ]
+    },
+    "es": {
+      "heading": "Proteja su dinero",
+      "points": [
+        "Las cuentas bancarias, tarjetas de débito y crédito son convenientes, pero revise las tarifas. Especialmente las tarifas mensuales, las tarifas de cajero automático y las tarifas por saldo insuficiente.",
+        "Si alguien le pide que pague de inmediato con tarjetas de regalo, criptomonedas o aplicaciones de transferencia de dinero a través de una llamada o mensaje, sospeche que es una estafa.",
+        "Siempre guarde los recibos o correos electrónicos de confirmación de pagos de alquiler, depósitos y compras grandes."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Proteja seu dinheiro",
+      "points": [
+        "Contas bancárias, cartões de débito e crédito são convenientes, mas verifique as taxas. Especialmente as taxas mensais, taxas de caixa eletrônico e taxas por saldo insuficiente.",
+        "Se alguém ligar ou enviar uma mensagem pedindo para você pagar imediatamente com cartões-presente, criptomoedas ou aplicativos de transferência de dinheiro, desconfie de fraude.",
+        "Sempre guarde recibos ou e-mails de confirmação de aluguéis, depósitos e compras grandes."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:25.784579+00:00"
+  }
+}

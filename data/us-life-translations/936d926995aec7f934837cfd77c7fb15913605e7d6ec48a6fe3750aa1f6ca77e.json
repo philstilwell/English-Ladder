@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "shopping",
+    "english_context": "Unit 06 Shopping, Returns, and Services Goal: buy what you need, ask for help, and return items politely. Daily Life English Where can I find laundry detergent? Do you have this in a smaller size? I would like to return this item. Do I need the receipt? Vocabulary aisle a path between store shelves size how big or small something is refund money returned to you exchange return one item and get another sales tax extra tax added at the register customer service the place or people who help shoppers US Customs The price tag may not include sales tax. The final price can be higher. Return rules are different at each store. Keep the receipt and package. It is normal to ask staff, \"Excuse me, where is...?\" Dialogue Student: Excuse me, where is the shampoo? Staff: It is in aisle 8. Student: Thank you. Also, can I return this towel? Staff: Do you have the receipt? Student: Yes, here it is.",
+    "japanese_explanation": {
+      "heading": "買い物では質問してよい",
+      "points": [
+        "店員に場所を聞くことは自然です。Excuse me で始めると丁寧に聞こえます。",
+        "表示価格に消費税が含まれていないことが多いので、レジで少し高くなることがあります。",
+        "返品にはレシート、未使用の状態、期限が必要なことがあります。店ごとにルールが違います。"
+      ],
+      "practice": "Where can I find laundry detergent?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "买东西时可以开口问",
+      "points": [
+        "向店员问东西在哪里很自然。用 Excuse me 开头会更礼貌。",
+        "标价通常不包括销售税，所以结账时总价可能会高一点。",
+        "退货可能需要收据、未使用状态和期限。每家店规则不同。"
+      ],
+      "practice": "Where can I find laundry detergent?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "買い物では質問してよい",
+      "points": [
+        "店員に場所を聞くことは自然です。Excuse me で始めると丁寧に聞こえます。",
+        "表示価格に消費税が含まれていないことが多いので、レジで少し高くなることがあります。",
+        "返品にはレシート、未使用の状態、期限が必要なことがあります。店ごとにルールが違います。"
+      ]
+    },
+    "ko": {
+      "heading": "쇼핑할 때 질문해도 괜찮습니다",
+      "points": [
+        "직원에게 물건의 위치를 묻는 것은 자연스러운 일입니다. \"Excuse me\"로 시작하면 정중하게 들립니다.",
+        "표시된 가격에 소비세가 포함되지 않은 경우가 많으므로, 계산대에서 가격이 조금 더 높아질 수 있습니다.",
+        "반품 시에는 영수증, 미사용 상태, 그리고 기한이 필요할 수 있습니다. 매장마다 규칙이 다릅니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "购物时可以提问",
+      "points": [
+        "向店员询问物品位置是很自然的。用“Excuse me”开头会显得更礼貌。",
+        "标价通常不包含销售税，所以结账时总价可能会稍微高一点。",
+        "退货可能需要收据、保持未使用状态以及在规定期限内。每家店的规定都不同。"
+      ]
+    },
+    "es": {
+      "heading": "Está bien hacer preguntas al comprar",
+      "points": [
+        "Es natural preguntar al personal dónde encontrar las cosas. Empezar con \"Excuse me\" suena educado.",
+        "El precio indicado a menudo no incluye el impuesto sobre las ventas, por lo que el precio final en la caja puede ser un poco más alto.",
+        "Las devoluciones pueden requerir el recibo, que el artículo esté sin usar y dentro de un plazo límite. Las reglas varían según la tienda."
+      ]
+    },
+    "pt-BR": {
+      "heading": "É aceitável fazer perguntas ao fazer compras",
+      "points": [
+        "É natural perguntar aos funcionários onde encontrar produtos. Começar com \"Excuse me\" soa mais educado.",
+        "O preço exibido geralmente não inclui o imposto sobre vendas, então o valor final no caixa pode ser um pouco mais alto.",
+        "Devoluções podem exigir a nota fiscal/recibo, que o item esteja sem uso e dentro do prazo. As regras variam de loja para loja."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:26.458504+00:00"
+  }
+}

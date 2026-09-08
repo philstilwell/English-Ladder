@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "recreation",
+    "english_context": "Unit 23 Recreation, Gyms, Parks, and Local Rules Goal: join activities, understand memberships, and follow shared-space rules. Daily Life English Do I need a membership? Can I try one class first? What time does the park close? Are pets allowed here? Vocabulary membership paid permission to use a place regularly trial class one class before you decide to join waiver a form about risk and responsibility reservation a saved time or place posted rules rules written on a sign quiet area a place where people should be calm or silent US Customs Gyms may have contracts, cancellation rules, and extra fees. Read before joining. Parks can have rules for pets, alcohol, sports fields, fires, and closing times. Shared spaces often expect cleanup. Leave tables, equipment, and rooms ready for the next person. Dialogue Student: I am interested in this gym. Staff: Would you like a tour? Student: Yes, please. Do you have a month-to-month plan? Staff: Yes. There is no long contract. Student: Great. Can I try one class first?",
+    "japanese_explanation": {
+      "heading": "楽しい場所にも契約とルールがある",
+      "points": [
+        "ジムでは月額料金だけでなく、入会金、解約方法、契約期間を確認します。",
+        "公園や運動施設には、ペット、飲酒、火の使用、予約、閉園時間などのルールがあります。",
+        "共有スペースでは、自分が使った場所をきれいにして次の人に渡すことが期待されます。"
+      ],
+      "practice": "Can I try one class first?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "休闲场所也有合同和规则",
+      "points": [
+        "加入健身房时，不只看月费，也要确认入会费、取消方法和合同期限。",
+        "公园和运动场可能有宠物、酒精、用火、预约和关闭时间等规则。",
+        "使用公共空间后，要把桌子、器材或房间整理好，方便下一个人使用。"
+      ],
+      "practice": "Can I try one class first?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "楽しい場所にも契約とルールがある",
+      "points": [
+        "ジムでは月額料金だけでなく、入会金、解約方法、契約期間を確認します。",
+        "公園や運動施設には、ペット、飲酒、火の使用、予約、閉園時間などのルールがあります。",
+        "共有スペースでは、自分が使った場所をきれいにして次の人に渡すことが期待されます。"
+      ]
+    },
+    "ko": {
+      "heading": "즐거운 장소에도 계약과 규칙이 있습니다",
+      "points": [
+        "헬스장에서는 월회비뿐만 아니라 가입비, 해지 방법, 계약 기간을 확인해야 합니다.",
+        "공원이나 운동 시설에는 반려동물, 음주, 불 사용, 예약, 폐장 시간 등의 규칙이 있습니다.",
+        "공유 공간에서는 자신이 사용한 곳을 깨끗하게 정리하여 다음 사람이 사용할 수 있도록 하는 것이 기대됩니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "休闲场所也有合同和规则",
+      "points": [
+        "加入健身房时，不只看月费，也要确认入会费、取消方法和合同期限。",
+        "公园和运动场可能有宠物、酒精、用火、预约和关闭时间等规则。",
+        "使用公共空间后，要把桌子、器材或房间整理好，方便下一个人使用。"
+      ]
+    },
+    "es": {
+      "heading": "También en los lugares de ocio hay contratos y reglas",
+      "points": [
+        "En los gimnasios, no solo debe verificar la tarifa mensual, sino también la cuota de inscripción, el método de cancelación y la duración del contrato.",
+        "Los parques e instalaciones deportivas tienen reglas sobre mascotas, consumo de alcohol, uso de fuego, reservas y horarios de cierre.",
+        "En los espacios compartidos, se espera que limpie el lugar que usó y lo deje listo para la siguiente persona."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Mesmo em locais de lazer, há contratos e regras",
+      "points": [
+        "Em academias, além da mensalidade, verifique a taxa de adesão, o método de cancelamento e o período do contrato.",
+        "Parques e instalações esportivas possuem regras sobre animais de estimação, consumo de álcool, uso de fogo, reservas e horários de fechamento.",
+        "Em espaços compartilhados, espera-se que você limpe o local que utilizou e o deixe pronto para a próxima pessoa."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:24.144301+00:00"
+  }
+}

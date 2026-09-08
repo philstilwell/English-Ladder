@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "phone",
+    "english_context": "Unit 13 Phone, Internet, and Digital Life Goal: set up communication, understand common messages, and stay safe online. Daily Life English I need a phone plan. Is there a contract? Can you text me the address? I think this message is a scam. Vocabulary phone plan a monthly mobile phone service data internet use on a phone contract a legal agreement voicemail a recorded phone message password a secret word or code for an account two-factor code a second code used to protect an account US Customs Many offices leave voicemail. Check it often and call back. Do not share passwords or verification codes with callers or strangers. Text messages are common for quick plans, but formal issues may use email. Dialogue Student: I need a simple phone plan. Staff: Do you want unlimited data? Student: Maybe not. I use Wi-Fi at home. Staff: This plan is cheaper and has no contract. Student: Good. What is the monthly cost?",
+    "japanese_explanation": {
+      "heading": "連絡手段を早く整える",
+      "points": [
+        "アメリカでは電話、留守番電話、SMS、メールをよく使います。留守番電話を聞く習慣をつけましょう。",
+        "契約ありのプランと契約なしのプランがあります。月額、データ量、解約料を確認します。",
+        "認証コードやパスワードを電話やメッセージで他人に教えないでください。"
+      ],
+      "practice": "Can you text me the address?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "尽快建立联系方式",
+      "points": [
+        "在美国，电话、语音留言、短信和邮件都常用。要养成听语音留言的习惯。",
+        "手机套餐有合约和无合约。要确认月费、流量和取消费用。",
+        "不要通过电话或信息把验证码、密码告诉别人。"
+      ],
+      "practice": "Can you text me the address?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "連絡手段を早く整える",
+      "points": [
+        "アメリカでは電話、留守番電話、SMS、メールをよく使います。留守番電話を聞く習慣をつけましょう。",
+        "契約ありのプランと契約なしのプランがあります。月額、データ量、解約料を確認します。",
+        "認証コードやパスワードを電話やメッセージで他人に教えないでください。"
+      ]
+    },
+    "ko": {
+      "heading": "빠르게 연락 수단을 마련하세요",
+      "points": [
+        "미국에서는 전화, 자동 응답 메시지, 문자 메시지(SMS), 이메일을 자주 사용합니다. 자동 응답 메시지를 확인하는 습관을 들이세요.",
+        "약정 플랜과 무약정 플랜이 있습니다. 월 요금, 데이터 사용량, 해지 위약금을 확인하세요.",
+        "전화나 메시지로 다른 사람에게 인증 코드나 비밀번호를 알려주지 마세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "尽快建立联系方式",
+      "points": [
+        "在美国，电话、语音留言、短信和邮件都常用。要养成听语音留言的习惯。",
+        "手机套餐有合约和无合约。要确认月费、流量和取消费用。",
+        "不要通过电话或信息把验证码、密码告诉别人。"
+      ]
+    },
+    "es": {
+      "heading": "Establezca rápidamente sus medios de comunicación",
+      "points": [
+        "En Estados Unidos, el teléfono, el buzón de voz, los SMS y el correo electrónico se utilizan con frecuencia. Adquiera el hábito de revisar su buzón de voz.",
+        "Existen planes con contrato y planes sin contrato. Verifique la tarifa mensual, la cantidad de datos y las tarifas de cancelación.",
+        "No dé códigos de verificación o contraseñas a otras personas por teléfono o mensaje."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Estabeleça seus meios de comunicação rapidamente",
+      "points": [
+        "Nos EUA, telefone, correio de voz, SMS e e-mail são frequentemente usados. Crie o hábito de ouvir o correio de voz.",
+        "Existem planos com contrato e sem contrato. Verifique a mensalidade, a quantidade de dados e as taxas de cancelamento.",
+        "Não forneça códigos de verificação ou senhas a outras pessoas por telefone ou mensagem."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:52.270223+00:00"
+  }
+}

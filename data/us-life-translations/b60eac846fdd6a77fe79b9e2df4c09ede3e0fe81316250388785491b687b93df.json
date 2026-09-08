@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "appointments",
+    "english_context": "Unit 10 Appointments, Time, and Forms Goal: make appointments, arrive on time, reschedule, and complete common forms. Daily Life English I would like to make an appointment. Do you have anything available next week? I need to reschedule. Which section should I fill out? Vocabulary appointment a planned time to meet or get service available free or possible reschedule change the time or date cancel stop a plan form paper or online questions to complete signature your written name US Customs Arrive early for medical, school, legal, and government appointments. If you cannot go, call or cancel online as soon as possible. Dates may be written month/day/year, like 06/15/2026. Dialogue Student: I need to make an appointment. Office: What day works for you? Student: Tuesday afternoon is good. Office: We have 2:30 p.m. available. Student: That works. Thank you.",
+    "japanese_explanation": {
+      "heading": "時間と予約を守る文化",
+      "points": [
+        "アメリカでは予約時間を守ることが信頼につながります。初めての場所には早めに行くと安心です。",
+        "行けない時は、無断で行かないのではなく、早めにキャンセルまたは変更します。",
+        "日付は月/日/年で書かれることが多いです。06/07 は6月7日の意味になることが多いので注意しましょう。"
+      ],
+      "practice": "I need to reschedule my appointment."
+    },
+    "existing_simplified_chinese": {
+      "heading": "重视时间和预约",
+      "points": [
+        "在美国，准时参加预约会让别人觉得你可靠。第一次去一个地方，最好提前到。",
+        "如果不能去，不要直接不出现，要尽早取消或改时间。",
+        "日期常写成月/日/年。比如06/07通常是6月7日，要特别注意。"
+      ],
+      "practice": "I need to reschedule my appointment."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "時間と予約を守る文化",
+      "points": [
+        "アメリカでは予約時間を守ることが信頼につながります。初めての場所には早めに行くと安心です。",
+        "行けない時は、無断で行かないのではなく、早めにキャンセルまたは変更します。",
+        "日付は月/日/年で書かれることが多いです。06/07 は6月7日の意味になることが多いので注意しましょう。"
+      ]
+    },
+    "ko": {
+      "heading": "시간과 약속을 지키는 문화",
+      "points": [
+        "미국에서는 약속 시간을 지키는 것이 신뢰로 이어집니다. 처음 가는 장소에는 일찍 가는 것이 좋습니다.",
+        "갈 수 없을 때는 무단으로 불참하는 대신, 미리 취소하거나 변경해야 합니다.",
+        "날짜는 월/일/년으로 표기되는 경우가 많습니다. 06/07이 6월 7일을 의미하는 경우가 많으니 주의하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "重视时间和预约",
+      "points": [
+        "在美国，准时参加预约会让别人觉得你可靠。第一次去一个地方，最好提前到。",
+        "如果不能去，不要直接不出现，要尽早取消或改时间。",
+        "日期常写成月/日/年。比如06/07通常是6月7日，要特别注意。"
+      ]
+    },
+    "es": {
+      "heading": "Cultura de respetar el tiempo y las citas",
+      "points": [
+        "En Estados Unidos, ser puntual para las citas genera confianza. Si es la primera vez que vas a un lugar, es recomendable llegar temprano.",
+        "Si no puedes asistir, en lugar de no presentarte sin avisar, cancela o cambia la cita con antelación.",
+        "Las fechas a menudo se escriben como mes/día/año. Ten en cuenta que 06/07 comúnmente significa 7 de junio."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Cultura de Respeitar Horários e Agendamentos",
+      "points": [
+        "Nos EUA, cumprir o horário dos agendamentos constrói confiança. Para locais que você visita pela primeira vez, é mais seguro chegar cedo.",
+        "Se não puder comparecer, em vez de simplesmente não ir, cancele ou reagende o mais cedo possível.",
+        "As datas são frequentemente escritas como mês/dia/ano. Tenha cuidado, pois 06/07 geralmente significa 7 de junho."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:39.567637+00:00"
+  }
+}

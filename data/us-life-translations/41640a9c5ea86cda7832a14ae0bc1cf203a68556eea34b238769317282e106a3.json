@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "safety",
+    "english_context": "Unit 15 Safety, Weather, and Everyday Problems Goal: stay safe at home and outside, understand alerts, and ask for urgent help. Daily Life English Is this a safe area to walk at night? The smoke alarm is beeping. There is a power outage. I need help, but it is not an emergency. Vocabulary smoke alarm a device that warns about smoke or fire power outage when electricity stops working weather alert a warning about dangerous weather non-emergency number a police or city number for problems that are not urgent shelter a safe place during danger flashlight a small light you hold in your hand US Customs Call 911 for fire, serious danger, or urgent medical problems. For non-urgent problems, use a local non-emergency number or building manager. Keep basic supplies: water, medicine, flashlight, chargers, and copies of documents. Dialogue Dispatcher: 911. What is your emergency? Student: There is a fire in my building. Dispatcher: What is your address? Student: 45 Pine Avenue, Apartment 2A. Dispatcher: Leave the building if you can do so safely.",
+    "japanese_explanation": {
+      "heading": "緊急と非緊急を分ける",
+      "points": [
+        "火事、重大なけが、命の危険、犯罪が進行中なら911です。住所、何が起きたか、自分の名前を言います。",
+        "騒音、軽いトラブル、なくした物などは、地域の非緊急番号、管理人、市役所などが合う場合があります。",
+        "災害に備えて、水、薬、充電器、懐中電灯、重要書類のコピーを用意しておくと安心です。"
+      ],
+      "practice": "What is your emergency?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "分清紧急和非紧急",
+      "points": [
+        "火灾、严重受伤、生命危险或正在发生的犯罪，要拨打911。先说地址，再说发生了什么和你的名字。",
+        "噪音、轻微问题或丢东西，可能更适合联系非紧急电话、楼管或市政府服务。",
+        "为灾害准备水、药、充电器、手电筒和重要文件复印件，会更安心。"
+      ],
+      "practice": "What is your emergency?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "緊急と非緊急を分ける",
+      "points": [
+        "火事、重大なけが、命の危険、犯罪が進行中なら911です。住所、何が起きたか、自分の名前を言います。",
+        "騒音、軽いトラブル、なくした物などは、地域の非緊急番号、管理人、市役所などが合う場合があります。",
+        "災害に備えて、水、薬、充電器、懐中電灯、重要書類のコピーを用意しておくと安心です。"
+      ]
+    },
+    "ko": {
+      "heading": "긴급 상황과 비긴급 상황 구분하기",
+      "points": [
+        "화재, 심각한 부상, 생명의 위험, 범죄 발생 중이라면 911에 전화하세요. 주소, 무슨 일이 일어났는지, 그리고 본인의 이름을 말하세요.",
+        "소음, 사소한 문제, 분실물 등은 지역의 비긴급 전화번호, 건물 관리인 또는 시청 등이 적합할 수 있습니다.",
+        "재난에 대비하여 물, 약, 충전기, 손전등, 중요 서류 사본을 준비해 두면 안심할 수 있습니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "分清紧急和非紧急",
+      "points": [
+        "火灾、严重受伤、生命危险或正在发生的犯罪，应拨打911。说明您的地址、发生了什么事以及您的姓名。",
+        "噪音、轻微问题或遗失物品等情况，可能更适合联系当地的非紧急电话号码、楼宇管理员或市政府服务。",
+        "为应对灾害做好准备，备好水、药品、充电器、手电筒和重要文件的复印件，会更安心。"
+      ]
+    },
+    "es": {
+      "heading": "Distinga entre emergencias y no emergencias",
+      "points": [
+        "Si hay un incendio, una lesión grave, un peligro para la vida o un delito en curso, llame al 911. Diga su dirección, qué pasó y su nombre.",
+        "Para problemas como ruido, pequeños inconvenientes o artículos perdidos, podría ser más apropiado usar el número de no emergencia local, contactar al administrador del edificio o al ayuntamiento.",
+        "Para prepararse ante desastres, es recomendable tener a mano agua, medicamentos, cargadores, una linterna y copias de documentos importantes para su tranquilidad."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Distinguir entre emergências e não emergências",
+      "points": [
+        "Em caso de incêndio, ferimento grave, risco de vida ou crime em andamento, ligue para o 911. Informe seu endereço, o que aconteceu e seu nome.",
+        "Para problemas como barulho, pequenos transtornos ou itens perdidos, pode ser mais apropriado usar o número de não emergência local, contatar o gerente do prédio ou a prefeitura.",
+        "Para se preparar para desastres, é tranquilizador ter água, medicamentos, carregadores, uma lanterna e cópias de documentos importantes à mão."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:57.185192+00:00"
+  }
+}

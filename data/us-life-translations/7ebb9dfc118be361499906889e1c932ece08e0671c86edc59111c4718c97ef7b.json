@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "clothing-services",
+    "english_context": "Unit 22 Clothing Exchanges, Tailoring, and Shoe Repair Goal: fix clothing problems, exchange sizes, and ask for simple repairs. Daily Life English I need to exchange this for a larger size. The zipper is broken. Can you replace this button? Can these shoes be repaired? Vocabulary exchange return one item and get another tailor a person who changes or repairs clothes zipper the part that opens and closes a jacket or bag button a small round part used to close clothing receipt proof that you bought something shoe repair a service that fixes shoes US Customs Stores often need the receipt, tags, and unused condition for an exchange. Tailors may ask you to try on the clothing so they can mark the correct length. Small repairs can cost more than students expect, so ask for the price first. Dialogue Student: I bought this shirt yesterday, but it is too small. Clerk: Do you have the receipt? Student: Yes. Can I exchange it for a medium? Clerk: Let me check. Yes, we have one. Student: Thank you. The tags are still on it.",
+    "japanese_explanation": {
+      "heading": "交換と修理は証拠が大切",
+      "points": [
+        "服の交換では、レシート、タグ、未使用の状態が必要なことが多いです。買った後すぐ捨てないようにしましょう。",
+        "tailor に頼む時は、実際に着て長さを確認することがあります。時間に余裕を持って行きます。",
+        "小さな修理でも料金が高いことがあります。先に Can I get an estimate? と聞くと安心です。"
+      ],
+      "practice": "I need to exchange this for a larger size."
+    },
+    "existing_simplified_chinese": {
+      "heading": "换货和修理都需要凭证",
+      "points": [
+        "换衣服时，通常需要收据、吊牌和未使用状态。买完以后不要马上丢掉这些东西。",
+        "找裁缝修改时，可能需要你穿上衣服，让对方标记长度。最好留出时间。",
+        "小修理也可能不便宜。可以先问 Can I get an estimate?，意思是想知道大概价格。"
+      ],
+      "practice": "I need to exchange this for a larger size."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "交換と修理は証拠が大切",
+      "points": [
+        "服の交換では、レシート、タグ、未使用の状態が必要なことが多いです。買った後すぐ捨てないようにしましょう。",
+        "tailor に頼む時は、実際に着て長さを確認することがあります。時間に余裕を持って行きます。",
+        "小さな修理でも料金が高いことがあります。先に Can I get an estimate? と聞くと安心です。"
+      ]
+    },
+    "ko": {
+      "heading": "교환과 수리는 증거가 중요합니다",
+      "points": [
+        "옷을 교환할 때는 영수증, 태그, 미사용 상태가 필요한 경우가 많습니다. 구매 후 바로 버리지 않도록 주의하세요.",
+        "재단사(tailor)에게 수선을 맡길 때는 실제로 옷을 입어보고 길이를 확인하는 경우가 있습니다. 시간을 넉넉하게 잡고 가세요.",
+        "작은 수리라도 요금이 비쌀 수 있습니다. 먼저 \"Can I get an estimate?\"라고 물어보면 안심할 수 있습니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "换货和修理都需要凭证",
+      "points": [
+        "换衣服时，通常需要收据、吊牌和未使用状态。买完以后不要马上丢掉这些东西。",
+        "找裁缝修改时，可能需要你穿上衣服，让对方标记长度。最好留出时间。",
+        "小修理也可能不便宜。可以先问 Can I get an estimate?，意思是想知道大概价格。"
+      ]
+    },
+    "es": {
+      "heading": "La prueba es importante para cambios y reparaciones",
+      "points": [
+        "Para cambiar ropa, a menudo se necesita el recibo, las etiquetas y que la prenda no se haya usado. No las tires inmediatamente después de comprarla.",
+        "Cuando pides a un sastre (tailor) que haga un arreglo, es posible que te pida que te pruebes la ropa para marcar la longitud. Ve con tiempo suficiente.",
+        "Incluso las reparaciones pequeñas pueden ser costosas. Es recomendable preguntar primero \"Can I get an estimate?\" (¿Puedo obtener un presupuesto?)."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Comprovante é importante para trocas e reparos",
+      "points": [
+        "Para a troca de roupas, muitas vezes é necessário o recibo, as etiquetas e que a peça esteja sem uso. Evite descartá-los logo após a compra.",
+        "Ao solicitar um serviço de costura (tailor), pode ser necessário experimentar a roupa para que o profissional marque o comprimento correto. Planeje ir com tempo de sobra.",
+        "Mesmo reparos pequenos podem ter um custo alto. É aconselhável perguntar antes: \"Can I get an estimate?\" (Posso ter um orçamento?)."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:24.024727+00:00"
+  }
+}

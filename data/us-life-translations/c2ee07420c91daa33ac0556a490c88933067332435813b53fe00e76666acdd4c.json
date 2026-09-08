@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "food",
+    "english_context": "Unit 07 Food, Groceries, and Restaurants Goal: shop for food, order meals, explain allergies, and handle tipping. Daily Life English I am allergic to peanuts. Can I get this without onions? Could we have separate checks? Can I have a box for leftovers? Vocabulary grocery store a store that sells food produce fresh fruits and vegetables allergy a health problem from some food or thing tip extra money for service leftovers food you did not finish separate checks different bills for different people US Customs In many sit-down restaurants, people usually leave a tip for the server. Taking leftovers home is normal. Ask for a box. Tell restaurant staff about allergies clearly before you order. Dialogue Server: Are you ready to order? Student: Yes. I would like the chicken salad. Server: Any changes? Student: No nuts, please. I have a nut allergy. Server: Thank you for telling me.",
+    "japanese_explanation": {
+      "heading": "食べ物ははっきり伝える",
+      "points": [
+        "アレルギーは遠慮せずに最初に言います。命に関わることがあるので、簡単な英語で強く伝えて大丈夫です。",
+        "レストランでは、残り物を持ち帰ることは普通です。box と言えば持ち帰り用の容器を頼めます。",
+        "着席式のレストランではチップを払う文化があります。地域や店で期待が違うので、レシートを確認しましょう。"
+      ],
+      "practice": "I have a nut allergy."
+    },
+    "existing_simplified_chinese": {
+      "heading": "食物需求要说清楚",
+      "points": [
+        "过敏一定要一开始就说。因为可能有危险，用简单英文明确表达是可以的。",
+        "在餐厅把剩菜带回家很正常。说 box 就可以要打包盒。",
+        "坐下点餐的餐厅通常有给小费的习惯。不同地区和餐厅期待不同，可以看收据上的提示。"
+      ],
+      "practice": "I have a nut allergy."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "食べ物ははっきり伝える",
+      "points": [
+        "アレルギーは遠慮せずに最初に言います。命に関わることがあるので、簡単な英語で強く伝えて大丈夫です。",
+        "レストランでは、残り物を持ち帰ることは普通です。\"box\" と言えば持ち帰り用の容器を頼めます。",
+        "着席式のレストランではチップを払う文化があります。地域や店で期待が違うので、レシートを確認しましょう。"
+      ]
+    },
+    "ko": {
+      "heading": "음식 관련 사항을 명확히 전달하기",
+      "points": [
+        "알레르기는 주저하지 말고 가장 먼저 말하세요. 생명과 관련될 수 있으므로 간단한 영어로 강하게 전달해도 괜찮습니다.",
+        "레스토랑에서 남은 음식을 집에 가져가는 것은 일반적입니다. \"box\"라고 말하면 포장 용기를 요청할 수 있습니다.",
+        "착석식 레스토랑에서는 팁을 지불하는 문화가 있습니다. 지역 및 식당마다 기대치가 다르므로 영수증을 확인하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "食物需求要说清楚",
+      "points": [
+        "过敏一定要一开始就说。因为可能有危险，用简单英文明确表达是可以的。",
+        "在餐厅把剩菜带回家很正常。说 \"box\" 就可以要打包盒。",
+        "坐下点餐的餐厅通常有给小费的习惯。不同地区和餐厅期待不同，可以看收据上的提示。"
+      ]
+    },
+    "es": {
+      "heading": "Comunicar claramente las necesidades alimentarias",
+      "points": [
+        "Las alergias deben mencionarse sin dudarlo al principio. Puede ser una cuestión de vida o muerte, así que está bien expresarlo con firmeza en inglés sencillo.",
+        "En los restaurantes, es normal llevarse las sobras a casa. Puede pedir un recipiente para llevar diciendo \"box\".",
+        "En los restaurantes con servicio de mesa, existe la cultura de dejar propina. Las expectativas varían según la región y el establecimiento, así que consulte el recibo."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Comunique claramente as necessidades alimentares",
+      "points": [
+        "Não hesite em mencionar alergias logo de início. Como pode ser uma questão de vida ou morte, não há problema em expressá-lo com firmeza em inglês simples.",
+        "Em restaurantes, é comum levar as sobras para casa. Você pode pedir um recipiente para viagem dizendo \"box\".",
+        "Em restaurantes com serviço de mesa, existe a cultura de dar gorjeta. As expectativas variam por região e estabelecimento, então verifique a nota fiscal."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:25.196168+00:00"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "car-care",
+    "english_context": "Unit 20 Gas Stations, Parking, and Car Problems Goal: buy gas, understand parking signs, and explain simple car trouble. Daily Life English Which pump should I use? Can I pay inside? My tire is flat. Is parking allowed here? Vocabulary gas pump the machine used to put gas in a car regular gas the common, lower-cost type of gasoline flat tire a tire without enough air tow truck a truck that moves a broken car parking meter a machine or app for paid street parking ticket a fine for breaking a parking rule US Customs Read parking signs carefully. Rules may change by time, day, and side of the street. Some gas pumps ask for a ZIP code when you pay by card. If the car has a serious problem, move to a safe place before calling for help. Dialogue Student: Excuse me, can I pay for gas inside? Cashier: Yes. Which pump are you using? Student: Pump 4, please. I need $30 of regular gas. Cashier: Okay. You can start pumping now. Student: Thank you.",
+    "japanese_explanation": {
+      "heading": "車では表示を読む力が必要",
+      "points": [
+        "駐車標識は時間、曜日、場所によって変わります。短い文でも、No parking や permit only は必ず確認しましょう。",
+        "ガソリンスタンドではカードで払う時にZIPコードを求められることがあります。うまくいかない時は店内で払えます。",
+        "車のトラブルでは、まず安全な場所に移動します。その後、保険会社、ロードサービス、修理店に連絡します。"
+      ],
+      "practice": "Is parking allowed here?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "开车生活需要会看标志",
+      "points": [
+        "停车标志会根据时间、日期和地点变化。即使英文短，也要注意 No parking 和 permit only。",
+        "加油站刷卡时，有时会要求输入ZIP code。如果机器不成功，可以进店付款。",
+        "车出问题时，先把车移到安全地方，然后联系保险、道路救援或修车店。"
+      ],
+      "practice": "Is parking allowed here?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "車では表示を読む力が必要",
+      "points": [
+        "駐車標識は時間、曜日、場所によって変わります。短い文でも、No parking や permit only は必ず確認しましょう。",
+        "ガソリンスタンドではカードで払う時にZIPコードを求められることがあります。うまくいかない時は店内で払えます。",
+        "車のトラブルでは、まず安全な場所に移動します。その後、保険会社、ロードサービス、修理店に連絡します。"
+      ]
+    },
+    "ko": {
+      "heading": "운전 시 표지판 읽기 능력 필요",
+      "points": [
+        "주차 표지판은 시간, 요일, 장소에 따라 달라집니다. 짧은 문구라도 'No parking' 또는 'permit only'를 반드시 확인하세요.",
+        "주유소에서 카드로 결제할 때 우편번호(ZIP code)를 요청할 수 있습니다. 잘 안될 경우 매장 안에서 결제할 수 있습니다.",
+        "차량 문제 발생 시, 먼저 안전한 장소로 이동하세요. 그 후 보험사, 긴급출동 서비스 또는 정비소에 연락하십시오."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "开车生活需要会看标志",
+      "points": [
+        "停车标志会根据时间、日期和地点变化。即使英文短，也要注意 No parking 和 permit only。",
+        "加油站刷卡时，有时会要求输入 ZIP code。如果机器不成功，可以进店付款。",
+        "车出问题时，先把车移到安全地方，然后联系保险、道路救援或修车店。"
+      ]
+    },
+    "es": {
+      "heading": "Es fundamental saber leer las señales al conducir",
+      "points": [
+        "Las señales de estacionamiento varían según la hora, el día y la ubicación. Aunque sean frases cortas, como 'No parking' o 'permit only', asegúrese de revisarlas siempre.",
+        "En las gasolineras, es posible que le pidan un código postal (ZIP code) al pagar con tarjeta. Si no funciona, puede pagar dentro de la tienda.",
+        "Si su coche tiene un problema, primero muévase a un lugar seguro. Después, contacte a su compañía de seguros, asistencia en carretera o taller de reparación."
+      ]
+    },
+    "pt-BR": {
+      "heading": "É necessário saber ler os sinais ao dirigir",
+      "points": [
+        "As placas de estacionamento mudam de acordo com o horário, o dia da semana e o local. Mesmo em frases curtas, certifique-se de verificar sempre 'No parking' ou 'permit only'.",
+        "Nos postos de gasolina, pode ser solicitado o CEP (código postal, ou ZIP code) ao pagar com cartão. Se não funcionar, você pode pagar dentro da loja.",
+        "Em caso de problemas com o carro, primeiro mova-se para um local seguro. Depois, entre em contato com sua seguradora, serviço de assistência na estrada ou oficina mecânica."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:11.808088+00:00"
+  }
+}

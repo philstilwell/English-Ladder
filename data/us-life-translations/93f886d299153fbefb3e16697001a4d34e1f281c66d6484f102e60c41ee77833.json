@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "taxis",
+    "english_context": "Unit 19 Taxis, Rideshares, and Airport Trips Goal: get a ride safely, confirm the destination, and handle pickup problems. Daily Life English Can you take me to this address? Are you my driver? Can you wait two minutes? Please drop me off at this entrance. Vocabulary taxi a car you pay to take you somewhere rideshare a ride booked through an app pickup spot the place where the driver meets you drop-off the place where the driver leaves you license plate the number on the car fare the cost of the ride US Customs For app rides, check the car, license plate, and driver's name before getting in. At airports, rideshare pickup may be in a special area, not directly outside baggage claim. Use the app or meter price. Be careful if a stranger offers a private ride inside the airport. Dialogue Student: Hi, are you Daniel? Driver: Yes. Are you going to 18 Maple Road? Student: Yes, please. Can you drop me off at the front entrance? Driver: Sure. It will take about 20 minutes. Student: Thank you. I have two bags.",
+    "japanese_explanation": {
+      "heading": "乗る前に車と行き先を確認",
+      "points": [
+        "配車アプリでは、乗る前に運転手の名前、車種、ナンバープレートを確認します。",
+        "空港ではタクシーや配車の乗り場が決まっていることがあります。案内表示に従いましょう。",
+        "知らない人から空港内で直接ライドを勧められたら注意します。公式のタクシー乗り場やアプリを使う方が安全です。"
+      ],
+      "practice": "Are you my driver?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "上车前确认车和目的地",
+      "points": [
+        "使用网约车App时，上车前要确认司机姓名、车型和车牌号。",
+        "机场的出租车或网约车通常有指定上车区，不一定在行李提取处门口。",
+        "如果陌生人在机场里面主动拉客，要小心。使用正式出租车区或App更安全。"
+      ],
+      "practice": "Are you my driver?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "乗る前に車と行き先を確認",
+      "points": [
+        "配車アプリでは、乗る前に運転手の名前、車種、ナンバープレートを確認します。",
+        "空港ではタクシーや配車の乗り場が決まっていることがあります。案内表示に従いましょう。",
+        "知らない人から空港内で直接ライドを勧められたら注意します。公式のタクシー乗り場やアプリを使う方が安全です。"
+      ]
+    },
+    "ko": {
+      "heading": "탑승 전 차량과 목적지 확인",
+      "points": [
+        "배차 앱을 이용할 때는 탑승 전에 운전자의 이름, 차종, 차량 번호판을 확인하세요.",
+        "공항에서는 택시나 배차 차량의 승차 장소가 정해져 있을 수 있습니다. 안내 표지를 따르세요.",
+        "모르는 사람이 공항 안에서 직접 탑승을 권유하면 주의하세요. 공식 택시 승차장이나 앱을 이용하는 것이 더 안전합니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "上车前确认车和目的地",
+      "points": [
+        "使用网约车App时，上车前要确认司机姓名、车型和车牌号。",
+        "机场的出租车或网约车通常有指定上车区，不一定在行李提取处门口。",
+        "如果陌生人在机场里面主动拉客，要小心。使用正式出租车区或App更安全。"
+      ]
+    },
+    "es": {
+      "heading": "Verifique el vehículo y el destino antes de subir",
+      "points": [
+        "Al usar una aplicación de transporte, confirme el nombre del conductor, el modelo del coche y la matrícula antes de subir.",
+        "En los aeropuertos, puede haber lugares designados para tomar taxis o vehículos de aplicaciones. Siga las señales.",
+        "Tenga cuidado si un desconocido le ofrece un viaje directamente dentro del aeropuerto. Es más seguro usar las paradas de taxis oficiales o las aplicaciones."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Confirme o veículo e o destino antes de embarcar",
+      "points": [
+        "Ao usar um aplicativo de transporte, confirme o nome do motorista, o modelo do carro e a placa antes de entrar.",
+        "Em aeroportos, pode haver locais designados para táxis ou carros de aplicativo. Siga as placas de sinalização.",
+        "Tenha cuidado se um estranho oferecer uma corrida diretamente dentro do aeroporto. É mais seguro usar pontos de táxi oficiais ou aplicativos."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:08.679672+00:00"
+  }
+}

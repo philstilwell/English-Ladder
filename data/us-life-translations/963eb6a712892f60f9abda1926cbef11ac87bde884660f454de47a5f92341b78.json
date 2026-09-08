@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "mail",
+    "english_context": "Unit 14 Mail, Packages, and Address Changes Goal: receive letters, write addresses, track packages, and forward mail when moving. Daily Life English My package has not arrived. What is the tracking number? I need to change my mailing address. Please include my apartment number. Vocabulary mailing address the address where you receive mail ZIP code a number code for an area apartment number the unit number in a building tracking number a code used to find a package forward mail send mail from an old address to a new one post office a place for mail services US Customs Write the apartment or unit number clearly. Missing numbers can cause lost mail. USPS mail forwarding helps with postal mail, but it does not update every company or agency. Tell banks, schools, doctors, employers, and important offices your new address directly. Dialogue Student: I moved last week. Clerk: Do you want to forward your mail? Student: Yes. What form do I need? Clerk: You can do it online or fill out this form. Student: Thank you. My new address includes Apartment 4C.",
+    "japanese_explanation": {
+      "heading": "住所は細かく正確に",
+      "points": [
+        "アパート番号、部屋番号、ZIPコードが抜けると郵便物が届かないことがあります。住所は一行ずつ正確に書きます。",
+        "USPSの転送は便利ですが、銀行、学校、医者、雇用主、政府機関には自分で住所変更を連絡します。",
+        "荷物はtracking numberで確認します。届かない時は、配送会社、建物の管理人、差出人に確認しましょう。"
+      ],
+      "practice": "Please include my apartment number."
+    },
+    "existing_simplified_chinese": {
+      "heading": "地址要写完整、准确",
+      "points": [
+        "如果缺少公寓号、房间号或邮编，信件可能收不到。地址要一行一行写准确。",
+        "USPS转寄很方便，但银行、学校、医生、雇主和政府机构需要你自己通知新地址。",
+        "包裹可以用 tracking number 查询。没收到时，联系快递公司、楼管或寄件人。"
+      ],
+      "practice": "Please include my apartment number."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "住所は細かく正確に",
+      "points": [
+        "アパート番号、部屋番号、ZIPコードが抜けると郵便物が届かないことがあります。住所は一行ずつ正確に書きます。",
+        "USPSの転送は便利ですが、銀行、学校、医者、雇用主、政府機関には自分で住所変更を連絡します。",
+        "荷物はtracking numberで確認します。届かない時は、配送会社、建物の管理人、差出人に確認しましょう。"
+      ]
+    },
+    "ko": {
+      "heading": "주소는 상세하고 정확하게",
+      "points": [
+        "아파트 번호, 호실 번호, 우편번호가 누락되면 우편물이 도착하지 않을 수 있습니다. 주소는 한 줄씩 정확하게 작성하십시오.",
+        "USPS 우편물 전송 서비스는 편리하지만, 은행, 학교, 의사, 고용주, 정부 기관에는 직접 주소 변경을 알려야 합니다.",
+        "소포는 tracking number로 확인할 수 있습니다. 도착하지 않을 경우, 배송 회사, 건물 관리인 또는 발송인에게 문의하십시오."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "地址要写完整、准确",
+      "points": [
+        "如果缺少公寓号、房间号或邮编，信件可能收不到。地址要一行一行写准确。",
+        "USPS转寄很方便，但银行、学校、医生、雇主和政府机构需要你自己通知新地址。",
+        "包裹可以用 tracking number 查询。没收到时，请联系快递公司、楼管或寄件人。"
+      ]
+    },
+    "es": {
+      "heading": "La dirección debe ser detallada y precisa",
+      "points": [
+        "Si falta el número de apartamento, el número de unidad o el código postal (ZIP code), es posible que el correo no llegue. Escriba la dirección de forma precisa, línea por línea.",
+        "El reenvío de correo de USPS es útil, pero debe comunicar el cambio de dirección directamente a bancos, escuelas, médicos, empleadores y agencias gubernamentales.",
+        "Verifique los paquetes con un tracking number. Si no llega, contacte a la compañía de envío, al administrador del edificio o al remitente."
+      ]
+    },
+    "pt-BR": {
+      "heading": "O endereço deve ser detalhado e preciso",
+      "points": [
+        "Se o número do apartamento, número da unidade ou código ZIP (CEP) estiver faltando, a correspondência pode não ser entregue. Escreva o endereço com precisão, linha por linha.",
+        "O serviço de reencaminhamento de correspondência do USPS é conveniente, mas você deve notificar a mudança de endereço diretamente a bancos, escolas, médicos, empregadores e agências governamentais.",
+        "Verifique as encomendas usando o tracking number. Se não chegar, entre em contato com a empresa de entrega, o administrador do prédio ou o remetente."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:53.485910+00:00"
+  }
+}

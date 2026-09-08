@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "dry-cleaning",
+    "english_context": "Unit 18 Dry Cleaning, Alterations, and Pickup Goal: drop off clothes, ask for cleaning or small repairs, and pick up the right order. Daily Life English I need this suit dry cleaned. Can you remove this stain? Can you hem these pants? I am here to pick up my order. Vocabulary dry cleaning special cleaning for delicate clothes stain a dirty mark on clothing alteration a change to make clothes fit better hem make pants, a skirt, or a dress shorter pickup ticket paper or text used to get your order ready date the date when your order is finished US Customs Bring the pickup ticket or show the text message when you return. Point to the exact stain, missing button, or place that needs alteration. Ask the price and ready date before leaving your clothes. Dialogue Student: I need this jacket dry cleaned, please. Clerk: Any stains or repairs? Student: Yes, there is a stain on the sleeve. Clerk: We can try to remove it. It will be ready Friday. Student: Great. I will bring this ticket for pickup.",
+    "japanese_explanation": {
+      "heading": "服を預ける前に値段と日付を確認",
+      "points": [
+        "ドライクリーニングでは、汚れ、取れたボタン、直してほしい場所を指で示すと伝わりやすいです。",
+        "pickup ticket は受け取りに必要です。紙、メール、SMSのどれでも、なくさないようにしましょう。",
+        "しみ抜きや直しは必ず成功するとは限りません。料金、仕上がり日、できることを先に確認します。"
+      ],
+      "practice": "I am here to pick up my order."
+    },
+    "existing_simplified_chinese": {
+      "heading": "把衣服留下前先确认价格和日期",
+      "points": [
+        "去干洗店时，用手指出污渍、掉扣子或需要修改的地方，会更容易说明。",
+        "pickup ticket 是取衣服时的重要凭证。纸条、邮件或短信都要保存好。",
+        "去污或修改不一定百分之百成功。离开前先确认费用、完成日期和可以做到什么。"
+      ],
+      "practice": "I am here to pick up my order."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "服を預ける前に値段と日付を確認",
+      "points": [
+        "ドライクリーニングでは、汚れ、取れたボタン、直してほしい場所を指で示すと伝わりやすいです。",
+        "pickup ticket は受け取りに必要です。紙、メール、SMSのどれでも、なくさないようにしましょう。",
+        "しみ抜きや直しは必ず成功するとは限りません。料金、仕上がり日、できることを先に確認します。"
+      ]
+    },
+    "ko": {
+      "heading": "옷을 맡기기 전에 가격과 날짜를 확인하세요",
+      "points": [
+        "드라이클리닝을 맡길 때, 얼룩, 떨어진 단추, 수선이 필요한 부분을 손가락으로 가리켜 설명하면 의사소통이 더 쉽습니다.",
+        "pickup ticket은 옷을 찾을 때 필요합니다. 종이 영수증, 이메일, 문자 메시지 등 어떤 형태든 잃어버리지 않도록 주의하세요.",
+        "얼룩 제거 또는 수선이 항상 성공하는 것은 아닙니다. 요금, 완성 예정일, 그리고 가능한 작업을 미리 확인하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "把衣服留下前先确认价格和日期",
+      "points": [
+        "去干洗店时，用手指出污渍、掉扣子或需要修改的地方，会更容易说明。",
+        "pickup ticket 是取衣服时的重要凭证。纸条、邮件或短信都要保存好。",
+        "去污或修改不一定百分之百成功。离开前先确认费用、完成日期和可以做到什么。"
+      ]
+    },
+    "es": {
+      "heading": "Confirme el precio y la fecha antes de dejar la ropa",
+      "points": [
+        "Cuando lleve ropa a la tintorería, es más fácil comunicarse señalando con el dedo la mancha, el botón que falta o el lugar que necesita una modificación.",
+        "El \"pickup ticket\" es necesario para recoger su pedido. Ya sea en papel, correo electrónico o SMS, asegúrese de no perderlo.",
+        "La eliminación de manchas o las alteraciones no siempre tienen éxito. Confirme el precio, la fecha de entrega y lo que se puede hacer de antemano."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Confirme o preço e a data antes de deixar as roupas",
+      "points": [
+        "Ao levar roupas para a lavagem a seco, é mais fácil se comunicar apontando com o dedo a mancha, o botão que caiu ou o local que precisa de alteração.",
+        "O \"pickup ticket\" é necessário para a retirada. Seja em papel, e-mail ou SMS, certifique-se de não perdê-lo.",
+        "A remoção de manchas ou os consertos nem sempre são bem-sucedidos. Confirme o preço, a data de conclusão e o que pode ser feito antecipadamente."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:08.649829+00:00"
+  }
+}

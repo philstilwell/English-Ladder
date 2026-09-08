@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "laundry",
+    "english_context": "Unit 17 Laundry and Laundromats Goal: wash clothes outside the home, ask for help, and understand machine and payment words. Daily Life English Which machine is available? How much is one wash? Do I need quarters or a laundry card? My clothes are still wet. Vocabulary laundromat a place with washing machines and dryers wash cycle the washing program on a machine dryer a machine that dries clothes detergent soap for washing clothes quarters 25-cent coins lint trap the screen that catches cloth dust in a dryer US Customs Do not leave clothes in a machine for a long time after it stops. Clean the lint trap before or after using a dryer if the machine has one. Some apartments have shared laundry rooms with posted hours and rules. Dialogue Student: Excuse me, how do I pay for this washer? Staff: Use the laundry card machine by the door. Student: How much is one wash? Staff: It is $3.25. The dryer is separate. Student: Thank you. Which cycle should I use for regular clothes?",
+    "japanese_explanation": {
+      "heading": "共有の洗濯では時間とマナーが大切",
+      "points": [
+        "ランドリーでは、機械が止まったら早めに服を取り出します。他の人が待っていることがあります。",
+        "支払い方法は場所によって違います。硬貨、カード、アプリ、専用ランドリーカードなどがあります。",
+        "乾燥機では lint trap を確認します。ほこりを取ると乾きやすくなり、火事の危険も下がります。"
+      ],
+      "practice": "Do I need quarters or a laundry card?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "共用洗衣要注意时间和礼貌",
+      "points": [
+        "在自助洗衣店或公寓洗衣房，机器停了以后要尽快取出衣服，因为别人可能在等。",
+        "付款方式每个地方不同，可能用硬币、银行卡、App或专用洗衣卡。",
+        "使用烘干机时要注意 lint trap。清理绒毛会让衣服更容易干，也能降低火灾风险。"
+      ],
+      "practice": "Do I need quarters or a laundry card?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "共有の洗濯では時間とマナーが大切",
+      "points": [
+        "ランドリーでは、機械が止まったら早めに服を取り出します。他の人が待っていることがあります。",
+        "支払い方法は場所によって違います。硬貨、カード、アプリ、専用ランドリーカードなどがあります。",
+        "乾燥機では lint trap を確認します。ほこりを取ると乾きやすくなり、火事の危険も下がります。"
+      ]
+    },
+    "ko": {
+      "heading": "공동 세탁 시 시간과 예절 준수가 중요합니다",
+      "points": [
+        "세탁기가 멈추면 옷을 빨리 꺼내세요. 다른 사람이 기다리고 있을 수 있습니다.",
+        "결제 방식은 장소마다 다릅니다. 동전, 카드, 앱, 전용 세탁 카드 등이 있습니다.",
+        "건조기 사용 시 'lint trap'(먼지 필터)을 확인하세요. 먼지를 제거하면 옷이 더 잘 마르고 화재 위험도 줄어듭니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "共用洗衣要注意时间和礼貌",
+      "points": [
+        "在自助洗衣店或公寓洗衣房，机器停了以后要尽快取出衣服，因为别人可能在等。",
+        "付款方式每个地方不同，可能用硬币、银行卡、App或专用洗衣卡。",
+        "使用烘干机时要注意 lint trap（绒毛收集器）。清理绒毛会让衣服更容易干，也能降低火灾风险。"
+      ]
+    },
+    "es": {
+      "heading": "En lavanderías compartidas, el tiempo y las buenas maneras son importantes",
+      "points": [
+        "En la lavandería, retire la ropa rápidamente una vez que la máquina se detenga. Es posible que otras personas estén esperando.",
+        "Los métodos de pago varían según el lugar. Puede haber monedas, tarjetas, aplicaciones o tarjetas de lavandería dedicadas.",
+        "En la secadora, revise la \"lint trap\" (trampa de pelusa). Quitar la pelusa hace que la ropa se seque más fácilmente y también reduce el riesgo de incendio."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Em lavanderias compartilhadas, tempo e boas maneiras são essenciais",
+      "points": [
+        "Na lavanderia, retire suas roupas rapidamente assim que a máquina parar. Outras pessoas podem estar esperando.",
+        "Os métodos de pagamento variam de acordo com o local. Pode-se usar moedas, cartões, aplicativos ou cartões de lavanderia específicos.",
+        "Na secadora, verifique o \"lint trap\" (filtro de fiapos). Remover os fiapos facilita a secagem da roupa e também reduz o risco de incêndio."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:06.015558+00:00"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "personal-care",
+    "english_context": "Unit 21 Haircuts, Salons, and Personal Care Goal: make simple grooming appointments and describe what you want. Daily Life English I would like a haircut. Please trim just a little. Can I make an appointment for Saturday? How much does it cost? Vocabulary barber a person who cuts short hair, often men's hair salon a place for hair, nails, or beauty services trim cut a small amount bangs hair cut across the front of the face appointment a planned time for a service walk-in a customer without an appointment US Customs Photos help. Show a picture of the haircut or style you want. Some places accept walk-ins, but appointments are safer when you have limited time. Many people tip for hair and beauty services. Check the final price before deciding. Dialogue Student: Hi, do you take walk-ins? Stylist: Yes. What would you like today? Student: Just a trim, please. About one inch. Stylist: No problem. Do you want layers? Student: No, thank you. Same style, just shorter.",
+    "japanese_explanation": {
+      "heading": "写真と短い表現が役に立つ",
+      "points": [
+        "ヘアカットでは、長さやスタイルを英語だけで説明するのは難しいことがあります。写真を見せると安全です。",
+        "walk-in は予約なしの客です。ただし待ち時間が長いこともあるので、時間が限られている時は予約しましょう。",
+        "髪、ネイル、美容サービスではチップを渡す人が多いです。最終料金を見てから判断して大丈夫です。"
+      ],
+      "practice": "Just a trim, please."
+    },
+    "existing_simplified_chinese": {
+      "heading": "照片和短句很有帮助",
+      "points": [
+        "剪头发时，只用英文解释长度和发型可能很难。给对方看照片会更安全。",
+        "walk-in 指没有预约的客人。不过可能要等很久，所以时间紧时最好预约。",
+        "头发、美甲和美容服务通常有人给小费。可以看最后价格后再决定。"
+      ],
+      "practice": "Just a trim, please."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "写真と短い表現が役に立つ",
+      "points": [
+        "ヘアカットでは、長さやスタイルを英語だけで説明するのは難しいことがあります。写真を見せると安全です。",
+        "walk-in は予約なしの客です。ただし待ち時間が長いこともあるので、時間が限られている時は予約しましょう。",
+        "髪、ネイル、美容サービスではチップを渡す人が多いです。最終料金を見てから判断して大丈夫です。"
+      ]
+    },
+    "ko": {
+      "heading": "사진과 짧은 표현이 도움이 됩니다",
+      "points": [
+        "헤어컷 시 길이와 스타일을 영어로만 설명하기 어려울 수 있습니다. 사진을 보여주는 것이 더 안전합니다.",
+        "walk-in은 예약 없이 방문하는 손님을 의미합니다. 하지만 대기 시간이 길 수 있으므로, 시간이 제한적일 때는 예약하는 것이 좋습니다.",
+        "헤어, 네일, 미용 서비스에는 팁을 주는 사람이 많습니다. 최종 요금을 확인한 후 결정해도 괜찮습니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "照片和短语很有帮助",
+      "points": [
+        "理发时，只用英语解释长度和发型可能很困难。出示照片会更稳妥。",
+        "“walk-in”指没有预约的客人。但可能需要长时间等待，所以如果时间有限，最好预约。",
+        "许多人在美发、美甲和美容服务中会给小费。在查看最终价格后再决定是否给小费是可以的。"
+      ]
+    },
+    "es": {
+      "heading": "Las fotos y frases cortas son útiles",
+      "points": [
+        "Al cortarse el pelo, puede ser difícil explicar el largo y el estilo solo en inglés. Es más seguro mostrar una foto.",
+        "Un “walk-in” es un cliente sin cita previa. Sin embargo, puede haber largos tiempos de espera, así que si tiene tiempo limitado, es mejor hacer una cita.",
+        "Muchas personas dan propina por servicios de cabello, uñas y belleza. Está bien decidir después de revisar el precio final."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Fotos e frases curtas são úteis",
+      "points": [
+        "Para cortes de cabelo, pode ser difícil explicar o comprimento e o estilo apenas em inglês. É mais seguro mostrar uma foto.",
+        "Um “walk-in” é um cliente sem agendamento. No entanto, o tempo de espera pode ser longo, então, se o seu tempo for limitado, é melhor agendar.",
+        "Muitas pessoas dão gorjeta em serviços de cabelo, unhas e beleza. Não há problema em decidir depois de verificar o preço final."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:15:20.817570+00:00"
+  }
+}

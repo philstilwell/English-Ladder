@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "health",
+    "english_context": "Unit 09 Health, Medicine, and Emergencies Goal: get help when sick, understand care options, and speak clearly in an emergency. Daily Life English I need to see a doctor. I have chest pain. I need an interpreter. Which pharmacy is open today? Vocabulary emergency a dangerous situation that needs help now urgent care a clinic for problems that are not life-threatening ER emergency room at a hospital prescription medicine ordered by a doctor insurance card a card that shows health coverage symptom a sign of sickness or injury US Customs Call 911 for a serious emergency. Say your address first. For non-emergency sickness, a clinic or urgent care may be faster than the ER. Ask for an interpreter if medical English is hard. It is important to be exact. Dialogue Receptionist: What seems to be the problem? Student: I have a fever and a sore throat. Receptionist: Do you have insurance? Student: Yes. Here is my insurance card. Student: Can I have an interpreter, please?",
+    "japanese_explanation": {
+      "heading": "医療では正確さが一番大切",
+      "points": [
+        "緊急で命に関わる時は911です。最初に住所を言えるように練習しましょう。",
+        "軽い病気やけがは、かかりつけ医、クリニック、urgent care の方がERより合う場合があります。",
+        "症状、薬、アレルギー、保険をメモして持って行くと安心です。医療英語が難しい時は通訳を頼みましょう。"
+      ],
+      "practice": "I need an interpreter, please."
+    },
+    "existing_simplified_chinese": {
+      "heading": "看病时准确最重要",
+      "points": [
+        "有生命危险的紧急情况拨打911。要练习先说出自己的地址。",
+        "轻微疾病或受伤，有时家庭医生、诊所或 urgent care 比急诊室更合适。",
+        "把症状、药物、过敏和保险信息写下来带去。医学英文困难时，可以要求口译。"
+      ],
+      "practice": "I need an interpreter, please."
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "医療では正確さが一番大切",
+      "points": [
+        "緊急で命に関わる時は911です。最初に住所を言えるように練習しましょう。",
+        "軽い病気やけがは、かかりつけ医、クリニック、urgent care の方がERより合う場合があります。",
+        "症状、薬、アレルギー、保険をメモして持って行くと安心です。医療英語が難しい時は通訳を頼みましょう。"
+      ]
+    },
+    "ko": {
+      "heading": "의료에서는 정확성이 가장 중요합니다",
+      "points": [
+        "생명이 위급한 비상 상황에서는 911에 전화하세요. 먼저 주소를 말할 수 있도록 연습해 두는 것이 좋습니다.",
+        "가벼운 질병이나 부상에는 일반 의원, 클리닉 또는 urgent care가 응급실(ER)보다 더 적합할 수 있습니다.",
+        "증상, 복용 중인 약, 알레르기, 보험 정보를 메모하여 가져가면 안심할 수 있습니다. 의학 영어가 어려운 경우 통역사를 요청하세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "看病时准确最重要",
+      "points": [
+        "有生命危险的紧急情况拨打911。要练习先说出自己的地址。",
+        "轻微疾病或受伤，有时家庭医生、诊所或 urgent care 比急诊室更合适。",
+        "把症状、药物、过敏和保险信息写下来带去。医学英文困难时，可以要求口译。"
+      ]
+    },
+    "es": {
+      "heading": "La precisión es lo más importante en la atención médica",
+      "points": [
+        "Para emergencias que ponen en peligro la vida, llame al 911. Practique para poder decir su dirección primero.",
+        "Para enfermedades o lesiones leves, un médico de cabecera, una clínica o un centro de \"urgent care\" pueden ser más adecuados que la sala de emergencias (ER).",
+        "Es tranquilizador llevar anotados los síntomas, medicamentos, alergias y la información del seguro. Si el inglés médico es difícil, solicite un intérprete."
+      ]
+    },
+    "pt-BR": {
+      "heading": "A precisão é o mais importante na assistência médica",
+      "points": [
+        "Em emergências com risco de vida, ligue para o 911. Pratique para conseguir dizer seu endereço primeiro.",
+        "Para doenças ou lesões leves, um médico de família, uma clínica ou um centro de \"urgent care\" podem ser mais adequados do que a emergência (ER).",
+        "É tranquilizador levar anotados os sintomas, medicamentos, alergias e informações do seguro. Se o inglês médico for difícil, peça um intérprete."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:39.231571+00:00"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "transportation",
+    "english_context": "Unit 08 Transportation and Getting Around Goal: use buses, trains, rideshares, bikes, walking routes, and car-related English. Daily Life English Which bus goes downtown? Does this train stop at Central Station? I need to renew my driver's license. Can you drop me off here? Vocabulary fare money paid for a bus or train ride route the path a bus, train, or car follows stop a place where a bus or train waits transfer change from one bus or train to another driver's license a card that allows a person to drive insurance paid protection for accidents or problems US Customs Driving rules and license rules are different by state. Seat belts are expected. Car insurance is required in many situations. For buses, check the route, direction, and last service time. Dialogue Student: Excuse me, does this bus go to City College? Driver: Yes, but you need to transfer at Main Street. Student: How much is the fare? Driver: It is $2.50. Student: Thank you. Could you tell me when we get to Main Street?",
+    "japanese_explanation": {
+      "heading": "移動前に方向と時間を確認",
+      "points": [
+        "バスや電車では、路線番号だけでなく方向も確認します。同じ番号でも逆方向に行くことがあります。",
+        "車を運転する場合、免許、保険、登録のルールは州ごとに違います。住む州のDMV情報を確認しましょう。",
+        "夜の移動、乗り換え、最終バスの時間を前もって調べると安全です。"
+      ],
+      "practice": "Does this bus go to City College?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "出门前确认方向和时间",
+      "points": [
+        "坐公交或火车时，不只看线路号码，也要看方向。同一条线路可能去相反方向。",
+        "如果开车，驾照、保险和车辆登记规则按州不同。要查看所在州DMV的信息。",
+        "晚上出门、换乘和末班车时间最好提前查好，会更安全。"
+      ],
+      "practice": "Does this bus go to City College?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "移動前に方向と時間を確認",
+      "points": [
+        "バスや電車では、路線番号だけでなく方向も確認します。同じ番号でも逆方向に行くことがあります。",
+        "車を運転する場合、免許、保険、登録のルールは州ごとに違います。住む州のDMV情報を確認しましょう。",
+        "夜の移動、乗り換え、最終バスの時間を前もって調べると安全です。"
+      ]
+    },
+    "ko": {
+      "heading": "이동 전에 방향과 시간을 확인하세요",
+      "points": [
+        "버스나 기차를 이용할 때는 노선 번호뿐만 아니라 방향도 확인해야 합니다. 같은 번호라도 반대 방향으로 갈 수 있습니다.",
+        "자동차를 운전할 경우, 면허, 보험, 등록 규칙은 주마다 다릅니다. 거주하는 주의 DMV 정보를 확인하세요.",
+        "밤에 이동하거나 환승, 막차 시간을 미리 알아두면 안전합니다."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "出门前确认方向和时间",
+      "points": [
+        "坐公交或火车时，不只看线路号码，也要看方向。同一条线路可能去相反方向。",
+        "如果开车，驾照、保险和车辆登记规则按州不同。要查看所在州DMV的信息。",
+        "晚上出门、换乘和末班车时间最好提前查好，会更安全。"
+      ]
+    },
+    "es": {
+      "heading": "Confirme la dirección y la hora antes de viajar",
+      "points": [
+        "En autobús o tren, confirme no solo el número de ruta, sino también la dirección. El mismo número puede ir en sentido contrario.",
+        "Si conduce un automóvil, las reglas de licencia, seguro y registro varían según el estado. Consulte la información del DMV de su estado de residencia.",
+        "Es más seguro investigar con anticipación los viajes nocturnos, los transbordos y los horarios del último autobús."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Confirme a direção e o horário antes de se deslocar",
+      "points": [
+        "Ao usar ônibus ou trem, confirme não apenas o número da linha, mas também a direção. O mesmo número pode seguir na direção oposta.",
+        "Ao dirigir um carro, as regras de licença, seguro e registro variam de estado para estado. Verifique as informações do DMV do seu estado de residência.",
+        "É mais seguro verificar com antecedência os deslocamentos noturnos, as baldeações e os horários dos últimos ônibus."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T18:14:25.060184+00:00"
+  }
+}

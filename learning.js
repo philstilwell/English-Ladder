@@ -12,12 +12,15 @@
     try { return supportedLanguage(localStorage.getItem(languageKey)); } catch { return "en"; }
   }
   let definitionLanguage = savedLanguage();
+  document.documentElement.dataset.definitionLanguage = definitionLanguage;
   function changeDefinitionLanguage(language, save = false) {
     definitionLanguage = supportedLanguage(language);
     if (save) {
       try { localStorage.setItem(languageKey, definitionLanguage); } catch { /* The controls still work on this page. */ }
     }
     vocabularyViews.forEach(update => update(definitionLanguage));
+    document.documentElement.dataset.definitionLanguage = definitionLanguage;
+    window.dispatchEvent(new CustomEvent("vocabulary-language-changed", { detail: { language: definitionLanguage } }));
   }
   window.addEventListener("storage", (event) => {
     if (event.key === languageKey || event.key === null) changeDefinitionLanguage(savedLanguage());

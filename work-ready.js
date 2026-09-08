@@ -7,10 +7,13 @@
     if (!text || !status) return;
     button.hidden = false;
     button.addEventListener('click', async () => {
+      const copyingText = text.textContent;
       try {
         if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
-        await navigator.clipboard.writeText(text.textContent);
-        status.textContent = 'Complete prompt copied. Paste it into a new AI chat exactly as it is.';
+        await navigator.clipboard.writeText(copyingText);
+        status.textContent = copyingText === text.textContent
+          ? 'Complete prompt copied. Paste it into a new AI chat exactly as it is.'
+          : 'The earlier prompt was copied. Copy again to use your new language selection.';
       } catch (_) {
         text.focus();
         const selection = window.getSelection(), range = document.createRange();

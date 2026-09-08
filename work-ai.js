@@ -23,8 +23,9 @@
     const reference = data.contexts.find(item => item.id === context.value);
     if (!task || !reference || !validLevel(level.value)) return;
     revision += 1;
-    prompt.value = [data.common, data.levels[level.value],
+    const original = [data.common, data.levels[level.value],
       `REFERENCE\n${data.course}\n${reference.text}\nEND REFERENCE`, task.instructions].join('\n\n');
+    prompt.value = window.EnglishLadderAI?.localizePrompt(original) ?? original;
     root.querySelector('[data-ai-print]').textContent = prompt.value;
     root.querySelector('[data-ai-description]').textContent = task.short;
     const target = new URL(window.location.href);
@@ -79,6 +80,7 @@
     mode.focus({preventScroll: true});
   }));
   window.addEventListener('popstate', fromUrl);
+  window.addEventListener('ai-explanation-language-changed', () => render());
   fromUrl();
   root.querySelector('[data-ai-controls]').hidden = false;
   root.querySelector('[data-ai-actions]').hidden = false;

@@ -21,6 +21,16 @@ Workplace scripts also support producing original language, drafting messages, a
 
 The actual wording lives in `ai_extensions.py` for general study and field-glossary extensions, and `work_ai_prompts.py` for the workplace chooser. Prompts are generated from published curriculum text, never from private notes. Republishing replaces old blocks so a revised lesson cannot keep stale prompt context.
 
+## Explanation language (September 8, 2026)
+
+The definition-language buttons also set the explanation language for web AI prompts: Japanese, Korean, Simplified Chinese, Spanish, or Brazilian Portuguese. The remembered choice applies across levels and curriculum pages. English restores the original authored prompt without an added language instruction.
+
+`ai-practice.js` adds an authored instruction block asking for deeper, contextual explanations of meaning, grammar, word partners, tone, and reading evidence in the selected language. It explicitly replaces brief-explanation limits while retaining the lesson's English difficulty, activity length, response format, pacing, and evidence boundaries. Examples, dialogue lines, and practice options remain English. Feedback explains the learner's actual response and preserves hints and retries without revealing withheld answers.
+
+The visible prompt is the exact text copied, including manual-copy fallback. The workplace chooser, its individual text download and print view, and the complete lesson/dialogue prompt cards use the same guidance. Static PDF guides and prebuilt course text packs remain in their published English edition; they cannot read a browser language preference.
+
+Language changes update open pages immediately, including changes from another tab and restored pages. If browser storage is blocked, buttons still update prompts on the current page. There are no translation requests, external AI calls, or additional API charges for this feature. New lessons automatically use the shared behavior when published.
+
 ## Validation
 
 - 75 Python checks and 51 JavaScript checks passed after integration, along with the 298-page link, metadata, and curriculum audit.

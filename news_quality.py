@@ -2,7 +2,7 @@
 import json
 import re
 from datetime import datetime, timezone
-from lesson_levels import LANGUAGE_POLICY_VERSION, LEVEL_CHECKS, format_language_policy
+from lesson_levels import LANGUAGE_POLICY_VERSION, LEVEL_CHECKS, STORY_TITLE_GUIDANCE, format_language_policy
 
 
 def review_response_schema():
@@ -99,7 +99,7 @@ Apply the language policy below to the entire lesson, including every definition
 For A1-A2, common beginner words such as "ideas" are acceptable vocabulary targets when their contextual meaning or use is useful at that stage. Do not reject a target solely for being common or elementary; assess the actual definition, use and learning value. Natural, accessible sentence frames such as "I think ..." are acceptable. Do not demand "I believe ..." or another preferred synonym without a concrete meaning, clarity or level problem in the existing wording. Common words do not automatically provide sufficient challenge at higher levels; apply the relevant profile in context.
 For every blocking issue or failed check, identify the problematic term or field, the violated requirement, and the concrete revision needed. Recheck the actual field before returning the issue, and quote the relevant draft wording accurately. A preferred synonym, sentence rhythm or optional extra explanation is not a blocker unless the current wording violates a stated requirement or causes a concrete meaning, clarity or level problem. Optional polish is not a blocking issue. A general approved flag cannot override a failed or missing level check. Passing the numeric minimums never excuses unsuitable vocabulary or register.
 Approve only if every check passes. If not, list concrete changes, not generic advice. Return the supplied JSON schema.
-\n'''+format_language_policy(level)+'\nDATA:\n'+json.dumps(payload,ensure_ascii=False)
+\n'''+STORY_TITLE_GUIDANCE+'\n'+format_language_policy(level)+'\nDATA:\n'+json.dumps(payload,ensure_ascii=False)
     from generation_retry import generate_with_retry
     response=generate_with_retry(client,model=model,contents=prompt,config={
         'response_mime_type':'application/json',

@@ -10,6 +10,17 @@ an assertion that every word has a single fixed proficiency level.
 LANGUAGE_POLICY_VERSION = '2026-09-07-distinct-vocabulary'
 LEVEL_CHECKS = ('vocabulary', 'register', 'teaching_language', 'challenge')
 
+STORY_TITLE_GUIDANCE = (
+    'Aim for 10 words or fewer in a story title. This is a soft editorial target, '
+    'not a hard word-count limit: a slightly longer title is acceptable when an '
+    'essential name or qualification improves clarity or accuracy. Keep the main '
+    'story first and use natural language for the level. Omit proficiency labels '
+    'such as C1-Higher, lesson labels, and padded analysis subtitles. Do not shorten '
+    'a title by chopping off words, hiding text, or dropping an essential qualifier. '
+    'Do not reject an otherwise sound lesson solely because its title exceeds '
+    '10 words; judge whether the wording is clear, accurate, and concise.'
+)
+
 COMMON_LANGUAGE_POLICY = (
     'Apply the target level to every learner-facing field: title, overview, reading, '
     'vocabulary definitions, grammar explanations, quiz questions, all three options, '

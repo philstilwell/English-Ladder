@@ -5,7 +5,10 @@ Simplified Chinese (`zh-Hans`), Spanish (`es`), and Brazilian Portuguese (`pt-BR
 `vocabulary_translations.py` stores one reviewed record per lesson context hash.
 The hash includes vocabulary, reading, level and translation policy. Changing any
 of them invalidates the old translations; missing or invalid records use English.
-Page builds read these records without contacting an AI service.
+Page builds read these records without contacting an AI service. The reviewed
+definitions are embedded in the lesson HTML; this entire working directory is
+excluded from the public asset package. Student browsers never request these
+records separately.
 
 Hidden draft files preserve a successful paid draft awaiting review. Hidden usage
 files retain per-request spending estimates, including conservative reservations

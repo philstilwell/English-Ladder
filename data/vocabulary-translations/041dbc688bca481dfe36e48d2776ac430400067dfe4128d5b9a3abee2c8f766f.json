@@ -76,7 +76,7 @@
       "id": 0,
       "ja": "考え、感情、意図などを言葉や行動で伝えること。",
       "ko": "생각, 감정, 의도 등을 말이나 행동으로 전달하는 것.",
-      "zh-Hans": "通过言语或行动表达思想、感受或意图。",
+      "zh-Hans": "传达想法、感受或意图，通常通过言语或行动。",
       "es": "Transmitir un pensamiento, sentimiento o intención, a menudo con palabras o acciones.",
       "pt-BR": "Transmitir um pensamento, sentimento ou intenção, geralmente por meio de palavras ou ações."
     },
@@ -90,7 +90,7 @@
     },
     {
       "id": 2,
-      "ja": "公に、そして熱狂的に高く評価されたり、称賛されたりすること。",
+      "ja": "高く評価されたり、称賛されたりしたこと。多くの場合、公の場で熱意を込めて褒められることを指す。",
       "ko": "종종 공개적으로 열정적으로 매우 칭찬받거나 찬양받는 것.",
       "zh-Hans": "受到高度赞扬或颂扬，通常是公开且充满热情的。",
       "es": "Ser muy elogiado o celebrado, a menudo de forma pública y entusiasta.",
@@ -100,13 +100,13 @@
       "id": 3,
       "ja": "人の注意や興味を引きつけ、魅了するような魅力的で心惹かれる様子。",
       "ko": "관심과 흥미를 사로잡을 정도로 매력적이고 유쾌한.",
-      "zh-Hans": "以引人入胜的方式吸引注意力和兴趣的。",
+      "zh-Hans": "有魅力、能吸引人的注意并激发兴趣的。",
       "es": "Encantador y atractivo de una manera que cautiva la atención y el interés.",
       "pt-BR": "Charmoso e atraente de uma forma que cativa a atenção e o interesse."
     },
     {
       "id": 4,
-      "ja": "人や物事のリストで、特に誰が利用可能か、またはどの仕事に割り当てられているかを示すもの。",
+      "ja": "人や物の一覧表。特に、対応できる人や仕事の担当者を示すもの。",
       "ko": "사람이나 사물의 목록으로, 특히 누가 이용 가능하거나 어떤 작업에 배정되었는지 보여주는 것.",
       "zh-Hans": "人或事物的清单，尤指显示谁可用或被分配到任务的清单。",
       "es": "Una lista de personas o cosas, especialmente una que muestra quién está disponible o asignado a tareas.",
@@ -116,7 +116,7 @@
       "id": 5,
       "ja": "さまざまな部分やメンバーから成り立っている、またはそれらを含んでいること。",
       "ko": "다양한 부분이나 구성원으로 이루어져 있거나 포함하는 것.",
-      "zh-Hans": "由各种部分或成员组成或包含。",
+      "zh-Hans": "由各种部分或成员组成，或包括这些部分或成员。",
       "es": "Consistir en, o incluir, varias partes o miembros.",
       "pt-BR": "Consistir em ou incluir várias partes ou membros."
     },
@@ -146,7 +146,7 @@
     },
     {
       "id": 9,
-      "ja": "システム、信念、慣習などを分解すること。効果的に破壊したり廃止したりすること。",
+      "ja": "仕組みや信念、慣行などを解体し、実質的に壊したり廃止したりすること。",
       "ko": "시스템, 신념, 관행 등을 해체하는 것; 효과적으로 파괴하거나 폐지하는 것.",
       "zh-Hans": "拆解一个系统、信仰或惯例；有效地摧毁或废除它。",
       "es": "Desmantelar un sistema, creencia o práctica; destruirlo o abolirlo eficazmente.",
@@ -158,5 +158,55 @@
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
     "date": "2026-09-08T15:52:01.946550+00:00"
-  }
+  },
+  "copyedits": [
+    {
+      "date": "2026-09-08",
+      "method": "Codex contextual meaning and natural phrasing check; original model review retained.",
+      "changes": [
+        {
+          "id": 0,
+          "term": "expressed",
+          "language": "zh-Hans",
+          "before": "通过言语或行动表达思想、感受或意图。",
+          "after": "传达想法、感受或意图，通常通过言语或行动。"
+        },
+        {
+          "id": 2,
+          "term": "lauded",
+          "language": "ja",
+          "before": "公に、そして熱狂的に高く評価されたり、称賛されたりすること。",
+          "after": "高く評価されたり、称賛されたりしたこと。多くの場合、公の場で熱意を込めて褒められることを指す。"
+        },
+        {
+          "id": 4,
+          "term": "roster",
+          "language": "ja",
+          "before": "人や物事のリストで、特に誰が利用可能か、またはどの仕事に割り当てられているかを示すもの。",
+          "after": "人や物の一覧表。特に、対応できる人や仕事の担当者を示すもの。"
+        },
+        {
+          "id": 9,
+          "term": "dismantle",
+          "language": "ja",
+          "before": "システム、信念、慣習などを分解すること。効果的に破壊したり廃止したりすること。",
+          "after": "仕組みや信念、慣行などを解体し、実質的に壊したり廃止したりすること。"
+        },
+        {
+          "id": 5,
+          "term": "comprising",
+          "language": "zh-Hans",
+          "before": "由各种部分或成员组成或包含。",
+          "after": "由各种部分或成员组成，或包括这些部分或成员。"
+        },
+        {
+          "id": 3,
+          "term": "engaging",
+          "language": "zh-Hans",
+          "before": "以引人入胜的方式吸引注意力和兴趣的。",
+          "after": "有魅力、能吸引人的注意并激发兴趣的。"
+        }
+      ]
+    }
+  ]
 }

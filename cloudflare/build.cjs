@@ -11,6 +11,9 @@ const publicDirs = new Set(['assets', 'pdf', 'prompts', 'news', 'stories', 'gram
 const extensions = new Set(['.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.pdf', '.txt', '.json', '.xml', '.woff', '.woff2', '.ttf']);
 const paths = cp.execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {cwd: root, encoding: 'utf8'}).split('\0').filter(Boolean);
 const files = [...new Set(paths)].filter(file => {
+  // Translation records are build inputs. Their reviewed definitions are already
+  // embedded in each lesson; browsers never fetch the working records separately.
+  if (file.startsWith('data/vocabulary-translations/')) return false;
   const parts = file.split('/');
   if (parts.some(part => part.startsWith('.'))) return false;
   if (parts.length > 1) return publicDirs.has(parts[0]) && extensions.has(path.extname(file));

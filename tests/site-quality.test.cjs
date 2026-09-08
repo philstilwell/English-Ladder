@@ -84,7 +84,7 @@ test('sentence suggestions preserve size meaning and custom tone input keeps nam
  doc.querySelector('#register-input').value='I work in London. Our team must not disclose names.';doc.querySelector('#register-target').value='academic';doc.querySelector('#register-run').click();const result=doc.querySelector('#register-results').textContent;assert.match(result,/I work in London. Our team must not disclose names./);assert.doesNotMatch(result,/further analysis and revision/);
 });
 test('everyday units default to English only and keep direct unit links',()=>{
- const d=load('us-life.html',{scripts:['us-life.js']});const doc=d.window.document;assert.equal(doc.querySelector('#life-language-select').value,'en');assert.equal(doc.querySelectorAll('.us-life-module:not([hidden])').length,1);
+ const d=load('us-life.html',{scripts:['us-life.js']});const doc=d.window.document;assert.equal(doc.querySelector('button[data-definition-language="en"]').getAttribute('aria-pressed'),'true');assert.equal(doc.querySelectorAll('.us-life-module:not([hidden])').length,1);
  d.window.location.hash='#shopping';d.window.dispatchEvent(new d.window.HashChangeEvent('hashchange'));assert.equal(doc.querySelector('.us-life-module:not([hidden])').id,'shopping');assert.ok(doc.querySelector('#shopping .life-practice'));
 });
 test('legacy diagram modal keeps keyboard focus inside and restores the background',()=>{

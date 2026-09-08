@@ -46,6 +46,9 @@ def enhance_page(soup,path,prefix):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
     from reading_layout import prepare_reading_layout, finish_reading_layout
     prepare_reading_layout(soup,path,ROOT,prefix)
+    if path.name == 'us-life.html':
+        from us_life_language_ui import enhance_page as enhance_life_languages
+        enhance_life_languages(soup)
     from ai_extensions import enhance_page as enhance_ai
     enhance_ai(soup,path,prefix)
     # Give returning readers the current controls instead of cached older files.
@@ -54,7 +57,7 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260907-completion2','site.css':'20260908-vocabulary-languages1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260907-completion2','site.css':'20260908-life-languages1','us-life.js':'20260908-life-languages1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

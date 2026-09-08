@@ -3,6 +3,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 import us_life_translations as translations
 from vocabulary_translations import atomic_json, source_key
@@ -72,6 +73,34 @@ class EverydayTranslationTests(unittest.TestCase):
         self.assertEqual('cached', translations.translate(None, self.source, recovery, self.directory))
         self.assertEqual(1, len(recovery.prompts))
         self.assertEqual('gemini-2.5-flash', translations.read_record(self.source, self.directory)['review']['model'])
+
+    def test_published_page_embeds_all_reviewed_languages_without_changing_english_content(self):
+        from us_life_language_ui import enhance_page
+        soup = BeautifulSoup((translations.ROOT / 'us-life.html').read_text(), 'html.parser')
+        original = [str(n) for n in soup.select('.us-life-main')]
+        enhance_page(soup)
+        payload = json.loads(soup.select_one('[data-us-life-translations]').string)
+        self.assertEqual(24, len(payload))
+        for key, source in translations.sources(soup).items():
+            record = translations.read_record(source)
+            self.assertIsNotNone(record, key)
+            self.assertEqual(record['translations'], payload[key]['translations'])
+            self.assertEqual(source['japanese_explanation']['practice'], payload[key]['practice'])
+        self.assertEqual(original, [str(n) for n in soup.select('.us-life-main')])
+        self.assertEqual(6, len(soup.select('[data-definition-language]')))
+        self.assertIsNone(soup.select_one('#life-language-select'))
+
+    def test_rebuilding_keeps_one_selector_one_payload_and_the_same_translation_sources(self):
+        from us_life_language_ui import enhance_page
+        soup = BeautifulSoup((translations.ROOT / 'us-life.html').read_text(), 'html.parser')
+        before = translations.sources(soup)
+        enhance_page(soup)
+        first = str(soup)
+        enhance_page(soup)
+        self.assertEqual(first, str(soup))
+        self.assertEqual(before, translations.sources(soup))
+        self.assertEqual(1, len(soup.select('[data-us-life-translations]')))
+        self.assertEqual(1, len(soup.select('#life-language-controls')))
 
 
 if __name__ == '__main__':

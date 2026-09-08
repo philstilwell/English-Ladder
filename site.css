@@ -76,6 +76,12 @@ button,a,input,textarea,select,summary { scroll-margin:30px; }
 .work-glossary-disclosure { margin-top:30px; }
 .work-glossary-disclosure>summary { font-size:1.35rem; font-weight:650; cursor:pointer; padding:18px 0; }
 .us-life-module.english-only { grid-template-columns:minmax(0,1fr); }
+.theme-us-life #life-language-controls { --lesson-tint:#eef2ff; --lesson-ink:#193cc2; --lesson-line:#cad5fa; min-width:0; }
+.theme-us-life .vocabulary-language[aria-pressed="true"] { background:#2445eb; color:#fff; border-color:#2445eb; }
+.theme-us-life #life-language-controls .vocabulary-languages { margin-top:18px; margin-bottom:10px; }
+.theme-us-life #life-language-controls { scroll-margin-top:100px; }
+.theme-us-life .language-column { min-width:0; }
+.theme-us-life [data-life-explanation-content] { overflow-wrap:anywhere; }
 .life-unit-controls { display:flex; gap:14px; align-items:center; flex-wrap:wrap; padding:20px 0; }
 .life-unit-controls select { font:inherit; min-height:44px; width:min(100%,460px); padding:8px; }
 .life-practice { grid-column:1 / -1; padding:24px; background:#f0f3ff; border-radius:10px; }

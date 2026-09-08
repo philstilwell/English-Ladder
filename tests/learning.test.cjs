@@ -44,6 +44,7 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
   test(`${file}: word help, answer correction, navigation, speaking activities, and completion work together`, () => {
     const dom = load(file);
     const document = dom.window.document;
+    assert.equal(document.querySelector('.lesson-title-label'), null);
     const lesson = document.querySelector(".daily-lesson");
     lesson.open = true;
     const panels = [...lesson.querySelectorAll(".learning-panel")];

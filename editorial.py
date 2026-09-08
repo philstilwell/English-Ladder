@@ -180,6 +180,8 @@ def decorate_page(path):
     soup = BeautifulSoup(path.read_text(encoding="utf-8"), "html.parser")
     if not soup.head or not soup.body or not soup.find("main"):
         return
+    for label in soup.select('.lesson-title-label'):
+        label.decompose()
     prefix = "/" if path.name == "404.html" else "../" * len(path.relative_to(ROOT).parent.parts)
     if not soup.find("link", href=re.compile(r"(^|/)editorial\.css(?:\?|$)")):
         soup.head.append(fragment(f'<link rel="stylesheet" href="{prefix}editorial.css">').link)
@@ -304,7 +306,7 @@ def build_homepage():
     title, overview = html.escape(title), html.escape(overview)
     content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html">daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
 <div class="issue-line"><span>Stay curious. Keep learning.</span><span>Real stories · Three English levels</span></div>
-<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-label">Title: </span><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
+<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
 <label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>
 <label class="level-option"><input type="radio" name="feature-level" value="intermediate" data-lesson-href="{urls['intermediate']}"><span>Intermediate</span></label>

@@ -130,7 +130,7 @@ class DailyImageTests(unittest.TestCase):
         meta = daily_images.ensure_daily_image(path, self.root, client_with_image())
         home = self.homepage()
         feature = home.select_one(".feature-story")
-        self.assertEqual("Title: Trees & cities <today>", feature.select_one('#feature-title').get_text())
+        self.assertEqual("Trees & cities <today>", feature.select_one('#feature-title').get_text())
         self.assertEqual("Trees & cities <today>", feature.select_one('#feature-title .lesson-title-text').get_text())
         self.assertEqual('Free English lessons for real life.', home.h1.get_text())
         self.assertEqual(1,len(home.select('h1')))

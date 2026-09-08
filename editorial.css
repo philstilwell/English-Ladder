@@ -102,7 +102,6 @@ summary.lesson-date::after { content: "+"; color: var(--accent); font-size: 1.4r
 details[open] > summary.lesson-date::after { content: "−"; }
 .lesson-date-text { color: var(--muted); font-size: .875rem; font-weight: 400; padding-top: 3px; }
 .lesson-date-prefix, .lesson-age, .lesson-separator { display: none; }
-.lesson-title-label { white-space:nowrap; }
 .lesson-title-group { min-width:0; }
 .lesson-description { margin-left: 151px; font-style: normal; max-width: 65ch; }
 .lesson-content { border: 0; padding: 10px 0 0; }

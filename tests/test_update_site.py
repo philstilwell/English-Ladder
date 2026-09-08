@@ -91,7 +91,8 @@ class UpdateSiteTests(unittest.TestCase):
             self.assertEqual(3, len(prompt_texts))
             for text in prompt_texts:
                 self.assertIn('May 09, 2026', text)
-                self.assertIn('Title: Market Visit', text)
+                self.assertIn('Market Visit', text)
+                self.assertNotIn('Title: Market Visit', text)
                 self.assertNotRegex(text, r'\[\d+ days?, \d+ hours? old\]')
             prompts.append(prompt_texts)
         self.assertEqual(rendered[0], rendered[1])

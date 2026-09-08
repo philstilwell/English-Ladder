@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "Urban vegetation moderates local temperatures through shade and the release of water into the atmosphere.",
+      "Where tree cover shades buildings, demand for air conditioning can also decline.",
+      "These benefits, however, do not make planting an adequate substitute for long-term stewardship.",
+      "Species selection must reflect the local climate, while newly planted trees require ongoing maintenance.",
+      "A project evaluated solely by the number of trees planted may therefore overlook the conditions needed for those trees to survive.",
+      "Rather than treating planting as a single achievement, communities should consider it the beginning of a sustained commitment."
+    ],
+    "vocabulary": [
+      {
+        "term": "moderates",
+        "part_of_speech": "verb",
+        "definition": "makes something less extreme"
+      },
+      {
+        "term": "stewardship",
+        "part_of_speech": "noun",
+        "definition": "responsible care and management over time"
+      },
+      {
+        "term": "sustained",
+        "part_of_speech": "adjective",
+        "definition": "continued over a period of time"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かをより穏やかにしたり、極端でなくしたりする。",
+      "ko": "어떤 것을 덜 극단적으로 만들다.",
+      "zh-Hans": "使某事变得不那么极端。",
+      "es": "Hacer que algo sea menos extremo.",
+      "pt-BR": "Tornar algo menos extremo."
+    },
+    {
+      "id": 1,
+      "ja": "時間をかけて責任を持って世話をし、管理すること。",
+      "ko": "시간의 경과에 따라 책임감 있는 보살핌과 관리.",
+      "zh-Hans": "随着时间的推移进行负责任的照料和管理。",
+      "es": "El cuidado y la gestión responsables a lo largo del tiempo.",
+      "pt-BR": "Cuidado e gestão responsáveis ao longo do tempo."
+    },
+    {
+      "id": 2,
+      "ja": "ある期間にわたって続くこと。",
+      "ko": "어떤 기간에 걸쳐 계속되는.",
+      "zh-Hans": "持续一段时间的。",
+      "es": "Que continúa durante un periodo de tiempo.",
+      "pt-BR": "Que continua por um período de tempo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:36.213520+00:00"
+  }
+}

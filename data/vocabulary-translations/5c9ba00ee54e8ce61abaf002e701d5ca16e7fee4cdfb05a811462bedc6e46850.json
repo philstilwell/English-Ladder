@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Rescuers in Nepal are trying to reach trapped workers.",
+      "Floods filled tunnels at their power sites with mud.",
+      "The rescuers have used explosives to break through a hillside.",
+      "Engineers are sending air into the tunnels.",
+      "Teams from other countries are helping with the rescue.",
+      "Families are waiting for news."
+    ],
+    "vocabulary": [
+      {
+        "term": "rescuers",
+        "part_of_speech": "plural noun",
+        "definition": "people who try to bring others to safety"
+      },
+      {
+        "term": "trapped",
+        "part_of_speech": "adjective",
+        "definition": "unable to get out"
+      },
+      {
+        "term": "waiting",
+        "part_of_speech": "verb",
+        "definition": "staying until something happens"
+      },
+      {
+        "term": "tunnels",
+        "part_of_speech": "plural noun",
+        "definition": "long passages under the ground"
+      },
+      {
+        "term": "explosives",
+        "part_of_speech": "plural noun",
+        "definition": "materials that can burst with great force"
+      },
+      {
+        "term": "engineers",
+        "part_of_speech": "plural noun",
+        "definition": "people who plan and build machines or structures"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "他の人々を安全な場所へ連れて行こうとする人々",
+      "ko": "다른 사람들을 안전한 곳으로 데려가려고 노력하는 사람들",
+      "zh-Hans": "试图将他人带到安全地点的人们",
+      "es": "personas que intentan llevar a otros a un lugar seguro",
+      "pt-BR": "pessoas que tentam levar outros para um lugar seguro"
+    },
+    {
+      "id": 1,
+      "ja": "外に出ることができない",
+      "ko": "밖으로 나갈 수 없는",
+      "zh-Hans": "无法离开",
+      "es": "que no puede salir",
+      "pt-BR": "incapaz de sair"
+    },
+    {
+      "id": 2,
+      "ja": "何かが起こるまでその場にとどまること",
+      "ko": "어떤 일이 일어날 때까지 머무는 것",
+      "zh-Hans": "停留在原地直到某事发生",
+      "es": "quedarse hasta que algo suceda",
+      "pt-BR": "permanecer até que algo aconteça"
+    },
+    {
+      "id": 3,
+      "ja": "地面の下にある長い通路",
+      "ko": "땅 아래에 있는 긴 통로",
+      "zh-Hans": "地下长长的通道",
+      "es": "pasajes largos debajo de la tierra",
+      "pt-BR": "passagens longas debaixo da terra"
+    },
+    {
+      "id": 4,
+      "ja": "強い力で爆発する可能性のある物質",
+      "ko": "엄청난 힘으로 폭발할 수 있는 물질",
+      "zh-Hans": "能以巨大力量爆炸的材料",
+      "es": "materiales que pueden estallar con gran fuerza",
+      "pt-BR": "materiais que podem explodir com grande força"
+    },
+    {
+      "id": 5,
+      "ja": "機械や構造物を計画し、建設する人々",
+      "ko": "기계나 구조물을 계획하고 건설하는 사람들",
+      "zh-Hans": "规划和建造机器或结构的人",
+      "es": "personas que planifican y construyen máquinas o estructuras",
+      "pt-BR": "pessoas que planejam e constroem máquinas ou estruturas"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:27.996511+00:00"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The United States announced new economic sanctions on Iran.",
+      "These special rules affect Iran's money system.",
+      "The US wants to put pressure on Iran's economy.",
+      "The US called its latest sanctions an \"economic D-Day.\"",
+      "But Iran says it is fully prepared to face them.",
+      "Iran's leaders have a plan to address these challenges.",
+      "They want to counter the negative effects of the US actions.",
+      "Iran states it has ways to manage the new money rules.",
+      "This situation creates tension between the two countries.",
+      "Iran aims to protect its financial system and people."
+    ],
+    "vocabulary": [
+      {
+        "term": "sanctions",
+        "part_of_speech": "noun",
+        "definition": "Official orders to stop trade or money with a country."
+      },
+      {
+        "term": "economy",
+        "part_of_speech": "noun",
+        "definition": "The system of how a country makes, spends, and manages money and goods."
+      },
+      {
+        "term": "fully prepared",
+        "part_of_speech": "adjective",
+        "definition": "Completely ready for something to happen."
+      },
+      {
+        "term": "address",
+        "part_of_speech": "verb",
+        "definition": "To deal with a problem or situation."
+      },
+      {
+        "term": "counter",
+        "part_of_speech": "verb",
+        "definition": "To act against something to reduce its effect or stop it."
+      },
+      {
+        "term": "latest",
+        "part_of_speech": "adjective",
+        "definition": "The newest or most recent one."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "国との貿易や金銭のやり取りを停止する公式な命令。",
+      "ko": "한 국가와의 무역이나 금전 거래를 중단하도록 하는 공식적인 명령.",
+      "zh-Hans": "停止与一个国家进行贸易或金钱往来的官方命令。",
+      "es": "Órdenes oficiales para detener el comercio o el flujo de dinero con un país.",
+      "pt-BR": "Ordens oficiais para interromper o comércio ou o fluxo de dinheiro com um país."
+    },
+    {
+      "id": 1,
+      "ja": "ある国がお金や物をどのように作り、使い、管理するかという仕組み。",
+      "ko": "한 국가가 돈과 상품을 만들고, 쓰고, 관리하는 방식의 체계.",
+      "zh-Hans": "一个国家如何生产、花费和管理金钱与商品的系统。",
+      "es": "El sistema de cómo un país produce, gasta y administra el dinero y los bienes.",
+      "pt-BR": "O sistema de como um país produz, gasta e administra dinheiro e bens."
+    },
+    {
+      "id": 2,
+      "ja": "何かが起こることに完全に準備ができていること。",
+      "ko": "어떤 일이 일어날 것에 대해 완전히 준비된 상태.",
+      "zh-Hans": "完全准备好迎接某事发生。",
+      "es": "Completamente listo para que algo suceda.",
+      "pt-BR": "Completamente pronto para que algo aconteça."
+    },
+    {
+      "id": 3,
+      "ja": "問題や状況に対処すること。",
+      "ko": "문제나 상황을 다루다.",
+      "zh-Hans": "处理一个问题或局面。",
+      "es": "Ocuparse de un problema o una situación.",
+      "pt-BR": "Lidar com um problema ou situação."
+    },
+    {
+      "id": 4,
+      "ja": "何かに対して行動し、その影響を減らしたり止めたりすること。",
+      "ko": "무언가의 효과를 줄이거나 멈추기 위해 그것에 맞서 행동하다.",
+      "zh-Hans": "采取行动反对某事以减少其影响或阻止它。",
+      "es": "Actuar en contra de algo para reducir su efecto o detenerlo.",
+      "pt-BR": "Agir contra algo para reduzir seu efeito ou pará-lo."
+    },
+    {
+      "id": 5,
+      "ja": "最も新しいもの、または最も最近のもの。",
+      "ko": "가장 새롭거나 가장 최근의 것.",
+      "zh-Hans": "最新或最近的一个。",
+      "es": "El más nuevo o el más reciente.",
+      "pt-BR": "O mais novo ou o mais recente."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:54:44.246420+00:00"
+  }
+}

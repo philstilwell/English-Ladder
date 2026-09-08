@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Japan had very heavy rain recently.",
+      "This rain was \"unprecedented\", meaning it was very unusual.",
+      "Eight people were killed because of the strong rain.",
+      "The weather caused a big storm.",
+      "This storm cut power to many homes.",
+      "More than 20,000 households lost electricity.",
+      "Also, 7,000 people were stranded at Narita airport.",
+      "They could not leave the airport.",
+      "The strong rain made many problems for people.",
+      "It shows how dangerous bad weather can be."
+    ],
+    "vocabulary": [
+      {
+        "term": "unprecedented",
+        "part_of_speech": "adjective",
+        "definition": "Never happened before; very unusual."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Caused someone to die."
+      },
+      {
+        "term": "storm",
+        "part_of_speech": "noun",
+        "definition": "Very bad weather with strong wind and rain."
+      },
+      {
+        "term": "cut power",
+        "part_of_speech": "verb phrase",
+        "definition": "Stopped electricity from working."
+      },
+      {
+        "term": "stranded",
+        "part_of_speech": "adjective",
+        "definition": "Unable to leave a place because of a problem."
+      },
+      {
+        "term": "households",
+        "part_of_speech": "noun",
+        "definition": "All the people who live together in one house or flat."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "これまで一度も起きたことがなく、非常に珍しいこと。",
+      "ko": "지금까지 한 번도 일어난 적이 없는, 매우 특이한.",
+      "zh-Hans": "从未发生过；非常不寻常。",
+      "es": "Que nunca antes había sucedido; muy inusual.",
+      "pt-BR": "Que nunca aconteceu antes; muito incomum."
+    },
+    {
+      "id": 1,
+      "ja": "誰かを死なせた。",
+      "ko": "누군가를 죽게 만들었다.",
+      "zh-Hans": "导致某人死亡。",
+      "es": "Provocó la muerte de alguien.",
+      "pt-BR": "Fez com que alguém morresse."
+    },
+    {
+      "id": 2,
+      "ja": "強い風と雨を伴う、非常に悪い天気。",
+      "ko": "강한 바람과 비를 동반한 아주 나쁜 날씨.",
+      "zh-Hans": "伴有强风和大雨的非常恶劣的天气。",
+      "es": "Clima muy malo con viento y lluvia fuertes.",
+      "pt-BR": "Tempo muito ruim com vento e chuva fortes."
+    },
+    {
+      "id": 3,
+      "ja": "電気が機能するのを止めた。",
+      "ko": "전기가 작동하는 것을 멈췄다.",
+      "zh-Hans": "使电力停止工作。",
+      "es": "Hizo que la electricidad dejara de funcionar.",
+      "pt-BR": "Interrompeu o funcionamento da eletricidade."
+    },
+    {
+      "id": 4,
+      "ja": "問題のためにある場所を離れることができない状態。",
+      "ko": "문제 때문에 어떤 장소를 떠날 수 없는.",
+      "zh-Hans": "由于某个问题而无法离开某地。",
+      "es": "Imposibilitado de abandonar un lugar debido a un problema.",
+      "pt-BR": "Incapaz de sair de um lugar por causa de um problema."
+    },
+    {
+      "id": 5,
+      "ja": "一つの家やアパートに一緒に住んでいる全ての人々。",
+      "ko": "한 집이나 아파트에 함께 사는 모든 사람.",
+      "zh-Hans": "所有住在一个房子或公寓里的人。",
+      "es": "Todas las personas que viven juntas en una casa o piso.",
+      "pt-BR": "Todas as pessoas que vivem juntas em uma casa ou apartamento."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:09.019838+00:00"
+  }
+}

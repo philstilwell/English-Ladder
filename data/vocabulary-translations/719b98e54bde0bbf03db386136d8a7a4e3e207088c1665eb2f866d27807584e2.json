@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Trump had a plan.",
+      "He wanted to strike Iran.",
+      "But he changed his mind.",
+      "He cancels the strikes.",
+      "He says Iran asked for this.",
+      "Other Middle Eastern countries also asked.",
+      "They wanted Washington to hold off on an attack.",
+      "A new deal was discussed.",
+      "The perimeters of this deal were agreed.",
+      "Trump hopes the deal will be made rapidly."
+    ],
+    "vocabulary": [
+      {
+        "term": "cancels",
+        "part_of_speech": "verb",
+        "definition": "stops something that was planned"
+      },
+      {
+        "term": "hold off",
+        "part_of_speech": "phrasal verb",
+        "definition": "to wait to do something"
+      },
+      {
+        "term": "deal",
+        "part_of_speech": "noun",
+        "definition": "an agreement between people or groups"
+      },
+      {
+        "term": "perimeters",
+        "part_of_speech": "noun",
+        "definition": "the limits or basic parts of something"
+      },
+      {
+        "term": "rapidly",
+        "part_of_speech": "adverb",
+        "definition": "very quickly"
+      },
+      {
+        "term": "strikes",
+        "part_of_speech": "noun",
+        "definition": "Military attacks, usually from the air."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "計画されていたことを中止する",
+      "ko": "계획되었던 것을 중단하다",
+      "zh-Hans": "停止原定的计划",
+      "es": "detener algo que había sido planeado",
+      "pt-BR": "parar algo que foi planejado"
+    },
+    {
+      "id": 1,
+      "ja": "何かをするのを待つ",
+      "ko": "어떤 일을 하는 것을 기다리다",
+      "zh-Hans": "等待做某事",
+      "es": "esperar para hacer algo",
+      "pt-BR": "esperar para fazer algo"
+    },
+    {
+      "id": 2,
+      "ja": "人々やグループ間の合意",
+      "ko": "사람이나 집단 간의 합의",
+      "zh-Hans": "人们或团体之间的协议",
+      "es": "un acuerdo entre personas o grupos",
+      "pt-BR": "um acordo entre pessoas ou grupos"
+    },
+    {
+      "id": 3,
+      "ja": "何かの限界や基本的な部分",
+      "ko": "어떤 것의 한계나 기본적인 부분",
+      "zh-Hans": "某物的限制或基本部分",
+      "es": "los límites o partes básicas de algo",
+      "pt-BR": "os limites ou partes básicas de algo"
+    },
+    {
+      "id": 4,
+      "ja": "非常に速く",
+      "ko": "매우 빠르게",
+      "zh-Hans": "非常快地",
+      "es": "muy rápidamente",
+      "pt-BR": "muito rapidamente"
+    },
+    {
+      "id": 5,
+      "ja": "軍事攻撃、通常は空から行われるもの",
+      "ko": "군사 공격, 보통 공중에서 이루어지는 것",
+      "zh-Hans": "军事袭击，通常来自空中",
+      "es": "ataques militares, usualmente desde el aire",
+      "pt-BR": "ataques militares, geralmente pelo ar"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:59:48.493711+00:00"
+  }
+}

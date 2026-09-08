@@ -1,0 +1,132 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "People across the country are being asked to give their opinions on proposals for a new government-owned renewable energy company in Wales.",
+      "This proposed company's primary purpose would be to build and own wind and solar power plants.",
+      "Its long-term plans aim to reduce energy costs for people.",
+      "However, the new company would not directly set household electricity charges or replace existing suppliers.",
+      "It also intends to support communities in taking a part-ownership in these energy projects.",
+      "The Welsh government currently has an onshore wind and solar project creator called Trydan Gwyrdd Cymru (TGC).",
+      "Ministers are suggesting combining TGC with other current Welsh energy initiatives to create a stronger new enterprise.",
+      "Enterprise Minister Adam Price expressed a desire for a Welsh energy system that is 'clean, cheap and owned by us'.",
+      "The company would also seek to attract investment into Welsh energy infrastructure.",
+      "Additionally, a Welsh Energy Wealth Fund is being considered to support vulnerable people in Wales."
+    ],
+    "vocabulary": [
+      {
+        "term": "proposed",
+        "part_of_speech": "adjective",
+        "definition": "Suggested or put forward for consideration."
+      },
+      {
+        "term": "primary purpose",
+        "part_of_speech": "noun phrase",
+        "definition": "The main reason or goal for which something exists."
+      },
+      {
+        "term": "long-term",
+        "part_of_speech": "adjective",
+        "definition": "Continuing for, or concerned with, a long period in the future."
+      },
+      {
+        "term": "household",
+        "part_of_speech": "adjective",
+        "definition": "Relating to a house and its occupants."
+      },
+      {
+        "term": "intends",
+        "part_of_speech": "verb",
+        "definition": "Has a plan or purpose in mind."
+      },
+      {
+        "term": "part-ownership",
+        "part_of_speech": "noun",
+        "definition": "The state of owning only a portion or share of something."
+      },
+      {
+        "term": "current",
+        "part_of_speech": "adjective",
+        "definition": "Happening or existing at the present time."
+      },
+      {
+        "term": "enterprise",
+        "part_of_speech": "noun",
+        "definition": "A business or a project, especially one that is difficult or important."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "検討のために提案された、または提示されたもの。",
+      "ko": "고려를 위해 제안되거나 제출된.",
+      "zh-Hans": "提出或提议供考虑的。",
+      "es": "Sugerido o presentado para su consideración.",
+      "pt-BR": "Sugerido ou proposto para consideração."
+    },
+    {
+      "id": 1,
+      "ja": "何かが存在する主な理由や目的。",
+      "ko": "어떤 것이 존재하는 주된 이유나 목표.",
+      "zh-Hans": "某事物存在的主要原因或目标。",
+      "es": "La razón o el objetivo principal por el cual algo existe.",
+      "pt-BR": "A principal razão ou objetivo para o qual algo existe."
+    },
+    {
+      "id": 2,
+      "ja": "将来の長い期間にわたって続く、またはそれに関係する。",
+      "ko": "미래의 긴 기간 동안 계속되거나 그와 관련된.",
+      "zh-Hans": "持续或关注未来的一个很长时期。",
+      "es": "Que continúa durante un largo período en el futuro, o que se ocupa de él.",
+      "pt-BR": "Que continua por um longo período no futuro, ou que se refere a ele."
+    },
+    {
+      "id": 3,
+      "ja": "家とその居住者に関する。",
+      "ko": "집과 그 거주자들과 관련된.",
+      "zh-Hans": "与房屋及其居住者相关的。",
+      "es": "Relativo a una casa y a sus ocupantes.",
+      "pt-BR": "Relativo a uma casa e aos seus ocupantes."
+    },
+    {
+      "id": 4,
+      "ja": "計画や目的を心に持っている。",
+      "ko": "계획이나 목적을 마음속에 가지고 있다.",
+      "zh-Hans": "心中有计划或目的。",
+      "es": "Tener un plan o propósito en mente.",
+      "pt-BR": "Ter um plano ou propósito em mente."
+    },
+    {
+      "id": 5,
+      "ja": "何かの一部または株式のみを所有している状態。",
+      "ko": "어떤 것의 일부 또는 지분만을 소유하고 있는 상태.",
+      "zh-Hans": "仅拥有某物的一部分或份额的状态。",
+      "es": "El estado de poseer solo una porción o una parte de algo.",
+      "pt-BR": "O estado de possuir apenas uma porção ou parte de algo."
+    },
+    {
+      "id": 6,
+      "ja": "現在起こっている、または存在している。",
+      "ko": "현재 일어나고 있거나 존재하는.",
+      "zh-Hans": "在当前时间正在发生或存在的。",
+      "es": "Que está sucediendo o existe en el momento presente.",
+      "pt-BR": "Acontecendo ou existindo no momento presente."
+    },
+    {
+      "id": 7,
+      "ja": "ビジネスまたはプロジェクト、特に困難または重要なもの。",
+      "ko": "사업이나 프로젝트, 특히 어렵거나 중요한 것.",
+      "zh-Hans": "一项业务或一个项目，尤其指那些困难或重要的。",
+      "es": "Un negocio o un proyecto, especialmente uno que es difícil o importante.",
+      "pt-BR": "Um negócio ou um projeto, especialmente um que é difícil ou importante."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:09.328365+00:00"
+  }
+}

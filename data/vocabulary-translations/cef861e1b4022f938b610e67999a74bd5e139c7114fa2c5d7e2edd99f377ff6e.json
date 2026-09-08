@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "The UN has warned that El Niño could be unusually strong.",
+      "This natural event begins in the Pacific Ocean and affects weather in other regions.",
+      "Changes in winds allow warmer water to spread eastwards and release heat into the air.",
+      "Some regions may face dry conditions, while others receive heavier rain and flooding.",
+      "It could cause disruption to economies around the world.",
+      "Countries are preparing by strengthening warning systems and arranging medical support.",
+      "The WMO is working to share forecasts with communities that may be affected.",
+      "These risks come on top of the effects of long-term global warming."
+    ],
+    "vocabulary": [
+      {
+        "term": "release",
+        "part_of_speech": "verb",
+        "definition": "let something move out or become available"
+      },
+      {
+        "term": "conditions",
+        "part_of_speech": "plural noun",
+        "definition": "the circumstances or physical state in a place"
+      },
+      {
+        "term": "strengthening",
+        "part_of_speech": "verb",
+        "definition": "making something stronger or more effective"
+      },
+      {
+        "term": "forecasts",
+        "part_of_speech": "plural noun",
+        "definition": "statements about what is likely to happen in the future"
+      },
+      {
+        "term": "global warming",
+        "part_of_speech": "noun phrase",
+        "definition": "the long-term rise in average temperatures around the world"
+      },
+      {
+        "term": "eastwards",
+        "part_of_speech": "adverb",
+        "definition": "towards the east"
+      },
+      {
+        "term": "medical support",
+        "part_of_speech": "noun phrase",
+        "definition": "health care and supplies provided to people who need them"
+      },
+      {
+        "term": "on top of",
+        "part_of_speech": "prepositional phrase",
+        "definition": "in addition to something that already exists"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かが外に出るか、利用可能になるようにする。",
+      "ko": "어떤 것이 밖으로 나가거나 이용 가능하게 만들다.",
+      "zh-Hans": "让某物移出或变得可用。",
+      "es": "Permitir que algo salga o esté disponible.",
+      "pt-BR": "Permitir que algo se mova para fora ou se torne disponível."
+    },
+    {
+      "id": 1,
+      "ja": "ある場所の状況や物理的な状態。",
+      "ko": "어떤 장소의 상황이나 물리적인 상태.",
+      "zh-Hans": "某个地方的环境或物理状态。",
+      "es": "Las circunstancias o el estado físico de un lugar.",
+      "pt-BR": "As circunstâncias ou o estado físico de um local."
+    },
+    {
+      "id": 2,
+      "ja": "何かをより強く、またはより効果的にすること。",
+      "ko": "어떤 것을 더 강하게 만들거나 더 효과적으로 만드는 것.",
+      "zh-Hans": "使某物更强或更有效。",
+      "es": "Hacer que algo sea más fuerte o más eficaz.",
+      "pt-BR": "Tornar algo mais forte ou mais eficaz."
+    },
+    {
+      "id": 3,
+      "ja": "将来何が起こりそうかについての発言。",
+      "ko": "미래에 어떤 일이 일어날 가능성이 있는지에 대한 진술.",
+      "zh-Hans": "关于未来可能发生什么事情的陈述。",
+      "es": "Declaraciones sobre lo que es probable que suceda en el futuro.",
+      "pt-BR": "Declarações sobre o que provavelmente acontecerá no futuro."
+    },
+    {
+      "id": 4,
+      "ja": "世界中の平均気温が長期的に上昇すること。",
+      "ko": "전 세계 평균 기온의 장기적인 상승.",
+      "zh-Hans": "全世界平均气温的长期上升。",
+      "es": "El aumento a largo plazo de las temperaturas promedio en todo el mundo.",
+      "pt-BR": "O aumento de longo prazo nas temperaturas médias em todo o mundo."
+    },
+    {
+      "id": 5,
+      "ja": "東の方向へ。",
+      "ko": "동쪽으로.",
+      "zh-Hans": "朝着东方。",
+      "es": "Hacia el este.",
+      "pt-BR": "Na direção leste."
+    },
+    {
+      "id": 6,
+      "ja": "必要な人々に提供される医療と物資。",
+      "ko": "필요한 사람들에게 제공되는 건강 관리 및 물품.",
+      "zh-Hans": "为有需要的人提供的医疗保健和物资。",
+      "es": "Atención médica y suministros proporcionados a las personas que los necesitan.",
+      "pt-BR": "Cuidados de saúde e suprimentos fornecidos às pessoas que precisam deles."
+    },
+    {
+      "id": 7,
+      "ja": "既に存在する何かに加えて。",
+      "ko": "이미 존재하는 것에 더하여.",
+      "zh-Hans": "除了已经存在的事物之外。",
+      "es": "Además de algo que ya existe.",
+      "pt-BR": "Além de algo que já existe."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:57.720978+00:00"
+  }
+}

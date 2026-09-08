@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The news is about Iran and the United States.",
+      "Donald Trump said new talks would start.",
+      "He said talks would begin on Monday.",
+      "But Iran denies this claim.",
+      "Iran says no new talks are taking place with the US.",
+      "However, Iran is in negotiations with Oman.",
+      "These negotiations are about access.",
+      "They are discussing the Strait of Hormuz.",
+      "This strait is an important sea area.",
+      "Iran wants to keep access to this area."
+    ],
+    "vocabulary": [
+      {
+        "term": "denies",
+        "part_of_speech": "verb",
+        "definition": "To say that something is not true."
+      },
+      {
+        "term": "talks",
+        "part_of_speech": "noun",
+        "definition": "Meetings or discussions to agree on something."
+      },
+      {
+        "term": "claim",
+        "part_of_speech": "noun",
+        "definition": "A statement that someone says is true, but others might not agree."
+      },
+      {
+        "term": "negotiations",
+        "part_of_speech": "noun",
+        "definition": "Formal discussions between people to reach an agreement."
+      },
+      {
+        "term": "access",
+        "part_of_speech": "noun",
+        "definition": "The right or opportunity to use or enter something."
+      },
+      {
+        "term": "Strait of Hormuz",
+        "part_of_speech": "proper noun",
+        "definition": "A narrow, strategically important waterway connecting the Persian Gulf and the Gulf of Oman, crucial for global oil shipping."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かが真実ではないと言うこと。",
+      "ko": "어떤 것이 사실이 아니라고 말하다.",
+      "zh-Hans": "说某事不真实。",
+      "es": "Decir que algo no es verdad.",
+      "pt-BR": "Dizer que algo não é verdade."
+    },
+    {
+      "id": 1,
+      "ja": "何かについて合意するための会議や話し合い。",
+      "ko": "어떤 것에 합의하기 위한 회의나 토론.",
+      "zh-Hans": "为了达成协议而进行的会议或讨论。",
+      "es": "Reuniones o discusiones para llegar a un acuerdo sobre algo.",
+      "pt-BR": "Reuniões ou discussões para chegar a um acordo sobre algo."
+    },
+    {
+      "id": 2,
+      "ja": "誰かが真実だと言っているが、他の人たちはそう思わないかもしれない発言。",
+      "ko": "어떤 사람이 사실이라고 말하지만, 다른 사람들은 동의하지 않을 수도 있는 주장.",
+      "zh-Hans": "某人声称是真实的，但其他人可能不认同的说法。",
+      "es": "Una afirmación que alguien dice que es verdad, pero con la que otros podrían no estar de acuerdo.",
+      "pt-BR": "Uma declaração que alguém diz ser verdadeira, mas com a qual outros podem não concordar."
+    },
+    {
+      "id": 3,
+      "ja": "合意に達するために人々が行う公式な話し合い。",
+      "ko": "합의에 도달하기 위해 사람들 간에 이루어지는 공식적인 토론.",
+      "zh-Hans": "人们之间为达成协议而进行的正式讨论。",
+      "es": "Discusiones formales entre personas para llegar a un acuerdo.",
+      "pt-BR": "Discussões formais entre pessoas para chegar a um acordo."
+    },
+    {
+      "id": 4,
+      "ja": "何かを使用したり入ったりする権利や機会。",
+      "ko": "무언가를 사용하거나 들어갈 수 있는 권리나 기회.",
+      "zh-Hans": "使用或进入某物的权利或机会。",
+      "es": "El derecho o la oportunidad de usar o entrar en algo.",
+      "pt-BR": "O direito ou a oportunidade de usar ou entrar em algo."
+    },
+    {
+      "id": 5,
+      "ja": "ペルシャ湾とオマーン湾を結ぶ、戦略的に重要な狭い水路で、世界の石油輸送にとって極めて重要です。",
+      "ko": "페르시아만과 오만만을 연결하는 좁고 전략적으로 중요한 수로로, 세계 석유 운송에 매우 중요합니다.",
+      "zh-Hans": "连接波斯湾和阿曼湾的一条狭窄且具有战略意义的水道，对全球石油运输至关重要。",
+      "es": "Un estrecho, una vía fluvial estratégicamente importante que conecta el golfo Pérsico y el golfo de Omán, crucial para el transporte mundial de petróleo.",
+      "pt-BR": "Um estreito, uma via navegável estrategicamente importante que conecta o Golfo Pérsico e o Golfo de Omã, crucial para o transporte global de petróleo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:59:36.974991+00:00"
+  }
+}

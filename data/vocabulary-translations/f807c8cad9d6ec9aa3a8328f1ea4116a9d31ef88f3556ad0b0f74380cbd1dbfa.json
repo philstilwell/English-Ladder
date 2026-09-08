@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Russia made missile attacks near Kyiv.",
+      "Three people died in these attacks.",
+      "A child was among the people killed.",
+      "Russia continued these attacks overnight.",
+      "President Zelensky warned about a problem.",
+      "Ukraine has less supplies of important weapons.",
+      "These weapons are called missile interceptors.",
+      "The number of interceptors is dwindling.",
+      "This means Ukraine has fewer missile interceptors now.",
+      "The attacks happened after President Zelensky spoke."
+    ],
+    "vocabulary": [
+      {
+        "term": "missile attacks",
+        "part_of_speech": "noun phrase",
+        "definition": "When a country shoots rockets or bombs at another country or place."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Made someone or something die."
+      },
+      {
+        "term": "warned",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Told someone about a danger or problem before it happened."
+      },
+      {
+        "term": "supplies",
+        "part_of_speech": "noun",
+        "definition": "Things that people need and have available, like food or weapons."
+      },
+      {
+        "term": "continued",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Kept doing something without stopping."
+      },
+      {
+        "term": "died",
+        "part_of_speech": "verb, past tense of die",
+        "definition": "Stopped living."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "国が別の国や場所にロケットや爆弾を撃ち込むこと。",
+      "ko": "한 나라가 다른 나라나 장소에 로켓이나 폭탄을 발사하는 것.",
+      "zh-Hans": "一个国家向另一个国家或地方发射火箭或炸弹的行为。",
+      "es": "Cuando un país lanza cohetes o bombas contra otro país o lugar.",
+      "pt-BR": "Quando um país atira foguetes ou bombas contra outro país ou lugar."
+    },
+    {
+      "id": 1,
+      "ja": "誰かや何かを死なせた。",
+      "ko": "어떤 사람이나 어떤 것을 죽게 만들었다.",
+      "zh-Hans": "使某人或某物死亡。",
+      "es": "Hizo que alguien o algo muriera.",
+      "pt-BR": "Fez com que alguém ou algo morresse."
+    },
+    {
+      "id": 2,
+      "ja": "誰かに危険や問題が起こる前にそのことを伝えた。",
+      "ko": "어떤 위험이나 문제가 발생하기 전에 누군가에게 그 사실을 알려주었다.",
+      "zh-Hans": "在危险或问题发生之前告诉某人。",
+      "es": "Dijo a alguien sobre un peligro o problema antes de que ocurriera.",
+      "pt-BR": "Contou a alguém sobre um perigo ou problema antes que acontecesse."
+    },
+    {
+      "id": 3,
+      "ja": "食料や武器のように、人々が必要とし、利用できる物。",
+      "ko": "음식이나 무기처럼 사람들이 필요로 하고 사용할 수 있는 것들.",
+      "zh-Hans": "人们需要并可获得的东西，例如食物或武器。",
+      "es": "Cosas que la gente necesita y tiene disponibles, como comida o armas.",
+      "pt-BR": "Coisas que as pessoas precisam e têm disponíveis, como alimentos ou armas."
+    },
+    {
+      "id": 4,
+      "ja": "何かを中断せずにし続けた。",
+      "ko": "무언가를 멈추지 않고 계속했다.",
+      "zh-Hans": "不停止地继续做某事。",
+      "es": "Siguió haciendo algo sin parar.",
+      "pt-BR": "Continuou fazendo algo sem parar."
+    },
+    {
+      "id": 5,
+      "ja": "生きるのをやめた。",
+      "ko": "삶을 멈췄다.",
+      "zh-Hans": "停止了生命。",
+      "es": "Dejó de vivir.",
+      "pt-BR": "Parou de viver."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:29.844836+00:00"
+  }
+}

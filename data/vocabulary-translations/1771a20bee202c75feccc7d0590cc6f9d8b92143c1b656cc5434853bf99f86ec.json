@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A judge has declared a mistrial in the Lindsay Clancy murder case.",
+      "The jury could not agree after discussing the case for a week.",
+      "The case concerns the deaths of her three children.",
+      "Her lawyer tried to stop the mistrial, but the attempt failed.",
+      "Another court meeting is planned for later in the month.",
+      "The legal outcome remains uncertain."
+    ],
+    "vocabulary": [
+      {
+        "term": "mistrial",
+        "part_of_speech": "noun",
+        "definition": "a trial that ends without a valid final decision"
+      },
+      {
+        "term": "jury",
+        "part_of_speech": "noun",
+        "definition": "a group of people who decide facts in a trial"
+      },
+      {
+        "term": "uncertain",
+        "part_of_speech": "adjective",
+        "definition": "not known or not decided"
+      },
+      {
+        "term": "judge",
+        "part_of_speech": "noun",
+        "definition": "a person who leads a court and makes legal decisions"
+      },
+      {
+        "term": "lawyer",
+        "part_of_speech": "noun",
+        "definition": "a person trained to help with legal matters"
+      },
+      {
+        "term": "attempt",
+        "part_of_speech": "noun",
+        "definition": "an effort to do something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "有効な最終決定なしに終了する裁判",
+      "ko": "유효한 최종 판결 없이 끝나는 재판",
+      "zh-Hans": "未能做出有效最终判决就结束的审判",
+      "es": "Un juicio que termina sin una decisión final válida",
+      "pt-BR": "Um julgamento que termina sem uma decisão final válida"
+    },
+    {
+      "id": 1,
+      "ja": "裁判で事実を決定する人々のグループ",
+      "ko": "재판에서 사실을 결정하는 사람들의 그룹",
+      "zh-Hans": "在审判中决定事实的一群人",
+      "es": "Un grupo de personas que deciden los hechos en un juicio",
+      "pt-BR": "Um grupo de pessoas que decide os fatos em um julgamento"
+    },
+    {
+      "id": 2,
+      "ja": "知られていない、または決定されていない",
+      "ko": "알려지지 않았거나 결정되지 않은",
+      "zh-Hans": "不知道或尚未决定的",
+      "es": "No conocido o no decidido",
+      "pt-BR": "Não conhecido ou não decidido"
+    },
+    {
+      "id": 3,
+      "ja": "裁判所を主導し、法的な決定を下す人",
+      "ko": "법정을 이끌고 법적 결정을 내리는 사람",
+      "zh-Hans": "主持法庭并做出法律裁决的人",
+      "es": "Una persona que dirige un tribunal y toma decisiones legales",
+      "pt-BR": "Uma pessoa que lidera um tribunal e toma decisões legais"
+    },
+    {
+      "id": 4,
+      "ja": "法的な事柄を支援するために訓練された人",
+      "ko": "법률 문제에 도움을 주기 위해 훈련받은 사람",
+      "zh-Hans": "经过培训以协助处理法律事务的人",
+      "es": "Una persona capacitada para ayudar con asuntos legales",
+      "pt-BR": "Uma pessoa treinada para ajudar com questões legais"
+    },
+    {
+      "id": 5,
+      "ja": "何かをしようとする努力",
+      "ko": "무언가를 하려는 노력",
+      "zh-Hans": "努力做某事",
+      "es": "Un esfuerzo para hacer algo",
+      "pt-BR": "Um esforço para fazer algo"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:29.109272+00:00"
+  }
+}

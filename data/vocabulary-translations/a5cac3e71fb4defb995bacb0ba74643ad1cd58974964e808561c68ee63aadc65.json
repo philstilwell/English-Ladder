@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The United States and Iran are in conflict.",
+      "They recently trade attacks.",
+      "This happened while Khamenei was buried.",
+      "Centcom is a US military group.",
+      "Centcom says it hit 90 Iranian targets.",
+      "These were the latest strikes.",
+      "The Iranian health ministry spoke.",
+      "It says 14 people were killed.",
+      "The deaths happened since Tuesday.",
+      "This situation is very serious."
+    ],
+    "vocabulary": [
+      {
+        "term": "trade attacks",
+        "part_of_speech": "verb phrase",
+        "definition": "To attack each other."
+      },
+      {
+        "term": "buried",
+        "part_of_speech": "verb (past participle)",
+        "definition": "Put a dead person in the ground."
+      },
+      {
+        "term": "hit",
+        "part_of_speech": "verb (past simple)",
+        "definition": "To strike something with force."
+      },
+      {
+        "term": "targets",
+        "part_of_speech": "noun",
+        "definition": "Places or things chosen to be attacked."
+      },
+      {
+        "term": "latest",
+        "part_of_speech": "adjective",
+        "definition": "The newest or most recent one."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb",
+        "definition": "caused a person or animal to die"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "互いに攻撃し合うこと。",
+      "ko": "서로 공격하다.",
+      "zh-Hans": "互相攻击。",
+      "es": "Atacarse mutuamente.",
+      "pt-BR": "Atacar um ao outro."
+    },
+    {
+      "id": 1,
+      "ja": "亡くなった人を地面に埋めること。",
+      "ko": "죽은 사람을 땅에 묻다.",
+      "zh-Hans": "将死者放入土中。",
+      "es": "Poner a una persona muerta bajo tierra.",
+      "pt-BR": "Colocar uma pessoa morta na terra."
+    },
+    {
+      "id": 2,
+      "ja": "何かに強い力で打撃を与えること。",
+      "ko": "어떤 것을 강한 힘으로 치다.",
+      "zh-Hans": "用力打击某物。",
+      "es": "Golpear algo con fuerza.",
+      "pt-BR": "Atingir algo com força."
+    },
+    {
+      "id": 3,
+      "ja": "攻撃されるために選ばれた場所やもの。",
+      "ko": "공격 대상으로 선택된 장소나 사물.",
+      "zh-Hans": "被选中进行攻击的地点或物体。",
+      "es": "Lugares o cosas elegidas para ser atacadas.",
+      "pt-BR": "Lugares ou coisas escolhidos para serem atacados."
+    },
+    {
+      "id": 4,
+      "ja": "最も新しいもの、または最近のもの。",
+      "ko": "가장 새롭거나 최근의 것.",
+      "zh-Hans": "最新的或最近的。",
+      "es": "El más nuevo o más reciente.",
+      "pt-BR": "O mais novo ou mais recente."
+    },
+    {
+      "id": 5,
+      "ja": "人や動物を死なせたこと。",
+      "ko": "사람이나 동물을 죽게 만들다.",
+      "zh-Hans": "导致一个人或动物死亡。",
+      "es": "Causar la muerte de una persona o animal.",
+      "pt-BR": "Causou a morte de uma pessoa ou animal."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:05:21.968500+00:00"
+  }
+}

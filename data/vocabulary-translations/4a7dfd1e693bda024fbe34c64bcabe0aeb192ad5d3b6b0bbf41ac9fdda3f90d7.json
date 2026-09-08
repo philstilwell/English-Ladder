@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Russia warns the United Kingdom.",
+      "The UK supplied drones to Ukraine.",
+      "Russia says the UK will pay for this action.",
+      "British-made drones were used in the conflict.",
+      "Russia says the UK is making the war worse.",
+      "Russia accuses the UK of this dangerous action.",
+      "The UK Ministry of Defence responded to Russia.",
+      "The MoD says it stands against Russian aggression.",
+      "The UK supports Ukraine against Russian actions.",
+      "This is a big international disagreement."
+    ],
+    "vocabulary": [
+      {
+        "term": "warns",
+        "part_of_speech": "verb",
+        "definition": "Tells someone about a possible danger or problem."
+      },
+      {
+        "term": "supplied",
+        "part_of_speech": "verb",
+        "definition": "Gave something to someone; provided something."
+      },
+      {
+        "term": "will pay",
+        "part_of_speech": "phrase",
+        "definition": "Will suffer consequences or face punishment for an action."
+      },
+      {
+        "term": "accuses",
+        "part_of_speech": "verb",
+        "definition": "Says someone did something wrong or is responsible for something bad."
+      },
+      {
+        "term": "aggression",
+        "part_of_speech": "noun",
+        "definition": "Angry or violent behavior towards another country or person."
+      },
+      {
+        "term": "drones",
+        "part_of_speech": "noun",
+        "definition": "Flying machines without a pilot. They can carry cameras or weapons."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かに、起こりうる危険や問題について伝えること。",
+      "ko": "어떤 사람에게 있을 수 있는 위험이나 문제에 대해 알려주다.",
+      "zh-Hans": "告诉某人可能存在的危险或问题。",
+      "es": "Informar a alguien sobre un posible peligro o problema.",
+      "pt-BR": "Informar alguém sobre um possível perigo ou problema."
+    },
+    {
+      "id": 1,
+      "ja": "誰かに何かを与えること。何かを提供すること。",
+      "ko": "어떤 사람에게 무언가를 주다; 무언가를 제공하다.",
+      "zh-Hans": "把某物给某人；提供某物。",
+      "es": "Dar algo a alguien; proporcionar algo.",
+      "pt-BR": "Dar algo a alguém; fornecer algo."
+    },
+    {
+      "id": 2,
+      "ja": "ある行動に対して結果に苦しんだり、罰を受けたりするだろう。",
+      "ko": "어떤 행동에 대해 결과를 겪거나 처벌을 받게 될 것이다.",
+      "zh-Hans": "将会为某个行为承担后果或面临惩罚。",
+      "es": "Sufrirá las consecuencias o enfrentará un castigo por una acción.",
+      "pt-BR": "Sofrerá as consequências ou enfrentará punição por uma ação."
+    },
+    {
+      "id": 3,
+      "ja": "誰かが悪いことをした、または何か悪いことの責任があると述べること。",
+      "ko": "어떤 사람이 잘못했거나 나쁜 일에 책임이 있다고 말하다.",
+      "zh-Hans": "指出某人做了错事或应该为某件坏事负责。",
+      "es": "Decir que alguien hizo algo malo o es responsable de algo negativo.",
+      "pt-BR": "Dizer que alguém fez algo errado ou é responsável por algo ruim."
+    },
+    {
+      "id": 4,
+      "ja": "他の国や人に対する怒りや暴力的な振る舞い。",
+      "ko": "다른 국가나 사람을 향한 화내거나 폭력적인 행동.",
+      "zh-Hans": "针对另一个国家或人的愤怒或暴力行为。",
+      "es": "Comportamiento agresivo o violento hacia otro país o persona.",
+      "pt-BR": "Comportamento raivoso ou violento em relação a outro país ou pessoa."
+    },
+    {
+      "id": 5,
+      "ja": "操縦士がいない飛行機械。カメラや兵器を搭載できる。",
+      "ko": "조종사 없이 나는 기계. 카메라나 무기를 실을 수 있다.",
+      "zh-Hans": "没有飞行员的飞行器。它们可以携带摄像机或武器。",
+      "es": "Máquinas voladoras sin piloto. Pueden llevar cámaras o armas.",
+      "pt-BR": "Máquinas voadoras sem piloto. Elas podem carregar câmeras ou armas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:56:19.483419+00:00"
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Germany has blamed Russia for a failed drone attack on Leipzig airport.",
+      "Russia says it did not carry out the attack.",
+      "A robot made an explosive drone safe.",
+      "The airport is used by Ukrainian transport planes.",
+      "The EU and Nato say they will put more pressure on Russia.",
+      "Russia is accused of acting more recklessly."
+    ],
+    "vocabulary": [
+      {
+        "term": "blamed",
+        "part_of_speech": "verb",
+        "definition": "said that someone was responsible"
+      },
+      {
+        "term": "failed",
+        "part_of_speech": "adjective",
+        "definition": "did not succeed"
+      },
+      {
+        "term": "accused",
+        "part_of_speech": "verb",
+        "definition": "said to have done something wrong"
+      },
+      {
+        "term": "drone",
+        "part_of_speech": "noun",
+        "definition": "an aircraft that flies without a pilot inside"
+      },
+      {
+        "term": "recklessly",
+        "part_of_speech": "adverb",
+        "definition": "without enough care for safety or danger"
+      },
+      {
+        "term": "pressure",
+        "part_of_speech": "noun",
+        "definition": "strong efforts to make someone change what they do"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かに責任があると言った。",
+      "ko": "누군가에게 책임이 있다고 말했다.",
+      "zh-Hans": "说某人负有责任。",
+      "es": "dijo que alguien era el responsable.",
+      "pt-BR": "disse que alguém era responsável."
+    },
+    {
+      "id": 1,
+      "ja": "成功しなかった。",
+      "ko": "성공하지 못했다.",
+      "zh-Hans": "没有成功。",
+      "es": "no tuvo éxito.",
+      "pt-BR": "que não obteve sucesso."
+    },
+    {
+      "id": 2,
+      "ja": "悪いことをしたと言われた。",
+      "ko": "잘못된 일을 했다고 지목되거나 비난받았다.",
+      "zh-Hans": "被指控做了错事。",
+      "es": "se dijo que había hecho algo incorrecto.",
+      "pt-BR": "ser acusado de ter feito algo errado."
+    },
+    {
+      "id": 3,
+      "ja": "パイロットが中に乗っていない飛行機。",
+      "ko": "조종사가 안에 탑승하지 않고 비행하는 항공기.",
+      "zh-Hans": "一种没有飞行员在里面驾驶的飞行器。",
+      "es": "un avión que vuela sin un piloto dentro.",
+      "pt-BR": "uma aeronave que voa sem um piloto dentro."
+    },
+    {
+      "id": 4,
+      "ja": "安全や危険に対して十分に注意を払わずに。",
+      "ko": "안전이나 위험에 대해 충분한 주의를 기울이지 않고.",
+      "zh-Hans": "不顾安全或危险。",
+      "es": "sin suficiente cuidado por la seguridad o el peligro.",
+      "pt-BR": "sem cuidado suficiente com a segurança ou o perigo."
+    },
+    {
+      "id": 5,
+      "ja": "誰かに行動を変えさせるための強い働きかけ。",
+      "ko": "누군가가 하는 일을 바꾸도록 만들기 위한 강력한 노력.",
+      "zh-Hans": "强迫某人改变其行为的努力。",
+      "es": "grandes esfuerzos para hacer que alguien cambie lo que hace.",
+      "pt-BR": "grandes esforços para fazer alguém mudar o que faz."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:05.432199+00:00"
+  }
+}

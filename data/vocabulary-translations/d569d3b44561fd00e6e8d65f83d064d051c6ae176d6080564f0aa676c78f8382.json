@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Dmitry Muratov is a Nobel Peace Prize winner.",
+      "He had an interview with the BBC.",
+      "He talked about the war in Ukraine.",
+      "This war has continued for five years.",
+      "Muratov said that Russia's leader can only destroy Ukraine.",
+      "He believes Russia cannot conquer Ukraine.",
+      "The leader of Russia cannot claim victory.",
+      "This news is from a very respected person.",
+      "The war is very serious for everyone.",
+      "Muratov shared his strong opinion."
+    ],
+    "vocabulary": [
+      {
+        "term": "Nobel Peace Prize winner",
+        "part_of_speech": "noun phrase",
+        "definition": "A person who gets a special international award for working to make peace in the world."
+      },
+      {
+        "term": "interview",
+        "part_of_speech": "noun",
+        "definition": "A meeting where someone asks questions to another person to get information."
+      },
+      {
+        "term": "war",
+        "part_of_speech": "noun",
+        "definition": "A period of fighting between countries or groups, often with armies."
+      },
+      {
+        "term": "destroy",
+        "part_of_speech": "verb",
+        "definition": "To break something completely so it cannot be used or exist anymore."
+      },
+      {
+        "term": "conquer",
+        "part_of_speech": "verb",
+        "definition": "To take control of a country or a city by fighting and winning."
+      },
+      {
+        "term": "claim victory",
+        "part_of_speech": "verb phrase",
+        "definition": "To state officially or publicly that one has won a battle, game, or competition."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "世界の平和のために働き、特別な国際賞を受賞する人。",
+      "ko": "세상의 평화를 위해 노력하여 특별한 국제상을 받는 사람.",
+      "zh-Hans": "因致力于世界和平而获得一项特殊国际奖项的人。",
+      "es": "Una persona que recibe un premio internacional especial por trabajar para lograr la paz en el mundo.",
+      "pt-BR": "Uma pessoa que recebe um prêmio internacional especial por trabalhar para fazer a paz no mundo."
+    },
+    {
+      "id": 1,
+      "ja": "情報を得るために、誰かが別の人に質問をする会合。",
+      "ko": "정보를 얻기 위해 한 사람이 다른 사람에게 질문을 하는 만남.",
+      "zh-Hans": "一个人向另一个人提问以获取信息的会面。",
+      "es": "Una reunión en la que alguien hace preguntas a otra persona para obtener información.",
+      "pt-BR": "Um encontro onde alguém faz perguntas a outra pessoa para obter informações."
+    },
+    {
+      "id": 2,
+      "ja": "国や集団の間で、しばしば軍隊を使って行われる戦闘の期間。",
+      "ko": "국가나 집단 간에, 흔히 군대를 동원하여 싸우는 기간.",
+      "zh-Hans": "国家或团体之间进行战斗的一段时间，通常有军队参与。",
+      "es": "Un período de lucha entre países o grupos, a menudo con ejércitos.",
+      "pt-BR": "Um período de luta entre países ou grupos, muitas vezes com exércitos."
+    },
+    {
+      "id": 3,
+      "ja": "何かを完全に壊して、もう使えなくしたり、存在しなくしたりすること。",
+      "ko": "어떤 것을 완전히 부수어 더 이상 사용할 수 없거나 존재하지 않게 만드는 것.",
+      "zh-Hans": "完全破坏某物，使其无法再使用或存在。",
+      "es": "Romper algo por completo para que ya no pueda usarse o existir.",
+      "pt-BR": "Quebrar algo completamente para que não possa mais ser usado ou existir."
+    },
+    {
+      "id": 4,
+      "ja": "戦って勝利し、国や都市を支配下に置くこと。",
+      "ko": "싸워서 이김으로써 국가나 도시를 통제하는 것.",
+      "zh-Hans": "通过战斗和胜利来控制一个国家或城市。",
+      "es": "Tomar el control de un país o una ciudad luchando y ganando.",
+      "pt-BR": "Assumir o controle de um país ou uma cidade lutando e vencendo."
+    },
+    {
+      "id": 5,
+      "ja": "戦いや試合、競争に勝ったことを公式に、または公に表明すること。",
+      "ko": "전투, 경기 또는 경쟁에서 이겼다고 공식적으로 또는 공개적으로 진술하는 것.",
+      "zh-Hans": "正式或公开声明自己在战斗、比赛或竞争中获胜。",
+      "es": "Declarar oficial o públicamente que se ha ganado una batalla, un juego o una competición.",
+      "pt-BR": "Declarar oficial ou publicamente que se venceu uma batalha, jogo ou competição."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:23.833491+00:00"
+  }
+}

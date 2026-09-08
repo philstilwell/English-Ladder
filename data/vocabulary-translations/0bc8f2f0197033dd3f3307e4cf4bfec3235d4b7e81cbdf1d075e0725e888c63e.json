@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "People are being forced to return to Afghanistan from Pakistan and Iran.",
+      "Some people have never been to Afghanistan.",
+      "Nazia, who was born in Pakistan, crossed the border with her children.",
+      "Near the border, aid agencies have set up shelters for families with nowhere to stay.",
+      "These shelters provide accommodation for only a few nights.",
+      "Families interviewed for the report described serious difficulties finding money and work.",
+      "Cuts in foreign aid make it harder to support those arriving.",
+      "The UN refugee agency says people should return by choice, in safety and with dignity."
+    ],
+    "vocabulary": [
+      {
+        "term": "aid agencies",
+        "part_of_speech": "noun phrase",
+        "definition": "organisations that provide help to people in need"
+      },
+      {
+        "term": "shelters",
+        "part_of_speech": "plural noun",
+        "definition": "places that provide temporary protection or somewhere to stay"
+      },
+      {
+        "term": "accommodation",
+        "part_of_speech": "noun",
+        "definition": "a place where someone can stay or live"
+      },
+      {
+        "term": "by choice",
+        "part_of_speech": "adverbial phrase",
+        "definition": "because someone decides freely to do something"
+      },
+      {
+        "term": "dignity",
+        "part_of_speech": "noun",
+        "definition": "the worth and respect that every person deserves"
+      },
+      {
+        "term": "foreign aid",
+        "part_of_speech": "noun phrase",
+        "definition": "support, often money or supplies, sent from other countries"
+      },
+      {
+        "term": "set up",
+        "part_of_speech": "phrasal verb",
+        "definition": "established or organised something so that people could use it"
+      },
+      {
+        "term": "difficulties",
+        "part_of_speech": "plural noun",
+        "definition": "problems that make something hard to do"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "困っている人々に支援を提供する組織。",
+      "ko": "어려움에 처한 사람들에게 도움을 주는 단체.",
+      "zh-Hans": "向有需要的人提供帮助的组织。",
+      "es": "Organizaciones que proporcionan ayuda a personas que la necesitan.",
+      "pt-BR": "Organizações que fornecem ajuda a pessoas necessitadas."
+    },
+    {
+      "id": 1,
+      "ja": "一時的な保護や滞在場所を提供する場所。",
+      "ko": "임시적인 보호나 머무를 곳을 제공하는 장소.",
+      "zh-Hans": "提供临时保护或住宿的地方。",
+      "es": "Lugares que proporcionan protección temporal o un sitio donde quedarse.",
+      "pt-BR": "Lugares que oferecem proteção temporária ou um local para ficar."
+    },
+    {
+      "id": 2,
+      "ja": "誰かが滞在したり住んだりできる場所。",
+      "ko": "누군가 머물거나 살 수 있는 장소.",
+      "zh-Hans": "某人可以停留或居住的地方。",
+      "es": "Un lugar donde alguien puede alojarse o vivir.",
+      "pt-BR": "Um lugar onde alguém pode ficar ou morar."
+    },
+    {
+      "id": 3,
+      "ja": "誰かが何かを自由にすると決めたために。",
+      "ko": "어떤 사람이 자유롭게 무언가를 하기로 결정했기 때문에.",
+      "zh-Hans": "因为某人自由地决定做某事。",
+      "es": "Porque alguien decide libremente hacer algo.",
+      "pt-BR": "Porque alguém decide livremente fazer algo."
+    },
+    {
+      "id": 4,
+      "ja": "すべての人が当然持つべき価値と尊敬。",
+      "ko": "모든 사람이 마땅히 받아야 할 가치와 존중.",
+      "zh-Hans": "每个人都应得的价值和尊重。",
+      "es": "El valor y el respeto que toda persona merece.",
+      "pt-BR": "O valor e o respeito que toda pessoa merece."
+    },
+    {
+      "id": 5,
+      "ja": "他国から送られる、多くの場合お金や物資の支援。",
+      "ko": "다른 나라에서 보내는, 주로 돈이나 물품 형태의 지원.",
+      "zh-Hans": "从其他国家送来的支持，通常是金钱或物资。",
+      "es": "Ayuda, a menudo dinero o suministros, enviada desde otros países.",
+      "pt-BR": "Apoio, geralmente dinheiro ou suprimentos, enviado de outros países."
+    },
+    {
+      "id": 6,
+      "ja": "人々が利用できるように何かを設立したり組織したりした。",
+      "ko": "사람들이 사용할 수 있도록 무언가를 설립하거나 조직한.",
+      "zh-Hans": "建立或组织了某事，以便人们可以使用它。",
+      "es": "Establecido u organizado algo para que la gente pudiera usarlo.",
+      "pt-BR": "Estabeleceu ou organizou algo para que as pessoas pudessem usá-lo."
+    },
+    {
+      "id": 7,
+      "ja": "何かを行うことを困難にする問題。",
+      "ko": "무언가를 하기 어렵게 만드는 문제.",
+      "zh-Hans": "让事情难以完成的问题。",
+      "es": "Problemas que hacen que algo sea difícil de hacer.",
+      "pt-BR": "Problemas que tornam algo difícil de fazer."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:21.182314+00:00"
+  }
+}

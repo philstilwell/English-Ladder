@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "This year, the White House Correspondents' Dinner happened.",
+      "President Trump was there.",
+      "He spoke at the event.",
+      "He made some critical remarks about the press.",
+      "The dinner is usually a time for fun.",
+      "It also celebrates press freedom.",
+      "Last year, the dinner was cancelled.",
+      "This was because of a shooting.",
+      "The shooting happened in April.",
+      "So, this year's event was very important for journalists."
+    ],
+    "vocabulary": [
+      {
+        "term": "press",
+        "part_of_speech": "noun",
+        "definition": "Press means newspapers, TV, and radio people. They report the news."
+      },
+      {
+        "term": "event",
+        "part_of_speech": "noun",
+        "definition": "An event is something important that happens, like a party or meeting."
+      },
+      {
+        "term": "celebrates",
+        "part_of_speech": "verb",
+        "definition": "When you celebrate, you do something special because you are happy about something."
+      },
+      {
+        "term": "cancelled",
+        "part_of_speech": "verb",
+        "definition": "If something is cancelled, it means it will not happen."
+      },
+      {
+        "term": "journalists",
+        "part_of_speech": "noun",
+        "definition": "Journalists are people who write news stories for newspapers or report for TV and radio."
+      },
+      {
+        "term": "shooting",
+        "part_of_speech": "noun",
+        "definition": "an event in which someone fires a gun"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "新聞、テレビ、ラジオに携わる人々を指します。彼らはニュースを報道します。",
+      "ko": "신문, 텔레비전, 라디오에 종사하는 사람들을 의미합니다. 이들은 뉴스를 보도합니다.",
+      "zh-Hans": "媒体指报纸、电视和广播工作人员。他们报道新闻。",
+      "es": "Se refiere a las personas que trabajan en periódicos, televisión y radio. Ellos informan las noticias.",
+      "pt-BR": "Refere-se às pessoas que trabalham em jornais, televisão e rádio. Elas reportam as notícias."
+    },
+    {
+      "id": 1,
+      "ja": "パーティーや会議のように、起こる重要な出来事です。",
+      "ko": "파티나 회의처럼 일어나는 중요한 일을 말합니다.",
+      "zh-Hans": "事件是指发生的一些重要的事情，比如派对或会议。",
+      "es": "Un evento es algo importante que sucede, como una fiesta o una reunión.",
+      "pt-BR": "Um evento é algo importante que acontece, como uma festa ou uma reunião."
+    },
+    {
+      "id": 2,
+      "ja": "お祝いするときは、何かについて嬉しいので、特別なことをします。",
+      "ko": "축하할 때는 어떤 것에 대해 기뻐서 특별한 일을 합니다.",
+      "zh-Hans": "当你庆祝时，你会做一些特别的事情，因为你对某事感到高兴。",
+      "es": "Cuando celebras, haces algo especial porque estás feliz por algo.",
+      "pt-BR": "Quando você celebra, faz algo especial porque está feliz com algo."
+    },
+    {
+      "id": 3,
+      "ja": "何かがキャンセルされた場合、それは行われないという意味です。",
+      "ko": "어떤 것이 취소되었다면, 그것은 일어나지 않을 것이라는 의미입니다.",
+      "zh-Hans": "如果某事被取消，这意味着它不会发生。",
+      "es": "Si algo se cancela, significa que no va a suceder.",
+      "pt-BR": "Se algo é cancelado, significa que não vai acontecer."
+    },
+    {
+      "id": 4,
+      "ja": "ジャーナリストとは、新聞のためにニュース記事を書いたり、テレビやラジオで報道したりする人々のことです。",
+      "ko": "기자들은 신문에 뉴스 기사를 쓰거나 텔레비전과 라디오로 보도하는 사람들입니다.",
+      "zh-Hans": "记者是为报纸撰写新闻报道或为电视和广播报道新闻的人。",
+      "es": "Los periodistas son personas que escriben noticias para periódicos o informan para televisión y radio.",
+      "pt-BR": "Jornalistas são pessoas que escrevem notícias para jornais ou reportam para televisão e rádio."
+    },
+    {
+      "id": 5,
+      "ja": "誰かが銃を発砲する出来事。",
+      "ko": "누군가 총을 쏘는 사건.",
+      "zh-Hans": "指某人开枪的事件。",
+      "es": "Un evento en el que alguien dispara un arma.",
+      "pt-BR": "Um evento em que alguém atira com uma arma."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:01:46.183468+00:00"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Big fires are burning in France.",
+      "These are called wildfires.",
+      "The wildfires started several days ago.",
+      "They spread quickly in the area.",
+      "This area is a popular tourist spot.",
+      "Many people were on holiday there.",
+      "Officials told people to leave.",
+      "They ordered everyone to evacuate.",
+      "Tens of thousands of people left the area.",
+      "The fires are still a big danger."
+    ],
+    "vocabulary": [
+      {
+        "term": "wildfires",
+        "part_of_speech": "noun",
+        "definition": "Large, uncontrolled fires that burn in natural areas, often in forests or dry fields."
+      },
+      {
+        "term": "spread",
+        "part_of_speech": "verb",
+        "definition": "To move or extend over a larger area, or to become wider or more common."
+      },
+      {
+        "term": "tourist spot",
+        "part_of_speech": "noun phrase",
+        "definition": "A place that many people visit for holidays, recreation, or sightseeing."
+      },
+      {
+        "term": "officials",
+        "part_of_speech": "noun",
+        "definition": "People who have an important position or authority, especially in a government or organization."
+      },
+      {
+        "term": "evacuate",
+        "part_of_speech": "verb",
+        "definition": "To leave a dangerous place quickly and safely, often because of an emergency like a fire or flood."
+      },
+      {
+        "term": "danger",
+        "part_of_speech": "noun",
+        "definition": "the possibility that someone may be hurt"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "自然地域、特に森林や乾燥した野原で燃え広がる、大規模で制御されていない火事。",
+      "ko": "숲이나 마른 들판과 같은 자연 지역에서 발생하는, 통제할 수 없는 큰불.",
+      "zh-Hans": "在自然区域，通常是森林或干旱的田野中燃烧的、无法控制的大火。",
+      "es": "Incendios grandes e incontrolados que arden en zonas naturales, a menudo en bosques o campos secos.",
+      "pt-BR": "Grandes incêndios descontrolados que queimam em áreas naturais, geralmente em florestas ou campos secos."
+    },
+    {
+      "id": 1,
+      "ja": "より広い範囲に移動したり拡大したりすること、または、より広範囲になったり一般的になったりすること。",
+      "ko": "더 넓은 지역으로 이동하거나 확장되거나, 더 넓어지거나 흔해지는 것.",
+      "zh-Hans": "移动或扩展到更大的区域，或变得更广或更普遍。",
+      "es": "Moverse o extenderse por un área más grande, o volverse más amplio o más común.",
+      "pt-BR": "Mover-se ou estender-se por uma área maior, ou tornar-se mais amplo ou mais comum."
+    },
+    {
+      "id": 2,
+      "ja": "多くの人が休暇、レクリエーション、または観光のために訪れる場所。",
+      "ko": "많은 사람들이 휴가, 여가 활동 또는 관광을 위해 방문하는 장소.",
+      "zh-Hans": "许多人为了度假、娱乐或观光而参观的地方。",
+      "es": "Un lugar que mucha gente visita para vacaciones, recreación o turismo.",
+      "pt-BR": "Um lugar que muitas pessoas visitam para férias, lazer ou turismo."
+    },
+    {
+      "id": 3,
+      "ja": "特に政府や組織において、重要な地位や権限を持つ人々。",
+      "ko": "특히 정부나 조직에서 중요한 직책이나 권위를 가진 사람들.",
+      "zh-Hans": "拥有重要职位或权力的人，尤其是在政府或组织中。",
+      "es": "Personas que tienen un puesto o autoridad importante, especialmente en un gobierno u organización.",
+      "pt-BR": "Pessoas que têm uma posição ou autoridade importante, especialmente em um governo ou organização."
+    },
+    {
+      "id": 4,
+      "ja": "火災や洪水のような緊急事態のためなど、危険な場所から迅速かつ安全に立ち去ること。",
+      "ko": "화재나 홍수와 같은 비상사태로 인해 위험한 장소를 빠르고 안전하게 떠나는 것.",
+      "zh-Hans": "迅速安全地离开一个危险的地方，通常是因为火灾或洪水等紧急情况。",
+      "es": "Abandonar un lugar peligroso de forma rápida y segura, a menudo debido a una emergencia como un incendio o una inundación.",
+      "pt-BR": "Deixar um lugar perigoso rapidamente e com segurança, muitas vezes devido a uma emergência como um incêndio ou uma inundação."
+    },
+    {
+      "id": 5,
+      "ja": "誰かが傷つく可能性。",
+      "ko": "누군가가 다치거나 피해를 입을 가능성.",
+      "zh-Hans": "某人可能受到伤害的可能性。",
+      "es": "La posibilidad de que alguien pueda sufrir daño.",
+      "pt-BR": "A possibilidade de alguém poder ser ferido."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:01:59.998635+00:00"
+  }
+}

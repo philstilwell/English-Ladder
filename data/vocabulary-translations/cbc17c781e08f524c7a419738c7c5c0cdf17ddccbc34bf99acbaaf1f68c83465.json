@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Trump was at a Nato summit in Turkey.",
+      "After the summit, he needed to fly home.",
+      "Reporters were told he would fly on Air Force One.",
+      "But this was not true; it was a ruse.",
+      "President Trump had a secret plan to leave.",
+      "He hid inside a catering truck at the airport.",
+      "The truck took him to a different plane.",
+      "This plane swap was done very secretly.",
+      "Reports said there was an Iran threat.",
+      "The secret plane swap kept him safe from the threat."
+    ],
+    "vocabulary": [
+      {
+        "term": "Nato summit",
+        "part_of_speech": "noun phrase",
+        "definition": "A big meeting for leaders from different countries that are part of NATO, an alliance."
+      },
+      {
+        "term": "Air Force One",
+        "part_of_speech": "noun",
+        "definition": "The special airplane that the President of the United States uses for travel."
+      },
+      {
+        "term": "ruse",
+        "part_of_speech": "noun",
+        "definition": "A trick or a clever plan used to make someone believe something that is not true."
+      },
+      {
+        "term": "catering truck",
+        "part_of_speech": "noun",
+        "definition": "A vehicle that brings food and drinks to airplanes for passengers."
+      },
+      {
+        "term": "Iran threat",
+        "part_of_speech": "noun phrase",
+        "definition": "A danger or warning coming from the country of Iran."
+      },
+      {
+        "term": "safe",
+        "part_of_speech": "adjective",
+        "definition": "Not in danger or protected from harm."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "NATOという同盟に加盟している様々な国の指導者が集まる大規模な会議。",
+      "ko": "NATO라는 동맹에 속한 여러 나라의 지도자들이 모여 하는 큰 회의.",
+      "zh-Hans": "北约（一个联盟）成员国的领导人举行的大型会议。",
+      "es": "Una gran reunión de líderes de diferentes países que forman parte de la OTAN, una alianza.",
+      "pt-BR": "Uma grande reunião para líderes de diferentes países que fazem parte da OTAN, uma aliança."
+    },
+    {
+      "id": 1,
+      "ja": "アメリカ合衆国大統領が移動に使う特別な飛行機。",
+      "ko": "미국 대통령이 이동할 때 사용하는 특별한 비행기.",
+      "zh-Hans": "美国总统用于出行的专用飞机。",
+      "es": "El avión especial que el Presidente de los Estados Unidos utiliza para viajar.",
+      "pt-BR": "O avião especial que o Presidente dos Estados Unidos usa para viajar."
+    },
+    {
+      "id": 2,
+      "ja": "誰かに真実ではないことを信じさせるために使われる策略や巧妙な計画。",
+      "ko": "누군가가 사실이 아닌 것을 믿게 만들려고 사용하는 속임수나 영리한 계획.",
+      "zh-Hans": "一种用来让别人相信不真实事情的诡计或巧妙计划。",
+      "es": "Un truco o un plan astuto utilizado para hacer que alguien crea algo que no es verdad.",
+      "pt-BR": "Um truque ou um plano inteligente usado para fazer alguém acreditar em algo que não é verdade."
+    },
+    {
+      "id": 3,
+      "ja": "乗客のために飛行機に飲食物を運ぶ車両。",
+      "ko": "승객을 위해 비행기에 음식과 음료를 가져다주는 차량.",
+      "zh-Hans": "一种将食物和饮料送往飞机供乘客使用的车辆。",
+      "es": "Un vehículo que lleva comida y bebida a los aviones para los pasajeros.",
+      "pt-BR": "Um veículo que leva comida e bebida para os aviões para os passageiros."
+    },
+    {
+      "id": 4,
+      "ja": "イランという国から来る危険や警告。",
+      "ko": "이란이라는 나라에서 오는 위험이나 경고.",
+      "zh-Hans": "来自伊朗这个国家的危险或警告。",
+      "es": "Un peligro o advertencia que proviene del país de Irán.",
+      "pt-BR": "Um perigo ou aviso vindo do país do Irã."
+    },
+    {
+      "id": 5,
+      "ja": "危険がない、または危害から守られている状態。",
+      "ko": "위험에 처하지 않거나 해로부터 보호되는 상태.",
+      "zh-Hans": "没有危险，或受到保护，免受伤害。",
+      "es": "No estar en peligro o estar protegido de cualquier daño.",
+      "pt-BR": "Não estar em perigo ou protegido de danos."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:47.265584+00:00"
+  }
+}

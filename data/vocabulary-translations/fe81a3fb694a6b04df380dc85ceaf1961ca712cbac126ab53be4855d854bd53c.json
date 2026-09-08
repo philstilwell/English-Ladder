@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Sunday was a difficult day for Ukraine.",
+      "There was a massive Russian attack on Kyiv.",
+      "President Zelensky spoke about this event.",
+      "He said Russia used 68 missiles.",
+      "Russia also used 351 strike drones.",
+      "These attacks caused many deaths.",
+      "Nineteen people were killed in the Kyiv region.",
+      "Ukraine now warns of an interceptor missile shortage.",
+      "They need more interceptor missiles to defend the country.",
+      "This is a big problem because Ukraine uses them to stop incoming threats."
+    ],
+    "vocabulary": [
+      {
+        "term": "massive",
+        "part_of_speech": "adjective",
+        "definition": "very big or very strong"
+      },
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "a violent act to hurt or damage someone or something"
+      },
+      {
+        "term": "missiles",
+        "part_of_speech": "noun",
+        "definition": "weapons that fly through the air to hit a target"
+      },
+      {
+        "term": "strike drones",
+        "part_of_speech": "noun phrase",
+        "definition": "unmanned flying machines that can hit targets"
+      },
+      {
+        "term": "shortage",
+        "part_of_speech": "noun",
+        "definition": "not having enough of something that is needed"
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb",
+        "definition": "caused a person or animal to die"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に大きい、または非常に強い",
+      "ko": "매우 크거나 매우 강력한",
+      "zh-Hans": "非常大或非常强烈的",
+      "es": "muy grande o muy fuerte",
+      "pt-BR": "muito grande ou muito forte"
+    },
+    {
+      "id": 1,
+      "ja": "誰かや何かを傷つけたり損害を与えたりするための暴力的な行為",
+      "ko": "누군가나 무언가를 다치게 하거나 손상시키기 위한 폭력적인 행동",
+      "zh-Hans": "旨在伤害或损害某人或某物的暴力行为",
+      "es": "un acto violento para herir o dañar a alguien o algo",
+      "pt-BR": "um ato violento para ferir ou danificar alguém ou algo"
+    },
+    {
+      "id": 2,
+      "ja": "標的に当てるために空中を飛ぶ兵器",
+      "ko": "목표물을 맞히기 위해 공중을 날아가는 무기",
+      "zh-Hans": "在空中飞行以击中目标的武器",
+      "es": "armas que vuelan por el aire para impactar un objetivo",
+      "pt-BR": "armas que voam pelo ar para atingir um alvo"
+    },
+    {
+      "id": 3,
+      "ja": "標的に当てることができる無人の飛行機械",
+      "ko": "목표물을 맞힐 수 있는 무인 비행 기계",
+      "zh-Hans": "可以击中目标的无人飞行器",
+      "es": "máquinas voladoras no tripuladas que pueden impactar objetivos",
+      "pt-BR": "máquinas voadoras não tripuladas que podem atingir alvos"
+    },
+    {
+      "id": 4,
+      "ja": "必要なものが十分にないこと",
+      "ko": "필요한 것이 충분하지 않은 상태",
+      "zh-Hans": "没有足够所需物品的情况",
+      "es": "no tener suficiente de algo que se necesita",
+      "pt-BR": "não ter o suficiente de algo que é necessário"
+    },
+    {
+      "id": 5,
+      "ja": "人や動物を死なせること",
+      "ko": "사람이나 동물을 죽게 하다",
+      "zh-Hans": "导致某人或某动物死亡",
+      "es": "causar la muerte de una persona o animal",
+      "pt-BR": "causar a morte de uma pessoa ou animal"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:07.115936+00:00"
+  }
+}

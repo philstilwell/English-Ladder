@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The United States launched new strikes.",
+      "These strikes happened recently.",
+      "Iran says the US strikes hit bridges.",
+      "Bridges are part of civilian infrastructure.",
+      "Tehran is the capital city of Iran.",
+      "The US also boarded a ship.",
+      "This ship was in the Strait of Hormuz.",
+      "The Strait of Hormuz is an important sea area.",
+      "The US acted because of recent events.",
+      "Iran says its infrastructure was hit."
+    ],
+    "vocabulary": [
+      {
+        "term": "launched",
+        "part_of_speech": "verb (past tense)",
+        "definition": "started something new, like an attack."
+      },
+      {
+        "term": "strikes",
+        "part_of_speech": "noun (plural)",
+        "definition": "attacks, often by planes or missiles."
+      },
+      {
+        "term": "hit",
+        "part_of_speech": "verb (past tense)",
+        "definition": "made contact with something with force."
+      },
+      {
+        "term": "civilian infrastructure",
+        "part_of_speech": "noun phrase",
+        "definition": "public buildings and systems like roads or bridges, used by everyone, not the military."
+      },
+      {
+        "term": "boarded",
+        "part_of_speech": "verb (past tense)",
+        "definition": "went onto a ship or plane."
+      },
+      {
+        "term": "bridges",
+        "part_of_speech": "noun",
+        "definition": "structures built over water or roads to allow people and vehicles to cross."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "攻撃のように、何か新しいことを開始した。",
+      "ko": "공격과 같이, 새로운 것을 시작했다.",
+      "zh-Hans": "开始了一个新的事物，例如攻击。",
+      "es": "Empezó algo nuevo, como un ataque.",
+      "pt-BR": "Começou algo novo, como um ataque."
+    },
+    {
+      "id": 1,
+      "ja": "多くの場合、飛行機やミサイルによって行われる攻撃。",
+      "ko": "주로 비행기나 미사일에 의해 이루어지는 공격.",
+      "zh-Hans": "攻击，通常由飞机或导弹发起。",
+      "es": "Ataques, a menudo realizados por aviones o misiles.",
+      "pt-BR": "Ataques, frequentemente por aviões ou mísseis."
+    },
+    {
+      "id": 2,
+      "ja": "何かに力強く接触した。",
+      "ko": "어떤 것에 힘을 가해 맞닿았다.",
+      "zh-Hans": "用力接触到某物。",
+      "es": "Hizo contacto con algo con fuerza.",
+      "pt-BR": "Fez contato com algo com força."
+    },
+    {
+      "id": 3,
+      "ja": "道路や橋のような公共の建物やシステムで、軍隊ではなく誰もが使用するもの。",
+      "ko": "군대가 아닌 모두가 사용하는 도로, 다리와 같은 공공 건물 및 시스템.",
+      "zh-Hans": "公共建筑和系统，例如道路或桥梁，供所有人使用，而非军用。",
+      "es": "Edificios y sistemas públicos como carreteras o puentes, utilizados por todos, no por los militares.",
+      "pt-BR": "Edifícios e sistemas públicos como estradas ou pontes, usados por todos, não pelos militares."
+    },
+    {
+      "id": 4,
+      "ja": "船や飛行機に乗った。",
+      "ko": "배나 비행기에 탔다.",
+      "zh-Hans": "登上了一艘船或一架飞机。",
+      "es": "Subió a un barco o a un avión.",
+      "pt-BR": "Entrou em um navio ou avião."
+    },
+    {
+      "id": 5,
+      "ja": "水や道路の上に建てられた構造物で、人や車両が渡れるようにするもの。",
+      "ko": "사람과 차량이 건널 수 있도록 물이나 도로 위에 건설된 구조물.",
+      "zh-Hans": "建在水面或道路上方，供人们和车辆通行的结构。",
+      "es": "Estructuras construidas sobre agua o carreteras para permitir que personas y vehículos las crucen.",
+      "pt-BR": "Estruturas construídas sobre a água ou estradas para permitir que pessoas e veículos as atravessem."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:03:34.841650+00:00"
+  }
+}

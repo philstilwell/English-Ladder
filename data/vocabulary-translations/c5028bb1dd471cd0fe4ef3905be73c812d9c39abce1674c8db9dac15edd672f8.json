@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Colombia had a big earthquake.",
+      "About 180 people died because of it.",
+      "Many buildings fell down from the earthquake.",
+      "Aftershocks also happened on Tuesday.",
+      "Rescuers are looking for people.",
+      "They want to find survivors who are alive.",
+      "Some people are trapped in the fallen rubble.",
+      "The rescuers are working to free them.",
+      "These rescue efforts continued all day.",
+      "People hope to save more survivors."
+    ],
+    "vocabulary": [
+      {
+        "term": "earthquake",
+        "part_of_speech": "noun",
+        "definition": "When the ground shakes suddenly and strongly."
+      },
+      {
+        "term": "rescuers",
+        "part_of_speech": "noun",
+        "definition": "People who help to save others from danger."
+      },
+      {
+        "term": "survivors",
+        "part_of_speech": "noun",
+        "definition": "People who are still alive after a dangerous event."
+      },
+      {
+        "term": "trapped",
+        "part_of_speech": "adjective",
+        "definition": "Unable to move or get out of a place."
+      },
+      {
+        "term": "rubble",
+        "part_of_speech": "noun",
+        "definition": "Broken pieces of buildings, like stones and bricks."
+      },
+      {
+        "term": "aftershocks",
+        "part_of_speech": "noun",
+        "definition": "Smaller earthquakes that follow a larger earthquake in the same area."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "地面が突然激しく揺れること。",
+      "ko": "땅이 갑자기 강하게 흔들리는 현상.",
+      "zh-Hans": "地面突然剧烈摇晃。",
+      "es": "Cuando la tierra se sacude de repente y con fuerza.",
+      "pt-BR": "Quando o chão treme de repente e com força."
+    },
+    {
+      "id": 1,
+      "ja": "危険から他の人を助ける人々。",
+      "ko": "위험에 처한 다른 사람들을 구하는 것을 돕는 사람들.",
+      "zh-Hans": "帮助他人脱离危险的人。",
+      "es": "Personas que ayudan a salvar a otros del peligro.",
+      "pt-BR": "Pessoas que ajudam a salvar outras de um perigo."
+    },
+    {
+      "id": 2,
+      "ja": "危険な出来事の後も生きている人々。",
+      "ko": "위험한 사건 후에 여전히 살아있는 사람들.",
+      "zh-Hans": "在危险事件后仍然活着的人。",
+      "es": "Personas que siguen vivas después de un evento peligroso.",
+      "pt-BR": "Pessoas que ainda estão vivas depois de um evento perigoso."
+    },
+    {
+      "id": 3,
+      "ja": "動けなくなったり、場所から出られなくなったりすること。",
+      "ko": "움직이거나 어떤 장소에서 벗어날 수 없는 상태.",
+      "zh-Hans": "无法移动或从某个地方出来。",
+      "es": "Incapaz de moverse o salir de un lugar.",
+      "pt-BR": "Incapaz de se mover ou sair de um lugar."
+    },
+    {
+      "id": 4,
+      "ja": "石やレンガのような、壊れた建物の破片。",
+      "ko": "돌이나 벽돌처럼 부서진 건물 조각들.",
+      "zh-Hans": "建筑物破碎的碎片，如石头和砖块。",
+      "es": "Pedazos rotos de edificios, como piedras y ladrillos.",
+      "pt-BR": "Pedaços quebrados de edifícios, como pedras e tijolos."
+    },
+    {
+      "id": 5,
+      "ja": "同じ地域でより大きな地震の後に起こる、より小さな地震。",
+      "ko": "같은 지역에서 더 큰 지진 이후에 발생하는 작은 지진들.",
+      "zh-Hans": "在同一区域内，一次大地震之后发生的较小地震。",
+      "es": "Terremotos más pequeños que siguen a uno más grande en la misma área.",
+      "pt-BR": "Terremotos menores que seguem um terremoto maior na mesma área."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:36.370492+00:00"
+  }
+}

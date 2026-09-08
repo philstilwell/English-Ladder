@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "There was a terrible fire in Bangkok.",
+      "Many people died in the fire.",
+      "An investigation started to find out why.",
+      "Reports say that some doors were locked.",
+      "People could not escape easily because of the locked doors.",
+      "There was also flammable decor inside the building.",
+      "This decor helped the fire spread quickly.",
+      "There were no clear signs for emergency exits.",
+      "Survivors said it was hard to find a way out.",
+      "The number of deaths climbed to 30 people."
+    ],
+    "vocabulary": [
+      {
+        "term": "investigation",
+        "part_of_speech": "noun",
+        "definition": "A careful look to find facts and reasons about something."
+      },
+      {
+        "term": "locked",
+        "part_of_speech": "adjective",
+        "definition": "Closed with a key or lock, so you cannot open it."
+      },
+      {
+        "term": "flammable decor",
+        "part_of_speech": "noun phrase",
+        "definition": "Things in a room that can catch fire easily and burn quickly."
+      },
+      {
+        "term": "emergency exits",
+        "part_of_speech": "noun phrase",
+        "definition": "Special doors or ways to leave a place quickly when there is danger, like a fire."
+      },
+      {
+        "term": "survivors",
+        "part_of_speech": "noun",
+        "definition": "People who live through a dangerous event, such as a fire or accident."
+      },
+      {
+        "term": "died",
+        "part_of_speech": "verb, past tense of die",
+        "definition": "Stopped living."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かについて事実や理由を見つけるための注意深い調査。",
+      "ko": "어떤 것에 대한 사실과 이유를 알아내기 위해 자세히 살펴보는 것.",
+      "zh-Hans": "为了找到关于某事的真相和原因而仔细地查看。",
+      "es": "Una observación cuidadosa para encontrar hechos y razones sobre algo.",
+      "pt-BR": "Uma análise cuidadosa para descobrir fatos e razões sobre algo."
+    },
+    {
+      "id": 1,
+      "ja": "鍵や錠で閉じられていて、開けることができない状態。",
+      "ko": "열쇠나 자물쇠로 닫혀 있어서 열 수 없는 상태.",
+      "zh-Hans": "用钥匙或锁关闭，因此无法打开。",
+      "es": "Cerrado con una llave o cerradura, por lo que no se puede abrir.",
+      "pt-BR": "Fechado com uma chave ou cadeado, de modo que não é possível abri-lo."
+    },
+    {
+      "id": 2,
+      "ja": "部屋にあるもので、簡単に火がつき、すぐに燃えるもの。",
+      "ko": "방 안에 있는 물건으로, 쉽게 불이 붙어 빠르게 타오를 수 있는 것들.",
+      "zh-Hans": "房间里容易着火并快速燃烧的物品。",
+      "es": "Cosas en una habitación que pueden incendiarse fácilmente y quemarse rápido.",
+      "pt-BR": "Objetos em um cômodo que podem pegar fogo facilmente e queimar rapidamente."
+    },
+    {
+      "id": 3,
+      "ja": "火事のような危険があるときに、場所から素早く出るための特別なドアや通路。",
+      "ko": "화재와 같은 위험이 있을 때, 빠르게 장소를 벗어날 수 있도록 만들어진 특별한 문이나 통로.",
+      "zh-Hans": "当有危险（如火灾）时，可以快速离开某个地方的特殊门或通道。",
+      "es": "Puertas o maneras especiales de salir rápidamente de un lugar cuando hay peligro, como un incendio.",
+      "pt-BR": "Portas ou saídas especiais para deixar um local rapidamente quando há perigo, como um incêndio."
+    },
+    {
+      "id": 4,
+      "ja": "火事や事故のような危険な出来事を生き延びた人々。",
+      "ko": "화재나 사고와 같은 위험한 사건에서 살아남은 사람들.",
+      "zh-Hans": "经历火灾或事故等危险事件后幸存下来的人。",
+      "es": "Personas que sobreviven a un evento peligroso, como un incendio o un accidente.",
+      "pt-BR": "Pessoas que sobrevivem a um evento perigoso, como um incêndio ou acidente."
+    },
+    {
+      "id": 5,
+      "ja": "生きることをやめた。",
+      "ko": "삶을 멈춘.",
+      "zh-Hans": "停止了生命。",
+      "es": "Dejó de vivir.",
+      "pt-BR": "Parou de viver."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:04:16.778833+00:00"
+  }
+}

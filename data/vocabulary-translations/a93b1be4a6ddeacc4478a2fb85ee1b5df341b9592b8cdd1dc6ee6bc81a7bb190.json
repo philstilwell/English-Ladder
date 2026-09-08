@@ -1,0 +1,132 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "A tragic fire incident in Bangkok is currently under intense investigation by authorities.",
+      "The grim discovery of at least 30 fatalities has shocked the community.",
+      "Initial reports from survivors and first responders highlighted several critical safety concerns.",
+      "Crucially, investigators found evidence of locked doors that prevented quick escape during the emergency.",
+      "This issue was compounded by a lack of clear signage marking the emergency exits.",
+      "Such conditions can significantly impede evacuation efforts in a crowded venue.",
+      "Furthermore, the investigation is also scrutinizing the presence of highly flammable decor within the building.",
+      "These materials likely contributed to the rapid spread of the fire, intensifying the danger.",
+      "Authorities are working to understand how these severe safety breaches occurred.",
+      "The ongoing probe aims to prevent similar devastating incidents from happening in the future."
+    ],
+    "vocabulary": [
+      {
+        "term": "fatalities",
+        "part_of_speech": "plural noun",
+        "definition": "Deaths caused by an accident, disaster, or violence."
+      },
+      {
+        "term": "highlighted",
+        "part_of_speech": "verb",
+        "definition": "Drew special attention to something, making it more noticeable or important."
+      },
+      {
+        "term": "signage",
+        "part_of_speech": "noun",
+        "definition": "Signs, especially public signs, used for display or guidance."
+      },
+      {
+        "term": "significantly",
+        "part_of_speech": "adverb",
+        "definition": "to a degree that is important or noticeable"
+      },
+      {
+        "term": "devastating",
+        "part_of_speech": "adjective",
+        "definition": "Causing a lot of damage or destruction; extremely harmful or destructive."
+      },
+      {
+        "term": "furthermore",
+        "part_of_speech": "adverb",
+        "definition": "used to add another point to what has already been said"
+      },
+      {
+        "term": "conditions",
+        "part_of_speech": "plural noun",
+        "definition": "the circumstances or physical state in a place"
+      },
+      {
+        "term": "concerns",
+        "part_of_speech": "plural noun",
+        "definition": "feelings of worry about a situation"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "事故、災害、暴力などによって引き起こされた死。",
+      "ko": "사고, 재난 또는 폭력으로 인해 발생한 사망.",
+      "zh-Hans": "因事故、灾难或暴力造成的死亡。",
+      "es": "Muertes causadas por un accidente, desastre o violencia.",
+      "pt-BR": "Mortes causadas por um acidente, desastre ou violência."
+    },
+    {
+      "id": 1,
+      "ja": "何かに特別な注意を引き、それをより目立たせたり、重要にしたりしたこと。",
+      "ko": "어떤 것에 특별한 주의를 기울여 그것을 더 눈에 띄게 하거나 중요하게 만들다.",
+      "zh-Hans": "特别关注某事，使其更加引人注目或重要。",
+      "es": "Hizo que algo recibiera atención especial, haciéndolo más notorio o importante.",
+      "pt-BR": "Chamou atenção especial para algo, tornando-o mais perceptível ou importante."
+    },
+    {
+      "id": 2,
+      "ja": "表示や案内目的で使用される標識、特に公共の標識。",
+      "ko": "전시나 안내를 위해 사용되는 표지판, 특히 공공 표지판.",
+      "zh-Hans": "用于展示或引导的标志，特别是公共标志。",
+      "es": "Letreros, especialmente públicos, utilizados para exhibición u orientación.",
+      "pt-BR": "Placas, especialmente públicas, usadas para exibição ou orientação."
+    },
+    {
+      "id": 3,
+      "ja": "重要であるか、または注目に値する程度に。",
+      "ko": "중요하거나 눈에 띄는 정도로.",
+      "zh-Hans": "达到重要或显著的程度。",
+      "es": "En un grado que es importante o notorio.",
+      "pt-BR": "Em um grau que é importante ou perceptível."
+    },
+    {
+      "id": 4,
+      "ja": "多くの損害や破壊を引き起こすこと。極めて有害であるか破壊的であること。",
+      "ko": "많은 손상이나 파괴를 일으키는; 극히 해롭거나 파괴적인.",
+      "zh-Hans": "造成大量损害或破坏；极其有害或具有破坏性。",
+      "es": "Que causa mucho daño o destrucción; extremadamente dañino o destructivo.",
+      "pt-BR": "Que causa muito dano ou destruição; extremamente nocivo ou destrutivo."
+    },
+    {
+      "id": 5,
+      "ja": "すでに述べられたことに別の点を追加するために使用される。",
+      "ko": "이미 언급된 내용에 다른 점을 추가할 때 사용되는.",
+      "zh-Hans": "用于补充已说过的内容。",
+      "es": "Se utiliza para añadir otro punto a lo que ya se ha dicho.",
+      "pt-BR": "Usado para adicionar outro ponto ao que já foi dito."
+    },
+    {
+      "id": 6,
+      "ja": "場所の状況や物理的な状態。",
+      "ko": "어떤 장소의 상황이나 물리적 상태.",
+      "zh-Hans": "某个地方的环境或物理状态。",
+      "es": "Las circunstancias o el estado físico de un lugar.",
+      "pt-BR": "As circunstâncias ou o estado físico de um lugar."
+    },
+    {
+      "id": 7,
+      "ja": "ある状況に対する心配の気持ち。",
+      "ko": "어떤 상황에 대한 걱정스러운 감정.",
+      "zh-Hans": "对某种情况感到担忧。",
+      "es": "Sentimientos de preocupación sobre una situación.",
+      "pt-BR": "Sentimentos de preocupação sobre uma situação."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:04:18.981438+00:00"
+  }
+}

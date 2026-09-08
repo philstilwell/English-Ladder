@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A bad event happened in Berlin, Germany.",
+      "It was on Saturday night.",
+      "Many people were at a Pride event.",
+      "A car rammed into the crowd of people.",
+      "This made many people scared.",
+      "Police started a manhunt for a suspect.",
+      "The suspect drove the car.",
+      "Police are now looking for this person.",
+      "The event happened in the German capital.",
+      "Police want to find out why this happened."
+    ],
+    "vocabulary": [
+      {
+        "term": "rammed",
+        "part_of_speech": "verb",
+        "definition": "hit something very hard with force"
+      },
+      {
+        "term": "crowd",
+        "part_of_speech": "noun",
+        "definition": "a large group of people together in one place"
+      },
+      {
+        "term": "manhunt",
+        "part_of_speech": "noun",
+        "definition": "a big search by police for a person"
+      },
+      {
+        "term": "suspect",
+        "part_of_speech": "noun",
+        "definition": "a person who police think did a crime"
+      },
+      {
+        "term": "capital",
+        "part_of_speech": "noun",
+        "definition": "the most important city in a country, where the government is"
+      },
+      {
+        "term": "event",
+        "part_of_speech": "noun",
+        "definition": "An event is something important that happens, like a party or meeting."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に強い力で何かにぶつかること。",
+      "ko": "아주 강한 힘으로 무언가를 세게 치다.",
+      "zh-Hans": "用非常大的力气猛烈撞击某物。",
+      "es": "Golpear algo con mucha fuerza.",
+      "pt-BR": "Bater com muita força em algo."
+    },
+    {
+      "id": 1,
+      "ja": "ある場所に集まっている大勢の人々のグループ。",
+      "ko": "한곳에 모여 있는 많은 사람들의 집단.",
+      "zh-Hans": "许多人聚集在一个地方。",
+      "es": "Un grupo grande de personas juntas en un mismo lugar.",
+      "pt-BR": "Um grupo grande de pessoas reunidas em um só lugar."
+    },
+    {
+      "id": 2,
+      "ja": "警察がある人物を大々的に捜索すること。",
+      "ko": "경찰이 어떤 사람을 대규모로 수색하는 것.",
+      "zh-Hans": "警方对某个人的大规模搜捕。",
+      "es": "Una gran búsqueda de una persona realizada por la policía.",
+      "pt-BR": "Uma grande busca por uma pessoa feita pela polícia."
+    },
+    {
+      "id": 3,
+      "ja": "警察がある犯罪を犯したと考える人。",
+      "ko": "경찰이 범죄를 저질렀다고 생각하는 사람.",
+      "zh-Hans": "警方认为犯了罪的人。",
+      "es": "Una persona que la policía cree que cometió un crimen.",
+      "pt-BR": "Uma pessoa que a polícia pensa que cometeu um crime."
+    },
+    {
+      "id": 4,
+      "ja": "ある国で最も重要な都市で、政府がある場所。",
+      "ko": "한 나라에서 가장 중요한 도시로, 정부가 있는 곳.",
+      "zh-Hans": "一个国家最重要的城市，政府所在地。",
+      "es": "La ciudad más importante de un país, donde se encuentra el gobierno.",
+      "pt-BR": "A cidade mais importante de um país, onde o governo está."
+    },
+    {
+      "id": 5,
+      "ja": "パーティーや会議のように、起こる重要な出来事。",
+      "ko": "파티나 회의처럼 중요한 일이 발생하는 것입니다.",
+      "zh-Hans": "事件是指发生的某种重要的事情，比如派对或会议。",
+      "es": "Un evento es algo importante que sucede, como una fiesta o una reunión.",
+      "pt-BR": "Um evento é algo importante que acontece, como uma festa ou uma reunião."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:01:29.848657+00:00"
+  }
+}

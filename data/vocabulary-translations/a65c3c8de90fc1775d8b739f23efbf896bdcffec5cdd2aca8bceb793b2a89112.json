@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ukraine made a strike on Russia.",
+      "This strike was in the Tatarstan region.",
+      "Ukrainian drones caused the attack there.",
+      "At least 13 people were killed.",
+      "Russian officials gave this information.",
+      "They said it was a very strong attack.",
+      "It was one of the deadliest attacks on Russia.",
+      "This happened during Moscow's war on Ukraine.",
+      "The war started some time ago.",
+      "Many people are sad about these events."
+    ],
+    "vocabulary": [
+      {
+        "term": "strike",
+        "part_of_speech": "noun",
+        "definition": "An attack, often by military force."
+      },
+      {
+        "term": "region",
+        "part_of_speech": "noun",
+        "definition": "A large area of a country or the world."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb",
+        "definition": "Died because of an action or violence."
+      },
+      {
+        "term": "officials",
+        "part_of_speech": "noun",
+        "definition": "People who have an important job in a government or organization."
+      },
+      {
+        "term": "war",
+        "part_of_speech": "noun",
+        "definition": "A fight between two or more countries, using weapons."
+      },
+      {
+        "term": "deadliest",
+        "part_of_speech": "adjective",
+        "definition": "Causing the most deaths; most dangerous or destructive in terms of loss of life."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "攻撃。特に軍事力によるもの。",
+      "ko": "군사력을 이용한 공격.",
+      "zh-Hans": "通常指军事力量发动的袭击。",
+      "es": "Un ataque, a menudo por fuerza militar.",
+      "pt-BR": "Um ataque, frequentemente por força militar."
+    },
+    {
+      "id": 1,
+      "ja": "国や世界の広い地域。",
+      "ko": "한 나라나 세계의 넓은 지역.",
+      "zh-Hans": "一个国家或世界的广阔区域。",
+      "es": "Un área grande de un país o del mundo.",
+      "pt-BR": "Uma grande área de um país ou do mundo."
+    },
+    {
+      "id": 2,
+      "ja": "行動や暴力によって命を落とした。",
+      "ko": "어떤 행동이나 폭력으로 인해 죽음을 맞이했다.",
+      "zh-Hans": "因某种行为或暴力而死亡。",
+      "es": "Murió a causa de una acción o violencia.",
+      "pt-BR": "Morreu por causa de uma ação ou violência."
+    },
+    {
+      "id": 3,
+      "ja": "政府や組織において重要な職務を持つ人々。",
+      "ko": "정부나 조직에서 중요한 직책을 맡고 있는 사람들.",
+      "zh-Hans": "在政府或组织中担任重要职务的人。",
+      "es": "Personas que tienen un trabajo importante en un gobierno u organización.",
+      "pt-BR": "Pessoas que têm um trabalho importante em um governo ou organização."
+    },
+    {
+      "id": 4,
+      "ja": "2つ以上の国が兵器を使って戦うこと。",
+      "ko": "두 개 이상의 국가가 무기를 사용하여 싸우는 것.",
+      "zh-Hans": "两个或多个国家之间使用武器进行的战斗。",
+      "es": "Una lucha entre dos o más países, utilizando armas.",
+      "pt-BR": "Una lucha entre dos o más países, utilizando armas."
+    },
+    {
+      "id": 5,
+      "ja": "最も多くの死者をもたらすこと。命の損失に関して最も危険であるか、破壊的であること。",
+      "ko": "가장 많은 사망자를 발생시키는 것; 인명 손실 측면에서 가장 위험하거나 파괴적인 것.",
+      "zh-Hans": "造成最多死亡的；在生命损失方面最危险或最具破坏性的。",
+      "es": "Que causa la mayor cantidad de muertes; el más peligroso o destructivo en términos de pérdida de vidas.",
+      "pt-BR": "Que causa o maior número de mortes; o mais perigoso ou destrutivo em termos de perda de vidas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:00.146514+00:00"
+  }
+}

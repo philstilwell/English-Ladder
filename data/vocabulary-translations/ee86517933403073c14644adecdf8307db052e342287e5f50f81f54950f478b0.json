@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Trump from the US talked about Canada.",
+      "He said Canada wants to enjoy the benefits of being a US state.",
+      "Trade talks between the US and Canada did not succeed.",
+      "The discussions *collapsed*, meaning they failed completely.",
+      "Canada's Prime Minister announced new taxes on goods from the US.",
+      "These are *retaliatory tariffs*, taxes made as a punishment.",
+      "He said Canada was *reluctantly* introducing these new tariffs.",
+      "The Prime Minister *accused* the US of starting a problem.",
+      "He stated that the US started a *trade war* between the countries.",
+      "This means both nations are putting higher taxes on each other's products."
+    ],
+    "vocabulary": [
+      {
+        "term": "collapsed",
+        "part_of_speech": "verb",
+        "definition": "Stopped working or failed suddenly; fell down."
+      },
+      {
+        "term": "retaliatory tariffs",
+        "part_of_speech": "noun phrase",
+        "definition": "Special taxes placed on imported goods from another country as a form of punishment or response."
+      },
+      {
+        "term": "reluctantly",
+        "part_of_speech": "adverb",
+        "definition": "To do something unwillingly or without really wanting to."
+      },
+      {
+        "term": "accused",
+        "part_of_speech": "verb",
+        "definition": "Said that someone did something wrong or was guilty of something."
+      },
+      {
+        "term": "trade war",
+        "part_of_speech": "noun phrase",
+        "definition": "When countries put high taxes or restrictions on each other's goods, causing economic conflict."
+      },
+      {
+        "term": "benefits",
+        "part_of_speech": "noun",
+        "definition": "Advantages or good effects that something has."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "急に機能しなくなったり、失敗したり、崩れ落ちたりした。",
+      "ko": "갑자기 작동을 멈추거나 실패했고, 무너졌습니다.",
+      "zh-Hans": "突然停止运作或失败；倒塌。",
+      "es": "Dejó de funcionar o falló de repente; se cayó.",
+      "pt-BR": "Parou de funcionar ou falhou subitamente; caiu."
+    },
+    {
+      "id": 1,
+      "ja": "罰として、または報復として、他国からの輸入品に課される特別な税金。",
+      "ko": "처벌 또는 대응의 형태로 다른 나라에서 수입된 상품에 부과되는 특별 세금.",
+      "zh-Hans": "作为一种惩罚或回应，对来自另一个国家的进口商品征收的特殊税款。",
+      "es": "Impuestos especiales aplicados a bienes importados de otro país como forma de castigo o respuesta.",
+      "pt-BR": "Impostos especiais aplicados a produtos importados de outro país como forma de punição ou resposta."
+    },
+    {
+      "id": 2,
+      "ja": "気乗りしないまま、または本当はしたくないと思いながら何かをすること。",
+      "ko": "마지못해 또는 정말로 원하지 않으면서 무엇인가를 하는 것.",
+      "zh-Hans": "不情愿地或并非真心想做某事。",
+      "es": "Hacer algo de mala gana o sin realmente quererlo.",
+      "pt-BR": "Fazer algo sem vontade ou sem realmente querer."
+    },
+    {
+      "id": 3,
+      "ja": "誰かが何か悪いことをした、または何かの罪があると述べた。",
+      "ko": "누군가가 잘못을 저질렀거나 어떤 일에 유죄라고 말했습니다.",
+      "zh-Hans": "指责某人做错了事或有罪。",
+      "es": "Dijo que alguien hizo algo mal o fue culpable de algo.",
+      "pt-BR": "Disse que alguém fez algo errado ou era culpado de algo."
+    },
+    {
+      "id": 4,
+      "ja": "国々がお互いの商品に高い税金や制限を課し、経済的な対立を引き起こすこと。",
+      "ko": "국가들이 서로의 상품에 높은 세금이나 제한을 부과하여 경제적 갈등을 일으키는 상황.",
+      "zh-Hans": "当国家之间对彼此的商品征收高额关税或施加限制，从而引发经济冲突。",
+      "es": "Cuando los países imponen altos impuestos o restricciones a los productos de otros, causando un conflicto económico.",
+      "pt-BR": "Quando países aplicam impostos altos ou restrições aos produtos uns dos outros, causando conflito econômico."
+    },
+    {
+      "id": 5,
+      "ja": "何かが持つ利点や良い効果。",
+      "ko": "어떤 것이 가지는 이점이나 좋은 효과.",
+      "zh-Hans": "事物所具有的优势或良好效果。",
+      "es": "Ventajas o buenos efectos que algo tiene.",
+      "pt-BR": "Vantagens ou bons efeitos que algo possui."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:55:12.777892+00:00"
+  }
+}

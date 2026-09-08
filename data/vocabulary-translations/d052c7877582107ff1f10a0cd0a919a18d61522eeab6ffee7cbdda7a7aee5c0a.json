@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ukraine's leader, Mr. Zelensky, went to Washington.",
+      "He wants to talk with Mr. Trump.",
+      "Mr. Zelensky hopes to get more air defences.",
+      "These are systems to protect Ukraine from missiles.",
+      "Russia has escalated its attacks on Ukraine.",
+      "These attacks have been very dangerous and caused deadly attacks.",
+      "Ukraine needs strong commitments from the US.",
+      "These commitments mean the US promises to help.",
+      "Mr. Zelensky wants to make sure the help is firm.",
+      "So, Ukraine can protect its people better."
+    ],
+    "vocabulary": [
+      {
+        "term": "leader",
+        "part_of_speech": "noun",
+        "definition": "A person who guides or commands a group."
+      },
+      {
+        "term": "air defences",
+        "part_of_speech": "noun phrase",
+        "definition": "Systems that protect a country from attacks by planes or missiles in the sky."
+      },
+      {
+        "term": "commitments",
+        "part_of_speech": "noun",
+        "definition": "Strong promises to do something or give something."
+      },
+      {
+        "term": "escalated",
+        "part_of_speech": "verb (past simple)",
+        "definition": "Became more intense, larger, or more serious."
+      },
+      {
+        "term": "deadly attacks",
+        "part_of_speech": "noun phrase",
+        "definition": "Violent actions that can cause death or serious harm."
+      },
+      {
+        "term": "missiles",
+        "part_of_speech": "noun",
+        "definition": "weapons that fly through the air to hit a target"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "グループを導いたり、指揮したりする人。",
+      "ko": "어떤 집단을 이끌거나 명령하는 사람.",
+      "zh-Hans": "引导或指挥一个团体的人。",
+      "es": "Una persona que guía o dirige un grupo.",
+      "pt-BR": "Uma pessoa que guia ou comanda um grupo."
+    },
+    {
+      "id": 1,
+      "ja": "空中にいる飛行機やミサイルからの攻撃から国を守るシステム。",
+      "ko": "하늘에 있는 비행기나 미사일 공격으로부터 한 나라를 보호하는 시스템.",
+      "zh-Hans": "保护一个国家免受空中飞机或导弹袭击的系统。",
+      "es": "Sistemas que protegen a un país de ataques de aviones o misiles en el cielo.",
+      "pt-BR": "Sistemas que protegem um país de ataques de aviões ou mísseis no céu."
+    },
+    {
+      "id": 2,
+      "ja": "何かをする、あるいは何かを与えるという強い約束。",
+      "ko": "어떤 일을 하거나 무엇을 주겠다는 강력한 약속.",
+      "zh-Hans": "做出某事或给予某物的坚定承诺。",
+      "es": "Promesas firmes de hacer o dar algo.",
+      "pt-BR": "Promessas fortes de fazer ou dar algo."
+    },
+    {
+      "id": 3,
+      "ja": "より激しく、より大きく、またはより深刻になった。",
+      "ko": "더 강렬해지거나, 더 커지거나, 더 심각해졌다.",
+      "zh-Hans": "变得更激烈、更大或更严重。",
+      "es": "Se volvió más intenso, grande o serio.",
+      "pt-BR": "Tornou-se mais intenso, maior ou mais grave."
+    },
+    {
+      "id": 4,
+      "ja": "死や深刻な危害を引き起こす可能性のある暴力的な行動。",
+      "ko": "사망이나 심각한 해를 초래할 수 있는 폭력적인 행동.",
+      "zh-Hans": "可能导致死亡或严重伤害的暴力行为。",
+      "es": "Acciones violentas que pueden causar la muerte o daños graves.",
+      "pt-BR": "Ações violentas que podem causar morte ou danos graves."
+    },
+    {
+      "id": 5,
+      "ja": "標的を攻撃するために空を飛ぶ武器。",
+      "ko": "표적을 맞히기 위해 공중을 날아가는 무기.",
+      "zh-Hans": "在空中飞行以击中目标的武器。",
+      "es": "Armas que vuelan por el aire para alcanzar un objetivo.",
+      "pt-BR": "Armas que voam pelo ar para atingir um alvo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:01:03.437881+00:00"
+  }
+}

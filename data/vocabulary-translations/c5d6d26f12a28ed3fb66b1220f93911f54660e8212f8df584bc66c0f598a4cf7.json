@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "At a market stall, Mina asks for enough tomatoes to prepare dinner for two.",
+      "The vendor recommends half a kilo, a quantity she finds difficult to visualize.",
+      "Reluctant to agree without understanding, she asks whether he could demonstrate what that amount looks like.",
+      "By placing several tomatoes on the scale, he makes an abstract measurement tangible.",
+      "Her request for clarification allows the exchange to continue without either speaker treating uncertainty as a failure.",
+      "The encounter illustrates how a modest, well-phrased question can support mutual understanding."
+    ],
+    "vocabulary": [
+      {
+        "term": "visualize",
+        "part_of_speech": "verb",
+        "definition": "form a clear mental picture of something"
+      },
+      {
+        "term": "tangible",
+        "part_of_speech": "adjective",
+        "definition": "concrete and possible to see or experience directly"
+      },
+      {
+        "term": "mutual",
+        "part_of_speech": "adjective",
+        "definition": "shared by both people or sides"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かの鮮明な心のイメージを形成する",
+      "ko": "어떤 것의 선명한 정신적 이미지를 형성하다",
+      "zh-Hans": "在脑海中形成某物的清晰图像",
+      "es": "Formar una imagen mental clara de algo.",
+      "pt-BR": "Formar uma imagem mental clara de algo."
+    },
+    {
+      "id": 1,
+      "ja": "具体的なもので、直接見たり経験したりできるもの",
+      "ko": "구체적이며 직접 보거나 경험할 수 있는",
+      "zh-Hans": "具体且可以直接看到或体验到的",
+      "es": "Concreto y posible de ver o experimentar directamente.",
+      "pt-BR": "Concreto e possível de ver ou experimentar diretamente."
+    },
+    {
+      "id": 2,
+      "ja": "両者または双方によって共有される",
+      "ko": "양쪽 사람이나 측면에서 공유되는",
+      "zh-Hans": "由双方或两方共享的",
+      "es": "Compartido por ambas personas o partes.",
+      "pt-BR": "Compartilhado por ambas as pessoas ou lados."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:44.265099+00:00"
+  }
+}

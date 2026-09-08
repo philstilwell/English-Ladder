@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Trees can help cool a city.",
+      "Their leaves give people shade on hot days.",
+      "Trees also release water into the air, and this helps cool it.",
+      "A tree near a building can reduce the need for air conditioning.",
+      "People need to choose trees that suit the local climate.",
+      "Young trees need care after people plant them."
+    ],
+    "vocabulary": [
+      {
+        "term": "shade",
+        "part_of_speech": "noun",
+        "definition": "a place where something blocks direct sunlight"
+      },
+      {
+        "term": "reduce",
+        "part_of_speech": "verb",
+        "definition": "to make something smaller or less"
+      },
+      {
+        "term": "climate",
+        "part_of_speech": "noun",
+        "definition": "the usual weather in a place over many years"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "日光が直接当たらない場所。",
+      "ko": "어떤 것이 직사광선을 가려주는 장소.",
+      "zh-Hans": "某物阻挡阳光直射的地方。",
+      "es": "Un lugar donde algo bloquea la luz solar directa.",
+      "pt-BR": "Um lugar onde algo bloqueia a luz solar direta."
+    },
+    {
+      "id": 1,
+      "ja": "何かの大きさを小さくしたり、量を減らしたりすること。",
+      "ko": "어떤 것을 더 작게 만들거나 양을 줄이다.",
+      "zh-Hans": "使某物变得更小或更少。",
+      "es": "Hacer algo más pequeño o en menor cantidad.",
+      "pt-BR": "Tornar algo menor ou em menor quantidade."
+    },
+    {
+      "id": 2,
+      "ja": "ある場所での何年にもわたる通常の天気。",
+      "ko": "한 장소에서 여러 해 동안의 일반적인 날씨.",
+      "zh-Hans": "一个地方多年来的常规天气。",
+      "es": "El tiempo habitual en un lugar durante muchos años.",
+      "pt-BR": "O tempo habitual de um lugar ao longo de muitos anos."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:24.211451+00:00"
+  }
+}

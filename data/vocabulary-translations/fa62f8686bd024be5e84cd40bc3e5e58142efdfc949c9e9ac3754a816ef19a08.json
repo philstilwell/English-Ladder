@@ -1,0 +1,129 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The public can share their ideas about a new renewable energy company.",
+      "The Welsh government wants to own this company.",
+      "This company would develop wind and solar power plants.",
+      "It hopes to make energy cheaper for people over time.",
+      "But this company will not directly set electricity prices for homes.",
+      "It wants to help people use local energy and get investment for Wales.",
+      "Ministers say they want an energy system that is \"clean, cheap and owned by us.\""
+    ],
+    "vocabulary": [
+      {
+        "term": "public",
+        "part_of_speech": "noun",
+        "definition": "all the people in a country or area."
+      },
+      {
+        "term": "share",
+        "part_of_speech": "verb",
+        "definition": "to tell other people your ideas or feelings."
+      },
+      {
+        "term": "renewable",
+        "part_of_speech": "adjective",
+        "definition": "describing energy from sources that will not run out, like wind or sunlight."
+      },
+      {
+        "term": "company",
+        "part_of_speech": "noun",
+        "definition": "an organisation that sells things or services."
+      },
+      {
+        "term": "develop",
+        "part_of_speech": "verb",
+        "definition": "to build or create something new."
+      },
+      {
+        "term": "cheaper",
+        "part_of_speech": "adjective",
+        "definition": "costing less money."
+      },
+      {
+        "term": "prices",
+        "part_of_speech": "noun",
+        "definition": "the amounts of money you pay for things."
+      },
+      {
+        "term": "local",
+        "part_of_speech": "adjective",
+        "definition": "belonging to a particular area or neighbourhood."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "ある国や地域のすべての人々。",
+      "ko": "한 나라나 지역에 사는 모든 사람들.",
+      "zh-Hans": "一个国家或地区的所有人。",
+      "es": "Todas las personas de un país o una zona.",
+      "pt-BR": "Todas as pessoas em um país ou área."
+    },
+    {
+      "id": 1,
+      "ja": "自分の考えや気持ちを他の人に話すこと。",
+      "ko": "다른 사람들에게 자신의 생각이나 감정을 이야기하는 것.",
+      "zh-Hans": "把自己的想法或感受告诉其他人。",
+      "es": "Contarles a otras personas tus ideas o sentimientos.",
+      "pt-BR": "Contar suas ideias ou sentimentos a outras pessoas."
+    },
+    {
+      "id": 2,
+      "ja": "風や太陽光のように、尽きることのない資源から得られるエネルギーについて説明するものです。",
+      "ko": "바람이나 햇빛처럼 고갈되지 않는 자원에서 얻는 에너지를 설명하는 말.",
+      "zh-Hans": "形容来自风能或太阳能等不会耗尽的能源。",
+      "es": "Que describe la energía de fuentes que no se agotarán, como el viento o la luz solar.",
+      "pt-BR": "Descreve a energia de fontes que não se esgotam, como o vento ou a luz do sol."
+    },
+    {
+      "id": 3,
+      "ja": "物やサービスを売る組織。",
+      "ko": "물건이나 서비스를 판매하는 조직.",
+      "zh-Hans": "销售商品或服务的组织。",
+      "es": "Una organización que vende cosas o servicios.",
+      "pt-BR": "Uma organização que vende produtos ou serviços."
+    },
+    {
+      "id": 4,
+      "ja": "新しいものを建てたり、作り出したりすること。",
+      "ko": "새로운 것을 만들거나 건설하는 것.",
+      "zh-Hans": "建造或创造新事物。",
+      "es": "Construir o crear algo nuevo.",
+      "pt-BR": "Construir ou criar algo novo."
+    },
+    {
+      "id": 5,
+      "ja": "より少ないお金がかかること。",
+      "ko": "돈이 덜 드는.",
+      "zh-Hans": "花费更少的钱。",
+      "es": "Que cuesta menos dinero.",
+      "pt-BR": "Que custa menos dinheiro."
+    },
+    {
+      "id": 6,
+      "ja": "物事に対して支払うお金の額。",
+      "ko": "물건에 대해 지불하는 금액.",
+      "zh-Hans": "你为物品支付的金额。",
+      "es": "Las cantidades de dinero que pagas por las cosas.",
+      "pt-BR": "As quantias de dinheiro que você paga por algo."
+    },
+    {
+      "id": 7,
+      "ja": "特定の地域や近隣に属していること。",
+      "ko": "특정 지역이나 동네에 속하는.",
+      "zh-Hans": "属于特定区域或社区的。",
+      "es": "Que pertenece a un área o barrio en particular.",
+      "pt-BR": "Que pertence a uma área ou vizinhança específica."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:51:56.163437+00:00"
+  }
+}

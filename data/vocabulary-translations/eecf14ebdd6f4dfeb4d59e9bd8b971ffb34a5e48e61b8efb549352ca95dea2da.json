@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Tibet recently had big floods.",
+      "These floods caused much damage.",
+      "Many people were victims of the floods.",
+      "There is video footage about these events.",
+      "This footage shows very bad scenes.",
+      "But this video is hidden in China.",
+      "People in China cannot see it.",
+      "It is not for public view.",
+      "So, we know little about the victims.",
+      "Getting information about the floods is difficult."
+    ],
+    "vocabulary": [
+      {
+        "term": "floods",
+        "part_of_speech": "noun",
+        "definition": "Too much water that covers land that is usually dry."
+      },
+      {
+        "term": "victims",
+        "part_of_speech": "noun",
+        "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
+      },
+      {
+        "term": "footage",
+        "part_of_speech": "noun",
+        "definition": "Part of a film or video recording that shows an event."
+      },
+      {
+        "term": "hidden",
+        "part_of_speech": "adjective",
+        "definition": "Kept secret or put in a place where it cannot be seen or found."
+      },
+      {
+        "term": "public view",
+        "part_of_speech": "noun phrase",
+        "definition": "When something is shown to many people, not kept secret or private."
+      },
+      {
+        "term": "damage",
+        "part_of_speech": "noun",
+        "definition": "harm that makes something broken or less useful"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "通常は乾いている土地を覆う、多すぎる水。",
+      "ko": "보통은 마른 땅을 덮는 너무 많은 물.",
+      "zh-Hans": "淹没通常干燥的土地的过量的水。",
+      "es": "Demasiada agua que cubre tierra que normalmente está seca.",
+      "pt-BR": "Muita água que cobre terras que geralmente são secas."
+    },
+    {
+      "id": 1,
+      "ja": "事故、犯罪、または災害のために傷ついたり苦しんだりする人々。",
+      "ko": "사고, 범죄 또는 재해로 인해 다치거나 고통받는 사람들.",
+      "zh-Hans": "因事故、犯罪或灾难而受伤或遭受痛苦的人。",
+      "es": "Personas que resultan heridas o sufren a causa de un accidente, un crimen o un desastre.",
+      "pt-BR": "Pessoas que se machucam ou sofrem por causa de um acidente, crime ou desastre."
+    },
+    {
+      "id": 2,
+      "ja": "ある出来事を映している映画やビデオ録画の一部。",
+      "ko": "어떤 사건을 보여주는 영화나 비디오 녹화의 일부.",
+      "zh-Hans": "电影或视频录制中显示某个事件的部分。",
+      "es": "Parte de una película o grabación de video que muestra un evento.",
+      "pt-BR": "Parte de uma gravação de filme ou vídeo que mostra um evento."
+    },
+    {
+      "id": 3,
+      "ja": "秘密にされているか、見ることができない、または見つけることができない場所に置かれていること。",
+      "ko": "비밀로 유지되거나 볼 수 없거나 찾을 수 없는 곳에 놓인.",
+      "zh-Hans": "被保密或被放在一个看不见或找不到的地方。",
+      "es": "Mantenido en secreto o puesto en un lugar donde no se puede ver ni encontrar.",
+      "pt-BR": "Mantido em segredo ou colocado em um lugar onde não pode ser visto ou encontrado."
+    },
+    {
+      "id": 4,
+      "ja": "何かが多くの人々に示され、秘密にされたり私的にされたりしない状態。",
+      "ko": "어떤 것이 많은 사람들에게 공개되고, 비밀로 유지되거나 사적인 것이 아닌 상태.",
+      "zh-Hans": "某物被展示给许多人，而不是被保密或私人占有。",
+      "es": "Cuando algo se muestra a muchas personas, no se mantiene en secreto ni en privado.",
+      "pt-BR": "Quando algo é mostrado a muitas pessoas, não é mantido em segredo ou em particular."
+    },
+    {
+      "id": 5,
+      "ja": "何かを壊したり、役に立たなくしたりする害。",
+      "ko": "무언가를 부수거나 덜 유용하게 만드는 해로움.",
+      "zh-Hans": "使某物破损或失去效用的损害。",
+      "es": "El daño que hace que algo esté roto o sea menos útil.",
+      "pt-BR": "Prejuízo que faz com que algo fique quebrado ou menos útil."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:52.453389+00:00"
+  }
+}

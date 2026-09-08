@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Iceland had a special event.",
+      "People voted about joining the EU.",
+      "The EU is the European Union.",
+      "Many countries are members of the EU.",
+      "The government wanted to restart talks.",
+      "But most people said \"no\" to this.",
+      "About 52.8% of voters rejected the idea.",
+      "They voted against resuming discussions.",
+      "A broadcaster called RUV reported this news.",
+      "So, Iceland will not talk about joining the EU now."
+    ],
+    "vocabulary": [
+      {
+        "term": "voted",
+        "part_of_speech": "verb",
+        "definition": "To choose something in an election or meeting by casting a ballot."
+      },
+      {
+        "term": "joining",
+        "part_of_speech": "verb",
+        "definition": "Becoming a member of a group or organization, like a club or a union."
+      },
+      {
+        "term": "EU",
+        "part_of_speech": "noun",
+        "definition": "The European Union, a group of many European countries that work together."
+      },
+      {
+        "term": "rejected",
+        "part_of_speech": "verb",
+        "definition": "To refuse to accept something; to say 'no' to an idea or a proposal."
+      },
+      {
+        "term": "restart",
+        "part_of_speech": "verb",
+        "definition": "To begin something again after it has stopped, like starting a game over."
+      },
+      {
+        "term": "broadcaster",
+        "part_of_speech": "noun",
+        "definition": "A company or person whose business is to transmit television or radio programs, especially news."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "選挙や会議で、投票用紙を投じることによって何かを選ぶこと。",
+      "ko": "선거나 회의에서 투표를 통해 무언가를 선택하는 것.",
+      "zh-Hans": "在选举或会议中通过投票来选择某事。",
+      "es": "Elegir algo en una elección o reunión emitiendo un voto.",
+      "pt-BR": "Escolher algo em uma eleição ou reunião por meio de um voto."
+    },
+    {
+      "id": 1,
+      "ja": "クラブや組合のような、あるグループや組織の一員になること。",
+      "ko": "클럽이나 조합과 같은 그룹이나 조직의 구성원이 되는 것.",
+      "zh-Hans": "成为一个团体或组织的成员，比如俱乐部或工会。",
+      "es": "Convertirse en miembro de un grupo u organización, como un club o un sindicato.",
+      "pt-BR": "Tornar-se membro de um grupo ou organização, como um clube ou um sindicato."
+    },
+    {
+      "id": 2,
+      "ja": "多くのヨーロッパ諸国が協力し合って活動するグループである欧州連合のこと。",
+      "ko": "유럽 연합으로, 함께 협력하는 많은 유럽 국가들의 모임.",
+      "zh-Hans": "欧盟，一个由许多欧洲国家组成的、共同合作的组织。",
+      "es": "La Unión Europea, un grupo de muchos países europeos que trabajan juntos.",
+      "pt-BR": "A União Europeia, um grupo de muitos países europeus que trabalham juntos."
+    },
+    {
+      "id": 3,
+      "ja": "何かを受け入れることを拒否すること。ある考えや提案に対して「ノー」と言うこと。",
+      "ko": "무언가를 받아들이기를 거부하는 것. 아이디어나 제안에 '아니요'라고 말하는 것.",
+      "zh-Hans": "拒绝接受某事；对一个想法或提议说“不”。",
+      "es": "Negarse a aceptar algo; decir 'no' a una idea o propuesta.",
+      "pt-BR": "Recusar-se a aceitar algo; dizer 'não' a uma ideia ou proposta."
+    },
+    {
+      "id": 4,
+      "ja": "止まっていたものを再び開始すること。例えば、ゲームを最初からやり直すように。",
+      "ko": "멈췄던 것을 다시 시작하는 것. 예를 들어, 게임을 다시 시작하는 것처럼.",
+      "zh-Hans": "在某事停止后再次开始，就像重新开始一个游戏。",
+      "es": "Comenzar algo de nuevo después de que se ha detenido, como empezar un juego otra vez.",
+      "pt-BR": "Começar algo novamente depois de ter parado, como recomeçar um jogo."
+    },
+    {
+      "id": 5,
+      "ja": "テレビやラジオの番組、特にニュースを送信することを事業とする会社または個人。",
+      "ko": "텔레비전이나 라디오 프로그램, 특히 뉴스를 송신하는 것을 사업으로 하는 회사나 사람.",
+      "zh-Hans": "一家以传输电视或广播节目（尤其是新闻）为业务的公司或个人。",
+      "es": "Una empresa o persona cuyo negocio es transmitir programas de televisión o radio, especialmente noticias.",
+      "pt-BR": "Uma empresa ou pessoa cujo negócio é transmitir programas de televisão ou rádio, especialmente notícias."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:40.343901+00:00"
+  }
+}

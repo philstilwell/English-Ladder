@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Changing weather may cause more disruption to air travel.",
+      "Summer storms brought long delays to flights near London.",
+      "Some planes had to wait on the ground while staff managed busy skies.",
+      "Some planes might need to change their routes.",
+      "Pilots use weather information to help them avoid dangerous storms.",
+      "Airports need space and services for passengers whose planes arrive somewhere unexpected."
+    ],
+    "vocabulary": [
+      {
+        "term": "disruption",
+        "part_of_speech": "noun",
+        "definition": "a problem that interrupts normal activity"
+      },
+      {
+        "term": "delays",
+        "part_of_speech": "plural noun",
+        "definition": "times when something happens later than planned"
+      },
+      {
+        "term": "routes",
+        "part_of_speech": "plural noun",
+        "definition": "the ways used to travel from one place to another"
+      },
+      {
+        "term": "pilots",
+        "part_of_speech": "plural noun",
+        "definition": "people who fly aircraft"
+      },
+      {
+        "term": "passengers",
+        "part_of_speech": "plural noun",
+        "definition": "people travelling in a vehicle who are not driving or flying it"
+      },
+      {
+        "term": "unexpected",
+        "part_of_speech": "adjective",
+        "definition": "not thought likely to happen"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "通常の活動を中断させる問題。",
+      "ko": "정상적인 활동을 방해하는 문제.",
+      "zh-Hans": "中断正常活动的问题。",
+      "es": "Un problema que interrumpe la actividad normal.",
+      "pt-BR": "Um problema que interrompe a atividade normal."
+    },
+    {
+      "id": 1,
+      "ja": "何かが予定より遅れて起こる時。",
+      "ko": "어떤 일이 계획보다 늦게 발생하는 시간.",
+      "zh-Hans": "事情发生时间比计划晚的时候。",
+      "es": "Momentos en los que algo ocurre más tarde de lo previsto.",
+      "pt-BR": "Momentos em que algo acontece mais tarde do que o planejado."
+    },
+    {
+      "id": 2,
+      "ja": "ある場所から別の場所へ移動するために使われる道。",
+      "ko": "한 장소에서 다른 장소로 이동하는 데 사용되는 길.",
+      "zh-Hans": "从一个地方到另一个地方所使用的路线。",
+      "es": "Los caminos utilizados para viajar de un lugar a otro.",
+      "pt-BR": "As maneiras usadas para viajar de um lugar para outro."
+    },
+    {
+      "id": 3,
+      "ja": "航空機を操縦する人々。",
+      "ko": "항공기를 조종하는 사람들.",
+      "zh-Hans": "驾驶飞机的人。",
+      "es": "Personas que vuelan aeronaves.",
+      "pt-BR": "Pessoas que pilotam aeronaves."
+    },
+    {
+      "id": 4,
+      "ja": "乗り物に乗っていて、運転したり操縦したりしていない人々。",
+      "ko": "차량에 탑승했지만 운전하거나 비행하지 않는 사람들.",
+      "zh-Hans": "乘坐交通工具但不驾驶或操纵它的人。",
+      "es": "Personas que viajan en un vehículo sin conducirlo ni volarlo.",
+      "pt-BR": "Pessoas que viajam em um veículo e não o estão dirigindo ou pilotando."
+    },
+    {
+      "id": 5,
+      "ja": "起こる可能性が高いと思われていないこと。",
+      "ko": "발생할 가능성이 있다고 생각되지 않는 것.",
+      "zh-Hans": "未曾预料会发生的事情。",
+      "es": "Que no se pensaba que fuera probable que ocurriera.",
+      "pt-BR": "Que não se esperava que fosse acontecer."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:16.435454+00:00"
+  }
+}

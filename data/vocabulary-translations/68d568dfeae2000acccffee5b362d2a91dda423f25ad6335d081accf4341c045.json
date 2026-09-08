@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Trump made a new announcement.",
+      "The United States will reduce its military drills with South Korea.",
+      "South Korea stayed out of the Iran war.",
+      "This was one reason for the President's choice.",
+      "President Trump said he has a very good relationship with North Korea's leader.",
+      "He also cites this friendship.",
+      "It is another reason for the change.",
+      "The decision is to downsize these exercises.",
+      "This means the joint training will become smaller.",
+      "The countries will still work together, but less often."
+    ],
+    "vocabulary": [
+      {
+        "term": "reduce",
+        "part_of_speech": "verb",
+        "definition": "To make something smaller or less."
+      },
+      {
+        "term": "military drills",
+        "part_of_speech": "noun phrase",
+        "definition": "Practice exercises for soldiers and armies."
+      },
+      {
+        "term": "very good relationship",
+        "part_of_speech": "noun phrase",
+        "definition": "When two people or countries are good friends."
+      },
+      {
+        "term": "cites",
+        "part_of_speech": "verb",
+        "definition": "To give a reason for something or to mention something."
+      },
+      {
+        "term": "downsize",
+        "part_of_speech": "verb",
+        "definition": "To make something smaller."
+      },
+      {
+        "term": "stayed out of",
+        "part_of_speech": "phrasal verb",
+        "definition": "To intentionally avoid becoming involved in a situation or conflict."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かをより小さくしたり、少なくしたりすること。",
+      "ko": "어떤 것을 더 작게 만들거나 수량을 줄이는 것.",
+      "zh-Hans": "使某物变得更小或更少。",
+      "es": "Hacer que algo sea más pequeño o menos.",
+      "pt-BR": "Tornar algo menor ou em menor quantidade."
+    },
+    {
+      "id": 1,
+      "ja": "兵士や軍隊のための訓練演習。",
+      "ko": "군인과 군대를 위한 훈련 연습.",
+      "zh-Hans": "士兵和军队的训练演习。",
+      "es": "Ejercicios de práctica para soldados y ejércitos.",
+      "pt-BR": "Exercícios de prática para soldados e exércitos."
+    },
+    {
+      "id": 2,
+      "ja": "二人の人や二つの国が良い友人である状態。",
+      "ko": "두 사람이나 두 국가가 좋은 친구인 상태.",
+      "zh-Hans": "当两个人或国家之间是好朋友时。",
+      "es": "Cuando dos personas o países son buenos amigos.",
+      "pt-BR": "Quando duas pessoas ou países são bons amigos."
+    },
+    {
+      "id": 3,
+      "ja": "何かの理由を述べたり、何かを挙げたりすること。",
+      "ko": "어떤 일에 대한 이유를 대거나 어떤 것을 언급하는 것.",
+      "zh-Hans": "为一个事物给出理由或提及某个事物。",
+      "es": "Dar una razón para algo o mencionar algo.",
+      "pt-BR": "Dar uma razão para algo ou mencionar algo."
+    },
+    {
+      "id": 4,
+      "ja": "何かをより小さくすること。",
+      "ko": "어떤 것을 더 작게 만드는 것.",
+      "zh-Hans": "使某物变得更小。",
+      "es": "Hacer algo más pequeño.",
+      "pt-BR": "Tornar algo menor."
+    },
+    {
+      "id": 5,
+      "ja": "状況や対立に関わらないように意図的に避けること。",
+      "ko": "어떤 상황이나 분쟁에 의도적으로 휘말리지 않는 것.",
+      "zh-Hans": "故意避免卷入某种情况或冲突。",
+      "es": "Evitar intencionadamente involucrarse en una situación o conflicto.",
+      "pt-BR": "Evitar intencionalmente se envolver em uma situação ou conflito."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:56:26.883059+00:00"
+  }
+}

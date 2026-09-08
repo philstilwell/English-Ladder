@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Russia is attacking Ukraine.",
+      "These attacks are happening on the Black Sea coastline.",
+      "Odesa is a city in Ukraine located on the Black Sea.",
+      "Russia used new strikes against cities like Odesa.",
+      "Many ships are now blackened from these recent attacks.",
+      "The docks in the ports are smashed and broken.",
+      "This shows a recent surge of attacks by Russia.",
+      "The news says no-one is safe from these strikes.",
+      "People in Odesa are in danger.",
+      "The attacks caused much damage to the port area."
+    ],
+    "vocabulary": [
+      {
+        "term": "attacks",
+        "part_of_speech": "noun",
+        "definition": "When an army or country tries to hurt another country or people with force."
+      },
+      {
+        "term": "coastline",
+        "part_of_speech": "noun",
+        "definition": "The land next to the sea or ocean."
+      },
+      {
+        "term": "smashed",
+        "part_of_speech": "adjective",
+        "definition": "Broken into many pieces or badly damaged with force."
+      },
+      {
+        "term": "surge",
+        "part_of_speech": "noun",
+        "definition": "A sudden and strong increase in something, like a lot of activity at once."
+      },
+      {
+        "term": "safe",
+        "part_of_speech": "adjective",
+        "definition": "Not in danger or protected from harm."
+      },
+      {
+        "term": "blackened",
+        "part_of_speech": "adjective",
+        "definition": "made black or dark, especially by fire or smoke"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "軍隊や国が武力を使って他の国や人々を傷つけようとすること。",
+      "ko": "군대나 국가가 무력을 사용하여 다른 국가나 사람들을 해치려 하는 것.",
+      "zh-Hans": "军队或国家试图用武力伤害另一个国家或人民的行为。",
+      "es": "Cuando un ejército o país intenta dañar a otro país o a personas usando la fuerza.",
+      "pt-BR": "Quando um exército ou país tenta ferir outro país ou pessoas usando a força."
+    },
+    {
+      "id": 1,
+      "ja": "海や大洋に隣接する陸地。",
+      "ko": "바다나 대양에 인접한 육지.",
+      "zh-Hans": "紧邻大海或海洋的陆地。",
+      "es": "La tierra que está junto al mar o al océano.",
+      "pt-BR": "A terra próxima ao mar ou oceano."
+    },
+    {
+      "id": 2,
+      "ja": "多くの破片に壊れたり、強い力でひどく損傷したりしている状態。",
+      "ko": "많은 조각으로 부서지거나 강한 힘에 의해 심하게 손상된.",
+      "zh-Hans": "被打破成许多碎片，或被强力严重损坏。",
+      "es": "Roto en muchos pedazos o gravemente dañado con fuerza.",
+      "pt-BR": "Quebrado em muitos pedaços ou seriamente danificado com força."
+    },
+    {
+      "id": 3,
+      "ja": "何かが突然強く増加すること。たとえば、一度に多くの活動が起こるような状況。",
+      "ko": "무언가가 갑자기 강하게 증가하는 것. 예를 들어, 한 번에 많은 활동이 일어나는 것과 같이.",
+      "zh-Hans": "某事物突然而强烈的增加，比如一下子出现大量活动。",
+      "es": "Un aumento repentino y fuerte en algo, como mucha actividad a la vez.",
+      "pt-BR": "Um aumento súbito e forte em algo, como muita atividade de uma só vez."
+    },
+    {
+      "id": 4,
+      "ja": "危険がない、または危害から守られている状態。",
+      "ko": "위험에 처하지 않거나 해로부터 보호되는.",
+      "zh-Hans": "没有危险或受到伤害保护的。",
+      "es": "Que no está en peligro o está protegido de cualquier daño.",
+      "pt-BR": "Não estar em perigo ou estar protegido de danos."
+    },
+    {
+      "id": 5,
+      "ja": "特に火や煙によって黒くまたは暗くなった状態。",
+      "ko": "특히 불이나 연기에 의해 검거나 어둡게 된.",
+      "zh-Hans": "变得黑色或深色，尤其因火或烟雾所致。",
+      "es": "Hecho negro u oscuro, especialmente por fuego o humo.",
+      "pt-BR": "Tornado preto ou escuro, especialmente por fogo ou fumaça."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:56.070847+00:00"
+  }
+}

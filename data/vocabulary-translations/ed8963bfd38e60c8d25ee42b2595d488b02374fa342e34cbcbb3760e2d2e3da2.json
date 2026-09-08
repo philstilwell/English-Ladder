@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Germany has blamed Russia for a failed drone attack on Leipzig airport.",
+      "Russia denies that it tried to attack a Ukrainian cargo plane there.",
+      "A robot was used to make an explosive drone safe.",
+      "The airport is an important Nato hub used by Ukrainian transport aircraft.",
+      "The EU and Nato have promised to increase pressure on Russia.",
+      "Nato’s leader has also expressed support for Germany.",
+      "European ministers are discussing stronger enforcement of sanctions and further visa restrictions.",
+      "Russia is accused of acting more recklessly."
+    ],
+    "vocabulary": [
+      {
+        "term": "denies",
+        "part_of_speech": "verb",
+        "definition": "says that a claim is not true"
+      },
+      {
+        "term": "cargo",
+        "part_of_speech": "noun",
+        "definition": "goods transported by an aircraft, ship or vehicle"
+      },
+      {
+        "term": "hub",
+        "part_of_speech": "noun",
+        "definition": "a central place where transport or other activities connect"
+      },
+      {
+        "term": "sanctions",
+        "part_of_speech": "plural noun",
+        "definition": "official restrictions used to put pressure on a country, organisation or person"
+      },
+      {
+        "term": "restrictions",
+        "part_of_speech": "plural noun",
+        "definition": "rules that limit what people can do"
+      },
+      {
+        "term": "expressed",
+        "part_of_speech": "verb",
+        "definition": "communicated a feeling, opinion or position"
+      },
+      {
+        "term": "increase",
+        "part_of_speech": "verb",
+        "definition": "to make something greater in amount, strength or level"
+      },
+      {
+        "term": "transport",
+        "part_of_speech": "noun",
+        "definition": "the movement of people or goods from one place to another"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "主張が真実ではないと言う。",
+      "ko": "어떤 주장이 사실이 아니라고 말하다.",
+      "zh-Hans": "声称某种说法不属实。",
+      "es": "Decir que una afirmación no es verdad.",
+      "pt-BR": "Dizer que uma afirmação não é verdadeira."
+    },
+    {
+      "id": 1,
+      "ja": "航空機、船、または乗り物によって輸送される物品。",
+      "ko": "항공기, 선박 또는 차량으로 운송되는 물품.",
+      "zh-Hans": "由飞机、船只或车辆运输的货物。",
+      "es": "Mercancías transportadas por una aeronave, barco o vehículo.",
+      "pt-BR": "Mercadorias transportadas por uma aeronave, navio ou veículo."
+    },
+    {
+      "id": 2,
+      "ja": "交通機関やその他の活動が連結する中心地。",
+      "ko": "교통이나 다른 활동들이 연결되는 중심지.",
+      "zh-Hans": "交通或其他活动连接的中心地点。",
+      "es": "Un lugar central donde el transporte u otras actividades se conectan.",
+      "pt-BR": "Um lugar central onde transportes ou outras atividades se conectam."
+    },
+    {
+      "id": 3,
+      "ja": "ある国、組織、または人物に圧力をかけるために使用される公式な制限。",
+      "ko": "한 국가, 조직 또는 개인에게 압력을 가하기 위해 사용되는 공식적인 제한.",
+      "zh-Hans": "用于对某个国家、组织或个人施加压力的官方限制。",
+      "es": "Restricciones oficiales usadas para ejercer presión sobre un país, organización o persona.",
+      "pt-BR": "Restrições oficiais usadas para pressionar um país, organização ou pessoa."
+    },
+    {
+      "id": 4,
+      "ja": "人々ができることを制限する規則。",
+      "ko": "사람들이 할 수 있는 것을 제한하는 규칙。",
+      "zh-Hans": "限制人们可以做什么的规则。",
+      "es": "Reglas que limitan lo que las personas pueden hacer.",
+      "pt-BR": "Regras que limitam o que as pessoas podem fazer."
+    },
+    {
+      "id": 5,
+      "ja": "感情、意見、または立場を伝える。",
+      "ko": "어떤 감정, 의견 또는 입장을 전달하다.",
+      "zh-Hans": "传达某种感觉、观点或立场。",
+      "es": "Comunicar un sentimiento, opinión o posición.",
+      "pt-BR": "Comunicar um sentimento, uma opinião ou uma posição."
+    },
+    {
+      "id": 6,
+      "ja": "何かを量、強度、またはレベルでより大きくすること。",
+      "ko": "어떤 것의 양, 강도 또는 수준을 더 크게 만들다.",
+      "zh-Hans": "使某物的数量、强度或水平变得更大。",
+      "es": "Hacer que algo sea mayor en cantidad, fuerza o nivel.",
+      "pt-BR": "Tornar algo maior em quantidade, força ou nível."
+    },
+    {
+      "id": 7,
+      "ja": "人や物をある場所から別の場所へ移動させること。",
+      "ko": "사람이나 물건을 한 장소에서 다른 장소로 옮기는 것.",
+      "zh-Hans": "人或货物从一个地方移动到另一个地方。",
+      "es": "El movimiento de personas o bienes de un lugar a otro.",
+      "pt-BR": "O movimento de pessoas ou mercadorias de um lugar para outro."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:07.838403+00:00"
+  }
+}

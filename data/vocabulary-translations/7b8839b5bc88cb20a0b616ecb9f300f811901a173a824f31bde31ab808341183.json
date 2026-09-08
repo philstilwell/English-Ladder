@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ukrainian drones flew into Russia.",
+      "They hit some buildings.",
+      "These buildings belong to Wildberries.",
+      "Wildberries is a Russian online retailer.",
+      "The drones struck logistics hubs.",
+      "Logistics hubs help store and send many products.",
+      "This attack happened overnight.",
+      "It was in two regions of Russia.",
+      "One region is called Krasnodar.",
+      "The other region is Stavropol."
+    ],
+    "vocabulary": [
+      {
+        "term": "drones",
+        "part_of_speech": "noun",
+        "definition": "Flying machines that can be controlled from far away without a person inside."
+      },
+      {
+        "term": "hit",
+        "part_of_speech": "verb",
+        "definition": "To strike something or make strong contact with it, often with force."
+      },
+      {
+        "term": "online retailer",
+        "part_of_speech": "noun",
+        "definition": "A business that sells products directly to customers over the internet."
+      },
+      {
+        "term": "logistics hubs",
+        "part_of_speech": "noun",
+        "definition": "Large centers where goods are organized, stored, and prepared for shipping and delivery."
+      },
+      {
+        "term": "overnight",
+        "part_of_speech": "adverb",
+        "definition": "During the entire night, from evening until the next morning."
+      },
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "a violent act to hurt or damage someone or something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "遠隔操作で、人が乗らずに遠くから操縦できる空飛ぶ機械。",
+      "ko": "사람이 직접 타지 않고 멀리서 원격으로 조종할 수 있는 비행 기계.",
+      "zh-Hans": "无人驾驶的飞行器，可以从远处进行控制。",
+      "es": "Máquinas voladoras que se pueden controlar a distancia sin que haya una persona dentro.",
+      "pt-BR": "Máquinas voadoras que podem ser controladas à distância sem que haja uma pessoa dentro."
+    },
+    {
+      "id": 1,
+      "ja": "何かにぶつかること、またはしばしば力を込めて強く接触すること。",
+      "ko": "무언가를 치거나 강하게 부딪치는 것, 흔히 힘을 가하여.",
+      "zh-Hans": "撞击某物或与之进行强烈的接触，通常带有力量。",
+      "es": "Golpear algo o hacer contacto fuerte con ello, a menudo con fuerza.",
+      "pt-BR": "Atingir algo ou fazer contato forte com isso, frequentemente com força."
+    },
+    {
+      "id": 2,
+      "ja": "インターネットを介して顧客に直接商品を販売する事業。",
+      "ko": "인터넷을 통해 고객에게 제품을 직접 판매하는 사업체.",
+      "zh-Hans": "通过互联网直接向顾客销售产品的企业。",
+      "es": "Un negocio que vende productos directamente a los clientes a través de internet.",
+      "pt-BR": "Um negócio que vende produtos diretamente aos clientes pela internet."
+    },
+    {
+      "id": 3,
+      "ja": "商品が整理され、保管され、出荷と配送のために準備される大規模なセンター。",
+      "ko": "상품이 정리되고 보관되며 배송을 위해 준비되는 대규모 센터.",
+      "zh-Hans": "组织、储存货物并为运输和配送做准备的大型中心。",
+      "es": "Grandes centros donde los productos se organizan, almacenan y preparan para el envío y la entrega.",
+      "pt-BR": "Grandes centros onde as mercadorias são organizadas, armazenadas e preparadas para o envio e a entrega."
+    },
+    {
+      "id": 4,
+      "ja": "夕方から翌朝まで、夜を通してずっと。",
+      "ko": "저녁부터 다음 날 아침까지, 밤 전체 동안.",
+      "zh-Hans": "从晚上到第二天早上，整个夜晚期间。",
+      "es": "Durante toda la noche, desde la tarde hasta la mañana siguiente.",
+      "pt-BR": "Durante a noite inteira, do anoitecer até a manhã seguinte."
+    },
+    {
+      "id": 5,
+      "ja": "誰かや何かを傷つけたり損害を与えたりするための暴力的な行為。",
+      "ko": "누군가나 무언가를 해치거나 손상시키기 위한 폭력적인 행위.",
+      "zh-Hans": "一种伤害或损坏某人或某物的暴力行为。",
+      "es": "Un acto violento para herir o dañar a alguien o algo.",
+      "pt-BR": "Um ato violento para ferir ou danificar alguém ou algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:02:24.627853+00:00"
+  }
+}

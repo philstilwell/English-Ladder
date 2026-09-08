@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "City trees can make their surroundings cooler in more than one way.",
+      "Their branches provide shade, while water released through their leaves helps cool the air.",
+      "When trees shade buildings, they can reduce the demand for air conditioning.",
+      "However, planting any available tree is not enough: the species must suit the local climate.",
+      "Young trees also require regular maintenance after planting.",
+      "A successful planting project therefore involves both choosing suitable trees and caring for them."
+    ],
+    "vocabulary": [
+      {
+        "term": "surroundings",
+        "part_of_speech": "plural noun",
+        "definition": "the area around a person or thing"
+      },
+      {
+        "term": "demand",
+        "part_of_speech": "noun",
+        "definition": "the amount of something that is needed or wanted"
+      },
+      {
+        "term": "maintenance",
+        "part_of_speech": "noun",
+        "definition": "regular work that keeps something in good condition"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人や物の周りの地域",
+      "ko": "사람이나 사물 주변의 지역",
+      "zh-Hans": "一个人或一个物体周围的区域",
+      "es": "El área alrededor de una persona o cosa",
+      "pt-BR": "A área ao redor de uma pessoa ou coisa"
+    },
+    {
+      "id": 1,
+      "ja": "必要とされたり、欲しがられたりするものの量",
+      "ko": "필요하거나 원하는 것의 양",
+      "zh-Hans": "需要或想要某种东西的数量",
+      "es": "La cantidad de algo que es necesario o deseado",
+      "pt-BR": "A quantidade de algo que é necessário ou desejado"
+    },
+    {
+      "id": 2,
+      "ja": "物事を良い状態に保つための定期的な作業",
+      "ko": "어떤 것을 좋은 상태로 유지하기 위한 정기적인 작업",
+      "zh-Hans": "为使某物保持良好状态而进行的定期工作",
+      "es": "El trabajo regular que mantiene algo en buen estado",
+      "pt-BR": "Trabalho regular que mantém algo em boas condições"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:33.845637+00:00"
+  }
+}

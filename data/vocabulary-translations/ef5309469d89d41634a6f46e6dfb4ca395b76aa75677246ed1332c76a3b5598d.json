@@ -1,0 +1,158 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "Japan is currently contending with the aftermath of an unprecedented weather phenomenon, as torrential rainfall has caused significant fatalities and extensive infrastructure damage.",
+      "The severe meteorological event has tragically resulted in eight confirmed deaths across various regions, underscoring the formidable power of the downpour.",
+      "Beyond the grim human cost, the deluge has severely impacted daily life for tens of thousands of residents.",
+      "Authorities reported that the storm effectively cut power to more than 20,000 households, plunging communities into darkness and disrupting essential services.",
+      "This widespread electrical failure compounded the challenges faced by emergency response teams operating in adverse conditions.",
+      "Furthermore, the severe weather led to considerable transportation chaos, most notably at Tokyo's Narita International Airport.",
+      "A significant consequence was that approximately 7,000 travellers found themselves stranded at the airport, unable to proceed with their journeys due to flight cancellations and ground transport issues.",
+      "The situation at Narita underscored the broader disruption caused by the extreme precipitation across the Kanto region.",
+      "Emergency services have been mobilised to address immediate needs, including rescue operations and the restoration of critical utilities.",
+      "The government is now assessing the full scale of the devastation and coordinating recovery efforts following this natural disaster which claimed a grim toll of lives."
+    ],
+    "vocabulary": [
+      {
+        "term": "torrential rainfall",
+        "part_of_speech": "noun phrase",
+        "definition": "Extremely heavy and abundant rain that falls very quickly and continuously, often leading to flooding."
+      },
+      {
+        "term": "grim toll",
+        "part_of_speech": "noun phrase",
+        "definition": "The distressing or tragic number of deaths, casualties, or negative consequences resulting from an event."
+      },
+      {
+        "term": "underscoring",
+        "part_of_speech": "verb (present participle)",
+        "definition": "Emphasizing or highlighting the importance of something; serving to stress a point or demonstrate a particular quality."
+      },
+      {
+        "term": "disruption",
+        "part_of_speech": "noun",
+        "definition": "a problem that stops normal activity"
+      },
+      {
+        "term": "infrastructure",
+        "part_of_speech": "noun",
+        "definition": "the basic networks and facilities on which an activity or society depends"
+      },
+      {
+        "term": "fatalities",
+        "part_of_speech": "plural noun",
+        "definition": "Deaths caused by an accident, disaster, or violence."
+      },
+      {
+        "term": "formidable",
+        "part_of_speech": "adjective",
+        "definition": "difficult to overcome because of great strength or scale"
+      },
+      {
+        "term": "phenomenon",
+        "part_of_speech": "noun",
+        "definition": "an event or process that can be observed"
+      },
+      {
+        "term": "extensive",
+        "part_of_speech": "adjective",
+        "definition": "covering a large area or involving many parts"
+      },
+      {
+        "term": "mobilised",
+        "part_of_speech": "verb",
+        "definition": "organised people or resources so they were ready for action"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に速く、絶え間なく降る極めて激しい大量の雨で、しばしば洪水を引き起こします。",
+      "ko": "매우 빠르고 지속적으로 내리는 극도로 많고 격렬한 비로, 종종 홍수를 유발합니다.",
+      "zh-Hans": "指非常迅速且持续不断地落下，极其大量而猛烈的雨水，通常会导致洪水。",
+      "es": "Lluvia extremadamente intensa y abundante que cae muy rápido y de forma continua, a menudo provocando inundaciones.",
+      "pt-BR": "Chuva extremamente forte e abundante que cai muito rapidamente e de forma contínua, frequentemente resultando em inundações."
+    },
+    {
+      "id": 1,
+      "ja": "ある出来事によって生じた、心を痛める、または悲劇的な死者、負傷者、あるいは負の結果の数。",
+      "ko": "어떤 사건으로 인해 발생한 비통하거나 비극적인 사망자, 사상자 또는 부정적인 결과의 수.",
+      "zh-Hans": "指某个事件造成的令人痛心或悲剧性的死亡、伤亡或负面后果的数量。",
+      "es": "El número angustioso o trágico de muertes, víctimas o consecuencias negativas resultantes de un evento.",
+      "pt-BR": "O número aflitivo ou trágico de mortes, vítimas ou consequências negativas resultantes de um evento."
+    },
+    {
+      "id": 2,
+      "ja": "何かの重要性を強調すること。ある点を力説したり、特定の性質を示したりするのに役立つ。",
+      "ko": "어떤 것의 중요성을 강조하거나 부각시키는 것; 어떤 점을 강조하거나 특정 특성을 보여주는 역할을 하는 것.",
+      "zh-Hans": "指强调或突显某事物的重要性；用于着重某个观点或展示某种特定品质。",
+      "es": "Enfatizar o resaltar la importancia de algo; servir para recalcar un punto o demostrar una cualidad particular.",
+      "pt-BR": "Enfatizar ou destacar a importância de algo; servir para ressaltar um ponto ou demonstrar uma qualidade específica."
+    },
+    {
+      "id": 3,
+      "ja": "通常の活動を停止させる問題。",
+      "ko": "정상적인 활동을 멈추게 하는 문제.",
+      "zh-Hans": "指导致正常活动停止的问题。",
+      "es": "Un problema que detiene la actividad normal.",
+      "pt-BR": "Um problema que interrompe a atividade normal."
+    },
+    {
+      "id": 4,
+      "ja": "ある活動や社会が依存する基本的なネットワークと設備。",
+      "ko": "활동이나 사회가 의존하는 기본적인 네트워크와 시설.",
+      "zh-Hans": "指某个活动或社会所依赖的基本网络和设施。",
+      "es": "Las redes y facilidades básicas de las que depende una actividad o sociedad.",
+      "pt-BR": "As redes e instalações básicas das quais uma atividade ou sociedade depende."
+    },
+    {
+      "id": 5,
+      "ja": "事故、災害、または暴力によって引き起こされる死。",
+      "ko": "사고, 재난 또는 폭력으로 인한 사망.",
+      "zh-Hans": "指由事故、灾难或暴力造成的死亡。",
+      "es": "Muertes causadas por un accidente, desastre o violencia.",
+      "pt-BR": "Mortes causadas por um acidente, desastre ou violência."
+    },
+    {
+      "id": 6,
+      "ja": "その大きな力や規模のために克服するのが難しいこと。",
+      "ko": "엄청난 힘이나 규모 때문에 극복하기 어려운 것.",
+      "zh-Hans": "指因力量强大或规模巨大而难以克服的。",
+      "es": "Difícil de superar debido a su gran fuerza o escala.",
+      "pt-BR": "Difícil de superar devido à sua grande força ou escala."
+    },
+    {
+      "id": 7,
+      "ja": "観察することができる出来事や過程。",
+      "ko": "관찰될 수 있는 사건이나 과정.",
+      "zh-Hans": "指可以被观察到的事件或过程。",
+      "es": "Un evento o proceso que puede ser observado.",
+      "pt-BR": "Um evento ou processo que pode ser observado."
+    },
+    {
+      "id": 8,
+      "ja": "広い範囲をカバーしている、または多くの部分に関わっていること。",
+      "ko": "넓은 영역을 덮거나 여러 부분에 관련된 것.",
+      "zh-Hans": "指覆盖范围广或涉及许多部分。",
+      "es": "Que cubre un área grande o involucra muchas partes.",
+      "pt-BR": "Que cobre uma grande área ou envolve muitas partes."
+    },
+    {
+      "id": 9,
+      "ja": "行動の準備ができるように人や資源を組織したこと。",
+      "ko": "사람이나 자원을 조직하여 행동을 준비시킨 것.",
+      "zh-Hans": "指组织人员或资源，使其做好行动准备。",
+      "es": "Organizó personas o recursos para que estuvieran listos para la acción.",
+      "pt-BR": "Organizava pessoas ou recursos para que estivessem prontos para a ação."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:21.500692+00:00"
+  }
+}

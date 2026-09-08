@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Nepal had a very sudden flash flood.",
+      "The flood happened in an area north of Kathmandu.",
+      "This area is close to the Tibet border.",
+      "At least 17 people were killed by the flood.",
+      "Many people feel sad about this terrible news.",
+      "The big flood might have swept away villages.",
+      "Some homes are now missing in the affected places.",
+      "The flood happened quickly after very heavy rain.",
+      "News reports feared more damage to other areas.",
+      "The government will now help the people affected by the water."
+    ],
+    "vocabulary": [
+      {
+        "term": "flash flood",
+        "part_of_speech": "noun",
+        "definition": "A very sudden and powerful flood that happens quickly, often after heavy rain."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Caused someone or something to die."
+      },
+      {
+        "term": "border",
+        "part_of_speech": "noun",
+        "definition": "A line that separates two countries, states, or areas."
+      },
+      {
+        "term": "swept away",
+        "part_of_speech": "verb phrase (past tense)",
+        "definition": "Carried away by water or wind with great force."
+      },
+      {
+        "term": "feared",
+        "part_of_speech": "verb (simple past)",
+        "definition": "Thought that something bad or dangerous might happen."
+      },
+      {
+        "term": "missing",
+        "part_of_speech": "adjective",
+        "definition": "Not found; people do not know where they are."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に突然で強力な洪水で、多くの場合、大雨の後に急速に発生します。",
+      "ko": "폭우 후에 빠르게 발생하는 매우 갑작스럽고 강력한 홍수.",
+      "zh-Hans": "一种非常突然且强大的洪水，通常在暴雨后迅速发生。",
+      "es": "Una inundación muy repentina y potente que ocurre rápidamente, a menudo después de fuertes lluvias.",
+      "pt-BR": "Uma inundação muito repentina e poderosa que acontece rapidamente, geralmente depois de chuva forte."
+    },
+    {
+      "id": 1,
+      "ja": "誰かや何かを死なせた。",
+      "ko": "누군가 또는 무언가를 죽게 만들었다.",
+      "zh-Hans": "使某人或某物死亡。",
+      "es": "Hizo que alguien o algo muriera.",
+      "pt-BR": "Causou a morte de alguém ou de algo."
+    },
+    {
+      "id": 2,
+      "ja": "2つの国、州、または地域を隔てる線。",
+      "ko": "두 나라, 주 또는 지역을 나누는 선.",
+      "zh-Hans": "分隔两个国家、州或区域的界线。",
+      "es": "Una línea que separa dos países, estados o áreas.",
+      "pt-BR": "Uma linha que separa dois países, estados ou áreas."
+    },
+    {
+      "id": 3,
+      "ja": "水や風によって強い力で押し流された。",
+      "ko": "물이나 바람에 의해 강한 힘으로 휩쓸려 갔다.",
+      "zh-Hans": "被水或风以强大的力量冲走。",
+      "es": "Llevado por el agua o el viento con gran fuerza.",
+      "pt-BR": "Levado pela água ou pelo vento com grande força."
+    },
+    {
+      "id": 4,
+      "ja": "何か悪いことや危険なことが起こるかもしれないと考えた。",
+      "ko": "나쁘거나 위험한 일이 일어날 수도 있다고 생각했다.",
+      "zh-Hans": "认为可能发生不好的或危险的事情。",
+      "es": "Pensó que algo malo o peligroso podría suceder.",
+      "pt-BR": "Pensou que algo ruim ou perigoso pudesse acontecer."
+    },
+    {
+      "id": 5,
+      "ja": "見つからない。人々がどこにいるのか知らない。",
+      "ko": "발견되지 않았다. 사람들이 그들이 어디에 있는지 모른다.",
+      "zh-Hans": "未被找到；人们不知道他们在哪里。",
+      "es": "No encontrado; la gente no sabe dónde están.",
+      "pt-BR": "Não encontrado; as pessoas não sabem onde estão."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:54:29.369788+00:00"
+  }
+}

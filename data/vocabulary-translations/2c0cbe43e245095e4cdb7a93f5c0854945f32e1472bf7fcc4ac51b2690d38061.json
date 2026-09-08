@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A Russian strike happened recently.",
+      "This attack killed at least 17 people.",
+      "President Zelensky talked about the strike.",
+      "He said special interceptors could have saved lives.",
+      "The Russia defence ministry gave a statement.",
+      "They said their forces struck targets.",
+      "These targets were in Kyiv.",
+      "They also struck places in the surrounding region.",
+      "The ministry mentioned logistics hubs and supply centres.",
+      "These were important places that were hit."
+    ],
+    "vocabulary": [
+      {
+        "term": "strike",
+        "part_of_speech": "noun",
+        "definition": "An attack, often from the air, using bombs or missiles."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb, past tense",
+        "definition": "Made someone die; ended a life."
+      },
+      {
+        "term": "interceptors",
+        "part_of_speech": "noun",
+        "definition": "Special equipment or planes designed to stop incoming attacks or missiles."
+      },
+      {
+        "term": "ministry",
+        "part_of_speech": "noun",
+        "definition": "A department of a government, like a defence ministry or education ministry."
+      },
+      {
+        "term": "hubs",
+        "part_of_speech": "noun",
+        "definition": "Central places where many things meet, are stored, or move from."
+      },
+      {
+        "term": "supply centres",
+        "part_of_speech": "noun phrase",
+        "definition": "Locations where goods and materials are stored and distributed to other places."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "爆弾やミサイルを使って行われる、多くの場合空からの攻撃。",
+      "ko": "폭탄이나 미사일을 사용하여 주로 공중에서 이루어지는 공격.",
+      "zh-Hans": "通常从空中进行的、使用炸弹或导弹的袭击。",
+      "es": "Un ataque, a menudo desde el aire, que utiliza bombas o misiles.",
+      "pt-BR": "Um ataque, frequentemente pelo ar, usando bombas ou mísseis."
+    },
+    {
+      "id": 1,
+      "ja": "誰かを死なせた；命を終わらせた。",
+      "ko": "누군가를 죽게 만들었다; 생명을 끝냈다.",
+      "zh-Hans": "使某人死亡；结束了一条生命。",
+      "es": "Hizo que alguien muriera; puso fin a una vida.",
+      "pt-BR": "Fez alguém morrer; terminou uma vida."
+    },
+    {
+      "id": 2,
+      "ja": "飛来する攻撃やミサイルを阻止するために設計された特別な装置や航空機。",
+      "ko": "날아오는 공격이나 미사일을 막기 위해 설계된 특별한 장비나 비행기.",
+      "zh-Hans": "旨在阻止来袭攻击或导弹的特殊设备或飞机。",
+      "es": "Equipo o aviones especiales diseñados para detener ataques o misiles entrantes.",
+      "pt-BR": "Equipamento ou aviões especiais projetados para parar ataques ou mísseis que chegam."
+    },
+    {
+      "id": 3,
+      "ja": "政府の一部門で、防衛省や教育省のようなもの。",
+      "ko": "국방부나 교육부와 같은 정부의 부서.",
+      "zh-Hans": "政府的一个部门，例如国防部或教育部。",
+      "es": "Un departamento de un gobierno, como un ministerio de defensa o un ministerio de educación.",
+      "pt-BR": "Um departamento de um governo, como um ministério da defesa ou um ministério da educação."
+    },
+    {
+      "id": 4,
+      "ja": "多くのものが集まったり、保管されたり、そこから移動したりする中心的な場所。",
+      "ko": "많은 것들이 모이거나, 보관되거나, 다른 곳으로 이동하는 중심 장소.",
+      "zh-Hans": "许多事物汇集、储存或从中转运的中心地点。",
+      "es": "Lugares centrales donde muchas cosas se encuentran, se almacenan o se mueven desde allí.",
+      "pt-BR": "Locais centrais onde muitas coisas se encontram, são armazenadas ou de onde se movem."
+    },
+    {
+      "id": 5,
+      "ja": "商品や物資が保管され、他の場所に配送される場所。",
+      "ko": "물품과 자재가 보관되고 다른 곳으로 배포되는 장소.",
+      "zh-Hans": "商品和材料被储存并分发到其他地方的地点。",
+      "es": "Lugares donde se almacenan y distribuyen bienes y materiales a otros sitios.",
+      "pt-BR": "Locais onde bens e materiais são armazenados e distribuídos para outros lugares."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:59:11.563947+00:00"
+  }
+}

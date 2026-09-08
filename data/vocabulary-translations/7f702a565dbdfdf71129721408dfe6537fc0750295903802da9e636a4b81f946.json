@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "People are being forced to leave Pakistan and Iran for Afghanistan.",
+      "Some people have never been to Afghanistan.",
+      "Nazia was born in Pakistan and crossed the border with her children.",
+      "Aid groups offer families a place to stay for a short time.",
+      "Some families have little money and no way to earn more.",
+      "They need help as they return and start a new life."
+    ],
+    "vocabulary": [
+      {
+        "term": "forced",
+        "part_of_speech": "verb",
+        "definition": "made to do something they did not choose"
+      },
+      {
+        "term": "return",
+        "part_of_speech": "verb",
+        "definition": "go back to a place"
+      },
+      {
+        "term": "never",
+        "part_of_speech": "adverb",
+        "definition": "not at any time"
+      },
+      {
+        "term": "border",
+        "part_of_speech": "noun",
+        "definition": "the line between two countries"
+      },
+      {
+        "term": "offer",
+        "part_of_speech": "verb",
+        "definition": "say that someone can have something"
+      },
+      {
+        "term": "earn",
+        "part_of_speech": "verb",
+        "definition": "get money for work that you do"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "選びたくなかったことを、させられた。",
+      "ko": "자신이 선택하지 않은 어떤 것을 하도록 만들어진.",
+      "zh-Hans": "被迫去做他们不想做的事情。",
+      "es": "Obligado a hacer algo que no eligió.",
+      "pt-BR": "Ser obrigado a fazer algo que não escolheu."
+    },
+    {
+      "id": 1,
+      "ja": "ある場所に戻る。",
+      "ko": "어떤 장소로 되돌아가다.",
+      "zh-Hans": "回到一个地方。",
+      "es": "Volver a un lugar.",
+      "pt-BR": "Voltar para um lugar."
+    },
+    {
+      "id": 2,
+      "ja": "どんな時も〜ない。",
+      "ko": "어떤 시간에도 ~하지 않는.",
+      "zh-Hans": "在任何时候都不。",
+      "es": "En ningún momento.",
+      "pt-BR": "Em nenhum momento."
+    },
+    {
+      "id": 3,
+      "ja": "二つの国の間の線。",
+      "ko": "두 나라 사이의 경계선.",
+      "zh-Hans": "两个国家之间的界线。",
+      "es": "La línea entre dos países.",
+      "pt-BR": "A linha que separa dois países."
+    },
+    {
+      "id": 4,
+      "ja": "誰かに何かを持つことができると言う。",
+      "ko": "누군가에게 어떤 것을 가질 수 있다고 말하다.",
+      "zh-Hans": "表示某人可以拥有某物。",
+      "es": "Decir que alguien puede tener algo.",
+      "pt-BR": "Dizer que alguém pode ter algo."
+    },
+    {
+      "id": 5,
+      "ja": "した仕事に対してお金をもらう。",
+      "ko": "자신이 하는 일에 대해 돈을 받다.",
+      "zh-Hans": "因所做的工作而获得金钱。",
+      "es": "Obtener dinero por el trabajo que se hace.",
+      "pt-BR": "Receber dinheiro pelo trabalho que se faz."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:18.123593+00:00"
+  }
+}

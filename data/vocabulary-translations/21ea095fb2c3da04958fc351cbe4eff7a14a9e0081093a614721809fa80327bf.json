@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The report describes more suspected attacks on defence sites in Europe.",
+      "Germany has blamed Russia for an attack on Leipzig airport.",
+      "Russian officials say this claim is wrong.",
+      "There have also been suspicious fires at other defence sites.",
+      "Some cases are still being investigated, and some fires may have been accidents.",
+      "Russia is the main suspect in the report."
+    ],
+    "vocabulary": [
+      {
+        "term": "blamed",
+        "part_of_speech": "verb",
+        "definition": "said that someone was responsible"
+      },
+      {
+        "term": "suspicious",
+        "part_of_speech": "adjective",
+        "definition": "making people think something may be wrong"
+      },
+      {
+        "term": "suspect",
+        "part_of_speech": "noun",
+        "definition": "a person or party thought to be responsible"
+      },
+      {
+        "term": "officials",
+        "part_of_speech": "plural noun",
+        "definition": "people with responsible jobs in a government or organisation"
+      },
+      {
+        "term": "claim",
+        "part_of_speech": "noun",
+        "definition": "a statement that someone says is true"
+      },
+      {
+        "term": "accidents",
+        "part_of_speech": "plural noun",
+        "definition": "harmful events that happen without being planned"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かが責任があると言った。",
+      "ko": "누군가에게 책임이 있다고 말했다.",
+      "zh-Hans": "说某人负有责任。",
+      "es": "Dijo que alguien era responsable.",
+      "pt-BR": "Disse que alguém era responsável."
+    },
+    {
+      "id": 1,
+      "ja": "人々に何かが間違っているかもしれないと思わせる。",
+      "ko": "사람들에게 뭔가 잘못되었을 수도 있다고 생각하게 만드는.",
+      "zh-Hans": "让人觉得可能有什么不对劲的。",
+      "es": "Que hace que la gente piense que algo puede estar mal.",
+      "pt-BR": "Que faz as pessoas pensarem que algo pode estar errado."
+    },
+    {
+      "id": 2,
+      "ja": "責任があると考えられている人物や団体。",
+      "ko": "책임이 있다고 생각되는 사람이나 단체.",
+      "zh-Hans": "被认为是负有责任的个人或团体。",
+      "es": "Una persona o parte a la que se considera responsable.",
+      "pt-BR": "Uma pessoa ou parte que se pensa ser responsável."
+    },
+    {
+      "id": 3,
+      "ja": "政府や組織で責任のある仕事をしている人々。",
+      "ko": "정부나 조직에서 책임 있는 직책을 맡고 있는 사람들.",
+      "zh-Hans": "在政府或组织中担任负责任职务的人。",
+      "es": "Personas con trabajos de responsabilidad en un gobierno u organización.",
+      "pt-BR": "Pessoas com cargos de responsabilidade em um governo ou organização."
+    },
+    {
+      "id": 4,
+      "ja": "誰かが真実だと言う主張。",
+      "ko": "누군가가 사실이라고 말하는 주장.",
+      "zh-Hans": "某人声称是真实的一个说法。",
+      "es": "Una declaración que alguien dice que es verdad.",
+      "pt-BR": "Uma declaração que alguém diz ser verdadeira."
+    },
+    {
+      "id": 5,
+      "ja": "計画されずに起こる有害な出来事。",
+      "ko": "계획되지 않고 발생하는 해로운 사건.",
+      "zh-Hans": "未经计划而发生的有害事件。",
+      "es": "Sucesos dañinos que ocurren sin ser planeados.",
+      "pt-BR": "Eventos prejudiciais que acontecem sem serem planejados."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:42.672470+00:00"
+  }
+}

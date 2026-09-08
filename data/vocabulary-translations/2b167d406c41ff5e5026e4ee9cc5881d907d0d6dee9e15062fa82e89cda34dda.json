@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A big glacier collapsed in the mountains.",
+      "This happened near Nepal and Tibet.",
+      "The collapsed glacier likely caused devastating floods there.",
+      "Many scientists looked into this problem.",
+      "Scientists say the floods were very bad.",
+      "The floods destroyed many things.",
+      "Ice in the Himalayan mountains is melting fast.",
+      "This melting Himalayan ice is a serious issue.",
+      "Scientists are still studying what happened.",
+      "They want to understand why the glacier fell."
+    ],
+    "vocabulary": [
+      {
+        "term": "collapsed glacier",
+        "part_of_speech": "noun phrase",
+        "definition": "A large piece of ice that broke into pieces and fell down from a mountain."
+      },
+      {
+        "term": "likely caused",
+        "part_of_speech": "verb phrase",
+        "definition": "Probably made something happen or was the main reason for an event."
+      },
+      {
+        "term": "devastating floods",
+        "part_of_speech": "noun phrase",
+        "definition": "Very destructive overflows of water that cause great harm and damage."
+      },
+      {
+        "term": "scientists say",
+        "part_of_speech": "verb phrase",
+        "definition": "Researchers or experts share their findings or give their professional opinions."
+      },
+      {
+        "term": "melting Himalayan ice",
+        "part_of_speech": "noun phrase",
+        "definition": "Frozen water in the high mountains of the Himalayas that is turning into liquid water."
+      },
+      {
+        "term": "destroyed",
+        "part_of_speech": "verb",
+        "definition": "damaged something so badly that it could not be used"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "山から崩れ落ちて細かくなった大きな氷の塊。",
+      "ko": "산에서 조각조각 부서져 아래로 떨어진 커다란 얼음 덩어리.",
+      "zh-Hans": "一大块冰从山上破碎成多块并坠落下来。",
+      "es": "Una gran masa de hielo que se rompió en pedazos y se derrumbó desde una montaña.",
+      "pt-BR": "Um grande bloco de gelo que se quebrou em pedaços e caiu de uma montanha."
+    },
+    {
+      "id": 1,
+      "ja": "おそらく何かを引き起こしたか、ある出来事の主な原因となった。",
+      "ko": "아마도 어떤 일이 일어나게 했거나 어떤 사건의 주요 원인이었다.",
+      "zh-Hans": "很有可能导致了某事的发生，或者是某事件的主要原因。",
+      "es": "Probablemente hizo que algo sucediera o fue la razón principal de un evento.",
+      "pt-BR": "Provavelmente fez com que algo acontecesse ou foi a principal razão para um evento."
+    },
+    {
+      "id": 2,
+      "ja": "非常に破壊的で、大きな被害と損害を引き起こす水の氾濫。",
+      "ko": "매우 파괴적이며 큰 피해와 손상을 유발하는 물의 범람.",
+      "zh-Hans": "极具破坏性的水灾，造成巨大危害和损失。",
+      "es": "Desbordamientos de agua muy destructivos que causan gran daño y perjuicio.",
+      "pt-BR": "Transbordamentos de água muito destrutivos que causam grandes danos e prejuízos."
+    },
+    {
+      "id": 3,
+      "ja": "研究者や専門家が調査結果を共有したり、専門的な意見を述べたりする。",
+      "ko": "연구자나 전문가가 자신들의 연구 결과를 공유하거나 전문적인 의견을 제시한다.",
+      "zh-Hans": "研究人员或专家分享他们的发现或给出他们的专业意见。",
+      "es": "Investigadores o expertos comparten sus hallazgos o dan sus opiniones profesionales.",
+      "pt-BR": "Pesquisadores ou especialistas compartilham suas descobertas ou dão suas opiniões profissionais."
+    },
+    {
+      "id": 4,
+      "ja": "ヒマラヤ山脈の高山にある凍った水が液体に変わっている状態。",
+      "ko": "히말라야 높은 산에 있는 얼어붙은 물이 액체 상태의 물로 변하는 현상.",
+      "zh-Hans": "喜马拉雅高山上的冰冻水正在变成液态水。",
+      "es": "Agua congelada en las altas montañas del Himalaya que se está convirtiendo en agua líquida.",
+      "pt-BR": "Água congelada nas altas montanhas do Himalaia que está se transformando em água líquida."
+    },
+    {
+      "id": 5,
+      "ja": "何かがひどく損傷して、もう使えなくなった。",
+      "ko": "어떤 것을 너무 심하게 손상시켜서 더 이상 사용할 수 없게 만들었다.",
+      "zh-Hans": "把某物损坏得非常严重，以至于无法使用。",
+      "es": "Dañó algo tan gravemente que no pudo ser usado.",
+      "pt-BR": "Danificou algo tão gravemente que não pôde ser usado."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:54:08.617430+00:00"
+  }
+}

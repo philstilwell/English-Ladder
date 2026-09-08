@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Mina stops at a market stall to buy tomatoes for dinner.",
+      "After asking the price, she explains that she only needs enough for two people.",
+      "The vendor suggests half a kilo, but Mina is unsure how much that is.",
+      "Instead of pretending to understand, she asks whether he could show her.",
+      "He places a few tomatoes on the scale so that she can see the quantity.",
+      "Mina thanks him and realizes that a simple request for clarification made the conversation easier."
+    ],
+    "vocabulary": [
+      {
+        "term": "stall",
+        "part_of_speech": "noun",
+        "definition": "a stand or small space where goods are sold"
+      },
+      {
+        "term": "quantity",
+        "part_of_speech": "noun",
+        "definition": "the amount of something"
+      },
+      {
+        "term": "clarification",
+        "part_of_speech": "noun",
+        "definition": "an explanation that makes something easier to understand"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "商品が売られている屋台や小さな場所。",
+      "ko": "상품이 판매되는 가판대나 작은 공간.",
+      "zh-Hans": "出售商品的摊位或小空间。",
+      "es": "Un puesto o un pequeño espacio donde se venden productos.",
+      "pt-BR": "Uma barraca ou um pequeno espaço onde mercadorias são vendidas."
+    },
+    {
+      "id": 1,
+      "ja": "何かの量。",
+      "ko": "어떤 것의 양.",
+      "zh-Hans": "某物的数量。",
+      "es": "La cantidad de algo.",
+      "pt-BR": "A quantidade de algo."
+    },
+    {
+      "id": 2,
+      "ja": "物事をより理解しやすくする説明。",
+      "ko": "무언가를 더 쉽게 이해할 수 있도록 해주는 설명.",
+      "zh-Hans": "使某事更容易理解的解释。",
+      "es": "Una explicación que hace que algo sea más fácil de entender.",
+      "pt-BR": "Uma explicação que torna algo mais fácil de entender."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:42.093685+00:00"
+  }
+}

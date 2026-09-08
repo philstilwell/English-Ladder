@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "About 49,000 migrants came to Ceuta.",
+      "Ceuta is a Spanish territory.",
+      "They entered in just 24 hours.",
+      "This happened very quickly.",
+      "Officials say this information is correct.",
+      "The city of Ceuta has about 83,600 people.",
+      "So, many new people arrived.",
+      "The number of arrivals is more than half of the city's population.",
+      "This was a very big event for the city.",
+      "People from other places often want to live in Europe."
+    ],
+    "vocabulary": [
+      {
+        "term": "migrants",
+        "part_of_speech": "noun",
+        "definition": "People who move from one country or area to live in another."
+      },
+      {
+        "term": "Spanish territory",
+        "part_of_speech": "noun phrase",
+        "definition": "An area of land controlled by the country of Spain."
+      },
+      {
+        "term": "entered",
+        "part_of_speech": "verb (past simple)",
+        "definition": "Went into a place or country."
+      },
+      {
+        "term": "officials say",
+        "part_of_speech": "phrase",
+        "definition": "Important people in the government or an organization share this information."
+      },
+      {
+        "term": "city of Ceuta",
+        "part_of_speech": "noun phrase",
+        "definition": "A city in North Africa that belongs to Spain."
+      },
+      {
+        "term": "event",
+        "part_of_speech": "noun",
+        "definition": "An event is something important that happens, like a party or meeting."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "ある国や地域から別の国や地域へ移り住む人々。",
+      "ko": "한 나라나 지역에서 다른 나라나 지역으로 이주하여 사는 사람들.",
+      "zh-Hans": "从一个国家或地区搬到另一个国家或地区居住的人。",
+      "es": "Personas que se mudan de un país o área a otro para vivir.",
+      "pt-BR": "Pessoas que se mudam de um país ou área para viver em outro."
+    },
+    {
+      "id": 1,
+      "ja": "スペインという国によって支配されている土地の地域。",
+      "ko": "스페인이라는 나라에 의해 통제되는 땅의 지역.",
+      "zh-Hans": "由西班牙这个国家控制的一片土地。",
+      "es": "Un área de tierra controlada por el país de España.",
+      "pt-BR": "Uma área de terra controlada pelo país da Espanha."
+    },
+    {
+      "id": 2,
+      "ja": "場所や国の中に入った。",
+      "ko": "어떤 장소나 나라 안으로 들어갔다.",
+      "zh-Hans": "进入了一个地方或国家。",
+      "es": "Entró en un lugar o país.",
+      "pt-BR": "Entrou em um lugar ou país."
+    },
+    {
+      "id": 3,
+      "ja": "政府や組織の重要な人々がこの情報を共有する。",
+      "ko": "정부나 조직의 중요한 사람들이 이 정보를 공유한다.",
+      "zh-Hans": "政府或某个组织里的重要人物分享此信息。",
+      "es": "Personas importantes en el gobierno o una organización comparten esta información.",
+      "pt-BR": "Pessoas importantes no governo ou em uma organização compartilham esta informação."
+    },
+    {
+      "id": 4,
+      "ja": "スペインに属する北アフリカにある都市。",
+      "ko": "스페인에 속한 북아프리카에 있는 도시.",
+      "zh-Hans": "一个位于北非且属于西班牙的城市。",
+      "es": "Una ciudad en el norte de África que pertenece a España.",
+      "pt-BR": "Uma cidade no Norte da África que pertence à Espanha."
+    },
+    {
+      "id": 5,
+      "ja": "パーティーや会議のように、起こる何か重要なこと。",
+      "ko": "파티나 회의처럼 일어나는 중요한 일.",
+      "zh-Hans": "事件是指发生的某种重要的事情，比如派对或会议。",
+      "es": "Un evento es algo importante que sucede, como una fiesta o una reunión.",
+      "pt-BR": "Um evento é algo importante que acontece, como uma festa ou reunião."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:00:19.167031+00:00"
+  }
+}

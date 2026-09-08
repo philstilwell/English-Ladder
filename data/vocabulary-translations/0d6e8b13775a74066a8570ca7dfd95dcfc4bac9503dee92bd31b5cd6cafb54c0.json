@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The UN has warned about a very strong El Niño.",
+      "This natural weather event starts in the Pacific Ocean.",
+      "It can bring less rain to some places and more rain to others.",
+      "It could cause disruption to economies around the world.",
+      "Countries are preparing by improving weather warnings.",
+      "Some are also getting medical help ready for people who may need it."
+    ],
+    "vocabulary": [
+      {
+        "term": "warned",
+        "part_of_speech": "verb",
+        "definition": "told people about a possible problem"
+      },
+      {
+        "term": "preparing",
+        "part_of_speech": "verb",
+        "definition": "getting ready"
+      },
+      {
+        "term": "disruption",
+        "part_of_speech": "noun",
+        "definition": "a problem that stops normal activity"
+      },
+      {
+        "term": "natural",
+        "part_of_speech": "adjective",
+        "definition": "existing or happening in nature"
+      },
+      {
+        "term": "weather",
+        "part_of_speech": "noun",
+        "definition": "conditions such as rain, heat and wind"
+      },
+      {
+        "term": "improving",
+        "part_of_speech": "verb",
+        "definition": "making something better"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "起こるかもしれない問題について人々に知らせた",
+      "ko": "일어날 수 있는 문제에 대해 사람들에게 알렸다",
+      "zh-Hans": "告知人们一个可能出现的问题",
+      "es": "informó a la gente sobre un posible problema",
+      "pt-BR": "informou as pessoas sobre um possível problema"
+    },
+    {
+      "id": 1,
+      "ja": "準備している",
+      "ko": "준비하고 있는",
+      "zh-Hans": "正在做好准备",
+      "es": "alistándose",
+      "pt-BR": "ficando pronto(a)"
+    },
+    {
+      "id": 2,
+      "ja": "通常の活動を止めてしまう問題",
+      "ko": "정상적인 활동을 멈추게 하는 문제",
+      "zh-Hans": "阻碍正常活动的问题",
+      "es": "un problema que interrumpe la actividad normal",
+      "pt-BR": "um problema que impede a atividade normal"
+    },
+    {
+      "id": 3,
+      "ja": "自然に存在する、または自然に起こる",
+      "ko": "자연에 존재하거나 자연적으로 발생하는",
+      "zh-Hans": "在自然界中存在或发生",
+      "es": "que existe u ocurre en la naturaleza",
+      "pt-BR": "que existe ou acontece na natureza"
+    },
+    {
+      "id": 4,
+      "ja": "雨、暑さ、風などの気象状況",
+      "ko": "비, 더위, 바람과 같은 기상 조건",
+      "zh-Hans": "雨、热和风等状况",
+      "es": "condiciones como lluvia, calor y viento",
+      "pt-BR": "condições como chuva, calor e vento"
+    },
+    {
+      "id": 5,
+      "ja": "何かをもっと良くしている",
+      "ko": "무엇인가를 더 좋게 만드는 중",
+      "zh-Hans": "使某事变得更好",
+      "es": "haciendo algo mejor",
+      "pt-BR": "tornando algo melhor"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:51.538163+00:00"
+  }
+}

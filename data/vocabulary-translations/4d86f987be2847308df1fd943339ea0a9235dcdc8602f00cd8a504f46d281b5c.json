@@ -1,0 +1,132 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "A recent decision has resulted in a substantial financial penalty for Meta.",
+      "The technology company has been fined $567 million due to issues concerning child safety on its platforms.",
+      "This significant penalty marks the largest child safety ruling ever issued against a social media giant.",
+      "The case highlights increasing global concern over how children are protected online.",
+      "Crucially, this new fine comes in addition to an earlier penalty.",
+      "Meta was previously ordered to pay $375 million in the same ongoing legal case.",
+      "Therefore, the company's combined financial penalties now reach an enormous total of $942 million.",
+      "This total amount reflects serious violations related to user safety, particularly for younger users.",
+      "Such rulings demonstrate a growing trend of stricter oversight for large tech corporations.",
+      "The implications of this verdict could lead to significant changes in how social media platforms operate regarding youth."
+    ],
+    "vocabulary": [
+      {
+        "term": "in addition to",
+        "part_of_speech": "prepositional phrase",
+        "definition": "Used to say that something extra is included or happening as well as something else."
+      },
+      {
+        "term": "ordered to pay",
+        "part_of_speech": "verb phrase",
+        "definition": "Legally commanded or required to give a certain amount of money, usually as a penalty or settlement."
+      },
+      {
+        "term": "over",
+        "part_of_speech": "preposition",
+        "definition": "about or concerning a subject"
+      },
+      {
+        "term": "penalty",
+        "part_of_speech": "noun",
+        "definition": "a punishment for breaking a law or rule"
+      },
+      {
+        "term": "particularly",
+        "part_of_speech": "adverb",
+        "definition": "especially, compared with other people or things"
+      },
+      {
+        "term": "previously",
+        "part_of_speech": "adverb",
+        "definition": "at an earlier time"
+      },
+      {
+        "term": "violations",
+        "part_of_speech": "plural noun",
+        "definition": "actions that break a rule, law or agreement"
+      },
+      {
+        "term": "oversight",
+        "part_of_speech": "noun",
+        "definition": "the work of checking that an organisation follows rules and acts properly"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何か別のものに加えて、さらに別のものが含まれている、または起きていると言うときに使う表現。",
+      "ko": "어떤 다른 것 외에, 추가적인 것이 포함되거나 함께 일어나고 있음을 말할 때 사용됩니다.",
+      "zh-Hans": "用于表示除了某物之外，还有额外的东西被包含或正在发生。",
+      "es": "Se usa para indicar que algo adicional está incluido o sucede junto con otra cosa.",
+      "pt-BR": "Usado para dizer que algo extra está incluído ou acontecendo junto com outra coisa."
+    },
+    {
+      "id": 1,
+      "ja": "通常、罰金や和解金として、ある一定の金額を支払うよう法的に命令されたり、要求されたりすること。",
+      "ko": "일반적으로 벌금이나 합의금으로 특정 금액을 지불하도록 법적으로 명령받거나 요구되는 것.",
+      "zh-Hans": "被法律命令或要求支付一定数额的钱，通常作为罚款或和解金。",
+      "es": "Se refiere a ser legalmente mandado u obligado a entregar una cantidad específica de dinero, comúnmente como multa o parte de un acuerdo.",
+      "pt-BR": "Legalmente comandado ou exigido a pagar uma certa quantia em dinheiro, geralmente como uma penalidade ou acordo."
+    },
+    {
+      "id": 2,
+      "ja": "ある主題について、またはそれに関して。",
+      "ko": "어떤 주제에 관하여 또는 그 주제와 관련하여.",
+      "zh-Hans": "关于或涉及到某一主题。",
+      "es": "Acerca de o en relación con un tema.",
+      "pt-BR": "Sobre ou a respeito de um assunto."
+    },
+    {
+      "id": 3,
+      "ja": "法律や規則を破ったことに対する罰。",
+      "ko": "법이나 규칙을 위반한 것에 대한 처벌.",
+      "zh-Hans": "因违反法律或规则而受到的惩罚。",
+      "es": "Un castigo por incumplir una ley o regla.",
+      "pt-BR": "Uma punição por quebrar uma lei ou regra."
+    },
+    {
+      "id": 4,
+      "ja": "他の人や物と比べて、特に。",
+      "ko": "다른 사람이나 사물과 비교했을 때, 특히.",
+      "zh-Hans": "尤其，与其他人或事物相比。",
+      "es": "Especialmente, en comparación con otras personas o cosas.",
+      "pt-BR": "Especialmente, em comparação com outras pessoas ou coisas."
+    },
+    {
+      "id": 5,
+      "ja": "より早い時期に。",
+      "ko": "이전에, 더 빠른 시점에.",
+      "zh-Hans": "在更早的时间。",
+      "es": "En un momento anterior.",
+      "pt-BR": "Em um momento anterior."
+    },
+    {
+      "id": 6,
+      "ja": "規則、法律、または合意を破る行為。",
+      "ko": "규칙, 법률 또는 합의를 위반하는 행위.",
+      "zh-Hans": "违反规则、法律或协议的行为。",
+      "es": "Acciones que incumplen una regla, ley o acuerdo.",
+      "pt-BR": "Ações que quebram uma regra, lei ou acordo."
+    },
+    {
+      "id": 7,
+      "ja": "組織が規則に従い、適切に活動しているかを確認する作業。",
+      "ko": "어떤 기관이 규칙을 따르고 적절하게 행동하는지 확인하는 일.",
+      "zh-Hans": "检查一个组织是否遵守规则并妥善行事的工作。",
+      "es": "El trabajo de verificar que una organización sigue las reglas y actúa correctamente.",
+      "pt-BR": "O trabalho de verificar se uma organização segue as regras e age corretamente."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:46.388008+00:00"
+  }
+}

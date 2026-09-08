@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ukraine has special rules called martial law.",
+      "These rules started in February 2022.",
+      "Under martial law, normal elections cannot happen.",
+      "Elections are suspended, which means stopped for a time.",
+      "A Ukrainian defence minister was recently sacked.",
+      "He lost his job as the defence minister.",
+      "His name is Oleksii Reznikov.",
+      "He now wants new elections for the president.",
+      "But martial law makes new elections impossible now.",
+      "So, there will be no new presidential election yet."
+    ],
+    "vocabulary": [
+      {
+        "term": "martial law",
+        "part_of_speech": "noun phrase",
+        "definition": "Special rules when the military controls a country, often during an emergency."
+      },
+      {
+        "term": "sacked",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Fired from a job; told to leave work."
+      },
+      {
+        "term": "elections",
+        "part_of_speech": "noun",
+        "definition": "Times when people choose their leaders by voting."
+      },
+      {
+        "term": "suspended",
+        "part_of_speech": "verb (past participle)",
+        "definition": "Stopped for a certain period of time."
+      },
+      {
+        "term": "defence minister",
+        "part_of_speech": "noun phrase",
+        "definition": "A high-ranking government official responsible for the country's military and security."
+      },
+      {
+        "term": "rules",
+        "part_of_speech": "plural noun",
+        "definition": "instructions that say what people can or cannot do"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "軍隊が国を支配するとき、多くの場合緊急時に適用される特別な規則。",
+      "ko": "군대가 한 나라를 통제할 때, 주로 비상사태 동안 적용되는 특별한 규칙.",
+      "zh-Hans": "军队控制一个国家时实行的特别规定，通常在紧急情况下。",
+      "es": "Reglas especiales que se aplican cuando el ejército controla un país, a menudo durante una emergencia.",
+      "pt-BR": "Regras especiais aplicadas quando os militares controlam um país, frequentemente durante uma emergência."
+    },
+    {
+      "id": 1,
+      "ja": "仕事を解雇された、または仕事を辞めるように言われた。",
+      "ko": "직장에서 해고되거나, 일을 그만두라고 들음.",
+      "zh-Hans": "被解雇；被告知离开工作。",
+      "es": "Despedido de un trabajo; se le dijo que dejara el empleo.",
+      "pt-BR": "Demitido de um emprego; mandado sair do trabalho."
+    },
+    {
+      "id": 2,
+      "ja": "人々が投票によって指導者を選ぶ時期。",
+      "ko": "사람들이 투표를 통해 자신들의 지도자를 선택하는 시기.",
+      "zh-Hans": "人们通过投票选举领导人的时期。",
+      "es": "Momentos en los que la gente elige a sus líderes votando.",
+      "pt-BR": "Períodos em que as pessoas escolhem seus líderes por meio de votação."
+    },
+    {
+      "id": 3,
+      "ja": "ある一定期間、一時的に中断された。",
+      "ko": "특정 기간 동안 일시적으로 중단된.",
+      "zh-Hans": "在一定时期内暂时停止了。",
+      "es": "Detenido o interrumpido por un período de tiempo determinado.",
+      "pt-BR": "Interrompido ou paralisado por um certo período de tempo."
+    },
+    {
+      "id": 4,
+      "ja": "国の軍事と安全保障を担当する高位の政府高官。",
+      "ko": "국가의 군사 및 안보를 책임지는 고위 정부 관료.",
+      "zh-Hans": "负责国家军事和安全的政府高级官员。",
+      "es": "Un alto funcionario del gobierno responsable del ejército y la seguridad del país.",
+      "pt-BR": "Um oficial de alto escalão do governo responsável pelas forças armadas e pela segurança do país."
+    },
+    {
+      "id": 5,
+      "ja": "人々が何ができるか、あるいはできないかを指示する命令や規定。",
+      "ko": "사람들이 무엇을 할 수 있고 무엇을 할 수 없는지 알려주는 지침이나 규정.",
+      "zh-Hans": "说明人们可以或不可以做什么的指示或规定。",
+      "es": "Instrucciones o normas que indican lo que la gente puede o no puede hacer.",
+      "pt-BR": "Instruções ou normas que dizem o que as pessoas podem ou não podem fazer."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:56:06.272219+00:00"
+  }
+}

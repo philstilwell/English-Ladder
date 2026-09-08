@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Big floods happened in Nepal and Tibet.",
+      "These floods caused much damage.",
+      "Scientists are studying the reason for the floods.",
+      "They think a glacier collapsed.",
+      "A glacier is a very big piece of ice.",
+      "When a glacier melts or breaks, it can be dangerous.",
+      "The collapsed glacier caused the water to rise very fast.",
+      "This led to devastating floods in the region.",
+      "Scientists are doing preliminary investigations.",
+      "They see that Himalayan ice is melting quickly."
+    ],
+    "vocabulary": [
+      {
+        "term": "collapsed",
+        "part_of_speech": "verb",
+        "definition": "fell down suddenly"
+      },
+      {
+        "term": "glacier",
+        "part_of_speech": "noun",
+        "definition": "a very large area of ice, moving slowly"
+      },
+      {
+        "term": "floods",
+        "part_of_speech": "noun",
+        "definition": "a lot of water covering land that is usually dry"
+      },
+      {
+        "term": "devastating",
+        "part_of_speech": "adjective",
+        "definition": "causing a lot of damage and destruction"
+      },
+      {
+        "term": "preliminary investigations",
+        "part_of_speech": "noun phrase",
+        "definition": "first studies or checks to find out something"
+      },
+      {
+        "term": "region",
+        "part_of_speech": "noun",
+        "definition": "an area of a country or of the world"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "突然倒れた。",
+      "ko": "갑자기 무너져 내렸다.",
+      "zh-Hans": "突然倒塌。",
+      "es": "Cayó repentinamente.",
+      "pt-BR": "Caiu de repente."
+    },
+    {
+      "id": 1,
+      "ja": "ゆっくりと動く、非常に大きな氷の塊。",
+      "ko": "아주 천천히 움직이는 매우 넓은 얼음 덩어리.",
+      "zh-Hans": "缓慢移动的巨大冰块。",
+      "es": "Una extensión muy grande de hielo que se mueve lentamente.",
+      "pt-BR": "Uma área muito grande de gelo, que se move lentamente."
+    },
+    {
+      "id": 2,
+      "ja": "通常は乾いている土地が大量の水で覆われること。",
+      "ko": "보통은 마른 땅이 많은 물로 덮이는 현상.",
+      "zh-Hans": "大量水覆盖通常干燥的陆地。",
+      "es": "Mucha agua cubriendo tierra que normalmente está seca.",
+      "pt-BR": "Muita água cobrindo terras que normalmente são secas."
+    },
+    {
+      "id": 3,
+      "ja": "多くの損害や破壊を引き起こすこと。",
+      "ko": "많은 손상과 파괴를 일으키는.",
+      "zh-Hans": "造成巨大损害和破坏的。",
+      "es": "Que causa mucho daño y destrucción.",
+      "pt-BR": "Que causa muitos danos e destruição."
+    },
+    {
+      "id": 4,
+      "ja": "何かを見つけるために最初に行われる研究や確認。",
+      "ko": "무언가를 알아내기 위해 처음으로 하는 연구나 확인.",
+      "zh-Hans": "为了查明某事而进行的初步研究或检查。",
+      "es": "Primeros estudios o verificaciones para averiguar algo.",
+      "pt-BR": "Primeiros estudos ou verificações para descobrir algo."
+    },
+    {
+      "id": 5,
+      "ja": "国や世界の特定の地域。",
+      "ko": "한 국가 또는 세계의 특정 지역.",
+      "zh-Hans": "一个国家或世界上的某个区域。",
+      "es": "Un área de un país o del mundo.",
+      "pt-BR": "Uma área de um país ou do mundo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:54:15.378325+00:00"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The US wants Iran to make a pledge.",
+      "This pledge means Iran will stop shooting at ships.",
+      "Iran should not attack ships in the future.",
+      "These ships travel through the Strait of Hormuz.",
+      "The US wants peace in this important area.",
+      "Vice-President JD Vance is an important US official.",
+      "He will join other US officials.",
+      "They will take part in important talks.",
+      "These talks are called negotiations.",
+      "The negotiations will start again on Saturday in Oman."
+    ],
+    "vocabulary": [
+      {
+        "term": "pledge",
+        "part_of_speech": "noun",
+        "definition": "a serious promise to do something"
+      },
+      {
+        "term": "shooting",
+        "part_of_speech": "verb",
+        "definition": "attacking with a weapon, like a gun"
+      },
+      {
+        "term": "ships",
+        "part_of_speech": "noun",
+        "definition": "large boats that carry things or people on the sea"
+      },
+      {
+        "term": "officials",
+        "part_of_speech": "noun",
+        "definition": "people who have important jobs in a government"
+      },
+      {
+        "term": "negotiations",
+        "part_of_speech": "noun",
+        "definition": "formal talks between groups to agree on something"
+      },
+      {
+        "term": "Strait of Hormuz",
+        "part_of_speech": "noun phrase",
+        "definition": "A narrow sea passage connecting the Persian Gulf with the Gulf of Oman and the Arabian Sea, crucial for global oil transport."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを行うという真剣な約束。",
+      "ko": "무엇인가를 하겠다는 진지한 약속.",
+      "zh-Hans": "认真地承诺做某事。",
+      "es": "Una promesa seria de hacer algo.",
+      "pt-BR": "Uma promessa séria de fazer algo."
+    },
+    {
+      "id": 1,
+      "ja": "銃のような武器で攻撃すること。",
+      "ko": "총과 같은 무기로 공격하는 것.",
+      "zh-Hans": "用枪等武器进行攻击。",
+      "es": "Atacar con un arma, como una pistola.",
+      "pt-BR": "Atacar com uma arma, como uma pistola."
+    },
+    {
+      "id": 2,
+      "ja": "海上で物や人を運ぶ大型の船。",
+      "ko": "바다에서 물건이나 사람을 나르는 큰 배.",
+      "zh-Hans": "在海上运载物品或人员的大型船只。",
+      "es": "Barcos grandes que transportan cosas o personas por el mar.",
+      "pt-BR": "Barcos grandes que transportam coisas ou pessoas no mar."
+    },
+    {
+      "id": 3,
+      "ja": "政府で重要な職務を持つ人々。",
+      "ko": "정부에서 중요한 직책을 맡고 있는 사람들.",
+      "zh-Hans": "在政府中担任重要职务的人。",
+      "es": "Personas que tienen trabajos importantes en un gobierno.",
+      "pt-BR": "Pessoas que têm empregos importantes em um governo."
+    },
+    {
+      "id": 4,
+      "ja": "何かについて合意するためにグループ間で行われる正式な話し合い。",
+      "ko": "어떤 것에 대해 합의하기 위해 집단들 사이에서 진행되는 공식적인 대화.",
+      "zh-Hans": "各团体之间为就某事达成一致而进行的正式会谈。",
+      "es": "Conversaciones formales entre grupos para llegar a un acuerdo sobre algo.",
+      "pt-BR": "Conversas formais entre grupos para chegar a um acordo sobre algo."
+    },
+    {
+      "id": 5,
+      "ja": "ペルシャ湾とオマーン湾およびアラビア海を結び、世界の石油輸送に不可欠な狭い海峡。",
+      "ko": "페르시아만과 오만만, 아라비아해를 연결하며 세계 석유 운송에 매우 중요한 좁은 해협.",
+      "zh-Hans": "连接波斯湾、阿曼湾和阿拉伯海的狭窄海峡，对全球石油运输至关重要。",
+      "es": "Un estrecho pasaje marítimo que conecta el Golfo Pérsico con el Golfo de Omán y el Mar Arábigo, crucial para el transporte mundial de petróleo.",
+      "pt-BR": "Uma passagem marítima estreita que conecta o Golfo Pérsico ao Golfo de Omã e ao Mar Arábico, crucial para o transporte global de petróleo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:04:52.401875+00:00"
+  }
+}

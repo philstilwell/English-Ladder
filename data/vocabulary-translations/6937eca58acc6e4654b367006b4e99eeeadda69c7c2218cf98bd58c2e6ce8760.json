@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The United States signed an important paper.",
+      "This is a nuclear deal with Saudi Arabia.",
+      "It is a new agreement for both countries.",
+      "The US Department of Energy says this is important.",
+      "They said it is for \"peaceful\" co-operation.",
+      "US companies can now have \"great access\" to Saudi Arabia.",
+      "They can join Saudi Arabia's nuclear energy program.",
+      "This program helps Saudi Arabia make power.",
+      "The agreement will help US companies too.",
+      "Both countries will work together on this project."
+    ],
+    "vocabulary": [
+      {
+        "term": "nuclear deal",
+        "part_of_speech": "noun",
+        "definition": "An official agreement about how to use nuclear power safely or for peaceful reasons."
+      },
+      {
+        "term": "agreement",
+        "part_of_speech": "noun",
+        "definition": "A formal decision or promise made by two or more people or groups to do something."
+      },
+      {
+        "term": "co-operation",
+        "part_of_speech": "noun",
+        "definition": "The act of working together with others to achieve a shared goal or to help each other."
+      },
+      {
+        "term": "access",
+        "part_of_speech": "noun",
+        "definition": "The ability or right to enter, use, or get something, like a place or an opportunity."
+      },
+      {
+        "term": "nuclear energy",
+        "part_of_speech": "noun",
+        "definition": "Power that is created when atoms are split apart, often used to produce electricity."
+      },
+      {
+        "term": "operation",
+        "part_of_speech": "noun",
+        "definition": "A planned activity or series of actions for a specific purpose, such as a rescue mission."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "原子力を安全に、または平和的な目的で使用する方法について交わされる公式な合意。",
+      "ko": "핵 에너지를 안전하게 또는 평화적인 목적으로 사용하는 방법에 대한 공식적인 합의.",
+      "zh-Hans": "关于如何安全地或出于和平目的使用核能的官方协议。",
+      "es": "Un acuerdo oficial sobre cómo usar la energía nuclear de forma segura o por razones pacíficas.",
+      "pt-BR": "Um acordo oficial sobre como usar a energia nuclear de forma segura ou para fins pacíficos."
+    },
+    {
+      "id": 1,
+      "ja": "二人以上の人々やグループが何かを行うために交わす、公式な決定や約束。",
+      "ko": "두 명 이상의 사람이나 집단이 무언가를 하기로 하는 공식적인 결정이나 약속.",
+      "zh-Hans": "两个或更多人或团体为了做某事而作出的正式决定或承诺。",
+      "es": "Una decisión formal o promesa hecha por dos o más personas o grupos para hacer algo.",
+      "pt-BR": "Uma decisão formal ou promessa feita por duas ou mais pessoas ou grupos para fazer algo."
+    },
+    {
+      "id": 2,
+      "ja": "共通の目標を達成するため、または互いに助け合うために、他の人々と協力して活動すること。",
+      "ko": "공동의 목표를 달성하거나 서로 돕기 위해 다른 사람들과 함께 일하는 행위.",
+      "zh-Hans": "与他人一起工作以实现共同目标或互相帮助的行为。",
+      "es": "El acto de trabajar junto con otros para lograr una meta compartida o para ayudarse mutuamente.",
+      "pt-BR": "O ato de trabalhar junto com outras pessoas para alcançar um objetivo comum ou para se ajudar mutuamente."
+    },
+    {
+      "id": 3,
+      "ja": "場所や機会など、何かに立ち入ったり、使ったり、手に入れたりする能力や権利。",
+      "ko": "장소나 기회와 같이, 어떤 것을 들어가거나 사용하거나 얻을 수 있는 능력이나 권리.",
+      "zh-Hans": "进入、使用或获得某物（如地方或机会）的能力或权利。",
+      "es": "La habilidad o el derecho de entrar, usar u obtener algo, como un lugar o una oportunidad.",
+      "pt-BR": "A capacidade ou o direito de entrar, usar ou obter algo, como um lugar ou uma oportunidade."
+    },
+    {
+      "id": 4,
+      "ja": "原子を分裂させることによって生み出されるエネルギーで、多くの場合、電力を生産するために使用されます。",
+      "ko": "원자가 분리될 때 생성되는 에너지로, 종종 전기를 생산하는 데 사용됩니다.",
+      "zh-Hans": "通过原子分裂产生的能量，常用于发电。",
+      "es": "La energía que se crea cuando los átomos se dividen, a menudo usada para producir electricidad.",
+      "pt-BR": "A energia que é criada quando átomos são divididos, frequentemente usada para produzir eletricidade."
+    },
+    {
+      "id": 5,
+      "ja": "救助活動のような、特定の目的のために計画された活動や一連の行動。",
+      "ko": "구조 임무와 같이 특정한 목적을 위해 계획된 활동 또는 일련의 행동.",
+      "zh-Hans": "为了特定目的而计划的活动或一系列行动，例如救援任务。",
+      "es": "Una actividad planificada o una serie de acciones con un propósito específico, como una misión de rescate.",
+      "pt-BR": "Uma atividade planejada ou uma série de ações para um propósito específico, como uma missão de resgate."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:02:13.032043+00:00"
+  }
+}

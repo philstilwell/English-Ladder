@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The US launches new strikes.",
+      "These strikes are happening after an attack.",
+      "A ship, or vessel, was attacked.",
+      "This vessel had a flag from Cyprus.",
+      "It was moving in an important waterway.",
+      "This waterway is the Strait of Hormuz.",
+      "Iran sometimes closes this Strait.",
+      "The US launches the strikes because of the attack on the vessel.",
+      "The waterway is critical for many ships.",
+      "This area is important for international travel."
+    ],
+    "vocabulary": [
+      {
+        "term": "launches",
+        "part_of_speech": "verb",
+        "definition": "starts or sends out something new, like an attack."
+      },
+      {
+        "term": "strikes",
+        "part_of_speech": "noun",
+        "definition": "attacks, usually by military planes or missiles."
+      },
+      {
+        "term": "vessel",
+        "part_of_speech": "noun",
+        "definition": "a ship or large boat."
+      },
+      {
+        "term": "waterway",
+        "part_of_speech": "noun",
+        "definition": "a path over water where ships can travel."
+      },
+      {
+        "term": "closes",
+        "part_of_speech": "verb",
+        "definition": "shuts something, so nothing can go through."
+      },
+      {
+        "term": "critical",
+        "part_of_speech": "adjective",
+        "definition": "very important, especially at a difficult or dangerous time"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "攻撃のような新しいものを開始したり、送り出したりする。",
+      "ko": "공격과 같이 새로운 것을 시작하거나 내보내다.",
+      "zh-Hans": "开始或发出新的事物，例如一次袭击。",
+      "es": "Empieza o envía algo nuevo, como un ataque.",
+      "pt-BR": "Começa ou envia algo novo, como um ataque."
+    },
+    {
+      "id": 1,
+      "ja": "通常、軍用機やミサイルによる攻撃。",
+      "ko": "주로 군용기나 미사일로 하는 공격.",
+      "zh-Hans": "袭击，通常指由军用飞机或导弹发动的。",
+      "es": "Ataques, normalmente con aviones militares o misiles.",
+      "pt-BR": "Ataques, geralmente feitos por aviões militares ou mísseis."
+    },
+    {
+      "id": 2,
+      "ja": "船または大型のボート。",
+      "ko": "배나 큰 보트.",
+      "zh-Hans": "船只或大型的船。",
+      "es": "Un barco o una embarcación grande.",
+      "pt-BR": "Um navio ou um barco grande."
+    },
+    {
+      "id": 3,
+      "ja": "船が航行できる水上の道。",
+      "ko": "배가 다닐 수 있는 물 위의 길.",
+      "zh-Hans": "船只可以在水上航行的路径。",
+      "es": "Un camino sobre el agua por donde pueden viajar los barcos.",
+      "pt-BR": "Um caminho sobre a água por onde os navios podem navegar."
+    },
+    {
+      "id": 4,
+      "ja": "何かを閉めて、何も通ることができないようにする。",
+      "ko": "아무것도 지나갈 수 없도록 어떤 것을 닫다.",
+      "zh-Hans": "关闭某物，使没有任何东西可以通过。",
+      "es": "Cierra algo, de modo que nada pueda pasar.",
+      "pt-BR": "Fecha algo para que nada possa passar."
+    },
+    {
+      "id": 5,
+      "ja": "特に困難な時や危険な時に、とても重要なこと。",
+      "ko": "특히 어렵거나 위험한 시기에 매우 중요한 것.",
+      "zh-Hans": "非常重要，特别是在困难或危险的时期。",
+      "es": "Muy importante, especialmente en un momento difícil o peligroso.",
+      "pt-BR": "Muito importante, especialmente em um momento difícil ou perigoso."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:04:43.545543+00:00"
+  }
+}

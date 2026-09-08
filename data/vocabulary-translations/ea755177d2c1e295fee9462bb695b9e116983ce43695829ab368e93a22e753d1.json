@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The US attacked targets in Iran.",
+      "These attacks happened for the seventh consecutive night.",
+      "Iran then fought back.",
+      "Iran retaliated against countries that help the US.",
+      "These helping countries are called US allies.",
+      "These events are happening in the Middle East region.",
+      "Kuwait is one of these US allies.",
+      "Kuwait said that a power and water plant was hit.",
+      "This means a factory that makes electricity and water was attacked.",
+      "There is a lot of tension in the region because of these actions."
+    ],
+    "vocabulary": [
+      {
+        "term": "consecutive",
+        "part_of_speech": "adjective",
+        "definition": "Happening one after another without any break."
+      },
+      {
+        "term": "retaliated",
+        "part_of_speech": "verb",
+        "definition": "To fight back or attack someone because they attacked you first."
+      },
+      {
+        "term": "allies",
+        "part_of_speech": "noun",
+        "definition": "Countries or groups that work together and help each other, often in a war."
+      },
+      {
+        "term": "region",
+        "part_of_speech": "noun",
+        "definition": "A large area of land, usually without exact borders, like the Middle East."
+      },
+      {
+        "term": "plant",
+        "part_of_speech": "noun",
+        "definition": "A factory or a place where power, water, or other things are made."
+      },
+      {
+        "term": "hit",
+        "part_of_speech": "verb (past simple)",
+        "definition": "To strike something with force."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "途切れることなく、次々に起こること。",
+      "ko": "아무런 중단 없이 계속해서 하나씩 이어지는 것.",
+      "zh-Hans": "一个接一个地发生，中间没有任何中断。",
+      "es": "Que ocurre uno después de otro sin ninguna interrupción.",
+      "pt-BR": "Acontecer um depois do outro, sem nenhuma interrupção."
+    },
+    {
+      "id": 1,
+      "ja": "最初に攻撃してきた相手に対して、反撃したり攻撃したりすること。",
+      "ko": "먼저 공격한 사람에게 맞서 싸우거나 공격하는 것.",
+      "zh-Hans": "因为别人先攻击了你，所以你反击或攻击别人。",
+      "es": "Luchar o atacar a alguien en respuesta porque te atacaron primero.",
+      "pt-BR": "Revidar ou atacar alguém porque essa pessoa o atacou primeiro."
+    },
+    {
+      "id": 2,
+      "ja": "協力し合い、助け合う国やグループで、特に戦争の時によく見られる。",
+      "ko": "서로 협력하고 돕는 국가나 단체이며, 흔히 전쟁에서 그러하다.",
+      "zh-Hans": "互相合作并互相帮助的国家或团体，通常是在战争中。",
+      "es": "Países o grupos que trabajan juntos y se ayudan mutuamente, a menudo en una guerra.",
+      "pt-BR": "Países ou grupos que trabalham juntos e se ajudam, muitas vezes em uma guerra."
+    },
+    {
+      "id": 3,
+      "ja": "中東のように、通常は厳密な境界線がない広大な陸地。",
+      "ko": "중동처럼 일반적으로 정확한 경계가 없는 넓은 땅.",
+      "zh-Hans": "一大片土地，通常没有精确的边界，比如中东地区。",
+      "es": "Una gran área de tierra, generalmente sin fronteras exactas, como el Oriente Medio.",
+      "pt-BR": "Uma grande área de terra, geralmente sem fronteiras exatas, como o Oriente Médio."
+    },
+    {
+      "id": 4,
+      "ja": "発電所や浄水場など、電力や水、その他のものが作られる工場や場所。",
+      "ko": "전기, 물 또는 다른 것들을 만드는 공장이나 장소.",
+      "zh-Hans": "制造电力、水或其他东西的工厂或地方。",
+      "es": "Una fábrica o un lugar donde se produce energía, agua u otras cosas.",
+      "pt-BR": "Uma fábrica ou um lugar onde energia, água ou outras coisas são produzidas."
+    },
+    {
+      "id": 5,
+      "ja": "何かに強い力でぶつかること。",
+      "ko": "무언가를 힘을 주어 치는 것.",
+      "zh-Hans": "用力量猛击某物。",
+      "es": "Golpear algo con fuerza.",
+      "pt-BR": "Atingir algo com força."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:03:19.864316+00:00"
+  }
+}

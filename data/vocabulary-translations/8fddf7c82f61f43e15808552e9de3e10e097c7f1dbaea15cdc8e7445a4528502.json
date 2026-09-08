@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Two US soldiers died in Jordan.",
+      "This happened recently.",
+      "The United States then started attacks.",
+      "US forces target Iranian sites.",
+      "They targeted these sites for eight nights.",
+      "Iran also said something.",
+      "Iran said it fired drones.",
+      "The drones were at the US military.",
+      "This happened in Kuwait.",
+      "So, the US and Iran exchange strikes."
+    ],
+    "vocabulary": [
+      {
+        "term": "soldiers",
+        "part_of_speech": "noun",
+        "definition": "People who work in an army. They fight for their country."
+      },
+      {
+        "term": "died",
+        "part_of_speech": "verb, past tense of die",
+        "definition": "Stopped living."
+      },
+      {
+        "term": "attacks",
+        "part_of_speech": "noun",
+        "definition": "Actions that try to hurt someone or something."
+      },
+      {
+        "term": "target",
+        "part_of_speech": "verb",
+        "definition": "To aim at a place or person. To choose a place to hit."
+      },
+      {
+        "term": "drones",
+        "part_of_speech": "noun",
+        "definition": "Flying machines without a pilot. They can carry cameras or weapons."
+      },
+      {
+        "term": "forces",
+        "part_of_speech": "noun",
+        "definition": "A group of people, such as soldiers or police, who are organized for a particular purpose, especially fighting."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "軍隊で働く人々。彼らは国のために戦います。",
+      "ko": "군대에서 일하는 사람들. 그들은 자기 나라를 위해 싸웁니다.",
+      "zh-Hans": "在军队工作的人。他们为自己的国家而战。",
+      "es": "Personas que trabajan en un ejército. Luchan por su país.",
+      "pt-BR": "Pessoas que trabalham em um exército. Elas lutam pelo seu país."
+    },
+    {
+      "id": 1,
+      "ja": "生きることをやめた。",
+      "ko": "사는 것을 멈췄다.",
+      "zh-Hans": "不再活着。",
+      "es": "Dejó de vivir.",
+      "pt-BR": "Parou de viver."
+    },
+    {
+      "id": 2,
+      "ja": "誰かや何かを傷つけようとする行動。",
+      "ko": "누군가나 무엇인가를 해치려고 하는 행동.",
+      "zh-Hans": "试图伤害某人或某事的行为。",
+      "es": "Acciones que intentan dañar a alguien o algo.",
+      "pt-BR": "Ações que tentam machucar alguém ou algo."
+    },
+    {
+      "id": 3,
+      "ja": "場所や人物を狙うこと。攻撃する場所を選ぶこと。",
+      "ko": "어떤 장소나 사람을 겨냥하다. 타격할 장소를 정하다.",
+      "zh-Hans": "瞄准一个地方或一个人。选择一个要打击的地方。",
+      "es": "Apuntar a un lugar o persona. Elegir un lugar para golpear.",
+      "pt-BR": "Apontar para um lugar ou pessoa. Escolher um lugar para atingir."
+    },
+    {
+      "id": 4,
+      "ja": "パイロットがいない飛行機械。カメラや武器を運ぶことができます。",
+      "ko": "조종사가 없는 비행 기계. 카메라나 무기를 실을 수 있습니다.",
+      "zh-Hans": "没有飞行员的飞行机器。它们可以携带摄像机或武器。",
+      "es": "Máquinas voladoras sin piloto. Pueden llevar cámaras o armas.",
+      "pt-BR": "Máquinas voadoras sem piloto. Elas podem carregar câmeras ou armas."
+    },
+    {
+      "id": 5,
+      "ja": "兵士や警察官のように、特定の目的、特に戦闘のために組織された人々のグループ。",
+      "ko": "군인이나 경찰처럼 특정한 목적, 특히 싸움을 위해 조직된 사람들의 집단.",
+      "zh-Hans": "为特定目的（尤其是战斗）而组织起来的一群人，例如士兵或警察。",
+      "es": "Un grupo de personas, como soldados o policías, que están organizadas para un propósito particular, especialmente la lucha.",
+      "pt-BR": "Um grupo de pessoas, como soldados ou policiais, que é organizado para um propósito específico, especialmente combate."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:03:07.724940+00:00"
+  }
+}

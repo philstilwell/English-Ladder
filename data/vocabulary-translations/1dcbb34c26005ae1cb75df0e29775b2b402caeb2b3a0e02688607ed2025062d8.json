@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Air travel may face more disruption as climate change brings more severe weather.",
+      "During a busy summer travel period, storms near London caused long delays.",
+      "Air traffic teams guided aircraft around the storms, reducing the space available for other flights.",
+      "Some departures had to wait on the ground because the skies were congested.",
+      "Some planes might need to change their routes.",
+      "When aircraft land at a different airport, there must be space and facilities for the extra arrivals.",
+      "Pilots use radar and forecasts to help them avoid dangerous weather.",
+      "However, fast-moving storms can force changes late in a flight."
+    ],
+    "vocabulary": [
+      {
+        "term": "severe",
+        "part_of_speech": "adjective",
+        "definition": "very serious or strong"
+      },
+      {
+        "term": "departures",
+        "part_of_speech": "plural noun",
+        "definition": "flights or journeys that leave a place"
+      },
+      {
+        "term": "congested",
+        "part_of_speech": "adjective",
+        "definition": "too crowded for traffic to move easily"
+      },
+      {
+        "term": "facilities",
+        "part_of_speech": "plural noun",
+        "definition": "buildings, equipment or services provided for a purpose"
+      },
+      {
+        "term": "forecasts",
+        "part_of_speech": "plural noun",
+        "definition": "statements about what is likely to happen in the future"
+      },
+      {
+        "term": "air traffic",
+        "part_of_speech": "noun phrase",
+        "definition": "the movement of aircraft through the sky or around airports"
+      },
+      {
+        "term": "radar",
+        "part_of_speech": "noun",
+        "definition": "equipment that uses radio waves to locate objects or weather conditions"
+      },
+      {
+        "term": "available",
+        "part_of_speech": "adjective",
+        "definition": "ready or possible to use"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に深刻な、または強い",
+      "ko": "매우 심각하거나 강한",
+      "zh-Hans": "非常严重或强烈的",
+      "es": "muy serio o fuerte",
+      "pt-BR": "muito sério ou forte"
+    },
+    {
+      "id": 1,
+      "ja": "ある場所から出発するフライトや旅行",
+      "ko": "어떤 장소를 떠나는 비행편이나 여행",
+      "zh-Hans": "离开某个地方的航班或旅程",
+      "es": "vuelos o viajes que salen de un lugar",
+      "pt-BR": "voos ou viagens que partem de um lugar"
+    },
+    {
+      "id": 2,
+      "ja": "交通がスムーズに移動できないほど混雑している",
+      "ko": "교통이 원활하게 움직이기에는 너무 붐비는",
+      "zh-Hans": "过于拥挤以至于交通无法顺畅通行",
+      "es": "demasiado concurrido para que el tráfico se mueva con facilidad",
+      "pt-BR": "muito lotado para o tráfego se mover facilmente"
+    },
+    {
+      "id": 3,
+      "ja": "ある目的のために提供される建物、設備、またはサービス",
+      "ko": "어떤 목적을 위해 제공되는 건물, 장비 또는 서비스",
+      "zh-Hans": "为特定目的提供的建筑、设备或服务",
+      "es": "edificios, equipos o servicios que se proporcionan para un fin",
+      "pt-BR": "edifícios, equipamentos ou serviços fornecidos para um propósito"
+    },
+    {
+      "id": 4,
+      "ja": "将来何が起こる可能性が高いかについての陳述",
+      "ko": "미래에 일어날 가능성이 있는 일에 대한 진술",
+      "zh-Hans": "关于未来可能发生的事情的陈述",
+      "es": "declaraciones sobre lo que es probable que suceda en el futuro",
+      "pt-BR": "declarações sobre o que é provável que aconteça no futuro"
+    },
+    {
+      "id": 5,
+      "ja": "空や空港周辺での航空機の動き",
+      "ko": "하늘이나 공항 주변에서 항공기가 움직이는 것",
+      "zh-Hans": "飞机在空中或机场周围的移动",
+      "es": "el movimiento de aeronaves por el cielo o alrededor de los aeropuertos",
+      "pt-BR": "o movimento de aeronaves pelo céu ou ao redor de aeroportos"
+    },
+    {
+      "id": 6,
+      "ja": "電波を使用して物体や気象条件を特定する装置",
+      "ko": "전파를 사용하여 물체나 기상 조건을 찾는 장비",
+      "zh-Hans": "利用无线电波定位物体或天气状况的设备",
+      "es": "equipo que utiliza ondas de radio para localizar objetos o condiciones meteorológicas",
+      "pt-BR": "equipamento que usa ondas de rádio para localizar objetos ou condições climáticas"
+    },
+    {
+      "id": 7,
+      "ja": "使用する準備ができている、または利用できる",
+      "ko": "사용할 준비가 되어 있거나 사용 가능한",
+      "zh-Hans": "准备好或可以使用的",
+      "es": "listo o posible de usar",
+      "pt-BR": "pronto ou possível de usar"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:18.061921+00:00"
+  }
+}

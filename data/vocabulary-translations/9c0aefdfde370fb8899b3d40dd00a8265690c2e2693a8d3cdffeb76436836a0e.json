@@ -1,0 +1,132 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Recent reports indicated that Iran was set to begin new talks with the United States on Monday.",
+      "However, Iran has officially denied these claims made by former US President Donald Trump, stating they are untrue.",
+      "A spokesperson for the Iranian government explicitly clarified that no such discussions were currently planned.",
+      "This strong denial highlights the continued lack of direct communication and trust between Washington and Tehran.",
+      "Despite the tension with the US, Iran is actively engaged in separate negotiations with the Sultanate of Oman.",
+      "These crucial negotiations primarily concern regulating shipping and ensuring safe access to the vital Strait of Hormuz.",
+      "The Strait of Hormuz is globally recognized as an essential chokepoint for a significant portion of the world's oil supply.",
+      "Maintaining open and secure passage through this waterway is fundamentally important for international trade.",
+      "Such diplomatic efforts with Oman demonstrate Iran's strategic focus on managing its key maritime routes.",
+      "The overall situation remains complex, with various diplomatic exchanges unfolding across the region."
+    ],
+    "vocabulary": [
+      {
+        "term": "region",
+        "part_of_speech": "noun",
+        "definition": "an area of a country or of the world"
+      },
+      {
+        "term": "routes",
+        "part_of_speech": "plural noun",
+        "definition": "the ways used to travel from one place to another"
+      },
+      {
+        "term": "continued",
+        "part_of_speech": "adjective",
+        "definition": "still happening or lasting without stopping"
+      },
+      {
+        "term": "indicated",
+        "part_of_speech": "verb",
+        "definition": "showed or made something known"
+      },
+      {
+        "term": "ensuring",
+        "part_of_speech": "verb",
+        "definition": "making certain that something happens or is provided"
+      },
+      {
+        "term": "waterway",
+        "part_of_speech": "noun",
+        "definition": "a path over water where ships can travel."
+      },
+      {
+        "term": "concern",
+        "part_of_speech": "verb",
+        "definition": "to be about or connected with a particular subject"
+      },
+      {
+        "term": "crucial",
+        "part_of_speech": "adjective",
+        "definition": "Of extreme importance; critical or essential, especially in determining the outcome of something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "ある国や世界の地域",
+      "ko": "한 나라나 세계의 한 지역",
+      "zh-Hans": "一个国家或世界的某个区域",
+      "es": "Un área de un país o del mundo.",
+      "pt-BR": "Uma área de um país ou do mundo."
+    },
+    {
+      "id": 1,
+      "ja": "ある場所から別の場所へ移動するために使われる道",
+      "ko": "한 장소에서 다른 장소로 이동하는 데 사용되는 길",
+      "zh-Hans": "从一个地方旅行到另一个地方所使用的途径",
+      "es": "Las maneras utilizadas para viajar de un lugar a otro.",
+      "pt-BR": "Os caminhos usados para viajar de um lugar para outro."
+    },
+    {
+      "id": 2,
+      "ja": "止まることなくまだ続いている、または継続している",
+      "ko": "멈추지 않고 계속 일어나거나 지속되는",
+      "zh-Hans": "仍在发生或持续而没有停止的",
+      "es": "Que sigue ocurriendo o durando sin detenerse.",
+      "pt-BR": "Que continua acontecendo ou durando sem parar."
+    },
+    {
+      "id": 3,
+      "ja": "何かを示したり、知らせたりした",
+      "ko": "무엇인가를 보여주거나 알렸다",
+      "zh-Hans": "显示或使某事为人所知",
+      "es": "Mostró o dio a conocer algo.",
+      "pt-BR": "Mostrou ou deu a conhecer algo."
+    },
+    {
+      "id": 4,
+      "ja": "何かが起こる、または提供されることを確実にすること",
+      "ko": "무엇인가가 발생하거나 제공되는 것을 확실하게 만드는 것",
+      "zh-Hans": "确保某事发生或得到提供",
+      "es": "Asegurar que algo suceda o sea proporcionado.",
+      "pt-BR": "Garantir que algo aconteça ou seja fornecido."
+    },
+    {
+      "id": 5,
+      "ja": "船が航行できる水上の道",
+      "ko": "선박이 항해할 수 있는 수로",
+      "zh-Hans": "船只可以航行的水上通道",
+      "es": "Un camino sobre el agua por donde los barcos pueden viajar.",
+      "pt-BR": "Um caminho sobre a água onde os navios podem viajar."
+    },
+    {
+      "id": 6,
+      "ja": "特定の話題についてである、またはそれに関連していること",
+      "ko": "특정 주제에 관한 것이거나 관련이 있는 것",
+      "zh-Hans": "关于或与特定主题相关",
+      "es": "Tratar sobre o estar conectado con un tema en particular.",
+      "pt-BR": "Ser sobre ou estar conectado a um determinado assunto."
+    },
+    {
+      "id": 7,
+      "ja": "非常に重要なこと。特に何かの結果を決定する上で、決定的または不可欠なこと。",
+      "ko": "극도로 중요한 것; 특히 어떤 것의 결과를 결정하는 데 있어서 결정적이거나 필수적인 것.",
+      "zh-Hans": "极其重要；关键或必不可少，特别是在决定某事的结果时。",
+      "es": "De extrema importancia; crítico o esencial, especialmente para determinar el resultado de algo.",
+      "pt-BR": "De extrema importância; crítico ou essencial, especialmente na determinação do resultado de algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:59:42.274912+00:00"
+  }
+}

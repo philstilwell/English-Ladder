@@ -1,0 +1,132 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Japan experienced unprecedented heavy rainfall over the weekend, leading to severe disruptions across several regions.",
+      "This extreme weather event unfortunately resulted in the deaths of eight individuals.",
+      "The powerful storm cut power to a significant number of residents in affected areas.",
+      "More than 20,000 households were left without electricity due to the severe conditions.",
+      "The intense rainfall also caused widespread travel chaos, affecting thousands of people.",
+      "Approximately 7,000 individuals were left stranded at Tokyo's Narita airport.",
+      "Many flights were cancelled, and train services were suspended, severely impacting travel plans.",
+      "Local authorities issued urgent warnings for potential landslides and flooding as the rain continued.",
+      "Emergency response teams worked tirelessly to restore essential services and assist those impacted by the storm.",
+      "The Japanese government has initiated efforts to assess the full extent of the damage caused by these extreme weather conditions."
+    ],
+    "vocabulary": [
+      {
+        "term": "airport",
+        "part_of_speech": "noun",
+        "definition": "A place where aircraft take off and land, with buildings for passengers and cargo."
+      },
+      {
+        "term": "intense",
+        "part_of_speech": "adjective",
+        "definition": "Very strong, extreme, or severe; describing feelings, efforts, or actions that are felt or done to a high degree."
+      },
+      {
+        "term": "cancelled",
+        "part_of_speech": "verb",
+        "definition": "To decide that a planned event or arrangement will not happen, stopping it from taking place."
+      },
+      {
+        "term": "conditions",
+        "part_of_speech": "plural noun",
+        "definition": "the circumstances or physical state in a place"
+      },
+      {
+        "term": "widespread",
+        "part_of_speech": "adjective",
+        "definition": "happening or existing over a large area or among many people"
+      },
+      {
+        "term": "continued",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Kept doing something without stopping."
+      },
+      {
+        "term": "potential",
+        "part_of_speech": "adjective",
+        "definition": "possible, but not yet certain or actual"
+      },
+      {
+        "term": "residents",
+        "part_of_speech": "plural noun",
+        "definition": "people who live in a particular place"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "航空機が離着陸し、乗客や貨物のための建物がある場所。",
+      "ko": "항공기가 이착륙하고 승객과 화물을 위한 건물이 있는 장소.",
+      "zh-Hans": "飞机起降的地方，有供乘客和货物使用的建筑物。",
+      "es": "Un lugar donde los aviones despegan y aterrizan, con edificios para pasajeros y carga.",
+      "pt-BR": "Um lugar onde aeronaves decolam e pousam, com edifícios para passageiros e carga."
+    },
+    {
+      "id": 1,
+      "ja": "非常に強い、極端な、または厳しい。感情、努力、行動などが高い程度で感じられたり行われたりすることを表現する。",
+      "ko": "매우 강하거나 극심한, 또는 심각한. 감정, 노력, 행동 등이 높은 정도로 느껴지거나 이루어지는 것을 설명합니다.",
+      "zh-Hans": "非常强烈、极端或严重的；指感受或实施程度很高的情感、努力或行动。",
+      "es": "Muy fuerte, extremo o severo; describe sentimientos, esfuerzos o acciones que se sienten o se realizan en un alto grado.",
+      "pt-BR": "Muito forte, extremo ou severo; descreve sentimentos, esforços ou ações que são sentidos ou realizados em alto grau."
+    },
+    {
+      "id": 2,
+      "ja": "計画された出来事や手配が行われないことを決定し、それが起こるのを止めること。",
+      "ko": "계획된 행사나 약속이 열리지 않도록 결정하여, 그것이 발생하지 못하게 하는 것.",
+      "zh-Hans": "决定计划好的事件或安排将不会发生，从而阻止其进行。",
+      "es": "Decidir que un evento o acuerdo planeado no ocurrirá, impidiendo que tenga lugar.",
+      "pt-BR": "Decidir que um evento ou arranjo planejado não acontecerá, impedindo que ocorra."
+    },
+    {
+      "id": 3,
+      "ja": "ある場所の状況や物理的な状態。",
+      "ko": "어떤 장소의 상황이나 물리적인 상태.",
+      "zh-Hans": "某个地方的环境或物理状态。",
+      "es": "Las circunstancias o el estado físico en un lugar.",
+      "pt-BR": "As circunstâncias ou o estado físico em um lugar."
+    },
+    {
+      "id": 4,
+      "ja": "広い範囲や多くの人々の間で起こっている、または存在している。",
+      "ko": "넓은 지역이나 많은 사람들 사이에서 발생하거나 존재하는.",
+      "zh-Hans": "在大范围或许多人之间发生或存在的。",
+      "es": "Que ocurre o existe en una gran área o entre muchas personas.",
+      "pt-BR": "Que ocorre ou existe em uma grande área ou entre muitas pessoas."
+    },
+    {
+      "id": 5,
+      "ja": "何かを止めることなくし続けた。",
+      "ko": "멈추지 않고 계속해서 무엇인가를 했다.",
+      "zh-Hans": "继续做某事没有停止。",
+      "es": "Continuar haciendo algo sin detenerse.",
+      "pt-BR": "Continuou fazendo algo sem parar."
+    },
+    {
+      "id": 6,
+      "ja": "可能性があるが、まだ確かではない、あるいは現実のものではない。",
+      "ko": "가능성은 있지만 아직 확실하거나 실제가 아닌.",
+      "zh-Hans": "可能发生，但尚未确定或实际发生。",
+      "es": "Posible, pero aún no cierto o real.",
+      "pt-BR": "Possível, mas ainda não certo ou real."
+    },
+    {
+      "id": 7,
+      "ja": "特定の場所に住んでいる人々。",
+      "ko": "특정 장소에 사는 사람들.",
+      "zh-Hans": "居住在特定地点的人。",
+      "es": "Personas que viven en un lugar particular.",
+      "pt-BR": "Pessoas que vivem em um lugar específico."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:57:14.278359+00:00"
+  }
+}

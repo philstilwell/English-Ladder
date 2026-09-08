@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Kyiv, a big city in Ukraine, had a very serious attack.",
+      "This attack happened on Thursday.",
+      "At least 13 people were killed.",
+      "Apartment blocks in the city faced damage.",
+      "Warehouses also faced damage from the attack.",
+      "Officials said it was a \"massive attack.\"",
+      "Many buildings were targeted during the attack.",
+      "Ukraine currently has problems with air defence systems.",
+      "They need more protection from such attacks in the future.",
+      "The situation in Kyiv is very sad for many people."
+    ],
+    "vocabulary": [
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "A strong, harmful action against a place or people."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb",
+        "definition": "To take away someone's life."
+      },
+      {
+        "term": "officials",
+        "part_of_speech": "noun",
+        "definition": "Important people who work for the government or a company."
+      },
+      {
+        "term": "targeted",
+        "part_of_speech": "verb",
+        "definition": "Chosen as a place or thing to hit or hurt."
+      },
+      {
+        "term": "air defence",
+        "part_of_speech": "noun",
+        "definition": "Systems or weapons that protect a country from attacks from the sky."
+      },
+      {
+        "term": "massive",
+        "part_of_speech": "adjective",
+        "definition": "very big or very strong"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "場所や人々に対して行われる、強く害を与える行動。",
+      "ko": "장소나 사람들에게 행해지는 강하고 해로운 행동.",
+      "zh-Hans": "对某个地方或人群采取的强烈有害的行动。",
+      "es": "Una acción fuerte y dañina contra un lugar o personas.",
+      "pt-BR": "Uma ação forte e prejudicial contra um lugar ou pessoas."
+    },
+    {
+      "id": 1,
+      "ja": "人の命を奪うこと。",
+      "ko": "어떤 사람의 목숨을 빼앗는 것.",
+      "zh-Hans": "夺走某个人的生命。",
+      "es": "Quitarle la vida a alguien.",
+      "pt-BR": "Tirar a vida de alguém."
+    },
+    {
+      "id": 2,
+      "ja": "政府や会社で働く重要な人々。",
+      "ko": "정부나 회사에서 일하는 중요한 사람들.",
+      "zh-Hans": "为政府或公司工作的重要人物。",
+      "es": "Personas importantes que trabajan para el gobierno o una empresa.",
+      "pt-BR": "Pessoas importantes que trabalham para o governo ou uma empresa."
+    },
+    {
+      "id": 3,
+      "ja": "攻撃したり傷つけたりする場所や物として選ばれた。",
+      "ko": "공격하거나 해를 입힐 장소나 대상으로 선택된.",
+      "zh-Hans": "被选作打击或伤害的地点或事物。",
+      "es": "Elegido como un lugar o una cosa para golpear o dañar.",
+      "pt-BR": "Escolhido como um lugar ou objeto para atingir ou ferir."
+    },
+    {
+      "id": 4,
+      "ja": "国を空からの攻撃から守るためのシステムや兵器。",
+      "ko": "하늘로부터의 공격으로부터 나라를 보호하는 시스템이나 무기.",
+      "zh-Hans": "保护一个国家免受空中袭击的系统或武器。",
+      "es": "Sistemas o armas que protegen a un país de ataques desde el cielo.",
+      "pt-BR": "Sistemas ou armas que protegem um país de ataques vindos do céu."
+    },
+    {
+      "id": 5,
+      "ja": "とても大きい、またはとても強い。",
+      "ko": "매우 크거나 매우 강한.",
+      "zh-Hans": "非常大或非常强的。",
+      "es": "Muy grande o muy fuerte.",
+      "pt-BR": "Muito grande ou muito forte."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:55:49.972555+00:00"
+  }
+}

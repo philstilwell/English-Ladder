@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A powerful earthquake hit Indonesia.",
+      "It was a 7.7-magnitude earthquake.",
+      "This earthquake killed at least 38 people.",
+      "Many people died in the disaster.",
+      "The earthquake happened in eastern Indonesia.",
+      "The place is an island called Flores.",
+      "Now, a search and rescue operation is under way.",
+      "Workers want to find survivors.",
+      "They are looking for people who are still alive.",
+      "This operation is very important for the people of Flores."
+    ],
+    "vocabulary": [
+      {
+        "term": "powerful",
+        "part_of_speech": "adjective",
+        "definition": "very strong; having great strength or force."
+      },
+      {
+        "term": "earthquake",
+        "part_of_speech": "noun",
+        "definition": "A sudden violent shaking of the ground, sometimes causing great destruction."
+      },
+      {
+        "term": "killed",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Caused someone or something to die; took life away."
+      },
+      {
+        "term": "rescue operation",
+        "part_of_speech": "noun phrase",
+        "definition": "Organized work to save people from danger or a difficult situation."
+      },
+      {
+        "term": "survivors",
+        "part_of_speech": "noun",
+        "definition": "People who are still alive after a dangerous event or accident."
+      },
+      {
+        "term": "magnitude",
+        "part_of_speech": "noun",
+        "definition": "A measure of the energy released by an earthquake, often indicated on a scale like the Richter scale."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "非常に強く、大きな力や勢いを持っていること。",
+      "ko": "매우 강한 것; 큰 힘이나 위력을 가지고 있는 것.",
+      "zh-Hans": "非常强大；具有巨大力量或威力。",
+      "es": "Muy fuerte; que tiene gran fuerza o potencia.",
+      "pt-BR": "Muito forte; que possui grande força ou poder."
+    },
+    {
+      "id": 1,
+      "ja": "地面が突然激しく揺れること。時には大きな破壊を引き起こす。",
+      "ko": "땅이 갑자기 격렬하게 흔들리는 현상으로, 때로는 큰 파괴를 일으키기도 합니다.",
+      "zh-Hans": "地面突然剧烈摇晃，有时会造成巨大破坏。",
+      "es": "Un movimiento repentino y violento de la tierra, que a veces causa gran destrucción.",
+      "pt-BR": "Um tremor repentino e violento do solo, às vezes causando grande destruição."
+    },
+    {
+      "id": 2,
+      "ja": "誰かまたは何かを死なせること。命を奪うこと。",
+      "ko": "누군가 또는 무언가가 죽게 만들다; 생명을 앗아가다.",
+      "zh-Hans": "导致某人或某物死亡；夺去生命。",
+      "es": "Causó la muerte de alguien o algo; quitó la vida.",
+      "pt-BR": "Causou a morte de alguém ou algo; tirou a vida."
+    },
+    {
+      "id": 3,
+      "ja": "危険な状況や困難な状況から人々を救うために組織された活動。",
+      "ko": "위험하거나 어려운 상황에 처한 사람들을 구하기 위한 조직적인 작업.",
+      "zh-Hans": "为使人们脱离危险或困境而进行的有组织的工作。",
+      "es": "Trabajo organizado para salvar a personas de un peligro o una situación difícil.",
+      "pt-BR": "Trabalho organizado para salvar pessoas de um perigo ou de uma situação difícil."
+    },
+    {
+      "id": 4,
+      "ja": "危険な出来事や事故の後でも生きている人々。",
+      "ko": "위험한 사건이나 사고 후에 여전히 살아있는 사람들.",
+      "zh-Hans": "在危险事件或事故后仍然活着的人。",
+      "es": "Personas que siguen vivas después de un evento peligroso o un accidente.",
+      "pt-BR": "Pessoas que ainda estão vivas após um evento perigoso ou acidente."
+    },
+    {
+      "id": 5,
+      "ja": "地震によって放出されるエネルギーの尺度で、しばしばリヒター・スケールのような規模で示されるもの。",
+      "ko": "지진에 의해 방출되는 에너지의 측정치로, 종종 리히터 규모와 같은 척도로 표시됩니다.",
+      "zh-Hans": "衡量地震释放能量的指标，通常以里氏震级等标度表示。",
+      "es": "Una medida de la energía liberada por un terremoto, a menudo indicada en una escala como la escala de Richter.",
+      "pt-BR": "Uma medida da energia liberada por um terremoto, frequentemente indicada em uma escala como a escala Richter."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:56:55.261467+00:00"
+  }
+}

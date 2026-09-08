@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "There is news about Israel and the West Bank.",
+      "Israel is accused of weaponising archaeology.",
+      "This means using old sites in a bad way.",
+      "These sites are ancient and important.",
+      "Israel is planning large-scale land expropriations.",
+      "This means taking a lot of land.",
+      "The land is in historic Palestinian areas.",
+      "The West Bank is a special place.",
+      "Many people are worried about these plans.",
+      "Some say Israel uses archaeology to control land."
+    ],
+    "vocabulary": [
+      {
+        "term": "accused of",
+        "part_of_speech": "verb phrase",
+        "definition": "told that you did something wrong or bad."
+      },
+      {
+        "term": "weaponising",
+        "part_of_speech": "verb",
+        "definition": "using something as a weapon to hurt or control others, not for its original purpose."
+      },
+      {
+        "term": "ancient",
+        "part_of_speech": "adjective",
+        "definition": "very, very old; from a long time ago."
+      },
+      {
+        "term": "planning",
+        "part_of_speech": "verb",
+        "definition": "thinking about what you will do in the future and making arrangements for it."
+      },
+      {
+        "term": "land expropriations",
+        "part_of_speech": "noun phrase",
+        "definition": "when a government takes private land for public use or other reasons, sometimes without agreement."
+      },
+      {
+        "term": "archaeology",
+        "part_of_speech": "noun",
+        "definition": "the study of old objects and places to learn about people long ago"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "あなたが何か間違ったことや悪いことをしたと言われること。",
+      "ko": "당신이 잘못되거나 나쁜 일을 했다고 말을 듣는 것.",
+      "zh-Hans": "被告知你做了错事或坏事。",
+      "es": "Que se te diga que hiciste algo malo o incorrecto.",
+      "pt-BR": "Receber a informação de que você fez algo errado ou ruim."
+    },
+    {
+      "id": 1,
+      "ja": "何かを本来の目的ではなく、他人を傷つけたり支配したりするための武器として使うこと。",
+      "ko": "어떤 것을 원래의 목적이 아닌, 다른 사람들을 해치거나 통제하기 위한 무기로 사용하는 것.",
+      "zh-Hans": "将某物用作武器来伤害或控制他人，而不是用于其原始目的。",
+      "es": "Usar algo como un arma para herir o controlar a otros, no para su propósito original.",
+      "pt-BR": "Usar algo como arma para ferir ou controlar outras pessoas, e não para seu propósito original."
+    },
+    {
+      "id": 2,
+      "ja": "非常に、非常に古い。ずっと昔からのもの。",
+      "ko": "아주 아주 오래된; 오래 전부터 있었던.",
+      "zh-Hans": "非常非常古老；很久以前的。",
+      "es": "Muy, muy viejo; de hace mucho tiempo.",
+      "pt-BR": "Muito, muito antigo; de muito tempo atrás."
+    },
+    {
+      "id": 3,
+      "ja": "将来何をするか考え、そのための手配をすること。",
+      "ko": "미래에 무엇을 할지 생각하고, 그것을 위해 준비하는 것.",
+      "zh-Hans": "思考你将来要做什么并为此做出安排。",
+      "es": "Pensar en lo que harás en el futuro y hacer los arreglos necesarios para ello.",
+      "pt-BR": "Pensar no que você fará no futuro e fazer os preparativos para isso."
+    },
+    {
+      "id": 4,
+      "ja": "政府が公共利用やその他の理由で私有地を接収すること。時には合意なしに行われる。",
+      "ko": "정부가 공공 사용이나 다른 이유로 사유지를 가져가는 것. 때로는 합의 없이 이루어지기도 함.",
+      "zh-Hans": "政府出于公共用途或其他原因而征用私人土地，有时未经同意。",
+      "es": "Cuando un gobierno toma tierras privadas para uso público u otras razones, a veces sin acuerdo.",
+      "pt-BR": "Quando um governo toma terras privadas para uso público ou outras razões, às vezes sem acordo."
+    },
+    {
+      "id": 5,
+      "ja": "昔の人々について学ぶために、古い物や場所を研究すること。",
+      "ko": "오래 전 사람들에 대해 배우기 위해 오래된 물건과 장소를 연구하는 학문.",
+      "zh-Hans": "通过研究古代物品和地点来了解很久以前的人们。",
+      "es": "El estudio de objetos y lugares antiguos para aprender sobre personas de hace mucho tiempo.",
+      "pt-BR": "O estudo de objetos e lugares antigos para aprender sobre as pessoas de muito tempo atrás."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:16.116829+00:00"
+  }
+}

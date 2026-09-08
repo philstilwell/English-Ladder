@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "A judge in Massachusetts has declared a mistrial in the Lindsay Clancy murder case.",
+      "The jury could not agree after a week of discussions following weeks of testimony.",
+      "The case concerns the deaths of her three children.",
+      "Her lawyer tried unsuccessfully to prevent the mistrial.",
+      "Another hearing is scheduled for later in the month to consider the next steps.",
+      "The prosecutor said the legal team would discuss whether to seek another trial.",
+      "Clancy remains held on the existing charges.",
+      "The legal outcome remains uncertain."
+    ],
+    "vocabulary": [
+      {
+        "term": "testimony",
+        "part_of_speech": "noun",
+        "definition": "statements given by witnesses as evidence in court"
+      },
+      {
+        "term": "prevent",
+        "part_of_speech": "verb",
+        "definition": "stop something from happening"
+      },
+      {
+        "term": "hearing",
+        "part_of_speech": "noun",
+        "definition": "a court session where a legal matter is considered"
+      },
+      {
+        "term": "prosecutor",
+        "part_of_speech": "noun",
+        "definition": "a lawyer who presents a criminal case against an accused person"
+      },
+      {
+        "term": "charges",
+        "part_of_speech": "plural noun",
+        "definition": "formal accusations that someone has committed a crime"
+      },
+      {
+        "term": "declared",
+        "part_of_speech": "verb",
+        "definition": "Stated something officially, publicly, or strongly."
+      },
+      {
+        "term": "scheduled",
+        "part_of_speech": "verb",
+        "definition": "arranged to take place at a particular time"
+      },
+      {
+        "term": "seek",
+        "part_of_speech": "verb",
+        "definition": "to try to obtain or achieve something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "証人が裁判で証拠として述べる発言。",
+      "ko": "증인이 법정에서 증거로 제시하는 진술.",
+      "zh-Hans": "证人在法庭上作为证据而作出的陈述。",
+      "es": "Declaraciones que los testigos hacen como prueba en un tribunal.",
+      "pt-BR": "Declarações dadas por testemunhas como prova em tribunal."
+    },
+    {
+      "id": 1,
+      "ja": "何かが起こるのを止める。",
+      "ko": "어떤 일이 일어나지 못하게 하다.",
+      "zh-Hans": "阻止某事发生。",
+      "es": "Impedir que algo ocurra.",
+      "pt-BR": "Impedir que algo aconteça."
+    },
+    {
+      "id": 2,
+      "ja": "法律問題が審議される法廷での審理。",
+      "ko": "법률적인 사안이 검토되는 법정 회의.",
+      "zh-Hans": "法庭审理法律事务的会议。",
+      "es": "Una sesión judicial en la que se considera un asunto legal.",
+      "pt-BR": "Uma sessão de tribunal onde um assunto legal é considerado."
+    },
+    {
+      "id": 3,
+      "ja": "被告人に対する刑事事件を提示する弁護士。",
+      "ko": "피고인에 대한 형사 사건을 제기하는 변호사.",
+      "zh-Hans": "针对被指控者提出刑事案件的律师。",
+      "es": "Un abogado que presenta un caso penal contra una persona acusada.",
+      "pt-BR": "Um advogado que apresenta um caso criminal contra uma pessoa acusada."
+    },
+    {
+      "id": 4,
+      "ja": "誰かが罪を犯したことに対する公式な告発。",
+      "ko": "누군가 범죄를 저질렀다는 공식적인 고발.",
+      "zh-Hans": "对某人犯下罪行的正式指控。",
+      "es": "Acusaciones formales de que alguien ha cometido un delito.",
+      "pt-BR": "Acusações formais de que alguém cometeu um crime."
+    },
+    {
+      "id": 5,
+      "ja": "何かを公式に、公に、または強く述べた。",
+      "ko": "어떤 것을 공식적으로, 공개적으로, 또는 강력하게 진술했다.",
+      "zh-Hans": "官方地、公开地或强烈地声明了某事。",
+      "es": "Declaró algo de forma oficial, pública o con firmeza.",
+      "pt-BR": "Declarou algo oficialmente, publicamente ou com veemência."
+    },
+    {
+      "id": 6,
+      "ja": "特定の時間に開催されるように手配された。",
+      "ko": "특정한 시간에 개최되도록 준비되었다.",
+      "zh-Hans": "被安排在特定时间发生。",
+      "es": "Dispuesto para que tenga lugar en un momento determinado.",
+      "pt-BR": "Arranjado para acontecer em um horário específico."
+    },
+    {
+      "id": 7,
+      "ja": "何かを得ようとしたり、達成しようとしたりすること。",
+      "ko": "무언가를 얻거나 이루려고 노력하다.",
+      "zh-Hans": "努力获取或实现某事。",
+      "es": "Tratar de obtener o lograr algo.",
+      "pt-BR": "Tentar obter ou alcançar algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:34.104497+00:00"
+  }
+}

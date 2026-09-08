@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "An important religious leader in Iran died.",
+      "Many senior officials went to his funeral.",
+      "But Iran's supreme leader was absent.",
+      "The supreme leader is named Mojtaba Khamenei.",
+      "He has not been seen in public since an attack.",
+      "This attack killed his father.",
+      "The attack happened when a war started.",
+      "This war is between the US, Israel, and Iran.",
+      "People noticed the supreme leader did not attend the funeral.",
+      "His absence is a topic of discussion."
+    ],
+    "vocabulary": [
+      {
+        "term": "supreme leader",
+        "part_of_speech": "noun phrase",
+        "definition": "The most important leader of a country or group."
+      },
+      {
+        "term": "senior officials",
+        "part_of_speech": "noun phrase",
+        "definition": "Important people who work for the government or an organization."
+      },
+      {
+        "term": "absent",
+        "part_of_speech": "adjective",
+        "definition": "Not present; not in a place where someone should be."
+      },
+      {
+        "term": "attend",
+        "part_of_speech": "verb",
+        "definition": "To go to an event, a meeting, or a place."
+      },
+      {
+        "term": "funeral",
+        "part_of_speech": "noun",
+        "definition": "A ceremony for burying or burning a dead person."
+      },
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "a violent act to hurt or damage someone or something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "国や組織で最も重要な指導者。",
+      "ko": "국가나 단체에서 가장 중요한 지도자.",
+      "zh-Hans": "一个国家或团体的最重要的领导人。",
+      "es": "El líder más importante de un país o grupo.",
+      "pt-BR": "O líder mais importante de um país ou grupo."
+    },
+    {
+      "id": 1,
+      "ja": "政府や組織で働く重要な人々。",
+      "ko": "정부나 단체에서 일하는 중요한 사람들.",
+      "zh-Hans": "在政府或组织中工作的重要人物。",
+      "es": "Personas importantes que trabajan para el gobierno o una organización.",
+      "pt-BR": "Pessoas importantes que trabalham para o governo ou uma organização."
+    },
+    {
+      "id": 2,
+      "ja": "出席していないこと。いるべき場所にいないこと。",
+      "ko": "참석하지 않은. 누군가 있어야 할 장소에 없는.",
+      "zh-Hans": "未出席；不在某人应该在的地方。",
+      "es": "Que no está presente; que no se encuentra en un lugar donde debería estar.",
+      "pt-BR": "Que não está presente; que não está em um lugar onde alguém deveria estar."
+    },
+    {
+      "id": 3,
+      "ja": "イベント、会議、または場所に行くこと。",
+      "ko": "행사, 회의 또는 장소에 가다.",
+      "zh-Hans": "去参加一个活动、会议或去某个地方。",
+      "es": "Ir a un evento, una reunión o un lugar.",
+      "pt-BR": "Ir a um evento, uma reunião ou um lugar."
+    },
+    {
+      "id": 4,
+      "ja": "亡くなった人を埋葬したり火葬したりするための儀式。",
+      "ko": "죽은 사람을 묻거나 화장하기 위한 의식.",
+      "zh-Hans": "为安葬或火化死者而举行的仪式。",
+      "es": "Una ceremonia para enterrar o incinerar a una persona fallecida.",
+      "pt-BR": "Uma cerimônia para enterrar ou cremar uma pessoa morta."
+    },
+    {
+      "id": 5,
+      "ja": "誰かや何かを傷つけたり損害を与えたりする暴力的な行為。",
+      "ko": "누군가나 무언가를 다치게 하거나 손상시키기 위한 폭력적인 행위.",
+      "zh-Hans": "伤害或损坏某人或某物的暴力行为。",
+      "es": "Un acto violento para herir o dañar a alguien o algo.",
+      "pt-BR": "Um ato violento para ferir ou danificar alguém ou algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:13.482147+00:00"
+  }
+}

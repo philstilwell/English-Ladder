@@ -1,0 +1,63 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Mina visits a food market on Saturday.",
+      "She wants to buy tomatoes for dinner.",
+      "She asks a vendor, 'How much are these tomatoes?'",
+      "The vendor says, 'They cost three dollars for one kilo.'",
+      "Mina asks, 'Could I have half a kilo, please?'",
+      "The vendor puts the tomatoes in her bag, and Mina says thank you."
+    ],
+    "vocabulary": [
+      {
+        "term": "vendor",
+        "part_of_speech": "noun",
+        "definition": "a person who sells things"
+      },
+      {
+        "term": "cost",
+        "part_of_speech": "verb",
+        "definition": "to have a particular price"
+      },
+      {
+        "term": "half",
+        "part_of_speech": "noun",
+        "definition": "one of two equal parts"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "物を売る人",
+      "ko": "물건을 파는 사람",
+      "zh-Hans": "卖东西的人",
+      "es": "una persona que vende cosas",
+      "pt-BR": "uma pessoa que vende coisas"
+    },
+    {
+      "id": 1,
+      "ja": "ある特定の値段であること",
+      "ko": "특정 가격을 가지고 있다",
+      "zh-Hans": "具有某个特定的价格",
+      "es": "tener un precio determinado",
+      "pt-BR": "ter um preço específico"
+    },
+    {
+      "id": 2,
+      "ja": "二つの等しい部分のうちの一つ",
+      "ko": "두 개의 동일한 부분 중 하나",
+      "zh-Hans": "两个相等部分中的一个",
+      "es": "una de dos partes iguales",
+      "pt-BR": "uma das duas partes iguais"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:06:32.695134+00:00"
+  }
+}

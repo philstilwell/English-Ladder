@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The United States launched new strikes.",
+      "These strikes were on Iran.",
+      "It happened after an attempted attack.",
+      "American troops were the target.",
+      "There was a short period of calm before.",
+      "Hostilities between the two countries were paused then.",
+      "But now, both sides have restarted missile attacks.",
+      "The US wants to protect its troops.",
+      "This situation can be dangerous.",
+      "Many people hope for peace soon."
+    ],
+    "vocabulary": [
+      {
+        "term": "strikes",
+        "part_of_speech": "noun",
+        "definition": "Sudden strong attacks, often by military planes or missiles."
+      },
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "When someone tries to hurt another person or country."
+      },
+      {
+        "term": "troops",
+        "part_of_speech": "noun",
+        "definition": "Groups of soldiers working together."
+      },
+      {
+        "term": "calm",
+        "part_of_speech": "noun",
+        "definition": "A time when things are quiet and peaceful, without fighting."
+      },
+      {
+        "term": "paused",
+        "part_of_speech": "verb (past tense)",
+        "definition": "Stopped for a short time, then started again."
+      },
+      {
+        "term": "launched",
+        "part_of_speech": "verb",
+        "definition": "To start or set in motion something, often a large-scale project or an attack."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "飛行機やミサイルなどで行われる、突然の強力な攻撃。",
+      "ko": "주로 군용기나 미사일을 이용한 갑작스럽고 강력한 공격.",
+      "zh-Hans": "通常由军用飞机或导弹发起的突然而猛烈的袭击。",
+      "es": "Ataques fuertes y repentinos, a menudo con aviones militares o misiles.",
+      "pt-BR": "Ataques fortes e repentinos, geralmente feitos com aviões militares ou mísseis."
+    },
+    {
+      "id": 1,
+      "ja": "誰かが他の人や国を傷つけようとすること。",
+      "ko": "누군가가 다른 사람이나 국가를 해치려고 시도하는 행위.",
+      "zh-Hans": "某人试图伤害另一个人或国家的行为。",
+      "es": "Cuando alguien intenta hacer daño a otra persona o país.",
+      "pt-BR": "Quando alguém tenta ferir outra pessoa ou país."
+    },
+    {
+      "id": 2,
+      "ja": "協力して活動する兵士たちの集団。",
+      "ko": "함께 협력하여 일하는 군인들의 집단.",
+      "zh-Hans": "一起协同工作的士兵群体。",
+      "es": "Grupos de soldados que trabajan juntos.",
+      "pt-BR": "Grupos de soldados que trabalham juntos."
+    },
+    {
+      "id": 3,
+      "ja": "戦闘がなく、物事が静かで平和な時。",
+      "ko": "싸움 없이 모든 것이 조용하고 평화로운 시간.",
+      "zh-Hans": "没有争斗，事物平静而和平的时期。",
+      "es": "Un momento en que las cosas están tranquilas y pacíficas, sin peleas.",
+      "pt-BR": "Um período em que as coisas estão calmas e pacíficas, sem brigas."
+    },
+    {
+      "id": 4,
+      "ja": "短い時間止まって、それから再び始まった。",
+      "ko": "잠시 멈추었다가 다시 시작했다.",
+      "zh-Hans": "短暂停止，然后又重新开始。",
+      "es": "Se detuvo por un corto tiempo y luego comenzó de nuevo.",
+      "pt-BR": "Parou por um curto período, depois recomeçou."
+    },
+    {
+      "id": 5,
+      "ja": "大規模なプロジェクトや攻撃などを開始したり、始動させたりすること。",
+      "ko": "주로 대규모 프로젝트나 공격과 같은 것을 시작하거나 작동시키다.",
+      "zh-Hans": "开始或启动某事，通常指大型项目或攻击。",
+      "es": "Comenzar o poner en marcha algo, a menudo un proyecto a gran escala o un ataque.",
+      "pt-BR": "Iniciar ou colocar algo em movimento, frequentemente um projeto de grande escala ou um ataque."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:00:35.257923+00:00"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Rescuers in Nepal are trying to reach workers trapped at hydropower sites after severe flooding.",
+      "Mud has blocked tunnels where workers are believed to be trapped.",
+      "The rescue teams have used explosives to break through the hillside.",
+      "Engineers have also been pumping air into the tunnels.",
+      "Chinese and Nepalese military teams are leading the operation with help from international specialists.",
+      "One team entered a tunnel but withdrew after finding nobody inside.",
+      "Relatives of missing workers have called for the rescue to move faster.",
+      "Families are waiting for news."
+    ],
+    "vocabulary": [
+      {
+        "term": "hydropower",
+        "part_of_speech": "noun",
+        "definition": "electricity produced using the movement of water"
+      },
+      {
+        "term": "pumping",
+        "part_of_speech": "verb",
+        "definition": "moving air or liquid with a machine"
+      },
+      {
+        "term": "withdrew",
+        "part_of_speech": "verb",
+        "definition": "moved back or left a place"
+      },
+      {
+        "term": "relatives",
+        "part_of_speech": "plural noun",
+        "definition": "people who belong to the same family"
+      },
+      {
+        "term": "blocked",
+        "part_of_speech": "verb",
+        "definition": "prevented movement or access through something"
+      },
+      {
+        "term": "operation",
+        "part_of_speech": "noun",
+        "definition": "an organised activity carried out for a particular purpose"
+      },
+      {
+        "term": "specialists",
+        "part_of_speech": "plural noun",
+        "definition": "people with detailed knowledge or skills in a particular area"
+      },
+      {
+        "term": "severe",
+        "part_of_speech": "adjective",
+        "definition": "very serious or strong"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "水の動きを利用して発電される電気",
+      "ko": "물의 움직임을 이용하여 생산되는 전기",
+      "zh-Hans": "利用水的运动产生的电",
+      "es": "Electricidad producida utilizando el movimiento del agua",
+      "pt-BR": "Eletricidade produzida utilizando o movimento da água"
+    },
+    {
+      "id": 1,
+      "ja": "機械を使って空気や液体を移動させること",
+      "ko": "기계를 사용하여 공기나 액체를 이동시키는 것",
+      "zh-Hans": "用机器移动空气或液体",
+      "es": "Mover aire o líquido con una máquina",
+      "pt-BR": "Mover ar ou líquido com uma máquina"
+    },
+    {
+      "id": 2,
+      "ja": "後退した、または場所を去った",
+      "ko": "뒤로 물러나거나 어떤 장소를 떠났다",
+      "zh-Hans": "后退或离开一个地方",
+      "es": "Se retiró o abandonó un lugar",
+      "pt-BR": "Recuou ou saiu de um lugar"
+    },
+    {
+      "id": 3,
+      "ja": "同じ家族に属する人々",
+      "ko": "같은 가족에 속한 사람들",
+      "zh-Hans": "属于同一家族的人",
+      "es": "Personas que pertenecen a la misma familia",
+      "pt-BR": "Pessoas que pertencem à mesma família"
+    },
+    {
+      "id": 4,
+      "ja": "何かが通る動きやアクセスを妨げた",
+      "ko": "무언가를 통해 움직이거나 접근하는 것을 막았다",
+      "zh-Hans": "阻止了通过某物的移动或进入",
+      "es": "Impidió el movimiento o el acceso a través de algo",
+      "pt-BR": "Impediu o movimento ou o acesso através de algo"
+    },
+    {
+      "id": 5,
+      "ja": "特定の目的のために実行される組織的な活動",
+      "ko": "특정 목적을 위해 수행되는 조직적인 활동",
+      "zh-Hans": "为特定目的而进行的有组织活动",
+      "es": "Una actividad organizada llevada a cabo con un propósito particular",
+      "pt-BR": "Uma atividade organizada realizada para um propósito específico"
+    },
+    {
+      "id": 6,
+      "ja": "特定の分野で詳細な知識や技能を持つ人々",
+      "ko": "특정 분야에서 자세한 지식이나 기술을 가진 사람들",
+      "zh-Hans": "在特定领域拥有详细知识或技能的人",
+      "es": "Personas con conocimientos o habilidades detalladas en un área particular",
+      "pt-BR": "Pessoas com conhecimento ou habilidades detalhadas em uma área específica"
+    },
+    {
+      "id": 7,
+      "ja": "非常に深刻な、または強い",
+      "ko": "매우 심각하거나 강한",
+      "zh-Hans": "非常严重或强烈",
+      "es": "Muy grave o fuerte",
+      "pt-BR": "Muito sério ou forte"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:53:32.814899+00:00"
+  }
+}

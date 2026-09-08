@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A US soldier was killed in Iraq.",
+      "Another soldier was injured there.",
+      "This happened after an attack.",
+      "The attack was by Iran.",
+      "The US military gave this news.",
+      "This death follows other deaths.",
+      "Two US soldiers died earlier.",
+      "They were killed in Jordan.",
+      "This happened just one day before.",
+      "These events show ongoing conflict."
+    ],
+    "vocabulary": [
+      {
+        "term": "killed",
+        "part_of_speech": "verb",
+        "definition": "Died because of a violent event or action."
+      },
+      {
+        "term": "injured",
+        "part_of_speech": "verb",
+        "definition": "Hurt physically in an accident or an attack."
+      },
+      {
+        "term": "attack",
+        "part_of_speech": "noun",
+        "definition": "A violent act meant to cause harm or damage."
+      },
+      {
+        "term": "military",
+        "part_of_speech": "noun",
+        "definition": "The official armed forces of a country, like the army, navy, or air force."
+      },
+      {
+        "term": "soldiers",
+        "part_of_speech": "noun",
+        "definition": "People who serve in an army and fight in wars."
+      },
+      {
+        "term": "conflict",
+        "part_of_speech": "noun",
+        "definition": "A serious disagreement or argument, often leading to fighting between groups or nations."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "暴力的な出来事や行動によって命を落とした。",
+      "ko": "폭력적인 사건이나 행동으로 인해 사망했다.",
+      "zh-Hans": "因暴力事件或行动而死亡。",
+      "es": "Morir a causa de un evento o acción violenta.",
+      "pt-BR": "Morrer devido a um evento ou ação violenta."
+    },
+    {
+      "id": 1,
+      "ja": "事故や攻撃で肉体的に傷つけられた。",
+      "ko": "사고나 공격으로 신체적으로 다쳤다.",
+      "zh-Hans": "在事故或袭击中身体受伤。",
+      "es": "Sufrir daño físico en un accidente o ataque.",
+      "pt-BR": "Ferir-se fisicamente em um acidente ou ataque."
+    },
+    {
+      "id": 2,
+      "ja": "危害や損害を引き起こすことを意図した暴力的な行為。",
+      "ko": "해를 입히거나 손상을 입히기 위한 폭력적인 행위.",
+      "zh-Hans": "旨在造成伤害或破坏的暴力行为。",
+      "es": "Un acto violento cuyo objetivo es causar daño o perjuicio.",
+      "pt-BR": "Um ato violento destinado a causar dano ou prejuízo."
+    },
+    {
+      "id": 3,
+      "ja": "陸軍、海軍、空軍のような、国の公式な武装力。",
+      "ko": "육군, 해군, 공군과 같이 한 나라의 공식적인 군대.",
+      "zh-Hans": "一个国家的官方武装力量，例如陆军、海军或空军。",
+      "es": "Las fuerzas armadas oficiales de un país, como el ejército, la marina o la fuerza aérea.",
+      "pt-BR": "As forças armadas oficiais de um país, como o exército, a marinha ou a força aérea."
+    },
+    {
+      "id": 4,
+      "ja": "軍隊に所属し、戦争で戦う人々。",
+      "ko": "군대에서 복무하며 전쟁에서 싸우는 사람들.",
+      "zh-Hans": "在军队服役并在战争中作战的人。",
+      "es": "Personas que sirven en un ejército y luchan en guerras.",
+      "pt-BR": "Pessoas que servem em um exército e lutam em guerras."
+    },
+    {
+      "id": 5,
+      "ja": "集団や国家間で、しばしば争いにつながる深刻な意見の相違や議論。",
+      "ko": "집단이나 국가 간의 싸움으로 자주 이어지는 심각한 의견 불일치나 논쟁.",
+      "zh-Hans": "严重的意见分歧或争论，常导致团体或国家之间的战斗。",
+      "es": "Un desacuerdo o discusión seria, que a menudo lleva a la lucha entre grupos o naciones.",
+      "pt-BR": "Um desacordo ou discussão séria, que frequentemente leva a conflitos entre grupos ou nações."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:02:52.658490+00:00"
+  }
+}

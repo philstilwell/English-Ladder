@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Trump talked about the situation.",
+      "He said a ceasefire is \"over\".",
+      "A ceasefire means stopping a fight.",
+      "The US and Iran had strikes before this.",
+      "Strikes are military actions or attacks.",
+      "President Trump was at a Nato summit.",
+      "A summit is a meeting of important leaders.",
+      "US negotiators can keep talking with the Iranians.",
+      "Negotiators try to find solutions.",
+      "They can talk if Iran wants to."
+    ],
+    "vocabulary": [
+      {
+        "term": "ceasefire",
+        "part_of_speech": "noun",
+        "definition": "when fighting stops between two sides."
+      },
+      {
+        "term": "over",
+        "part_of_speech": "adjective",
+        "definition": "finished; not happening anymore."
+      },
+      {
+        "term": "strikes",
+        "part_of_speech": "noun",
+        "definition": "attacks, often by military forces."
+      },
+      {
+        "term": "summit",
+        "part_of_speech": "noun",
+        "definition": "a very important meeting, usually for leaders."
+      },
+      {
+        "term": "negotiators",
+        "part_of_speech": "noun",
+        "definition": "people who talk to find an agreement."
+      },
+      {
+        "term": "meeting",
+        "part_of_speech": "noun",
+        "definition": "When people come together to talk about something important."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "二つの当事者間の戦闘が停止すること。",
+      "ko": "두 진영 간의 싸움이 멈추는 것.",
+      "zh-Hans": "双方停止打斗。",
+      "es": "cuando la lucha entre dos bandos se detiene.",
+      "pt-BR": "quando o combate entre dois lados para."
+    },
+    {
+      "id": 1,
+      "ja": "終わって、もう起こらないこと。",
+      "ko": "끝났고, 더 이상 일어나지 않는.",
+      "zh-Hans": "结束了；不再发生。",
+      "es": "terminado; que ya no está ocurriendo.",
+      "pt-BR": "terminado; que não está mais acontecendo."
+    },
+    {
+      "id": 2,
+      "ja": "攻撃、多くの場合軍隊によるもの。",
+      "ko": "공격, 주로 군대에 의해 행해지는 것.",
+      "zh-Hans": "袭击，通常由军事力量发起。",
+      "es": "ataques, a menudo realizados por fuerzas militares.",
+      "pt-BR": "ataques, frequentemente feitos por forças militares."
+    },
+    {
+      "id": 3,
+      "ja": "非常に重要な会議で、通常は指導者向け。",
+      "ko": "주로 지도자들을 위한 매우 중요한 회의.",
+      "zh-Hans": "一场非常重要的会议，通常是为领导人举行的。",
+      "es": "una reunión muy importante, usualmente para líderes.",
+      "pt-BR": "uma reunião muito importante, geralmente para líderes."
+    },
+    {
+      "id": 4,
+      "ja": "合意を見つけるために話し合う人々。",
+      "ko": "합의를 찾기 위해 대화하는 사람들.",
+      "zh-Hans": "为了达成协议而进行谈判的人。",
+      "es": "personas que conversan para encontrar un acuerdo.",
+      "pt-BR": "pessoas que conversam para encontrar um acordo."
+    },
+    {
+      "id": 5,
+      "ja": "人々が何か重要なことについて話し合うために集まること。",
+      "ko": "사람들이 중요한 어떤 것에 대해 이야기하기 위해 함께 모이는 것.",
+      "zh-Hans": "人们聚在一起讨论重要事情。",
+      "es": "cuando las personas se reúnen para hablar sobre algo importante.",
+      "pt-BR": "quando as pessoas se reúnem para conversar sobre algo importante."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:05:37.416932+00:00"
+  }
+}

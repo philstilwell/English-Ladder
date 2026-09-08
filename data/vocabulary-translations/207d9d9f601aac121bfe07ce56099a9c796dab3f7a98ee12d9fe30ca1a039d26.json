@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "There was a big wildfire in southern Spain.",
+      "This fire happened near Los Gallardos.",
+      "Los Gallardos is a place in Almería.",
+      "At least 12 people are dead because of the fire.",
+      "Also, 23 people are missing.",
+      "A local official spoke about the fire.",
+      "He said some victims might be British.",
+      "Four of the victims may be from Britain.",
+      "The fire broke out suddenly.",
+      "It is a very sad situation for everyone."
+    ],
+    "vocabulary": [
+      {
+        "term": "wildfire",
+        "part_of_speech": "noun",
+        "definition": "A large, uncontrolled fire in a natural area like a forest."
+      },
+      {
+        "term": "dead",
+        "part_of_speech": "adjective",
+        "definition": "Not alive anymore; passed away."
+      },
+      {
+        "term": "missing",
+        "part_of_speech": "adjective",
+        "definition": "Not found; people do not know where they are."
+      },
+      {
+        "term": "broke out",
+        "part_of_speech": "verb phrase",
+        "definition": "Started suddenly and violently."
+      },
+      {
+        "term": "sad",
+        "part_of_speech": "adjective",
+        "definition": "Feeling unhappy or showing sorrow."
+      },
+      {
+        "term": "victims",
+        "part_of_speech": "noun",
+        "definition": "People who are hurt or suffer because of an accident, crime, or disaster."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "森林のような自然の場所で起こる、大きくて制御されていない火事。",
+      "ko": "숲과 같은 자연 지역에서 발생하는 크고 통제할 수 없는 불.",
+      "zh-Hans": "在森林等自然区域发生的大规模失控火灾。",
+      "es": "Un incendio grande e incontrolado en un área natural como un bosque.",
+      "pt-BR": "Um incêndio grande e descontrolado em uma área natural, como uma floresta."
+    },
+    {
+      "id": 1,
+      "ja": "もう生きていない状態。",
+      "ko": "더 이상 살아있지 않은 상태.",
+      "zh-Hans": "不再活着；去世了。",
+      "es": "Que ya no está vivo; que ha fallecido.",
+      "pt-BR": "Que não está mais vivo; que faleceu."
+    },
+    {
+      "id": 2,
+      "ja": "見つかっていない状態。人々がどこにいるか分からない状態。",
+      "ko": "발견되지 않은 상태; 사람들이 어디에 있는지 모르는 상태.",
+      "zh-Hans": "没有被找到；人们不知道他们在哪儿。",
+      "es": "Que no ha sido encontrado; que la gente no sabe dónde está.",
+      "pt-BR": "Que não foi encontrado; as pessoas não sabem onde estão."
+    },
+    {
+      "id": 3,
+      "ja": "突然激しく始まった。",
+      "ko": "갑자기 격렬하게 시작되었다.",
+      "zh-Hans": "突然且猛烈地开始。",
+      "es": "Comenzó de forma súbita y violenta.",
+      "pt-BR": "Começou de repente e violentamente."
+    },
+    {
+      "id": 4,
+      "ja": "幸せではないと感じている、または悲しみを示している状態。",
+      "ko": "불행함을 느끼거나 슬픔을 보이는 상태.",
+      "zh-Hans": "感到不开心或表现出悲伤。",
+      "es": "Sentirse infeliz o mostrar tristeza.",
+      "pt-BR": "Sentir-se infeliz ou mostrar tristeza."
+    },
+    {
+      "id": 5,
+      "ja": "事故、犯罪、または災害のために傷ついたり苦しんだりする人々。",
+      "ko": "사고, 범죄 또는 재해로 인해 다치거나 고통받는 사람들.",
+      "zh-Hans": "因事故、犯罪或灾难而受伤或遭受痛苦的人。",
+      "es": "Personas que resultan heridas o sufren a causa de un accidente, un crimen o un desastre.",
+      "pt-BR": "Pessoas que são feridas ou sofrem por causa de um acidente, crime ou desastre."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:05:07.736150+00:00"
+  }
+}

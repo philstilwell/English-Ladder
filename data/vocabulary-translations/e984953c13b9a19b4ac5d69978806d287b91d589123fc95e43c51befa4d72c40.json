@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "President Zelensky is from Ukraine.",
+      "He wants to speak with Nato.",
+      "Nato is a group of countries.",
+      "Zelensky will go to a meeting in Turkey.",
+      "He will ask for help there.",
+      "Ukraine needs more air defence systems.",
+      "Russia made intense strikes on Ukraine.",
+      "These strikes used missiles.",
+      "Ukraine needs interceptor missiles.",
+      "These missiles can stop Russian attacks."
+    ],
+    "vocabulary": [
+      {
+        "term": "meeting",
+        "part_of_speech": "noun",
+        "definition": "When people come together to talk about something important."
+      },
+      {
+        "term": "ask for",
+        "part_of_speech": "verb phrase",
+        "definition": "To say you want or need something from another person or group."
+      },
+      {
+        "term": "air defence systems",
+        "part_of_speech": "noun phrase",
+        "definition": "Special machines or weapons that protect a place from attacks coming from the sky, like planes or missiles."
+      },
+      {
+        "term": "intense strikes",
+        "part_of_speech": "noun phrase",
+        "definition": "Very strong and heavy attacks, often with many bombs or missiles."
+      },
+      {
+        "term": "interceptor missiles",
+        "part_of_speech": "noun phrase",
+        "definition": "Special rockets that are launched to hit and destroy other enemy rockets or aircraft in the air."
+      },
+      {
+        "term": "attacks",
+        "part_of_speech": "noun",
+        "definition": "Actions that try to hurt someone or something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が何か重要なことについて話し合うために集まること。",
+      "ko": "사람들이 중요한 것에 대해 이야기하기 위해 함께 모이는 것.",
+      "zh-Hans": "人们聚在一起讨论重要事情的时候。",
+      "es": "Cuando las personas se reúnen para hablar de algo importante.",
+      "pt-BR": "Quando as pessoas se juntam para conversar sobre algo importante."
+    },
+    {
+      "id": 1,
+      "ja": "別の人物やグループに何かを欲しい、または必要だと伝えること。",
+      "ko": "다른 사람이나 단체로부터 무언가를 원하거나 필요하다고 말하는 것.",
+      "zh-Hans": "告诉另一个人或团体你想要或需要某物。",
+      "es": "Decir que quieres o necesitas algo de otra persona o grupo.",
+      "pt-BR": "Dizer que você quer ou precisa de algo de outra pessoa ou grupo."
+    },
+    {
+      "id": 2,
+      "ja": "飛行機やミサイルのような空からの攻撃から場所を守る特別な機械や兵器。",
+      "ko": "비행기나 미사일처럼 하늘에서 오는 공격으로부터 특정 장소를 보호하는 특별한 기계나 무기.",
+      "zh-Hans": "保护一个地方免受来自空中攻击（如飞机或导弹）的特殊机器或武器。",
+      "es": "Máquinas o armas especiales que protegen un lugar de ataques que vienen del cielo, como aviones o misiles.",
+      "pt-BR": "Máquinas ou armas especiais que protegem um lugar de ataques vindos do céu, como aviões ou mísseis."
+    },
+    {
+      "id": 3,
+      "ja": "非常に強く激しい攻撃で、しばしば多くの爆弾やミサイルを伴うもの。",
+      "ko": "많은 폭탄이나 미사일을 사용하여 매우 강력하고 심하게 이루어지는 공격.",
+      "zh-Hans": "非常强烈和猛烈的攻击，通常涉及许多炸弹或导弹。",
+      "es": "Ataques muy fuertes y pesados, a menudo con muchas bombas o misiles.",
+      "pt-BR": "Ataques muito fortes e pesados, geralmente com muitas bombas ou mísseis."
+    },
+    {
+      "id": 4,
+      "ja": "空中で敵のロケットや航空機に命中させて破壊するために発射される特別なロケット。",
+      "ko": "공중에서 다른 적의 로켓이나 항공기를 맞혀 파괴하기 위해 발사되는 특별한 로켓.",
+      "zh-Hans": "发射出去击中并摧毁空中敌方火箭或飞机的特殊火箭。",
+      "es": "Cohetes especiales que se lanzan para impactar y destruir otros cohetes o aeronaves enemigos en el aire.",
+      "pt-BR": "Foguetes especiais que são lançados para atingir e destruir outros foguetes ou aeronaves inimigas no ar."
+    },
+    {
+      "id": 5,
+      "ja": "誰かや何かを傷つけようとする行動。",
+      "ko": "누군가 또는 무언가를 해치려고 하는 행동.",
+      "zh-Hans": "试图伤害某人或某物的行为。",
+      "es": "Acciones que intentan herir a alguien o algo.",
+      "pt-BR": "Ações que tentam machucar alguém ou algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:05:53.940585+00:00"
+  }
+}

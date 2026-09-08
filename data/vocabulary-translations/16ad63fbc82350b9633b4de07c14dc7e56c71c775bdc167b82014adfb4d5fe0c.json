@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Meta is a very big company.",
+      "It owns Facebook and Instagram.",
+      "Meta was fined a lot of money.",
+      "This fine is for problems with child safety.",
+      "A court made a ruling against Meta.",
+      "The new fine is 567 million dollars.",
+      "Meta is a social media giant.",
+      "Before, Meta was fined 375 million dollars for the same case.",
+      "Now, the total money Meta must pay is 942 million dollars.",
+      "This is a very large amount of money for a company to pay."
+    ],
+    "vocabulary": [
+      {
+        "term": "fined",
+        "part_of_speech": "verb (past tense)",
+        "definition": "To make someone pay money as a punishment for breaking a rule."
+      },
+      {
+        "term": "child safety",
+        "part_of_speech": "noun phrase",
+        "definition": "Keeping children safe from harm or danger."
+      },
+      {
+        "term": "ruling",
+        "part_of_speech": "noun",
+        "definition": "An official decision made by a court or judge."
+      },
+      {
+        "term": "social media giant",
+        "part_of_speech": "noun phrase",
+        "definition": "A very big and powerful company that owns many social media websites or apps."
+      },
+      {
+        "term": "total",
+        "part_of_speech": "noun",
+        "definition": "The whole amount or number of something, when everything is added together."
+      },
+      {
+        "term": "company",
+        "part_of_speech": "noun",
+        "definition": "a business that sells goods or provides services"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "規則を破った罰として、誰かに罰金を支払わせること。",
+      "ko": "규칙을 어긴 것에 대한 처벌로 누군가에게 돈을 내게 하는 것.",
+      "zh-Hans": "因违反规定而惩罚某人，使其支付金钱。",
+      "es": "Obligar a alguien a pagar dinero como castigo por romper una regla.",
+      "pt-BR": "Fazer com que alguém pague dinheiro como punição por quebrar uma regra."
+    },
+    {
+      "id": 1,
+      "ja": "子どもたちを危害や危険から安全に保つこと。",
+      "ko": "아이들을 해로움이나 위험으로부터 안전하게 지키는 것.",
+      "zh-Hans": "保护儿童免受伤害或危险。",
+      "es": "Mantener a los niños a salvo de daños o peligros.",
+      "pt-BR": "Manter as crianças seguras contra danos ou perigos."
+    },
+    {
+      "id": 2,
+      "ja": "裁判所や裁判官によって下された公式な決定。",
+      "ko": "법원이나 판사가 내린 공식적인 결정.",
+      "zh-Hans": "法院或法官做出的官方决定。",
+      "es": "Una decisión oficial tomada por un tribunal o juez.",
+      "pt-BR": "Uma decisão oficial feita por um tribunal ou juiz."
+    },
+    {
+      "id": 3,
+      "ja": "多くのソーシャルメディアのウェブサイトやアプリを所有する、非常に大きくて強力な会社。",
+      "ko": "많은 소셜 미디어 웹사이트나 앱을 소유하고 있는 매우 크고 강력한 회사.",
+      "zh-Hans": "拥有许多社交媒体网站或应用程序的非常庞大且强大的公司。",
+      "es": "Una empresa muy grande y poderosa que posee muchos sitios web o aplicaciones de redes sociales.",
+      "pt-BR": "Uma empresa muito grande e poderosa que possui muitos sites ou aplicativos de mídia social."
+    },
+    {
+      "id": 4,
+      "ja": "すべてを合計したときの、あるものの全体の量や数。",
+      "ko": "모든 것을 함께 더했을 때의 어떤 것의 전체 양이나 수.",
+      "zh-Hans": "当所有东西加在一起时，某物的总量或总数。",
+      "es": "La cantidad o el número total de algo, cuando todo se suma.",
+      "pt-BR": "A quantidade ou o número total de algo, quando tudo é somado."
+    },
+    {
+      "id": 5,
+      "ja": "商品を販売したり、サービスを提供したりする事業。",
+      "ko": "상품을 판매하거나 서비스를 제공하는 사업체.",
+      "zh-Hans": "销售商品或提供服务的企业。",
+      "es": "Una empresa que vende bienes o proporciona servicios.",
+      "pt-BR": "Uma empresa que vende produtos ou oferece serviços."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:58:43.694392+00:00"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "The report describes a growing series of suspected attacks on defence sites in Europe.",
+      "Germany has blamed Russia for an attack involving drones at Leipzig airport.",
+      "The airport is used to transport military supplies for Ukraine.",
+      "Russian officials reject Germany’s accusation.",
+      "Other countries have reported suspicious fires at defence facilities.",
+      "Some governments have blamed Russia, while investigations elsewhere are still continuing.",
+      "Some of the fires may eventually be found to have been accidental.",
+      "Russia is the main suspect in the report."
+    ],
+    "vocabulary": [
+      {
+        "term": "defence sites",
+        "part_of_speech": "noun phrase",
+        "definition": "places used for military protection or related activities"
+      },
+      {
+        "term": "drones",
+        "part_of_speech": "noun",
+        "definition": "Unmanned aircraft, controlled remotely, often used for surveillance, reconnaissance, or military attacks."
+      },
+      {
+        "term": "supplies",
+        "part_of_speech": "plural noun",
+        "definition": "things needed for an activity or for people to live and work"
+      },
+      {
+        "term": "reject",
+        "part_of_speech": "verb",
+        "definition": "refuse to accept an idea, claim or proposal"
+      },
+      {
+        "term": "eventually",
+        "part_of_speech": "adverb",
+        "definition": "at the end of a period of time or a series of events"
+      },
+      {
+        "term": "transport",
+        "part_of_speech": "verb",
+        "definition": "to move people or goods from one place to another"
+      },
+      {
+        "term": "investigations",
+        "part_of_speech": "plural noun",
+        "definition": "careful inquiries intended to find out what happened"
+      },
+      {
+        "term": "involving",
+        "part_of_speech": "verb",
+        "definition": "including someone or something as part of an event"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "軍事的な防衛や関連活動に使われる場所",
+      "ko": "군사적 보호나 관련 활동에 사용되는 장소",
+      "zh-Hans": "用于军事保护或相关活动的地点",
+      "es": "Lugares utilizados para la protección militar o actividades relacionadas.",
+      "pt-BR": "Lugares usados para proteção militar ou atividades relacionadas."
+    },
+    {
+      "id": 1,
+      "ja": "遠隔操作される無人の航空機で、監視、偵察、軍事攻撃などによく使われるもの。",
+      "ko": "원격으로 조종되는 무인 항공기로, 감시, 정찰 또는 군사 공격에 자주 사용됩니다.",
+      "zh-Hans": "通过远程控制的无人驾驶飞机，常用于监视、侦察或军事袭击。",
+      "es": "Aeronaves no tripuladas, controladas a distancia, a menudo utilizadas para vigilancia, reconocimiento o ataques militares.",
+      "pt-BR": "Aeronaves não tripuladas, controladas remotamente, frequentemente usadas para vigilância, reconhecimento ou ataques militares."
+    },
+    {
+      "id": 2,
+      "ja": "活動や人々が生活し働くために必要なもの",
+      "ko": "어떤 활동이나 사람들이 생활하고 일하는 데 필요한 물건들",
+      "zh-Hans": "进行某项活动或人们生活和工作所需的东西",
+      "es": "Cosas necesarias para una actividad o para que las personas vivan y trabajen.",
+      "pt-BR": "Coisas necessárias para uma atividade ou para as pessoas viverem e trabalharem."
+    },
+    {
+      "id": 3,
+      "ja": "考え、主張、提案を受け入れることを拒否する",
+      "ko": "어떤 생각, 주장 또는 제안을 받아들이기를 거부하다",
+      "zh-Hans": "拒绝接受某个想法、主张或提议",
+      "es": "Negarse a aceptar una idea, afirmación o propuesta.",
+      "pt-BR": "Recusar-se a aceitar uma ideia, afirmação ou proposta."
+    },
+    {
+      "id": 4,
+      "ja": "ある一定の期間や一連の出来事の最後に",
+      "ko": "어떤 기간이나 일련의 사건이 끝났을 때",
+      "zh-Hans": "在一段时期或一系列事件的最终阶段",
+      "es": "Al final de un período de tiempo o de una serie de eventos.",
+      "pt-BR": "No final de um período de tempo ou de uma série de eventos."
+    },
+    {
+      "id": 5,
+      "ja": "人や物をある場所から別の場所へ移動させること",
+      "ko": "사람이나 물건을 한 장소에서 다른 장소로 옮기는 것",
+      "zh-Hans": "将人或货物从一个地方运送到另一个地方",
+      "es": "Mover personas o bienes de un lugar a otro.",
+      "pt-BR": "Mover pessoas ou bens de um lugar para outro."
+    },
+    {
+      "id": 6,
+      "ja": "何が起こったのかを突き止めるための綿密な調査",
+      "ko": "무슨 일이 일어났는지 알아내기 위한 신중한 조사",
+      "zh-Hans": "旨在查明事件真相的仔细调查",
+      "es": "Indagaciones cuidadosas destinadas a averiguar lo que sucedió.",
+      "pt-BR": "Inquéritos cuidadosos destinados a descobrir o que aconteceu."
+    },
+    {
+      "id": 7,
+      "ja": "ある出来事の一部として誰かまたは何かを含むこと",
+      "ko": "어떤 사건의 일부로 누군가 또는 무엇인가를 포함하는 것",
+      "zh-Hans": "将某人或某物作为事件的一部分包含在内",
+      "es": "Incluir a alguien o algo como parte de un evento.",
+      "pt-BR": "Incluir alguém ou algo como parte de um evento."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T15:52:46.531459+00:00"
+  }
+}

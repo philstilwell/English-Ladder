@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A big fire started in a bar in Bangkok.",
+      "The fire happened in the Chatuchak district.",
+      "Many people were at the bar.",
+      "At least 27 people were killed.",
+      "25 people were critically injured.",
+      "Firefighters came to the scene quickly.",
+      "They saw patrons trying to escape the fire.",
+      "People were running through flames.",
+      "It was a very dangerous situation.",
+      "The firefighters helped many people."
+    ],
+    "vocabulary": [
+      {
+        "term": "killed",
+        "part_of_speech": "verb (past participle)",
+        "definition": "died because of something bad that happened."
+      },
+      {
+        "term": "injured",
+        "part_of_speech": "verb (past participle)",
+        "definition": "hurt physically in an accident or attack."
+      },
+      {
+        "term": "firefighters",
+        "part_of_speech": "noun",
+        "definition": "people who stop fires and help others."
+      },
+      {
+        "term": "scene",
+        "part_of_speech": "noun",
+        "definition": "the place where something happened."
+      },
+      {
+        "term": "patrons",
+        "part_of_speech": "noun",
+        "definition": "customers who visit a bar, restaurant, or shop."
+      },
+      {
+        "term": "escape",
+        "part_of_speech": "verb",
+        "definition": "get away from a dangerous place"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何か悪いことが起こったために亡くなった。",
+      "ko": "나쁜 일이 생겨서 죽은.",
+      "zh-Hans": "因发生不好的事情而死亡。",
+      "es": "que murió a causa de algo malo que ocurrió.",
+      "pt-BR": "que morreu por causa de algo ruim que aconteceu."
+    },
+    {
+      "id": 1,
+      "ja": "事故や攻撃で肉体的に傷ついた。",
+      "ko": "사고나 공격으로 신체적으로 다친.",
+      "zh-Hans": "在事故或袭击中身体受到伤害。",
+      "es": "que sufrió daño físico en un accidente o ataque.",
+      "pt-BR": "que se machucou fisicamente em um acidente ou ataque."
+    },
+    {
+      "id": 2,
+      "ja": "火事を消したり、他の人を助けたりする人々。",
+      "ko": "불을 끄고 다른 사람들을 돕는 사람들.",
+      "zh-Hans": "灭火并帮助他人的工作人员。",
+      "es": "personas que apagan incendios y ayudan a otros.",
+      "pt-BR": "pessoas que apagam incêndios e ajudam os outros."
+    },
+    {
+      "id": 3,
+      "ja": "何かが起こった場所。",
+      "ko": "어떤 일이 일어난 장소.",
+      "zh-Hans": "某事发生的地方。",
+      "es": "el lugar donde ocurrió algo.",
+      "pt-BR": "o local onde algo aconteceu."
+    },
+    {
+      "id": 4,
+      "ja": "バー、レストラン、店を訪れる客。",
+      "ko": "술집, 식당, 가게를 방문하는 손님들.",
+      "zh-Hans": "光顾酒吧、餐馆或商店的顾客。",
+      "es": "clientes que visitan un bar, restaurante o tienda.",
+      "pt-BR": "clientes que frequentam um bar, restaurante ou loja."
+    },
+    {
+      "id": 5,
+      "ja": "危険な場所から逃げる。",
+      "ko": "위험한 장소에서 벗어나는 것.",
+      "zh-Hans": "从危险的地方离开。",
+      "es": "alejarse de un lugar peligroso.",
+      "pt-BR": "afastar-se de um lugar perigoso."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:04:28.188322+00:00"
+  }
+}

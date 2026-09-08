@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "There are protests in Ukraine's cities.",
+      "People are showing they are unhappy.",
+      "They are protesting against President Zelensky.",
+      "He removed the defence minister.",
+      "The minister's name is Mykhailo Fedorov.",
+      "The president has not explained this.",
+      "His dismissal is causing great upset.",
+      "Many people are sad and angry.",
+      "This includes civil society and the military.",
+      "People want to know why the minister left."
+    ],
+    "vocabulary": [
+      {
+        "term": "protests",
+        "part_of_speech": "noun",
+        "definition": "When people gather to show they are unhappy about something."
+      },
+      {
+        "term": "removed",
+        "part_of_speech": "verb (past simple)",
+        "definition": "Took someone out of their job or position."
+      },
+      {
+        "term": "defence minister",
+        "part_of_speech": "noun phrase",
+        "definition": "An important person in the government who manages the country's army."
+      },
+      {
+        "term": "dismissal",
+        "part_of_speech": "noun",
+        "definition": "The act of firing someone from a job."
+      },
+      {
+        "term": "upset",
+        "part_of_speech": "adjective",
+        "definition": "Feeling unhappy or angry about something."
+      },
+      {
+        "term": "civil society",
+        "part_of_speech": "noun phrase",
+        "definition": "community groups and other organisations outside government and business"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が何かについて不満であることを示すために集まること。",
+      "ko": "사람들이 어떤 것에 대해 불만을 표현하기 위해 모이는 것.",
+      "zh-Hans": "人们聚集在一起表达他们对某事的不满。",
+      "es": "Cuando las personas se reúnen para mostrar que no están contentas con algo.",
+      "pt-BR": "Quando as pessoas se reúnem para demonstrar que estão insatisfeitas com algo."
+    },
+    {
+      "id": 1,
+      "ja": "誰かをその仕事や役職から外した。",
+      "ko": "어떤 사람을 그들의 직업이나 직위에서 물러나게 했다.",
+      "zh-Hans": "将某人从他们的工作或职位中免去。",
+      "es": "Quitar a alguien de su trabajo o puesto.",
+      "pt-BR": "Tirou alguém do cargo ou posição."
+    },
+    {
+      "id": 2,
+      "ja": "政府の重要な人物で、国の軍隊を管理する人。",
+      "ko": "정부에서 국가의 군대를 관리하는 중요한 사람.",
+      "zh-Hans": "政府中负责管理国家军队的重要人物。",
+      "es": "Una persona importante en el gobierno que administra el ejército del país.",
+      "pt-BR": "Uma pessoa importante no governo que gerencia o exército do país."
+    },
+    {
+      "id": 3,
+      "ja": "誰かを仕事から解雇する行為。",
+      "ko": "어떤 사람을 직장에서 해고하는 행위.",
+      "zh-Hans": "将某人从工作中解雇的行为。",
+      "es": "El acto de despedir a alguien de un trabajo.",
+      "pt-BR": "O ato de demitir alguém de um emprego."
+    },
+    {
+      "id": 4,
+      "ja": "何かについて不満を感じたり、怒りを感じている状態。",
+      "ko": "어떤 것에 대해 불행하거나 화가 나는 느낌.",
+      "zh-Hans": "对某事感到不高兴或生气。",
+      "es": "Sentirse infeliz o enojado por algo.",
+      "pt-BR": "Sentir-se infeliz ou bravo com algo."
+    },
+    {
+      "id": 5,
+      "ja": "政府や企業以外で、コミュニティグループやその他の組織。",
+      "ko": "정부와 기업 외부에 있는 공동체 단체 및 기타 조직들.",
+      "zh-Hans": "政府和企业之外的社区团体和其他组织。",
+      "es": "Grupos comunitarios y otras organizaciones fuera del gobierno y los negocios.",
+      "pt-BR": "Grupos comunitários e outras organizações fora do governo e dos negócios."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:03:46.452437+00:00"
+  }
+}

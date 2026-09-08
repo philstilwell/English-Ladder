@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The price of oil went down today.",
+      "This happened because of news from the US and Iran.",
+      "The US and Iran will **pause attacks** for now.",
+      "They want to have **talks** about the situation.",
+      "The US said it **halted** military actions.",
+      "They stopped to give space for these **talks**.",
+      "Many people have **hopes** for peace.",
+      "This decision gives **hopes** that the **conflict** can end.",
+      "A peaceful **resolution** might be possible soon.",
+      "This news helps calm the situation between the two countries."
+    ],
+    "vocabulary": [
+      {
+        "term": "pause attacks",
+        "part_of_speech": "verb phrase",
+        "definition": "To stop fighting or hurting someone for a short time."
+      },
+      {
+        "term": "talks",
+        "part_of_speech": "noun",
+        "definition": "Formal discussions between people or countries to solve problems."
+      },
+      {
+        "term": "halted",
+        "part_of_speech": "verb",
+        "definition": "Stopped completely; brought to a stop."
+      },
+      {
+        "term": "hopes",
+        "part_of_speech": "noun",
+        "definition": "Feelings of wanting good things to happen in the future."
+      },
+      {
+        "term": "conflict",
+        "part_of_speech": "noun",
+        "definition": "A serious disagreement or fight between people or groups."
+      },
+      {
+        "term": "military",
+        "part_of_speech": "adjective",
+        "definition": "connected with a country’s armed forces"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "短い間、誰かと戦ったり傷つけたりするのをやめる。",
+      "ko": "짧은 시간 동안 싸우거나 누군가를 해치는 것을 멈추는 것.",
+      "zh-Hans": "停止战斗或在短时间内伤害某人。",
+      "es": "Dejar de pelear o de hacer daño a alguien por un corto tiempo.",
+      "pt-BR": "Parar de lutar ou machucar alguém por um curto período de tempo."
+    },
+    {
+      "id": 1,
+      "ja": "問題を解決するために、人や国の間で行われる公式な話し合い。",
+      "ko": "문제를 해결하기 위해 사람이나 국가 사이에 이루어지는 공식적인 논의.",
+      "zh-Hans": "人们或国家之间为解决问题而进行的正式讨论。",
+      "es": "Discusiones formales entre personas o países para resolver problemas.",
+      "pt-BR": "Discussões formais entre pessoas ou países para resolver problemas."
+    },
+    {
+      "id": 2,
+      "ja": "完全に止まったこと。停止させられたこと。",
+      "ko": "완전히 멈췄다; 정지되었다.",
+      "zh-Hans": "完全停止；被阻止。",
+      "es": "Detenido por completo; puesto a un alto.",
+      "pt-BR": "Parou completamente; foi interrompido."
+    },
+    {
+      "id": 3,
+      "ja": "将来良いことが起こってほしいと願う気持ち。",
+      "ko": "미래에 좋은 일이 일어나기를 바라는 마음.",
+      "zh-Hans": "希望未来发生好事的感觉。",
+      "es": "Sentimientos de querer que pasen cosas buenas en el futuro.",
+      "pt-BR": "Sentimentos de desejar que coisas boas aconteçam no futuro."
+    },
+    {
+      "id": 4,
+      "ja": "人々や集団の間の深刻な意見の相違や争い。",
+      "ko": "사람이나 집단 간의 심각한 의견 충돌이나 싸움.",
+      "zh-Hans": "人们或团体之间严重的意见不合或争斗。",
+      "es": "Un desacuerdo o una pelea seria entre personas o grupos.",
+      "pt-BR": "Um desacordo sério ou uma briga entre pessoas ou grupos."
+    },
+    {
+      "id": 5,
+      "ja": "ある国の軍隊に関連する。",
+      "ko": "한 국가의 군대와 관련된.",
+      "zh-Hans": "与一个国家的武装部队有关的。",
+      "es": "Relacionado con las fuerzas armadas de un país.",
+      "pt-BR": "Relacionado às forças armadas de um país."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:01:15.022419+00:00"
+  }
+}

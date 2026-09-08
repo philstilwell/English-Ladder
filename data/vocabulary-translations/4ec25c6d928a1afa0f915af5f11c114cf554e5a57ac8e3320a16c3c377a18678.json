@@ -1,0 +1,106 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Spain is upset with some countries in the European Union.",
+      "Spain thinks some EU countries have a \"selfish response\" to a problem.",
+      "This problem is about \"migrant crossings\" in Ceuta.",
+      "Many people tried to cross the border near Ceuta.",
+      "Italy's leader, Prime Minister Giorgia Meloni, talked about this.",
+      "She said the situation in Ceuta was \"shocking\".",
+      "Because of this, Italy \"temporarily suspended\" a special rule.",
+      "This rule is called the \"Schengen arrangement\".",
+      "Italy stopped this arrangement with Spain for a short time.",
+      "Spain and Italy need to find a solution for these important issues."
+    ],
+    "vocabulary": [
+      {
+        "term": "selfish response",
+        "part_of_speech": "noun phrase",
+        "definition": "When someone acts only for themselves, without thinking about others or their problems."
+      },
+      {
+        "term": "migrant crossings",
+        "part_of_speech": "noun phrase",
+        "definition": "When people move from one country to another, often by crossing a border or sea."
+      },
+      {
+        "term": "shocking",
+        "part_of_speech": "adjective",
+        "definition": "Something very surprising and upsetting, in a bad way."
+      },
+      {
+        "term": "temporarily suspended",
+        "part_of_speech": "verb phrase",
+        "definition": "Stopped for a short period of time; not permanently stopped."
+      },
+      {
+        "term": "Schengen arrangement",
+        "part_of_speech": "noun phrase",
+        "definition": "A special agreement between many European countries that allows people to travel freely between them without passport checks."
+      },
+      {
+        "term": "upset",
+        "part_of_speech": "adjective",
+        "definition": "Feeling unhappy or angry about something."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "自分のことだけを考えて行動し、他人のことや問題を気にかけないこと。",
+      "ko": "다른 사람이나 그들의 문제를 생각하지 않고, 오직 자신만을 위해 행동하는 것.",
+      "zh-Hans": "一个人只为自己行动，不考虑别人或他们的问题。",
+      "es": "Cuando alguien actúa solo para sí mismo, sin pensar en los demás o en sus problemas.",
+      "pt-BR": "Quando alguém age apenas em benefício próprio, sem pensar nos outros ou nos problemas deles."
+    },
+    {
+      "id": 1,
+      "ja": "人々が国境や海を越えて、ある国から別の国へ移動すること。",
+      "ko": "사람들이 국경이나 바다를 건너 한 나라에서 다른 나라로 이동하는 것.",
+      "zh-Hans": "人们从一个国家搬到另一个国家，通常是越过边境或海洋。",
+      "es": "Cuando las personas se trasladan de un país a otro, a menudo cruzando una frontera o el mar.",
+      "pt-BR": "Quando as pessoas se movem de um país para outro, geralmente atravessando uma fronteira ou o mar."
+    },
+    {
+      "id": 2,
+      "ja": "悪い意味で、とても驚き、動揺させるようなこと。",
+      "ko": "나쁜 의미에서, 매우 놀랍고 불쾌하거나 충격을 주는 것.",
+      "zh-Hans": "某事非常令人惊讶和不安，是以一种不好的方式。",
+      "es": "Algo muy sorprendente y perturbador, de una mala manera.",
+      "pt-BR": "Algo muito surpreendente e perturbador, de um jeito negativo."
+    },
+    {
+      "id": 3,
+      "ja": "短期間だけ停止されたり、中断されたりすること。永久に停止されたわけではないこと。",
+      "ko": "짧은 시간 동안 멈추거나 중단된; 영구적으로 멈추지 않은.",
+      "zh-Hans": "在短时间内停止；不是永久停止。",
+      "es": "Detenido por un corto período de tiempo; no detenido permanentemente.",
+      "pt-BR": "Parado por um curto período de tempo; não permanentemente interrompido."
+    },
+    {
+      "id": 4,
+      "ja": "多くのヨーロッパ諸国間で交わされた特別な合意で、人々がパスポートチェックなしに自由に国境を越えて移動できるもの。",
+      "ko": "많은 유럽 국가들 사이의 특별한 합의로, 여권 검사 없이 자유롭게 이동할 수 있도록 허용하는 것.",
+      "zh-Hans": "许多欧洲国家之间的一项特殊协议，允许人们在这些国家之间自由旅行，无需护照检查。",
+      "es": "Un acuerdo especial entre muchos países europeos que permite a las personas viajar libremente entre ellos sin controles de pasaporte.",
+      "pt-BR": "Um acordo especial entre muitos países europeus que permite que as pessoas viajem livremente entre eles sem verificações de passaporte."
+    },
+    {
+      "id": 5,
+      "ja": "何かについて不幸せな、または怒っている気持ち。",
+      "ko": "어떤 일에 대해 불행하거나 화가 나는 감정을 느끼는.",
+      "zh-Hans": "对某事感到不开心或生气。",
+      "es": "Sentir infelicidad o enojo por algo.",
+      "pt-BR": "Sentir-se infeliz ou zangado com algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-08T16:00:03.525632+00:00"
+  }
+}

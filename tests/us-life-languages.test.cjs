@@ -140,3 +140,20 @@ test('unit navigation keeps the chosen language and manual copying selects the a
   assert.equal(w.getSelection().toString(), unit.querySelector('.ai-prompt-text').textContent);
   assert.match(w.getSelection().toString(), /My explanation language is Spanish\./);
 });
+
+
+test('skip and language-section links do not reset the selected unit', async () => {
+  const w = setup(), d = w.document;
+  async function navigate(hash) {
+    const moved = new Promise(resolve => w.addEventListener('hashchange', resolve, { once: true }));
+    w.location.hash = hash;
+    await moved;
+  }
+  await navigate('shopping');
+  assert.equal(d.querySelector('.us-life-module:not([hidden])').id, 'shopping');
+  await navigate('life-language-controls');
+  assert.equal(d.querySelector('.us-life-module:not([hidden])').id, 'shopping');
+  await navigate('main-content');
+  assert.equal(d.querySelector('.us-life-module:not([hidden])').id, 'shopping');
+  assert.equal(d.querySelector('[data-life-start]').getAttribute('href'), '#life-language-controls');
+});

@@ -7,7 +7,7 @@ They are contextual editorial judgements, not an automatic CEFR certification or
 an assertion that every word has a single fixed proficiency level.
 """
 
-LANGUAGE_POLICY_VERSION = '2026-09-07-distinct-vocabulary'
+LANGUAGE_POLICY_VERSION = '2026-09-08-level-calibration'
 LEVEL_CHECKS = ('vocabulary', 'register', 'teaching_language', 'challenge')
 
 STORY_TITLE_GUIDANCE = (
@@ -46,7 +46,10 @@ COMMON_LANGUAGE_POLICY = (
     'words with rare synonyms does not create appropriate progression. '
     'Meet all sentence, vocabulary and quiz minimums without padding or abandoning '
     'the language policy. If the evidence supports too little suitable material, '
-    'reject the draft rather than invent details or force irrelevant terminology.'
+    'reject the draft rather than invent details or force irrelevant terminology. '
+    'Write an original, concise lesson from the source facts rather than reproducing '
+    'long passages of the article. Keep any direct quotations brief and necessary; '
+    'paraphrase the surrounding reporting and preserve attribution. '
 )
 
 LANGUAGE_PROFILES = {
@@ -87,7 +90,12 @@ LANGUAGE_PROFILES = {
             'phrasal verbs, word combinations and moderately abstract terms that '
             'support explaining causes, comparisons and consequences. Give clear '
             'contextual definitions. Explain unfamiliar domain terms. Avoid a list '
-            'dominated by elementary everyday words or unexplained specialist jargon.'
+            'dominated by elementary everyday words or unexplained specialist jargon. '
+            'A cluster of ornate review language such as lashings, delectable, sumptuous '
+            'and concurred is not a useful B1-B2 target list merely because definitions '
+            'are supplied. Prefer transferable terms such as episode, background and '
+            'inspired by when they fit the story. A single supported stretch item can '
+            'be appropriate; assess the overall vocabulary burden, not a forbidden-word list.'
         ),
         'register': (
             'Use natural, neutral news English with clear connections between ideas. '
@@ -101,6 +109,9 @@ LANGUAGE_PROFILES = {
             'cause, contrast and result links. Explain grammar in everyday language '
             'with a precise example. Keep definitions, questions and feedback clear '
             'enough that understanding the instructions is not the hardest part. '
+            'Aim for roughly 12–24 words per reading sentence as an editing guide, with '
+            'some natural variation. Dense multi-clause quotations should not dominate '
+            'the reading. These are editing guides, not automatic rejection thresholds. '
             'Develop discussion beyond one-word answers without requiring expert knowledge.'
         ),
         'challenge': (

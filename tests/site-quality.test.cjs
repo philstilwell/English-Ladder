@@ -19,6 +19,7 @@ test('a selected level persists through Discover, its evergreen stories and main
  const next=load('index.html',{stored:{'english-ladder-level':'advanced'}});
  assert.equal(next.window.document.querySelector('input[value="advanced"]').checked,true);
  assert.match(next.window.document.querySelector('#feature-start').href,/advanced\.html#lesson-/);
+ assert.match(next.window.document.querySelector('.home-intro a').href,/advanced\.html$/);
 });
 test('level switches preserve the story date',()=>{
  const d=load('beginner.html',{hash:'#lesson-2026-09-03'});

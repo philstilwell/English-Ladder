@@ -8,6 +8,12 @@ INVITATION = 'Choose a language for the unit explanations and deeper explanation
 
 
 def enhance_page(soup):
+    # A direct route avoids scrolling through introductory material on a phone.
+    hero = soup.select_one('.us-life-hero-copy')
+    if hero is not None and not hero.select_one('[data-life-start]'):
+        link = soup.new_tag('a', href='#life-language-controls', attrs={'class': 'primary-button', 'data-life-start': ''})
+        link.string = 'Choose language and unit ↓'
+        hero.append(link)
     # One shared chooser replaces both How to Study and the older dropdown.
     picker = soup.select_one('#life-language-select')
     if picker:

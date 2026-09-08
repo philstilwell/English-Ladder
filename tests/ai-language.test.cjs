@@ -29,7 +29,7 @@ function externalLanguage(w, value) {
   w.dispatchEvent(new w.StorageEvent('storage', { key: value === null ? null : key }));
 }
 function clickLanguage(w, value) {
-  w.document.querySelector(`[data-definition-language="${value}"]`).click();
+  w.document.querySelector(`button[data-definition-language="${value}"]`).click();
 }
 
 test('all five language buttons update every daily prompt, copy exact previews, and restore the originals', async () => {
@@ -81,6 +81,10 @@ test('saved language carries into all three levels and non-story curriculum prom
 test('blocked storage and either script order keep current-page selection working', () => {
   for (const order of [['learning.js', 'ai-practice.js'], ['ai-practice.js', 'learning.js']]) {
     const w = load('news/2026-09-08/intermediate.html', { blockedStorage: true });
+    // This test exercises storage and script order, not a dated translation cache.
+    w.document.querySelectorAll('.vocab-definition').forEach(node => {
+      node.dataset.translations = JSON.stringify({ es: 'Definición de prueba.' });
+    });
     run(w, ...order);
     clickLanguage(w, 'es');
     assert.equal(w.document.querySelector('.vocab-definition').lang, 'es');
@@ -91,6 +95,15 @@ test('blocked storage and either script order keep current-page selection workin
   clickLanguage(w, 'ja');
   run(w, 'ai-practice.js');
   assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Japanese\./);
+});
+
+test('missing vocabulary translations keep English definitions while honoring the AI explanation language', () => {
+  const w = load('news/2026-09-08/intermediate.html');
+  w.document.querySelectorAll('.vocab-definition').forEach(node => { node.dataset.translations = '{}'; });
+  run(w, 'learning.js', 'ai-practice.js');
+  clickLanguage(w, 'es');
+  assert.equal(w.document.querySelector('.vocab-definition').lang, 'en');
+  assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Spanish\./);
 });
 
 test('manual copying selects the full adapted prompt when clipboard access fails', async () => {

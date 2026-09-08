@@ -1,5 +1,7 @@
 """Structural and page-edge checks for every published workbook and guide."""
 import json
+import argparse
+from datetime import date
 from pathlib import Path
 import pdfplumber
 from pypdf import PdfReader
@@ -12,6 +14,10 @@ def embedded(font):
     return bool(desc and any(desc.get_object().get(k) for k in ['/FontFile','/FontFile2','/FontFile3']))
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--report-date", default=date.today().isoformat(), type=date.fromisoformat)
+    args=parser.parse_args()
+    report_date=str(args.report_date)
     results=[];failures=[]
     paths=sorted((ROOT/'pdf').rglob('*.pdf'))
     for i,path in enumerate(paths,1):
@@ -28,8 +34,8 @@ def main():
         results.append(row)
         if missing or bounds or not reader.outline:failures.append(row)
         if i%40==0:print(f'Checked {i}/{len(paths)} PDFs.',flush=True)
-    report={'date':'2026-09-06','files':len(results),'pages':sum(r['pages'] for r in results),'failures':failures,'results':results,'limitations':'Text bounds and font checks do not certify PDF accessibility or detect every overlap. The HTML lessons provide readable equivalents; PDFs are not tagged.'}
-    (ROOT/'docs/document-validation-2026-09-06.json').write_text(json.dumps(report,indent=2)+'\n')
+    report={'date':report_date,'files':len(results),'pages':sum(r['pages'] for r in results),'failures':failures,'results':results,'limitations':'Text bounds and font checks do not certify PDF accessibility or detect every overlap. The HTML lessons provide readable equivalents; PDFs are not tagged.'}
+    (ROOT/f'docs/document-validation-{report_date}.json').write_text(json.dumps(report,indent=2)+'\n')
     print({k:v for k,v in report.items() if k not in ['results','failures']},'failure_count',len(failures))
     if failures:raise SystemExit(1)
 if __name__=='__main__':main()

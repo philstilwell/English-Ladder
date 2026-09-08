@@ -105,6 +105,15 @@ class ReviewPolicyTests(unittest.TestCase):
         self.assertIn('Do not demand "I believe ..."', prompt)
         self.assertIn('new real-world claims unsupported by the evidence', prompt)
 
+    def test_review_challenges_distractors_and_unsupported_personality_inferences(self):
+        request, _, _ = self.capture_review(update_site.LEVELS[1])
+        prompt = request['contents']
+        self.assertIn('try to justify every alternative', prompt)
+        self.assertIn('A preference for one grammatical wording is not proof', prompt)
+        self.assertIn('Do not infer personality, discipline, motives or likely success', prompt)
+        self.assertIn('not a useful B1-B2 target list merely because definitions', prompt)
+        self.assertIn('original, concise lesson', prompt)
+
     def test_review_boundaries_do_not_filter_out_a_returned_rejection(self):
         # Prevent a prompt calibration from becoming a failed-review bypass.
         for issue in (

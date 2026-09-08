@@ -109,7 +109,11 @@
         label.append(select);nav.append(label); document.querySelector(".us-life-module-stack").before(nav);
         const show=(id,focus=false)=>{ const active=units.find(u=>u.id===id)||units[0]; units.forEach(u=>{u.hidden=u!==active;}); select.value=active.id; if(focus){active.querySelector("h2").tabIndex=-1;active.querySelector("h2").focus();active.scrollIntoView({block:"start"});} };
         select.addEventListener("change",()=>{location.hash=select.value;});
-        window.addEventListener("hashchange",()=>show(location.hash.slice(1),true));
+        window.addEventListener("hashchange",()=>{
+            const id=location.hash.slice(1);
+            // Non-unit anchors include the skip link and language chooser.
+            if(!id || units.some(unit=>unit.id===id)) show(id,true);
+        });
         units.forEach((unit,index)=>{
             const practice=document.createElement("section");practice.className="life-practice";
             const heading=document.createElement("h3");heading.textContent="Try the conversation";

@@ -1,0 +1,101 @@
+{
+  "date": "2026-09-08",
+  "scope": "Every published page at four widths; first feed lesson opened; empty, uninitialized lightbox image placeholders excluded. External requests blocked. Not a full accessibility certification.",
+  "pages": 311,
+  "widths": [
+    320,
+    390,
+    768,
+    1280
+  ],
+  "checks": 1244,
+  "overflow": [],
+  "errors": [],
+  "failedImages": [],
+  "samples": [
+    {
+      "path": "beginner.html",
+      "width": 390,
+      "bytes": 518347,
+      "header": 151
+    },
+    {
+      "path": "efsp.html",
+      "width": 390,
+      "bytes": 65147,
+      "header": 93
+    },
+    {
+      "path": "grammar-concepts/concept-05.html",
+      "width": 390,
+      "bytes": 29607,
+      "header": 93
+    },
+    {
+      "path": "grammar-concepts.html",
+      "width": 390,
+      "bytes": 42176,
+      "header": 93
+    },
+    {
+      "path": "index.html",
+      "width": 390,
+      "bytes": 10264,
+      "header": 93
+    },
+    {
+      "path": "tools.html",
+      "width": 390,
+      "bytes": 51248,
+      "header": 93
+    },
+    {
+      "path": "us-life.html",
+      "width": 390,
+      "bytes": 463494,
+      "header": 93
+    },
+    {
+      "path": "beginner.html",
+      "width": 1280,
+      "bytes": 518347,
+      "header": 115
+    },
+    {
+      "path": "efsp.html",
+      "width": 1280,
+      "bytes": 65147,
+      "header": 57
+    },
+    {
+      "path": "grammar-concepts/concept-05.html",
+      "width": 1280,
+      "bytes": 29607,
+      "header": 57
+    },
+    {
+      "path": "grammar-concepts.html",
+      "width": 1280,
+      "bytes": 42176,
+      "header": 57
+    },
+    {
+      "path": "index.html",
+      "width": 1280,
+      "bytes": 10264,
+      "header": 57
+    },
+    {
+      "path": "tools.html",
+      "width": 1280,
+      "bytes": 51248,
+      "header": 57
+    },
+    {
+      "path": "us-life.html",
+      "width": 1280,
+      "bytes": 463494,
+      "header": 57
+    }
+  ]
+}

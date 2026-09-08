@@ -44,6 +44,9 @@ def enhance_page(soup,path,prefix):
                 lesson.select_one('.lesson-content').append(p)
     for textarea in soup.select('textarea'):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
+    if relative.startswith('grammar-concepts/'):
+        from grammar_curriculum import clarify_original_graphic
+        clarify_original_graphic(soup, path.stem)
     from reading_layout import prepare_reading_layout, finish_reading_layout
     prepare_reading_layout(soup,path,ROOT,prefix)
     if path.name == 'us-life.html':
@@ -57,7 +60,7 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260907-completion2','site.css':'20260908-life-languages1','us-life.js':'20260908-life-languages1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260907-completion2','site.css':'20260908-audit1','us-life.js':'20260908-audit1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

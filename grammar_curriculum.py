@@ -7,6 +7,33 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
 
+# Preserve the requested originals while explicitly correcting superseded rules.
+GRAPHIC_CORRECTIONS = {
+    'concept-07': 'About does not make an action longer. In talk about and think about, it introduces a topic. In walk about, it means movement around a place. Discuss normally takes its topic directly: discuss the plan.',
+    'concept-16': 'Recently and lately do not require the present perfect continuous or predict future activity. Recently can describe one finished event: I recently visited Rome. Lately often describes recent states or repeated activity: I have been busy lately.',
+    'concept-28': 'This and that are not assigned to different speakers. Either speaker can use them to refer to an idea. For example: I missed the train. That made me late. It can continue a reference to an identified thing or situation.',
+}
+
+
+def clarify_original_graphic(soup, key):
+    for old in soup.select('[data-graphic-correction]'):
+        old.decompose()
+    text = GRAPHIC_CORRECTIONS.get(key)
+    figure = soup.select_one('.concept-graphic')
+    if not text or figure is None:
+        return
+    for target, identifier in [(figure, 'graphic-correction'), (soup.select_one('.image-lightbox-image'), 'lightbox-graphic-correction')]:
+        if target is None:
+            continue
+        note = soup.new_tag('aside', attrs={'class': 'graphic-correction', 'id': identifier, 'data-graphic-correction': ''})
+        label = soup.new_tag('strong'); label.string = 'Correction to the original graphic'
+        paragraph = soup.new_tag('p'); paragraph.string = text
+        note.extend([label, paragraph]); target.insert_before(note)
+        image = target.select_one('img') if target is figure else target
+        if image is not None:
+            image['aria-describedby'] = identifier
+
+
 def load_curriculum():
     concepts = json.loads((ROOT / 'content/grammar-curriculum.json').read_text())['concepts']
     assert [c['number'] for c in concepts] == list(range(1, 45))

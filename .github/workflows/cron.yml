@@ -6,6 +6,13 @@ on:
       - main
     paths:
       - '.github/workflows/cron.yml'
+      # Cover all shared generators and browser behavior, including newly added files.
+      - '*.py'
+      - '*.js'
+      - '*.cjs'
+      - '*.css'
+      - 'package*.json'
+      - 'archive/lessons/**'
       - 'wrangler.jsonc'
       - 'cloudflare/**'
       - '**/*.html'
@@ -62,6 +69,11 @@ on:
     - cron: '0 16 * * *'
   workflow_dispatch:
     inputs:
+      translate_recent:
+        description: 'Refresh missing recent vocabulary translations only; no new lessons or images ($0.30 cumulative daily cap)'
+        required: false
+        type: boolean
+        default: false
       translate_archive:
         description: 'Fill missing reviewed vocabulary translations; no new lessons or images ($10 cumulative initial budget)'
         required: false
@@ -154,7 +166,7 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Resolve daily release date
-        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_archive != 'true'
+        if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_archive != 'true' && github.event.inputs.translate_recent != 'true'
         env:
           REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
         run: |
@@ -187,9 +199,10 @@ jobs:
           DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
           REFRESH_FEATURE: ${{ github.event.inputs.refresh_feature || 'false' }}
           TRANSLATE_ARCHIVE: ${{ github.event.inputs.translate_archive || 'false' }}
+          TRANSLATE_RECENT: ${{ github.event.inputs.translate_recent || 'false' }}
           LESSON_DIAGNOSTICS_DIR: ${{ runner.temp }}/lesson-diagnostics
         run: |
-          if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ] || [ "${TRANSLATE_ARCHIVE}" = "true" ]; then
+          if [ "${EVENT_NAME}" = "push" ] || [ "${DEPLOY_ONLY}" = "true" ] || [ "${TRANSLATE_ARCHIVE}" = "true" ] || [ "${TRANSLATE_RECENT}" = "true" ]; then
             python update_site.py --refresh-pages
             exit 0
           fi

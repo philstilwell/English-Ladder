@@ -30,7 +30,7 @@ The three taught vocabulary lists remain separate. All graded questions are mult
 
 The writer and reviewer now receive more concrete guidance on intermediate vocabulary burden, concise original paraphrases, challenging every answer alternative, and avoiding personality predictions from someone’s occupation, sport or background. These instructions strengthen the process; they are not proof that a model will catch every future defect.
 
-The two revised levels require a fresh Gemini translation-and-editing pass. The estimated cost is $0.05–$0.20, capped at $0.30 for the daily translation ledger. Changed reading invalidates old translations automatically. No other paid generation is needed for this audit.
+The two revised levels received fresh Gemini translations and separate editing passes: four requests cost **$0.0237013**, below the announced $0.30 cap. All **204 lesson versions** now have current reviewed vocabulary translations. Changed reading invalidates old translations automatically. No other paid generation was used for this audit.
 
 ## What was checked
 
@@ -42,12 +42,14 @@ The two revised levels require a fresh Gemini translation-and-editing pass. The 
 | Visual review | Reviewed desktop and phone views of Discover, daily news, grammar directory and detail, Everyday English, practice tools and the work directory; visually inspected the three conflicting grammar graphics. |
 | Interactions | Browser spot checks of grammar feedback, navigation and Everyday English controls, plus the existing automated coverage of all grammar answer options, all work-course initialization, lesson stages, completion toggles, language changes, prompt copying, fallback behavior and storage failures. |
 | Documents | All **252 PDFs / 4,445 pages** checked for embedded fonts, text outside page edges and bookmarks. No structural failures. The PDFs remain untagged. |
-| Content | Minimums and vocabulary separation checked across all **66 dated editions / 198 daily lesson versions**. Detailed editorial review of the latest two editions, with corrections to today’s intermediate and advanced material; targeted grammar and workplace/US-life samples. This is not a line-by-line editorial certification of the entire historical archive. |
+| Content | Minimums and vocabulary separation checked across all **66 dated editions / 198 daily lesson versions**. Reviewed the readings and vocabulary of the latest two editions, with detailed question and feedback review and corrections to today’s intermediate and advanced material; targeted grammar and workplace/US-life samples. This is not a line-by-line editorial certification of the entire historical archive. |
 | Translations and prompts | Reviewed the cache, invalidation, language-selection and prompt-localization mechanisms. Current US-life coverage includes 24 units in five languages. The audit does not claim native-speaker certification of every translation. |
 | Automated verification | **231 Python tests + 111 JavaScript tests passed**, together with browser-script syntax checks and page/SEO audits. The translation-only workflow branch was exercised with a harmless local substitute to confirm it cannot invoke lesson or image generation. |
 | Publishing | Reviewed the latest 12 daily-workflow runs: 11 succeeded, one earlier manual translation-related run failed. The latest six succeeded. The live manifest at audit start matched baseline revision `425e7a9b`. The configured schedule remains 10:00, 13:00 and 16:00 UTC; actual observed starts were delayed. Scheduled execution should be treated as a window, not a precise publication promise. |
 
 The browser checks block external requests and do not measure real visitor loading times. No microphone recording, iPhone/Safari session, screen-reader certification, learning-gain study or exhaustive external-link check is claimed. Narrow-screen checks support reflow review but do not establish full accessibility compliance. See [W3C’s reflow guidance](https://www.w3.org/WAI/WCAG22/Understanding/reflow.html).
+
+Final publication: [the translation and publishing run](https://github.com/philstilwell/English-Ladder/actions/runs/34272664646) passed for lesson release `cae88336`, including verification of all **766 public files**. A live browser check confirmed refreshed Spanish definitions and Spanish AI-explanation guidance; the temporary tab was closed and the original English preference restored.
 
 Machine-readable evidence: [browser results](browser-audit-2026-09-08.json) and [PDF results](document-validation-2026-09-08.json). Reproduce locally with `node audit_browser.cjs` while serving the site at `http://127.0.0.1:8878`, or set `AUDIT_ORIGIN`; PDF checks use `python3 audit_documents.py`.
 

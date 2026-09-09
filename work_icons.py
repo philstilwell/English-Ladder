@@ -96,5 +96,25 @@ def refresh_published_cards():
     print(f"Updated {count} illustrations across {len(pages)} pages.")
 
 
+def refresh_published_industry_pages():
+    """Add or refresh the heading artwork without rebuilding lesson content."""
+    from pathlib import Path
+    from bs4 import BeautifulSoup
+
+    root = Path(__file__).resolve().parent
+    for slug in ICON_SLUGS:
+        path = root / f"efsp-{slug}.html"
+        soup = BeautifulSoup(path.read_text(), "html.parser")
+        heading = soup.select_one(".work-hero > div")
+        if heading is None or heading.find("h1") is None:
+            raise ValueError(f"Missing industry heading: {path.name}")
+        for icon in heading.select(".work-card-icon"):
+            icon.decompose()
+        heading.insert(0, BeautifulSoup(card_icon({"slug": slug}), "html.parser").span)
+        path.write_text(str(soup))
+    print(f"Updated {len(ICON_SLUGS)} industry page illustrations.")
+
+
 if __name__ == "__main__":
     refresh_published_cards()
+    refresh_published_industry_pages()

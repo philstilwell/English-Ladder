@@ -93,7 +93,11 @@
 .work-word-count { font-size:.77rem !important; margin:5px 0; }
 .work-support { padding:14px; background:var(--work-paper); font-size:.85rem !important; }
 .work-model { padding:9px 22px; margin-top:30px; border:1px solid #a5b9b0; border-radius:4px; background:#f1f5f1; }
+.work-model[open] { padding-bottom:22px; }
 .work-model blockquote { font:400 1.22rem/1.65 Georgia,serif; color:var(--work-ink); border:0; margin:10px 0 20px; padding:0; }
+.work-model>p { margin:16px 0 0; }
+.work-module-body .work-case-transfer { margin-top:clamp(24px,3vw,36px); }
+.work-case-transfer>p { margin:0 0 16px; }
 .work-reflect { margin-top:30px !important; }
 .work-reflect ul { display:grid; grid-template-columns:1fr 1fr; gap:8px 35px; padding-left:20px; }
 .work-completion { display:flex; align-items:center; gap:10px; padding:15px 0; border-top:1px solid var(--work-line); font-size:.9rem; font-weight:650; color:var(--work-ink); }

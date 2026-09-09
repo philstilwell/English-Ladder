@@ -141,6 +141,14 @@
       if (!validLessonDate(date)) return;
       showCompletionMarks(card.querySelector('h2'), levels.filter(value => isCompleted(`news/${date}/${value}.html`)));
     });
+    // Discover cards identify the story independently of the selected reading level.
+    document.querySelectorAll('[data-completion-story]').forEach(card => {
+      const storyPath = card.dataset.completionStory;
+      if (!/^stories\/[a-z0-9-]+$/.test(storyPath) &&
+          !(storyPath.startsWith('news/') && validLessonDate(storyPath.slice(5)))) return;
+      showCompletionMarks(card.querySelector('h2, h3'),
+        levels.filter(value => isCompleted(`${storyPath}/${value}.html`)));
+    });
   }
   window.addEventListener('lesson-practiced', event => {
     const lesson = event.detail?.lesson;

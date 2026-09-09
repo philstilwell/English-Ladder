@@ -285,6 +285,7 @@ def build_homepage():
     title = "Can trees cool a city?"
     overview = "A little shade can make a big difference. Explore how trees change the places we live."
     eyebrow = "Nature &amp; city life · 5-minute lesson"
+    completion_story = "stories/city-trees"
     urls = {level: f"stories/city-trees/{level}.html" for level in ("beginner", "intermediate", "advanced")}
     visual = '<figure class="feature-photo"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="A tree-filled urban park surrounded by city buildings." fetchpriority="high"><figcaption>Green space in the city. Photograph by <a href="https://unsplash.com/photos/an-aerial-view-of-a-park-with-trees-and-buildings-in-the-background-_YEJI5nZBPk">Leo_Visions / Unsplash</a>.</figcaption></figure>'
     daily_class = ""
@@ -292,6 +293,7 @@ def build_homepage():
         brief = latest["levels"]["beginner"]["lesson"]
         title, overview = brief["title"], brief["overview"]
         date = latest["release_date"]
+        completion_story = f"news/{date}"
         from datetime import date as calendar_date
         date_label = calendar_date.fromisoformat(date).strftime("%B %d, %Y").replace(" 0", " ")
         eyebrow = f'Latest news lesson · <time datetime="{date}">{date_label}</time>'
@@ -306,7 +308,7 @@ def build_homepage():
     title, overview = html.escape(title), html.escape(overview)
     content = f'''<section class="home-intro"><h1>Free English lessons for real life.</h1><p>Build your English with <a href="beginner.html" data-level-link>daily reading</a>, <a href="grammar-concepts.html">grammar practice</a>, and <a href="efsp.html">workplace conversations</a>. Study at your level, with printable guides and ready-to-copy AI prompts.</p></section>
 <div class="issue-line"><a href="study-routes.html">Not sure where to start? Choose a study route →</a><span>Real stories · Three English levels</span></div>
-<section class="feature-story{daily_class}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
+<section class="feature-story{daily_class}" data-completion-story="{completion_story}" aria-labelledby="feature-title"><div class="feature-copy"><p class="eyebrow">{eyebrow}</p><h2 id="feature-title"><span class="lesson-title-text">{title}</span></h2><p>{overview}</p>
 <div class="level-form"><fieldset><legend>Choose your English level</legend><div class="level-options">
 <label class="level-option"><input type="radio" name="feature-level" value="beginner" data-lesson-href="{urls['beginner']}" checked><span>Beginner</span></label>
 <label class="level-option"><input type="radio" name="feature-level" value="intermediate" data-lesson-href="{urls['intermediate']}"><span>Intermediate</span></label>
@@ -315,8 +317,8 @@ def build_homepage():
 <noscript><p>Also available in <a href="{urls['intermediate']}">Intermediate</a> and <a href="{urls['advanced']}">Advanced</a> English.</p></noscript></div></div>
 {visual}</section>
 <section aria-labelledby="explore-heading"><div class="section-heading"><h2 id="explore-heading">English beyond the headlines</h2><span class="text-link">Everyday situations. Useful words.</span></div><div class="explore-grid">
-<a class="explore-story" href="stories/food-market/beginner.html"><img src="assets/editorial/food-market.webp" width="1000" height="692" alt="Shoppers and colorful fruit stalls at an indoor market." loading="lazy"><div><span class="eyebrow">Food &amp; conversation</span><h3>A small question. A new conversation.</h3><p>Visit a market and practice asking for what you need.</p><span class="text-link">Try the lesson →</span></div></a>
-<a class="explore-story" href="stories/city-trees/beginner.html"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="Trees surround a green urban park." loading="lazy"><div><span class="eyebrow">Nature &amp; city life</span><h3>Can trees cool a city?</h3><p>Explore how a little shade changes the places we live.</p><span class="text-link">Try the lesson →</span></div></a></div></section>
+<a class="explore-story" data-completion-story="stories/food-market" href="stories/food-market/beginner.html"><img src="assets/editorial/food-market.webp" width="1000" height="692" alt="Shoppers and colorful fruit stalls at an indoor market." loading="lazy"><div><span class="eyebrow">Food &amp; conversation</span><h3><span class="lesson-title-text">A small question. A new conversation.</span></h3><p>Visit a market and practice asking for what you need.</p><span class="text-link">Try the lesson →</span></div></a>
+<a class="explore-story" data-completion-story="stories/city-trees" href="stories/city-trees/beginner.html"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="Trees surround a green urban park." loading="lazy"><div><span class="eyebrow">Nature &amp; city life</span><h3><span class="lesson-title-text">Can trees cool a city?</span></h3><p>Explore how a little shade changes the places we live.</p><span class="text-link">Try the lesson →</span></div></a></div></section>
 <section class="study-paths" aria-labelledby="paths-heading"><div class="section-heading"><h2 id="paths-heading">What would you like to practice?</h2></div><div class="path-grid">
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
 <a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 lessons with examples, exercises, and free PDFs.</p></a>

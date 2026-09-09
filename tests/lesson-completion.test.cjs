@@ -87,6 +87,83 @@ function archiveTitle(dom, date) {
   return link.closest('h2');
 }
 
+function discoverTitle(dom, storyPath) {
+  const card = dom.window.document.querySelector(`[data-completion-story="${storyPath}"]`);
+  assert.ok(card, `Discover identifies ${storyPath}`);
+  return card.querySelector('h2, h3');
+}
+
+test('Discover restores every completed news level and keeps the circles when the reading level changes', () => {
+  let stored = { [key(dates[1], 'advanced')]: '1' };
+  const initial = load('index.html', { stored });
+  assert.equal(badges(initial.window.document).length, 0, 'Another date does not complete the featured story');
+  for (const [index, level] of levels.entries()) {
+    const feed = load(`${level}.html`, { stored });
+    finish(lessonAt(feed));
+    stored = storedValues(feed.window);
+    const home = load('index.html', { stored });
+    const title = discoverTitle(home, `news/${dates[0]}`);
+    assertBadges(title, levels.slice(0, index + 1));
+    for (const choice of levels) {
+      home.window.document.querySelector(`input[name="feature-level"][value="${choice}"]`).click();
+      assertBadges(title, levels.slice(0, index + 1));
+      assert.ok(home.window.document.querySelector('#feature-start').href.endsWith(`${choice}.html#lesson-${dates[0]}`));
+    }
+    assert.equal(badges(home.window.document).length, index + 1, 'Unfinished evergreen stories stay unmarked');
+  }
+  const permanent = load(newsPath(dates[0], 'intermediate'), { stored });
+  finish(lessonAt(permanent));
+  const home = load('index.html', { stored: storedValues(permanent.window) });
+  assertBadges(discoverTitle(home, `news/${dates[0]}`), ['beginner', 'advanced']);
+});
+
+test('Discover keeps evergreen story completions separate and reflects undoing a completed level', () => {
+  let stored = {};
+  for (const [slug, level] of [['city-trees', 'beginner'], ['city-trees', 'advanced'], ['food-market', 'intermediate']]) {
+    const lesson = load(`stories/${slug}/${level}.html`, { stored });
+    finish(lessonAt(lesson, slug));
+    stored = storedValues(lesson.window);
+  }
+  const home = load('index.html', { stored });
+  assertBadges(discoverTitle(home, 'stories/city-trees'), ['beginner', 'advanced']);
+  assertBadge(discoverTitle(home, 'stories/food-market'), 'intermediate');
+  assert.equal(badges(discoverTitle(home, `news/${dates[0]}`)).length, 0);
+  const trees = load('stories/city-trees/beginner.html', { stored });
+  finish(lessonAt(trees, 'city-trees'));
+  const returned = load('index.html', { stored: storedValues(trees.window) });
+  assertBadge(discoverTitle(returned, 'stories/city-trees'), 'advanced');
+  assertBadge(discoverTitle(returned, 'stories/food-market'), 'intermediate');
+});
+
+test('Discover refreshes from other tabs and browser history without duplicating or reviving circles', () => {
+  const dom = load('index.html', { stored: { [key(dates[0], 'beginner')]: '1' } });
+  const { window } = dom;
+  const title = discoverTitle(dom, `news/${dates[0]}`);
+  window.localStorage.setItem(key(dates[0], 'advanced'), '1');
+  window.dispatchEvent(new window.StorageEvent('storage', { key: key(dates[0], 'advanced'), storageArea: window.localStorage }));
+  assertBadges(title, ['beginner', 'advanced']);
+  window.localStorage.setItem(prefix + 'stories/food-market/intermediate.html', '1');
+  window.localStorage.removeItem(key(dates[0], 'beginner'));
+  window.dispatchEvent(new window.Event('pageshow'));
+  window.dispatchEvent(new window.Event('pageshow'));
+  assertBadge(title, 'advanced');
+  assertBadge(discoverTitle(dom, 'stories/food-market'), 'intermediate');
+  window.localStorage.clear();
+  window.dispatchEvent(new window.StorageEvent('storage', { key: null, storageArea: window.localStorage }));
+  assert.equal(badges(window.document).length, 0);
+});
+
+test('Discover remains usable without access to browser storage', () => {
+  const dom = load('index.html', {
+    beforeScripts(window) {
+      Object.defineProperty(window, 'localStorage', { get() { throw new Error('Storage blocked'); } });
+    },
+  });
+  dom.window.document.querySelector('input[name="feature-level"][value="advanced"]').click();
+  assert.equal(badges(dom.window.document).length, 0);
+  assert.ok(dom.window.document.querySelector('#feature-start').href.endsWith(`advanced.html#lesson-${dates[0]}`));
+});
+
 test('reading and answering a question do not silently mark a lesson completed', () => {
   const dom = load('beginner.html');
   const lesson = lessonAt(dom);

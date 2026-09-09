@@ -1,5 +1,7 @@
 import json
 import unittest
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import unquote, urlparse
@@ -138,9 +140,23 @@ class EditorialTests(unittest.TestCase):
         data = json.loads(archive.read_text())
         home = BeautifulSoup((ROOT / "index.html").read_text(), "html.parser")
         self.assertIn(data["levels"]["beginner"]["lesson"]["title"], home.get_text())
+        self.assertEqual(f'news/{data["release_date"]}', home.select_one('.feature-story')['data-completion-story'])
         for level in ["beginner", "intermediate", "advanced"]:
             href = f'{level}.html#lesson-{data["release_date"]}'
             self.assertIsNotNone(home.find("a", href=href))
+
+    def test_homepage_completion_targets_follow_new_editions_and_the_evergreen_fallback(self):
+        latest = json.loads(sorted((ROOT / "archive/lessons").glob("*.json"))[-1].read_text())
+        latest['release_date'] = '2030-03-12'
+        with TemporaryDirectory() as directory, patch.object(editorial, 'ROOT', Path(directory)):
+            for edition, expected in [(latest, 'news/2030-03-12'), (None, 'stories/city-trees')]:
+                with self.subTest(edition=expected), patch('daily_images.latest_lesson', return_value=(None, edition)), patch('daily_images.image_for_lesson', return_value=None):
+                    editorial.build_homepage()
+                    home = BeautifulSoup((Path(directory) / 'index.html').read_text(), 'html.parser')
+                    self.assertEqual(expected, home.select_one('.feature-story')['data-completion-story'])
+                    for card in home.select('.explore-story'):
+                        self.assertEqual(card['href'].rsplit('/', 1)[0], card['data-completion-story'])
+                        self.assertIsNotNone(card.select_one('h3 .lesson-title-text'))
 
     def test_external_sources_require_https(self):
         self.assertEqual("", editorial.safe_url("javascript:alert(1)"))

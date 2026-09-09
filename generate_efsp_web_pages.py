@@ -8,6 +8,7 @@ from editorial import document
 from work_curriculum import ROOT, REVISION, RUBRIC, load_tracks, related_tracks, validate_tracks
 from work_ai_prompts import web_section, url as ai_url
 from work_ready_prompts import lesson_prompts, dialogue_prompts, write_prompt_packs
+from work_icons import card_icon
 
 
 def e(value):
@@ -112,7 +113,7 @@ def render_industry_page(t, tracks):
 
 def render_directory(tracks):
     options = ''.join(f'<option>{e(g)}</option>' for g in sorted({t['category'] for t in tracks}))
-    cards = ''.join(f'''<a class="work-course-card" href="efsp-{e(t['slug'])}.html" data-work-course-link data-category="{e(t['category'])}" data-search="{e(t['title']+' '+t['summary']+' '+t['roles']+' '+' '.join(m['title'] for m in t['modules']))}"><span class="work-kicker">{e(t['category'])}</span><h3>{e(t['title'])}</h3><p>{e(t['summary'])}</p><span class="work-card-footer">8 lessons · 4 guides <span aria-hidden="true">↗</span></span></a>''' for t in tracks)
+    cards = ''.join(f'''<a class="work-course-card" href="efsp-{e(t['slug'])}.html" data-work-course-link data-category="{e(t['category'])}" data-search="{e(t['title']+' '+t['summary']+' '+t['roles']+' '+' '.join(m['title'] for m in t['modules']))}">{card_icon(t)}<span class="work-kicker">{e(t['category'])}</span><h3>{e(t['title'])}</h3><p>{e(t['summary'])}</p><span class="work-card-footer">8 lessons · 4 guides <span aria-hidden="true">↗</span></span></a>''' for t in tracks)
     content = f'''<section class="work-directory-hero"><p class="work-kicker">English for Work</p><h1>Good work.<br>Clearly expressed.</h1><p class="work-intro">Find the words for the work you do. Practice real conversations, write useful messages, and build confidence one situation at a time.</p><div class="work-meta"><span>41 professional fields</span><span>328 practical lessons</span><span>164 printable guides</span></div></section>
 <section class="work-start-paths"><article><span class="work-kicker">On your own</span><h2>Make fifteen minutes count.</h2><p>Choose a case, try a response, and compare it with the model. Add writing and revision when you have more time.</p></article><article><span class="work-kicker">With a class or partner</span><h2>Turn practice into a conversation.</h2><p>Use partner roles, follow-up questions, timed lesson plans, and clear feedback criteria. Every course includes a teacher's guide.</p></article></section>
 <section class="work-section" data-work-directory><div class="work-section-heading"><div><p class="work-kicker">Find your field</p><h2>What do you do?</h2></div><p data-course-count role="status">41 courses</p></div><div class="work-directory-filters"><label>Search by role, topic, or industry<input type="search" data-course-search placeholder="Try nursing, presentations, or customer support"></label><label>Browse a field<select data-course-category><option value="">All fields</option>{options}</select></label></div><p class="work-empty" data-course-empty hidden>No courses match. Try a broader word or choose all fields.</p><div class="work-course-grid">{cards}</div></section>

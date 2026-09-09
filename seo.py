@@ -20,6 +20,7 @@ from bs4 import BeautifulSoup
 from PIL import Image
 from seo_content import PAGES, WORK_TOPICS, CATEGORIES, FUNCTION_GRAMMAR
 from seo_lessons import RELATED_GRAMMAR, lesson_image, fingerprint
+from work_icons import card_icon
 
 ROOT = Path(__file__).resolve().parent
 ORIGIN = 'https://englishladder.com/'
@@ -322,7 +323,7 @@ def build_category_pages():
     target=ROOT/'english-for-work';target.mkdir(exist_ok=True)
     for name,c in CATEGORIES.items():
         group=[t for t in tracks().values() if t['category']==name]
-        cards=''.join(f'<a class="work-course-card" href="../efsp-{t["slug"]}.html"><span class="work-kicker">8 lessons · 4 free guides</span><h3>{html.escape(t["title"])}</h3><p>{html.escape(t["summary"])}</p><span class="work-card-footer">Explore lessons and dialogues →</span></a>' for t in group)
+        cards=''.join(f'<a class="work-course-card" href="../efsp-{t["slug"]}.html">{card_icon(t)}<span class="work-kicker">8 lessons · 4 free guides</span><h3>{html.escape(t["title"])}</h3><p>{html.escape(t["summary"])}</p><span class="work-card-footer">Explore lessons and dialogues →</span></a>' for t in group)
         grammar_links=''.join(f'<li><a href="../{grammar_url(n)}">{html.escape(grammar()[n]["title"])}</a></li>' for n in c['grammar'])
         body=f'''<section class="page-hero"><p class="eyebrow">English for Work · {len(group)} professional fields</p><h1>{html.escape(c['title'])}</h1><p>{html.escape(c['intro'])}</p></section>
 <section class="work-section work-two-column"><div><h2>Choose the work you do</h2><p>{html.escape(c['choose'])}</p></div><div><h2>Make the practice practical</h2><p>{html.escape(c['practice'])}</p></div></section>

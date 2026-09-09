@@ -36,6 +36,7 @@
 .work-download strong { color:var(--work-ink); font-size:1.1rem; letter-spacing:-.02em; }
 .work-download-action { color:var(--work-blue); margin-top:auto; padding-top:15px; font-weight:650; }
 .work-download:hover,.work-course-card:hover { border-color:#537e91; box-shadow:0 5px 18px #1233480b; }
+.work-course-card:hover .work-card-icon { color:#12384e; background:#dcebea; border-color:#a9c9c6; }
 .work-lesson-tools { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:15px; margin:20px 0; }
 .work-jump { display:flex; gap:8px; flex-wrap:wrap; }
 .work-jump a { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--work-line); border-radius:4px; text-decoration:none; font-size:.85rem; color:var(--work-blue); font-weight:700; }
@@ -119,6 +120,8 @@
 .work-directory-filters label { display:flex; flex-direction:column; gap:9px; font-size:.83rem; font-weight:650; }
 .work-course-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .work-course-card { display:flex; flex-direction:column; padding:25px; border:1px solid var(--work-line); border-radius:6px; text-decoration:none; background:white; transition:border-color .15s,box-shadow .15s; }
+.work-card-icon { display:inline-flex; align-items:center; justify-content:center; width:46px; height:46px; margin:0 0 20px; color:var(--work-blue); background:#e8f0ef; border:1px solid #c6d9d7; border-radius:12px; }
+.work-card-icon svg { width:24px; height:24px; }
 .work-course-card .work-kicker { font-size:.62rem; line-height:1.5; }
 .work-course-card h3 { margin:5px 0 10px; font-size:1.35rem; }
 .work-course-card p { font-size:.9rem; margin:0 0 24px; }

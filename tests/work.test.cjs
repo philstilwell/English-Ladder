@@ -40,23 +40,34 @@ test('quiz handles no answer, wrong answer, correction, and resets stale feedbac
   assert.equal(feedback.dataset.result,'correct');assert.ok(feedback.textContent.length>35);
   dom.window.close();
 });
-test('drafts are opt-in, restore accurately, and remain isolated by course', () => {
+test('speaking progress is opt-in, restores accurately, and remains isolated by course', () => {
   const dom=setup(),w=dom.window,d=w.document,key='english-ladder-work-v2:manufacturing';
-  const note=d.querySelector('[data-work-note]'),save=d.querySelector('[data-save-notes]');
-  change(w,note,'These are five sample words.');
+  const save=d.querySelector('[data-save-notes]');
+  assert.equal(d.querySelector('[data-work-note]'),null);
   assert.equal(w.localStorage.getItem(key),null);
-  assert.match(note.parentElement.querySelector('[data-word-count]').textContent,/5 words/);
   save.click();d.querySelector('[data-work-complete]').click();
   const state=w.localStorage.getItem(key);
-  assert.match(state,/These are five/);
+  assert.deepEqual(JSON.parse(state).complete,['module-1']);
   const restored=setup(courseFile,win=>win.localStorage.setItem(key,state));
-  assert.equal(restored.window.document.querySelector('[data-work-note]').value,note.value);
   assert.match(restored.window.document.querySelector('[data-work-progress]').textContent,/1 of 8/);
   const other=setup('efsp-law.html',win=>win.localStorage.setItem(key,state));
-  assert.equal(other.window.document.querySelector('[data-work-note]').value,'');
+  assert.match(other.window.document.querySelector('[data-work-progress]').textContent,/0 of 8/);
   d.querySelector('[data-clear-work]').click();
-  assert.equal(w.localStorage.getItem(key),null);assert.equal(note.value,'');assert.equal(save.checked,false);
+  assert.equal(w.localStorage.getItem(key),null);assert.equal(save.checked,false);
   [dom,restored,other].forEach(x=>x.window.close());
+});
+test('new progress preserves earlier-edition drafts until an explicit clear and supports undo', () => {
+  const key='english-ladder-work-v2:manufacturing';
+  const legacy={notes:{'module-1':'My earlier draft.'},complete:[]};
+  const dom=setup(courseFile,w=>w.localStorage.setItem(key,JSON.stringify(legacy))),w=dom.window,d=w.document;
+  d.querySelector('[data-work-complete]').click();
+  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).notes,legacy.notes);
+  d.querySelector('[data-clear-work]').click();
+  assert.equal(w.localStorage.getItem(key),null);
+  d.querySelector('[data-undo-work]').click();
+  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).notes,legacy.notes);
+  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).complete,['module-1']);
+  dom.window.close();
 });
 test('blocked or malformed storage does not disable lessons and checks', () => {
   for (const mode of ['blocked','malformed']) {

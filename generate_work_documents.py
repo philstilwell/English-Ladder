@@ -13,11 +13,13 @@ import os
 import tempfile
 from pathlib import Path
 
+from PIL import Image
 from pypdf import PdfReader
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import letter
 from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
@@ -25,6 +27,8 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
                                KeepTogether, Table, TableStyle, Flowable)
 
 from work_curriculum import ROOT, REVISION, RUBRIC, SCORE_DESCRIPTORS, load_tracks, validate_tracks, content_hash
+from work_lesson_conversations import lesson_content, load_course, content_hash as conversation_content_hash, EDITION as ACTIVITY_EDITION
+from work_icons import ICON_SLUGS, icon_right_trim
 
 INK = colors.HexColor('#172c3d')
 BLUE = colors.HexColor('#174c69')
@@ -128,10 +132,35 @@ def decorate(canvas, doc):
     canvas.restoreState()
 
 
+class ProfessionIllustration(Flowable):
+    """Embed only the selected atlas cell so downloads do not carry all 41 icons."""
+    def __init__(self, slug, size=72):
+        super().__init__()
+        self.slug = slug
+        self.width = self.height = size
+
+    def draw(self):
+        index = ICON_SLUGS.index(self.slug)
+        size = self.width
+        canvas = self.canv
+        fraction = 1 - icon_right_trim(self.slug) / 104
+        with Image.open(ROOT / 'assets/work/professional-icons.png') as atlas:
+            cell_w, cell_h = atlas.width / 7, atlas.height / 6
+            left, top = (index % 7) * cell_w, (index // 7) * cell_h
+            cell = atlas.crop((round(left), round(top), round(left + cell_w * fraction), round(top + cell_h)))
+            canvas.drawImage(ImageReader(cell), 0, 0, width=size * fraction, height=size, mask='auto')
+
+
 def cover(t, kind, purpose):
-    return [Spacer(1, 27), p('ENGLISH FOR WORK / SEPTEMBER 2026', 'kicker'), p(t['title'], 'title'),
+    title = Table([[p(t['title'], 'title'), ProfessionIllustration(t['slug'])]], colWidths=[WIDTH - 90, 90])
+    title.setStyle(TableStyle([('FONTNAME', (0, 0), (-1, -1), 'Work'),
+                               ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+                               ('LEFTPADDING', (0, 0), (-1, -1), 0),
+                               ('RIGHTPADDING', (0, 0), (-1, -1), 0),
+                               ('BOTTOMPADDING', (0, 0), (-1, -1), 12)]))
+    return [Spacer(1, 27), p('ENGLISH FOR WORK / SEPTEMBER 2026', 'kicker'), title,
             p(kind, 'h1'), p(purpose, 'quote'), Spacer(1, 20),
-            box('Practice that transfers to work', 'Read a realistic case. Find the right language. Speak, write, get feedback, and try again.', GREEN),
+            box('Practice that transfers to work', 'Read a realistic case. Study complete conversations. Find the right language, speak, get feedback, and try again.', GREEN),
             p('Eight lessons | Intermediate to advanced | Independent or classroom study', 'small'),
             p('For ' + t['roles'].rstrip('.') + '.'), Spacer(1, 20),
             p(t['scope_note'], 'small'),
@@ -145,7 +174,7 @@ def course_map(t):
     story = [heading('Your course at a glance', 'course-map'), p('Use the lesson numbers to match this document with the website and the other guides.')]
     for m in t['modules']:
         story += [p(f'{m["number"]:02d}  {m["title"]}', 'term'), p(m['workshop']['goal'], 'small')]
-    story += [p('Choose your pace', 'h2'), p('Quick practice: spend 15 minutes reading one case and saying a response. Full lesson: allow 45-60 minutes for language work, conversation, writing, and revision.'),
+    story += [p('Choose your pace', 'h2'), p('Quick practice: spend 15 minutes reading one conversation and rehearsing one scenario. Full lesson: allow 45-60 minutes for language work, three conversations, two speaking scenarios, and feedback.'),
               p('Level support', 'h2'), p('B1 learners can use the frames and a partner. B2 learners can try a response before reading the model. C1 learners can add the harder follow-up and reduce preparation time. These are teaching suggestions, not certified CEFR level ratings.'),
               pdf_link(t, 'roleplay', 'module-1', 'After practicing: open the AI prompt workshop, or use the prompts at the end of this guide.'), PageBreak()]
     return story
@@ -181,13 +210,13 @@ def teacher(t):
     steps = [('0-5 minutes', 'Activate experience', 'Ask learners to name a comparable situation without sharing confidential details. Introduce the communication goal.'),
              ('5-12 minutes', 'Read and sort facts', 'Read the case. Learners identify confirmed facts, unknowns, the audience, and the immediate communication need.'),
              ('12-22 minutes', 'Notice and practice language', 'Explain the workshop pattern. Work through the vocabulary and editing example, then discuss both language checks and the reasons behind the choices.'),
-             ('22-35 minutes', 'Speak and respond', 'Give two minutes of preparation. Run the partner exchange, switch roles, and add the follow-up challenge. Observe whether the listener can act on the message.'),
-             ('35-47 minutes', 'Write for a real reader', 'Learners write the short message using only case facts. Partners check clarity, certainty, and the requested next step.'),
+             ('22-35 minutes', '05 · Conversations', 'Read one ten-turn conversation aloud, notice a useful expression, then compare the other two. Identify each speaker\'s purpose and how the exchange ends.'),
+             ('35-47 minutes', '06 · Say it', 'Rehearse both speaking scenarios from the workbook. Give two minutes of preparation, switch roles, and use the success checks. Add the complication only after a successful first round.'),
              ('47-55 minutes', 'Compare and revise', 'Reveal the model. Discuss alternative acceptable wording. Give one meaning correction and one language correction, then repeat.'),
              ('55-60 minutes', 'Retrieve and transfer', 'Close the materials. Learners recall two expressions and identify one communication habit to use in another situation.')]
     for time, title, instruction in steps:
         story += [p(f'{time} | {title}', 'term'), p(instruction, 'small')]
-    story += [p('Adapt the session', 'h2'), p('For 45 minutes, shorten the first conversation and assign writing for follow-up. For 90 minutes, add 15 minutes for a second case and 15 minutes for the final challenge. More time should produce more meaningful practice, not longer explanations.'), PageBreak()]
+    story += [p('Adapt the session', 'h2'), p('For 45 minutes, study one complete conversation and rehearse one scenario; assign the others for oral follow-up. For 90 minutes, rehearse all three conversations and give both scenarios a second round. More time should produce more meaningful practice, not longer explanations.'), PageBreak()]
     for m in t['modules']:
         w = m['workshop']
         story += [p(f'LESSON {m["number"]:02d} / FACILITATOR NOTES', 'kicker'), heading(m['title'], m['id']),
@@ -199,9 +228,42 @@ def teacher(t):
                   p('Language-check answers', 'h2')]
         for i, q in enumerate(w['questions']):
             story += [p(f'{i+1}. {chr(65+q["correct_index"])} - {q["answer"]} ' + q['feedback'][q['correct_index']], 'small')]
+        activities = lesson_content(t, m)
+        story += [p('05 · Conversations', 'h2'), *[p(f'{i}. {d["title"]} - {d["setting"]}', 'small') for i, d in enumerate(activities['conversations'], 1)],
+                  p('Use the complete ten-turn scripts in the learner workbook and conversation lab. Read with roles, identify the decision or open question, then replay without reading.', 'small')]
+        story += additional_speaking_scenario(activities['additional_scenario'], '06 · Say it: second scenario')
         story += [pdf_link(t, 'teacher', m['id'], 'AI extension: adapt this lesson for your learners and available time.'), PageBreak()]
     story += assessment_page() + [PageBreak()] + reference_page(t)
     return story
+
+
+def conversation_scripts(t, m):
+    story = []
+    for i, dialogue in enumerate(lesson_content(t, m)['conversations'], 1):
+        story += [PageBreak(), p(f'LESSON {m["number"]:02d} / 05 · CONVERSATIONS / {i} OF 3', 'kicker'),
+                  heading(dialogue['title'], f'{m["id"]}-conversation-{i}'), p(dialogue['setting'], 'small')]
+        for n, (role, speech) in enumerate(dialogue['turns'], 1):
+            story.append(Paragraph(f'<b>{n:02d} · {html.escape(clean(role))}:</b> {html.escape(clean(speech))}', STYLES['body']))
+        story += [p('Notice, then rehearse', 'h2'), p('Name each speaker\'s purpose. Identify one useful expression and the next step or unresolved question. Read the roles aloud, then switch roles.', 'small')]
+    return story
+
+
+def additional_speaking_scenario(scenario, label='Scenario 2'):
+    return [p(label + ' | ' + scenario['title'], 'h2'), p(scenario['brief']),
+            p('Role A: ' + scenario['role_a'], 'small'), p('Role B: ' + scenario['role_b'], 'small'),
+            p('Possible opening: ' + scenario['opening_line'], 'quote'),
+            p('Success checks', 'term'), *bullets(scenario['success_checks']),
+            p('Add a complication: ' + scenario['complication'], 'small')]
+
+
+def speaking_scenarios(t, m):
+    return [PageBreak(), p(f'LESSON {m["number"]:02d} / 06 · SAY IT', 'kicker'),
+            heading('Two scenarios to practice', f'{m["id"]}-speaking'), p('Use only the supplied facts. Prepare for two minutes, speak for one minute, then respond to a follow-up. Switch roles and repeat. For solo study, speak both roles aloud.'),
+            p('Scenario 1 | ' + m['title'], 'h2'), p(m['brief']), p(m['speaking_task'], 'small'),
+            p('Partner: ' + m['workshop']['role_b'], 'small'),
+            p('Second round: ' + m['workshop']['challenge'], 'small'),
+            p('Model for scenario 1: ' + m['model'], 'quote'),
+            *additional_speaking_scenario(lesson_content(t, m)['additional_scenario'])]
 
 
 def workbook(t):
@@ -222,11 +284,12 @@ def workbook(t):
         for i, q in enumerate(w['questions']):
             story += [p(f'{i+1}. {q["prompt"]}', 'small')]
             story += [p(f'{chr(65+j)}. {option}', 'small') for j, option in enumerate(q['options'])]
-        story += [p('5. Say it', 'h2'), p(m['speaking_task'], 'small'), p('Partner: ' + w['role_b'], 'small'),
-                  p('6. Write it', 'h2'), p(m['writing_task'], 'small'), WritingLines(7, 21),
+        story += [p('05 · Conversations', 'h2'), p('The next three pages contain original fictional conversations for this lesson. Each numbered line is one speaking turn. Read the setting before assigning roles.', 'small')]
+        story += conversation_scripts(t, m) + speaking_scenarios(t, m)
+        story += [
                   p('Check: facts accurate | meaning clear | tone appropriate | next action or question explicit', 'small'),
-                  pdf_link(t, 'writing', m['id'], 'After revising your response: open the AI extension for feedback on your own draft.'), PageBreak()]
-    story += [heading('Answer workshop', 'answers'), p('Try the tasks first. The model is one acceptable response, not a script to memorize. Your written version needs a subject line, an opening, and appropriate context. Assess it using the four criteria at the end.')]
+                  pdf_link(t, 'roleplay', m['id'], 'Continue scenario 1 with an AI partner.'), PageBreak()]
+    story += [heading('Answer workshop', 'answers'), p('Try the tasks first. The model is one acceptable response to scenario 1, not a script to memorize. Assess your spoken version using the four criteria at the end.')]
     for m in t['modules']:
         w = m['workshop']
         block = [p(f'{m["number"]:02d} | {m["title"]}', 'h2'), p('Editing example: ' + w['after']), p(w['reason'], 'small')]
@@ -253,6 +316,10 @@ def conversation(t):
                   p('Second round', 'h2'), p(w['challenge']),
                   Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", m["id"], True), quote=True)}" color="#174c69">Debrief and extend with AI</link>', STYLES['h2']),
                   p('Which phrase helped the listener? Which case fact needed clarification? Write one better follow-up question, then repeat the exchange.', 'small'), WritingLines(1), PageBreak()]
+    story += [heading('Lesson conversations and speaking practice', 'lesson-conversations'),
+              p('The following sections match 05 and 06 on the industry webpage and in the learner workbook. Each lesson has three ten-turn conversations and two bounded speaking scenarios. These are original fictional teaching scripts, not transcripts of real people.')]
+    for m in t['modules']:
+        story += conversation_scripts(t, m) + speaking_scenarios(t, m)
     story += assessment_page() + [PageBreak()] + reference_page(t)
     return story
 
@@ -307,13 +374,10 @@ def build_track(track, kinds=None):
         try:
             doc = WorkDocument(temp, pagesize=letter, leftMargin=MARGIN, rightMargin=MARGIN,
                                topMargin=56, bottomMargin=53, title=f'{track["title"]} | {KINDS[index]}',
-                               author='English Ladder', subject=f'English for Work - edition {REVISION}',
+                               author='English Ladder', subject=f'English for Work - activity edition {ACTIVITY_EDITION}',
                                initialFontName='Work', pageCompression=1)
             doc.course_title, doc.kind = track['title'], KINDS[index]
-            if index == 2:
-                from work_dialogues import EDITION
-                doc.revision = EDITION
-            doc.revision = AI_EDITION
+            doc.revision = ACTIVITY_EDITION
             doc.build(BUILDERS[index](track) + pdf_appendix(track, index), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
             reader = PdfReader(temp)
             assert len(reader.pages) > 3
@@ -321,6 +385,11 @@ def build_track(track, kinds=None):
             result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
                                 bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                                 content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=2, ai_prompt_edition=AI_EDITION)
+            result[href]['illustration_sha256'] = hashlib.sha256((ROOT / 'assets/work/professional-icons.png').read_bytes()).hexdigest()
+            result[href]['activity_edition'] = ACTIVITY_EDITION
+            if index in (0, 1, 2):
+                result[href]['lesson_conversation_hash'] = conversation_content_hash()
+                result[href]['lesson_conversation_count'] = 24
             if index == 2:
                 from work_dialogues import dialogue_hash, load_dialogues, EDITION
                 result[href].update(dialogue_hash=dialogue_hash(), dialogue_count=len(load_dialogues()[track['slug']]), dialogue_edition=EDITION)
@@ -338,6 +407,9 @@ def main(slugs=None, kinds=None):
         if unknown:
             raise ValueError(f'Unknown courses: {sorted(unknown)}')
         tracks = [t for t in tracks if t['slug'] in slugs]
+    if kinds is None or any(kind in (0, 1, 2) for kind in kinds):
+        for track in tracks:
+            load_course(track['slug'])
     manifest_path = ROOT / 'content/work/documents.json'
     documents = json.loads(manifest_path.read_text()).get('documents', {}) if (slugs or kinds) and manifest_path.exists() else {}
     for t in tracks:
@@ -351,6 +423,6 @@ def main(slugs=None, kinds=None):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--course', action='append', help='A course slug; repeat to build several courses.')
-    parser.add_argument('--kind', choices=['conversation'], help='Rebuild only Conversation Labs, preserving other PDF assets.')
+    parser.add_argument('--kind', choices=['conversation', 'activities'], help='Rebuild Conversation Labs or all three activity-bearing guides, preserving other PDF assets.')
     args = parser.parse_args()
-    main(args.course, [2] if args.kind else None)
+    main(args.course, [2] if args.kind == 'conversation' else [0, 1, 2] if args.kind == 'activities' else None)

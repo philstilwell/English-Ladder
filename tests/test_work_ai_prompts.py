@@ -111,7 +111,7 @@ class WorkAIPromptTests(unittest.TestCase):
                         for i in range(1, len(self.dialogues[t['slug']]) + 1):
                             self.assertIn(url(t, 'roleplay', f'dialogue-{i}', True), urls)
                     for m in t['modules']:
-                        mode = ['teacher', 'writing', 'roleplay', 'vocabulary'][kind]
+                        mode = ['teacher', 'roleplay', 'roleplay', 'vocabulary'][kind]
                         self.assertIn(url(t, mode, m['id'], True), urls)
 
 

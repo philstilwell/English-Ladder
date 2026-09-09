@@ -47,7 +47,7 @@ class DialoguePublicationTests(unittest.TestCase):
                 self.assertIsNotNone(soup.select_one('link[rel="canonical"]'))
                 self.assertIsNone(soup.select_one('.site-footer a[href="continue.html"]'))
                 self.assertIsNotNone(soup.select_one('.site-footer a[href="archive.html"]'))
-                self.assertIn('complete workplace dialogues',soup.select('.work-download')[2].get_text())
+                self.assertIn('extended workplace dialogues plus 24 lesson conversations',soup.select('.work-download')[2].get_text())
 
     def test_technical_regressions(self):
         groups=load_dialogues()

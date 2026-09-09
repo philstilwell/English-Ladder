@@ -14,7 +14,9 @@ test('each copy button copies its complete visible prompt with no learner draft'
     const w = dom.window, d = w.document;
     let copied;
     Object.defineProperty(w.navigator, 'clipboard', { value: { writeText: async text => { copied = text; } } });
-    d.querySelector('[data-work-note]').value = 'PRIVATE LEARNER DRAFT';
+    const legacyNote = d.createElement('textarea');
+    legacyNote.dataset.workNote = 'module-1'; legacyNote.value = 'PRIVATE LEARNER DRAFT';
+    d.body.append(legacyNote);
     w.eval(script);
     for (const button of d.querySelectorAll('[data-copy-finished]')) {
       assert.equal(button.hidden, false);

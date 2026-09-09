@@ -9,6 +9,7 @@ from work_curriculum import ROOT, REVISION, RUBRIC, load_tracks, related_tracks,
 from work_ai_prompts import web_section, url as ai_url
 from work_ready_prompts import lesson_prompts, dialogue_prompts, write_prompt_packs
 from work_icons import card_icon
+from work_lesson_conversations import render_activities, load_course, content_hash as conversation_content_hash
 
 
 def e(value):
@@ -35,7 +36,7 @@ def pdf_links(track):
     manifest = json.loads(path.read_text()).get('documents', {}) if path.exists() else {}
     labels = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Vocabulary & phrasebook']
     descriptions = ['Timed lesson plans, coaching notes, and assessment criteria.',
-                    'Cases, practice, writing space, and a separate answer section.',
+                    '24 ten-turn conversations, 16 speaking scenarios, language checks, and answers.',
                     'Partner roles, follow-up questions, and repeat-practice challenges.',
                     'Clear definitions, reusable expressions, and model responses.']
     cards = []
@@ -45,7 +46,7 @@ def pdf_links(track):
         version = meta.get('sha256', REVISION)[:12]
         description = descriptions[i]
         if i == 2 and meta.get('dialogue_count'):
-            description = f"{meta['dialogue_count']} complete workplace dialogues, professional vocabulary, and eight additional role-play cases."
+            description = f"{meta['dialogue_count']} extended workplace dialogues plus 24 lesson conversations and two speaking scenarios per lesson."
         if meta.get('ai_prompt_count'):
             description += ' Includes two AI extension prompts.'
         cards.append(f'<a class="work-download" href="{e(href)}?v={e(version)}"><span class="work-kicker">PDF{size}</span><strong>{labels[i]}</strong><span>{description}</span><span class="work-download-action">Open document ↗</span></a>')
@@ -76,9 +77,8 @@ def render_module(track, m):
 <section><p class="work-kicker">02 · Find the words</p><h4>Vocabulary for this lesson</h4><dl class="work-vocabulary compact">{vocab}</dl></section></div>
 <section class="work-language"><p class="work-kicker">03 · Notice the language</p><h4>{e(w['title'])}</h4><p>{e(w['explanation'])}</p>{ul(w['frames'])}<div class="work-edit"><p><strong>Improve this:</strong> {e(w['before'])}</p><details><summary>See a clearer version</summary><p><strong>{e(w['after'])}</strong></p><p>{e(w['reason'])}</p></details></div></section>
 <section class="work-checks"><p class="work-kicker">04 · Check your understanding</p><h4>Two short language checks</h4><p>These language patterns recur across courses so you can retrieve and reuse them.</p><div class="work-two-column">{quiz}</div></section>
-<div class="work-two-column work-practice"><section><p class="work-kicker">05 · Say it</p><h4>Practice with a partner</h4><p>{e(m['speaking_task'])}</p><details><summary>Partner's role and follow-up</summary><p>{e(w['role_b'])}</p></details><details><summary>Try a harder second round</summary><p>{e(w['challenge'])}</p></details><p class="work-support"><strong>Studying alone?</strong> Give both sides of the conversation aloud. Pause before answering the follow-up, then repeat with fewer notes.</p></section>
-<section><p class="work-kicker">06 · Write it</p><h4>A message someone can act on</h4><p>{e(m['writing_task'])}</p><label class="work-note-label" for="{m['id']}-note">Your draft</label><textarea id="{m['id']}-note" data-work-note="{m['id']}" rows="7" placeholder="Subject: ...&#10;Start with the purpose of your message."></textarea><p class="work-word-count" data-word-count>0 words · target 70-110</p></section></div>
-<details class="work-model"><summary>Compare with a model response</summary><blockquote>{e(m['model'])}</blockquote><p>This is one possible spoken response, not the only acceptable wording. For your written version, add a subject line, opening, and relevant context without inventing facts.</p><p><strong>Notice:</strong> {e(w['goal'])} Underline the wording that does this. Then identify one detail from the case that the response preserves.</p></details>
+{render_activities(track, m)}
+<details class="work-model"><summary>Compare scenario 1 with a model response</summary><blockquote>{e(m['model'])}</blockquote><p>This is one possible spoken response, not the only acceptable wording. Preserve the case facts when you try your own version.</p><p><strong>Notice:</strong> {e(w['goal'])} Identify the wording that does this, then name one detail from the case that the response preserves.</p></details>
 <section class="work-case-transfer"><h4>Apply it to this case</h4><p>In “{e(m['title'])}”, choose one confirmed detail from the situation and one item that still needs clarification. Draft a two-sentence response using “{e(w['frames'][0])}”. Keep the known detail accurate and ask about the missing one.</p><details><summary>Check your reasoning</summary><p>Compare with the case above and the model response. Can you point to the words that support your factual statement? Is your question about something the case leaves open? If you introduce a possible outcome, clearly label it as a possibility.</p></details></section>
 <section class="work-reflect"><h4>Review, then try again</h4>{checklist}<p>Revise one sentence and repeat the response. A useful response can be clear even with a few grammar errors; judge meaning and task completion, not accent.</p><label class="work-completion"><input type="checkbox" data-work-complete="{m['id']}"> I practiced, checked my response, and tried again.</label></section>
 <aside class="work-ai-invitation"><h4>Ready for another round?</h4><p>Choose an AI extension using this lesson's actual case and language.</p><nav aria-label="AI extensions for lesson {m['number']}">{ai_links}</nav></aside>
@@ -100,10 +100,10 @@ def render_industry_page(t, tracks):
 <nav class="work-breadcrumb" aria-label="Breadcrumb"><a href="efsp.html">English for Work</a><span aria-hidden="true">/</span><span>{e(t['category'])}</span></nav>
 <section class="work-hero"><div>{card_icon(t)}<p class="work-kicker">English for Work · {e(t['category'])}</p><h1>{e(t['title'])}</h1><p class="work-intro">{e(t['summary'])}</p><div class="work-meta"><span>8 practical lessons</span><span>Intermediate to advanced</span><span>4 printable guides</span></div><a class="work-button" href="#lessons">Start practicing <span aria-hidden="true">→</span></a></div>
 <aside class="work-study-card"><p class="work-kicker">Words into action</p><p class="work-study-phrase">Read the situation.<br>Find your words.<br>Make yourself clear.</p><p>For {e(t['roles']).rstrip('.')}.</p><a href="#downloads">Choose your materials ↓</a><p><a href="#finished-dialogue-prompts">Copy complete AI prompts ↓</a></p></aside></section>
-<section class="work-orientation work-two-column"><div><h2>What you will practice</h2>{ul(t['outcomes'][:5])}</div><div><h2>Choose your pace</h2><p><strong>Quick practice · 15 minutes:</strong> read a case, study the useful expressions, and say your response aloud.</p><p><strong>Full lesson · 45-60 minutes:</strong> add the language checks, partner exchange, writing, and revision.</p><p><strong>Level guide:</strong> designed for intermediate to advanced learners. B1 learners can use the sentence frames; B2 learners can work independently; C1 learners can try the harder second round. These are teaching suggestions, not a certified level assessment.</p></div></section>
+<section class="work-orientation work-two-column"><div><h2>What you will practice</h2>{ul(t['outcomes'][:5])}</div><div><h2>Choose your pace</h2><p><strong>Quick practice · 15 minutes:</strong> read one conversation, study its useful expressions, and rehearse one scenario aloud.</p><p><strong>Full lesson · 45-60 minutes:</strong> complete the language checks, compare three conversations, and practice both speaking scenarios with feedback.</p><p><strong>Level guide:</strong> designed for intermediate to advanced learners. B1 learners can use the sentence frames; B2 learners can work independently; C1 learners can try the harder second round. These are teaching suggestions, not a certified level assessment.</p></div></section>
 <section id="downloads" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Take the lesson with you</p><h2>Four guides. Four useful jobs.</h2></div><span>Revised September 2026</span></div><div class="work-downloads">{pdf_links(t)}</div></section>
 <section id="lessons" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Practice, reflect, repeat</p><h2>Your eight lessons</h2></div><p class="work-progress" data-work-progress role="status">0 of 8 practiced</p></div><div class="work-lesson-tools"><nav class="work-jump" aria-label="Jump to lesson">{jump}</nav><button type="button" class="work-text-button" data-expand-lessons hidden>Open all lessons</button></div><p class="work-scope">{e(t['scope_note'])}</p>
-<div class="work-save-controls" hidden data-storage-controls><label><input type="checkbox" data-save-notes> Save my drafts and progress in this browser</label><button type="button" class="work-text-button" data-clear-work>Clear saved practice</button><p data-storage-status role="status">Saving is off. Use fictional details; practice is not submitted or automatically graded.</p></div>{modules}</section>
+<div class="work-save-controls" hidden data-storage-controls><label><input type="checkbox" data-save-notes> Save my progress in this browser</label><button type="button" class="work-text-button" data-clear-work>Clear saved practice</button><p data-storage-status role="status">Saving is off. Use fictional details; practice is not submitted or automatically graded.</p></div>{modules}</section>
 <section class="work-section work-capstone"><p class="work-kicker">Put it together</p><h2>Your final workplace challenge</h2><p>Choose a case you have not rehearsed today. Give a one-minute response, answer two follow-up questions, then write a 70-110 word message. Have your partner introduce the harder second-round challenge. Review the four criteria used in the lessons and repeat the part that needs improvement.</p><p><strong>Compare your progress:</strong> return to your first draft. Identify one improvement in clarity, one in accuracy, and one in how you ask for or explain the next step.</p></section>
 <details id="vocabulary" class="work-section work-glossary-disclosure"><summary>Explore your field vocabulary</summary><div class="work-section-heading"><div><p class="work-kicker">Keep the meaning close</p><h2>Your field vocabulary</h2></div><label>Find a term<input type="search" data-vocabulary-search placeholder="Search words and meanings"></label></div><p data-vocabulary-count role="status">{len(t['jargon'])} terms</p><dl class="work-vocabulary work-glossary">{glossary}</dl></details>
 {extra}{dialogue_prompts(t)}{web_section(t)}<section class="work-section work-two-column"><div><h2>For teachers and study partners</h2><p>Ask learners to respond before revealing the model. Give feedback on one meaning issue and one language pattern, then let them repeat. For mixed levels, offer the frames first and remove them in the second round.</p><p>Use the teacher's guide for a 60-minute plan, performance criteria, model answers, and extension tasks. A recorded practice completion is not a proficiency score.</p><p><a data-ai-preset href="{e(ai_url(t, 'teacher'))}">Adapt an activity with a scripted AI prompt →</a></p></div><div><h2>Language notes and further reading</h2><p>The cases and explanations are original teaching material. The references provide language frameworks and selected professional context; use current local guidance for actual work.</p><ul class="work-sources">{sources}</ul><p class="work-small">Course edition: {REVISION}.</p></div></section>
@@ -127,6 +127,13 @@ def render_directory(tracks):
 def main():
     tracks = all_tracks()
     print(validate_tracks(tracks))
+    for track in tracks:
+        load_course(track['slug'])
+    documents = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
+    for track in tracks:
+        for _, href in track['pdfs'][:3]:
+            if documents[href].get('lesson_conversation_hash') != conversation_content_hash():
+                raise ValueError('Rebuild PDFs before publishing revised conversation activities: ' + href)
     print('Published complete prompts:', write_prompt_packs(tracks))
     (ROOT / 'efsp.html').write_text(render_directory(tracks))
     for t in tracks:

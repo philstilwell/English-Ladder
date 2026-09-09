@@ -69,6 +69,13 @@
 .work-vocabulary dd { margin:5px 0 0; color:var(--work-muted); font-size:.88rem; }
 .work-vocabulary.compact>div:first-child { padding-top:0; }
 .work-language,.work-checks,.work-practice { margin-top:34px !important; padding-top:28px; border-top:1px solid var(--work-line); }
+.work-conversation { border-bottom:1px solid var(--work-line); }
+.work-conversation-lines { margin:18px 0 24px; padding-left:28px; }
+.work-conversation-lines li { padding:7px 0 7px 8px; overflow-wrap:anywhere; }
+.work-conversation-lines li::marker { color:var(--work-muted); font-size:.8rem; }
+.work-speaking { margin-top:30px; }
+.work-speaking-scenario h5 { margin:0 0 14px; font-size:1rem; line-height:1.5; letter-spacing:0; color:var(--work-ink); }
+.work-conversation > summary:focus-visible { outline:2px solid var(--work-blue); outline-offset:3px; }
 .work-language>p { max-width:920px; }
 .work-language>ul { display:flex; flex-wrap:wrap; gap:12px; padding:0; list-style:none; }
 .work-language>ul li { background:#eaf0eb; color:#294d3e; border-radius:3px; padding:11px 15px; font-size:.88rem; }

@@ -58,7 +58,9 @@ test('copy and downloadable text contain the selected prompt and never learner d
   let copied = '';
   const dom = setup('', w => Object.defineProperty(w.navigator, 'clipboard', {value: {writeText: async text => { copied = text; }}}));
   const w = dom.window, d = w.document;
-  d.querySelector('[data-work-note]').value = 'PRIVATE LEARNER DRAFT MUST STAY HERE';
+  const legacyNote = d.createElement('textarea');
+  legacyNote.dataset.workNote = 'module-1'; legacyNote.value = 'PRIVATE LEARNER DRAFT MUST STAY HERE';
+  d.body.append(legacyNote);
   choose(w, '[data-ai-mode]', 'writing');
   choose(w, '[data-ai-context]', 'module-5');
   choose(w, '[data-ai-level]', 'B1');

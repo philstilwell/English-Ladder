@@ -47,18 +47,26 @@ class WorkCurriculumTests(unittest.TestCase):
         definition = next(j['definition'] for j in t['jargon'] if j['term']=='SBAR')
         self.assertIn('Situation, Background, Assessment', definition)
 
+    def test_insurance_terms_use_insurance_meanings(self):
+        track = next(t for t in self.tracks if t['slug'] == 'insurance')
+        terms = {term['term']: term['definition'] for term in track['jargon']}
+        self.assertIn('insurance contract', terms['policy'])
+        self.assertIn('request for payment or benefits', terms['claim'])
+        self.assertIn('coverage review', terms['claim'])
+
     def test_every_page_contains_full_lessons_without_javascript(self):
         for t in self.tracks:
             with self.subTest(course=t['slug']):
                 soup = BeautifulSoup((ROOT/f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
                 self.assertEqual(len(soup.select('.work-module')),8)
                 self.assertEqual(len(soup.select('.work-quiz')),16)
-                self.assertEqual(len(soup.select('textarea[data-work-note]')),8)
+                self.assertEqual(len(soup.select('textarea[data-work-note]')),0)
                 for m in t['modules']:
                     module = soup.find(id=m['id'])
                     self.assertIn(m['brief'], module.get_text())
                     self.assertIn(m['model'], module.get_text())
-                    self.assertIn(m['writing_task'], module.get_text())
+                    self.assertIn('05 · Conversations', module.get_text())
+                    self.assertIn('06 · Say it', module.get_text())
                     self.assertIn(m['workshop']['role_b'], module.get_text())
                 ids = [node['id'] for node in soup.select('[id]')]
                 self.assertEqual(len(ids),len(set(ids)))

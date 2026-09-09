@@ -141,7 +141,9 @@ test('workplace chooser, complete cards, printing and text downloads share the c
     const fixed = d.querySelector('[data-copy-finished]');
     const originalFixed = d.getElementById(fixed.dataset.copyFinished).textContent;
     run(w, ...order);
-    d.querySelector('[data-work-note]').value = 'PRIVATE NOTES MUST NOT BE COPIED';
+    const legacyNote = d.createElement('textarea');
+    legacyNote.dataset.workNote = 'module-1'; legacyNote.value = 'PRIVATE NOTES MUST NOT BE COPIED';
+    d.body.append(legacyNote);
     for (const [language, name] of Object.entries(languages)) {
       externalLanguage(w, language);
       const control = d.querySelector('[data-ai-mode]');

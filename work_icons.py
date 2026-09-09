@@ -49,13 +49,9 @@ ICON_SLUGS = (
 )
 
 
-def card_icon(track):
-    """Select the profession's atlas cell without adding a screen-reader label."""
-    index = ICON_SLUGS.index(track["slug"])
-    x = (index % 7) * 100 / 6
-    y = (index // 7) * 100 / 5
-    # A few illustrations extend close to the neighboring cell's boundary.
-    right_trim = {
+def icon_right_trim(slug):
+    """Shared crop boundary in units of the 104-pixel web illustration."""
+    return {
         "general-it": 2,
         "finance": 6,
         "financial-advice": 2,
@@ -65,7 +61,15 @@ def card_icon(track):
         "retail-ecommerce": 2,
         "consulting": 2,
         "sales-business-development": 2,
-    }.get(track["slug"], 0)
+    }.get(slug, 0)
+
+
+def card_icon(track):
+    """Select the profession's atlas cell without adding a screen-reader label."""
+    index = ICON_SLUGS.index(track["slug"])
+    x = (index % 7) * 100 / 6
+    y = (index // 7) * 100 / 5
+    right_trim = icon_right_trim(track["slug"])
     clip = f";clip-path:inset(0 {right_trim}px 0 0)" if right_trim else ""
     return (
         '<span aria-hidden="true" class="work-card-icon" '

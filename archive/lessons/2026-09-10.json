@@ -1,0 +1,774 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-10",
+  "release_iso": "2026-09-10T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Business",
+    "feed_url": "https://feeds.bbci.co.uk/news/business/rss.xml",
+    "category": "business",
+    "published_at": "Thu, 10 Sep 2026 13:34:17 GMT",
+    "retrieved_at": "2026-09-10T20:26:11.399152+00:00",
+    "title": "Air traffic chaos and compensation: 'Shutdown cost us more than £1,000'",
+    "summary": "Flight disruption has ruined holidays and left passengers sleeping on airport floors - so what are their rights?",
+    "evidence_text": "The couple are among the many thousands of air passengers caught up in the chaos caused by the four-hour shutdown of the UK's air traffic control system on Tuesday.\nIt means their holiday to Slovenia has been cancelled and - although their flight was refunded by British Airways - they estimate being left £1,300 out of pocket from unused accommodation and excursions.\nCatie, 30, and Phil, 34, were sat on a British Airways flight to Ljubljana on Tuesday that never took off.\nIf a flight is cancelled, airlines must get customers to their destination as quickly as possible at no extra cost, even if it is with a rival carrier.\nWhen airlines are at fault, extra compensation is paid under UK and EU rules. But not this time, because the air traffic control issues were beyond airlines' control. Even so, airlines themselves are furious that they have been saddled with a bill of millions of pounds.\nBA also refunded the couple's car hire, which had been organised through the airline. The problem for the couple was that they had booked accommodation and excursions separately, and that is money they have lost.\nAlthough the Allens could get back home after their flight was cancelled, others ended up sleeping on floors at Heathrow Airport.\nDelayed passengers must be supplied with food and a hotel stay, depending on the length of the wait.\nAlternatively, passengers can take a refund, which should also be offered for flight delays of more than five hours.\nHowever, the insurer told them any claim on their travel insurance for the funds they have lost would be invalid because air traffic issues were outside of the policy.\nThis is different to package holidays, which are covered in full if a flight is cancelled.\n\"But there are, of course, lots of incidences we have seen of airport capacity not being able to deal with the number of passengers being disrupted and I think that is a key lesson we have to learn from this.\"\n\"We have been saving tirelessly for this trip and we have lost over £1,000 with no way of getting it back. And most of all, we've got no holiday to go on, which we've been looking forward to for years,\" she said.\nThe trouble was that many couldn't find accommodation anywhere nearby. Booking a luxury stay is unlikely to be refunded by the airline, because only \"reasonable expenses\" are permitted.\nThere will be an independent review of the saga by the Civil Aviation Authority.",
+    "evidence_retrieved_at": "2026-09-10T20:26:11.399152+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cy9znljypnjo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why did Catie and Phil not get all their money back for their cancelled holiday?",
+          "Imagine your flight is delayed for many hours. What three things would you do first? I would... because..."
+        ],
+        "title": "Air Traffic Chaos: Passengers Lose Money and Holidays",
+        "overview": "This lesson explains how a UK air traffic problem caused flight cancellations and money loss for many travelers.",
+        "topic": "Travel problems and passenger rights",
+        "vocabulary": [
+          {
+            "term": "chaos",
+            "part_of_speech": "noun",
+            "definition": "a state of great confusion and disorder; everything is mixed up and not organized."
+          },
+          {
+            "term": "disruption",
+            "part_of_speech": "noun",
+            "definition": "a problem that stops something from continuing as normal or planned."
+          },
+          {
+            "term": "passengers",
+            "part_of_speech": "noun",
+            "definition": "people who travel in a car, bus, train, or airplane but are not the driver or pilot."
+          },
+          {
+            "term": "cancelled",
+            "part_of_speech": "verb",
+            "definition": "stopped; decided not to do something that was planned, like a trip or an event."
+          },
+          {
+            "term": "refund",
+            "part_of_speech": "noun",
+            "definition": "money that is given back to you, especially when you return something you bought or a service is not provided."
+          },
+          {
+            "term": "separately",
+            "part_of_speech": "adverb",
+            "definition": "apart from other things or people; not together."
+          },
+          {
+            "term": "destination",
+            "part_of_speech": "noun",
+            "definition": "the place where someone or something is going."
+          }
+        ],
+        "grammar": {
+          "concept": "Using 'because' for reasons",
+          "explanation": "We use the word 'because' to show the reason or cause for something. It tells us why something happens. For example, 'I am happy because it is sunny' means the sunny weather is the reason for happiness.",
+          "example_quote": "Catie and Phil Allen lost money because their holiday to Slovenia was cancelled."
+        },
+        "quiz": [
+          {
+            "question": "What caused the big problems for many air passengers?",
+            "options": [
+              "A strike by airline pilots.",
+              "A shutdown of the UK's air traffic control.",
+              "Bad weather conditions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the problem was not a pilot strike. The article talks about air traffic control issues.",
+              "Yes, the UK's air traffic control system had a four-hour shutdown, which caused chaos.",
+              "The article does not say bad weather caused the problems. It mentions air traffic control issues."
+            ]
+          },
+          {
+            "question": "What happened to Catie and Phil Allen's flight to Slovenia?",
+            "options": [
+              "It was delayed by only five hours.",
+              "It took off on Saturday instead.",
+              "It never took off."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, their flight was not just delayed. It was cancelled completely.",
+              "They were offered an alternative flight for Saturday, but they chose a refund instead of waiting.",
+              "Yes, Catie and Phil's flight to Ljubljana on Tuesday never took off due to the disruption."
+            ]
+          },
+          {
+            "question": "Why did Catie and Phil lose money on their hotel and excursions?",
+            "options": [
+              "Their travel insurance covered only the flight.",
+              "They booked their hotel and excursions separately.",
+              "The airline refused to refund anything."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Their travel insurance did not cover these issues, but the main reason for losing money on accommodation was separate bookings.",
+              "Yes, they booked their accommodation and excursions separately, so these parts were not refunded when their flight was cancelled.",
+              "The airline, British Airways, did refund their flight and car hire booked through them, but not the separately booked items."
+            ]
+          },
+          {
+            "question": "What does the word \"refund\" mean in this story?",
+            "options": [
+              "To change a flight ticket.",
+              "To get money back for something you paid for.",
+              "To pay extra money for a service."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'refund' means to get your money back, not to change your ticket.",
+              "Yes, a refund is money given back to a customer, for example, for a cancelled flight or service.",
+              "No, 'refund' is not about paying extra. It is about getting money back."
+            ]
+          },
+          {
+            "question": "According to the story, what should airlines provide for passengers with very long delays?",
+            "options": [
+              "Only a new flight ticket.",
+              "Food and a hotel stay.",
+              "Money for new clothes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Airlines must offer a new flight or a refund, but they also have other duties for long delays.",
+              "Yes, airlines must supply food and a hotel stay for delayed passengers, depending on how long they wait.",
+              "The article does not mention airlines providing money for new clothes for delayed passengers."
+            ]
+          },
+          {
+            "question": "Why were some passengers sleeping on airport floors?",
+            "options": [
+              "Because they missed their bus home.",
+              "Because their flights were cancelled and they could not find accommodation.",
+              "Because they wanted to save money."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article does not say passengers slept on floors because they missed a bus.",
+              "Yes, some passengers ended up sleeping on airport floors after their flights were cancelled because they could not find nearby accommodation.",
+              "No, they were not sleeping on floors to save money, but because they had nowhere else to stay after cancellations."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Problems with air traffic control caused chaos for many thousands of air passengers.",
+          "Catie and Phil Allen lost money because their holiday to Slovenia was cancelled.",
+          "Their flight to Ljubljana never took off due to the disruption.",
+          "If a flight is cancelled, airlines must get customers to their destination quickly or give a refund.",
+          "However, extra compensation is not always paid if airlines are not at fault for the problem.",
+          "Catie and Phil booked accommodation and excursions separately, so they lost money on these.",
+          "Some other passengers ended up sleeping on floors at Heathrow Airport after their flights were cancelled.",
+          "Airlines should supply delayed passengers with food and a hotel stay."
+        ],
+        "sentence_evidence": [
+          "The couple are among the many thousands of air passengers caught up in the chaos caused by the four-hour shutdown of the UK's air traffic control system on Tuesday.",
+          "It means their holiday to Slovenia has been cancelled and - although their flight was refunded by British Airways - they estimate being left £1,300 out of pocket from unused accommodation and excursions.",
+          "Catie, 30, and Phil, 34, were sat on a British Airways flight to Ljubljana on Tuesday that never took off.",
+          "If a flight is cancelled, airlines must get customers to their destination as quickly as possible at no extra cost, even if it is with a rival carrier.",
+          "When airlines are at fault, extra compensation is paid under UK and EU rules. But not this time, because the air traffic control issues were beyond airlines' control. Even so, airlines themselves are furious that they have been saddled with a bill of millions of pounds.",
+          "BA also refunded the couple's car hire, which had been organised through the airline. The problem for the couple was that they had booked accommodation and excursions separately, and that is money they have lost.",
+          "Although the Allens could get back home after their flight was cancelled, others ended up sleeping on floors at Heathrow Airport.",
+          "Delayed passengers must be supplied with food and a hotel stay, depending on the length of the wait."
+        ],
+        "editorial_check": {
+          "date": "2026-09-10T20:26:43.412518+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Vocabulary items such as 'chaos', 'disruption', 'refund', and 'destination' are appropriate for A1-A2, common, and contextually useful. Definitions are clear and simple."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses straightforward, neutral everyday English, suitable for adult A1-A2 learners. There are no bureaucratic phrases or complex idioms."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses short clauses and familiar connectors. Reading sentences are concise, and grammar explanations, instructions, and feedback are accessible. The discussion prompt includes a simple sentence frame."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz tests main ideas, clearly stated details, and contextual vocabulary using short, plausible answer choices. It avoids complex reasoning and external knowledge, suitable for A1-A2."
+            }
+          },
+          "content_digest": "098f43cb96bab01a6c5e05ba0c1d50b9e1b1ab3d8087faafc565dba921336b4e"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What are the main responsibilities of airlines when a flight is cancelled or delayed for many hours?",
+          "Have you ever experienced a significant flight delay or cancellation? What did you do, and what was the outcome?"
+        ],
+        "title": "UK Air Traffic Control Shutdown: Holiday Plans Ruined, Rights Questioned",
+        "overview": "A four-hour shutdown of the UK's air traffic control system caused widespread flight delays and cancellations, leading to significant financial losses for travelers and questions about passenger compensation.",
+        "topic": "Air Travel Problems and Consumer Rights",
+        "vocabulary": [
+          {
+            "term": "widespread",
+            "part_of_speech": "adjective",
+            "definition": "Happening or existing in many places or among many people."
+          },
+          {
+            "term": "affected",
+            "part_of_speech": "verb, past participle",
+            "definition": "Influenced or changed by something."
+          },
+          {
+            "term": "ruined",
+            "part_of_speech": "verb, past participle",
+            "definition": "Completely spoiled or destroyed."
+          },
+          {
+            "term": "financial losses",
+            "part_of_speech": "noun phrase",
+            "definition": "Situations where you lose money, or the amount of money lost."
+          },
+          {
+            "term": "accommodation",
+            "part_of_speech": "noun",
+            "definition": "A place for someone to stay or live."
+          },
+          {
+            "term": "excursions",
+            "part_of_speech": "noun",
+            "definition": "Short journeys or trips, especially for pleasure."
+          },
+          {
+            "term": "estimated",
+            "part_of_speech": "adjective",
+            "definition": "Guessed or calculated approximately."
+          },
+          {
+            "term": "at fault",
+            "part_of_speech": "adjective phrase",
+            "definition": "Responsible for a mistake or problem."
+          },
+          {
+            "term": "beyond their control",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Unable to be managed or influenced by them."
+          },
+          {
+            "term": "policy",
+            "part_of_speech": "noun",
+            "definition": "A plan or course of action, often a formal agreement like an insurance contract."
+          },
+          {
+            "term": "entitled to",
+            "part_of_speech": "verb phrase",
+            "definition": "Having a right to something."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Present Simple)",
+          "explanation": "The passive voice is used when the action is more important than the performer of the action, or when the performer is unknown or obvious. In the present simple passive, we use 'is/are' + the past participle of the main verb. It shifts the focus from who does something to what is done.",
+          "example_quote": "Extra compensation is usually paid if airlines are at fault, but not in this case, as air traffic issues were beyond their control."
+        },
+        "quiz": [
+          {
+            "question": "What was the main cause of the flight problems discussed in the article?",
+            "options": [
+              "Pilot strikes across the UK",
+              "A four-hour shutdown of the UK's air traffic control system",
+              "Bad weather conditions unexpectedly affected flights"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions an air traffic control shutdown, not pilot strikes.",
+              "The reading states that the UK's air traffic control system shutdown caused the widespread flight disruption.",
+              "The article does not mention bad weather as the cause of these specific flight issues."
+            ]
+          },
+          {
+            "question": "Why did Catie and Phil Allen lose money on their holiday?",
+            "options": [
+              "Their flight was not refunded by the airline.",
+              "They booked accommodation and excursions separately, and these were not covered by insurance.",
+              "They chose not to travel after the airline offered an alternative flight."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Their flight was refunded by British Airways, but their other bookings were not.",
+              "The article explains they lost money because their separate accommodation and excursion bookings were not covered by their travel insurance policy.",
+              "They took a refund because the alternative flight was too late, but the loss was due to other bookings."
+            ]
+          },
+          {
+            "question": "Which word is closest in meaning to \"widespread\" as used in the article?",
+            "options": [
+              "limited",
+              "uncommon",
+              "extensive"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Limited\" means restricted, which is the opposite of widespread.",
+              "\"Uncommon\" means rare, which is also the opposite.",
+              "\"Widespread\" means happening in many places or affecting many people, so \"extensive\" is the closest meaning."
+            ]
+          },
+          {
+            "question": "If an airline is \"at fault\" for a flight cancellation, what does that mean?",
+            "options": [
+              "They are correct in their decision to cancel.",
+              "They are responsible for the problem that caused the cancellation.",
+              "They are trying to help passengers after the cancellation."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"At fault\" means responsible for a mistake or problem, not necessarily correct in a decision.",
+              "\"At fault\" means they are responsible for the mistake or problem that led to the cancellation.",
+              "While airlines might try to help, \"at fault\" specifically refers to responsibility for the issue itself."
+            ]
+          },
+          {
+            "question": "In the sentence \"Extra compensation is usually paid if airlines are at fault,\" who usually pays the compensation?",
+            "options": [
+              "The affected passengers",
+              "The airlines (or related entities)",
+              "The air traffic control system"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Passengers receive compensation; they do not pay it.",
+              "The passive voice here implies that compensation is paid by the airlines or related entities if they are responsible for the issue.",
+              "The article states that air traffic control issues were beyond the airlines' control in this specific case, so they were not at fault."
+            ]
+          },
+          {
+            "question": "According to the article, what is one key difference between individual bookings and package holidays when a flight is cancelled?",
+            "options": [
+              "Individual bookings always offer more flexibility for changes.",
+              "Package holidays are fully covered if a flight is cancelled.",
+              "Individual bookings automatically receive extra compensation for delays."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article indicates that individual bookings often come with different terms, which can mean less coverage for cancellations.",
+              "The article explicitly states that \"package holidays, which are fully covered if a flight is cancelled.\" This is a key distinction.",
+              "Extra compensation usually depends on who is at fault, not solely on whether a booking is individual."
+            ]
+          },
+          {
+            "question": "What can be inferred about the hotel's reason for not refunding Catie and Phil's stay?",
+            "options": [
+              "They had already rebooked their room to someone else.",
+              "Their terms and conditions allowed them to keep the money.",
+              "They were a small family business that could not afford to lose income."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article does not mention the hotel rebooking the room.",
+              "While their terms allowed it, the article provides a more specific reason for their decision.",
+              "The article states, \"One explained to Catie that they were a family business that could not afford to do so.\""
+            ]
+          },
+          {
+            "question": "Which of these would be considered \"accommodation\"?",
+            "options": [
+              "A bus ticket",
+              "A hotel room",
+              "A tour guide"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A bus ticket is for transport, not a place to stay.",
+              "\"Accommodation\" refers to a place to stay, such as a hotel room or apartment.",
+              "A tour guide provides a service or experience, not a place to stay."
+            ]
+          },
+          {
+            "question": "Why were airlines furious despite not being 'at fault' for the air traffic control issues?",
+            "options": [
+              "They were saddled with a bill of millions of pounds.",
+              "They had to refund all passengers immediately without delay.",
+              "Their reputation was damaged by the Aviation Minister's comments."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The article states, \"Even so, airlines themselves are furious that they have been saddled with a bill of millions of pounds.\"",
+              "Refunds are a requirement, but the specific reason for their fury was the significant financial burden of millions of pounds.",
+              "The article doesn't link the airlines' fury directly to the minister's comments about airport capacity."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "A four-hour shutdown of the UK's air traffic control system caused widespread flight disruption and led to thousands of passengers being affected.",
+          "Many people experienced ruined holidays and faced significant financial losses due to unused accommodation and excursions.",
+          "Catie and Phil Allen, for instance, lost an estimated £1,300 after their flight to Slovenia never took off.",
+          "When a flight is cancelled, airlines must transport customers to their destination as quickly as possible at no extra cost, even if it is with another carrier.",
+          "Alternatively, passengers can choose a full refund, which should also be offered for delays longer than five hours.",
+          "Extra compensation is usually paid if airlines are at fault, but not in this case, as air traffic issues were beyond their control.",
+          "The Allens had booked accommodation and excursions separately, meaning they lost money for these items because their travel insurance policy did not cover air traffic control problems.",
+          "Unlike package holidays, which are fully covered if a flight is cancelled, individual bookings often come with different terms.",
+          "Some passengers had to sleep on airport floors because airlines could not provide enough accommodation nearby.",
+          "Aviation Minister Keir Mather stated that passengers are entitled to care and assistance during delays, but airport capacity was a key lesson to learn."
+        ],
+        "sentence_evidence": [
+          "The couple are among the many thousands of air passengers caught up in the chaos caused by the four-hour shutdown of the UK's air traffic control system on Tuesday.",
+          "It means their holiday to Slovenia has been cancelled and - although their flight was refunded by British Airways - they estimate being left £1,300 out of pocket from unused accommodation and excursions.",
+          "It means their holiday to Slovenia has been cancelled and - although their flight was refunded by British Airways - they estimate being left £1,300 out of pocket from unused accommodation and excursions.",
+          "If a flight is cancelled, airlines must get customers to their destination as quickly as possible at no extra cost, even if it is with a rival carrier.",
+          "Alternatively, passengers can take a refund, which should also be offered for flight delays of more than five hours.",
+          "When airlines are at fault, extra compensation is paid under UK and EU rules. But not this time, because the air traffic control issues were beyond airlines' control. Even so, airlines themselves are furious that they have been saddled with a bill of millions of pounds.",
+          "However, the insurer told them any claim on their travel insurance for the funds they have lost would be invalid because air traffic issues were outside of the policy.",
+          "This is different to package holidays, which are covered in full if a flight is cancelled.",
+          "Although the Allens could get back home after their flight was cancelled, others ended up sleeping on floors at Heathrow Airport.",
+          "\"But there are, of course, lots of incidences we have seen of airport capacity not being able to deal with the number of passengers being disrupted and I think that is a key lesson we have to learn from this.\""
+        ],
+        "editorial_check": {
+          "date": "2026-09-10T20:27:35.827858+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All selected vocabulary items are appropriate for B1-B2, useful in context, and are not present in the reserved vocabulary list for beginner levels. Definitions are clear and accurate."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses natural, neutral news English across the reading, explanations, and quiz feedback, maintaining an appropriate register for B1-B2 learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language in explanations, definitions, questions, and feedback is clear, accessible, and free of ambiguity, supporting B1-B2 comprehension without being overly simplistic. Sentence structures are varied but manageable."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson provides appropriate challenge for B1-B2 by combining direct reading comprehension with questions requiring contextual vocabulary understanding, grammar application, and clearly signaled inference, such as inferring the hotel's specific reason for not refunding."
+            }
+          },
+          "content_digest": "d403f5aa5f93dcfb9392701cdb3c5faadab501bfecdd8b118be444f39c42b5a9"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how booking a package holiday might have offered Catie and Phil Allen more protection than their independent arrangements.",
+          "Imagine you faced a similar travel disruption. What steps would you take to minimise financial losses and stress, and why?"
+        ],
+        "title": "UK Air Traffic Control Shutdown Leaves Thousands Stranded and Out of Pocket",
+        "overview": "Thousands of air passengers faced significant financial losses and holiday disruptions after a UK air traffic control system shutdown, revealing shortcomings in compensation and airport capacity.",
+        "topic": "Air Travel Disruption and Passenger Rights",
+        "vocabulary": [
+          {
+            "term": "upheaval",
+            "part_of_speech": "noun",
+            "definition": "A significant and often sudden change or disruption, especially to a normal situation or way of life."
+          },
+          {
+            "term": "stranded",
+            "part_of_speech": "adjective",
+            "definition": "Left without the means to move from somewhere; stuck in a difficult or helpless situation, often far from home."
+          },
+          {
+            "term": "out of pocket",
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Having lost money or incurred expenses, usually unexpectedly and without reimbursement."
+          },
+          {
+            "term": "aborted",
+            "part_of_speech": "verb, past participle",
+            "definition": "Ended or cancelled before completion; stopped an activity or process prematurely."
+          },
+          {
+            "term": "long-anticipated",
+            "part_of_speech": "adjective",
+            "definition": "Expected or looked forward to for a considerable period of time."
+          },
+          {
+            "term": "unrecoverable",
+            "part_of_speech": "adjective",
+            "definition": "Unable to be regained, salvaged, or restored; not capable of being recouped."
+          },
+          {
+            "term": "obliged",
+            "part_of_speech": "verb, past participle",
+            "definition": "Legally or morally bound to do something; compelled by a sense of duty."
+          },
+          {
+            "term": "exempt",
+            "part_of_speech": "adjective",
+            "definition": "Free from an obligation or liability imposed on others; not subject to a rule or requirement."
+          },
+          {
+            "term": "deemed",
+            "part_of_speech": "verb, past participle",
+            "definition": "Considered or judged in a particular way; regarded as having a specific quality or characteristic."
+          },
+          {
+            "term": "highlights",
+            "part_of_speech": "verb",
+            "definition": "Draws special attention to something, making it more prominent or noticeable."
+          },
+          {
+            "term": "comprehensive",
+            "part_of_speech": "adjective",
+            "definition": "Including or dealing with all or nearly all elements or aspects of something; complete."
+          },
+          {
+            "term": "implications",
+            "part_of_speech": "noun",
+            "definition": "The possible consequences or effects of an event or decision; things that are suggested or hinted at."
+          }
+        ],
+        "grammar": {
+          "concept": "Expressing Concession with \"Despite\"",
+          "explanation": "\"Despite\" is a preposition used to introduce a contrasting or concessionary idea, often followed by a noun, a pronoun, or a gerund (the -ing form of a verb). It conveys the meaning \"even though\" or \"in spite of,\" highlighting that something happens or is true even when there's an opposing factor. This structure adds sophistication to expressing complex relationships between ideas.",
+          "example_quote": "Despite receiving a flight refund, the couple faced an estimated £1,300 loss from unrecoverable expenses for pre-booked lodging and activities."
+        },
+        "quiz": [
+          {
+            "question": "What is the central theme of the article regarding the air traffic control shutdown?",
+            "options": [
+              "The efficiency of airlines in managing unexpected disruptions.",
+              "The financial and travel difficulties faced by passengers due to a system failure and limited compensation.",
+              "The government's immediate and comprehensive response to the air travel crisis."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article highlights inefficiencies and difficulties in obtaining refunds and alternative arrangements, not efficiency.",
+              "This option accurately captures the main theme of passenger hardship, financial losses, and limited recourse following the air traffic control failure.",
+              "The article mentions a minister acknowledging the issue and an upcoming review, but not an immediate or comprehensive government response."
+            ]
+          },
+          {
+            "question": "Why were Catie and Phil Allen left significantly \"out of pocket\"?",
+            "options": [
+              "Their airline refused to refund their flight or any related costs.",
+              "They booked their accommodation and activities independently, which were not covered by the flight refund or their travel insurance.",
+              "They chose an expensive alternative flight that their airline would not cover."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article explicitly states that British Airways refunded their flight and car hire booked through the airline.",
+              "The Allens lost money because their separately booked lodging and excursions were unrecoverable, and their insurance deemed air traffic issues outside their policy.",
+              "They took a flight refund because the alternative flight offered was too late, not because it was too expensive and uncovered."
+            ]
+          },
+          {
+            "question": "In the context of the article, what does \"upheaval\" primarily refer to?",
+            "options": [
+              "A sudden increase in air traffic volume.",
+              "A significant and often disruptive change or disturbance.",
+              "A scheduled maintenance period for control systems."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While related to air traffic, \"upheaval\" specifically describes the extensive chaos and disruption caused by the shutdown, not just an increase in volume.",
+              "\"Upheaval\" accurately describes the widespread confusion, cancellations, and passenger difficulties that followed the air traffic control shutdown.",
+              "The article describes a \"shutdown\" and \"chaos,\" not a planned maintenance period."
+            ]
+          },
+          {
+            "question": "Under what circumstances are airlines typically \"obliged\" to provide additional compensation for flight issues?",
+            "options": [
+              "When any flight cancellation occurs, regardless of the cause.",
+              "Only when the disruption is caused by factors directly within the airline's control.",
+              "When passengers experience any delay exceeding five hours, even due to weather."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states airlines are obliged to compensate \"when airlines are at fault,\" which implies a cause within their control, not for every cancellation.",
+              "The article clearly states that \"extra compensation is paid under UK and EU rules\" when \"airlines are at fault,\" implying direct responsibility.",
+              "While refunds are offered for delays over five hours, additional compensation under UK/EU rules is tied to the airline being \"at fault,\" which external factors like weather might not constitute."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses \"despite\" to express concession, similar to the grammar example?",
+            "options": [
+              "Despite the flight was delayed, they still arrived on time.",
+              "Despite the long wait, the passengers remained remarkably calm.",
+              "Despite being exhausted, but they continued their journey."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Despite\" is a preposition and must be followed by a noun, pronoun, or gerund, not a full clause like \"the flight was delayed.\"",
+              "This sentence correctly uses \"despite\" followed by a noun phrase (\"the long wait\") to express a contrasting idea.",
+              "\"Despite\" cannot be directly followed by \"but\" as both introduce contrast, creating redundancy and a grammatical error."
+            ]
+          },
+          {
+            "question": "Why were airlines \"exempt\" from paying extra compensation in this specific incident?",
+            "options": [
+              "The passengers' individual travel insurance policies covered all losses.",
+              "The disruption was caused by an issue with the air traffic control system, which was outside the airlines' direct operational control.",
+              "Airlines had already processed full refunds for all affected flights."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Allens' insurer declared their claim invalid, so it's unlikely this applied broadly.",
+              "The article explicitly states, \"But not this time, because the air traffic control issues were beyond airlines' control,\" making them exempt from extra compensation.",
+              "While flights were refunded, this doesn't explain the exemption from extra compensation, which is a separate entitlement based on fault."
+            ]
+          },
+          {
+            "question": "What does Catie's phrase \"long-anticipated holiday\" suggest about her trip?",
+            "options": [
+              "It was a last-minute decision.",
+              "They had been looking forward to it for a considerable period.",
+              "It involved a very lengthy journey."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Long-anticipated\" implies extensive prior planning and excitement, the opposite of a last-minute decision.",
+              "The phrase \"long-anticipated\" means they had been eagerly awaiting the holiday for a significant amount of time, a sentiment supported by Catie saying they'd been \"looking forward to for years.\"",
+              "While the journey might have been long, \"long-anticipated\" refers to the duration of the wait and expectation, not the travel time itself."
+            ]
+          },
+          {
+            "question": "What is the primary purpose of the independent review by the Civil Aviation Authority?",
+            "options": [
+              "To punish the airlines for their handling of the crisis.",
+              "To secure immediate financial compensation for all affected passengers.",
+              "To thoroughly investigate the incident and understand its wider implications for the aviation system."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article states the review is to \"assess the incident,\" not explicitly to punish airlines.",
+              "While compensation is an issue, the review's scope is broader, focusing on understanding the \"saga\" and its implications, not directly securing individual payouts.",
+              "The article states, \"There will be an independent review of the saga by the Civil Aviation Authority,\" indicating a comprehensive investigation to learn from the event."
+            ]
+          },
+          {
+            "question": "When the article states the situation \"highlights a critical distinction,\" what does \"highlights\" mean?",
+            "options": [
+              "Obscures or makes less clear.",
+              "Underlines or draws attention to something important.",
+              "Partially explains without full detail."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Highlights\" means to make something stand out, which is the opposite of obscuring it.",
+              "To \"highlight\" something means to emphasize it or make it more noticeable, in this case, drawing attention to a significant difference in travel protection.",
+              "While it may not provide every detail, \"highlights\" specifically means to bring attention to something important, not just partially explain."
+            ]
+          },
+          {
+            "question": "According to Aviation Minister Keir Mather, what key lesson should be learned from this disruption?",
+            "options": [
+              "That airlines need to improve their communication with passengers.",
+              "That air traffic control systems require immediate technological upgrades.",
+              "That airport infrastructure often lacks the capacity to manage large numbers of disrupted passengers effectively."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While communication is always important, Mather specifically pointed to \"airport capacity not being able to deal with the number of passengers being disrupted.\"",
+              "Mather called the disruption \"unacceptable\" but focused on airport capacity rather than specific ATC tech upgrades as the key lesson for airports.",
+              "Mather explicitly stated, \"airport capacity not being able to deal with the number of passengers being disrupted and I think that is a key lesson we have to learn from this.\""
+            ]
+          },
+          {
+            "question": "What does \"comprehensive protection\" in the context of package holidays imply?",
+            "options": [
+              "That only essential parts of the holiday are covered.",
+              "That all aspects, including flights, accommodation, and sometimes activities, are fully protected against disruption.",
+              "That the insurance only covers medical emergencies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Comprehensive\" means including all or nearly all elements, not just essential ones.",
+              "\"Comprehensive protection\" implies a wide-ranging coverage that safeguards all components of the holiday, offering more security than booking independently.",
+              "The article contrasts package holidays with independent bookings regarding flight cancellations, not just medical coverage."
+            ]
+          },
+          {
+            "question": "Based on the Allens' experience, what advice might be inferred for future holiday bookings?",
+            "options": [
+              "Always book flights directly with the airline to secure better refunds.",
+              "Consider booking package holidays for broader financial protection against unforeseen disruptions.",
+              "Rely solely on credit card providers for claims in all travel situations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Allens did book their flight directly and received a refund, but still incurred significant losses from other bookings.",
+              "The article highlights that \"package holidays, which are covered in full if a flight is cancelled,\" suggesting they offer greater security compared to independent bookings like the Allens'.",
+              "The article notes that claims via credit card providers \"depend on the small print,\" implying it's not a universal solution for all situations."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The recent shutdown of the UK's air traffic control system caused extensive upheaval, leaving thousands of air passengers stranded and out of pocket.",
+          "Catie and Phil Allen, for instance, had their long-anticipated holiday to Slovenia aborted after their British Airways flight never departed.",
+          "Despite receiving a flight refund, the couple faced an estimated £1,300 loss from unrecoverable expenses for pre-booked lodging and activities.",
+          "Under UK and EU regulations, airlines are typically obliged to provide compensation when they are responsible for flight cancellations or significant delays.",
+          "However, in this particular instance, airlines were exempt from paying additional compensation because the air traffic control issues were deemed outside their direct operational control.",
+          "The Allens' travel insurer also declared their claim invalid, asserting that air traffic issues were not covered under their existing travel insurance policy.",
+          "This situation highlights a critical distinction between booking package holidays, which offer comprehensive protection, and independent travel arrangements, where consumers bear greater financial risks.",
+          "Catie expressed frustration, stating, \"We have been saving tirelessly for this trip and we have lost over £1,000 with no way of getting it back.\"",
+          "Furthermore, many stranded travellers at Heathrow Airport faced challenges in securing emergency lodging, with airlines only reimbursing \"reasonable expenses\" for alternative arrangements.",
+          "Aviation Minister Keir Mather acknowledged the \"unacceptable\" disruption and emphasised the need for airports to improve their capacity to manage such high volumes of affected passengers.",
+          "An independent review of the entire saga will be conducted by the Civil Aviation Authority to assess the incident and its broader implications."
+        ],
+        "sentence_evidence": [
+          "The couple are among the many thousands of air passengers caught up in the chaos caused by the four-hour shutdown of the UK's air traffic control system on Tuesday.",
+          "Catie, 30, and Phil, 34, were sat on a British Airways flight to Ljubljana on Tuesday that never took off.",
+          "It means their holiday to Slovenia has been cancelled and - although their flight was refunded by British Airways - they estimate being left £1,300 out of pocket from unused accommodation and excursions.",
+          "If a flight is cancelled, airlines must get customers to their destination as quickly as possible at no extra cost, even if it is with a rival carrier.",
+          "When airlines are at fault, extra compensation is paid under UK and EU rules. But not this time, because the air traffic control issues were beyond airlines' control. Even so, airlines themselves are furious that they have been saddled with a bill of millions of pounds.",
+          "However, the insurer told them any claim on their travel insurance for the funds they have lost would be invalid because air traffic issues were outside of the policy.",
+          "This is different to package holidays, which are covered in full if a flight is cancelled.",
+          "\"We have been saving tirelessly for this trip and we have lost over £1,000 with no way of getting it back. And most of all, we've got no holiday to go on, which we've been looking forward to for years,\" she said.",
+          "The trouble was that many couldn't find accommodation anywhere nearby. Booking a luxury stay is unlikely to be refunded by the airline, because only \"reasonable expenses\" are permitted.",
+          "\"But there are, of course, lots of incidences we have seen of airport capacity not being able to deal with the number of passengers being disrupted and I think that is a key lesson we have to learn from this.\"",
+          "There will be an independent review of the saga by the Civil Aviation Authority."
+        ],
+        "editorial_check": {
+          "date": "2026-09-10T20:28:30.032050+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items selected are precise, transferable terms like 'upheaval', 'long-anticipated', 'unrecoverable', and 'implications', suitable for C1-Higher. Their definitions clarify contextual meaning without being elementary or circular. No reserved vocabulary was targeted."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished and natural reporting register, appropriate for news analysis at the C1-Higher level. Attribution is accurate, and certainty is calibrated, preserving distinctions present in the source material."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses controlled complex sentences and cohesive arguments. Definitions and feedback are concise and illuminating, explaining nuances where relevant, such as in the grammar explanation for 'despite' and the quiz feedback."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference, such as understanding the implications of independent bookings versus package holidays, and distinguishing between similar concepts like airline fault and external factors. Quiz distractors are plausible, requiring substantive learning beyond mere recall of elementary facts."
+            }
+          },
+          "content_digest": "93aa2cf55ffe37b34542fe36b5b08288a62f586dd91cdc1f84c7c97301cec5fa"
+        }
+      }
+    }
+  }
+}

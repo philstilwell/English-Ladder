@@ -221,8 +221,11 @@ def decorate_page(path):
                 header = original.read(24)
             if header.startswith(b"\x89PNG\r\n\x1a\n"):
                 image["width"], image["height"] = map(str, struct.unpack(">II", header[16:24]))
-    for hint in soup.select(".grammar-image-hint"):
-        hint.string = "View full-size guide ↗"
+    for redundant in soup.select(".grammar-image-hint, .concept-graphic figcaption"):
+        redundant.decompose()
+    for link in soup.select(".image-lightbox a"):
+        if link.get_text(strip=True) == "Open the full-resolution image in a new tab":
+            link.decompose()
     directory_header = soup.select_one(".efsp-directory-header")
     if directory_header and not directory_header.select_one(".directory-search-field"):
         search_field = soup.new_tag("div", attrs={"class": "directory-search-field"})

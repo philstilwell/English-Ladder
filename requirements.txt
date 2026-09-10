@@ -2,5 +2,6 @@ beautifulsoup4==4.14.3
 feedparser==6.0.12
 google-genai==1.62.0
 Pillow==12.1.1
-# Read published PDF text during automated publication checks.
+# PDF helpers and published-document checks run before daily lesson generation.
+reportlab==4.5.1
 pypdf==6.10.2

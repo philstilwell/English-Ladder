@@ -62,7 +62,7 @@ def enhance_page(soup,path,prefix):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260907-completion2','site.css':'20260908-audit1','us-life.js':'20260908-audit1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20260909-conversations1','work.js':'20260909-conversations1'}.get(Path(asset).name,'20260906-quality1')
+            version={'site.js':'20260907-completion2','site.css':'20260910-ai-columns1','us-life.js':'20260908-audit1','learning.js':'20260908-ai-languages1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260908-ai-languages1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20260909-conversations1','work.js':'20260909-conversations1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

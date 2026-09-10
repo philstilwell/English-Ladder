@@ -7,63 +7,18 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
 
-# Keep the original graphics. Explain exceptions and limits alongside them.
-GRAPHIC_CORRECTIONS = {
-    'concept-07': 'In “talk about” and “think about”, “about” introduces the topic. It does not tell us how long the activity lasts. Keep these limits in mind when using the graphic:',
-    'concept-16': '“Recently” and “lately” refer to a recent time. They do not automatically require “have/has been” + a verb ending in “-ing”, or mean that an activity will continue. Notice these different patterns:',
-    'concept-28': '“This”, “that”, and “it” depend on what you are referring to and how you present it. “This” and “that” are not reserved for different speakers. Compare these examples:',
-}
-GRAPHIC_EXAMPLES = {
-    'concept-07': [
-        ('A short conversation.', 'We talked about the plan for thirty seconds.',
-         '“About” introduces the plan as the topic, even though the conversation was short.'),
-        ('A different meaning.', 'We walked about the town.',
-         'Here, “about” means “around”.'),
-        ('A different verb pattern.', 'We discussed the plan for an hour.',
-         '“Discuss” normally takes its topic directly, without “about”. The length of the discussion does not change this pattern.'),
-    ],
-    'concept-16': [
-        ('A single finished event.', 'I recently bought a bicycle.',
-         '“Recently” works with a finished action. “Lately” is not normally used for a single event like this.'),
-        ('A recent state.', 'I have been tired lately.',
-         'This describes a state, not an activity in progress. “Lately” often goes with recent states or repeated activities.'),
-        ('An activity that may have just stopped.', 'I have been running, so I need a rest.',
-         '“Have been running” can explain a present result even after the running has stopped. It does not promise future activity.'),
-    ],
-    'concept-28': [
-        ('Your own earlier idea.', 'I missed the train. That made me late.',
-         '“That” can refer to something you have just said yourself.'),
-        ('Another person’s idea.', 'A: We could meet online. B: This could work well.',
-         '“This” can also refer to someone else’s suggestion; here it brings that suggestion into focus.'),
-        ('An established reference.', 'I bought a bag. It is light.',
-         '“It” refers back to the bag. This pronoun does not have to introduce an idea that comes later in the sentence.'),
-    ],
-}
-
-
-def clarify_original_graphic(soup, key):
-    for old in soup.select('[data-graphic-correction]'):
-        old.decompose()
-    text = GRAPHIC_CORRECTIONS.get(key)
-    figure = soup.select_one('.concept-graphic')
-    if not text or figure is None:
-        return
-    for target, identifier in [(figure, 'graphic-correction'), (soup.select_one('.image-lightbox-image'), 'lightbox-graphic-correction')]:
-        if target is None:
-            continue
-        note = soup.new_tag('aside', attrs={'class': 'graphic-correction', 'id': identifier, 'data-graphic-correction': ''})
-        label = soup.new_tag('strong'); label.string = 'Exceptions and useful limits'
-        paragraph = soup.new_tag('p'); paragraph.string = text
-        examples = soup.new_tag('ul')
-        for heading, sentence, explanation in GRAPHIC_EXAMPLES[key]:
-            item = soup.new_tag('li')
-            title = soup.new_tag('strong'); title.string = heading
-            item.extend([title, f' “{sentence}” {explanation}'])
-            examples.append(item)
-        note.extend([label, paragraph, examples]); target.insert_before(note)
-        image = target.select_one('img') if target is figure else target
-        if image is not None:
-            image['aria-describedby'] = identifier
+def remove_graphic_correction_panels(soup):
+    """Retire the panels and their image-description references on page refresh."""
+    retired_ids = {'graphic-correction', 'lightbox-graphic-correction'}
+    for panel in soup.select('[data-graphic-correction]'):
+        panel.decompose()
+    for tag in soup.select('[aria-describedby]'):
+        references = tag['aria-describedby'].split()
+        remaining = [identifier for identifier in references if identifier not in retired_ids]
+        if remaining:
+            tag['aria-describedby'] = ' '.join(remaining)
+        else:
+            del tag['aria-describedby']
 
 
 def load_curriculum():

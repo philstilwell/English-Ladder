@@ -290,8 +290,3 @@ body[class] :is(
 .reading-page .archive-notice { border-left-color:var(--lesson-line); }
 .reading-page main a:not(.primary-button, .primary-link, .secondary-button, .ai-copy) { color:var(--lesson-ink); }
 body.reading-page main :focus-visible { outline-color:var(--lesson-ink); }
-
-/* Corrections remain visible alongside the preserved original teaching graphics. */
-.graphic-correction { box-sizing:border-box; max-width:1080px; margin:16px auto; padding:16px 20px; border-left:4px solid #234deb; border-radius:6px; background:#eef2ff; color:#20252b; line-height:1.6; }
-.graphic-correction p { margin:6px 0 0; }
-.image-lightbox-dialog .graphic-correction { flex:none; width:100%; }

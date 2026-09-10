@@ -45,8 +45,8 @@ def enhance_page(soup,path,prefix):
     for textarea in soup.select('textarea'):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
     if relative.startswith('grammar-concepts/'):
-        from grammar_curriculum import clarify_original_graphic
-        clarify_original_graphic(soup, path.stem)
+        from grammar_curriculum import remove_graphic_correction_panels
+        remove_graphic_correction_panels(soup)
     from reading_layout import prepare_reading_layout, finish_reading_layout
     prepare_reading_layout(soup,path,ROOT,prefix)
     if path.name == 'us-life.html':

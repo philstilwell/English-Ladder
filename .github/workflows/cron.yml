@@ -64,9 +64,11 @@ on:
   schedule:
     # Later runs resume saved progress, or only retry a missing illustration
     # when this date's complete edition has already been published.
-    - cron: '0 10 * * *'
-    - cron: '0 13 * * *'
-    - cron: '0 16 * * *'
+    # Avoid the top of the hour because GitHub may delay or drop scheduled
+    # workflows during peak load then.
+    - cron: '17 10 * * *'
+    - cron: '43 13 * * *'
+    - cron: '29 16 * * *'
   workflow_dispatch:
     inputs:
       translate_recent:

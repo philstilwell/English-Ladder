@@ -1,0 +1,103 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Anthropic is an AI company.",
+      "It said it stopped people from using its AI.",
+      "They tried to make biological weapons.",
+      "This information is in a report from the company.",
+      "Other groups used AI for internet scams and bad actions.",
+      "They also used AI to make software for other weapons.",
+      "Anthropic will work to stop these bad activities in the future."
+    ],
+    "vocabulary": [
+      {
+        "term": "company",
+        "part_of_speech": "noun",
+        "definition": "A business that makes or sells products or services."
+      },
+      {
+        "term": "stopped",
+        "part_of_speech": "verb",
+        "definition": "Made something end; prevented it from continuing."
+      },
+      {
+        "term": "using",
+        "part_of_speech": "verb",
+        "definition": "Doing something with a tool, a machine, or a method."
+      },
+      {
+        "term": "weapons",
+        "part_of_speech": "noun",
+        "definition": "Objects used to fight, hurt, or kill others."
+      },
+      {
+        "term": "report",
+        "part_of_speech": "noun",
+        "definition": "A written paper or document that gives facts or information about something."
+      },
+      {
+        "term": "scams",
+        "part_of_speech": "noun",
+        "definition": "Clever but dishonest plans to trick people, often to get their money or information."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "製品やサービスを作ったり売ったりする事業。",
+      "ko": "제품이나 서비스를 만들거나 판매하는 사업체.",
+      "zh-Hans": "制造或销售产品或服务的企业。",
+      "es": "Un negocio que fabrica o vende productos o servicios.",
+      "pt-BR": "Um negócio que fabrica ou vende produtos ou serviços."
+    },
+    {
+      "id": 1,
+      "ja": "何かを終わらせた。続くのを妨げた。",
+      "ko": "어떤 것을 끝나게 했다; 계속되는 것을 막았다.",
+      "zh-Hans": "使某事结束；阻止其继续。",
+      "es": "Hizo que algo terminara; impidió que continuara.",
+      "pt-BR": "Fez com que algo terminasse; impediu que continuasse."
+    },
+    {
+      "id": 2,
+      "ja": "道具、機械、または方法を使って何かを行うこと。",
+      "ko": "도구, 기계 또는 방법을 사용하여 어떤 일을 하는 것.",
+      "zh-Hans": "使用工具、机器或方法做某事。",
+      "es": "Hacer algo con una herramienta, una máquina o un método.",
+      "pt-BR": "Fazer algo com uma ferramenta, uma máquina ou um método."
+    },
+    {
+      "id": 3,
+      "ja": "他の人と戦ったり、傷つけたり、殺したりするために使われる物。",
+      "ko": "다른 사람과 싸우거나 해치거나 죽이기 위해 사용되는 물건.",
+      "zh-Hans": "用于与他人打斗、伤害或杀死他人的物品。",
+      "es": "Objetos usados para luchar, herir o matar a otros.",
+      "pt-BR": "Objetos usados para lutar, ferir ou matar outras pessoas."
+    },
+    {
+      "id": 4,
+      "ja": "何かについての事実や情報を提供する、書かれた文書。",
+      "ko": "어떤 것에 대한 사실이나 정보를 제공하는 서면 문서.",
+      "zh-Hans": "一份书面文件或文献，提供关于某事的 F 事实或信息。",
+      "es": "Un documento escrito que proporciona hechos o información sobre algo.",
+      "pt-BR": "Um papel ou documento escrito que fornece fatos ou informações sobre algo."
+    },
+    {
+      "id": 5,
+      "ja": "人々をだますための巧妙だが不正直な計画で、しばしば彼らのお金や情報を得るためのもの。",
+      "ko": "사람들을 속여 종종 돈이나 정보를 얻기 위한 교활하지만 부정직한 계획.",
+      "zh-Hans": "巧妙但不诚实的计划，旨在欺骗他人，通常是为了获取他人的金钱或信息。",
+      "es": "Planes ingeniosos pero deshonestos para engañar a las personas, a menudo para obtener su dinero o información.",
+      "pt-BR": "Planos inteligentes, mas desonestos, para enganar as pessoas, frequentemente para conseguir seu dinheiro ou informações."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-11T13:15:05.724992+00:00"
+  }
+}

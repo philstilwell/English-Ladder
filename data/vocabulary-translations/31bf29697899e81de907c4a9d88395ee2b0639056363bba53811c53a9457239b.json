@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Museum thefts are becoming bolder in Europe.",
+      "Thieves recently stole four paintings from a French museum.",
+      "These paintings were by artist Renoir.",
+      "They were worth millions of euros.",
+      "Museums are often in old buildings, so they are hard to protect.",
+      "Experts say museums need more time to stop thieves.",
+      "Some museums are adding more security, like enhanced video surveillance."
+    ],
+    "vocabulary": [
+      {
+        "term": "thefts",
+        "part_of_speech": "noun",
+        "definition": "The acts of stealing something; taking things that are not yours."
+      },
+      {
+        "term": "bolder",
+        "part_of_speech": "adjective",
+        "definition": "More brave or not afraid to do something risky."
+      },
+      {
+        "term": "stole",
+        "part_of_speech": "verb",
+        "definition": "Took something that belonged to another person or place without permission (past tense of steal)."
+      },
+      {
+        "term": "worth",
+        "part_of_speech": "adjective",
+        "definition": "Having a value of a certain amount of money."
+      },
+      {
+        "term": "protect",
+        "part_of_speech": "verb",
+        "definition": "To keep someone or something safe from danger or harm."
+      },
+      {
+        "term": "security",
+        "part_of_speech": "noun",
+        "definition": "Actions or systems put in place to keep a place or person safe from danger or crime."
+      },
+      {
+        "term": "artist",
+        "part_of_speech": "noun",
+        "definition": "A person who creates art, like paintings or sculptures."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを盗む行為。自分のものではない物を取る行為。",
+      "ko": "무언가를 훔치는 행위; 자신의 것이 아닌 것을 가져가는 행위.",
+      "zh-Hans": "偷窃物品的行为；拿走不属于自己的东西的行为。",
+      "es": "Los actos de robar algo; tomar cosas ajenas.",
+      "pt-BR": "Os atos de roubar algo; pegar coisas que não lhe pertencem."
+    },
+    {
+      "id": 1,
+      "ja": "より勇敢である、または危険なことをするのを恐れない。",
+      "ko": "더 용감하거나 위험한 일을 하는 것을 두려워하지 않는.",
+      "zh-Hans": "更勇敢，或者不害怕做有风险的事情。",
+      "es": "Más valiente o que no tiene miedo de hacer algo arriesgado.",
+      "pt-BR": "Mais corajoso ou que não tem medo de fazer algo arriscado."
+    },
+    {
+      "id": 2,
+      "ja": "許可なく他の人や場所に属するものを取った（stealの過去形）。",
+      "ko": "다른 사람이나 장소에 속한 것을 허락 없이 가져갔다 (steal의 과거형).",
+      "zh-Hans": "未经允许拿走了属于另一个人或地方的东西（steal的过去式）。",
+      "es": "Tomó algo que pertenecía a otra persona o lugar sin permiso (pasado de steal).",
+      "pt-BR": "Pegou algo que pertencia a outra pessoa ou lugar sem permissão (passado de steal)."
+    },
+    {
+      "id": 3,
+      "ja": "ある一定の金額の価値がある。",
+      "ko": "특정 금액의 가치를 가지는.",
+      "zh-Hans": "具有一定金钱价值的。",
+      "es": "Que tiene un valor de cierta cantidad de dinero.",
+      "pt-BR": "Que tem um valor de uma certa quantia de dinheiro."
+    },
+    {
+      "id": 4,
+      "ja": "誰かや何かを危険や危害から安全に保つこと。",
+      "ko": "누군가 또는 무언가를 위험이나 해로부터 안전하게 지키는 것.",
+      "zh-Hans": "保护某人或某物免受危险或伤害。",
+      "es": "Mantener a alguien o algo a salvo del peligro o daño.",
+      "pt-BR": "Manter alguém ou algo seguro do perigo ou dano."
+    },
+    {
+      "id": 5,
+      "ja": "場所や人を危険や犯罪から安全に保つために設けられた行動やシステム。",
+      "ko": "장소나 사람을 위험이나 범죄로부터 안전하게 지키기 위해 마련된 조치나 시스템.",
+      "zh-Hans": "为保护某个地方或某人免受危险或犯罪而采取的行动或建立的系统。",
+      "es": "Acciones o sistemas implementados para mantener un lugar o persona a salvo del peligro o del crimen.",
+      "pt-BR": "Ações ou sistemas implementados para manter um local ou pessoa segura de perigo ou crime."
+    },
+    {
+      "id": 6,
+      "ja": "絵画や彫刻のような芸術を創造する人。",
+      "ko": "그림이나 조각 같은 예술을 창조하는 사람.",
+      "zh-Hans": "创作艺术作品（如绘画或雕塑）的人。",
+      "es": "Una persona que crea arte, como pinturas o esculturas.",
+      "pt-BR": "Uma pessoa que cria arte, como pinturas ou esculturas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-12T13:47:42.196092+00:00"
+  }
+}

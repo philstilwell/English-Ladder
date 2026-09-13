@@ -1,0 +1,764 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-13",
+  "release_iso": "2026-09-13T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Sun, 13 Sep 2026 06:12:26 GMT",
+    "retrieved_at": "2026-09-13T14:31:06.908053+00:00",
+    "title": "Summer wildfires caused catastrophic hidden damage, scientists warn",
+    "summary": "Bangor University researchers say the scale of damage is far greater than what is immediately visible.",
+    "evidence_text": "Summer wildfires caused catastrophic hidden damage, scientists warn\nBangor University researchers say the scale of damage is far greater than what is immediately visible.\nDuring the July peak, fires affected approximately 2,760 acres of countryside across north Wales alone, the equivalent of more than 1,500 football pitches.\n\"People see the blackened vegetation and assume that's the main impact, but the real story is below our feet,\" said Jones.\n\"This soil acts as a water sponge, a carbon store, a nutrient bank.\n\"Losing it is a double whammy, it worsens climate change and makes the habitat far more fragile.\"\n\"They've been completely lost... that depth of soil they depend on could take thousands of years to form again.\"\nOver recent weeks the Bangor team has been racing to collect soil samples at several sites across Wales before heavy winter rainfall washes away the remains.\nScientists investigating the damage caused by severe wildfires across Wales this summer say the impact has been \"catastrophic\".\nExtreme heat and exceptionally dry conditions throughout July and August left landscapes such as heathland, moorland and upland grasslands vulnerable to fast spreading fires, resulting in one of the UK's worst wildfire seasons in recent years.\nBut Jones described a rare ecosystem housing specialist plants, butterflies and insects, \"where the UK is the epicentre globally\".\n\"We've probably lost about 10 centimetres of soil here [at Sychnant Pass] so we've lost all of that organic matter layer... 4,000 years of carbon gone in a single event,\" he said.\nTheir work has included comparing the burnt land with adjacent untouched areas, allowing researchers to measure changes in soil carbon, nutrients, microbial activity, water repellency and erosion risk.\n\"It was really important that we got on site very quickly to measure the soil and vegetation properties while the fire's impacts were still fresh,\" she said.\nShe warned that early green shoots now visible at the site did not necessarily reflect true or full recovery.\nHe also warned that without rapid restoration and better wildfire preparedness, \"we might lose pretty much all of this habitat within our lifetime\".\n\"Once the topsoil is gone, we can never recover that.\n\"These things can change rapidly, so capturing that baseline data now means we'll have something accurate to compare against in future sampling dates.\"\n\"Bracken sprouts almost immediately because its rhizomes sit deep in the soil, so the burn layer wouldn't maybe have impacted those\" she said.\n\"Fires release carbon, nitrogen and sulphur back into the atmosphere, in itself contributing to climate change,\" he said.\nEarly evidence suggests vegetation can return, but more slowly and more fragile, leaving landscapes increasingly susceptible to future burns.",
+    "evidence_retrieved_at": "2026-09-13T14:31:06.908053+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cn07rzrq244o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "The text says wildfires cause 'hidden damage.' What kind of damage is hard to see but important?",
+          "What can people do to help nature after a fire or bad weather? (Or, if a friend asked you, 'How can we help nature?' what would you say?)"
+        ],
+        "title": "Summer Wildfires Cause Hidden Damage",
+        "overview": "Scientists say that summer wildfires caused a lot of damage that people cannot easily see.",
+        "topic": "Environmental Science",
+        "vocabulary": [
+          {
+            "term": "wildfires",
+            "part_of_speech": "noun",
+            "definition": "large fires that burn in forests or natural areas, often out of control."
+          },
+          {
+            "term": "caused",
+            "part_of_speech": "verb, past tense",
+            "definition": "made something happen or created a result."
+          },
+          {
+            "term": "damage",
+            "part_of_speech": "noun",
+            "definition": "harm or hurt to something, making it less good or useful."
+          },
+          {
+            "term": "scientists",
+            "part_of_speech": "noun",
+            "definition": "people who study nature and the world to understand how things work."
+          },
+          {
+            "term": "problem",
+            "part_of_speech": "noun",
+            "definition": "something that is difficult or causes trouble."
+          },
+          {
+            "term": "soil",
+            "part_of_speech": "noun",
+            "definition": "the top layer of earth where plants grow."
+          },
+          {
+            "term": "collecting",
+            "part_of_speech": "verb",
+            "definition": "bringing things together, often to keep or study them."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that happened and finished in the past. For regular verbs, we often add '-ed', but some common verbs have irregular forms.",
+          "example_quote": "Summer wildfires caused a lot of damage."
+        },
+        "quiz": [
+          {
+            "question": "What kind of damage from summer wildfires do scientists talk about?",
+            "options": [
+              "Damage that is very easy to see.",
+              "Damage that is hidden and hard to see.",
+              "Damage that makes plants grow faster."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the scientists say the damage is often hidden, not easy to see.",
+              "That's right! Scientists say the damage is much bigger and not easy to see, it's hidden under the ground.",
+              "No, the damage from wildfires makes plants weaker or destroys them, it does not make them grow faster."
+            ]
+          },
+          {
+            "question": "What is the 'real problem' from the fires, according to the text?",
+            "options": [
+              "Black plants on the ground.",
+              "The ground and soil under our feet.",
+              "Too much water in the ground."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Black plants are a sign of fire, but the text says the real problem is deeper.",
+              "Correct! The text says that the real problem is under the ground, in the soil.",
+              "No, the text talks about dry conditions, not too much water."
+            ]
+          },
+          {
+            "question": "What is 'soil'?",
+            "options": [
+              "A type of black plant that grows quickly.",
+              "The top layer of earth where plants grow.",
+              "A large, uncontrolled fire in a natural area."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, soil is not a plant. It is the material plants grow in.",
+              "Yes, 'soil' is the earth's top layer that is important for plants to grow.",
+              "No, a large, uncontrolled fire is called a wildfire, not soil."
+            ]
+          },
+          {
+            "question": "What happens when the important soil is lost?",
+            "options": [
+              "It makes climate change worse and the land weaker.",
+              "It helps plants grow much faster and stronger.",
+              "It makes the damage from fires easy to repair."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right. Losing the soil makes climate change worse and the land weaker.",
+              "No, the text says losing soil makes the land weaker and harms it, not helps plants grow stronger.",
+              "No, the text implies that this kind of damage is very difficult to repair because soil takes thousands of years to grow back."
+            ]
+          },
+          {
+            "question": "Why are scientists 'collecting' soil samples?",
+            "options": [
+              "To help new plants grow.",
+              "To study the damage from the fires.",
+              "To make the black plants disappear."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, their main goal is not to plant new plants immediately.",
+              "Yes, scientists are bringing together soil samples to understand and study the damage the fires caused.",
+              "No, collecting soil samples is not directly about removing black plants."
+            ]
+          },
+          {
+            "question": "In the sentence 'Summer wildfires caused a lot of damage,' what does 'caused' tell us?",
+            "options": [
+              "The wildfires are happening now.",
+              "The wildfires will happen in the future.",
+              "The wildfires happened and finished in the past."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'caused' is in the past tense. It describes something that already happened.",
+              "No, 'caused' tells us about an action that is already finished.",
+              "That's correct! 'Caused' is the simple past tense form of 'to cause,' showing the action finished in the past."
+            ]
+          },
+          {
+            "question": "What does the word 'problem' mean in the text?",
+            "options": [
+              "A small, easy thing.",
+              "Something that is difficult or causes trouble.",
+              "A part of the ground."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the text talks about 'the real problem,' which is serious and difficult.",
+              "Yes, a 'problem' is something difficult or something that causes trouble.",
+              "No, a 'problem' is not a physical part of the ground, but a difficult situation."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Summer wildfires caused a lot of damage.",
+          "Scientists say the damage is much bigger than what people can see.",
+          "Fires burned about 2,760 acres in north Wales.",
+          "People often see black plants, but the real problem is under the ground.",
+          "This soil is like a sponge for water and helps store carbon.",
+          "Losing the soil makes climate change worse and the land weaker.",
+          "This important soil can take thousands of years to grow again.",
+          "Scientists are collecting soil samples to study the damage."
+        ],
+        "sentence_evidence": [
+          "Summer wildfires caused catastrophic hidden damage, scientists warn",
+          "Bangor University researchers say the scale of damage is far greater than what is immediately visible.",
+          "During the July peak, fires affected approximately 2,760 acres of countryside across north Wales alone, the equivalent of more than 1,500 football pitches.",
+          "\"People see the blackened vegetation and assume that's the main impact, but the real story is below our feet,\" said Jones.",
+          "\"This soil acts as a water sponge, a carbon store, a nutrient bank.",
+          "\"Losing it is a double whammy, it worsens climate change and makes the habitat far more fragile.\"",
+          "\"They've been completely lost... that depth of soil they depend on could take thousands of years to form again.\"",
+          "Over recent weeks the Bangor team has been racing to collect soil samples at several sites across Wales before heavy winter rainfall washes away the remains."
+        ],
+        "editorial_check": {
+          "date": "2026-09-13T14:31:57.101716+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary items (\"wildfires\", \"caused\", \"damage\", \"scientists\", \"problem\", \"soil\", \"collecting\") are common, concrete words directly from the A1-A2 reading. Their definitions are clear and suitable for beginner learners, providing useful context for the news topic. No reserved vocabulary was used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English appropriate for adults. Sentences are direct, for example, \"Summer wildfires caused a lot of damage,\" avoiding bureaucratic phrasing or complex idioms. The tone is informative and accessible."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The explanations, instructions, options, and feedback use short clauses and familiar connectors. The grammar explanation is brief and uses the required example quote. The discussion prompt includes a simple sentence frame and a hypothetical alternative as requested."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively tests the main idea, clearly stated details, contextual meaning of vocabulary, and a useful grammar pattern (Simple Past Tense). Quiz options are short and plausible, avoiding dense reasoning or reliance on outside knowledge. The content is suitable for A1-A2 learners."
+            }
+          },
+          "content_digest": "73573d9c4a56542b44e4793d59ff5254b97415949c865fad39d958f82ac5ba40"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Professor Jones stated that \"the real story is below our feet.\" What did he mean by this, and why is this hidden impact so important?",
+          "Many natural environments are increasingly susceptible to climate change. What actions do you think local communities or governments can take to protect such areas, and why?"
+        ],
+        "title": "Hidden Catastrophic Impact of Summer Fires on Wales's Ecosystems",
+        "overview": "Recent summer fires in Wales have resulted in \"catastrophic\" hidden destruction to ecosystems and the natural environment, with serious long-term consequences below ground.",
+        "topic": "Environmental impact of severe summer fires in Wales",
+        "vocabulary": [
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "causing sudden, extreme harm or suffering to a large degree."
+          },
+          {
+            "term": "scale",
+            "part_of_speech": "noun",
+            "definition": "the size or extent of something, especially when very large."
+          },
+          {
+            "term": "blazes",
+            "part_of_speech": "noun",
+            "definition": "very large, strong, and often destructive fires."
+          },
+          {
+            "term": "vulnerable",
+            "part_of_speech": "adjective",
+            "definition": "easily harmed or damaged."
+          },
+          {
+            "term": "ecosystem",
+            "part_of_speech": "noun",
+            "definition": "all the living things in a particular area and the way they affect each other and the environment."
+          },
+          {
+            "term": "organic carbon",
+            "part_of_speech": "noun phrase",
+            "definition": "carbon that comes from living or once-living organisms, important for healthy earth."
+          },
+          {
+            "term": "contributes to",
+            "part_of_speech": "verb phrase",
+            "definition": "helps to cause or is one of the reasons for something."
+          },
+          {
+            "term": "erosion risk",
+            "part_of_speech": "noun phrase",
+            "definition": "the possibility of earth or rock being gradually worn away by natural forces like water or wind."
+          },
+          {
+            "term": "crucial",
+            "part_of_speech": "adjective",
+            "definition": "extremely important or necessary."
+          },
+          {
+            "term": "restoration",
+            "part_of_speech": "noun",
+            "definition": "the act of returning something to its former or original condition."
+          },
+          {
+            "term": "permanently",
+            "part_of_speech": "adverb",
+            "definition": "in a way that lasts forever or for a very long time without changing."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Verbs",
+          "explanation": "Reporting verbs are used to tell what someone said, thought, or felt. They can introduce a direct quote or a paraphrased statement. Common reporting verbs include \"said,\" \"stated,\" \"reported,\" \"explained,\" \"warned,\" and \"emphasized.\" They are often followed by \"that\" and a clause to introduce the reported information.",
+          "example_quote": "Researchers from Bangor University report that the actual scale of destruction is much larger than what people can see."
+        },
+        "quiz": [
+          {
+            "question": "What is the main point the researchers want to highlight about the summer fires in Wales?",
+            "options": [
+              "The fires were not as severe as initially thought.",
+              "The most serious impact of the fires is hidden beneath the surface.",
+              "The fires mainly affected residential areas, not natural landscapes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This contradicts the article, which describes the impacts as \"catastrophic\" and widespread.",
+              "Correct. The article emphasizes that the \"actual scale of destruction is much larger than what people can see\" and that significant effects are \"hidden underground.\"",
+              "The article mentions evacuations but focuses more on the destruction to landscapes and ecosystems."
+            ]
+          },
+          {
+            "question": "What does the word \"catastrophic\" mean in the context of the summer fires?",
+            "options": [
+              "causing minor or temporary inconvenience",
+              "causing widespread and severe destruction",
+              "causing excitement or sensationalism"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Catastrophic\" means much more serious than a minor inconvenience; it implies extreme harm.",
+              "Correct. \"Catastrophic\" refers to an event causing sudden, extreme harm or suffering, which aligns with the description of the fire impacts.",
+              "While fires can be sensational, the word \"catastrophic\" specifically describes the severity of the damage, not the public reaction."
+            ]
+          },
+          {
+            "question": "Which types of landscapes were particularly \"vulnerable\" to the fast-spreading blazes?",
+            "options": [
+              "urban parks and gardens",
+              "heathland, moorland, and upland grasslands",
+              "dense forests with tall trees"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article specifically mentions natural landscapes, not urban areas, as being vulnerable.",
+              "Correct. The reading states that \"landscapes like heathland and moorland [were] highly vulnerable to fast-spreading blazes.\"",
+              "While forests can burn, the article specifically names heathland, moorland, and upland grasslands as the vulnerable landscapes in this context."
+            ]
+          },
+          {
+            "question": "According to the article, what was a significant long-term loss at Sychnant Pass?",
+            "options": [
+              "the local wildlife population completely disappeared",
+              "several historic buildings were completely destroyed",
+              "4,000 years of organic carbon from the top layer of earth were lost"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article mentions biodiversity loss but focuses more on soil carbon as a specific, measured loss.",
+              "The article discusses homes being evacuated but not that historic buildings were completely destroyed.",
+              "Correct. The reading highlights that \"4,000 years of organic carbon from the top layer of earth were lost in just days.\" This is a significant long-term loss."
+            ]
+          },
+          {
+            "question": "In the sentence, \"Researchers from Bangor University report that the actual scale of destruction is much larger than what people can see,\" what is the purpose of the verb \"report\"?",
+            "options": [
+              "to give an order or command",
+              "to ask a question",
+              "to introduce information or a statement from someone"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Report\" is not used to give a command; it's used to convey information.",
+              "The sentence is a statement, not a question, so \"report\" isn't asking anything.",
+              "Correct. \"Report\" is a reporting verb used to present information or a statement coming from the researchers."
+            ]
+          },
+          {
+            "question": "Why is the loss of organic carbon from the earth considered a \"double whammy\"?",
+            "options": [
+              "It makes the land more difficult to access and survey.",
+              "It worsens climate change and makes the natural environment weaker.",
+              "It affects both plant growth and the visual appearance of the landscape."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article doesn't focus on land access difficulty in relation to the \"double whammy.\"",
+              "Correct. The article states that losing organic matter \"contributes to climate change and makes the natural environment much weaker.\"",
+              "While it affects plant growth and appearance, the \"double whammy\" specifically refers to its impact on climate change and environmental fragility."
+            ]
+          },
+          {
+            "question": "What is the primary reason the Bangor team is \"taking samples at various sites before winter rains wash away what remains\"?",
+            "options": [
+              "to prepare for new construction projects",
+              "to quickly gather data on the fire's impacts before they disappear",
+              "to find new types of plants that have grown since the fires"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The research is focused on environmental impact and recovery, not construction.",
+              "Correct. Dr. Marsden emphasized that \"rapid onsite work was crucial to measure conditions while the fires' impacts were still fresh.\"",
+              "The goal is to understand the current state after the fires, not specifically to find new plant species."
+            ]
+          },
+          {
+            "question": "Why do researchers warn that early green growth does not mean full recovery?",
+            "options": [
+              "Green plants only grow in burned areas if it rains a lot.",
+              "Only plants with deep roots sprout quickly, while others may be lost permanently.",
+              "The green growth is often unhealthy and quickly dies off."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While rain is important for growth, the reason given in the article for incomplete recovery is different.",
+              "Correct. The article explains that \"deeply rooted plants like bracken sprout quickly, but shallower-rooted plants are often completely gone.\" This indicates incomplete recovery.",
+              "The article doesn't suggest the early growth is unhealthy, but rather that it's not representative of the full ecosystem's recovery."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Summer fires across Wales this year have resulted in \"catastrophic\" impacts, according to researchers.",
+          "Researchers from Bangor University report that the actual scale of destruction is much larger than what people can see.",
+          "Extreme heat and very dry weather made landscapes like heathland and moorland highly vulnerable to fast-spreading blazes.",
+          "This led to one of the UK's worst fire seasons in recent memory.",
+          "One expert noted that many only see blackened plants, but the significant effects are actually hidden underground.",
+          "At Sychnant Pass, a rare ecosystem globally important for specialist plants and insects, suffered significant losses.",
+          "Specifically, 4,000 years of organic carbon from the top layer of earth were lost there in just days.",
+          "The loss of this essential organic matter contributes to climate change and makes the natural environment much weaker.",
+          "Bangor University's team is now taking samples at various sites before winter rains wash away what remains.",
+          "This research involves comparing burned land with nearby untouched areas to measure changes in carbon, nutrients, and erosion risk.",
+          "Dr. Kara Marsden emphasized that rapid onsite work was crucial to measure conditions while the fires' impacts were still fresh.",
+          "She explained that early green growth does not mean full recovery, as deeply rooted plants like bracken sprout quickly, but shallower-rooted plants are often completely gone.",
+          "Jones warned that without swift restoration and better preparation for future fires, much of this natural environment could be lost permanently."
+        ],
+        "sentence_evidence": [
+          "Scientists investigating the damage caused by severe wildfires across Wales this summer say the impact has been \"catastrophic\".",
+          "Bangor University researchers say the scale of damage is far greater than what is immediately visible.",
+          "Extreme heat and exceptionally dry conditions throughout July and August left landscapes such as heathland, moorland and upland grasslands vulnerable to fast spreading fires, resulting in one of the UK's worst wildfire seasons in recent years.",
+          "Extreme heat and exceptionally dry conditions throughout July and August left landscapes such as heathland, moorland and upland grasslands vulnerable to fast spreading fires, resulting in one of the UK's worst wildfire seasons in recent years.",
+          "\"People see the blackened vegetation and assume that's the main impact, but the real story is below our feet,\" said Jones.",
+          "But Jones described a rare ecosystem housing specialist plants, butterflies and insects, \"where the UK is the epicentre globally\".",
+          "\"We've probably lost about 10 centimetres of soil here [at Sychnant Pass] so we've lost all of that organic matter layer... 4,000 years of carbon gone in a single event,\" he said.",
+          "\"Losing it is a double whammy, it worsens climate change and makes the habitat far more fragile.\"",
+          "Over recent weeks the Bangor team has been racing to collect soil samples at several sites across Wales before heavy winter rainfall washes away the remains.",
+          "Their work has included comparing the burnt land with adjacent untouched areas, allowing researchers to measure changes in soil carbon, nutrients, microbial activity, water repellency and erosion risk.",
+          "\"It was really important that we got on site very quickly to measure the soil and vegetation properties while the fire's impacts were still fresh,\" she said.",
+          "She warned that early green shoots now visible at the site did not necessarily reflect true or full recovery.",
+          "He also warned that without rapid restoration and better wildfire preparedness, \"we might lose pretty much all of this habitat within our lifetime\"."
+        ],
+        "editorial_check": {
+          "date": "2026-09-13T14:33:50.438161+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets are useful for B1-B2 learners, addressing general news and abstract concepts like 'catastrophic', 'scale', 'vulnerable', 'ecosystem', and 'restoration'. Definitions are clear and contextual, using accessible language. No reserved vocabulary from other levels is used, and all terms appear in the reading."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently maintains a natural, neutral news English register throughout. The language is appropriate for the B1-B2 level, avoiding slang, overly academic terms, or patronising language. Distinctions, such as potential future loss, are preserved."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language is clear and supportive across all sections. Reading sentences are manageable with varied structures. Grammar explanations use everyday language, and definitions, questions, and feedback are precise and easy to understand for the target level. Pronoun references are clear."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively combines reading comprehension with an understanding of relationships between details and contextual vocabulary. The grammar section provides useful transfer of reporting verbs, and quiz questions require more than simple recall, engaging with inference and application of taught concepts, suitable for B1-B2."
+            }
+          },
+          "content_digest": "f648be797f0a885f2b7dfaad3c2f007d5e6878ebdcf8c8babf472e14e47a71a5"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "According to the article, how does the loss of critical soil represent a 'double whammy' for the environment?",
+          "Given the long-term impact of wildfires, what proactive measures do you think communities should implement for preparedness and prevention?"
+        ],
+        "title": "Hidden Wildfire Damage: A Permanent Loss Below Our Feet",
+        "overview": "Scientists warn that summer wildfires have caused extensive, often unseen damage to vital ecosystems beneath the surface, with long-term consequences for climate change and habitat fragility.",
+        "topic": "Environmental Science and Wildfire Impact",
+        "vocabulary": [
+          {
+            "part_of_speech": "adverbial phrase",
+            "definition": "able to be seen right away or on the surface, without closer inspection.",
+            "term": "immediately visible"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "plants and trees that have been burned and turned dark, often appearing charred or scorched.",
+            "term": "blackened vegetation"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "the uppermost layer of soil, typically rich in organic matter and nutrients, vital for plant growth.",
+            "term": "topsoil"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "of extreme importance, especially in relation to the success or failure of something.",
+            "term": "critical"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "a situation in which two unpleasant or undesirable things happen at almost the same time, or one after the other, creating a more severe negative effect.",
+            "term": "double whammy"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "makes something more severe, serious, or unpleasant; deteriorates.",
+            "term": "worsens"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "easily broken, damaged, or destroyed; delicate and vulnerable.",
+            "term": "fragile"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "information gathered at the beginning of a study or project that can be used as a basis for comparison with future data.",
+            "term": "baseline data"
+          },
+          {
+            "part_of_speech": "adverb",
+            "definition": "very quickly and at a great rate; with speed and urgency.",
+            "term": "rapidly"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "likely or liable to be influenced or harmed by a particular thing; vulnerable.",
+            "term": "susceptible"
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Consequence",
+          "explanation": "Participle clauses, often starting with an '-ing' form, can concisely express an action or state that is a result or consequence of the main clause. They help to link ideas, showing a cause-and-effect relationship without using conjunctions like 'and as a result' or 'consequently', making sentences more fluid and advanced.",
+          "example_quote": "Early evidence suggests vegetation can return, but more slowly and more fragile, leaving landscapes increasingly susceptible to future burns."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary concern raised by scientists regarding the summer wildfires?",
+            "options": [
+              "The immediate visible damage to vegetation only.",
+              "The significant financial cost of firefighting efforts.",
+              "The hidden long-term damage below the surface that is far greater than what is immediately visible."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is only part of the visible problem, but not the primary concern highlighted by scientists.",
+              "While financial costs are a factor, the article emphasizes ecological damage, not economic impact.",
+              "Correct. Scientists stress that the damage beneath the surface, particularly to the soil, is much more extensive and consequential."
+            ]
+          },
+          {
+            "question": "According to Professor Jones, what is the main reason people misunderstand the true impact of wildfires?",
+            "options": [
+              "They are not provided with enough information about environmental science.",
+              "They only observe the blackened vegetation and assume that is the main impact, overlooking subsurface damage.",
+              "They believe the government will quickly restore the affected areas without issue."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article suggests a misinterpretation of visible signs, not a lack of general information.",
+              "Correct. Professor Jones explains that the true story of damage is 'below our feet,' hidden from immediate view.",
+              "The article discusses the difficulty and time required for recovery, not public assumptions about swift government action."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the 'organic matter layer' lost due to the wildfires?",
+            "options": [
+              "A deep layer of rock formations.",
+              "Thousands of years of carbon and decomposing plant material in the topsoil.",
+              "An artificial layer added to the soil for agricultural purposes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article refers to soil components, not rock formations.",
+              "Correct. The article specifies that 10 centimetres of topsoil, containing thousands of years of organic matter layer and carbon, were lost.",
+              "The organic matter layer is a natural component of soil, not an artificial addition."
+            ]
+          },
+          {
+            "question": "What does the idiom 'double whammy' signify when referring to the loss of critical soil?",
+            "options": [
+              "The soil was hit by two different types of fire simultaneously.",
+              "The soil loss results in both increased climate change and a more fragile habitat.",
+              "Scientists are conducting two separate studies on soil damage."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The phrase describes dual negative effects, not the cause of the fire itself.",
+              "Correct. The article states that losing the soil 'worsens climate change and makes the habitat far more fragile,' creating two severe negative outcomes.",
+              "The phrase describes negative consequences, not the research methodology."
+            ]
+          },
+          {
+            "question": "In the context of the article, what does it mean for a habitat to become 'far more fragile'?",
+            "options": [
+              "It means the habitat will quickly grow new, stronger plants.",
+              "It implies the habitat is more susceptible to further damage and less resilient.",
+              "It suggests the habitat is becoming less visible to humans."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article indicates slow and uncertain recovery, not rapid strengthening.",
+              "Correct. A fragile habitat is easily broken or damaged, meaning it struggles to recover and withstand future disturbances.",
+              "Fragility relates to vulnerability and stability, not visibility."
+            ]
+          },
+          {
+            "question": "Why is the Bangor team 'racing to collect' soil samples?",
+            "options": [
+              "To compete with other research institutions to publish results first.",
+              "To gather data on the damaged soil quickly before heavy winter rainfall washes away the remains.",
+              "To find rare minerals in the soil before they are depleted."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While competition can exist in science, the article specifies an urgent environmental reason for their speed.",
+              "Correct. The urgency is due to the impending winter rains which threaten to remove crucial evidence of the fire's impact on the soil.",
+              "The focus of their research is on the effects of the fire on soil properties, not mineral extraction."
+            ]
+          },
+          {
+            "question": "What is the purpose of collecting 'baseline data' in the research?",
+            "options": [
+              "To establish a starting point of current conditions for comparison with future observations.",
+              "To develop new technologies for preventing future wildfires.",
+              "To predict the exact date of the next wildfire season."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. Baseline data provides an initial measurement against which subsequent changes and recovery can be accurately assessed.",
+              "While wildfire prevention is a goal, collecting baseline data is a step in understanding the impact, not directly for prevention technology.",
+              "Predicting specific dates for natural phenomena like wildfires is generally not possible with this type of data."
+            ]
+          },
+          {
+            "question": "In the sentence, 'Early evidence suggests vegetation can return, but more slowly and more fragile, leaving landscapes increasingly susceptible to future burns,' what does the participle clause 'leaving landscapes increasingly susceptible to future burns' indicate?",
+            "options": [
+              "The primary cause of the wildfires.",
+              "A consequence of the vegetation returning in a slower and more fragile state.",
+              "A method for monitoring landscape recovery."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The clause describes an outcome, not the original cause of the fires.",
+              "Correct. The clause explains the result: the weakened, slowly recovering vegetation makes the land more vulnerable to future fire events.",
+              "The clause details an environmental outcome, not a research technique."
+            ]
+          },
+          {
+            "question": "What does the article mean by a 'self-sustaining cycle' regarding wildfires and climate change?",
+            "options": [
+              "Wildfires can eventually regenerate forests on their own.",
+              "Drier soils lead to more fires, which release more carbon, further exacerbating drier conditions and more fires.",
+              "The cycle refers to the seasonal recurrence of wildfires that always happen regardless of climate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article discusses negative feedback loops, not self-regeneration of forests.",
+              "Correct. The text explains that drier soils promote more fires, which in turn release more carbon, intensifying the conditions for even more fires.",
+              "The article highlights a dangerous interaction with climate, implying a worsening trend, not just a simple seasonal pattern."
+            ]
+          },
+          {
+            "question": "Why do early 'green shoots' not necessarily reflect true or full recovery of the landscape?",
+            "options": [
+              "They are often edible plants that are quickly consumed by wildlife.",
+              "They might be from plants with deep roots, like bracken, that survived the burn, while shallower-rooted plants are completely lost.",
+              "They only appear in areas unaffected by the fires, giving a false impression."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article focuses on the type of vegetation and root depth, not its edibility.",
+              "Correct. The article specifies that bracken sprouts quickly due to deep rhizomes, but heather and gorse, with shallower roots, are gone, indicating incomplete recovery.",
+              "The article states these shoots are visible 'at the site,' implying affected areas, but warns about their significance."
+            ]
+          },
+          {
+            "question": "What is a major difference highlighted between bracken and heather/gorse concerning wildfire recovery?",
+            "options": [
+              "Bracken is an invasive species, while heather and gorse are native.",
+              "Bracken's deep rhizomes allow it to sprout quickly after a fire, whereas heather and gorse with shallower roots are often completely destroyed.",
+              "Heather and gorse grow much faster than bracken after a fire event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The distinction made in the article is about recovery mechanism, not native status.",
+              "Correct. The text explains that bracken sprouts almost immediately due to deep rhizomes, but heather and gorse, having shallower roots, are completely lost.",
+              "The article states that heather and gorse are 'completely gone' and take thousands of years to form again, implying slower or non-existent immediate recovery."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Bangor University researchers say the scale of damage from summer wildfires is far greater than what is immediately visible.",
+          "Professor Davey Jones, leading a survey across Wales, explained that people often see only blackened vegetation, but the true impact lies beneath the surface.",
+          "Approximately 10 centimetres of topsoil, containing thousands of years of organic matter layer and carbon, were lost in a single event.",
+          "Jones emphasized that once this essential topsoil is gone, it can never truly recover.",
+          "This critical soil acts as a water sponge, a carbon store, and a nutrient bank, playing multiple vital roles.",
+          "Losing it is a double whammy: it worsens climate change while making the remaining habitat far more fragile.",
+          "The Bangor team has been racing to collect soil samples before heavy winter rainfall washes away the remains.",
+          "They compare burnt land with adjacent untouched areas, allowing them to measure changes in soil carbon, nutrients, microbial activity, water repellency and erosion risk.",
+          "Capturing baseline data now is crucial, as soil and vegetation properties can change rapidly.",
+          "Dr. Kara Marsden warned that early green shoots do not necessarily reflect true or full recovery.",
+          "Bracken sprouts almost immediately because its rhizomes sit deep in the soil, so the burn layer wouldn't maybe have impacted those.",
+          "But the heather and gorse have much shallower roots, so you know they're completely gone, and that depth of soil they depend on could take thousands of years to form again.",
+          "Wildfires also release carbon, nitrogen, and sulphur into the atmosphere, directly contributing to climate change.",
+          "Early evidence suggests vegetation can return, but more slowly and more fragile, leaving landscapes increasingly susceptible to future burns."
+        ],
+        "sentence_evidence": [
+          "Bangor University researchers say the scale of damage is far greater than what is immediately visible.",
+          "\"People see the blackened vegetation and assume that's the main impact, but the real story is below our feet,\" said Jones.",
+          "\"We've probably lost about 10 centimetres of soil here [at Sychnant Pass] so we've lost all of that organic matter layer... 4,000 years of carbon gone in a single event,\" he said.",
+          "\"Once the topsoil is gone, we can never recover that.",
+          "\"This soil acts as a water sponge, a carbon store, a nutrient bank.",
+          "\"Losing it is a double whammy, it worsens climate change and makes the habitat far more fragile.\"",
+          "Over recent weeks the Bangor team has been racing to collect soil samples at several sites across Wales before heavy winter rainfall washes away the remains.",
+          "Their work has included comparing the burnt land with adjacent untouched areas, allowing researchers to measure changes in soil carbon, nutrients, microbial activity, water repellency and erosion risk.",
+          "\"These things can change rapidly, so capturing that baseline data now means we'll have something accurate to compare against in future sampling dates.\"",
+          "She warned that early green shoots now visible at the site did not necessarily reflect true or full recovery.",
+          "\"Bracken sprouts almost immediately because its rhizomes sit deep in the soil, so the burn layer wouldn't maybe have impacted those\" she said.",
+          "\"They've been completely lost... that depth of soil they depend on could take thousands of years to form again.\"",
+          "\"Fires release carbon, nitrogen and sulphur back into the atmosphere, in itself contributing to climate change,\" he said.",
+          "Early evidence suggests vegetation can return, but more slowly and more fragile, leaving landscapes increasingly susceptible to future burns."
+        ],
+        "editorial_check": {
+          "date": "2026-09-13T14:35:30.293954+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selections include precise phrases like \"immediately visible\" and \"blackened vegetation\", scientific terms like \"topsoil\" and \"baseline data\", and idiomatic expressions such as \"double whammy\", all used in an advanced context. Common words like \"critical\", \"worsens\", \"fragile\", and \"rapidly\" are included for their precise contextual meanings and learning value at C1-Higher. No reserved vocabulary was used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses polished, natural reporting language appropriate for a C1-Higher news article. Attribution is clear, and certainty is calibrated (e.g., \"suggests,\" \"do not necessarily reflect\"), avoiding unwarranted definitive statements."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Definitions are concise and clear, and the grammar explanation effectively details the function of participle clauses for consequence. Quiz feedback is illuminating, explaining subtle distinctions and why options are incorrect, demonstrating controlled complex sentences suitable for C1-Higher instruction."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz questions go beyond simple recall, requiring learners to infer meaning (e.g., \"self-sustaining cycle,\" reason for misunderstanding), understand contextual vocabulary, and apply the taught grammar. Distractors are plausible, and the feedback reinforces substantive learning, making the challenge level appropriate for C1-Higher."
+            }
+          },
+          "content_digest": "01f483cc17f0501fec2a394e563f916797bfd9df5ab359ed28115807ec02fda2"
+        }
+      }
+    }
+  }
+}

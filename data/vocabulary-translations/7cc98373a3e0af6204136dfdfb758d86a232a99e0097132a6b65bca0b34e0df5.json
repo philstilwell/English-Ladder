@@ -1,0 +1,117 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Summer wildfires caused a lot of damage.",
+      "Scientists say the damage is much bigger than what people can see.",
+      "Fires burned about 2,760 acres in north Wales.",
+      "People often see black plants, but the real problem is under the ground.",
+      "This soil is like a sponge for water and helps store carbon.",
+      "Losing the soil makes climate change worse and the land weaker.",
+      "This important soil can take thousands of years to grow again.",
+      "Scientists are collecting soil samples to study the damage."
+    ],
+    "vocabulary": [
+      {
+        "term": "wildfires",
+        "part_of_speech": "noun",
+        "definition": "large fires that burn in forests or natural areas, often out of control."
+      },
+      {
+        "term": "caused",
+        "part_of_speech": "verb, past tense",
+        "definition": "made something happen or created a result."
+      },
+      {
+        "term": "damage",
+        "part_of_speech": "noun",
+        "definition": "harm or hurt to something, making it less good or useful."
+      },
+      {
+        "term": "scientists",
+        "part_of_speech": "noun",
+        "definition": "people who study nature and the world to understand how things work."
+      },
+      {
+        "term": "problem",
+        "part_of_speech": "noun",
+        "definition": "something that is difficult or causes trouble."
+      },
+      {
+        "term": "soil",
+        "part_of_speech": "noun",
+        "definition": "the top layer of earth where plants grow."
+      },
+      {
+        "term": "collecting",
+        "part_of_speech": "verb",
+        "definition": "bringing things together, often to keep or study them."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "森林や自然の地域で燃え広がり、しばしば制御できない大規模な火事。",
+      "ko": "숲이나 자연 지역에서 타오르며, 종종 통제할 수 없는 큰불.",
+      "zh-Hans": "在森林或自然区域燃烧的大火，通常难以控制。",
+      "es": "Incendios grandes que queman en bosques o áreas naturales, a menudo sin control.",
+      "pt-BR": "Grandes incêndios que queimam em florestas ou áreas naturais, muitas vezes fora de controle."
+    },
+    {
+      "id": 1,
+      "ja": "何かを引き起こしたり、結果を生み出したりした。",
+      "ko": "어떤 일이 일어나게 하거나 결과를 만들었다.",
+      "zh-Hans": "使某事发生或产生了结果。",
+      "es": "Hizo que algo sucediera o creó un resultado.",
+      "pt-BR": "Fez com que algo acontecesse ou criou um resultado."
+    },
+    {
+      "id": 2,
+      "ja": "何かに与えられた害や傷で、そのものの質や有用性を低下させること。",
+      "ko": "어떤 것에 해를 입히거나 손상을 주어, 덜 좋거나 덜 유용하게 만드는 것.",
+      "zh-Hans": "对某物造成的伤害或损害，使其变得不那么好或不那么有用。",
+      "es": "Daño o perjuicio a algo, haciéndolo menos bueno o útil.",
+      "pt-BR": "Dano ou prejuízo a algo, tornando-o menos bom ou útil."
+    },
+    {
+      "id": 3,
+      "ja": "物事がどのように機能するかを理解するために、自然や世界を研究する人々。",
+      "ko": "사물이 어떻게 작동하는지 이해하기 위해 자연과 세상을 연구하는 사람들.",
+      "zh-Hans": "通过研究自然和世界来理解事物如何运作的人。",
+      "es": "Personas que estudian la naturaleza y el mundo para entender cómo funcionan las cosas.",
+      "pt-BR": "Pessoas que estudam a natureza e o mundo para entender como as coisas funcionam."
+    },
+    {
+      "id": 4,
+      "ja": "難しいこと、または困りごとを引き起こすこと。",
+      "ko": "어렵거나 문제를 일으키는 것.",
+      "zh-Hans": "困难或引起麻烦的事情。",
+      "es": "Algo que es difícil o causa problemas.",
+      "pt-BR": "Algo que é difícil ou causa problemas."
+    },
+    {
+      "id": 5,
+      "ja": "植物が育つ地球の表層。",
+      "ko": "식물이 자라는 지구의 가장 바깥층.",
+      "zh-Hans": "植物生长的地球最表层。",
+      "es": "La capa superior de la tierra donde crecen las plantas.",
+      "pt-BR": "A camada superior da terra onde as plantas crescem."
+    },
+    {
+      "id": 6,
+      "ja": "何かを保管したり研究したりするために、物を一緒に集めること。",
+      "ko": "물건을 보관하거나 연구하기 위해 함께 모으는 것.",
+      "zh-Hans": "将物品聚集在一起，通常是为了保存或研究它们。",
+      "es": "Juntar cosas, a menudo para guardarlas o estudiarlas.",
+      "pt-BR": "Juntar coisas, muitas vezes para guardá-las ou estudá-las."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-13T14:37:11.440459+00:00"
+  }
+}

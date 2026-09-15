@@ -237,3 +237,7 @@ Run `python3 seo.py` to refresh search metadata and discovery pages, or use the 
 During a DNS handover, the verifier accepts an optional third argument containing the new server IP address. This bypasses old DNS cache entries for the check while still validating the real domain’s HTTPS certificate. Normal daily checks use public DNS.
 
 The September 8 audit and prioritized next steps are recorded in [the site audit](docs/full-site-audit-2026-09-08.md). `node audit_browser.cjs` checks every published page at four screen widths against a running local preview; `python3 audit_documents.py` writes a dated font and page-boundary report. Original grammar graphics 07, 16 and 28 retain visible corrections in both their page and enlarged views.
+
+### Reading-page stability
+
+Dated lesson links open during parsing, and the publisher includes the reading controls before deferred scripts enable them. This prevents large load-time jumps while keeping the full lesson available without JavaScript. See [the September 15 layout-shift review](docs/layout-shift-fix-2026-09-15.md) for measurements and the repeatable browser audit.

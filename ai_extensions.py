@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import html
+from copy import deepcopy
 from functools import lru_cache
 from pathlib import Path
 
@@ -96,6 +97,16 @@ def text(node):
     return node.get_text(' ', strip=True) if node else ''
 
 
+def lesson_material(node):
+    """Published interface controls are not part of the vocabulary lesson."""
+    if node is None:
+        return ''
+    content = deepcopy(node)
+    for controls in content.select('.vocabulary-languages, .vocabulary-language-status'):
+        controls.decompose()
+    return text(content)
+
+
 @lru_cache(maxsize=1)
 def grammar_by_number():
     from grammar_curriculum import load_curriculum
@@ -153,7 +164,7 @@ def enhance_page(soup, path, prefix):
         sections = read.select('.section')
         context = {'lesson': text(lesson.select_one('summary')), 'study_level': next((v for v in ['beginner', 'intermediate', 'advanced'] if 'theme-' + v in classes), path.stem),
             'reading': ' '.join(text(p) for p in sections[0].select('p')),
-            'vocabulary_and_grammar': text(sections[1]) if len(sections) > 1 else '',
+            'vocabulary_and_grammar': lesson_material(sections[1]) if len(sections) > 1 else '',
             'scope': 'Use this supplied lesson text only; it may summarize an older report. A source link is not a claim that you can read it.'}
         if path.parts[-3] == 'stories':
             context['scope'] = 'Evergreen study reading. Any new scenario must be labeled fictional.'

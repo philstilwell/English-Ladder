@@ -8,12 +8,7 @@
     measureMenu();
     if ('ResizeObserver' in window) new ResizeObserver(measureMenu).observe(masthead);
     window.addEventListener('resize', measureMenu, {passive: true});
-    window.addEventListener('load', () => {
-      measureMenu();
-      if (/^#lesson-[a-z0-9-]+$/.test(location.hash)) {
-        document.getElementById(location.hash.slice(1))?.scrollIntoView({block: 'start', behavior: 'instant'});
-      }
-    }, {once: true});
+    window.addEventListener('load', measureMenu, {once: true});
   }
   const levels = ['beginner', 'intermediate', 'advanced'];
   const LEVEL_KEY = 'english-ladder-level';

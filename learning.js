@@ -44,20 +44,22 @@
     const panels = stages.map((stage) => lesson.querySelector(`[data-stage="${stage}"]`));
     if (panels.some((panel) => !panel)) return;
     const content = lesson.querySelector(".lesson-content");
-    const nav = document.createElement("nav");
+    const nav = content.querySelector(":scope > .learning-flow") || document.createElement("nav");
     nav.className = "learning-flow";
     nav.setAttribute("aria-label", "Lesson steps");
+    nav.hidden = false;
     const stepButtons = stages.map((stage, index) => {
-      const button = document.createElement("button");
+      const button = nav.children[index] || document.createElement("button");
       button.type = "button";
+      button.disabled = false;
       button.textContent = `${index + 1}. ${stage[0].toUpperCase() + stage.slice(1)}`;
       panels[index].id = `learning-${lessonIndex}-${stage}`;
       button.setAttribute("aria-controls", panels[index].id);
       button.addEventListener("click", () => showStage(index, true));
-      nav.append(button);
+      if (!button.parentElement) nav.append(button);
       return button;
     });
-    content.prepend(nav);
+    if (!nav.parentElement) content.prepend(nav);
     function showStage(index, focus) {
       panels.forEach((panel, panelIndex) => {
         panel.hidden = panelIndex !== index;
@@ -74,18 +76,21 @@
       }
     }
     panels.forEach((panel, index) => {
-      const actions = document.createElement("div");
+      const actions = panel.querySelector(":scope > .stage-actions") || document.createElement("div");
       actions.className = "stage-actions";
+      actions.hidden = false;
       if (index > 0) {
-        const back = document.createElement("button");
+        const back = actions.querySelector(".secondary-button") || document.createElement("button");
         back.type = "button";
+        back.disabled = false;
         back.className = "secondary-button";
         back.textContent = "← " + (index === 1 ? "Read again" : "Back to practice");
         back.addEventListener("click", () => showStage(index - 1, true));
-        actions.append(back);
+        if (!back.parentElement) actions.append(back);
       }
-      const next = document.createElement("button");
+      const next = actions.querySelector(".primary-button") || document.createElement("button");
       next.type = "button";
+      next.disabled = false;
       next.className = "primary-button";
       next.textContent = ["Check your understanding →", "Discuss the story →", "Finish lesson ✓"][index];
       if (index === 2) {
@@ -112,8 +117,8 @@
           if (!completed) panel.querySelector(".next-study")?.remove();
         }
       });
-      actions.append(next);
-      panel.append(actions);
+      if (!next.parentElement) actions.append(next);
+      if (!actions.parentElement) panel.append(actions);
     });
 
     // Definitions come from this lesson's own vocabulary, never from remote text.
@@ -169,13 +174,15 @@
     const vocabularyBox = lesson.querySelector(".vocab-box");
     if (vocabularyBox && [...vocabulary.values()].some(entry => entry.span)) {
       vocabularyBox.id = `vocabulary-${lessonIndex}`;
-      const controls = document.createElement("div");
+      const controls = lesson.querySelector(".vocabulary-languages") || document.createElement("div");
       controls.className = "vocabulary-languages";
+      controls.hidden = false;
       controls.setAttribute("role", "group");
       controls.setAttribute("aria-label", "Definition language");
       const languageButtons = Object.entries(definitionLanguages).map(([language, label]) => {
-        const button = document.createElement("button");
+        const button = controls.querySelector(`[data-definition-language="${language}"]`) || document.createElement("button");
         button.type = "button";
+        button.disabled = false;
         button.className = "vocabulary-language";
         button.dataset.definitionLanguage = language;
         button.textContent = label;
@@ -185,15 +192,17 @@
           button.setAttribute("aria-label", button.title);
         }
         button.addEventListener("click", () => changeDefinitionLanguage(language, true));
-        controls.append(button);
+        if (!button.parentElement) controls.append(button);
         return button;
       });
-      const status = document.createElement("p");
+      const status = lesson.querySelector(".vocabulary-language-status") || document.createElement("p");
       status.className = "vocabulary-language-status";
+      status.hidden = false;
       status.setAttribute("role", "status");
       status.setAttribute("aria-live", "polite");
       status.setAttribute("aria-atomic", "true");
-      vocabularyBox.before(controls, status);
+      if (!controls.parentElement) vocabularyBox.before(controls);
+      if (!status.parentElement) vocabularyBox.before(status);
       function updateVocabulary(language) {
         let missing = 0;
         for (const entry of vocabulary.values()) {
@@ -229,16 +238,20 @@
       if (progress) progress.textContent = `${answered.length} of ${questions.length} questions answered · ${correct.length} correct. You can try again.`;
     });
     showStage(0, false);
+    lesson.dataset.learningReady = "true";
   });
-  function openLinkedLesson() {
+  function openLinkedLesson(initial = false) {
     let id;
     try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
     const lesson = id ? document.getElementById(id) : null;
     if (lesson?.classList.contains("daily-lesson")) {
+      const alreadyOpen = lesson.open;
       lesson.open = true;
-      lesson.scrollIntoView({ block: "start", behavior: "auto" });
+      // Parser-time opening lets native fragment navigation place the lesson.
+      // A late download must not pull someone back after they start reading.
+      if (!initial || !alreadyOpen) lesson.scrollIntoView({ block: "start", behavior: "auto" });
     }
   }
-  openLinkedLesson();
-  window.addEventListener("hashchange", openLinkedLesson);
+  openLinkedLesson(true);
+  window.addEventListener("hashchange", () => openLinkedLesson());
 })();

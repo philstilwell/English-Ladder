@@ -175,6 +175,15 @@ body { --level-tint:#fff; }
 .reading-page .learning-flow { margin:4px auto 12px; padding:4px; }
 .reading-page .learning-flow button { padding:8px 16px; min-height:44px; }
 .reading-page .reading-hint { margin:8px 0 12px; }
+/* Keep the published reading geometry while deferred interactions download. */
+.reading-js .daily-lesson:not([data-learning-ready]) .learning-panel:not([data-stage="read"]) { display:none; }
+.reading-js .learning-flow[hidden],.reading-js .stage-actions[hidden],.reading-js .vocabulary-languages[hidden] { display:flex !important; }
+.reading-js .vocabulary-language-status[hidden],.reading-js [data-word-hint][hidden] { display:block !important; }
+.reading-js .word-seed { display:inline-block; box-sizing:border-box; border:0; border-bottom:2px dotted var(--lesson-ink); background:var(--lesson-tint); color:var(--lesson-ink); padding:0 2px; font:inherit; }
+@media print {
+  .reading-js .daily-lesson:not([data-learning-ready]) .learning-panel { display:block !important; }
+  .reading-js .daily-lesson .learning-flow,.reading-js .daily-lesson .stage-actions,.reading-js .daily-lesson .vocabulary-languages,.reading-js .daily-lesson .vocabulary-language-status { display:none !important; }
+}
 .reading-page .learning-panel .section h2 { margin-top:14px; }
 .reading-page .lesson-cover,.reading-page .reading-photo { margin:22px auto 28px; }
 .reading-page .seo-breadcrumbs { margin:24px 0; }

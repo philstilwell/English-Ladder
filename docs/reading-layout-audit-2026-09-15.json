@@ -1,0 +1,905 @@
+{
+  "date": "2026-09-15T18:16:18.693Z",
+  "origin": "http://127.0.0.1:8768",
+  "scriptDelayMs": 1500,
+  "scope": "Cold navigation with deferred scripts delayed; fresh and returning readers. Separate no-script, failed-download, navigation, and script-scroll checks. Lab measurements, not visitor analytics.",
+  "measurements": [
+    {
+      "path": "index.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 320,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0.01612931327160494,
+      "shifts": [
+        {
+          "value": 0.01612931327160494,
+          "time": 1532.3999999910593,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0.04722163435570988,
+      "shifts": [
+        {
+          "value": 0.04722163435570988,
+          "time": 1552.9000000059605,
+          "elements": [
+            "lesson-2026-09-12",
+            "lesson-2026-09-14",
+            "lesson-2026-09-13",
+            "lesson-2026-09-11",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 320,
+      "saved": true,
+      "cls": 0.05525750385802469,
+      "shifts": [
+        {
+          "value": 0.05525750385802469,
+          "time": 1552.5999999940395,
+          "elements": [
+            null,
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 320,
+      "saved": true,
+      "cls": 0.06130206934799382,
+      "shifts": [
+        {
+          "value": 0.06130206934799382,
+          "time": 1556.6000000089407,
+          "elements": [
+            null,
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 320,
+      "saved": true,
+      "cls": 0.07471853925540124,
+      "shifts": [
+        {
+          "value": 0.07471853925540124,
+          "time": 1557.2000000029802,
+          "elements": [
+            "lesson-2026-09-11",
+            "lesson-2026-09-12",
+            "lesson-2026-09-13",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0.008246064814814815,
+      "shifts": [
+        {
+          "value": 0.008246064814814815,
+          "time": 1551.4000000059605,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0.010822960069444445,
+      "shifts": [
+        {
+          "value": 0.010822960069444445,
+          "time": 1537.7999999970198,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0.01086161349826389,
+      "shifts": [
+        {
+          "value": 0.01086161349826389,
+          "time": 1547.5,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 320,
+      "saved": true,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 390,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0.012517777777777779,
+      "shifts": [
+        {
+          "value": 0.012517777777777779,
+          "time": 1542.4000000059605,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0.019990417062361505,
+      "shifts": [
+        {
+          "value": 0.019990417062361505,
+          "time": 1550.6000000089407,
+          "elements": [
+            "#text",
+            "#text",
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 390,
+      "saved": true,
+      "cls": 0.004010987654320988,
+      "shifts": [
+        {
+          "value": 0.004010987654320988,
+          "time": 1540,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 390,
+      "saved": true,
+      "cls": 0.06979254352643242,
+      "shifts": [
+        {
+          "value": 0.06979254352643242,
+          "time": 1558.9000000059605,
+          "elements": [
+            "lesson-2026-09-13",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 390,
+      "saved": true,
+      "cls": 0.012522450933839822,
+      "shifts": [
+        {
+          "value": 0.012522450933839822,
+          "time": 1553.7999999970198,
+          "elements": [
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0.005726433899176955,
+      "shifts": [
+        {
+          "value": 0.005726433899176955,
+          "time": 1560,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0.011100471866096867,
+      "shifts": [
+        {
+          "value": 0.011100471866096867,
+          "time": 1551.6000000089407,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0.008481666666666667,
+      "shifts": [
+        {
+          "value": 0.008481666666666667,
+          "time": 1544.2999999970198,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 390,
+      "saved": true,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 768,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0.00604120691872428,
+      "shifts": [
+        {
+          "value": 0.00604120691872428,
+          "time": 1524,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0.05766604614257813,
+      "shifts": [
+        {
+          "value": 0.05766604614257813,
+          "time": 1545.4000000059605,
+          "elements": [
+            "lesson-2026-09-07",
+            "lesson-2026-09-10",
+            "lesson-2026-09-09",
+            "lesson-2026-09-08",
+            "lesson-2026-09-12"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 768,
+      "saved": true,
+      "cls": 0.06329162426858283,
+      "shifts": [
+        {
+          "value": 0.06329162426858283,
+          "time": 1552.7000000029802,
+          "elements": [
+            null,
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 768,
+      "saved": true,
+      "cls": 0.07280052465117028,
+      "shifts": [
+        {
+          "value": 0.07280052465117028,
+          "time": 1556.8999999910593,
+          "elements": [
+            "lesson-2026-09-13",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 768,
+      "saved": true,
+      "cls": 0.07814092058095422,
+      "shifts": [
+        {
+          "value": 0.07814092058095422,
+          "time": 1559.5999999940395,
+          "elements": [
+            "lesson-2026-09-11",
+            "lesson-2026-09-12",
+            "lesson-2026-09-13",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0.0032541666666666665,
+      "shifts": [
+        {
+          "value": 0.0032541666666666665,
+          "time": 1553,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0.006056365740740741,
+      "shifts": [
+        {
+          "value": 0.006056365740740741,
+          "time": 1557.199999988079,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0.006056365740740741,
+      "shifts": [
+        {
+          "value": 0.006056365740740741,
+          "time": 1547.2000000029802,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 768,
+      "saved": true,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 1280,
+      "saved": false,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    },
+    {
+      "path": "index.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.006487269083658854,
+      "shifts": [
+        {
+          "value": 0.006487269083658854,
+          "time": 1545.1000000089407,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.01277041761610243,
+      "shifts": [
+        {
+          "value": 0.01277041761610243,
+          "time": 1553.8999999910593,
+          "elements": [
+            "#text",
+            "#text",
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "beginner.html#lesson-2026-09-15",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.0016213701036241319,
+      "shifts": [
+        {
+          "value": 0.0003445985582139757,
+          "time": 1521.2999999970198,
+          "elements": [
+            "#text"
+          ]
+        },
+        {
+          "value": 0.0012767715454101562,
+          "time": 1548.199999988079,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "intermediate.html#lesson-2026-09-13",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.003831665717230903,
+      "shifts": [
+        {
+          "value": 0.003831665717230903,
+          "time": 1552.2999999970198,
+          "elements": [
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "advanced.html#lesson-2026-09-11",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.003831665717230903,
+      "shifts": [
+        {
+          "value": 0.003831665717230903,
+          "time": 1554,
+          "elements": [
+            "#text",
+            "#text",
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/beginner.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.0030418131086561414,
+      "shifts": [
+        {
+          "value": 0.0030418131086561414,
+          "time": 1546.0999999940395,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/intermediate.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.005641180674235026,
+      "shifts": [
+        {
+          "value": 0.005641180674235026,
+          "time": 1540.699999988079,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "news/2026-09-15/advanced.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0.005641180674235026,
+      "shifts": [
+        {
+          "value": 0.005641180674235026,
+          "time": 1546.5,
+          "elements": [
+            "#text"
+          ]
+        }
+      ],
+      "overflow": false
+    },
+    {
+      "path": "stories/city-trees/beginner.html",
+      "width": 1280,
+      "saved": true,
+      "cls": 0,
+      "shifts": [],
+      "overflow": false
+    }
+  ],
+  "fallbacks": [
+    {
+      "mode": "JavaScript disabled",
+      "passed": true
+    },
+    {
+      "mode": "Interaction download failed",
+      "passed": true
+    },
+    {
+      "mode": "No repeated script-driven fragment scroll",
+      "passed": true,
+      "nativeFragmentPosition": {
+        "before": 500,
+        "after": 97
+      }
+    }
+  ],
+  "errors": [],
+  "maxCLS": 0.07814092058095422,
+  "passed": true
+}

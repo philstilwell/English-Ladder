@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Hollywood actor Matthew Rhys made history at the Emmys.",
+      "He won two lead acting prizes in one night.",
+      "He won for best lead actor in a limited series and for a comedy.",
+      "At the start of his career, Rhys considered joining the British Army.",
+      "He later received a rejection letter and could not join the army.",
+      "Rhys speaks Welsh to his son Sam at home in New York.",
+      "He also voices Han Solo in a new Welsh language adaptation of Star Wars."
+    ],
+    "vocabulary": [
+      {
+        "term": "actor",
+        "part_of_speech": "noun",
+        "definition": "A person who performs in movies, TV shows, or plays."
+      },
+      {
+        "term": "history",
+        "part_of_speech": "noun",
+        "definition": "When something very important happens for the first time or is remembered for a long time."
+      },
+      {
+        "term": "prizes",
+        "part_of_speech": "noun",
+        "definition": "Awards or things you win in a competition or for doing something very well."
+      },
+      {
+        "term": "considered",
+        "part_of_speech": "verb",
+        "definition": "Thought about something carefully before making a decision."
+      },
+      {
+        "term": "joining",
+        "part_of_speech": "verb",
+        "definition": "Becoming a member of a group, organization, or team."
+      },
+      {
+        "term": "speaks",
+        "part_of_speech": "verb",
+        "definition": "Uses words to talk in a language."
+      },
+      {
+        "term": "voices",
+        "part_of_speech": "verb",
+        "definition": "Provides the sound of a character for a movie, show, or game."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "映画、テレビ番組、または演劇に出演する人。",
+      "ko": "영화, TV 프로그램 또는 연극에서 연기하는 사람.",
+      "zh-Hans": "在电影、电视节目或戏剧中表演的人。",
+      "es": "Una persona que actúa en películas, programas de televisión u obras de teatro.",
+      "pt-BR": "Uma pessoa que atua em filmes, programas de TV ou peças de teatro."
+    },
+    {
+      "id": 1,
+      "ja": "何かとても重要なことが初めて起こった時、または長い間記憶される時。",
+      "ko": "아주 중요한 일이 처음으로 일어나거나 오랫동안 기억될 때.",
+      "zh-Hans": "指某件非常重要的事情首次发生或被长时间铭记的时刻。",
+      "es": "Cuando algo muy importante sucede por primera vez o es recordado durante mucho tiempo.",
+      "pt-BR": "Quando algo muito importante acontece pela primeira vez ou é lembrado por muito tempo."
+    },
+    {
+      "id": 2,
+      "ja": "競技会で、または何かを非常にうまくやったことで獲得する賞や物。",
+      "ko": "대회에서 또는 무언가를 아주 잘해서 얻는 상이나 물건.",
+      "zh-Hans": "在比赛中或因表现出色而赢得的奖项或物品。",
+      "es": "Premios o cosas que se ganan en una competición o por hacer algo muy bien.",
+      "pt-BR": "Prêmios ou coisas que você ganha em uma competição ou por fazer algo muito bem."
+    },
+    {
+      "id": 3,
+      "ja": "決定を下す前に、何かについて注意深く考えること。",
+      "ko": "결정을 내리기 전에 어떤 것에 대해 신중하게 생각하는 것.",
+      "zh-Hans": "在做决定之前仔细思考某事。",
+      "es": "Pensar cuidadosamente en algo antes de tomar una decisión.",
+      "pt-BR": "Pensar cuidadosamente sobre algo antes de tomar uma decisão."
+    },
+    {
+      "id": 4,
+      "ja": "グループ、組織、またはチームの一員になること。",
+      "ko": "단체, 조직 또는 팀의 일원이 되는 것.",
+      "zh-Hans": "成为某个团体、组织或团队的成员。",
+      "es": "Convertirse en miembro de un grupo, organización o equipo.",
+      "pt-BR": "Tornar-se membro de um grupo, organização ou equipe."
+    },
+    {
+      "id": 5,
+      "ja": "言葉を使ってある言語で話すこと。",
+      "ko": "단어를 사용하여 어떤 언어로 말하는 것.",
+      "zh-Hans": "使用语言表达或交流。",
+      "es": "Utilizar palabras para comunicarse en un idioma.",
+      "pt-BR": "Usar palavras para se comunicar em um idioma."
+    },
+    {
+      "id": 6,
+      "ja": "映画、番組、またはゲームのキャラクターの音声を担当すること。",
+      "ko": "영화, 쇼 또는 게임에서 캐릭터의 목소리를 연기하는 것.",
+      "zh-Hans": "为电影、节目或游戏中的角色配音。",
+      "es": "Proporcionar la voz de un personaje para una película, programa o juego.",
+      "pt-BR": "Fornecer a voz de um personagem para um filme, programa ou jogo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-15T15:12:07.748207+00:00"
+  }
+}

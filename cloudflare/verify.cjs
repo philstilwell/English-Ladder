@@ -6,6 +6,7 @@ const path = require('node:path');
 
 const RETRY_DELAYS_MS = [2000, 4000];
 const TRANSIENT_HTTP = new Set([408, 429, 500, 502, 503, 504]);
+const MISSING_PROBES = ['/missing-migration-check-74629.html', '/.git/config', '/README.md', '/cloudflare/build.cjs'];
 // DNS/connection failures, partial transfers, timeouts, and interrupted streams.
 // Certificate validation (60), bad URLs (3), and missing curl remain failures.
 const TRANSIENT_CURL = new Set([5, 6, 7, 18, 28, 52, 55, 56, 92]);
@@ -105,7 +106,7 @@ async function verifySite(manifest, {origin, request, sleep}) {
   } catch (error) {
     errors.push(error.message);
   }
-  for (const missing of ['/missing-migration-check-74629.html', '/.git/config', '/README.md', '/cloudflare/build.cjs']) {
+  for (const missing of MISSING_PROBES) {
     try {
       await verifyResponse(missing, {...options, expectedStatus: 404});
     } catch (error) {
@@ -116,18 +117,60 @@ async function verifySite(manifest, {origin, request, sleep}) {
   return entries.length;
 }
 
+async function verifyRoute(manifest, {origin, request, deploymentHash, sleep}) {
+  const errors = [];
+  const options = {origin, request, sleep};
+  const checks = [
+    ['deployment.json', deploymentHash],
+    // Cloudflare may add its browser challenge to HTML on the custom domain.
+    // Confirm that the homepage is reachable without comparing transformed bytes.
+    ['/', undefined],
+  ];
+  if (manifest.files['lesson-data.json']) {
+    checks.push(['lesson-data.json', manifest.files['lesson-data.json']]);
+  }
+  for (const [file, expectedHash] of checks) {
+    try {
+      await verifyResponse(file, {...options, expectedHash});
+    } catch (error) {
+      errors.push(error.message);
+    }
+  }
+  for (const missing of MISSING_PROBES) {
+    try {
+      await verifyResponse(missing, {...options, expectedStatus: 404});
+    } catch (error) {
+      errors.push(error.message);
+    }
+  }
+  if (errors.length) throw new Error(errors.join('\n'));
+  return checks.length;
+}
+
 async function main(argv = process.argv.slice(2)) {
   const root = path.resolve(__dirname, '..');
-  const origin = new URL(argv[0]);
+  const routeOnly = argv.includes('--route-only');
+  const args = argv.filter(argument => argument !== '--route-only');
+  if (args.length < 1 || args.length > 2) {
+    throw new Error('Provide a site origin and optional resolved IP.');
+  }
+  const origin = new URL(args[0]);
   if (!['https:', 'http:'].includes(origin.protocol) || origin.pathname !== '/') {
     throw new Error('Provide a site origin without a path.');
   }
-  const manifest = JSON.parse(fs.readFileSync(path.join(root, '.cf-site/deployment.json'), 'utf8'));
-  const count = await verifySite(manifest, {origin, request: createCurlRequest(origin, argv[1])});
+  const deployment = fs.readFileSync(path.join(root, '.cf-site/deployment.json'));
+  const manifest = JSON.parse(deployment.toString('utf8'));
+  const options = {origin, request: createCurlRequest(origin, args[1])};
+  if (routeOnly) {
+    const count = await verifyRoute(manifest, {...options, deploymentHash: hash(deployment)});
+    console.log(`Verified the deployed revision, homepage access, ${count - 2} representative data files, and real 404 responses at ${origin.origin}.`);
+    return;
+  }
+  const count = await verifySite(manifest, options);
   console.log(`Verified ${count} files byte for byte, homepage, and real 404 responses at ${origin.origin}.`);
 }
 
-module.exports = {createCurlRequest, verifyResponse, verifySite, main};
+module.exports = {createCurlRequest, verifyResponse, verifySite, verifyRoute, main};
 if (require.main === module) {
   main().catch(error => { console.error(error.message); process.exitCode = 1; });
 }

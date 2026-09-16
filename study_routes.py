@@ -109,7 +109,7 @@ def enhance_page(soup, relative, prefix):
         return
     for old in soup.select('[data-study-routes], script[src*="study-routes.js"], link[href*="study-routes.css"]'):
         old.decompose()
-    soup.head.append(soup.new_tag('link', rel='stylesheet', href=prefix+'study-routes.css?v=20260908-routes1'))
+    soup.head.append(soup.new_tag('link', rel='stylesheet', href=prefix+'study-routes.css?v=20260916-route-layout1'))
     if relative == 'study-routes.html':
         return
     data = soup.new_tag('script', type='application/json', attrs={'data-study-routes': '', 'data-site-root': prefix or './'})

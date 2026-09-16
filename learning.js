@@ -188,7 +188,7 @@
         button.textContent = label;
         button.setAttribute("aria-controls", vocabularyBox.id);
         if (language === "zh-Hans" || language === "pt-BR") {
-          button.title = language === "zh-Hans" ? "Simplified Chinese" : "Brazilian Portuguese";
+          button.title = label;
           button.setAttribute("aria-label", button.title);
         }
         button.addEventListener("click", () => changeDefinitionLanguage(language, true));
@@ -218,7 +218,7 @@
           }
         }
         languageButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.definitionLanguage === language)));
-        const label = { "zh-Hans": "Simplified Chinese", "pt-BR": "Brazilian Portuguese" }[language] || definitionLanguages[language];
+        const label = definitionLanguages[language];
         status.textContent = missing ? `${label}: ${missing} ${missing === 1 ? "definition is" : "definitions are"} unavailable. English is shown instead.` : `Definitions in ${label}.`;
       }
       vocabularyViews.push(updateVocabulary);

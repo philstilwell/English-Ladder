@@ -4,6 +4,8 @@ import json
 from bs4 import BeautifulSoup
 from us_life_translations import LANGUAGES, read_record, sources
 
+LANGUAGE_LABELS = {**LANGUAGES, 'zh-Hans': 'Chinese', 'pt-BR': 'Portuguese'}
+
 INVITATION = 'Choose a language for the unit explanations and deeper explanations in your AI prompts. The lessons and practice stay in English.'
 
 
@@ -28,7 +30,7 @@ def enhance_page(soup):
     introduction['id'] = 'life-language-controls'
     targets = ' '.join('life-explanation-' + unit['id'] for unit in soup.select('.us-life-module'))
     controls = ''.join(f'<button type="button" class="vocabulary-language" data-definition-language="{language}" aria-pressed="{str(language == "en").lower()}" aria-controls="{targets}" disabled>{label}</button>'
-                       for language, label in {'en': 'English only', **LANGUAGES}.items())
+                       for language, label in {'en': 'English only', **LANGUAGE_LABELS}.items())
     introduction.append(BeautifulSoup(f'''<h2>Choose your explanation language</h2><p>{INVITATION}</p>
 <div class="vocabulary-languages" role="group" aria-label="Explanation language">{controls}</div>
 <p class="vocabulary-language-status" data-life-language-status role="status" aria-live="polite">Language help is optional. Choose any of the five languages if you would like it.</p>

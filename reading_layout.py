@@ -158,7 +158,7 @@ def prepare_reading_controls(soup):
                                          'aria-controls': vocabulary['id'], 'aria-pressed': str(language == 'en').lower()})
             button.string = label
             if language in ('zh-Hans', 'pt-BR'):
-                button['title'] = button['aria-label'] = 'Simplified Chinese' if language == 'zh-Hans' else 'Brazilian Portuguese'
+                button['title'] = button['aria-label'] = label
             controls.append(button)
         status = fragment('<p class="vocabulary-language-status" role="status" aria-live="polite" '
                           'aria-atomic="true" hidden>Definitions in English.</p>').p

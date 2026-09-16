@@ -42,8 +42,8 @@ test('all five languages switch definitions and already-open word help across le
   d.querySelector('[data-definition-language="en"]').click();
   assert.equal(d.querySelector('.vocab-definition').textContent, 'A person who decides who wins.');
   assert.equal(d.querySelector('.vocab-definition').lang, 'en');
-  assert.equal(d.querySelector('[data-definition-language="zh-Hans"]').getAttribute('aria-label'), 'Simplified Chinese');
-  assert.equal(d.querySelector('[data-definition-language="pt-BR"]').getAttribute('aria-label'), 'Brazilian Portuguese');
+  assert.equal(d.querySelector('[data-definition-language="zh-Hans"]').getAttribute('aria-label'), 'Chinese');
+  assert.equal(d.querySelector('[data-definition-language="pt-BR"]').getAttribute('aria-label'), 'Portuguese');
 });
 
 test('preference restores on another level and follows changes from another tab or restored page', () => {

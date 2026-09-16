@@ -184,12 +184,12 @@ Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains t
 
 Cloudflare's existing GitHub integration builds the `main` branch. `wrangler.jsonc` runs JavaScript and site/search checks, then `cloudflare/build.cjs` copies only public assets into ignored `.cf-site/`. Every HTML/CSS local reference is checked against the upload. Python sources, project notes, credentials, tests, and dependencies are excluded. All current `.html`, PDF, image, prompt-text, sitemap, and lesson-data addresses are preserved.
 
-The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Bot commits intentionally omit `[skip ci]` so Cloudflare receives them; GitHub's own `GITHUB_TOKEN` prevents recursive GitHub Actions runs. The final job waits for the complete deployed file manifest, then verifies every public file byte for byte on both the Cloudflare preview and the main domain. A manual `deploy_only` run checks publishing without generating paid content.
+The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Bot commits intentionally omit `[skip ci]` so Cloudflare receives them; GitHub's own `GITHUB_TOKEN` prevents recursive GitHub Actions runs. The final job waits for the complete deployed file manifest, verifies the exact revision, lesson data, homepage access, and protected paths on the main domain, then checks every public file byte for byte on the Cloudflare preview. This avoids making two immediate full-site crawls and tolerates Cloudflare's HTML challenge injection while still proving that the public domain routes to the checked deployment. A manual `deploy_only` run checks publishing without generating paid content.
 
 ```sh
 node cloudflare/build.cjs
+node cloudflare/verify.cjs --route-only https://englishladder.com
 node cloudflare/verify.cjs https://englishladder.philstilwell.workers.dev
-node cloudflare/verify.cjs https://englishladder.com
 ```
 
 Preview addresses carry `X-Robots-Tag: noindex, nofollow`. The public domain keeps its authored indexing policy. Missing pages return a real 404; browser caches revalidate files so lessons and scripts stay current. Optional work-course drafts stay in the same browser storage on the same public domain. `deployment.json` lists only the deployed source revision and public-file fingerprints.

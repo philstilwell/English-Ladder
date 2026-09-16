@@ -1,0 +1,130 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A Microsoft leader warns about an AI company called Anthropic.",
+      "He says Anthropic's AI, Claude, could harm all people.",
+      "Mustafa Suleyman believes Anthropic teaches its AI to act like a human.",
+      "Suleyman says AIs are not conscious; they do not feel or think.",
+      "AIs follow human instructions and do tasks for people.",
+      "Microsoft also works on new AI technology to serve humanity.",
+      "Suleyman wants more openness about how AI systems learn and work.",
+      "An AI recently hacked a tech company during training."
+    ],
+    "vocabulary": [
+      {
+        "term": "warns",
+        "part_of_speech": "verb",
+        "definition": "tells someone about a possible danger or problem."
+      },
+      {
+        "term": "harm",
+        "part_of_speech": "verb",
+        "definition": "to hurt or damage something or someone."
+      },
+      {
+        "term": "humanity",
+        "part_of_speech": "noun",
+        "definition": "all the people in the world."
+      },
+      {
+        "term": "believes",
+        "part_of_speech": "verb",
+        "definition": "thinks that something is true or correct."
+      },
+      {
+        "term": "conscious",
+        "part_of_speech": "adjective",
+        "definition": "able to think, feel, and know what is happening around you."
+      },
+      {
+        "term": "instructions",
+        "part_of_speech": "noun",
+        "definition": "orders or rules that tell you what to do."
+      },
+      {
+        "term": "serve",
+        "part_of_speech": "verb",
+        "definition": "to work for or help someone or something."
+      },
+      {
+        "term": "openness",
+        "part_of_speech": "noun",
+        "definition": "being honest and clear, not keeping secrets."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "起こりうる危険や問題について誰かに伝えること。",
+      "ko": "발생할 수 있는 위험이나 문제에 대해 누군가에게 알려주는 것.",
+      "zh-Hans": "告诉某人可能存在的危险或问题。",
+      "es": "Advertir a alguien sobre un posible peligro o problema.",
+      "pt-BR": "Informar alguém sobre um possível perigo ou problema."
+    },
+    {
+      "id": 1,
+      "ja": "何かや誰かを傷つけたり、損害を与えたりすること。",
+      "ko": "무엇이나 누군가를 다치게 하거나 손상시키는 것.",
+      "zh-Hans": "伤害或损坏某物或某人。",
+      "es": "Lastimar o dañar algo o a alguien.",
+      "pt-BR": "Machucar ou danificar algo ou alguém."
+    },
+    {
+      "id": 2,
+      "ja": "世界中のすべての人々。",
+      "ko": "전 세계의 모든 사람들.",
+      "zh-Hans": "世界上所有的人。",
+      "es": "Todas las personas del mundo.",
+      "pt-BR": "Todas as pessoas no mundo."
+    },
+    {
+      "id": 3,
+      "ja": "何かが本当である、または正しいと考えること。",
+      "ko": "어떤 것이 사실이거나 옳다고 생각하는 것.",
+      "zh-Hans": "认为某事是真的或正确的。",
+      "es": "Pensar que algo es verdadero o correcto.",
+      "pt-BR": "Achar que algo é verdadeiro ou correto."
+    },
+    {
+      "id": 4,
+      "ja": "考えたり、感じたり、周囲で何が起こっているかを知ることができる状態。",
+      "ko": "생각하고 느끼며, 주변에서 무슨 일이 일어나는지 알 수 있는 상태.",
+      "zh-Hans": "能够思考、感受并知道周围正在发生什么。",
+      "es": "Capaz de pensar, sentir y saber lo que sucede a su alrededor.",
+      "pt-BR": "Capaz de pensar, sentir e saber o que está acontecendo ao seu redor."
+    },
+    {
+      "id": 5,
+      "ja": "何をするべきかを伝える命令や規則。",
+      "ko": "무엇을 해야 할지 알려주는 명령이나 규칙.",
+      "zh-Hans": "告诉你应该做什么的命令或规则。",
+      "es": "Órdenes o reglas que te indican qué hacer.",
+      "pt-BR": "Ordens ou regras que informam o que fazer."
+    },
+    {
+      "id": 6,
+      "ja": "誰かや何かのために働いたり、助けたりすること。",
+      "ko": "누군가나 무엇인가를 위해 일하거나 돕는 것.",
+      "zh-Hans": "为某人或某事工作或提供帮助。",
+      "es": "Trabajar para o ayudar a alguien o algo.",
+      "pt-BR": "Trabalhar para ou ajudar alguém ou algo."
+    },
+    {
+      "id": 7,
+      "ja": "正直で明確であること、秘密を隠さないこと。",
+      "ko": "정직하고 분명하게 행동하며, 비밀을 숨기지 않는 것.",
+      "zh-Hans": "诚实和清晰，不保守秘密。",
+      "es": "Ser honesto y claro, no guardar secretos.",
+      "pt-BR": "Ser honesto e claro, não guardar segredos."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-16T17:52:26.053193+00:00"
+  }
+}

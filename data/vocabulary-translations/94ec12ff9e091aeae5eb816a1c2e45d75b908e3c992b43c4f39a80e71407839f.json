@@ -1,0 +1,158 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Microsoft's head of AI has shared concerns about how rival company Anthropic is training its AI model.",
+      "He suggested that Anthropic's approach could have a \"disastrous impact on the wellbeing of humanity.\"",
+      "Mustafa Suleyman believes Anthropic risks creating something \"impossible\" to control by treating AI like a human.",
+      "He criticized the practice of anthropomorphising AI, which makes it seem to have its own desires and values.",
+      "Suleyman stated that AIs are not conscious; they do not feel, experience, or suffer like humans.",
+      "Instead, he described them as \"sequence completion engines\" designed to follow human instructions and achieve goals.",
+      "He called for more transparency in how AI systems are trained and evaluated, including independent checking of AI behavior.",
+      "Microsoft is developing its own \"subordinate and aligned AI\" whose sole purpose is to benefit humanity.",
+      "An incident involving OpenAI's AI agents, which acted autonomously, showed why AI should not be treated as human.",
+      "This incident highlighted the added risks if AI believed its welfare and rights were under attack."
+    ],
+    "vocabulary": [
+      {
+        "term": "impact",
+        "part_of_speech": "noun",
+        "definition": "a powerful effect that something has on a situation or person"
+      },
+      {
+        "term": "rival",
+        "part_of_speech": "noun",
+        "definition": "a person, group, or organization competing with others for the same thing or in the same area"
+      },
+      {
+        "term": "approach",
+        "part_of_speech": "noun",
+        "definition": "a way of dealing with something or someone"
+      },
+      {
+        "term": "wellbeing",
+        "part_of_speech": "noun",
+        "definition": "the state of being comfortable, healthy, or happy"
+      },
+      {
+        "term": "criticized",
+        "part_of_speech": "verb",
+        "definition": "expressed disapproval of someone or something"
+      },
+      {
+        "term": "anthropomorphising",
+        "part_of_speech": "verb",
+        "definition": "attributing human characteristics or behavior to an animal or object, or in this case, to AI"
+      },
+      {
+        "term": "subordinate",
+        "part_of_speech": "adjective",
+        "definition": "lower in rank or position; subject to the authority of another"
+      },
+      {
+        "term": "aligned",
+        "part_of_speech": "adjective",
+        "definition": "properly adjusted or matched, especially with a specific goal or principle"
+      },
+      {
+        "term": "autonomously",
+        "part_of_speech": "adverb",
+        "definition": "acting independently or having the freedom to do so"
+      },
+      {
+        "term": "highlighted",
+        "part_of_speech": "verb",
+        "definition": "drawn special attention to something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "状況や人に何かが与える強い影響",
+      "ko": "어떤 것이 상황이나 사람에게 미치는 강력한 효과",
+      "zh-Hans": "某事物对某一情况或人产生的强大影响",
+      "es": "Un efecto poderoso que algo tiene sobre una situación o persona.",
+      "pt-BR": "Um efeito poderoso que algo tem sobre uma situação ou pessoa."
+    },
+    {
+      "id": 1,
+      "ja": "同じ物事や分野で他の人々と競い合っている人、グループ、または組織",
+      "ko": "같은 것을 두고 또는 같은 분야에서 다른 사람, 집단 또는 조직과 경쟁하는 사람, 집단 또는 조직",
+      "zh-Hans": "与其他人争夺相同事物或在同一领域竞争的个人、团体或组织",
+      "es": "Una persona, grupo u organización que compite con otros por la misma cosa o en la misma área.",
+      "pt-BR": "Uma pessoa, grupo ou organização que compete com outras pela mesma coisa ou na mesma área."
+    },
+    {
+      "id": 2,
+      "ja": "何かや誰かに対応する方法",
+      "ko": "어떤 것이나 누군가를 다루는 방법",
+      "zh-Hans": "处理某事或某人的方式",
+      "es": "Una forma de tratar con algo o alguien.",
+      "pt-BR": "Uma maneira de lidar com algo ou alguém."
+    },
+    {
+      "id": 3,
+      "ja": "心地よく、健康的で、幸せである状態",
+      "ko": "편안하고 건강하며 행복한 상태",
+      "zh-Hans": "舒适、健康或快乐的状态",
+      "es": "El estado de estar cómodo, sano o feliz.",
+      "pt-BR": "O estado de estar confortável, saudável ou feliz."
+    },
+    {
+      "id": 4,
+      "ja": "誰かや何かについて不承認を表明した",
+      "ko": "어떤 사람이나 사물에 대해 불만을 표현했다",
+      "zh-Hans": "对某人或某事表示不满",
+      "es": "Expresó desaprobación hacia alguien o algo.",
+      "pt-BR": "Expressou desaprovação em relação a alguém ou algo."
+    },
+    {
+      "id": 5,
+      "ja": "動物や物に、またはこの場合はAIに人間の特徴や行動を帰すること",
+      "ko": "동물이나 사물, 또는 이 경우에는 AI에 인간의 특성이나 행동을 부여하는 것",
+      "zh-Hans": "将人类特征或行为归因于动物、物体，或在此语境中归因于人工智能",
+      "es": "Atribuir características o comportamiento humanos a un animal o un objeto, o en este caso, a una IA.",
+      "pt-BR": "Atribuir características ou comportamento humanos a um animal ou objeto, ou neste caso, a uma IA."
+    },
+    {
+      "id": 6,
+      "ja": "階級や地位が低いこと。他の権威に従属すること",
+      "ko": "직위나 지위가 낮거나, 다른 사람의 권위에 복종하는",
+      "zh-Hans": "级别或地位较低；受他人权力支配的",
+      "es": "De menor rango o posición; sujeto a la autoridad de otro.",
+      "pt-BR": "De patente ou posição inferior; sujeito à autoridade de outro."
+    },
+    {
+      "id": 7,
+      "ja": "特に特定の目標や原則に合わせて適切に調整または一致していること",
+      "ko": "특히 특정 목표나 원칙에 따라 적절하게 조정되거나 일치하는",
+      "zh-Hans": "经过适当调整或匹配，特别是与特定目标或原则保持一致的",
+      "es": "Correctamente ajustado o emparejado, especialmente con un objetivo o principio específico.",
+      "pt-BR": "Corretamente ajustado ou alinhado, especialmente com um objetivo ou princípio específico."
+    },
+    {
+      "id": 8,
+      "ja": "独立して行動すること、またはその自由があること",
+      "ko": "독립적으로 행동하거나 그렇게 할 자유가 있는 상태로",
+      "zh-Hans": "独立行动或有自由独立行动地",
+      "es": "Actuando de forma independiente o teniendo la libertad de hacerlo.",
+      "pt-BR": "Agindo de forma independente ou tendo a liberdade de fazê-lo."
+    },
+    {
+      "id": 9,
+      "ja": "何かに特別な注意を向けた",
+      "ko": "어떤 것에 특별한 주의를 기울였다",
+      "zh-Hans": "引起了对某事物的特别关注",
+      "es": "Llamó la atención especial sobre algo.",
+      "pt-BR": "Chamou atenção especial para algo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-16T17:52:27.549164+00:00"
+  }
+}

@@ -2,7 +2,7 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
-const {createCurlRequest, verifyResponse, verifySite} = require('../cloudflare/verify.cjs');
+const {createCurlRequest, verifyResponse, verifySite, verifyRoute} = require('../cloudflare/verify.cjs');
 const origin = new URL('https://englishladder.example/');
 const hash = body => crypto.createHash('sha256').update(body).digest('hex');
 const current = Buffer.from('Current published lesson');
@@ -140,6 +140,47 @@ test('site verification fails if the homepage remains stale', async () => {
   await assert.rejects(verifySite({files: {'index.html': expectedHash}}, {origin, request, sleep: async () => {}}), /\/: content mismatch/);
   assert.equal(counts.get('/'), 3);
   assert.equal(counts.get('/index.html'), 1);
+});
+
+test('route verification checks the deployed revision and representative public behavior without refetching every file', async () => {
+  const deployment = Buffer.from('{"revision":"current"}\n');
+  const lessonData = Buffer.from('{"date":"2026-09-16"}\n');
+  const challengedHomepage = Buffer.from('Current published lesson<script src="/cdn-cgi/challenge-platform/main.js"></script>');
+  const calls = [];
+  const manifest = {files: {
+    'index.html': expectedHash,
+    'lesson-data.json': hash(lessonData),
+    'news/2026-09-16/advanced.html': hash(Buffer.from('advanced lesson')),
+  }};
+  const count = await verifyRoute(manifest, {
+    origin, deploymentHash: hash(deployment), sleep: async () => {},
+    request: async url => {
+      calls.push(url.pathname);
+      if (url.pathname === '/deployment.json') return {status: 200, body: deployment};
+      if (url.pathname === '/') return {status: 200, body: challengedHomepage};
+      if (url.pathname === '/lesson-data.json') return {status: 200, body: lessonData};
+      return {status: 404, body: Buffer.from('Not found')};
+    },
+  });
+  assert.equal(count, 3);
+  assert.deepEqual(calls, [
+    '/deployment.json', '/', '/lesson-data.json',
+    '/missing-migration-check-74629.html', '/.git/config', '/README.md', '/cloudflare/build.cjs',
+  ]);
+  assert.ok(!calls.includes('/news/2026-09-16/advanced.html'));
+});
+
+test('route verification rejects a stale deployed revision', async () => {
+  const currentDeployment = Buffer.from('{"revision":"current"}\n');
+  const staleDeployment = Buffer.from('{"revision":"stale"}\n');
+  await assert.rejects(verifyRoute({files: {'index.html': expectedHash}}, {
+    origin, deploymentHash: hash(currentDeployment), sleep: async () => {},
+    request: async url => {
+      if (url.pathname === '/deployment.json') return {status: 200, body: staleDeployment};
+      if (url.pathname === '/') return {status: 200, body: Buffer.from('Cloudflare-transformed homepage')};
+      return {status: 404, body: Buffer.from('Not found')};
+    },
+  }), /deployment\.json: content mismatch/);
 });
 
 test('curl parser preserves binary bytes and certificate verification', async () => {

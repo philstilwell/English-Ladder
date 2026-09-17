@@ -1,0 +1,131 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The Bank of England has kept interest rates the same.",
+      "This is the sixth time in a row that rates have stayed steady.",
+      "But interest rates are likely to rise in the future.",
+      "This is because high energy prices may continue.",
+      "A war in the Middle East has disrupted global energy supplies and caused high energy prices.",
+      "The Bank of England uses interest rates to help control inflation.",
+      "Inflation means that prices for many things are rising.",
+      "If interest rates rise, borrowing money becomes more expensive.",
+      "But people with savings accounts can get more money."
+    ],
+    "vocabulary": [
+      {
+        "term": "kept",
+        "part_of_speech": "verb",
+        "definition": "did not change something; held it."
+      },
+      {
+        "term": "rates",
+        "part_of_speech": "noun",
+        "definition": "the amount of money banks charge you to borrow or pay you to save."
+      },
+      {
+        "term": "likely",
+        "part_of_speech": "adjective",
+        "definition": "probably true or going to happen."
+      },
+      {
+        "term": "energy prices",
+        "part_of_speech": "noun phrase",
+        "definition": "the cost of fuel like gas and electricity."
+      },
+      {
+        "term": "help control",
+        "part_of_speech": "verb phrase",
+        "definition": "to guide or limit something, but not always completely."
+      },
+      {
+        "term": "inflation",
+        "part_of_speech": "noun",
+        "definition": "when prices for many things go up."
+      },
+      {
+        "term": "borrowing",
+        "part_of_speech": "verb",
+        "definition": "taking money from a bank that you must pay back later."
+      },
+      {
+        "term": "savings",
+        "part_of_speech": "noun",
+        "definition": "money you keep in a bank, usually to use later."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを変えずに、そのままの状態に保ったこと。",
+      "ko": "어떤 것을 바꾸지 않고 그대로 유지한 것.",
+      "zh-Hans": "没有改变某物；保持它。",
+      "es": "No cambió algo; lo mantuvo.",
+      "pt-BR": "Não mudou algo; manteve-o."
+    },
+    {
+      "id": 1,
+      "ja": "銀行がお金を借りるときに請求する、または預金するときに支払う金額。",
+      "ko": "은행이 돈을 빌려줄 때 부과하거나 저축할 때 지불하는 금액.",
+      "zh-Hans": "银行向你收取贷款或为你存款支付的金额。",
+      "es": "La cantidad de dinero que los bancos te cobran por pedir prestado o te pagan por ahorrar.",
+      "pt-BR": "A quantia de dinheiro que os bancos cobram de você para emprestar ou pagam para você economizar."
+    },
+    {
+      "id": 2,
+      "ja": "おそらく本当である、または起こるだろうこと。",
+      "ko": "아마도 사실이거나 일어날 가능성이 있는.",
+      "zh-Hans": "可能是真的或即将发生。",
+      "es": "Que es probablemente cierto o que va a suceder.",
+      "pt-BR": "Provavelmente verdadeiro ou que vai acontecer."
+    },
+    {
+      "id": 3,
+      "ja": "ガソリンや電気のような燃料の費用。",
+      "ko": "가스나 전기와 같은 연료의 비용.",
+      "zh-Hans": "汽油和电力等燃料的成本。",
+      "es": "El costo de combustibles como el gas y la electricidad.",
+      "pt-BR": "O custo de combustíveis como gás e eletricidade."
+    },
+    {
+      "id": 4,
+      "ja": "何かを導いたり制限したりすることだが、常に完全にではない。",
+      "ko": "무언가를 안내하거나 제한하는 것, 하지만 항상 완전히는 아님.",
+      "zh-Hans": "引导或限制某物，但不一定能完全控制。",
+      "es": "Guiar o limitar algo, pero no siempre por completo.",
+      "pt-BR": "Guiar ou limitar algo, mas nem sempre completamente."
+    },
+    {
+      "id": 5,
+      "ja": "多くのものの値段が上がること。",
+      "ko": "많은 물건의 가격이 오르는 것.",
+      "zh-Hans": "许多商品价格上涨。",
+      "es": "Cuando los precios de muchas cosas suben.",
+      "pt-BR": "Quando os preços de muitas coisas sobem."
+    },
+    {
+      "id": 6,
+      "ja": "後で返済しなければならないお金を銀行から借りること。",
+      "ko": "나중에 갚아야 할 돈을 은행에서 빌리는 것.",
+      "zh-Hans": "从银行借钱，以后必须还清。",
+      "es": "Tomar dinero de un banco que debes devolver más tarde.",
+      "pt-BR": "Pegar dinheiro de um banco que você deve devolver mais tarde."
+    },
+    {
+      "id": 7,
+      "ja": "通常、後で使用するために銀行に預けておくお金。",
+      "ko": "나중에 사용하기 위해 보통 은행에 보관하는 돈.",
+      "zh-Hans": "你存放在银行的钱，通常是为了以后使用。",
+      "es": "Dinero que guardas en un banco, normalmente para usar más tarde.",
+      "pt-BR": "Dinheiro que você guarda em um banco, geralmente para usar mais tarde."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-17T15:13:32.104527+00:00"
+  }
+}

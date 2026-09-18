@@ -1,0 +1,773 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-18",
+  "release_iso": "2026-09-18T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 18 Sep 2026 14:02:09 GMT",
+    "retrieved_at": "2026-09-18T14:37:06.445551+00:00",
+    "title": "Russian hybrid attacks against Europe intensifying, says Macron",
+    "summary": "The French president says he has tasked the government with protecting critical infrastructure and defence industry sites.",
+    "evidence_text": "French President Emmanuel Macron has warned that the threat of hybrid attacks by Russia against Europe and France has intensified.\nThe French president says he has tasked the government with protecting critical infrastructure and defence industry sites.\nHe said France had been targeted by Russian hybrid attacks in the past few weeks which would not be left \"without a response\".\nA growing number of European leaders have warned that Russia may be preparing attacks to test their commitment to supporting Ukraine.\nHybrid warfare is a strategy which combines conventional military force with non-military methods such as cyberattacks, misinformation and economic pressure.\nIn a news conference at the Elysee Palace, Macron said he had ordered a plan to protect critical infrastructure and defence industry sites in the face of this threat.\nThe French president was speaking to journalists after meeting party leaders to discuss the security impact of the wars in the Middle East and Ukraine.\nMacron mentioned last month's drone attack on Leipzig airport in Germany , blamed on Russia, and remarks by Polish Prime Minister Donald Tusk suggesting Russia was planning drone and missile strikes against Poland and other countries on Nato's eastern flank.\n\"The intent is to intimidate us and break our effort to support Ukraine. The result will be the exact opposite. We are not intimidated because we know that our security today and tomorrow is at stake in Ukraine.\"\nOn Thursday Tusk told Polish MPs that Russian plans included strikes by drones and missiles on countries supporting Ukraine. He said there was a \"real risk\" of such strikes on the territory of Nato countries, with Moscow then claiming that they were \"accidental\", in an attempt to split the alliance.\nLast Sunday, a Russian drone hit a passenger train near the Ukraine-Poland border shortly after former UK Prime Minister Boris Johnson and top European security officials had passed through along the same line.\nHe also announced that France would call a meeting of the G7 to discuss energy and raise the question of gas stocks with the European Commission.\n\"In recent weeks, the Russian hybrid threat against Europeans and against France has intensified,\" he said.\nMacron also addressed the energy situation, saying that the government had been tasked with protecting critical infrastructure and the \"most sensitive\" defence industry and technology sites against drone and cyberattacks.\n\"In the coming weeks, we will have a G7 meeting devoted to these energy issues, both to strengthen cooperation and to avoid unnecessary tensions between the G7 countries and our main partners,\" Macron said.",
+    "evidence_retrieved_at": "2026-09-18T14:37:06.445551+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cm2dw1w9d3yjo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why is it important for a country to protect its \"critical infrastructure\" and \"defence industry sites\"? I think ... because ...",
+          "Imagine you hear news about potential 'hybrid attacks' in your area. What might worry people the most?"
+        ],
+        "title": "Macron Warns of Intensifying Hybrid Attacks",
+        "overview": "French President Macron says Russia's 'hybrid attacks' against Europe are increasing, and he is working to protect important sites.",
+        "topic": "European security and Russian hybrid attacks",
+        "vocabulary": [
+          {
+            "term": "intensifying",
+            "part_of_speech": "verb",
+            "definition": "Getting stronger or happening more often."
+          },
+          {
+            "term": "government",
+            "part_of_speech": "noun",
+            "definition": "The group of people who control a country or state."
+          },
+          {
+            "term": "protect",
+            "part_of_speech": "verb",
+            "definition": "To keep someone or something safe from harm."
+          },
+          {
+            "term": "critical infrastructure",
+            "part_of_speech": "noun phrase",
+            "definition": "Very important systems like roads, power, and water that a country needs."
+          },
+          {
+            "term": "targeted",
+            "part_of_speech": "verb",
+            "definition": "To aim at a specific person or place; to choose as a goal."
+          },
+          {
+            "term": "preparing",
+            "part_of_speech": "verb",
+            "definition": "Getting ready for something."
+          },
+          {
+            "term": "cyberattacks",
+            "part_of_speech": "noun",
+            "definition": "Attacks on computer systems, often to steal information or cause problems."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Simple Past)",
+          "explanation": "We use the passive voice to talk about an action when we do not know who did it, or when the action is more important than who did it. We form it with \"was\" or \"were\" + the past participle of the main verb.",
+          "example_quote": "France was targeted by these hybrid attacks in the past few weeks."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of this news story?",
+            "options": [
+              "New French government leaders.",
+              "Russia's growing attacks on Europe.",
+              "How to build new power plants."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The story is about attacks, not new leaders.",
+              "Yes, the story talks about Russia's increasing hybrid attacks.",
+              "The story mentions protecting power plants, but not building them."
+            ]
+          },
+          {
+            "question": "What has President Macron asked his government to do?",
+            "options": [
+              "To build more defence factories.",
+              "To send troops to other countries.",
+              "To protect important places."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The story says to protect existing sites, not build new ones.",
+              "The story does not mention sending troops.",
+              "Correct, Macron wants his government to protect critical infrastructure and defence sites."
+            ]
+          },
+          {
+            "question": "What does the word \"protect\" mean in this story?",
+            "options": [
+              "To open.",
+              "To keep safe.",
+              "To find."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Protect\" means to keep safe, not to open.",
+              "Yes, to \"protect\" means to keep important places safe from harm.",
+              "\"Protect\" means to keep safe, not to find something."
+            ]
+          },
+          {
+            "question": "Which country was targeted by hybrid attacks in recent weeks?",
+            "options": [
+              "Ukraine.",
+              "France.",
+              "Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Ukraine is mentioned as a reason for support, but France was specifically targeted.",
+              "Yes, the news says France was targeted by hybrid attacks recently.",
+              "Russia is mentioned as the source of the attacks, not the target in this context."
+            ]
+          },
+          {
+            "question": "Why do we say \"France was targeted\" instead of \"Someone targeted France\"?",
+            "options": [
+              "We know exactly who did it.",
+              "The action is more important than who did it.",
+              "France is the one doing the targeting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "We use the passive voice when we don't know or don't want to say who did it, or when the action is more important.",
+              "Correct. The focus is on France experiencing the attacks, not who specifically launched them.",
+              "France is the victim of the attacks, not the attacker here."
+            ]
+          },
+          {
+            "question": "What is a 'hybrid attack'?",
+            "options": [
+              "Only military actions.",
+              "Only cyberattacks and misinformation.",
+              "A mix of military and non-military methods."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Hybrid attacks use more than just military force.",
+              "While these are parts of it, hybrid attacks also include military force.",
+              "Yes, hybrid attacks combine military force with methods like cyberattacks and misinformation."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "French President Emmanuel Macron says Russian 'hybrid attacks' are intensifying against Europe.",
+          "He has asked his government to protect important places.",
+          "These important places are critical infrastructure and defence industry sites.",
+          "France was targeted by these hybrid attacks in the past few weeks.",
+          "Other European leaders also warn that Russia may be preparing attacks.",
+          "A 'hybrid attack' uses military force with non-military methods like cyberattacks.",
+          "It can also include spreading misinformation."
+        ],
+        "sentence_evidence": [
+          "French President Emmanuel Macron has warned that the threat of hybrid attacks by Russia against Europe and France has intensified.",
+          "The French president says he has tasked the government with protecting critical infrastructure and defence industry sites.",
+          "The French president says he has tasked the government with protecting critical infrastructure and defence industry sites.",
+          "He said France had been targeted by Russian hybrid attacks in the past few weeks which would not be left \"without a response\".",
+          "A growing number of European leaders have warned that Russia may be preparing attacks to test their commitment to supporting Ukraine.",
+          "Hybrid warfare is a strategy which combines conventional military force with non-military methods such as cyberattacks, misinformation and economic pressure.",
+          "Hybrid warfare is a strategy which combines conventional military force with non-military methods such as cyberattacks, misinformation and economic pressure."
+        ],
+        "editorial_check": {
+          "date": "2026-09-18T14:37:54.755499+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items are common, concrete, and useful for A1-A2 learners. Definitions are clear, use accessible language, and accurately reflect the contextual meaning. No reserved vocabulary was borrowed."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English suitable for adults. Direct verbs and explicit subjects are preferred. There is no bureaucratic phrasing, compressed headline language, idioms, sarcasm, baby talk, sensationalism, or patronizing praise."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses short clauses and familiar connectors. Reading sentences are concise (under 18 words). Grammar explanations are brief and demonstrate patterns with examples. Instructions, options, and feedback are accessible. Discussion prompts include a simple sentence frame and a hypothetical alternative to sharing personal experience."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson tests the main idea, clearly stated details, basic meaning in context, and one useful grammar pattern (passive voice). Answer choices are short and plausible, avoiding dense reasoning, double negatives, trick wording, or dependence on outside knowledge."
+            }
+          },
+          "content_digest": "86ef5199fd4ab8750ba679c77946988cddfb92d8cb0bfa0568e269a7d6a4d65a"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain in your own words what \"hybrid attacks\" are, based on the description in the news story.",
+          "If you were a leader in Europe, what actions would you take to respond to the increasing threat of hybrid attacks?"
+        ],
+        "title": "Macron Warns of Intensifying Russian Hybrid Attacks in Europe",
+        "overview": "French President Emmanuel Macron has warned that Russian hybrid attacks against European nations are increasing, prompting calls for stronger defense measures.",
+        "topic": "International Relations, European Security, Hybrid Warfare",
+        "vocabulary": [
+          {
+            "term": "affected",
+            "part_of_speech": "adjective",
+            "definition": "influenced or changed by something."
+          },
+          {
+            "term": "ordered",
+            "part_of_speech": "verb",
+            "definition": "commanded or instructed someone to do something."
+          },
+          {
+            "term": "commitment",
+            "part_of_speech": "noun",
+            "definition": "a promise or firm decision to do something."
+          },
+          {
+            "term": "impact",
+            "part_of_speech": "noun",
+            "definition": "the strong effect or influence that something has."
+          },
+          {
+            "term": "remarks",
+            "part_of_speech": "noun",
+            "definition": "comments or statements about something."
+          },
+          {
+            "term": "intimidate",
+            "part_of_speech": "verb",
+            "definition": "to make someone feel frightened or nervous so that they will do what you want."
+          },
+          {
+            "term": "at stake",
+            "part_of_speech": "idiom",
+            "definition": "at risk; in danger of being lost."
+          },
+          {
+            "term": "alliance",
+            "part_of_speech": "noun",
+            "definition": "a group of countries or organizations that have agreed to work together."
+          },
+          {
+            "term": "strategy",
+            "part_of_speech": "noun",
+            "definition": "a careful plan or method for achieving a particular goal."
+          },
+          {
+            "term": "misinformation",
+            "part_of_speech": "noun",
+            "definition": "false or inaccurate information that is spread, often unknowingly."
+          }
+        ],
+        "grammar": {
+          "concept": "Reported Speech",
+          "explanation": "Reported speech is used to tell someone what another person said without using their exact words. We often change the tense of the verb, pronouns, and time expressions in reported speech. For example, 'I am busy' becomes 'He said he was busy.' Reporting verbs like 'said,' 'stated,' 'explained,' 'warned,' or 'stressed' introduce the reported statement.",
+          "example_quote": "Macron explained that he had ordered a plan to secure essential infrastructure and defense sites."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary concern that French President Macron has raised?",
+            "options": [
+              "The decline in European gas stocks.",
+              "The increasing intensity of Russian hybrid attacks against Europe.",
+              "The need for a G7 meeting on climate change."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions gas stocks and a G7 meeting, but Macron's main concern is the hybrid attacks.",
+              "Correct. Macron has warned that Russian hybrid attacks against Europe have grown more intense.",
+              "The G7 meeting mentioned is about energy issues, not climate change specifically."
+            ]
+          },
+          {
+            "question": "According to the article, what is the purpose behind Russia's hybrid actions against Europe?",
+            "options": [
+              "To improve economic cooperation between countries.",
+              "To strengthen European security measures.",
+              "To intimidate Europeans and weaken support for Ukraine."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article states the opposite; the intent is to break efforts to support Ukraine.",
+              "The actions are meant to destabilize, not strengthen, European security.",
+              "Correct. Macron stated the intent is \"to intimidate Europeans and break their efforts to support Ukraine.\""
+            ]
+          },
+          {
+            "question": "What does the term \"commitment\" imply when European leaders are testing their \"commitment to supporting Ukraine\"?",
+            "options": [
+              "Their official agreement to sell weapons to Ukraine.",
+              "Their firm decision and promise to provide help to Ukraine.",
+              "Their temporary interest in the conflict in Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While weapons might be part of support, \"commitment\" refers to the promise to help, not specifically selling weapons.",
+              "Correct. \"Commitment\" means a strong promise or firm decision to do something, like providing support.",
+              "The context suggests a serious and ongoing promise, not just temporary interest."
+            ]
+          },
+          {
+            "question": "If President Macron's original direct words were \"I ordered a plan to secure essential infrastructure,\" how would this be reported?",
+            "options": [
+              "Macron explained that he orders a plan to secure essential infrastructure.",
+              "Macron explained that he has ordered a plan to secure essential infrastructure.",
+              "Macron explained that he had ordered a plan to secure essential infrastructure."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "When reporting past direct speech, the tense usually shifts back, so \"orders\" (present) is incorrect.",
+              "The present perfect \"has ordered\" is still too close to the original past simple; a past perfect \"had ordered\" is needed for the shift.",
+              "Correct. In reported speech, \"I ordered\" (past simple) usually becomes \"he had ordered\" (past perfect)."
+            ]
+          },
+          {
+            "question": "What warning did Polish Prime Minister Donald Tusk issue regarding NATO territory?",
+            "options": [
+              "That NATO countries might accidentally launch missiles.",
+              "That there is a serious risk of drone and missile strikes.",
+              "That Russia plans to split the alliance using economic pressure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "He warned of strikes on NATO territory, not that NATO countries would launch them.",
+              "Correct. Tusk highlighted a \"real risk\" of drone and missile strikes on NATO territory.",
+              "While splitting the alliance is a goal, the warning was specifically about drone and missile strikes, with the claim of \"accidental\" as a tactic."
+            ]
+          },
+          {
+            "question": "The article states \"European security is at stake in Ukraine.\" What does \"at stake\" mean in this sentence?",
+            "options": [
+              "European security is being debated in Ukraine.",
+              "European security is a priority for Ukraine.",
+              "European security is at risk or in danger of being lost."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"At stake\" implies danger, not just discussion or debate.",
+              "While it might be a priority, the phrase \"at stake\" specifically means it's in danger.",
+              "Correct. If something is \"at stake,\" it is in danger of being lost or negatively affected."
+            ]
+          },
+          {
+            "question": "Which non-military method is explicitly mentioned as part of hybrid warfare in the article?",
+            "options": [
+              "Conventional military force.",
+              "Misinformation.",
+              "Direct ground invasions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Conventional military force is mentioned as combined with non-military methods, not a non-military method itself.",
+              "Correct. The article states hybrid warfare combines military force with \"non-military methods like misinformation and economic pressure.\"",
+              "Direct ground invasions are a form of conventional military force, not a non-military method."
+            ]
+          },
+          {
+            "question": "Why might Russia claim that potential strikes on NATO territory were \"accidental,\" according to the article?",
+            "options": [
+              "To avoid starting a full-scale war.",
+              "To test NATO's rapid response capabilities.",
+              "To attempt to divide the NATO alliance."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article indicates the claim of \"accidental\" is a tactic to split the alliance, not necessarily to avoid war altogether.",
+              "While testing capabilities might be a side effect, the stated intent is to split the alliance.",
+              "Correct. The article says Moscow might claim strikes were \"accidental\" \"in an attempt to split the alliance.\""
+            ]
+          },
+          {
+            "question": "Which word best describes Macron's action when he \"addressed the energy situation\"?",
+            "options": [
+              "He ignored it completely.",
+              "He dealt with or gave attention to it.",
+              "He personally solved all energy problems."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To \"address\" a situation means to give it attention, not ignore it.",
+              "Correct. To \"address\" an issue means to deal with it or give it consideration.",
+              "While he addressed it, the article does not say he personally solved all problems. He called a meeting."
+            ]
+          },
+          {
+            "question": "What is a \"strategy\" in the context of hybrid warfare?",
+            "options": [
+              "A random unplanned event.",
+              "A careful plan for achieving a goal.",
+              "A quick military action."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A strategy is a deliberate plan, not a random event.",
+              "Correct. A \"strategy\" is a careful plan or method for achieving a particular goal.",
+              "While it might involve military action, the core meaning of \"strategy\" is about the plan, not just a quick action."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "French President Emmanuel Macron has warned that Russia's hybrid attacks against Europe have grown more intense.",
+          "He stated that France has been affected by these attacks in recent weeks.",
+          "Macron explained that he had ordered a plan to secure essential infrastructure and defense sites.",
+          "A growing number of European leaders believe Russia may be testing their commitment to supporting Ukraine.",
+          "The French president recently discussed the security impact of conflicts in the Middle East and Ukraine with party leaders.",
+          "He mentioned remarks by Polish Prime Minister Donald Tusk suggesting Russia was planning drone and missile strikes against countries on Nato's eastern flank.",
+          "Macron stated that the intent behind these actions is to intimidate Europeans and break their efforts to support Ukraine.",
+          "He stressed that France would not be intimidated because European security is at stake in Ukraine.",
+          "Prime Minister Tusk said there was a \"real risk\" of such strikes on Nato territory, which Moscow might claim were \"accidental\" to split the alliance.",
+          "Last Sunday, a Russian drone hit a passenger train near the Ukraine-Poland border, shortly after European security officials had passed through.",
+          "Hybrid warfare is a strategy combining military force with non-military methods like misinformation and economic pressure.",
+          "Macron also addressed the energy situation, announcing a G7 meeting to discuss energy issues and raise the question of gas stocks."
+        ],
+        "sentence_evidence": [
+          "French President Emmanuel Macron has warned that the threat of hybrid attacks by Russia against Europe and France has intensified.",
+          "He said France had been targeted by Russian hybrid attacks in the past few weeks which would not be left \"without a response\".",
+          "In a news conference at the Elysee Palace, Macron said he had ordered a plan to protect critical infrastructure and defence industry sites in the face of this threat.",
+          "A growing number of European leaders have warned that Russia may be preparing attacks to test their commitment to supporting Ukraine.",
+          "The French president was speaking to journalists after meeting party leaders to discuss the security impact of the wars in the Middle East and Ukraine.",
+          "Macron mentioned last month's drone attack on Leipzig airport in Germany , blamed on Russia, and remarks by Polish Prime Minister Donald Tusk suggesting Russia was planning drone and missile strikes against Poland and other countries on Nato's eastern flank.",
+          "\"The intent is to intimidate us and break our effort to support Ukraine. The result will be the exact opposite. We are not intimidated because we know that our security today and tomorrow is at stake in Ukraine.\"",
+          "\"The intent is to intimidate us and break our effort to support Ukraine. The result will be the exact opposite. We are not intimidated because we know that our security today and tomorrow is at stake in Ukraine.\"",
+          "On Thursday Tusk told Polish MPs that Russian plans included strikes by drones and missiles on countries supporting Ukraine. He said there was a \"real risk\" of such strikes on the territory of Nato countries, with Moscow then claiming that they were \"accidental\", in an attempt to split the alliance.",
+          "Last Sunday, a Russian drone hit a passenger train near the Ukraine-Poland border shortly after former UK Prime Minister Boris Johnson and top European security officials had passed through along the same line.",
+          "Hybrid warfare is a strategy which combines conventional military force with non-military methods such as cyberattacks, misinformation and economic pressure.",
+          "He also announced that France would call a meeting of the G7 to discuss energy and raise the question of gas stocks with the European Commission."
+        ],
+        "editorial_check": {
+          "date": "2026-09-18T14:38:52.732522+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets are useful general news terms ("
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a natural, neutral news English register across all learner-facing content, including definitions, questions, and feedback. There are no unexplained shifts in tone, slang, or overly academic language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses clear and manageable sentences. Pronoun references are clear, and cause/contrast/result links are effectively used. Grammar explanations are in everyday language with precise examples. Definitions, questions, and feedback are clear, making the instructions easy to understand for the target level."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively combines reading comprehension, contextual vocabulary, and grammar transfer. Questions require understanding relationships between details and applying grammar in a new situation, providing appropriate challenge beyond simple recall for the B1-B2 level. Supported inferences are well-signaled."
+            }
+          },
+          "content_digest": "9c7a3ba6dd7741676434e76844a34d5649c39d2a68bddf07b904ce2f56f42696"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain what 'hybrid warfare' entails, according to the article, and why it is considered a significant threat.",
+          "What strategies do you think countries could employ to counteract hybrid attacks, both technologically and diplomatically?"
+        ],
+        "title": "Macron Warns of Escalating Russian Hybrid Attacks in Europe",
+        "overview": "French President Emmanuel Macron has issued a stark warning about the escalating nature of Russian hybrid attacks targeting Europe, prompting France to bolster its national security measures and seek international cooperation.",
+        "topic": "International Relations, European Security, Hybrid Warfare",
+        "vocabulary": [
+          {
+            "term": "grown more acute",
+            "part_of_speech": "verb phrase",
+            "definition": "become more serious or severe, often implying a heightened sense of urgency or danger."
+          },
+          {
+            "term": "experienced",
+            "part_of_speech": "verb",
+            "definition": "undergone or lived through an event or situation, particularly one that is notable or impactful."
+          },
+          {
+            "term": "affirmed",
+            "part_of_speech": "verb",
+            "definition": "stated something as true or valid with conviction, certainty, or solemn declaration."
+          },
+          {
+            "term": "reiterated",
+            "part_of_speech": "verb",
+            "definition": "said something again or repeatedly, typically for emphasis, clarification, or to confirm a previous statement."
+          },
+          {
+            "term": "escalated",
+            "part_of_speech": "verb",
+            "definition": "increased rapidly in intensity, magnitude, or severity, indicating a worsening situation or conflict."
+          },
+          {
+            "term": "intrinsically linked",
+            "part_of_speech": "adverbial phrase",
+            "definition": "connected in a fundamental, essential, or inherent way; forming an inseparable or integral bond."
+          },
+          {
+            "term": "dismissing",
+            "part_of_speech": "verb, present participle",
+            "definition": "treating something as unworthy of serious consideration or regard; rejecting or disregarding it without further thought."
+          },
+          {
+            "term": "bolster",
+            "part_of_speech": "verb",
+            "definition": "to support, strengthen, or improve something, often by providing additional resources or reinforcement."
+          },
+          {
+            "term": "vital national assets",
+            "part_of_speech": "noun phrase",
+            "definition": "essential resources, systems, or facilities crucial for a nation's functioning, security, and the well-being of its population."
+          },
+          {
+            "term": "encompasses",
+            "part_of_speech": "verb",
+            "definition": "includes or contains something comprehensively within its scope; to surround or cover completely."
+          },
+          {
+            "term": "splinter",
+            "part_of_speech": "verb",
+            "definition": "to cause a group, organization, or alliance to break or divide into smaller, often opposing, factions or fragments."
+          },
+          {
+            "term": "convene",
+            "part_of_speech": "verb",
+            "definition": "to call people together for a formal meeting, conference, or assembly."
+          }
+        ],
+        "grammar": {
+          "concept": "Participial Clauses for Result or Manner",
+          "explanation": "Participial clauses, often introduced by \"thereby,\" \"thus,\" or simply used with a comma, can describe the result or manner of the action in the main clause. They provide additional information, showing a consequence or how something is done, making sentences more concise and sophisticated. The participle (present or past) functions adverbially, linking the action to its effect.",
+          "example_quote": "The president emphasized that Europe's security is intrinsically linked to the situation in Ukraine, thereby dismissing any notion of intimidation."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary concern raised by French President Emmanuel Macron regarding Russia's actions against Europe?",
+            "options": [
+              "Russia's increasing economic sanctions against European businesses.",
+              "The intensification of Russian hybrid attacks targeting European nations.",
+              "Russia's deployment of conventional military forces to the Ukrainian border."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not the primary concern highlighted by Macron in the article.",
+              "Correct. Macron specifically warned about the escalated threat of Russian hybrid attacks.",
+              "The article focuses on hybrid warfare, not conventional military deployment at the border."
+            ]
+          },
+          {
+            "question": "Which statement best encapsulates Macron's view on Europe's response to Russia's perceived intimidation tactics?",
+            "options": [
+              "Europe should consider withdrawing support for Ukraine to de-escalate tensions.",
+              "Russia's attempts at intimidation will fail and reinforce Europe's resolve to support Ukraine.",
+              "European nations should immediately seek direct military confrontation with Russia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Macron explicitly stated that Europe's security is linked to Ukraine, making withdrawal of support unlikely.",
+              "Correct. Macron asserted that Russia's actions would achieve \"the opposite effect\" and that Europe is \"not intimidated.\"",
+              "The article focuses on hybrid threats and diplomatic responses, not an immediate call for direct military confrontation."
+            ]
+          },
+          {
+            "question": "Beyond general hybrid attacks, what specific measures did Macron announce France would implement?",
+            "options": [
+              "Increased surveillance of Russian diplomatic missions within France.",
+              "A plan to bolster the security of vital national assets and defence industry sites.",
+              "Sanctions targeting specific Russian individuals involved in hybrid warfare."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Increased surveillance of diplomatic missions is not mentioned in the article as a specific measure.",
+              "Correct. Macron announced a directive to enhance the security for France's vital national assets and sensitive defence industry sites.",
+              "The article does not mention new sanctions against individuals as part of Macron's announced measures."
+            ]
+          },
+          {
+            "question": "According to the article, what is one reported example of a Russian hybrid attack mentioned by Macron?",
+            "options": [
+              "A large-scale disinformation campaign affecting French elections.",
+              "A drone attack on Leipzig airport in Germany.",
+              "An attempt to disrupt France's financial markets."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While disinformation is a hybrid tactic, this specific campaign is not cited as an example by Macron in the text.",
+              "Correct. Macron referenced the drone attack on Leipzig airport, which was reportedly blamed on Russia.",
+              "No such disruption to France's financial markets was specifically mentioned in the provided text."
+            ]
+          },
+          {
+            "question": "What was Polish Prime Minister Donald Tusk's specific concern regarding potential Russian actions?",
+            "options": [
+              "That Russia would launch a full-scale invasion of Poland.",
+              "That Russia might stage \"accidental\" drone and missile strikes on Nato territory to splinter the alliance.",
+              "That Russia would impose trade embargos on countries supporting Ukraine."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Tusk's concern was about specific strikes aimed at division, not a full-scale invasion.",
+              "Correct. Tusk explicitly warned of 'accidental' drone and missile strikes on Nato territory to splinter the alliance.",
+              "The article does not mention trade embargos as Tusk's specific concern."
+            ]
+          },
+          {
+            "question": "In the sentence, \"The president emphasized that Europe's security is intrinsically linked to the situation in Ukraine...\", what does \"intrinsically linked\" most closely mean?",
+            "options": [
+              "Coincidentally connected.",
+              "Fundamentally or essentially connected.",
+              "Superficially associated."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Coincidentally\" suggests a chance connection, not a fundamental one.",
+              "Correct. \"Intrinsically linked\" means being connected in a fundamental, essential, or inherent way.",
+              "\"Superficially\" implies a shallow or surface-level association, which is the opposite of the intended meaning."
+            ]
+          },
+          {
+            "question": "When the article states that Macron's actions aim to \"bolster\" the security of vital national assets, what is the intended meaning of \"bolster\"?",
+            "options": [
+              "To reduce or weaken.",
+              "To question or challenge.",
+              "To support or strengthen."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Bolster\" means to strengthen, so \"reduce\" or \"weaken\" are incorrect.",
+              "To \"question\" or \"challenge\" refers to scrutiny, not the act of strengthening security.",
+              "Correct. \"Bolster\" means to strengthen or support, indicating an improvement in security."
+            ]
+          },
+          {
+            "question": "What does the verb \"escalated\" imply when Macron stated the hybrid threat had \"notably escalated\"?",
+            "options": [
+              "The threat has lessened in severity.",
+              "The threat has increased rapidly in intensity or magnitude.",
+              "The threat has been acknowledged publicly for the first time."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Lessened\" is the opposite of \"escalated\"; the threat has become more severe.",
+              "Correct. \"Escalated\" means to increase rapidly in intensity or magnitude, indicating a worsening situation.",
+              "\"Escalated\" refers to the intensity of the threat, not necessarily the timing of its public acknowledgment."
+            ]
+          },
+          {
+            "question": "In the context of hybrid warfare, if an alliance were to \"splinter\", what would be the most likely outcome?",
+            "options": [
+              "It would unify more strongly against a common threat.",
+              "It would break into smaller, opposing factions.",
+              "It would expand its membership to include new countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Unify more strongly\" is the opposite of splintering; splintering implies division.",
+              "Correct. To \"splinter\" means to break or divide into smaller, often opposing, fragments or factions, weakening the overall unity.",
+              "\"Expand its membership\" refers to growth, not division or breaking apart."
+            ]
+          },
+          {
+            "question": "Which of the following sentences correctly uses a participial clause to express a result or manner, similar to the example \"thereby dismissing any notion of intimidation\"?",
+            "options": [
+              "The committee discussed the proposal, yet they ultimately rejected it.",
+              "The committee discussed the proposal, thereby rejecting it unanimously.",
+              "The committee discussed the proposal and it was rejected unanimously."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses a conjunction (\"yet\") to connect two independent clauses, not a participial clause.",
+              "Correct. The participial clause \"thereby rejecting it unanimously\" uses \"thereby\" to clearly indicate the result of the main action.",
+              "This sentence uses a coordinating conjunction (\"and\") to link two simple clauses, not a participial clause to show result or manner."
+            ]
+          },
+          {
+            "question": "Considering the grammar point, what does the participial phrase \"asserting that such actions would achieve the opposite effect\" convey in the sentence \"He stated Russia's intent was to intimidate and disrupt efforts to support Ukraine, asserting that such actions would achieve the opposite effect\"?",
+            "options": [
+              "It provides a contrasting viewpoint to the main clause.",
+              "It describes the manner in which he stated Russia's intent or the result of his statement.",
+              "It introduces a new, unrelated piece of information."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The participial phrase elaborates on his statement rather than providing a contrasting viewpoint.",
+              "Correct. The participial clause \"asserting that...\" explains how he countered Russia's intent or provides a further clarification that results from his statement.",
+              "The information in the participial phrase is directly related to and elaborates on the preceding statement."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "French President Emmanuel Macron has warned that the threat of hybrid attacks by Russia against Europe and France has grown more acute.",
+          "He revealed that France had recently experienced Russian hybrid attacks and affirmed that these would not go \"without a response\".",
+          "Macron reiterated that the Russian hybrid threat against Europeans and France had notably escalated in recent weeks.",
+          "He stated Russia's intent was to intimidate and disrupt efforts to support Ukraine, asserting that such actions would achieve the opposite effect.",
+          "The president emphasized that Europe's security is intrinsically linked to the situation in Ukraine, thereby dismissing any notion of intimidation.",
+          "He announced a directive for a plan to bolster the security of France's vital national assets and sensitive defence industry sites.",
+          "This security measure specifically addresses threats from drone and cyberattacks, alongside other non-military methods.",
+          "Hybrid warfare encompasses a broad strategy combining conventional military force with non-military tactics, including cyberattacks, misinformation, and economic pressure.",
+          "Macron referenced a drone attack on Leipzig airport, reportedly blamed on Russia, and Polish Prime Minister Donald Tusk's concerns about potential Russian strikes against Nato's eastern flank.",
+          "Tusk explicitly warned Polish MPs of a \"real risk\" of drone and missile strikes on Nato territory, which Moscow might falsely attribute to accidental causes to splinter the alliance.",
+          "Furthermore, Macron announced France would convene a G7 meeting to address energy issues and discuss gas stocks with the European Commission.",
+          "The G7 discussion aims to strengthen cooperation among member nations and prevent unnecessary tensions while also considering options for unlocking strategic energy reserves."
+        ],
+        "sentence_evidence": [
+          "French President Emmanuel Macron has warned that the threat of hybrid attacks by Russia against Europe and France has intensified.",
+          "He said France had been targeted by Russian hybrid attacks in the past few weeks which would not be left \"without a response\".",
+          "\"In recent weeks, the Russian hybrid threat against Europeans and against France has intensified,\" he said.",
+          "\"The intent is to intimidate us and break our effort to support Ukraine. The result will be the exact opposite. We are not intimidated because we know that our security today and tomorrow is at stake in Ukraine.\"",
+          "\"The intent is to intimidate us and break our effort to support Ukraine. The result will be the exact opposite. We are not intimidated because we know that our security today and tomorrow is at stake in Ukraine.\"",
+          "In a news conference at the Elysee Palace, Macron said he had ordered a plan to protect critical infrastructure and defence industry sites in the face of this threat.",
+          "Macron also addressed the energy situation, saying that the government had been tasked with protecting critical infrastructure and the \"most sensitive\" defence industry and technology sites against drone and cyberattacks.",
+          "Hybrid warfare is a strategy which combines conventional military force with non-military methods such as cyberattacks, misinformation and economic pressure.",
+          "Macron mentioned last month's drone attack on Leipzig airport in Germany , blamed on Russia, and remarks by Polish Prime Minister Donald Tusk suggesting Russia was planning drone and missile strikes against Poland and other countries on Nato's eastern flank.",
+          "On Thursday Tusk told Polish MPs that Russian plans included strikes by drones and missiles on countries supporting Ukraine. He said there was a \"real risk\" of such strikes on the territory of Nato countries, with Moscow then claiming that they were \"accidental\", in an attempt to split the alliance.",
+          "He also announced that France would call a meeting of the G7 to discuss energy and raise the question of gas stocks with the European Commission.",
+          "\"In the coming weeks, we will have a G7 meeting devoted to these energy issues, both to strengthen cooperation and to avoid unnecessary tensions between the G7 countries and our main partners,\" Macron said."
+        ],
+        "editorial_check": {
+          "date": "2026-09-18T14:40:36.255386+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selection targets precise and transferable terms such as 'intrinsically linked', 'bolster', and 'splinter', offering clear contextual definitions suitable for C1+ learners without borrowing from reserved lists."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished and natural reporting register throughout, with appropriate formality and accurate attribution, aligning well with C1+ expectations for news analysis."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses controlled complex sentences and cohesive arguments in explanations. Definitions are concise and illuminating, providing clear rationale for quiz answers appropriate for C1+ learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson encourages supported inference and understanding of nuanced language, particularly in vocabulary and grammar questions. Distractors are plausible, promoting substantive learning beyond simple factual recall for C1+."
+            }
+          },
+          "content_digest": "ffa29b60ca943150be878571690ece32e224b3b977f680eb77f6ffa71b6bfae1"
+        }
+      }
+    }
+  }
+}

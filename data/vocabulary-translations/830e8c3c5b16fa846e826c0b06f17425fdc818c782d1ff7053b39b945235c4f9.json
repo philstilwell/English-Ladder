@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "French President Emmanuel Macron says Russian 'hybrid attacks' are intensifying against Europe.",
+      "He has asked his government to protect important places.",
+      "These important places are critical infrastructure and defence industry sites.",
+      "France was targeted by these hybrid attacks in the past few weeks.",
+      "Other European leaders also warn that Russia may be preparing attacks.",
+      "A 'hybrid attack' uses military force with non-military methods like cyberattacks.",
+      "It can also include spreading misinformation."
+    ],
+    "vocabulary": [
+      {
+        "term": "intensifying",
+        "part_of_speech": "verb",
+        "definition": "Getting stronger or happening more often."
+      },
+      {
+        "term": "government",
+        "part_of_speech": "noun",
+        "definition": "The group of people who control a country or state."
+      },
+      {
+        "term": "protect",
+        "part_of_speech": "verb",
+        "definition": "To keep someone or something safe from harm."
+      },
+      {
+        "term": "critical infrastructure",
+        "part_of_speech": "noun phrase",
+        "definition": "Very important systems like roads, power, and water that a country needs."
+      },
+      {
+        "term": "targeted",
+        "part_of_speech": "verb",
+        "definition": "To aim at a specific person or place; to choose as a goal."
+      },
+      {
+        "term": "preparing",
+        "part_of_speech": "verb",
+        "definition": "Getting ready for something."
+      },
+      {
+        "term": "cyberattacks",
+        "part_of_speech": "noun",
+        "definition": "Attacks on computer systems, often to steal information or cause problems."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "より強くなること、またはより頻繁に起こること。",
+      "ko": "더 강해지거나 더 자주 발생하는 것.",
+      "zh-Hans": "变得更强或更频繁地发生。",
+      "es": "Volverse más fuerte o suceder con más frecuencia.",
+      "pt-BR": "Ficar mais forte ou acontecer com mais frequência."
+    },
+    {
+      "id": 1,
+      "ja": "国や州を統治する人々のグループ。",
+      "ko": "한 나라나 주를 통치하는 사람들의 집단.",
+      "zh-Hans": "掌控一个国家或州的一群人。",
+      "es": "El grupo de personas que controla un país o estado.",
+      "pt-BR": "O grupo de pessoas que controla um país ou estado."
+    },
+    {
+      "id": 2,
+      "ja": "誰かや何かを危害から安全に保つこと。",
+      "ko": "누군가 또는 무언가를 해로부터 안전하게 지키는 것.",
+      "zh-Hans": "使某人或某物免受伤害，保持安全。",
+      "es": "Mantener a alguien o algo a salvo de daño.",
+      "pt-BR": "Manter alguém ou algo seguro e livre de danos."
+    },
+    {
+      "id": 3,
+      "ja": "道路、電力、水など、国が必要とする非常に重要なシステム。",
+      "ko": "도로, 전력, 물과 같이 한 나라가 필요로 하는 매우 중요한 시스템.",
+      "zh-Hans": "一个国家所需的路网、电力、水等非常重要的系统。",
+      "es": "Sistemas muy importantes que un país necesita, como carreteras, electricidad y agua.",
+      "pt-BR": "Sistemas muito importantes que um país necessita, como estradas, energia e água."
+    },
+    {
+      "id": 4,
+      "ja": "特定の人物や場所を狙うこと。目標として選ぶこと。",
+      "ko": "특정한 사람이나 장소를 겨냥하는 것; 목표로 삼는 것.",
+      "zh-Hans": "将某特定的人或地点作为目标；选定为目的。",
+      "es": "Apuntar a una persona o lugar específico; elegir como objetivo.",
+      "pt-BR": "Mirar em uma pessoa ou lugar específico; escolher como um objetivo."
+    },
+    {
+      "id": 5,
+      "ja": "何かの準備をすること。",
+      "ko": "무언가를 위해 준비하는 것.",
+      "zh-Hans": "为某事做准备。",
+      "es": "Hacer los preparativos para algo.",
+      "pt-BR": "Fazer os preparativos para algo."
+    },
+    {
+      "id": 6,
+      "ja": "情報窃盗や問題発生を目的とした、コンピューターシステムへの攻撃。",
+      "ko": "정보를 훔치거나 문제를 일으키기 위해 컴퓨터 시스템을 공격하는 행위.",
+      "zh-Hans": "对计算机系统的攻击，通常是为了窃取信息或制造麻烦。",
+      "es": "Ataques a sistemas informáticos, a menudo para robar información o causar problemas.",
+      "pt-BR": "Ataques a sistemas de computador, geralmente para roubar informações ou causar problemas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-18T14:42:22.992195+00:00"
+  }
+}

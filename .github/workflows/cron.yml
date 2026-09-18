@@ -314,5 +314,7 @@ jobs:
         run: |
           node cloudflare/build.cjs
           python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev
+          # Check the student-facing route before the exhaustive preview crawl so
+          # Cloudflare does not mistake two immediate full-site crawls for abuse.
+          node cloudflare/verify.cjs --route-only https://englishladder.com
           node cloudflare/verify.cjs https://englishladder.philstilwell.workers.dev
-          node cloudflare/verify.cjs https://englishladder.com

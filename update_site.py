@@ -185,10 +185,13 @@ def select_news_entry(entries, recent_links=()):
     return min(candidates, key=lambda item: item[:2])[2] if candidates else None
 
 
-def get_daily_news(release_dt=None):
+def get_daily_news(release_dt=None, excluded_links=()):
     release_dt = release_dt or datetime.now(timezone.utc)
     category = NEWS_WEEK[release_dt.weekday()]
-    recent_links = set()
+    recent_links = {
+        normalize_text(link) for link in (excluded_links or ())
+        if isinstance(link, str) and normalize_text(link)
+    }
     for archive in sorted(ARCHIVE_DIR.glob("*.json"), reverse=True)[:LESSON_LIMIT]:
         try:
             recent_links.add(json.loads(archive.read_text())["source"]["link"])

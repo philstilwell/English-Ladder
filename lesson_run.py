@@ -7,6 +7,7 @@ from pathlib import Path
 from lesson_checkpoint import CheckpointStore
 
 ROOT = Path(__file__).resolve().parent
+MAX_SOURCE_ARTICLES_PER_RUN = 3
 
 
 def generation_policy_fingerprint():
@@ -41,6 +42,41 @@ def reusable_lesson(lesson, source, level):
         return False
 
 
+def source_link(source):
+    if isinstance(source, dict) and isinstance(source.get('link'), str):
+        return source['link'].strip()
+    return ''
+
+
+def saved_source_is_complete(source):
+    return isinstance(source, dict) and all(
+        isinstance(source.get(k), str) and source[k].strip()
+        for k in ('title', 'summary', 'link', 'evidence_text')
+    )
+
+
+def exhausted_draft_keys(drafts, max_attempts):
+    """Draft-limit checkpoints need a new article, but review checkpoints can resume."""
+    if not isinstance(drafts, dict):
+        return []
+    exhausted = []
+    for key, state in drafts.items():
+        if not isinstance(key, str) or not isinstance(state, dict):
+            continue
+        if state.get('phase') == 'review':
+            continue
+        attempts = state.get('attempts')
+        if type(attempts) is int and attempts >= max_attempts:
+            exhausted.append(key)
+    return sorted(exhausted)
+
+
+def source_can_be_retried_with_another_article(error):
+    message = str(error)
+    return (message.startswith('Could not generate a valid ')
+            or ' reached its daily limit of ' in message)
+
+
 def generate_daily_lessons(release_dt):
     """Save source, successful levels and each unfinished attempt outside the site."""
     import update_site as u
@@ -48,54 +84,89 @@ def generate_daily_lessons(release_dt):
                             u.lesson_key_from_release_dt(release_dt), generation_policy_fingerprint())
     saved = store.load() or {}
     source = saved.get('source')
-    if not isinstance(source, dict) or not all(isinstance(source.get(k), str) and source[k].strip()
-                                              for k in ('title', 'summary', 'link', 'evidence_text')):
+    excluded_links = set()
+
+    def fetch_news():
         print('Fetching news for the new daily edition...')
-        source = u.get_daily_news(release_dt)
+        if excluded_links:
+            return u.get_daily_news(release_dt, excluded_links=excluded_links)
+        return u.get_daily_news(release_dt)
+
+    if saved_source_is_complete(source):
+        exhausted = exhausted_draft_keys(saved.get('drafts', {}), u.MAX_DAILY_GENERATION_ATTEMPTS)
+        if exhausted:
+            link = source_link(source)
+            if link:
+                excluded_links.add(link)
+            print(f"Saved {', '.join(exhausted)} draft reached the daily retry limit; "
+                  "choosing a fresh source article.")
+            source = fetch_news()
+            saved = {}
+        elif saved:
+            print('Resuming the saved source and checked progress for this date.')
+    else:
+        source = fetch_news()
         saved = {}
-    elif saved:
-        print('Resuming the saved source and checked progress for this date.')
-    previous = saved.get('levels', {})
-    drafts = copy.deepcopy(saved.get('drafts', {}))
-    completed = {}
-    reserved = []
-    client = None
 
-    def persist():
-        # Keep later completed levels until they have also been revalidated in order.
-        store.save(source, {**previous, **completed}, drafts)
+    attempted_sources = 1
 
-    persist()  # Keep the source before any paid generation request.
-    try:
-        for base in u.LEVELS:
-            key = base['name'].lower()
-            level = dict(base, reserved_vocabulary=list(reserved))
-            candidate = previous.get(key)
-            if reusable_lesson(candidate, source, level):
-                lesson = copy.deepcopy(candidate)
-                print(f'Reused the approved {key} lesson after checking its content and vocabulary reservations.')
-            else:
-                if key in previous:
-                    del previous[key]
-                    drafts.pop(key, None)
-                if client is None:
-                    client = u.configure_gemini()
+    while True:
+        previous = saved.get('levels', {})
+        drafts = copy.deepcopy(saved.get('drafts', {}))
+        completed = {}
+        reserved = []
+        client = None
 
-                def checkpoint(state, key=key):
-                    drafts[key] = copy.deepcopy(state)
-                    persist()
+        def persist():
+            # Keep later completed levels until they have also been revalidated in order.
+            store.save(source, {**previous, **completed}, drafts)
 
-                print(f'Generating or repairing the {key} lesson...')
-                lesson, _ = u.generate_lesson(client, source, level, release_dt,
-                                               initial_state=drafts.get(key), checkpoint=checkpoint)
-            completed[key] = lesson
-            drafts.pop(key, None)
-            reserved.extend({'term': item['term'], 'level': base['name']} for item in lesson['vocabulary'])
-            persist()
-        issues = u.validate_edition_vocabulary(completed)
-        if issues:
-            raise ValueError('Daily vocabulary lists overlap: ' + '; '.join(issues))
-        return source, completed
-    finally:
-        if client is not None and hasattr(client, 'close'):
-            client.close()
+        try:
+            persist()  # Keep the source before any paid generation request.
+            for base in u.LEVELS:
+                key = base['name'].lower()
+                level = dict(base, reserved_vocabulary=list(reserved))
+                candidate = previous.get(key)
+                if reusable_lesson(candidate, source, level):
+                    lesson = copy.deepcopy(candidate)
+                    print(f'Reused the approved {key} lesson after checking its content and vocabulary reservations.')
+                else:
+                    if key in previous:
+                        del previous[key]
+                        drafts.pop(key, None)
+                    if client is None:
+                        client = u.configure_gemini()
+
+                    def checkpoint(state, key=key):
+                        drafts[key] = copy.deepcopy(state)
+                        persist()
+
+                    print(f'Generating or repairing the {key} lesson...')
+                    lesson, _ = u.generate_lesson(client, source, level, release_dt,
+                                                   initial_state=drafts.get(key), checkpoint=checkpoint)
+                completed[key] = lesson
+                drafts.pop(key, None)
+                reserved.extend({'term': item['term'], 'level': base['name']} for item in lesson['vocabulary'])
+                persist()
+            issues = u.validate_edition_vocabulary(completed)
+            if issues:
+                raise ValueError('Daily vocabulary lists overlap: ' + '; '.join(issues))
+            return source, completed
+        except RuntimeError as error:
+            if not source_can_be_retried_with_another_article(error):
+                raise
+            link = source_link(source)
+            if link:
+                excluded_links.add(link)
+            if attempted_sources >= MAX_SOURCE_ARTICLES_PER_RUN:
+                raise RuntimeError(
+                    f"Could not complete the daily edition after trying {attempted_sources} "
+                    f"source articles. Last error: {error}"
+                ) from error
+            print('This source article could not produce a valid full edition; trying another article.')
+            source = fetch_news()
+            saved = {}
+            attempted_sources += 1
+        finally:
+            if client is not None and hasattr(client, 'close'):
+                client.close()

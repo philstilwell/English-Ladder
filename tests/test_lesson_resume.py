@@ -7,7 +7,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, call, patch
 from contextlib import redirect_stdout
 
 import lesson_run
@@ -78,6 +78,11 @@ class LessonResumeTests(unittest.TestCase):
 
         return SimpleNamespace(models=SimpleNamespace(generate_content=generate)), calls
 
+    def fresh_source(self):
+        return dict(self.source, title='Fresh source article',
+                    summary='A different article that can support a complete edition.',
+                    link=self.source['link'] + '?fresh')
+
     def test_next_run_keeps_source_and_approved_levels_and_resumes_the_current_draft(self):
         unfinished = copy.deepcopy(self.lessons['intermediate'])
         unfinished['vocabulary'].pop()
@@ -137,6 +142,77 @@ class LessonResumeTests(unittest.TestCase):
         self.assertEqual({'beginner', 'intermediate', 'advanced'}, set(lessons))
         self.assertEqual({}, self.store.load()['drafts'])
         self.assertEqual(lessons, self.store.load()['levels'])
+
+    def test_saved_draft_at_daily_limit_fetches_a_new_source(self):
+        exhausted = {'lesson': copy.deepcopy(self.lessons['advanced']),
+                     'attempts': u.MAX_DAILY_GENERATION_ATTEMPTS,
+                     'phase': 'draft',
+                     'issues': ['The saved article is unsuitable.'],
+                     'repaired_sections': []}
+        self.store.save(self.source, {
+            'beginner': self.approved('beginner'),
+            'intermediate': self.approved('intermediate'),
+        }, {'advanced': exhausted})
+        fresh = self.fresh_source()
+        client = SimpleNamespace(close=Mock())
+        generated = []
+
+        def generate(client, source, level, date, *, initial_state, checkpoint):
+            name = level['name'].lower()
+            generated.append(name)
+            self.assertEqual(fresh, source)
+            self.assertIsNone(initial_state)
+            return self.approved(name, source=fresh, level=level), '<lesson>'
+
+        with patch.object(u, 'get_daily_news', return_value=fresh) as fetch, \
+                patch.object(u, 'configure_gemini', return_value=client), \
+                patch.object(u, 'generate_lesson', side_effect=generate):
+            source, lessons = lesson_run.generate_daily_lessons(self.date)
+
+        fetch.assert_called_once_with(self.date, excluded_links={self.source['link']})
+        client.close.assert_called_once()
+        self.assertEqual(fresh, source)
+        self.assertEqual(['beginner', 'intermediate', 'advanced'], generated)
+        saved = self.store.load()
+        self.assertEqual(fresh, saved['source'])
+        self.assertEqual(lessons, saved['levels'])
+        self.assertEqual({}, saved['drafts'])
+
+    def test_generation_failure_tries_another_article_in_the_same_run(self):
+        fresh = self.fresh_source()
+        client = SimpleNamespace(close=Mock())
+        generated = []
+
+        def generate(client, source, level, date, *, initial_state, checkpoint):
+            name = level['name'].lower()
+            generated.append((source['link'], name))
+            self.assertIsNone(initial_state)
+            if source == self.source and name == 'advanced':
+                raise RuntimeError(
+                    'Could not generate a valid advanced lesson after 3 attempts in this run: synthetic')
+            return self.approved(name, source=source, level=level), '<lesson>'
+
+        with patch.object(u, 'get_daily_news', side_effect=[self.source, fresh]) as fetch, \
+                patch.object(u, 'configure_gemini', return_value=client), \
+                patch.object(u, 'generate_lesson', side_effect=generate):
+            source, lessons = lesson_run.generate_daily_lessons(self.date)
+
+        self.assertEqual([call(self.date), call(self.date, excluded_links={self.source['link']})],
+                         fetch.call_args_list)
+        self.assertEqual(2, client.close.call_count)
+        self.assertEqual(fresh, source)
+        self.assertEqual([
+            (self.source['link'], 'beginner'),
+            (self.source['link'], 'intermediate'),
+            (self.source['link'], 'advanced'),
+            (fresh['link'], 'beginner'),
+            (fresh['link'], 'intermediate'),
+            (fresh['link'], 'advanced'),
+        ], generated)
+        saved = self.store.load()
+        self.assertEqual(fresh, saved['source'])
+        self.assertEqual(lessons, saved['levels'])
+        self.assertEqual({}, saved['drafts'])
 
     def test_complete_saved_edition_needs_no_provider_or_source_request(self):
         lessons, reserved = {}, []

@@ -60,6 +60,35 @@ class EditorialTests(unittest.TestCase):
         self.assertEqual("https://example.com/birds", update_site.select_news_entry(entries, ["https://example.com/science"])["link"])
         self.assertIsNone(update_site.select_news_entry([dict(title="Missing evidence", link="javascript:alert(1)")]))
 
+    def test_daily_news_skips_explicitly_excluded_links(self):
+        entries = [
+            dict(title="A new discovery", summary="Scientists have discovered a new species.",
+                 link="https://example.com/science"),
+            dict(title="A different discovery", summary="A discovery about local birds.",
+                 link="https://example.com/birds"),
+        ]
+
+        class FeedResponse:
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc, tb):
+                return False
+
+            def read(self, size):
+                return b"<rss></rss>"
+
+        with TemporaryDirectory() as directory, \
+                patch.object(update_site, 'ARCHIVE_DIR', Path(directory)), \
+                patch.object(update_site, 'urlopen', return_value=FeedResponse()), \
+                patch.object(update_site.feedparser, 'parse', return_value=type('Feed', (), {'entries': entries})()), \
+                patch.object(update_site, 'fetch_article_evidence', return_value='Evidence text'):
+            selected = update_site.get_daily_news(
+                datetime(2026, 9, 6, tzinfo=timezone.utc),
+                excluded_links={"https://example.com/science"})
+
+        self.assertEqual("https://example.com/birds", selected["link"])
+
     def test_guided_rendering_is_repeatable_and_removes_retired_prereading(self):
         speaking_activities = set()
         for level in update_site.LEVELS:

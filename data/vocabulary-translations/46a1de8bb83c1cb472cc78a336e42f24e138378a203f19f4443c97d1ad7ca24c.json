@@ -1,0 +1,104 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "German elections are happening today, and they could decide Chancellor Merz's future.",
+      "The chancellor is feeling strong political pressure, which will grow if his party struggles in elections.",
+      "Local elections are taking place in two German states on Sunday.",
+      "His party, the CDU, might lose many votes there.",
+      "This could create more questions about the chancellor's future.",
+      "He says he will continue, but many people do not approve of him.",
+      "The country's economy is not strong, and energy costs are high.",
+      "These problems make people feel worried about the country's future."
+    ],
+    "vocabulary": [
+      {
+        "term": "elections",
+        "part_of_speech": "noun",
+        "definition": "A time when people vote to choose their leaders or representatives."
+      },
+      {
+        "term": "decide",
+        "part_of_speech": "verb",
+        "definition": "To make a choice or come to a conclusion about something after thinking about it."
+      },
+      {
+        "term": "chancellor",
+        "part_of_speech": "noun",
+        "definition": "The leader of the government in some countries, like Germany."
+      },
+      {
+        "term": "pressure",
+        "part_of_speech": "noun",
+        "definition": "A difficult situation or feeling that makes you worried or stressed."
+      },
+      {
+        "term": "struggles",
+        "part_of_speech": "verb",
+        "definition": "Has problems or finds something very difficult to do or deal with."
+      },
+      {
+        "term": "approve",
+        "part_of_speech": "verb",
+        "definition": "To think that something or someone is good or acceptable."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "人々が自分たちのリーダーや代表者を選ぶために投票する時期。",
+      "ko": "사람들이 자신의 지도자나 대표자를 뽑기 위해 투표하는 때.",
+      "zh-Hans": "人们投票选举他们的领导人或代表的时间。",
+      "es": "Un momento en el que las personas votan para elegir a sus líderes o representantes.",
+      "pt-BR": "Um período em que as pessoas votam para escolher seus líderes ou representantes."
+    },
+    {
+      "id": 1,
+      "ja": "何かについて考えた後に、選択をする、あるいは結論に達すること。",
+      "ko": "어떤 것에 대해 생각한 후에 선택을 하거나 결론에 도달하는 것.",
+      "zh-Hans": "在考虑之后，就某事做出选择或得出结论。",
+      "es": "Tomar una decisión o llegar a una conclusión sobre algo después de pensarlo.",
+      "pt-BR": "Fazer uma escolha ou chegar a uma conclusão sobre algo depois de pensar a respeito."
+    },
+    {
+      "id": 2,
+      "ja": "ドイツなどの一部の国で、政府のリーダーを務める人。",
+      "ko": "독일과 같은 일부 국가에서 정부의 지도자.",
+      "zh-Hans": "在一些国家（如德国）中担任政府首脑的人。",
+      "es": "El líder del gobierno en algunos países, como Alemania.",
+      "pt-BR": "O líder do governo em alguns países, como a Alemanha."
+    },
+    {
+      "id": 3,
+      "ja": "心配したりストレスを感じさせたりする、困難な状況や感情。",
+      "ko": "사람을 걱정하거나 스트레스 받게 하는 어려운 상황이나 감정.",
+      "zh-Hans": "一种让人感到担忧或压力的困难处境或感受。",
+      "es": "Una situación o sentimiento difícil que te hace sentir preocupado o estresado.",
+      "pt-BR": "Uma situação ou sentimento difícil que faz você se sentir preocupado ou estressado."
+    },
+    {
+      "id": 4,
+      "ja": "問題があったり、何かをするのが非常に難しかったりすること。",
+      "ko": "문제가 있거나 무엇인가를 하거나 처리하는 데 매우 어려움을 겪는 것.",
+      "zh-Hans": "遇到问题，或觉得某事做起来或处理起来非常困难。",
+      "es": "Tener problemas o encontrar algo muy difícil de hacer o de manejar.",
+      "pt-BR": "Ter problemas ou achar algo muito difícil de fazer ou lidar."
+    },
+    {
+      "id": 5,
+      "ja": "何かや誰かが良い、あるいは受け入れられると考えること。",
+      "ko": "어떤 것이나 누군가가 좋거나 받아들일 만하다고 생각하는 것.",
+      "zh-Hans": "认为某事或某人是好的或可以接受的。",
+      "es": "Pensar que algo o alguien es bueno o aceptable.",
+      "pt-BR": "Achar que algo ou alguém é bom ou aceitável."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-20T14:35:00.661815+00:00"
+  }
+}

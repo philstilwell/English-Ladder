@@ -318,5 +318,5 @@ jobs:
         run: |
           node cloudflare/build.cjs
           python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev
-          node cloudflare/verify.cjs https://englishladder.philstilwell.workers.dev
-          node cloudflare/verify.cjs https://englishladder.com
+          node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev
+          node cloudflare/verify-current-lesson.cjs https://englishladder.com

@@ -5,7 +5,11 @@ const cp = require('node:child_process');
 const path = require('node:path');
 
 const RETRY_DELAYS_MS = [2000, 4000];
-const TRANSIENT_HTTP = new Set([408, 429, 500, 502, 503, 504]);
+const VERIFY_CONCURRENCY = 2;
+// Cloudflare may answer a burst of GitHub-hosted verification requests with
+// temporary edge protection. Retry 403s, but still fail if the expected status
+// never appears.
+const TRANSIENT_HTTP = new Set([403, 408, 429, 500, 502, 503, 504]);
 // DNS/connection failures, partial transfers, timeouts, and interrupted streams.
 // Certificate validation (60), bad URLs (3), and missing curl remain failures.
 const TRANSIENT_CURL = new Set([5, 6, 7, 18, 28, 52, 55, 56, 92]);
@@ -90,7 +94,7 @@ async function verifySite(manifest, {origin, request, sleep}) {
   const entries = Object.entries(manifest.files);
   const options = {origin, request, sleep};
   let next = 0;
-  await Promise.all(Array.from({length: 8}, async () => {
+  await Promise.all(Array.from({length: VERIFY_CONCURRENCY}, async () => {
     while (next < entries.length) {
       const [file, expectedHash] = entries[next++];
       try {

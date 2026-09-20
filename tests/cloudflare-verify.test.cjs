@@ -63,7 +63,7 @@ test('persistent mismatches still fail after exactly three byte comparisons', as
 });
 
 test('temporary HTTP and connection failures recover with bounded retries', async () => {
-  for (const status of [408, 429, 500, 502, 503, 504]) {
+  for (const status of [403, 408, 429, 500, 502, 503, 504]) {
     const fixture = harness([{status, body: Buffer.from('server error')}, {status: 200, body: current}]);
     await verifyResponse('lesson.html', fixture.options);
     assert.equal(fixture.urls.length, 2);
@@ -76,7 +76,7 @@ test('temporary HTTP and connection failures recover with bounded retries', asyn
 });
 
 test('permanent HTTP failures are immediate and cannot be hidden by a later success', async () => {
-  for (const status of [301, 400, 401, 403, 404, 422, 501]) {
+  for (const status of [301, 400, 401, 404, 422, 501]) {
     const fixture = harness([{status, body: current}, {status: 200, body: current}]);
     await assert.rejects(verifyResponse('lesson.html', fixture.options), new RegExp(`expected HTTP 200, got ${status}`));
     assert.equal(fixture.urls.length, 1);
@@ -171,7 +171,7 @@ test('curl timeouts are retryable while certificate and command failures are per
 
 test('partial transfers retain permanent HTTP failures instead of accepting a later success', async () => {
   for (const [status, expectedStatus, file] of [
-    [401, 200, 'lesson.html'], [403, 200, 'lesson.html'], [404, 200, 'lesson.html'],
+    [401, 200, 'lesson.html'], [404, 200, 'lesson.html'],
     [200, 404, '/.git/config'],
   ]) {
     let calls = 0;
@@ -188,6 +188,22 @@ test('partial transfers retain permanent HTTP failures instead of accepting a la
     assert.equal(calls, 1);
     assert.deepEqual(delays, []);
   }
+});
+
+test('partial 403 responses are retried as temporary edge protection', async () => {
+  let calls = 0;
+  const delays = [];
+  const request = createCurlRequest(origin, undefined, (program, arguments_, options, callback) => {
+    calls++;
+    if (calls === 1) callback({code: 18}, Buffer.from('edge block\n403'));
+    else callback(null, Buffer.concat([current, Buffer.from('\n200')]));
+  });
+  await verifyResponse('lesson.html', {
+    origin, request, expectedStatus: 200, expectedHash,
+    sleep: async delay => delays.push(delay),
+  });
+  assert.equal(calls, 2);
+  assert.deepEqual(delays, [2000]);
 });
 
 test('partial transfers with the expected status retry and require a complete response', async () => {

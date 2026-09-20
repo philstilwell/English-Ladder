@@ -1,0 +1,117 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ed Sheeran talked about a problem at his concert.",
+      "He apologised for 'mistakes' at his concert.",
+      "Rapper Macklemore was removed from his tour before this show.",
+      "Other artists also left the tour.",
+      "Ticket prices went down because of this problem.",
+      "Sheeran said his promoters, not him, decided to remove Macklemore.",
+      "He also talked about the attacks on October 7, 2023, and the situation in Gaza.",
+      "Sheeran said his music is about unity, not politics."
+    ],
+    "vocabulary": [
+      {
+        "term": "apologised",
+        "part_of_speech": "verb",
+        "definition": "said \"sorry\" for something wrong."
+      },
+      {
+        "term": "mistakes",
+        "part_of_speech": "noun",
+        "definition": "wrong actions or errors."
+      },
+      {
+        "term": "tour",
+        "part_of_speech": "noun",
+        "definition": "a trip by a music group to many places to perform."
+      },
+      {
+        "term": "removed",
+        "part_of_speech": "verb",
+        "definition": "taken away from a group or place."
+      },
+      {
+        "term": "problem",
+        "part_of_speech": "noun",
+        "definition": "something that is difficult to deal with."
+      },
+      {
+        "term": "prices",
+        "part_of_speech": "noun",
+        "definition": "the money you pay for things."
+      },
+      {
+        "term": "unity",
+        "part_of_speech": "noun",
+        "definition": "being together and agreeing."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何か悪いことについて「ごめんなさい」と言いました。",
+      "ko": "잘못한 일에 대해 \"미안합니다\"라고 말했습니다.",
+      "zh-Hans": "为某件错事说了“对不起”。",
+      "es": "Dijo \"lo siento\" por algo incorrecto.",
+      "pt-BR": "Disse \"desculpa\" por algo errado."
+    },
+    {
+      "id": 1,
+      "ja": "間違った行動や誤り。",
+      "ko": "잘못된 행동이나 오류.",
+      "zh-Hans": "错误的行动或差错。",
+      "es": "Acciones incorrectas o errores.",
+      "pt-BR": "Ações erradas ou enganos."
+    },
+    {
+      "id": 2,
+      "ja": "音楽グループが多くの場所を訪れて演奏する旅行。",
+      "ko": "음악 그룹이 공연하기 위해 여러 장소를 방문하는 여행.",
+      "zh-Hans": "音乐团体到许多地方进行表演的旅行。",
+      "es": "Un viaje de un grupo de música a muchos lugares para actuar.",
+      "pt-BR": "Uma viagem de um grupo musical a muitos lugares para se apresentar."
+    },
+    {
+      "id": 3,
+      "ja": "グループや場所から連れ去られた。",
+      "ko": "그룹이나 장소에서 데리고 나가졌다.",
+      "zh-Hans": "从一个团体或地方被带走。",
+      "es": "Sacado de un grupo o lugar.",
+      "pt-BR": "Retirado de um grupo ou lugar."
+    },
+    {
+      "id": 4,
+      "ja": "対処するのが難しいこと。",
+      "ko": "다루기 어려운 것.",
+      "zh-Hans": "难以处理的事情。",
+      "es": "Algo que es difícil de manejar.",
+      "pt-BR": "Algo que é difícil de lidar."
+    },
+    {
+      "id": 5,
+      "ja": "物事に対して支払うお金。",
+      "ko": "물건에 대해 지불하는 돈.",
+      "zh-Hans": "你为事物支付的钱。",
+      "es": "El dinero que pagas por las cosas.",
+      "pt-BR": "O dinheiro que você paga pelas coisas."
+    },
+    {
+      "id": 6,
+      "ja": "一緒にいて同意すること。",
+      "ko": "함께 있고 동의하는 것.",
+      "zh-Hans": "团结一致并意见相同。",
+      "es": "Estar juntos y de acuerdo.",
+      "pt-BR": "Estar junto e em concordância."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-20T02:06:32.897326+00:00"
+  }
+}

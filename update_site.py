@@ -185,9 +185,16 @@ def select_news_entry(entries, recent_links=()):
     return min(candidates, key=lambda item: item[:2])[2] if candidates else None
 
 
-def get_daily_news(release_dt=None, excluded_links=()):
+def get_daily_news(release_dt=None, excluded_links=(), preferred_categories=None):
     release_dt = release_dt or datetime.now(timezone.utc)
     category = NEWS_WEEK[release_dt.weekday()]
+    if preferred_categories:
+        feed_categories = tuple(dict.fromkeys(
+            item for item in preferred_categories if item in NEWS_CATEGORIES))
+        if not feed_categories:
+            raise ValueError("No valid news categories were requested.")
+    else:
+        feed_categories = tuple(dict.fromkeys([category, "world"]))
     recent_links = {
         normalize_text(link) for link in (excluded_links or ())
         if isinstance(link, str) and normalize_text(link)
@@ -197,7 +204,7 @@ def get_daily_news(release_dt=None, excluded_links=()):
             recent_links.add(json.loads(archive.read_text())["source"]["link"])
         except (ValueError, KeyError):
             continue
-    for feed_category in dict.fromkeys([category, "world"]):
+    for feed_category in feed_categories:
         url, name = NEWS_CATEGORIES[feed_category]
         try:
             request = Request(url, headers={"User-Agent": "English-Ladder/1.0"})

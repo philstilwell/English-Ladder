@@ -7,7 +7,8 @@ from pathlib import Path
 from lesson_checkpoint import CheckpointStore
 
 ROOT = Path(__file__).resolve().parent
-MAX_SOURCE_ARTICLES_PER_RUN = 3
+MAX_SOURCE_ARTICLES_PER_RUN = 4
+SOURCE_FAILURES_BEFORE_WORLD_FALLBACK = 1
 
 
 def generation_policy_fingerprint():
@@ -85,11 +86,20 @@ def generate_daily_lessons(release_dt):
     saved = store.load() or {}
     source = saved.get('source')
     excluded_links = set()
+    failed_source_count = 0
 
     def fetch_news():
         print('Fetching news for the new daily edition...')
+        preferred_categories = (('world',)
+                                if failed_source_count >= SOURCE_FAILURES_BEFORE_WORLD_FALLBACK
+                                else None)
         if excluded_links:
+            if preferred_categories:
+                return u.get_daily_news(release_dt, excluded_links=excluded_links,
+                                        preferred_categories=preferred_categories)
             return u.get_daily_news(release_dt, excluded_links=excluded_links)
+        if preferred_categories:
+            return u.get_daily_news(release_dt, preferred_categories=preferred_categories)
         return u.get_daily_news(release_dt)
 
     if saved_source_is_complete(source):
@@ -100,6 +110,7 @@ def generate_daily_lessons(release_dt):
                 excluded_links.add(link)
             print(f"Saved {', '.join(exhausted)} draft reached the daily retry limit; "
                   "choosing a fresh source article.")
+            failed_source_count = 1
             source = fetch_news()
             saved = {}
         elif saved:
@@ -158,6 +169,7 @@ def generate_daily_lessons(release_dt):
             link = source_link(source)
             if link:
                 excluded_links.add(link)
+            failed_source_count += 1
             if attempted_sources >= MAX_SOURCE_ARTICLES_PER_RUN:
                 raise RuntimeError(
                     f"Could not complete the daily edition after trying {attempted_sources} "

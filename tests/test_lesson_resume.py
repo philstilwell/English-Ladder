@@ -169,7 +169,8 @@ class LessonResumeTests(unittest.TestCase):
                 patch.object(u, 'generate_lesson', side_effect=generate):
             source, lessons = lesson_run.generate_daily_lessons(self.date)
 
-        fetch.assert_called_once_with(self.date, excluded_links={self.source['link']})
+        fetch.assert_called_once_with(self.date, excluded_links={self.source['link']},
+                                      preferred_categories=('world',))
         client.close.assert_called_once()
         self.assertEqual(fresh, source)
         self.assertEqual(['beginner', 'intermediate', 'advanced'], generated)
@@ -197,8 +198,10 @@ class LessonResumeTests(unittest.TestCase):
                 patch.object(u, 'generate_lesson', side_effect=generate):
             source, lessons = lesson_run.generate_daily_lessons(self.date)
 
-        self.assertEqual([call(self.date), call(self.date, excluded_links={self.source['link']})],
-                         fetch.call_args_list)
+        self.assertEqual([
+            call(self.date),
+            call(self.date, excluded_links={self.source['link']}, preferred_categories=('world',)),
+        ], fetch.call_args_list)
         self.assertEqual(2, client.close.call_count)
         self.assertEqual(fresh, source)
         self.assertEqual([

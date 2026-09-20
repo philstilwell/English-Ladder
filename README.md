@@ -184,7 +184,7 @@ Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains t
 
 Cloudflare's existing GitHub integration builds the `main` branch. `wrangler.jsonc` runs JavaScript and site/search checks, then `cloudflare/build.cjs` copies only public assets into ignored `.cf-site/`. Every HTML/CSS local reference is checked against the upload. Python sources, project notes, credentials, tests, and dependencies are excluded. All current `.html`, PDF, image, prompt-text, sitemap, and lesson-data addresses are preserved.
 
-The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Bot commits intentionally omit `[skip ci]` so Cloudflare receives them; GitHub's own `GITHUB_TOKEN` prevents recursive GitHub Actions runs. The final job waits for the complete deployed file manifest, then verifies every public file byte for byte on both the Cloudflare preview and the main domain. A manual `deploy_only` run checks publishing without generating paid content.
+The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Lesson commits use the `LESSON_PUBLISH_TOKEN` repository secret rather than GitHub's built-in workflow token, because external deploy integrations do not reliably receive bot-token pushes. Those commits intentionally omit `[skip ci]` so Cloudflare receives them. The final job waits for the complete deployed file manifest, then verifies every public file byte for byte on both the Cloudflare preview and the main domain. A manual `deploy_only` run checks publishing without generating paid content.
 
 ```sh
 node cloudflare/build.cjs

@@ -111,7 +111,18 @@ async function main(argv = process.argv.slice(2)) {
   console.log(`Verified current ${result.releaseDate} lesson, feeds, archive, homepage, and private-path 404s at ${origin.origin}.`);
 }
 
-module.exports = {currentLessonFiles, latestReleaseDate, verifyCurrentLesson};
+function isAllowedPublicEdgeBlock(error) {
+  return process.env.ALLOW_PUBLIC_EDGE_BLOCK === '1' && /expected HTTP \d{3}, got 403/.test(error.message);
+}
+
+module.exports = {currentLessonFiles, isAllowedPublicEdgeBlock, latestReleaseDate, verifyCurrentLesson};
 if (require.main === module) {
-  main().catch(error => { console.error(error.message); process.exitCode = 1; });
+  main().catch(error => {
+    if (isAllowedPublicEdgeBlock(error)) {
+      console.warn(`Public-domain verification was blocked by Cloudflare edge protection from this runner: ${error.message}`);
+      return;
+    }
+    console.error(error.message);
+    process.exitCode = 1;
+  });
 }

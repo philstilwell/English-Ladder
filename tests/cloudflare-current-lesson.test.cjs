@@ -2,7 +2,11 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
-const {currentLessonFiles, verifyCurrentLesson} = require('../cloudflare/verify-current-lesson.cjs');
+const {
+  currentLessonFiles,
+  isAllowedPublicEdgeBlock,
+  verifyCurrentLesson
+} = require('../cloudflare/verify-current-lesson.cjs');
 
 const origin = new URL('https://englishladder.example/');
 const releaseDate = '2026-09-19';
@@ -69,4 +73,20 @@ test('current lesson verification still byte-checks lesson JSON', async () => {
     releaseDate,
     sleep: async () => {},
   }), /lesson-data\.json: content mismatch/);
+});
+
+test('public edge-block warnings require the explicit workflow flag', () => {
+  const original = process.env.ALLOW_PUBLIC_EDGE_BLOCK;
+  try {
+    const blocked = new Error('index.html: expected HTTP 200, got 403');
+    const missing = new Error('index.html: expected HTTP 200, got 404');
+    delete process.env.ALLOW_PUBLIC_EDGE_BLOCK;
+    assert.equal(isAllowedPublicEdgeBlock(blocked), false);
+    process.env.ALLOW_PUBLIC_EDGE_BLOCK = '1';
+    assert.equal(isAllowedPublicEdgeBlock(blocked), true);
+    assert.equal(isAllowedPublicEdgeBlock(missing), false);
+  } finally {
+    if (original === undefined) delete process.env.ALLOW_PUBLIC_EDGE_BLOCK;
+    else process.env.ALLOW_PUBLIC_EDGE_BLOCK = original;
+  }
 });

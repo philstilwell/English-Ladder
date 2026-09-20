@@ -184,12 +184,12 @@ Cloudflare Workers Static Assets serves `englishladder.com`. Namecheap remains t
 
 Cloudflare's existing GitHub integration builds the `main` branch. `wrangler.jsonc` runs JavaScript and site/search checks, then `cloudflare/build.cjs` copies only public assets into ignored `.cf-site/`. Every HTML/CSS local reference is checked against the upload. Python sources, project notes, credentials, tests, and dependencies are excluded. All current `.html`, PDF, image, prompt-text, sitemap, and lesson-data addresses are preserved.
 
-The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Lesson commits use the `LESSON_PUBLISH_TOKEN` repository secret rather than GitHub's built-in workflow token, because external deploy integrations do not reliably receive bot-token pushes. Those commits intentionally omit `[skip ci]` so Cloudflare receives them. The final job waits for the deployed file manifest, then verifies the current lesson archive, the three lesson pages, the three level feeds, the homepage/root mapping, and private-file 404 responses on both the Cloudflare preview and the main domain. A manual `deploy_only` run checks publishing without generating paid content.
+The daily publishing job saves checked lessons to GitHub before Cloudflare builds them. Lesson commits use the `LESSON_PUBLISH_TOKEN` repository secret rather than GitHub's built-in workflow token, because external deploy integrations do not reliably receive bot-token pushes. Those commits intentionally omit `[skip ci]` so Cloudflare receives them. The final job waits for the deployed file manifest, then verifies the current lesson archive, the three lesson pages, the three level feeds, the homepage/root mapping, and private-file 404 responses. The Cloudflare preview check is the blocking deployment gate; the main-domain check uses the same verifier but treats a Cloudflare 403 to the GitHub runner as a warning, since that is edge protection rather than evidence of stale lesson content. A manual `deploy_only` run checks publishing without generating paid content.
 
 ```sh
 node cloudflare/build.cjs
 node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev
-node cloudflare/verify-current-lesson.cjs https://englishladder.com
+ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com
 ```
 
 Preview addresses carry `X-Robots-Tag: noindex, nofollow`. The public domain keeps its authored indexing policy. Missing pages return a real 404; browser caches revalidate files so lessons and scripts stay current. Optional work-course drafts stay in the same browser storage on the same public domain. `deployment.json` lists only the deployed source revision and public-file fingerprints.

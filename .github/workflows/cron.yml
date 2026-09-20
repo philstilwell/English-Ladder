@@ -319,4 +319,4 @@ jobs:
           node cloudflare/build.cjs
           python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev
           node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev
-          node cloudflare/verify-current-lesson.cjs https://englishladder.com
+          ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com

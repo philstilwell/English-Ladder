@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "US President Donald Trump talked about new plans for artificial intelligence.",
+      "He wants the US to create an 'AI Force' and appoint an AI leader.",
+      "Trump said his government will not stop AI from growing.",
+      "Many people have given warnings about the possible dangers of AI.",
+      "Trump thinks AI is very important and will be bigger than the Internet.",
+      "He also said his government would stop bad actors who use AI for wrong things.",
+      "Some experts say AI development should slow down."
+    ],
+    "vocabulary": [
+      {
+        "term": "plans",
+        "part_of_speech": "noun",
+        "definition": "ideas about what someone will do in the future"
+      },
+      {
+        "term": "force",
+        "part_of_speech": "noun",
+        "definition": "a group of people working together for a special purpose"
+      },
+      {
+        "term": "leader",
+        "part_of_speech": "noun",
+        "definition": "a person who guides or controls a group"
+      },
+      {
+        "term": "government",
+        "part_of_speech": "noun",
+        "definition": "the group of people who control a country"
+      },
+      {
+        "term": "warnings",
+        "part_of_speech": "noun",
+        "definition": "information that tells you about a possible danger or problem"
+      },
+      {
+        "term": "important",
+        "part_of_speech": "adjective",
+        "definition": "having great value or meaning"
+      },
+      {
+        "term": "slow down",
+        "part_of_speech": "verb phrase",
+        "definition": "to make something move or happen more slowly"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "将来、誰かが何をするかについての考え。",
+      "ko": "앞으로 누군가가 무엇을 할 것인지에 대한 생각.",
+      "zh-Hans": "关于某人未来将要做什么的设想。",
+      "es": "Ideas sobre lo que alguien hará en el futuro.",
+      "pt-BR": "Ideias sobre o que alguém fará no futuro."
+    },
+    {
+      "id": 1,
+      "ja": "特定の目的のために一緒に働く人々の集団。",
+      "ko": "특별한 목적을 위해 함께 일하는 사람들의 집단.",
+      "zh-Hans": "为特定目的而一起工作的一群人。",
+      "es": "Un grupo de personas que trabajan juntas con un propósito especial.",
+      "pt-BR": "Um grupo de pessoas trabalhando juntas para um propósito especial."
+    },
+    {
+      "id": 2,
+      "ja": "グループを導いたり、統制したりする人。",
+      "ko": "집단을 이끌거나 통제하는 사람.",
+      "zh-Hans": "引导或控制一个群体的人。",
+      "es": "Una persona que guía o controla un grupo.",
+      "pt-BR": "Uma pessoa que guia ou controla um grupo."
+    },
+    {
+      "id": 3,
+      "ja": "国を統治する人々の集団。",
+      "ko": "한 국가를 통제하는 사람들의 집단.",
+      "zh-Hans": "控制一个国家的人们组成的团体。",
+      "es": "El grupo de personas que controlan un país.",
+      "pt-BR": "O grupo de pessoas que controla um país."
+    },
+    {
+      "id": 4,
+      "ja": "起こりうる危険や問題について知らせる情報。",
+      "ko": "가능한 위험이나 문제에 대해 알려주는 정보.",
+      "zh-Hans": "告知你可能存在的危险或问题的信息。",
+      "es": "Información que te avisa sobre un posible peligro o problema.",
+      "pt-BR": "Informações que te avisam sobre um possível perigo ou problema."
+    },
+    {
+      "id": 5,
+      "ja": "大きな価値や意味があること。",
+      "ko": "큰 가치나 의미를 가지는 것.",
+      "zh-Hans": "具有巨大价值或意义的。",
+      "es": "Que tiene gran valor o significado.",
+      "pt-BR": "Que tem grande valor ou significado."
+    },
+    {
+      "id": 6,
+      "ja": "何かをよりゆっくり動いたり起こったりさせること。",
+      "ko": "어떤 것을 더 느리게 움직이거나 발생하게 하는 것.",
+      "zh-Hans": "使某事移动或发生得更慢。",
+      "es": "Hacer que algo se mueva o suceda más lentamente.",
+      "pt-BR": "Fazer com que algo se mova ou aconteça mais lentamente."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-21T16:36:54.224463+00:00"
+  }
+}

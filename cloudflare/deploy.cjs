@@ -5,7 +5,9 @@ const path = require('node:path');
 const cp = require('node:child_process');
 
 const ROOT = path.resolve(__dirname, '..');
-const PREFLIGHT_TIMEOUT_MS = 60_000;
+// Cloudflare needed more than a minute for the full site/search audit in the
+// first live validation; reserve three minutes before the upload retry budget.
+const PREFLIGHT_TIMEOUT_MS = 180_000;
 const DEPLOY_TIMEOUT_MS = 120_000;
 const RETRY_DELAYS_MS = Object.freeze([10_000, 30_000]);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));

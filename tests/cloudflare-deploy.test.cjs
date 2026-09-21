@@ -63,7 +63,7 @@ test('persistent upload failures stop after three attempts and give a generation
   });
   assert.equal(fixture.calls.length, 4);
   assert.deepEqual(fixture.pauses, [10_000, 30_000]);
-  assert.ok(PREFLIGHT_TIMEOUT_MS + 3 * DEPLOY_TIMEOUT_MS + RETRY_DELAYS_MS.reduce((a, b) => a + b, 0) + 5000 < 8 * 60_000);
+  assert.ok(PREFLIGHT_TIMEOUT_MS + 3 * DEPLOY_TIMEOUT_MS + RETRY_DELAYS_MS.reduce((a, b) => a + b, 0) + 5000 < 10 * 60_000);
 });
 
 test('failed preflight prevents every upload and is not retried', async t => {
@@ -79,7 +79,7 @@ test('a timed-out upload retries, but a timed-out preflight never uploads', asyn
   assert.equal((await deploy(fixture.options)).attempts, 2);
   assert.ok(fixture.logs.some(line => line.includes('timed out after 120 seconds')));
   const preflight = harness(t, [timedOut]);
-  await assert.rejects(deploy(preflight.options), /preflight timed out after 60 seconds/);
+  await assert.rejects(deploy(preflight.options), /preflight timed out after 180 seconds/);
   assert.equal(preflight.calls.length, 1);
 });
 

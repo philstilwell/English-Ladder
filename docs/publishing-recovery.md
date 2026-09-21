@@ -14,6 +14,8 @@ For the existing `englishladder` Worker, production branch `main`, set **Setting
 npm run deploy:cloudflare
 ```
 
+For the enabled non-production branches, set **Version command** to `npm run build:cloudflare && npx --no-install wrangler versions upload` so previews also package and check their files without deploying to production.
+
 The separate Cloudflare build command can be empty: the deploy wrapper runs the complete preflight itself. Keep dependency installation enabled so Cloudflare installs from `package-lock.json`. Wrangler is pinned to **4.136.0**, the version that successfully deployed the recovered commit. Upgrade it deliberately with the lockfile and validate a deployment after changing it. Do not replace the deploy command with an unversioned `npx` installation.
 
 `build:cloudflare` runs JavaScript syntax checks, site and search audits, and packages the allowlisted public files. It does not generate lessons, translations, or images. The deployment wrapper verifies the installed Wrangler version and prepared source revision before uploading. It runs preflight once (60-second limit), then attempts to deploy the same prepared files up to three times, with 10- and 30-second delays and a 120-second limit per attempt. A timed-out child process is stopped before another attempt. Preflight failure prevents all uploads. Detailed Wrangler output and numbered attempts stay in the Cloudflare build log.

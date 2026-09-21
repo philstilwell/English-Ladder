@@ -1,6 +1,6 @@
 # Daily lesson recovery
 
-The daily workflow now keeps completed work when a later step fails. The schedule remains **10:00, 13:00 and 16:00 UTC**. The later runs resume an unfinished edition or preserve an already published edition.
+The daily workflow now keeps completed work when a later step fails. The current schedule is **10:17, 13:43 and 16:29 UTC**. The later runs resume an unfinished edition or preserve an already published edition.
 
 ## What is saved
 
@@ -24,9 +24,11 @@ Before requesting lesson text, the workflow saves the selected source. After eac
 | One level fails after earlier levels passed | Save progress and resume the unfinished level on the next run. |
 | The date already has a complete archive | Manual and scheduled workflow runs preserve its text and reuse or recover its illustration through the existing image process. |
 | Push or manual `deploy_only` run | Rebuild and verify the current published lesson without paid generation. Lesson commits use `LESSON_PUBLISH_TOKEN` so Cloudflare receives the branch update. |
+| Cloudflare upload command fails temporarily | Retry the same checked public files up to three times with pinned Wrangler; no lesson, translation, or image generation. See [Publishing recovery](publishing-recovery.md). |
+| Publishing verification fails after lessons are saved | Rerun only the separate publishing job after resolving hosting. Expected/live revisions, differences, and logs are retained for 14 days. |
 | A served file temporarily differs during deployment, or a verification request has a temporary service failure | Retry only the affected request, up to three calls. Every published file must still match its expected checksum. |
 
-Each level has at most **three draft attempts per invocation and six across compatible recovery runs for that date**. The attempt counter is saved before requesting a draft, including requests interrupted before a usable response. Transport retries sit within each draft attempt. Gemini requests have a three-minute timeout, with the SDK's internal retries disabled so they cannot multiply the explicit request limit. Generation has a 30-minute step limit within the 45-minute job, reserving time to upload saved progress after a slow-provider timeout. These are workload limits, not a guaranteed billing ceiling; provider charging and request outcomes can vary.
+Each level has at most **three draft attempts per invocation and six across compatible recovery runs for that date**. The attempt counter is saved before requesting a draft, including requests interrupted before a usable response. Transport retries sit within each draft attempt. Gemini requests have a three-minute timeout, with the SDK's internal retries disabled so they cannot multiply the explicit request limit. Generation has a 30-minute step limit within the 60-minute generation job, reserving time to upload saved progress after a slow-provider timeout. These are workload limits, not a guaranteed billing ceiling; provider charging and request outcomes can vary.
 
 The writer now returns each reading sentence together with its numbered source reference. The program creates the reading and evidence lists together and copies a grammar example from the reading by sentence index. This avoids mismatched array lengths and retyped quotations. The independent reviewer must still determine whether the evidence supports the claim and the example supports the grammar explanation.
 

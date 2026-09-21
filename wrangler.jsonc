@@ -5,9 +5,6 @@
   "compatibility_date": "2026-07-02",
   "workers_dev": true,
   "preview_urls": true,
-  "build": {
-    "command": "npm run check:js && python3 audit_site.py && python3 audit_seo.py && node cloudflare/build.cjs"
-  },
   "assets": {
     "directory": "./.cf-site",
     "html_handling": "none",

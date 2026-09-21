@@ -102,6 +102,9 @@ concurrency:
 
 jobs:
   build_and_deploy:
+    name: Generate and save checked lessons
+    outputs:
+      publishing_revision: ${{ steps.saved_revision.outputs.revision }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -314,9 +317,87 @@ jobs:
           echo "Failed to push lesson update after 3 attempts." >&2
           exit 1
 
-      - name: Verify Cloudflare publishing
+      - name: Record saved publishing revision
+        id: saved_revision
+        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+  verify_publishing:
+    name: Verify saved lesson publishing
+    defaults:
+      run:
+        # Explicit bash enables pipefail: tee must not hide a failed verifier.
+        shell: bash
+    needs: build_and_deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    steps:
+      # A failed publishing check can be rerun alone, without lesson, image,
+      # translation, or page generation. Check the exact commit that was saved.
+      - name: Checkout saved publishing revision
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ needs.build_and_deploy.outputs.publishing_revision }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Package expected public files
+        run: node cloudflare/build.cjs
+
+      - name: Wait for Cloudflare publishing
+        id: manifest
+        timeout-minutes: 14
         run: |
-          node cloudflare/build.cjs
-          python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev
-          node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev
-          ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com
+          python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev \
+            --report "${RUNNER_TEMP}/publishing-report.json" \
+            2>&1 | tee "${RUNNER_TEMP}/publishing-manifest.log"
+
+      - name: Verify current lesson on Cloudflare
+        run: |
+          node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev \
+            2>&1 | tee "${RUNNER_TEMP}/publishing-current-lesson.log"
+
+      - name: Verify current lesson on public domain
+        run: |
+          ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com \
+            2>&1 | tee "${RUNNER_TEMP}/publishing-public-domain.log"
+
+      - name: Retain publishing diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: publishing-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            ${{ runner.temp }}/publishing-*.json
+            ${{ runner.temp }}/publishing-*.log
+            .cf-site/deployment.json
+          retention-days: 14
+          if-no-files-found: ignore
+          include-hidden-files: true
+
+      - name: Summarize publishing result
+        if: always()
+        env:
+          PUBLISHING_STATUS: ${{ job.status }}
+          PUBLISHING_REVISION: ${{ needs.build_and_deploy.outputs.publishing_revision }}
+        run: |
+          {
+            echo "### Publishing: ${PUBLISHING_STATUS}"
+            echo "Saved source revision: ${PUBLISHING_REVISION}"
+            echo ""
+            echo "Publishing checks use saved content and make no paid generation calls."
+            if [ "${PUBLISHING_STATUS}" != "success" ]; then
+              echo "Inspect the publishing artifact and the English Ladder Cloudflare build log."
+              echo "If Cloudflare exhausted its deployment retries, retry that build for the saved commit, then rerun only the failed publishing job."
+              echo "A manual deploy_only=true run can rebuild and verify existing content, but cannot restart a failed Cloudflare build when no files change."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

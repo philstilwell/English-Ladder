@@ -13,7 +13,9 @@
     "build:work": "python3 generate_work_documents.py && python3 generate_efsp_web_pages.py",
     "check:site": "python3 audit_site.py && python3 audit_seo.py",
     "build:seo": "python3 seo.py",
-    "build:grammar": "python3 grammar_curriculum.py && python3 grammar_documents.py"
+    "build:grammar": "python3 grammar_curriculum.py && python3 grammar_documents.py",
+    "build:cloudflare": "npm run check:js && python3 audit_site.py && python3 audit_seo.py && node cloudflare/build.cjs",
+    "deploy:cloudflare": "node cloudflare/deploy.cjs"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
   "homepage": "https://github.com/philstilwell/English-Ladder#readme",
   "devDependencies": {
     "jsdom": "^26.1.0",
-    "playwright": "^1.60.0"
+    "playwright": "^1.60.0",
+    "wrangler": "4.136.0"
   }
 }

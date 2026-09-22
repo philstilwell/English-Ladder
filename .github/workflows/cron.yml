@@ -273,8 +273,8 @@ jobs:
 
       - name: Check generated pages
         run: |
+          # audit_site includes the complete search audit.
           python audit_site.py
-          python audit_seo.py
 
       - name: Commit updated lesson pages
         env:
@@ -296,7 +296,6 @@ jobs:
             python publish_snapshot.py restore "${lesson_snapshot}"
             python update_site.py --refresh-pages
             python audit_site.py
-            python audit_seo.py
             git add -- '*.html' archive assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
             if git diff --cached --quiet; then
               echo "No changes to commit"
@@ -329,7 +328,7 @@ jobs:
         shell: bash
     needs: build_and_deploy
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     permissions:
       contents: read
     steps:
@@ -355,9 +354,9 @@ jobs:
 
       - name: Wait for Cloudflare publishing
         id: manifest
-        timeout-minutes: 14
+        timeout-minutes: 17
         run: |
-          python cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev \
+          python -u cloudflare/verify-publishing.py https://englishladder.philstilwell.workers.dev \
             --report "${RUNNER_TEMP}/publishing-report.json" \
             2>&1 | tee "${RUNNER_TEMP}/publishing-manifest.log"
 

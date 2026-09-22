@@ -114,6 +114,8 @@ def audit():
         for config in LEVELS:
             lesson=data['levels'][config['name'].lower()]['lesson']
             failures.extend(f'{path.name}/{config["name"]}: {issue}' for issue in [*validate_lesson_data(lesson,config),*validate_evidence(lesson,data['source'])])
+    # This is the complete site AND search gate; callers must not repeat it
+    # with a second audit_seo.py process before uploading the same files.
     from audit_seo import audit as audit_search
     audit_search()
     if failures:raise AssertionError('\n'.join(failures[:60]))

@@ -9,7 +9,8 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 
-DEFAULT_TIMEOUT = 12 * 60
+# Allow five minutes of preflight, all three bounded uploads, and startup time.
+DEFAULT_TIMEOUT = 15 * 60
 DEFAULT_INTERVAL = 20
 REQUEST_TIMEOUT = 30
 MAX_DIFFERENCES = 5
@@ -162,7 +163,7 @@ def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('origin', type=site_origin)
     parser.add_argument('--timeout', type=positive_seconds, default=DEFAULT_TIMEOUT,
-                        help='maximum wait in seconds (default: 720)')
+                        help=f'maximum wait in seconds (default: {DEFAULT_TIMEOUT})')
     parser.add_argument('--interval', type=positive_seconds, default=DEFAULT_INTERVAL,
                         help='seconds between requests (default: 20)')
     parser.add_argument('--report', type=Path, help='write a JSON publishing report')

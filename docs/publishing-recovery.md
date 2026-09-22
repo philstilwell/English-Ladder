@@ -6,6 +6,10 @@ On September 21, 2026, lesson generation and repository checks succeeded in GitH
 
 The changes here address repeatability, bounded upload recovery, and useful diagnostics. They do not claim that the Wrangler version itself caused the incident.
 
+On September 22, Cloudflare build `d330b753-8dcd-443e-8bbd-a10f0350b08e` used the correct `npm run deploy:cloudflare` command, but its preflight exceeded the 180-second limit before any upload. The site audit had passed after approximately 139 seconds. The build then ran `audit_seo.py` separately, even though `audit_site.py` had already run the same search audit internally. The wrapper stopped this repeated audit at its time limit, so the existing September 22 lessons stayed saved in GitHub while Cloudflare kept serving September 21.
+
+The September 22 repair removes the duplicate search-audit command from publishing checks, retains the search audit within `audit_site.py`, and gives the complete preflight a five-minute limit. The wrapper records actual preflight elapsed time so future slow builds can be diagnosed. GitHub now allows 15 minutes for Cloudflare to publish. These changes address the observed timeout; authentication failures, service outages, or future growth can still require investigation.
+
 ## Cloudflare configuration
 
 For the existing `englishladder` Worker, production branch `main`, set **Settings → Builds → Build configuration → Deploy command** to:
@@ -18,15 +22,15 @@ For the enabled non-production branches, set **Version command** to `npm run bui
 
 The separate Cloudflare build command can be empty: the deploy wrapper runs the complete preflight itself. Keep dependency installation enabled so Cloudflare installs from `package-lock.json`. Wrangler is pinned to **4.136.0**, the version that successfully deployed the recovered commit. Upgrade it deliberately with the lockfile and validate a deployment after changing it. Do not replace the deploy command with an unversioned `npx` installation.
 
-`build:cloudflare` runs JavaScript syntax checks, site and search audits, and packages the allowlisted public files. It does not generate lessons, translations, or images. The deployment wrapper verifies the installed Wrangler version and prepared source revision before uploading. It runs preflight once (180-second limit), then attempts to deploy the same prepared files up to three times, with 10- and 30-second delays and a 120-second limit per attempt. A timed-out child process is stopped before another attempt. Preflight failure prevents all uploads. Detailed Wrangler output and numbered attempts stay in the Cloudflare build log.
+`build:cloudflare` runs JavaScript syntax checks, the site audit (which includes the search audit), and packages the allowlisted public files. It does not generate lessons, translations, or images. The deployment wrapper verifies the installed Wrangler version and prepared source revision before uploading. It runs preflight once (300-second limit) and logs its elapsed time, then attempts to deploy the same prepared files up to three times, with 10- and 30-second delays and a 120-second limit per attempt. A timed-out child process is stopped before another attempt. Preflight failure prevents all uploads. Detailed Wrangler output and numbered attempts stay in the Cloudflare build log.
 
-The retry budget is under ten minutes once the wrapper starts. It does not include Cloudflare queueing or dependency installation. Failure before the wrapper starts, permanent authentication/configuration errors, or a longer outage can still require manual recovery.
+The preflight and retry budget is under twelve minutes once the wrapper starts. It does not include Cloudflare queueing or dependency installation. Failure before the wrapper starts, permanent authentication/configuration errors, or a longer outage can still require manual recovery.
 
 ## GitHub verification
 
 The daily workflow first generates/checks/saves lessons, then passes the exact saved commit to the separate **Verify saved lesson publishing** job. Selecting **Re-run failed jobs** after a publishing-only failure reruns that check without running lesson, translation, image, or page generation. Re-running all jobs is unnecessary for a hosting failure.
 
-The verifier waits up to 12 minutes for the complete public-file hash map. A matching revision alone is never enough; all file hashes must match. Conversely, a code-only commit with identical public files may pass, while the report still records the actual served revision. Existing current-lesson checks continue to verify the ordinary URLs, all three levels and feeds, archive, homepage, JSON hashes, and private-path 404 responses. A public-domain 403 from GitHub's runner retains the existing warning behavior; the Workers hostname remains a blocking check.
+The verifier waits up to 15 minutes for the complete public-file hash map. A matching revision alone is never enough; all file hashes must match. Conversely, a code-only commit with identical public files may pass, while the report still records the actual served revision. Existing current-lesson checks continue to verify the ordinary URLs, all three levels and feeds, archive, homepage, JSON hashes, and private-path 404 responses. A public-domain 403 from GitHub's runner retains the existing warning behavior; the Workers hostname remains a blocking check.
 
 Each run retains a `publishing-RUN-ATTEMPT` artifact for 14 days. It contains the expected deployment manifest, a JSON comparison report, and available verification logs. The report records expected/live revisions, file counts, sample missing/changed/unexpected files, and whether the expected revision was ever observed. Shell pipeline failures propagate even when output is copied into a log.
 

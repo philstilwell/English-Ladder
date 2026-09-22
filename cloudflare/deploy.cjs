@@ -3,11 +3,13 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const cp = require('node:child_process');
+const {performance} = require('node:perf_hooks');
 
 const ROOT = path.resolve(__dirname, '..');
-// Cloudflare needed more than a minute for the full site/search audit in the
-// first live validation; reserve three minutes before the upload retry budget.
-const PREFLIGHT_TIMEOUT_MS = 180_000;
+// The September 22 build exhausted the old three-minute limit while repeating
+// the SEO audit already included in audit_site.py. Run that audit only once in
+// build:cloudflare, and leave five minutes for checks on slower build machines.
+const PREFLIGHT_TIMEOUT_MS = 300_000;
 const DEPLOY_TIMEOUT_MS = 120_000;
 const RETRY_DELAYS_MS = Object.freeze([10_000, 30_000]);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -90,7 +92,7 @@ function succeeded(result) {
   return result.code === 0 && !result.timedOut && !result.interrupted && !result.error;
 }
 
-async function deploy({root = ROOT, runner = runCommand, pause = sleep, log = console.log, revision} = {}) {
+async function deploy({root = ROOT, runner = runCommand, pause = sleep, log = console.log, clock = () => performance.now(), revision} = {}) {
   const wrangler = localWrangler(root);
   const commit = revision || cp.execFileSync('git', ['rev-parse', 'HEAD'], {
     cwd: root, encoding: 'utf8', timeout: 5000
@@ -98,9 +100,11 @@ async function deploy({root = ROOT, runner = runCommand, pause = sleep, log = co
   if (!/^[a-f0-9]{40}$/.test(commit)) throw new Error('Cannot identify the exact commit to publish.');
   log(`Publishing commit ${commit} with pinned local Wrangler ${wrangler.version}.`);
   log(`Preflight: check and package public files once (limit ${PREFLIGHT_TIMEOUT_MS / 1000}s).`);
+  const preflightStarted = clock();
   const preflight = await runner('npm', ['run', 'build:cloudflare'], {
     cwd: root, timeoutMs: PREFLIGHT_TIMEOUT_MS
   });
+  log(`Preflight ${succeeded(preflight) ? 'passed' : 'failed'} after ${((clock() - preflightStarted) / 1000).toFixed(1)} seconds.`);
   if (!succeeded(preflight)) {
     throw new Error(`Publishing preflight ${failureDescription(preflight, PREFLIGHT_TIMEOUT_MS)}. No upload was attempted. Fix the reported checks before retrying.`);
   }

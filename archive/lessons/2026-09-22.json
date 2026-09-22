@@ -1,0 +1,789 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-22",
+  "release_iso": "2026-09-22T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Tue, 22 Sep 2026 10:11:36 GMT",
+    "retrieved_at": "2026-09-22T15:03:31.681784+00:00",
+    "title": "Harper Lee first edition novel found in Oxfam shop",
+    "summary": "An original US edition of To Kill a Mockingbird is found in an Oxfam store in west London.",
+    "evidence_text": "A rare first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.\nThe copy of Harper Lee's seminal 1960 work was discovered in a box of American books given to the charity's bookshop in Portobello Road, west London.\nShop manager Olivia Haysman-Walker, who identified the copy as being a first US edition, said the book could easily have been missed. \"There were lots of books to work through in the donation, but we recognised To Kill A Mockingbird and thought it was worth taking a closer look.\"\n\"The dust jacket showed its age, and although it was worn around the edges, the pages inside were in beautiful condition.\nIt has since been acquired by the British Library and will join its national collection.\n\"It really has been quite a journey, and it's a lovely reminder, during Second Hand September, of the kind of treasures that can be hiding among the shelves and donations in our shops.\"\nSecond Hand September is Oxfam's annual campaign encouraging people to buy second-hand.\nShe added: \"We realised quite quickly that we had something really special.\n\"It's amazing to think that this book has passed through our Oxfam bookshop and into the national collection at the British Library.\nHer story of racial injustice and childhood innocence, set in Alabama in 1934, has sold more than 40 million copies around the world and has been translated into 40 languages.\nLee's Pulitzer Prize-winning book tells the story of lawyer Atticus Finch as he defends Tom Robinson, a black man wrongly accused of raping a white woman.\nThe US novelist, who was awarded the Presidential Medal of Freedom, died in 2016 at the age of 89.",
+    "evidence_retrieved_at": "2026-09-22T15:03:31.681784+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cmd79wn72ngjo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think it was special for the book to join the British Library?",
+          "Do you like to buy second-hand items? I think ... because ... Or, what is good about buying second-hand?"
+        ],
+        "title": "Rare Harper Lee Book Found in Oxfam Shop",
+        "overview": "An old and special book by Harper Lee was found in an Oxfam shop in London.",
+        "topic": "Rare book discovery and second-hand items",
+        "vocabulary": [
+          {
+            "term": "rare",
+            "part_of_speech": "adjective",
+            "definition": "Not common; not seen or found often."
+          },
+          {
+            "term": "found",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Discovered by chance; saw or learned about something for the first time."
+          },
+          {
+            "term": "shop",
+            "part_of_speech": "noun",
+            "definition": "A place where you can buy things."
+          },
+          {
+            "term": "donated",
+            "part_of_speech": "verb (past simple)",
+            "definition": "Gave something, like money or goods, to a charity or a person who needs help."
+          },
+          {
+            "term": "manager",
+            "part_of_speech": "noun",
+            "definition": "A person who is in charge of a business or a part of a business."
+          },
+          {
+            "term": "special",
+            "part_of_speech": "adjective",
+            "definition": "Better or more important than usual; unique."
+          },
+          {
+            "term": "condition",
+            "part_of_speech": "noun",
+            "definition": "The state of something, how good or bad it is."
+          },
+          {
+            "term": "campaign",
+            "part_of_speech": "noun",
+            "definition": "A series of actions planned to achieve a goal, like selling a product or helping a cause."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions or events that happened in the past and are now finished. For example, 'was found' means someone found it before now.",
+          "example_quote": "A rare book was found in an Oxfam shop in London."
+        },
+        "quiz": [
+          {
+            "question": "What did someone find in an Oxfam shop?",
+            "options": [
+              "A new type of book.",
+              "A rare old book.",
+              "A lost piece of art."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it was an old book, not a new one.",
+              "Correct. A very special, old book was found.",
+              "It was a book, not a piece of art."
+            ]
+          },
+          {
+            "question": "What kind of book was found in the shop?",
+            "options": [
+              "A children's story.",
+              "A famous novel.",
+              "A cooking recipe book."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the story does not say it was a children's book.",
+              "Correct. The book is the famous novel 'To Kill a Mockingbird'.",
+              "The story is about a novel, not a recipe book."
+            ]
+          },
+          {
+            "question": "What does it mean if a book was \"donated\" to the shop?",
+            "options": [
+              "Someone bought the book there.",
+              "Someone gave the book for free.",
+              "Someone wanted to read the book."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"donated\" means to give, not to buy.",
+              "Correct. \"Donated\" means someone gave the book without asking for money.",
+              "Wanting to read is not what \"donated\" means."
+            ]
+          },
+          {
+            "question": "Who found the special book?",
+            "options": [
+              "A library worker.",
+              "A customer.",
+              "A shop manager."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a library worker did not find it in the shop.",
+              "The story says a manager found it, not a customer.",
+              "Correct. The shop manager, Olivia Haysman-Walker, found it."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past tense correctly?",
+            "options": [
+              "The book is special.",
+              "The book was special.",
+              "The book will be special."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"is\" is the simple present tense.",
+              "Correct. \"Was\" is the simple past form of \"to be.\"",
+              "No, \"will be\" is the future tense."
+            ]
+          },
+          {
+            "question": "Where is the rare book now?",
+            "options": [
+              "It is still in the Oxfam shop.",
+              "It is in the British Library.",
+              "It was sold to a private person."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, it is not in the Oxfam shop anymore.",
+              "Correct. The book is now part of the national collection at the British Library.",
+              "The story says it joined the national collection, not sold to a person."
+            ]
+          },
+          {
+            "question": "What is Oxfam's \"Second Hand September\" campaign about?",
+            "options": [
+              "Selling new books every September.",
+              "Helping people fix old items.",
+              "Encouraging people to buy used items."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the campaign is about second-hand items, not new ones.",
+              "The story mentions buying used items, not fixing them.",
+              "Correct. The campaign encourages people to buy things that are not new."
+            ]
+          },
+          {
+            "question": "What was good about the book's condition?",
+            "options": [
+              "Its old cover was very colorful.",
+              "The pages inside were beautiful.",
+              "It had a new dust jacket."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The story says the dust jacket showed its age and was worn, not colorful.",
+              "Correct. The story says, \"the pages inside were in beautiful condition.\"",
+              "No, the dust jacket showed its age, meaning it was old, not new."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "A rare book was found in an Oxfam shop in London.",
+          "It is a first edition of the novel 'To Kill a Mockingbird' by Harper Lee.",
+          "The book was donated to the charity's bookshop.",
+          "A shop manager found this special book and knew it was important.",
+          "The outside cover was old, but the pages inside were in beautiful condition.",
+          "Now, the book is part of the national collection at the British Library.",
+          "This discovery reminds people about treasures found in second-hand shops.",
+          "Oxfam's 'Second Hand September' campaign encourages buying used items."
+        ],
+        "sentence_evidence": [
+          "A rare first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.",
+          "A rare first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.",
+          "The copy of Harper Lee's seminal 1960 work was discovered in a box of American books given to the charity's bookshop in Portobello Road, west London.",
+          "Shop manager Olivia Haysman-Walker, who identified the copy as being a first US edition, said the book could easily have been missed. \"There were lots of books to work through in the donation, but we recognised To Kill A Mockingbird and thought it was worth taking a closer look.\"",
+          "\"The dust jacket showed its age, and although it was worn around the edges, the pages inside were in beautiful condition.",
+          "It has since been acquired by the British Library and will join its national collection.",
+          "\"It really has been quite a journey, and it's a lovely reminder, during Second Hand September, of the kind of treasures that can be hiding among the shelves and donations in our shops.\"",
+          "Second Hand September is Oxfam's annual campaign encouraging people to buy second-hand."
+        ],
+        "editorial_check": {
+          "date": "2026-09-22T15:04:21.540618+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items like 'rare', 'donated', 'manager', and 'campaign' are useful and clearly defined for A1-A2. Definitions use simple language and are contextual. No reserved vocabulary was borrowed."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a straightforward, neutral, everyday English register suitable for adult A1-A2 learners. Direct verbs and explicit subjects are consistently used."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses short clauses and familiar connectors. Grammar explanations are brief, and quiz instructions/feedback are accessible. Discussion prompts include a simple sentence frame and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson appropriately challenges A1-A2 learners by testing main ideas, contextual vocabulary, and a basic grammar pattern. Quiz options are short and plausible, avoiding outside knowledge."
+            }
+          },
+          "content_digest": "3af7718c847f7acf653c95a2d55177ebe676d74cb2a382fa691a0d0f55455576"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think first edition books like 'To Kill a Mockingbird' are considered so valuable and important to a national collection?",
+          "Have you ever found something valuable or interesting in a second-hand store or among old items? What was it, or what would you hope to find?"
+        ],
+        "title": "Rare Harper Lee First Edition Found in Oxfam Shop Goes to British Library",
+        "overview": "A valuable first edition of Harper Lee's novel To Kill a Mockingbird was discovered in an Oxfam charity shop and has since joined the national collection at the British Library.",
+        "topic": "Book Discovery, Literature, Charity, Second-hand Shopping",
+        "vocabulary": [
+          {
+            "term": "seminal",
+            "part_of_speech": "adjective",
+            "definition": "very important and influential, especially in the development of a subject or idea."
+          },
+          {
+            "term": "acquired",
+            "part_of_speech": "verb",
+            "definition": "to get or obtain something, often by buying it or receiving it."
+          },
+          {
+            "term": "national collection",
+            "part_of_speech": "noun phrase",
+            "definition": "a group of important or valuable items, such as books or art, that are owned and preserved by a country's main institution, like a library or museum."
+          },
+          {
+            "term": "identified",
+            "part_of_speech": "verb",
+            "definition": "recognized or proved who or what someone or something is."
+          },
+          {
+            "term": "dust jacket",
+            "part_of_speech": "noun",
+            "definition": "a removable paper cover on a hardback book, usually with information about the book or author."
+          },
+          {
+            "term": "worn around the edges",
+            "part_of_speech": "adjective phrase",
+            "definition": "showing signs of damage or deterioration along the outer borders due to age or frequent use."
+          },
+          {
+            "term": "passed through",
+            "part_of_speech": "phrasal verb",
+            "definition": "to move from one place to another or to be transferred from one person or stage to another."
+          },
+          {
+            "term": "encouraging",
+            "part_of_speech": "verb",
+            "definition": "giving support, confidence, or hope to someone; persuading someone to do something."
+          },
+          {
+            "term": "racial injustice",
+            "part_of_speech": "noun phrase",
+            "definition": "unfair treatment of a person or group based on their race."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action itself and the object that receives the action, rather than on the performer of the action. It's often used in news reporting when the 'doer' is unknown, obvious, or less important. The structure is 'to be' + past participle.",
+          "example_quote": "It has since been acquired by the British Library and will join its national collection."
+        },
+        "quiz": [
+          {
+            "question": "What kind of book was discovered in the Oxfam shop?",
+            "options": [
+              "A first edition of To Kill a Mockingbird.",
+              "A new novel by Harper Lee.",
+              "A regular paperback copy of a classic."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! A valuable first edition of Harper Lee's famous novel was found.",
+              "This is incorrect. It was an older, valuable first edition of an existing novel, not a new one.",
+              "This is incorrect. It was a first edition, which is typically much more valuable than a regular paperback."
+            ]
+          },
+          {
+            "question": "Where was the rare book discovered?",
+            "options": [
+              "In the British Library's archives.",
+              "In an Oxfam bookshop in west London.",
+              "At a private book collector's home."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The British Library acquired the book later; it was not found there.",
+              "That's right! It was found among donated items at an Oxfam bookshop.",
+              "Incorrect. The book was found in a charity shop, not a private collection."
+            ]
+          },
+          {
+            "question": "What happened to the book after it was identified?",
+            "options": [
+              "It was sold to a private collector for a high price.",
+              "It was returned to its original owner.",
+              "It was acquired by the British Library for its national collection."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This is incorrect. The text states it was acquired by the British Library, not sold to a private individual.",
+              "Incorrect. The article doesn't mention returning it to an original owner; it became part of a national collection.",
+              "Correct! The British Library took ownership of the book to add it to their national collection."
+            ]
+          },
+          {
+            "question": "What does the word \"seminal\" mean in the context of Harper Lee's work?",
+            "options": [
+              "Newly published and popular.",
+              "Very important and influential.",
+              "Easy to read and understand."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Seminal\" describes its historical importance, not that it's new.",
+              "Correct! A \"seminal\" work is highly significant and has a lasting influence.",
+              "Incorrect. While the book is well-known, \"seminal\" refers to its profound impact, not its readability."
+            ]
+          },
+          {
+            "question": "According to the shop manager, Olivia Haysman-Walker, what could have easily happened to the book?",
+            "options": [
+              "It could have been damaged by other items.",
+              "It could have been overlooked or missed.",
+              "It could have been bought by a regular customer."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions its dust jacket was worn, but the manager specifically said it could have been 'missed', implying it could have gone unnoticed.",
+              "Yes, the manager stated the book could 'easily have been missed' among other donations.",
+              "While possible, the manager's comment highlighted the risk of it being overlooked, not necessarily who would buy it."
+            ]
+          },
+          {
+            "question": "What is the main purpose of \"Second Hand September\"?",
+            "options": [
+              "To collect old books for libraries.",
+              "To celebrate historical literary works.",
+              "To encourage people to buy second-hand items."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. While books are involved in this story, the campaign's general goal is broader than just books for libraries.",
+              "Incorrect. The campaign focuses on buying second-hand, not specifically celebrating literature.",
+              "That's right! Second Hand September is Oxfam's annual campaign to encourage buying used goods."
+            ]
+          },
+          {
+            "question": "Which sentence from the reading uses the passive voice?",
+            "options": [
+              "Shop manager Olivia Haysman-Walker identified the copy as being a first US edition.",
+              "Lee's Pulitzer Prize-winning book tells a story of racial injustice.",
+              "The copy of Harper Lee's seminal 1960 work was discovered in a box of American books."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses the active voice because the manager is performing the action of identifying.",
+              "This sentence uses the active voice; the book 'tells' the story.",
+              "Correct! \"was discovered\" is in the passive voice, focusing on the book receiving the action, not who discovered it."
+            ]
+          },
+          {
+            "question": "What details about the book's physical state are mentioned?",
+            "options": [
+              "It was brand new and perfectly preserved.",
+              "The dust jacket was worn, but the pages inside were good.",
+              "Both the cover and pages were extensively damaged."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article states the dust jacket showed its age and was worn.",
+              "That's correct. The dust jacket was worn, but the internal pages were in beautiful condition.",
+              "Incorrect. While the dust jacket was worn, the pages inside were described as being in beautiful condition."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "A first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.",
+          "The copy of Harper Lee's seminal 1960 work was discovered in a box of American books given to a bookshop in west London.",
+          "It has since been acquired by the British Library and will join its national collection.",
+          "Shop manager Olivia Haysman-Walker identified the copy as being a first US edition, saying it could easily have been missed.",
+          "She realised quickly that they had something truly valuable.",
+          "Although its dust jacket was worn around the edges, the pages inside were in beautiful condition.",
+          "It is remarkable to think this book passed through the Oxfam bookshop and into the British Library's national collection.",
+          "This discovery is a lovely reminder, during Second Hand September, of treasures hiding among donations in charity shops.",
+          "Second Hand September is Oxfam's annual campaign encouraging people to buy second-hand items.",
+          "Lee's Pulitzer Prize-winning book tells a story of racial injustice and childhood innocence, selling over 40 million copies worldwide."
+        ],
+        "sentence_evidence": [
+          "A rare first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.",
+          "The copy of Harper Lee's seminal 1960 work was discovered in a box of American books given to the charity's bookshop in Portobello Road, west London.",
+          "It has since been acquired by the British Library and will join its national collection.",
+          "Shop manager Olivia Haysman-Walker, who identified the copy as being a first US edition, said the book could easily have been missed. \"There were lots of books to work through in the donation, but we recognised To Kill A Mockingbird and thought it was worth taking a closer look.\"",
+          "She added: \"We realised quite quickly that we had something really special.",
+          "\"The dust jacket showed its age, and although it was worn around the edges, the pages inside were in beautiful condition.",
+          "\"It's amazing to think that this book has passed through our Oxfam bookshop and into the national collection at the British Library.",
+          "\"It really has been quite a journey, and it's a lovely reminder, during Second Hand September, of the kind of treasures that can be hiding among the shelves and donations in our shops.\"",
+          "Second Hand September is Oxfam's annual campaign encouraging people to buy second-hand.",
+          "Her story of racial injustice and childhood innocence, set in Alabama in 1934, has sold more than 40 million copies around the world and has been translated into 40 languages."
+        ],
+        "editorial_check": {
+          "date": "2026-09-22T15:05:23.481621+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary list includes appropriate B1-B2 terms such as 'seminal', 'acquired', 'national collection', and 'racial injustice', offering useful contextual learning without being elementary or overly specialized. None of the terms are from the reserved vocabulary list."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses natural, neutral news English across all learner-facing sections, maintaining an appropriate and coherent register for the B1-B2 level."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language is clear, uses manageable sentences, and explains grammar concisely. Definitions, questions, and feedback are direct and easy to understand, making the content accessible for B1-B2 learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively combines reading comprehension with vocabulary in context and grammar application. The quiz and discussion questions encourage deeper engagement with the content, providing appropriate challenge for B1-B2 learners."
+            }
+          },
+          "content_digest": "9f45528dd30434145f514417923b4a5e4a26700916a572024b253e6852978e6c"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Olivia Haysman-Walker mentioned the book's potential to be \"easily overlooked.\" What does this suggest about assessing donated items?",
+          "Have you ever found a valuable item unexpectedly, perhaps at a second-hand store or market? What advice would you give someone searching for \"hidden treasures\"?"
+        ],
+        "title": "Harper Lee First Edition Discovered in Oxfam Donation Joins British Library",
+        "overview": "A rare first edition of Harper Lee's \"To Kill a Mockingbird\" was found in an Oxfam charity shop, underscoring the potential for valuable literary discoveries in unexpected places before joining the British Library's national collection.",
+        "topic": "Rare Books, Literary Discoveries, Charity Shops",
+        "vocabulary": [
+          {
+            "part_of_speech": "adjective",
+            "definition": "known and admired by many people for its quality or achievement; famous.",
+            "term": "renowned"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "an object of historical or cultural interest, often valuable and discovered through careful investigation or circumstance.",
+            "term": "artifact"
+          },
+          {
+            "part_of_speech": "verb phrase",
+            "definition": "certain or planned to add to the value, quality, or significance of something.",
+            "term": "destined to enrich"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "covering a large area; great in amount or scale.",
+            "term": "extensive"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "the immense quantity or amount of something, emphasizing its largeness.",
+            "term": "sheer volume"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "to examine or inspect something closely and thoroughly.",
+            "term": "scrutinize"
+          },
+          {
+            "part_of_speech": "verb, past tense",
+            "definition": "perceived or recognized something, often with difficulty, by using one's senses or intellect.",
+            "term": "discerned"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "deep and far-reaching importance in relation to past events or developments.",
+            "term": "profound historical significance"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "in its original condition; unspoiled or spotless.",
+            "term": "pristine"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "inspiring respect and admiration; having high status.",
+            "term": "prestigious"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "records a series of events in a factual and detailed way.",
+            "term": "chronicles"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "accorded a great deal of respect, especially because of age, wisdom, or character.",
+            "term": "venerable"
+          }
+        ],
+        "grammar": {
+          "concept": "Participle Clauses for Additional Information",
+          "explanation": "Participle clauses, often introduced by a present participle (the -ing form) or a past participle (the -ed form), function to add extra information about the main clause, describing a consequence, reason, or simultaneous action. They offer a more concise and sophisticated way to combine ideas, particularly in formal or journalistic writing, by reducing the need for separate clauses joined by conjunctions.",
+          "example_quote": "Olivia Haysman-Walker, the shop manager, identified this particular US first edition, noting its potential to have been easily overlooked."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary subject of the news brief?",
+            "options": [
+              "The history of Harper Lee's literary career and awards.",
+              "The discovery of a valuable book in a charity shop and its subsequent acquisition.",
+              "Oxfam's annual Second Hand September campaign and its impact."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While Harper Lee's career and awards are mentioned, they serve as background to the main event. The central focus is the book's discovery.",
+              "The article's core narrative revolves around the finding of a first edition of \"To Kill a Mockingbird\" in an Oxfam shop and its transfer to the British Library.",
+              "Second Hand September is discussed, but it is presented as a reminder and context, not the primary subject of the entire news brief."
+            ]
+          },
+          {
+            "question": "Where was the first edition of \"To Kill a Mockingbird\" initially discovered?",
+            "options": [
+              "At the British Library in London.",
+              "In a box of American books at an Oxfam charity shop.",
+              "Among Harper Lee's personal effects after her death."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The British Library acquired the book, but it was not discovered there. It was found before reaching the library.",
+              "The article explicitly states the book was found \"in a box of American books at the charity's Portobello Road bookshop in west London.\" (Source 3)",
+              "The article makes no mention of the book being found among Harper Lee's personal belongings. It was a donation to a charity shop."
+            ]
+          },
+          {
+            "question": "The article describes \"To Kill a Mockingbird\" as a \"renowned novel.\" What does \"renowned\" imply in this context?",
+            "options": [
+              "That the novel is currently popular and frequently discussed.",
+              "That it is highly regarded and widely recognized for its literary merit.",
+              "That it has been recently published and is gaining attention."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While it may still be popular, \"renowned\" specifically refers to its long-standing fame and esteemed reputation, not just current trendiness.",
+              "\"Renowned\" accurately indicates that the novel is famous and respected for its literary quality and impact, acknowledged by many. (Vocabulary)",
+              "The novel was published in 1960, making this option incorrect. \"Renowned\" describes established fame, not recent publication."
+            ]
+          },
+          {
+            "question": "Based on the shop manager's comments, what challenge did the Oxfam staff overcome to find the book?",
+            "options": [
+              "They had to travel to various locations to locate a potential first edition.",
+              "The book was deliberately hidden among less valuable items.",
+              "The sheer volume of donations meant the book could have been easily overlooked."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The staff did not travel to locate the book; it was part of an existing donation. The challenge was within the shop.",
+              "The article does not suggest the book was deliberately hidden; rather, its discovery was due to diligence amidst many items.",
+              "Olivia Haysman-Walker noted \"the sheer volume of incoming donations,\" indicating the significant quantity of books made it challenging to spot. (Reading Sentence 5)"
+            ]
+          },
+          {
+            "question": "Which sentence below effectively uses a participle clause to add descriptive information, similar to the grammar example \"noting its potential to have been easily overlooked\"?",
+            "options": [
+              "The student, who studied diligently, passed the exam with flying colours.",
+              "The ancient map, discovered in a dusty attic, revealed a forgotten pirate treasure.",
+              "Because the team worked late, they finished the project on time."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This uses a relative clause, \"who studied diligently,\" not a participle clause. Participle clauses are more condensed.",
+              "This sentence uses the past participle clause \"discovered in a dusty attic\" to add information about the map, functioning similarly to the grammar example. (Grammar)",
+              "This is a subordinate clause of reason, \"Because the team worked late,\" not a participle clause. It explicitly states the cause."
+            ]
+          },
+          {
+            "question": "What does it mean that the Oxfam staff decided to \"scrutinize it more closely\" after recognizing \"To Kill a Mockingbird\"?",
+            "options": [
+              "They decided to quickly sell it due to its perceived value.",
+              "They chose to simply label it and place it on a prominent shelf.",
+              "They undertook a careful and thorough examination of the book."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Scrutinize\" implies examination, not an immediate sale. Selling would come after assessment.",
+              "Placing it on a shelf does not involve careful examination, which is implied by \"scrutinize.\"",
+              "To \"scrutinize\" something means to inspect it very carefully and thoroughly, which is what the staff did to verify its authenticity and value. (Vocabulary)"
+            ]
+          },
+          {
+            "question": "How did the Oxfam personnel ascertain the true value and nature of the book?",
+            "options": [
+              "They waited for a buyer to express interest, confirming its market value.",
+              "They discerned its truly exceptional nature and profound historical significance quickly.",
+              "They relied solely on the book's dust jacket, which clearly indicated its rarity."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states they \"realized quite quickly that we had something really special\" before it was offered for sale. (Reading Sentence 6)",
+              "The staff \"discerned\" (recognized with effort) its exceptional nature, acknowledging its \"profound historical significance.\" (Reading Sentence 6, Vocabulary)",
+              "While the dust jacket showed age, the article specifies that the *pages inside* were in beautiful condition, and the staff's overall assessment led to the discovery, not just the jacket itself."
+            ]
+          },
+          {
+            "question": "What is the key contrast highlighted regarding the book's physical state?",
+            "options": [
+              "The dust jacket was missing, but the cover was intact.",
+              "The cover was pristine, but the internal pages were damaged.",
+              "The dust jacket showed wear, but the internal pages were in pristine condition."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article mentions the dust jacket was present but worn, not missing. (Reading Sentence 7)",
+              "This is the opposite of what the article states; the pages were pristine, not damaged. (Reading Sentence 7)",
+              "The text explicitly states: \"Although its dust jacket bore the marks of age and was somewhat worn around the edges, the internal pages remained in pristine condition.\" (Reading Sentence 7, Vocabulary)"
+            ]
+          },
+          {
+            "question": "What does \"prestigious\" suggest about the British Library in the context of the book's new home?",
+            "options": [
+              "It is a newly established library seeking to build its collection.",
+              "It is an organization that offers significant financial compensation for rare books.",
+              "It is highly respected and commands importance as a cultural institution."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The British Library is an established institution, not newly established. \"Prestigious\" refers to its reputation.",
+              "While they acquired the book, \"prestigious\" refers to the library's high status and reputation, not primarily its financial transactions.",
+              "\"Prestigious\" accurately describes the British Library as a highly respected and important institution, a fitting home for a valuable artifact. (Vocabulary)"
+            ]
+          },
+          {
+            "question": "What is the central theme that Lee's Pulitzer Prize-winning book, \"To Kill a Mockingbird,\" \"chronicles\"?",
+            "options": [
+              "The historical development of Alabama's legal system in the 20th century.",
+              "The valiant defense of an innocent man against charges of racial injustice and the loss of childhood innocence.",
+              "The meticulous process of acquiring rare books for national collections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the setting is 1934 Alabama, the book's focus is on the story's characters and themes, not a legal system's historical development.",
+              "The novel \"chronicles\" Atticus Finch's defense against a wrongful accusation, exploring themes of societal injustice and childhood innocence. (Reading Sentence 11 & 12, Vocabulary)",
+              "This describes the current news story, not the content of Harper Lee's novel itself. The question asks about what the book chronicles."
+            ]
+          },
+          {
+            "question": "How does the article portray the book's journey from the Oxfam shop to the British Library?",
+            "options": [
+              "As a typical transfer for books discovered in charity shops.",
+              "As a surprising and remarkable progression for such an artifact.",
+              "As a predictable outcome given the book's initial perceived value."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The shop manager's comments, such as \"It's amazing to think\" and \"quite a journey,\" suggest this was not a typical occurrence. (Reading Sentence 8 & 9)",
+              "Haysman-Walker explicitly stated it was \"amazing to think that this book has passed through our Oxfam bookshop and into the national collection at the British Library,\" implying a remarkable and perhaps unexpected journey. (Reading Sentence 8)",
+              "The manager's comment that it could have been \"easily overlooked\" contradicts the idea that its value was initially perceived or its journey predictable. (Reading Sentence 5)"
+            ]
+          },
+          {
+            "question": "What does the term \"venerable\" imply about Harper Lee's age at the time of her death?",
+            "options": [
+              "She was exceptionally young to have achieved such literary success.",
+              "She was a respected figure who lived to a significantly old age.",
+              "Her age was largely unknown, adding to her mystique."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states she died at 89, which is not exceptionally young. \"Venerable\" describes advanced age coupled with respect.",
+              "\"Venerable\" in this context refers to Harper Lee's advanced age of 89, signifying respect and wisdom accumulated over a long life. (Vocabulary)",
+              "The article explicitly states her age at death, so her age was not unknown. \"Venerable\" conveys respect for her age."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "An original US first edition of Harper Lee's renowned novel, \"To Kill a Mockingbird,\" was recently discovered within a donation to an Oxfam charity shop.",
+          "This significant literary find, the seminal 1960 work, emerged from a box of American books at the charity's Portobello Road bookshop in west London.",
+          "The valuable copy has since been acquired by the British Library, where it is destined to enrich its extensive national collection.",
+          "Olivia Haysman-Walker, the shop manager, identified this particular US first edition, noting its potential to have been easily overlooked.",
+          "She explained that despite the sheer volume of incoming donations, staff recognized the iconic novel and decided to scrutinize it more closely.",
+          "Oxfam personnel quickly discerned they were in possession of a truly exceptional item, recognizing its profound historical significance.",
+          "Although its dust jacket bore the marks of age and was somewhat worn around the edges, the internal pages remained in pristine condition.",
+          "Haysman-Walker expressed her amazement that such a valuable artifact journeyed from their bookshop into the prestigious British Library.",
+          "She characterized this as 'quite a journey' and a 'lovely reminder' during Second Hand September of the unsuspected treasures lurking in charitable donations.",
+          "Oxfam's annual Second Hand September initiative actively promotes the environmental and economic benefits of purchasing second-hand items.",
+          "Lee's Pulitzer Prize-winning book chronicles the lawyer Atticus Finch's valiant defense of Tom Robinson, a Black man wrongly accused of raping a white woman.",
+          "This profound narrative of societal injustice and childhood innocence, set in 1934 Alabama, has sold over 40 million copies globally and been translated into 40 languages.",
+          "The celebrated US novelist, a recipient of the Presidential Medal of Freedom, passed away in 2016 at the venerable age of 89."
+        ],
+        "sentence_evidence": [
+          "A rare first edition of the novel To Kill A Mockingbird has been found among items donated to Oxfam, according to the charity.",
+          "The copy of Harper Lee's seminal 1960 work was discovered in a box of American books given to the charity's bookshop in Portobello Road, west London.",
+          "It has since been acquired by the British Library and will join its national collection.",
+          "Shop manager Olivia Haysman-Walker, who identified the copy as being a first US edition, said the book could easily have been missed. \"There were lots of books to work through in the donation, but we recognised To Kill A Mockingbird and thought it was worth taking a closer look.\"",
+          "Shop manager Olivia Haysman-Walker, who identified the copy as being a first US edition, said the book could easily have been missed. \"There were lots of books to work through in the donation, but we recognised To Kill A Mockingbird and thought it was worth taking a closer look.\"",
+          "She added: \"We realised quite quickly that we had something really special.",
+          "\"The dust jacket showed its age, and although it was worn around the edges, the pages inside were in beautiful condition.",
+          "\"It's amazing to think that this book has passed through our Oxfam bookshop and into the national collection at the British Library.",
+          "\"It really has been quite a journey, and it's a lovely reminder, during Second Hand September, of the kind of treasures that can be hiding among the shelves and donations in our shops.\"",
+          "Second Hand September is Oxfam's annual campaign encouraging people to buy second-hand.",
+          "Lee's Pulitzer Prize-winning book tells the story of lawyer Atticus Finch as he defends Tom Robinson, a black man wrongly accused of raping a white woman.",
+          "Her story of racial injustice and childhood innocence, set in Alabama in 1934, has sold more than 40 million copies around the world and has been translated into 40 languages.",
+          "The US novelist, who was awarded the Presidential Medal of Freedom, died in 2016 at the age of 89."
+        ],
+        "editorial_check": {
+          "date": "2026-09-22T15:06:46.979573+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "Vocabulary terms are consistently C1+ level, offering precise and transferable language. Definitions are clear and contextual, avoiding elementary glosses or reserved terms."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a consistently polished and natural journalistic register suitable for C1-Higher news reporting, with appropriate formality and accurate attribution."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language is precise, using controlled complex sentences in explanations and concise, illuminating feedback for quiz options, distinguishing subtle differences where needed."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson offers substantive challenge through questions requiring supported inference, contextual vocabulary understanding, and practical application of grammar, with plausible distractors."
+            }
+          },
+          "content_digest": "8da613adce23bbd79e18c22f9de51f18638f3e192f8073c00c7dac958ef55f41"
+        }
+      }
+    }
+  }
+}

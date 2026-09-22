@@ -92,7 +92,7 @@
       next.type = "button";
       next.disabled = false;
       next.className = "primary-button";
-      next.textContent = ["Check your understanding →", "Discuss the story →", "Finish lesson ✓"][index];
+      next.textContent = ["Check your understanding in the 'Practice' section.", "Discuss the story →", "Finish lesson ✓"][index];
       if (index === 2) {
         next.dataset.finishLesson = "";
         next.setAttribute("aria-pressed", "false");
@@ -118,6 +118,14 @@
         }
       });
       if (!next.parentElement) actions.append(next);
+      if (index === 2) {
+        const help = actions.querySelector(".lesson-completion-help") || document.createElement("p");
+        help.className = "lesson-completion-help";
+        help.id = `learning-${lessonIndex}-completion-help`;
+        help.textContent = "Click to mark complete; click again to undo. Checkmarks across the site track your completed lessons in this browser.";
+        next.setAttribute("aria-describedby", help.id);
+        if (help.previousElementSibling !== next) next.after(help);
+      }
       if (!actions.parentElement) panel.append(actions);
     });
 

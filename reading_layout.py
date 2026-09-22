@@ -131,11 +131,18 @@ def prepare_reading_controls(soup):
                 back.string = '← ' + ('Read again' if stage_index == 1 else 'Back to practice')
                 actions.append(back)
             next_button = soup.new_tag('button', type='button', disabled='', attrs={'class': 'primary-button'})
-            next_button.string = ['Check your understanding →', 'Discuss the story →', 'Finish lesson ✓'][stage_index]
+            next_button.string = ["Check your understanding in the 'Practice' section.", 'Discuss the story →', 'Finish lesson ✓'][stage_index]
             if stage_index == 2:
                 next_button['data-finish-lesson'] = ''
                 next_button['aria-pressed'] = 'false'
             actions.append(next_button)
+            if stage_index == 2:
+                help_id = f'learning-{index}-completion-help'
+                next_button['aria-describedby'] = help_id
+                help_note = soup.new_tag('p', id=help_id, attrs={'class': 'lesson-completion-help'})
+                help_note.string = ('Click to mark complete; click again to undo. Checkmarks across the site '
+                                    'track your completed lessons in this browser.')
+                actions.append(help_note)
             panel.append(actions)
         content.insert(0, nav)
         read = content.select_one('[data-stage="read"]')

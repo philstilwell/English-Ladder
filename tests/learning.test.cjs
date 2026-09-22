@@ -56,7 +56,7 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
     assert.equal(document.getElementById(word.getAttribute("aria-controls")).hidden, false);
     word.dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Escape" }));
     assert.equal(word.getAttribute("aria-expanded"), "false");
-    panels[0].querySelector(".stage-actions button").click();
+    panels[0].querySelector(".stage-actions .primary-button").click();
     assert.deepEqual(panels.map(p => p.hidden), [true, false, true]);
     const question = panels[1].querySelector(".quiz-question");
     question.querySelector('[data-bg="#e6ffe6"]').click();
@@ -66,7 +66,7 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
     assert.match(question.querySelector(".feedback").textContent, /^Incorrect:/);
     assert.equal(question.querySelectorAll('[aria-pressed="true"]').length, 1);
     assert.match(panels[1].querySelector(".practice-progress").textContent, /1 of \d+ questions answered · 0 correct/);
-    panels[1].querySelector(".stage-actions button:last-child").click();
+    panels[1].querySelector(".stage-actions .primary-button").click();
     assert.deepEqual(panels.map(p => p.hidden), [true, true, false]);
     assert.equal(panels[2].querySelector("textarea,.note-hint"), null);
     const activities = panels[2].querySelector('.discussion-activities').textContent;
@@ -74,7 +74,7 @@ for (const file of ["beginner.html", "intermediate.html", "advanced.html", ...["
     lesson.querySelector(".learning-flow button").click();
     lesson.querySelector(".learning-flow button:last-child").click();
     assert.equal(panels[2].querySelector('.discussion-activities').textContent, activities);
-    panels[2].querySelector(".stage-actions button:last-child").click();
+    panels[2].querySelector("[data-finish-lesson]").click();
     assert.equal(panels[2].querySelector(".completion-message").hidden, false);
     assert.equal(dom.window.localStorage.length, 0, "Speaking activities must not create stored answers");
     dom.window.close();

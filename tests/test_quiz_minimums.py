@@ -19,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class QuizMinimumTests(unittest.TestCase):
     def setUp(self):
-        self.archive = json.loads((ROOT/'archive/lessons/2026-09-06.json').read_text())
+        self.archive = json.loads((ROOT/'tests/fixtures/reviewed-edition.json').read_text())
 
     def lesson(self, config):
         return copy.deepcopy(self.archive['levels'][config['name'].lower()]['lesson'])

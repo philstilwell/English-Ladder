@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class ReadingLayoutTests(unittest.TestCase):
     def test_rebuilding_controls_preserves_lesson_text_without_duplicates(self):
-        soup = BeautifulSoup((ROOT / 'news/2026-09-14/advanced.html').read_text(), 'html.parser')
+        soup = BeautifulSoup((ROOT / f'news/{max((ROOT / "archive/lessons").glob("*.json")).stem}/advanced.html').read_text(), 'html.parser')
         reading = soup.select_one('[data-stage="read"] .section').get_text()
         prepare_reading_controls(soup)
         prepared = str(soup)

@@ -32,7 +32,7 @@ class TeachingTypographyTests(unittest.TestCase):
         self.assertEqual([o['text'] for o in c['checks'][2]['options']], [s.get_text() for s in page.select('label span')])
 
     def test_archive_display_keeps_reading_evidence_choices_and_translations_intact(self):
-        record = json.loads((ROOT / 'archive/lessons/2026-09-06.json').read_text())
+        record = json.loads((ROOT / 'tests/fixtures/reviewed-edition.json').read_text())
         lesson = record['levels']['advanced']
         lesson = lesson.get('lesson', lesson)
         before = copy.deepcopy(lesson)

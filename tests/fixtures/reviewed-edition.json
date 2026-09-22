@@ -1,0 +1,657 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-06",
+  "release_iso": "2026-09-06T10:00:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "title": "Aviation faces hotter, stormier skies – and passengers might have to accept more disruption",
+    "summary": "Are people going to have to increasingly accept more delays and diversions as the effects of climate change intensify?",
+    "link": "https://www.bbc.co.uk/news/articles/cm274p8m88lo?at_medium=RSS&at_campaign=rss",
+    "evidence_text": "The report examines how climate change and more severe weather could increase interruptions to aviation.\nStorms near London and across northern Europe caused substantial flight delays during a busy summer travel period.\nAir traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.\nPoor conditions can require aircraft to take different paths or land at another airport.\nAn airport receiving diverted aircraft needs room for planes and facilities for additional passengers.\nPilots use weather radar and forecasting information to help avoid dangerous storm conditions.\nStorm cells can move quickly, and changes to a flight’s course may occur late in the journey.\nLonger flight paths can require more fuel and increase airline costs.\nFlooding can affect airport operations and prevent travellers from reaching airports by road or rail.\nThe report presents future disruption as a risk rather than claiming every flight will be affected.",
+    "evidence_kind": "Editor-written factual notes paraphrased from the linked BBC article; not quotations or independent reporting.",
+    "evidence_retrieved_at": "2026-09-07T03:55:30.411319+00:00"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "title": "Weather and air travel",
+        "overview": "Could changing weather mean more problems for travelers?",
+        "topic": "Weather and travel",
+        "prediction": "Read the title. What do you think the story is about?",
+        "discussion": [
+          "What happened? Start with: The report says ___.",
+          "Imagine a late bus or plane. Complete: While I wait, I can ___."
+        ],
+        "news_brief_sentences": [
+          "Changing weather may cause more disruption to air travel.",
+          "Summer storms brought long delays to flights near London.",
+          "Some planes had to wait on the ground while staff managed busy skies.",
+          "Some planes might need to change their routes.",
+          "Pilots use weather information to help them avoid dangerous storms.",
+          "Airports need space and services for passengers whose planes arrive somewhere unexpected."
+        ],
+        "vocabulary": [
+          {
+            "term": "disruption",
+            "part_of_speech": "noun",
+            "definition": "a problem that interrupts normal activity"
+          },
+          {
+            "term": "delays",
+            "part_of_speech": "plural noun",
+            "definition": "times when something happens later than planned"
+          },
+          {
+            "term": "routes",
+            "part_of_speech": "plural noun",
+            "definition": "the ways used to travel from one place to another"
+          },
+          {
+            "term": "pilots",
+            "part_of_speech": "plural noun",
+            "definition": "people who fly aircraft"
+          },
+          {
+            "term": "passengers",
+            "part_of_speech": "plural noun",
+            "definition": "people travelling in a vehicle who are not driving or flying it"
+          },
+          {
+            "term": "unexpected",
+            "part_of_speech": "adjective",
+            "definition": "not thought likely to happen"
+          }
+        ],
+        "grammar": {
+          "concept": "Might for possibility",
+          "explanation": "Might need to means a change is possible. It does not say every plane will change its route.",
+          "example_quote": "Some planes might need to change their routes."
+        },
+        "quiz": [
+          {
+            "question": "What is the main question in this report?",
+            "options": [
+              "Could changing weather cause more travel problems?",
+              "Will every flight stop permanently?",
+              "Have all passengers already changed their plans?"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The report asks about possible disruption from changing conditions.",
+              "The report does not say every flight will stop.",
+              "The report does not say all passengers have changed plans."
+            ]
+          },
+          {
+            "question": "Which pair of problems is mentioned?",
+            "options": [
+              "Delays and changes of route",
+              "Lost passports and hotel prices",
+              "Longer holidays and new jobs"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The source mentions delays and diversions.",
+              "These problems are not stated in the supplied summary.",
+              "These are not the travel problems described."
+            ]
+          },
+          {
+            "question": "What is a route?",
+            "options": [
+              "The way used to get from one place to another",
+              "The time when a shop opens",
+              "The amount paid for a ticket"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A route is the way taken on a journey.",
+              "An opening time is not a route.",
+              "A ticket price is a cost, not a route."
+            ]
+          },
+          {
+            "question": "Which sentence keeps the meaning of might?",
+            "options": [
+              "A change of route is possible.",
+              "A change of route is certain for every flight.",
+              "A change of route is impossible."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Might expresses possibility.",
+              "This turns a possibility into an unsupported certainty.",
+              "Impossible contradicts the possibility expressed by might."
+            ]
+          },
+          {
+            "question": "Why do pilots use weather information?",
+            "options": [
+              "To help them avoid dangerous storms",
+              "To make storms move more slowly",
+              "To choose passengers’ seats"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says pilots use weather information to avoid dangerous storms.",
+              "Weather information helps pilots make decisions; it does not slow storms.",
+              "The reading connects weather information to avoiding storms, not choosing seats."
+            ]
+          },
+          {
+            "question": "What do airports need when planes arrive somewhere unexpected?",
+            "options": [
+              "Space and services for passengers",
+              "Fewer places for passengers to wait",
+              "A promise that no more planes will land"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says airports need space and services for these passengers.",
+              "Unexpected arrivals need space; fewer waiting places would not meet that need.",
+              "No such promise is mentioned; the reading describes providing space and services."
+            ]
+          }
+        ],
+        "sentence_evidence": [
+          "The report examines how climate change and more severe weather could increase interruptions to aviation.",
+          "Storms near London and across northern Europe caused substantial flight delays during a busy summer travel period.",
+          "Air traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.",
+          "Poor conditions can require aircraft to take different paths or land at another airport.",
+          "Pilots use weather radar and forecasting information to help avoid dangerous storm conditions.",
+          "An airport receiving diverted aircraft needs room for planes and facilities for additional passengers."
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "title": "Weather and air travel",
+        "overview": "Could changing weather mean more problems for travelers?",
+        "topic": "Weather and travel",
+        "prediction": "Read the title. What do you think the story is about?",
+        "discussion": [
+          "Summarize what the source establishes and what it leaves uncertain.",
+          "How would you explain the story to someone who has not read it? Give a possible everyday example, clearly separate from the reported facts."
+        ],
+        "news_brief_sentences": [
+          "Air travel may face more disruption as climate change brings more severe weather.",
+          "During a busy summer travel period, storms near London caused long delays.",
+          "Air traffic teams guided aircraft around the storms, reducing the space available for other flights.",
+          "Some departures had to wait on the ground because the skies were congested.",
+          "Some planes might need to change their routes.",
+          "When aircraft land at a different airport, there must be space and facilities for the extra arrivals.",
+          "Pilots use radar and forecasts to help them avoid dangerous weather.",
+          "However, fast-moving storms can force changes late in a flight."
+        ],
+        "vocabulary": [
+          {
+            "term": "severe",
+            "part_of_speech": "adjective",
+            "definition": "very serious or strong"
+          },
+          {
+            "term": "departures",
+            "part_of_speech": "plural noun",
+            "definition": "flights or journeys that leave a place"
+          },
+          {
+            "term": "congested",
+            "part_of_speech": "adjective",
+            "definition": "too crowded for traffic to move easily"
+          },
+          {
+            "term": "facilities",
+            "part_of_speech": "plural noun",
+            "definition": "buildings, equipment or services provided for a purpose"
+          },
+          {
+            "term": "forecasts",
+            "part_of_speech": "plural noun",
+            "definition": "statements about what is likely to happen in the future"
+          },
+          {
+            "term": "air traffic",
+            "part_of_speech": "noun phrase",
+            "definition": "the movement of aircraft through the sky or around airports"
+          },
+          {
+            "term": "radar",
+            "part_of_speech": "noun",
+            "definition": "equipment that uses radio waves to locate objects or weather conditions"
+          },
+          {
+            "term": "available",
+            "part_of_speech": "adjective",
+            "definition": "ready or possible to use"
+          }
+        ],
+        "grammar": {
+          "concept": "Might for possibility",
+          "explanation": "Might need to means a change is possible. It does not say every plane will change its route.",
+          "example_quote": "Some planes might need to change their routes."
+        },
+        "quiz": [
+          {
+            "question": "What is the main question in this report?",
+            "options": [
+              "Could changing weather cause more travel problems?",
+              "Will every flight stop permanently?",
+              "Have all passengers already changed their plans?"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The report asks about possible disruption from changing conditions.",
+              "The report does not say every flight will stop.",
+              "The report does not say all passengers have changed plans."
+            ]
+          },
+          {
+            "question": "Which pair of problems is mentioned?",
+            "options": [
+              "Delays and changes of route",
+              "Lost passports and hotel prices",
+              "Longer holidays and new jobs"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The source mentions delays and diversions.",
+              "These problems are not stated in the supplied summary.",
+              "These are not the travel problems described."
+            ]
+          },
+          {
+            "question": "What is a route?",
+            "options": [
+              "The way used to get from one place to another",
+              "The time when a shop opens",
+              "The amount paid for a ticket"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A route is the way taken on a journey.",
+              "An opening time is not a route.",
+              "A ticket price is a cost, not a route."
+            ]
+          },
+          {
+            "question": "Which sentence keeps the meaning of might?",
+            "options": [
+              "A change of route is possible.",
+              "A change of route is certain for every flight.",
+              "A change of route is impossible."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Might expresses possibility.",
+              "This turns a possibility into an unsupported certainty.",
+              "Impossible contradicts the possibility expressed by might."
+            ]
+          },
+          {
+            "question": "Why did some departures have to wait on the ground?",
+            "options": [
+              "The skies were congested.",
+              "Every airport had permanently closed.",
+              "Pilots had stopped receiving all forecasts."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading connects the ground delays to congestion in the skies.",
+              "It describes congestion and delays, not the permanent closure of every airport.",
+              "Pilots use forecasts; the passage does not say forecasts had stopped."
+            ]
+          },
+          {
+            "question": "What happens to the available flight space when aircraft are guided around storms?",
+            "options": [
+              "Less space remains available for other flights.",
+              "All other aircraft gain an extra direct route.",
+              "The storms immediately disappear from the area."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Guiding aircraft around storms reduces the space available for other flights.",
+              "The reading describes reduced space, not a new direct route for everyone.",
+              "Aircraft are redirected around storms; this does not make the storms disappear."
+            ]
+          },
+          {
+            "question": "What does facilities refer to when aircraft land at a different airport?",
+            "options": [
+              "Places and services needed to handle extra arrivals",
+              "The paths aircraft follow between airports",
+              "Predictions of weather later in the day"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Facilities are the places, equipment and services needed to support arrivals.",
+              "Flight paths are routes; facilities are resources at the airport.",
+              "Weather predictions are forecasts, not airport facilities."
+            ]
+          },
+          {
+            "question": "Why can pilots still need to change plans late in a flight?",
+            "options": [
+              "Fast-moving storms can change the situation.",
+              "Radar guarantees that storms stay in the same place.",
+              "Every forecast requires a plane to change airports."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading says fast-moving storms can force late changes despite radar and forecasts.",
+              "Radar provides information; it does not keep storms still.",
+              "Forecasts help decisions, but the reading does not say every forecast forces a diversion."
+            ]
+          }
+        ],
+        "sentence_evidence": [
+          "The report examines how climate change and more severe weather could increase interruptions to aviation.",
+          "Storms near London and across northern Europe caused substantial flight delays during a busy summer travel period.",
+          "Air traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.",
+          "Air traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.",
+          "Poor conditions can require aircraft to take different paths or land at another airport.",
+          "An airport receiving diverted aircraft needs room for planes and facilities for additional passengers.",
+          "Pilots use weather radar and forecasting information to help avoid dangerous storm conditions.",
+          "Storm cells can move quickly, and changes to a flight’s course may occur late in the journey."
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "title": "Weather and air travel",
+        "overview": "Could changing weather mean more problems for travelers?",
+        "topic": "Weather and travel",
+        "prediction": "Read the title. What do you think the story is about?",
+        "discussion": [
+          "Summarize what the source establishes and what it leaves uncertain.",
+          "How would you explain the story to someone who has not read it? Give a possible everyday example, clearly separate from the reported facts."
+        ],
+        "news_brief_sentences": [
+          "The report examines whether climate change will bring more frequent disruption to aviation.",
+          "Storms near London and across northern Europe caused extensive delays during a busy summer travel period.",
+          "Controllers had to guide aircraft around storm cells, reducing the usable airspace.",
+          "Congestion consequently left some departures waiting on the ground.",
+          "Some planes might need to change their routes.",
+          "Diverting to another airport creates additional demands for aircraft parking and passenger facilities.",
+          "Pilots have access to weather radar and forecasts, but rapidly moving storms can still require decisions late in a flight.",
+          "Longer diversions may increase fuel consumption and add to airlines’ operating costs.",
+          "Flooding presents another risk by disrupting airport operations or blocking passengers’ access by road and rail.",
+          "These concerns describe potential pressures on the system, rather than a prediction that every flight will be affected."
+        ],
+        "vocabulary": [
+          {
+            "term": "aviation",
+            "part_of_speech": "noun",
+            "definition": "the activity and industry of flying aircraft"
+          },
+          {
+            "term": "extensive",
+            "part_of_speech": "adjective",
+            "definition": "covering a large area or involving many parts"
+          },
+          {
+            "term": "usable airspace",
+            "part_of_speech": "noun phrase",
+            "definition": "the part of the sky available for aircraft to use safely in the situation described"
+          },
+          {
+            "term": "consequently",
+            "part_of_speech": "adverb",
+            "definition": "as a result of what happened before"
+          },
+          {
+            "term": "fuel consumption",
+            "part_of_speech": "noun phrase",
+            "definition": "the amount of fuel used during an activity"
+          },
+          {
+            "term": "operating costs",
+            "part_of_speech": "noun phrase",
+            "definition": "the expenses required to keep a business or service running"
+          },
+          {
+            "term": "diversions",
+            "part_of_speech": "plural noun",
+            "definition": "changes that take aircraft away from their intended route or destination"
+          },
+          {
+            "term": "storm cells",
+            "part_of_speech": "plural noun",
+            "definition": "distinct areas of storm activity that aircraft may need to avoid"
+          },
+          {
+            "term": "potential pressures",
+            "part_of_speech": "noun phrase",
+            "definition": "possible demands or strains that could affect how a system operates"
+          },
+          {
+            "term": "airport operations",
+            "part_of_speech": "noun phrase",
+            "definition": "the organised activities needed to keep an airport functioning"
+          }
+        ],
+        "grammar": {
+          "concept": "Might for possibility",
+          "explanation": "Might need to means a change is possible. It does not say every plane will change its route.",
+          "example_quote": "Some planes might need to change their routes."
+        },
+        "quiz": [
+          {
+            "question": "What is the main question in this report?",
+            "options": [
+              "Could changing weather cause more travel problems?",
+              "Will every flight stop permanently?",
+              "Have all passengers already changed their plans?"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The report asks about possible disruption from changing conditions.",
+              "The report does not say every flight will stop.",
+              "The report does not say all passengers have changed plans."
+            ]
+          },
+          {
+            "question": "Which pair of problems is mentioned?",
+            "options": [
+              "Delays and changes of route",
+              "Lost passports and hotel prices",
+              "Longer holidays and new jobs"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The source mentions delays and diversions.",
+              "These problems are not stated in the supplied summary.",
+              "These are not the travel problems described."
+            ]
+          },
+          {
+            "question": "What is a route?",
+            "options": [
+              "The way used to get from one place to another",
+              "The time when a shop opens",
+              "The amount paid for a ticket"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "A route is the way taken on a journey.",
+              "An opening time is not a route.",
+              "A ticket price is a cost, not a route."
+            ]
+          },
+          {
+            "question": "Which sentence keeps the meaning of might?",
+            "options": [
+              "A change of route is possible.",
+              "A change of route is certain for every flight.",
+              "A change of route is impossible."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Might expresses possibility.",
+              "This turns a possibility into an unsupported certainty.",
+              "Impossible contradicts the possibility expressed by might."
+            ]
+          },
+          {
+            "question": "Which sequence explains the ground delays described?",
+            "options": [
+              "Storm avoidance reduced usable airspace, creating congestion.",
+              "Ground delays created storms, which increased usable airspace.",
+              "Extra usable airspace made it impossible to direct aircraft around storms."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Controllers guided planes around storms, reducing usable space and contributing to congestion.",
+              "This reverses the direction of the explanation in the reading.",
+              "The passage reports less usable airspace, not extra space causing the problem."
+            ]
+          },
+          {
+            "question": "What additional demands can a diversion place on the receiving airport?",
+            "options": [
+              "Aircraft parking and passenger facilities",
+              "The construction of a new airport for every diverted flight",
+              "The permanent closure of all road and rail links"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading specifically identifies parking and passenger facilities.",
+              "It describes extra demands at another airport, not building a new airport for every flight.",
+              "Road and rail disruption is a flooding risk, not a necessary consequence of every diversion."
+            ]
+          },
+          {
+            "question": "What limitation of radar and forecasts does the reading highlight?",
+            "options": [
+              "Rapidly moving storms can still require late decisions.",
+              "They are unavailable to pilots during summer.",
+              "They guarantee that every weather-related decision can be made before takeoff."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Useful weather information does not eliminate decisions caused by rapidly moving storms.",
+              "The passage says pilots have access to radar and forecasts; it gives no summer exception.",
+              "The text expressly allows for decisions late in a flight."
+            ]
+          },
+          {
+            "question": "How may longer diversions affect airlines financially?",
+            "options": [
+              "Extra fuel use may increase operating costs.",
+              "They necessarily eliminate the need for fuel.",
+              "They guarantee lower costs on every route."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading links longer diversions to possible increases in fuel consumption and operating costs.",
+              "Longer diversions may use more fuel, not eliminate its use.",
+              "The passage describes possible added costs, not guaranteed savings."
+            ]
+          },
+          {
+            "question": "How can flooding disrupt a journey even before a passenger reaches the airport?",
+            "options": [
+              "It can block road or rail access.",
+              "It always forces passengers to change their flight date.",
+              "It removes the need for ground transport."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The passage explicitly includes blocked road and rail access as a flooding risk.",
+              "A date change is not stated as inevitable; the specified risk is disrupted access.",
+              "Flooding can interfere with access, not remove the need to reach the airport."
+            ]
+          },
+          {
+            "question": "What does consequently signal in the sentence about congestion?",
+            "options": [
+              "The ground delay follows as a result of congestion.",
+              "The ground delay contradicts the presence of congestion.",
+              "The ground delay is the definition of a weather forecast."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Consequently introduces a result: congestion left departures waiting.",
+              "Consequently marks a consequence, not a contrast.",
+              "The word links cause and result; it does not introduce a definition of a forecast."
+            ]
+          }
+        ],
+        "sentence_evidence": [
+          "The report examines how climate change and more severe weather could increase interruptions to aviation.",
+          "Storms near London and across northern Europe caused substantial flight delays during a busy summer travel period.",
+          "Air traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.",
+          "Air traffic teams tried to guide aircraft around storms, leaving less usable airspace and some departures waiting on the ground.",
+          "Poor conditions can require aircraft to take different paths or land at another airport.",
+          "An airport receiving diverted aircraft needs room for planes and facilities for additional passengers.",
+          "Pilots use weather radar and forecasting information to help avoid dangerous storm conditions.\nStorm cells can move quickly, and changes to a flight’s course may occur late in the journey.",
+          "Longer flight paths can require more fuel and increase airline costs.",
+          "Flooding can affect airport operations and prevent travellers from reaching airports by road or rail.",
+          "The report presents future disruption as a risk rather than claiming every flight will be affected."
+        ]
+      }
+    }
+  },
+  "editorial_review": {
+    "date": "2026-09-07",
+    "method": "Editorial expansion checked against the linked full BBC article. Supporting notes are original paraphrases of that reporting. No paid model review was run.",
+    "changes": "Expanded the beginner, intermediate and advanced readings to at least 6, 8 and 10 complete sentences respectively; retained aligned vocabulary, grammar examples and comprehension answers."
+  },
+  "editorial_review_history": [
+    {
+      "date": "2026-09-06",
+      "method": "Manual revision limited to saved headline and summary; language explanations separated from news claims.",
+      "changes": "Removed unsupported details, shortened readings, replaced repeated questions, added simpler language support. Source article not independently re-reported."
+    }
+  ],
+  "vocabulary_review": {
+    "date": "2026-09-07T04:20:22.993579+00:00",
+    "method": "Expanded from vocabulary already used in the readings, with contextual definitions and word classes checked. Existing curriculum definitions were reused where suitable and new entries were written directly; no paid generation.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    }
+  },
+  "quiz_review": {
+    "date": "2026-09-07T04:44:09.153595+00:00",
+    "method": "Added questions written directly for each level’s existing reading, vocabulary and grammar. Checked choices and option-specific explanations against the lesson; no paid generation or new news claims. Existing source and editorial review history preserved.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "added_items": {
+      "beginner": 2,
+      "intermediate": 4,
+      "advanced": 6
+    }
+  },
+  "vocabulary_separation_review": {
+    "date": "2026-09-07T16:21:25.502672+00:00",
+    "method": "Vocabulary target lists reviewed together for each daily edition. Repeated targets, inflections and reused content words in phrases were replaced with words or phrases present in that level’s reading. Contextual definitions and word classes were checked and corrected; no paid generation or independent model review was run.",
+    "scope": "Vocabulary targets are distinct between the three levels of this edition; natural shared words in the readings are allowed.",
+    "minimum_items": {
+      "beginner": 6,
+      "intermediate": 8,
+      "advanced": 10
+    },
+    "replaced_targets": {
+      "beginner": 0,
+      "intermediate": 3,
+      "advanced": 5
+    }
+  }
+}

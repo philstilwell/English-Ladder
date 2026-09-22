@@ -4,6 +4,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const {JSDOM} = require('jsdom');
 const root = path.join(__dirname, '..');
+const latestNewsDate = fs.readdirSync(path.join(root, 'archive/lessons'))
+  .filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0, -5);
+assert.ok(latestNewsDate, 'A retained news edition is required for published-page tests');
 const source = file => fs.readFileSync(path.join(root, file), 'utf8');
 const windows = [];
 afterEach(() => windows.splice(0).forEach(w => w.close()));
@@ -36,13 +39,13 @@ test('reading routes follow every level and retain the route when the student ch
   }
 });
 
-test('the second reading leads to published news and older bookmarked final readings stay usable', () => {
+test('the second reading leads to published news and a bookmarked final reading stays usable', () => {
   const w = setup('stories/city-trees/advanced.html', '?route=reading');
   assert.match(progress(w).textContent, /Activity 2 of 3/);
   const url = new URL(next(w).href);
   assert.match(url.pathname, /^\/news\/\d{4}-\d{2}-\d{2}\/advanced.html$/);
   assert.ok(fs.existsSync(path.join(root, url.pathname)));
-  const end = setup('news/2026-09-06/advanced.html', '?route=reading');
+  const end = setup(`news/${latestNewsDate}/advanced.html`, '?route=reading');
   assert.match(progress(end).textContent, /Activity 3 of 3/);
   assert.match(next(end).href, /study-routes.html#reading$/);
   assert.match(end.document.querySelector('.study-route-next').textContent, /last activity/);

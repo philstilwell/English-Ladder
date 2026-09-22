@@ -40,8 +40,10 @@ def enhance_page(soup,path,prefix):
             key=lesson.get('data-lesson-key','')
             if not lesson.select_one('.permanent-lesson-link'):
                 p=soup.new_tag('p',attrs={'class':'permanent-lesson-link'})
-                a=soup.new_tag('a',href=f'news/{key}/{path.name}');a.string='Permanent link to this lesson';p.append(a)
+                a=soup.new_tag('a',href=f'news/{key}/{path.name}');a.string='Dated lesson page · available for 50 days';p.append(a)
                 lesson.select_one('.lesson-content').append(p)
+            else:
+                lesson.select_one('.permanent-lesson-link a').string='Dated lesson page · available for 50 days'
     for textarea in soup.select('textarea'):
         if not textarea.get('maxlength'):textarea['maxlength']='8000'
     if relative.startswith('grammar-concepts/'):
@@ -70,7 +72,7 @@ def enhance_page(soup,path,prefix):
 
 def build_news_archive():
     from editorial import document,level_links,decorate_page
-    from update_site import render_lesson_html,render_lesson_title,LEVELS as CONFIG,release_datetime_from_date,require_archive_lesson_minimums
+    from update_site import render_lesson_html,render_lesson_title,LEVELS as CONFIG,release_datetime_from_archive,require_archive_lesson_minimums
     require_archive_lesson_minimums(ROOT/'archive/lessons')
     cards=[];compact={}
     paths=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)
@@ -79,7 +81,7 @@ def build_news_archive():
         c=data['levels']['beginner']['lesson'];category=source.get('category','world')
         for config in CONFIG:
             level=config['name'].lower();lesson=data['levels'][level]['lesson']
-            lesson_soup=BeautifulSoup(render_lesson_html(lesson,config,release_datetime_from_date(date),source),'html.parser')
+            lesson_soup=BeautifulSoup(render_lesson_html(lesson,config,release_datetime_from_archive(data),source),'html.parser')
             lesson_soup.details['open']=''
             lesson_soup.summary['hidden']=''
             for duplicate in lesson_soup.select('.lesson-description, .lesson-content > .header'):
@@ -96,7 +98,7 @@ def build_news_archive():
         links=' · '.join(f'<a href="news/{date}/{level}.html">{level.title()}</a>' for level in LEVELS)
         cards.append(f'<article class="library-card" data-library-item data-news-date="{date}" data-search="{e(search)}" data-category="{e(category)}"><p class="eyebrow">{date} · {e(category)}</p><h2><a data-level-link href="news/{date}/beginner.html">{e(c["title"])}</a></h2><p>{e(c["overview"])}</p><p>{links}</p></article>')
     cats=sorted({json.loads(p.read_text()).get('source',{}).get('category','world') for p in paths})
-    body=f'<section class="page-hero"><p class="eyebrow">Return to a story</p><h1>News lesson archive</h1><p>Find a date, topic, word, or grammar point. Every story has a permanent link at each level.</p><p>Prefer everyday topics? Try <a href="stories/food-market/beginner.html" data-level-link>the food market</a> or <a href="stories/city-trees/beginner.html" data-level-link>trees in the city</a>.</p></section><section data-library><div class="library-filters"><label>Search the archive<input type="search" data-library-search placeholder="Try 2026-09, travel, or passive"></label><label>Topic<select data-library-category><option value="">All topics</option>{"".join(f"<option>{e(c)}</option>" for c in cats)}</select></label></div><p data-library-count role="status">{len(cards)} stories</p><p data-library-empty hidden>No stories match. Try another word or date.</p><div class="library-grid">{"".join(cards)}</div></section>'
+    body=f'<section class="page-hero"><p class="eyebrow">Return to a story</p><h1>News lesson archive</h1><p>Explore the last 50 days of news lessons by date, topic, word, or grammar point. Older news lessons are removed daily.</p><p>Prefer everyday topics? Try <a href="stories/food-market/beginner.html" data-level-link>the food market</a> or <a href="stories/city-trees/beginner.html" data-level-link>trees in the city</a>.</p></section><section data-library><div class="library-filters"><label>Search the archive<input type="search" data-library-search placeholder="Try a date, travel, or passive"></label><label>Topic<select data-library-category><option value="">All topics</option>{"".join(f"<option>{e(c)}</option>" for c in cats)}</select></label></div><p data-library-count role="status">{len(cards)} stories</p><p data-library-empty hidden>No stories match. Try another word or date.</p><div class="library-grid">{"".join(cards)}</div></section>'
     target=ROOT/'archive.html';target.write_text(document('News lesson archive',body));decorate_page(target)
     (ROOT/'lesson-data.json').write_text(json.dumps(compact,ensure_ascii=False,indent=2)+'\n')
 
@@ -131,17 +133,20 @@ def publish_quality_pages():
 
 def rebuild_news_levels():
     """Rebuild rolling pages from archived data using the current renderer."""
-    from update_site import render_lesson_html, LEVELS as CONFIG, LESSON_LIMIT, release_datetime_from_date,require_archive_lesson_minimums
+    from update_site import render_lesson_html, LEVELS as CONFIG, LESSON_LIMIT, release_datetime_from_archive,require_archive_lesson_minimums
     require_archive_lesson_minimums(ROOT/'archive/lessons')
     archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)[:LESSON_LIMIT]
-    if not archives:return
     for config in CONFIG:
         path=ROOT/config['file_path']
         soup=BeautifulSoup(path.read_text(),'html.parser');container=soup.select_one('#lesson-container')
         if not container:continue
         container.clear()
+        if not archives:
+            empty=soup.new_tag('p',id='empty-state')
+            empty.string='No news lessons are available from the last 50 days. Explore the everyday stories on Discover.'
+            container.append(empty)
         for archive in archives:
             data=json.loads(archive.read_text());lesson=data['levels'][config['name'].lower()]['lesson']
-            node=BeautifulSoup(render_lesson_html(lesson,config,release_datetime_from_date(data['release_date']),data.get('source')),'html.parser').details
+            node=BeautifulSoup(render_lesson_html(lesson,config,release_datetime_from_archive(data),data.get('source')),'html.parser').details
             container.append(node)
         path.write_text(str(soup))

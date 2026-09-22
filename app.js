@@ -19,7 +19,7 @@ function sanitizeFeedback(feedback) {
     return temp.textContent.trim();
 }
 
-const DEFAULT_RELEASE_HOUR_UTC = 10;
+const DEFAULT_RELEASE_HOUR_UTC = 6;
 
 function formatElapsedAge(releaseDate) {
     const now = new Date();
@@ -32,7 +32,7 @@ function formatElapsedAge(releaseDate) {
 }
 
 function parseFallbackReleaseDate(dateText) {
-    const fallbackDate = new Date(`${dateText} ${DEFAULT_RELEASE_HOUR_UTC.toString().padStart(2, "0")}:00:00 UTC`);
+    const fallbackDate = new Date(`${dateText} ${DEFAULT_RELEASE_HOUR_UTC.toString().padStart(2, "0")}:15:00 UTC`);
     return Number.isNaN(fallbackDate.getTime()) ? null : fallbackDate;
 }
 

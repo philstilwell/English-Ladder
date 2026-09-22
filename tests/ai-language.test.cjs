@@ -4,6 +4,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
 const root = path.join(__dirname, '..');
+const latestNewsDate = fs.readdirSync(path.join(root, 'archive/lessons'))
+  .filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0, -5);
+assert.ok(latestNewsDate, 'A retained news edition is required for published-page tests');
 const key = 'english-ladder-vocabulary-language-v1';
 const languages = { ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese' };
 const windows = [];
@@ -62,7 +65,7 @@ test('all five language buttons update every daily prompt, copy exact previews, 
 });
 
 test('saved language carries into all three levels and non-story curriculum prompts', () => {
-  for (const file of ['news/2026-09-08/beginner.html', 'news/2026-09-08/intermediate.html', 'news/2026-09-08/advanced.html', 'grammar-concepts/concept-35.html', 'us-life.html', 'tools.html']) {
+  for (const file of [`news/${latestNewsDate}/beginner.html`, `news/${latestNewsDate}/intermediate.html`, `news/${latestNewsDate}/advanced.html`, 'grammar-concepts/concept-35.html', 'us-life.html', 'tools.html']) {
     const w = load(file, { saved: 'zh-Hans' });
     run(w, 'ai-practice.js');
     for (const node of w.document.querySelectorAll('.ai-prompt-text')) {
@@ -80,7 +83,7 @@ test('saved language carries into all three levels and non-story curriculum prom
 
 test('blocked storage and either script order keep current-page selection working', () => {
   for (const order of [['learning.js', 'ai-practice.js'], ['ai-practice.js', 'learning.js']]) {
-    const w = load('news/2026-09-08/intermediate.html', { blockedStorage: true });
+    const w = load(`news/${latestNewsDate}/intermediate.html`, { blockedStorage: true });
     // This test exercises storage and script order, not a dated translation cache.
     w.document.querySelectorAll('.vocab-definition').forEach(node => {
       node.dataset.translations = JSON.stringify({ es: 'Definición de prueba.' });
@@ -90,7 +93,7 @@ test('blocked storage and either script order keep current-page selection workin
     assert.equal(w.document.querySelector('.vocab-definition').lang, 'es');
     assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Spanish\./);
   }
-  const w = load('news/2026-09-08/advanced.html', { blockedStorage: true });
+  const w = load(`news/${latestNewsDate}/advanced.html`, { blockedStorage: true });
   run(w, 'learning.js');
   clickLanguage(w, 'ja');
   run(w, 'ai-practice.js');
@@ -98,7 +101,7 @@ test('blocked storage and either script order keep current-page selection workin
 });
 
 test('missing vocabulary translations keep English definitions while honoring the AI explanation language', () => {
-  const w = load('news/2026-09-08/intermediate.html');
+  const w = load(`news/${latestNewsDate}/intermediate.html`);
   w.document.querySelectorAll('.vocab-definition').forEach(node => { node.dataset.translations = '{}'; });
   run(w, 'learning.js', 'ai-practice.js');
   clickLanguage(w, 'es');

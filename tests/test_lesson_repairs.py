@@ -17,7 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class LessonRepairTests(unittest.TestCase):
     def setUp(self):
-        self.edition = json.loads((ROOT/'archive/lessons/2026-09-06.json').read_text())
+        self.edition = json.loads((ROOT/'tests/fixtures/reviewed-edition.json').read_text())
         self.level = u.LEVELS[0]
         self.lesson = self.edition['levels']['beginner']['lesson']
         self.news = self.edition['source']

@@ -2,6 +2,10 @@ const {test,afterEach}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');const path=require('node:path');const {JSDOM}=require('jsdom');
 const root=path.join(__dirname,'..');const open=[];
+const latestNewsDate=fs.readdirSync(path.join(root,'archive/lessons'))
+ .filter(file=>/^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0,-5);
+assert.ok(latestNewsDate,'A retained news edition is required for published-page tests');
+const latestBeginner=`news/${latestNewsDate}/beginner.html`;
 afterEach(()=>{open.splice(0).forEach(d=>d.window.close());});
 function load(file,{scripts=['site.js'],stored={},hash=''}={}){
  const dom=new JSDOM(fs.readFileSync(path.join(root,file),'utf8'),{url:`https://englishladder.com/${file}${hash}`,runScripts:'dangerously'});open.push(dom);
@@ -36,13 +40,13 @@ test('grammar topic search and level filter work together',()=>{
 });
 test('news discussion offers speaking activities without restoring retired writing boxes',()=>{
  const key='english-ladder-study-v1';
- const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{'/news/2026-09-06/beginner.html:notes-2026-09-06':'An old saved draft'}});
- const d=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});const doc=d.window.document;
+ const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{[`/${latestBeginner}:notes-${latestNewsDate}`]:'An old saved draft'}});
+ const d=load(latestBeginner,{stored:{[key]:raw}});const doc=d.window.document;
  assert.equal(doc.querySelector('.discussion textarea,.discussion label,.discussion .note-hint'),null);
  assert.equal(doc.querySelectorAll('.discussion-activities > li').length,6);
  assert.equal(d.window.localStorage.getItem(key),raw);
  assert.equal(doc.querySelector('[data-save-study],[data-study-controls]'),null);
- const next=load('news/2026-09-06/beginner.html',{stored:{[key]:raw}});
+ const next=load(latestBeginner,{stored:{[key]:raw}});
  assert.equal(next.window.document.querySelector('.discussion textarea'),null);
 });
 test('vocabulary definitions still open without saved-word controls or a learning record',()=>{
@@ -98,5 +102,5 @@ test('legacy diagram modal keeps keyboard focus inside and restores the backgrou
  close.dispatchEvent(new d.window.KeyboardEvent('keydown',{key:'Escape',bubbles:true}));assert.equal(doc.activeElement,trigger);assert.equal(doc.querySelector('.image-lightbox').hidden,true);assert.ok(!doc.querySelector('main>a').inert);
 });
 test('permanent stories open directly and omit repeated introductory headings',()=>{
- const d=load('news/2026-09-06/beginner.html');const doc=d.window.document;assert.equal(doc.querySelector('.daily-lesson').open,true);assert.equal(doc.querySelector('.daily-lesson>summary').hidden,true);assert.equal(doc.querySelector('.lesson-content>.header'),null);
+ const d=load(latestBeginner);const doc=d.window.document;assert.equal(doc.querySelector('.daily-lesson').open,true);assert.equal(doc.querySelector('.daily-lesson>summary').hidden,true);assert.equal(doc.querySelector('.lesson-content>.header'),null);
 });

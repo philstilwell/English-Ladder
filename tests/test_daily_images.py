@@ -158,6 +158,7 @@ class DailyImageTests(unittest.TestCase):
     def test_push_refresh_never_calls_an_image_or_text_model(self):
         args = SimpleNamespace(refresh_feature=False, refresh_pages=True)
         with patch.object(update_site, "parse_args", return_value=args), \
+                patch("lesson_retention.prune_expired_lessons", return_value={"files": [], "expired_dates": [], "oldest_allowed": "2026-08-04", "as_of": "2026-09-22", "time_zone": "EST", "warnings": []}), \
                 patch("site_quality.rebuild_news_levels"), \
                 patch.object(update_site, "refresh_existing_pages"), \
                 patch.object(editorial, "publish_editorial_pages"), \

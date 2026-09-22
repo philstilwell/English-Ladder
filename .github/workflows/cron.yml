@@ -64,13 +64,18 @@ on:
   schedule:
     # Later runs resume saved progress, or only retry a missing illustration
     # when this date's complete edition has already been published.
-    # Avoid the top of the hour because GitHub may delay or drop scheduled
-    # workflows during peak load then.
-    - cron: '17 10 * * *'
-    - cron: '43 13 * * *'
-    - cron: '29 16 * * *'
+    # Fixed EST (UTC-5) year-round: 01:15, 02:15, and 03:15.
+    # Keep separate entries so only the final attempt sends a failure email.
+    - cron: '15 6 * * *'
+    - cron: '15 7 * * *'
+    - cron: '15 8 * * *'
   workflow_dispatch:
     inputs:
+      test_email:
+        description: 'Send a clearly labeled test alert only; no lessons, images, or publishing'
+        required: false
+        type: boolean
+        default: false
       translate_recent:
         description: 'Refresh missing recent vocabulary translations only; no new lessons or images ($0.30 cumulative daily cap)'
         required: false
@@ -99,12 +104,84 @@ on:
 concurrency:
   group: daily-esl-lesson-generator-${{ github.ref }}
   cancel-in-progress: false
+  # Automated lesson pushes must not replace a waiting final scheduled attempt.
+  queue: max
 
 jobs:
+  maintain_archive:
+    name: Remove expired daily lessons
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    outputs:
+      publishing_revision: ${{ steps.save.outputs.revision }}
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Install publishing dependencies
+        run: pip install -r requirements.txt
+
+      - name: Check the 50-day window
+        id: retention
+        run: |
+          python - <<'PY'
+          import json, os, subprocess
+          report = json.loads(subprocess.check_output(['python', 'lesson_retention.py', '--json'], text=True))
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f"needed={str(bool(report['files'])).lower()}\n")
+          print(f"Keep daily lessons dated {report['oldest_allowed']} or later; {len(report['files'])} expired files.")
+          PY
+
+      - name: Rebuild and save the retained archive
+        id: save
+        if: steps.retention.outputs.needed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          for attempt in 1 2 3; do
+            git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+            # Refresh always prunes again after reset, then rebuilds all links.
+            python update_site.py --refresh-pages
+            python audit_site.py
+            git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
+            if git diff --cached --quiet; then
+              echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git commit -m "Retain the latest 50 calendar days of news lessons"
+            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"; then
+              echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep $((attempt * 5))
+          done
+          echo "Failed to publish the 50-day archive cleanup after three attempts." >&2
+          exit 1
+
   build_and_deploy:
     name: Generate and save checked lessons
+    needs: maintain_archive
+    if: always() && github.event.inputs.test_email != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped')
     outputs:
       publishing_revision: ${{ steps.saved_revision.outputs.revision }}
+      release_date: ${{ steps.release.outputs.date }}
+      translations_result: ${{ steps.translations.outcome }}
+      image_result: ${{ steps.image_status.outputs.result }}
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -171,20 +248,24 @@ jobs:
           python -m unittest discover -s tests -p 'test_*.py'
 
       - name: Resolve daily release date
+        id: release
         if: github.event_name != 'push' && github.event.inputs.deploy_only != 'true' && github.event.inputs.refresh_feature != 'true' && github.event.inputs.translate_archive != 'true' && github.event.inputs.translate_recent != 'true'
         env:
           REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
         run: |
           python - <<'PY'
           import os
-          from datetime import datetime, timezone, date
+          from datetime import date
           from pathlib import Path
-          requested = os.environ.get('REQUESTED_RELEASE_DATE') or datetime.now(timezone.utc).date().isoformat()
+          from lesson_retention import retention_date
+          requested = os.environ.get('REQUESTED_RELEASE_DATE') or retention_date().isoformat()
           release = date.fromisoformat(requested).isoformat()
           needed = not Path(f'archive/lessons/{release}.json').exists()
           with open(os.environ['GITHUB_ENV'], 'a') as output:
               output.write(f'RELEASE_DATE={release}\nLESSON_GENERATION_NEEDED={int(needed)}\n')
               output.write(f"LESSON_STATE_DIR={os.environ['RUNNER_TEMP']}/lesson-state\n")
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'date={release}\n')
           print(f'Daily release: {release}; new lesson text needed: {needed}')
           PY
 
@@ -296,7 +377,7 @@ jobs:
             python publish_snapshot.py restore "${lesson_snapshot}"
             python update_site.py --refresh-pages
             python audit_site.py
-            git add -- '*.html' archive assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
+            git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0
@@ -320,13 +401,30 @@ jobs:
         id: saved_revision
         run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
+      - name: Check the saved daily illustration
+        id: image_status
+        if: github.event_name == 'schedule'
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          from daily_images import image_for_lesson
+          edition = json.loads(Path(f"archive/lessons/{os.environ['RELEASE_DATE']}.json").read_text())
+          result = 'success' if image_for_lesson(edition) else 'failure'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write(f'result={result}\n')
+          if result == 'failure':
+              print('::warning::Daily lesson is saved, but its illustration is unavailable.')
+          PY
+
   verify_publishing:
     name: Verify saved lesson publishing
     defaults:
       run:
         # Explicit bash enables pipefail: tee must not hide a failed verifier.
         shell: bash
-    needs: build_and_deploy
+    needs: [maintain_archive, build_and_deploy]
+    if: always() && (needs.build_and_deploy.result == 'success' || needs.maintain_archive.outputs.publishing_revision != '')
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:
@@ -337,7 +435,7 @@ jobs:
       - name: Checkout saved publishing revision
         uses: actions/checkout@v6
         with:
-          ref: ${{ needs.build_and_deploy.outputs.publishing_revision }}
+          ref: ${{ needs.build_and_deploy.outputs.publishing_revision || needs.maintain_archive.outputs.publishing_revision }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -361,14 +459,25 @@ jobs:
             2>&1 | tee "${RUNNER_TEMP}/publishing-manifest.log"
 
       - name: Verify current lesson on Cloudflare
+        env:
+          RELEASE_DATE: ${{ needs.build_and_deploy.result == 'success' && needs.build_and_deploy.outputs.release_date || '' }}
         run: |
           node cloudflare/verify-current-lesson.cjs https://englishladder.philstilwell.workers.dev \
             2>&1 | tee "${RUNNER_TEMP}/publishing-current-lesson.log"
 
       - name: Verify current lesson on public domain
+        env:
+          RELEASE_DATE: ${{ needs.build_and_deploy.result == 'success' && needs.build_and_deploy.outputs.release_date || '' }}
         run: |
           ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-current-lesson.cjs https://englishladder.com \
             2>&1 | tee "${RUNNER_TEMP}/publishing-public-domain.log"
+
+      - name: Verify expired lessons are unavailable
+        run: |
+          node cloudflare/verify-retention.cjs https://englishladder.philstilwell.workers.dev \
+            2>&1 | tee "${RUNNER_TEMP}/publishing-retention.log"
+          ALLOW_PUBLIC_EDGE_BLOCK=1 node cloudflare/verify-retention.cjs https://englishladder.com \
+            2>&1 | tee "${RUNNER_TEMP}/publishing-retention-public.log"
 
       - name: Retain publishing diagnostics
         if: always()
@@ -387,7 +496,7 @@ jobs:
         if: always()
         env:
           PUBLISHING_STATUS: ${{ job.status }}
-          PUBLISHING_REVISION: ${{ needs.build_and_deploy.outputs.publishing_revision }}
+          PUBLISHING_REVISION: ${{ needs.build_and_deploy.outputs.publishing_revision || needs.maintain_archive.outputs.publishing_revision }}
         run: |
           {
             echo "### Publishing: ${PUBLISHING_STATUS}"
@@ -400,3 +509,58 @@ jobs:
               echo "A manual deploy_only=true run can rebuild and verify existing content, but cannot restart a failed Cloudflare build when no files change."
             fi
           } >> "$GITHUB_STEP_SUMMARY"
+
+  failure_email:
+    name: Email the final daily failure
+    needs: [maintain_archive, build_and_deploy, verify_publishing]
+    if: >-
+      always() && github.event_name == 'schedule' && github.event.schedule == '15 8 * * *' &&
+      (needs.maintain_archive.result != 'success' || needs.build_and_deploy.result != 'success' ||
+       needs.verify_publishing.result != 'success' || needs.build_and_deploy.outputs.translations_result == 'failure' ||
+       needs.build_and_deploy.outputs.image_result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+      checks: read
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Send the failure explanation
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MAINTENANCE_RESULT: ${{ needs.maintain_archive.result }}
+          GENERATION_RESULT: ${{ needs.build_and_deploy.result }}
+          PUBLISHING_RESULT: ${{ needs.verify_publishing.result }}
+          TRANSLATIONS_RESULT: ${{ needs.build_and_deploy.outputs.translations_result }}
+          IMAGE_RESULT: ${{ needs.build_and_deploy.outputs.image_result }}
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: '587'
+          SMTP_SECURITY: starttls
+          SMTP_USERNAME: philstilwell@gmail.com
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_FROM: philstilwell@gmail.com
+          ALERT_TO: philstilwell@gmail.com
+        run: python3 failure_alert.py
+
+  test_email:
+    name: Test the email connection
+    if: github.event_name == 'workflow_dispatch' && github.event.inputs.test_email == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v6
+      - name: Send a labeled test email
+        env:
+          SMTP_HOST: smtp.gmail.com
+          SMTP_PORT: '587'
+          SMTP_SECURITY: starttls
+          SMTP_USERNAME: philstilwell@gmail.com
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          ALERT_FROM: philstilwell@gmail.com
+          ALERT_TO: philstilwell@gmail.com
+        run: python3 failure_alert.py --test

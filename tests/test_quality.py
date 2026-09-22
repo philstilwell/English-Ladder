@@ -13,7 +13,7 @@ import publish_snapshot
 ROOT=Path(__file__).resolve().parents[1]
 class QualityTests(unittest.TestCase):
     def setUp(self):
-        self.data=json.loads((ROOT/'archive/lessons/2026-09-06.json').read_text())
+        self.data=json.loads((ROOT/'tests/fixtures/reviewed-edition.json').read_text())
         self.lesson=copy.deepcopy(self.data['levels']['beginner']['lesson'])
         self.source=self.data['source']
     def test_current_reviewed_news_has_valid_evidence_and_structure(self):

@@ -141,7 +141,7 @@ class UpdateSiteTests(unittest.TestCase):
     def test_release_datetime_from_date_uses_default_utc_release_time(self):
         release_dt = update_site.release_datetime_from_date("2026-07-09")
 
-        self.assertEqual(datetime(2026, 7, 9, 10, 0, tzinfo=timezone.utc), release_dt)
+        self.assertEqual(datetime(2026, 7, 9, 6, 15, tzinfo=timezone.utc), release_dt)
 
     def test_release_datetime_from_date_requires_iso_date(self):
         with self.assertRaisesRegex(ValueError, "YYYY-MM-DD"):
@@ -270,7 +270,7 @@ class UpdateSiteTests(unittest.TestCase):
             "summary": "A short source summary for the generated ESL lessons.",
             "link": "https://example.com/source-news",
         }
-        edition = json.loads((Path(__file__).resolve().parents[1] / 'archive/lessons/2026-09-06.json').read_text())
+        edition = json.loads((Path(__file__).resolve().parents[1] / 'tests/fixtures/reviewed-edition.json').read_text())
         level_lessons = {key: value['lesson'] for key, value in edition['levels'].items()}
         for level in update_site.LEVELS:
             level_lessons[level['name'].lower()]['title'] = f"{level['name']} Title"

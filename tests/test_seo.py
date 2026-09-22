@@ -10,6 +10,9 @@ import seo
 ROOT=Path(__file__).resolve().parents[1]
 
 class CurriculumSearchTests(unittest.TestCase):
+    def news_day(self):
+        return max((ROOT/'archive/lessons').glob('*.json')).stem
+
     def page(self,relative):
         return BeautifulSoup((ROOT/relative).read_text(),'html.parser')
 
@@ -29,10 +32,10 @@ class CurriculumSearchTests(unittest.TestCase):
     def test_levels_have_distinct_titles_descriptions_and_canonicals(self):
         titles=set();descriptions=set()
         for level in seo.LEVELS:
-            relative=f'news/2026-09-06/{level}.html';s=self.enhance(relative)
+            relative=f'news/{self.news_day()}/{level}.html';s=self.enhance(relative)
             title=s.title.get_text();description=s.select_one('meta[name=description]')['content']
             self.assertIn(level.title()+' English',title)
-            self.assertIn('2026-09-06',description)
+            self.assertIn(self.news_day(),description)
             self.assertEqual(seo.ORIGIN+relative,s.select_one('link[rel=canonical]')['href'])
             titles.add(title);descriptions.add(description)
         self.assertEqual(3,len(titles));self.assertEqual(3,len(descriptions))
@@ -93,7 +96,13 @@ class CurriculumSearchTests(unittest.TestCase):
             self.assertIn('noindex',self.enhance(relative).select_one('meta[name=robots]')['content'])
 
     def test_news_preview_uses_the_same_visible_saved_image(self):
-        s=self.enhance('news/2026-09-06/beginner.html');image=s.select_one('.lesson-cover img')
+        # A controlled saved image keeps this test independent of expiring dates
+        # and of whether the latest illustration request succeeded.
+        image_record={'path':'assets/editorial/city-trees.webp','width':1600,
+                      'height':1199,'alt':'A sample conceptual illustration'}
+        with patch('daily_images.image_for_lesson',return_value=image_record):
+            s=self.enhance(f'news/{self.news_day()}/beginner.html')
+        image=s.select_one('.lesson-cover img')
         self.assertEqual(seo.ORIGIN.rstrip('/')+image['src'],s.select_one('meta[property="og:image"]')['content'])
         self.assertIn('not a photograph',s.select_one('.lesson-cover figcaption').get_text())
         self.assertEqual('summary_large_image',s.select_one('meta[name="twitter:card"]')['content'])
@@ -132,9 +141,9 @@ class CurriculumSearchTests(unittest.TestCase):
     def test_future_releases_can_share_a_headline_without_duplicate_metadata(self):
         with tempfile.TemporaryDirectory() as directory:
             root=Path(directory);(root/'archive/lessons').mkdir(parents=True)
-            data=json.loads((ROOT/'archive/lessons/2026-09-06.json').read_text())
+            data=json.loads((ROOT/'tests/fixtures/reviewed-edition.json').read_text())
             data['levels']['beginner']['lesson']['title']='A new community garden'
-            s=self.page('news/2026-09-06/beginner.html');s.h1.string='A new community garden'
+            s=self.page(f'news/{self.news_day()}/beginner.html');s.h1.string='A new community garden'
             results=[]
             for day in ['2030-01-02','2030-01-03']:
                 data['release_date']=day;(root/f'archive/lessons/{day}.json').write_text(json.dumps(data))

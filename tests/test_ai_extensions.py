@@ -52,7 +52,7 @@ class AIExtensionTests(unittest.TestCase):
         self.assertTrue(BeautifulSoup((ROOT/'continue.html').read_text(), 'html.parser').select_one('#ai-review'))
 
     def test_republishing_does_not_duplicate_or_capture_student_writing(self):
-        for name in ['grammar-concepts/concept-35.html', 'efsp-manufacturing.html', 'us-life.html', 'news/2026-09-06/beginner.html', 'tools.html']:
+        for name in ['grammar-concepts/concept-35.html', 'efsp-manufacturing.html', 'us-life.html', f'news/{max((ROOT / "archive/lessons").glob("*.json")).stem}/beginner.html', 'tools.html']:
             path = ROOT/name
             soup = BeautifulSoup(path.read_text(), 'html.parser')
             expected = [n.text for n in soup.select('.ai-prompt-text')]

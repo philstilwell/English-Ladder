@@ -33,7 +33,8 @@ NEWS_CATEGORIES = {
 NEWS_WEEK = ["science", "culture", "technology", "business", "world", "culture", "science"]
 MAX_GENERATION_ATTEMPTS = 3
 MAX_DAILY_GENERATION_ATTEMPTS = 6
-DEFAULT_RELEASE_HOUR_UTC = 10
+DEFAULT_RELEASE_HOUR_UTC = 6
+DEFAULT_RELEASE_MINUTE_UTC = 15
 FORBIDDEN_TAGS = {"script", "style", "iframe", "object", "embed", "link", "meta"}
 SAFE_BUTTON_HANDLER = "checkAnswer(this)"
 QUIZ_OPTION_LABELS = ["a", "b", "c"]
@@ -731,7 +732,7 @@ def fallback_release_datetime(date_text):
     release_date = datetime.strptime(date_text, "%B %d, %Y")
     return release_date.replace(
         hour=DEFAULT_RELEASE_HOUR_UTC,
-        minute=0,
+        minute=DEFAULT_RELEASE_MINUTE_UTC,
         second=0,
         microsecond=0,
         tzinfo=timezone.utc,
@@ -759,7 +760,7 @@ def release_datetime_from_date(release_date_text):
     release_date = datetime.strptime(release_date_text, "%Y-%m-%d")
     return release_date.replace(
         hour=DEFAULT_RELEASE_HOUR_UTC,
-        minute=0,
+        minute=DEFAULT_RELEASE_MINUTE_UTC,
         second=0,
         microsecond=0,
         tzinfo=timezone.utc,
@@ -774,6 +775,19 @@ def format_elapsed_text(release_dt, now_dt=None):
     day_label = "day" if days == 1 else "days"
     hour_label = "hour" if hours == 1 else "hours"
     return f"[{days} {day_label}, {hours} {hour_label} old]"
+
+
+def release_datetime_from_archive(edition):
+    """Keep existing publication times when the default daily schedule changes."""
+    release_iso = edition.get("release_iso")
+    if release_iso:
+        try:
+            released = datetime.fromisoformat(release_iso.replace("Z", "+00:00"))
+            if released.tzinfo is not None:
+                return released.astimezone(timezone.utc)
+        except (ValueError, TypeError, AttributeError):
+            pass
+    return release_datetime_from_date(edition["release_date"])
 
 
 def lesson_key_from_release_dt(release_dt):
@@ -1617,7 +1631,7 @@ def parse_args():
         "--release-date",
         help=(
             "Use a specific UTC release date for generated lessons, in YYYY-MM-DD "
-            "format. The release time is 10:00 UTC."
+            "format. The release time is 06:15 UTC (01:15 fixed EST)."
         ),
     )
     parser.add_argument(
@@ -1640,6 +1654,11 @@ def main():
         publish_editorial_pages()
         return
     if args.refresh_pages:
+        from lesson_retention import prune_expired_lessons, summary
+        retention = prune_expired_lessons(Path.cwd())
+        print(summary(retention))
+        for warning in retention["warnings"]:
+            print(f"Warning: {warning}")
         from site_quality import rebuild_news_levels
         rebuild_news_levels()
         refresh_existing_pages()

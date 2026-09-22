@@ -37,9 +37,13 @@
     if (levels.includes(input.value)) { write(LEVEL_KEY, input.value); applyLevel(input.value); }
   }));
   function preserveDate() {
+    const section = document.querySelector('.level-section-controls [aria-current="step"]');
+    const panel = document.getElementById(section?.getAttribute('aria-controls') || '');
+    const active = document.body.classList.contains('daily-feed') ? panel?.closest('.daily-lesson') : null;
+    const hash = /^lesson-\d{4}-\d{2}-\d{2}$/.test(active?.id || '') ? '#'+active.id : location.hash;
     document.querySelectorAll('[data-level-choice]').forEach(a => {
       const url = new URL(a.href, location.href);
-      if (/^#lesson-\d{4}-\d{2}-\d{2}$/.test(location.hash)) url.hash = location.hash;
+      if (/^#lesson-\d{4}-\d{2}-\d{2}$/.test(hash)) url.hash = hash;
       a.href = url.href;
     });
   }
@@ -47,6 +51,14 @@
     if (levels.includes(a.dataset.levelChoice)) write(LEVEL_KEY, a.dataset.levelChoice);
   }));
   preserveDate(); window.addEventListener('hashchange', preserveDate);
+  window.addEventListener('lesson-section-changed', event => {
+    const lesson = event.detail?.lesson;
+    if (document.body.classList.contains('daily-feed') && lesson?.open &&
+        document.contains(lesson) && /^lesson-\d{4}-\d{2}-\d{2}$/.test(lesson.id) && location.hash !== '#'+lesson.id) {
+      window.history?.replaceState(null, '', '#'+lesson.id);
+    }
+    preserveDate();
+  });
   document.querySelectorAll('.daily-lesson').forEach(lesson => lesson.addEventListener('toggle', () => {
     if (window.history && lesson.open && /^lesson-\d{4}-\d{2}-\d{2}$/.test(lesson.id)) {
       window.history.replaceState(null, '', '#'+lesson.id); preserveDate();

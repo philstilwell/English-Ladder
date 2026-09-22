@@ -40,6 +40,33 @@
     });
   });
 
+  const lessonViews = new Map();
+  const headerSections = document.querySelector(".level-toolbar .level-section-controls");
+  const headerButtons = [...(headerSections?.querySelectorAll("[data-lesson-stage]") || [])];
+  let activeLesson = null;
+  let activeSection = null;
+  function selectLesson(lesson) {
+    const view = lessonViews.get(lesson);
+    if (!view) return;
+    if (activeLesson === lesson && activeSection === view.stage) return;
+    activeLesson = lesson;
+    activeSection = view.stage;
+    headerButtons.forEach(button => {
+      const index = stages.indexOf(button.dataset.lessonStage);
+      if (index < 0) return;
+      button.setAttribute("aria-controls", view.panels[index].id);
+      if (index === view.stage) button.setAttribute("aria-current", "step");
+      else button.removeAttribute("aria-current");
+    });
+    window.dispatchEvent(new CustomEvent("lesson-section-changed", {
+      detail: { lesson, stage: stages[view.stage] },
+    }));
+  }
+  function firstAvailableLesson() {
+    return [...lessonViews.keys()].find(lesson => lesson.tagName !== "DETAILS" || lesson.open)
+      || lessonViews.keys().next().value;
+  }
+
   document.querySelectorAll(".daily-lesson").forEach((lesson, lessonIndex) => {
     const panels = stages.map((stage) => lesson.querySelector(`[data-stage="${stage}"]`));
     if (panels.some((panel) => !panel)) return;
@@ -60,12 +87,16 @@
       return button;
     });
     if (!nav.parentElement) content.prepend(nav);
+    const view = { panels, showStage, stage: 0 };
+    lessonViews.set(lesson, view);
     function showStage(index, focus) {
+      view.stage = index;
       panels.forEach((panel, panelIndex) => {
         panel.hidden = panelIndex !== index;
         if (panelIndex === index) stepButtons[panelIndex].setAttribute("aria-current", "step");
         else stepButtons[panelIndex].removeAttribute("aria-current");
       });
+      if (focus || activeLesson === lesson) selectLesson(lesson);
       if (focus) {
         const heading = panels[index].querySelector("h2, h3");
         if (heading) {
@@ -247,6 +278,12 @@
     });
     showStage(0, false);
     lesson.dataset.learningReady = "true";
+    lesson.addEventListener("click", () => selectLesson(lesson));
+    lesson.addEventListener("focusin", () => selectLesson(lesson));
+    lesson.addEventListener("toggle", () => {
+      if (lesson.open) selectLesson(lesson);
+      else if (activeLesson === lesson) selectLesson(firstAvailableLesson());
+    });
   });
   function openLinkedLesson(initial = false) {
     let id;
@@ -258,8 +295,43 @@
       // Parser-time opening lets native fragment navigation place the lesson.
       // A late download must not pull someone back after they start reading.
       if (!initial || !alreadyOpen) lesson.scrollIntoView({ block: "start", behavior: "auto" });
+      selectLesson(lesson);
     }
   }
   openLinkedLesson(true);
+  if (!activeLesson) selectLesson(firstAvailableLesson());
+  if (activeLesson && headerSections) {
+    headerSections.hidden = false;
+    headerButtons.forEach(button => {
+      const index = stages.indexOf(button.dataset.lessonStage);
+      if (index < 0) return;
+      button.disabled = false;
+      button.addEventListener("click", () => {
+        const view = lessonViews.get(activeLesson);
+        if (!view) return;
+        if (activeLesson.tagName === "DETAILS") activeLesson.open = true;
+        view.showStage(index, true);
+      });
+    });
+  } else {
+    // An empty archive has no lesson section to select.
+    headerSections?.remove();
+  }
+  // Several feed lessons can stay open. Follow the one the student scrolls to,
+  // without moving the page or resetting any lesson's selected section.
+  let scrollPending = false;
+  window.addEventListener("scroll", () => {
+    if (scrollPending || !headerSections || lessonViews.size < 2) return;
+    scrollPending = true;
+    window.requestAnimationFrame(() => {
+      scrollPending = false;
+      const top = (document.querySelector(".site-masthead")?.getBoundingClientRect().bottom || 0) + 12;
+      const visible = [...lessonViews.keys()].filter(lesson => lesson.tagName !== "DETAILS" || lesson.open)
+        .map(lesson => ({lesson, rect: lesson.getBoundingClientRect()}))
+        .filter(({rect}) => rect.height > 0 && rect.bottom > top && rect.top < window.innerHeight);
+      const current = visible.filter(({rect}) => rect.top <= top).at(-1) || visible[0];
+      if (current) selectLesson(current.lesson);
+    });
+  }, {passive: true});
   window.addEventListener("hashchange", () => openLinkedLesson());
 })();

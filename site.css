@@ -145,17 +145,24 @@ body { --level-tint:#fff; }
 .site-masthead .site-links { gap:16px; }
 .site-masthead .site-links a { min-height:44px; padding:5px 0; line-height:1.35; }
 .level-toolbar { max-width:1200px; margin:0 auto; padding:6px 32px 12px; }
-.level-toolbar .story-levels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; max-width:600px; margin:0; }
-.level-toolbar .story-levels a { --level-fill:#234deb; --level-ink:#fff; display:flex; align-items:center; justify-content:center; gap:6px; min-width:0; min-height:var(--action-min-height); padding:var(--action-padding-block) var(--action-padding-inline); border:1px solid transparent; border-radius:8px; background:var(--level-fill); color:var(--level-ink); font-size:.875rem; font-weight:600; line-height:1.35; text-align:center; text-decoration:none; }
-.level-toolbar .story-levels a[data-level-choice="beginner"] { --level-fill:#efca58; --level-ink:#332900; --level-muted-fill:#f0e9cc; --level-muted-ink:#625321; }
-.level-toolbar .story-levels a[data-level-choice="intermediate"] { --level-fill:#236b51; --level-muted-fill:#deebe3; --level-muted-ink:#345d4b; }
-.level-toolbar .story-levels a[data-level-choice="advanced"] { --level-fill:#234deb; --level-muted-fill:#e2e7f7; --level-muted-ink:#435684; }
-.level-toolbar .story-levels a:not([aria-current="page"]) { background:var(--level-muted-fill); color:var(--level-muted-ink); }
-.level-toolbar .story-levels a[aria-current="page"] { box-shadow:0 0 0 2px var(--level-tint),0 0 0 4px #20242b; font-weight:750; }
-.level-toolbar .story-levels a:hover { text-decoration:underline; text-underline-offset:3px; }
-.level-toolbar .story-levels a:focus-visible { outline:3px solid #234deb; outline-offset:6px; }
-.level-toolbar .level-name,.level-toolbar .level-range { white-space:nowrap; }
-.level-toolbar .level-range { font-size:.82rem; font-weight:500; }
+.level-toolbar .story-levels { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; gap:10px; max-width:760px; margin:0; }
+.level-toolbar .level-choice { --level-fill:#234deb; --level-ink:#fff; --level-muted-fill:#e2e7f7; --level-muted-ink:#435684; min-width:0; padding:4px; border:2px solid transparent; border-radius:11px; }
+.level-toolbar .level-choice[data-level="beginner"] { --level-fill:#efca58; --level-ink:#332900; --level-muted-fill:#f0e9cc; --level-muted-ink:#625321; }
+.level-toolbar .level-choice[data-level="intermediate"] { --level-fill:#236b51; --level-muted-fill:#deebe3; --level-muted-ink:#345d4b; }
+.level-toolbar .level-choice.is-current { border-color:#20242b; }
+.level-toolbar .level-name-link { display:flex; align-items:center; justify-content:center; min-width:0; min-height:var(--action-min-height); padding:var(--action-padding-block) var(--action-padding-inline); border:1px solid transparent; border-radius:6px; background:var(--level-fill); color:var(--level-ink); font-size:.875rem; font-weight:600; line-height:1.35; text-align:center; text-decoration:none; }
+.level-toolbar .level-choice:not(.is-current) .level-name-link { background:var(--level-muted-fill); color:var(--level-muted-ink); }
+.level-toolbar .is-current .level-name-link { background:var(--level-fill); color:var(--level-ink); border-color:transparent; font-weight:750; }
+.level-toolbar .level-name-link:hover { text-decoration:underline; text-underline-offset:3px; }
+.level-toolbar .level-name-link:focus-visible { outline:3px solid #234deb; outline-offset:3px; }
+.level-toolbar .level-name { white-space:nowrap; }
+.level-section-controls { --action-min-height:44px; --action-padding-block:4px; --action-padding-inline:6px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; margin-top:4px; }
+.reading-js .level-section-controls[hidden] { display:grid !important; }
+.level-section-controls button { min-width:0; border:1px solid transparent; border-radius:5px; background:var(--level-muted-fill); color:var(--level-muted-ink); font:inherit; font-size:.8125rem; font-weight:600; line-height:1.2; cursor:pointer; }
+.level-section-controls button[aria-current="step"] { background:var(--level-fill); color:var(--level-ink); font-weight:750; }
+.level-section-controls button:hover:not(:disabled) { text-decoration:underline; text-underline-offset:3px; }
+.level-section-controls button:focus-visible { outline:2px solid #20242b; outline-offset:2px; }
+.level-section-controls button:disabled { opacity:1; cursor:default; }
 .lesson-completion-marks { display:inline-flex; align-items:center; gap:4px; margin-inline-end:.45em; vertical-align:.05em; }
 .lesson-completion-mark { display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; flex:0 0 20px; border-radius:50%; background:#234deb; color:#fff; font-size:12px; font-weight:800; line-height:1; letter-spacing:0; }
 .lesson-completion-mark[data-completed-level="beginner"] { background:#efca58; color:#332900; }
@@ -199,8 +206,7 @@ body { --level-tint:#fff; }
   .site-masthead .site-links a { font-size:.75rem; white-space:nowrap; }
   .level-toolbar { padding:4px 16px 10px; }
   .level-toolbar .story-levels { max-width:none; gap:10px; }
-  .level-toolbar .story-levels a { flex-direction:column; gap:1px; font-size:.8rem; }
-  .level-toolbar .level-range { font-size:.73rem; }
+  .level-toolbar .level-name-link { font-size:.875rem; }
   .reading-page .page-hero.reading-heading { padding-top:18px; }
   .reading-page .reading-heading h1 { font-size:1.6rem; }
   .daily-feed .reading-heading h1 { font-size:1.4rem; }
@@ -208,8 +214,11 @@ body { --level-tint:#fff; }
   .reading-page .learning-flow { max-width:100%; gap:3px; }
   .reading-page .learning-flow button { padding:8px 12px; font-size:.875rem; }
 }
+@media(max-width:600px) {
+  .level-toolbar .story-levels { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px 10px; }
+  .level-toolbar .level-choice.is-current { grid-column:1 / -1; grid-row:1; }
+}
 @media(max-width:350px) {
-  .level-toolbar .story-levels a { font-size:.74rem; }
   .site-masthead .site-links { gap:5px; }
 }
 @media print {
@@ -231,7 +240,7 @@ body[class] :is(
     .work-text-button, .tool-button, .grammar-cta, .grammar-download-link,
     .efsp-tool-button, .efsp-download-link, .efsp-card-link,
     .efsp-student-pdf-link, .hub-resource-link, .resource-link),
-  .story-levels > a, .news-levels > a, .work-jump > a,
+  .story-levels > a, .story-levels .level-name-link, .news-levels > a, .work-jump > a,
   .tools-jump-grid > a, .us-life-jump-grid > a, .grammar-page-links > a,
   .efsp-related-links > a, .work-related > a, .seo-category-links > a,
   .level-option > input + span,

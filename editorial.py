@@ -277,9 +277,21 @@ def decorate_page(path):
 
 
 def level_links(current, story=None):
-    levels = [("beginner", "Beginner", "A1–A2"), ("intermediate", "Intermediate", "B1–B2"), ("advanced", "Advanced", "C1+")]
-    return '<nav class="story-levels" aria-label="Choose your English level">' + "".join(
-        f'<a href="{key}.html" data-level-choice="{key}" aria-label="{name} · {cefr}"' + (' aria-current="page"' if current == key else '') + f'><span class="level-name">{name}</span> <span class="level-range">{cefr}</span></a>' for key, name, cefr in levels) + '</nav>'
+    items = []
+    for key, name in [("beginner", "Beginner"), ("intermediate", "Intermediate"), ("advanced", "Advanced")]:
+        selected = current == key
+        sections = ''
+        if selected:
+            buttons = ''.join(
+                f'<button type="button" data-lesson-stage="{stage}" disabled'
+                + (' aria-current="step"' if stage == 'read' else '')
+                + f'>{stage.title()}</button>' for stage in ('read', 'practice', 'discuss'))
+            sections = '<div class="level-section-controls" role="group" aria-label="Lesson sections" hidden>' + buttons + '</div>'
+        items.append(f'<div class="level-choice{" is-current" if selected else ""}" data-level="{key}">'
+                     f'<a class="level-name-link" href="{key}.html" data-level-choice="{key}"'
+                     + (' aria-current="page"' if selected else '')
+                     + f'><span class="level-name">{name}</span></a>{sections}</div>')
+    return '<nav class="story-levels" aria-label="Choose your English level">' + ''.join(items) + '</nav>'
 
 
 def build_homepage():

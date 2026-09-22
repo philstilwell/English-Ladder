@@ -2,10 +2,10 @@ const {test,afterEach}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');const path=require('node:path');const {JSDOM}=require('jsdom');
 const root=path.join(__dirname,'..');const open=[];
-const latestNewsDate=fs.readdirSync(path.join(root,'archive/lessons'))
+const archiveDirectory=path.join(root,'archive/lessons');
+const latestNewsDate=(fs.existsSync(archiveDirectory)?fs.readdirSync(archiveDirectory):[])
  .filter(file=>/^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0,-5);
-assert.ok(latestNewsDate,'A retained news edition is required for published-page tests');
-const latestBeginner=`news/${latestNewsDate}/beginner.html`;
+const latestBeginner=latestNewsDate?`news/${latestNewsDate}/beginner.html`:'stories/food-market/beginner.html';
 afterEach(()=>{open.splice(0).forEach(d=>d.window.close());});
 function load(file,{scripts=['site.js'],stored={},hash=''}={}){
  const dom=new JSDOM(fs.readFileSync(path.join(root,file),'utf8'),{url:`https://englishladder.com/${file}${hash}`,runScripts:'dangerously'});open.push(dom);
@@ -22,10 +22,10 @@ test('a selected level persists through Discover, its evergreen stories and main
  for(const link of doc.querySelectorAll('[data-level-link],.explore-story'))assert.match(link.href,/advanced\.html/);
  const next=load('index.html',{stored:{'english-ladder-level':'advanced'}});
  assert.equal(next.window.document.querySelector('input[value="advanced"]').checked,true);
- assert.match(next.window.document.querySelector('#feature-start').href,/advanced\.html#lesson-/);
+ assert.match(next.window.document.querySelector('#feature-start').href,latestNewsDate?/advanced\.html#lesson-/:/stories\/city-trees\/advanced\.html$/);
  assert.match(next.window.document.querySelector('.home-intro a').href,/advanced\.html$/);
 });
-test('level switches preserve the story date',()=>{
+test('level switches preserve the story date',{skip:!latestNewsDate},()=>{
  const d=load('beginner.html',{hash:'#lesson-2026-09-03'});
  assert.ok([...d.window.document.querySelectorAll('[data-level-choice]')].every(a=>a.hash==='#lesson-2026-09-03'));
 });
@@ -38,9 +38,9 @@ test('grammar topic search and level filter work together',()=>{
  assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,1);
  const select=doc.querySelector('[data-library-level]');select.value='A1';change(d,select);assert.equal(doc.querySelectorAll('[data-library-item]:not([hidden])').length,0);assert.equal(doc.querySelector('[data-library-empty]').hidden,false);
 });
-test('news discussion offers speaking activities without restoring retired writing boxes',()=>{
+test('story discussion offers speaking activities without restoring retired writing boxes',()=>{
  const key='english-ladder-study-v1';
- const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{[`/${latestBeginner}:notes-${latestNewsDate}`]:'An old saved draft'}});
+ const raw=JSON.stringify({enabled:true,history:[],words:[],drafts:{[`/${latestBeginner}:notes-${latestNewsDate||'food-market'}`]:'An old saved draft'}});
  const d=load(latestBeginner,{stored:{[key]:raw}});const doc=d.window.document;
  assert.equal(doc.querySelector('.discussion textarea,.discussion label,.discussion .note-hint'),null);
  assert.equal(doc.querySelectorAll('.discussion-activities > li').length,6);
@@ -50,7 +50,7 @@ test('news discussion offers speaking activities without restoring retired writi
  assert.equal(next.window.document.querySelector('.discussion textarea'),null);
 });
 test('vocabulary definitions still open without saved-word controls or a learning record',()=>{
- const d=load('beginner.html',{scripts:['learning.js','site.js']});const doc=d.window.document;
+ const d=load(latestNewsDate?'beginner.html':latestBeginner,{scripts:['learning.js','site.js']});const doc=d.window.document;
  const term=doc.querySelector('.word-button');term.click();
  assert.equal(term.getAttribute('aria-expanded'),'true');assert.equal(doc.querySelector('.save-word'),null);
  assert.equal(d.window.localStorage.getItem('english-ladder-study-v1'),null);

@@ -11,7 +11,10 @@ ROOT=Path(__file__).resolve().parents[1]
 
 class CurriculumSearchTests(unittest.TestCase):
     def news_day(self):
-        return max((ROOT/'archive/lessons').glob('*.json')).stem
+        latest=max((ROOT/'archive/lessons').glob('*.json'),default=None)
+        if latest is None:
+            self.skipTest('No retained daily edition; evergreen and empty-feed checks still run.')
+        return latest.stem
 
     def page(self,relative):
         return BeautifulSoup((ROOT/relative).read_text(),'html.parser')
@@ -45,9 +48,8 @@ class CurriculumSearchTests(unittest.TestCase):
         self.assertIn('production meetings',p['description'])
         self.assertNotEqual('English for Work · Industry & infrastructure',p['description'])
 
-    def test_published_daily_feeds_and_search_data_include_fourteen_lessons(self):
+    def test_published_daily_feeds_and_search_data_include_up_to_fourteen_lessons(self):
         archives=sorted((ROOT/'archive/lessons').glob('*.json'),reverse=True)
-        self.assertGreater(len(archives),14)
         expected=[p.stem for p in archives[:14]]
         for level in seo.LEVELS:
             with self.subTest(level=level):
@@ -56,10 +58,16 @@ class CurriculumSearchTests(unittest.TestCase):
                 self.assertIn('latest 14 news lessons',s.select_one('.index-container > p').get_text())
                 self.assertIn('latest 14 news lessons',s.select_one('meta[name=description]')['content'])
                 graph=json.loads(s.select_one('[data-seo-schema]').string)['@graph']
-                listing=next(n for n in graph if n['@type']=='ItemList')
-                self.assertEqual(14,listing['numberOfItems'])
-                self.assertEqual([seo.ORIGIN+f'news/{day}/{level}.html' for day in expected],[item['url'] for item in listing['itemListElement']])
-                self.assertTrue((ROOT/f'news/{archives[14].stem}/{level}.html').is_file())
+                listing=next((n for n in graph if n['@type']=='ItemList'),None)
+                if expected:
+                    self.assertIsNotNone(listing)
+                    self.assertEqual(len(expected),listing['numberOfItems'])
+                    self.assertEqual([seo.ORIGIN+f'news/{day}/{level}.html' for day in expected],[item['url'] for item in listing['itemListElement']])
+                else:
+                    self.assertIsNone(listing)
+                    self.assertIsNotNone(s.select_one('#empty-state'))
+                if len(archives)>14:
+                    self.assertTrue((ROOT/f'news/{archives[14].stem}/{level}.html').is_file())
 
     def test_grammar_breadcrumbs_match_schema_and_related_patterns(self):
         s=self.enhance('grammar-concepts/concept-35.html')
@@ -125,7 +133,7 @@ class CurriculumSearchTests(unittest.TestCase):
             self.assertNotIn('404.html',state);self.assertNotIn('continue.html',state)
 
     def test_relative_age_does_not_make_a_lesson_new(self):
-        s=self.enhance('beginner.html');before=seo.fingerprint(s)
+        s=self.enhance('stories/city-trees/beginner.html');before=seo.fingerprint(s)
         s.select_one('.lesson-age').string='[15 days, 3 hours old]';self.assertEqual(before,seo.fingerprint(s))
         s.select_one('.lesson-title-text').string='A revised headline';self.assertNotEqual(before,seo.fingerprint(s))
 

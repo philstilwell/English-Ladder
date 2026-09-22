@@ -52,13 +52,15 @@ class AIExtensionTests(unittest.TestCase):
         self.assertTrue(BeautifulSoup((ROOT/'continue.html').read_text(), 'html.parser').select_one('#ai-review'))
 
     def test_republishing_does_not_duplicate_or_capture_student_writing(self):
-        for name in ['grammar-concepts/concept-35.html', 'efsp-manufacturing.html', 'us-life.html', f'news/{max((ROOT / "archive/lessons").glob("*.json")).stem}/beginner.html', 'tools.html']:
+        latest=max((ROOT/'archive/lessons').glob('*.json'),default=None)
+        reading=f'news/{latest.stem}/beginner.html' if latest else 'stories/city-trees/beginner.html'
+        for name in ['grammar-concepts/concept-35.html', 'efsp-manufacturing.html', 'us-life.html', reading, 'tools.html']:
             path = ROOT/name
             soup = BeautifulSoup(path.read_text(), 'html.parser')
             expected = [n.text for n in soup.select('.ai-prompt-text')]
             for textarea in soup.select('textarea'):
                 textarea.string = 'PRIVATE_DRAFT_DO_NOT_COPY'
-            prefix = '../../' if name.startswith('news/') else ('../' if name.startswith('grammar-concepts/') else '')
+            prefix = '../../' if name.startswith(('news/','stories/')) else ('../' if name.startswith('grammar-concepts/') else '')
             ai.enhance_page(soup, path, prefix)
             ai.enhance_page(soup, path, prefix)
             self.assertEqual(expected, [n.text for n in soup.select('.ai-prompt-text')])

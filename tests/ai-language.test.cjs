@@ -4,9 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
 const root = path.join(__dirname, '..');
-const latestNewsDate = fs.readdirSync(path.join(root, 'archive/lessons'))
+const archiveDirectory = path.join(root, 'archive/lessons');
+const latestNewsDate = (fs.existsSync(archiveDirectory) ? fs.readdirSync(archiveDirectory) : [])
   .filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0, -5);
-assert.ok(latestNewsDate, 'A retained news edition is required for published-page tests');
+const lessonPage = level => latestNewsDate ? `news/${latestNewsDate}/${level}.html` : `stories/food-market/${level}.html`;
 const key = 'english-ladder-vocabulary-language-v1';
 const languages = { ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese' };
 const windows = [];
@@ -35,9 +36,9 @@ function clickLanguage(w, value) {
   w.document.querySelector(`button[data-definition-language="${value}"]`).click();
 }
 
-test('all five language buttons update every daily prompt, copy exact previews, and restore the originals', async () => {
+test('all five language buttons update every lesson prompt, copy exact previews, and restore the originals', async () => {
   const copies = [];
-  const w = load('beginner.html', { clipboard: { writeText: async text => copies.push(text) } });
+  const w = load(latestNewsDate ? 'beginner.html' : lessonPage('beginner'), { clipboard: { writeText: async text => copies.push(text) } });
   const d = w.document;
   const nodes = [...d.querySelectorAll('.ai-prompt-text')];
   const originals = nodes.map(node => node.textContent);
@@ -65,7 +66,7 @@ test('all five language buttons update every daily prompt, copy exact previews, 
 });
 
 test('saved language carries into all three levels and non-story curriculum prompts', () => {
-  for (const file of [`news/${latestNewsDate}/beginner.html`, `news/${latestNewsDate}/intermediate.html`, `news/${latestNewsDate}/advanced.html`, 'grammar-concepts/concept-35.html', 'us-life.html', 'tools.html']) {
+  for (const file of [...['beginner', 'intermediate', 'advanced'].map(lessonPage), 'grammar-concepts/concept-35.html', 'us-life.html', 'tools.html']) {
     const w = load(file, { saved: 'zh-Hans' });
     run(w, 'ai-practice.js');
     for (const node of w.document.querySelectorAll('.ai-prompt-text')) {
@@ -83,7 +84,7 @@ test('saved language carries into all three levels and non-story curriculum prom
 
 test('blocked storage and either script order keep current-page selection working', () => {
   for (const order of [['learning.js', 'ai-practice.js'], ['ai-practice.js', 'learning.js']]) {
-    const w = load(`news/${latestNewsDate}/intermediate.html`, { blockedStorage: true });
+    const w = load(lessonPage('intermediate'), { blockedStorage: true });
     // This test exercises storage and script order, not a dated translation cache.
     w.document.querySelectorAll('.vocab-definition').forEach(node => {
       node.dataset.translations = JSON.stringify({ es: 'Definición de prueba.' });
@@ -93,7 +94,7 @@ test('blocked storage and either script order keep current-page selection workin
     assert.equal(w.document.querySelector('.vocab-definition').lang, 'es');
     assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Spanish\./);
   }
-  const w = load(`news/${latestNewsDate}/advanced.html`, { blockedStorage: true });
+  const w = load(lessonPage('advanced'), { blockedStorage: true });
   run(w, 'learning.js');
   clickLanguage(w, 'ja');
   run(w, 'ai-practice.js');
@@ -101,7 +102,7 @@ test('blocked storage and either script order keep current-page selection workin
 });
 
 test('missing vocabulary translations keep English definitions while honoring the AI explanation language', () => {
-  const w = load(`news/${latestNewsDate}/intermediate.html`);
+  const w = load(lessonPage('intermediate'));
   w.document.querySelectorAll('.vocab-definition').forEach(node => { node.dataset.translations = '{}'; });
   run(w, 'learning.js', 'ai-practice.js');
   clickLanguage(w, 'es');

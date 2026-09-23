@@ -17,8 +17,6 @@ jobs:
     name: Generate one test illustration and verify reuse
     runs-on: ubuntu-latest
     timeout-minutes: 8
-    env:
-      ILLUSTRATION_CHECK_DIR: ${{ runner.temp }}/illustration-model-check
     steps:
       - uses: actions/checkout@v6
         with:
@@ -32,6 +30,7 @@ jobs:
       - name: Check the production image generator with one paid request
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ILLUSTRATION_CHECK_DIR: ${{ runner.temp }}/illustration-model-check
         run: |
           python -u - <<'PY'
           import json
@@ -74,6 +73,6 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: illustration-model-check-${{ github.run_id }}-${{ github.run_attempt }}
-          path: ${{ env.ILLUSTRATION_CHECK_DIR }}/
+          path: ${{ runner.temp }}/illustration-model-check/
           retention-days: 7
           if-no-files-found: warn

@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Pornhub is a website that is being investigated.",
+      "A regulator called Ofcom is checking the website's age system.",
+      "Ofcom worries that children can still see adult content online.",
+      "Pornhub uses a system from Apple to check user ages.",
+      "But Ofcom thinks this new system may not work well.",
+      "Websites with adult content must use strong age checks.",
+      "Companies can pay a large fine if they do not follow the rules."
+    ],
+    "vocabulary": [
+      {
+        "term": "investigated",
+        "part_of_speech": "verb",
+        "definition": "checked by officials to find out facts about something."
+      },
+      {
+        "term": "regulator",
+        "part_of_speech": "noun",
+        "definition": "a group that officially controls a business or activity."
+      },
+      {
+        "term": "system",
+        "part_of_speech": "noun",
+        "definition": "a set of parts that work together for a specific purpose."
+      },
+      {
+        "term": "worries",
+        "part_of_speech": "verb",
+        "definition": "feels anxious or unhappy about something."
+      },
+      {
+        "term": "adult content",
+        "part_of_speech": "noun",
+        "definition": "pictures or videos that are only suitable for people aged 18 or older."
+      },
+      {
+        "term": "fine",
+        "part_of_speech": "noun",
+        "definition": "money that you must pay as a punishment for breaking a rule or law."
+      },
+      {
+        "term": "follow",
+        "part_of_speech": "verb",
+        "definition": "to obey or act according to a rule, instruction, or example."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "役人が何かについて事実を見つけるために調べること。",
+      "ko": "공무원들이 어떤 사실을 알아내기 위해 무언가를 확인하는 것.",
+      "zh-Hans": "官员为查明某事的事实而进行检查。",
+      "es": "revisado por funcionarios para averiguar los hechos sobre algo.",
+      "pt-BR": "verificado por autoridades para descobrir fatos sobre algo."
+    },
+    {
+      "id": 1,
+      "ja": "事業や活動を公式に管理する団体。",
+      "ko": "사업이나 활동을 공식적으로 통제하는 단체.",
+      "zh-Hans": "官方控制某个商业或活动的团体。",
+      "es": "un grupo que controla oficialmente un negocio o actividad.",
+      "pt-BR": "um grupo que controla oficialmente um negócio ou atividade."
+    },
+    {
+      "id": 2,
+      "ja": "特定の目的のために一緒に機能する部品の集まり。",
+      "ko": "특정 목적을 위해 함께 작동하는 부품들의 집합.",
+      "zh-Hans": "为特定目的协同工作的一组部件。",
+      "es": "un conjunto de partes que trabajan juntas para un propósito específico.",
+      "pt-BR": "um conjunto de partes que trabalham juntas para um propósito específico."
+    },
+    {
+      "id": 3,
+      "ja": "何かについて不安を感じたり、不幸せに感じたりする。",
+      "ko": "어떤 것에 대해 불안하거나 불행하게 느끼는 것.",
+      "zh-Hans": "对某事感到焦虑或不开心。",
+      "es": "sentir ansiedad o infelicidad por algo.",
+      "pt-BR": "sentir-se ansioso ou infeliz com algo."
+    },
+    {
+      "id": 4,
+      "ja": "18歳以上の人にだけ適している写真や動画。",
+      "ko": "18세 이상인 사람들에게만 적합한 사진이나 비디오.",
+      "zh-Hans": "仅适合18岁或以上人群观看的图片或视频。",
+      "es": "imágenes o videos que solo son adecuados para personas mayores de 18 años.",
+      "pt-BR": "imagens ou vídeos que são adequados apenas para pessoas com 18 anos ou mais."
+    },
+    {
+      "id": 5,
+      "ja": "ルールや法律を破った罰として支払わなければならないお金。",
+      "ko": "규칙이나 법을 어긴 것에 대한 벌금으로 내야 하는 돈.",
+      "zh-Hans": "因违反规定或法律而必须支付的罚款。",
+      "es": "dinero que se debe pagar como castigo por romper una regla o ley.",
+      "pt-BR": "quantia em dinheiro que se deve pagar como punição por desrespeitar uma regra ou lei."
+    },
+    {
+      "id": 6,
+      "ja": "規則、指示、または模範に従って行動すること。",
+      "ko": "규칙, 지시 또는 모범에 따라 행동하거나 복종하는 것.",
+      "zh-Hans": "遵守或按照规则、指示或榜样行事。",
+      "es": "obedecer o actuar de acuerdo con una regla, instrucción o ejemplo.",
+      "pt-BR": "obedecer ou agir de acordo com uma regra, instrução ou exemplo."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-23T17:14:11.864984+00:00"
+  }
+}

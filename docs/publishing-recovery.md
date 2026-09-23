@@ -10,6 +10,14 @@ On September 22, Cloudflare build `d330b753-8dcd-443e-8bbd-a10f0350b08e` used th
 
 The September 22 repair removes the duplicate search-audit command from publishing checks, retains the search audit within `audit_site.py`, and gives the complete preflight a five-minute limit. The wrapper records actual preflight elapsed time so future slow builds can be diagnosed. GitHub now allows 15 minutes for Cloudflare to publish. These changes address the observed timeout; authentication failures, service outages, or future growth can still require investigation.
 
+## GitHub archive cleanup authentication
+
+On September 23, all three scheduled attempts stopped in `Remove expired daily lessons`, before lesson generation. Run `35868705011` reported `fatal: could not read Username for 'https://github.com': No such device or address`. Checkout deliberately retained no credentials, while the subsequent Git fetch supplied a REST-style Bearer header rather than Git HTTPS authentication. The earlier manual publishing checks did not execute this schedule-only cleanup job.
+
+Cleanup, lesson publication, and fallback checkout now configure GitHub CLI as Git's credential helper using `gh auth setup-git --hostname github.com`. The helper reads each step's `GH_TOKEN`; publishing steps select `LESSON_PUBLISH_TOKEN`, with the existing workflow-token fallback. Checkout does not retain a competing token. Git fetch and push use this helper without placing tokens in command arguments. Fetch failures now participate in the three-attempt recovery loop and emit explicit GitHub error annotations if exhausted.
+
+To exercise the actual scheduled cleanup path without paid generation, manually run **Daily ESL Lesson Generator** with **maintenance_only=true**. It uses the same cleanup job and verifies the resulting live archive, including when nothing needed removal. The lesson, translation, and image generation job is skipped. A successful check proves cleanup and publishing at that time; it does not create a missing daily edition. To recover a missing edition afterward, run the ordinary workflow with its `release_date`; existing completed editions and saved progress are reused.
+
 ## Cloudflare configuration
 
 For the existing `englishladder` Worker, production branch `main`, set **Settings → Builds → Build configuration → Deploy command** to:

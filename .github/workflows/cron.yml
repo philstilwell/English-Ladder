@@ -71,6 +71,11 @@ on:
     - cron: '15 8 * * *'
   workflow_dispatch:
     inputs:
+      maintenance_only:
+        description: 'Run the scheduled archive cleanup and live checks only; no paid content generation'
+        required: false
+        type: boolean
+        default: false
       test_email:
         description: 'Send a clearly labeled test alert only; no lessons, images, or publishing'
         required: false
@@ -110,13 +115,13 @@ concurrency:
 jobs:
   maintain_archive:
     name: Remove expired daily lessons
-    if: github.event_name == 'schedule'
+    if: github.event.inputs.test_email != 'true' && (github.event_name == 'schedule' || github.event.inputs.maintenance_only == 'true')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
       contents: write
     outputs:
-      publishing_revision: ${{ steps.save.outputs.revision }}
+      publishing_revision: ${{ steps.saved_revision.outputs.revision }}
     steps:
       - name: Checkout current branch
         uses: actions/checkout@v6
@@ -145,38 +150,52 @@ jobs:
           PY
 
       - name: Rebuild and save the retained archive
-        id: save
-        if: steps.retention.outputs.needed == 'true'
+        # Manual maintenance also exercises authentication when nothing expired.
+        if: steps.retention.outputs.needed == 'true' || github.event.inputs.maintenance_only == 'true'
         env:
           GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
         run: |
+          # Git HTTPS uses a credential helper, not REST API Bearer headers.
+          # This works even when checkout deliberately leaves no credentials.
+          gh auth setup-git --hostname github.com
           git config user.name "GitHub Actions Bot"
           git config user.email "actions@github.com"
           for attempt in 1 2 3; do
-            git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch origin "${GITHUB_REF_NAME}"
+            echo "Archive publishing attempt ${attempt}/3: fetch current branch..."
+            if ! git fetch origin "${GITHUB_REF_NAME}"; then
+              if [ "${attempt}" = 3 ]; then
+                echo "::error::Archive cleanup could not fetch the repository after 3 attempts. Check LESSON_PUBLISH_TOKEN access and the Git error above."
+                exit 1
+              fi
+              sleep $((attempt * 5))
+              continue
+            fi
             git reset --hard "origin/${GITHUB_REF_NAME}"
             # Refresh always prunes again after reset, then rebuilds all links.
             python update_site.py --refresh-pages
             python audit_site.py
             git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
             if git diff --cached --quiet; then
-              echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             git commit -m "Retain the latest 50 calendar days of news lessons"
-            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"; then
-              echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
               exit 0
             fi
             sleep $((attempt * 5))
           done
-          echo "Failed to publish the 50-day archive cleanup after three attempts." >&2
+          echo "::error::Failed to push the 50-day archive cleanup after 3 attempts. Check LESSON_PUBLISH_TOKEN write access and the Git error above."
           exit 1
+
+      - name: Record checked archive revision
+        id: saved_revision
+        # Also verify the existing commit when there was nothing to prune.
+        run: echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
 
   build_and_deploy:
     name: Generate and save checked lessons
     needs: maintain_archive
-    if: always() && github.event.inputs.test_email != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped')
+    if: always() && github.event.inputs.test_email != 'true' && github.event.inputs.maintenance_only != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped')
     outputs:
       publishing_revision: ${{ steps.saved_revision.outputs.revision }}
       release_date: ${{ steps.release.outputs.date }}
@@ -196,6 +215,8 @@ jobs:
           # A delayed schedule must see archives/images saved by an earlier run,
           # not the older commit that was current when GitHub queued this job.
           ref: ${{ github.ref_name }}
+          # Publishing uses the explicit GH_TOKEN credential helper below.
+          persist-credentials: false
         continue-on-error: true
 
       - name: Fallback checkout
@@ -204,13 +225,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           echo "actions/checkout failed; attempting manual checkout fallback."
+          gh auth setup-git --hostname github.com
           find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} +
           git init .
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
           for attempt in 1 2 3; do
             echo "Manual checkout attempt ${attempt}..."
-            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch --no-tags --depth=1 origin "${GITHUB_REF_NAME}" \
+            if git fetch --no-tags --depth=1 origin "${GITHUB_REF_NAME}" \
               && git checkout --force -B "${GITHUB_REF_NAME}" FETCH_HEAD; then
               exit 0
             fi
@@ -365,6 +387,7 @@ jobs:
           # branch update; fall back only for local copies without the secret.
           GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
         run: |
+          gh auth setup-git --hostname github.com
           git config --global user.name "GitHub Actions Bot"
           git config --global user.email "actions@github.com"
           lesson_snapshot="$(mktemp -d)"
@@ -372,7 +395,14 @@ jobs:
 
           for attempt in 1 2 3; do
             echo "Preparing lesson update push attempt ${attempt}..."
-            git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" fetch origin "${GITHUB_REF_NAME}"
+            if ! git fetch origin "${GITHUB_REF_NAME}"; then
+              if [ "${attempt}" = 3 ]; then
+                echo "::error::Lesson publishing could not fetch the repository after 3 attempts. Check LESSON_PUBLISH_TOKEN access and the Git error above."
+                exit 1
+              fi
+              sleep $((attempt * 5))
+              continue
+            fi
             git reset --hard "origin/${GITHUB_REF_NAME}"
             python publish_snapshot.py restore "${lesson_snapshot}"
             python update_site.py --refresh-pages
@@ -386,7 +416,7 @@ jobs:
             # GITHUB_TOKEN pushes do not start another GitHub Actions run.
             # Keep this commit visible to the Cloudflare GitHub integration.
             git commit -m "Auto-update daily lessons"
-            if git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" push origin "HEAD:${GITHUB_REF_NAME}"; then
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
               exit 0
             fi
 
@@ -394,7 +424,7 @@ jobs:
             sleep $((attempt * 5))
           done
 
-          echo "Failed to push lesson update after 3 attempts." >&2
+          echo "::error::Failed to push lesson update after 3 attempts. Check LESSON_PUBLISH_TOKEN write access and the Git error above."
           exit 1
 
       - name: Record saved publishing revision

@@ -88,6 +88,19 @@ class DailyImageTests(unittest.TestCase):
         second = daily_images.ensure_daily_image(path, self.root, client_with_image())
         self.assertNotEqual(first["path"], second["path"])
 
+    def test_model_upgrade_reuses_valid_older_illustrations_without_paid_calls(self):
+        value = lesson()
+        path = self.archive(value)
+        with patch.object(daily_images, "MODEL", "gemini-2.5-flash-image"):
+            previous = daily_images.ensure_daily_image(path, self.root, client_with_image())
+        metadata_path, image_path = daily_images.image_paths(value, self.root)
+        before = (metadata_path.read_bytes(), image_path.read_bytes())
+        replacement_client = client_with_image()
+        result = daily_images.ensure_daily_image(path, self.root, replacement_client)
+        self.assertEqual(previous, result)
+        replacement_client.models.generate_content.assert_not_called()
+        self.assertEqual(before, (metadata_path.read_bytes(), image_path.read_bytes()))
+
     def test_failure_is_bounded_and_does_not_break_the_lesson(self):
         path = self.archive(lesson())
         client = Mock()

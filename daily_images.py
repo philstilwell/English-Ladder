@@ -7,7 +7,8 @@ from datetime import date, datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-2.5-flash-image"
+# Stable replacement for Gemini 2.5 Flash Image (retires October 2, 2026).
+MODEL = "gemini-3.1-flash-lite-image"
 MAX_ATTEMPTS = 3
 
 
@@ -125,7 +126,8 @@ def ensure_daily_image(archive_path, root=ROOT, client=None):
             client = genai.Client(api_key=os.environ["GEMINI_API_KEY"], http_options=types.HttpOptions(
                 timeout=90_000, retry_options=types.HttpRetryOptions(attempts=1)))
         response = client.models.generate_content(model=MODEL, contents=prompt, config={
-            "response_modalities": ["IMAGE"], "image_config": {"aspect_ratio": "4:3"},
+            "response_modalities": ["IMAGE"],
+            "image_config": {"aspect_ratio": "4:3", "image_size": "1K"},
         })
         raw = None
         for candidate in response.candidates or []:

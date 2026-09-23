@@ -1,0 +1,79 @@
+name: Check daily illustration model (one paid image)
+
+# Deliberately manual: each run makes one paid image request, about $0.04-$0.05.
+# Test output stays in an artifact and never replaces a published illustration.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-daily-illustration-model
+  cancel-in-progress: false
+
+jobs:
+  check_illustration:
+    name: Generate one test illustration and verify reuse
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    env:
+      ILLUSTRATION_CHECK_DIR: ${{ runner.temp }}/illustration-model-check
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Install the same dependencies as daily publishing
+        run: pip install -r requirements.txt
+      - name: Check the production image generator with one paid request
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python -u - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+          from types import SimpleNamespace
+          from daily_images import MODEL, ensure_daily_image, image_for_lesson
+
+          root = Path(os.environ['ILLUSTRATION_CHECK_DIR'])
+          archive = root / 'archive/lessons/2000-01-01.json'
+          archive.parent.mkdir(parents=True, exist_ok=True)
+          lesson = {
+              'release_date': '2000-01-01',
+              'source': {'title': 'Synthetic illustration compatibility check'},
+              'levels': {'beginner': {'lesson': {
+                  'title': 'City trees keep streets cool',
+                  'overview': 'Trees provide shade beside a quiet city footpath.',
+                  'news_brief_sentences': ['A leafy tree shades a bench and a city footpath.'],
+              }}},
+          }
+          archive.write_text(json.dumps(lesson))
+          result = ensure_daily_image(archive, root)
+          if not result or result['model'] != MODEL or result['attempts'] != 1:
+              raise SystemExit('The production image request failed; inspect the saved metadata.')
+          if image_for_lesson(lesson, root) != result:
+              raise SystemExit('The generated illustration failed its file and metadata checks.')
+
+          def reject_request(**kwargs):
+              raise AssertionError('Cached image reuse attempted another provider request.')
+
+          offline_client = SimpleNamespace(models=SimpleNamespace(generate_content=reject_request))
+          if ensure_daily_image(archive, root, offline_client) != result:
+              raise SystemExit('Cached illustration reuse failed.')
+          print(f"Verified {MODEL}: {result['width']}x{result['height']} WEBP; one paid request and offline reuse.")
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(f"Illustration model **{MODEL}** passed: one image request, valid WEBP and metadata, and cached reuse without another request. Test files were not published.\n")
+          PY
+      - name: Keep the test illustration and diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: illustration-model-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ env.ILLUSTRATION_CHECK_DIR }}/
+          retention-days: 7
+          if-no-files-found: warn

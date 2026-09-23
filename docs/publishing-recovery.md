@@ -18,6 +18,14 @@ Cleanup, lesson publication, and fallback checkout now configure GitHub CLI as G
 
 To exercise the actual scheduled cleanup path without paid generation, manually run **Daily ESL Lesson Generator** with **maintenance_only=true**. It uses the same cleanup job and verifies the resulting live archive, including when nothing needed removal. The lesson, translation, and image generation job is skipped. A successful check proves cleanup and publishing at that time; it does not create a missing daily edition. To recover a missing edition afterward, run the ordinary workflow with its `release_date`; existing completed editions and saved progress are reused.
 
+## Daily illustration model
+
+New illustrations use the stable `gemini-3.1-flash-lite-image` model, with a `4:3` aspect ratio and explicit `1K` resolution. Google recommends this model as the lower-cost replacement for `gemini-2.5-flash-image`, which is scheduled to shut down on October 2, 2026. Existing verified illustrations remain cached, including images created by the older model. Changing the model never regenerates those files automatically. The existing one-request-per-invocation and three-attempt daily limit still apply.
+
+For a real compatibility check, manually run **Check daily illustration model (one paid image)**. It uses the same generator, SDK version, and GitHub secret as daily publishing, makes one paid request for a synthetic city-tree scene, verifies the saved WEBP and metadata, and confirms cached reuse without another request. Outputs are retained as a seven-day artifact; nothing is committed or published. Each run is estimated at **$0.04–$0.05**, including the model's listed $0.0336 image-output price plus prompt and thinking charges. Normal daily illustrations have a similar per-image cost; retries can add charges.
+
+References: [Google's replacement recommendation](https://ai.google.dev/gemini-api/docs/image-generation), [model details](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite-image), and [pricing](https://ai.google.dev/gemini-api/docs/pricing#gemini-3.1-flash-lite-image).
+
 ## Cloudflare configuration
 
 For the existing `englishladder` Worker, production branch `main`, set **Settings → Builds → Build configuration → Deploy command** to:

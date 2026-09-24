@@ -1,0 +1,117 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Amarpreet has been drinking protein shakes for many years.",
+      "His protein shakes are now much more expensive.",
+      "In 2020, his protein cost about £60.",
+      "Last year, the price went up to £120.",
+      "More people want protein, but there is not enough.",
+      "So, the cost of ingredients is higher.",
+      "Amarpreet will buy a cheaper brand now.",
+      "Evie will not buy protein powder anymore."
+    ],
+    "vocabulary": [
+      {
+        "term": "protein shakes",
+        "part_of_speech": "noun",
+        "definition": "A drink with a lot of protein, often used by people who exercise."
+      },
+      {
+        "term": "expensive",
+        "part_of_speech": "adjective",
+        "definition": "Costs a lot of money."
+      },
+      {
+        "term": "cost",
+        "part_of_speech": "verb",
+        "definition": "To have a certain price."
+      },
+      {
+        "term": "price",
+        "part_of_speech": "noun",
+        "definition": "The amount of money you need to pay for something."
+      },
+      {
+        "term": "ingredients",
+        "part_of_speech": "noun",
+        "definition": "Different foods or things you mix to make food or a product."
+      },
+      {
+        "term": "cheaper",
+        "part_of_speech": "adjective",
+        "definition": "Costs less money; not as expensive."
+      },
+      {
+        "term": "anymore",
+        "part_of_speech": "adverb",
+        "definition": "Not now; not happening in the future."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "プロテインをたくさん含む飲み物で、運動する人がよく利用します。",
+      "ko": "운동하는 사람들이 자주 마시는, 단백질이 많이 들어있는 음료.",
+      "zh-Hans": "一种含有大量蛋白质的饮品，常被运动的人饮用。",
+      "es": "Una bebida con mucha proteína, usada a menudo por personas que hacen ejercicio.",
+      "pt-BR": "Uma bebida com muita proteína, geralmente usada por pessoas que se exercitam."
+    },
+    {
+      "id": 1,
+      "ja": "たくさんのお金がかかること。",
+      "ko": "많은 돈이 드는.",
+      "zh-Hans": "需要花费很多钱。",
+      "es": "Que cuesta mucho dinero.",
+      "pt-BR": "Que custa muito dinheiro."
+    },
+    {
+      "id": 2,
+      "ja": "ある値段である。",
+      "ko": "어떤 가격을 가지다.",
+      "zh-Hans": "具有某个价格。",
+      "es": "Tener un precio determinado.",
+      "pt-BR": "Ter um certo preço."
+    },
+    {
+      "id": 3,
+      "ja": "何かに対して支払う必要のあるお金の量。",
+      "ko": "어떤 것에 대해 지불해야 하는 돈의 액수.",
+      "zh-Hans": "你需要为某物支付的金额。",
+      "es": "La cantidad de dinero que necesitas pagar por algo.",
+      "pt-BR": "A quantia de dinheiro que você precisa pagar por algo."
+    },
+    {
+      "id": 4,
+      "ja": "食べ物や製品を作るために混ぜ合わせる、様々な食品や物。",
+      "ko": "음식이나 제품을 만들기 위해 섞는 다양한 식료품이나 재료.",
+      "zh-Hans": "你混合在一起制作食物或产品的不同食材或物品。",
+      "es": "Diferentes alimentos o cosas que mezclas para hacer comida o un producto.",
+      "pt-BR": "Alimentos ou coisas diferentes que você mistura para fazer comida ou um produto."
+    },
+    {
+      "id": 5,
+      "ja": "より少ないお金がかかること。それほど高価ではない。",
+      "ko": "돈이 덜 드는; 그렇게 비싸지 않은.",
+      "zh-Hans": "花费更少的钱；没有那么贵。",
+      "es": "Cuesta menos dinero; no tan caro.",
+      "pt-BR": "Que custa menos dinheiro; não tão caro."
+    },
+    {
+      "id": 6,
+      "ja": "今はそうではない。将来的にもそうはならない。",
+      "ko": "더 이상 지금은 아니다; 앞으로는 일어나지 않을.",
+      "zh-Hans": "现在不再；将来也不会发生。",
+      "es": "Ya no; que no ocurrirá en el futuro.",
+      "pt-BR": "Não mais; que não acontecerá no futuro."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-24T11:51:22.391640+00:00"
+  }
+}

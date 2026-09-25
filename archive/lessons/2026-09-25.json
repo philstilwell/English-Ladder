@@ -1,0 +1,778 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-25",
+  "release_iso": "2026-09-25T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 25 Sep 2026 10:36:55 GMT",
+    "retrieved_at": "2026-09-25T11:50:15.288435+00:00",
+    "title": "Trump and Xi exchange warm words at state dinner but little progress on key issues",
+    "summary": "Despite diplomatic niceties and gifts, little was shared on substantial issues separating the leaders.",
+    "evidence_text": "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.\nBillionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner late on Thursday.\nTrump presented the Chinese president with a sculpture of a bald eagle - America's national symbol - saying it embodied \"the free and soaring spirit of America\". First Lady Melania had participated in its design, Trump added.\nThe office of the First Lady Melania Trump, which planned the event, said the dinner menu would showcase \"American ingredients with subtle Chinese influence\".\nTrump and Xi will begin the final day of their visit on Friday with tea at the White House's Red Room with their wives.\nWhile Xi said he and Trump had shared \"in-depth exchanges and reached common understanding on many issues\", little to no mention was made of the crucial matters which divide the leaders of the world's two most powerful countries.\nChina believes the US is trying to contain its rise as a superpower, and it wants Washington to stay out of its way - particularly when it comes to trade, technology and Taiwan.\nTrump has meanwhile been expected to aim for deals around trade and tariffs during the visit – like lowering Chinese tariffs on American goods, increasing imports of Chinese rare earth minerals, and increasing exports of US agricultural products.\nBut tensions remain despite the diplomatic niceties, including over Taiwan - with Xi urging Trump earlier in the day to take the \"correct position\" on the self-governing island which Beijing claims, amid a weapons package paused by Trump.\nThe US is legally bound to provide Taiwan with the means to defend itself, but Trump delayed approving a $14bn (£11bn) arms package for it after Xi in May warned that mishandling the issue could cause the two countries to \"collide or even enter into conflict\".\nTrump has been blunt about his ambitions for artificial intelligence (AI) - and clear that he considers China to be the US's main rival for its development.\nBut beyond Xi's reference to AI remaining under \"human control\", little indication was given of what progress the two leaders may have made on the issue - if any - during their talks.\nThe first course was yellow squash, wild mushrooms and crispy pancetta. The guests ate off red tablecloths - red being a symbol of luck and good fortune in China.\nDespite diplomatic niceties and gifts, little was shared on substantial issues separating the leaders.\nXi stressed that they should ensure AI remain \"under human control\" and act \"as responsible major countries\", while Trump toasted a future of \"harmony, peace and success\" for both nations.\nOpenAI's Sam Altman, Google's Sundar Pichai, and Amazon's Jeff Bezos were also present, as were Mark Zuckerberg and Jeff Yass, the American billionaire who owns a share of TikTok.\nThe evening instead marked a continuation of the lavish welcome Xi has so far received in the US.",
+    "evidence_retrieved_at": "2026-09-25T11:50:15.288435+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cxq63dqp93n1o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "The leaders said nice things but did not make progress on important issues. I think this means their relationship is _______ because _______.",
+          "Do you think gifts are important when leaders meet? For example, if I were a leader, I would give/not give a gift because..."
+        ],
+        "title": "Trump and Xi Meet: Warm Words, Little Progress on Key Issues",
+        "overview": "US President Trump and China's President Xi met for a dinner but did not agree on big issues.",
+        "topic": "US and China leaders meet for dinner",
+        "vocabulary": [
+          {
+            "term": "President",
+            "part_of_speech": "noun",
+            "definition": "The highest leader of a country."
+          },
+          {
+            "term": "dinner",
+            "part_of_speech": "noun",
+            "definition": "The main meal of the day, usually eaten in the evening."
+          },
+          {
+            "term": "exchanged",
+            "part_of_speech": "verb",
+            "definition": "To give something to someone and receive something in return."
+          },
+          {
+            "term": "progress",
+            "part_of_speech": "noun",
+            "definition": "Movement forward or improvement."
+          },
+          {
+            "term": "leaders",
+            "part_of_speech": "noun",
+            "definition": "People who guide or direct others."
+          },
+          {
+            "term": "gift",
+            "part_of_speech": "noun",
+            "definition": "Something given to someone, often to show friendship or thanks."
+          }
+        ],
+        "grammar": {
+          "concept": "Using \"but\" to connect ideas",
+          "explanation": "\"But\" is a word we use to connect two different ideas in one sentence. It shows a contrast or something unexpected between the two parts. For example, 'It was sunny, but it was cold.'",
+          "example_quote": "They exchanged warm words at the dinner, but they did not show much progress on big issues."
+        },
+        "quiz": [
+          {
+            "question": "What was the main outcome of the dinner between President Trump and President Xi?",
+            "options": [
+              "They made many new agreements.",
+              "They talked and said nice things, but did not make much progress.",
+              "They argued about many issues during the meal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text says they did not show much progress, not that they made many new agreements.",
+              "Correct. They exchanged warm words, but the text states they did not show much progress on big issues.",
+              "Incorrect. The text says they exchanged warm words, which means they were polite, not that they argued."
+            ]
+          },
+          {
+            "question": "What did President Trump give to President Xi?",
+            "options": [
+              "A sculpture of a bald eagle.",
+              "A book about American history.",
+              "Some traditional Chinese tea."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text states, 'President Trump gave President Xi a sculpture of a bald eagle as a gift.'",
+              "Incorrect. The text does not mention President Trump giving a book.",
+              "Incorrect. The text does not mention President Trump giving tea."
+            ]
+          },
+          {
+            "question": "What does it mean if the leaders \"exchanged warm words\"?",
+            "options": [
+              "They shared angry opinions with each other.",
+              "They talked kindly and politely to each other.",
+              "They traded valuable items as gifts."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Warm words\" means kind words, not angry opinions.",
+              "Correct. To \"exchange warm words\" means to speak to each other in a friendly and polite way.",
+              "Incorrect. While gifts were given, \"exchanged warm words\" refers to their conversation, not the giving of items."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses the word \"but\" to show a contrast?",
+            "options": [
+              "I like apples, but I also like oranges.",
+              "The weather was cold, but I wore a warm coat.",
+              "It was sunny, but I stayed indoors."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. \"But\" is used for contrasting ideas. Liking both apples and oranges is not a contrast.",
+              "Incorrect. Wearing a warm coat when the weather is cold is an expected action, not a contrast.",
+              "Correct. \"But\" shows a contrast between sunny weather and choosing to stay indoors."
+            ]
+          },
+          {
+            "question": "Who else attended the dinner besides the presidents?",
+            "options": [
+              "Many famous singers and actors.",
+              "Many business leaders and tech company heads.",
+              "Many famous sports players."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text does not mention singers or actors at the dinner.",
+              "Correct. The text says, 'Many business leaders and tech company heads also went to the dinner.'",
+              "Incorrect. The text does not mention sports players at the dinner."
+            ]
+          },
+          {
+            "question": "If there was \"little progress\" on big issues, what does it mean?",
+            "options": [
+              "The issues were completely solved.",
+              "There was almost no movement or improvement on the issues.",
+              "Things were moving forward slowly but surely."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Little progress\" means the issues were far from solved.",
+              "Correct. \"Little progress\" means there was very little, or almost no, movement or improvement.",
+              "Incorrect. \"Little progress\" implies almost no forward movement, not a slow but steady pace."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US President Donald Trump and China's President Xi Jinping met for a big dinner.",
+          "They exchanged warm words at the dinner, but they did not show much progress on big issues.",
+          "Many business leaders and tech company heads also went to the dinner.",
+          "President Trump gave President Xi a sculpture of a bald eagle as a gift.",
+          "The dinner food had American and Chinese styles.",
+          "They will meet again for tea the next day."
+        ],
+        "sentence_evidence": [
+          "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.",
+          "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.",
+          "Billionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner late on Thursday.",
+          "Trump presented the Chinese president with a sculpture of a bald eagle - America's national symbol - saying it embodied \"the free and soaring spirit of America\". First Lady Melania had participated in its design, Trump added.",
+          "The office of the First Lady Melania Trump, which planned the event, said the dinner menu would showcase \"American ingredients with subtle Chinese influence\".",
+          "Trump and Xi will begin the final day of their visit on Friday with tea at the White House's Red Room with their wives."
+        ],
+        "editorial_check": {
+          "date": "2026-09-25T11:50:58.828457+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items \"President\", \"dinner\", \"exchanged\", \"progress\", \"leaders\", and \"gift\" are common, concrete words suitable for the A1-A2 level. Their definitions are clear and contextual. No reserved vocabulary was used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English throughout the reading, vocabulary, grammar explanations, and quiz feedback, which is appropriate for adult A1-A2 learners. Examples include \"met for a big dinner\" and \"talked kindly and politely\"."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations and feedback use short clauses and familiar connectors (e.g., \"but\"). The grammar explanation is brief and demonstrates the pattern with an example. Instructions and options are accessible. Discussion prompts include a simple sentence frame (\"I think...\") and a hypothetical alternative to personal experience (\"if I were a leader, I would...\")."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson tests the main idea, clearly stated details (e.g., the gift, attendees), basic contextual meaning of words like \"warm words\" and \"little progress\", and one useful grammar pattern (\"but\"). Answer choices are short and plausible, avoiding dense reasoning or trick wording, suitable for the A1-A2 level."
+            }
+          },
+          "content_digest": "683d354789fbd04f28d492ac77c46aed25dfee8c88fde88272eb9065daa6ee46"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "According to the article, why do tensions remain between the US and China despite polite words?",
+          "In your opinion, what is the best way for two countries with different systems to get along?"
+        ],
+        "title": "Trump and Xi Meet: Warm Words, Little Progress on Key Issues",
+        "overview": "US and Chinese leaders met for a state dinner, sharing pleasantries but failing to make significant advancements on important disagreements.",
+        "topic": "International Relations, US-China Diplomacy",
+        "vocabulary": [
+          {
+            "part_of_speech": "phrase",
+            "definition": "Kind and respectful language used in conversation.",
+            "term": "polite words"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "An indication or piece of evidence that suggests something is happening or exists.",
+            "term": "sign"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "A shared agreement or clear grasp of information or a situation between people.",
+            "term": "common understanding"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "Very important issues or subjects that need to be addressed.",
+            "term": "crucial matters"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "To restrict something or set a boundary on it, preventing it from increasing or spreading.",
+            "term": "limit"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "Taxes that a government places on imported or exported goods.",
+            "term": "tariffs"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "Feelings of strain, hostility, or disagreement between people or groups.",
+            "term": "tensions"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "States or asserts that something is true, often without providing proof.",
+            "term": "claims"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "Caused something to be late or to happen at a later time than planned.",
+            "term": "delayed"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "A person, team, or company that is trying to win or be more successful than others in an activity or business.",
+            "term": "competitor"
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice (Past Simple)",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the doer. We often use it when the doer is unknown, unimportant, or obvious from the context. For the past simple passive, we use \"was/were\" + the past participle of the main verb.",
+          "example_quote": "Xi mentioned they had \"in-depth exchanges\" and \"common understanding\" on many topics, yet crucial matters dividing the two powerful countries were barely discussed."
+        },
+        "quiz": [
+          {
+            "question": "What was the overall outcome of the state dinner between Trump and Xi?",
+            "options": [
+              "They agreed on many crucial matters.",
+              "They mostly exchanged pleasantries with little actual progress.",
+              "They focused only on trade agreements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text states \"crucial matters... were barely discussed,\" indicating a lack of agreement.",
+              "The reading says they \"shared polite words... but showed little sign of progress\" on important issues.",
+              "Trade was mentioned as an ambition for Trump, but not as the sole focus of the entire meeting."
+            ]
+          },
+          {
+            "question": "What was one significant point of tension mentioned in the article?",
+            "options": [
+              "The choice of food at the dinner.",
+              "Disagreements over Taiwan's status.",
+              "The design of the bald eagle sculpture."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The food was described, but it was not identified as a source of tension.",
+              "The reading explicitly states that \"tensions remained, especially concerning Taiwan.\"",
+              "The sculpture was a symbolic gesture, not a point of tension between the leaders."
+            ]
+          },
+          {
+            "question": "What does the term \"tariffs\" mean in the context of Trump's ambitions?",
+            "options": [
+              "Gifts exchanged between leaders.",
+              "Taxes on imported or exported goods.",
+              "Friendly agreements between countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Gifts are not tariffs; tariffs are financial charges.",
+              "The lesson defines \"tariffs\" as \"Taxes imposed on imported or exported goods.\" Trump hoped to reduce Chinese taxes on American goods.",
+              "Tariffs are taxes, which can be a point of negotiation, not friendly agreements themselves."
+            ]
+          },
+          {
+            "question": "What did Xi mean by having \"in-depth exchanges\"?",
+            "options": [
+              "Brief, polite greetings.",
+              "Detailed and thorough discussions.",
+              "Quick, superficial comments."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"In-depth\" implies more than just brief greetings; it suggests significant content.",
+              "The vocabulary explains \"in-depth exchanges\" as \"Detailed discussions or conversations.\"",
+              "\"In-depth\" means the opposite of superficial; it suggests a deep level of discussion."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple passive voice correctly?",
+            "options": [
+              "The leaders discussed many topics.",
+              "Many topics were discussed by the leaders.",
+              "Leaders discussing many topics."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence is in the active voice, with the leaders as the subject performing the action.",
+              "This sentence uses \"were discussed,\" which is the correct structure for the past simple passive voice.",
+              "This is a phrase, not a complete sentence, and it does not show a passive construction."
+            ]
+          },
+          {
+            "question": "What was Trump's view on artificial intelligence (AI) development, according to the article?",
+            "options": [
+              "He saw it as an area for easy cooperation with China.",
+              "He believed China was the main competitor.",
+              "He wanted AI to remain entirely under human control, like Xi."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states Trump \"saw China as the main competitor,\" which suggests rivalry, not easy cooperation.",
+              "The text explicitly says Trump \"saw China as the main competitor in its development.\"",
+              "Xi expressed the view that AI should remain \"under human control\"; the text highlights Trump's focus on China as a rival."
+            ]
+          },
+          {
+            "question": "What is the US's legal obligation regarding Taiwan's defense?",
+            "options": [
+              "To provide military training only.",
+              "To supply Taiwan with the means to defend itself.",
+              "To avoid any involvement in Taiwan's defense."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text mentions an \"arms package,\" implying more extensive aid than just military training.",
+              "The reading states, \"The U.S. is legally required to help Taiwan defend itself.\"",
+              "This contradicts the information in the article that the U.S. is \"legally required\" to help Taiwan."
+            ]
+          },
+          {
+            "question": "Why were red tablecloths used at the state dinner?",
+            "options": [
+              "Red is the favorite color of both presidents.",
+              "Red symbolizes luck and good fortune in China.",
+              "It matched the color of the White House's Red Room."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text does not mention the presidents' favorite colors.",
+              "The reading states, \"red being a color symbolizing luck and good fortune in China.\"",
+              "While the White House has a Red Room, the text specifies the cultural symbolism for China as the reason."
+            ]
+          },
+          {
+            "question": "The text says China believes the U.S. wants to \"limit\" its growth. What does \"limit\" mean here?",
+            "options": [
+              "To encourage.",
+              "To restrict.",
+              "To speed up."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To encourage means to support growth, which is the opposite of to limit it.",
+              "To \"limit\" means to restrict or set boundaries on something, preventing its full expansion.",
+              "To speed up means to accelerate, which is the opposite of to limit growth."
+            ]
+          },
+          {
+            "question": "Despite the warm words, what was notable about the discussion of \"crucial matters\"?",
+            "options": [
+              "They reached full agreement on all of them.",
+              "They were discussed in great detail.",
+              "They were largely avoided or barely mentioned."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article indicates that there was \"little to no mention\" of these matters, not full agreement.",
+              "The text says \"crucial matters... were barely discussed,\" which is not the same as discussing them in great detail.",
+              "The reading clearly states that \"crucial matters dividing the two powerful countries were barely discussed\" during the meeting."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US and China's presidents shared polite words at a White House state dinner, but showed little sign of progress on important issues.",
+          "Xi mentioned they had \"in-depth exchanges\" and \"common understanding\" on many topics, yet crucial matters dividing the two powerful countries were barely discussed.",
+          "China thinks the U.S. wants to limit its growth as a superpower, especially regarding trade, technology, and Taiwan.",
+          "Trump hoped to make deals on trade and tariffs, such as reducing Chinese taxes on American goods.",
+          "However, tensions remained, especially concerning Taiwan, which Beijing claims as its own.",
+          "The U.S. is legally required to help Taiwan defend itself, but Trump delayed a large arms package after Xi's warning.",
+          "Trump was open about his goals for artificial intelligence (AI) and saw China as the main competitor in its development.",
+          "Despite Xi's comment on AI needing \"human control,\" there was little sign of any real progress on this topic during their talks.",
+          "As a gesture, Trump gave the Chinese president a sculpture of a bald eagle, America's national symbol.",
+          "Guests at the dinner ate from tables with red tablecloths, a color symbolizing luck and good fortune in China."
+        ],
+        "sentence_evidence": [
+          "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.",
+          "While Xi said he and Trump had shared \"in-depth exchanges and reached common understanding on many issues\", little to no mention was made of the crucial matters which divide the leaders of the world's two most powerful countries.",
+          "China believes the US is trying to contain its rise as a superpower, and it wants Washington to stay out of its way - particularly when it comes to trade, technology and Taiwan.",
+          "Trump has meanwhile been expected to aim for deals around trade and tariffs during the visit – like lowering Chinese tariffs on American goods, increasing imports of Chinese rare earth minerals, and increasing exports of US agricultural products.",
+          "But tensions remain despite the diplomatic niceties, including over Taiwan - with Xi urging Trump earlier in the day to take the \"correct position\" on the self-governing island which Beijing claims, amid a weapons package paused by Trump.",
+          "The US is legally bound to provide Taiwan with the means to defend itself, but Trump delayed approving a $14bn (£11bn) arms package for it after Xi in May warned that mishandling the issue could cause the two countries to \"collide or even enter into conflict\".",
+          "Trump has been blunt about his ambitions for artificial intelligence (AI) - and clear that he considers China to be the US's main rival for its development.",
+          "But beyond Xi's reference to AI remaining under \"human control\", little indication was given of what progress the two leaders may have made on the issue - if any - during their talks.",
+          "Trump presented the Chinese president with a sculpture of a bald eagle - America's national symbol - saying it embodied \"the free and soaring spirit of America\". First Lady Melania had participated in its design, Trump added.",
+          "The first course was yellow squash, wild mushrooms and crispy pancetta. The guests ate off red tablecloths - red being a symbol of luck and good fortune in China."
+        ],
+        "editorial_check": {
+          "date": "2026-09-25T11:51:55.209449+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items selected are appropriate for B1-B2 learners, featuring useful general news and work vocabulary such as \"polite words\", \"crucial matters\", and \"tariffs\". Definitions are clear, contextual, and do not use reserved vocabulary from other levels."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently maintains a natural, neutral news English register throughout the reading, explanations, and quiz feedback, which is appropriate for the B1-B2 level."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses varied and manageable sentences. Grammar explanations are clear and use everyday language. Definitions, questions, and feedback are straightforward and easy to understand for the target level."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines reading comprehension with understanding relationships between details and contextual vocabulary. The grammar quiz question provides a suitable transfer of the taught grammar to a new situation, offering appropriate challenge for B1-B2 learners."
+            }
+          },
+          "content_digest": "199c314ecec2cfb68af26fa5c910bcc5047202196bc76bb98744bf6356f830bd"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how \"diplomatic niceties\" can both facilitate and hinder substantive progress in international relations, based on the article's details.",
+          "In what situations might you use \"warm words\" and \"lavish\" hospitality to maintain a relationship, even when underlying disagreements persist?"
+        ],
+        "title": "US and China Exchange Warm Words Amid Lingering Tensions",
+        "overview": "Despite diplomatic pleasantries and an extravagant state dinner, US President Trump and China's President Xi made little tangible progress on critical geopolitical and economic issues dividing their nations.",
+        "topic": "US-China relations, diplomacy, trade, technology, and geopolitical challenges.",
+        "vocabulary": [
+          {
+            "term": "lavish",
+            "part_of_speech": "adjective",
+            "definition": "Sumptuously rich, elaborate, or luxurious, suggesting great expense or abundance."
+          },
+          {
+            "term": "pressing issues",
+            "part_of_speech": "noun phrase",
+            "definition": "Urgent and critical matters that demand immediate attention and resolution due to their significance."
+          },
+          {
+            "term": "diplomatic niceties",
+            "part_of_speech": "noun phrase",
+            "definition": "Polite and formal gestures, remarks, or customary courtesies observed in international relations, often used to maintain civility."
+          },
+          {
+            "term": "substantial issues",
+            "part_of_speech": "noun phrase",
+            "definition": "Significant and weighty topics or problems that involve considerable importance, impact, or amount."
+          },
+          {
+            "term": "stressed",
+            "part_of_speech": "verb",
+            "definition": "Strongly emphasized or highlighted a particular point, statement, or idea to convey its importance."
+          },
+          {
+            "term": "toasted",
+            "part_of_speech": "verb",
+            "definition": "Raised a glass and drank in honor of someone or something, often accompanied by a short speech or celebratory remark."
+          },
+          {
+            "term": "self-governing",
+            "part_of_speech": "adjective",
+            "definition": "Having the power to govern itself independently; autonomous or self-ruling."
+          },
+          {
+            "term": "amid",
+            "part_of_speech": "preposition",
+            "definition": "In the middle of, surrounded by, or during a particular situation, event, or set of circumstances."
+          },
+          {
+            "term": "contain",
+            "part_of_speech": "verb",
+            "definition": "To prevent something, such as an opposing force, influence, or spread, from developing further or having a greater impact."
+          },
+          {
+            "term": "superpower",
+            "part_of_speech": "noun",
+            "definition": "A very powerful and influential nation that plays a dominant role in international relations and global affairs."
+          },
+          {
+            "term": "legally bound",
+            "part_of_speech": "adjective phrase",
+            "definition": "Formally obligated or required by law to take a specific action, fulfill a duty, or adhere to an agreement."
+          },
+          {
+            "term": "continuation",
+            "part_of_speech": "noun",
+            "definition": "The act of maintaining or prolonging an activity, state, or process; something that follows or extends from a previous state."
+          }
+        ],
+        "grammar": {
+          "concept": "Expressing Concession with \"Despite\"",
+          "explanation": "\"Despite\" is a preposition used to introduce a contrasting idea, indicating that something happens or is true even though there is an obstacle or a different situation. It is typically followed by a noun, a noun phrase, a pronoun, or a gerund (-ing form). It conveys a sense of unexpectedness or contrast between two elements. For example, in the sentence, the lack of progress occurred \"despite\" the polite gestures.",
+          "example_quote": "Despite diplomatic niceties and gifts, little was shared on substantial issues separating the leaders."
+        },
+        "quiz": [
+          {
+            "question": "What is the primary takeaway from the state dinner between Trump and Xi?",
+            "options": [
+              "The leaders resolved most of their long-standing disagreements.",
+              "Significant diplomatic breakthroughs were achieved on trade and technology.",
+              "Polite interactions masked a lack of concrete agreement on key disputes."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The article explicitly states \"little indication of progress on pressing issues\" and \"little was shared on substantial issues.\"",
+              "Incorrect. The reading indicates \"little indication of progress on pressing issues,\" contradicting the idea of significant breakthroughs.",
+              "Correct. The article highlights \"warm words\" and \"diplomatic niceties\" but emphasizes that \"little was shared on substantial issues separating the leaders.\""
+            ]
+          },
+          {
+            "question": "What was Xi Jinping's specific concern regarding artificial intelligence (AI)?",
+            "options": [
+              "That AI development was proceeding too slowly in China.",
+              "That AI should remain under human control and be managed responsibly.",
+              "That the US was trying to contain China's AI advancements."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The reading does not mention Xi being concerned about the speed of AI development.",
+              "Correct. Xi \"stressed that they should ensure AI remain 'under human control' and act 'as responsible major countries'.\"",
+              "Incorrect. While China feels the US wants to \"contain its rise as a superpower,\" this specific concern was not linked to AI in the text regarding Xi's statement."
+            ]
+          },
+          {
+            "question": "In the context of the article, what does \"lavish\" most closely imply about the state dinner?",
+            "options": [
+              "It was primarily focused on serious political negotiations.",
+              "It was extravagant and luxurious, emphasizing hospitality over policy.",
+              "It was a simple, informal gathering to build personal rapport."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Lavish\" describes the style, not the purpose of the dinner, which the text suggests lacked serious negotiation.",
+              "Correct. \"Lavish\" means sumptuously rich, elaborate, or luxurious, suggesting a focus on grandeur and hospitality rather than substantive policy discussion.",
+              "Incorrect. The description of a \"lavish White House state dinner\" implies formality and extravagance, not simplicity or informality."
+            ]
+          },
+          {
+            "question": "What complicated the discussions around Taiwan during Trump and Xi's meeting?",
+            "options": [
+              "Trump had already approved a large arms package for Taiwan.",
+              "The US is legally obligated to provide Taiwan with self-defense capabilities, and Trump paused an arms package.",
+              "Xi announced China's immediate intention to retake the island."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article states Trump *delayed approving* a $14bn arms package, not that he had already approved it.",
+              "Correct. The reading states, \"The US is legally bound to provide Taiwan with the means to defend itself, but Trump delayed approving a $14bn arms package for it.\" This pause occurred amid Xi's urging Trump to take the \"correct position.\"",
+              "Incorrect. Xi urged Trump to take the \"correct position\" and warned against mishandling the issue, but there was no announcement of immediate military action."
+            ]
+          },
+          {
+            "question": "When the article states \"China believes the US is trying to contain its rise as a superpower,\" what does \"contain\" mean?",
+            "options": [
+              "To fully embrace and support China's growing influence.",
+              "To restrict or prevent China's expansion and development.",
+              "To include China in global leadership roles."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Contain\" implies limitation, not support or embrace.",
+              "Correct. In this context, \"contain\" means to limit or prevent the growth or spread of something, specifically China's power.",
+              "Incorrect. While China seeks global leadership, \"contain\" refers to the US's perceived efforts to *restrict* China's rise, not to integrate it."
+            ]
+          },
+          {
+            "question": "What can be inferred about the atmosphere of the state dinner, beyond the official statements?",
+            "options": [
+              "It was an exclusive event, attracting influential figures from various sectors.",
+              "It was a contentious gathering, dominated by open disagreements.",
+              "It was a low-key affair, designed to avoid media scrutiny."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The reading states, \"Billionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner,\" and names several prominent figures, indicating its exclusive and high-profile nature.",
+              "Incorrect. While disagreements lingered, the article emphasizes \"warm words\" and \"diplomatic niceties\" at the dinner, suggesting a polite rather than openly contentious atmosphere.",
+              "Incorrect. The event was a \"lavish White House state dinner\" with many prominent attendees, making it a high-profile, not low-key, affair."
+            ]
+          },
+          {
+            "question": "Which sentence correctly uses \"despite\" to express a contrast similar to its use in the news brief?",
+            "options": [
+              "Despite the poor weather, the outdoor concert was a great success.",
+              "She decided to leave, despite that it was raining heavily.",
+              "Despite of her efforts, she couldn't finish the project on time."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. This sentence correctly uses \"despite\" followed by a noun phrase (\"the poor weather\") to introduce a contrasting idea, similar to \"Despite diplomatic niceties and gifts.\"",
+              "Incorrect. \"Despite\" should not be followed by \"that.\" A noun, noun phrase, pronoun, or gerund is required.",
+              "Incorrect. \"Despite\" is a preposition and does not require \"of.\" The correct usage is simply \"despite.\""
+            ]
+          },
+          {
+            "question": "What was Trump's general ambition for the visit concerning trade?",
+            "options": [
+              "To increase Chinese tariffs on American goods.",
+              "To decrease US exports of agricultural products.",
+              "To aim for deals like lowering Chinese tariffs on American goods."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. Trump was expected to aim for *lowering* Chinese tariffs on American goods, not increasing them.",
+              "Incorrect. Trump was expected to aim for *increasing* exports of US agricultural products, not decreasing them.",
+              "Correct. The reading states, \"Trump has meanwhile been expected to aim for deals around trade and tariffs during the visit – like lowering Chinese tariffs on American goods, increasing imports of Chinese rare earth minerals, and increasing exports of US agricultural products.\""
+            ]
+          },
+          {
+            "question": "Which phrase best defines \"pressing issues\" as used in the article?",
+            "options": [
+              "Unimportant or minor topics.",
+              "Urgent and significant problems requiring immediate attention.",
+              "Issues that have already been fully resolved."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Pressing issues\" are by definition important and demanding, not unimportant or minor.",
+              "Correct. \"Pressing issues\" refers to critical, urgent matters that need to be addressed promptly.",
+              "Incorrect. The article states \"little indication of progress on pressing issues,\" meaning they were not resolved."
+            ]
+          },
+          {
+            "question": "Considering the overall tone and events described, what underlying sentiment was most likely present during the meeting?",
+            "options": [
+              "Mutual distrust and strategic competition, despite outward cordiality.",
+              "Genuine optimism for rapid and comprehensive agreement.",
+              "A shared desire to completely avoid discussing difficult topics."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The text notes \"warm words\" and \"diplomatic niceties\" but stresses \"little indication of progress on pressing issues\" and \"tensions remain,\" implying underlying strategic competition and distrust.",
+              "Incorrect. The lack of concrete progress suggests that genuine optimism for rapid agreement was not fully realized.",
+              "Incorrect. While little progress was made, Xi stressed issues like AI control and Trump aimed for trade deals, indicating that difficult topics were on the agenda, even if not fully resolved."
+            ]
+          },
+          {
+            "question": "What is the primary purpose of \"diplomatic niceties\" as described in the text?",
+            "options": [
+              "To fully resolve complex international disputes.",
+              "To maintain a polite and formal atmosphere in official interactions.",
+              "To directly address and criticize contentious policies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The article contrasts \"diplomatic niceties\" with a lack of \"substantial issues\" being shared, indicating they do not resolve complex disputes.",
+              "Correct. \"Diplomatic niceties\" refer to polite, formal gestures that help maintain a cordial atmosphere, even when substantive issues are unresolved.",
+              "Incorrect. \"Niceties\" suggest politeness and formality, not direct criticism of policies."
+            ]
+          },
+          {
+            "question": "Who, besides government officials, was notably present at the state dinner?",
+            "options": [
+              "Representatives from environmental protection agencies.",
+              "Prominent figures from the US tech industry and business community.",
+              "Members of various international human rights organizations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The reading does not mention representatives from environmental protection agencies.",
+              "Correct. The reading explicitly states, \"Billionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner.\"",
+              "Incorrect. The reading does not mention members of international human rights organizations."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.",
+          "Despite diplomatic niceties and gifts, little was shared on substantial issues separating the leaders.",
+          "Xi stressed that they should ensure AI remain \"under human control\" and act \"as responsible major countries\".",
+          "Trump toasted a future of \"harmony, peace and success\" for both nations.",
+          "But tensions remain despite the diplomatic niceties, including over Taiwan, which Beijing claims.",
+          "Xi urged Trump earlier in the day to take the \"correct position\" on the self-governing island amid a weapons package paused by Trump.",
+          "China believes the US is trying to contain its rise as a superpower, and it wants Washington to stay out of its way.",
+          "Trump has meanwhile been expected to aim for deals around trade and tariffs during the visit, like lowering Chinese tariffs on American goods.",
+          "Billionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner late on Thursday.",
+          "The US is legally bound to provide Taiwan with the means to defend itself, but Trump delayed approving a $14bn arms package for it.",
+          "OpenAI's Sam Altman, Google's Sundar Pichai, and Amazon's Jeff Bezos were also present, as were Mark Zuckerberg and Jeff Yass, the American billionaire who owns a share of TikTok.",
+          "The evening instead marked a continuation of the lavish welcome Xi has so far received in the US."
+        ],
+        "sentence_evidence": [
+          "US President Donald Trump and China's President Xi Jinping exchanged warm words at a lavish White House state dinner but gave little indication of progress on pressing issues.",
+          "Despite diplomatic niceties and gifts, little was shared on substantial issues separating the leaders.",
+          "Xi stressed that they should ensure AI remain \"under human control\" and act \"as responsible major countries\", while Trump toasted a future of \"harmony, peace and success\" for both nations.",
+          "Xi stressed that they should ensure AI remain \"under human control\" and act \"as responsible major countries\", while Trump toasted a future of \"harmony, peace and success\" for both nations.",
+          "But tensions remain despite the diplomatic niceties, including over Taiwan - with Xi urging Trump earlier in the day to take the \"correct position\" on the self-governing island which Beijing claims, amid a weapons package paused by Trump.",
+          "But tensions remain despite the diplomatic niceties, including over Taiwan - with Xi urging Trump earlier in the day to take the \"correct position\" on the self-governing island which Beijing claims, amid a weapons package paused by Trump.",
+          "China believes the US is trying to contain its rise as a superpower, and it wants Washington to stay out of its way - particularly when it comes to trade, technology and Taiwan.",
+          "Trump has meanwhile been expected to aim for deals around trade and tariffs during the visit – like lowering Chinese tariffs on American goods, increasing imports of Chinese rare earth minerals, and increasing exports of US agricultural products.",
+          "Billionaire business leaders and US tech CEOs joined the leaders at the extravagant dinner late on Thursday.",
+          "The US is legally bound to provide Taiwan with the means to defend itself, but Trump delayed approving a $14bn (£11bn) arms package for it after Xi in May warned that mishandling the issue could cause the two countries to \"collide or even enter into conflict\".",
+          "OpenAI's Sam Altman, Google's Sundar Pichai, and Amazon's Jeff Bezos were also present, as were Mark Zuckerberg and Jeff Yass, the American billionaire who owns a share of TikTok.",
+          "The evening instead marked a continuation of the lavish welcome Xi has so far received in the US."
+        ],
+        "editorial_check": {
+          "date": "2026-09-25T11:52:55.059620+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets are appropriate for the C1-Higher level, focusing on precise terms, collocations, and contextual meanings. None of the selected terms are from the reserved vocabulary list, and all definitions are clear and accurate."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The language used throughout the lesson, including the reading, explanations, and feedback, maintains a polished and natural reporting register suitable for advanced learners. Attribution is clear, and certainty is calibrated appropriately."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses controlled complex sentences and cohesive arguments. Definitions and feedback are concise, illuminating, and explain subtle distinctions effectively. The grammar explanation is clear and directly relates to the example quote."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference, contextual vocabulary, and grammar application. Quiz questions cover various skills, and distractors are plausible, requiring substantive learning beyond mere recall of elementary facts. The discussion prompts encourage deeper analysis."
+            }
+          },
+          "content_digest": "c4eb6e090fe79101ca2284abc5c7b4ab188c19c2f2efc6e54fd5fdfebcf754e4"
+        }
+      }
+    }
+  }
+}

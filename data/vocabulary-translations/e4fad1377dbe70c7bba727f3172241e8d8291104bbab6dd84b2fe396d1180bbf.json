@@ -1,0 +1,102 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "US President Donald Trump and China's President Xi Jinping met for a big dinner.",
+      "They exchanged warm words at the dinner, but they did not show much progress on big issues.",
+      "Many business leaders and tech company heads also went to the dinner.",
+      "President Trump gave President Xi a sculpture of a bald eagle as a gift.",
+      "The dinner food had American and Chinese styles.",
+      "They will meet again for tea the next day."
+    ],
+    "vocabulary": [
+      {
+        "term": "President",
+        "part_of_speech": "noun",
+        "definition": "The highest leader of a country."
+      },
+      {
+        "term": "dinner",
+        "part_of_speech": "noun",
+        "definition": "The main meal of the day, usually eaten in the evening."
+      },
+      {
+        "term": "exchanged",
+        "part_of_speech": "verb",
+        "definition": "To give something to someone and receive something in return."
+      },
+      {
+        "term": "progress",
+        "part_of_speech": "noun",
+        "definition": "Movement forward or improvement."
+      },
+      {
+        "term": "leaders",
+        "part_of_speech": "noun",
+        "definition": "People who guide or direct others."
+      },
+      {
+        "term": "gift",
+        "part_of_speech": "noun",
+        "definition": "Something given to someone, often to show friendship or thanks."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "国の最高指導者。",
+      "ko": "한 나라의 가장 높은 지도자.",
+      "zh-Hans": "一个国家的最高领导人。",
+      "es": "El líder de más alto rango de un país.",
+      "pt-BR": "O líder de mais alta autoridade de um país."
+    },
+    {
+      "id": 1,
+      "ja": "一日の主な食事で、たいてい夕方に食べるもの。",
+      "ko": "하루 중 주된 식사로, 보통 저녁에 먹는 것.",
+      "zh-Hans": "一天中的主餐，通常在晚上吃。",
+      "es": "La comida principal del día, generalmente consumida por la noche.",
+      "pt-BR": "A principal refeição do dia, geralmente consumida à noite."
+    },
+    {
+      "id": 2,
+      "ja": "誰かに何かを与え、そのお返しに何かを受け取ること。",
+      "ko": "어떤 것을 다른 사람에게 주고 그 대가로 어떤 것을 받는 것.",
+      "zh-Hans": "将某物给予某人，并作为交换得到某物。",
+      "es": "Darle algo a alguien y recibir algo a cambio.",
+      "pt-BR": "Dar algo a alguém e receber algo em troca."
+    },
+    {
+      "id": 3,
+      "ja": "前に進むこと、または改善。",
+      "ko": "앞으로 나아가거나 나아지는 것.",
+      "zh-Hans": "向前发展或改善。",
+      "es": "El movimiento hacia adelante o una mejora.",
+      "pt-BR": "O avanço ou a melhoria."
+    },
+    {
+      "id": 4,
+      "ja": "他の人々を導いたり指示したりする人々。",
+      "ko": "다른 사람들을 이끌거나 지시하는 사람들.",
+      "zh-Hans": "指导或带领他人的人。",
+      "es": "Personas que guían o dirigen a otros.",
+      "pt-BR": "Pessoas que guiam ou direcionam outras."
+    },
+    {
+      "id": 5,
+      "ja": "誰かに与えられるもので、しばしば友情や感謝を示すために贈られる。",
+      "ko": "다른 사람에게 주어지는 것으로, 주로 우정이나 감사를 표현하기 위해 주는 것.",
+      "zh-Hans": "送给别人的东西，通常是为了表达友谊或感谢。",
+      "es": "Algo que se le da a alguien, a menudo para mostrar amistad o agradecimiento.",
+      "pt-BR": "Algo dado a alguém, muitas vezes para demonstrar amizade ou agradecimento."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-25T11:53:44.406172+00:00"
+  }
+}

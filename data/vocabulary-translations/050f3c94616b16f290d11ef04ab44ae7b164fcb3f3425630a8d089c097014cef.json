@@ -1,0 +1,115 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Ed Sheeran's concerts in Massachusetts on Friday and Saturday have been cancelled because of severe weather warnings in the area.",
+      "He was scheduled to perform two shows at the Gillette Stadium.",
+      "The venue made the difficult decision to cancel the Ed Sheeran concerts.",
+      "This decision was made with the safety of fans and staff as the top priority.",
+      "Weather warnings for high winds are in force in the area until Sunday.",
+      "People can get refunds for their tickets now."
+    ],
+    "vocabulary": [
+      {
+        "term": "cancelled",
+        "part_of_speech": "verb",
+        "definition": "stopped from happening; an event that will not take place."
+      },
+      {
+        "term": "severe",
+        "part_of_speech": "adjective",
+        "definition": "very bad or serious, like a very strong storm."
+      },
+      {
+        "term": "warnings",
+        "part_of_speech": "noun",
+        "definition": "messages that tell you about possible danger or a problem that might happen."
+      },
+      {
+        "term": "scheduled",
+        "part_of_speech": "verb",
+        "definition": "planned to happen at a specific time or date."
+      },
+      {
+        "term": "venue",
+        "part_of_speech": "noun",
+        "definition": "the place where a public event, like a concert or sports game, happens."
+      },
+      {
+        "term": "safety",
+        "part_of_speech": "noun",
+        "definition": "the condition of being protected from danger or harm."
+      },
+      {
+        "term": "refunds",
+        "part_of_speech": "noun",
+        "definition": "money that is given back to you, for example, if you return something or an event is cancelled."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "予定されていたことが中止になったり、行われなくなったりすること。",
+      "ko": "예정되었던 일이 중단되거나 발생하지 않게 된 상태.",
+      "zh-Hans": "已经停止发生；指一个活动将不会举行。",
+      "es": "se ha impedido que ocurra; un evento que no se llevará a cabo.",
+      "pt-BR": "impedido de acontecer; um evento que não irá ocorrer."
+    },
+    {
+      "id": 1,
+      "ja": "非常に悪い状態や深刻な状況で、例えば非常に強い嵐のような様子。",
+      "ko": "매우 심하거나 심각한 상태로, 예를 들어 매우 강한 폭풍과 같은 상황을 말합니다.",
+      "zh-Hans": "非常糟糕或严重，比如一场非常大的暴风雨。",
+      "es": "muy malo o grave, como una tormenta muy fuerte.",
+      "pt-BR": "muito ruim ou sério, como uma tempestade muito forte."
+    },
+    {
+      "id": 2,
+      "ja": "起こりうる危険や問題について知らせるメッセージ。",
+      "ko": "발생할 수 있는 위험이나 문제에 대해 알려주는 메시지.",
+      "zh-Hans": "告诉你可能发生的危险或问题的消息。",
+      "es": "mensajes que te informan sobre un posible peligro o un problema que podría ocurrir.",
+      "pt-BR": "mensagens que informam sobre um possível perigo ou um problema que pode acontecer."
+    },
+    {
+      "id": 3,
+      "ja": "特定の時間や日付に起こるように計画されていること。",
+      "ko": "특정 시간이나 날짜에 발생하도록 계획된 것.",
+      "zh-Hans": "计划在某个具体时间或日期发生。",
+      "es": "planeado para que suceda en un momento o fecha específicos.",
+      "pt-BR": "planejado para acontecer em uma hora ou data específica."
+    },
+    {
+      "id": 4,
+      "ja": "コンサートやスポーツの試合のような公のイベントが行われる場所。",
+      "ko": "콘서트나 스포츠 경기와 같은 공개 행사가 열리는 장소.",
+      "zh-Hans": "举办音乐会或体育比赛等公共活动的地点。",
+      "es": "el lugar donde se lleva a cabo un evento público, como un concierto o un partido deportivo.",
+      "pt-BR": "o local onde um evento público, como um show ou jogo esportivo, acontece."
+    },
+    {
+      "id": 5,
+      "ja": "危険や危害から保護されている状態。",
+      "ko": "위험이나 해로부터 보호받는 상태.",
+      "zh-Hans": "免受危险或伤害的状态。",
+      "es": "la condición de estar protegido de peligro o daño.",
+      "pt-BR": "a condição de estar protegido de perigo ou dano."
+    },
+    {
+      "id": 6,
+      "ja": "例えば何かを返品したり、イベントが中止になったりした場合に返してもらえるお金。",
+      "ko": "예를 들어, 물건을 반품하거나 행사가 취소되었을 때 돌려받는 돈.",
+      "zh-Hans": "退还给你的钱，例如，如果你退回某物或一个活动被取消。",
+      "es": "dinero que te devuelven, por ejemplo, si devuelves algo o un evento se cancela.",
+      "pt-BR": "dinheiro que é devolvido a você, por exemplo, se você devolver algo ou um evento é cancelado."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-26T11:30:05.886076+00:00"
+  }
+}

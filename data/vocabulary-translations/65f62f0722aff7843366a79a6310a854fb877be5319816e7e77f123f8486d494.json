@@ -1,0 +1,103 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Bangkok roads were submerged by floodwaters.",
+      "A flood emergency disaster was declared across Bangkok.",
+      "More than 300mm of rain fell since Thursday.",
+      "The heavy rains have subsided, but the flooding is not yet over.",
+      "Water levels in canals remain high.",
+      "People were urged to stay at home.",
+      "More heavy rain is forecast through the week."
+    ],
+    "vocabulary": [
+      {
+        "term": "submerged",
+        "part_of_speech": "verb",
+        "definition": "covered completely with water"
+      },
+      {
+        "term": "disaster",
+        "part_of_speech": "noun",
+        "definition": "a very bad event that causes a lot of damage or harm"
+      },
+      {
+        "term": "declared",
+        "part_of_speech": "verb",
+        "definition": "said officially and publicly"
+      },
+      {
+        "term": "subsided",
+        "part_of_speech": "verb",
+        "definition": "became less strong or intense"
+      },
+      {
+        "term": "remain",
+        "part_of_speech": "verb",
+        "definition": "to stay in the same place or condition"
+      },
+      {
+        "term": "urged",
+        "part_of_speech": "verb",
+        "definition": "strongly advised someone to do something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "水で完全に覆われている",
+      "ko": "물에 완전히 덮여 있는",
+      "zh-Hans": "被水完全覆盖",
+      "es": "cubierto completamente con agua",
+      "pt-BR": "coberto completamente com água"
+    },
+    {
+      "id": 1,
+      "ja": "多くの損害や危害を引き起こす、非常に悪い出来事",
+      "ko": "많은 손상이나 해를 입히는 아주 나쁜 사건",
+      "zh-Hans": "造成巨大损害或伤害的非常糟糕的事件",
+      "es": "un evento muy malo que causa mucho daño o perjuicio",
+      "pt-BR": "um evento muito ruim que causa muito dano ou prejuízo"
+    },
+    {
+      "id": 2,
+      "ja": "公式に、そして公に述べた",
+      "ko": "공식적으로 그리고 공개적으로 말했다",
+      "zh-Hans": "官方且公开地宣布",
+      "es": "dicho oficial y públicamente",
+      "pt-BR": "dito oficial e publicamente"
+    },
+    {
+      "id": 3,
+      "ja": "勢いや強さが弱まった",
+      "ko": "힘이나 강도가 약해졌다",
+      "zh-Hans": "变得不那么强烈或剧烈",
+      "es": "se volvió menos fuerte o intenso",
+      "pt-BR": "tornou-se menos forte ou intenso"
+    },
+    {
+      "id": 4,
+      "ja": "同じ場所や状態にとどまること",
+      "ko": "같은 장소나 상태에 머무르는 것",
+      "zh-Hans": "停留在同一个地方或状况",
+      "es": "permanecer en el mismo lugar o condición",
+      "pt-BR": "permanecer no mesmo lugar ou condição"
+    },
+    {
+      "id": 5,
+      "ja": "誰かに何かをするよう強く勧めた",
+      "ko": "누군가에게 어떤 일을 하도록 강력히 권유했다",
+      "zh-Hans": "强烈建议某人做某事",
+      "es": "aconsejó fuertemente a alguien que hiciera algo",
+      "pt-BR": "aconselhou fortemente alguém a fazer algo"
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-27T12:07:52.500111+00:00"
+  }
+}

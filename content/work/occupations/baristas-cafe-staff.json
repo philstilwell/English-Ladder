@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "baristas-cafe-staff",
+    "title": "Baristas and Cafe Staff English",
+    "summary": "Clarify drink orders, explain coffee choices, check milk and syrup requests, coordinate pickup, discuss retail beans, and resolve cafe order problems.",
+    "roles": "Baristas, cafe counter staff, and coffee pickup staff",
+    "category": "Customers & creative work",
+    "scope_note": "All orders, prices, recipes, promotions, and incidents are fictional language practice, not barista certification, allergen-control training, health advice, or equipment-maintenance instruction. Recipes and terminology vary by cafe. Use current workplace information and refer suitability or equipment questions to the designated lead. This course focuses on counter and coffee-bar exchanges, not hospitality management.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Food and Beverage Serving and Related Workers",
+        "url": "https://www.bls.gov/ooh/food-preparation-and-serving/food-and-beverage-serving-and-related-workers.htm"
+      },
+      {
+        "title": "O*NET OnLine: Baristas",
+        "url": "https://www.onetonline.org/link/summary/35-3023.01"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Taking a precise drink order",
+        "terms": [
+          "espresso",
+          "shot",
+          "decaf",
+          "dine in"
+        ],
+        "collocations": [
+          "confirm the drink size: check the selected menu size",
+          "make it decaf: request the cafe's decaffeinated coffee option",
+          "leave room: request space below the top of a filled cup",
+          "repeat the full drink: check type, size, temperature style, and changes together"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A customer says 'a regular latte.' This cafe uses regular for its middle size, but the customer might mean caffeinated coffee or the usual milk. No drink has been made. Clarify size, hot or iced, and coffee choice separately.",
+          "model": "When you say regular, do you mean our middle size or caffeinated coffee? I'll check those separately so I enter the right drink. Would you like the latte hot or iced, and which milk would you prefer? Once those details are clear, I'll repeat the full order before sending it to the bar."
+        },
+        "workshop": {
+          "title": "Unpack the word 'regular'",
+          "goal": "Clarify a familiar word that can describe several order details.",
+          "explanation": "Ask one specification at a time. Decaf describes coffee, not milk or sweetness, and doesn't mean guaranteed zero caffeine.",
+          "frames": [
+            "By regular, do you mean ___?",
+            "Would you like that hot or ___?",
+            "That's a ___ latte with ___, for ___."
+          ],
+          "before": "A regular, got it.",
+          "after": "Do you mean our regular size, and would you like caffeinated or decaf coffee?",
+          "reason": "The check separates size from coffee choice.",
+          "questions": [
+            {
+              "prompt": "Customer: I mean your middle size, not the coffee type.\nBarista: So 'regular' refers to the ____.",
+              "options": [
+                "milk",
+                "sweetness",
+                "size",
+                "coffee type"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The customer hasn't chosen milk here.",
+                "No sweetness choice is stated.",
+                "Correct. The customer uses 'middle' to identify the size.",
+                "The customer explicitly separates size from the coffee type."
+              ]
+            },
+            {
+              "prompt": "Customer: Does decaf guarantee no caffeine at all?\nBarista: No. It means ____.",
+              "options": [
+                "coffee with most caffeine removed",
+                "coffee with every trace of caffeine removed",
+                "a smaller serving of regular coffee",
+                "regular coffee diluted with milk"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Decaffeination removes most caffeine without guaranteeing complete absence.",
+                "This overstates decaf as necessarily containing zero caffeine.",
+                "A smaller serving doesn't make regular coffee decaffeinated.",
+                "Adding milk changes the drink, not the coffee's decaffeination status."
+              ]
+            }
+          ],
+          "role_b": "Customer: you mean middle size; choose hot, decaf, and whole milk when asked.",
+          "challenge": "The customer says 'the normal one' about milk. Ask for the actual milk choice."
+        }
+      },
+      {
+        "title": "Comparing drinks without overclaiming",
+        "terms": [
+          "latte",
+          "cappuccino",
+          "Americano",
+          "filter coffee"
+        ],
+        "collocations": [
+          "describe the milk balance: explain how milky an option tastes",
+          "compare the menu recipes: use this cafe's actual drink descriptions",
+          "offer a flavor description: describe taste without promising a personal reaction",
+          "avoid a caffeine guarantee: do not infer exact caffeine content from taste or color"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "In this fictional cafe, the small latte and small cappuccino both contain the same espresso serving. The cappuccino has more foam; the latte has more liquid milk. The customer wants less foam, not more caffeine. Compare the two using those facts.",
+          "model": "In our small drinks, both choices use the same espresso serving. The cappuccino has more foam, while the latte has more liquid milk. Since you're asking for less foam rather than more coffee, the latte sounds closer to that preference. I wouldn't use how strong it tastes as an exact measure of caffeine."
+        },
+        "workshop": {
+          "title": "Compare the criterion the customer cares about",
+          "goal": "Explain this cafe's options without presenting a universal recipe.",
+          "explanation": "Ask whether 'strong' means coffee flavor, less milk, or caffeine. Local recipe facts support a comparison; they don't establish precise caffeine totals.",
+          "frames": [
+            "Both use ___, but ___ has more ___.",
+            "When you say strong, are you asking about ___?",
+            "For your preference for ___, ___ may suit you."
+          ],
+          "before": "The darker one has more caffeine.",
+          "after": "Color doesn't establish caffeine content; I can compare our stated recipes.",
+          "reason": "The revision replaces an unsupported inference with a bounded comparison.",
+          "questions": [
+            {
+              "prompt": "Customer: I want less foam, not extra coffee.\nBarista: Compared with our small cappuccino, our small ____ has more liquid milk and less foam.",
+              "options": [
+                "cappuccino",
+                "latte",
+                "Americano",
+                "black filter coffee"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The cappuccino cannot differ from itself in this comparison.",
+                "Correct. This matches the two milk drinks in the stated recipe comparison.",
+                "An Americano is espresso with water, not this milk-rich option.",
+                "Black filter coffee doesn't contain the milk described here."
+              ]
+            },
+            {
+              "prompt": "Barista: Both use the same espresso serving, ____ their milk textures differ.",
+              "options": [
+                "because",
+                "therefore",
+                "unless",
+                "but"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Different milk texture doesn't cause the equal espresso serving.",
+                "The contrast isn't a necessary consequence.",
+                "This makes the difference a condition.",
+                "Correct. 'But' contrasts two compatible facts."
+              ]
+            }
+          ],
+          "role_b": "Customer: you want a milky drink with less foam, not a caffeine estimate.",
+          "challenge": "The customer asks whether a stronger taste guarantees more caffeine. Explain the limit."
+        }
+      },
+      {
+        "title": "Clarifying milk, syrup, and allergy questions",
+        "terms": [
+          "milk alternative",
+          "syrup",
+          "sweetened",
+          "shared equipment"
+        ],
+        "collocations": [
+          "omit the syrup: leave out the flavored sweetener",
+          "check the carton: consult the actual product's current ingredient information",
+          "relay a milk-allergy concern: pass on the customer's stated allergy accurately",
+          "separate two requests: distinguish less sweetness from avoidance of an ingredient"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A customer reports a milk allergy and asks for an oat latte without vanilla syrup. The barista knows oat drink is available but has not checked its current ingredients or shared-equipment arrangements. No claim of suitability can be made from the drink name.",
+          "model": "I can note oat drink and no vanilla syrup, but those changes don't by themselves establish suitability for your milk allergy. I need to check the current product information and ask our lead about shared equipment. Let's leave the drink unmade while we get those details, so you can decide with accurate information."
+        },
+        "workshop": {
+          "title": "A modification doesn't settle every concern",
+          "goal": "Clarify sweetness and allergy questions as separate issues.",
+          "explanation": "No syrup doesn't necessarily mean no added sweetener in other ingredients. A plant-based name doesn't resolve all ingredient or cross-contact questions.",
+          "frames": [
+            "Do you mean no syrup, or ___?",
+            "I can confirm ___ is available, but not yet ___.",
+            "Let me ask the lead about ___."
+          ],
+          "before": "Oat and no syrup means it's fine.",
+          "after": "I can record those choices, but your allergy question still needs checking.",
+          "reason": "The revised response doesn't confuse an order preference with suitability.",
+          "questions": [
+            {
+              "prompt": "Customer: Leave out the vanilla, but keep the oat drink.\nBarista: I'll ____.",
+              "options": [
+                "omit the vanilla syrup",
+                "serve the syrup separately",
+                "reduce the syrup portion",
+                "replace the oat drink"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This removes only the requested vanilla component.",
+                "Separate syrup would still include an item the customer declined.",
+                "Reducing leaves some syrup instead of omitting it entirely.",
+                "The customer specifically asked to retain the oat drink."
+              ]
+            },
+            {
+              "prompt": "Customer: Does no syrup mean the whole drink has no added sweetener?\nBarista: The other ingredients ____ checked.",
+              "options": [
+                "have already been",
+                "do not need to be",
+                "still need to be",
+                "were previously"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The scenario doesn't establish that those checks occurred.",
+                "Other components may have their own sweetening ingredients.",
+                "Correct. Omitting syrup doesn't establish every component's ingredients.",
+                "No earlier check of those ingredients is established in this exchange."
+              ]
+            }
+          ],
+          "role_b": "Customer: state the milk allergy and ask about shared equipment before choosing.",
+          "challenge": "A colleague says plant-based always means suitable. Explain what that label doesn't establish."
+        }
+      },
+      {
+        "title": "Managing the queue and pickup",
+        "terms": [
+          "order ticket",
+          "pickup name",
+          "mobile order",
+          "order queue"
+        ],
+        "collocations": [
+          "match the ticket number: compare the order identifier before collection",
+          "call the pickup name: announce the name linked to the completed order",
+          "check an order's status: find whether it is received, in progress, or complete",
+          "keep a grouped order together: connect drinks belonging to the same order"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Two customers named Sam have orders. Ticket 64 is a small hot latte and is complete. Ticket 67 is a large iced decaf latte and is in progress. The customer collecting 67 hears 'Sam' and reaches for 64. Clarify using ticket and drink details.",
+          "model": "Are you collecting ticket sixty-seven, the large iced decaf latte? This completed drink is a small hot latte on sixty-four for another Sam. Your order is still in progress. I'll use the ticket number as well as the name when I call it, so the two orders don't get mixed up."
+        },
+        "workshop": {
+          "title": "Identify the order before handing it over",
+          "goal": "Use a second identifier when names are duplicated.",
+          "explanation": "A pickup name may not be unique. Check drink specifications or the ticket number without requesting unrelated personal details.",
+          "frames": [
+            "Which ticket number are you collecting?",
+            "This is ___; your order is ___.",
+            "___ is complete, while ___ is in progress."
+          ],
+          "before": "Sam, here's yours.",
+          "after": "Sam, ticket sixty-four: small hot latte.",
+          "reason": "The ticket and drink distinguish customers with the same name.",
+          "questions": [
+            {
+              "prompt": "Customer: My ticket is sixty-seven, not sixty-four.\nBarista: Yours is still ____.",
+              "options": [
+                "collected",
+                "canceled",
+                "in progress",
+                "the completed hot latte"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No collection is reported for this ticket.",
+                "The ticket remains active, not canceled.",
+                "Correct. The iced decaf order is being prepared.",
+                "The completed hot latte belongs to sixty-four."
+              ]
+            },
+            {
+              "prompt": "Barista: Could you tell me ____?\nCustomer: Sixty-seven.",
+              "options": [
+                "what is your ticket number",
+                "what your ticket number is",
+                "what your number ticket is",
+                "what your ticket is number"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Indirect questions use statement word order after the question phrase.",
+                "Correct. The subject precedes its verb in this embedded question.",
+                "The noun phrase should be 'ticket number'.",
+                "The word 'number' belongs with 'ticket' before the verb."
+              ]
+            }
+          ],
+          "role_b": "Customer: you are Sam with ticket 67 and expect an iced drink.",
+          "challenge": "The label is partly hidden. Check the ticket rather than guessing from the name."
+        }
+      },
+      {
+        "title": "Handling remakes and mistaken labels",
+        "terms": [
+          "remake",
+          "cup label",
+          "order modifier",
+          "texture"
+        ],
+        "collocations": [
+          "acknowledge a mismatch: name the difference between the order and the drink",
+          "check the cup label: compare the written specification with the ticket",
+          "request a fresh remake: ask for a new drink with confirmed details",
+          "describe the customer's concern: repeat the issue without guessing its cause"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Ticket 22 requests a small iced latte with no syrup, but the cup label says hot vanilla latte. The customer hasn't collected it. A replacement is available; its wait hasn't been checked. Correct the mismatch without claiming a refund or a serving time.",
+          "model": "The cup label doesn't match your ticket: you ordered a small iced latte with no syrup, but this label says hot vanilla. I'm sorry for that mix-up. I'll request a fresh drink with your confirmed details and check the wait before giving you an estimate. Is the original order still what you'd like?"
+        },
+        "workshop": {
+          "title": "Fix the specification before the remake",
+          "goal": "Acknowledge the error and confirm the replacement details.",
+          "explanation": "Distinguish an incorrect label from a verified ingredient claim. The correct ticket supplies the requested drink, while the bar checks what happened.",
+          "frames": [
+            "The ticket says ___; the label says ___.",
+            "Would you still like ___?",
+            "I'll check the remake time before ___."
+          ],
+          "before": "That cup must be yours.",
+          "after": "This label doesn't match your ticket. Let's confirm the replacement details.",
+          "reason": "The response resolves the mismatch before handing over the cup.",
+          "questions": [
+            {
+              "prompt": "Customer: My ticket says iced, but this label says hot.\nBarista: The label ____ your ticket.",
+              "options": [
+                "matches",
+                "doesn't match",
+                "replaces",
+                "confirms"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The two temperature styles conflict in the scenario.",
+                "Correct. This identifies the observed inconsistency between records.",
+                "A conflicting label doesn't replace the customer's order.",
+                "The label contradicts rather than confirms the ticket."
+              ]
+            },
+            {
+              "prompt": "Customer: Is the replacement already made?\nBarista: No, I've ____ it, but it isn't complete.",
+              "options": [
+                "collected",
+                "finished",
+                "requested",
+                "served"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Collection would place the drink after preparation.",
+                "Finished contradicts the statement that it isn't complete.",
+                "Correct. Requesting a remake precedes its completion.",
+                "Serving means handing it over, which hasn't happened."
+              ]
+            }
+          ],
+          "role_b": "Customer: keep the original iced, no-syrup order and ask about the wait.",
+          "challenge": "The bar offers a different size. Check whether the customer wants that change rather than assuming."
+        }
+      },
+      {
+        "title": "Discussing coffee beans for home",
+        "terms": [
+          "whole bean",
+          "grind size",
+          "roast date",
+          "tasting notes"
+        ],
+        "collocations": [
+          "ask about the brewer: identify the customer's coffee-making equipment",
+          "leave the beans whole: sell the coffee without grinding it",
+          "read the tasting notes: explain the package's flavor descriptions",
+          "confirm before grinding: check the chosen product and intended brewer before an irreversible change"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A customer buys a gift bag and asks for 'normal ground.' They don't know the recipient's brewer. This cafe sells the same coffee whole or ground. Grinding cannot be undone. The package's 'hazelnut' note describes flavor, not an ingredient statement.",
+          "model": "Could you tell me what kind of brewer the recipient uses? There isn't one grind described as normal for every brewer, and grinding can't be undone. We can leave this bag whole while you check. Also, the hazelnut tasting note describes a flavor impression; it isn't the ingredient information for an allergy question."
+        },
+        "workshop": {
+          "title": "Clarify the brewer before changing the beans",
+          "goal": "Distinguish grind requirements and flavor descriptions from assumptions.",
+          "explanation": "A tasting note doesn't prove an ingredient is present or absent. Ask about the brewer; don't prescribe an unsupported grind when the equipment is unknown.",
+          "frames": [
+            "What kind of brewer do they use?",
+            "Would you prefer to leave the beans ___?",
+            "That phrase describes flavor, not ___."
+          ],
+          "before": "Normal ground will work for anything.",
+          "after": "Let's identify the brewer, or leave the bag whole while you check.",
+          "reason": "The question avoids an irreversible change based on an undefined request.",
+          "questions": [
+            {
+              "prompt": "Customer: I don't know the brewer yet, so please don't grind the coffee.\nBarista: We can leave the beans ____ while you check.",
+              "options": [
+                "whole",
+                "coarsely ground",
+                "finely ground",
+                "ground for espresso"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Whole beans preserve the later choice of grinding.",
+                "A coarse grind still makes an irreversible change now.",
+                "A fine grind assumes a requirement that hasn't been established.",
+                "An espresso grind assumes a brewer the customer hasn't identified."
+              ]
+            },
+            {
+              "prompt": "Customer: Is the roast date the day I buy the bag?\nBarista: No, it identifies when the coffee was ____.",
+              "options": [
+                "ordered by you",
+                "ground for you",
+                "put on display",
+                "roasted"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "The customer's order date is a different event.",
+                "Grinding and roasting are separate events in production.",
+                "Display timing isn't the meaning of roast date.",
+                "Correct. The term names the roasting event's date."
+              ]
+            }
+          ],
+          "role_b": "Customer: you are buying a gift and don't know the brewer; decide whether to keep the bag whole.",
+          "challenge": "The customer asks whether 'hazelnut notes' guarantees an ingredient is absent. Refer to actual product information."
+        }
+      },
+      {
+        "title": "Explaining counter prices and sold-out items",
+        "terms": [
+          "upcharge",
+          "combo",
+          "loyalty reward",
+          "sold out"
+        ],
+        "collocations": [
+          "quote the full drink price: state the price including selected changes",
+          "apply an eligible reward: use a benefit only when its stated conditions are met",
+          "offer the remaining choice: explain an available alternative to a sold-out item",
+          "separate item and offer prices: distinguish an individual price from a combination deal"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A fictional cafe lists a latte at $4, an oat-drink upcharge of $0.50, and a pastry at $3. The $6 combo includes a standard latte and pastry; the oat upcharge still applies. Explain $6.50 for that combo, versus $7.50 separately, before payment.",
+          "model": "The standard latte-and-pastry combo is six dollars. Your oat-drink choice adds fifty cents, so that combination is six fifty. Bought separately, the four-dollar latte, fifty-cent change, and three-dollar pastry would total seven fifty. The combo saves one dollar for these items; shall I enter that option with the oat choice?"
+        },
+        "workshop": {
+          "title": "Explain the complete offer",
+          "goal": "State included items and additional charges before the customer commits.",
+          "explanation": "An offer name doesn't specify every condition. Explain this fictional cafe's prices without implying all cafes charge the same way.",
+          "frames": [
+            "The combo includes ___ at ___.",
+            "The ___ upcharge still applies, making ___.",
+            "Separately, the same items total ___."
+          ],
+          "before": "It's six dollars, plus something.",
+          "after": "The oat latte and pastry combo totals six fifty.",
+          "reason": "The customer hears the complete selected-item price.",
+          "questions": [
+            {
+              "prompt": "Customer: Does oat drink change the six-dollar combo price?\nBarista: With the fifty-cent upcharge, it's ____.",
+              "options": [
+                "six dollars",
+                "six fifty",
+                "seven dollars",
+                "seven fifty"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "This leaves out the stated oat-drink upcharge.",
+                "Correct. Six dollars plus fifty cents is six fifty.",
+                "That adds one dollar rather than fifty cents.",
+                "That is the separate-item total, not the combo total."
+              ]
+            },
+            {
+              "prompt": "Customer: This is my first order today. If cinnamon has sold out, what can replace it?\nBarista: Would you like the plain pastry ____?",
+              "options": [
+                "as well",
+                "again",
+                "too",
+                "instead"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "'As well' adds an item rather than replacing the unavailable one.",
+                "'Again' implies a repeat order, unlike this first order.",
+                "'Too' also signals addition rather than the requested replacement.",
+                "Correct. 'Instead' offers the plain pastry as a substitute."
+              ]
+            }
+          ],
+          "role_b": "Customer: compare the oat combo with the separate prices and choose one.",
+          "challenge": "The selected pastry sells out before payment. Ask whether the customer wants the remaining pastry; don't substitute silently."
+        }
+      },
+      {
+        "title": "Handing over the bar and till",
+        "terms": [
+          "till",
+          "cash float",
+          "reconciliation",
+          "stockout"
+        ],
+        "collocations": [
+          "hand over the order queue: explain unfinished orders to the incoming barista",
+          "count the float: check the starting change cash without assuming sales totals",
+          "flag a till discrepancy: report a difference between the count and the record",
+          "report a stockout: name the exact unavailable product or supply"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At 2:00, ticket 108's coffee is complete but its tea is pending. Large takeaway lids are unavailable, though small lids remain. The outgoing worker counted the till, but the lead's reconciliation is pending. Assign the tea and stock follow-up without calling the till signed off.",
+          "model": "Ticket one-oh-eight still needs its tea; the coffee is complete. Large takeaway lids are out, but small lids remain. Can you take the tea order and confirm the large-lid situation with the lead? I've counted the till, but reconciliation isn't complete. I'll stay responsible for that review until the lead takes it."
+        },
+        "workshop": {
+          "title": "Transfer three different statuses",
+          "goal": "Hand over orders, supplies, and a till question without merging them.",
+          "explanation": "Counting cash is not the same as reconciling it with records. Explain the specific stockout so the next worker doesn't assume every size is unavailable.",
+          "frames": [
+            "___ is complete; ___ remains on the queue.",
+            "We're out of ___, not ___.",
+            "I've counted ___; ___ is still pending."
+          ],
+          "before": "Everything's done except a few things.",
+          "after": "One tea remains on 108; large lids are out; till reconciliation is pending.",
+          "reason": "The incoming worker can identify separate actions.",
+          "questions": [
+            {
+              "prompt": "Incoming barista: Have all lid sizes run out?\nOutgoing barista: No, the stockout affects ____.",
+              "options": [
+                "every cup size",
+                "small lids only",
+                "large lids only",
+                "all packaging"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The case preserves stock of small lids.",
+                "Small lids remain available in this case.",
+                "Correct. Only large takeaway lids are reported unavailable.",
+                "The shortage doesn't cover all packaging supplies."
+              ]
+            },
+            {
+              "prompt": "Lead: Is the till reconciliation complete?\nWorker: The cash is counted, but the comparison with records is ____.",
+              "options": [
+                "still pending",
+                "already completed",
+                "fully signed off",
+                "no longer needed"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Counting alone doesn't complete the required comparison.",
+                "The case says that comparison hasn't been completed.",
+                "No completed review or sign-off has been given.",
+                "Counting doesn't remove the need to compare the records."
+              ]
+            }
+          ],
+          "role_b": "Incoming worker: accept the tea follow-up and large-lid query; ask who retains the till review.",
+          "challenge": "A coworker says the till 'looks about right.' Keep the unresolved record comparison explicit."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "espresso",
+        "definition": "A concentrated coffee drink prepared by passing hot water through finely ground coffee under pressure.",
+        "group": "Taking a precise drink order"
+      },
+      {
+        "term": "shot",
+        "definition": "A cafe's specified serving of espresso; exact size and recipe vary.",
+        "group": "Taking a precise drink order"
+      },
+      {
+        "term": "decaf",
+        "definition": "Coffee from which most caffeine has been removed; it is not necessarily caffeine-free.",
+        "group": "Taking a precise drink order"
+      },
+      {
+        "term": "dine in",
+        "definition": "An order intended to be consumed in the cafe rather than taken away.",
+        "group": "Taking a precise drink order"
+      },
+      {
+        "term": "latte",
+        "definition": "An espresso drink with milk; proportions and serving styles vary by cafe.",
+        "group": "Comparing drinks without overclaiming"
+      },
+      {
+        "term": "cappuccino",
+        "definition": "An espresso-and-milk drink typically featuring a noticeable foam layer; recipes vary.",
+        "group": "Comparing drinks without overclaiming"
+      },
+      {
+        "term": "Americano",
+        "definition": "An espresso drink diluted with water according to the cafe's recipe.",
+        "group": "Comparing drinks without overclaiming"
+      },
+      {
+        "term": "filter coffee",
+        "definition": "Coffee brewed by passing water through ground coffee and a filter.",
+        "group": "Comparing drinks without overclaiming"
+      },
+      {
+        "term": "milk alternative",
+        "definition": "A plant-based drink offered instead of dairy milk, with ingredients varying by product.",
+        "group": "Clarifying milk, syrup, and allergy questions"
+      },
+      {
+        "term": "syrup",
+        "definition": "A flavored liquid sweetener used in some cafe drinks.",
+        "group": "Clarifying milk, syrup, and allergy questions"
+      },
+      {
+        "term": "sweetened",
+        "definition": "Containing added sweetening ingredients; the description may apply to a component or finished drink.",
+        "group": "Clarifying milk, syrup, and allergy questions"
+      },
+      {
+        "term": "shared equipment",
+        "definition": "Equipment used for more than one product, relevant to questions about possible allergen cross-contact.",
+        "group": "Clarifying milk, syrup, and allergy questions"
+      },
+      {
+        "term": "order ticket",
+        "definition": "A printed or electronic record connecting a cafe order to its specifications and identifier.",
+        "group": "Managing the queue and pickup"
+      },
+      {
+        "term": "pickup name",
+        "definition": "The name used to identify a completed order at the collection point.",
+        "group": "Managing the queue and pickup"
+      },
+      {
+        "term": "mobile order",
+        "definition": "An order placed through a phone app or similar online ordering service.",
+        "group": "Managing the queue and pickup"
+      },
+      {
+        "term": "order queue",
+        "definition": "The sequence of orders waiting for preparation or completion.",
+        "group": "Managing the queue and pickup"
+      },
+      {
+        "term": "remake",
+        "definition": "A replacement drink made again to correct an order or preparation problem.",
+        "group": "Handling remakes and mistaken labels"
+      },
+      {
+        "term": "cup label",
+        "definition": "The printed or written drink information attached to a cup.",
+        "group": "Handling remakes and mistaken labels"
+      },
+      {
+        "term": "order modifier",
+        "definition": "A detail changing a drink's standard size, ingredient, or service choice.",
+        "group": "Handling remakes and mistaken labels"
+      },
+      {
+        "term": "texture",
+        "definition": "The way a drink feels in the mouth, such as smooth or foamy, as described by the customer.",
+        "group": "Handling remakes and mistaken labels"
+      },
+      {
+        "term": "whole bean",
+        "definition": "Coffee sold as intact roasted beans rather than already ground.",
+        "group": "Discussing coffee beans for home"
+      },
+      {
+        "term": "grind size",
+        "definition": "The relative coarseness or fineness of ground coffee.",
+        "group": "Discussing coffee beans for home"
+      },
+      {
+        "term": "roast date",
+        "definition": "The date shown for when coffee was roasted, not when the package was purchased.",
+        "group": "Discussing coffee beans for home"
+      },
+      {
+        "term": "tasting notes",
+        "definition": "Descriptors suggesting a coffee's perceived flavors, not necessarily added ingredients.",
+        "group": "Discussing coffee beans for home"
+      },
+      {
+        "term": "upcharge",
+        "definition": "An additional price for a specified change or extra item.",
+        "group": "Explaining counter prices and sold-out items"
+      },
+      {
+        "term": "combo",
+        "definition": "A stated combination of items offered together at a listed price.",
+        "group": "Explaining counter prices and sold-out items"
+      },
+      {
+        "term": "loyalty reward",
+        "definition": "A benefit available under a cafe's stated customer-reward conditions.",
+        "group": "Explaining counter prices and sold-out items"
+      },
+      {
+        "term": "sold out",
+        "definition": "No longer available for purchase because the available stock has been used or sold.",
+        "group": "Explaining counter prices and sold-out items"
+      },
+      {
+        "term": "till",
+        "definition": "The cafe's sales register or the cash drawer associated with it.",
+        "group": "Handing over the bar and till"
+      },
+      {
+        "term": "cash float",
+        "definition": "The starting cash kept in a till to provide change.",
+        "group": "Handing over the bar and till"
+      },
+      {
+        "term": "reconciliation",
+        "definition": "A comparison of recorded transactions with counted money or other relevant records to identify differences.",
+        "group": "Handing over the bar and till"
+      },
+      {
+        "term": "stockout",
+        "definition": "A situation in which a needed product or supply is unavailable.",
+        "group": "Handing over the bar and till"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Regular needs three checks",
+          "setting": "The ambiguous latte order from the case.",
+          "turns": [
+            [
+              "Customer",
+              "Could I have a regular latte, please, and make that one to go?"
+            ],
+            [
+              "Barista",
+              "By regular, do you mean our middle size or the caffeinated coffee option?"
+            ],
+            [
+              "Customer",
+              "The middle size. I'd actually like decaf because I've already had coffee today."
+            ],
+            [
+              "Barista",
+              "Certainly. Would you like that latte hot or iced on this order?"
+            ],
+            [
+              "Customer",
+              "Hot, please. I didn't realize regular could refer to more than the size."
+            ],
+            [
+              "Barista",
+              "It can. Which milk would you like? We have whole milk and the listed alternatives."
+            ],
+            [
+              "Customer",
+              "Whole milk is fine. I don't want any syrup added to the drink."
+            ],
+            [
+              "Barista",
+              "That's one middle-size hot decaf latte, whole milk, no syrup, to take away."
+            ],
+            [
+              "Customer",
+              "Yes, that's everything. Please use the name Ellis when you call the order."
+            ],
+            [
+              "Barista",
+              "Ellis, thank you. I'll put that name with those specifications on your ticket."
+            ]
+          ]
+        },
+        {
+          "title": "A shot is not a bigger cup",
+          "setting": "A customer asks what an extra-shot option changes.",
+          "turns": [
+            [
+              "Customer",
+              "Does choosing an extra shot make the drink come in a bigger cup?"
+            ],
+            [
+              "Barista",
+              "No, it adds espresso under our menu option; the cup size stays the same."
+            ],
+            [
+              "Customer",
+              "I want a larger drink, not extra coffee in the size I already chose."
+            ],
+            [
+              "Barista",
+              "Then let's change the size rather than automatically add an extra shot to it."
+            ],
+            [
+              "Customer",
+              "Thank you. What's the price difference between the small and large sizes here?"
+            ],
+            [
+              "Barista",
+              "The large is one dollar more. An extra shot has a separate listed charge."
+            ],
+            [
+              "Customer",
+              "I'll take the large standard version, then, without choosing that extra-shot option today."
+            ],
+            [
+              "Barista",
+              "Understood. Large latte, standard coffee recipe, with no separately added extra shot."
+            ],
+            [
+              "Customer",
+              "And still hot with whole milk, as I said when I first ordered."
+            ],
+            [
+              "Barista",
+              "Yes, those choices stay unchanged. I'll repeat the final ticket before taking payment."
+            ]
+          ]
+        },
+        {
+          "title": "Leaving room is an amount request",
+          "setting": "A customer clarifies space in a filter-coffee cup.",
+          "turns": [
+            [
+              "Barista",
+              "You asked me to leave room. How much space would you like for your milk?"
+            ],
+            [
+              "Customer",
+              "Just a little at the top, not a cup that's only half full."
+            ],
+            [
+              "Barista",
+              "Thanks. Would you like the milk added here, or served separately for you?"
+            ],
+            [
+              "Customer",
+              "Separately, please. I'd like to decide how much to add at the table."
+            ],
+            [
+              "Barista",
+              "I'll note room for milk and a separate serving, with no syrup added."
+            ],
+            [
+              "Customer",
+              "Yes. This is for drinking here, so I don't need a takeaway lid."
+            ],
+            [
+              "Barista",
+              "A dine-in cup, then. Is the coffee choice still the house filter?"
+            ],
+            [
+              "Customer",
+              "It is. I haven't changed the coffee itself, only how it's served today."
+            ],
+            [
+              "Barista",
+              "Understood. House filter with room and milk separately, for here rather than takeaway."
+            ],
+            [
+              "Customer",
+              "Exactly. Thank you for checking what I meant before reducing the amount too much."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Hot order, iced label",
+        "brief": "A customer orders a small hot decaf latte. Before payment, the screen shows small iced decaf latte. Milk choice is correct.",
+        "role_a": "Barista: read the screen and correct temperature style.",
+        "role_b": "Customer: confirm hot, not iced; keep the other choices.",
+        "opening_line": "I have iced on the screen, but I heard hot. Which did you want?",
+        "complication": "The customer says 'same as before,' but the previous order isn't visible.",
+        "success_checks": [
+          "Obtain hot or iced explicitly.",
+          "Keep decaf and size unchanged.",
+          "Read back the corrected order."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Less foam, not more coffee",
+          "setting": "The small-drink comparison in the case.",
+          "turns": [
+            [
+              "Customer",
+              "Which has more coffee, your small latte or small cappuccino? I dislike too much foam."
+            ],
+            [
+              "Barista",
+              "Both use the same espresso serving here, but their milk and foam balance differs."
+            ],
+            [
+              "Customer",
+              "Then choosing the latte wouldn't automatically mean ordering a different espresso amount at this cafe?"
+            ],
+            [
+              "Barista",
+              "Correct. Our small latte has more liquid milk, while the cappuccino has more foam."
+            ],
+            [
+              "Customer",
+              "The latte sounds closer to what I mean. I want something milky, not especially foamy."
+            ],
+            [
+              "Barista",
+              "Would you like the small latte, then, with its usual milk balance and no additions?"
+            ],
+            [
+              "Customer",
+              "Yes, please. Does a drink tasting stronger always mean it contains more caffeine?"
+            ],
+            [
+              "Barista",
+              "Not necessarily. Taste alone doesn't establish caffeine content, and I don't have exact figures."
+            ],
+            [
+              "Customer",
+              "That's enough information. Please keep the standard coffee recipe rather than adding an extra shot."
+            ],
+            [
+              "Barista",
+              "Certainly. One small latte with the standard recipe; no extra shot requested."
+            ]
+          ]
+        },
+        {
+          "title": "An Americano is not filter coffee",
+          "setting": "A customer wants the brewed-coffee option on the menu.",
+          "turns": [
+            [
+              "Customer",
+              "I'd like brewed filter coffee. Is that the same menu item as an Americano?"
+            ],
+            [
+              "Barista",
+              "They're different here. The Americano starts with espresso and water; filter coffee uses our filter brew."
+            ],
+            [
+              "Customer",
+              "I see. Which one comes from the batch you have on the counter now?"
+            ],
+            [
+              "Barista",
+              "The house filter comes from that batch. The Americano is a separate drink order."
+            ],
+            [
+              "Customer",
+              "Then I'll choose the house filter. Is milk automatically included in the cup?"
+            ],
+            [
+              "Barista",
+              "No, we can offer it separately if you'd like. Would you prefer coffee alone?"
+            ],
+            [
+              "Customer",
+              "Coffee alone, please. I mainly wanted to avoid ordering an espresso-based drink by mistake."
+            ],
+            [
+              "Barista",
+              "Understood. A small house filter, black, with no added milk or syrup on this order."
+            ],
+            [
+              "Customer",
+              "That works. Could you tell me which bean is being used for today's filter?"
+            ],
+            [
+              "Barista",
+              "The board names today's house blend. I'll show you its current description beside the price."
+            ]
+          ]
+        },
+        {
+          "title": "Strong can mean flavor",
+          "setting": "A barista clarifies a taste preference without caffeine claims.",
+          "turns": [
+            [
+              "Barista",
+              "When you ask for stronger coffee, do you mean a more pronounced flavor or more caffeine?"
+            ],
+            [
+              "Customer",
+              "A more pronounced flavor. I usually find my drink tastes mostly of milk."
+            ],
+            [
+              "Barista",
+              "Thanks. We can compare our smaller milk drink with your usual large latte."
+            ],
+            [
+              "Customer",
+              "Would that be a comparison of the milk balance rather than a guaranteed caffeine increase?"
+            ],
+            [
+              "Barista",
+              "Exactly. The menu descriptions can help with flavor balance, but I can't promise your perception."
+            ],
+            [
+              "Customer",
+              "I'd like to hear the smaller option's description and price before changing my order."
+            ],
+            [
+              "Barista",
+              "This one has less milk in our recipe and costs four dollars today."
+            ],
+            [
+              "Customer",
+              "I'll try that. Please keep the standard recipe rather than invent a special strength setting."
+            ],
+            [
+              "Barista",
+              "Certainly. I'll enter the named menu drink so the bar follows the correct recipe."
+            ],
+            [
+              "Customer",
+              "Thank you. I meant stronger in taste, and that distinction helped me choose."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Foam is the deciding factor",
+        "brief": "The menu offers two small milk drinks with the same stated espresso serving. One is described as having more foam. The customer wants that texture.",
+        "role_a": "Barista: compare foam without promising caffeine content.",
+        "role_b": "Customer: choose the foamier option after clarification.",
+        "opening_line": "Are you asking about the foam layer or the coffee amount?",
+        "complication": "The customer uses 'lighter' to mean airy texture, not lower caffeine.",
+        "success_checks": [
+          "Clarify lighter.",
+          "Use this cafe's recipe descriptions.",
+          "Read back the chosen drink."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Oat is a choice, not a guarantee",
+          "setting": "The oat-latte question from the case.",
+          "turns": [
+            [
+              "Customer",
+              "I have a milk allergy. Could I have an oat latte without vanilla syrup?"
+            ],
+            [
+              "Barista",
+              "I can note those choices, but I need to check the ingredients and equipment arrangements."
+            ],
+            [
+              "Customer",
+              "Isn't using oat drink enough to answer that? I thought it replaced all dairy milk."
+            ],
+            [
+              "Barista",
+              "It replaces the milk choice, but doesn't settle every ingredient or cross-contact question."
+            ],
+            [
+              "Customer",
+              "Then please ask whoever can explain those details before you start making the drink."
+            ],
+            [
+              "Barista",
+              "I'll ask our lead and keep the drink unmade while they check with you."
+            ],
+            [
+              "Customer",
+              "Please also make sure the no-vanilla request stays attached to my order afterward."
+            ],
+            [
+              "Barista",
+              "Certainly. That's separate from the allergy question; I won't lose that preference."
+            ],
+            [
+              "Customer",
+              "Could I see the current oat carton information while we're waiting for the lead?"
+            ],
+            [
+              "Barista",
+              "I'll ask the lead to show you the product information and explain the remaining questions."
+            ]
+          ]
+        },
+        {
+          "title": "No syrup doesn't describe the carton",
+          "setting": "A customer clarifies what they mean by less sweet.",
+          "turns": [
+            [
+              "Barista",
+              "You asked for unsweetened. Do you mean no syrup, or a particular milk product too?"
+            ],
+            [
+              "Customer",
+              "I mainly mean no syrup. I don't know whether the oat drink itself is sweetened."
+            ],
+            [
+              "Barista",
+              "I'll show you the oat drink's ingredients. A milk alternative can contain sweeteners of its own."
+            ],
+            [
+              "Customer",
+              "Please do. I'm choosing by taste, not asking you to make a medical recommendation."
+            ],
+            [
+              "Barista",
+              "Understood. We can compare the listed options without promising how sweet each will taste to you."
+            ],
+            [
+              "Customer",
+              "Then leave out the vanilla syrup and keep the oat product shown on this carton."
+            ],
+            [
+              "Barista",
+              "I'll enter no vanilla syrup, not describe the complete drink as having no sweeteners."
+            ],
+            [
+              "Customer",
+              "That's the distinction I needed. Please keep the drink size and coffee choice unchanged."
+            ],
+            [
+              "Barista",
+              "Medium hot latte with oat drink, no vanilla syrup; the other choices stay as ordered."
+            ],
+            [
+              "Customer",
+              "Yes. That gives me the change I asked for without guessing about the whole recipe."
+            ]
+          ]
+        },
+        {
+          "title": "Checking the actual product",
+          "setting": "A barista asks the lead about a customer's ingredient question.",
+          "turns": [
+            [
+              "Barista",
+              "The customer asks whether our chocolate sauce contains milk. I haven't answered from memory."
+            ],
+            [
+              "Lead",
+              "Which product are we using today? A similar bottle was delivered with a different label."
+            ],
+            [
+              "Barista",
+              "This is the bottle at the bar, but I haven't compared its information with the delivery."
+            ],
+            [
+              "Lead",
+              "Let's check this exact product. A previous brand's ingredient list won't settle today's question."
+            ],
+            [
+              "Barista",
+              "The customer hasn't said whether it's an allergy or a preference. Shall I ask?"
+            ],
+            [
+              "Lead",
+              "Yes, ask directly and relay their words. Keep the ingredient check underway as well."
+            ],
+            [
+              "Barista",
+              "I'll say we're checking today's sauce, not that removing whipped cream answers the question."
+            ],
+            [
+              "Lead",
+              "Good. The topping and sauce are separate components, so both need their own accurate description."
+            ],
+            [
+              "Barista",
+              "I'll leave the drink pending and bring back the customer's stated concern to you."
+            ],
+            [
+              "Lead",
+              "Then I can discuss the current information with them before they decide what to order."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A syrup is already in the base",
+        "brief": "A seasonal drink uses a premixed base that includes vanilla. The customer wants that drink with no vanilla. The lead confirms vanilla cannot be removed from this batch. A plain hot latte is available; the lead has checked its current ingredients and confirmed they contain no vanilla. It does not use the seasonal base. This ingredient check does not establish allergy suitability or rule out cross-contact.",
+        "role_a": "Barista: explain the premixed base's limit and offer the plain hot latte as a different recipe, not an allergy-safe guarantee.",
+        "role_b": "Customer: ask whether omitting a final syrup addition removes vanilla already in the base.",
+        "opening_line": "The base already contains vanilla; leaving out an extra addition wouldn't remove it.",
+        "complication": "The customer thought 'no syrup' would change the entire recipe.",
+        "success_checks": [
+          "Identify the premixed component.",
+          "Avoid promising removal from the existing base.",
+          "Ask whether the customer wants the plain hot latte without making an allergy-safety guarantee."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Two Sams at the counter",
+          "setting": "The duplicated pickup name in the case.",
+          "turns": [
+            [
+              "Customer",
+              "You called Sam. Is this my large iced decaf latte on ticket sixty-seven?"
+            ],
+            [
+              "Barista",
+              "This is a small hot latte on sixty-four, for another customer named Sam."
+            ],
+            [
+              "Customer",
+              "Thanks for checking. I heard my name and didn't look closely at the drink."
+            ],
+            [
+              "Barista",
+              "Your iced decaf is still in progress. I'll call Sam and sixty-seven together."
+            ],
+            [
+              "Customer",
+              "Has my mobile order reached the bar, or should I show you the confirmation again?"
+            ],
+            [
+              "Barista",
+              "It's on the order queue as sixty-seven. You don't need to submit it again."
+            ],
+            [
+              "Customer",
+              "All right. Can I wait over here without blocking the drinks being collected?"
+            ],
+            [
+              "Barista",
+              "Yes, that space is clear. I'll call sixty-seven and describe the drink as well."
+            ],
+            [
+              "Customer",
+              "Please do. Two identical names made me think the first call was mine."
+            ],
+            [
+              "Barista",
+              "Here's sixty-seven now: large iced decaf latte. Please compare that with your ticket before collection."
+            ]
+          ]
+        },
+        {
+          "title": "Received doesn't mean ready",
+          "setting": "A customer interprets a mobile confirmation.",
+          "turns": [
+            [
+              "Customer",
+              "My phone says order received, but I can't see the drinks on the shelf."
+            ],
+            [
+              "Barista",
+              "Received means the order reached us. It doesn't yet mean both drinks are ready."
+            ],
+            [
+              "Customer",
+              "I thought the confirmation was a collection message. Can you check its current status?"
+            ],
+            [
+              "Barista",
+              "Certainly. What's the order number shown on that confirmation, rather than your payment details?"
+            ],
+            [
+              "Customer",
+              "It's eighty-five, under Morgan. There should be two drinks and one plain pastry."
+            ],
+            [
+              "Barista",
+              "I see it. One drink is complete, while the second drink and pastry are pending."
+            ],
+            [
+              "Customer",
+              "Would you like me to take the finished drink now and return for the rest?"
+            ],
+            [
+              "Barista",
+              "We can keep the order together if you prefer; tell me which arrangement works for you."
+            ],
+            [
+              "Customer",
+              "Together, please. I'd rather collect once than risk forgetting one of the items."
+            ],
+            [
+              "Barista",
+              "I'll keep the completed drink linked to eighty-five and call when the full order is ready."
+            ]
+          ]
+        },
+        {
+          "title": "A courier has a different number",
+          "setting": "A counter worker resolves a pickup-identifier mismatch.",
+          "turns": [
+            [
+              "Courier",
+              "I'm collecting order thirty-two, but the bag here shows the customer's name without that number."
+            ],
+            [
+              "Counter worker",
+              "Let's match the order before handing it over. What identifier does your pickup screen show?"
+            ],
+            [
+              "Courier",
+              "It shows cafe order one-thirty-two. I shortened that when I first spoke to you."
+            ],
+            [
+              "Counter worker",
+              "Thanks. We also have a separate thirty-two, so the full number makes a difference."
+            ],
+            [
+              "Courier",
+              "The one-thirty-two order should have three drinks. I don't need the other customer's details."
+            ],
+            [
+              "Counter worker",
+              "Correct. This grouped order has three drinks and the matching full reference on its ticket."
+            ],
+            [
+              "Courier",
+              "Can you confirm all three are part of this pickup, rather than separate counter orders?"
+            ],
+            [
+              "Counter worker",
+              "Yes, the ticket lists three, and all three are linked to one-thirty-two here."
+            ],
+            [
+              "Courier",
+              "That matches my screen. I'll use the full number when I confirm collection."
+            ],
+            [
+              "Counter worker",
+              "Thank you. I'll record this order as collected, leaving thirty-two's status unchanged."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two out of three drinks ready",
+        "brief": "A customer ordered three drinks on ticket 48. Two are complete; the decaf is pending. The customer asks whether the whole order is ready.",
+        "role_a": "Barista: state partial progress and offer grouped collection.",
+        "role_b": "Customer: prefer to collect all three together.",
+        "opening_line": "Two drinks are ready; the decaf is still being prepared.",
+        "complication": "A friend reaches for the two cups without knowing one drink remains.",
+        "success_checks": [
+          "Identify the missing drink.",
+          "Confirm grouped collection.",
+          "Call the whole order only when complete."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "The label contradicts the ticket",
+          "setting": "The uncollected drink on ticket 22 from the case.",
+          "turns": [
+            [
+              "Customer",
+              "This cup label says hot vanilla, but my ticket is for an iced latte without syrup."
+            ],
+            [
+              "Barista",
+              "You're right. Those details don't match, and I'm sorry for the mix-up here."
+            ],
+            [
+              "Customer",
+              "Please don't just change the writing on the cup. I want the drink I ordered."
+            ],
+            [
+              "Barista",
+              "I'll request a fresh remake using the ticket details, then check the expected wait."
+            ],
+            [
+              "Customer",
+              "Is it still going to be a small, or will the replacement size change?"
+            ],
+            [
+              "Barista",
+              "It stays small unless you request a change. Would you still like the original specifications?"
+            ],
+            [
+              "Customer",
+              "Yes: small iced latte, whole milk, and no syrup added to that drink."
+            ],
+            [
+              "Barista",
+              "I've repeated those details to the bar. They estimate three minutes for the replacement."
+            ],
+            [
+              "Customer",
+              "Thank you. I'll wait here, and please use my ticket number when you call it."
+            ],
+            [
+              "Barista",
+              "I will. That's ticket twenty-two; I'll check the label against these details at pickup."
+            ]
+          ]
+        },
+        {
+          "title": "A taste complaint needs a question",
+          "setting": "A barista clarifies a drink concern without diagnosing the preparation.",
+          "turns": [
+            [
+              "Customer",
+              "This latte tastes much sweeter than I expected. I can't tell what's different."
+            ],
+            [
+              "Barista",
+              "I'm sorry it isn't what you expected. Did you request the version without vanilla syrup?"
+            ],
+            [
+              "Customer",
+              "Yes, and the label says no vanilla. I can't tell whether that's what was made."
+            ],
+            [
+              "Barista",
+              "The label shows the request, but I'll ask the bar to check the preparation."
+            ],
+            [
+              "Customer",
+              "Please don't tell me I'm imagining it. I just want the less-sweet drink I ordered."
+            ],
+            [
+              "Barista",
+              "I understand. I'll describe the sweetness concern and confirm your preferred order for a remake."
+            ],
+            [
+              "Customer",
+              "I'd like the same milk and size, with no vanilla added to the replacement."
+            ],
+            [
+              "Barista",
+              "Understood. The milk itself has its listed ingredients; I won't promise the whole drink is unsweetened."
+            ],
+            [
+              "Customer",
+              "That's fine. I'm only asking you to leave out the additional vanilla syrup."
+            ],
+            [
+              "Barista",
+              "I'll relay that exact change and check the remake estimate with the bar."
+            ]
+          ]
+        },
+        {
+          "title": "A complaint about texture",
+          "setting": "A customer explains that foam, not coffee strength, is the issue.",
+          "turns": [
+            [
+              "Barista",
+              "You said the drink wasn't right. Is the concern its temperature, flavor, or texture?"
+            ],
+            [
+              "Customer",
+              "The foam is the issue. I expected less of it when I ordered this latte."
+            ],
+            [
+              "Barista",
+              "Thank you for explaining. You're not asking for more coffee or a different milk, correct?"
+            ],
+            [
+              "Customer",
+              "Correct. I'd like the same coffee and milk, with the foam request clarified to the bar."
+            ],
+            [
+              "Barista",
+              "I'll ask which remake option they can offer under our drink menu today."
+            ],
+            [
+              "Customer",
+              "Please check first. I don't want to wait for a drink that repeats the same problem."
+            ],
+            [
+              "Barista",
+              "The bar can remake your latte with the less-foam request noted on the ticket."
+            ],
+            [
+              "Customer",
+              "That works. Is the replacement already underway, or are you waiting for my decision?"
+            ],
+            [
+              "Barista",
+              "I was waiting for your choice. I'll confirm it now and ask for the estimated wait."
+            ],
+            [
+              "Customer",
+              "Thanks. The texture was the problem; I'm happy to keep everything else the same."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Wrong pickup, not wrong recipe",
+        "brief": "A customer's ticket is 18, but they are holding unconsumed drink 81. Both names are Alex. The customer's drink is still at the bar.",
+        "role_a": "Barista: identify the mismatch and consult the lead about the wrongly collected drink.",
+        "role_b": "Customer: confirm ticket 18 and ask for the correct drink.",
+        "opening_line": "Let's compare the full ticket number before discussing a recipe change.",
+        "complication": "The customer asks you to put drink 81 back on the pickup shelf.",
+        "success_checks": [
+          "Distinguish pickup error from recipe error.",
+          "Locate the correct order.",
+          "Refer handling of the collected drink to workplace practice without inventing steps."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Normal ground for an unknown brewer",
+          "setting": "The gift-bag purchase from the case.",
+          "turns": [
+            [
+              "Customer",
+              "Could you grind this gift bag normally? I don't know much about their coffee maker."
+            ],
+            [
+              "Barista",
+              "Which brewer does the recipient use? We need that detail before choosing a grind size."
+            ],
+            [
+              "Customer",
+              "I'm not sure. I only know they make coffee at home every morning."
+            ],
+            [
+              "Barista",
+              "Then we can leave the beans whole while you check, since grinding can't be undone."
+            ],
+            [
+              "Customer",
+              "That sounds better. Does the hazelnut note mean hazelnut flavoring has been added?"
+            ],
+            [
+              "Barista",
+              "It's a tasting description, not an ingredient declaration. We can check the actual product information."
+            ],
+            [
+              "Customer",
+              "Please do. I don't want to describe the gift incorrectly when I hand it over."
+            ],
+            [
+              "Barista",
+              "I'll show you the package information and keep any ingredient question separate from the flavor notes."
+            ],
+            [
+              "Customer",
+              "Thanks. I'll buy the whole-bean bag and ask about their brewer before requesting grinding."
+            ],
+            [
+              "Barista",
+              "Certainly. I'll leave the package unchanged and confirm the whole-bean item at the till."
+            ]
+          ]
+        },
+        {
+          "title": "A roast date is not a purchase date",
+          "setting": "A customer compares a bag's roast date with the purchase date and asks about its printed storage guidance. No universal freshness guarantee is established.",
+          "turns": [
+            [
+              "Customer",
+              "This sticker has a roast date, and my receipt will have today's date. Which describes the coffee?"
+            ],
+            [
+              "Barista",
+              "The roast date identifies when it was roasted. Today's receipt date records your purchase."
+            ],
+            [
+              "Customer",
+              "I thought the older date meant the shop had already sold and returned this bag."
+            ],
+            [
+              "Barista",
+              "No, that date alone doesn't indicate a return. It refers to the roasting event."
+            ],
+            [
+              "Customer",
+              "Where are the storage instructions on the bag?"
+            ],
+            [
+              "Barista",
+              "They're printed here on the back, below the label."
+            ],
+            [
+              "Customer",
+              "Please also confirm this is the whole-bean version, because the shelf had ground bags nearby."
+            ],
+            [
+              "Barista",
+              "The package says whole bean. We haven't ground this bag or changed its contents."
+            ],
+            [
+              "Customer",
+              "That's the one I want. I'll keep the dates separate when explaining it at home."
+            ],
+            [
+              "Barista",
+              "I'll ring up the whole-bean bag, and your receipt will show today's purchase date."
+            ]
+          ]
+        },
+        {
+          "title": "A description, not an ingredient promise",
+          "setting": "A barista explains a coffee's chocolate tasting note.",
+          "turns": [
+            [
+              "Customer",
+              "The label says chocolate notes. Does that mean this bag contains chocolate or milk?"
+            ],
+            [
+              "Barista",
+              "Those words describe perceived flavor. They don't by themselves tell us the complete ingredient information."
+            ],
+            [
+              "Customer",
+              "I'm asking because I need to check ingredients, not because I want a sweeter taste."
+            ],
+            [
+              "Barista",
+              "Then let's consult the product information for that question rather than interpret the tasting note."
+            ],
+            [
+              "Customer",
+              "Can you also ask your lead about any information the label doesn't make clear?"
+            ],
+            [
+              "Barista",
+              "Certainly. I'll leave that question open until they can confirm what information we have."
+            ],
+            [
+              "Customer",
+              "Would choosing the bag with citrus notes avoid the need for that ingredient check?"
+            ],
+            [
+              "Barista",
+              "No, a different flavor description wouldn't settle it. We'd still need the relevant product details."
+            ],
+            [
+              "Customer",
+              "I'll wait for those details before choosing either bag, then. Please don't grind one yet."
+            ],
+            [
+              "Barista",
+              "Of course. Both bags can stay as they are while we clarify your question."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Grinding request after checkout",
+        "brief": "A customer bought whole beans but now requests grinding. They say 'for a press' but mean either a French press or an espresso device. The bag has not been opened by staff.",
+        "role_a": "Barista: ask which brewer they actually own.",
+        "role_b": "Customer: you mean a French press with a plunger; explain when asked.",
+        "opening_line": "When you say press, which type of brewer do you mean?",
+        "complication": "The customer calls both devices a coffee machine.",
+        "success_checks": [
+          "Obtain a concrete brewer description.",
+          "Repeat the understood equipment type.",
+          "Check the cafe's grinding option before changing the product."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The upcharge remains in the combo",
+          "setting": "The fictional combo prices from the case.",
+          "turns": [
+            [
+              "Customer",
+              "Your sign says six dollars for a latte and pastry. Does that include oat drink?"
+            ],
+            [
+              "Barista",
+              "The combo includes the standard latte; the fifty-cent oat upcharge still applies to that choice."
+            ],
+            [
+              "Customer",
+              "So my oat latte with this pastry would be six fifty altogether for those items?"
+            ],
+            [
+              "Barista",
+              "Yes. The same selected items bought separately would total seven fifty on our menu."
+            ],
+            [
+              "Customer",
+              "Then the combo saves a dollar, not a dollar and fifty cents, correct?"
+            ],
+            [
+              "Barista",
+              "Correct. Both versions include the same oat change, so the saving is one dollar."
+            ],
+            [
+              "Customer",
+              "I'll choose the combo. Please keep the drink size that qualifies for this offer."
+            ],
+            [
+              "Barista",
+              "Certainly. That's the listed small latte size; your oat choice stays on the ticket."
+            ],
+            [
+              "Customer",
+              "Thank you for explaining the upcharge before payment. I didn't see the small-print condition."
+            ],
+            [
+              "Barista",
+              "I'll enter the six-fifty combo and show you the item details before you pay."
+            ]
+          ]
+        },
+        {
+          "title": "A sold-out pastry is a choice point",
+          "setting": "A counter worker asks before substituting a pastry.",
+          "turns": [
+            [
+              "Counter worker",
+              "The cinnamon pastry has just sold out. We still have plain pastries at the same price."
+            ],
+            [
+              "Customer",
+              "I ordered cinnamon because of the flavor. Please don't just put a plain one in the bag."
+            ],
+            [
+              "Counter worker",
+              "Of course. Would you like the plain alternative, another listed item, or no pastry today?"
+            ],
+            [
+              "Customer",
+              "No pastry, please. Can I keep the coffee order without the combo?"
+            ],
+            [
+              "Counter worker",
+              "Yes. I'll change it to the standalone coffee price and explain the revised total."
+            ],
+            [
+              "Customer",
+              "Does that mean the coffee still costs its normal four dollars rather than the combo price?"
+            ],
+            [
+              "Counter worker",
+              "Correct. The standard coffee alone is four dollars, with no pastry included in that amount."
+            ],
+            [
+              "Customer",
+              "That works. Please confirm the pastry has been removed before I make the payment."
+            ],
+            [
+              "Counter worker",
+              "The ticket now shows one standard coffee only. There's no pastry or combo charge."
+            ],
+            [
+              "Customer",
+              "Thank you. I wanted to choose, even though the alternative pastry cost the same."
+            ]
+          ]
+        },
+        {
+          "title": "A reward has a specific condition",
+          "setting": "A fictional reward covers a standard filter coffee, not all drinks.",
+          "turns": [
+            [
+              "Customer",
+              "My account has a loyalty reward for a free drink. Does it cover a large specialty latte?"
+            ],
+            [
+              "Counter worker",
+              "The displayed reward here covers a standard filter coffee; it doesn't list the specialty latte."
+            ],
+            [
+              "Customer",
+              "I thought free drink meant any drink. Can you show me the condition on the offer?"
+            ],
+            [
+              "Counter worker",
+              "Certainly. This line specifies the filter coffee and eligible size, rather than the whole menu."
+            ],
+            [
+              "Customer",
+              "Could I pay only the difference for the latte, or is that not stated?"
+            ],
+            [
+              "Counter worker",
+              "That option isn't stated here. I'll ask the lead instead of inventing an exchange value."
+            ],
+            [
+              "Customer",
+              "Please do. Don't use the reward while we're checking, because I may save it."
+            ],
+            [
+              "Counter worker",
+              "Understood. It remains unused while the lead confirms whether any alternative arrangement is available."
+            ],
+            [
+              "Customer",
+              "If there isn't one, I'll buy the latte normally and keep the reward for later."
+            ],
+            [
+              "Counter worker",
+              "I'll confirm the lead's answer with you before choosing either option at the till."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A larger cup falls outside an offer",
+        "brief": "The fictional $5 combo includes a small filter coffee and a plain pastry. A large coffee costs $4 separately; the pastry costs $3. No large-drink combo is listed.",
+        "role_a": "Counter worker: explain the actual included size.",
+        "role_b": "Customer: decide between the small combo and $7 separate items.",
+        "opening_line": "The five-dollar combo uses the small coffee; would that size work for you?",
+        "complication": "The customer assumes the large upgrade is free.",
+        "success_checks": [
+          "Name the included size.",
+          "State both complete choices.",
+          "Get a choice before payment."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "One tea, one stockout, one review",
+          "setting": "The 2:00 handover from the case.",
+          "turns": [
+            [
+              "Outgoing worker",
+              "Ticket one-oh-eight has its coffee, but the tea is still waiting to be prepared."
+            ],
+            [
+              "Incoming worker",
+              "I'll take the tea. Is that the only unfinished drink on the current order queue?"
+            ],
+            [
+              "Outgoing worker",
+              "Yes. Large takeaway lids are also out, although small lids are still available here."
+            ],
+            [
+              "Incoming worker",
+              "I'll ask the lead about the large-lid stockout before offering a different packaging arrangement."
+            ],
+            [
+              "Outgoing worker",
+              "Thanks. I've counted the till, but the reconciliation with the sales record is pending."
+            ],
+            [
+              "Incoming worker",
+              "Are you keeping that review, or do you need me to take it over?"
+            ],
+            [
+              "Outgoing worker",
+              "I'll stay with it until the lead accepts the follow-up. You have the tea and lid query."
+            ],
+            [
+              "Incoming worker",
+              "Understood. I won't call the till signed off simply because the count has been completed."
+            ],
+            [
+              "Outgoing worker",
+              "Please let the customer know the tea is outstanding, so they don't leave with only coffee."
+            ],
+            [
+              "Incoming worker",
+              "I will. I'll check their full order at pickup and ask about the lids next."
+            ]
+          ]
+        },
+        {
+          "title": "A float is not today's takings",
+          "setting": "A new counter worker clarifies the till count.",
+          "turns": [
+            [
+              "Counter worker",
+              "The drawer count includes the cash float. Does the whole amount represent today's cash sales?"
+            ],
+            [
+              "Lead",
+              "No. The float is starting change cash, so keep it distinct from the transaction record."
+            ],
+            [
+              "Counter worker",
+              "I haven't done the reconciliation yet. I was about to report the whole drawer as takings."
+            ],
+            [
+              "Lead",
+              "Please describe it as the counted drawer amount until we've compared the appropriate records."
+            ],
+            [
+              "Counter worker",
+              "There's also a difference between my count and the figure on this summary."
+            ],
+            [
+              "Lead",
+              "Report the two figures without deciding whether it means a missed sale or another issue."
+            ],
+            [
+              "Counter worker",
+              "I'll bring you the count and the summary, with the cause of the difference unconfirmed."
+            ],
+            [
+              "Lead",
+              "Good. Don't assign blame or invent an adjustment to make the numbers appear to match."
+            ],
+            [
+              "Counter worker",
+              "Will you take the reconciliation review while I return to the counter orders?"
+            ],
+            [
+              "Lead",
+              "Yes, I've accepted that review. I'll ask you for any clarification about your count."
+            ]
+          ]
+        },
+        {
+          "title": "Which cup size is actually missing?",
+          "setting": "A barista clarifies a supply shortage before updating the counter.",
+          "turns": [
+            [
+              "Barista",
+              "You said we're out of cups. Which size and service type does that affect?"
+            ],
+            [
+              "Counter colleague",
+              "Large takeaway cups only. The small takeaway cups and dine-in mugs are still stocked."
+            ],
+            [
+              "Barista",
+              "Thanks. I'll tell the counter the exact size rather than describe every drink as unavailable."
+            ],
+            [
+              "Counter colleague",
+              "Please ask the lead about the available service choices before promising a substitute container."
+            ],
+            [
+              "Barista",
+              "I will. A customer may prefer a different size, but we should ask them first."
+            ],
+            [
+              "Counter colleague",
+              "Exactly. Their choice could change the order and price, so don't silently swap the size."
+            ],
+            [
+              "Barista",
+              "I'll check the permitted options and explain them before the customer decides whether to order."
+            ],
+            [
+              "Counter colleague",
+              "Meanwhile, I'll count the small cups so our update includes the stock we actually have."
+            ],
+            [
+              "Barista",
+              "Good. Please report that count when it's complete, not an estimate from looking at the sleeve."
+            ],
+            [
+              "Counter colleague",
+              "I'll do that. The confirmed shortage remains large takeaway cups, with the small-cup count pending."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A pickup has no completion mark",
+        "brief": "Ticket 120 shows two coffees but no collection status. The cups aren't on the shelf. The outgoing worker didn't witness pickup; the lead can check the order history.",
+        "role_a": "Outgoing worker: report what you know and don't know.",
+        "role_b": "Incoming worker: accept the status check without marking collected from appearance alone.",
+        "opening_line": "I can't confirm whether ticket 120 was collected.",
+        "complication": "A colleague assumes an empty shelf proves collection.",
+        "success_checks": [
+          "Separate shelf observation from pickup confirmation.",
+          "Identify ticket 120.",
+          "Assign the check and preserve uncertain status."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Two drinks, one speaker",
+      "setting": "A barista separates specifications when one person orders two similar drinks.",
+      "dialogue": [
+        [
+          "Barista",
+          "You mentioned two lattes, one different from the other. Let's check each drink separately."
+        ],
+        [
+          "Customer",
+          "The first is a small hot latte with whole milk, for me to drink here."
+        ],
+        [
+          "Barista",
+          "Thanks. Is that first latte standard coffee, or would you like the decaf option today?"
+        ],
+        [
+          "Customer",
+          "Standard coffee. The second one is decaf, and it needs to be iced for my colleague."
+        ],
+        [
+          "Barista",
+          "What size would your colleague like, and should that second drink also use whole milk?"
+        ],
+        [
+          "Customer",
+          "A large, with oat drink instead. They're taking it away rather than staying in the cafe."
+        ],
+        [
+          "Barista",
+          "I'll attach the oat choice to the large iced decaf only, not to your small hot latte."
+        ],
+        [
+          "Customer",
+          "That's right. Can you put separate names on them so we don't mix them up?"
+        ],
+        [
+          "Barista",
+          "Yes. What names should I use for your drink and for your colleague's takeaway order?"
+        ],
+        [
+          "Customer",
+          "Mine is Rowan, and theirs is Lee. Please don't add any syrups to either drink."
+        ],
+        [
+          "Barista",
+          "Rowan: small hot standard latte, whole milk. Lee: large iced decaf latte, oat drink; neither has syrup."
+        ],
+        [
+          "Customer",
+          "Exactly. Mine is for here and Lee's is takeaway. Those final details match what we want."
+        ]
+      ],
+      "notes": [
+        "'Attach the choice to' links a modifier to one drink, preventing it from spreading to both.",
+        "'Neither' applies the no-syrup instruction to both drinks without repeating the full specifications."
+      ]
+    },
+    {
+      "title": "The guest uses a drink name from another cafe",
+      "setting": "A barista checks expectations because drink names and recipes differ between businesses.",
+      "dialogue": [
+        [
+          "Customer",
+          "I usually order a flat white elsewhere. Will yours come in exactly the same cup size?"
+        ],
+        [
+          "Barista",
+          "Not necessarily. Our menu lists this size and recipe; I can explain them before you decide."
+        ],
+        [
+          "Customer",
+          "At the other place it's quite small, with little foam. That's what I'm hoping to find here."
+        ],
+        [
+          "Barista",
+          "Our listed version is small, but I shouldn't assume its texture or coffee balance matches theirs exactly."
+        ],
+        [
+          "Customer",
+          "Could you compare it with your latte using the details your own menu actually gives?"
+        ],
+        [
+          "Barista",
+          "Yes. Our latte option is larger and milkier; the flat white description emphasizes a smaller, coffee-forward drink."
+        ],
+        [
+          "Customer",
+          "Coffee-forward means I should notice the coffee flavor more, rather than that you guarantee extra caffeine?"
+        ],
+        [
+          "Barista",
+          "That's the intended flavor description. It doesn't provide a measured caffeine amount or guarantee how it will taste."
+        ],
+        [
+          "Customer",
+          "Then the smaller option sounds closer. Please use your normal recipe rather than trying to copy theirs."
+        ],
+        [
+          "Barista",
+          "Of course. Would you like the whole milk shown in that recipe, or a listed alternative?"
+        ],
+        [
+          "Customer",
+          "Whole milk is fine. I'm ordering based on this menu now, not assuming both cafes are identical."
+        ],
+        [
+          "Barista",
+          "I'll enter one small flat white with whole milk and repeat the price before we take payment."
+        ]
+      ],
+      "notes": [
+        "'Coffee-forward' describes flavor emphasis; it isn't a numeric caffeine claim.",
+        "'Not necessarily' rejects an unsupported equivalence without saying the two drinks must be completely different."
+      ]
+    },
+    {
+      "title": "A colleague's reassurance needs correcting",
+      "setting": "A barista repairs an earlier overstatement before the customer orders.",
+      "dialogue": [
+        [
+          "Barista",
+          "I need to correct something I said earlier: choosing almond drink doesn't let me guarantee this drink is dairy-free."
+        ],
+        [
+          "Customer",
+          "Thank you for coming back. I was about to order based on that assurance."
+        ],
+        [
+          "Barista",
+          "I should have separated the milk choice from the other ingredients and the equipment we use."
+        ],
+        [
+          "Customer",
+          "My concern is a milk allergy, not simply preferring one flavor. Can someone explain the actual arrangements?"
+        ],
+        [
+          "Barista",
+          "Yes. Our lead can check the product information and discuss shared equipment before you choose."
+        ],
+        [
+          "Customer",
+          "Please leave the drink unmade for now. I don't want a remake of something already prepared."
+        ],
+        [
+          "Barista",
+          "I will. The order is still pending, and I haven't sent it to the bar."
+        ],
+        [
+          "Customer",
+          "Could the lead also check the chocolate topping? It isn't obvious what that contains."
+        ],
+        [
+          "Barista",
+          "I'll pass on that specific topping question as well as your reported milk allergy."
+        ],
+        [
+          "Customer",
+          "And please don't substitute another plant drink without asking me. I haven't chosen an alternative yet."
+        ],
+        [
+          "Barista",
+          "Understood. No replacement drink or ingredient is selected. I'll bring the lead over to discuss the details."
+        ],
+        [
+          "Customer",
+          "That's helpful. I can decide after that conversation instead of relying on the earlier general reassurance."
+        ]
+      ],
+      "notes": [
+        "'I need to correct' directly repairs the speaker's own earlier statement.",
+        "'Pending' means the drink hasn't been confirmed for production, not that a remake has been selected."
+      ]
+    },
+    {
+      "title": "A collection estimate changes",
+      "setting": "A barista updates a mobile-order customer whose original estimate no longer fits the queue.",
+      "dialogue": [
+        [
+          "Customer",
+          "The app estimated collection at ten past, and it's fifteen past now. Has my order been missed?"
+        ],
+        [
+          "Barista",
+          "I'll check the full order number. The displayed estimate isn't the same as a ready notification."
+        ],
+        [
+          "Customer",
+          "It's order ninety-one. I need two coffees before my bus, which leaves in ten minutes."
+        ],
+        [
+          "Barista",
+          "The order is received, but neither drink is complete yet. The bar currently estimates another six minutes."
+        ],
+        [
+          "Customer",
+          "That leaves very little time. Are you promising they'll be ready within those six minutes?"
+        ],
+        [
+          "Barista",
+          "No, that's the current estimate. I can ask the lead about your options if the wait won't work."
+        ],
+        [
+          "Customer",
+          "Please ask about canceling, but don't cancel it without checking back with me first."
+        ],
+        [
+          "Barista",
+          "Understood. I'll request the options, keep the order status clear, and return before making any change."
+        ],
+        [
+          "Customer",
+          "Could you tell the bar I'm asking about cancellation so they don't get a contradictory message?"
+        ],
+        [
+          "Barista",
+          "The lead confirms neither drink has started, so we can cancel now. Would you prefer that, or wait?"
+        ],
+        [
+          "Customer",
+          "I'd like to cancel, please. I haven't got time to wait for the drinks."
+        ],
+        [
+          "Barista",
+          "I'll confirm the cancellation with the lead and ask them to explain the payment outcome."
+        ]
+      ],
+      "notes": [
+        "'Considering cancellation' differs from authorizing it; the customer's later statement supplies the choice.",
+        "'Current estimate' provides useful timing without making a guaranteed completion claim."
+      ]
+    },
+    {
+      "title": "A remake shouldn't become a second sale",
+      "setting": "A counter worker checks an apparent duplicate charge associated with a remake.",
+      "dialogue": [
+        [
+          "Customer",
+          "I paid for one latte and received a remake. Why does this receipt show two drinks?"
+        ],
+        [
+          "Counter worker",
+          "Let me compare the receipt with the order record before explaining that second line."
+        ],
+        [
+          "Customer",
+          "The first cup had the wrong milk choice. Your colleague said they would replace it."
+        ],
+        [
+          "Counter worker",
+          "I can see the original drink and another entry. I need the lead to confirm how it was recorded."
+        ],
+        [
+          "Customer",
+          "Please don't process anything else on my payment card while you're checking that entry."
+        ],
+        [
+          "Counter worker",
+          "I won't request another payment. I'll show the lead the receipt and your explanation."
+        ],
+        [
+          "Customer",
+          "Does the word remake itself prove the second charge has already been removed?"
+        ],
+        [
+          "Counter worker",
+          "No, it describes the replacement drink. The bill record needs a separate check."
+        ],
+        [
+          "Customer",
+          "Could you ask whether the second entry was accidental and request a corrected receipt?"
+        ],
+        [
+          "Counter worker",
+          "Yes, the lead has approved the correction. I'll provide the updated receipt once it's recorded."
+        ],
+        [
+          "Customer",
+          "Thank you. The replacement drink was right; the remaining problem was only the duplicate charge."
+        ],
+        [
+          "Counter worker",
+          "I'll check the receipt shows one drink charge and ask the lead to explain any payment adjustment."
+        ]
+      ],
+      "notes": [
+        "'Associated with' doesn't establish why an entry appeared; the record still needs checking.",
+        "'Remaining problem' narrows the issue after the drink itself has been corrected."
+      ]
+    },
+    {
+      "title": "Choosing between two bags for someone else",
+      "setting": "A barista helps compare beans without guessing the recipient's preferences.",
+      "dialogue": [
+        [
+          "Customer",
+          "I need a coffee gift, but the two bags have different tasting notes and roast descriptions."
+        ],
+        [
+          "Barista",
+          "Do you know what the recipient usually enjoys, or would you prefer to compare the printed descriptions first?"
+        ],
+        [
+          "Customer",
+          "They mentioned liking chocolate-like flavors. I don't know whether they prefer a particular roast level."
+        ],
+        [
+          "Barista",
+          "This bag lists chocolate notes, while the other lists citrus notes. Those are descriptions, not promised personal reactions."
+        ],
+        [
+          "Customer",
+          "Could you guarantee they'll like the first bag because they used the same flavor word?"
+        ],
+        [
+          "Barista",
+          "I can't guarantee their preference, but that description gives you a relevant reason to consider it."
+        ],
+        [
+          "Customer",
+          "Then I'll choose the first bag. Should I have it ground before giving it to them?"
+        ],
+        [
+          "Barista",
+          "Do you know their brewer? Without that detail, leaving the beans whole preserves their later choice."
+        ],
+        [
+          "Customer",
+          "They have a grinder, so whole beans should make sense. Please keep the package intact."
+        ],
+        [
+          "Barista",
+          "Certainly. Would you like to see the roast date and price before we complete the purchase?"
+        ],
+        [
+          "Customer",
+          "Yes, please. I want to include the product details with the gift rather than invent a description."
+        ],
+        [
+          "Barista",
+          "Here they are. I'll sell the whole-bean bag as labeled, with no grinding or added flavoring requested."
+        ]
+      ],
+      "notes": [
+        "'Relevant reason to consider' supports a choice without guaranteeing someone else's taste.",
+        "'As labeled' keeps the sale tied to the actual product rather than an invented customized version."
+      ]
+    },
+    {
+      "title": "The display price and order price differ",
+      "setting": "A customer queries a drink price while the counter worker checks the selected modifiers.",
+      "dialogue": [
+        [
+          "Customer",
+          "The menu says four dollars, but the screen shows five fifty. Can you explain the difference?"
+        ],
+        [
+          "Counter worker",
+          "Let's compare the base drink with the changes on your ticket before you pay."
+        ],
+        [
+          "Customer",
+          "I asked for oat drink and an extra shot. I didn't realize both had separate prices."
+        ],
+        [
+          "Counter worker",
+          "The oat change adds fifty cents, and the extra shot adds one dollar to the four-dollar drink."
+        ],
+        [
+          "Customer",
+          "That explains five fifty. Could I remove the extra shot but keep the oat choice?"
+        ],
+        [
+          "Counter worker",
+          "Yes, because the drink hasn't been sent to the bar. That revised drink would cost four fifty."
+        ],
+        [
+          "Customer",
+          "Please make that change. I want the same cup size, not a smaller drink."
+        ],
+        [
+          "Counter worker",
+          "I'll remove only the extra-shot modifier. The size and oat choice remain exactly as you requested."
+        ],
+        [
+          "Customer",
+          "Does that also change the coffee to decaf, or are those separate choices?"
+        ],
+        [
+          "Counter worker",
+          "They're separate. Your ticket still says standard coffee; removing an extra shot doesn't select decaf."
+        ],
+        [
+          "Customer",
+          "Then the revised order is right. Let me see the four-fifty total before paying."
+        ],
+        [
+          "Counter worker",
+          "Here it is: the four-dollar drink plus the fifty-cent oat upcharge, with no extra-shot charge."
+        ]
+      ],
+      "notes": [
+        "'Base drink' means the starting menu item before selected changes.",
+        "'Remove only' limits the correction so unrelated order choices are preserved."
+      ]
+    },
+    {
+      "title": "The closing worker inherits a customer query",
+      "setting": "A departing barista transfers an unfinished receipt query to the incoming counter worker.",
+      "dialogue": [
+        [
+          "Outgoing barista",
+          "Before I leave, one customer is waiting for an itemized receipt from an earlier mobile order."
+        ],
+        [
+          "Incoming worker",
+          "Do you have the order number, or should I ask them to explain everything again?"
+        ],
+        [
+          "Outgoing barista",
+          "It's one-forty-six, under Avery. They received their drinks and paid; only the receipt query remains."
+        ],
+        [
+          "Incoming worker",
+          "Thanks. Have you already printed the itemized version, or is that still the action needed?"
+        ],
+        [
+          "Outgoing barista",
+          "I found the completed transaction but haven't printed the itemized receipt. The lead is checking that option."
+        ],
+        [
+          "Incoming worker",
+          "I'll take the follow-up with the lead. I won't treat this as a new unpaid drink order."
+        ],
+        [
+          "Outgoing barista",
+          "Exactly. The customer doesn't want another payment or changes to the original drink specifications."
+        ],
+        [
+          "Incoming worker",
+          "I'll tell them I've taken over and ask the lead whether the requested receipt is available."
+        ],
+        [
+          "Outgoing barista",
+          "Please also explain if only a payment receipt is available; don't promise item detail we can't provide."
+        ],
+        [
+          "Incoming worker",
+          "Understood. Completed order, completed payment, itemized receipt still unresolved. Is there another issue attached to this customer?"
+        ],
+        [
+          "Outgoing barista",
+          "No other issue. The till review is separate and remains with the lead, not this customer."
+        ],
+        [
+          "Incoming worker",
+          "I'll keep the two matters distinct and return to Avery with the lead's answer about the receipt."
+        ]
+      ],
+      "notes": [
+        "'Only the receipt query remains' narrows the outstanding task without reopening the sale.",
+        "'Taken over' explicitly accepts the follow-up, rather than merely acknowledging that a note exists."
+      ]
+    }
+  ]
+}

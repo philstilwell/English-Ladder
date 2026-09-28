@@ -5,14 +5,15 @@ import html
 import json
 import re
 from pathlib import Path
+from work_occupations import OCCUPATION_SLUGS, load_occupation, source_paths
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / 'content/work/dialogues'
-EDITION = '2026-09-06'
+EDITION = '2026-09-28'
 
 
 def dialogue_hash():
-    paths = sorted(SOURCE.glob('*.txt')) + sorted(SOURCE.glob('*.json'))
+    paths = sorted(SOURCE.glob('*.txt')) + sorted(SOURCE.glob('*.json')) + source_paths()
     return hashlib.sha256(b''.join(p.name.encode() + p.read_bytes() for p in paths)).hexdigest()
 
 
@@ -37,6 +38,8 @@ def load_dialogues():
         for d in scripts:
             d['dialogue'] = d.get('dialogue', d.get('turns'))
             groups.setdefault(slug, []).append(d)
+    for slug in OCCUPATION_SLUGS:
+        groups[slug] = load_occupation(slug)['dialogues']
     validate_dialogues(groups)
     return groups
 
@@ -44,6 +47,7 @@ def load_dialogues():
 def validate_dialogues(groups):
     titles, speeches = set(), set()
     inventory = {t['slug'] for t in json.loads((ROOT/'content/work/courses.json').read_text())}
+    inventory.update(OCCUPATION_SLUGS)
     assert set(groups) == inventory, sorted(inventory-set(groups))
     for slug, scripts in groups.items():
         assert len(scripts) >= 8, (slug, len(scripts))
@@ -92,11 +96,11 @@ def gallery(t):
     for i,d in enumerate(scripts,1):
         roles=list(dict.fromkeys(s for s,_ in d['dialogue']))
         story += [p(f'FULL DIALOGUE {i:02d} / {len(d["dialogue"])} SPEAKING TURNS', 'kicker'),
-                  heading(d['title'], f'dialogue-{i}'), p(d['setting']),
+                  heading(d['title'], f'dialogue-{i}'), p(d['setting'], 'small' if t.get('is_occupation') else 'body'),
                   p('Roles: ' + ' / '.join(roles), 'small')]
         # Speaker and speech stay together; each turn can flow independently across pages.
         for role,speech in d['dialogue']:
-            story.append(Paragraph('<b>'+html.escape(role)+':</b> '+html.escape(speech),STYLES['body']))
+            story.append(Paragraph('<b>'+html.escape(role)+':</b> '+html.escape(speech),STYLES['dialogue' if t.get('is_occupation') else 'body']))
         story += [p('Notice the professional language', 'h2')]
         text=' '.join(v for _,v in d['dialogue'])
         terms=[(term,meaning) for term,meaning in vocab.items()
@@ -112,10 +116,13 @@ def gallery(t):
             # This directs attention to actual utterances, with no fabricated terminology.
             question=next((v for _,v in d['dialogue'] if '?' in v),d['dialogue'][0][1])
             story.append(p('Discuss this wording: "'+question+'" What does it help the other professional clarify?', 'small'))
+        if t.get('is_occupation'):
+            story += [Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", f"dialogue-{i}", True), quote=True)}" color="#174c69">Rehearse this dialogue with an AI partner</link>', STYLES['small']), PageBreak()]
+            continue
         story += [Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", f"dialogue-{i}", True), quote=True)}" color="#174c69">Rehearse and extend with AI</link>', STYLES['h2']),
                   p('Explain the issue and the agreed next step without reading. Identify any point still awaiting evidence, agreement, or approval. Then replay the exchange with a changed constraint and a new ending.', 'small'),
-                  p('Observer: note one natural professional expression and one place where the follow-up made the meaning clearer.', 'small'),
-                  WritingLines(1,20),PageBreak()]
+                  p('Observer: name one natural professional expression and one place where the follow-up made the meaning clearer.', 'small'),
+                  *([] if t.get('is_occupation') else [WritingLines(1,20)]), PageBreak()]
     story += [heading('Eight more situations to make your own', 'roleplay-cases'),
               p('The following cases are open role plays. They give you facts, contrasting roles, useful expressions, and a short model response. Use what you learned from the complete dialogues to create a longer exchange.'),
               p('Preparation: two minutes. Conversation: three to five minutes. Feedback: one minute. Switch roles and repeat with the second-round challenge.'),PageBreak()]

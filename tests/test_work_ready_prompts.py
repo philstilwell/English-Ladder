@@ -33,7 +33,7 @@ class ReadyPromptTests(unittest.TestCase):
                         self.assertIn(f'{role}: {speech}', text)
                     self.assertIn(track['scope_note'], text)
                     count += 1
-        self.assertEqual(2048, count)
+        self.assertEqual(3248, count)
 
     def test_downloads_contain_all_eight_tasks_for_each_lesson_and_both_dialogue_tasks(self):
         total = 0
@@ -49,7 +49,7 @@ class ReadyPromptTests(unittest.TestCase):
                 self.assertIn(track['title'], block)
                 self.assertIn(track['scope_note'], block)
                 total += 1
-        self.assertEqual(3360, total)
+        self.assertEqual(5360, total)
 
 
 if __name__ == '__main__':

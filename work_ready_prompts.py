@@ -21,11 +21,12 @@ def cards(data, context, modes):
     result = []
     for mode in modes:
         key = f'finished-{context}-{mode}'
-        result.append(f'''<details class="finished-prompt"><summary>{html.escape(MODE_BY_ID[mode]['title'])} — complete prompt</summary>
+        title = next(m['title'] for m in data['modes'] if m['id'] == mode)
+        result.append(f'''<details class="finished-prompt"><summary>{html.escape(title)} — complete prompt</summary>
 <div class="finished-prompt-body"><p>Copy the full text below into your preferred AI. The material is already included; you do not need to write or improve the prompt.</p>
 <button type="button" class="work-button" data-copy-finished="{key}" hidden>Copy this complete prompt</button>
 <p data-finished-status="{key}" role="status" aria-live="polite"></p>
-<pre id="{key}" tabindex="0" aria-label="Complete {html.escape(MODE_BY_ID[mode]['title'])} prompt">{html.escape(finished_prompt(data,mode,context))}</pre></div></details>''')
+<pre id="{key}" tabindex="0" aria-label="Complete {html.escape(title)} prompt">{html.escape(finished_prompt(data,mode,context))}</pre></div></details>''')
     return ''.join(result)
 
 
@@ -52,7 +53,8 @@ def write_prompt_packs(tracks):
         for c in data['contexts']:
             modes=tuple(MODE_BY_ID) if c['kind']=='lesson' else DIALOGUE_MODES
             for mode in modes:
-                blocks += [c['title']+' | '+MODE_BY_ID[mode]['title'],
+                title = next(m['title'] for m in data['modes'] if m['id'] == mode)
+                blocks += [c['title']+' | '+title,
                            'START PROMPT\n'+finished_prompt(data,mode,c['id'])+'\nEND PROMPT']
                 count+=1
         (folder/(t['slug']+'.txt')).write_text('\n\n'+'\n\n'.join(blocks)+'\n')

@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "carpentry-remodeling",
+    "title": "Carpentry & Remodeling English",
+    "summary": "Clarify joinery dimensions and details, compare timber and finishes, discuss scope changes, coordinate occupied sites, and hand over specific outstanding items.",
+    "roles": "Carpenters, remodelers, finish carpenters, joinery installers, and carpentry crew leads",
+    "scope_note": "Original fictional language practice, not carpentry instruction, structural assessment, legal advice, or a statement of code or permit requirements. All dimensions, incidents, quotations, products, and schedules in exercises are invented. Structural decisions, hazardous materials, tool use, installation methods, and site safety require qualified people and project-specific procedures. Sources establish occupational context, not endorsement of these cases.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Carpenters",
+        "url": "https://www.bls.gov/ooh/construction-and-extraction/carpenters.htm"
+      },
+      {
+        "title": "O*NET OnLine: Carpenters (47-2031.00), U.S. Department of Labor-sponsored occupational profile",
+        "url": "https://www.onetonline.org/link/summary/47-2031.00"
+      }
+    ],
+    "category": "Industry & infrastructure",
+    "modules": [
+      {
+        "title": "Confirming openings and measurement references",
+        "terms": [
+          "rough opening",
+          "finished opening",
+          "jamb",
+          "datum"
+        ],
+        "collocations": [
+          "verify the opening: confirm which opening and measurement basis are meant",
+          "measure between finished faces: state the surfaces that bound a dimension",
+          "allow for the jamb: include the frame in the dimensional discussion",
+          "establish a datum: agree the reference used for dimensions"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "The hall drawing labels a door opening 900 millimeters. The client assumes this is clear passage width. The note does not say rough or finished opening; no door has been ordered. The designer can clarify the reference.",
+          "model": "The drawing gives 900 millimeters, but it does not identify the measurement surfaces. Do you need that as the clear passage width, or were you referring to the framed opening? I will ask the designer to confirm the datum and jamb allowance before we treat this dimension as an order size."
+        },
+        "workshop": {
+          "title": "Ask what the dimension describes",
+          "goal": "Distinguish a client's usable-space requirement from a drawing dimension.",
+          "explanation": "An opening dimension needs units and reference surfaces. Rough opening, finished opening, door-leaf width, and usable clear passage are different quantities. Even a finished opening measurement may not establish passage with the door and hardware present. Ask which requirement matters before discussing an order size.",
+          "frames": [
+            "Is ___ measured between ___ or ___?",
+            "When you say clear width, do you mean ___?",
+            "We have the dimension, but still need ___."
+          ],
+          "before": "The door is nine hundred, so you have nine hundred clear.",
+          "after": "The note says 900 millimeters; it does not establish the clear passage width.",
+          "reason": "The revision preserves the number while avoiding an unsupported promise about usable space.",
+          "questions": [
+            {
+              "prompt": "Client: I need 900 millimeters for a cabinet to pass with the door open. Which dimension matters?\nCarpenter: We must confirm the ____; the finished opening alone may not establish it.",
+              "options": [
+                "usable clear passage",
+                "rough opening",
+                "jamb thickness",
+                "door leaf width"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This is the unobstructed space available with the door in its relevant position.",
+                "The rough opening is the framed space, not the unobstructed passage through a completed doorway.",
+                "Jamb thickness describes part of the frame, not the remaining usable passage.",
+                "Door leaf width describes the door panel, not necessarily the unobstructed passage when open."
+              ]
+            },
+            {
+              "prompt": "Designer: What is missing from the dimension?\nCarpenter: We need to know ____ measured from.",
+              "options": [
+                "which reference line it is",
+                "which reference line is it",
+                "which it reference line is",
+                "which reference line does it"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The embedded question uses subject before verb: it is.",
+                "Direct-question word order does not follow 'know' here.",
+                "The noun phrase 'reference line' must stay together.",
+                "'Does' does not form this passive phrase; use 'it is measured'."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You need the usable passage clarified and have not chosen a door unit.",
+          "challenge": "The designer confirms a rough opening, but the client still asks whether a large cabinet will fit. Separate the two measurements."
+        }
+      },
+      {
+        "title": "Selecting timber, trim, and visible finishes",
+        "terms": [
+          "grain",
+          "veneer",
+          "profile",
+          "finish sample"
+        ],
+        "collocations": [
+          "match the existing profile: compare trim shapes, not just overall width",
+          "approve a finish sample: accept a particular reference for appearance",
+          "follow the grain: describe the visible direction of wood fibers",
+          "compare like for like: use the same dimensions and finish conditions"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "For a fictional study remodel, sample A is solid oak trim with pronounced grain and a ten-day quoted lead time. Sample B is oak-veneered trim with a more uniform appearance and a four-day quoted lead time. Both match the requested profile. No sample is selected.",
+          "model": "Both samples match the requested profile. Sample A has more pronounced grain and a quoted ten-day lead time, whereas sample B looks more uniform and is quoted at four days. Those are appearance and supply differences, not a general quality ranking. Which appearance would you like us to use as the reference?"
+        },
+        "workshop": {
+          "title": "Compare the properties that matter",
+          "goal": "Compare two finish choices without treating one feature as an overall verdict.",
+          "explanation": "A profile is shape; grain and sheen describe different aspects of appearance. Use the same criteria for both samples. A quoted lead time is supplier information, not a promise about the entire remodeling schedule.",
+          "frames": [
+            "Both samples ___, whereas only ___ .",
+            "The difference in appearance is ___ .",
+            "The quoted lead time is ___; the site date remains ___."
+          ],
+          "before": "The quicker trim is better.",
+          "after": "The quicker option matches the profile but has a more uniform grain appearance.",
+          "reason": "The revised comparison names a tradeoff instead of declaring a universal winner.",
+          "questions": [
+            {
+              "prompt": "Client: Are the bead and curved edge the same shape on both samples?\nCarpenter: Yes, they match the same ____.",
+              "options": [
+                "profile",
+                "grain direction",
+                "surface sheen",
+                "veneer species"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Profile identifies the cross-sectional shape of the molding.",
+                "Grain direction concerns wood fibers rather than the molding's curved shape.",
+                "Surface sheen describes reflected appearance rather than the shape of the edge.",
+                "Veneer species identifies the wood layer's type rather than the molding's shape."
+              ]
+            },
+            {
+              "prompt": "Client: How do the quoted times compare?\nCarpenter: A takes ten days, ____ B is quoted at four.",
+              "options": [
+                "whereas",
+                "therefore",
+                "because",
+                "despite"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Whereas' introduces a contrast.",
+                "'Therefore' implies that A's timing causes B's timing.",
+                "'Because' supplies an unsupported causal relationship.",
+                "'Despite' needs a noun phrase or an -ing form here, not a full clause."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You prefer visible grain but need to understand the supply difference.",
+          "challenge": "The supplier revises A's lead time to twelve days. Recompare the options without changing the client's appearance preference."
+        }
+      },
+      {
+        "title": "Reading details and resolving drawing conflicts",
+        "terms": [
+          "elevation",
+          "section detail",
+          "scribe allowance",
+          "reveal"
+        ],
+        "collocations": [
+          "check the latest revision: confirm the current drawing issue",
+          "raise a drawing query: ask for clarification of a specific conflict",
+          "maintain an even reveal: describe a consistent visible spacing",
+          "reconcile the detail: obtain one consistent interpretation of conflicting information"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Cabinet elevation C4 revision B shows a 20-millimeter reveal. Section S2 revision B shows 15 millimeters at the same end panel. Fabrication release is due for review at 14:00. The designer has not clarified which dimension applies.",
+          "model": "Could you clarify the end-panel reveal before our 14:00 fabrication review? Elevation C4 revision B shows 20 millimeters, while section S2 revision B shows 15 at the same location. Please identify the intended dimension and the drawing that needs correction. We will keep this panel out of fabrication release until the conflict is resolved."
+        },
+        "workshop": {
+          "title": "Make a drawing question answerable",
+          "goal": "Request a specific clarification with references, location, and consequence.",
+          "explanation": "A useful query lets the designer find the conflict without guessing. Name both documents and their revisions, describe the same physical location, and ask for the intended relationship. A review deadline is not permission to choose a dimension.",
+          "frames": [
+            "On ___ revision ___, the dimension is ___ .",
+            "Could you reconcile ___ with ___?",
+            "This affects ___; please confirm ___."
+          ],
+          "before": "The cabinet drawings are confusing.",
+          "after": "C4 and S2, both revision B, give different reveal dimensions at the end panel.",
+          "reason": "The revised statement locates the disagreement and avoids criticizing the whole drawing set.",
+          "questions": [
+            {
+              "prompt": "Designer: Is the discrepancy on different issues?\nCarpenter: No, ____ show revision B.",
+              "options": [
+                "both drawings",
+                "either drawing",
+                "neither drawing",
+                "each drawing"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Both drawings show' confirms the two matching revision labels.",
+                "'Either drawing' normally takes 'shows' and does not directly state both labels.",
+                "'Neither' denies the shared revision and also requires 'shows'.",
+                "'Each drawing' requires the singular verb 'shows'."
+              ]
+            },
+            {
+              "prompt": "Designer: Is the query about panel size or the intentionally visible strip between finished faces?\nCarpenter: The ____ is shown as 20 millimeters on C4 and 15 on S2.",
+              "options": [
+                "reveal",
+                "scribe allowance",
+                "overall panel width",
+                "edge profile"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Reveal names the intentionally visible strip or setback at this junction.",
+                "Scribe allowance is extra material for fitting, not the intended visible strip.",
+                "Overall panel width describes the entire panel, not the strip between finished faces.",
+                "Edge profile describes the edge shape, not the dimension of the visible strip."
+              ]
+            }
+          ],
+          "role_b": "You are the designer. Ask for the two drawing references and the affected component.",
+          "challenge": "You can answer only at 15:00. Agree how the panel's release status will be described at the 14:00 review."
+        }
+      },
+      {
+        "title": "Discussing concealed conditions without guessing",
+        "terms": [
+          "subfloor",
+          "joist",
+          "blocking",
+          "concealed condition"
+        ],
+        "collocations": [
+          "report visible staining: describe appearance without naming a cause",
+          "identify the affected area: locate the observation precisely",
+          "separate evidence from inference: distinguish what is seen from what is assumed",
+          "request a condition assessment: ask the appropriate specialist to evaluate the finding"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "An existing exposed subfloor has dark staining beside the laundry doorway. The client asks whether the joists are rotten. The carpenter has not assessed structural condition and the joists are not visible. The project lead can arrange a qualified assessment.",
+          "model": "The dark staining is visible on the subfloor beside the laundry doorway. It does not tell me the condition of the joists underneath, which are not visible. I cannot confirm decay or its cause from this observation. I will ask the project lead to arrange an assessment before we discuss any resulting scope change."
+        },
+        "workshop": {
+          "title": "Describe a finding and its limits",
+          "goal": "Report a concealed-condition concern without diagnosing damage or minimizing it.",
+          "explanation": "Location, visibility, and source matter. A stain is an observation; decay and structural adequacy are conclusions requiring appropriate assessment. Keep urgent site concerns within the project's safety arrangements rather than treating this exercise as an inspection procedure.",
+          "frames": [
+            "I can see ___ at ___ .",
+            "That does not establish whether ___ .",
+            "The assessment needs to address ___ before ___."
+          ],
+          "before": "The dark patch means the joists are rotten.",
+          "after": "There is dark staining on the subfloor; the joist condition has not been assessed.",
+          "reason": "The revision avoids turning surface appearance into a structural conclusion.",
+          "questions": [
+            {
+              "prompt": "Client: Can you see the joists from here?\nCarpenter: No, they remain ____ beneath this area.",
+              "options": [
+                "concealed",
+                "exposed",
+                "fully visible",
+                "directly observable"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Concealed means the joists are hidden from this view.",
+                "Exposed would mean they are uncovered, contrary to the stated condition.",
+                "Fully visible contradicts the limited view described in this case.",
+                "Directly observable would claim that the joists can be seen from here."
+              ]
+            },
+            {
+              "prompt": "Project lead: What does the stain prove?\nCarpenter: It ____ the cause of the discoloration.",
+              "options": [
+                "does not establish",
+                "has established",
+                "is caused by",
+                "has resulted from"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Appearance alone does not identify cause.",
+                "This overstates the information available.",
+                "This would claim a cause, and the remaining phrase does not name one meaningfully.",
+                "This treats the unknown cause as already identified and makes the sentence circular."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask whether visible staining necessarily means structural decay.",
+          "challenge": "The client remembers an old spill. Attribute that recollection without treating it as the confirmed explanation."
+        }
+      },
+      {
+        "title": "Separating requested extras from agreed work",
+        "terms": [
+          "change order",
+          "allowance",
+          "exclusion",
+          "making good"
+        ],
+        "collocations": [
+          "price an addition: obtain a cost for work beyond the current scope",
+          "clarify an exclusion: identify what a proposal leaves out",
+          "agree the extent of making good: define the surrounding restoration work",
+          "review the schedule impact: assess how a change affects timing"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "The agreed bedroom scope includes replacing skirting only. The client requests a built-in bench; decorating is excluded. The carpenter can arrange a separate quotation, but no bench dimensions, price, or completion date are agreed.",
+          "model": "The current bedroom scope covers skirting replacement and excludes decorating. A built-in bench would be an addition. We can keep the present scope or obtain a separate quotation for the bench, including any making good. If you want that comparison, we first need your intended size; its price and timing remain open."
+        },
+        "workshop": {
+          "title": "Offer a bounded choice",
+          "goal": "Discuss an extra without silently adding it to the existing price.",
+          "explanation": "Name the agreed work, the requested addition, and the unanswered cost or timing questions. An allowance is not automatic approval. A request for a quotation does not authorize construction. Skirting is commonly called baseboard in U.S. usage; making good means repairing or restoring disturbed finishes.",
+          "frames": [
+            "The current scope includes ___ and excludes ___ .",
+            "We can retain ___ or request a price for ___ .",
+            "If you choose ___, we still need to agree ___."
+          ],
+          "before": "We can fit the bench in.",
+          "after": "We can quote the bench separately; its dimensions, price, and timing are not agreed.",
+          "reason": "The revised offer promises an assessment rather than unpriced work.",
+          "questions": [
+            {
+              "prompt": "Client: Is painting included?\nCarpenter: Decorating is listed as an ____ in this proposal.",
+              "options": [
+                "exclusion",
+                "allowance",
+                "addition",
+                "acceptance"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An exclusion identifies omitted work.",
+                "An allowance is a budget provision, not an omission.",
+                "An addition would extend the scope.",
+                "Acceptance records agreement, not omitted work."
+              ]
+            },
+            {
+            "prompt": "Client: I haven't confirmed the dimensions yet. What happens if I request the bench?\nCarpenter: If you ____ the dimensions, we can request a separate quotation.",
+              "options": [
+                "confirm",
+                "confirms",
+                "confirmed yesterday",
+                "are confirm"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Present simple introduces this future condition.",
+                "The subject 'you' takes 'confirm', not 'confirms'.",
+              "The client explicitly says the dimensions have not yet been confirmed.",
+                "'Are confirm' is not a valid verb form."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You want storage in the bench but have not chosen its size.",
+          "challenge": "The client adds matching wall paneling. Identify it as another item to assess, not an assumed part of the bench."
+        }
+      },
+      {
+        "title": "Coordinating access and other trades",
+        "terms": [
+          "lookahead schedule",
+          "trade interface",
+          "access window",
+          "protection plan"
+        ],
+        "collocations": [
+          "sequence the trades: agree the order of different crews' activities",
+          "confirm room access: establish which area is available and when",
+          "protect retained finishes: preserve surfaces that are not being replaced",
+          "flag a dependency: identify an activity that relies on another being complete"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "The joinery delivery is confirmed for Tuesday morning. The decorator has not released the study for carpentry access. The hallway is available for a separate trim review at 11:00, but not for material storage. The site coordinator needs the current status.",
+          "model": "Tuesday morning's joinery delivery is confirmed, but study access is still awaiting the decorator's release. The hallway is available for the 11:00 trim review only, not storage. Please confirm the study access window before we sequence the fitting work. I will ask the supplier about delivery flexibility while that dependency remains open."
+        },
+        "workshop": {
+          "title": "Update the dependency, not just the date",
+          "goal": "Distinguish a confirmed delivery from an available work area.",
+          "explanation": "Several schedules can be true at once and still conflict. State the material status, room access status, and resulting dependency separately. Do not use a clear corridor as an assumed storage or work area.",
+          "frames": [
+            "Delivery is confirmed for ___; access remains ___ .",
+            "The next activity depends on ___ .",
+            "That window covers ___, not ___."
+          ],
+          "before": "Everything is ready for Tuesday.",
+          "after": "Delivery is confirmed for Tuesday; the study access window is not yet agreed.",
+          "reason": "The update identifies the condition that still prevents a reliable fitting sequence.",
+          "questions": [
+            {
+              "prompt": "Coordinator: Can fitting start when the delivery arrives?\nCarpenter: That depends ____ the study being released.",
+              "options": [
+                "on",
+                "for",
+                "at",
+                "by"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Depends on' identifies the condition.",
+                "'Depends for' is not the required expression.",
+                "'Depends at' does not express a dependency.",
+                "'By' could mark a deadline, but not after 'depends' here."
+              ]
+            },
+            {
+              "prompt": "Decorator: Is the hallway available for storage?\nCarpenter: No, the agreed window covers ____ only.",
+              "options": [
+                "the trim review",
+                "material storage",
+                "study fitting",
+                "supplier unloading"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Only the 11:00 trim review is agreed.",
+                "Storage is explicitly excluded from this agreed window.",
+                "Study fitting has no confirmed access window.",
+                "An unloading arrangement was not established."
+              ]
+            }
+          ],
+          "role_b": "You are the coordinator. Confirm the delivery but ask which area is actually available.",
+          "challenge": "The decorator releases the study for Wednesday morning. Discuss what still needs checking with the supplier."
+        }
+      },
+      {
+        "title": "Reviewing fit, appearance, and snagging",
+        "terms": [
+          "flush",
+          "plumb",
+          "snag list",
+          "acceptance sample"
+        ],
+        "collocations": [
+          "check against the sample: compare the specified feature with the agreed reference",
+          "identify a proud edge: describe an edge projecting beyond its neighbor",
+          "agree a snag description: settle the exact location and observed issue",
+          "confirm the review outcome: distinguish accepted work from items still open"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "At a wardrobe review you said all fronts were flush. The client points to drawer D3, whose left edge projects beyond the neighboring front. You have not assessed the cause or remedy. Correct your earlier statement and add the specific observation for follow-up.",
+          "model": "My earlier statement that all the fronts were flush was too broad. At drawer D3, the left edge projects beyond the neighboring front. I will add that observation to the snag list and ask the joinery lead to review it. We have identified the appearance issue, but have not yet agreed its cause or remedy."
+        },
+        "workshop": {
+          "title": "Correct the claim and specify the item",
+          "goal": "Repair an overstatement while agreeing a precise finish-review description.",
+          "explanation": "Use location and relationship rather than a vague judgment such as bad. Acknowledge an inaccurate statement directly. Recording a snag does not by itself identify its cause, the remedy, or the contractual outcome. Snag list and punch list name the same type of follow-up list here.",
+          "frames": [
+            "My earlier statement about ___ was too broad.",
+            "At ___, the edge is ___ relative to ___ .",
+            "The recorded observation is ___; the remedy remains ___."
+          ],
+          "before": "You're looking at it from the wrong angle.",
+          "after": "I overlooked D3's projecting edge; that specific item needs review.",
+          "reason": "The correction addresses the observation instead of dismissing the client's view.",
+          "questions": [
+            {
+              "prompt": "Client: This edge projects beyond the adjacent face, rather than sharing its plane.\nCarpenter: Then I should not have described those faces as ____.",
+              "options": [
+                "flush",
+                "plumb",
+                "level",
+                "square"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Flush describes adjoining faces aligned in the same plane.",
+                "Plumb concerns vertical orientation, which this observation does not establish.",
+                "Level concerns horizontal orientation rather than whether adjacent faces share a plane.",
+                "Square concerns a right-angle relationship, not whether the faces share a plane."
+              ]
+            },
+            {
+              "prompt": "Client: Did you mean every drawer was aligned?\nCarpenter: Yes, and my earlier statement ____ too broad.",
+              "options": [
+                "was",
+                "were",
+                "have been",
+                "being"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The singular subject 'statement' takes 'was'.",
+                "'Were' does not agree with this singular subject in an ordinary factual statement.",
+                "Use 'has been' with a singular subject, not 'have been'.",
+                "'Being' needs a finite verb to complete this sentence."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Identify D3's left edge and ask that it remain visible in the snag record.",
+          "challenge": "The joinery lead cannot attend until Thursday. Agree the review appointment without promising a same-day remedy."
+        }
+      },
+      {
+        "title": "Handing over records and return visits",
+        "terms": [
+          "as-built record",
+          "care sheet",
+          "warranty document",
+          "return visit"
+        ],
+        "collocations": [
+          "hand over the care sheet: provide the correct product-care information",
+          "match the product reference: link a document to the item actually supplied",
+          "schedule a return visit: agree a later attendance for defined work",
+          "close an outstanding item: record completion after the relevant review"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "The owner receives cabinet drawings and the correct finish care sheet. A replacement shelf pin cover is due but not delivered. The joinery lead, Mina, accepts supplier follow-up and will call Friday. The return-visit date is not confirmed; warranty terms remain those in the supplied document.",
+          "model": "Here are the cabinet drawings and the care sheet for the finish actually supplied. The shelf pin cover is still outstanding. Mina has accepted supplier follow-up and will call you Friday with its status; the return-visit date is not yet confirmed. Please keep the supplied warranty document for its specific terms rather than relying on a general verbal promise."
+        },
+        "workshop": {
+          "title": "Hand over what is complete and what remains open",
+          "goal": "Give the owner usable records and an identifiable follow-up contact.",
+          "explanation": "A handover is more useful when each document matches the supplied product and each outstanding item has an owner. A promised update date is not necessarily a delivery or return-visit date. Do not paraphrase warranty terms as guaranteed coverage.",
+          "frames": [
+            "This document covers ___, not ___ .",
+            "___ has accepted follow-up for ___ .",
+            "The update is due ___; the visit date is ___."
+          ],
+          "before": "Mina will sort everything out Friday.",
+          "after": "Mina will call Friday about the cover; the return visit is not booked yet.",
+          "reason": "The revision separates an update commitment from an unconfirmed attendance.",
+          "questions": [
+            {
+              "prompt": "Owner: Will the cover be fitted Friday?\nCarpenter: Friday is the agreed ____ date, not a confirmed return visit.",
+              "options": [
+                "update",
+                "installation",
+                "delivery",
+                "completion"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Mina has agreed to call with status.",
+                "Installation on Friday is not established.",
+                "The cover's delivery date is unknown.",
+                "An update does not establish completion."
+              ]
+            },
+            {
+              "prompt": "Owner: Which instructions apply to this finish?\nCarpenter: Use the care sheet ____ the product actually supplied.",
+              "options": [
+                "for",
+                "during",
+                "among",
+                "toward"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'For' links the sheet to its intended product.",
+                "'During' expresses time, not the product reference.",
+                "'Among' concerns membership within a group.",
+                "'Toward' expresses direction rather than applicability here."
+              ]
+            }
+          ],
+          "role_b": "You are the owner. Ask who will follow up and whether Friday is an installation date.",
+          "challenge": "The supplier changes the expected delivery. Explain the revised status without interpreting warranty coverage."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "rough opening",
+        "definition": "The framed space intended to receive a door or window unit before surrounding finishes are complete.",
+        "group": "Confirming openings and measurement references"
+      },
+      {
+        "term": "finished opening",
+        "definition": "The opening measured between specified completed surrounding surfaces; this is not automatically the usable clear passage with a door installed and open.",
+        "group": "Confirming openings and measurement references"
+      },
+      {
+        "term": "jamb",
+        "definition": "A side or top member of a door or window frame.",
+        "group": "Confirming openings and measurement references"
+      },
+      {
+        "term": "datum",
+        "definition": "An agreed reference point or line from which project dimensions are measured.",
+        "group": "Confirming openings and measurement references"
+      },
+      {
+        "term": "grain",
+        "definition": "The direction and visible pattern of fibers in wood.",
+        "group": "Selecting timber, trim, and visible finishes"
+      },
+      {
+        "term": "veneer",
+        "definition": "A thin layer of wood bonded to a supporting material to provide a wood surface.",
+        "group": "Selecting timber, trim, and visible finishes"
+      },
+      {
+        "term": "profile",
+        "definition": "The cross-sectional shape of a molding or trim piece.",
+        "group": "Selecting timber, trim, and visible finishes"
+      },
+      {
+        "term": "finish sample",
+        "definition": "A physical example used to compare a proposed surface color, sheen, or texture.",
+        "group": "Selecting timber, trim, and visible finishes"
+      },
+      {
+        "term": "elevation",
+        "definition": "A drawing showing a vertical face of a room, wall, or assembly.",
+        "group": "Reading details and resolving drawing conflicts"
+      },
+      {
+        "term": "section detail",
+        "definition": "A drawing showing a cut-through view of an assembly and its relationships.",
+        "group": "Reading details and resolving drawing conflicts"
+      },
+      {
+        "term": "scribe allowance",
+        "definition": "Extra material specified so a component can be fitted to an adjoining irregular surface.",
+        "group": "Reading details and resolving drawing conflicts"
+      },
+      {
+        "term": "reveal",
+        "definition": "An intentionally visible strip, gap, or setback between adjoining finished components.",
+        "group": "Reading details and resolving drawing conflicts"
+      },
+      {
+        "term": "subfloor",
+        "definition": "The supporting floor layer beneath the finished floor covering.",
+        "group": "Discussing concealed conditions without guessing"
+      },
+      {
+        "term": "joist",
+        "definition": "A horizontal structural member that supports a floor or ceiling.",
+        "group": "Discussing concealed conditions without guessing"
+      },
+      {
+        "term": "blocking",
+        "definition": "Short framing pieces between other members, used for specified support or restraint.",
+        "group": "Discussing concealed conditions without guessing"
+      },
+      {
+        "term": "concealed condition",
+        "definition": "An existing site condition that was not visible during the initial assessment.",
+        "group": "Discussing concealed conditions without guessing"
+      },
+      {
+        "term": "change order",
+        "definition": "A project document recording an agreed alteration to the contracted work and its stated effects.",
+        "group": "Separating requested extras from agreed work"
+      },
+      {
+        "term": "allowance",
+        "definition": "An amount included in a project budget for a specified item whose final selection or cost is not yet settled.",
+        "group": "Separating requested extras from agreed work"
+      },
+      {
+        "term": "exclusion",
+        "definition": "Work or supply specifically left out of an agreed scope.",
+        "group": "Separating requested extras from agreed work"
+      },
+      {
+        "term": "making good",
+        "definition": "Repairing or restoring finishes disturbed by building work to the agreed extent and standard; called making good in some regions.",
+        "group": "Separating requested extras from agreed work"
+      },
+      {
+        "term": "lookahead schedule",
+        "definition": "A short-term plan showing upcoming site activities and their dependencies.",
+        "group": "Coordinating access and other trades"
+      },
+      {
+        "term": "trade interface",
+        "definition": "A point where one trade's work meets or depends on another trade's work.",
+        "group": "Coordinating access and other trades"
+      },
+      {
+        "term": "access window",
+        "definition": "An agreed period when a crew may enter and use a particular work area.",
+        "group": "Coordinating access and other trades"
+      },
+      {
+        "term": "protection plan",
+        "definition": "The agreed arrangements for protecting retained surfaces and occupants during specified work.",
+        "group": "Coordinating access and other trades"
+      },
+      {
+        "term": "flush",
+        "definition": "Aligned in the same plane as an adjoining surface, without an intended step.",
+        "group": "Reviewing fit, appearance, and snagging"
+      },
+      {
+        "term": "plumb",
+        "definition": "Vertical relative to gravity; distinct from level, which describes a horizontal reference.",
+        "group": "Reviewing fit, appearance, and snagging"
+      },
+      {
+        "term": "snag list",
+        "definition": "A list of observed unfinished or unsatisfactory items requiring agreed follow-up; commonly called a punch list in U.S. usage.",
+        "group": "Reviewing fit, appearance, and snagging"
+      },
+      {
+        "term": "acceptance sample",
+        "definition": "An agreed physical reference against which specified aspects of finished work are compared.",
+        "group": "Reviewing fit, appearance, and snagging"
+      },
+      {
+        "term": "as-built record",
+        "definition": "A record intended to describe the work as actually completed, including documented changes.",
+        "group": "Handing over records and return visits"
+      },
+      {
+        "term": "care sheet",
+        "definition": "Product-specific information about looking after a finished material or item.",
+        "group": "Handing over records and return visits"
+      },
+      {
+        "term": "warranty document",
+        "definition": "A document stating the provider's warranty terms and conditions for identified work or products.",
+        "group": "Handing over records and return visits"
+      },
+      {
+        "term": "return visit",
+        "definition": "A planned later attendance to review or complete identified outstanding work.",
+        "group": "Handing over records and return visits"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Nine hundred between which faces?",
+          "setting": "At the hall doorway, the carpenter and client clarify the fictional 900-millimeter note.",
+          "turns": [
+            [
+              "Carpenter",
+              "The hall drawing says nine hundred millimeters. Were you expecting that much clear passage?"
+            ],
+            [
+              "Client",
+              "Yes, our cabinet needs that space, and I thought the number guaranteed it."
+            ],
+            [
+              "Carpenter",
+              "The note doesn't say whether it measures the rough opening or finished opening."
+            ],
+            [
+              "Client",
+              "I hadn't realized those were different. Does the jamb take up some space?"
+            ],
+            [
+              "Carpenter",
+              "The frame and open door affect usable passage; we need the selected unit's dimensions."
+            ],
+            [
+              "Client",
+              "We haven't chosen the door yet. Can you still clarify the drawing today?"
+            ],
+            [
+              "Carpenter",
+              "I can ask the designer which surfaces the number refers to before ordering."
+            ],
+            [
+              "Client",
+              "Please mention the cabinet, because usable width is the requirement that matters most."
+            ],
+            [
+              "Carpenter",
+              "I'll separate your passage requirement from the unresolved drawing dimension in that question."
+            ],
+            [
+              "Client",
+              "That helps. Let's leave the order pending until those two things agree."
+            ]
+          ]
+        },
+        {
+          "title": "The floor that is not finished yet",
+          "setting": "A carpenter checks a cabinet-height reference with the site coordinator.",
+          "turns": [
+            [
+              "Carpenter",
+              "Your cabinet sketch gives a height, but which floor surface is the datum?"
+            ],
+            [
+              "Site coordinator",
+              "The finished floor should be the reference, not the exposed subfloor visible today."
+            ],
+            [
+              "Carpenter",
+              "Thanks. The supplier's survey note says existing floor, which could mean something different."
+            ],
+            [
+              "Site coordinator",
+              "That survey happened before the floor finish was selected. I see the problem."
+            ],
+            [
+              "Carpenter",
+              "Could you confirm the current floor build-up with the designer before fabrication release?"
+            ],
+            [
+              "Site coordinator",
+              "Yes, and I'll ask them to identify the finished floor reference on the sketch."
+            ],
+            [
+              "Carpenter",
+              "Please keep the earlier survey attached so the supplier can see what changed."
+            ],
+            [
+              "Site coordinator",
+              "Should I describe the old height as wrong, or simply as needing reconciliation?"
+            ],
+            [
+              "Carpenter",
+              "Needing reconciliation is more accurate; the two documents may use different reference surfaces."
+            ],
+            [
+              "Site coordinator",
+              "I'll request a coordinated dimension, with fabrication release still pending that response."
+            ]
+          ]
+        },
+        {
+          "title": "A width without its units",
+          "setting": "A carpenter and supplier resolve an ambiguous shelf enquiry by telephone.",
+          "turns": [
+            [
+              "Carpenter",
+              "Your quotation lists the alcove shelf as thirty, but it doesn't show units."
+            ],
+            [
+              "Supplier",
+              "That's thirty inches of nominal width. Were you reading the number as centimeters?"
+            ],
+            [
+              "Carpenter",
+              "I was checking because our site measurements are recorded in millimeters throughout this job."
+            ],
+            [
+              "Supplier",
+              "Understood. Is your figure the wall opening or the finished shelf length requested?"
+            ],
+            [
+              "Carpenter",
+              "It's the opening measurement; the shelf size still needs confirmation against the detail."
+            ],
+            [
+              "Supplier",
+              "Then I shouldn't simply convert thirty inches and treat that as your order."
+            ],
+            [
+              "Carpenter",
+              "Exactly. Please label the quotation dimension and wait for the confirmed fabrication size."
+            ],
+            [
+              "Supplier",
+              "I can revise the description now without releasing any material to the workshop."
+            ],
+            [
+              "Carpenter",
+              "Please also retain the unit labels when you send the revised quotation over."
+            ],
+            [
+              "Supplier",
+              "Done. It will say nominal width in inches, with fabrication dimensions awaiting confirmation."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The alcove narrows at the back",
+        "brief": "An alcove survey records front width 1,210 millimeters and rear width 1,190 millimeters. A client calls it a 1,200-millimeter opening. No shelf fabrication size is approved.",
+        "role_a": "Carpenter: distinguish the two measured locations from the shorthand description.",
+        "role_b": "Client: you want full-depth shelves and can show the survey sketch.",
+        "opening_line": "Is twelve hundred the front measurement, the back measurement, or a rounded description?",
+        "complication": "The client says a single average would be simpler for the order.",
+        "success_checks": [
+          "Name both locations and dimensions aloud.",
+          "Explain why an average is not a confirmed fabrication size.",
+          "Agree who will clarify the shelf detail before ordering."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Choosing the study trim reference",
+          "setting": "At a sample review, a carpenter and client compare the two study trim options.",
+          "turns": [
+            [
+              "Carpenter",
+              "Both samples match your trim profile. Which difference catches your eye in this light?"
+            ],
+            [
+              "Client",
+              "Sample A has stronger grain. Is sample B a different shape around the edge?"
+            ],
+            [
+              "Carpenter",
+              "No, the shape matches. B has an oak veneer and a more uniform appearance."
+            ],
+            [
+              "Client",
+              "I prefer A's grain, but the room is needed soon. What about delivery?"
+            ],
+            [
+              "Carpenter",
+              "The supplier quotes ten days for A and four for B at present."
+            ],
+            [
+              "Client",
+              "Does choosing B mean the entire study will be finished six days earlier?"
+            ],
+            [
+              "Carpenter",
+              "Not necessarily. Those figures concern supply; the site schedule also includes other work."
+            ],
+            [
+              "Client",
+              "Then keep A as my preferred sample while you check the scheduling effect."
+            ],
+            [
+              "Carpenter",
+              "I'll label it preferred, with the timing decision open, rather than as an order."
+            ],
+            [
+              "Client",
+              "Yes, show me that effect before we make the final selection for the room."
+            ]
+          ]
+        },
+        {
+          "title": "White is not a complete finish description",
+          "setting": "A carpenter and decorator compare a trim sample with an existing painted surface.",
+          "turns": [
+            [
+              "Carpenter",
+              "The client asked for white trim, but this sample looks glossier than the existing skirting."
+            ],
+            [
+              "Decorator",
+              "The color reference matches. The sheen is different, which changes how light reflects."
+            ],
+            [
+              "Carpenter",
+              "Could we show both together before calling this a successful finish match today?"
+            ],
+            [
+              "Decorator",
+              "Certainly. Is the client asking for the same color or the same overall appearance?"
+            ],
+            [
+              "Carpenter",
+              "Their note says match existing, so I think we need to clarify both."
+            ],
+            [
+              "Decorator",
+              "I'll bring a lower-sheen sample with the same color reference for the comparison."
+            ],
+            [
+              "Carpenter",
+              "Please identify the sample labels; photographs alone have made the difference hard to judge."
+            ],
+            [
+              "Decorator",
+              "Agreed. We can compare them in the room under the same lighting conditions."
+            ],
+            [
+              "Carpenter",
+              "Then I'll ask the client to choose a physical reference rather than another vague description."
+            ],
+            [
+              "Decorator",
+              "That gives us a specific appearance target without promising every surface will look identical."
+            ]
+          ]
+        },
+        {
+          "title": "The molding is wide enough but different",
+          "setting": "A carpenter questions a supplier's proposed replacement molding.",
+          "turns": [
+            [
+              "Carpenter",
+              "The replacement molding is the right width, but the curve doesn't match our sample."
+            ],
+            [
+              "Supplier",
+              "Our stock description lists the same overall dimensions. Which feature differs from yours?"
+            ],
+            [
+              "Carpenter",
+              "The original has a small bead at the edge; the replacement has a flat edge."
+            ],
+            [
+              "Supplier",
+              "I see it now in your reference photo. So width alone isn't the issue."
+            ],
+            [
+              "Carpenter",
+              "Correct. This piece sits beside retained trim, so the profile difference will be visible."
+            ],
+            [
+              "Supplier",
+              "Would you like another stock sample or a quotation for a matching profile?"
+            ],
+            [
+              "Carpenter",
+              "Please quote the matching profile first, with its lead time shown separately from price."
+            ],
+            [
+              "Supplier",
+              "I can do that. The stock alternative can remain available for the client's comparison."
+            ],
+            [
+              "Carpenter",
+              "Label it alternative, please, so nobody mistakes it for an accepted substitution on delivery."
+            ],
+            [
+              "Supplier",
+              "I'll update the enquiry to show profile match required, with the alternative clearly identified."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One sample, two directions",
+        "brief": "A client approves the color of a veneered cabinet sample but says nothing about grain direction. The elevation shows horizontal grain; the sample was displayed vertically.",
+        "role_a": "Carpenter: clarify whether approval covers color, direction, or both.",
+        "role_b": "Client: you like the color but prefer vertical grain and have not discussed a revised elevation.",
+        "opening_line": "Does your approval cover the color only, or also the grain direction shown here?",
+        "complication": "The client assumes turning the sample also changes the production drawing.",
+        "success_checks": [
+          "Separate sample approval from drawing revision.",
+          "State the preferred direction in ordinary words.",
+          "Keep production confirmation pending the reconciled elevation."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Two dimensions on revision B",
+          "setting": "A carpenter calls the designer before the cabinet fabrication review.",
+          "turns": [
+            [
+              "Carpenter",
+              "Could you clarify the end-panel reveal before our two o'clock fabrication review today?"
+            ],
+            [
+              "Designer",
+              "Which drawings disagree? I need their references and revisions to locate the issue."
+            ],
+            [
+              "Carpenter",
+              "Elevation C4 shows twenty millimeters; section detail S2 shows fifteen. Both are revision B."
+            ],
+            [
+              "Designer",
+              "Are those dimensions at the same end panel, or on opposite cabinet runs?"
+            ],
+            [
+              "Carpenter",
+              "The same panel beside the study doorway. I've marked that location on both."
+            ],
+            [
+              "Designer",
+              "Thank you. I need to reconcile the detail, and I cannot answer before three."
+            ],
+            [
+              "Carpenter",
+              "Then I'll keep that panel out of release at the two o'clock review."
+            ],
+            [
+              "Designer",
+              "Please distinguish it from the other panels, which aren't part of this query."
+            ],
+            [
+              "Carpenter",
+              "I will. Can your reply identify both the intended reveal and the drawing correction?"
+            ],
+            [
+              "Designer",
+              "Yes. My response will address those points, with the marked references attached for clarity."
+            ]
+          ]
+        },
+        {
+          "title": "Extra width is not an extra shelf",
+          "setting": "A carpenter explains a supplier's scribe allowance note to a client.",
+          "turns": [
+            [
+              "Carpenter",
+              "The supplier's end panel is wider on the schedule than on your finished elevation."
+            ],
+            [
+              "Client",
+              "That's what worried me. Will it make the cupboard stick farther into the room?"
+            ],
+            [
+              "Carpenter",
+              "The schedule includes a scribe allowance, meaning extra material for fitting the adjoining surface."
+            ],
+            [
+              "Client",
+              "So the scheduled piece size is not necessarily the finished visible panel width?"
+            ],
+            [
+              "Carpenter",
+              "Exactly. We still need the detail to confirm how that allowance is represented."
+            ],
+            [
+              "Client",
+              "Please ask them, because I don't want the finished cupboard width quietly increased."
+            ],
+            [
+              "Carpenter",
+              "I'll ask for separate supplied and finished dimensions on this panel's confirmation drawing."
+            ],
+            [
+              "Client",
+              "Can we keep the agreed cabinet face line as the reference in that question?"
+            ],
+            [
+              "Carpenter",
+              "Yes, I'll name that line explicitly and attach the elevation you already approved."
+            ],
+            [
+              "Client",
+              "Then the question is about interpreting the allowance, not approving a larger cupboard today."
+            ]
+          ]
+        },
+        {
+          "title": "A cloud on the drawing",
+          "setting": "A carpenter and site coordinator identify the actual extent of a revised drawing.",
+          "turns": [
+            [
+              "Carpenter",
+              "The latest elevation has a revision cloud around the upper shelves. Did the base change?"
+            ],
+            [
+              "Site coordinator",
+              "The issue note mentions shelf spacing only, but let's check the revision description together."
+            ],
+            [
+              "Carpenter",
+              "Our earlier base detail still appears in the folder beside this new elevation."
+            ],
+            [
+              "Site coordinator",
+              "That's possible; not every sheet was reissued. Which base dimension are you concerned about?"
+            ],
+            [
+              "Carpenter",
+              "The drawer front height. I don't see a changed dimension or a corresponding note."
+            ],
+            [
+              "Site coordinator",
+              "Then we shouldn't assume the cloud changes that height merely because it's nearby."
+            ],
+            [
+              "Carpenter",
+              "Could you confirm the current sheet list so the workshop uses the right combination?"
+            ],
+            [
+              "Site coordinator",
+              "Yes. I'll identify the reissued elevation and the retained base detail on the transmittal."
+            ],
+            [
+              "Carpenter",
+              "I'll tell the workshop that shelf spacing changed, while base-height clarification remains separate."
+            ],
+            [
+              "Site coordinator",
+              "Good. That prevents a partial drawing issue from being interpreted as an entirely new cabinet."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The detail says typical",
+        "brief": "A drawing labels a 10-millimeter reveal typical. A separate pantry elevation shows a 6-millimeter reveal. Both are current; neither names an exception.",
+        "role_a": "Carpenter: ask whether the pantry is an exception.",
+        "role_b": "Designer: you can review the pantry relationship but cannot answer from memory.",
+        "opening_line": "Does the typical reveal apply at the pantry, or is that elevation a deliberate exception?",
+        "complication": "The site manager wants the carpenter to choose the larger dimension for consistency.",
+        "success_checks": [
+          "Cite both details.",
+          "Explain that typical does not resolve a stated conflict.",
+          "Agree the pantry item remains pending clarification."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "A stain is not a joist assessment",
+          "setting": "At the laundry doorway, a carpenter answers the client's question about staining.",
+          "turns": [
+            [
+              "Carpenter",
+              "There's dark staining on the exposed subfloor beside the laundry doorway in this area."
+            ],
+            [
+              "Client",
+              "Does that mean the joists underneath are rotten and the whole floor needs replacing?"
+            ],
+            [
+              "Carpenter",
+              "I can't conclude that. The joists aren't visible, and their condition hasn't been assessed."
+            ],
+            [
+              "Client",
+              "We had a washing-machine spill years ago. Could that explain what you're seeing now?"
+            ],
+            [
+              "Carpenter",
+              "It could be relevant history, but I can't confirm the cause from the stain."
+            ],
+            [
+              "Client",
+              "Please include the spill when you speak to the project lead about the assessment."
+            ],
+            [
+              "Carpenter",
+              "I will describe it as your recollection, separately from the visible staining we see."
+            ],
+            [
+              "Client",
+              "Will that assessment also tell us whether any change to the agreed work is needed?"
+            ],
+            [
+              "Carpenter",
+              "The assessment can clarify this concealed condition before we discuss a revised carpentry scope."
+            ],
+            [
+              "Client",
+              "All right. I'd rather understand the finding than approve replacement based on appearance alone."
+            ]
+          ]
+        },
+        {
+          "title": "The photograph does not show the support",
+          "setting": "A carpenter and project lead discuss an incomplete site photograph.",
+          "turns": [
+            [
+              "Carpenter",
+              "The client's photograph shows the new shelf location, but not what's behind the wall."
+            ],
+            [
+              "Project lead",
+              "They're asking whether the existing blocking can support the cabinet at that position."
+            ],
+            [
+              "Carpenter",
+              "We don't have a verified record of blocking there, so the photograph cannot answer."
+            ],
+            [
+              "Project lead",
+              "Is there an earlier framing record we can request from the original contractor first?"
+            ],
+            [
+              "Carpenter",
+              "Yes, I'll ask for that record and identify which wall and cabinet position we mean."
+            ],
+            [
+              "Project lead",
+              "Please don't describe the missing record as evidence that no blocking exists at all."
+            ],
+            [
+              "Carpenter",
+              "Agreed. I'll say the support arrangement remains unverified, rather than absent or inadequate."
+            ],
+            [
+              "Project lead",
+              "The client also wants a fixed installation date. What can we tell them today?"
+            ],
+            [
+              "Carpenter",
+              "We can give the current planning status and explain which assessment the date depends on."
+            ],
+            [
+              "Project lead",
+              "I'll handle that conversation and keep the support question separate from our scheduling preference."
+            ]
+          ]
+        },
+        {
+          "title": "A small gap with no agreed tolerance",
+          "setting": "A carpenter discusses a reported trim gap with the client's representative.",
+          "turns": [
+            [
+              "Carpenter",
+              "You noted a gap at the stair trim. Which joint are you referring to?"
+            ],
+            [
+              "Client representative",
+              "The upper corner beside the landing. I photographed it this morning from the hallway."
+            ],
+            [
+              "Carpenter",
+              "Thank you. Do we have an agreed sample or acceptance detail for that joint?"
+            ],
+            [
+              "Client representative",
+              "There's an approved detail, but I haven't compared the photograph with it yet."
+            ],
+            [
+              "Carpenter",
+              "Then let's identify the location and request a comparison before calling it acceptable or defective."
+            ],
+            [
+              "Client representative",
+              "The owner asked me whether every gap of that size is always a defect."
+            ],
+            [
+              "Carpenter",
+              "I wouldn't give a universal answer. The detail and actual condition matter for this review."
+            ],
+            [
+              "Client representative",
+              "I'll send the photograph with the drawing reference, without presenting my impression as a finding."
+            ],
+            [
+              "Carpenter",
+              "Please also note the viewing location so the reviewer understands what the image shows."
+            ],
+            [
+              "Client representative",
+              "Done. We'll describe it as a reported finish concern pending comparison with the agreed detail."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A ceiling mark reported after delivery",
+        "brief": "A homeowner notices a ceiling mark above the hallway-to-study doorway after cabinet delivery through that doorway. No before-photo covers the area. The route is known, but the cause of the mark is not.",
+        "role_a": "Carpenter: acknowledge the concern and distinguish timing from established cause.",
+        "role_b": "Homeowner: you noticed the mark at 16:00 and want it reviewed.",
+        "opening_line": "I understand why the timing concerns you; can we identify exactly where the mark is?",
+        "complication": "The homeowner asks you to confirm that the delivery crew caused it.",
+        "success_checks": [
+          "Acknowledge the concern without blaming anyone.",
+          "State the observation time and missing evidence.",
+          "Agree who will review the mark and report back."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "The bench is an addition",
+          "setting": "A carpenter and bedroom client discuss the requested bench.",
+          "turns": [
+            [
+              "Carpenter",
+              "The bedroom quotation covers skirting, or baseboard, replacement. The bench would be additional work."
+            ],
+            [
+              "Client",
+              "I thought there might be room in the price because it's quite small."
+            ],
+            [
+              "Carpenter",
+              "We haven't agreed its dimensions or storage arrangement, so I can't price it yet."
+            ],
+            [
+              "Client",
+              "Could you get a separate quotation without changing the skirting work already agreed?"
+            ],
+            [
+              "Carpenter",
+              "Yes. We also need to clarify making good, because decorating is currently excluded."
+            ],
+            [
+              "Client",
+              "I'd like a painted finish, with space underneath for two storage boxes."
+            ],
+            [
+              "Carpenter",
+              "Please give us the box dimensions so that requirement is clear in the enquiry."
+            ],
+            [
+              "Client",
+              "Does asking for the quotation mean I have committed to buying the bench?"
+            ],
+            [
+              "Carpenter",
+              "No. A change order would record any agreed alteration after you consider the price and timing."
+            ],
+            [
+              "Client",
+              "Then obtain that comparison, and keep the existing bedroom scope unchanged for now."
+            ]
+          ]
+        },
+        {
+          "title": "Painting around the new frame",
+          "setting": "A carpenter and homeowner clarify restoration around a replacement frame.",
+          "turns": [
+            [
+              "Carpenter",
+              "The frame proposal mentions making good locally. What finish were you expecting?"
+            ],
+            [
+              "Homeowner",
+              "I assumed the whole wall would be repainted so no difference would show."
+            ],
+            [
+              "Carpenter",
+              "The quotation doesn't define that extent clearly. Let's clarify it before accepting the scope."
+            ],
+            [
+              "Homeowner",
+              "Can you explain the difference between local making good and decorating the wall?"
+            ],
+            [
+              "Carpenter",
+              "Local work concerns disturbed areas; whole-wall decoration is a broader item to price."
+            ],
+            [
+              "Homeowner",
+              "Then I'd like both extents described, because appearance matters more than a vague allowance."
+            ],
+            [
+              "Carpenter",
+              "I'll ask the estimator to identify the surfaces and finish standard for each option."
+            ],
+            [
+              "Homeowner",
+              "Please include the return beside the doorway; it's easy to overlook from this room."
+            ],
+            [
+              "Carpenter",
+              "I'll name it separately so we can see whether each quotation includes it."
+            ],
+            [
+              "Homeowner",
+              "Good. We'll decide from those descriptions instead of assuming the word locally covers everything."
+            ]
+          ]
+        },
+        {
+          "title": "A verbal suggestion becomes a request",
+          "setting": "A carpenter checks a shelving conversation with a tenant representative.",
+          "turns": [
+            [
+              "Carpenter",
+              "Yesterday you mentioned another shelf above the desk. Was that a suggestion or request?"
+            ],
+            [
+              "Tenant representative",
+              "A request for a price, not approval to add it to the order."
+            ],
+            [
+              "Carpenter",
+              "Thanks. The workshop heard add a shelf and asked me for fabrication dimensions."
+            ],
+            [
+              "Tenant representative",
+              "Please tell them to hold that addition. The facilities manager approves extra costs here."
+            ],
+            [
+              "Carpenter",
+              "I'll keep the approved shelving separate and request a price for the additional piece."
+            ],
+            [
+              "Tenant representative",
+              "Can the quotation also say whether the extra shelf changes the delivery timing?"
+            ],
+            [
+              "Carpenter",
+              "Yes, that question belongs in the comparison rather than being assumed unchanged."
+            ],
+            [
+              "Tenant representative",
+              "The facilities manager is available Thursday. I can discuss the priced option then."
+            ],
+            [
+              "Carpenter",
+              "I'll label it quotation requested, with your review meeting noted as the next decision point."
+            ],
+            [
+              "Tenant representative",
+              "That reflects what I intended and avoids the workshop treating a conversation as approval."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Who supplies the handles?",
+        "brief": "A wardrobe quotation includes fitting handles but excludes their supply. The client has selected handles online but has not ordered them. The supplier's delivery date is unknown.",
+        "role_a": "Carpenter: explain supply versus fitting and ask who will arrange delivery.",
+        "role_b": "Client: you assumed the carpenter would buy the selected handles.",
+        "opening_line": "The quote includes fitting the handles; can we confirm who is supplying them?",
+        "complication": "The client wants the original completion date confirmed before supplier availability is checked.",
+        "success_checks": [
+          "Distinguish supply from fitting.",
+          "Agree who will check the selected product and delivery.",
+          "Keep completion timing conditional on confirmed information."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Delivery is ready, the room is not",
+          "setting": "A carpenter updates the site coordinator about Tuesday's joinery.",
+          "turns": [
+            [
+              "Carpenter",
+              "Tuesday's joinery delivery is confirmed, but the decorator hasn't released the study yet."
+            ],
+            [
+              "Site coordinator",
+              "Could the crew use the hallway while we sort out access to the study?"
+            ],
+            [
+              "Carpenter",
+              "The hallway window is for an eleven o'clock trim review, not storage or fitting."
+            ],
+            [
+              "Site coordinator",
+              "Thanks for separating those. I'll ask the decorator when the study can be released."
+            ],
+            [
+              "Carpenter",
+              "I'll check delivery flexibility with the supplier rather than assume materials can stay elsewhere."
+            ],
+            [
+              "Site coordinator",
+              "Please don't cancel the delivery until we know both options and their consequences."
+            ],
+            [
+              "Carpenter",
+              "Agreed. I'll ask what's possible and bring the response back before changing anything."
+            ],
+            [
+              "Site coordinator",
+              "The decorator has just offered Wednesday morning. Does that resolve the whole sequence?"
+            ],
+            [
+              "Carpenter",
+              "It resolves the proposed access window, but supplier timing and crew availability still need checking."
+            ],
+            [
+              "Site coordinator",
+              "I'll show Wednesday as proposed in the lookahead schedule, with those two dependencies open."
+            ]
+          ]
+        },
+        {
+          "title": "The countertop appointment moves",
+          "setting": "A carpenter and kitchen coordinator discuss a revised supplier visit.",
+          "turns": [
+            [
+              "Carpenter",
+              "The countertop surveyor moved their appointment to Thursday. Does the current cabinet review still work?"
+            ],
+            [
+              "Kitchen coordinator",
+              "Our cabinet review was Friday, so the surveyor would arrive before that review."
+            ],
+            [
+              "Carpenter",
+              "Then we need to reconcile the sequence rather than tell both teams they're confirmed."
+            ],
+            [
+              "Kitchen coordinator",
+              "Can your review move to Wednesday afternoon, or is that still unconfirmed?"
+            ],
+            [
+              "Carpenter",
+              "Wednesday is possible for me, but the client needs to attend the appearance review."
+            ],
+            [
+              "Kitchen coordinator",
+              "I'll ask the client about Wednesday and explain why the timing matters for Thursday."
+            ],
+            [
+              "Carpenter",
+              "Please distinguish the appearance review from the surveyor's own measurement and acceptance requirements."
+            ],
+            [
+              "Kitchen coordinator",
+              "I will. Moving our meeting doesn't automatically mean their survey prerequisites are satisfied."
+            ],
+            [
+              "Carpenter",
+              "Once both parties confirm their requirements, we can update the lookahead with real dependencies."
+            ],
+            [
+              "Kitchen coordinator",
+              "I'll contact them today and keep Thursday tentative until the sequence is agreed."
+            ]
+          ]
+        },
+        {
+          "title": "The retained floor needs a clear boundary",
+          "setting": "A carpenter and homeowner discuss access through an occupied room.",
+          "turns": [
+            [
+              "Carpenter",
+              "Our agreed route passes through the sitting room. Which furniture will remain in place?"
+            ],
+            [
+              "Homeowner",
+              "The piano stays, and the desk must remain usable during my afternoon appointments."
+            ],
+            [
+              "Carpenter",
+              "Then we need the protection plan and access window to reflect both constraints."
+            ],
+            [
+              "Homeowner",
+              "Can your crew simply use the side doorway whenever the front room is busy?"
+            ],
+            [
+              "Carpenter",
+              "That route wasn't reviewed. I'll ask the site coordinator to assess it before agreeing."
+            ],
+            [
+              "Homeowner",
+              "Please explain that I need quiet from one until three, not all afternoon."
+            ],
+            [
+              "Carpenter",
+              "I'll state those hours precisely and ask whether the planned sequence can accommodate them."
+            ],
+            [
+              "Homeowner",
+              "That sounds workable. Can we have one contact for confirming any daily access changes?"
+            ],
+            [
+              "Carpenter",
+              "The site coordinator can handle those confirmations; I'll make sure your constraint reaches them."
+            ],
+            [
+              "Homeowner",
+              "Thank you. I can plan my appointments around a confirmed window, not an informal guess."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The lift booking belongs to another crew",
+        "brief": "A cabinet delivery is proposed for 10:00. The service lift is booked for another trade from 09:30 to 11:00. The building manager can offer 11:30, subject to supplier agreement.",
+        "role_a": "Carpenter: explain the conflict and propose checking the later slot.",
+        "role_b": "Building manager: keep the existing booking and offer 11:30 for confirmation.",
+        "opening_line": "Our proposed delivery overlaps the booked lift window; is eleven thirty available for us?",
+        "complication": "The supplier can deliver at 11:30 but cannot provide storage before then.",
+        "success_checks": [
+          "Name the conflicting windows.",
+          "Avoid claiming the later slot is final before both sides agree.",
+          "Confirm the delivery and lift booking together."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "I overlooked drawer D3",
+          "setting": "A carpenter repairs an inaccurate statement during a wardrobe review.",
+          "turns": [
+            [
+              "Carpenter",
+              "I said all the fronts were flush, but you've identified an exception at D3."
+            ],
+            [
+              "Client",
+              "Yes, the left edge projects beyond the next front when viewed from here."
+            ],
+            [
+              "Carpenter",
+              "You're right about that visible relationship. My earlier statement was too broad."
+            ],
+            [
+              "Client",
+              "Can we put that exact location on the snag list rather than cabinet alignment?"
+            ],
+            [
+              "Carpenter",
+              "Certainly. I'll describe D3's left edge projecting beyond the neighboring front for review."
+            ],
+            [
+              "Client",
+              "Do you know whether the drawer front needs replacing, or just an adjustment?"
+            ],
+            [
+              "Carpenter",
+              "I haven't established the cause or remedy. The joinery lead needs to review it."
+            ],
+            [
+              "Client",
+              "They offered Thursday morning. Can you confirm that appointment without promising completion that day?"
+            ],
+            [
+              "Carpenter",
+              "Yes, I'll confirm the review appointment and leave the remedy and completion date open."
+            ],
+            [
+              "Client",
+              "Good. That gives us a specific follow-up instead of another general statement about the wardrobe."
+            ]
+          ]
+        },
+        {
+          "title": "Level and plumb are different questions",
+          "setting": "A carpenter and client discuss wording in a finish-review note.",
+          "turns": [
+            [
+              "Carpenter",
+              "Your review note says the tall panel isn't level. Which direction concerns you?"
+            ],
+            [
+              "Client",
+              "It seems to lean sideways when I compare its edge with the doorway."
+            ],
+            [
+              "Carpenter",
+              "For that vertical relationship, plumb is the more precise term than level."
+            ],
+            [
+              "Client",
+              "Thanks. I wasn't sure how to describe the leaning without using the wrong word."
+            ],
+            [
+              "Carpenter",
+              "We can say the vertical edge appears out of plumb and request a check."
+            ],
+            [
+              "Client",
+              "Does appears mean you're dismissing what I can see from the hall?"
+            ],
+            [
+              "Carpenter",
+              "No. It preserves your observation while distinguishing it from a completed measurement or assessment."
+            ],
+            [
+              "Client",
+              "Then include my viewing position so the joinery lead can examine the same concern."
+            ],
+            [
+              "Carpenter",
+              "I will. The review should address that panel, not every cabinet in the room."
+            ],
+            [
+              "Client",
+              "That is the item I meant; the revised wording makes the concern much clearer."
+            ]
+          ]
+        },
+        {
+          "title": "The agreed sample covers sheen",
+          "setting": "A carpenter and owner compare a finished panel with an acceptance sample.",
+          "turns": [
+            [
+              "Carpenter",
+              "The acceptance sample records sheen and color. Which feature differs on this installed panel?"
+            ],
+            [
+              "Owner",
+              "The sheen looks similar, but there's a grain patch I don't like near the handle."
+            ],
+            [
+              "Carpenter",
+              "That is a separate appearance concern. The sample note doesn't establish a grain-pattern guarantee."
+            ],
+            [
+              "Owner",
+              "I understand wood varies, but I'd still like someone to review the visible patch."
+            ],
+            [
+              "Carpenter",
+              "Of course. I'll record its location and your concern without saying the sample settles it."
+            ],
+            [
+              "Owner",
+              "Please don't mark the whole panel accepted just because the sheen matches our reference."
+            ],
+            [
+              "Carpenter",
+              "I'll keep the grain concern open and distinguish it from the matched sheen."
+            ],
+            [
+              "Owner",
+              "Could the supplier show what variation was described when we selected this material?"
+            ],
+            [
+              "Carpenter",
+              "Yes, I'll request that information for the review, alongside the panel and sample references."
+            ],
+            [
+              "Owner",
+              "Then we can discuss the specific concern with the right information rather than argue over match."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An item is done but not checked",
+        "brief": "A snag list, also called a punch list, has five trim items. Items 1 and 2, the hall baseboard and study casing, are completed and reviewed. Items 3 and 4, the pantry return and window joint, are reported complete but not client-reviewed. Item 5, the store-door molding, awaits replacement.",
+        "role_a": "Carpenter: separate completed work, reviewed items, and the pending replacement.",
+        "role_b": "Client: you can review items 3 and 4, the pantry return and window joint, at 15:00.",
+        "opening_line": "Four items are reported complete, but you have reviewed only two so far.",
+        "complication": "The client suggests marking all five closed before the afternoon visit.",
+        "success_checks": [
+          "Give the three different statuses.",
+          "Confirm which two items will be reviewed at 15:00.",
+          "Keep the replacement item open."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Friday is the call, not the visit",
+          "setting": "A carpenter hands over cabinet documents to the owner.",
+          "turns": [
+            [
+              "Carpenter",
+              "Here are the cabinet drawings and the care sheet for the finish actually supplied."
+            ],
+            [
+              "Owner",
+              "Thank you. The shelf pin cover is missing; is that still on your list?"
+            ],
+            [
+              "Carpenter",
+              "Yes, it remains outstanding. Mina has accepted supplier follow-up and will call you Friday."
+            ],
+            [
+              "Owner",
+              "Does that mean someone will arrive Friday to fit the cover in the cabinet?"
+            ],
+            [
+              "Carpenter",
+              "No, Friday is the update date. The cover hasn't arrived, so attendance isn't confirmed."
+            ],
+            [
+              "Owner",
+              "Please make that distinction clear; I need notice before taking time off work."
+            ],
+            [
+              "Carpenter",
+              "I'll record your need for notice and ask Mina to agree any visit directly."
+            ],
+            [
+              "Owner",
+              "Can you also explain whether the warranty covers every mark on the finish?"
+            ],
+            [
+              "Carpenter",
+              "The supplied document states its terms. I shouldn't replace those with a broad verbal promise."
+            ],
+            [
+              "Owner",
+              "Understood. I'll keep it with the care sheet and expect Mina's status call Friday."
+            ]
+          ]
+        },
+        {
+          "title": "The manual belongs to the old hardware",
+          "setting": "A carpenter and client identify a mismatched handover leaflet.",
+          "turns": [
+            [
+              "Carpenter",
+              "You've found a different hinge model on the leaflet. Let's compare the product references."
+            ],
+            [
+              "Client",
+              "The installed hardware was changed during procurement, but this leaflet shows the first selection."
+            ],
+            [
+              "Carpenter",
+              "Then the handover pack needs correction. Please keep this copy separate from the applicable information."
+            ],
+            [
+              "Client",
+              "Can you obtain the correct document without asking me to identify the replacement myself?"
+            ],
+            [
+              "Carpenter",
+              "Yes. I'll use the recorded supply reference and request the matching leaflet from the supplier."
+            ],
+            [
+              "Client",
+              "I'd like the as-built record to show that hardware substitution accurately for future enquiries."
+            ],
+            [
+              "Carpenter",
+              "I'll ask the joinery lead to reconcile the record with the confirmed supplied product."
+            ],
+            [
+              "Client",
+              "Will you send a complete corrected pack or only the new individual page?"
+            ],
+            [
+              "Carpenter",
+              "A complete identified pack will be clearer, with the superseded document noted in the covering message."
+            ],
+            [
+              "Client",
+              "Good. I can then keep one reliable set instead of guessing which loose sheet applies."
+            ]
+          ]
+        },
+        {
+          "title": "A callback needs a specific description",
+          "setting": "A carpenter clarifies a client's request for a return visit.",
+          "turns": [
+            [
+              "Carpenter",
+              "Your message asks us to come back about the cupboard. What has changed?"
+            ],
+            [
+              "Client",
+              "The upper left door rubs the neighboring front when I open it now."
+            ],
+            [
+              "Carpenter",
+              "When did you first notice that, and is this the cupboard beside the window?"
+            ],
+            [
+              "Client",
+              "Yesterday evening, and yes, the window cupboard. The other doors seem unchanged to me."
+            ],
+            [
+              "Carpenter",
+              "I'll record that description and arrange a review rather than suggest an adjustment by phone."
+            ],
+            [
+              "Client",
+              "Thank you. I don't want to alter the hardware myself and complicate the review."
+            ],
+            [
+              "Carpenter",
+              "The service coordinator can offer appointment windows. May they contact you on this number?"
+            ],
+            [
+              "Client",
+              "Yes, afternoons are easiest, except Wednesday when the room is being used for meetings."
+            ],
+            [
+              "Carpenter",
+              "I'll pass on those availability limits and keep the item identified as a reported concern."
+            ],
+            [
+              "Client",
+              "Please do. A defined review appointment will help more than a promise to drop by sometime."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The named contact is away",
+        "brief": "The owner expects a Friday update about replacement drawer front D6. Its delivery date is unconfirmed. Mina is away; colleague Joel can accept supplier follow-up but has not yet spoken to the supplier.",
+        "role_a": "Outgoing carpenter: ask Joel to accept the follow-up and distinguish known status from an expected reply.",
+        "role_b": "Joel: you can contact the supplier today and call the owner Friday regardless of whether a date is confirmed.",
+        "opening_line": "Can you take over the drawer-front follow-up while Mina is away?",
+        "complication": "The owner asks whether the change of contact means the part has arrived.",
+        "success_checks": [
+          "Confirm Joel accepts the task.",
+          "Preserve the unknown delivery status.",
+          "Keep Friday as an update, not a delivery promise."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The survey note and the door schedule",
+      "setting": "A carpenter and designer reconcile references for a utility-room door without selecting an installation method.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "The utility door schedule shows a unit width, while the survey labels an opening. Can we reconcile them?"
+        ],
+        [
+          "Designer",
+          "Yes. Which drawing revision and survey location are you using for that comparison this morning?"
+        ],
+        [
+          "Carpenter",
+          "Revision C, doorway U2. The survey was taken before the wall finishes were added on either side."
+        ],
+        [
+          "Designer",
+          "Then the survey dimension describes an earlier condition. The schedule refers to the proposed door unit itself."
+        ],
+        [
+          "Carpenter",
+          "The client has asked for the usable passage width, so neither number answers that question directly."
+        ],
+        [
+          "Designer",
+          "Correct. We need the completed opening relationship, including the selected frame, before confirming usable width to them."
+        ],
+        [
+          "Carpenter",
+          "Could you issue a marked detail identifying the datum and the surfaces for each dimension?"
+        ],
+        [
+          "Designer",
+          "I can prepare that clarification. Please keep the supplier's order on hold while I reconcile the documents."
+        ],
+        [
+          "Carpenter",
+          "I will. Should I tell the client the proposed door is unsuitable for their delivery trolley?"
+        ],
+        [
+          "Designer",
+          "Not yet; suitability hasn't been established either way. Ask for the trolley's actual dimensions and turning requirements."
+        ],
+        [
+          "Carpenter",
+          "They can provide those today. I'll identify them as client requirements, not alter your drawing myself."
+        ],
+        [
+          "Designer",
+          "Good. Send them with the survey, and we'll answer the passage question against one coordinated detail."
+        ]
+      ],
+      "notes": [
+        "'Neither number answers that question' separates two valid measurements from the client's different requirement.",
+        "'Hasn't been established either way' avoids turning uncertainty into a rejection."
+      ]
+    },
+    {
+      "title": "Matching old oak without promising an exact twin",
+      "setting": "A remodeling carpenter and homeowner discuss new shelving beside existing oak paneling.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "The new oak sample is close in color, but its grain differs from the paneling you are retaining."
+        ],
+        [
+          "Homeowner",
+          "I noticed that. Can the supplier guarantee an exact match if we choose a more expensive board?"
+        ],
+        [
+          "Carpenter",
+          "Price alone wouldn't establish that. Wood varies, and the existing finish has its own age and appearance."
+        ],
+        [
+          "Homeowner",
+          "I mainly want the shelves to look intentional, rather than like a failed attempt at matching."
+        ],
+        [
+          "Carpenter",
+          "Then we can compare a close match with a deliberate contrast, using actual samples beside the paneling."
+        ],
+        [
+          "Homeowner",
+          "Would a contrasting finish mean changing the shelf profile as well, or only the visible surface?"
+        ],
+        [
+          "Carpenter",
+          "Only the surface in these options. Both examples retain the agreed square edge and the same dimensions."
+        ],
+        [
+          "Homeowner",
+          "The darker sample looks deliberate. I would like to see it under our evening lighting before deciding."
+        ],
+        [
+          "Carpenter",
+          "I'll leave the labeled sample here and keep the material selection open until tomorrow."
+        ],
+        [
+          "Homeowner",
+          "Please make sure the workshop doesn't treat our discussion as approval to start making the shelves."
+        ],
+        [
+          "Carpenter",
+          "I'll tell them color review is pending. The profile remains agreed, but the finish is not selected."
+        ],
+        [
+          "Homeowner",
+          "Thank you. Tomorrow I'll choose between these two references, rather than asking for an impossible identical grain."
+        ]
+      ],
+      "notes": [
+        "'A deliberate contrast' offers a positive alternative to a poorly defined exact match.",
+        "'The profile remains agreed' preserves a settled decision while isolating the open finish choice."
+      ]
+    },
+    {
+      "title": "An old detail inside a new email",
+      "setting": "A carpenter and cabinet supplier discover that an attachment does not match its covering email.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "Your email says revised for approval, but the attached section still has the original drawer-front arrangement."
+        ],
+        [
+          "Supplier",
+          "That's unexpected. Are you comparing the attachment with the elevation we discussed during yesterday's review meeting?"
+        ],
+        [
+          "Carpenter",
+          "Yes. The elevation shows two equal fronts; this section still labels three different front heights."
+        ],
+        [
+          "Supplier",
+          "I may have attached the earlier file. Please tell me the revision letter printed on its border."
+        ],
+        [
+          "Carpenter",
+          "It says A, while your email refers to C. I haven't released the cabinet to fabrication."
+        ],
+        [
+          "Supplier",
+          "Thank you for catching that. I'll resend the correct section and identify the superseded attachment clearly."
+        ],
+        [
+          "Carpenter",
+          "Please include the matching elevation too, so the workshop receives one coordinated set rather than isolated sheets."
+        ],
+        [
+          "Supplier",
+          "I can issue those together. Does the client need to reconsider the finish sample as part of this?"
+        ],
+        [
+          "Carpenter",
+          "No, the finish hasn't changed. This query concerns the drawer arrangement and the documents describing it."
+        ],
+        [
+          "Supplier",
+          "Understood. I'll keep the finish approval reference and show the drawing correction as a separate change."
+        ],
+        [
+          "Carpenter",
+          "Once I receive the set, I'll compare the section and elevation before confirming its review status."
+        ],
+        [
+          "Supplier",
+          "That works. The earlier email remains a record of transmission, not evidence that the incorrect attachment was approved."
+        ]
+      ],
+      "notes": [
+        "'Superseded attachment' identifies a replaced document without pretending it was never sent.",
+        "'This query concerns' narrows a correction so unrelated approvals do not become uncertain."
+      ]
+    },
+    {
+      "title": "A wall that may not be straight",
+      "setting": "A carpenter and homeowner discuss uneven visible spacing beside a proposed built-in unit.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "The survey shows different widths at the front and rear of this alcove."
+        ],
+        [
+          "Homeowner",
+          "Does that mean the wall is unsound? The old bookcase always looked slightly crooked here."
+        ],
+        [
+          "Carpenter",
+          "Different widths alone don't establish structural condition. They tell us the space is not uniform at those points."
+        ],
+        [
+          "Homeowner",
+          "I see. My main concern is the cabinet looking straight when we view it from the doorway."
+        ],
+        [
+          "Carpenter",
+          "That's an appearance requirement we can discuss. The drawing needs to show the face line and adjoining relationship."
+        ],
+        [
+          "Homeowner",
+          "Can you promise the visible gap will disappear completely once the cabinet is fitted into the alcove?"
+        ],
+        [
+          "Carpenter",
+          "Not without an agreed detail. A scribed panel might be considered, but design review comes first."
+        ],
+        [
+          "Homeowner",
+          "Then please ask for a detail that shows what remains visible, not just the overall cabinet width."
+        ],
+        [
+          "Carpenter",
+          "I'll do that and include the actual survey points so the designer has the same information."
+        ],
+        [
+          "Homeowner",
+          "Will the new detail mean another charge, or is it part of the existing cabinet proposal?"
+        ],
+        [
+          "Carpenter",
+          "The project manager needs to clarify that scope question. I can describe the issue, not decide the commercial terms."
+        ],
+        [
+          "Homeowner",
+          "Please arrange both clarifications together. I'll hold my appearance approval until I can see the proposed finished relationship."
+        ]
+      ],
+      "notes": [
+        "'Different widths alone' limits the inference to the actual measurement evidence.",
+        "'That's an appearance requirement' acknowledges the client's priority without substituting it for a structural assessment."
+      ]
+    },
+    {
+      "title": "One extra room, two possible packages",
+      "setting": "A remodeling carpenter and owner discuss extending a trim package to a second room.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "You asked about adding the dining room. The current package covers the sitting room only."
+        ],
+        [
+          "Owner",
+          "Yes. I'd like matching trim in both, but I need a useful comparison before deciding."
+        ],
+        [
+          "Carpenter",
+          "We can quote the dining room separately or request a combined revision covering both rooms."
+        ],
+        [
+          "Owner",
+          "Would the combined revision automatically include repainting the doors as well as the new trim?"
+        ],
+        [
+          "Carpenter",
+          "No. We should list door painting explicitly if you want it included in that comparison."
+        ],
+        [
+          "Owner",
+          "Please include it as a separate line. I might keep the existing door finish after all."
+        ],
+        [
+          "Carpenter",
+          "I'll distinguish trim supply, fitting, and the requested decorating extent, with timing for each proposed package."
+        ],
+        [
+          "Owner",
+          "The estimate has an allowance. Doesn't that mean the extra room is already partly paid for?"
+        ],
+        [
+          "Carpenter",
+          "That allowance is identified for the sitting-room trim selection, not an unspecified amount of extra work."
+        ],
+        [
+          "Owner",
+          "Understood. Keep that reference visible so I can compare the original scope with the proposed addition."
+        ],
+        [
+          "Carpenter",
+          "I will ask for the difference to be shown clearly, without treating either proposal as accepted."
+        ],
+        [
+          "Owner",
+          "Then I'll review both packages with the decorator before approving any extension of the work."
+        ]
+      ],
+      "notes": [
+        "'As a separate line' requests a visible scope distinction within a quotation.",
+        "'Not an unspecified amount of extra work' clarifies an allowance without interpreting contractual rights."
+      ]
+    },
+    {
+      "title": "A handover between the floor and cabinet teams",
+      "setting": "A carpenter and flooring supervisor settle the boundaries of an upcoming room release.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "The lookahead says kitchen available Friday. Does that mean your work and room release are both complete?"
+        ],
+        [
+          "Flooring supervisor",
+          "Our floor installation is planned to finish Friday, but the room-release conditions still need confirmation."
+        ],
+        [
+          "Carpenter",
+          "Thanks. The phrase available sounded broader than that when the cabinet supplier read the schedule yesterday."
+        ],
+        [
+          "Flooring supervisor",
+          "I understand. We should replace it with a clear status, including what remains to be checked."
+        ],
+        [
+          "Carpenter",
+          "Can you give the coordinator that distinction today? The delivery booking needs a decision tomorrow morning."
+        ],
+        [
+          "Flooring supervisor",
+          "Yes. I'll report installation timing separately from access release and name the person confirming the latter."
+        ],
+        [
+          "Carpenter",
+          "The supplier also asks whether their delivery route crosses the retained hallway finish beside the kitchen."
+        ],
+        [
+          "Flooring supervisor",
+          "It does. That interface belongs in the protection discussion, rather than being left to the delivery crew."
+        ],
+        [
+          "Carpenter",
+          "I'll include it in the coordination call, with the agreed hallway restrictions visible to everyone attending."
+        ],
+        [
+          "Flooring supervisor",
+          "Good. Please avoid telling the client the cabinets are delayed by flooring before the options are reviewed."
+        ],
+        [
+          "Carpenter",
+          "Agreed. Let's confirm access and check the delivery options before saying the flooring team has delayed us."
+        ],
+        [
+          "Flooring supervisor",
+          "Then our update will identify the open release condition and tomorrow's booking decision without assigning unsupported blame."
+        ]
+      ],
+      "notes": [
+        "'The phrase ... sounded broader' repairs an interpretation without accusing the other trade.",
+        "'Separately from access release' distinguishes finishing an activity from authorizing the next crew's access."
+      ]
+    },
+    {
+      "title": "A finish concern after the review meeting",
+      "setting": "A carpenter and client agree how to handle a new snag reported after an earlier walkthrough.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "You sent a photograph after yesterday's walkthrough. Which feature would you like reviewed?"
+        ],
+        [
+          "Client",
+          "The joint above the left corner looks uneven in daylight, although I didn't notice it last evening."
+        ],
+        [
+          "Carpenter",
+          "Thank you. I'll identify that joint and the lighting difference rather than say the entire trim failed."
+        ],
+        [
+          "Client",
+          "Will raising it now cancel the other items we agreed were satisfactory during the walkthrough?"
+        ],
+        [
+          "Carpenter",
+          "Not automatically in our review record. We can keep those observations and add this specific concern separately."
+        ],
+        [
+          "Client",
+          "I'd like that. The rest of the room looks good, and I don't want the issue exaggerated."
+        ],
+        [
+          "Carpenter",
+          "Do you have the original image available? The messaging app preview makes the corner hard to see."
+        ],
+        [
+          "Client",
+          "Yes, I'll send the full image and indicate the left corner on a second copy for orientation."
+        ],
+        [
+          "Carpenter",
+          "I'll ask the joinery lead to review it against the detail, with the cause and remedy still open."
+        ],
+        [
+          "Client",
+          "Please include me in the appointment. I want to show the exact view before anything is proposed."
+        ],
+        [
+          "Carpenter",
+          "Thursday at ten is available for that review. Is that suitable for you to attend in person?"
+        ],
+        [
+          "Client",
+          "Yes. Confirm Thursday's review, and describe it as the window-joint concern rather than a complete room rejection."
+        ]
+      ],
+      "notes": [
+        "'Add this specific concern separately' preserves earlier decisions while allowing new evidence.",
+        "'For orientation' explains why a marked copy accompanies the original photograph."
+      ]
+    },
+    {
+      "title": "The owner needs a useful final record",
+      "setting": "A carpenter and facilities representative review a remodeled meeting room's handover pack.",
+      "dialogue": [
+        [
+          "Carpenter",
+          "The pack contains cabinet records, finish references, and supplier documents. One trim item remains open."
+        ],
+        [
+          "Facilities representative",
+          "Which item? I need to explain the room status to our incoming colleague."
+        ],
+        [
+          "Carpenter",
+          "The short molding beside the store door is awaiting replacement. Everything else on this list has been reviewed."
+        ],
+        [
+          "Facilities representative",
+          "Please keep review status separate from warranty terms; our incoming colleague sometimes confuses them."
+        ],
+        [
+          "Carpenter",
+          "I will. The warranty document is separate, and any coverage question should refer to its actual terms."
+        ],
+        [
+          "Facilities representative",
+          "Is the molding's return visit booked, or are we still waiting for the supplier to confirm availability?"
+        ],
+        [
+          "Carpenter",
+          "Availability is still pending. Joel owns the follow-up and has agreed to update you on Monday afternoon."
+        ],
+        [
+          "Facilities representative",
+          "Can the incoming colleague be included, so the handover doesn't depend on forwarding my messages later?"
+        ],
+        [
+          "Carpenter",
+          "Yes. With your agreed contact details, I'll include them and ask them to acknowledge receipt of the pack."
+        ],
+        [
+          "Facilities representative",
+          "Their name is Lena. I'll introduce her today and explain that the molding remains an open item."
+        ],
+        [
+          "Carpenter",
+          "Then Monday's update will go to both of you, without presenting the room record as a completion guarantee."
+        ],
+        [
+          "Facilities representative",
+          "Lena will have the documents, the open item, and a named contact to follow up with."
+        ]
+      ],
+      "notes": [
+        "'Availability is still pending' distinguishes procurement status from an appointment booking.",
+        "'Acknowledge receipt' checks delivery of the information without treating receipt as technical acceptance."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "plumbers",
+    "title": "Plumbing Workplace English",
+    "summary": "Identify fixtures and pipe specifications, reconcile layouts, describe moisture evidence, explain drainage access, coordinate visits, and clarify estimates and handover records.",
+    "roles": "Plumbers, supervised plumbing apprentices, plumbing service coordinators, and plumbing crew leads",
+    "scope_note": "Original fictional English practice, not plumbing instruction, diagnosis, design, legal advice, or guidance on operating water or drainage systems. Every incident, dimension, product, price basis, and schedule is invented. Do not open, test, dismantle, clear, pressurize, or operate equipment to enact a scenario. Installation, testing, concealed-service assessment, and safety decisions require qualified personnel and project-specific procedures. No universal code or permit rules are stated; source profiles establish occupational context only.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Plumbers, Pipefitters, and Steamfitters",
+        "url": "https://www.bls.gov/ooh/construction-and-extraction/plumbers-pipefitters-and-steamfitters.htm"
+      },
+      {
+        "title": "O*NET OnLine: Plumbers, Pipefitters, and Steamfitters (47-2152.00), U.S. Department of Labor-sponsored occupational profile",
+        "url": "https://www.onetonline.org/link/summary/47-2152.00"
+      }
+    ],
+    "category": "Industry & infrastructure",
+    "modules": [
+      {
+        "title": "Identifying fixtures and service history",
+        "terms": [
+          "fixture",
+          "branch line",
+          "riser",
+          "service history"
+        ],
+        "collocations": [
+          "identify the affected fixture: name the item and its exact location",
+          "trace the service history: connect current reports with earlier records",
+          "distinguish a fixture from a pipe: separate the user-facing item from connecting pipework",
+          "attribute the tenant's report: say who noticed the issue"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A tenant reports a problem with the bathroom sink in Unit 3B. The building has both a basin in the bathroom and a utility sink beside it. The tenant means the bathroom basin and noticed water on its cabinet base at 07:00. No source is established.",
+          "model": "Could you confirm whether you mean the bathroom basin or the utility sink beside it? I will record water on the bathroom cabinet base at 07:00 as your observation. That identifies the affected location, not the source. We can link this visit to the correct fixture's service history without assuming which pipe is involved."
+        },
+        "workshop": {
+          "title": "Locate the fixture before naming a cause",
+          "goal": "Clarify everyday fixture names and record the source of an account.",
+          "explanation": "Clients may use sink for different fixtures. Ask for room, unit, and fixture references rather than inferring a pipe route. This is an information-gathering exercise, not a request to test, dismantle, or operate plumbing.",
+          "frames": [
+            "Do you mean the ___ or the ___?",
+            "Where did you notice ___?",
+            "I will record ___ as your observation, not ___."
+          ],
+          "before": "The bathroom branch is leaking.",
+          "after": "The tenant noticed water on the bathroom basin's cabinet base; the source is unknown.",
+          "reason": "The revision distinguishes a reported location from a diagnosed pipe fault.",
+          "questions": [
+            {
+              "prompt": "Tenant: I mean the washbasin inside the bathroom, not the utility sink.\nPlumber: I'll identify that ____ on the service request.",
+              "options": [
+                "fixture",
+                "riser",
+                "branch line",
+                "water main"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The basin itself is the identified fixture.",
+                "A riser is vertical pipework, not the basin the tenant named.",
+                "A branch line is connecting pipework, not the user-facing basin.",
+                "A water main is not the basin identified in this report."
+              ]
+            },
+            {
+              "prompt": "Dispatcher: Did you see the water yourself?\nPlumber: No, this is the ____ account.",
+              "options": [
+                "tenant's",
+                "tenants",
+                "tenant",
+                "tenancy"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The possessive 'tenant's' identifies whose account it is.",
+                "The plural 'tenants' without an apostrophe does not show possession here.",
+                "The bare noun does not naturally identify possession before 'account' here.",
+                "Tenancy describes an occupancy arrangement, not the reporting person."
+              ]
+            }
+          ],
+          "role_b": "You are the tenant. Clarify the fixture and when you noticed the water.",
+          "challenge": "The manager calls it a riser leak. Preserve the tenant's observation without accepting the unverified pipe diagnosis."
+        }
+      },
+      {
+        "title": "Clarifying pipe and component specifications",
+        "terms": [
+          "nominal pipe size",
+          "outside diameter",
+          "connection type",
+          "material specification"
+        ],
+        "collocations": [
+          "confirm the nominal size: identify the specified size designation",
+          "state the measurement basis: distinguish an actual dimension from a product designation",
+          "match the connection description: compare the required component interfaces",
+          "request the exact product reference: obtain the complete manufacturer identifier"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A client compares a pipe's nominal designation with a measured outside diameter and thinks the delivered item must be wrong because the numbers differ. The order identifies a product series but the delivery label is incomplete. No material or connection compatibility is verified.",
+          "model": "A nominal pipe size is a designation, not necessarily the measured outside diameter. Different numbers alone do not prove the delivery is wrong or correct. We need the complete product reference and material specification to compare the supplied item with the order. The connection type also needs confirmation before anyone treats it as a match."
+        },
+        "workshop": {
+          "title": "Distinguish a designation from a measurement",
+          "goal": "Explain why two size numbers may describe different things.",
+          "explanation": "Avoid equating a nominal size with a measured diameter. Product series, material, and connection details matter to comparison. Do not teach joining methods or infer interchangeability from one number.",
+          "frames": [
+            "The designation is ___; the measured dimension is ___ .",
+            "Those numbers describe different ___ .",
+            "To confirm the match, we still need ___."
+          ],
+          "before": "The numbers differ, so the pipe is wrong.",
+          "after": "The numbers use different size descriptions; the product reference still needs checking.",
+          "reason": "The correction avoids declaring either a match or a mismatch prematurely.",
+          "questions": [
+            {
+              "prompt": "Client: Is the catalog size always the dimension across the outside?\nPlumber: No, a ____ may differ from the measured outside diameter.",
+              "options": [
+                "nominal pipe size",
+                "measured external diameter",
+                "verified outside measurement",
+                "recorded external dimension"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A nominal designation need not equal the outside diameter.",
+                "This restates an actual outside measurement rather than a different designation.",
+                "A verified outside measurement describes the same physical dimension.",
+                "An external dimension is not the nominal designation being distinguished here."
+              ]
+            },
+            {
+              "prompt": "Supplier: Besides size, what specifies the joint interface between these two components?\nPlumber: That is the ____.",
+              "options": [
+                "connection type",
+                "pressure class",
+                "nominal pipe size",
+                "material grade"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Connection type identifies the joint interface between components.",
+                "Pressure class describes a rating, not the form of joint interface.",
+                "Nominal size identifies a size designation, not the connection form by itself.",
+                "Material grade describes material properties, not the joint interface itself."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask why a catalog label can differ from a measured dimension.",
+          "challenge": "The supplier offers the same nominal size in another material. Keep compatibility pending the full specification review."
+        }
+      },
+      {
+        "title": "Reconciling fixture layouts and dimensions",
+        "terms": [
+          "fixture schedule",
+          "rough-in dimension",
+          "centerline",
+          "finished wall face"
+        ],
+        "collocations": [
+          "check the fixture schedule: confirm the selected product and location",
+          "confirm the wall reference: distinguish framing from the completed wall face",
+          "coordinate with the cabinet layout: reconcile fixture and joinery positions",
+          "query a dimension conflict: request clarification of inconsistent measurements"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "The bathroom layout gives a basin centerline 450 millimeters from the finished wall face. The cabinet drawing gives 450 from the framing face. These are different references. The selected basin is B2; no coordinated rough-in detail has been confirmed.",
+          "model": "Could the designer reconcile the B2 basin position before the layout is released? Both drawings show 450 millimeters, but one measures from the finished wall face and the other from the framing face. Please confirm the intended centerline reference and issue a coordinated detail. Matching numbers do not resolve different measurement origins."
+        },
+        "workshop": {
+          "title": "Ask where the dimension starts",
+          "goal": "Identify inconsistent reference surfaces even when the numbers match.",
+          "explanation": "A dimension needs both a starting reference and an endpoint. A fixture selection can also affect the layout. Ask for a coordinated detail rather than choosing whichever drawing seems easier to follow.",
+          "frames": [
+            "Both drawings say ___, but one starts at ___ .",
+            "Please confirm the centerline relative to ___ .",
+            "The selected fixture reference is ___."
+          ],
+          "before": "They both say four fifty, so they agree.",
+          "after": "Both say 450 millimeters, but their wall reference surfaces differ.",
+          "reason": "The revised statement makes the actual coordination issue visible.",
+          "questions": [
+            {
+              "prompt": "Designer: Which surface does the bathroom layout name?\nPlumber: It measures from the ____.",
+              "options": [
+                "finished wall face",
+                "framing face",
+                "cabinet centerline",
+                "basin rim"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The layout explicitly names the completed wall surface.",
+                "The framing face belongs to the conflicting cabinet reference.",
+                "The cabinet centerline is not the given measurement origin.",
+                "The basin rim is not the starting wall reference."
+              ]
+            },
+            {
+              "prompt": "Cabinetmaker: Do equal numbers settle the position?\nPlumber: Not ____ the reference surfaces are also reconciled.",
+              "options": [
+                "until",
+                "during",
+                "despite",
+                "whereas"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Not until' identifies the condition still required.",
+                "'During' requires a time expression rather than this clause.",
+                "'Despite' does not introduce this full clause in this form.",
+                "'Whereas' expresses contrast, not the condition needed to settle the position."
+              ]
+            }
+          ],
+          "role_b": "You are the designer. Ask for the fixture reference and both wall references.",
+          "challenge": "The client changes basin B2 to B3 during the query. Explain why the new selection also needs coordination."
+        }
+      },
+      {
+        "title": "Describing moisture without diagnosing its source",
+        "terms": [
+          "active leak",
+          "water staining",
+          "condensation",
+          "concealed pipework"
+        ],
+        "collocations": [
+          "describe the wet area: give its location and observed extent",
+          "separate stain from active leakage: distinguish an appearance from a current confirmed escape",
+          "record the reported timing: identify when moisture was noticed",
+          "refer the source question: ask for assessment without asserting a cause"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A shop owner reports a stain below an upstairs washroom. At the visit, the visible ceiling patch is dry. No pipework is visible and no source has been established. The owner asks whether the dry patch proves the leak has stopped.",
+          "model": "The ceiling patch is dry where we can see it during this visit. That does not establish whether there was a leak, whether one has stopped, or where the moisture came from. The concealed pipework has not been assessed. I will retain your timing report and ask for the source question to be reviewed separately."
+        },
+        "workshop": {
+          "title": "Keep the observation separate from the explanation",
+          "goal": "Report moisture evidence without diagnosing a hidden system.",
+          "explanation": "A visible stain, a tenant's account, and a confirmed active leak are different kinds of information. Time and visibility limit conclusions. Do not direct learners to investigate concealed services or offer repair steps.",
+          "frames": [
+            "At the time of the visit, ___ .",
+            "That observation does not establish ___ .",
+            "The source remains ___; the visible condition is ___."
+          ],
+          "before": "It's dry, so the leak is fixed.",
+          "after": "The visible patch is dry today; the source and history remain unconfirmed.",
+          "reason": "The revision avoids turning one observation into a repair claim.",
+          "questions": [
+            {
+              "prompt": "Owner: Does a stain itself prove water is escaping right now?\nPlumber: No, it does not by itself confirm an ____.",
+              "options": [
+                "active leak",
+                "earlier moisture mark",
+                "old discoloration",
+                "historic stain"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A current escape requires evidence beyond the mere stain.",
+                "A stain may itself be an earlier moisture mark, so this does not answer the current-escape question.",
+                "Old discoloration describes appearance, not a current escape.",
+                "A historic stain is not the present leakage the owner is asking about."
+              ]
+            },
+            {
+              "prompt": "Manager: Did you identify the source?\nPlumber: The source ____ unconfirmed after this observation.",
+              "options": [
+                "remains",
+                "remains to",
+                "remaining",
+                "has remaining"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Remains unconfirmed' states the continuing uncertainty.",
+                "'Remains to' needs a verb phrase such as 'be confirmed'.",
+                "'Remaining' alone does not supply the finite verb here.",
+                "The form 'has remaining' is not the required verb construction."
+              ]
+            }
+          ],
+          "role_b": "You are the owner. Ask whether the dry appearance means the issue is resolved.",
+          "challenge": "The owner suggests condensation. Attribute it as a possibility rather than a diagnosis."
+        }
+      },
+      {
+        "title": "Explaining drainage and access terminology",
+        "terms": [
+          "trap",
+          "vent",
+          "cleanout",
+          "drain line"
+        ],
+        "collocations": [
+          "identify the access point: locate the item described in the records",
+          "distinguish access from drainage: explain what a fitting is for without operating it",
+          "retain service access: preserve the reviewed ability to reach a component",
+          "coordinate the enclosure detail: resolve how building finishes relate to service access"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A cabinet drawing labels a small removable panel for access to a recorded cleanout. The client calls it an extra drain and wants the panel permanently covered. The plumber has not reviewed the enclosure change; the designer must coordinate the access detail.",
+          "model": "The recorded cleanout is an access point for drainage inspection or servicing, not an extra drain for everyday use. The cabinet panel is shown to provide access to it. Covering that panel changes the reviewed arrangement, so we need the designer and plumbing lead to assess the enclosure detail before treating the change as acceptable."
+        },
+        "workshop": {
+          "title": "Explain purpose without giving operating steps",
+          "goal": "Clarify component terminology while preserving unresolved access requirements.",
+          "explanation": "Explain what a component is, then relate it to the drawing question. Do not describe how to open, clear, dismantle, test, or use drainage components. A client's appearance preference still needs coordinated review.",
+          "frames": [
+            "___ is an access point, not ___ .",
+            "The panel is shown for ___ .",
+            "The proposed enclosure changes ___, which needs ___."
+          ],
+          "before": "That is just another drain.",
+          "after": "The cleanout provides service access; it is not an everyday drainage outlet.",
+          "reason": "The revised explanation gives the component's purpose without an operating instruction.",
+          "questions": [
+            {
+              "prompt": "Client: Is the labeled cleanout another place to pour wastewater?\nPlumber: No, it is a ____.",
+              "options": [
+                "drainage service access point",
+                "fixture waste outlet",
+                "basin overflow opening",
+                "floor drainage inlet"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A cleanout provides access for drainage inspection or servicing.",
+                "A fixture waste outlet carries wastewater away from a fixture.",
+                "A basin overflow opening serves a different fixture function.",
+                "A floor drainage inlet receives drainage rather than naming this service access point."
+              ]
+            },
+            {
+              "prompt": "Designer: Why does the enclosure need review?\nPlumber: It changes access ____ the recorded cleanout.",
+              "options": [
+                "to",
+                "by",
+                "from",
+                "during"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Access to' identifies the component to be reached.",
+                "'Access by' would identify who accesses something, not the destination here.",
+                "'Access from' names an origin rather than the component being reached.",
+                "'During' introduces time, not the component accessed."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You prefer a continuous cabinet face but accept a reviewed access detail.",
+          "challenge": "The cabinet supplier offers a different removable panel. Ask for the detail to be reviewed rather than approving it by appearance."
+        }
+      },
+      {
+        "title": "Coordinating interruptions and room access",
+        "terms": [
+          "access panel",
+          "service interruption",
+          "interruption notice",
+          "affected fixture"
+        ],
+        "collocations": [
+          "confirm the interruption scope: establish which services the plan includes",
+          "coordinate room access: agree entry arrangements with the occupier",
+          "notify the relevant occupants: communicate the agreed plan to those affected",
+          "separate an appointment from an interruption: distinguish attendance timing from service availability"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "A plumber's visit is booked for 09:00, but a proposed water-service interruption from 10:00 to 11:00 awaits building-manager confirmation. The request concerns the east washroom only. A tenant thinks the entire building will be unavailable from 09:00. No operating instruction is supplied.",
+          "model": "Our visit is booked for 09:00. The proposed interruption is a separate 10:00-to-11:00 request for the east washroom, still awaiting building-manager confirmation. It is not a confirmed whole-building interruption from 09:00. Please keep the appointment, proposed affected area, and pending interruption approval separate when updating the tenants."
+        },
+        "workshop": {
+          "title": "State which part of the plan is confirmed",
+          "goal": "Distinguish attendance, access, and service-interruption arrangements.",
+          "explanation": "A booked visit does not automatically confirm interruption timing or technical readiness. State only the planned affected services; leave system operation and actual status confirmation to the responsible qualified staff.",
+          "frames": [
+            "Our attendance is confirmed for ___ .",
+            "The proposed interruption covers ___ and remains ___ .",
+            "Please don't equate ___ with ___."
+          ],
+          "before": "We're booked at nine, so water is off then.",
+          "after": "The visit is booked at nine; the proposed interruption is ten to eleven and unconfirmed.",
+          "reason": "The correction separates two different scheduling facts.",
+          "questions": [
+            {
+              "prompt": "Tenant: Is the interruption confirmed?\nPlumber: It is ____ building-manager confirmation.",
+              "options": [
+                "awaiting",
+                "providing",
+                "completing",
+                "replacing"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Awaiting describes the pending approval accurately.",
+                "The request is not providing confirmation itself.",
+                "The request is not completing the manager's confirmation.",
+                "The request does not replace the needed confirmation."
+              ]
+            },
+            {
+              "prompt": "Manager: Which event is booked for nine?\nPlumber: The ____ is booked then.",
+              "options": [
+                "service visit",
+                "water-service interruption",
+                "restoration of service",
+                "completion review"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The plumber's attendance is the confirmed nine-o'clock event.",
+                "The proposed interruption is later and unconfirmed.",
+                "No restoration event at nine is established.",
+                "A completion review is not scheduled for nine in the case."
+              ]
+            }
+          ],
+          "role_b": "You are the tenant contact. Repeat back the visit and proposed interruption separately.",
+          "challenge": "The manager confirms ten to eleven for the east washroom. Explain what planning information changes without giving operating directions."
+        }
+      },
+      {
+        "title": "Pricing changes and restoration boundaries",
+        "terms": [
+          "repair estimate",
+          "fixture allowance",
+          "concealed condition",
+          "making good"
+        ],
+        "collocations": [
+          "define the repair scope: identify the work the estimate actually covers",
+          "separate supply from fitting: distinguish providing a fixture from installing it",
+          "clarify restoration responsibility: agree who handles affected building finishes",
+          "request a revised estimate: obtain pricing for a changed, defined proposal"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "The agreed estimate covers replacing basin B1 with the specified model. The client now wants a wall-hung vanity and assumes the fixture allowance covers cabinet changes and redecoration. Those items are not in the estimate. Access requirements and revised plumbing scope have not been assessed.",
+          "model": "The allowance concerns the specified basin selection; it does not establish inclusion of a new vanity, cabinet changes, or redecoration. We can retain the current proposal or assess a revised package. For the revised option, we need the vanity details and access review before pricing plumbing and making good, meaning restoration of disturbed finishes, separately."
+        },
+        "workshop": {
+          "title": "Keep allowance, scope, and restoration distinct",
+          "goal": "Negotiate a revised package without making cost or timing assumptions.",
+          "explanation": "A budget allowance applies to its stated item, not every related change. Define the requested fixture, cabinet work, plumbing assessment, and restoration boundaries. Leave contract interpretation and payment disputes to appropriate review.",
+          "frames": [
+            "The allowance covers ___, not automatically ___ .",
+            "The revised package would need ___ .",
+            "Please show ___ separately from ___."
+          ],
+          "before": "The allowance should cover the new vanity.",
+          "after": "The allowance is for the specified basin; the changed vanity package needs assessment and pricing.",
+          "reason": "The revision connects the budget provision to its actual stated scope.",
+          "questions": [
+            {
+              "prompt": "Client: Is repainting disturbed finishes included?\nPlumber: We need to clarify the extent of ____.",
+              "options": [
+                "making good",
+                "fixture supply",
+                "pipe sizing",
+                "flow testing"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Making good concerns repair or restoration of disturbed finishes.",
+                "Fixture supply concerns providing the product, not restoring surrounding surfaces.",
+                "Pipe sizing concerns design dimensions rather than finish restoration.",
+                "Flow testing concerns assessment of performance, not repainting disturbed finishes."
+              ]
+            },
+            {
+              "prompt": "Estimator: What has the client requested, without authorizing extra work?\nPlumber: They have requested ____ before deciding.",
+              "options": [
+                "a price for the revised package",
+                "immediate release of the revised work",
+                "cancellation of the original proposal",
+                "acceptance of all additional charges"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The client wants pricing to compare before deciding whether to approve.",
+                "Immediate release would authorize work, which has not happened.",
+                "The case does not establish cancellation of the existing option.",
+                "The client has not accepted unassessed additional charges."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You can keep the original basin if the revised package is unsuitable.",
+          "challenge": "The client asks whether a cheaper fixture automatically offsets all cabinet costs. Explain why those are separate quoted items."
+        }
+      },
+      {
+        "title": "Handing over plumbing records and follow-up",
+        "terms": [
+          "test record",
+          "asset register",
+          "warranty reference",
+          "return visit"
+        ],
+        "collocations": [
+          "match the record to the fixture: verify that the document concerns the actual item",
+          "retain the pending status: keep an unresolved matter visible",
+          "agree a follow-up owner: name who will obtain the missing information",
+          "confirm the visit purpose: distinguish assessment from completion or repair"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Basin B1 is listed in the handover pack, but its care leaflet names the previous model. The supplier's replacement leaflet is pending. Service coordinator Leo accepts document follow-up and will call Monday. A separate cosmetic trim review needs a return visit; no date is booked.",
+          "model": "The pack lists basin B1, but the care leaflet refers to the previous model and should not be presented as its confirmed guidance. Leo has accepted supplier follow-up and will call Monday. The cosmetic trim review is a separate outstanding item with no return date booked yet. Please keep those two follow-ups distinct in the handover."
+        },
+        "workshop": {
+          "title": "Transfer the exact unresolved items",
+          "goal": "Give usable records and separate document follow-up from site attendance.",
+          "explanation": "A document can be present but wrong for the supplied fixture. Identify the mismatch, owner, and promised update. An update call is not a visit booking, and a warranty reference is not a guarantee of coverage.",
+          "frames": [
+            "The record identifies ___; the supplied item is ___ .",
+            "___ owns the document follow-up.",
+            "The call is ___; the return visit is ___."
+          ],
+          "before": "Leo will finish it Monday.",
+          "after": "Leo will call Monday about the leaflet; the separate trim review is not booked.",
+          "reason": "The revision identifies the task and avoids converting a call into completion.",
+          "questions": [
+            {
+              "prompt": "Client: Does Monday mean the trim will be repaired then?\nPlumber: Monday is the ____ commitment.",
+              "options": [
+                "document-update call",
+                "confirmed repair visit",
+                "supplier delivery",
+                "completed trim review"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Leo has committed to a call about the document.",
+                "No repair visit has been confirmed for Monday.",
+                "The supplier's document delivery is still pending.",
+                "A completed review is not established by this call commitment."
+              ]
+            },
+            {
+              "prompt": "Coordinator: Which leaflet should the client rely on?\nPlumber: The one ____ the actual supplied model, once confirmed.",
+              "options": [
+                "matching",
+                "matched with by",
+                "match",
+                "matches"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Matching' modifies the leaflet and links it to the actual model.",
+                "This sequence of prepositions does not form a natural modifying phrase.",
+                "The bare verb does not modify 'one' in this construction.",
+                "'Matches' would require a relative clause such as 'that matches'."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask for the leaflet owner and the separate return-visit status.",
+          "challenge": "Leo receives the leaflet but its model suffix differs. Preserve the pending verification rather than declaring the document item closed."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "fixture",
+        "definition": "A plumbing-connected item such as a sink, basin, toilet, or shower that supplies or receives water.",
+        "group": "Identifying fixtures and service history"
+      },
+      {
+        "term": "branch line",
+        "definition": "A smaller piping route that connects part of a system to a larger main or distribution line.",
+        "group": "Identifying fixtures and service history"
+      },
+      {
+        "term": "riser",
+        "definition": "A vertical pipe or group of pipes serving different levels of a building.",
+        "group": "Identifying fixtures and service history"
+      },
+      {
+        "term": "service history",
+        "definition": "The record of earlier reported plumbing issues, visits, findings, and work for an identified location or asset.",
+        "group": "Identifying fixtures and service history"
+      },
+      {
+        "term": "nominal pipe size",
+        "definition": "A standardized size designation for pipe that is not necessarily its measured outside diameter.",
+        "group": "Clarifying pipe and component specifications"
+      },
+      {
+        "term": "outside diameter",
+        "definition": "The distance across the external surface of a round pipe, measured through its center.",
+        "group": "Clarifying pipe and component specifications"
+      },
+      {
+        "term": "connection type",
+        "definition": "The specified form of joint or interface between plumbing components.",
+        "group": "Clarifying pipe and component specifications"
+      },
+      {
+        "term": "material specification",
+        "definition": "The stated requirements identifying a component's material and relevant product properties.",
+        "group": "Clarifying pipe and component specifications"
+      },
+      {
+        "term": "fixture schedule",
+        "definition": "A list identifying specified plumbing fixtures and their associated product or location references.",
+        "group": "Reconciling fixture layouts and dimensions"
+      },
+      {
+        "term": "rough-in dimension",
+        "definition": "A specified position for preparatory plumbing connections, defined from stated reference points.",
+        "group": "Reconciling fixture layouts and dimensions"
+      },
+      {
+        "term": "centerline",
+        "definition": "A reference line through the center of a fixture, connection, or drawing feature.",
+        "group": "Reconciling fixture layouts and dimensions"
+      },
+      {
+        "term": "finished wall face",
+        "definition": "The surface of the completed wall, used as a stated reference for dimensions.",
+        "group": "Reconciling fixture layouts and dimensions"
+      },
+      {
+        "term": "active leak",
+        "definition": "Water or other fluid currently escaping from a system at an identified point, as confirmed by appropriate assessment.",
+        "group": "Describing moisture without diagnosing its source"
+      },
+      {
+        "term": "water staining",
+        "definition": "Discoloration associated with past or present moisture exposure, which does not alone identify its source.",
+        "group": "Describing moisture without diagnosing its source"
+      },
+      {
+        "term": "condensation",
+        "definition": "Liquid formed when water vapor cools on a surface; a possible moisture source requiring appropriate assessment.",
+        "group": "Describing moisture without diagnosing its source"
+      },
+      {
+        "term": "concealed pipework",
+        "definition": "Pipes hidden behind or within building finishes or other enclosures.",
+        "group": "Describing moisture without diagnosing its source"
+      },
+      {
+        "term": "trap",
+        "definition": "A fitting designed to retain a liquid seal that limits passage of drainage-system gases into occupied space.",
+        "group": "Explaining drainage and access terminology"
+      },
+      {
+        "term": "vent",
+        "definition": "Pipework that serves pressure-management and air-movement functions in a drainage system.",
+        "group": "Explaining drainage and access terminology"
+      },
+      {
+        "term": "cleanout",
+        "definition": "A designated access point provided for inspection or servicing of drainage pipework.",
+        "group": "Explaining drainage and access terminology"
+      },
+      {
+        "term": "drain line",
+        "definition": "Pipework carrying wastewater away from a fixture or connected drainage area.",
+        "group": "Explaining drainage and access terminology"
+      },
+      {
+        "term": "access panel",
+        "definition": "A removable or openable building panel provided to reach concealed services.",
+        "group": "Coordinating interruptions and room access"
+      },
+      {
+        "term": "service interruption",
+        "definition": "A planned or unplanned period when an identified plumbing service is unavailable.",
+        "group": "Coordinating interruptions and room access"
+      },
+      {
+        "term": "interruption notice",
+        "definition": "A communication stating the planned extent, timing, and contact for a service interruption.",
+        "group": "Coordinating interruptions and room access"
+      },
+      {
+        "term": "affected fixture",
+        "definition": "A fixture specifically identified as included in a reported problem or planned work scope.",
+        "group": "Coordinating interruptions and room access"
+      },
+      {
+        "term": "repair estimate",
+        "definition": "A stated anticipated cost for defined repair work, based on identified information and assumptions.",
+        "group": "Pricing changes and restoration boundaries"
+      },
+      {
+        "term": "fixture allowance",
+        "definition": "A budget provision for a fixture selection whose final cost or product is not yet settled.",
+        "group": "Pricing changes and restoration boundaries"
+      },
+      {
+        "term": "concealed condition",
+        "definition": "An existing condition hidden from view during the initial assessment that may affect later work.",
+        "group": "Pricing changes and restoration boundaries"
+      },
+      {
+        "term": "making good",
+        "definition": "Repairing or restoring building finishes disturbed by the plumbing work, to an agreed extent and standard.",
+        "group": "Pricing changes and restoration boundaries"
+      },
+      {
+        "term": "test record",
+        "definition": "A record of specified plumbing checks and their results, with the tested scope and conditions identified.",
+        "group": "Handing over plumbing records and follow-up"
+      },
+      {
+        "term": "asset register",
+        "definition": "A list linking plumbing equipment or fixtures to their locations, identifiers, and relevant records.",
+        "group": "Handing over plumbing records and follow-up"
+      },
+      {
+        "term": "warranty reference",
+        "definition": "The product or document identifier used to locate applicable warranty terms for an item.",
+        "group": "Handing over plumbing records and follow-up"
+      },
+      {
+        "term": "return visit",
+        "definition": "A later agreed attendance for a defined unresolved task or review.",
+        "group": "Handing over plumbing records and follow-up"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Which sink in Unit 3B?",
+          "setting": "A plumber clarifies the fictional Unit 3B report with its tenant.",
+          "turns": [
+            [
+              "Plumber",
+              "Your request says bathroom sink. Do you mean the basin or the utility sink nearby?"
+            ],
+            [
+              "Tenant",
+              "The basin inside the bathroom. There was water on its cabinet base at seven."
+            ],
+            [
+              "Plumber",
+              "Thank you. That locates the observation, but it doesn't establish where the water came from."
+            ],
+            [
+              "Tenant",
+              "The manager mentioned a riser leak. Is that the same thing as my basin?"
+            ],
+            [
+              "Plumber",
+              "A riser is vertical pipework; a branch line serves part of the system. Neither source is confirmed."
+            ],
+            [
+              "Tenant",
+              "I can give you the earlier service number for the basin if that helps."
+            ],
+            [
+              "Plumber",
+              "Please do. It will help us connect the history to the correct fixture."
+            ],
+            [
+              "Tenant",
+              "Should I describe this as the same fault returning from the previous visit?"
+            ],
+            [
+              "Plumber",
+              "Say what you noticed today. Whether it shares the earlier cause still needs assessment."
+            ],
+            [
+              "Tenant",
+              "I'll give the current observation and the old reference separately so neither is lost."
+            ]
+          ]
+        },
+        {
+          "title": "Two washrooms with identical basins",
+          "setting": "A plumber and office manager identify a service location.",
+          "turns": [
+            [
+              "Plumber",
+              "The request names the rear washroom, but both corridors have a washroom at the rear."
+            ],
+            [
+              "Office manager",
+              "I mean the one beyond the staff kitchen, not the one beside the loading entrance."
+            ],
+            [
+              "Plumber",
+              "Could we use the room identifier from your floor plan to remove that ambiguity?"
+            ],
+            [
+              "Office manager",
+              "Yes, that's W14. The basin nearest the door is the one our cleaner reported."
+            ],
+            [
+              "Plumber",
+              "I'll include W14 and nearest the door, with the cleaner identified as the reporter."
+            ],
+            [
+              "Office manager",
+              "The other basin was serviced last month. Should I include that record as well?"
+            ],
+            [
+              "Plumber",
+              "You can provide it as background, but we shouldn't merge the two fixture histories."
+            ],
+            [
+              "Office manager",
+              "Understood. I'll label last month's record with the other basin's location before sending it."
+            ],
+            [
+              "Plumber",
+              "Who can arrange access to W14 during the service visit so the plumber isn't delayed?"
+            ],
+            [
+              "Office manager",
+              "Our caretaker will meet you at reception and confirm the room with you in person."
+            ]
+          ]
+        },
+        {
+          "title": "A complaint changes meaning in retelling",
+          "setting": "A plumber checks a hotel supervisor's summary of a guest report.",
+          "turns": [
+            [
+              "Plumber",
+              "The booking says the shower is blocked. What did the guest actually report to reception?"
+            ],
+            [
+              "Hotel supervisor",
+              "They said water remained on the shower floor longer than usual after yesterday's use."
+            ],
+            [
+              "Plumber",
+              "I'll retain that description. Blocked sounds like a diagnosis rather than the guest's observation."
+            ],
+            [
+              "Hotel supervisor",
+              "That's fair. The receptionist shortened the message because the service form had limited space."
+            ],
+            [
+              "Plumber",
+              "Do you have the room number and the time the guest noticed the issue?"
+            ],
+            [
+              "Hotel supervisor",
+              "Room 418, yesterday evening. I can ask reception for a more precise time if available."
+            ],
+            [
+              "Plumber",
+              "Please also keep any earlier service reference separate from the current report of slow drainage."
+            ],
+            [
+              "Hotel supervisor",
+              "Should we ask the guest to reproduce it before the plumber attends the room?"
+            ],
+            [
+              "Plumber",
+              "No additional operation is needed for this conversation. Their existing account gives us the enquiry."
+            ],
+            [
+              "Hotel supervisor",
+              "I'll correct the description and arrange access through housekeeping, with the source still unconfirmed."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Kitchen, pantry, or utility?",
+        "brief": "A hotel has a pantry sink and utility sink on Level 2. A request says kitchen sink. The reporter means the pantry sink beside the beverage counter; asset labels are not visible from the corridor.",
+        "role_a": "Plumber: identify the location without asking anyone to investigate equipment.",
+        "role_b": "Supervisor: confirm the pantry sink beside the beverage counter; caretaker Noor can arrange access. Earlier job U-17 belongs to the utility sink.",
+        "opening_line": "When you say kitchen sink, which room and counter are you referring to?",
+        "complication": "An earlier job reference belongs to the utility sink.",
+        "success_checks": [
+          "Name the pantry sink.",
+          "Keep the earlier utility reference separate.",
+          "Agree the access contact."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "The nominal number is not a measurement",
+          "setting": "A plumber explains the incomplete delivery comparison to a client.",
+          "turns": [
+            [
+              "Plumber",
+              "Nominal pipe size and measured outside diameter describe different types of information."
+            ],
+            [
+              "Client",
+              "I thought any difference meant the supplier had sent the wrong pipe for our order."
+            ],
+            [
+              "Plumber",
+              "Not necessarily. A nominal designation doesn't always equal the actual outside measurement."
+            ],
+            [
+              "Client",
+              "Then can we accept it, now that we know the numbers may differ?"
+            ],
+            [
+              "Plumber",
+              "Not yet. The delivery label lacks the full reference needed to check the ordered series."
+            ],
+            [
+              "Client",
+              "Please ask the supplier for that reference and the stated material specification."
+            ],
+            [
+              "Plumber",
+              "I will, along with the connection type, so the comparison isn't based on diameter alone."
+            ],
+            [
+              "Client",
+              "Could we keep the item identified while the supplier checks, rather than mixing it into stock?"
+            ],
+            [
+              "Plumber",
+              "Yes, I'll ask receiving to retain the delivery reference and its pending review status."
+            ],
+            [
+              "Client",
+              "That gives us a clear question for the supplier without declaring the item right or wrong."
+            ]
+          ]
+        },
+        {
+          "title": "The same finish hides a different connection",
+          "setting": "A plumber checks a proposed faucet substitution with a supplier.",
+          "turns": [
+            [
+              "Plumber",
+              "The alternate faucet looks similar, but the submitted data don't identify the same connection arrangement."
+            ],
+            [
+              "Supplier",
+              "The finish and body shape match. Would the client accept that as an equivalent product?"
+            ],
+            [
+              "Plumber",
+              "Appearance is only one part of the review. We need the complete technical comparison."
+            ],
+            [
+              "Supplier",
+              "I'll obtain the manufacturer's sheet for the exact alternate, not just the brochure photograph."
+            ],
+            [
+              "Plumber",
+              "Please retain the original model reference beside it so any differences are visible."
+            ],
+            [
+              "Supplier",
+              "Should I describe the alternate as approved if its finish matches the client's sample?"
+            ],
+            [
+              "Plumber",
+              "No. Finish acceptance doesn't establish component compatibility or approval of the whole substitution."
+            ],
+            [
+              "Supplier",
+              "Understood. I'll mark it proposed and request confirmation of the specified connection details."
+            ],
+            [
+              "Plumber",
+              "The delivery date matters too, but please show it separately from the compatibility question."
+            ],
+            [
+              "Supplier",
+              "I'll provide both pieces of information without presenting early availability as proof of suitability."
+            ]
+          ]
+        },
+        {
+          "title": "A unit disappears in a phone order",
+          "setting": "A plumber clarifies an incomplete fitting request with a purchasing coordinator.",
+          "turns": [
+            [
+              "Plumber",
+              "Your enquiry says twenty-two, but it doesn't identify units, series, or the complete fitting reference."
+            ],
+            [
+              "Purchasing coordinator",
+              "I copied the number from a phone conversation and assumed the supplier would recognize it."
+            ],
+            [
+              "Plumber",
+              "We need the specified component description so they don't choose between several plausible interpretations."
+            ],
+            [
+              "Purchasing coordinator",
+              "I can retrieve the original material schedule. Should I send its item reference as well?"
+            ],
+            [
+              "Plumber",
+              "Yes, send that reference with the full description and the applicable project revision."
+            ],
+            [
+              "Purchasing coordinator",
+              "There are two similar entries, one for each system. I shouldn't merge them, should I?"
+            ],
+            [
+              "Plumber",
+              "Correct. Keep the system references separate, even if their descriptions begin with the same size."
+            ],
+            [
+              "Purchasing coordinator",
+              "I'll ask the supplier to quote against each complete line rather than my shortened note."
+            ],
+            [
+              "Plumber",
+              "Please identify any deviation explicitly, so the reviewer can compare what is actually being offered."
+            ],
+            [
+              "Purchasing coordinator",
+              "That will be more reliable than asking whether they have a twenty-two fitting in stock."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A replacement cartridge has a longer code",
+        "brief": "The installed fictional faucet reference is FX40. Its recorded cartridge reference is K40. The supplier offers K40-R, saying the suffix may indicate a revision, but has not confirmed its compatibility with faucet FX40.",
+        "role_a": "Plumber: request manufacturer confirmation against the installed faucet reference.",
+        "role_b": "Supplier: you can obtain the full cross-reference but do not yet have it.",
+        "opening_line": "What does the R suffix identify, and does the manufacturer confirm this exact replacement?",
+        "complication": "The client thinks a similar name proves interchangeability.",
+        "success_checks": [
+          "Use both complete references.",
+          "Distinguish a proposed replacement from a verified match.",
+          "Keep the order decision pending confirmation."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Four fifty from different walls",
+          "setting": "A plumber calls the designer about the B2 basin layout.",
+          "turns": [
+            [
+              "Plumber",
+              "Both drawings say four hundred fifty millimeters, but they use different wall references."
+            ],
+            [
+              "Designer",
+              "Which surfaces do they identify, and which fixture are you coordinating in this query?"
+            ],
+            [
+              "Plumber",
+              "The bathroom layout uses the finished wall face; the cabinet drawing uses framing. It's basin B2."
+            ],
+            [
+              "Designer",
+              "Then matching numbers don't give the same centerline. I need to reconcile the detail."
+            ],
+            [
+              "Plumber",
+              "Please identify the intended reference explicitly before the layout is released to the teams."
+            ],
+            [
+              "Designer",
+              "I will. Has the client confirmed the fixture selection shown on the schedule?"
+            ],
+            [
+              "Plumber",
+              "B2 is the current selection. I'll flag any later change rather than assuming the dimensions transfer."
+            ],
+            [
+              "Designer",
+              "Thank you. I'll issue a coordinated position tied to that fixture and the agreed wall face."
+            ],
+            [
+              "Plumber",
+              "Should I tell the cabinetmaker the query concerns measurement origins, not an incorrect arithmetic calculation?"
+            ],
+            [
+              "Designer",
+              "Yes, that will focus the discussion on the actual mismatch between the two drawings."
+            ]
+          ]
+        },
+        {
+          "title": "The replacement basin is wider",
+          "setting": "A plumber and interior designer discuss a changed fixture selection.",
+          "turns": [
+            [
+              "Plumber",
+              "The fixture schedule now shows a wider basin, but the cabinet elevation hasn't been revised."
+            ],
+            [
+              "Interior designer",
+              "The client changed the model yesterday because they preferred the shape of the bowl."
+            ],
+            [
+              "Plumber",
+              "We need the new model reviewed before retaining any earlier rough-in dimension."
+            ],
+            [
+              "Interior designer",
+              "Can we assume the connections remain centered because the basin itself is centered?"
+            ],
+            [
+              "Plumber",
+              "The product dimensions need confirmation. Visual symmetry doesn't establish every connection position."
+            ],
+            [
+              "Interior designer",
+              "I'll get the selected model's drawing and send it with the revised fixture schedule."
+            ],
+            [
+              "Plumber",
+              "Please identify which older model it replaces so the cabinetmaker understands the change."
+            ],
+            [
+              "Interior designer",
+              "Should the client regard yesterday's selection as approval of a fully coordinated installation detail?"
+            ],
+            [
+              "Plumber",
+              "No, it's a product choice that still needs the associated layout review."
+            ],
+            [
+              "Interior designer",
+              "I'll make that distinction and keep the cabinet detail pending until both teams have agreed information."
+            ]
+          ]
+        },
+        {
+          "title": "The drawing is not to scale",
+          "setting": "A plumber responds to a project coordinator's suggested measurement.",
+          "turns": [
+            [
+              "Plumber",
+              "This sketch says not to scale and doesn't give the required fixture offset."
+            ],
+            [
+              "Project coordinator",
+              "Could you estimate the offset from the picture so purchasing can release the cabinet?"
+            ],
+            [
+              "Plumber",
+              "That would turn an illustration into an unsupported dimension. We need the stated reference."
+            ],
+            [
+              "Project coordinator",
+              "The client thinks the sketch is precise because it shows the entire bathroom layout."
+            ],
+            [
+              "Plumber",
+              "We can explain that it communicates arrangement without providing every fabrication or connection dimension."
+            ],
+            [
+              "Project coordinator",
+              "I'll ask the designer for the missing offset, with its wall face and centerline identified."
+            ],
+            [
+              "Plumber",
+              "Please include the fixture code so the reply cannot be mistaken for another basin."
+            ],
+            [
+              "Project coordinator",
+              "The issue log has B4. I'll attach the current selection sheet to the question."
+            ],
+            [
+              "Plumber",
+              "Good. Keep the cabinet release dependent on the coordinated detail rather than the picture alone."
+            ],
+            [
+              "Project coordinator",
+              "I'll tell purchasing what information is missing and ask when the designer can respond."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Above the floor, but which floor?",
+        "brief": "A vanity note gives a connection reference above floor without saying finished floor or structural slab. The floor finish build-up is not yet confirmed.",
+        "role_a": "Plumber: ask the designer to identify the datum, meaning the reference level.",
+        "role_b": "Designer: you can coordinate the floor information with the architect.",
+        "opening_line": "Does floor here mean the finished floor or the structural slab reference?",
+        "complication": "The coordinator offers a dimension copied from a different room.",
+        "success_checks": [
+          "Name both possible references.",
+          "Explain why the other room does not resolve this note.",
+          "Request a room-specific coordinated dimension."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Dry today does not explain yesterday",
+          "setting": "A plumber discusses the ceiling patch with the shop owner.",
+          "turns": [
+            [
+              "Plumber",
+              "The water staining is dry today; its source and any active leak remain unconfirmed."
+            ],
+            [
+              "Shop owner",
+              "Doesn't that mean the leak stopped and we can tell the decorator to cover it?"
+            ],
+            [
+              "Plumber",
+              "It doesn't establish that there was a leak, or that any cause has been resolved."
+            ],
+            [
+              "Shop owner",
+              "The stain appeared after the upstairs washroom was busy yesterday. Could that be relevant?"
+            ],
+            [
+              "Plumber",
+              "Yes, I'll record your timing account without treating the coincidence as proof of a source."
+            ],
+            [
+              "Shop owner",
+              "The building manager suggested condensation rather than a pipe leak. Is that confirmed?"
+            ],
+            [
+              "Plumber",
+              "No. It's a possible explanation they raised, not an assessment result we have."
+            ],
+            [
+              "Shop owner",
+              "Please keep both my observation and that suggestion visible when arranging the review."
+            ],
+            [
+              "Plumber",
+              "I will distinguish reported history, today's visible condition, and the unresolved source question."
+            ],
+            [
+              "Shop owner",
+              "That gives the reviewer the information without promising the decorator that the issue is finished."
+            ]
+          ]
+        },
+        {
+          "title": "Wet beside the pipe is not from the pipe",
+          "setting": "A plumber clarifies an observation with a facilities supervisor.",
+          "turns": [
+            [
+              "Plumber",
+              "Your photograph shows moisture beside the visible pipe, but not where it originated."
+            ],
+            [
+              "Facilities supervisor",
+              "I described the pipe as leaking because the water was directly below it."
+            ],
+            [
+              "Plumber",
+              "The location is useful evidence, but it doesn't establish the source by itself."
+            ],
+            [
+              "Facilities supervisor",
+              "Then the report should say water below the pipe rather than confirmed pipe leak."
+            ],
+            [
+              "Plumber",
+              "Yes, with the time and exact location so the assessor can understand what you noticed."
+            ],
+            [
+              "Facilities supervisor",
+              "I took the photograph at nine twenty near the north utility cupboard."
+            ],
+            [
+              "Plumber",
+              "I'll retain those details and identify the image as your observation from that time."
+            ],
+            [
+              "Facilities supervisor",
+              "Should I add the neighboring room's service history in case the events are connected?"
+            ],
+            [
+              "Plumber",
+              "Provide it as separate background. We don't yet know whether there's a connection."
+            ],
+            [
+              "Facilities supervisor",
+              "I'll keep the references distinct and avoid changing the source description before assessment."
+            ]
+          ]
+        },
+        {
+          "title": "The ceiling report needs attribution",
+          "setting": "A plumber discusses a complaint relayed by a property manager.",
+          "turns": [
+            [
+              "Plumber",
+              "Your email says water was dripping yesterday. Who directly observed that event?"
+            ],
+            [
+              "Property manager",
+              "The downstairs tenant. I saw the stain today, but no dripping during my visit."
+            ],
+            [
+              "Plumber",
+              "Those are two different observations. Let's preserve both sources and their times."
+            ],
+            [
+              "Property manager",
+              "The tenant says it happened around midnight, although they cannot identify the exact minute."
+            ],
+            [
+              "Plumber",
+              "Around midnight is useful if labeled approximate; we shouldn't turn it into a precise timestamp."
+            ],
+            [
+              "Property manager",
+              "I'll record their account separately from my own daytime observation of the stain."
+            ],
+            [
+              "Plumber",
+              "The source remains unknown, so neither statement should identify concealed pipework as the cause."
+            ],
+            [
+              "Property manager",
+              "Understood. The owner asked me to blame the upstairs fixture because it's directly above."
+            ],
+            [
+              "Plumber",
+              "We can identify that spatial relationship without treating it as a confirmed source finding."
+            ],
+            [
+              "Property manager",
+              "I'll explain the distinction and request assessment using the observations rather than a predetermined conclusion."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A photograph has no date",
+        "brief": "A tenant sends a photo of water beneath a basin but later says it was taken last month. Today's condition is unknown; last month's job record is available.",
+        "role_a": "Plumber: distinguish historical evidence from the current report.",
+        "role_b": "Tenant: you want a repeat visit but have no current photograph.",
+        "opening_line": "When was this image taken, and what have you noticed today?",
+        "complication": "The manager has already described the photo as today's active leak.",
+        "success_checks": [
+          "Correct the photo date.",
+          "Keep today's condition unknown.",
+          "Link the older image to the relevant history without inventing a cause."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "A cleanout is not an extra drain",
+          "setting": "A plumber explains the cabinet access label to a client.",
+          "turns": [
+            [
+              "Plumber",
+              "The cabinet detail provides access to a cleanout, which is recorded behind this panel."
+            ],
+            [
+              "Client",
+              "I thought it was an extra drain we don't use. Could we cover the panel permanently?"
+            ],
+            [
+              "Plumber",
+              "A cleanout gives service access to a drain line; it isn't an everyday drainage outlet."
+            ],
+            [
+              "Client",
+              "I want a continuous cabinet face, but I didn't realize the panel had that purpose."
+            ],
+            [
+              "Plumber",
+              "We can ask the designer to review an appearance option that addresses the access requirement."
+            ],
+            [
+              "Client",
+              "Would a different removable panel solve it without involving the plumbing lead in the review?"
+            ],
+            [
+              "Plumber",
+              "We need a coordinated detail. Appearance alone won't establish whether the proposed access is suitable."
+            ],
+            [
+              "Client",
+              "Then ask both teams to review it, rather than record my preference as approval."
+            ],
+            [
+              "Plumber",
+              "I'll identify the cleanout reference and the cabinet change so they assess the same location."
+            ],
+            [
+              "Client",
+              "Thank you. I can consider the visible finish once the access arrangement is properly described."
+            ]
+          ]
+        },
+        {
+          "title": "Trap and vent are not interchangeable labels",
+          "setting": "A plumber clarifies a maintenance note with a property coordinator.",
+          "turns": [
+            [
+              "Plumber",
+              "The note calls this concern a vent problem, but the tenant reported an odor near a basin."
+            ],
+            [
+              "Property coordinator",
+              "I thought vent and trap were different names for the same drainage fitting."
+            ],
+            [
+              "Plumber",
+              "They aren't. A trap retains a liquid seal; vent pipework has air and pressure-management functions."
+            ],
+            [
+              "Property coordinator",
+              "Thanks. That explains the terms, but it doesn't identify the source of the odor, does it?"
+            ],
+            [
+              "Plumber",
+              "Correct. We should preserve the tenant's location and timing without diagnosing either component."
+            ],
+            [
+              "Property coordinator",
+              "I'll change the request to reported odor near the basin, with the tenant's exact account."
+            ],
+            [
+              "Plumber",
+              "Please keep the old note in the history as an earlier unverified description."
+            ],
+            [
+              "Property coordinator",
+              "Can the visiting plumber then assess the concern without being committed to that assumed cause?"
+            ],
+            [
+              "Plumber",
+              "Yes, the service request should describe the issue and leave the technical assessment open."
+            ],
+            [
+              "Property coordinator",
+              "I'll arrange access through the caretaker and avoid offering the tenant a remedy by phone."
+            ]
+          ]
+        },
+        {
+          "title": "The cabinet photo hides the access detail",
+          "setting": "A plumber and cabinetmaker discuss an unclear drawing package.",
+          "turns": [
+            [
+              "Plumber",
+              "The cabinet rendering looks continuous across the service area, but the detail shows an access panel."
+            ],
+            [
+              "Cabinetmaker",
+              "The rendering was prepared for appearance review and doesn't show every construction joint."
+            ],
+            [
+              "Plumber",
+              "That distinction needs to reach the client, who has approved the image as seamless."
+            ],
+            [
+              "Cabinetmaker",
+              "I can explain that the approval concerns appearance intent, not every unresolved service-access detail."
+            ],
+            [
+              "Plumber",
+              "Please provide a coordinated elevation showing the panel relationship for a specific review."
+            ],
+            [
+              "Cabinetmaker",
+              "Should I label it an inspection hatch or use the access-panel term from your drawing?"
+            ],
+            [
+              "Plumber",
+              "Use the drawing term and reference so everyone can connect the same item across documents."
+            ],
+            [
+              "Cabinetmaker",
+              "I'll also identify that the rendering is illustrative rather than a complete fabrication instruction."
+            ],
+            [
+              "Plumber",
+              "Good. The client can then review an honest representation instead of discovering the panel at handover."
+            ],
+            [
+              "Cabinetmaker",
+              "I'll arrange that review before releasing the affected cabinet component to production."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A storage plan obscures access",
+        "brief": "A storeroom layout places a fixed cupboard in front of a recorded drainage access panel. The panel is shown on the service drawing but omitted from the furniture plan.",
+        "role_a": "Plumber: identify the drawing conflict without prescribing a clearance.",
+        "role_b": "Facilities client: you can ask the furniture planner to review another location.",
+        "opening_line": "The cupboard proposal overlaps the recorded access location; can we review those drawings together?",
+        "complication": "The client offers to label the cupboard as movable although it is specified fixed.",
+        "success_checks": [
+          "Use the correct fixed-cupboard status.",
+          "Explain the access conflict.",
+          "Request a coordinated location rather than a nominal label change."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Nine o'clock is the arrival time",
+          "setting": "A plumber corrects a tenant's understanding of a planned visit.",
+          "turns": [
+            [
+              "Plumber",
+              "Our visit is booked for nine, but the proposed interruption is a separate arrangement."
+            ],
+            [
+              "Tenant contact",
+              "The tenant email says the whole building loses service from nine. Is that inaccurate?"
+            ],
+            [
+              "Plumber",
+              "Yes. The request concerns the east washroom from ten to eleven, pending manager confirmation."
+            ],
+            [
+              "Tenant contact",
+              "I'll correct the interruption notice's area and timing, and mark the window proposed."
+            ],
+            [
+              "Plumber",
+              "Thank you. Please don't present the booked attendance as approval of the service interruption."
+            ],
+            [
+              "Tenant contact",
+              "The manager has now confirmed ten to eleven for the east washroom only."
+            ],
+            [
+              "Plumber",
+              "Then that planning window can be described as confirmed, with its limited scope preserved."
+            ],
+            [
+              "Tenant contact",
+              "Does that mean the work is complete or that service status has already changed?"
+            ],
+            [
+              "Plumber",
+              "No. It confirms the plan, not completion or a current technical operating status."
+            ],
+            [
+              "Tenant contact",
+              "I'll issue the corrected notice and identify the manager as the contact for tenant questions."
+            ]
+          ]
+        },
+        {
+          "title": "The tenant works nights",
+          "setting": "A plumber and property coordinator discuss access to an occupied flat.",
+          "turns": [
+            [
+              "Plumber",
+              "The tenant offered afternoon access because they work nights. Our booking still says eight thirty."
+            ],
+            [
+              "Property coordinator",
+              "I copied the standard slot before reading their note. We should correct the appointment request."
+            ],
+            [
+              "Plumber",
+              "Can you ask for a specific afternoon window rather than simply marking all afternoon available?"
+            ],
+            [
+              "Property coordinator",
+              "They can offer two until four, with the building caretaker present for shared-area access."
+            ],
+            [
+              "Plumber",
+              "I'll check the crew schedule and confirm whether that period is workable before accepting it."
+            ],
+            [
+              "Property coordinator",
+              "Please don't describe the tenant as refusing access; they have offered a reasonable alternative."
+            ],
+            [
+              "Plumber",
+              "Agreed. I'll record their actual availability and the need to coordinate the caretaker's attendance."
+            ],
+            [
+              "Property coordinator",
+              "The caretaker is available then. Does that settle the booking from your side?"
+            ],
+            [
+              "Plumber",
+              "Not until I confirm the crew. I'll return that answer before the tenant rearranges anything."
+            ],
+            [
+              "Property coordinator",
+              "I'll keep two until four as proposed and let them know when both sides agree."
+            ]
+          ]
+        },
+        {
+          "title": "A wall opening is not part of the booking",
+          "setting": "A plumber discusses service access with a remodeling coordinator.",
+          "turns": [
+            [
+              "Plumber",
+              "The visit request assumes an access panel exists, but the room drawing doesn't identify one."
+            ],
+            [
+              "Remodeling coordinator",
+              "The owner thought your team would create whatever opening was needed during the appointment."
+            ],
+            [
+              "Plumber",
+              "That changes the scope and involves building work we haven't coordinated in this booking."
+            ],
+            [
+              "Remodeling coordinator",
+              "Could we ask the project lead to review the access arrangement before confirming attendance?"
+            ],
+            [
+              "Plumber",
+              "Yes. We need the location and responsibilities clarified, including who restores disturbed finishes afterward."
+            ],
+            [
+              "Remodeling coordinator",
+              "I'll contact the building team and avoid describing an opening as a minor included task."
+            ],
+            [
+              "Plumber",
+              "Please also tell the owner that access review is different from diagnosing the plumbing issue."
+            ],
+            [
+              "Remodeling coordinator",
+              "They may still want an estimate. Can we identify the unanswered access item in it?"
+            ],
+            [
+              "Plumber",
+              "The estimator can state that dependency explicitly instead of silently assuming an unrestricted route."
+            ],
+            [
+              "Remodeling coordinator",
+              "I'll obtain a coordinated access proposal, with building work and plumbing assessment kept distinct."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The school event overlaps the proposed window",
+        "brief": "A school's proposed washroom interruption is 13:00-14:00. A parent event begins at 13:30. The facilities manager can review an earlier window; no change is confirmed.",
+        "role_a": "Plumber: report the timing conflict and request a coordinated decision.",
+        "role_b": "Facilities manager: you can speak to the event lead and service scheduler.",
+        "opening_line": "The proposed window overlaps the parent event; can we review the operational conflict before confirming it?",
+        "complication": "The event lead assumes the plumber can guarantee completion before guests arrive.",
+        "success_checks": [
+          "State both timings.",
+          "Do not promise an unassessed completion time.",
+          "Confirm who coordinates the revised proposal."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The allowance does not describe the whole vanity",
+          "setting": "A plumber discusses the changed basin package with a client.",
+          "turns": [
+            [
+              "Plumber",
+              "The estimate covers the specified basin, but you've requested a wall-hung vanity instead."
+            ],
+            [
+              "Client",
+              "I assumed the fixture allowance covered the cabinet changes and repainting around it too."
+            ],
+            [
+              "Plumber",
+              "It covers the stated basin item; those additional elements aren't defined in this estimate."
+            ],
+            [
+              "Client",
+              "Could you price a revised package so I can compare it with the original option?"
+            ],
+            [
+              "Plumber",
+              "Yes, after we obtain the vanity details and review the access and plumbing implications."
+            ],
+            [
+              "Client",
+              "Please show making good separately. I may ask my decorator to handle those surfaces."
+            ],
+            [
+              "Plumber",
+              "I'll describe that as restoration of disturbed finishes and clarify the boundary with your decorator."
+            ],
+            [
+              "Client",
+              "Does requesting the revised price cancel the original basin proposal or approve the change?"
+            ],
+            [
+              "Plumber",
+              "Neither by itself. We'll keep the two options identified until you make a decision."
+            ],
+            [
+              "Client",
+              "Then obtain the comparison first, with the open access questions clearly listed beside the price."
+            ]
+          ]
+        },
+        {
+          "title": "A lower fixture price is not a net saving yet",
+          "setting": "A plumber and homeowner discuss a proposed substitute basin.",
+          "turns": [
+            [
+              "Plumber",
+              "The alternate basin costs less to buy, but the overall change hasn't been assessed."
+            ],
+            [
+              "Homeowner",
+              "I thought the lower purchase price meant the entire bathroom package would cost less."
+            ],
+            [
+              "Plumber",
+              "Other affected work may differ, so we need comparable scope before drawing that conclusion."
+            ],
+            [
+              "Homeowner",
+              "Can the estimator show the fixture price and any changed plumbing or cabinet items separately?"
+            ],
+            [
+              "Plumber",
+              "Yes, that will make the comparison clearer than a single unexplained total."
+            ],
+            [
+              "Homeowner",
+              "Please keep redecoration visible too; I don't want a cheaper basin to hide that cost."
+            ],
+            [
+              "Plumber",
+              "I'll request the same restoration extent for both options or identify any difference."
+            ],
+            [
+              "Homeowner",
+              "Then we can discuss the net change instead of treating the product price as everything."
+            ],
+            [
+              "Plumber",
+              "Exactly. I'll ask for the assumptions and exclusions so you can understand the stated totals."
+            ],
+            [
+              "Homeowner",
+              "I'll wait for that comparison before telling the supplier that the alternate is our final selection."
+            ]
+          ]
+        },
+        {
+          "title": "The estimate did not assess hidden pipework",
+          "setting": "A plumber and property client discuss a scope limit.",
+          "turns": [
+            [
+              "Plumber",
+              "The repair estimate covers visible fixture work; concealed pipework wasn't assessed during the initial visit."
+            ],
+            [
+              "Property client",
+              "The tenant says older pipes run behind the cabinet. Does your figure include replacing those?"
+            ],
+            [
+              "Plumber",
+              "Not as currently described. We first need to establish what additional work, if any, is required."
+            ],
+            [
+              "Property client",
+              "I don't want the word concealed to become an automatic reason for a larger bill."
+            ],
+            [
+              "Plumber",
+              "It shouldn't substitute for a defined finding and a clear proposal for any change."
+            ],
+            [
+              "Property client",
+              "Please explain what information is missing before asking me to consider additional costs."
+            ],
+            [
+              "Plumber",
+              "I'll state the access and assessment questions, then separate any resulting proposal from the original estimate."
+            ],
+            [
+              "Property client",
+              "Can we also identify who restores the cabinet if that becomes part of a reviewed scope?"
+            ],
+            [
+              "Plumber",
+              "Yes, that responsibility and its extent should be explicit in the proposal."
+            ],
+            [
+              "Property client",
+              "Then keep the original estimate visible and present any later change with its actual supporting information."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The owner supplies the basin",
+        "brief": "A quotation includes fitting basin C2 but says client supply. The owner thought the plumber would order it. The supplier has not confirmed availability.",
+        "role_a": "Plumber: clarify responsibility and the missing delivery information.",
+        "role_b": "Owner: you can either place the order or request a supply-inclusive quotation.",
+        "opening_line": "This quotation includes fitting C2; shall we clarify who supplies the basin?",
+        "complication": "The owner wants a guaranteed fitting date before ordering.",
+        "success_checks": [
+          "Separate supply from fitting.",
+          "Offer the two clear next steps.",
+          "Keep attendance timing dependent on confirmed supply and coordination."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "The leaflet and the trim are separate follow-ups",
+          "setting": "A plumber hands over a basin package to the client.",
+          "turns": [
+            [
+              "Plumber",
+              "The pack lists basin B1, but the care leaflet still names the previous model."
+            ],
+            [
+              "Client",
+              "Please obtain the matching leaflet. I don't want to guess which instructions apply."
+            ],
+            [
+              "Plumber",
+              "Leo has accepted that supplier follow-up and will call you Monday with its status."
+            ],
+            [
+              "Client",
+              "Does that call also confirm the visit for the cosmetic trim concern we discussed?"
+            ],
+            [
+              "Plumber",
+              "No. The trim review is a separate outstanding item, and attendance isn't booked yet."
+            ],
+            [
+              "Client",
+              "Can you keep both items visible so the document call doesn't make the other disappear?"
+            ],
+            [
+              "Plumber",
+              "Yes, I'll identify the document query and the trim review on separate lines."
+            ],
+            [
+              "Client",
+              "Please also give the coordinator my preferred afternoon availability for any proposed return visit."
+            ],
+            [
+              "Plumber",
+              "I'll relay that preference without presenting an afternoon as booked until you both agree."
+            ],
+            [
+              "Client",
+              "Thank you. I'll expect Monday's document update and a separate proposal for the trim appointment."
+            ]
+          ]
+        },
+        {
+          "title": "The test record covers only one area",
+          "setting": "A plumber clarifies a record's scope with a facilities representative.",
+          "turns": [
+            [
+              "Plumber",
+              "This test record identifies the pantry work, not the entire floor's existing plumbing."
+            ],
+            [
+              "Facilities representative",
+              "I was about to file it under whole-floor completion because the project name is broad."
+            ],
+            [
+              "Plumber",
+              "The title can be broad while the actual checked scope is limited in the record."
+            ],
+            [
+              "Facilities representative",
+              "I'll preserve the pantry reference. Does the document say anything about the unaltered washrooms?"
+            ],
+            [
+              "Plumber",
+              "Not in the scope shown here. We shouldn't extend its findings to those areas."
+            ],
+            [
+              "Facilities representative",
+              "Understood. I'll ask the project lead about any separate records rather than assume they're included."
+            ],
+            [
+              "Plumber",
+              "Please also keep the asset references attached so future enquiries reach the correct fixtures."
+            ],
+            [
+              "Facilities representative",
+              "The incoming caretaker needs that distinction explained during the building-record handover next week."
+            ],
+            [
+              "Plumber",
+              "I'll include the stated scope and any open document questions in the handover discussion."
+            ],
+            [
+              "Facilities representative",
+              "That will prevent a single received record from being treated as evidence about every connected area."
+            ]
+          ]
+        },
+        {
+          "title": "The callback is a review, not a diagnosis",
+          "setting": "A plumber confirms a follow-up appointment with an owner.",
+          "turns": [
+            [
+              "Plumber",
+              "The coordinator can offer Thursday afternoon to review your reported concern at the basin."
+            ],
+            [
+              "Owner",
+              "Will that visit definitely replace the faucet? I want to tell the tenant what will happen."
+            ],
+            [
+              "Plumber",
+              "The cause and remedy aren't confirmed, so the booking is for assessment of the report."
+            ],
+            [
+              "Owner",
+              "Please say that clearly. The tenant thought a replacement had already been ordered."
+            ],
+            [
+              "Plumber",
+              "I'll correct that expectation and keep the fixture reference B1 on the appointment."
+            ],
+            [
+              "Owner",
+              "They can provide access between two and four. Is that the offered window?"
+            ],
+            [
+              "Plumber",
+              "Yes, the coordinator offered that window. Shall I record your acceptance of the review appointment?"
+            ],
+            [
+              "Owner",
+              "Please do, and include the tenant's contact for arranging entry to the room."
+            ],
+            [
+              "Plumber",
+              "I'll confirm the time and review purpose, without adding a promised replacement to the notice."
+            ],
+            [
+              "Owner",
+              "Then the tenant will know what is actually booked and which technical questions remain open."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The new caretaker receives an incomplete pack",
+        "brief": "The asset register identifies basin D2, fictional model Basin-Q24. Its model-matching leaflet link is broken, but the model reference and installation entry are present. The outgoing coordinator can request a replacement link from the supplier.",
+        "role_a": "Plumber: distinguish missing access to the leaflet from missing installation information.",
+        "role_b": "Caretaker: accept document-retrieval follow-up and repeat back asset D2, model Basin-Q24.",
+        "opening_line": "The register identifies D2, but its leaflet link doesn't open.",
+        "complication": "A colleague suggests deleting D2 from the register because the link is broken.",
+        "success_checks": [
+          "Preserve the known asset entry.",
+          "Identify the broken document link.",
+          "Agree who retrieves the matching leaflet."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "A history contains two different units",
+      "setting": "A plumber and property manager reconcile an ambiguous maintenance history.",
+      "dialogue": [
+        [
+          "Plumber",
+          "Three entries say upstairs bathroom; the building contains Units 2A and 2B."
+        ],
+        [
+          "Property manager",
+          "The current report is from 2B, where the tenant noticed a wet basin cabinet."
+        ],
+        [
+          "Plumber",
+          "Which older entries explicitly identify 2B? We should not assume that all upstairs references describe this fixture."
+        ],
+        [
+          "Property manager",
+          "Only one gives 2B. The others mention a bath and a utility sink without a unit number."
+        ],
+        [
+          "Plumber",
+          "Then we can attach the confirmed 2B entry and retain the others as unassigned background requiring clarification."
+        ],
+        [
+          "Property manager",
+          "Will that make it look as though the earlier work records have disappeared from the maintenance history?"
+        ],
+        [
+          "Plumber",
+          "No. They remain available, but we won't attribute their findings to this basin without a reliable location."
+        ],
+        [
+          "Property manager",
+          "That distinction helps. The owner wants to know whether the same problem has been repaired three times already."
+        ],
+        [
+          "Plumber",
+          "The records don't establish that. We can explain the location gap and request the original job sheets."
+        ],
+        [
+          "Property manager",
+          "I'll ask the service office for those sheets and any fixture references recorded at the earlier visits."
+        ],
+        [
+          "Plumber",
+          "Please keep today's observation separate: water on the 2B basin cabinet, with the source not yet confirmed."
+        ],
+        [
+          "Property manager",
+          "I will. The owner will receive the confirmed history and the unresolved references, not a guessed recurrence count."
+        ]
+      ],
+      "notes": [
+        "'Unassigned background' preserves information without attaching it to the wrong fixture.",
+        "'A guessed recurrence count' names why inaccurate record linkage could mislead the owner."
+      ]
+    },
+    {
+      "title": "The distributor quotes an equivalent",
+      "setting": "A plumber and project buyer examine an alternative component offer.",
+      "dialogue": [
+        [
+          "Plumber",
+          "The distributor calls this component equivalent, but compares only its size and finish."
+        ],
+        [
+          "Project buyer",
+          "They say it's commonly used on similar projects, and it could arrive sooner than the original selection."
+        ],
+        [
+          "Plumber",
+          "That is useful availability information, but similar use doesn't establish that it meets this project's complete specification."
+        ],
+        [
+          "Project buyer",
+          "What comparison should I request so the technical reviewer receives enough information to make a decision?"
+        ],
+        [
+          "Plumber",
+          "Ask for both complete product references, material specifications, connection descriptions, and clearly identified differences or missing information."
+        ],
+        [
+          "Project buyer",
+          "I can place those side by side without trying to decide the technical suitability myself as buyer."
+        ],
+        [
+          "Plumber",
+          "Please do. Also keep the delivery offer separate from approval so receiving doesn't expect an accepted replacement."
+        ],
+        [
+          "Project buyer",
+          "The client asked whether equivalent means identical. How can I answer without creating another misunderstanding?"
+        ],
+        [
+          "Plumber",
+          "Say it is the distributor's proposed alternative; its match to the stated requirements has not yet been confirmed."
+        ],
+        [
+          "Project buyer",
+          "I'll use that wording and preserve the original order reference while the alternate goes through the review."
+        ],
+        [
+          "Plumber",
+          "Once the comparison arrives, the reviewer can resolve specific differences rather than interpreting a broad sales description."
+        ],
+        [
+          "Project buyer",
+          "Then I'll request a decision against the exact offered product, with any remaining conditions visible before purchase."
+        ]
+      ],
+      "notes": [
+        "'The distributor's proposed alternative' attributes a claim instead of adopting it as fact.",
+        "'Against the exact offered product' ties review to a specific item rather than a product family."
+      ]
+    },
+    {
+      "title": "The accessible-room label is not a dimensional answer",
+      "setting": "A plumber and architect discuss an incomplete fixture layout.",
+      "dialogue": [
+        [
+          "Plumber",
+          "This room is labeled accessible, but the basin connection reference is missing."
+        ],
+        [
+          "Architect",
+          "The label communicates the room's intended requirements, but you're right that it doesn't supply the missing dimension."
+        ],
+        [
+          "Plumber",
+          "Could you issue the specific fixture detail with the selected product and measurement surfaces clearly identified?"
+        ],
+        [
+          "Architect",
+          "Yes. I'll coordinate those requirements through the project's design review rather than ask you to infer them onsite."
+        ],
+        [
+          "Plumber",
+          "The cabinetmaker has a typical detail from another building. They asked whether we could reuse it here."
+        ],
+        [
+          "Architect",
+          "That might be background for comparison, but it doesn't establish suitability or compliance for this particular room."
+        ],
+        [
+          "Plumber",
+          "I'll explain that without quoting a universal height or suggesting the label itself settles the fixture position."
+        ],
+        [
+          "Architect",
+          "Thank you. Please identify any conflict between the current cabinet drawing and the selected basin data sheet."
+        ],
+        [
+          "Plumber",
+          "The cabinet shows a different bowl reference. I'll include that mismatch with the missing connection dimension."
+        ],
+        [
+          "Architect",
+          "I'll address both in the coordinated response and identify which drawings are replaced by the revised issue."
+        ],
+        [
+          "Plumber",
+          "Then purchasing can see the current selection and the remaining release conditions together instead of reconciling separate messages."
+        ],
+        [
+          "Architect",
+          "Keep the status pending the coordinated detail, without presenting the delay as the plumber's technical decision."
+        ]
+      ],
+      "notes": [
+        "'The label ... doesn't supply the missing dimension' distinguishes a design intention from a usable detail.",
+        "'For this particular room' avoids treating another project's layout as a universal rule."
+      ]
+    },
+    {
+      "title": "The insurer's question exceeds the observation",
+      "setting": "A plumber and property client discuss a factual visit summary without giving insurance advice.",
+      "dialogue": [
+        [
+          "Plumber",
+          "The visit summary describes visible ceiling staining, with its source unconfirmed."
+        ],
+        [
+          "Property client",
+          "The claim form asks when the damage began. Could you put last Tuesday because that's when I noticed it?"
+        ],
+        [
+          "Plumber",
+          "I can record Tuesday as the date you first noticed the mark, but not as the proven start."
+        ],
+        [
+          "Property client",
+          "That seems an important distinction. I don't know whether moisture was present before the mark became visible."
+        ],
+        [
+          "Plumber",
+          "Exactly. The observation date and the underlying event date aren't necessarily the same piece of information."
+        ],
+        [
+          "Property client",
+          "Could the summary say the upstairs basin caused it, since the mark is beneath that bathroom?"
+        ],
+        [
+          "Plumber",
+          "It can identify the location, but proximity doesn't establish the source. That conclusion needs an appropriate assessment."
+        ],
+        [
+          "Property client",
+          "I don't want the summary to sound as though you're saying nothing happened or doubting my report."
+        ],
+        [
+          "Plumber",
+          "It will acknowledge your account clearly, describe what was visible at the visit, and identify what remains unknown."
+        ],
+        [
+          "Property client",
+          "Thank you. I'll handle any coverage questions with the insurer rather than ask you to interpret the policy."
+        ],
+        [
+          "Plumber",
+          "I'll provide the factual summary with the reported date attributed to you and no unsupported causal statement."
+        ],
+        [
+          "Property client",
+          "That gives me an accurate record without turning a first-noticed date into a technical finding."
+        ]
+      ],
+      "notes": [
+        "'First noticed' distinguishes discovery from the unknown start of an event.",
+        "'Proximity doesn't establish the source' prevents location alone from becoming a causal conclusion."
+      ]
+    },
+    {
+      "title": "An odor report becomes a design question",
+      "setting": "A plumber and building manager discuss conflicting descriptions in a service request.",
+      "dialogue": [
+        [
+          "Plumber",
+          "The request says replace the trap, but the tenant's original message describes an odor near the utility room."
+        ],
+        [
+          "Building manager",
+          "Our caretaker suggested replacement because they suspected the trap."
+        ],
+        [
+          "Plumber",
+          "That is a proposed explanation, not a confirmed finding. We should separate it from the tenant's actual report."
+        ],
+        [
+          "Building manager",
+          "Can you briefly explain trap and vent so I don't keep using those terms as though they were synonyms?"
+        ],
+        [
+          "Plumber",
+          "A trap retains a liquid seal. Vent pipework supports air movement and pressure management within the drainage arrangement."
+        ],
+        [
+          "Building manager",
+          "That helps me understand the names, but I assume neither explanation diagnoses this particular odor report."
+        ],
+        [
+          "Plumber",
+          "Exactly. We can identify the reported location and ask for an assessment without suggesting a repair in advance."
+        ],
+        [
+          "Building manager",
+          "The service drawing also shows an access panel that the tenant says is hidden behind stored boxes."
+        ],
+        [
+          "Plumber",
+          "Please relay that access information to the site contact so they can arrange the visit appropriately."
+        ],
+        [
+          "Building manager",
+          "I won't tell the tenant to open anything or try to reproduce the smell before the appointment."
+        ],
+        [
+          "Plumber",
+          "The booking can distinguish the concern, access information, and suspected cause."
+        ],
+        [
+          "Building manager",
+          "I'll revise it that way, keeping the caretaker's suggestion attributed rather than turning it into the work instruction."
+        ]
+      ],
+      "notes": [
+        "'Proposed explanation' preserves a suggestion without promoting it to a diagnosis.",
+        "'Turning it into the work instruction' explains the consequence of an inaccurate service summary."
+      ]
+    },
+    {
+      "title": "One notice combines unrelated service areas",
+      "setting": "A plumber and facilities coordinator correct a draft building notice.",
+      "dialogue": [
+        [
+          "Plumber",
+          "This notice combines east-washroom work with the pantry visit, although their arrangements differ."
+        ],
+        [
+          "Facilities coordinator",
+          "I grouped them under plumbing works to reduce the number of messages going to staff this month."
+        ],
+        [
+          "Plumber",
+          "A shared heading is possible, but the areas, dates, and confirmation status need to remain distinct for each."
+        ],
+        [
+          "Facilities coordinator",
+          "The east washroom window is approved. The pantry visit is only an assessment, with no interruption arranged."
+        ],
+        [
+          "Plumber",
+          "Then say that explicitly. Staff shouldn't infer that a pantry assessment means a scheduled loss of service."
+        ],
+        [
+          "Facilities coordinator",
+          "I'll give each location its own entry and identify the correct contact for access questions in that area."
+        ],
+        [
+          "Plumber",
+          "Please also distinguish any planned interruption from an instruction to occupants about operating fixtures or valves."
+        ],
+        [
+          "Facilities coordinator",
+          "Agreed. This is an information notice, not a technical procedure or a request for occupants to prepare equipment."
+        ],
+        [
+          "Plumber",
+          "The pantry manager offered Tuesday access but hasn't confirmed who will meet the visiting plumber at reception."
+        ],
+        [
+          "Facilities coordinator",
+          "I'll ask for a named contact and keep that access detail open until someone accepts the responsibility."
+        ],
+        [
+          "Plumber",
+          "Once that's confirmed, the visit information can be updated without altering the separate east-washroom notice."
+        ],
+        [
+          "Facilities coordinator",
+          "I'll issue the two clearly labeled entries so each group knows which facts actually apply to them."
+        ]
+      ],
+      "notes": [
+        "'A shared heading is possible, but...' accepts a formatting aim while preserving essential distinctions.",
+        "'An assessment means' is challenged to prevent an appointment being mistaken for an interruption."
+      ]
+    },
+    {
+      "title": "The wall finish becomes part of the discussion",
+      "setting": "A plumber and apartment owner review a proposed change near a tiled wall.",
+      "dialogue": [
+        [
+          "Plumber",
+          "The new fixture changes the layout, but the estimate doesn't define wall-finish restoration."
+        ],
+        [
+          "Apartment owner",
+          "I expected the tiled wall to look exactly as it does now when the plumbing work is complete."
+        ],
+        [
+          "Plumber",
+          "That appearance expectation needs discussion with the building team, especially because the existing tile reference hasn't been identified."
+        ],
+        [
+          "Apartment owner",
+          "Could the plumbing estimate simply include making good and leave the detail to whoever repairs the surface later?"
+        ],
+        [
+          "Plumber",
+          "That phrase alone would leave the extent and finish unclear. We should define the surfaces and the restoration responsibility."
+        ],
+        [
+          "Apartment owner",
+          "I can ask the original tile supplier whether the product is still available, without assuming an exact match."
+        ],
+        [
+          "Plumber",
+          "That helps the comparison. The plumbing scope and finish proposal should remain separately described."
+        ],
+        [
+          "Apartment owner",
+          "Please show the original fixture option too; I may prefer it if the broader change becomes more disruptive."
+        ],
+        [
+          "Plumber",
+          "I'll request both options on comparable terms, with unresolved access and restoration questions clearly identified beside the estimates."
+        ],
+        [
+          "Apartment owner",
+          "Does choosing an option today mean I have accepted an unknown finish match or every possible concealed condition?"
+        ],
+        [
+          "Plumber",
+          "No. The proposal needs explicit conditions and appropriate review of unresolved terms."
+        ],
+        [
+          "Apartment owner",
+          "Then let's complete the comparison first and make the actual decision from a clearly described package."
+        ]
+      ],
+      "notes": [
+        "'That phrase alone' explains why familiar trade wording can still leave scope ambiguous.",
+        "'On comparable terms' requests matching scope so price differences are meaningful."
+      ]
+    },
+    {
+      "title": "A warranty question needs the actual document",
+      "setting": "A plumber and building client review an incomplete handover record.",
+      "dialogue": [
+        [
+          "Plumber",
+          "The asset register identifies the faucet, but its warranty reference names the earlier model."
+        ],
+        [
+          "Building client",
+          "Does that mean the installed faucet has no warranty, or that the handover is invalid?"
+        ],
+        [
+          "Plumber",
+          "Neither conclusion follows from the reference mismatch. We need the supplier to confirm the applicable document for this model."
+        ],
+        [
+          "Building client",
+          "Please don't copy the previous model's terms under a different title."
+        ],
+        [
+          "Plumber",
+          "I won't. The received documents will remain identified while the supplier provides or confirms the correct reference."
+        ],
+        [
+          "Building client",
+          "Can the service office own that query, since your site team is moving to another project next week?"
+        ],
+        [
+          "Plumber",
+          "Yes. Leo has accepted the document follow-up and will report Wednesday, even if the supplier's answer is still pending."
+        ],
+        [
+          "Building client",
+          "I'd like the facilities assistant copied so they can maintain the asset register once the reference is verified."
+        ],
+        [
+          "Plumber",
+          "Please give Leo the agreed contact details. The register can retain the unresolved document status during that transfer."
+        ],
+        [
+          "Building client",
+          "Should I promise the tenant that any future problem with the faucet will be covered once this is corrected?"
+        ],
+        [
+          "Plumber",
+          "No broad coverage promise is established here. The actual terms and the particular circumstances need appropriate review."
+        ],
+        [
+          "Building client",
+          "I'll call this a document-reference correction, keeping coverage questions separate from the mismatch."
+        ]
+      ],
+      "notes": [
+        "'Neither conclusion follows' rejects two overreactions without minimizing the mismatch.",
+        "'Even if ... still pending' commits to an update without guaranteeing a supplier response."
+      ]
+    }
+  ]
+}

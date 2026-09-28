@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "cooks-kitchen-staff",
+    "title": "Cooks and Kitchen Staff English",
+    "summary": "Clarify prep quantities, read tickets, coordinate the pass, report stock and equipment concerns, and hand over unfinished kitchen work.",
+    "roles": "Line cooks, prep cooks, kitchen assistants, and dish-team colleagues",
+    "category": "Customers & creative work",
+    "scope_note": "All situations, quantities, recipes, times, and product details are fictional English practice, not culinary certification or food-safety instruction. This course does not teach cooking temperatures, chemical use, equipment repair, or allergen-control procedures. Follow workplace training and the responsible kitchen lead's decisions. It concerns kitchen communication rather than hospitality management.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Cooks",
+        "url": "https://www.bls.gov/ooh/food-preparation-and-serving/cooks.htm"
+      },
+      {
+        "title": "O*NET OnLine: Cooks, Restaurant",
+        "url": "https://www.onetonline.org/link/summary/35-2014.00"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Clarifying a prep list",
+        "terms": [
+          "mise en place",
+          "prep list",
+          "yield",
+          "batch"
+        ],
+        "collocations": [
+          "check the required yield: confirm the usable amount needed",
+          "work from the prep list: use the current task list",
+          "prepare one batch: make the specified production quantity",
+          "clarify the unit: distinguish portions, containers, and weights"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "The prep list says 'soup: 24' without a unit. Yesterday's sheet used portions; the storeroom label uses containers. The lead intended 24 portions from the current recipe, not 24 containers. No batch has started.",
+          "model": "The soup line says twenty-four, but it doesn't specify portions or containers. Before I start a batch, could you confirm the unit and the recipe version? Yesterday's sheet used portions, while the storage label counts containers. I'll repeat the required yield once we know which quantity today's prep list means."
+        },
+        "workshop": {
+          "title": "Ask what the number counts",
+          "goal": "Clarify quantities before interpreting a kitchen shorthand.",
+          "explanation": "Numbers need units. A recipe's yield and a container count describe different things; familiarity with yesterday's sheet isn't confirmation for today.",
+          "frames": [
+            "Does ___ mean portions or ___?",
+            "Which recipe version applies to ___?",
+            "So the required yield is ___, not ___."
+          ],
+          "before": "I'll make twenty-four.",
+          "after": "Do you mean twenty-four portions from the current recipe?",
+          "reason": "The question attaches a unit and recipe to the number.",
+          "questions": [
+            {
+              "prompt": "Lead: Twenty-four means individual servings, not a weight or production grouping.\nCook: The required yield is twenty-four ____.",
+              "options": [
+                "kilograms",
+                "portions",
+                "batches",
+                "containers"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Kilograms measure weight, not a number of individual servings.",
+                "Correct. Portions count the individual servings the lead specified.",
+                "Batches are production groups that may contain many servings.",
+                "Containers hold food but don't necessarily equal individual servings."
+              ]
+            },
+            {
+              "prompt": "Cook: Could you confirm ____ applies today?\nLead: The version dated Monday.",
+              "options": [
+                "which recipe does",
+                "which does recipe",
+                "which recipe",
+                "recipe which"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "'Does' is unnecessary before the verb 'applies'.",
+                "This reverses the subject phrase.",
+                "Correct. The noun phrase is the subject of 'applies'.",
+                "The question word must precede the noun here."
+              ]
+            }
+          ],
+          "role_b": "Lead cook: confirm 24 portions using Monday's recipe; container numbers are storage counts.",
+          "challenge": "The cook finds a second sheet dated Friday. Identify which sheet governs today's task."
+        }
+      },
+      {
+        "title": "Reporting deliveries and stock discrepancies",
+        "terms": [
+          "delivery note",
+          "short delivery",
+          "traceability",
+          "lot code"
+        ],
+        "collocations": [
+          "count the delivered cases: check the actual number received",
+          "flag a missing label: report absent identifying information",
+          "match the delivery note: compare physical items with the supplier's list",
+          "report a short delivery: state the difference between expected and received quantities"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "The delivery note lists six cases of tomatoes; four are physically present. The driver says two may be on another trolley but has not checked. The receiving lead must resolve the record. Report the observed count without accusing the supplier or recording six as received.",
+          "model": "I can count four tomato cases here, while the delivery note lists six. Two may be on the other trolley, but that hasn't been checked. Please keep the received quantity unconfirmed until the receiving lead reconciles the count. I'll show them the four cases and the delivery note together."
+        },
+        "workshop": {
+          "title": "Report what was actually counted",
+          "goal": "Distinguish a physical count from an expected quantity.",
+          "explanation": "Use 'lists' for the document and 'counted' for the observation. A possible explanation is not a verified delivery.",
+          "frames": [
+            "The note lists ___; I counted ___.",
+            "We haven't established whether ___.",
+            "Could you reconcile ___ before ___?"
+          ],
+          "before": "The supplier lost two cases.",
+          "after": "Four cases are here; the location of the other two is unconfirmed.",
+          "reason": "This reports the discrepancy without inventing a cause.",
+          "questions": [
+            {
+              "prompt": "Driver: Two might be on the other trolley, but I haven't checked.\nCook: Their location is still ____.",
+              "options": [
+                "confirmed at this doorway",
+                "recorded at the first trolley",
+                "verified in the storeroom",
+                "unconfirmed"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "No one has confirmed those cases at this doorway.",
+                "The first trolley contains only the four observed cases.",
+                "No storeroom check has been reported in the exchange.",
+                "Correct. The driver offers a possibility, not a verified location."
+              ]
+            },
+            {
+              "prompt": "Lead: How many cases did you personally count?\nCook: I ____ four beside the delivery note.",
+              "options": [
+                "counted",
+                "forecast",
+                "ordered",
+                "requested"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This reports an observation.",
+                "A forecast predicts rather than observes.",
+                "Ordering states a request to the supplier.",
+                "Requesting does not establish receipt."
+              ]
+            }
+          ],
+          "role_b": "Driver: six are on the note; you haven't checked the second trolley yet.",
+          "challenge": "The driver finds one more case. Update the observed count to five without declaring the delivery complete."
+        }
+      },
+      {
+        "title": "Reading tickets and modifications",
+        "terms": [
+          "ticket",
+          "all day",
+          "on the fly",
+          "substitution"
+        ],
+        "collocations": [
+          "call the full ticket number: identify the exact order aloud",
+          "read back the modification: repeat the requested change",
+          "count orders all day: total the relevant open orders",
+          "separate a correction from an addition: distinguish a changed order from an extra item"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Ticket 41 originally has two tarts. A new slip says 'three tarts, revised 41.' The expediter confirms this replaces the old quantity, so the total is three, not five. One tart has salad instead of potatoes. Confirm quantity and substitution.",
+          "model": "Does the revised ticket replace the two-tart quantity on ticket forty-one, or add three more? If it replaces it, I have three tarts total, with salad instead of potatoes on one. Please confirm that modification applies to only one tart so I don't change all three plates."
+        },
+        "workshop": {
+          "title": "Make corrections audible",
+          "goal": "Read back ticket identity, revised quantity, and the exact change.",
+          "explanation": "A revised ticket may replace an earlier instruction. 'Instead of' signals replacement; 'as well as' signals addition.",
+          "frames": [
+            "Is this an addition or a correction to ___?",
+            "That's ___ total on ticket ___.",
+            "One with ___ instead of ___; the others ___."
+          ],
+          "before": "Three more tarts.",
+          "after": "Three total on revised ticket forty-one, not three additional tarts.",
+          "reason": "The distinction prevents duplicate production.",
+          "questions": [
+            {
+              "prompt": "Expediter: Replace the old two-tart count with three.\nCook: That's three ____.",
+              "options": [
+                "more",
+                "each",
+                "total",
+                "extra"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "More would add to the old count.",
+                "Each doesn't identify the ticket total.",
+                "Correct. Three is the complete revised quantity.",
+                "Extra would mean additional items."
+              ]
+            },
+            {
+              "prompt": "Expediter: One guest wants salad replacing potatoes.\nCook: One tart with salad ____ potatoes.",
+              "options": [
+                "as well as",
+                "instead of",
+                "in addition to",
+                "along with"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "This adds salad while retaining potatoes.",
+                "Correct. 'Instead of' marks replacement of the potatoes.",
+                "This would add a second accompaniment.",
+                "This keeps both accompaniments rather than replacing the potatoes."
+              ]
+            }
+          ],
+          "role_b": "Expediter: confirm three total, one salad substitution, and two standard accompaniments.",
+          "challenge": "Someone calls 'three more' after the correction. Repair the quantity before work continues."
+        }
+      },
+      {
+        "title": "Coordinating the pass",
+        "terms": [
+          "pass",
+          "expediter",
+          "pickup",
+          "plating"
+        ],
+        "collocations": [
+          "call a pickup: announce which completed order can be collected",
+          "synchronize the table: coordinate dishes intended to leave together",
+          "give a station update: state current progress on assigned dishes",
+          "keep the ticket visible: preserve the order reference during coordination"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Ticket 28 has four mains. Two are plated; two are still at the cook's station. The cook estimates four more minutes for the remaining pair. The expediter asks whether the whole table is ready. Report partial progress and the current estimate.",
+          "model": "Ticket twenty-eight is not complete yet. Two mains are plated, and the other two are still at my station. My current estimate for that pair is four more minutes. Please don't call the full pickup yet. I'll update you when the remaining dishes are ready for your check at the pass."
+        },
+        "workshop": {
+          "title": "State partial readiness precisely",
+          "goal": "Separate individual dish progress from readiness of the full order.",
+          "explanation": "'Two are plated' doesn't mean 'four are ready.' Name the remaining items and the reference point for an estimate.",
+          "frames": [
+            "___ of ___ dishes are ___.",
+            "The remaining ___ need approximately ___.",
+            "Please wait for ___ before calling ___."
+          ],
+          "before": "Twenty-eight is basically done.",
+          "after": "Two of four mains are plated; the remaining pair needs about four minutes.",
+          "reason": "The update shows what prevents a full pickup.",
+          "questions": [
+            {
+              "prompt": "Expediter: Are all four mains plated?\nCook: Two are plated; the other two are ____.",
+              "options": [
+                "still pending",
+                "already collected",
+                "fully served",
+                "both finished"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This identifies incomplete work.",
+                "Collection would mean they had left the pass.",
+                "The two unfinished dishes haven't been served yet.",
+                "Finished conflicts with the case."
+              ]
+            },
+            {
+              "prompt": "Cook: My estimate is four minutes.\nExpediter: I'll describe that as an ____ wait.",
+              "options": [
+                "exactly",
+                "approximately",
+                "approximate",
+                "approximation"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "An adverb cannot modify 'wait' directly here.",
+                "This adverb belongs before a quantity, not before this noun alone.",
+                "Correct. The adjective modifies 'wait'.",
+                "The noun doesn't fit this adjective position."
+              ]
+            }
+          ],
+          "role_b": "Expediter: ask what is plated and whether the estimate covers the remaining pair.",
+          "challenge": "The runner points to the two plated dishes and assumes the whole ticket can leave."
+        }
+      },
+      {
+        "title": "Communicating a shortage and an alternative",
+        "terms": [
+          "eighty-six",
+          "par level",
+          "portion count",
+          "substitute item"
+        ],
+        "collocations": [
+          "run low on a component: have little of a needed item remaining",
+          "update the available count: report the current usable allocation",
+          "offer an alternative side: propose a different accompaniment for approval",
+          "confirm guest acceptance: check that the diner agreed to the offered change"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "Three portions of potatoes remain unallocated, but a new ticket requests five. Rice is available as a proposed alternative side; the server must check whether two diners accept it. The cook cannot silently substitute. Agree who obtains the diners' decision.",
+          "model": "We have three unallocated potato portions for this five-meal ticket. Rice is available as an alternative for two meals, but the guests haven't agreed to that change. Could you ask which two diners, if any, would accept rice? I'll keep the original request clear until you bring back their choices."
+        },
+        "workshop": {
+          "title": "Offer a named alternative with a condition",
+          "goal": "Explain a shortage and obtain the missing choice.",
+          "explanation": "An available substitute is not an accepted substitute. Use 'if' to connect the offer to the diner's decision.",
+          "frames": [
+            "We have ___ left for ___ requested.",
+            "We can offer ___ if ___.",
+            "Please confirm which seats accept ___."
+          ],
+          "before": "I'll change two sides.",
+          "after": "Rice is available for two sides if those diners agree.",
+          "reason": "The choice stays with the diner instead of being silently imposed.",
+          "questions": [
+            {
+              "prompt": "Server: Have the guests accepted rice yet?\nCook: No; the rice is ____.",
+              "options": [
+                "an accepted substitute",
+                "an available alternative",
+                "a completed change",
+                "the original requested side"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Acceptance hasn't yet been obtained from those diners.",
+                "Correct. Rice can be offered but isn't yet chosen.",
+                "The proposed change has not been completed or accepted.",
+                "The original side request was potatoes, not rice."
+              ]
+            },
+            {
+              "prompt": "Cook: If both guests ____ to rice, I can confirm the substitution.\nServer: I'll ask them now.",
+              "options": [
+                "agrees",
+                "agreeing",
+                "has agreed",
+                "agree"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "A plural subject needs 'agree', not singular 'agrees'.",
+                "This participle needs an auxiliary to form the clause.",
+                "'Has' doesn't agree with the plural subject 'both guests'.",
+                "Correct. The plural subject takes 'agree' in this condition."
+              ]
+            }
+          ],
+          "role_b": "Server: you can ask the five diners, but cannot choose two seats for them.",
+          "challenge": "Only one diner accepts rice. Restate the remaining shortage and ask the lead about another option."
+        }
+      },
+      {
+        "title": "Checking dietary modifications",
+        "terms": [
+          "recipe specification",
+          "allergen declaration",
+          "cross-contact concern",
+          "dietary modification"
+        ],
+        "collocations": [
+          "check the specification: consult the current recipe information",
+          "refer the suitability question: ask the designated lead to assess the request",
+          "keep the order pending: leave the decision unresolved until the needed check occurs",
+          "distinguish omission from suitability: do not equate removing one component with resolving every dietary concern"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "Ticket 17 says 'no cheese.' The server then reports that the diner has a milk allergy. The sauce specification has not been checked. The cook must not treat omission of cheese as confirmation that the dish is suitable; the lead can review it with the server.",
+          "model": "Removing the cheese answers the original modifier, but it doesn't establish that the dish meets this guest's milk-allergy concern. We haven't checked the current sauce specification or the handling question. Please keep ticket seventeen pending while the kitchen lead reviews those details and the server explains what remains unconfirmed to the diner."
+        },
+        "workshop": {
+          "title": "Name the missing check",
+          "goal": "Challenge an overbroad conclusion using the stated dietary concern.",
+          "explanation": "A change to one ingredient doesn't establish the entire dish's suitability. Keep reported facts and the pending review explicit.",
+          "frames": [
+            "Omitting ___ does not establish ___.",
+            "The new information is ___.",
+            "We still need the lead to check ___."
+          ],
+          "before": "No cheese means the issue is settled.",
+          "after": "The cheese omission doesn't answer the milk-allergy question about the sauce.",
+          "reason": "The revised statement identifies the unresolved component.",
+          "questions": [
+            {
+              "prompt": "Server: Does removing cheese settle the sauce question?\nCook: No, the sauce is ____.",
+              "options": [
+                "confirmed free of milk",
+                "checked and cleared",
+                "still unverified",
+                "verified against today's recipe"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The case gives no confirmed ingredient finding for the sauce.",
+                "No completed suitability check has been reported here.",
+                "Correct. The relevant sauce information remains unchecked.",
+                "The current recipe hasn't yet been checked for this concern."
+              ]
+            },
+            {
+              "prompt": "Cook: We are still waiting ____ the current recipe specification.\nLead: I'll get it for you.",
+              "options": [
+                "for",
+                "since",
+                "during",
+                "by"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Wait for' introduces the thing being awaited.",
+                "'Since' introduces a starting point, not the awaited document.",
+                "'During' introduces a period, not what someone awaits.",
+                "'By' doesn't connect 'waiting' to its awaited object here."
+              ]
+            }
+          ],
+          "role_b": "Server: the milk allergy was reported after the initial no-cheese modifier. Relay that change exactly.",
+          "challenge": "The guest says another restaurant makes it without cheese. Explain why that doesn't verify this recipe."
+        }
+      },
+      {
+        "title": "Reporting equipment and dish-station needs",
+        "terms": [
+          "equipment fault",
+          "out of service",
+          "dish rack",
+          "bottleneck"
+        ],
+        "collocations": [
+          "report the observed fault: describe what happened without diagnosing it",
+          "request a replacement unit: ask for another suitable piece of equipment",
+          "prioritize a dish request: identify which needed tableware should be discussed first",
+          "give the location: say exactly where the problem or shortage is"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "The display on scale B at the pastry prep bench keeps going blank. No cause is known. The cook has stopped using it and needs the lead to arrange review and confirm whether scale A is available. Do not offer repair instructions.",
+          "model": "Scale B at the pastry prep bench keeps losing its display. I've stopped using it, and I don't know the cause. Could you arrange a review and confirm whether scale A is available for this assignment? The pastry prep quantity remains unverified, so I need a confirmed alternative before reporting that task complete."
+        },
+        "workshop": {
+          "title": "Describe a fault without diagnosing it",
+          "goal": "Request a named response to an observed equipment problem.",
+          "explanation": "An observation supports a report, not a technical diagnosis. Name the device, location, effect, and requested help.",
+          "frames": [
+            "The ___ at ___ is ___.",
+            "I observed ___; the cause is unknown.",
+            "Could you confirm an available ___?"
+          ],
+          "before": "The electrics are broken.",
+          "after": "Scale B's display goes blank; the cause hasn't been established.",
+          "reason": "The observation is supportable and avoids guessing at a repair.",
+          "questions": [
+            {
+              "prompt": "Lead: What did you observe, without knowing the cause?\nCook: The display ____; I couldn't read the quantity.",
+              "options": [
+                "remained steadily lit",
+                "showed an error code",
+                "went blank",
+                "lost its external power supply"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A steadily lit display does not describe the reported disappearance.",
+                "No error code was observed or reported in this case.",
+                "Correct. This describes the visible change without diagnosing its cause.",
+                "Loss of the external supply is a possible cause, not an established observation."
+              ]
+            },
+            {
+              "prompt": "Cook: Could you arrange ____ of scale B?\nLead: I'll contact the equipment lead.",
+              "options": [
+                "reviewing it",
+                "a review",
+                "it reviewed",
+                "review it"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "This duplicates the object before 'of scale B'.",
+                "Correct. The noun phrase fits before 'of scale B'.",
+                "This construction would need different wording, such as 'have it reviewed'.",
+                "The bare verb doesn't fit this noun-phrase position."
+              ]
+            }
+          ],
+          "role_b": "Lead: you can arrange review; scale A's availability is not yet confirmed.",
+          "challenge": "The colleague asks whether the fault will be fixed before service. Keep the completion time unconfirmed."
+        }
+      },
+      {
+        "title": "Closing and handing over unfinished work",
+        "terms": [
+          "closing checklist",
+          "waste log",
+          "carryover",
+          "sign-off"
+        ],
+        "collocations": [
+          "hand over an open task: transfer unfinished work with a named receiver",
+          "reconcile the portion count: check that records and counted amounts agree",
+          "record the stated reason: use the observed or confirmed explanation",
+          "leave a check unsigned: do not claim completion before verification"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At shift change, the garnish count is complete at twelve portions, the waste-log entry for three damaged tarts awaits the lead's review, and the closing shelf check has not been performed. Ask the incoming cook to accept the shelf check without treating the waste review as complete.",
+          "model": "The garnish count is complete: twelve portions. The entry for three damaged tarts is in the waste log, but the lead hasn't reviewed it yet. The closing shelf check hasn't been done. Can you take that check and confirm when it's complete? I'll follow up with the lead about the separate waste-log review."
+        },
+        "workshop": {
+          "title": "Separate done, recorded, and approved",
+          "goal": "Transfer closing work without making incomplete checks disappear.",
+          "explanation": "A written entry can await review. A task assigned to someone isn't complete until they perform it and report back.",
+          "frames": [
+            "___ is complete; ___ awaits review.",
+            "Can you take ___ and confirm ___?",
+            "I'll retain responsibility for ___."
+          ],
+          "before": "It's all in the log.",
+          "after": "The waste entry is recorded but not reviewed; the shelf check is still outstanding.",
+          "reason": "The revised handover states two different unfinished actions.",
+          "questions": [
+            {
+              "prompt": "Incoming cook: Has the lead reviewed the waste entry?\nOutgoing cook: It is recorded, but review is ____.",
+              "options": [
+                "finished",
+                "duplicated",
+                "pending",
+                "discarded"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The case says review hasn't happened.",
+                "No duplicate review is reported.",
+                "Correct. Pending means awaiting action.",
+                "The food was discarded; the review wasn't."
+              ]
+            },
+            {
+              "prompt": "Outgoing cook: Will you take the shelf check? It hasn't started yet.\nIncoming cook: Yes, ____ when it's complete.",
+              "options": [
+                "I confirmed",
+                "I had confirmed",
+                "I've confirmed",
+                "I'll confirm"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Past tense would describe confirmation that already happened.",
+                "Past perfect places confirmation before another past event.",
+                "Present perfect claims a confirmation has already happened.",
+                "Correct. Future language commits to reporting after the unfinished check."
+              ]
+            }
+          ],
+          "role_b": "Incoming cook: accept the shelf check and ask who retains the waste-log follow-up.",
+          "challenge": "The lead is unavailable now. Keep review pending rather than treating silence as sign-off."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "mise en place",
+        "definition": "Ingredients and equipment organized for a kitchen's planned work.",
+        "group": "Clarifying a prep list"
+      },
+      {
+        "term": "prep list",
+        "definition": "A list of ingredients or components to prepare before or during service.",
+        "group": "Clarifying a prep list"
+      },
+      {
+        "term": "yield",
+        "definition": "The usable amount a recipe or ingredient is expected to produce.",
+        "group": "Clarifying a prep list"
+      },
+      {
+        "term": "batch",
+        "definition": "A quantity of food prepared as one planned production unit.",
+        "group": "Clarifying a prep list"
+      },
+      {
+        "term": "delivery note",
+        "definition": "A supplier's document listing items and quantities sent with a delivery.",
+        "group": "Reporting deliveries and stock discrepancies"
+      },
+      {
+        "term": "short delivery",
+        "definition": "A delivery containing less than the quantity expected.",
+        "group": "Reporting deliveries and stock discrepancies"
+      },
+      {
+        "term": "traceability",
+        "definition": "The ability to connect a food item to its source and relevant identifying records.",
+        "group": "Reporting deliveries and stock discrepancies"
+      },
+      {
+        "term": "lot code",
+        "definition": "A label identifier linking a product to a production batch or lot.",
+        "group": "Reporting deliveries and stock discrepancies"
+      },
+      {
+        "term": "ticket",
+        "definition": "A kitchen's written or electronic record of a food order.",
+        "group": "Reading tickets and modifications"
+      },
+      {
+        "term": "all day",
+        "definition": "Kitchen shorthand for the combined quantity currently ordered across the relevant open tickets.",
+        "group": "Reading tickets and modifications"
+      },
+      {
+        "term": "on the fly",
+        "definition": "Kitchen shorthand requesting an item urgently; it does not remove required checks.",
+        "group": "Reading tickets and modifications"
+      },
+      {
+        "term": "substitution",
+        "definition": "A replacement ingredient or item requested instead of the standard one.",
+        "group": "Reading tickets and modifications"
+      },
+      {
+        "term": "pass",
+        "definition": "The kitchen area where completed dishes are checked and collected for service.",
+        "group": "Coordinating the pass"
+      },
+      {
+        "term": "expediter",
+        "definition": "The person coordinating tickets, dish readiness, and pickups between kitchen and service staff.",
+        "group": "Coordinating the pass"
+      },
+      {
+        "term": "pickup",
+        "definition": "The collection of dishes at the pass for delivery to a table or customer.",
+        "group": "Coordinating the pass"
+      },
+      {
+        "term": "plating",
+        "definition": "Arranging the prepared components of a dish on its serving plate.",
+        "group": "Coordinating the pass"
+      },
+      {
+        "term": "eighty-six",
+        "definition": "Kitchen slang indicating an item is unavailable; usage should be confirmed locally.",
+        "group": "Communicating a shortage and an alternative"
+      },
+      {
+        "term": "par level",
+        "definition": "A workplace's planned stock quantity used as a replenishment reference.",
+        "group": "Communicating a shortage and an alternative"
+      },
+      {
+        "term": "portion count",
+        "definition": "The number of servings currently counted for a particular item.",
+        "group": "Communicating a shortage and an alternative"
+      },
+      {
+        "term": "substitute item",
+        "definition": "An alternative dish or component offered in place of an unavailable one.",
+        "group": "Communicating a shortage and an alternative"
+      },
+      {
+        "term": "recipe specification",
+        "definition": "The current documented ingredients and requirements for a particular dish.",
+        "group": "Checking dietary modifications"
+      },
+      {
+        "term": "allergen declaration",
+        "definition": "Information identifying allergens present in a product's ingredients.",
+        "group": "Checking dietary modifications"
+      },
+      {
+        "term": "cross-contact concern",
+        "definition": "A question about unintended allergen transfer during handling or preparation.",
+        "group": "Checking dietary modifications"
+      },
+      {
+        "term": "dietary modification",
+        "definition": "A requested change to a dish related to a diner's stated dietary need or choice.",
+        "group": "Checking dietary modifications"
+      },
+      {
+        "term": "equipment fault",
+        "definition": "A reported problem with how a kitchen device is functioning.",
+        "group": "Reporting equipment and dish-station needs"
+      },
+      {
+        "term": "out of service",
+        "definition": "A status indicating equipment is not available for use.",
+        "group": "Reporting equipment and dish-station needs"
+      },
+      {
+        "term": "dish rack",
+        "definition": "A frame that holds dishes or utensils during handling in the dish area.",
+        "group": "Reporting equipment and dish-station needs"
+      },
+      {
+        "term": "bottleneck",
+        "definition": "A stage where limited capacity delays other kitchen work.",
+        "group": "Reporting equipment and dish-station needs"
+      },
+      {
+        "term": "closing checklist",
+        "definition": "A list of tasks to confirm at the end of a kitchen shift.",
+        "group": "Closing and handing over unfinished work"
+      },
+      {
+        "term": "waste log",
+        "definition": "A record of food discarded and the stated reason or quantity.",
+        "group": "Closing and handing over unfinished work"
+      },
+      {
+        "term": "carryover",
+        "definition": "Food or work remaining from an earlier period, with any permitted use subject to workplace requirements.",
+        "group": "Closing and handing over unfinished work"
+      },
+      {
+        "term": "sign-off",
+        "definition": "A recorded acknowledgment that a specified check or task has been completed or approved.",
+        "group": "Closing and handing over unfinished work"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Twenty-four what?",
+          "setting": "The ambiguous soup prep line in the case.",
+          "turns": [
+            [
+              "Prep cook",
+              "The soup line says twenty-four. Does that mean individual portions or filled storage containers?"
+            ],
+            [
+              "Lead cook",
+              "It means twenty-four portions today. We haven't specified a number of containers on this list."
+            ],
+            [
+              "Prep cook",
+              "Thanks. Which recipe version should I use to check the required yield for that quantity?"
+            ],
+            [
+              "Lead cook",
+              "Use Monday's current recipe. The older sheet in the folder has a different yield."
+            ],
+            [
+              "Prep cook",
+              "I'll work from Monday's version, then. Has anyone already started part of this batch?"
+            ],
+            [
+              "Lead cook",
+              "No, you're taking the whole soup assignment. The other cook is preparing salad components instead."
+            ],
+            [
+              "Prep cook",
+              "So twenty-four portions is the total target, not twenty-four more than someone else's preparation?"
+            ],
+            [
+              "Lead cook",
+              "Correct. That's the total for your assignment, and nothing has been counted toward it yet."
+            ],
+            [
+              "Prep cook",
+              "I'll mark the unit on my copy and repeat the target at the prep check."
+            ],
+            [
+              "Lead cook",
+              "Good. Bring me any recipe discrepancy before assuming the older figures still apply today."
+            ]
+          ]
+        },
+        {
+          "title": "A total, not an addition",
+          "setting": "A kitchen assistant clarifies a revised list during preparation.",
+          "turns": [
+            [
+              "Assistant",
+              "The updated list says twelve trays. Are those twelve additional trays or the overall total?"
+            ],
+            [
+              "Cook",
+              "Twelve is the total needed. Four trays have already been counted as complete for this assignment."
+            ],
+            [
+              "Assistant",
+              "Then eight remain, assuming those four belong to the same order on this updated sheet."
+            ],
+            [
+              "Cook",
+              "They do. The completed trays carry the same order reference as the revised list."
+            ],
+            [
+              "Assistant",
+              "I'll work toward eight more, rather than adding twelve to the four already finished."
+            ],
+            [
+              "Cook",
+              "Exactly. Please don't count the separate display tray toward this order; it belongs elsewhere."
+            ],
+            [
+              "Assistant",
+              "Thanks for pointing that out. Is the display tray included in any of these figures?"
+            ],
+            [
+              "Cook",
+              "No, it's listed on the counter-service sheet and isn't part of today's twelve-tray order."
+            ],
+            [
+              "Assistant",
+              "I'll keep the two counts separate when I report the remaining work to the lead."
+            ],
+            [
+              "Cook",
+              "That will help. Report eight outstanding on this order and leave the display count unchanged."
+            ]
+          ]
+        },
+        {
+          "title": "Prep ready for whom?",
+          "setting": "A cook checks what a colleague means by 'ready'.",
+          "turns": [
+            [
+              "Cook",
+              "You said my mise en place was ready. Is the garnish at my station yet?"
+            ],
+            [
+              "Colleague",
+              "It's prepared on the prep bench, but I haven't transferred it to your station yet."
+            ],
+            [
+              "Cook",
+              "Thanks. I was looking in the station supplies and thought we had run out."
+            ],
+            [
+              "Colleague",
+              "We haven't run out. The completed garnish is assigned to your station on this list."
+            ],
+            [
+              "Cook",
+              "Could you confirm the quantity? I need to report our remaining prep before service starts."
+            ],
+            [
+              "Colleague",
+              "There are eighteen portions for your station, and another six belong to the lunch counter."
+            ],
+            [
+              "Cook",
+              "I'll report eighteen prepared for us, with the transfer still outstanding at this moment."
+            ],
+            [
+              "Colleague",
+              "Yes, and please keep the lunch-counter allocation separate so it doesn't get counted twice."
+            ],
+            [
+              "Cook",
+              "Who's bringing it over? I can collect it once we've finished this handover."
+            ],
+            [
+              "Colleague",
+              "Please take that task. I'll tell the lead it's assigned to you, not already complete."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A handwritten abbreviation",
+        "brief": "A prep note reads '6 c.' The recipe uses cups, but the delivery list uses cases. The lead intended six cups for a practice recipe discussion; no preparation has begun.",
+        "role_a": "Cook: ask what the abbreviation means.",
+        "role_b": "Lead: expand it to cups and identify the recipe, not a delivery order.",
+        "opening_line": "Could you spell out the unit beside the six?",
+        "complication": "A colleague says the same abbreviation meant cases yesterday.",
+        "success_checks": [
+          "Identify the current document.",
+          "Obtain the full unit.",
+          "Repeat the quantity without using the ambiguous abbreviation."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Six on paper, four on the floor",
+          "setting": "The tomato delivery count in the case.",
+          "turns": [
+            [
+              "Cook",
+              "The delivery note lists six tomato cases, but I counted four beside this trolley."
+            ],
+            [
+              "Receiving lead",
+              "Did the driver say the remaining two are missing, or just somewhere else?"
+            ],
+            [
+              "Cook",
+              "They said two might be on another trolley. They haven't actually checked it yet."
+            ],
+            [
+              "Receiving lead",
+              "Then we have four observed and two unconfirmed. Please show me the delivery note."
+            ],
+            [
+              "Cook",
+              "Here it is. I haven't recorded all six as received because the count doesn't match."
+            ],
+            [
+              "Receiving lead",
+              "Good. I'll ask the driver to reconcile the physical count before we complete the record."
+            ],
+            [
+              "Cook",
+              "Should I describe this as a confirmed short delivery in the kitchen update now?"
+            ],
+            [
+              "Receiving lead",
+              "Say two cases are currently unaccounted for. We haven't established whether they arrived elsewhere."
+            ],
+            [
+              "Cook",
+              "Understood. I'll report four here and the remaining two under review with you."
+            ],
+            [
+              "Receiving lead",
+              "Thank you. That gives the kitchen a usable count without assigning a cause prematurely."
+            ]
+          ]
+        },
+        {
+          "title": "A label cannot be read",
+          "setting": "A kitchen assistant reports an unreadable product identifier.",
+          "turns": [
+            [
+              "Assistant",
+              "This container's product label is readable, but the lot code underneath it is obscured."
+            ],
+            [
+              "Lead cook",
+              "Can you connect it to the matching delivery record, or is that link unclear too?"
+            ],
+            [
+              "Assistant",
+              "The product name matches, but there are two deliveries with different codes on today's sheet."
+            ],
+            [
+              "Lead cook",
+              "Then don't guess which code belongs to it. I'll ask the receiving team to check."
+            ],
+            [
+              "Assistant",
+              "I'll leave its status unresolved and identify the exact container in my report to them."
+            ],
+            [
+              "Lead cook",
+              "Please mention that the product name is visible; it's the lot code that needs clarification."
+            ],
+            [
+              "Assistant",
+              "Would a photograph of the label help them identify which area is unreadable here?"
+            ],
+            [
+              "Lead cook",
+              "Use our normal reporting method and keep the original container available for their inspection."
+            ],
+            [
+              "Assistant",
+              "I'll describe the obscured code and the two possible delivery records without choosing between them."
+            ],
+            [
+              "Lead cook",
+              "We need the correct lot code for traceability. Don't copy one from another container."
+            ]
+          ]
+        },
+        {
+          "title": "Stock on hand versus available",
+          "setting": "A cook checks whether counted portions are already allocated.",
+          "turns": [
+            [
+              "Cook",
+              "You counted twenty tart portions. Are all twenty available for tonight's dining room service?"
+            ],
+            [
+              "Prep colleague",
+              "No, six are allocated to the staff event. Fourteen remain available for the dining room."
+            ],
+            [
+              "Cook",
+              "Thanks. The stock board just says twenty, so I nearly reported the whole count as available."
+            ],
+            [
+              "Prep colleague",
+              "Let's distinguish the physical total from the allocation. Both numbers matter to the shift lead."
+            ],
+            [
+              "Cook",
+              "I'll report twenty on hand, six reserved for the event, and fourteen for service."
+            ],
+            [
+              "Prep colleague",
+              "That's right. The six aren't missing or already served; they're assigned to a different use."
+            ],
+            [
+              "Cook",
+              "Has the event allocation changed since the last count, or is six still confirmed?"
+            ],
+            [
+              "Prep colleague",
+              "Six is confirmed on the event list. No one has requested a change to that number."
+            ],
+            [
+              "Cook",
+              "I'll add that distinction to my spoken update so the server doesn't sell the reserved portions."
+            ],
+            [
+              "Prep colleague",
+              "Please do. I'll check with the lead before any reserved portion is reassigned to service."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One box is a different product",
+        "brief": "A delivery note lists five cases of plain rolls. There are four plain-roll cases and one seeded-roll case. No substitution was agreed.",
+        "role_a": "Cook: state counts and product names.",
+        "role_b": "Receiving lead: review the mismatch with the supplier before accepting a substitution.",
+        "opening_line": "The fifth case has a different product description.",
+        "complication": "A colleague calls it 'five bread cases' and overlooks the product difference.",
+        "success_checks": [
+          "Count by product, not just container.",
+          "Avoid declaring the substitute equivalent.",
+          "Identify the unresolved substitution decision."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Three total, not five",
+          "setting": "Revised ticket 41 from the case.",
+          "turns": [
+            [
+              "Cook",
+              "Revised forty-one says three tarts. Does that replace the original two or add another three?"
+            ],
+            [
+              "Expediter",
+              "It replaces the original quantity. The table needs three tarts total on that ticket."
+            ],
+            [
+              "Cook",
+              "Thanks. I also see salad instead of potatoes, but the note doesn't identify a quantity."
+            ],
+            [
+              "Expediter",
+              "That substitution belongs to one tart only. The other two keep their standard potatoes."
+            ],
+            [
+              "Cook",
+              "So three tarts total: one with salad, two with potatoes. Is that the complete revision?"
+            ],
+            [
+              "Expediter",
+              "Yes. Don't combine the old ticket quantity with the new one when you count orders."
+            ],
+            [
+              "Cook",
+              "I'll use the revised ticket and tell the other station the original quantity was replaced."
+            ],
+            [
+              "Expediter",
+              "Please identify forty-one in that message; another table has a separate order for two tarts."
+            ],
+            [
+              "Cook",
+              "Understood. The revision changes forty-one only and leaves the other table's order untouched."
+            ],
+            [
+              "Expediter",
+              "Correct. Read back the table and ticket if another correction comes through during service."
+            ]
+          ]
+        },
+        {
+          "title": "What does all day include?",
+          "setting": "A cook checks the scope of an order total.",
+          "turns": [
+            [
+              "Cook",
+              "You called six soups all day. Does that include the two on the new takeaway ticket?"
+            ],
+            [
+              "Expediter",
+              "Yes, six includes those two. Four belong to dining-room tickets and two to takeaway."
+            ],
+            [
+              "Cook",
+              "Thanks. I was about to add the takeaway pair again and report eight instead."
+            ],
+            [
+              "Expediter",
+              "Keep the total at six. The separate packing instruction doesn't create two extra portions."
+            ],
+            [
+              "Cook",
+              "Which ticket has the takeaway pair? I want the service format attached to the right order."
+            ],
+            [
+              "Expediter",
+              "Ticket fifty-three. The other four portions are listed across the two dining-room tickets beside it."
+            ],
+            [
+              "Cook",
+              "I'll repeat six total, with two assigned to takeaway ticket fifty-three and four for tables."
+            ],
+            [
+              "Expediter",
+              "Exactly. Tell me if a cancellation arrives before treating that total as unchanged."
+            ],
+            [
+              "Cook",
+              "No cancellation has reached me. I'll keep the current six unless you issue a revision."
+            ],
+            [
+              "Expediter",
+              "Good. That gives both the quantity and the order split without counting anything twice."
+            ]
+          ]
+        },
+        {
+          "title": "Urgent is not specific",
+          "setting": "A cook clarifies an urgent verbal request.",
+          "turns": [
+            [
+              "Expediter",
+              "I need a replacement tart on the fly for the table near the window."
+            ],
+            [
+              "Cook",
+              "Which table number and ticket? There are three window tables in tonight's seating arrangement."
+            ],
+            [
+              "Expediter",
+              "Table eighteen, ticket sixty. The original plate was the wrong dish and needs replacing."
+            ],
+            [
+              "Cook",
+              "Thank you. Does the replacement keep the standard side, or is there a modification?"
+            ],
+            [
+              "Expediter",
+              "It needs salad instead of potatoes. That was on the original ticket for this diner."
+            ],
+            [
+              "Cook",
+              "I'll read that back: replacement tart for eighteen, ticket sixty, salad instead of potatoes."
+            ],
+            [
+              "Expediter",
+              "Correct. Please give me an estimate rather than assuming the urgency makes it immediately available."
+            ],
+            [
+              "Cook",
+              "I'll check the station's current work and give you a realistic estimate for this replacement."
+            ],
+            [
+              "Expediter",
+              "Thanks. I'll tell the server the request is accepted, with the estimate still pending."
+            ],
+            [
+              "Cook",
+              "I'll call the ticket number with that estimate so it doesn't get attached elsewhere."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A canceled side remains on a screen",
+        "brief": "Ticket 72 originally includes two extra salads. The expediter confirms one extra salad is canceled; the mains are unchanged.",
+        "role_a": "Cook: clarify the remaining quantity.",
+        "role_b": "Expediter: confirm one extra salad remains and both mains still stand.",
+        "opening_line": "Does this cancellation remove one salad or the whole ticket?",
+        "complication": "A colleague heard only the word 'cancel'.",
+        "success_checks": [
+          "Keep both mains.",
+          "State one extra salad remains.",
+          "Repeat the ticket number when correcting the colleague."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Half a ticket is not a pickup",
+          "setting": "Ticket 28 from the case.",
+          "turns": [
+            [
+              "Expediter",
+              "Can I call the pickup for twenty-eight? I see two plated mains at the pass."
+            ],
+            [
+              "Cook",
+              "Not yet. There are four mains on that ticket, and two are still at my station."
+            ],
+            [
+              "Expediter",
+              "How long do you estimate for the remaining pair, taking your current work into account?"
+            ],
+            [
+              "Cook",
+              "Approximately four more minutes. I'll tell you if that changes before the full ticket is ready."
+            ],
+            [
+              "Expediter",
+              "I'll keep the pickup open, then. Are those two plated dishes definitely for twenty-eight?"
+            ],
+            [
+              "Cook",
+              "Yes, their ticket is beside them. They aren't part of the neighboring order for twenty-nine."
+            ],
+            [
+              "Expediter",
+              "Good. The runner nearly combined them with that order because the plates looked similar."
+            ],
+            [
+              "Cook",
+              "I'll keep the table reference clear and call you when the remaining pair reaches the pass."
+            ],
+            [
+              "Expediter",
+              "Please do. I'll coordinate the full pickup after checking all four against the ticket."
+            ],
+            [
+              "Cook",
+              "Understood. Two plated, two pending, with the current estimate still four more minutes."
+            ]
+          ]
+        },
+        {
+          "title": "A garnish mismatch at the pass",
+          "setting": "An expediter questions a visible difference between a dish and its ticket.",
+          "turns": [
+            [
+              "Expediter",
+              "This ticket says no herb garnish, but the plate here has herbs on top."
+            ],
+            [
+              "Cook",
+              "Let me check the ticket number before assuming that plate belongs to the modified order."
+            ],
+            [
+              "Expediter",
+              "It's thirty-four, seat two. The dish beside it is the standard version for seat one."
+            ],
+            [
+              "Cook",
+              "You're right. I've matched the standard plate to the wrong seat at the pass."
+            ],
+            [
+              "Expediter",
+              "What is the next step for the modified dish? I haven't released either plate."
+            ],
+            [
+              "Cook",
+              "I'll check the preparation status with the station lead and give you a confirmed correction."
+            ],
+            [
+              "Expediter",
+              "Please keep the modification attached to seat two rather than changing both dishes on this ticket."
+            ],
+            [
+              "Cook",
+              "Understood. One standard dish for seat one, one no-garnish order for seat two."
+            ],
+            [
+              "Expediter",
+              "Tell me when the corrected pickup is ready for checking; don't just call the whole table done."
+            ],
+            [
+              "Cook",
+              "I will name thirty-four and the two seat assignments when I return with the update."
+            ]
+          ]
+        },
+        {
+          "title": "The runner needs the whole location",
+          "setting": "A cook repairs a vague pickup announcement.",
+          "turns": [
+            [
+              "Runner",
+              "You called the back table, but there are several tables beyond the partition tonight."
+            ],
+            [
+              "Cook",
+              "I meant table twenty-six. Let me give the full number rather than a location nickname."
+            ],
+            [
+              "Runner",
+              "Thank you. Are all three dishes here for twenty-six, or does one belong elsewhere?"
+            ],
+            [
+              "Cook",
+              "Only the two marked plates are for twenty-six. The third belongs to table sixteen."
+            ],
+            [
+              "Runner",
+              "Then I'll collect the two confirmed dishes and leave sixteen's plate beside its own ticket."
+            ],
+            [
+              "Cook",
+              "Please check with the expediter first; they're coordinating whether twenty-six's side dish joins this pickup."
+            ],
+            [
+              "Runner",
+              "I hadn't seen a side dish on the runner copy. I'll ask about that before leaving."
+            ],
+            [
+              "Cook",
+              "Good. My call identified the two mains, not whether the entire order was complete."
+            ],
+            [
+              "Runner",
+              "The expediter confirms the side is still pending and wants this pickup held for now."
+            ],
+            [
+              "Cook",
+              "I'll keep the plates identified and let them make the next pickup call."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A takeaway order at the dining pass",
+        "brief": "Three containers for takeaway ticket 90 are ready, but the printed order lists four. The fourth is still at the dessert station.",
+        "role_a": "Cook: report three ready and one pending.",
+        "role_b": "Expediter: identify the missing dessert and obtain its estimate.",
+        "opening_line": "Is ticket ninety complete for collection?",
+        "complication": "The courier asks whether seeing three containers means they can leave.",
+        "success_checks": [
+          "Compare containers with the ticket.",
+          "Name the missing component.",
+          "Avoid declaring the whole order ready."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Three portions for five orders",
+          "setting": "The potato shortage in the case.",
+          "turns": [
+            [
+              "Cook",
+              "The potato portion count is three, but this ticket asks for five sides."
+            ],
+            [
+              "Server",
+              "Could you put rice on the other two plates and let me explain afterward?"
+            ],
+            [
+              "Cook",
+              "Please ask first. Rice is available, but we don't know which diners would accept it."
+            ],
+            [
+              "Server",
+              "You're right. I'll offer rice to the table and get the actual seat choices."
+            ],
+            [
+              "Cook",
+              "Thank you. Keep the three available potatoes separate from any portions already committed elsewhere."
+            ],
+            [
+              "Server",
+              "Do you have enough rice for both proposed changes if two diners choose it?"
+            ],
+            [
+              "Cook",
+              "Yes, two rice sides are available for this proposal. Neither substitution is confirmed yet."
+            ],
+            [
+              "Server",
+              "I'll return with the names of the two seats, or tell you if they decline."
+            ],
+            [
+              "Cook",
+              "Then I'll read back the five sides against those seats before the ticket proceeds."
+            ],
+            [
+              "Server",
+              "Agreed. I'll describe the shortage clearly rather than call rice the standard accompaniment."
+            ]
+          ]
+        },
+        {
+          "title": "A stock word needs a scope",
+          "setting": "A cook clarifies whether a shortage concerns one dish or an ingredient.",
+          "turns": [
+            [
+              "Cook",
+              "You called the mushrooms eighty-six. Do you mean the mushroom starter or every dish containing mushrooms?"
+            ],
+            [
+              "Expediter",
+              "The mushroom starter only. The pasta station has its own allocated ingredient stock for service."
+            ],
+            [
+              "Cook",
+              "Thanks. I'll tell the servers the starter is unavailable, not remove the pasta from their options."
+            ],
+            [
+              "Expediter",
+              "Please use the full dish name. The shortened call caused confusion at the other station too."
+            ],
+            [
+              "Cook",
+              "Is the starter unavailable for the rest of this service, or just while another batch is checked?"
+            ],
+            [
+              "Expediter",
+              "The lead has marked it unavailable for tonight. No further starter batch is planned."
+            ],
+            [
+              "Cook",
+              "I'll repeat that as mushroom starter unavailable tonight, with mushroom pasta availability unchanged."
+            ],
+            [
+              "Expediter",
+              "Exactly. The separate allocation is why the dish name matters more than the ingredient nickname."
+            ],
+            [
+              "Cook",
+              "I'll also check earlier starter orders before discussing replacements."
+            ],
+            [
+              "Expediter",
+              "The lead is checking earlier tickets separately; the starter is unavailable for new orders tonight."
+            ]
+          ]
+        },
+        {
+          "title": "A par level is not an order",
+          "setting": "A prep cook questions a replenishment request.",
+          "turns": [
+            [
+              "Prep cook",
+              "The par level says forty portions, but we have twenty and only ten orders expected."
+            ],
+            [
+              "Lead cook",
+              "Are you asking whether to prepare twenty more just to reach the reference level?"
+            ],
+            [
+              "Prep cook",
+              "Yes. I don't want to treat the printed par figure as a new production instruction."
+            ],
+            [
+              "Lead cook",
+              "That's sensible. Today's approved prep target stays at twenty because the service plan is smaller."
+            ],
+            [
+              "Prep cook",
+              "Then the existing twenty meet today's target, even though they're below the usual par level."
+            ],
+            [
+              "Lead cook",
+              "Correct. The par is a planning reference, not an automatic instruction for every shift."
+            ],
+            [
+              "Prep cook",
+              "Should I tell the incoming cook why the board shows a difference from that reference?"
+            ],
+            [
+              "Lead cook",
+              "Please do. Explain the reduced target so they don't add an unnecessary batch later."
+            ],
+            [
+              "Prep cook",
+              "I'll say twenty available against today's target of twenty, with the usual par unchanged at forty."
+            ],
+            [
+              "Lead cook",
+              "Exactly. Any further production needs a new decision based on the service update, not the gap alone."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Only the garnish is unavailable",
+        "brief": "The herb garnish for a soup is unavailable. The soup itself remains available, but any presentation change needs the lead's decision and a server update.",
+        "role_a": "Cook: identify the missing component, not the entire dish.",
+        "role_b": "Lead: confirm whether a no-garnish presentation can be offered; no decision exists at the opening.",
+        "opening_line": "Are we marking the whole soup unavailable or just reporting the garnish shortage?",
+        "complication": "A colleague has already told one server 'no soup'.",
+        "success_checks": [
+          "Separate component and dish.",
+          "Obtain the lead's decision.",
+          "Correct the server's earlier message accurately."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "A modifier is not an allergy clearance",
+          "setting": "Ticket 17 from the case.",
+          "turns": [
+            [
+              "Server",
+              "The no-cheese request on seventeen is about a milk allergy, not a taste preference."
+            ],
+            [
+              "Cook",
+              "Thanks for the new information. Omitting cheese doesn't answer whether the sauce contains milk ingredients."
+            ],
+            [
+              "Server",
+              "I had described the dish as suitable once the cheese was removed. That was too broad."
+            ],
+            [
+              "Cook",
+              "Please correct that with the guest. The sauce specification and handling question still need the lead's review."
+            ],
+            [
+              "Server",
+              "I'll keep the order pending and explain that we need to check the whole preparation."
+            ],
+            [
+              "Cook",
+              "I'll give the lead the ticket number and the guest's exact reported concern about milk."
+            ],
+            [
+              "Server",
+              "Should I bring the guest another menu while the lead gathers the relevant information?"
+            ],
+            [
+              "Cook",
+              "You can offer one, but don't name another dish as suitable without its own check."
+            ],
+            [
+              "Server",
+              "Understood. I'll explain the unresolved question and invite the lead to discuss it directly with them."
+            ],
+            [
+              "Cook",
+              "That lets the diner choose using actual information, not our assumption."
+            ]
+          ]
+        },
+        {
+          "title": "A recipe version matters",
+          "setting": "A cook finds two ingredient sheets for the same sauce.",
+          "turns": [
+            [
+              "Cook",
+              "There are two recipe specifications for the sauce, and their ingredient lists don't match."
+            ],
+            [
+              "Lead cook",
+              "Are the documents dated, and can you identify which one the current batch refers to?"
+            ],
+            [
+              "Cook",
+              "The sheets have different dates, but I can't confirm which was used for this batch."
+            ],
+            [
+              "Lead cook",
+              "Then don't answer the server from whichever sheet looks newer. We need the batch's actual information."
+            ],
+            [
+              "Cook",
+              "I'll keep the suitability question unresolved and show you the two sheets and batch reference."
+            ],
+            [
+              "Lead cook",
+              "Please do. What exactly did the diner ask so we check the right concern?"
+            ],
+            [
+              "Cook",
+              "They asked whether the sauce contains mustard. The server has not reported an allergy or preference yet."
+            ],
+            [
+              "Lead cook",
+              "I'll ask the server to clarify that too, without delaying the ingredient-record check you've raised."
+            ],
+            [
+              "Cook",
+              "So the batch's allergen declaration and the guest's exact concern both need checking?"
+            ],
+            [
+              "Lead cook",
+              "I'll handle the recipe review; please obtain the guest's exact wording."
+            ]
+          ]
+        },
+        {
+          "title": "A vegetarian label needs confirmation",
+          "setting": "A cook questions a proposed menu description without offering dietary certification.",
+          "turns": [
+            [
+              "Server",
+              "A guest wants the soup without the meat garnish. Can I describe that as vegetarian?"
+            ],
+            [
+              "Cook",
+              "Not from that change alone. The base recipe matters, and I haven't checked its stock ingredients."
+            ],
+            [
+              "Server",
+              "The garnish is the only meat I can see, which is why I thought it worked."
+            ],
+            [
+              "Cook",
+              "Visible ingredients don't describe the whole recipe. Let's get the current specification from the lead."
+            ],
+            [
+              "Server",
+              "I'll tell the guest removing the garnish is a request, not confirmation of the soup's composition."
+            ],
+            [
+              "Cook",
+              "Good. Did they ask about a dietary preference, or report a specific allergy we should relay?"
+            ],
+            [
+              "Server",
+              "They stated a vegetarian preference. They didn't mention an allergy, and I won't add that label."
+            ],
+            [
+              "Cook",
+              "Please pass on that exact preference while we check whether this recipe meets the request."
+            ],
+            [
+              "Server",
+              "I'll leave the soup unconfirmed and discuss other choices only with verified ingredient information."
+            ],
+            [
+              "Cook",
+              "That avoids turning an appearance-based guess into a menu claim."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A product changes midweek",
+        "brief": "A sauce now uses a new branded ingredient. A previous allergen declaration is available, but the new product's declaration has not been checked.",
+        "role_a": "Cook: question use of the old declaration.",
+        "role_b": "Lead: obtain the current product information before answering the server.",
+        "opening_line": "Does the older declaration cover this new product?",
+        "complication": "The products have similar packaging and the same descriptive name.",
+        "success_checks": [
+          "Identify the product change.",
+          "Avoid assuming equivalence.",
+          "Keep the specific dietary question unresolved pending review."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "A blank display is the observation",
+          "setting": "The scale problem from the case.",
+          "turns": [
+            [
+              "Cook",
+              "I'm reporting an equipment fault with scale B at pastry prep: its display keeps going blank."
+            ],
+            [
+              "Lead cook",
+              "Do you know the cause, or are you reporting only what the display did?"
+            ],
+            [
+              "Cook",
+              "Only what I observed. I don't know whether the issue is with power or the scale itself."
+            ],
+            [
+              "Lead cook",
+              "I'll mark scale B out of service for review. Can you show me its label?"
+            ],
+            [
+              "Cook",
+              "Could you also confirm whether scale A is available so this prep can continue?"
+            ],
+            [
+              "Lead cook",
+              "I'll check its availability. Has the pastry quantity already been verified by another method?"
+            ],
+            [
+              "Cook",
+              "No, that quantity remains unverified. I haven't reported this part of the prep as complete."
+            ],
+            [
+              "Lead cook",
+              "Then keep that status clear. I'll bring you a confirmed equipment option after checking."
+            ],
+            [
+              "Cook",
+              "Should I give the next cook the device label and location in the handover?"
+            ],
+            [
+              "Lead cook",
+              "Yes, identify scale B at pastry prep, with review pending and no repair time confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "A specific request for the dish team",
+          "setting": "A cook requests needed plates during a busy service.",
+          "turns": [
+            [
+              "Cook",
+              "Could you check the availability of small soup bowls? Our station has four left."
+            ],
+            [
+              "Dish colleague",
+              "One dish rack of small bowls is in progress, but I don't have a completion time."
+            ],
+            [
+              "Cook",
+              "The bowls are the bottleneck now: six soup orders are pending, and we only have four."
+            ],
+            [
+              "Dish colleague",
+              "Are you asking for all the bowls from that rack or just the immediate shortfall?"
+            ],
+            [
+              "Cook",
+              "The immediate shortfall is two bowls. The lead can decide how to allocate the rest."
+            ],
+            [
+              "Dish colleague",
+              "I'll tell the lead that number and update you when the rack is ready."
+            ],
+            [
+              "Cook",
+              "Please identify small soup bowls, not the larger pasta bowls stored beside them."
+            ],
+            [
+              "Dish colleague",
+              "Understood. Is there a completed rack elsewhere that you've already checked for this size?"
+            ],
+            [
+              "Cook",
+              "I checked our station shelf only. I haven't checked the other approved storage location."
+            ],
+            [
+              "Dish colleague",
+              "I'll confirm that location with the lead so we don't duplicate the same search."
+            ]
+          ]
+        },
+        {
+          "title": "A noisy machine needs a location",
+          "setting": "A kitchen assistant clarifies an equipment report.",
+          "turns": [
+            [
+              "Assistant",
+              "There's an unusual noise from the dish area, but I haven't identified which machine is involved."
+            ],
+            [
+              "Supervisor",
+              "Are you reporting the sound itself, or did you see a particular machine malfunction?"
+            ],
+            [
+              "Assistant",
+              "The sound only. I don't want to label the dishwasher faulty without checking with the operator."
+            ],
+            [
+              "Supervisor",
+              "Good distinction. I'll speak with the dish lead and determine the appropriate response."
+            ],
+            [
+              "Assistant",
+              "Should I tell the kitchen all dish service has stopped because of the noise?"
+            ],
+            [
+              "Supervisor",
+              "No, we haven't established that. Report the concern and keep any service impact unconfirmed."
+            ],
+            [
+              "Assistant",
+              "I'll say the dish lead is reviewing an unusual noise, without naming a failed component."
+            ],
+            [
+              "Supervisor",
+              "Please also tell me when you first noticed it so the report has a clear reference."
+            ],
+            [
+              "Assistant",
+              "I noticed it just after eight, while collecting clean trays near the entrance."
+            ],
+            [
+              "Supervisor",
+              "Thank you. That location and time are useful; a guessed diagnosis wouldn't improve the report."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two similar equipment labels",
+        "brief": "A colleague reports 'mixer two' unavailable, but prep uses labels M2 and M12. The supervisor knows M12 is under review; M2's status is unchanged.",
+        "role_a": "Cook: clarify the exact label.",
+        "role_b": "Supervisor: identify M12 and the review status.",
+        "opening_line": "Do you mean M2 or M12?",
+        "complication": "The caller says 'the big one,' but both look similar from your station.",
+        "success_checks": [
+          "Obtain the exact label.",
+          "Repeat the affected location and device.",
+          "Avoid declaring both devices unavailable."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Recorded is not reviewed",
+          "setting": "The shift-change case with garnish, waste entry, and shelf check.",
+          "turns": [
+            [
+              "Outgoing cook",
+              "Twelve garnish portions are counted. Two items on the closing checklist are still open."
+            ],
+            [
+              "Incoming cook",
+              "Which items are open, and which one are you asking me to take over?"
+            ],
+            [
+              "Outgoing cook",
+              "The shelf check hasn't been done. Could you complete that check and report its status?"
+            ],
+            [
+              "Incoming cook",
+              "Yes, I'll take the shelf check. What is the second unfinished item on your list?"
+            ],
+            [
+              "Outgoing cook",
+              "The waste log lists three damaged tarts; the lead hasn't reviewed that entry yet."
+            ],
+            [
+              "Incoming cook",
+              "Will you keep responsibility for that review, or do you want me to ask the lead?"
+            ],
+            [
+              "Outgoing cook",
+              "I'll keep the review follow-up. You only need to take the shelf check from this handover."
+            ],
+            [
+              "Incoming cook",
+              "Understood. Twelve garnish portions counted; shelf check mine; waste review still yours and pending."
+            ],
+            [
+              "Outgoing cook",
+              "Exactly. Please don't interpret the recorded waste entry as a completed sign-off by the lead."
+            ],
+            [
+              "Incoming cook",
+              "I'll do the shelf check and let you know when it's finished."
+            ]
+          ]
+        },
+        {
+          "title": "A waste reason is unknown",
+          "setting": "A cook checks a proposed explanation for discarded food.",
+          "turns": [
+            [
+              "Cook",
+              "The log says four portions discarded, but the reason column is blank on this entry."
+            ],
+            [
+              "Lead cook",
+              "Do you know why they were discarded, or only how many were recorded here?"
+            ],
+            [
+              "Cook",
+              "Only the quantity. A colleague suggested it was an order cancellation, but hasn't confirmed that."
+            ],
+            [
+              "Lead cook",
+              "Then don't add that explanation as fact. Ask the person who handled the discard."
+            ],
+            [
+              "Cook",
+              "I'll keep the reason unresolved while requesting clarification, rather than choose the most likely category."
+            ],
+            [
+              "Lead cook",
+              "Good. Is the quantity itself supported by a count, or does that also need checking?"
+            ],
+            [
+              "Cook",
+              "The colleague confirmed counting four portions. They couldn't explain why the decision was made."
+            ],
+            [
+              "Lead cook",
+              "So we have a confirmed count and an unconfirmed reason. Keep those two statuses distinct."
+            ],
+            [
+              "Cook",
+              "I'll tell the incoming cook exactly that and identify who is following up on the reason."
+            ],
+            [
+              "Lead cook",
+              "Please take that follow-up yourself and bring me the answer for the record review."
+            ]
+          ]
+        },
+        {
+          "title": "Carryover is not permission",
+          "setting": "An incoming cook asks what an unfinished stock note establishes.",
+          "turns": [
+            [
+              "Incoming cook",
+              "The handover mentions carryover sauce. Does that mean it's approved for use in today's service?"
+            ],
+            [
+              "Outgoing cook",
+              "No. The note identifies remaining stock, but the lead still needs to confirm its status."
+            ],
+            [
+              "Incoming cook",
+              "Thank you. I won't read a remaining quantity as permission to use it."
+            ],
+            [
+              "Outgoing cook",
+              "Exactly. The relevant records are with the lead, and I haven't made that decision."
+            ],
+            [
+              "Incoming cook",
+              "Do you have a confirmed quantity so I can describe what's waiting for review?"
+            ],
+            [
+              "Outgoing cook",
+              "Two labeled containers are listed. I haven't converted that container count into a portion yield."
+            ],
+            [
+              "Incoming cook",
+              "I'll report two containers with review pending, not a guessed number of available portions."
+            ],
+            [
+              "Outgoing cook",
+              "That's accurate. The new prep plan depends on the lead's decision and the verified yield."
+            ],
+            [
+              "Incoming cook",
+              "I'll ask for both details before treating the carryover as part of my available stock."
+            ],
+            [
+              "Outgoing cook",
+              "Please do. I'll remain available to explain the earlier note if the lead needs context."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A checklist mark lacks initials",
+        "brief": "A closing checklist has a tick beside the storage check, but no name or time. Neither cook knows who completed it. The lead can clarify or arrange a new check.",
+        "role_a": "Outgoing cook: report the ambiguous mark.",
+        "role_b": "Incoming cook: ask who will verify completion.",
+        "opening_line": "Does this tick show a completed check we can actually confirm?",
+        "complication": "A colleague says the tick looks like yesterday's handwriting.",
+        "success_checks": [
+          "Avoid inferring completion from handwriting.",
+          "Keep status unverified.",
+          "Assign the verification question to the lead."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "A revised event count reaches the kitchen",
+      "setting": "A prep cook checks how a changed meal count affects an existing assignment.",
+      "dialogue": [
+        [
+          "Prep cook",
+          "The event count changed from thirty to thirty-six. Does that change every item on my prep list?"
+        ],
+        [
+          "Lead cook",
+          "Not every item. The organizer added six main meals, but the dessert count remains at thirty today."
+        ],
+        [
+          "Prep cook",
+          "I have one sheet saying thirty portions throughout. Is there an updated list showing the different targets?"
+        ],
+        [
+          "Lead cook",
+          "Yes, this revision separates the mains from desserts. Please use it instead of the earlier combined sheet."
+        ],
+        [
+          "Prep cook",
+          "The soup appears as a starter on the old list. Are six extra starters included as well?"
+        ],
+        [
+          "Lead cook",
+          "That hasn't been confirmed. Keep the starter target at thirty while I ask the event contact directly."
+        ],
+        [
+          "Prep cook",
+          "Then I can report thirty-six mains and thirty desserts confirmed, with the possible extra starters still open?"
+        ],
+        [
+          "Lead cook",
+          "Exactly. Don't turn the revised attendance figure into an instruction to increase every component by six."
+        ],
+        [
+          "Prep cook",
+          "Who should tell the other prep cook? They may still be using the old combined list over there."
+        ],
+        [
+          "Lead cook",
+          "I'll brief them now. Could you read back your two confirmed targets before you return to your station?"
+        ],
+        [
+          "Prep cook",
+          "Thirty-six main portions and thirty desserts. The starter quantity stays at thirty unless you confirm a further change."
+        ],
+        [
+          "Lead cook",
+          "Correct. I'll return with a specific starter decision."
+        ]
+      ],
+      "notes": [
+        "'Throughout' means across the whole document; the revised quantities no longer apply uniformly.",
+        "'Unless you confirm' keeps a possible later change separate from the current instruction."
+      ]
+    },
+    {
+      "title": "A substitute arrives without a clear message",
+      "setting": "A cook and receiving lead compare an actual delivery with the planned ingredient order.",
+      "dialogue": [
+        [
+          "Cook",
+          "The supplier sent diced peppers, but the order lists whole peppers. The case counts happen to match."
+        ],
+        [
+          "Receiving lead",
+          "Did the delivery note identify that as a substitution, or does it still name the original product?"
+        ],
+        [
+          "Cook",
+          "It still says whole peppers. The driver called it an equivalent item, but there's no written change."
+        ],
+        [
+          "Receiving lead",
+          "Then matching case numbers doesn't settle the product difference. I'll contact the supplier about the incorrect description."
+        ],
+        [
+          "Cook",
+          "Should I tell the prep team the ingredient is available, or would that hide the unresolved substitution?"
+        ],
+        [
+          "Receiving lead",
+          "Tell them a different product arrived and is awaiting review. Don't describe it as the ingredient they requested."
+        ],
+        [
+          "Cook",
+          "Their prep list depends on a specified product. I don't know whether this one suits the planned recipe."
+        ],
+        [
+          "Receiving lead",
+          "That's a decision for the kitchen lead after reviewing the actual product information, not just the supplier's description."
+        ],
+        [
+          "Cook",
+          "I'll give the lead both product names and the quantity received so they can assess the difference."
+        ],
+        [
+          "Receiving lead",
+          "Please also say the delivery record still names whole peppers; that record will need an accurate resolution."
+        ],
+        [
+          "Cook",
+          "Understood. The stock count is five cases, but product acceptance and the record correction are both unresolved."
+        ],
+        [
+          "Receiving lead",
+          "I'll ask the supplier; the lead will review product suitability."
+        ]
+      ],
+      "notes": [
+        "'Happen to match' notes agreement in one detail without claiming full equivalence.",
+        "'Awaiting review' names a pending decision rather than suggesting that acceptance has occurred."
+      ]
+    },
+    {
+      "title": "Two voices call the same correction",
+      "setting": "A cook checks whether duplicate messages request one remake or two.",
+      "dialogue": [
+        [
+          "Cook",
+          "You and the server both called a replacement soup for table ten. Is that one request repeated?"
+        ],
+        [
+          "Expediter",
+          "Yes, one replacement only. The server spoke first, and I repeated it without saying it was the same."
+        ],
+        [
+          "Cook",
+          "I'll count one, then. Which ticket should carry the remake so another cook doesn't start a duplicate?"
+        ],
+        [
+          "Expediter",
+          "Use ticket eighty-two. The replacement is for the diner at seat three, not the whole table."
+        ],
+        [
+          "Cook",
+          "The ticket also shows two original soups. Are either of those still waiting to be prepared?"
+        ],
+        [
+          "Expediter",
+          "No, both originals were served. Only this single replacement remains open for the soup station now."
+        ],
+        [
+          "Cook",
+          "Thanks. I'll separate completed original orders from the new replacement when I report the outstanding quantity."
+        ],
+        [
+          "Expediter",
+          "Please also tell the server I've accepted their request, so they don't call it through again."
+        ],
+        [
+          "Cook",
+          "I can confirm acceptance, but the wait estimate still needs checking against the station's current work."
+        ],
+        [
+          "Expediter",
+          "That's fine. I'll explain that distinction to the server and ask them to wait for your estimate."
+        ],
+        [
+          "Cook",
+          "Then we have one outstanding replacement on eighty-two, seat three, and no additional original soups pending."
+        ],
+        [
+          "Expediter",
+          "Exactly. That shared count should stop a repeated message turning into a second production request."
+        ]
+      ],
+      "notes": [
+        "'One request repeated' distinguishes duplicate communication from duplicate demand.",
+        "'Remains open' applies to the outstanding item, even when the original dishes were served."
+      ]
+    },
+    {
+      "title": "An estimate belongs to a particular ticket",
+      "setting": "A busy cook and expediter untangle two timing updates.",
+      "dialogue": [
+        [
+          "Expediter",
+          "You said five minutes, but I didn't catch the ticket number. Was that for thirty or thirteen?"
+        ],
+        [
+          "Cook",
+          "Five minutes is my estimate for thirty. Thirteen has its mains at the pass for checking."
+        ],
+        [
+          "Expediter",
+          "Thanks. The server for thirteen heard that number and thought their order had another five-minute delay."
+        ],
+        [
+          "Cook",
+          "Please correct that with them. My update concerned thirty's unfinished dishes, not the completed mains for thirteen."
+        ],
+        [
+          "Expediter",
+          "I'll check thirteen before calling its pickup. Does thirty's estimate include both the main and its side?"
+        ],
+        [
+          "Cook",
+          "It includes the main only. The side station hasn't given me a time for their component yet."
+        ],
+        [
+          "Expediter",
+          "Then I can't describe the whole of thirty as five minutes away. I'll get the side-station update."
+        ],
+        [
+          "Cook",
+          "Exactly. Tell them the main estimate, so they can discuss the full table's timing with you."
+        ],
+        [
+          "Expediter",
+          "The side station estimates six minutes. I'll coordinate the pickup around both components rather than the earlier number."
+        ],
+        [
+          "Cook",
+          "Please call the full ticket number when you update the server; the similar numbers caused the first confusion."
+        ],
+        [
+          "Expediter",
+          "I will. Thirteen is being checked at the pass; thirty's full pickup is currently estimated at six minutes."
+        ],
+        [
+          "Cook",
+          "That matches our latest information. I'll report any change directly."
+        ]
+      ],
+      "notes": [
+        "'Concerned thirty' identifies which order the update was about.",
+        "'Includes the main only' limits the estimate's scope; it does not cover every component."
+      ]
+    },
+    {
+      "title": "A substitution changes the description",
+      "setting": "A cook and server discuss a proposed alternative that would change the dish being offered.",
+      "dialogue": [
+        [
+          "Server",
+          "We're out of the vegetable tart. Does the pasta alternative include the same side salad?"
+        ],
+        [
+          "Cook",
+          "No, the pasta comes without that salad. Please explain the difference before the guest decides."
+        ],
+        [
+          "Server",
+          "They asked for a lighter meal, so I'll check whether pasta still appeals to them."
+        ],
+        [
+          "Cook",
+          "Please check the menu price with them too. It may affect which alternative they choose."
+        ],
+        [
+          "Server",
+          "I'll do that. Is the pasta definitely available, or am I offering something whose count needs checking?"
+        ],
+        [
+          "Cook",
+          "We have four unallocated portions right now. I'll confirm the remaining count when you bring their choice back."
+        ],
+        [
+          "Server",
+          "Can you reserve one while I speak to them, or would that require the expediter's approval here?"
+        ],
+        [
+          "Cook",
+          "Ask the expediter about this ticket's allocation. I haven't reserved a portion just by describing the current count."
+        ],
+        [
+          "Server",
+          "Understood. I'll say pasta is the proposed alternative, without promising a reservation or an identical accompaniment."
+        ],
+        [
+          "Cook",
+          "Please bring back the guest's choice before changing the ticket."
+        ],
+        [
+          "Server",
+          "I'll use the actual dish name on the revised ticket and identify which original order it replaces."
+        ],
+        [
+          "Cook",
+          "Then we can verify the accepted dish and its side details."
+        ]
+      ],
+      "notes": [
+        "'Alternative' means another choice, not an equivalent product.",
+        "'Unallocated' means not yet assigned; it doesn't establish that a portion has been reserved for this guest."
+      ]
+    },
+    {
+      "title": "A verbal amendment arrives after a ticket",
+      "setting": "A cook and server clarify a dietary concern added after the initial order.",
+      "dialogue": [
+        [
+          "Cook",
+          "I've received a note saying 'change the sauce' for ticket forty, but it doesn't give a reason."
+        ],
+        [
+          "Server",
+          "The diner asked about an ingredient after ordering. I should have explained the concern with the amendment."
+        ],
+        [
+          "Cook",
+          "What exactly did they say? I need their words before the lead can assess the requested change."
+        ],
+        [
+          "Server",
+          "They said they avoid mustard and asked whether this sauce contains it. They haven't explained why yet."
+        ],
+        [
+          "Cook",
+          "Please ask whether they're reporting an allergy or a preference, and keep their food order pending meanwhile."
+        ],
+        [
+          "Server",
+          "I'll ask directly. I won't assume the answer just because their first request sounded casual at the table."
+        ],
+        [
+          "Cook",
+          "The lead also needs the actual sauce name; this ticket includes two dishes with different sauce components."
+        ],
+        [
+          "Server",
+          "The dietary modification concerns the side-salad dressing, not the sauce with the main."
+        ],
+        [
+          "Cook",
+          "Thank you. I'll identify the dressing and the unchanged main separately when I pass the question to the lead."
+        ],
+        [
+          "Server",
+          "I'll tell the diner which component we're checking and ask for their stated concern without suggesting an answer."
+        ],
+        [
+          "Cook",
+          "Then we can review the current dressing information before agreeing that a substitution addresses what they need."
+        ],
+        [
+          "Server",
+          "Yes. I'll get their answer before we suggest a replacement."
+        ]
+      ],
+      "notes": [
+        "'Amendment' means a change to an earlier instruction; it still needs precise scope.",
+        "'Without suggesting an answer' keeps a clarification question neutral."
+      ]
+    },
+    {
+      "title": "A missing utensil changes the station update",
+      "setting": "A cook and lead coordinate work when a needed utensil cannot be located.",
+      "dialogue": [
+        [
+          "Cook",
+          "Our serving utensils aren't all back from the dish area. Should I call the station ready?"
+        ],
+        [
+          "Lead cook",
+          "Tell me which item is missing and what remains incomplete, rather than using a general readiness label."
+        ],
+        [
+          "Cook",
+          "The small serving ladle is missing. The ingredient count and the rest of the setup are complete."
+        ],
+        [
+          "Lead cook",
+          "Have you asked the dish lead whether it's still in their area or already returned elsewhere?"
+        ],
+        [
+          "Cook",
+          "They confirmed it's not yet returned, but they haven't located it. I don't know where it is."
+        ],
+        [
+          "Lead cook",
+          "Then report setup partly complete, with that utensil outstanding. I'll check whether a suitable replacement is available."
+        ],
+        [
+          "Cook",
+          "Should I borrow the other station's ladle now? They appear to have an extra one beside their setup."
+        ],
+        [
+          "Lead cook",
+          "Don't assume it's spare. I'll ask their lead about its allocation before deciding whether it can move."
+        ],
+        [
+          "Cook",
+          "I'll leave their setup unchanged and give our expediter the specific reason our station isn't fully ready."
+        ],
+        [
+          "Lead cook",
+          "Good. The other station confirms its extra ladle is allocated, so we'll need a different replacement option."
+        ],
+        [
+          "Cook",
+          "I'll keep our utensil request open. The completed ingredient count doesn't need repeating when the replacement arrives."
+        ],
+        [
+          "Lead cook",
+          "Once we have a replacement, just update that outstanding item."
+        ]
+      ],
+      "notes": [
+        "'Not yet returned' doesn't establish whether an item is lost.",
+        "'Allocated' explains why an item visible at another station may not be available to borrow."
+      ]
+    },
+    {
+      "title": "The next shift inherits a count difference",
+      "setting": "Two cooks compare a spoken handover with a stock record before changing the next shift's plan.",
+      "dialogue": [
+        [
+          "Incoming cook",
+          "Your spoken update said fourteen portions, but the stock sheet says sixteen. Which count is current?"
+        ],
+        [
+          "Outgoing cook",
+          "Fourteen was my physical count just before handover. The sheet may still show the earlier count."
+        ],
+        [
+          "Incoming cook",
+          "Do you know why two portions differ, or are you only reporting the numbers you can see?"
+        ],
+        [
+          "Outgoing cook",
+          "I only know the figures differ. I haven't matched the change to orders or a waste entry."
+        ],
+        [
+          "Incoming cook",
+          "Then we should leave the reason unresolved. Who will reconcile the physical count with the records?"
+        ],
+        [
+          "Outgoing cook",
+          "I'll bring the discrepancy to the lead. Could you use fourteen as the observed count in our discussion?"
+        ],
+        [
+          "Incoming cook",
+          "Yes, as an observed count, not a final reconciled figure or confirmation that all portions are available."
+        ],
+        [
+          "Outgoing cook",
+          "That's an important distinction. The lead also needs to confirm any allocations before updating the service availability."
+        ],
+        [
+          "Incoming cook",
+          "I'll keep the next prep decision pending until that availability figure is clear. Can you stay for the review?"
+        ],
+        [
+          "Outgoing cook",
+          "I can stay for the handover discussion and show the lead where the fourteen portions were counted."
+        ],
+        [
+          "Incoming cook",
+          "Then I'll tell the next station that the count is under review, with the difference and owner identified."
+        ],
+        [
+          "Outgoing cook",
+          "I'll retain this follow-up until the lead explicitly accepts responsibility."
+        ]
+      ],
+      "notes": [
+        "'Observed count' states what was counted without claiming the records agree.",
+        "'Retain this follow-up' makes ownership explicit until another person accepts it."
+      ]
+    }
+  ]
+}

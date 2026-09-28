@@ -1,10 +1,7 @@
-"""Original profession illustrations generated with the native image generator.
+"""Explicit illustration mappings shared by the course cards, pages, and PDFs."""
+from work_occupations import OCCUPATION_SLUGS
 
-The atlas has seven columns and six rows; the last cell is intentionally empty.
-Order is explicit so changes to the course directory cannot swap illustrations.
-"""
-
-ICON_SLUGS = (
+LEGACY_ICON_SLUGS = (
     "cultural-leadership-us-branches",
     "ai-development",
     "general-it",
@@ -47,6 +44,13 @@ ICON_SLUGS = (
     "customer-success",
     "legal-operations-compliance",
 )
+ICON_SLUGS = LEGACY_ICON_SLUGS + OCCUPATION_SLUGS
+
+
+def icon_asset(slug):
+    if slug in OCCUPATION_SLUGS:
+        return ('assets/work/occupation-icons.png', 5, 5, OCCUPATION_SLUGS.index(slug))
+    return ('assets/work/professional-icons.png', 7, 6, LEGACY_ICON_SLUGS.index(slug))
 
 
 def icon_right_trim(slug):
@@ -64,15 +68,28 @@ def icon_right_trim(slug):
     }.get(slug, 0)
 
 
+def icon_bottom_trim(slug):
+    """Exclude Gemini's caption area from each displayed occupation cell."""
+    if slug not in OCCUPATION_SLUGS:
+        return 0
+    two_line_captions = {
+        'hairdressers-barbers', 'hvac-refrigeration', 'bookkeeping-payroll',
+        'software-quality-assurance', 'medical-laboratory-technicians',
+    }
+    return 22.88 if slug in two_line_captions else 15.6
+
+
 def card_icon(track):
     """Select the profession's atlas cell without adding a screen-reader label."""
-    index = ICON_SLUGS.index(track["slug"])
-    x = (index % 7) * 100 / 6
-    y = (index // 7) * 100 / 5
+    _, columns, rows, index = icon_asset(track['slug'])
+    x = (index % columns) * 100 / (columns - 1)
+    y = (index // columns) * 100 / (rows - 1)
     right_trim = icon_right_trim(track["slug"])
-    clip = f";clip-path:inset(0 {right_trim}px 0 0)" if right_trim else ""
+    bottom_trim = icon_bottom_trim(track['slug'])
+    clip = f";clip-path:inset(0 {right_trim}px {bottom_trim}px 0)" if right_trim or bottom_trim else ""
+    kind = ' work-occupation-icon' if track['slug'] in OCCUPATION_SLUGS else ''
     return (
-        '<span aria-hidden="true" class="work-card-icon" '
+        f'<span aria-hidden="true" class="work-card-icon{kind}" '
         f'style="background-position:{x:.6f}% {y:.6f}%{clip}"></span>'
     )
 

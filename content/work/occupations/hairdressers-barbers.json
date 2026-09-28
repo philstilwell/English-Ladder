@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "hairdressers-barbers",
+    "title": "Hairdressing and Barbering English",
+    "summary": "Clarify haircut preferences, discuss color expectations, manage salon appointments, check comfort, explain charges, and resolve service misunderstandings.",
+    "roles": "Hairstylists, barbers, salon assistants, and salon reception staff",
+    "category": "Customers & creative work",
+    "scope_note": "All clients, prices, timings, products, and incidents are fictional English practice. This course is not training in cutting, shaving, chemical services, infection control, or diagnosis. Technical suitability and any health concern require the appropriately qualified professional and applicable local procedures. Sample salon policies are not universal rules.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Barbers, Hairstylists, and Cosmetologists",
+        "url": "https://www.bls.gov/ooh/personal-care-and-service/barbers-hairstylists-and-cosmetologists.htm"
+      },
+      {
+        "title": "O*NET OnLine: Hairdressers, Hairstylists, and Cosmetologists",
+        "url": "https://www.onetonline.org/link/summary/39-5012.00"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Turning a reference photo into a clear request",
+        "terms": [
+          "consultation",
+          "reference photo",
+          "perimeter",
+          "fringe"
+        ],
+        "collocations": [
+          "keep the length: retain the overall length the client identifies",
+          "take off the ends: shorten the ends by an agreed amount",
+          "frame the face: arrange the front shape around the face",
+          "agree on the outline: confirm the visible shape before starting"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A client shows a chin-length bob but wants to keep enough length for a low ponytail. No cut has started. The photo has a straight fringe; the client has not requested one. Clarify which features matter and confirm a collarbone-length outline.",
+          "model": "Your photo has a shorter outline and a straight fringe, but keeping a low ponytail matters to you. Which feature of the photo do you want to keep? We can discuss a collarbone-length outline instead. Before we start, please confirm whether you want any change around your forehead."
+        },
+        "workshop": {
+          "title": "Ask about features, not just the whole photograph",
+          "goal": "Resolve conflicting length preferences before a haircut.",
+          "explanation": "A photograph contains several choices. Separate length, outline, and fringe; use an indirect question to find the feature the client means.",
+          "frames": [
+            "Which part of the photo would you like to keep?",
+            "When you say short, do you mean ___?",
+            "Could you confirm whether you want ___?"
+          ],
+          "before": "I'll do it like the picture.",
+          "after": "You like the outline, but want more length and no fringe. Have I understood?",
+          "reason": "The revised response checks individual choices instead of assuming every detail is wanted.",
+          "questions": [
+            {
+              "prompt": "Client: I like the photograph, but I need a ponytail.\nStylist: Could you clarify ____? ",
+              "options": [
+                "which feature you want to copy",
+                "which feature do you want to copy",
+                "which feature you do wants to copy",
+                "which feature want you to copy"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The indirect question uses subject before verb.",
+                "Remove 'do' after 'clarify' in this indirect question.",
+                "'You do wants' is not a grammatical verb form.",
+                "The subject 'you' must precede 'want' here."
+              ]
+            },
+            {
+              "prompt": "Client: Keep the front long; I don't want hair across my forehead.\nStylist: So you don't want a ____.",
+              "options": [
+                "fringe",
+                "perimeter",
+                "parting",
+                "ponytail"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A fringe falls across the forehead.",
+                "The perimeter is the overall outer outline.",
+                "A parting separates the hair into sections on the head.",
+                "The client specifically needs to retain a ponytail."
+              ]
+            }
+          ],
+          "role_b": "Client: you like the photo's neat outline, not its short length or fringe; you need a low ponytail.",
+          "challenge": "The client points to the fringe while saying 'this shape.' Ask whether the gesture changes the earlier preference."
+        }
+      },
+      {
+        "title": "Describing shape, texture, and everyday styling",
+        "terms": [
+          "taper",
+          "fade",
+          "layers",
+          "natural texture"
+        ],
+        "collocations": [
+          "leave weight through the top: retain fullness in the upper part of the style",
+          "soften the outline: make the visible edge look less sharply defined",
+          "wear it natural: keep the hair's usual texture in the finished look",
+          "maintain the shape: preserve the agreed style between or during appointments"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "A client wants less fullness at the neckline but does not want exposed skin at the sides. Photo A, labelled 'low taper,' shows visible hair covering the sides. Photo B, labelled 'skin fade,' shows exposed skin at the shortest area of the sides. The client spends five minutes styling each morning. Compare these supplied appearances, not cutting methods or guaranteed upkeep.",
+          "model": "In these photos, the low taper keeps more visible hair at the sides, whereas the skin fade exposes skin at the shortest area. You said you want less fullness at the neckline without that exposed look. Let's discuss the taper image as a reference and check how it fits your usual five-minute routine."
+        },
+        "workshop": {
+          "title": "Compare the feature that matters",
+          "goal": "Use the same appearance and routine criteria for two styles.",
+          "explanation": "Names alone do not fix an exact length. Compare what is visible in the supplied images, then check the client's priorities without teaching a cutting method.",
+          "frames": [
+            "In this photo, ___, whereas in that one, ___.",
+            "Both give ___, but only this image shows ___.",
+            "How much time do you normally spend on ___?"
+          ],
+          "before": "The fade is better.",
+          "after": "This image is shorter at the sides, whereas this one keeps more coverage.",
+          "reason": "The comparison identifies an observable difference instead of an unexplained ranking.",
+          "questions": [
+            {
+              "prompt": "Client: How do these two photographs differ?\nBarber: This one keeps hair at the sides, ____ that one exposes skin.",
+              "options": [
+                "whereas",
+                "because",
+                "therefore",
+                "unless"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Whereas' contrasts the two appearances.",
+                "'Because' would claim a cause, not a contrast.",
+                "'Therefore' wrongly presents the second appearance as a consequence.",
+                "'Unless' makes a condition that the photographs do not establish."
+              ]
+            },
+            {
+              "prompt": "Client: I don't straighten my curls for work. What do you call my usual curl pattern?\nStylist: Your ____.",
+              "options": [
+                "natural texture",
+                "overall density",
+                "strand diameter",
+                "current length"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This refers to the usual curl pattern.",
+                "Density describes how closely hairs grow together, not their curl pattern.",
+                "Strand diameter concerns the thickness of individual hairs, not their pattern.",
+                "Length describes how long the hair is, not whether it curls."
+              ]
+            }
+          ],
+          "role_b": "Client: prefer covered sides and less fullness at the neckline; you style for five minutes in the morning.",
+          "challenge": "The client assumes 'low' means the same length in both photos. Clarify the actual area being compared."
+        }
+      },
+      {
+        "title": "Discussing color without promising a photograph",
+        "terms": [
+          "regrowth",
+          "tone",
+          "highlight",
+          "color history"
+        ],
+        "collocations": [
+          "describe the regrowth: identify where the new growth is visible",
+          "review the color history: discuss previous products and services",
+          "compare color swatches: look at sample shades together",
+          "set realistic expectations: explain which result is still uncertain"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A client wants the cool tone in a photograph before Friday. Their previous home color product is unknown. Today's booking is a consultation only; suitability, service time, and cost have not been assessed.",
+          "model": "The photograph helps us discuss the cool tone you prefer, but it doesn't establish what we can achieve by Friday. Your previous color product is still unknown. Today is a consultation; we need to review your color history before confirming a service, timing, or price."
+        },
+        "workshop": {
+          "title": "Separate a desired shade from a confirmed service",
+          "goal": "Describe a color preference while preserving genuine uncertainty.",
+          "explanation": "A target shade is a request, not evidence of suitability. Identify missing history and keep the consultation separate from a service booking.",
+          "frames": [
+            "The photo shows ___; it doesn't establish ___.",
+            "We still need to know ___.",
+            "Today's booking covers ___, not ___."
+          ],
+          "before": "We can get that color by Friday.",
+          "after": "That is your target tone; the achievable result and timing still need assessment.",
+          "reason": "The revision preserves the preference without promising a technical outcome.",
+          "questions": [
+            {
+              "prompt": "Client: Is Friday's result already agreed?\nStylist: It remains ____ until your color history is reviewed.",
+              "options": [
+                "unconfirmed",
+                "completed",
+                "unchanged",
+                "overdue"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The outcome has not been established.",
+                "No color service has been completed.",
+                "There is no confirmed earlier result to keep unchanged.",
+                "No agreed result is late."
+              ]
+            },
+            {
+              "prompt": "Client: I mean less golden, not necessarily lighter.\nStylist: You're asking about the ____ rather than simply the lightness.",
+              "options": [
+                "tone",
+                "gray coverage",
+                "highlight placement",
+                "regrowth length"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Golden describes warm tone.",
+                "Gray coverage concerns how much gray is covered, not the golden tone.",
+                "Highlight placement concerns where lighter sections appear, not their warmth.",
+                "Regrowth length concerns new growth, not the color's warmth."
+              ]
+            }
+          ],
+          "role_b": "Client: want a cooler appearance before Friday; you remember home coloring but not the product.",
+          "challenge": "The client says the photograph proves it is possible in one visit. Explain the limit of that evidence."
+        }
+      },
+      {
+        "title": "Booking time and handling appointment changes",
+        "terms": [
+          "walk-in",
+          "appointment slot",
+          "waiting list",
+          "service duration"
+        ],
+        "collocations": [
+          "run behind schedule: begin later than planned",
+          "allow time for consultation: include discussion in the booking",
+          "offer a cancellation slot: propose time freed by another client",
+          "confirm the finish-time constraint: check when a client must leave"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "A haircut appointment at 2:00 is running twenty minutes late. The usual service duration is forty minutes. The client must leave by 2:45. A 10:00 appointment tomorrow is available; the stylist cannot promise a shortened service today. This salon waives the change fee when its delay causes this rescheduling.",
+          "model": "We're twenty minutes behind, and the usual forty-minute service would take us past your 2:45 departure. I can't promise to compress it into that time. Tomorrow at ten is available. Would you prefer that appointment, or to discuss another time that gives you the full slot?"
+        },
+        "workshop": {
+          "title": "Offer a choice that fits the available time",
+          "goal": "Negotiate appointments without disguising a timing conflict.",
+          "explanation": "State the delay and the client's departure separately. A shorter remaining window does not make the service itself shorter.",
+          "frames": [
+            "We are running ___ behind.",
+            "That would take us past ___.",
+            "Would tomorrow at ___ work instead?"
+          ],
+          "before": "We'll squeeze everything in.",
+          "after": "Today's remaining window is too short for the usual service; tomorrow at ten is available.",
+          "reason": "The client can choose using an honest time comparison.",
+          "questions": [
+            {
+              "prompt": "Client: Must I stay until three?\nReceptionist: With a 2:20 start and forty-minute service, the estimated finish is ____.",
+              "options": [
+                "3:00",
+                "2:40",
+                "2:45",
+                "3:20"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Forty minutes after 2:20 is 3:00.",
+                "That allows only twenty minutes.",
+                "That is the client's departure constraint, not the estimated finish.",
+                "That adds an hour rather than forty minutes."
+              ]
+            },
+            {
+              "prompt": "Client: Does joining the waiting list reserve a place?\nReceptionist: It means we'll ____ if a suitable slot opens.",
+              "options": [
+                "contact you",
+                "confirm your appointment automatically",
+                "move your existing booking automatically",
+                "extend your existing service automatically"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A waiting list offers contact if space opens.",
+                "An available slot still needs the client's acceptance before confirmation.",
+                "Joining this list does not authorize changing an existing booking.",
+                "A waiting-list entry does not automatically extend an existing service."
+              ]
+            }
+          ],
+          "role_b": "Client: must leave by 2:45 today; tomorrow at ten is possible if today's complete service will not fit.",
+          "challenge": "The client offers to skip the consultation. Keep the complete appointment's timing and assessment needs clear."
+        }
+      },
+      {
+        "title": "Checking comfort and pausing clearly",
+        "terms": [
+          "cape",
+          "shampoo basin",
+          "neck support",
+          "sensitivity"
+        ],
+        "collocations": [
+          "check the water temperature: ask how the water feels to the client",
+          "adjust the seating position: change the chair arrangement for comfort",
+          "pause the service: stop the current activity to address a concern",
+          "report discomfort promptly: tell the stylist as soon as something feels uncomfortable"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Before a wash, a client says the neck support feels uncomfortable. Water has not started. Ask the client to describe the pressure, pause preparation, and arrange a comfort check. Do not diagnose the discomfort or prescribe a position.",
+          "model": "Please tell me where the support feels uncomfortable before we begin. We haven't started the water, and I'll pause here while we check the arrangement with you. You don't need to put up with discomfort to keep the appointment moving. Let me know whether you want to leave the basin."
+        },
+        "workshop": {
+          "title": "Make it easy to report discomfort",
+          "goal": "Ask a specific comfort question and acknowledge the answer.",
+          "explanation": "Invite a description rather than a yes-or-no endorsement. A comfort check is not a diagnosis or a technical treatment instruction.",
+          "frames": [
+            "Where does ___ feel uncomfortable?",
+            "I'll pause while we check ___.",
+            "Would you prefer to stop ___?"
+          ],
+          "before": "It's fine, isn't it?",
+          "after": "How does the neck support feel for you?",
+          "reason": "The open question does not pressure the client to agree.",
+          "questions": [
+            {
+              "prompt": "Client: The support is pressing here.\nStylist: I'll ____ while we check your comfort.",
+              "options": [
+                "pause",
+                "finish up",
+                "speed up",
+                "sum up"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Pause' means temporarily stop.",
+                "Finishing does not describe the requested immediate pause.",
+                "Speeding up does not address discomfort.",
+                "Summing up means summarizing words, not stopping the activity."
+              ]
+            },
+            {
+              "prompt": "Stylist: Where does the cape feel tight?\nClient: ____ my neck, especially at the front.",
+              "options": [
+                "Around",
+                "Across from",
+                "Beyond",
+                "Throughout"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Around' describes the cape surrounding the neck.",
+                "'Across from' means opposite, not surrounding.",
+                "'Beyond' means farther away, not surrounding the neck.",
+                "'Throughout' refers to an entire area or duration, not the cape's position here."
+              ]
+            }
+          ],
+          "role_b": "Client: feel pressure at the back of the neck before washing; want to sit up and discuss comfort.",
+          "challenge": "The client apologizes for slowing the appointment. Acknowledge the concern without minimizing the discomfort."
+        }
+      },
+      {
+        "title": "Explaining services, prices, and product choices",
+        "terms": [
+          "service menu",
+          "starting price",
+          "add-on",
+          "itemized receipt"
+        ],
+        "collocations": [
+          "quote the total: state the price for the agreed scope",
+          "check what is included: establish which services a price covers",
+          "decline an add-on: choose not to purchase an optional service",
+          "break down the charge: explain the separate items making up a total"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "The fictional menu lists a haircut at $45 and an optional finish at $15, with no other charges in this exercise. A client thinks $45 includes the finish. Neither service has begun. Explain the $60 combined total and the $45 haircut-only choice.",
+          "model": "The forty-five-dollar price covers the haircut; the finish is an optional fifteen-dollar addition. Together they would be sixty dollars, with no other charges. You can choose the haircut alone for forty-five. Which option would you like me to confirm before we begin?"
+        },
+        "workshop": {
+          "title": "Explain the full price before agreement",
+          "goal": "Separate included services from optional additions.",
+          "explanation": "Use a clear breakdown and ask for a choice. Avoid treating interest in an add-on as agreement to pay for it.",
+          "frames": [
+            "The price includes ___, but not ___.",
+            "Together, the total would be ___.",
+            "Would you like ___ alone or ___ as well?"
+          ],
+          "before": "The finish is extra.",
+          "after": "The haircut is forty-five; adding the finish makes the total sixty.",
+          "reason": "The client can compare complete amounts.",
+          "questions": [
+            {
+              "prompt": "Client: Is the fifteen-dollar finish compulsory?\nStylist: No, it's ____.",
+              "options": [
+                "optional",
+                "inclusive",
+                "outstanding",
+                "complimentary"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The client may choose or decline it.",
+                "'Inclusive' concerns what a price covers.",
+                "'Outstanding' would describe an unpaid charge or unfinished task.",
+                "'Complimentary' means free, but this finish costs fifteen dollars."
+              ]
+            },
+            {
+              "prompt": "Client: If I decline the fifteen-dollar finish, what remains in my forty-five-dollar booking?\nStylist: The haircut remains included; the finish ____.",
+              "options": [
+                "is optional and separately charged",
+                "is included at no extra charge",
+                "has already been paid for",
+                "is required to receive the haircut"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Declining the separately priced finish leaves the haircut-only choice available.",
+                "The menu identifies a separate fifteen-dollar charge for the finish.",
+                "No payment for a finish has been made in this case.",
+                "The finish is optional, not a condition of receiving the haircut."
+              ]
+            }
+          ],
+          "role_b": "Client: assumed the finish was included; can spend sixty but want a genuine choice.",
+          "challenge": "The client asks whether buying a product makes the finish free. No such offer exists in the supplied menu."
+        }
+      },
+      {
+        "title": "Responding to a concern about the result",
+        "terms": [
+          "adjustment",
+          "service review",
+          "asymmetry",
+          "goodwill gesture"
+        ],
+        "collocations": [
+          "identify the concern: ask what specifically differs from the request",
+          "check both sides: compare the visible result from agreed viewpoints",
+          "acknowledge the mismatch: recognize a difference between expectation and result",
+          "arrange a review: organize a discussion of the concern and possible response"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "A client says the left side looks longer. The earlier explanation promised an even outline, but the current appearance has not been reviewed together. Pause checkout, acknowledge the concern, and offer mirror review with the stylist. No correction or refund has been approved.",
+          "model": "You were expecting an even outline, and you're noticing a longer-looking section on the left. I'm sorry this hasn't been addressed before checkout. Let's look at the area together with the stylist. We haven't agreed on an adjustment or refund yet; first we need to understand the specific concern."
+        },
+        "workshop": {
+          "title": "Acknowledge the concern before proposing a remedy",
+          "goal": "Repair an expectation mismatch without arguing or inventing a solution.",
+          "explanation": "Repeat the client's observation accurately. Discuss a review before promising an adjustment, price reduction, or particular result.",
+          "frames": [
+            "You're noticing ___ on ___.",
+            "Let's look at that area together.",
+            "We haven't yet agreed on ___."
+          ],
+          "before": "It looks fine to me.",
+          "after": "You're noticing a difference on the left; let's review that area together.",
+          "reason": "The response takes the observation seriously without claiming its cause.",
+          "questions": [
+            {
+              "prompt": "Client: The left looks longer than the right. What is that difference between corresponding sides called?\nStylist: That difference is ____.",
+              "options": [
+                "asymmetry",
+                "overall length",
+                "loss of volume",
+                "color contrast"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The client describes a difference between sides.",
+                "Overall length does not specifically name a difference between corresponding sides.",
+                "Loss of volume describes reduced fullness, not unequal side lengths.",
+                "Color contrast describes a shade difference, not a length difference."
+              ]
+            },
+            {
+              "prompt": "Client: Has a refund been agreed?\nReceptionist: No; the stylist has agreed to a ____ first.",
+              "options": [
+                "service review",
+                "completed refund",
+                "price guarantee",
+                "new purchase"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A discussion is agreed, not a financial remedy.",
+                "This falsely states the refund is completed.",
+                "No future price guarantee was offered.",
+                "A review is not another purchase."
+              ]
+            }
+          ],
+          "role_b": "Client: the left appears longer; want to show the difference without being dismissed.",
+          "challenge": "The client asks whether acknowledging the concern means the salon has approved a free adjustment."
+        }
+      },
+      {
+        "title": "Passing preferences to the next appointment",
+        "terms": [
+          "client record",
+          "service note",
+          "rebooking",
+          "handover"
+        ],
+        "collocations": [
+          "record a preference: preserve what the client actually requested",
+          "confirm the next visit: check the date, service, and person booked",
+          "pass on an open question: tell the next worker what remains unresolved",
+          "obtain photo permission: ask whether a client agrees to a specific use of an image"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "A client requests a future color consultation but has not booked it. Reception is taking over. Today's confirmed preferences are retained front length and no finishing spray. The client has not agreed to promotional photographs. Handover the preferences and unbooked request accurately.",
+          "model": "Today's preferences were to retain the front length and leave out finishing spray. The client asked about a future color consultation, but no date is booked. Please offer available consultation times and confirm the choice directly. There is no agreement to promotional photography, so the visit note should not imply permission."
+        },
+        "workshop": {
+          "title": "Keep preferences, requests, and bookings distinct",
+          "goal": "Give a concise handover with an identifiable next task.",
+          "explanation": "Use past tense for today's confirmed choices and request language for future interest. A note is not a booking or permission for another purpose.",
+          "frames": [
+            "Today the client chose ___.",
+            "They asked about ___; nothing is booked yet.",
+            "Please confirm ___ directly with the client."
+          ],
+          "before": "They want color next time.",
+          "after": "They asked about a color consultation; reception still needs to offer dates.",
+          "reason": "The next worker knows which action is missing.",
+          "questions": [
+            {
+              "prompt": "Receptionist: Is next month's consultation confirmed?\nStylist: No, the client has ____ about it.",
+              "options": [
+                "inquired",
+                "attended",
+                "rescheduled",
+                "completed payment"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Asking about it does not establish a booking.",
+                "Attendance would imply a visit took place.",
+                "Rescheduling implies an existing booking was moved.",
+                "No payment has been stated or confirmed in this scenario."
+              ]
+            },
+            {
+              "prompt": "Client: Can you save the photo for my next consultation but not post it?\nStylist: You're permitting ____ only.",
+              "options": [
+                "the stated record use",
+                "public promotion",
+                "all future publication",
+                "a social-media advertisement"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Permission is limited to the described record use.",
+                "The client explicitly excluded posting.",
+                "This is broader than the client's permission.",
+                "Advertising is not the permitted consultation use."
+              ]
+            }
+          ],
+          "role_b": "Receptionist: need to offer consultation dates and keep today's preferences separate from a future service.",
+          "challenge": "The client consents to an internal reference photo but not publication. Repeat the limited permission."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "consultation",
+        "definition": "A discussion with a client to establish the desired hair service, preferences, and limits.",
+        "group": "Turning a reference photo into a clear request"
+      },
+      {
+        "term": "reference photo",
+        "definition": "An image used to discuss a desired hairstyle, not a guarantee of an identical result.",
+        "group": "Turning a reference photo into a clear request"
+      },
+      {
+        "term": "perimeter",
+        "definition": "The outer outline of a haircut, including the visible line at the ends.",
+        "group": "Turning a reference photo into a clear request"
+      },
+      {
+        "term": "fringe",
+        "definition": "Hair cut to fall over the forehead; commonly called bangs in US English.",
+        "group": "Turning a reference photo into a clear request"
+      },
+      {
+        "term": "taper",
+        "definition": "A gradual change from longer to shorter hair, often around the sides and neckline.",
+        "group": "Describing shape, texture, and everyday styling"
+      },
+      {
+        "term": "fade",
+        "definition": "A haircut with a blended transition from very short hair to longer hair above.",
+        "group": "Describing shape, texture, and everyday styling"
+      },
+      {
+        "term": "layers",
+        "definition": "Sections cut at different lengths to create shape or movement within a hairstyle.",
+        "group": "Describing shape, texture, and everyday styling"
+      },
+      {
+        "term": "natural texture",
+        "definition": "The hair's usual straight, wavy, curly, or coily pattern without deliberate reshaping.",
+        "group": "Describing shape, texture, and everyday styling"
+      },
+      {
+        "term": "regrowth",
+        "definition": "New hair near the scalp that differs visibly from previously colored lengths.",
+        "group": "Discussing color without promising a photograph"
+      },
+      {
+        "term": "tone",
+        "definition": "The warm, cool, or neutral color character seen in hair.",
+        "group": "Discussing color without promising a photograph"
+      },
+      {
+        "term": "highlight",
+        "definition": "A section of hair made lighter than the surrounding hair.",
+        "group": "Discussing color without promising a photograph"
+      },
+      {
+        "term": "color history",
+        "definition": "Information about previous color services and products used on a client's hair.",
+        "group": "Discussing color without promising a photograph"
+      },
+      {
+        "term": "walk-in",
+        "definition": "A client seeking service without a booked appointment.",
+        "group": "Booking time and handling appointment changes"
+      },
+      {
+        "term": "appointment slot",
+        "definition": "A period reserved in the salon schedule for a specified visit.",
+        "group": "Booking time and handling appointment changes"
+      },
+      {
+        "term": "waiting list",
+        "definition": "A list of clients who want to be contacted if a suitable appointment opens.",
+        "group": "Booking time and handling appointment changes"
+      },
+      {
+        "term": "service duration",
+        "definition": "The estimated time allocated to a particular salon service.",
+        "group": "Booking time and handling appointment changes"
+      },
+      {
+        "term": "cape",
+        "definition": "A protective covering placed around a salon client's shoulders and clothing.",
+        "group": "Checking comfort and pausing clearly"
+      },
+      {
+        "term": "shampoo basin",
+        "definition": "A salon sink designed for washing a client's hair.",
+        "group": "Checking comfort and pausing clearly"
+      },
+      {
+        "term": "neck support",
+        "definition": "The part or accessory supporting a client's neck at a shampoo basin.",
+        "group": "Checking comfort and pausing clearly"
+      },
+      {
+        "term": "sensitivity",
+        "definition": "A client's reported tendency to feel discomfort or react to a product or contact.",
+        "group": "Checking comfort and pausing clearly"
+      },
+      {
+        "term": "service menu",
+        "definition": "A salon list describing available services and their stated prices or price ranges.",
+        "group": "Explaining services, prices, and product choices"
+      },
+      {
+        "term": "starting price",
+        "definition": "The lowest listed price for a service whose actual charge may vary with stated factors.",
+        "group": "Explaining services, prices, and product choices"
+      },
+      {
+        "term": "add-on",
+        "definition": "An extra service offered in addition to the originally selected service.",
+        "group": "Explaining services, prices, and product choices"
+      },
+      {
+        "term": "itemized receipt",
+        "definition": "A receipt listing individual services or products and their separate charges.",
+        "group": "Explaining services, prices, and product choices"
+      },
+      {
+        "term": "adjustment",
+        "definition": "A discussed change to a completed hairstyle to address a specific concern.",
+        "group": "Responding to a concern about the result"
+      },
+      {
+        "term": "service review",
+        "definition": "A salon discussion examining a client's concern and the possible response.",
+        "group": "Responding to a concern about the result"
+      },
+      {
+        "term": "asymmetry",
+        "definition": "A difference in shape or apparent length between corresponding sides.",
+        "group": "Responding to a concern about the result"
+      },
+      {
+        "term": "goodwill gesture",
+        "definition": "A discretionary service or benefit offered by a salon to acknowledge a problem.",
+        "group": "Responding to a concern about the result"
+      },
+      {
+        "term": "client record",
+        "definition": "The salon's stored information about a client's visits and relevant stated preferences.",
+        "group": "Passing preferences to the next appointment"
+      },
+      {
+        "term": "service note",
+        "definition": "A factual entry describing a salon service, discussion, or unresolved request.",
+        "group": "Passing preferences to the next appointment"
+      },
+      {
+        "term": "rebooking",
+        "definition": "Arranging a client's next salon appointment.",
+        "group": "Passing preferences to the next appointment"
+      },
+      {
+        "term": "handover",
+        "definition": "An exchange that passes relevant client information and outstanding tasks to another worker.",
+        "group": "Passing preferences to the next appointment"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "A bob photograph with a ponytail requirement",
+          "setting": "A first consultation before any cutting.",
+          "turns": [
+            [
+              "Stylist",
+              "What appeals to you about this reference photo: the length, the fringe, or the outline?"
+            ],
+            [
+              "Client",
+              "Mostly the neat outline. I still need to tie my hair back at work."
+            ],
+            [
+              "Stylist",
+              "The pictured length ends at the chin. That conflicts with your low ponytail requirement."
+            ],
+            [
+              "Client",
+              "I hadn't noticed how short it was. Could we keep it near my collarbone?"
+            ],
+            [
+              "Stylist",
+              "Let's discuss that longer perimeter. Are you also asking for hair across your forehead?"
+            ],
+            [
+              "Client",
+              "No fringe, please. I wear glasses, and I like keeping the front tucked away."
+            ],
+            [
+              "Stylist",
+              "So the photograph guides the outline, not the length or the front section."
+            ],
+            [
+              "Client",
+              "Exactly. Could you show me the proposed length in the mirror before starting?"
+            ],
+            [
+              "Stylist",
+              "Yes, here is the point we discussed. Does this match what you meant?"
+            ],
+            [
+              "Client",
+              "It does. Keep that length, and leave the front long enough to tuck."
+            ]
+          ]
+        },
+        {
+          "title": "What does a tidy-up include?",
+          "setting": "A barber clarifies a returning client's brief request.",
+          "turns": [
+            [
+              "Barber",
+              "When you say a tidy-up today, which parts feel too long or untidy?"
+            ],
+            [
+              "Client",
+              "Around my ears, mainly. I'm growing the top out for a different style."
+            ],
+            [
+              "Barber",
+              "Then shortening the top isn't part of your request. What about the neckline?"
+            ],
+            [
+              "Client",
+              "That needs attention too, but I don't want the whole cut much shorter."
+            ],
+            [
+              "Barber",
+              "Understood. Your last appointment note says a short all-over cut; today's preference differs."
+            ],
+            [
+              "Client",
+              "Yes, please don't use that old description. I've been growing it for weeks."
+            ],
+            [
+              "Barber",
+              "I'll record that you're keeping the top and changing the outline around the ears."
+            ],
+            [
+              "Client",
+              "Could you also check the back with me? I can't describe it very well."
+            ],
+            [
+              "Barber",
+              "Certainly. We'll use the hand mirror to agree on the outline together first."
+            ],
+            [
+              "Client",
+              "That helps. The top stays long, and we agree on the edges before starting."
+            ]
+          ]
+        },
+        {
+          "title": "Bangs and fringe mean the same area",
+          "setting": "A visitor uses a different regional word at the salon.",
+          "turns": [
+            [
+              "Stylist",
+              "You mentioned bangs on the phone. Our booking note uses fringe; that's the same area."
+            ],
+            [
+              "Client",
+              "Good, because I wondered whether I'd booked a completely different kind of haircut."
+            ],
+            [
+              "Stylist",
+              "No, the words vary. What length do you have in mind across your forehead?"
+            ],
+            [
+              "Client",
+              "I want it below my eyebrows, not as short as the display photograph."
+            ],
+            [
+              "Stylist",
+              "Thank you. Would you like the center and the sides discussed separately today?"
+            ],
+            [
+              "Client",
+              "Yes. I like longer pieces at the sides, but I don't know their name."
+            ],
+            [
+              "Stylist",
+              "You don't need the technical name. Point to the areas you want to retain."
+            ],
+            [
+              "Client",
+              "These pieces here. I usually tuck them behind my ears when I'm working."
+            ],
+            [
+              "Stylist",
+              "I see. We'll keep those longer and confirm the center length in the mirror."
+            ],
+            [
+              "Client",
+              "That's the distinction I was trying to explain. Please keep those side pieces."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two photographs, one preferred feature",
+        "brief": "A client brings one photo for the back outline and another for the long front. Both show shorter overall hair than the client wants. The client needs shoulder length.",
+        "role_a": "Stylist: identify one feature from each photo and confirm the retained length.",
+        "role_b": "Client: choose the rounded back from photo A and long front from photo B; reject their overall length.",
+        "opening_line": "Can I combine the back from this picture with the front from that one?",
+        "complication": "The client calls both pictures 'the shorter one.' Ask them to point to A or B.",
+        "success_checks": [
+          "Identify the chosen feature in each photo.",
+          "Confirm shoulder length independently of the photographs.",
+          "Restate the combined request aloud before proceeding."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Covered sides or a skin-level finish?",
+          "setting": "A barber compares two reference images with a client.",
+          "turns": [
+            [
+              "Barber",
+              "These photographs show different side lengths. Which feature matters more to you today?"
+            ],
+            [
+              "Client",
+              "I want the neckline less bulky, but I don't want skin showing at the sides."
+            ],
+            [
+              "Barber",
+              "In this taper photograph, the sides keep more coverage than in the skin fade."
+            ],
+            [
+              "Client",
+              "Then the taper picture sounds closer. Does its name tell you exactly what I want?"
+            ],
+            [
+              "Barber",
+              "Not completely. We still need to agree on the visible length and overall shape."
+            ],
+            [
+              "Client",
+              "I also have only five minutes in the morning, so elaborate styling won't suit me."
+            ],
+            [
+              "Barber",
+              "How do you normally wear the top: brushed back, to the side, or natural?"
+            ],
+            [
+              "Client",
+              "Usually to the side with very little product. I want to keep doing that."
+            ],
+            [
+              "Barber",
+              "We'll use the covered sides as our reference and discuss the top around that routine."
+            ],
+            [
+              "Client",
+              "Yes, that comparison helps more than just choosing a haircut name from the menu."
+            ]
+          ]
+        },
+        {
+          "title": "Layers without losing the outer length",
+          "setting": "A salon consultation separates internal shape from the outside outline.",
+          "turns": [
+            [
+              "Stylist",
+              "You asked about layers but also said the overall length must stay the same."
+            ],
+            [
+              "Client",
+              "Right. I thought layers always meant making the whole haircut much shorter than it is."
+            ],
+            [
+              "Stylist",
+              "Layers concern different lengths within the shape; the outside outline is a separate choice."
+            ],
+            [
+              "Client",
+              "Can I have more movement without making it shorter overall?"
+            ],
+            [
+              "Stylist",
+              "Yes. Which reference image shows the kind of movement you're describing around the front?"
+            ],
+            [
+              "Client",
+              "This one does, though I don't like the very short pieces near the face."
+            ],
+            [
+              "Stylist",
+              "That's important. We can discuss the longer sections without copying those shorter front pieces."
+            ],
+            [
+              "Client",
+              "Please show me which parts you mean. I'm better with pictures than technical descriptions."
+            ],
+            [
+              "Stylist",
+              "Here and here. Does that match your request to keep the outer length visible?"
+            ],
+            [
+              "Client",
+              "Yes, keep the overall length. Show me where the shorter layers would be."
+            ]
+          ]
+        },
+        {
+          "title": "The finish should reflect the usual curls",
+          "setting": "A client asks about a style photographed on straightened hair.",
+          "turns": [
+            [
+              "Stylist",
+              "The reference photograph shows a smooth finish. Do you usually wear your hair straight?"
+            ],
+            [
+              "Client",
+              "No, I wear my natural curls almost every day and rarely spend time straightening them."
+            ],
+            [
+              "Stylist",
+              "Then we should discuss how you want the shape to look with your usual texture."
+            ],
+            [
+              "Client",
+              "I like the photograph's outline, but I wasn't asking for that exact straight finish."
+            ],
+            [
+              "Stylist",
+              "Thank you for clarifying. Would seeing a curly reference help us discuss the same outline?"
+            ],
+            [
+              "Client",
+              "Yes, particularly at the sides. That's where I want the shape to feel less wide."
+            ],
+            [
+              "Stylist",
+              "This second picture may be a better discussion point, although your result won't be identical."
+            ],
+            [
+              "Client",
+              "I understand. I want a clear idea, not a promise that my curls will match."
+            ],
+            [
+              "Stylist",
+              "Tell me what you like in this one, and we'll agree on those features."
+            ],
+            [
+              "Client",
+              "The softer sides and retained top length are the features I'd like to discuss."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A beard photograph with an unfamiliar label",
+        "brief": "A client requests a 'fade' after seeing a beard photograph. They mean a softer transition at the sideburns, not a shorter beard overall. The client likes the current chin length.",
+        "role_a": "Barber: distinguish sideburn appearance from overall beard length.",
+        "role_b": "Client: protect the chin length and point to the transition in the photograph.",
+        "opening_line": "When I say fade, I mean this part near my ears.",
+        "complication": "The client asks whether the service name alone guarantees the pictured result.",
+        "success_checks": [
+          "Identify the actual area in the photo.",
+          "Keep overall beard length separate from the transition.",
+          "Confirm appearance preferences without explaining tool techniques."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "A Friday target is not a confirmed result",
+          "setting": "A client attends a color consultation.",
+          "turns": [
+            [
+              "Stylist",
+              "Your photo shows a cool tone. Is that what you want, rather than extra lightness?"
+            ],
+            [
+              "Client",
+              "Yes, especially before Friday. Can I book exactly that result for the party?"
+            ],
+            [
+              "Stylist",
+              "First we need your color history. Do you know which home product you used?"
+            ],
+            [
+              "Client",
+              "I remember the box being red, but I don't remember the product name."
+            ],
+            [
+              "Stylist",
+              "That leaves an important detail unknown. The photo can't confirm what is suitable here."
+            ],
+            [
+              "Client",
+              "I thought today's consultation included the color service. Was that my mistake when booking?"
+            ],
+            [
+              "Stylist",
+              "The booking is for discussion only. We haven't assessed the service time or cost."
+            ],
+            [
+              "Client",
+              "I'll look for the packaging when I get home. Can we still discuss the target?"
+            ],
+            [
+              "Stylist",
+              "Certainly. We can identify your preferred tone without promising a particular result by Friday."
+            ],
+            [
+              "Client",
+              "Then let's do that. I won't treat this consultation as a confirmed color appointment."
+            ]
+          ]
+        },
+        {
+          "title": "Warmth is not the same as darkness",
+          "setting": "A client compares two salon shade samples.",
+          "turns": [
+            [
+              "Stylist",
+              "You called both samples dark, but pointed to the golden one as your concern."
+            ],
+            [
+              "Client",
+              "I struggle to describe it. The other sample looks calmer, even at similar depth."
+            ],
+            [
+              "Stylist",
+              "Are you referring to the warm golden tone rather than how light it is?"
+            ],
+            [
+              "Client",
+              "Yes, that's closer. I don't necessarily want my hair made lighter this time."
+            ],
+            [
+              "Stylist",
+              "Then we can discuss a less warm target without assuming a change in lightness."
+            ],
+            [
+              "Client",
+              "Would calling it ash guarantee the exact shade on this sample ring for me?"
+            ],
+            [
+              "Stylist",
+              "No. The sample helps identify a preference; your own result needs an individual assessment."
+            ],
+            [
+              "Client",
+              "That makes sense. Could you keep these two ideas separate in the consultation note?"
+            ],
+            [
+              "Stylist",
+              "Yes: less warmth requested, with no automatic request for lighter hair or new highlights."
+            ],
+            [
+              "Client",
+              "That's the wording I needed. It avoids making the change sound larger than intended."
+            ]
+          ]
+        },
+        {
+          "title": "Remembering the missing appointment history",
+          "setting": "A stylist asks a returning client about an incomplete record.",
+          "turns": [
+            [
+              "Stylist",
+              "Our note lists your last color visit. Is today's request about regrowth or the colored lengths?"
+            ],
+            [
+              "Client",
+              "The regrowth near my roots. I also used temporary color at home before my holiday."
+            ],
+            [
+              "Stylist",
+              "Please include it in your history without guessing how it affects today's options."
+            ],
+            [
+              "Client",
+              "I don't know the name, but my sister ordered it and may have the receipt."
+            ],
+            [
+              "Stylist",
+              "That could help identify it. Shall we leave that part marked as unknown for now?"
+            ],
+            [
+              "Client",
+              "Yes. Please don't record that I haven't used anything just because I can't remember."
+            ],
+            [
+              "Stylist",
+              "I'll state that a home product was used and its name remains unconfirmed."
+            ],
+            [
+              "Client",
+              "Could we discuss haircut options today while the color question is still open?"
+            ],
+            [
+              "Stylist",
+              "We can discuss them separately. That doesn't decide whether a color service is suitable."
+            ],
+            [
+              "Client",
+              "Good. I'll ask for the receipt, and today's conversation won't erase that missing detail."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A highlight request becomes an all-over question",
+        "brief": "A client booked a consultation about a few lighter sections but now wants the whole head to match a pale photograph. No service has been booked.",
+        "role_a": "Stylist: distinguish selected highlights from the new overall request.",
+        "role_b": "Client: want the pale appearance but cannot provide previous product details.",
+        "opening_line": "Does asking for highlights mean the whole head will look like this?",
+        "complication": "The client assumes the consultation price is the price of either service.",
+        "success_checks": [
+          "Separate highlighted sections from the all-over request.",
+          "Identify the missing history.",
+          "Keep service price and consultation price distinct."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "The departure time cannot move",
+          "setting": "Reception discusses the delayed 2:00 haircut.",
+          "turns": [
+            [
+              "Receptionist",
+              "I'm sorry, we're running twenty minutes behind your two o'clock appointment this afternoon."
+            ],
+            [
+              "Client",
+              "I need to leave by quarter to three. Is the full haircut still possible?"
+            ],
+            [
+              "Receptionist",
+              "The usual forty-minute service from 2:20 would finish around three, beyond your departure."
+            ],
+            [
+              "Client",
+              "Could the stylist just work faster? I already arranged transport for today."
+            ],
+            [
+              "Receptionist",
+              "I can't promise a compressed service. There is a full slot tomorrow at ten."
+            ],
+            [
+              "Client",
+              "Tomorrow is possible, but would changing it count as my cancelling at short notice?"
+            ],
+            [
+              "Receptionist",
+              "This change is due to our delay; I can move it without a change fee."
+            ],
+            [
+              "Client",
+              "Then please move it. I don't want to feel rushed through the consultation."
+            ],
+            [
+              "Receptionist",
+              "You're booked tomorrow at ten for the full slot, and today's appointment is replaced."
+            ],
+            [
+              "Client",
+              "Thanks for stating the timing clearly. I'll rearrange my ride for the new appointment."
+            ]
+          ]
+        },
+        {
+          "title": "A walk-in between booked clients",
+          "setting": "A barber explains current availability to a visitor.",
+          "turns": [
+            [
+              "Barber",
+              "Are you looking for a haircut today, or checking our next available booking first?"
+            ],
+            [
+              "Client",
+              "I was hoping to walk in. I can see an empty chair by the window."
+            ],
+            [
+              "Barber",
+              "That chair has a booking starting shortly; an empty chair doesn't always mean available time."
+            ],
+            [
+              "Client",
+              "I only need a small change. Could I take part of that appointment slot?"
+            ],
+            [
+              "Barber",
+              "We need enough time for the complete visit. The next open haircut slot is four."
+            ],
+            [
+              "Client",
+              "I could return at four. Would I still have to join the walk-in queue then?"
+            ],
+            [
+              "Barber",
+              "If we book that slot now, you'll have an appointment rather than a queue place."
+            ],
+            [
+              "Client",
+              "Let's do that. Can you confirm which barber I'm seeing when I return?"
+            ],
+            [
+              "Barber",
+              "You'll see Jordan at four. Please allow the full booked period for your visit."
+            ],
+            [
+              "Client",
+              "Great. I'll come back for the appointment instead of waiting beside the empty chair."
+            ]
+          ]
+        },
+        {
+          "title": "An offer is not a booking",
+          "setting": "A salon receptionist calls a client on the waiting list.",
+          "turns": [
+            [
+              "Receptionist",
+              "A cancellation has opened tomorrow at eleven. Are you still interested in that time?"
+            ],
+            [
+              "Client",
+              "Possibly, but I need to check whether my colleague can cover my shift first."
+            ],
+            [
+              "Receptionist",
+              "I can hold this offered slot until four today while you check with them."
+            ],
+            [
+              "Client",
+              "Does that mean it is already booked, even if I don't call you back?"
+            ],
+            [
+              "Receptionist",
+              "No. It is temporarily held; we need your confirmation before four to book it."
+            ],
+            [
+              "Client",
+              "Understood. My colleague will be back at three, so I can answer after that."
+            ],
+            [
+              "Receptionist",
+              "Would a call to this number be the easiest way to confirm your decision?"
+            ],
+            [
+              "Client",
+              "Yes. If I can't take it, I'd still like to stay on the waiting list."
+            ],
+            [
+              "Receptionist",
+              "That's fine. Today's hold expires at four, but your waiting-list request can remain."
+            ],
+            [
+              "Client",
+              "I'll call with a definite answer after three rather than assuming the hold is permanent."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two people, one online appointment",
+        "brief": "Two friends arrive under one forty-minute haircut booking. Only one service is reserved. A second full slot is available at five; the friends cannot both stay until then.",
+        "role_a": "Receptionist: explain what is booked and offer a separate slot.",
+        "role_b": "Client: keep your appointment; your friend can come tomorrow at noon, which is also open.",
+        "opening_line": "We put both our names in the note, so are both haircuts included?",
+        "complication": "The client asks to divide the forty minutes equally.",
+        "success_checks": [
+          "Distinguish a note from a second booking.",
+          "Do not halve the service time as an automatic solution.",
+          "Confirm separate appointments and names aloud."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Pressure before the water starts",
+          "setting": "A stylist checks a client's comfort at the basin.",
+          "turns": [
+            [
+              "Stylist",
+              "Before we start the water, how does the neck support feel in this position?"
+            ],
+            [
+              "Client",
+              "It presses at the back. I was hoping I could just ignore it briefly."
+            ],
+            [
+              "Stylist",
+              "You don't need to ignore discomfort. I'll pause here while we discuss the arrangement."
+            ],
+            [
+              "Client",
+              "Could I sit up first? It's easier to show you where the pressure is."
+            ],
+            [
+              "Stylist",
+              "Of course. Tell me whether you want to leave the basin while we talk."
+            ],
+            [
+              "Client",
+              "Yes, please. I'm sorry if that means the appointment takes longer than expected."
+            ],
+            [
+              "Stylist",
+              "Thank you for telling me. We need your comfort feedback, not an apology."
+            ],
+            [
+              "Client",
+              "Can the other chair be considered, or is this the only arrangement available today?"
+            ],
+            [
+              "Stylist",
+              "I'll ask my colleague to review the available setup with you before washing starts."
+            ],
+            [
+              "Client",
+              "That's what I need. Let's keep the wash paused until we've discussed it."
+            ]
+          ]
+        },
+        {
+          "title": "A cape that catches on a collar",
+          "setting": "A barber responds to a client's comfort request.",
+          "turns": [
+            [
+              "Barber",
+              "Is there anything about the cape or chair you want me to check first?"
+            ],
+            [
+              "Client",
+              "The cape feels tight over my collar. Could we pause for a moment?"
+            ],
+            [
+              "Barber",
+              "Certainly. Is the pressure around the whole neck or mainly against the front?"
+            ],
+            [
+              "Client",
+              "Mainly the front, where the shirt button sits underneath the edge of the cape."
+            ],
+            [
+              "Barber",
+              "Thank you. I'll stop preparing the cut so we can address that together."
+            ],
+            [
+              "Client",
+              "I didn't want to interrupt after you'd started, so I'm mentioning it now."
+            ],
+            [
+              "Barber",
+              "That's helpful. Please say something again if the arrangement still doesn't feel comfortable."
+            ],
+            [
+              "Client",
+              "It already feels easier now that we've stopped. May I straighten my collar first?"
+            ],
+            [
+              "Barber",
+              "Yes, take your time. Then tell me how the cape feels before we continue."
+            ],
+            [
+              "Client",
+              "My collar is settled now. Please check with me once the cape is back."
+            ]
+          ]
+        },
+        {
+          "title": "A fragrance preference is not a diagnosis",
+          "setting": "A client asks about a strongly scented styling product.",
+          "turns": [
+            [
+              "Stylist",
+              "Before discussing the finish, is there a product preference you want me to know?"
+            ],
+            [
+              "Client",
+              "Strong fragrances bother me. I don't know whether that counts as an allergy."
+            ],
+            [
+              "Stylist",
+              "I'll note that sensitivity to fragrance. Which product's scent is bothering you today?"
+            ],
+            [
+              "Client",
+              "The spray used nearby has a strong scent. I'd prefer not to use that."
+            ],
+            [
+              "Stylist",
+              "We can leave that product out while we discuss your preferences and the available alternatives."
+            ],
+            [
+              "Client",
+              "Could you tell me exactly which product you propose, instead of simply saying gentle?"
+            ],
+            [
+              "Stylist",
+              "Yes. We can check its label together; I won't promise it cannot cause a reaction."
+            ],
+            [
+              "Client",
+              "I'd rather skip a finishing product today if we can't resolve my concern."
+            ],
+            [
+              "Stylist",
+              "Understood. No finishing spray today, and your concern remains described in your own words."
+            ],
+            [
+              "Client",
+              "Thank you. That choice is clear without putting a medical label on my preference."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A quieter consultation",
+        "brief": "A client says the music makes the consultation hard to hear. A quieter chair is available, and reception can lower the music in the consultation area.",
+        "role_a": "Stylist: offer the quieter chair and repeat the length request.",
+        "role_b": "Client: prefer to move and want to see the stylist's face during discussion.",
+        "opening_line": "Could we go somewhere quieter before deciding on the length?",
+        "complication": "The client nodded earlier but now says they missed the question.",
+        "success_checks": [
+          "Do not treat the earlier nod as agreement.",
+          "Offer the stated quieter option.",
+          "Repeat and confirm the actual haircut preference."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "The finish is a separate choice",
+          "setting": "A stylist explains a fictional menu before starting: haircut forty-five dollars, optional finish fifteen, and no additional charges.",
+          "turns": [
+            [
+              "Stylist",
+              "The service menu lists your haircut at forty-five. Did you want the fifteen-dollar finishing add-on?"
+            ],
+            [
+              "Client",
+              "I thought the forty-five-dollar price covered both. What would the complete amount be?"
+            ],
+            [
+              "Stylist",
+              "Both services would be sixty dollars altogether, with no other charges added to that amount."
+            ],
+            [
+              "Client",
+              "I can spend sixty, but I'd like to know what choice I actually have."
+            ],
+            [
+              "Stylist",
+              "You can select the haircut alone for forty-five or add the finish for fifteen."
+            ],
+            [
+              "Client",
+              "Then I'll take the haircut alone. I don't need the extra finish this afternoon."
+            ],
+            [
+              "Stylist",
+              "Certainly. I'll confirm the haircut-only booking and won't add the optional service later."
+            ],
+            [
+              "Client",
+              "Could I have an itemized receipt showing just the service I chose today?"
+            ],
+            [
+              "Stylist",
+              "Yes, it will list the haircut at forty-five, with no separate finishing charge."
+            ],
+            [
+              "Client",
+              "That's clear now. Thank you for explaining the difference before I made the decision."
+            ]
+          ]
+        },
+        {
+          "title": "A starting price needs a specific estimate",
+          "setting": "A client phones about a service menu.",
+          "turns": [
+            [
+              "Receptionist",
+              "You asked about the color consultation. Which part of the menu price needs clarification?"
+            ],
+            [
+              "Client",
+              "It says starting at eighty. Does that mean every color appointment costs eighty dollars?"
+            ],
+            [
+              "Receptionist",
+              "No. That's the starting price, not a quote for every possible color service."
+            ],
+            [
+              "Client",
+              "What would I need before deciding whether a particular appointment fits my budget?"
+            ],
+            [
+              "Receptionist",
+              "The stylist needs to assess the requested service and explain a specific estimate."
+            ],
+            [
+              "Client",
+              "Could I attend the consultation without committing to buy the service immediately afterward?"
+            ],
+            [
+              "Receptionist",
+              "Yes. Today's offer is a consultation, and its stated fee is separate from treatment."
+            ],
+            [
+              "Client",
+              "Please tell me that fee too, so I can compare what I'm actually booking."
+            ],
+            [
+              "Receptionist",
+              "The consultation is twenty dollars here. Any later service estimate would be discussed separately."
+            ],
+            [
+              "Client",
+              "Then book the consultation only. I'll decide about a service after hearing its estimate."
+            ]
+          ]
+        },
+        {
+          "title": "A product quantity is not a discount",
+          "setting": "A client compares two sizes of styling cream.",
+          "turns": [
+            [
+              "Stylist",
+              "These are the two sizes you asked about: fifty milliliters and one hundred milliliters."
+            ],
+            [
+              "Client",
+              "The larger one costs more overall. Is it still cheaper for the same amount?"
+            ],
+            [
+              "Stylist",
+              "The small one is twelve dollars; the large one is twenty dollars for twice the quantity."
+            ],
+            [
+              "Client",
+              "So two small containers would cost twenty-four, compared with twenty for the large one?"
+            ],
+            [
+              "Stylist",
+              "That's right for these displayed prices. Which size fits your likely use and budget?"
+            ],
+            [
+              "Client",
+              "The small one. I haven't tried it, and I don't want a bigger purchase today."
+            ],
+            [
+              "Stylist",
+              "Certainly. Choosing the smaller size is fine even though its price per milliliter is higher."
+            ],
+            [
+              "Client",
+              "Will buying it affect the haircut price or add anything else to my booking?"
+            ],
+            [
+              "Stylist",
+              "No. It's a separate twelve-dollar product purchase; your agreed haircut charge doesn't change."
+            ],
+            [
+              "Client",
+              "Then I'll take one small container. Please list it separately on the receipt."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A beard service was not included",
+        "brief": "The haircut price is $30; a beard trim is separately listed at $12. The client requested both verbally but no total was agreed. Neither has started.",
+        "role_a": "Barber: explain the $42 combined price and the $30 alternative.",
+        "role_b": "Client: have a $35 budget and prefer the haircut today.",
+        "opening_line": "I thought the beard trim came with the haircut.",
+        "complication": "The client asks whether a shorter beard trim has an unpublished lower price.",
+        "success_checks": [
+          "Use the supplied prices only.",
+          "Confirm the haircut-only choice.",
+          "Do not imply the declined service will happen anyway."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The left side looks longer",
+          "setting": "A client raises a concern before checkout.",
+          "turns": [
+            [
+              "Stylist",
+              "You look uncertain about the result. Which area would you like to discuss together?"
+            ],
+            [
+              "Client",
+              "The left seems longer than the right. I expected the outline to look even."
+            ],
+            [
+              "Stylist",
+              "Let's review the asymmetry you're noticing on the left before we continue with checkout."
+            ],
+            [
+              "Client",
+              "Thank you. I wasn't sure whether mentioning it would sound as though I was complaining."
+            ],
+            [
+              "Stylist",
+              "It's useful to be specific. Can you point to the section you mean?"
+            ],
+            [
+              "Client",
+              "This part near my jaw. In the front mirror it appears lower than the other side."
+            ],
+            [
+              "Stylist",
+              "I see the area you're indicating. We should review the shape before discussing any adjustment."
+            ],
+            [
+              "Client",
+              "Would that review automatically mean cutting more off both sides to make them match?"
+            ],
+            [
+              "Stylist",
+              "No. We haven't agreed on a change; we'll discuss any proposal with you first."
+            ],
+            [
+              "Client",
+              "Please keep that distinction clear. I want to understand the options before losing more length."
+            ]
+          ]
+        },
+        {
+          "title": "A blunt message needs a correction",
+          "setting": "A receptionist repairs an earlier response to a service query.",
+          "turns": [
+            [
+              "Receptionist",
+              "I said there was nothing we could do. That was too broad, and I'm sorry."
+            ],
+            [
+              "Client",
+              "I took that to mean nobody would even listen to my concern about the finish."
+            ],
+            [
+              "Receptionist",
+              "A service review is available. I should have distinguished that from a guaranteed refund."
+            ],
+            [
+              "Client",
+              "I'm not asking you to decide the refund now. I want someone to hear me."
+            ],
+            [
+              "Receptionist",
+              "The stylist can review your concern at four today. Would that time work?"
+            ],
+            [
+              "Client",
+              "Yes. Should I bring the photograph we discussed before the original appointment as well?"
+            ],
+            [
+              "Receptionist",
+              "Please do. It will help explain which part of the agreed look concerns you."
+            ],
+            [
+              "Client",
+              "Will the review cost anything, or does booking it commit me to another service?"
+            ],
+            [
+              "Receptionist",
+              "The review is free. Any goodwill gesture needs the manager's agreement; no further service is booked."
+            ],
+            [
+              "Client",
+              "Then four works. Thank you for correcting the impression rather than repeating the earlier refusal."
+            ]
+          ]
+        },
+        {
+          "title": "A concern after a different home finish",
+          "setting": "A client returns with a question about the haircut's appearance.",
+          "turns": [
+            [
+              "Stylist",
+              "Tell me what looks different today compared with the finish you saw in the salon."
+            ],
+            [
+              "Client",
+              "The front sits flatter after I washed it. I thought the volume was from the haircut."
+            ],
+            [
+              "Stylist",
+              "So the difference concerns how the front sits, not its actual length today?"
+            ],
+            [
+              "Client",
+              "Yes. I don't think more length has disappeared; it simply doesn't look as full."
+            ],
+            [
+              "Stylist",
+              "Thank you. The salon finish and the underlying cut are different things to discuss."
+            ],
+            [
+              "Client",
+              "I wish that distinction had been clearer. I assumed it would look identical every morning."
+            ],
+            [
+              "Stylist",
+              "I'm sorry we didn't explain that expectation clearly. Let's review the look you wanted."
+            ],
+            [
+              "Client",
+              "Could we discuss options without automatically booking a new cut or buying a product?"
+            ],
+            [
+              "Stylist",
+              "Absolutely. This conversation is a review of your concern, not an agreement to another purchase."
+            ],
+            [
+              "Client",
+              "That helps. I'd like to understand the difference before deciding whether to change anything."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The requested parting was misunderstood",
+        "brief": "A client requested a left-side parting but sees a center parting in the finish. No additional cutting has happened. The stylist can review the request now.",
+        "role_a": "Stylist: acknowledge the specific misunderstanding and invite review.",
+        "role_b": "Client: want the left-side appearance, not a shorter cut.",
+        "opening_line": "I meant a parting on the left, not through the center.",
+        "complication": "A colleague assumes the complaint is about haircut length.",
+        "success_checks": [
+          "Name the parting concern accurately.",
+          "Do not turn it into a request to cut more hair.",
+          "Confirm what the client wants reviewed."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "A color inquiry reaches reception",
+          "setting": "A stylist hands a client visit over to reception.",
+          "turns": [
+            [
+              "Stylist",
+              "Today's client kept the front length and chose no finishing spray. Please preserve both preferences."
+            ],
+            [
+              "Receptionist",
+              "I've noted those. Is the color consultation already booked, or was it only discussed today?"
+            ],
+            [
+              "Stylist",
+              "Only discussed. The client asked about future dates, but hasn't selected one yet."
+            ],
+            [
+              "Receptionist",
+              "Then I should offer consultation times, not describe the next visit as confirmed color treatment."
+            ],
+            [
+              "Stylist",
+              "Exactly. Please check the client's choice directly rather than carrying a date over from another visit."
+            ],
+            [
+              "Receptionist",
+              "Is there any permission for a promotional photograph with the new haircut this afternoon?"
+            ],
+            [
+              "Stylist",
+              "No permission has been given. Don't interpret the service note as agreement to photography."
+            ],
+            [
+              "Receptionist",
+              "Understood. I'll ask only about booking times now and keep any photo request separate."
+            ],
+            [
+              "Stylist",
+              "Please tell me which consultation date is accepted, or leave it clearly unbooked."
+            ],
+            [
+              "Receptionist",
+              "I will. The next task is offering dates; neither color service nor photography is agreed."
+            ]
+          ]
+        },
+        {
+          "title": "Keeping an internal photograph private",
+          "setting": "A stylist clarifies a client's limited photo permission.",
+          "turns": [
+            [
+              "Stylist",
+              "Would you like a reference photo in your client record for the next consultation?"
+            ],
+            [
+              "Client",
+              "Yes, that would help me remember the outline, but I don't want it posted publicly."
+            ],
+            [
+              "Stylist",
+              "So you're agreeing to the stated record use only, not social media or promotional material."
+            ],
+            [
+              "Client",
+              "That's right. I saw the salon's photo display and wanted to make the difference clear."
+            ],
+            [
+              "Stylist",
+              "Thank you. We'll handle the image under our record arrangements and note that limited permission."
+            ],
+            [
+              "Client",
+              "Can I choose not to have any photo taken after all if I feel uncomfortable?"
+            ],
+            [
+              "Stylist",
+              "Yes. We can use a descriptive service note instead; a photograph isn't required for rebooking."
+            ],
+            [
+              "Client",
+              "Actually, I'd prefer the note today. Please describe the retained length and the front shape."
+            ],
+            [
+              "Stylist",
+              "No photograph today, then. I'll preserve those preferences in the note for the next stylist."
+            ],
+            [
+              "Client",
+              "That suits me. I'm glad agreeing to an appointment doesn't require agreeing to a picture."
+            ]
+          ]
+        },
+        {
+          "title": "A new barber checks an old note",
+          "setting": "A covering barber discusses a returning client's recorded preference.",
+          "turns": [
+            [
+              "Barber",
+              "Your previous note says short sides. Is that still what you want for today's visit?"
+            ],
+            [
+              "Client",
+              "Not this time. I'm growing the sides out and only want to discuss the neckline."
+            ],
+            [
+              "Barber",
+              "Thank you. The old service note describes that visit, not a permanent instruction for every haircut."
+            ],
+            [
+              "Client",
+              "Could you keep the older note but make today's changed preference clear for next time?"
+            ],
+            [
+              "Barber",
+              "Yes. Today's discussion will state that you're growing the sides and reviewing the neckline only."
+            ],
+            [
+              "Client",
+              "There's also an old note about beard trimming. I don't want that service today either."
+            ],
+            [
+              "Barber",
+              "I'll keep that separate. No beard trim is requested as part of this appointment."
+            ],
+            [
+              "Client",
+              "Can we check the visible outline before anything starts, even though I'm a returning client?"
+            ],
+            [
+              "Barber",
+              "Certainly. Returning doesn't remove the need to confirm what you want on this particular visit."
+            ],
+            [
+              "Client",
+              "Then let's look at the neckline together and keep both the sides and beard unchanged."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A consultation time offered by voicemail",
+        "brief": "Reception offered Tuesday at noon but received no reply. The client arrives asking about a Friday slot instead; Friday at three is available.",
+        "role_a": "Receptionist: distinguish the unaccepted Tuesday offer from a booking.",
+        "role_b": "Client: prefer Friday at three and want confirmation by text.",
+        "opening_line": "Was Tuesday already booked just because you left that message?",
+        "complication": "A colleague's note says 'Tuesday suggested' without showing a response.",
+        "success_checks": [
+          "Explain that suggested does not mean accepted.",
+          "Confirm Friday at three directly.",
+          "Keep the record clear about which offer was accepted."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The parent and the wearer want different lengths",
+      "setting": "A stylist checks a teenage client's preferences; booking permission is already settled.",
+      "dialogue": [
+        [
+          "Stylist",
+          "Your parent showed me a short photograph. Which parts of it appeal to you personally?"
+        ],
+        [
+          "Client",
+          "I want neater hair, but I don't want my ears completely exposed like that."
+        ],
+        [
+          "Stylist",
+          "Which areas bother you now, and which lengths would you prefer to keep today?"
+        ],
+        [
+          "Client",
+          "The front falls into my eyes. I like tucking the sides behind my ears."
+        ],
+        [
+          "Stylist",
+          "Then let's discuss the front separately. We don't have to copy the whole photograph."
+        ],
+        [
+          "Client",
+          "Can we explain that? My parent thinks booking a haircut means agreeing to their photograph."
+        ],
+        [
+          "Stylist",
+          "We'll summarize your preference together. First, do you want any change at the back?"
+        ],
+        [
+          "Client",
+          "Only a neater outline. I don't want the much shorter back shown in the picture."
+        ],
+        [
+          "Stylist",
+          "So, a clearer front, retained side length, and a discussion of the back before cutting."
+        ],
+        [
+          "Client",
+          "Yes. Please show me the proposed front length because short means different things to us."
+        ],
+        [
+          "Stylist",
+          "I'll indicate the point in the mirror. Nothing in this photograph overrides what we've agreed."
+        ],
+        [
+          "Client",
+          "That gives me something specific to explain. We're changing the front, not copying everything."
+        ]
+      ],
+      "notes": [
+        "'Discuss the front separately' limits a preference to one area.",
+        "'What we've agreed' distinguishes the client's decision from a suggested photograph."
+      ]
+    },
+    {
+      "title": "A wedding look and the Monday morning routine",
+      "setting": "A stylist separates an event finish from an everyday haircut.",
+      "dialogue": [
+        [
+          "Stylist",
+          "You've shown me two different photographs. Which one represents the haircut you want every day?"
+        ],
+        [
+          "Client",
+          "The wavy one. I only want the smooth, fuller finish for Saturday's wedding ceremony."
+        ],
+        [
+          "Stylist",
+          "Then let's separate the underlying shape from the styling for that occasion. What matters on Monday?"
+        ],
+        [
+          "Client",
+          "I need to wear my natural waves and leave quickly, without arranging the front carefully."
+        ],
+        [
+          "Stylist",
+          "The event picture has more front volume, whereas your everyday reference has a softer outline."
+        ],
+        [
+          "Client",
+          "I like that extra volume for Saturday. Does it require a completely different haircut today?"
+        ],
+        [
+          "Stylist",
+          "The picture alone doesn't establish that. We'll discuss possible finishes after agreeing on the shape."
+        ],
+        [
+          "Client",
+          "Please don't shorten the front because it looks shorter when swept back in that photograph."
+        ],
+        [
+          "Stylist",
+          "Understood. We'll assess actual length separately from how it's arranged. The retained front length matters."
+        ],
+        [
+          "Client",
+          "Could the event request have its own booking note, so another stylist doesn't misunderstand it?"
+        ],
+        [
+          "Stylist",
+          "Yes: everyday waves for the cut; a separate event consultation, with Saturday's availability still unconfirmed."
+        ],
+        [
+          "Client",
+          "That's accurate. I'll choose today's cut around my routine and wait before arranging Saturday's transport."
+        ]
+      ],
+      "notes": [
+        "'Underlying shape' distinguishes a haircut from a temporary finish.",
+        "'Whereas' makes a direct contrast between two reference images."
+      ]
+    },
+    {
+      "title": "The same photograph looks different on two screens",
+      "setting": "A stylist and client compare a phone photograph with the salon's printed reference.",
+      "dialogue": [
+        [
+          "Stylist",
+          "Your phone image looks cooler than this print. Which appearance did you want to discuss?"
+        ],
+        [
+          "Client",
+          "The phone version. I increased its brightness, but didn't consider how that might affect our consultation."
+        ],
+        [
+          "Stylist",
+          "That may change how the image appears. We can use physical samples to clarify the tone you prefer."
+        ],
+        [
+          "Client",
+          "I prefer this sample. Does choosing it confirm the final result, or is more discussion needed?"
+        ],
+        [
+          "Stylist",
+          "It identifies a target, not a guarantee. Your starting color and previous services still require a professional assessment."
+        ],
+        [
+          "Client",
+          "I used a home color but can't recall which. Last time, brighter was mistaken for much lighter."
+        ],
+        [
+          "Stylist",
+          "Then let's avoid that broad word. Does less golden describe your preference more accurately than much lighter?"
+        ],
+        [
+          "Client",
+          "Yes, less golden is exactly what I mean. I don't want the photograph's apparent lightness copied automatically."
+        ],
+        [
+          "Stylist",
+          "I'll note cooler tone requested, lightness retained, and the home product still unidentified."
+        ],
+        [
+          "Client",
+          "Can we compare the samples again when I bring that product information, rather than choose the service now?"
+        ],
+        [
+          "Stylist",
+          "Yes. We'll revisit the consultation with the additional history before discussing suitability, a service estimate, or an appointment."
+        ],
+        [
+          "Client",
+          "I'll bring the details Thursday. That's another discussion, not treatment; the sample records my preference."
+        ]
+      ],
+      "notes": [
+        "'Identifies a target, not a guarantee' limits what a sample establishes.",
+        "Replacing 'brighter' with 'less golden' repairs an ambiguous color description."
+      ]
+    },
+    {
+      "title": "The reminder shows the wrong visit",
+      "setting": "A client calls after receiving reminders for two salon appointments.",
+      "dialogue": [
+        [
+          "Receptionist",
+          "Please read both reminders' dates and services so we can check each booking."
+        ],
+        [
+          "Client",
+          "Tuesday says consultation at ten, and Thursday says haircut at two. I thought Thursday replaced Tuesday completely."
+        ],
+        [
+          "Receptionist",
+          "I see the haircut was moved, but the consultation entry remained. Did you still want that separate discussion?"
+        ],
+        [
+          "Client",
+          "No. Tuesday was for a possible color change, and I've decided not to pursue color at the moment."
+        ],
+        [
+          "Receptionist",
+          "Then you're asking to cancel the consultation only, while keeping Thursday's haircut at two. Have I understood correctly?"
+        ],
+        [
+          "Client",
+          "Exactly. Please don't remove both because the messages use the same general heading."
+        ],
+        [
+          "Receptionist",
+          "I've removed Tuesday's consultation and kept Thursday's haircut. The updated schedule now shows only that appointment for you."
+        ],
+        [
+          "Client",
+          "Will the earlier Tuesday reminder still appear on my phone? I don't want to mistake it for a new booking."
+        ],
+        [
+          "Receptionist",
+          "The old message may remain on your phone; it doesn't override today's confirmed cancellation."
+        ],
+        [
+          "Client",
+          "Please send Thursday's date, time, and service so I can check my calendar."
+        ],
+        [
+          "Receptionist",
+          "Yes, I'll send the haircut confirmation now. The appointment list here shows Thursday at two, without Tuesday's consultation."
+        ],
+        [
+          "Client",
+          "I've received it. That matches my calendar, and I understand that the earlier reminder is no longer current."
+        ]
+      ],
+      "notes": [
+        "'Cancel ... only, while keeping ...' protects the appointment that should remain.",
+        "'Message history' distinguishes an old notification from a current booking record."
+      ]
+    },
+    {
+      "title": "A client changes their mind about the wash",
+      "setting": "A client decides against a wash before the service begins.",
+      "dialogue": [
+        [
+          "Stylist",
+          "You seem hesitant about the basin. Your booking includes a wash; what would you prefer?"
+        ],
+        [
+          "Client",
+          "I'd rather not have the wash today. I felt uncomfortable there previously and don't want another attempt."
+        ],
+        [
+          "Stylist",
+          "Thank you for telling me before we start. Are you asking to remove the wash from today's request?"
+        ],
+        [
+          "Client",
+          "Yes, but would changing that cancel the whole visit?"
+        ],
+        [
+          "Stylist",
+          "Let's clarify the remaining service with reception. Changing the request doesn't automatically settle timing or price."
+        ],
+        [
+          "Client",
+          "I understand. I still want to discuss the haircut, but I don't want pressure to use the basin."
+        ],
+        [
+          "Stylist",
+          "We'll keep that preference explicit while the stylist assesses the revised request."
+        ],
+        [
+          "Client",
+          "Could you tell reception that I declined the wash, rather than saying I refused the whole appointment?"
+        ],
+        [
+          "Stylist",
+          "Yes. Your haircut consultation remains open, and the wash is no longer requested. We haven't started either service."
+        ],
+        [
+          "Client",
+          "That accurately describes my choice. Please let me hear the revised estimate before I decide about continuing today."
+        ],
+        [
+          "Stylist",
+          "Reception has confirmed a consultation now, with the revised service estimate to follow after the stylist's assessment."
+        ],
+        [
+          "Client",
+          "I'll stay for that discussion. I haven't agreed to the revised service yet, but I'm comfortable discussing it."
+        ]
+      ],
+      "notes": [
+        "'No longer requested' states a changed preference without assigning blame.",
+        "'Doesn't automatically settle' separates a changed request from its scheduling and price consequences."
+      ]
+    },
+    {
+      "title": "An old voucher and a current service menu",
+      "setting": "A receptionist checks a salon voucher with its owner.",
+      "dialogue": [
+        [
+          "Receptionist",
+          "Your voucher states a fifty-dollar value. Which service were you expecting it to cover at today's appointment?"
+        ],
+        [
+          "Client",
+          "I thought it covered any haircut and finish because the gift envelope has a photograph of both."
+        ],
+        [
+          "Receptionist",
+          "The voucher itself specifies an amount, not a named package. Today's combined service price is sixty dollars."
+        ],
+        [
+          "Client",
+          "So there would be ten dollars remaining to pay if I choose both services at that price?"
+        ],
+        [
+          "Receptionist",
+          "Yes, under this voucher's stated terms. You could instead choose the forty-five-dollar haircut and retain five dollars."
+        ],
+        [
+          "Client",
+          "I don't want a finish today. Would using less than the full value cancel the remaining balance?"
+        ],
+        [
+          "Receptionist",
+          "Not here. Its terms preserve unused balances; I'll show you the relevant line."
+        ],
+        [
+          "Client",
+          "Please do. I'd rather check the actual wording than assume the gift envelope describes all the conditions."
+        ],
+        [
+          "Receptionist",
+          "Here it is: unused value remains available. The receipt will show forty-five used and five remaining."
+        ],
+        [
+          "Client",
+          "That answers my question. I'll choose the haircut and keep the balance for another visit to this salon."
+        ],
+        [
+          "Receptionist",
+          "I've noted that choice. The voucher doesn't add a finishing service, and there is no extra payment today."
+        ],
+        [
+          "Client",
+          "Good. Please give me the balance receipt so I can keep it with the voucher afterward."
+        ]
+      ],
+      "notes": [
+        "'An amount, not a named package' explains what the voucher actually promises.",
+        "'Under this voucher's stated terms' keeps the explanation specific to the fictional offer."
+      ]
+    },
+    {
+      "title": "A complaint belongs to the person wearing the haircut",
+      "setting": "A receptionist speaks with the client after a friend posts a critical salon comment.",
+      "dialogue": [
+        [
+          "Receptionist",
+          "Your friend called about yesterday's appointment. I'd like to hear your own concern before arranging a review."
+        ],
+        [
+          "Client",
+          "My friend dislikes the short sides, but I chose them. I'm concerned only about the front length."
+        ],
+        [
+          "Receptionist",
+          "Thank you for separating those points. Which detail at the front differs from what you requested yesterday?"
+        ],
+        [
+          "Client",
+          "I wanted it clear of my eyes. It still falls forward when I wear it normally."
+        ],
+        [
+          "Receptionist",
+          "So your request concerns the front, not changing the sides back to the friend's preferred appearance?"
+        ],
+        [
+          "Client",
+          "Exactly. Please don't book an adjustment based on the comment they posted without asking me first."
+        ],
+        [
+          "Receptionist",
+          "I won't treat that comment as your instruction. We can arrange a discussion with your stylist."
+        ],
+        [
+          "Client",
+          "Can I have that discussion before deciding whether any further cutting is appropriate for the front?"
+        ],
+        [
+          "Receptionist",
+          "Yes. A review is available tomorrow at eleven, with no adjustment agreed in advance of it."
+        ],
+        [
+          "Client",
+          "That suits me. I want the stylist to see how the front falls before suggesting anything."
+        ],
+        [
+          "Receptionist",
+          "I'll note your specific concern and confirm the review time. Your friend's preference won't replace yours."
+        ],
+        [
+          "Client",
+          "Thank you. That's a fair description, and I can explain the front issue myself tomorrow."
+        ]
+      ],
+      "notes": [
+        "'Your own concern' separates the client's request from a third party's opinion.",
+        "'No adjustment agreed in advance' preserves the purpose of a review appointment."
+      ]
+    },
+    {
+      "title": "A visiting stylist needs the current preference",
+      "setting": "A receptionist gives a visiting stylist a handover before a returning client's consultation.",
+      "dialogue": [
+        [
+          "Receptionist",
+          "The client's old record shows a fringe, but today's request says keep the front long."
+        ],
+        [
+          "Stylist",
+          "Thanks. Was that current request confirmed with the client, or copied from the previous stylist's own suggestion?"
+        ],
+        [
+          "Receptionist",
+          "The client stated it on the phone this morning. They want to tuck the front behind their ears."
+        ],
+        [
+          "Stylist",
+          "Then I'll use the old photograph as background only, not as permission to recreate the shorter fringe."
+        ],
+        [
+          "Receptionist",
+          "They also asked whether a longer consultation is possible because they're considering a different outline for work."
+        ],
+        [
+          "Stylist",
+          "Does the appointment include more time, or is that request still awaiting an answer?"
+        ],
+        [
+          "Receptionist",
+          "I added fifteen minutes with the client's agreement, so today's slot includes that additional discussion time."
+        ],
+        [
+          "Stylist",
+          "Good. What remains open is the shape decision, not the amount of consultation time we've reserved today."
+        ],
+        [
+          "Receptionist",
+          "Exactly. Please ask the client to confirm the proposed outline in the mirror before treating it as agreed."
+        ],
+        [
+          "Stylist",
+          "I will. Are there any other preferences from this morning that I should hear before the client arrives?"
+        ],
+        [
+          "Receptionist",
+          "They requested no promotional photographs, separately from the older reference image in their record."
+        ],
+        [
+          "Stylist",
+          "Understood: longer front requested, extra discussion time confirmed, final outline undecided, and no promotional photograph requested today."
+        ]
+      ],
+      "notes": [
+        "'Background only' prevents an old record from overriding a current request.",
+        "'What remains open is ...' identifies the actual undecided part of a handover."
+      ]
+    }
+  ]
+}

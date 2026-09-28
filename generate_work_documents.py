@@ -1,4 +1,4 @@
-"""Rebuild the 164 existing English for Work PDFs from one authored curriculum.
+"""Rebuild the English for Work PDFs from the authored curriculum.
 
 Usage: python3 generate_work_documents.py [--course manufacturing]
 Dependencies: requirements-documents.txt. No network access or paid services.
@@ -28,7 +28,7 @@ from reportlab.platypus import (SimpleDocTemplate, Paragraph, Spacer, PageBreak,
 
 from work_curriculum import ROOT, REVISION, RUBRIC, SCORE_DESCRIPTORS, load_tracks, validate_tracks, content_hash
 from work_lesson_conversations import lesson_content, load_course, content_hash as conversation_content_hash, EDITION as ACTIVITY_EDITION
-from work_icons import ICON_SLUGS, icon_right_trim
+from work_icons import icon_asset, icon_right_trim, icon_bottom_trim
 
 INK = colors.HexColor('#172c3d')
 BLUE = colors.HexColor('#174c69')
@@ -46,8 +46,10 @@ pdfmetrics.registerFontFamily('Work', normal='Work', bold='Work-Bold', italic='W
 
 STYLES = {
     'body': ParagraphStyle('WorkBody', fontName='Work', fontSize=10.5, leading=15.2, textColor=INK, spaceAfter=8),
+    'dialogue': ParagraphStyle('WorkDialogue', fontName='Work', fontSize=10.5, leading=14.5, textColor=INK, spaceAfter=5),
     'small': ParagraphStyle('WorkSmall', fontName='Work', fontSize=8.8, leading=12.5, textColor=MUTED, spaceAfter=7),
     'prompt': ParagraphStyle('WorkPrompt', fontName='Work', fontSize=9.3, leading=13.8, textColor=INK, spaceAfter=7),
+    'prompt-compact': ParagraphStyle('WorkPromptCompact', fontName='Work', fontSize=9.3, leading=13.8, textColor=INK, spaceAfter=4),
     'title': ParagraphStyle('WorkTitle', fontName='Work-Bold', fontSize=30, leading=34, textColor=INK, spaceAfter=20),
     'h1': ParagraphStyle('WorkH1', fontName='Work-Bold', fontSize=20, leading=25, textColor=INK, spaceAfter=14, keepWithNext=True),
     'h2': ParagraphStyle('WorkH2', fontName='Work-Bold', fontSize=12.4, leading=16, textColor=BLUE, spaceBefore=12, spaceAfter=8, keepWithNext=True),
@@ -62,7 +64,7 @@ def clean(text):
 
 
 def p(text, style='body'):
-    return Paragraph(html.escape(clean(text)), STYLES[style])
+    return Paragraph(html.escape(clean(text)).replace('\n', '<br/>'), STYLES[style])
 
 
 def heading(text, anchor=None):
@@ -133,22 +135,24 @@ def decorate(canvas, doc):
 
 
 class ProfessionIllustration(Flowable):
-    """Embed only the selected atlas cell so downloads do not carry all 41 icons."""
+    """Embed only the selected atlas cell so downloads stay small."""
     def __init__(self, slug, size=72):
         super().__init__()
         self.slug = slug
         self.width = self.height = size
 
     def draw(self):
-        index = ICON_SLUGS.index(self.slug)
+        asset, columns, rows, index = icon_asset(self.slug)
         size = self.width
         canvas = self.canv
         fraction = 1 - icon_right_trim(self.slug) / 104
-        with Image.open(ROOT / 'assets/work/professional-icons.png') as atlas:
-            cell_w, cell_h = atlas.width / 7, atlas.height / 6
-            left, top = (index % 7) * cell_w, (index // 7) * cell_h
-            cell = atlas.crop((round(left), round(top), round(left + cell_w * fraction), round(top + cell_h)))
-            canvas.drawImage(ImageReader(cell), 0, 0, width=size * fraction, height=size, mask='auto')
+        height_fraction = 1 - icon_bottom_trim(self.slug) / 104
+        with Image.open(ROOT / asset) as atlas:
+            cell_w, cell_h = atlas.width / columns, atlas.height / rows
+            left, top = (index % columns) * cell_w, (index // columns) * cell_h
+            cell = atlas.crop((round(left), round(top), round(left + cell_w * fraction), round(top + cell_h * height_fraction)))
+            canvas.drawImage(ImageReader(cell), 0, size * (1 - height_fraction) / 2,
+                             width=size * fraction, height=size * height_fraction, mask='auto')
 
 
 def cover(t, kind, purpose):
@@ -190,7 +194,9 @@ def reference_page(t):
     return story
 
 
-def assessment_page():
+def assessment_page(track=None):
+    final_task = ('switches roles and repeats the exchange' if track and track.get('is_occupation')
+                  else 'writes a 70-110 word message')
     story = [heading('Give feedback that helps', 'assessment'), p('Score each criterion 0, 1, or 2. This is a practice rubric, not a professional qualification or CEFR test. Do not award or remove points for a particular accent.')]
     for name, criterion in RUBRIC:
         story += [p(name, 'h2'), p(criterion)]
@@ -198,7 +204,7 @@ def assessment_page():
     for score, label, description in SCORE_DESCRIPTORS:
         story += [p(f'{score} - {label}: {description}')]
     story += [p('Feedback sequence', 'h2'), p('First, identify a successful phrase. Next, identify one point where meaning or accuracy needs work. Offer one useful language correction, allow a repeat, and compare the two attempts. A total out of eight describes this performance only; do not translate it into a proficiency level.'),
-              p('Final challenge', 'h2'), p('Choose a case not rehearsed today. The learner gives a one-minute response, answers two follow-up questions, and writes a 70-110 word message. Add the lesson\'s second-round challenge. Compare the result with an earlier attempt using the four criteria.')]
+              p('Final challenge', 'h2'), p('Choose a case not rehearsed today. The learner gives a one-minute response, answers two follow-up questions, and ' + final_task + '. Add the lesson\'s second-round challenge. Compare the result with an earlier attempt using the four criteria.')]
     return story
 
 
@@ -233,7 +239,7 @@ def teacher(t):
                   p('Use the complete ten-turn scripts in the learner workbook and conversation lab. Read with roles, identify the decision or open question, then replay without reading.', 'small')]
         story += additional_speaking_scenario(activities['additional_scenario'], '06 · Say it: second scenario')
         story += [pdf_link(t, 'teacher', m['id'], 'AI extension: adapt this lesson for your learners and available time.'), PageBreak()]
-    story += assessment_page() + [PageBreak()] + reference_page(t)
+    story += assessment_page(t) + [PageBreak()] + reference_page(t)
     return story
 
 
@@ -262,7 +268,7 @@ def speaking_scenarios(t, m):
             p('Scenario 1 | ' + m['title'], 'h2'), p(m['brief']), p(m['speaking_task'], 'small'),
             p('Partner: ' + m['workshop']['role_b'], 'small'),
             p('Second round: ' + m['workshop']['challenge'], 'small'),
-            p('Model for scenario 1: ' + m['model'], 'quote'),
+            *([] if t.get('is_occupation') else [p('Model for scenario 1: ' + m['model'], 'quote')]),
             *additional_speaking_scenario(lesson_content(t, m)['additional_scenario'])]
 
 
@@ -273,14 +279,21 @@ def workbook(t):
         w = m['workshop']
         story += [p(f'LESSON {m["number"]:02d} / READ AND NOTICE', 'kicker'), heading(m['title'], m['id']),
                   p(w['goal']), box('Situation', m['brief']),
-                  p('1. Understand the situation', 'h2'), p('Identify two confirmed facts, one missing detail, and the person who needs your response. Do not fill gaps with invented facts.'), WritingLines(2),
+                  p('1. Understand the situation', 'h2'), p('Identify two confirmed facts, one missing detail, and the person who needs your response. Do not fill gaps with invented facts.'),
+                  *([] if t.get('is_occupation') else [WritingLines(2)]),
                   p('2. Find the words', 'h2')]
         for j in m['vocabulary']:
             story += [p(j['term'] + ' - ' + j['definition'], 'small')]
+        if m.get('collocations'):
+            story += [p('Useful word combinations', 'term'), *[p(c, 'small') for c in m['collocations']]]
+        if t.get('is_occupation'):
+            story += [PageBreak(), p(f'LESSON {m["number"]:02d} / LANGUAGE AND PRACTICE', 'kicker'), heading(w['title'])]
         story += [p('3. Notice the language', 'h2'), p(w['explanation']), *[p(frame, 'small') for frame in w['frames']],
-                  p('Improve this sentence: ' + w['before'], 'small'), WritingLines(1), PageBreak(),
-                  p(f'LESSON {m["number"]:02d} / PRACTICE AND PRODUCE', 'kicker'), heading(w['title']),
-                  p('4. Check the language', 'h2')]
+                  p('Compare this wording: ' + w['before'], 'small'),
+                  *([p('Clearer: ' + w['after'], 'small'), p(w['reason'], 'small')] if t.get('is_occupation') else [WritingLines(1)])]
+        if not t.get('is_occupation'):
+            story += [PageBreak(), p(f'LESSON {m["number"]:02d} / PRACTICE AND PRODUCE', 'kicker'), heading(w['title'])]
+        story += [p('4. Check the language', 'h2')]
         for i, q in enumerate(w['questions']):
             story += [p(f'{i+1}. {q["prompt"]}', 'small')]
             story += [p(f'{chr(65+j)}. {option}', 'small') for j, option in enumerate(q['options'])]
@@ -298,7 +311,7 @@ def workbook(t):
             block += [p(f'{chr(65+j)}: {feedback}', 'small') for j, feedback in enumerate(q['feedback'])]
         block += [p('Model response: ' + m['model']), p('Case check: underline the confirmed information and circle a limitation, question, or next step in the response.', 'small')]
         story += [KeepTogether(block)]
-    story += [PageBreak()] + assessment_page() + [PageBreak()] + reference_page(t)
+    story += [PageBreak()] + assessment_page(t) + [PageBreak()] + reference_page(t)
     return story
 
 
@@ -308,19 +321,21 @@ def conversation(t):
     story = gallery(t)
     for m in t['modules']:
         w = m['workshop']
+        supporting_style = 'small' if t.get('is_occupation') else 'body'
         story += [p(f'ROLE-PLAY CASE {m["number"]:02d}', 'kicker'), heading(m['title'], m['id']), box('Shared case', m['brief']),
-                  p('Role A | Responding professional', 'h2'), p(w['goal'] + ' Use only the facts given. Choose two relevant terms and be ready to explain one of them in ordinary words.'),
-                  p('Role B | Listener', 'h2'), p(w['role_b']),
+                  p('Role A | Responding professional', 'h2'), p(w['goal'] + ' Use only the facts given. Choose two relevant terms and be ready to explain one of them in ordinary words.', supporting_style),
+                  p('Role B | Listener', 'h2'), p(w['role_b'], supporting_style),
                   p('Useful expressions', 'h2'), *[p(frame, 'small') for frame in w['frames']],
-                  p('Cover this until after your first attempt', 'h2'), p(m['model'], 'quote'),
-                  p('Second round', 'h2'), p(w['challenge']),
+                  p('Cover this until after your first attempt', 'h2'), p(m['model'], 'body' if t.get('is_occupation') else 'quote'),
+                  p('Second round', 'h2'), p(w['challenge'], supporting_style),
                   Paragraph(f'<link href="{html.escape(ai_url(t, "roleplay", m["id"], True), quote=True)}" color="#174c69">Debrief and extend with AI</link>', STYLES['h2']),
-                  p('Which phrase helped the listener? Which case fact needed clarification? Write one better follow-up question, then repeat the exchange.', 'small'), WritingLines(1), PageBreak()]
+                  p('Which phrase helped the listener? Which case fact needed clarification? Say one better follow-up question, then repeat the exchange.', 'small'),
+                  *([] if t.get('is_occupation') else [WritingLines(1)]), PageBreak()]
     story += [heading('Lesson conversations and speaking practice', 'lesson-conversations'),
               p('The following sections match 05 and 06 on the industry webpage and in the learner workbook. Each lesson has three ten-turn conversations and two bounded speaking scenarios. These are original fictional teaching scripts, not transcripts of real people.')]
     for m in t['modules']:
         story += conversation_scripts(t, m) + speaking_scenarios(t, m)
-    story += assessment_page() + [PageBreak()] + reference_page(t)
+    story += assessment_page(t) + [PageBreak()] + reference_page(t)
     return story
 
 
@@ -345,10 +360,13 @@ def phrasebook(t):
     seen = set()
     for m in t['modules']:
         w = m['workshop']
-        if m['function'] in seen:
+        if m['function'] in seen and not t.get('is_occupation'):
             continue
         seen.add(m['function'])
-        story += [KeepTogether([p(w['title'], 'h2'), *[p(frame) for frame in w['frames']], p(w['explanation'], 'small')])]
+        block = [p(w['title'], 'h2'), *[p(frame) for frame in w['frames']], p(w['explanation'], 'small')]
+        if m.get('collocations'):
+            block += [p('Word combinations in this lesson', 'term'), *[p(c, 'small') for c in m['collocations']]]
+        story += [KeepTogether(block)]
     story += [PageBreak(), heading('Model responses in context', 'model-responses'), p('Read the situation first. Cover the model, say your own response, and compare the two for meaning and tone.')]
     for m in t['modules']:
         story += [KeepTogether([p(f'{m["number"]:02d} | {m["title"]}', 'h2'), p(m['brief'], 'small'), p(m['model'], 'quote'), p('Try it again: ' + m['workshop']['challenge'], 'small'),
@@ -385,7 +403,8 @@ def build_track(track, kinds=None):
             result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
                                 bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
                                 content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=2, ai_prompt_edition=AI_EDITION)
-            result[href]['illustration_sha256'] = hashlib.sha256((ROOT / 'assets/work/professional-icons.png').read_bytes()).hexdigest()
+            result[href]['illustration_asset'] = icon_asset(track['slug'])[0]
+            result[href]['illustration_sha256'] = hashlib.sha256((ROOT / result[href]['illustration_asset']).read_bytes()).hexdigest()
             result[href]['activity_edition'] = ACTIVITY_EDITION
             if index in (0, 1, 2):
                 result[href]['lesson_conversation_hash'] = conversation_content_hash()
@@ -416,7 +435,7 @@ def main(slugs=None, kinds=None):
         result = build_track(t, kinds)
         documents.update(result)
         print(f'{t["slug"]}: ' + ', '.join(str(v['pages']) + ' pages' for v in result.values()), flush=True)
-    manifest_path.write_text(json.dumps(dict(revision=REVISION, content_hash=content_hash(), documents=documents), indent=2) + '\n')
+    manifest_path.write_text(json.dumps(dict(revision=ACTIVITY_EDITION, content_hash=content_hash(), documents=documents), indent=2) + '\n')
     print(f'Built {len(tracks) * (len(kinds) if kinds else 4)} PDFs.', flush=True)
 
 

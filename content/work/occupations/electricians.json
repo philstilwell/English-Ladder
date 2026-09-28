@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "electricians",
+    "title": "Electricians' Workplace English",
+    "summary": "Clarify electrical service reports, lighting specifications, device positions, trade interfaces, planned interruptions, technical findings, and handover records.",
+    "roles": "Electricians, electrical apprentices in supervised communication roles, electrical crew leads, and service coordinators",
+    "scope_note": "Fictional occupational English practice, not electrical training or advice on design, testing, isolation, switching, energizing, repairs, or installation. All case facts, ratings, dimensions, schedules, and incidents are invented. Do not operate or investigate equipment to enact a scenario. Technical decisions and safety status belong to qualified personnel using applicable site arrangements; no universal code, permit, or licensing rules are asserted. Occupational sources inform context, not the invented technical cases.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Electricians",
+        "url": "https://www.bls.gov/ooh/construction-and-extraction/electricians.htm"
+      },
+      {
+        "title": "O*NET OnLine: Electricians (47-2111.00), U.S. Department of Labor-sponsored occupational profile",
+        "url": "https://www.onetonline.org/link/summary/47-2111.00"
+      }
+    ],
+    "category": "Industry & infrastructure",
+    "modules": [
+      {
+        "title": "Taking a precise electrical service request",
+        "terms": [
+          "service call",
+          "receptacle",
+          "distribution board",
+          "circuit identifier"
+        ],
+        "collocations": [
+          "locate the reported issue: identify the room and device concerned",
+          "confirm the circuit reference: distinguish a label from a verified identification",
+          "describe the symptom: state what was noticed without diagnosing it",
+          "take a service history: ask when the issue occurred and what was reported"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A client reports that the office sockets are dead. Their account concerns two desk receptacles in Room 204, noticed at 08:30. Other areas have not been assessed. A panel directory says office, but its accuracy has not been verified. Clarify the service request without asking the client to test or operate anything.",
+          "model": "When you say the office sockets, do you mean the two desk receptacles in Room 204? I will record that you noticed the issue at 08:30. The directory's office label does not yet confirm which circuit serves them. Please describe what you already observed; the electrician will assess the circuit identification and condition."
+        },
+        "workshop": {
+          "title": "Locate the report without expanding it",
+          "goal": "Turn a broad complaint into an accurate service-call description.",
+          "explanation": "Ask about existing observations, room labels, and timing. A client report is not a verified circuit finding. Do not direct the client to operate equipment, repeat a fault, open an enclosure, or perform electrical checks.",
+          "frames": [
+            "Which ___ are you referring to?",
+            "You noticed ___ at ___; is that right?",
+            "That label suggests ___, but identification remains ___."
+          ],
+          "before": "The whole office circuit has failed.",
+          "after": "The client reports an issue at two desk receptacles in Room 204; the circuit is not yet verified.",
+          "reason": "The report names its source and limits its extent.",
+          "questions": [
+            {
+              "prompt": "Client: I mean the devices that receive the desk plugs, not the lighting controls.\nElectrician: You are referring to the two ____ in Room 204.",
+              "options": [
+                "receptacles",
+                "switches",
+                "junction boxes",
+                "luminaires"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Receptacles receive the plugs supplying the desk equipment.",
+                "Switches control circuits or devices rather than receiving those desk plugs.",
+                "Junction boxes house wiring connections; they are not the described plug-in devices.",
+                "Luminaires are lighting units, not devices that receive desk plugs."
+              ]
+            },
+            {
+              "prompt": "Dispatcher: Has the whole floor been assessed?\nElectrician: No, the report ____ two desk receptacles only.",
+              "options": [
+                "concerns",
+                "confirms all of",
+                "rules out",
+                "depends of"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Concerns' identifies the limited subject of the report.",
+                "This would turn a limited report into a broader confirmation and fits the sentence poorly.",
+                "The report describes those receptacles; it does not exclude them.",
+                "The correct expression is 'depends on', which would still change the meaning."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You noticed the issue at 08:30 but have not investigated other rooms.",
+          "challenge": "A manager calls this a floor-wide outage. Restate the known scope without ruling out unassessed areas."
+        }
+      },
+      {
+        "title": "Clarifying lighting specifications",
+        "terms": [
+          "luminaire",
+          "color temperature",
+          "lumen",
+          "driver"
+        ],
+        "collocations": [
+          "compare the lighting schedule: check listed fitting requirements",
+          "confirm the color temperature: specify the requested warm or cool appearance",
+          "check the light output: distinguish emitted light from electrical power consumption",
+          "verify driver compatibility: obtain confirmation that the specified components work together"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A client selects two fictional luminaires, both listed at 1,200 lumens. One is 3,000 kelvins and the other 4,000 kelvins. The client assumes the larger kelvin number means more light. No product substitution is approved; driver compatibility remains for specialist review.",
+          "model": "Both examples are listed at 1,200 lumens, so their stated light output is the same. The kelvin number describes the light's warm or cool appearance, not how much light it emits. The 4,000-kelvin option appears cooler than the 3,000-kelvin option. Product and driver compatibility still need review before either is confirmed."
+        },
+        "workshop": {
+          "title": "Separate appearance from light output",
+          "goal": "Explain lighting units without converting them into an unsupported design recommendation.",
+          "explanation": "Lumens describe emitted light; kelvins describe appearance. Neither figure alone establishes suitability, installed brightness, or compatibility. Explain the supplied comparison and leave selection and technical review distinct.",
+          "frames": [
+            "___ describes ___, not ___ .",
+            "Both are rated at ___, while ___ differs.",
+            "That figure alone does not confirm ___."
+          ],
+          "before": "Four thousand means it is brighter.",
+          "after": "Four thousand kelvins describes a cooler appearance, not a higher lumen output.",
+          "reason": "The correction separates two different properties.",
+          "questions": [
+            {
+              "prompt": "Client: Which figure tells me how much visible light the source emits?\nElectrician: Look at its stated ____ rating.",
+              "options": [
+                "lumen",
+                "kelvin",
+                "watt",
+                "volt"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Lumens measure the amount of emitted visible light.",
+                "Kelvins describe color temperature, not the amount of emitted light.",
+                "Watts describe electrical power, not light output directly.",
+                "Volts describe electrical potential difference, not emitted light output."
+              ]
+            },
+            {
+              "prompt": "Client: So four thousand kelvins is more light?\nElectrician: It describes appearance ____ quantity of light.",
+              "options": [
+                "rather than",
+                "as well as",
+                "because of",
+                "in addition to"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The contrast corrects the client's confusion.",
+                "This incorrectly says the figure describes both properties.",
+                "This claims a causal relationship instead of distinguishing properties.",
+                "This also incorrectly adds light quantity to what kelvins describe."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask why equal lumens can accompany different kelvin figures.",
+          "challenge": "The client asks whether equal lumens guarantee identical lighting on the desk. Explain why the supplied data do not establish that."
+        }
+      },
+      {
+        "title": "Agreeing device positions and drawing references",
+        "terms": [
+          "centerline",
+          "finished floor level",
+          "mounting height",
+          "reflected ceiling plan"
+        ],
+        "collocations": [
+          "confirm the height reference: identify the datum and measured point",
+          "coordinate with the joinery elevation: compare device positions with cabinet details",
+          "mark the intended location: identify a proposed position for review",
+          "reconcile the ceiling layout: resolve conflicting fitting positions on drawings"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A reception elevation shows a device at 1,100 millimeters above finished floor level but does not say whether this is its centerline or lower edge. The joinery drawing uses a centerline. No position has been approved for installation.",
+          "model": "The reception elevation gives 1,100 millimeters above finished floor level, but it does not identify the point on the device being measured. The joinery drawing uses a centerline reference. Could the designer confirm whether the electrical dimension uses the same reference? We need one coordinated location before treating the position as agreed."
+        },
+        "workshop": {
+          "title": "Ask for the point as well as the number",
+          "goal": "Clarify vertical and horizontal references before accepting a device position.",
+          "explanation": "A height can refer to the center, edge, or another identified point. State the floor reference and device point separately. Drawings used in an exercise are not placement rules or accessibility standards.",
+          "frames": [
+            "Is ___ measured to the centerline or ___?",
+            "The floor reference is ___; the device reference is ___ .",
+            "These drawings agree on ___ but differ on ___."
+          ],
+          "before": "It's at eleven hundred, just like the cabinet.",
+          "after": "The height is 1,100 millimeters, but the device measurement point needs clarification.",
+          "reason": "The revision avoids treating matching numbers as matching positions.",
+          "questions": [
+            {
+              "prompt": "Designer: Does the joinery note measure to the device midpoint or its edges?\nElectrician: It explicitly measures to the device's ____.",
+              "options": [
+                "centerline",
+                "lower edge",
+                "upper edge",
+                "outer perimeter"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The joinery drawing uses the centerline reference given in the case.",
+                "The lower edge is a different possible reference, but not the one stated.",
+                "The upper edge is not the reference used by the supplied joinery note.",
+                "The perimeter describes the boundary rather than the midpoint reference stated here."
+              ]
+            },
+            {
+              "prompt": "Client: Are these confirmed installation heights?\nElectrician: They are dimensions ____ clarification of the reference point.",
+              "options": [
+                "awaiting",
+                "completing",
+                "providing",
+                "proving"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Awaiting' preserves the unresolved status.",
+                "The dimensions themselves are not completing a clarification.",
+                "The dimensions omit the needed clarification rather than provide it.",
+                "They do not prove a reference point that is unstated."
+              ]
+            }
+          ],
+          "role_b": "You are the designer. Ask whether the uncertainty concerns units, floor level, or the device point.",
+          "challenge": "The client says a matching number proves alignment. Explain the unresolved reference."
+        }
+      },
+      {
+        "title": "Coordinating containment and shared work areas",
+        "terms": [
+          "conduit",
+          "cable tray",
+          "containment route",
+          "access window"
+        ],
+        "collocations": [
+          "flag a route conflict: identify overlapping planned services",
+          "coordinate ceiling space: resolve competing spatial requirements between trades",
+          "reserve an access window: obtain agreement on a work period",
+          "identify the affected bay: locate an issue within the building grid"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Electrical drawing E6 shows a cable tray in ceiling bay C3 where the mechanical layout shows a duct. Neither trade has agreed a revised route. The ceiling coordinator's meeting is at 13:00; the electrician needs both drawings reviewed together.",
+          "model": "Could we review ceiling bay C3 at the 13:00 coordination meeting? Drawing E6 places the cable tray in the same space as the duct on the mechanical layout. Please have both trade leads bring their current drawings. We need a coordinated route decision; I am not proposing an on-site rerouting instruction."
+        },
+        "workshop": {
+          "title": "Request a joint answer to an interface problem",
+          "goal": "Identify the conflict and the people needed to resolve it.",
+          "explanation": "Describe the overlapping space without declaring which trade must move. A containment-route discussion coordinates design information; it does not teach cable installation, structural penetrations, or service-clearance rules.",
+          "frames": [
+            "At ___, our route conflicts with ___ .",
+            "Could both ___ and ___ review ___?",
+            "The decision needed is ___, not simply ___."
+          ],
+          "before": "The duct is in our way; move it.",
+          "after": "The two layouts overlap in C3; both trade leads need to review the route.",
+          "reason": "The revised request identifies a shared coordination problem without allocating blame.",
+          "questions": [
+            {
+              "prompt": "Coordinator: Does E6 show a tray, conduit, or trunking at C3?\nElectrician: It shows a planned ____ in the duct's space.",
+              "options": [
+                "cable tray",
+                "conduit",
+                "surface trunking",
+                "cable ladder"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. E6 identifies a cable tray at the disputed location.",
+                "Conduit is another containment form, but E6 specifies a tray here.",
+                "Surface trunking is not the containment form identified in this drawing.",
+                "A cable ladder is a related support system, but it is not the stated tray."
+              ]
+            },
+            {
+              "prompt": "Mechanical lead: Are you asking us to change the duct immediately?\nElectrician: No, I am requesting ____ before either trade changes its route.",
+              "options": [
+                "a coordinated route review",
+                "a record of completed rerouting",
+                "confirmation that the tray takes priority",
+                "acceptance of the duct relocation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The request seeks joint review before a route decision.",
+                "A completed-rerouting record would imply work that has not been agreed.",
+                "Priority has not been established for either trade in this case.",
+                "No duct relocation has been agreed for acceptance."
+              ]
+            }
+          ],
+          "role_b": "You are the mechanical lead. Bring your current layout and ask which bay is affected.",
+          "challenge": "The meeting chair offers only ten minutes. State the conflict and required decision concisely."
+        }
+      },
+      {
+        "title": "Communicating outage plans and status",
+        "terms": [
+          "outage window",
+          "shutdown notice",
+          "isolation status",
+          "affected area"
+        ],
+        "collocations": [
+          "confirm the affected services: establish the stated interruption scope",
+          "issue a shutdown notice: communicate an agreed interruption plan",
+          "distinguish planned from confirmed: label the actual status of an arrangement",
+          "relay the verified status: pass on confirmed information without extending its meaning"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "An outage request proposes 18:00-19:00 for reception lighting only. Facilities has not approved it. A draft tenant notice incorrectly says the whole floor will be unavailable. No isolation status is supplied and no operational instruction is requested.",
+          "model": "The request proposes 18:00 to 19:00 for reception lighting only; facilities approval is still pending. The draft notice incorrectly extends that to the whole floor. Please correct the affected area and mark the timing as proposed. This planning update does not establish isolation status or permission to carry out electrical work."
+        },
+        "workshop": {
+          "title": "Separate planning from electrical status",
+          "goal": "Give an accurate interruption update without implying equipment is safe to work on.",
+          "explanation": "An agreed booking, issued notice, or client approval does not establish isolation. Refer technical status to the responsible qualified person. This lesson practices status reporting, not switching, isolation verification, or restoration.",
+          "frames": [
+            "The requested window is ___; approval is ___ .",
+            "The notice covers ___ only.",
+            "That planning status does not establish ___."
+          ],
+          "before": "The shutdown is sorted.",
+          "after": "The reception-lighting request is pending approval; no technical status is established by that request.",
+          "reason": "The revised update makes both boundaries explicit.",
+          "questions": [
+            {
+              "prompt": "Facilities: Is six until seven agreed?\nElectrician: It is the ____ outage window.",
+              "options": [
+                "proposed",
+                "completed",
+                "verified",
+                "elapsed"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The requested window is awaiting approval.",
+                "The interruption has not happened.",
+                "The window is not yet confirmed.",
+                "'Elapsed' refers to time already passed."
+              ]
+            },
+            {
+              "prompt": "Tenant: Does this affect the whole floor?\nElectrician: The current request concerns reception lighting ____.",
+              "options": [
+                "only",
+                "also",
+                "instead",
+                "already"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Only' limits the stated scope.",
+                "'Also' would add reception to other affected areas.",
+                "'Instead' would require a contrast not supplied here.",
+                "'Already' refers to timing, not the extent of the request."
+              ]
+            }
+          ],
+          "role_b": "You are the facilities representative. Ask whether the time and affected area are agreed.",
+          "challenge": "Facilities approves the requested period. State the planning change without declaring electrical isolation or completion."
+        }
+      },
+      {
+        "title": "Reporting findings and uncertainty",
+        "terms": [
+          "intermittent fault",
+          "test report",
+          "insulation resistance",
+          "provisional diagnosis"
+        ],
+        "collocations": [
+          "attribute the reported symptom: name who observed the issue",
+          "quote the report status: retain the record's actual finding or limitation",
+          "avoid ruling out an intermittent fault: do not treat one absent symptom as conclusive",
+          "request technical interpretation: ask a qualified reviewer what a result establishes"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A client reported occasional flickering in display bay 2. The electrician's visit note states that flickering was not observed during the visit. No cause is established, and the technical report is pending review. The client asks whether the installation is now fault-free.",
+          "model": "Flickering was not observed during this visit, but that does not establish that an intermittent fault is absent. Your report about display bay 2 remains part of the service history. The technical report is awaiting review, so I cannot confirm a cause or describe the installation as fault-free from this visit note alone."
+        },
+        "workshop": {
+          "title": "Keep a negative observation in its proper scope",
+          "goal": "Explain what a visit did and did not establish.",
+          "explanation": "Not observed is different from disproved. Identify the observation period and preserve the client's account. Do not interpret measurements, assign pass criteria, or prescribe tests from a language-practice case.",
+          "frames": [
+            "During ___, ___ was not observed.",
+            "That finding does not rule out ___ .",
+            "The report remains ___, so ___ is not confirmed."
+          ],
+          "before": "It didn't happen today, so there's no fault.",
+          "after": "It wasn't observed during the visit; the reported intermittent problem remains unresolved.",
+          "reason": "The correction limits the conclusion to the actual observation.",
+          "questions": [
+            {
+              "prompt": "Client: The flicker comes and goes.\nElectrician: You are describing an ____ symptom.",
+              "options": [
+                "intermittent",
+                "identical",
+                "immediate",
+                "irreversible"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Intermittent means occurring inconsistently.",
+                "Identical means the same, not occurring at intervals.",
+                "Immediate describes timing without delay.",
+                "Irreversible describes inability to reverse, not frequency."
+              ]
+            },
+            {
+              "prompt": "Manager: Has the report been reviewed?\nElectrician: It ____ review; the interpretation isn't final.",
+              "options": [
+                "is awaiting",
+                "has completed",
+                "has ruled out",
+                "is concluding"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Awaiting review means the review is pending.",
+                "This would claim completion despite the stated pending interpretation.",
+                "A report cannot rule out the review itself in this context.",
+                "'Concluding review' does not naturally express awaiting review."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask whether an absent symptom proves the fault has disappeared.",
+          "challenge": "The client asks whether a driver replacement is certain to solve it. Preserve the unconfirmed cause and remedy."
+        }
+      },
+      {
+        "title": "Assessing added equipment and substitutions",
+        "terms": [
+          "connected load",
+          "dedicated circuit",
+          "substitution",
+          "change quotation"
+        ],
+        "collocations": [
+          "obtain the equipment schedule: request a list of proposed equipment and ratings",
+          "review the added demand: ask for assessment of the proposed equipment's electrical needs",
+          "price a scope change: quote defined additional work",
+          "compare the full specification: examine more than appearance or model family"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "A cafe adds a second espresso machine after electrical scope agreement. Its equipment data are unavailable. The client asks to include it at the original price and date. The electrician can request the data and arrange a revised assessment and quotation, but capacity and installation requirements are not established.",
+          "model": "The second machine changes the equipment information behind the agreed scope. Could you provide its manufacturer's data and proposed location? We can then assess the additional requirements and prepare a change quotation. I cannot confirm capacity, the original price, or unchanged timing before that review, even if the machine looks similar to the first one."
+        },
+        "workshop": {
+          "title": "Offer assessment without promising capacity",
+          "goal": "Respond to added equipment with a defined information request and conditional quotation.",
+          "explanation": "Appearance and socket shape do not establish electrical suitability. Ask for manufacturer information and intended use, then separate technical assessment, price, and approval. Do not calculate capacities or prescribe circuit arrangements.",
+          "frames": [
+            "The addition changes ___, so we need ___ .",
+            "We can assess ___ once ___ is available.",
+            "A quoted option is not yet ___."
+          ],
+          "before": "It's similar, so we'll include it.",
+          "after": "We can assess the second machine once its data are available; cost and timing remain open.",
+          "reason": "The revised response offers a concrete next step without guessing requirements.",
+          "questions": [
+            {
+              "prompt": "Client: Is the second machine's added work already priced?\nElectrician: No, we need a ____ describing and pricing that proposed addition.",
+              "options": [
+                "change quotation",
+                "delivery quotation for the original machine",
+                "record of completed variations",
+                "final account for the original scope"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A change quotation addresses a proposed alteration to the agreed work.",
+                "A delivery quotation for the original machine would not price this additional electrical scope.",
+                "A record of completed variations concerns work already changed, not this unassessed proposal.",
+                "A final account for the original scope does not define or price the requested addition."
+              ]
+            },
+            {
+              "prompt": "Client: The replacement looks identical.\nElectrician: Appearance alone does not ____ compatibility.",
+              "options": [
+                "establish",
+                "request",
+                "await",
+                "resemble"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Establish' means demonstrate or confirm.",
+                "Appearance is not requesting confirmation.",
+                "'Await' would make appearance the thing waiting.",
+                "'Resemble compatibility' is not a meaningful construction here."
+              ]
+            }
+          ],
+          "role_b": "You are the cafe client. You can obtain machine data but want a definite opening date.",
+          "challenge": "The supplier offers an alternate model tomorrow. Ask for its complete reference and data without approving the substitution."
+        }
+      },
+      {
+        "title": "Handing over electrical records",
+        "terms": [
+          "circuit directory",
+          "as-built drawing",
+          "commissioning record",
+          "outstanding item"
+        ],
+        "collocations": [
+          "reconcile the circuit directory: check the list against confirmed installation records",
+          "match the equipment reference: link a document to the correct asset",
+          "identify outstanding documents: name records still missing or incomplete",
+          "accept the follow-up: confirm who will obtain and report the unresolved information"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At a fictional office handover, the as-built drawings are received. One circuit-directory entry still says old store although the room is now archive. The identification needs verification, not relabeling by assumption. Electrical lead Priya accepts follow-up and will report Thursday. No operational clearance is inferred.",
+          "model": "The as-built drawings have been received, but the directory entry marked old store still needs reconciliation with the archive-room reference. Priya has accepted that follow-up and will report Thursday. Please keep the discrepancy visible in the handover record. Receipt of the drawings does not resolve the directory question or establish any separate operational clearance."
+        },
+        "workshop": {
+          "title": "Transfer an unresolved record accurately",
+          "goal": "Hand over documents and follow-up responsibilities without implying all checks are complete.",
+          "explanation": "Separate received, reviewed, and reconciled. A room-name change may expose a documentation mismatch without proving the underlying circuit identity. Do not instruct clients to relabel, operate, or investigate electrical equipment.",
+          "frames": [
+            "We have received ___; ___ remains unresolved.",
+            "___ will verify ___ and report ___ .",
+            "Please confirm your understanding of ___."
+          ],
+          "before": "The handover pack is complete, so all labels are right.",
+          "after": "The drawings are received; one directory entry still needs verification.",
+          "reason": "The revision distinguishes document receipt from verified identification.",
+          "questions": [
+            {
+              "prompt": "Client: Can we treat the old-store entry as a verified archive reference?\nElectrician: Not yet. We need ____ to establish that identity.",
+              "options": [
+                "a check against the confirmed installation record",
+                "a copy of the unchanged directory",
+                "a room-name change based only on recollection",
+                "a new number matching the room number"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Reconciliation with confirmed installation information can establish the identity.",
+                "An unchanged copy preserves the information but does not verify it.",
+                "Recollection alone does not confirm which circuit the entry identifies.",
+                "Matching a room number changes labeling without verifying the circuit."
+              ]
+            },
+            {
+              "prompt": "Client: Who owns the follow-up?\nElectrician: Priya ____ responsibility for the directory query.",
+              "options": [
+                "has accepted",
+                "might have accepting",
+                "has been accept",
+                "is accept"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Present perfect describes the confirmed acceptance.",
+                "After 'might have', use a past participle; this also weakens the known acceptance.",
+                "The passive form would require 'accepted' and a different meaning.",
+                "'Is accept' is not a valid verb phrase."
+              ]
+            }
+          ],
+          "role_b": "You are the facilities client. Repeat back the unresolved entry, owner, and update day.",
+          "challenge": "Priya reports that source-record review is still pending Thursday. Keep the issue open and clarify the next update."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "service call",
+        "definition": "A visit requested to assess or address a reported electrical issue.",
+        "group": "Taking a precise electrical service request"
+      },
+      {
+        "term": "receptacle",
+        "definition": "The electrical contact device into which a plug is inserted; commonly called a socket or outlet.",
+        "group": "Taking a precise electrical service request"
+      },
+      {
+        "term": "distribution board",
+        "definition": "An assembly containing devices that distribute and protect electrical circuits; also called a panelboard in some settings.",
+        "group": "Taking a precise electrical service request"
+      },
+      {
+        "term": "circuit identifier",
+        "definition": "A label or reference used to distinguish a particular electrical circuit in project records.",
+        "group": "Taking a precise electrical service request"
+      },
+      {
+        "term": "luminaire",
+        "definition": "A complete lighting unit, including its light source or sources and associated components.",
+        "group": "Clarifying lighting specifications"
+      },
+      {
+        "term": "color temperature",
+        "definition": "A description, expressed in kelvins, of how warm or cool a light source appears.",
+        "group": "Clarifying lighting specifications"
+      },
+      {
+        "term": "lumen",
+        "definition": "A unit expressing the amount of visible light emitted by a source.",
+        "group": "Clarifying lighting specifications"
+      },
+      {
+        "term": "driver",
+        "definition": "An electronic component that supplies and controls electrical power for a compatible light source, commonly an LED.",
+        "group": "Clarifying lighting specifications"
+      },
+      {
+        "term": "centerline",
+        "definition": "An imaginary line through a component's center used as a positioning reference.",
+        "group": "Agreeing device positions and drawing references"
+      },
+      {
+        "term": "finished floor level",
+        "definition": "The level of the completed floor surface used as a reference for stated heights.",
+        "group": "Agreeing device positions and drawing references"
+      },
+      {
+        "term": "mounting height",
+        "definition": "The specified vertical position of a device, requiring a stated measurement reference.",
+        "group": "Agreeing device positions and drawing references"
+      },
+      {
+        "term": "reflected ceiling plan",
+        "definition": "A drawing representing the ceiling layout as if viewed in a mirror below it.",
+        "group": "Agreeing device positions and drawing references"
+      },
+      {
+        "term": "conduit",
+        "definition": "A tube or enclosed channel intended to contain and protect electrical wiring.",
+        "group": "Coordinating containment and shared work areas"
+      },
+      {
+        "term": "cable tray",
+        "definition": "A supporting system used to carry cables along an identified route.",
+        "group": "Coordinating containment and shared work areas"
+      },
+      {
+        "term": "containment route",
+        "definition": "The planned path of the systems carrying or enclosing cables.",
+        "group": "Coordinating containment and shared work areas"
+      },
+      {
+        "term": "access window",
+        "definition": "An agreed period for a crew to enter and work in a specified area.",
+        "group": "Coordinating containment and shared work areas"
+      },
+      {
+        "term": "outage window",
+        "definition": "A planned period during which an identified electrical service is expected to be unavailable.",
+        "group": "Communicating outage plans and status"
+      },
+      {
+        "term": "shutdown notice",
+        "definition": "A communication describing a planned interruption, its stated extent, timing, and contacts.",
+        "group": "Communicating outage plans and status"
+      },
+      {
+        "term": "isolation status",
+        "definition": "The verified or unverified condition of separation from energy sources, as determined by the responsible qualified personnel.",
+        "group": "Communicating outage plans and status"
+      },
+      {
+        "term": "affected area",
+        "definition": "The specifically identified location or group of services included in a stated interruption or concern.",
+        "group": "Communicating outage plans and status"
+      },
+      {
+        "term": "intermittent fault",
+        "definition": "A fault that occurs inconsistently rather than being continuously present.",
+        "group": "Reporting findings and uncertainty"
+      },
+      {
+        "term": "test report",
+        "definition": "A record of specified electrical checks, their conditions, results, and stated limitations.",
+        "group": "Reporting findings and uncertainty"
+      },
+      {
+        "term": "insulation resistance",
+        "definition": "An electrical property describing resistance to current leakage through insulation, assessed by qualified personnel using suitable methods.",
+        "group": "Reporting findings and uncertainty"
+      },
+      {
+        "term": "provisional diagnosis",
+        "definition": "A tentative explanation of an electrical problem that remains subject to confirmation.",
+        "group": "Reporting findings and uncertainty"
+      },
+      {
+        "term": "connected load",
+        "definition": "The total rated electrical demand of connected equipment, distinct from any assessed simultaneous demand.",
+        "group": "Assessing added equipment and substitutions"
+      },
+      {
+        "term": "dedicated circuit",
+        "definition": "A circuit intended to serve specified equipment or a particular purpose rather than general shared use.",
+        "group": "Assessing added equipment and substitutions"
+      },
+      {
+        "term": "substitution",
+        "definition": "A proposed replacement for a specified product or component, requiring the relevant review.",
+        "group": "Assessing added equipment and substitutions"
+      },
+      {
+        "term": "change quotation",
+        "definition": "A priced proposal for an alteration to the agreed electrical work, with its stated inclusions and conditions.",
+        "group": "Assessing added equipment and substitutions"
+      },
+      {
+        "term": "circuit directory",
+        "definition": "A labeled list intended to identify circuits and the areas or equipment they serve.",
+        "group": "Handing over electrical records"
+      },
+      {
+        "term": "as-built drawing",
+        "definition": "A drawing intended to record the electrical installation as completed, including documented changes.",
+        "group": "Handing over electrical records"
+      },
+      {
+        "term": "commissioning record",
+        "definition": "A record of specified verification activities and results associated with bringing an installation into its intended service.",
+        "group": "Handing over electrical records"
+      },
+      {
+        "term": "outstanding item",
+        "definition": "A specific unresolved task, observation, or document requirement retained for follow-up.",
+        "group": "Handing over electrical records"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Which office sockets?",
+          "setting": "An electrician clarifies the fictional Room 204 service call by phone.",
+          "turns": [
+            [
+              "Electrician",
+              "This service call says office sockets. Which room and devices do you mean?"
+            ],
+            [
+              "Client",
+              "The two desk receptacles in Room 204. I noticed the problem at eight thirty."
+            ],
+            [
+              "Electrician",
+              "Thank you. Have you already observed anything elsewhere, without doing any further checks?"
+            ],
+            [
+              "Client",
+              "No, I only know about those two. Someone mentioned the whole floor."
+            ],
+            [
+              "Electrician",
+              "I'll keep that broader suggestion separate from what you actually reported to us."
+            ],
+            [
+              "Client",
+              "The distribution board's directory says office. Doesn't that confirm the circuit identifier?"
+            ],
+            [
+              "Electrician",
+              "It gives us a reference, but the circuit identification still needs verification."
+            ],
+            [
+              "Client",
+              "Should I send you a photograph of the room label from the corridor?"
+            ],
+            [
+              "Electrician",
+              "Yes, if it's available without approaching equipment; no electrical investigation is needed from you."
+            ],
+            [
+              "Client",
+              "I'll send that existing photograph and leave the service description limited to my observations."
+            ]
+          ]
+        },
+        {
+          "title": "Outlet means different things to different people",
+          "setting": "An electrician clarifies a shop manager's request about a wall device.",
+          "turns": [
+            [
+              "Electrician",
+              "You asked us to relocate an outlet. Which item on this elevation do you mean?"
+            ],
+            [
+              "Shop manager",
+              "The round fitting above the display, where the light comes out near the sign."
+            ],
+            [
+              "Electrician",
+              "That's a light fitting rather than a receptacle. Are you requesting a position change?"
+            ],
+            [
+              "Shop manager",
+              "Yes, the new sign would cover it. I used outlet because I couldn't name it."
+            ],
+            [
+              "Electrician",
+              "No problem. We'll identify the fitting by its drawing tag so the request is clear."
+            ],
+            [
+              "Shop manager",
+              "The tag is L7, and the sign company has a revised elevation available."
+            ],
+            [
+              "Electrician",
+              "Please send that elevation with the request; a photograph alone won't define the new position."
+            ],
+            [
+              "Shop manager",
+              "Can you price it now, or do you need the proposed location first?"
+            ],
+            [
+              "Electrician",
+              "We need the location and a review of the affected work before quoting."
+            ],
+            [
+              "Shop manager",
+              "Then I'll obtain the elevation and describe this as relocating fitting L7, not a socket."
+            ]
+          ]
+        },
+        {
+          "title": "Yesterday's account is secondhand",
+          "setting": "An electrician checks the source of an intermittent complaint with a caretaker.",
+          "turns": [
+            [
+              "Electrician",
+              "The service note says the lobby lights flickered yesterday. Did you see that yourself?"
+            ],
+            [
+              "Caretaker",
+              "No, the evening receptionist told me. I wasn't on site during that shift."
+            ],
+            [
+              "Electrician",
+              "Do you know the time or which fittings they were describing in the lobby?"
+            ],
+            [
+              "Caretaker",
+              "They said around six, near the reception counter, but I don't have exact identifiers."
+            ],
+            [
+              "Electrician",
+              "I'll record those details as their report and keep the locations approximate for now."
+            ],
+            [
+              "Caretaker",
+              "Would it help if I asked them to clarify what they already noticed?"
+            ],
+            [
+              "Electrician",
+              "Yes, ask about the time and location, not for them to reproduce the issue."
+            ],
+            [
+              "Caretaker",
+              "Understood. I'll also check whether there is an earlier service reference for those fittings."
+            ],
+            [
+              "Electrician",
+              "That would help connect the history without assuming the same cause has returned."
+            ],
+            [
+              "Caretaker",
+              "I'll send the reference if I find it, clearly separate from yesterday's secondhand account."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two Room 12s",
+        "brief": "A business has Room 12 in both buildings A and B. A service request names Room 12 and a desk receptacle; the client confirms building B and a west-facing window. No circuit is identified.",
+        "role_a": "Electrician: clarify the building and room without inventing a circuit assignment.",
+        "role_b": "Client: confirm building B, Room 12 beside the west-facing window, and reception contact Dana.",
+        "opening_line": "Which building contains the Room 12 in your request?",
+        "complication": "The appointment email still names building A.",
+        "success_checks": [
+          "Confirm building B and the room.",
+          "Correct the appointment location verbally.",
+          "Keep circuit identity unverified."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Kelvins are not lumens",
+          "setting": "An electrician compares the client's two proposed luminaires.",
+          "turns": [
+            [
+              "Electrician",
+              "Both luminaires are listed at twelve hundred lumens. Their color temperatures are different."
+            ],
+            [
+              "Client",
+              "I thought the four-thousand-kelvin one would give us more light than the three-thousand one."
+            ],
+            [
+              "Electrician",
+              "The kelvin figure describes warm or cool appearance, not the amount of light emitted."
+            ],
+            [
+              "Client",
+              "So the four-thousand option looks cooler, while their stated output is the same?"
+            ],
+            [
+              "Electrician",
+              "Yes. That's the comparison these figures support, without settling the room's lighting design."
+            ],
+            [
+              "Client",
+              "Will equal lumens guarantee that the desk looks equally bright under either fitting?"
+            ],
+            [
+              "Electrician",
+              "No, the fitting's distribution and the room arrangement also matter to that assessment."
+            ],
+            [
+              "Client",
+              "Then I'd like the designer to compare their appearance and suitability for this desk."
+            ],
+            [
+              "Electrician",
+              "I'll include both data sheets and keep driver compatibility as a separate review point."
+            ],
+            [
+              "Client",
+              "Good. My preference is cooler light, but that isn't approval of an unchecked substitution."
+            ]
+          ]
+        },
+        {
+          "title": "The fitting code has a suffix",
+          "setting": "An electrician checks a supplier's proposed lighting delivery.",
+          "turns": [
+            [
+              "Electrician",
+              "The delivery note lists Lumenia forty B, while our approved schedule says forty D."
+            ],
+            [
+              "Supplier",
+              "The main model name matches. Does the final letter matter on this order?"
+            ],
+            [
+              "Electrician",
+              "It may identify a different variant. Please compare the complete codes, not just the name."
+            ],
+            [
+              "Supplier",
+              "I can ask the manufacturer what each suffix means and send the matching data sheets."
+            ],
+            [
+              "Electrician",
+              "Please include the driver information too; the visible housing isn't the whole specification."
+            ],
+            [
+              "Supplier",
+              "Understood. Should I dispatch B now and leave the paperwork review until it arrives?"
+            ],
+            [
+              "Electrician",
+              "No substitution is agreed. Keep the order pending while we resolve the variant."
+            ],
+            [
+              "Supplier",
+              "I'll retain the original requirement and label B as a proposed alternative only."
+            ],
+            [
+              "Electrician",
+              "Thank you. A clear comparison will help the reviewer decide without guessing from product photographs."
+            ],
+            [
+              "Supplier",
+              "I'll return with the full-code comparison and a separate availability update for the specified version."
+            ]
+          ]
+        },
+        {
+          "title": "Dimmable does not identify the control",
+          "setting": "An electrician explains a product-description limit to an interior designer.",
+          "turns": [
+            [
+              "Electrician",
+              "This catalogue calls the luminaire dimmable, but it doesn't identify the proposed control arrangement."
+            ],
+            [
+              "Interior designer",
+              "The client thought dimmable meant it would work with any control already in the room."
+            ],
+            [
+              "Electrician",
+              "That description alone doesn't confirm compatibility between the light source, driver, and control."
+            ],
+            [
+              "Interior designer",
+              "Could we ask the supplier for confirmation against the actual equipment references in our schedule?"
+            ],
+            [
+              "Electrician",
+              "Yes, please include all those references rather than only the luminaire's marketing name."
+            ],
+            [
+              "Interior designer",
+              "I'll also ask whether the proposed alternate uses the same driver as the approved fitting."
+            ],
+            [
+              "Electrician",
+              "Good. We should compare documented combinations, not infer compatibility from the same appearance."
+            ],
+            [
+              "Interior designer",
+              "The client wants a simple explanation. How should I describe why selection remains pending?"
+            ],
+            [
+              "Electrician",
+              "Say the light can be dimmed in a suitable arrangement, but this combination is unconfirmed."
+            ],
+            [
+              "Interior designer",
+              "I'll use that wording and keep the product preference separate from technical acceptance."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Watts on one sheet, lumens on another",
+        "brief": "One fictional quotation emphasizes 18 watts; another states 1,500 lumens. The client asks which produces more light. Neither provides both figures.",
+        "role_a": "Electrician: distinguish electrical power from light output and request comparable data.",
+        "role_b": "Client: you care about useful light and operating cost but have no additional data.",
+        "opening_line": "These quotations emphasize different properties, so we cannot compare light output from those two numbers alone.",
+        "complication": "The client suggests choosing the larger number regardless of units.",
+        "success_checks": [
+          "Name the different units.",
+          "Ask for comparable product information.",
+          "Avoid predicting room performance or costs from incomplete data."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Eleven hundred to which point?",
+          "setting": "An electrician and designer resolve the question to be answered for reception.",
+          "turns": [
+            [
+              "Electrician",
+              "The mounting height is eleven hundred millimeters, but which device point is measured?"
+            ],
+            [
+              "Designer",
+              "Is the uncertainty about the floor level or about the device itself?"
+            ],
+            [
+              "Electrician",
+              "The device point. Finished floor level is named, but centerline or lower edge isn't."
+            ],
+            [
+              "Designer",
+              "The joinery detail uses the centerline. I need to reconcile the electrical note with that."
+            ],
+            [
+              "Electrician",
+              "Thank you. The client assumed identical numbers guaranteed the two components would align."
+            ],
+            [
+              "Designer",
+              "They don't if the reference points differ. I'll issue a coordinated note for that location."
+            ],
+            [
+              "Electrician",
+              "Should I keep the current position marked as proposed until the clarification comes back?"
+            ],
+            [
+              "Designer",
+              "Yes. Don't describe it as an agreed installation location while the point remains unresolved."
+            ],
+            [
+              "Electrician",
+              "I'll explain the difference to the client and identify both drawing references in the query."
+            ],
+            [
+              "Designer",
+              "That will let us answer the actual positioning question instead of debating the number alone."
+            ]
+          ]
+        },
+        {
+          "title": "The ceiling plan and the table move",
+          "setting": "An electrician and project coordinator discuss a revised meeting-room layout.",
+          "turns": [
+            [
+              "Electrician",
+              "The furniture plan moved the meeting table, but the reflected ceiling plan hasn't changed."
+            ],
+            [
+              "Project coordinator",
+              "The client wants the pendant centered above the table in the new layout."
+            ],
+            [
+              "Electrician",
+              "Then we need a coordinated lighting position rather than assuming the old centerline still applies."
+            ],
+            [
+              "Project coordinator",
+              "Could you tell the crew to follow the table when the furniture arrives?"
+            ],
+            [
+              "Electrician",
+              "The table's final position isn't a documented installation reference. Let's ask the designer for dimensions."
+            ],
+            [
+              "Project coordinator",
+              "I can send both plans and identify which furniture revision the client has selected."
+            ],
+            [
+              "Electrician",
+              "Please include the pendant tag so the response refers to this fitting specifically."
+            ],
+            [
+              "Project coordinator",
+              "The client also moved the credenza. Should that be part of the same coordination review?"
+            ],
+            [
+              "Electrician",
+              "Yes, flag it as a separate changed element, not an assumed instruction about nearby devices."
+            ],
+            [
+              "Project coordinator",
+              "I'll request a revised coordinated layout and keep both affected positions pending that response."
+            ]
+          ]
+        },
+        {
+          "title": "Left as viewed from where?",
+          "setting": "An electrician clarifies a client's description of a proposed wall control position.",
+          "turns": [
+            [
+              "Electrician",
+              "You requested the control on the left of the doorway. From which viewpoint?"
+            ],
+            [
+              "Client",
+              "I meant standing inside the room and looking toward the corridor through the doorway."
+            ],
+            [
+              "Electrician",
+              "Thanks. The supplier's sketch looks from the corridor, so left refers to the opposite side."
+            ],
+            [
+              "Client",
+              "That explains why their marked position looked wrong when I reviewed it yesterday."
+            ],
+            [
+              "Electrician",
+              "Could we identify the wall and dimension reference instead of relying on left alone?"
+            ],
+            [
+              "Client",
+              "Yes, the wall beside the storage cupboard is the side I actually mean."
+            ],
+            [
+              "Electrician",
+              "I'll mark that proposed location on the room elevation for the designer's review."
+            ],
+            [
+              "Client",
+              "Please label the viewing direction as well, because the plan is hard for me to visualize."
+            ],
+            [
+              "Electrician",
+              "I will, and the final position will remain subject to the coordinated design confirmation."
+            ],
+            [
+              "Client",
+              "Good. My preference is now clear without either of us guessing from a mirrored viewpoint."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Dimensions in two unit systems",
+        "brief": "A client's equipment sketch gives a control height in inches. The project elevation uses millimeters and a centerline reference. The sketch does not identify a measurement point.",
+        "role_a": "Electrician: request explicit units and device reference on a coordinated detail.",
+        "role_b": "Client: you can obtain the manufacturer's dimensional drawing.",
+        "opening_line": "Can we confirm both the units and the point on the control that this dimension refers to?",
+        "complication": "The client offers a rounded verbal conversion instead of the drawing.",
+        "success_checks": [
+          "Distinguish conversion from reference-point clarification.",
+          "Request the dimensional drawing.",
+          "Leave the final position unconfirmed."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Two services in bay C3",
+          "setting": "An electrician asks the ceiling coordinator for a joint review.",
+          "turns": [
+            [
+              "Electrician",
+              "Drawing E6 puts our cable tray, not conduit, in the duct space shown for C3."
+            ],
+            [
+              "Ceiling coordinator",
+              "Are both layouts current, or might one be an older issue in the folder?"
+            ],
+            [
+              "Electrician",
+              "I've checked our current issue; the mechanical lead needs to confirm their layout status."
+            ],
+            [
+              "Ceiling coordinator",
+              "Bring both references to the one o'clock meeting so we can establish that first."
+            ],
+            [
+              "Electrician",
+              "Please include both trade leads. This needs a coordinated route decision, not a verbal guess."
+            ],
+            [
+              "Ceiling coordinator",
+              "I agree. Can you mark the affected bay without proposing an installation change yourself?"
+            ],
+            [
+              "Electrician",
+              "Yes, I'll highlight the overlap and identify the drawing references for everyone attending."
+            ],
+            [
+              "Ceiling coordinator",
+              "The client is asking whether the electrical team has already changed its route on site."
+            ],
+            [
+              "Electrician",
+              "No change is agreed. Please describe this as a drawing conflict awaiting joint review."
+            ],
+            [
+              "Ceiling coordinator",
+              "I will, and the meeting record will identify the decision needed and whoever accepts follow-up."
+            ]
+          ]
+        },
+        {
+          "title": "Access is shared, not assumed",
+          "setting": "An electrician and site manager discuss access above a shop counter.",
+          "turns": [
+            [
+              "Electrician",
+              "We requested the counter area tomorrow morning. Has that access window been confirmed?"
+            ],
+            [
+              "Site manager",
+              "The shop manager offered nine until eleven, but another contractor has the same window."
+            ],
+            [
+              "Electrician",
+              "Then both crews need a coordinated arrangement before either treats the area as available."
+            ],
+            [
+              "Site manager",
+              "Could you accept eleven until one if the shop manager agrees to that change?"
+            ],
+            [
+              "Electrician",
+              "Possibly, but I'll check crew availability before committing to the revised period."
+            ],
+            [
+              "Site manager",
+              "Please also say whether your visit needs the whole counter area or a defined section."
+            ],
+            [
+              "Electrician",
+              "I'll identify the planned work area for review, without assuming another crew can work alongside."
+            ],
+            [
+              "Site manager",
+              "That will help the shop manager understand the disruption instead of hearing electrical work all day."
+            ],
+            [
+              "Electrician",
+              "Once the boundaries and timing are agreed, I'll repeat them back to our crew."
+            ],
+            [
+              "Site manager",
+              "I'll coordinate the two requests and confirm one shared access plan with the shop manager."
+            ]
+          ]
+        },
+        {
+          "title": "A route on paper is not an opening approval",
+          "setting": "An electrician responds to a builder's interpretation of a containment drawing.",
+          "turns": [
+            [
+              "Electrician",
+              "The proposed containment route passes near this wall, but no opening detail is agreed."
+            ],
+            [
+              "Builder",
+              "I thought the route line meant the opening location and size were already settled."
+            ],
+            [
+              "Electrician",
+              "It identifies a proposed path, not every structural or construction detail along that path."
+            ],
+            [
+              "Builder",
+              "Who needs the question so we avoid passing an incomplete instruction between crews?"
+            ],
+            [
+              "Electrician",
+              "The designer and relevant building specialist need the location and current containment information."
+            ],
+            [
+              "Builder",
+              "I'll assemble those references and ask the site coordinator to arrange the review."
+            ],
+            [
+              "Electrician",
+              "Please keep the drawing label proposed visible until a coordinated response is received."
+            ],
+            [
+              "Builder",
+              "Understood. I'll tell our supervisor that route coordination remains open at this wall."
+            ],
+            [
+              "Electrician",
+              "Thank you. That preserves the distinction between identifying a path and approving associated building work."
+            ],
+            [
+              "Builder",
+              "I'll use that wording in the coordination discussion instead of saying the electrician approved an opening."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The route label names the wrong floor",
+        "brief": "A marked containment query is titled Level 3, but drawing E12 and its bay B4 label identify Level 2. No route change is approved. The electrical and mechanical leads for Level 2 need the corrected meeting invitation.",
+        "role_a": "Electrician: correct the location and ask the coordinator to repeat it back.",
+        "role_b": "Coordinator: you have already invited the Level 3 supervisor but can correct the invitation.",
+        "opening_line": "The query title has the wrong floor; the conflict is in Level 2, bay B4.",
+        "complication": "A participant has printed the earlier query.",
+        "success_checks": [
+          "Correct the floor and bay explicitly.",
+          "Identify the earlier copy as superseded.",
+          "Confirm the right trade representatives receive the correction."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Correcting the tenant notice",
+          "setting": "An electrician and facilities representative review the draft outage notice.",
+          "turns": [
+            [
+              "Electrician",
+              "The draft says whole floor, but our request covers reception lighting only."
+            ],
+            [
+              "Facilities representative",
+              "Thank you. Is the six-to-seven period confirmed, or still awaiting our approval?"
+            ],
+            [
+              "Electrician",
+              "The outage window remains proposed. Please preserve that status in the revised shutdown notice."
+            ],
+            [
+              "Facilities representative",
+              "We can approve that period now, provided the described affected services remain unchanged."
+            ],
+            [
+              "Electrician",
+              "I'll record that planning approval and correct the area before the notice is issued."
+            ],
+            [
+              "Facilities representative",
+              "Does this mean the equipment is isolated and the crew can begin work?"
+            ],
+            [
+              "Electrician",
+              "No. This conversation confirms a booking, not technical status or permission to proceed."
+            ],
+            [
+              "Facilities representative",
+              "Understood. The responsible electrical lead will communicate those matters through the site arrangements."
+            ],
+            [
+              "Electrician",
+              "Please have the tenant contact repeat back the affected area when they receive the notice."
+            ],
+            [
+              "Facilities representative",
+              "I'll confirm reception lighting and the agreed hour, without making any broader electrical-status claim."
+            ]
+          ]
+        },
+        {
+          "title": "The tenant names an overlooked dependency",
+          "setting": "An electrician discusses a proposed interruption with an office contact.",
+          "turns": [
+            [
+              "Electrician",
+              "The proposed notice names the lobby lighting. Do you have any operational concerns to raise?"
+            ],
+            [
+              "Office contact",
+              "Our evening training group uses the lobby for registration at the proposed time."
+            ],
+            [
+              "Electrician",
+              "That's useful scheduling information. Has the facilities coordinator received that conflict from you?"
+            ],
+            [
+              "Office contact",
+              "Not yet. I thought an electrical notice meant the date couldn't be discussed."
+            ],
+            [
+              "Electrician",
+              "This one is proposed. Let's take the registration conflict to the coordinator before confirming."
+            ],
+            [
+              "Office contact",
+              "Could we request a later window, after the group moves into its room?"
+            ],
+            [
+              "Electrician",
+              "We can request it, but crew availability and the revised site plan still need checking."
+            ],
+            [
+              "Office contact",
+              "I'll provide the registration time rather than simply saying the whole evening is impossible."
+            ],
+            [
+              "Electrician",
+              "I'll include that specific constraint when asking the coordinator to review the proposed period."
+            ],
+            [
+              "Office contact",
+              "Thank you. Please send the confirmed arrangement before we change the training invitation."
+            ]
+          ]
+        },
+        {
+          "title": "No restoration time has been confirmed",
+          "setting": "An electrician relays a status update to a building manager.",
+          "turns": [
+            [
+              "Electrician",
+              "The electrical lead's update says the review is continuing; no restoration time is confirmed."
+            ],
+            [
+              "Building manager",
+              "The tenant remembers seven o'clock from the earlier planned window and expects that deadline."
+            ],
+            [
+              "Electrician",
+              "We need to distinguish the earlier plan from the current status they have reported."
+            ],
+            [
+              "Building manager",
+              "Can you promise another half hour so I have something definite to tell them?"
+            ],
+            [
+              "Electrician",
+              "I can't invent that estimate. I can ask when the next status update is due."
+            ],
+            [
+              "Building manager",
+              "Please do. The tenants need a contact and a clear account of what remains unknown."
+            ],
+            [
+              "Electrician",
+              "The lead has agreed to another update at seven fifteen, without promising restoration then."
+            ],
+            [
+              "Building manager",
+              "I'll tell them seven fifteen is the update time, not the service-return time."
+            ],
+            [
+              "Electrician",
+              "Exactly. That preserves the distinction and avoids replacing one expectation with another unsupported promise."
+            ],
+            [
+              "Building manager",
+              "I'll relay the current status now and keep the tenant contact available for that update."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The approved notice is for a different date",
+        "brief": "A reception-lighting notice approved for Tuesday 18:00-19:00 is reused in a draft for Wednesday at the same time. Wednesday's access and outage window are not confirmed. The proposed affected services remain reception lighting only.",
+        "role_a": "Electrician: distinguish scope continuity from timing approval.",
+        "role_b": "Facilities coordinator: you can seek Wednesday confirmation but cannot assume it.",
+        "opening_line": "The area is unchanged, but Tuesday's approval does not confirm Wednesday's window.",
+        "complication": "The tenant says the old notice looks official enough.",
+        "success_checks": [
+          "Identify the changed date.",
+          "Keep Wednesday pending.",
+          "Request a correctly dated confirmed notice."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Not observed is not ruled out",
+          "setting": "An electrician explains the display-bay visit note to the client.",
+          "turns": [
+            [
+              "Electrician",
+              "We didn't observe flickering during the visit to display bay two today."
+            ],
+            [
+              "Client",
+              "Does that mean the problem has gone away and we can close the request?"
+            ],
+            [
+              "Electrician",
+              "Not necessarily. An intermittent fault may not appear during a particular observation period."
+            ],
+            [
+              "Client",
+              "I was worried you thought I imagined it because it wasn't happening then."
+            ],
+            [
+              "Electrician",
+              "Your report remains in the service history, with its location and timing clearly attributed."
+            ],
+            [
+              "Client",
+              "Have you decided whether the driver is causing it and needs replacing?"
+            ],
+            [
+              "Electrician",
+              "No cause is confirmed, and the technical report is still awaiting review."
+            ],
+            [
+              "Client",
+              "Please keep the request open until the reviewer explains what the findings actually establish."
+            ],
+            [
+              "Electrician",
+              "I'll ask for that interpretation and relay the outcome without promising a particular repair."
+            ],
+            [
+              "Client",
+              "Thank you. That addresses my concern without turning today's quiet visit into proof of no fault."
+            ]
+          ]
+        },
+        {
+          "title": "A result without a matching reference",
+          "setting": "An electrician queries a report identifier with a test-report coordinator.",
+          "turns": [
+            [
+              "Electrician",
+              "This test report lists C12, but our enquiry concerns the display-bay circuit C21."
+            ],
+            [
+              "Report coordinator",
+              "The digits may have been transposed. Can you simply correct the report label?"
+            ],
+            [
+              "Electrician",
+              "We need the report author to verify the tested reference before changing the record."
+            ],
+            [
+              "Report coordinator",
+              "You're right. A plausible typing error doesn't establish which circuit the results belong to."
+            ],
+            [
+              "Electrician",
+              "Please ask the author to reconcile the source record and issue any correction themselves."
+            ],
+            [
+              "Report coordinator",
+              "I'll preserve the received report and identify the reference mismatch in the query."
+            ],
+            [
+              "Electrician",
+              "The client is asking whether the listed insulation resistance result proves their concern is resolved."
+            ],
+            [
+              "Report coordinator",
+              "That result can't be attributed to their circuit until the reference and interpretation are verified."
+            ],
+            [
+              "Electrician",
+              "I'll explain that the report linkage is pending, without interpreting the measurement myself."
+            ],
+            [
+              "Report coordinator",
+              "I'll contact the author and return the corrected or confirmed record with its review status."
+            ]
+          ]
+        },
+        {
+          "title": "The symptom returned after the visit",
+          "setting": "An electrician takes a follow-up account from a shop supervisor.",
+          "turns": [
+            [
+              "Electrician",
+              "You reported the display flickered again after our visit. When did you notice it?"
+            ],
+            [
+              "Shop supervisor",
+              "At about five thirty, near the same display bay as before yesterday's appointment."
+            ],
+            [
+              "Electrician",
+              "I'll add that account to the existing service history as a later report."
+            ],
+            [
+              "Shop supervisor",
+              "Does the recurrence mean the earlier electrician's report was necessarily wrong about the visit?"
+            ],
+            [
+              "Electrician",
+              "No. A later event doesn't change what was observed during that earlier period."
+            ],
+            [
+              "Shop supervisor",
+              "That makes sense. I want the new information considered, not the old record erased."
+            ],
+            [
+              "Electrician",
+              "I'll link both accounts and ask the technical reviewer to assess the updated history."
+            ],
+            [
+              "Shop supervisor",
+              "Should we describe the cause as confirmed now that the symptom happened twice?"
+            ],
+            [
+              "Electrician",
+              "Repeated reports establish recurrence, not a particular cause. That conclusion still needs technical assessment."
+            ],
+            [
+              "Shop supervisor",
+              "I'll use recurrence in my update and leave the diagnosis to the reviewer."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The report includes an exception",
+        "brief": "A report summary says review complete but retains an unresolved directory-description mismatch for circuit D4: the directory says store, while the project room plan says archive. The correct identification has not been verified. A manager wants the handover described as no open items.",
+        "role_a": "Electrician: identify the exception and request its follow-up owner.",
+        "role_b": "Manager: you can assign report follow-up to the project engineer.",
+        "opening_line": "The review is complete, but the D4 observation is still open.",
+        "complication": "The manager argues that complete must mean everything is resolved.",
+        "success_checks": [
+          "Separate review completion from issue resolution.",
+          "Name D4.",
+          "Confirm who will obtain the next technical response."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "A second machine changes the enquiry",
+          "setting": "An electrician discusses an added espresso machine with a cafe owner.",
+          "turns": [
+            [
+              "Electrician",
+              "The second machine wasn't included in the equipment information for our agreed scope."
+            ],
+            [
+              "Cafe owner",
+              "It looks like the first one. Can we keep the same price and opening date?"
+            ],
+            [
+              "Electrician",
+              "We need its manufacturer's data and proposed location to assess the added connected load."
+            ],
+            [
+              "Cafe owner",
+              "I'll ask the supplier for those. Does its similar appearance tell you anything useful?"
+            ],
+            [
+              "Electrician",
+              "It identifies a possible model family, but doesn't establish demand or compatibility here."
+            ],
+            [
+              "Cafe owner",
+              "Could you prepare a change quotation once the technical review has enough information?"
+            ],
+            [
+              "Electrician",
+              "Yes, with the proposed work and timing stated, rather than silently extending the existing scope."
+            ],
+            [
+              "Cafe owner",
+              "Please show the difference clearly so I can decide whether to keep one machine initially."
+            ],
+            [
+              "Electrician",
+              "I'll include that comparison without recommending an unassessed circuit arrangement for either option."
+            ],
+            [
+              "Cafe owner",
+              "Then obtain the data first; my request for a price is not approval to proceed."
+            ]
+          ]
+        },
+        {
+          "title": "The alternate enclosure has different details",
+          "setting": "An electrician and supplier discuss a proposed product substitution.",
+          "turns": [
+            [
+              "Electrician",
+              "Your alternate enclosure has the same external size, but the specification details differ."
+            ],
+            [
+              "Supplier",
+              "It's available tomorrow, while the specified model is on a longer lead time."
+            ],
+            [
+              "Electrician",
+              "Availability is useful, but it doesn't establish suitability. Please provide the full comparison."
+            ],
+            [
+              "Supplier",
+              "Which details should I include so the reviewer can evaluate the proposed alternative?"
+            ],
+            [
+              "Electrician",
+              "Use the stated project requirements and both manufacturers' data, rather than a same-size description."
+            ],
+            [
+              "Supplier",
+              "I can show each requirement against the offered product and identify any unconfirmed points."
+            ],
+            [
+              "Electrician",
+              "Please retain the original model on the order until the substitution decision is recorded."
+            ],
+            [
+              "Supplier",
+              "Understood. I won't treat the request for comparison as approval to dispatch the alternate."
+            ],
+            [
+              "Electrician",
+              "The client also needs the quoted delivery difference separated from any installation-date prediction."
+            ],
+            [
+              "Supplier",
+              "I'll provide the supply dates as quotations, with technical acceptance and site timing still separate."
+            ]
+          ]
+        },
+        {
+          "title": "A dedicated circuit is not spare capacity",
+          "setting": "An electrician explains terminology in a proposal to a facilities client.",
+          "turns": [
+            [
+              "Electrician",
+              "The proposal mentions a dedicated circuit for the identified equipment in the reviewed design."
+            ],
+            [
+              "Facilities client",
+              "Does dedicated mean we can add other appliances there whenever the office expands?"
+            ],
+            [
+              "Electrician",
+              "No. It describes an intended specific use, not a promise of spare capacity."
+            ],
+            [
+              "Facilities client",
+              "I was reading it as an extra circuit reserved for any future equipment."
+            ],
+            [
+              "Electrician",
+              "Then we should clarify the intended equipment reference in the proposal before you approve it."
+            ],
+            [
+              "Facilities client",
+              "Please do. Our equipment schedule may change when the new tenant gives us its list."
+            ],
+            [
+              "Electrician",
+              "That change needs review; we shouldn't assume the original assessment covers an unknown future list."
+            ],
+            [
+              "Facilities client",
+              "Can the quotation identify which equipment information it was based on for that assessment?"
+            ],
+            [
+              "Electrician",
+              "Yes, I'll request that reference and keep future additions outside the current confirmation."
+            ],
+            [
+              "Facilities client",
+              "That gives us a clear basis for discussing changes when the tenant's actual requirements arrive."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One quotation includes controls",
+        "brief": "Two fictional lighting-change quotations cover six luminaires. Only quotation A explicitly includes the specified controls; B says fittings only. The client compares totals as equivalent.",
+        "role_a": "Electrician: explain the scope difference without choosing a product.",
+        "role_b": "Client: you can request a revised comparable quotation.",
+        "opening_line": "Before comparing totals, can we confirm whether both prices include the same controls?",
+        "complication": "The cheaper supplier says controls can be discussed later.",
+        "success_checks": [
+          "Identify the missing inclusion.",
+          "Request a comparable scope.",
+          "Avoid calling either total better value from incomplete information."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "The archive still says old store",
+          "setting": "An electrician hands over documents to the facilities client.",
+          "turns": [
+            [
+              "Electrician",
+              "The as-built drawings are received, but the circuit directory's old-store entry remains unresolved."
+            ],
+            [
+              "Facilities client",
+              "That room is now the archive. Can we assume it's just the old name?"
+            ],
+            [
+              "Electrician",
+              "It may be, but the circuit identification needs verification before that conclusion is recorded."
+            ],
+            [
+              "Facilities client",
+              "Who will handle that question after your crew leaves this part of the project?"
+            ],
+            [
+              "Electrician",
+              "Priya has accepted the follow-up and will report Thursday, with the query still visible."
+            ],
+            [
+              "Facilities client",
+              "Please distinguish that from a promise that the directory will be corrected by Thursday."
+            ],
+            [
+              "Electrician",
+              "Yes, Thursday is the report date; the outcome depends on the verification."
+            ],
+            [
+              "Facilities client",
+              "Does receiving the drawings establish that every other technical check is complete?"
+            ],
+            [
+              "Electrician",
+              "No. Document receipt and technical verification have separate statuses in the handover record."
+            ],
+            [
+              "Facilities client",
+              "I'll retain that distinction and expect Priya's report on the unresolved archive reference."
+            ]
+          ]
+        },
+        {
+          "title": "A record belongs to another asset",
+          "setting": "An electrician checks a commissioning document with a building representative.",
+          "turns": [
+            [
+              "Electrician",
+              "This commissioning record identifies board B, but the handover folder is labeled board D."
+            ],
+            [
+              "Building representative",
+              "Could the folder name simply be wrong, or does the report need reissuing?"
+            ],
+            [
+              "Electrician",
+              "We need to reconcile the references before deciding which record or label is incorrect."
+            ],
+            [
+              "Building representative",
+              "Please don't remove either reference yet; our consultant may need to compare the originals."
+            ],
+            [
+              "Electrician",
+              "Agreed. I'll flag the mismatch and request confirmation from the document author."
+            ],
+            [
+              "Building representative",
+              "Is the document's presence enough to mark board D's record requirement as complete?"
+            ],
+            [
+              "Electrician",
+              "Not while its applicability remains unresolved. Received and matched are different statuses."
+            ],
+            [
+              "Building representative",
+              "I'll keep the document item open and name the reconciliation owner in the register."
+            ],
+            [
+              "Electrician",
+              "The author can respond Tuesday. I'll ask for a confirmed reference, not an informal guess."
+            ],
+            [
+              "Building representative",
+              "Please include that response in the final pack so future readers understand the correction."
+            ]
+          ]
+        },
+        {
+          "title": "Handover does not replace user orientation",
+          "setting": "An electrician clarifies a client's request for a building-team briefing.",
+          "turns": [
+            [
+              "Electrician",
+              "The document handover is booked Monday. You also mentioned a briefing for the building team."
+            ],
+            [
+              "Client",
+              "Yes, but the team cannot attend Monday. Can the paperwork stand in for the briefing?"
+            ],
+            [
+              "Electrician",
+              "The pack gives reference information; it doesn't confirm that a requested orientation has happened."
+            ],
+            [
+              "Client",
+              "Then let's keep the briefing as an outstanding item rather than mark everything delivered."
+            ],
+            [
+              "Electrician",
+              "Which staff need the session, and who can confirm a suitable time for them?"
+            ],
+            [
+              "Client",
+              "Our facilities supervisor can coordinate attendance. Please discuss dates with her directly this afternoon."
+            ],
+            [
+              "Electrician",
+              "I'll ask the appropriate lead to agree the session scope and timing with her."
+            ],
+            [
+              "Client",
+              "Please avoid giving operating instructions through an informal call to whoever answers the phone."
+            ],
+            [
+              "Electrician",
+              "Agreed. This handover will identify the documents and the arranged briefing, not improvise technical training."
+            ],
+            [
+              "Client",
+              "That gives us an honest record of what's received and what still needs scheduling."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A contact change before closeout",
+        "brief": "Priya leaves before the directory query is resolved: row 7 says old store, while the current room plan names archive. The circuit relationship is unverified. Omar agrees to take document follow-up, with a status call Friday; technical findings remain pending.",
+        "role_a": "Outgoing electrician: give the entry reference and confirm Omar's acceptance.",
+        "role_b": "Omar: repeat the query and distinguish the Friday update from completion.",
+        "opening_line": "Can you accept follow-up on the unresolved archive-room directory entry?",
+        "complication": "The client thinks a new owner means a new technical finding.",
+        "success_checks": [
+          "Transfer the exact query.",
+          "Confirm Omar's acceptance.",
+          "Preserve the pending technical status."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "One booking, two different concerns",
+      "setting": "An electrician and office manager separate two items in a service request.",
+      "dialogue": [
+        [
+          "Electrician",
+          "The booking lists a loose-looking wall plate and lights that dim occasionally. Are those in the same room?"
+        ],
+        [
+          "Office manager",
+          "No. The plate is in the meeting room, while the lighting report concerns the reception area."
+        ],
+        [
+          "Electrician",
+          "I'll separate the locations. When you say loose-looking, is that a visual impression or a previous electrician's finding?"
+        ],
+        [
+          "Office manager",
+          "It's my visual impression. I haven't touched it, and nobody has assessed it for this booking."
+        ],
+        [
+          "Electrician",
+          "Thank you. I'll preserve that wording rather than record a confirmed defect or ask you to check it."
+        ],
+        [
+          "Office manager",
+          "The receptionist mentioned the lighting. I assumed both concerns must belong to the same circuit."
+        ],
+        [
+          "Electrician",
+          "That relationship isn't established. The circuit references will need verification as part of the electrician's assessment."
+        ],
+        [
+          "Office manager",
+          "Should I combine the two items under reception so the appointment form is easier to complete?"
+        ],
+        [
+          "Electrician",
+          "Please keep them separate. Accurate locations help the visiting electrician understand the actual scope of the request."
+        ],
+        [
+          "Office manager",
+          "All right. I'll give the meeting room its own entry and attribute the lighting report to reception."
+        ],
+        [
+          "Electrician",
+          "Can you also identify the person who can provide access to each space during the visit?"
+        ],
+        [
+          "Office manager",
+          "I'll meet the electrician at reception and arrange the meeting-room access with our bookings coordinator."
+        ]
+      ],
+      "notes": [
+        "'Loose-looking' reports an appearance without claiming a completed assessment.",
+        "'That relationship isn't established' separates coinciding complaints from a verified shared circuit."
+      ]
+    },
+    {
+      "title": "A sample looks different in the showroom",
+      "setting": "An electrician and client discuss why a lighting sample is not a complete specification.",
+      "dialogue": [
+        [
+          "Electrician",
+          "The enquiry gives the housing color and model family, not the full specification."
+        ],
+        [
+          "Client",
+          "It looked warm and comfortable there. I assumed every version of that fitting would look the same."
+        ],
+        [
+          "Electrician",
+          "The family may include different light sources and drivers. We need the exact variant you viewed."
+        ],
+        [
+          "Client",
+          "I have the showroom label in a photograph. It includes a code and a kelvin figure."
+        ],
+        [
+          "Electrician",
+          "That is useful. Please send the label so we can compare it with the proposed lighting schedule."
+        ],
+        [
+          "Client",
+          "Could you simply specify the warmest version if the showroom cannot identify the original sample for us?"
+        ],
+        [
+          "Electrician",
+          "That would be a new preference, not a confirmed match. Let's first establish what the label actually identifies."
+        ],
+        [
+          "Client",
+          "Fair point. I also want the reception and corridor to feel consistent, although their fittings are different."
+        ],
+        [
+          "Electrician",
+          "Then the designer needs both locations in the comparison; matching one figure may not produce identical appearance."
+        ],
+        [
+          "Client",
+          "I'll ask for that review and avoid telling the supplier that my showroom comment approved every variant."
+        ],
+        [
+          "Electrician",
+          "I'll coordinate the product references and ask for compatibility information without treating a sample preference as technical acceptance."
+        ],
+        [
+          "Client",
+          "Once that information is available, we can make a specific selection instead of ordering from a memory."
+        ]
+      ],
+      "notes": [
+        "'A new preference, not a confirmed match' distinguishes a fallback choice from evidence.",
+        "'Exact variant' requests the particular product within a broader model family."
+      ]
+    },
+    {
+      "title": "The screen bracket changes the wall layout",
+      "setting": "An electrician and audiovisual coordinator discuss a device-position conflict on a meeting-room wall.",
+      "dialogue": [
+        [
+          "Electrician",
+          "The latest screen bracket overlaps the proposed wall-device location on our elevation. Is that bracket drawing current?"
+        ],
+        [
+          "Audiovisual coordinator",
+          "Yes, revision D replaces the earlier bracket, but the screen centerline has not moved on the wall."
+        ],
+        [
+          "Electrician",
+          "That helps. The changed bracket extent, rather than the screen centerline, appears to be the new conflict."
+        ],
+        [
+          "Audiovisual coordinator",
+          "Correct. Could your device simply move a little lower so we can retain our current bracket position?"
+        ],
+        [
+          "Electrician",
+          "We need the designer to review a specific position, including access and the adjoining joinery, before agreeing."
+        ],
+        [
+          "Audiovisual coordinator",
+          "I'll send the bracket dimensions and identify the access space our equipment supplier describes in its documentation."
+        ],
+        [
+          "Electrician",
+          "Please include the viewing direction. Our elevation and your detail currently show the wall from different sides."
+        ],
+        [
+          "Audiovisual coordinator",
+          "I can align the presentation so the overlap is clear, without altering either trade's design myself."
+        ],
+        [
+          "Electrician",
+          "The client wants to know who delayed the room. We haven't established a schedule impact from this yet."
+        ],
+        [
+          "Audiovisual coordinator",
+          "Then let's report a coordination conflict and a requested review, not blame or a confirmed completion delay."
+        ],
+        [
+          "Electrician",
+          "I'll send that update and ask when the designer can return one coordinated location."
+        ],
+        [
+          "Audiovisual coordinator",
+          "I'll attend the review with the bracket information so the response addresses both trades' actual requirements."
+        ]
+      ],
+      "notes": [
+        "'Rather than the screen centerline' isolates what actually changed.",
+        "'A specific position' turns a vague relocation request into an answerable design question."
+      ]
+    },
+    {
+      "title": "The corridor cannot serve every crew at once",
+      "setting": "An electrician and building representative discuss an occupied-office coordination plan.",
+      "dialogue": [
+        [
+          "Electrician",
+          "The lookahead gives corridor access Wednesday, but no time or affected section."
+        ],
+        [
+          "Building representative",
+          "We can offer the east section after the morning deliveries, provided the site coordinator confirms the arrangement."
+        ],
+        [
+          "Electrician",
+          "Which period should we ask them to review? Our crew schedule currently says morning without further detail."
+        ],
+        [
+          "Building representative",
+          "Eleven until one is the proposed window. The west corridor must remain available for the tenant meeting."
+        ],
+        [
+          "Electrician",
+          "I'll state those boundaries. The planned containment review concerns the east ceiling bays, not the west corridor."
+        ],
+        [
+          "Building representative",
+          "Will that mean the east corridor is closed to everyone throughout the proposed period on Wednesday?"
+        ],
+        [
+          "Electrician",
+          "The access and protection arrangements need specific site review; I shouldn't infer a closure from the booking."
+        ],
+        [
+          "Building representative",
+          "Thank you. Please also include the decorator, who has requested the same east section for a finish review."
+        ],
+        [
+          "Electrician",
+          "I'll ask the coordinator to reconcile both requests and identify what can actually be scheduled in that space."
+        ],
+        [
+          "Building representative",
+          "Can you provide a plain-language update to the tenant contact once the window and arrangements are confirmed?"
+        ],
+        [
+          "Electrician",
+          "Yes. It will name the affected section, agreed timing, and contact, without describing technical work as already approved."
+        ],
+        [
+          "Building representative",
+          "That gives us enough to plan around the visit while keeping the unresolved site arrangements visible."
+        ]
+      ],
+      "notes": [
+        "'Proposed window' prevents a offered time from sounding like a confirmed booking.",
+        "'I shouldn't infer a closure' distinguishes work access from a settled occupancy arrangement."
+      ]
+    },
+    {
+      "title": "A notice reaches the wrong tenant group",
+      "setting": "An electrician and property coordinator correct an interruption communication.",
+      "dialogue": [
+        [
+          "Electrician",
+          "The notice went to the east-wing tenants, but the approved planning scope identifies the west reception area."
+        ],
+        [
+          "Property coordinator",
+          "You're right. Our mailing list label was wrong, although the body of the notice names west reception."
+        ],
+        [
+          "Electrician",
+          "We should correct the recipients and clarify the earlier message, not assume everyone noticed that distinction."
+        ],
+        [
+          "Property coordinator",
+          "I'll send a correction to the east group and the agreed notice to the west contact."
+        ],
+        [
+          "Electrician",
+          "Please retain the actual timing and affected-service description; only the distribution error is established at present."
+        ],
+        [
+          "Property coordinator",
+          "Should I call the west tenants to confirm they received it before the coordination meeting this afternoon?"
+        ],
+        [
+          "Electrician",
+          "Yes. Ask them to acknowledge the notice and raise access or business conflicts with the facilities contact."
+        ],
+        [
+          "Property coordinator",
+          "One tenant may ask whether receiving the notice confirms that all electrical preparations have been completed."
+        ],
+        [
+          "Electrician",
+          "It doesn't. The notice communicates the agreed plan; technical readiness and isolation status require their separate confirmation."
+        ],
+        [
+          "Property coordinator",
+          "I'll keep that explanation clear and avoid describing the corrected email as permission to start work."
+        ],
+        [
+          "Electrician",
+          "Thank you. Please identify which west contact acknowledged it so we know the communication reached someone responsible."
+        ],
+        [
+          "Property coordinator",
+          "I will confirm the recipient and any questions raised, with technical status left to the electrical lead."
+        ]
+      ],
+      "notes": [
+        "'Only the distribution error is established' confines the correction to known facts.",
+        "'Acknowledged it' confirms receipt without equating it with technical readiness."
+      ]
+    },
+    {
+      "title": "The client wants a single cause for three events",
+      "setting": "An electrician and facilities client discuss a service-history summary.",
+      "dialogue": [
+        [
+          "Electrician",
+          "Your summary groups three lighting events under driver failure, but the available reports don't confirm that common cause."
+        ],
+        [
+          "Facilities client",
+          "The events sounded similar, so I used one heading to make the history easier to understand."
+        ],
+        [
+          "Electrician",
+          "We can group similar reports while keeping their locations and dates separate from a proposed explanation."
+        ],
+        [
+          "Facilities client",
+          "Would reported flickering be a more accurate heading than driver failure for that combined history?"
+        ],
+        [
+          "Electrician",
+          "Yes. It describes the symptom without claiming a diagnosis, and each report can retain its own details."
+        ],
+        [
+          "Facilities client",
+          "One report says no abnormality observed. Should I remove that event from the history altogether?"
+        ],
+        [
+          "Electrician",
+          "No. Keep both the client's account and the visit finding, with their different observation periods clearly identified."
+        ],
+        [
+          "Facilities client",
+          "The consultant can then see that a visit finding isn't the same as disproving the earlier report."
+        ],
+        [
+          "Electrician",
+          "Exactly. Also retain any stated report limitations, rather than reducing every outcome to passed or failed."
+        ],
+        [
+          "Facilities client",
+          "I'll revise the heading and separate the reports before asking for the consultant's interpretation of the pattern."
+        ],
+        [
+          "Electrician",
+          "Please ask whether any shared cause is established, and what remains uncertain, without suggesting a predetermined replacement."
+        ],
+        [
+          "Facilities client",
+          "That will give us a defensible summary and a focused review question instead of an assumed solution."
+        ]
+      ],
+      "notes": [
+        "'A common cause' means one explanation shared by several events, which similarity alone does not establish.",
+        "'Reported flickering' attributes the symptom without converting it into a diagnosis."
+      ]
+    },
+    {
+      "title": "The client wants a fixed price from an incomplete list",
+      "setting": "An electrician and workshop owner clarify the basis of a proposed expansion quotation.",
+      "dialogue": [
+        [
+          "Electrician",
+          "Your equipment list omits two manufacturers' references and two proposed locations."
+        ],
+        [
+          "Workshop owner",
+          "I hoped you could quote a standard electrical package now and adjust the details when they arrive."
+        ],
+        [
+          "Electrician",
+          "We can discuss the enquiry, but a fixed scope needs enough information for the required technical assessment."
+        ],
+        [
+          "Workshop owner",
+          "The supplier has data sheets. Would those and a marked layout give you a useful starting point?"
+        ],
+        [
+          "Electrician",
+          "Yes, together with the intended equipment use. The reviewer can identify any further information needed from there."
+        ],
+        [
+          "Workshop owner",
+          "Could we call the figure an allowance until the equipment information and the assessment are complete?"
+        ],
+        [
+          "Electrician",
+          "The estimator can describe a provisional budget basis, but it must not be presented as a confirmed installation price."
+        ],
+        [
+          "Workshop owner",
+          "Understood. I want a planning figure, not a surprise claim that I approved a fully defined package."
+        ],
+        [
+          "Electrician",
+          "I'll ask for the assumptions and exclusions to be explicit, with the unresolved equipment references listed separately."
+        ],
+        [
+          "Workshop owner",
+          "Please also distinguish supply availability from the date your crew could complete the additional work on site."
+        ],
+        [
+          "Electrician",
+          "I will request both, while leaving capacity and circuit requirements to the technical review rather than guessing."
+        ],
+        [
+          "Workshop owner",
+          "I'll obtain the data and layout today, then review the stated basis before accepting any change quotation."
+        ]
+      ],
+      "notes": [
+        "'A useful starting point' acknowledges helpful data without claiming it completes the assessment.",
+        "'Provisional budget basis' identifies a planning figure that is not a confirmed price."
+      ]
+    },
+    {
+      "title": "The incoming caretaker needs the limits too",
+      "setting": "An electrician and incoming caretaker review the handover register together.",
+      "dialogue": [
+        [
+          "Electrician",
+          "Two handover entries need follow-up by the electrical project lead."
+        ],
+        [
+          "Caretaker",
+          "I can see the directory query, but I thought the commissioning document was already in the folder."
+        ],
+        [
+          "Electrician",
+          "It is received. Its equipment reference still needs reconciliation, so receipt hasn't closed that particular document requirement."
+        ],
+        [
+          "Caretaker",
+          "Thank you. I need to explain that distinction when the outgoing caretaker transfers the building records to me."
+        ],
+        [
+          "Electrician",
+          "Please retain the original references and the pending status rather than editing the documents to make them agree."
+        ],
+        [
+          "Caretaker",
+          "I will. Who has accepted the follow-up, and when should I expect the next report on it?"
+        ],
+        [
+          "Electrician",
+          "Omar has accepted both document queries and will call Friday. That is an update commitment, not a completion guarantee."
+        ],
+        [
+          "Caretaker",
+          "I'll give him my contact details and ask that the outgoing caretaker remains copied during this transition."
+        ],
+        [
+          "Electrician",
+          "That will preserve the history. The current pack should also identify which later issue replaces any corrected document."
+        ],
+        [
+          "Caretaker",
+          "Then I won't have to guess which attachment is current when someone asks next month."
+        ],
+        [
+          "Electrician",
+          "Omar will follow up the records. Please ask the electrical lead separately about the system's operating status."
+        ],
+        [
+          "Caretaker",
+          "Understood. I'll keep those matters separate and track the two open queries until their verified responses arrive."
+        ]
+      ],
+      "notes": [
+        "'Receipt hasn't closed' distinguishes having a file from satisfying its review requirement.",
+        "'Which later issue replaces' requests a clear version history for corrected records."
+      ]
+    }
+  ]
+}

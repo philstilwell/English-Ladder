@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 from pypdf import PdfReader
 from work_curriculum import ROOT, load_tracks
 from work_lesson_conversations import content_hash, load_course, render_activities
+from work_icons import icon_asset
 
 
 class LessonConversationTests(unittest.TestCase):
@@ -34,8 +35,8 @@ class LessonConversationTests(unittest.TestCase):
                 self.assertNotEqual(brief, module['brief'])
                 self.assertNotIn(brief, scenarios)
                 scenarios.add(brief)
-        self.assertEqual(len(all_scripts), 984)
-        self.assertEqual(len(scenarios), 328)
+        self.assertEqual(len(all_scripts), 1584)
+        self.assertEqual(len(scenarios), 528)
 
     def test_accordions_are_closed_and_complete_without_javascript(self):
         for track in self.tracks:
@@ -56,8 +57,8 @@ class LessonConversationTests(unittest.TestCase):
     def test_pdf_activity_content_and_artwork_are_current(self):
         from generate_work_documents import clean
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
-        illustration_hash = hashlib.sha256((ROOT / 'assets/work/professional-icons.png').read_bytes()).hexdigest()
         for track in self.tracks:
+            illustration_hash = hashlib.sha256((ROOT / icon_asset(track['slug'])[0]).read_bytes()).hexdigest()
             for index, (_, href) in enumerate(track['pdfs']):
                 meta = manifest[href]
                 self.assertEqual(meta['illustration_sha256'], illustration_hash)

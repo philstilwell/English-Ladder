@@ -128,6 +128,7 @@
 .work-course-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
 .work-course-card { display:flex; flex-direction:column; padding:25px; border:1px solid var(--work-line); border-radius:6px; text-decoration:none; background:white; transition:border-color .15s,box-shadow .15s; }
 .work-card-icon { display:block; flex:none; width:104px; height:104px; margin:0 0 18px; background-image:url("assets/work/professional-icons.png"); background-size:700% 600%; background-repeat:no-repeat; }
+.work-occupation-icon { background-image:url("assets/work/occupation-icons.png"); background-size:500% 500%; }
 .work-course-card .work-kicker { font-size:.62rem; line-height:1.5; }
 .work-course-card h3 { margin:5px 0 10px; font-size:1.35rem; }
 .work-course-card p { font-size:.9rem; margin:0 0 24px; }

@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "software-developers",
+    "title": "Software Development English",
+    "summary": "Clarify code contracts, explain debugging evidence, give precise review feedback, and discuss tests, dependencies, performance, shared state, and release limits.",
+    "roles": "Software developers, application engineers, code reviewers, and maintainers",
+    "category": "Technology & data",
+    "scope_note": "All services, packages, versions, measurements, and incidents are fictional language practice, not implementation instructions, cybersecurity guidance, or production operating procedures. Behaviors belong to the expressly described fictional contracts; no language, framework, package manager, or database behavior should be inferred. Check actual documentation, evidence, permissions, and qualified reviewers before technical decisions or production changes.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Software Developers, Quality Assurance Analysts, and Testers",
+        "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
+      },
+      {
+        "title": "NIST SP 800-218: Secure Software Development Framework, Version 1.1",
+        "url": "https://csrc.nist.gov/pubs/sp/800/218/final"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Clarifying interface contracts",
+        "terms": [
+          "interface contract",
+          "nullable field",
+          "validation error",
+          "backward compatibility"
+        ],
+        "collocations": [
+          "define the accepted input: state which values an interface allows",
+          "distinguish absent from empty: separate an omitted field from a supplied empty value",
+          "preserve a caller's expectation: keep behavior an existing consumer relies on",
+          "reject an invalid value: return a specified failure for input outside the contract"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A fictional profile interface accepts an optional nickname. The current contract distinguishes an omitted nickname, which leaves it unchanged, from an empty string, which clears it. A proposed client sends null, whose meaning is unspecified.",
+          "model": "The contract already distinguishes an omitted nickname from an empty string: one leaves the value unchanged and the other clears it. Could we agree what null means before the client starts sending it? At present, null is unspecified, so I cannot describe it as another supported way to clear the field."
+        },
+        "workshop": {
+          "title": "Ask about one ambiguous input",
+          "goal": "Resolve an interface ambiguity using concrete input and outcome pairs.",
+          "explanation": "Explain the specified cases before asking about the gap. 'Optional' concerns whether a field must be present; 'nullable' concerns whether null is accepted. Neither automatically tells a caller what an empty string does.",
+          "frames": [
+            "For input ___, the contract specifies ___.",
+            "Does ___ mean ___, or should it be rejected?",
+            "That would change the behavior expected by ___."
+          ],
+          "before": "Optional means you can send anything blank.",
+          "after": "Omission leaves the nickname unchanged; an empty string clears it. Null still needs a defined meaning.",
+          "reason": "The revision distinguishes three inputs instead of grouping them under the ambiguous word blank.",
+          "questions": [
+            {
+              "prompt": "Client developer: Can I send null to clear the nickname?\nService developer: The contract defines an empty string for clearing; null is ____.",
+              "options": [
+                "unspecified",
+                "equivalent",
+                "required",
+                "deprecated"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The meaning of null is not defined.",
+                "Equivalence has not been agreed.",
+                "Required contradicts the optional field.",
+                "Deprecated implies formerly supported behavior being phased out; that is not given."
+              ]
+            },
+            {
+              "prompt": "Reviewer: Does optional mean nullable?\nDeveloper: No. Optional concerns presence, ____ nullable concerns accepting null.",
+              "options": [
+                "whereas",
+                "therefore",
+                "because",
+                "unless"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Whereas contrasts different properties.",
+                "Therefore implies accepting null follows from optionality.",
+                "Because suggests null acceptance explains optionality.",
+                "Unless introduces a condition rather than explaining the distinction."
+              ]
+            }
+          ],
+          "role_b": "Client developer: you want one way to clear a nickname, and your current client can send either an empty string or null.",
+          "challenge": "A colleague calls omission and an empty string interchangeable. Restate their different outcomes in this fictional contract."
+        }
+      },
+      {
+        "title": "Debugging from reproducible evidence",
+        "terms": [
+          "reproduction",
+          "stack trace",
+          "hypothesis",
+          "minimal example"
+        ],
+        "collocations": [
+          "reproduce a failure: make the reported behavior occur under described conditions",
+          "narrow the failing input: remove irrelevant detail while retaining the failure",
+          "inspect the call path: examine which operations led to the observed failure",
+          "rule out a hypothesis: use evidence to reject a proposed explanation"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A fictional import fails on a three-row file containing an empty date field. A two-row file without that row succeeds. The stack trace points to date parsing, but no controlled test has isolated the empty field as the cause.",
+          "model": "The failing three-row file contains an empty date, and the stack trace reaches date parsing. Those observations make the empty field a useful hypothesis, not yet a demonstrated cause. Could we compare otherwise identical examples with and without that value? The smaller passing file also changed the row count, so it does not isolate the field."
+        },
+        "workshop": {
+          "title": "Separate a clue from a cause",
+          "goal": "Explain a debugging hypothesis and propose evidence that distinguishes it.",
+          "explanation": "A stack trace shows a path associated with failure, not necessarily the original cause. When two examples differ in several ways, identify the confounding differences before claiming that one field explains the failure.",
+          "frames": [
+            "The failure occurs with ___, but ___ also differs.",
+            "The trace points to ___; that does not yet establish ___.",
+            "A comparison holding ___ constant would help distinguish ___."
+          ],
+          "before": "The parser is broken because the file has an empty date.",
+          "after": "The failure reaches date parsing; the empty date is a hypothesis that still needs an isolated comparison.",
+          "reason": "The revised claim matches the evidence and names the untested explanation.",
+          "questions": [
+            {
+              "prompt": "Colleague: Does the passing two-row file prove the empty date caused the failure?\nDeveloper: No; it also changes the ____, so that comparison does not isolate the date.",
+              "options": [
+                "row count",
+                "date format",
+                "delimiter",
+                "character encoding"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Both the date content and row count differ.",
+                "No changed date format is supplied for the passing file.",
+                "The case does not identify a changed delimiter between the files.",
+                "No encoding difference is established in the supplied comparison."
+              ]
+            },
+            {
+              "prompt": "Reviewer: How certain is your explanation?\nDeveloper: The trace ____ a parsing issue, but we haven't isolated the cause.",
+              "options": [
+                "suggests",
+                "rules out",
+                "guarantees",
+                "is unrelated to"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Suggests presents a supported but unconfirmed explanation.",
+                "Rules out rejects rather than supports the possibility.",
+                "Guarantees overstates the trace's evidential value.",
+                "Unrelated to dismisses a relevant clue."
+              ]
+            }
+          ],
+          "role_b": "Developer receiving the bug: ask which inputs and conditions differ between the passing and failing examples.",
+          "challenge": "The same failing file succeeds once after a retry. Explain why one success does not establish a fix."
+        }
+      },
+      {
+        "title": "Giving actionable code-review feedback",
+        "terms": [
+          "pull request",
+          "diff",
+          "refactoring",
+          "side effect"
+        ],
+        "collocations": [
+          "keep a change focused: limit a review to a coherent behavior or purpose",
+          "trace a side effect: follow a change outside a function's returned value",
+          "separate a preference from a blocker: distinguish optional style from required correction",
+          "preserve existing behavior: keep observable outcomes unchanged during restructuring"
+        ],
+        "case": {
+          "function": "feedback",
+          "brief": "A fictional pull request is titled 'rename export helper.' Its diff also moves a notification call outside a success branch, so failed exports would now notify the user as if complete. The naming change is acceptable; the behavior change is unintended.",
+          "model": "The helper rename is clear. In the same diff, the notification call moves outside the success branch, which would also notify after a failed export. Could you keep that call conditional on success and add a check for the failure path? My concern is the changed side effect, not your choice of helper name."
+        },
+        "workshop": {
+          "title": "Comment on behavior and impact",
+          "goal": "Give precise review feedback that separates an acceptable edit from an unintended behavior change.",
+          "explanation": "Point to the observed change, explain the resulting behavior, and request a bounded revision. Refactoring normally preserves observable behavior; the label on a pull request does not guarantee that its diff does so.",
+          "frames": [
+            "The change moves ___, which means ___.",
+            "My concern is ___, not ___.",
+            "Could you preserve ___ and add evidence for ___?"
+          ],
+          "before": "This refactor is bad.",
+          "after": "Moving the notification outside the success branch changes the failure path; please keep it conditional on success.",
+          "reason": "The review now names the defect and a concrete revision rather than judging the author or the entire change.",
+          "questions": [
+            {
+              "prompt": "Author: Is the helper name the blocker?\nReviewer: No. The blocker is the changed ____ on failed exports.",
+              "options": [
+                "side effect",
+                "return value",
+                "accepted input",
+                "helper signature"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The notification is an observable effect outside the helper's result.",
+                "The review concern is the notification, not a changed returned value.",
+                "No change to accepted input is described in this diff.",
+                "No changed parameter or return declaration is the identified blocker."
+              ]
+            },
+            {
+              "prompt": "Author: Should I redo the whole pull request?\nReviewer: The rename can stay; please ____ the notification's success condition.",
+              "options": [
+                "preserve",
+                "infer",
+                "announce",
+                "summarize"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Preserve asks to retain the existing condition.",
+                "Infer means deduce, not keep the condition in the code.",
+                "Announce communicates a condition without retaining it.",
+                "Summarize describes rather than fixes the behavior."
+              ]
+            }
+          ],
+          "role_b": "Author: the rename is intentional, but moving the notification was accidental. Ask which path needs a check.",
+          "challenge": "A second reviewer adds an optional naming preference. Label it optional while keeping the failure-path correction clearly required."
+        }
+      },
+      {
+        "title": "Requesting dependency evidence",
+        "terms": [
+          "direct dependency",
+          "transitive dependency",
+          "lockfile",
+          "deprecation"
+        ],
+        "collocations": [
+          "trace the dependency path: identify which package brings another package into a build",
+          "review an upgrade note: examine documented changes before adopting a version",
+          "pin a resolved version: record a specific selected version where the tool supports it",
+          "check the supported interface: verify which calls remain available to consumers"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "A fictional application directly uses package ParcelKit, which brings in TextCore indirectly. A proposed ParcelKit upgrade changes the resolved TextCore version. The change note mentions a deprecated parsing entry point; the team's usage and replacement compatibility are unknown.",
+          "model": "Could you identify whether our application or ParcelKit calls the deprecated parsing entry point, and link the relevant upgrade note? The proposed change also alters the resolved TextCore version, so please show the dependency path and lockfile difference. We need that evidence before calling this a drop-in update with no caller changes."
+        },
+        "workshop": {
+          "title": "Request the path, version, and affected call",
+          "goal": "Ask for evidence that makes a dependency upgrade reviewable.",
+          "explanation": "Direct and transitive describe how a dependency enters the application. Deprecation warns that an interface should be replaced or may be removed; it does not by itself establish removal now. Tool and package behavior must be checked in their actual documentation.",
+          "frames": [
+            "Which dependency introduces ___?",
+            "Could you link the change note and identify our use of ___?",
+            "Does the resolved version change from ___ to ___?"
+          ],
+          "before": "It's a small version change, so it won't affect us.",
+          "after": "Please show the resolved dependency change and check whether our callers use the deprecated entry point.",
+          "reason": "The revision requests evidence rather than treating a version label as a compatibility guarantee.",
+          "questions": [
+            {
+              "prompt": "Reviewer: We don't list TextCore directly. How does it enter the build?\nDeveloper: For our application, TextCore is a ____ dependency introduced by ParcelKit.",
+              "options": [
+                "transitive",
+                "direct",
+                "optional",
+                "development-only"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The application receives it through another dependency.",
+                "The application does not list it directly; ParcelKit introduces it.",
+                "Optional concerns whether it is required, not the stated dependency path.",
+                "Development-only concerns its usage scope, not how it enters the application."
+              ]
+            },
+            {
+              "prompt": "Developer: The note says deprecated. Does that prove the entry point is absent now?\nReviewer: No; deprecation and ____ are different states.",
+              "options": [
+                "removal",
+                "documentation",
+                "installation",
+                "resolution"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An interface may be deprecated before removal.",
+                "Documentation is the evidence source, not the contrasting availability state.",
+                "Installation does not express that the entry point no longer exists.",
+                "Resolution selects dependencies and is not the opposite availability state."
+              ]
+            }
+          ],
+          "role_b": "Maintainer: you have the change note and resolved dependency list, but have not searched the application's call sites yet.",
+          "challenge": "The package name is unchanged. Explain why that alone does not establish identical behavior across versions."
+        }
+      },
+      {
+        "title": "Explaining what a test actually exercises",
+        "terms": [
+          "unit test",
+          "integration test",
+          "test double",
+          "regression test"
+        ],
+        "collocations": [
+          "exercise an error path: run the behavior used when an operation fails",
+          "replace a collaborator with a test double: use a controlled substitute during a test",
+          "assert an observable result: check an outcome rather than only execution",
+          "add a regression case: preserve a check for a previously observed defect"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A fictional save function's unit test replaces storage with a test double that always reports success. It checks the success message but never exercises a storage rejection. A previous bug incorrectly showed success after rejection; the real storage adapter is not tested here.",
+          "model": "This unit test checks the save function's success path using a controlled substitute for storage. Because that substitute always succeeds, it does not exercise the rejection that triggered the earlier bug. A regression case should check the visible result when rejection is simulated. An integration test of the real adapter answers a different question."
+        },
+        "workshop": {
+          "title": "Describe the boundary of a test",
+          "goal": "Explain what a test verifies and what its substitutes leave outside scope.",
+          "explanation": "Name the real component, the replaced collaborator, and the assertion. A test can run quickly and still omit the behavior in question. A passing result supports its actual checks, not every possible interaction.",
+          "frames": [
+            "This test exercises ___ while replacing ___.",
+            "It asserts ___, but it does not cover ___.",
+            "A separate test is needed to examine ___."
+          ],
+          "before": "The save feature is tested.",
+          "after": "The unit test checks a successful save response using simulated storage; rejection and the real adapter are not covered.",
+          "reason": "The revision identifies the checked behavior and the boundaries of the evidence.",
+          "questions": [
+            {
+              "prompt": "Reviewer: Why didn't this test catch the rejection bug?\nDeveloper: Its storage substitute ____.",
+              "options": [
+                "always reports success",
+                "returns both outcomes",
+                "uses the real database",
+                "checks every rejection"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An always-successful substitute never reaches the disputed path.",
+                "Both outcomes would include rejection, contrary to the case.",
+                "The case states that storage is replaced.",
+                "Every rejection is not checked by this test."
+              ]
+            },
+            {
+              "prompt": "Developer: The new case repeats the earlier failure and checks the corrected message.\nReviewer: That makes it a ____ test for that bug.",
+              "options": [
+                "regression",
+                "load",
+                "usability",
+                "migration"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. It guards against reintroducing the earlier defect.",
+                "Load testing examines behavior under workload.",
+                "Usability testing concerns how people use the interface.",
+                "Migration testing concerns a data or system transition."
+              ]
+            }
+          ],
+          "role_b": "Reviewer: ask which collaborator is substituted and what assertion would fail if the success message reappeared on rejection.",
+          "challenge": "A teammate proposes checking only that no exception was thrown. Explain why the visible message needs its own assertion."
+        }
+      },
+      {
+        "title": "Comparing performance tradeoffs fairly",
+        "terms": [
+          "latency",
+          "throughput",
+          "benchmark",
+          "memory footprint"
+        ],
+        "collocations": [
+          "hold the workload constant: compare implementations with equivalent inputs and conditions",
+          "report a distribution: show variation rather than only a single average",
+          "trade memory for speed: use more memory to reduce a measured delay",
+          "separate warm and cold runs: distinguish runs with and without relevant initialized state"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "In a fictional controlled benchmark on the same input and machine, implementation A has median latency 40 milliseconds and memory use 80 megabytes; B has 25 milliseconds and 160 megabytes. The available memory budget is 120 megabytes. Tail latency and production workloads are unmeasured.",
+          "model": "B has lower median latency in this benchmark, but it uses one hundred sixty megabytes against our one-hundred-twenty-megabyte budget. A is slower at the median and stays within that budget. I would not call B the better fit without addressing memory. Neither result establishes tail latency or performance on unmeasured production workloads."
+        },
+        "workshop": {
+          "title": "Compare the same measurements and constraints",
+          "goal": "Describe a measured benefit and its cost without generalizing beyond the benchmark.",
+          "explanation": "Latency measures delay; throughput measures work completed over time. A median is not a maximum, and a result for one workload is not a universal prediction. Use the same units and the stated resource constraint.",
+          "frames": [
+            "Under the same ___, A measured ___ whereas B measured ___.",
+            "The improvement in ___ comes with ___.",
+            "We have not measured ___, so that claim remains open."
+          ],
+          "before": "B is faster, so we should use it.",
+          "after": "B lowers median latency but exceeds our memory budget; A stays within it. Tail latency is still unmeasured.",
+          "reason": "The revised comparison includes the limiting resource and the boundary of the measurements.",
+          "questions": [
+            {
+              "prompt": "Reviewer: Which implementation fits the stated memory budget?\nDeveloper: ____ uses eighty megabytes, below the one-hundred-twenty-megabyte limit.",
+              "options": [
+                "Implementation A",
+                "Both implementations",
+                "Neither implementation",
+                "Implementation B"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A's 80 megabytes is below 120.",
+                "B uses 160 megabytes and exceeds the limit.",
+                "A fits within the limit.",
+                "B uses 160, not 80 megabytes."
+              ]
+            },
+            {
+              "prompt": "Colleague: Does the median tell us the longest measured wait?\nDeveloper: No; to report the longest observed wait, we need the measured ____.",
+              "options": [
+                "maximum",
+                "mean",
+                "minimum",
+                "median"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The maximum identifies the greatest observed value in the sample.",
+                "The mean averages values rather than identifying the longest observed wait.",
+                "The minimum identifies the shortest, not the longest, observed wait.",
+                "The median locates the middle of ordered observations, not the longest wait."
+              ]
+            }
+          ],
+          "role_b": "Reviewer: prioritize the fixed memory budget and ask whether the measured latency covers the slowest requests.",
+          "challenge": "The faster result came from a warmed cache in a later rerun. Ask for matched conditions before comparing that rerun with a cold run."
+        }
+      },
+      {
+        "title": "Discussing retries and shared state",
+        "terms": [
+          "race condition",
+          "idempotency",
+          "transaction",
+          "invariant"
+        ],
+        "collocations": [
+          "retry an operation: attempt it again after an uncertain or failed result",
+          "preserve an invariant: maintain a condition that must remain true",
+          "separate acknowledgment from completion: distinguish a received reply from the underlying outcome",
+          "interleave two requests: describe overlapping operations whose steps may occur in mixed order"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "A fictional reservation client times out before receiving a reply. The reservation may already have been created. A colleague proposes automatically submitting a second request as a new reservation. The service's duplicate-request behavior is unspecified; no production change is authorized.",
+          "model": "I would not treat the timeout as proof that no reservation was created. A second request submitted as new could create another reservation if the first one completed. Could we define how repeated requests are recognized and what result the client should receive? We need that contract before recommending an automatic retry for this operation."
+        },
+        "workshop": {
+          "title": "Challenge an assumption about an uncertain outcome",
+          "goal": "Explain why repeating a state-changing request needs an explicit behavior contract.",
+          "explanation": "A client may fail to receive a reply even when a service completed work. Idempotency concerns the intended effect of repetition, not a promise that every response or timing is identical. Discuss the fictional contract rather than prescribing a production retry mechanism.",
+          "frames": [
+            "A missing reply does not establish that ___.",
+            "If the first request completed, a new request could ___.",
+            "Before retrying, we need agreement on ___."
+          ],
+          "before": "It timed out, so nothing happened.",
+          "after": "The client timed out; the reservation outcome is unknown. Repeating it as a new request could have another effect.",
+          "reason": "The revision separates the client's observation from the service's unconfirmed state.",
+          "questions": [
+            {
+              "prompt": "Colleague: No reply means no reservation, right?\nDeveloper: No; the underlying outcome is ____.",
+              "options": [
+                "unknown",
+                "reversed",
+                "impossible",
+                "unchanged"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A missing reply does not reveal whether creation completed.",
+                "Reversed would require evidence of undoing the effect.",
+                "Impossible overstates what the timeout establishes.",
+                "Unchanged assumes no effect, which is unconfirmed."
+              ]
+            },
+            {
+              "prompt": "Reviewer: What property concerns the effect of repeating the same operation?\nDeveloper: ____ concerns repeated execution having the same intended effect as one execution.",
+              "options": [
+                "Idempotency",
+                "Concurrency",
+                "Throughput",
+                "Deprecation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Idempotency limits the intended effect of repetition.",
+                "Concurrency concerns overlapping work, not this repetition property.",
+                "Throughput measures the amount of work completed over time.",
+                "Deprecation concerns an interface being discouraged or phased out."
+              ]
+            }
+          ],
+          "role_b": "Client developer: you want a responsive experience but do not know whether the server created the reservation before the timeout.",
+          "challenge": "Someone says wrapping work in a transaction automatically settles all duplicate-request behavior. Ask which invariant and concurrency guarantees actually apply."
+        }
+      },
+      {
+        "title": "Handing over a release with explicit limits",
+        "terms": [
+          "build artifact",
+          "feature flag",
+          "rollback",
+          "schema migration"
+        ],
+        "collocations": [
+          "identify the deployed build: name the exact software output running in an environment",
+          "stage a rollout: expose a change in bounded steps",
+          "define a rollback limit: explain what reverting the application does not undo",
+          "hand over an open compatibility check: transfer responsibility for an unresolved interaction"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Fictional build R18 is deployed to staging. Its new search view is disabled by a feature flag. A schema migration adds an optional field, but compatibility with the previous application build is untested. Lee takes the release review; production rollout is undecided.",
+          "model": "R18 is deployed to staging, with the new search view disabled by its feature flag. The optional-field migration is present there, but compatibility with the previous application build remains untested. Lee, please take that compatibility check into the release review. No production rollout or successful rollback has been confirmed by these staging facts."
+        },
+        "workshop": {
+          "title": "Transfer deployment, exposure, and compatibility status",
+          "goal": "Give a release handover that distinguishes installed software from enabled behavior and verified recovery.",
+          "explanation": "A deployed artifact may contain disabled behavior. Rolling back an application does not automatically undo data changes. State which environment and build were checked and name the remaining review without promising recovery.",
+          "frames": [
+            "Build ___ is deployed to ___; the feature is ___.",
+            "The data change is ___, while compatibility with ___ is ___.",
+            "Please confirm ownership of ___ before the release decision."
+          ],
+          "before": "R18 is live and rollback is fine.",
+          "after": "R18 is in staging with search disabled; previous-build compatibility with the changed schema remains untested.",
+          "reason": "The revision avoids conflating staging deployment, feature exposure, and verified rollback.",
+          "questions": [
+            {
+              "prompt": "Release reviewer: Can staging users access the new search view?\nDeveloper: Not through the flag-controlled route; the feature flag is ____.",
+              "options": [
+                "disabled",
+                "enabled for everyone",
+                "enabled for a pilot group",
+                "removed from the build"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The case states that exposure is disabled.",
+                "The flag is disabled, so universal exposure is not supported.",
+                "No pilot exposure is enabled in the supplied staging state.",
+                "The feature exists in the build; its exposure is disabled rather than removed."
+              ]
+            },
+            {
+              "prompt": "Lee: Does reverting the application prove the schema change is undone?\nDeveloper: No. Application rollback and schema reversal are ____.",
+              "options": [
+                "separate concerns",
+                "identical guarantees",
+                "completed checks",
+                "matching artifacts"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Reverting application code does not itself establish a data reversal.",
+                "They are not interchangeable guarantees.",
+                "Neither action is reported as checked here.",
+                "Artifacts are build outputs, not the relationship between these actions."
+              ]
+            }
+          ],
+          "role_b": "Lee: accept the compatibility review and ask which environment, build, and feature state the evidence covers.",
+          "challenge": "A manager calls the disabled feature fully tested because the build started. Explain which user path has not been exercised."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "interface contract",
+        "definition": "The specified inputs, outputs, errors, and behavior that callers and an implementation agree to rely on.",
+        "group": "Clarifying interface contracts"
+      },
+      {
+        "term": "nullable field",
+        "definition": "A data field whose specified allowed values include null, distinct from whether the field may be omitted.",
+        "group": "Clarifying interface contracts"
+      },
+      {
+        "term": "validation error",
+        "definition": "A reported failure because an input does not meet a stated rule or accepted format.",
+        "group": "Clarifying interface contracts"
+      },
+      {
+        "term": "backward compatibility",
+        "definition": "The ability of a changed component to continue supporting behavior or inputs relied on by existing consumers.",
+        "group": "Clarifying interface contracts"
+      },
+      {
+        "term": "reproduction",
+        "definition": "A documented set of conditions and actions that produces an observed software behavior again.",
+        "group": "Debugging from reproducible evidence"
+      },
+      {
+        "term": "stack trace",
+        "definition": "A record of function calls associated with a point in execution, often captured when an error occurs.",
+        "group": "Debugging from reproducible evidence"
+      },
+      {
+        "term": "hypothesis",
+        "definition": "A proposed explanation for observed behavior that can be investigated against evidence.",
+        "group": "Debugging from reproducible evidence"
+      },
+      {
+        "term": "minimal example",
+        "definition": "A reduced input or program that retains the behavior being investigated while removing irrelevant detail.",
+        "group": "Debugging from reproducible evidence"
+      },
+      {
+        "term": "pull request",
+        "definition": "A proposal to incorporate a set of code changes, commonly accompanied by a diff and review discussion.",
+        "group": "Giving actionable code-review feedback"
+      },
+      {
+        "term": "diff",
+        "definition": "A representation showing added, removed, or changed content between two versions.",
+        "group": "Giving actionable code-review feedback"
+      },
+      {
+        "term": "refactoring",
+        "definition": "Restructuring existing code while preserving its observable behavior.",
+        "group": "Giving actionable code-review feedback"
+      },
+      {
+        "term": "side effect",
+        "definition": "An observable effect beyond a function's returned value, such as changing stored state or sending a notification.",
+        "group": "Giving actionable code-review feedback"
+      },
+      {
+        "term": "direct dependency",
+        "definition": "A component explicitly required by the application or package being discussed.",
+        "group": "Requesting dependency evidence"
+      },
+      {
+        "term": "transitive dependency",
+        "definition": "A component required indirectly through another dependency in the dependency chain.",
+        "group": "Requesting dependency evidence"
+      },
+      {
+        "term": "lockfile",
+        "definition": "A tool-specific record of resolved dependencies used to help reproduce a selected dependency set.",
+        "group": "Requesting dependency evidence"
+      },
+      {
+        "term": "deprecation",
+        "definition": "A notice that an interface or feature is discouraged for future use, often ahead of possible removal.",
+        "group": "Requesting dependency evidence"
+      },
+      {
+        "term": "unit test",
+        "definition": "A test focused on a small software unit, often isolating it from external collaborators.",
+        "group": "Explaining what a test actually exercises"
+      },
+      {
+        "term": "integration test",
+        "definition": "A test examining interactions between combined components or with an external component.",
+        "group": "Explaining what a test actually exercises"
+      },
+      {
+        "term": "test double",
+        "definition": "A controlled substitute for a real collaborator used during a test.",
+        "group": "Explaining what a test actually exercises"
+      },
+      {
+        "term": "regression test",
+        "definition": "A test intended to detect unintended changes in previously working or corrected behavior.",
+        "group": "Explaining what a test actually exercises"
+      },
+      {
+        "term": "latency",
+        "definition": "The elapsed time between a specified request or action and its measured response or completion.",
+        "group": "Comparing performance tradeoffs fairly"
+      },
+      {
+        "term": "throughput",
+        "definition": "The amount of work completed per unit of time under specified conditions.",
+        "group": "Comparing performance tradeoffs fairly"
+      },
+      {
+        "term": "benchmark",
+        "definition": "A defined measurement exercise used to compare performance under stated workloads and conditions.",
+        "group": "Comparing performance tradeoffs fairly"
+      },
+      {
+        "term": "memory footprint",
+        "definition": "The amount of memory used by a program or component under specified conditions.",
+        "group": "Comparing performance tradeoffs fairly"
+      },
+      {
+        "term": "race condition",
+        "definition": "Behavior whose outcome depends on the timing or ordering of overlapping operations.",
+        "group": "Discussing retries and shared state"
+      },
+      {
+        "term": "idempotency",
+        "definition": "The property that repeating an operation has the same intended effect as performing it once.",
+        "group": "Discussing retries and shared state"
+      },
+      {
+        "term": "transaction",
+        "definition": "A defined unit of related work whose completion and consistency guarantees depend on the system's transaction model.",
+        "group": "Discussing retries and shared state"
+      },
+      {
+        "term": "invariant",
+        "definition": "A condition that the design requires to remain true across relevant operations or state changes.",
+        "group": "Discussing retries and shared state"
+      },
+      {
+        "term": "build artifact",
+        "definition": "A generated software output, such as a package or executable, produced from a particular build.",
+        "group": "Handing over a release with explicit limits"
+      },
+      {
+        "term": "feature flag",
+        "definition": "A control that enables, disables, or varies specified application behavior without necessarily changing the deployed build.",
+        "group": "Handing over a release with explicit limits"
+      },
+      {
+        "term": "rollback",
+        "definition": "A return to an earlier application or configuration state, whose scope may not include undoing data changes.",
+        "group": "Handing over a release with explicit limits"
+      },
+      {
+        "term": "schema migration",
+        "definition": "A controlled change to the structure or organization of stored data.",
+        "group": "Handing over a release with explicit limits"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "What does null do to a nickname?",
+          "setting": "Two fictional developers resolve an unspecified input in the profile contract.",
+          "turns": [
+            [
+              "Client developer",
+              "I want to clear a nickname. Can my client send null for that?"
+            ],
+            [
+              "Service developer",
+              "The contract specifies an empty string for clearing. Null doesn't currently have a defined meaning."
+            ],
+            [
+              "Client developer",
+              "How is an optional field different from a nullable field in this interface contract?"
+            ],
+            [
+              "Service developer",
+              "Optional allows omission; nullable allows null. Here, omission leaves the nickname unchanged; an empty string clears it."
+            ],
+            [
+              "Client developer",
+              "Then null shouldn't silently mean unchanged on one client and cleared on another."
+            ],
+            [
+              "Service developer",
+              "Agreed. Shall we propose rejecting null with a validation error until another meaning is agreed?"
+            ],
+            [
+              "Client developer",
+              "That keeps the current clearing behavior explicit. My client can send an empty string."
+            ],
+            [
+              "Service developer",
+              "Please also preserve omission for updates that don't intend to change the nickname."
+            ],
+            [
+              "Client developer",
+              "I will. Those are two different user intentions, even if both look blank."
+            ],
+            [
+              "Service developer",
+              "Then our proposed contract keeps both outcomes and identifies null as unsupported, pending review."
+            ]
+          ]
+        },
+        {
+          "title": "An empty list is a successful result",
+          "setting": "Fictional developers clarify the difference between no search matches and a failed search.",
+          "turns": [
+            [
+              "Consumer developer",
+              "Our search adapter treats an empty list as an error. Is that intended?"
+            ],
+            [
+              "Interface owner",
+              "No. In this contract, an empty list means the search succeeded without finding matches."
+            ],
+            [
+              "Consumer developer",
+              "What represents a failed request? I need to show a different message for that."
+            ],
+            [
+              "Interface owner",
+              "A validation error has a separate error result. It doesn't use the successful list shape."
+            ],
+            [
+              "Consumer developer",
+              "So no matches should display an empty state, while invalid input should explain the error?"
+            ],
+            [
+              "Interface owner",
+              "Exactly. The interface contract separates those outcomes even though neither produces visible result rows."
+            ],
+            [
+              "Consumer developer",
+              "I'll remove the assumption that a successful result must contain at least one item."
+            ],
+            [
+              "Interface owner",
+              "Please add the zero-match example beside the populated example when reviewing the adapter."
+            ],
+            [
+              "Consumer developer",
+              "That will make the distinction concrete. We can check both without guessing from list length."
+            ],
+            [
+              "Interface owner",
+              "And callers can offer another search without telling users that a successful request failed."
+            ]
+          ]
+        },
+        {
+          "title": "A renamed response field breaks an older caller",
+          "setting": "A fictional code review identifies a compatibility concern in a response change.",
+          "turns": [
+            [
+              "Reviewer",
+              "The new response replaces displayName with label. What happens to the older caller?"
+            ],
+            [
+              "Developer",
+              "It still reads displayName. I changed the server response but haven't changed that client."
+            ],
+            [
+              "Reviewer",
+              "Then this affects backward compatibility, not simply an internal variable name."
+            ],
+            [
+              "Developer",
+              "You're right. The field crosses the interface boundary, so consumers can observe the difference."
+            ],
+            [
+              "Reviewer",
+              "Do we know whether both fields could temporarily coexist under an agreed transition contract?"
+            ],
+            [
+              "Developer",
+              "That needs discussion with the client owner. We haven't specified precedence if values differ."
+            ],
+            [
+              "Reviewer",
+              "Please keep the response change out of the internal cleanup until that contract is settled."
+            ],
+            [
+              "Developer",
+              "I can separate it. The local variable rename doesn't require changing the response field."
+            ],
+            [
+              "Reviewer",
+              "That gives us a focused review and keeps the existing caller's expectation intact."
+            ],
+            [
+              "Developer",
+              "I'll retain displayName in this change and open the proposed interface transition for discussion."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A required currency without a default",
+        "brief": "A fictional pricing interface requires a currency code. A client omits it, assuming dollars. The contract supplies no default. The interface owner can confirm that omission is invalid; no conversion is involved.",
+        "role_a": "Client developer: ask whether omission has a supported meaning and restate the answer.",
+        "role_b": "Interface owner: explain that currency is required and a value must be supplied explicitly.",
+        "opening_line": "Does an omitted currency mean dollars in this contract, or is it invalid?",
+        "complication": "Someone points to a dollar sign in an example and calls it a default rule.",
+        "success_checks": [
+          "Separate example data from the contract.",
+          "Confirm currency must be explicit.",
+          "Avoid inventing a conversion or default behavior."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "The empty date is still a hypothesis",
+          "setting": "Fictional developers discuss a failing three-row import and a passing two-row file.",
+          "turns": [
+            [
+              "Developer",
+              "The three-row import fails in date parsing. I suspect the row with an empty date."
+            ],
+            [
+              "Colleague",
+              "Does your passing example differ only in that date, or in other ways?"
+            ],
+            [
+              "Developer",
+              "It has two rows instead of three, so the comparison also changes row count."
+            ],
+            [
+              "Colleague",
+              "Then it doesn't isolate the empty field. What does the stack trace actually show?"
+            ],
+            [
+              "Developer",
+              "The call path reaches date parsing before the failure; it doesn't establish the original cause."
+            ],
+            [
+              "Colleague",
+              "Could we keep three rows and change only the disputed date in a controlled example?"
+            ],
+            [
+              "Developer",
+              "Yes. That would distinguish the date hypothesis from the row-count difference in these files."
+            ],
+            [
+              "Colleague",
+              "Please preserve the failing input too, so another developer can reproduce the observation."
+            ],
+            [
+              "Developer",
+              "I've labeled the cause unconfirmed and attached both existing examples with their differences."
+            ],
+            [
+              "Colleague",
+              "Good. We have a specific hypothesis and a comparison that can test it."
+            ]
+          ]
+        },
+        {
+          "title": "The error line is not necessarily where the defect began",
+          "setting": "Fictional developers inspect a trace from a report formatter.",
+          "turns": [
+            [
+              "Developer",
+              "The trace points to the formatter. Should we assign the whole defect there?"
+            ],
+            [
+              "Reviewer",
+              "Which value reached it? A failure location doesn't tell us where invalid state originated."
+            ],
+            [
+              "Developer",
+              "The formatter expected a title, but the input object contains no title field."
+            ],
+            [
+              "Reviewer",
+              "Does the upstream contract require that field, or may callers legitimately omit it?"
+            ],
+            [
+              "Developer",
+              "It requires a title. The minimal example bypasses the normal builder and leaves it out."
+            ],
+            [
+              "Reviewer",
+              "Then we've identified a contract violation in the example, not yet a formatter implementation defect."
+            ],
+            [
+              "Developer",
+              "That's useful. The user report may still involve a missing title from the real builder."
+            ],
+            [
+              "Reviewer",
+              "Exactly. We need the actual path before deciding whether the example represents that report."
+            ],
+            [
+              "Developer",
+              "I'll separate the synthetic missing-field failure from the unconfirmed production report in the discussion."
+            ],
+            [
+              "Reviewer",
+              "And I'll review the builder's output contract with you rather than blame the final trace line."
+            ]
+          ]
+        },
+        {
+          "title": "One successful rerun doesn't establish a correction",
+          "setting": "Fictional developers discuss intermittent behavior without claiming a fix.",
+          "turns": [
+            [
+              "Maintainer",
+              "The import passed on its second attempt. Can we close the failure report?"
+            ],
+            [
+              "Developer",
+              "No code changed between attempts. A passing rerun doesn't establish that the cause was removed."
+            ],
+            [
+              "Maintainer",
+              "Were the input and build the same, or did something change without being noted?"
+            ],
+            [
+              "Developer",
+              "The file and build match. We didn't capture the external response from the first attempt."
+            ],
+            [
+              "Maintainer",
+              "So an external difference is possible, but we don't have evidence identifying one."
+            ],
+            [
+              "Developer",
+              "Right. I'll record one failure and one success under those known matching conditions."
+            ],
+            [
+              "Maintainer",
+              "Can you retain the first trace instead of replacing it with the successful output?"
+            ],
+            [
+              "Developer",
+              "Yes. Both outcomes matter, especially because we cannot yet explain their difference."
+            ],
+            [
+              "Maintainer",
+              "Then the status is intermittent observation, cause open, and no verified correction."
+            ],
+            [
+              "Developer",
+              "Agreed. The next reproduction needs the missing response context, not just another success count."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A failure that depends on input order",
+        "brief": "In a fictional example, records A then B produce a duplicate label, while B then A do not. The same records and build are used. No internal cause has been established.",
+        "role_a": "Developer: describe the observed ordering difference and propose a controlled comparison.",
+        "role_b": "Maintainer: ask what is identical and whether the result proves a particular internal defect.",
+        "opening_line": "The same two records produce different results when their order changes.",
+        "complication": "A colleague declares the data corrupted even though the records are unchanged.",
+        "success_checks": [
+          "Preserve the order-sensitive observation.",
+          "Keep the internal explanation unconfirmed.",
+          "Agree a smaller order comparison with recorded outputs."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "A rename that also moves a notification",
+          "setting": "A fictional author and reviewer resolve an unintended side effect in a pull request.",
+          "turns": [
+            [
+              "Reviewer",
+              "The helper rename is clear, but moving the notification changes the failed-export path."
+            ],
+            [
+              "Author",
+              "I intended only a rename. Which movement changes what the user would see?"
+            ],
+            [
+              "Reviewer",
+              "The call now sits outside the success branch, so failure would also produce a completion notification."
+            ],
+            [
+              "Author",
+              "You're right. That's an unintended side effect, not part of the requested cleanup."
+            ],
+            [
+              "Reviewer",
+              "Could you retain the success condition and add a check for the failure path?"
+            ],
+            [
+              "Author",
+              "Yes. I'll restore that condition and assert that failed exports don't show completion."
+            ],
+            [
+              "Reviewer",
+              "The naming choice isn't a blocker. My required change concerns the notification's behavior."
+            ],
+            [
+              "Author",
+              "That distinction helps. I'll leave the name and focus the revision on the conditional call."
+            ],
+            [
+              "Reviewer",
+              "Once revised, I'll review the changed branch and the new assertion together."
+            ],
+            [
+              "Author",
+              "I've accepted that request. This remains a rename with preserved behavior, not a notification redesign."
+            ]
+          ]
+        },
+        {
+          "title": "An optional suggestion among required changes",
+          "setting": "Fictional reviewers distinguish a readability preference from an incorrect boundary check.",
+          "turns": [
+            [
+              "Author",
+              "You left comments about the variable name and the upper-bound check. Are both blockers?"
+            ],
+            [
+              "Reviewer",
+              "The boundary check is required: this contract accepts ten, but the new comparison rejects it."
+            ],
+            [
+              "Author",
+              "And the name suggestion? I used the same name as the neighboring helper."
+            ],
+            [
+              "Reviewer",
+              "That's optional. I find limit clearer, but the existing naming convention is defensible."
+            ],
+            [
+              "Author",
+              "I'll correct the boundary and keep the established name to avoid unrelated changes."
+            ],
+            [
+              "Reviewer",
+              "That works. Please include the accepted value ten and the rejected value eleven in the evidence."
+            ],
+            [
+              "Author",
+              "Those examples make the intended boundary clear without expanding this into a style cleanup."
+            ],
+            [
+              "Reviewer",
+              "Exactly. My review should distinguish a behavior mismatch from a preference about readability."
+            ],
+            [
+              "Author",
+              "I'll mark the naming thread as discussed and return the boundary revision for review."
+            ],
+            [
+              "Reviewer",
+              "Then the required action is unambiguous, and the optional comment doesn't become an accidental condition."
+            ]
+          ]
+        },
+        {
+          "title": "A helper extracts more behavior than expected",
+          "setting": "Fictional developers discuss a refactor that unexpectedly reorders an observable event.",
+          "turns": [
+            [
+              "Reviewer",
+              "The extracted helper sends the receipt before the save completes. Was that ordering change intentional?"
+            ],
+            [
+              "Author",
+              "No. I moved both operations into one helper but changed their order accidentally."
+            ],
+            [
+              "Reviewer",
+              "The existing behavior sends only after a successful save. Callers may rely on that distinction."
+            ],
+            [
+              "Author",
+              "Refactoring should preserve that observable sequence, not merely reuse the same calls."
+            ],
+            [
+              "Reviewer",
+              "Could you keep the original ordering and explain the helper's responsibility more narrowly?"
+            ],
+            [
+              "Author",
+              "Yes. It will coordinate the existing sequence rather than introduce a new notification policy."
+            ],
+            [
+              "Reviewer",
+              "Please keep the unrelated retry proposal outside this pull request so we can review each behavior separately."
+            ],
+            [
+              "Author",
+              "I'll separate that proposal. The current revision will only extract the unchanged sequence."
+            ],
+            [
+              "Reviewer",
+              "That gives the tests a clear expectation: no receipt before the successful save outcome."
+            ],
+            [
+              "Author",
+              "And it makes the refactor claim something we can actually check against observable behavior."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A review comment that needs an example",
+        "brief": "A fictional review says 'This loses precision.' The author rounded a displayed duration, but the underlying calculation remains unchanged. The reviewer is concerned only about the displayed boundary between 0.9 and 1.0 seconds.",
+        "role_a": "Author: ask which value, output, and consequence the comment refers to.",
+        "role_b": "Reviewer: give the 0.9-to-1.0 display example and distinguish it from calculation accuracy.",
+        "opening_line": "Could you identify which output loses precision and whether your concern is display or calculation?",
+        "complication": "A teammate proposes rewriting the calculation before the display concern is clarified.",
+        "success_checks": [
+          "Ask for the concrete example.",
+          "Separate presentation from underlying computation.",
+          "Agree a focused review of display rounding."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "The package we didn't list directly",
+          "setting": "Fictional developers identify evidence needed for a ParcelKit upgrade review.",
+          "turns": [
+            [
+              "Reviewer",
+              "ParcelKit is our direct dependency; what introduces TextCore into the proposed build?"
+            ],
+            [
+              "Maintainer",
+              "TextCore is a transitive dependency through ParcelKit. Its resolved version changes in the proposed lockfile."
+            ],
+            [
+              "Reviewer",
+              "Could you show that difference and link the note about the deprecated parsing entry point?"
+            ],
+            [
+              "Maintainer",
+              "I have both. I haven't checked whether our application or ParcelKit uses that entry point."
+            ],
+            [
+              "Reviewer",
+              "Please identify the caller before describing this as an update requiring no code changes."
+            ],
+            [
+              "Maintainer",
+              "Agreed. Deprecation doesn't automatically mean removal, but the actual call and version still matter."
+            ],
+            [
+              "Reviewer",
+              "Exactly. We need evidence about this combination, not an assumption based on the package name."
+            ],
+            [
+              "Maintainer",
+              "I'll return the dependency path, resolved versions, change note, and relevant call-site findings."
+            ],
+            [
+              "Reviewer",
+              "That will let us separate package resolution from compatibility with the calls we make."
+            ],
+            [
+              "Maintainer",
+              "And we'll leave the drop-in claim unconfirmed until those findings support it."
+            ]
+          ]
+        },
+        {
+          "title": "A lockfile difference without a source change",
+          "setting": "Fictional maintainers discuss why two builds resolved different dependency sets.",
+          "turns": [
+            [
+              "Developer",
+              "My source changes only a label, yet the proposed build resolves three different package versions."
+            ],
+            [
+              "Maintainer",
+              "Did the dependency manifest change, or only the lockfile that records this resolution?"
+            ],
+            [
+              "Developer",
+              "Only the lockfile differs. I don't know which tool action regenerated it locally."
+            ],
+            [
+              "Maintainer",
+              "Then the label change and dependency change need separate explanations before we call the build equivalent."
+            ],
+            [
+              "Developer",
+              "Could I describe the lockfile as generated and therefore irrelevant to behavior?"
+            ],
+            [
+              "Maintainer",
+              "No. Generated doesn't mean inconsequential; the resolved dependencies may affect what goes into the artifact."
+            ],
+            [
+              "Developer",
+              "I'll identify how it changed and compare the selected versions with the current build."
+            ],
+            [
+              "Maintainer",
+              "Please check the actual tool documentation rather than assume every package manager treats lockfiles identically."
+            ],
+            [
+              "Developer",
+              "Understood. The source edit remains narrow, but the artifact difference is not yet explained."
+            ],
+            [
+              "Maintainer",
+              "That's the right scope for review: one known label change and an open resolution difference."
+            ]
+          ]
+        },
+        {
+          "title": "Deprecated is not removed",
+          "setting": "A fictional maintainer clarifies an upgrade note with a caller's developer.",
+          "turns": [
+            [
+              "Caller developer",
+              "The note says the old reader is deprecated. Does our current call stop working immediately?"
+            ],
+            [
+              "Maintainer",
+              "The note doesn't establish removal. It says the replacement is preferred, with removal timing unspecified."
+            ],
+            [
+              "Caller developer",
+              "So we should distinguish a migration recommendation from a confirmed missing entry point."
+            ],
+            [
+              "Maintainer",
+              "Yes. We also need to compare the replacement's input and error behavior before changing callers."
+            ],
+            [
+              "Caller developer",
+              "Our current caller expects an error result for malformed input. Does the replacement preserve that?"
+            ],
+            [
+              "Maintainer",
+              "The note links a contract section, but I haven't checked that specific behavior yet."
+            ],
+            [
+              "Caller developer",
+              "Please include it in the review. A matching function name wouldn't settle that difference."
+            ],
+            [
+              "Maintainer",
+              "I'll compare the stated contracts and identify any behavior our caller relies on."
+            ],
+            [
+              "Caller developer",
+              "Then today's conclusion is deprecated use identified, replacement compatibility still under review."
+            ],
+            [
+              "Maintainer",
+              "Exactly. We can discuss a migration without inventing an immediate failure or a removal deadline."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two components request different versions",
+        "brief": "In a fictional dependency report, App requests FormatKit 1.4; App -> ViewPlug requests FormatKit 2.1. The supplied graph retains both versions at those paths; the tool's resolution rules remain unreviewed.",
+        "role_a": "Developer: ask what was actually resolved and where each request originates.",
+        "role_b": "Maintainer: show the two requests and state that the tool's resolution rules need checking.",
+        "opening_line": "These are two requested versions; which versions actually appear in the resolved graph?",
+        "complication": "Someone assumes the higher version always wins in every package tool.",
+        "success_checks": [
+          "Distinguish requested from resolved versions.",
+          "Identify both dependency paths.",
+          "Avoid claiming a universal resolution rule."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "The storage substitute never rejects",
+          "setting": "Fictional developers examine why a unit test missed a misleading success message.",
+          "turns": [
+            [
+              "Reviewer",
+              "The save test passed before the bug report. What outcome did its storage substitute return?"
+            ],
+            [
+              "Developer",
+              "It always returned success, and the assertion checked that the success message appeared."
+            ],
+            [
+              "Reviewer",
+              "Then it never exercised the rejection that previously produced the wrong message, did it?"
+            ],
+            [
+              "Developer",
+              "No. We need a regression case where the substitute rejects and the visible result is checked."
+            ],
+            [
+              "Reviewer",
+              "Would asserting only that the function returns without throwing catch the misleading success message?"
+            ],
+            [
+              "Developer",
+              "Not necessarily. The assertion needs to distinguish the intended rejection message from false success."
+            ],
+            [
+              "Reviewer",
+              "Good. And what would that case tell us about the real storage adapter?"
+            ],
+            [
+              "Developer",
+              "Only about the save function's response to the simulated outcome, not the adapter's actual behavior."
+            ],
+            [
+              "Reviewer",
+              "Then name the integration question separately so the unit test isn't credited with answering it."
+            ],
+            [
+              "Developer",
+              "The unit check covers rejection response; an integration test must examine the real adapter."
+            ]
+          ]
+        },
+        {
+          "title": "A test that calls code but checks no result",
+          "setting": "Fictional developers strengthen the stated purpose of a parsing test.",
+          "turns": [
+            [
+              "Developer",
+              "This new test calls the parser with a valid record and completes without an exception."
+            ],
+            [
+              "Reviewer",
+              "What behavior is it intended to establish? Execution alone doesn't check the parsed values."
+            ],
+            [
+              "Developer",
+              "It should preserve leading zeros in a reference, but I haven't asserted that result."
+            ],
+            [
+              "Reviewer",
+              "Then a parser returning a different reference might pass this test as currently described."
+            ],
+            [
+              "Developer",
+              "You're right. The concrete input is zero zero seven, and the expected reference retains all three characters."
+            ],
+            [
+              "Reviewer",
+              "Please make that output the check, rather than relying on successful execution as a substitute."
+            ],
+            [
+              "Developer",
+              "That also explains why converting the reference to a number would violate this contract."
+            ],
+            [
+              "Reviewer",
+              "Exactly. The test's purpose is preserving an identifier, not checking arithmetic on its digits."
+            ],
+            [
+              "Developer",
+              "I'll add the expected reference and name the case around preserving leading zeros."
+            ],
+            [
+              "Reviewer",
+              "Then a failure will point to the behavior we care about instead of an unspecified parser problem."
+            ]
+          ]
+        },
+        {
+          "title": "A test double with the wrong contract",
+          "setting": "Fictional developers find a mismatch between a controlled substitute and a real collaborator.",
+          "turns": [
+            [
+              "Reviewer",
+              "The test double returns a plain string, but the collaborator's contract returns a result object."
+            ],
+            [
+              "Developer",
+              "I simplified it because the function only needs the label inside that object."
+            ],
+            [
+              "Reviewer",
+              "Does the function actually extract the label, or does the simplified substitute hide that step?"
+            ],
+            [
+              "Developer",
+              "It extracts the label in production. The test currently bypasses that shape difference."
+            ],
+            [
+              "Reviewer",
+              "Then the substitute is not exercising the interface the function is supposed to consume."
+            ],
+            [
+              "Developer",
+              "I'll make its returned shape match the contract and keep the sample label simple."
+            ],
+            [
+              "Reviewer",
+              "Please include the error result shape too if this case claims to cover rejection."
+            ],
+            [
+              "Developer",
+              "This case covers success only. I'll label it narrowly and add rejection as a separate case."
+            ],
+            [
+              "Reviewer",
+              "That separates test data simplicity from changing the collaborator's promised interface."
+            ],
+            [
+              "Developer",
+              "Agreed. A controlled substitute can be predictable without teaching the test the wrong contract."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A test name overstates its assertion",
+        "brief": "A fictional test named 'saves and reloads settings' checks only the save response. It uses a test double and never performs a reload. The author can rename it and propose a distinct persistence check.",
+        "role_a": "Reviewer: explain the mismatch between the test name and observed actions.",
+        "role_b": "Author: distinguish a response check from a read-after-save interaction.",
+        "opening_line": "This test checks the save response, but where does it reload the settings?",
+        "complication": "A teammate says the positive response makes the reload check redundant.",
+        "success_checks": [
+          "State exactly what is asserted.",
+          "Avoid treating a response as proof of persistence.",
+          "Agree a truthful name and a separate interaction question."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Faster at the median, outside the memory budget",
+          "setting": "Fictional developers compare implementations A and B under the supplied benchmark.",
+          "turns": [
+            [
+              "Developer",
+              "B's median latency is twenty-five milliseconds, versus forty for A. Should we choose B?"
+            ],
+            [
+              "Reviewer",
+              "How does each memory footprint compare with our stated budget?"
+            ],
+            [
+              "Developer",
+              "A uses eighty megabytes; B uses one hundred sixty. Our budget is one hundred twenty."
+            ],
+            [
+              "Reviewer",
+              "Then B improves that latency measure but exceeds the resource constraint we're working within."
+            ],
+            [
+              "Developer",
+              "Agreed. A fits the memory budget, though its median is fifteen milliseconds slower."
+            ],
+            [
+              "Reviewer",
+              "Do these results tell us about the slowest requests or only the median?"
+            ],
+            [
+              "Developer",
+              "Only the median. We haven't measured tail latency or representative production workloads yet."
+            ],
+            [
+              "Reviewer",
+              "Please include those limits instead of describing B as universally faster and therefore better."
+            ],
+            [
+              "Developer",
+              "I'll present A as within budget and B as requiring a memory tradeoff we haven't accepted."
+            ],
+            [
+              "Reviewer",
+              "That comparison gives us a decision constraint, not just the most attractive single number."
+            ]
+          ]
+        },
+        {
+          "title": "Throughput rises while individual waits grow",
+          "setting": "Fictional developers interpret two different measures in a batching experiment.",
+          "turns": [
+            [
+              "Developer",
+              "The batched version completes more items per minute, but individual items wait longer before processing."
+            ],
+            [
+              "Colleague",
+              "Then improved throughput doesn't necessarily mean each person gets a faster response, does it?"
+            ],
+            [
+              "Developer",
+              "Correct. Throughput measures completed work over time; latency measures the wait for a specified item."
+            ],
+            [
+              "Colleague",
+              "Which goal matters for this feature? The current requirement is a response within the stated interaction window."
+            ],
+            [
+              "Developer",
+              "Then we need the latency evidence against that window, not only the items-per-minute total."
+            ],
+            [
+              "Colleague",
+              "Can we show both metrics for the same workload so the tradeoff is visible?"
+            ],
+            [
+              "Developer",
+              "Yes. The benchmark includes both, although we haven't measured the busiest production pattern."
+            ],
+            [
+              "Colleague",
+              "Please keep that limitation. A larger batch might help total capacity while making this interaction less responsive."
+            ],
+            [
+              "Developer",
+              "I'll explain the measured tradeoff without presenting higher throughput as a synonym for lower latency."
+            ],
+            [
+              "Colleague",
+              "And we'll ask whether the observed wait meets the actual requirement before favoring the batch."
+            ]
+          ]
+        },
+        {
+          "title": "A warm run beside a cold run",
+          "setting": "Fictional developers correct an unfair benchmark comparison.",
+          "turns": [
+            [
+              "Reviewer",
+              "Your chart compares A's first run with B's fifth run. Were their starting conditions equivalent?"
+            ],
+            [
+              "Developer",
+              "No. B reused initialized data, while A's first run included preparing that data."
+            ],
+            [
+              "Reviewer",
+              "Then we can't attribute the entire timing difference to the implementation change alone."
+            ],
+            [
+              "Developer",
+              "Agreed. The warm and cold conditions need separate comparisons using matching workloads."
+            ],
+            [
+              "Reviewer",
+              "Can you label the existing results honestly instead of discarding the slower observation?"
+            ],
+            [
+              "Developer",
+              "Yes. I'll mark them cold A and warm B, without claiming a controlled head-to-head result."
+            ],
+            [
+              "Reviewer",
+              "What comparison would answer whether B changes the first-use experience for this workload?"
+            ],
+            [
+              "Developer",
+              "Cold runs for both implementations under the same stated preparation conditions would address that question."
+            ],
+            [
+              "Reviewer",
+              "And warm runs for both would answer the repeated-use question, which is different."
+            ],
+            [
+              "Developer",
+              "Exactly. I'll keep the two questions separate so a cache advantage doesn't become an unsupported implementation claim."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The average hides the slow end",
+        "brief": "A fictional benchmark reports unchanged average latency, but its slowest measured group takes longer after a change. Sample size is forty runs; production representativeness is unknown.",
+        "role_a": "Developer: explain how an unchanged average can coexist with slower individual observations.",
+        "role_b": "Reviewer: ask for the distribution and comparable conditions, without assuming every user is slower.",
+        "opening_line": "The average is unchanged, but the slow end of this sample has moved.",
+        "complication": "A stakeholder wants to say there is no performance change because the average matches.",
+        "success_checks": [
+          "Distinguish the average from the distribution.",
+          "Keep the forty-run scope visible.",
+          "Avoid claiming a production-wide effect."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The reply timed out, not necessarily the reservation",
+          "setting": "Fictional developers discuss a proposed automatic repeat of a state-changing request.",
+          "turns": [
+            [
+              "Client developer",
+              "The reservation request timed out. I'll send a new one so the user can continue."
+            ],
+            [
+              "Service developer",
+              "Do we know the first request failed, or only that the client didn't receive its reply?"
+            ],
+            [
+              "Client developer",
+              "Only the missing reply. The reservation may already exist, and repeated-request behavior is unspecified."
+            ],
+            [
+              "Service developer",
+              "Then another new request could create an additional reservation rather than complete the original interaction."
+            ],
+            [
+              "Client developer",
+              "We need a defined way to recognize repetition and return the appropriate outcome."
+            ],
+            [
+              "Service developer",
+              "Yes. Idempotency concerns the intended effect of repeating the operation, not identical timing or wording."
+            ],
+            [
+              "Client developer",
+              "Could we discuss that contract before proposing an automatic retry for this client?"
+            ],
+            [
+              "Service developer",
+              "Certainly. We should also state how the client distinguishes an unknown outcome from confirmed rejection."
+            ],
+            [
+              "Client developer",
+              "I'll keep the current report at outcome unknown and withdraw the assumption that nothing happened."
+            ],
+            [
+              "Service developer",
+              "That gives us the right design question without inventing a production retry mechanism."
+            ]
+          ]
+        },
+        {
+          "title": "Two callers each see the last slot",
+          "setting": "Fictional developers discuss an overlapping-operation example without choosing a database technique.",
+          "turns": [
+            [
+              "Developer",
+              "Two callers each see one slot available and both receive a successful reservation in this example."
+            ],
+            [
+              "Reviewer",
+              "What invariant should hold? We need the intended rule before judging the observed interleaving."
+            ],
+            [
+              "Developer",
+              "The agreed rule permits only one active reservation for that slot, so this outcome violates it."
+            ],
+            [
+              "Reviewer",
+              "Then the issue depends on overlapping actions, not simply whether either caller behaves correctly alone."
+            ],
+            [
+              "Developer",
+              "Right. Each reads availability before either completes the state change in the illustrated sequence."
+            ],
+            [
+              "Reviewer",
+              "Calling the operations transactions doesn't tell us which concurrency guarantees this design actually provides."
+            ],
+            [
+              "Developer",
+              "Agreed. We need the system's specified guarantees and evidence that the invariant survives overlapping requests."
+            ],
+            [
+              "Reviewer",
+              "Please describe the conflicting outcomes and the invariant without prescribing a database-specific command here."
+            ],
+            [
+              "Developer",
+              "I'll describe the race condition and violated invariant, with the implementation remedy still under review."
+            ],
+            [
+              "Reviewer",
+              "That gives the review a precise invariant, not a vague request for safety."
+            ]
+          ]
+        },
+        {
+          "title": "A repeated command is not a new intention",
+          "setting": "Fictional developers clarify a request identifier's meaning in a proposed contract.",
+          "turns": [
+            [
+              "Client developer",
+              "Should the client create a new request identifier each time it repeats the same submitted action?"
+            ],
+            [
+              "Interface owner",
+              "In our proposed contract, repetition of that action retains its identifier; a genuinely new action gets another."
+            ],
+            [
+              "Client developer",
+              "Then the identifier distinguishes another attempt from another user intention, not simply another network message."
+            ],
+            [
+              "Interface owner",
+              "Exactly. But that is our proposal, not an assumption about every service or library."
+            ],
+            [
+              "Client developer",
+              "What if the same identifier arrives with different contents? We haven't defined that case."
+            ],
+            [
+              "Interface owner",
+              "Good catch. The contract needs an explicit outcome rather than silently treating different contents as equivalent."
+            ],
+            [
+              "Client developer",
+              "I'll add that unresolved case and keep the repetition design marked incomplete."
+            ],
+            [
+              "Interface owner",
+              "Please also explain how callers learn an earlier outcome after losing its reply."
+            ],
+            [
+              "Client developer",
+              "That links the identifier rule to the actual user problem instead of treating it as decoration."
+            ],
+            [
+              "Interface owner",
+              "And it keeps duplicate effects, changed contents, and missing replies as distinct questions to resolve."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two editors save different versions",
+        "brief": "In a fictional editor, two people open revision 6. One saves revision 7. The other's later save still refers to revision 6. Conflict handling is unspecified; neither edit is known to be dispensable.",
+        "role_a": "Developer: describe the competing updates and ask what the interface should communicate.",
+        "role_b": "Reviewer: insist that the intended conflict outcome be defined before choosing a mechanism.",
+        "opening_line": "The second save is based on an older revision; what outcome should the caller expect?",
+        "complication": "A colleague assumes the later request must always overwrite the earlier one.",
+        "success_checks": [
+          "Identify the older base revision.",
+          "Avoid inventing a universal last-writer rule.",
+          "State the unresolved contract question about competing edits."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "R18 is installed but search is disabled",
+          "setting": "A fictional developer hands the release review to Lee.",
+          "turns": [
+            [
+              "Developer",
+              "R18 is in staging, but the feature flag keeps the new search view disabled."
+            ],
+            [
+              "Lee",
+              "Then deployment alone doesn't establish that users have exercised the new view in staging."
+            ],
+            [
+              "Developer",
+              "Correct. The optional-field migration is present, but previous-build compatibility with it remains untested."
+            ],
+            [
+              "Lee",
+              "Has anyone confirmed production rollout or a successful rollback based on this deployment?"
+            ],
+            [
+              "Developer",
+              "No. Both would overstate what we know. The open compatibility check belongs in your release review."
+            ],
+            [
+              "Lee",
+              "I'll take that check. Please identify the exact build and the staging evidence I should review."
+            ],
+            [
+              "Developer",
+              "The handover links R18's artifact and the migration record, with search explicitly marked disabled."
+            ],
+            [
+              "Lee",
+              "I accept the review, not a release approval. The production decision is still open."
+            ],
+            [
+              "Developer",
+              "Thank you. Application rollback also shouldn't be described as automatically undoing the schema change."
+            ],
+            [
+              "Lee",
+              "Agreed. I'll keep build state, feature exposure, and recovery evidence separate in the decision."
+            ]
+          ]
+        },
+        {
+          "title": "The artifact differs from the one tested",
+          "setting": "Fictional developers catch a release handover mismatch.",
+          "turns": [
+            [
+              "Release reviewer",
+              "The release note names build K9, but the test evidence is labeled K8. Are they equivalent?"
+            ],
+            [
+              "Developer",
+              "They're different build artifacts. I haven't established that their contents are identical."
+            ],
+            [
+              "Release reviewer",
+              "Then we can't attach K8's passing results to K9 without explaining that difference."
+            ],
+            [
+              "Developer",
+              "Agreed. The intended release artifact needs its own identified evidence or a justified equivalence check."
+            ],
+            [
+              "Release reviewer",
+              "What changed between the runs? The source label looks the same in the note."
+            ],
+            [
+              "Developer",
+              "The dependency resolution may differ. Matching source labels alone don't settle the artifact contents."
+            ],
+            [
+              "Release reviewer",
+              "Please keep the release candidate unverified until that build difference is explained and reviewed."
+            ],
+            [
+              "Developer",
+              "I'll correct the evidence link's description so it says K8, rather than implying K9 was tested."
+            ],
+            [
+              "Release reviewer",
+              "That protects the handover from a mistaken identity, without discarding useful results from K8."
+            ],
+            [
+              "Developer",
+              "And it gives the next reviewer a precise artifact question instead of a generic green status."
+            ]
+          ]
+        },
+        {
+          "title": "Switching a flag off doesn't erase prior changes",
+          "setting": "Fictional developers clarify the scope of disabling a feature after a trial.",
+          "turns": [
+            [
+              "Release lead",
+              "The flag is off again. Does that mean the trial's stored changes are gone?"
+            ],
+            [
+              "Developer",
+              "No. Our flag controls the view, not reversal of stored data from the trial."
+            ],
+            [
+              "Release lead",
+              "So disabling exposure and undoing data changes are separate actions with separate evidence."
+            ],
+            [
+              "Developer",
+              "Exactly. We can confirm the view is disabled, but we haven't confirmed any data reversal."
+            ],
+            [
+              "Release lead",
+              "Could the previous application build still read the data written during the trial?"
+            ],
+            [
+              "Developer",
+              "That compatibility question remains open. We shouldn't infer the answer from the flag's current state."
+            ],
+            [
+              "Release lead",
+              "Please make that limit clear in the handover so support doesn't promise restored data."
+            ],
+            [
+              "Developer",
+              "I'll state view disabled, trial data retained, and previous-build compatibility awaiting review."
+            ],
+            [
+              "Release lead",
+              "That's specific enough for the review. We need an owner for the compatibility question."
+            ],
+            [
+              "Developer",
+              "I'll bring it to the maintainer and retain the open status until someone accepts the check."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A rollout pauses after a bounded trial",
+        "brief": "A fictional feature is enabled for ten internal test accounts. Two report missing labels. The release lead pauses further exposure; existing evidence covers only those ten accounts and does not establish an external impact.",
+        "role_a": "Developer: report the observed failures, exposure boundary, and paused expansion.",
+        "role_b": "Release reviewer: ask what is known about the other eight accounts and external users.",
+        "opening_line": "Two of ten internal test accounts reported missing labels, and further exposure is paused.",
+        "complication": "A stakeholder asks to describe every user as affected.",
+        "success_checks": [
+          "Preserve the ten-account scope.",
+          "Distinguish reports from complete checks of the other accounts.",
+          "Name the remaining investigation without expanding the impact claim."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Pagination without a promise about order",
+      "setting": "Fictional developers discover an assumption in a consumer of a paginated listing.",
+      "dialogue": [
+        [
+          "Consumer developer",
+          "Our client uses each page's last item to predict the next page's first."
+        ],
+        [
+          "Service developer",
+          "Which ordering guarantee are you relying on? The current contract provides a continuation token, not alphabetical order."
+        ],
+        [
+          "Consumer developer",
+          "The sample response happened to be alphabetical, so I assumed that ordering was part of the interface."
+        ],
+        [
+          "Service developer",
+          "That example shows possible data, not a guarantee. The continuation token is the stated way to request more results."
+        ],
+        [
+          "Consumer developer",
+          "Then sorting each page locally would not establish a consistent order across the entire collection, would it?"
+        ],
+        [
+          "Service developer",
+          "Not by itself. We'd need an agreed global ordering contract before promising that behavior to the caller."
+        ],
+        [
+          "Consumer developer",
+          "I'll remove the prediction based on the last label and preserve the supplied token for continuation."
+        ],
+        [
+          "Service developer",
+          "Please also distinguish reaching the end from a failed request. The contract gives them separate result shapes."
+        ],
+        [
+          "Consumer developer",
+          "I see that now: an absent next token ends this listing; an error result reports a request failure."
+        ],
+        [
+          "Service developer",
+          "Yes. Neither state should be inferred solely from whether the visible page looks short."
+        ],
+        [
+          "Consumer developer",
+          "We've identified two assumptions to remove: alphabetical order and page length as proof of completion."
+        ],
+        [
+          "Service developer",
+          "That narrows the adapter change and leaves any new ordering guarantee for an explicit interface discussion."
+        ]
+      ],
+      "notes": [
+        "'Relying on' asks which guarantee a design depends on.",
+        "'Not by itself' rejects an insufficient inference without claiming the desired behavior is impossible."
+      ]
+    },
+    {
+      "title": "Reducing the example without losing the failure",
+      "setting": "Fictional developers decide which details belong in a useful reproduction.",
+      "dialogue": [
+        [
+          "Developer",
+          "I reduced the eighty-row report, with its unrelated fields, to two rows."
+        ],
+        [
+          "Maintainer",
+          "Does the reduced file still fail in the same observable way, or merely produce some other error?"
+        ],
+        [
+          "Developer",
+          "It still duplicates the second label. The failure is incorrect displayed content, not an exception."
+        ],
+        [
+          "Maintainer",
+          "Then the expected and actual labels matter more than an unrelated stack trace. Which fields did you keep?"
+        ],
+        [
+          "Developer",
+          "I kept identifier, label, and order. Removing the repeated identifier makes the duplication disappear in this example."
+        ],
+        [
+          "Maintainer",
+          "That supports investigating repeated identifiers, but don't assume the application prohibits them without checking the contract."
+        ],
+        [
+          "Developer",
+          "The contract allows the same identifier in different groups. I removed group while reducing the file, though."
+        ],
+        [
+          "Maintainer",
+          "Then that removal may have changed the meaning. Can you restore group and see whether the example remains representative?"
+        ],
+        [
+          "Developer",
+          "With two different groups restored, it still duplicates the label. Both groups should retain their own label."
+        ],
+        [
+          "Maintainer",
+          "Now the example preserves the allowed input condition as well as the failure, which makes it more useful."
+        ],
+        [
+          "Developer",
+          "I'll attach those two rows, their group values, and the expected separate labels to the review."
+        ],
+        [
+          "Maintainer",
+          "That gives us a small, valid example instead of a smaller file that accidentally tests a different contract."
+        ]
+      ],
+      "notes": [
+        "'In the same observable way' checks whether reduction preserves the relevant failure.",
+        "'Representative' means the example still stands for the reported conditions, not merely that it is short."
+      ]
+    },
+    {
+      "title": "A broader cleanup hides the behavior change",
+      "setting": "Fictional developers agree how to make a reviewable revision without losing completed work.",
+      "dialogue": [
+        [
+          "Reviewer",
+          "This pull request changes retry behavior and reformats three large files. I'm struggling to isolate the behavioral difference."
+        ],
+        [
+          "Author",
+          "The formatting tool touched those files while I was editing. The actual retry change is only twelve lines."
+        ],
+        [
+          "Reviewer",
+          "Could you separate the formatting change so the retry review has a clear before-and-after comparison for those lines?"
+        ],
+        [
+          "Author",
+          "I can preserve the formatting work in a separate proposal. Which retry question should this review focus on?"
+        ],
+        [
+          "Reviewer",
+          "The new branch retries on every error result, whereas the contract identifies only one result as eligible."
+        ],
+        [
+          "Author",
+          "Then the issue isn't merely diff size. The condition is broader than the specified behavior as well."
+        ],
+        [
+          "Reviewer",
+          "Exactly. Please narrow the condition to the stated result and show how the other error results are handled."
+        ],
+        [
+          "Author",
+          "I'll keep them unchanged and include examples distinguishing the eligible result from the ordinary validation failure."
+        ],
+        [
+          "Reviewer",
+          "That makes the behavior legible without hundreds of unrelated whitespace changes."
+        ],
+        [
+          "Author",
+          "I've separated formatting and limited this revision's description to the retry condition and its evidence."
+        ],
+        [
+          "Reviewer",
+          "Thanks. I can now review that decision on its own, and the formatting work hasn't been discarded."
+        ],
+        [
+          "Author",
+          "Once the focused change is reviewed, we'll consider the separate cleanup without conflating their approval status."
+        ]
+      ],
+      "notes": [
+        "'Broader than the specified behavior' identifies the actual review concern.",
+        "'On its own' requests independent assessment, not rejection of all related work."
+      ]
+    },
+    {
+      "title": "The small upgrade with a changed default",
+      "setting": "Fictional maintainers examine an upgrade note before calling an update behavior-neutral.",
+      "dialogue": [
+        [
+          "Developer",
+          "The package update looks small, but its note changes the parser's default mode."
+        ],
+        [
+          "Reviewer",
+          "Which caller sets a mode explicitly, and which leaves that option unspecified?"
+        ],
+        [
+          "Developer",
+          "Our main caller sets strict mode explicitly. A background import leaves the option out and uses the default."
+        ],
+        [
+          "Reviewer",
+          "Then the callers have different exposure to the changed default. Have we compared the actual malformed-input examples?"
+        ],
+        [
+          "Developer",
+          "Not yet. The note names the new default, but it doesn't prove our import's outputs remain equivalent."
+        ],
+        [
+          "Reviewer",
+          "Please avoid a blanket no-impact statement. Could you isolate the import caller and its relied-on error behavior?"
+        ],
+        [
+          "Developer",
+          "Yes. I'll show its input examples and compare expected results under the documented old and new modes."
+        ],
+        [
+          "Reviewer",
+          "Also distinguish this package's documented change from assumptions about what a small version increment normally implies."
+        ],
+        [
+          "Developer",
+          "Agreed. The relevant evidence is the stated default and our omitted option, not the size of the version label."
+        ],
+        [
+          "Reviewer",
+          "Would explicitly selecting a mode be a possible proposal, subject to checking that mode's contract in the new version?"
+        ],
+        [
+          "Developer",
+          "Possibly. I'll present that option with evidence, not silently change the caller while claiming only an upgrade."
+        ],
+        [
+          "Reviewer",
+          "Then the review can consider the dependency and caller behavior together, with the affected import clearly identified."
+        ]
+      ],
+      "notes": [
+        "'Different exposure' explains why one dependency change can affect callers differently.",
+        "'A possible proposal, subject to...' offers an option without claiming compatibility before checking it."
+      ]
+    },
+    {
+      "title": "A regression assertion tied to the wrong detail",
+      "setting": "Fictional developers review a test that fails after harmless internal restructuring.",
+      "dialogue": [
+        [
+          "Developer",
+          "The regression test fails after the helper rename, although the displayed error remains correct."
+        ],
+        [
+          "Reviewer",
+          "What does the assertion observe? Is it checking the user-visible result or the old helper's internal name?"
+        ],
+        [
+          "Developer",
+          "It checks that the old helper is called once. I used that as a shortcut for checking the message."
+        ],
+        [
+          "Reviewer",
+          "Then the test may reject a harmless refactor while missing a wrong message produced through the same helper."
+        ],
+        [
+          "Developer",
+          "So the stable requirement is the rejection message, not which internal function happens to produce it."
+        ],
+        [
+          "Reviewer",
+          "Exactly. In this case, the contract names the outcome and doesn't require a particular internal call structure."
+        ],
+        [
+          "Developer",
+          "I'll assert the visible result for the rejected save and keep the successful save as a separate example."
+        ],
+        [
+          "Reviewer",
+          "Would there be any reason to check call count here, such as a specified external side effect?"
+        ],
+        [
+          "Developer",
+          "Not for this formatter. Another focused check already covers the storage interaction."
+        ],
+        [
+          "Reviewer",
+          "Then removing that internal-name dependency should make the regression case better aligned with its actual purpose."
+        ],
+        [
+          "Developer",
+          "I've revised the assertion. It now fails if success is shown after rejection, regardless of the formatter's name."
+        ],
+        [
+          "Reviewer",
+          "That preserves the defect guard while allowing implementation details to change without creating a false alarm."
+        ]
+      ],
+      "notes": [
+        "'A shortcut for' can reveal an indirect check that does not establish the intended outcome.",
+        "'Regardless of' separates a required behavior from an irrelevant implementation detail."
+      ]
+    },
+    {
+      "title": "The cache proposal needs a freshness contract",
+      "setting": "Fictional developers compare a faster response with an unresolved data-freshness requirement.",
+      "dialogue": [
+        [
+          "Developer",
+          "The prototype cache lowers median response time in our test. Could we adopt it for the availability display?"
+        ],
+        [
+          "Reviewer",
+          "What freshness is required? Returning older values quickly may change the feature's meaning."
+        ],
+        [
+          "Developer",
+          "The current contract doesn't state how old the displayed value may be. The prototype can reuse a previous result."
+        ],
+        [
+          "Reviewer",
+          "Then latency isn't the only criterion. We need agreement about acceptable age before calling the cache behavior equivalent."
+        ],
+        [
+          "Developer",
+          "The benchmark also uses repeated identical requests, which makes reuse more common than in some real workflows."
+        ],
+        [
+          "Reviewer",
+          "Please make that workload explicit. It supports a result for repeated requests, not every pattern of use."
+        ],
+        [
+          "Developer",
+          "Would you accept a comparison showing response time, memory use, and the age of reused values together?"
+        ],
+        [
+          "Reviewer",
+          "Yes, provided the freshness requirement is identified as unresolved rather than silently selected by the implementation."
+        ],
+        [
+          "Developer",
+          "I'll ask the interface owner about that requirement and label the prototype's reuse behavior in the comparison."
+        ],
+        [
+          "Reviewer",
+          "Also distinguish this design discussion from a claim that any particular cache library guarantees the required behavior."
+        ],
+        [
+          "Developer",
+          "Understood. The prototype supports a design comparison, but doesn't settle our production configuration."
+        ],
+        [
+          "Reviewer",
+          "Then we can evaluate the speed benefit alongside what users would give up in freshness and resource use."
+        ]
+      ],
+      "notes": [
+        "'Equivalent' concerns behavior, not merely similar output shape.",
+        "'Alongside what users would give up' makes a tradeoff explicit without dismissing the measured benefit."
+      ]
+    },
+    {
+      "title": "An all-or-nothing claim needs a stated boundary",
+      "setting": "Fictional developers examine what a proposed transaction includes and excludes.",
+      "dialogue": [
+        [
+          "Reviewer",
+          "The design says all-or-nothing. Which effects are included in that claim, and which are outside it?"
+        ],
+        [
+          "Developer",
+          "The proposed transaction groups the two local state updates. Sending a confirmation message occurs afterward through another component."
+        ],
+        [
+          "Reviewer",
+          "Then the phrase could mislead readers into thinking the state updates and message delivery share the same guarantee."
+        ],
+        [
+          "Developer",
+          "You're right. The transaction boundary covers the local updates; the message's delivery outcome is a separate concern."
+        ],
+        [
+          "Reviewer",
+          "If local updates complete but the message reply is lost, what can the caller actually conclude?"
+        ],
+        [
+          "Developer",
+          "Only that message acknowledgment is missing. The caller cannot infer that the local updates were undone."
+        ],
+        [
+          "Reviewer",
+          "Does retrying the entire operation necessarily preserve the intended invariant, or is that repetition contract still unspecified?"
+        ],
+        [
+          "Developer",
+          "It's unspecified. We need to distinguish repeating message delivery from requesting the state change as a new action."
+        ],
+        [
+          "Reviewer",
+          "Please revise the design explanation to name both boundaries rather than extending the all-or-nothing label across components."
+        ],
+        [
+          "Developer",
+          "I'll describe the local transaction separately and present the uncertain message outcome as an open interaction question."
+        ],
+        [
+          "Reviewer",
+          "That helps reviewers evaluate the guarantees without assuming particular storage or messaging behavior."
+        ],
+        [
+          "Developer",
+          "And it avoids offering one technical word as proof that every partial-outcome case has already been handled."
+        ]
+      ],
+      "notes": [
+        "'Which effects are included?' asks for the scope of a guarantee.",
+        "'The caller cannot infer...' separates a missing acknowledgment from an unobserved state change."
+      ]
+    },
+    {
+      "title": "A migration handover with an untested older reader",
+      "setting": "Fictional maintainers review an additive data change and an overconfident recovery claim.",
+      "dialogue": [
+        [
+          "Developer",
+          "The schema migration adds an optional label field. I called it additive and said rollback was safe."
+        ],
+        [
+          "Maintainer",
+          "Additive describes the shape change, but have we checked how the older application reads records containing the new field?"
+        ],
+        [
+          "Developer",
+          "The new build reads them successfully; the older reader hasn't been tested against them."
+        ],
+        [
+          "Maintainer",
+          "Then the evidence establishes new-build reading only. Optional for one reader doesn't guarantee tolerance in every other reader."
+        ],
+        [
+          "Developer",
+          "That's a useful distinction. I'll remove the safe-rollback claim and identify older-reader compatibility as the open check."
+        ],
+        [
+          "Maintainer",
+          "Please also state whether any existing field values were transformed, because that would create another compatibility question."
+        ],
+        [
+          "Developer",
+          "Existing values are unchanged in this migration. The only specified change is the added optional field."
+        ],
+        [
+          "Maintainer",
+          "Good. That narrows the review, but it still doesn't replace evidence about the older reader's actual behavior."
+        ],
+        [
+          "Developer",
+          "I'll hand over the migration, example records, and exact old and new artifact references."
+        ],
+        [
+          "Maintainer",
+          "I accept that compatibility review. Has production been changed, or does the handover concern staging only?"
+        ],
+        [
+          "Developer",
+          "Staging only. Production rollout remains undecided, and the release note will say that explicitly after this correction."
+        ],
+        [
+          "Maintainer",
+          "Then we have a bounded review: an additive staging change, unchanged existing values, and one unverified older-reader interaction."
+        ]
+      ],
+      "notes": [
+        "'Additive describes the shape change' prevents a descriptive label from becoming a guarantee.",
+        "'That narrows the review' acknowledges useful facts without treating them as complete verification."
+      ]
+    }
+  ]
+}

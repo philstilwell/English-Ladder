@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "landscaping-grounds",
+    "title": "Landscaping and Grounds English",
+    "summary": "Clarify grounds-service requests, property access, appearance preferences, weather changes, material discrepancies, and unfinished-work handoffs.",
+    "roles": "Landscape crew members, groundskeepers, lawn-service workers, and grounds assistants",
+    "category": "Industry & infrastructure",
+    "scope_note": "All properties, people, quantities, incidents, and service arrangements are fictional language practice, not horticultural, pesticide, equipment, irrigation, tree-work, safety, or property-law training. Do not infer plant treatments, application rates, pruning methods, site safety, or legal boundaries from these examples. Refer technical suitability, hazardous conditions, property questions, prices, and job changes to the responsible qualified people.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Grounds Maintenance Workers",
+        "url": "https://www.bls.gov/ooh/building-and-grounds-cleaning/grounds-maintenance-workers.htm"
+      },
+      {
+        "title": "OSHA: Landscape and Horticultural Services Overview",
+        "url": "https://www.osha.gov/landscaping"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Confirming the booked grounds work",
+        "terms": [
+          "work order",
+          "service area",
+          "exclusion",
+          "recurring visit"
+        ],
+        "collocations": [
+          "confirm the work order: compare the customer's request with the job record",
+          "define the service area: name the included part of the property",
+          "flag an extra request: separate new work from the existing booking",
+          "check the recurring schedule: verify which tasks happen on which visits"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Oak Court's work order includes front-lawn mowing and path leaf clearance. Resident asks for rear-hedge shaping. Hedges are excluded from today's booking; office can review a separate request, with no price or date confirmed.",
+          "model": "Today's work order covers the front lawn and leaf clearance from the path. Rear-hedge shaping isn't included in this visit. Is that an additional request you would like the office to review? I'll keep the new hedge request separate from the booked work so we don't imply that its price or timing has already been agreed."
+        },
+        "workshop": {
+          "title": "Name what the visit includes",
+          "goal": "Clarify an extra task without dismissing the customer's request.",
+          "explanation": "A recurring service does not automatically include every grounds task on every visit.",
+          "frames": [
+            "Today's work order includes ___.",
+            "___ is outside this visit's listed work.",
+            "Would you like the office to review ___ separately?"
+          ],
+          "before": "We do the garden.",
+          "after": "Today's booking covers the front lawn and path; hedge shaping needs a separate review.",
+          "reason": "Specific tasks prevent a broad description from becoming an unintended promise.",
+          "questions": [
+            {
+              "prompt": "Resident: Is the hedge part of today's booking?\nWorker: No; it is an ____ request.",
+              "options": [
+                "additional",
+                "identical",
+                "completed",
+                "included"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The hedge adds to the listed work.",
+                "It differs from mowing and leaf clearance.",
+                "It has not been completed.",
+                "The work order excludes it."
+              ]
+            },
+            {
+              "prompt": "Office: Is every recurring visit a hedge visit?\nWorker: No, the tasks vary ____ the agreed schedule.",
+              "options": [
+                "except",
+                "despite",
+                "according to",
+                "instead of"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "'Except' does not express dependence on a schedule.",
+                "'Despite' suggests contradiction rather than following the schedule.",
+                "Correct. 'According to' links tasks to the schedule.",
+                "'Instead of' would replace the schedule."
+              ]
+            }
+          ],
+          "role_b": "Resident: you assumed a regular grounds visit included the hedge; ask for a separate review.",
+          "challenge": "The resident asks whether requesting the extra task guarantees it today. Distinguish request from booking."
+        }
+      },
+      {
+        "title": "Clarifying access and property limits",
+        "terms": [
+          "access arrangement",
+          "property boundary",
+          "no-work area",
+          "site contact"
+        ],
+        "collocations": [
+          "confirm access with the site contact: verify entry arrangements",
+          "identify the no-work area: name the excluded location",
+          "query the boundary: ask for confirmation rather than infer ownership",
+          "preserve the agreed limit: keep work within the confirmed scope"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "Customer asks for clearing beyond a rear fence, saying the strip is probably theirs. Work plan ends at the fence; ownership is unconfirmed. Worker can flag the request to the office but cannot decide the property boundary.",
+          "model": "The current work plan ends at the rear fence. I understand you believe the strip beyond it belongs to you, but that boundary hasn't been confirmed for this job. We can continue with the agreed area and refer the additional strip to the office. I can't extend today's work on the basis of 'probably.'"
+        },
+        "workshop": {
+          "title": "Keep uncertain boundaries explicit",
+          "goal": "Decline an unconfirmed extension while preserving the agreed job.",
+          "explanation": "A fence, hedge, or informal statement may not establish the legal property limit. Practice referral, not boundary advice.",
+          "frames": [
+            "Our confirmed work area ends at ___.",
+            "The status of ___ hasn't been established.",
+            "We can refer ___ while continuing with ___."
+          ],
+          "before": "It's close enough to yours.",
+          "after": "The plan ends at the fence; the extra strip needs confirmation before inclusion.",
+          "reason": "The response does not make an ownership judgment.",
+          "questions": [
+            {
+              "prompt": "Customer: Does the fence prove the legal boundary?\nWorker: No; it shows our current work ____, not a legal conclusion.",
+              "options": [
+                "limit",
+                "estimate",
+                "schedule",
+                "finish standard"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The fence marks the plan's agreed work limit.",
+                "An estimate does not identify this location boundary.",
+                "A schedule concerns timing rather than this area limit.",
+                "A finish standard describes the result, not property ownership."
+              ]
+            },
+            {
+              "prompt": "Office: Has the strip beyond the fence been confirmed as included?\nWorker: No; it is ____.",
+              "options": [
+                "part of every recurring visit",
+                "awaiting inclusion confirmation",
+                "already inside the work order",
+                "excluded from every future visit"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "No agreement makes the strip part of recurring work.",
+                "Correct. Inclusion of the additional area is still unconfirmed.",
+                "Today's work order ends at the fence.",
+                "Today's limit does not decide every future booking."
+              ]
+            }
+          ],
+          "role_b": "Customer: you believe the strip is yours but have no confirmed job-area amendment.",
+          "challenge": "A neighbor offers permission verbally. Keep ownership and job authorization questions with the responsible office."
+        }
+      },
+      {
+        "title": "Clarifying appearance and plant requests",
+        "terms": [
+          "hedge line",
+          "flower bed",
+          "specimen plant",
+          "pruning request"
+        ],
+        "collocations": [
+          "describe the desired appearance: explain the visual result being requested",
+          "identify the specimen plant: distinguish the individual plant concerned",
+          "confirm which bed: use a location rather than a vague direction",
+          "refer a pruning request: ask the qualified lead to review suitability"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Customer says 'tidy the tall one' beside two plants near the entrance. They mean the rosemary beside the left flower bed, not the specimen magnolia. A qualified lead must review whether and how any pruning fits the job.",
+          "model": "When you say 'the tall one,' do you mean the rosemary beside the left flower bed or the specimen magnolia near the door? Please identify the plant and describe the appearance you want. I can relay that request to the lead for review; identifying the plant doesn't by itself confirm a suitable pruning method or booking."
+        },
+        "workshop": {
+          "title": "Replace vague appearance words with a clear request",
+          "goal": "Establish which plant and which visual concern the customer means.",
+          "explanation": "Clarifying a preference is not diagnosing plant health or prescribing pruning.",
+          "frames": [
+            "Which plant do you mean by ___?",
+            "Are you asking about ___ or ___?",
+            "I'll relay the desired appearance for ___ to review."
+          ],
+          "before": "We'll tidy that one.",
+          "after": "Do you mean the rosemary by the left bed, rather than the magnolia by the door?",
+          "reason": "Explicit location and identity avoid an ambiguous gesture.",
+          "questions": [
+            {
+              "prompt": "Customer: I mean the rosemary, not the magnolia.\nWorker: Thank you for ____ which plant.",
+              "options": [
+                "clarity",
+                "clear",
+                "clarified",
+                "clarifying"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "'For' needs a suitable noun or gerund; 'clarity which' does not fit.",
+                "The adjective does not fit here.",
+                "The past form does not follow 'for' this way.",
+                "Correct. 'For clarifying' describes the helpful action."
+              ]
+            },
+            {
+              "prompt": "Lead: Has the pruning method been agreed?\nWorker: No; we clarified the customer's ____ only.",
+              "options": [
+                "diagnosis",
+                "preference",
+                "method",
+                "authorization"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "No plant-health diagnosis was established by this clarification.",
+                "Correct. The discussion clarified the customer's desired appearance.",
+                "No pruning method has been selected or agreed.",
+                "Clarifying a request does not itself authorize the work."
+              ]
+            }
+          ],
+          "role_b": "Customer: identify the rosemary and say its outline looks uneven; do not invent a method.",
+          "challenge": "The customer asks for a guarantee the plant will flower more. Refer that outcome question to the qualified lead."
+        }
+      },
+      {
+        "title": "Explaining a weather-related change",
+        "terms": [
+          "weather delay",
+          "rescheduled visit",
+          "service interval",
+          "provisional date"
+        ],
+        "collocations": [
+          "report a weather delay: explain the changed visit status",
+          "offer a provisional date: identify a possible time without confirming it",
+          "review the service interval: check the gap created by a delay",
+          "confirm the revised visit: state the actual agreed replacement booking"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Lead has paused Cedar Court's planned outdoor work because of site conditions after rain. Office suggests Thursday, but crew availability is unconfirmed. Customer has an event Friday. Worker can relay the event and request a scheduling update by Wednesday noon.",
+          "model": "The lead has paused today's outdoor work because of the site conditions after rain. Thursday is a provisional date, not a confirmed replacement visit. I understand your event is Friday. I'll pass that deadline to the office and request an update by Wednesday noon, without promising that all work can be completed before the event."
+        },
+        "workshop": {
+          "title": "Explain what is paused and what is provisional",
+          "goal": "Give a useful weather update without making unsupported safety or scheduling judgments.",
+          "explanation": "Relay the lead's decision and the actual booking status. Avoid declaring a site suitable yourself.",
+          "frames": [
+            "The lead has paused ___ because ___.",
+            "___ is provisional until ___ confirms it.",
+            "Your event is ___; I'll request an update by ___."
+          ],
+          "before": "We'll definitely be back Thursday.",
+          "after": "Thursday is proposed; the office still needs to confirm crew availability.",
+          "reason": "The revision prevents a suggestion from becoming a guarantee.",
+          "questions": [
+            {
+              "prompt": "Customer: Is Thursday definitely booked?\nWorker: No, it is still ____.",
+              "options": [
+                "completed",
+                "provisional",
+                "canceled",
+                "overdue"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The visit has not occurred.",
+                "Correct. It is proposed but unconfirmed.",
+                "Thursday has not been described as canceled.",
+                "No confirmed Thursday appointment is overdue."
+              ]
+            },
+            {
+              "prompt": "Office: Is Wednesday noon the finish time?\nWorker: No, it is the requested ____ time.",
+              "options": [
+                "arrival",
+                "completion",
+                "update",
+                "inspection"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No crew arrival was promised for Wednesday noon.",
+                "No work completion was promised for Wednesday noon.",
+                "Correct. Wednesday noon is the requested communication deadline.",
+                "No inspection appointment was booked for Wednesday noon."
+              ]
+            }
+          ],
+          "role_b": "Customer: Friday's event matters; ask for a clear update rather than a guarantee.",
+          "challenge": "Thursday becomes unavailable. Explain the change and ask the office for actual alternatives instead of defending the earlier suggestion."
+        }
+      },
+      {
+        "title": "Reporting site observations without diagnosis",
+        "terms": [
+          "irrigation zone",
+          "standing water",
+          "bare patch",
+          "site observation"
+        ],
+        "collocations": [
+          "report standing water: describe visible pooling and location",
+          "identify the affected zone: name the recorded irrigation area",
+          "separate observation from cause: avoid diagnosing an unconfirmed fault",
+          "refer a plant-health concern: pass an issue to a qualified person"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "Worker sees standing water beside the east bed near irrigation zone 3 at 09:15. Cause is unknown; no system check has occurred. Customer asks if a pipe is broken. Grounds lead can arrange review.",
+          "model": "At 09:15 I noticed standing water beside the east bed near zone three. I haven't checked the irrigation system, so I can't say a pipe is broken or identify the cause. I'll report the location and time to the grounds lead and ask for a review. The observation is confirmed; the explanation is not."
+        },
+        "workshop": {
+          "title": "Describe a symptom without naming a cause",
+          "goal": "Give a specific site report that a qualified colleague can assess.",
+          "explanation": "Location and timing make an observation useful. Do not turn a visible condition into technical diagnosis.",
+          "frames": [
+            "I noticed ___ at ___ near ___.",
+            "I haven't established whether ___.",
+            "Could the lead review ___?"
+          ],
+          "before": "The pipe is broken.",
+          "after": "Water is pooled by the east bed; the cause has not been checked.",
+          "reason": "The statement stays within observed facts.",
+          "questions": [
+            {
+              "prompt": "Customer: Does the pooling prove a pipe is leaking?\nWorker: No. My report gives ____, with the cause unconfirmed.",
+              "options": [
+                "a pipe-failure diagnosis",
+                "an approved irrigation repair",
+                "a completed system check",
+                "a site observation"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "The worker has not established a pipe failure.",
+                "No irrigation repair has been proposed and approved here.",
+                "The worker has not checked the irrigation system.",
+                "Correct. Visible pooling is an observation, not a verified cause."
+              ]
+            },
+            {
+              "prompt": "Lead: The neighbor says it pools after rain. Have you verified that history?\nWorker: No; it is ____.",
+              "options": [
+                "the neighbor's reported experience",
+                "my verified seasonal record",
+                "a confirmed irrigation fault",
+                "an agreed repair instruction"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The account is attributed to its actual source.",
+                "The worker has not independently verified that history.",
+                "The neighbor's report does not establish an irrigation fault.",
+                "No repair instruction follows merely from that report."
+              ]
+            }
+          ],
+          "role_b": "Customer: ask about the pooled water but accept that a qualified review is needed.",
+          "challenge": "A neighbor says it always happens after rain. Attribute that report without treating it as a verified cause."
+        }
+      },
+      {
+        "title": "Checking materials and requested quantities",
+        "terms": [
+          "mulch",
+          "delivery quantity",
+          "material sample",
+          "coverage area"
+        ],
+        "collocations": [
+          "compare the material sample: check appearance against the agreed example",
+          "confirm the delivery quantity: state count and unit",
+          "flag a color difference: report a mismatch without approving substitution",
+          "check the coverage area: clarify which beds the estimate includes"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A job lists eight bags of dark mulch for the front beds. Delivery has six bags; the label describes natural brown. Customer's approved sample was dark. Worker cannot approve substitution or promise coverage; office will query supplier.",
+          "model": "The job lists eight bags of dark mulch for the front beds. Six bags arrived, and their label says natural brown. We have both a quantity difference and a material-description difference. Could the office check those against the approved sample and supplier order before we describe this delivery as matching the job?"
+        },
+        "workshop": {
+          "title": "Keep quantity and material mismatches separate",
+          "goal": "Describe two discrepancies without converting a visual guess into approval.",
+          "explanation": "A bag count does not establish coverage, and a similar-looking material is not automatically the agreed material.",
+          "frames": [
+            "The order lists ___; the delivery has ___.",
+            "The sample is ___, while the label says ___.",
+            "Please check both ___ and ___."
+          ],
+          "before": "It's almost the same delivery.",
+          "after": "Six natural-brown bags arrived against eight dark bags ordered.",
+          "reason": "The wording names both differences.",
+          "questions": [
+            {
+              "prompt": "Office: Six bags arrived instead of eight. Is quantity the only mismatch?\nWorker: No; the ____ also differs from the approved sample.",
+              "options": [
+                "material description",
+                "delivery count",
+                "bag total",
+                "number of packages"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Natural brown differs from the agreed dark material description.",
+                "Delivery count repeats the already identified quantity difference.",
+                "Bag total describes quantity rather than the material mismatch.",
+                "Package number repeats the quantity issue rather than explaining the sample difference."
+              ]
+            },
+            {
+              "prompt": "Customer: Do six bags prove enough coverage?\nWorker: No, the bag count alone doesn't ____ that.",
+              "options": [
+                "request",
+                "mention",
+                "establish",
+                "prefer"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Requesting is not demonstrating adequacy.",
+                "Mentioning does not mean verifying.",
+                "Correct. 'Establish' means demonstrate or confirm.",
+                "Preference does not prove sufficiency."
+              ]
+            }
+          ],
+          "role_b": "Customer: your sample was dark; you want the front beds only, not the rear beds.",
+          "challenge": "The supplier calls brown 'close enough.' Keep the substitution decision with the responsible office and customer."
+        }
+      },
+      {
+        "title": "Responding to finish and cleanup concerns",
+        "terms": [
+          "finish standard",
+          "clippings",
+          "debris removal",
+          "walk-through"
+        ],
+        "collocations": [
+          "acknowledge a missed area: recognize a specific unfinished part",
+          "compare with the finish standard: check the result against the agreement",
+          "arrange a walk-through: review the actual area together",
+          "clarify debris removal: distinguish included cleanup from additional waste"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Customer says path cleanup was incomplete after today's front-lawn visit. Worker can see clippings beside the front steps, within the listed cleanup area. Rear patio is excluded. Lead can organize the missed front cleanup; no wider task is agreed.",
+          "model": "You're right that clippings remain beside the front steps, which are part of today's listed path cleanup. I'm sorry that area was missed. I'll ask the lead to arrange completion of that specific cleanup and confirm the plan with you. The rear patio is a separate request, so let's keep it distinct from this missed task."
+        },
+        "workshop": {
+          "title": "Own the specific omission",
+          "goal": "Acknowledge a visible shortfall without accepting unrelated scope changes.",
+          "explanation": "An apology can name the actual missed work. It need not imply that every requested extra was included.",
+          "frames": [
+            "You're right that ___ remains within the listed area.",
+            "I'm sorry ___ was missed.",
+            "I'll confirm how ___ will be completed."
+          ],
+          "before": "We cleaned everything.",
+          "after": "The front-step area still has clippings; that part of the listed cleanup was missed.",
+          "reason": "The response acknowledges the customer's supported observation.",
+          "questions": [
+            {
+              "prompt": "Customer: Are the front steps an extra?\nWorker: No; that cleanup was already ____.",
+              "options": [
+                "provisional",
+                "excluded",
+                "included",
+                "unrelated"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "It was listed, not merely proposed.",
+                "The front steps were included, not excluded from cleanup.",
+                "Correct. It was part of the agreed task.",
+                "It directly concerns the booked cleanup."
+              ]
+            },
+            {
+              "prompt": "Lead: Does this include the rear patio now?\nWorker: No, that remains a ____ request.",
+              "options": [
+                "separate",
+                "completed",
+                "duplicate",
+                "withdrawn"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. It is distinct from correcting the missed front area.",
+                "It has not been done.",
+                "No duplicate request is established.",
+                "The customer has not withdrawn it."
+              ]
+            }
+          ],
+          "role_b": "Customer: point out clippings at the front steps and also ask about the rear patio.",
+          "challenge": "The customer says an apology means all cleanup is free. Do not invent prices or decide the separate request."
+        }
+      },
+      {
+        "title": "Handing over unfinished grounds work",
+        "terms": [
+          "completion note",
+          "follow-up visit",
+          "seasonal task",
+          "outstanding item"
+        ],
+        "collocations": [
+          "separate completed from deferred: name each task's real status",
+          "hand over the customer request: preserve its exact scope",
+          "confirm the follow-up owner: identify who arranges the next response",
+          "close out the visit: report the actual completed work and exceptions"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At Pine Court, front-path leaves are cleared. Rear-bed review was deferred by the lead; no planting or diagnosis was done. Customer requests a callback about that bed before Friday. Office contact Ava owns scheduling; a visit date is not booked.",
+          "model": "The front-path leaf clearance at Pine Court is complete. The rear-bed review remains deferred; no planting or diagnosis was carried out there. Ava, the customer requests a callback before Friday about that bed. Please take the scheduling follow-up and confirm the callback arrangement. The request should not be recorded as a booked return visit yet."
+        },
+        "workshop": {
+          "title": "Close a visit without closing unresolved work",
+          "goal": "Transfer completed tasks, deferred questions, and customer contact needs accurately.",
+          "explanation": "A completion note can close today's visit while retaining an outstanding follow-up.",
+          "frames": [
+            "___ is complete; ___ remains deferred.",
+            "The customer requests ___ before ___.",
+            "___ owns the callback; the visit date is ___."
+          ],
+          "before": "Pine Court is finished.",
+          "after": "The front path is complete; the rear-bed review and callback remain outstanding.",
+          "reason": "The distinction prevents unfinished work being lost.",
+          "questions": [
+            {
+              "prompt": "Office: Did deferred mean the customer canceled it?\nWorker: No, it means the review was ____.",
+              "options": [
+                "completed",
+                "postponed",
+                "diagnosed",
+                "replaced"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The review has not finished.",
+                "Correct. Deferred means postponed, not canceled or completed.",
+                "The review was postponed; no diagnosis was made.",
+                "The work was not replaced."
+              ]
+            },
+            {
+              "prompt": "Customer: Is the callback a return appointment?\nWorker: No; a callback arranges ____, not automatically a site visit.",
+              "options": [
+                "completion",
+                "approval",
+                "assessment",
+                "contact"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "A callback does not establish completed site work.",
+                "A callback alone does not approve a grounds task.",
+                "A site assessment has not been booked here.",
+                "Correct. The callback arranges communication, not a site visit."
+              ]
+            }
+          ],
+          "role_b": "Ava at the office: accept scheduling follow-up; keep the callback request separate from a visit booking.",
+          "challenge": "The next crew sees 'visit complete.' Explain which task is complete and what the office still owns."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "work order",
+        "definition": "The job record stating the grounds work requested or agreed for a visit.",
+        "group": "Confirming the booked grounds work"
+      },
+      {
+        "term": "service area",
+        "definition": "The specified part of a property included in a grounds job.",
+        "group": "Confirming the booked grounds work"
+      },
+      {
+        "term": "exclusion",
+        "definition": "A task or location expressly left outside the agreed work.",
+        "group": "Confirming the booked grounds work"
+      },
+      {
+        "term": "recurring visit",
+        "definition": "A grounds-service appointment that repeats on an agreed schedule.",
+        "group": "Confirming the booked grounds work"
+      },
+      {
+        "term": "access arrangement",
+        "definition": "The agreed way and time for workers to enter a property or service area.",
+        "group": "Clarifying access and property limits"
+      },
+      {
+        "term": "property boundary",
+        "definition": "The limit separating properties; its legal position requires appropriate confirmation, not a worker's guess.",
+        "group": "Clarifying access and property limits"
+      },
+      {
+        "term": "no-work area",
+        "definition": "A specifically identified area excluded from work during the job.",
+        "group": "Clarifying access and property limits"
+      },
+      {
+        "term": "site contact",
+        "definition": "The named person who answers access or job-location questions at a property.",
+        "group": "Clarifying access and property limits"
+      },
+      {
+        "term": "hedge line",
+        "definition": "The visible outline or agreed shape of a row of closely grown shrubs.",
+        "group": "Clarifying appearance and plant requests"
+      },
+      {
+        "term": "flower bed",
+        "definition": "A defined planting area intended for flowers or other ornamental plants.",
+        "group": "Clarifying appearance and plant requests"
+      },
+      {
+        "term": "specimen plant",
+        "definition": "An individual plant treated as a distinctive feature of the landscape.",
+        "group": "Clarifying appearance and plant requests"
+      },
+      {
+        "term": "pruning request",
+        "definition": "A customer's proposed change to plant growth or shape that requires suitability and scope review.",
+        "group": "Clarifying appearance and plant requests"
+      },
+      {
+        "term": "weather delay",
+        "definition": "A change in planned grounds work caused by weather conditions affecting the job.",
+        "group": "Explaining a weather-related change"
+      },
+      {
+        "term": "rescheduled visit",
+        "definition": "A replacement appointment confirmed after the original visit changes.",
+        "group": "Explaining a weather-related change"
+      },
+      {
+        "term": "service interval",
+        "definition": "The time between successive grounds-service visits.",
+        "group": "Explaining a weather-related change"
+      },
+      {
+        "term": "provisional date",
+        "definition": "A suggested date that has not yet become a confirmed appointment.",
+        "group": "Explaining a weather-related change"
+      },
+      {
+        "term": "irrigation zone",
+        "definition": "A defined section served by a particular part of an irrigation system.",
+        "group": "Reporting site observations without diagnosis"
+      },
+      {
+        "term": "standing water",
+        "definition": "Water remaining visibly pooled on a surface.",
+        "group": "Reporting site observations without diagnosis"
+      },
+      {
+        "term": "bare patch",
+        "definition": "An area of lawn or planting bed where expected growth is absent.",
+        "group": "Reporting site observations without diagnosis"
+      },
+      {
+        "term": "site observation",
+        "definition": "A factual description of something noticed at the property, with location and time.",
+        "group": "Reporting site observations without diagnosis"
+      },
+      {
+        "term": "mulch",
+        "definition": "Material used as a surface layer over soil in landscape beds; suitability and application require qualified guidance.",
+        "group": "Checking materials and requested quantities"
+      },
+      {
+        "term": "delivery quantity",
+        "definition": "The amount of landscaping material recorded as arriving for a job, with its unit stated.",
+        "group": "Checking materials and requested quantities"
+      },
+      {
+        "term": "material sample",
+        "definition": "A small example used to show a proposed material's appearance or type.",
+        "group": "Checking materials and requested quantities"
+      },
+      {
+        "term": "coverage area",
+        "definition": "The measured or specified surface area intended to receive a material.",
+        "group": "Checking materials and requested quantities"
+      },
+      {
+        "term": "finish standard",
+        "definition": "The agreed description of how the completed grounds work should look or be left.",
+        "group": "Responding to finish and cleanup concerns"
+      },
+      {
+        "term": "clippings",
+        "definition": "Cut pieces of grass or other vegetation produced during grounds maintenance.",
+        "group": "Responding to finish and cleanup concerns"
+      },
+      {
+        "term": "debris removal",
+        "definition": "The collection and removal of specified loose waste material from the job area.",
+        "group": "Responding to finish and cleanup concerns"
+      },
+      {
+        "term": "walk-through",
+        "definition": "A joint review of the worked area to check completion against the agreed tasks.",
+        "group": "Responding to finish and cleanup concerns"
+      },
+      {
+        "term": "completion note",
+        "definition": "A job record distinguishing completed grounds tasks from any stated exceptions.",
+        "group": "Handing over unfinished grounds work"
+      },
+      {
+        "term": "follow-up visit",
+        "definition": "A later appointment to review or complete specifically identified work.",
+        "group": "Handing over unfinished grounds work"
+      },
+      {
+        "term": "seasonal task",
+        "definition": "A grounds task scheduled for a particular season or period, subject to the job plan.",
+        "group": "Handing over unfinished grounds work"
+      },
+      {
+        "term": "outstanding item",
+        "definition": "A task or decision still unresolved at the end of the current visit.",
+        "group": "Handing over unfinished grounds work"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "The rear hedge is a new request",
+          "setting": "At Oak Court, a worker checks the resident's expectation against today's work order.",
+          "turns": [
+            [
+              "Resident",
+              "Could you shape the rear hedge during today's grounds visit?"
+            ],
+            [
+              "Worker",
+              "Today's work order covers the front lawn and leaf clearance from the path, not hedge shaping."
+            ],
+            [
+              "Resident",
+              "I thought our recurring service meant the whole garden was included on every visit."
+            ],
+            [
+              "Worker",
+              "The recurring schedule lists particular tasks. I can ask the office to review your hedge request separately."
+            ],
+            [
+              "Resident",
+              "Would asking them now guarantee that your crew can finish it during this visit?"
+            ],
+            [
+              "Worker",
+              "No. The scope, availability, and any price need confirmation before we describe it as booked."
+            ],
+            [
+              "Resident",
+              "Please query the rear hedge, not the front shrubs."
+            ],
+            [
+              "Worker",
+              "I'll name that location clearly and keep it separate from the work already listed today."
+            ],
+            [
+              "Resident",
+              "Thank you. Can the office contact me with the actual options rather than a general estimate?"
+            ],
+            [
+              "Worker",
+              "I'll request office contact without promising extra work or timing."
+            ]
+          ]
+        },
+        {
+          "title": "The annual task is not every visit",
+          "setting": "A grounds worker clarifies a customer's seasonal-service expectation.",
+          "turns": [
+            [
+              "Customer",
+              "Why isn't seasonal bed review listed on this week's work order?"
+            ],
+            [
+              "Worker",
+              "The agreement covers several visits, but this work order lists lawn care and front-path clearance only."
+            ],
+            [
+              "Customer",
+              "Does that mean the seasonal review has been removed from my service agreement altogether?"
+            ],
+            [
+              "Worker",
+              "I don't have evidence of that. A task absent from today's list isn't necessarily canceled from the agreement."
+            ],
+            [
+              "Customer",
+              "Can you check which visit it belongs to so I don't keep asking every crew?"
+            ],
+            [
+              "Worker",
+              "I can ask the office to confirm its scheduled visit and let you know the current status."
+            ],
+            [
+              "Customer",
+              "Please specify front beds; another company handles our rear beds."
+            ],
+            [
+              "Worker",
+              "I'll include that limit. We shouldn't combine two different service areas under a vague garden review."
+            ],
+            [
+              "Customer",
+              "Then today's crew completes its listed work, while the office confirms the seasonal appointment separately."
+            ],
+            [
+              "Worker",
+              "Today's work remains as listed; the office will clarify the seasonal task."
+            ]
+          ]
+        },
+        {
+          "title": "A request from someone who is not the contact",
+          "setting": "A worker checks a tenant's extra-work request at an office property.",
+          "turns": [
+            [
+              "Tenant",
+              "Could you add the side courtyard? Our visitors arrive later."
+            ],
+            [
+              "Worker",
+              "The work order names the main entrance only. Who coordinates grounds requests for your building?"
+            ],
+            [
+              "Tenant",
+              "Mara in facilities is the site contact, but I'm the tenant using the courtyard today."
+            ],
+            [
+              "Worker",
+              "Thanks. I can relay your request to Mara rather than treat it as a change already approved."
+            ],
+            [
+              "Tenant",
+              "Please explain the visitor timing, because otherwise she might think I'm asking about next month."
+            ],
+            [
+              "Worker",
+              "I will. What time are visitors expected, and which courtyard entrance are they using?"
+            ],
+            [
+              "Tenant",
+              "Two o'clock at the east door; the rear parking area is excluded."
+            ],
+            [
+              "Worker",
+              "I'll state the side courtyard and east door, with the two-o'clock event as your constraint."
+            ],
+            [
+              "Tenant",
+              "That describes it accurately. I understand you can't promise the additional work on your own."
+            ],
+            [
+              "Worker",
+              "The main-entrance booking stays unchanged while Mara reviews your courtyard request."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two tasks under the word tidy",
+        "brief": "Work order: clear leaves from front steps. Customer says 'tidy the front' and also means reshape shrubs. Shrub work is not booked.",
+        "role_a": "Worker: separate cleanup from plant work.",
+        "role_b": "Customer: ask about both, but accept a separate scope review.",
+        "opening_line": "When you say tidy, do you mean the leaves or the shrub shape?",
+        "complication": "Customer assumes both tasks have the same price.",
+        "success_checks": [
+          "Name the included leaf clearance.",
+          "Describe the shrub request separately.",
+          "Avoid quoting an unconfirmed price."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Beyond the rear fence",
+          "setting": "A grounds worker responds to an uncertain property-area request.",
+          "turns": [
+            [
+              "Customer",
+              "Could you clear beyond the fence? I think that strip is ours."
+            ],
+            [
+              "Worker",
+              "The confirmed work plan ends at the fence. The extra strip isn't included in today's area."
+            ],
+            [
+              "Customer",
+              "But the previous owner used it. Doesn't that make it reasonable to include while you're here?"
+            ],
+            [
+              "Worker",
+              "I can't establish the property boundary from that history. The office needs to review the request."
+            ],
+            [
+              "Customer",
+              "Then you're not saying it belongs to someone else; you're saying it hasn't been confirmed?"
+            ],
+            [
+              "Worker",
+              "Exactly. I'm describing the limit of this job, not making a legal ownership decision."
+            ],
+            [
+              "Customer",
+              "Can your team continue within the confirmed area while I contact the office?"
+            ],
+            [
+              "Worker",
+              "Yes, subject to the lead's site decisions. I'll keep the extra-area request separate in the handoff."
+            ],
+            [
+              "Customer",
+              "Please call it the strip beyond the rear fence, not the whole back garden."
+            ],
+            [
+              "Worker",
+              "I'll identify the strip without changing today's confirmed work boundary."
+            ]
+          ]
+        },
+        {
+          "title": "A locked gate is an access issue",
+          "setting": "A worker calls the named site contact about a closed service entrance.",
+          "turns": [
+            [
+              "Worker",
+              "The agreed courtyard service gate is locked; we've arrived for the visit."
+            ],
+            [
+              "Site contact",
+              "I thought reception had arranged access. Have you spoken with anyone who can confirm today's entry arrangement?"
+            ],
+            [
+              "Worker",
+              "Reception said they weren't given the booking. I haven't treated another entrance as approved access."
+            ],
+            [
+              "Site contact",
+              "I can coordinate with the building team. Please keep the issue described as access unconfirmed, not customer cancellation."
+            ],
+            [
+              "Worker",
+              "Understood. The scheduled work still exists; we can't yet reach the agreed service area."
+            ],
+            [
+              "Site contact",
+              "The building contact will call you in ten minutes with a confirmed arrangement or a status update."
+            ],
+            [
+              "Worker",
+              "Ten minutes means an update, not guaranteed access, correct?"
+            ],
+            [
+              "Site contact",
+              "Yes. I don't want you planning around an opening time the building team hasn't confirmed."
+            ],
+            [
+              "Worker",
+              "I'll tell the lead the access check is underway and keep the rest of the visit status accurate."
+            ],
+            [
+              "Site contact",
+              "I'll give reception the courtyard work-order reference when checking access."
+            ]
+          ]
+        },
+        {
+          "title": "A marked no-work area",
+          "setting": "A worker confirms an excluded flower bed with a facilities contact.",
+          "turns": [
+            [
+              "Worker",
+              "The bed beside the west bench is marked as a no-work area today."
+            ],
+            [
+              "Facilities contact",
+              "That's correct. Another team is reviewing it, and this grounds visit should exclude that particular bed."
+            ],
+            [
+              "Worker",
+              "A resident asked us to include it because the rest of the courtyard is being serviced."
+            ],
+            [
+              "Facilities contact",
+              "Please explain that the bed has a specific exclusion, not that the entire courtyard visit is canceled."
+            ],
+            [
+              "Worker",
+              "Should I refer their question to you rather than try to explain the other team's technical work?"
+            ],
+            [
+              "Facilities contact",
+              "Yes. You can identify me as the site contact for that request without guessing what their review involves."
+            ],
+            [
+              "Worker",
+              "West-bench bed, not the east entrance bed; is that correct?"
+            ],
+            [
+              "Facilities contact",
+              "Exactly. Those two locations are easy to confuse when people just say the bench area."
+            ],
+            [
+              "Worker",
+              "The crew's handoff will preserve that named exclusion while showing the other listed areas unchanged."
+            ],
+            [
+              "Facilities contact",
+              "I'll explain the separate review requirement to the resident."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Permission for access, not extra work",
+        "brief": "Building contact authorizes access through a side gate to reach the booked rear lawn. A resident assumes this adds side-bed work; it does not.",
+        "role_a": "Worker: distinguish route of access from service area.",
+        "role_b": "Resident: request side-bed work separately.",
+        "opening_line": "Does using the side gate change which beds are included?",
+        "complication": "Resident points to the gate permission as proof of added scope.",
+        "success_checks": [
+          "Confirm the access arrangement.",
+          "Keep rear lawn as booked.",
+          "Refer side-bed work as an extra request."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Which tall plant?",
+          "setting": "A worker clarifies an appearance request beside the entrance.",
+          "turns": [
+            [
+              "Customer",
+              "Could someone tidy the tall plant? Its outline looks uneven."
+            ],
+            [
+              "Worker",
+              "Do you mean the rosemary beside the left flower bed or the magnolia near the door?"
+            ],
+            [
+              "Customer",
+              "The rosemary. Please leave the magnolia out of this request; it's our specimen plant."
+            ],
+            [
+              "Worker",
+              "Thanks. What part of the appearance concerns you so I can relay the request accurately?"
+            ],
+            [
+              "Customer",
+              "It looks uneven from the path. Could your lead take a look?"
+            ],
+            [
+              "Worker",
+              "I'll relay that pruning request to the lead for a suitability and scope review."
+            ],
+            [
+              "Customer",
+              "Would reshaping it guarantee more flowers as well?"
+            ],
+            [
+              "Worker",
+              "I can't promise that outcome. The lead can discuss the plant question with you separately."
+            ],
+            [
+              "Customer",
+              "Yes, the rosemary beside the left bed. Please leave the magnolia alone."
+            ],
+            [
+              "Worker",
+              "I'll relay that specific appearance request without treating it as a pruning instruction."
+            ]
+          ]
+        },
+        {
+          "title": "A photo shows a preference, not a method",
+          "setting": "A grounds worker discusses a reference image with a customer.",
+          "turns": [
+            [
+              "Customer",
+              "Could our entrance hedge resemble the outline in this photograph?"
+            ],
+            [
+              "Worker",
+              "The photograph helps show your preference, but I can't promise the same result for a different hedge."
+            ],
+            [
+              "Customer",
+              "I mainly like the even outline. I don't know whether the plants are the same type."
+            ],
+            [
+              "Worker",
+              "Then I'll describe the desired outline and leave plant suitability and any method to the lead."
+            ],
+            [
+              "Customer",
+              "Please don't tell the lead I requested removing half of it. That's not what I meant."
+            ],
+            [
+              "Worker",
+              "I won't convert a visual example into an invented amount of work or a cutting instruction."
+            ],
+            [
+              "Customer",
+              "Please preserve the entrance view; don't include the side hedge."
+            ],
+            [
+              "Worker",
+              "Yes. I'll identify the entrance hedge as the subject and the side hedge as outside this request."
+            ],
+            [
+              "Customer",
+              "That gives the lead enough context to discuss options with me rather than copy the photo blindly."
+            ],
+            [
+              "Worker",
+              "The photograph expresses a preference; actual work still needs review."
+            ]
+          ]
+        },
+        {
+          "title": "The bed name changed in the customer's description",
+          "setting": "A worker and customer establish which planting area a request concerns.",
+          "turns": [
+            [
+              "Worker",
+              "Your message says kitchen bed; our plan uses compass directions."
+            ],
+            [
+              "Customer",
+              "I mean the narrow bed outside the kitchen window, which faces the courtyard on the south side."
+            ],
+            [
+              "Worker",
+              "Then is that the south courtyard bed, rather than the large bed beside the south gate?"
+            ],
+            [
+              "Customer",
+              "Yes. Both face south, but only the narrow one is directly under the kitchen window."
+            ],
+            [
+              "Worker",
+              "Could you describe the appearance concern without naming a treatment you aren't certain about?"
+            ],
+            [
+              "Customer",
+              "The plants look uneven in height. I'd like the lead to discuss a more consistent appearance."
+            ],
+            [
+              "Worker",
+              "I'll specify the narrow bed under the kitchen window, not the gate bed."
+            ],
+            [
+              "Customer",
+              "Please also say the container by the door is separate and should stay out of the request."
+            ],
+            [
+              "Worker",
+              "I have both limits. No plant method or replacement choice has been agreed during this clarification."
+            ],
+            [
+              "Customer",
+              "Correct. We're clarifying the area and appearance, not choosing a method."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Keeping a focal plant distinct",
+        "brief": "Customer asks about the low shrubs beside a fountain. The central specimen plant is excluded. Customer describes the desired appearance as 'less crowded'; no method is agreed.",
+        "role_a": "Worker: clarify which plants and the visual concern.",
+        "role_b": "Customer: preserve the central specimen and refer methods to the lead.",
+        "opening_line": "Does less crowded refer to the surrounding shrubs or the central plant?",
+        "complication": "A coworker interprets the phrase as a definite removal request.",
+        "success_checks": [
+          "Identify surrounding shrubs only.",
+          "Preserve the specimen exclusion.",
+          "Do not turn a preference into a removal instruction."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Thursday remains provisional",
+          "setting": "A worker updates Cedar Court's customer about a paused visit.",
+          "turns": [
+            [
+              "Worker",
+              "The lead paused today's outdoor work because of post-rain site conditions."
+            ],
+            [
+              "Customer",
+              "The office mentioned Thursday. My event is Friday, so can I count on everything being finished beforehand?"
+            ],
+            [
+              "Worker",
+              "Thursday is a provisional date; crew availability and completion before your event remain unconfirmed."
+            ],
+            [
+              "Customer",
+              "Please tell the office the front entrance matters most to us for Friday's visitors."
+            ],
+            [
+              "Worker",
+              "I'll relay that priority as your request, not as a change already approved by the crew."
+            ],
+            [
+              "Customer",
+              "Could someone give me an update by Wednesday noon even if the date remains uncertain?"
+            ],
+            [
+              "Worker",
+              "I'll request Wednesday noon's update, explaining your Friday event constraint."
+            ],
+            [
+              "Customer",
+              "Then Wednesday noon is the update request, and Thursday is still only a suggested visit?"
+            ],
+            [
+              "Worker",
+              "Exactly. The office needs to confirm an actual replacement arrangement before we treat it as booked."
+            ],
+            [
+              "Customer",
+              "Thanks. I'll keep Thursday provisional when discussing arrangements with our event team."
+            ]
+          ]
+        },
+        {
+          "title": "A visit moved, not removed",
+          "setting": "A worker clarifies a weather message with a customer.",
+          "turns": [
+            [
+              "Customer",
+              "Does postponed mean this month's service has been canceled?"
+            ],
+            [
+              "Worker",
+              "No. It means the scheduled visit has been delayed; the replacement date is still being arranged."
+            ],
+            [
+              "Customer",
+              "I was concerned we'd skip straight to next month and lose the work that was due."
+            ],
+            [
+              "Worker",
+              "I can pass that concern to scheduling and ask how the delay affects the service interval."
+            ],
+            [
+              "Customer",
+              "Please don't promise an extra visit unless the office has actually agreed one for our property."
+            ],
+            [
+              "Worker",
+              "I won't. I'll ask for the revised arrangement rather than infer it from the word postponed."
+            ],
+            [
+              "Customer",
+              "Is Tuesday confirmed, or merely a provisional replacement date?"
+            ],
+            [
+              "Worker",
+              "The note labels Tuesday provisional. The office still needs to confirm the crew and timing."
+            ],
+            [
+              "Customer",
+              "Then please have them state the new date clearly when it is settled, not just send 'rescheduled.'"
+            ],
+            [
+              "Worker",
+              "I'll request a clear replacement date once scheduling actually confirms it."
+            ]
+          ]
+        },
+        {
+          "title": "Only one part of the visit changed",
+          "setting": "A worker explains a limited change to a facilities contact.",
+          "turns": [
+            [
+              "Worker",
+              "The rear-lawn task is deferred; today's entrance-area review remains planned."
+            ],
+            [
+              "Facilities contact",
+              "I heard weather delay and assumed the entire visit was canceled, including that review."
+            ],
+            [
+              "Worker",
+              "The message was too broad. The change applies to the rear-lawn task, not every listed activity."
+            ],
+            [
+              "Facilities contact",
+              "Thank you for correcting it. Has the lead confirmed the remaining plan under today's site conditions?"
+            ],
+            [
+              "Worker",
+              "Yes, that remaining review is confirmed by the lead. I am relaying the decision, not assessing conditions myself."
+            ],
+            [
+              "Facilities contact",
+              "Then the completion note should show which task was deferred and which review actually took place."
+            ],
+            [
+              "Worker",
+              "The rear-lawn follow-up still needs scheduling; no replacement date is confirmed."
+            ],
+            [
+              "Facilities contact",
+              "Please send that question to the office rather than describing our next regular visit as the replacement automatically."
+            ],
+            [
+              "Worker",
+              "I'll do that. The postponed task and the regular schedule will remain separate until scheduling confirms the arrangement."
+            ],
+            [
+              "Facilities contact",
+              "That preserves today's remaining review and the separate deferred lawn task."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The proposed date conflicts with access",
+        "brief": "Office proposes Monday after a weather delay. Property contact says gate access is unavailable Monday but confirmed Tuesday morning; crew availability Tuesday is unknown.",
+        "role_a": "Worker: pass on the access constraint.",
+        "role_b": "Customer: offer Tuesday access, not a crew booking.",
+        "opening_line": "Is Tuesday confirmed for access only, or for the crew as well?",
+        "complication": "Customer tells a neighbor the crew is booked Tuesday.",
+        "success_checks": [
+          "Separate access from crew availability.",
+          "Keep Monday unsuitable for this access arrangement.",
+          "Ask the office to confirm an actual replacement visit."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Water near zone three",
+          "setting": "A worker reports a site observation to a customer.",
+          "turns": [
+            [
+              "Worker",
+              "At 09:15, I saw standing water beside the east bed, near irrigation zone three."
+            ],
+            [
+              "Customer",
+              "Does that mean an underground pipe is broken, or could the recent rain explain it?"
+            ],
+            [
+              "Worker",
+              "I haven't checked the irrigation system, so I can't confirm either explanation from this observation."
+            ],
+            [
+              "Customer",
+              "Then please tell the grounds lead exactly where you saw it and when it was visible."
+            ],
+            [
+              "Worker",
+              "I'll report the east bed, zone three, and nine fifteen, with the cause explicitly unconfirmed."
+            ],
+            [
+              "Customer",
+              "Our neighbor says that area always pools after rain. Should you include what they said?"
+            ],
+            [
+              "Worker",
+              "Yes. I'll note that your neighbor reports pooling after rain, but I haven't verified that history."
+            ],
+            [
+              "Customer",
+              "That sounds fair. I don't want a note saying we've already diagnosed a pipe problem."
+            ],
+            [
+              "Worker",
+              "I'll keep the visible pooling separate from the possible causes and request the lead's review."
+            ],
+            [
+              "Customer",
+              "Please identify the review contact without promising a repair outcome."
+            ]
+          ]
+        },
+        {
+          "title": "A bare patch does not identify a treatment",
+          "setting": "A customer asks a grounds worker about a lawn observation.",
+          "turns": [
+            [
+              "Customer",
+              "Which treatment would fix this bare patch beside the walkway?"
+            ],
+            [
+              "Worker",
+              "I can report the patch and its location, but I can't diagnose its cause or prescribe a treatment."
+            ],
+            [
+              "Customer",
+              "It seems larger than last week, although I didn't measure it or take a dated photograph."
+            ],
+            [
+              "Worker",
+              "I'll describe that as your impression of change, alongside what is visible during today's visit."
+            ],
+            [
+              "Customer",
+              "Please don't write that it doubled in size. I don't have evidence for an exact amount."
+            ],
+            [
+              "Worker",
+              "I won't. The report will distinguish your observation over time from a measured comparison we haven't made."
+            ],
+            [
+              "Customer",
+              "Who can review the plant-health concern and identify useful assessment information?"
+            ],
+            [
+              "Worker",
+              "The qualified grounds lead can take that question and discuss an appropriate review with you."
+            ],
+            [
+              "Customer",
+              "Then the immediate result is a clear report, not an assumption that you have started a treatment."
+            ],
+            [
+              "Worker",
+              "I'll relay today's observation and your qualified account of the change."
+            ]
+          ]
+        },
+        {
+          "title": "An observation was assigned to the wrong bed",
+          "setting": "A worker corrects a site-report location with the grounds lead.",
+          "turns": [
+            [
+              "Worker",
+              "My yellowing-leaf report named the north bed; I meant east."
+            ],
+            [
+              "Grounds lead",
+              "Thanks for catching that. Does the correction change only the location, or also what you observed?"
+            ],
+            [
+              "Worker",
+              "Only the location. I saw yellowing on several leaves; I haven't identified a disease or cause."
+            ],
+            [
+              "Grounds lead",
+              "Then please preserve the observation and correct the bed name without adding a diagnosis to the note."
+            ],
+            [
+              "Worker",
+              "The east bed is beside the reception window, not the planting area by the north gate."
+            ],
+            [
+              "Grounds lead",
+              "That landmark helps. I'll use it when arranging the review so the right area is assessed."
+            ],
+            [
+              "Worker",
+              "Should I notify the office, which received my incorrect location earlier?"
+            ],
+            [
+              "Grounds lead",
+              "Yes. Updating the note alone doesn't establish that everyone who read the earlier version has seen the correction."
+            ],
+            [
+              "Worker",
+              "I'll contact the office with the corrected location and say the cause remains unconfirmed."
+            ],
+            [
+              "Grounds lead",
+              "Yes. That corrects the location without making an unsupported plant-health diagnosis."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A damp path reported by someone else",
+        "brief": "Reception reports dampness near the west path at 08:00. Worker arrives at 10:00 and does not see it. No cause or safety assessment is established.",
+        "role_a": "Worker: distinguish a reported earlier condition from your present observation.",
+        "role_b": "Receptionist: confirm time and location, not cause.",
+        "opening_line": "Was the dampness present when you saw it at eight, or are you describing it now?",
+        "complication": "Someone summarizes the path as always wet.",
+        "success_checks": [
+          "Attribute the 08:00 report.",
+          "State what was observed at 10:00.",
+          "Refer review without declaring the path safe or diagnosing cause."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Six bags in a different color",
+          "setting": "A worker discusses a material discrepancy with the office.",
+          "turns": [
+            [
+              "Worker",
+              "Eight dark-mulch bags were ordered; six natural-brown bags arrived."
+            ],
+            [
+              "Office clerk",
+              "Does the material match the approved sample, or is the quantity the only difference?"
+            ],
+            [
+              "Worker",
+              "The labels say natural brown, while the customer's approved material sample was described as dark."
+            ],
+            [
+              "Office clerk",
+              "Then we need to query both quantity and material description before saying the delivery matches."
+            ],
+            [
+              "Worker",
+              "I haven't approved a substitute or told the customer that six bags cover the intended area."
+            ],
+            [
+              "Office clerk",
+              "Good. A bag count alone doesn't establish the coverage area or the appropriate application for this job."
+            ],
+            [
+              "Worker",
+              "Please query the front-bed work order; rear beds are excluded."
+            ],
+            [
+              "Office clerk",
+              "I'll compare that order with the sample record and ask about the two missing bags separately."
+            ],
+            [
+              "Worker",
+              "What should I tell the customer while those two discrepancies remain under review?"
+            ],
+            [
+              "Office clerk",
+              "Report both differences, with no substitute approved while the review remains open."
+            ]
+          ]
+        },
+        {
+          "title": "The sample is not the entire delivery",
+          "setting": "A customer asks a worker about materials arriving for review.",
+          "turns": [
+            [
+              "Customer",
+              "One small bag arrived; wasn't material ordered for both beds?"
+            ],
+            [
+              "Worker",
+              "This is labeled material sample for review, not the full delivery quantity for the job."
+            ],
+            [
+              "Customer",
+              "I see. I mistook its arrival for the main delivery because both messages mentioned the same work order."
+            ],
+            [
+              "Worker",
+              "The shared reference links it to your job, but the shipment description identifies its purpose as a sample."
+            ],
+            [
+              "Customer",
+              "Then approving its appearance wouldn't by itself confirm how much material the beds require?"
+            ],
+            [
+              "Worker",
+              "Correct. The quantity and coverage area still need their own confirmation from the responsible lead and office."
+            ],
+            [
+              "Customer",
+              "I'd like to compare both samples before choosing the material."
+            ],
+            [
+              "Worker",
+              "I'll pass that preference on and keep the material choice described as pending your review."
+            ],
+            [
+              "Customer",
+              "Please don't schedule work just because the sample arrived at the property today."
+            ],
+            [
+              "Worker",
+              "I'll clarify: sample received, choice pending, main delivery and work timing unconfirmed."
+            ]
+          ]
+        },
+        {
+          "title": "Front beds, not the whole garden",
+          "setting": "A worker clarifies the area covered by a material estimate.",
+          "turns": [
+            [
+              "Worker",
+              "The estimate covers two front beds; your message says whole garden."
+            ],
+            [
+              "Customer",
+              "I used garden loosely. I meant the front beds beside the path, not the rear lawn."
+            ],
+            [
+              "Worker",
+              "Thanks. Does that include the small bed around the entrance sign, or only the two long beds?"
+            ],
+            [
+              "Customer",
+              "Only the two long beds. The sign bed has separate planting that we don't want included."
+            ],
+            [
+              "Worker",
+              "Then I'll keep the coverage area limited to those two front beds when the office checks the quantity."
+            ],
+            [
+              "Customer",
+              "Please do. I don't want a larger material order based on an imprecise description in my message."
+            ],
+            [
+              "Worker",
+              "Has the office confirmed a quantity, or are we clarifying the area?"
+            ],
+            [
+              "Customer",
+              "We're clarifying the area. I haven't approved any revised quantity or additional charge."
+            ],
+            [
+              "Worker",
+              "I'll report that distinction so the area clarification isn't mistaken for an approved change to the order."
+            ],
+            [
+              "Customer",
+              "Exactly. Confirm the area before discussing the required delivery quantity."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Delivery units changed between messages",
+        "brief": "Office order lists twelve bags. Supplier message says three bundles of four bags. Worker has confirmed three outer bundles, not opened contents.",
+        "role_a": "Worker: clarify units and verification limits.",
+        "role_b": "Office clerk: request the packing breakdown before calling it short.",
+        "opening_line": "Are those three bundles or three individual bags?",
+        "complication": "Customer thinks three means nine bags are missing.",
+        "success_checks": [
+          "Explain the listed three-by-four relationship.",
+          "Confirm only observed bundles.",
+          "Keep inner bag count unverified until checked."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Clippings beside the front steps",
+          "setting": "A customer and worker review a missed part of the cleanup.",
+          "turns": [
+            [
+              "Customer",
+              "Clippings remain at the front steps. Wasn't path cleanup included?"
+            ],
+            [
+              "Worker",
+              "You're right. That location is within the listed cleanup area, and I can see the clippings."
+            ],
+            [
+              "Customer",
+              "Thank you for acknowledging it. I also wondered whether the rear patio should have been cleared."
+            ],
+            [
+              "Worker",
+              "The rear patio is excluded from this visit. Let's separate that request from the missed front-step cleanup."
+            ],
+            [
+              "Customer",
+              "I agree the front steps were already included. Who can arrange for that part to be completed?"
+            ],
+            [
+              "Worker",
+              "I'll ask the lead to organize it and confirm the plan, rather than invent a return time."
+            ],
+            [
+              "Customer",
+              "Could we request a front-area walk-through with the lead?"
+            ],
+            [
+              "Worker",
+              "I'll relay that request. It will help compare the actual result with the agreed finish standard."
+            ],
+            [
+              "Customer",
+              "Please preserve both points: missed front cleanup and a separate question about the rear patio."
+            ],
+            [
+              "Worker",
+              "I'll preserve both issues, and I'm sorry the included cleanup was incomplete."
+            ]
+          ]
+        },
+        {
+          "title": "Debris from another contractor",
+          "setting": "A customer asks a grounds worker about a pile beside the job area.",
+          "turns": [
+            [
+              "Customer",
+              "Does today's debris removal cover that pile beside the entrance?"
+            ],
+            [
+              "Worker",
+              "The work order includes clippings from our grounds tasks. Do you know where that separate pile came from?"
+            ],
+            [
+              "Customer",
+              "The paving contractor left it, but I assumed all outdoor waste would be included in your cleanup."
+            ],
+            [
+              "Worker",
+              "I understand the assumption. Our listed removal doesn't identify that contractor's material, so the office needs to review it."
+            ],
+            [
+              "Customer",
+              "Please don't describe the pile as your crew's missed cleanup if it wasn't generated by your work."
+            ],
+            [
+              "Worker",
+              "I won't. I'll name it as a separate waste-removal request and pass on the source you reported."
+            ],
+            [
+              "Customer",
+              "Can your team handle that material, or does it need review?"
+            ],
+            [
+              "Worker",
+              "That needs review by the lead. I can't identify or approve handling from this conversation alone."
+            ],
+            [
+              "Customer",
+              "Then keep today's grounds cleanup separate while the office checks this additional request."
+            ],
+            [
+              "Worker",
+              "I'll relay the separate request without promising handling, removal, or pricing."
+            ]
+          ]
+        },
+        {
+          "title": "Finished on one side, not both",
+          "setting": "A worker corrects an overbroad completion statement during a walk-through.",
+          "turns": [
+            [
+              "Worker",
+              "I called the path finished, but its east edge remains uncleared."
+            ],
+            [
+              "Customer",
+              "Yes, the west edge looks complete. I don't want the whole area described as untouched either."
+            ],
+            [
+              "Worker",
+              "That's fair. I'll correct my statement to west edge complete, east edge still needing the listed clearance."
+            ],
+            [
+              "Customer",
+              "Does that change the work order, or is it simply completing what was already agreed?"
+            ],
+            [
+              "Worker",
+              "It's the existing task, not a new request. The lead needs to confirm the completion arrangement."
+            ],
+            [
+              "Customer",
+              "Please make sure the next person knows exactly which edge remains, so they don't repeat the completed part."
+            ],
+            [
+              "Worker",
+              "I'll name the east edge beside the noticeboard, preserving the west as complete."
+            ],
+            [
+              "Customer",
+              "That landmark is useful. 'The other side' could mean different things depending on where someone stands."
+            ],
+            [
+              "Worker",
+              "I'll name that landmark and correct my premature statement that everything was finished."
+            ],
+            [
+              "Customer",
+              "That gives us a precise finish check and a clear outstanding item."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A bin left outside the requested area",
+        "brief": "Work order includes collecting leaf bags from the front path. Bags are collected, but one empty customer bin remains by the steps instead of its agreed side-store location.",
+        "role_a": "Worker: acknowledge the specific incomplete finish detail.",
+        "role_b": "Customer: request correction, not a wider cleanup.",
+        "opening_line": "The bags are collected; is the remaining concern the bin's agreed location?",
+        "complication": "A colleague marks the whole visit failed.",
+        "success_checks": [
+          "Distinguish completed bag collection from bin-location issue.",
+          "Name the agreed side-store location.",
+          "Ask the lead to arrange the correction."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Front path complete, rear-bed review deferred",
+          "setting": "A worker hands Pine Court's unresolved request to office contact Ava.",
+          "turns": [
+            [
+              "Worker",
+              "Ava, Pine Court's front-path clearance is complete; rear-bed review remains deferred."
+            ],
+            [
+              "Office clerk",
+              "Was any planting or plant diagnosis carried out there, or should those remain unconfirmed?"
+            ],
+            [
+              "Worker",
+              "Neither was done. The customer requests a callback about that bed before Friday, not a confirmed return date."
+            ],
+            [
+              "Office clerk",
+              "I'll take scheduling follow-up. Has a specific callback time already been agreed with the customer?"
+            ],
+            [
+              "Worker",
+              "No. Please confirm the contact arrangement with them rather than treating before Friday as a booked visit."
+            ],
+            [
+              "Office clerk",
+              "Understood. I'll record the callback request separately from the outstanding site review."
+            ],
+            [
+              "Worker",
+              "Please retain the front-path completion so the next crew doesn't repeat it."
+            ],
+            [
+              "Office clerk",
+              "Yes. The completion note will retain both the finished task and the deferred item."
+            ],
+            [
+              "Worker",
+              "Please acknowledge you're the follow-up owner so the customer's question doesn't remain with today's departing crew."
+            ],
+            [
+              "Office clerk",
+              "I'll own the callback arrangement; the rear-bed follow-up visit remains unbooked."
+            ]
+          ]
+        },
+        {
+          "title": "A seasonal request in the wrong month",
+          "setting": "A worker and office clerk clarify a customer's future request.",
+          "turns": [
+            [
+              "Worker",
+              "The autumn inquiry was mistakenly recorded as this week's unfinished work."
+            ],
+            [
+              "Office clerk",
+              "Did the customer request work now, or information about the seasonal schedule later in the year?"
+            ],
+            [
+              "Worker",
+              "They asked when autumn visits could be discussed. No current appointment or additional work was requested."
+            ],
+            [
+              "Office clerk",
+              "Then the note needs to identify a future scheduling inquiry, not unfinished work from today's visit."
+            ],
+            [
+              "Worker",
+              "Exactly. Today's listed tasks are complete, and I don't want the next crew sent back for an unbooked task."
+            ],
+            [
+              "Office clerk",
+              "Who should contact the customer about seasonal options, and is there an agreed response deadline?"
+            ],
+            [
+              "Worker",
+              "The office owns the inquiry; no response deadline was agreed."
+            ],
+            [
+              "Office clerk",
+              "I'll correct the classification and place the inquiry with scheduling rather than today's completion follow-up."
+            ],
+            [
+              "Worker",
+              "Please keep the customer's wording about autumn so the time period doesn't disappear in the shorter note."
+            ],
+            [
+              "Office clerk",
+              "I'll retain autumn in the inquiry while keeping today's work complete."
+            ]
+          ]
+        },
+        {
+          "title": "The next crew needs the customer's exact limit",
+          "setting": "A departing worker hands a customer preference to an incoming colleague.",
+          "turns": [
+            [
+              "Departing worker",
+              "The entrance-sign bed is excluded from the next confirmed visit."
+            ],
+            [
+              "Incoming worker",
+              "Does that exclusion apply to all front planting, or only the bed around the entrance sign?"
+            ],
+            [
+              "Departing worker",
+              "Only the sign bed. The two long front beds remain on the next work order."
+            ],
+            [
+              "Incoming worker",
+              "Thanks. If the handoff just says avoid the front bed, I'd have several possible interpretations."
+            ],
+            [
+              "Departing worker",
+              "I'll use the sign as the landmark and the work-order wording for the other two beds."
+            ],
+            [
+              "Incoming worker",
+              "Has the office updated the next booking, or are we passing on an unconfirmed customer preference?"
+            ],
+            [
+              "Departing worker",
+              "The office already confirmed that exclusion; this handoff highlights the booking."
+            ],
+            [
+              "Incoming worker",
+              "Then I can check the same record rather than rely solely on an informal message from the previous crew."
+            ],
+            [
+              "Departing worker",
+              "Exactly. No new planting method or material choice was agreed in that customer conversation."
+            ],
+            [
+              "Incoming worker",
+              "I'll preserve the sign-bed exclusion and the two included front beds."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An unanswered question at a completed visit",
+        "brief": "Today's mowing and path clearance are complete. Customer asked about replacing a shrub, but the lead has not reviewed it. Office contact Ben accepts the query.",
+        "role_a": "Worker: distinguish completed work from the new plant request.",
+        "role_b": "Ben: take the query; do not book replacement before review.",
+        "opening_line": "Does the completion note show the shrub question as a request, not an agreed replacement?",
+        "complication": "A short note says 'replace shrub next visit.'",
+        "success_checks": [
+          "Correct the unsupported replacement wording.",
+          "Preserve completed tasks.",
+          "Name Ben as query owner and leave outcome open."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The visit description was shortened too far",
+      "setting": "A worker and office clerk correct an ambiguous service summary.",
+      "dialogue": [
+        [
+          "Worker",
+          "O16 lists entrance lawn and path clearance, but the reminder says full grounds service."
+        ],
+        [
+          "Office clerk",
+          "That reminder used a shortened description. Did the customer request additional work because they understood full grounds service more broadly?"
+        ],
+        [
+          "Worker",
+          "They expected both lawns and hedge lines, which aren't on today's list."
+        ],
+        [
+          "Office clerk",
+          "Then we need to acknowledge the misleading summary rather than assume the customer ignored a clear description."
+        ],
+        [
+          "Worker",
+          "I told them I would check the discrepancy. I haven't agreed to the additional areas or quoted any extra price."
+        ],
+        [
+          "Office clerk",
+          "That's appropriate. I'll compare the original agreement with O16 before deciding whether the work order or reminder needs correction."
+        ],
+        [
+          "Worker",
+          "Could you speak with the customer about the verified scope? They want to know what their actual booking includes."
+        ],
+        [
+          "Office clerk",
+          "Yes. Which areas did they expect? I'll address those specifically."
+        ],
+        [
+          "Worker",
+          "They expected both lawns and hedges; O16 lists entrance lawn and path."
+        ],
+        [
+          "Office clerk",
+          "I have those two versions. Until the review is complete, keep the disputed scope explicit in the crew's update."
+        ],
+        [
+          "Worker",
+          "I'll describe conflicting scope descriptions, not assume the customer requested extras."
+        ],
+        [
+          "Office clerk",
+          "Good. We'll explain the confirmed agreement and any available changes without treating an ambiguous reminder as a settled scope decision."
+        ]
+      ],
+      "notes": [
+        "Acknowledge conflicting descriptions before deciding which expectation is unsupported.",
+        "Name actual areas rather than relying on broad service labels."
+      ]
+    },
+    {
+      "title": "Two contacts give conflicting access messages",
+      "setting": "A worker resolves access information with a facilities coordinator.",
+      "dialogue": [
+        [
+          "Worker",
+          "Reception says access starts at eight; your email says nine thirty."
+        ],
+        [
+          "Facilities coordinator",
+          "My email applies to the rear service courtyard. Reception may be describing access to the main office entrance."
+        ],
+        [
+          "Worker",
+          "Our job needs rear-courtyard access, not just entry to the building."
+        ],
+        [
+          "Facilities coordinator",
+          "Then nine thirty is the relevant access arrangement. I'll confirm that directly with reception so their message is corrected."
+        ],
+        [
+          "Worker",
+          "Please also identify who will be available as site contact, because the crew needs a named person for access questions."
+        ],
+        [
+          "Facilities coordinator",
+          "I'll be the site contact tomorrow morning. The agreed number is in the booking record under facilities."
+        ],
+        [
+          "Worker",
+          "Does your confirmation change the crew's appointment, or should the office separately review whether its schedule can accommodate that start?"
+        ],
+        [
+          "Facilities coordinator",
+          "The office must review its schedule. I can confirm property access, not assign the grounds team's working times."
+        ],
+        [
+          "Worker",
+          "I'll relay the courtyard constraint and ask scheduling to confirm the visit."
+        ],
+        [
+          "Facilities coordinator",
+          "That keeps both decisions clear. Access availability alone doesn't guarantee that the crew can attend at that time."
+        ],
+        [
+          "Worker",
+          "I'll specify rear courtyard so the earlier building-entry message isn't reused."
+        ],
+        [
+          "Facilities coordinator",
+          "Thank you. We now have one location-specific access statement for the office to consider when confirming tomorrow's arrangement."
+        ]
+      ],
+      "notes": [
+        "Resolve apparently conflicting times by checking which location each concerns.",
+        "A site contact confirms access, not the contractor's crew availability."
+      ]
+    },
+    {
+      "title": "A preference changes after the first discussion",
+      "setting": "A worker updates a grounds lead about a customer's revised appearance request.",
+      "dialogue": [
+        [
+          "Worker",
+          "The customer changed their preference from a uniform hedge line to a softer outline."
+        ],
+        [
+          "Grounds lead",
+          "Did they identify which hedge that applies to, or might their preference include every shrub around the property?"
+        ],
+        [
+          "Worker",
+          "Entrance hedge only; side shrubs and the gate's specimen plant are excluded."
+        ],
+        [
+          "Grounds lead",
+          "That is specific enough for an appearance discussion. Have you promised a particular pruning method, amount, or final result?"
+        ],
+        [
+          "Worker",
+          "No. I said you would review suitability and explain what could appropriately be offered before anything was agreed."
+        ],
+        [
+          "Grounds lead",
+          "Good. Please preserve both the revised preference and the fact that the first description has been superseded."
+        ],
+        [
+          "Worker",
+          "I can say the customer now requests a softer entrance-hedge outline, replacing the earlier request for a uniform line."
+        ],
+        [
+          "Grounds lead",
+          "Yes. That prevents another crew member from treating the earlier phrase as an instruction still in force."
+        ],
+        [
+          "Worker",
+          "They want to discuss the entrance view before approving any change."
+        ],
+        [
+          "Grounds lead",
+          "I'll discuss that with them directly. Their visual preference does not by itself establish what is suitable for these plants."
+        ],
+        [
+          "Worker",
+          "I'll hand over the current preference and exclusions, leaving suitability pending."
+        ],
+        [
+          "Grounds lead",
+          "Exactly. We can respond to the customer's actual intention without converting their informal wording into a technical work instruction."
+        ]
+      ],
+      "notes": [
+        "'Replacing the earlier request' makes the current preference identifiable.",
+        "Separate visual preference, plant suitability, and agreement to proceed."
+      ]
+    },
+    {
+      "title": "A rescheduled visit meets a new event constraint",
+      "setting": "A worker and customer clarify what a replacement booking does and does not promise.",
+      "dialogue": [
+        [
+          "Worker",
+          "Wednesday morning is now confirmed for the rescheduled visit."
+        ],
+        [
+          "Customer",
+          "Thank you. Since we spoke, an outdoor reception has been booked for Wednesday at eleven. Can everything finish before that?"
+        ],
+        [
+          "Worker",
+          "The morning booking doesn't confirm completion before your newly arranged reception."
+        ],
+        [
+          "Customer",
+          "Then please tell the office the event uses the front courtyard, while the rear area is not involved."
+        ],
+        [
+          "Worker",
+          "I'll pass on both the eleven-o'clock event and the specific area, so they can review the visit with the lead."
+        ],
+        [
+          "Customer",
+          "Would moving work to the rear automatically solve the problem, or would that change the agreed service area?"
+        ],
+        [
+          "Worker",
+          "That could change the job plan. I can't substitute another area without the appropriate review and confirmation."
+        ],
+        [
+          "Customer",
+          "I understand. Please don't cancel the entire visit just because I'm asking whether the timing can be adjusted."
+        ],
+        [
+          "Worker",
+          "I'll report a new constraint and review request, not a cancellation."
+        ],
+        [
+          "Customer",
+          "Could the office respond tomorrow afternoon so I can coordinate the reception arrangements using their actual decision?"
+        ],
+        [
+          "Worker",
+          "I'll request tomorrow's response, keeping it separate from Wednesday's arrival window."
+        ],
+        [
+          "Customer",
+          "Good. We have a confirmed visit, an unconfirmed finish time, and a new event question that still needs an answer."
+        ]
+      ],
+      "notes": [
+        "A confirmed arrival window is not a guaranteed finish time.",
+        "A review request should not be relabeled as a cancellation."
+      ]
+    },
+    {
+      "title": "The report needs a direction and a landmark",
+      "setting": "A grounds worker gives a precise observation to the site contact.",
+      "dialogue": [
+        [
+          "Worker",
+          "My first observation report said beside the path without naming the section."
+        ],
+        [
+          "Site contact",
+          "We have three paths, so the office couldn't identify the location. Can you describe it using a fixed landmark?"
+        ],
+        [
+          "Worker",
+          "Reception-to-west-gate path, beside the second bench when leaving reception."
+        ],
+        [
+          "Site contact",
+          "That is much clearer. Are you describing the path surface itself or the adjacent lawn area in this report?"
+        ],
+        [
+          "Worker",
+          "The adjacent lawn area. I haven't assessed the path surface or made any judgment about the cause of the uneven appearance."
+        ],
+        [
+          "Site contact",
+          "Please keep that distinction. Otherwise a shortened note could sound like you reported a damaged walkway rather than a lawn observation."
+        ],
+        [
+          "Worker",
+          "I'll correct the location and subject in the message, and ask the grounds lead to review the observation."
+        ],
+        [
+          "Site contact",
+          "Do you know whether it has changed since the last visit, or is this the first time you've noticed it?"
+        ],
+        [
+          "Worker",
+          "I first noticed it today; I have no comparable earlier record."
+        ],
+        [
+          "Site contact",
+          "Then today's report should include the location and date without saying the condition is worsening or new."
+        ],
+        [
+          "Worker",
+          "Agreed. Newly noticed doesn't necessarily mean newly developed at the property."
+        ],
+        [
+          "Site contact",
+          "That qualification will help the lead assess the report without inheriting an unsupported claim about its history."
+        ]
+      ],
+      "notes": [
+        "'Newly noticed' does not necessarily mean 'newly developed.'",
+        "Use a fixed landmark and state whether the observation concerns the path or adjacent planting."
+      ]
+    },
+    {
+      "title": "The supplier offers a different bag size",
+      "setting": "A worker clarifies a material substitution offer with the office.",
+      "dialogue": [
+        [
+          "Worker",
+          "The supplier offers four larger bags instead of eight small ones, without stating sizes."
+        ],
+        [
+          "Office clerk",
+          "Then four versus eight doesn't establish a shortage or an equivalent quantity until we know the stated units per bag."
+        ],
+        [
+          "Worker",
+          "We also need to confirm the material matches the approved sample."
+        ],
+        [
+          "Office clerk",
+          "I'll ask for the product description and package quantities, and compare them with the original order and material sample."
+        ],
+        [
+          "Worker",
+          "Please don't tell the customer the revised delivery covers the job area before the responsible lead checks that question."
+        ],
+        [
+          "Office clerk",
+          "Package equivalence and suitable coverage are separate questions for the lead."
+        ],
+        [
+          "Worker",
+          "The customer has only approved the dark sample for the two front beds. No other color or area was agreed."
+        ],
+        [
+          "Office clerk",
+          "I'll preserve those limits in the supplier query. A different bag size should not quietly expand the permitted material choices."
+        ],
+        [
+          "Worker",
+          "How should I explain the unresolved material status to the customer?"
+        ],
+        [
+          "Office clerk",
+          "Say a packaging substitution has been proposed, while product identity and quantity equivalence are still being checked."
+        ],
+        [
+          "Worker",
+          "Then the supplier made a proposal; neither office nor customer accepted it."
+        ],
+        [
+          "Office clerk",
+          "Yes. We'll communicate the verified details and obtain the relevant decision before treating the proposal as the job's confirmed delivery."
+        ]
+      ],
+      "notes": [
+        "Compare total quantities only after identifying each package's unit and size.",
+        "A supplier's offer does not establish customer acceptance."
+      ]
+    },
+    {
+      "title": "A complaint about appearance after new weather",
+      "setting": "A worker discusses a complaint with a customer after the completed visit.",
+      "dialogue": [
+        [
+          "Customer",
+          "Leaves are on the path again. Was yesterday's cleanup actually completed?"
+        ],
+        [
+          "Worker",
+          "The completion note says the front path was cleared yesterday afternoon, but I can see leaves there now."
+        ],
+        [
+          "Customer",
+          "It was windy overnight. I don't know whether these leaves were missed."
+        ],
+        [
+          "Worker",
+          "Then let's distinguish today's visible condition from the question of yesterday's completion, rather than assume one proves the other."
+        ],
+        [
+          "Customer",
+          "I'd appreciate that. I want the path reviewed, but I don't want to make an accusation without knowing what happened."
+        ],
+        [
+          "Worker",
+          "I'll relay today's condition and your request, alongside yesterday's completion record."
+        ],
+        [
+          "Customer",
+          "Would that automatically count as free corrective work, or is the reason for the new visit still being reviewed?"
+        ],
+        [
+          "Worker",
+          "I can't decide charges or classify the cause from this conversation. The office can explain the arrangement after reviewing the facts."
+        ],
+        [
+          "Customer",
+          "Please keep my review request specific to the front path."
+        ],
+        [
+          "Worker",
+          "I'll keep the request focused on the front path and the present leaves, without extending it to the whole property."
+        ],
+        [
+          "Customer",
+          "Can the office name the person responsible for reviewing my concern?"
+        ],
+        [
+          "Worker",
+          "I'll ask the office to identify the contact and response arrangement, while the cause and any follow-up terms remain unconfirmed."
+        ]
+      ],
+      "notes": [
+        "A current condition does not alone prove what was left at an earlier visit.",
+        "Separate acknowledgment of a concern from a decision about responsibility or charges."
+      ]
+    },
+    {
+      "title": "The customer wants a callback before deciding",
+      "setting": "A worker hands a possible service change to the scheduling clerk.",
+      "dialogue": [
+        [
+          "Worker",
+          "Willow House is considering a smaller service area next month; nothing is decided."
+        ],
+        [
+          "Scheduling clerk",
+          "Which areas are they considering removing, and what information do they need before making that decision with the office?"
+        ],
+        [
+          "Worker",
+          "They may exclude the side lawn after discussing price and scheduling implications."
+        ],
+        [
+          "Scheduling clerk",
+          "Then this is an inquiry about a possible change, not an instruction to remove the side lawn from the next booking."
+        ],
+        [
+          "Worker",
+          "Exactly. Today's work is complete, and the current agreement still includes that area until a change is confirmed."
+        ],
+        [
+          "Scheduling clerk",
+          "I'll contact the customer about the options. Did they request a particular callback period when they discussed it with you?"
+        ],
+        [
+          "Worker",
+          "They asked for an afternoon call this week. No exact time was agreed, and I didn't promise a price reduction."
+        ],
+        [
+          "Scheduling clerk",
+          "I'll confirm the callback and explain options without treating the inquiry as an amendment."
+        ],
+        [
+          "Worker",
+          "Please name the side lawn rather than broadly saying reduce everything."
+        ],
+        [
+          "Scheduling clerk",
+          "I have both. The next crew should continue to rely on the current confirmed work order unless scheduling issues a change."
+        ],
+        [
+          "Worker",
+          "I'll note that the office owns the inquiry; existing scope remains unchanged."
+        ],
+        [
+          "Scheduling clerk",
+          "That preserves today's completion and the customer's right to consider the options without creating an accidental scope change."
+        ]
+      ],
+      "notes": [
+        "'May exclude' expresses consideration, not a confirmed instruction.",
+        "A callback request can support a decision without predetermining its outcome."
+      ]
+    }
+  ]
+}

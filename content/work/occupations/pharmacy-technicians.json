@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "pharmacy-technicians",
+    "title": "Pharmacy Technician English",
+    "summary": "Clarify prescription details, explain claim and refill statuses, coordinate stock queries, protect privacy, and hand medication questions to pharmacists with precise, practical English.",
+    "roles": "Pharmacy technicians and pharmacy support staff",
+    "category": "Health & life sciences",
+    "scope_note": "All patients, orders, amounts, times, and incidents are fictional language-practice examples, not medication, insurance, legal, dispensing, or technical training. Duties and supervision vary by jurisdiction and workplace. Pharmacists and other qualified professionals make clinical and regulated decisions. These exercises do not authorize dispensing, transfers, substitutions, handling methods, or changes to medication instructions.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Pharmacy Technicians",
+        "url": "https://www.bls.gov/ooh/healthcare/pharmacy-technicians.htm"
+      },
+      {
+        "title": "Pharmacy Technician Certification Board: Certified Pharmacy Technician",
+        "url": "https://ptcb.org/credentials/certification/certified-pharmacy-technician/"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Prescription intake without assumptions",
+        "collocations": [
+          "verify the patient profile: confirm that the order belongs to the correct pharmacy record",
+          "clarify the prescribed strength: resolve an unclear amount per unit on the current order",
+          "contact the prescriber: request missing order information through the pharmacy's designated route",
+          "hold for clarification: leave an order pending while an unresolved detail is checked"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "An order's strength field is unclear. The patient remembers a blue label and says their prescriber usually orders the same thing. The technician cannot select a strength. Pharmacist Maya can take the clarification; no completion time is known.",
+          "model": "The current prescription's strength field is unclear. Your memory of the blue label gives us some background, but it does not confirm this order. Maya, our pharmacist, can handle the clarification. For now, the order is awaiting review; it has not been cancelled, and I cannot give you a collection time yet."
+        },
+        "workshop": {
+          "title": "Separate recollection from confirmation",
+          "goal": "Identify an unclear prescription detail and explain who can clarify it.",
+          "explanation": "Name the exact field that needs checking. Attribute remembered information to the patient without treating it as a verified current order. 'Awaiting clarification' describes a status, not a cancellation.",
+          "frames": [
+            "The current prescription shows ___, but ___ is unclear.",
+            "You remember ___; we still need to confirm ___.",
+            "The order is awaiting ___, not ___."
+          ],
+          "before": "It was probably the same strength as last time.",
+          "after": "The patient remembers the previous label; the current strength still needs clarification.",
+          "reason": "The revised statement identifies both the source of the information and its limit.",
+          "role_b": "Patient: your previous label was blue. You expect the same prescription, but cannot read the strength on today's order.",
+          "challenge": "Ask whether awaiting clarification means the prescription has been cancelled.",
+          "questions": [
+            {
+              "prompt": "Patient: Which detail is unclear: the amount in each tablet or the number of tablets?\nTechnician: The ____; the quantity is legible.",
+              "options": [
+                "quantity",
+                "strength",
+                "frequency",
+                "duration"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Quantity is the number supplied, which is legible here.",
+                "Correct. Strength describes the ingredient amount per unit.",
+                "Frequency concerns how often a medicine is taken.",
+                "Duration concerns how long a course lasts."
+              ]
+            },
+            {
+              "prompt": "Pharmacist: Did the patient identify today's strength from a current order?\nTechnician: No, the patient ____ the previous label; today's field remains unclear.",
+              "options": [
+                "confirmed",
+                "prescribed",
+                "recalled",
+                "revised"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Confirmed suggests verification, which did not occur.",
+                "Prescribed means issued the order, not remembered it.",
+                "Correct. Recalled attributes the information to memory.",
+                "Revised means changed the wording or order."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "prescription",
+          "patient profile",
+          "prescriber",
+          "strength"
+        ]
+      },
+      {
+        "title": "Insurance claims in plain English",
+        "collocations": [
+          "review the rejection message: read the reason returned for this particular claim",
+          "request prior authorization: seek the plan's required coverage review",
+          "confirm the patient share: check the amount shown by the current processed claim",
+          "check formulary conditions: examine requirements associated with a medicine's coverage listing"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "The claim response says prior authorization required. No plan decision or accepted claim has arrived. The patient thinks this is a permanent exclusion. Billing colleague Inez has accepted the status query and can explain the request route.",
+          "model": "This response says prior authorization is required. That is a request for the plan's review, not the final coverage decision. We have neither an approval decision nor an accepted claim yet. Inez is handling the status query and can explain how the request proceeds; I cannot promise coverage or a final copayment."
+        },
+        "workshop": {
+          "title": "Explain a requirement without predicting the decision",
+          "goal": "Distinguish a coverage review, a claim response, and a patient's payment.",
+          "explanation": "Use one plain-English explanation before returning to the technical term. 'Required' does not mean 'approved.' An authorization decision and the amount on a processed claim answer different questions.",
+          "frames": [
+            "This response requires ___; it does not yet confirm ___.",
+            "The plan's review concerns ___, whereas the claim amount concerns ___.",
+            "The current claim shows ___; the previous amount was ___."
+          ],
+          "before": "Insurance has refused this forever.",
+          "after": "This submission requires prior authorization; the plan's decision is still pending.",
+          "reason": "The revision describes the actual message rather than making a permanent prediction.",
+          "role_b": "Patient: you believe a request for prior authorization means permanent exclusion. Ask who is handling the query.",
+          "challenge": "Ask whether receiving an approval would automatically make the prescription free.",
+          "questions": [
+            {
+              "prompt": "Patient: Is prior authorization the amount I pay?\nTechnician: No. It is the plan's ____, not your copayment.",
+              "options": [
+                "payment receipt",
+                "coverage review requirement",
+                "pickup confirmation",
+                "membership number"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A receipt records payment, not the review required here.",
+                "Correct. This explains the approval requirement in everyday language.",
+                "Pickup readiness is a separate pharmacy status.",
+                "A membership number identifies coverage membership."
+              ]
+            },
+            {
+              "prompt": "Patient: The approval arrived. Is my final payment confirmed?\nTechnician: Approval is confirmed, ____ the final claim is still pending.",
+              "options": [
+                "because",
+                "therefore",
+                "although",
+                "as a result"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Because would make the pending claim the reason for approval.",
+                "Therefore implies the pending claim follows logically from approval.",
+                "Correct. Although contrasts the confirmed approval with an unresolved claim.",
+                "As a result implies an unsupported causal connection."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "claim rejection",
+          "prior authorization",
+          "formulary",
+          "copayment"
+        ]
+      },
+      {
+        "title": "Refill requests and response windows",
+        "collocations": [
+          "check refills remaining: inspect the current prescription's recorded refill allowance",
+          "send a renewal request: ask the prescriber for a new authorization",
+          "await the prescriber's response: describe a request that has not received an answer",
+          "agree a callback window: settle when staff will provide a status update"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "The record shows no refills remaining. A renewal request was sent at 09:00 and has no response at 11:00. Technician Jo can call the patient between 15:00 and 16:00. No supply or prescriber response time is confirmed.",
+          "model": "There are no refills remaining on this prescription. We sent a renewal request at nine, but no response is recorded as of eleven. I can call between three and four with the status. That is a callback window, not confirmation that the prescriber will respond or that a supply will be ready then."
+        },
+        "workshop": {
+          "title": "Give a timed update without promising a refill",
+          "goal": "Separate the request sent, the response pending, and the next contact.",
+          "explanation": "Use 'sent at' for a completed action and 'awaiting' for the outstanding response. A patient's travel deadline explains their concern but does not create a dispensing authorization.",
+          "frames": [
+            "We sent ___ at ___; we are still awaiting ___.",
+            "The record shows ___ refills remaining.",
+            "I can call between ___ and ___ with the current status."
+          ],
+          "before": "Your refill will be ready when I call.",
+          "after": "I'll call between three and four; the renewal response is still pending.",
+          "reason": "The call can be arranged even though the prescription outcome is unknown.",
+          "role_b": "Patient: you expected a refill today and need to leave home at four.",
+          "challenge": "Ask whether the pharmacy's message to the prescriber counts as the prescriber's permission.",
+          "questions": [
+            {
+              "prompt": "Patient: Was a new prescription received at nine?\nTechnician: No, we ____ a renewal request at nine and are awaiting a response.",
+              "options": [
+                "received",
+                "sent",
+                "approved",
+                "fulfilled"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Received describes an incoming item; the request went out.",
+                "Correct. Sent identifies the completed outgoing request.",
+                "Approved describes permission that has not arrived.",
+                "Fulfilled would mean the requested supply was completed."
+              ]
+            },
+            {
+              "prompt": "Patient: When will you call?\nTechnician: The agreed callback window is ____ three and four.",
+              "options": [
+                "by",
+                "until",
+                "between",
+                "since"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "By sets a latest time but does not pair with and four here.",
+                "Until gives an endpoint rather than the two bounds of a window.",
+                "Correct. Between pairs with and to specify the window.",
+                "Since introduces a starting point for a continuing past period."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "refill",
+          "renewal request",
+          "refills remaining",
+          "callback window"
+        ]
+      },
+      {
+        "title": "Stock enquiries and delivery estimates",
+        "collocations": [
+          "check wholesaler availability: obtain the supplier's current stock information",
+          "place an item on backorder: record demand for stock not currently supplied",
+          "confirm the allocation: check the quantity the supplier has assigned",
+          "quote an estimated arrival: state an expected delivery time as an estimate"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "The pharmacy has no stock for a patient's order. The wholesaler estimates Wednesday delivery, but shipment is not confirmed. Technician Lee can check the supplier update Tuesday at 16:00. The pharmacist handles questions about alternatives.",
+          "model": "Our pharmacy has no stock for this order today. The wholesaler estimates Wednesday delivery, but has not confirmed shipment, so Wednesday is not a collection promise. Lee will check the supplier update Tuesday at four. If you need to discuss alternatives or the effect of waiting, I can connect you with the pharmacist."
+        },
+        "workshop": {
+          "title": "Keep stock predictions qualified",
+          "goal": "Report stock and delivery evidence without turning an estimate into a promise.",
+          "explanation": "A supplier's stock, its shipment, the pharmacy's receipt, and a patient's collection are separate events. State which event the date refers to. Keep medicine-choice questions with the pharmacist.",
+          "frames": [
+            "The wholesaler estimates ___, but ___ is not confirmed.",
+            "We have confirmation of ___, not yet of ___.",
+            "Would you like the pharmacist to discuss ___?"
+          ],
+          "before": "It will definitely be ready Wednesday.",
+          "after": "Wednesday is the supplier's delivery estimate; shipment is not confirmed.",
+          "reason": "The correction identifies both the source and the uncertain event.",
+          "role_b": "Patient: you want to arrange a Wednesday collection and assume estimated arrival means ready.",
+          "challenge": "Ask whether another branch's online stock display guarantees that branch can supply your prescription.",
+          "questions": [
+            {
+              "prompt": "Patient: Has the shipment arrived?\nTechnician: No. Wednesday is the ____, not a recorded receipt.",
+              "options": [
+                "actual arrival",
+                "estimated arrival",
+                "collection deadline",
+                "dispatch confirmation"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Actual arrival would say the delivery happened.",
+                "Correct. Estimated arrival is a prediction of delivery.",
+                "A collection deadline is the latest pickup time, not an arrival prediction.",
+                "Dispatch confirmation would establish that shipment occurred."
+              ]
+            },
+            {
+              "prompt": "Wholesaler: Ten units were requested, but only six were assigned to your pharmacy.\nTechnician: I'll report the ____ as six units.",
+              "options": [
+                "backorder",
+                "delivery time",
+                "allocation",
+                "reorder date"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A backorder is an outstanding order, not the assigned quantity.",
+                "A delivery time is not measured in units.",
+                "Correct. Allocation is the quantity assigned.",
+                "A reorder date tells when to order again."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "backorder",
+          "wholesaler",
+          "allocation",
+          "estimated arrival"
+        ]
+      },
+      {
+        "title": "Pickup questions and pharmacist consultations",
+        "collocations": [
+          "check dispensing status: establish which preparation or checking stage is recorded",
+          "offer a pharmacist consultation: arrange a conversation about medicine questions",
+          "identify the dosage form: name the physical form without changing the prescription",
+          "query the label wording: raise a question about a specific printed instruction"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At pickup, patient Arden asks what an auxiliary label means. The technician can identify the label but cannot interpret the instruction. Pharmacist Ravi is available at the consultation counter and accepts the question. No instructions are changed.",
+          "model": "Ravi, Arden has a question about the wording on this auxiliary label before collection. I have not interpreted it or changed any instructions. Could you take that question at the consultation counter? Arden, Ravi will explain the label with you; I will keep the pickup conversation separate from that medication guidance."
+        },
+        "workshop": {
+          "title": "Carry the patient's actual question into the handoff",
+          "goal": "Transfer a label question without giving medication advice.",
+          "explanation": "Quote or identify the unclear wording rather than guessing what the patient means. Name the pharmacist who has accepted the conversation. Recognizing a dosage form is not permission to substitute it.",
+          "frames": [
+            "Your question is about ___ on the label.",
+            "I haven't interpreted ___; could you explain it with the patient?",
+            "___ has accepted the consultation at ___."
+          ],
+          "before": "It's just a standard warning; don't worry about it.",
+          "after": "You want that warning explained. Ravi can discuss it with you before collection.",
+          "reason": "This preserves the question instead of dismissing it.",
+          "role_b": "Patient: you recognize the main label but want an additional warning explained.",
+          "challenge": "Ask the technician to give a quick answer because the queue is growing.",
+          "questions": [
+            {
+              "prompt": "Patient: Is this a question about how much medicine is in each tablet?\nTechnician: No, tablet versus liquid concerns the ____.",
+              "options": [
+                "strength",
+                "quantity",
+                "dosage form",
+                "refill allowance"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Strength is the amount of ingredient per unit.",
+                "Quantity is the amount supplied.",
+                "Correct. Tablet and liquid are physical forms.",
+                "A refill allowance concerns further supplies."
+              ]
+            },
+            {
+              "prompt": "Pharmacist: What exactly is the patient asking?\nTechnician: Arden wants you to ____ the auxiliary label, not replace it.",
+              "options": [
+                "explain",
+                "reprint",
+                "attach",
+                "remove"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Explain addresses the meaning of the wording.",
+                "Reprinting produces another copy without explaining it.",
+                "Attaching describes putting a label on the package.",
+                "Removing does not answer the question about meaning."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "dispensing status",
+          "counseling",
+          "auxiliary label",
+          "dosage form"
+        ]
+      },
+      {
+        "title": "Private collection and contact preferences",
+        "collocations": [
+          "verify collection authority: check whether a person may collect on the patient's behalf",
+          "protect patient confidentiality: keep pharmacy information within permitted disclosure",
+          "confirm contact preferences: establish which contact arrangements the patient has chosen",
+          "leave a neutral callback message: request contact without unnecessary prescription details"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "A person says they are collecting for their neighbor. Their collection authority has not been verified. They ask the technician to read out the neighbor's medicines to identify the right package. Lead pharmacist Maya can review the collection question privately.",
+          "model": "I can help with the collection enquiry, but I cannot read out someone else's medicine details while their collection arrangements are unverified. Maya can review the required checks with you privately. Please tell her that you are here on your neighbor's behalf; I have not yet confirmed which information or package can be released."
+        },
+        "workshop": {
+          "title": "Set a privacy boundary without accusing the visitor",
+          "goal": "Decline an unverified disclosure and offer a specific way to check collection arrangements.",
+          "explanation": "Separate a person's helpful intention from established authority. Explain the information boundary without labeling the visitor dishonest. Do not teach a universal list of documents or legal permissions.",
+          "frames": [
+            "I can help with ___, but first we need to verify ___.",
+            "I can't discuss ___ with the current information.",
+            "___ can review the collection question privately."
+          ],
+          "before": "If you know the address, I'll read you the medicine list.",
+          "after": "Knowing an address doesn't complete our collection checks; let's review the arrangements privately.",
+          "reason": "The revision avoids treating one familiar detail as sufficient authority.",
+          "role_b": "Visitor: your neighbor asked you to help, but collection arrangements have not been checked.",
+          "challenge": "Say that you have collected before and ask why today's enquiry needs checking.",
+          "questions": [
+            {
+              "prompt": "Visitor: I'm helping my neighbor. Have you verified that I may collect?\nTechnician: Your intention is clear, but your collection ____ is still unverified.",
+              "options": [
+                "authority",
+                "appointment",
+                "estimate",
+                "preference"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Authority concerns permission to collect for someone.",
+                "An appointment concerns a booked time.",
+                "An estimate concerns a predicted amount or time.",
+                "Preference concerns a choice, not established permission."
+              ]
+            },
+            {
+              "prompt": "Patient: Please ask me to call back, without mentioning a medicine in the message.\nTechnician: You prefer a ____ callback message.",
+              "options": [
+                "clinical",
+                "detailed",
+                "neutral",
+                "diagnostic"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Clinical wording could reveal the type of care involved.",
+                "Detailed contradicts the request to omit medicine details.",
+                "Correct. Neutral wording avoids the unnecessary medicine detail.",
+                "Diagnostic relates to a diagnosis, not the requested contact style."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "authorized representative",
+          "confidentiality",
+          "identity verification",
+          "contact preference"
+        ]
+      },
+      {
+        "title": "Precise inventory and quality queries",
+        "collocations": [
+          "match the lot number: compare the complete batch identifier against a notice",
+          "flag damaged packaging: report a visible package problem for assessment",
+          "report an inventory discrepancy: state a difference between physical and recorded quantities",
+          "keep release status explicit: distinguish stock present from stock cleared for use"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "A fictional recall notice names lot AB41. The delivery record shows AB14, but the stock label has not been checked against the notice. Lead pharmacist Maya handles recall assessment. No affected status, patient exposure, or release decision has been established.",
+          "model": "Maya, could you compare the stock's complete lot number with this recall notice? The notice lists AB41, while the delivery record says AB14. I have not established whether the stock is affected. Please confirm who will assess the discrepancy and its release status; I will not describe these similar numbers as a match."
+        },
+        "workshop": {
+          "title": "Request an exact identifier check",
+          "goal": "Ask for review of a concrete stock discrepancy without guessing its consequences.",
+          "explanation": "Similar identifiers are not identical. State the observed record and the notice separately. This lesson practices reporting, not recall handling, storage methods, disposal, or product-release decisions.",
+          "frames": [
+            "The notice lists ___; our record shows ___.",
+            "Could you verify the complete ___ against ___?",
+            "I can confirm ___, but not whether ___."
+          ],
+          "before": "Those numbers look close enough to be the recalled batch.",
+          "after": "AB41 and AB14 differ; please check the complete stock identifier against the notice.",
+          "reason": "An exact comparison replaces a visual impression.",
+          "role_b": "Lead pharmacist: ask which two identifiers differ and what has actually been checked.",
+          "challenge": "Ask whether the similar numbers prove a patient received affected stock.",
+          "questions": [
+            {
+              "prompt": "Pharmacist: Which detail identifies a manufacturing batch rather than the last permitted use date?\nTechnician: The ____.",
+              "options": [
+                "expiry date",
+                "lot number",
+                "prescription number",
+                "product name"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Expiry date identifies the use deadline, not the batch.",
+                "Correct. The lot number identifies the manufacturing batch.",
+                "A prescription number identifies an order, not a manufacturing batch.",
+                "A product name may cover several different manufacturing batches."
+              ]
+            },
+            {
+              "prompt": "Lead: Did you establish that AB14 is affected by the notice naming AB41?\nTechnician: No, I reported a ____ for review.",
+              "options": [
+                "match",
+                "release",
+                "discrepancy",
+                "replacement"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A match would mean the identifiers agreed.",
+                "A release would mean stock was cleared for use.",
+                "Correct. A discrepancy is the difference needing review.",
+                "A replacement is a substitute item, not the identifier difference."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "lot number",
+          "expiry date",
+          "recall notice",
+          "quarantined stock"
+        ]
+      },
+      {
+        "title": "Corrected messages and shift handoffs",
+        "collocations": [
+          "correct the pickup message: replace an inaccurate collection statement with the verified status",
+          "acknowledge the impact: recognize inconvenience caused by a communication error",
+          "accept the follow-up task: explicitly take responsibility for the next contact or check",
+          "preserve the audit trail: keep corrections traceable through the record process"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "At 14:00 technician Jo told a patient the order was ready, misreading a queue entry. At 14:10 Jo confirms pharmacist review remains pending. The patient has started travelling. Jo owns a correction call now and a status call at 16:00; no collection time is known.",
+          "model": "I'm sorry I told you the order was ready at two. I misread the queue entry; pharmacist review is still pending, so that pickup message was incorrect. I understand you have already started travelling. I'll correct the record and call with the status at four, but I cannot confirm a collection time yet."
+        },
+        "workshop": {
+          "title": "Repair the promise, then transfer the remaining task",
+          "goal": "Correct an inaccurate status and make the next contact accountable.",
+          "explanation": "An apology should identify the actual mistake. State the verified correction, acknowledge its effect, and name who owns the next call. An incident record is not proof that follow-up has occurred.",
+          "frames": [
+            "I incorrectly said ___; the current status is ___.",
+            "I understand this meant ___ for you.",
+            "___ has accepted the outstanding task of ___."
+          ],
+          "before": "Sorry if you misunderstood the message.",
+          "after": "I incorrectly said ready. Review is still pending, and I understand you started travelling.",
+          "reason": "The revised apology owns the wording and supplies a usable correction.",
+          "role_b": "Patient: you left home after hearing ready and want an explanation and a dependable update.",
+          "challenge": "Ask for a guaranteed collection time to make up for the inconvenience.",
+          "questions": [
+            {
+              "prompt": "Patient: Did I misunderstand, or was your message wrong?\nTechnician: ____ said the order was ready; review was still pending.",
+              "options": [
+                "You possibly",
+                "The queue might have",
+                "I incorrectly",
+                "You apparently"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "This shifts the focus onto the patient without owning the error.",
+                "This speculates about the queue instead of acknowledging the speaker's mistake.",
+                "Correct. It directly owns the inaccurate statement.",
+                "Apparently suggests an inference about the patient's behavior."
+              ]
+            },
+            {
+              "prompt": "Outgoing technician: The four o'clock callback is still outstanding. Can you take it?\nIncoming technician: Yes, I ____ that callback.",
+              "options": [
+                "completed",
+                "declined",
+                "accept",
+                "remembered"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Completed falsely says the future task is finished.",
+                "Declined refuses rather than accepts responsibility.",
+                "Correct. Accept makes ownership explicit.",
+                "Remembered does not establish responsibility."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "near miss",
+          "incident report",
+          "audit trail",
+          "outstanding task"
+        ]
+      }
+    ],
+    "jargon": [
+      {
+        "term": "prescription",
+        "definition": "An order for a medicine issued by a prescriber, subject to the pharmacy's required checks.",
+        "group": "Prescription intake without assumptions"
+      },
+      {
+        "term": "patient profile",
+        "definition": "The pharmacy record linking a patient's verified identifiers with prescription and other relevant information.",
+        "group": "Prescription intake without assumptions"
+      },
+      {
+        "term": "prescriber",
+        "definition": "A healthcare professional permitted to issue the medicine order concerned.",
+        "group": "Prescription intake without assumptions"
+      },
+      {
+        "term": "strength",
+        "definition": "The amount of active ingredient in a specified unit or concentration of a medicine.",
+        "group": "Prescription intake without assumptions"
+      },
+      {
+        "term": "claim rejection",
+        "definition": "An insurer's response saying that a submitted pharmacy claim was not accepted as submitted.",
+        "group": "Insurance claims in plain English"
+      },
+      {
+        "term": "prior authorization",
+        "definition": "A health plan's review-and-approval requirement for certain coverage requests.",
+        "group": "Insurance claims in plain English"
+      },
+      {
+        "term": "formulary",
+        "definition": "A health plan's list of medicines, often organized with coverage conditions and cost-sharing categories.",
+        "group": "Insurance claims in plain English"
+      },
+      {
+        "term": "copayment",
+        "definition": "A fixed amount the patient pays for a covered medicine or service under the applicable plan.",
+        "group": "Insurance claims in plain English"
+      },
+      {
+        "term": "refill",
+        "definition": "A further supply under an existing prescription when permitted and available.",
+        "group": "Refill requests and response windows"
+      },
+      {
+        "term": "renewal request",
+        "definition": "A request to a prescriber for a new or renewed prescription authorization.",
+        "group": "Refill requests and response windows"
+      },
+      {
+        "term": "refills remaining",
+        "definition": "The recorded number of further supplies allowed under a prescription, subject to other applicable requirements.",
+        "group": "Refill requests and response windows"
+      },
+      {
+        "term": "callback window",
+        "definition": "An agreed period during which pharmacy staff will return a patient's call.",
+        "group": "Refill requests and response windows"
+      },
+      {
+        "term": "backorder",
+        "definition": "An unfilled supplier order waiting for stock to become available.",
+        "group": "Stock enquiries and delivery estimates"
+      },
+      {
+        "term": "wholesaler",
+        "definition": "A supplier that distributes medicines and pharmacy products to pharmacies.",
+        "group": "Stock enquiries and delivery estimates"
+      },
+      {
+        "term": "allocation",
+        "definition": "A supplier's limit on the quantity available to a particular pharmacy or order.",
+        "group": "Stock enquiries and delivery estimates"
+      },
+      {
+        "term": "estimated arrival",
+        "definition": "A predicted delivery time that is not yet a confirmed receipt.",
+        "group": "Stock enquiries and delivery estimates"
+      },
+      {
+        "term": "dispensing status",
+        "definition": "The recorded stage of a prescription's preparation, checking, and supply.",
+        "group": "Pickup questions and pharmacist consultations"
+      },
+      {
+        "term": "counseling",
+        "definition": "A pharmacist's discussion with a patient about using a medicine and related questions.",
+        "group": "Pickup questions and pharmacist consultations"
+      },
+      {
+        "term": "auxiliary label",
+        "definition": "An additional label carrying warnings or other information alongside the main prescription label.",
+        "group": "Pickup questions and pharmacist consultations"
+      },
+      {
+        "term": "dosage form",
+        "definition": "The physical form of a medicine, such as a tablet, liquid, or cream.",
+        "group": "Pickup questions and pharmacist consultations"
+      },
+      {
+        "term": "authorized representative",
+        "definition": "A person permitted under the applicable arrangements to act for a patient in a specified matter.",
+        "group": "Private collection and contact preferences"
+      },
+      {
+        "term": "confidentiality",
+        "definition": "Keeping patient information from being disclosed beyond permitted people and purposes.",
+        "group": "Private collection and contact preferences"
+      },
+      {
+        "term": "identity verification",
+        "definition": "Checking information to establish who a person is through the pharmacy's required process.",
+        "group": "Private collection and contact preferences"
+      },
+      {
+        "term": "contact preference",
+        "definition": "A patient's recorded choice about suitable ways to communicate with them.",
+        "group": "Private collection and contact preferences"
+      },
+      {
+        "term": "lot number",
+        "definition": "A manufacturer's identifier for a particular batch of a medicine or product.",
+        "group": "Precise inventory and quality queries"
+      },
+      {
+        "term": "expiry date",
+        "definition": "The labeled date beyond which a product is not to be used under its stated conditions.",
+        "group": "Precise inventory and quality queries"
+      },
+      {
+        "term": "recall notice",
+        "definition": "A communication identifying a product issue and the recall actions for specified affected stock.",
+        "group": "Precise inventory and quality queries"
+      },
+      {
+        "term": "quarantined stock",
+        "definition": "Stock kept out of available inventory while its status is assessed or resolved.",
+        "group": "Precise inventory and quality queries"
+      },
+      {
+        "term": "near miss",
+        "definition": "A detected mistake or unsafe situation intercepted before the potential error reached the patient.",
+        "group": "Corrected messages and shift handoffs"
+      },
+      {
+        "term": "incident report",
+        "definition": "A formal record of a pharmacy event or concern for review under workplace procedures.",
+        "group": "Corrected messages and shift handoffs"
+      },
+      {
+        "term": "audit trail",
+        "definition": "A record showing changes and actions, including who made them and when.",
+        "group": "Corrected messages and shift handoffs"
+      },
+      {
+        "term": "outstanding task",
+        "definition": "A specific piece of pharmacy work that remains unfinished at a handoff.",
+        "group": "Corrected messages and shift handoffs"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "The blue label does not settle the strength",
+          "setting": "Fictional counter exchange using the lesson case; pharmacist Maya is available.",
+          "turns": [
+            [
+              "Patient",
+              "The last box had a blue label. Can't you use that to identify the strength?"
+            ],
+            [
+              "Technician",
+              "The current strength field is unclear. Label color doesn't confirm the detail we need."
+            ],
+            [
+              "Patient",
+              "My prescriber usually orders the same thing. I've collected it here for years."
+            ],
+            [
+              "Technician",
+              "That history helps explain your question, but Maya, our pharmacist, needs to handle this clarification."
+            ],
+            [
+              "Patient",
+              "Does that mean you have cancelled today's prescription because I can't remember the number?"
+            ],
+            [
+              "Technician",
+              "No, it is awaiting clarification. Cancelled and awaiting clarification are different statuses in our record."
+            ],
+            [
+              "Patient",
+              "Could Maya look at it? I don't want to lose my place by leaving."
+            ],
+            [
+              "Technician",
+              "I'll give Maya the unclear order and your question. We have no collection time yet."
+            ],
+            [
+              "Patient",
+              "Please tell her I can wait for an explanation, but not indefinitely today."
+            ],
+            [
+              "Technician",
+              "Certainly. I'll include that in the handoff; please stay here while I speak with her."
+            ]
+          ]
+        },
+        {
+          "title": "One letter apart",
+          "setting": "Fictional intake desk; two similar names appear, and neither record has been changed.",
+          "turns": [
+            [
+              "Technician",
+              "Two similar patient profiles appear. Let's verify your details privately before selecting either record."
+            ],
+            [
+              "Patient",
+              "Mine has an extra letter near the end. People often miss it when they type."
+            ],
+            [
+              "Technician",
+              "Thank you. Please give your full name and date of birth here at this quieter counter."
+            ],
+            [
+              "Patient",
+              "It's Elena Maren, born the fourteenth of June, nineteen eighty. Is that the same record?"
+            ],
+            [
+              "Technician",
+              "Those details match one profile. The other result has a different birth date."
+            ],
+            [
+              "Patient",
+              "I moved recently, though. The address on that profile might still be my old one."
+            ],
+            [
+              "Technician",
+              "We can check that separately. Which address should the registration team review with you?"
+            ],
+            [
+              "Patient",
+              "The address ending in Cedar Lane is old; my current address is on Willow Road."
+            ],
+            [
+              "Technician",
+              "I'll mark the address question for review without joining the two similar profiles together."
+            ],
+            [
+              "Patient",
+              "Good. I was worried the spelling difference meant all my prescriptions had disappeared."
+            ]
+          ]
+        },
+        {
+          "title": "Receipt before readiness",
+          "setting": "Fictional patient shows a received notification; the live record says pharmacist review pending.",
+          "turns": [
+            [
+              "Patient",
+              "My phone says you received the prescription. I thought that meant I could collect it."
+            ],
+            [
+              "Technician",
+              "That message confirms receipt. Today's record still shows pharmacist review pending, rather than ready for pickup."
+            ],
+            [
+              "Patient",
+              "I have twenty minutes before work. Is that enough time for the review?"
+            ],
+            [
+              "Technician",
+              "I don't have a completion estimate. You don't need to stay just to keep it in the queue."
+            ],
+            [
+              "Patient",
+              "Will the next notification actually say ready, or will it use the same wording?"
+            ],
+            [
+              "Technician",
+              "A pickup notification says ready. Please check that wording before making another trip."
+            ],
+            [
+              "Patient",
+              "I changed my telephone number last month. Could that message go to the wrong number?"
+            ],
+            [
+              "Technician",
+              "Let's verify your contact preference privately. I won't read the number across the counter."
+            ],
+            [
+              "Patient",
+              "The number ending in forty-two is current. Please check that one against my profile."
+            ],
+            [
+              "Technician",
+              "It matches. The review is still pending, and the pickup notice will use that number."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A change discussed but not received",
+        "brief": "A patient remembers the prescriber discussing a different strength yesterday. The received order does not show that change. Pharmacist Maya is available; nobody has confirmed whether a revised order was sent.",
+        "role_a": "Technician: identify the discrepancy without selecting either strength.",
+        "role_b": "Patient: you remember a discussion, not the exact instruction or whether a new order was issued.",
+        "opening_line": "The prescriber said something would change, but this looks like my previous order.",
+        "complication": "The patient asks you to describe the remembered discussion as a confirmed new prescription.",
+        "success_checks": [
+          "Attribute the discussion to the patient's account.",
+          "Name the difference between that account and the received order.",
+          "Pass the question to Maya without choosing a strength or promising completion."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "A requirement, not a final refusal",
+          "setting": "Fictional pharmacy counter using the prior-authorization case.",
+          "turns": [
+            [
+              "Patient",
+              "The message says prior authorization required. Does that mean my plan will never cover this?"
+            ],
+            [
+              "Technician",
+              "This claim rejection requires a coverage review. We haven't received the plan's decision yet."
+            ],
+            [
+              "Patient",
+              "So someone has approved it, but you haven't prepared the prescription for collection?"
+            ],
+            [
+              "Technician",
+              "No approval or accepted claim is showing. Preparation and collection are separate questions as well."
+            ],
+            [
+              "Patient",
+              "Who can tell me what happens to the request? I keep hearing unfamiliar terms."
+            ],
+            [
+              "Technician",
+              "Inez, our billing colleague, has accepted your query. She can explain the request route."
+            ],
+            [
+              "Patient",
+              "Could she guarantee the plan will pay if the prescriber sends the information?"
+            ],
+            [
+              "Technician",
+              "No. Sending information and receiving approval are different stages; the decision belongs to the plan."
+            ],
+            [
+              "Patient",
+              "Then please ask her where the request stands, not whether the medicine is ready."
+            ],
+            [
+              "Technician",
+              "That's the question I'll pass on. The current response still says prior authorization required."
+            ]
+          ]
+        },
+        {
+          "title": "A friend's ten-dollar payment",
+          "setting": "Fictional accepted claim shows a twenty-dollar copayment; the patient mentions a friend's different plan.",
+          "turns": [
+            [
+              "Patient",
+              "My friend pays ten dollars. Why does the amount on my receipt say twenty?"
+            ],
+            [
+              "Technician",
+              "Your current processed claim shows a twenty-dollar copayment. Your friend's amount doesn't establish yours."
+            ],
+            [
+              "Patient",
+              "We use the same insurance company. I assumed that meant identical coverage for both of us."
+            ],
+            [
+              "Technician",
+              "The company can administer different plans. A formulary listing can have different cost-sharing conditions."
+            ],
+            [
+              "Patient",
+              "Is twenty an estimate, or is that what this particular claim actually returned?"
+            ],
+            [
+              "Technician",
+              "It's the amount returned for this claim. I can refer questions about how it was determined."
+            ],
+            [
+              "Patient",
+              "I'd like that explanation before paying. I'm not asking you to choose a cheaper medicine."
+            ],
+            [
+              "Technician",
+              "Understood. Inez can discuss the claim; medicine alternatives would be a question for the pharmacist."
+            ],
+            [
+              "Patient",
+              "Could I speak to Inez away from the queue? I'd rather discuss the details privately."
+            ],
+            [
+              "Technician",
+              "Yes. The consultation counter is free, and I'll tell her you're asking about this claim's copayment."
+            ]
+          ]
+        },
+        {
+          "title": "The number on an old card",
+          "setting": "Fictional billing call: claim rejected because member information needs verification; acceptance is not guaranteed.",
+          "turns": [
+            [
+              "Technician",
+              "This claim was rejected with a member-information message. The patient brought an older insurance card."
+            ],
+            [
+              "Billing colleague",
+              "Does the profile match that card, or have you verified information for the current plan year?"
+            ],
+            [
+              "Technician",
+              "It matches the older card. The patient says a replacement arrived but hasn't shown it yet."
+            ],
+            [
+              "Billing colleague",
+              "Then our immediate question is which membership information is current, not whether coverage is permanently excluded."
+            ],
+            [
+              "Technician",
+              "Can you review the current card with the patient when they bring it this afternoon?"
+            ],
+            [
+              "Billing colleague",
+              "Yes. I can check those details and handle the claim query once the information is available."
+            ],
+            [
+              "Technician",
+              "Should I promise acceptance after we update the number?"
+            ],
+            [
+              "Billing colleague",
+              "No, updating information doesn't guarantee acceptance. We need the response to the revised submission."
+            ],
+            [
+              "Technician",
+              "I'll explain that today's rejection concerns this submission and that your review is the next step."
+            ],
+            [
+              "Billing colleague",
+              "Please also ask them to bring the current card; that gives our conversation a concrete starting point."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Approval without a payment amount",
+        "brief": "An authorization approval has arrived. The final claim has not been processed. Last month's patient share was zero, but today's amount is unknown. Inez handles payment queries.",
+        "role_a": "Technician: explain what the approval establishes and what remains open.",
+        "role_b": "Patient: you need to know whether to bring money when collecting.",
+        "opening_line": "Last month was free, and now you have approval, so today's supply is free too?",
+        "complication": "The patient confuses a formulary listing with a confirmed zero copayment.",
+        "success_checks": [
+          "Separate listing, authorization, and processed payment.",
+          "Avoid carrying forward last month's amount.",
+          "Identify Inez as the contact for the remaining claim question."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "The nine o'clock request",
+          "setting": "Fictional refill call using the lesson case.",
+          "turns": [
+            [
+              "Patient",
+              "I requested a refill this morning. Has my prescriber answered, or is it ready?"
+            ],
+            [
+              "Technician",
+              "There are no refills remaining. We sent a renewal request at nine; no response is recorded."
+            ],
+            [
+              "Patient",
+              "It's eleven now. Does sending the request mean the prescriber has accepted it?"
+            ],
+            [
+              "Technician",
+              "No. Sending it confirms our action, not the prescriber's answer or permission for another supply."
+            ],
+            [
+              "Patient",
+              "I have to leave home at four. Could someone call before I go?"
+            ],
+            [
+              "Technician",
+              "Jo's callback window is three to four. She'll report the status even if no answer arrives."
+            ],
+            [
+              "Patient",
+              "Please don't leave me expecting a pickup message if the request is still pending."
+            ],
+            [
+              "Technician",
+              "We'll call it a renewal update. Any collection readiness would need separate confirmation."
+            ],
+            [
+              "Patient",
+              "What should I do about a medication question while I wait for that response?"
+            ],
+            [
+              "Technician",
+              "I can connect you to the pharmacist for that question now; the renewal status remains pending."
+            ]
+          ]
+        },
+        {
+          "title": "Two requests, one record",
+          "setting": "Fictional duplicate web and telephone refill requests; both refer to the same prescription.",
+          "turns": [
+            [
+              "Technician",
+              "I see a web request and your telephone message for the same prescription number."
+            ],
+            [
+              "Patient",
+              "I submitted the second one because I wasn't sure the website had worked this morning."
+            ],
+            [
+              "Technician",
+              "Thank you for explaining. Are both requests for the same supply, rather than separate prescriptions?"
+            ],
+            [
+              "Patient",
+              "Yes, the number is the same. I don't want two orders or two charges."
+            ],
+            [
+              "Technician",
+              "I'll flag the duplicate request for our queue review; I haven't confirmed two supplies or charges."
+            ],
+            [
+              "Patient",
+              "Does that mean I need to cancel the original request and start from the beginning?"
+            ],
+            [
+              "Technician",
+              "No, we're checking the duplicate against the original. I won't ask you to submit another."
+            ],
+            [
+              "Patient",
+              "The website still says received. Can you tell me which message I should follow?"
+            ],
+            [
+              "Technician",
+              "Use the update for this prescription number. I'll note that the second contact was a duplicate."
+            ],
+            [
+              "Patient",
+              "That's helpful. I'll keep the number handy instead of sending another request through the website."
+            ]
+          ]
+        },
+        {
+          "title": "A trip is not a refill allowance",
+          "setting": "Fictional patient leaves Friday; record review is pending and pharmacist Ravi is available.",
+          "turns": [
+            [
+              "Patient",
+              "I'm leaving Friday and would like to collect earlier than usual. Can you arrange that?"
+            ],
+            [
+              "Technician",
+              "I can pass the timing request to Ravi, our pharmacist. An earlier supply isn't confirmed."
+            ],
+            [
+              "Patient",
+              "The label mentions refills remaining. Doesn't that mean any collection date is available to me?"
+            ],
+            [
+              "Technician",
+              "It shows a refill allowance, but it doesn't settle every timing or claim requirement."
+            ],
+            [
+              "Patient",
+              "Could you tell Ravi I leave Friday morning, rather than saying I'm travelling soon?"
+            ],
+            [
+              "Technician",
+              "Yes, Friday morning is the useful detail. When would you be available for a call?"
+            ],
+            [
+              "Patient",
+              "Tomorrow afternoon is best. I don't need a promise, just an explanation of the options."
+            ],
+            [
+              "Technician",
+              "I'll include that availability and ask Ravi to review the timing question with you."
+            ],
+            [
+              "Patient",
+              "Should I make another refill request tonight if I haven't heard back by then?"
+            ],
+            [
+              "Technician",
+              "We already have your request. I'll add the travel details to it instead of creating another."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A missed callback",
+        "brief": "Jo agreed to call yesterday between three and four but did not. No renewal response has arrived. Jo can provide a new status call today at noon; the pharmacist can address medication concerns now.",
+        "role_a": "Technician: acknowledge the missed contact and give the current status.",
+        "role_b": "Patient: you stayed home expecting the call and want a reliable next contact.",
+        "opening_line": "I waited all afternoon yesterday; was the prescription ready and nobody told me?",
+        "complication": "The patient interprets an apology as confirmation that approval has arrived.",
+        "success_checks": [
+          "Apologize for the missed callback specifically.",
+          "Keep approval and readiness unconfirmed.",
+          "Agree the noon contact and offer the pharmacist for medication questions."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Wednesday is an estimate",
+          "setting": "Fictional stock enquiry using the lesson case.",
+          "turns": [
+            [
+              "Patient",
+              "Someone mentioned Wednesday. Should I book a taxi now to collect my prescription then?"
+            ],
+            [
+              "Technician",
+              "Wednesday is the estimated arrival from our wholesaler. We have no stock and no shipment confirmation."
+            ],
+            [
+              "Patient",
+              "So the wholesaler hasn't actually told you the package is on its way?"
+            ],
+            [
+              "Technician",
+              "That's correct. Lee will check the supplier's update Tuesday at four, when more information may appear."
+            ],
+            [
+              "Patient",
+              "Could you call Wednesday a collection date if I promise to come late?"
+            ],
+            [
+              "Technician",
+              "No, coming later doesn't turn an estimate into confirmed arrival or prescription readiness."
+            ],
+            [
+              "Patient",
+              "I'd like to discuss what the wait means for me, beyond the delivery question."
+            ],
+            [
+              "Technician",
+              "I'll connect you with the pharmacist for that. I can't advise on medication choices myself."
+            ],
+            [
+              "Patient",
+              "Please keep the stock update separate so I know whether to arrange transport."
+            ],
+            [
+              "Technician",
+              "I will. For now, the taxi would be based on an unconfirmed delivery estimate."
+            ]
+          ]
+        },
+        {
+          "title": "Six assigned from ten requested",
+          "setting": "Fictional pharmacy supply call about a fictional nonclinical stock order; no patient allocation decisions.",
+          "turns": [
+            [
+              "Technician",
+              "Our order lists ten units, but your update shows six. Which quantity is actually assigned?"
+            ],
+            [
+              "Wholesaler representative",
+              "Six units are allocated. The other four remain on backorder with no arrival estimate."
+            ],
+            [
+              "Technician",
+              "Does six allocated mean six dispatched, or are they still awaiting your shipping confirmation?"
+            ],
+            [
+              "Wholesaler representative",
+              "They haven't dispatched yet. Allocation is confirmed; dispatch time isn't available on my screen."
+            ],
+            [
+              "Technician",
+              "Please give me the order reference so our stock lead can match this update."
+            ],
+            [
+              "Wholesaler representative",
+              "It's order W83. The six assigned units and four outstanding units are listed separately."
+            ],
+            [
+              "Technician",
+              "I'll report those quantities separately. We don't have a patient collection promise attached to them."
+            ],
+            [
+              "Wholesaler representative",
+              "That's helpful. A shipping notice will identify what actually leaves, not just what was requested."
+            ],
+            [
+              "Technician",
+              "Could your next update retain that split rather than saying the whole order is progressing?"
+            ],
+            [
+              "Wholesaler representative",
+              "Yes. I'll keep the allocated quantity, outstanding quantity, and shipment status explicit for W83."
+            ]
+          ]
+        },
+        {
+          "title": "The branch display is not a reservation",
+          "setting": "Fictional customer sees online stock at another branch; no availability has been checked directly.",
+          "turns": [
+            [
+              "Patient",
+              "Your website shows stock at the Riverside branch. Does that mean they're holding it for me?"
+            ],
+            [
+              "Technician",
+              "No, that display isn't a reservation. We haven't confirmed their current stock or your order arrangements."
+            ],
+            [
+              "Patient",
+              "Could you check whether I should travel there? It's forty minutes each way."
+            ],
+            [
+              "Technician",
+              "I can ask their pharmacy team about the stock enquiry and explain the travel concern."
+            ],
+            [
+              "Patient",
+              "Would checking stock also move my prescription automatically from this branch to theirs?"
+            ],
+            [
+              "Technician",
+              "No. A stock enquiry and a prescription transfer are separate matters for the pharmacy teams."
+            ],
+            [
+              "Patient",
+              "Then please ask about availability without cancelling anything here or promising them my collection."
+            ],
+            [
+              "Technician",
+              "That's clear. I'll describe this as an availability enquiry, with no transfer confirmed."
+            ],
+            [
+              "Patient",
+              "Can the pharmacist explain what options I have if the display is out of date?"
+            ],
+            [
+              "Technician",
+              "Yes. I'll include that question when I pass on the enquiry and the travel detail."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A delivered parcel, no item confirmation",
+        "brief": "A wholesaler parcel arrived at 10:00, but the stock team has not confirmed whether it includes item P7. A patient has heard 'the delivery arrived.' Stock lead Lee can check the receipt list now.",
+        "role_a": "Technician: explain the distinction between a parcel and a specific item.",
+        "role_b": "Patient: you believe P7 must be inside and want a collection promise.",
+        "opening_line": "The delivery van just left, so mine is definitely here now, isn't it?",
+        "complication": "The wholesaler's earlier estimate mentioned P7 but no shipment list was confirmed.",
+        "success_checks": [
+          "Acknowledge the parcel's arrival.",
+          "Keep P7's receipt and prescription readiness separate.",
+          "Request Lee's item-level confirmation without recommending an alternative medicine."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "A question before collection",
+          "setting": "Fictional pickup counter using the label-handoff case.",
+          "turns": [
+            [
+              "Technician",
+              "You mentioned the auxiliary label, the extra label here. Which part would you like explained?"
+            ],
+            [
+              "Patient",
+              "I recognize the main instructions, but I don't understand what this additional warning means."
+            ],
+            [
+              "Technician",
+              "Ravi, our pharmacist, can explain it at the consultation counter. I won't interpret the instruction."
+            ],
+            [
+              "Patient",
+              "Could you tell him I'm asking about this label, not asking for a different medicine?"
+            ],
+            [
+              "Technician",
+              "Yes, I'll pass on that distinction. He has accepted the consultation and is waiting there."
+            ],
+            [
+              "Patient",
+              "I feel awkward holding up the queue when everyone else seems ready to pay."
+            ],
+            [
+              "Technician",
+              "The consultation counter gives you space for the question without having to discuss it here."
+            ],
+            [
+              "Patient",
+              "Does talking to Ravi mean my instructions have changed, or will he explain this label?"
+            ],
+            [
+              "Technician",
+              "No instructions have changed. Ravi's counseling conversation will explain the label already attached."
+            ],
+            [
+              "Patient",
+              "Then I'll speak with Ravi first. Please keep my collection question separate from the label discussion."
+            ]
+          ]
+        },
+        {
+          "title": "Tablet is not a strength",
+          "setting": "Fictional patient uses the word strength when asking about tablet versus liquid.",
+          "turns": [
+            [
+              "Patient",
+              "I wanted the other strength, the liquid one. Is that what the prescription says?"
+            ],
+            [
+              "Technician",
+              "Do you mean the physical form, liquid instead of tablet, rather than the ingredient amount?"
+            ],
+            [
+              "Patient",
+              "Yes, I meant the form. I sometimes use the wrong word at the counter."
+            ],
+            [
+              "Technician",
+              "That's called the dosage form. The current order lists tablets; I'll pass your question to the pharmacist."
+            ],
+            [
+              "Patient",
+              "Could the pharmacist discuss my concern without you changing the order before that conversation?"
+            ],
+            [
+              "Technician",
+              "Certainly. I've identified the wording difference, but haven't requested or selected a replacement medicine."
+            ],
+            [
+              "Patient",
+              "Please mention that I want to discuss the form, not increase or decrease anything."
+            ],
+            [
+              "Technician",
+              "I'll use those words in the handoff. They make your request much clearer."
+            ],
+            [
+              "Patient",
+              "Thank you. I was worried that saying other strength had already changed the record."
+            ],
+            [
+              "Technician",
+              "It hasn't changed the order. I'll flag the form question for the pharmacist's discussion with you."
+            ]
+          ]
+        },
+        {
+          "title": "Two bags, two statuses",
+          "setting": "Fictional patient has one prescription ready and another awaiting pharmacist review.",
+          "turns": [
+            [
+              "Patient",
+              "I received a ready message. Does that cover both prescriptions I asked about yesterday?"
+            ],
+            [
+              "Technician",
+              "The notice covers one prescription. The second prescription's dispensing status remains pharmacist review pending."
+            ],
+            [
+              "Patient",
+              "Can you show me which reference is ready without saying the medicine names aloud?"
+            ],
+            [
+              "Technician",
+              "Yes, let's check the references here privately. The notice matches the number ending in eighteen."
+            ],
+            [
+              "Patient",
+              "The other ends in twenty-three. I had assumed the message included everything under my name."
+            ],
+            [
+              "Technician",
+              "It doesn't. I can confirm eighteen is ready; twenty-three has a separate pending status."
+            ],
+            [
+              "Patient",
+              "I have a question about the pending one. Is the counter queue the right place?"
+            ],
+            [
+              "Technician",
+              "I'll ask the pharmacist to discuss that question with you at the consultation counter."
+            ],
+            [
+              "Patient",
+              "Please don't mark both collected just because I've arrived for the first one."
+            ],
+            [
+              "Technician",
+              "Understood. Each prescription retains its own status, and today's notice only confirms readiness for eighteen."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An unopened leaflet question",
+        "brief": "Patient Kim has not collected a prescription and wants a phrase in its information leaflet explained. Pharmacist Ravi is free in five minutes. The technician cannot interpret the phrase; no medicine problem is reported.",
+        "role_a": "Technician: identify the question and arrange the consultation.",
+        "role_b": "Patient: ask whether the leaflet wording changes the main label instructions.",
+        "opening_line": "This leaflet uses different words from the label. Which should I follow?",
+        "complication": "Kim asks you to reconcile the two texts while Ravi finishes another consultation.",
+        "success_checks": [
+          "Preserve both texts as the subject of the question.",
+          "Avoid selecting or changing instructions.",
+          "State the five-minute consultation availability without diagnosing a conflict."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Collecting for a neighbor",
+          "setting": "Fictional counter enquiry using the lesson privacy case.",
+          "turns": [
+            [
+              "Visitor",
+              "I'm collecting for my neighbor. Read me the medicine names and I'll recognize the right bag."
+            ],
+            [
+              "Technician",
+              "I can help with collection, but I can't read those details before the arrangements are verified."
+            ],
+            [
+              "Visitor",
+              "She trusts me with her shopping, and I've helped her collect things here before."
+            ],
+            [
+              "Technician",
+              "I appreciate that. We still need to verify today's arrangement before treating you as an authorized representative."
+            ],
+            [
+              "Visitor",
+              "Are you saying you think I'm lying about knowing her or helping her?"
+            ],
+            [
+              "Technician",
+              "No. I'm explaining the information boundary, not questioning your intentions or your relationship."
+            ],
+            [
+              "Visitor",
+              "Who can check it without making me explain everything in front of this queue?"
+            ],
+            [
+              "Technician",
+              "Maya can review the collection question privately. I haven't confirmed any package or medicine details."
+            ],
+            [
+              "Visitor",
+              "I'll speak with her. Please tell her I'm here on my neighbor's behalf."
+            ],
+            [
+              "Technician",
+              "I will. She can establish the relevant collection arrangements without discussing the neighbor's medicines across the counter."
+            ]
+          ]
+        },
+        {
+          "title": "A shared telephone",
+          "setting": "Fictional patient updates contact preferences; a shared home telephone should receive neutral messages only.",
+          "turns": [
+            [
+              "Technician",
+              "You asked us to review your contact preference. Is the home telephone still suitable?"
+            ],
+            [
+              "Patient",
+              "Yes, but several people answer it. Please don't leave medicine names in a message."
+            ],
+            [
+              "Technician",
+              "Would you prefer a neutral request to call the pharmacy back on that number?"
+            ],
+            [
+              "Patient",
+              "Yes. I can return a call, but I don't want the household hearing prescription details."
+            ],
+            [
+              "Technician",
+              "I'll record that preference through our profile update process. Is your mobile number still current?"
+            ],
+            [
+              "Patient",
+              "It is, though I don't check it during work. The home number is more reliable."
+            ],
+            [
+              "Technician",
+              "Then I'll keep the number and the message preference distinct; changing one doesn't require changing both."
+            ],
+            [
+              "Patient",
+              "Could you repeat what you've understood before we finish? I want the instruction to be clear."
+            ],
+            [
+              "Technician",
+              "Use the home number for a neutral callback request, without medicine names."
+            ],
+            [
+              "Patient",
+              "That's exactly what I meant. Please let the team see that preference when they contact me."
+            ]
+          ]
+        },
+        {
+          "title": "A louder voice would not help",
+          "setting": "Fictional patient requests a quieter counter instead of having details repeated publicly.",
+          "turns": [
+            [
+              "Patient",
+              "I didn't hear the question, but please don't repeat my details louder across the counter."
+            ],
+            [
+              "Technician",
+              "Of course. The side counter is free; we can continue there with more privacy."
+            ],
+            [
+              "Patient",
+              "Thank you. I have difficulty hearing when several conversations are happening at once."
+            ],
+            [
+              "Technician",
+              "Would speaking clearly at the quieter counter help, or would you prefer another available communication method?"
+            ],
+            [
+              "Patient",
+              "The quieter space should help. I just need you to face me when speaking."
+            ],
+            [
+              "Technician",
+              "We'll continue identity verification there without announcing private information. Confidentiality matters throughout the conversation."
+            ],
+            [
+              "Patient",
+              "Will moving aside mean I lose my place and need to join the queue again?"
+            ],
+            [
+              "Technician",
+              "No, I'm continuing your enquiry with you. We are simply changing where the conversation happens."
+            ],
+            [
+              "Patient",
+              "That's reassuring. I didn't want to choose between hearing the question and keeping things private."
+            ],
+            [
+              "Technician",
+              "Let's move now. I'll repeat the question clearly once we're at the side counter."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A changed contact number",
+        "brief": "A patient says the number on their profile belongs to an old employer. No new number has been verified. They can review contact information at the private counter now; no contact attempt has been made today.",
+        "role_a": "Technician: acknowledge the outdated information and arrange its review.",
+        "role_b": "Patient: ask whether the pharmacy already contacted the old employer today.",
+        "opening_line": "Please don't use that number; I no longer work there.",
+        "complication": "The patient assumes an old number proves that private information was disclosed today.",
+        "success_checks": [
+          "State that no contact attempt has been made today.",
+          "Avoid claiming what happened on other dates.",
+          "Confirm the contact update through the private review."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "AB41 or AB14",
+          "setting": "Fictional stock-room communication using the recall-identifier case; no handling procedure is enacted.",
+          "turns": [
+            [
+              "Technician",
+              "The recall notice names AB41, but our delivery record shows AB14. Could you check the difference?"
+            ],
+            [
+              "Pharmacist",
+              "Yes. Have you compared the complete identifier on the stock label with the notice yet?"
+            ],
+            [
+              "Technician",
+              "Not yet. I noticed the record difference and brought both references to you first."
+            ],
+            [
+              "Pharmacist",
+              "Then affected status isn't established. I'll take the assessment and check the relevant stock record."
+            ],
+            [
+              "Technician",
+              "Should I tell the counter team that our entire delivery has been recalled?"
+            ],
+            [
+              "Pharmacist",
+              "No, that would go beyond the information. Tell them I'm assessing this specific identifier discrepancy."
+            ],
+            [
+              "Technician",
+              "The two numbers are easy to reverse when spoken. Shall I repeat them separately?"
+            ],
+            [
+              "Pharmacist",
+              "Please do, and name the source before each one so I can distinguish them."
+            ],
+            [
+              "Technician",
+              "Notice lot number: AB41. Delivery record: AB14. No stock-label match or release decision is confirmed."
+            ],
+            [
+              "Pharmacist",
+              "That is clear. I own the assessment; keep the status as under review until I report back."
+            ]
+          ]
+        },
+        {
+          "title": "A damaged carton",
+          "setting": "Fictional visible outer-carton damage is reported; contents and product suitability have not been assessed.",
+          "turns": [
+            [
+              "Technician",
+              "The outer carton on delivery D6 is dented. I haven't assessed the contents."
+            ],
+            [
+              "Stock lead",
+              "Thanks. Is the dent on every carton in the delivery or only one?"
+            ],
+            [
+              "Technician",
+              "Only the carton beside the delivery note. The others haven't been included in my observation."
+            ],
+            [
+              "Stock lead",
+              "I'll review that item under our quality procedure. Please don't describe the whole delivery as damaged."
+            ],
+            [
+              "Technician",
+              "Should I call the product unusable in the stock enquiry, or is that premature?"
+            ],
+            [
+              "Stock lead",
+              "That's not established. Say visible outer-carton damage, product assessment pending, and identify D6."
+            ],
+            [
+              "Technician",
+              "The supplier asks for a description. May I quote those observed facts to them?"
+            ],
+            [
+              "Stock lead",
+              "Yes, use the agreed supply contact and keep the description limited to what you saw."
+            ],
+            [
+              "Technician",
+              "I'll report one dented outer carton, not a damaged medicine or a confirmed cause."
+            ],
+            [
+              "Stock lead",
+              "Good. I will communicate the stock decision after assessment so the team knows the actual status."
+            ]
+          ]
+        },
+        {
+          "title": "A count with a defined scope",
+          "setting": "Fictional inventory query: shelf count is twelve, system shows fourteen; no cause established.",
+          "turns": [
+            [
+              "Technician",
+              "My count shows twelve units on this shelf, while the inventory screen shows fourteen."
+            ],
+            [
+              "Stock lead",
+              "Did you include quarantined stock in the separate area, or only this shelf?"
+            ],
+            [
+              "Technician",
+              "Only this shelf. I haven't checked whether the screen includes stock in another location."
+            ],
+            [
+              "Stock lead",
+              "Then we have a count difference to investigate, not evidence that two units are missing."
+            ],
+            [
+              "Technician",
+              "Could you confirm the scope of the system total before I describe the discrepancy?"
+            ],
+            [
+              "Stock lead",
+              "Yes. I'll check the locations included and compare them with your count record."
+            ],
+            [
+              "Technician",
+              "Should I change the total to twelve while you are looking into it?"
+            ],
+            [
+              "Stock lead",
+              "No adjustment has been approved. Keep the observation and the system total separate for review."
+            ],
+            [
+              "Technician",
+              "I'll describe twelve counted on this shelf against fourteen shown, with location scope unresolved."
+            ],
+            [
+              "Stock lead",
+              "That gives us a useful starting point without assuming loss, theft, or a counting error."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Stock present but unavailable",
+        "brief": "The screen shows eight units physically present, all marked quarantined pending pharmacist assessment. A colleague asks whether eight means eight available for a patient order. No release decision exists.",
+        "role_a": "Technician: explain the difference between physical count and available inventory.",
+        "role_b": "Colleague: you saw only the total and need a clear availability message.",
+        "opening_line": "There are eight on the screen, so can I say we have stock available?",
+        "complication": "The colleague treats quarantined as another shelf location with no effect on availability.",
+        "success_checks": [
+          "State both quantity and quarantine status.",
+          "Avoid making a product-quality conclusion.",
+          "Refer the release-status question to the pharmacist."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Correcting a premature pickup call",
+          "setting": "Fictional telephone correction using the lesson case.",
+          "turns": [
+            [
+              "Technician",
+              "I'm calling to correct my two o'clock message. I incorrectly told you the order was ready."
+            ],
+            [
+              "Patient",
+              "I'm already on the bus because of that call. What is the actual situation?"
+            ],
+            [
+              "Technician",
+              "Pharmacist review is still pending. I misread the queue entry, and I'm sorry for the unnecessary trip."
+            ],
+            [
+              "Patient",
+              "Can you at least guarantee it will be ready by the time I arrive?"
+            ],
+            [
+              "Technician",
+              "No. I can't guarantee that while pharmacist review is still pending."
+            ],
+            [
+              "Patient",
+              "Then tell me what you can commit to, because I need to plan my afternoon."
+            ],
+            [
+              "Technician",
+              "I'll correct the message record and call with the status at four, whether or not review is complete."
+            ],
+            [
+              "Patient",
+              "Please use my mobile for that call. I won't be at home to answer."
+            ],
+            [
+              "Technician",
+              "I'll use the verified mobile on your profile. Four is our update time, not confirmed collection."
+            ],
+            [
+              "Patient",
+              "All right. I understand the correction, though I'm still disappointed about the wasted travel."
+            ]
+          ]
+        },
+        {
+          "title": "A named owner at shift change",
+          "setting": "Fictional handoff: technician Jo hands an agreed callback to incoming technician Lee.",
+          "turns": [
+            [
+              "Outgoing technician",
+              "I need to hand over the four o'clock status call for reference C8."
+            ],
+            [
+              "Incoming technician",
+              "What remains open, and has the patient been told anything about a collection time?"
+            ],
+            [
+              "Outgoing technician",
+              "Review remains pending. I corrected an earlier ready message and made no new collection promise."
+            ],
+            [
+              "Incoming technician",
+              "I can take the call. Is there a confirmed contact preference for this patient?"
+            ],
+            [
+              "Outgoing technician",
+              "Yes, the verified mobile on the profile. Please check the live status before calling."
+            ],
+            [
+              "Incoming technician",
+              "So I own the four o'clock update, with readiness to be confirmed separately from that time."
+            ],
+            [
+              "Outgoing technician",
+              "Exactly. The correction is recorded, but the promised callback itself hasn't happened yet."
+            ],
+            [
+              "Incoming technician",
+              "I'll keep it open until I've made the contact or recorded the follow-up needed."
+            ],
+            [
+              "Outgoing technician",
+              "Please don't close it simply because the correction note appears in the incident record."
+            ],
+            [
+              "Incoming technician",
+              "Understood. I accept the callback, and I'll leave a clear contact outcome for the next shift."
+            ]
+          ]
+        },
+        {
+          "title": "Caught before the label left the desk",
+          "setting": "Fictional training discussion: a wrong-profile draft label was noticed before use; nothing was supplied.",
+          "turns": [
+            [
+              "Technician",
+              "I caught the adjacent-profile draft label before it left the desk."
+            ],
+            [
+              "Pharmacist",
+              "Thanks for reporting it. Was the label used, or was anything supplied to a patient?"
+            ],
+            [
+              "Technician",
+              "Neither happened. I stopped at the draft stage and brought the profile mismatch to you."
+            ],
+            [
+              "Pharmacist",
+              "We'll review it through our reporting process. Describe what occurred rather than guessing why it happened."
+            ],
+            [
+              "Technician",
+              "May I call it a near miss, since the potential error was intercepted before reaching anyone?"
+            ],
+            [
+              "Pharmacist",
+              "That describes the interception, but the report still needs the exact facts and review."
+            ],
+            [
+              "Technician",
+              "I'll identify the references and draft stage in the incident report, without copying private details elsewhere."
+            ],
+            [
+              "Pharmacist",
+              "Use the reporting record, with its audit trail, rather than an informal note or personal message."
+            ],
+            [
+              "Technician",
+              "I'll report the observed mismatch and its stage. I haven't established a cause yet."
+            ],
+            [
+              "Pharmacist",
+              "I'll take the review. Make clear that no label was used and nothing supplied."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A sent message without acceptance",
+        "brief": "Jo sent Lee a message asking for a 15:00 callback, but Lee has not acknowledged it and is unavailable. Jo remains on duty until 14:30; shift lead Maya can allocate the call. No prescription outcome is confirmed.",
+        "role_a": "Jo: explain why the callback still lacks an accepted owner.",
+        "role_b": "Maya: ask about the agreed time and arrange ownership without marking the call completed.",
+        "opening_line": "The message went to Lee, but nobody has accepted the three o'clock call yet.",
+        "complication": "A colleague says a sent message is enough to close the task.",
+        "success_checks": [
+          "Distinguish message delivery from task acceptance.",
+          "State the existing callback time.",
+          "Obtain an explicit owner while keeping the contact task open."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Correcting the word confirmed",
+      "setting": "Fictional pharmacist handoff: a technician's note incorrectly calls a recalled strength confirmed.",
+      "dialogue": [
+        [
+          "Pharmacist",
+          "Your note says the strength is confirmed, but the current order remains unclear. What was your source?"
+        ],
+        [
+          "Technician",
+          "The patient remembered an earlier label. I used confirmed when I should have written patient reported."
+        ],
+        [
+          "Pharmacist",
+          "Has that wording reached anyone else, and has the order moved beyond the clarification stage?"
+        ],
+        [
+          "Technician",
+          "Leo read the note, but the order is still on hold. I haven't selected a strength."
+        ],
+        [
+          "Pharmacist",
+          "Please tell Leo the status directly. A corrected note alone may not change what he remembers."
+        ],
+        [
+          "Technician",
+          "I'll say the strength remains unresolved and explain that the patient supplied recollection, not a current instruction."
+        ],
+        [
+          "Pharmacist",
+          "Exactly. We can value that information without presenting it as the answer to the prescription query."
+        ],
+        [
+          "Technician",
+          "Should I describe the patient as unreliable? I don't want anyone to repeat my original mistake."
+        ],
+        [
+          "Pharmacist",
+          "No. The issue is our wording, not a judgment about the patient. Keep the source explicit."
+        ],
+        [
+          "Technician",
+          "Then my correction is: patient recalled previous supply; current strength awaits pharmacist clarification. Does that capture it?"
+        ],
+        [
+          "Pharmacist",
+          "Yes. I'll take the clarification from here. Please confirm that Leo has heard the corrected status."
+        ],
+        [
+          "Technician",
+          "I have him on the internal line now; I'll correct the wording before he handles that order."
+        ]
+      ],
+      "notes": [
+        "'Patient reported' identifies a source without certifying the information.",
+        "'Moved beyond the clarification stage' asks whether an inaccurate message has affected subsequent work."
+      ]
+    },
+    {
+      "title": "Three statuses in one call",
+      "setting": "Fictional billing handoff: approval is received, the claim is pending, and pharmacist review is unfinished.",
+      "dialogue": [
+        [
+          "Technician",
+          "The update says approved, but the patient asked about payment and collection. Which approval has actually arrived?"
+        ],
+        [
+          "Billing colleague",
+          "The plan's authorization approval arrived. The final claim is pending, and the pharmacist's review is unfinished."
+        ],
+        [
+          "Technician",
+          "Then I can report one completed step, but I still have two separate questions to answer."
+        ],
+        [
+          "Billing colleague",
+          "That's right. Approval does not establish a copayment or mean the prescription is ready to collect."
+        ],
+        [
+          "Technician",
+          "Last month's claim showed no patient share. Should I mention it when explaining today's unknown amount?"
+        ],
+        [
+          "Billing colleague",
+          "Only as historical information if needed. Don't let that older amount sound like today's confirmed charge."
+        ],
+        [
+          "Technician",
+          "Can you give me the claim status at two thirty? I have agreed to call at three."
+        ],
+        [
+          "Billing colleague",
+          "Yes, I'll provide the status at two thirty, even if processing is still incomplete at that point."
+        ],
+        [
+          "Technician",
+          "I'll also ask the pharmacist about readiness. The patient shouldn't travel based only on a billing update."
+        ],
+        [
+          "Billing colleague",
+          "Please make the callback distinction explicit: three is our contact time, not a promise of completion."
+        ],
+        [
+          "Technician",
+          "My message will be: authorization approved; payment and pharmacist review pending; I will call again at three."
+        ],
+        [
+          "Billing colleague",
+          "That separates the stages clearly. I'll send you the current claim response before your agreed call."
+        ]
+      ],
+      "notes": [
+        "Specify the object after 'approved': a coverage authorization is not dispensing readiness.",
+        "'Even if' preserves a contact commitment when the underlying result is uncertain."
+      ]
+    },
+    {
+      "title": "Which prescription needs renewing?",
+      "setting": "Fictional clinic callback about two different prescription references; no medicine instructions are discussed.",
+      "dialogue": [
+        [
+          "Technician",
+          "I'm following up on renewal request R21. Your message mentions R12, which is a different prescription reference."
+        ],
+        [
+          "Clinic coordinator",
+          "Thanks for catching that. I have both requests open, and I quoted the older reference by mistake."
+        ],
+        [
+          "Technician",
+          "For R21, our record still shows no response. Does your message contain an answer for that request?"
+        ],
+        [
+          "Clinic coordinator",
+          "No, it only acknowledges receipt of R21. The prescriber hasn't sent a decision to me yet."
+        ],
+        [
+          "Technician",
+          "Then I'll report receipt acknowledged, decision pending. I won't attach the older response to this request."
+        ],
+        [
+          "Clinic coordinator",
+          "Please keep the references separate. R12's message belongs to last month's request, not the current renewal."
+        ],
+        [
+          "Technician",
+          "The patient expects a status call at noon. Is there a confirmed response time I can relay?"
+        ],
+        [
+          "Clinic coordinator",
+          "There isn't. I can check our message queue before noon, but that isn't a prescriber completion commitment."
+        ],
+        [
+          "Technician",
+          "Understood. Could you make any later message explicit about the reference, so our team can match it?"
+        ],
+        [
+          "Clinic coordinator",
+          "Yes. I'll identify R21 in the subject and use our usual secure communication route for the details."
+        ],
+        [
+          "Technician",
+          "I'll leave today's renewal pending and tell the patient we have acknowledgment, not a new prescription."
+        ],
+        [
+          "Clinic coordinator",
+          "That's accurate. Thank you for checking the reference before treating my earlier message as an answer."
+        ]
+      ],
+      "notes": [
+        "'Acknowledges receipt' means the message arrived, not that its request was granted.",
+        "'Belongs to' helps separate similar references without assigning blame."
+      ]
+    },
+    {
+      "title": "A supplier revises its estimate",
+      "setting": "Fictional wholesaler call: Thursday replaces Tuesday as the predicted delivery date; the cause is unknown.",
+      "dialogue": [
+        [
+          "Technician",
+          "Yesterday's update estimated Tuesday; today's says Thursday. Which date should I quote to our stock lead?"
+        ],
+        [
+          "Wholesaler representative",
+          "Thursday is the current estimate. Tuesday has been superseded, and I can't confirm shipment at this stage."
+        ],
+        [
+          "Technician",
+          "Can you tell me whether the change concerns our entire order or only the line marked P7?"
+        ],
+        [
+          "Wholesaler representative",
+          "Only P7 has changed. The other lines keep their existing statuses; please don't apply Thursday to all items."
+        ],
+        [
+          "Technician",
+          "Thanks. I also need to correct a patient-facing message that referred to Tuesday as if it were certain."
+        ],
+        [
+          "Wholesaler representative",
+          "Please describe Thursday as an estimate too. We don't have a carrier confirmation that would support stronger wording."
+        ],
+        [
+          "Technician",
+          "Is a supplier shortage confirmed as the cause, or would that be an inference?"
+        ],
+        [
+          "Wholesaler representative",
+          "It would be an inference. The notice changes the date but doesn't give a verified cause."
+        ],
+        [
+          "Technician",
+          "I'll report the changed estimate and leave the cause unspecified. When is your next update?"
+        ],
+        [
+          "Wholesaler representative",
+          "Our next scheduled stock update is tomorrow morning. It may still show the same estimate rather than dispatch."
+        ],
+        [
+          "Technician",
+          "I'll check then and ask the pharmacy team to correct the earlier collection expectation separately."
+        ],
+        [
+          "Wholesaler representative",
+          "That keeps the messages accurate: P7's estimate changed, its shipment remains unconfirmed, and other lines are unchanged."
+        ]
+      ],
+      "notes": [
+        "'Superseded' means a newer update has replaced an earlier one.",
+        "'Only P7' limits the scope of a change and prevents an order-wide misunderstanding."
+      ]
+    },
+    {
+      "title": "A consultation needs language support",
+      "setting": "Fictional pharmacy arranges an interpreter for a label discussion; no medicine advice is supplied.",
+      "dialogue": [
+        [
+          "Patient",
+          "I can manage payment in English, but I need language support for the pharmacist's explanation."
+        ],
+        [
+          "Technician",
+          "Thank you for telling me. Which language would you prefer for that discussion about your prescription label?"
+        ],
+        [
+          "Patient",
+          "Arabic, please. My daughter is here, but I would prefer not to make her explain medical words."
+        ],
+        [
+          "Technician",
+          "I'll ask Ravi about the pharmacy's interpreter service. We can keep the payment details separate meanwhile."
+        ],
+        [
+          "Patient",
+          "Please tell him I understand the medicine name; the problem is the longer phrase on this label."
+        ],
+        [
+          "Technician",
+          "I'll identify that phrase as your question, without paraphrasing the advice or asking your daughter to translate it."
+        ],
+        [
+          "Patient",
+          "Will the interpreter join the pharmacist and me, or explain a message afterward?"
+        ],
+        [
+          "Technician",
+          "Ravi will confirm the arrangement. Our service contact is checking availability now; no start time is confirmed."
+        ],
+        [
+          "Patient",
+          "I can wait for a status update, but I need to leave before the school pickup."
+        ],
+        [
+          "Technician",
+          "I'll include that timing constraint. Ravi has accepted the consultation and will discuss the available support with you."
+        ],
+        [
+          "Patient",
+          "That's useful. I don't want a quick answer I might misunderstand just because people are waiting."
+        ],
+        [
+          "Technician",
+          "The consultation counter is available for your privacy. Let's take the label question there when Ravi joins you."
+        ]
+      ],
+      "notes": [
+        "'I can manage X, but I need support for Y' states a precise language need.",
+        "'Availability is being checked' avoids presenting a requested interpreter as already connected."
+      ]
+    },
+    {
+      "title": "Permission for a conversation is not every permission",
+      "setting": "Fictional patient invites a sibling into a pharmacist conversation but asks about separate future collection arrangements.",
+      "dialogue": [
+        [
+          "Patient",
+          "I'd like my brother present for the pharmacist's explanation, but I have another privacy question."
+        ],
+        [
+          "Technician",
+          "Please tell me the question. We can ask Maya to clarify the arrangements before the conversation begins."
+        ],
+        [
+          "Patient",
+          "Does inviting him into today's discussion automatically let him collect every prescription for me in future?"
+        ],
+        [
+          "Technician",
+          "We shouldn't treat those as the same arrangement. Today's discussion and future collection require their own clarification."
+        ],
+        [
+          "Patient",
+          "Good. I want his help today, but haven't decided about future collections or telephone updates."
+        ],
+        [
+          "Technician",
+          "I'll tell Maya exactly that distinction. I won't describe your request as unrestricted permission for other matters."
+        ],
+        [
+          "Patient",
+          "Can you also avoid changing my contact preference to his number just because he's with me?"
+        ],
+        [
+          "Technician",
+          "Yes. Your request concerns today's conversation; I have not changed the telephone number on your profile."
+        ],
+        [
+          "Patient",
+          "He may ask questions during the discussion. I want to be included rather than have everyone talk around me."
+        ],
+        [
+          "Technician",
+          "I'll pass that on too: you want his support, with the pharmacist continuing to address you directly."
+        ],
+        [
+          "Patient",
+          "That captures it. I'd like to discuss any future collection arrangement separately when we have more time."
+        ],
+        [
+          "Technician",
+          "Maya is ready to join us. I'll introduce today's request and leave those future arrangements explicitly undecided."
+        ]
+      ],
+      "notes": [
+        "'Today's discussion' and 'future collection' limit permission to the actual matter discussed.",
+        "'I have not changed' states a completed-action boundary clearly."
+      ]
+    },
+    {
+      "title": "An expiry-date query in a delivery record",
+      "setting": "Fictional stock documentation discussion; a scanned date is unclear and no product-use decision is made.",
+      "dialogue": [
+        [
+          "Technician",
+          "The delivery scan makes the expiry date difficult to read. One digit could be three or eight."
+        ],
+        [
+          "Stock lead",
+          "Which source are you looking at: the supplier's digital record or a photograph of the package?"
+        ],
+        [
+          "Technician",
+          "A photograph attached to delivery E9. The image is blurred where the last digit appears."
+        ],
+        [
+          "Stock lead",
+          "Then we need a legible source, not an interpretation of the blur. I'll take the verification."
+        ],
+        [
+          "Technician",
+          "Could you also confirm whether the date belongs to E9 rather than the adjacent line?"
+        ],
+        [
+          "Stock lead",
+          "Yes. The line association matters as much as the digit. Neither detail is confirmed yet."
+        ],
+        [
+          "Technician",
+          "The receiving note calls it expired. I think that wording goes beyond what the image shows."
+        ],
+        [
+          "Stock lead",
+          "Agreed. Report the unclear date and my pending check; don't substitute a different definite quality claim."
+        ],
+        [
+          "Technician",
+          "I'll tell the colleague who used expired that the source is unreadable, not proof of expiry."
+        ],
+        [
+          "Stock lead",
+          "Please do. We need everyone using the same status while I review the package information."
+        ],
+        [
+          "Technician",
+          "I'll leave the use decision with you and identify the photograph as the source of the uncertainty."
+        ],
+        [
+          "Stock lead",
+          "That is enough for this handoff: delivery E9, unclear date, line association unconfirmed, and my review pending."
+        ]
+      ],
+      "notes": [
+        "'Difficult to read' describes evidence quality without inventing a product defect.",
+        "Naming the source helps distinguish a packaging question from a data-entry question."
+      ]
+    },
+    {
+      "title": "A correction must reach the listener",
+      "setting": "Fictional pharmacy debrief: an internal note was corrected, but a patient still has an inaccurate delivery date.",
+      "dialogue": [
+        [
+          "Pharmacist",
+          "The record now says delivery unconfirmed. Has the patient heard that correction, or only the afternoon team?"
+        ],
+        [
+          "Technician",
+          "Only the team. The patient still has my earlier message giving Friday as a definite date."
+        ],
+        [
+          "Pharmacist",
+          "Then the record is more accurate, but the communication problem remains. Who can contact the patient today?"
+        ],
+        [
+          "Technician",
+          "I can, using the recorded preference. I'll identify my earlier wording rather than blame the supplier."
+        ],
+        [
+          "Pharmacist",
+          "What will you say if the patient asks whether the corrected date is now Saturday?"
+        ],
+        [
+          "Technician",
+          "There isn't a confirmed replacement date. I'll say the Friday guarantee was wrong and arrival remains unconfirmed."
+        ],
+        [
+          "Pharmacist",
+          "Good. Please acknowledge that the patient may have arranged transport, without assuming whether they actually did."
+        ],
+        [
+          "Technician",
+          "I'll ask whether the message affected their plans and explain the next supplier-status check at noon tomorrow."
+        ],
+        [
+          "Pharmacist",
+          "Can you own tomorrow's update as well, or do we need a handoff before you leave?"
+        ],
+        [
+          "Technician",
+          "I'm scheduled here tomorrow and can own it. I'll keep that contact separate from the stock enquiry."
+        ],
+        [
+          "Pharmacist",
+          "Then the outstanding tasks are today's correction call and tomorrow's update, not a promised delivery."
+        ],
+        [
+          "Technician",
+          "I'll make today's call now and record what was communicated, including any contact attempt that doesn't connect."
+        ]
+      ],
+      "notes": [
+        "'Only the team' identifies who has received a correction and who has not.",
+        "'Remains unconfirmed' avoids replacing one inaccurate promise with another."
+      ]
+    }
+  ]
+}

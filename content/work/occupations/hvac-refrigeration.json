@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "hvac-refrigeration",
+    "title": "HVAC & Refrigeration English",
+    "summary": "Clarify comfort reports, equipment identity, airflow and capacity information, refrigeration records, scope changes, service access, and commissioning handovers.",
+    "roles": "Heating, ventilation, air-conditioning, and refrigeration technicians, supervised apprentices, service coordinators, and mechanical crew leads",
+    "scope_note": "Fictional workplace-language practice, not heating, ventilation, air-conditioning, or refrigeration (HVACR) training, equipment-operation advice, food-safety advice, or warranty interpretation. All case facts, products, readings, ratings, incidents, and schedules are invented. No refrigerant handling, charging, recovery, electrical operation, diagnostic testing, repair, installation, or control-adjustment procedures are taught. Qualified specialists and applicable site procedures govern technical decisions; product-safety and stock decisions remain with the responsible site lead. No universal code or permit requirements are asserted. Sources establish occupational context, not endorsement of the invented cases.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Heating, Air Conditioning, and Refrigeration Mechanics and Installers",
+        "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/heating-air-conditioning-and-refrigeration-mechanics-and-installers.htm"
+      },
+      {
+        "title": "O*NET OnLine: Heating, Air Conditioning, and Refrigeration Mechanics and Installers (49-9021.00), U.S. Department of Labor-sponsored occupational profile",
+        "url": "https://www.onetonline.org/link/summary/49-9021.00"
+      }
+    ],
+    "category": "Industry & infrastructure",
+    "modules": [
+      {
+        "title": "Clarifying comfort complaints and thermostat readings",
+        "terms": [
+          "thermostat",
+          "setpoint",
+          "ambient temperature",
+          "thermal zone"
+        ],
+        "collocations": [
+          "identify the occupied zone: name the area where people report discomfort",
+          "distinguish target from reading: separate a requested value from a measured one",
+          "record the complaint pattern: note when and where the concern occurs",
+          "clarify the display label: establish what a displayed number represents"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "An office manager says the meeting room is 22 degrees Celsius. The number is the thermostat setpoint, not a confirmed ambient-temperature reading. Staff report feeling warm there after 14:00. No cause or equipment fault has been established.",
+          "model": "Is 22 degrees the target shown on the thermostat, or a measured room-temperature reading? I will record it as the setpoint if that is the display label. The staff's report concerns feeling warm in the meeting-room zone after 14:00. We still need to distinguish that comfort report from measured conditions and any technical finding."
+        },
+        "workshop": {
+          "title": "Ask which number is being reported",
+          "goal": "Separate a control target, a temperature observation, and a comfort complaint.",
+          "explanation": "A thermostat display may show different values. Ask what the existing label says rather than directing control changes. Comfort descriptions are useful information, but they do not by themselves identify a system fault.",
+          "frames": [
+            "Does that display show ___ or ___?",
+            "The complaint concerns ___ after ___ .",
+            "The target is ___; the measured condition remains ___."
+          ],
+          "before": "The room is twenty-two because that's the setting.",
+          "after": "Twenty-two is the setpoint; the actual room temperature has not been confirmed.",
+          "reason": "The revision avoids treating a requested value as a measurement.",
+          "questions": [
+            {
+              "prompt": "Manager: The label says target, not room temperature.\nTechnician: Then 22 degrees is the ____.",
+              "options": [
+                "setpoint",
+                "ambient temperature",
+                "temperature difference",
+                "supply-air reading"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Setpoint identifies the target requested by the control.",
+                "Ambient temperature would describe surrounding air measured at a location.",
+                "A temperature difference compares two values, not one target.",
+                "A supply-air reading concerns delivered air rather than the control target."
+              ]
+            },
+            {
+              "prompt": "Dispatcher: When do staff report discomfort?\nTechnician: Their report concerns the meeting room ____ two in the afternoon.",
+              "options": [
+                "after",
+                "by",
+                "until",
+                "throughout"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The report begins after the stated time.",
+                "'By' would establish a latest time, not the reported period.",
+                "'Until' would reverse the reported timing relationship.",
+                "'Throughout' needs a period, not this single time expression."
+              ]
+            }
+          ],
+          "role_b": "You are the manager. The display says target 22 degrees Celsius, and staff feel warm after 14:00.",
+          "challenge": "The manager asks whether lowering the setting will solve the complaint. Keep the exchange to information gathering, not operating advice."
+        }
+      },
+      {
+        "title": "Identifying equipment and linked components",
+        "terms": [
+          "air handler",
+          "condensing unit",
+          "evaporator",
+          "asset tag"
+        ],
+        "collocations": [
+          "read back the asset tag: repeat the site's equipment identifier",
+          "match the indoor and outdoor records: verify the documented component relationship",
+          "distinguish model from serial number: separate a product type from an individual unit identifier",
+          "locate the service history: find records for the identified equipment"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A school request names AC-4, but the roof plan labels outdoor unit CU-4 and the indoor equipment register labels air handler AH-4. Their relationship is not confirmed. The facilities manager has the equipment register; learners must not access a roof or inspect equipment to obtain information.",
+          "model": "Could you confirm which asset AC-4 refers to in the request? The records list outdoor unit CU-4 and air handler AH-4, but their matching numbers do not establish that they serve the same system. Please provide the relevant equipment-register entries so we can verify the relationship before attaching the service history."
+        },
+        "workshop": {
+          "title": "Verify the asset rather than trusting a similar label",
+          "goal": "Resolve equipment identity using existing records and clear references.",
+          "explanation": "Site asset tags, manufacturer model numbers, and serial numbers identify different things. Similar suffixes do not prove components are paired. Work from supplied records; do not ask learners to access plant, roofs, or enclosed machinery.",
+          "frames": [
+            "The request says ___; the register identifies ___ .",
+            "Is that an asset tag or a ___?",
+            "The component relationship remains ___."
+          ],
+          "before": "Four goes with four.",
+          "after": "Matching tag numbers suggest a possible link but do not verify the component relationship.",
+          "reason": "The revision keeps a convenient naming pattern from becoming a technical finding.",
+          "questions": [
+            {
+              "prompt": "Manager: AH-4 is our site's label, not the manufacturer's model.\nTechnician: Then AH-4 is the ____.",
+              "options": [
+                "asset tag",
+                "model number",
+                "serial number",
+                "refrigerant designation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An asset tag is the site's equipment identifier.",
+                "A model number identifies a manufacturer product type.",
+                "A serial number identifies an individual manufactured unit.",
+                "A refrigerant designation identifies the working fluid type, not this site label."
+              ]
+            },
+            {
+              "prompt": "Planner: Do CU-4 and AH-4 definitely form a pair?\nTechnician: Their matching numbers ____ that relationship.",
+              "options": [
+                "do not establish",
+                "have already verified",
+                "are proof of",
+                "have certified"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Similar identifiers do not confirm the actual pairing.",
+                "No verification is supplied in the case.",
+                "The naming similarity is not proof of the relationship.",
+                "Certification is not established by matching labels."
+              ]
+            }
+          ],
+          "role_b": "You are the facilities manager. You have register entries but no confirmed component pairing.",
+          "challenge": "The manager says a photograph of a different site's unit looks identical. Explain why appearance is not an asset reference."
+        }
+      },
+      {
+        "title": "Explaining airflow and distribution reports",
+        "terms": [
+          "supply air",
+          "return air",
+          "airflow",
+          "static pressure"
+        ],
+        "collocations": [
+          "distinguish supply from return: identify air delivered to and drawn from a space",
+          "compare reported readings: use matching units, locations, and conditions",
+          "describe uneven distribution: state where the comfort difference is reported",
+          "request the balancing report: obtain the record of specified air-distribution assessment"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A client calls both ceiling openings air-conditioning outlets. The current drawing identifies S3 as supply air and R2 as return air. The client reports discomfort below S3 but provides no airflow measurements. The technician must explain the labels without diagnosing poor performance or prescribing adjustments.",
+          "model": "On this drawing, S3 delivers supply air into the room, while R2 draws return air back toward the system. They are not interchangeable outlet labels. Your discomfort below S3 is useful location information, but it does not by itself establish an airflow value or a cause. We can refer the report with those references clearly identified."
+        },
+        "workshop": {
+          "title": "Use direction and measurement context",
+          "goal": "Explain air-distribution terms without inferring performance from a label.",
+          "explanation": "Supply and return describe direction and function. Airflow and static pressure are different quantities requiring stated measurement context. Do not teach damper adjustment, testing steps, or conclusions from invented limits.",
+          "frames": [
+            "___ delivers air; ___ draws air back.",
+            "The report gives ___, not ___ .",
+            "A valid comparison needs the same ___."
+          ],
+          "before": "Both openings blow cold air.",
+          "after": "The drawing identifies S3 as supply and R2 as return; their functions differ.",
+          "reason": "The correction uses the documented functions rather than treating every opening alike.",
+          "questions": [
+            {
+              "prompt": "Client: Which label means air drawn back from the room?\nTechnician: That is ____.",
+              "options": [
+                "return air",
+                "supply air",
+                "outdoor air intake",
+                "discharge air to outside"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Return air is drawn back from the served room.",
+                "Supply air is delivered into the room.",
+                "Outdoor air intake draws air from outside rather than identifying return from this room.",
+                "Discharge to outside is a different direction and destination."
+              ]
+            },
+            {
+              "prompt": "Reviewer: Can we compare these values directly?\nTechnician: Only if the units and measurement conditions are ____.",
+              "options": [
+                "comparable",
+                "interchangeably",
+                "comparison",
+                "compare"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Comparable' describes conditions suitable for a fair comparison.",
+                "The adverb does not fit after 'are' as the required description.",
+                "The noun does not describe the conditions grammatically here.",
+                "The base verb does not form the required adjective phrase."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask whether discomfort below S3 proves excessive airflow.",
+          "challenge": "The client wants a control adjustment immediately. Keep the response to the documented labels and the need for assessment."
+        }
+      },
+      {
+        "title": "Checking equipment ratings and refrigerant references",
+        "terms": [
+          "nameplate",
+          "cooling capacity",
+          "refrigerant designation",
+          "matched system"
+        ],
+        "collocations": [
+          "check the complete rating: include the stated conditions and units",
+          "verify the equipment pairing: confirm the specified indoor and outdoor combination",
+          "compare capacity on the same basis: avoid unlike rating conditions",
+          "confirm the refrigerant reference: identify the documented fluid designation without handling it"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "Two fictional proposals both say 5 kilowatts, but proposal A labels that cooling capacity and proposal B labels it electrical input. The client calls them equal-size systems. Full data sheets and equipment pairings are not supplied. No selection is approved.",
+          "model": "The two 5-kilowatt figures describe different quantities. Proposal A states cooling capacity, while proposal B states electrical input. We cannot treat them as equal-capacity systems from those numbers. Please obtain the full data sheets, rating conditions, and proposed component pairings so the reviewer can compare like for like before we discuss a selection."
+        },
+        "workshop": {
+          "title": "Compare like quantities and complete combinations",
+          "goal": "Explain why matching numbers or component labels do not establish equivalent systems.",
+          "explanation": "Capacity and electrical input can use the same unit while describing different quantities. A refrigerant designation is an identifier, not a handling instruction or proof of interchangeability. Use complete product information for specialist review.",
+          "frames": [
+            "Both numbers use ___, but one describes ___ .",
+            "The rating applies under ___ .",
+            "Compatibility of the proposed combination remains ___."
+          ],
+          "before": "They are both five kilowatts, so they're equivalent.",
+          "after": "One figure is cooling capacity and the other electrical input; equivalent capacity is not established.",
+          "reason": "The correction distinguishes quantities before comparing values.",
+          "questions": [
+            {
+              "prompt": "Client: Which figure describes the rate of heat removal?\nTechnician: That is the stated ____.",
+              "options": [
+                "cooling capacity",
+                "electrical input",
+                "refrigerant charge quantity",
+                "airflow rate"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Cooling capacity describes the rate of heat removal under stated conditions.",
+                "Electrical input describes consumed electrical power rather than heat removal capacity.",
+                "Charge quantity is an amount of refrigerant, not a heat-removal rate.",
+                "Airflow rate describes moving air quantity rather than thermal capacity directly."
+              ]
+            },
+            {
+              "prompt": "Buyer: Which term names the relationship between the proposed indoor and outdoor components?\nTechnician: That is their ____.",
+              "options": [
+                "equipment pairing",
+                "cooling-capacity rating",
+                "refrigerant designation",
+                "electrical-input rating"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Equipment pairing identifies the component combination requiring compatibility verification.",
+                "Cooling capacity describes a performance quantity, not the component relationship.",
+                "The refrigerant designation identifies a fluid, not the complete equipment combination.",
+                "Electrical input describes a power quantity rather than the paired component relationship."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask why two values in kilowatts can be different properties.",
+          "challenge": "The seller says the refrigerant designation matches. Explain why that alone does not establish a matched system."
+        }
+      },
+      {
+        "title": "Reporting moisture, symptoms, and service findings",
+        "terms": [
+          "condensate",
+          "drain pan",
+          "service log",
+          "provisional diagnosis"
+        ],
+        "collocations": [
+          "describe the observed moisture: state its location and time without naming a source",
+          "preserve the visit limits: retain what the technician did and did not establish",
+          "link the service entry: connect a report to the correct equipment and date",
+          "qualify the suspected cause: label a possible explanation as unconfirmed"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A client reports water near air handler AH-6 at 15:00 yesterday. Today's supplied visit note says the nearby floor is dry and the source was not identified. An earlier log mentions a drain-pan concern but does not establish a link. No learner is asked to inspect equipment.",
+          "model": "The supplied visit note records a dry floor today, not a confirmed resolution of yesterday's report. The earlier drain-pan entry may be relevant history, but it does not establish the current source. I will link the dated reports to AH-6 and keep any explanation provisional until the technical reviewer confirms what the evidence supports."
+        },
+        "workshop": {
+          "title": "Use the service log without assuming recurrence",
+          "goal": "Distinguish a new report, an earlier finding, and a tentative diagnosis.",
+          "explanation": "A previous drain-pan concern does not prove a new wet-floor report shares its cause. Condensate is a type of moisture, not a diagnosis of every puddle. Discuss supplied observations without teaching investigation or repair.",
+          "frames": [
+            "The earlier entry records ___, while today's note says ___ .",
+            "That may be relevant, but it doesn't establish ___ .",
+            "The diagnosis remains provisional because ___."
+          ],
+          "before": "It's the same drain-pan fault again.",
+          "after": "The earlier log mentions the pan; the current moisture source is not confirmed.",
+          "reason": "The revision links the history without inventing a repeated cause.",
+          "questions": [
+            {
+              "prompt": "Client: Has the cause been confirmed?\nTechnician: No, the explanation remains a ____.",
+              "options": [
+                "provisional diagnosis",
+                "confirmed diagnosis",
+                "completed repair finding",
+                "verified recurrence"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Provisional identifies an explanation still awaiting confirmation.",
+                "A confirmed diagnosis would overstate the supplied evidence.",
+                "No completed repair finding is provided here.",
+                "The history does not verify that the same cause recurred."
+              ]
+            },
+            {
+              "prompt": "Reviewer: What does today's note establish?\nTechnician: The nearby floor was ____ during today's visit.",
+              "options": [
+                "dry",
+                "leaking continuously",
+                "repaired",
+                "the confirmed source"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Dry is the observed condition recorded in the note.",
+                "Continuous leakage contradicts the supplied observation.",
+                "A dry observation does not establish a repair.",
+                "The source was expressly not identified."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask whether the earlier drain-pan entry proves the same fault has returned.",
+          "challenge": "The client suggests replacing the unit immediately. Explain the difference between a concern requiring assessment and an established replacement need."
+        }
+      },
+      {
+        "title": "Discussing refrigeration alarms and temperature records",
+        "terms": [
+          "defrost cycle",
+          "cabinet temperature",
+          "product temperature",
+          "alarm history"
+        ],
+        "collocations": [
+          "identify the sensor location: establish what the recorded value represents",
+          "align the timestamps: compare records using a consistent time basis",
+          "preserve the alarm history: retain events rather than erase inconvenient entries",
+          "refer stock decisions: direct product-safety or disposition questions to the responsible person"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A fictional cafe cabinet display recorded 8 degrees Celsius at 06:10. Product temperatures were not supplied. An alarm-history entry has the same time as a scheduled defrost entry, but the cause and duration are unconfirmed. The cafe manager asks whether the food is safe. The responsible food-safety lead must decide under the site's procedures.",
+          "model": "The 8-degree value is a cabinet reading at 06:10, not a supplied product-temperature result. The alarm and scheduled defrost entries share a timestamp, but that does not establish the cause or duration. I cannot decide food safety from this record. Please involve your food-safety lead while we clarify the equipment history."
+        },
+        "workshop": {
+          "title": "Separate equipment evidence from product decisions",
+          "goal": "Explain a refrigeration record without issuing food-safety advice.",
+          "explanation": "An air or sensor reading is not automatically a product-temperature result. A defrost entry does not make an alarm harmless by definition. Preserve records and refer stock decisions promptly to the responsible site specialist; do not supply temperature thresholds or operating changes.",
+          "frames": [
+            "This value comes from ___, not ___ .",
+            "The entries coincide, but ___ remains unconfirmed.",
+            "The equipment enquiry is ___; the product decision belongs with ___."
+          ],
+          "before": "That's just defrost, so the stock is fine.",
+          "after": "The records coincide in time; the cause and product condition are not established.",
+          "reason": "The revision removes an unsupported cause and food-safety assurance.",
+          "questions": [
+            {
+              "prompt": "Manager: Does the cabinet display prove the stored items were at that temperature?\nTechnician: No, it is not a supplied ____ result.",
+              "options": [
+                "product-temperature",
+                "cabinet-display",
+                "air-sensor",
+                "controller-reading"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. No product-temperature result has been supplied.",
+                "The value is expressly a cabinet-display reading.",
+                "An air-sensor result is a different evidence type from product temperature.",
+                "A controller reading is what the supplied display value represents, not the missing product result."
+              ]
+            },
+            {
+              "prompt": "Manager: Did defrost definitely cause the alarm?\nTechnician: The times coincide, ____ causation is unconfirmed.",
+              "options": [
+                "but",
+                "therefore",
+                "because",
+                "so that"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'But' preserves the distinction between timing and cause.",
+                "'Therefore' would suggest coincidence establishes the conclusion.",
+                "'Because' would make uncertainty the reason for coinciding times.",
+                "'So that' normally introduces a purpose or result, not this contrast."
+              ]
+            }
+          ],
+          "role_b": "You are the cafe manager. You have the display log but no product-temperature record.",
+          "challenge": "The manager asks for a guarantee that the stock can be sold. Decline that judgment and identify the food-safety lead while preserving the equipment enquiry."
+        }
+      },
+      {
+        "title": "Coordinating ductwork, access, and changes",
+        "terms": [
+          "ductwork",
+          "grille",
+          "service clearance",
+          "change proposal"
+        ],
+        "collocations": [
+          "coordinate the ceiling layout: reconcile equipment, air openings, and other ceiling elements",
+          "preserve the stated service clearance: account for the manufacturer's or design review's access requirement",
+          "define the relocation scope: specify which items a proposed move includes",
+          "compare restoration responsibilities: identify who repairs finishes affected by a change"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "An office client wants a supply grille moved because it conflicts visually with a pendant light. The proposal has not assessed ductwork, ceiling restoration, service access, price, or timing. The client can retain the current reviewed layout or request a coordinated change proposal.",
+          "model": "We can retain the current reviewed layout or request a coordinated proposal for the grille relocation. The visible grille is only part of the change; ductwork, ceiling restoration, access, cost, and timing may also need review. Could you provide the revised lighting position so both layouts can be assessed together before any change is agreed?"
+        },
+        "workshop": {
+          "title": "Discuss the visible request and its wider scope",
+          "goal": "Negotiate a relocation without assuming the visible component is the whole job.",
+          "explanation": "A small visible change can affect concealed work and another trade's finishes. Name those possible dependencies without inventing their extent. Service clearance is project- and equipment-specific; do not offer universal dimensions.",
+          "frames": [
+            "The visible request is ___; the wider review includes ___ .",
+            "We can retain ___ or assess ___ .",
+            "Please distinguish ___ from ___ in the proposal."
+          ],
+          "before": "It's only a grille, so moving it is simple.",
+          "after": "The grille move needs a coordinated scope review, including ductwork and ceiling finishes.",
+          "reason": "The revision avoids claiming simplicity from the visible part alone.",
+          "questions": [
+            {
+              "prompt": "Client: What do we call the connected passages carrying air between the equipment and this grille?\nTechnician: That network is the ____.",
+              "options": [
+                "ductwork",
+                "refrigerant pipework",
+                "condensate drainage",
+                "control cabling"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Ductwork carries air between equipment and served spaces.",
+                "Refrigerant pipework carries the refrigeration working fluid rather than room air.",
+                "Condensate drainage carries collected water rather than the supplied air.",
+                "Control cabling carries signals or electrical connections rather than air."
+              ]
+            },
+            {
+              "prompt": "Client: Has the designer considered the relocation yet?\nTechnician: No. It remains a proposal ____ review.",
+              "options": [
+                "pending",
+                "following",
+                "after completion of",
+                "on the basis of"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Pending review means the review has not yet been completed.",
+                "Following review would place the proposal after a review, contrary to the answer.",
+                "This would say the review was complete, which the technician has denied.",
+                "This would make a review the proposal's basis although the designer has not considered it."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Appearance matters, but you want the existing layout retained if the change is disruptive.",
+          "challenge": "The decorator quotes ceiling restoration separately. Explain the combined comparison without assuming the original mechanical price includes it."
+        }
+      },
+      {
+        "title": "Handing over commissioning and maintenance information",
+        "terms": [
+          "commissioning report",
+          "maintenance interval",
+          "warranty exclusion",
+          "outstanding item"
+        ],
+        "collocations": [
+          "match the manual to the equipment: verify the document reference against the supplied unit",
+          "separate completed from deferred: identify work done and work still outstanding",
+          "confirm the maintenance basis: identify the source of the stated interval",
+          "transfer the follow-up: agree who owns the unresolved item and next update"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "A fictional office system's commissioning report is received but lists a deferred seasonal check. The maintenance sheet names the wrong model. Coordinator Nia accepts document correction and will update the client Friday. The seasonal-check date is not booked, and responsibility for scheduling it has not yet been confirmed. Who will arrange the check remains an open question. No overall performance or warranty conclusion is supplied.",
+          "model": "Nia has accepted follow-up on the maintenance sheet, which names the wrong model, and will update you Friday. We haven't confirmed who will book the seasonal check; that question remains open. Could we confirm who will take responsibility for booking it? The commissioning report is received, but the check remains deferred and no date is booked."
+        },
+        "workshop": {
+          "title": "Explain the remaining obligations precisely",
+          "goal": "Hand over records without making deferred work or mismatched manuals disappear.",
+          "explanation": "A report may contain completed activities and explicit limitations. Match maintenance information to the actual equipment and its stated source. Do not invent intervals, interpret warranty rights, or turn a status call into a service booking.",
+          "frames": [
+            "The report is received, but ___ is deferred.",
+            "The maintenance information applies to ___, not ___ .",
+            "___ owns ___; the separate visit remains ___."
+          ],
+          "before": "The report is here, so commissioning is entirely finished.",
+          "after": "The report is received; its seasonal check remains deferred and unbooked.",
+          "reason": "The revision retains the report's stated limitation.",
+          "questions": [
+            {
+              "prompt": "Client: Is the seasonal check complete?\nTechnician: The report lists it as ____.",
+              "options": [
+                "deferred",
+                "accepted without review",
+                "completed",
+                "superseded by the manual"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Deferred means postponed rather than completed.",
+                "No acceptance without review is recorded in the case.",
+                "The supplied report explicitly leaves the check incomplete.",
+                "A manual does not replace the deferred check stated in the report."
+              ]
+            },
+            {
+              "prompt": "Client: Does Friday mean a technician is attending?\nCoordinator: It is an update call, ____ a booked service visit.",
+              "options": [
+                "not",
+                "including",
+                "therefore",
+                "because of"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Not' preserves the distinction between call and attendance.",
+                "'Including' would add an attendance commitment not supplied.",
+                "'Therefore' incorrectly presents a call as proving a visit.",
+                "'Because of' would need an established causal explanation, not this contrast."
+              ]
+            }
+          ],
+          "role_b": "You are the client. Ask who corrects the model-specific maintenance sheet and who arranges the seasonal check.",
+          "challenge": "The supplier sends a generic family manual. Keep applicability pending verification rather than closing the correction merely because a file arrived."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "thermostat",
+        "definition": "A device that senses temperature and requests heating or cooling according to its configured controls.",
+        "group": "Clarifying comfort complaints and thermostat readings"
+      },
+      {
+        "term": "setpoint",
+        "definition": "The target value requested by a control, distinct from a measured condition.",
+        "group": "Clarifying comfort complaints and thermostat readings"
+      },
+      {
+        "term": "ambient temperature",
+        "definition": "The temperature of the surrounding air at an identified place and time.",
+        "group": "Clarifying comfort complaints and thermostat readings"
+      },
+      {
+        "term": "thermal zone",
+        "definition": "An area treated as a unit for heating or cooling control or assessment.",
+        "group": "Clarifying comfort complaints and thermostat readings"
+      },
+      {
+        "term": "air handler",
+        "definition": "Equipment that conditions or circulates air through a building system using components such as fans and coils.",
+        "group": "Identifying equipment and linked components"
+      },
+      {
+        "term": "condensing unit",
+        "definition": "An assembly containing components that reject heat as refrigerant condenses, commonly located separately from the indoor equipment.",
+        "group": "Identifying equipment and linked components"
+      },
+      {
+        "term": "evaporator",
+        "definition": "A component where refrigerant absorbs heat as it evaporates.",
+        "group": "Identifying equipment and linked components"
+      },
+      {
+        "term": "asset tag",
+        "definition": "A site-assigned identifier linking a particular equipment item to its location and records.",
+        "group": "Identifying equipment and linked components"
+      },
+      {
+        "term": "supply air",
+        "definition": "Air delivered by a system into the space it serves.",
+        "group": "Explaining airflow and distribution reports"
+      },
+      {
+        "term": "return air",
+        "definition": "Air drawn from a served space back toward the system for recirculation or treatment.",
+        "group": "Explaining airflow and distribution reports"
+      },
+      {
+        "term": "airflow",
+        "definition": "The quantity of air moving through a point or system over time, stated with its measurement basis.",
+        "group": "Explaining airflow and distribution reports"
+      },
+      {
+        "term": "static pressure",
+        "definition": "Pressure exerted by air in a duct apart from its velocity pressure, stated relative to a reference and interpreted with the measurement location and conditions.",
+        "group": "Explaining airflow and distribution reports"
+      },
+      {
+        "term": "nameplate",
+        "definition": "The manufacturer's equipment label showing identification and specified ratings or other product information.",
+        "group": "Checking equipment ratings and refrigerant references"
+      },
+      {
+        "term": "cooling capacity",
+        "definition": "The rate at which equipment is rated to remove heat under stated conditions.",
+        "group": "Checking equipment ratings and refrigerant references"
+      },
+      {
+        "term": "refrigerant designation",
+        "definition": "The standardized identifier for the working fluid specified for a refrigeration system or component.",
+        "group": "Checking equipment ratings and refrigerant references"
+      },
+      {
+        "term": "matched system",
+        "definition": "A combination of equipment components identified as compatible for the specified application and rating basis.",
+        "group": "Checking equipment ratings and refrigerant references"
+      },
+      {
+        "term": "condensate",
+        "definition": "Liquid water formed when moisture in air condenses, commonly associated with cooling equipment.",
+        "group": "Reporting moisture, symptoms, and service findings"
+      },
+      {
+        "term": "drain pan",
+        "definition": "A component intended to collect condensate or other specified drainage beneath equipment.",
+        "group": "Reporting moisture, symptoms, and service findings"
+      },
+      {
+        "term": "service log",
+        "definition": "A dated record of equipment visits, reported symptoms, observations, and work performed.",
+        "group": "Reporting moisture, symptoms, and service findings"
+      },
+      {
+        "term": "provisional diagnosis",
+        "definition": "A tentative explanation of a heating, cooling, or refrigeration issue that remains subject to confirmation.",
+        "group": "Reporting moisture, symptoms, and service findings"
+      },
+      {
+        "term": "defrost cycle",
+        "definition": "A specified operating phase intended to remove accumulated frost from relevant refrigeration surfaces.",
+        "group": "Discussing refrigeration alarms and temperature records"
+      },
+      {
+        "term": "cabinet temperature",
+        "definition": "A temperature associated with air or a sensor location in a refrigerated cabinet, distinct from the temperature of stored products.",
+        "group": "Discussing refrigeration alarms and temperature records"
+      },
+      {
+        "term": "product temperature",
+        "definition": "The temperature of a stored item, measured and interpreted under the relevant product-specific procedures.",
+        "group": "Discussing refrigeration alarms and temperature records"
+      },
+      {
+        "term": "alarm history",
+        "definition": "A record of equipment alarm events, including their identifiers, times, and available status information.",
+        "group": "Discussing refrigeration alarms and temperature records"
+      },
+      {
+        "term": "ductwork",
+        "definition": "The network of passages carrying air between equipment and served locations.",
+        "group": "Coordinating ductwork, access, and changes"
+      },
+      {
+        "term": "grille",
+        "definition": "A covering with openings through which air passes, typically at a room or duct opening.",
+        "group": "Coordinating ductwork, access, and changes"
+      },
+      {
+        "term": "service clearance",
+        "definition": "Space specified for access to equipment during inspection, maintenance, or other service activity.",
+        "group": "Coordinating ductwork, access, and changes"
+      },
+      {
+        "term": "change proposal",
+        "definition": "A defined suggested alteration to agreed work, with its cost, timing, and approval status stated for review.",
+        "group": "Coordinating ductwork, access, and changes"
+      },
+      {
+        "term": "commissioning report",
+        "definition": "A record of specified verification activities, results, and limitations associated with confirming intended system performance.",
+        "group": "Handing over commissioning and maintenance information"
+      },
+      {
+        "term": "maintenance interval",
+        "definition": "The stated period or condition between maintenance activities for particular equipment or tasks.",
+        "group": "Handing over commissioning and maintenance information"
+      },
+      {
+        "term": "warranty exclusion",
+        "definition": "A condition or circumstance expressly outside the coverage described in a warranty document.",
+        "group": "Handing over commissioning and maintenance information"
+      },
+      {
+        "term": "outstanding item",
+        "definition": "A specific unresolved work, record, or review requirement retained for follow-up.",
+        "group": "Handing over commissioning and maintenance information"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Twenty-two is the target",
+          "setting": "A technician clarifies the fictional meeting-room complaint with the office manager.",
+          "turns": [
+            [
+              "Technician",
+              "Your request says the room is twenty-two degrees. Which display value is that?"
+            ],
+            [
+              "Office manager",
+              "The thermostat says target twenty-two Celsius. Staff still feel warm after two."
+            ],
+            [
+              "Technician",
+              "Then twenty-two is the setpoint, not a confirmed ambient-temperature reading in the room."
+            ],
+            [
+              "Office manager",
+              "I hadn't distinguished those. Does that make the staff complaint less useful?"
+            ],
+            [
+              "Technician",
+              "No, its location and timing are useful. We'll record the meeting-room thermal zone."
+            ],
+            [
+              "Office manager",
+              "Should I report a failed cooling system because the target isn't what people feel?"
+            ],
+            [
+              "Technician",
+              "The complaint doesn't establish that cause. We need the relevant assessment and measurements."
+            ],
+            [
+              "Office manager",
+              "I'll describe feeling warm after two, with the target clearly labeled as a setpoint."
+            ],
+            [
+              "Technician",
+              "Please include whether that pattern comes from your observation or reports from colleagues."
+            ],
+            [
+              "Office manager",
+              "It's from the afternoon meeting team. I'll attribute it to them in the request."
+            ]
+          ]
+        },
+        {
+          "title": "Warm at one desk, not the whole floor",
+          "setting": "A technician checks a comfort report with a facilities contact.",
+          "turns": [
+            [
+              "Technician",
+              "The request says the floor is too warm. Which occupied area prompted it?"
+            ],
+            [
+              "Facilities contact",
+              "Three staff near the west windows reported discomfort during yesterday's afternoon meeting period."
+            ],
+            [
+              "Technician",
+              "Have other areas reported the same concern, or is that not yet known?"
+            ],
+            [
+              "Facilities contact",
+              "We haven't gathered other reports. I shouldn't describe the whole floor as affected."
+            ],
+            [
+              "Technician",
+              "Let's identify those desks and the time without assuming the same thermal zone everywhere."
+            ],
+            [
+              "Facilities contact",
+              "I can provide the seating plan, but I don't know the actual zone boundaries."
+            ],
+            [
+              "Technician",
+              "That's useful background. The system records can establish how the areas are grouped."
+            ],
+            [
+              "Facilities contact",
+              "Should I move people around to test whether the complaint follows their seats?"
+            ],
+            [
+              "Technician",
+              "No experiment is needed for this conversation. Please provide their existing accounts only."
+            ],
+            [
+              "Facilities contact",
+              "I'll send those accounts and the plan, keeping the wider-floor condition unconfirmed."
+            ]
+          ]
+        },
+        {
+          "title": "The guest says stuffy",
+          "setting": "A technician clarifies a hotel's comfort wording with its duty manager.",
+          "turns": [
+            [
+              "Technician",
+              "The guest described the room as stuffy. What did they mean by that?"
+            ],
+            [
+              "Duty manager",
+              "They mentioned feeling warm and a noticeable odor, not a specific temperature reading."
+            ],
+            [
+              "Technician",
+              "Those are distinct reports. Let's retain both without translating stuffy into one technical diagnosis."
+            ],
+            [
+              "Duty manager",
+              "The booking form only has a cooling-problem category. Is that too narrow?"
+            ],
+            [
+              "Technician",
+              "It can route the request, but the description should preserve the guest's actual concerns."
+            ],
+            [
+              "Duty manager",
+              "I'll include the room, evening timing, warmth, and odor, with no confirmed cause."
+            ],
+            [
+              "Technician",
+              "Please note whether the guest reported this once or on several evenings."
+            ],
+            [
+              "Duty manager",
+              "They mentioned two evenings, but I don't have dates for both yet."
+            ],
+            [
+              "Technician",
+              "Record that uncertainty rather than inventing dates; the history can be clarified at the visit."
+            ],
+            [
+              "Duty manager",
+              "I'll arrange room access and keep the report separate from any proposed remedy."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Celsius or Fahrenheit?",
+        "brief": "A hotel report for Room 215 records a displayed target of 72 without units. The guest's existing photo shows degrees Fahrenheit and labels the value target, with no actual room-temperature reading. The service record otherwise uses Celsius.",
+        "role_a": "Technician: clarify units and target versus measurement without adjusting controls.",
+        "role_b": "Duty manager: provide the existing photo and the room number.",
+        "opening_line": "Does the photo identify the units and whether this is the target or room reading?",
+        "complication": "The manager wants the unit label omitted because everyone will know.",
+        "success_checks": [
+          "Identify Fahrenheit.",
+          "Preserve target status.",
+          "Keep units explicit when relaying the number."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Which number belongs to which unit?",
+          "setting": "A technician reviews the school's AC-4 request with the facilities manager.",
+          "turns": [
+            [
+              "Technician",
+              "Your request names AC-4, but the register uses AH-4 and CU-4 separately."
+            ],
+            [
+              "Facilities manager",
+              "AH-4 is the air handler. CU-4 is listed as the outdoor condensing unit."
+            ],
+            [
+              "Technician",
+              "Does the register explicitly link them, or are you matching their final numbers?"
+            ],
+            [
+              "Facilities manager",
+              "I'm matching the numbers. I don't see a documented relationship on this page."
+            ],
+            [
+              "Technician",
+              "Then let's keep the pairing unverified and request the relevant system record."
+            ],
+            [
+              "Facilities manager",
+              "I can obtain that from the building archive without anyone visiting the roof."
+            ],
+            [
+              "Technician",
+              "Good. We also need to attach the service history to the correct asset."
+            ],
+            [
+              "Facilities manager",
+              "The previous contractor's invoice says unit four, which may be equally ambiguous."
+            ],
+            [
+              "Technician",
+              "Please retain that wording and its source rather than assigning it to either component."
+            ],
+            [
+              "Facilities manager",
+              "I'll request the detailed job record and give you the two confirmed tag entries."
+            ]
+          ]
+        },
+        {
+          "title": "The model repeats, the serial does not",
+          "setting": "A technician checks a parts enquiry with a service coordinator.",
+          "turns": [
+            [
+              "Technician",
+              "Both units share the model number, but the parts enquiry identifies only one serial number."
+            ],
+            [
+              "Service coordinator",
+              "I assumed the same model meant we could use either unit's service history."
+            ],
+            [
+              "Technician",
+              "A model identifies a product type; the serial distinguishes the individual manufactured unit."
+            ],
+            [
+              "Service coordinator",
+              "Then the earlier repair record might belong to the neighboring unit rather than this one."
+            ],
+            [
+              "Technician",
+              "Exactly. Let's reconcile the asset tag and serial before applying that history to this enquiry."
+            ],
+            [
+              "Service coordinator",
+              "The register includes both. I can provide their entries without changing any labels."
+            ],
+            [
+              "Technician",
+              "Please do, and preserve any mismatch for review instead of selecting the most convenient number."
+            ],
+            [
+              "Service coordinator",
+              "I'll identify which record came from the old invoice and which from the register."
+            ],
+            [
+              "Technician",
+              "That will let the service lead assess the linkage using actual sources."
+            ],
+            [
+              "Service coordinator",
+              "I'll keep the parts request pending until its intended equipment identity is clear."
+            ]
+          ]
+        },
+        {
+          "title": "The evaporator is not the whole system",
+          "setting": "A technician explains a refrigerator service record to a cafe manager.",
+          "turns": [
+            [
+              "Technician",
+              "The earlier invoice mentions an evaporator. It doesn't say the entire refrigeration system was replaced."
+            ],
+            [
+              "Cafe manager",
+              "I thought evaporator was another name for the complete cabinet and cooling equipment."
+            ],
+            [
+              "Technician",
+              "It's a component where refrigerant absorbs heat, not the whole assembled system."
+            ],
+            [
+              "Cafe manager",
+              "That helps. The owner asked whether we bought a completely new machine last year."
+            ],
+            [
+              "Technician",
+              "This invoice alone doesn't establish that. We should compare its scope with the asset record."
+            ],
+            [
+              "Cafe manager",
+              "I'll retrieve the original purchase record and keep the component invoice separate."
+            ],
+            [
+              "Technician",
+              "Please include the cabinet's asset reference so we don't confuse it with the adjacent unit."
+            ],
+            [
+              "Cafe manager",
+              "Both cabinets look identical, but their labels in our register are FR-1 and FR-2."
+            ],
+            [
+              "Technician",
+              "Use those references in the enquiry; identical appearance doesn't connect their histories."
+            ],
+            [
+              "Cafe manager",
+              "I'll ask about FR-2 specifically and avoid describing component work as a full replacement."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The removed unit still appears in the register",
+        "brief": "The register lists removed asset AH-2, but a handover note records its replacement AH-2A, fictional model Air-Q40, serial AQ-0618. The service booking still names AH-2. The facilities contact has the note; no equipment inspection is needed for this conversation.",
+        "role_a": "Technician: reconcile the booking with the documented replacement.",
+        "role_b": "Facilities contact: provide the handover note without guessing that both labels are current.",
+        "opening_line": "Does this booking concern the removed AH-2 or the replacement identified as AH-2A?",
+        "complication": "The scheduler wants to erase the old asset history.",
+        "success_checks": [
+          "Identify the replacement clearly.",
+          "Retain the old asset history separately.",
+          "Confirm the service booking references the current item."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Supply S3 and return R2",
+          "setting": "A technician explains two ceiling references to a client.",
+          "turns": [
+            [
+              "Technician",
+              "The drawing identifies S3 as supply air and R2 as return air."
+            ],
+            [
+              "Client",
+              "I called both outlets because they look similar from the meeting table."
+            ],
+            [
+              "Technician",
+              "Their functions differ: S3 delivers air, while R2 draws air back toward the system."
+            ],
+            [
+              "Client",
+              "The seat below S3 feels uncomfortable. Does that prove there's too much airflow?"
+            ],
+            [
+              "Technician",
+              "It locates the complaint, but it doesn't establish a measured airflow or its cause."
+            ],
+            [
+              "Client",
+              "Then please give the reviewer that seat location rather than just saying the room is uncomfortable."
+            ],
+            [
+              "Technician",
+              "I will include S3 and the occupied position, with your report clearly attributed."
+            ],
+            [
+              "Client",
+              "Can the earlier balancing report help them compare the intended distribution with the records?"
+            ],
+            [
+              "Technician",
+              "Yes, if its locations and scope match; we'll request it for the review."
+            ],
+            [
+              "Client",
+              "I'll provide the seating plan so the report refers to the place people actually use."
+            ]
+          ]
+        },
+        {
+          "title": "Different units on the two reports",
+          "setting": "A technician checks a comparison with a facilities analyst.",
+          "turns": [
+            [
+              "Technician",
+              "These airflow reports use different units, and their measurement locations aren't the same."
+            ],
+            [
+              "Facilities analyst",
+              "I compared the numbers directly and concluded the new value was much lower."
+            ],
+            [
+              "Technician",
+              "That comparison isn't established without reconciling units, locations, and the stated test conditions."
+            ],
+            [
+              "Facilities analyst",
+              "I'll withdraw the conclusion and ask the report author for a comparable summary."
+            ],
+            [
+              "Technician",
+              "Please keep the original values and units intact rather than changing them informally."
+            ],
+            [
+              "Facilities analyst",
+              "One report also lists static pressure. Can I use that instead of missing airflow?"
+            ],
+            [
+              "Technician",
+              "They describe different quantities; a pressure figure isn't a substitute for an airflow reading."
+            ],
+            [
+              "Facilities analyst",
+              "Understood. I'll identify the missing airflow information and keep pressure in its own field."
+            ],
+            [
+              "Technician",
+              "The technical reviewer can interpret the relationship using the complete records and their limitations."
+            ],
+            [
+              "Facilities analyst",
+              "I'll send the corrected comparison request without treating unlike numbers as evidence of declining performance."
+            ]
+          ]
+        },
+        {
+          "title": "The return opening is missing from the furniture plan",
+          "setting": "A technician and interior coordinator review a new office arrangement.",
+          "turns": [
+            [
+              "Technician",
+              "The mechanical drawing identifies a return-air opening where the furniture plan shows a tall cabinet."
+            ],
+            [
+              "Interior coordinator",
+              "The furniture team treated that wall as empty because the opening wasn't on their elevation."
+            ],
+            [
+              "Technician",
+              "We need the two layouts reviewed together before confirming the cabinet position."
+            ],
+            [
+              "Interior coordinator",
+              "Can we describe this as a coordination conflict rather than an instruction to move the opening?"
+            ],
+            [
+              "Technician",
+              "Yes. Identify the return reference and proposed cabinet dimensions for the design team."
+            ],
+            [
+              "Interior coordinator",
+              "I'll ask them to assess the relationship, with access and airflow requirements considered specifically."
+            ],
+            [
+              "Technician",
+              "Please avoid saying a decorative grille elsewhere would automatically provide an equivalent arrangement."
+            ],
+            [
+              "Interior coordinator",
+              "I won't. Similar appearance doesn't establish the same system function or performance."
+            ],
+            [
+              "Technician",
+              "The client can still express an appearance preference while the technical layout remains under review."
+            ],
+            [
+              "Interior coordinator",
+              "I'll request a coordinated option that addresses both requirements before the cabinet order is released."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One reading has no location",
+        "brief": "A report lists 120 and 150 liters per second but omits the measured terminal references, meaning the room openings measured. The client attributes 150 to complaint location S5 without evidence. The original measurement points and conditions remain unverified.",
+        "role_a": "Technician: ask the report author to identify the measurement point.",
+        "role_b": "Client: you have the report but no marked plan.",
+        "opening_line": "Which terminal does this reading belong to, and where is that recorded?",
+        "complication": "The client assumes the largest listed value must be S5 because it feels draughty.",
+        "success_checks": [
+          "Keep the reading unassigned until verified.",
+          "Separate perceived draught from measured quantity.",
+          "Request the matching point reference and units."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Five kilowatts of what?",
+          "setting": "A technician compares two incomplete proposals with a client.",
+          "turns": [
+            [
+              "Technician",
+              "Proposal A lists five kilowatts of cooling capacity; B lists five kilowatts electrical input."
+            ],
+            [
+              "Client",
+              "I thought the matching numbers meant both systems had the same cooling output."
+            ],
+            [
+              "Technician",
+              "They describe different quantities, even though both use kilowatts as the unit."
+            ],
+            [
+              "Client",
+              "Then we need B's cooling-capacity rating before making that particular comparison."
+            ],
+            [
+              "Technician",
+              "Yes, with the rating conditions and the complete proposed indoor and outdoor components."
+            ],
+            [
+              "Client",
+              "The seller says both use the same refrigerant designation. Does that settle compatibility?"
+            ],
+            [
+              "Technician",
+              "No, the fluid identifier alone doesn't establish a matched system or equivalent performance."
+            ],
+            [
+              "Client",
+              "I'll request the complete data sheets rather than repeat the equal-size claim."
+            ],
+            [
+              "Technician",
+              "Please also separate the equipment comparison from any prediction about this building's cooling demand."
+            ],
+            [
+              "Client",
+              "Understood. We can review the actual ratings first, with selection and suitability still open."
+            ]
+          ]
+        },
+        {
+          "title": "A missing suffix on the nameplate record",
+          "setting": "A technician clarifies a replacement enquiry with a parts coordinator.",
+          "turns": [
+            [
+              "Technician",
+              "The equipment record omits the model suffix shown in the existing nameplate photograph."
+            ],
+            [
+              "Parts coordinator",
+              "I shortened the reference because the supplier's search found several similar models."
+            ],
+            [
+              "Technician",
+              "That suffix may identify a different variant, so the complete reference belongs in the enquiry."
+            ],
+            [
+              "Parts coordinator",
+              "I'll use the photograph already in the records, without asking anyone to access equipment."
+            ],
+            [
+              "Technician",
+              "Please retain the serial number too, clearly separated from the model and asset tag."
+            ],
+            [
+              "Parts coordinator",
+              "The supplier asked for the refrigerant designation. Is that another serial-number field?"
+            ],
+            [
+              "Technician",
+              "No, it identifies the specified working fluid. Copy the documented label accurately without inferring compatibility."
+            ],
+            [
+              "Parts coordinator",
+              "I'll send the complete recorded information and flag any unreadable field instead of guessing."
+            ],
+            [
+              "Technician",
+              "That lets the supplier assess the correct equipment rather than a nearby catalog match."
+            ],
+            [
+              "Parts coordinator",
+              "I'll keep the proposed replacement pending until its exact applicability is confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "The outdoor unit alone has a quoted rating",
+          "setting": "A technician and purchaser discuss an incomplete equipment quotation.",
+          "turns": [
+            [
+              "Technician",
+              "This quotation identifies the outdoor unit, but the indoor component reference is missing."
+            ],
+            [
+              "Purchaser",
+              "The salesperson gave us an efficiency claim and said the indoor unit was standard."
+            ],
+            [
+              "Technician",
+              "We need the actual combination and its rating basis before treating that claim as applicable."
+            ],
+            [
+              "Purchaser",
+              "I'll ask for the complete matched-system reference rather than a generic indoor-unit description."
+            ],
+            [
+              "Technician",
+              "Please include the conditions associated with any stated capacity or efficiency figure."
+            ],
+            [
+              "Purchaser",
+              "The client wants to compare running costs. Can we use the catalog headline directly?"
+            ],
+            [
+              "Technician",
+              "A headline rating alone doesn't establish this site's energy use or costs."
+            ],
+            [
+              "Purchaser",
+              "Then I'll present it as product information, not a guaranteed saving for the building."
+            ],
+            [
+              "Technician",
+              "That keeps the comparison honest while the specialist reviews the complete proposed equipment combination."
+            ],
+            [
+              "Purchaser",
+              "I'll request the missing references and preserve the original quotation as incomplete pending clarification."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A bigger rating is treated as a design decision",
+        "brief": "A client compares fictional catalog options rated at 6 and 8 kilowatts cooling capacity and prefers 8 because bigger sounds better. Rating conditions have not been reconciled. No cooling-load assessment, meaning assessment of the building's cooling demand, is supplied.",
+        "role_a": "Technician: separate rated capacity from suitability for the building.",
+        "role_b": "Client: you can arrange a qualified assessment before selecting equipment.",
+        "opening_line": "The larger rating describes the unit, but what assessment establishes this building's requirement?",
+        "complication": "The seller offers a discount that expires soon.",
+        "success_checks": [
+          "Keep capacity and building demand distinct.",
+          "Avoid recommending a size from catalog numbers.",
+          "State that the discount does not establish suitability."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Yesterday's water and today's dry floor",
+          "setting": "A technician explains the supplied AH-6 notes to the client.",
+          "turns": [
+            [
+              "Technician",
+              "Today's note records a dry floor near AH-6, not a confirmed resolution of yesterday's report."
+            ],
+            [
+              "Client",
+              "I noticed water there at three. The old service log mentions the drain pan."
+            ],
+            [
+              "Technician",
+              "That earlier entry is relevant history, but it doesn't establish the source of this report."
+            ],
+            [
+              "Client",
+              "Could it have been condensate from the equipment, rather than another source of water?"
+            ],
+            [
+              "Technician",
+              "That's a possibility for technical assessment, not a confirmed diagnosis from these notes."
+            ],
+            [
+              "Client",
+              "Please link the older entry so the reviewer knows the pan was discussed before."
+            ],
+            [
+              "Technician",
+              "I'll retain the dates and describe any suspected explanation as a provisional diagnosis."
+            ],
+            [
+              "Client",
+              "Does a dry floor mean we should mark the service request resolved for the owner?"
+            ],
+            [
+              "Technician",
+              "Not on this observation alone. The source question remains open for the reviewer."
+            ],
+            [
+              "Client",
+              "I'll tell the owner what was reported, what today's note says, and what remains unknown."
+            ]
+          ]
+        },
+        {
+          "title": "An old repair appears under the wrong tag",
+          "setting": "A technician queries a service-log entry with a coordinator.",
+          "turns": [
+            [
+              "Technician",
+              "The drain-pan entry is filed under AH-7, but its attached photograph is labeled AH-8."
+            ],
+            [
+              "Coordinator",
+              "Those units sit beside each other. The technician may have selected the wrong tag."
+            ],
+            [
+              "Technician",
+              "We need the author to verify the reference rather than deciding from that possibility."
+            ],
+            [
+              "Coordinator",
+              "I'll retain both labels and request clarification from the original visit record."
+            ],
+            [
+              "Technician",
+              "The client has asked whether AH-7 has had three repeated pan-related visits."
+            ],
+            [
+              "Coordinator",
+              "We shouldn't count this entry toward that history until the equipment link is confirmed."
+            ],
+            [
+              "Technician",
+              "Exactly. An uncertain filing reference could create a misleading pattern of repeat faults."
+            ],
+            [
+              "Coordinator",
+              "I'll distinguish the two confirmed AH-7 entries from this third unresolved record."
+            ],
+            [
+              "Technician",
+              "Please include that limitation when asking the reviewer about the current reported moisture."
+            ],
+            [
+              "Coordinator",
+              "I will send the records with their actual status, not a simplified three-fault claim."
+            ]
+          ]
+        },
+        {
+          "title": "Noise reported only during the morning meeting",
+          "setting": "A technician gathers an existing noise account from a workplace manager.",
+          "turns": [
+            [
+              "Technician",
+              "The request says constant rattling. When have people actually noticed the sound?"
+            ],
+            [
+              "Workplace manager",
+              "They mentioned it during Monday's morning meeting and again at Tuesday's briefing."
+            ],
+            [
+              "Technician",
+              "Then constant may overstate the report. We have two reported periods, not continuous observation."
+            ],
+            [
+              "Workplace manager",
+              "You're right. I used constant because the complaints kept coming to my inbox."
+            ],
+            [
+              "Technician",
+              "Let's preserve the repeated reports but identify their times and the room."
+            ],
+            [
+              "Workplace manager",
+              "Both concern Meeting Room C, near the ceiling opening closest to the screen."
+            ],
+            [
+              "Technician",
+              "I'll record that location without identifying a fan or duct as the confirmed source."
+            ],
+            [
+              "Workplace manager",
+              "Should I ask the team to change the controls to see whether the sound returns?"
+            ],
+            [
+              "Technician",
+              "No reproduction is needed for this language task. Their existing accounts are sufficient to relay."
+            ],
+            [
+              "Workplace manager",
+              "I'll correct the description to recurring reported noise and arrange the technical assessment separately."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A stain is noticed after a service visit",
+        "brief": "A client notices a ceiling mark above the corridor outside Meeting Room C on Friday after Wednesday's visit to air handler AH-9. No earlier photograph covers that area. The visit record identifies no moisture finding, and the cause is unknown.",
+        "role_a": "Technician: acknowledge timing while distinguishing it from proven cause.",
+        "role_b": "Client: you want a factual review, not an unsupported blame statement.",
+        "opening_line": "You noticed the mark Friday; can we identify its location and preserve that timing accurately?",
+        "complication": "The client asks you to state that Wednesday's service caused it.",
+        "success_checks": [
+          "Acknowledge the concern.",
+          "Separate discovery date from cause.",
+          "Agree a review using the available records."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "The cabinet reading is not the product reading",
+          "setting": "A refrigeration technician discusses the fictional cafe log with its manager.",
+          "turns": [
+            [
+              "Technician",
+              "The cabinet temperature display logged eight degrees Celsius at six ten, not a product temperature."
+            ],
+            [
+              "Cafe manager",
+              "Can you tell me from that whether the stored food is safe to sell?"
+            ],
+            [
+              "Technician",
+              "No. We have no supplied product-temperature result, and that decision needs your food-safety lead."
+            ],
+            [
+              "Cafe manager",
+              "The alarm and scheduled defrost cycle have the same timestamp. Doesn't that explain it?"
+            ],
+            [
+              "Technician",
+              "The coincidence is relevant, but it doesn't establish cause, duration, or product condition."
+            ],
+            [
+              "Cafe manager",
+              "I'll involve the food-safety lead now rather than wait for an equipment explanation."
+            ],
+            [
+              "Technician",
+              "Please retain the alarm history and identify which cabinet and display produced this value."
+            ],
+            [
+              "Cafe manager",
+              "It's cabinet FR-3. I'll send the existing record with its timestamp and units."
+            ],
+            [
+              "Technician",
+              "We'll ask the technical reviewer to clarify the equipment event without treating that as stock clearance."
+            ],
+            [
+              "Cafe manager",
+              "Understood. Equipment assessment and the product decision will remain separate, with both concerns followed up."
+            ]
+          ]
+        },
+        {
+          "title": "Two clocks disagree",
+          "setting": "A technician clarifies refrigeration event times with a shop supervisor.",
+          "turns": [
+            [
+              "Technician",
+              "The cabinet alarm says six ten, while the staff log records the concern at seven ten."
+            ],
+            [
+              "Shop supervisor",
+              "I assumed there were two separate events, exactly an hour apart from each other."
+            ],
+            [
+              "Technician",
+              "Do both records use the same time basis? The equipment clock setting isn't identified here."
+            ],
+            [
+              "Shop supervisor",
+              "I don't know. The staff log uses the wall clock in the office."
+            ],
+            [
+              "Technician",
+              "Then we should verify the timestamps before describing a repeated event or its duration."
+            ],
+            [
+              "Shop supervisor",
+              "I'll ask the service coordinator to confirm the record's time basis, without changing either original entry."
+            ],
+            [
+              "Technician",
+              "Please preserve the recorded values and identify any later correction as a correction."
+            ],
+            [
+              "Shop supervisor",
+              "The stock lead also needs the timeline. Should I give them only the earlier time?"
+            ],
+            [
+              "Technician",
+              "Give both sources with the unresolved difference; don't choose one as confirmed without evidence."
+            ],
+            [
+              "Shop supervisor",
+              "I'll send that qualified timeline so they know exactly what remains uncertain."
+            ]
+          ]
+        },
+        {
+          "title": "An acknowledged alarm is not a resolved condition",
+          "setting": "A technician explains an alarm-history label to a facilities client.",
+          "turns": [
+            [
+              "Technician",
+              "The history marks the alarm acknowledged, but it doesn't show a confirmed resolution."
+            ],
+            [
+              "Facilities client",
+              "I thought acknowledged meant the cause had been corrected and the cabinet was fine."
+            ],
+            [
+              "Technician",
+              "It records recognition of the alarm, not necessarily resolution of the underlying condition."
+            ],
+            [
+              "Facilities client",
+              "Then our report should not say fault cleared based on that status alone."
+            ],
+            [
+              "Technician",
+              "Correct. We need the actual event history and technical findings to establish the outcome."
+            ],
+            [
+              "Facilities client",
+              "The food-safety lead asked whether an acknowledgment clears the product for use."
+            ],
+            [
+              "Technician",
+              "That status cannot establish product suitability. They need the relevant product information and site procedures."
+            ],
+            [
+              "Facilities client",
+              "I'll preserve acknowledged as the equipment-log status, with the condition and stock decisions separate."
+            ],
+            [
+              "Technician",
+              "Please include the event identifier so the reviewer can locate the specific alarm."
+            ],
+            [
+              "Facilities client",
+              "I will ask for its verified outcome rather than infer it from the acknowledgment label."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The minimum and maximum lack a period",
+        "brief": "A summary for cabinet C6 gives a minimum of 2 and maximum of 8 degrees Celsius but omits the recording period and sensor location. No product temperatures are supplied. The stock lead asks how long products were outside their required conditions; this summary cannot establish that.",
+        "role_a": "Technician: identify what the equipment summary can and cannot establish.",
+        "role_b": "Manager: retrieve the full existing log and involve the stock lead.",
+        "opening_line": "What period and sensor location do these minimum and maximum values cover?",
+        "complication": "The manager wants to treat the maximum as the temperature of every stored item.",
+        "success_checks": [
+          "Request the missing context.",
+          "Do not infer product temperature or duration.",
+          "Keep the stock decision with the responsible lead."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The grille is only the visible part",
+          "setting": "A technician discusses a proposed ceiling change with the office client.",
+          "turns": [
+            [
+              "Technician",
+              "You want the supply grille moved because it visually conflicts with the pendant light."
+            ],
+            [
+              "Office client",
+              "Yes. It looks like a small cover, so I hoped the change would be simple."
+            ],
+            [
+              "Technician",
+              "The connected ductwork and ceiling finishes may be affected; the extent hasn't been assessed."
+            ],
+            [
+              "Office client",
+              "Could we obtain a coordinated change proposal rather than alter the agreed layout immediately?"
+            ],
+            [
+              "Technician",
+              "Yes. Please provide the revised lighting position so both teams review the same arrangement."
+            ],
+            [
+              "Office client",
+              "I'd like the current layout kept as an option if the change is disruptive."
+            ],
+            [
+              "Technician",
+              "We'll compare the proposed scope, restoration responsibility, price, and timing against that retained option."
+            ],
+            [
+              "Office client",
+              "Please include any service-access implications rather than leave those until the ceiling is finished."
+            ],
+            [
+              "Technician",
+              "I'll ask the design team to address them explicitly, without prescribing a new route myself."
+            ],
+            [
+              "Office client",
+              "Then proceed with the review request, not the physical relocation or an assumed extra order."
+            ]
+          ]
+        },
+        {
+          "title": "The new cabinet occupies service space",
+          "setting": "A technician and facilities planner review furniture near equipment.",
+          "turns": [
+            [
+              "Technician",
+              "The proposed storage cabinet overlaps the service-clearance area shown in the equipment detail."
+            ],
+            [
+              "Facilities planner",
+              "It's a shallow cabinet. Could we describe it as outside the equipment footprint?"
+            ],
+            [
+              "Technician",
+              "The footprint and service clearance are different; the access requirement extends beyond the unit itself."
+            ],
+            [
+              "Facilities planner",
+              "I see. We need to compare the actual cabinet dimensions with the referenced clearance area."
+            ],
+            [
+              "Technician",
+              "Yes, and ask the designer to review the relationship using the correct equipment documentation."
+            ],
+            [
+              "Facilities planner",
+              "Would making the cabinet movable automatically resolve the service-access question for this room?"
+            ],
+            [
+              "Technician",
+              "Not automatically. The revised arrangement still needs review rather than a different label."
+            ],
+            [
+              "Facilities planner",
+              "I'll request an alternative storage position and keep the current proposal unapproved."
+            ],
+            [
+              "Technician",
+              "Please show the service area on the furniture layout so the reason is visible."
+            ],
+            [
+              "Facilities planner",
+              "That will make the coordination issue clearer than telling the client their cabinet simply doesn't fit."
+            ]
+          ]
+        },
+        {
+          "title": "The ceiling contractor's scope is separate",
+          "setting": "A technician clarifies a relocation estimate with a project coordinator.",
+          "turns": [
+            [
+              "Technician",
+              "The mechanical estimate covers the proposed ductwork change, but excludes reinstating the ceiling finish."
+            ],
+            [
+              "Project coordinator",
+              "The client thought one relocation price included all work associated with moving the opening."
+            ],
+            [
+              "Technician",
+              "Then the comparison needs a separate ceiling-restoration item or a clearly coordinated combined proposal."
+            ],
+            [
+              "Project coordinator",
+              "I'll ask the ceiling contractor for the same affected area and finish reference."
+            ],
+            [
+              "Technician",
+              "Please keep access dates aligned so neither trade assumes the other has already completed preparation."
+            ],
+            [
+              "Project coordinator",
+              "The client also wants the pendant moved. That belongs with the electrical team, not this estimate."
+            ],
+            [
+              "Technician",
+              "Exactly. We should identify it as another coordinated item rather than hide it under relocation."
+            ],
+            [
+              "Project coordinator",
+              "I'll present the inclusions and exclusions plainly, with each responsible team named."
+            ],
+            [
+              "Technician",
+              "That lets the client assess the whole requested change without inferring a complete package from one price."
+            ],
+            [
+              "Project coordinator",
+              "I'll keep the original reviewed layout available until the revised package is actually accepted."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A maintenance visit meets a ceiling closure",
+        "brief": "A service visit is proposed for Thursday, but the ceiling contractor plans to close the relevant area Wednesday. Access arrangements have not been coordinated; neither date is final.",
+        "role_a": "Technician: identify the dependency and request a joint scheduling decision.",
+        "role_b": "Coordinator: you can speak to both contractors and the occupier.",
+        "opening_line": "Can we reconcile the service visit with the proposed ceiling closure before confirming either date?",
+        "complication": "The coordinator says the service team can work out access on arrival.",
+        "success_checks": [
+          "Name both proposed activities and dates.",
+          "Keep the access question explicit.",
+          "Agree who obtains a coordinated sequence."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "The report includes a deferred check",
+          "setting": "A technician hands over the fictional commissioning information to the client.",
+          "turns": [
+            [
+              "Technician",
+              "The commissioning report is received, but it explicitly lists a deferred seasonal check."
+            ],
+            [
+              "Client",
+              "I thought receiving the report meant every verification activity had already been completed."
+            ],
+            [
+              "Technician",
+              "Not this one. It remains an outstanding item, with no date booked."
+            ],
+            [
+              "Client",
+              "The maintenance sheet also names another model. Who will obtain the correct information?"
+            ],
+            [
+              "Technician",
+              "Nia has accepted that document follow-up and will update you Friday."
+            ],
+            [
+              "Client",
+              "Please distinguish that call from the seasonal visit so our facilities team can plan."
+            ],
+            [
+              "Technician",
+              "I will. The report item and the model-specific maintenance information are separate follow-ups."
+            ],
+            [
+              "Client",
+              "Can you simply give us a standard maintenance interval while the correct sheet is pending?"
+            ],
+            [
+              "Technician",
+              "I shouldn't invent an interval. We need the applicable equipment guidance and review."
+            ],
+            [
+              "Client",
+              "Then keep both items open, with Friday as the document update rather than an attendance promise."
+            ]
+          ]
+        },
+        {
+          "title": "A generic manual needs an applicability check",
+          "setting": "A technician discusses a received manual with a facilities assistant.",
+          "turns": [
+            [
+              "Technician",
+              "The supplier sent a family manual, but our exact model isn't obvious on the cover."
+            ],
+            [
+              "Facilities assistant",
+              "The filename matches our unit nickname. Is that enough to file it as confirmed?"
+            ],
+            [
+              "Technician",
+              "No. We need its applicability checked against the complete equipment reference in the asset record."
+            ],
+            [
+              "Facilities assistant",
+              "I'll ask the supplier to identify the section or document covering the supplied model."
+            ],
+            [
+              "Technician",
+              "Please preserve the received file, marked pending verification, rather than deleting or relabeling it."
+            ],
+            [
+              "Facilities assistant",
+              "The client also asks which maintenance interval applies to the installed configuration."
+            ],
+            [
+              "Technician",
+              "That needs the applicable guidance; a generic interval from another model may not transfer."
+            ],
+            [
+              "Facilities assistant",
+              "I'll keep the source and configuration references with the confirmed information when it arrives."
+            ],
+            [
+              "Technician",
+              "Good. That makes future maintenance enquiries traceable to the actual equipment and document."
+            ],
+            [
+              "Facilities assistant",
+              "I'll update the handover status only after the document's applicability is established."
+            ]
+          ]
+        },
+        {
+          "title": "A warranty exclusion is not a diagnosis",
+          "setting": "A technician clarifies a client's question about a warranty document.",
+          "turns": [
+            [
+              "Technician",
+              "A warranty exclusion doesn't settle your case; the terms and circumstances still need review."
+            ],
+            [
+              "Client",
+              "Does the mention of maintenance mean the supplier will definitely reject every future claim?"
+            ],
+            [
+              "Technician",
+              "That doesn't follow from a heading alone. The actual terms and circumstances need review."
+            ],
+            [
+              "Client",
+              "I don't want a broad promise of coverage either, because that could be misleading."
+            ],
+            [
+              "Technician",
+              "Agreed. We can identify the relevant document and pass your question to the appropriate contact."
+            ],
+            [
+              "Client",
+              "Please keep the equipment reference with that enquiry so they consider the right product."
+            ],
+            [
+              "Technician",
+              "I will, and the current service concern will remain separate from a coverage decision."
+            ],
+            [
+              "Client",
+              "Can the technician still report observations without deciding what the supplier must pay for?"
+            ],
+            [
+              "Technician",
+              "Yes. Technical findings and warranty interpretation have different purposes and should be distinguished."
+            ],
+            [
+              "Client",
+              "Then obtain the factual report and the specific warranty response as separate items."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The follow-up owner changes",
+        "brief": "Nia is leaving before a maintenance-sheet mismatch is resolved. Installed asset AH-12 is fictional model Air-Q50; the received sheet names Air-Q30. Applicability has not been confirmed. Ellis accepts the supplier query and can update the client Tuesday. The separate seasonal check remains unbooked.",
+        "role_a": "Outgoing technician: transfer the mismatch between installed AH-12, model Air-Q50, and the sheet naming Air-Q30.",
+        "role_b": "Ellis: repeat asset AH-12 and model Air-Q50, accept the supplier follow-up, and distinguish it from booking the seasonal check.",
+        "opening_line": "Can you accept the maintenance-sheet query and keep the seasonal-check booking separate?",
+        "complication": "The client assumes the new contact has also booked the seasonal visit.",
+        "success_checks": [
+          "Confirm Ellis accepts the maintenance-document query.",
+          "Repeat installed model Air-Q50 and distinguish the sheet's Air-Q30 reference.",
+          "State that Tuesday is an update and the seasonal visit remains unbooked."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The complaint moves with the meeting schedule",
+      "setting": "A technician and office coordinator establish the limits of a recurring comfort report.",
+      "dialogue": [
+        [
+          "Technician",
+          "The weekly report says the meeting room feels warm, but the complaint times vary between entries."
+        ],
+        [
+          "Office coordinator",
+          "The room hosts different meetings. Some reports are from mornings, and others follow afternoon sessions."
+        ],
+        [
+          "Technician",
+          "Let's keep each time rather than reduce them all to an afternoon pattern without evidence."
+        ],
+        [
+          "Office coordinator",
+          "I agree. The thermostat target stayed the same, so I assumed actual temperature stayed the same."
+        ],
+        [
+          "Technician",
+          "A setpoint is a target. It doesn't establish the ambient temperature throughout every occupied period."
+        ],
+        [
+          "Office coordinator",
+          "Then the report needs separate columns for the target and any existing measured readings we have."
+        ],
+        [
+          "Technician",
+          "Yes, with their locations and times identified. Missing readings should remain missing, not copied from the target."
+        ],
+        [
+          "Office coordinator",
+          "We also have comments from two nearby rooms. Should I combine those under one thermal zone?"
+        ],
+        [
+          "Technician",
+          "The actual zone boundaries need verification. Keep the room names distinct until the system records establish that."
+        ],
+        [
+          "Office coordinator",
+          "I'll provide the booking history and attributed comments without claiming a shared equipment fault across all rooms."
+        ],
+        [
+          "Technician",
+          "That gives the reviewer a useful pattern to assess while preserving what the information cannot yet show."
+        ],
+        [
+          "Office coordinator",
+          "I'll describe it as recurring comfort feedback, with the cause and measured conditions still to be established."
+        ]
+      ],
+      "notes": [
+        "'Reduce them all to' warns against oversimplifying a mixed pattern.",
+        "'Missing readings should remain missing' prevents a control target from becoming invented evidence."
+      ]
+    },
+    {
+      "title": "The outdoor unit serves a different area",
+      "setting": "A technician and building representative resolve a location assumption in the equipment register.",
+      "dialogue": [
+        [
+          "Technician",
+          "The roof-plan label says east unit, but that doesn't establish which indoor zone it serves."
+        ],
+        [
+          "Building representative",
+          "I assumed it serves the east offices because it sits above that side of the building."
+        ],
+        [
+          "Technician",
+          "Physical location and served area can differ. We need the documented relationship rather than that assumption."
+        ],
+        [
+          "Building representative",
+          "The mechanical schedule lists two air handlers, but the drawing reference in our register is outdated."
+        ],
+        [
+          "Technician",
+          "Can you obtain the current system drawing and keep the old entry identified during the comparison?"
+        ],
+        [
+          "Building representative",
+          "Yes. I'll ask the building records team for it, without asking staff to inspect the rooftop equipment."
+        ],
+        [
+          "Technician",
+          "Please include the asset tags and manufacturer references so the reviewer can reconcile the same items."
+        ],
+        [
+          "Building representative",
+          "I have those in the handover pack. Should I rename the outdoor unit east offices now?"
+        ],
+        [
+          "Technician",
+          "Not before verification. A more descriptive but incorrect label could make the service history harder to follow."
+        ],
+        [
+          "Building representative",
+          "I'll retain the existing tag and add a note that the served-area reference needs clarification."
+        ],
+        [
+          "Technician",
+          "That keeps the enquiry useful without turning an unverified assumption into a new official record."
+        ],
+        [
+          "Building representative",
+          "I'll ask the reviewer to confirm the component links and served area before updating the register."
+        ]
+      ],
+      "notes": [
+        "'Physical location and served area can differ' challenges a plausible but unverified assumption.",
+        "'More descriptive but incorrect' explains why a friendly label can still damage record accuracy."
+      ]
+    },
+    {
+      "title": "A comparison needs the same operating context",
+      "setting": "A technician and building client discuss two distribution reports.",
+      "dialogue": [
+        [
+          "Technician",
+          "One airflow report covers the whole zone; the other covers one terminal."
+        ],
+        [
+          "Building client",
+          "I compared them because both headings say meeting room, without noticing the different measurement scopes below."
+        ],
+        [
+          "Technician",
+          "That difference matters. A zone total and a terminal reading don't describe the same boundary."
+        ],
+        [
+          "Building client",
+          "Could the author provide a terminal-by-terminal comparison using matching references and units for the two visits?"
+        ],
+        [
+          "Technician",
+          "Yes, and they should identify the stated conditions and any limitations that affect interpretation of the comparison."
+        ],
+        [
+          "Building client",
+          "One note mentions static pressure. I don't understand whether that means air volume or something else."
+        ],
+        [
+          "Technician",
+          "It is a pressure quantity, not air volume. Its significance needs the measurement location and technical context."
+        ],
+        [
+          "Building client",
+          "Then I shouldn't report that higher static pressure automatically means more useful air reached the occupied desks."
+        ],
+        [
+          "Technician",
+          "Correct. That conclusion isn't established by the isolated figure. The reviewer needs to interpret the complete record."
+        ],
+        [
+          "Building client",
+          "I'll ask for a plain-language summary that preserves the actual measurements rather than replacing them with a general verdict."
+        ],
+        [
+          "Technician",
+          "Please include the seating complaint separately, so the reviewer can connect records and reported experience without confusing them."
+        ],
+        [
+          "Building client",
+          "I will request a scoped comparison and keep the claimed performance improvement unconfirmed until the evidence supports it."
+        ]
+      ],
+      "notes": [
+        "'Measurement scopes' explains why readings for different boundaries cannot be directly compared.",
+        "'An isolated figure' names the lack of context without dismissing the measurement itself."
+      ]
+    },
+    {
+      "title": "The proposed replacement carries a different designation",
+      "setting": "A technician and facilities buyer discuss a replacement-system proposal.",
+      "dialogue": [
+        [
+          "Technician",
+          "The replacement proposal lists a new combination with a different refrigerant designation."
+        ],
+        [
+          "Facilities buyer",
+          "Can someone simply use that new fluid in our existing equipment at the next visit?"
+        ],
+        [
+          "Technician",
+          "No. A proposal's designation change doesn't instruct anyone to substitute fluids or modify existing equipment."
+        ],
+        [
+          "Facilities buyer",
+          "Thank you. I need a clear explanation for the manager without getting into handling or conversion procedures."
+        ],
+        [
+          "Technician",
+          "Explain that the proposal concerns specified equipment and compatibility, which must be assessed as a complete technical package."
+        ],
+        [
+          "Facilities buyer",
+          "I'll keep the existing nameplate information separate from the proposed replacement references when I send the comparison."
+        ],
+        [
+          "Technician",
+          "Please also ask for the rating basis and the boundaries of the quoted work, including any retained components."
+        ],
+        [
+          "Facilities buyer",
+          "The seller describes the package as compatible but doesn't identify whether the existing indoor unit remains in it."
+        ],
+        [
+          "Technician",
+          "That omission matters. Request an explicit component list rather than infer a matched system from the sales description."
+        ],
+        [
+          "Facilities buyer",
+          "I'll ask which components are included, which are retained, and what confirmation supports the proposed combination."
+        ],
+        [
+          "Technician",
+          "Then the reviewer can assess the actual proposal without treating this discussion as technical approval or a handling plan."
+        ],
+        [
+          "Facilities buyer",
+          "I'll present the designation difference for review, not as a proposal to alter the old system."
+        ]
+      ],
+      "notes": [
+        "'Not an instruction to substitute' keeps a specification discussion distinct from hazardous physical action.",
+        "'Boundaries of the quoted work' asks exactly what is included and retained."
+      ]
+    },
+    {
+      "title": "A confident summary hides a tentative finding",
+      "setting": "A technician and facilities manager review a service-summary draft.",
+      "dialogue": [
+        [
+          "Technician",
+          "Your summary says the drain pan caused the moisture, but the technician's note labels that explanation provisional."
+        ],
+        [
+          "Facilities manager",
+          "I shortened the note because the owner wanted one clear reason for the event."
+        ],
+        [
+          "Technician",
+          "Clarity shouldn't remove the uncertainty. We can give the suspected cause and its status in one sentence."
+        ],
+        [
+          "Facilities manager",
+          "Would 'The pan is a possible source, but the cause remains unconfirmed' preserve the intended meaning?"
+        ],
+        [
+          "Technician",
+          "Yes, provided that accurately reflects the note. Keep the observation and the proposed explanation separate."
+        ],
+        [
+          "Facilities manager",
+          "The note also says no moisture observed during the visit. That doesn't cancel the tenant's earlier report?"
+        ],
+        [
+          "Technician",
+          "Correct. The accounts concern different times, so both can remain in the service log without contradiction."
+        ],
+        [
+          "Facilities manager",
+          "I'll include the tenant's time and location, with today's dry observation attributed to the visit."
+        ],
+        [
+          "Technician",
+          "Please keep the equipment tag visible too; there are several similar units in this part of the building."
+        ],
+        [
+          "Facilities manager",
+          "Then the reviewer can consider the right history without treating a nearby unit's entry as relevant by default."
+        ],
+        [
+          "Technician",
+          "Exactly. Ask what further assessment is needed without prescribing a repair or a replacement in the request."
+        ],
+        [
+          "Facilities manager",
+          "I'll revise the summary to identify the actual finding, the tentative explanation, and the question still awaiting review."
+        ]
+      ],
+      "notes": [
+        "'Clarity shouldn't remove the uncertainty' supports concise but accurate reporting.",
+        "'Without contradiction' explains how different observations at different times can coexist."
+      ]
+    },
+    {
+      "title": "A refrigeration report needs two separate handoffs",
+      "setting": "A technician and food-business manager coordinate an equipment concern and a stock review.",
+      "dialogue": [
+        [
+          "Technician",
+          "We have the cabinet alarm history, but no product records."
+        ],
+        [
+          "Food-business manager",
+          "Our stock lead has those. I assumed your report would decide whether the stock could remain for sale."
+        ],
+        [
+          "Technician",
+          "My report addresses equipment findings; it doesn't replace your stock lead's product-safety decision."
+        ],
+        [
+          "Food-business manager",
+          "I'll contact the stock lead immediately and make sure they receive the existing product information through our normal arrangements."
+        ],
+        [
+          "Technician",
+          "Thank you. For the equipment enquiry, please retain the cabinet reference, alarm identifiers, timestamps, and any recorded limitations."
+        ],
+        [
+          "Food-business manager",
+          "The log mentions defrost around the event. Should I tell the stock lead that the alarm was therefore normal?"
+        ],
+        [
+          "Technician",
+          "No. That entry alone doesn't establish why the alarm occurred or whether the products met their required conditions."
+        ],
+        [
+          "Food-business manager",
+          "I'll report the coinciding entry as context, not as a confirmed explanation or an assurance about the stock."
+        ],
+        [
+          "Technician",
+          "The technical reviewer will also need to clarify which sensor produced the displayed cabinet-temperature value in this report."
+        ],
+        [
+          "Food-business manager",
+          "I'll retrieve the record without asking staff to alter settings or run experiments."
+        ],
+        [
+          "Technician",
+          "That gives each responsible person the relevant information while keeping the equipment question distinct from product disposition."
+        ],
+        [
+          "Food-business manager",
+          "I'll track both follow-ups separately so completion of one doesn't silently close the other concern."
+        ]
+      ],
+      "notes": [
+        "'Within its scope' limits what an equipment report claims to establish.",
+        "'Completion of one doesn't ... close the other' preserves two independent responsibilities."
+      ]
+    },
+    {
+      "title": "A client wants a smaller visible grille",
+      "setting": "A technician and interior designer discuss a late appearance request.",
+      "dialogue": [
+        [
+          "Technician",
+          "The client prefers a smaller visible grille, but the current proposal changes only its appearance description."
+        ],
+        [
+          "Interior designer",
+          "They want it to disappear into the ceiling pattern, without revisiting the rest of the room."
+        ],
+        [
+          "Technician",
+          "We can record that preference, but the proposed product and system relationship need a specific design review."
+        ],
+        [
+          "Interior designer",
+          "Could I tell the supplier that any smaller grille with the same color will be acceptable?"
+        ],
+        [
+          "Technician",
+          "Not from appearance alone. The reviewer needs the actual product and its relationship to the designed air distribution."
+        ],
+        [
+          "Interior designer",
+          "I'll request a particular alternative and keep the current specified grille available for comparison."
+        ],
+        [
+          "Technician",
+          "Please also identify any ceiling changes, since a different face size may affect the restoration scope."
+        ],
+        [
+          "Interior designer",
+          "The ceiling contractor can price that once the proposed dimensions and finish references are clearly defined."
+        ],
+        [
+          "Technician",
+          "Then the client can compare the complete change rather than only the purchase price of the grille."
+        ],
+        [
+          "Interior designer",
+          "I'll present the appearance preference, the proposed product, and the unresolved technical and finish questions separately."
+        ],
+        [
+          "Technician",
+          "That preserves the design review without dismissing the client's preference as merely cosmetic or unimportant."
+        ],
+        [
+          "Interior designer",
+          "I'll arrange the joint review and keep the alternative unapproved until the actual requirements are reconciled."
+        ]
+      ],
+      "notes": [
+        "'Record that preference' acknowledges the design aim without accepting an unreviewed product.",
+        "'Complete change' includes associated work rather than only the visible item's purchase price."
+      ]
+    },
+    {
+      "title": "The incoming manager inherits unfinished closeout",
+      "setting": "A technician and incoming facilities manager review a system's closeout pack.",
+      "dialogue": [
+        [
+          "Technician",
+          "The pack contains reports and manuals, but two entries remain unresolved."
+        ],
+        [
+          "Facilities manager",
+          "I see the deferred seasonal check. What is the other open item?"
+        ],
+        [
+          "Technician",
+          "The maintenance sheet's model reference doesn't match the supplied unit, so its applicability is still being checked."
+        ],
+        [
+          "Facilities manager",
+          "Thank you. I need those limitations because the previous manager described the pack as completely finished."
+        ],
+        [
+          "Technician",
+          "We can correct that description without discarding the completed activities documented in the commissioning report itself."
+        ],
+        [
+          "Facilities manager",
+          "Please identify who owns each open item so neither gets lost while the building team changes over."
+        ],
+        [
+          "Technician",
+          "Ellis has accepted the document query. The project coordinator is arranging the seasonal check, with no date confirmed."
+        ],
+        [
+          "Facilities manager",
+          "I'll contact both and distinguish an agreed update time from a booked attendance in our internal tracker."
+        ],
+        [
+          "Technician",
+          "Please retain the original report and its stated scope when adding later confirmed results to the handover records."
+        ],
+        [
+          "Facilities manager",
+          "That will help us see what was assessed at each stage rather than overwrite the earlier limitation."
+        ],
+        [
+          "Technician",
+          "Exactly. The completed record should show the actual sequence, with any remaining questions visible to future reviewers."
+        ],
+        [
+          "Facilities manager",
+          "I'll brief the incoming maintenance team on those two items and avoid presenting receipt of files as universal completion."
+        ]
+      ],
+      "notes": [
+        "'Without discarding the completed activities' corrects an overstatement without erasing valid work.",
+        "'What was assessed at each stage' preserves the chronological limits of verification."
+      ]
+    }
+  ]
+}

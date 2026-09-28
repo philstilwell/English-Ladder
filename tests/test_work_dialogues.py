@@ -15,8 +15,8 @@ def normalized(text):
 
 class DialoguePublicationTests(unittest.TestCase):
     def test_full_inventory_and_substantial_conversations(self):
-        self.assertEqual(validate_dialogues(load_dialogues())['courses'], 41)
-        self.assertGreaterEqual(validate_dialogues(load_dialogues())['dialogues'], 368)
+        self.assertEqual(validate_dialogues(load_dialogues())['courses'], 66)
+        self.assertGreaterEqual(validate_dialogues(load_dialogues())['dialogues'], 568)
 
     def test_all_spoken_turns_and_current_metadata_reach_the_pdf(self):
         groups=load_dialogues()

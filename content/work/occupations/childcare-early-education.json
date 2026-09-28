@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "childcare-early-education",
+    "title": "Childcare and Early Education English",
+    "summary": "Build trusting family exchanges, support play and daily transitions, describe children's learning accurately, and coordinate inclusive care, health-record questions, and secure handovers.",
+    "roles": "Childcare workers, early educators, classroom assistants, and preschool support staff",
+    "category": "Education & public service",
+    "scope_note": "All children, families, observations, times, and center arrangements are fictional English practice. This is not medical, developmental-diagnostic, safeguarding, legal, nutrition, staffing-ratio, or emergency-response training. Real care plans, supervision, collection authority, reporting duties, and health or protection concerns require current local rules and the center's qualified leadership. Do not infer universal age expectations, clinical advice, or permission to release a child from these exercises. Role titles vary: key educator may be called key person or primary caregiver; designated safeguarding lead means this fictional center's named child-protection contact, not a universal U.S. role. Reasonable adjustment and reasonable accommodation are regional terms with jurisdiction-specific meanings and responsibilities.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Childcare Workers",
+        "url": "https://www.bls.gov/ooh/personal-care-and-service/childcare-workers.htm"
+      },
+      {
+        "title": "National Association for the Education of Young Children: Principles of Child Development and Learning",
+        "url": "https://www.naeyc.org/resources/position-statements/dap/principles"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Arrivals and family partnerships",
+        "collocations": [
+          "greet the child by name: address the child directly at arrival",
+          "share a morning update: pass relevant information from home to the educator",
+          "agree a goodbye routine: establish a predictable parting arrangement with the family",
+          "check the settling-in plan: review the current agreed arrival support"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "It is Mina's third morning. Her parent expected to stay for ten minutes, but the arrival note says a brief goodbye. Key educator Rosa is present and can clarify the settling-in plan with the parent. Mina has a familiar cloth; its use follows the center's arrangements.",
+          "model": "You expected ten minutes together, while our arrival note says a brief goodbye. Let's check that difference with Rosa, Mina's key educator, before describing today's plan. Mina, you brought your cloth. Let's talk to Rosa together before you say goodbye."
+        },
+        "workshop": {
+          "title": "Clarify arrival expectations with the family",
+          "goal": "Resolve a settling-in mismatch while including the child in the conversation.",
+          "explanation": "Acknowledge the parent's expectation and address the child warmly. Agree what happens today without making a guarantee about tears or separation. Do not treat one difficult arrival as evidence about the family. Some settings call the key educator a key person or primary caregiver; check the center's own role names.",
+          "frames": [
+            "You expected ___; our note says ___.",
+            "Let's check today's settling-in plan with ___.",
+            "What helped ___ feel familiar yesterday?"
+          ],
+          "before": "You need to leave; the note says so.",
+          "after": "The note and your expectation differ. Let's ask Rosa to clarify today's goodbye plan.",
+          "reason": "The revision creates a shared understanding rather than blaming the parent.",
+          "role_b": "Parent: you understood that you could stay ten minutes; Mina is new to the room.",
+          "challenge": "Ask for a promise that Mina will not cry after goodbye.",
+          "questions": [
+            {
+              "prompt": "Parent: Who is our main contact for Mina's settling-in plan?\nEducator: Rosa is her ____ here.",
+              "options": [
+                "key educator",
+                "visiting specialist",
+                "emergency contact",
+                "relief educator"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Rosa is the designated continuing family contact here.",
+                "A visiting specialist is not Rosa's stated ongoing role.",
+                "An emergency contact is listed for urgent contact, not this educator role.",
+                "A relief educator provides cover rather than the named continuity role."
+              ]
+            },
+            {
+              "prompt": "Parent: Will she definitely stop crying immediately?\nEducator: I can explain our support, but I can't ____ exactly how she will feel.",
+              "options": [
+                "describe",
+                "guarantee",
+                "notice",
+                "ask about"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Describe reports something; the question asks about certainty.",
+                "Correct. Guarantee would promise an outcome we cannot establish.",
+                "Notice means observe, not promise an outcome.",
+                "Ask about seeks information rather than predicting feelings."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "key educator",
+          "settling-in period",
+          "family handover",
+          "comfort item"
+        ]
+      },
+      {
+        "title": "Play-based learning and useful prompts",
+        "collocations": [
+          "follow the child's interest: build a conversation from what the child is exploring",
+          "offer a small prompt: give limited support without taking over",
+          "extend the play: invite a new idea that builds on the child's activity",
+          "leave room for an answer: allow time for the child to respond in their own way"
+        ],
+        "case": {
+          "function": "facilitate",
+          "brief": "In fictional block play, Eva and Jo each want their bridge design used. Eva wants a wide bridge; Jo wants a taller opening. The educator can invite both explanations and suggest trying two designs using available blocks. No winner has been chosen.",
+          "model": "Eva, you want a wider bridge; Jo, you want a taller opening. Let's hear what each design would help you do. We have enough blocks to try both ideas, so we don't need to choose a winner first. Tell each other what you want to test, and then decide which design to build first together."
+        },
+        "workshop": {
+          "title": "Invite thinking without taking over the play",
+          "goal": "Use prompts that help children explain and compare their own ideas.",
+          "explanation": "An open-ended question invites more than a guessed adult answer. Scaffolding offers enough help to continue while leaving meaningful choices with children. Adult language can be clear without directing every action.",
+          "frames": [
+            "What would you like your ___ to do?",
+            "How could you test ___?",
+            "You suggested ___; what does your partner think?"
+          ],
+          "before": "Build my bridge; this is the right design.",
+          "after": "You have two designs. What would each let you try, and which will you test first?",
+          "reason": "The new question retains the children's ideas and gives discussion a practical purpose.",
+          "role_b": "Child: choose Eva's wide design or Jo's tall design and explain one purpose.",
+          "challenge": "Ask the educator to name the best design before either has been tried.",
+          "questions": [
+            {
+              "prompt": "Colleague: Which prompt invites several possible ideas?\nEducator: ____",
+              "options": [
+                "Is the tower tall?",
+                "Is that a bridge?",
+                "What might make the bridge steadier?",
+                "Did you use two blocks?"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "This invites a yes-or-no response about height.",
+                "This checks a label with a likely short answer.",
+                "Correct. It invites suggestions rather than one fixed answer.",
+                "This checks a specific count rather than exploring ideas."
+              ]
+            },
+            {
+              "prompt": "Colleague: You gave a temporary hint so the child could continue independently; you didn't score or demonstrate the whole task.\nEducator: That support was ____.",
+              "options": [
+                "scaffolding",
+                "a scored assessment",
+                "a complete demonstration",
+                "a retrospective observation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A temporary hint supports the child's own continuing effort.",
+                "A scored assessment evaluates performance, which the prompt explicitly excludes.",
+                "A complete demonstration shows the whole task, not just a hint.",
+                "A retrospective observation describes earlier events rather than providing support now."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "child-initiated play",
+          "guided play",
+          "scaffolding",
+          "open-ended question"
+        ]
+      },
+      {
+        "title": "Daily routines and supported transitions",
+        "collocations": [
+          "give a transition cue: signal that the next activity is approaching",
+          "check the visual schedule: refer to the pictures showing the day's sequence",
+          "offer a bounded choice: provide a small set of real options within the routine",
+          "allow time to finish: give the agreed opportunity to bring an activity to a stopping point"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "Luca is building when the room moves to story time in five minutes. The center's current arrangement allows his structure to remain on the marked shelf. He can choose to place the last block or ask the educator to photograph the work using the center's permitted practice. The educator cannot extend play indefinitely.",
+          "model": "Luca, story time begins in five minutes. You can place your last block, or we can make a record of your building using our classroom photo arrangement. The structure can stay on the marked shelf. Which would help you finish for now? We will still join the story when the transition cue sounds."
+        },
+        "workshop": {
+          "title": "Offer a real choice inside a clear routine",
+          "goal": "Negotiate a stopping point without offering a false choice about the entire schedule.",
+          "explanation": "A bounded choice gives meaningful options while keeping the known routine explicit. Use before and after carefully. Do not threaten, shame, or promise unlimited extra time.",
+          "frames": [
+            "___ begins in ___; you can choose ___ or ___.",
+            "First ___, then ___.",
+            "Your ___ can stay ___ while we ___."
+          ],
+          "before": "Do you want story time? You have to go anyway.",
+          "after": "Story time starts in five minutes. Would you like to place one last block or record your building first?",
+          "reason": "The choice concerns the transition, not whether a fixed routine exists.",
+          "role_b": "Luca: you want to preserve your unfinished building.",
+          "challenge": "Ask for ten more minutes when only five are available.",
+          "questions": [
+            {
+              "prompt": "Child: Is the picture of snack before or after our outdoor time?\nEducator: Outdoor time comes first; snack is ____.",
+              "options": [
+                "beforehand",
+                "afterward",
+                "yesterday",
+                "already"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Beforehand would place snack before outdoor time.",
+                "Correct. Afterward places snack after the earlier event.",
+                "Yesterday refers to the previous day.",
+                "Already describes something completed earlier than expected."
+              ]
+            },
+            {
+              "prompt": "Educator: Story time starts in five minutes. Would you prefer to ____ before we join the group?\nChild: One last block, please.",
+              "options": [
+                "place your last block or ask for a photo",
+                "placing your last block or ask for a photo",
+                "place your last block or asking for a photo",
+                "placed your last block or asked for a photo"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Place and ask are parallel base-form verbs after to.",
+                "After prefer to, use place rather than placing.",
+                "The second choice needs ask, parallel with place.",
+                "Past-tense placed and asked do not follow prefer to here."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "transition",
+          "visual schedule",
+          "transition cue",
+          "self-help skill"
+        ]
+      },
+      {
+        "title": "Co-regulation and peer disagreements",
+        "collocations": [
+          "name the feeling tentatively: offer a possible feeling word without claiming to know the child's mind",
+          "describe the observed action: say what happened without labeling the child's character",
+          "support turn-taking: help children agree and understand whose turn comes next",
+          "invite a repair attempt: support a practical response to the effect on another child"
+        ],
+        "case": {
+          "function": "facilitate",
+          "brief": "Two children reach for the same large scoop. The educator saw Ari holding it, then Bea reaching; motive is unknown. A smaller scoop is available. Ari wants to finish one container. Bea wants the large scoop next. No injury or ongoing danger is stated.",
+          "model": "Ari, you were holding the large scoop; Bea, you reached for it and want a turn. Let's hear what each of you needs. Ari wants to finish one container, and Bea wants the next turn. The smaller scoop is available meanwhile. Can we agree on that order and check that both of you understand it?"
+        },
+        "workshop": {
+          "title": "Describe the disagreement without choosing a villain",
+          "goal": "Help children express needs and agree a concrete next step.",
+          "explanation": "Use observed actions, not claims about motives or character. Co-regulation includes calm language and time to respond. A repair attempt should address the effect; a forced apology alone may not clarify the problem.",
+          "frames": [
+            "I saw ___; I don't yet know ___.",
+            "You wanted ___, and your friend wanted ___.",
+            "What could help us put ___ right?"
+          ],
+          "before": "You're always selfish with the toys.",
+          "after": "You both want the large scoop. Let's agree whose turn it is and what happens next.",
+          "reason": "The revision focuses on the current disagreement and a workable next action.",
+          "role_b": "Bea: ask for the large scoop next and say you can use the small scoop meanwhile.",
+          "challenge": "A child insists that wanting the same toy proves the other child was being mean.",
+          "questions": [
+            {
+              "prompt": "Colleague: Which statement describes an observed action rather than a motive?\nEducator: ____",
+              "options": [
+                "Ari wanted to annoy Bea.",
+                "Ari dislikes sharing.",
+                "Ari held the scoop when Bea reached for it.",
+                "Ari planned to upset the group."
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Wanting to annoy attributes an unverified intention.",
+                "This generalizes a character trait from one event.",
+                "Correct. This names the actions actually observed.",
+                "Planning to upset others invents a motive."
+              ]
+            },
+            {
+              "prompt": "Child: I want the scoop after Ari finishes.\nEducator: You are asking for the ____ turn.",
+              "options": [
+                "previous",
+                "next",
+                "simultaneous",
+                "cancelled"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Previous refers to a turn before the current one.",
+                "Correct. Next identifies the following turn.",
+                "Simultaneous means happening at the same time.",
+                "Cancelled means a turn will not take place."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "co-regulation",
+          "turn-taking",
+          "peer conflict",
+          "repair attempt"
+        ]
+      },
+      {
+        "title": "Observation and family progress conversations",
+        "collocations": [
+          "anchor an observation in context: state when and where an action occurred",
+          "quote the child's words: preserve a short accurate example of what the child said",
+          "compare observations over time: look at dated evidence rather than a single impression",
+          "raise a developmental question: invite the appropriate review without diagnosing a child"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "Today educator Rosa saw Eli sort four buttons by color during a supervised activity and heard 'these go together.' A parent asks whether this proves Eli is ahead of every child his age. No comparison data or developmental screening is supplied.",
+          "model": "Today Eli grouped four buttons by color and said, 'These go together.' That is a useful observation of this activity, but it does not establish how he compares with every child his age. We can include the context in his learning portfolio and discuss observations over time rather than turn one moment into a developmental ranking."
+        },
+        "workshop": {
+          "title": "Share the achievement without inflating the conclusion",
+          "goal": "Describe an observed learning moment and keep wider claims proportionate.",
+          "explanation": "Give the action, words, and context. Milestones and screening are not interchangeable with a single classroom observation. Do not diagnose, rank, or make universal age claims.",
+          "frames": [
+            "During ___, I saw/heard ___.",
+            "This shows ___ in that activity; it doesn't establish ___.",
+            "We can compare this with observations from ___."
+          ],
+          "before": "This proves Eli is ahead of everyone.",
+          "after": "Eli sorted four buttons by color today; that observation doesn't establish a developmental ranking.",
+          "reason": "The revised statement celebrates a concrete action without an unsupported comparison.",
+          "role_b": "Parent: ask whether today's sorting proves a broad developmental advantage.",
+          "challenge": "Ask the educator to give a diagnostic label based only on the observation.",
+          "questions": [
+            {
+              "prompt": "Colleague: Did you score a screening tool or set a future target?\nEducator: Neither. I recorded Eli's exact words during the activity in an ____.",
+              "options": [
+                "observation note",
+                "assessment score",
+                "individual target",
+                "interpreted screening outcome"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The note records the child's words in the observed context.",
+                "An assessment score expresses a rating, not this factual quotation.",
+                "An individual target sets a future aim rather than recording speech.",
+                "A screening outcome comes from a screening process, which did not occur."
+              ]
+            },
+            {
+              "prompt": "Parent: Does this single activity establish his overall development?\nEducator: It gives evidence ____ this activity, not a complete developmental assessment.",
+              "options": [
+                "instead of",
+                "within",
+                "regardless of",
+                "prior to"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Instead of would replace rather than define the activity's scope.",
+                "Correct. Within limits the evidence to its observed context.",
+                "Regardless of would remove the important context.",
+                "Prior to would place the evidence before the activity."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "observation note",
+          "learning portfolio",
+          "developmental milestone",
+          "developmental screening"
+        ]
+      },
+      {
+        "title": "Inclusive participation and home languages",
+        "collocations": [
+          "invite home-language knowledge: welcome words or information the family chooses to share",
+          "check the agreed adjustment: confirm the current participation support rather than inventing one",
+          "adapt the participation format: offer an agreed way to join the activity",
+          "ask about communication preferences: establish how the family wants information shared"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "A small-group story can use picture choices or spoken answers. Child Noor's current inclusion plan allows either. Noor prefers pointing today. A colleague treats pointing as nonparticipation. The educator can explain what both formats allow without claiming identical language evidence.",
+          "model": "Noor's inclusion plan allows picture choices or spoken answers. Both let Noor indicate a story choice, but they do not provide the same evidence of spoken English. Today Noor prefers pointing. We can recognize that participation and keep the distinction clear, instead of treating a different response format as no response at all."
+        },
+        "workshop": {
+          "title": "Recognize participation without overstating what it shows",
+          "goal": "Compare response formats fairly and respect agreed access support.",
+          "explanation": "Different response formats can support the same activity while showing different skills. Home language is an asset. Reasonable adjustment is regional wording; U.S. settings often say reasonable accommodation. Meanings and duties vary by location. Discuss this center's agreed inclusion plan, not a universal legal entitlement.",
+          "frames": [
+            "Both formats let the child ___; only ___ shows ___.",
+            "The agreed plan allows ___, and today's preference is ___.",
+            "What communication arrangement works for your family?"
+          ],
+          "before": "Pointing doesn't count as joining in.",
+          "after": "Pointing shows Noor's story choice; it doesn't show the same spoken-language evidence as an oral answer.",
+          "reason": "The comparison recognizes participation while preserving the evidence difference.",
+          "role_b": "Colleague: initially equate spoken answers with all meaningful participation.",
+          "challenge": "Ask whether the same inclusion plan should automatically apply to every child.",
+          "questions": [
+            {
+              "prompt": "Colleague: Noor pointed to a picture instead of speaking.\nEducator: That shows a story choice, ____ it doesn't show a spoken answer.",
+              "options": [
+                "because",
+                "although",
+                "therefore",
+                "unless"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Because would present the lack of speech as the cause.",
+                "Correct. Although preserves the contrast between participation and spoken evidence.",
+                "Therefore suggests a necessary consequence not intended here.",
+                "Unless would make the observation conditional."
+              ]
+            },
+            {
+              "prompt": "Parent: We'd like to use our familiar greeting alongside English.\nEducator: Please show me the ____ your family uses, so I don't guess the wording.",
+              "options": [
+                "home-language greeting",
+                "literal English translation",
+                "standard classroom greeting",
+                "English replacement phrase"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This asks for the family's actual familiar greeting.",
+                "A literal English translation would not preserve the requested original wording.",
+                "The classroom's standard greeting may differ from the family's familiar greeting.",
+                "An English replacement would substitute for rather than accompany the home-language greeting."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "home language",
+          "reasonable adjustment",
+          "inclusion plan",
+          "communication preference"
+        ]
+      },
+      {
+        "title": "Health records and factual incident handovers",
+        "collocations": [
+          "check the current care plan: identify the plan presently applicable to the child",
+          "report an observed change: describe what staff noticed without assigning a diagnosis",
+          "separate witnessed from reported: distinguish direct observation from another person's account",
+          "confirm the family notification: establish whether the relevant family contact actually occurred"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "A parent tells educator Rosa that child Theo's allergy plan may have changed. The center still has the earlier plan; no revised document is supplied. No food decision, exposure, symptoms, or emergency is part of this case. Health coordinator Amira is present and accepts the document query.",
+          "model": "Amira, Theo's parent reports a possible change to the allergy care plan, but we still have the earlier document and no revised plan. Could you clarify that with the family and the relevant qualified professional? I have not described the reported change as confirmed or made a food decision. Please confirm that you are taking this plan query."
+        },
+        "workshop": {
+          "title": "Transfer the plan discrepancy without inventing care instructions",
+          "goal": "Report the source and status of health information clearly.",
+          "explanation": "A family's report is important, but a possible change is not a verified care instruction. Actual health concerns require the center's real response arrangements. This lesson gives no food substitution, medication, first-aid, or emergency directions.",
+          "frames": [
+            "The family reports ___; the current document says ___.",
+            "I witnessed ___; ___ was reported by ___.",
+            "___ has accepted the plan/documentation query."
+          ],
+          "before": "The parent mentioned a change, so the plan is definitely different now.",
+          "after": "The parent reports a possible change; Amira is checking it against the current plan.",
+          "reason": "The revised statement preserves the source and the unresolved confirmation.",
+          "role_b": "Amira: accept the plan query and ask what documentation is available.",
+          "challenge": "A colleague wants to infer a food decision from the parent's incomplete message.",
+          "questions": [
+            {
+              "prompt": "Coordinator: Did you see the event yourself?\nEducator: No. This is the parent's ____, not my direct observation.",
+              "options": [
+                "measurement",
+                "account",
+                "diagnosis",
+                "authorization"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A measurement requires a measured quantity, not this narrative.",
+                "Correct. Account identifies the parent's description of events.",
+                "A diagnosis is a clinical conclusion not supplied here.",
+                "Authorization grants permission rather than describes an event."
+              ]
+            },
+            {
+              "prompt": "Parent: Have you received the revised allergy care plan?\nEducator: Not yet. The reported change remains ____.",
+              "options": [
+                "confirmed",
+                "implemented",
+                "unverified",
+                "withdrawn"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Confirmed would falsely establish that the change was checked.",
+                "Implemented would imply the change was put into practice.",
+                "Correct. Unverified preserves the missing confirmation.",
+                "Withdrawn would mean the proposed change was cancelled."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "allergy care plan",
+          "incident record",
+          "witness account",
+          "health coordinator"
+        ]
+      },
+      {
+        "title": "Collection, confidentiality, and safeguarding communication",
+        "collocations": [
+          "verify collection arrangements: check that the adult may collect the particular child",
+          "complete a collection handover: exchange the relevant information as care responsibility changes",
+          "raise a safeguarding concern: bring relevant welfare information to the required responsible route",
+          "limit disclosure to the relevant people: protect information while meeting applicable reporting responsibilities"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "An unfamiliar adult says they are Nia's uncle and came instead of the usual collector. Today's collection authority is not verified. Lead educator Rosa is available to check the arrangement. The child has not been released. No legal document or family relationship is established by the adult's statement.",
+          "model": "I understand you have come to collect Nia, but today's collection arrangement has not been verified. Rosa can check it with you through the center's collection process. We cannot treat knowing Nia or stating a family relationship as the completed check. Nia will remain with the staff while that question is resolved."
+        },
+        "workshop": {
+          "title": "Hold the collection boundary calmly",
+          "goal": "Explain an unverified collection arrangement without accusing the adult or inventing legal rules.",
+          "explanation": "Familiarity is not verified collection authority. In this fictional center, designated safeguarding lead names its child-protection contact; it is not a universal U.S. title. Follow actual local protection and reporting duties. Never promise absolute secrecy, investigate independently, or assume handing a concern to a lead replaces an individual's reporting responsibilities.",
+          "frames": [
+            "Today's collection authority is not yet ___.",
+            "___ can check the arrangement while ___ remains ___.",
+            "I can listen, but I cannot promise to keep a protection concern from ___."
+          ],
+          "before": "You know the child, so the collection is fine.",
+          "after": "Knowing Nia doesn't complete today's collection check. Rosa will clarify the arrangement before release.",
+          "reason": "The revision makes the missing verification explicit.",
+          "role_b": "Visitor: you say you are Nia's uncle but the center has not verified today's collection arrangement.",
+          "challenge": "Point out that Nia recognizes you and ask whether that completes the check.",
+          "questions": [
+            {
+              "prompt": "Visitor: Nia knows me, so am I already verified to collect?\nEducator: Familiarity does not establish collection ____.",
+              "options": [
+                "timing",
+                "authority",
+                "preference",
+                "attendance"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Timing concerns when collection happens, not permission.",
+                "Correct. Authority concerns permission for this collection.",
+                "Preference describes a choice, not verified permission.",
+                "Attendance records presence rather than collection permission."
+              ]
+            },
+            {
+              "prompt": "Colleague: The adult arrived, but Nia is still with staff.\nEducator: Arrival is recorded; departure is not yet ____.",
+              "options": [
+                "estimated",
+                "requested",
+                "confirmed",
+                "discussed"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Estimated would mean a predicted departure time.",
+                "Requested describes a request rather than actual departure.",
+                "Correct. The child has not departed with the adult.",
+                "Discussed describes conversation, not whether departure occurred."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "authorized collector",
+          "attendance register",
+          "safeguarding concern",
+          "designated safeguarding lead"
+        ]
+      }
+    ],
+    "jargon": [
+      {
+        "term": "key educator",
+        "definition": "The staff member designated to support a child's continuity of care and family communication; called a key person or primary caregiver in some settings.",
+        "group": "Arrivals and family partnerships"
+      },
+      {
+        "term": "settling-in period",
+        "definition": "The time during which a child and family become familiar with a new early-education setting.",
+        "group": "Arrivals and family partnerships"
+      },
+      {
+        "term": "family handover",
+        "definition": "An exchange of relevant information between a family member and staff when care responsibility changes.",
+        "group": "Arrivals and family partnerships"
+      },
+      {
+        "term": "comfort item",
+        "definition": "A familiar object that a child finds reassuring, used according to the setting's arrangements.",
+        "group": "Arrivals and family partnerships"
+      },
+      {
+        "term": "child-initiated play",
+        "definition": "Play whose idea or direction begins with the child rather than being assigned by an adult.",
+        "group": "Play-based learning and useful prompts"
+      },
+      {
+        "term": "guided play",
+        "definition": "Play that retains children's active choices while an educator offers prompts or support toward a learning purpose.",
+        "group": "Play-based learning and useful prompts"
+      },
+      {
+        "term": "scaffolding",
+        "definition": "Temporary support that helps a child do or understand something without taking over the task.",
+        "group": "Play-based learning and useful prompts"
+      },
+      {
+        "term": "open-ended question",
+        "definition": "A question inviting explanation, exploration, or several possible answers rather than one fixed response.",
+        "group": "Play-based learning and useful prompts"
+      },
+      {
+        "term": "transition",
+        "definition": "The change from one activity, place, or part of the day to another.",
+        "group": "Daily routines and supported transitions"
+      },
+      {
+        "term": "visual schedule",
+        "definition": "A sequence of pictures or symbols showing planned parts of the day.",
+        "group": "Daily routines and supported transitions"
+      },
+      {
+        "term": "transition cue",
+        "definition": "A consistent signal that an activity change is approaching or beginning.",
+        "group": "Daily routines and supported transitions"
+      },
+      {
+        "term": "self-help skill",
+        "definition": "An everyday action a child is learning to manage with increasing independence and suitable support.",
+        "group": "Daily routines and supported transitions"
+      },
+      {
+        "term": "co-regulation",
+        "definition": "Supportive adult interaction that helps a child manage feelings and behavior while developing self-regulation.",
+        "group": "Co-regulation and peer disagreements"
+      },
+      {
+        "term": "turn-taking",
+        "definition": "Sharing participation or access through successive turns.",
+        "group": "Co-regulation and peer disagreements"
+      },
+      {
+        "term": "peer conflict",
+        "definition": "A disagreement between children that needs understanding and appropriate support.",
+        "group": "Co-regulation and peer disagreements"
+      },
+      {
+        "term": "repair attempt",
+        "definition": "An action or message intended to address the effect of a disagreement or mistake.",
+        "group": "Co-regulation and peer disagreements"
+      },
+      {
+        "term": "observation note",
+        "definition": "A factual record of what an educator saw or heard in a stated context.",
+        "group": "Observation and family progress conversations"
+      },
+      {
+        "term": "learning portfolio",
+        "definition": "A collection of selected observations and work showing a child's experiences and learning over time.",
+        "group": "Observation and family progress conversations"
+      },
+      {
+        "term": "developmental milestone",
+        "definition": "A commonly described skill or behavior associated with development, not a diagnosis or universal timetable for an individual child.",
+        "group": "Observation and family progress conversations"
+      },
+      {
+        "term": "developmental screening",
+        "definition": "A structured process used by appropriately qualified people to identify whether closer developmental review may be needed.",
+        "group": "Observation and family progress conversations"
+      },
+      {
+        "term": "home language",
+        "definition": "A language used in a child's family or home life, which may be one of several.",
+        "group": "Inclusive participation and home languages"
+      },
+      {
+        "term": "reasonable adjustment",
+        "definition": "A regional term for a change supporting access or participation; U.S. settings often use reasonable accommodation, with meaning and obligations depending on applicable local requirements.",
+        "group": "Inclusive participation and home languages"
+      },
+      {
+        "term": "inclusion plan",
+        "definition": "The setting's agreed support arrangements for a child's participation, developed with relevant people.",
+        "group": "Inclusive participation and home languages"
+      },
+      {
+        "term": "communication preference",
+        "definition": "A family's or child's preferred way of sharing and receiving information.",
+        "group": "Inclusive participation and home languages"
+      },
+      {
+        "term": "allergy care plan",
+        "definition": "The child's documented, individually agreed arrangements for managing a known allergy within the setting.",
+        "group": "Health records and factual incident handovers"
+      },
+      {
+        "term": "incident record",
+        "definition": "The setting's factual documentation of an event, responses, contacts, and follow-up.",
+        "group": "Health records and factual incident handovers"
+      },
+      {
+        "term": "witness account",
+        "definition": "A description from a person who directly saw or heard an event.",
+        "group": "Health records and factual incident handovers"
+      },
+      {
+        "term": "health coordinator",
+        "definition": "The person designated by the setting to coordinate relevant health information and questions within their role.",
+        "group": "Health records and factual incident handovers"
+      },
+      {
+        "term": "authorized collector",
+        "definition": "A person whose permission to collect a particular child has been established under the setting's requirements.",
+        "group": "Collection, confidentiality, and safeguarding communication"
+      },
+      {
+        "term": "attendance register",
+        "definition": "The setting's record of children's presence and relevant arrival or departure information.",
+        "group": "Collection, confidentiality, and safeguarding communication"
+      },
+      {
+        "term": "safeguarding concern",
+        "definition": "Information suggesting a child's welfare or protection may need attention through the required pathway.",
+        "group": "Collection, confidentiality, and safeguarding communication"
+      },
+      {
+        "term": "designated safeguarding lead",
+        "definition": "A title used in some settings for the named child-protection contact coordinating concerns under local requirements; not a universal U.S. job title or a replacement for individuals' reporting duties.",
+        "group": "Collection, confidentiality, and safeguarding communication"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Mina's third morning",
+          "setting": "Fictional arrival conversation using the lesson case.",
+          "turns": [
+            [
+              "Parent",
+              "I expected ten minutes together during this settling-in period. Why does the note say brief goodbye?"
+            ],
+            [
+              "Educator",
+              "I can see the difference. Rosa, Mina's key educator, is here to clarify today's settling-in plan."
+            ],
+            [
+              "Parent",
+              "Mina brought her familiar cloth. Yesterday she wanted it while looking around the room."
+            ],
+            [
+              "Educator",
+              "Thanks. I'll include that comfort item in the family handover, without assuming Mina wants it all morning."
+            ],
+            [
+              "Parent",
+              "Could you promise me she won't cry once I leave? That is what worries me."
+            ],
+            [
+              "Educator",
+              "I can't promise her feelings, but Rosa can explain how we'll support her and communicate with you."
+            ],
+            [
+              "Parent",
+              "Please ask Rosa before I say goodbye, so Mina doesn't hear two different plans."
+            ],
+            [
+              "Educator",
+              "Yes. Mina, your parent and I are checking today's plan with Rosa together."
+            ],
+            [
+              "Parent",
+              "I'd like consistent goodbye words, even if today's arrangement needs clarification."
+            ],
+            [
+              "Educator",
+              "Let's agree those words with Rosa now, then we can all give Mina one clear message."
+            ]
+          ]
+        },
+        {
+          "title": "The morning update is from home",
+          "setting": "Fictional arrival handover; parent reports a disrupted night without requesting medical advice.",
+          "turns": [
+            [
+              "Parent",
+              "Owen woke earlier than usual and seems quieter to me this morning. I wanted you to know."
+            ],
+            [
+              "Educator",
+              "I'll identify that as your home observation, not a conclusion about the day."
+            ],
+            [
+              "Parent",
+              "Please don't assume he is upset with the classroom. He hasn't told me that."
+            ],
+            [
+              "Educator",
+              "I won't assign a reason. Is there anything else you want his key educator to hear?"
+            ],
+            [
+              "Parent",
+              "He asked for the book corner when we arrived. That's his familiar place here."
+            ],
+            [
+              "Educator",
+              "I'll tell her about that request and the earlier waking, keeping the two facts separate."
+            ],
+            [
+              "Parent",
+              "Could you share actual observations later, rather than just saying he was fine?"
+            ],
+            [
+              "Educator",
+              "Yes. We can share concrete observations in the family handover, within our usual contact arrangements."
+            ],
+            [
+              "Parent",
+              "Concrete observations would help me understand the morning without guessing from his quiet arrival."
+            ],
+            [
+              "Educator",
+              "I'll give his key educator the update now and mention his request for the book corner."
+            ]
+          ]
+        },
+        {
+          "title": "A name pronounced correctly",
+          "setting": "Fictional first-week family conversation; educator checks the child's name.",
+          "turns": [
+            [
+              "Educator",
+              "I want to say Leila's name correctly. Could you model how your family pronounces it?"
+            ],
+            [
+              "Parent",
+              "Of course. The first sound is longer than the way you said it yesterday."
+            ],
+            [
+              "Educator",
+              "Thank you. Let me try it again, and please correct me if I miss it."
+            ],
+            [
+              "Parent",
+              "That's closer. Leila notices when people rush the name, though she may not correct adults herself."
+            ],
+            [
+              "Educator",
+              "I'll take time with it and ask colleagues to listen to your pronunciation too."
+            ],
+            [
+              "Parent",
+              "Could you also use the same name, rather than shortening it without asking her?"
+            ],
+            [
+              "Educator",
+              "Yes. We can use Leila and check her preference instead of choosing a nickname."
+            ],
+            [
+              "Parent",
+              "She has been quiet at arrival, but she told me she likes hearing her name properly."
+            ],
+            [
+              "Educator",
+              "That's useful to know. I'll greet her directly and give her time to answer."
+            ],
+            [
+              "Parent",
+              "Thank you. I'll help her hear the same pronunciation when we introduce ourselves to other staff."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A different adult at drop-off",
+        "brief": "Amir arrives with his grandparent instead of his parent. The grandparent can share the morning update but does not know the agreed settling-in plan. Key educator Rosa is present and has the plan.",
+        "role_a": "Educator: welcome Amir and clarify the plan with Rosa.",
+        "role_b": "Grandparent: you were asked to bring Amir but cannot confirm a change to the goodbye routine.",
+        "opening_line": "I usually don't do drop-off. Should I stay, or say goodbye now?",
+        "complication": "A nearby family offers its own goodbye arrangement as the rule for everyone.",
+        "success_checks": [
+          "Use Amir's own agreed plan, not another family's arrangement.",
+          "Include the grandparent's useful morning information.",
+          "Check uncertainty with Rosa without criticizing anyone."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Two bridges worth trying",
+          "setting": "Fictional educator and child spokesperson discuss the lesson's two-design case.",
+          "turns": [
+            [
+              "Educator",
+              "Eva wants a wide bridge, and you want a taller opening. What would yours let you do?"
+            ],
+            [
+              "Child",
+              "I want the big wooden truck to go underneath, not just the little one."
+            ],
+            [
+              "Educator",
+              "That explains the height. What did Eva say she wanted the wider top to hold?"
+            ],
+            [
+              "Child",
+              "She wants two trucks side by side. We thought only one design could be right."
+            ],
+            [
+              "Educator",
+              "We have enough blocks to try both. How could you decide which to build first?"
+            ],
+            [
+              "Child",
+              "We could start with the tall one, then use the other blocks for the wide one."
+            ],
+            [
+              "Educator",
+              "That gives each idea a turn. What will you test on yours?"
+            ],
+            [
+              "Child",
+              "Whether the big truck fits underneath without moving the bridge when I push it through."
+            ],
+            [
+              "Educator",
+              "Tell Eva that plan and ask what she wants to test on her wider bridge."
+            ],
+            [
+              "Child",
+              "I'll ask her about the two trucks. Then we can compare what each bridge does."
+            ]
+          ]
+        },
+        {
+          "title": "A shop in the play corner",
+          "setting": "Fictional guided-play exchange; child designs a pretend shop.",
+          "turns": [
+            [
+              "Educator",
+              "You arranged the baskets like a shop. What would you like your customers to find?"
+            ],
+            [
+              "Child",
+              "I have pretend fruit in this basket and empty boxes in the other one."
+            ],
+            [
+              "Educator",
+              "How will someone know where to bring the things they want to buy?"
+            ],
+            [
+              "Child",
+              "I haven't made that part yet. They could put everything on this small table."
+            ],
+            [
+              "Educator",
+              "What could you use to show that the table is the place to pay?"
+            ],
+            [
+              "Child",
+              "Maybe a picture of a coin. I can draw one on the little sign."
+            ],
+            [
+              "Educator",
+              "That is your idea for the sign. What might you say when a customer arrives?"
+            ],
+            [
+              "Child",
+              "I could say welcome to my shop, then ask which basket they want to look in."
+            ],
+            [
+              "Educator",
+              "Would you like me to be a customer while you try your greeting?"
+            ],
+            [
+              "Child",
+              "Yes. Please ask for an empty box first, because I want to practice showing that basket."
+            ]
+          ]
+        },
+        {
+          "title": "When a prompt became an instruction",
+          "setting": "Fictional colleague discussion about scaffolding in child-initiated play.",
+          "turns": [
+            [
+              "Educator",
+              "I noticed you suggested adding a roof, and the child put down the bridge they were making."
+            ],
+            [
+              "Colleague",
+              "I intended to help, but I may have changed the child's project instead."
+            ],
+            [
+              "Educator",
+              "What was the child trying to do before you offered that new direction?"
+            ],
+            [
+              "Colleague",
+              "They wanted to connect two sides. The roof was my idea, not theirs."
+            ],
+            [
+              "Educator",
+              "Could we return to their interest with an open-ended question about joining the sides?"
+            ],
+            [
+              "Colleague",
+              "Yes. I could ask what they want to connect, then wait for their explanation."
+            ],
+            [
+              "Educator",
+              "That would offer scaffolding without deciding the whole structure. They may have a different solution."
+            ],
+            [
+              "Colleague",
+              "I also asked three questions quickly. They didn't get time to answer the first one."
+            ],
+            [
+              "Educator",
+              "Let's offer one prompt in this child-initiated play and wait to see whether more support is wanted."
+            ],
+            [
+              "Colleague",
+              "I'll return to the bridge idea and ask what help they want with the connection."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A pretend menu with several languages",
+        "brief": "Two children make a pretend cafe. One wants picture labels; another wants words used at home. Both can choose materials from the same table. The educator can invite both ideas without correcting their home language.",
+        "role_a": "Educator: ask what each label should help customers understand.",
+        "role_b": "Child: you want pictures but are curious about your friend's home-language words.",
+        "opening_line": "Can our menu have pictures and my friend's words, or do we have to choose?",
+        "complication": "Another child says only printed English counts as a real menu.",
+        "success_checks": [
+          "Invite the purpose of each child's choice.",
+          "Allow multiple ways to represent meaning.",
+          "Offer a prompt without replacing the children's menu with an adult design."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "A bridge that can wait on the shelf",
+          "setting": "Fictional transition exchange using the lesson case.",
+          "turns": [
+            [
+              "Educator",
+              "Luca, story time begins in five minutes. What part of your building are you trying to finish?"
+            ],
+            [
+              "Child",
+              "I want to put this last block on top, but I don't want it knocked down."
+            ],
+            [
+              "Educator",
+              "The marked shelf can hold it. Choose the last block or a classroom photo first."
+            ],
+            [
+              "Child",
+              "I choose the last block. Can I have ten more minutes after that?"
+            ],
+            [
+              "Educator",
+              "We have five before story time, not ten. The building can wait for you on the shelf."
+            ],
+            [
+              "Child",
+              "Then I can come back to it instead of starting all over again?"
+            ],
+            [
+              "Educator",
+              "It can remain there under today's arrangement. Let's mark whose work it is before the cue."
+            ],
+            [
+              "Child",
+              "I'll put my name card beside it. I want the others to know it's unfinished."
+            ],
+            [
+              "Educator",
+              "That explains your plan. When the cue sounds, we'll join the story group."
+            ],
+            [
+              "Child",
+              "I've placed the last block. I'm ready to leave it on the shelf now."
+            ]
+          ]
+        },
+        {
+          "title": "The pictures are in the wrong order",
+          "setting": "Fictional visual-schedule discussion; the educator corrects two misplaced activity pictures.",
+          "turns": [
+            [
+              "Child",
+              "The visual schedule shows snack before outdoors, but you said outdoors comes first."
+            ],
+            [
+              "Educator",
+              "You're right to ask. Those two pictures were placed in the wrong order this morning."
+            ],
+            [
+              "Child",
+              "Did the whole day change, including when my parent comes to collect me?"
+            ],
+            [
+              "Educator",
+              "No, this correction concerns those two activities. It doesn't change your collection arrangement."
+            ],
+            [
+              "Child",
+              "Could you move the pictures so I can see which part comes next?"
+            ],
+            [
+              "Educator",
+              "Yes. Outdoor time goes first here, and the snack picture comes after it."
+            ],
+            [
+              "Child",
+              "Then I can check the pictures instead of trying to remember two different messages."
+            ],
+            [
+              "Educator",
+              "Exactly. Thank you for noticing the mismatch and asking rather than guessing what I meant."
+            ],
+            [
+              "Child",
+              "What will you tell the other children who already looked at the old order?"
+            ],
+            [
+              "Educator",
+              "I'll explain the correction to the group now so everyone sees the same sequence."
+            ]
+          ]
+        },
+        {
+          "title": "Help with the zip, not the whole coat",
+          "setting": "Fictional self-help conversation during an unhurried dressing routine.",
+          "turns": [
+            [
+              "Educator",
+              "You have your coat on. Which part would you like help with before we join the group?"
+            ],
+            [
+              "Child",
+              "The zip won't start. I want to pull it up myself after that."
+            ],
+            [
+              "Educator",
+              "You want help starting it, then you want to finish the next part yourself."
+            ],
+            [
+              "Child",
+              "Yes. Yesterday someone did the whole thing before I could say what I wanted."
+            ],
+            [
+              "Educator",
+              "I'll wait for your request and help with the part you named."
+            ],
+            [
+              "Child",
+              "Can I try once more first? I think I might line it up."
+            ],
+            [
+              "Educator",
+              "Yes, try again. I'll stay here, and you can tell me when you want help."
+            ],
+            [
+              "Child",
+              "I tried, and now I want help starting it, but not pulling it up."
+            ],
+            [
+              "Educator",
+              "That's clear. I'll support that first part and leave the pulling for you."
+            ],
+            [
+              "Child",
+              "Now it moves. I did the last part, and I'm ready to join the group."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Outdoor time changes because of a room decision",
+        "brief": "The lead educator has moved today's planned outdoor session to the indoor movement area. The next activity afterward remains snack. Children have seen the old schedule. No weather or safety judgment is delegated to the learner.",
+        "role_a": "Educator: explain the confirmed location change and update the visual sequence.",
+        "role_b": "Child: ask whether snack is cancelled too.",
+        "opening_line": "The outdoor picture is still there. Why are we going to the movement area?",
+        "complication": "One child assumes every activity changed because one location did.",
+        "success_checks": [
+          "Name the confirmed location change.",
+          "Keep snack as the following activity.",
+          "Offer a question or choice about the transition, not a new safety decision."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "The large scoop's next turn",
+          "setting": "Fictional educator and Bea resolve the lesson's shared-scoop disagreement.",
+          "turns": [
+            [
+              "Educator",
+              "Bea, I saw you reach for the scoop Ari was holding. What did you want?"
+            ],
+            [
+              "Child",
+              "I wanted the large scoop. The little one takes longer to fill my container."
+            ],
+            [
+              "Educator",
+              "Ari wants to finish this container, and you want the next turn with the large scoop."
+            ],
+            [
+              "Child",
+              "Yes, but I don't want everyone else to get it before I do."
+            ],
+            [
+              "Educator",
+              "Let's agree a turn-taking order: Ari finishes this container, then you have the large scoop."
+            ],
+            [
+              "Child",
+              "Could I use the small scoop while I wait, without losing my turn?"
+            ],
+            [
+              "Educator",
+              "Yes, it is available. Using it doesn't change the order we just discussed."
+            ],
+            [
+              "Child",
+              "I thought Ari was being mean, but maybe Ari didn't know I wanted it next."
+            ],
+            [
+              "Educator",
+              "We don't know Ari's thoughts yet. You can say, I'd like the next turn, please."
+            ],
+            [
+              "Child",
+              "I'll say that now and use the small scoop while this container is finished."
+            ]
+          ]
+        },
+        {
+          "title": "A fallen structure and a repair",
+          "setting": "Fictional accidental bump during play; no injury or disciplinary procedure.",
+          "turns": [
+            [
+              "Educator",
+              "Your elbow touched the blocks, and part of the structure fell. What happened from your view?"
+            ],
+            [
+              "Child",
+              "I was reaching for the box. I didn't see the corner sticking out."
+            ],
+            [
+              "Educator",
+              "Your friend looks upset about the fallen part. What could you offer to help put it right?"
+            ],
+            [
+              "Child",
+              "I could ask which pieces belonged on top, then help rebuild that part."
+            ],
+            [
+              "Educator",
+              "Ask your friend where those pieces go before moving them. They might want to show you."
+            ],
+            [
+              "Child",
+              "Should I say sorry even if I didn't mean to knock it down?"
+            ],
+            [
+              "Educator",
+              "You can say you're sorry it fell and explain the bump without pretending you meant it."
+            ],
+            [
+              "Child",
+              "I'll say, I'm sorry I knocked that part down. Would you like help rebuilding it?"
+            ],
+            [
+              "Educator",
+              "That names the effect and offers help. Give your friend time to answer."
+            ],
+            [
+              "Child",
+              "I'll wait for their answer instead of deciding how the whole structure should look myself."
+            ]
+          ]
+        },
+        {
+          "title": "A feeling word is a possibility",
+          "setting": "Fictional educator-colleague reflection on co-regulation language.",
+          "turns": [
+            [
+              "Educator",
+              "I called the child angry, but they said they were sad about the unfinished picture."
+            ],
+            [
+              "Colleague",
+              "Their correction matters. We can offer a feeling word without treating our first guess as fact."
+            ],
+            [
+              "Educator",
+              "Could I tentatively say you seem disappointed, then invite the child's own words?"
+            ],
+            [
+              "Colleague",
+              "Yes, if it fits the moment. Keep the invitation open instead of demanding agreement with your label."
+            ],
+            [
+              "Educator",
+              "I also spoke quickly because the group was waiting for the next activity."
+            ],
+            [
+              "Colleague",
+              "A calmer pace may give them room to respond. Co-regulation isn't just finding the perfect word."
+            ],
+            [
+              "Educator",
+              "I'll acknowledge their word sad and ask what part of the picture they wanted to finish."
+            ],
+            [
+              "Colleague",
+              "Then help identify a practical next step within today's routine, without promising unlimited time."
+            ],
+            [
+              "Educator",
+              "The picture can stay in their tray under our current arrangement. I can offer that."
+            ],
+            [
+              "Colleague",
+              "That connects the feeling conversation to a real option and respects the child's account."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Joining a game without taking over",
+        "brief": "Two children built a pretend bus. Nia wants to join as driver, but that role is already taken; a ticket role is available and the group can discuss a later turn. No adult-assigned winner exists.",
+        "role_a": "Educator: help Nia ask about participation without displacing the current player.",
+        "role_b": "Nia: you want to drive but are willing to discuss another role.",
+        "opening_line": "They won't let me be the driver, so they aren't letting me play at all.",
+        "complication": "Nia treats not getting the preferred role as exclusion from every role.",
+        "success_checks": [
+          "Acknowledge the preferred role without promising it.",
+          "Clarify whether other participation is available.",
+          "Support an actual invitation and a turn discussion with the group."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Four buttons and one observation",
+          "setting": "Fictional family discussion using the lesson case.",
+          "turns": [
+            [
+              "Parent",
+              "Eli told me about sorting colors. Does that show he's ahead of everyone his age?"
+            ],
+            [
+              "Educator",
+              "I saw him group four buttons by color and heard him say, these go together."
+            ],
+            [
+              "Parent",
+              "That sounds impressive. Can you put ahead of his age in the portfolio?"
+            ],
+            [
+              "Educator",
+              "Today's observation doesn't establish that comparison. We don't have evidence about every other child's development."
+            ],
+            [
+              "Parent",
+              "Then what would be a fair way to describe what he accomplished?"
+            ],
+            [
+              "Educator",
+              "We can name the activity, the grouping, and his words in an observation note."
+            ],
+            [
+              "Parent",
+              "Will a factual note make it sound less positive than a broad achievement label?"
+            ],
+            [
+              "Educator",
+              "No. A concrete example lets you see the thinking he expressed without making an unsupported ranking."
+            ],
+            [
+              "Parent",
+              "I'd like that in his learning portfolio, especially the words he used himself."
+            ],
+            [
+              "Educator",
+              "I'll include the context and the quotation, then we can discuss how later observations compare."
+            ]
+          ]
+        },
+        {
+          "title": "A quiet group moment, an active small-group moment",
+          "setting": "Fictional educator compares two observations of participation.",
+          "turns": [
+            [
+              "Parent",
+              "The note says my child didn't speak during the group story. Does that mean they never participate?"
+            ],
+            [
+              "Educator",
+              "No. That note concerns one story session, not every activity or way of participating."
+            ],
+            [
+              "Parent",
+              "What else did you observe today that might help me understand the context?"
+            ],
+            [
+              "Educator",
+              "During the small-group puzzle, they pointed to a missing piece and explained where it belonged."
+            ],
+            [
+              "Parent",
+              "Could you include that too? Otherwise the first note sounds like a general description of them."
+            ],
+            [
+              "Educator",
+              "Yes. The learning portfolio should preserve both contexts instead of turning one quiet moment into a label."
+            ],
+            [
+              "Parent",
+              "At home they often talk after watching for a while. Is that useful information?"
+            ],
+            [
+              "Educator",
+              "It adds family context. It doesn't erase the observations, but helps us discuss possible patterns carefully."
+            ],
+            [
+              "Parent",
+              "Then we can discuss participation over time, not judge it from one group session."
+            ],
+            [
+              "Educator",
+              "Exactly. I'll keep the story and puzzle observations separate, with their dates and settings."
+            ]
+          ]
+        },
+        {
+          "title": "A screening question for the right person",
+          "setting": "Fictional family asks about developmental screening; educator does not diagnose.",
+          "turns": [
+            [
+              "Parent",
+              "I read about a developmental milestone online. Can you tell me whether my child has a delay?"
+            ],
+            [
+              "Educator",
+              "I can't diagnose from that description. We can discuss your concern and our actual classroom observations."
+            ],
+            [
+              "Parent",
+              "What is the difference between your observation note and developmental screening?"
+            ],
+            [
+              "Educator",
+              "An observation note records what we see; screening is a structured process with appropriate qualified support."
+            ],
+            [
+              "Parent",
+              "Could the center help me find who can explain the screening options?"
+            ],
+            [
+              "Educator",
+              "Our inclusion lead can discuss the appropriate local route with you, without assuming a diagnosis."
+            ],
+            [
+              "Parent",
+              "Please don't describe my question to other families. I'm not ready for public discussion."
+            ],
+            [
+              "Educator",
+              "We'll keep the concern within the relevant family and professional conversation, following our confidentiality arrangements."
+            ],
+            [
+              "Parent",
+              "I'd like the inclusion lead to hear the question rather than a label someone has inferred."
+            ],
+            [
+              "Educator",
+              "I'll pass on your exact request for information about screening, with no diagnostic conclusion added."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An undated portfolio photograph",
+        "brief": "A portfolio image shows a child completing a puzzle, but its date is missing. The educator remembers the activity but cannot verify when it happened. The family asks whether it demonstrates progress since last week.",
+        "role_a": "Educator: acknowledge the missing date and limit the comparison.",
+        "role_b": "Parent: ask for a current example; you do not need a diagnosis.",
+        "opening_line": "Was this after last week's observation, so we can call it progress?",
+        "complication": "A colleague assumes a newly uploaded image must be newly taken.",
+        "success_checks": [
+          "Separate upload date from activity date.",
+          "Avoid claiming a time trend without dates.",
+          "Offer to check the source or discuss a dated observation."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "A picture choice is participation",
+          "setting": "Fictional colleague exchange using the lesson case.",
+          "turns": [
+            [
+              "Educator",
+              "Noor chose the picture response allowed in the inclusion plan. Why did the note say no participation?"
+            ],
+            [
+              "Colleague",
+              "I expected a spoken answer and overlooked the picture choice as a response."
+            ],
+            [
+              "Educator",
+              "Both formats let Noor indicate a story choice, though they don't show the same spoken-English evidence."
+            ],
+            [
+              "Colleague",
+              "Then I should record the choice rather than treat the absence of speech as no answer."
+            ],
+            [
+              "Educator",
+              "Exactly. Noor pointed to the picture of the bus when asked which part to revisit."
+            ],
+            [
+              "Colleague",
+              "Can I say that proves Noor can explain the choice aloud in English?"
+            ],
+            [
+              "Educator",
+              "Not from pointing alone. We can recognize participation without adding an unobserved spoken explanation."
+            ],
+            [
+              "Colleague",
+              "I'll correct the observation and keep the response format clear for the next educator."
+            ],
+            [
+              "Educator",
+              "Please do. Today's preference was pointing; the plan also allows speech when Noor chooses it."
+            ],
+            [
+              "Colleague",
+              "That helps me distinguish access to the activity from the particular language evidence I hoped to observe."
+            ]
+          ]
+        },
+        {
+          "title": "A greeting from home",
+          "setting": "Fictional family shares a familiar greeting; educator checks rather than assuming translation.",
+          "turns": [
+            [
+              "Educator",
+              "Your child used a greeting I didn't recognize. Would you like to tell me what it means?"
+            ],
+            [
+              "Parent",
+              "It's the greeting we use at home in the morning. I can say it slowly for you."
+            ],
+            [
+              "Educator",
+              "Thank you. May I try it back so you can check my pronunciation?"
+            ],
+            [
+              "Parent",
+              "Yes, and I can explain when we normally use it, because context matters too."
+            ],
+            [
+              "Educator",
+              "Thank you. I won't assume each home-language word has one exact English substitute."
+            ],
+            [
+              "Parent",
+              "Could you let my child use it without insisting on an English version immediately?"
+            ],
+            [
+              "Educator",
+              "We can welcome that greeting and model our English greeting alongside it, without treating yours as wrong."
+            ],
+            [
+              "Parent",
+              "That would help. My child enjoys showing people words but dislikes being put on display."
+            ],
+            [
+              "Educator",
+              "I'll offer an invitation, not ask for a performance in front of everyone."
+            ],
+            [
+              "Parent",
+              "Thank you. We can share a few familiar words privately as part of our family communication."
+            ]
+          ]
+        },
+        {
+          "title": "A quieter meeting option",
+          "setting": "Fictional family conference planning; phone or private in-person meeting available, neither chosen yet.",
+          "turns": [
+            [
+              "Educator",
+              "We can arrange a private in-person conversation or a telephone meeting. Which format works better for you?"
+            ],
+            [
+              "Parent",
+              "The telephone is easier for travel, but I sometimes need to see the portfolio examples."
+            ],
+            [
+              "Educator",
+              "An in-person meeting lets us view the examples together; a call avoids the journey."
+            ],
+            [
+              "Parent",
+              "Could we check whether the examples can be shared through the center's permitted family channel beforehand?"
+            ],
+            [
+              "Educator",
+              "I'll check before promising that. Your communication preference matters to this choice."
+            ],
+            [
+              "Parent",
+              "Please don't assume telephone means I want a shorter discussion or less detail about my child."
+            ],
+            [
+              "Educator",
+              "I won't. The format and the content are different questions; we can plan the same topics."
+            ],
+            [
+              "Parent",
+              "Once you confirm the sharing arrangement, I can decide which format is practical."
+            ],
+            [
+              "Educator",
+              "I'll check with the lead before booking a format without your agreement."
+            ],
+            [
+              "Parent",
+              "Then we'll choose based on the actual options, not just which method is easiest for staff."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An adjustment mistaken for a reward",
+        "brief": "A child's agreed inclusion plan allows a quieter seating place during group time. Another adult calls it a reward that should depend on finishing a task. The lead educator can clarify the plan.",
+        "role_a": "Educator: explain that this is an agreed access arrangement, not a newly offered prize.",
+        "role_b": "Colleague: ask whether the child can still join the same story from that place.",
+        "opening_line": "The quieter place is in the inclusion plan; it isn't a reward for finishing first.",
+        "complication": "The colleague proposes removing it before asking the lead about the plan.",
+        "success_checks": [
+          "Identify the existing agreed arrangement.",
+          "Distinguish access support from a reward.",
+          "Ask the lead to clarify implementation without making legal claims."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "A possible change to Theo's plan",
+          "setting": "Fictional document handover using the lesson case; no food, exposure, symptom, or emergency decision.",
+          "turns": [
+            [
+              "Educator",
+              "Theo's parent reports a possible change to the allergy care plan, but we have no revised document."
+            ],
+            [
+              "Health coordinator",
+              "What did the parent provide, and which version is currently held by the center?"
+            ],
+            [
+              "Educator",
+              "Only a verbal report. The earlier plan is still the document in our record."
+            ],
+            [
+              "Health coordinator",
+              "I accept the plan query. I'll clarify the information with the family and the relevant qualified professional."
+            ],
+            [
+              "Educator",
+              "A colleague asked whether that report means today's food arrangement is different."
+            ],
+            [
+              "Health coordinator",
+              "I haven't confirmed any change. Don't infer a food decision from this incomplete document query."
+            ],
+            [
+              "Educator",
+              "I'll make the distinction clear: possible change reported, revised plan not received, and you are reviewing it."
+            ],
+            [
+              "Health coordinator",
+              "Please also identify the parent as the source, rather than present the message as a clinical instruction."
+            ],
+            [
+              "Educator",
+              "I will. No symptoms or exposure have been reported in this scenario."
+            ],
+            [
+              "Health coordinator",
+              "Thank you. I'll handle the clarification while the record accurately shows what remains unconfirmed."
+            ]
+          ]
+        },
+        {
+          "title": "What the educator actually saw",
+          "setting": "Fictional resolved playground incident documentation; the lead has handled care and family response separately.",
+          "turns": [
+            [
+              "Educator",
+              "I'm completing the factual handover about the earlier incident, after you handled the care response."
+            ],
+            [
+              "Lead educator",
+              "Tell me what you directly witnessed, and keep the child's later account separate."
+            ],
+            [
+              "Educator",
+              "My witness account is seeing the child seated beside the step; the child reported stumbling."
+            ],
+            [
+              "Lead educator",
+              "Then your observation is sitting beside the step; the stumble comes from the child's account."
+            ],
+            [
+              "Educator",
+              "I didn't see the earlier movement, so I haven't stated how it happened."
+            ],
+            [
+              "Lead educator",
+              "Please keep that distinction in the incident record rather than fill the gap from another child's guess."
+            ],
+            [
+              "Educator",
+              "Has the family notification occurred, or is that still an outstanding communication task?"
+            ],
+            [
+              "Lead educator",
+              "I spoke with the parent after the response and recorded that contact. The notification is complete."
+            ],
+            [
+              "Educator",
+              "I'll include the confirmed contact, without adding care details or diagnoses I didn't observe."
+            ],
+            [
+              "Lead educator",
+              "That gives the next educator the actual sequence and avoids turning a reported event into a witnessed one."
+            ]
+          ]
+        },
+        {
+          "title": "A health update belongs in a private conversation",
+          "setting": "Fictional parent requests privacy for a record update; no actual health advice.",
+          "turns": [
+            [
+              "Parent",
+              "I need to discuss a health-record update, but I don't want to talk across the doorway."
+            ],
+            [
+              "Educator",
+              "We can use the private meeting space and involve Amira, our health coordinator."
+            ],
+            [
+              "Parent",
+              "Thank you. Other families are arriving, and the detail isn't something I want announced."
+            ],
+            [
+              "Educator",
+              "I'll simply tell Amira you have a private record question, without repeating details here."
+            ],
+            [
+              "Parent",
+              "Does asking for a meeting mean the information has already been changed in the plan?"
+            ],
+            [
+              "Educator",
+              "No. It means we're arranging the conversation; no plan update has been confirmed."
+            ],
+            [
+              "Parent",
+              "Could Amira tell me which current document we are discussing before we compare anything?"
+            ],
+            [
+              "Educator",
+              "I'll include that request. Comparing the actual versions will help identify what needs clarification."
+            ],
+            [
+              "Parent",
+              "I have a document with me, but I don't know whether it replaces every part of the old one."
+            ],
+            [
+              "Educator",
+              "Amira can review that question with you. I won't assume its date settles the whole plan."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A family contact attempt without an answer",
+        "brief": "Following a fictional minor incident whose care response is complete, the lead attempted the family notification at 14:00 but received no answer. Another educator is taking the communication follow-up. No care instructions or contact deadline is supplied.",
+        "role_a": "Outgoing educator: report the unanswered attempt and ask for follow-up ownership.",
+        "role_b": "Incoming educator: accept the contact task under the center's arrangements without calling it completed.",
+        "opening_line": "The care response is complete, but the family notification is not; the two o'clock call was unanswered.",
+        "complication": "The incoming educator sees a call entry and assumes the family already knows.",
+        "success_checks": [
+          "Separate care response from family contact.",
+          "Distinguish call attempt from successful notification.",
+          "Name who accepts the contact follow-up without inventing medical advice."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "A familiar face still needs a checked arrangement",
+          "setting": "Fictional collection enquiry using the lesson case.",
+          "turns": [
+            [
+              "Visitor",
+              "I'm Nia's uncle. Her usual collector couldn't come, and she can tell you she knows me."
+            ],
+            [
+              "Educator",
+              "I understand. Today's collection arrangement hasn't been verified, so Rosa needs to check it with you."
+            ],
+            [
+              "Visitor",
+              "Nia is smiling at me. Doesn't that establish that I'm the person she's expecting?"
+            ],
+            [
+              "Educator",
+              "It shows she recognizes you, but it doesn't complete our collection-authority check."
+            ],
+            [
+              "Visitor",
+              "Are you accusing me of something, or saying I can't help my family?"
+            ],
+            [
+              "Educator",
+              "Neither. I'm explaining the check needed to verify an authorized collector, not judging your intentions."
+            ],
+            [
+              "Visitor",
+              "Then who can sort it out without us discussing family details in the doorway?"
+            ],
+            [
+              "Educator",
+              "Rosa is available and can review the arrangement privately. Nia remains with staff meanwhile."
+            ],
+            [
+              "Visitor",
+              "I'll speak with Rosa. Please don't tell Nia that I did something wrong by arriving."
+            ],
+            [
+              "Educator",
+              "I won't. I'll explain that the adults are checking today's collection arrangement before the handover."
+            ]
+          ]
+        },
+        {
+          "title": "The register is not a prediction",
+          "setting": "Fictional collection-time enquiry; parent has called but child remains at the center.",
+          "turns": [
+            [
+              "Educator",
+              "The parent called to say they are nearby. Why does the register show the child already departed?"
+            ],
+            [
+              "Colleague",
+              "I entered the expected collection time, thinking that would help the end-of-day count."
+            ],
+            [
+              "Educator",
+              "An attendance register needs the actual presence status under our process, not a prediction of departure."
+            ],
+            [
+              "Colleague",
+              "The child is still here with us. I'll correct the entry through the record procedure."
+            ],
+            [
+              "Educator",
+              "Please make the correction visible to the lead so the current count isn't misunderstood."
+            ],
+            [
+              "Colleague",
+              "I will. The parent arriving soon and the child leaving are different events."
+            ],
+            [
+              "Educator",
+              "Could you also clarify whether anyone acted on the earlier count before it was corrected?"
+            ],
+            [
+              "Colleague",
+              "I'll ask the lead rather than assume the entry had no effect on the room information."
+            ],
+            [
+              "Educator",
+              "We can keep the expected collection message separate from actual departure."
+            ],
+            [
+              "Colleague",
+              "I've told the lead the child remains present, and I'll complete the departure entry only when confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "A concern cannot carry a secrecy promise",
+          "setting": "Fictional staff handover of a welfare concern; no abuse details, investigation, or legal procedure.",
+          "turns": [
+            [
+              "Educator",
+              "I'm bringing a concern to you as designated safeguarding lead through our required arrangements."
+            ],
+            [
+              "Safeguarding lead",
+              "I'm receiving the concern. What did you observe or hear, and have you promised anyone absolute secrecy?"
+            ],
+            [
+              "Educator",
+              "I haven't promised secrecy. I explained that relevant concerns may need sharing with the responsible people."
+            ],
+            [
+              "Safeguarding lead",
+              "Good. Bring the factual account through our designated route, not an informal discussion with other families."
+            ],
+            [
+              "Educator",
+              "I will separate the person's words from my observations and avoid adding a diagnosis or motive."
+            ],
+            [
+              "Safeguarding lead",
+              "Has any immediate protection issue been identified that requires the actual urgent pathway now?"
+            ],
+            [
+              "Educator",
+              "No immediate issue is specified. That doesn't establish that the concern is unimportant."
+            ],
+            [
+              "Safeguarding lead",
+              "Understood. Follow our current requirements; this conversation doesn't replace any direct reporting duty that applies."
+            ],
+            [
+              "Educator",
+              "I'll pass on the account now and confirm the receiving status without investigating it myself."
+            ],
+            [
+              "Safeguarding lead",
+              "I accept the handover and will coordinate our response within the applicable requirements."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A parent asks about another child's incident",
+        "brief": "At collection, a parent asks for another child's name and family details after a resolved scoop disagreement. Their own child asked for the next turn; the educator clarified the order, and the child then had that turn. You may discuss those observations, not the other family's private information. Rosa can address broader concerns.",
+        "role_a": "Educator: acknowledge the parent's concern while limiting disclosure.",
+        "role_b": "Parent: you want to know how your own child was supported and initially ask for another family's details.",
+        "opening_line": "Tell me who the other child's parents are so I can speak to them myself.",
+        "complication": "The parent equates withholding private details with refusing to discuss their own child's experience.",
+        "success_checks": [
+          "Separate the private information request from the parent's legitimate concern.",
+          "Describe support for their own child using supplied observations only.",
+          "Offer Rosa for unresolved setting-level questions without promising secrecy about safeguarding."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "A settling-in update without a blanket reassurance",
+      "setting": "Fictional afternoon family handover after a child's first morning in the room.",
+      "dialogue": [
+        [
+          "Parent",
+          "How did the morning go after I left? I keep wondering whether the goodbye was too quick."
+        ],
+        [
+          "Educator",
+          "I can share what I observed. Mina watched the book corner first, then joined Rosa with a picture book."
+        ],
+        [
+          "Parent",
+          "Was she happy all morning, or is that too much to conclude from those moments?"
+        ],
+        [
+          "Educator",
+          "I wouldn't describe every moment from two observations. She also asked about you during the first activity."
+        ],
+        [
+          "Parent",
+          "Thank you for saying that plainly. What did she choose when there was time for free play?"
+        ],
+        [
+          "Educator",
+          "She selected the large blocks and watched another child building before placing a block beside the tower."
+        ],
+        [
+          "Parent",
+          "At home she watches before joining. Please don't label that refusal."
+        ],
+        [
+          "Educator",
+          "I'll preserve the observation rather than label it refusal. Your account adds useful context about her familiar pattern."
+        ],
+        [
+          "Parent",
+          "Can we agree what to discuss with Rosa before tomorrow's goodbye instead of changing the plan tonight?"
+        ],
+        [
+          "Educator",
+          "Yes. Let's ask Rosa to review the goodbye wording and the comfort-item arrangement with you at arrival."
+        ],
+        [
+          "Parent",
+          "Please include that Mina asked for the picture book again when I came to collect her."
+        ],
+        [
+          "Educator",
+          "I will. We can use that concrete preference in tomorrow's conversation without promising an identical morning."
+        ]
+      ],
+      "notes": [
+        "'What I observed' limits the report to actual events.",
+        "'Adds useful context' welcomes family knowledge without turning it into a universal prediction."
+      ]
+    },
+    {
+      "title": "Explaining why the play mattered",
+      "setting": "Fictional family conversation about a block-play observation, without developmental diagnosis.",
+      "dialogue": [
+        [
+          "Parent",
+          "My child said they just played with blocks today. Was there a learning purpose to that time?"
+        ],
+        [
+          "Educator",
+          "Yes, and the children's choices shaped it. They explored which bridge designs could hold their pretend traffic."
+        ],
+        [
+          "Parent",
+          "Did you tell them the correct design, or let them do anything without support?"
+        ],
+        [
+          "Educator",
+          "I offered a question about what each design should do, then let them test their own ideas."
+        ],
+        [
+          "Parent",
+          "So guided play means you can support the thinking without choosing every part of the activity."
+        ],
+        [
+          "Educator",
+          "Exactly. Today my scaffolding was a small prompt and enough time for them to explain their plans."
+        ],
+        [
+          "Parent",
+          "What did my child actually say? I'd like a concrete example rather than a general learning label."
+        ],
+        [
+          "Educator",
+          "They explained that a taller opening would let the larger truck through, then checked that idea in play."
+        ],
+        [
+          "Parent",
+          "Does that prove they understand every idea about measuring height, or only what happened in that activity?"
+        ],
+        [
+          "Educator",
+          "It shows that particular explanation and test. We would need more observations before making a broader learning claim."
+        ],
+        [
+          "Parent",
+          "I can ask about the big truck without turning our conversation into a quiz."
+        ],
+        [
+          "Educator",
+          "That would connect with their interest. They also wanted to explain the other child's wider bridge design."
+        ]
+      ],
+      "notes": [
+        "A concrete observation supports a family explanation better than a broad claim about learning.",
+        "'That particular' limits the claim to the activity actually observed."
+      ]
+    },
+    {
+      "title": "A transition plan across two educators",
+      "setting": "Fictional staff handover about a child's agreed stopping-point support.",
+      "dialogue": [
+        [
+          "Outgoing educator",
+          "Before the next transition, I need to pass on Luca's current arrangement for unfinished block play."
+        ],
+        [
+          "Incoming educator",
+          "Please tell me the exact arrangement rather than just saying he doesn't like stopping."
+        ],
+        [
+          "Outgoing educator",
+          "The building can remain on the marked shelf today. He chose one last block before story time."
+        ],
+        [
+          "Incoming educator",
+          "So the support is a visible stopping point, not a promise of unlimited play time."
+        ],
+        [
+          "Outgoing educator",
+          "Exactly. He also used his name card to show the work is unfinished and belongs to him."
+        ],
+        [
+          "Incoming educator",
+          "Has he already heard the transition cue, or are you handing over before it sounds?"
+        ],
+        [
+          "Outgoing educator",
+          "Before it sounds. The agreed five-minute period is ending, and he knows the next activity is story time."
+        ],
+        [
+          "Incoming educator",
+          "I'll keep that message consistent. I won't offer another ten minutes simply because a different adult is here."
+        ],
+        [
+          "Outgoing educator",
+          "Please check his understanding without turning it into a test. He can show where the building will wait."
+        ],
+        [
+          "Incoming educator",
+          "That gives him a concrete action and preserves the routine. Does the shelf arrangement apply every day?"
+        ],
+        [
+          "Outgoing educator",
+          "Only today's arrangement is confirmed. We shouldn't present it as a permanent promise without checking the room plan."
+        ],
+        [
+          "Incoming educator",
+          "I'll support today's transition as agreed and ask the lead about any future storage arrangement separately."
+        ]
+      ],
+      "notes": [
+        "A specific support description is more useful than a personality label such as 'difficult with transitions.'",
+        "'Only today' limits an arrangement to the period actually agreed."
+      ]
+    },
+    {
+      "title": "A family asks who was to blame",
+      "setting": "Fictional end-of-day conversation about a resolved peer disagreement; other children's private details are protected.",
+      "dialogue": [
+        [
+          "Parent",
+          "My child said someone was mean at the play table. Can you tell me who caused it?"
+        ],
+        [
+          "Educator",
+          "I can discuss your child's experience and the actions I observed, without sharing another child's private information."
+        ],
+        [
+          "Parent",
+          "What did you actually see? I don't want a general answer that everyone was fine afterward."
+        ],
+        [
+          "Educator",
+          "Two children wanted the same scoop. Your child asked for the next turn after we clarified the order."
+        ],
+        [
+          "Parent",
+          "Did you make them apologize, or help them understand what each person was asking for?"
+        ],
+        [
+          "Educator",
+          "We supported that conversation and agreed a turn order. I didn't infer a motive from reaching for the scoop."
+        ],
+        [
+          "Parent",
+          "My child still says waiting felt unfair. Does that mean the disagreement wasn't resolved at all?"
+        ],
+        [
+          "Educator",
+          "The practical turn issue was settled, but that doesn't mean every feeling disappeared at the same moment."
+        ],
+        [
+          "Parent",
+          "That's a useful distinction. I can listen to the feeling without telling them the other child was bad."
+        ],
+        [
+          "Educator",
+          "Yes. You can ask what they wanted and what happened next, rather than decide someone else's intention."
+        ],
+        [
+          "Parent",
+          "Please let their key educator know they brought it up again at collection today."
+        ],
+        [
+          "Educator",
+          "I will share that follow-up observation, while keeping the other child's information within our confidentiality arrangements."
+        ]
+      ],
+      "notes": [
+        "A practical resolution and an ongoing feeling can both be reported accurately.",
+        "'I didn't infer a motive' avoids presenting a guess about intention as fact."
+      ]
+    },
+    {
+      "title": "Removing a label from a family report",
+      "setting": "Fictional colleague review before a family conference; no diagnostic assessment is given.",
+      "dialogue": [
+        [
+          "Educator",
+          "The conference note calls Maya uncooperative, but the observation underneath only says she left the group table."
+        ],
+        [
+          "Colleague",
+          "What else do we know about that moment, including what she said and what happened afterward?"
+        ],
+        [
+          "Educator",
+          "She said the room was noisy, then chose the book corner. I left that context out."
+        ],
+        [
+          "Colleague",
+          "That context matters. Uncooperative assigns a broad label where we have a specific action and explanation."
+        ],
+        [
+          "Educator",
+          "I'll describe leaving the table, her words about noise, and choosing the book corner instead."
+        ],
+        [
+          "Colleague",
+          "Do we have similar dated observations, or would a statement about an ongoing pattern be premature?"
+        ],
+        [
+          "Educator",
+          "We have only this note for that situation. I shouldn't turn it into a repeated behavior claim."
+        ],
+        [
+          "Colleague",
+          "Then invite the family's perspective at the conference without asking them to defend Maya against the label."
+        ],
+        [
+          "Educator",
+          "I could ask whether they have noticed similar preferences in busy settings, while sharing exactly what we observed."
+        ],
+        [
+          "Colleague",
+          "Yes. Keep their account distinct from ours and leave developmental interpretation to the appropriate review if needed."
+        ],
+        [
+          "Educator",
+          "The revised note can support a practical discussion about participation rather than a judgment about her character."
+        ],
+        [
+          "Colleague",
+          "I'll check it with you before the conference so the family hears the evidence and the open question."
+        ]
+      ],
+      "notes": [
+        "Context can change the meaning of an observed action without erasing that action.",
+        "A single note does not establish an ongoing pattern or a character trait."
+      ]
+    },
+    {
+      "title": "A familiar word does not settle a developmental question",
+      "setting": "Fictional family conversation about differing language use across home and center.",
+      "dialogue": [
+        [
+          "Parent",
+          "The note says my child used few English words today, but at home they tell long stories."
+        ],
+        [
+          "Educator",
+          "Those accounts can both matter. My note describes English in one setting, not all of your child's language."
+        ],
+        [
+          "Parent",
+          "Could you include what we observe in our home language rather than treat English as the whole picture?"
+        ],
+        [
+          "Educator",
+          "Yes. Please share an example you're comfortable discussing, and I'll clearly identify it as your family observation."
+        ],
+        [
+          "Parent",
+          "They retold a visit to the market and explained which stall they liked best."
+        ],
+        [
+          "Educator",
+          "That's useful context. I'll add it to our conversation without pretending I independently assessed the whole story."
+        ],
+        [
+          "Parent",
+          "Does the difference mean something is wrong, or can the setting affect what you hear?"
+        ],
+        [
+          "Educator",
+          "One difference between settings doesn't establish a diagnosis. We can discuss patterns and involve appropriate support if needed."
+        ],
+        [
+          "Parent",
+          "I'd also like an interpreter for a longer meeting, so I can describe the details accurately."
+        ],
+        [
+          "Educator",
+          "I'll ask the lead about the available language support and confirm the arrangement before scheduling around it."
+        ],
+        [
+          "Parent",
+          "Thank you. I want both languages respected without pretending every question is resolved."
+        ],
+        [
+          "Educator",
+          "We can respect them and keep the developmental questions open for careful, qualified discussion based on fuller information."
+        ]
+      ],
+      "notes": [
+        "'In one setting' prevents a local observation from becoming a claim about all language ability.",
+        "Attributing family examples preserves their value without claiming an independent assessment."
+      ]
+    },
+    {
+      "title": "Correcting a copied incident phrase",
+      "setting": "Fictional retrospective documentation review after care and family notification have occurred; no medical assessment.",
+      "dialogue": [
+        [
+          "Lead educator",
+          "The incident record says the child fell from the step, but your observation note doesn't describe seeing a fall."
+        ],
+        [
+          "Educator",
+          "I copied that phrase from another person's summary. I actually saw the child seated beside the step."
+        ],
+        [
+          "Lead educator",
+          "Then the record needs a traceable correction. Do we know who supplied the account about the fall?"
+        ],
+        [
+          "Educator",
+          "The child said they stumbled. Another adult paraphrased that as fell from the step, without witnessing it."
+        ],
+        [
+          "Lead educator",
+          "Those descriptions aren't automatically equivalent. Preserve the child's reported words and your own limited observation separately."
+        ],
+        [
+          "Educator",
+          "I'll correct the record through our process without removing the history of what was originally entered."
+        ],
+        [
+          "Lead educator",
+          "Care and family notification are documented. Keep those confirmed events unchanged while correcting the description."
+        ],
+        [
+          "Educator",
+          "Understood. The correction concerns the event description, not an invented change in care or contact status."
+        ],
+        [
+          "Lead educator",
+          "Could you explain the correction to the colleague who may use the summary in the next handover?"
+        ],
+        [
+          "Educator",
+          "Yes. I'll say the earlier wording overstated what was witnessed, and identify the exact revised account."
+        ],
+        [
+          "Lead educator",
+          "Please avoid guessing the colleague's motive. We are correcting information, not explaining why they wrote it."
+        ],
+        [
+          "Educator",
+          "I'll focus on the sources and the wording so the next handover carries the accurate, qualified description."
+        ]
+      ],
+      "notes": [
+        "'Reported' and 'witnessed' mark different sources even within the same incident record.",
+        "A narrow correction changes the unsupported phrase without rewriting separately confirmed events."
+      ]
+    },
+    {
+      "title": "A changed collector and an unchanged pickup time",
+      "setting": "Fictional family call; collection-person change is requested but unverified, while the booked pickup time remains 16:00.",
+      "dialogue": [
+        [
+          "Parent",
+          "Our pickup time is still four, but my friend may collect today. Can you tell the room?"
+        ],
+        [
+          "Educator",
+          "I can pass on the request, but the collection-person change needs our verification before it is confirmed."
+        ],
+        [
+          "Parent",
+          "Please don't change the pickup time to five; only the person might change."
+        ],
+        [
+          "Educator",
+          "Understood. Four remains the stated time. The proposed collector is a separate, unresolved arrangement."
+        ],
+        [
+          "Parent",
+          "My friend has visited the center before. Does that mean the verification is already complete?"
+        ],
+        [
+          "Educator",
+          "A previous visit doesn't establish today's collection authority. Rosa can check the required arrangement with you."
+        ],
+        [
+          "Parent",
+          "Can you tell my child someone familiar might come without saying the change is definitely approved?"
+        ],
+        [
+          "Educator",
+          "We can keep the message appropriate and accurate while Rosa clarifies it; I won't announce an unverified handover."
+        ],
+        [
+          "Parent",
+          "Thank you. I was worried that telling you about the possibility would automatically change the collection record."
+        ],
+        [
+          "Educator",
+          "It records your request, not a completed approval. The attendance register still shows your child present."
+        ],
+        [
+          "Parent",
+          "I'll speak with Rosa now and confirm who is actually coming once the arrangement is checked."
+        ],
+        [
+          "Educator",
+          "I'll tell the room that four remains the pickup time and the collector change is still being clarified."
+        ]
+      ],
+      "notes": [
+        "'Only the person might change' limits the request and prevents an unrelated time change.",
+        "A recorded request, verified authority, and actual departure are three different events."
+      ]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import hashlib
 import json
 import re
 from pathlib import Path
+from work_occupations import occupation_courses, source_paths
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content" / "work"
@@ -252,10 +253,14 @@ def read_cases():
                 raise ValueError("Case outside a course")
             function, brief, model = line.split("|", 2)
             result[slug].append(dict(function=function, brief=brief, model=model))
+    for course in occupation_courses():
+        result[course['slug']] = [m['case'] for m in course['modules']]
     return result
 
 
 def scope_note(track):
+    if track.get('scope_note'):
+        return track['scope_note']
     slug = track["slug"]
     if slug == "aviation":
         return "Workplace coordination English. This course does not teach radiotelephony phraseology or certify aviation language proficiency; operational communication follows approved aviation procedures."
@@ -271,7 +276,7 @@ def scope_note(track):
 
 
 def load_tracks():
-    tracks = json.loads((CONTENT / "courses.json").read_text())
+    tracks = json.loads((CONTENT / "courses.json").read_text()) + occupation_courses()
     glossary = dict(line.split('|', 1) for line in (CONTENT / 'glossary.txt').read_text().splitlines()
                     if line and not line.startswith('#'))
     glossary = {key.casefold(): value for key, value in glossary.items()}
@@ -285,7 +290,7 @@ def load_tracks():
                 term['definition'] = glossary[term['definition_key']]
         if len(cases[slug]) != len(t["modules"]) or len(t["modules"]) != 8:
             raise ValueError(f"Expected eight authored cases for {slug}")
-        t["revision"] = REVISION
+        t["revision"] = t.get('revision', REVISION)
         t["scope_note"] = scope_note(t)
         source_keys = ["plain", "cefr"]
         source_keys += {
@@ -296,26 +301,33 @@ def load_tracks():
             "education-administration": ["ferpa"], "higher-education-research": ["ferpa"],
             "environmental-consulting": ["ghg"], "energy-utilities": ["ghg"], "aviation": ["aviation"],
         }.get(slug, [])
-        t["sources"] = [dict(title=SOURCES[k][0], url=SOURCES[k][1]) for k in source_keys]
+        t["sources"] = [dict(title=SOURCES[k][0], url=SOURCES[k][1]) for k in source_keys] + t.get('sources', [])
         vocab = {j["term"].casefold(): j for j in t["jargon"]}
         for i, (m, case) in enumerate(zip(t["modules"], cases[slug])):
             m.update(case)
             w = copy.deepcopy(WORKSHOPS[case["function"]])
+            w.update(m.get('workshop', {}))
             m["workshop"] = w
             m["number"] = i + 1
             m["id"] = f"module-{i + 1}"
             m["vocabulary"] = [vocab[term.casefold()] for term in m["terms"]]
             m["goals"] = [w["goal"], "Use two relevant field terms accurately and explain one in plain English.",
-                          "Respond to a follow-up question and revise a short workplace message."]
+                          ("Respond to a follow-up question and improve your spoken response." if t.get('is_occupation')
+                           else "Respond to a follow-up question and revise a short workplace message.")]
             for qi, q in enumerate(w["questions"]):
                 shift = (track_index + i + qi) % len(q["options"])
+                source_correct = q.get('correct_index', 0)
                 q["options"] = q["options"][shift:] + q["options"][:shift]
                 q["feedback"] = q["feedback"][shift:] + q["feedback"][:shift]
-                q["correct_index"] = (-shift) % len(q["options"])
+                q["correct_index"] = (source_correct - shift) % len(q["options"])
                 q["answer"] = q["options"][q["correct_index"]]
             m["writing_task"] = ("Write a 70-110 word message for the person who needs to act on this case. "
                 "State the purpose, preserve the relevant facts, and make the next action or unresolved question clear. "
                 "Use a subject line and an appropriate opening. Do not invent a deadline, finding, or approval.")
+            if t.get('is_occupation'):
+                m['guided_response'] = True
+                m['writing_task'] = ('Complete a workplace dialogue by selecting one of four supplied options. '
+                    'Compare the feedback and say the completed exchange aloud. Do not write an open-ended message.')
             m["speaking_task"] = ("Prepare for two minutes. Speak for 45-60 seconds using the case facts, then respond to your partner's question. "
                 "Switch roles and repeat without reading the model response.")
         t["outcomes"] = list(dict.fromkeys(m["workshop"]["goal"] for m in t["modules"]))
@@ -324,6 +336,7 @@ def load_tracks():
 
 def content_hash():
     files = [CONTENT / "courses.json", CONTENT / "cases.txt", CONTENT / "glossary.txt", Path(__file__)]
+    files += [ROOT / 'work_occupations.py', *source_paths()]
     return hashlib.sha256(b"".join(p.read_bytes() for p in files)).hexdigest()
 
 
@@ -336,6 +349,9 @@ def validate_tracks(tracks):
     seen = set()
     for t in tracks:
         assert len(t["pdfs"]) == 4
+        if t.get('is_occupation'):
+            assert len(t['jargon']) >= 32, t['slug']
+            assert len({j['term'].casefold() for j in t['jargon']}) == len(t['jargon']), t['slug']
         for j in t["jargon"]:
             assert len(j["definition"].split()) >= 4, (t["slug"], j["term"])
             assert "field-specific concept" not in j["definition"]
@@ -345,9 +361,14 @@ def validate_tracks(tracks):
             seen.add(m["brief"])
             assert len(m["model"].split()) >= 20
             assert len(m["vocabulary"]) >= 3
+            if t.get('is_occupation'):
+                assert len(m['collocations']) == 4, (t['slug'], m['id'])
+                assert len(m['workshop']['questions']) == 2, (t['slug'], m['id'])
             for q in m["workshop"]["questions"]:
                 assert len(set(q["options"])) == len(q["options"]) == len(q["feedback"])
                 assert q["answer"] == q["options"][q["correct_index"]]
+                if t.get('is_occupation'):
+                    assert len(q['options']) == 4 and q['prompt'].count('____') == 1, (t['slug'], m['id'])
     return {"courses": len(tracks), "lessons": len(seen),
             "pdfs": sum(len(t["pdfs"]) for t in tracks),
             "vocabulary_entries": sum(len(t["jargon"]) for t in tracks)}

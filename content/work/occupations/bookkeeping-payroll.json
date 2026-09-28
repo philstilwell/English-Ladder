@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "bookkeeping-payroll",
+    "title": "Bookkeeping and Payroll English",
+    "summary": "Resolve invoice and receipt queries, explain reconciliation differences, clarify time exceptions, and hand over payroll approvals and period-close records.",
+    "roles": "Bookkeepers, accounts payable and receivable clerks, payroll clerks, and accounting assistants",
+    "category": "Business & professional services",
+    "scope_note": "All organizations, records, amounts, deadlines, and incidents are fictional English-language practice. This course is not accounting, payroll-system, tax, employment-law, financial, or payment-processing advice. Internal deadlines in the exercises are not legal rules. Refer pay entitlements, deductions, posting treatments, corrections, and payment decisions to the responsible qualified people and applicable local requirements. Use invented employee and account details only.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Bookkeeping, Accounting, and Auditing Clerks",
+        "url": "https://www.bls.gov/ooh/office-and-administrative-support/bookkeeping-accounting-and-auditing-clerks.htm"
+      },
+      {
+        "title": "U.S. Department of Labor: Fact Sheet 21, Recordkeeping Requirements",
+        "url": "https://www.dol.gov/agencies/whd/fact-sheets/21-flsa-recordkeeping"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Matching an invoice to its supporting records",
+        "terms": [
+          "invoice",
+          "purchase order",
+          "receiving record",
+          "credit note"
+        ],
+        "collocations": [
+          "match an invoice to an order: compare the supplier's bill with the purchasing reference",
+          "query a quantity difference: ask why billed and received quantities differ",
+          "link a credit note: connect a reduction to the original invoice",
+          "confirm receipt of goods: establish what arrived, not what was merely ordered"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Fictional supplier Alder bills twelve desk lamps on invoice A184. Purchase order P61 lists twelve, but receiving record R9 lists ten. The remaining two may be on another delivery; no second record is available.",
+          "model": "Invoice A184 and purchase order P61 both show twelve lamps, while receiving record R9 shows ten. Could you confirm whether the other two arrived separately or remain outstanding? I need the related delivery reference before I can describe the invoice as fully matched. At present, the two-lamp difference is unresolved."
+        },
+        "workshop": {
+          "title": "Locate the exact mismatch",
+          "goal": "Clarify which document supports a billed quantity.",
+          "explanation": "Name the invoice, order, and receiving record separately. Agreement between two documents does not settle a third document's different quantity. Ask about the missing evidence without assuming either a supplier error or an unrecorded delivery.",
+          "frames": [
+            "The invoice shows ___, whereas the receiving record shows ___.",
+            "Could you confirm whether ___ arrived separately?",
+            "Which reference supports the remaining ___?"
+          ],
+          "before": "Your invoice is wrong.",
+          "after": "The invoice lists twelve lamps, but our available receiving record lists ten. Was there a separate delivery?",
+          "reason": "The revised question identifies the evidence gap without treating an unexplained difference as a confirmed error.",
+          "questions": [
+            {
+              "prompt": "Bookkeeper: The order lists twelve and R9 lists ten.\nBuyer: Please confirm ____ before we call the invoice fully matched.",
+              "options": [
+                "whether the other two lamps were received",
+                "the unit price on the original quotation",
+                "when the invoice becomes due",
+                "who requested the twelve lamps"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Receipt of the remaining two is the missing fact.",
+                "Price does not resolve this quantity difference.",
+                "The due date concerns timing, not receipt.",
+                "The requester does not establish how many arrived."
+              ]
+            },
+            {
+              "prompt": "Supplier: Are you saying we overbilled you?\nBookkeeper: No; the difference is ____ until we check for another delivery.",
+              "options": [
+                "unresolved",
+                "settled",
+                "overdue",
+                "credited"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Unresolved preserves the open question.",
+                "Settled would imply the issue is resolved.",
+                "Overdue describes a missed due date, not this evidence gap.",
+                "Credited would imply a credit note already exists."
+              ]
+            }
+          ],
+          "role_b": "Buyer: you ordered twelve lamps and can see only R9. The warehouse can check whether a second delivery occurred.",
+          "challenge": "The supplier sends the purchase order again. Explain why it confirms the order quantity but not receipt."
+        }
+      },
+      {
+        "title": "Explaining receipts and outstanding customer balances",
+        "terms": [
+          "accounts receivable",
+          "remittance advice",
+          "unapplied cash",
+          "aging report"
+        ],
+        "collocations": [
+          "allocate a receipt: link received money to the relevant invoice",
+          "identify the payer: establish who sent a payment",
+          "request remittance details: ask which invoices a payment covers",
+          "review an aging balance: examine an amount grouped by how long it has remained unpaid"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "Fictional customer Pine has invoices 410 for $600 and 411 for $400. A $600 receipt is identified as Pine's but has no invoice reference. Both invoices remain open in the ledger pending allocation.",
+          "model": "We have received Pine's six hundred dollars, but the invoice allocation is still unconfirmed. The open invoices total one thousand dollars; the unapplied receipt must be shown alongside them. A remittance advice identifies what the customer intended to pay. Could you confirm the invoice reference so we can explain the remaining balance accurately?"
+        },
+        "workshop": {
+          "title": "Separate receipt from allocation",
+          "goal": "Explain why received cash and open invoice balances can coexist.",
+          "explanation": "A receipt records money received. Allocation connects it to a particular balance. Do not equate an unallocated receipt with nonpayment, or assume the customer's intended allocation from the amount alone.",
+          "frames": [
+            "We have received ___, but it has not been allocated to ___.",
+            "The open invoices total ___; the separate receipt is ___.",
+            "Which invoice does your remittance identify?"
+          ],
+          "before": "You still owe us a thousand dollars.",
+          "after": "The open invoices total a thousand dollars, and we also have your six-hundred-dollar receipt awaiting allocation.",
+          "reason": "The correction acknowledges cash already received instead of presenting the gross invoice balance as the entire position.",
+          "questions": [
+            {
+              "prompt": "Customer: You recorded my payment without an invoice reference. Why are both invoices still open?\nClerk: The receipt is confirmed, but its ____ is pending.",
+              "options": [
+                "allocation",
+                "clearance",
+                "refund",
+                "write-off"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Allocation links the recorded receipt to the intended invoice.",
+                "Bank clearance is different from identifying which invoice this receipt covers.",
+                "A refund returns money rather than linking this receipt to an invoice.",
+                "A write-off removes a balance on another basis; it does not identify this receipt's intended allocation."
+              ]
+            },
+            {
+              "prompt": "Clerk: Our aging report still lists both invoices.\nSupervisor: Explain the balance ____ the unapplied receipt, so the customer sees both.",
+              "options": [
+                "alongside",
+                "instead of",
+                "regardless of",
+                "ahead of"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Alongside means presenting the two relevant items together.",
+                "Replacing the receipt with the balance hides information.",
+                "Regardless of would disregard money received.",
+                "Ahead of suggests sequence or priority rather than a combined explanation."
+              ]
+            }
+          ],
+          "role_b": "Customer: the receipt is yours, but you must check your payment listing to confirm the invoice reference. Ask why the aging report still includes both invoices.",
+          "challenge": "The amount equals invoice 410. Explain why that is a useful clue, not confirmation of the intended allocation."
+        }
+      },
+      {
+        "title": "Qualifying a bank reconciliation difference",
+        "terms": [
+          "bank reconciliation",
+          "outstanding payment",
+          "deposit in transit",
+          "reconciling item"
+        ],
+        "collocations": [
+          "align the statement dates: compare records through the same day",
+          "trace a statement entry: find the related internal transaction",
+          "carry an open reconciling item: retain an unexplained difference for follow-up",
+          "clear an outstanding payment: confirm that a recorded payment appears in bank activity"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "In a fictional reconciliation through June 30, the bank balance is $300 lower than the cash ledger. A $300 deposit recorded June 30 appears on the bank's July 1 activity. Other reconciliation checks are not complete.",
+          "model": "The three-hundred-dollar deposit recorded on June thirty appears in the bank's July first activity. That supports a timing explanation for this item. It does not establish that the whole reconciliation is complete, because the other checks are still open. I would label this deposit as traced and keep the overall review pending."
+        },
+        "workshop": {
+          "title": "State what one match establishes",
+          "goal": "Report a traced item without overstating the reconciliation's completion.",
+          "explanation": "Separate the evidence for an individual item from the conclusion about the whole account. 'Consistent with' allows a supported explanation without claiming that every other entry has been checked.",
+          "frames": [
+            "This entry is consistent with ___ because ___.",
+            "We have traced ___; we have not completed ___.",
+            "The evidence supports ___ for this item only."
+          ],
+          "before": "The bank is three hundred short.",
+          "after": "The difference matches a deposit recorded internally on June thirty and appearing at the bank on July first.",
+          "reason": "The revision describes a supported timing difference instead of suggesting missing money.",
+          "questions": [
+            {
+              "prompt": "Reviewer: Does the matched deposit finish the reconciliation?\nBookkeeper: It explains this item; the remaining checks are ____.",
+              "options": [
+                "outstanding",
+                "complete",
+                "waived",
+                "duplicated"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Outstanding means not yet completed in this context.",
+                "Complete contradicts the remaining checks' pending status.",
+                "No decision to waive the remaining checks is supplied.",
+                "The case describes unfinished checks, not checks repeated by mistake."
+              ]
+            },
+            {
+              "prompt": "Manager: Can we report a missing deposit?\nBookkeeper: July first activity shows it, so this is ____ a timing difference.",
+              "options": [
+                "consistent with",
+                "contradicted by",
+                "independent of",
+                "unrelated to"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The later appearance supports the timing explanation.",
+                "The later bank entry supports rather than contradicts timing.",
+                "Independent of wrongly disconnects the evidence.",
+                "Unrelated to rejects the connection supported by the dates."
+              ]
+            }
+          ],
+          "role_b": "Reviewer: you can see the July first entry and want to know whether the entire account has been checked.",
+          "challenge": "A colleague says equal balances prove every entry is right. Distinguish agreeing totals from checking the underlying items."
+        }
+      },
+      {
+        "title": "Requesting evidence for time exceptions",
+        "terms": [
+          "time exception",
+          "missing punch",
+          "pay period",
+          "approval cutoff"
+        ],
+        "collocations": [
+          "resolve a missing punch: confirm an absent clock entry with supporting information",
+          "confirm actual hours: distinguish time worked from the planned roster",
+          "flag a time exception: identify a record needing review",
+          "meet the approval cutoff: provide a decision by the employer's stated internal deadline"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Fictional employee Eli's Tuesday timecard lacks a clock-out entry. The roster says 17:00, but Eli recalls 17:30. The supervisor can review a work log before the internal approval cutoff at 14:00 today. Actual finish time is unconfirmed.",
+          "model": "Could you review Eli's Tuesday finish time against the work log and confirm the supported correction before our internal two o'clock approval cutoff? The roster shows five, while Eli recalls five thirty. Neither should be presented as verified yet. If the evidence is still incomplete, please return the exception with that uncertainty clearly stated."
+        },
+        "workshop": {
+          "title": "Ask for the missing time fact",
+          "goal": "Request confirmation of actual time without substituting a schedule for evidence.",
+          "explanation": "Describe the absent entry and the conflicting information. An internal cutoff is a workflow deadline, not a statement about legal pay obligations. Ask the responsible reviewer for evidence and a status if the question cannot be resolved.",
+          "frames": [
+            "Could you confirm the actual ___ against ___?",
+            "The roster shows ___, while the employee recalls ___.",
+            "Please return either the confirmed detail or the open issue by ___."
+          ],
+          "before": "Please approve the usual hours.",
+          "after": "Please check the missing Tuesday clock-out against the work log; the roster and Eli's recollection differ by thirty minutes.",
+          "reason": "The request asks for the disputed fact rather than treating usual hours as actual hours.",
+          "questions": [
+            {
+              "prompt": "Supervisor: What do you need before two?\nPayroll clerk: Please confirm ____ on Tuesday, rather than the scheduled finish.",
+              "options": [
+                "what time Eli actually finished",
+                "who prepared the weekly roster",
+                "when the next pay period begins",
+                "whether the usual shift is eight hours"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The request identifies the missing actual time.",
+                "Roster ownership does not establish actual finish time.",
+                "The next period does not resolve Tuesday's record.",
+                "Usual duration is not evidence of this shift's duration."
+              ]
+            },
+            {
+              "prompt": "Payroll clerk: Can you send the reviewed exception by two?\nSupervisor: Yes, I can return it ____ two, possibly earlier.",
+              "options": [
+                "by",
+                "until",
+                "since",
+                "during"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. By sets the deadline and permits an earlier return.",
+                "Until describes duration, not the latest delivery time.",
+                "Since marks a starting point continuing afterward.",
+                "During needs a period, not this clock-time deadline."
+              ]
+            }
+          ],
+          "role_b": "Supervisor: you can review the work log by 13:30 but have not seen it yet. Ask which date and entry are in dispute.",
+          "challenge": "The reviewer finds only the planned roster. Keep the actual finish time unresolved and identify the next evidence holder."
+        }
+      },
+      {
+        "title": "Explaining a payroll preview",
+        "terms": [
+          "gross pay",
+          "deduction",
+          "net pay",
+          "payroll register"
+        ],
+        "collocations": [
+          "compare payroll previews: check two versions before final processing",
+          "trace a deduction line: locate the record supporting an amount withheld",
+          "reconcile the headcount: explain a difference in the number of employees listed",
+          "identify a one-time payment: distinguish a single payment from a recurring amount"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "Fictional preview A shows Morgan's gross pay of $1,200, deductions of $200, and net pay of $1,000. Preview B shows the same gross pay, deductions of $250, and net pay of $950. A new $50 deduction line is present; its supporting record is pending.",
+          "model": "Both previews show gross pay of twelve hundred dollars. Preview B has fifty dollars more in deductions, so the displayed net pay is fifty dollars lower. The new line explains the arithmetic difference, but its supporting record is still pending. Could you check that line before we describe preview B as ready for final approval?"
+        },
+        "workshop": {
+          "title": "Compare like-for-like payroll figures",
+          "goal": "Explain a preview difference while separating arithmetic from approval.",
+          "explanation": "Keep the employee and pay period constant. Name gross pay, deductions, and net pay instead of using 'pay' for all three. A figure that adds up may still need supporting documentation.",
+          "frames": [
+            "Gross pay is unchanged, whereas ___ differs by ___.",
+            "The arithmetic difference comes from ___; the support is ___.",
+            "Are both previews for the same ___?"
+          ],
+          "before": "Morgan's salary has gone down.",
+          "after": "Gross pay is unchanged; the preview shows fifty dollars more in deductions and fifty dollars less in net pay.",
+          "reason": "The revision avoids describing a deduction change as a change in the underlying gross earnings.",
+          "questions": [
+            {
+              "prompt": "Employee: Did my gross pay change between these previews?\nClerk: No; gross pay is unchanged, ____ deductions increased by fifty dollars.",
+              "options": [
+                "whereas",
+                "because",
+                "unless",
+                "before"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Whereas contrasts unchanged gross pay with changed deductions.",
+                "Because would claim the deduction increase caused unchanged gross pay.",
+                "Unless introduces a condition absent from the facts.",
+                "Before introduces a time sequence not supplied."
+              ]
+            },
+            {
+              "prompt": "Reviewer: The figures add up. Is the new deduction approved?\nClerk: Its arithmetic is explained, but the supporting record is ____.",
+              "options": [
+                "pending",
+                "recurring",
+                "net",
+                "balanced"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The record has not yet been confirmed.",
+                "Recurring describes frequency rather than review status.",
+                "Net describes a remaining amount, not a missing record.",
+                "Balanced does not mean evidence has been provided."
+              ]
+            }
+          ],
+          "role_b": "Payroll reviewer: ask whether both previews cover Morgan and the same period, then request the source for the additional deduction.",
+          "challenge": "Someone calls the extra fifty dollars a tax change. Explain that the line's reason is unconfirmed and requires the responsible specialist's review."
+        }
+      },
+      {
+        "title": "Making approval status unambiguous",
+        "terms": [
+          "payment batch",
+          "approval matrix",
+          "delegated approver",
+          "supporting document"
+        ],
+        "collocations": [
+          "submit a batch for review: send a grouped set of proposed payments to the reviewer",
+          "confirm approval authority: check who may approve the specific item",
+          "exclude a disputed item: keep it outside the proposed batch while it is reviewed",
+          "retain the supporting reference: preserve the link to evidence behind a payment"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "A fictional payment batch contains eight invoices. Seven have recorded approval; invoice V22 awaits a receiving document and is excluded from the proposed seven-item batch. The batch itself has not been released. The approver returns at 15:00.",
+          "model": "Seven invoices have recorded approval and are included in the proposed batch. V22 is excluded because its receiving document is still missing. The batch has not been released. The approver returns at three, when I can present the seven-item proposal and report separately on the missing document without calling the payments completed."
+        },
+        "workshop": {
+          "title": "Report approved, proposed, and released separately",
+          "goal": "Give a payment status update that preserves each decision stage.",
+          "explanation": "Approval of an invoice, approval of a batch, and release of payment may be separate events. Use the fictional organization's stated stages, and avoid saying 'paid' merely because review is complete.",
+          "frames": [
+            "___ items have approval; ___ remains excluded.",
+            "The batch is proposed, not yet ___.",
+            "The next review can address ___ when ___."
+          ],
+          "before": "Seven invoices are paid.",
+          "after": "Seven invoices have recorded approval; their proposed payment batch has not been released.",
+          "reason": "The revised status does not turn completed review into completed payment.",
+          "questions": [
+            {
+              "prompt": "Manager: Has the seven-item batch gone out?\nClerk: No, it has been prepared ____ release.",
+              "options": [
+                "but is awaiting",
+                "following",
+                "in place of",
+                "regardless of"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Awaiting states that release is still pending.",
+                "Following implies release already happened.",
+                "In place of makes preparation a substitute for release.",
+                "Regardless of obscures the requested status."
+              ]
+            },
+            {
+              "prompt": "Approver: What is stopping V22 from joining the proposal?\nClerk: Its ____ is missing; the quantity cannot yet be matched.",
+              "options": [
+                "receiving document",
+                "payment date",
+                "bank balance",
+                "approval matrix"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The case identifies receipt evidence as the blocker.",
+                "No missing payment date is given.",
+                "The bank balance does not establish goods received.",
+                "The authority guide is not the missing document in this case."
+              ]
+            }
+          ],
+          "role_b": "Manager: distinguish the number of approved invoices from the number of released payments. Ask when the approver is available.",
+          "challenge": "A substitute colleague offers to approve the batch. Ask whether the recorded delegation covers this batch, without assuming seniority equals authority."
+        }
+      },
+      {
+        "title": "Handing over a period-close review",
+        "terms": [
+          "close checklist",
+          "posting period",
+          "adjusting entry",
+          "trial balance"
+        ],
+        "collocations": [
+          "complete a close checklist: finish and record the specified closing checks",
+          "confirm the posting period: establish the accounting period assigned to an entry",
+          "submit an adjustment for review: present a proposed correction to the reviewer",
+          "tie a schedule to the ledger: compare a supporting total with the recorded account balance"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Fictional June close has nine of ten checklist items complete. A $240 maintenance invoice dated July 2 describes June service. Its posting period needs the accountant's review; no adjusting entry has been approved. Alex takes over the open-item follow-up at noon.",
+          "model": "Nine of the ten June close checks are complete. The open item is the two-hundred-forty-dollar maintenance invoice dated July second for June service. Its posting period needs the accountant's review, and no adjustment is approved. Alex, please confirm that you are taking over that follow-up and will keep the close status pending until the review outcome is recorded."
+        },
+        "workshop": {
+          "title": "Transfer the unresolved accounting question",
+          "goal": "Hand over supporting facts and ownership without deciding accounting treatment.",
+          "explanation": "Invoice date, service period, and posting period can differ. Preserve them separately and name the person who will obtain the accountant's decision. A balanced trial balance does not answer every period question.",
+          "frames": [
+            "The completed checks are ___; the remaining question is ___.",
+            "The invoice date is ___, but the service description says ___.",
+            "Please confirm you are taking over ___."
+          ],
+          "before": "June is basically closed; ask someone about maintenance.",
+          "after": "Nine checks are complete. Alex is taking over the maintenance invoice's posting-period query with the accountant.",
+          "reason": "The revision identifies the unfinished work and its owner without implying the close is complete.",
+          "questions": [
+            {
+              "prompt": "Alex: Has the maintenance adjustment been posted?\nBookkeeper: No; the posting period is ____ the accountant's review.",
+              "options": [
+                "subject to",
+                "separate from",
+                "evidence of",
+                "subsequent to"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Subject to means dependent on the review outcome.",
+                "The posting-period decision depends on this review; it is not separate from it.",
+                "An undecided period is not evidence that the review occurred.",
+                "Subsequent to would place it after a review; the question concerns a pending decision."
+              ]
+            },
+            {
+              "prompt": "Bookkeeper: Please confirm the handover.\nAlex: I ____ the posting-period query; the accounting decision remains with the accountant.",
+              "options": [
+                "am taking over",
+                "have completed",
+                "have approved",
+                "am reversing"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Taking over accepts follow-up responsibility.",
+                "The query is still open, not completed.",
+                "Alex is not approving the accounting treatment.",
+                "Reversing would suggest undoing an entry or decision."
+              ]
+            }
+          ],
+          "role_b": "Alex: you accept follow-up at noon and need the invoice reference, service period, and current approval status.",
+          "challenge": "The accountant is unavailable until tomorrow. State the owner and pending question without assigning an invented posting period."
+        }
+      },
+      {
+        "title": "Correcting records while preserving the trail",
+        "terms": [
+          "audit trail",
+          "reversal",
+          "duplicate entry",
+          "version history"
+        ],
+        "collocations": [
+          "trace the original entry: locate the transaction being corrected",
+          "cross-reference a correction: link the new record to the earlier one",
+          "identify the current version: distinguish the active record from superseded copies",
+          "explain the correction reason: state what changed and why"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "In fictional tracker version 3, invoice J14 for $180 appears twice because the same file was imported twice. The controller confirmed one duplicate. No ledger correction has been posted. A previous message wrongly said the duplicate payment had been recovered; no duplicate payment is established.",
+          "model": "My earlier message confused a duplicate entry with a duplicate payment. The controller has confirmed a repeated one-hundred-eighty-dollar invoice entry in tracker version three; we have not established that money was paid twice. No ledger correction has been posted. I am correcting the status now and linking the original entry for the controller's review of the required correction."
+        },
+        "workshop": {
+          "title": "Correct the claim, not just the number",
+          "goal": "Repair an inaccurate status and preserve the distinction between an entry and a payment.",
+          "explanation": "State exactly what the earlier message got wrong. A duplicate document, entry, and payment are different findings. Refer to the original record and correction status without teaching a universal reversal method.",
+          "frames": [
+            "I incorrectly described ___ as ___.",
+            "The confirmed finding is ___; we have not established ___.",
+            "The correction refers back to ___ and is currently ___."
+          ],
+          "before": "The duplicate payment is recovered.",
+          "after": "A duplicate invoice entry is confirmed. A duplicate payment has not been established, and the ledger correction is pending.",
+          "reason": "The corrected statement removes unsupported claims about both payment and recovery.",
+          "questions": [
+            {
+              "prompt": "Controller: Did the bank send money twice?\nClerk: We have confirmed a duplicate ____, not a duplicate payment.",
+              "options": [
+                "entry",
+                "refund",
+                "disbursement",
+                "settlement"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The confirmed issue is a repeated invoice entry.",
+                "Refund implies money returned, which is unconfirmed.",
+                "Disbursement means money paid out, the claim being corrected.",
+                "Settlement implies payment of an obligation, not the repeated record."
+              ]
+            },
+            {
+              "prompt": "Colleague: Which tracker should I use?\nClerk: Version four ____ version three; the earlier version remains in the history.",
+              "options": [
+                "supersedes",
+                "duplicates",
+                "precedes",
+                "matches"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Supersedes identifies the newer version as the current one.",
+                "Duplicates means repeats, not replaces as the current version.",
+                "Precedes would put version four before version three, reversing the sequence.",
+                "Matches suggests equivalent content rather than identifying the current replacement."
+              ]
+            }
+          ],
+          "role_b": "Controller: one duplicate entry is confirmed; payment tracing has not established duplicate cash movement. Ask the clerk to correct the earlier claim.",
+          "challenge": "A colleague proposes calling the issue fully fixed after updating the tracker. Distinguish the tracker correction from the still-pending ledger review."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "invoice",
+        "definition": "A supplier's or seller's bill listing goods or services and the amount requested.",
+        "group": "Matching an invoice to its supporting records"
+      },
+      {
+        "term": "purchase order",
+        "definition": "A buyer's purchasing document specifying the goods or services ordered.",
+        "group": "Matching an invoice to its supporting records"
+      },
+      {
+        "term": "receiving record",
+        "definition": "A record of the goods or quantities actually received by an organization.",
+        "group": "Matching an invoice to its supporting records"
+      },
+      {
+        "term": "credit note",
+        "definition": "A seller's document reducing an amount previously billed, with a reference to the relevant charge.",
+        "group": "Matching an invoice to its supporting records"
+      },
+      {
+        "term": "accounts receivable",
+        "definition": "Amounts owed to an organization by customers for billed goods or services.",
+        "group": "Explaining receipts and outstanding customer balances"
+      },
+      {
+        "term": "remittance advice",
+        "definition": "Information from a payer identifying the invoices or charges a payment is intended to cover.",
+        "group": "Explaining receipts and outstanding customer balances"
+      },
+      {
+        "term": "unapplied cash",
+        "definition": "A recorded receipt that has not yet been allocated to a specific customer balance or invoice.",
+        "group": "Explaining receipts and outstanding customer balances"
+      },
+      {
+        "term": "aging report",
+        "definition": "A report grouping unpaid balances by their age or time past due, using a stated date basis.",
+        "group": "Explaining receipts and outstanding customer balances"
+      },
+      {
+        "term": "bank reconciliation",
+        "definition": "A comparison explaining differences between bank records and the organization's corresponding cash records.",
+        "group": "Qualifying a bank reconciliation difference"
+      },
+      {
+        "term": "outstanding payment",
+        "definition": "A payment recorded internally that has not yet appeared as cleared in the bank activity being reviewed.",
+        "group": "Qualifying a bank reconciliation difference"
+      },
+      {
+        "term": "deposit in transit",
+        "definition": "A deposit recorded internally but not yet reflected in the bank records at the reconciliation date.",
+        "group": "Qualifying a bank reconciliation difference"
+      },
+      {
+        "term": "reconciling item",
+        "definition": "An identified difference between records that must be explained, cleared, or corrected during reconciliation.",
+        "group": "Qualifying a bank reconciliation difference"
+      },
+      {
+        "term": "time exception",
+        "definition": "A timekeeping record flagged because information is missing, inconsistent, or requires review.",
+        "group": "Requesting evidence for time exceptions"
+      },
+      {
+        "term": "missing punch",
+        "definition": "An absent clock-in or clock-out entry in an employee's time record.",
+        "group": "Requesting evidence for time exceptions"
+      },
+      {
+        "term": "pay period",
+        "definition": "The defined span of work time covered by a payroll calculation.",
+        "group": "Requesting evidence for time exceptions"
+      },
+      {
+        "term": "approval cutoff",
+        "definition": "An organization's stated internal deadline for receiving approvals for a particular processing cycle.",
+        "group": "Requesting evidence for time exceptions"
+      },
+      {
+        "term": "gross pay",
+        "definition": "An employee's earnings amount before deductions for the specified payroll period.",
+        "group": "Explaining a payroll preview"
+      },
+      {
+        "term": "deduction",
+        "definition": "An amount subtracted from gross pay, recorded under a specified reason or category.",
+        "group": "Explaining a payroll preview"
+      },
+      {
+        "term": "net pay",
+        "definition": "The amount remaining after deductions are subtracted from gross pay.",
+        "group": "Explaining a payroll preview"
+      },
+      {
+        "term": "payroll register",
+        "definition": "A payroll report listing employee earnings, deductions, and payment amounts for a processing run.",
+        "group": "Explaining a payroll preview"
+      },
+      {
+        "term": "payment batch",
+        "definition": "A group of payment instructions assembled for review or processing together.",
+        "group": "Making approval status unambiguous"
+      },
+      {
+        "term": "approval matrix",
+        "definition": "An organization's guide assigning approval authority by transaction type, amount, or other criteria.",
+        "group": "Making approval status unambiguous"
+      },
+      {
+        "term": "delegated approver",
+        "definition": "A person given specified approval responsibility by someone with the authority to delegate it.",
+        "group": "Making approval status unambiguous"
+      },
+      {
+        "term": "supporting document",
+        "definition": "A record supplying evidence for a transaction, its amount, purpose, receipt, or approval.",
+        "group": "Making approval status unambiguous"
+      },
+      {
+        "term": "close checklist",
+        "definition": "A list tracking required checks and review tasks at the end of an accounting period.",
+        "group": "Handing over a period-close review"
+      },
+      {
+        "term": "posting period",
+        "definition": "The accounting period to which an entry is assigned in the ledger.",
+        "group": "Handing over a period-close review"
+      },
+      {
+        "term": "adjusting entry",
+        "definition": "An accounting entry made to correct or update recorded balances, subject to the applicable review.",
+        "group": "Handing over a period-close review"
+      },
+      {
+        "term": "trial balance",
+        "definition": "A listing of ledger account balances used to compare total debits and credits at a stated point.",
+        "group": "Handing over a period-close review"
+      },
+      {
+        "term": "audit trail",
+        "definition": "A traceable history linking a transaction to its source, changes, and review records.",
+        "group": "Correcting records while preserving the trail"
+      },
+      {
+        "term": "reversal",
+        "definition": "An entry that offsets an earlier accounting entry, rather than merely deleting its visible record.",
+        "group": "Correcting records while preserving the trail"
+      },
+      {
+        "term": "duplicate entry",
+        "definition": "A second recording of the same transaction where only one recording was intended.",
+        "group": "Correcting records while preserving the trail"
+      },
+      {
+        "term": "version history",
+        "definition": "A record of successive document or data versions and their changes.",
+        "group": "Correcting records while preserving the trail"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Two lamps without a receiving reference",
+          "setting": "A fictional bookkeeper calls the buyer about invoice A184 and receiving record R9.",
+          "turns": [
+            [
+              "Bookkeeper",
+              "Could you clarify the two-lamp difference on Alder's invoice? The receiving record shows only ten."
+            ],
+            [
+              "Buyer",
+              "We ordered twelve, so I expected the invoice to show twelve as well."
+            ],
+            [
+              "Bookkeeper",
+              "It does, but the order confirms our request rather than the quantity actually delivered."
+            ],
+            [
+              "Buyer",
+              "That's fair. The warehouse mentioned another delivery, although I haven't seen its receiving record."
+            ],
+            [
+              "Bookkeeper",
+              "Was that another lamp delivery, or could they have meant the chairs ordered separately?"
+            ],
+            [
+              "Buyer",
+              "I don't know yet. I can ask for the item description and delivery reference."
+            ],
+            [
+              "Bookkeeper",
+              "Please do. For now, shall we describe two lamps as awaiting receipt confirmation?"
+            ],
+            [
+              "Buyer",
+              "Yes, that is more accurate than calling the supplier's bill incorrect at this stage."
+            ],
+            [
+              "Bookkeeper",
+              "I've marked that specific difference for review. The other ten match the available record."
+            ],
+            [
+              "Buyer",
+              "I'll check the second delivery with the warehouse and return the reference, not another order copy."
+            ]
+          ]
+        },
+        {
+          "title": "A credit note for the wrong invoice",
+          "setting": "A fictional supplier representative and clerk compare a credit note with two similar invoices.",
+          "turns": [
+            [
+              "Clerk",
+              "Your credit note mentions invoice seventy, but our damaged shelf was billed on invoice seventeen."
+            ],
+            [
+              "Supplier representative",
+              "Both invoices were for shelving. Could you tell me which delivery contained the damaged item?"
+            ],
+            [
+              "Clerk",
+              "The West office delivery on Monday. Invoice seventeen lists six shelves for that location."
+            ],
+            [
+              "Supplier representative",
+              "I see the confusion. Invoice seventy belongs to the East office delivery the following week."
+            ],
+            [
+              "Clerk",
+              "Then the amount alone won't establish which invoice the credit note should reduce, will it?"
+            ],
+            [
+              "Supplier representative",
+              "No. The amounts happen to match, but the delivery and invoice references are different."
+            ],
+            [
+              "Clerk",
+              "Could you confirm the intended link before we apply the credit to either balance?"
+            ],
+            [
+              "Supplier representative",
+              "The intended invoice is seventeen. I will request a corrected credit note with that reference."
+            ],
+            [
+              "Clerk",
+              "Thank you. I'll keep the existing note linked to this query until its replacement arrives."
+            ],
+            [
+              "Supplier representative",
+              "Please label it pending correction; I have confirmed the intended link, not issued the replacement yet."
+            ]
+          ]
+        },
+        {
+          "title": "Cases or individual folders",
+          "setting": "A fictional invoice query concerns a supplier's unit of measure.",
+          "turns": [
+            [
+              "Accounts clerk",
+              "The invoice shows four at thirty dollars each, but the receiving record lists forty folders."
+            ],
+            [
+              "Purchasing assistant",
+              "That looks like a quantity difference. Did the supplier perhaps omit a zero?"
+            ],
+            [
+              "Accounts clerk",
+              "Before we conclude that, could you check whether four means cases rather than individual folders?"
+            ],
+            [
+              "Purchasing assistant",
+              "The purchase order says four cases, each containing ten folders. The price is per case."
+            ],
+            [
+              "Accounts clerk",
+              "That explains forty individual folders. Does the invoice also identify the unit as a case?"
+            ],
+            [
+              "Purchasing assistant",
+              "Yes, in the description beside the item code. It's easy to miss in this layout."
+            ],
+            [
+              "Accounts clerk",
+              "Then the quantities agree after comparing the same units: four cases equal forty folders."
+            ],
+            [
+              "Purchasing assistant",
+              "Exactly. The price extension is one hundred twenty dollars for the four cases."
+            ],
+            [
+              "Accounts clerk",
+              "I'll note the unit conversion in the query so the reviewer can follow the comparison."
+            ],
+            [
+              "Purchasing assistant",
+              "And I'll ask receiving to include both cases and pieces next time, where the form permits."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A service invoice without a completion reference",
+        "brief": "Fictional invoice S12 bills two training sessions. The booking email confirms two sessions, but the completion record lists only one. The coordinator can check attendance records; the second session's status is unknown.",
+        "role_a": "Bookkeeper: distinguish booked sessions from completed sessions and request the missing reference.",
+        "role_b": "Training coordinator: one attendance list is available; the instructor holds the other session's records.",
+        "opening_line": "The booking covers two sessions, but I can currently support completion of only one.",
+        "complication": "The supplier resends the booking confirmation instead of completion evidence.",
+        "success_checks": [
+          "Name the missing second-session evidence.",
+          "Avoid calling the bill wrong before checking.",
+          "Agree who will obtain the completion record."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Pine's payment without an invoice number",
+          "setting": "A fictional customer and clerk resolve the intended allocation of a recorded $600 receipt.",
+          "turns": [
+            [
+              "Receivables clerk",
+              "We have your six-hundred-dollar receipt, but its invoice reference was blank. Which invoice did you intend?"
+            ],
+            [
+              "Customer",
+              "I expected it to clear the account. Your statement still shows two invoices as unpaid."
+            ],
+            [
+              "Receivables clerk",
+              "The invoices total one thousand dollars. The six hundred appears separately as unapplied cash."
+            ],
+            [
+              "Customer",
+              "So the statement isn't saying that you never received the money I sent last week?"
+            ],
+            [
+              "Receivables clerk",
+              "Correct. Receipt is confirmed; the link to an invoice is the part we need to establish."
+            ],
+            [
+              "Customer",
+              "I've opened our remittance advice. It lists invoice four ten for the six hundred."
+            ],
+            [
+              "Receivables clerk",
+              "Thank you. That identifies the intended allocation and leaves invoice four eleven for four hundred."
+            ],
+            [
+              "Customer",
+              "Please confirm that distinction when you send the updated account view after allocation."
+            ],
+            [
+              "Receivables clerk",
+              "I'll request the allocation using this reference; I won't describe the ledger change as already completed."
+            ],
+            [
+              "Customer",
+              "Then I'll review invoice four eleven separately. We agree what the receipt was intended to cover."
+            ]
+          ]
+        },
+        {
+          "title": "A receipt across two invoices",
+          "setting": "A fictional clerk checks a customer's breakdown of a combined payment.",
+          "turns": [
+            [
+              "Customer",
+              "I sent nine hundred dollars, but the email mentioned only invoice eighty-one. Is that a problem?"
+            ],
+            [
+              "Receivables clerk",
+              "It leaves the allocation unclear because invoice eighty-one is for six hundred dollars, not nine hundred."
+            ],
+            [
+              "Customer",
+              "The other three hundred relates to invoice eighty-two. I left that reference out by mistake."
+            ],
+            [
+              "Receivables clerk",
+              "Thanks. Are you disputing any part of eighty-two, or is this simply a partial payment?"
+            ],
+            [
+              "Customer",
+              "It's a partial payment. That invoice totals five hundred, and two hundred remains unpaid."
+            ],
+            [
+              "Receivables clerk",
+              "Then your breakdown is six hundred to eighty-one and three hundred to eighty-two, correct?"
+            ],
+            [
+              "Customer",
+              "Yes. I can provide the same breakdown through our usual remittance channel this afternoon."
+            ],
+            [
+              "Receivables clerk",
+              "That will support the allocation request. We already have the nine-hundred-dollar receipt recorded."
+            ],
+            [
+              "Customer",
+              "Please don't describe the remaining two hundred as another missing receipt; we haven't sent it."
+            ],
+            [
+              "Receivables clerk",
+              "I'll distinguish the allocation clarification from the remaining balance so the account view stays understandable."
+            ]
+          ]
+        },
+        {
+          "title": "Which date drives the aging column?",
+          "setting": "A fictional customer queries why an invoice appears in a report's overdue group.",
+          "turns": [
+            [
+              "Customer",
+              "Invoice ninety appears overdue, but your team sent me another copy yesterday."
+            ],
+            [
+              "Accounts clerk",
+              "The aging report uses the recorded due date, not when we resend a copy."
+            ],
+            [
+              "Customer",
+              "I thought receiving a new copy meant the payment period started again from that day."
+            ],
+            [
+              "Accounts clerk",
+              "A copy doesn't by itself change the recorded terms. Do you have an agreed revised due date?"
+            ],
+            [
+              "Customer",
+              "Yes, our account contact confirmed next Friday in an email. It may not have reached you."
+            ],
+            [
+              "Accounts clerk",
+              "Could you forward that reference? Our current record still shows the original date last Monday."
+            ],
+            [
+              "Customer",
+              "Certainly. I'm asking you to review that agreement, not automatically treat the copy as an extension."
+            ],
+            [
+              "Accounts clerk",
+              "That distinction helps. I'll mark the due date for review against the account contact's confirmation."
+            ],
+            [
+              "Customer",
+              "Until then, could your explanation say the aging status is being checked rather than settled?"
+            ],
+            [
+              "Accounts clerk",
+              "Yes. The report reflects the current record, while the revised-date evidence remains to be reviewed."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The receipt belongs to a sister company",
+        "brief": "A fictional $800 receipt names Cedar Group. Cedar North owes $800 and Cedar South owes $500. The remittance contact knows which entity paid but the bank reference omits it.",
+        "role_a": "Receivables clerk: ask for the paying entity and invoice reference without allocating solely by amount.",
+        "role_b": "Customer contact: the payment came from Cedar North for invoice N8; provide this only after the clerk asks.",
+        "opening_line": "Could you confirm which Cedar entity sent the eight hundred dollars and which invoice it covers?",
+        "complication": "A colleague says the matching amount makes the entity question unnecessary.",
+        "success_checks": [
+          "Confirm the entity and invoice separately.",
+          "Acknowledge the receipt without calling both accounts cleared.",
+          "Restate the supplied N8 allocation."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "A deposit appears one day later",
+          "setting": "A fictional reviewer discusses the June 30 reconciliation with the bookkeeper.",
+          "turns": [
+            [
+              "Reviewer",
+              "The bank balance is three hundred lower. Have you found anything that explains that difference?"
+            ],
+            [
+              "Bookkeeper",
+              "Yes. That deposit in transit appears in the bank's July first activity for three hundred."
+            ],
+            [
+              "Reviewer",
+              "Does the reference match, or are we relying only on two amounts that happen to agree?"
+            ],
+            [
+              "Bookkeeper",
+              "The deposit reference matches as well. That supports a timing explanation for this particular item."
+            ],
+            [
+              "Reviewer",
+              "Then can I mark the account reconciled and move it to the completed folder?"
+            ],
+            [
+              "Bookkeeper",
+              "Not yet. The deposit is traced, but the other reconciliation checks are still open."
+            ],
+            [
+              "Reviewer",
+              "Which wording separates that progress from the overall status without making it sound like nothing happened?"
+            ],
+            [
+              "Bookkeeper",
+              "Deposit timing confirmed for this item; the remaining account checks are pending."
+            ],
+            [
+              "Reviewer",
+              "That works. Keep the July first reference with the June reconciliation so the reviewer can follow it."
+            ],
+            [
+              "Bookkeeper",
+              "I've linked it and kept the overall status open. The evidence supports the item, not completion."
+            ]
+          ]
+        },
+        {
+          "title": "Equal totals with an unmatched pair",
+          "setting": "A fictional reconciliation review finds two equal and opposite unexplained amounts.",
+          "turns": [
+            [
+              "Bookkeeper",
+              "The totals agree, but I still have an unmatched forty-dollar receipt and forty-dollar payment."
+            ],
+            [
+              "Reviewer",
+              "Could those simply cancel out, leaving us with no reconciliation work to do?"
+            ],
+            [
+              "Bookkeeper",
+              "They offset numerically, but they may relate to different transactions. We haven't identified either one."
+            ],
+            [
+              "Reviewer",
+              "What would be misleading about calling the difference zero and closing both questions now?"
+            ],
+            [
+              "Bookkeeper",
+              "Zero describes the net total. It doesn't establish that the individual entries are correctly recorded."
+            ],
+            [
+              "Reviewer",
+              "Understood. Can you show them as two separate reconciling items rather than one net line?"
+            ],
+            [
+              "Bookkeeper",
+              "Yes. That preserves each reference, direction, and open question for the person tracing them."
+            ],
+            [
+              "Reviewer",
+              "I'll take the receipt query. Could you ask the payments clerk about the outgoing forty?"
+            ],
+            [
+              "Bookkeeper",
+              "I will, and neither item will be labeled cleared merely because the amounts are equal."
+            ],
+            [
+              "Reviewer",
+              "Then our summary is totals agree, two unmatched items remain. That's a useful qualified result."
+            ]
+          ]
+        },
+        {
+          "title": "A bank fee or a look-alike amount",
+          "setting": "A fictional clerk checks an unexplained bank debit with a senior bookkeeper.",
+          "turns": [
+            [
+              "Clerk",
+              "There's a fifteen-dollar bank debit without a matching ledger entry. Last month's fee was fifteen too."
+            ],
+            [
+              "Senior bookkeeper",
+              "That makes a fee plausible, but does this statement actually describe the debit as a fee?"
+            ],
+            [
+              "Clerk",
+              "No. It shows a short reference that I haven't yet matched to a transaction description."
+            ],
+            [
+              "Senior bookkeeper",
+              "Then we should call it an unidentified debit rather than repeat last month's explanation as fact."
+            ],
+            [
+              "Clerk",
+              "The detailed statement view is available. Would its description be useful evidence for the query?"
+            ],
+            [
+              "Senior bookkeeper",
+              "Yes, use that reference. We need to establish what this debit represents before discussing any entry."
+            ],
+            [
+              "Clerk",
+              "I've opened it now. It identifies a returned transfer charge, rather than the monthly account fee."
+            ],
+            [
+              "Senior bookkeeper",
+              "That narrows the explanation. The responsible reviewer still needs to confirm its handling in our records."
+            ],
+            [
+              "Clerk",
+              "I'll replace the guessed monthly-fee label with the statement's description and supporting reference."
+            ],
+            [
+              "Senior bookkeeper",
+              "We've identified the bank description; the ledger review remains incomplete."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A cheque still absent from bank activity",
+        "brief": "A fictional $420 cheque is recorded on August 28 but absent from bank activity through August 31. The recipient has not confirmed receipt. No loss or cancellation is established.",
+        "role_a": "Bookkeeper: explain the outstanding payment and ask what evidence is needed.",
+        "role_b": "Payments clerk: you have the issue record but no delivery or bank-clearing confirmation.",
+        "opening_line": "The cheque is recorded internally, but it has not appeared in the bank activity we reviewed.",
+        "complication": "Someone calls it lost because it is not yet cleared.",
+        "success_checks": [
+          "Keep issued, received, and cleared distinct.",
+          "Do not infer loss from absence at this cutoff.",
+          "Assign follow-up on receipt and later bank activity."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Eli's missing Tuesday finish",
+          "setting": "A fictional payroll clerk requests evidence before the internal two o'clock cutoff.",
+          "turns": [
+            [
+              "Payroll clerk",
+              "Eli's missing punch concerns Tuesday's clock-out. Could you check it before our two o'clock approval cutoff?"
+            ],
+            [
+              "Supervisor",
+              "The roster shows five. Would confirming that scheduled finish give you what you need?"
+            ],
+            [
+              "Payroll clerk",
+              "Not quite. Eli recalls five thirty, so we need the actual finish rather than the planned one."
+            ],
+            [
+              "Supervisor",
+              "I can review the work log by one thirty. Does the exception show Tuesday's date?"
+            ],
+            [
+              "Payroll clerk",
+              "Yes, Tuesday the ninth. Please return either the supported correction or a clear unresolved status."
+            ],
+            [
+              "Supervisor",
+              "Understood. If the log only repeats the roster, I can't treat it as independent confirmation."
+            ],
+            [
+              "Payroll clerk",
+              "Exactly. We would still need someone who can confirm when the work actually ended."
+            ],
+            [
+              "Supervisor",
+              "I'll speak to Eli if the log doesn't settle it and keep the reviewer informed."
+            ],
+            [
+              "Payroll clerk",
+              "Thank you. The time exception remains open; no finish time has been confirmed during this call."
+            ],
+            [
+              "Supervisor",
+              "I accept Tuesday's check and will return its status before two."
+            ]
+          ]
+        },
+        {
+          "title": "An overnight shift crosses the date line",
+          "setting": "A fictional payroll clerk and shift supervisor clarify two timecard entries.",
+          "turns": [
+            [
+              "Payroll clerk",
+              "The timecard starts at ten on Thursday and ends at six on Friday. Is this one shift?"
+            ],
+            [
+              "Shift supervisor",
+              "Yes, it continued overnight. Why does the exception list Thursday as missing a finish?"
+            ],
+            [
+              "Payroll clerk",
+              "The import grouped entries by calendar date, so Friday's finish appears on a separate line."
+            ],
+            [
+              "Shift supervisor",
+              "Then the person may have entered both punches correctly. Could you check the linked shift record?"
+            ],
+            [
+              "Payroll clerk",
+              "I have it open. The start and finish carry the same shift reference, N18."
+            ],
+            [
+              "Shift supervisor",
+              "That supports treating them as linked records for review, rather than asking for an invented Thursday finish."
+            ],
+            [
+              "Payroll clerk",
+              "Agreed. I will send both dated entries with N18 to the timekeeping reviewer."
+            ],
+            [
+              "Shift supervisor",
+              "Please preserve the actual dates. We shouldn't make Friday's finish look as if it happened Thursday."
+            ],
+            [
+              "Payroll clerk",
+              "I'll describe this as a date-grouping exception with both punches present."
+            ],
+            [
+              "Shift supervisor",
+              "That's accurate. Any pay calculation can then use the reviewed record and the applicable rules."
+            ]
+          ]
+        },
+        {
+          "title": "Two supervisors each expect the other to approve",
+          "setting": "A fictional payroll assistant resolves ownership of an internal time approval.",
+          "turns": [
+            [
+              "Payroll assistant",
+              "Dana's timecard is complete, but neither department has accepted the approval task for the transferred week."
+            ],
+            [
+              "Team supervisor",
+              "I assumed the previous supervisor would approve it because Dana started the week there."
+            ],
+            [
+              "Payroll assistant",
+              "They assumed you would approve the whole week. The internal cutoff is tomorrow at noon."
+            ],
+            [
+              "Team supervisor",
+              "Can we clarify who reviews which dates? I supervised Thursday and Friday only."
+            ],
+            [
+              "Payroll assistant",
+              "Yes. I need named reviewers for Monday through Wednesday and for Thursday through Friday."
+            ],
+            [
+              "Team supervisor",
+              "I can accept Thursday and Friday. The earlier supervisor needs to confirm the first three days."
+            ],
+            [
+              "Payroll assistant",
+              "I'll send that split to both of you and ask the earlier supervisor to acknowledge their part."
+            ],
+            [
+              "Team supervisor",
+              "Please make clear that my acceptance is not confirmation of days I did not supervise."
+            ],
+            [
+              "Payroll assistant",
+              "Understood. Your two-day review is assigned; the three-day review still needs an owner."
+            ],
+            [
+              "Team supervisor",
+              "That gives us a concrete gap to resolve before noon rather than two assumptions of completion."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An exception arrives after the internal cutoff",
+        "brief": "A fictional time exception is received at 14:20 after a 14:00 internal cutoff. The employee disputes one hour. The payroll lead can review late-item handling at 15:00; no payment timing decision is supplied.",
+        "role_a": "Payroll assistant: acknowledge receipt and escalate the specific exception without promising when money will arrive.",
+        "role_b": "Supervisor: ask whether late receipt means the disputed hour will never be reviewed.",
+        "opening_line": "We received the one-hour query at two twenty; I have asked the payroll lead to review its handling at three.",
+        "complication": "The supervisor asks for a guaranteed correction in today's payment.",
+        "success_checks": [
+          "State the actual receipt time and pending review.",
+          "Do not turn an internal cutoff into a legal pay rule.",
+          "Confirm who will communicate the handling decision."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Morgan's fifty-dollar preview difference",
+          "setting": "A fictional payroll reviewer and clerk compare previews A and B for the same employee and period.",
+          "turns": [
+            [
+              "Reviewer",
+              "Preview B shows nine hundred fifty net pay. Did Morgan's gross pay fall by fifty?"
+            ],
+            [
+              "Payroll clerk",
+              "No. Gross pay stays at twelve hundred. Deductions rise from two hundred to two hundred fifty."
+            ],
+            [
+              "Reviewer",
+              "So the extra deduction explains the displayed net difference, but not necessarily whether that deduction belongs?"
+            ],
+            [
+              "Payroll clerk",
+              "Exactly. The new fifty-dollar line has no supporting record attached yet, so its basis remains unconfirmed."
+            ],
+            [
+              "Reviewer",
+              "Are we comparing the same employee and period, rather than differently filtered reports?"
+            ],
+            [
+              "Payroll clerk",
+              "Yes, Morgan and the same period. I checked both headings before comparing the lines."
+            ],
+            [
+              "Reviewer",
+              "Please don't label the additional deduction as a tax change without evidence of its actual category."
+            ],
+            [
+              "Payroll clerk",
+              "I won't. I'll refer the new line and missing support to the payroll lead."
+            ],
+            [
+              "Reviewer",
+              "Then the preview comparison is complete, but approval of that line remains a separate question."
+            ],
+            [
+              "Payroll clerk",
+              "Correct. Gross unchanged, deductions fifty higher, net fifty lower, with the new line awaiting review."
+            ]
+          ]
+        },
+        {
+          "title": "A one-time amount disappears from the next preview",
+          "setting": "A fictional employee asks about differing gross figures across two payroll previews.",
+          "turns": [
+            [
+              "Employee",
+              "My current preview is lower than the previous one. Has someone changed my regular rate?"
+            ],
+            [
+              "Payroll clerk",
+              "The earlier preview includes a separate one-time payment. The regular earnings lines show the same rate."
+            ],
+            [
+              "Employee",
+              "Which line accounts for the difference? I only compared the total at the bottom."
+            ],
+            [
+              "Payroll clerk",
+              "The line labeled recognition payment appears in the earlier period for one hundred dollars only."
+            ],
+            [
+              "Employee",
+              "So that explains the gross difference between these two previews, without implying a lower regular rate?"
+            ],
+            [
+              "Payroll clerk",
+              "Yes. The displayed regular rate is unchanged. I can show you the two lines separately."
+            ],
+            [
+              "Employee",
+              "I also have a question about a deduction, but that sounds like a different comparison."
+            ],
+            [
+              "Payroll clerk",
+              "It is. Let's identify the deduction reference and have the payroll specialist review its basis."
+            ],
+            [
+              "Employee",
+              "Thank you. For the earnings question, I'll compare regular amounts separately from the one-time payment."
+            ],
+            [
+              "Payroll clerk",
+              "That gives a clearer comparison. The separate deduction question remains open for the specialist."
+            ]
+          ]
+        },
+        {
+          "title": "One more employee in the register",
+          "setting": "A fictional payroll assistant explains a headcount difference to a reviewer.",
+          "turns": [
+            [
+              "Reviewer",
+              "The payroll register lists twenty-one employees, but the department list has twenty. Which one is wrong?"
+            ],
+            [
+              "Payroll assistant",
+              "The department list excludes transferred staff. The register includes one employee with earnings for the earlier dates."
+            ],
+            [
+              "Reviewer",
+              "So the two totals may use different populations rather than reflect a duplicate employee?"
+            ],
+            [
+              "Payroll assistant",
+              "Yes. The extra name is Rowan, whose transfer took effect halfway through the pay period."
+            ],
+            [
+              "Reviewer",
+              "Have you confirmed that Rowan appears only once in the register we're reviewing now?"
+            ],
+            [
+              "Payroll assistant",
+              "Yes, once under the same employee reference. The earnings allocation still needs the department split checked."
+            ],
+            [
+              "Reviewer",
+              "Then let's not remove the line simply to make the headcount agree with the current list."
+            ],
+            [
+              "Payroll assistant",
+              "Agreed. I'll explain the population difference and show the transfer date beside Rowan's record."
+            ],
+            [
+              "Reviewer",
+              "Please identify the remaining department-allocation review separately from the already-checked duplicate-name question."
+            ],
+            [
+              "Payroll assistant",
+              "I have. Twenty-one register entries, twenty current department members, and one transfer allocation awaiting review."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A year-to-date column mistaken for current pay",
+        "brief": "A fictional payslip preview lists current gross pay of $900 and year-to-date gross pay of $9,900. The employee thinks $9,900 is the current payment. Deductions and final payment status are not supplied.",
+        "role_a": "Payroll clerk: explain the two time spans without inventing a net amount.",
+        "role_b": "Employee: ask which figure belongs to this period and whether it equals the bank payment.",
+        "opening_line": "The nine hundred is current gross pay; nine thousand nine hundred is the accumulated gross amount for the year.",
+        "complication": "The employee asks you to confirm the exact deposit based on gross pay alone.",
+        "success_checks": [
+          "Explain current versus accumulated totals.",
+          "Distinguish gross pay from net pay.",
+          "Leave the unsupplied payment amount unconfirmed."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Seven approved invoices are not seven completed payments",
+          "setting": "A fictional clerk updates a manager on the proposed batch and excluded V22.",
+          "turns": [
+            [
+              "Manager",
+              "Can I tell purchasing that the eight-invoice payment batch has been paid this morning?"
+            ],
+            [
+              "Accounts clerk",
+              "No. Seven invoices have recorded approval, but their proposed batch hasn't been released. V22 remains excluded."
+            ],
+            [
+              "Manager",
+              "What's missing for V22, and does its problem affect the description of the other seven?"
+            ],
+            [
+              "Accounts clerk",
+              "Its receiving document is missing. The other seven have approval, though none is reported as released here."
+            ],
+            [
+              "Manager",
+              "When will someone review the proposed batch rather than simply the individual invoice records?"
+            ],
+            [
+              "Accounts clerk",
+              "The approver returns at three. I can present the seven-item proposal then."
+            ],
+            [
+              "Manager",
+              "Please make the status clear now, because purchasing is waiting to answer a supplier's question."
+            ],
+            [
+              "Accounts clerk",
+              "Seven invoices approved, proposed batch not released, V22 excluded pending receipt evidence. That's the current position."
+            ],
+            [
+              "Manager",
+              "Thank you. I'll relay those separate stages and avoid promising a payment date to the supplier."
+            ],
+            [
+              "Accounts clerk",
+              "I'll update the release status when confirmed and keep the V22 document query visible separately."
+            ]
+          ]
+        },
+        {
+          "title": "A delegation that covers only smaller invoices",
+          "setting": "A fictional clerk checks a substitute reviewer's stated authority.",
+          "turns": [
+            [
+              "Accounts clerk",
+              "The usual approver is away. Could you confirm whether your delegation covers this twelve-hundred-dollar invoice?"
+            ],
+            [
+              "Deputy manager",
+              "I can approve department purchases up to one thousand. I hadn't noticed this one exceeded that limit."
+            ],
+            [
+              "Accounts clerk",
+              "Thanks for checking. The approval matrix also names the finance manager for items above that threshold."
+            ],
+            [
+              "Deputy manager",
+              "Then forwarding it to me wouldn't complete approval, even though I manage the department today."
+            ],
+            [
+              "Accounts clerk",
+              "Correct. We need the named finance review, not just a senior colleague's acknowledgment."
+            ],
+            [
+              "Deputy manager",
+              "I can confirm that the goods were received, but I can't supply that final approval."
+            ],
+            [
+              "Accounts clerk",
+              "That confirmation is useful support. I'll keep it separate from the remaining approval requirement."
+            ],
+            [
+              "Deputy manager",
+              "Please tell the finance manager what I've verified so they don't have to ask again."
+            ],
+            [
+              "Accounts clerk",
+              "I'll include your receipt confirmation and explain that your delegated approver limit is exceeded."
+            ],
+            [
+              "Deputy manager",
+              "Then the handover is clear: receipt checked, finance approval pending, and no payment release confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "The attachment is not the approved version",
+          "setting": "A fictional invoice clerk checks conflicting attachment versions with an approver.",
+          "turns": [
+            [
+              "Invoice clerk",
+              "Your approval note refers to version two, but the batch attachment is still version one."
+            ],
+            [
+              "Approver",
+              "Version two removes a delivery charge. Can you see that difference in the attached amount?"
+            ],
+            [
+              "Invoice clerk",
+              "Yes. The batch shows the higher amount from version one, so the approval and attachment don't agree."
+            ],
+            [
+              "Approver",
+              "Please present the corrected attachment for review before anyone describes the batch total as approved."
+            ],
+            [
+              "Invoice clerk",
+              "Should I retain version one in the history with a clear superseded label?"
+            ],
+            [
+              "Approver",
+              "Yes, that explains why the amount changed. The current proposal should point clearly to version two."
+            ],
+            [
+              "Invoice clerk",
+              "I've corrected the proposal reference and recalculated its displayed total for your review."
+            ],
+            [
+              "Approver",
+              "I can now see version two and the reduced amount. That resolves the document-version mismatch."
+            ],
+            [
+              "Invoice clerk",
+              "I'll record your review of this proposal separately from any later payment release."
+            ],
+            [
+              "Approver",
+              "Please do. We have clarified the approved amount here, not confirmed that money has left the bank."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The approver confirms receipt of the email only",
+        "brief": "A fictional approver replies 'Received, thank you' to a four-invoice proposal. No decision is stated. The clerk can ask for explicit approval or a query before the 16:00 review meeting.",
+        "role_a": "Accounts clerk: ask whether the reply acknowledges delivery or records a decision.",
+        "role_b": "Approver: you only acknowledged the email and will review the proposal at 15:30.",
+        "opening_line": "Does your reply confirm receipt of the proposal, or have you completed the approval review?",
+        "complication": "A colleague wants to mark all four invoices approved based on the acknowledgment.",
+        "success_checks": [
+          "Distinguish acknowledgment from approval.",
+          "State the supplied review time without inventing a decision.",
+          "Keep the proposal pending until a decision is given."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Alex takes the maintenance-period query",
+          "setting": "A fictional noon handover concerns the final June close item.",
+          "turns": [
+            [
+              "Bookkeeper",
+              "Nine June checks are complete. The maintenance invoice for two hundred forty dollars remains the open item."
+            ],
+            [
+              "Alex",
+              "Is its invoice date missing, or is the question which period it belongs to?"
+            ],
+            [
+              "Bookkeeper",
+              "It is dated July second and describes June service. The posting period needs the accountant's review."
+            ],
+            [
+              "Alex",
+              "Has anyone already approved an adjusting entry that I need to follow through?"
+            ],
+            [
+              "Bookkeeper",
+              "No adjustment is approved. Please take over the query without treating either date as the accounting decision."
+            ],
+            [
+              "Alex",
+              "I accept the follow-up. Where are the invoice and the note showing that review is still pending?"
+            ],
+            [
+              "Bookkeeper",
+              "They're linked under maintenance in the close checklist. The service description is visible on the invoice."
+            ],
+            [
+              "Alex",
+              "I'll give the accountant both dates and ask for the posting-period decision."
+            ],
+            [
+              "Bookkeeper",
+              "Thank you. Until that outcome is recorded, the checklist should stay at nine completed checks."
+            ],
+            [
+              "Alex",
+              "Agreed. I own follow-up from noon; the accountant decides treatment."
+            ]
+          ]
+        },
+        {
+          "title": "A balanced trial balance with a missing reference",
+          "setting": "A fictional assistant asks a reviewer whether equal totals settle an open close question.",
+          "turns": [
+            [
+              "Accounts assistant",
+              "The trial balance totals agree. Can I close the equipment query without its invoice reference?"
+            ],
+            [
+              "Close reviewer",
+              "Matching debit and credit totals don't establish that each entry has proper support."
+            ],
+            [
+              "Accounts assistant",
+              "The amount and posting date are present, but I can't trace the equipment entry to its invoice."
+            ],
+            [
+              "Close reviewer",
+              "Then the supporting-reference check remains open. It is a different question from whether the totals balance."
+            ],
+            [
+              "Accounts assistant",
+              "Who should receive it now? The buyer holds the purchase file and can search the reference."
+            ],
+            [
+              "Close reviewer",
+              "Please hand that search to the buyer, with the amount, date, and equipment description already available."
+            ],
+            [
+              "Accounts assistant",
+              "I'll ask the buyer to accept the search, not simply copy them on an email."
+            ],
+            [
+              "Close reviewer",
+              "Good. Keep the trial balance result as completed while leaving the document query visible."
+            ],
+            [
+              "Accounts assistant",
+              "So our update distinguishes a balanced listing from a complete set of supporting records."
+            ],
+            [
+              "Close reviewer",
+              "Exactly. Both findings matter, and the missing reference has a concrete next owner."
+            ]
+          ]
+        },
+        {
+          "title": "A schedule total agrees after one item is added",
+          "setting": "A fictional bookkeeper hands a corrected supporting schedule to a reviewer.",
+          "turns": [
+            [
+              "Bookkeeper",
+              "The supplier schedule now agrees with the ledger after I included the omitted sixty-dollar item."
+            ],
+            [
+              "Reviewer",
+              "Was the item missing from the ledger too, or only from the supporting schedule?"
+            ],
+            [
+              "Bookkeeper",
+              "Only from the schedule. The ledger already contained it under invoice L6 before today's correction."
+            ],
+            [
+              "Reviewer",
+              "Then we shouldn't describe this as a new posting or an adjusting entry to the accounts."
+            ],
+            [
+              "Bookkeeper",
+              "Correct. I revised the schedule total and linked L6 so you can check the change."
+            ],
+            [
+              "Reviewer",
+              "Have you kept the earlier schedule version so the review trail explains the original mismatch?"
+            ],
+            [
+              "Bookkeeper",
+              "Yes, version one remains marked superseded. Version two includes the extra line and corrected total."
+            ],
+            [
+              "Reviewer",
+              "I'll take the schedule review now. Does anything else remain open for this account?"
+            ],
+            [
+              "Bookkeeper",
+              "The document review is yours; I haven't identified another difference, but your check remains pending."
+            ],
+            [
+              "Reviewer",
+              "Understood. I'm accepting the corrected schedule for review, not retrospectively treating the first version as accurate."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A close folder with two unreviewed schedules",
+        "brief": "A fictional checklist marks cash and supplier schedules prepared, but both reviewer boxes are empty. The reviewer can take cash today; supplier review needs another named colleague.",
+        "role_a": "Bookkeeper: distinguish prepared from reviewed and arrange the two ownership checks orally.",
+        "role_b": "Reviewer: accept cash review only and ask who will take suppliers.",
+        "opening_line": "Both schedules are prepared, but neither has a recorded review yet.",
+        "complication": "A manager asks to report the entire folder as complete because all files are present.",
+        "success_checks": [
+          "Separate file preparation from review completion.",
+          "Confirm the cash reviewer.",
+          "Keep supplier review unassigned until someone accepts it."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "An entry was duplicated, not a payment confirmed",
+          "setting": "A fictional clerk corrects a message about J14 in tracker version three.",
+          "turns": [
+            [
+              "Clerk",
+              "I need to correct my earlier message. I called J14 a recovered duplicate payment, which wasn't established."
+            ],
+            [
+              "Controller",
+              "What's confirmed, and what's unknown about the one-hundred-eighty-dollar item?"
+            ],
+            [
+              "Clerk",
+              "You confirmed a duplicate invoice entry in tracker version three. We haven't established duplicate cash movement."
+            ],
+            [
+              "Controller",
+              "That's right. Has a ledger correction been posted since we last discussed the tracker?"
+            ],
+            [
+              "Clerk",
+              "No. The ledger review remains pending. My message overstated both the payment finding and the recovery."
+            ],
+            [
+              "Controller",
+              "Please correct that with the same recipients so they don't keep repeating the stronger claim."
+            ],
+            [
+              "Clerk",
+              "I will say duplicate entry confirmed, duplicate payment unestablished, and ledger correction pending your review."
+            ],
+            [
+              "Controller",
+              "Include the original entry reference. A reader should be able to follow what we are actually correcting."
+            ],
+            [
+              "Clerk",
+              "I've linked J14 and version three. The correction addresses the claim as well as the amount."
+            ],
+            [
+              "Controller",
+              "Thank you. Keep the record issue separate from any payment tracing that may follow."
+            ]
+          ]
+        },
+        {
+          "title": "The correction email pointed to the old file",
+          "setting": "A fictional bookkeeper repairs a version-link mistake with a colleague.",
+          "turns": [
+            [
+              "Colleague",
+              "Your message says corrected, but the attachment still duplicates invoice M8."
+            ],
+            [
+              "Bookkeeper",
+              "You're right. I linked version two instead of version three, which contains the reviewed tracker correction."
+            ],
+            [
+              "Colleague",
+              "So I wasn't looking at the current version. Can you identify precisely what changed between them?"
+            ],
+            [
+              "Bookkeeper",
+              "Version three removes the repeated tracker line and links the original transaction."
+            ],
+            [
+              "Colleague",
+              "Does that mean the ledger was changed as well, or is this only the tracker?"
+            ],
+            [
+              "Bookkeeper",
+              "Only the tracker. The ledger had one entry, so no ledger correction was needed."
+            ],
+            [
+              "Colleague",
+              "Thanks. Please send the correct link and label the earlier attachment superseded rather than letting both seem current."
+            ],
+            [
+              "Bookkeeper",
+              "I've corrected the link now. The message explicitly identifies version three and the scope of the change."
+            ],
+            [
+              "Colleague",
+              "I see the note and single line. That resolves my version confusion."
+            ],
+            [
+              "Bookkeeper",
+              "I'll leave version two marked superseded in the version history, preserving the audit trail."
+            ]
+          ]
+        },
+        {
+          "title": "A proposed reversal is still only a proposal",
+          "setting": "A fictional clerk clarifies the status of an accounting correction during a review call.",
+          "turns": [
+            [
+              "Reviewer",
+              "The query says reversal prepared. Has the original entry already been offset?"
+            ],
+            [
+              "Accounts clerk",
+              "No. Prepared refers to the draft correction request; the proposed reversal has not been posted."
+            ],
+            [
+              "Reviewer",
+              "I read it as completed because the task was marked done in the document-preparation column."
+            ],
+            [
+              "Accounts clerk",
+              "That label was too broad. I'll identify preparation as complete and accounting approval as pending."
+            ],
+            [
+              "Reviewer",
+              "Please also confirm which original transaction the proposal refers to, since two references look similar."
+            ],
+            [
+              "Accounts clerk",
+              "It refers to entry six eighteen for eighty dollars, not entry six eighty for eighteen dollars."
+            ],
+            [
+              "Reviewer",
+              "Good distinction. Reading those references aloud without the amounts could easily cause another mix-up."
+            ],
+            [
+              "Accounts clerk",
+              "I'll state both reference and amount together, and keep the original entry linked in the request."
+            ],
+            [
+              "Reviewer",
+              "Then I can review the intended correction without assuming anything has already changed in the ledger."
+            ],
+            [
+              "Accounts clerk",
+              "Exactly. Draft prepared for entry six eighteen, eighty dollars; approval and posting remain separate, unfinished stages."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The wrong employee reference in a correction query",
+        "brief": "A fictional payroll query names employee R14, but the attached supporting note concerns R41. No pay change has been made. The payroll lead can confirm the intended record before review resumes.",
+        "role_a": "Payroll assistant: acknowledge the transposed reference and pause the ambiguous query, not the employee's pay.",
+        "role_b": "Payroll lead: ask which evidence identifies the intended record; you can confirm R41 from the note.",
+        "opening_line": "The query reference and supporting note disagree; no pay change has been made.",
+        "complication": "A colleague calls the mismatch proof that the wrong person was paid.",
+        "success_checks": [
+          "Correct the record reference using the supplied evidence.",
+          "Do not infer an incorrect payment from a query error.",
+          "Restate R41 and the unchanged payment status."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "One delivery split between two offices",
+      "setting": "A fictional supplier call resolves how one invoice's quantities relate to two receiving records.",
+      "dialogue": [
+        [
+          "Bookkeeper",
+          "Our invoice query concerns eighteen desk trays. The North office recorded twelve, leaving six without a match."
+        ],
+        [
+          "Supplier",
+          "We delivered the whole order, but six trays went to the South office at your buyer's request."
+        ],
+        [
+          "Bookkeeper",
+          "That would explain the quantity, although our file currently contains only the North office receiving record."
+        ],
+        [
+          "Supplier",
+          "The dispatch note has two destination lines. Can you see the South office reference near the bottom?"
+        ],
+        [
+          "Bookkeeper",
+          "Yes, it says S24. I had read the top destination as applying to the entire delivery."
+        ],
+        [
+          "Supplier",
+          "S24 is the second receiving reference. Your South office contact signed for six trays on Wednesday."
+        ],
+        [
+          "Bookkeeper",
+          "Thank you. I have now located S24 in our shared receiving folder, and its quantity is six."
+        ],
+        [
+          "Supplier",
+          "Does that resolve the quantity query, or do you still need something from us about the invoice?"
+        ],
+        [
+          "Bookkeeper",
+          "It resolves the eighteen trays against the two records. The separate unit-price review is still pending internally."
+        ],
+        [
+          "Supplier",
+          "Understood. Please distinguish that review from a delivery dispute so our dispatch team doesn't investigate it again."
+        ],
+        [
+          "Bookkeeper",
+          "I will close the quantity query and identify the price check separately for our purchasing colleague."
+        ],
+        [
+          "Supplier",
+          "That's helpful. Our team will treat the delivery question as resolved and await any specific pricing question."
+        ]
+      ],
+      "notes": [
+        "'That would explain' introduces a possible explanation before the second record is located.",
+        "'It resolves the quantity query' limits closure to the issue actually checked."
+      ]
+    },
+    {
+      "title": "A paid invoice on an older statement",
+      "setting": "A fictional customer and clerk compare a statement cutoff with a later receipt.",
+      "dialogue": [
+        [
+          "Customer",
+          "The statement says invoice fifty is unpaid, although your colleague acknowledged my payment yesterday by email."
+        ],
+        [
+          "Receivables clerk",
+          "Let's compare dates first. When was the statement prepared, and when was payment received?"
+        ],
+        [
+          "Customer",
+          "The statement is dated Monday. The acknowledgment says Wednesday, but I downloaded the statement this morning."
+        ],
+        [
+          "Receivables clerk",
+          "Downloading it today doesn't change its Monday cutoff. Wednesday's receipt wouldn't appear in that earlier snapshot."
+        ],
+        [
+          "Customer",
+          "So both documents could be correct, although one says unpaid and the other confirms receipt?"
+        ],
+        [
+          "Receivables clerk",
+          "Yes. They describe different dates. I can check the current account view while we're speaking."
+        ],
+        [
+          "Customer",
+          "Please also check whether the receipt was linked to invoice fifty or is still unallocated."
+        ],
+        [
+          "Receivables clerk",
+          "The current view shows it allocated to fifty on Wednesday. That invoice now has a zero balance."
+        ],
+        [
+          "Customer",
+          "Does the current view still show the separate invoice for replacement labels? I haven't checked that purchase."
+        ],
+        [
+          "Receivables clerk",
+          "Yes. Invoice fifty-two remains open for two hundred dollars; Wednesday's receipt wasn't allocated to that invoice."
+        ],
+        [
+          "Customer",
+          "Please send the current view, clearly dated, and I'll check fifty-two against our purchasing records."
+        ],
+        [
+          "Receivables clerk",
+          "I'll send it. The old statement remains a historical snapshot, not invoice fifty's current position."
+        ]
+      ],
+      "notes": [
+        "'Cutoff' identifies the last date covered, not the date someone opens a document.",
+        "'Allocated to' names the invoice connected to the receipt, not merely receipt of money."
+      ]
+    },
+    {
+      "title": "Friday's bank view and Monday's cash book",
+      "setting": "A fictional reviewer and bookkeeper choose a consistent reconciliation scope.",
+      "dialogue": [
+        [
+          "Reviewer",
+          "This bank reconciliation shows a six-hundred-dollar difference. Are both records covering the same dates?"
+        ],
+        [
+          "Bookkeeper",
+          "The bank view ends Friday, while the cash book includes Monday. I missed that cutoff mismatch."
+        ],
+        [
+          "Reviewer",
+          "Then we're comparing unlike periods. Do we have a cash book view through Friday for this review?"
+        ],
+        [
+          "Bookkeeper",
+          "Yes, the saved Friday view is available. The Monday export can remain in the file as well."
+        ],
+        [
+          "Reviewer",
+          "Please compare Friday's view. We shouldn't assume all six hundred disappears because the periods differed."
+        ],
+        [
+          "Bookkeeper",
+          "That removes four hundred from the difference. Two hundred still needs a transaction-level explanation."
+        ],
+        [
+          "Reviewer",
+          "That gives us a clearer question. Which four hundred belongs to the later period?"
+        ],
+        [
+          "Bookkeeper",
+          "Two Monday receipts account for it; their references are visible. The remaining two hundred is still unmatched."
+        ],
+        [
+          "Reviewer",
+          "Let's call the first part a scope correction, not a bank error or ledger adjustment."
+        ],
+        [
+          "Bookkeeper",
+          "Agreed. I'll keep the dates prominent and carry the two-hundred-dollar item forward for investigation."
+        ],
+        [
+          "Reviewer",
+          "I'll review that item next. Please give me the aligned views and the Monday receipt references."
+        ],
+        [
+          "Bookkeeper",
+          "Here they are. Both sides now use Friday, with two hundred still explicitly unresolved."
+        ]
+      ],
+      "notes": [
+        "'Through Friday' includes Friday and makes the comparison boundary explicit.",
+        "'Accounts for it' identifies an explained component without claiming the entire difference is resolved."
+      ]
+    },
+    {
+      "title": "A break field was left blank",
+      "setting": "A fictional timekeeping clerk and supervisor identify what a blank field does and does not establish.",
+      "dialogue": [
+        [
+          "Timekeeping clerk",
+          "Leah's Wednesday break field is blank. Is information missing, or did no break occur?"
+        ],
+        [
+          "Supervisor",
+          "The roster includes thirty minutes, but that doesn't tell us whether the planned break happened."
+        ],
+        [
+          "Timekeeping clerk",
+          "A blank isn't a recorded zero. We shouldn't infer either from the planned roster."
+        ],
+        [
+          "Supervisor",
+          "Leah said the shift was busy. I can ask about actual timing without suggesting an answer."
+        ],
+        [
+          "Timekeeping clerk",
+          "Please request the facts. I'm not asking you to decide any pay entitlement during this conversation."
+        ],
+        [
+          "Supervisor",
+          "If Leah remembers the break but not its exact start, how should I describe that uncertainty?"
+        ],
+        [
+          "Timekeeping clerk",
+          "State what's recalled and what's unknown. The reviewer can assess what supporting information is available."
+        ],
+        [
+          "Supervisor",
+          "Then I'll return that clarification, not silently replace the blank with the scheduled thirty minutes."
+        ],
+        [
+          "Timekeeping clerk",
+          "Thank you. Our internal review window closes at eleven; the payroll lead receives unresolved exceptions then."
+        ],
+        [
+          "Supervisor",
+          "I can speak with Leah before ten thirty and report the status, even if timing remains uncertain."
+        ],
+        [
+          "Timekeeping clerk",
+          "I've assigned the clarification to you and kept the field unchanged while the check is pending."
+        ],
+        [
+          "Supervisor",
+          "Clear. We'll separate the actual-time question from calculation or legal questions for the responsible specialist."
+        ]
+      ],
+      "notes": [
+        "'A blank field isn't the same as a recorded zero' distinguishes missing information from a positive statement.",
+        "'What is recalled and what is unknown' supports a useful report without forcing false precision."
+      ]
+    },
+    {
+      "title": "The report total includes a different group",
+      "setting": "A fictional payroll reviewer checks why a department preview appears unusually low.",
+      "dialogue": [
+        [
+          "Department manager",
+          "The preview total fell sharply. Were several employees left unpaid, or am I reading this incorrectly?"
+        ],
+        [
+          "Payroll reviewer",
+          "Let's check scope first. This preview includes only North department's current assignment codes, not Central's."
+        ],
+        [
+          "Department manager",
+          "Last period's report included both. Could that account for some of the apparent fall?"
+        ],
+        [
+          "Payroll reviewer",
+          "Yes, but a like-for-like comparison is needed to quantify it. The department filters differ."
+        ],
+        [
+          "Department manager",
+          "Could you compare North alone, keeping the same gross-pay column and the same period length?"
+        ],
+        [
+          "Payroll reviewer",
+          "Those views show North's gross total three hundred lower, not the larger difference you first saw."
+        ],
+        [
+          "Department manager",
+          "Do we know why, or have we only corrected the basis of the comparison?"
+        ],
+        [
+          "Payroll reviewer",
+          "Only the basis. One employee's hours differ, but the supporting time review remains open."
+        ],
+        [
+          "Department manager",
+          "Then I shouldn't say everyone has been paid correctly based on this preview comparison alone."
+        ],
+        [
+          "Payroll reviewer",
+          "Correct. A preview doesn't establish completed payment, and the hours difference needs its own review."
+        ],
+        [
+          "Department manager",
+          "I'll report the comparable three-hundred-dollar difference and ask the time reviewer about the affected record."
+        ],
+        [
+          "Payroll reviewer",
+          "I'll provide the North-only views with filters visible and keep the hours query separate from payment status."
+        ]
+      ],
+      "notes": [
+        "'Like-for-like' means using matching scope and measures.",
+        "'So far, only...' states progress precisely without pretending that the underlying cause is established."
+      ]
+    },
+    {
+      "title": "A supplier asks what approved means",
+      "setting": "A fictional supplier calls after receiving an imprecise payment-status message.",
+      "dialogue": [
+        [
+          "Supplier",
+          "Your message said approved. Should I tell our accounts team that payment has already been sent?"
+        ],
+        [
+          "Accounts clerk",
+          "Not yet. Here, invoice approval and payment release are separate stages, and release remains pending."
+        ],
+        [
+          "Supplier",
+          "Our account is near its due date. Can you give us a confirmed payment date?"
+        ],
+        [
+          "Accounts clerk",
+          "I don't have one. I can request a timing update from the payments coordinator."
+        ],
+        [
+          "Supplier",
+          "Please make the request specific. We need to identify outstanding invoices for our weekly report."
+        ],
+        [
+          "Accounts clerk",
+          "I'll ask whether H32 has a confirmed release date and whether anything further is needed from you."
+        ],
+        [
+          "Supplier",
+          "We supplied the corrected order reference. Is that still showing as an open query?"
+        ],
+        [
+          "Accounts clerk",
+          "No, that query is closed. The reference is attached, and the revised amount has recorded approval."
+        ],
+        [
+          "Supplier",
+          "Please don't request that document again. Our remaining question concerns the payment stage only."
+        ],
+        [
+          "Accounts clerk",
+          "Agreed. I'm forwarding that exact question, with the completed document check clearly identified for the coordinator."
+        ],
+        [
+          "Supplier",
+          "I'll report approved but not yet confirmed as sent, rather than treating approval as bank confirmation."
+        ],
+        [
+          "Accounts clerk",
+          "That's accurate. The coordinator's reply will address release timing, not reopen the resolved reference query."
+        ]
+      ],
+      "notes": [
+        "'Not yet confirmed as sent' preserves uncertainty about release without denying the completed approval.",
+        "'The remaining question concerns...' narrows follow-up to the unresolved part."
+      ]
+    },
+    {
+      "title": "An invoice arrives after the close review",
+      "setting": "A fictional clerk and accountant discuss new evidence without assuming a posting treatment.",
+      "dialogue": [
+        [
+          "Accounts clerk",
+          "A cleaning invoice arrived after the close review. It describes work during the month just reviewed."
+        ],
+        [
+          "Accountant",
+          "Was a related amount already included in the close supporting schedule, or is that unknown?"
+        ],
+        [
+          "Accounts clerk",
+          "There's a cleaning estimate with an incomplete supplier reference. I haven't linked it to this invoice."
+        ],
+        [
+          "Accountant",
+          "Keep arrival date, service period, and the possible estimate separate. None alone settles the posting question."
+        ],
+        [
+          "Accounts clerk",
+          "The invoice is four hundred dollars; the estimate is three hundred eighty. Similar descriptions aren't conclusive."
+        ],
+        [
+          "Accountant",
+          "I need the service details and estimate reference before deciding whether they cover the same work."
+        ],
+        [
+          "Accounts clerk",
+          "Both records are here. The invoice names East office, while the estimate names West office."
+        ],
+        [
+          "Accountant",
+          "Important distinction. We shouldn't net the amounts together just because both descriptions say cleaning."
+        ],
+        [
+          "Accounts clerk",
+          "I'll attach the site details and leave any new entry or adjustment pending your decision."
+        ],
+        [
+          "Accountant",
+          "I accept the review. Our immediate finding is a site mismatch, not a twenty-dollar correction."
+        ],
+        [
+          "Accounts clerk",
+          "I'll tell the close coordinator that new evidence needs review and no treatment is approved."
+        ],
+        [
+          "Accountant",
+          "Please do. I'll assess the separate items and return the decision with references for the record."
+        ]
+      ],
+      "notes": [
+        "'Whether they relate to the same work' avoids assuming a match from similar descriptions.",
+        "'The immediate finding is...' separates an observed mismatch from a proposed accounting correction."
+      ]
+    },
+    {
+      "title": "A date correction changes the report, not the payment",
+      "setting": "A fictional bookkeeper explains a correction to a manager who worries money moved twice.",
+      "dialogue": [
+        [
+          "Manager",
+          "The revised cash report moves a payment from Thursday to Friday. Did the date correction send it again?"
+        ],
+        [
+          "Bookkeeper",
+          "No. It changed the report's date label. We have no evidence of a second payment."
+        ],
+        [
+          "Manager",
+          "Why was the original date wrong? Please distinguish the report edit from the actual bank activity."
+        ],
+        [
+          "Bookkeeper",
+          "The import used preparation date in the bank-date column. The bank record shows Friday."
+        ],
+        [
+          "Manager",
+          "So Thursday's report included it too early under that column's meaning. Is that the confirmed issue?"
+        ],
+        [
+          "Bookkeeper",
+          "Yes. The corrected version uses bank date and links the original report, preserving the explanation."
+        ],
+        [
+          "Manager",
+          "Has the weekly total changed, or does the amount move between days within the week?"
+        ],
+        [
+          "Bookkeeper",
+          "The weekly total is unchanged. Daily totals shift by this item's two hundred twenty dollars."
+        ],
+        [
+          "Manager",
+          "I'll correct my earlier suggestion of a second payment. The evidence supports a reporting-date correction."
+        ],
+        [
+          "Bookkeeper",
+          "Thank you. Please mention both the unchanged weekly total and changed daily allocation when explaining it."
+        ],
+        [
+          "Manager",
+          "Which version should the department use now, and how will they identify the old one?"
+        ],
+        [
+          "Bookkeeper",
+          "Version five is current; four is marked superseded. The history retains both and explains this date correction."
+        ]
+      ],
+      "notes": [
+        "'We have no evidence of...' avoids converting a reporting change into a claim about money movement.",
+        "'Within the week' explains why daily totals can change while the weekly total stays the same."
+      ]
+    }
+  ]
+}

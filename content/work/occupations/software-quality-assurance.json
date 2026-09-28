@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "software-quality-assurance",
+    "title": "Software Quality Assurance and Testing English",
+    "summary": "Agree test expectations, report reproducible failures, justify coverage, investigate unstable automation, and explain triage and release evidence without overstating certainty.",
+    "roles": "Software quality assurance analysts, manual testers, test engineers, automation engineers, and test leads",
+    "category": "Technology & data",
+    "scope_note": "All products, builds, test data, results, and incidents are fictional English-language practice, not a testing certification course, security assessment, implementation manual, or release authorization. Quality assurance includes broader quality practices; these lessons focus on testing communication within those roles. Use the actual product contract, tools, evidence, qualified reviewers, and local decision responsibilities in real work. No specific platform behavior or universal defect-rating scheme is implied.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Software Developers, Quality Assurance Analysts, and Testers",
+        "url": "https://www.bls.gov/ooh/computer-and-information-technology/software-developers.htm"
+      },
+      {
+        "title": "International Software Testing Qualifications Board: Certified Tester Foundation Level overview",
+        "url": "https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Agreeing the expected result",
+        "terms": [
+          "test oracle",
+          "acceptance criterion",
+          "expected result",
+          "ambiguity"
+        ],
+        "collocations": [
+          "establish the test oracle: identify a credible basis for judging an outcome",
+          "clarify a boundary rule: settle what happens at a stated limit",
+          "compare expected and actual results: distinguish the specified outcome from the observation",
+          "resolve conflicting examples: determine which source expresses the intended behavior"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A fictional booking feature says cancellations are allowed 'within 24 hours.' One example allows cancellation exactly 24 hours before the event; another rejects it. Time-zone handling is outside this exercise. The requirement owner can clarify the equality case.",
+          "model": "The phrase within twenty-four hours leaves the boundary unclear, and the two examples disagree at exactly twenty-four hours before the event. Which outcome is intended at equality? I need an agreed acceptance criterion to judge that case. Until then, I can report the observed result, but I cannot assign a defensible pass or fail against these conflicting examples."
+        },
+        "workshop": {
+          "title": "Ask what makes the result correct",
+          "goal": "Resolve a missing expectation before assigning a test verdict.",
+          "explanation": "A test oracle is the basis for judging the result, not necessarily another program. When wording and examples conflict, state the precise input whose outcome is uncertain and ask the responsible person to settle it.",
+          "frames": [
+            "For input ___, source A expects ___ while source B expects ___.",
+            "Which source should govern the equality case?",
+            "The observed result is ___; the expected result is still ___."
+          ],
+          "before": "The test failed because I expected the other result.",
+          "after": "The examples disagree at exactly twenty-four hours; we need the intended equality outcome before assigning a verdict.",
+          "reason": "The revision distinguishes personal expectation from an agreed basis for evaluating the behavior.",
+          "questions": [
+            {
+              "prompt": "Tester: The examples disagree at exactly twenty-four hours.\nRequirement owner: We need to clarify the ____ case before you judge it.",
+              "options": [
+                "boundary",
+                "time-zone",
+                "state-transition",
+                "formatting"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Equality at the stated limit is the boundary question.",
+                "Time-zone handling is explicitly outside this case; the conflict concerns equality.",
+                "No workflow-state transition is the disputed condition here.",
+                "The examples disagree about permission, not the appearance of a displayed value."
+              ]
+            },
+            {
+              "prompt": "Developer: Can you report what happened despite the ambiguity?\nTester: Yes; I can report the observation, but the ____ remains unsettled.",
+              "options": [
+                "expected result",
+                "actual output",
+                "build identifier",
+                "execution time"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Conflicting examples leave the intended outcome unresolved.",
+                "The actual output is the observation already available.",
+                "The build identity is not the disputed issue.",
+                "No uncertainty about execution time is supplied."
+              ]
+            }
+          ],
+          "role_b": "Requirement owner: agree, for this fictional exercise, that cancellation exactly twenty-four hours before the event is allowed; wording beyond that equality case still needs review.",
+          "challenge": "Someone says the current implementation should define correctness automatically. Explain why reproducing existing behavior does not settle conflicting requirements."
+        }
+      },
+      {
+        "title": "Making a failure reproducible",
+        "terms": [
+          "precondition",
+          "reproduction steps",
+          "test environment",
+          "actual result"
+        ],
+        "collocations": [
+          "state the starting state: describe conditions that must hold before the actions",
+          "identify the tested build: specify the version that produced the observation",
+          "preserve the failing sequence: retain the order of actions that led to the failure",
+          "report reproduction frequency: state how often the behavior occurred in recorded attempts"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "A fictional tester sees an export omit the last selected item in build Q12, using a saved selection of three items. A developer's one-item attempt succeeds. The tester reproduced the omission twice in two attempts; no other build or selection size has been checked.",
+          "model": "Could you repeat the export on Q12 with the saved three-item selection, rather than a new one-item selection? The last selected item was omitted in both recorded attempts. Those starting conditions differ from your passing attempt. I can provide the saved selection and action order; we have not established behavior for other builds or selection sizes."
+        },
+        "workshop": {
+          "title": "Request a comparable reproduction",
+          "goal": "Supply the starting state, actions, and result needed to repeat an observation.",
+          "explanation": "A clear report distinguishes preconditions from steps and actual behavior from expected behavior. Two failures in two attempts are a bounded observation, not a claim that every user always fails.",
+          "frames": [
+            "Start with ___ on build ___.",
+            "After ___, I observed ___ in ___ attempts.",
+            "Your attempt differs in ___; could we align that condition?"
+          ],
+          "before": "Export is broken. Try it again.",
+          "after": "On Q12, export the saved three-item selection; the final selected item was absent in both recorded attempts.",
+          "reason": "The revised request gives a repeatable context and limits the frequency claim to the evidence.",
+          "questions": [
+            {
+              "prompt": "Developer: My one-item export succeeds.\nTester: Please repeat it with ____ so the starting condition matches my report.",
+              "options": [
+                "the saved three-item selection",
+                "a later build",
+                "a different output type",
+                "an empty selection"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This matches the supplied failing selection.",
+                "A later build would introduce another difference.",
+                "A different output type would change the tested workflow.",
+                "An empty selection does not match the failing condition."
+              ]
+            },
+            {
+              "prompt": "Lead: How often has it happened in your checks?\nTester: It occurred ____; other selections are untested.",
+              "options": [
+                "in both recorded attempts",
+                "for every customer",
+                "on every build",
+                "in no comparable attempts"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This reports the two observed attempts without generalizing.",
+                "Customer-wide frequency has not been investigated here.",
+                "Only Q12 has been checked in the case.",
+                "There are two recorded matching failures."
+              ]
+            }
+          ],
+          "role_b": "Developer: you used Q12 but selected one new item. Ask for the saved selection and ordered actions.",
+          "challenge": "A screenshot shows missing output but not the starting selection. Explain which reproduction detail still needs to accompany it."
+        }
+      },
+      {
+        "title": "Choosing cases at boundaries and across rules",
+        "terms": [
+          "equivalence partition",
+          "boundary value",
+          "decision table",
+          "negative test"
+        ],
+        "collocations": [
+          "cover both sides of a boundary: examine values immediately inside and outside a limit",
+          "choose a representative input: select a value from a justified behavior group",
+          "exercise a rule combination: check a specified combination of conditions",
+          "check rejection behavior: observe how the system handles disallowed input"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A fictional form accepts whole-number quantities from 1 through 20 inclusive and rejects values outside that range. A proposed test set contains 5, 10, and 15 only. Decimal handling is unspecified and outside the stated whole-number rule.",
+          "model": "Five, ten, and fifteen all sample the accepted interior. They do not check the limits or their neighboring rejected values. For the stated whole-number rule, zero, one, twenty, and twenty-one would examine both boundaries. Decimal handling is a separate unresolved rule; we should not assign its expected result by extending the whole-number requirement."
+        },
+        "workshop": {
+          "title": "Explain why another middle value adds little",
+          "goal": "Justify a small test selection using the rule's actual distinctions.",
+          "explanation": "Partitioning groups inputs expected to receive similar treatment. Boundary cases probe transitions between groups. Neither approach means one successful sample proves every value behaves correctly; explain the selection and its limits.",
+          "frames": [
+            "These values all represent ___, while ___ is missing.",
+            "At ___ the expected result changes from ___ to ___.",
+            "The requirement covers ___ but does not specify ___."
+          ],
+          "before": "We tested three quantities, so quantity validation is covered.",
+          "after": "The three tests cover accepted interior values; the minimum, maximum, and neighboring rejected values remain unchecked.",
+          "reason": "The revised statement describes the kind of coverage rather than substituting a test count for it.",
+          "questions": [
+            {
+              "prompt": "Reviewer: Which value sits just outside the accepted upper limit of twenty?\nTester: ____ exercises that rejected whole-number neighbor.",
+              "options": [
+                "Twenty-one",
+                "Nineteen",
+                "Twenty",
+                "Ten"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Twenty-one is the next whole number above the limit.",
+                "Nineteen is inside the accepted range.",
+                "Twenty is the included upper boundary, not outside it.",
+                "Ten is an accepted interior value."
+              ]
+            },
+            {
+              "prompt": "Developer: The rule covers whole numbers. Should 1.5 pass?\nTester: Decimal handling is ____, so we need a separate expectation.",
+              "options": [
+                "unspecified",
+                "covered by the endpoint tests",
+                "equivalent to whole-number handling",
+                "confirmed by the accepted interior samples"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The supplied rule does not settle decimal inputs.",
+                "Whole-number endpoint tests do not establish an expectation for decimal handling.",
+                "Equivalence with whole numbers is an assumption the requirement does not support.",
+                "Accepted whole-number samples do not settle the missing decimal rule."
+              ]
+            }
+          ],
+          "role_b": "Developer: defend the three interior values, then ask which new cases would examine the stated boundaries.",
+          "challenge": "A teammate offers negative one hundred as the only rejected case. Explain why near-boundary rejected values address a different risk."
+        }
+      },
+      {
+        "title": "Explaining coverage and change risk",
+        "terms": [
+          "test coverage",
+          "traceability",
+          "regression testing",
+          "smoke test"
+        ],
+        "collocations": [
+          "map a check to a requirement: show which stated behavior a test examines",
+          "identify an untested path: name a workflow not exercised by the evidence",
+          "prioritize by change risk: focus limited checking on plausible consequences of a change",
+          "distinguish breadth from depth: separate many touched areas from thorough examination of each"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "A fictional account update passes a smoke test covering sign-in and opening the account page. The update changes a formatter used by both account-save and the existing export path; neither path has been tested. One hour is available for further checking; no claim of full coverage is justified.",
+          "model": "The smoke test shows that sign-in and page opening work in this build. It does not exercise save or export, both of which use the changed formatter. With one hour, I would prioritize those two paths over repeating page opening. That is a risk-based selection, not a claim that the entire account area has been tested."
+        },
+        "workshop": {
+          "title": "Compare checks by the risk they address",
+          "goal": "Explain why broad initial checks do not replace targeted regression evidence.",
+          "explanation": "Coverage needs a named basis, such as requirements, paths, or configurations. A large test count does not establish that the changed behavior was checked. Describe the selection's rationale and the work left outside it.",
+          "frames": [
+            "This check covers ___, whereas the change affects ___.",
+            "Because ___ is shared, ___ is a relevant regression concern.",
+            "Within the available time, I propose ___; ___ would remain untested."
+          ],
+          "before": "The smoke test passed, so the change is covered.",
+          "after": "Sign-in and page opening passed; save and the shared formatter's export path remain untested.",
+          "reason": "The revision attaches the passing result to the behaviors actually checked.",
+          "questions": [
+            {
+              "prompt": "Lead: Why test export when only save was changed?\nTester: Both paths use the changed ____, creating a plausible regression concern.",
+              "options": [
+                "shared formatter",
+                "permission lookup",
+                "input validator",
+                "test fixture"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The common formatter connects the changed and existing paths.",
+                "The case identifies no changed permission lookup shared by these paths.",
+                "No shared input-validator change is supplied in this case.",
+                "A test fixture supplies starting data, not the shared formatting behavior identified here."
+              ]
+            },
+            {
+              "prompt": "Manager: We ran fifty tests. What coverage can we claim?\nTester: We need to state ____ before the count has a useful coverage meaning.",
+              "options": [
+                "what behaviors those tests exercise",
+                "how many times each check was repeated",
+                "whether the tests passed on an older build",
+                "how long the full run took"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Coverage requires a stated basis, not just a count.",
+                "Repetition counts do not identify which behaviors are covered.",
+                "An older passing result does not define the checks' coverage.",
+                "Execution duration does not establish the scope of checked behavior."
+              ]
+            }
+          ],
+          "role_b": "Lead: you have one hour and want to repeat the familiar smoke checks. Ask why the proposed paths are higher priority.",
+          "challenge": "A stakeholder calls requirement linkage proof of successful execution. Distinguish a mapped test from a test actually run with a result."
+        }
+      },
+      {
+        "title": "Investigating inconsistent automated results",
+        "terms": [
+          "flaky test",
+          "test fixture",
+          "test isolation",
+          "false positive"
+        ],
+        "collocations": [
+          "retain the first failure: preserve evidence even when a rerun passes",
+          "reset the starting data: restore the stated fixture before an independent attempt",
+          "separate product and test causes: distinguish a software defect from a check's own problem",
+          "compare isolated and grouped runs: examine whether neighboring tests affect the result"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "In a fictional automated suite on build T8, a search check fails after a cleanup check but passes when run alone. The cleanup check removes a shared sample record that the search check expects. No code change occurs between these observations.",
+          "model": "The search check passes alone but fails after cleanup on the same build. Cleanup removes the sample record that search expects, which supports a test-isolation explanation for these observations. We should preserve the failure and correct the shared starting-state assumption. This finding does not by itself establish that every search behavior in the product is correct."
+        },
+        "workshop": {
+          "title": "Explain an unstable result without dismissing it",
+          "goal": "Use run context to distinguish a supported test problem from an unsupported product verdict.",
+          "explanation": "An inconsistent test result still deserves investigation. Passing on rerun doesn't erase the earlier evidence. Once a fixture interaction is identified, limit the conclusion to that interaction rather than treating all failures as noise.",
+          "frames": [
+            "The same build passes when ___ but fails when ___.",
+            "The fixture difference is ___, which supports ___.",
+            "That explains this result pattern, not every possible ___."
+          ],
+          "before": "It's flaky, so ignore the red result.",
+          "after": "The check depends on a record removed by an earlier test; its starting state is not isolated.",
+          "reason": "The revision names the evidenced interaction instead of using flakiness as a dismissal.",
+          "questions": [
+            {
+              "prompt": "Developer: Why does the search check fail after cleanup?\nTester: Its required sample record has been ____, so the fixture differs.",
+              "options": [
+                "removed",
+                "altered by search",
+                "duplicated during setup",
+                "hidden by a filter"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Cleanup removes the record that search expects.",
+                "The evidence identifies cleanup removal, not a search operation altering the record.",
+                "No duplicate record is reported; the required record is absent.",
+                "A filtering explanation does not match the confirmed removal by cleanup."
+              ]
+            },
+            {
+              "prompt": "Lead: Does the passing rerun prove a product fix?\nTester: No; ____ changed between the observations.",
+              "options": [
+                "the test's starting context",
+                "the release contract",
+                "the application code",
+                "the product requirement"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Running alone changes the relevant test context.",
+                "No changed release contract is supplied.",
+                "The case explicitly says no code change occurred.",
+                "No requirement change explains these observations."
+              ]
+            }
+          ],
+          "role_b": "Automation engineer: you own the cleanup check and can confirm that it removes the shared record.",
+          "challenge": "A colleague proposes reporting only the final passing attempt. Explain why the sequence and initial failure belong in the evidence."
+        }
+      },
+      {
+        "title": "Separating impact from scheduling in triage",
+        "terms": [
+          "severity",
+          "priority",
+          "defect triage",
+          "duplicate report"
+        ],
+        "collocations": [
+          "describe the user impact: state what a person cannot do or receives incorrectly",
+          "set a review priority: decide when a report should receive attention",
+          "link related evidence: connect reports without assuming identical causes",
+          "defer with a stated reason: postpone work while preserving the issue and rationale"
+        ],
+        "case": {
+          "function": "facilitate",
+          "brief": "A fictional export defect affects one monthly workflow and omits the final row. A visible heading typo affects every account page. Tomorrow's customer demonstration uses that page; no export is planned. The team must discuss impact and timing separately, without assuming either issue is already approved for release.",
+          "model": "Let's separate the two decisions. The export defect loses a row in one workflow; the heading typo affects presentation on every account page. Tomorrow's demonstration may influence scheduling, but it does not make the typo's functional impact greater. Could we agree each issue's impact first, then state the reason for its repair priority and any release concern?"
+        },
+        "workshop": {
+          "title": "Keep severity and priority distinct",
+          "goal": "Lead a defect discussion that separates impact, urgency, and decision ownership.",
+          "explanation": "Severity describes impact; priority concerns the order or urgency of attention. A visible issue can be urgent without becoming more functionally damaging. Use the team's stated rating scheme rather than inventing universal labels.",
+          "frames": [
+            "The impact is ___; the scheduling reason is ___.",
+            "Can we agree the affected workflow before assigning ___?",
+            "These reports share ___, but we have not established ___."
+          ],
+          "before": "The typo is more severe because the demonstration is tomorrow.",
+          "after": "The demonstration makes the typo time-sensitive; the export issue still omits data in its affected workflow.",
+          "reason": "The revision separates scheduling pressure from the nature of the defect's effect.",
+          "questions": [
+            {
+              "prompt": "Coordinator: Tomorrow's demonstration increases the typo's urgency.\nTester: That concerns its ____, not necessarily its functional severity.",
+              "options": [
+                "priority",
+                "reproduction count",
+                "environment",
+                "root cause"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Priority addresses order and urgency of work.",
+                "Reproduction count measures observed attempts, not urgency.",
+                "Environment describes test conditions, not scheduling importance.",
+                "Root cause concerns explanation, not attention order."
+              ]
+            },
+            {
+              "prompt": "Developer: These two reports both say blank screen. Are they duplicates?\nTester: They may be related, but a shared symptom ____ a shared defect.",
+              "options": [
+                "does not establish",
+                "automatically confirms",
+                "is defined as",
+                "always rules out"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Additional evidence is needed to establish duplication.",
+                "A matching symptom is not sufficient confirmation.",
+                "A symptom description and a defect identity are different things.",
+                "A shared symptom also does not rule out a common defect."
+              ]
+            }
+          ],
+          "role_b": "Triage coordinator: ask for impact and timing separately; you can propose review order but cannot declare either release acceptable alone.",
+          "challenge": "A teammate wants to close a second report as duplicate because its title matches. Ask for the affected build, steps, and linked evidence first."
+        }
+      },
+      {
+        "title": "Reporting exploratory findings",
+        "terms": [
+          "exploratory testing",
+          "test charter",
+          "timebox",
+          "heuristic"
+        ],
+        "collocations": [
+          "follow an emerging clue: adapt the next check to a relevant observation",
+          "debrief a testing session: explain activities, findings, and gaps after the session",
+          "distinguish a concern from a defect: separate a question needing a rule from a demonstrated mismatch",
+          "bound a finding's scope: state which users, inputs, and conditions were actually examined"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "A fictional twenty-minute exploratory session has the charter 'investigate interrupted profile edits.' The tester finds that navigating away after a saved edit preserves the value; navigating away during an unsaved edit loses it without warning. Whether a warning is required is unspecified. Mobile behavior was not explored.",
+          "model": "In the twenty-minute interrupted-edit session, saved values survived navigation. Unsaved values were lost without a warning in the desktop path I explored. The requirement does not yet say whether a warning is expected, so I am reporting that as a usability concern for clarification. Mobile behavior remains outside this session's evidence."
+        },
+        "workshop": {
+          "title": "Debrief findings without inventing coverage",
+          "goal": "Give a useful exploratory update naming the charter, evidence, and unanswered questions.",
+          "explanation": "Exploratory testing combines learning and test design as the session develops. A timebox bounds effort, not coverage. Explain why a clue was followed and distinguish demonstrated failures from concerns whose expected behavior is unsettled.",
+          "frames": [
+            "The charter focused on ___ within ___ minutes.",
+            "I observed ___ under ___ conditions.",
+            "This is a concern pending ___; we did not explore ___."
+          ],
+          "before": "I explored the profile feature and it works.",
+          "after": "Saved desktop edits persisted; unsaved edits disappeared on navigation, and the warning requirement is still unclear.",
+          "reason": "The update replaces a broad verdict with observed paths and a specific open question.",
+          "questions": [
+            {
+              "prompt": "Lead: Does the twenty-minute session cover mobile too?\nTester: No. The observed paths were ____, and mobile remains unexplored.",
+              "options": [
+                "desktop-only",
+                "universal",
+                "fully automated",
+                "cross-platform"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The case describes desktop exploration only.",
+                "Universal overstates the bounded session evidence.",
+                "Automation is not established by exploratory session length.",
+                "Cross-platform falsely includes environments not explored."
+              ]
+            },
+            {
+              "prompt": "Designer: Is the missing warning definitely a defect?\nTester: It's a concern pending clarification of the ____.",
+              "options": [
+                "expected behavior",
+                "reproduction frequency",
+                "environment configuration",
+                "user-impact rating"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A defect verdict needs a defensible expectation.",
+                "Frequency tells us how often it occurs, not whether a warning is required.",
+                "The desktop environment is stated; configuration does not settle the missing warning rule.",
+                "An impact rating describes consequences, not the requirement that defines correct behavior."
+              ]
+            }
+          ],
+          "role_b": "Designer: ask what happened to saved and unsaved values, then acknowledge that the warning requirement needs agreement.",
+          "challenge": "A new clue consumes the final five minutes. Explain which original path was left unexamined rather than stretching the timebox into a full-coverage claim."
+        }
+      },
+      {
+        "title": "Giving a release-evidence handover",
+        "terms": [
+          "test summary",
+          "residual risk",
+          "exit criterion",
+          "blocked test"
+        ],
+        "collocations": [
+          "report by result category: separate passed, failed, blocked, and unexecuted checks",
+          "state the evidence cutoff: identify the latest build and time included in a summary",
+          "hand over an unresolved risk: transfer an open concern with its evidence and owner",
+          "assess an exit criterion: compare actual evidence with an agreed completion condition"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "A fictional candidate Q20 has ten planned checks: seven passed, one failed, and two blocked by unavailable sample data. The agreed exit criterion requires all critical-path checks executed and reviewed; one blocked check is critical. Mara owns the release decision, which has not been made.",
+          "model": "For Q20, seven checks passed, one failed, and two were blocked by unavailable sample data. One blocked check is on the critical path, so the stated execution-and-review criterion is not yet met. Mara, please take the failed result and blocked critical check into the release decision. The summary provides evidence; it does not itself approve release."
+        },
+        "workshop": {
+          "title": "Separate evidence from the release decision",
+          "goal": "Hand over accurate test status and remaining uncertainty to the named decision owner.",
+          "explanation": "Blocked is not passed or failed behavior: the intended check could not be completed. A pass percentage needs a clear denominator, and outstanding critical evidence matters even when most executed tests pass.",
+          "frames": [
+            "Of ___ planned checks, ___ passed, ___ failed, and ___ were blocked.",
+            "The agreed criterion remains unmet because ___.",
+            "___ owns the decision; this summary establishes ___."
+          ],
+          "before": "Almost everything passed, so quality assurance has approved release.",
+          "after": "Seven of ten planned checks passed; one failed and two were blocked. A critical blocked check leaves the exit criterion unmet.",
+          "reason": "The revision gives the full result distribution and avoids inventing a release decision.",
+          "questions": [
+            {
+              "prompt": "Mara: Did the two data-blocked checks fail the product?\nTester: No; their intended behavior was ____ because the required data was unavailable.",
+              "options": [
+                "not evaluated",
+                "confirmed incorrect",
+                "proven correct",
+                "successfully reviewed"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Blocked execution leaves the intended behavior unevaluated.",
+                "A blocked test does not establish a product failure.",
+                "Missing execution cannot establish a passing behavior.",
+                "Review of the intended result cannot be claimed here."
+              ]
+            },
+            {
+              "prompt": "Lead: Has the critical-path exit criterion been met?\nTester: No; one critical check remains ____.",
+              "options": [
+                "blocked",
+                "passed",
+                "failed",
+                "not yet selected"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The blocked critical check prevents the required execution and review.",
+                "The critical check has not passed; its required data is unavailable.",
+                "No evaluated failing result exists for this blocked critical check.",
+                "The critical check is already selected in the ten-check plan."
+              ]
+            }
+          ],
+          "role_b": "Mara: accept the evidence for the decision review and ask which blocked check is critical; do not assume the tester grants release approval.",
+          "challenge": "Someone reports seven passes out of eight executed checks and omits the two blocked checks. Explain both the executed denominator and the full planned scope."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "test oracle",
+        "definition": "A source or method used to determine whether an observed software result is acceptable or correct.",
+        "group": "Agreeing the expected result"
+      },
+      {
+        "term": "acceptance criterion",
+        "definition": "A specific condition that a feature or change must satisfy to be accepted by the relevant stakeholders.",
+        "group": "Agreeing the expected result"
+      },
+      {
+        "term": "expected result",
+        "definition": "The outcome a test is meant to check against a stated requirement or other justified basis.",
+        "group": "Agreeing the expected result"
+      },
+      {
+        "term": "ambiguity",
+        "definition": "Wording or evidence that permits more than one plausible interpretation of intended behavior.",
+        "group": "Agreeing the expected result"
+      },
+      {
+        "term": "precondition",
+        "definition": "A required state or condition that must hold before a test's actions begin.",
+        "group": "Making a failure reproducible"
+      },
+      {
+        "term": "reproduction steps",
+        "definition": "An ordered description of actions used to make an observed behavior occur again.",
+        "group": "Making a failure reproducible"
+      },
+      {
+        "term": "test environment",
+        "definition": "The software, configuration, data, and other conditions in which testing is performed.",
+        "group": "Making a failure reproducible"
+      },
+      {
+        "term": "actual result",
+        "definition": "The behavior or output observed during a particular test execution.",
+        "group": "Making a failure reproducible"
+      },
+      {
+        "term": "equivalence partition",
+        "definition": "A group of inputs or states expected to receive similar treatment for the rule being tested.",
+        "group": "Choosing cases at boundaries and across rules"
+      },
+      {
+        "term": "boundary value",
+        "definition": "An input at or near a limit where specified behavior may change.",
+        "group": "Choosing cases at boundaries and across rules"
+      },
+      {
+        "term": "decision table",
+        "definition": "A structured representation connecting combinations of conditions with their expected actions or outcomes.",
+        "group": "Choosing cases at boundaries and across rules"
+      },
+      {
+        "term": "negative test",
+        "definition": "A test examining behavior under invalid inputs, disallowed actions, or other specified exceptional conditions.",
+        "group": "Choosing cases at boundaries and across rules"
+      },
+      {
+        "term": "test coverage",
+        "definition": "The extent to which tests address a stated set of requirements, code structures, risks, or other defined items.",
+        "group": "Explaining coverage and change risk"
+      },
+      {
+        "term": "traceability",
+        "definition": "Explicit links connecting requirements, tests, results, and related defects or other supporting records.",
+        "group": "Explaining coverage and change risk"
+      },
+      {
+        "term": "regression testing",
+        "definition": "Testing for unintended effects of changes on existing behavior, including behavior outside the changed area.",
+        "group": "Explaining coverage and change risk"
+      },
+      {
+        "term": "smoke test",
+        "definition": "A limited initial check of important basic functions used to assess whether further testing is practical.",
+        "group": "Explaining coverage and change risk"
+      },
+      {
+        "term": "flaky test",
+        "definition": "A test producing inconsistent outcomes across repeated runs without an intended relevant change to the tested software.",
+        "group": "Investigating inconsistent automated results"
+      },
+      {
+        "term": "test fixture",
+        "definition": "The data and setup needed to give a test its intended starting conditions.",
+        "group": "Investigating inconsistent automated results"
+      },
+      {
+        "term": "test isolation",
+        "definition": "Keeping a test's relevant state and outcome independent of unintended effects from other tests.",
+        "group": "Investigating inconsistent automated results"
+      },
+      {
+        "term": "false positive",
+        "definition": "A test result that incorrectly signals a product problem when the claimed problem is not present.",
+        "group": "Investigating inconsistent automated results"
+      },
+      {
+        "term": "severity",
+        "definition": "The degree of impact of a defect, assessed using the team's stated context and rating scheme.",
+        "group": "Separating impact from scheduling in triage"
+      },
+      {
+        "term": "priority",
+        "definition": "The relative urgency or order assigned to investigating or resolving an issue.",
+        "group": "Separating impact from scheduling in triage"
+      },
+      {
+        "term": "defect triage",
+        "definition": "A review that clarifies reported problems and determines their handling, ownership, and attention order.",
+        "group": "Separating impact from scheduling in triage"
+      },
+      {
+        "term": "duplicate report",
+        "definition": "A report established to describe an already-recorded defect rather than a distinct issue.",
+        "group": "Separating impact from scheduling in triage"
+      },
+      {
+        "term": "exploratory testing",
+        "definition": "Testing in which learning about the software informs the design and execution of further checks during the activity.",
+        "group": "Reporting exploratory findings"
+      },
+      {
+        "term": "test charter",
+        "definition": "A focused statement of what an exploratory session will investigate and why.",
+        "group": "Reporting exploratory findings"
+      },
+      {
+        "term": "timebox",
+        "definition": "A fixed period allocated to an activity, limiting effort without guaranteeing complete coverage.",
+        "group": "Reporting exploratory findings"
+      },
+      {
+        "term": "heuristic",
+        "definition": "A practical thinking aid for choosing investigations, useful but not a guaranteed rule for correctness.",
+        "group": "Reporting exploratory findings"
+      },
+      {
+        "term": "test summary",
+        "definition": "A report of testing scope, execution results, limitations, and relevant remaining concerns.",
+        "group": "Giving a release-evidence handover"
+      },
+      {
+        "term": "residual risk",
+        "definition": "The possibility of adverse outcomes that remains after the checks and other measures already taken.",
+        "group": "Giving a release-evidence handover"
+      },
+      {
+        "term": "exit criterion",
+        "definition": "An agreed condition used to determine whether a testing activity can be considered complete.",
+        "group": "Giving a release-evidence handover"
+      },
+      {
+        "term": "blocked test",
+        "definition": "A test that cannot be completed as intended because a required condition, resource, or dependency is unavailable.",
+        "group": "Giving a release-evidence handover"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Exactly twenty-four hours before the event",
+          "setting": "A fictional tester and requirement owner clarify conflicting cancellation examples.",
+          "turns": [
+            [
+              "Tester",
+              "Our cancellation examples disagree at exactly twenty-four hours before the event. Which outcome is intended?"
+            ],
+            [
+              "Requirement owner",
+              "That equality case should allow cancellation. Please use that as the confirmed outcome."
+            ],
+            [
+              "Tester",
+              "Thank you. The phrase within twenty-four hours didn't clearly distinguish equality from either neighboring case."
+            ],
+            [
+              "Requirement owner",
+              "Agreed. We should state the equality rule explicitly rather than expect the examples to explain themselves."
+            ],
+            [
+              "Tester",
+              "Then allowed cancellation at exactly twenty-four hours becomes the acceptance criterion for this case."
+            ],
+            [
+              "Requirement owner",
+              "Yes. Don't infer the rest of the time-window rule from that single clarification, though."
+            ],
+            [
+              "Tester",
+              "I won't. The remaining wording and time-zone handling still need separate clarification."
+            ],
+            [
+              "Requirement owner",
+              "Can you report the observed result separately from the expectation we just agreed?"
+            ],
+            [
+              "Tester",
+              "Yes. I'll compare the recorded outcome with allowed cancellation, using this clarification as the test oracle."
+            ],
+            [
+              "Requirement owner",
+              "That settles the equality verdict's basis without pretending we resolved every timing question."
+            ]
+          ]
+        },
+        {
+          "title": "The old screen is not automatically the rule",
+          "setting": "A fictional tester challenges a reference screenshot used as the only expectation.",
+          "turns": [
+            [
+              "Developer",
+              "The new screen differs from the old screenshot. Shouldn't that automatically make the test fail?"
+            ],
+            [
+              "Tester",
+              "Which part differs, and is the screenshot an approved requirement or only historical evidence?"
+            ],
+            [
+              "Developer",
+              "The label now says inactive rather than closed. The screenshot came from last year's build."
+            ],
+            [
+              "Tester",
+              "Then it shows previous behavior, but doesn't establish whether the new wording is wrong."
+            ],
+            [
+              "Developer",
+              "The updated requirement says inactive for accounts that can be reopened. This account fits that condition."
+            ],
+            [
+              "Tester",
+              "That gives us a stronger oracle for this label than the older screenshot."
+            ],
+            [
+              "Developer",
+              "So the observed inactive label agrees with the current acceptance criterion for this account."
+            ],
+            [
+              "Tester",
+              "Yes. We can record that result while noting why the historical comparison initially looked different."
+            ],
+            [
+              "Developer",
+              "I'll identify the screenshot as superseded reference material instead of making it the expected result."
+            ],
+            [
+              "Tester",
+              "And we'll avoid calling an intended change a defect solely because it looks unfamiliar."
+            ]
+          ]
+        },
+        {
+          "title": "A reference calculator disagrees with the specification",
+          "setting": "Fictional testers compare two sources for a rounded display value.",
+          "turns": [
+            [
+              "Tester",
+              "The reference calculator rounds at each step, but the specification rounds only the final display value."
+            ],
+            [
+              "Requirement owner",
+              "Which input exposes the difference? We need a concrete case rather than two general descriptions."
+            ],
+            [
+              "Tester",
+              "The inputs are 0.044 and 0.044. Rounding each to two decimals totals 0.08; rounding only their sum gives 0.09."
+            ],
+            [
+              "Requirement owner",
+              "The current display requirement governs this feature: intermediate values retain precision, and only the display rounds."
+            ],
+            [
+              "Tester",
+              "Then the calculator isn't a reliable oracle for that example unless its settings match the requirement."
+            ],
+            [
+              "Requirement owner",
+              "Correct. Its result may be valid for another rule, but not the rule we're evaluating here."
+            ],
+            [
+              "Tester",
+              "I'll retain both outputs and explain the mismatched rounding basis in the test discussion."
+            ],
+            [
+              "Requirement owner",
+              "Please avoid saying the calculator is universally wrong. We have identified a difference in intended behavior."
+            ],
+            [
+              "Tester",
+              "Understood. For this test, the final-display rule supplies the expected result."
+            ],
+            [
+              "Requirement owner",
+              "Unresolved arithmetic details should come back for clarification, not be guessed."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The warning text says soon",
+        "brief": "A fictional storage screen warns that a file will expire 'soon.' One acceptance example expects three days remaining; another expects seven. The requirement owner can choose three days for the warning boundary in this exercise.",
+        "role_a": "Tester: request a measurable warning condition rather than inventing a meaning for soon.",
+        "role_b": "Requirement owner: confirm three days remaining as the intended warning point and identify the seven-day example as outdated.",
+        "opening_line": "Which remaining-time condition should trigger this warning: three days or seven?",
+        "complication": "A colleague says either is acceptable because soon is subjective.",
+        "success_checks": [
+          "Identify the conflicting examples.",
+          "Confirm the three-day criterion explicitly.",
+          "Separate outdated evidence from the current expectation."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Three selected items, not one",
+          "setting": "A fictional tester requests a comparable reproduction of the Q12 export omission.",
+          "turns": [
+            [
+              "Tester",
+              "My Q12 export omitted the final item from a saved three-item selection in both attempts."
+            ],
+            [
+              "Developer",
+              "My one-item selection exported correctly. What starting condition should I change to match yours?"
+            ],
+            [
+              "Tester",
+              "Use the saved three-item selection, then export without changing its order or output type."
+            ],
+            [
+              "Developer",
+              "Can you provide that selection? A screenshot alone doesn't show how those items were chosen."
+            ],
+            [
+              "Tester",
+              "Yes. It is attached with the reproduction steps and the expected three exported items."
+            ],
+            [
+              "Developer",
+              "Then my passing attempt doesn't contradict yours; the precondition differs in selection size and state."
+            ],
+            [
+              "Tester",
+              "Exactly. We haven't tested every size or another build, so the claim remains bounded."
+            ],
+            [
+              "Developer",
+              "I'll repeat the stated sequence on Q12 and compare actual results before discussing a cause."
+            ],
+            [
+              "Tester",
+              "Please retain the last item's reference in your output so we can identify the omission precisely."
+            ],
+            [
+              "Developer",
+              "I have the matching fixture and steps now. The original report is specific enough to reproduce."
+            ]
+          ]
+        },
+        {
+          "title": "The report omitted the starting account state",
+          "setting": "A fictional tester and developer clarify why a saved filter isn't visible.",
+          "turns": [
+            [
+              "Developer",
+              "I followed your steps, but the filter appeared normally. Was your account new or previously configured?"
+            ],
+            [
+              "Tester",
+              "It was new, with no saved preferences. I omitted that precondition from the report."
+            ],
+            [
+              "Developer",
+              "My account had an older saved filter. That could explain why our attempts differ."
+            ],
+            [
+              "Tester",
+              "I'll add the new-account state and distinguish it from the actions taken after sign-in."
+            ],
+            [
+              "Developer",
+              "Please also identify the build. The screenshot doesn't show the version we need to compare."
+            ],
+            [
+              "Tester",
+              "The tested build was R6. I haven't repeated the sequence on today's candidate yet."
+            ],
+            [
+              "Developer",
+              "Then let's keep the finding attached to R6 until comparable evidence exists for the newer build."
+            ],
+            [
+              "Tester",
+              "Agreed. The actual result was no filter control, while the requirement expects the default control."
+            ],
+            [
+              "Developer",
+              "Now I have build, starting state, steps, and expected versus actual behavior."
+            ],
+            [
+              "Tester",
+              "And the corrected report no longer depends on you guessing which account history I used."
+            ]
+          ]
+        },
+        {
+          "title": "Observed twice is not observed everywhere",
+          "setting": "A fictional tester qualifies reproduction frequency during a defect discussion.",
+          "turns": [
+            [
+              "Test lead",
+              "Your title says export always fails. How many comparable attempts support that wording?"
+            ],
+            [
+              "Tester",
+              "Two attempts on the same build and sample file. Both failed with the same message."
+            ],
+            [
+              "Test lead",
+              "Then always is broader than the evidence. Were other files or configurations checked?"
+            ],
+            [
+              "Tester",
+              "No. I should say two failures in two attempts using this fixture and test environment."
+            ],
+            [
+              "Test lead",
+              "That still communicates a reproducible problem without making a claim about every customer."
+            ],
+            [
+              "Tester",
+              "I'll retain the concrete message, action sequence, and sample reference in the report."
+            ],
+            [
+              "Test lead",
+              "Could a colleague repeat it without access to private customer records or an unexplained local setup?"
+            ],
+            [
+              "Tester",
+              "Yes. The test fixture is invented, and the report states the required configuration."
+            ],
+            [
+              "Test lead",
+              "Good. Please separate that reproducibility from any estimate of how many real users are affected."
+            ],
+            [
+              "Tester",
+              "I've corrected the title and frequency statement; population impact remains an open investigation question."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A video skips the action that matters",
+        "brief": "A fictional failure video begins after a user changes a sort order. The bug appears only after switching from newest-first to oldest-first; the report's written steps omit that switch. The build is S3.",
+        "role_a": "Tester: identify and supply the missing sort action.",
+        "role_b": "Developer: explain that opening the page directly in oldest-first does not reproduce the same sequence.",
+        "opening_line": "The video starts after the sort changed; the report needs that transition as a step.",
+        "complication": "A colleague suggests using the final screenshot as the complete reproduction.",
+        "success_checks": [
+          "State both the original and final sort modes.",
+          "Preserve the action order and S3 build.",
+          "Distinguish final state from the path that reached it."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Three middle values miss both limits",
+          "setting": "A fictional tester explains a quantity-validation selection.",
+          "turns": [
+            [
+              "Developer",
+              "We tested five, ten, and fifteen successfully. Why add more quantity cases?"
+            ],
+            [
+              "Tester",
+              "Those all sample the accepted interior. They don't exercise the boundaries at one and twenty."
+            ],
+            [
+              "Developer",
+              "Which neighboring rejected values would help check the stated whole-number rule?"
+            ],
+            [
+              "Tester",
+              "Zero and twenty-one, alongside the accepted endpoints. They cross both specified transitions."
+            ],
+            [
+              "Developer",
+              "Then another middle value adds less new rule coverage than those boundary values."
+            ],
+            [
+              "Tester",
+              "For this rule, yes. That selection doesn't prove every interior value behaves correctly, though."
+            ],
+            [
+              "Developer",
+              "What about one point five? It's numerically inside the interval between one and twenty."
+            ],
+            [
+              "Tester",
+              "The rule specifies whole numbers. Decimal handling is an ambiguity needing its own expected result."
+            ],
+            [
+              "Developer",
+              "I'll keep that question separate instead of calling the decimal case passed or failed by assumption."
+            ],
+            [
+              "Tester",
+              "Good. We have justified boundary checks and an explicit gap in the input contract."
+            ]
+          ]
+        },
+        {
+          "title": "A partition is a reasoned group, not a random sample",
+          "setting": "Fictional testers explain an input grouping for a document type field.",
+          "turns": [
+            [
+              "Junior tester",
+              "I chose three unsupported document types at random. Does that count as three different equivalence partitions?"
+            ],
+            [
+              "Test lead",
+              "Not necessarily. What rule predicts different treatment for those values in this feature?"
+            ],
+            [
+              "Junior tester",
+              "The requirement rejects every unsupported type with the same type-not-supported result."
+            ],
+            [
+              "Test lead",
+              "Then they may belong to one rejected partition for that rule, subject to other relevant differences."
+            ],
+            [
+              "Junior tester",
+              "So sampling more names within that group doesn't automatically cover a new behavior category."
+            ],
+            [
+              "Test lead",
+              "Exactly. Accepted types and a missing type may involve different rules worth considering separately."
+            ],
+            [
+              "Junior tester",
+              "The missing-type rule says required field, while unsupported means a supplied value isn't accepted."
+            ],
+            [
+              "Test lead",
+              "That gives you a useful distinction between absence and an unrecognized value."
+            ],
+            [
+              "Junior tester",
+              "I'll explain my selection by expected treatment rather than claiming each sample creates another partition."
+            ],
+            [
+              "Test lead",
+              "And we'll still investigate specific values when implementation risk suggests the grouping might hide a difference."
+            ]
+          ]
+        },
+        {
+          "title": "A rule depends on two conditions",
+          "setting": "Fictional testers use a decision table to clarify permission examples.",
+          "turns": [
+            [
+              "Tester",
+              "The examples cover editors and viewers, but editing also depends on whether the record is archived."
+            ],
+            [
+              "Requirement owner",
+              "Correct. Editors can change active records, while archived records are read-only for both roles."
+            ],
+            [
+              "Tester",
+              "Then role alone isn't enough to choose expected results. We need the two-condition combinations."
+            ],
+            [
+              "Requirement owner",
+              "A decision table would make that explicit: role and archive state determine whether editing is allowed."
+            ],
+            [
+              "Tester",
+              "Editor with active means allowed; editor with archived means denied. Is that right?"
+            ],
+            [
+              "Requirement owner",
+              "Yes. Viewers are denied editing in either archive state under the agreed rule."
+            ],
+            [
+              "Tester",
+              "That gives us four combinations with a stated expectation for each, not two loosely described roles."
+            ],
+            [
+              "Requirement owner",
+              "Please distinguish a denied edit from a missing record; the record should remain readable here."
+            ],
+            [
+              "Tester",
+              "I'll include that visible result in the negative tests, rather than merely check that no change occurred."
+            ],
+            [
+              "Requirement owner",
+              "Good. The table now expresses both permission and the expected read-only experience."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A maximum label length needs units",
+        "brief": "A fictional field allows a maximum length of ten, but the requirement does not say bytes, displayed symbols, or another counting unit. A plain-letter example has ten characters and passes. Non-ASCII examples are not specified.",
+        "role_a": "Tester: ask which counting unit defines the boundary.",
+        "role_b": "Requirement owner: acknowledge the missing unit and request clarification from the interface owner before assigning other expected results.",
+        "opening_line": "Ten of what is the limit: which counting unit does the contract use?",
+        "complication": "Someone treats one successful plain-letter example as proof for all scripts and symbols.",
+        "success_checks": [
+          "Identify the unspecified counting unit.",
+          "Keep the successful example's scope narrow.",
+          "Avoid inventing a language-specific counting rule."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "The smoke check missed the changed path",
+          "setting": "A fictional test lead and tester choose targeted checks within one hour.",
+          "turns": [
+            [
+              "Test lead",
+              "Sign-in and opening the account page passed. Why not repeat that smoke test before release?"
+            ],
+            [
+              "Tester",
+              "The formatter changed, and both save and export use it. Neither path was exercised by those checks."
+            ],
+            [
+              "Test lead",
+              "We have one hour. Which risk would your proposed selection address first?"
+            ],
+            [
+              "Tester",
+              "I'd check the changed save behavior, then the older export path for a possible regression."
+            ],
+            [
+              "Test lead",
+              "So the rationale is the affected code relationship, not simply two more tests in the total."
+            ],
+            [
+              "Tester",
+              "Exactly. The smoke test establishes basic access, while these paths examine consequences of the specific change."
+            ],
+            [
+              "Test lead",
+              "Would passing those two give us complete test coverage of the account area?"
+            ],
+            [
+              "Tester",
+              "No. We should name the checked requirements and identify the other paths still outside the selection."
+            ],
+            [
+              "Test lead",
+              "I'll accept that bounded plan and preserve the earlier smoke result as separate evidence."
+            ],
+            [
+              "Tester",
+              "And I'll map each new result to its requirement, so traceability shows what was actually evaluated."
+            ]
+          ]
+        },
+        {
+          "title": "Linked does not mean executed",
+          "setting": "Fictional colleagues distinguish a test's requirement mapping from its execution status.",
+          "turns": [
+            [
+              "Reviewer",
+              "The requirement has a test linked to it. Can I mark it as verified?"
+            ],
+            [
+              "Tester",
+              "Not from the link alone. Traceability shows the relationship, but this test hasn't run on the candidate."
+            ],
+            [
+              "Reviewer",
+              "I mistook the presence of a test case for a passing result. What evidence is missing?"
+            ],
+            [
+              "Tester",
+              "The candidate build, execution status, and observed result against the expected behavior."
+            ],
+            [
+              "Reviewer",
+              "Then the requirement can be mapped while its current verification status remains unexecuted."
+            ],
+            [
+              "Tester",
+              "Yes. That distinction helps us identify preparation progress without overstating product evidence."
+            ],
+            [
+              "Reviewer",
+              "Could an older passing run still be useful context for the review?"
+            ],
+            [
+              "Tester",
+              "It could, provided its build and conditions remain visible and aren't relabeled as this candidate's result."
+            ],
+            [
+              "Reviewer",
+              "I'll report linked case available, current execution pending, and older evidence separately identified."
+            ],
+            [
+              "Tester",
+              "That keeps the mapping useful without turning an association into proof that the behavior passed."
+            ]
+          ]
+        },
+        {
+          "title": "A high percentage with the wrong denominator",
+          "setting": "Fictional testers clarify a coverage claim about account requirements.",
+          "turns": [
+            [
+              "Manager",
+              "The dashboard says ninety percent coverage. Does that mean ninety percent of account behavior works?"
+            ],
+            [
+              "Test lead",
+              "What does the percentage count? The label alone doesn't tell us the coverage basis."
+            ],
+            [
+              "Manager",
+              "It counts requirements with at least one linked test, whether or not that test ran."
+            ],
+            [
+              "Test lead",
+              "Then it measures mapping completeness, not passing behavior or depth of checking for those requirements."
+            ],
+            [
+              "Manager",
+              "I see. A requirement with one shallow test counts the same as one with several targeted checks."
+            ],
+            [
+              "Test lead",
+              "Under that measure, yes. We should explain its definition and show execution results separately."
+            ],
+            [
+              "Manager",
+              "Could we call it requirements linked to tests rather than general product coverage?"
+            ],
+            [
+              "Test lead",
+              "That would be clearer. The remaining ten percent has no linked cases under this measure."
+            ],
+            [
+              "Manager",
+              "I'll use that label and avoid presenting the percentage as a probability that the software is correct."
+            ],
+            [
+              "Test lead",
+              "Good. A precisely named metric is useful; a broader interpretation would conceal important gaps."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A shared formatter reaches an unexpected report",
+        "brief": "A fictional date formatter is changed for the calendar screen. A dependency map shows that the billing report also uses it. Calendar examples passed; billing output has not been checked. Forty minutes remain.",
+        "role_a": "Tester: explain why a billing regression check is relevant despite no billing-screen change.",
+        "role_b": "Lead: ask which billing requirement and fixture would make the proposed check focused.",
+        "opening_line": "The calendar change reaches a formatter used by billing, so the report is a relevant regression path.",
+        "complication": "A colleague says untouched screens never need checking.",
+        "success_checks": [
+          "Name the shared dependency.",
+          "Propose a bounded billing-output check.",
+          "Keep untested reports outside the passing claim."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Cleanup removes the search fixture",
+          "setting": "A fictional tester and automation engineer explain the T8 suite result.",
+          "turns": [
+            [
+              "Tester",
+              "The search check passes alone on T8 but fails immediately after the cleanup check."
+            ],
+            [
+              "Automation engineer",
+              "Cleanup removes the shared sample record. Does search assume that record already exists?"
+            ],
+            [
+              "Tester",
+              "Yes. Its fixture depends on the record, but search doesn't establish that starting state independently."
+            ],
+            [
+              "Automation engineer",
+              "Then test isolation is broken. The order changes a required precondition without changing the application build."
+            ],
+            [
+              "Tester",
+              "That explains this result pattern. It doesn't establish that every product search behavior is correct."
+            ],
+            [
+              "Automation engineer",
+              "Agreed. We should preserve the first failure and repair the shared-state assumption in the tests."
+            ],
+            [
+              "Tester",
+              "Would rerunning until green conceal the useful clue about which check ran beforehand?"
+            ],
+            [
+              "Automation engineer",
+              "It would. The sequence is evidence, not just an inconvenient red result to replace."
+            ],
+            [
+              "Tester",
+              "I'll label the supported fixture interaction and keep the broader product conclusion limited."
+            ],
+            [
+              "Automation engineer",
+              "I'll take the isolation issue and provide a reviewed fixture change for comparable reruns."
+            ]
+          ]
+        },
+        {
+          "title": "A locator fails after a harmless label update",
+          "setting": "Fictional testers distinguish a broken automated check from the product behavior it intended to examine.",
+          "turns": [
+            [
+              "Automation engineer",
+              "The automated check reports a missing button, but the screen visibly has the intended control."
+            ],
+            [
+              "Tester",
+              "What does the locator use? Did the agreed label change without the test reference changing?"
+            ],
+            [
+              "Automation engineer",
+              "Yes. The requirement now says Continue, while the check still searches for Next."
+            ],
+            [
+              "Tester",
+              "Then this failure doesn't establish the control is absent. The check's expectation is stale."
+            ],
+            [
+              "Automation engineer",
+              "I'll confirm the control's function separately rather than assume the visible label proves it works."
+            ],
+            [
+              "Tester",
+              "Good. A false positive about absence still leaves the intended interaction needing evaluation."
+            ],
+            [
+              "Automation engineer",
+              "The updated label matches the requirement, and the manual interaction reaches the expected next screen."
+            ],
+            [
+              "Tester",
+              "That resolves this supplied example, though the automated locator correction still needs review."
+            ],
+            [
+              "Automation engineer",
+              "I'll retain the failure's explanation and distinguish the product check from the test-maintenance task."
+            ],
+            [
+              "Tester",
+              "And the report won't turn every locator failure into a product defect or dismiss them all as noise."
+            ]
+          ]
+        },
+        {
+          "title": "The rerun used different data",
+          "setting": "Fictional testers challenge a flaky-test label when the inputs changed.",
+          "turns": [
+            [
+              "Test lead",
+              "The first run failed and the second passed. Is it a flaky test?"
+            ],
+            [
+              "Tester",
+              "Not yet. The second run used a different sample account with different saved preferences."
+            ],
+            [
+              "Test lead",
+              "Then inconsistent outcomes may reflect different test conditions rather than instability under comparable conditions."
+            ],
+            [
+              "Tester",
+              "Exactly. The term flaky shouldn't hide a known input difference that may explain the result."
+            ],
+            [
+              "Test lead",
+              "What should the report preserve before we ask the automation engineer to investigate?"
+            ],
+            [
+              "Tester",
+              "Both account states, the build, the actions, and their actual results against the intended expectations."
+            ],
+            [
+              "Test lead",
+              "Can we repeat the original fixture without substituting the easier passing account?"
+            ],
+            [
+              "Tester",
+              "Yes. The invented fixture is available, so a matching attempt can be requested."
+            ],
+            [
+              "Test lead",
+              "Let's describe the current evidence as two noncomparable runs, with the first failure still open."
+            ],
+            [
+              "Tester",
+              "Agreed. We haven't established either a product correction or a test-isolation problem from those runs alone."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A delayed message and a fixed wait",
+        "brief": "A fictional automated check looks for a message after a fixed two-second wait. The requirement permits it within five seconds. One observed message appears after three seconds. The check's clock and observation are reliable for this exercise.",
+        "role_a": "Tester: explain why the two-second check can report a false positive against the five-second requirement.",
+        "role_b": "Automation engineer: distinguish that observed case from messages arriving after five seconds.",
+        "opening_line": "This message arrived in three seconds, inside the requirement but after the test's two-second check.",
+        "complication": "A colleague proposes calling every delayed message acceptable regardless of duration.",
+        "success_checks": [
+          "Compare the actual three seconds with the stated five-second limit.",
+          "Identify the narrower test assumption.",
+          "Preserve failures beyond the requirement as a separate possibility."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "The demonstration changes urgency, not the omitted row",
+          "setting": "A fictional tester facilitates triage of an export defect and a heading typo.",
+          "turns": [
+            [
+              "Triage coordinator",
+              "Tomorrow's demonstration shows the typo. Should we call it more severe than the export issue?"
+            ],
+            [
+              "Tester",
+              "Let's separate severity from priority. The export omits a row; the typo affects presentation."
+            ],
+            [
+              "Triage coordinator",
+              "The demonstration makes the typo urgent, even though no export is planned during it."
+            ],
+            [
+              "Tester",
+              "Yes. That timing can affect repair priority without changing either issue's functional impact."
+            ],
+            [
+              "Triage coordinator",
+              "How should we compare the affected scope without making the export problem sound trivial?"
+            ],
+            [
+              "Tester",
+              "State that it affects one monthly workflow and loses a row; the typo appears on every account page."
+            ],
+            [
+              "Triage coordinator",
+              "Then we can discuss impact and scheduling explicitly instead of forcing both into one ranking."
+            ],
+            [
+              "Tester",
+              "Exactly. The team can propose an order while leaving the release implications for the responsible reviewer."
+            ],
+            [
+              "Triage coordinator",
+              "I'll record the demonstration as the scheduling reason, not as evidence of greater functional damage."
+            ],
+            [
+              "Tester",
+              "I'll retain the export's data omission in the risk discussion even if repair happens later."
+            ]
+          ]
+        },
+        {
+          "title": "Matching titles do not establish duplicates",
+          "setting": "A fictional tester requests evidence before merging two blank-screen reports.",
+          "turns": [
+            [
+              "Developer",
+              "Both reports are titled blank screen. Can we close the newer one as a duplicate?"
+            ],
+            [
+              "Tester",
+              "Let's compare builds, reproduction steps, and affected pages before deciding they describe the same defect."
+            ],
+            [
+              "Developer",
+              "The first concerns account search after sign-in. The second concerns export preview after selecting a file."
+            ],
+            [
+              "Tester",
+              "Those differences matter. A shared symptom doesn't establish a shared cause or an identical failure."
+            ],
+            [
+              "Developer",
+              "Could we link them as possibly related without losing the second report's evidence?"
+            ],
+            [
+              "Tester",
+              "Yes. That preserves the relationship as a hypothesis while keeping each reproduction available."
+            ],
+            [
+              "Developer",
+              "What finding would support marking the second as a duplicate rather than merely related?"
+            ],
+            [
+              "Tester",
+              "A reviewed connection showing both reports describe the same defect, with the distinct evidence retained."
+            ],
+            [
+              "Developer",
+              "Then I'll keep both open as possibly related, without labeling either a duplicate report."
+            ],
+            [
+              "Tester",
+              "That keeps the record honest while giving the investigating developer a useful lead."
+            ]
+          ]
+        },
+        {
+          "title": "A deferred defect is not a resolved defect",
+          "setting": "A fictional tester clarifies the status of a postponed display correction.",
+          "turns": [
+            [
+              "Coordinator",
+              "In defect triage, we postponed the display correction. Should its status become resolved?"
+            ],
+            [
+              "Tester",
+              "No. Deferral changes when it's addressed, not whether the incorrect behavior has been corrected."
+            ],
+            [
+              "Coordinator",
+              "The issue affects a seldom-used report, and the team wants to prioritize a blocking save problem."
+            ],
+            [
+              "Tester",
+              "That is a scheduling rationale we can record, while preserving the display defect's actual impact."
+            ],
+            [
+              "Coordinator",
+              "Who should own the follow-up so it doesn't vanish after today's triage meeting?"
+            ],
+            [
+              "Tester",
+              "The reporting maintainer has accepted it. The next prioritization review will reconsider its place."
+            ],
+            [
+              "Coordinator",
+              "Can the summary say deferred with an owner and reason, rather than fixed?"
+            ],
+            [
+              "Tester",
+              "Yes. It should also link the reproduction and current affected build for later checking."
+            ],
+            [
+              "Coordinator",
+              "I'll keep the resolved category for issues whose stated resolution has supporting evidence."
+            ],
+            [
+              "Tester",
+              "Then readers can distinguish an open issue deliberately postponed from a defect actually removed."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Rare does not automatically mean low impact",
+        "brief": "A fictional report mislabels one customer category in one of twenty recorded runs. The mislabeled output can mislead users of that report. The cause and wider frequency are unknown; the team's rating scheme has not been supplied.",
+        "role_a": "Tester: present frequency and effect separately without inventing a severity label.",
+        "role_b": "Triage lead: ask who uses the output and request more context before assigning the team's rating.",
+        "opening_line": "We observed the mislabel once in twenty runs; its effect and frequency need separate consideration.",
+        "complication": "A colleague calls it harmless solely because it was observed rarely.",
+        "success_checks": [
+          "State the bounded one-in-twenty observation.",
+          "Describe the misleading output as the known impact.",
+          "Leave formal rating and wider frequency for contextual review."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Unsaved edits disappear without a warning",
+          "setting": "A fictional tester debriefs the twenty-minute interrupted-edit session.",
+          "turns": [
+            [
+              "Tester",
+              "The charter focused on interrupted profile edits for twenty minutes, using the desktop view."
+            ],
+            [
+              "Designer",
+              "What did you learn about saved values compared with edits still in progress?"
+            ],
+            [
+              "Tester",
+              "Saved values survived navigation. Unsaved edits disappeared without a warning in the path I explored."
+            ],
+            [
+              "Designer",
+              "Do we have an acceptance criterion requiring a warning before that navigation?"
+            ],
+            [
+              "Tester",
+              "Not yet. I'm reporting a usability concern for clarification, not a confirmed requirement mismatch."
+            ],
+            [
+              "Designer",
+              "That distinction is useful. We need to agree what users should expect before labeling the verdict."
+            ],
+            [
+              "Tester",
+              "Mobile behavior remains unexplored, so these observations should not be presented as cross-device findings."
+            ],
+            [
+              "Designer",
+              "Did you follow a particular clue that changed the direction of the session?"
+            ],
+            [
+              "Tester",
+              "Yes. The contrast between saved and unsaved state led me to compare both navigation paths."
+            ],
+            [
+              "Designer",
+              "Then the debrief identifies what you learned, why you investigated it, and which expectation remains open."
+            ]
+          ]
+        },
+        {
+          "title": "A charter narrows exploration without scripting every step",
+          "setting": "Fictional testers agree a bounded session on interrupted searches.",
+          "turns": [
+            [
+              "Test lead",
+              "Your test charter says explore search. That's broad for fifteen minutes. What question matters most?"
+            ],
+            [
+              "Tester",
+              "I want to investigate whether changing filters during a pending search produces understandable results."
+            ],
+            [
+              "Test lead",
+              "That gives the session a focus without prescribing every action before you see what happens."
+            ],
+            [
+              "Tester",
+              "I'll use interruption and repeated actions as heuristics to suggest relevant variations during exploration."
+            ],
+            [
+              "Test lead",
+              "Please treat those as thinking aids, not guarantees that any unexpected result is a defect."
+            ],
+            [
+              "Tester",
+              "Agreed. I'll compare observations with the stated filter behavior and flag unclear expectations separately."
+            ],
+            [
+              "Test lead",
+              "What will your debrief distinguish if the timebox ends while an interesting clue is still open?"
+            ],
+            [
+              "Tester",
+              "The paths actually tried, the observed concern, and the next question that wasn't investigated."
+            ],
+            [
+              "Test lead",
+              "Good. Fifteen minutes bounds effort; it doesn't mean the search feature becomes fully covered."
+            ],
+            [
+              "Tester",
+              "I'll use the narrower charter and keep the unexamined paths visible when reporting the session."
+            ]
+          ]
+        },
+        {
+          "title": "An unexpected label becomes a focused inquiry",
+          "setting": "A fictional exploratory tester discusses a clue rather than merely continuing random actions.",
+          "turns": [
+            [
+              "Tester",
+              "During exploration, the confirmation label named the previous profile after switching accounts."
+            ],
+            [
+              "Developer",
+              "Was the saved data wrong too, or have you only observed the label so far?"
+            ],
+            [
+              "Tester",
+              "Only the label. I paused the broader charter to compare the current profile and the displayed name."
+            ],
+            [
+              "Developer",
+              "What expectation supports treating that label as a defect rather than simply unfamiliar wording?"
+            ],
+            [
+              "Tester",
+              "The current criterion says the confirmation names the profile just saved, which differs from this observation."
+            ],
+            [
+              "Developer",
+              "Then you have a specific mismatch. Please preserve the account-switch sequence and both profile references."
+            ],
+            [
+              "Tester",
+              "My invented profiles Blue and Green let us reproduce this without real account information."
+            ],
+            [
+              "Developer",
+              "Does the evidence establish whether storage also used the wrong profile, or is that still untested?"
+            ],
+            [
+              "Tester",
+              "Still untested. The label finding should not become a claim about a data update I didn't inspect."
+            ],
+            [
+              "Developer",
+              "That leaves a reproducible presentation defect and a separate stored-state question."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Exploration finds an unclear keyboard path",
+        "brief": "A fictional desktop dialog can be closed with a pointer, but the tester has not found a keyboard route in a ten-minute exploration. Focus starts in the Search field. Tab cycles through Name, Save, and Search; Escape leaves the dialog open. Pointer Close works. The requirement asks for keyboard completion but does not specify exact keys. These observations describe this fictional dialog, not universal tool or platform behavior.",
+        "role_a": "Tester: describe the attempted path and request the intended keyboard interaction.",
+        "role_b": "Designer: acknowledge the required outcome and ask which focus position and actions were tried.",
+        "opening_line": "The pointer route works, but I haven't completed the required keyboard-only path from this focus position.",
+        "complication": "A colleague says not finding a route proves none exists on every platform.",
+        "success_checks": [
+          "State the observed focus state and actions.",
+          "Separate failure to find a route from a universal impossibility claim.",
+          "Request a concrete intended interaction for follow-up."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Seven passed, one failed, two blocked",
+          "setting": "A fictional tester hands Q20 evidence to release owner Mara.",
+          "turns": [
+            [
+              "Tester",
+              "Q20 has ten planned checks: seven passed, one failed, and two were blocked by unavailable sample data."
+            ],
+            [
+              "Mara",
+              "Does either blocked test sit on the critical path named in our exit criterion?"
+            ],
+            [
+              "Tester",
+              "Yes, one does. The required execution and review of all critical checks is therefore incomplete."
+            ],
+            [
+              "Mara",
+              "Then the passing majority doesn't mean that criterion has been met for the candidate."
+            ],
+            [
+              "Tester",
+              "Correct. Please take the failed result and blocked critical check into your release decision."
+            ],
+            [
+              "Mara",
+              "I accept the evidence handover. Has anyone already described this summary as release approval?"
+            ],
+            [
+              "Tester",
+              "Not in the record. I will keep the testing status distinct from your pending decision."
+            ],
+            [
+              "Mara",
+              "Who owns obtaining the sample data so we can address the blocked check?"
+            ],
+            [
+              "Tester",
+              "The test-data coordinator has accepted that request; availability is not yet confirmed."
+            ],
+            [
+              "Mara",
+              "Then I'll review the current residual risk without treating unavailable evidence as a passing result."
+            ]
+          ]
+        },
+        {
+          "title": "Seven out of eight hides the planned scope",
+          "setting": "A fictional test lead clarifies a pass-rate statement before a release meeting.",
+          "turns": [
+            [
+              "Coordinator",
+              "I plan to report seven passes out of eight executed checks. Is that accurate?"
+            ],
+            [
+              "Test lead",
+              "The executed denominator is accurate, but the plan has ten checks, including two blocked ones."
+            ],
+            [
+              "Coordinator",
+              "So I should present both figures rather than let listeners assume eight was the full scope."
+            ],
+            [
+              "Test lead",
+              "Yes. One blocked check is critical, which matters more than the attractive pass percentage alone."
+            ],
+            [
+              "Coordinator",
+              "Would calling blocked tests failed be a conservative way to keep that risk visible?"
+            ],
+            [
+              "Test lead",
+              "No. It would misstate the evidence. Blocked means the intended behavior couldn't be evaluated."
+            ],
+            [
+              "Coordinator",
+              "Then the summary should state seven passed, one failed, two blocked, and the unmet critical criterion."
+            ],
+            [
+              "Test lead",
+              "Exactly. Clear categories preserve both the observed failure and the uncertainty caused by missing execution."
+            ],
+            [
+              "Coordinator",
+              "I'll use that distribution and leave the release decision with the named owner."
+            ],
+            [
+              "Test lead",
+              "That gives the meeting a faithful test summary, without overstating what a percentage means."
+            ]
+          ]
+        },
+        {
+          "title": "Yesterday's evidence belongs to yesterday's candidate",
+          "setting": "A fictional tester qualifies a test summary after a new build arrives.",
+          "turns": [
+            [
+              "Release owner",
+              "The report is green, but a new candidate arrived this morning. Which build does the summary cover?"
+            ],
+            [
+              "Tester",
+              "It covers P7 through yesterday afternoon. Today's P8 isn't included in that evidence cutoff."
+            ],
+            [
+              "Release owner",
+              "Can we simply change the heading if the release note describes only a minor adjustment?"
+            ],
+            [
+              "Tester",
+              "No. The old results remain P7 evidence until P8's differences and required checks are reviewed."
+            ],
+            [
+              "Release owner",
+              "Then the summary shouldn't imply P8 passed simply because its name is similar."
+            ],
+            [
+              "Tester",
+              "Correct. I'll retain P7's results and identify P8's current testing status separately as not yet evaluated."
+            ],
+            [
+              "Release owner",
+              "Who will review the change impact and decide which prior evidence remains relevant?"
+            ],
+            [
+              "Tester",
+              "The test lead will assess that with the developer, using the actual difference between the builds."
+            ],
+            [
+              "Release owner",
+              "Bring that bounded assessment to release review rather than discard or relabel old evidence."
+            ],
+            [
+              "Tester",
+              "I'll do that. Useful historical evidence can remain useful without becoming a result for an untested candidate."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An agreed exception needs a named decision",
+        "brief": "A fictional exit criterion requires a report-export check, but the sample generator is unavailable. The release owner may consider an exception after reviewing the risk; no exception has yet been granted.",
+        "role_a": "Tester: state the blocked evidence and unmet criterion without making the exception decision.",
+        "role_b": "Release owner: ask for the affected workflow and the missing evidence before reviewing the exception request.",
+        "opening_line": "The export check remains blocked, so the stated criterion is unmet; the exception request is still undecided.",
+        "complication": "A colleague says requesting an exception means it has already been accepted.",
+        "success_checks": [
+          "Keep request and approval separate.",
+          "Name the untested workflow and residual uncertainty.",
+          "Confirm the release owner retains the decision."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Two legitimate oracles answer different questions",
+      "setting": "Fictional testers decide how to evaluate an exported timestamp and its displayed label.",
+      "dialogue": [
+        [
+          "Tester",
+          "I logged the differing export timestamp and screen label as a defect."
+        ],
+        [
+          "Test lead",
+          "Are they supposed to have identical formats, or do their contracts express the same event in different forms?"
+        ],
+        [
+          "Tester",
+          "The export contract requires a machine-readable value. The screen requirement calls for the user's selected display format."
+        ],
+        [
+          "Test lead",
+          "Then string equality between them isn't the right oracle. What shared fact should remain consistent across those representations?"
+        ],
+        [
+          "Tester",
+          "They should represent the same event time. We have a supplied reference event with its expected instant."
+        ],
+        [
+          "Test lead",
+          "Use that reference for meaning, and each format requirement for presentation. Those are two distinct questions to evaluate."
+        ],
+        [
+          "Tester",
+          "I'll separate the checks instead of treating any formatting difference as evidence that the event time changed."
+        ],
+        [
+          "Test lead",
+          "Do the requirements define the selected display context clearly enough to produce one expected label for this test?"
+        ],
+        [
+          "Tester",
+          "Yes, this fixture fixes that context. Other display settings remain outside the current example and its result."
+        ],
+        [
+          "Test lead",
+          "Then your report can name the fixture, the shared event, and the two independently justified expected representations."
+        ],
+        [
+          "Tester",
+          "I've revised this to a test-design correction. The supplied outputs agree with their respective contracts."
+        ],
+        [
+          "Test lead",
+          "That resolves this example without claiming every timestamp conversion or display setting has been covered."
+        ]
+      ],
+      "notes": [
+        "'The same event in different forms' separates meaning from representation.",
+        "'Respective stated contracts' explains why two different expectations can both be appropriate."
+      ]
+    },
+    {
+      "title": "A reduced report still needs its configuration",
+      "setting": "Fictional colleagues turn an inconsistent report into a precise reproduction request.",
+      "dialogue": [
+        [
+          "Developer",
+          "I used your three-step sequence and sample file, but the export included every row on my machine."
+        ],
+        [
+          "Tester",
+          "Let's compare the test environment before treating that as contradictory evidence. Which output mode was selected?"
+        ],
+        [
+          "Developer",
+          "The compact mode. The report didn't name one, and that's the default in my saved preferences."
+        ],
+        [
+          "Tester",
+          "My attempt used detailed mode. I should have identified that setting as a precondition, not assumed a shared default."
+        ],
+        [
+          "Developer",
+          "Does changing only the mode reproduce the omission, or are other conditions different between our attempts?"
+        ],
+        [
+          "Tester",
+          "The build and file match. We haven't yet compared other settings, so mode is a candidate difference."
+        ],
+        [
+          "Developer",
+          "Please update the report with the exact observed configuration, while leaving the cause unconfirmed until we isolate it."
+        ],
+        [
+          "Tester",
+          "I've added detailed mode and the saved preference state. The expected output still includes all three selected rows."
+        ],
+        [
+          "Developer",
+          "That lets me repeat your actual setup. Can you also preserve the original result and its execution time?"
+        ],
+        [
+          "Tester",
+          "Both are attached. The timestamp identifies the attempt; it isn't a claim that timing caused the failure."
+        ],
+        [
+          "Developer",
+          "I'll return results with matching conditions, not just say works for me."
+        ],
+        [
+          "Tester",
+          "And we'll distinguish a nonmatching attempt from evidence that the originally reported behavior no longer occurs."
+        ]
+      ],
+      "notes": [
+        "'Candidate difference' names a variable worth investigating without declaring it the cause.",
+        "'Works for me' becomes useful only when accompanied by comparable conditions and evidence."
+      ]
+    },
+    {
+      "title": "The invalid input still needs a specified response",
+      "setting": "Fictional testers refine a negative test whose assertion was too weak.",
+      "dialogue": [
+        [
+          "Tester",
+          "The negative test sends twenty-one and checks only that the form doesn't save. That passed."
+        ],
+        [
+          "Developer",
+          "What response should the user receive? A crash would also prevent saving, but wouldn't satisfy the form's rejection contract."
+        ],
+        [
+          "Tester",
+          "The acceptance criterion says retain the entered value and display the quantity-range message beside the field."
+        ],
+        [
+          "Developer",
+          "Then no save is only part of the expected result. What did the screen actually show?"
+        ],
+        [
+          "Tester",
+          "It cleared the field and returned to the form without a message, so the full criterion wasn't met."
+        ],
+        [
+          "Developer",
+          "That is a useful distinction. Invalid input doesn't mean any unsuccessful outcome counts as correct rejection behavior."
+        ],
+        [
+          "Tester",
+          "I'll revise the verdict against all specified outcomes: no save, retained input, and the visible range message."
+        ],
+        [
+          "Developer",
+          "Please keep the boundary input in the report so reviewers see exactly which rule was being exercised."
+        ],
+        [
+          "Tester",
+          "This observation concerns twenty-one on this build, not every invalid input."
+        ],
+        [
+          "Developer",
+          "Would another rejected partition, such as missing input, have the same message or a separately defined one?"
+        ],
+        [
+          "Tester",
+          "The requirement gives missing input a required-field message, so that belongs in a separate expected-result case."
+        ],
+        [
+          "Developer",
+          "Then the negative tests will distinguish the rejection rules rather than collapse every invalid submission into one pass."
+        ]
+      ],
+      "notes": [
+        "'Only part of the expected result' challenges an incomplete assertion without denying a true observation.",
+        "'Correct rejection behavior' emphasizes that invalid input still has a defined intended outcome."
+      ]
+    },
+    {
+      "title": "Confirmation is not the whole regression story",
+      "setting": "Fictional testers separate checking a reported fix from checking effects elsewhere.",
+      "dialogue": [
+        [
+          "Developer",
+          "The missing-label case passes after my change. Does that complete this fix's testing?"
+        ],
+        [
+          "Tester",
+          "It confirms the reported behavior in that case. The shared label formatter also serves the list and export views."
+        ],
+        [
+          "Developer",
+          "Checking those views examines unintended effects outside the original failing screen."
+        ],
+        [
+          "Tester",
+          "Exactly. Confirmation of the fix and regression testing of related behavior are different questions, though both matter here."
+        ],
+        [
+          "Developer",
+          "What would make the additional checks focused? We don't have time to rerun every existing case this afternoon."
+        ],
+        [
+          "Tester",
+          "The change touched fallback labels, so I'd use records with and without supplied labels in those shared consumers."
+        ],
+        [
+          "Developer",
+          "That gives the selection a reason tied to the change rather than an arbitrary number of extra cases."
+        ],
+        [
+          "Tester",
+          "Yes. I'll preserve the original passing result and report the related checks with their own scope and outcomes."
+        ],
+        [
+          "Developer",
+          "Could we identify unselected areas as untested, without implying whole-product coverage?"
+        ],
+        [
+          "Tester",
+          "Absolutely. The summary will state the risk-based selection and any evidence gaps the release reviewer should consider."
+        ],
+        [
+          "Developer",
+          "I'll provide the dependency references so the rationale can be inspected by someone who didn't write the change."
+        ],
+        [
+          "Tester",
+          "And I'll link the results back to the specific behaviors, keeping the coverage claim narrower than the product."
+        ]
+      ],
+      "notes": [
+        "'It confirms...in that case' bounds a successful fix check.",
+        "'Different questions' distinguishes confirmation testing from regression checking without making them alternatives."
+      ]
+    },
+    {
+      "title": "Quarantining a check leaves an evidence gap",
+      "setting": "Fictional colleagues discuss temporarily separating an unreliable automated check from the main result.",
+      "dialogue": [
+        [
+          "Automation engineer",
+          "The download check is inconsistent. I propose quarantining it while investigating its shared-data dependency."
+        ],
+        [
+          "Test lead",
+          "What would quarantine mean here? We must not let removing it from the main run look like verified product behavior."
+        ],
+        [
+          "Automation engineer",
+          "It would run separately and retain its results, with a named owner for investigation rather than disappearing entirely."
+        ],
+        [
+          "Test lead",
+          "Then the test summary must disclose which download evidence the main suite no longer provides."
+        ],
+        [
+          "Automation engineer",
+          "Agreed. We can perform a bounded manual check for today's candidate, but it won't establish every download condition."
+        ],
+        [
+          "Test lead",
+          "State the manual check's scope. It cannot prove the underlying automation problem is fixed."
+        ],
+        [
+          "Automation engineer",
+          "I'll record candidate, sample, and manual result alongside the inconsistent automated attempts."
+        ],
+        [
+          "Test lead",
+          "Who accepts the investigation, and what would need review before we trust the automated check again?"
+        ],
+        [
+          "Automation engineer",
+          "I'll own it. The proposed fixture correction and comparable repeated runs need review before restoring its normal status."
+        ],
+        [
+          "Test lead",
+          "That gives the temporary arrangement an owner and evidence requirements instead of a permanently hidden failure."
+        ],
+        [
+          "Automation engineer",
+          "I'll describe quarantine as a test-maintenance decision, not a product fix or permission to ignore download risk."
+        ],
+        [
+          "Test lead",
+          "And I'll carry the remaining coverage limitation into the release review with the other unresolved evidence."
+        ]
+      ],
+      "notes": [
+        "'No longer provides that particular evidence' makes the cost of removing a check explicit.",
+        "'Not a product fix' distinguishes test maintenance from changed application behavior."
+      ]
+    },
+    {
+      "title": "A workaround changes effort, not the original finding",
+      "setting": "Fictional triage participants discuss a workaround for a report-filter defect.",
+      "dialogue": [
+        [
+          "Developer",
+          "Reopening restores the missing filter. Does that remove the defect from triage?"
+        ],
+        [
+          "Tester",
+          "It changes the recovery effort, but the initial filter failure still occurs under the documented conditions."
+        ],
+        [
+          "Developer",
+          "Then the workaround belongs in the impact discussion rather than replacing the actual result in the report."
+        ],
+        [
+          "Tester",
+          "Yes. We should also establish whether reopening preserves the user's other selections in the affected workflow."
+        ],
+        [
+          "Developer",
+          "That hasn't been checked. The suggested workaround may require users to rebuild their selections, which would add effort."
+        ],
+        [
+          "Tester",
+          "Exactly. Please label it a proposed workaround until its behavior and limitations have been evaluated for this case."
+        ],
+        [
+          "Developer",
+          "I'll avoid calling it seamless recovery. The known finding remains a missing filter after the stated transition."
+        ],
+        [
+          "Tester",
+          "Who should check the workaround, and who will decide how that evidence changes priority under our scheme?"
+        ],
+        [
+          "Developer",
+          "I'll provide the sequence, you'll evaluate it, and the triage lead will review its scheduling effect."
+        ],
+        [
+          "Tester",
+          "I'll take the bounded evaluation using the same fixture and record any lost selections as part of the result."
+        ],
+        [
+          "Developer",
+          "The original defect remains open while we evaluate the alternative path's practicality."
+        ],
+        [
+          "Tester",
+          "And the review can consider real recovery costs without treating the existence of an idea as a verified solution."
+        ]
+      ],
+      "notes": [
+        "'Belongs in the impact discussion' accepts relevant context without erasing the original defect.",
+        "'Proposed workaround' signals that the alternative still needs evidence."
+      ]
+    },
+    {
+      "title": "The timebox ended with a useful open question",
+      "setting": "A fictional tester debriefs a session that changed direction after an unexpected clue.",
+      "dialogue": [
+        [
+          "Test lead",
+          "Which list-to-detail paths did you explore during the thirty-minute timebox?"
+        ],
+        [
+          "Tester",
+          "I checked direct opening and returning to the list, then followed a clue about filters disappearing after a second return."
+        ],
+        [
+          "Test lead",
+          "What made that clue worth pursuing rather than finishing the original set of possible navigation paths?"
+        ],
+        [
+          "Tester",
+          "The requirement says active filters persist during navigation. The second return appeared to contradict that expected behavior."
+        ],
+        [
+          "Test lead",
+          "Did you establish a reproducible mismatch, or was it a single observation when the session ended?"
+        ],
+        [
+          "Tester",
+          "I reproduced it once with the same invented records. I didn't investigate whether sorting interacts with the filter state."
+        ],
+        [
+          "Test lead",
+          "Preserve that repeated observation and the unexamined sorting question without implying an answer."
+        ],
+        [
+          "Tester",
+          "Yes. The direct-opening path passed; the repeated-return path lost the filter in two recorded attempts."
+        ],
+        [
+          "Test lead",
+          "What part of the original charter remains unexplored because you followed that clue inside the timebox?"
+        ],
+        [
+          "Tester",
+          "I didn't explore opening details in a separate view. That omission is part of the session's coverage limit."
+        ],
+        [
+          "Test lead",
+          "Good. Following evidence is legitimate exploratory testing, but the resulting gaps still matter to whoever plans the next session."
+        ],
+        [
+          "Tester",
+          "I'll hand over the failing sequence and propose sorting interaction as a next question, not an already established cause."
+        ]
+      ],
+      "notes": [
+        "'Which paths did you actually explore?' anchors a debrief in activity rather than its original intention.",
+        "'Next question, not an established cause' keeps exploration hypotheses distinct from findings."
+      ]
+    },
+    {
+      "title": "A passing retest does not erase the remaining risk",
+      "setting": "Fictional colleagues update a release summary after one defect is corrected.",
+      "dialogue": [
+        [
+          "Developer",
+          "Export now passes on Q21. Can the summary say every open concern is resolved?"
+        ],
+        [
+          "Test lead",
+          "That corrects one result on a new candidate. The two data-blocked checks still have no completed execution evidence."
+        ],
+        [
+          "Developer",
+          "Does the passing retest at least settle the original omitted-row defect for the supplied three-item fixture?"
+        ],
+        [
+          "Test lead",
+          "Yes, for that fixture on Q21. We should say exactly that and retain Q20's earlier failure in the history."
+        ],
+        [
+          "Developer",
+          "What about the critical blocked check? Has its sample data become available since yesterday's decision meeting?"
+        ],
+        [
+          "Test lead",
+          "No. The coordinator is still obtaining it, so the relevant exit criterion remains unmet under its current wording."
+        ],
+        [
+          "Developer",
+          "Then resolved export defect and unresolved critical evidence belong side by side, rather than one replacing the other."
+        ],
+        [
+          "Test lead",
+          "Exactly. Residual risk includes that missing evidence and uncertainty outside our tested scope."
+        ],
+        [
+          "Developer",
+          "I'll provide the fix and Q21 artifact references, linking the retest to the correct candidate."
+        ],
+        [
+          "Test lead",
+          "I'll update the result distribution and explain which earlier evidence remains applicable after the change review."
+        ],
+        [
+          "Developer",
+          "The release owner can assess remaining concerns without confusing one correction with complete coverage."
+        ],
+        [
+          "Test lead",
+          "Yes. Our handover records progress and limits; it doesn't invent a release decision or hide the blocked work."
+        ]
+      ],
+      "notes": [
+        "'For that fixture on Q21' ties a passing retest to its actual input and build.",
+        "'Side by side' keeps completed work and unresolved evidence visible in the same decision summary."
+      ]
+    }
+  ]
+}

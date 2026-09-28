@@ -26,7 +26,7 @@ test('directory search combines words and category; empty state recovers', () =>
   change(w,category,'Technology & data','change');
   assert.equal(d.querySelector('[data-course-empty]').hidden,false);
   change(w,search,'');change(w,category,'','change');
-  assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,41);
+  assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,66);
   dom.window.close();
 });
 test('quiz handles no answer, wrong answer, correction, and resets stale feedback', () => {
@@ -55,6 +55,29 @@ test('speaking progress is opt-in, restores accurately, and remains isolated by 
   d.querySelector('[data-clear-work]').click();
   assert.equal(w.localStorage.getItem(key),null);assert.equal(save.checked,false);
   [dom,restored,other].forEach(x=>x.window.close());
+});
+test('every occupation question accepts its one answer and explains each distractor', () => {
+  const sources=fs.readdirSync(path.join(root,'content/work/occupations')).filter(n=>n.endsWith('.json'));
+  assert.equal(sources.length,25);
+  let fourthAnswers=0;
+  for(const source of sources){
+    const dom=setup(`efsp-${source.replace('.json','')}.html`),d=dom.window.document;
+    for(const quiz of d.querySelectorAll('[data-work-quiz]')){
+      const inputs=[...quiz.querySelectorAll('input[type="radio"]')];
+      assert.equal(inputs.length,4,source);
+      const correct=Number(quiz.dataset.correct),feedback=quiz.querySelector('[data-quiz-feedback]');
+      if(correct===3)fourthAnswers++;
+      for(let index=0;index<4;index++){
+        inputs[index].click();
+        assert.equal(feedback.textContent,'');
+        quiz.querySelector('[data-check-answer]').click();
+        assert.equal(feedback.dataset.result,index===correct?'correct':'retry',source);
+        assert.ok(feedback.textContent.length>30,source);
+      }
+    }
+    dom.window.close();
+  }
+  assert.ok(fourthAnswers>0,'The fourth answer position must be used and checked.');
 });
 test('new progress preserves earlier-edition drafts until an explicit clear and supports undo', () => {
   const key='english-ladder-work-v2:manufacturing';
@@ -93,9 +116,9 @@ test('vocabulary search, lesson expansion, and fragment navigation work', () => 
   assert.equal(d.querySelector('#module-4').open,true);
   dom.window.close();
 });
-test('all 41 course pages initialize every quiz and preserve static model responses', () => {
+test('all 66 course pages initialize every quiz and preserve static model responses', () => {
   const files=fs.readdirSync(root).filter(n=>/^efsp-.*\.html$/.test(n));
-  assert.equal(files.length,41);
+  assert.equal(files.length,66);
   for(const file of files){
     const dom=setup(file),d=dom.window.document;
     assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,16,file);

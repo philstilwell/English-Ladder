@@ -1,0 +1,2468 @@
+{
+  "course": {
+    "slug": "home-care-caregivers",
+    "title": "Home Care & Caregiving English",
+    "summary": "Support choice and dignity during home visits, report observations precisely, and coordinate dependable care without exceeding your role.",
+    "roles": "Home care aides, personal care assistants, and caregivers",
+    "category": "Health & life sciences",
+    "scope_note": "Fictional workplace-language practice, not clinical training. Duties vary by qualification, care plan, employer, and location. Obtain consent, follow approved procedures, protect private information, and refer clinical or emergency decisions to authorized professionals.",
+    "sources": [
+      {
+        "title": "BLS: Home Health and Personal Care Aides",
+        "url": "https://www.bls.gov/ooh/healthcare/home-health-aides-and-personal-care-aides.htm"
+      },
+      {
+        "title": "CDC: Plain Language Materials",
+        "url": "https://www.cdc.gov/health-literacy/php/develop-materials/plain-language.html"
+      },
+      {
+        "title": "BLS: Personal Care Aides Occupational Requirements",
+        "url": "https://www.bls.gov/ors/factsheet/pdf/personal-care-aides.pdf"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Confirming the visit and the care plan",
+        "terms": [
+          "care plan",
+          "assigned visit",
+          "scope of duties",
+          "client preference"
+        ],
+        "collocations": [
+          "review the care plan: check the current agreed support before starting",
+          "confirm the visit window: establish the expected arrival period",
+          "respect a preference: accommodate a choice within the agreed support",
+          "clarify the assignment: ask exactly which duties are authorized"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "You arrive at 9:00 for a two-hour visit. Your assignment lists breakfast and light household tasks. The client expects transport to a 10:00 appointment, but transport is not listed and you have no authorization. The coordinator is available by phone.",
+          "model": "Your appointment is at ten, and I understand why you expected a ride. My assignment today lists breakfast and light household tasks, but it does not include transport. May I contact the coordinator now to check what was arranged? I cannot confirm a ride until we have that information."
+        },
+        "workshop": {
+          "title": "Check expectations before starting",
+          "goal": "Name the mismatch between the assignment and the client's expectation without blaming either person.",
+          "explanation": "A care plan records agreed support; a client's immediate request may differ. Acknowledge the need, identify what your current assignment actually says, and ask the person who can clarify it. An omission is not proof that nobody arranged support.",
+          "frames": [
+            "My assignment lists ___; were you expecting something else?",
+            "Could we check whether ___ was arranged separately?",
+            "I can confirm ___, but I still need to check ___."
+          ],
+          "before": "Nobody booked your ride.",
+          "after": "Transport is not listed in my assignment. I will check whether it was arranged separately.",
+          "reason": "The revised statement describes the information you have without claiming to know every arrangement.",
+          "questions": [
+            {
+              "prompt": "Coordinator: You are scheduled to support this client from nine to eleven.\nCaregiver: Understood. That is my ____ for this morning.",
+              "options": [
+                "on-call availability",
+                "assigned visit",
+                "referral request",
+                "shift handoff"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "On-call availability means being available if needed, not this scheduled client visit.",
+                "Correct. An assigned visit is the client support allocated to this caregiver.",
+                "A referral request asks for a service; this visit is already assigned.",
+                "A shift handoff transfers information between workers, not the visit itself."
+              ]
+            },
+            {
+              "prompt": "Coordinator: Has anyone arranged a driver?\nCaregiver: I ____; I have only checked my own assignment.",
+              "options": [
+                "have ruled that out",
+                "can guarantee that",
+                "have not confirmed that",
+                "have already cancelled that"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Ruling it out claims you checked all possible arrangements.",
+                "A guarantee is not supported by your limited information.",
+                "Correct. This accurately marks what remains unknown.",
+                "Cancellation is an action the scenario never establishes."
+              ]
+            }
+          ],
+          "role_b": "You are the client. The appointment is at 10:00, and you remember discussing transport last week, but you do not know whether it was booked.",
+          "challenge": "The coordinator says a separate transport service may have been contacted but needs five minutes to confirm. Explain the uncertainty and agree what to do while waiting."
+        }
+      },
+      {
+        "title": "Consent, choice, and respectful assistance",
+        "terms": [
+          "consent",
+          "personal space",
+          "reassurance",
+          "refusal"
+        ],
+        "collocations": [
+          "ask permission: check that the person agrees before acting",
+          "offer a choice: present manageable options without pressure",
+          "respect personal space: avoid moving closer without agreement",
+          "accept a refusal: acknowledge a no and clarify what happens next"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "The client declines help arranging clothes before a visitor arrives. The visit has thirty minutes left. Choosing clothes is part of the agreed support, but the client prefers ten quiet minutes first. There is no immediate safety concern.",
+          "model": "You would like some quiet time before choosing clothes. We have thirty minutes left in today's visit. Would you prefer ten minutes alone and then help with the clothes, or would you rather leave that task today? Either way, I will respect your choice and confirm what support you want next."
+        },
+        "workshop": {
+          "title": "Offer choices without applying pressure",
+          "goal": "Make consent and preferences explicit while explaining a real time limit.",
+          "explanation": "A polite question is not meaningful choice if a refusal is immediately ignored. State available options neutrally, allow an answer, and separate the person's preference from what the schedule allows.",
+          "frames": [
+            "Would you prefer ___ or ___?",
+            "You can say no; I need to explain ___ so you can choose.",
+            "I'll give you ___, then check whether you would like ___."
+          ],
+          "before": "You need to let me help now or we'll run out of time.",
+          "after": "We have thirty minutes left. Would you prefer a short break before we choose clothes, or shall we leave that task today?",
+          "reason": "The time limit is clear without making assistance sound compulsory.",
+          "questions": [
+            {
+              "prompt": "Client: I'd rather choose my clothes after a break.\nCaregiver: Would you ____ ten quiet minutes first?",
+              "options": [
+                "prefer",
+                "permit",
+                "require me",
+                "insist"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Prefer ten quiet minutes' directly asks about the client's choice.",
+                "'Permit' asks permission for an action, but this phrasing does not identify that action naturally.",
+                "'Require me' needs a following action such as 'to wait'.",
+                "'Insist' normally needs 'on' before this noun phrase."
+              ]
+            },
+            {
+              "prompt": "Client: Not today, thank you.\nCaregiver: I understand. I'll ____ and check what other support you would like.",
+              "options": [
+                "take that as agreement",
+                "repeat the instruction",
+                "respect your decision",
+                "confirm the task is complete"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A refusal is not agreement.",
+                "Repeating an instruction does not acknowledge the stated choice.",
+                "Correct. This recognizes refusal while keeping other support available.",
+                "Declining a task does not mean the task was completed."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You want ten minutes of quiet before deciding whether you want help. You are comfortable leaving the clothes until later.",
+          "challenge": "The client chooses to leave the task today. Accept the decision and agree which remaining support, if any, they want."
+        }
+      },
+      {
+        "title": "Reporting a change without diagnosing",
+        "terms": [
+          "baseline",
+          "observation",
+          "reported symptom",
+          "escalation"
+        ],
+        "collocations": [
+          "notice a change: identify something different from the usual pattern",
+          "report an observation: describe what you directly saw or heard",
+          "quote the client's words: distinguish their report from your conclusion",
+          "escalate a concern: pass it to the authorized person or emergency process"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "During a fictional routine visit, the client says, 'I feel more tired than yesterday.' You notice they stop twice while describing breakfast, which is unusual for your visits. You are not qualified to diagnose. No emergency signs are specified; use the local procedure for reporting changes and urgent concerns.",
+          "model": "The client told me, 'I feel more tired than yesterday.' During our conversation, they paused twice before finishing their account of breakfast. That differs from my usual visits, but I cannot identify the cause. I am reporting the change through our agreed process and need the authorized clinician's direction on the next step."
+        },
+        "workshop": {
+          "title": "Separate what you observed from what you inferred",
+          "goal": "Report a change using a source, time, and clear limit on your knowledge.",
+          "explanation": "An observation is something you directly noticed; a reported symptom is the person's account. A baseline is their usual pattern, not a diagnosis. Do not convert one unfamiliar behavior into a clinical conclusion or delay urgent action to finish a language exercise.",
+          "frames": [
+            "At ___, I noticed ___; the client said ___.",
+            "Compared with my usual visits, ___.",
+            "I cannot determine the cause; I am reporting ___."
+          ],
+          "before": "She's getting ill because she sounds tired.",
+          "after": "She said she feels more tired than yesterday. I noticed two pauses while she described breakfast, and I am reporting the change.",
+          "reason": "The revision separates the client's statement from the caregiver's observation and removes an unsupported diagnosis.",
+          "questions": [
+            {
+              "prompt": "Supervisor: Did the client say she was tired, or is that your interpretation?\nCaregiver: That was her ____: 'I feel more tired than yesterday.'",
+              "options": [
+                "diagnosis",
+                "instruction",
+                "prediction",
+                "reported symptom"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "A diagnosis identifies a condition; the client described how she felt.",
+                "She did not give an instruction.",
+                "She described a current feeling, not a future event.",
+                "Correct. The phrase identifies the statement as the client's own account."
+              ]
+            },
+            {
+              "prompt": "Supervisor: Do you know what caused the change?\nCaregiver: I ____; I can describe what I noticed.",
+              "options": [
+                "cannot determine the cause",
+                "have confirmed the cause",
+                "can rule out any concern",
+                "know it will pass"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This states a knowledge limit while preserving useful observations.",
+                "The scenario supplies no confirmed cause.",
+                "An observation alone cannot rule out every concern.",
+                "This predicts an outcome without evidence."
+              ]
+            }
+          ],
+          "role_b": "You are the supervisor. Ask when the change was noticed, what the client actually said, and what the caregiver observed. You will use the organization's approved escalation process.",
+          "challenge": "The supervisor asks whether the client is 'just tired.' Restate the facts and your knowledge limit without agreeing to an unsupported explanation."
+        }
+      },
+      {
+        "title": "Boundaries around medicines and clinical questions",
+        "terms": [
+          "medication reminder",
+          "authorized task",
+          "clinical advice",
+          "referral"
+        ],
+        "collocations": [
+          "stay within your role: perform only duties you are authorized to carry out",
+          "refer a clinical question: connect the person with an appropriate professional",
+          "check the current instructions: verify approved guidance rather than rely on memory",
+          "decline a request respectfully: state a limit and offer a suitable next step"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "Your fictional assignment permits reminders only, not administering medicines or recommending doses. The client asks whether to double a missed dose. You do not know the medicine details. The care plan identifies a nurse contact for medication questions.",
+          "model": "I understand you want to know what to do about the missed dose. My role permits reminders, but I cannot recommend a dose or tell you to double it. Let's contact the nurse using the number in your care plan. I can help communicate your question without making the medication decision myself."
+        },
+        "workshop": {
+          "title": "Decline the decision, not the person",
+          "goal": "Respond helpfully to a request that exceeds the caregiver's authorized role.",
+          "explanation": "A boundary is clearest when it names the specific decision you cannot make and the next person who can help. Do not suggest a dose, interpret a prescription, or let a relative's confidence substitute for authorized guidance.",
+          "frames": [
+            "I can help with ___, but I am not authorized to ___.",
+            "That question needs ___; may we contact them?",
+            "I don't want to guess about ___. Let's check the approved route."
+          ],
+          "before": "I don't do medicines. Ask somebody else.",
+          "after": "I can help you contact the nurse, but I am not authorized to advise on a missed dose.",
+          "reason": "The second response keeps the boundary specific and provides an appropriate route to help.",
+          "questions": [
+            {
+              "prompt": "Client: Should I take twice as much because I missed yesterday?\nCaregiver: I cannot recommend a dose. That needs ____.",
+              "options": [
+                "a medication reminder",
+                "clinical advice",
+                "a visit summary",
+                "a medication history"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A reminder prompts an agreed action; it does not determine a new dose.",
+                "Correct. A dosing question requires an appropriately qualified professional.",
+                "A visit summary records what happened; it cannot supply a dosing decision.",
+                "A medication history is background information, not advice about this missed dose."
+              ]
+            },
+            {
+              "prompt": "Relative: I always handle this for her. Just follow my suggestion.\nCaregiver: I still need to ____.",
+              "options": [
+                "treat your suggestion as authorization",
+                "confirm that the dose is safe",
+                "stay within my authorized role",
+                "assume the plan has changed"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A relative's suggestion does not establish the caregiver's authority.",
+                "The caregiver is not qualified to make that confirmation.",
+                "Correct. Another person's confidence does not change the assignment's limits.",
+                "No authorized change to the plan has been established."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You want a quick answer about a missed dose and are worried that a call will take too long. The nurse contact is in your care plan.",
+          "challenge": "The client says a neighbor gave an answer already. Explain why you still cannot endorse that advice and offer to help contact the appropriate professional."
+        }
+      },
+      {
+        "title": "Meals, preferences, and unresolved restrictions",
+        "terms": [
+          "dietary restriction",
+          "substitution",
+          "meal preference",
+          "intake record"
+        ],
+        "collocations": [
+          "check a restriction: verify a documented limit before discussing alternatives",
+          "offer an approved alternative: suggest an option consistent with current instructions",
+          "record what was consumed: describe the actual amount without guessing",
+          "distinguish preference from restriction: separate a personal choice from a required limit"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "The plan lists two approved breakfast options. The client dislikes the first and asks for a third food that is not on the list. You do not know whether it meets the documented restrictions. The second approved option is available. The coordinator can clarify the third option.",
+          "model": "You don't want the first breakfast option today. The second option in your plan is available, or I can ask the coordinator about the food you requested. I don't know whether that substitution fits your documented restrictions, so I should not describe it as approved. Which of those next steps would you prefer?"
+        },
+        "workshop": {
+          "title": "Clarify food choices without giving nutrition advice",
+          "goal": "Separate an available approved option from a requested but unverified substitution.",
+          "explanation": "A preference describes what someone wants; a restriction limits what is appropriate under their plan. The caregiver should not invent a clinical reason for a restriction or promise that a substitute is suitable before it has been checked.",
+          "frames": [
+            "The plan lists ___; the requested substitute still needs ___.",
+            "Is that a preference, or is it part of the documented restriction?",
+            "I can offer ___ now, or help check ___."
+          ],
+          "before": "You can't have that because it's bad for you.",
+          "after": "That food is not listed among the approved options I have. I need to check before describing it as an approved substitute.",
+          "reason": "The revision reports the actual information gap without judging the client's choice or inventing a medical explanation.",
+          "questions": [
+            {
+              "prompt": "Client: I don't like the first option, but I can have the second.\nCaregiver: That sounds like a meal ____ rather than a new restriction.",
+              "options": [
+                "authorization",
+                "preference",
+                "diagnosis",
+                "shortage"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Authorization concerns permission or approval, not liking one option more.",
+                "Correct. The client is expressing what they prefer among permitted options.",
+                "The statement does not identify a condition.",
+                "Both options are available, so a shortage is not established."
+              ]
+            },
+            {
+              "prompt": "Coordinator: Did the client finish the whole portion?\nCaregiver: I saw about half remaining; I should record ____.",
+              "options": [
+                "that every portion was finished",
+                "my estimate as an exact measurement",
+                "what I actually observed",
+                "that the meal was refused"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "This contradicts the stated observation.",
+                "An estimate should not be represented as an exact measurement.",
+                "Correct. A factual record distinguishes observed quantity from assumptions.",
+                "Leaving some food does not establish refusal of the meal."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You dislike the first listed breakfast option. You will accept the second if the requested third choice cannot yet be confirmed.",
+          "challenge": "The client asks why the restriction exists. You do not know the clinical reason; acknowledge the question and refer it without making one up."
+        }
+      },
+      {
+        "title": "Privacy and family communication",
+        "terms": [
+          "confidentiality",
+          "authorized contact",
+          "identity verification",
+          "approved channel"
+        ],
+        "collocations": [
+          "verify the caller's identity: establish who is asking before discussing private details",
+          "check permission to share: confirm what the person is entitled to receive",
+          "use the approved channel: communicate through the employer's authorized method",
+          "limit the disclosure: share only information appropriate to the authorized purpose"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "An unfamiliar caller says she is the client's niece and asks what happened during the visit. The contact record is unavailable to you at that moment. You cannot verify her identity or permission. Your coordinator can handle the request through the approved process.",
+          "model": "I understand you are concerned about your aunt. Before discussing visit details, I need to verify the contact arrangement through our approved process. I cannot confirm private information on this call. Please contact the coordinator through the agency's usual number, or I can pass on your request without sharing the client's details."
+        },
+        "workshop": {
+          "title": "Protect privacy without sounding dismissive",
+          "goal": "Explain an identity or permission check and provide a legitimate route for the caller's request.",
+          "explanation": "Knowing a client's name or address is not proof of authorization. Family relationships do not tell you exactly what may be shared. Use the organization's verification procedure, avoid confirming private facts unnecessarily, and do not promise access you cannot authorize.",
+          "frames": [
+            "Before discussing ___, I need to verify ___.",
+            "I can pass on your request without sharing ___.",
+            "Please use ___ so the authorized person can check ___."
+          ],
+          "before": "If you're her niece, I suppose I can tell you.",
+          "after": "I need to check the authorized contact arrangement before discussing visit details.",
+          "reason": "The revised sentence does not treat an unverified relationship as permission to disclose information.",
+          "questions": [
+            {
+              "prompt": "Coordinator: We verified the caller's identity, but not whether she may receive visit details.\nCaregiver: Then we still need ____ before discussing the visit.",
+              "options": [
+                "a repeat of the same identity check",
+                "confirmation of permission to receive the information",
+                "confirmation that the caller knows the address",
+                "a summary of the caller's concern"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Identity is already verified; repeating it would not establish information-sharing permission.",
+                "Correct. Identity and permission are separate checks; permission remains unresolved here.",
+                "Knowing an address does not establish permission to receive private visit details.",
+                "Understanding the concern helps route the request but does not establish permission."
+              ]
+            },
+            {
+              "prompt": "Colleague: Can I send the visit details to your personal group chat?\nCaregiver: Please use the ____ for this information.",
+              "options": [
+                "largest contact group",
+                "most familiar social account",
+                "most recent family thread",
+                "approved channel"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "More recipients can increase inappropriate disclosure.",
+                "Familiarity does not establish approval for sensitive workplace information.",
+                "A family thread is not automatically an authorized work channel.",
+                "Correct. The employer's approved channel is the appropriate route."
+              ]
+            }
+          ],
+          "role_b": "You are the caller. You say you are the niece and know the client's address, but the caregiver cannot verify you. You can contact the agency directly.",
+          "challenge": "The caller says the check is insulting. Acknowledge the frustration and explain that the same process protects every client's privacy."
+        }
+      },
+      {
+        "title": "A handoff the next person can use",
+        "terms": [
+          "handoff",
+          "pending action",
+          "read-back",
+          "follow-up owner"
+        ],
+        "collocations": [
+          "give a concise handoff: transfer the relevant facts and unfinished work",
+          "name the follow-up owner: identify who will take the next action",
+          "read back the key detail: repeat it to check shared understanding",
+          "close the communication loop: obtain confirmation that the message was received and understood"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At 11:00 you finish a fictional visit. Breakfast support and laundry are complete. A transport query for tomorrow's 10:00 appointment is still pending with the coordinator. The incoming caregiver starts at 15:00. The coordinator, not the incoming caregiver, is arranging transport.",
+          "model": "Breakfast support and laundry are complete. Transport for tomorrow's ten o'clock appointment is still unconfirmed; the coordinator owns that follow-up. Your visit starts at three today. Please check the coordinator's update through the approved channel, and do not describe the ride as booked until confirmation arrives. Could you read back the pending item and who is handling it?"
+        },
+        "workshop": {
+          "title": "Transfer a pending action without losing ownership",
+          "goal": "Separate completed work, unresolved work, and responsibility for the next step.",
+          "explanation": "A handoff is not just a list of events. The receiving person needs to know what matters for their visit, which facts remain uncertain, and who is acting. A read-back catches misunderstandings before 'requested' becomes 'confirmed'.",
+          "frames": [
+            "Completed: ___. Still pending: ___.",
+            "___ is handling the follow-up; please check ___ by ___.",
+            "Could you read back the status and the person responsible?"
+          ],
+          "before": "Everything's done except the ride. Someone will sort it out.",
+          "after": "Breakfast and laundry are complete. The coordinator is checking transport for tomorrow's ten o'clock appointment; the ride is not yet confirmed.",
+          "reason": "The revised handoff names the pending action, the owner, and the limit on certainty.",
+          "questions": [
+            {
+              "prompt": "Incoming caregiver: So the ride is booked for tomorrow?\nOutgoing caregiver: Not yet. It is ____ with the coordinator.",
+              "options": [
+                "completed",
+                "cancelled",
+                "pending",
+                "duplicated"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Completed would mean the arrangement was finished.",
+                "No cancellation has been reported.",
+                "Correct. Pending means the arrangement is awaiting an outcome.",
+                "No second booking has been established."
+              ]
+            },
+            {
+              "prompt": "Outgoing caregiver: Who will arrange the transport?\nIncoming caregiver: The coordinator is the ____; I will check the update.",
+              "options": [
+                "follow-up owner",
+                "appointment provider",
+                "incoming caregiver",
+                "emergency contact"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This identifies responsibility for the unresolved action.",
+                "The appointment provider delivers the appointment service, not necessarily transport coordination.",
+                "The incoming caregiver checks the update; the coordinator arranges transport in this case.",
+                "An emergency contact is not automatically the person handling this routine transport query."
+              ]
+            }
+          ],
+          "role_b": "You are the incoming caregiver. Your visit starts at 15:00, and you need to know whether tomorrow's transport is confirmed and who is arranging it.",
+          "challenge": "The incoming caregiver assumes that checking the update means personally booking another ride. Correct the misunderstanding before a duplicate request is made."
+        }
+      },
+      {
+        "title": "Delays, complaints, and reliable follow-up",
+        "terms": [
+          "visit window",
+          "service disruption",
+          "acknowledgment",
+          "contingency plan"
+        ],
+        "collocations": [
+          "acknowledge the impact: recognize how a delay affects the person",
+          "give a realistic update: state what is known without inventing an arrival promise",
+          "follow the missed-visit procedure: use the organization's established response",
+          "confirm the next contact: say who will update the person and when"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Your fictional 9:00 visit will be delayed. At 8:50, dispatch estimates arrival between 9:30 and 9:45 but cannot guarantee it. The client had planned breakfast support at 9:00. Dispatch is checking an approved backup arrangement and will update the client by 9:10.",
+          "model": "I'm sorry this delay affects your planned breakfast support. Dispatch currently estimates arrival between nine thirty and nine forty-five, but that is not a guaranteed time. They are checking the approved backup arrangement and will update you by nine ten. I will not describe the backup as confirmed until dispatch verifies it."
+        },
+        "workshop": {
+          "title": "Repair trust with a bounded promise",
+          "goal": "Acknowledge the disruption, label an estimate, and commit only to an update that has been agreed.",
+          "explanation": "People need practical information during delays. Separate the estimated arrival from the promised next contact, and explain the escalation route if the update is missed. Apologizing should not lead to an invented guarantee or an unauthorized change to support.",
+          "frames": [
+            "I'm sorry this affects ___. What we know now is ___.",
+            "The current estimate is ___; it is not yet guaranteed.",
+            "___ will update you by ___ about ___."
+          ],
+          "before": "Don't worry, someone will definitely be there in ten minutes.",
+          "after": "Dispatch is checking the backup arrangement and will update you by nine ten. The current arrival estimate is nine thirty to nine forty-five.",
+          "reason": "The revised message distinguishes a confirmed communication commitment from an uncertain arrival estimate.",
+          "questions": [
+            {
+              "prompt": "Client: Are you guaranteeing that somebody arrives at nine thirty?\nCaregiver: No, that is the current ____; dispatch will update you by nine ten.",
+              "options": [
+                "confirmation",
+                "estimate",
+                "completed visit",
+                "standing instruction"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Confirmation would imply the arrival arrangement has been verified.",
+                "Correct. An estimate describes a current expectation, not a guarantee.",
+                "The visit has not yet taken place.",
+                "A standing instruction is an ongoing direction, not this travel prediction."
+              ]
+            },
+            {
+              "prompt": "Client: Is the backup confirmed? What will dispatch do by nine ten?\nCaregiver: They will ____; the arrangement is still being checked.",
+              "options": [
+                "guarantee an exact arrival time",
+                "confirm that the backup has arrived",
+                "give you a status update",
+                "treat the expected time as a firm booking"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The case promises an update, not an exact arrival guarantee.",
+                "Arrival has not been confirmed, and the backup is still being checked.",
+                "Correct. A status update can report progress without promising that arrangements are complete.",
+                "An expected time is not equivalent to a confirmed booking."
+              ]
+            }
+          ],
+          "role_b": "You are the client. You expected breakfast support at 9:00 and want a reliable next step, not another vague apology. You understand an estimate is not a guarantee.",
+          "challenge": "At 9:10 no update has arrived. Use the approved follow-up route and describe the missed update accurately without assuming a backup was cancelled."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "care plan",
+        "definition": "The current agreed record of a client's needs, support, and authorized arrangements.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "assigned visit",
+        "definition": "A scheduled period of support with duties assigned to a particular worker.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "scope of duties",
+        "definition": "The limits of the tasks a worker is authorized to carry out.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "client preference",
+        "definition": "A person's stated choice about how they want support provided.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "consent",
+        "definition": "Agreement to an action, which must be checked rather than assumed.",
+        "group": "Consent, choice, and respectful assistance"
+      },
+      {
+        "term": "personal space",
+        "definition": "The physical and conversational distance a person wants around them.",
+        "group": "Consent, choice, and respectful assistance"
+      },
+      {
+        "term": "reassurance",
+        "definition": "Language that offers support without promising an outcome you cannot guarantee.",
+        "group": "Consent, choice, and respectful assistance"
+      },
+      {
+        "term": "refusal",
+        "definition": "A person's decision not to accept a proposed action or service.",
+        "group": "Consent, choice, and respectful assistance"
+      },
+      {
+        "term": "baseline",
+        "definition": "A person's usual pattern used as a reference when describing a change.",
+        "group": "Reporting a change without diagnosing"
+      },
+      {
+        "term": "observation",
+        "definition": "Something a worker directly sees, hears, or otherwise notices.",
+        "group": "Reporting a change without diagnosing"
+      },
+      {
+        "term": "reported symptom",
+        "definition": "A person's own account of how they feel, distinguished from a worker's diagnosis.",
+        "group": "Reporting a change without diagnosing"
+      },
+      {
+        "term": "escalation",
+        "definition": "Passing a concern to the appropriate authorized person or urgent response process.",
+        "group": "Reporting a change without diagnosing"
+      },
+      {
+        "term": "medication reminder",
+        "definition": "An authorized prompt about medicine, distinct from administering it or choosing a dose.",
+        "group": "Boundaries around medicines and clinical questions"
+      },
+      {
+        "term": "authorized task",
+        "definition": "A duty the worker is permitted to perform under the applicable assignment and procedures.",
+        "group": "Boundaries around medicines and clinical questions"
+      },
+      {
+        "term": "clinical advice",
+        "definition": "Guidance about a health condition or treatment from an appropriately qualified professional.",
+        "group": "Boundaries around medicines and clinical questions"
+      },
+      {
+        "term": "referral",
+        "definition": "Directing a question or concern to a person qualified or authorized to handle it.",
+        "group": "Boundaries around medicines and clinical questions"
+      },
+      {
+        "term": "dietary restriction",
+        "definition": "A documented limit affecting food choices, which must not be guessed or reinterpreted.",
+        "group": "Meals, preferences, and unresolved restrictions"
+      },
+      {
+        "term": "substitution",
+        "definition": "An item proposed or used in place of another item.",
+        "group": "Meals, preferences, and unresolved restrictions"
+      },
+      {
+        "term": "meal preference",
+        "definition": "A person's choice about what or how they would like to eat.",
+        "group": "Meals, preferences, and unresolved restrictions"
+      },
+      {
+        "term": "intake record",
+        "definition": "An approved record of food or drink consumed, with estimates identified as estimates.",
+        "group": "Meals, preferences, and unresolved restrictions"
+      },
+      {
+        "term": "confidentiality",
+        "definition": "The obligation to protect private information from inappropriate disclosure.",
+        "group": "Privacy and family communication"
+      },
+      {
+        "term": "authorized contact",
+        "definition": "A person verified as permitted to receive specified information or take part in specified communication.",
+        "group": "Privacy and family communication"
+      },
+      {
+        "term": "identity verification",
+        "definition": "The approved process for establishing who a person contacting the service actually is.",
+        "group": "Privacy and family communication"
+      },
+      {
+        "term": "approved channel",
+        "definition": "An employer-authorized method for communicating particular workplace information.",
+        "group": "Privacy and family communication"
+      },
+      {
+        "term": "handoff",
+        "definition": "The transfer of relevant information and responsibility between workers or teams.",
+        "group": "A handoff the next person can use"
+      },
+      {
+        "term": "pending action",
+        "definition": "A task or decision that remains unresolved and needs a next step.",
+        "group": "A handoff the next person can use"
+      },
+      {
+        "term": "read-back",
+        "definition": "Repeating key information to confirm that it has been heard and understood correctly.",
+        "group": "A handoff the next person can use"
+      },
+      {
+        "term": "follow-up owner",
+        "definition": "The person explicitly responsible for taking an unresolved matter to its next step.",
+        "group": "A handoff the next person can use"
+      },
+      {
+        "term": "visit window",
+        "definition": "The agreed period during which a scheduled visit is expected to begin.",
+        "group": "Delays, complaints, and reliable follow-up"
+      },
+      {
+        "term": "service disruption",
+        "definition": "An interruption or change that affects the planned delivery of support.",
+        "group": "Delays, complaints, and reliable follow-up"
+      },
+      {
+        "term": "acknowledgment",
+        "definition": "Confirmation that a message or concern has been received, not necessarily resolved.",
+        "group": "Delays, complaints, and reliable follow-up"
+      },
+      {
+        "term": "contingency plan",
+        "definition": "An approved alternative arrangement used when the original plan cannot proceed as expected.",
+        "group": "Delays, complaints, and reliable follow-up"
+      },
+      {
+        "term": "activities of daily living (ADLs)",
+        "definition": "Basic personal activities such as dressing, eating, and bathing; the care plan specifies any assistance required.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "light housekeeping",
+        "definition": "Agreed routine household tasks such as washing dishes and laundry, distinct from major cleaning or repairs.",
+        "group": "Confirming the visit and the care plan"
+      },
+      {
+        "term": "grooming",
+        "definition": "Personal care relating to appearance and cleanliness, such as caring for hair; assistance depends on the person's wishes and plan.",
+        "group": "Consent, choice, and respectful assistance"
+      },
+      {
+        "term": "ambulation",
+        "definition": "Walking or moving about on foot; a report about ambulation describes mobility rather than diagnosing its cause.",
+        "group": "Reporting a change without diagnosing"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "The appointment is not on my assignment",
+          "setting": "A caregiver arrives for the fictional 9:00 visit and checks an unexpected transport request.",
+          "turns": [
+            [
+              "Client",
+              "You're here. We need to leave for my clinic appointment in forty minutes."
+            ],
+            [
+              "Caregiver",
+              "Your appointment is at ten, correct? I see breakfast and light household tasks on my assignment."
+            ],
+            [
+              "Client",
+              "I mentioned the ride when I spoke with someone last week."
+            ],
+            [
+              "Caregiver",
+              "You may have discussed a separate arrangement. I don't see transport listed here."
+            ],
+            [
+              "Client",
+              "Does that mean nobody is coming to pick me up today?"
+            ],
+            [
+              "Caregiver",
+              "I haven't confirmed that. May I call the coordinator before we make that assumption?"
+            ],
+            [
+              "Client",
+              "Yes, please. I don't want to miss another appointment this month."
+            ],
+            [
+              "Caregiver",
+              "I'll explain the appointment time and ask what transport, if any, was arranged."
+            ],
+            [
+              "Client",
+              "While you check, can I have my breakfast at the table?"
+            ],
+            [
+              "Caregiver",
+              "Certainly. We'll continue the agreed visit tasks while the coordinator checks the transport details."
+            ]
+          ]
+        },
+        {
+          "title": "A changed start time",
+          "setting": "A caregiver and coordinator reconcile two different visit times before a planned home visit.",
+          "turns": [
+            [
+              "Caregiver",
+              "My assigned visit starts at nine tomorrow, but the client's reminder says half past nine."
+            ],
+            [
+              "Coordinator",
+              "I changed the visit window yesterday. Your printed schedule may be an older version."
+            ],
+            [
+              "Caregiver",
+              "Which time should I confirm with the client before I leave today?"
+            ],
+            [
+              "Coordinator",
+              "Half past nine. The visit is still two hours, ending at eleven thirty."
+            ],
+            [
+              "Caregiver",
+              "The client usually expects breakfast earlier. Has that change been discussed with her?"
+            ],
+            [
+              "Coordinator",
+              "Not yet. I need to check whether the later time works for her."
+            ],
+            [
+              "Caregiver",
+              "Then I shouldn't present nine thirty as an agreed change at this point."
+            ],
+            [
+              "Coordinator",
+              "Correct. Please tell her I'm checking the revised arrangement and will call shortly."
+            ],
+            [
+              "Caregiver",
+              "I'll distinguish the proposed time from the confirmed plan and wait for your update."
+            ],
+            [
+              "Coordinator",
+              "Thank you. I'll confirm the final window with both of you before today's visit ends."
+            ]
+          ]
+        },
+        {
+          "title": "Whose preference is it?",
+          "setting": "A client explains how they want ordinary household support organized during the visit.",
+          "turns": [
+            [
+              "Caregiver",
+              "Your plan includes light housekeeping today: the dishes, laundry, and clearing the table. Which would you prefer first?"
+            ],
+            [
+              "Client",
+              "My daughter always says to start with the laundry, but I'd rather clear the table."
+            ],
+            [
+              "Caregiver",
+              "You'd like the table ready before we deal with the laundry. Have I understood?"
+            ],
+            [
+              "Client",
+              "Exactly. I enjoy sitting there, and the folded towels aren't urgent today."
+            ],
+            [
+              "Caregiver",
+              "That order fits today's assignment. Shall we keep your newspapers in their usual basket?"
+            ],
+            [
+              "Client",
+              "Please leave the top one out. I'm halfway through an article in it."
+            ],
+            [
+              "Caregiver",
+              "I'll leave that newspaper on the side table and put the others in the basket."
+            ],
+            [
+              "Client",
+              "Thank you for asking. Sometimes things disappear before I've finished using them."
+            ],
+            [
+              "Caregiver",
+              "I'll check before moving personal items. Let me know if you'd prefer another arrangement."
+            ],
+            [
+              "Client",
+              "That works. Once the table is clear, we can decide which laundry needs attention."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A request from a visiting relative",
+        "brief": "During a two-hour visit, a relative asks you to clean the garage. Your assignment covers breakfast and light tasks in the living area. The client wants the remaining time used for laundry. No garage work is authorized.",
+        "role_a": "Caregiver: acknowledge the relative, explain the assigned duties, and check the client's preference.",
+        "role_b": "Relative: you thought any household cleaning was included. You can contact the coordinator about future services.",
+        "opening_line": "Could you clean out the garage before you leave today?",
+        "complication": "The relative offers extra cash. Your employer requires service changes to go through the coordinator, not private arrangements.",
+        "success_checks": [
+          "Identify the actual assignment without judging the relative.",
+          "Keep the client's stated preference in the discussion.",
+          "Refer any new service request to the coordinator without accepting a private arrangement."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Ten minutes before we start",
+          "setting": "A client requests quiet time during a scheduled visit with thirty minutes remaining.",
+          "turns": [
+            [
+              "Client",
+              "I'd rather not sort my clothes right now. I've had people coming in all morning."
+            ],
+            [
+              "Caregiver",
+              "You'd like a break from activity. Would ten quiet minutes help before we discuss it again?"
+            ],
+            [
+              "Client",
+              "Yes, but I don't want you standing beside the chair while I rest."
+            ],
+            [
+              "Caregiver",
+              "Of course. I can wait in the kitchen if that suits you and the visit arrangement."
+            ],
+            [
+              "Client",
+              "That's fine. Please don't start opening drawers while I'm having my break."
+            ],
+            [
+              "Caregiver",
+              "I won't. Your personal space matters. We have thirty minutes left, so we can choose a smaller task afterward."
+            ],
+            [
+              "Client",
+              "And if I decide not to do the clothes at all today?"
+            ],
+            [
+              "Caregiver",
+              "I'll respect that choice. We can confirm what other agreed support you want instead."
+            ],
+            [
+              "Client",
+              "Good. Please come back in ten minutes and ask me then."
+            ],
+            [
+              "Caregiver",
+              "Ten minutes in the kitchen, then I'll check with you before we do anything else."
+            ]
+          ]
+        },
+        {
+          "title": "Let me finish the sentence",
+          "setting": "A caregiver repairs an overly hurried offer of help with a household task.",
+          "turns": [
+            [
+              "Caregiver",
+              "Shall I put those books away for you before your visitor arrives this afternoon?"
+            ],
+            [
+              "Client",
+              "I was going to say that I want the green one left out."
+            ],
+            [
+              "Caregiver",
+              "I'm sorry; I started moving them before you finished. I'll stop and listen."
+            ],
+            [
+              "Client",
+              "The green book stays here, and the other two belong on the lower shelf."
+            ],
+            [
+              "Caregiver",
+              "Green book here, two books on the lower shelf. Is that the arrangement you want?"
+            ],
+            [
+              "Client",
+              "Yes. I know it seems small, but I like to find things myself."
+            ],
+            [
+              "Caregiver",
+              "That makes sense. Would you like me to move those two now, or leave them?"
+            ],
+            [
+              "Client",
+              "You can move them now. Just keep them where I can see their covers."
+            ],
+            [
+              "Caregiver",
+              "I'll place them with their covers visible and ask you to check the position."
+            ],
+            [
+              "Client",
+              "Thank you. That's the help I wanted, without everything being reorganized around me."
+            ]
+          ]
+        },
+        {
+          "title": "The family member answers first",
+          "setting": "A caregiver makes room for the client's own preference during a relative's visit.",
+          "turns": [
+            [
+              "Relative",
+              "She wants you to rearrange the whole cupboard today. We discussed it yesterday evening."
+            ],
+            [
+              "Caregiver",
+              "Thank you. I'd like to check her preference directly before we agree on that task."
+            ],
+            [
+              "Relative",
+              "She's tired, so I'm trying to save her from having to explain everything."
+            ],
+            [
+              "Caregiver",
+              "I appreciate that. We can keep the question short and give her time to answer."
+            ],
+            [
+              "Relative",
+              "What if she changes her mind after we have already started moving things?"
+            ],
+            [
+              "Caregiver",
+              "Then we'll pause and ask what she wants to keep or change before continuing."
+            ],
+            [
+              "Relative",
+              "All right. She may only want the cups moved onto the lower shelf."
+            ],
+            [
+              "Caregiver",
+              "That would be a more specific request. I'll ask her which items she wants within reach."
+            ],
+            [
+              "Relative",
+              "I'll let her answer, and I can explain yesterday's discussion if she asks me."
+            ],
+            [
+              "Caregiver",
+              "Thank you. We can support the conversation without replacing her own choice with our assumptions."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An unwanted photograph",
+        "brief": "A relative wants to photograph the caregiver helping the client choose clothes. The client says they do not want a photograph. Your employer requires consent and approval for work-related images. No image has been taken.",
+        "role_a": "Caregiver: support the client's refusal and refer questions about photographs to the coordinator.",
+        "role_b": "Relative: you wanted a family update, not a public post. You can describe the visit without taking a photograph.",
+        "opening_line": "Can you both smile for a quick photo to send the family?",
+        "complication": "The relative says the image is only for a private group. The client's refusal has not changed.",
+        "success_checks": [
+          "Acknowledge the relative's purpose without treating it as consent.",
+          "Restate that the client does not agree to a photograph.",
+          "Offer an appropriate non-photographic way to give a general update."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "What did you actually notice?",
+          "setting": "A caregiver gives a factual phone report to a supervisor using the fictional case details.",
+          "turns": [
+            [
+              "Supervisor",
+              "Your message says the client seems different today. What exactly have you noticed during the visit?"
+            ],
+            [
+              "Caregiver",
+              "She said, 'I feel more tired than yesterday,' and paused twice while describing breakfast to me."
+            ],
+            [
+              "Supervisor",
+              "How does that compare with her usual baseline during your morning visits? Are those pauses typical?"
+            ],
+            [
+              "Caregiver",
+              "Not during my usual visits, but I don't know whether someone else has noticed them before."
+            ],
+            [
+              "Supervisor",
+              "When did this conversation happen, and have you recorded the client's own words accurately?"
+            ],
+            [
+              "Caregiver",
+              "It happened at nine fifteen. Those are her words, and I haven't added a possible diagnosis."
+            ],
+            [
+              "Supervisor",
+              "Thank you. We need the authorized clinician's direction through our agreed reporting process."
+            ],
+            [
+              "Caregiver",
+              "Understood. I can provide the time and observations, but I cannot determine what caused the change."
+            ],
+            [
+              "Supervisor",
+              "Stay within the local procedure, and use the urgent escalation route if an urgent concern arises."
+            ],
+            [
+              "Caregiver",
+              "I'll follow that procedure and confirm who receives this report rather than assuming the message is enough."
+            ]
+          ]
+        },
+        {
+          "title": "A quieter morning",
+          "setting": "A caregiver checks the meaning of a client's unusual silence without attributing a cause.",
+          "turns": [
+            [
+              "Caregiver",
+              "You've been quieter than during my recent visits. Would you like some quiet, or is something different today?"
+            ],
+            [
+              "Client",
+              "I'm thinking about a family matter. I don't feel like having much conversation this morning."
+            ],
+            [
+              "Caregiver",
+              "Thank you for telling me. Would you prefer that I keep questions limited to the support you need?"
+            ],
+            [
+              "Client",
+              "Yes, please. I still want breakfast at the table, just without the usual chat today."
+            ],
+            [
+              "Caregiver",
+              "We can do that. Let me know if there is any change or anything you want me to report."
+            ],
+            [
+              "Client",
+              "I will. Please don't tell the coordinator that I'm upset with you, because I'm not."
+            ],
+            [
+              "Caregiver",
+              "I won't assume that. I'll describe your stated preference rather than give a reason you haven't given."
+            ],
+            [
+              "Client",
+              "That's helpful. People sometimes decide what my silence means before they ask me about it."
+            ],
+            [
+              "Caregiver",
+              "I'll check instead of guessing. Is there anything else about today's visit you'd like adjusted?"
+            ],
+            [
+              "Client",
+              "No, the usual support is fine. A quieter visit is all I'm asking for right now."
+            ]
+          ]
+        },
+        {
+          "title": "A secondhand description",
+          "setting": "A coordinator helps a caregiver distinguish a relative's comment from a direct observation.",
+          "turns": [
+            [
+              "Caregiver",
+              "The client's brother said she seemed unsteady yesterday, but I wasn't present during his visit."
+            ],
+            [
+              "Coordinator",
+              "Then identify him as the source. Have you noticed any change yourself during today's visit?"
+            ],
+            [
+              "Caregiver",
+              "I haven't observed the situation he described. That doesn't establish that it didn't happen yesterday."
+            ],
+            [
+              "Coordinator",
+              "Exactly. What words did he use, and did he say when he noticed it?"
+            ],
+            [
+              "Caregiver",
+              "He said, 'She seemed unsteady after lunch.' He didn't give a more specific time."
+            ],
+            [
+              "Coordinator",
+              "Please keep that distinction clear when you pass the concern through the agreed reporting route."
+            ],
+            [
+              "Caregiver",
+              "I'll say it is his report, that the timing is approximate, and that I did not witness it."
+            ],
+            [
+              "Coordinator",
+              "Good. Don't label the earlier report as false simply because your own observation differs today."
+            ],
+            [
+              "Caregiver",
+              "Understood. I'll avoid combining the two accounts into a single conclusion about her condition."
+            ],
+            [
+              "Coordinator",
+              "That will help the authorized person assess what information is available and what still needs clarification."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An incomplete overnight report",
+        "brief": "A relative says the client 'wasn't herself last night' but gives no specific behavior. You have just arrived and have not yet observed a change. The supervisor is reachable. No emergency signs are supplied.",
+        "role_a": "Caregiver: ask for observable details and timing, identify the source, and follow the agreed reporting process.",
+        "role_b": "Relative: clarify that the client spoke less than usual at dinner at 7:00. You do not know why.",
+        "opening_line": "She wasn't herself last night. Can you tell the nurse something is wrong?",
+        "complication": "The relative asks you to name a likely condition. You are not qualified to diagnose.",
+        "success_checks": [
+          "Ask what was seen or heard and when.",
+          "Separate the relative's report from your own observations.",
+          "Decline to diagnose and identify the appropriate reporting route."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Please tell me which dose",
+          "setting": "The caregiver responds to the fictional missed-dose request without offering medical advice.",
+          "turns": [
+            [
+              "Client",
+              "I missed yesterday's medicine. Should I take twice as much today to make up for it?"
+            ],
+            [
+              "Caregiver",
+              "I understand why you're asking, but I cannot recommend a dose or tell you to double it."
+            ],
+            [
+              "Client",
+              "You remind me about medicines, so I thought you would know what to do."
+            ],
+            [
+              "Caregiver",
+              "A medication reminder is part of my assignment. Choosing a dose is outside my scope of duties."
+            ],
+            [
+              "Client",
+              "I don't want to spend the whole morning trying to reach the right person."
+            ],
+            [
+              "Caregiver",
+              "The care plan gives a nurse contact for these questions. May I help you contact that person?"
+            ],
+            [
+              "Client",
+              "Yes. What should I say when we reach the nurse on the phone?"
+            ],
+            [
+              "Caregiver",
+              "Explain that you missed a dose and ask for their guidance. I can help communicate the question."
+            ],
+            [
+              "Client",
+              "So you aren't saying the answer is yes or no to taking extra?"
+            ],
+            [
+              "Caregiver",
+              "Correct. I'm saying that decision needs authorized clinical advice, and I won't guess about it."
+            ]
+          ]
+        },
+        {
+          "title": "A relative's new instruction",
+          "setting": "A caregiver discusses an unverified change to an authorized task with the coordinator.",
+          "turns": [
+            [
+              "Caregiver",
+              "The client's daughter says my duties now include administering medicine, but my current assignment permits reminders only."
+            ],
+            [
+              "Coordinator",
+              "Have you received an updated plan or confirmation from the authorized person responsible for that change?"
+            ],
+            [
+              "Caregiver",
+              "No. The only new information is the daughter's statement during today's visit at nine thirty."
+            ],
+            [
+              "Coordinator",
+              "Then don't treat that statement alone as a change to your authorized duties. I'll check the plan."
+            ],
+            [
+              "Caregiver",
+              "I can continue the agreed nonclinical tasks while you clarify, but I won't perform the additional task."
+            ],
+            [
+              "Coordinator",
+              "That's the correct distinction. Tell the client we are checking the arrangement, not abandoning the request."
+            ],
+            [
+              "Caregiver",
+              "Should I explain that the question is about authorization, not whether I trust the family member?"
+            ],
+            [
+              "Coordinator",
+              "Yes. Keep the language factual and avoid implying that she deliberately gave you incorrect information."
+            ],
+            [
+              "Caregiver",
+              "I'll say the current assignment and the new request differ, and that we need an authorized clarification."
+            ],
+            [
+              "Coordinator",
+              "I'll contact the responsible person now and confirm the outcome through the approved communication channel."
+            ]
+          ]
+        },
+        {
+          "title": "The neighbor said it was fine",
+          "setting": "A client asks the caregiver to endorse advice received from a neighbor.",
+          "turns": [
+            [
+              "Client",
+              "My neighbor takes something similar and says I can change the timing. Is that all right?"
+            ],
+            [
+              "Caregiver",
+              "I can't confirm that advice. Similar medicines or situations may still involve different instructions for different people."
+            ],
+            [
+              "Client",
+              "But she has been taking it for years and sounded very sure when we spoke."
+            ],
+            [
+              "Caregiver",
+              "I hear that she was confident. Her experience doesn't give me authority to advise on your medicine."
+            ],
+            [
+              "Client",
+              "I just want someone to tell me whether her suggestion makes sense for me."
+            ],
+            [
+              "Caregiver",
+              "That question belongs with an appropriately qualified professional. We can use the contact route in your plan."
+            ],
+            [
+              "Client",
+              "Can you explain what she suggested when we call, so I don't forget the details?"
+            ],
+            [
+              "Caregiver",
+              "I can help relay your question, making clear that it came from a neighbor and is not an instruction."
+            ],
+            [
+              "Client",
+              "All right. Please don't describe it as something I have already decided to do."
+            ],
+            [
+              "Caregiver",
+              "I won't. I'll distinguish advice you heard from a decision or action you have actually taken."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An unreadable label",
+        "brief": "The client asks you to interpret a partly unreadable medicine label. Your assignment allows reminders only. The client has the pharmacy contact details, and your agency has an approved route for medication questions. No dosing decision has been made.",
+        "role_a": "Caregiver: explain that you cannot fill in missing instructions from memory and help use the approved contact route.",
+        "role_b": "Client: you believe you remember the wording but are not certain. You agree to ask an authorized professional.",
+        "opening_line": "The print has rubbed off. Can you tell me what this instruction probably says?",
+        "complication": "The client finds an old label from a previous supply and asks whether it must be the same.",
+        "success_checks": [
+          "Identify the information as unreadable or unverified.",
+          "Do not interpret or invent the missing instruction.",
+          "Offer a concrete route for obtaining authorized clarification."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "A third breakfast option",
+          "setting": "Fictional care plan: today's listed options are porridge or toast. Pancakes have not been reviewed as a substitute; this exchange does not assess dietary suitability.",
+          "turns": [
+            [
+              "Client",
+              "Could you make the breakfast I had at my daughter's house? I'd like something different from porridge."
+            ],
+            [
+              "Caregiver",
+              "What did you have there? I need the name of the dish before I check today's plan."
+            ],
+            [
+              "Client",
+              "Pancakes. She served them plain, and I'd like those instead of porridge this morning."
+            ],
+            [
+              "Caregiver",
+              "Today's plan lists porridge or toast, but not pancakes. I'll ask the coordinator about that request."
+            ],
+            [
+              "Client",
+              "Could I have toast now, then ask about pancakes for a later visit? I don't want to wait."
+            ],
+            [
+              "Caregiver",
+              "Yes, toast is the other listed choice. I'll prepare that and pass on your request for more variety."
+            ],
+            [
+              "Client",
+              "Please don't put down that I refused breakfast. I'm choosing the toast you've offered."
+            ],
+            [
+              "Caregiver",
+              "I'll record that choice accurately. The pancake request is a separate question for the coordinator."
+            ],
+            [
+              "Client",
+              "Could the coordinator also explain why those are the only two options on today's plan?"
+            ],
+            [
+              "Caregiver",
+              "I'll ask. Their absence from this list doesn't tell me why, so I won't invent a reason."
+            ]
+          ]
+        },
+        {
+          "title": "Half a portion is not no breakfast",
+          "setting": "Two caregivers clarify the meaning of a meal record during a handoff.",
+          "turns": [
+            [
+              "Incoming caregiver",
+              "The note says breakfast was incomplete. Does that mean the client didn't eat anything this morning?"
+            ],
+            [
+              "Outgoing caregiver",
+              "No. I observed about half the portion remaining after the client said she was finished."
+            ],
+            [
+              "Incoming caregiver",
+              "Was that weighed, or is half your visual estimate of what remained on the plate?"
+            ],
+            [
+              "Outgoing caregiver",
+              "It's an estimate, not a measured amount. I should make that clear in the intake record."
+            ],
+            [
+              "Incoming caregiver",
+              "Did she give a reason for leaving it, or would we be guessing about that?"
+            ],
+            [
+              "Outgoing caregiver",
+              "She said she had finished. She did not give a reason, and I haven't supplied one."
+            ],
+            [
+              "Incoming caregiver",
+              "Then I should not repeat the information as a refused meal or a confirmed appetite problem."
+            ],
+            [
+              "Outgoing caregiver",
+              "Correct. Please preserve the distinction between what was served, what remained, and what she actually said."
+            ],
+            [
+              "Incoming caregiver",
+              "I'll use that wording and follow the plan's reporting process if there is a concern."
+            ],
+            [
+              "Outgoing caregiver",
+              "Thank you. I'll clarify the original note so the same misunderstanding doesn't continue into another handoff."
+            ]
+          ]
+        },
+        {
+          "title": "A shopping substitution needs checking",
+          "setting": "A caregiver checks a proposed grocery substitute with a coordinator rather than interpreting dietary instructions.",
+          "turns": [
+            [
+              "Caregiver",
+              "The listed product wasn't available in the shop, and the client has asked about another brand."
+            ],
+            [
+              "Coordinator",
+              "Are you asking about a brand preference or whether the substitute meets a documented dietary restriction?"
+            ],
+            [
+              "Caregiver",
+              "The second issue. I can identify the product, but I am not qualified to interpret its clinical suitability."
+            ],
+            [
+              "Coordinator",
+              "Then don't tell the client it is equivalent just because the packaging looks similar to the usual one."
+            ],
+            [
+              "Caregiver",
+              "I haven't. The original approved alternative is still available at home for today's planned meal."
+            ],
+            [
+              "Coordinator",
+              "Good. Use the agreed contact route to clarify the proposed substitute before making any claim about it."
+            ],
+            [
+              "Caregiver",
+              "I'll explain that the choice is pending, not rejected, and that an existing approved option is available."
+            ],
+            [
+              "Coordinator",
+              "Please also record what was unavailable without changing the shopping list as though the substitute were approved."
+            ],
+            [
+              "Caregiver",
+              "Understood. I'll keep the requested change separate from the current instruction and confirm the response when it arrives."
+            ],
+            [
+              "Coordinator",
+              "That will let the appropriate person decide with the actual product information instead of our assumptions."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The relative's favorite recipe",
+        "brief": "A relative brings ingredients for a meal that is not on the client's approved list. The client would like to try it. You cannot confirm whether it fits a documented restriction. A listed alternative is available now.",
+        "role_a": "Caregiver: distinguish a welcome offer from an approved meal and propose an authorized check.",
+        "role_b": "Relative: you want to help and did not know there was a restriction. You can provide the ingredient information.",
+        "opening_line": "I brought everything for his favorite meal. Can you prepare it today?",
+        "complication": "The relative says removing one ingredient should solve the issue. No authorized person has confirmed that.",
+        "success_checks": [
+          "Acknowledge the offer without endorsing the proposed meal.",
+          "Explain exactly what remains unverified.",
+          "Offer the existing approved choice and the appropriate clarification route."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "An unfamiliar caller",
+          "setting": "A caregiver handles a request for private visit information from an unverified person.",
+          "turns": [
+            [
+              "Caller",
+              "I'm Mrs. Vale's niece. Tell me whether she ate breakfast and what happened during your visit."
+            ],
+            [
+              "Caregiver",
+              "I understand you're asking about her welfare. Before discussing visit details, I need to verify the contact arrangement."
+            ],
+            [
+              "Caller",
+              "I can give you her address and her birthday. Surely that shows who I am."
+            ],
+            [
+              "Caregiver",
+              "I still need to follow the approved verification process. I can't confirm private details on this call."
+            ],
+            [
+              "Caller",
+              "That sounds as though you think I am lying about being part of the family."
+            ],
+            [
+              "Caregiver",
+              "I'm not making that judgment. We use the same privacy process for requests involving every client."
+            ],
+            [
+              "Caller",
+              "Then how can I get an answer without explaining the whole situation to several people?"
+            ],
+            [
+              "Caregiver",
+              "Please contact the coordinator through the agency's usual number, or I can pass on your request."
+            ],
+            [
+              "Caller",
+              "You can pass on the request, but please make clear that I would like a call back."
+            ],
+            [
+              "Caregiver",
+              "I'll relay that request through the approved route without sharing the client's visit details here."
+            ]
+          ]
+        },
+        {
+          "title": "The conversation in the hallway",
+          "setting": "A caregiver moves a potentially private discussion away from a shared building corridor.",
+          "turns": [
+            [
+              "Relative",
+              "Before you leave, tell me what the nurse said yesterday. The neighbors won't mind us talking here."
+            ],
+            [
+              "Caregiver",
+              "I'd prefer not to discuss private care information in a shared hallway where other people may hear."
+            ],
+            [
+              "Relative",
+              "I'm an authorized contact, so I thought it would be all right to ask you now."
+            ],
+            [
+              "Caregiver",
+              "Your authorization still needs to match the information being requested, and the setting also matters for privacy."
+            ],
+            [
+              "Relative",
+              "Can we step inside, then? I don't want to hold you up at the end of your visit."
+            ],
+            [
+              "Caregiver",
+              "We can use the agreed private contact arrangement. I also need to confirm which information I am authorized to share."
+            ],
+            [
+              "Relative",
+              "I only want to know whether someone will call me about the question I raised."
+            ],
+            [
+              "Caregiver",
+              "I can pass that request to the coordinator without discussing clinical details I haven't been authorized to communicate."
+            ],
+            [
+              "Relative",
+              "All right. Please ask them to use the contact number they already have for me."
+            ],
+            [
+              "Caregiver",
+              "I'll use the approved channel and make clear that you are requesting a response, not that one is already scheduled."
+            ]
+          ]
+        },
+        {
+          "title": "A convenient but unapproved message",
+          "setting": "Two caregivers discuss how to share a handoff without using a personal messaging group.",
+          "turns": [
+            [
+              "Incoming caregiver",
+              "The work system is slow. Can you send the visit details in our personal group chat instead?"
+            ],
+            [
+              "Outgoing caregiver",
+              "That group chat isn't approved for client information. We still need to protect confidentiality when the work system is slow."
+            ],
+            [
+              "Incoming caregiver",
+              "We both work with this client, and I need the information before the next visit begins."
+            ],
+            [
+              "Outgoing caregiver",
+              "I agree the handoff matters. Let's contact the coordinator for the approved backup method rather than invent one."
+            ],
+            [
+              "Incoming caregiver",
+              "Would a photograph of the note be any different if I delete it from the group later?"
+            ],
+            [
+              "Outgoing caregiver",
+              "It would still share private information through that channel. Deleting it later wouldn't make the original choice approved."
+            ],
+            [
+              "Incoming caregiver",
+              "Then I'll call the coordinator and explain the timing issue before my visit starts."
+            ],
+            [
+              "Outgoing caregiver",
+              "I'll keep the handoff ready through the authorized route and confirm that you receive it."
+            ],
+            [
+              "Incoming caregiver",
+              "Please flag any time-sensitive concern using the established escalation process while we resolve the system problem."
+            ],
+            [
+              "Outgoing caregiver",
+              "I will. We need both a timely transfer and an appropriate channel, not an assumed exception."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A family group invitation",
+        "brief": "A relative invites you into a family messaging group to send daily visit updates. The agency has not approved that group, and the client's sharing preferences have not been checked. The coordinator can explain approved communication options.",
+        "role_a": "Caregiver: decline the unapproved channel and offer the established route for updates.",
+        "role_b": "Relative: you want everyone to receive the same information. You can ask the coordinator to clarify authorized contacts.",
+        "opening_line": "I'll add you to our family chat so you can post a quick update after every visit.",
+        "complication": "The relative offers to remove the client's name from the messages, but the group members would still know who the updates concern.",
+        "success_checks": [
+          "Explain that removing a name does not establish permission or channel approval.",
+          "Avoid sharing visit details while discussing the request.",
+          "Direct the family to the coordinator for a verified arrangement."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Requested is not booked",
+          "setting": "Outgoing and incoming caregivers confirm the status of tomorrow's transport.",
+          "turns": [
+            [
+              "Outgoing caregiver",
+              "Breakfast support and laundry are complete. The unresolved item is transport for tomorrow's ten o'clock appointment."
+            ],
+            [
+              "Incoming caregiver",
+              "So the ride has been requested, and I should tell the client it is booked?"
+            ],
+            [
+              "Outgoing caregiver",
+              "Please don't say booked yet. The coordinator is checking the arrangement, and confirmation has not arrived."
+            ],
+            [
+              "Incoming caregiver",
+              "Do you want me to arrange another ride when I arrive for the three o'clock visit?"
+            ],
+            [
+              "Outgoing caregiver",
+              "No. The coordinator is the follow-up owner. Please check their update before arranging anything separately."
+            ],
+            [
+              "Incoming caregiver",
+              "Let me read that back: transport is pending, and the coordinator is responsible for arranging it."
+            ],
+            [
+              "Outgoing caregiver",
+              "Correct. Your task is to check the status and avoid presenting an unconfirmed request as a booking."
+            ],
+            [
+              "Incoming caregiver",
+              "If there is still no update at three, I'll contact the coordinator using the established route."
+            ],
+            [
+              "Outgoing caregiver",
+              "Thank you. The client knows it is being checked but has not been promised a pickup time."
+            ],
+            [
+              "Incoming caregiver",
+              "I'll keep that wording consistent and confirm that I received the update when it becomes available."
+            ]
+          ]
+        },
+        {
+          "title": "Which appointment did you mean?",
+          "setting": "A read-back exposes two different appointment dates during a routine handoff.",
+          "turns": [
+            [
+              "Incoming caregiver",
+              "I heard you say the transport query concerns Thursday's appointment at ten. Is that the pending item?"
+            ],
+            [
+              "Outgoing caregiver",
+              "I said tomorrow at ten, but you're right that we should use the actual day and date."
+            ],
+            [
+              "Incoming caregiver",
+              "There is also a Thursday appointment in the calendar, so 'the appointment' could mean either one."
+            ],
+            [
+              "Outgoing caregiver",
+              "The query concerns Tuesday's ten o'clock appointment. Thursday's arrangement is a separate item that I haven't checked."
+            ],
+            [
+              "Incoming caregiver",
+              "Then I should not carry your transport update over to Thursday simply because the destination is the same."
+            ],
+            [
+              "Outgoing caregiver",
+              "Exactly. Please connect the message to Tuesday's appointment and leave Thursday's status unconfirmed unless separately verified."
+            ],
+            [
+              "Incoming caregiver",
+              "I'll confirm the calendar entry through the approved record before I discuss it with the client."
+            ],
+            [
+              "Outgoing caregiver",
+              "Good. I will also clarify my original message so another reader does not inherit the ambiguity."
+            ],
+            [
+              "Incoming caregiver",
+              "Tuesday at ten, transport pending with the coordinator. Thursday's status is not established by this handoff."
+            ],
+            [
+              "Outgoing caregiver",
+              "That's the distinction I needed. Thank you for checking the date rather than assuming we meant the same visit."
+            ]
+          ]
+        },
+        {
+          "title": "An unread update",
+          "setting": "A caregiver checks whether a time-sensitive handoff has actually reached its recipient.",
+          "turns": [
+            [
+              "Caregiver",
+              "I sent the handoff through the approved system, but I haven't received confirmation that it was read."
+            ],
+            [
+              "Coordinator",
+              "Is there a time-sensitive item the incoming caregiver needs before the next visit starts today?"
+            ],
+            [
+              "Caregiver",
+              "Yes. The client asked that a specific household task be left until they can discuss it together."
+            ],
+            [
+              "Coordinator",
+              "Then don't assume the system delivery notice means the caregiver understood the client's request."
+            ],
+            [
+              "Caregiver",
+              "I'll use the approved backup contact route and ask for a read-back of that particular preference."
+            ],
+            [
+              "Coordinator",
+              "Keep the message focused. They need the current preference, not every unrelated detail from the morning visit."
+            ],
+            [
+              "Caregiver",
+              "I will say which task is on hold and that the client wants to discuss it before anything is moved."
+            ],
+            [
+              "Coordinator",
+              "Please tell me if you cannot reach the incoming person through the agreed route before the visit."
+            ],
+            [
+              "Caregiver",
+              "Understood. Sending the message is one step; confirming receipt and understanding is the remaining communication task."
+            ],
+            [
+              "Coordinator",
+              "Exactly. Once that confirmation arrives, update the handoff status so nobody starts another unnecessary contact attempt."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An action with two assumed owners",
+        "brief": "The outgoing caregiver thinks the coordinator ordered replacement household supplies. The coordinator thinks the incoming caregiver will ask the client what is needed first. No order has been placed. The incoming visit starts at 15:00.",
+        "role_a": "Outgoing caregiver: clarify the actual status and obtain an explicit owner and next step.",
+        "role_b": "Coordinator: confirm that you will arrange the approved order after the incoming caregiver checks the list with the client.",
+        "opening_line": "Before I hand over, can we confirm whether the supply order has actually been placed?",
+        "complication": "A colleague says, 'It's probably already done.' No confirmation or order record is available.",
+        "success_checks": [
+          "Keep an assumption separate from confirmed status.",
+          "Name the person who checks the list and the person who places the order.",
+          "Ask for a read-back of the sequence and timing."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "A delay before breakfast support",
+          "setting": "A caregiver informs the client of a delay before the original visit window.",
+          "turns": [
+            [
+              "Caregiver",
+              "I'm calling because today's nine o'clock visit will be delayed, and I know you planned breakfast support for that time."
+            ],
+            [
+              "Client",
+              "How long will I be waiting? I need more than an apology before I can decide what to do."
+            ],
+            [
+              "Caregiver",
+              "Dispatch currently estimates arrival between nine thirty and nine forty-five. That is an estimate, not a guaranteed arrival."
+            ],
+            [
+              "Client",
+              "Is someone else definitely coming earlier instead, or are you still trying to arrange that?"
+            ],
+            [
+              "Caregiver",
+              "Dispatch is checking the contingency plan for delayed visits. They will tell you by nine ten what backup, if any, is confirmed."
+            ],
+            [
+              "Client",
+              "Please don't tell me a backup is coming if you only know that someone is asking about it."
+            ],
+            [
+              "Caregiver",
+              "I agree. I will distinguish a request from a confirmed arrangement and follow the agency's delay procedure."
+            ],
+            [
+              "Client",
+              "Who should I contact if the promised update doesn't arrive by nine ten this morning?"
+            ],
+            [
+              "Caregiver",
+              "Use the agency's usual contact route for missed updates. I'll also make sure dispatch has your concern."
+            ],
+            [
+              "Client",
+              "All right. I understand the current estimate and that the next confirmed commitment is the update, not the arrival."
+            ]
+          ]
+        },
+        {
+          "title": "The update was missed",
+          "setting": "A caregiver follows up with dispatch after an agreed callback time passes.",
+          "turns": [
+            [
+              "Caregiver",
+              "The client says the promised nine-ten update hasn't arrived. I'm following up through the approved delay process."
+            ],
+            [
+              "Dispatcher",
+              "I haven't confirmed the backup yet. I was waiting for a response before calling the client."
+            ],
+            [
+              "Caregiver",
+              "The commitment was to provide an update by nine ten, even if the arrangement was still unresolved."
+            ],
+            [
+              "Dispatcher",
+              "You're right. I need to tell the client what is known rather than leave the missed callback unexplained."
+            ],
+            [
+              "Caregiver",
+              "Please clarify whether the original arrival estimate has changed, and avoid presenting the backup request as confirmed."
+            ],
+            [
+              "Dispatcher",
+              "The original estimate remains nine thirty to nine forty-five, but it is still subject to the current travel situation."
+            ],
+            [
+              "Caregiver",
+              "I'll keep that distinction in my own message. Who will contact the client now and own the next update?"
+            ],
+            [
+              "Dispatcher",
+              "I will call now and agree the next contact time, following our approved process for this disruption."
+            ],
+            [
+              "Caregiver",
+              "Thank you. I'll record the missed update and your follow-up without describing an unconfirmed cancellation."
+            ],
+            [
+              "Dispatcher",
+              "That is accurate. Please let me know through the established route if another urgent concern emerges."
+            ]
+          ]
+        },
+        {
+          "title": "A complaint after the visit",
+          "setting": "A client explains why a small delay felt more serious than the worker expected.",
+          "turns": [
+            [
+              "Client",
+              "The delay itself was frustrating, but being told 'soon' three times made it harder to plan my morning."
+            ],
+            [
+              "Caregiver",
+              "I understand. The vague updates left you without a useful time range or a clear person to contact."
+            ],
+            [
+              "Client",
+              "Exactly. I didn't know whether to wait, call the office, or assume the visit had been cancelled."
+            ],
+            [
+              "Caregiver",
+              "I'm sorry our communication created that uncertainty. I'll pass on the specific concern through the complaint process."
+            ],
+            [
+              "Client",
+              "Please don't just say I was unhappy. Tell them what would have made the situation easier."
+            ],
+            [
+              "Caregiver",
+              "You wanted an honest estimate, a named contact, and an update even if the arrangement was not yet confirmed."
+            ],
+            [
+              "Client",
+              "Yes. I know delays happen, but I need to understand what is actually known at the time."
+            ],
+            [
+              "Caregiver",
+              "I'll state that clearly. I can confirm that I will pass on the concern, but I can't promise the review outcome."
+            ],
+            [
+              "Client",
+              "That's a fair distinction. How will I know the concern has reached the right person?"
+            ],
+            [
+              "Caregiver",
+              "We'll use the agency's acknowledgment process and confirm the route for any further follow-up with you."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A worker cannot access the building",
+        "brief": "You arrive within the visit window, but the authorized entry method does not work and the client does not answer through the normal contact route. You do not know why. Your agency has a no-access procedure and a coordinator on duty.",
+        "role_a": "Caregiver: report the access problem accurately and follow the approved procedure without inventing a reason or an unsafe entry method.",
+        "role_b": "Coordinator: ask which approved contact steps were attempted and when; you will direct the next authorized action.",
+        "opening_line": "I'm at the scheduled address, but I cannot gain access through the approved entry method.",
+        "complication": "A neighbor offers an unverified explanation and suggests an unofficial way inside. You must not treat either as authorization.",
+        "success_checks": [
+          "Give the time, location context, and actual access issue through the approved channel.",
+          "Distinguish no response from a conclusion about the client's location or condition.",
+          "Follow the agency's no-access and urgent-concern procedures without improvising entry."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Sorting out a duplicated request",
+      "setting": "A caregiver and coordinator review a client's concern that laundry support has been forgotten.",
+      "dialogue": [
+        [
+          "Caregiver",
+          "Mrs. Vale says nobody handled her laundry yesterday. Today's assignment lists breakfast and light tidying, not laundry."
+        ],
+        [
+          "Coordinator",
+          "Yesterday's note says the washing was started, but it doesn't confirm whether the clothes were put away."
+        ],
+        [
+          "Caregiver",
+          "So we have a partial record, not evidence that the whole task was completed or missed."
+        ],
+        [
+          "Coordinator",
+          "That's right. Could you ask what she wants help with now without suggesting someone failed her?"
+        ],
+        [
+          "Caregiver",
+          "She says there are clean clothes in the basket, and she would like them folded before visitors arrive."
+        ],
+        [
+          "Coordinator",
+          "That fits the light household support in today's plan, provided the other agreed needs can still be met."
+        ],
+        [
+          "Caregiver",
+          "We have forty minutes left, and breakfast is finished. I'll ask whether folding is her priority for that time."
+        ],
+        [
+          "Coordinator",
+          "Please also clarify that we are dealing with today's preference, not deciding what happened during yesterday's visit."
+        ],
+        [
+          "Caregiver",
+          "Understood. I'll describe the basket as I find it and avoid attributing the unfinished task to anyone."
+        ],
+        [
+          "Coordinator",
+          "If time runs short, tell her which agreed task remains and ask me about arranging follow-up support."
+        ],
+        [
+          "Caregiver",
+          "I'll confirm the priority with her now, then report the actual outcome before the visit closes."
+        ],
+        [
+          "Coordinator",
+          "Thank you. That gives us a clear account of the present need without turning an incomplete note into blame."
+        ]
+      ],
+      "notes": [
+        "'Doesn't confirm whether' distinguishes missing documentation from proof that something did not happen.",
+        "'Provided' introduces a condition; it does not promise that every requested task will fit."
+      ]
+    },
+    {
+      "title": "A preference that changes mid-visit",
+      "setting": "A client and caregiver agree what to do when a previously accepted household task becomes unwelcome.",
+      "dialogue": [
+        [
+          "Client",
+          "I know I asked you to arrange the side table, but now I'd rather leave everything where it is."
+        ],
+        [
+          "Caregiver",
+          "That's fine. I'll stop moving things. Would you like the two items I've already moved put back?"
+        ],
+        [
+          "Client",
+          "Please put the photograph back, but the lamp can stay there. It gives me better light for reading."
+        ],
+        [
+          "Caregiver",
+          "The photograph returns to its original place, and the lamp stays in the new position. Is that right?"
+        ],
+        [
+          "Client",
+          "Yes. My son suggested clearing the table completely, but I don't like how empty that makes it feel."
+        ],
+        [
+          "Caregiver",
+          "We don't have to follow that suggestion just because it was discussed earlier. Your current preference matters here."
+        ],
+        [
+          "Client",
+          "Will you have to tell him that I changed my mind about it? He may be disappointed."
+        ],
+        [
+          "Caregiver",
+          "I won't assume you want personal details shared. We can check the agreed communication arrangement with the coordinator."
+        ],
+        [
+          "Client",
+          "I'd prefer to explain it to him myself when he calls. Can we use the remaining time for the laundry?"
+        ],
+        [
+          "Caregiver",
+          "We have twenty minutes, and folding the clean towels is within today's assignment. Would that be useful now?"
+        ],
+        [
+          "Client",
+          "Yes, let's do those. Leave the clothes in the basket because I want to sort them later myself."
+        ],
+        [
+          "Caregiver",
+          "I'll fold the towels only, leave the clothes untouched, and check with you before making any further changes."
+        ]
+      ],
+      "notes": [
+        "'Would you like ... put back?' offers repair without demanding a reason for the changed preference.",
+        "'Within today's assignment' marks an agreed limit while still offering useful support."
+      ]
+    },
+    {
+      "title": "Correcting a report before it spreads",
+      "setting": "A caregiver contacts a supervisor after realizing a previous message overstated what was known.",
+      "dialogue": [
+        [
+          "Caregiver",
+          "I need to correct the message I sent at ten. I wrote that the client had refused breakfast, but that was inaccurate."
+        ],
+        [
+          "Supervisor",
+          "Tell me what actually happened and which part of the earlier statement needs to be corrected in the record."
+        ],
+        [
+          "Caregiver",
+          "The client said she did not want toast at that time. She did not say she wanted no breakfast at all."
+        ],
+        [
+          "Supervisor",
+          "Did you ask whether she wanted another option that was available within the agreed plan for this visit?"
+        ],
+        [
+          "Caregiver",
+          "Yes. She chose the other planned option, and I provided that support. My earlier wording left out her choice."
+        ],
+        [
+          "Supervisor",
+          "Then the correction should distinguish declining one item from declining the whole meal. Don't silently replace the original entry."
+        ],
+        [
+          "Caregiver",
+          "I'll use the approved correction process, identify the earlier message, and state the client's words and the later choice."
+        ],
+        [
+          "Supervisor",
+          "Good. Has anyone else already received the inaccurate version, or is it still only in the internal visit record?"
+        ],
+        [
+          "Caregiver",
+          "The incoming caregiver received my initial message, so I also need to make sure they receive the correction explicitly."
+        ],
+        [
+          "Supervisor",
+          "Please contact them through the approved channel and ask them to confirm they understand the updated account of breakfast."
+        ],
+        [
+          "Caregiver",
+          "I'll do that now. I won't interpret the change as a problem with appetite because the facts don't establish that."
+        ],
+        [
+          "Supervisor",
+          "Thank you for catching it. An accurate correction protects the client from decisions based on a broader claim than the evidence supports."
+        ]
+      ],
+      "notes": [
+        "'Declined one item' is narrower than 'refused breakfast'; small wording changes can alter the meaning of a report.",
+        "'I need to correct' takes responsibility without hiding the original communication."
+      ]
+    },
+    {
+      "title": "Helpful without stepping outside the assignment",
+      "setting": "A caregiver and client discuss why a new request needs clarification before the caregiver can act.",
+      "dialogue": [
+        [
+          "Client",
+          "The last person helped me with this, so I assumed you could do exactly the same thing during your visit."
+        ],
+        [
+          "Caregiver",
+          "I understand that expectation. Different workers may have different qualifications and assignments, so I need to check my own authorized duties."
+        ],
+        [
+          "Client",
+          "It feels frustrating to explain everything again whenever someone new arrives. I thought the plan would make this straightforward."
+        ],
+        [
+          "Caregiver",
+          "The plan should help us coordinate. My current version lists reminders, but it doesn't authorize me to make medication decisions or administer medicines."
+        ],
+        [
+          "Client",
+          "Are you saying the other worker did something wrong when they helped me last week with a different part of it?"
+        ],
+        [
+          "Caregiver",
+          "No. I don't know their qualifications or exactly what task they performed, so I can't make that judgment from this conversation."
+        ],
+        [
+          "Client",
+          "Then what can you do now that will actually help me get an answer before the visit is over?"
+        ],
+        [
+          "Caregiver",
+          "I can help contact the person named in the plan, explain the question accurately, and make clear which part needs their guidance."
+        ],
+        [
+          "Client",
+          "Please tell them I'm asking about the current instructions, not asking you to change anything on your own without approval."
+        ],
+        [
+          "Caregiver",
+          "I'll say that. I will also explain that we need a response through the approved route rather than relying on someone else's memory."
+        ],
+        [
+          "Client",
+          "All right. While we wait for that response, let's carry on with the other support that is already agreed for today."
+        ],
+        [
+          "Caregiver",
+          "Yes. We can continue those tasks, and I will update you on the contact attempt without pretending that an unanswered message is approval."
+        ]
+      ],
+      "notes": [
+        "'I don't know their qualifications' avoids criticizing another worker on incomplete information.",
+        "'An unanswered message is not approval' distinguishes requesting guidance from receiving authorization."
+      ]
+    },
+    {
+      "title": "A disagreement about the meal record",
+      "setting": "A caregiver and supervisor discuss a family concern about how a client's breakfast was described.",
+      "dialogue": [
+        [
+          "Supervisor",
+          "The family read 'poor breakfast' in your note and understood it to mean the food you offered was unsuitable or badly prepared."
+        ],
+        [
+          "Caregiver",
+          "That wasn't what I meant. I was trying to describe the amount remaining, but the wording was vague and sounded like a judgment."
+        ],
+        [
+          "Supervisor",
+          "What concrete information can you provide instead, without deciding why the client left some of the meal or assessing its nutritional adequacy?"
+        ],
+        [
+          "Caregiver",
+          "I can state which approved option was served, that approximately half remained, and that the client said she had finished eating."
+        ],
+        [
+          "Supervisor",
+          "Did she ask for a different option, report a problem, or say anything that would support another explanation for what happened?"
+        ],
+        [
+          "Caregiver",
+          "She asked whether a different approved breakfast could be offered tomorrow. She did not connect that request to a problem with today's food."
+        ],
+        [
+          "Supervisor",
+          "Then keep those facts separate. A request for variety is useful information, but it does not prove a clinical concern or dissatisfaction."
+        ],
+        [
+          "Caregiver",
+          "I'll use the approved correction process and explain that 'poor' was my unclear wording, not a quotation from the client herself."
+        ],
+        [
+          "Supervisor",
+          "Please also tell the family, through the authorized communication route, that the record is being clarified rather than making promises about future meals."
+        ],
+        [
+          "Caregiver",
+          "I can say the preference has been passed on and the future arrangement still needs confirmation within the existing care plan."
+        ],
+        [
+          "Supervisor",
+          "Exactly. We need a reliable account of the visit and a clear distinction between a request, an approved change, and an observation."
+        ],
+        [
+          "Caregiver",
+          "I'll correct the account now and check that the incoming caregiver receives the same clarified information before the next scheduled visit."
+        ]
+      ],
+      "notes": [
+        "'Approximately' marks an estimate; it should not be replaced by an exact number without measurement.",
+        "Evaluative words such as 'poor' can be ambiguous; name the observed event instead."
+      ]
+    },
+    {
+      "title": "An authorized contact is not an unlimited audience",
+      "setting": "A caregiver asks a coordinator about a request to broaden routine family updates.",
+      "dialogue": [
+        [
+          "Caregiver",
+          "The client's son is an authorized contact, but today he asked me to send the same update to three other relatives directly."
+        ],
+        [
+          "Coordinator",
+          "Have those additional recipients been checked against the client's sharing preferences and the approved contact arrangements for the information involved?"
+        ],
+        [
+          "Caregiver",
+          "Not that I can establish. He said they all know about the support already, but I haven't treated that as permission to contact them."
+        ],
+        [
+          "Coordinator",
+          "Good. Familiarity with the situation does not tell us whether a particular disclosure to a particular person is authorized under our process."
+        ],
+        [
+          "Caregiver",
+          "He also suggested I remove the client's name from the update. The recipients would still know whose visit I was describing."
+        ],
+        [
+          "Coordinator",
+          "Then removing the name would not resolve the issue. We need to clarify the recipients, purpose, information, and approved communication route."
+        ],
+        [
+          "Caregiver",
+          "I told him I could pass on the request but could not promise that I would send future updates to the expanded group."
+        ],
+        [
+          "Coordinator",
+          "That was clear. Please let me handle the request through the established process and check the client's preferences before any change is made."
+        ],
+        [
+          "Caregiver",
+          "Should I continue the existing authorized update in the meantime, with only the details appropriate to that agreed purpose and recipient?"
+        ],
+        [
+          "Coordinator",
+          "Yes, within the current arrangement. Do not broaden the content or audience simply because a new request is waiting to be reviewed."
+        ],
+        [
+          "Caregiver",
+          "I'll confirm that the request is pending and keep the current arrangement separate from any possible future change to the sharing permissions."
+        ],
+        [
+          "Coordinator",
+          "Thank you. That gives the family a clear next step while avoiding an accidental change to who receives the client's private information."
+        ]
+      ],
+      "notes": [
+        "'Not that I can establish' marks a verification limit without claiming that permission definitely does not exist.",
+        "'Content or audience' identifies two separate ways a disclosure can become broader than intended."
+      ]
+    },
+    {
+      "title": "A handoff after a last-minute change",
+      "setting": "Two caregivers reconcile a changed client preference without erasing an earlier accurate note.",
+      "dialogue": [
+        [
+          "Incoming caregiver",
+          "Your first note says the client wanted help arranging the books this afternoon, but a later message says to leave them alone."
+        ],
+        [
+          "Outgoing caregiver",
+          "Both reflect what the client said at different times. At nine she requested help; at ten thirty she changed her preference."
+        ],
+        [
+          "Incoming caregiver",
+          "Then the later message is a change in the request, not necessarily a correction of something you recorded wrongly at nine."
+        ],
+        [
+          "Outgoing caregiver",
+          "Exactly. The current preference is to leave the books where they are until she discusses it with you during your visit."
+        ],
+        [
+          "Incoming caregiver",
+          "Does that mean I should remove the task from every future visit, or only pause it for this afternoon's discussion?"
+        ],
+        [
+          "Outgoing caregiver",
+          "Only the current request is clear. She hasn't asked for a permanent change, and I haven't represented it as one in the record."
+        ],
+        [
+          "Incoming caregiver",
+          "I'll check her preference directly before moving anything. Is another agreed task ready to take priority if she still wants the books left?"
+        ],
+        [
+          "Outgoing caregiver",
+          "She mentioned folding clean towels, which fits the existing assignment. Please confirm that choice rather than assume it is still what she wants."
+        ],
+        [
+          "Incoming caregiver",
+          "Let me read it back: no book rearranging before checking, no assumed permanent change, and towels are a possible preference to confirm."
+        ],
+        [
+          "Outgoing caregiver",
+          "That's right. The key information is the timing of the change and the difference between a current preference and a revised care plan."
+        ],
+        [
+          "Incoming caregiver",
+          "I'll acknowledge the update in the approved system so you know I received it, and I'll record what she chooses at my visit."
+        ],
+        [
+          "Outgoing caregiver",
+          "Thank you. That closes this handoff while leaving room for the client to make her own decision again when you arrive."
+        ]
+      ],
+      "notes": [
+        "A later preference can supersede an earlier preference without making the earlier record false.",
+        "'Only the current request is clear' limits the time span of the claim."
+      ]
+    },
+    {
+      "title": "Explaining a service problem without blaming the client",
+      "setting": "A coordinator and caregiver reconstruct an access delay to give the client an accurate response.",
+      "dialogue": [
+        [
+          "Coordinator",
+          "The client says we marked the visit as missed because she wasn't home, but she says she was waiting inside the whole time."
+        ],
+        [
+          "Caregiver",
+          "My actual observation was that the approved entry method failed and I received no response through the normal contact route at nine."
+        ],
+        [
+          "Coordinator",
+          "So the record should describe no access and no response, not establish that the client was away from the home at that time."
+        ],
+        [
+          "Caregiver",
+          "Correct. I cannot know where she was from that information alone. I need to correct the broader conclusion in the visit record."
+        ],
+        [
+          "Coordinator",
+          "Which steps did you take after that, and can you provide the times without adding a reason that nobody verified during the incident?"
+        ],
+        [
+          "Caregiver",
+          "I contacted the coordinator on duty through the approved procedure at nine five and followed the instructions I received for the access problem."
+        ],
+        [
+          "Coordinator",
+          "The response to the client should acknowledge the disruption and clarify the inaccurate wording without claiming the entry issue was her fault."
+        ],
+        [
+          "Caregiver",
+          "I can explain that the record overstated what we knew, apologize for that wording, and describe the actual sequence through the authorized channel."
+        ],
+        [
+          "Coordinator",
+          "Good. Don't promise a particular complaint outcome or a future service change that has not been reviewed and approved through our process."
+        ],
+        [
+          "Caregiver",
+          "I'll confirm that the concern has been passed for review and identify how she will receive the next update about the access arrangement."
+        ],
+        [
+          "Coordinator",
+          "Please also ensure the next caregiver sees the verified entry instructions, not an informal suggestion from a neighbor or an assumption from this incident."
+        ],
+        [
+          "Caregiver",
+          "I'll use the approved record and request acknowledgment, so both the corrected account and the current authorized instructions reach the next person clearly."
+        ]
+      ],
+      "notes": [
+        "'No response' is an observation; 'not home' is an inference that may be wrong.",
+        "A useful repair acknowledges the specific inaccurate claim and explains how it will be corrected."
+      ]
+    }
+  ]
+}

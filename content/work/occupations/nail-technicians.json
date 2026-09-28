@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "nail-technicians",
+    "title": "Nail Technician English",
+    "summary": "Clarify nail-service requests, compare shapes and finishes, agree on designs and prices, respond to discomfort, and coordinate appointments and service reviews.",
+    "roles": "Nail technicians, manicurists, pedicurists, and nail-salon reception staff",
+    "category": "Customers & creative work",
+    "scope_note": "All scenarios, prices, products, records, and incidents are fictional language practice. This is not instruction in nail preparation, application, removal, disinfection, chemical handling, or medical assessment. Qualified staff must determine service suitability and follow current product instructions and local requirements. Do not diagnose nail or skin conditions from these exercises.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Manicurists and Pedicurists",
+        "url": "https://www.bls.gov/ooh/personal-care-and-service/manicurists-and-pedicurists.htm"
+      },
+      {
+        "title": "OSHA: Health Hazards in Nail Salons",
+        "url": "https://www.osha.gov/nail-salons"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Clarifying the service and the intended length",
+        "terms": [
+          "manicure",
+          "pedicure",
+          "overlay",
+          "extension"
+        ],
+        "collocations": [
+          "retain the natural length: keep the client's current nail length",
+          "clarify the booked service: check which service the appointment reserves",
+          "add extra length: make the finished nail longer than the natural nail",
+          "describe the desired result: explain the appearance wanted before choosing a service"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A client booked an overlay but calls it a full set and points to a long reference image. They actually want to keep their current short length. No work has begun. Clarify length and explain why the image does not automatically mean extensions.",
+          "model": "You've booked an overlay, and you said you want to keep your current short length. The photograph shows added length, so let's separate its color from its shape. Are you asking for the pictured color on your existing length, or do you want extensions?"
+        },
+        "workshop": {
+          "title": "Check length before interpreting a service label",
+          "goal": "Distinguish a client's visual preference from a booking name.",
+          "explanation": "Terms such as full set can be used loosely. Ask about added length explicitly rather than treating a photograph as a complete instruction.",
+          "frames": [
+            "Do you want added length or ___?",
+            "Which part of the photo do you mean?",
+            "Your booking says ___; let's confirm ___."
+          ],
+          "before": "A full set means those long nails.",
+          "after": "Are you choosing the color, the added length, or both?",
+          "reason": "The question lets the client separate independent choices.",
+          "questions": [
+            {
+              "prompt": "Client: What is an enhancement covering my existing natural nails without adding length called?\nTechnician: An ____.",
+              "options": [
+                "overlay",
+                "extension",
+                "infill",
+                "embellishment"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An overlay covers the natural nail without deliberately adding length.",
+                "An extension deliberately adds length beyond the natural nail.",
+                "An infill maintains a grown-out enhancement rather than naming the initial full covering.",
+                "An embellishment adds decoration rather than naming the overall covering."
+              ]
+            },
+            {
+              "prompt": "Client: I like the picture, but only its color.\nTechnician: Could you confirm ____?",
+              "options": [
+                "whether you want to keep your length",
+                "whether do you want to keep your length",
+                "whether you wants to keep your length",
+                "whether want you to keep your length"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The indirect question uses normal statement order.",
+                "Do not invert subject and verb after 'whether' here.",
+                "'You' takes 'want,' not 'wants.'",
+                "Place 'you' before 'want' in this embedded question."
+              ]
+            }
+          ],
+          "role_b": "Client: want the pictured pink color but no additional length; used full set without a precise meaning.",
+          "challenge": "The client says overlay and extension sound interchangeable. Explain the length distinction plainly."
+        }
+      },
+      {
+        "title": "Comparing shape and practical length",
+        "terms": [
+          "free edge",
+          "squoval",
+          "almond shape",
+          "swatch"
+        ],
+        "collocations": [
+          "soften the corners: describe a less sharply squared outline",
+          "compare the silhouettes: look at the outer shapes side by side",
+          "keep a practical length: choose a length suited to the client's stated activities",
+          "point to the free edge: identify the part extending beyond the fingertip"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "A client likes a long almond sample but needs a short result for keyboard work. A short squoval sample is also available. Compare the sample silhouettes and lengths without promising that either shape will prevent breakage or discomfort.",
+          "model": "The almond sample narrows toward the tip, whereas this short squoval sample has a flatter end with softer corners. Their lengths differ too, so shape alone isn't the comparison. Since you prefer a short result for keyboard work, let's discuss the shorter reference before deciding what suits your nails."
+        },
+        "workshop": {
+          "title": "Compare like-for-like features",
+          "goal": "Distinguish shape from length when discussing samples.",
+          "explanation": "Two samples can differ on more than one dimension. Name the outline and length separately so a preference for one does not silently select the other.",
+          "frames": [
+            "This outline is ___, whereas that one is ___.",
+            "The lengths differ as well as ___.",
+            "Which feature matters most for ___?"
+          ],
+          "before": "Almond is always better.",
+          "after": "This almond sample is longer and more tapered; the squoval sample is shorter with softer corners.",
+          "reason": "The explanation names observable differences without a universal ranking.",
+          "questions": [
+            {
+              "prompt": "Client: Which outline has a flatter end and softened corners?\nTechnician: This ____ sample.",
+              "options": [
+                "squoval",
+                "almond-shaped",
+                "round",
+                "pointed"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Squoval combines a square-like end with softened corners.",
+                "An almond outline narrows toward a tip.",
+                "A round outline has a curved end rather than a flatter one.",
+                "A pointed outline does not have the stated flatter end."
+              ]
+            },
+            {
+              "prompt": "Client: What do you call only the part extending beyond my fingertip?\nTechnician: The ____.",
+              "options": [
+                "free edge",
+                "nail bed",
+                "cuticle",
+                "nail plate"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The free edge extends beyond the fingertip.",
+                "The nail bed lies beneath the nail plate, not beyond the fingertip.",
+                "The cuticle is near the nail's base, not its projecting end.",
+                "The nail plate names the whole hard visible part, not only the projecting edge."
+              ]
+            }
+          ],
+          "role_b": "Client: like the almond outline but do not want the sample's long length.",
+          "challenge": "The client assumes selecting the short sample guarantees it will never snag. Avoid an unsupported promise."
+        }
+      },
+      {
+        "title": "Explaining color, coverage, and finish",
+        "terms": [
+          "lacquer",
+          "gel polish",
+          "sheer",
+          "matte"
+        ],
+        "collocations": [
+          "choose a finish: select the intended shiny or low-shine appearance",
+          "compare the coverage: discuss how much of the nail remains visible",
+          "check the product label: identify the exact product rather than guess from its color",
+          "describe a sheer shade: explain that the underlying nail remains partly visible"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "A client requests matte pink but selects a sheer glossy swatch. They want a low-shine appearance with the nail line still visible. The booking does not specify lacquer or gel polish. Explain finish versus coverage and leave product selection open.",
+          "model": "Matte describes the low-shine finish, whereas sheer describes how much of your nail remains visible. You want a sheer pink with less shine, not necessarily an opaque color. This swatch is glossy, so it doesn't show both preferences. We still need to discuss the product choice separately."
+        },
+        "workshop": {
+          "title": "Explain two different appearance choices",
+          "goal": "Distinguish shine from coverage without confusing them with product type.",
+          "explanation": "A color name does not specify coverage, finish, or product system. Explain each choice using the client's actual description.",
+          "frames": [
+            "Matte describes ___; sheer describes ___.",
+            "You can prefer ___ without requesting ___.",
+            "The product choice is still ___."
+          ],
+          "before": "Sheer and matte are the same.",
+          "after": "Sheer concerns visibility through the color; matte concerns shine.",
+          "reason": "The explanation separates two independent properties.",
+          "questions": [
+            {
+              "prompt": "Client: I want the natural nail visible through the pink.\nTechnician: You want a ____ shade.",
+              "options": [
+                "sheer",
+                "opaque",
+                "metallic",
+                "matte"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Sheer color allows the underlying nail to show.",
+                "Opaque color hides what lies beneath.",
+                "Metallic describes a metal-like appearance, not transparency.",
+                "Matte describes low shine, not coverage."
+              ]
+            },
+            {
+              "prompt": "Client: I mean less shine, not less color or a different shape.\nTechnician: Then you're asking about the ____.",
+              "options": [
+                "finish",
+                "coverage",
+                "silhouette",
+                "added length"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Finish describes the shiny or low-shine appearance here.",
+                "Coverage concerns how much of the underlying nail shows.",
+                "Silhouette concerns the outer shape, which the client is not changing.",
+                "Added length concerns extension beyond the natural nail, not shine."
+              ]
+            }
+          ],
+          "role_b": "Client: want sheer pink and low shine; have not chosen lacquer or gel polish.",
+          "challenge": "The client thinks a glossy swatch proves a matte version will be identical apart from shine. Offer comparison without guaranteeing an exact match."
+        }
+      },
+      {
+        "title": "Agreeing on nail art and a complete quote",
+        "terms": [
+          "accent nail",
+          "nail art",
+          "embellishment",
+          "service quote"
+        ],
+        "collocations": [
+          "price per nail: state a charge for each decorated nail",
+          "simplify the design: reduce its decorative detail",
+          "confirm the design count: agree how many nails receive the pattern",
+          "stay within the budget: choose work that fits the stated spending limit"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "A fictional base service costs $30. Simple line art is $5 per nail, with no other charges in this exercise. The client wants four decorated nails but has a $40 limit. Offer two decorated nails for $40 or the base service alone for $30.",
+          "model": "The base service is thirty dollars, and the line art is five dollars per nail. Four decorated nails would total fifty, above your forty-dollar limit. Two accent nails would bring the total to forty. Would you prefer those two, or the thirty-dollar base service without the design?"
+        },
+        "workshop": {
+          "title": "Offer a design tradeoff with a clear total",
+          "goal": "Negotiate the number of decorated nails using the supplied prices.",
+          "explanation": "State whether a charge applies per nail, per hand, or to the whole design. Confirm the selected nails as well as the total.",
+          "frames": [
+            "The charge is ___ per nail.",
+            "With ___ accent nails, the total is ___.",
+            "Which ___ nails would you choose?"
+          ],
+          "before": "The design is five dollars.",
+          "after": "The line art is five dollars per nail; two decorated nails add ten dollars.",
+          "reason": "The unit of price prevents a misleading total.",
+          "questions": [
+            {
+              "prompt": "Client: Does five dollars cover both hands?\nTechnician: No, it's five dollars ____.",
+              "options": [
+                "per decorated nail",
+                "per appointment",
+                "for all ten nails",
+                "for both hands"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The supplied quote charges for each decorated nail.",
+                "That would make the design a flat appointment fee.",
+                "The quote does not cover all ten for five.",
+                "This repeats the misunderstanding rather than correcting it."
+              ]
+            },
+            {
+              "prompt": "Client: Four decorated nails would exceed my forty-dollar limit. What can we agree on?\nTechnician: We can stay within forty ____.",
+              "options": [
+                "provided that we limit the line art to two nails",
+                "even if we include all four decorated nails",
+                "because the design is charged once per hand",
+                "unless we leave out the extra two designs"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Provided that' states the condition that keeps the agreed scope within budget.",
+                "Including all four would exceed the stated forty-dollar limit.",
+                "The charge applies per decorated nail, not once per hand.",
+                "'Unless' reverses the condition: leaving out two designs is what makes the budget possible."
+              ]
+            }
+          ],
+          "role_b": "Client: want four decorated nails but cannot exceed forty dollars; can accept two.",
+          "challenge": "The client requests an embellishment not included in the line-art quote. Keep its price unconfirmed."
+        }
+      },
+      {
+        "title": "Responding to discomfort and uncertain nail concerns",
+        "terms": [
+          "nail plate",
+          "cuticle",
+          "lifting",
+          "tenderness"
+        ],
+        "collocations": [
+          "describe the location: identify where a concern is felt or seen",
+          "pause on request: stop the activity when the client asks",
+          "avoid diagnosing the cause: do not label an unassessed condition as a medical finding",
+          "refer a health concern: direct a medical question to an appropriate healthcare professional"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "Before any service starts, a client reports unexplained tenderness beside one nail and asks you to cover it with product for an event. Pause that service request and refer the health concern to an appropriate healthcare professional without diagnosing or suggesting treatment. Explain that the salon must separately decide whether the cosmetic service is suitable; referral does not promise service approval.",
+          "model": "I understand you want the nail to look finished for the event. You've reported unexplained tenderness, so let's pause this request and refer the health concern to an appropriate healthcare professional. I can't diagnose its cause. The salon must separately assess whether the cosmetic service is suitable; the referral doesn't guarantee that we'll proceed."
+        },
+        "workshop": {
+          "title": "State a service boundary without diagnosing",
+          "goal": "Acknowledge an appearance goal while keeping an unassessed concern explicit.",
+          "explanation": "Use the client's own symptom words. Distinguish a reported feeling, an observed change, and an unknown cause. Refer the health concern to an appropriate healthcare professional; salon staff separately decide whether the cosmetic service is suitable without diagnosing the cause.",
+          "frames": [
+            "You've reported ___; the cause is unknown.",
+            "I can't confirm that ___ is appropriate.",
+            "Let's pause the request while ___."
+          ],
+          "before": "It's probably just normal.",
+          "after": "You've reported tenderness; I can't identify its cause from this conversation.",
+          "reason": "The revised wording neither minimizes nor invents a diagnosis.",
+          "questions": [
+            {
+              "prompt": "Client: Can you tell why this feels sore before anyone has examined it?\nTechnician: The cause is ____.",
+              "options": [
+                "unassessed",
+                "cosmetic wear",
+                "product lifting",
+                "natural regrowth"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. No assessment has established the cause of the soreness.",
+                "Wear is a possible explanation someone might suggest, not an established cause here.",
+                "Lifting describes separation and has not been established as the cause.",
+                "Regrowth has not been shown to account for the reported soreness."
+              ]
+            },
+            {
+              "prompt": "Client: The enhancement is separating from my natural nail, not just losing a tiny surface piece.\nTechnician: That description suggests ____.",
+              "options": [
+                "lifting",
+                "chipping",
+                "regrowth",
+                "sheer coverage"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Lifting describes separation of the enhancement from the natural nail.",
+                "Chipping describes a missing piece, not separation of the enhancement itself.",
+                "Regrowth concerns new growth rather than this described separation.",
+                "Sheer coverage lets the natural nail show without describing separation."
+              ]
+            }
+          ],
+          "role_b": "Client: feel tenderness beside one nail; want it covered for an event and have no diagnosis.",
+          "challenge": "The client says a friend called it harmless. Acknowledge the report without adopting that conclusion."
+        }
+      },
+      {
+        "title": "Giving a clear station-readiness update",
+        "terms": [
+          "reusable implement",
+          "single-use item",
+          "disinfection",
+          "contact time"
+        ],
+        "collocations": [
+          "confirm station readiness: check whether the required preparation is complete",
+          "separate used items: distinguish used items from those prepared for a service",
+          "check the readiness record: consult the salon's recorded preparation status",
+          "give a waiting-time update: tell a client what is complete and what remains uncertain"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Station three is tidy, but its required readiness checks are incomplete. Station two has been confirmed ready by the responsible technician. A client is waiting. Offer station two without calling station three ready or providing disinfection instructions.",
+          "model": "Station three is tidy, but its required readiness checks are not complete. Station two has been confirmed ready, so we can offer that space instead. If you prefer station three, I can update you when its status is confirmed, but I don't have a reliable waiting estimate yet."
+        },
+        "workshop": {
+          "title": "Describe the stage, not an impression",
+          "goal": "Separate visual tidiness from confirmed service readiness.",
+          "explanation": "Give a concise status and a verified alternative. Do not turn this language exercise into instructions for disinfectant use or tool preparation.",
+          "frames": [
+            "___ is tidy; ___ remains incomplete.",
+            "___ has been confirmed ready.",
+            "I don't yet have a reliable estimate for ___."
+          ],
+          "before": "That station looks ready.",
+          "after": "The station is tidy, but the required readiness checks are incomplete.",
+          "reason": "The update avoids treating appearance as confirmation.",
+          "questions": [
+            {
+              "prompt": "Client: Is station three ready now?\nTechnician: Its readiness checks are ____.",
+              "options": [
+                "incomplete",
+                "completed",
+                "repeated",
+                "waived"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The required checks have not been finished.",
+                "Completed would contradict the supplied status of the checks.",
+                "Repeated says they happened again, which has not been stated.",
+                "Waived means set aside; these checks still remain required."
+              ]
+            },
+            {
+              "prompt": "Colleague: Does contact time mean how long we chatted with the client?\nTechnician: No, here it concerns the ____.",
+              "options": [
+                "disinfectant's specified contact period",
+                "appointment reminder time",
+                "client's arrival time",
+                "length of the consultation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The term refers to the product's specified period, not conversation.",
+                "A reminder time is a scheduling detail.",
+                "Arrival is unrelated to the disinfectant term.",
+                "Consultation length is a different use of time."
+              ]
+            }
+          ],
+          "role_b": "Client: would prefer station three but can accept station two if the reason is clear.",
+          "challenge": "The client asks for a specific waiting time nobody has confirmed. Offer the verified alternative without inventing minutes."
+        }
+      },
+      {
+        "title": "Handling a chip or design concern",
+        "terms": [
+          "chip",
+          "snag",
+          "repair appointment",
+          "service record"
+        ],
+        "collocations": [
+          "report a chipped edge: describe the missing coating and its location",
+          "review the service record: check what was actually recorded at the earlier visit",
+          "acknowledge a design mismatch: recognize that the result differs from the discussed design",
+          "confirm review terms: explain any stated review fee and what the appointment covers"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "A client requested line art facing them, but the finished lettering faces away. The service record confirms the client's original direction. A review is available today at four with no review fee. Do not promise a particular correction before assessment.",
+          "model": "Our service note says the lettering should face you, and the current direction doesn't match that request. I'm sorry we missed that detail. We can review it today at four without a review fee. We'll discuss the suitable correction and any terms before you decide, rather than assume a particular remedy."
+        },
+        "workshop": {
+          "title": "Repair a specific mismatch",
+          "goal": "Acknowledge a recorded design error and offer a bounded review.",
+          "explanation": "Separate the confirmed mismatch from the remedy, which may still require assessment and agreement.",
+          "frames": [
+            "The note says ___; the result shows ___.",
+            "I'm sorry we missed ___.",
+            "The review covers ___; it doesn't yet confirm ___."
+          ],
+          "before": "You should have checked it sooner.",
+          "after": "The direction differs from the recorded request; let's arrange a review.",
+          "reason": "The response addresses the actual mismatch without shifting blame.",
+          "questions": [
+            {
+              "prompt": "Client: The letters face away, but my record says they should face me.\nTechnician: The concern is the design's ____.",
+              "options": [
+                "orientation",
+                "opacity",
+                "symmetry",
+                "color intensity"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Orientation describes the direction in which the letters face.",
+                "Opacity concerns coverage rather than the direction of lettering.",
+                "Symmetry concerns corresponding shapes, not which way lettering faces.",
+                "Color intensity concerns visual strength, not the direction of letters."
+              ]
+            },
+            {
+              "prompt": "Client: Is the four o'clock review free?\nReceptionist: Yes, there is no ____ for the review itself.",
+              "options": [
+                "fee",
+                "availability",
+                "record",
+                "appointment"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The review has no charge.",
+                "There is an available four o'clock slot.",
+                "A record can still be kept for a free review.",
+                "The review is an appointment even without a fee."
+              ]
+            }
+          ],
+          "role_b": "Client: lettering direction conflicts with the saved request; can attend the four o'clock review.",
+          "challenge": "The client interprets a free review as a promise of a free full new set. Clarify what has actually been offered."
+        }
+      },
+      {
+        "title": "Scheduling follow-up and handing over exact requests",
+        "terms": [
+          "removal appointment",
+          "infill",
+          "booking deposit",
+          "consultation"
+        ],
+        "collocations": [
+          "allow time for removal: include a separate removal requirement in scheduling",
+          "confirm the existing product: identify what is already on the nails",
+          "carry over a preference: preserve a confirmed choice for the next worker to check",
+          "read back the booking: repeat the date, time, service, and unresolved details"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "A client requested plain color next Friday at ten but also reports an unidentified existing product. Reception must arrange a consultation before confirming removal time or an infill. The client declines nail art. Friday is a requested time, not yet booked.",
+          "model": "The client wants plain color next Friday at ten and has declined nail art. They report an existing product but cannot identify it, so removal time and any infill suitability remain unconfirmed. Please arrange a consultation and check availability. Friday at ten is their request, not a confirmed appointment."
+        },
+        "workshop": {
+          "title": "Pass on what remains undecided",
+          "goal": "Distinguish a requested appointment from confirmed service details.",
+          "explanation": "State the existing product as unknown rather than guessing its identity. Pass the actual next task to the receiving colleague.",
+          "frames": [
+            "The client requested ___; it isn't booked yet.",
+            "The existing product is ___.",
+            "Please confirm ___ before offering ___."
+          ],
+          "before": "Book the usual infill.",
+          "after": "Please arrange a consultation; the existing product and suitable service are unconfirmed.",
+          "reason": "The handover preserves the unknown detail instead of choosing a technical service.",
+          "questions": [
+            {
+              "prompt": "Receptionist: Is Friday at ten confirmed?\nTechnician: No, that's the client's ____ time.",
+              "options": [
+                "requested",
+                "completed",
+                "missed",
+                "extended"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The client has asked for it, but availability is unconfirmed.",
+                "A future time cannot be completed.",
+                "No confirmed visit has been missed.",
+                "No appointment has been lengthened."
+              ]
+            },
+            {
+              "prompt": "Client: Does a deposit tell you which product is on my nails?\nReceptionist: No, it concerns the ____.",
+              "options": [
+                "advance payment",
+                "remaining balance",
+                "cancellation charge",
+                "optional gratuity"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A booking deposit is payment made in advance under stated terms.",
+                "The remaining balance is what is still owed after any credited deposit.",
+                "A cancellation charge concerns changing or missing a booking, not the deposit's definition.",
+                "A gratuity is an optional tip, not an appointment deposit."
+              ]
+            }
+          ],
+          "role_b": "Receptionist: need to check availability and arrange a consultation; no product identification or infill approval exists.",
+          "challenge": "The client finds a receipt with only a color name. Explain why the product identity remains open."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "manicure",
+        "definition": "A cosmetic service for fingernails and hands, with the included elements set by the salon menu.",
+        "group": "Clarifying the service and the intended length"
+      },
+      {
+        "term": "pedicure",
+        "definition": "A cosmetic service for toenails and feet, not medical treatment of foot conditions.",
+        "group": "Clarifying the service and the intended length"
+      },
+      {
+        "term": "overlay",
+        "definition": "An enhancement product applied over the natural nail without deliberately adding length.",
+        "group": "Clarifying the service and the intended length"
+      },
+      {
+        "term": "extension",
+        "definition": "An artificial addition that lengthens the nail beyond its natural length.",
+        "group": "Clarifying the service and the intended length"
+      },
+      {
+        "term": "free edge",
+        "definition": "The part of a natural nail that extends beyond the fingertip.",
+        "group": "Comparing shape and practical length"
+      },
+      {
+        "term": "squoval",
+        "definition": "A nail outline combining a relatively square end with softened corners.",
+        "group": "Comparing shape and practical length"
+      },
+      {
+        "term": "almond shape",
+        "definition": "A nail outline that narrows toward a softly pointed, almond-like tip.",
+        "group": "Comparing shape and practical length"
+      },
+      {
+        "term": "swatch",
+        "definition": "A sample showing a nail color or finish for comparison.",
+        "group": "Comparing shape and practical length"
+      },
+      {
+        "term": "lacquer",
+        "definition": "Conventional nail polish that forms a colored coating as it dries.",
+        "group": "Explaining color, coverage, and finish"
+      },
+      {
+        "term": "gel polish",
+        "definition": "A nail coating designed to cure under a compatible lamp according to its product system.",
+        "group": "Explaining color, coverage, and finish"
+      },
+      {
+        "term": "sheer",
+        "definition": "Allowing some of the underlying nail to remain visible through the color.",
+        "group": "Explaining color, coverage, and finish"
+      },
+      {
+        "term": "matte",
+        "definition": "Having a low-shine appearance rather than a glossy surface.",
+        "group": "Explaining color, coverage, and finish"
+      },
+      {
+        "term": "accent nail",
+        "definition": "A nail given a different decorative design to stand out from the others.",
+        "group": "Agreeing on nail art and a complete quote"
+      },
+      {
+        "term": "nail art",
+        "definition": "Decorative patterns or images created on nails.",
+        "group": "Agreeing on nail art and a complete quote"
+      },
+      {
+        "term": "embellishment",
+        "definition": "A decorative addition, such as a small ornament, included in a nail design.",
+        "group": "Agreeing on nail art and a complete quote"
+      },
+      {
+        "term": "service quote",
+        "definition": "A stated price for a specified nail service before the client agrees to it.",
+        "group": "Agreeing on nail art and a complete quote"
+      },
+      {
+        "term": "nail plate",
+        "definition": "The hard, visible part of the natural nail.",
+        "group": "Responding to discomfort and uncertain nail concerns"
+      },
+      {
+        "term": "cuticle",
+        "definition": "The thin layer of nonliving tissue attached to the nail plate near its base; not the whole surrounding skin.",
+        "group": "Responding to discomfort and uncertain nail concerns"
+      },
+      {
+        "term": "lifting",
+        "definition": "Separation of an applied nail enhancement or coating from the natural nail.",
+        "group": "Responding to discomfort and uncertain nail concerns"
+      },
+      {
+        "term": "tenderness",
+        "definition": "Soreness or discomfort reported when an area is touched or pressed.",
+        "group": "Responding to discomfort and uncertain nail concerns"
+      },
+      {
+        "term": "reusable implement",
+        "definition": "A nail-service tool intended for repeated use subject to required cleaning and disinfection.",
+        "group": "Giving a clear station-readiness update"
+      },
+      {
+        "term": "single-use item",
+        "definition": "A service item intended for one use rather than reuse on another client.",
+        "group": "Giving a clear station-readiness update"
+      },
+      {
+        "term": "disinfection",
+        "definition": "A specified process to reduce or eliminate relevant microorganisms on suitable objects; not the same as tidying.",
+        "group": "Giving a clear station-readiness update"
+      },
+      {
+        "term": "contact time",
+        "definition": "The period a disinfectant must remain in contact as specified by its label and applicable procedure.",
+        "group": "Giving a clear station-readiness update"
+      },
+      {
+        "term": "chip",
+        "definition": "A small piece missing from the edge or surface of a nail coating.",
+        "group": "Handling a chip or design concern"
+      },
+      {
+        "term": "snag",
+        "definition": "An uneven edge that catches on clothing or another surface.",
+        "group": "Handling a chip or design concern"
+      },
+      {
+        "term": "repair appointment",
+        "definition": "A visit reserved to assess and, when suitable and agreed, correct a specific nail-service problem.",
+        "group": "Handling a chip or design concern"
+      },
+      {
+        "term": "service record",
+        "definition": "The salon's factual record of the service, selected products, and relevant client discussion.",
+        "group": "Handling a chip or design concern"
+      },
+      {
+        "term": "removal appointment",
+        "definition": "A visit booked to assess and remove an existing nail product using the appropriate professional service.",
+        "group": "Scheduling follow-up and handing over exact requests"
+      },
+      {
+        "term": "infill",
+        "definition": "A maintenance service addressing the grown-out area of an existing enhancement when suitable.",
+        "group": "Scheduling follow-up and handing over exact requests"
+      },
+      {
+        "term": "booking deposit",
+        "definition": "Money paid in advance toward an appointment under the salon's stated terms.",
+        "group": "Scheduling follow-up and handing over exact requests"
+      },
+      {
+        "term": "consultation",
+        "definition": "A discussion to clarify preferences, relevant history, and the proposed nail service before agreement.",
+        "group": "Scheduling follow-up and handing over exact requests"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Long reference, short request",
+          "setting": "A nail technician clarifies an overlay booking.",
+          "turns": [
+            [
+              "Technician",
+              "Your booking says overlay, but your photograph shows added length. Which part do you want?"
+            ],
+            [
+              "Client",
+              "Only the pink color. I need to keep my nails short for work."
+            ],
+            [
+              "Technician",
+              "Then let's separate the color from the extra length shown in the reference picture."
+            ],
+            [
+              "Client",
+              "I called it a full set on the phone. Was that the wrong expression?"
+            ],
+            [
+              "Technician",
+              "People use that phrase differently. Asking about actual length gives us a clearer shared request."
+            ],
+            [
+              "Client",
+              "So an overlay doesn't mean you automatically make the nails as long as the photograph?"
+            ],
+            [
+              "Technician",
+              "That's right: it goes over the natural nail without deliberately adding length to it."
+            ],
+            [
+              "Client",
+              "That's what I meant. I don't want extensions, even if they appear in the photograph."
+            ],
+            [
+              "Technician",
+              "I'll note pink color requested, existing short length retained, and no extensions in today's request."
+            ],
+            [
+              "Client",
+              "Good. Please show me the color sample separately so the long image doesn't confuse us."
+            ]
+          ]
+        },
+        {
+          "title": "Hands or feet on the booking?",
+          "setting": "Reception checks an unclear online service selection.",
+          "turns": [
+            [
+              "Receptionist",
+              "Your booking lists a manicure, but your message mentions choosing a color for your toes."
+            ],
+            [
+              "Client",
+              "I may have selected the wrong service. I wanted a pedicure for my feet."
+            ],
+            [
+              "Receptionist",
+              "Thank you for checking. A manicure is for hands; a pedicure concerns feet and toenails."
+            ],
+            [
+              "Client",
+              "Could you simply change the word, or does the appointment need a different time?"
+            ],
+            [
+              "Receptionist",
+              "I need to check the appropriate appointment space before confirming a different service."
+            ],
+            [
+              "Client",
+              "I can come later if necessary. I don't need my hands done this week."
+            ],
+            [
+              "Receptionist",
+              "There is a pedicure slot at three. That replaces the manicure rather than adding both."
+            ],
+            [
+              "Client",
+              "Three works. Could the confirmation say pedicure so I can check the change?"
+            ],
+            [
+              "Receptionist",
+              "Yes, I've changed the booking to a pedicure at three and removed the manicure."
+            ],
+            [
+              "Client",
+              "The new message matches what I wanted. I'll choose the toe color when I arrive."
+            ]
+          ]
+        },
+        {
+          "title": "One longer nail does not define the whole request",
+          "setting": "A client brings a reference showing mixed nail lengths.",
+          "turns": [
+            [
+              "Technician",
+              "Tell me which length you want overall, rather than relying only on this reference photograph."
+            ],
+            [
+              "Client",
+              "Most of the nails look short, but the middle one looks longer than mine."
+            ],
+            [
+              "Technician",
+              "Are you requesting that extra length too, or just asking about the difference in the picture?"
+            ],
+            [
+              "Client",
+              "I'm asking about the difference. I want all of mine at my present short length."
+            ],
+            [
+              "Technician",
+              "Then we won't treat the longer pictured nail as a request for an extension."
+            ],
+            [
+              "Client",
+              "Could I still discuss the same color and simple pattern on my shorter nails?"
+            ],
+            [
+              "Technician",
+              "Yes, we can discuss their appearance separately from length, then assess the actual service request."
+            ],
+            [
+              "Client",
+              "I don't want the booking changed to extensions just because I showed this image."
+            ],
+            [
+              "Technician",
+              "Understood. Your request stays short length, with the color and pattern still to be chosen."
+            ],
+            [
+              "Client",
+              "That's accurate. Let's look at shorter samples before I decide which pattern I prefer."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A gift booking names the wrong service",
+        "brief": "A friend booked a pedicure for a recipient who wants a manicure. A hand-service appointment is available tomorrow at eleven; today's pedicure slot cannot be converted.",
+        "role_a": "Receptionist: clarify hands versus feet and offer the stated alternative.",
+        "role_b": "Client: prefer tomorrow's manicure and want the friend informed without discussing personal details.",
+        "opening_line": "The gift says pedicure, but I meant my hands.",
+        "complication": "The client asks whether both services can fit into the original slot.",
+        "success_checks": [
+          "Identify the requested service plainly.",
+          "Do not silently add another service.",
+          "Confirm tomorrow's manicure and removal of today's booking."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "A shorter sample changes the comparison",
+          "setting": "A client compares almond and squoval samples.",
+          "turns": [
+            [
+              "Technician",
+              "This almond sample is longer than the squoval one. Which feature catches your attention?"
+            ],
+            [
+              "Client",
+              "The narrow tip looks elegant, but I type all day and want a short result."
+            ],
+            [
+              "Technician",
+              "Then we need to compare length separately from the shape of the tip."
+            ],
+            [
+              "Client",
+              "I thought choosing almond meant choosing exactly the length shown on the display."
+            ],
+            [
+              "Technician",
+              "The display is a reference, not your final specification. Your preferred length still matters."
+            ],
+            [
+              "Client",
+              "What makes the squoval sample different from the almond shape, apart from the length?"
+            ],
+            [
+              "Technician",
+              "Its end is flatter, with softened corners, whereas the almond outline narrows toward the tip."
+            ],
+            [
+              "Client",
+              "I like the flatter end and softer corners. Let's use the shorter sample."
+            ],
+            [
+              "Technician",
+              "Certainly. We'll use that reference while assessing your actual request and confirming the length."
+            ],
+            [
+              "Client",
+              "That looks closer. Can you show me the length before we start?"
+            ]
+          ]
+        },
+        {
+          "title": "Even length or the longest nail?",
+          "setting": "A technician checks what a client means by matching lengths.",
+          "turns": [
+            [
+              "Technician",
+              "When you say make them match, do you mean similar visible length or identical decoration?"
+            ],
+            [
+              "Client",
+              "Similar length. One nail is much longer, and I don't want the others extended to match it."
+            ],
+            [
+              "Technician",
+              "Then retaining that longest nail isn't your priority. Is a shorter overall appearance acceptable?"
+            ],
+            [
+              "Client",
+              "Yes, but please show me the intended length before assuming how short I mean."
+            ],
+            [
+              "Technician",
+              "We can use the free edge as a visible reference during the consultation."
+            ],
+            [
+              "Client",
+              "That's the part beyond my fingertip, correct? I haven't heard that term before."
+            ],
+            [
+              "Technician",
+              "Correct. Point to the amount you want to keep so we can discuss it clearly."
+            ],
+            [
+              "Client",
+              "About this much. I want the overall result short without confusing short with no visible edge."
+            ],
+            [
+              "Technician",
+              "I understand the reference point. We'll confirm the intended outline as a separate choice."
+            ],
+            [
+              "Client",
+              "Good. Similar short length is the goal, with the exact shape still to discuss."
+            ]
+          ]
+        },
+        {
+          "title": "The color swatch is on a long tip",
+          "setting": "A client worries that choosing a swatch selects its length.",
+          "turns": [
+            [
+              "Technician",
+              "You chose this blue swatch. Is it the shade you like or its long pointed outline?"
+            ],
+            [
+              "Client",
+              "Just the shade. I was worried you would copy the plastic tip's length too."
+            ],
+            [
+              "Technician",
+              "The swatch lets us compare color; its display shape doesn't determine your service request."
+            ],
+            [
+              "Client",
+              "That's reassuring. I'd like the blue with the short rounded outline we discussed earlier."
+            ],
+            [
+              "Technician",
+              "I'll keep those choices separate: blue shade and short rounded outline, without adding length."
+            ],
+            [
+              "Client",
+              "Could I see the blue next to the gray sample before making the color final?"
+            ],
+            [
+              "Technician",
+              "Of course. What difference matters to you when you compare them in this light?"
+            ],
+            [
+              "Client",
+              "The gray looks softer. I may prefer it for the meeting I have tomorrow."
+            ],
+            [
+              "Technician",
+              "Then take a moment to compare. The shape decision stays the same whichever shade you select."
+            ],
+            [
+              "Client",
+              "I'll choose the gray. My earlier blue choice wasn't meant to change the length."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A photographed angle hides the length",
+        "brief": "A client brings a side-angle image and asks for 'the same short shape.' A front-view reference is available, showing a longer pointed tip. The client wants a short rounded outline.",
+        "role_a": "Technician: compare views and confirm the requested outline.",
+        "role_b": "Client: reject the long tip revealed in the front view.",
+        "opening_line": "It looked much shorter from the side in this photograph.",
+        "complication": "The client keeps saying 'the same' after rejecting one feature.",
+        "success_checks": [
+          "Identify which pictured feature is rejected.",
+          "Separate camera angle from actual length.",
+          "Restate the short rounded request."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Sheer and matte answer different questions",
+          "setting": "A technician clarifies a pink color request.",
+          "turns": [
+            [
+              "Technician",
+              "You asked for matte pink, but chose a glossy sheer sample. What matters most?"
+            ],
+            [
+              "Client",
+              "I want the nail line to show, with less shine than this display tip."
+            ],
+            [
+              "Technician",
+              "Then sheer describes the coverage you like, and matte describes the low-shine finish."
+            ],
+            [
+              "Client",
+              "I thought sheer meant not shiny. Thanks for separating those words for me."
+            ],
+            [
+              "Technician",
+              "The sample shows your preferred coverage, but doesn't display both of your requested features."
+            ],
+            [
+              "Client",
+              "Does choosing that pink also mean I'm choosing gel polish for today's appointment?"
+            ],
+            [
+              "Technician",
+              "Not automatically. Color, finish, and product choice are separate parts of our consultation."
+            ],
+            [
+              "Client",
+              "Then please leave the product choice open while we compare the available descriptions."
+            ],
+            [
+              "Technician",
+              "Certainly. Your current request is sheer pink with low shine, not added opacity."
+            ],
+            [
+              "Client",
+              "That's accurate. I'd like to see an appropriate sample before agreeing to the final choice."
+            ]
+          ]
+        },
+        {
+          "title": "A color name does not identify a product",
+          "setting": "A client brings an old receipt showing only a shade name.",
+          "turns": [
+            [
+              "Technician",
+              "The receipt says Rose Garden, but doesn't identify whether the previous service used gel polish."
+            ],
+            [
+              "Client",
+              "I assumed the color name would tell you. It looked like an ordinary pink."
+            ],
+            [
+              "Technician",
+              "The same shade name can appear on different products, so I shouldn't infer the system."
+            ],
+            [
+              "Client",
+              "Could you look at the old appointment record instead of guessing from the photograph?"
+            ],
+            [
+              "Technician",
+              "Yes. We can check whether the product was recorded and keep any missing detail explicit."
+            ],
+            [
+              "Client",
+              "Would the fact that it stayed shiny tell you which product it definitely was?"
+            ],
+            [
+              "Technician",
+              "No. Appearance alone doesn't establish the exact product used in that previous service."
+            ],
+            [
+              "Client",
+              "I can ask the original salon for details if our record doesn't show them."
+            ],
+            [
+              "Technician",
+              "That would help. For now I'll describe the product as unidentified, not as confirmed lacquer."
+            ],
+            [
+              "Client",
+              "Please do. I'd rather have an accurate question than a confident answer based on the name."
+            ]
+          ]
+        },
+        {
+          "title": "Opaque was not the requested effect",
+          "setting": "A client compares two pink samples at reception.",
+          "turns": [
+            [
+              "Technician",
+              "Both samples are pink, but this one hides the nail line more completely."
+            ],
+            [
+              "Client",
+              "Then I prefer the other one. I don't want the whole nail covered by solid-looking color."
+            ],
+            [
+              "Technician",
+              "You're describing a sheer effect rather than the opaque appearance of the first sample."
+            ],
+            [
+              "Client",
+              "Exactly. The word pink alone didn't explain what I had in mind originally."
+            ],
+            [
+              "Technician",
+              "Would you like to compare them against a neutral background before deciding today?"
+            ],
+            [
+              "Client",
+              "Yes, because the dark display stand makes the lighter one difficult for me to judge."
+            ],
+            [
+              "Technician",
+              "Here they are together. We can discuss the difference without assuming a precise result on your nails."
+            ],
+            [
+              "Client",
+              "I'll choose this more transparent-looking pink. Please keep that sample beside the other finish options."
+            ],
+            [
+              "Technician",
+              "I'll record that coverage preference and keep the finish choice separate for our next question."
+            ],
+            [
+              "Client",
+              "Good. I still want to discuss shine, but the coverage question is now settled."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The shade code stays the same but the finish changes",
+        "brief": "A client wants the same blue shade code, B12, as last visit but a matte rather than glossy appearance. No matching matte sample has been reviewed.",
+        "role_a": "Technician: confirm B12 as the retained blue shade preference and distinguish it from the changed finish.",
+        "role_b": "Client: want blue B12 with less shine; do not want a different blue chosen silently.",
+        "opening_line": "Can I keep blue B12 but make it less shiny?",
+        "complication": "The client assumes the same code guarantees an identical appearance under every light.",
+        "success_checks": [
+          "Confirm the retained blue shade code B12.",
+          "Name the changed finish.",
+          "Avoid guaranteeing identical appearance across lighting conditions."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Four designs exceed the stated limit",
+          "setting": "A client has a forty-dollar budget. Fictional final prices are thirty for the base service and five per line-art nail, with no other charges.",
+          "turns": [
+            [
+              "Technician",
+              "The base service is thirty dollars, and this line art costs five per nail."
+            ],
+            [
+              "Client",
+              "I wanted four decorated nails, but my budget for the whole appointment is forty."
+            ],
+            [
+              "Technician",
+              "Four would make fifty. Two accent nails would bring the complete total to forty."
+            ],
+            [
+              "Client",
+              "Could we put the design on one nail on each hand instead of four?"
+            ],
+            [
+              "Technician",
+              "Yes. Which two nails do you want marked in the agreed design request?"
+            ],
+            [
+              "Client",
+              "The ring finger on each hand, please. All the others can have the plain color."
+            ],
+            [
+              "Technician",
+              "The base and those two line-art nails come to forty dollars altogether for today's service."
+            ],
+            [
+              "Client",
+              "Does that include the little stones in the photograph, or just the painted lines?"
+            ],
+            [
+              "Technician",
+              "Just the lines. The stones aren't included in this quote or your current design."
+            ],
+            [
+              "Client",
+              "Leave the stones out, then. Two line-art accent nails and a forty-dollar total work."
+            ]
+          ]
+        },
+        {
+          "title": "The design has a front and a back",
+          "setting": "A technician checks the orientation of lettering in a design.",
+          "turns": [
+            [
+              "Technician",
+              "For the lettering, which direction should it face when you look down at your hands?"
+            ],
+            [
+              "Client",
+              "I hadn't thought about that. I want to read it myself while my hands rest flat."
+            ],
+            [
+              "Technician",
+              "That differs from lettering oriented toward someone looking at your fingertips from across a table."
+            ],
+            [
+              "Client",
+              "Then please use the direction for me, not the direction in the social-media picture."
+            ],
+            [
+              "Technician",
+              "Let's check this sample orientation before including it in the design agreement today."
+            ],
+            [
+              "Client",
+              "This sample is right. Could both hands follow the same reading direction rather than mirror each other?"
+            ],
+            [
+              "Technician",
+              "We can record that request clearly, then confirm the final design and price together."
+            ],
+            [
+              "Client",
+              "One letter on each ring-finger nail, one per hand, not the whole word."
+            ],
+            [
+              "Technician",
+              "Thank you. I'll count two lettered nails and keep the other nails plain."
+            ],
+            [
+              "Client",
+              "That description matches my intention. Please quote those two letters rather than the photographed full word."
+            ]
+          ]
+        },
+        {
+          "title": "An embellishment was only an idea",
+          "setting": "A client clarifies that a design question was not a purchase decision.",
+          "turns": [
+            [
+              "Technician",
+              "You asked about adding an embellishment. Would you like a price before deciding whether to include it?"
+            ],
+            [
+              "Client",
+              "Yes. I was asking how it would look, not agreeing to pay for it yet."
+            ],
+            [
+              "Technician",
+              "Understood. Our current quote is for plain color only, with no decorative additions."
+            ],
+            [
+              "Client",
+              "Could you explain whether the displayed extra price is for one nail or the full set?"
+            ],
+            [
+              "Technician",
+              "This label is per decorated nail. The number chosen changes the total for the appointment."
+            ],
+            [
+              "Client",
+              "Then I need a complete quote before choosing. I may decide the plain version is enough."
+            ],
+            [
+              "Technician",
+              "Certainly. For two embellished nails, the extra would be twelve dollars above your existing quote."
+            ],
+            [
+              "Client",
+              "That's more than I planned. I'll keep the plain color and skip the embellishments today."
+            ],
+            [
+              "Technician",
+              "I'll retain the original quote and remove the proposed additions from our discussion summary."
+            ],
+            [
+              "Client",
+              "Thank you. Looking at options shouldn't leave the impression that I've already ordered them."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A design is too detailed for the reserved time",
+        "brief": "A forty-minute appointment covers plain color. The detailed reference design needs a separate sixty-minute booking, available Friday at two. A simple one-line design fits today's stated slot and adds $5.",
+        "role_a": "Technician: offer today's simple option or Friday's longer appointment.",
+        "role_b": "Client: prefer the detailed design and can attend Friday.",
+        "opening_line": "Can we add everything in this photograph to today's booking?",
+        "complication": "The client asks for the full design at the simple design's extra price.",
+        "success_checks": [
+          "Separate the two design scopes.",
+          "Use the stated appointment lengths and price limit accurately.",
+          "Confirm Friday for the detailed design with its quote still to be discussed."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "An event does not answer a suitability question",
+          "setting": "A client raises tenderness before a nail service.",
+          "turns": [
+            [
+              "Technician",
+              "You mentioned tenderness beside this nail. Has a healthcare professional assessed it before today's appointment?"
+            ],
+            [
+              "Client",
+              "No, but I have an event tonight. Could you just cover it so it looks finished?"
+            ],
+            [
+              "Technician",
+              "I understand the appearance goal, but I can't confirm that covering it is appropriate."
+            ],
+            [
+              "Client",
+              "It's only one area. Does that mean you know what's causing the soreness?"
+            ],
+            [
+              "Technician",
+              "No. A healthcare professional should assess that health concern; I can't diagnose its cause."
+            ],
+            [
+              "Client",
+              "Then please don't put a diagnosis in the note. I don't have one."
+            ],
+            [
+              "Technician",
+              "I'll record your words and pause this request. The salon still needs to assess service suitability."
+            ],
+            [
+              "Client",
+              "Could you explain that to reception without saying I've cancelled every future appointment?"
+            ],
+            [
+              "Technician",
+              "Yes. A health referral doesn't approve a service or change your future bookings."
+            ],
+            [
+              "Client",
+              "Thank you. I want the issue taken seriously without the record saying more than we know."
+            ]
+          ]
+        },
+        {
+          "title": "The client names the wrong area",
+          "setting": "A technician helps a client locate a reported concern.",
+          "turns": [
+            [
+              "Technician",
+              "When you say the whole cuticle hurts, could you point to the exact area you mean?"
+            ],
+            [
+              "Client",
+              "I mean the skin beside the nail, not the hard part on top."
+            ],
+            [
+              "Technician",
+              "Thank you. The hard visible part is the nail plate; your concern is beside it."
+            ],
+            [
+              "Client",
+              "I don't know the correct term for that skin. I just know it feels sore."
+            ],
+            [
+              "Technician",
+              "Your description is enough to report the concern accurately without choosing a diagnosis."
+            ],
+            [
+              "Client",
+              "Does asking you about it mean you can tell me what treatment it needs?"
+            ],
+            [
+              "Technician",
+              "No. A medical question needs an appropriate healthcare professional, not a cosmetic description alone."
+            ],
+            [
+              "Client",
+              "Please keep today's service paused while I decide how to get that concern assessed."
+            ],
+            [
+              "Technician",
+              "Of course. I'll say you reported soreness beside the nail before any service started."
+            ],
+            [
+              "Client",
+              "That's accurate. I appreciate not having my uncertain terminology turned into a medical conclusion."
+            ]
+          ]
+        },
+        {
+          "title": "A lifting report without a cause",
+          "setting": "A client asks about separation at the edge of a coating.",
+          "turns": [
+            [
+              "Technician",
+              "You said the coating seems raised at an edge. Which nail are you referring to?"
+            ],
+            [
+              "Client",
+              "The right index finger. I noticed it this morning, but I don't know why it happened."
+            ],
+            [
+              "Technician",
+              "That may describe lifting, meaning separation from the natural nail; it doesn't tell us the cause."
+            ],
+            [
+              "Client",
+              "Could the photograph I sent prove it was caused by the last appointment here?"
+            ],
+            [
+              "Technician",
+              "The photograph can show your concern, but it doesn't establish the cause by itself."
+            ],
+            [
+              "Client",
+              "I see. I want a review, not a claim recorded as though we've proved it."
+            ],
+            [
+              "Technician",
+              "I'll arrange that and note when you first noticed the change on that nail."
+            ],
+            [
+              "Client",
+              "Should I assume a repair is booked just because I sent the photograph this morning?"
+            ],
+            [
+              "Technician",
+              "No. The review is the agreed next step; the suitable response hasn't been determined."
+            ],
+            [
+              "Client",
+              "Then please confirm the review time separately and keep the possible repair unconfirmed for now."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A strong smell prompts a pause",
+        "brief": "During a consultation, a client reports that a product odor bothers them and asks to stop. The technician has not applied product. The manager can discuss the concern immediately.",
+        "role_a": "Technician: pause the service discussion and communicate the reported concern.",
+        "role_b": "Client: want to move away from the station and talk to the manager, not receive a diagnosis.",
+        "opening_line": "Could we stop? That smell is bothering me.",
+        "complication": "A colleague calls the concern an allergy without any assessment.",
+        "success_checks": [
+          "Use the client's words rather than an invented diagnosis.",
+          "Confirm that application has not begun.",
+          "Arrange the stated manager discussion while keeping the service paused."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Tidy does not mean ready",
+          "setting": "A technician gives a waiting client a station update.",
+          "turns": [
+            [
+              "Technician",
+              "Station three is tidy, but its required readiness checks haven't been completed yet."
+            ],
+            [
+              "Client",
+              "It looks empty and clean from here. Is that different from being ready for my appointment?"
+            ],
+            [
+              "Technician",
+              "Yes. Appearance alone doesn't confirm those checks. Station two has been confirmed ready."
+            ],
+            [
+              "Client",
+              "I'd prefer the window station, but I don't want to wait without an estimate."
+            ],
+            [
+              "Technician",
+              "I don't have a reliable wait for station three; I can offer station two now."
+            ],
+            [
+              "Client",
+              "Would changing stations also change the technician or the service we already agreed on?"
+            ],
+            [
+              "Technician",
+              "No. The same technician and agreed service would use the confirmed space at station two."
+            ],
+            [
+              "Client",
+              "Then I'll take that option. Please don't rush the other station just for my preference."
+            ],
+            [
+              "Technician",
+              "Thank you. I'll direct you to station two and leave station three's status unchanged."
+            ],
+            [
+              "Client",
+              "That works. Knowing which space is actually ready matters more than the window today."
+            ]
+          ]
+        },
+        {
+          "title": "A colleague needs the status, not a procedure",
+          "setting": "Two technicians clarify an incomplete station note.",
+          "turns": [
+            [
+              "Technician",
+              "The station note says cleared, but reception is interpreting that word as ready for the next client."
+            ],
+            [
+              "Lead technician",
+              "Cleared means used items were removed; it doesn't record completion of all the required preparation."
+            ],
+            [
+              "Technician",
+              "Then I'll correct reception's understanding. Which station can they offer the waiting client right now?"
+            ],
+            [
+              "Lead technician",
+              "Station one is confirmed ready. Station four is still awaiting its readiness check this afternoon."
+            ],
+            [
+              "Technician",
+              "I'll give them that distinction without estimating how long the remaining check will take."
+            ],
+            [
+              "Lead technician",
+              "Please also avoid saying disinfection is finished merely because the work surface looks tidy."
+            ],
+            [
+              "Technician",
+              "Please let reception know when station four is ready. They've got another client arriving at three."
+            ],
+            [
+              "Lead technician",
+              "I will. We're still checking the disinfection record, including the required contact time for these implements."
+            ],
+            [
+              "Technician",
+              "I'll send the waiting client to station one and keep station four marked unavailable."
+            ],
+            [
+              "Lead technician",
+              "Thanks. I'll contact reception directly once we've finished the remaining checks at four."
+            ]
+          ]
+        },
+        {
+          "title": "A label question deserves a specific answer",
+          "setting": "A client asks about a packaged item before a service.",
+          "turns": [
+            [
+              "Client",
+              "Is this item reused after each customer, or is it meant for one use?"
+            ],
+            [
+              "Technician",
+              "The package identifies this particular item as single-use. Reusable implements are a different category."
+            ],
+            [
+              "Client",
+              "I saw several similar-looking items nearby, so I wasn't sure whether appearance told me anything."
+            ],
+            [
+              "Technician",
+              "Similar appearance doesn't establish the item's category or preparation status. We check the actual item."
+            ],
+            [
+              "Client",
+              "Could you explain that distinction without giving me a long technical description of the chemicals?"
+            ],
+            [
+              "Technician",
+              "Certainly. Single-use means intended for one use; reusable means it has preparation requirements before reuse."
+            ],
+            [
+              "Client",
+              "So reusable doesn't mean it is automatically ready just because it can be used again?"
+            ],
+            [
+              "Technician",
+              "Correct. Its permitted reuse and its present readiness are different questions to check."
+            ],
+            [
+              "Client",
+              "Thanks, I wanted to check before we started. I'd rather ask now than worry during the appointment."
+            ],
+            [
+              "Technician",
+              "Of course. This item is single-use, and I'll confirm the other items are ready before we begin."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A station change needs a new message",
+        "brief": "Reception told a client station five was available, but the lead has now marked it unavailable pending a check. Station one is ready, and the client's usual technician can work there.",
+        "role_a": "Technician: correct the earlier station message with no invented cause.",
+        "role_b": "Client: prefer the same technician and accept station one.",
+        "opening_line": "Reception said I could sit at five. Has that changed?",
+        "complication": "The client assumes a station change means the appointment is cancelled.",
+        "success_checks": [
+          "State the changed status.",
+          "Offer the confirmed station and same technician.",
+          "Avoid speculating about the reason for the check."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The letters face the wrong way",
+          "setting": "A technician acknowledges a recorded design mismatch.",
+          "turns": [
+            [
+              "Technician",
+              "The service record says the letters should face you. I can see your concern about their direction."
+            ],
+            [
+              "Client",
+              "They face away when my hands are in the position we discussed before starting."
+            ],
+            [
+              "Technician",
+              "That doesn't match the recorded request. I'm sorry we missed that specific detail."
+            ],
+            [
+              "Client",
+              "Could we talk about what can be done, rather than pretend it's what I asked for?"
+            ],
+            [
+              "Technician",
+              "Yes. A review is available today at four, with no fee for that discussion."
+            ],
+            [
+              "Client",
+              "Does agreeing to the review mean I'm already agreeing to a whole new service?"
+            ],
+            [
+              "Technician",
+              "No. We'll assess the concern and discuss any proposed correction before you decide."
+            ],
+            [
+              "Client",
+              "Please make clear that my complaint concerns the direction, not the chosen blue color."
+            ],
+            [
+              "Technician",
+              "I will. The note will identify the orientation mismatch and retain the agreed color preference."
+            ],
+            [
+              "Client",
+              "Four works. I'll attend the review without assuming a particular correction has already been approved."
+            ]
+          ]
+        },
+        {
+          "title": "A small chip with an unknown cause",
+          "setting": "A receptionist arranges a service review for a client.",
+          "turns": [
+            [
+              "Receptionist",
+              "Which nail concerns you, and what change have you noticed since your visit here?"
+            ],
+            [
+              "Client",
+              "A small piece of color is missing from the left thumb's edge this morning."
+            ],
+            [
+              "Receptionist",
+              "I'll record a chipped coating on that nail and when you first noticed it."
+            ],
+            [
+              "Client",
+              "Does that mean you know it was caused by something I did after the appointment?"
+            ],
+            [
+              "Receptionist",
+              "No. The location and timing don't establish a cause, and I won't assign one."
+            ],
+            [
+              "Client",
+              "Good. I'd like someone to examine it before discussing the possible repair or cost."
+            ],
+            [
+              "Receptionist",
+              "Tomorrow at noon is a review, not a repair appointment. We'll discuss any work before starting."
+            ],
+            [
+              "Client",
+              "Can I keep my other appointment next month? This is a separate concern."
+            ],
+            [
+              "Receptionist",
+              "Yes. Booking this review doesn't replace that later appointment unless you ask us to change it."
+            ],
+            [
+              "Client",
+              "Then please book noon tomorrow and leave next month's appointment exactly as it stands."
+            ]
+          ]
+        },
+        {
+          "title": "An edge catches on a sleeve",
+          "setting": "A technician clarifies a client's report without prescribing a home repair.",
+          "turns": [
+            [
+              "Technician",
+              "Your message says one edge catches on your sleeve. Which finger do you mean?"
+            ],
+            [
+              "Client",
+              "The right middle finger. I don't know whether the coating is chipped or raised."
+            ],
+            [
+              "Technician",
+              "Then let's describe the snag and location without deciding the cause from your message."
+            ],
+            [
+              "Client",
+              "Could you tell me how to fix it myself with something I have at home?"
+            ],
+            [
+              "Technician",
+              "I can't assess the suitable response here. We can arrange a review instead of guessing."
+            ],
+            [
+              "Client",
+              "That's fair. I don't want to make the report sound more certain than it is."
+            ],
+            [
+              "Technician",
+              "I'll note that you reported catching on fabric, with the exact surface change unconfirmed."
+            ],
+            [
+              "Client",
+              "Should I call that lifting when I speak to the person arranging the appointment?"
+            ],
+            [
+              "Technician",
+              "You can repeat your observation. Lifting is a specific kind of separation we haven't established."
+            ],
+            [
+              "Client",
+              "I'll say it catches on my sleeve and ask for the earliest review appointment available."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One missing decorative detail",
+        "brief": "The agreed design included a white dot on two accent nails; one finished accent nail has no dot. The base color is correct. A technician can review it in twenty minutes.",
+        "role_a": "Technician: acknowledge the missing detail and offer review.",
+        "role_b": "Client: want only the missing dot discussed, not the entire design replaced.",
+        "opening_line": "This nail has the dot we agreed on, but the other one doesn't.",
+        "complication": "Reception describes the issue as a wrong color.",
+        "success_checks": [
+          "Correct the inaccurate color description.",
+          "Identify the one missing design element.",
+          "Confirm the review timing without inventing a remedy."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Friday is a preference, not a booking",
+          "setting": "A technician hands a scheduling query to reception.",
+          "turns": [
+            [
+              "Technician",
+              "The client wants plain color next Friday at ten and has declined all nail art."
+            ],
+            [
+              "Receptionist",
+              "Is that appointment already confirmed, or do I still need to check the schedule?"
+            ],
+            [
+              "Technician",
+              "It's only requested. They also have an existing product whose identity is unknown."
+            ],
+            [
+              "Receptionist",
+              "Then I shouldn't allocate removal time or describe the visit as an agreed infill yet."
+            ],
+            [
+              "Technician",
+              "Correct. Please arrange a consultation to clarify the existing product and proposed service."
+            ],
+            [
+              "Receptionist",
+              "Would a receipt help, even if it lists a color name without a product system?"
+            ],
+            [
+              "Technician",
+              "It may add information, but the color name alone won't settle the product question."
+            ],
+            [
+              "Receptionist",
+              "I'll explain that and offer consultation availability before confirming any service duration today."
+            ],
+            [
+              "Technician",
+              "Please repeat the final booking details to the client so the requested time isn't mistaken for confirmation."
+            ],
+            [
+              "Receptionist",
+              "I will. Friday at ten remains a preference until we've actually agreed an available appointment."
+            ]
+          ]
+        },
+        {
+          "title": "An infill request needs its own discussion",
+          "setting": "Reception clarifies a returning client's maintenance request.",
+          "turns": [
+            [
+              "Receptionist",
+              "You selected infill online. Are these the enhancements recorded at your last visit?"
+            ],
+            [
+              "Client",
+              "No, I had them replaced elsewhere while traveling, but I chose the familiar menu word."
+            ],
+            [
+              "Receptionist",
+              "Thank you. We need the current service details, not just the name of the last booking."
+            ],
+            [
+              "Client",
+              "Does that mean the saved appointment history doesn't identify what is on my nails now?"
+            ],
+            [
+              "Receptionist",
+              "Exactly. It describes your earlier visit here, not the later work at another salon."
+            ],
+            [
+              "Client",
+              "I have their receipt and can ask for the product information before the consultation."
+            ],
+            [
+              "Receptionist",
+              "Please bring what you have. The technician will assess the suitable service rather than assume an infill."
+            ],
+            [
+              "Client",
+              "Can I keep tomorrow's consultation while that question is open, without promising to have any work?"
+            ],
+            [
+              "Receptionist",
+              "Yes. Tomorrow at eleven is a consultation; no enhancement maintenance service is confirmed yet."
+            ],
+            [
+              "Client",
+              "I'll bring their receipt tomorrow and ask them for the product details before I come."
+            ]
+          ]
+        },
+        {
+          "title": "The deposit terms need a read-back",
+          "setting": "A receptionist explains a fictional deposit arrangement.",
+          "turns": [
+            [
+              "Receptionist",
+              "The ten-dollar booking deposit counts toward your service price, rather than adding to it."
+            ],
+            [
+              "Client",
+              "So is that an extra ten dollars on top of the service quote I received?"
+            ],
+            [
+              "Receptionist",
+              "No. Under these stated terms, it counts toward that price rather than adding to it."
+            ],
+            [
+              "Client",
+              "Could you show me the terms for changing the date before I pay today?"
+            ],
+            [
+              "Receptionist",
+              "Certainly. This salon's booking terms explain the change conditions; they aren't the same everywhere."
+            ],
+            [
+              "Client",
+              "I see a deadline for changes. Could you confirm the actual date and time for my appointment?"
+            ],
+            [
+              "Receptionist",
+              "For this booking, the stated change deadline is Wednesday at noon. Your appointment is Friday at ten."
+            ],
+            [
+              "Client",
+              "Then I'd need to contact you before Wednesday noon if I want to request a change."
+            ],
+            [
+              "Receptionist",
+              "Correct under these terms. Please ask about anything unclear before deciding whether to make the deposit."
+            ],
+            [
+              "Client",
+              "I understand the credit and deadline, and can decide whether to book."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A removal request is added after booking",
+        "brief": "A client booked a forty-minute plain-color appointment but now reports an existing product needing assessment for removal. The technician can offer a consultation today; a longer service slot is available Monday, subject to assessment.",
+        "role_a": "Receptionist: explain why the original slot does not confirm the added service.",
+        "role_b": "Client: can attend Monday but need the price before agreeing.",
+        "opening_line": "Can you just include removal in my original appointment time?",
+        "complication": "The client thinks a longer slot automatically confirms the product is removable by that service.",
+        "success_checks": [
+          "Keep time availability separate from service suitability.",
+          "Preserve the unknown product information.",
+          "Confirm a consultation rather than invent a removal method or price."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The menu and a social-media caption disagree",
+      "setting": "A technician clarifies a service request described using a vague online caption.",
+      "dialogue": [
+        [
+          "Technician",
+          "Your saved post calls this a natural set. What does natural mean to you here?"
+        ],
+        [
+          "Client",
+          "Short nails and a pale color. I don't know whether the photograph includes added length."
+        ],
+        [
+          "Technician",
+          "The caption alone doesn't tell us. We can discuss length, color, and product choice separately."
+        ],
+        [
+          "Client",
+          "I assumed natural meant no enhancement product at all. Is that what your menu means?"
+        ],
+        [
+          "Technician",
+          "Our menu uses specific service names; natural set isn't one of them. Let's establish your preference first."
+        ],
+        [
+          "Client",
+          "I want my current length and a polished appearance, without choosing a product from a caption."
+        ],
+        [
+          "Technician",
+          "Then your definite preferences are retained length and pale color. The service choice still needs discussion."
+        ],
+        [
+          "Client",
+          "Does that mean my booking for a consultation is enough for today's conversation about the choices?"
+        ],
+        [
+          "Technician",
+          "Yes. It doesn't automatically reserve an application service, but we can clarify the options during it."
+        ],
+        [
+          "Client",
+          "That's fine. Please don't mark me down for extensions just because the saved picture has long nails."
+        ],
+        [
+          "Technician",
+          "I won't. I'll show shorter color samples and explain the menu entries relevant to your stated request."
+        ],
+        [
+          "Client",
+          "That will help me choose using clear descriptions instead of assuming the post's caption is technical terminology."
+        ]
+      ],
+      "notes": [
+        "'What does ... mean to you?' tests a vague description without dismissing it.",
+        "'Definite preferences' distinguishes what is decided from a service choice still under discussion."
+      ]
+    },
+    {
+      "title": "Two clients use short differently",
+      "setting": "A technician clarifies a client preference without treating a friend's nails as the exact model.",
+      "dialogue": [
+        [
+          "Technician",
+          "Your friend described these as short nails. Are they also short by your own usual standard?"
+        ],
+        [
+          "Client",
+          "Not really. They're shorter than hers used to be, but longer than I normally wear mine."
+        ],
+        [
+          "Technician",
+          "So short is relative here. What visible length would be comfortable for you to discuss today?"
+        ],
+        [
+          "Client",
+          "I'd like less free edge than this sample, while keeping the softened corners I can see."
+        ],
+        [
+          "Technician",
+          "That separates length from outline. Do you want the flatter squoval end, or a continuously rounded end?"
+        ],
+        [
+          "Client",
+          "The flatter end with soft corners. I used round because I didn't know the word squoval."
+        ],
+        [
+          "Technician",
+          "Squoval is useful for that description, but we'll still confirm the actual outline rather than rely on one label."
+        ],
+        [
+          "Client",
+          "Could you show my preference beside the almond sample so I can explain the difference to my friend?"
+        ],
+        [
+          "Technician",
+          "Yes. This reference is flatter across the end, whereas the almond reference narrows more toward its tip."
+        ],
+        [
+          "Client",
+          "That comparison answers my question. I prefer the flatter end, but neither display sample fixes my final length."
+        ],
+        [
+          "Technician",
+          "Exactly. We'll assess your preferred outline and shorter length request together before starting."
+        ],
+        [
+          "Client",
+          "I'll use those two descriptions instead of saying make them short like hers, which created the confusion."
+        ]
+      ],
+      "notes": [
+        "'Short by your own standard' makes a relative description explicit.",
+        "'Neither ... fixes' prevents a sample from silently determining an unagreed detail."
+      ]
+    },
+    {
+      "title": "A sample under the window",
+      "setting": "A technician and client compare a color in two parts of the salon.",
+      "dialogue": [
+        [
+          "Technician",
+          "The sample looks different near the window. Is the concern its color, its shine, or its coverage?"
+        ],
+        [
+          "Client",
+          "The color seems warmer here, but the sheer coverage is still exactly what I prefer."
+        ],
+        [
+          "Technician",
+          "Then let's keep the coverage decision separate. Different lighting can change your impression of the same sample."
+        ],
+        [
+          "Client",
+          "I have an evening event. Can you guarantee it will look like this photograph under the venue lights?"
+        ],
+        [
+          "Technician",
+          "I can't promise that from a photograph. We can compare available samples under the lighting we have."
+        ],
+        [
+          "Client",
+          "Could I choose a cooler-looking sample without changing to a completely opaque finish by accident?"
+        ],
+        [
+          "Technician",
+          "Yes. We'll compare the color preference while checking that each sample still shows the sheer effect you want."
+        ],
+        [
+          "Client",
+          "This one looks closer to my preference. I don't need it to match every light exactly."
+        ],
+        [
+          "Technician",
+          "I'll note the chosen sample code and sheer coverage. Do you still want a glossy rather than matte appearance?"
+        ],
+        [
+          "Client",
+          "Yes, glossy today. I understand that glossy describes shine, not how much of the nail remains visible."
+        ],
+        [
+          "Technician",
+          "That's the appearance request. Product and service selection remain separate questions."
+        ],
+        [
+          "Client",
+          "Thank you. Comparing actual features has helped more than trying to choose from the color name alone."
+        ]
+      ],
+      "notes": [
+        "'Keep ... separate' prevents one changed preference from altering an already agreed feature.",
+        "'Under the lighting we have' states the limits of the comparison."
+      ]
+    },
+    {
+      "title": "Matching a wedding party without identical designs",
+      "setting": "A technician speaks with a client arranging their own design alongside two friends' appointments.",
+      "dialogue": [
+        [
+          "Technician",
+          "You asked for a matching theme. Does that mean identical designs, or a shared color with different details?"
+        ],
+        [
+          "Client",
+          "A shared pale blue. I want two accent nails, but my friends may prefer plain color."
+        ],
+        [
+          "Technician",
+          "Then your quote should cover your own selections only. Their choices need confirmation in their separate consultations."
+        ],
+        [
+          "Client",
+          "Yes. I don't want them charged for my design just because I sent the group photograph."
+        ],
+        [
+          "Technician",
+          "For your appointment, the agreed base is thirty dollars and the two line-art accents add ten."
+        ],
+        [
+          "Client",
+          "Forty total works. Could I add one small ornament without changing that total, as part of matching?"
+        ],
+        [
+          "Technician",
+          "The ornament wasn't included. We would need a separate quote before adding it to your chosen design."
+        ],
+        [
+          "Client",
+          "I'll leave it out. The color theme matters more to me than copying every detail in the photograph."
+        ],
+        [
+          "Technician",
+          "Which two nails should receive the line art, and should both designs face in the same direction?"
+        ],
+        [
+          "Client",
+          "One ring-finger nail on each hand, with the design facing me. The remaining nails stay plain blue."
+        ],
+        [
+          "Technician",
+          "Confirmed for you only: pale blue, two line-art accents, no ornament, forty dollars."
+        ],
+        [
+          "Client",
+          "I'll tell my friends the color choice, but let them confirm their own designs and prices directly."
+        ]
+      ],
+      "notes": [
+        "'For your appointment only' prevents a group theme from becoming consent for other clients.",
+        "'Wasn't included' names a scope difference before discussing an additional charge."
+      ]
+    },
+    {
+      "title": "A photograph cannot settle a medical question",
+      "setting": "A technician discusses a reported nail change with a client whose service is booked for tomorrow. Reception can record a postponement after the client's agreement; the replacement date and any fee or deposit consequences are unconfirmed.",
+      "dialogue": [
+        [
+          "Technician",
+          "You asked whether this photograph confirms suitability for tomorrow's booked service. It doesn't establish that."
+        ],
+        [
+          "Client",
+          "The appearance changed recently. I wanted reassurance before traveling, but nobody has assessed it."
+        ],
+        [
+          "Technician",
+          "A healthcare professional can assess the health concern. The salon separately decides whether a service is suitable."
+        ],
+        [
+          "Client",
+          "So you haven't diagnosed anything, or approved tomorrow's service from the photograph?"
+        ],
+        [
+          "Technician",
+          "Correct. Would you like reception to postpone tomorrow's appointment while the health concern remains unassessed?"
+        ],
+        [
+          "Client",
+          "Before I agree, would postponing affect my deposit or involve a change fee?"
+        ],
+        [
+          "Technician",
+          "Reception needs to check your booking terms. I can't promise a fee waiver or refund."
+        ],
+        [
+          "Client",
+          "I understand that's unresolved. Please postpone tomorrow anyway, without booking a replacement date."
+        ],
+        [
+          "Technician",
+          "You're choosing postponement now, although the fee and deposit questions remain unanswered, correct?"
+        ],
+        [
+          "Client",
+          "Yes. Please ask reception to confirm that change and explain the applicable terms."
+        ],
+        [
+          "Technician",
+          "Reception confirms tomorrow's appointment is postponed. No new date is booked; the policy questions remain pending."
+        ],
+        [
+          "Client",
+          "Thank you. I'll seek a healthcare assessment separately and wait for reception to explain the terms."
+        ]
+      ],
+      "notes": [
+        "A health assessment and a service-suitability decision address different questions for healthcare and salon staff.",
+        "'You're choosing postponement now' checks agreement before recording the booking change; an unresolved policy question is not a fee waiver."
+      ]
+    },
+    {
+      "title": "The readiness message reached only one person",
+      "setting": "A lead technician and receptionist resolve conflicting station information.",
+      "dialogue": [
+        [
+          "Lead technician",
+          "I told the afternoon technician station two was unavailable, but I hear you offered it to a client."
+        ],
+        [
+          "Receptionist",
+          "I hadn't received that update. The earlier board still showed station two as available this afternoon."
+        ],
+        [
+          "Lead technician",
+          "The current status is unavailable pending a check. We haven't established a completion time for that check."
+        ],
+        [
+          "Receptionist",
+          "Then I need to correct the client's station offer without implying that the appointment itself is cancelled."
+        ],
+        [
+          "Lead technician",
+          "Station three is confirmed ready, and the booked technician can work there. That is the available alternative."
+        ],
+        [
+          "Receptionist",
+          "I'll offer station three and explain the change. Should I describe the reason as equipment failure?"
+        ],
+        [
+          "Lead technician",
+          "No. The confirmed fact is an outstanding check, not an established fault. Please keep those separate."
+        ],
+        [
+          "Receptionist",
+          "Understood. I've reached the client, who accepts station three with the same technician and booked service."
+        ],
+        [
+          "Lead technician",
+          "Thanks. Has the displayed status also been corrected so the next receptionist won't repeat the earlier offer?"
+        ],
+        [
+          "Receptionist",
+          "Yes, station two now shows unavailable, and station three is assigned to the client's appointment."
+        ],
+        [
+          "Lead technician",
+          "That resolves the booking message. I'll send a separate update when station two's status is confirmed."
+        ],
+        [
+          "Receptionist",
+          "I'll keep the unanswered timing question open rather than give the next client a guessed waiting time."
+        ]
+      ],
+      "notes": [
+        "'Current status' corrects an outdated message without inventing a cause.",
+        "'A separate update when' makes clear that the present handover does not establish completion."
+      ]
+    },
+    {
+      "title": "The review booking was described too broadly",
+      "setting": "A receptionist corrects a misunderstanding about a repair appointment.",
+      "dialogue": [
+        [
+          "Receptionist",
+          "My earlier message promised to redo everything. I need to correct that before you travel."
+        ],
+        [
+          "Client",
+          "I understood it as an approved replacement of the whole set, with no further charge for anything."
+        ],
+        [
+          "Receptionist",
+          "I'm sorry; that wording promised more than we had agreed. Today's appointment is a review of one chipped nail."
+        ],
+        [
+          "Client",
+          "So the review might lead to a different proposal, not necessarily a full replacement?"
+        ],
+        [
+          "Receptionist",
+          "Yes. The technician must assess the concern and discuss the response and terms with you."
+        ],
+        [
+          "Client",
+          "I can attend a review, but I don't want to be charged for work I haven't agreed to."
+        ],
+        [
+          "Receptionist",
+          "We'll keep the discussion separate from any proposed work. You can decide after the scope and price are clear."
+        ],
+        [
+          "Client",
+          "Please also retain my original report. I said the chip appeared yesterday, not immediately after the appointment."
+        ],
+        [
+          "Receptionist",
+          "The note now records your report: first noticed yesterday on the left thumb."
+        ],
+        [
+          "Client",
+          "That detail matters. Has the four o'clock time changed, or is only the description of the visit different?"
+        ],
+        [
+          "Receptionist",
+          "Four o'clock remains booked. The corrected description is a review, with no full replacement or charge agreement assumed."
+        ],
+        [
+          "Client",
+          "I'll attend with that understanding. Thank you for correcting the promise before I arrived expecting something different."
+        ]
+      ],
+      "notes": [
+        "'Promised more than we had agreed' takes responsibility for an overstatement.",
+        "'Only the description ... different' separates a corrected scope from an unchanged appointment time."
+      ]
+    },
+    {
+      "title": "A colleague accepts the unresolved product question",
+      "setting": "A departing technician gives a handover to the colleague conducting the next consultation.",
+      "dialogue": [
+        [
+          "Technician",
+          "The receipt supplied by tomorrow's client lists only a shade name and the previous salon's phone number."
+        ],
+        [
+          "Incoming colleague",
+          "Then the product system remains unidentified. What has the client actually been promised about tomorrow's visit?"
+        ],
+        [
+          "Technician",
+          "A consultation at eleven, not removal or an infill. They want plain color and prefer no added length."
+        ],
+        [
+          "Incoming colleague",
+          "I'll confirm those preferences directly. Has reception collected a service deposit based on an assumed treatment yet?"
+        ],
+        [
+          "Technician",
+          "No. Payment hasn't been arranged because the suitable service and quote are still undecided."
+        ],
+        [
+          "Incoming colleague",
+          "Good. I can review the supplied information without treating the receipt as proof of a particular product."
+        ],
+        [
+          "Technician",
+          "The client may bring another photograph. Please distinguish what it shows from anything it cannot establish about the product."
+        ],
+        [
+          "Incoming colleague",
+          "I will. Do you need me to contact reception after the consultation, or is somebody else handling the next booking?"
+        ],
+        [
+          "Technician",
+          "Please take that follow-up. Tell reception the agreed scope and timing, or what remains undecided."
+        ],
+        [
+          "Incoming colleague",
+          "I accept. I'll report the outcome without confusing a completed discussion with a confirmed service."
+        ],
+        [
+          "Technician",
+          "Thank you. One named person now owns the consultation result and scheduling follow-up."
+        ],
+        [
+          "Incoming colleague",
+          "Understood: consultation only at eleven, current product unknown, plain color preferred, and I own the booking follow-up."
+        ]
+      ],
+      "notes": [
+        "'I accept that task' confirms who will act after the handover.",
+        "'Actual outcome' prevents completion of a discussion from being mistaken for service agreement."
+      ]
+    }
+  ]
+}

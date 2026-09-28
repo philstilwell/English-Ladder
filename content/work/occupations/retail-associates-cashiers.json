@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "retail-associates-cashiers",
+    "title": "Retail Associate and Cashier English",
+    "summary": "Help shoppers find suitable items, explain labels and prices, handle checkout and returns, clarify local stock, and give accurate shop-floor handovers.",
+    "roles": "Retail sales associates, cashiers, fitting-room attendants, and shop-floor customer service staff",
+    "category": "Customers & creative work",
+    "scope_note": "All shops, transactions, stock records, policies, and incidents are fictional English practice. This course covers frontline interactions, not retail strategy, merchandising management, financial advice, or universal consumer-law rules. Follow the employer's actual payment, privacy, safety, and returns procedures; refer exceptions and restricted decisions to the responsible staff.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Retail Sales Workers",
+        "url": "https://www.bls.gov/ooh/sales/retail-sales-workers.htm"
+      },
+      {
+        "title": "BLS Occupational Outlook Handbook: Cashiers",
+        "url": "https://www.bls.gov/ooh/sales/cashiers.htm"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Finding the item the shopper actually means",
+        "terms": [
+          "stock-keeping unit",
+          "barcode",
+          "size range",
+          "fitting room"
+        ],
+        "collocations": [
+          "check the item code: compare the exact product identifier",
+          "find the right size: locate the variation the shopper requests",
+          "point out the fitting room: show where clothing can be tried on",
+          "narrow down the choice: reduce options by clarifying the shopper's needs"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A shopper asks for the blue shirt in an advertisement. The ad shows two blue shirts: linen L214 and cotton C218. The shopper wants a medium cotton shirt; local availability has not been checked. Confirm item and size before discussing stock.",
+          "model": "The advertisement shows two blue shirts, so let me check which one you mean. Is it the cotton shirt, code C218, in medium? Once we've confirmed that variation, I can check this store's stock. The picture alone doesn't tell us whether your size is available here today."
+        },
+        "workshop": {
+          "title": "Ask one question that narrows the search",
+          "goal": "Confirm product variation before searching for stock.",
+          "explanation": "Color alone may describe several items. Use material, code, and size to distinguish them without claiming availability prematurely.",
+          "frames": [
+            "Do you mean the ___ or the ___?",
+            "The item code is ___; is that the one?",
+            "I'll check this store's stock in ___."
+          ],
+          "before": "The blue one is over there.",
+          "after": "Do you mean the cotton C218 or the linen L214?",
+          "reason": "The question identifies the ambiguity instead of giving uncertain directions.",
+          "questions": [
+            {
+              "prompt": "Shopper: The advertisement has two blue shirts. Mine is cotton, not linen.\nAssociate: You mean ____.",
+              "options": [
+                "C218",
+                "L214",
+                "both advertised shirts",
+                "the linen variation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. C218 is the cotton item specified in the case.",
+                "L214 is the linen item, which the shopper excluded.",
+                "The shopper has identified only the cotton shirt.",
+                "The shopper explicitly said cotton rather than linen."
+              ]
+            },
+            {
+              "prompt": "Cashier: This label identifies one color-and-size variation.\nAssociate: That is its ____.",
+              "options": [
+                "stock-keeping unit",
+                "size range",
+                "product family",
+                "department name"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The stock-keeping unit identifies the particular variation.",
+                "A size range lists available sizes rather than identifying one variation.",
+                "A product family can include multiple variations.",
+                "A department name identifies a broader store area."
+              ]
+            }
+          ],
+          "role_b": "Shopper: want the medium cotton blue shirt, not the linen shirt; have not seen local stock information.",
+          "challenge": "The shopper points at the wrong picture while repeating the cotton code. Clarify before searching."
+        }
+      },
+      {
+        "title": "Comparing fit, materials, and label information",
+        "terms": [
+          "care label",
+          "lining",
+          "seam",
+          "fit"
+        ],
+        "collocations": [
+          "check the care label: read the supplied care information",
+          "compare the fit: discuss how two garments sit on the wearer",
+          "allow room through the shoulders: describe the space available in the upper garment",
+          "check the seam position: identify where a stitched join sits"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "A shopper needs a machine-washable jacket. Jacket A is unlined and its label permits machine washing; B is lined and its label states dry-clean only. Both cost $60. Compare the stated care requirements without inventing comfort or durability claims.",
+          "model": "Both jackets are sixty dollars, but their care labels differ. Jacket A is unlined and labelled for machine washing; jacket B is lined and labelled dry-clean only. Since machine washing is your priority, A matches that stated requirement. You can still compare the fit before deciding."
+        },
+        "workshop": {
+          "title": "Compare the same practical requirement",
+          "goal": "Use label evidence instead of broad claims about quality.",
+          "explanation": "Price, lining, fit, and care are different features. Identify the deciding requirement and avoid extending the label's meaning beyond what it states.",
+          "frames": [
+            "Both cost ___, but the labels say ___.",
+            "This matches your requirement for ___.",
+            "The label doesn't establish ___."
+          ],
+          "before": "The lined one is better.",
+          "after": "The lined one requires dry cleaning; the other matches your machine-wash requirement.",
+          "reason": "The comparison uses the shopper's criterion rather than an undefined quality claim.",
+          "questions": [
+            {
+              "prompt": "Shopper: Which one matches my machine-wash requirement?\nAssociate: ____.",
+              "options": [
+                "Jacket A",
+                "Jacket B",
+                "Both jackets equally",
+                "Neither jacket"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Jacket A's label permits machine washing.",
+                "Jacket B is labelled dry-clean only.",
+                "The care requirements differ between the jackets.",
+                "Jacket A does meet the stated care requirement."
+              ]
+            },
+            {
+              "prompt": "Shopper: What is the extra fabric inside this jacket called?\nAssociate: The ____.",
+              "options": [
+                "lining",
+                "seam",
+                "outer shell",
+                "care label"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A lining is the inner fabric layer.",
+                "A seam is a stitched join, not a fabric layer.",
+                "The outer shell is on the outside rather than inside.",
+                "A care label carries information, not the main inner layer."
+              ]
+            }
+          ],
+          "role_b": "Shopper: need machine washing, have a sixty-dollar budget, and still need to check fit.",
+          "challenge": "The shopper assumes identical prices mean identical care requirements. Return to the two labels."
+        }
+      },
+      {
+        "title": "Resolving shelf prices and offer conditions",
+        "terms": [
+          "shelf-edge label",
+          "unit price",
+          "multibuy offer",
+          "price check"
+        ],
+        "collocations": [
+          "match the label to the item: compare product description and code",
+          "read the offer conditions: identify qualifying quantity and items",
+          "compare the unit prices: use the same standard quantity for both products",
+          "request a price check: ask a colleague to verify a disputed price"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A shopper has one juice bottle priced at $3. The shelf offer says two qualifying bottles for $5; single bottles remain $3. The shopper expects one bottle for $2.50. Explain the quantity condition without treating half the bundle price as the single-item offer.",
+          "model": "The five-dollar offer applies when you buy two qualifying bottles. One bottle is still three dollars under these displayed terms. Two would average two dollars fifty each, but that average isn't the single-bottle price. Would you like one at three, or two qualifying bottles for five?"
+        },
+        "workshop": {
+          "title": "Explain the condition that changes the price",
+          "goal": "Distinguish an average bundle price from a single-item price.",
+          "explanation": "Use the offer's quantity condition and the same price basis. Don't infer a universal pricing rule from this fictional promotion.",
+          "frames": [
+            "The offer applies when you buy ___.",
+            "One item remains ___ under these terms.",
+            "That is the average, not ___."
+          ],
+          "before": "They're two-fifty each.",
+          "after": "Two cost five under the offer; one alone costs three.",
+          "reason": "The quantity condition stays attached to the discounted price.",
+          "questions": [
+            {
+              "prompt": "Shopper: I have only one bottle. Is it two-fifty?\nCashier: Under this offer, one bottle costs ____.",
+              "options": [
+                "three dollars",
+                "two dollars fifty",
+                "five dollars",
+                "one dollar fifty"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The single-bottle price remains three dollars.",
+                "That is the average only when two qualifying bottles are bought.",
+                "Five dollars is the two-bottle total.",
+                "That price is not stated anywhere in the offer."
+              ]
+            },
+            {
+              "prompt": "Shopper: These packs have different amounts. How can I compare on the same quantity basis?\nAssociate: Compare their ____.",
+              "options": [
+                "unit prices",
+                "package totals alone",
+                "advertised percentage discounts alone",
+                "multibuy quantities alone"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Unit prices use a common standard quantity.",
+                "Package totals alone can hide different pack sizes.",
+                "Discount percentages can start from different prices and do not establish cost per standard quantity.",
+                "Required purchase quantities alone do not give price per standard amount."
+              ]
+            }
+          ],
+          "role_b": "Shopper: want just one bottle unless the two-bottle offer clearly fits your needs.",
+          "challenge": "The second bottle is a nonqualifying flavor. Explain that quantity and qualifying item both matter."
+        }
+      },
+      {
+        "title": "Checking the basket and payment status",
+        "terms": [
+          "point-of-sale system",
+          "subtotal",
+          "tender",
+          "receipt"
+        ],
+        "collocations": [
+          "review the basket: check items and quantities before payment",
+          "remove a duplicate scan: correct an item entered twice",
+          "confirm the amount due: state the total still requiring payment",
+          "check transaction status: establish whether payment has completed"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Two $8 mugs were scanned, but the shopper has only one. There are no additional charges in this exercise. Payment has not begun. Acknowledge the duplicate, correct the recorded quantity through the store's checkout process, and confirm $8 before payment.",
+          "model": "You're right: the basket shows two mugs, but you have one. I'm sorry about the duplicate scan. I'll correct the quantity before you pay. Your total is now eight dollars, with no additional charges. Please check that the screen shows one mug before we continue."
+        },
+        "workshop": {
+          "title": "Correct the basket before taking payment",
+          "goal": "Explain the correction and verify the revised quantity and total.",
+          "explanation": "Name the exact duplicate instead of saying the register is wrong generally. Keep a basket correction separate from a refund after payment.",
+          "frames": [
+            "The basket shows ___, but you have ___.",
+            "Payment hasn't started, so this is ___.",
+            "The revised quantity is ___ and the total is ___."
+          ],
+          "before": "I'll refund that extra one.",
+          "after": "Payment hasn't started; I'll correct the duplicate entry before you pay.",
+          "reason": "A refund would imply money had already been paid.",
+          "questions": [
+            {
+              "prompt": "Shopper: Have I already paid for the extra mug?\nCashier: No, this is a basket correction, not a ____.",
+              "options": [
+                "refund",
+                "quantity check",
+                "price display",
+                "subtotal review"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A refund returns money after payment; payment hasn't begun.",
+                "Checking quantity is part of this correction.",
+                "The screen can display the corrected price before payment.",
+                "Reviewing a subtotal also occurs before payment."
+              ]
+            },
+            {
+              "prompt": "Shopper: You've removed the duplicate mug, but I haven't paid yet. Is the purchase finished?\nCashier: The quantity is corrected; the payment ____.",
+              "options": [
+                "has not yet been taken",
+                "has already been refunded",
+                "has now been completed",
+                "was taken before the correction"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Correcting the basket does not complete the still-unpaid transaction.",
+                "A refund would return a payment, but none has been taken.",
+                "The shopper explicitly says payment has not happened yet.",
+                "This places payment before the correction, contradicting the stated sequence."
+              ]
+            }
+          ],
+          "role_b": "Shopper: have one mug; point out the duplicate before payment.",
+          "challenge": "The shopper sees a payment notification from an earlier purchase. Keep it separate from this unpaid basket."
+        }
+      },
+      {
+        "title": "Discussing returns and exchanges at the counter",
+        "terms": [
+          "proof of purchase",
+          "exchange",
+          "refund",
+          "store credit"
+        ],
+        "collocations": [
+          "check the return terms: read the conditions applying to the purchase",
+          "bring proof of purchase: provide the accepted purchase record",
+          "exchange for another size: replace the item with a different size",
+          "refer an exception request: ask the responsible person to review a request outside stated terms"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "In this fictional store, an unused shirt with tags and a receipt can be exchanged within thirty days. The shopper bought it ten days ago and wants a larger size. A receipt is present; larger-size stock remains unchecked. Explain eligibility and the stock uncertainty without stating universal return rights.",
+          "model": "Your receipt shows the shirt was bought ten days ago. Under this store's stated terms, the unused shirt with its tags qualifies for an exchange within thirty days. We still need to check whether the larger size is here. I'll check that before we agree on the replacement."
+        },
+        "workshop": {
+          "title": "Separate policy eligibility from available stock",
+          "goal": "Explain the stated exchange conditions without promising an unavailable replacement.",
+          "explanation": "A qualifying return does not create stock. Check the purchase conditions and then the requested replacement separately.",
+          "frames": [
+            "Under this store's terms, ___ qualifies for ___.",
+            "The remaining question is whether ___ is available.",
+            "A refund and store credit are different because ___."
+          ],
+          "before": "You're eligible, so the larger one is yours.",
+          "after": "The shirt qualifies for exchange; I'll check the larger size before confirming a replacement.",
+          "reason": "Eligibility alone does not establish local stock.",
+          "questions": [
+            {
+              "prompt": "Shopper: I want the same shirt in a larger size, not money back.\nCashier: You're requesting an ____.",
+              "options": [
+                "exchange",
+                "account credit",
+                "item reservation",
+                "order cancellation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. An exchange replaces the purchased item with another.",
+                "Account credit is value for later use, not the requested replacement itself.",
+                "A reservation holds stock but does not replace a purchased item.",
+                "Cancelling an order is different from exchanging an already purchased shirt."
+              ]
+            },
+            {
+              "prompt": "Shopper: Is store credit the same as money returned to my card?\nCashier: No, store credit is ____.",
+              "options": [
+                "value to spend at the store",
+                "a card refund already completed",
+                "cash change from a sale",
+                "the original card payment"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Store credit provides value usable at the store.",
+                "A completed card refund returns money, which is a different arrangement.",
+                "Cash change is part of cash payment, not store credit.",
+                "The original payment is money paid to buy the item."
+              ]
+            }
+          ],
+          "role_b": "Shopper: bought the unused tagged shirt ten days ago, have the receipt, and need the next size up.",
+          "challenge": "The larger size is unavailable. Ask about other stated options rather than invent an exception."
+        }
+      },
+      {
+        "title": "Explaining local stock and collection status",
+        "terms": [
+          "sales floor",
+          "stockroom",
+          "reserved item",
+          "collection notification"
+        ],
+        "collocations": [
+          "check physical stock: confirm an item is actually present",
+          "locate the reserved item: find the goods assigned to the customer",
+          "wait for collection confirmation: avoid assuming an order acknowledgment means readiness",
+          "check the order reference: use the order identifier to distinguish similar requests"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "A shopper's message acknowledges order R61 but is not a collection notification. One item is still being located. The collection colleague will update the shopper at 3:00, even if unresolved. Do not promise readiness or substitute another variation.",
+          "model": "That message confirms receipt of order R61; it isn't a collection notification. One item is still being located, so I can't say the order is ready. The collection colleague will update you at three, including if the search is unresolved. We won't substitute a different variation without asking you."
+        },
+        "workshop": {
+          "title": "Tell the shopper what the message actually confirms",
+          "goal": "Separate order acknowledgment from pickup readiness.",
+          "explanation": "Use the message's wording and current physical status. An update time is not automatically a collection time.",
+          "frames": [
+            "This confirms ___, not ___.",
+            "One item is still ___.",
+            "Three o'clock is an update time, not ___."
+          ],
+          "before": "It's ordered, so it's ready.",
+          "after": "The order is acknowledged; one item is still being located.",
+          "reason": "The shopper receives the actual status instead of a broader implication.",
+          "questions": [
+            {
+              "prompt": "Shopper: Can I collect at three?\nAssociate: Three is the promised ____ time, not confirmed collection.",
+              "options": [
+                "update",
+                "dispatch",
+                "purchase",
+                "refund"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The colleague promised new information at three.",
+                "No dispatch is scheduled in this case.",
+                "The order has already been acknowledged; three is not a purchase appointment.",
+                "No refund has been agreed in this case."
+              ]
+            },
+            {
+              "prompt": "Shopper: It says we received your order. Is that the ready message?\nAssociate: No, it is an ____.",
+              "options": [
+                "order acknowledgment",
+                "item substitution",
+                "arrival confirmation",
+                "exchange approval"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The message confirms that the order was received.",
+                "It does not identify any change of item.",
+                "It does not confirm an item has arrived for collection.",
+                "It does not concern an exchange decision."
+              ]
+            }
+          ],
+          "role_b": "Shopper: have an order acknowledgment and expected immediate pickup; need a truthful status.",
+          "challenge": "The shopper asks whether choosing another color automatically makes the order ready. Keep substitution and readiness separate."
+        }
+      },
+      {
+        "title": "Managing queues and offering practical assistance",
+        "terms": [
+          "queue",
+          "accessible checkout",
+          "assistance call",
+          "checkout lane"
+        ],
+        "collocations": [
+          "open another checkout: make another staffed payment point available",
+          "keep the aisle clear: preserve space for people to pass",
+          "offer assistance without assuming: ask what help the shopper wants",
+          "direct the next customer: guide the next person from the agreed queue order"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "A shopper using a mobility aid says the current checkout is too narrow. An accessible checkout is open at lane four. Ask what help they prefer, explain the available route, and ask a colleague to preserve their place; do not touch their belongings or aid without permission.",
+          "model": "Lane four has the wider checkout space and is open now. Would you prefer directions or someone to accompany you? I'll ask my colleague to keep your place while we move the transaction. Please tell me what assistance you want; I won't assume you need help with your belongings."
+        },
+        "workshop": {
+          "title": "Ask what help is wanted",
+          "goal": "Offer a concrete access option without making assumptions about the shopper.",
+          "explanation": "Address the shopper directly and offer the available route. Ask before handling personal belongings or mobility equipment.",
+          "frames": [
+            "Would you prefer ___ or ___?",
+            "Lane ___ has ___.",
+            "May I help with ___?"
+          ],
+          "before": "I'll move all your things for you.",
+          "after": "Would you like help with your basket, or would you prefer to keep it?",
+          "reason": "The question gives the shopper control over the help offered.",
+          "questions": [
+            {
+              "prompt": "Shopper: I need a wider checkout, but I'll carry my own bag.\nAssociate: So your request concerns ____.",
+              "options": [
+                "checkout access",
+                "bagging assistance",
+                "home delivery",
+                "product availability"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The shopper needs space at the payment point.",
+                "The shopper explicitly wants to keep and carry the bag.",
+                "No delivery arrangement has been requested by the shopper.",
+                "The shopper has not asked whether an item is stocked."
+              ]
+            },
+            {
+              "prompt": "Shopper: I would like some assistance getting to lane four.\nAssociate: Could you tell me ____?",
+              "options": [
+                "how you would like me to help",
+                "how would you like me to help",
+                "how you would like I to help",
+                "how you like me would to help"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The indirect question uses subject-verb order and 'me' after 'like'.",
+                "Use statement order after 'tell me': 'how you would like'.",
+                "Use the object form 'me' before the infinitive, not 'I'.",
+                "Place 'would' before 'like' in this indirect question."
+              ]
+            }
+          ],
+          "role_b": "Shopper: need a wider checkout and want to keep your own bag; prefer directions.",
+          "challenge": "The next shopper questions why the transaction is moving. Explain briefly without disclosing personal details."
+        }
+      },
+      {
+        "title": "Handing over a till and an unfinished query",
+        "terms": [
+          "till float",
+          "cash discrepancy",
+          "void",
+          "shift log"
+        ],
+        "collocations": [
+          "count against the record: compare counted amounts with expected figures",
+          "report a discrepancy: state the difference without inventing its cause",
+          "keep the transaction reference: preserve the identifier needed for a check",
+          "accept the follow-up: explicitly agree to handle an unfinished task"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At shift change, the expected drawer balance is $180 and the recorded count is $175. A second check has not occurred, and the cause is unknown. A price query for item P32 also remains open. The incoming supervisor accepts both checks; do not accuse anyone or describe a loss as proved.",
+          "model": "The first count is one hundred seventy-five dollars against an expected one hundred eighty, a five-dollar difference. The second check and cause are still open. Item P32 also has an unresolved price query. Please confirm you'll take both follow-ups and keep the two issues separate in the shift log."
+        },
+        "workshop": {
+          "title": "Hand over the observation, not an accusation",
+          "goal": "Give amounts, open checks, and a named next owner.",
+          "explanation": "A discrepancy is a mismatch, not an established cause. Distinguish a cash check from a separate customer's price query.",
+          "frames": [
+            "The count is ___ against an expected ___.",
+            "The cause remains ___.",
+            "Can you take the follow-up on ___?"
+          ],
+          "before": "Five dollars was stolen.",
+          "after": "The first count is five dollars below the expected amount; the cause hasn't been established.",
+          "reason": "The revised report states the evidence without accusing anyone.",
+          "questions": [
+            {
+              "prompt": "Supervisor: Expected cash is one-eighty, first count one-seventy-five.\nCashier: That's a ____ difference.",
+              "options": [
+                "five-dollar",
+                "ten-dollar",
+                "one-hundred-seventy-five-dollar",
+                "one-hundred-eighty-dollar"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The difference between the two figures is five dollars.",
+                "Ten does not match the subtraction of these figures.",
+                "That is the counted amount, not the difference.",
+                "That is the expected amount, not the difference."
+              ]
+            },
+            {
+              "prompt": "Cashier: Does a void entry show an item was sold twice?\nSupervisor: No, it records an entry that was ____.",
+              "options": [
+                "cancelled",
+                "reserved",
+                "delivered",
+                "restocked"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A void cancels a transaction or item entry.",
+                "Reservation holds an item rather than cancelling a sale entry.",
+                "Delivery concerns physical movement, not a void entry.",
+                "Restocking concerns inventory and does not define a checkout void."
+              ]
+            }
+          ],
+          "role_b": "Incoming supervisor: accept the second cash check and item P32 price query as separate tasks.",
+          "challenge": "Someone blames the prior cashier before the check. Keep the report factual without suggesting an unrecorded cash adjustment."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "stock-keeping unit",
+        "definition": "An identifier for a particular product variation, often abbreviated SKU, such as a specific shirt size and color.",
+        "group": "Finding the item the shopper actually means"
+      },
+      {
+        "term": "barcode",
+        "definition": "A machine-readable pattern used to identify an item when scanned.",
+        "group": "Finding the item the shopper actually means"
+      },
+      {
+        "term": "size range",
+        "definition": "The set of sizes in which a product is offered.",
+        "group": "Finding the item the shopper actually means"
+      },
+      {
+        "term": "fitting room",
+        "definition": "A designated shop space where customers can try on clothing.",
+        "group": "Finding the item the shopper actually means"
+      },
+      {
+        "term": "care label",
+        "definition": "The attached label stating the manufacturer's garment-care information.",
+        "group": "Comparing fit, materials, and label information"
+      },
+      {
+        "term": "lining",
+        "definition": "An inner layer of fabric inside a garment or bag.",
+        "group": "Comparing fit, materials, and label information"
+      },
+      {
+        "term": "seam",
+        "definition": "The join where pieces of fabric are stitched together.",
+        "group": "Comparing fit, materials, and label information"
+      },
+      {
+        "term": "fit",
+        "definition": "How a garment's shape and size sit on the wearer.",
+        "group": "Comparing fit, materials, and label information"
+      },
+      {
+        "term": "shelf-edge label",
+        "definition": "A label beside displayed goods stating the item description and price.",
+        "group": "Resolving shelf prices and offer conditions"
+      },
+      {
+        "term": "unit price",
+        "definition": "A price expressed per standard amount, such as per liter, for comparison.",
+        "group": "Resolving shelf prices and offer conditions"
+      },
+      {
+        "term": "multibuy offer",
+        "definition": "A promotion requiring the purchase of a stated number of qualifying items.",
+        "group": "Resolving shelf prices and offer conditions"
+      },
+      {
+        "term": "price check",
+        "definition": "A request to verify an item's applicable price when information is unclear.",
+        "group": "Resolving shelf prices and offer conditions"
+      },
+      {
+        "term": "point-of-sale system",
+        "definition": "The store equipment and software used to record purchases and process checkout, often abbreviated POS.",
+        "group": "Checking the basket and payment status"
+      },
+      {
+        "term": "subtotal",
+        "definition": "The total for entered items before any separately applied tax, fee, or discount adjustments.",
+        "group": "Checking the basket and payment status"
+      },
+      {
+        "term": "tender",
+        "definition": "A method or form of payment offered for a purchase, such as cash or a card.",
+        "group": "Checking the basket and payment status"
+      },
+      {
+        "term": "receipt",
+        "definition": "A record of a completed transaction showing relevant purchase and payment details.",
+        "group": "Checking the basket and payment status"
+      },
+      {
+        "term": "proof of purchase",
+        "definition": "A receipt or other evidence the store accepts to establish where and when an item was bought.",
+        "group": "Discussing returns and exchanges at the counter"
+      },
+      {
+        "term": "exchange",
+        "definition": "Replacing a purchased item with another under the applicable store terms.",
+        "group": "Discussing returns and exchanges at the counter"
+      },
+      {
+        "term": "refund",
+        "definition": "Money returned for a purchase under the applicable decision and payment arrangements.",
+        "group": "Discussing returns and exchanges at the counter"
+      },
+      {
+        "term": "store credit",
+        "definition": "Value issued for use at the store rather than money returned to the original payment method.",
+        "group": "Discussing returns and exchanges at the counter"
+      },
+      {
+        "term": "sales floor",
+        "definition": "The part of a store where goods are displayed and customers shop.",
+        "group": "Explaining local stock and collection status"
+      },
+      {
+        "term": "stockroom",
+        "definition": "A store's storage area away from the main customer shopping space.",
+        "group": "Explaining local stock and collection status"
+      },
+      {
+        "term": "reserved item",
+        "definition": "An item held for a specified customer or purpose under stated conditions.",
+        "group": "Explaining local stock and collection status"
+      },
+      {
+        "term": "collection notification",
+        "definition": "A message telling a customer that an order is ready to collect under the stated arrangements; commonly called a pickup notification in US English.",
+        "group": "Explaining local stock and collection status"
+      },
+      {
+        "term": "queue",
+        "definition": "A line of shoppers waiting for service; also called a line in US English.",
+        "group": "Managing queues and offering practical assistance"
+      },
+      {
+        "term": "accessible checkout",
+        "definition": "A checkout designed or arranged to support access needs, such as suitable space or counter height.",
+        "group": "Managing queues and offering practical assistance"
+      },
+      {
+        "term": "assistance call",
+        "definition": "A request to a colleague for help with a customer or store task.",
+        "group": "Managing queues and offering practical assistance"
+      },
+      {
+        "term": "checkout lane",
+        "definition": "A designated route and counter where shoppers complete purchases.",
+        "group": "Managing queues and offering practical assistance"
+      },
+      {
+        "term": "till float",
+        "definition": "The cash drawer starting balance provided for giving change, separate from the day's sales; often called the starting cash balance in US English.",
+        "group": "Handing over a till and an unfinished query"
+      },
+      {
+        "term": "cash discrepancy",
+        "definition": "A difference between counted cash and the amount expected from the store's records.",
+        "group": "Handing over a till and an unfinished query"
+      },
+      {
+        "term": "void",
+        "definition": "A cancelled transaction or item entry recorded by the point-of-sale system.",
+        "group": "Handing over a till and an unfinished query"
+      },
+      {
+        "term": "shift log",
+        "definition": "A store record of relevant events and open tasks passed between work shifts.",
+        "group": "Handing over a till and an unfinished query"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Two blue shirts in one advertisement",
+          "setting": "An associate clarifies a shopper's request on the sales floor.",
+          "turns": [
+            [
+              "Associate",
+              "There are two blue shirts in that advertisement. Do you mean the cotton or linen version?"
+            ],
+            [
+              "Shopper",
+              "The cotton one, please. I want a medium, but I can't find it here."
+            ],
+            [
+              "Associate",
+              "The cotton code is C218. Let me confirm that against the item pictured on your phone."
+            ],
+            [
+              "Shopper",
+              "Yes, that's the one. The linen shirt beside it looks almost the same color."
+            ],
+            [
+              "Associate",
+              "I'll check the stock-keeping unit for medium C218, so we get that exact variation."
+            ],
+            [
+              "Shopper",
+              "Does being in the advertisement mean you definitely have that size in this branch today?"
+            ],
+            [
+              "Associate",
+              "No. The advertisement identifies the product; local stock needs a separate check for your variation."
+            ],
+            [
+              "Shopper",
+              "Thanks. Could I see a large for comparison if the medium isn't available here?"
+            ],
+            [
+              "Associate",
+              "We can discuss that after checking, but I won't substitute a different size without asking."
+            ],
+            [
+              "Shopper",
+              "That's fine. Medium cotton C218 is my first choice; the other size is only a possibility."
+            ]
+          ]
+        },
+        {
+          "title": "The code is clearer than the display location",
+          "setting": "A shopper brings a loose item from a mixed display.",
+          "turns": [
+            [
+              "Associate",
+              "You found this near the jackets, but its label identifies it as a lightweight overshirt."
+            ],
+            [
+              "Shopper",
+              "I thought everything on that rail belonged to the same range and fitted similarly."
+            ],
+            [
+              "Associate",
+              "Items can be moved. Let's check the product code and size label on this one."
+            ],
+            [
+              "Shopper",
+              "The code is O316 and the label says small. Does it come in a medium?"
+            ],
+            [
+              "Associate",
+              "The listed size range includes medium; that doesn't yet confirm one is in this shop."
+            ],
+            [
+              "Shopper",
+              "Could you check while I compare how the small feels in the fitting room?"
+            ],
+            [
+              "Associate",
+              "Certainly. The fitting rooms are beside the mirror, and I'll search this exact code."
+            ],
+            [
+              "Shopper",
+              "Please don't bring a similar jacket instead. I need the same material and style."
+            ],
+            [
+              "Associate",
+              "I'll look for medium O316, and tell you clearly if that variation isn't available."
+            ],
+            [
+              "Shopper",
+              "Great. The label gives us a more precise starting point than where I found it."
+            ]
+          ]
+        },
+        {
+          "title": "A gift request without a guessed size",
+          "setting": "An associate helps a shopper buying a gift.",
+          "turns": [
+            [
+              "Associate",
+              "What do you know about the item they liked: its color, material, or exact code?"
+            ],
+            [
+              "Shopper",
+              "Only that it was a green sweater in your window. I don't know their size."
+            ],
+            [
+              "Associate",
+              "There are two green styles there. Could you point to the one they mentioned?"
+            ],
+            [
+              "Shopper",
+              "The one with the textured front. I don't want you to guess their size from a photograph."
+            ],
+            [
+              "Associate",
+              "I won't. We can identify the style now and leave the size choice open."
+            ],
+            [
+              "Shopper",
+              "Could I see the size range and the stated gift exchange terms before deciding?"
+            ],
+            [
+              "Associate",
+              "Yes. I'll show both, without treating an available range as proof every size is stocked."
+            ],
+            [
+              "Shopper",
+              "That would help. I may ask them for a size before buying anything today."
+            ],
+            [
+              "Associate",
+              "This is the textured style, code K420. You can use that code when you return."
+            ],
+            [
+              "Shopper",
+              "I'll do that. Identifying the item first saves us choosing the wrong green sweater."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A barcode belongs to the packaging, not the loose item",
+        "brief": "A shopper presents a mug inside a box marked for a larger model. The mug base shows M12; the box shows M18. No sale has been entered.",
+        "role_a": "Associate: compare the two identifiers and find the matching label.",
+        "role_b": "Shopper: want the smaller M12 mug and its correct price.",
+        "opening_line": "Can you scan the box? I put the mug in it myself.",
+        "complication": "The shopper assumes the larger model's displayed price applies.",
+        "success_checks": [
+          "Identify the mug actually selected.",
+          "Keep the mismatched box separate.",
+          "Confirm the exact item before quoting a price."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "The care requirement decides the first comparison",
+          "setting": "An associate compares two jackets with a shopper.",
+          "turns": [
+            [
+              "Associate",
+              "Both jackets cost sixty dollars. Is care, warmth, or fit your first priority today?"
+            ],
+            [
+              "Shopper",
+              "Care. I need something labelled for machine washing because I travel frequently for work."
+            ],
+            [
+              "Associate",
+              "Jacket A's label permits that. Jacket B is lined and marked dry-clean only."
+            ],
+            [
+              "Shopper",
+              "Then the similar price doesn't mean they have the same care requirements at all."
+            ],
+            [
+              "Associate",
+              "Correct. The labels give different instructions, even though both jackets share the same displayed price."
+            ],
+            [
+              "Shopper",
+              "I'll consider A first. Does being unlined automatically mean it will fit more loosely?"
+            ],
+            [
+              "Associate",
+              "No. Lining and fit are separate features; trying it on will help you compare."
+            ],
+            [
+              "Shopper",
+              "May I try the medium and large rather than choose from the label alone?"
+            ],
+            [
+              "Associate",
+              "Certainly. I'll bring both available sizes so you can compare the shoulder and body fit."
+            ],
+            [
+              "Shopper",
+              "That's useful. The care label narrows the choice, but I still need the right fit."
+            ]
+          ]
+        },
+        {
+          "title": "Sleeve length and body fit are different",
+          "setting": "An associate checks a shopper's concern outside the fitting room.",
+          "turns": [
+            [
+              "Associate",
+              "Which part doesn't feel right: the body, the shoulders, or the length of the sleeves?"
+            ],
+            [
+              "Shopper",
+              "The body feels fine, but the sleeves cover more of my hands than I expected."
+            ],
+            [
+              "Associate",
+              "So going up a size may not address the issue you're describing with sleeve length."
+            ],
+            [
+              "Shopper",
+              "Exactly. I don't want more room everywhere just because the sleeve shape isn't suitable."
+            ],
+            [
+              "Associate",
+              "We have another cut in the same listed size. Would you like to compare that?"
+            ],
+            [
+              "Shopper",
+              "Yes, as long as it's clear we're comparing a different cut, not identical sizing across styles."
+            ],
+            [
+              "Associate",
+              "Certainly. Size labels don't guarantee the same fit in every design or product range."
+            ],
+            [
+              "Shopper",
+              "Could you show me where the shoulder seam sits on each one for comparison?"
+            ],
+            [
+              "Associate",
+              "Yes, here is the stitched join on each garment. Tell me which feels more comfortable."
+            ],
+            [
+              "Shopper",
+              "The second style suits me better. I'll check its care label before making my decision."
+            ]
+          ]
+        },
+        {
+          "title": "Reading a label without inventing a guarantee",
+          "setting": "A shopper asks about an unfamiliar fabric-care symbol.",
+          "turns": [
+            [
+              "Shopper",
+              "Does this label mean the sweater will never shrink, whatever washing method I use?"
+            ],
+            [
+              "Associate",
+              "No. The label gives care information; it doesn't make an unlimited guarantee about every method."
+            ],
+            [
+              "Shopper",
+              "Could you help me find the manufacturer's written explanation rather than guess at the symbol?"
+            ],
+            [
+              "Associate",
+              "Yes. This item has a printed care explanation on the reverse of the label."
+            ],
+            [
+              "Shopper",
+              "I see it now. The instructions are more specific than what I assumed from the picture."
+            ],
+            [
+              "Associate",
+              "Would you like to compare another item with care requirements that better fit your routine?"
+            ],
+            [
+              "Shopper",
+              "Please. I'd prefer a clearly labelled option I can maintain without changing my usual arrangements."
+            ],
+            [
+              "Associate",
+              "This alternative has different stated care information. Let's compare the labels before discussing its fit."
+            ],
+            [
+              "Shopper",
+              "That helps. I won't treat your explanation as permission to ignore the manufacturer's instructions."
+            ],
+            [
+              "Associate",
+              "Exactly. We can clarify the wording while keeping the actual care directions with the product."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One bag has pockets, the other has lining",
+        "brief": "Two bags cost $24. A has a lining but no internal pocket; B has one internal pocket but no lining. The shopper needs a pocket for keys.",
+        "role_a": "Associate: compare the stated features without equating lining with storage.",
+        "role_b": "Shopper: prioritize an internal key pocket over lining.",
+        "opening_line": "Does lined mean it has a pocket inside?",
+        "complication": "The shopper assumes the more structured appearance proves stronger construction.",
+        "success_checks": [
+          "Explain lining versus pocket.",
+          "Identify B as matching the stated pocket need.",
+          "Avoid unsupported durability claims."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "One bottle is not half the bundle offer",
+          "setting": "A cashier explains the fictional juice promotion.",
+          "turns": [
+            [
+              "Cashier",
+              "You have one qualifying bottle. Its single price is three dollars under this offer."
+            ],
+            [
+              "Shopper",
+              "The shelf says two for five, so I expected this one to be two-fifty."
+            ],
+            [
+              "Cashier",
+              "This multibuy offer requires two qualifying bottles. Then each would average two-fifty."
+            ],
+            [
+              "Shopper",
+              "I only need one. Are you saying the displayed deal doesn't change its individual price?"
+            ],
+            [
+              "Cashier",
+              "That's right for these stated terms. One remains three; two qualifying bottles total five."
+            ],
+            [
+              "Shopper",
+              "Could I add any flavor, or does the second bottle need the same offer label?"
+            ],
+            [
+              "Cashier",
+              "Both must qualify. We can check the shelf label for the flavor you're considering."
+            ],
+            [
+              "Shopper",
+              "Then I'll keep just this one today. I don't want an extra bottle I won't use."
+            ],
+            [
+              "Cashier",
+              "Certainly. I'll leave the quantity at one and confirm the three-dollar price before payment."
+            ],
+            [
+              "Shopper",
+              "Three dollars for this one is fine. Please leave the extra bottle off my purchase."
+            ]
+          ]
+        },
+        {
+          "title": "The label belongs to the smaller pack",
+          "setting": "An associate checks a price complaint at a shelf.",
+          "turns": [
+            [
+              "Associate",
+              "Let's match the shelf-edge label to your pack before deciding which price applies."
+            ],
+            [
+              "Shopper",
+              "I picked it from this space, so I assumed the label underneath referred to it."
+            ],
+            [
+              "Associate",
+              "The label describes a six-pack, while your box contains twelve and has a different code."
+            ],
+            [
+              "Shopper",
+              "That explains the mismatch. Can you find the displayed price for this actual twelve-pack?"
+            ],
+            [
+              "Associate",
+              "Yes. I'll check the matching code rather than assume the six-pack price applies."
+            ],
+            [
+              "Shopper",
+              "Please don't replace my box with six just to match the lower label I mentioned."
+            ],
+            [
+              "Associate",
+              "I won't. You're asking for a price check on the twelve-pack, not a substitution."
+            ],
+            [
+              "Shopper",
+              "Exactly. Once I know the correct total, I can choose which quantity I want."
+            ],
+            [
+              "Associate",
+              "The matching twelve-pack label says nine dollars. Would you like to keep it or compare the six?"
+            ],
+            [
+              "Shopper",
+              "I'll keep twelve at nine. Thank you for identifying the mismatch before I reached checkout."
+            ]
+          ]
+        },
+        {
+          "title": "A larger pack is not automatically the cheaper choice",
+          "setting": "A shopper compares two fictional quantities of detergent.",
+          "turns": [
+            [
+              "Associate",
+              "The one-liter bottle is four dollars; the two-liter bottle is seven dollars today."
+            ],
+            [
+              "Shopper",
+              "So the bigger one costs more overall but less for each liter, correct?"
+            ],
+            [
+              "Associate",
+              "Yes. The smaller is four per liter, while the larger works out at three-fifty per liter."
+            ],
+            [
+              "Shopper",
+              "I only have five dollars to spend. The better unit price doesn't fit that limit."
+            ],
+            [
+              "Associate",
+              "Then the smaller bottle meets your total budget, although its price per liter is higher."
+            ],
+            [
+              "Shopper",
+              "I appreciate that distinction. I don't want to be pushed toward a larger purchase just for a ratio."
+            ],
+            [
+              "Associate",
+              "Of course. Unit price is one comparison; the amount you need and can spend also matter."
+            ],
+            [
+              "Shopper",
+              "I'll take one liter. Does that displayed four dollars depend on buying anything else?"
+            ],
+            [
+              "Associate",
+              "No, the supplied price is for one bottle without an additional purchase condition."
+            ],
+            [
+              "Shopper",
+              "That's the one I want. Please keep the comparison tied to today's displayed prices."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An offer starts tomorrow",
+        "brief": "The shelf sign states a $12 promotion beginning Saturday. It is Friday and today's confirmed price is $15. The shopper misread the starting date.",
+        "role_a": "Associate: explain the date condition and offer a price check if needed.",
+        "role_b": "Shopper: willing to return Saturday but want to know whether stock is guaranteed.",
+        "opening_line": "I thought the twelve-dollar offer was active today.",
+        "complication": "The shopper assumes returning tomorrow guarantees stock at that price.",
+        "success_checks": [
+          "State today's and the advertised start date accurately.",
+          "Distinguish price terms from stock availability.",
+          "Avoid promising an unverified reservation."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "One mug entered twice",
+          "setting": "A cashier corrects the item count before payment. In this fictional shop, one mug costs eight dollars and no other charges apply.",
+          "turns": [
+            [
+              "Cashier",
+              "The point-of-sale system shows two mugs at eight dollars each. Did you choose two?"
+            ],
+            [
+              "Shopper",
+              "No, I have only one mug. I think the barcode was scanned twice just now."
+            ],
+            [
+              "Cashier",
+              "You're right. I'm sorry about the duplicate entry; payment hasn't begun for this basket."
+            ],
+            [
+              "Shopper",
+              "Then I don't need a refund, because I haven't actually paid sixteen dollars yet?"
+            ],
+            [
+              "Cashier",
+              "Correct. I'll correct the basket quantity through the checkout system before taking any payment."
+            ],
+            [
+              "Shopper",
+              "Could you show the updated line so I can check that only one remains?"
+            ],
+            [
+              "Cashier",
+              "Here it is: one mug at eight dollars. Please check the quantity on this line."
+            ],
+            [
+              "Shopper",
+              "That's correct. I was worried the correction might remove the whole purchase by mistake."
+            ],
+            [
+              "Cashier",
+              "The mug is still in your basket; only the duplicate entry has been removed."
+            ],
+            [
+              "Shopper",
+              "I can see that now. Let's continue with the eight-dollar total for one mug."
+            ]
+          ]
+        },
+        {
+          "title": "A notification is not the register's final status",
+          "setting": "A cashier responds when a card-payment screen pauses.",
+          "turns": [
+            [
+              "Cashier",
+              "The checkout hasn't shown a final payment result yet. Please wait while I check its status."
+            ],
+            [
+              "Shopper",
+              "My phone has a banking notification. Doesn't that prove the sale is complete on your side?"
+            ],
+            [
+              "Cashier",
+              "It may relate to the payment attempt, but it doesn't confirm our checkout's final status."
+            ],
+            [
+              "Shopper",
+              "I don't want to pay twice because two screens are giving different impressions."
+            ],
+            [
+              "Cashier",
+              "I understand. I won't describe it as completed or ask for another attempt without checking."
+            ],
+            [
+              "Shopper",
+              "Could you ask the supervisor to look at the transaction rather than guess from my phone?"
+            ],
+            [
+              "Cashier",
+              "Yes. I'll keep this sale reference with the query and explain the screen hasn't finalized."
+            ],
+            [
+              "Shopper",
+              "Thank you. Please don't ask me to share account passwords to help with the check."
+            ],
+            [
+              "Cashier",
+              "We don't need your password. The supervisor will review the store-side transaction information."
+            ],
+            [
+              "Shopper",
+              "Then I'll wait for that result before choosing any next payment step with you."
+            ]
+          ]
+        },
+        {
+          "title": "A receipt choice before leaving",
+          "setting": "After a cash purchase, a cashier clarifies a shopper's preferred receipt format.",
+          "turns": [
+            [
+              "Cashier",
+              "Your purchase is complete. Would you prefer the available paper receipt or a digital receipt?"
+            ],
+            [
+              "Shopper",
+              "Paper, please. I don't want to supply an email address just to record this purchase."
+            ],
+            [
+              "Cashier",
+              "That's fine. I can print the receipt without adding you to a mailing list."
+            ],
+            [
+              "Shopper",
+              "Thank you. Does choosing paper change the store's stated return terms for this item?"
+            ],
+            [
+              "Cashier",
+              "No. The receipt format doesn't alter the terms displayed for this purchase here."
+            ],
+            [
+              "Shopper",
+              "Could you point out which line identifies the item, in case I need it later?"
+            ],
+            [
+              "Cashier",
+              "Certainly. This line shows the product description, quantity, and amount for your selected item."
+            ],
+            [
+              "Shopper",
+              "I see cash listed as the tender below. That isn't an extra item, is it?"
+            ],
+            [
+              "Cashier",
+              "Exactly. It's payment information, not an extra product charge added to your basket."
+            ],
+            [
+              "Shopper",
+              "That's clear. I'll keep the paper receipt with the product packaging when I get home."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The quantity was correct but the size was not",
+        "brief": "A shopper buys one medium shirt. The basket shows one large because a loose tag from another item was scanned. The selected medium is C218-M; the mistakenly scanned large tag is C218-L. The prices are equal, and payment has not started.",
+        "role_a": "Cashier: correct the identified variation without claiming a price difference.",
+        "role_b": "Shopper: need the receipt to identify the actual medium shirt.",
+        "opening_line": "The total is right, but the description says large.",
+        "complication": "The shopper assumes equal prices mean the item record need not be corrected.",
+        "success_checks": [
+          "Distinguish price accuracy from item accuracy.",
+          "Confirm the medium item code.",
+          "Check the corrected record before payment."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "The receipt qualifies; the size still needs checking",
+          "setting": "A cashier handles a shirt exchange.",
+          "turns": [
+            [
+              "Cashier",
+              "Your receipt shows this shirt was bought ten days ago. Are you looking for another size?"
+            ],
+            [
+              "Shopper",
+              "Yes, one size larger. It's unused and still has the tags attached to it."
+            ],
+            [
+              "Cashier",
+              "That meets this store's stated thirty-day exchange terms. I'll check whether large is available."
+            ],
+            [
+              "Shopper",
+              "I'd like the same green, not a different color simply because it's easier to find."
+            ],
+            [
+              "Cashier",
+              "I'll search for large in green using this item code. May I keep the receipt here?"
+            ],
+            [
+              "Shopper",
+              "Of course. I have the shirt with me, so you can compare the labels."
+            ],
+            [
+              "Cashier",
+              "The stockroom colleague has found one large green shirt. Would you like to check the fit?"
+            ],
+            [
+              "Shopper",
+              "Yes, please. I don't want to exchange it twice because I guessed the size again."
+            ],
+            [
+              "Cashier",
+              "The fitting room is free. I'll keep this transaction open while you try that one."
+            ],
+            [
+              "Shopper",
+              "I'll be back shortly. Please keep my original shirt and receipt together at the counter."
+            ]
+          ]
+        },
+        {
+          "title": "A gift without the original price receipt",
+          "setting": "A shopper asks what a gift receipt can support.",
+          "turns": [
+            [
+              "Cashier",
+              "Do you have any proof of purchase with the scarf you'd like to return?"
+            ],
+            [
+              "Shopper",
+              "I have a gift receipt. I don't have the buyer's payment card or full receipt."
+            ],
+            [
+              "Cashier",
+              "For this store's stated gift terms, it can support an exchange or store credit after checking eligibility."
+            ],
+            [
+              "Shopper",
+              "Would store credit send the money back to the person who bought the scarf?"
+            ],
+            [
+              "Cashier",
+              "No, it would give you value to spend here; a refund is a different arrangement."
+            ],
+            [
+              "Shopper",
+              "I see. I would rather choose another scarf today if one suits me."
+            ],
+            [
+              "Cashier",
+              "Let's check the gift receipt and item first, then you can look at the available scarves."
+            ],
+            [
+              "Shopper",
+              "Please don't tell me the original price aloud. The gift receipt deliberately leaves it off."
+            ],
+            [
+              "Cashier",
+              "I'll handle the check discreetly and explain the available options without discussing the buyer's details."
+            ],
+            [
+              "Shopper",
+              "Thanks. I'll start with the blue scarves once you've confirmed the exchange can proceed."
+            ]
+          ]
+        },
+        {
+          "title": "A request outside the stated window",
+          "setting": "A cashier responds to an exception request.",
+          "turns": [
+            [
+              "Cashier",
+              "The receipt date is outside this store's thirty-day change-of-mind return window. What happened with the purchase?"
+            ],
+            [
+              "Shopper",
+              "I was traveling and couldn't come back sooner. The item is unused, with its tags."
+            ],
+            [
+              "Cashier",
+              "I can ask the supervisor to review those circumstances, but I can't approve an exception myself."
+            ],
+            [
+              "Shopper",
+              "Could you tell them I tried calling last week? I have the call time here."
+            ],
+            [
+              "Cashier",
+              "Yes. I'll pass on that detail and your request, without treating the review as approval."
+            ],
+            [
+              "Shopper",
+              "I'd like to speak with them directly if possible. I can wait a few minutes."
+            ],
+            [
+              "Cashier",
+              "The supervisor can speak with you here after finishing another query."
+            ],
+            [
+              "Shopper",
+              "Please keep my receipt nearby. I don't want to explain everything again from the beginning."
+            ],
+            [
+              "Cashier",
+              "I'll keep the receipt with it and summarize the date, condition, and your travel explanation."
+            ],
+            [
+              "Shopper",
+              "Thank you. I understand the decision hasn't been made; I'd just like the circumstances heard."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Different item, different price",
+        "brief": "An eligible exchange involves a $20 shirt. The shopper selects a different $26 style. The fictional store permits this exchange with a $6 additional payment. Stock is confirmed.",
+        "role_a": "Cashier: explain the six-dollar difference before proceeding.",
+        "role_b": "Shopper: can pay six but initially expects an even exchange.",
+        "opening_line": "Isn't an exchange always the same price?",
+        "complication": "The shopper asks whether the six dollars is a fee rather than a price difference.",
+        "success_checks": [
+          "Identify both item prices.",
+          "Explain the difference rather than invent an exchange fee.",
+          "Get the shopper's agreement before proceeding."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Received does not mean ready",
+          "setting": "An associate checks a shopper's order message.",
+          "turns": [
+            [
+              "Associate",
+              "Could I see the message heading and order reference so I can check its status?"
+            ],
+            [
+              "Shopper",
+              "It says we received your order, reference R61. I thought I could collect it now."
+            ],
+            [
+              "Associate",
+              "That's an acknowledgment, not the collection notification. One item is still being located."
+            ],
+            [
+              "Shopper",
+              "I've come across town. Can someone give me a definite update rather than leave me waiting?"
+            ],
+            [
+              "Associate",
+              "The collection colleague will update you at three, even if the search isn't finished."
+            ],
+            [
+              "Shopper",
+              "Does that mean everything will be on the collection shelf by three o'clock?"
+            ],
+            [
+              "Associate",
+              "I can't promise that. Three is the agreed update time; collection readiness is still unconfirmed."
+            ],
+            [
+              "Shopper",
+              "Please don't switch the missing item to a different color just to finish the order."
+            ],
+            [
+              "Associate",
+              "I'll pass that on. Your requested variation stays unchanged unless you agree otherwise."
+            ],
+            [
+              "Shopper",
+              "Thanks. I'll wait nearby until three and check for the update before returning to the counter."
+            ]
+          ]
+        },
+        {
+          "title": "Stockroom search for an empty shelf",
+          "setting": "An associate helps a shopper whose item is not on display.",
+          "turns": [
+            [
+              "Associate",
+              "The shelf is empty, but I can check whether this size is in the stockroom."
+            ],
+            [
+              "Shopper",
+              "Your screen says two available. Doesn't that mean you can give me one immediately?"
+            ],
+            [
+              "Associate",
+              "It gives us a stock record to check, not the item's exact present location."
+            ],
+            [
+              "Shopper",
+              "Could one be on the sales floor somewhere else, perhaps in the fitting-room returns?"
+            ],
+            [
+              "Associate",
+              "Possibly. I'll ask the colleague checking that area while I look in the stockroom."
+            ],
+            [
+              "Shopper",
+              "Please search for the medium, not just any item from the same product range."
+            ],
+            [
+              "Associate",
+              "I have the code for medium navy. I'll keep the size and color together in the request."
+            ],
+            [
+              "Shopper",
+              "How long should I stay here before checking with you again about the search?"
+            ],
+            [
+              "Associate",
+              "I'll come back to this display in five minutes with an update, whether found or not."
+            ],
+            [
+              "Shopper",
+              "That works. I'll look nearby, and you can tell me what you've actually located."
+            ]
+          ]
+        },
+        {
+          "title": "A reservation has an end time",
+          "setting": "An associate confirms a shopper's held item.",
+          "turns": [
+            [
+              "Associate",
+              "The jacket is reserved under your name until six today. Is collection before then possible?"
+            ],
+            [
+              "Shopper",
+              "I can arrive at five-thirty. Do I need to pay again because you reserved it?"
+            ],
+            [
+              "Associate",
+              "No payment has been taken for this hold. You'll decide about the purchase at collection."
+            ],
+            [
+              "Shopper",
+              "Could I try it on before deciding, or does reserving it commit me to buying it?"
+            ],
+            [
+              "Associate",
+              "Under today's stated hold arrangement, you can check the fit before deciding to purchase."
+            ],
+            [
+              "Shopper",
+              "That's helpful. I might be delayed; should I assume the hold continues after six?"
+            ],
+            [
+              "Associate",
+              "Please contact us if you're delayed. I can't promise an extension beyond the agreed time."
+            ],
+            [
+              "Shopper",
+              "Then I'll aim for five-thirty and call if that changes, rather than arrive after closing."
+            ],
+            [
+              "Associate",
+              "The store closes at seven, but remember your item's agreed hold ends at six."
+            ],
+            [
+              "Shopper",
+              "Understood. The two times are different; I'll keep the hold deadline in mind."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two customers have the same surname",
+        "brief": "Two collection orders are labeled Chen. Their references are C41 and C47. The shopper presents C47; only C41 is on the front shelf, while C47 is being checked in back.",
+        "role_a": "Associate: use the order reference rather than surname alone.",
+        "role_b": "Shopper: need C47 and are willing to wait for its status.",
+        "opening_line": "That bag has my surname. Is it mine?",
+        "complication": "The shopper says the bag's color looks familiar.",
+        "success_checks": [
+          "Confirm C47 as the required reference.",
+          "Do not release C41 because of a matching surname.",
+          "Give an accurate update on the search for C47."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "A wider checkout without unwanted help",
+          "setting": "An associate responds to a shopper's access request.",
+          "turns": [
+            [
+              "Associate",
+              "Lane four's accessible checkout is open and has wider space. Would that work better for you?"
+            ],
+            [
+              "Shopper",
+              "Yes, this one feels too narrow with my mobility aid. I can carry my bag myself."
+            ],
+            [
+              "Associate",
+              "Of course. Would you prefer directions, or would you like someone to walk with you?"
+            ],
+            [
+              "Shopper",
+              "Directions, please. I can get there, but I don't want to lose my place in line."
+            ],
+            [
+              "Associate",
+              "I'll ask the colleague at four to keep your place while we transfer the transaction."
+            ],
+            [
+              "Shopper",
+              "Thank you. Is the route past the display wide enough, or should I go another way?"
+            ],
+            [
+              "Associate",
+              "The clear customer route runs along this side. I'll point out where it joins lane four."
+            ],
+            [
+              "Shopper",
+              "I can see it now. Please leave my bag with me while I move over."
+            ],
+            [
+              "Associate",
+              "My colleague is ready at four and will pick up your transaction."
+            ],
+            [
+              "Shopper",
+              "Good. I'll go across now with my bag. Thank you for arranging that."
+            ]
+          ]
+        },
+        {
+          "title": "A price query blocks the lane",
+          "setting": "A cashier explains a delay without disclosing another shopper's purchase.",
+          "turns": [
+            [
+              "Cashier",
+              "This checkout lane is waiting for a price check. Lane two can take the next customer."
+            ],
+            [
+              "Shopper",
+              "I'm next in this queue. Will moving mean I have to start again behind someone else?"
+            ],
+            [
+              "Cashier",
+              "My colleague is opening it for the next person here, so you can go directly across."
+            ],
+            [
+              "Shopper",
+              "What is the customer ahead buying that takes so long to check at the register?"
+            ],
+            [
+              "Cashier",
+              "We're waiting for a price check; I can't discuss another shopper's purchase."
+            ],
+            [
+              "Shopper",
+              "Fair enough. I have a few fragile items; I'd rather keep them in this basket."
+            ],
+            [
+              "Cashier",
+              "You can take the basket with you. My colleague will help with checkout at lane two."
+            ],
+            [
+              "Shopper",
+              "Should I wait for an announcement, or can I move there once you point me over?"
+            ],
+            [
+              "Cashier",
+              "You can move now. Lane two is staffed and ready."
+            ],
+            [
+              "Shopper",
+              "Thanks. I'll follow the clear aisle rather than cut through the closed lane beside it."
+            ]
+          ]
+        },
+        {
+          "title": "An assistance call with a useful location",
+          "setting": "An associate requests help for a shopper on the sales floor.",
+          "turns": [
+            [
+              "Associate",
+              "Assistance call for bedding, please: a customer needs a blue cover from the high shelf."
+            ],
+            [
+              "Colleague",
+              "Which item and size do they want? There are several similar packages on that wall."
+            ],
+            [
+              "Associate",
+              "It's the queen-size blue cover, code B24, on the top display shelf beside the pillows."
+            ],
+            [
+              "Colleague",
+              "I'll come to that location. Have you promised the customer an exact collection time?"
+            ],
+            [
+              "Associate",
+              "No. I said I was requesting help and would stay here while we wait."
+            ],
+            [
+              "Colleague",
+              "Good. Please keep the aisle available; I need room to assess the retrieval properly."
+            ],
+            [
+              "Associate",
+              "The customer is waiting by the lower display, and nobody has attempted to climb for it."
+            ],
+            [
+              "Colleague",
+              "I'm here now. Could you confirm the selected package with the customer before I begin?"
+            ],
+            [
+              "Associate",
+              "Yes. They pointed to B24 in queen, not the similar king-size package beside it."
+            ],
+            [
+              "Colleague",
+              "I've confirmed that with them. I'll handle the retrieval using the store's equipment and procedures."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The shopper wants a seated pause",
+        "brief": "A shopper becomes tired in a long checkout queue and asks for a seat, without describing a medical emergency. A customer seat is available beside lane one; the cashier can call them at their turn.",
+        "role_a": "Associate: offer the stated seat and preserve the shopper's place.",
+        "role_b": "Shopper: want to keep your basket and hear when your turn arrives.",
+        "opening_line": "Could I sit down without losing my place?",
+        "complication": "A colleague starts asking personal health questions unrelated to arranging the seat.",
+        "success_checks": [
+          "Respond to the requested practical help.",
+          "Keep the basket choice with the shopper.",
+          "Confirm how the cashier will call the shopper."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "A five-dollar difference needs checking",
+          "setting": "An outgoing cashier gives a shift-change report.",
+          "turns": [
+            [
+              "Cashier",
+              "The first count is one-seventy-five against an expected one-eighty. The second check hasn't happened yet."
+            ],
+            [
+              "Supervisor",
+              "That's a five-dollar cash discrepancy. Have we found an explanation, or does it still need checking?"
+            ],
+            [
+              "Cashier",
+              "Still unknown. I haven't attributed it to a sale, the till float, or any person."
+            ],
+            [
+              "Supervisor",
+              "I'll take the second check through our cash-handling procedure. Is anything else waiting on this shift?"
+            ],
+            [
+              "Cashier",
+              "A customer price query for item P32 is open. The shelf label still needs confirmation."
+            ],
+            [
+              "Supervisor",
+              "I'll take that separately. Please give me the item reference and the customer's stated price."
+            ],
+            [
+              "Cashier",
+              "They expected twelve; the screen showed fourteen. No payment was taken while the query remained open."
+            ],
+            [
+              "Supervisor",
+              "I've got it. I'll review the cash count and contact the floor colleague about P32."
+            ],
+            [
+              "Cashier",
+              "Can you confirm both follow-ups are yours before I leave the counter?"
+            ],
+            [
+              "Supervisor",
+              "Confirmed. I'll record each result in the shift log rather than combine two unrelated issues."
+            ]
+          ]
+        },
+        {
+          "title": "The starting float is not sales revenue",
+          "setting": "A new cashier asks about a shift report.",
+          "turns": [
+            [
+              "Cashier",
+              "The drawer started with forty dollars. Is everything in it now counted as sales?"
+            ],
+            [
+              "Supervisor",
+              "No. The till float is starting cash for change, so it isn't money from today's purchases."
+            ],
+            [
+              "Cashier",
+              "I see the forty recorded here. I should keep that amount separate when describing the shift."
+            ],
+            [
+              "Supervisor",
+              "Yes. Keep the float separate from sales on this report."
+            ],
+            [
+              "Cashier",
+              "There's also a void for a mug. Does that entry mean the mug was returned after payment?"
+            ],
+            [
+              "Supervisor",
+              "No. This void cancelled the mug entry before the customer paid."
+            ],
+            [
+              "Cashier",
+              "Then I'll refer to the recorded event as a void, not assume there was a refund."
+            ],
+            [
+              "Supervisor",
+              "Correct. If a report line is unclear, ask about that transaction reference before changing its description."
+            ],
+            [
+              "Cashier",
+              "I'll ask about reference V18 now. Its time overlaps with my break, so I didn't handle it."
+            ],
+            [
+              "Supervisor",
+              "I'll check that reference with the colleague who did, and we'll leave its explanation open meanwhile."
+            ]
+          ]
+        },
+        {
+          "title": "An unfinished call needs a named owner",
+          "setting": "A cashier passes a callback request to the next shift.",
+          "turns": [
+            [
+              "Cashier",
+              "A shopper called about receipt R82 and asked whether their exchange review had been completed."
+            ],
+            [
+              "Incoming cashier",
+              "Do we have an answer, or am I taking over the task of checking it?"
+            ],
+            [
+              "Cashier",
+              "You're taking over the check. The supervisor hasn't recorded a decision in the shift log yet."
+            ],
+            [
+              "Incoming cashier",
+              "I'll ask the supervisor, then update the customer through the store's usual contact channel."
+            ],
+            [
+              "Cashier",
+              "Please don't say the exchange is approved just because the shopper has called twice."
+            ],
+            [
+              "Incoming cashier",
+              "I won't. What response time was actually offered during the earlier call this afternoon?"
+            ],
+            [
+              "Cashier",
+              "They were promised an update by five, including if the review remained unfinished then."
+            ],
+            [
+              "Incoming cashier",
+              "I've noted five as the update deadline. Is their preferred contact method already recorded?"
+            ],
+            [
+              "Cashier",
+              "Yes, in the customer record linked to R82; no need to repeat private details here."
+            ],
+            [
+              "Incoming cashier",
+              "I'll handle that callback. You can mark the follow-up assigned to me, not resolved yet."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A till transfer and a missing acknowledgment",
+        "brief": "A cashier transferred a price-query record to the service desk but has no acknowledgment. The customer is waiting at lane two. The desk colleague can accept it now.",
+        "role_a": "Outgoing cashier: confirm actual acceptance before leaving.",
+        "role_b": "Service colleague: accept the query for item J18 and tell the customer where to wait.",
+        "opening_line": "I sent the query earlier; can you confirm you're handling it?",
+        "complication": "The sender initially treats a sent message as a completed customer response.",
+        "success_checks": [
+          "Distinguish sending from acceptance.",
+          "Name J18 and the waiting location.",
+          "Confirm who will give the next update."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The online photograph includes an accessory",
+      "setting": "An associate checks which part of a product image the shopper wants. Fictional final prices are thirty dollars for the bag and eight for the pouch, with no additional charges.",
+      "dialogue": [
+        [
+          "Associate",
+          "The photograph shows a bag and pouch. Are you looking for both, or just the bag?"
+        ],
+        [
+          "Shopper",
+          "Both, if they are sold together. I couldn't tell whether the pouch was part of the pictured product."
+        ],
+        [
+          "Associate",
+          "Let's check the description. Product photographs sometimes include accessories sold separately."
+        ],
+        [
+          "Shopper",
+          "The description says shoulder bag B72, but the smaller pouch doesn't have a visible label in the picture."
+        ],
+        [
+          "Associate",
+          "This product listing identifies the bag only. The pouch has a separate code, P16, on our display here."
+        ],
+        [
+          "Shopper",
+          "Then I shouldn't assume the advertised bag price includes the pouch just because they appear together online."
+        ],
+        [
+          "Associate",
+          "Correct. Would you like the bag alone, or would you like me to check the pouch's separate price?"
+        ],
+        [
+          "Shopper",
+          "Please check both prices. I'm choosing a gift and need the total before deciding whether to include it."
+        ],
+        [
+          "Associate",
+          "The bag is thirty dollars; the pouch is eight. Both together would be thirty-eight dollars."
+        ],
+        [
+          "Shopper",
+          "I'll take the bag alone. Could you make sure the pouch isn't included in the items sent to checkout?"
+        ],
+        [
+          "Associate",
+          "Certainly. I'll send only bag B72 to checkout and leave the pouch here."
+        ],
+        [
+          "Shopper",
+          "Thanks. I'll take the bag on its own and leave the pouch today."
+        ]
+      ],
+      "notes": [
+        "'Sold separately' explains that a photograph can contain more than one purchasable item.",
+        "'The actual offer' distinguishes the product description from the visual presentation."
+      ]
+    },
+    {
+      "title": "A display sample has a loose seam",
+      "setting": "An associate helps a shopper who notices a visible flaw.",
+      "dialogue": [
+        [
+          "Associate",
+          "You've pointed to the sleeve join. Is the problem its fit or stitching?"
+        ],
+        [
+          "Shopper",
+          "The stitching appears loose here. I like the fit, but I don't want this display sample."
+        ],
+        [
+          "Associate",
+          "I see the area you're indicating. We can check another item in the same style and size."
+        ],
+        [
+          "Shopper",
+          "Please don't tell me every one has that problem. We've only looked at this one sample so far."
+        ],
+        [
+          "Associate",
+          "Agreed. This observation concerns this garment; it doesn't establish a defect across the whole product range."
+        ],
+        [
+          "Shopper",
+          "Could you check whether an unopened one is available, without promising that the packaging proves it is perfect?"
+        ],
+        [
+          "Associate",
+          "Yes. I'll look for the same code and let you inspect the actual item before choosing it."
+        ],
+        [
+          "Shopper",
+          "Thanks. I don't need a different size or color, just another example of the item I've selected."
+        ],
+        [
+          "Associate",
+          "There is another medium in navy. Here it is; the code matches, and you can examine the seam yourself."
+        ],
+        [
+          "Shopper",
+          "This one looks different at that join. I'd like to try it to confirm the fit hasn't changed."
+        ],
+        [
+          "Associate",
+          "Certainly. I'll keep this sample separate and tell my colleague about the loose stitching."
+        ],
+        [
+          "Shopper",
+          "Thanks. I'll try this one and meet you outside the fitting room."
+        ]
+      ],
+      "notes": [
+        "'This particular garment' keeps a report narrower than a claim about every item.",
+        "'Another example' means another physical item, not necessarily a different product variation."
+      ]
+    },
+    {
+      "title": "The checkout price and shelf message disagree",
+      "setting": "A cashier takes a shopper's specific price concern to a colleague.",
+      "dialogue": [
+        [
+          "Cashier",
+          "This item scanned at eight dollars, but you expected six. Which shelf message did you see?"
+        ],
+        [
+          "Shopper",
+          "The label below the red bottle said six. I didn't check its product code carefully."
+        ],
+        [
+          "Cashier",
+          "I'll request a price check on this exact size and variety before completing the sale."
+        ],
+        [
+          "Shopper",
+          "Can I keep my place here while someone checks, rather than join another queue afterward?"
+        ],
+        [
+          "Cashier",
+          "Yes, I can hold this transaction here. A colleague is checking the matching label now."
+        ],
+        [
+          "Shopper",
+          "Thanks. I don't want a different bottle substituted just because its price happens to match."
+        ],
+        [
+          "Cashier",
+          "Understood. We're verifying your selected item, not changing it. The price remains disputed for now."
+        ],
+        [
+          "Shopper",
+          "Would the fact that it scanned at eight automatically settle the disagreement in the register's favor?"
+        ],
+        [
+          "Cashier",
+          "No, that's why we're checking both records. The supervisor will confirm the applicable store response."
+        ],
+        [
+          "Shopper",
+          "All right. I'll wait for that confirmation before deciding whether I still want this bottle."
+        ],
+        [
+          "Cashier",
+          "The supervisor has confirmed six for this sale. I'll show the revised item price before payment."
+        ],
+        [
+          "Shopper",
+          "I can see six on the screen now. Please continue with that confirmed amount."
+        ]
+      ],
+      "notes": [
+        "'For this sale' keeps a decision specific rather than stating a universal pricing rule.",
+        "'Before completing the sale' establishes when the shopper can review the amount."
+      ]
+    },
+    {
+      "title": "A shopper changes one item before payment",
+      "setting": "A cashier clarifies a basket change before payment. In this fictional transaction, the bowl is six dollars, the mug is eight, and no other charges apply.",
+      "dialogue": [
+        [
+          "Cashier",
+          "You asked to remove the second item. Do you mean the blue bowl or the white plate?"
+        ],
+        [
+          "Shopper",
+          "The white plate, please. I still want the bowl and the mug on the counter."
+        ],
+        [
+          "Cashier",
+          "I'll remove the plate from this unpaid basket, then read the remaining items back to you."
+        ],
+        [
+          "Shopper",
+          "Does removing it mean I need a return receipt, or is that only after paying?"
+        ],
+        [
+          "Cashier",
+          "A return concerns a completed purchase. Here we're changing your selection before payment has started."
+        ],
+        [
+          "Shopper",
+          "Then please keep the other two items separate from the plate so I don't take it accidentally."
+        ],
+        [
+          "Cashier",
+          "The subtotal is fourteen: bowl at six, mug at eight. The plate is off the basket."
+        ],
+        [
+          "Shopper",
+          "So fourteen for the bowl and mug. Can you turn the screen so I can check?"
+        ],
+        [
+          "Cashier",
+          "Yes, fourteen. Would you like to check the item descriptions before choosing your payment method today?"
+        ],
+        [
+          "Shopper",
+          "They match. I'll use cash, but I haven't handed you the money yet this time."
+        ],
+        [
+          "Cashier",
+          "Understood. The basket is confirmed, but the purchase remains unpaid until the payment step is completed."
+        ],
+        [
+          "Shopper",
+          "The two items are right now. Here's the cash for the bowl and mug, please."
+        ]
+      ],
+      "notes": [
+        "'Unpaid basket' distinguishes a changed selection from a return.",
+        "'The basket is confirmed' does not mean the payment has completed."
+      ]
+    },
+    {
+      "title": "The replacement is available in another branch",
+      "setting": "A cashier discusses an exchange after local stock has been checked.",
+      "dialogue": [
+        [
+          "Cashier",
+          "This shirt qualifies for exchange, but the medium black version isn't here. The next branch lists one."
+        ],
+        [
+          "Shopper",
+          "Could I collect it there today, or does the listing need checking before I travel?"
+        ],
+        [
+          "Cashier",
+          "I'll call to confirm the physical item and ask about their collection arrangements before suggesting a trip."
+        ],
+        [
+          "Shopper",
+          "Please mention that I have an exchange, not a new purchase. I don't want confusion at their counter."
+        ],
+        [
+          "Cashier",
+          "I have. Their colleague has found the item and can hold it until five under today's arrangement."
+        ],
+        [
+          "Shopper",
+          "It's already four. I can reach them by half past four if the bus runs normally."
+        ],
+        [
+          "Cashier",
+          "They close at six, but the agreed hold ends at five. Shall I put the hold in your name?"
+        ],
+        [
+          "Shopper",
+          "Yes, please. What do I need to take so their cashier can find the arrangement easily?"
+        ],
+        [
+          "Cashier",
+          "Bring the shirt and receipt. Their cashier will handle the exchange; H24 identifies the hold."
+        ],
+        [
+          "Shopper",
+          "So the hold secures the item until five, but this counter hasn't completed my exchange yet?"
+        ],
+        [
+          "Cashier",
+          "That's right. The shirt and receipt are still yours to take, and the other branch will handle the transaction."
+        ],
+        [
+          "Shopper",
+          "I've got the address and H24. I'll head there now to collect before five."
+        ]
+      ],
+      "notes": [
+        "'Hold ends at five' distinguishes a stock arrangement from the shop's closing time.",
+        "'Hasn't completed ... yet' keeps a reservation separate from a finished exchange."
+      ]
+    },
+    {
+      "title": "The shelf bag contains only part of the order",
+      "setting": "An associate checks an order before releasing it for pickup.",
+      "dialogue": [
+        [
+          "Associate",
+          "Your order lists two items, but this collection bag has one. Let's check before you leave."
+        ],
+        [
+          "Shopper",
+          "I was about to take it because the label has my name and order number."
+        ],
+        [
+          "Associate",
+          "The label matches, but the contents don't yet match the full order. One item remains unlocated."
+        ],
+        [
+          "Shopper",
+          "Could it be packed separately? The missing item is much larger than the one in this bag."
+        ],
+        [
+          "Associate",
+          "That's possible. I'll ask the collection colleague to check the large-item area using the same order reference."
+        ],
+        [
+          "Shopper",
+          "Please don't mark both items collected while you search. I haven't received the larger one yet."
+        ],
+        [
+          "Associate",
+          "I won't describe it as received. Would you prefer to wait here while my colleague checks?"
+        ],
+        [
+          "Shopper",
+          "Yes, for a few minutes. I need both for tomorrow, so the missing item matters."
+        ],
+        [
+          "Associate",
+          "They've found the second package and checked its code against your order. It's coming to this counter now."
+        ],
+        [
+          "Shopper",
+          "Great. Can we compare the two items with the order together before finishing the handover?"
+        ],
+        [
+          "Associate",
+          "Certainly. Here are both descriptions and quantities. Please check that these are the items you expected to collect."
+        ],
+        [
+          "Shopper",
+          "They match now. I'll take both packages, and you can complete the collection record for both items."
+        ]
+      ],
+      "notes": [
+        "'Contents don't yet match' focuses on the concrete discrepancy rather than the label alone.",
+        "'I haven't received ... yet' prevents an unfinished handover from being recorded as complete."
+      ]
+    },
+    {
+      "title": "A queue splits around a display",
+      "setting": "An associate helps a shopper understand which queue serves two open lanes.",
+      "dialogue": [
+        [
+          "Associate",
+          "Both lanes serve this queue. The display makes it look like two lines."
+        ],
+        [
+          "Shopper",
+          "I joined beside the display because I couldn't see the sign. Have I accidentally moved ahead of someone?"
+        ],
+        [
+          "Associate",
+          "The queue continues behind the red basket stand. I can show you where the current end is."
+        ],
+        [
+          "Shopper",
+          "Please do. I don't want an argument with people who have been waiting longer than me."
+        ],
+        [
+          "Associate",
+          "The sign is partly hidden, so the confusion is understandable. I'll ask a colleague to move the obstruction."
+        ],
+        [
+          "Shopper",
+          "Should I choose lane one now, or wait until a cashier calls the next person forward?"
+        ],
+        [
+          "Associate",
+          "Wait here until either cashier calls. Both take the next person from this line."
+        ],
+        [
+          "Shopper",
+          "That makes sense. Are returns handled in these lanes, or should I go to the separate service desk?"
+        ],
+        [
+          "Associate",
+          "Returns are at the service desk by the entrance. Are you here for a return rather than a purchase?"
+        ],
+        [
+          "Shopper",
+          "Yes, an exchange. I should have asked before joining; I only have this item and its receipt."
+        ],
+        [
+          "Associate",
+          "Then the service desk is the right place. The colleague there can check your exchange request directly."
+        ],
+        [
+          "Shopper",
+          "Thanks. I'll go there, and the queue can keep moving without me waiting in the wrong place."
+        ]
+      ],
+      "notes": [
+        "'From this same line' gives an unambiguous queue arrangement.",
+        "'Rather than a purchase' checks the task before giving a final destination."
+      ]
+    },
+    {
+      "title": "A correction reaches the next shift in time",
+      "setting": "A supervisor checks an outgoing cashier's correction to a customer message.",
+      "dialogue": [
+        [
+          "Supervisor",
+          "The shift log says the customer was refunded, but the transaction screen shows only a review request."
+        ],
+        [
+          "Cashier",
+          "I used refunded too soon. The supervisor had accepted the query, not approved or processed any money back."
+        ],
+        [
+          "Supervisor",
+          "We need to correct the status and tell the colleague taking the customer's callback at five."
+        ],
+        [
+          "Cashier",
+          "I'll change the handover wording to refund review pending, with no completed refund recorded for reference R39."
+        ],
+        [
+          "Supervisor",
+          "Did the customer also receive the earlier wording, or was it only in the internal shift log?"
+        ],
+        [
+          "Cashier",
+          "They heard it on the phone. I need to correct that directly rather than only update our notes."
+        ],
+        [
+          "Supervisor",
+          "Please explain the actual status without promising a new outcome. The review owner can answer any decision questions."
+        ],
+        [
+          "Cashier",
+          "I've reached the customer. I apologized, explained the pending review, and confirmed they will still receive an update at five."
+        ],
+        [
+          "Supervisor",
+          "Has the incoming cashier accepted the callback and received the corrected status for R39?"
+        ],
+        [
+          "Cashier",
+          "Yes. Morgan has accepted the five o'clock update and knows the review is still awaiting a decision."
+        ],
+        [
+          "Supervisor",
+          "Both tasks are assigned. Preserve the earlier entry through our normal correction process."
+        ],
+        [
+          "Cashier",
+          "Done. The log shows the correction, and Morgan will report the review outcome."
+        ]
+      ],
+      "notes": [
+        "'Too soon' acknowledges an inaccurate completion claim.",
+        "'Accepted the query' does not mean approved the requested remedy."
+      ]
+    }
+  ]
+}

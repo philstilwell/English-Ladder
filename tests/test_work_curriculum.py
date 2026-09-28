@@ -16,7 +16,7 @@ class WorkCurriculumTests(unittest.TestCase):
 
     def test_complete_inventory_and_authored_cases(self):
         result = validate_tracks(self.tracks)
-        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (41, 328, 164))
+        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (66, 528, 264))
         models = [m['model'] for t in self.tracks for m in t['modules']]
         self.assertEqual(len(models), len(set(models)))
 
@@ -112,7 +112,7 @@ class WorkCurriculumTests(unittest.TestCase):
                     positions.add(q['correct_index'])
                     self.assertEqual(q['answer'],q['options'][q['correct_index']])
                     self.assertTrue(all(len(f.split())>=5 for f in q['feedback']))
-        self.assertEqual(positions,{0,1,2})
+        self.assertEqual(positions,{0,1,2,3})
 
 
 if __name__=='__main__': unittest.main()

@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "medical-assistants",
+    "title": "Medical Assisting English",
+    "summary": "Clarify visit details, distinguish reported symptoms from observations, reconcile information for clinician review, track referrals, and handle patient questions with accurate, respectful English.",
+    "roles": "Medical assistants and outpatient clinic support staff",
+    "category": "Health & life sciences",
+    "scope_note": "Every patient, symptom report, date, measurement context, and clinic arrangement is fictional language practice. This is not clinical, diagnostic, triage, medication, specimen-collection, privacy-law, or treatment training. Duties depend on local rules, training, delegation, and supervision. Qualified clinicians assess urgency and make care decisions; use the workplace's actual emergency and escalation procedures, not these scripts, for real concerns.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Medical Assistants",
+        "url": "https://www.bls.gov/ooh/healthcare/medical-assistants.htm"
+      },
+      {
+        "title": "American Association of Medical Assistants: Medical Assisting",
+        "url": "https://www.aama-ntl.org/medical-assisting"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Clarifying the visit at check-in",
+        "collocations": [
+          "confirm the visit purpose: check what the patient expects to discuss",
+          "verify patient identifiers: establish the correct record using the clinic's checks",
+          "clarify an intake response: ask what an unclear answer means",
+          "use the preferred name: address the patient as requested without confusing record identification"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "The schedule says annual review. Patient Alex expected a visit about a recent concern. The assistant cannot decide whether the appointment type is suitable. Nurse Dana can clarify the visit plan. Alex prefers Alex, while the verified record says Alexandra.",
+          "model": "Alex, the schedule describes an annual review, but you expected to discuss a recent concern. I will tell Dana about that difference so she can clarify the visit plan with you. I can use Alex when addressing you while keeping the verified record linked to Alexandra. I haven't confirmed a change to the appointment type."
+        },
+        "workshop": {
+          "title": "Acknowledge the expectation before checking the booking",
+          "goal": "Describe a visit mismatch without dismissing the patient's reason for attending.",
+          "explanation": "A booking label and the patient's chief concern serve different purposes. Ask what the patient expected, preserve their wording, and leave decisions about the visit's clinical suitability to the team.",
+          "frames": [
+            "The schedule says ___; you expected ___.",
+            "How would you describe your main concern today?",
+            "I can address you as ___ while verifying the record under ___."
+          ],
+          "before": "You're booked for a review, so that's all we can discuss.",
+          "after": "The booking says review; I'll tell Dana about your additional concern so she can clarify the plan.",
+          "reason": "This checks the mismatch without making an unsupported scheduling or clinical decision.",
+          "role_b": "Alex: explain the different expectation and ask staff to use your preferred name.",
+          "challenge": "Ask whether changing the display name also changes the verified identity record.",
+          "questions": [
+            {
+              "prompt": "Patient: Alex is what I'd like you to call me.\nAssistant: I'll use your ____, while checking the record separately.",
+              "options": [
+                "chief concern",
+                "appointment type",
+                "preferred name",
+                "referral reason"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Chief concern is the reason for seeking care.",
+                "Appointment type describes the booked visit.",
+                "Correct. Preferred name is the requested form of address.",
+                "Referral reason concerns why another service was requested."
+              ]
+            },
+            {
+              "prompt": "Patient: The booking says annual review, but I expected to discuss a new concern. What happens now?\nAssistant: I'll ask Dana ____ the visit plan before we confirm any change.",
+              "options": [
+                "clarifying",
+                "to clarify",
+                "clarified",
+                "clarification"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Clarifying is an -ing form; ask someone requires to plus a verb here.",
+                "Correct. Ask Dana to clarify uses the request pattern ask someone to do something.",
+                "Clarified is a past form; this request needs to plus the base verb.",
+                "Clarification is a noun, but the gap needs a verb describing Dana's requested action."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "chief concern",
+          "intake form",
+          "patient identifier",
+          "preferred name"
+        ]
+      },
+      {
+        "title": "Rooming and factual patient reports",
+        "collocations": [
+          "record the patient's words: preserve the meaning and source of a symptom account",
+          "clarify symptom onset: ask when the patient says a change began",
+          "distinguish reported from observed: separate the patient's account from staff observations",
+          "relay a measurement query: pass uncertainty about a recorded measurement to the clinician"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "During rooming, patient Pat reports tiredness since Monday. The assistant observed Pat answering questions while seated but has not assessed the cause or severity. Nurse Dana is receiving the report. No measurement values or clinical conclusions are supplied.",
+          "model": "Pat reports feeling tired since Monday. During our conversation, Pat answered questions while seated. That observation does not explain the tiredness or establish its severity. Dana, I am passing on the reported onset and what I directly observed; Pat wants to discuss the change with the clinician. I have not offered an explanation for it."
+        },
+        "workshop": {
+          "title": "Separate a report from an interpretation",
+          "goal": "Attribute symptom language accurately without diagnosing or minimizing.",
+          "explanation": "Use 'reports' for the patient's experience and 'I observed' for what you directly noticed. Neither phrase establishes a diagnosis. Time words such as 'since Monday' and 'on Monday' convey different durations.",
+          "frames": [
+            "The patient reports ___ since ___.",
+            "I observed ___ during ___.",
+            "The cause and ___ have not been established in this account."
+          ],
+          "before": "Pat is tired because of poor sleep.",
+          "after": "Pat reports tiredness since Monday; the cause has not been assessed in this exchange.",
+          "reason": "The new wording keeps the stated experience without adding a cause.",
+          "role_b": "Nurse Dana: ask which parts came from Pat and which were directly observed.",
+          "challenge": "Ask whether answering questions proves the reported concern is minor.",
+          "questions": [
+            {
+              "prompt": "Nurse: Did you see the tiredness begin on Monday?\nAssistant: No. Pat ____ that it began then.",
+              "options": [
+                "measured",
+                "reported",
+                "diagnosed",
+                "observed"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Measured requires an actual measurement, not this account.",
+                "Correct. Reported attributes the onset to Pat's account.",
+                "Diagnosed means identified a condition, which Pat did not do here.",
+                "Observed would attribute a direct observation rather than a symptom report."
+              ]
+            },
+            {
+              "prompt": "Patient: It started Monday and is still happening.\nAssistant: You have experienced it ____ Monday.",
+              "options": [
+                "on",
+                "during",
+                "since",
+                "by"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "On identifies a day without expressing continuation to now.",
+                "During refers to a period rather than this starting point.",
+                "Correct. Since links a starting point to continuing experience.",
+                "By gives a deadline or latest point, not this duration."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "rooming",
+          "vital signs",
+          "reported symptom",
+          "onset"
+        ]
+      },
+      {
+        "title": "Medication histories with clear sources",
+        "collocations": [
+          "compare medication lists: identify differences between two stated sources",
+          "attribute a reported change: say who reported a medication change",
+          "flag an allergy-history discrepancy: draw attention to conflicting recorded allergy information",
+          "request clinician reconciliation: ask the responsible clinician to resolve medication-list differences"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Patient Ren says one medicine was stopped at another clinic. The local list still includes it. Ren does not have the other clinic's instruction. Nurse Dana can review the discrepancy with the clinician; the assistant cannot confirm discontinuation or change instructions.",
+          "model": "Dana, could you review this medication-list discrepancy with the clinician? Ren reports that another clinic stopped one medicine, but our list still includes it and we do not have that instruction. Please clarify the current list with Ren. I have recorded the report as unverified and have not advised starting, stopping, or changing anything."
+        },
+        "workshop": {
+          "title": "Ask for reconciliation, not a guessed correction",
+          "goal": "Identify conflicting medication information and request a clinician's review.",
+          "explanation": "A patient report is important evidence to relay, not an instruction the assistant independently verifies. Keep source, date, and uncertainty visible. Do not infer a medicine from color or recommend changes.",
+          "frames": [
+            "The patient reports ___; the local list still shows ___.",
+            "We do not yet have ___ from ___.",
+            "Could you review this difference with ___?"
+          ],
+          "before": "I'll remove it because you think the other clinic stopped it.",
+          "after": "I'll flag your report for the clinician; the current list still needs reconciliation.",
+          "reason": "This preserves the reported change without independently deciding the medication plan.",
+          "role_b": "Ren: explain that another clinic discussed a change, but you do not have its instructions.",
+          "challenge": "Ask the assistant whether to take the medicine tonight; redirect the question to the clinician.",
+          "questions": [
+            {
+              "prompt": "Nurse: Has the other clinic confirmed the change?\nAssistant: No. It is a ____ change from the patient.",
+              "options": [
+                "reported",
+                "reconciled",
+                "prescribed",
+                "verified"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Reported identifies the source without verification.",
+                "Reconciled would imply that differences were resolved.",
+                "Prescribed implies a current authorized instruction.",
+                "Verified falsely says confirmation occurred."
+              ]
+            },
+            {
+              "prompt": "Patient: I buy this medicine without a prescription. Should I mention it in the history?\nAssistant: Yes, tell the clinician about the ____ medicine as well.",
+              "options": [
+                "inpatient",
+                "nonprescription",
+                "discontinued",
+                "compounded"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Inpatient describes a care setting, not purchase without a prescription.",
+                "Correct. Nonprescription names the category described.",
+                "Discontinued means stopped, which is not stated.",
+                "Compounded describes preparation, not whether a prescription is needed."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "medication reconciliation",
+          "medication list",
+          "nonprescription medicine",
+          "allergy history"
+        ]
+      },
+      {
+        "title": "Laboratory paperwork and specimen queries",
+        "collocations": [
+          "match the requisition: compare the requested test details with the accompanying record",
+          "clarify the collection time: obtain the time of sampling rather than delivery",
+          "flag a label mismatch: report disagreement between identifiers for review",
+          "confirm laboratory receipt: establish that the receiving laboratory has logged the specimen"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A requisition gives 09:20 as collection time; the courier sheet says 10:05 arrival. A colleague proposes replacing 09:20 with 10:05. Both times describe different events. No identity discrepancy or test result is stated.",
+          "model": "Those times refer to different events. The requisition records collection at nine twenty, while the courier sheet records arrival at ten oh five. Please keep the two labels clear rather than replace one time with the other. If either source is questioned, we should ask the recording team to clarify that specific entry."
+        },
+        "workshop": {
+          "title": "Clarify which event a timestamp describes",
+          "goal": "Distinguish collection, dispatch, and receipt in a laboratory enquiry.",
+          "explanation": "An accurate time paired with the wrong event is misleading. Ask who recorded the time and what happened then. This lesson does not teach specimen collection, labeling, handling, acceptance, or testing procedures.",
+          "frames": [
+            "Does ___ refer to collection or receipt?",
+            "The requisition records ___; the courier sheet records ___.",
+            "Which source confirms ___?"
+          ],
+          "before": "The sample time is ten oh five.",
+          "after": "Ten oh five is courier arrival; the recorded collection time is nine twenty.",
+          "reason": "The revision attaches each time to the correct event.",
+          "role_b": "Colleague: you think the later courier time should replace the earlier requisition time.",
+          "challenge": "Ask whether laboratory receipt guarantees that the specimen has been accepted for testing.",
+          "questions": [
+            {
+              "prompt": "Colleague: Which time tells us when the sample was obtained, not when it arrived?\nAssistant: The ____ time.",
+              "options": [
+                "receipt",
+                "dispatch",
+                "collection",
+                "reporting"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Receipt concerns arrival at the receiving location.",
+                "Dispatch concerns sending the specimen onward.",
+                "Correct. Collection is when the sample was obtained.",
+                "Reporting concerns communication of test information."
+              ]
+            },
+            {
+              "prompt": "Laboratory: We logged arrival, but suitability review is incomplete.\nAssistant: Receipt is confirmed; acceptance is still ____.",
+              "options": [
+                "pending",
+                "completed",
+                "withdrawn",
+                "duplicated"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Pending marks the unfinished review.",
+                "Completed contradicts the stated incomplete review.",
+                "Withdrawn would mean removed or cancelled.",
+                "Duplicated means repeated, not awaiting completion."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "specimen",
+          "requisition",
+          "collection time",
+          "specimen identifier"
+        ]
+      },
+      {
+        "title": "Referrals and appointment dependencies",
+        "collocations": [
+          "track a referral: check its progress through the receiving service",
+          "confirm receipt with the specialist office: establish that the request arrived",
+          "distinguish review from booking: avoid treating request assessment as an appointment",
+          "verify the clinic location: check which site is named in the appointment confirmation"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Referral F8 was sent Monday and received Tuesday. The specialist office says it is under review, with no appointment booked. Coordinator Lia has agreed to check the status Friday. The patient believes receipt means a Friday appointment.",
+          "model": "Referral F8 was sent Monday and received Tuesday. The specialist office is reviewing it, but no appointment has been booked. Friday is when Lia will check the status, not a visit date. We need a separate appointment confirmation before we can give you a visit time or tell you which site to attend."
+        },
+        "workshop": {
+          "title": "Separate referral progress from a booked visit",
+          "goal": "Explain completed referral steps and remaining scheduling questions.",
+          "explanation": "Sent, received, reviewed, and scheduled name distinct stages. Give the known stage and next contact without predicting the specialist's decision or timing.",
+          "frames": [
+            "The referral was ___ on ___; it is now ___.",
+            "___ is our status-check date, not ___.",
+            "We still need confirmation of ___ before ___."
+          ],
+          "before": "The referral arrived, so you're booked for Friday.",
+          "after": "The referral is under review. Friday is Lia's next status check; no visit is booked.",
+          "reason": "A follow-up date should not be mistaken for an appointment.",
+          "role_b": "Patient: you arranged leave Friday because you confused Lia's check with a specialist visit.",
+          "challenge": "Ask whether under review means the specialist has accepted the referral.",
+          "questions": [
+            {
+              "prompt": "Patient: Is Friday my specialist visit?\nAssistant: No. Friday is the date Lia will ____ the referral status.",
+              "options": [
+                "attend",
+                "check",
+                "complete",
+                "cancel"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Attend applies to a visit, not checking status.",
+                "Correct. Check describes Lia's information task.",
+                "Complete promises a finished referral process.",
+                "Cancel would withdraw the request."
+              ]
+            },
+            {
+              "prompt": "Specialist office: We received it, but no visit is booked.\nAssistant: I'll report received, not ____.",
+              "options": [
+                "dispatched",
+                "submitted",
+                "scheduled",
+                "requested"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Dispatched describes the earlier sending action.",
+                "Submitted means sent for consideration.",
+                "Correct. Scheduled means a visit has been arranged.",
+                "Requested describes initiating the referral."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "referral",
+          "specialist",
+          "appointment confirmation",
+          "referral status"
+        ]
+      },
+      {
+        "title": "Supporting questions during a clinical visit",
+        "collocations": [
+          "invite a question: create space for a patient to raise an uncertainty",
+          "request a pause: communicate that the patient wants a discussion or activity stopped temporarily",
+          "clarify the after-visit summary: ask the clinician to explain unclear visit documentation",
+          "check understanding through teach-back: invite a restatement without testing or blaming the patient"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Patient Jules does not understand a phrase in the after-visit summary and has not left. Dr Chen is available. The assistant cannot reinterpret the instruction. Jules wants an explanation before leaving, away from reception.",
+          "model": "Dr Chen, Jules has a question about a phrase in the after-visit summary and would like it explained before leaving. I have not reinterpreted the instruction. Jules prefers to discuss it here rather than at reception. Could you return to the room and check the explanation with Jules before we finish the visit?"
+        },
+        "workshop": {
+          "title": "Preserve the question and the patient's preference",
+          "goal": "Arrange a clinician response without giving instructions beyond your role.",
+          "explanation": "Identify the unclear phrase and requested conversation setting. A clarification question is not refusal of all care. Teach-back checks the explanation, not the patient's intelligence.",
+          "frames": [
+            "The patient wants ___ clarified before ___.",
+            "I haven't changed or interpreted ___.",
+            "Could you return to ___ and check ___?"
+          ],
+          "before": "It just means the usual thing; you can go now.",
+          "after": "That phrase is unclear to you. I'll ask Dr Chen to explain it here before you leave.",
+          "reason": "The question gets a specific recipient and location.",
+          "role_b": "Jules: point out an unclear phrase without inventing its clinical meaning.",
+          "challenge": "Say you nodded to be polite but still do not understand.",
+          "questions": [
+            {
+              "prompt": "Patient: I nodded, but I still have a question about this phrase.\nAssistant: I'll ask Dr Chen to ____ it with you.",
+              "options": [
+                "clarify",
+                "abbreviate",
+                "file",
+                "withdraw"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Clarify means make the intended meaning clear.",
+                "Abbreviating makes it shorter, not necessarily clearer.",
+                "Filing stores the document rather than explaining its wording.",
+                "Withdrawing removes something rather than explaining it."
+              ]
+            },
+            {
+              "prompt": "Clinician: I want to check whether my explanation was clear.\nAssistant: Inviting the patient to explain it in their own words is ____.",
+              "options": [
+                "a diagnosis",
+                "teach-back",
+                "a referral",
+                "discharge approval"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A diagnosis identifies a condition.",
+                "Correct. Teach-back checks the explanation through the patient's understanding.",
+                "A referral requests another service.",
+                "Discharge approval is a separate decision."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "chaperone",
+          "consent discussion",
+          "after-visit summary",
+          "teach-back"
+        ]
+      },
+      {
+        "title": "Telephone concerns and clinical escalation",
+        "collocations": [
+          "route a clinical concern: connect the caller with the appropriate clinical response",
+          "verify the callback number: check the number for this particular return contact",
+          "make a warm transfer: introduce the concern before handing over the call",
+          "state the caller's exact request: preserve what the person wants assessed or explained"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "A caller asks the assistant to decide whether a newly reported concern can wait until next week's routine visit. No clinical details or urgency assessment are supplied. Nurse Dana is available now through the clinic's clinical-call route. The assistant cannot triage.",
+          "model": "I can't determine from an appointment booking whether this new concern can wait until next week. Dana is available through our clinical-call route now, and I will connect you so she can assess it. I will pass on your question about timing without describing the concern as routine or offering reassurance about its importance."
+        },
+        "workshop": {
+          "title": "Do not let a booking answer a clinical question",
+          "goal": "Decline an unsupported urgency judgment while arranging the correct response.",
+          "explanation": "A routine appointment label does not assess a new concern. Use actual local emergency and escalation procedures for real calls. This exercise supplies no symptom criteria and teaches no triage decisions.",
+          "frames": [
+            "I can't determine ___ from ___.",
+            "The question for the nurse is ___.",
+            "I'll connect you with ___ and identify ___."
+          ],
+          "before": "You're booked next week, so it can wait.",
+          "after": "The booking doesn't assess this new concern. I'll connect you with Dana for clinical review.",
+          "reason": "A calendar entry cannot establish clinical urgency.",
+          "role_b": "Caller: ask whether a new concern can wait; no symptom details are supplied in this exercise.",
+          "challenge": "Ask for a yes-or-no answer because you do not want to repeat the question.",
+          "questions": [
+            {
+              "prompt": "Caller: Does having a routine appointment mean this new concern is routine?\nAssistant: No. The new concern needs clinical ____.",
+              "options": [
+                "registration",
+                "triage",
+                "billing",
+                "confirmation of attendance"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Registration identifies the patient and visit.",
+                "Correct. Triage assesses urgency and response; the assistant is not performing it here.",
+                "Billing concerns payment rather than assessing clinical urgency.",
+                "Attendance confirmation checks whether someone will come."
+              ]
+            },
+            {
+              "prompt": "Nurse: Will you introduce the caller's question before connecting us?\nAssistant: Yes, I'll make a ____.",
+              "options": [
+                "missed call",
+                "booking amendment",
+                "warm transfer",
+                "reminder notice"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A missed call is an unanswered contact.",
+                "A booking amendment changes a visit.",
+                "Correct. A warm transfer includes an introduction to the receiver.",
+                "A reminder notice does not hand over a live call."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "triage",
+          "escalation",
+          "callback number",
+          "warm transfer"
+        ]
+      },
+      {
+        "title": "Records, corrections, and follow-up ownership",
+        "collocations": [
+          "request a record amendment: raise a specific correction for review",
+          "confirm the release recipient: establish who is to receive the requested information",
+          "trace a contact attempt: identify whether and how staff tried to reach a patient",
+          "accept follow-up ownership: explicitly take responsibility for the remaining action"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "The assistant's message incorrectly says a results discussion is booked Tuesday. The schedule confirms Thursday at 14:00 with Dr Chen. The patient rearranged work. The assistant can correct the message and confirm the booking; no results are discussed in this exercise.",
+          "model": "I'm sorry my message gave Tuesday for your results discussion. The confirmed appointment is Thursday at two with Dr Chen. I understand you changed your work plans because of my message. I'll correct that message in the record and check that you have the Thursday details; I cannot interpret the results during this scheduling call."
+        },
+        "workshop": {
+          "title": "Correct the information and acknowledge its impact",
+          "goal": "Repair a scheduling message while keeping result interpretation with the clinician.",
+          "explanation": "State what was wrong and what the verified record says. An amendment should remain traceable. Updating a record, reaching the patient, and finishing a follow-up task are different actions.",
+          "frames": [
+            "My earlier message incorrectly said ___.",
+            "The confirmed information is ___.",
+            "The correction is recorded; ___ still needs to happen."
+          ],
+          "before": "Sorry for the confusion; check the portal.",
+          "after": "I gave the wrong day. Your confirmed discussion is Thursday at two with Dr Chen.",
+          "reason": "A specific correction is more useful than a vague apology.",
+          "role_b": "Patient: you rearranged work based on Tuesday and want the verified details.",
+          "challenge": "Ask whether the wrong date says anything about the clinical importance of the results.",
+          "questions": [
+            {
+              "prompt": "Patient: Which day is correct?\nAssistant: My message was wrong. The ____ appointment is Thursday at two.",
+              "options": [
+                "provisional",
+                "requested",
+                "confirmed",
+                "cancelled"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Provisional would describe a tentative booking.",
+                "Requested would mean asked for, not booked.",
+                "Correct. Confirmed matches the verified schedule.",
+                "Cancelled contradicts the existing booking."
+              ]
+            },
+            {
+              "prompt": "Colleague: The note is corrected, but the patient has not been reached.\nAssistant: The contact task is still ____.",
+              "options": [
+                "outstanding",
+                "completed",
+                "duplicated",
+                "withdrawn"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Outstanding means the contact remains to be done.",
+                "Completed falsely says contact occurred.",
+                "Duplicated means repeated, which is not stated.",
+                "Withdrawn would mean the task was cancelled."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "electronic health record",
+          "amendment",
+          "release of information",
+          "follow-up task"
+        ]
+      }
+    ],
+    "jargon": [
+      {
+        "term": "chief concern",
+        "definition": "The main reason a patient gives for seeking care at the current visit.",
+        "group": "Clarifying the visit at check-in"
+      },
+      {
+        "term": "intake form",
+        "definition": "A clinic document used to gather patient information before or during a visit.",
+        "group": "Clarifying the visit at check-in"
+      },
+      {
+        "term": "patient identifier",
+        "definition": "A detail used with the clinic's verification process to distinguish one patient from another.",
+        "group": "Clarifying the visit at check-in"
+      },
+      {
+        "term": "preferred name",
+        "definition": "The name a patient asks staff to use when addressing them.",
+        "group": "Clarifying the visit at check-in"
+      },
+      {
+        "term": "rooming",
+        "definition": "Preparing a patient for the clinician's visit through the clinic's delegated intake activities.",
+        "group": "Rooming and factual patient reports"
+      },
+      {
+        "term": "vital signs",
+        "definition": "Basic physiological measurements, such as temperature and pulse, recorded for clinical review.",
+        "group": "Rooming and factual patient reports"
+      },
+      {
+        "term": "reported symptom",
+        "definition": "A bodily experience described by the patient, not necessarily observed by staff.",
+        "group": "Rooming and factual patient reports"
+      },
+      {
+        "term": "onset",
+        "definition": "The time or circumstances in which a reported symptom began.",
+        "group": "Rooming and factual patient reports"
+      },
+      {
+        "term": "medication reconciliation",
+        "definition": "A clinician-led process of comparing medication information to identify and resolve differences.",
+        "group": "Medication histories with clear sources"
+      },
+      {
+        "term": "medication list",
+        "definition": "A record of medicines reported or documented for a patient, with its source and review status.",
+        "group": "Medication histories with clear sources"
+      },
+      {
+        "term": "nonprescription medicine",
+        "definition": "A medicine available without a prescription, also called an over-the-counter medicine.",
+        "group": "Medication histories with clear sources"
+      },
+      {
+        "term": "allergy history",
+        "definition": "Recorded information about reported or established allergies, including details needing clinical review.",
+        "group": "Medication histories with clear sources"
+      },
+      {
+        "term": "specimen",
+        "definition": "A sample of material from a patient submitted for examination or testing.",
+        "group": "Laboratory paperwork and specimen queries"
+      },
+      {
+        "term": "requisition",
+        "definition": "A document or electronic request specifying the laboratory testing requested by a clinician.",
+        "group": "Laboratory paperwork and specimen queries"
+      },
+      {
+        "term": "collection time",
+        "definition": "The recorded time when a specimen was obtained, distinct from receipt at the laboratory.",
+        "group": "Laboratory paperwork and specimen queries"
+      },
+      {
+        "term": "specimen identifier",
+        "definition": "A label or code linking a specimen to the appropriate patient and order.",
+        "group": "Laboratory paperwork and specimen queries"
+      },
+      {
+        "term": "referral",
+        "definition": "A clinician's request for another service or professional to assess or manage a patient's care.",
+        "group": "Referrals and appointment dependencies"
+      },
+      {
+        "term": "specialist",
+        "definition": "A clinician whose practice focuses on a particular field of healthcare.",
+        "group": "Referrals and appointment dependencies"
+      },
+      {
+        "term": "appointment confirmation",
+        "definition": "A notice establishing a booked visit's agreed date, time, and location.",
+        "group": "Referrals and appointment dependencies"
+      },
+      {
+        "term": "referral status",
+        "definition": "The recorded stage of a referral, such as sent, received, under review, or scheduled.",
+        "group": "Referrals and appointment dependencies"
+      },
+      {
+        "term": "chaperone",
+        "definition": "A person present during an examination according to the patient's needs and the clinic's arrangements.",
+        "group": "Supporting questions during a clinical visit"
+      },
+      {
+        "term": "consent discussion",
+        "definition": "A clinician-led exchange about a proposed examination or treatment and the patient's decision.",
+        "group": "Supporting questions during a clinical visit"
+      },
+      {
+        "term": "after-visit summary",
+        "definition": "A document summarizing information and instructions from a clinical encounter.",
+        "group": "Supporting questions during a clinical visit"
+      },
+      {
+        "term": "teach-back",
+        "definition": "An invitation for a patient to explain their understanding so the clinician can check the explanation.",
+        "group": "Supporting questions during a clinical visit"
+      },
+      {
+        "term": "triage",
+        "definition": "Clinical assessment used to determine the urgency and appropriate response to a healthcare concern.",
+        "group": "Telephone concerns and clinical escalation"
+      },
+      {
+        "term": "escalation",
+        "definition": "Bringing a concern to a person or pathway with the required responsibility to respond.",
+        "group": "Telephone concerns and clinical escalation"
+      },
+      {
+        "term": "callback number",
+        "definition": "The verified telephone number to use when returning a particular call.",
+        "group": "Telephone concerns and clinical escalation"
+      },
+      {
+        "term": "warm transfer",
+        "definition": "A telephone handoff in which the sender introduces the caller's issue to the receiving person.",
+        "group": "Telephone concerns and clinical escalation"
+      },
+      {
+        "term": "electronic health record",
+        "definition": "The clinic's digital record of patient information, encounters, and related care documentation.",
+        "group": "Records, corrections, and follow-up ownership"
+      },
+      {
+        "term": "amendment",
+        "definition": "A traceable correction or addition to an existing record made through the required process.",
+        "group": "Records, corrections, and follow-up ownership"
+      },
+      {
+        "term": "release of information",
+        "definition": "The provision of patient records or details to a recipient after applicable permission and identity checks.",
+        "group": "Records, corrections, and follow-up ownership"
+      },
+      {
+        "term": "follow-up task",
+        "definition": "An assigned action still needed after an encounter, message, or review.",
+        "group": "Records, corrections, and follow-up ownership"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Alex's visit expectation",
+          "setting": "Fictional check-in using the lesson case.",
+          "turns": [
+            [
+              "Assistant",
+              "Alex, today's booking says annual review. What chief concern did you expect to discuss?"
+            ],
+            [
+              "Patient",
+              "Not exactly. I expected to discuss a recent concern, and I'm worried the booking is wrong."
+            ],
+            [
+              "Assistant",
+              "I'll tell Dana about that difference so she can clarify the visit plan."
+            ],
+            [
+              "Patient",
+              "Please don't assume I came for the wrong reason just because of the schedule label."
+            ],
+            [
+              "Assistant",
+              "I won't. What would you like me to say is your main concern today?"
+            ],
+            [
+              "Patient",
+              "I'd like the clinician to hear about a change I noticed, rather than just review paperwork."
+            ],
+            [
+              "Assistant",
+              "I'll preserve that request for Dana. I haven't confirmed whether the appointment type will change."
+            ],
+            [
+              "Patient",
+              "Also, please call me Alex. Alexandra is on the record, but I don't use it socially."
+            ],
+            [
+              "Assistant",
+              "I'll use Alex as your preferred name while keeping the verified record linked to Alexandra."
+            ],
+            [
+              "Patient",
+              "Thank you. That sorts out the name question, and I'll discuss the visit plan with Dana."
+            ]
+          ]
+        },
+        {
+          "title": "The blank box",
+          "setting": "Fictional intake form has a blank contact field; the assistant checks its meaning privately.",
+          "turns": [
+            [
+              "Assistant",
+              "The emergency-contact field on your intake form is blank. Did you want help clarifying it?"
+            ],
+            [
+              "Patient",
+              "I wasn't sure whether it asked for my number or someone else's emergency contact."
+            ],
+            [
+              "Assistant",
+              "It asks for an emergency contact. Your own telephone number is in the section above."
+            ],
+            [
+              "Patient",
+              "I understand now. I'd like to discuss whom to list before giving you a name."
+            ],
+            [
+              "Assistant",
+              "That's fine. I'll mark the field as not provided yet rather than assume nobody is available."
+            ],
+            [
+              "Patient",
+              "Does leaving it blank mean I can't have the conversation with the clinician today?"
+            ],
+            [
+              "Assistant",
+              "I haven't been told that. I can ask reception about any remaining registration requirements."
+            ],
+            [
+              "Patient",
+              "Please ask them, but don't enter my sister automatically just because she brought me here."
+            ],
+            [
+              "Assistant",
+              "I won't infer your choice. The emergency-contact field remains open for you to clarify."
+            ],
+            [
+              "Patient",
+              "Good. I can decide whom to list after I understand what the clinic needs it for."
+            ]
+          ]
+        },
+        {
+          "title": "A quieter identity check",
+          "setting": "Fictional waiting room; patient requests privacy while identifiers are checked.",
+          "turns": [
+            [
+              "Patient",
+              "Could we check my details somewhere quieter? I don't want everyone hearing my birth date."
+            ],
+            [
+              "Assistant",
+              "Yes, the side desk is available. We'll continue your check-in there, away from the waiting chairs."
+            ],
+            [
+              "Patient",
+              "Will you need the name from my record or the name I prefer people to use?"
+            ],
+            [
+              "Assistant",
+              "We need patient identifiers to verify the record, plus your preferred name for conversation."
+            ],
+            [
+              "Patient",
+              "My record uses Samuel, but I prefer Sam. The surname is the same on both."
+            ],
+            [
+              "Assistant",
+              "Thank you, Sam. We'll keep those purposes clear rather than create a second record for the name."
+            ],
+            [
+              "Patient",
+              "I thought asking for a different name might mean starting all my registration again."
+            ],
+            [
+              "Assistant",
+              "We can review your name preference within the existing verified record."
+            ],
+            [
+              "Patient",
+              "That's helpful. I can answer the identity questions comfortably now that we're at this desk."
+            ],
+            [
+              "Assistant",
+              "Let's continue here, and then I'll confirm your check-in status without announcing your private details outside."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A form completed by a companion",
+        "brief": "Patient Noor's companion completed the intake form and selected routine follow-up. Noor says the main concern is different. No clinician has reviewed it. Nurse Dana is available to receive the discrepancy.",
+        "role_a": "Assistant: ask Noor directly about the intended concern without criticizing the companion.",
+        "role_b": "Noor: you want your own wording passed on and do not know the correct booking category.",
+        "opening_line": "My companion chose that box, but it isn't what I wanted to discuss.",
+        "complication": "The companion says the written answer should take priority over Noor's explanation.",
+        "success_checks": [
+          "Address Noor directly.",
+          "Distinguish the form entry from the patient's current account.",
+          "Give Dana the mismatch without deciding the clinical visit type."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "What Pat reported",
+          "setting": "Fictional staff handoff using the lesson case, without clinical assessment.",
+          "turns": [
+            [
+              "Assistant",
+              "Pat reports tiredness since Monday and wants to discuss that change with the clinician."
+            ],
+            [
+              "Nurse",
+              "Which part did Pat tell you, and what did you observe yourself during rooming?"
+            ],
+            [
+              "Assistant",
+              "The reported symptom and onset came from Pat. I observed Pat answering questions while seated."
+            ],
+            [
+              "Nurse",
+              "Have you established a cause, or is the reason for that change still unassessed?"
+            ],
+            [
+              "Assistant",
+              "I haven't established a cause or severity. I don't want my observation to imply either conclusion."
+            ],
+            [
+              "Nurse",
+              "Did Pat describe it as constant, or have you only confirmed when it began?"
+            ],
+            [
+              "Assistant",
+              "Only the reported start on Monday. The pattern wasn't clarified in our conversation."
+            ],
+            [
+              "Nurse",
+              "I'll take that distinction into the assessment. Please keep the missing detail explicit in your handoff."
+            ],
+            [
+              "Assistant",
+              "Then the handoff is reported tiredness since Monday, answers while seated observed, pattern not clarified."
+            ],
+            [
+              "Nurse",
+              "That's clear. I'll ask Pat about the unresolved details rather than infer them from the note."
+            ]
+          ]
+        },
+        {
+          "title": "Yesterday or last evening",
+          "setting": "Fictional patient clarifies the time meant by yesterday; no diagnostic conclusion.",
+          "turns": [
+            [
+              "Assistant",
+              "You said the change began yesterday. Do you mean morning, afternoon, or evening?"
+            ],
+            [
+              "Patient",
+              "I meant after dinner last evening. I wasn't trying to say it lasted all day."
+            ],
+            [
+              "Assistant",
+              "Thank you. I'll pass on after dinner yesterday evening rather than yesterday morning."
+            ],
+            [
+              "Patient",
+              "I can't remember the exact hour. Is it a problem if I don't give a precise time?"
+            ],
+            [
+              "Assistant",
+              "You can say you don't know the exact time. I shouldn't supply one for you."
+            ],
+            [
+              "Patient",
+              "Could you also tell the clinician it happened again this morning, not continuously overnight?"
+            ],
+            [
+              "Assistant",
+              "Yes, I'll preserve that distinction: last evening and again this morning, with the exact times uncertain."
+            ],
+            [
+              "Patient",
+              "I don't know why it happened. Please don't write that I blamed the food."
+            ],
+            [
+              "Assistant",
+              "I haven't added a cause. Your account describes timing, and the clinician can explore its meaning."
+            ],
+            [
+              "Patient",
+              "That's what I wanted. I was using dinner to describe the time, not an explanation."
+            ]
+          ]
+        },
+        {
+          "title": "A measurement entry without its time",
+          "setting": "Fictional chart handoff; a vital-sign entry lacks a timestamp and its origin is unclear.",
+          "turns": [
+            [
+              "Assistant",
+              "The vital signs entry lacks a timestamp. I can't tell whether it belongs to today's visit."
+            ],
+            [
+              "Nurse",
+              "Did you take that measurement, or are you reviewing an entry already in the chart?"
+            ],
+            [
+              "Assistant",
+              "I'm reviewing an existing entry. I haven't recorded it as a measurement I obtained today."
+            ],
+            [
+              "Nurse",
+              "Then please don't call it the current reading until we identify its source and time."
+            ],
+            [
+              "Assistant",
+              "Could you review the entry while I explain the uncertainty to the rooming colleague?"
+            ],
+            [
+              "Nurse",
+              "Yes. I'll check the record history and determine what needs clarification for the visit."
+            ],
+            [
+              "Assistant",
+              "The colleague asked whether the value means anything clinically. I haven't interpreted it."
+            ],
+            [
+              "Nurse",
+              "Keep that question with the clinician. Our immediate documentation issue is when and where it originated."
+            ],
+            [
+              "Assistant",
+              "I'll hand it over as an untimed existing entry, not a new observation from rooming."
+            ],
+            [
+              "Nurse",
+              "That wording lets us resolve the source without turning an unknown timestamp into a clinical conclusion."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The word dizzy needs the patient's explanation",
+        "brief": "A patient uses dizzy but then says they may mean tired. The assistant cannot interpret or assess the symptom. Nurse Dana is present and can take the concern now; no emergency symptoms are specified.",
+        "role_a": "Assistant: ask the patient to describe the experience in their own words and pass it to Dana.",
+        "role_b": "Patient: you are unsure which English word fits and want help communicating, not a diagnosis.",
+        "opening_line": "I said dizzy, but I'm not sure that is the right word in English.",
+        "complication": "A companion offers a cause the patient has not confirmed.",
+        "success_checks": [
+          "Do not select a diagnosis or cause.",
+          "Attribute the patient's wording and uncertainty.",
+          "Connect the patient to Dana for assessment rather than deciding urgency from vocabulary."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "A reported change from another clinic",
+          "setting": "Fictional medication-history exchange using the lesson case.",
+          "turns": [
+            [
+              "Patient",
+              "The other clinic stopped one medicine, but it's still on the list you gave me."
+            ],
+            [
+              "Assistant",
+              "I'll request medication reconciliation with the clinician. Do you have the other clinic's instruction?"
+            ],
+            [
+              "Patient",
+              "No, I remember the discussion, but I don't have a letter or updated list."
+            ],
+            [
+              "Assistant",
+              "Then I'll attribute the change to your report and explain that confirmation is still missing."
+            ],
+            [
+              "Patient",
+              "Can you simply take it off so we don't have to discuss it again?"
+            ],
+            [
+              "Assistant",
+              "The clinician needs to reconcile the difference. I can't settle the current medication plan myself."
+            ],
+            [
+              "Patient",
+              "Please tell Dana I want the two lists compared, not another printed copy of this one."
+            ],
+            [
+              "Assistant",
+              "I will. The request is to review the conflicting information and clarify the current list with you."
+            ],
+            [
+              "Patient",
+              "Should I change what I take tonight while this is checked?"
+            ],
+            [
+              "Assistant",
+              "That's a medication question for the clinician. I'll include it explicitly in the handoff to Dana."
+            ]
+          ]
+        },
+        {
+          "title": "A supplement and an uncertain name",
+          "setting": "Fictional history conversation; the patient has an unlabeled memory, not a verified product name.",
+          "turns": [
+            [
+              "Assistant",
+              "Are there other products you want the clinician to know about, including supplements or nonprescription medicines?"
+            ],
+            [
+              "Patient",
+              "I take a supplement, but I remember the package color better than the actual name."
+            ],
+            [
+              "Assistant",
+              "I won't identify it from color. Can you provide the packaging name later?"
+            ],
+            [
+              "Patient",
+              "Yes, my partner can bring the package. I hadn't realized the name mattered to this conversation."
+            ],
+            [
+              "Assistant",
+              "It helps the clinician review what you report. For now, I'll note that the name is unconfirmed."
+            ],
+            [
+              "Patient",
+              "Please don't choose the product that sounds most similar from the list on your screen."
+            ],
+            [
+              "Assistant",
+              "I won't. I'll say supplement reported, product name not yet provided, and packaging to follow."
+            ],
+            [
+              "Patient",
+              "Could you ask the clinician whether they want to discuss it before I leave?"
+            ],
+            [
+              "Assistant",
+              "Yes, I'll include your question. I can't assess the supplement or recommend changes."
+            ],
+            [
+              "Patient",
+              "I'll ask my partner to bring the packaging so the clinician has the actual name."
+            ]
+          ]
+        },
+        {
+          "title": "An allergy entry needs a source",
+          "setting": "Fictional chart query: blank allergy field and patient report require clinician review.",
+          "turns": [
+            [
+              "Assistant",
+              "The allergy-history field is blank, but the patient reports a previous reaction they want to discuss."
+            ],
+            [
+              "Nurse",
+              "A blank field doesn't establish no allergies. What did the patient actually tell you?"
+            ],
+            [
+              "Assistant",
+              "They remember a reaction but are unsure of the medicine name and the date."
+            ],
+            [
+              "Nurse",
+              "Please preserve that uncertainty and bring the question to me for clinical review."
+            ],
+            [
+              "Assistant",
+              "Should I call it a confirmed allergy before you've spoken with the patient?"
+            ],
+            [
+              "Nurse",
+              "No. Attribute it to the patient, and don't turn the blank field into a negative finding either."
+            ],
+            [
+              "Assistant",
+              "I'll say reaction reported, medicine and date uncertain, allergy history awaiting clinician clarification."
+            ],
+            [
+              "Nurse",
+              "That's specific. Have you offered any explanation of what the reaction means or how to manage it?"
+            ],
+            [
+              "Assistant",
+              "No. I told the patient you would discuss it with them, without interpreting the experience."
+            ],
+            [
+              "Nurse",
+              "Thank you. I'll take the history question now and address the unresolved details directly."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two differently dated lists",
+        "brief": "A patient brings a list dated June and a phone photograph dated August. One item differs. Neither has been reconciled with today's chart. Nurse Dana can review both with the clinician.",
+        "role_a": "Assistant: identify the sources and date difference.",
+        "role_b": "Patient: ask which version is correct; you do not know why they differ.",
+        "opening_line": "The photograph is newer, so can you assume everything on it is current?",
+        "complication": "The patient asks the assistant to delete every item missing from the photograph.",
+        "success_checks": [
+          "Name the two dated sources.",
+          "Do not equate newer with clinically reconciled.",
+          "Ask the clinician to review the differences without changing instructions."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Two times, two events",
+          "setting": "Fictional paperwork discussion using the lesson case.",
+          "turns": [
+            [
+              "Assistant",
+              "You suggested changing the collection time to ten oh five. What does that later time describe?"
+            ],
+            [
+              "Colleague",
+              "It's the courier arrival time. I thought the most recent timestamp should replace the older one."
+            ],
+            [
+              "Assistant",
+              "The requisition records collection at nine twenty. Arrival and collection are different events, not competing versions."
+            ],
+            [
+              "Colleague",
+              "So the difference doesn't automatically mean someone entered a wrong time on the requisition?"
+            ],
+            [
+              "Assistant",
+              "Correct. The records can both be accurate because they describe different points in the specimen journey."
+            ],
+            [
+              "Colleague",
+              "I'll keep each time with its label. What if someone questions the collection entry itself?"
+            ],
+            [
+              "Assistant",
+              "Ask the recording team about that entry specifically, without substituting the arrival time."
+            ],
+            [
+              "Colleague",
+              "Does the arrival record tell us that the specimen has been accepted for testing?"
+            ],
+            [
+              "Assistant",
+              "No. Receipt and acceptance are different statuses; we'd need the laboratory's confirmation of acceptance."
+            ],
+            [
+              "Colleague",
+              "I'll report collection at nine twenty and arrival at ten oh five, with acceptance unstated."
+            ]
+          ]
+        },
+        {
+          "title": "A request number read back",
+          "setting": "Fictional clinic-laboratory call; two similar request references need clarification.",
+          "turns": [
+            [
+              "Assistant",
+              "I'm checking receipt for request L36, but the message I received refers to L63."
+            ],
+            [
+              "Laboratory clerk",
+              "Please repeat the reference from your requisition slowly so I can check the correct entry."
+            ],
+            [
+              "Assistant",
+              "The requisition says L36. The reply says L63, with those two digits reversed."
+            ],
+            [
+              "Laboratory clerk",
+              "Thank you. I can see L36 now; its receipt is recorded, but no result is listed."
+            ],
+            [
+              "Assistant",
+              "Then your confirmation concerns L36's receipt, not L63 or a completed test result."
+            ],
+            [
+              "Laboratory clerk",
+              "Exactly. I'll correct the reference in my reply so the two enquiries aren't joined together."
+            ],
+            [
+              "Assistant",
+              "Could you also identify receipt explicitly? Our clinician asked whether the laboratory had the specimen."
+            ],
+            [
+              "Laboratory clerk",
+              "Yes. The reply will say receipt confirmed for L36, with result status not available here."
+            ],
+            [
+              "Assistant",
+              "That's what we needed. I won't call the specimen lost based on that reference mismatch."
+            ],
+            [
+              "Laboratory clerk",
+              "Thank you for checking. The corrected reference should let your team attach the reply to the right enquiry."
+            ]
+          ]
+        },
+        {
+          "title": "The label question before a conclusion",
+          "setting": "Fictional specimen paperwork concern: identifiers differ; the laboratory lead must review.",
+          "turns": [
+            [
+              "Assistant",
+              "The requisition and specimen identifier don't agree. I'm reporting that mismatch before describing test status."
+            ],
+            [
+              "Laboratory lead",
+              "Which sources differ, and has anyone confirmed that the sample belongs to the requisition you have?"
+            ],
+            [
+              "Assistant",
+              "No match has been confirmed. I'm reporting the difference, not deciding which source is correct."
+            ],
+            [
+              "Laboratory lead",
+              "Thank you. I'll handle the review with the responsible team; don't resolve identity from memory."
+            ],
+            [
+              "Assistant",
+              "The clinician is asking when the result will appear. What can I say about that?"
+            ],
+            [
+              "Laboratory lead",
+              "Say an identifier discrepancy is under review and no completion time has been established."
+            ],
+            [
+              "Assistant",
+              "Has rejection been confirmed, or is that decision still pending?"
+            ],
+            [
+              "Laboratory lead",
+              "No acceptance or rejection decision has been communicated. Keep those statuses distinct from the review."
+            ],
+            [
+              "Assistant",
+              "I'll give that update and identify you as the person reviewing the mismatch with the team."
+            ],
+            [
+              "Laboratory lead",
+              "Please do. I'll return the verified status through the clinic's laboratory communication route when available."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Preparation wording needs clarification",
+        "brief": "A patient has an appointment for a clinician-ordered test but received two different preparation messages. Their exact medical details are not supplied. Nurse Dana can compare the messages and obtain clinical clarification.",
+        "role_a": "Assistant: identify that there are two messages without choosing instructions.",
+        "role_b": "Patient: ask which message to follow and whether the appointment is cancelled.",
+        "opening_line": "One message says something different from the other. Which preparation instruction is right?",
+        "complication": "The patient asks you to use the newer message automatically.",
+        "success_checks": [
+          "Request the actual messages for clinician review.",
+          "Do not invent preparation directions.",
+          "Keep clarification distinct from cancellation or confirmed readiness."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Friday is a check, not a visit",
+          "setting": "Fictional referral update using the lesson case.",
+          "turns": [
+            [
+              "Patient",
+              "I took Friday off for the specialist. What time should I arrive there?"
+            ],
+            [
+              "Assistant",
+              "Friday is Lia's status check, not a booked visit. I'm sorry that distinction wasn't clear."
+            ],
+            [
+              "Patient",
+              "But the specialist office received the referral Tuesday. Doesn't that mean they accepted an appointment?"
+            ],
+            [
+              "Assistant",
+              "Receipt means it arrived. They say it's under review, with no appointment booked."
+            ],
+            [
+              "Patient",
+              "Was sending it Monday a separate step, or did Tuesday replace that date?"
+            ],
+            [
+              "Assistant",
+              "Both are relevant: sent Monday, received Tuesday. Neither date is a visit confirmation."
+            ],
+            [
+              "Patient",
+              "Please tell Lia I've arranged leave and need the actual date before making travel plans."
+            ],
+            [
+              "Assistant",
+              "I'll pass that on without promising the review will finish before Friday."
+            ],
+            [
+              "Patient",
+              "Should I call the specialist to ask which site I should attend anyway?"
+            ],
+            [
+              "Assistant",
+              "We don't have a booked site yet. The appointment confirmation will need both location and time."
+            ]
+          ]
+        },
+        {
+          "title": "The same clinic name at two sites",
+          "setting": "Fictional confirmation lists East Clinic; patient assumes the West site.",
+          "turns": [
+            [
+              "Assistant",
+              "Your confirmation says East Clinic on Thursday at ten. Which site were you planning to visit?"
+            ],
+            [
+              "Patient",
+              "West Clinic, because that's where I went last year for another appointment."
+            ],
+            [
+              "Assistant",
+              "This confirmation names East. Last year's location doesn't establish the site for Thursday."
+            ],
+            [
+              "Patient",
+              "Could you read the street name from the confirmation so I can check transport?"
+            ],
+            [
+              "Assistant",
+              "It says Lake Street. I'll repeat the full location from your current confirmation privately."
+            ],
+            [
+              "Patient",
+              "Thank you. I thought East and West were departments in the same building."
+            ],
+            [
+              "Assistant",
+              "They are listed as different sites here. I won't describe them as one building."
+            ],
+            [
+              "Patient",
+              "Does checking the address change the time or create a second appointment for me?"
+            ],
+            [
+              "Assistant",
+              "No, we are clarifying the existing Thursday booking, not changing it or creating another."
+            ],
+            [
+              "Patient",
+              "Then I'll plan for East Clinic on Lake Street at ten, as this confirmation says."
+            ]
+          ]
+        },
+        {
+          "title": "Receipt not found at the receiving office",
+          "setting": "Fictional referral has a sent record but no acknowledgment.",
+          "turns": [
+            [
+              "Assistant",
+              "Our record says referral H4 was sent yesterday, but the specialist office can't find it."
+            ],
+            [
+              "Referral coordinator",
+              "Do we have an acknowledgment, or only the record of our outgoing submission?"
+            ],
+            [
+              "Assistant",
+              "Only the outgoing record. I haven't described receipt as confirmed to the patient."
+            ],
+            [
+              "Referral coordinator",
+              "I'll check the destination details and contact the receiving office about that reference."
+            ],
+            [
+              "Assistant",
+              "Could you tell me what wording to use while your delivery enquiry remains open?"
+            ],
+            [
+              "Referral coordinator",
+              "Say we have a sent record but haven't confirmed receipt. Avoid calling the referral reviewed."
+            ],
+            [
+              "Assistant",
+              "The patient asks whether a new referral is required. No clinician has decided that."
+            ],
+            [
+              "Referral coordinator",
+              "Keep that decision separate. We're first checking where the existing request went."
+            ],
+            [
+              "Assistant",
+              "I'll explain the delivery enquiry and say you are coordinating it with the receiving office."
+            ],
+            [
+              "Referral coordinator",
+              "Please do. I'll report what they confirm rather than simply resend and assume the problem is solved."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A cancellation list is not a booking",
+        "brief": "A specialist office offers a cancellation list while the patient's existing appointment remains next month. No earlier slot is available. Lia can explain the administrative distinction.",
+        "role_a": "Assistant: explain the existing booking and possible earlier opportunity.",
+        "role_b": "Patient: you think joining the list cancels next month's appointment.",
+        "opening_line": "If I join that list, do I lose the appointment I already have?",
+        "complication": "The patient asks for a guaranteed earlier slot before changing work plans.",
+        "success_checks": [
+          "Preserve the existing appointment in the explanation.",
+          "Describe an earlier slot as unconfirmed.",
+          "Avoid predicting priority or promising a clinical scheduling decision."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "An unclear phrase before leaving",
+          "setting": "Fictional visit-room exchange using the lesson case.",
+          "turns": [
+            [
+              "Patient",
+              "I don't understand this phrase in the after-visit summary, though I nodded when the clinician explained."
+            ],
+            [
+              "Assistant",
+              "Thank you for telling me. Which phrase would you like Dr Chen to discuss again?"
+            ],
+            [
+              "Patient",
+              "This one here. I don't want you to guess; I need to know what was intended."
+            ],
+            [
+              "Assistant",
+              "I'll ask Dr Chen to return. I haven't interpreted or changed the instruction."
+            ],
+            [
+              "Patient",
+              "Could we talk here rather than at reception? There are people I know outside."
+            ],
+            [
+              "Assistant",
+              "Yes, I'll include that preference. Dr Chen is available, and I'll ask for the conversation here."
+            ],
+            [
+              "Patient",
+              "Does asking again mean you will record that I refused the whole plan?"
+            ],
+            [
+              "Assistant",
+              "A clarification question isn't the same as refusing everything. I'll describe the question you actually raised."
+            ],
+            [
+              "Patient",
+              "Please say I want an explanation before leaving, not another copy of the same sheet."
+            ],
+            [
+              "Assistant",
+              "That's the handoff I'll give: this phrase needs explanation here, before you leave the clinic."
+            ]
+          ]
+        },
+        {
+          "title": "A pause is a request, not a motive",
+          "setting": "Fictional patient pauses an examination discussion; no procedure is described.",
+          "turns": [
+            [
+              "Patient",
+              "Could we pause the discussion? I'm trying to understand what the clinician just said."
+            ],
+            [
+              "Assistant",
+              "I'll let the clinician know you want a pause and another explanation."
+            ],
+            [
+              "Patient",
+              "Please don't say I'm refusing everything. I haven't made that decision yet."
+            ],
+            [
+              "Assistant",
+              "I won't infer a decision. You are asking for time and clarification at this point."
+            ],
+            [
+              "Patient",
+              "My companion answers quickly, but I need the clinician to ask me directly."
+            ],
+            [
+              "Assistant",
+              "I'll communicate that too. Would you like me to use those exact words?"
+            ],
+            [
+              "Patient",
+              "Yes: please ask me directly, and give me time before moving on."
+            ],
+            [
+              "Assistant",
+              "That's clear. I can relay that request without deciding what you will agree to."
+            ],
+            [
+              "Patient",
+              "Thank you. I was worried asking for a pause would sound rude in English."
+            ],
+            [
+              "Assistant",
+              "It is a clear request. I'll bring the clinician back into the conversation with you now."
+            ]
+          ]
+        },
+        {
+          "title": "A chaperone request with a question",
+          "setting": "Fictional chaperone enquiry; arrangements and role need explanation.",
+          "turns": [
+            [
+              "Patient",
+              "I saw the word chaperone on the form. Is that the same as my companion?"
+            ],
+            [
+              "Assistant",
+              "Not necessarily. The clinic can explain the chaperone's role and the arrangements for your visit."
+            ],
+            [
+              "Patient",
+              "Could someone explain who that person would be and whether I can ask questions?"
+            ],
+            [
+              "Assistant",
+              "I'll ask the clinician to discuss that with you before you decide about the examination."
+            ],
+            [
+              "Patient",
+              "I don't want my question recorded as agreement just because I asked what the word means."
+            ],
+            [
+              "Assistant",
+              "Of course. Asking for an explanation doesn't by itself establish agreement to an examination."
+            ],
+            [
+              "Patient",
+              "Please tell the clinician I'm comfortable discussing the options, but haven't decided yet."
+            ],
+            [
+              "Assistant",
+              "I'll preserve that distinction. I haven't marked your question as a completed consent discussion."
+            ],
+            [
+              "Patient",
+              "Will the clinician also explain what my companion can do during the conversation?"
+            ],
+            [
+              "Assistant",
+              "Yes, I'll include that as a separate question about your companion's role and your preferences."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A summary from an earlier visit",
+        "brief": "A patient opens a portal document dated last month. Today's summary has not appeared. Dr Chen can clarify today's information before the patient leaves.",
+        "role_a": "Assistant: identify the date mismatch and request clarification.",
+        "role_b": "Patient: you want to avoid relying on the wrong document.",
+        "opening_line": "Why does this document show last month's date?",
+        "complication": "The patient asks you to adapt the older instructions to today's visit.",
+        "success_checks": [
+          "Name the date mismatch.",
+          "Do not adapt clinical instructions.",
+          "Ask Dr Chen to clarify today's summary and guidance."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "A booking cannot assess the concern",
+          "setting": "Fictional telephone exchange using the lesson case.",
+          "turns": [
+            [
+              "Caller",
+              "I have a routine appointment next week. Can this new concern wait until then?"
+            ],
+            [
+              "Assistant",
+              "I can't determine that from the booking. Dana can assess your concern through our clinical-call route now."
+            ],
+            [
+              "Caller",
+              "Could you just say yes or no? I don't want to explain everything twice."
+            ],
+            [
+              "Assistant",
+              "I can introduce the question to Dana, but I can't perform clinical triage myself."
+            ],
+            [
+              "Caller",
+              "Please don't describe me as asking to change an appointment. I'm asking about the concern itself."
+            ],
+            [
+              "Assistant",
+              "I'll make that distinction. You want clinical advice about timing, not just another calendar slot."
+            ],
+            [
+              "Caller",
+              "Is Dana actually available, or are you placing me in an ordinary booking queue?"
+            ],
+            [
+              "Assistant",
+              "Dana is available now for this handoff. I'll introduce the question before connecting you."
+            ],
+            [
+              "Caller",
+              "All right. Tell her I need to know how to respond to the new concern."
+            ],
+            [
+              "Assistant",
+              "I will. I haven't characterized it as routine, and Dana will take the clinical conversation."
+            ]
+          ]
+        },
+        {
+          "title": "The number for this call",
+          "setting": "Fictional administrative callback: patient will be away from their usual telephone; no symptoms.",
+          "turns": [
+            [
+              "Assistant",
+              "Reception will return your scheduling call this afternoon. Is the usual number suitable today?"
+            ],
+            [
+              "Patient",
+              "Not today. I'll be at my sister's home and want the call on my mobile."
+            ],
+            [
+              "Assistant",
+              "Let's verify the callback number privately. Should this change apply only to today's call?"
+            ],
+            [
+              "Patient",
+              "Yes, only today. Please don't replace my permanent home number because of one afternoon."
+            ],
+            [
+              "Assistant",
+              "I'll distinguish today's callback number from a permanent profile change. Which ending should we verify?"
+            ],
+            [
+              "Patient",
+              "The mobile ends in sixty-eight. Please compare the full number with me here privately."
+            ],
+            [
+              "Assistant",
+              "We have checked it. Reception's task is to discuss scheduling, not give clinical advice."
+            ],
+            [
+              "Patient",
+              "That's correct. I'm asking whether a later arrival time is available for the same visit."
+            ],
+            [
+              "Assistant",
+              "I'll give reception that request and today's verified callback number, with availability still unconfirmed."
+            ],
+            [
+              "Patient",
+              "Thank you. That avoids a call to an empty house and keeps my usual contact details unchanged."
+            ]
+          ]
+        },
+        {
+          "title": "A nurse accepts the live call",
+          "setting": "Fictional internal telephone introduction; no symptom assessment or care instruction.",
+          "turns": [
+            [
+              "Assistant",
+              "I have a caller asking whether a newly reported concern can wait for next week's appointment."
+            ],
+            [
+              "Nurse",
+              "I'll take that clinical conversation. Have you offered reassurance or assigned it a routine priority?"
+            ],
+            [
+              "Assistant",
+              "No. I said the appointment label doesn't assess the concern, and I haven't interpreted it."
+            ],
+            [
+              "Nurse",
+              "Good. Please introduce me while the caller is connected so they know I've accepted the handoff."
+            ],
+            [
+              "Assistant",
+              "Could I summarize the question during a warm transfer, before you ask further details?"
+            ],
+            [
+              "Nurse",
+              "Yes. Summarize the request, but I'll need to hear the clinical information directly."
+            ],
+            [
+              "Assistant",
+              "They want advice on timing for a new concern, not simply a different appointment slot."
+            ],
+            [
+              "Nurse",
+              "That's the distinction I need. I am accepting the call now, not merely a message for later."
+            ],
+            [
+              "Assistant",
+              "I'll connect the caller and say you're taking the clinical discussion from this point."
+            ],
+            [
+              "Nurse",
+              "Thank you. Scheduling remains separate until the clinical response establishes what arrangements are needed."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A disconnected handoff",
+        "brief": "A scheduling caller is disconnected before a warm transfer reaches reception. Reception has not accepted the call. The assistant has the caller's verified number and can return the call now. No clinical concern is involved.",
+        "role_a": "Assistant: clarify the failed handoff and re-establish contact.",
+        "role_b": "Reception colleague: you did not receive the caller and can take the call after reconnection.",
+        "opening_line": "The transfer disconnected before you answered; can you take the scheduling call once I reconnect?",
+        "complication": "The task display says transferred, and a colleague assumes the conversation occurred.",
+        "success_checks": [
+          "Separate a transfer attempt from accepted contact.",
+          "Use the verified callback number without inventing an outcome.",
+          "Confirm who is reconnecting and who will receive the call."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Tuesday was the incorrect message",
+          "setting": "Fictional correction call using the lesson case.",
+          "turns": [
+            [
+              "Assistant",
+              "My message gave Tuesday incorrectly. Your electronic health record confirms Thursday at two with Dr Chen."
+            ],
+            [
+              "Patient",
+              "I changed my work shift because of Tuesday. Why should I trust this new date?"
+            ],
+            [
+              "Assistant",
+              "I've checked the appointment schedule directly. Thursday at two is the confirmed entry."
+            ],
+            [
+              "Patient",
+              "Please correct the earlier message so reception doesn't repeat Tuesday if I call again."
+            ],
+            [
+              "Assistant",
+              "I will, using the record's correction process. I understand the wrong date disrupted your work plans."
+            ],
+            [
+              "Patient",
+              "Does the change mean the results are less important than you first thought?"
+            ],
+            [
+              "Assistant",
+              "This is a correction to my scheduling message, not a clinical judgment about the results."
+            ],
+            [
+              "Patient",
+              "Then I need the clinician to explain them during the Thursday discussion, not over this call."
+            ],
+            [
+              "Assistant",
+              "That's right. I can confirm the booking, but I won't interpret the results."
+            ],
+            [
+              "Patient",
+              "Please send the corrected appointment details through my usual contact route so I can rearrange work accurately."
+            ]
+          ]
+        },
+        {
+          "title": "A record request with an unclear recipient",
+          "setting": "Fictional records enquiry; patient asks for a summary to be sent but the destination is unspecified.",
+          "turns": [
+            [
+              "Patient",
+              "Could you send my visit summary to the other office? They said they need it."
+            ],
+            [
+              "Assistant",
+              "Which office do you mean? We need the intended recipient and the required release checks."
+            ],
+            [
+              "Patient",
+              "The specialist office, not my employer. I should have been more specific about that."
+            ],
+            [
+              "Assistant",
+              "I'll pass the release of information request to our records team, identifying the specialist office."
+            ],
+            [
+              "Patient",
+              "Does asking you now mean the summary has already been sent to someone?"
+            ],
+            [
+              "Assistant",
+              "No. This is a request awaiting the records team's checks, not a completed release."
+            ],
+            [
+              "Patient",
+              "Could they confirm the destination with me before describing the task as finished?"
+            ],
+            [
+              "Assistant",
+              "I'll include that request. We haven't established the full recipient details in this conversation."
+            ],
+            [
+              "Patient",
+              "Good. I don't want the phrase other office copied into a message as if it identified anyone."
+            ],
+            [
+              "Assistant",
+              "I'll describe the specialist office as intended, with the exact recipient still to be confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "A reached patient or an unanswered call",
+          "setting": "Fictional follow-up record says contacted, but only an unanswered attempt occurred.",
+          "turns": [
+            [
+              "Assistant",
+              "The follow-up entry says contacted, but I only made an unanswered call this morning."
+            ],
+            [
+              "Team lead",
+              "Then contacted is too definite. Did you leave a message or speak with anyone?"
+            ],
+            [
+              "Assistant",
+              "No one answered, and I didn't leave a message. The conversation has not occurred."
+            ],
+            [
+              "Team lead",
+              "Please make a traceable amendment and keep the follow-up task open until contact occurs."
+            ],
+            [
+              "Assistant",
+              "I'll describe an unanswered attempt at ten, rather than a completed discussion with the patient."
+            ],
+            [
+              "Team lead",
+              "Who owns the next contact attempt? A corrected note alone doesn't settle that responsibility."
+            ],
+            [
+              "Assistant",
+              "I can own it this afternoon, using the verified contact preference already in the profile."
+            ],
+            [
+              "Team lead",
+              "That is clear. Don't imply the patient declined to speak just because the call wasn't answered."
+            ],
+            [
+              "Assistant",
+              "I won't assign a reason. I'll record the attempt and the actual next-contact outcome."
+            ],
+            [
+              "Team lead",
+              "Please let me know if contact remains unsuccessful so we can review the outstanding task."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A copied appointment time",
+        "brief": "An old message says 11:00. Today's confirmed booking is 11:30 at the same clinic. A colleague copied the old message into a reminder but has not sent it. You can prevent the inaccurate reminder now.",
+        "role_a": "Assistant: identify the outdated source and request a corrected reminder.",
+        "role_b": "Colleague: ask whether the clinic location also changed; it did not.",
+        "opening_line": "The unsent reminder still says eleven, but today's booking confirms eleven thirty.",
+        "complication": "The colleague assumes every detail from the old message must be wrong.",
+        "success_checks": [
+          "Correct only the verified time difference.",
+          "Keep the unchanged location explicit.",
+          "Confirm the corrected reminder before describing it as sent."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "An interpreter request is part of intake",
+      "setting": "Fictional clinic intake; a patient wants language support for a visit, not a different appointment reason.",
+      "dialogue": [
+        [
+          "Assistant",
+          "Your booking note says longer visit requested. Is that about another concern or language support?"
+        ],
+        [
+          "Patient",
+          "Language support. I understand everyday English, but I want an interpreter for the clinician's questions."
+        ],
+        [
+          "Assistant",
+          "Which language should I include in the request, and what have you already arranged?"
+        ],
+        [
+          "Patient",
+          "Portuguese. Reception noted it last week, but nobody has confirmed whether an interpreter is available."
+        ],
+        [
+          "Assistant",
+          "I'll check that request with reception and tell Dana the language support is still unconfirmed."
+        ],
+        [
+          "Patient",
+          "Please keep the visit reason as the follow-up. I don't want a new concern added by mistake."
+        ],
+        [
+          "Assistant",
+          "Understood. The follow-up is the visit purpose; interpreter availability is a separate access question."
+        ],
+        [
+          "Patient",
+          "My nephew came with me, but I'd rather not depend on him for the clinical discussion."
+        ],
+        [
+          "Assistant",
+          "I'll include that preference. We can ask about the clinic's interpreter service without assigning him that role."
+        ],
+        [
+          "Patient",
+          "Will checking the request mean I lose my appointment? I've already taken time off work."
+        ],
+        [
+          "Assistant",
+          "I can't decide the appointment plan. Dana will discuss that once reception confirms the support options."
+        ],
+        [
+          "Patient",
+          "Then please check with them now. I want an accurate answer, even if the arrangement isn't settled yet."
+        ]
+      ],
+      "notes": [
+        "'Is that about X or Y?' narrows an ambiguous booking note.",
+        "'A separate access question' distinguishes communication support from a new clinical concern."
+      ]
+    },
+    {
+      "title": "Correcting an observation that became a conclusion",
+      "setting": "Fictional rooming debrief; a note says no concern although only a brief seated conversation was observed.",
+      "dialogue": [
+        [
+          "Nurse",
+          "Your handoff says no concern, but the patient has asked to discuss tiredness. What did you mean?"
+        ],
+        [
+          "Assistant",
+          "I meant the patient answered my rooming questions while seated. No concern was too broad."
+        ],
+        [
+          "Nurse",
+          "Yes. That observation doesn't cancel the patient's account or establish how significant the tiredness is."
+        ],
+        [
+          "Assistant",
+          "I'll correct the wording to describe the conversation, and keep the patient's reported concern beside it."
+        ],
+        [
+          "Nurse",
+          "Did the patient say the tiredness had ended, or was that also an assumption?"
+        ],
+        [
+          "Assistant",
+          "They didn't say it had ended. They said it began Monday and wanted to discuss it."
+        ],
+        [
+          "Nurse",
+          "Then the correction needs both points: the report remains relevant, and your observation has a limited scope."
+        ],
+        [
+          "Assistant",
+          "I'll say: patient reports tiredness since Monday; answered questions while seated; cause and severity not assessed here."
+        ],
+        [
+          "Nurse",
+          "That captures the information without minimizing it. Has the clinician already read the earlier wording?"
+        ],
+        [
+          "Assistant",
+          "I don't know. I'll draw attention to the correction rather than assume a changed note is enough."
+        ],
+        [
+          "Nurse",
+          "Please do. I will continue the assessment and clarify the details the patient wants to discuss."
+        ],
+        [
+          "Assistant",
+          "I'll communicate the corrected handoff now, including that my earlier phrase described more than I actually observed."
+        ]
+      ],
+      "notes": [
+        "'Too broad' identifies an overstatement without attacking the writer.",
+        "'Doesn't cancel' prevents an observation from erasing the patient's own report."
+      ]
+    },
+    {
+      "title": "A companion's account and the patient's account",
+      "setting": "Fictional medication-history handoff with disagreement about whether a reported change occurred.",
+      "dialogue": [
+        [
+          "Assistant",
+          "The patient and companion gave different accounts of a medicine change, and I haven't reconciled them."
+        ],
+        [
+          "Nurse",
+          "Please separate the accounts. What does each person say, and what written information is available?"
+        ],
+        [
+          "Assistant",
+          "The patient recalls a discussion last week. The companion says no change was made. Neither has instructions."
+        ],
+        [
+          "Nurse",
+          "Then both statements need attribution. We shouldn't combine them into a single apparently confirmed medication history."
+        ],
+        [
+          "Assistant",
+          "I also have the clinic's older list. It includes the item but predates the reported discussion."
+        ],
+        [
+          "Nurse",
+          "That date matters. The list shows earlier documentation, not necessarily what the other clinician decided last week."
+        ],
+        [
+          "Assistant",
+          "Could you speak directly with the patient and review the disagreement before anyone describes the list as current?"
+        ],
+        [
+          "Nurse",
+          "Yes, I'll take that review. Please keep the patient's question visible rather than letting the companion answer everything."
+        ],
+        [
+          "Assistant",
+          "The patient asked what to take this evening. I said that needs the clinician's response."
+        ],
+        [
+          "Nurse",
+          "Good. I'll address that question explicitly; the language exercise itself cannot supply a medication instruction."
+        ],
+        [
+          "Assistant",
+          "I'll hand over the dated list and the two attributed accounts through the clinic record."
+        ],
+        [
+          "Nurse",
+          "That gives me the sources without a guessed conclusion, and leaves the clinical decision clearly with the care team."
+        ]
+      ],
+      "notes": [
+        "'Predates' means a document was created before the event being discussed.",
+        "Separate attribution prevents disagreement from being concealed in a combined summary."
+      ]
+    },
+    {
+      "title": "The test name is abbreviated differently",
+      "setting": "Fictional clinic-laboratory enquiry about two abbreviated request descriptions; no test selection is made.",
+      "dialogue": [
+        [
+          "Assistant",
+          "The clinic message abbreviates the requested test differently from the requisition. I need help identifying the enquiry."
+        ],
+        [
+          "Laboratory clerk",
+          "Could you give the request reference first? Similar abbreviations shouldn't be treated as the same test automatically."
+        ],
+        [
+          "Assistant",
+          "The reference is T18. I'm not asking you to change the order from this telephone description."
+        ],
+        [
+          "Laboratory clerk",
+          "I have T18. The full requested name appears here, but the message abbreviation is ambiguous."
+        ],
+        [
+          "Assistant",
+          "Could the laboratory lead clarify it with the ordering clinician rather than have us guess the intended test?"
+        ],
+        [
+          "Laboratory clerk",
+          "Yes. I'll send the two descriptions to the lead under that reference and request clarification."
+        ],
+        [
+          "Assistant",
+          "The patient asked whether this means another specimen is needed. No one has made that decision yet."
+        ],
+        [
+          "Laboratory clerk",
+          "Then don't infer recollection from the naming question. We first need the request itself clarified."
+        ],
+        [
+          "Assistant",
+          "I'll tell the care team the descriptions differ and the lead is checking with the ordering clinician."
+        ],
+        [
+          "Laboratory clerk",
+          "Please keep the reference attached, so a reply about T18 isn't applied to another request."
+        ],
+        [
+          "Assistant",
+          "Agreed. I'll also avoid calling either description incorrect until we receive the clarification."
+        ],
+        [
+          "Laboratory clerk",
+          "That leaves a clear open question: what the current order requests, not what we think the abbreviation probably means."
+        ]
+      ],
+      "notes": [
+        "'I'm not asking you to change' limits the purpose of an information call.",
+        "'Recollection' in a laboratory context means obtaining another specimen, not remembering an event."
+      ]
+    },
+    {
+      "title": "A referral, an insurer message, and a visit",
+      "setting": "Fictional sent referral and insurer acknowledgment; no specialist booking.",
+      "dialogue": [
+        [
+          "Patient",
+          "I have two messages: one from the clinic and one from the insurer. Which is my appointment?"
+        ],
+        [
+          "Assistant",
+          "Neither includes a booked visit. The clinic confirms sending the referral; the insurer acknowledges receiving information."
+        ],
+        [
+          "Patient",
+          "Does the insurer's acknowledgment mean the specialist reviewed the referral and agreed to see me?"
+        ],
+        [
+          "Assistant",
+          "No. Those are different organizations and different steps. We still need the specialist office's referral status."
+        ],
+        [
+          "Patient",
+          "I'm arranging transport, so I need more than someone saying the paperwork is progressing."
+        ],
+        [
+          "Assistant",
+          "That's reasonable. Lia can check receipt and review status with the specialist office using your referral reference."
+        ],
+        [
+          "Patient",
+          "Could she also tell me the exact amount I'll pay when I arrive there?"
+        ],
+        [
+          "Assistant",
+          "That needs the appropriate billing or plan contact. A referral-status update doesn't settle your final payment."
+        ],
+        [
+          "Patient",
+          "Then please separate my questions: booking details for travel, and payment information for budgeting."
+        ],
+        [
+          "Assistant",
+          "I'll pass the booking query to Lia and identify the billing question separately, without treating either as resolved."
+        ],
+        [
+          "Patient",
+          "For now, I shouldn't describe either message to my employer as a confirmed visit date?"
+        ],
+        [
+          "Assistant",
+          "Correct. We don't have an appointment confirmation; the messages establish only the two actions they name."
+        ]
+      ],
+      "notes": [
+        "'Neither' rules out two proposed interpretations concisely.",
+        "One office's acknowledgment does not establish another office's decision."
+      ]
+    },
+    {
+      "title": "Checking understanding without testing the patient",
+      "setting": "Fictional conversation setup for a clinician's clarification; no treatment instructions.",
+      "dialogue": [
+        [
+          "Clinician",
+          "The patient said the summary was difficult to follow. What did they ask us to explain?"
+        ],
+        [
+          "Assistant",
+          "They pointed to the follow-up section and asked which part describes the next conversation with you."
+        ],
+        [
+          "Clinician",
+          "I'll explain that section again. Could you make sure we have a quiet place to talk?"
+        ],
+        [
+          "Assistant",
+          "The visit room is still available. The patient asked to avoid discussing the summary at reception."
+        ],
+        [
+          "Clinician",
+          "After explaining, I'll use teach-back: asking the patient to describe their understanding in their own words."
+        ],
+        [
+          "Assistant",
+          "Should I describe that as a test? They seemed worried about getting an English answer wrong."
+        ],
+        [
+          "Clinician",
+          "No. Explain that we are checking whether our explanation is clear, not grading their language."
+        ],
+        [
+          "Assistant",
+          "I'll say that you want to check how clearly the next step came across."
+        ],
+        [
+          "Clinician",
+          "Please also let them ask another question if their understanding differs from what I intended."
+        ],
+        [
+          "Assistant",
+          "I will. They haven't refused the plan; they want the wording clarified before leaving."
+        ],
+        [
+          "Clinician",
+          "That's an important distinction. I'll return now and address the follow-up section directly with them."
+        ],
+        [
+          "Assistant",
+          "I'll tell the patient you're coming to the room and that there is time for that question."
+        ]
+      ],
+      "notes": [
+        "Teach-back checks the explanation rather than testing the patient.",
+        "'Came across' describes how a listener understood a message."
+      ]
+    },
+    {
+      "title": "The portal label says routine",
+      "setting": "Fictional staff discussion; a new concern is embedded in an administrative portal thread.",
+      "dialogue": [
+        [
+          "Assistant",
+          "This portal thread is labeled appointment question, but the latest message asks about a new health concern."
+        ],
+        [
+          "Nurse",
+          "Has anyone assessed that concern, or are you describing only the label attached to the original thread?"
+        ],
+        [
+          "Assistant",
+          "Only the label. The original message concerned parking; the later message changes the subject."
+        ],
+        [
+          "Nurse",
+          "Then the administrative category doesn't establish urgency. I'll review the clinical message through our response pathway."
+        ],
+        [
+          "Assistant",
+          "Could you confirm you are taking that review? I don't want it left with the parking enquiry."
+        ],
+        [
+          "Nurse",
+          "Yes, I accept the clinical review. Keep the original administrative question separate from the new concern."
+        ],
+        [
+          "Assistant",
+          "The patient also asks whether an unanswered message means they should assume everything is fine."
+        ],
+        [
+          "Nurse",
+          "That needs a clinical response; silence is not an assessment. Don't give reassurance based on response timing."
+        ],
+        [
+          "Assistant",
+          "I'll avoid interpreting the delay and keep the message visible for your review, with its timestamp."
+        ],
+        [
+          "Nurse",
+          "Thank you. Use our actual escalation arrangements if any further information arrives; this category alone is insufficient."
+        ],
+        [
+          "Assistant",
+          "I'll tell reception you've accepted the clinical part and that they still own the parking answer."
+        ],
+        [
+          "Nurse",
+          "That division is clear. I will address the health concern, and reception can finish the separate access question."
+        ]
+      ],
+      "notes": [
+        "'Changes the subject' explains why an old message category may no longer fit.",
+        "'Silence is not an assessment' rejects an inference without inventing medical advice."
+      ]
+    },
+    {
+      "title": "One correction, two outstanding contacts",
+      "setting": "Fictional handoff: a wrong appointment date reached a patient and transport coordinator; neither correction call is complete.",
+      "dialogue": [
+        [
+          "Outgoing assistant",
+          "The appointment date is corrected in the record, but two people still have the earlier message."
+        ],
+        [
+          "Incoming assistant",
+          "Who received it, and what do we know about the current booking before making calls?"
+        ],
+        [
+          "Outgoing assistant",
+          "The patient and the transport coordinator received Tuesday. The verified booking is Thursday at two."
+        ],
+        [
+          "Incoming assistant",
+          "I'll take the patient call. Has anyone accepted responsibility for updating the transport coordinator?"
+        ],
+        [
+          "Outgoing assistant",
+          "Not yet. I can take that call before leaving and follow the existing permission arrangements."
+        ],
+        [
+          "Incoming assistant",
+          "Good. We should not assume correcting the patient automatically reaches the separate transport contact."
+        ],
+        [
+          "Outgoing assistant",
+          "Agreed. I'll explain the verified booking details without adding any clinical information to the transport conversation."
+        ],
+        [
+          "Incoming assistant",
+          "Please tell me the outcome, especially if the coordinator doesn't answer or cannot change the arrangement."
+        ],
+        [
+          "Outgoing assistant",
+          "I will. An unanswered attempt will remain an open task, not a completed transport change."
+        ],
+        [
+          "Incoming assistant",
+          "I'll use the same distinction for the patient call and check what they understood about Thursday."
+        ],
+        [
+          "Outgoing assistant",
+          "Then you own patient contact, and I own transport contact. Neither outcome is confirmed yet."
+        ],
+        [
+          "Incoming assistant",
+          "Accepted. We'll record the two outcomes separately so tomorrow's team knows exactly what remains unresolved."
+        ]
+      ],
+      "notes": [
+        "'Two people still have the earlier message' identifies the reach of an error.",
+        "Separate ownership makes two outstanding contacts visible instead of hiding them under 'corrected.'"
+      ]
+    }
+  ]
+}

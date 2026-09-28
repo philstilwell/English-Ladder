@@ -1,0 +1,2448 @@
+{
+  "course": {
+    "slug": "medical-laboratory-technicians",
+    "title": "Medical Laboratory Technician English",
+    "summary": "Resolve specimen and order discrepancies, explain laboratory status precisely, report quality concerns, coordinate referral testing, and complete clear result-notification handoffs.",
+    "roles": "Medical laboratory technicians and clinical laboratory support staff",
+    "category": "Health & life sciences",
+    "scope_note": "All specimens, identifiers, incidents, times, and results are fictional. This curriculum teaches English, not collection, testing, instrument operation, biosafety, transport, clinical interpretation, diagnosis, or treatment. Module 7 supplies invented analytes, values, and units solely for complete notification and read-back practice. Each critical designation belongs only to the fictional laboratory; no universal threshold is implied. Identity and recipient verification are stated facts, not a complete verification procedure. Duties depend on qualifications and local rules. Real critical results and hazards require the laboratory's actual immediate response, documentation, and escalation procedures.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics: Clinical Laboratory Technologists and Technicians",
+        "url": "https://www.bls.gov/ooh/healthcare/clinical-laboratory-technologists-and-technicians.htm"
+      },
+      {
+        "title": "Centers for Disease Control and Prevention: About Laboratory Quality",
+        "url": "https://www.cdc.gov/lab-quality/php/about/"
+      },
+      {
+        "title": "Agency for Healthcare Research and Quality: TeamSTEPPS Check-Back (or Repeat-Back)",
+        "url": "https://www.ahrq.gov/teamstepps-program/curriculum/communication/tools/checkback.html"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Accessioning and unambiguous identifiers",
+        "collocations": [
+          "confirm the accession number: establish which laboratory case is being discussed",
+          "match the requisition to the label: compare the order and specimen identifiers",
+          "read back an identifier: repeat a complete code to check accurate communication",
+          "report an accessioning discrepancy: identify an unresolved registration mismatch"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "The receiving log lists accession A314; a clinic caller asks about A341. No identity match has been established. Technician Noor can check the accession log. The caller must identify the requested case through the laboratory's privacy and verification arrangements.",
+          "model": "Before we discuss a specimen status, could we clarify the accession number? Our receiving log lists A314, while your enquiry says A341. Those are different identifiers. Please check the reference on your request through our verification arrangements. I will keep the enquiries separate until we establish which case you mean; no match has been confirmed yet."
+        },
+        "workshop": {
+          "title": "Resolve the reference before answering the status question",
+          "goal": "Clarify similar laboratory identifiers without merging cases.",
+          "explanation": "Repeat the complete identifier and name its source. A similar name, location, or code is not a verified match. These exchanges do not replace the laboratory's identity requirements.",
+          "frames": [
+            "Your enquiry says ___; the receiving log lists ___.",
+            "Could you read the complete ___ back?",
+            "We have not yet established that ___ refers to ___."
+          ],
+          "before": "The digits are nearly the same, so it must be your sample.",
+          "after": "A314 and A341 differ. Let's establish the intended accession before discussing status.",
+          "reason": "The revised wording prevents a reference guess from becoming an identity claim.",
+          "role_b": "Clinic caller: your note says A341; check the actual request when asked.",
+          "challenge": "Say both cases came from the same clinic and ask whether that is enough to match them.",
+          "questions": [
+            {
+              "prompt": "Clinic: Which reference did the laboratory assign to this received case?\nTechnician: Its ____.",
+              "options": [
+                "appointment date",
+                "accession number",
+                "invoice total",
+                "reagent code"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "An appointment date identifies timing, not the registered case.",
+                "Correct. The accession number links the laboratory case and records.",
+                "An invoice total is a payment amount.",
+                "A reagent code identifies a testing material, not the patient case."
+              ]
+            },
+            {
+              "prompt": "Caller: A341 is the same as A314, isn't it?\nTechnician: No. The digits are ____, so we must clarify the reference.",
+              "options": [
+                "identical",
+                "consecutive",
+                "transposed",
+                "omitted"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Identical would mean exactly the same sequence.",
+                "Consecutive means following one another in order.",
+                "Correct. The last two digits have exchanged positions.",
+                "Omitted would mean missing, not exchanged."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "accession number",
+          "requisition",
+          "specimen label",
+          "accessioning"
+        ]
+      },
+      {
+        "title": "Specimen suitability and recollection language",
+        "collocations": [
+          "review specimen suitability: assess whether the specimen meets the relevant requirements",
+          "state the rejection reason: report the documented reason testing cannot proceed on that specimen",
+          "request recollection clarification: ask which specimen or request a recollection decision concerns",
+          "avoid assigning collection blame: describe a specimen issue without inventing who caused it"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "The laboratory lead has documented insufficient quantity for test request Q6 and requested recollection through the clinic. No collection method, urgency, or cause is supplied. The clinic thinks insufficient quantity means a low patient result.",
+          "model": "For Q6, insufficient quantity describes the amount of specimen available, not a low result in the patient's blood. The laboratory lead has requested recollection through your clinic. There is no reportable result from this request in this case. Please confirm that the care team has received the recollection message; the collection arrangements belong with them."
+        },
+        "workshop": {
+          "title": "Distinguish a specimen problem from a patient result",
+          "goal": "Explain suitability wording without interpreting health status or teaching collection.",
+          "explanation": "Insufficient quantity concerns available sample, not a measured patient level. State the documented decision and its request reference. Do not generalize one specimen issue to every requested test.",
+          "frames": [
+            "___ describes the specimen, not a patient result.",
+            "The documented decision for request ___ is ___.",
+            "The care team needs to confirm ___."
+          ],
+          "before": "The patient's result is too low to report.",
+          "after": "The specimen quantity is insufficient for Q6; no reportable result is available from that request.",
+          "reason": "This prevents a suitability problem from sounding like a clinical finding.",
+          "role_b": "Clinic coordinator: you think insufficient quantity refers to a low measured result.",
+          "challenge": "Ask whether the collector definitely caused the problem; the cause is not established.",
+          "questions": [
+            {
+              "prompt": "Clinic: Does insufficient quantity mean the patient's level is low?\nTechnician: No, it describes the available ____.",
+              "options": [
+                "reference interval",
+                "specimen amount",
+                "clinical diagnosis",
+                "measured concentration"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A reference interval is a comparison range.",
+                "Correct. Quantity concerns how much specimen is available.",
+                "A clinical diagnosis is not supplied by this specimen-quantity message.",
+                "No measured patient concentration is available here."
+              ]
+            },
+            {
+              "prompt": "Clinic: Was a second sample already obtained?\nTechnician: Recollection was ____, but completion has not been confirmed.",
+              "options": [
+                "completed",
+                "requested",
+                "reported as received",
+                "cancelled"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Completed contradicts the unknown status.",
+                "Correct. A request is not proof a new specimen was obtained.",
+                "Reported as received would establish a later stage.",
+                "Cancelled would mean the request was withdrawn."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "hemolysis",
+          "insufficient quantity",
+          "recollection",
+          "acceptance criteria"
+        ]
+      },
+      {
+        "title": "Quality-control status and reportable results",
+        "collocations": [
+          "review control performance: assess the recorded quality-control information",
+          "hold results for review: keep results from release while a required issue is unresolved",
+          "confirm run status: establish whether a testing run has met its review requirements",
+          "separate completion from release: distinguish finished instrument work from permission to report"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "An analytical run is complete, but its quality-control review is unresolved. The laboratory lead has not authorized result release. A clinic wants results described as final because the instrument finished. No values or troubleshooting instructions are supplied.",
+          "model": "The analytical run has finished, but the quality-control review remains unresolved and release has not been authorized. I cannot describe these results as final just because the instrument completed its work. The laboratory lead is reviewing the issue. I can report that status to your team, but I do not have a confirmed release time."
+        },
+        "workshop": {
+          "title": "Resist an inaccurate final-status label",
+          "goal": "Explain why a completed run is not necessarily a released report.",
+          "explanation": "Describe the stage without teaching control interpretation or corrective testing. Unresolved review does not establish that every patient result is wrong. Keep the release decision with the laboratory's qualified reviewer.",
+          "frames": [
+            "The run is complete; ___ remains unresolved.",
+            "Completion does not establish ___.",
+            "I can confirm ___, but cannot report ___ as final."
+          ],
+          "before": "The analyzer finished, so the report is final.",
+          "after": "The run finished, but quality review and release authorization remain outstanding.",
+          "reason": "Instrument completion and reporting permission answer different questions.",
+          "role_b": "Clinic caller: you need a status but initially equate a finished run with final results.",
+          "challenge": "Ask whether the quality review proves the patient results are inaccurate.",
+          "questions": [
+            {
+              "prompt": "Clinic: The run finished. Are results released?\nTechnician: Not yet; the quality-control review remains ____.",
+              "options": [
+                "completed",
+                "unresolved",
+                "waived",
+                "archived"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Completed would say the review has finished.",
+                "Correct. Unresolved describes the outstanding review.",
+                "Waived means the requirement was set aside.",
+                "Archived means stored, not awaiting a decision."
+              ]
+            },
+            {
+              "prompt": "Lead: What checks the test system rather than representing this patient's specimen?\nTechnician: The ____.",
+              "options": [
+                "patient aliquot",
+                "control material",
+                "recollection specimen",
+                "referral specimen"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A patient aliquot is part of a patient sample.",
+                "Correct. Control material monitors test-system performance.",
+                "A recollection specimen is another patient sample.",
+                "A referral specimen is sent for external testing."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "quality control",
+          "control material",
+          "analytical run",
+          "release authorization"
+        ]
+      },
+      {
+        "title": "Reagents, instruments, and service coordination",
+        "collocations": [
+          "identify the reagent lot: specify the exact material batch being discussed",
+          "check verification status: establish whether required material review is complete",
+          "log instrument downtime: record the period and scope of unavailability",
+          "coordinate a service enquiry: give equipment support the facts needed for review"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Analyzer H2 is marked unavailable. A service visit ended at 11:00, but the laboratory lead has not confirmed return to service. Technician Noor needs a status from the lead before updating the clinic. No repair steps, settings, or patient results are supplied.",
+          "model": "Could you confirm H2's return-to-service status? The service visit ended at eleven, but I do not see the laboratory lead's confirmation that testing can resume. I need to update the clinic accurately. Please distinguish the completed service visit from any checks or release decision still outstanding, and tell me who owns the next status update."
+        },
+        "workshop": {
+          "title": "Ask what a service completion actually establishes",
+          "goal": "Coordinate equipment status without giving technical operating instructions.",
+          "explanation": "A service engineer's completed visit and the laboratory's permission to resume testing are separate. State the instrument reference, observed status, and exact question. Do not guess settings, restart methods, or cause.",
+          "frames": [
+            "The service visit ended at ___; ___ remains unconfirmed.",
+            "Could you confirm whether ___ is available for ___?",
+            "Who owns the next update on ___?"
+          ],
+          "before": "The engineer left, so H2 is ready.",
+          "after": "The visit ended; the laboratory's return-to-service confirmation is still needed.",
+          "reason": "The revised wording does not turn a departure time into operational readiness.",
+          "role_b": "Laboratory lead: you have not confirmed return to service; ask what the technician needs for the clinic update.",
+          "challenge": "Ask whether the instrument's illuminated screen proves it is available for testing.",
+          "questions": [
+            {
+              "prompt": "Clinic: The service visit ended. Is testing available again?\nTechnician: Return to service is still ____.",
+              "options": [
+                "unconfirmed",
+                "completed",
+                "recorded as approved",
+                "scheduled yesterday"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. No laboratory confirmation has been supplied.",
+                "Completed wrongly presents readiness as established.",
+                "Recorded as approved contradicts the missing confirmation.",
+                "Scheduled yesterday describes planning, not present readiness."
+              ]
+            },
+            {
+              "prompt": "Lead: Two reagent batches arrived. What identifies which batch needs verification?\nTechnician: Its ____.",
+              "options": [
+                "instrument name",
+                "lot number",
+                "specimen accession",
+                "appointment reference"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The instrument name identifies equipment, not a reagent batch.",
+                "Correct. The lot number identifies the material batch.",
+                "A specimen accession identifies a laboratory case.",
+                "An appointment reference identifies a scheduled visit."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "reagent",
+          "lot verification",
+          "maintenance record",
+          "downtime"
+        ]
+      },
+      {
+        "title": "Turnaround times and realistic updates",
+        "collocations": [
+          "define the turnaround clock: state which events start and end the quoted interval",
+          "update the expected reporting time: revise a timing estimate using current information",
+          "clarify the stated priority: check the requested urgency against the recorded order",
+          "assess an add-on request: obtain review of whether extra testing can be accepted"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "The service's quoted two-hour turnaround is measured from laboratory receipt to reporting. Specimen T5 was collected at 08:00 and received at 09:00. A backlog affects estimates; no report time is confirmed. The clinic assumes collection started the two-hour clock.",
+          "model": "The quoted two-hour turnaround is measured from laboratory receipt, not collection. T5 was received at nine after collection at eight. That distinction changes the reference point, but the current backlog means I still cannot promise a report at eleven. The section lead can provide the latest estimate; please treat it as an estimate unless confirmed otherwise."
+        },
+        "workshop": {
+          "title": "Name the starting point before discussing the estimate",
+          "goal": "Explain laboratory timing without inventing a guaranteed deadline.",
+          "explanation": "Turnaround intervals need defined start and end events. Correcting the starting point does not eliminate delays. STAT is a priority designation, not a promise that a particular result already exists.",
+          "frames": [
+            "Our quoted interval runs from ___ to ___.",
+            "___ is the reference point, not ___.",
+            "The current estimate is affected by ___; ___ remains unconfirmed."
+          ],
+          "before": "Two hours after collection is definitely the reporting deadline.",
+          "after": "This interval starts at receipt; the current backlog means a report time is still unconfirmed.",
+          "reason": "The timing explanation identifies both the clock and the uncertainty.",
+          "role_b": "Clinic coordinator: count two hours from the 08:00 collection and ask why no report is available.",
+          "challenge": "Ask whether adding STAT to your telephone message independently changes the recorded order priority.",
+          "questions": [
+            {
+              "prompt": "Clinic: When does this service's turnaround clock start?\nTechnician: It starts at laboratory ____, not collection.",
+              "options": [
+                "receipt",
+                "dispatch",
+                "release",
+                "recollection"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Receipt is the stated starting event.",
+                "Dispatch is sending the specimen onward.",
+                "Release is a later reporting-stage event.",
+                "Recollection means obtaining another specimen."
+              ]
+            },
+            {
+              "prompt": "Clinic: Can an add-on be guaranteed because the specimen is already there?\nTechnician: No. The additional request still needs ____.",
+              "options": [
+                "automatic duplication",
+                "a completed report",
+                "suitability review",
+                "collection-time correction"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Duplication would repeat work rather than assess the new request.",
+                "A completed report is an outcome, not the necessary review.",
+                "Correct. Presence alone doesn't establish suitability for extra testing.",
+                "Correcting a timestamp would not establish suitability for the additional test."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "turnaround time",
+          "STAT priority",
+          "backlog",
+          "add-on request"
+        ]
+      },
+      {
+        "title": "Preliminary, final, and amended reports",
+        "collocations": [
+          "identify the report version: state which issued document is being discussed",
+          "explain preliminary status: distinguish an interim report from a completed reporting stage",
+          "notify a report amendment: tell the receiving team that an issued report has changed",
+          "refer interpretation questions: direct clinical meaning questions to the responsible clinician"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "The clinic received a preliminary report at 10:00 and a final report at 14:00. A technician called the earlier version final by mistake. The final report supersedes the preliminary version for this request. No findings or clinical conclusions are supplied.",
+          "model": "I need to correct my earlier description. The ten o'clock report was preliminary, not final. The final report was issued at two and supersedes that earlier version for this request. Please confirm that your team is viewing the two o'clock report. I can clarify the version and status, but clinical interpretation belongs with the responsible clinician."
+        },
+        "workshop": {
+          "title": "Correct the report label and verify the version",
+          "goal": "Repair an inaccurate version statement without interpreting results.",
+          "explanation": "A final label describes a reporting stage, not an assurance that a patient is healthy or that no correction could ever follow. Use the reference, issue time, and version together.",
+          "frames": [
+            "I incorrectly called ___ final; it was ___.",
+            "The version issued at ___ supersedes ___.",
+            "Please confirm which report your team is viewing."
+          ],
+          "before": "Final means the patient is fine.",
+          "after": "Final describes the report's stage; the clinician needs to explain its meaning for the patient.",
+          "reason": "Reporting status and clinical interpretation must remain distinct.",
+          "role_b": "Clinic nurse: you have the ten o'clock printout and need to identify the current version.",
+          "challenge": "Ask whether a value inside a reference interval settles the whole clinical question.",
+          "questions": [
+            {
+              "prompt": "Clinic: Which word describes an issued report changed afterward through the correction process?\nTechnician: ____.",
+              "options": [
+                "Preliminary",
+                "Unreceived",
+                "Amended",
+                "Unordered"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Preliminary describes an interim reporting stage.",
+                "Unreceived concerns whether an item arrived.",
+                "Correct. Amended identifies a revised issued report.",
+                "Unordered describes a missing request, not a correction."
+              ]
+            },
+            {
+              "prompt": "Clinic: Does final mean the clinician has explained it to the patient?\nTechnician: No. It describes the report's ____, not the completed discussion.",
+              "options": [
+                "reporting stage",
+                "clinical reassurance",
+                "appointment purpose",
+                "patient agreement"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Final identifies a reporting stage.",
+                "Clinical reassurance would interpret the patient's situation.",
+                "Appointment purpose describes a visit rather than report status.",
+                "Patient agreement concerns a decision, not this report label."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "preliminary report",
+          "final report",
+          "amended report",
+          "reference interval"
+        ]
+      },
+      {
+        "title": "Critical notifications and acknowledged handoffs",
+        "collocations": [
+          "verify the receiving clinician: establish that the intended qualified recipient is on the line",
+          "obtain a read-back: request repetition of the critical communicated details",
+          "record acknowledgment: document that the intended recipient confirmed receipt",
+          "escalate an unanswered notification: use the designated pathway when the required contact is not achieved"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Fictional laboratory Lumen designates C7's potassium result of 6.4 mmol/L critical under its own criteria; mmol/L means millimoles per liter. Case identity and Dr Shah's receiving authority are already verified. The report was issued at 14:10; this call occurs at 14:12. Dr Shah's contact is extension 214. Dr Shah initially repeats 6.1. Correct the value, obtain the complete read-back, and confirm receipt. No diagnosis, treatment, or universal threshold is supplied.",
+          "model": "Dr Shah, Noor from Lumen laboratory. For C7, the critical potassium result is six point four millimoles per liter. You repeated six point one; it is six point four. Please read back the complete result. That matches, thank you. The report was issued at two ten; I'll record your receipt at two twelve and contact extension 214."
+        },
+        "workshop": {
+          "title": "Complete the read-back and correct what was misheard",
+          "goal": "Communicate a fictional result accurately and confirm its receipt by the stated recipient.",
+          "explanation": "The sender states the information, the receiver repeats it, and the sender confirms or corrects it. Analyte means the substance measured. Millimoles per liter (mmol/L) and milligrams per deciliter (mg/dL) are different units; do not interchange or convert them in these exercises. All critical designations are fictional lab-specific facts, not universal thresholds.",
+          "frames": [
+            "For verified case ___: [analyte], [value], [units].",
+            "You repeated ___; the reported value is ___. Please read it back.",
+            "That read-back matches. Please confirm you accept this notification."
+          ],
+          "before": "You heard a number, so I'll mark it done.",
+          "after": "You repeated six point one; the report says six point four millimoles per liter. Please repeat the complete result.",
+          "reason": "A corrected number needs a fresh complete read-back, followed by the sender's confirmation.",
+          "role_b": "Dr Shah: identity and receiving authority are verified. Initially repeat potassium 6.1 mmol/L for C7; after correction, repeat C7, potassium 6.4 mmol/L and accept the notification.",
+          "challenge": "Ask whether six point four proves a diagnosis. The technician preserves the reported value and leaves clinical interpretation to the clinician.",
+          "questions": [
+            {
+              "prompt": "Technician: C7 potassium is 6.4 mmol/L, meaning millimoles per liter.\nClinician: Six point one?\nTechnician: ____; please repeat the full result.",
+              "options": [
+                "The value is six point four",
+                "The value is six point one",
+                "The units are milligrams per deciliter",
+                "The analyte is sodium"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This restores the stated value and requests confirmation.",
+                "Six point one repeats the misheard value.",
+                "These units differ from the supplied millimoles per liter.",
+                "The stated analyte is potassium, not sodium."
+              ]
+            },
+            {
+              "prompt": "Clinician: C7, potassium, six point four millimoles per liter.\nTechnician: ____. Dr Shah, please confirm receipt.",
+              "options": [
+                "That changes the reported result",
+                "That read-back matches the report",
+                "That establishes a treatment plan",
+                "That confirms every laboratory uses this threshold"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The accurate read-back repeats rather than changes the report.",
+                "Correct. The sender verifies the receiver's complete repeat.",
+                "Reading back a value does not establish treatment.",
+                "The critical designation is specific to this fictional laboratory."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "critical result",
+          "read-back",
+          "notification log",
+          "escalation pathway"
+        ]
+      },
+      {
+        "title": "Referral laboratories and outstanding work",
+        "collocations": [
+          "reconcile the shipping manifest: compare the shipment list with confirmed received items",
+          "confirm referral-laboratory acceptance: check whether the external laboratory accepted the request",
+          "handover a send-out enquiry: transfer the unresolved external-testing question to a named colleague",
+          "trace a shipment discrepancy: establish which transfer or receipt detail remains unknown"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Send-out X8 appears on Monday's manifest. The courier confirms parcel delivery Tuesday, but the referral laboratory has not confirmed X8's accession acceptance. Noor's shift ends; incoming technician Eli accepts the enquiry and an agreed 15:00 clinic update. No result date is confirmed.",
+          "model": "Eli, X8 is listed on Monday's manifest, and parcel delivery was confirmed Tuesday. We still lack the referral laboratory's accession acceptance for X8, so a result date is not established. Please take the acceptance enquiry and the clinic update agreed for three. Confirm that you have both tasks; parcel delivery alone does not close this send-out follow-up."
+        },
+        "workshop": {
+          "title": "Transfer the item-level question, not just the parcel status",
+          "goal": "Give a send-out handoff with a clear remaining task and accepted owner.",
+          "explanation": "A manifest lists intended contents; parcel delivery does not itself confirm item acceptance. Chain-of-custody requirements apply only in their proper context, not automatically to every routine specimen.",
+          "frames": [
+            "The manifest lists ___; the receiving laboratory has confirmed ___.",
+            "The outstanding question is ___ for accession ___.",
+            "Please confirm you accept both ___ and ___."
+          ],
+          "before": "The courier delivered it, so everything is finished.",
+          "after": "The parcel arrived; X8's acceptance and the clinic update remain outstanding.",
+          "reason": "This identifies the item-level gap and the communication still owed.",
+          "role_b": "Eli: accept the acceptance enquiry and three o'clock update, keeping result timing unknown.",
+          "challenge": "Ask whether a courier signature counts as referral-laboratory accession acceptance.",
+          "questions": [
+            {
+              "prompt": "Colleague: Does the manifest prove the external laboratory accepted every listed specimen?\nTechnician: No. It lists the shipment's ____, not its acceptance decisions.",
+              "options": [
+                "intended contents",
+                "final results",
+                "clinical interpretations",
+                "completed reviews"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A manifest identifies listed shipment contents.",
+                "Final results are produced after testing and review.",
+                "Clinical interpretations concern meaning for patient care.",
+                "Completed reviews are decisions, not shipment listings."
+              ]
+            },
+            {
+              "prompt": "Outgoing technician: Can you own the acceptance enquiry and the three o'clock update?\nIncoming technician: I accept ____ tasks; result timing remains unknown.",
+              "options": [
+                "neither",
+                "either",
+                "both",
+                "another"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Neither would reject the two responsibilities.",
+                "Either leaves which task is accepted unclear.",
+                "Correct. Both explicitly covers the two named tasks.",
+                "Another refers to a different unspecified task."
+              ]
+            }
+          ]
+        },
+        "terms": [
+          "referral laboratory",
+          "send-out test",
+          "shipping manifest",
+          "chain of custody"
+        ]
+      }
+    ],
+    "jargon": [
+      {
+        "term": "accession number",
+        "definition": "A laboratory-assigned identifier linking a received specimen or case to its testing records.",
+        "group": "Accessioning and unambiguous identifiers"
+      },
+      {
+        "term": "requisition",
+        "definition": "The clinician's paper or electronic request identifying the laboratory tests ordered.",
+        "group": "Accessioning and unambiguous identifiers"
+      },
+      {
+        "term": "specimen label",
+        "definition": "The identifying information attached to a specimen container under the laboratory's requirements.",
+        "group": "Accessioning and unambiguous identifiers"
+      },
+      {
+        "term": "accessioning",
+        "definition": "The laboratory's process of registering a specimen or case and associating it with its order.",
+        "group": "Accessioning and unambiguous identifiers"
+      },
+      {
+        "term": "hemolysis",
+        "definition": "Breakdown of red blood cells that can affect some laboratory measurements, requiring method-specific assessment.",
+        "group": "Specimen suitability and recollection language"
+      },
+      {
+        "term": "insufficient quantity",
+        "definition": "A specimen amount that does not meet the laboratory's requirements for the requested testing.",
+        "group": "Specimen suitability and recollection language"
+      },
+      {
+        "term": "recollection",
+        "definition": "Obtaining another specimen when the laboratory or care team determines one is needed.",
+        "group": "Specimen suitability and recollection language"
+      },
+      {
+        "term": "acceptance criteria",
+        "definition": "The laboratory's defined requirements for determining whether a specimen is suitable for specified testing.",
+        "group": "Specimen suitability and recollection language"
+      },
+      {
+        "term": "quality control",
+        "definition": "Checks used to monitor whether a laboratory testing process is performing within its established requirements.",
+        "group": "Quality-control status and reportable results"
+      },
+      {
+        "term": "control material",
+        "definition": "Material with assigned or expected characteristics used to monitor a test system's performance.",
+        "group": "Quality-control status and reportable results"
+      },
+      {
+        "term": "analytical run",
+        "definition": "A defined group or sequence of laboratory testing performed under specified conditions.",
+        "group": "Quality-control status and reportable results"
+      },
+      {
+        "term": "release authorization",
+        "definition": "The required approval allowing laboratory results to be made available for reporting.",
+        "group": "Quality-control status and reportable results"
+      },
+      {
+        "term": "reagent",
+        "definition": "A substance used in a laboratory test to produce or measure a reaction.",
+        "group": "Reagents, instruments, and service coordination"
+      },
+      {
+        "term": "lot verification",
+        "definition": "The laboratory's checks establishing whether a particular material lot meets requirements for use.",
+        "group": "Reagents, instruments, and service coordination"
+      },
+      {
+        "term": "maintenance record",
+        "definition": "Documentation of service, checks, and related actions for laboratory equipment.",
+        "group": "Reagents, instruments, and service coordination"
+      },
+      {
+        "term": "downtime",
+        "definition": "A period when a laboratory instrument or service is unavailable for its intended work.",
+        "group": "Reagents, instruments, and service coordination"
+      },
+      {
+        "term": "turnaround time",
+        "definition": "The interval between defined starting and ending events in a laboratory service, such as receipt and reporting.",
+        "group": "Turnaround times and realistic updates"
+      },
+      {
+        "term": "STAT priority",
+        "definition": "A designation for urgent testing under the laboratory's established priority and response arrangements.",
+        "group": "Turnaround times and realistic updates"
+      },
+      {
+        "term": "backlog",
+        "definition": "Laboratory work waiting to be completed beyond the work currently being processed.",
+        "group": "Turnaround times and realistic updates"
+      },
+      {
+        "term": "add-on request",
+        "definition": "A request to perform additional testing on an existing specimen, subject to order and suitability requirements.",
+        "group": "Turnaround times and realistic updates"
+      },
+      {
+        "term": "preliminary report",
+        "definition": "A report issued before all relevant testing or review is complete, with its stated limitations.",
+        "group": "Preliminary, final, and amended reports"
+      },
+      {
+        "term": "final report",
+        "definition": "A report issued at the completed reporting stage for the specified request, subject to any later correction.",
+        "group": "Preliminary, final, and amended reports"
+      },
+      {
+        "term": "amended report",
+        "definition": "A report revised after issue, with the change recorded through the laboratory's correction process.",
+        "group": "Preliminary, final, and amended reports"
+      },
+      {
+        "term": "reference interval",
+        "definition": "A comparison range supplied with some test results, derived for a defined reference population and method.",
+        "group": "Preliminary, final, and amended reports"
+      },
+      {
+        "term": "critical result",
+        "definition": "A result meeting the laboratory's established criteria for prompt notification through its designated clinical pathway.",
+        "group": "Critical notifications and acknowledged handoffs"
+      },
+      {
+        "term": "read-back",
+        "definition": "Repeating communicated details so the sender can check that they were received accurately.",
+        "group": "Critical notifications and acknowledged handoffs"
+      },
+      {
+        "term": "notification log",
+        "definition": "The laboratory record of result-notification attempts, recipients, acknowledgments, and times.",
+        "group": "Critical notifications and acknowledged handoffs"
+      },
+      {
+        "term": "escalation pathway",
+        "definition": "The designated sequence of contacts and actions used when the required response or recipient is not reached.",
+        "group": "Critical notifications and acknowledged handoffs"
+      },
+      {
+        "term": "referral laboratory",
+        "definition": "An external laboratory that performs testing sent from another laboratory or service.",
+        "group": "Referral laboratories and outstanding work"
+      },
+      {
+        "term": "send-out test",
+        "definition": "A test whose specimen or material is sent to another laboratory for performance.",
+        "group": "Referral laboratories and outstanding work"
+      },
+      {
+        "term": "shipping manifest",
+        "definition": "A document listing items included in a shipment.",
+        "group": "Referral laboratories and outstanding work"
+      },
+      {
+        "term": "chain of custody",
+        "definition": "A documented record of possession and transfer used when required for a specimen's particular purpose.",
+        "group": "Referral laboratories and outstanding work"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "A314 or A341",
+          "setting": "Fictional laboratory call using the accession case.",
+          "turns": [
+            [
+              "Clinic caller",
+              "I'm asking about A341. Has it reached the laboratory, or is it still with the courier?"
+            ],
+            [
+              "Technician",
+              "Our log lists accession number A314. Let's clarify it before discussing specimen status."
+            ],
+            [
+              "Clinic caller",
+              "Both came from our clinic, so I assumed the two references described the same case."
+            ],
+            [
+              "Technician",
+              "The clinic location doesn't establish a match. Could you check the reference on your request?"
+            ],
+            [
+              "Clinic caller",
+              "The requisition says A314. I transposed the last two digits in my note."
+            ],
+            [
+              "Technician",
+              "Thank you. Please repeat the full identifier so we can confirm the enquiry accurately."
+            ],
+            [
+              "Clinic caller",
+              "A314. I'm asking whether that specimen's receipt is recorded, not whether a result is complete."
+            ],
+            [
+              "Technician",
+              "Following our verification checks, I can confirm receipt for A314. Testing status is a separate question."
+            ],
+            [
+              "Clinic caller",
+              "I'll correct my enquiry note to A314 and keep the question limited to receipt."
+            ],
+            [
+              "Technician",
+              "That resolves the reference mismatch. Please use A314 for any further enquiry about this case."
+            ]
+          ]
+        },
+        {
+          "title": "An order without a registered specimen",
+          "setting": "Fictional electronic order exists, but laboratory receipt has not been confirmed.",
+          "turns": [
+            [
+              "Clinic caller",
+              "The order appears in our system, so why can't I see an accession receipt?"
+            ],
+            [
+              "Technician",
+              "An electronic order and a received specimen are different things. I can see the request, not confirmed receipt."
+            ],
+            [
+              "Clinic caller",
+              "Does that mean the specimen is lost somewhere between the clinic and the laboratory?"
+            ],
+            [
+              "Technician",
+              "We haven't established that. The order alone doesn't tell us whether collection or dispatch occurred."
+            ],
+            [
+              "Clinic caller",
+              "I'll check the clinic's collection and courier records instead of assuming the laboratory has it."
+            ],
+            [
+              "Technician",
+              "Please use the order reference when you check. That helps us compare the same enquiry."
+            ],
+            [
+              "Clinic caller",
+              "Can you mark received while we look, just so the order stays visible to staff?"
+            ],
+            [
+              "Technician",
+              "Received would be inaccurate. The order can remain visible with specimen receipt unconfirmed."
+            ],
+            [
+              "Clinic caller",
+              "Understood. I'll report that distinction to the clinician rather than say testing has begun."
+            ],
+            [
+              "Technician",
+              "I'll keep the receipt enquiry open under the order reference while your clinic checks its records."
+            ]
+          ]
+        },
+        {
+          "title": "One request, an additional container",
+          "setting": "Fictional receiving enquiry about a second container; intended relationship is unresolved.",
+          "turns": [
+            [
+              "Technician",
+              "A second container arrived with paperwork mentioning the same request. Was it intended as an additional specimen?"
+            ],
+            [
+              "Clinic coordinator",
+              "I need to check with the collection team. The courier sheet doesn't explain the relationship."
+            ],
+            [
+              "Technician",
+              "Please don't infer that it replaces the first specimen simply because it arrived later."
+            ],
+            [
+              "Clinic coordinator",
+              "I won't. Do you need the intended relationship or confirmation of a particular test result?"
+            ],
+            [
+              "Technician",
+              "The relationship is the question. No result status is being discussed in this call."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll ask the collection team which request the second container was intended to accompany."
+            ],
+            [
+              "Technician",
+              "Our receiving lead will review the specimen label and paperwork before resolving this accessioning discrepancy."
+            ],
+            [
+              "Clinic coordinator",
+              "Should I describe both as duplicates in the clinic note while we check?"
+            ],
+            [
+              "Technician",
+              "Not yet. Duplicate would be a conclusion about their relationship, which remains unresolved."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll describe a second container with an unclear relationship and get the collection team's account."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A shared surname on two requests",
+        "brief": "Two fictional requests have the same surname but different accession references. A caller uses the surname only. The technician can request the full required verification; neither case status has been disclosed.",
+        "role_a": "Technician: explain why the surname does not identify one case.",
+        "role_b": "Caller: you have the request reference but initially omit it.",
+        "opening_line": "I'm checking the Morgan sample from this morning.",
+        "complication": "The caller assumes the earlier arrival must be the intended case.",
+        "success_checks": [
+          "Ask for the required reference and identity verification.",
+          "Avoid choosing a case by arrival order.",
+          "Read back the established reference before discussing its status."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Too little specimen, not a low result",
+          "setting": "Fictional Q6 call using the lesson case.",
+          "turns": [
+            [
+              "Clinic coordinator",
+              "The note says insufficient quantity. Does that mean the patient's measured level was low?"
+            ],
+            [
+              "Technician",
+              "No. It describes the amount of specimen available for Q6, not a measured patient result."
+            ],
+            [
+              "Clinic coordinator",
+              "So there isn't a number I should pass to the clinician from this request?"
+            ],
+            [
+              "Technician",
+              "Correct. Our acceptance criteria aren't met. The lead requested recollection for Q6; no result is reportable."
+            ],
+            [
+              "Clinic coordinator",
+              "Does the request tell us when or how to collect another specimen?"
+            ],
+            [
+              "Technician",
+              "This call provides no collection instructions. Your care team needs to arrange that under its procedures."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll pass the documented request to the clinician rather than tell the patient a result was low."
+            ],
+            [
+              "Technician",
+              "Please include Q6 so the team knows which request the recollection message concerns."
+            ],
+            [
+              "Clinic coordinator",
+              "Can we say the original collector caused the insufficient amount to avoid confusion?"
+            ],
+            [
+              "Technician",
+              "The cause isn't established. Report the documented quantity issue without assigning blame for it."
+            ]
+          ]
+        },
+        {
+          "title": "Hemolysis is not a diagnosis",
+          "setting": "Fictional enquiry about a specimen comment; method-specific assessment remains with the laboratory lead.",
+          "turns": [
+            [
+              "Clinic nurse",
+              "The specimen comment mentions hemolysis. Can you tell me what the patient has?"
+            ],
+            [
+              "Technician",
+              "The comment describes a specimen condition. It isn't, by itself, a diagnosis of the patient."
+            ],
+            [
+              "Clinic nurse",
+              "Does it mean every test from that collection must be considered unusable?"
+            ],
+            [
+              "Technician",
+              "That depends on the laboratory's assessment for the relevant tests. I can't generalize from this comment."
+            ],
+            [
+              "Clinic nurse",
+              "Could you ask the laboratory lead which requested tests the recorded decision covers?"
+            ],
+            [
+              "Technician",
+              "Yes. I'll ask for the scope of the decision under the accession reference."
+            ],
+            [
+              "Clinic nurse",
+              "Please don't send a general recollection message if only one request is affected."
+            ],
+            [
+              "Technician",
+              "I'll relay the lead's documented decision, including its scope, rather than invent broader instructions."
+            ],
+            [
+              "Clinic nurse",
+              "We need that distinction before we explain the situation to the ordering clinician."
+            ],
+            [
+              "Technician",
+              "I'll mark your question as decision scope and ask the lead to clarify it with your team."
+            ]
+          ]
+        },
+        {
+          "title": "Recollection requested, arrival unknown",
+          "setting": "Fictional specimen-status call; clinic says a new collection was planned, not confirmed.",
+          "turns": [
+            [
+              "Technician",
+              "We're following up on the recollection request for S12. Has a new specimen been obtained?"
+            ],
+            [
+              "Clinic coordinator",
+              "It was planned for this morning, but I haven't confirmed whether the appointment took place."
+            ],
+            [
+              "Technician",
+              "Then collection and laboratory receipt both remain unconfirmed. I'll avoid marking a new specimen received."
+            ],
+            [
+              "Clinic coordinator",
+              "Could you tell the clinician that the plan is in place, even though completion is unknown?"
+            ],
+            [
+              "Technician",
+              "Yes, provided I label it planned. That wording doesn't imply the collection actually happened."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll check the attendance and collection records with our team and return the verified status."
+            ],
+            [
+              "Technician",
+              "Please use S12 and distinguish the original specimen from any replacement in your reply."
+            ],
+            [
+              "Clinic coordinator",
+              "Should I say the original request is resolved because we've arranged the appointment?"
+            ],
+            [
+              "Technician",
+              "No. The new appointment doesn't establish a suitable replacement or completed testing."
+            ],
+            [
+              "Clinic coordinator",
+              "Understood. I'll report the confirmed stage after checking, rather than close the recollection enquiry early."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One rejected request, another still pending",
+        "brief": "A laboratory lead rejected specimen use for request J1 under documented acceptance criteria. Request J2 has no decision yet. The clinic assumes both were rejected. No technical cause or collection directions are supplied.",
+        "role_a": "Technician: limit the rejection statement to J1.",
+        "role_b": "Clinic nurse: ask whether J2 also needs recollection.",
+        "opening_line": "Should we tell the patient that both tests need another sample?",
+        "complication": "Both requests share a collection visit, but their suitability decisions differ in status.",
+        "success_checks": [
+          "State J1's documented rejection.",
+          "Keep J2's decision pending.",
+          "Ask the lead to clarify J2 without independently ordering recollection."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Finished on the instrument, awaiting review",
+          "setting": "Fictional clinic enquiry using the quality-control case.",
+          "turns": [
+            [
+              "Clinic caller",
+              "The analyzer has finished, so can you send the final results to our team?"
+            ],
+            [
+              "Technician",
+              "The analytical run is complete, but quality-control review is unresolved and release hasn't been authorized."
+            ],
+            [
+              "Clinic caller",
+              "Our clinician is waiting. Could you at least call the results final on the status screen?"
+            ],
+            [
+              "Technician",
+              "Final would be inaccurate. I can report completed testing with review and release still outstanding."
+            ],
+            [
+              "Clinic caller",
+              "Does that mean all the numbers must be wrong, or that nobody has looked?"
+            ],
+            [
+              "Technician",
+              "Neither conclusion follows from this status. The laboratory lead is reviewing the issue."
+            ],
+            [
+              "Clinic caller",
+              "When will that review finish? We need a definite time for the patient."
+            ],
+            [
+              "Technician",
+              "I don't have a confirmed release time. I'll pass the timing concern to the lead."
+            ],
+            [
+              "Clinic caller",
+              "Please make the difference explicit in your update, so reception doesn't promise a finished report."
+            ],
+            [
+              "Technician",
+              "I will: run complete, quality review unresolved, and no release authorization confirmed."
+            ]
+          ]
+        },
+        {
+          "title": "Control material is not a patient result",
+          "setting": "Fictional new colleague misreads the source of an entry; no numerical results.",
+          "turns": [
+            [
+              "Technician",
+              "The entry you quoted is labeled control material, not a patient specimen result."
+            ],
+            [
+              "Colleague",
+              "I saw it beside the run record and assumed it belonged to the patient accession."
+            ],
+            [
+              "Technician",
+              "The control entry monitors the testing process. Its position doesn't make it a patient result."
+            ],
+            [
+              "Colleague",
+              "Then I shouldn't copy that entry into a patient-status message or discuss its clinical meaning."
+            ],
+            [
+              "Technician",
+              "Correct. First establish the source and record type; keep the run review with the lead."
+            ],
+            [
+              "Colleague",
+              "Could you show me the label that distinguishes the two records, without interpreting the control?"
+            ],
+            [
+              "Technician",
+              "The source field says control material here; the patient record uses its accession reference."
+            ],
+            [
+              "Colleague",
+              "I see the distinction now. My question concerns record identity, not whether performance is acceptable."
+            ],
+            [
+              "Technician",
+              "I'll ask the lead to review any performance question. We've resolved which entry you were reading."
+            ],
+            [
+              "Colleague",
+              "Thanks. I'll withdraw the unsent patient-status wording and check the correct accession record instead."
+            ]
+          ]
+        },
+        {
+          "title": "A run includes more than one request",
+          "setting": "Fictional result-status query; one reviewed request does not establish the whole run's status.",
+          "turns": [
+            [
+              "Clinic nurse",
+              "We received a final report for one request. Does that mean everything in the run is released?"
+            ],
+            [
+              "Technician",
+              "Not necessarily. A final report identifies its own request; it doesn't confirm every other request's status."
+            ],
+            [
+              "Clinic nurse",
+              "Could you check the two accession references separately rather than answer about the instrument generally?"
+            ],
+            [
+              "Technician",
+              "Yes. The first shows released; the second remains under review, with no release time confirmed."
+            ],
+            [
+              "Clinic nurse",
+              "I had assumed the same instrument meant the same reporting stage for both."
+            ],
+            [
+              "Technician",
+              "The records show otherwise here. Shared testing equipment doesn't make their statuses interchangeable."
+            ],
+            [
+              "Clinic nurse",
+              "Please put the second reference first in the update, because that's the one our clinician needs clarified."
+            ],
+            [
+              "Technician",
+              "I'll report its review status explicitly and keep the already released request separate."
+            ],
+            [
+              "Clinic nurse",
+              "Should I say there's been a new failure, given that one report is delayed?"
+            ],
+            [
+              "Technician",
+              "No cause is supplied. A different release stage doesn't by itself establish a new failure."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Review assigned but not completed",
+        "brief": "The laboratory lead has assigned quality review to reviewer Ana. Ana has acknowledged the task but has not reported a decision. A colleague wants to mark the run released.",
+        "role_a": "Technician: distinguish review ownership from release permission.",
+        "role_b": "Colleague: you believe Ana's acknowledgment finishes the review.",
+        "opening_line": "Ana accepted it, so can I mark the results released now?",
+        "complication": "The colleague quotes the word accepted without naming what was accepted.",
+        "success_checks": [
+          "Specify that Ana accepted the review task.",
+          "Keep the review decision pending.",
+          "Avoid interpreting control values or authorizing release."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "The engineer left at eleven",
+          "setting": "Fictional service-status call using the H2 case.",
+          "turns": [
+            [
+              "Technician",
+              "The maintenance record shows the visit ended at eleven. Is H2 confirmed back in service?"
+            ],
+            [
+              "Laboratory lead",
+              "Not yet. The completed visit doesn't establish the laboratory's readiness decision for testing."
+            ],
+            [
+              "Technician",
+              "The clinic asked for a status. Should I say the instrument is still unavailable?"
+            ],
+            [
+              "Laboratory lead",
+              "Yes, that is the current status. Do not describe the service visit as permission to resume."
+            ],
+            [
+              "Technician",
+              "They also asked whether an illuminated screen means the problem has been resolved."
+            ],
+            [
+              "Laboratory lead",
+              "A visible screen doesn't establish our required readiness checks. Keep the update to confirmed status."
+            ],
+            [
+              "Technician",
+              "Who will provide the next update so the clinic isn't relying on another visual guess?"
+            ],
+            [
+              "Laboratory lead",
+              "I will. I haven't confirmed a time, so please don't invent one for them."
+            ],
+            [
+              "Technician",
+              "I'll say H2 remains unavailable, the service visit is complete, and your review is outstanding."
+            ],
+            [
+              "Laboratory lead",
+              "That is accurate. Send equipment-operation questions to me rather than attempting to explain the repair."
+            ]
+          ]
+        },
+        {
+          "title": "Received does not mean verified",
+          "setting": "Fictional reagent shipment; lot V8 received but lot verification is incomplete.",
+          "turns": [
+            [
+              "Technician",
+              "The new reagent lot V8 is here. Has its verification status been confirmed?"
+            ],
+            [
+              "Stock coordinator",
+              "Receipt is logged, but the required lot verification is still pending with the laboratory lead."
+            ],
+            [
+              "Technician",
+              "Then I'll describe it as received, not available for testing on the strength of delivery alone."
+            ],
+            [
+              "Stock coordinator",
+              "Please do. The purchase order's completed status refers to the delivery, not the technical review."
+            ],
+            [
+              "Technician",
+              "Could you identify the lot in the update? There is another batch with similar packaging."
+            ],
+            [
+              "Stock coordinator",
+              "Yes, I'll use V8 explicitly and avoid referring to it as just the new box."
+            ],
+            [
+              "Technician",
+              "I also need to know whether a different lot is available; can you confirm that?"
+            ],
+            [
+              "Stock coordinator",
+              "I can't confirm another lot's status from this entry. The lead needs to check that separately."
+            ],
+            [
+              "Technician",
+              "I'll ask the lead about availability without treating the two batches as interchangeable."
+            ],
+            [
+              "Stock coordinator",
+              "That keeps the stock enquiry precise and avoids turning a receipt record into a use decision."
+            ]
+          ]
+        },
+        {
+          "title": "A service reference without patient details",
+          "setting": "Fictional support call about a display message; no patient data or repair steps are shared.",
+          "turns": [
+            [
+              "Technician",
+              "I'm following up on service reference H19 for analyzer H2. Has your engineer accepted the enquiry?"
+            ],
+            [
+              "Service coordinator",
+              "Yes, an engineer is assigned, but we haven't confirmed a visit or resolution time."
+            ],
+            [
+              "Technician",
+              "Our clinic team needs an update. Can I quote an assigned engineer rather than a scheduled visit?"
+            ],
+            [
+              "Service coordinator",
+              "Exactly. Assignment confirms ownership, not travel arrangements or completion of the repair."
+            ],
+            [
+              "Technician",
+              "Do you need patient results in this call, or only the equipment reference and reported display message?"
+            ],
+            [
+              "Service coordinator",
+              "Only the approved equipment information for this enquiry. Don't send patient details with the service reference."
+            ],
+            [
+              "Technician",
+              "I'll use the designated support channel and the description already recorded by our lead."
+            ],
+            [
+              "Service coordinator",
+              "Please keep the message wording exact rather than paraphrase it as a confirmed technical diagnosis."
+            ],
+            [
+              "Technician",
+              "Understood. Engineer assigned, visit unconfirmed; the cause remains with the service review."
+            ],
+            [
+              "Service coordinator",
+              "I'll update the laboratory lead through the existing ticket when there is a confirmed scheduling change."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A maintenance date from the wrong instrument",
+        "brief": "A colleague quotes a completed maintenance record for H1 while answering an enquiry about H2. H2 remains unavailable. The laboratory lead can review both references.",
+        "role_a": "Technician: identify the scope mismatch and request H2's actual status.",
+        "role_b": "Colleague: you saw a similar instrument name and assumed the record applied.",
+        "opening_line": "That maintenance entry names H1; the clinic is asking about H2.",
+        "complication": "Both instruments are in the same room, which the colleague treats as confirmation.",
+        "success_checks": [
+          "Repeat both instrument references clearly.",
+          "Avoid transferring one instrument's completion status to another.",
+          "Request the lead's H2 status without giving operating advice."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Which clock starts at nine?",
+          "setting": "Fictional T5 timing call using the lesson case.",
+          "turns": [
+            [
+              "Clinic coordinator",
+              "T5 was collected at eight. Doesn't the two-hour turnaround time mean reporting by ten?"
+            ],
+            [
+              "Technician",
+              "This service measures turnaround from laboratory receipt to reporting. Receipt was at nine, not eight."
+            ],
+            [
+              "Clinic coordinator",
+              "Then should I promise the clinician a report at eleven instead of ten?"
+            ],
+            [
+              "Technician",
+              "No. The backlog affects the estimate, so changing the starting point doesn't guarantee eleven."
+            ],
+            [
+              "Clinic coordinator",
+              "Could the section lead provide a current estimate rather than just repeat the usual interval?"
+            ],
+            [
+              "Technician",
+              "Yes, I'll ask for the latest timing information with T5's reference and receipt time."
+            ],
+            [
+              "Clinic coordinator",
+              "We need to distinguish an overdue prediction from a specimen that hasn't arrived."
+            ],
+            [
+              "Technician",
+              "Receipt is confirmed. The open question is reporting time, not whether the laboratory has T5."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll explain that to the clinician and avoid describing collection time as your receipt time."
+            ],
+            [
+              "Technician",
+              "I'll pass on the timing query and keep any new estimate clearly labeled."
+            ]
+          ]
+        },
+        {
+          "title": "The add-on is a new request",
+          "setting": "Fictional clinic requests extra testing on an existing specimen; no technical suitability decision.",
+          "turns": [
+            [
+              "Clinic nurse",
+              "The specimen is already with you. Can we add the extra test without another discussion?"
+            ],
+            [
+              "Technician",
+              "An add-on request still needs the appropriate order and specimen-suitability review."
+            ],
+            [
+              "Clinic nurse",
+              "I thought an existing accession meant every additional test could use the same material."
+            ],
+            [
+              "Technician",
+              "It identifies the case, but doesn't establish that the specimen meets every new test's requirements."
+            ],
+            [
+              "Clinic nurse",
+              "Could you send the add-on request to the section lead for that review?"
+            ],
+            [
+              "Technician",
+              "Yes. I'll keep it linked to the original accession while distinguishing the additional requested test."
+            ],
+            [
+              "Clinic nurse",
+              "Please tell us whether it was accepted rather than assuming the original testing approval covers it."
+            ],
+            [
+              "Technician",
+              "That's the status I'll request. Acceptance and reporting time will need separate confirmation."
+            ],
+            [
+              "Clinic nurse",
+              "We haven't told the patient to return for another collection; that decision isn't made."
+            ],
+            [
+              "Technician",
+              "I'll preserve that uncertainty and report the lead's decision, without adding collection instructions myself."
+            ]
+          ]
+        },
+        {
+          "title": "A priority label needs confirmation",
+          "setting": "Fictional clinician enquiry says urgent; recorded order priority has not been checked.",
+          "turns": [
+            [
+              "Technician",
+              "Your message says STAT priority, but I need to clarify the recorded order priority."
+            ],
+            [
+              "Clinic coordinator",
+              "The clinician asked for an urgent update. I may have used STAT to mean that."
+            ],
+            [
+              "Technician",
+              "An urgent request for information isn't automatically a changed testing priority. Let's distinguish them."
+            ],
+            [
+              "Clinic coordinator",
+              "We need the current status first, and the clinician can clarify any priority request."
+            ],
+            [
+              "Technician",
+              "I'll route that question to the laboratory lead with the order reference."
+            ],
+            [
+              "Clinic coordinator",
+              "Please don't change the clinical request based only on my shorthand in this telephone message."
+            ],
+            [
+              "Technician",
+              "I won't. I'll describe your message as an urgent status enquiry, with order priority to verify."
+            ],
+            [
+              "Clinic coordinator",
+              "Does that wording mean you are deciding it isn't clinically urgent?"
+            ],
+            [
+              "Technician",
+              "No. I'm not making that assessment; I'm identifying the information that needs the responsible team's clarification."
+            ],
+            [
+              "Clinic coordinator",
+              "Thank you. I'll ask the clinician to confirm the intended priority through the proper order route."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A revised estimate after a backlog update",
+        "brief": "At 10:00 the section lead estimated reporting at noon. At 11:00 the lead says the estimate is no longer supported because the backlog changed. No replacement time is confirmed; a status update is agreed for 12:30.",
+        "role_a": "Technician: correct the estimate without inventing a new deadline.",
+        "role_b": "Clinic coordinator: you planned a noon results discussion.",
+        "opening_line": "We scheduled around noon. Has the report time changed?",
+        "complication": "The coordinator treats 12:30 as the replacement report deadline.",
+        "success_checks": [
+          "Identify noon as the superseded estimate.",
+          "Keep the new report time unknown.",
+          "State that 12:30 is a status-update commitment."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "The two o'clock version",
+          "setting": "Fictional correction call using the lesson case.",
+          "turns": [
+            [
+              "Technician",
+              "I need to correct my wording. The ten o'clock preliminary report wasn't final."
+            ],
+            [
+              "Clinic nurse",
+              "We printed that version for the clinician. Is there now a different report?"
+            ],
+            [
+              "Technician",
+              "Yes, the final report was issued at two and supersedes the preliminary version for this request."
+            ],
+            [
+              "Clinic nurse",
+              "Please give the issue time again so I can identify the correct document."
+            ],
+            [
+              "Technician",
+              "Two o'clock is the final version. I can clarify the version, not interpret its findings."
+            ],
+            [
+              "Clinic nurse",
+              "I have it open now. The heading and issue time both match your description."
+            ],
+            [
+              "Technician",
+              "Could you alert the clinician that the earlier printout was preliminary and has been superseded?"
+            ],
+            [
+              "Clinic nurse",
+              "I will. Should I say the newer report proves the patient has no problem?"
+            ],
+            [
+              "Technician",
+              "No. That is a clinical conclusion the report's final status does not establish."
+            ],
+            [
+              "Clinic nurse",
+              "Understood. I'll identify the current version and ask the clinician to interpret it with the patient."
+            ]
+          ]
+        },
+        {
+          "title": "A reference interval isn't the whole answer",
+          "setting": "Fictional patient-support call; no values or diagnoses are supplied.",
+          "turns": [
+            [
+              "Clinic nurse",
+              "A caller asks whether being within the reference interval means every concern is ruled out."
+            ],
+            [
+              "Technician",
+              "The interval is a comparison range for that result, not a conclusion about every clinical concern."
+            ],
+            [
+              "Clinic nurse",
+              "Could you confirm the report's wording while leaving the patient's interpretation question with the clinician?"
+            ],
+            [
+              "Technician",
+              "Yes. I can identify the interval printed on the report and the version being discussed."
+            ],
+            [
+              "Clinic nurse",
+              "The caller also compares it with a report from another laboratory using a different range."
+            ],
+            [
+              "Technician",
+              "Different methods and reference populations may use different intervals; the clinician should review the actual reports."
+            ],
+            [
+              "Clinic nurse",
+              "Please don't tell them one laboratory must be wrong simply because the ranges differ."
+            ],
+            [
+              "Technician",
+              "I won't. A difference in printed ranges doesn't establish an error by itself."
+            ],
+            [
+              "Clinic nurse",
+              "I'll arrange the clinician's explanation and make sure both reports are available for that discussion."
+            ],
+            [
+              "Technician",
+              "That gives the clinician the sources and preserves the distinction between comparison information and clinical interpretation."
+            ]
+          ]
+        },
+        {
+          "title": "An amended report needs a notified recipient",
+          "setting": "Fictional laboratory has issued an amended report; receiving clinic has not acknowledged the notification.",
+          "turns": [
+            [
+              "Technician",
+              "I'm contacting you about an amended report for request R22 issued this afternoon."
+            ],
+            [
+              "Clinic coordinator",
+              "We already have a final report from yesterday. Is this just another copy of that one?"
+            ],
+            [
+              "Technician",
+              "No. Amended means an issued report has been revised through the laboratory's correction process."
+            ],
+            [
+              "Clinic coordinator",
+              "Can you identify the version without discussing patient information on this unverified line?"
+            ],
+            [
+              "Technician",
+              "Yes. We'll use the established verified contact route for the report details and notification."
+            ],
+            [
+              "Clinic coordinator",
+              "I can arrange that route now. Should I mark the clinician notified before we connect?"
+            ],
+            [
+              "Technician",
+              "Not yet. Arranging a connection doesn't establish that the responsible recipient received the amendment."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll connect the designated recipient and keep notification pending until the handoff is acknowledged."
+            ],
+            [
+              "Technician",
+              "Thank you. The amendment's clinical meaning belongs with the clinician, but its changed version must be clear."
+            ],
+            [
+              "Clinic coordinator",
+              "I'll identify the message as an amendment notification, not a routine duplicate report."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A portal upload mistaken for clinical review",
+        "brief": "A final report is visible in the portal. The ordering clinician has not confirmed reviewing it or contacting the patient. A caller assumes visibility means the clinical discussion is complete.",
+        "role_a": "Technician: explain report availability without implying clinical review.",
+        "role_b": "Clinic coordinator: ask which follow-up task still needs a named owner.",
+        "opening_line": "It's in the portal, so can we close the patient-explanation task?",
+        "complication": "The caller treats a portal view count as evidence of understanding.",
+        "success_checks": [
+          "Separate report availability, viewing, and explanation.",
+          "Do not interpret the findings.",
+          "Request confirmation of the clinical follow-up owner."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Six point four, not six point one",
+          "setting": "All facts fictional: Lumen designates C7 potassium 6.4 mmol/L critical under its own criteria. Identity and Dr Shah's receiving authority are already verified. Report issued 14:10, call at 14:12, contact extension 214. No universal threshold, diagnosis, or treatment is implied.",
+          "turns": [
+            [
+              "Technician",
+              "Dr Shah, Noor from Lumen laboratory. For C7, the critical potassium result is six point four millimoles per liter."
+            ],
+            [
+              "Dr Shah",
+              "C7, potassium, six point one millimoles per liter. Have I heard that correctly?"
+            ],
+            [
+              "Technician",
+              "It's six point four, not six point one. Please repeat the complete result."
+            ],
+            [
+              "Dr Shah",
+              "C7, potassium, six point four millimoles per liter. Is that the value on the report?"
+            ],
+            [
+              "Technician",
+              "That matches, thank you. The report was issued at two ten this afternoon."
+            ],
+            [
+              "Dr Shah",
+              "Is two ten the report's issue time, rather than the specimen collection time?"
+            ],
+            [
+              "Technician",
+              "Yes, two ten is the issue time. This call is taking place at two twelve."
+            ],
+            [
+              "Dr Shah",
+              "Please record Dr Shah as the recipient. I've received C7's result, and my extension is 214."
+            ],
+            [
+              "Technician",
+              "I'll record your acknowledgment at two twelve and extension two one four. Is that correct?"
+            ],
+            [
+              "Dr Shah",
+              "Yes, extension two one four. I have the potassium result and will review the report now."
+            ]
+          ]
+        },
+        {
+          "title": "The escalation contact accepts S9",
+          "setting": "Fictional Lumen case S9: sodium 121 mmol/L is designated critical by this lab. Report issued 11:06. First contact was unanswered at 11:07; immediate local escalation reached verified receiving nurse Elena at 11:08, extension 305. These are case facts, not a required waiting interval. No universal threshold or treatment is implied.",
+          "turns": [
+            [
+              "Technician",
+              "Elena, Noor at Lumen laboratory. The first line was unanswered, so I'm calling about S9."
+            ],
+            [
+              "Nurse Elena",
+              "Elena speaking. I'm covering S9 and can take the result. Please go ahead."
+            ],
+            [
+              "Technician",
+              "The critical sodium result is one hundred twenty-one millimoles per liter, issued at eleven oh six."
+            ],
+            [
+              "Nurse Elena",
+              "S9, sodium, one hundred twenty-one millimoles per liter. Please check that against the report."
+            ],
+            [
+              "Technician",
+              "That read-back matches. Have you received the result and accepted the notification for S9?"
+            ],
+            [
+              "Nurse Elena",
+              "Yes, I have. Please use my name, Elena, and extension 305 for this contact."
+            ],
+            [
+              "Technician",
+              "Elena, extension three zero five. This call is at eleven oh eight; the earlier attempt was unanswered."
+            ],
+            [
+              "Nurse Elena",
+              "That's correct. Eleven oh eight is when I received it, not the earlier call time."
+            ],
+            [
+              "Technician",
+              "I'll enter this acknowledgment separately in the notification log. The report is available under S9."
+            ],
+            [
+              "Nurse Elena",
+              "Thank you. I have the result and units, and I'll bring the report to the care team."
+            ]
+          ]
+        },
+        {
+          "title": "The unit needs correcting too",
+          "setting": "Fictional Lumen case G4: glucose 48 mg/dL, meaning milligrams per deciliter, designated critical under this lab's criteria. Identity and receiving nurse Morgan's authority are verified. Report issued 13:40; Morgan's extension is 306. No universal threshold, diagnosis, or treatment is supplied.",
+          "turns": [
+            [
+              "Technician",
+              "Morgan, Noor from Lumen laboratory. G4's critical glucose result is forty-eight milligrams per deciliter."
+            ],
+            [
+              "Nurse Morgan",
+              "G4, glucose, forty-eight millimoles per liter. Is that the complete result you reported?"
+            ],
+            [
+              "Technician",
+              "The units are milligrams per deciliter, not millimoles per liter. The value is forty-eight."
+            ],
+            [
+              "Nurse Morgan",
+              "I misheard the units. Please say the whole result once more so I can check it."
+            ],
+            [
+              "Technician",
+              "For G4: glucose, forty-eight milligrams per deciliter. Please read that back to me."
+            ],
+            [
+              "Nurse Morgan",
+              "G4, glucose, forty-eight milligrams per deciliter. That's the result I have recorded now."
+            ],
+            [
+              "Technician",
+              "That read-back matches the report issued at one forty. Please confirm who is accepting it."
+            ],
+            [
+              "Nurse Morgan",
+              "Morgan. I accept the notification, and you can reach me on extension 306."
+            ],
+            [
+              "Technician",
+              "Morgan, extension three zero six. I'll record your acknowledgment and the corrected units; is that contact right?"
+            ],
+            [
+              "Nurse Morgan",
+              "Yes, three zero six. I have G4's glucose result in milligrams per deciliter."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A decimal lost in the repeat",
+        "brief": "Fictional Lumen case M2 has magnesium 0.8 mg/dL, meaning milligrams per deciliter, designated critical by this lab. Case identity and Dr Rao's receiving authority are verified. Dr Rao initially repeats eight, omitting zero point. No diagnosis, treatment, or universal threshold is supplied.",
+        "role_a": "Technician: state M2, magnesium, zero point eight milligrams per deciliter; correct the repeat and verify the final read-back.",
+        "role_b": "Dr Rao: initially say eight, then repeat the complete corrected result and accept receipt.",
+        "opening_line": "For verified case M2, Lumen's critical magnesium result is zero point eight milligrams per deciliter.",
+        "complication": "Dr Rao asks whether eight and zero point eight are merely different ways of saying the same value; they are not.",
+        "success_checks": [
+          "Correct eight to zero point eight without converting units.",
+          "Obtain M2, magnesium, zero point eight milligrams per deciliter in one read-back.",
+          "Confirm the accurate repeat and recipient acknowledgment without interpreting the result."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "A delivered parcel with acceptance still open",
+          "setting": "Fictional X8 shift handoff using the lesson case.",
+          "turns": [
+            [
+              "Outgoing technician",
+              "Send-out test X8 appears on Monday's shipping manifest. Tuesday's parcel delivery is confirmed, but accession acceptance isn't."
+            ],
+            [
+              "Incoming technician",
+              "I'll take the enquiry. Does the clinic have a promised result time or only an update time?"
+            ],
+            [
+              "Outgoing technician",
+              "Only an update at three. There is no confirmed result date from the referral laboratory."
+            ],
+            [
+              "Incoming technician",
+              "I accept that clinic update too. I'll ask the referral laboratory specifically about X8's acceptance."
+            ],
+            [
+              "Outgoing technician",
+              "Please don't treat the courier signature as proof they registered every item in the parcel."
+            ],
+            [
+              "Incoming technician",
+              "I won't. Parcel delivery and item-level acceptance remain separate in the handoff."
+            ],
+            [
+              "Outgoing technician",
+              "The clinic also asked whether this means X8 is lost. We haven't established that."
+            ],
+            [
+              "Incoming technician",
+              "I'll describe an acceptance enquiry, not a lost specimen, unless the receiving team confirms more."
+            ],
+            [
+              "Outgoing technician",
+              "Then you own the external check and three o'clock update, with no promised report date."
+            ],
+            [
+              "Incoming technician",
+              "Accepted. I'll record the response and keep unresolved items visible for the next shift."
+            ]
+          ]
+        },
+        {
+          "title": "A manifest entry without receipt confirmation",
+          "setting": "Fictional send-out coordinator compares a shipment list with the external receiving log.",
+          "turns": [
+            [
+              "Technician",
+              "Our manifest lists S4 and S5, but your acknowledgment names only S4."
+            ],
+            [
+              "Referral coordinator",
+              "I can confirm S4's registration. I need the receiving team to check S5 separately."
+            ],
+            [
+              "Technician",
+              "Does the acknowledgment intentionally exclude S5, or is that reason still unknown?"
+            ],
+            [
+              "Referral coordinator",
+              "The reason is unknown. I shouldn't call S5 rejected simply because it isn't mentioned."
+            ],
+            [
+              "Technician",
+              "Could you open an item-level enquiry using the manifest reference and the two separate identifiers?"
+            ],
+            [
+              "Referral coordinator",
+              "Yes. I'll ask the receiving team to compare the physical receipt information and registration records."
+            ],
+            [
+              "Technician",
+              "Please keep S4's confirmed status unchanged while you investigate the separate S5 question."
+            ],
+            [
+              "Referral coordinator",
+              "Agreed. I won't turn an unresolved item into an assumption about the entire shipment."
+            ],
+            [
+              "Technician",
+              "Our clinic update will say S4 confirmed and S5 under receipt enquiry, without predicting a result date."
+            ],
+            [
+              "Referral coordinator",
+              "That matches what I can establish now. I'll return the receiving team's finding when available."
+            ]
+          ]
+        },
+        {
+          "title": "Custody wording has a specific purpose",
+          "setting": "Fictional laboratory staff clarify documentation terminology without teaching collection or forensic procedures.",
+          "turns": [
+            [
+              "Technician",
+              "The clinic asked for chain-of-custody documentation. Is that just another name for our routine courier receipt?"
+            ],
+            [
+              "Quality coordinator",
+              "No. Chain of custody is a specific documented record of possession and transfers where required."
+            ],
+            [
+              "Technician",
+              "So I shouldn't rename a delivery signature as a complete chain-of-custody record."
+            ],
+            [
+              "Quality coordinator",
+              "Correct. We need to establish the purpose and applicable requirements through the responsible laboratory team."
+            ],
+            [
+              "Technician",
+              "Can you review what the clinic is requesting before we describe the documentation as sufficient?"
+            ],
+            [
+              "Quality coordinator",
+              "Yes. Send the enquiry through the designated record route, with the request purpose stated."
+            ],
+            [
+              "Technician",
+              "They haven't told us the purpose yet. I'll obtain that clarification instead of assuming it."
+            ],
+            [
+              "Quality coordinator",
+              "Good. Don't promise that a routine send-out meets requirements that haven't been identified."
+            ],
+            [
+              "Technician",
+              "I'll explain that the courier receipt confirms its stated delivery event, not every possible documentation requirement."
+            ],
+            [
+              "Quality coordinator",
+              "That is the useful distinction. I'll take the documentation review once the intended purpose is clarified."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The receiving laboratory changes its contact person",
+        "brief": "Referral laboratory contact Ana has moved roles. Send-out Z3 remains pending. Eli has not accepted the query. The receiving laboratory's service coordinator can assign a new owner; a clinic update is due at 16:00.",
+        "role_a": "Technician: request a named new contact without claiming the test stopped.",
+        "role_b": "Service coordinator: you can accept the ownership enquiry, but cannot confirm result timing.",
+        "opening_line": "Ana no longer handles Z3. Who has accepted the follow-up now?",
+        "complication": "The clinic assumes a staff change means its specimen must be recollected.",
+        "success_checks": [
+          "Separate contact ownership from specimen suitability.",
+          "Keep result timing unknown.",
+          "Preserve the four o'clock update while resolving who owns the external query."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "A barcode scan and a spoken reference disagree",
+      "setting": "Fictional laboratory desk enquiry; a scan and telephone note point to different accessions.",
+      "dialogue": [
+        [
+          "Technician",
+          "The scan retrieves B207, but the telephone note says B270. I haven't linked the enquiry to either."
+        ],
+        [
+          "Receiving lead",
+          "Which source produced each reference? We need to separate the scan from the caller's spoken information."
+        ],
+        [
+          "Technician",
+          "The scanned document retrieves B207. A colleague wrote B270 during the call, without a read-back."
+        ],
+        [
+          "Receiving lead",
+          "That gives us a discrepancy to check, not proof the caller or the scanner was wrong."
+        ],
+        [
+          "Technician",
+          "Could you review the document association while I ask the colleague to clarify the original enquiry?"
+        ],
+        [
+          "Receiving lead",
+          "Yes. I will check the registered source, and you can establish what the caller actually requested."
+        ],
+        [
+          "Technician",
+          "Should we answer the receipt question for B207 because it is the only visible scan?"
+        ],
+        [
+          "Receiving lead",
+          "Not until the enquiry is identified. A visible reference isn't automatically the reference the caller intended."
+        ],
+        [
+          "Technician",
+          "I'll explain that we are clarifying two different identifiers and haven't established their relationship."
+        ],
+        [
+          "Receiving lead",
+          "Please keep both sources visible in the review, rather than overwriting one reference with the other."
+        ],
+        [
+          "Technician",
+          "Then I'll request a complete read-back from the caller through the verified contact route."
+        ],
+        [
+          "Receiving lead",
+          "I'll take the record-association check. We can answer the status question once the intended case is established."
+        ]
+      ],
+      "notes": [
+        "'Which source produced each reference?' separates evidence before deciding what went wrong.",
+        "'Not proof' limits a conclusion without denying that a real discrepancy exists."
+      ]
+    },
+    {
+      "title": "A rejection reason copied too broadly",
+      "setting": "Fictional laboratory communication review; a message generalized one suitability decision to an entire accession.",
+      "dialogue": [
+        [
+          "Receiving lead",
+          "Your draft message says all testing was rejected, but the documented decision names only request M4."
+        ],
+        [
+          "Technician",
+          "I copied the reason into an accession-wide message. That makes its scope broader than the decision."
+        ],
+        [
+          "Receiving lead",
+          "Has the message gone to the clinic, or can we correct it before anyone relies on it?"
+        ],
+        [
+          "Technician",
+          "It hasn't been sent. I can revise it to name M4 and leave other requests separate."
+        ],
+        [
+          "Receiving lead",
+          "Please state the documented reason for M4 without adding a cause or instructions for recollection."
+        ],
+        [
+          "Technician",
+          "I'll use insufficient quantity for M4. The other request is still awaiting its own suitability review."
+        ],
+        [
+          "Receiving lead",
+          "That distinction matters. Shared accession paperwork doesn't establish the same outcome for every requested test."
+        ],
+        [
+          "Technician",
+          "Would it help to put M4 first, so the clinic sees which request the explanation concerns?"
+        ],
+        [
+          "Receiving lead",
+          "Yes. Start with the reference, then the reason, then the follow-up the lead actually requested."
+        ],
+        [
+          "Technician",
+          "I'll avoid saying collection failed. That could sound like a finding about the collector's performance."
+        ],
+        [
+          "Receiving lead",
+          "Exactly. We know the suitability decision, not who or what caused the available amount."
+        ],
+        [
+          "Technician",
+          "The revised message is now limited to M4, with the other request's review still pending."
+        ]
+      ],
+      "notes": [
+        "'Accession-wide' means applying to the whole registered case rather than one request.",
+        "'Limited to M4' makes the scope of a negative finding explicit."
+      ]
+    },
+    {
+      "title": "An update with no invented failure cause",
+      "setting": "Fictional shift discussion about an unresolved run review; cause and scope remain unconfirmed.",
+      "dialogue": [
+        [
+          "Incoming technician",
+          "The handoff says analyzer failure, but I only see an unresolved quality-control review. What is confirmed?"
+        ],
+        [
+          "Outgoing technician",
+          "The review is unresolved. I shouldn't have named an analyzer failure without a finding from the lead."
+        ],
+        [
+          "Incoming technician",
+          "Has the lead identified any cause, or are we still at the stage of assessing the concern?"
+        ],
+        [
+          "Outgoing technician",
+          "No cause has been communicated. Release is not authorized, and the review remains with Ana."
+        ],
+        [
+          "Incoming technician",
+          "Then I need the run reference, current status, and reviewer, without a guessed technical explanation."
+        ],
+        [
+          "Outgoing technician",
+          "The reference is R9. Testing is complete, release is pending, and Ana has accepted the review."
+        ],
+        [
+          "Incoming technician",
+          "Does that status apply to every run today, or only R9 as currently documented?"
+        ],
+        [
+          "Outgoing technician",
+          "Only R9 is named in this handoff. I haven't established any wider effect."
+        ],
+        [
+          "Incoming technician",
+          "I'll keep that scope explicit when the clinic asks why its report isn't yet available."
+        ],
+        [
+          "Outgoing technician",
+          "Please also correct my earlier failure wording with the afternoon team; they may have repeated it."
+        ],
+        [
+          "Incoming technician",
+          "I will. We'll describe the unresolved review and refer cause questions to Ana instead of speculating."
+        ],
+        [
+          "Outgoing technician",
+          "Thank you. The next handoff can preserve the actual evidence without teaching an unverified explanation as fact."
+        ]
+      ],
+      "notes": [
+        "'Only R9' keeps a local issue from becoming a laboratory-wide claim.",
+        "A named reviewer establishes ownership, not the result of the review."
+      ]
+    },
+    {
+      "title": "A restart estimate is not a reporting estimate",
+      "setting": "Fictional planning discussion; instrument service may finish at noon, but report timing is unconfirmed.",
+      "dialogue": [
+        [
+          "Technician",
+          "The service team estimates finishing at noon. The clinic asked whether its reports will arrive at noon too."
+        ],
+        [
+          "Section lead",
+          "Those are different estimates. Finishing service doesn't establish return to testing or the release time for reports."
+        ],
+        [
+          "Technician",
+          "What can I say about the relationship without describing technical steps that haven't been confirmed?"
+        ],
+        [
+          "Section lead",
+          "Say service completion is estimated for noon, while laboratory readiness and report timing remain unconfirmed."
+        ],
+        [
+          "Technician",
+          "The clinic is planning its afternoon list. Could you own the next operational update for them?"
+        ],
+        [
+          "Section lead",
+          "Yes. I can update them at twelve thirty with the status available, even if service runs later."
+        ],
+        [
+          "Technician",
+          "I'll identify twelve thirty as an update time, not a promise that testing has resumed."
+        ],
+        [
+          "Section lead",
+          "Please also identify the affected section. Other sections' availability should not be inferred from H2's downtime."
+        ],
+        [
+          "Technician",
+          "Only the hematology section using H2 is named in this enquiry; I haven't reported broader unavailability."
+        ],
+        [
+          "Section lead",
+          "Good. We need a precise scope and an honest timing statement, not a laboratory-wide closure message."
+        ],
+        [
+          "Technician",
+          "I'll pass on the service estimate, your update commitment, and the still-unconfirmed report timing separately."
+        ],
+        [
+          "Section lead",
+          "That gives the clinic useful planning information without treating one estimated event as every later stage's completion."
+        ]
+      ],
+      "notes": [
+        "'Those are different estimates' separates maintenance timing from patient-report timing.",
+        "'Even if' makes an update commitment independent of whether service finishes."
+      ]
+    },
+    {
+      "title": "Two laboratories quote different intervals",
+      "setting": "Fictional laboratory-service comparison; local interval starts at receipt, referral laboratory interval starts at accession acceptance.",
+      "dialogue": [
+        [
+          "Clinic coordinator",
+          "Your service quotes two hours, while the referral laboratory quotes two days. Can we compare those directly?"
+        ],
+        [
+          "Technician",
+          "Only after checking what each interval covers. Our quoted clock starts at receipt and ends at reporting."
+        ],
+        [
+          "Clinic coordinator",
+          "The referral laboratory's note says two days from accession acceptance. Transport happens before that, doesn't it?"
+        ],
+        [
+          "Technician",
+          "Yes, transport isn't included in that stated interval. Acceptance may also occur after the parcel arrives."
+        ],
+        [
+          "Clinic coordinator",
+          "Then saying two days from our collection would leave out the earlier stages and their uncertainty."
+        ],
+        [
+          "Technician",
+          "Exactly. We need collection, transport, receipt, acceptance, and the reporting estimate kept distinct in the explanation."
+        ],
+        [
+          "Clinic coordinator",
+          "Could you confirm which laboratory actually performs this request rather than assume the shorter interval applies?"
+        ],
+        [
+          "Technician",
+          "This request is referred out. The local two-hour interval is for a different service, not this one."
+        ],
+        [
+          "Clinic coordinator",
+          "I'll explain that without implying the referral laboratory is late before its defined starting point."
+        ],
+        [
+          "Technician",
+          "Please also avoid treating the quoted interval as a guarantee; no case-specific reporting date is confirmed."
+        ],
+        [
+          "Clinic coordinator",
+          "The useful update is referred testing, acceptance status pending, and no verified report date yet."
+        ],
+        [
+          "Technician",
+          "That matches the information available. I'll check the acceptance status with the referral coordinator next."
+        ]
+      ],
+      "notes": [
+        "Compare intervals only when their start, endpoint, and service scope are comparable.",
+        "'Referred out' means another laboratory performs the requested testing."
+      ]
+    },
+    {
+      "title": "The old printout remains in circulation",
+      "setting": "Fictional report amendment follow-up; the electronic record changed but a clinic has an older paper copy.",
+      "dialogue": [
+        [
+          "Technician",
+          "The amended report is available electronically, but your message appears to quote yesterday's version."
+        ],
+        [
+          "Clinic nurse",
+          "You're right. I used the paper printout from the consultation folder rather than checking the current report."
+        ],
+        [
+          "Technician",
+          "The issue isn't simply whether the file opened; we need the team to recognize the version change."
+        ],
+        [
+          "Clinic nurse",
+          "I can alert the clinician and identify the newer issue time through our report-management process."
+        ],
+        [
+          "Technician",
+          "Please confirm that the amended report reaches the responsible clinician, not just the general reception inbox."
+        ],
+        [
+          "Clinic nurse",
+          "I'll take that notification task. I won't mark the clinical implications discussed before the clinician has reviewed them."
+        ],
+        [
+          "Technician",
+          "Thank you. Has anyone given the patient an explanation based on the earlier report?"
+        ],
+        [
+          "Clinic nurse",
+          "I don't know yet. I'll check rather than assume the older printout was never used."
+        ],
+        [
+          "Technician",
+          "That uncertainty matters to follow-up. Please pass it to the clinician without making a clinical conclusion yourself."
+        ],
+        [
+          "Clinic nurse",
+          "I will. The current actions are to identify the amendment, reach the clinician, and clarify any earlier communication."
+        ],
+        [
+          "Technician",
+          "I'll record your acceptance of the notification and keep the patient's discussion status separate."
+        ],
+        [
+          "Clinic nurse",
+          "That is accurate. I'll confirm the notification outcome, including anything that remains unresolved after contact."
+        ]
+      ],
+      "notes": [
+        "'Remains in circulation' means older information may still be used after a correction.",
+        "Electronic availability and an acknowledged clinical notification are different events."
+      ]
+    },
+    {
+      "title": "An interrupted notification resumed accurately",
+      "setting": "Fictional Lumen case D9: calcium 6.2 mg/dL, meaning milligrams per deciliter, is designated critical by this laboratory. Dr Rao's authority and case identity are verified. Report issued 09:20; call at 09:24; contact extension 418. The connection briefly obscures the value. No universal threshold, diagnosis, or treatment is implied.",
+      "dialogue": [
+        [
+          "Technician",
+          "Dr Rao, Noor calling from Lumen laboratory with a critical result for D9. The analyte is calcium."
+        ],
+        [
+          "Dr Rao",
+          "The connection interrupted your next words. I heard calcium, but not the value or units."
+        ],
+        [
+          "Technician",
+          "I'll repeat the complete result: D9, calcium, six point two milligrams per deciliter."
+        ],
+        [
+          "Dr Rao",
+          "D9, calcium, six point two milligrams per deciliter. Please confirm that against the current report."
+        ],
+        [
+          "Technician",
+          "That matches the report issued at nine twenty. Have you received the complete result now?"
+        ],
+        [
+          "Dr Rao",
+          "Yes, I have. Please record Dr Rao as the recipient; I'm on extension 418 this morning."
+        ],
+        [
+          "Technician",
+          "Extension four one eight, thank you. I'll record your acknowledgment and the confirmed read-back."
+        ],
+        [
+          "Dr Rao",
+          "Does nine twenty describe when the report was issued, or when you reached me on this line?"
+        ],
+        [
+          "Technician",
+          "Nine twenty is the issue time. This call is at nine twenty-four, which I'll record separately."
+        ],
+        [
+          "Dr Rao",
+          "That's correct. My first connection dropped before I heard the value, but I have the complete result now."
+        ],
+        [
+          "Technician",
+          "I'll note the interruption and the completed notification at nine twenty-four, with your contact extension."
+        ],
+        [
+          "Dr Rao",
+          "Thank you. I have D9's calcium result as six point two milligrams per deciliter and will review the report."
+        ]
+      ],
+      "notes": [
+        "'I heard X, but not Y' identifies precisely what an interrupted call obscured.",
+        "The sender's confirmation completes the check-back; a report issue time is distinct from recipient acknowledgment."
+      ]
+    },
+    {
+      "title": "A send-out result arrives after shift change",
+      "setting": "Fictional handoff correction: external report is received, local review and clinic notification remain pending.",
+      "dialogue": [
+        [
+          "Incoming technician",
+          "Your handoff says the send-out report is outstanding, but it arrived ten minutes ago."
+        ],
+        [
+          "Outgoing technician",
+          "Thank you. My handoff predates that arrival. Has the local reporting review or clinic notification occurred?"
+        ],
+        [
+          "Incoming technician",
+          "Neither is confirmed yet. The document is received, but I don't want to call the whole task complete."
+        ],
+        [
+          "Outgoing technician",
+          "That's the right distinction. Please update the arrival status while leaving review and notification as separate open items."
+        ],
+        [
+          "Incoming technician",
+          "The clinic was expecting a status call at four. I accepted that task when I came on shift."
+        ],
+        [
+          "Outgoing technician",
+          "Then your update can report receipt without offering interpretation or implying the local review is finished."
+        ],
+        [
+          "Incoming technician",
+          "Should I use the external report's final label as permission to mark our notification task complete?"
+        ],
+        [
+          "Outgoing technician",
+          "No. That label describes the external report; it doesn't prove our receiving clinician has been notified."
+        ],
+        [
+          "Incoming technician",
+          "I'll contact the local reviewer and retain the four o'clock call with whatever status is confirmed."
+        ],
+        [
+          "Outgoing technician",
+          "Please identify the report reference and issue time so the reviewer can distinguish it from earlier correspondence."
+        ],
+        [
+          "Incoming technician",
+          "I have those details in the handoff record. Receipt is now complete; local review and contact remain open."
+        ],
+        [
+          "Outgoing technician",
+          "I'll stop describing the external report as missing. You own the agreed update and the review-status enquiry."
+        ]
+      ],
+      "notes": [
+        "'Predates' explains why a handoff may need updating without implying it was originally false.",
+        "A final external report does not itself close local review or notification tasks."
+      ]
+    }
+  ]
+}

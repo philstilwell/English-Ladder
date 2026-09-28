@@ -46,7 +46,7 @@ class WorkAIPromptTests(unittest.TestCase):
                     self.assertIn(t['scope_note'], prompt)
                     self.assertIn(t['title'], prompt)
                     self.assertLess(len(prompt), 30000)
-        self.assertEqual(count, 696)
+        self.assertEqual(count, 1096)
 
     def test_web_has_static_prompt_and_exact_curriculum_data(self):
         for t in self.tracks:
@@ -101,7 +101,7 @@ class WorkAIPromptTests(unittest.TestCase):
                     self.assertEqual(lines.count('END REFERENCE'), 2)
                     self.assertEqual(lines.count('END PROMPT'), 2)
                     for mode in PRINT_MODES[kind]:
-                        instructions = next(m['instructions'] for m in MODES if m['id'] == mode)
+                        instructions = next(m['instructions'] for m in payload(t, self.dialogues[t['slug']])['modes'] if m['id'] == mode)
                         self.assertIn(normalized(instructions.splitlines()[-1][-95:]), text)
                     urls = {str(a.get_object().get('/A', {}).get('/URI', '')) for page in reader.pages for a in page.get('/Annots', [])}
                     context = 'dialogue-1' if kind == 2 else 'module-1'

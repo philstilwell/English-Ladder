@@ -4,14 +4,16 @@ import hashlib
 import html
 import json
 from pathlib import Path
+from work_occupations import OCCUPATION_SLUGS, load_occupation, source_paths
 
 SOURCE = Path(__file__).resolve().parent / "content/work/lesson-conversations"
-EDITION = "2026-09-09"
+EDITION = "2026-09-28"
 
 
-@lru_cache(maxsize=41)
+@lru_cache(maxsize=None)
 def load_course(slug):
-    data = json.loads((SOURCE / f"{slug}.json").read_text())
+    data = (load_occupation(slug)['lesson_conversations'] if slug in OCCUPATION_SLUGS
+            else json.loads((SOURCE / f"{slug}.json").read_text()))
     if set(data) != {f"module-{n}" for n in range(1, 9)}:
         raise ValueError(f"Incomplete conversation lessons: {slug}")
     seen = set()
@@ -51,7 +53,8 @@ def lesson_content(track, module):
 
 
 def content_hash():
-    return hashlib.sha256(b"".join(p.name.encode() + p.read_bytes() for p in sorted(SOURCE.glob("*.json")))).hexdigest()
+    paths = sorted(SOURCE.glob('*.json')) + source_paths()
+    return hashlib.sha256(b"".join(p.name.encode() + p.read_bytes() for p in paths)).hexdigest()
 
 
 def render_activities(track, module):

@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "warehouse-distribution",
+    "title": "Warehouse and Distribution English",
+    "summary": "Resolve receiving and picking discrepancies, clarify stock identifiers, and communicate accurate packing, dispatch, returns, and shift statuses.",
+    "roles": "Warehouse associates, receivers, pickers, packers, returns staff, and inventory clerks",
+    "category": "Industry & infrastructure",
+    "scope_note": "All cases, quantities, codes, people, and arrangements are fictional English practice, not warehouse, equipment, lifting, hazardous-material, or safety training. Local stock controls and duties vary. Use employer training for physical tasks; refer equipment operation, hazardous conditions, inventory adjustments, and release decisions to the responsible qualified staff. Scripts teach communication, not handling methods.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Hand Laborers and Material Movers",
+        "url": "https://www.bls.gov/ooh/transportation-and-material-moving/hand-laborers-and-material-movers.htm"
+      },
+      {
+        "title": "OSHA: Warehousing Overview",
+        "url": "https://www.osha.gov/warehousing"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Receiving against the expected shipment",
+        "terms": [
+          "advance shipping notice",
+          "receiving discrepancy",
+          "purchase order",
+          "overage"
+        ],
+        "collocations": [
+          "compare the expected quantity: check arrival against the notice",
+          "report an overage: identify extra units with their reference",
+          "match the purchase order: link goods to the buyer's order",
+          "keep the discrepancy open: avoid calling an unresolved difference settled"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "Purchase order 740 expects twenty cartons. Receiving counts twenty-two with matching item labels. The supplier has not explained the additional two; the clerk can flag an overage but cannot approve an order change.",
+          "model": "Purchase order 740 expects twenty cartons, and our receiving count is twenty-two. The item labels match, but we haven't confirmed why there are two extra cartons. I'll report an overage against this receipt. Please keep the expected quantity unchanged until the purchasing contact clarifies whether the additional goods belong to this order."
+        },
+        "workshop": {
+          "title": "Report the extra quantity precisely",
+          "goal": "Separate receipt facts from a purchasing decision.",
+          "explanation": "A matching label does not by itself approve an order increase.",
+          "frames": [
+            "We expected ___; we counted ___.",
+            "The labels match, but ___ remains unclear.",
+            "Please refer the quantity difference to ___."
+          ],
+          "before": "The order is now twenty-two.",
+          "after": "Twenty-two arrived against an expected twenty; the extra two need review.",
+          "reason": "Arrival changes the observed count, not automatically the order.",
+          "questions": [
+            {
+              "prompt": "Receiver: Twenty were expected and twenty-two arrived.\nClerk: That is an ____ of two cartons.",
+              "options": [
+                "overage",
+                "shortage",
+                "balance",
+                "allocation"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Twenty-two against twenty creates a two-carton overage.",
+                "A shortage would mean fewer than twenty arrived.",
+                "Balance alone does not identify the extra received quantity.",
+                "Allocation concerns assigned stock, not an excess receipt."
+              ]
+            },
+            {
+              "prompt": "Buyer: Did matching labels approve the extra cartons?\nClerk: No. They help confirm ____, not an increase to the order.",
+              "options": [
+                "the supplier's instruction to send extras",
+                "the buyer's acceptance of extras",
+                "the received item's identity",
+                "the amended purchase-order total"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Matching labels do not reveal the supplier's shipping instruction.",
+                "Item identity does not establish the buyer's approval.",
+                "Correct. Labels support identification, not approval of extra quantity.",
+                "The purchase order has not been amended by this check."
+              ]
+            }
+          ],
+          "role_b": "Buyer: only twenty were ordered; you must ask the supplier about the additional two.",
+          "challenge": "A colleague suggests replacing the expected quantity with the count. Explain why both figures matter."
+        }
+      },
+      {
+        "title": "Locating and identifying stock",
+        "terms": [
+          "stock keeping unit",
+          "bin location",
+          "lot number",
+          "putaway"
+        ],
+        "collocations": [
+          "read the full item code: include the variant suffix",
+          "verify the bin location: confirm the assigned storage position",
+          "check the lot number: distinguish batches of the same product",
+          "query the putaway record: ask where receipt was recorded as stored"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A picker needs item BK-14-B, blue folders. Bin A12 contains BK-14-G, green folders. The bin sign says BK-14-B. Inventory clerk can check the putaway record; no move or substitution has been approved.",
+          "model": "The task calls for BK-14-B, blue folders, but the cartons in A12 are labeled BK-14-G, green folders. The bin sign agrees with the task, not the carton labels. Could you check the putaway record for these two variants? I haven't treated the shared BK-14 prefix as proof that they are interchangeable."
+        },
+        "workshop": {
+          "title": "Read beyond a shared code prefix",
+          "goal": "Clarify an item-location conflict before relying on the location sign.",
+          "explanation": "Product, variant, lot, and location identify different things. Repeat the full code.",
+          "frames": [
+            "The task specifies ___; the carton shows ___.",
+            "Is ___ the location code or the item code?",
+            "Please check the record for ___."
+          ],
+          "before": "It's basically the same code.",
+          "after": "The suffix is G, but the requested blue variant ends in B.",
+          "reason": "The suffix identifies a different variant.",
+          "questions": [
+            {
+              "prompt": "Picker: Both codes begin BK-14. Are the variants identical?\nClerk: No; check the final ____.",
+              "options": [
+                "quantity",
+                "suffix",
+                "prefix",
+                "lot number"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Quantity does not identify which final letter differs.",
+                "Correct. The suffix is the ending of the code.",
+                "The prefix matches; it is not the distinguishing part.",
+                "The question concerns the variant code, not its batch."
+              ]
+            },
+            {
+              "prompt": "Picker: Does A12 identify the product?\nClerk: Here it identifies the ____.",
+              "options": [
+                "item variant",
+                "batch",
+                "order line",
+                "bin location"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "The product code, not A12, identifies the variant.",
+                "A lot number would identify the batch.",
+                "A12 does not identify the customer's order line.",
+                "Correct. A12 is the named warehouse storage position."
+              ]
+            }
+          ],
+          "role_b": "Inventory clerk: task and sign say blue; carton labels say green; investigate the putaway history.",
+          "challenge": "A matching photograph is offered as proof. Ask for the full item identifier instead."
+        }
+      },
+      {
+        "title": "Picking the right unit and quantity",
+        "terms": [
+          "unit of measure",
+          "each",
+          "case pack",
+          "pick ticket"
+        ],
+        "collocations": [
+          "confirm the unit of measure: establish what the quantity counts",
+          "pick by each: count individual units for the order",
+          "check the case pack: verify units per case",
+          "read back the pick quantity: repeat amount and counting unit together"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Pick ticket S18 asks for six each of a storage tray. A standard case holds six trays. A coworker reads it as six cases. Confirm one case contains the six requested units, without assuming other products share that pack size.",
+          "model": "S18 calls for six each, meaning six individual trays. The listed case pack for this item is six, so that quantity corresponds to one complete case, not six cases. Could you read back the order quantity with its unit? We should keep this item's pack size separate from any other tray variant."
+        },
+        "workshop": {
+          "title": "Make the counting unit audible",
+          "goal": "Prevent a correct number being used with the wrong unit.",
+          "explanation": "Say the amount and unit together. A case pack varies by item.",
+          "frames": [
+            "The ticket says ___ each, not ___ cases.",
+            "For this item, one case contains ___.",
+            "Please repeat the quantity with ___."
+          ],
+          "before": "Pick six.",
+          "after": "Pick six individual trays; this item's case pack is six.",
+          "reason": "The phrase removes the unit ambiguity.",
+          "questions": [
+            {
+              "prompt": "Picker: Six each means six ____ trays.\nPartner: Yes, not six cases.",
+              "options": [
+                "individual",
+                "additional",
+                "assorted",
+                "repacked"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Each' counts individual units.",
+                "Additional means extra, which the ticket does not request.",
+                "Assorted refers to a mixture.",
+                "Repacked describes packaging history, not the counting unit."
+              ]
+            },
+            {
+              "prompt": "Partner: Is the case pack six for every product?\nPicker: That figure applies ____ this item.",
+              "options": [
+                "from",
+                "with",
+                "to",
+                "by"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "'Applies from' normally introduces a starting time.",
+                "'Applies with' does not express scope here.",
+                "Correct. 'Applies to' identifies the relevant item.",
+                "'Applies by' does not express this relationship."
+              ]
+            }
+          ],
+          "role_b": "Coworker: you initially understood six cases; repeat the corrected quantity.",
+          "challenge": "Another tray has a case pack of eight. Explain why the S18 calculation does not transfer to it."
+        }
+      },
+      {
+        "title": "Reporting a short pick and replenishment need",
+        "terms": [
+          "short pick",
+          "replenishment",
+          "reserve stock",
+          "allocation"
+        ],
+        "collocations": [
+          "report the short pick: state requested and available quantities",
+          "request replenishment: ask for stock at the pick location",
+          "check reserve availability: distinguish stored quantity from usable quantity",
+          "confirm the allocation: verify which order the stock belongs to"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Order D55 needs ten baskets; pick face B04 has four. System lists twelve in reserve, but allocation and availability have not been checked. Replenishment desk can review; cutoff is 15:00.",
+          "model": "Order D55 needs ten baskets, and B04 currently has four, leaving a six-unit short pick. The system lists twelve in reserve, but I haven't confirmed whether they are available to this order. Could you check allocation and replenishment status before the three o'clock cutoff and tell me whether the remaining six can be supplied?"
+        },
+        "workshop": {
+          "title": "Ask for the missing stock information",
+          "goal": "Request a quantity-specific check without treating reserve stock as immediately pickable.",
+          "explanation": "Reserve quantity, order allocation, and completed replenishment are different statuses.",
+          "frames": [
+            "The short pick is ___ units for order ___.",
+            "Reserve shows ___, but ___ needs checking.",
+            "Can you confirm ___ before ___?"
+          ],
+          "before": "There is stock, so we're fine.",
+          "after": "Reserve shows twelve; availability for D55 and replenishment are still unconfirmed.",
+          "reason": "The revised update names the actual dependency.",
+          "questions": [
+            {
+              "prompt": "Picker: Four are available against ten requested.\nDesk: The short pick is ____ units.",
+              "options": [
+                "four",
+                "six",
+                "ten",
+                "twelve"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Four is the current available count.",
+                "Correct. Ten minus four leaves six.",
+                "Ten is the requested total.",
+                "Twelve is the listed reserve quantity."
+              ]
+            },
+            {
+              "prompt": "Desk: Are those reserve units definitely free for D55?\nPicker: Their ____ still needs checking.",
+              "options": [
+                "pack size",
+                "physical condition",
+                "bin label",
+                "allocation"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Pack size does not establish which order reserves stock.",
+                "Condition alone would not establish this order's entitlement.",
+                "A location label does not show the order reservation.",
+                "Correct. Allocation shows whether the stock belongs to another order."
+              ]
+            }
+          ],
+          "role_b": "Replenishment desk: reserve exists, but another order may have priority; confirm the actual status.",
+          "challenge": "The replenishment request is accepted. Explain why accepted does not yet mean the pick face has been refilled."
+        }
+      },
+      {
+        "title": "Packing and label discrepancies",
+        "terms": [
+          "packing station",
+          "shipping label",
+          "carton identifier",
+          "scan confirmation"
+        ],
+        "collocations": [
+          "match the carton identifier: link the physical carton and record",
+          "query a label mismatch: flag conflicting shipping information",
+          "confirm the scan result: check which reference was registered",
+          "separate adjacent orders: keep goods and labels linked to the right customer"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "Packing station 3 has cartons C70 and C71. C70's screen names Harbor Shop, but the loose label beside it names Hillside School for C71. No label has been applied. Ask the packer to pause the label match while both references are checked.",
+          "model": "Please pause the label match at station three. The screen for carton C70 names Harbor Shop, while this loose label names Hillside School and C71. Nothing has been applied yet. Could we compare both carton identifiers and their records before continuing? The labels' position on the bench doesn't establish which order they belong to."
+        },
+        "workshop": {
+          "title": "Interrupt a mismatched label politely",
+          "goal": "Name the conflicting identifiers and request a focused check.",
+          "explanation": "Physical proximity does not prove that a loose label belongs to a carton.",
+          "frames": [
+            "Please pause ___; these references differ.",
+            "The screen says ___, whereas the label says ___.",
+            "Let's compare ___ before ___."
+          ],
+          "before": "That label looks close enough.",
+          "after": "The carton is C70, but this label is C71; let's check the match.",
+          "reason": "The revision states the observable mismatch.",
+          "questions": [
+            {
+              "prompt": "Packer: Have I already applied the wrong label?\nChecker: No; it is still ____ on the bench.",
+              "options": [
+                "attached",
+                "loose",
+                "blank",
+                "unprinted"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Attached contradicts the statement that no label was applied.",
+                "Correct. The label remains unattached beside the cartons.",
+                "The label is not blank; it names C71.",
+                "The label already carries printed customer and carton details."
+              ]
+            },
+            {
+              "prompt": "Checker: C70 names Harbor Shop, ____ C71 names Hillside School.\nPacker: Then we must keep them separate.",
+              "options": [
+                "because",
+                "until",
+                "whereas",
+                "unless"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The second identity does not cause the first.",
+                "'Until' introduces time, not contrast.",
+                "Correct. 'Whereas' contrasts the two records.",
+                "'Unless' introduces an exception condition."
+              ]
+            }
+          ],
+          "role_b": "Packer: no labels are applied; help compare C70 and C71.",
+          "challenge": "A successful scan is offered as proof of correct packing. Ask which identifier was scanned and what that scan confirms."
+        }
+      },
+      {
+        "title": "Staging and dispatch status",
+        "terms": [
+          "staging lane",
+          "load manifest",
+          "carrier cutoff",
+          "dispatch confirmation"
+        ],
+        "collocations": [
+          "check the staging lane: verify the assigned outbound location",
+          "compare against the manifest: match staged goods to the load list",
+          "flag the carrier cutoff: state the departure-related deadline",
+          "distinguish staged from dispatched: name the actual transport stage"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Three cartons for order L66 are staged in lane 2. Manifest lists only two. Carrier cutoff is 16:00; goods have not departed. Dispatch clerk can investigate the missing carton entry.",
+          "model": "L66 has three cartons staged in lane two, but the load manifest lists only two. Nothing has departed yet, so the order is staged, not dispatched. Could dispatch check the missing carton entry before the four o'clock carrier cutoff? I can confirm the physical count without claiming that the load list is complete."
+        },
+        "workshop": {
+          "title": "Name the stage accurately",
+          "goal": "Explain why prepared goods are not yet a completed dispatch.",
+          "explanation": "A staging location, manifest entry, and departure confirmation provide different evidence.",
+          "frames": [
+            "___ cartons are staged in ___.",
+            "The manifest includes ___, leaving ___ unresolved.",
+            "Departure is ___, not ___."
+          ],
+          "before": "L66 has shipped.",
+          "after": "L66 is staged; its three-carton count does not match the two-carton manifest.",
+          "reason": "The update preserves the unresolved loading record.",
+          "questions": [
+            {
+              "prompt": "Dispatch: Are the cartons already with the departing vehicle?\nWorker: No, they are ____ in lane two.",
+              "options": [
+                "dispatched",
+                "returned",
+                "loaded",
+                "staged"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Dispatch would overstate the current waiting status.",
+                "There is no return movement in this example.",
+                "Loading is not confirmed; the cartons remain in the lane.",
+                "Correct. Staged goods await their next transport movement."
+              ]
+            },
+            {
+              "prompt": "Worker: The manifest lists two ____ the three staged cartons.\nClerk: I'll check the missing entry.",
+              "options": [
+                "of",
+                "by",
+                "to",
+                "with"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. 'Two of the three' expresses a subset.",
+                "'By' does not express the subset.",
+                "'To' does not express two cartons as a subset of three.",
+                "'With' does not express the subset."
+              ]
+            }
+          ],
+          "role_b": "Dispatch clerk: verify the missing manifest entry; do not mark departure prematurely.",
+          "challenge": "Carrier collection is delayed. Give the current staged status without inventing a new departure time."
+        }
+      },
+      {
+        "title": "Returns and stock status",
+        "terms": [
+          "returns intake",
+          "inspection hold",
+          "disposition",
+          "restock"
+        ],
+        "collocations": [
+          "match the return authorization: identify the approved return",
+          "place on inspection hold: record that release awaits review",
+          "request a disposition decision: ask the responsible team for the next status",
+          "confirm eligibility to restock: verify release criteria have been met"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "Returned kettle K25 matches its return reference. Packaging appears unopened, but condition review is pending. Intake worker cannot mark it ready for sale; returns checker Mira owns the review.",
+          "model": "K25 matches the return reference, and its packaging appears unopened. That appearance does not confirm its condition or eligibility for restocking. The return is received and awaiting Mira's inspection decision. Please keep the inspection hold distinct from available stock until the returns team confirms the disposition for this item."
+        },
+        "workshop": {
+          "title": "Separate received from released",
+          "goal": "State a return's actual status without inferring saleability.",
+          "explanation": "A return can be identified and received while its condition remains unverified.",
+          "frames": [
+            "The reference matches; condition is ___.",
+            "The item is received but not ___.",
+            "___ owns the disposition review."
+          ],
+          "before": "It looks new; it's available.",
+          "after": "It is received on inspection hold; restocking has not been approved.",
+          "reason": "The change names the unresolved review.",
+          "questions": [
+            {
+              "prompt": "Picker: The return has arrived. Can it fill this order?\nIntake worker: Not yet; it is ____.",
+              "options": [
+                "received and released",
+                "approved for restocking",
+                "received on inspection hold",
+                "confirmed as defective"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Receipt is confirmed, but release has not been approved.",
+                "Restocking approval is still awaiting the required review.",
+                "Correct. The goods are received but remain unreleased pending inspection.",
+                "Lack of inspection does not establish a defect."
+              ]
+            },
+            {
+              "prompt": "Checker: Has a next-use decision been made for K25?\nWorker: No, its ____ is pending.",
+              "options": [
+                "disposition",
+                "arrival",
+                "reference",
+                "receipt"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Disposition is the decision about the next stock status.",
+                "Arrival is already confirmed by returns intake.",
+                "The return reference has already been matched.",
+                "Receipt is confirmed; the release decision is not."
+              ]
+            }
+          ],
+          "role_b": "Returns checker Mira: identify K25, keep it on review, and confirm who will communicate the decision.",
+          "challenge": "A colleague calls the item defective. Correct the label: uninspected does not establish a defect."
+        }
+      },
+      {
+        "title": "Inventory and shift handoffs",
+        "terms": [
+          "cycle count",
+          "inventory variance",
+          "transaction history",
+          "shift handoff"
+        ],
+        "collocations": [
+          "report a count variance: give physical and recorded quantities",
+          "check transaction history: look for relevant recorded movements",
+          "name the unresolved item: specify the count or order needing follow-up",
+          "acknowledge the handoff: confirm receipt and ownership of the next task"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Cycle count for item T9 in B11 found eighteen; the system shows twenty. No cause is confirmed. Evening clerk Sam can review transaction history. Recount is complete and agrees at eighteen; no stock adjustment is approved.",
+          "model": "T9 in B11 counted eighteen on both counts; the system shows twenty. The two-unit variance is confirmed, but its cause isn't. No adjustment has been approved. Sam, please review the transaction history and take this discrepancy into the evening handoff. Can you confirm that you'll investigate the difference without treating a proposed explanation as established?"
+        },
+        "workshop": {
+          "title": "Transfer the discrepancy, not a guessed cause",
+          "goal": "Hand over count evidence, remaining work, and ownership.",
+          "explanation": "A reliable recount can establish a difference without explaining it.",
+          "frames": [
+            "Both counts show ___; the system shows ___.",
+            "The variance is confirmed, but the cause is ___.",
+            "Please take ___ and acknowledge ___."
+          ],
+          "before": "Someone lost two.",
+          "after": "Two fewer units were counted than recorded; the cause remains unknown.",
+          "reason": "The correction removes an unsupported accusation.",
+          "questions": [
+            {
+              "prompt": "Sam: Did the recount eliminate the difference?\nWorker: No; it ____ the same physical count.",
+              "options": [
+                "confirmed",
+                "replaced",
+                "reversed",
+                "invalidated"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Both counts agreed at eighteen physical units.",
+                "The recount agreed with, rather than replaced, the earlier result.",
+                "Reversed would imply a changed rather than matching result.",
+                "The matching recount did not invalidate the original count."
+              ]
+            },
+            {
+              "prompt": "Worker: Have we approved an inventory adjustment?\nSam: No, the adjustment remains ____.",
+              "options": [
+                "automatically accepted",
+                "unapproved",
+                "fully posted",
+                "approved by the recount"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "A confirmed variance does not automatically approve an adjustment.",
+                "Correct. No adjustment approval has been recorded for this variance.",
+                "Fully posted would imply a completed system adjustment.",
+                "A recount supplies evidence but is not adjustment approval."
+              ]
+            }
+          ],
+          "role_b": "Evening clerk Sam: accept transaction-history review; do not assign fault or approve an adjustment.",
+          "challenge": "A transfer appears in history but its timing is unclear. Explain why a possible explanation still needs checking."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "advance shipping notice",
+        "definition": "A supplier's message describing goods expected to arrive, often shortened to ASN.",
+        "group": "Receiving against the expected shipment"
+      },
+      {
+        "term": "receiving discrepancy",
+        "definition": "A difference between an arriving shipment and its expected quantity, identity, or condition.",
+        "group": "Receiving against the expected shipment"
+      },
+      {
+        "term": "purchase order",
+        "definition": "A buyer's order identifying requested goods and quantities, often shortened to PO.",
+        "group": "Receiving against the expected shipment"
+      },
+      {
+        "term": "overage",
+        "definition": "A quantity received above the quantity expected for that shipment.",
+        "group": "Receiving against the expected shipment"
+      },
+      {
+        "term": "stock keeping unit",
+        "definition": "An identifier for a distinct stocked product or variant, commonly shortened to SKU.",
+        "group": "Locating and identifying stock"
+      },
+      {
+        "term": "bin location",
+        "definition": "The coded storage position assigned to stock within a warehouse.",
+        "group": "Locating and identifying stock"
+      },
+      {
+        "term": "lot number",
+        "definition": "An identifier linking units produced or supplied as one particular batch.",
+        "group": "Locating and identifying stock"
+      },
+      {
+        "term": "putaway",
+        "definition": "The placement and recording of received goods in their assigned storage locations.",
+        "group": "Locating and identifying stock"
+      },
+      {
+        "term": "unit of measure",
+        "definition": "The counting basis used for an item, such as each, case, or pallet.",
+        "group": "Picking the right unit and quantity"
+      },
+      {
+        "term": "each",
+        "definition": "One individual sale or stock unit, rather than a group of units.",
+        "group": "Picking the right unit and quantity"
+      },
+      {
+        "term": "case pack",
+        "definition": "The number of individual units supplied in a standard case.",
+        "group": "Picking the right unit and quantity"
+      },
+      {
+        "term": "pick ticket",
+        "definition": "The instruction identifying items, quantities, and locations for an order pick.",
+        "group": "Picking the right unit and quantity"
+      },
+      {
+        "term": "short pick",
+        "definition": "A pick that cannot supply the full requested quantity from the identified available stock.",
+        "group": "Reporting a short pick and replenishment need"
+      },
+      {
+        "term": "replenishment",
+        "definition": "The movement of stock into a picking location from another storage area.",
+        "group": "Reporting a short pick and replenishment need"
+      },
+      {
+        "term": "reserve stock",
+        "definition": "Stock held outside the main picking location for later use.",
+        "group": "Reporting a short pick and replenishment need"
+      },
+      {
+        "term": "allocation",
+        "definition": "Stock assigned or reserved for a particular order or purpose.",
+        "group": "Reporting a short pick and replenishment need"
+      },
+      {
+        "term": "packing station",
+        "definition": "The work area where picked goods are checked and prepared for dispatch.",
+        "group": "Packing and label discrepancies"
+      },
+      {
+        "term": "shipping label",
+        "definition": "The label carrying delivery and carrier information for a shipment.",
+        "group": "Packing and label discrepancies"
+      },
+      {
+        "term": "carton identifier",
+        "definition": "A unique reference used to distinguish a particular shipping carton.",
+        "group": "Packing and label discrepancies"
+      },
+      {
+        "term": "scan confirmation",
+        "definition": "A system acknowledgment that a particular barcode or item scan was registered.",
+        "group": "Packing and label discrepancies"
+      },
+      {
+        "term": "staging lane",
+        "definition": "A designated area where outbound goods wait for their next transport movement.",
+        "group": "Staging and dispatch status"
+      },
+      {
+        "term": "load manifest",
+        "definition": "The list identifying shipments or handling units assigned to a particular load.",
+        "group": "Staging and dispatch status"
+      },
+      {
+        "term": "carrier cutoff",
+        "definition": "The latest agreed time for goods or bookings to meet a specified carrier departure.",
+        "group": "Staging and dispatch status"
+      },
+      {
+        "term": "dispatch confirmation",
+        "definition": "A record confirming that goods have actually been dispatched, not merely prepared.",
+        "group": "Staging and dispatch status"
+      },
+      {
+        "term": "returns intake",
+        "definition": "The receipt and identification of goods coming back into the warehouse.",
+        "group": "Returns and stock status"
+      },
+      {
+        "term": "inspection hold",
+        "definition": "A status preventing ordinary release while goods await a required condition check.",
+        "group": "Returns and stock status"
+      },
+      {
+        "term": "disposition",
+        "definition": "The approved decision about what happens next to goods, such as restocking or supplier return.",
+        "group": "Returns and stock status"
+      },
+      {
+        "term": "restock",
+        "definition": "To return eligible goods to available inventory after required checks and approval.",
+        "group": "Returns and stock status"
+      },
+      {
+        "term": "cycle count",
+        "definition": "A scheduled count of selected stock rather than a full warehouse inventory.",
+        "group": "Inventory and shift handoffs"
+      },
+      {
+        "term": "inventory variance",
+        "definition": "A difference between the physical stock count and the recorded quantity.",
+        "group": "Inventory and shift handoffs"
+      },
+      {
+        "term": "transaction history",
+        "definition": "The record of stock movements and adjustments affecting an item.",
+        "group": "Inventory and shift handoffs"
+      },
+      {
+        "term": "shift handoff",
+        "definition": "The transfer of work status and outstanding issues to the next shift.",
+        "group": "Inventory and shift handoffs"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Two cartons above the order",
+          "setting": "Receiving clerk and buyer discuss purchase order 740.",
+          "turns": [
+            [
+              "Receiver",
+              "Purchase order seven forty expects twenty cartons, but our receiving count is twenty-two today."
+            ],
+            [
+              "Buyer",
+              "Do the extra cartons carry the same item code as the twenty we ordered?"
+            ],
+            [
+              "Receiver",
+              "Yes, the labels match. That confirms identity, but not why the quantity increased."
+            ],
+            [
+              "Buyer",
+              "I haven't approved an increase. Please keep the expected quantity at twenty during my supplier check."
+            ],
+            [
+              "Receiver",
+              "I'll report this receiving discrepancy as a two-carton overage, without changing the purchase order."
+            ],
+            [
+              "Buyer",
+              "Thank you. Are you also reporting a contents difference inside any of those cartons?"
+            ],
+            [
+              "Receiver",
+              "No. This report concerns outer-carton count only; individual contents have not been checked."
+            ],
+            [
+              "Buyer",
+              "Then I'll ask the supplier about the additional two cartons using that exact distinction."
+            ],
+            [
+              "Receiver",
+              "Who should receive the supplier's explanation when it arrives so the discrepancy can be reviewed?"
+            ],
+            [
+              "Buyer",
+              "Send it to receiving against seven forty. I'll remain the contact for the purchasing decision."
+            ]
+          ]
+        },
+        {
+          "title": "The shipping notice names another site",
+          "setting": "A receiver queries an arrival notice with a carrier driver.",
+          "turns": [
+            [
+              "Receiver",
+              "The advance shipping notice names our west warehouse, but this is the east distribution site."
+            ],
+            [
+              "Driver",
+              "My delivery document lists the east address. Can we compare the shipment reference before deciding?"
+            ],
+            [
+              "Receiver",
+              "Both show N82, twelve cartons of display stands. The site names are the conflicting detail."
+            ],
+            [
+              "Driver",
+              "Then it isn't enough to say the item and quantity match; the destination needs clarification."
+            ],
+            [
+              "Receiver",
+              "I'll contact our receiving desk with both document versions and keep that destination question explicit."
+            ],
+            [
+              "Driver",
+              "Dispatch can check my delivery booking too. I won't claim either address is corrected yet."
+            ],
+            [
+              "Receiver",
+              "Is there a later document on your side that could explain a destination change?"
+            ],
+            [
+              "Driver",
+              "This one was issued yesterday afternoon. I don't know when your advance notice was created."
+            ],
+            [
+              "Receiver",
+              "Ours dates from Monday. I'll report both dates without assuming the newer address is correct."
+            ],
+            [
+              "Driver",
+              "Agreed. The desks can confirm the intended site before this is recorded as a completed receipt."
+            ]
+          ]
+        },
+        {
+          "title": "One arrival divided between purchase orders",
+          "setting": "A receiver checks an apparent overage with a purchasing clerk.",
+          "turns": [
+            [
+              "Receiver",
+              "Nine cartons arrived together, but purchase order four ten only lists five. Are four extra?"
+            ],
+            [
+              "Purchasing clerk",
+              "Check the references on the carton labels. We also ordered four cartons under four eleven."
+            ],
+            [
+              "Receiver",
+              "Five labels show four ten; the other four show four eleven with the same supplier."
+            ],
+            [
+              "Purchasing clerk",
+              "Then these are two expected receipts arriving together, not an overage against the first order."
+            ],
+            [
+              "Receiver",
+              "I'll keep the quantities separate rather than receive all nine against four ten."
+            ],
+            [
+              "Purchasing clerk",
+              "Please do. The departments need distinct receipt records even though the supplier used one vehicle."
+            ],
+            [
+              "Receiver",
+              "Does either order include a change to the item description that receiving should query?"
+            ],
+            [
+              "Purchasing clerk",
+              "No changes are confirmed. Compare each order with its own listed items as usual."
+            ],
+            [
+              "Receiver",
+              "So five against four ten and four against four eleven, with no quantity difference currently identified."
+            ],
+            [
+              "Purchasing clerk",
+              "Correct. That resolves the apparent extra quantity without altering either purchase order."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The delivery has one fewer pallet",
+        "brief": "Notice A09 expects four pallets; three arrive. Each pallet's carton contents remain unchecked. Supplier has not confirmed a separate shipment.",
+        "role_a": "Receiver: state the missing handling unit accurately.",
+        "role_b": "Receiving clerk: ask whether the count concerns pallets or cartons.",
+        "opening_line": "We received three of four pallets, not three of four cartons.",
+        "complication": "Someone wants to call the missing pallet twenty missing cartons without a packing breakdown.",
+        "success_checks": [
+          "State one pallet short.",
+          "Do not invent contents quantity.",
+          "Ask for the matching packing detail."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Blue on the task, green in the bin",
+          "setting": "A picker reports item identification conflicts in A12.",
+          "turns": [
+            [
+              "Picker",
+              "My task specifies BK-14-B, blue folders, but the cartons in A12 show BK-14-G."
+            ],
+            [
+              "Inventory clerk",
+              "The bin sign says blue too. Could you read the full carton description aloud?"
+            ],
+            [
+              "Picker",
+              "Green folders, stock keeping unit BK-14-G. The prefix matches, but the variant suffix differs."
+            ],
+            [
+              "Inventory clerk",
+              "That points to an item-location discrepancy, not proof that the green variant is an acceptable substitute."
+            ],
+            [
+              "Picker",
+              "Can you check the putaway record before I treat those cartons as the requested stock?"
+            ],
+            [
+              "Inventory clerk",
+              "Yes. I'll compare the recorded locations for both variants rather than change your requested item."
+            ],
+            [
+              "Picker",
+              "I haven't selected them for the order. The mismatch affects the blue-folder pick only."
+            ],
+            [
+              "Inventory clerk",
+              "Good. Does another carton there have the blue suffix, or are they all labeled green?"
+            ],
+            [
+              "Picker",
+              "The visible labels I checked are green; I can't confirm stock elsewhere in the warehouse."
+            ],
+            [
+              "Inventory clerk",
+              "I'll investigate both records and keep any unverified alternative location separate from this confirmed mismatch."
+            ]
+          ]
+        },
+        {
+          "title": "A lot number is not a shelf number",
+          "setting": "A warehouse associate asks a colleague to clarify an instruction.",
+          "turns": [
+            [
+              "Associate",
+              "You asked me to check 316. Is that a bin location or a lot number?"
+            ],
+            [
+              "Stock clerk",
+              "It's lot three sixteen for the gray notebook sleeves, currently recorded in bin C08."
+            ],
+            [
+              "Associate",
+              "Thank you. I was looking at aisle three because I misunderstood which identifier you meant."
+            ],
+            [
+              "Stock clerk",
+              "The item code is NS-G. Lot three sixteen identifies a batch of that same product."
+            ],
+            [
+              "Associate",
+              "So I need the item, lot, and location together, not just the number three sixteen."
+            ],
+            [
+              "Stock clerk",
+              "Exactly. Another batch of NS-G is also stored here, so the lot distinction matters."
+            ],
+            [
+              "Associate",
+              "Could you repeat the requested combination once so I can check my understanding aloud?"
+            ],
+            [
+              "Stock clerk",
+              "NS-G, gray sleeves, lot three sixteen, location C08. This is an identification check, not a stock move."
+            ],
+            [
+              "Associate",
+              "Understood. I'll compare the identifiers without treating this check as permission to move stock."
+            ],
+            [
+              "Stock clerk",
+              "That's the check I need. Let me know which identifier differs if you find a mismatch."
+            ]
+          ]
+        },
+        {
+          "title": "A location changed but the sign did not",
+          "setting": "A picker queries a revised stock location with inventory staff.",
+          "turns": [
+            [
+              "Picker",
+              "The task sends me to D20, but the printed sign for these envelopes still names D18."
+            ],
+            [
+              "Inventory clerk",
+              "The system shows a location change yesterday. Which item code are you checking right now?"
+            ],
+            [
+              "Picker",
+              "EN-50, the fifty-pack. D20's cartons match that code, while the old sign is at D18."
+            ],
+            [
+              "Inventory clerk",
+              "That supports checking an outdated sign, but let's verify the recorded move before changing location information."
+            ],
+            [
+              "Picker",
+              "I don't want tomorrow's picker to follow the old sign and report an unnecessary shortage."
+            ],
+            [
+              "Inventory clerk",
+              "The move record confirms EN-50 was reassigned to D20 yesterday afternoon; the sign replacement is outstanding."
+            ],
+            [
+              "Picker",
+              "Then I can describe D20 as the confirmed location and the D18 sign as awaiting correction?"
+            ],
+            [
+              "Inventory clerk",
+              "Yes. I'll take the sign correction request so both references give the same location."
+            ],
+            [
+              "Picker",
+              "Please distinguish EN-50 from EN-100; their old signs are next to each other."
+            ],
+            [
+              "Inventory clerk",
+              "I will. The confirmed change applies only to the fifty-pack, not every envelope item."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A similar item description without its code",
+        "brief": "Pick request says 'large clear box'; two variants exist: BX-L with lid and BX-O without. Order line specifies BX-L.",
+        "role_a": "Picker: ask for the full identifier.",
+        "role_b": "Order clerk: read BX-L and the with-lid description.",
+        "opening_line": "Does large clear box mean the lidded version or the open version?",
+        "complication": "A colleague offers the open version because its dimensions match.",
+        "success_checks": [
+          "Confirm BX-L.",
+          "Name the lid distinction.",
+          "Keep any substitution separate from identification."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Six trays rather than six cases",
+          "setting": "Two pickers clarify the counting unit on S18.",
+          "turns": [
+            [
+              "Picker",
+              "The pick ticket for S18 says six each; I initially read that as six cases."
+            ],
+            [
+              "Partner",
+              "The unit of measure is each: six individual trays, not six case packs."
+            ],
+            [
+              "Picker",
+              "The product record says six per case. Does that make the requested quantity one complete case?"
+            ],
+            [
+              "Partner",
+              "Yes, for this item. One case contains the six trays requested on this ticket."
+            ],
+            [
+              "Picker",
+              "I'll repeat it: six individual trays, corresponding to one case of this specific product."
+            ],
+            [
+              "Partner",
+              "That's right. Please keep the case pack linked to this item rather than every tray."
+            ],
+            [
+              "Picker",
+              "I noticed the wider tray beside it has eight per case, which could confuse someone."
+            ],
+            [
+              "Partner",
+              "Exactly. The same word tray doesn't establish the same unit count or item identifier."
+            ],
+            [
+              "Picker",
+              "I'll confirm the code and unit together when I pass the pick to packing."
+            ],
+            [
+              "Partner",
+              "Then packing should hear six trays for S18, not the ambiguous instruction to check six."
+            ]
+          ]
+        },
+        {
+          "title": "A pair is the selling unit",
+          "setting": "A picker clarifies a glove order with the order desk.",
+          "turns": [
+            [
+              "Picker",
+              "This ticket requests eight pairs of gloves. The product photo shows two gloves together."
+            ],
+            [
+              "Order clerk",
+              "That's because a pair is the selling unit: one left glove and one right glove."
+            ],
+            [
+              "Picker",
+              "So eight pairs means sixteen individual gloves, not eight gloves divided into four pairs?"
+            ],
+            [
+              "Order clerk",
+              "Correct. Keep the order quantity expressed as eight pairs so the unit stays clear."
+            ],
+            [
+              "Picker",
+              "The storage label also lists cartons of twelve pairs. That isn't the requested quantity here."
+            ],
+            [
+              "Order clerk",
+              "Right. The carton pack describes the supplier packaging, not how many pairs this order needs."
+            ],
+            [
+              "Picker",
+              "I'll report eight pairs picked rather than just saying eight, which could mean single gloves."
+            ],
+            [
+              "Order clerk",
+              "Please include the size as well; this order is for medium, not large."
+            ],
+            [
+              "Picker",
+              "Medium gloves, eight pairs, item GM-2. I'll keep those details together in the handoff."
+            ],
+            [
+              "Order clerk",
+              "That matches the order. The photo doesn't replace checking the specified unit and size."
+            ]
+          ]
+        },
+        {
+          "title": "The decimal belongs to weight",
+          "setting": "A picker checks a stock line with a warehouse clerk.",
+          "turns": [
+            [
+              "Picker",
+              "My screen shows twelve units and 2.5 beside them. Is the second figure another quantity?"
+            ],
+            [
+              "Clerk",
+              "That field is listed weight in kilograms per unit, not an extra picking amount."
+            ],
+            [
+              "Picker",
+              "The narrow display hid the field heading. I wanted to check before interpreting the decimal."
+            ],
+            [
+              "Clerk",
+              "Good question. The order quantity remains twelve units of item WT-8 on this ticket."
+            ],
+            [
+              "Picker",
+              "So I should not say twelve and a half, or convert the weight into a unit count?"
+            ],
+            [
+              "Clerk",
+              "No. Those figures describe different measurements, and the task doesn't ask you to combine them."
+            ],
+            [
+              "Picker",
+              "Please include the weight-field heading in the spoken handoff to packing."
+            ],
+            [
+              "Clerk",
+              "I'll say twelve units requested; listed weight is two point five kilograms per unit."
+            ],
+            [
+              "Picker",
+              "Thank you. I'll read the quantity and the item code together when confirming the pick."
+            ],
+            [
+              "Clerk",
+              "That keeps the number twelve attached to units and the decimal attached to its weight field."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Three cartons of ten, not ten cartons",
+        "brief": "Order X16 asks for thirty each; item record states ten per carton. A partner says ten cartons because ten is prominent on the label.",
+        "role_a": "Picker: clarify all three quantities.",
+        "role_b": "Partner: confirm thirty individual units in three complete cartons for this item.",
+        "opening_line": "Which number is the order quantity and which is the pack size?",
+        "complication": "A neighboring variant contains twelve per carton.",
+        "success_checks": [
+          "Keep thirty each as requested.",
+          "Explain three cartons of ten.",
+          "Do not apply the neighboring variant's pack size."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Six baskets short at B04",
+          "setting": "A picker calls the replenishment desk about D55.",
+          "turns": [
+            [
+              "Picker",
+              "D55 needs ten baskets, but B04 has four. The short pick is six units."
+            ],
+            [
+              "Replenishment clerk",
+              "I see twelve listed in reserve. Have you confirmed whether those are allocated elsewhere?"
+            ],
+            [
+              "Picker",
+              "No, that's the check I need. The system quantity alone doesn't show availability for D55."
+            ],
+            [
+              "Replenishment clerk",
+              "I'll review allocation and the replenishment request. What carrier cutoff affects this order?"
+            ],
+            [
+              "Picker",
+              "Three o'clock. Please tell me the status before then, even if the six remain unavailable."
+            ],
+            [
+              "Replenishment clerk",
+              "Understood. Accepting your request doesn't mean the pick location has already been replenished."
+            ],
+            [
+              "Picker",
+              "I'll keep the pick status at four available, six outstanding until the actual stock change is confirmed."
+            ],
+            [
+              "Replenishment clerk",
+              "That's accurate. If reserve belongs to another order, I'll report that constraint specifically."
+            ],
+            [
+              "Picker",
+              "Please also name the next update time so packing doesn't assume the remaining six are already coming."
+            ],
+            [
+              "Replenishment clerk",
+              "I can update you at two fifteen with availability and the replenishment status separately."
+            ]
+          ]
+        },
+        {
+          "title": "The reserve quantity is committed elsewhere",
+          "setting": "A picker discusses unavailable reserve stock with an allocation clerk.",
+          "turns": [
+            [
+              "Picker",
+              "The screen shows twenty lamps in reserve. Could those cover my five-unit shortage on L30?"
+            ],
+            [
+              "Allocation clerk",
+              "They are allocated to order L22, so I can't describe them as free for L30."
+            ],
+            [
+              "Picker",
+              "Thanks. I need to explain why visible reserve stock isn't automatically available for my pick."
+            ],
+            [
+              "Allocation clerk",
+              "You can say stock exists but is assigned elsewhere. Reallocation would require a separate decision."
+            ],
+            [
+              "Picker",
+              "I won't mark the five supplied merely because someone could potentially approve that change."
+            ],
+            [
+              "Allocation clerk",
+              "Correct. I can send the request for review, but its outcome is not known."
+            ],
+            [
+              "Picker",
+              "Please include L30's five-unit shortage and afternoon cutoff so the review has the actual constraint."
+            ],
+            [
+              "Allocation clerk",
+              "I will. Keep the physical reserve count separate from the quantity available to your order."
+            ],
+            [
+              "Picker",
+              "Then my update to packing is five outstanding, with reallocation requested but not confirmed."
+            ],
+            [
+              "Allocation clerk",
+              "That captures it. I'll return the decision when the responsible planner has reviewed the competing orders."
+            ]
+          ]
+        },
+        {
+          "title": "Replenished in the record, not at the location",
+          "setting": "A picker checks a task-status discrepancy with a stock associate.",
+          "turns": [
+            [
+              "Picker",
+              "R28 shows complete, but its named pick location is empty."
+            ],
+            [
+              "Stock associate",
+              "Which task and location are you referring to? I need those before comparing the movement record."
+            ],
+            [
+              "Picker",
+              "Task R28 for item CF-6, destination B09. I haven't checked any other storage position."
+            ],
+            [
+              "Stock associate",
+              "The completion entry names B90. That could explain the discrepancy, but the physical location needs verification."
+            ],
+            [
+              "Picker",
+              "Please don't change my pick to B90 solely because those characters appear in the record."
+            ],
+            [
+              "Stock associate",
+              "Agreed. I'll ask the movement team to check the recorded destination and report the actual finding."
+            ],
+            [
+              "Picker",
+              "I'll tell packing the replenishment status is disputed, rather than simply say the stock disappeared."
+            ],
+            [
+              "Stock associate",
+              "That is more accurate. We have a record-location mismatch, not a confirmed loss."
+            ],
+            [
+              "Picker",
+              "Could you keep R28 attached to the investigation so the next shift can follow it?"
+            ],
+            [
+              "Stock associate",
+              "I'll take the location check and update the pick desk with the findings."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A partial replenishment",
+        "brief": "Request R50 asks for eight units. Four have reached the pick location; four remain unconfirmed. Order clerk asks whether the request is complete.",
+        "role_a": "Picker: report four supplied and four outstanding.",
+        "role_b": "Clerk: you need a clear status for packing, not a new stock promise.",
+        "opening_line": "Have all eight arrived, or only the first four?",
+        "complication": "A task acknowledgment is mistaken for physical completion.",
+        "success_checks": [
+          "State the partial quantity.",
+          "Distinguish acknowledgment from replenishment.",
+          "Ask who owns the remaining four."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Two neighboring cartons and one loose label",
+          "setting": "A checker interrupts a label mismatch at packing station 3.",
+          "turns": [
+            [
+              "Checker",
+              "Please pause at this packing station. C70 names Harbor Shop, but the shipping label says C71."
+            ],
+            [
+              "Packer",
+              "I haven't applied anything yet. The other carton beside it is for Hillside School."
+            ],
+            [
+              "Checker",
+              "That is the name on this label. Let's compare identifiers rather than rely on bench position."
+            ],
+            [
+              "Packer",
+              "Agreed. My screen is still showing C70 because that's the carton I checked first."
+            ],
+            [
+              "Checker",
+              "Does the label for Harbor Shop have its own carton reference available for comparison?"
+            ],
+            [
+              "Packer",
+              "Yes, it shows C70. I can now distinguish the two labels by reference and recipient."
+            ],
+            [
+              "Checker",
+              "Then our discrepancy concerns loose labels beside adjacent orders, not confirmed mislabeling of dispatched goods."
+            ],
+            [
+              "Packer",
+              "Correct. Neither carton has left the station, and neither label was applied before your check."
+            ],
+            [
+              "Checker",
+              "I'll describe that accurately when we explain why the packing task briefly paused."
+            ],
+            [
+              "Packer",
+              "Thank you. We'll keep each carton linked to its own record as packing continues."
+            ]
+          ]
+        },
+        {
+          "title": "A scan acknowledged the wrong identifier",
+          "setting": "A packer clarifies a scan result with a systems support clerk.",
+          "turns": [
+            [
+              "Packer",
+              "The scanner beeped, but the screen displays a carton reference different from the one I'm checking."
+            ],
+            [
+              "Support clerk",
+              "A beep alone doesn't tell us which identifier was registered. What does the confirmation actually show?"
+            ],
+            [
+              "Packer",
+              "It shows C18, while the carton I'm working on is C81. The digits are reversed."
+            ],
+            [
+              "Support clerk",
+              "Then report a reference mismatch, not a successful confirmation of C81. Has packing been completed?"
+            ],
+            [
+              "Packer",
+              "No. I paused the confirmation because I couldn't reconcile the screen with this carton identifier."
+            ],
+            [
+              "Support clerk",
+              "That gives us a clear issue to investigate. I'll check which record received the scan acknowledgment."
+            ],
+            [
+              "Packer",
+              "Please don't mark C81 complete simply to match the carton beside me."
+            ],
+            [
+              "Support clerk",
+              "I won't. We need to establish the recorded event before deciding on a correction."
+            ],
+            [
+              "Packer",
+              "I'll keep the two references visible in the query and describe the observed screen result."
+            ],
+            [
+              "Support clerk",
+              "I'll check C18 against C81; this isn't a confirmed general scanner outage."
+            ]
+          ]
+        },
+        {
+          "title": "The old address on a replacement label",
+          "setting": "A packer queries a replacement label with the shipping desk.",
+          "turns": [
+            [
+              "Packer",
+              "The replacement label for order H12 has the old address, while the order screen shows the new one."
+            ],
+            [
+              "Shipping clerk",
+              "Did the customer change the address after the original label was created for that order?"
+            ],
+            [
+              "Packer",
+              "The history shows this morning's address update, but the label still differs."
+            ],
+            [
+              "Shipping clerk",
+              "Let's compare the label version with the shipping record. A replacement isn't necessarily a fresh-address confirmation."
+            ],
+            [
+              "Packer",
+              "I don't want replacement to hide the fact that the destination remains wrong."
+            ],
+            [
+              "Shipping clerk",
+              "I can see this copy came from the earlier label record, before the address update."
+            ],
+            [
+              "Packer",
+              "So this repeats an old destination; the customer hasn't changed it again?"
+            ],
+            [
+              "Shipping clerk",
+              "Correct. I'll take the label review and confirm the current destination record before another label is supplied."
+            ],
+            [
+              "Packer",
+              "I'll keep H12 pending at this stage rather than describe it as ready for dispatch."
+            ],
+            [
+              "Shipping clerk",
+              "Please do. I'll tell you which verified label reference applies when the review is complete."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "One order, two carton identifiers",
+        "brief": "Order N40 has cartons N40-1 and N40-2. Both loose labels read N40-1; neither is applied.",
+        "role_a": "Packer: describe the duplicate identifier.",
+        "role_b": "Shipping clerk: verify the missing N40-2 label record.",
+        "opening_line": "Do we have two different carton labels or two copies of the first?",
+        "complication": "A colleague says matching customer names are sufficient.",
+        "success_checks": [
+          "Identify the duplicated N40-1.",
+          "Keep carton and order identity distinct.",
+          "Request the N40-2 label check."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Three staged, two on the manifest",
+          "setting": "An outbound associate updates the dispatch clerk about L66.",
+          "turns": [
+            [
+              "Associate",
+              "L66 has three cartons staged in lane two, but the load manifest lists only two."
+            ],
+            [
+              "Dispatch clerk",
+              "Has anything departed yet, or is the full physical shipment still in the staging area?"
+            ],
+            [
+              "Associate",
+              "All three remain staged. I haven't described the order as dispatched because the record doesn't match."
+            ],
+            [
+              "Dispatch clerk",
+              "Thanks. Which carton identifier is missing from the manifest so I can investigate the specific entry?"
+            ],
+            [
+              "Associate",
+              "L66-3 is missing; the first and second carton identifiers are both listed correctly."
+            ],
+            [
+              "Dispatch clerk",
+              "I'll check that entry before the four o'clock cutoff. Please keep the physical count distinct."
+            ],
+            [
+              "Associate",
+              "Will your acknowledgment mean the manifest is corrected, or only that you're checking it?"
+            ],
+            [
+              "Dispatch clerk",
+              "Only that I'm checking it. I'll confirm the revised status when the comparison is complete."
+            ],
+            [
+              "Associate",
+              "Then I'll tell packing three staged, manifest discrepancy pending, no departure confirmation yet."
+            ],
+            [
+              "Dispatch clerk",
+              "That gives the next person the actual stage without suggesting the order has already shipped."
+            ]
+          ]
+        },
+        {
+          "title": "The carrier arrived before collection completed",
+          "setting": "A warehouse associate clarifies a status with customer service.",
+          "turns": [
+            [
+              "Customer service clerk",
+              "The carrier is here. Can I tell the customer that their order has left the warehouse?"
+            ],
+            [
+              "Associate",
+              "Not yet. Carrier arrival and this order's dispatch are different events; its cartons are still staged."
+            ],
+            [
+              "Customer service clerk",
+              "Do you know whether their shipment is on the load manifest for this particular collection?"
+            ],
+            [
+              "Associate",
+              "Yes, order W23 is listed, but we don't yet have departure confirmation for it."
+            ],
+            [
+              "Customer service clerk",
+              "Then I can say it's scheduled for this collection, rather than already on its way?"
+            ],
+            [
+              "Associate",
+              "That's supported by the manifest. Please keep the physical departure status pending until dispatch confirms it."
+            ],
+            [
+              "Customer service clerk",
+              "The customer asked for a tracking update, and I don't want to repeat a premature status."
+            ],
+            [
+              "Associate",
+              "Use the order reference when you ask dispatch; other orders may be at different stages."
+            ],
+            [
+              "Customer service clerk",
+              "A carrier's arrival doesn't mean every scheduled order has departed."
+            ],
+            [
+              "Associate",
+              "Exactly. W23 is staged and listed; its dispatch confirmation remains pending."
+            ]
+          ]
+        },
+        {
+          "title": "A lane number mistaken for a departure time",
+          "setting": "An associate checks an ambiguous outbound instruction.",
+          "turns": [
+            [
+              "Associate",
+              "You said twelve for order J18. Did you mean lane twelve or departure at twelve o'clock?"
+            ],
+            [
+              "Dispatch clerk",
+              "I meant staging lane twelve. The planned carrier collection is at two this afternoon."
+            ],
+            [
+              "Associate",
+              "Thanks. I was about to tell packing we had a noon cutoff, which would be wrong."
+            ],
+            [
+              "Dispatch clerk",
+              "The cutoff for this collection is one thirty. Keep the lane, cutoff, and departure estimate separate."
+            ],
+            [
+              "Associate",
+              "I'll read it back: lane twelve, cutoff one thirty, planned collection two o'clock."
+            ],
+            [
+              "Dispatch clerk",
+              "That's correct. The collection time is planned; it isn't a confirmation that goods have departed."
+            ],
+            [
+              "Associate",
+              "Does J18 already appear on the manifest for that carrier, or is that still pending?"
+            ],
+            [
+              "Dispatch clerk",
+              "It's on the current manifest. Its physical staging status needs confirmation from the outbound team."
+            ],
+            [
+              "Associate",
+              "I'll check staging rather than assume the manifest proves the order is ready."
+            ],
+            [
+              "Dispatch clerk",
+              "Good. The next update should say whether J18 is actually staged in the assigned lane."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The departure record belongs to another load",
+        "brief": "Order V18 is on afternoon load A2. A screen shows morning load A1 departed; V18 remains staged.",
+        "role_a": "Associate: explain which load the departure applies to.",
+        "role_b": "Customer service clerk: you need V18's current status.",
+        "opening_line": "Does that departure confirmation name A1 or A2?",
+        "complication": "The clerk assumes all today's orders left with A1.",
+        "success_checks": [
+          "Match V18 to A2.",
+          "State V18 is staged.",
+          "Do not transfer A1's departure status to A2."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Unopened appearance is not release",
+          "setting": "A returns worker explains K25's status to a picker.",
+          "turns": [
+            [
+              "Picker",
+              "K25 looks unopened. Could I count it as available stock for the next kettle order?"
+            ],
+            [
+              "Returns worker",
+              "Returns intake matched the reference, but condition review is pending. It remains on inspection hold."
+            ],
+            [
+              "Picker",
+              "So received means it is here, not that someone has approved it for sale again?"
+            ],
+            [
+              "Returns worker",
+              "Exactly. Mira owns the review and will confirm the disposition before we call it restocked."
+            ],
+            [
+              "Picker",
+              "I don't want to label it defective either, since nobody has established a fault."
+            ],
+            [
+              "Returns worker",
+              "That is the right distinction. Uninspected is neither confirmed defective nor confirmed suitable for release."
+            ],
+            [
+              "Picker",
+              "Can you give me the reference to use when I ask about its availability later?"
+            ],
+            [
+              "Returns worker",
+              "Use return K25 and ask for the review status, rather than simply asking whether it arrived."
+            ],
+            [
+              "Picker",
+              "I'll leave it out of available quantity until that stock status is actually confirmed."
+            ],
+            [
+              "Returns worker",
+              "Thanks. The order desk can then distinguish an available unit from a return awaiting a decision."
+            ]
+          ]
+        },
+        {
+          "title": "A returned item differs from its approval",
+          "setting": "A returns worker queries an item mismatch with the returns desk.",
+          "turns": [
+            [
+              "Worker",
+              "The authorization lists a black desk lamp, but the returned carton contains a silver reading lamp."
+            ],
+            [
+              "Returns clerk",
+              "Could you give me both item codes, rather than relying only on the color descriptions?"
+            ],
+            [
+              "Worker",
+              "The authorization says DL-B. The item label says RL-S, so both type and suffix differ."
+            ],
+            [
+              "Returns clerk",
+              "That is an identity discrepancy. We need to investigate before assigning it the approved return's stock status."
+            ],
+            [
+              "Worker",
+              "I'll record what arrived without claiming the customer deliberately sent a different item."
+            ],
+            [
+              "Returns clerk",
+              "Please do. A mismatch establishes the difference, not who caused it or why."
+            ],
+            [
+              "Worker",
+              "Should the query name the expected and actual item separately so the customer team can compare?"
+            ],
+            [
+              "Returns clerk",
+              "Yes, include DL-B expected and RL-S received under the return reference you have."
+            ],
+            [
+              "Worker",
+              "The item will remain awaiting review; neither restocking nor supplier return has been decided."
+            ],
+            [
+              "Returns clerk",
+              "Correct. I'll take the reference check and ask the customer team for the matching order information."
+            ]
+          ]
+        },
+        {
+          "title": "Review completed but disposition still pending",
+          "setting": "A returns worker checks a confusing status with a returns checker.",
+          "turns": [
+            [
+              "Worker",
+              "The screen says inspection complete for R88, but disposition still says pending. Are those contradictory?"
+            ],
+            [
+              "Checker",
+              "No. I completed the condition check, but the next-stock decision belongs to the returns coordinator."
+            ],
+            [
+              "Worker",
+              "Then inspection complete doesn't automatically authorize restocking, even when that review stage has finished?"
+            ],
+            [
+              "Checker",
+              "Correct. Different stages can have different owners. The coordinator still needs to confirm the next status."
+            ],
+            [
+              "Worker",
+              "What can I accurately tell the order desk, which is asking whether the unit is available?"
+            ],
+            [
+              "Checker",
+              "Tell them condition review is complete, disposition pending, and available-stock status has not been confirmed."
+            ],
+            [
+              "Worker",
+              "That is clearer than saying the return is done, which could imply everything is settled."
+            ],
+            [
+              "Checker",
+              "Exactly. Please use R88 so the coordinator can find this particular review result quickly."
+            ],
+            [
+              "Worker",
+              "I'll ask for the disposition update without reopening a condition check you have already completed."
+            ],
+            [
+              "Checker",
+              "Thank you. That keeps the remaining question focused on the actual outstanding decision."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A replacement approved before the return arrives",
+        "brief": "Customer service approved a replacement for order T16. The original item's return is booked but has not arrived at intake.",
+        "role_a": "Worker: separate replacement approval from physical return receipt.",
+        "role_b": "Customer service clerk: confirm only that replacement was approved.",
+        "opening_line": "Has the original item reached intake, or has only the replacement been approved?",
+        "complication": "The clerk calls both actions 'return complete.'",
+        "success_checks": [
+          "State original not received.",
+          "Preserve replacement approval as a separate event.",
+          "Ask for the expected return reference."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Two counts agree, the system differs",
+          "setting": "An inventory worker hands T9 in B11 to evening clerk Sam.",
+          "turns": [
+            [
+              "Worker",
+              "The cycle count found eighteen T9 units in B11 twice; the system still shows twenty."
+            ],
+            [
+              "Evening clerk",
+              "Then the recount confirms a two-unit variance. Do we know what caused the difference?"
+            ],
+            [
+              "Worker",
+              "No cause is confirmed, and no inventory adjustment has been approved against this count."
+            ],
+            [
+              "Evening clerk",
+              "I'll take the transaction-history review. Did either count include stock in another location?"
+            ],
+            [
+              "Worker",
+              "No. Both counts covered B11 only; I haven't made a claim about other locations."
+            ],
+            [
+              "Evening clerk",
+              "That scope matters. I'll compare the relevant movements without treating a possible transfer as established."
+            ],
+            [
+              "Worker",
+              "Please acknowledge the discrepancy in the shift handoff so it doesn't disappear when our shift ends."
+            ],
+            [
+              "Evening clerk",
+              "I have it: T9, B11, physical eighteen, recorded twenty, cause unknown, adjustment unapproved."
+            ],
+            [
+              "Worker",
+              "Thank you. Let the next shift know the recount is complete but the investigation is not."
+            ],
+            [
+              "Evening clerk",
+              "I'll keep those stages separate and report the review outcome against this count reference."
+            ]
+          ]
+        },
+        {
+          "title": "A movement after the count",
+          "setting": "An associate clarifies an apparent inventory contradiction with a clerk.",
+          "turns": [
+            [
+              "Associate",
+              "I counted ten at nine o'clock, but your screen now shows eight. Was my count rejected?"
+            ],
+            [
+              "Inventory clerk",
+              "Not necessarily. The transaction history shows a two-unit pick at nine fifteen from that location."
+            ],
+            [
+              "Associate",
+              "Then the figures may describe different times rather than two disagreeing counts of the same moment."
+            ],
+            [
+              "Inventory clerk",
+              "Yes, though we should confirm that the pick relates to the exact item and bin."
+            ],
+            [
+              "Associate",
+              "The count was item PN-4 in C16. Those are the references I used this morning."
+            ],
+            [
+              "Inventory clerk",
+              "The recorded pick matches both. Your ten preceded the two-unit movement, producing the later eight."
+            ],
+            [
+              "Associate",
+              "That explains the timing. Please don't label the earlier count inaccurate merely because the current quantity changed."
+            ],
+            [
+              "Inventory clerk",
+              "I won't. I'll identify the count time and the later transaction in the review note."
+            ],
+            [
+              "Associate",
+              "Does comparing these two different-time figures justify an inventory adjustment?"
+            ],
+            [
+              "Inventory clerk",
+              "No. The recorded pick explains the change; this is not a confirmed inventory variance."
+            ]
+          ]
+        },
+        {
+          "title": "The handoff recipient cannot take the task",
+          "setting": "A picker and outgoing clerk find the actual owner of an unresolved order.",
+          "turns": [
+            [
+              "Picker",
+              "Order F42 still has a three-unit short pick. Are you taking the follow-up after our shift?"
+            ],
+            [
+              "Clerk",
+              "I'm leaving too, so I can't be its evening owner. We need to name the incoming contact."
+            ],
+            [
+              "Picker",
+              "A handoff without a named owner could leave this unresolved."
+            ],
+            [
+              "Clerk",
+              "The evening pick desk is staffed by Lena. She has confirmed she's taking unresolved picking queries."
+            ],
+            [
+              "Picker",
+              "Then the handoff should name Lena and state three units outstanding, not the entire order missing."
+            ],
+            [
+              "Clerk",
+              "Yes. The other seven units are confirmed picked, and the remaining allocation check is still pending."
+            ],
+            [
+              "Picker",
+              "Please give Lena the order, quantities, and cutoff, and request acknowledgment."
+            ],
+            [
+              "Clerk",
+              "I can contact her now and ask for acknowledgment, rather than only adding an unnamed note."
+            ],
+            [
+              "Picker",
+              "I'll keep the status as seven picked, three outstanding until her desk reports a confirmed change."
+            ],
+            [
+              "Clerk",
+              "Lena has acknowledged ownership of the allocation check. The quantities remain unchanged."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An unfinished recount at shift end",
+        "brief": "First count: fourteen; system: fifteen. Recount has started but is not complete. Incoming clerk Arun can finish it.",
+        "role_a": "Worker: hand over the incomplete recount accurately.",
+        "role_b": "Arun: accept the recount, then review any remaining variance.",
+        "opening_line": "Which figure is confirmed, and which check is still underway?",
+        "complication": "Someone labels the variance verified before the recount finishes.",
+        "success_checks": [
+          "State first count and recorded quantity.",
+          "Keep recount incomplete.",
+          "Name Arun without claiming a finished result."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "The supplier's bundle description changed",
+      "setting": "Receiving compares a new packing description with the same purchase order.",
+      "dialogue": [
+        [
+          "Receiver",
+          "Your notice lists thirty bundles; P62 requests sixty individual display holders."
+        ],
+        [
+          "Supplier clerk",
+          "We changed the shipping description to bundles of two holders. Did the notice show that unit conversion clearly?"
+        ],
+        [
+          "Receiver",
+          "No pack size appears, so the notice initially looks thirty units short."
+        ],
+        [
+          "Supplier clerk",
+          "I see the problem. Thirty bundles of two account for sixty listed holders, but that doesn't verify your physical contents."
+        ],
+        [
+          "Receiver",
+          "Exactly. We can confirm thirty outer bundles received, while the expected individual quantity remains sixty on the order."
+        ],
+        [
+          "Supplier clerk",
+          "I'll supply the packing breakdown showing two per bundle, linked to P62 rather than a general product brochure."
+        ],
+        [
+          "Receiver",
+          "Please retain the original notice reference so our receiving query can connect the clarification to the actual arrival."
+        ],
+        [
+          "Supplier clerk",
+          "I can do that. The clarification changes the description, not the customer's ordered quantity or agreed product."
+        ],
+        [
+          "Receiver",
+          "I won't infer a shortage by comparing different counting units."
+        ],
+        [
+          "Supplier clerk",
+          "Nor should we call all sixty physically checked until receiving completes its applicable contents confirmation."
+        ],
+        [
+          "Receiver",
+          "Our receipt will distinguish counted bundles from their listed individual contents."
+        ],
+        [
+          "Supplier clerk",
+          "That gives both teams consistent units and leaves the actual contents check visible instead of assuming it occurred."
+        ]
+      ],
+      "notes": [
+        "'Account for' explains a quantity relationship without claiming a physical inspection.",
+        "A clarified unit description need not change the purchase order."
+      ]
+    },
+    {
+      "title": "The bin map uses an older aisle name",
+      "setting": "A stock associate and inventory clerk clarify renamed warehouse locations.",
+      "dialogue": [
+        [
+          "Associate",
+          "The map says North Three; today's task says N03. Are those different?"
+        ],
+        [
+          "Inventory clerk",
+          "They refer to the same area after our naming update, but individual bin numbers still matter for each task."
+        ],
+        [
+          "Associate",
+          "My task says N03-12, corresponding to North Three, bin twelve, for BX-R."
+        ],
+        [
+          "Inventory clerk",
+          "That is the same full location in two naming systems. Which item code appears on the actual stock label?"
+        ],
+        [
+          "Associate",
+          "BX-R matches. I wanted to establish the location equivalence rather than assume every similar abbreviation meant the same place."
+        ],
+        [
+          "Inventory clerk",
+          "That was useful. The update changed area names, not the item identifier or this bin's assigned stock."
+        ],
+        [
+          "Associate",
+          "Could the map be marked as an older naming version so temporary staff understand the difference when asking questions?"
+        ],
+        [
+          "Inventory clerk",
+          "I'll request that correction. We should also keep the old and new names linked during the transition."
+        ],
+        [
+          "Associate",
+          "N03-21 shares the prefix but names a different bin from twelve."
+        ],
+        [
+          "Inventory clerk",
+          "Correct. Read the complete location aloud, especially those last two digits, rather than stopping after N03."
+        ],
+        [
+          "Associate",
+          "Confirmed: North Three bin twelve is N03-12; the carton label matches BX-R."
+        ],
+        [
+          "Inventory clerk",
+          "Yes. I'll handle the map-version query without changing either task's actual location assignment."
+        ]
+      ],
+      "notes": [
+        "Confirm equivalent names explicitly instead of relying on visual similarity.",
+        "The area prefix alone does not identify the complete bin."
+      ]
+    },
+    {
+      "title": "A promotional set has its own identity",
+      "setting": "A picker and order clerk clarify a boxed stationery set.",
+      "dialogue": [
+        [
+          "Picker",
+          "G72 requests four gift sets, but their component products also sell separately."
+        ],
+        [
+          "Order clerk",
+          "The order item is GS-2, the boxed set. It is not an instruction to pick four loose notebooks and pens."
+        ],
+        [
+          "Picker",
+          "So GS-2 identifies the complete set, not merely its two individual products?"
+        ],
+        [
+          "Order clerk",
+          "Exactly. Four sets means four units of GS-2, not eight unrelated items recorded against the order."
+        ],
+        [
+          "Picker",
+          "I see a note saying one display sample was photographed. Does that reduce the customer's requested quantity to three?"
+        ],
+        [
+          "Order clerk",
+          "No. The photograph note describes marketing material; it does not change the quantity on the pick ticket."
+        ],
+        [
+          "Picker",
+          "Thanks. I was checking whether sample referred to a stock movement or only a product image in this case."
+        ],
+        [
+          "Order clerk",
+          "Here it is only the image. No sample deduction or separate replacement item has been approved for G72."
+        ],
+        [
+          "Picker",
+          "I'll confirm four boxed GS-2 sets without substituting loose component codes."
+        ],
+        [
+          "Order clerk",
+          "Please also preserve the word boxed; it distinguishes the requested set from items that merely have similar contents."
+        ],
+        [
+          "Picker",
+          "The contents describe the set, but GS-2 identifies this order line."
+        ],
+        [
+          "Order clerk",
+          "That resolves the ambiguity without breaking the order into a different combination of stock items."
+        ]
+      ],
+      "notes": [
+        "'A complete set' identifies the order unit rather than its component count.",
+        "A descriptive note is not automatically an inventory transaction."
+      ]
+    },
+    {
+      "title": "Two shortages compete for one confirmed balance",
+      "setting": "A picker and allocation clerk clarify partial availability for two orders.",
+      "dialogue": [
+        [
+          "Picker",
+          "H10 and H11 each need four baskets; only six are confirmed available."
+        ],
+        [
+          "Allocation clerk",
+          "Then six cannot fully cover both shortages. We need an allocation decision before either order is described as complete."
+        ],
+        [
+          "Picker",
+          "Which quantities can I report while the planner decides their allocation?"
+        ],
+        [
+          "Allocation clerk",
+          "Report four outstanding on each order and six confirmed available in total, with distribution between orders still pending."
+        ],
+        [
+          "Picker",
+          "That prevents both desks from assuming all six are theirs. Their individual screens currently show the same shared balance."
+        ],
+        [
+          "Allocation clerk",
+          "Good point. A shared available quantity is not a separate six-unit reserve assigned to every order viewing it."
+        ],
+        [
+          "Picker",
+          "Could your decision identify the quantities by order reference so we don't pass along another ambiguous 'stock available' message?"
+        ],
+        [
+          "Allocation clerk",
+          "Yes. I'll return an allocation against H10 and H11 separately after the responsible planner reviews their deadlines."
+        ],
+        [
+          "Picker",
+          "Neither short pick is resolved simply because the shared balance increased."
+        ],
+        [
+          "Allocation clerk",
+          "Correct. We also need to distinguish allocation from the later confirmation that stock reached the pick locations."
+        ],
+        [
+          "Picker",
+          "I'll report both shortages and request the order-specific allocation update."
+        ],
+        [
+          "Allocation clerk",
+          "That keeps the current facts useful without making an unsupported promise about which customer receives the remaining stock."
+        ]
+      ],
+      "notes": [
+        "A shared balance must not be counted twice across competing orders.",
+        "'Distribution between orders pending' identifies the unresolved decision."
+      ]
+    },
+    {
+      "title": "The contents check belongs to only one carton",
+      "setting": "A packer and checker resolve an overbroad completion message.",
+      "dialogue": [
+        [
+          "Packer",
+          "I marked M20 checked, but I only checked carton one of three."
+        ],
+        [
+          "Checker",
+          "Thank you for catching the wording. Have cartons two and three had their contents compared with their own packing records?"
+        ],
+        [
+          "Packer",
+          "No. Their order labels match, but their contents remain unchecked."
+        ],
+        [
+          "Checker",
+          "Then we need to narrow the status to carton one checked, with cartons two and three still awaiting comparison."
+        ],
+        [
+          "Packer",
+          "I'll correct the message now rather than leave dispatch thinking the whole order passed this stage."
+        ],
+        [
+          "Checker",
+          "Please preserve which carton was actually checked so the team doesn't repeat completed work without a reason."
+        ],
+        [
+          "Packer",
+          "Would 'M20-1 contents checked; M20-2 and M20-3 pending' give the right level of detail for the handoff?"
+        ],
+        [
+          "Checker",
+          "Yes. Include the actual carton identifiers, because a bare one, two, three could be mistaken for item quantities."
+        ],
+        [
+          "Packer",
+          "I've corrected the message: first carton checked, two cartons still pending."
+        ],
+        [
+          "Checker",
+          "That is accurate. Matching order labels identify belonging; they don't replace the separate contents comparison for each carton."
+        ],
+        [
+          "Packer",
+          "I'll use carton-specific completion wording on future multi-carton orders."
+        ],
+        [
+          "Checker",
+          "Good. The next checker can now take the two remaining cartons without guessing which part of the work is finished."
+        ]
+      ],
+      "notes": [
+        "Scope a completion claim to the carton actually checked.",
+        "'Belongs to the order' and 'contents checked' are different claims."
+      ]
+    },
+    {
+      "title": "An extra collection is only a proposal",
+      "setting": "A dispatch associate and carrier clerk discuss an additional outbound collection.",
+      "dialogue": [
+        [
+          "Associate",
+          "Eight cartons missed our regular booking. Could you offer another collection today?"
+        ],
+        [
+          "Carrier clerk",
+          "I can ask scheduling, but I don't currently have an extra vehicle or confirmed time available for that request."
+        ],
+        [
+          "Associate",
+          "Please record an eight-carton request, not a confirmed second departure."
+        ],
+        [
+          "Carrier clerk",
+          "I will. Do all eight belong to the same destination, or would the booking include several shipment references?"
+        ],
+        [
+          "Associate",
+          "They cover three destinations under three references. I can provide that breakdown so the request isn't treated as one carton."
+        ],
+        [
+          "Carrier clerk",
+          "That detail matters. The scheduling team needs the actual shipment list before deciding what service can be offered."
+        ],
+        [
+          "Associate",
+          "Our customer desk wants a completion time. For now, I'll say staged, additional collection requested, carrier response pending."
+        ],
+        [
+          "Carrier clerk",
+          "That is supported. I can promise a scheduling response by three, even if no extra collection can be offered."
+        ],
+        [
+          "Associate",
+          "Three is the scheduling response time, not a collection appointment, correct?"
+        ],
+        [
+          "Carrier clerk",
+          "Exactly. I'll make that distinction explicit when I reply to your request and copy the dispatch desk."
+        ],
+        [
+          "Associate",
+          "I'll keep the departed load separate from these eight staged cartons."
+        ],
+        [
+          "Carrier clerk",
+          "Thank you. We can then update only the affected shipments when the additional-collection decision is actually known."
+        ]
+      ],
+      "notes": [
+        "A response commitment is different from a collection booking.",
+        "Quantify the backlog without combining separate shipment identities."
+      ]
+    },
+    {
+      "title": "Credit approval and warehouse release are separate",
+      "setting": "A returns associate answers a customer-service query.",
+      "dialogue": [
+        [
+          "Customer service clerk",
+          "C18 was credited this morning. Can its returned item become available stock?"
+        ],
+        [
+          "Returns associate",
+          "Credit approval concerns the customer's account. It doesn't tell us whether the returned item meets the warehouse's release requirements."
+        ],
+        [
+          "Customer service clerk",
+          "I said approved without naming the decision; only the credit was approved."
+        ],
+        [
+          "Returns associate",
+          "The return is physically received, but its inspection hold remains. We have no confirmed disposition from the returns checker."
+        ],
+        [
+          "Customer service clerk",
+          "Then I should not tell sales a replacement order can use this unit simply because the customer has been credited."
+        ],
+        [
+          "Returns associate",
+          "Correct. Sales needs confirmed available-stock status, while the customer team may separately report that the account credit was approved."
+        ],
+        [
+          "Customer service clerk",
+          "Who owns the remaining warehouse decision, so I can direct the availability question to the right person?"
+        ],
+        [
+          "Returns associate",
+          "Returns checker Omar owns the condition review, and the returns desk will communicate the resulting stock disposition."
+        ],
+        [
+          "Customer service clerk",
+          "I'll ask returns about availability, rather than asking finance to release stock."
+        ],
+        [
+          "Returns associate",
+          "Thanks. Keep C18 on the query so the physical return can be matched to the customer-account reference."
+        ],
+        [
+          "Customer service clerk",
+          "I'll report credit approved, warehouse release pending as two distinct statuses."
+        ],
+        [
+          "Returns associate",
+          "That is the distinction we need. We'll confirm availability only after the appropriate warehouse decision has been recorded."
+        ]
+      ],
+      "notes": [
+        "Always name what has been approved.",
+        "An account action does not establish the physical condition of goods."
+      ]
+    },
+    {
+      "title": "The incoming shift needs a bounded task",
+      "setting": "An outgoing counter hands an incomplete location review to the next clerk.",
+      "dialogue": [
+        [
+          "Counter",
+          "I checked A01 through A04, but C90 also covers A05 and A06."
+        ],
+        [
+          "Incoming clerk",
+          "Which results are confirmed so far, and are there unresolved differences within the four locations you already counted?"
+        ],
+        [
+          "Counter",
+          "A01 through A03 match; A04 is one short on its first count."
+        ],
+        [
+          "Incoming clerk",
+          "Then I have two kinds of remaining work: recount A04 and make the initial counts for A05 and A06."
+        ],
+        [
+          "Counter",
+          "Exactly. I don't want 'four locations checked' to imply the entire assignment or the A04 discrepancy is settled."
+        ],
+        [
+          "Incoming clerk",
+          "Please give me the count reference so I can continue the same assignment without creating a competing set of results."
+        ],
+        [
+          "Counter",
+          "It's count C90. No adjustments were approved, and I haven't assigned a cause to the A04 difference."
+        ],
+        [
+          "Incoming clerk",
+          "I'll acknowledge C90 with those limits: three matching locations, one preliminary variance, and two locations not yet counted."
+        ],
+        [
+          "Counter",
+          "This partial count doesn't independently verify the entire system total."
+        ],
+        [
+          "Incoming clerk",
+          "Agreed. I'll report completion only after the remaining counts and the discrepancy review reach their actual stages."
+        ],
+        [
+          "Counter",
+          "Who receives the completed count if a variance investigation remains open?"
+        ],
+        [
+          "Incoming clerk",
+          "The inventory desk will receive my count summary, with any unresolved variance explicitly retained for its separate review."
+        ]
+      ],
+      "notes": [
+        "A bounded handoff names exactly what has and has not been checked.",
+        "Counting completion does not automatically close discrepancy investigation."
+      ]
+    }
+  ]
+}

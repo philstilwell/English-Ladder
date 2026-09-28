@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "housekeeping-commercial-cleaning",
+    "title": "Housekeeping and Commercial Cleaning English",
+    "summary": "Confirm assigned cleaning work, respect occupied spaces, clarify product information, report building concerns, manage supplies, and give accurate completion updates.",
+    "roles": "Housekeeping attendants, commercial cleaners, custodial staff, and cleaning team members",
+    "category": "Industry & infrastructure",
+    "scope_note": "All room numbers, buildings, times, counts, policies, and incidents are fictional English practice, not cleaning certification, chemical-use instruction, medical advice, or access authorization. Follow employer training and site procedures for products, equipment, privacy, waste, and hazards. Do not infer permission to enter, mix products, handle unknown waste, or repair equipment. This course addresses frontline cleaning exchanges rather than hospitality management.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Janitors and Building Cleaners",
+        "url": "https://www.bls.gov/ooh/building-and-grounds-cleaning/janitors-and-building-cleaners.htm"
+      },
+      {
+        "title": "O*NET OnLine: Maids and Housekeeping Cleaners",
+        "url": "https://www.onetonline.org/link/summary/37-2012.00"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Confirming the assignment and its limits",
+        "terms": [
+          "assignment sheet",
+          "service scope",
+          "touchpoint",
+          "spot cleaning"
+        ],
+        "collocations": [
+          "confirm the assigned area: identify exactly which space belongs to the task",
+          "clarify the service scope: check which work is included",
+          "prioritize the requested room: agree which assigned space comes first",
+          "distinguish a spot from the whole surface: define the extent of a cleaning request"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "A commercial assignment says 'conference room: tables and floor.' The client asks for 'everything' before a 3:00 meeting. The worker is assigned table surfaces and the floor, not high windows or personal equipment. The supervisor can clarify extra work; the meeting time doesn't expand permission.",
+          "model": "The assignment covers the conference-room table surfaces and floor. When you say everything, are you also asking about the high windows and personal equipment? Those aren't included in my current task list. I can complete the listed work and ask my supervisor to review the additional request before anyone promises it for three o'clock."
+        },
+        "workshop": {
+          "title": "Turn 'everything' into named tasks",
+          "goal": "Clarify the requested surfaces and the boundary of the current assignment.",
+          "explanation": "A broad request may contain extra work or items the cleaner should not move. Name the included work and ask about the rest.",
+          "frames": [
+            "My assignment includes ___, but not ___.",
+            "When you say ___, which surfaces do you mean?",
+            "I'll ask the supervisor whether ___ can be added."
+          ],
+          "before": "I'll clean everything.",
+          "after": "I'll clean the listed tables and floor; the additional items need a scope check.",
+          "reason": "The revised statement gives a precise commitment.",
+          "questions": [
+            {
+              "prompt": "Client: By everything, I also meant the high windows.\nCleaner: Those tasks are ____ my current assignment.",
+              "options": [
+                "within",
+                "outside",
+                "included in",
+                "covered by"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "'Within' would put those extra tasks inside the listed scope.",
+                "Correct. The current assignment covers tables and floor, not high windows.",
+                "'Included in' would incorrectly claim the extra work was assigned.",
+                "'Covered by' would also include work outside the stated scope."
+              ]
+            },
+            {
+              "prompt": "Supervisor: Is the client asking for the whole carpet to be cleaned?\nCleaner: No, just one marked patch. The request is for ____.",
+              "options": [
+                "whole-room vacuuming",
+                "a general carpet inspection",
+                "full carpet cleaning",
+                "spot cleaning"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "This covers the whole room rather than the one patch.",
+                "Inspection assesses the carpet; the request specifically asks for cleaning.",
+                "Full carpet cleaning extends beyond the patch the client identified.",
+                "Correct. Spot cleaning targets the particular marked area."
+              ]
+            }
+          ],
+          "role_b": "Client: you want table surfaces and floor ready first; windows are an extra request.",
+          "challenge": "The client adds laptops to 'tables.' Clarify that cleaning around personal equipment differs from handling it."
+        }
+      },
+      {
+        "title": "Respecting access and occupied spaces",
+        "terms": [
+          "do-not-disturb notice",
+          "occupied room",
+          "access window",
+          "service refusal"
+        ],
+        "collocations": [
+          "request permission to enter: ask before entering where permission is required",
+          "agree a return time: arrange when to offer service again",
+          "respect a declined service: accept the occupant's stated choice",
+          "confirm the access window: verify when the room is available for work"
+        ],
+        "case": {
+          "function": "negotiate",
+          "brief": "A guest in room 312 declines cleaning at 10:00 because of a call until 11:00. The attendant's return window is 11:15-11:30. The guest can choose a visit in that window or fresh towels at the door now. No room entry is authorized by this conversation alone.",
+          "model": "I understand you're on a call until eleven. I can offer a return between eleven fifteen and eleven thirty, or bring fresh towels to the door now if that is all you need. Which would you prefer? I'll record your choice, and we'll still follow the room-access arrangements when I return."
+        },
+        "workshop": {
+          "title": "Offer a return window without overriding privacy",
+          "goal": "Agree a practical service choice with an occupant.",
+          "explanation": "A return appointment and permission to enter are separate. State the available window instead of promising an exact minute you can't control.",
+          "frames": [
+            "Would ___ or ___ work better?",
+            "I can return between ___ and ___.",
+            "Would you prefer no room service today?"
+          ],
+          "before": "I'll come in after eleven.",
+          "after": "I can return between eleven fifteen and eleven thirty; would that suit you?",
+          "reason": "The guest gets a choice rather than an announced entry.",
+          "questions": [
+            {
+              "prompt": "Guest: Your return is between eleven fifteen and eleven thirty?\nAttendant: Yes, that's a ____.",
+              "options": [
+                "guaranteed exact minute",
+                "service refusal",
+                "return window",
+                "completed visit"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "A fifteen-minute interval is not one guaranteed minute.",
+                "The guest is checking an offered visit, not refusing it.",
+                "Correct. A window gives a range of times.",
+                "The visit has not yet taken place."
+              ]
+            },
+            {
+              "prompt": "Attendant: Would you prefer fresh towels ____ room cleaning today?\nGuest: Yes, towels only.",
+              "options": [
+                "instead of",
+                "as well as",
+                "in addition to",
+                "along with"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The guest chooses towels as the replacement service.",
+                "This would request both services, unlike 'towels only'.",
+                "This adds cleaning rather than replacing it.",
+                "This keeps both services rather than towels alone."
+              ]
+            }
+          ],
+          "role_b": "Guest: choose towels only today and decline a later room-cleaning visit.",
+          "challenge": "The guest says 'after my call' without confirming a time. Offer the actual window again."
+        }
+      },
+      {
+        "title": "Clarifying product and task information",
+        "terms": [
+          "product label",
+          "Safety Data Sheet",
+          "cleaning",
+          "disinfection"
+        ],
+        "collocations": [
+          "identify the product: confirm the exact container and product name",
+          "consult the current label: use information for the product actually present",
+          "ask for the task standard: clarify what the assignment requires",
+          "report missing information: explain which required detail cannot be confirmed"
+        ],
+        "case": {
+          "function": "pushback",
+          "brief": "A bottle on the cart has an unreadable label. A colleague identifies it by color, but two products use similar bottles. The cleaner has not used it. The supervisor can identify it and provide the relevant product information or a clearly identified replacement. No chemical steps are taught.",
+          "model": "I can't identify this bottle from its unreadable label, and its color doesn't resolve which product it contains. I haven't used it. Could you help confirm the product and its current information, or provide a clearly identified replacement? I need that resolved before I continue the assigned task with this bottle."
+        },
+        "workshop": {
+          "title": "Ask for identification, not a guess",
+          "goal": "Describe missing product information and request qualified help.",
+          "explanation": "The same color or bottle shape can belong to different products. Knowing a nickname isn't the same as identifying the actual container.",
+          "frames": [
+            "The label doesn't let me confirm ___.",
+            "I haven't used ___ because ___.",
+            "Could you provide the current ___ for this product?"
+          ],
+          "before": "It's the blue one, so I know it.",
+          "after": "The label is unreadable; color alone doesn't identify this product.",
+          "reason": "The revised explanation names the unresolved fact.",
+          "questions": [
+            {
+              "prompt": "Colleague: Both bottles are blue. Is that enough to identify this one?\nCleaner: Its identity is still ____.",
+              "options": [
+                "confirmed by color",
+                "unverified",
+                "printed clearly",
+                "matched to the label"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The case gives two products with similar color.",
+                "Correct. Appearance hasn't established the actual product identity.",
+                "The label is explicitly described as unreadable.",
+                "No readable label match has been obtained."
+              ]
+            },
+            {
+              "prompt": "Cleaner: This Safety Data Sheet names Product A, but the bottle label names Product B.\nSupervisor: Please obtain ____ for the product-information check.",
+              "options": [
+                "the room's assignment sheet",
+                "Product A's latest SDS",
+                "the SDS matching Product B",
+                "Product B's delivery note"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The room assignment identifies work, not the product's hazard information.",
+                "A newer document for Product A still doesn't match Product B.",
+                "Correct. The Safety Data Sheet must identify the actual product being checked.",
+                "A matching delivery note doesn't replace the product's Safety Data Sheet."
+              ]
+            }
+          ],
+          "role_b": "Colleague: you recognize the bottle color but cannot confirm its contents.",
+          "challenge": "The colleague offers a nickname. Request the exact product information from the supervisor."
+        }
+      },
+      {
+        "title": "Reporting faults and unsafe access",
+        "terms": [
+          "hazard report",
+          "maintenance request",
+          "out-of-service notice",
+          "affected area"
+        ],
+        "collocations": [
+          "describe the observed condition: say what you saw without inventing a cause",
+          "give an exact location: identify floor, room, or nearby landmark",
+          "report a recurrence: say that the same observed condition appeared again",
+          "keep an area status clear: distinguish cleaned, restricted, and awaiting review"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "Water is visible on the floor outside washroom B, beside the east stair door. The cleaner doesn't know the source and has reported it under site arrangements. The supervisor needs an exact location and confirmation that the area has not been declared ready. No plumbing diagnosis or cleanup method is requested.",
+          "model": "There is water on the floor outside washroom B, beside the east stair door. I don't know its source, and I haven't marked that area ready. Please arrange the appropriate site response and tell me who is taking the follow-up. I'll report the location and current restriction clearly to the next team."
+        },
+        "workshop": {
+          "title": "Give the response team useful facts",
+          "goal": "Report location, observation, and unresolved status without a technical diagnosis.",
+          "explanation": "'Water near a door' is less useful than a specific washroom and landmark. Request the appropriate responder rather than offering repair steps.",
+          "frames": [
+            "I observed ___ at ___.",
+            "The source hasn't been established.",
+            "Who is handling ___, and what should I report about access?"
+          ],
+          "before": "The plumbing is broken somewhere.",
+          "after": "Water is visible outside washroom B beside the east stair door; the source is unknown.",
+          "reason": "The report gives a checkable location without claiming a cause.",
+          "questions": [
+            {
+              "prompt": "Supervisor: Do you know where the water came from?\nCleaner: No. Its source is ____.",
+              "options": [
+                "confirmed as a pipe leak",
+                "traced to a spill",
+                "unknown",
+                "linked to the earlier cleaning"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No pipe fault has been established from the observation.",
+                "No spill has been confirmed as the water's source.",
+                "Correct. The cleaner observed water without establishing its cause.",
+                "Earlier cleaning doesn't establish the cause of the present water."
+              ]
+            },
+            {
+              "prompt": "Supervisor: Is the water inside washroom B?\nCleaner: No, it's ____ washroom B, beside the east stair door.",
+              "options": [
+                "inside",
+                "above",
+                "outside",
+                "opposite"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Inside contradicts the cleaner's correction and the stated location.",
+                "No water above the washroom has been reported.",
+                "Correct. Outside locates the water beyond the washroom entrance.",
+                "Opposite means across from it, which the case doesn't establish."
+              ]
+            }
+          ],
+          "role_b": "Supervisor: ask for the precise location and accept the response-team contact.",
+          "challenge": "A passerby says the floor was cleaned earlier. Explain why the present water still needs reporting."
+        }
+      },
+      {
+        "title": "Handling found items and privacy questions",
+        "terms": [
+          "lost property",
+          "item description",
+          "found location",
+          "custody record"
+        ],
+        "collocations": [
+          "report a found item: notify the responsible person of an unattended object",
+          "describe visible features: state what can be observed without searching private contents",
+          "record the found location: preserve where the object was discovered",
+          "confirm receipt of the item: verify who accepted the transfer"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "An attendant finds a closed black glasses case beneath the chair in room 214 after checkout. The owner is unknown. The attendant should report visible details without opening it and transfer it to the designated lost-property receiver, who can confirm receipt. Don't identify an owner from a guess.",
+          "model": "I found a closed black glasses case beneath the chair in room two-fourteen. I haven't opened it, and I don't know whose it is. Could you receive it through the lost-property arrangement and confirm the transfer? Please keep the found location separate from its storage location so any later inquiry uses the correct details."
+        },
+        "workshop": {
+          "title": "Transfer an item without inventing its owner",
+          "goal": "Give observable details and obtain a receiving acknowledgment.",
+          "explanation": "Finding an item in a room doesn't prove who owns it. Describe the exterior and location without inspecting private contents or publicly disclosing guest information.",
+          "frames": [
+            "I found a ___ at ___.",
+            "The owner is not confirmed.",
+            "Can you confirm you've received ___?"
+          ],
+          "before": "It's the last guest's glasses.",
+          "after": "It's a closed black glasses case; the owner is unconfirmed.",
+          "reason": "The description separates observation from an ownership guess.",
+          "questions": [
+            {
+              "prompt": "Receiver: Where was the case found?\nAttendant: ____ the chair in room 214.",
+              "options": [
+                "Inside",
+                "Under",
+                "On top of",
+                "Beside"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The case wasn't found inside the chair.",
+                "Correct. 'Under' matches the stated location beneath the chair.",
+                "The case wasn't found on top of it.",
+                "Beside means next to, not beneath, the chair."
+              ]
+            },
+            {
+              "prompt": "Attendant: Have you accepted the item?\nReceiver: Yes, ____.",
+              "options": [
+                "I was told about it",
+                "I'll receive it after lunch",
+                "I can describe where it was found",
+                "I've received the closed black case"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Being told about an item doesn't confirm its receipt.",
+                "A future intention doesn't confirm acceptance has happened now.",
+                "Knowing the found location doesn't acknowledge accepting custody.",
+                "Correct. This names the item and confirms completed receipt."
+              ]
+            }
+          ],
+          "role_b": "Receiver: accept the closed case and repeat the found location; ownership remains unknown.",
+          "challenge": "A colleague asks you to name the previous guest in a public area. Keep the inquiry with the designated receiver."
+        }
+      },
+      {
+        "title": "Counting linen and replenishing supplies",
+        "terms": [
+          "linen",
+          "replenishment",
+          "par stock",
+          "discrepancy"
+        ],
+        "collocations": [
+          "count by item type: keep different supplies in separate totals",
+          "replenish the dispenser: restore the assigned supply without assuming a different product fits",
+          "report the shortfall: state how many items are missing from the target",
+          "confirm an allocation: identify supplies assigned to a particular floor or task"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "The third-floor cart target is twelve bath towels and eight hand towels. The attendant counts nine bath towels and eight hand towels. A laundry delivery is expected but not confirmed. Report the three-bath-towel shortfall without calling all linen unavailable.",
+          "model": "The cart has nine bath towels and eight hand towels. Against today's target of twelve and eight, we're short three bath towels; the hand-towel count is complete. A laundry delivery is expected, but its arrival isn't confirmed. Could you check whether three bath towels can be allocated from available stock?"
+        },
+        "workshop": {
+          "title": "Give useful counts, not a general shortage",
+          "goal": "State target, actual count, and difference for each item.",
+          "explanation": "Separate item types and distinguish an expected delivery from available stock. A shortfall in one item doesn't mean every linen item is unavailable.",
+          "frames": [
+            "We have ___ against a target of ___.",
+            "We're short ___ of ___; ___ is complete.",
+            "The delivery is expected, but ___."
+          ],
+          "before": "We're out of linen.",
+          "after": "We're three bath towels short; all eight hand towels are present.",
+          "reason": "The next person knows exactly what needs replenishment.",
+          "questions": [
+            {
+              "prompt": "Lead: Twelve bath towels are needed and nine are on the cart.\nAttendant: The shortfall is ____.",
+              "options": [
+                "three bath towels",
+                "nine bath towels",
+                "three hand towels",
+                "twelve hand towels"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Twelve minus nine leaves three bath towels.",
+                "Nine is the amount present, not the missing amount.",
+                "The hand-towel count is already complete.",
+                "This uses the wrong item and quantity."
+              ]
+            },
+            {
+              "prompt": "Lead: Has laundry confirmed when the delivery will arrive?\nAttendant: No. It is ____.",
+              "options": [
+                "confirmed for this afternoon",
+                "canceled for this afternoon",
+                "already delivered",
+                "expected this afternoon, but unconfirmed"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "This conflicts with the explicit absence of confirmation.",
+                "An unconfirmed time doesn't mean the delivery was canceled.",
+                "No completed arrival has been reported in the scenario.",
+                "Correct. This preserves the expected timing without claiming verification."
+              ]
+            }
+          ],
+          "role_b": "Lead: you can check storage, but cannot promise the laundry arrival time.",
+          "challenge": "Another floor requests two towels from this cart. Explain the effect on its count before any reassignment."
+        }
+      },
+      {
+        "title": "Responding to a quality concern",
+        "terms": [
+          "inspection",
+          "rework",
+          "residue",
+          "streak"
+        ],
+        "collocations": [
+          "acknowledge the specific concern: name the mark or missed area the person reports",
+          "ask for the exact location: identify which surface needs attention",
+          "check against the task requirement: compare the result with the assigned standard",
+          "confirm the correction: ask whether the reported issue has been addressed"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "A client reports streaks on the interior glass panel beside office 8, cleaned earlier that day. The cleaner can acknowledge the reported result and ask the lead to arrange a check and appropriate rework. The cause is unknown; the client is available to point out the panel.",
+          "model": "Thank you for showing me the streaks on the interior panel beside office eight. That is the panel on today's completed task list. I'm sorry the result needs attention. I'll ask our lead to check it and arrange the appropriate rework. I don't know the cause yet, so I'll report the visible marks rather than guess."
+        },
+        "workshop": {
+          "title": "Address the result without arguing about effort",
+          "goal": "Clarify a quality concern and agree a check of the specific area.",
+          "explanation": "'It was cleaned' doesn't mean every result meets the task requirement. Listen for the exact surface and defect instead of defending how long the task took.",
+          "frames": [
+            "Could you show me the exact ___?",
+            "I can see the ___ you mean.",
+            "I'll ask for a check of ___, not assume ___."
+          ],
+          "before": "We already did that.",
+          "after": "That panel was cleaned earlier; I can see the streaks you're pointing out.",
+          "reason": "The revision acknowledges both earlier work and the present concern.",
+          "questions": [
+            {
+              "prompt": "Client: I mean visible wipe-like lines across the glass, not a coating, grooves, or missing pieces.\nCleaner: So you're describing ____.",
+              "options": [
+                "residue",
+                "scratches",
+                "streaks",
+                "chips"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Residue names material left behind, not the specific line pattern described.",
+                "Scratches are surface damage such as grooves, which the client excludes.",
+                "Correct. Streaks are the visible lines or uneven wipe marks described.",
+                "Chips involve missing pieces of material, which the client excludes."
+              ]
+            },
+            {
+              "prompt": "Cleaner: I'll report what I can see, ____ guess the cause.\nClient: Thank you.",
+              "options": [
+                "because of",
+                "rather than",
+                "as well as",
+                "in addition to"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "'Because of' needs a noun phrase, not this verb form.",
+                "Correct. This contrasts observation with an unsupported explanation.",
+                "This would add guessing to the reported observation.",
+                "This also adds guessing and requires a different verb form."
+              ]
+            }
+          ],
+          "role_b": "Client: point to the inside panel beside office 8 and ask when someone can check it.",
+          "challenge": "The client says all windows must be poor. Keep the confirmed concern limited to the identified panel."
+        }
+      },
+      {
+        "title": "Giving a clear end-of-shift handover",
+        "terms": [
+          "room status",
+          "outstanding task",
+          "completion record",
+          "sign-off"
+        ],
+        "collocations": [
+          "hand over the remaining area: identify unfinished work and its next owner",
+          "distinguish cleaned from inspected: keep task completion separate from a later check",
+          "record an access limitation: state what prevented work in a particular area",
+          "confirm who takes over: obtain acknowledgment from the receiving worker"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Rooms 301 and 302 have been cleaned; 302 awaits the supervisor's inspection. Room 303 was inaccessible and not cleaned. The incoming attendant can accept 303's access follow-up, while the supervisor owns 302's inspection. Report each status separately without deciding room release.",
+          "model": "Room three-oh-one is cleaned. Three-oh-two is also cleaned, but the supervisor's inspection is still pending. Three-oh-three was inaccessible and hasn't been cleaned. Can you take the access follow-up for three-oh-three? I'll confirm the inspection request with the supervisor; please don't describe that pending check as a completed sign-off or a room-release decision."
+        },
+        "workshop": {
+          "title": "Report the stage, not a vague 'ready'",
+          "goal": "Give each area a precise status and a named follow-up.",
+          "explanation": "Cleaned, inspected, and released can be separate statuses under a site's arrangements. Do not turn a completed cleaning task into a broader authorization.",
+          "frames": [
+            "___ is cleaned but awaits ___.",
+            "___ hasn't started because ___.",
+            "Can you accept the follow-up for ___?"
+          ],
+          "before": "The third floor is ready.",
+          "after": "301 is cleaned; 302 awaits inspection; 303 remains uncleaned due to access.",
+          "reason": "The statuses let the next worker act without guessing.",
+          "questions": [
+            {
+              "prompt": "Incoming attendant: Is 302's inspection complete?\nOutgoing attendant: It's cleaned, but inspection is ____.",
+              "options": [
+                "already signed off",
+                "no longer required",
+                "scheduled and completed",
+                "still pending"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "No inspection sign-off has been confirmed in the case.",
+                "The required check remains open despite completed cleaning.",
+                "Scheduling a check doesn't establish that it was completed.",
+                "Correct. The inspection remains unfinished despite completed cleaning."
+              ]
+            },
+            {
+              "prompt": "Outgoing attendant: Can you take 303's access follow-up?\nIncoming attendant: Yes, ____.",
+              "options": [
+                "I'll confirm access and update its status",
+                "I sent someone a note about access",
+                "I remember seeing the access request",
+                "I thought it belonged to the earlier shift"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This explicitly accepts the named follow-up and reporting task.",
+                "Sending a note doesn't identify who now accepts the task.",
+                "Remembering a request doesn't commit to carrying it out.",
+                "This states a previous assumption rather than accepting responsibility."
+              ]
+            }
+          ],
+          "role_b": "Incoming attendant: accept 303's access question and repeat that its cleaning hasn't started.",
+          "challenge": "A caller asks whether 302 can be released. Direct the release question to the responsible person."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "assignment sheet",
+        "definition": "A list identifying the rooms, areas, or cleaning tasks allocated to a worker.",
+        "group": "Confirming the assignment and its limits"
+      },
+      {
+        "term": "service scope",
+        "definition": "The specific cleaning work included in an assignment or agreement.",
+        "group": "Confirming the assignment and its limits"
+      },
+      {
+        "term": "touchpoint",
+        "definition": "A surface or item frequently touched by people, such as a handle.",
+        "group": "Confirming the assignment and its limits"
+      },
+      {
+        "term": "spot cleaning",
+        "definition": "Cleaning a particular marked or affected area rather than the entire surface.",
+        "group": "Confirming the assignment and its limits"
+      },
+      {
+        "term": "do-not-disturb notice",
+        "definition": "A sign communicating an occupant's request not to be disturbed; entry rules remain site-specific.",
+        "group": "Respecting access and occupied spaces"
+      },
+      {
+        "term": "occupied room",
+        "definition": "A room currently in use by a guest or other occupant.",
+        "group": "Respecting access and occupied spaces"
+      },
+      {
+        "term": "access window",
+        "definition": "An agreed period during which a space can be entered for assigned work.",
+        "group": "Respecting access and occupied spaces"
+      },
+      {
+        "term": "service refusal",
+        "definition": "An occupant's decision to decline an offered cleaning visit or task.",
+        "group": "Respecting access and occupied spaces"
+      },
+      {
+        "term": "product label",
+        "definition": "The information attached to a cleaning product identifying it and its stated use and warnings.",
+        "group": "Clarifying product and task information"
+      },
+      {
+        "term": "Safety Data Sheet",
+        "definition": "A document describing a chemical product's hazards and related safety information; often shortened to SDS.",
+        "group": "Clarifying product and task information"
+      },
+      {
+        "term": "cleaning",
+        "definition": "Removing dirt and other unwanted material from a surface.",
+        "group": "Clarifying product and task information"
+      },
+      {
+        "term": "disinfection",
+        "definition": "A process intended to inactivate specified microorganisms under the product's stated conditions; not synonymous with ordinary cleaning.",
+        "group": "Clarifying product and task information"
+      },
+      {
+        "term": "hazard report",
+        "definition": "A report describing a condition that may cause harm and needs the appropriate response.",
+        "group": "Reporting faults and unsafe access"
+      },
+      {
+        "term": "maintenance request",
+        "definition": "A request for the responsible team to assess or repair a building or equipment problem.",
+        "group": "Reporting faults and unsafe access"
+      },
+      {
+        "term": "out-of-service notice",
+        "definition": "A sign identifying equipment or an area as unavailable for use.",
+        "group": "Reporting faults and unsafe access"
+      },
+      {
+        "term": "affected area",
+        "definition": "The specific location impacted by a reported problem.",
+        "group": "Reporting faults and unsafe access"
+      },
+      {
+        "term": "lost property",
+        "definition": "Items found without their owner present and handled through the site's return arrangements.",
+        "group": "Handling found items and privacy questions"
+      },
+      {
+        "term": "item description",
+        "definition": "A factual account of a found object's visible identifying features.",
+        "group": "Handling found items and privacy questions"
+      },
+      {
+        "term": "found location",
+        "definition": "The precise place where an item was discovered, separate from where it is later stored.",
+        "group": "Handling found items and privacy questions"
+      },
+      {
+        "term": "custody record",
+        "definition": "A record identifying who received or held an item during its transfer.",
+        "group": "Handling found items and privacy questions"
+      },
+      {
+        "term": "linen",
+        "definition": "Fabric items used in rooms or service areas, such as sheets and towels.",
+        "group": "Counting linen and replenishing supplies"
+      },
+      {
+        "term": "replenishment",
+        "definition": "Adding supplies to replace what has been used or is missing.",
+        "group": "Counting linen and replenishing supplies"
+      },
+      {
+        "term": "par stock",
+        "definition": "The target quantity of a supply used as a stocking reference.",
+        "group": "Counting linen and replenishing supplies"
+      },
+      {
+        "term": "discrepancy",
+        "definition": "A difference between a recorded quantity and the quantity actually counted.",
+        "group": "Counting linen and replenishing supplies"
+      },
+      {
+        "term": "inspection",
+        "definition": "A check of completed work against the relevant task requirements.",
+        "group": "Responding to a quality concern"
+      },
+      {
+        "term": "rework",
+        "definition": "Work repeated or corrected because the first result didn't meet the specified requirement.",
+        "group": "Responding to a quality concern"
+      },
+      {
+        "term": "residue",
+        "definition": "Material left on a surface after use or a cleaning task.",
+        "group": "Responding to a quality concern"
+      },
+      {
+        "term": "streak",
+        "definition": "A visible line or uneven mark on a surface such as glass.",
+        "group": "Responding to a quality concern"
+      },
+      {
+        "term": "room status",
+        "definition": "The recorded stage of a room's service, such as not started, in progress, or awaiting inspection.",
+        "group": "Giving a clear end-of-shift handover"
+      },
+      {
+        "term": "outstanding task",
+        "definition": "Work that has not yet been completed.",
+        "group": "Giving a clear end-of-shift handover"
+      },
+      {
+        "term": "completion record",
+        "definition": "A record showing which assigned work was actually completed and any relevant limitations.",
+        "group": "Giving a clear end-of-shift handover"
+      },
+      {
+        "term": "sign-off",
+        "definition": "A recorded confirmation by the designated person that a specified check or task meets its requirement.",
+        "group": "Giving a clear end-of-shift handover"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Everything has a boundary",
+          "setting": "The conference-room assignment in the case.",
+          "turns": [
+            [
+              "Client",
+              "Could you clean everything in this conference room before our three o'clock meeting?"
+            ],
+            [
+              "Cleaner",
+              "My assignment sheet lists tables and floor. Which other items did you mean?"
+            ],
+            [
+              "Client",
+              "The high windows look marked, and there are laptops on some of the tables."
+            ],
+            [
+              "Cleaner",
+              "Those aren't included in my task list. I can ask my supervisor about the additional request."
+            ],
+            [
+              "Client",
+              "Please put the tables and floor first. The meeting can't move to another room."
+            ],
+            [
+              "Cleaner",
+              "I can prioritize that assigned work, but I won't handle laptops without the site's instructions."
+            ],
+            [
+              "Client",
+              "We'll ask their owners to clear them. Can you report any table area you couldn't reach?"
+            ],
+            [
+              "Cleaner",
+              "Yes. I'll describe any inaccessible surfaces rather than mark the whole room complete."
+            ],
+            [
+              "Client",
+              "And please ask about the windows without promising they'll be finished before the meeting."
+            ],
+            [
+              "Cleaner",
+              "I will. The listed table and floor work remains my assignment; the windows need review."
+            ]
+          ]
+        },
+        {
+          "title": "A spot or the whole carpet?",
+          "setting": "A cleaner clarifies a client's request about a marked carpet.",
+          "turns": [
+            [
+              "Cleaner",
+              "You asked me to address the carpet. Do you mean this patch or the entire room?"
+            ],
+            [
+              "Client",
+              "This small patch beside the door is the issue. The rest is on the usual schedule."
+            ],
+            [
+              "Cleaner",
+              "Thank you. I'll report a spot-cleaning request for that patch, not a whole-room treatment."
+            ],
+            [
+              "Client",
+              "Can you guarantee the mark will disappear before the visitors arrive this afternoon?"
+            ],
+            [
+              "Cleaner",
+              "I can't promise that outcome. I'll ask the supervisor about the suitable work and timing."
+            ],
+            [
+              "Client",
+              "Please tell them it's near the entrance, where visitors will see it first."
+            ],
+            [
+              "Cleaner",
+              "I'll give the exact location and note that you haven't requested the whole carpet today."
+            ],
+            [
+              "Client",
+              "That's right. I want the particular mark assessed without changing the full cleaning schedule."
+            ],
+            [
+              "Cleaner",
+              "Is the visitor arrival time two o'clock, as shown on the room booking?"
+            ],
+            [
+              "Client",
+              "Yes, two o'clock. Please use that time when you discuss the request with your supervisor."
+            ]
+          ]
+        },
+        {
+          "title": "Touchpoints in the corridor",
+          "setting": "A team member clarifies the location of a daily task.",
+          "turns": [
+            [
+              "Cleaner",
+              "The sheet says corridor touchpoints. Does that include the handles inside the private offices?"
+            ],
+            [
+              "Team lead",
+              "Today's assignment covers shared corridor handles and railings, not entry into the private offices."
+            ],
+            [
+              "Cleaner",
+              "Thanks. I wanted to check the boundary before assuming the office doors were included."
+            ],
+            [
+              "Team lead",
+              "The shared-side handles are included, but office access is a separate arrangement for another shift."
+            ],
+            [
+              "Cleaner",
+              "I'll describe the task as the shared corridor touchpoints, with no private-office entry."
+            ],
+            [
+              "Team lead",
+              "Exactly. Please also identify which corridor section you're covering so we don't duplicate the work."
+            ],
+            [
+              "Cleaner",
+              "I'll take the east corridor between the lifts and the meeting-room entrance this shift."
+            ],
+            [
+              "Team lead",
+              "Then I'll assign the west corridor to Noor and leave the private-office list separate."
+            ],
+            [
+              "Cleaner",
+              "If a tenant asks me to add an office, I'll refer that extra request to you."
+            ],
+            [
+              "Team lead",
+              "Please do. We can clarify access and scope before changing either worker's assignment."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Furniture is not part of the floor request",
+        "brief": "A client asks for a meeting-room floor cleaned but heavy display units block one corner. The cleaner isn't assigned to move them. The supervisor can review access.",
+        "role_a": "Cleaner: explain the inaccessible corner.",
+        "role_b": "Client: arrange staff assistance or accept a recorded limitation.",
+        "opening_line": "I can reach the open floor, but that corner is blocked by the display units.",
+        "complication": "The client assumes 'floor cleaning' includes moving all furniture.",
+        "success_checks": [
+          "Name the blocked area.",
+          "Avoid assuming permission or ability to move heavy units.",
+          "Agree who resolves access and how completion is described."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "A service choice at the door",
+          "setting": "Room 312 at 10:00, following the case.",
+          "turns": [
+            [
+              "Attendant",
+              "Good morning. Is now a convenient time to clean your room, or should I return?"
+            ],
+            [
+              "Guest",
+              "I'm on a work call until eleven, so I can't have the room cleaned now."
+            ],
+            [
+              "Attendant",
+              "I can return between eleven fifteen and eleven thirty, or bring towels to the door now."
+            ],
+            [
+              "Guest",
+              "Towels only would be better today. I don't need a later cleaning visit."
+            ],
+            [
+              "Attendant",
+              "Certainly. How many fresh towels would you like delivered without entering the room?"
+            ],
+            [
+              "Guest",
+              "Two bath towels, please. I can take them at the door once you return."
+            ],
+            [
+              "Attendant",
+              "I'll bring two and record that you declined room cleaning today, not all service."
+            ],
+            [
+              "Guest",
+              "Thank you. Please don't interpret my declining cleaning as permission to enter after the call."
+            ],
+            [
+              "Attendant",
+              "Understood. I'll leave the room entry unchanged and knock when I bring the towels."
+            ],
+            [
+              "Guest",
+              "That works. I can briefly answer the door for them without interrupting the whole call."
+            ]
+          ]
+        },
+        {
+          "title": "A meeting runs beyond the access window",
+          "setting": "A cleaner negotiates access with an office occupant.",
+          "turns": [
+            [
+              "Cleaner",
+              "Our access window starts at six, but I can see your meeting is still running."
+            ],
+            [
+              "Office occupant",
+              "It may take another twenty minutes. Could you start cleaning around us while we finish?"
+            ],
+            [
+              "Cleaner",
+              "I need to check whether occupied cleaning is suitable under this site's arrangement."
+            ],
+            [
+              "Office occupant",
+              "Then could you work on the corridor first and return after we leave?"
+            ],
+            [
+              "Cleaner",
+              "The corridor is on my assignment, so I can change that order of work."
+            ],
+            [
+              "Office occupant",
+              "Thank you. We expect to leave by six twenty, but I can't guarantee that yet."
+            ],
+            [
+              "Cleaner",
+              "I'll return to ask at six twenty rather than assume the room has become available."
+            ],
+            [
+              "Office occupant",
+              "Please do. I'll tell the team someone will check, not announce cleaning as already started."
+            ],
+            [
+              "Cleaner",
+              "If you're still here, I'll report the access delay and discuss the remaining window with my lead."
+            ],
+            [
+              "Office occupant",
+              "That sounds reasonable. You can complete the corridor while we finish the meeting."
+            ]
+          ]
+        },
+        {
+          "title": "A sign and a verbal message conflict",
+          "setting": "An attendant asks the supervisor about contradictory room-access information.",
+          "turns": [
+            [
+              "Attendant",
+              "Room 418 still has a do-not-disturb notice, but my sheet says service requested this morning."
+            ],
+            [
+              "Supervisor",
+              "Do you have a current message from the guest resolving that difference, or only the sheet?"
+            ],
+            [
+              "Attendant",
+              "Only the sheet. I haven't entered or assumed the sign was left there accidentally."
+            ],
+            [
+              "Supervisor",
+              "Thank you. We'll clarify the guest's current preference through the property's access arrangements."
+            ],
+            [
+              "Attendant",
+              "Should I mark the room as cleaned because it appeared on the requested-service list?"
+            ],
+            [
+              "Supervisor",
+              "No. Mark the service as not completed due to unresolved access, using our status categories."
+            ],
+            [
+              "Attendant",
+              "I'll state that the notice is present and the request on the sheet needs clarification."
+            ],
+            [
+              "Supervisor",
+              "Exactly. Don't turn either piece of information into a guess about the guest's intentions."
+            ],
+            [
+              "Attendant",
+              "I'll move to my next available room while you check the access question."
+            ],
+            [
+              "Supervisor",
+              "Please do. I'll give you a clear update rather than leave you waiting at that door."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A locked meeting room",
+        "brief": "A cleaner has an assignment for room B at 7:00, but the door is locked and the cleaner has no approved access method. The office contact can arrange access at 7:30.",
+        "role_a": "Cleaner: explain the obstacle and available work elsewhere.",
+        "role_b": "Office contact: offer 7:30 access; do not ask the cleaner to improvise entry.",
+        "opening_line": "The room is locked, so that part of the assignment hasn't started.",
+        "complication": "The contact says the room is empty, but that doesn't supply access.",
+        "success_checks": [
+          "Distinguish vacancy from access.",
+          "Agree the 7:30 check.",
+          "Keep completion status accurate."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "The blue bottle isn't identified",
+          "setting": "The unreadable-label case at a cleaning cart.",
+          "turns": [
+            [
+              "Cleaner",
+              "This bottle's label is unreadable, and two products on the cart look similar."
+            ],
+            [
+              "Supervisor",
+              "Have you used the bottle, or are you asking before starting that task?"
+            ],
+            [
+              "Cleaner",
+              "I haven't used it. A colleague recognized the color, but couldn't confirm the contents."
+            ],
+            [
+              "Supervisor",
+              "Thanks for stopping to ask. I'll arrange identification or a clearly labeled replacement."
+            ],
+            [
+              "Cleaner",
+              "Could you also show me the current product label and Safety Data Sheet for the replacement?"
+            ],
+            [
+              "Supervisor",
+              "Yes. We'll use information matching the actual product, not a sheet for something similar."
+            ],
+            [
+              "Cleaner",
+              "The room task is waiting. Should I describe the delay as a product-information problem?"
+            ],
+            [
+              "Supervisor",
+              "That's accurate. Don't say the product is defective; we haven't established that."
+            ],
+            [
+              "Cleaner",
+              "I'll complete another assigned task that doesn't depend on this bottle while you check."
+            ],
+            [
+              "Supervisor",
+              "Good. I'll tell you when the product-information issue is resolved and the task can be reassigned or resumed."
+            ]
+          ]
+        },
+        {
+          "title": "Cleaning isn't a disinfection claim",
+          "setting": "A cleaner clarifies a client's description of completed work.",
+          "turns": [
+            [
+              "Client",
+              "The tables look clean. Can I tell everyone they have definitely been disinfected?"
+            ],
+            [
+              "Cleaner",
+              "I can confirm the cleaning task I completed, but appearance doesn't establish a disinfection claim."
+            ],
+            [
+              "Client",
+              "Our meeting notice uses both words together. I assumed they meant exactly the same thing."
+            ],
+            [
+              "Cleaner",
+              "They describe different tasks. My supervisor can confirm the agreed standard for this room."
+            ],
+            [
+              "Client",
+              "Please ask them which work was actually included, rather than change the wording by guesswork."
+            ],
+            [
+              "Cleaner",
+              "I will. The record shows table cleaning completed; it doesn't document the additional claim you're asking about."
+            ],
+            [
+              "Client",
+              "Then I'll say the tables were cleaned while the other question is checked."
+            ],
+            [
+              "Cleaner",
+              "That accurately describes what I can confirm from my assignment and completion record."
+            ],
+            [
+              "Client",
+              "Could you have the supervisor speak to me if the agreed task needs changing?"
+            ],
+            [
+              "Cleaner",
+              "Yes. I'll pass on your question about the service standard, not promise a new treatment myself."
+            ]
+          ]
+        },
+        {
+          "title": "A different label on a familiar product",
+          "setting": "A cleaner notices a revised product name before starting work.",
+          "turns": [
+            [
+              "Cleaner",
+              "The replacement container has a different product name from the one on our task sheet."
+            ],
+            [
+              "Team lead",
+              "Is it a confirmed replacement on today's list, or just a similar-looking container?"
+            ],
+            [
+              "Cleaner",
+              "I don't know. The delivery person said it was the new version, but I haven't verified that."
+            ],
+            [
+              "Team lead",
+              "Let's check the actual product information and whether the task sheet needs updating."
+            ],
+            [
+              "Cleaner",
+              "I'll leave that task pending rather than copy instructions from the previous product."
+            ],
+            [
+              "Team lead",
+              "Please identify the old and new names so the supervisor can review the difference."
+            ],
+            [
+              "Cleaner",
+              "I've got both names here. The container size is the same, but that doesn't establish equivalence."
+            ],
+            [
+              "Team lead",
+              "Correct. We need a confirmed match to the assigned work, not a comparison of bottle size."
+            ],
+            [
+              "Cleaner",
+              "I'll ask for the correct label and Safety Data Sheet before using the replacement."
+            ],
+            [
+              "Team lead",
+              "I'll arrange that check and let the client know this task hasn't been completed yet."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A borrowed sheet names another product",
+        "brief": "A colleague offers a Safety Data Sheet whose product name differs from the container's label. The cleaner has not used the product; the supervisor can locate matching information.",
+        "role_a": "Cleaner: point out the exact mismatch.",
+        "role_b": "Colleague: accept that a document for a similar product isn't the same record.",
+        "opening_line": "The product name on this sheet doesn't match the bottle.",
+        "complication": "The colleague says both products perform the same kind of cleaning.",
+        "success_checks": [
+          "Compare exact product names.",
+          "Avoid transferring instructions between products.",
+          "Request matching current information."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Water beside the east stair door",
+          "setting": "The washroom B report in the case.",
+          "turns": [
+            [
+              "Cleaner",
+              "There's water outside washroom B, beside the east stair door on the ground floor."
+            ],
+            [
+              "Supervisor",
+              "Do you know the source, or have you only observed water in that location?"
+            ],
+            [
+              "Cleaner",
+              "Only the water. I haven't identified a leak or marked the affected area ready."
+            ],
+            [
+              "Supervisor",
+              "I'll arrange the site's response. Have you reported the access concern through our usual contact?"
+            ],
+            [
+              "Cleaner",
+              "Yes, the area concern has been reported, but I need to know who takes the follow-up."
+            ],
+            [
+              "Supervisor",
+              "I'll take that contact and tell the response team the exact washroom and stair-door location."
+            ],
+            [
+              "Cleaner",
+              "A passerby said the floor was cleaned earlier. That doesn't explain the water now."
+            ],
+            [
+              "Supervisor",
+              "Agreed. We'll use the current observation, not assume the earlier cleaning settled today's condition."
+            ],
+            [
+              "Cleaner",
+              "What should the hazard report say for the incoming team?"
+            ],
+            [
+              "Supervisor",
+              "Tell them water was reported, the source is unknown, and I'm coordinating the response."
+            ]
+          ]
+        },
+        {
+          "title": "The noise is not a diagnosis",
+          "setting": "A cleaner reports a vacuum problem without repair instructions.",
+          "turns": [
+            [
+              "Cleaner",
+              "The vacuum labeled C4 made an unfamiliar rattling sound while I was working near reception."
+            ],
+            [
+              "Team lead",
+              "Have you stopped using it, and do you know whether anything specific caused the sound?"
+            ],
+            [
+              "Cleaner",
+              "I've stopped using it. I don't know the cause and haven't attempted a repair."
+            ],
+            [
+              "Team lead",
+              "I'll arrange a check and an out-of-service notice for C4, not C14."
+            ],
+            [
+              "Cleaner",
+              "The reception carpet task is incomplete. Could you confirm whether another suitable unit is available?"
+            ],
+            [
+              "Team lead",
+              "I'll check that. Don't report the task complete simply because most of the area was covered."
+            ],
+            [
+              "Cleaner",
+              "Understood. The strip beside the visitor chairs remains unfinished, while the open aisle is complete."
+            ],
+            [
+              "Team lead",
+              "That distinction helps. I'll assign the remaining strip once an equipment option is confirmed."
+            ],
+            [
+              "Cleaner",
+              "Should I tell reception we need a motor replacement, as someone suggested?"
+            ],
+            [
+              "Team lead",
+              "No. Report the equipment check and incomplete strip; a motor diagnosis hasn't been established."
+            ]
+          ]
+        },
+        {
+          "title": "A recurring mark may need maintenance",
+          "setting": "A cleaner reports a recurring ceiling stain without identifying its cause.",
+          "turns": [
+            [
+              "Cleaner",
+              "The mark above office 5's doorway is visible again after the earlier visit."
+            ],
+            [
+              "Building contact",
+              "Are you saying there's a confirmed leak, or just that the mark has returned?"
+            ],
+            [
+              "Cleaner",
+              "Just that it has returned. I haven't established the source or a repair requirement."
+            ],
+            [
+              "Building contact",
+              "I'll pass that observation to maintenance. When did you notice the change today?"
+            ],
+            [
+              "Cleaner",
+              "At about seven this morning, while completing the corridor assignment outside office five."
+            ],
+            [
+              "Building contact",
+              "Is the office itself affected, or did you only observe the corridor-facing area?"
+            ],
+            [
+              "Cleaner",
+              "I observed the area above the doorway from the corridor. I haven't inspected inside."
+            ],
+            [
+              "Building contact",
+              "Then I'll keep the request limited to that location and ask maintenance to assess it."
+            ],
+            [
+              "Cleaner",
+              "Please tell me who receives the maintenance request so I can hand over the status accurately."
+            ],
+            [
+              "Building contact",
+              "I've accepted it for the building team. Tell the next cleaner assessment is pending with me."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A notice belongs to another machine",
+        "brief": "Two floor machines stand together. One has an out-of-service notice identifying unit F3. The second is F8. The cleaner hasn't checked F8's readiness.",
+        "role_a": "Cleaner: report F3's notice without assuming F8 is ready.",
+        "role_b": "Lead: confirm the exact equipment identifiers and arrange the separate readiness check.",
+        "opening_line": "The notice names F3; I haven't confirmed F8's status.",
+        "complication": "A colleague treats absence of a notice as proof of readiness.",
+        "success_checks": [
+          "Identify F3 correctly.",
+          "Keep F8's readiness separate.",
+          "Request confirmation instead of inferring it from appearance."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "A case under the chair",
+          "setting": "The room 214 lost-property handover.",
+          "turns": [
+            [
+              "Attendant",
+              "I found a closed black glasses case beneath the chair in room two-fourteen after checkout."
+            ],
+            [
+              "Lost-property receiver",
+              "Have you opened it or identified the owner from anything visible on the outside?"
+            ],
+            [
+              "Attendant",
+              "I haven't opened it. My item description is based only on the outside."
+            ],
+            [
+              "Lost-property receiver",
+              "I'll receive it through our lost-property arrangement. Please confirm the found location again."
+            ],
+            [
+              "Attendant",
+              "Beneath the chair in two-fourteen, not on the desk or in the corridor."
+            ],
+            [
+              "Lost-property receiver",
+              "I've received the closed black case; the custody record will show that found location."
+            ],
+            [
+              "Attendant",
+              "A colleague assumed it belonged to the last guest, but that hasn't been confirmed."
+            ],
+            [
+              "Lost-property receiver",
+              "We'll keep ownership unconfirmed. Any claimant can speak with the designated team about identification."
+            ],
+            [
+              "Attendant",
+              "Do you need anything else from me to complete this transfer record?"
+            ],
+            [
+              "Lost-property receiver",
+              "Only your confirmation of the observation; I've accepted the item and the follow-up from here."
+            ]
+          ]
+        },
+        {
+          "title": "Papers beside a bin aren't necessarily waste",
+          "setting": "A commercial cleaner asks about loose documents.",
+          "turns": [
+            [
+              "Cleaner",
+              "There are loose papers beside the recycling bin, but they aren't inside it."
+            ],
+            [
+              "Office contact",
+              "Have they been marked for disposal, or are you asking because their status is unclear?"
+            ],
+            [
+              "Cleaner",
+              "Their status is unclear. I haven't read the contents or treated them as waste."
+            ],
+            [
+              "Office contact",
+              "Thank you. Those belong to the meeting organizer, who left them for collection."
+            ],
+            [
+              "Cleaner",
+              "I'll leave them in place and clean the accessible area around them."
+            ],
+            [
+              "Office contact",
+              "Please do. The organizer will move them before your next scheduled visit."
+            ],
+            [
+              "Cleaner",
+              "Should I record that this small floor area couldn't be completed because documents blocked access?"
+            ],
+            [
+              "Office contact",
+              "Yes, describe the blocked area without including any information from the papers themselves."
+            ],
+            [
+              "Cleaner",
+              "I'll say the floor beside the recycling bin remains inaccessible due to stored documents."
+            ],
+            [
+              "Office contact",
+              "That is enough. I'll arrange their removal without asking you to decide what can be discarded."
+            ]
+          ]
+        },
+        {
+          "title": "A visitor asks for someone else's property",
+          "setting": "A cleaner redirects an ownership claim to the designated team.",
+          "turns": [
+            [
+              "Visitor",
+              "I heard you found a phone in the lounge. Can you give it to me?"
+            ],
+            [
+              "Cleaner",
+              "The lost-property team handles return requests. I can direct you to their desk."
+            ],
+            [
+              "Visitor",
+              "It's probably my colleague's phone. They asked me to collect anything you found."
+            ],
+            [
+              "Cleaner",
+              "I can't confirm ownership or release an item from that statement alone."
+            ],
+            [
+              "Visitor",
+              "Could you at least tell me whose name appears on the screen?"
+            ],
+            [
+              "Cleaner",
+              "I haven't inspected private information. Please explain your request to the lost-property team."
+            ],
+            [
+              "Visitor",
+              "Where is the desk, and will they know about the item from the lounge?"
+            ],
+            [
+              "Cleaner",
+              "The reception desk handles these inquiries and can check the relevant record."
+            ],
+            [
+              "Visitor",
+              "I'll go there and provide the details they request to assess the claim."
+            ],
+            [
+              "Cleaner",
+              "Thank you. They can discuss the return arrangement; I don't need your colleague's personal details here."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Found location versus storage location",
+        "brief": "A cleaner found a scarf on the third-floor lounge sofa. It is now held by the designated office on the ground floor. A colleague asks where it was found.",
+        "role_a": "Cleaner: distinguish discovery and current custody.",
+        "role_b": "Colleague: repeat both locations accurately.",
+        "opening_line": "It was found upstairs, but the ground-floor office now holds it.",
+        "complication": "The colleague starts recording the ground-floor office as the found location.",
+        "success_checks": [
+          "Name the lounge sofa as the found location.",
+          "Name the office as current custody.",
+          "Correct the record without adding ownership assumptions."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Only the bath towels are short",
+          "setting": "The third-floor cart count from the case.",
+          "turns": [
+            [
+              "Attendant",
+              "I've counted nine bath towels and eight hand towels on the third-floor cart."
+            ],
+            [
+              "Linen colleague",
+              "Our par stock is twelve bath towels and eight hand towels. What's the shortfall?"
+            ],
+            [
+              "Attendant",
+              "Three bath towels. The hand-towel count is complete, and I haven't reported a general linen stockout."
+            ],
+            [
+              "Linen colleague",
+              "A laundry delivery is expected this afternoon, but I don't have a confirmed arrival time."
+            ],
+            [
+              "Attendant",
+              "Could you check whether three bath towels can be allocated from stock already available?"
+            ],
+            [
+              "Linen colleague",
+              "I'll check that now. Are the nine on your cart all assigned to this floor?"
+            ],
+            [
+              "Attendant",
+              "Yes, none are reserved for another floor or already promised for a separate request."
+            ],
+            [
+              "Linen colleague",
+              "Then I'll look for the three-item shortfall rather than send you another full cart allocation."
+            ],
+            [
+              "Attendant",
+              "Thank you. Please tell me if the request is accepted or still waiting on delivery."
+            ],
+            [
+              "Linen colleague",
+              "I found three available bath towels and can allocate them now; laundry timing remains separate."
+            ]
+          ]
+        },
+        {
+          "title": "A carton count hides the refill type",
+          "setting": "A cleaner checks supplies delivered to an office washroom.",
+          "turns": [
+            [
+              "Cleaner",
+              "Two cartons arrived, but only one has the paper-towel refill type listed for our washroom."
+            ],
+            [
+              "Stores colleague",
+              "What's in the other carton? Does its label identify a different dispenser refill?"
+            ],
+            [
+              "Cleaner",
+              "Yes, it is labeled for the larger dispenser used on the ground floor."
+            ],
+            [
+              "Stores colleague",
+              "Then two cartons delivered doesn't mean two suitable cartons for your assigned washroom."
+            ],
+            [
+              "Cleaner",
+              "Exactly. I can report one correct carton and one allocation that needs checking."
+            ],
+            [
+              "Stores colleague",
+              "I'll review the delivery destination rather than ask you to make the wrong refill fit."
+            ],
+            [
+              "Cleaner",
+              "The upper-floor dispensers still need the listed type. Can you check available stock?"
+            ],
+            [
+              "Stores colleague",
+              "Yes. I'll confirm the correct product code and the number available before promising replenishment."
+            ],
+            [
+              "Cleaner",
+              "I'll keep the upper-floor shortage separate from the total number of cartons received."
+            ],
+            [
+              "Stores colleague",
+              "That will make the request clear and prevent another delivery of the wrong refill type."
+            ]
+          ]
+        },
+        {
+          "title": "An allocation isn't extra stock",
+          "setting": "A room attendant checks whether linen in another cart is available.",
+          "turns": [
+            [
+              "Attendant",
+              "The neighboring cart has six spare-looking sheets. Can I take two for my assignment?"
+            ],
+            [
+              "Team lead",
+              "They may already be allocated. Which room tasks are you short on right now?"
+            ],
+            [
+              "Attendant",
+              "I'm short two sheets against my current assignment, and my own cart has none remaining."
+            ],
+            [
+              "Team lead",
+              "Thanks. I'll check that cart's allocation before assuming its visible supplies are spare."
+            ],
+            [
+              "Attendant",
+              "I don't want to leave the next attendant short just because their cart looks full."
+            ],
+            [
+              "Team lead",
+              "Exactly. The count is six, but the room list shows all six assigned to their floor."
+            ],
+            [
+              "Attendant",
+              "Then I need another source for my two, rather than reclassify those sheets as unassigned."
+            ],
+            [
+              "Team lead",
+              "I'll check the linen room for available stock and tell you the confirmed amount."
+            ],
+            [
+              "Attendant",
+              "Please also confirm whether that changes my room sequence while we wait for supplies."
+            ],
+            [
+              "Team lead",
+              "Yes. You can take the supply-independent tasks first; we'll keep the two-sheet shortfall visible."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A changed room allocation changes the target",
+        "brief": "An attendant's cart has ten bath towels for a ten-towel assignment. The supervisor adds two rooms requiring four more bath towels under the fictional plan. No extra towels have arrived.",
+        "role_a": "Attendant: state the revised target and shortfall.",
+        "role_b": "Supervisor: confirm fourteen total and arrange four additional towels.",
+        "opening_line": "Does the added assignment raise my bath-towel target from ten to fourteen?",
+        "complication": "A colleague counts the original ten as though the new rooms were already covered.",
+        "success_checks": [
+          "Confirm fourteen as the new target.",
+          "Report four additional towels needed.",
+          "Keep assignment change separate from delivered stock."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "The panel beside office eight",
+          "setting": "The glass-quality concern in the case.",
+          "turns": [
+            [
+              "Client",
+              "There are streaks on the glass you cleaned earlier beside office eight."
+            ],
+            [
+              "Cleaner",
+              "Thank you for pointing them out. Is it this interior panel or the outside surface?"
+            ],
+            [
+              "Client",
+              "This interior panel, especially the upper corner. I'm not referring to the other windows."
+            ],
+            [
+              "Cleaner",
+              "I can see the marks you mean. I'll ask our lead to inspect this specific panel."
+            ],
+            [
+              "Client",
+              "Can you tell me why they appeared? Was the wrong product used on it?"
+            ],
+            [
+              "Cleaner",
+              "I don't know the cause. I'll report the visible streaks without guessing about the product."
+            ],
+            [
+              "Client",
+              "That's fair. I mainly want the result checked and corrected if it needs rework."
+            ],
+            [
+              "Cleaner",
+              "I'll arrange that request through the lead and ask when the panel can be revisited."
+            ],
+            [
+              "Client",
+              "Please keep me informed, because the room is free only until the afternoon meeting."
+            ],
+            [
+              "Cleaner",
+              "I'll pass on that access limit with the panel location, so the timing can be discussed."
+            ]
+          ]
+        },
+        {
+          "title": "The reported residue is on another desk",
+          "setting": "A cleaner checks the precise location of a complaint.",
+          "turns": [
+            [
+              "Cleaner",
+              "You reported residue on a desk. Could you show me which desk you mean?"
+            ],
+            [
+              "Office occupant",
+              "The one beside the printer, not the reception desk your colleague looked at."
+            ],
+            [
+              "Cleaner",
+              "Thank you. That distinction matters because the two desks have different assignment entries."
+            ],
+            [
+              "Office occupant",
+              "I'm not saying the whole office was missed. This is the specific surface I'm concerned about."
+            ],
+            [
+              "Cleaner",
+              "I'll report this desk and the visible residue, rather than widen the complaint to the entire office."
+            ],
+            [
+              "Office occupant",
+              "Can you deal with it while the papers stay spread across the work surface?"
+            ],
+            [
+              "Cleaner",
+              "I need the agreed access arrangements. Could the owner clear the affected area first?"
+            ],
+            [
+              "Office occupant",
+              "I'll ask them now. Please don't move or read the papers to find the mark."
+            ],
+            [
+              "Cleaner",
+              "I won't. Once access is available, the lead can confirm the appropriate corrective task."
+            ],
+            [
+              "Office occupant",
+              "Good. I'll tell you when the surface is clear so that inspection can take place."
+            ]
+          ]
+        },
+        {
+          "title": "Checking the correction with the occupant",
+          "setting": "A cleaner returns after the assigned rework has been completed.",
+          "turns": [
+            [
+              "Cleaner",
+              "The lead arranged rework on the marked panel. Could you check the area you identified earlier?"
+            ],
+            [
+              "Occupant",
+              "Yes, this is the corner I meant. The streaks I reported are no longer visible."
+            ],
+            [
+              "Cleaner",
+              "Thank you. Does that resolve your original concern about this panel's appearance?"
+            ],
+            [
+              "Occupant",
+              "It does. I also noticed a separate mark on the door handle, though."
+            ],
+            [
+              "Cleaner",
+              "I'll treat that as a new specific concern, not assume the panel correction failed."
+            ],
+            [
+              "Occupant",
+              "That's right. The glass issue is resolved; the handle wasn't part of what I showed you."
+            ],
+            [
+              "Cleaner",
+              "Could you point to the handle and describe the visible mark for the next request?"
+            ],
+            [
+              "Occupant",
+              "It's the meeting-room handle, with a small sticky-looking patch near its base."
+            ],
+            [
+              "Cleaner",
+              "I'll report that observation to the lead without claiming what the material is."
+            ],
+            [
+              "Occupant",
+              "Thank you. Please close the glass concern and keep the handle request separate."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A complaint names the wrong floor",
+        "brief": "A client says the second-floor mirror is streaked, then points to a photograph labeled third floor. The cleaner hasn't inspected either mirror.",
+        "role_a": "Cleaner: clarify which location the photograph shows.",
+        "role_b": "Client: confirm third floor and withdraw the second-floor location.",
+        "opening_line": "Before I request rework, which mirror does this photograph identify?",
+        "complication": "The client says the mirrors look identical.",
+        "success_checks": [
+          "Confirm third floor.",
+          "Avoid reporting both mirrors as defective.",
+          "Request inspection of the identified surface."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Three rooms, three statuses",
+          "setting": "The end-of-shift case on the third floor.",
+          "turns": [
+            [
+              "Outgoing attendant",
+              "Room three-oh-one is cleaned. Three-oh-two is cleaned too, but it still awaits the supervisor's inspection."
+            ],
+            [
+              "Incoming attendant",
+              "What about three-oh-three? Its room status doesn't show a completed cleaning task."
+            ],
+            [
+              "Outgoing attendant",
+              "It was inaccessible, so cleaning hasn't started. Can you take its access follow-up?"
+            ],
+            [
+              "Incoming attendant",
+              "Yes, I'll check access for three-oh-three and update its status once I know more."
+            ],
+            [
+              "Outgoing attendant",
+              "Thank you. I'll confirm the inspection request for three-oh-two with the supervisor before leaving."
+            ],
+            [
+              "Incoming attendant",
+              "Then I'm not being asked to release three-oh-two or describe its inspection as complete?"
+            ],
+            [
+              "Outgoing attendant",
+              "Correct. The supervisor's sign-off is separate. Please focus on checking access to three-oh-three."
+            ],
+            [
+              "Incoming attendant",
+              "I'll repeat the status: three-oh-one cleaned; three-oh-two awaiting inspection; three-oh-three uncleaned because access was unavailable."
+            ],
+            [
+              "Outgoing attendant",
+              "That's the current picture. Please report any change rather than carry yesterday's assumptions forward."
+            ],
+            [
+              "Incoming attendant",
+              "I will. I'll start by contacting the person responsible for access to three-oh-three."
+            ]
+          ]
+        },
+        {
+          "title": "A completed area has one limitation",
+          "setting": "A commercial cleaner gives a precise end-of-shift report.",
+          "turns": [
+            [
+              "Cleaner",
+              "The west office floor is complete except the space beneath the blocked storage shelf."
+            ],
+            [
+              "Incoming colleague",
+              "Was that space inaccessible throughout the visit, or did you leave it for another reason?"
+            ],
+            [
+              "Cleaner",
+              "It was blocked by stored boxes. I wasn't assigned to move them."
+            ],
+            [
+              "Incoming colleague",
+              "Then I'll keep that limitation in the completion record rather than mark every area finished."
+            ],
+            [
+              "Cleaner",
+              "The office contact has agreed to arrange clearance before tomorrow's visit, but it hasn't happened yet."
+            ],
+            [
+              "Incoming colleague",
+              "I'll check whether the boxes are moved before reporting that the remaining area can be reached."
+            ],
+            [
+              "Cleaner",
+              "Everything else on that floor's list is complete, including bins and the shared table surfaces."
+            ],
+            [
+              "Incoming colleague",
+              "Thanks. Is the blocked area the only outstanding task I'm inheriting for that office?"
+            ],
+            [
+              "Cleaner",
+              "Yes. The separate maintenance request for the corridor light belongs to the building team."
+            ],
+            [
+              "Incoming colleague",
+              "I'll keep the floor limitation and the maintenance request separate in my handover update."
+            ]
+          ]
+        },
+        {
+          "title": "The receiver cannot take the task",
+          "setting": "An outgoing cleaner finds that the intended colleague is assigned elsewhere.",
+          "turns": [
+            [
+              "Outgoing cleaner",
+              "Could you take the final washroom supply check? It hasn't been completed on my shift."
+            ],
+            [
+              "Colleague",
+              "I can't accept it yet; I'm assigned to another building for the rest of tonight."
+            ],
+            [
+              "Outgoing cleaner",
+              "Thanks for saying so. I won't mark it handed over just because we've discussed it."
+            ],
+            [
+              "Colleague",
+              "Please ask the supervisor to reassign it. They know who is staying at this site."
+            ],
+            [
+              "Outgoing cleaner",
+              "I'll keep it listed as outstanding and contact them before I finish my report."
+            ],
+            [
+              "Colleague",
+              "Tell them the exact washroom and which check is missing so they can allocate it."
+            ],
+            [
+              "Outgoing cleaner",
+              "It's washroom C's paper-towel replenishment check, not a new full-room cleaning request."
+            ],
+            [
+              "Colleague",
+              "That distinction should help them choose the appropriate worker and avoid duplicating completed cleaning."
+            ],
+            [
+              "Outgoing cleaner",
+              "The supervisor has accepted the reassignment question. I'll record that, with the check still unfinished."
+            ],
+            [
+              "Colleague",
+              "Good. Someone has the allocation follow-up now, but the supply check itself remains outstanding."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A room number is read incorrectly",
+        "brief": "The outgoing attendant says room 416 awaits inspection. The incoming worker repeats 460. Room 460 is on another floor and isn't in this handover.",
+        "role_a": "Outgoing attendant: correct the exact room number.",
+        "role_b": "Incoming attendant: read back 416 and its pending inspection.",
+        "opening_line": "I said four-one-six, not four-six-zero.",
+        "complication": "A noisy corridor makes the final digits hard to hear.",
+        "success_checks": [
+          "Repeat digits distinctly.",
+          "Confirm 416.",
+          "Preserve awaiting-inspection status without changing 460."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "An extra room appears during the shift",
+      "setting": "A cleaner and client clarify a request that would change the assigned workload.",
+      "dialogue": [
+        [
+          "Client",
+          "While you're here, could you also clean the training room upstairs? It should only take a moment."
+        ],
+        [
+          "Cleaner",
+          "I can ask about adding it. My current assignment covers this floor, with a fixed access window."
+        ],
+        [
+          "Client",
+          "The training room just needs a quick tidy. Does calling it quick make it part of the same visit?"
+        ],
+        [
+          "Cleaner",
+          "Could you describe what needs cleaning? I'll ask my supervisor whether it fits our service scope."
+        ],
+        [
+          "Client",
+          "Tables, bins, and the carpet, please. There are about twenty chairs, but they don't need rearranging."
+        ],
+        [
+          "Cleaner",
+          "Thank you. Is anyone still using the room, and when would you need the work completed?"
+        ],
+        [
+          "Client",
+          "A session ends at four. We'd like it ready for tomorrow morning, rather than immediately this afternoon."
+        ],
+        [
+          "Cleaner",
+          "That timing helps. I'll ask whether the evening team can take it without interrupting this floor's work."
+        ],
+        [
+          "Client",
+          "Please do. I don't want you to leave today's listed rooms unfinished because I mentioned another room."
+        ],
+        [
+          "Cleaner",
+          "I'll finish the agreed assignment and pass on the upstairs scope, occupancy, and requested completion time."
+        ],
+        [
+          "Client",
+          "Who should confirm the extra visit with me? I need to know whether the request was accepted."
+        ],
+        [
+          "Cleaner",
+          "My supervisor will confirm it; I've recorded the request, not booked another visit."
+        ]
+      ],
+      "notes": [
+        "'Calling it quick' challenges a label without accepting an unsupported estimate.",
+        "'Recorded' and 'booked' describe different stages: a request isn't a confirmed additional service."
+      ]
+    },
+    {
+      "title": "A declined visit is not a complaint",
+      "setting": "An attendant checks how to report a guest's decision without adding an unsupported explanation.",
+      "dialogue": [
+        [
+          "Attendant",
+          "The guest in 206 declined cleaning today but accepted fresh towels. How should I describe the visit?"
+        ],
+        [
+          "Supervisor",
+          "For the service refusal, record cleaning declined and two towels delivered. Did they ask for anything else?"
+        ],
+        [
+          "Attendant",
+          "They asked us not to return later today. They didn't complain about the previous cleaning."
+        ],
+        [
+          "Supervisor",
+          "Then don't mark it as a cleanliness complaint or assume they're dissatisfied with the service."
+        ],
+        [
+          "Attendant",
+          "I had wondered whether they were upset, but that was only my interpretation of their brief answer."
+        ],
+        [
+          "Supervisor",
+          "Keep that interpretation out of the service record. The stated preference is enough for the next attendant."
+        ],
+        [
+          "Attendant",
+          "Should I leave the room on tomorrow's usual schedule, or does today's refusal cancel future visits too?"
+        ],
+        [
+          "Supervisor",
+          "Today's statement concerns today. Follow the normal scheduling arrangement and check any separate request about later service."
+        ],
+        [
+          "Attendant",
+          "I'll tell the next attendant: two towels delivered, no return visit requested today."
+        ],
+        [
+          "Supervisor",
+          "Yes. That prevents another attendant from offering the same visit again this afternoon without a reason."
+        ],
+        [
+          "Attendant",
+          "The towels reached the guest at the door, and I didn't enter the room during that delivery."
+        ],
+        [
+          "Supervisor",
+          "Include that if our record asks for delivery location. It describes the visit without inventing a motive."
+        ]
+      ],
+      "notes": [
+        "'Declined' reports a choice neutrally; 'complained' would add a different action.",
+        "'For the rest of today' limits the preference to the period the guest actually specified."
+      ]
+    },
+    {
+      "title": "A shorthand instruction needs a task definition",
+      "setting": "A new cleaner asks the lead what an unfamiliar instruction actually requires.",
+      "dialogue": [
+        [
+          "Cleaner",
+          "The assignment says 'full treatment' for the meeting-room handles. I don't recognize that term on our task list."
+        ],
+        [
+          "Team lead",
+          "That's too vague for a new assignment. Which standard task names do you have in your training materials?"
+        ],
+        [
+          "Cleaner",
+          "They distinguish cleaning from disinfection, but this note doesn't say which task was requested for the handles."
+        ],
+        [
+          "Team lead",
+          "I'll clarify the requested standard with the supervisor rather than assume the writer meant both tasks."
+        ],
+        [
+          "Cleaner",
+          "Thank you. The client also asked whether a clean appearance proves the second task was completed."
+        ],
+        [
+          "Team lead",
+          "It doesn't. We need the actual assigned work and its completion record, not a conclusion from appearance."
+        ],
+        [
+          "Cleaner",
+          "Should I tell the client nothing has been done, or explain which part is already complete?"
+        ],
+        [
+          "Team lead",
+          "Tell them the handles were cleaned under the listed task, while the additional request is still being clarified."
+        ],
+        [
+          "Cleaner",
+          "I'll use those words. I don't want the vague phrase to make completed cleaning sound like unfinished work."
+        ],
+        [
+          "Team lead",
+          "Exactly. Nor should it turn completed cleaning into a claim about a different task that wasn't confirmed."
+        ],
+        [
+          "Cleaner",
+          "Once the supervisor clarifies the extra request, can you tell me who will perform it if it's assigned?"
+        ],
+        [
+          "Team lead",
+          "Yes. I'll confirm the task and who will do it."
+        ]
+      ],
+      "notes": [
+        "'Nor should it' introduces a second incorrect inference to avoid.",
+        "'Named task' replaces an ambiguous label with a specific assignment; it isn't a chemical instruction."
+      ]
+    },
+    {
+      "title": "An access concern affects only part of a floor",
+      "setting": "A cleaner helps an office contact understand a limited area restriction.",
+      "dialogue": [
+        [
+          "Office contact",
+          "Someone said the whole second floor is closed because you found a problem. Is that what you reported?"
+        ],
+        [
+          "Cleaner",
+          "No. I reported water near the east washroom entrance; I didn't report the entire floor as unavailable."
+        ],
+        [
+          "Office contact",
+          "Can staff still use every other route, or are you able to confirm that for us?"
+        ],
+        [
+          "Cleaner",
+          "The site response team needs to confirm access. I can give the precise location, not certify every route."
+        ],
+        [
+          "Office contact",
+          "Thank you. The message we heard made it sound as though all cleaning had stopped upstairs."
+        ],
+        [
+          "Cleaner",
+          "The west offices are complete. The east washroom entrance remains an unresolved area on my assignment."
+        ],
+        [
+          "Office contact",
+          "Who is handling that unresolved area? I need a contact for questions about access during our meeting."
+        ],
+        [
+          "Cleaner",
+          "The supervisor has accepted the response follow-up and can connect you with the responsible site team."
+        ],
+        [
+          "Office contact",
+          "I'll direct staff questions there, rather than ask you to decide whether a route is suitable."
+        ],
+        [
+          "Cleaner",
+          "That helps. I'll also correct the broad report by naming the actual affected entrance and completed west offices."
+        ],
+        [
+          "Office contact",
+          "Please mention that the source of the water hasn't been established, so people don't spread a repair diagnosis."
+        ],
+        [
+          "Cleaner",
+          "I'll report the observed water, its location, and who is coordinating the response."
+        ]
+      ],
+      "notes": [
+        "'I didn't report' corrects the scope of a secondhand message without certifying unrelated areas.",
+        "'Unresolved area' signals a pending status, not a diagnosis of the building fault."
+      ]
+    },
+    {
+      "title": "The person taking over needs to accept custody",
+      "setting": "An attendant transfers a found bag when the usual receiver is temporarily absent.",
+      "dialogue": [
+        [
+          "Attendant",
+          "I found an unattended bag in the meeting room, and the usual lost-property receiver isn't at the desk."
+        ],
+        [
+          "Supervisor",
+          "Keep the site's arrangements in place. What have you observed, without opening or investigating the bag yourself?"
+        ],
+        [
+          "Attendant",
+          "It's a small gray fabric bag beside the back row of chairs. I haven't inspected its contents."
+        ],
+        [
+          "Supervisor",
+          "Thank you. Don't assume it's abandoned or ordinary waste. I'll arrange the appropriate response for the situation."
+        ],
+        [
+          "Attendant",
+          "A conference worker offered to take it, but I don't know whether they are the designated receiver."
+        ],
+        [
+          "Supervisor",
+          "Then don't treat that offer as a completed transfer. I'll identify who can accept the follow-up here."
+        ],
+        [
+          "Attendant",
+          "Could you also tell them the exact location, so it isn't confused with another report from the lobby?"
+        ],
+        [
+          "Supervisor",
+          "Yes: meeting room, back row of chairs, gray fabric bag. The lobby report remains separate."
+        ],
+        [
+          "Attendant",
+          "I'll keep the found location and my observations clear. I haven't named an owner or searched for identification."
+        ],
+        [
+          "Supervisor",
+          "That's appropriate. I've contacted the designated site responder, who has accepted the follow-up and will attend."
+        ],
+        [
+          "Attendant",
+          "What should I tell the conference worker while we're waiting for that response to arrive?"
+        ],
+        [
+          "Supervisor",
+          "Tell them the site responder is handling it, including any ownership claim."
+        ]
+      ],
+      "notes": [
+        "'An offer' and 'a completed transfer' are different: responsibility needs explicit acceptance.",
+        "'Without opening or investigating' limits the report to observations and preserves the site's response boundary."
+      ]
+    },
+    {
+      "title": "Reconciling a linen return",
+      "setting": "Two staff members compare a return count with a cart record.",
+      "dialogue": [
+        [
+          "Attendant",
+          "The cart record says seven unused hand towels returned, but I counted only six at the receiving point."
+        ],
+        [
+          "Linen colleague",
+          "Did you count them here, or are you repeating the number the outgoing attendant mentioned?"
+        ],
+        [
+          "Attendant",
+          "I counted six here. I haven't established why the record lists seven instead."
+        ],
+        [
+          "Linen colleague",
+          "Then let's keep the observed count and recorded count separate while we ask about the difference."
+        ],
+        [
+          "Attendant",
+          "A colleague thought one might be on the other cart, but that hasn't been checked yet."
+        ],
+        [
+          "Linen colleague",
+          "I'll check with that colleague. We shouldn't change the received count to seven just because the explanation sounds possible."
+        ],
+        [
+          "Attendant",
+          "Should I report the discrepancy as a missing towel, or would that imply we've finished looking?"
+        ],
+        [
+          "Linen colleague",
+          "Report a one-towel discrepancy with the location of the remaining item unconfirmed. The count still needs reconciliation."
+        ],
+        [
+          "Attendant",
+          "I can do that. The bath towels match their record, so the question affects hand towels only."
+        ],
+        [
+          "Linen colleague",
+          "Good. I'll keep the product types separate and contact the outgoing attendant about the seventh hand towel."
+        ],
+        [
+          "Attendant",
+          "They've just confirmed one remained on their cart. Please verify it before adding it to this received count."
+        ],
+        [
+          "Linen colleague",
+          "I will. Until it reaches this receiving point and is counted, six remains the quantity actually received here."
+        ]
+      ],
+      "notes": [
+        "'Received count' differs from the number still held elsewhere.",
+        "'A discrepancy' names a mismatch without asserting theft, loss, or a completed investigation."
+      ]
+    },
+    {
+      "title": "A complaint includes a fact and an assumption",
+      "setting": "A cleaner separates a visible concern from a claim about what the earlier team did.",
+      "dialogue": [
+        [
+          "Client",
+          "The table has a sticky patch, so your evening team must have skipped this whole room."
+        ],
+        [
+          "Cleaner",
+          "I can see the patch you're pointing out, but I can't confirm that explanation from the surface alone."
+        ],
+        [
+          "Client",
+          "I arrived after another group used the room. I don't know what happened before their meeting."
+        ],
+        [
+          "Cleaner",
+          "Thank you, that timing helps. We can report the current patch without deciding who caused it."
+        ],
+        [
+          "Client",
+          "I still need it addressed before our next session. Can you arrange a check of this table?"
+        ],
+        [
+          "Cleaner",
+          "Yes. I'll tell the lead the exact table, the visible condition, and your next-session time."
+        ],
+        [
+          "Client",
+          "The next session starts at two. Please don't promise a whole-room clean if only this table needs attention."
+        ],
+        [
+          "Cleaner",
+          "Understood. The request concerns this table patch, with any additional work dependent on the lead's assessment."
+        ],
+        [
+          "Client",
+          "Will someone confirm the result with me after the assigned correction rather than just tick a box?"
+        ],
+        [
+          "Cleaner",
+          "I'll ask for a check-back on this specific concern. Who will be available here to review it?"
+        ],
+        [
+          "Client",
+          "I'll remain at the reception desk until one thirty, and my colleague Dana can review it afterward."
+        ],
+        [
+          "Cleaner",
+          "I'll pass on both contacts so someone can check the correction with you."
+        ]
+      ],
+      "notes": [
+        "'Must have' expresses a strong inference; the cleaner doesn't adopt it without evidence.",
+        "'Current patch' focuses the report on the observable issue rather than assigning blame."
+      ]
+    },
+    {
+      "title": "An inspection request is not a release decision",
+      "setting": "An attendant clarifies a room-status question from a reception colleague.",
+      "dialogue": [
+        [
+          "Reception colleague",
+          "Room 512 shows cleaned. Can I send the waiting guest up?"
+        ],
+        [
+          "Attendant",
+          "I can confirm cleaning is complete, but the supervisor's inspection hasn't been recorded as finished."
+        ],
+        [
+          "Reception colleague",
+          "I saw the inspection request sent ten minutes ago. Doesn't that mean the supervisor accepted and completed it?"
+        ],
+        [
+          "Attendant",
+          "Not necessarily. I'll check whether the supervisor has accepted the inspection request."
+        ],
+        [
+          "Reception colleague",
+          "Please do. I need a reliable status rather than a guess based on how long the request has existed."
+        ],
+        [
+          "Attendant",
+          "The supervisor has accepted the inspection and is heading there now. No completion or release is confirmed yet."
+        ],
+        [
+          "Reception colleague",
+          "Thank you. I'll tell the guest we're still awaiting the final room-status update, without promising an exact minute."
+        ],
+        [
+          "Attendant",
+          "That matches what we know. Would you like me to relay the supervisor's confirmed result to your desk?"
+        ],
+        [
+          "Reception colleague",
+          "Yes, please. If they find an issue needing rework, tell us that instead of using a general 'ready'."
+        ],
+        [
+          "Attendant",
+          "I will. The update will identify the inspection outcome and leave any release decision with the responsible colleague."
+        ],
+        [
+          "Reception colleague",
+          "I'll keep the guest downstairs until we hear the confirmed result from the supervisor."
+        ],
+        [
+          "Attendant",
+          "I'll call when the supervisor confirms the result."
+        ]
+      ],
+      "notes": [
+        "'Acknowledged' means the request was received or accepted, not that inspection is complete.",
+        "'Ready for entry' is a broader status than cleaned; the exchange keeps those stages distinct."
+      ]
+    }
+  ]
+}

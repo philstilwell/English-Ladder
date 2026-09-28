@@ -1,0 +1,2444 @@
+{
+  "course": {
+    "slug": "restaurant-servers",
+    "title": "Restaurant Serving English",
+    "summary": "Take precise table orders, explain menu choices, coordinate courses, handle dining concerns, and resolve bill questions in natural spoken English.",
+    "roles": "Restaurant servers, food runners, and dining-room service staff",
+    "category": "Customers & creative work",
+    "scope_note": "All people, prices, policies, counts, and incidents are fictional language practice, not food-safety, allergy, alcohol-service, legal, or payment-processing training. Follow workplace training and local requirements. Ingredient and cross-contact questions need the designated kitchen lead; do not guarantee suitability. This course concerns table service, not restaurant management.",
+    "sources": [
+      {
+        "title": "U.S. Bureau of Labor Statistics, Occupational Outlook Handbook: Waiters and Waitresses",
+        "url": "https://www.bls.gov/ooh/food-preparation-and-serving/waiters-and-waitresses.htm"
+      },
+      {
+        "title": "O*NET OnLine: Waiters and Waitresses",
+        "url": "https://www.onetonline.org/link/summary/35-3031.00"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Confirming seats and order details",
+        "terms": [
+          "cover",
+          "seat number",
+          "modifier",
+          "read-back"
+        ],
+        "collocations": [
+          "take an order: record what each diner requests",
+          "confirm the seat number: match the dish to the correct diner",
+          "put the sauce on the side: request a separate serving of sauce",
+          "read the order back: repeat the details before sending them"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Table 12 has three covers. Seat one orders mushroom pasta, seat two orders a salad with dressing separately, and seat three has not chosen. The phrase 'no onions' was spoken without a clear seat reference. Clarify before sending the order.",
+          "model": "Before I send table twelve's order, could I check who requested no onions? I have mushroom pasta for seat one and a salad with dressing on the side for seat two. Seat three is still deciding. I'll attach the onion request to the correct dish and read those details back."
+        },
+        "workshop": {
+          "title": "Attach each change to a dish",
+          "goal": "Clarify an ambiguous modifier and confirm the complete order.",
+          "explanation": "A modifier needs a dish and a diner. 'On the side' means separately, not omitted. Ask a focused question before reading back the order.",
+          "frames": [
+            "Was ___ for your ___ or for ___?",
+            "I have ___ for seat ___, with ___.",
+            "You're still deciding on ___; is that right?"
+          ],
+          "before": "Two salads, one different.",
+          "after": "One salad for seat two, dressing on the side and no onions.",
+          "reason": "The revised order identifies the diner and both changes.",
+          "questions": [
+            {
+              "prompt": "Guest: The dressing should come separately, not be left out.\nServer: I'll request it ____.",
+              "options": [
+                "without dressing",
+                "on the side",
+                "mixed through the salad",
+                "poured over the salad"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "This removes the dressing rather than serving it separately.",
+                "Correct. The dressing arrives in a separate serving.",
+                "Mixing it through contradicts the request for separate service.",
+                "Pouring it over the salad doesn't keep it separate."
+              ]
+            },
+            {
+              "prompt": "Server: I heard 'no onions,' but not which dish.\nGuest: It was my salad.\nServer: Could you confirm ____?",
+              "options": [
+                "which seat are you sitting in",
+                "which seat do you sit in",
+                "which seat you are sitting in",
+                "in which seat are you sitting"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "This uses direct-question word order after an introductory question.",
+                "After 'confirm', use statement order rather than 'do you'.",
+                "Correct. The embedded question keeps the subject before its verb.",
+                "Moving the preposition doesn't remove the need for embedded statement order."
+              ]
+            }
+          ],
+          "role_b": "Guest at seat two: confirm that no onions applies to your salad, not the pasta. Seat three needs another minute.",
+          "challenge": "Seat one also wants dressing for a side salad. Keep that request separate from seat two's main salad."
+        }
+      },
+      {
+        "title": "Explaining menu choices and prices",
+        "terms": [
+          "a la carte",
+          "set menu",
+          "supplement",
+          "side dish"
+        ],
+        "collocations": [
+          "quote the supplement: state the extra charge for a menu choice",
+          "include a side: provide an accompaniment within the stated price",
+          "choose from the set menu: select within a grouped meal offer",
+          "compare like for like: compare options with the same included items"
+        ],
+        "case": {
+          "function": "compare",
+          "brief": "The fictional lunch set costs $24 and includes a main and dessert. Steak adds a $5 supplement. The a la carte steak is $27 without dessert. Both steak options include potatoes. Explain the $29 set steak option versus $27 steak alone.",
+          "model": "The steak set would be twenty-nine dollars: the twenty-four-dollar set price plus a five-dollar supplement. It includes dessert and potatoes. The a la carte steak is twenty-seven dollars with potatoes but no dessert. If you don't want dessert, the separate steak costs less; the set includes the extra course."
+        },
+        "workshop": {
+          "title": "Explain what the price includes",
+          "goal": "Compare complete menu options without hiding an extra charge.",
+          "explanation": "Name the base price, any supplement, and what comes with each option. 'Whereas' introduces a contrast; it does not explain a cause.",
+          "frames": [
+            "___ costs ___ and includes ___.",
+            "The supplement brings the total to ___.",
+            "___ includes ___, whereas ___ does not."
+          ],
+          "before": "The steak is five dollars.",
+          "after": "The steak adds five dollars to the twenty-four-dollar set price.",
+          "reason": "A supplement is an addition, not the whole price.",
+          "questions": [
+            {
+              "prompt": "Guest: Is the five-dollar supplement the full price?\nServer: No, it is ____ the set price.",
+              "options": [
+                "included in",
+                "deducted from",
+                "equal to",
+                "added to"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "The supplement is added on top, not included within the base price.",
+                "Deducted means subtracted, not added.",
+                "Five dollars does not equal the set price.",
+                "Correct. The supplement increases the base price."
+              ]
+            },
+            {
+              "prompt": "Guest: What's different about the two steak options?\nServer: The set includes dessert, ____ the separate steak does not.",
+              "options": [
+                "whereas",
+                "because",
+                "therefore",
+                "unless"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This contrasts the included items.",
+                "This would claim a causal relationship.",
+                "This would suggest an unsupported consequence and needs different punctuation.",
+                "This introduces a condition rather than the stated contrast."
+              ]
+            }
+          ],
+          "role_b": "Guest: you like steak but are unsure whether you want dessert. Ask for both complete prices.",
+          "challenge": "The guest says 'So both are twenty-four dollars?' Correct the total without restarting the whole menu explanation."
+        }
+      },
+      {
+        "title": "Receiving an allergy question",
+        "terms": [
+          "allergen",
+          "cross-contact",
+          "ingredient list",
+          "dietary preference"
+        ],
+        "collocations": [
+          "flag an allergy: make the guest's stated allergy clearly visible to the responsible team",
+          "check the current ingredients: consult information for the actual item being served",
+          "relay the exact concern: pass on the guest's stated question accurately",
+          "avoid a blanket assurance: do not claim every preparation is suitable"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A guest at table 6 reports a sesame allergy and asks about a bun. The server has an old menu description, not current ingredient or cross-contact information. The kitchen lead is available to discuss the question before any order is sent.",
+          "model": "Thank you for telling me about your sesame allergy. The old menu description doesn't establish the current bun's ingredients or how it is handled. I can't confirm suitability from that description. I'll ask the kitchen lead to check your specific question before sending a food order, and bring back the verified information."
+        },
+        "workshop": {
+          "title": "Separate a description from a suitability claim",
+          "goal": "Acknowledge a stated allergy and identify the information still needed.",
+          "explanation": "A menu description may omit ingredients. 'Not listed' differs from 'not present.' Keep ingredient information separate from cross-contact questions.",
+          "frames": [
+            "You mentioned an allergy to ___.",
+            "I haven't confirmed ___ for this item.",
+            "The kitchen lead can check ___ before you decide."
+          ],
+          "before": "It doesn't mention sesame, so it's fine.",
+          "after": "Sesame isn't mentioned here, but I need current ingredient and handling information.",
+          "reason": "Absence from a short description is not evidence of suitability.",
+          "questions": [
+            {
+              "prompt": "Guest: The short menu doesn't mention sesame.\nServer: That tells us sesame is ____, not that it is absent.",
+              "options": [
+                "not listed here",
+                "not used anywhere",
+                "removed on request",
+                "served separately"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. This limits the claim to the visible description.",
+                "The description cannot establish every ingredient used.",
+                "No removal has been requested or confirmed.",
+                "The description says nothing about separate service."
+              ]
+            },
+            {
+              "prompt": "Kitchen lead: Is this a preference or a reported allergy?\nServer: The guest explicitly reported an ____.",
+              "options": [
+                "allergic",
+                "allergically",
+                "allergy",
+                "allergies"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "An adjective cannot fill this noun position alone.",
+                "An adverb does not name the condition.",
+                "Correct. The singular noun follows 'an'.",
+                "The plural noun cannot follow 'an'."
+              ]
+            }
+          ],
+          "role_b": "Guest: you have reported a sesame allergy and want reliable information before selecting food.",
+          "challenge": "The guest says they ate the bun last month. Explain why the current item still needs checking."
+        }
+      },
+      {
+        "title": "Coordinating courses and delays",
+        "terms": [
+          "course",
+          "fire",
+          "hold",
+          "estimated wait"
+        ],
+        "collocations": [
+          "fire the mains: ask the kitchen to begin the main course",
+          "hold the next course: delay the next stage of the meal",
+          "check the ticket time: find when the order entered the kitchen",
+          "give a revised estimate: state the kitchen's updated approximate wait"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Table 14 finished starters. Their mains were fired at 7:20. At 7:30 the kitchen estimates another eight minutes; one dish is still being prepared. The guests need to leave at 7:50. State the estimate and offer a timing discussion without guaranteeing completion.",
+          "model": "We asked the kitchen to start your mains at seven twenty. One dish is still being prepared, and the current estimate is another eight minutes. I know you need to leave at seven fifty. That is an estimate, not a guaranteed serving time; would you like me to discuss your timing with the kitchen?"
+        },
+        "workshop": {
+          "title": "Give an estimate with a reference point",
+          "goal": "Report an actual delay while keeping approximate timing clear.",
+          "explanation": "Say when the estimate was obtained and whether it means additional time. Do not confuse 'held' with 'canceled' or 'being prepared' with 'ready'.",
+          "frames": [
+            "As of ___, the estimate is another ___.",
+            "___ is ready; ___ is still being prepared.",
+            "Does that leave enough time for ___?"
+          ],
+          "before": "They'll be here soon.",
+          "after": "At seven thirty, the kitchen estimated another eight minutes.",
+          "reason": "The revised update gives usable timing without pretending certainty.",
+          "questions": [
+            {
+              "prompt": "Guest: Do you mean eight minutes in total from ordering?\nServer: No, eight ____ minutes from now.",
+              "options": [
+                "previous",
+                "additional",
+                "completed",
+                "earlier"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Previous refers to elapsed time.",
+                "Correct. Additional means more time beyond what has passed.",
+                "Completed minutes have already elapsed.",
+                "Earlier moves backward rather than forward."
+              ]
+            },
+            {
+              "prompt": "Server: Please hold table five's mains; they're still eating starters.\nCook: So the mains are delayed, ____.",
+              "options": [
+                "already served",
+                "not yet ordered",
+                "not canceled",
+                "ready for collection"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "The request concerns dishes not yet served to the diners.",
+                "A hold applies to an order that already exists.",
+                "Correct. Holding postpones the course without canceling its order.",
+                "A delay request doesn't establish that dishes are ready for collection."
+              ]
+            }
+          ],
+          "role_b": "Guest: your departure time is fixed at 7:50. Ask whether eight minutes is a promise.",
+          "challenge": "The estimate changes to twelve more minutes. Report the change and ask whether the guest wants available alternatives discussed."
+        }
+      },
+      {
+        "title": "Correcting a dish without blame",
+        "terms": [
+          "remake",
+          "replacement",
+          "check-back",
+          "service recovery"
+        ],
+        "collocations": [
+          "acknowledge the mix-up: recognize that an order was confused",
+          "offer a replacement: propose another item within the options available",
+          "check back with the table: ask whether the correction addressed the concern",
+          "describe the mismatch: name how the served dish differs from the order"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Table 3 ordered vegetable pasta but received mushroom risotto. The ticket confirms pasta. The kitchen offers a pasta remake with an estimated ten-minute wait. The server may offer that replacement, but any bill adjustment needs the shift lead's review.",
+          "model": "I'm sorry we brought risotto when your order was vegetable pasta. I've checked the ticket, and it does show pasta. The kitchen can remake it, with an estimated ten-minute wait. Would that work for you? If you want to discuss a bill adjustment, I'll ask our shift lead rather than promise one myself."
+        },
+        "workshop": {
+          "title": "Correct the order and offer a choice",
+          "goal": "Acknowledge a specific mismatch and agree what happens next.",
+          "explanation": "A useful apology names the error. Give the available option and its wait before asking for a choice; a replacement isn't automatically a refund.",
+          "frames": [
+            "You ordered ___, but we brought ___.",
+            "The replacement would take approximately ___.",
+            "Would you like ___, or would you prefer to speak with ___?"
+          ],
+          "before": "That's what came from the kitchen.",
+          "after": "You ordered pasta; this is risotto. I'm sorry for the mix-up.",
+          "reason": "The correction addresses the guest's experience without shifting blame.",
+          "questions": [
+            {
+              "prompt": "Guest: I ordered pasta, not risotto.\nServer: I'm sorry ____ the wrong dish.",
+              "options": [
+                "we bring",
+                "we brought",
+                "we bringing",
+                "we have bring"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Present tense does not identify this completed mistake.",
+                "Correct. Past tense acknowledges what happened.",
+                "A finite verb is missing.",
+                "The past participle would be 'brought'."
+              ]
+            },
+            {
+              "prompt": "Guest: Does 'remake' mean you remove the charge?\nServer: Here, it means ____.",
+              "options": [
+                "the existing dish reheated",
+                "the original order canceled",
+                "a newly prepared replacement dish",
+                "the charge removed from the bill"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Reheating an existing dish isn't the promised fresh preparation.",
+                "Canceling ends the order rather than supplying its replacement.",
+                "Correct. The kitchen prepares a fresh replacement for the dish.",
+                "Removing a charge is a bill adjustment, not the remake itself."
+              ]
+            }
+          ],
+          "role_b": "Guest: you ordered pasta and have limited patience for a ten-minute wait. Ask about the bill.",
+          "challenge": "The guest declines a replacement. Accept the choice and bring the shift lead into the bill discussion."
+        }
+      },
+      {
+        "title": "Explaining and splitting a bill",
+        "terms": [
+          "itemized bill",
+          "split payment",
+          "separate checks",
+          "service charge"
+        ],
+        "collocations": [
+          "split the bill evenly: divide the amount into equal shares",
+          "allocate an item: place a specific charge on a particular check",
+          "query a charge: ask why an amount appears on the bill",
+          "bring a corrected bill: provide an updated statement after an error is confirmed"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Three diners have a fictional $72 total with all listed charges included. They request 'three ways': this could mean equal payments or separate checks by item. The restaurant supports either before payment. Ask which they mean; equal shares would be $24.",
+          "model": "When you say three ways, would you like three equal payments or separate checks for each person's items? The total shown is seventy-two dollars, including the listed charges. Equal payments would be twenty-four dollars each. If you prefer separate checks, I'll confirm who had each item before any payment is taken."
+        },
+        "workshop": {
+          "title": "Check the meaning of 'split'",
+          "goal": "Distinguish equal payment shares from item-based bills.",
+          "explanation": "'Three ways' doesn't identify a division method. Confirm the method and visible charges before presenting the payment request; never ask learners to handle card credentials.",
+          "frames": [
+            "Would you like equal shares or ___?",
+            "This charge refers to ___ on the bill.",
+            "Before payment, could we confirm ___?"
+          ],
+          "before": "I'll put a third on each card.",
+          "after": "Would you prefer equal thirds or separate checks by item?",
+          "reason": "The question avoids deciding a financial preference for the diners.",
+          "questions": [
+            {
+              "prompt": "Guest: We want everyone to pay for their own dishes.\nServer: Then you want ____.",
+              "options": [
+                "an even split",
+                "one shared total only",
+                "separate checks by item",
+                "three equal contributions"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Equal shares may not match each person's items.",
+                "A shared total alone doesn't meet the request.",
+                "Correct. Items are assigned to the person paying for them.",
+                "Equal contributions ignore different item totals."
+              ]
+            },
+            {
+              "prompt": "Guest: Our total is seventy-two dollars, and we'd like equal thirds.\nServer: That's ____ each.",
+              "options": [
+                "twenty-four dollars",
+                "thirty-six dollars",
+                "seventy-two dollars",
+                "eighteen dollars"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. Three equal shares of 72 are 24.",
+                "That would split the total into two shares.",
+                "That repeats the whole total.",
+                "That would split the total into four shares."
+              ]
+            }
+          ],
+          "role_b": "Guest: clarify that 'three ways' means individual items; two guests shared one dessert.",
+          "challenge": "The guests disagree over the shared dessert. Ask for their agreed allocation rather than choose for them."
+        }
+      },
+      {
+        "title": "Agreeing on clearing and shared service",
+        "terms": [
+          "pre-bus",
+          "place setting",
+          "sharing plate",
+          "crumb"
+        ],
+        "collocations": [
+          "clear an empty plate: remove a plate the diner has finished using",
+          "leave the serving dish: keep the shared dish on the table",
+          "reset a place: arrange tableware for the next diner or course",
+          "ask before reaching: get the guest's attention before entering their table space"
+        ],
+        "case": {
+          "function": "request",
+          "brief": "At table 2, one diner's plate is empty but the shared vegetable dish still has food. The diner is using the plate for another portion. Ask what can be cleared; offer extra sharing plates without removing active items.",
+          "model": "May I clear the empty glasses, or are you still using them? I'll leave your plate and the shared vegetables because you're taking another portion. Would an extra sharing plate help? I can bring one and then check which serving items you're finished with, without interrupting the rest of your meal."
+        },
+        "workshop": {
+          "title": "Ask about use, not appearance",
+          "goal": "Get permission to clear specific items without rushing the table.",
+          "explanation": "An empty plate may still be in use. Use 'finished with' for an object; 'finished eating' asks about the person's meal.",
+          "frames": [
+            "Are you finished with ___?",
+            "Shall I leave ___ for now?",
+            "May I reach across to remove ___?"
+          ],
+          "before": "You're done, right?",
+          "after": "Are you finished with this serving dish, or would you like it left here?",
+          "reason": "A specific, neutral choice avoids pressure to finish.",
+          "questions": [
+            {
+              "prompt": "Guest: I'm using this empty plate for more vegetables.\nServer: I'll ____.",
+              "options": [
+                "clear it now",
+                "leave it here",
+                "replace it before you continue",
+                "clear it with the serving dish"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The guest explicitly says the plate is still needed.",
+                "Correct. Leaving it respects the guest's stated use.",
+                "The guest hasn't requested a different plate or interruption.",
+                "Both items remain in use for the next portion."
+              ]
+            },
+            {
+              "prompt": "Server: Are you finished ____ the bread plate?\nGuest: No, please leave it.",
+              "options": [
+                "at",
+                "from",
+                "by",
+                "with"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "'Finished at' would usually introduce a time or place.",
+                "'From' does not form this expression.",
+                "'By' would introduce a deadline or agent in other structures.",
+                "Correct. 'Finished with' means no longer using something."
+              ]
+            }
+          ],
+          "role_b": "Guest: your empty plate is still needed for vegetables, but the empty glasses can go.",
+          "challenge": "The guest says 'take those' while pointing between glasses and plates. Clarify the items."
+        }
+      },
+      {
+        "title": "Handing over a live section",
+        "terms": [
+          "section",
+          "open check",
+          "side work",
+          "handover"
+        ],
+        "collocations": [
+          "take over a section: accept responsibility for specified tables",
+          "settle an open check: complete payment for an outstanding bill",
+          "restock the service station: replenish supplies used by servers",
+          "follow up on a request: return to an unresolved guest need"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "At 8:00 Maya takes over tables 4 and 5. Table 4's mains are served, and dessert has not been ordered. Table 5 has an open check and a pending duplicate-coffee query being reviewed by the shift lead. Ask Maya to accept both follow-ups.",
+          "model": "Maya, table four has its mains and hasn't ordered dessert. Table five's check is still open because the shift lead is reviewing a possible duplicate coffee charge. Please check on four's dessert preference and get the lead's decision before presenting five's bill again. Can you take those two follow-ups while I finish the station restock?"
+        },
+        "workshop": {
+          "title": "Transfer unresolved table details",
+          "goal": "Name each table's status and get the incoming server's acknowledgment.",
+          "explanation": "Separate an open question from a completed action. A handover needs a receiver, not merely a note left at the station.",
+          "frames": [
+            "Table ___ has ___; ___ is still open.",
+            "Please check ___ before ___.",
+            "Can you take over ___ while I ___?"
+          ],
+          "before": "Four and five are fine.",
+          "after": "Four needs a dessert check; five is waiting for a bill correction decision.",
+          "reason": "The incoming server knows what remains to do.",
+          "questions": [
+            {
+              "prompt": "Maya: Has table five paid?\nServer: No, its check is still ____.",
+              "options": [
+                "settled",
+                "closed",
+                "open",
+                "duplicated"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Settled would indicate payment is complete.",
+                "Closed conflicts with the unpaid status.",
+                "Correct. An open check remains outstanding.",
+                "Only a possible coffee entry is duplicated, not the whole check."
+              ]
+            },
+            {
+              "prompt": "Server: Can you take over the dessert check at four?\nMaya: ____.",
+              "options": [
+                "I checked with table five earlier",
+                "I will check with table four",
+                "I saw that request on the screen",
+                "I thought you were checking it"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "This reports earlier work at a different table.",
+                "Correct. Maya explicitly accepts the named table follow-up.",
+                "Seeing the request doesn't show that Maya accepts it.",
+                "This states a prior assumption instead of accepting responsibility."
+              ]
+            }
+          ],
+          "role_b": "Incoming server: accept both tables and repeat which bill question remains unresolved.",
+          "challenge": "The shift lead has not decided about the coffee charge. Keep the question open while accepting follow-up."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "cover",
+        "definition": "One diner counted for restaurant table service.",
+        "group": "Confirming seats and order details"
+      },
+      {
+        "term": "seat number",
+        "definition": "A numbered position at a table used to match an order to a diner.",
+        "group": "Confirming seats and order details"
+      },
+      {
+        "term": "modifier",
+        "definition": "An order detail that changes the standard dish, such as sauce on the side.",
+        "group": "Confirming seats and order details"
+      },
+      {
+        "term": "read-back",
+        "definition": "A spoken repetition of an order so the guest can correct it.",
+        "group": "Confirming seats and order details"
+      },
+      {
+        "term": "a la carte",
+        "definition": "Ordered as a separate menu item with its own price.",
+        "group": "Explaining menu choices and prices"
+      },
+      {
+        "term": "set menu",
+        "definition": "A group of courses offered together for a stated price and stated choices.",
+        "group": "Explaining menu choices and prices"
+      },
+      {
+        "term": "supplement",
+        "definition": "An extra charge for a specified menu choice.",
+        "group": "Explaining menu choices and prices"
+      },
+      {
+        "term": "side dish",
+        "definition": "A smaller dish served alongside the main dish.",
+        "group": "Explaining menu choices and prices"
+      },
+      {
+        "term": "allergen",
+        "definition": "A substance that can trigger an allergic reaction; restaurant staff must check the relevant food information.",
+        "group": "Receiving an allergy question"
+      },
+      {
+        "term": "cross-contact",
+        "definition": "Unintended transfer of an allergen between foods or food-contact items.",
+        "group": "Receiving an allergy question"
+      },
+      {
+        "term": "ingredient list",
+        "definition": "A record of ingredients used in a food product or recipe.",
+        "group": "Receiving an allergy question"
+      },
+      {
+        "term": "dietary preference",
+        "definition": "A person's food choice or avoidance that is not necessarily an allergy.",
+        "group": "Receiving an allergy question"
+      },
+      {
+        "term": "course",
+        "definition": "One stage of a meal, such as a starter or main dish.",
+        "group": "Coordinating courses and delays"
+      },
+      {
+        "term": "fire",
+        "definition": "A kitchen instruction to begin preparing a course; its exact use varies by restaurant.",
+        "group": "Coordinating courses and delays"
+      },
+      {
+        "term": "hold",
+        "definition": "A request to delay a specified order or course, not cancel it.",
+        "group": "Coordinating courses and delays"
+      },
+      {
+        "term": "estimated wait",
+        "definition": "An approximate time before an item is expected, not a guarantee.",
+        "group": "Coordinating courses and delays"
+      },
+      {
+        "term": "remake",
+        "definition": "A newly prepared replacement for a dish that needs correction.",
+        "group": "Correcting a dish without blame"
+      },
+      {
+        "term": "replacement",
+        "definition": "An item supplied in place of another item.",
+        "group": "Correcting a dish without blame"
+      },
+      {
+        "term": "check-back",
+        "definition": "A brief return to the table to ask whether the food and service meet the guest's request.",
+        "group": "Correcting a dish without blame"
+      },
+      {
+        "term": "service recovery",
+        "definition": "Actions taken to address a service problem and restore the guest's confidence.",
+        "group": "Correcting a dish without blame"
+      },
+      {
+        "term": "itemized bill",
+        "definition": "A bill showing separate dishes, drinks, and other charges.",
+        "group": "Explaining and splitting a bill"
+      },
+      {
+        "term": "split payment",
+        "definition": "Payment of one bill using more than one payment contribution.",
+        "group": "Explaining and splitting a bill"
+      },
+      {
+        "term": "separate checks",
+        "definition": "Individual bills for different diners or groups at the same table.",
+        "group": "Explaining and splitting a bill"
+      },
+      {
+        "term": "service charge",
+        "definition": "A charge added for service under the restaurant's stated policy, distinct from an optional extra tip.",
+        "group": "Explaining and splitting a bill"
+      },
+      {
+        "term": "pre-bus",
+        "definition": "Remove used items during a meal after checking that diners have finished with them.",
+        "group": "Agreeing on clearing and shared service"
+      },
+      {
+        "term": "place setting",
+        "definition": "The tableware arranged for one diner.",
+        "group": "Agreeing on clearing and shared service"
+      },
+      {
+        "term": "sharing plate",
+        "definition": "A plate provided so a diner can take a portion of a shared dish.",
+        "group": "Agreeing on clearing and shared service"
+      },
+      {
+        "term": "crumb",
+        "definition": "A small loose piece of food, especially bread, on a table or plate.",
+        "group": "Agreeing on clearing and shared service"
+      },
+      {
+        "term": "section",
+        "definition": "A group of tables assigned to a server for a period of service.",
+        "group": "Handing over a live section"
+      },
+      {
+        "term": "open check",
+        "definition": "A bill that has not yet been settled or closed.",
+        "group": "Handing over a live section"
+      },
+      {
+        "term": "side work",
+        "definition": "Support tasks outside direct table service, such as restocking napkins.",
+        "group": "Handing over a live section"
+      },
+      {
+        "term": "handover",
+        "definition": "A transfer of table information and outstanding tasks to another staff member.",
+        "group": "Handing over a live section"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Whose onion request?",
+          "setting": "Table 12: the three-cover order in the case.",
+          "turns": [
+            [
+              "Server",
+              "I caught the request for no onions, but which dish does that apply to?"
+            ],
+            [
+              "Guest",
+              "My salad, please. My friend wants the mushroom pasta exactly as it normally comes."
+            ],
+            [
+              "Server",
+              "Thank you. Are you also the person who asked for dressing on the side?"
+            ],
+            [
+              "Guest",
+              "Yes, I want the dressing separately, not removed from the order altogether, please."
+            ],
+            [
+              "Server",
+              "Then seat two has the salad, no onions, with dressing in a separate serving."
+            ],
+            [
+              "Guest",
+              "That's right. The person beside the window hasn't chosen a main course yet."
+            ],
+            [
+              "Server",
+              "I have seat one down for pasta and seat three as still deciding."
+            ],
+            [
+              "Guest",
+              "Could you give seat three another minute before you send the main course order?"
+            ],
+            [
+              "Server",
+              "Certainly. I'll wait here a moment; would another menu help with the choice?"
+            ],
+            [
+              "Guest",
+              "Yes, please. The third menu is underneath our coats, and another would be useful."
+            ]
+          ]
+        },
+        {
+          "title": "Moving chairs after ordering",
+          "setting": "Two diners have swapped seats before a runner arrives.",
+          "turns": [
+            [
+              "Runner",
+              "I have the vegetable tart for seat one. Did anyone change seats after ordering?"
+            ],
+            [
+              "Guest",
+              "Yes, we swapped so my colleague could sit farther away from the speaker."
+            ],
+            [
+              "Runner",
+              "Thanks for telling me. Who ordered the tart with the small green salad?"
+            ],
+            [
+              "Guest",
+              "I did, and I'm now sitting beside the aisle rather than the window."
+            ],
+            [
+              "Runner",
+              "Then this plate belongs here. The pasta is for your colleague by the window?"
+            ],
+            [
+              "Guest",
+              "Correct. Neither of us changed the dishes; we only moved to different chairs."
+            ],
+            [
+              "Runner",
+              "I'll tell your server about the move so the dessert orders reach you correctly."
+            ],
+            [
+              "Guest",
+              "Please do. We're ordering different desserts and would rather not switch plates again."
+            ],
+            [
+              "Runner",
+              "I'll identify the dishes as I bring them, as well as checking the updated seats."
+            ],
+            [
+              "Guest",
+              "That works. You can put the tart here, with the salad beside it."
+            ]
+          ]
+        },
+        {
+          "title": "A phrase lost in the noise",
+          "setting": "A server checks an incomplete order during a busy lunch.",
+          "turns": [
+            [
+              "Server",
+              "I'm sorry, the music covered your last words. Was that soup and a sandwich?"
+            ],
+            [
+              "Guest",
+              "Soup instead of a sandwich, actually. I don't need both items for lunch."
+            ],
+            [
+              "Server",
+              "Thank you for correcting that. Which soup would you like from today's two choices?"
+            ],
+            [
+              "Guest",
+              "The tomato soup, please, with the bread that appears beside it on the menu."
+            ],
+            [
+              "Server",
+              "I have one tomato soup with bread. Would you like the small or large portion?"
+            ],
+            [
+              "Guest",
+              "The small one. I only have time for a light lunch before my meeting."
+            ],
+            [
+              "Server",
+              "Let me read that back: one small tomato soup with bread, and no sandwich."
+            ],
+            [
+              "Guest",
+              "Exactly. Could you also check whether my colleague's drink has already been ordered?"
+            ],
+            [
+              "Server",
+              "Your colleague asked me for sparkling water earlier, and that order is already in."
+            ],
+            [
+              "Guest",
+              "Great. Then the soup is the only item you still need to add."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two similar side dishes",
+        "brief": "A table orders one baked potato and one portion of mashed potatoes. The server hears 'without butter' but cannot identify the dish.",
+        "role_a": "Server: clarify the dish and repeat both side orders.",
+        "role_b": "Guest: the baked potato is yours and you prefer it without butter; the mashed potatoes belong to your companion.",
+        "opening_line": "Was the no-butter request for the baked potato or the mashed potatoes?",
+        "complication": "The guest points instead of naming the dish, and both diners are holding menus.",
+        "success_checks": [
+          "Obtain the dish name.",
+          "Attach the preference to the baked potato only.",
+          "Read back both orders without inventing an ingredient claim."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "The five-dollar misunderstanding",
+          "setting": "The lunch menu in the case is open between server and guest.",
+          "turns": [
+            [
+              "Guest",
+              "The steak says five dollars underneath it. Is that really the price of the meal?"
+            ],
+            [
+              "Server",
+              "That's the supplement to the twenty-four-dollar set menu, making the steak set twenty-nine dollars."
+            ],
+            [
+              "Guest",
+              "Does that include the potatoes, or would those be another item on my bill?"
+            ],
+            [
+              "Server",
+              "Potatoes are included. The set also includes one dessert from the choices listed below."
+            ],
+            [
+              "Guest",
+              "I don't usually have dessert. Is there a price for just the steak and potatoes?"
+            ],
+            [
+              "Server",
+              "Yes, the a la carte steak is twenty-seven dollars, with potatoes but without dessert."
+            ],
+            [
+              "Guest",
+              "Then the extra two dollars on the set gets me one of those desserts?"
+            ],
+            [
+              "Server",
+              "For these two options, yes. The difference is two dollars and the included dessert."
+            ],
+            [
+              "Guest",
+              "I'll choose the separate steak. Please don't add the set menu to my order."
+            ],
+            [
+              "Server",
+              "Certainly. One a la carte steak with potatoes, priced at twenty-seven dollars before any applicable charges."
+            ]
+          ]
+        },
+        {
+          "title": "A starter is not a side",
+          "setting": "A diner compares a side salad with a larger starter salad.",
+          "turns": [
+            [
+              "Guest",
+              "Could I have the starter salad with my main instead of the little side salad?"
+            ],
+            [
+              "Server",
+              "You can order the starter salad separately. It's larger and has its own menu price."
+            ],
+            [
+              "Guest",
+              "I thought every salad was included when the main says it comes with a salad."
+            ],
+            [
+              "Server",
+              "That refers to the side salad listed with the main, not the starter selection above."
+            ],
+            [
+              "Guest",
+              "How much more would the starter cost, and could you remove the included side?"
+            ],
+            [
+              "Server",
+              "The starter is eight dollars. Removing the included side doesn't reduce this main's listed price."
+            ],
+            [
+              "Guest",
+              "In that case, I'll keep the included salad and skip the larger starter today."
+            ],
+            [
+              "Server",
+              "Of course. Would you like the main and its side brought together as listed?"
+            ],
+            [
+              "Guest",
+              "Yes, together. I was looking for a bigger salad, but the extra cost changes my choice."
+            ],
+            [
+              "Server",
+              "I'll keep the standard main with its included side and no separately charged starter."
+            ]
+          ]
+        },
+        {
+          "title": "Today's special has a price",
+          "setting": "A server describes a special before the diner commits.",
+          "turns": [
+            [
+              "Server",
+              "Today's special is a roasted vegetable tart with a green salad, priced at nineteen dollars."
+            ],
+            [
+              "Guest",
+              "Is it part of the lunch set, or did you mean a separate special?"
+            ],
+            [
+              "Server",
+              "It's a separate item today. The lunch set choices are printed in this other section."
+            ],
+            [
+              "Guest",
+              "Thank you. Does the special come with a drink, or is that priced separately?"
+            ],
+            [
+              "Server",
+              "Drinks are separate. The nineteen dollars covers the tart and its accompanying green salad."
+            ],
+            [
+              "Guest",
+              "Could you compare that with the twenty-two-dollar lunch set before I choose between them?"
+            ],
+            [
+              "Server",
+              "The set includes a main and a drink, but its main choices don't include the tart."
+            ],
+            [
+              "Guest",
+              "I'd rather have the tart and tap water, so please order the special for me."
+            ],
+            [
+              "Server",
+              "Certainly. That's the nineteen-dollar special with tap water, and no set menu on the order."
+            ],
+            [
+              "Guest",
+              "Exactly. Thanks for giving me the price before I had to ask about it."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A shared starter charge",
+        "brief": "A fictional menu lists a soup starter at $7 and a sharing platter at $18. The platter description says 'serves two'; $18 is the whole platter price.",
+        "role_a": "Server: explain price and suggested serving size.",
+        "role_b": "Guest: ask whether 'serves two' means $18 per person; choose the platter once clarified.",
+        "opening_line": "Is the sharing platter eighteen dollars each?",
+        "complication": "The guest also assumes two soups are included, but neither is included.",
+        "success_checks": [
+          "State that $18 covers one platter.",
+          "Separate serving size from a per-person price.",
+          "Confirm whether the guest wants additional soup."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "The bun description is incomplete",
+          "setting": "Table 6: the sesame question from the case.",
+          "turns": [
+            [
+              "Guest",
+              "I have a sesame allergy. Your bun description doesn't mention seeds; can I eat it?"
+            ],
+            [
+              "Server",
+              "Thank you for telling me. That description doesn't confirm the current ingredients or handling arrangements."
+            ],
+            [
+              "Guest",
+              "I've had buns here before, although I don't remember whether this is the same one."
+            ],
+            [
+              "Server",
+              "I can't confirm this bun from your earlier visit. I'll ask the kitchen lead for today's ingredient list."
+            ],
+            [
+              "Guest",
+              "Please ask about sesame in the bread itself, not only the seeds on top."
+            ],
+            [
+              "Server",
+              "I'll pass on both that ingredient question and your concern about possible cross-contact."
+            ],
+            [
+              "Guest",
+              "Should I choose the burger now, or wait until those details have been checked?"
+            ],
+            [
+              "Server",
+              "Let's leave the food order unsent while we get the information you need to decide."
+            ],
+            [
+              "Guest",
+              "All right. Please bring the kitchen lead if the answer needs a longer explanation."
+            ],
+            [
+              "Server",
+              "I will ask them to speak with you; your sesame question is still unresolved."
+            ]
+          ]
+        },
+        {
+          "title": "An omission isn't an allergy label",
+          "setting": "A diner requests no coriander for taste, and the server checks meaning.",
+          "turns": [
+            [
+              "Server",
+              "You asked for no coriander on the salad. Is that a preference or an allergy?"
+            ],
+            [
+              "Guest",
+              "It's a dietary preference. I don't enjoy coriander, but I'm not reporting an allergy."
+            ],
+            [
+              "Server",
+              "Thank you. I'll record a preference to omit the coriander garnish, subject to the kitchen's confirmation."
+            ],
+            [
+              "Guest",
+              "Does that mean you can remove every trace of coriander from the whole dish?"
+            ],
+            [
+              "Server",
+              "Not necessarily. The dressing may already contain it, and I haven't checked that recipe yet."
+            ],
+            [
+              "Guest",
+              "Then could you check the dressing too? I'd choose another salad if it's mixed in."
+            ],
+            [
+              "Server",
+              "Certainly. Is the concern the coriander flavor throughout the dish rather than the garnish alone?"
+            ],
+            [
+              "Guest",
+              "Exactly. I wouldn't want you to change the garnish while leaving the same flavor underneath."
+            ],
+            [
+              "Server",
+              "I'll ask that specific question before entering the salad, then explain the available choices."
+            ],
+            [
+              "Guest",
+              "Thanks. We can keep my order open while my friend orders their own meal."
+            ]
+          ]
+        },
+        {
+          "title": "Repeating the guest's actual words",
+          "setting": "A server speaks to the kitchen lead about a pending order.",
+          "turns": [
+            [
+              "Server",
+              "Table nine reports a milk allergy and asks whether today's soup contains any milk ingredients."
+            ],
+            [
+              "Kitchen lead",
+              "Have you sent the soup order already, or are they waiting for our answer?"
+            ],
+            [
+              "Server",
+              "They're waiting. I said I'd check the actual recipe and handling information before they choose."
+            ],
+            [
+              "Kitchen lead",
+              "Good. Was their question only about a cream garnish, or the whole soup preparation?"
+            ],
+            [
+              "Server",
+              "The whole preparation. They specifically asked whether removing the garnish would settle the issue."
+            ],
+            [
+              "Kitchen lead",
+              "I need the current recipe and allergen information; removing a garnish wouldn't settle that."
+            ],
+            [
+              "Server",
+              "I'll keep the soup pending. Would you speak directly with them after checking those details?"
+            ],
+            [
+              "Kitchen lead",
+              "Yes. Tell them I'm gathering the current information and will come to their table."
+            ],
+            [
+              "Server",
+              "I'll do that, without describing the soup as suitable before your discussion with the guest."
+            ],
+            [
+              "Kitchen lead",
+              "Thank you. Please give me the table number again so I don't approach the wrong party."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A changed sauce supplier",
+        "brief": "A diner reports a peanut allergy. A colleague remembers an earlier sauce specification, but this week's sauce comes from a different supplier.",
+        "role_a": "Server: explain the limit of the old information and request a current check.",
+        "role_b": "Kitchen lead: you can review the new product information and speak to the diner; suitability is not yet established.",
+        "opening_line": "Does last week's ingredient sheet apply to this week's sauce?",
+        "complication": "The old sheet has the same product name but a different supplier.",
+        "success_checks": [
+          "Identify the supplier mismatch.",
+          "Keep the food choice pending.",
+          "Relay the allergy rather than infer a preference."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Eight more minutes",
+          "setting": "Table 14 at 7:30, following the timing case.",
+          "turns": [
+            [
+              "Server",
+              "I've checked your mains. One dish is still being prepared; the estimate is another eight minutes."
+            ],
+            [
+              "Guest",
+              "We ordered a while ago. Does that mean eight minutes from when you first sent it?"
+            ],
+            [
+              "Server",
+              "No, eight more minutes from this update. Your mains were fired at seven twenty."
+            ],
+            [
+              "Guest",
+              "We need to leave at seven fifty. Is the eight-minute serving time definite now?"
+            ],
+            [
+              "Server",
+              "It's the kitchen's current estimate, not a guarantee. I'll make your departure time clear to them."
+            ],
+            [
+              "Guest",
+              "Please do. We need time to eat, not simply have the plates arrive before we leave."
+            ],
+            [
+              "Server",
+              "Understood. Would you prefer to wait on that estimate, or ask about another available option?"
+            ],
+            [
+              "Guest",
+              "Let's wait for now, but please tell us promptly if the kitchen's estimate changes again."
+            ],
+            [
+              "Server",
+              "I will. I'll bring the bill when requested, so payment doesn't add avoidable delay."
+            ],
+            [
+              "Guest",
+              "Please bring it with the mains. Let us know if the wait gets longer."
+            ]
+          ]
+        },
+        {
+          "title": "Holding dessert for a call",
+          "setting": "A diner requests a pause between the main and dessert.",
+          "turns": [
+            [
+              "Guest",
+              "Could you hold our desserts? My colleague has stepped outside to take a work call."
+            ],
+            [
+              "Server",
+              "Of course. Do you mean delay both desserts, or cancel one of them altogether?"
+            ],
+            [
+              "Guest",
+              "Delay both, please. We still want them, but we'd like to eat them together."
+            ],
+            [
+              "Server",
+              "I'll ask the dessert station to hold the order if it hasn't already been prepared."
+            ],
+            [
+              "Guest",
+              "Can you check that now? I don't want something sitting here while they're outside."
+            ],
+            [
+              "Server",
+              "The station confirms the desserts haven't been prepared, so both are now on hold."
+            ],
+            [
+              "Guest",
+              "Thank you. Should I wave when we're ready, or place the dessert order again?"
+            ],
+            [
+              "Server",
+              "Just let me know you're ready. The original order remains; there's no need to duplicate it."
+            ],
+            [
+              "Guest",
+              "They're coming back now, but we'd like five more minutes before you request the desserts."
+            ],
+            [
+              "Server",
+              "I'll leave the hold in place until you tell me to send that request."
+            ]
+          ]
+        },
+        {
+          "title": "One plate isn't the whole table",
+          "setting": "A runner checks an incomplete pickup at the pass.",
+          "turns": [
+            [
+              "Runner",
+              "I see three plates for table eight, but their ticket shows four main courses."
+            ],
+            [
+              "Expediter",
+              "The fourth dish is finishing. Please don't describe the entire table as ready yet."
+            ],
+            [
+              "Runner",
+              "Should I take these three now, or wait for the complete pickup from you?"
+            ],
+            [
+              "Expediter",
+              "Wait for my call on this table. I need to coordinate the final dish with the cook."
+            ],
+            [
+              "Runner",
+              "The server is asking what to tell the guests. Do you have a current estimate?"
+            ],
+            [
+              "Expediter",
+              "About three more minutes, but I'll update you if that changes during the pickup."
+            ],
+            [
+              "Runner",
+              "I'll tell the server the table isn't complete and the current estimate is three minutes."
+            ],
+            [
+              "Expediter",
+              "Thanks. Please keep table eight separate from the two plates beside it for table eighteen."
+            ],
+            [
+              "Runner",
+              "These three stay here while we wait for the fourth; table eighteen's two plates stay separate."
+            ],
+            [
+              "Expediter",
+              "That's right. I'll call the full table number when each pickup is ready to leave."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Starter or main?",
+        "brief": "A guest orders soup and pasta and says 'together.' The restaurant normally serves starters before mains; neither item has been sent.",
+        "role_a": "Server: check whether both dishes should arrive at once.",
+        "role_b": "Guest: you want soup as your main while your companion eats pasta, not two courses for yourself.",
+        "opening_line": "When you say together, are these two mains for different people?",
+        "complication": "The order screen currently assigns both dishes to one seat.",
+        "success_checks": [
+          "Clarify diners and timing.",
+          "Correct the seat assignment.",
+          "Read back simultaneous service as a request, not a guaranteed time."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Risotto instead of pasta",
+          "setting": "Table 3 receives the wrong main, as in the case.",
+          "turns": [
+            [
+              "Guest",
+              "This looks like mushroom risotto. I ordered vegetable pasta when you took our main courses."
+            ],
+            [
+              "Server",
+              "You're right; the ticket shows vegetable pasta. I'm sorry we brought the wrong dish."
+            ],
+            [
+              "Guest",
+              "Can you replace it, and how long would I be waiting for the correct meal?"
+            ],
+            [
+              "Server",
+              "The kitchen offers a pasta remake with an estimated ten-minute wait. Would that work for you?"
+            ],
+            [
+              "Guest",
+              "My friend is already eating. Could you remove my dish from the bill as well?"
+            ],
+            [
+              "Server",
+              "I can arrange the replacement; a bill adjustment needs our shift lead's review."
+            ],
+            [
+              "Guest",
+              "Please ask them, but go ahead with the pasta. I'd still like to eat."
+            ],
+            [
+              "Server",
+              "I'll send the remake request and ask the lead to speak with you about the charge."
+            ],
+            [
+              "Guest",
+              "Thank you. Please tell them I've accepted the replacement, not agreed about the final bill."
+            ],
+            [
+              "Server",
+              "I will make that distinction clear, and check back when your pasta reaches the table."
+            ]
+          ]
+        },
+        {
+          "title": "A check-back gets a real answer",
+          "setting": "A guest says a meal is not what they expected.",
+          "turns": [
+            [
+              "Server",
+              "How is the tart? Is there anything about your order that needs our attention?"
+            ],
+            [
+              "Guest",
+              "It's much smaller than I expected. I thought it would fill the whole plate."
+            ],
+            [
+              "Server",
+              "I understand. The menu doesn't give a size, so I can see why expectations differed."
+            ],
+            [
+              "Guest",
+              "I'm not saying it's badly made. I just need something more substantial for lunch."
+            ],
+            [
+              "Server",
+              "Would you like to see the available side dishes and prices before deciding what to add?"
+            ],
+            [
+              "Guest",
+              "Yes, but please don't order anything automatically. I want to know the total first."
+            ],
+            [
+              "Server",
+              "The potato side is four dollars, and the green salad is five dollars today."
+            ],
+            [
+              "Guest",
+              "The potatoes sound better. Please add one portion, provided that price is the full item price."
+            ],
+            [
+              "Server",
+              "Four dollars is the listed side price. I'll add one portion and confirm its expected wait."
+            ],
+            [
+              "Guest",
+              "Thanks. That addresses my concern; I wanted a clearer choice, not a different tart."
+            ]
+          ]
+        },
+        {
+          "title": "Two plates crossed at pickup",
+          "setting": "A runner discovers that two complete orders were assigned to wrong tables.",
+          "turns": [
+            [
+              "Runner",
+              "I checked the pickup tickets and think I brought table seven's tart to table eleven."
+            ],
+            [
+              "Server",
+              "Table eleven has just questioned it. Their ticket shows a salad, not a tart."
+            ],
+            [
+              "Runner",
+              "I'll tell the expediter exactly which dish and table were involved in the mix-up."
+            ],
+            [
+              "Server",
+              "Please do. We need replacement instructions, not simply a guess about switching the plates back."
+            ],
+            [
+              "Runner",
+              "Agreed. The tart has already reached the guest, so I'll explain that fact clearly."
+            ],
+            [
+              "Server",
+              "I'll speak to table eleven and acknowledge the wrong dish while you check the replacement."
+            ],
+            [
+              "Runner",
+              "The expediter confirms a fresh salad is being prepared, with a five-minute estimated wait."
+            ],
+            [
+              "Server",
+              "I'll offer that estimate to the guest and ask whether the replacement still suits them."
+            ],
+            [
+              "Runner",
+              "Do you need me to speak with table seven as well about their missing dish?"
+            ],
+            [
+              "Server",
+              "Yes, please explain that we're checking their order; don't claim it's already on its way."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The sauce arrived on the food",
+        "brief": "A guest requested sauce separately but receives sauce over the dish. The ticket confirms the separate-sauce request. The kitchen offers a remake in eight minutes; no price adjustment is approved.",
+        "role_a": "Server: apologize, describe the remake option, and check the guest's choice.",
+        "role_b": "Guest: you want the correct dish but need to know the wait.",
+        "opening_line": "I asked for the sauce on the side; this plate has it on top.",
+        "complication": "The guest asks whether the remake is already being prepared, but you haven't requested it yet.",
+        "success_checks": [
+          "Acknowledge the ticketed request.",
+          "Distinguish an available option from a started remake.",
+          "Confirm the guest's choice before reporting it to the kitchen."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Three ways can mean two things",
+          "setting": "The $72 bill in the case is unpaid.",
+          "turns": [
+            [
+              "Server",
+              "Before arranging a split payment, would you like equal shares or separate checks by item?"
+            ],
+            [
+              "Guest",
+              "Actually, we'd each like to pay for our own food rather than divide everything equally."
+            ],
+            [
+              "Server",
+              "Certainly. Equal thirds would be twenty-four dollars, but I'll prepare separate checks by item instead."
+            ],
+            [
+              "Guest",
+              "Thank you. I had the pasta and water, and my colleague here had the tart."
+            ],
+            [
+              "Server",
+              "Who should have the shared dessert on their check, or would you like it divided?"
+            ],
+            [
+              "Guest",
+              "Put the whole dessert on mine, please. I offered to treat them to that part."
+            ],
+            [
+              "Server",
+              "I'll allocate the dessert to your check, and confirm the remaining drink with the third diner."
+            ],
+            [
+              "Guest",
+              "That drink belongs to them. Can we see the individual bills before making any payments?"
+            ],
+            [
+              "Server",
+              "Yes. I'll bring the three checks back for review before asking you to pay."
+            ],
+            [
+              "Guest",
+              "Great. We meant three separate bills, so I'm glad you checked before assuming equal amounts."
+            ]
+          ]
+        },
+        {
+          "title": "A charge appears twice",
+          "setting": "A guest queries a duplicate drink on an unpaid bill.",
+          "turns": [
+            [
+              "Guest",
+              "The bill shows two lemonades, but I only ordered one during the whole meal."
+            ],
+            [
+              "Server",
+              "Let me check the order record and the two entries before we process your payment."
+            ],
+            [
+              "Guest",
+              "One line says lemonade and the other says the same thing with a later time."
+            ],
+            [
+              "Server",
+              "I can see both entries. Did anyone else at your table order a second one?"
+            ],
+            [
+              "Guest",
+              "No. My companion had water, and there was no refill or second glass for me."
+            ],
+            [
+              "Server",
+              "Thank you. The shift lead has confirmed the duplicate entry and approved its removal."
+            ],
+            [
+              "Guest",
+              "Could you bring the revised bill so I can see which amount actually changed?"
+            ],
+            [
+              "Server",
+              "Certainly. This corrected version has one lemonade; the duplicate line is no longer charged."
+            ],
+            [
+              "Guest",
+              "That matches what we had. Is this now the version we'll use for payment?"
+            ],
+            [
+              "Server",
+              "Yes, this revised bill is the one to review and pay, not the earlier copy."
+            ]
+          ]
+        },
+        {
+          "title": "An optional extra is not required",
+          "setting": "A server explains a fictional bill with a labeled service charge.",
+          "turns": [
+            [
+              "Guest",
+              "This bill has a service charge and another blank line. Are both amounts required?"
+            ],
+            [
+              "Server",
+              "The printed service charge is included in this total; the blank line is for an optional tip."
+            ],
+            [
+              "Guest",
+              "So leaving that optional line blank doesn't remove the service charge already printed above it?"
+            ],
+            [
+              "Server",
+              "Correct. They are different entries. The total here already includes the restaurant's stated service charge."
+            ],
+            [
+              "Guest",
+              "Can you tell me how that charge is distributed among the people working tonight?"
+            ],
+            [
+              "Server",
+              "I don't have a verified explanation of distribution. Our shift lead can answer that question."
+            ],
+            [
+              "Guest",
+              "Please ask them. I want to understand the charge before deciding about an extra tip."
+            ],
+            [
+              "Server",
+              "I'll bring them over, and leave the payment unprocessed while you discuss that question."
+            ],
+            [
+              "Guest",
+              "Thank you. Please don't infer any optional tip amount from what we paid last time."
+            ],
+            [
+              "Server",
+              "Of course. Any optional extra is your choice, not an assumption from a previous visit."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "Two payers, four diners",
+        "brief": "Four diners agree that one payer covers all food and another covers all drinks. The bill is unpaid and can be split by item.",
+        "role_a": "Server: clarify the two groups of charges.",
+        "role_b": "Guest: you pay for food, including the shared dessert; your companion covers drinks.",
+        "opening_line": "Would you like the food on one check and the drinks on the other?",
+        "complication": "The guest initially says 'half each' but then explains the unequal item grouping.",
+        "success_checks": [
+          "Resolve the conflicting descriptions.",
+          "Place dessert with food.",
+          "Confirm the grouping before payment."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "An empty plate still has a purpose",
+          "setting": "Table 2 has a shared vegetable dish, as in the case.",
+          "turns": [
+            [
+              "Server",
+              "May I clear this plate, or are you still using it for the shared vegetables?"
+            ],
+            [
+              "Guest",
+              "Please leave it. I was just about to take another portion from that serving dish."
+            ],
+            [
+              "Server",
+              "Of course. Are these two empty glasses finished with, or would you prefer them left too?"
+            ],
+            [
+              "Guest",
+              "You can take the glasses. We'd like to keep the water jug and our water glasses."
+            ],
+            [
+              "Server",
+              "I'll clear only the two empty juice glasses, leaving the jug and all plates here."
+            ],
+            [
+              "Guest",
+              "Thank you. Could we have another sharing plate for the person at the end?"
+            ],
+            [
+              "Server",
+              "Certainly. Would one small plate be enough, or does anyone else need one as well?"
+            ],
+            [
+              "Guest",
+              "Just one, please. The rest of us already have plates for the shared food."
+            ],
+            [
+              "Server",
+              "Here you are. I'll leave the serving dish until you tell me you're finished with it."
+            ],
+            [
+              "Guest",
+              "That's helpful. We're taking our time, but we don't need all those empty glasses."
+            ]
+          ]
+        },
+        {
+          "title": "Reaching across a conversation",
+          "setting": "A server needs permission to retrieve a dish near a guest.",
+          "turns": [
+            [
+              "Server",
+              "Excuse me, may I reach across for that empty dish, or should I come around?"
+            ],
+            [
+              "Guest",
+              "Please come around. There's an open laptop here, and I don't want anything moved across it."
+            ],
+            [
+              "Server",
+              "Certainly. I'll approach from the other side so your laptop can stay where it is."
+            ],
+            [
+              "Guest",
+              "Thank you. The dish is finished, but the cup beside it still has tea inside."
+            ],
+            [
+              "Server",
+              "I'll take just the dish. Would you like the cup moved closer to you?"
+            ],
+            [
+              "Guest",
+              "No, it's fine there. I'm waiting for the tea to cool before I drink it."
+            ],
+            [
+              "Server",
+              "Understood. I'll leave the cup and its saucer exactly where you've placed them."
+            ],
+            [
+              "Guest",
+              "Could you remove the unused menu too? We have everything we want for now."
+            ],
+            [
+              "Server",
+              "Yes, I'll take that menu from this side without disturbing the laptop or drink."
+            ],
+            [
+              "Guest",
+              "That gives us more room. Thanks for checking which things we still needed."
+            ]
+          ]
+        },
+        {
+          "title": "Enough settings for a shared dessert",
+          "setting": "Two diners want one dessert but separate spoons and plates.",
+          "turns": [
+            [
+              "Guest",
+              "We're sharing one dessert. Could you bring enough tableware so we don't have to pass it around?"
+            ],
+            [
+              "Server",
+              "Certainly. Would you like two small plates and a spoon for each of you?"
+            ],
+            [
+              "Guest",
+              "Yes, please. The dessert can stay in the center while we divide it ourselves."
+            ],
+            [
+              "Server",
+              "I'll bring two dessert place settings and leave room for the shared dish."
+            ],
+            [
+              "Guest",
+              "Please leave our coffee cups as well, even though one looks almost empty now."
+            ],
+            [
+              "Server",
+              "Of course. Are you finished with the bread basket, or is that still in use?"
+            ],
+            [
+              "Guest",
+              "The basket can go, but my friend is keeping the last piece on their side plate."
+            ],
+            [
+              "Server",
+              "I'll remove the basket only. Your side plates and coffee cups will stay here."
+            ],
+            [
+              "Guest",
+              "That sounds right. There should be plenty of space once the basket is gone."
+            ],
+            [
+              "Server",
+              "Here are the dessert plates and spoons; I'll set the shared dish between you."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A guest steps away",
+        "brief": "A guest leaves the table briefly. Their companion says the main plate is still in use, but the starter plate is finished.",
+        "role_a": "Server: confirm which plate can be cleared.",
+        "role_b": "Companion: identify the small starter plate and ask that the main stay.",
+        "opening_line": "Which plate has your companion finished with?",
+        "complication": "Both plates contain scraps, so appearance alone does not resolve the question.",
+        "success_checks": [
+          "Identify the small starter plate.",
+          "Leave the main in place.",
+          "Avoid inferring that the absent guest has finished."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Two tables, two different loose ends",
+          "setting": "The 8:00 handover in the case.",
+          "turns": [
+            [
+              "Outgoing server",
+              "Can you take tables four and five? Four's mains are served, but they haven't ordered dessert."
+            ],
+            [
+              "Maya",
+              "Yes. I'll check whether they want dessert once they've had time to finish their mains."
+            ],
+            [
+              "Outgoing server",
+              "Five has an open check; the shift lead is reviewing a possible duplicate coffee charge."
+            ],
+            [
+              "Maya",
+              "So I shouldn't present their current bill again as though the question were already resolved?"
+            ],
+            [
+              "Outgoing server",
+              "Correct. Please get the lead's decision first, then explain the confirmed outcome to the table."
+            ],
+            [
+              "Maya",
+              "I'll take that follow-up too. Have either table's guests been told that I'm replacing you?"
+            ],
+            [
+              "Outgoing server",
+              "Not yet. I'll introduce you before I leave the section to restock the service station."
+            ],
+            [
+              "Maya",
+              "Good. Is there any other food order waiting to be sent for those tables?"
+            ],
+            [
+              "Outgoing server",
+              "No pending food orders. The dessert preference and the coffee-charge review are the remaining tasks."
+            ],
+            [
+              "Maya",
+              "Understood. I'll handle those two checks, and you can finish the station restock."
+            ]
+          ]
+        },
+        {
+          "title": "A break handover includes the limit",
+          "setting": "A server asks a colleague to cover one table during a short break.",
+          "turns": [
+            [
+              "Server",
+              "I'm taking a ten-minute break. Could you cover table six without taking over my whole section?"
+            ],
+            [
+              "Cover server",
+              "Yes, table six only. What have they received, and is any part of their order pending?"
+            ],
+            [
+              "Server",
+              "Their mains have arrived. They asked for more water, but I haven't brought it yet."
+            ],
+            [
+              "Cover server",
+              "I'll bring the water and check whether they need anything else while you're away."
+            ],
+            [
+              "Server",
+              "Thank you. Their dessert order hasn't been discussed, so please don't assume they're finished."
+            ],
+            [
+              "Cover server",
+              "Understood. If they want dessert, I'll take the order and tell you when you return."
+            ],
+            [
+              "Server",
+              "The bill is also open, with no query or adjustment requested at this point."
+            ],
+            [
+              "Cover server",
+              "If they ask to pay during your break, I'll handle that under our usual arrangement."
+            ],
+            [
+              "Server",
+              "Please let me know afterward whether the check is still open or has been settled."
+            ],
+            [
+              "Cover server",
+              "I will. Water is the immediate request, and I'll report any order or payment change."
+            ]
+          ]
+        },
+        {
+          "title": "Restocking without an assumption",
+          "setting": "Two servers divide closing support work while one table remains seated.",
+          "turns": [
+            [
+              "Server",
+              "I'll do the napkin side work while you cover the remaining table. Have the clean cutlery trays arrived?"
+            ],
+            [
+              "Colleague",
+              "One tray has arrived, but the second is still with the dish team."
+            ],
+            [
+              "Server",
+              "Then I won't mark the whole station restock complete yet. Which supplies are actually missing?"
+            ],
+            [
+              "Colleague",
+              "Small spoons and folded napkins. The forks and dinner knives are already stocked in their compartments."
+            ],
+            [
+              "Server",
+              "I'll finish the napkins, and you can ask about the small spoons after checking the table."
+            ],
+            [
+              "Colleague",
+              "That works. The table hasn't paid, so I need to stay available for their bill request."
+            ],
+            [
+              "Server",
+              "I'll leave the service station accessible while they're here."
+            ],
+            [
+              "Colleague",
+              "Thanks. Could you tell me when the napkins are done so I don't repeat that task?"
+            ],
+            [
+              "Server",
+              "They are stocked now. Only the spoon tray remains outstanding from the list we discussed."
+            ],
+            [
+              "Colleague",
+              "I'll follow up with the dish team once the table's immediate request has been handled."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A move between sections",
+        "brief": "Table 9 moves to table 19 for a quieter seat. The same unpaid order must follow the diners. The incoming server has not been briefed.",
+        "role_a": "Outgoing server: explain the move and current order.",
+        "role_b": "Incoming server: accept the diners at 19; their drinks have arrived and mains are pending.",
+        "opening_line": "The guests at nineteen moved from nine; they haven't placed a second order.",
+        "complication": "A runner still sees table 9 on the food ticket.",
+        "success_checks": [
+          "Identify old and new tables.",
+          "Avoid duplicating the order.",
+          "Confirm who tells the runner and follows up on the mains."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "Ordering for someone arriving later",
+      "setting": "A diner wants three meals entered, but the third person's choice and arrival time are unconfirmed.",
+      "dialogue": [
+        [
+          "Server",
+          "You mentioned three covers, but there are two people here. Are you ready to order?"
+        ],
+        [
+          "Guest",
+          "We are, although our colleague is still traveling. Could you order his usual dish too?"
+        ],
+        [
+          "Server",
+          "I don't have his usual order recorded. Do you know the dish he actually wants?"
+        ],
+        [
+          "Guest",
+          "I think it's the chicken, but he sometimes chooses the vegetable tart instead of that."
+        ],
+        [
+          "Server",
+          "I can take your two confirmed choices now and leave his meal open for the moment."
+        ],
+        [
+          "Guest",
+          "That sounds sensible. We'd like two tarts, one with salad and one with potatoes, please."
+        ],
+        [
+          "Server",
+          "Which side belongs to your tart? I'll attach each choice to a separate seat number."
+        ],
+        [
+          "Guest",
+          "The salad is mine, here by the aisle. My colleague opposite me would like potatoes."
+        ],
+        [
+          "Server",
+          "Thank you. Would you prefer these sent now, or would you rather wait for him?"
+        ],
+        [
+          "Guest",
+          "Send ours now. His message says he may be another twenty minutes, but that could change."
+        ],
+        [
+          "Server",
+          "I'll send the two tarts and leave the third order unentered until someone confirms it."
+        ],
+        [
+          "Guest",
+          "Perfect. We'll ask him to choose when he arrives instead of guessing what he wants."
+        ]
+      ],
+      "notes": [
+        "'His usual dish' assumes shared knowledge; asking for the dish name repairs that gap.",
+        "'Unentered' describes an order not yet sent, not a meal that has been canceled."
+      ]
+    },
+    {
+      "title": "Comparing lunch with an evening menu",
+      "setting": "A guest holds an evening menu at lunch; the server explains a narrower lunch offer.",
+      "dialogue": [
+        [
+          "Guest",
+          "This menu lists a three-course offer for thirty dollars. Can we order that for lunch?"
+        ],
+        [
+          "Server",
+          "That offer belongs to the evening menu. I'm sorry we brought the wrong menu to you."
+        ],
+        [
+          "Guest",
+          "We've already chosen from it. Which of those dishes can we still have this afternoon?"
+        ],
+        [
+          "Server",
+          "The soup and vegetable tart appear on both menus, but the baked dessert is evening only."
+        ],
+        [
+          "Guest",
+          "Does ordering the soup and tart here give us the evening offer's price without dessert?"
+        ],
+        [
+          "Server",
+          "No, the lunch menu prices those two items separately: seven dollars and nineteen dollars, respectively."
+        ],
+        [
+          "Guest",
+          "So twenty-six dollars covers the two dishes, but no dessert or drink is included in that?"
+        ],
+        [
+          "Server",
+          "Correct. There's also a twenty-two-dollar lunch set with the tart and a drink, without soup."
+        ],
+        [
+          "Guest",
+          "I want the soup, whereas my friend wants a drink. We don't need identical menu options."
+        ],
+        [
+          "Server",
+          "Then I can enter your soup and tart separately and your friend's tart as the lunch set."
+        ],
+        [
+          "Guest",
+          "Please do that, and leave these lunch menus so we can check the drinks that qualify."
+        ],
+        [
+          "Server",
+          "Here they are. I'll remove the evening menus so the two different offers don't get confused."
+        ]
+      ],
+      "notes": [
+        "'Respectively' matches the first price to the first item and the second price to the second item.",
+        "'Belongs to the evening menu' explains the mismatch without suggesting the guest misread the offer."
+      ]
+    },
+    {
+      "title": "A group order contains an unconfirmed assurance",
+      "setting": "A server checks a host's group order when one diner has a food-allergy question.",
+      "dialogue": [
+        [
+          "Server",
+          "Before I enter the shared starters, does anyone need to speak with us about an allergy?"
+        ],
+        [
+          "Host",
+          "One person mentioned a nut allergy. I told them the plain-looking bread should be all right."
+        ],
+        [
+          "Server",
+          "Let's check that with the diner and kitchen lead. Appearance doesn't tell us the relevant ingredients."
+        ],
+        [
+          "Host",
+          "Could we simply leave the bread off their plate and keep the shared starters as ordered?"
+        ],
+        [
+          "Server",
+          "That still wouldn't answer their questions about ingredients or cross-contact in the other dishes you've chosen."
+        ],
+        [
+          "Host",
+          "I see. I shouldn't have spoken for them. Can you ask the diner directly and privately?"
+        ],
+        [
+          "Server",
+          "Yes. I'll ask what concern they want checked and pass their words to the kitchen lead."
+        ],
+        [
+          "Host",
+          "The rest of us are ready. Must every order wait while that conversation takes place today?"
+        ],
+        [
+          "Server",
+          "I can clarify the separate orders, but I won't send a shared selection as suitable for everyone."
+        ],
+        [
+          "Host",
+          "Please keep the shared starters pending, then. We can decide on individual dishes after the discussion."
+        ],
+        [
+          "Server",
+          "I'll do that. Which person wanted the conversation, so I can approach them without announcing personal details?"
+        ],
+        [
+          "Host",
+          "The diner beside the window asked me. I'll introduce you, and they can explain the concern themselves."
+        ]
+      ],
+      "notes": [
+        "'Plain-looking' describes appearance, not ingredients.",
+        "'Speak for someone' means represent their wishes; asking directly avoids relying on a secondhand assurance."
+      ]
+    },
+    {
+      "title": "A delayed guest changes the pace",
+      "setting": "A server and diner coordinate a meal when a third guest arrives midway through starters.",
+      "dialogue": [
+        [
+          "Guest",
+          "Our friend has arrived now. Can their main come out at the same time as ours?"
+        ],
+        [
+          "Server",
+          "Your mains have already been fired. I can ask about timing, but I can't promise that."
+        ],
+        [
+          "Guest",
+          "They haven't chosen yet. Would holding our finished plates make it easier for everyone to eat together?"
+        ],
+        [
+          "Server",
+          "I'll discuss the course timing with the kitchen rather than assume finished dishes can simply wait."
+        ],
+        [
+          "Guest",
+          "What information do you need from us before you ask them to make that timing decision?"
+        ],
+        [
+          "Server",
+          "First, their confirmed dish, and whether you're willing to delay your own meal if that's workable."
+        ],
+        [
+          "Guest",
+          "They've chosen the vegetable pasta. We can wait a little, but our train leaves at nine."
+        ],
+        [
+          "Server",
+          "It's eight fifteen now. I'll give the kitchen that departure constraint and check the options immediately."
+        ],
+        [
+          "Guest",
+          "Could our friend receive their pasta separately if the kitchen can't bring everything at the same time?"
+        ],
+        [
+          "Server",
+          "I've checked: your mains are nearly ready. Separate service is possible, but the pasta estimate isn't confirmed."
+        ],
+        [
+          "Guest",
+          "Let's keep our existing pickup and order the pasta separately. Our friend agrees to eat a little later."
+        ],
+        [
+          "Server",
+          "I'll confirm that directly with your friend and explain that their wait hasn't yet been estimated."
+        ]
+      ],
+      "notes": [
+        "'Have already been fired' places the start of preparation before the current request.",
+        "'If that's workable' makes flexibility conditional instead of assuming the kitchen can change the sequence."
+      ]
+    },
+    {
+      "title": "The apology addresses the wrong issue",
+      "setting": "A guest's complaint concerns a missing side, not the taste of the main dish.",
+      "dialogue": [
+        [
+          "Guest",
+          "When I said something was wrong, you offered another main, but that's not what I meant."
+        ],
+        [
+          "Server",
+          "I'm sorry I misunderstood. Could you point out the specific part of the order that's missing?"
+        ],
+        [
+          "Guest",
+          "The menu includes a side salad. The fish is fine, but the salad never arrived here."
+        ],
+        [
+          "Server",
+          "Thank you for clarifying. I'll check that missing side rather than ask the kitchen to remake the fish."
+        ],
+        [
+          "Guest",
+          "Please don't take the whole plate away. I'd like to keep eating while it's still enjoyable."
+        ],
+        [
+          "Server",
+          "Of course. Your fish stays here. I'll ask the kitchen about the included salad and its timing."
+        ],
+        [
+          "Guest",
+          "My colleague ordered an extra salad, so perhaps that caused the confusion when the plates came out."
+        ],
+        [
+          "Server",
+          "I'll check both tickets rather than assume that's the explanation. Your included side remains our responsibility."
+        ],
+        [
+          "Guest",
+          "That would help. I don't want their separately ordered salad removed or charged to my bill instead."
+        ],
+        [
+          "Server",
+          "I've checked: your included salad was missed, and the kitchen is preparing it with no extra item charge."
+        ],
+        [
+          "Guest",
+          "Thanks. That's the correction I needed. Please let the other server know the main doesn't need replacing."
+        ],
+        [
+          "Server",
+          "I'll tell them the omitted side was the issue; both main orders remain unchanged."
+        ]
+      ],
+      "notes": [
+        "'Rather than' redirects the proposed action to the actual problem.",
+        "'Omitted' means left out; it does not say whether the omission was deliberate."
+      ]
+    },
+    {
+      "title": "A receipt request after payment",
+      "setting": "A diner needs an itemized receipt after paying but doesn't want another payment processed.",
+      "dialogue": [
+        [
+          "Guest",
+          "Could you give me something showing the individual dishes? This small slip only shows the payment total."
+        ],
+        [
+          "Server",
+          "Certainly. You're asking for an itemized receipt for the completed transaction, not to reopen the bill, correct?"
+        ],
+        [
+          "Guest",
+          "That's right. I need the meal details for my records, and I already paid the full amount."
+        ],
+        [
+          "Server",
+          "I'll locate that transaction and print its itemized receipt. Do you remember the table number this evening?"
+        ],
+        [
+          "Guest",
+          "We were at table sixteen, and there were two of us. We left about ten minutes ago."
+        ],
+        [
+          "Server",
+          "I have the matching completed bill here. It lists two mains, one shared dessert, and two drinks."
+        ],
+        [
+          "Guest",
+          "That sounds right. Please don't add a second payment or change the amounts on the original bill."
+        ],
+        [
+          "Server",
+          "No additional payment is being requested. This is another receipt for the transaction that is already complete."
+        ],
+        [
+          "Guest",
+          "Could the receipt show the restaurant name and date as well as those individual items, please?"
+        ],
+        [
+          "Server",
+          "Yes, those appear at the top of this itemized receipt. Please check that the meal details match."
+        ],
+        [
+          "Guest",
+          "They do. I confused the payment slip with the itemized version, so thank you for explaining that."
+        ],
+        [
+          "Server",
+          "You're welcome. Here is the itemized copy to keep with your payment slip."
+        ]
+      ],
+      "notes": [
+        "'For the completed transaction' distinguishes a receipt copy from a new purchase.",
+        "'Itemized' means broken into individual entries, not necessarily divided among different payers."
+      ]
+    },
+    {
+      "title": "Making room without taking over",
+      "setting": "A crowded table needs space for mains while diners keep a shared starter.",
+      "dialogue": [
+        [
+          "Server",
+          "Your mains are nearly ready, and the table is crowded. May we make a little space together?"
+        ],
+        [
+          "Guest",
+          "Yes, but we're still sharing the starter. Please don't take it away just to make room."
+        ],
+        [
+          "Server",
+          "I'll leave that dish. Which of these smaller items have you finished using for this course?"
+        ],
+        [
+          "Guest",
+          "The empty butter dish and bread basket can go, but we still need the side plates here."
+        ],
+        [
+          "Server",
+          "Thank you. I can remove those two items and bring the water jug closer to this edge."
+        ],
+        [
+          "Guest",
+          "Please check with my companion before moving their glass. They have arranged things so they're easy to reach."
+        ],
+        [
+          "Server",
+          "Certainly. I'll ask them directly, and nothing needs to move just because I've suggested a different position."
+        ],
+        [
+          "Guest",
+          "Could we also have one clean serving spoon? The original one fell, and we haven't used it since."
+        ],
+        [
+          "Server",
+          "I'll bring a replacement spoon. I'll let the runner know the starter is staying while mains arrive."
+        ],
+        [
+          "Guest",
+          "That's the arrangement we'd like. We aren't asking for another starter or changing our main course orders."
+        ],
+        [
+          "Server",
+          "Understood. One replacement spoon, the two empty items cleared, and the shared starter left on the table."
+        ],
+        [
+          "Guest",
+          "There's enough space now. Thank you for checking what we'd finished."
+        ]
+      ],
+      "notes": [
+        "'Finished using' focuses on the item, not whether the guest has finished the meal.",
+        "'The starter is staying' is a concise service instruction; it doesn't mean another starter was ordered."
+      ]
+    },
+    {
+      "title": "A handover exposes an unfinished request",
+      "setting": "An incoming server checks whether a takeaway-box request has actually been completed.",
+      "dialogue": [
+        [
+          "Incoming server",
+          "Before we finish the handover, which tables are still waiting for something?"
+        ],
+        [
+          "Outgoing server",
+          "Table twenty has paid, and table twenty-two is waiting for dessert. Everything else should be fairly straightforward."
+        ],
+        [
+          "Incoming server",
+          "Table twenty asked me about a takeaway box. Was that request completed before they settled their bill?"
+        ],
+        [
+          "Outgoing server",
+          "I asked a runner for a box, but I haven't seen it reach the table yet."
+        ],
+        [
+          "Incoming server",
+          "Then payment is complete, but the box request remains unconfirmed. I'll check with the guests directly now."
+        ],
+        [
+          "Outgoing server",
+          "Thank you. Table twenty-two ordered one tart and two spoons; the dessert station has accepted that order."
+        ],
+        [
+          "Incoming server",
+          "Do they know the estimated wait, or is that another detail I need to obtain for them?"
+        ],
+        [
+          "Outgoing server",
+          "They were given an estimate of five minutes just now. Please pass on any change from the station."
+        ],
+        [
+          "Incoming server",
+          "I'll take the box check and the dessert follow-up. Have you already finished the napkin restock here?"
+        ],
+        [
+          "Outgoing server",
+          "Yes, the napkins are complete. The clean spoon delivery is still pending, so don't mark that task done."
+        ],
+        [
+          "Incoming server",
+          "Understood. I'll own the two table requests and ask the dish team about the missing spoons afterward."
+        ],
+        [
+          "Outgoing server",
+          "I'll introduce you before leaving, so they know whom to ask."
+        ]
+      ],
+      "notes": [
+        "'I asked a runner' reports a request, not delivery; 'seen it reach the table' supplies completion evidence.",
+        "'Paid' describes the bill status but does not prove all service requests are finished."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2474 @@
+{
+  "course": {
+    "slug": "automotive-service",
+    "title": "Automotive Service English",
+    "summary": "Capture customer concerns, clarify assessment approval, relay technician findings, explain parts delays, and coordinate collection and repeat-visit communication.",
+    "roles": "Service reception staff, service advisors, automotive technicians, parts-counter staff, and workshop assistants",
+    "category": "Industry & infrastructure",
+    "scope_note": "All vehicles, people, prices, incidents, findings, and shop arrangements are fictional English practice, not automotive diagnosis, repair instruction, driving advice, legal advice, or financial guidance. No script establishes vehicle safety or universal rights, charges, warranty terms, or authorization rules. Refer technical assessments, safe-use questions, hazardous conditions, pricing decisions, warranty coverage, and release requirements to the responsible qualified people and applicable local arrangements.",
+    "sources": [
+      {
+        "title": "BLS Occupational Outlook Handbook: Automotive Service Technicians and Mechanics",
+        "url": "https://www.bls.gov/ooh/installation-maintenance-and-repair/automotive-service-technicians-and-mechanics.htm"
+      },
+      {
+        "title": "Federal Trade Commission: Auto Repair Basics, repair information and customer questions",
+        "url": "https://consumer.ftc.gov/articles/0211-auto-repair-basics"
+      }
+    ],
+    "modules": [
+      {
+        "title": "Capturing the customer's concern",
+        "terms": [
+          "repair order",
+          "intermittent concern",
+          "symptom description",
+          "vehicle identification number"
+        ],
+        "collocations": [
+          "record the customer's words: preserve what was actually reported",
+          "clarify when it happens: ask about the reported circumstances",
+          "verify the vehicle identity: match the booking to the right vehicle",
+          "separate symptom from diagnosis: distinguish experience from technical explanation"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Customer reports an occasional rattle from the rear after the car has been parked overnight. They do not know its cause. Two household cars are on the account; today's booking is the blue hatchback. No technician assessment has occurred.",
+          "model": "Let me confirm that this concern is for the blue hatchback, not the other car on your account. You hear an occasional rear rattle after the car has been parked overnight. Have I captured that accurately? I'll record your description for the technician without naming a faulty component before an assessment."
+        },
+        "workshop": {
+          "title": "Record the concern without rewriting it as a diagnosis",
+          "goal": "Clarify vehicle identity and reported circumstances.",
+          "explanation": "Customer descriptions guide the handoff but do not establish a mechanical cause.",
+          "frames": [
+            "Which vehicle does this concern relate to?",
+            "You notice ___ when ___; is that accurate?",
+            "I'll record ___ as reported, with the cause unconfirmed."
+          ],
+          "before": "Your rear suspension is broken.",
+          "after": "You report an occasional rear rattle after overnight parking; the cause is unconfirmed.",
+          "reason": "The revised description preserves the symptom without inventing a fault.",
+          "questions": [
+            {
+              "prompt": "Customer: It happens some mornings, but not every time.\nAdvisor: I'll describe the concern as ____.",
+              "options": [
+                "continuous",
+                "intermittent",
+                "resolved",
+                "reproduced"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Continuous means ongoing, which contradicts some mornings.",
+                "Correct. Intermittent means it occurs only sometimes.",
+                "The customer has not reported a resolution.",
+                "No technician has yet reproduced the concern."
+              ]
+            },
+            {
+              "prompt": "Customer: The blue hatchback rattles; the other car on the account does not.\nAdvisor: I'll add your report to the hatchback's ____, without recording a confirmed fault.",
+              "options": [
+                "current repair order",
+                "completed inspection finding",
+                "approved repair scope",
+                "parts replacement request"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The repair order can preserve the reported concern.",
+                "An inspection finding would imply a technician's assessment.",
+                "Describing a symptom does not define an approved repair scope.",
+                "No diagnosis supports requesting a replacement part at this stage."
+              ]
+            }
+          ],
+          "role_b": "Customer: the blue hatchback rattles on some mornings after overnight parking; you cannot identify a component.",
+          "challenge": "Customer suggests a component name from an online video. Record it as their suggestion, not a diagnosis."
+        }
+      },
+      {
+        "title": "Clarifying the appointment and drop-off",
+        "terms": [
+          "drop-off appointment",
+          "waiting appointment",
+          "intake check",
+          "contact preference"
+        ],
+        "collocations": [
+          "confirm the appointment type: distinguish drop-off from waiting",
+          "set a callback window: agree when communication is expected",
+          "verify the contact preference: check channel and availability",
+          "clarify the intake check: separate reception from technician work"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "Customer booked an 08:00 drop-off but expects work to begin at 08:00 and finish by 09:00. The booking confirms intake only. Advisor can offer a status update by 10:00, not a finish guarantee; customer prefers a phone call.",
+          "model": "Eight o'clock is your drop-off appointment for intake; it isn't a confirmed technician start or finish time. I understand you were expecting the car back by nine. We can give you a phone update by ten about the assessment status. Before you decide about the visit, let's make that difference in timing clear."
+        },
+        "workshop": {
+          "title": "Distinguish reception timing from completion timing",
+          "goal": "Correct a booking assumption before the customer relies on it.",
+          "explanation": "A booking time can identify intake rather than the start of technical work.",
+          "frames": [
+            "___ is the drop-off time, not ___.",
+            "We can update you by ___ about ___.",
+            "Would you prefer contact by ___?"
+          ],
+          "before": "Eight means we'll start then.",
+          "after": "Eight is intake; a technician start time has not been confirmed.",
+          "reason": "The revision explains exactly what the appointment establishes.",
+          "questions": [
+            {
+              "prompt": "Customer: Does eight o'clock guarantee work starts then?\nAdvisor: It confirms ____, not a technician start.",
+              "options": [
+                "repair completion",
+                "diagnosis",
+                "drop-off intake",
+                "parts arrival"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "Completion has not been promised at eight.",
+                "No assessment result is confirmed at intake.",
+                "Correct. The booked time is for reception intake.",
+                "The booking says nothing about parts arrival."
+              ]
+            },
+            {
+              "prompt": "Customer: Please call rather than text, but I haven't approved any repair.\nAdvisor: I'll record your ____, leaving work authorization unchanged.",
+              "options": [
+                "contact preference",
+                "repair decision",
+                "completion requirement",
+                "assessment finding"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A call preference changes communication, not work approval.",
+                "The customer explicitly has not made a repair decision.",
+                "The request concerns contact method, not a guaranteed finish.",
+                "No technical assessment result was provided by this request."
+              ]
+            }
+          ],
+          "role_b": "Customer: you need a realistic update and prefer a phone call; nine was your assumption.",
+          "challenge": "Customer asks whether a waiting appointment would guarantee a one-hour visit. Do not infer an unconfirmed finish time."
+        }
+      },
+      {
+        "title": "Explaining estimates and approval limits",
+        "terms": [
+          "estimate",
+          "diagnostic charge",
+          "authorization limit",
+          "additional work"
+        ],
+        "collocations": [
+          "explain the estimate scope: identify the work a stated amount covers",
+          "confirm the authorization limit: repeat the customer's agreed boundary",
+          "request approval for additional work: seek a decision on a defined proposal",
+          "distinguish assessment from repair: name what the current charge covers"
+        ],
+        "case": {
+          "function": "clarify",
+          "brief": "Fictional shop offers assessment for $95 under its stated booking terms. No repair is included. Customer says 'go ahead' but intends only the assessment. Advisor must read back the scope and route any later repair proposal for separate approval.",
+          "model": "To confirm, your approval is for the ninety-five-dollar assessment described in this booking, not for a repair or additional work. If the technician recommends something beyond that scope, we'll explain the proposal and seek a separate decision under the shop's terms. Is that the authorization you intend to give?"
+        },
+        "workshop": {
+          "title": "Attach approval to a defined scope",
+          "goal": "Check what 'go ahead' actually authorizes.",
+          "explanation": "An amount without a task description can be misunderstood. This fictional arrangement is not a universal rule about charges or approval.",
+          "frames": [
+            "Your approval covers ___ for ___, correct?",
+            "That does not include ___.",
+            "Any proposed additional work needs ___."
+          ],
+          "before": "You said go ahead, so everything is approved.",
+          "after": "You approved the stated assessment only; repairs would need a separate decision.",
+          "reason": "The read-back ties agreement to the customer's intended scope.",
+          "questions": [
+            {
+              "prompt": "Customer: I approve the assessment, not a repair.\nAdvisor: I'll keep the authorization ____ to that scope.",
+              "options": [
+                "extended",
+                "unrelated",
+                "converted",
+                "limited"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "Extended would enlarge the scope they approved.",
+                "Unrelated would disconnect approval from the task.",
+                "Converted does not express the required scope boundary.",
+                "Correct. Limited preserves the customer's stated boundary."
+              ]
+            },
+            {
+              "prompt": "Customer: Does the diagnostic charge cover all repairs?\nAdvisor: In this booking it covers the ____ only.",
+              "options": [
+                "assessment",
+                "replacement",
+                "installation",
+                "completed repair"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. The stated charge is for assessment only.",
+                "Replacement work is not included in this scope.",
+                "Installation work is not part of this booking.",
+                "No completed repair is included in the assessment."
+              ]
+            }
+          ],
+          "role_b": "Customer: approve only the $95 assessment; ask for a separate repair explanation before deciding.",
+          "challenge": "Customer sets a contact preference but does not approve repairs. Keep contact permission separate from work authorization."
+        }
+      },
+      {
+        "title": "Handing the concern to the technician",
+        "terms": [
+          "job card",
+          "reported condition",
+          "technician finding",
+          "carryover job"
+        ],
+        "collocations": [
+          "hand over the job card: transfer the current scope and concern",
+          "attribute the reported condition: identify the customer's account",
+          "separate a finding from a report: distinguish technician evidence",
+          "read back the work scope: confirm the agreed task before handoff"
+        ],
+        "case": {
+          "function": "handoff",
+          "brief": "Job card 208 concerns a customer-reported intermittent cabin rattle after overnight parking. Customer approved assessment only, is unavailable from 12:00 to 14:00, and prefers a phone call after 14:00. Technician has not reproduced the concern. Advisor hands over these facts without a diagnosis.",
+          "model": "Job card 208 is assessment only. The customer reports an intermittent cabin rattle after overnight parking; no technician finding is recorded yet. They are unavailable from noon to two and prefer a call afterward. Please keep their report separate from your findings and return any proposed additional work to the service desk for discussion."
+        },
+        "workshop": {
+          "title": "Preserve source, scope, and contact constraints",
+          "goal": "Give a technician a usable handoff without inserting a diagnosis.",
+          "explanation": "A job card should distinguish what the customer said from what the technician observed.",
+          "frames": [
+            "The customer reports ___ under ___.",
+            "The approved scope is ___.",
+            "Their contact restriction is ___; findings are ___."
+          ],
+          "before": "The technician found the rattle already.",
+          "after": "The customer reported the rattle; the technician has not yet reproduced it.",
+          "reason": "The wording preserves the actual source of information.",
+          "questions": [
+            {
+              "prompt": "Technician: Was the noise confirmed by another technician?\nAdvisor: No; it is customer-____.",
+              "options": [
+                "repaired",
+                "reported",
+                "replaced",
+                "resolved"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "Repaired would imply completed technical work.",
+                "Correct. The customer is the source of this account.",
+                "Replaced describes an item change, not a report.",
+                "Resolved would imply the concern ended."
+              ]
+            },
+            {
+              "prompt": "Technician: Did someone establish the 'faulty speaker' written on the job card?\nAdvisor: No. It is ____; the customer only suggested it.",
+              "options": [
+                "a confirmed technician finding",
+                "an approved repair instruction",
+                "an unverified customer hypothesis",
+                "a completed diagnostic conclusion"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No technician has established the proposed speaker fault.",
+                "The suggestion is not permission to carry out a repair.",
+                "Correct. The explanation is the customer's unconfirmed suggestion.",
+                "No completed assessment supports that diagnostic conclusion."
+              ]
+            }
+          ],
+          "role_b": "Technician: repeat assessment-only scope and the customer's contact window.",
+          "challenge": "A previous job card lists a different concern. Keep that history distinct from the current customer report."
+        }
+      },
+      {
+        "title": "Explaining parts and completion delays",
+        "terms": [
+          "back order",
+          "estimated delivery date",
+          "battery terminal",
+          "completion estimate"
+        ],
+        "collocations": [
+          "check parts availability: verify supply of the specified item",
+          "update the completion estimate: revise expected finish timing",
+          "separate arrival from installation: distinguish supply from completed work",
+          "explain a back order: state the supply constraint without blaming"
+        ],
+        "case": {
+          "function": "update",
+          "brief": "Part for job 315 is on back order. Supplier estimates Tuesday arrival; shipment is not confirmed. Customer wants Tuesday pickup. Technician scheduling and completion remain unconfirmed. Parts clerk promises a supply-status update Monday afternoon.",
+          "model": "The part for job 315 is on back order. Tuesday is the supplier's estimated delivery date, not a confirmed arrival or vehicle collection time. The parts desk will update us Monday afternoon. Once supply is confirmed, the service team can review the completion estimate; I can't promise Tuesday pickup on the information we have."
+        },
+        "workshop": {
+          "title": "Explain the dependency behind a delay",
+          "goal": "Give parts status without turning a supplier estimate into a collection promise.",
+          "explanation": "Part arrival, technical work, and vehicle readiness are separate stages.",
+          "frames": [
+            "The part is ___; the supplier estimates ___.",
+            "That date refers to ___, not ___.",
+            "Our next status update is ___."
+          ],
+          "before": "Your car will be ready when the part arrives.",
+          "after": "The part's arrival is estimated; the completion time still needs review.",
+          "reason": "The revision preserves the work remaining after supply.",
+          "questions": [
+            {
+              "prompt": "Customer: Is Tuesday the pickup date?\nAdvisor: It is the estimated part ____ date.",
+              "options": [
+                "completion",
+                "collection",
+                "approval",
+                "delivery"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "The vehicle's work is not confirmed complete then.",
+                "Customer collection is not what the supplier estimates.",
+                "No approval date is being described.",
+                "Correct. The estimate concerns the part arriving."
+              ]
+            },
+            {
+              "prompt": "Parts clerk: Has the item shipped?\nAdvisor: Shipment is still ____; we only have an estimate.",
+              "options": [
+                "confirmed",
+                "unconfirmed",
+                "received",
+                "completed"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "The scenario explicitly lacks shipment confirmation.",
+                "Correct. An estimate does not confirm dispatch.",
+                "Receipt would occur after an actual shipment.",
+                "Completed overstates the current supply evidence."
+              ]
+            }
+          ],
+          "role_b": "Customer: Tuesday pickup matters, but you need an honest update about the supply dependency.",
+          "challenge": "A tracking label is created without confirmed carrier possession. Avoid reporting actual shipment from label creation alone."
+        }
+      },
+      {
+        "title": "Relaying findings and technical terms",
+        "terms": [
+          "brake pad",
+          "brake disc",
+          "tread depth",
+          "diagnostic trouble code"
+        ],
+        "collocations": [
+          "relay a brake-pad finding: attribute the condition report to the technician",
+          "identify the brake disc: explain that disc and rotor can name the same component",
+          "quote a tread-depth measurement: preserve the technician's stated value and unit without inventing an assessment",
+          "distinguish a code from a diagnosis: explain that a recorded DTC does not alone prove component failure"
+        ],
+        "case": {
+          "function": "qualify",
+          "brief": "A technician's assessment note records a diagnostic trouble code, or DTC, but no confirmed cause or component fault. Customer assumes it proves a sensor needs replacement. Advisor must relay the limited finding and request a technician explanation; no replacement is approved.",
+          "model": "The technician recorded a diagnostic trouble code, but the note does not confirm a failed sensor or a required replacement. A stored code is information for assessment, not a component diagnosis by itself. I'll ask the technician to explain this finding and any proposed next step before you consider additional work."
+        },
+        "workshop": {
+          "title": "Distinguish recorded findings from conclusions",
+          "goal": "Explain technical terms and the limits of a technician's stated findings.",
+          "explanation": "Attribute findings to the qualified technician. A diagnostic trouble code records a monitored condition, not automatic proof of a failed component. Likewise, not reproduced limits an assessment result without dismissing the customer's account.",
+          "frames": [
+            "The technician recorded ___, but has not confirmed ___.",
+            "In this note, ___ refers to ___.",
+            "Please ask the technician to explain the significance before ___."
+          ],
+          "before": "That code proves the sensor needs replacing.",
+          "after": "A code was recorded; a failed sensor has not been confirmed by the technician.",
+          "reason": "The correction separates diagnostic information from a conclusion that the report does not support.",
+          "questions": [
+            {
+              "prompt": "Customer: The report records a DTC but gives no confirmed cause. Does it prove the sensor failed?\nAdvisor: No. It is ____, not a confirmed component diagnosis.",
+              "options": [
+                "an approved replacement",
+                "a completed repair",
+                "a recorded diagnostic trouble code",
+                "a reproduced customer symptom"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No replacement approval appears in the stated report.",
+                "The code does not establish any completed repair.",
+                "Correct. The code is recorded information requiring interpretation.",
+                "A stored code does not establish that the symptom was reproduced."
+              ]
+            },
+            {
+              "prompt": "Customer: Is a recommendation already approved work?\nAdvisor: No; it is a ____ for discussion.",
+              "options": [
+                "proposal",
+                "completion",
+                "receipt",
+                "finding of approval"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A recommendation proposes rather than authorizes work.",
+                "Completion would mean the work is already finished.",
+                "A receipt records an event or payment.",
+                "No approval has been established by recommending work."
+              ]
+            }
+          ],
+          "role_b": "Customer: the report mentions a stored code; ask whether that proves a sensor failure and what remains unconfirmed.",
+          "challenge": "The customer sees rotor on the report and brake disc in a message. Explain the naming equivalence without claiming its condition or approving replacement."
+        }
+      },
+      {
+        "title": "Clarifying the invoice and collection handoff",
+        "terms": [
+          "itemized invoice",
+          "labor charge",
+          "collection confirmation",
+          "authorized collector"
+        ],
+        "collocations": [
+          "review the itemized invoice: explain the listed lines without inventing charges",
+          "distinguish parts from labor: identify separate cost categories",
+          "confirm collection readiness: verify the actual release status",
+          "check the authorized collector: follow the shop's identity and permission requirements"
+        ],
+        "case": {
+          "function": "explain",
+          "brief": "Fictional invoice totals $180: $70 parts and $110 labor. Customer thinks labor includes another $70 part charge. Vehicle readiness has not yet been confirmed by the service desk; invoice creation alone is not collection confirmation.",
+          "model": "This invoice separates seventy dollars for parts from one hundred ten dollars for labor, giving a total of one hundred eighty dollars. The labor line is not another seventy-dollar parts charge. I can clarify those categories now, but the invoice's availability doesn't itself confirm collection readiness; the service desk still needs to confirm that status."
+        },
+        "workshop": {
+          "title": "Explain the bill without overstating readiness",
+          "goal": "Clarify charge categories and separate billing from vehicle release.",
+          "explanation": "Use the stated fictional invoice, not assumptions about shop rates, tax rules, or universal charges.",
+          "frames": [
+            "The invoice separates ___ from ___.",
+            "These listed amounts total ___.",
+            "Collection readiness still needs ___."
+          ],
+          "before": "The invoice means you can collect now.",
+          "after": "The invoice is available; vehicle readiness is a separate confirmation.",
+          "reason": "A billing record is not automatic release evidence.",
+          "questions": [
+            {
+              "prompt": "Customer: Does labor mean another parts charge?\nAdvisor: No; these are ____ invoice categories.",
+              "options": [
+                "duplicated",
+                "separate",
+                "identical",
+                "interchangeable"
+              ],
+              "correct_index": 1,
+              "feedback": [
+                "No duplicated charge is established in this invoice.",
+                "Correct. Parts and labor are distinct categories.",
+                "They refer to different kinds of charges.",
+                "One category does not replace the other."
+              ]
+            },
+            {
+              "prompt": "Customer: Is the invoice a ready-to-collect message?\nAdvisor: No; collection still needs ____.",
+              "options": [
+                "quotation",
+                "estimation",
+                "recommendation",
+                "confirmation"
+              ],
+              "correct_index": 3,
+              "feedback": [
+                "A quotation concerns proposed pricing rather than readiness.",
+                "An estimate would not establish actual readiness.",
+                "A recommendation does not establish readiness either.",
+                "Correct. The service desk must confirm the collection status."
+              ]
+            }
+          ],
+          "role_b": "Customer: you misread parts and labor; ask whether you may collect immediately.",
+          "challenge": "A friend offers to collect. Do not infer permission from possession of an invoice; refer to the shop's collection requirements."
+        }
+      },
+      {
+        "title": "Handling a repeat concern and follow-up",
+        "terms": [
+          "repeat visit",
+          "callback request",
+          "warranty inquiry",
+          "case reference"
+        ],
+        "collocations": [
+          "acknowledge a repeat concern: recognize the customer's ongoing experience",
+          "link the previous repair order: connect relevant history without assuming cause",
+          "refer a warranty inquiry: seek review of the applicable terms",
+          "confirm callback ownership: identify who will respond and when"
+        ],
+        "case": {
+          "function": "repair",
+          "brief": "Customer calls two days after service, reporting the same intermittent rattle. Advisor initially said 'that cannot be the same issue.' Cause and warranty coverage are unknown. Service lead Nia can call at 15:00 to review the report and next arrangements.",
+          "model": "I spoke too definitively when I said it couldn't be the same issue. You've reported the rattle again, and we need to review that account alongside the earlier repair order. Nia can call at three to discuss the next arrangements. I can't yet identify the cause or confirm whether any warranty terms apply."
+        },
+        "workshop": {
+          "title": "Correct a dismissive response",
+          "goal": "Acknowledge the customer's report and repair an unsupported claim.",
+          "explanation": "A repeat symptom does not prove the same cause, a failed repair, or warranty coverage. It deserves a factual review.",
+          "frames": [
+            "I spoke too definitively when I said ___.",
+            "You report ___ again; we need to review ___.",
+            "___ will call at ___ to discuss ___."
+          ],
+          "before": "That can't happen after our work.",
+          "after": "You have reported the concern again; we'll review it alongside the earlier job.",
+          "reason": "The revision removes an unsupported denial without inventing a cause.",
+          "questions": [
+            {
+              "prompt": "Customer: Are you saying the repair definitely failed?\nAdvisor: No; the cause remains ____.",
+              "options": [
+                "confirmed",
+                "replaced",
+                "unconfirmed",
+                "completed"
+              ],
+              "correct_index": 2,
+              "feedback": [
+                "No technical review has established the cause.",
+                "Replacement is an action, not the evidence status.",
+                "Correct. The cause has not yet been established.",
+                "Completion does not describe an unknown cause."
+              ]
+            },
+            {
+              "prompt": "Customer: Does the callback approve warranty coverage?\nAdvisor: No; it arranges a ____ of your inquiry.",
+              "options": [
+                "review",
+                "guarantee",
+                "payment",
+                "replacement"
+              ],
+              "correct_index": 0,
+              "feedback": [
+                "Correct. A review considers the inquiry without deciding it.",
+                "The callback is not a coverage guarantee.",
+                "No payment decision has been confirmed here.",
+                "No replacement has been approved by this call."
+              ]
+            }
+          ],
+          "role_b": "Customer: the rattle recurred; ask to be heard and linked to the previous visit.",
+          "challenge": "Customer demands a no-cost outcome before review. Acknowledge the concern and refer the charge or coverage decision without a promise."
+        }
+      }
+    ],
+    "jargon": [
+      {
+        "term": "repair order",
+        "definition": "The job record linking a vehicle, customer concern, agreed work, and service results.",
+        "group": "Capturing the customer's concern"
+      },
+      {
+        "term": "intermittent concern",
+        "definition": "A reported problem that occurs sometimes rather than continuously.",
+        "group": "Capturing the customer's concern"
+      },
+      {
+        "term": "symptom description",
+        "definition": "The customer's account of what they noticed, without a confirmed explanation of cause.",
+        "group": "Capturing the customer's concern"
+      },
+      {
+        "term": "vehicle identification number",
+        "definition": "The vehicle's unique identifying code, commonly shortened to VIN.",
+        "group": "Capturing the customer's concern"
+      },
+      {
+        "term": "drop-off appointment",
+        "definition": "A booking in which the customer leaves the vehicle rather than waiting throughout the visit.",
+        "group": "Clarifying the appointment and drop-off"
+      },
+      {
+        "term": "waiting appointment",
+        "definition": "A booking arranged around the customer's plan to remain at the service location, without automatically guaranteeing completion time.",
+        "group": "Clarifying the appointment and drop-off"
+      },
+      {
+        "term": "intake check",
+        "definition": "The reception-stage confirmation of the vehicle, concern, and agreed service arrangements.",
+        "group": "Clarifying the appointment and drop-off"
+      },
+      {
+        "term": "contact preference",
+        "definition": "The customer's stated channel and availability for service communications.",
+        "group": "Clarifying the appointment and drop-off"
+      },
+      {
+        "term": "estimate",
+        "definition": "A stated anticipated cost for a defined service scope, subject to its expressed terms.",
+        "group": "Explaining estimates and approval limits"
+      },
+      {
+        "term": "diagnostic charge",
+        "definition": "A charge for agreed assessment work, distinct from charges for any later repair.",
+        "group": "Explaining estimates and approval limits"
+      },
+      {
+        "term": "authorization limit",
+        "definition": "The stated amount or scope a customer has agreed may proceed under the applicable service arrangement.",
+        "group": "Explaining estimates and approval limits"
+      },
+      {
+        "term": "additional work",
+        "definition": "Work beyond the currently agreed scope that requires its own clarification and approval.",
+        "group": "Explaining estimates and approval limits"
+      },
+      {
+        "term": "job card",
+        "definition": "The workshop record identifying the assigned vehicle, work scope, and relevant job details.",
+        "group": "Handing the concern to the technician"
+      },
+      {
+        "term": "reported condition",
+        "definition": "A circumstance described by the customer that has not necessarily been independently observed.",
+        "group": "Handing the concern to the technician"
+      },
+      {
+        "term": "technician finding",
+        "definition": "An observation or assessment actually made and recorded by the technician.",
+        "group": "Handing the concern to the technician"
+      },
+      {
+        "term": "carryover job",
+        "definition": "A service job remaining incomplete when it passes to another work period or colleague.",
+        "group": "Handing the concern to the technician"
+      },
+      {
+        "term": "back order",
+        "definition": "An order for a part that cannot currently be supplied from available stock.",
+        "group": "Explaining parts and completion delays"
+      },
+      {
+        "term": "estimated delivery date",
+        "definition": "The supplier's predicted arrival date, not confirmation that a part has arrived.",
+        "group": "Explaining parts and completion delays"
+      },
+      {
+        "term": "parts availability",
+        "definition": "Whether the specified part can actually be supplied for the job.",
+        "group": "Explaining parts and completion delays"
+      },
+      {
+        "term": "completion estimate",
+        "definition": "The currently expected time when agreed work may finish, subject to stated dependencies.",
+        "group": "Explaining parts and completion delays"
+      },
+      {
+        "term": "inspection finding",
+        "definition": "An observation or assessment recorded during the vehicle's technical review.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "recommendation",
+        "definition": "A proposed next action for the customer to consider, with relevant explanation and terms.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "not reproduced",
+        "definition": "A finding that the reported concern did not occur during the assessment performed.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "service history",
+        "definition": "The available record of previous maintenance and repair work for a vehicle.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "itemized invoice",
+        "definition": "A bill separating the individual work, parts, and other stated charges.",
+        "group": "Clarifying the invoice and collection handoff"
+      },
+      {
+        "term": "labor charge",
+        "definition": "The invoice amount for the workshop work described, distinct from the listed parts charge.",
+        "group": "Clarifying the invoice and collection handoff"
+      },
+      {
+        "term": "collection confirmation",
+        "definition": "A message confirming the vehicle is ready for collection under the service arrangement.",
+        "group": "Clarifying the invoice and collection handoff"
+      },
+      {
+        "term": "authorized collector",
+        "definition": "A person whose permission to collect the vehicle has been confirmed under the shop's requirements.",
+        "group": "Clarifying the invoice and collection handoff"
+      },
+      {
+        "term": "repeat visit",
+        "definition": "A return to the service business about a continuing or recurring concern.",
+        "group": "Handling a repeat concern and follow-up"
+      },
+      {
+        "term": "callback request",
+        "definition": "A request for a service-team member to contact the customer again.",
+        "group": "Handling a repeat concern and follow-up"
+      },
+      {
+        "term": "warranty inquiry",
+        "definition": "A question about whether stated warranty terms apply, not a confirmed coverage decision.",
+        "group": "Handling a repeat concern and follow-up"
+      },
+      {
+        "term": "case reference",
+        "definition": "The identifier used to link messages, visits, and review activity concerning an issue.",
+        "group": "Handling a repeat concern and follow-up"
+      },
+      {
+        "term": "brake pad",
+        "definition": "The friction-material component that presses against a brake disc in a disc-brake assembly; condition assessment belongs to a qualified technician.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "brake disc",
+        "definition": "The rotating disc, also called a rotor, against which brake pads act in a disc-brake system.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "tread depth",
+        "definition": "The measured depth of the grooves in a tire's tread; interpretation depends on the applicable technical and local requirements.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "diagnostic trouble code",
+        "definition": "A code stored by a vehicle's diagnostic system indicating a monitored condition for investigation, often shortened to DTC; it does not by itself prove a particular component has failed.",
+        "group": "Relaying findings and technical terms"
+      },
+      {
+        "term": "coolant",
+        "definition": "Fluid in a vehicle's cooling system used to carry heat; its specification and condition require qualified assessment.",
+        "group": "Handing the concern to the technician"
+      },
+      {
+        "term": "battery terminal",
+        "definition": "A battery's electrical connection point linking it with the vehicle's electrical circuit.",
+        "group": "Explaining parts and completion delays"
+      }
+    ]
+  },
+  "lesson_conversations": {
+    "module-1": {
+      "conversations": [
+        {
+          "title": "Two cars, one reported rattle",
+          "setting": "At reception, an advisor clarifies the customer's vehicle and concern.",
+          "turns": [
+            [
+              "Advisor",
+              "Which car is today's concern about, the blue hatchback or your white sedan?"
+            ],
+            [
+              "Customer",
+              "The blue hatchback. I sometimes hear a rattle from the rear after overnight parking."
+            ],
+            [
+              "Advisor",
+              "Does it happen every morning, or only occasionally when you first notice it?"
+            ],
+            [
+              "Customer",
+              "Only occasionally. I can't identify a component, and I haven't noticed a consistent pattern."
+            ],
+            [
+              "Advisor",
+              "I'll record an intermittent concern, with your rear-rattle description and the overnight-parking detail."
+            ],
+            [
+              "Customer",
+              "Please don't call it a suspension fault. That was just someone's suggestion online."
+            ],
+            [
+              "Advisor",
+              "I won't. We need the technician's assessment before naming a cause on the repair order."
+            ],
+            [
+              "Customer",
+              "Can you make sure the account's other car doesn't inherit this concern too?"
+            ],
+            [
+              "Advisor",
+              "Yes. We'll verify the vehicle identification number against this booking and vehicle record."
+            ],
+            [
+              "Customer",
+              "Thank you. That keeps my symptom description attached to the car actually being assessed."
+            ]
+          ]
+        },
+        {
+          "title": "The sound word needs clarification",
+          "setting": "An advisor asks a customer to clarify an informal noise description.",
+          "turns": [
+            [
+              "Customer",
+              "I wrote clicking on the booking, but rattling might describe the sound better."
+            ],
+            [
+              "Advisor",
+              "Could you describe what you noticed without worrying about choosing a technical word?"
+            ],
+            [
+              "Customer",
+              "It was several quick little sounds, not one loud impact, near the passenger side."
+            ],
+            [
+              "Advisor",
+              "I'll preserve that description rather than translate it into a component diagnosis."
+            ],
+            [
+              "Customer",
+              "Please say it was my impression of the location, not something I verified."
+            ],
+            [
+              "Advisor",
+              "Certainly. I'll mark passenger side as reported, with the exact source unconfirmed."
+            ],
+            [
+              "Customer",
+              "Does changing my word from clicking to rattling mean the booking needs canceling?"
+            ],
+            [
+              "Advisor",
+              "No. We can clarify the concern on the existing repair order for this vehicle."
+            ],
+            [
+              "Customer",
+              "Then include both my earlier wording and the clearer description we're discussing now."
+            ],
+            [
+              "Advisor",
+              "I will. The technician can see how your description was clarified at intake."
+            ]
+          ]
+        },
+        {
+          "title": "Yesterday is not every day",
+          "setting": "An advisor checks the timing of a customer's concern.",
+          "turns": [
+            [
+              "Advisor",
+              "The booking says the display goes blank daily. Is that frequency accurate?"
+            ],
+            [
+              "Customer",
+              "No. It happened yesterday once; I don't know why I selected daily online."
+            ],
+            [
+              "Advisor",
+              "Thanks for correcting it. Had you noticed the same display issue before yesterday?"
+            ],
+            [
+              "Customer",
+              "Not that I remember. I don't want to claim it has never happened."
+            ],
+            [
+              "Advisor",
+              "I'll record one episode reported yesterday, with no earlier episode recalled by you."
+            ],
+            [
+              "Customer",
+              "That sounds right. Can the technician see that I corrected the original frequency?"
+            ],
+            [
+              "Advisor",
+              "Yes. I'll clarify the intake record so daily isn't treated as confirmed history."
+            ],
+            [
+              "Customer",
+              "Please also distinguish the display from the whole electrical system. I can't assess that."
+            ],
+            [
+              "Advisor",
+              "Agreed. Your report concerns the display only, and the cause remains unconfirmed."
+            ],
+            [
+              "Customer",
+              "Then the symptom description now reflects what I actually observed rather than assumptions."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A relative's report",
+        "brief": "Customer booked a visit for a concern their partner noticed once on Monday. Customer has not experienced it personally; partner can provide details after 16:00.",
+        "role_a": "Advisor: attribute the report and confirm who can clarify it.",
+        "role_b": "Customer: distinguish your knowledge from your partner's experience.",
+        "opening_line": "Did you notice this yourself, or are you relaying your partner's account?",
+        "complication": "Customer asks you to record it as happening every trip.",
+        "success_checks": [
+          "Attribute the Monday report.",
+          "Avoid inventing frequency.",
+          "Identify the partner's available contact time."
+        ]
+      }
+    },
+    "module-2": {
+      "conversations": [
+        {
+          "title": "Eight is the drop-off time",
+          "setting": "An advisor clarifies an 08:00 booking before the customer leaves.",
+          "turns": [
+            [
+              "Customer",
+              "My appointment is eight, so I expected the car finished by nine today."
+            ],
+            [
+              "Advisor",
+              "Eight is your drop-off intake, not a confirmed technician start or completion time."
+            ],
+            [
+              "Customer",
+              "I misunderstood. I booked a ride based on having the car back within an hour."
+            ],
+            [
+              "Advisor",
+              "I'm sorry the timing wasn't clear. We can provide a phone update by ten."
+            ],
+            [
+              "Customer",
+              "Will that call tell me the assessment status, or guarantee the work is finished?"
+            ],
+            [
+              "Advisor",
+              "It will give the actual status. It isn't a promise of completion by ten."
+            ],
+            [
+              "Customer",
+              "Please call rather than text. I can answer at the number on my booking."
+            ],
+            [
+              "Advisor",
+              "I've confirmed that contact preference. Is the revised timing clear before you decide?"
+            ],
+            [
+              "Customer",
+              "Yes. I understand the drop-off appointment and the callback, but no finish time is guaranteed."
+            ],
+            [
+              "Advisor",
+              "That's the arrangement. We'll keep any later completion estimate separate from the intake time."
+            ]
+          ]
+        },
+        {
+          "title": "Waiting does not settle the finish time",
+          "setting": "A customer asks reception about remaining at the shop.",
+          "turns": [
+            [
+              "Customer",
+              "I selected a waiting appointment. Does that mean you'll finish before my eleven-o'clock meeting?"
+            ],
+            [
+              "Receptionist",
+              "The booking records your plan to wait, but no eleven-o'clock completion is confirmed."
+            ],
+            [
+              "Customer",
+              "I need to know that now rather than discover it after the intake check."
+            ],
+            [
+              "Receptionist",
+              "Of course. I can ask the service advisor to review timing before you proceed."
+            ],
+            [
+              "Customer",
+              "Please tell them the meeting is fixed, but I can choose another appointment."
+            ],
+            [
+              "Receptionist",
+              "I'll give them that constraint and request available alternatives, not cancel this booking automatically."
+            ],
+            [
+              "Customer",
+              "Could the advisor explain whether leaving the vehicle would change the timing estimate?"
+            ],
+            [
+              "Receptionist",
+              "Yes. That is a scheduling question for them; I can't guarantee a faster result."
+            ],
+            [
+              "Customer",
+              "Then I'll wait for that explanation before deciding whether to keep today's appointment."
+            ],
+            [
+              "Receptionist",
+              "I'll connect you now, with the current booking and your meeting time clearly stated."
+            ]
+          ]
+        },
+        {
+          "title": "A text cannot reach the customer",
+          "setting": "An advisor verifies a callback arrangement at drop-off.",
+          "turns": [
+            [
+              "Advisor",
+              "Your booking lists text messages as the preferred contact method for today's updates."
+            ],
+            [
+              "Customer",
+              "That number belongs to an old phone. Please use a call to my current number."
+            ],
+            [
+              "Advisor",
+              "Let's confirm the current number through our booking check before changing the contact record."
+            ],
+            [
+              "Customer",
+              "Certainly. I also can't answer between one and two because I'm presenting at work."
+            ],
+            [
+              "Advisor",
+              "I'll record that availability limit alongside your preference for a phone call today."
+            ],
+            [
+              "Customer",
+              "Does giving a new number authorize additional work if someone reaches me there?"
+            ],
+            [
+              "Advisor",
+              "No. Contact details only arrange communication; any work decision needs its own clear confirmation."
+            ],
+            [
+              "Customer",
+              "Thank you. Please make that distinction if another advisor takes over this afternoon."
+            ],
+            [
+              "Advisor",
+              "I'll include the verified number, call preference, and unavailable period in the handoff."
+            ],
+            [
+              "Customer",
+              "Then the next advisor can reach me without assuming my contact update approves repairs."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A revised drop-off message",
+        "brief": "Original booking: 09:00. A reminder says 09:30; office record has not been checked. Customer asks whether the later time replaces the earlier one.",
+        "role_a": "Receptionist: compare message dates and request booking confirmation.",
+        "role_b": "Customer: provide both messages; don't cancel either time yourself.",
+        "opening_line": "Which message is the current booking confirmation?",
+        "complication": "Customer treats the most recent automated message as guaranteed correct.",
+        "success_checks": [
+          "Identify the two times.",
+          "Ask the booking desk to resolve them.",
+          "Do not invent a technician start or finish time."
+        ]
+      }
+    },
+    "module-3": {
+      "conversations": [
+        {
+          "title": "Ninety-five dollars for assessment only",
+          "setting": "An advisor reads back a fictional shop's assessment terms.",
+          "turns": [
+            [
+              "Customer",
+              "Ninety-five dollars is fine. Go ahead with the assessment, but not a repair."
+            ],
+            [
+              "Advisor",
+              "To confirm, your approval covers the stated ninety-five-dollar assessment only under this booking."
+            ],
+            [
+              "Customer",
+              "Yes. I want to hear any findings and proposed repair price before deciding."
+            ],
+            [
+              "Advisor",
+              "I'll preserve that authorization limit. Additional work would need a separate discussion and decision."
+            ],
+            [
+              "Customer",
+              "Does saying go ahead mean the technician can add other work up to that amount?"
+            ],
+            [
+              "Advisor",
+              "No. Your approval names the assessment scope, not any task costing less than ninety-five."
+            ],
+            [
+              "Customer",
+              "Thank you. Please explain that distinction on the repair order for the technician."
+            ],
+            [
+              "Advisor",
+              "I will. The diagnostic charge and any later repair proposal will remain separate."
+            ],
+            [
+              "Customer",
+              "And the amount you stated applies to this particular assessment, not every service visit?"
+            ],
+            [
+              "Advisor",
+              "Correct. These are this booking's stated terms; other service scopes have their own terms."
+            ]
+          ]
+        },
+        {
+          "title": "Approval for one proposed item",
+          "setting": "A customer clarifies a decision after receiving two service proposals.",
+          "turns": [
+            [
+              "Advisor",
+              "The technician's report includes two proposals, listed separately as item A and item B."
+            ],
+            [
+              "Customer",
+              "I approve item A under the quoted terms, but I haven't decided about B."
+            ],
+            [
+              "Advisor",
+              "Then I'll record approval for A only, with B awaiting your separate decision."
+            ],
+            [
+              "Customer",
+              "Please don't mark the whole estimate approved just because I accepted one line."
+            ],
+            [
+              "Advisor",
+              "I won't. Each proposal needs to retain its actual approval status on this record."
+            ],
+            [
+              "Customer",
+              "Can I ask more questions about B without that being treated as permission?"
+            ],
+            [
+              "Advisor",
+              "Yes. I'll arrange an explanation; asking about an item isn't approval to proceed."
+            ],
+            [
+              "Customer",
+              "That's helpful. My question is what the recommendation means, not when to start it."
+            ],
+            [
+              "Advisor",
+              "I'll pass that question to the technician and leave B's authorization status unchanged."
+            ],
+            [
+              "Customer",
+              "Then we agree: A approved as quoted, B unapproved while I seek clarification."
+            ]
+          ]
+        },
+        {
+          "title": "An estimate revision needs explanation",
+          "setting": "A customer queries two differently dated estimates.",
+          "turns": [
+            [
+              "Customer",
+              "I have an earlier estimate for two hundred dollars and a newer one for two forty."
+            ],
+            [
+              "Advisor",
+              "The newer document includes a proposed additional line. It doesn't establish that you approved it."
+            ],
+            [
+              "Customer",
+              "I approved the earlier scope. Please explain what changed before seeking another decision."
+            ],
+            [
+              "Advisor",
+              "I'll compare the two versions and identify that added line for your review."
+            ],
+            [
+              "Customer",
+              "Does the revised total automatically replace the authorization limit from our earlier conversation?"
+            ],
+            [
+              "Advisor",
+              "No. We need to clarify the proposed change and your actual decision under the shop's terms."
+            ],
+            [
+              "Customer",
+              "Then don't describe my request for an explanation as refusal of every service item."
+            ],
+            [
+              "Advisor",
+              "I won't. Your earlier approval and the new proposal are separate parts of this record."
+            ],
+            [
+              "Customer",
+              "Please give me the explanation with both dates so I can follow the comparison."
+            ],
+            [
+              "Advisor",
+              "I'll arrange that now and preserve the additional line as pending your decision."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "An amount without an agreed task",
+        "brief": "Customer says 'up to $200 is okay' while discussing two different assessments. No scope is selected yet.",
+        "role_a": "Advisor: ask which assessment the customer means.",
+        "role_b": "Customer: intend the cabin-noise assessment only; exclude the separate display concern.",
+        "opening_line": "Which specific assessment does that amount apply to?",
+        "complication": "Another staff member interprets the amount as permission for any work.",
+        "success_checks": [
+          "Attach amount to a named assessment.",
+          "Exclude the other concern from this approval.",
+          "Read back the scope before recording the decision."
+        ]
+      }
+    },
+    "module-4": {
+      "conversations": [
+        {
+          "title": "Job card 208",
+          "setting": "An advisor hands an assessment-only job to a technician.",
+          "turns": [
+            [
+              "Advisor",
+              "Job card two oh eight is assessment only for a reported intermittent cabin rattle."
+            ],
+            [
+              "Technician",
+              "Has another technician reproduced it, or is the description entirely from the customer?"
+            ],
+            [
+              "Advisor",
+              "It is customer-reported after overnight parking; no technician finding is recorded yet."
+            ],
+            [
+              "Technician",
+              "I'll keep that report distinct from whatever this assessment actually establishes or doesn't establish."
+            ],
+            [
+              "Advisor",
+              "The customer is unavailable from noon to two and prefers a call afterward."
+            ],
+            [
+              "Technician",
+              "Thanks. Any additional work proposal should go through the service desk for discussion."
+            ],
+            [
+              "Advisor",
+              "Correct. Their contact preference doesn't extend the currently agreed scope on this job."
+            ],
+            [
+              "Technician",
+              "Does the previous repair order concern the same symptom or a different visit?"
+            ],
+            [
+              "Advisor",
+              "It concerns a display issue; don't merge that history with today's reported rattle."
+            ],
+            [
+              "Technician",
+              "I have the scope, source, and contact window. I'll return findings against this job card."
+            ]
+          ]
+        },
+        {
+          "title": "A coolant observation in a carryover job",
+          "setting": "A technician hands a stated finding to the incoming service advisor without prescribing work.",
+          "turns": [
+            [
+              "Technician",
+              "This carryover job includes my recorded coolant observation, but no repair is approved."
+            ],
+            [
+              "Advisor",
+              "Please distinguish your actual finding from the customer's original report before I call them."
+            ],
+            [
+              "Technician",
+              "The customer reported a visible mark. My note records coolant residue at the inspected location."
+            ],
+            [
+              "Advisor",
+              "Has that established a particular faulty component, or does the cause remain unconfirmed?"
+            ],
+            [
+              "Technician",
+              "No component fault is confirmed. Please relay the observation without adding a repair recommendation."
+            ],
+            [
+              "Advisor",
+              "I can explain that coolant is fluid used in the vehicle's cooling system."
+            ],
+            [
+              "Technician",
+              "Yes, but refer the observation's significance to me; don't advise the customer on handling it."
+            ],
+            [
+              "Advisor",
+              "I'll keep the technical explanation separate from any proposed additional work or charge."
+            ],
+            [
+              "Technician",
+              "The service desk owns the callback. No completion estimate has been confirmed for this carryover."
+            ],
+            [
+              "Advisor",
+              "I'll report the stated finding and ask you to explain the remaining uncertainty directly."
+            ]
+          ]
+        },
+        {
+          "title": "The customer's hypothesis was copied as a finding",
+          "setting": "An advisor corrects a job-card wording error with a technician.",
+          "turns": [
+            [
+              "Advisor",
+              "The job card says faulty speaker, but that was the customer's suggestion, not a finding."
+            ],
+            [
+              "Technician",
+              "Thanks for flagging it. What did the customer actually report experiencing in the vehicle?"
+            ],
+            [
+              "Advisor",
+              "An occasional buzz near the door. They wondered whether the speaker might be involved."
+            ],
+            [
+              "Technician",
+              "Then the symptom description is the buzz; the speaker explanation remains their unverified hypothesis."
+            ],
+            [
+              "Advisor",
+              "I'll correct the source wording and retain both pieces without treating the suggestion as established."
+            ],
+            [
+              "Technician",
+              "Please notify the service desk too, since they may have seen the stronger wording already."
+            ],
+            [
+              "Advisor",
+              "I will. Updating the card doesn't guarantee earlier readers know the claim was corrected."
+            ],
+            [
+              "Technician",
+              "Exactly. We need the handoff to distinguish customer-reported condition from technician finding."
+            ],
+            [
+              "Advisor",
+              "No assessment result exists yet. I'll make that explicit in the corrected message."
+            ],
+            [
+              "Technician",
+              "That gives me an accurate starting point without presupposing a cause for the reported sound."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A report from another workshop",
+        "brief": "Customer brings a note from another workshop stating 'review requested.' Reception labels it a confirmed fault. Current technician has not assessed the vehicle.",
+        "role_a": "Advisor: distinguish the external note from a confirmed finding.",
+        "role_b": "Technician: ask for the note's exact wording and source.",
+        "opening_line": "Does the note report a finding, or request a review?",
+        "complication": "Someone wants to copy the presumed diagnosis into today's job card.",
+        "success_checks": [
+          "Preserve exact note meaning.",
+          "Attribute its external source.",
+          "Leave today's findings unconfirmed."
+        ]
+      }
+    },
+    "module-5": {
+      "conversations": [
+        {
+          "title": "Tuesday is the part estimate",
+          "setting": "An advisor updates a customer about job 315.",
+          "turns": [
+            [
+              "Advisor",
+              "The part for job three fifteen is on back order, with Tuesday estimated by the supplier."
+            ],
+            [
+              "Customer",
+              "Does that mean I can collect the car Tuesday afternoon once it arrives?"
+            ],
+            [
+              "Advisor",
+              "No. Tuesday describes estimated parts delivery, not confirmed arrival or completed vehicle work."
+            ],
+            [
+              "Customer",
+              "I need transport arrangements, so please don't leave the distinction hidden in the update."
+            ],
+            [
+              "Advisor",
+              "The parts desk will give us another supply-status update Monday afternoon, even if availability remains uncertain."
+            ],
+            [
+              "Customer",
+              "After that, can the service team review the completion estimate using the confirmed information?"
+            ],
+            [
+              "Advisor",
+              "Yes. They'll need supply status and workshop scheduling before giving a supported completion estimate."
+            ],
+            [
+              "Customer",
+              "Then I should treat Tuesday pickup as unconfirmed rather than reserve a ride around it."
+            ],
+            [
+              "Advisor",
+              "Correct. I'll keep the part estimate, next update, and vehicle readiness as separate stages."
+            ],
+            [
+              "Customer",
+              "Thank you. A clear uncertainty is more useful than an arrival date presented as a pickup promise."
+            ]
+          ]
+        },
+        {
+          "title": "A label exists, but dispatch is unconfirmed",
+          "setting": "A parts clerk clarifies shipment evidence with an advisor.",
+          "turns": [
+            [
+              "Advisor",
+              "The tracking page shows a label created. Can I tell the customer the part has shipped?"
+            ],
+            [
+              "Parts clerk",
+              "Not from that status alone. We haven't confirmed that the carrier received the actual package."
+            ],
+            [
+              "Advisor",
+              "Then label creation is a preparation event, not proof of the supplier's dispatch?"
+            ],
+            [
+              "Parts clerk",
+              "Exactly. I'll ask for shipment confirmation and keep the estimated delivery date qualified."
+            ],
+            [
+              "Advisor",
+              "The customer already knows a part was ordered; they need the current supply stage."
+            ],
+            [
+              "Parts clerk",
+              "You can say ordered, tracking label created, carrier possession not yet confirmed."
+            ],
+            [
+              "Advisor",
+              "I'll avoid calling it in transit until the tracking or supplier confirms that movement."
+            ],
+            [
+              "Parts clerk",
+              "Please do. The completion estimate also remains dependent on arrival and the remaining workshop schedule."
+            ],
+            [
+              "Advisor",
+              "Can you send the confirmed update to the service desk once the supplier responds?"
+            ],
+            [
+              "Parts clerk",
+              "Yes. I'll identify the part request and actual shipment status, not just forward an unexplained tracking number."
+            ]
+          ]
+        },
+        {
+          "title": "One part available, another pending",
+          "setting": "An advisor and parts clerk clarify a mixed supply status.",
+          "turns": [
+            [
+              "Advisor",
+              "The parts request names a battery terminal and a separate cover. Are both available?"
+            ],
+            [
+              "Parts clerk",
+              "Only the battery terminal, P1, is available. The cover, P2, awaits the supplier's response."
+            ],
+            [
+              "Advisor",
+              "Then saying the parts are here would overstate the status of the whole job."
+            ],
+            [
+              "Parts clerk",
+              "Correct. We need to identify each item rather than apply P1's status to both."
+            ],
+            [
+              "Advisor",
+              "Is P2 confirmed as a back order, or is parts availability simply unconfirmed?"
+            ],
+            [
+              "Parts clerk",
+              "Availability is unconfirmed. We don't yet have evidence for the more specific back-order status."
+            ],
+            [
+              "Advisor",
+              "I'll tell the customer one item is available and the second supply check remains pending."
+            ],
+            [
+              "Parts clerk",
+              "That is accurate. Don't infer a completion date from the availability of only P1."
+            ],
+            [
+              "Advisor",
+              "Please let the workshop know the same distinction so scheduling uses the actual supply status."
+            ],
+            [
+              "Parts clerk",
+              "I'll send an item-specific update with P1 available and P2 awaiting the supplier's answer."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The supplier updates only one date",
+        "brief": "Supplier moves estimated part arrival from Wednesday to Thursday. No vehicle completion date was confirmed. Customer believes a Wednesday pickup was canceled.",
+        "role_a": "Advisor: explain which estimate changed.",
+        "role_b": "Customer: ask for the next supply update and avoid assuming a new pickup date.",
+        "opening_line": "Was Wednesday the part estimate or a confirmed vehicle collection?",
+        "complication": "Customer treats Thursday arrival as Thursday completion.",
+        "success_checks": [
+          "Identify the parts estimate change.",
+          "Keep collection unconfirmed.",
+          "Agree the next status communication."
+        ]
+      }
+    },
+    "module-6": {
+      "conversations": [
+        {
+          "title": "Not reproduced is a limited finding",
+          "setting": "An advisor explains a technician's assessment outcome.",
+          "turns": [
+            [
+              "Customer",
+              "The report says not reproduced. Are you saying I imagined the rattle?"
+            ],
+            [
+              "Advisor",
+              "No. The technician didn't reproduce it during this assessment; that doesn't invalidate your report."
+            ],
+            [
+              "Customer",
+              "So you haven't confirmed that nothing is wrong under every possible condition?"
+            ],
+            [
+              "Advisor",
+              "Correct. The cause remains unconfirmed, and I shouldn't turn this finding into a broader guarantee."
+            ],
+            [
+              "Customer",
+              "I'd like someone to explain what the finding means before we discuss further options."
+            ],
+            [
+              "Advisor",
+              "I can arrange a technician explanation and preserve your question on the repair order."
+            ],
+            [
+              "Customer",
+              "Please don't record my request as approval for another assessment or a repair."
+            ],
+            [
+              "Advisor",
+              "I won't. Asking for an explanation is separate from deciding on additional work."
+            ],
+            [
+              "Customer",
+              "And can reception tell me whether the car is safe to drive now?"
+            ],
+            [
+              "Advisor",
+              "That question needs the qualified technician's response; I can't provide a safety assurance myself."
+            ]
+          ]
+        },
+        {
+          "title": "A recommendation needs an explanation",
+          "setting": "A customer asks an advisor about a technical recommendation.",
+          "turns": [
+            [
+              "Customer",
+              "The report recommends further assessment, but the brief message doesn't explain the reason."
+            ],
+            [
+              "Advisor",
+              "I can ask the technician to explain the finding behind that recommendation in plain language."
+            ],
+            [
+              "Customer",
+              "Please separate what they observed from what they are proposing to do next."
+            ],
+            [
+              "Advisor",
+              "I will. An inspection finding and a recommendation serve different purposes in the report."
+            ],
+            [
+              "Customer",
+              "Does the recommendation mean additional work has already been approved on my behalf?"
+            ],
+            [
+              "Advisor",
+              "No. It remains a proposal for discussion, with scope and terms to be clarified."
+            ],
+            [
+              "Customer",
+              "I want to understand those details before deciding, not reject everything automatically."
+            ],
+            [
+              "Advisor",
+              "I'll preserve that position: explanation requested, decision pending, no new authorization assumed."
+            ],
+            [
+              "Customer",
+              "Could the technician also clarify any unfamiliar term rather than just repeat it louder?"
+            ],
+            [
+              "Advisor",
+              "Yes. I'll ask for an explanation tied to your actual finding and proposed options."
+            ]
+          ]
+        },
+        {
+          "title": "A stored code is not a failed component",
+          "setting": "An advisor clarifies the limits of a technician's recorded diagnostic trouble code.",
+          "turns": [
+            [
+              "Customer",
+              "The report shows a diagnostic trouble code. Does that prove a sensor failed?"
+            ],
+            [
+              "Advisor",
+              "No. The technician recorded the code, but hasn't confirmed its underlying cause."
+            ],
+            [
+              "Customer",
+              "I thought a DTC named the exact part that definitely needed replacing."
+            ],
+            [
+              "Advisor",
+              "A diagnostic trouble code indicates a monitored condition for investigation, not automatic component failure."
+            ],
+            [
+              "Customer",
+              "Then please don't describe my question as permission to replace a sensor."
+            ],
+            [
+              "Advisor",
+              "I won't. No replacement is approved, and the technician needs to explain this finding."
+            ],
+            [
+              "Customer",
+              "Can they distinguish the stored code from anything actually reproduced during the assessment?"
+            ],
+            [
+              "Advisor",
+              "I'll ask for that distinction and any proposed next step, with its scope explained."
+            ],
+            [
+              "Customer",
+              "Please link the explanation to my current report rather than a generic list of codes."
+            ],
+            [
+              "Advisor",
+              "I will. Your code finding and any later diagnosis will remain separately identified."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A shorthand phrase confuses the customer",
+        "brief": "Technician note says 'further review recommended.' Customer reads it as a failed inspection. Advisor has no result beyond that exact note.",
+        "role_a": "Advisor: distinguish recommendation from a confirmed failed result.",
+        "role_b": "Customer: request a technician explanation before deciding.",
+        "opening_line": "Does the note state a failure, or recommend another review?",
+        "complication": "Customer asks reception to interpret the technical cause.",
+        "success_checks": [
+          "Relay only the stated finding.",
+          "Seek a qualified explanation.",
+          "Do not infer diagnosis or approval."
+        ]
+      }
+    },
+    "module-7": {
+      "conversations": [
+        {
+          "title": "Parts and labor are separate lines",
+          "setting": "An advisor explains a fictional $180 invoice.",
+          "turns": [
+            [
+              "Customer",
+              "The invoice lists seventy for parts and one hundred ten for labor. Is seventy charged twice?"
+            ],
+            [
+              "Advisor",
+              "No. The seventy-dollar parts line and one-hundred-ten-dollar labor charge total one hundred eighty."
+            ],
+            [
+              "Customer",
+              "Thank you. I read the headings too quickly and combined them incorrectly."
+            ],
+            [
+              "Advisor",
+              "I can walk through the itemized invoice using the actual descriptions shown here."
+            ],
+            [
+              "Customer",
+              "Since the invoice is available, can I come and collect the vehicle immediately?"
+            ],
+            [
+              "Advisor",
+              "Not yet on that basis. The service desk still needs to confirm collection readiness."
+            ],
+            [
+              "Customer",
+              "So billing information and the ready-to-collect message are separate confirmations in this case?"
+            ],
+            [
+              "Advisor",
+              "Exactly. I'll ask for the actual vehicle status rather than infer it from the bill."
+            ],
+            [
+              "Customer",
+              "Please call me when that status is confirmed, so I can arrange my ride."
+            ],
+            [
+              "Advisor",
+              "I'll record your call preference and keep the collection question open until the desk responds."
+            ]
+          ]
+        },
+        {
+          "title": "A friend offers to collect",
+          "setting": "A customer asks reception about a different collector.",
+          "turns": [
+            [
+              "Customer",
+              "My friend can collect the car. Is giving them a copy of the invoice enough?"
+            ],
+            [
+              "Receptionist",
+              "The invoice alone doesn't establish an authorized collector under this shop's collection requirements."
+            ],
+            [
+              "Customer",
+              "Then please explain what the service desk needs to confirm my collection arrangement."
+            ],
+            [
+              "Receptionist",
+              "I'll connect you with them so the identity and permission details are checked appropriately."
+            ],
+            [
+              "Customer",
+              "Please don't change the owner details on the account; I'm only asking about collection."
+            ],
+            [
+              "Receptionist",
+              "Understood. Collector permission and the vehicle's account information are different parts of the record."
+            ],
+            [
+              "Customer",
+              "Has the vehicle already been confirmed ready, or are we arranging collection in advance?"
+            ],
+            [
+              "Receptionist",
+              "The ready-to-collect confirmation is still pending. Your collector question doesn't change that status."
+            ],
+            [
+              "Customer",
+              "Then my friend should wait for both the arrangement and readiness confirmation before traveling."
+            ],
+            [
+              "Receptionist",
+              "Correct. I'll pass both outstanding questions to the desk without treating either as settled."
+            ]
+          ]
+        },
+        {
+          "title": "A receipt and an invoice are different records",
+          "setting": "A customer clarifies two service documents with an advisor.",
+          "turns": [
+            [
+              "Customer",
+              "This document says invoice. Does that prove the payment has already been received?"
+            ],
+            [
+              "Advisor",
+              "Not by its title alone. Let me check the payment status separately from the listed charges."
+            ],
+            [
+              "Customer",
+              "I don't want to make a second payment because I misunderstood which document I received."
+            ],
+            [
+              "Advisor",
+              "The account shows payment received, and the receipt reference is linked to this invoice."
+            ],
+            [
+              "Customer",
+              "Then please identify that receipt so I can keep the records together."
+            ],
+            [
+              "Advisor",
+              "Here is the matching reference. It confirms the recorded payment rather than adding another charge."
+            ],
+            [
+              "Customer",
+              "Does that payment record also confirm every service item I asked about was performed?"
+            ],
+            [
+              "Advisor",
+              "No. Work performed is described on the completed job record; payment doesn't expand its scope."
+            ],
+            [
+              "Customer",
+              "I'll compare those records rather than assume all my earlier questions became completed work."
+            ],
+            [
+              "Advisor",
+              "I can help identify the relevant lines and refer any technical completion question to the technician."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "The ready message names the other car",
+        "brief": "Household account has two vehicles. Ready message references the sedan; customer asks to collect the hatchback, whose status is unconfirmed.",
+        "role_a": "Advisor: match the message to its actual vehicle.",
+        "role_b": "Customer: provide both bookings; do not infer hatchback readiness.",
+        "opening_line": "Which vehicle and repair order does the ready message name?",
+        "complication": "Customer assumes one message covers both household cars.",
+        "success_checks": [
+          "Confirm the sedan reference.",
+          "Keep hatchback readiness separate.",
+          "Check the hatchback's service status."
+        ]
+      }
+    },
+    "module-8": {
+      "conversations": [
+        {
+          "title": "Correcting an overconfident denial",
+          "setting": "An advisor repairs an earlier response to a repeat concern.",
+          "turns": [
+            [
+              "Advisor",
+              "I spoke too definitively when I said it couldn't be the same issue."
+            ],
+            [
+              "Customer",
+              "I heard the rattle again two days after service. I need that taken seriously."
+            ],
+            [
+              "Advisor",
+              "We'll review your report alongside the earlier repair order without assuming its cause."
+            ],
+            [
+              "Customer",
+              "Are you promising the next visit is covered by warranty, or is that undecided?"
+            ],
+            [
+              "Advisor",
+              "Coverage is unconfirmed. Nia can call at three to discuss the report and next arrangements."
+            ],
+            [
+              "Customer",
+              "Please don't treat my warranty inquiry as proof that the earlier work failed."
+            ],
+            [
+              "Advisor",
+              "I won't. A recurring symptom, its cause, and applicable coverage need separate review."
+            ],
+            [
+              "Customer",
+              "Can the callback use the same case reference so I don't repeat everything?"
+            ],
+            [
+              "Advisor",
+              "Yes. I'll link the previous visit and today's report for Nia's callback."
+            ],
+            [
+              "Customer",
+              "Thank you. That corrects the earlier dismissal without making a new unsupported promise."
+            ]
+          ]
+        },
+        {
+          "title": "The same symptom may have a different cause",
+          "setting": "A service advisor takes a repeat-visit inquiry.",
+          "turns": [
+            [
+              "Customer",
+              "The display went blank again. Does that prove the same component failed twice?"
+            ],
+            [
+              "Advisor",
+              "I can't establish that from the symptom alone. The technician needs to review the recurrence."
+            ],
+            [
+              "Customer",
+              "Please connect this call with last month's repair order so the history is available."
+            ],
+            [
+              "Advisor",
+              "I will. I'll record your new report with today's date and the earlier reference."
+            ],
+            [
+              "Customer",
+              "I'd also like someone to explain whether any warranty terms apply to this concern."
+            ],
+            [
+              "Advisor",
+              "I can refer that warranty inquiry, but I can't confirm coverage before review."
+            ],
+            [
+              "Customer",
+              "Does asking the question automatically book another assessment or approve a diagnostic charge?"
+            ],
+            [
+              "Advisor",
+              "No. We need to discuss any proposed appointment, scope, and terms separately."
+            ],
+            [
+              "Customer",
+              "Then for now I'm requesting a callback, not approving a new job."
+            ],
+            [
+              "Advisor",
+              "I've recorded that accurately and will ask the service desk to confirm the callback arrangement."
+            ]
+          ]
+        },
+        {
+          "title": "A missed callback gets a concrete repair",
+          "setting": "A customer asks about a promised service response.",
+          "turns": [
+            [
+              "Customer",
+              "I was promised a callback yesterday afternoon, but I didn't receive one."
+            ],
+            [
+              "Advisor",
+              "I'm sorry we missed that contact commitment. Let me check the actual case status."
+            ],
+            [
+              "Customer",
+              "Please don't tell me the technical review is complete unless someone has confirmed it."
+            ],
+            [
+              "Advisor",
+              "The review remains pending. Our missed call and the unresolved assessment are separate issues."
+            ],
+            [
+              "Customer",
+              "I need a named contact rather than another vague promise that someone will respond."
+            ],
+            [
+              "Advisor",
+              "Service lead Omar has accepted the callback for four today using this case reference."
+            ],
+            [
+              "Customer",
+              "Will that be a status update even if the technical review is still unfinished?"
+            ],
+            [
+              "Advisor",
+              "Yes. He will explain the current status, not guarantee a conclusion by four."
+            ],
+            [
+              "Customer",
+              "Thank you. Please include that I prefer a call, because I may miss a text."
+            ],
+            [
+              "Advisor",
+              "I've confirmed the phone preference and Omar's ownership of the four-o'clock callback."
+            ]
+          ]
+        }
+      ],
+      "additional_scenario": {
+        "title": "A callback recorded as a booked repair",
+        "brief": "Customer requests a Friday call about a repeat concern. Record incorrectly says repair booked Friday. No appointment or work approval exists.",
+        "role_a": "Advisor: correct the contact-versus-work confusion.",
+        "role_b": "Customer: confirm a Friday call only; review options before deciding.",
+        "opening_line": "You requested a call Friday, not a repair appointment, correct?",
+        "complication": "A colleague promises completion Friday based on the mistaken entry.",
+        "success_checks": [
+          "Correct the booking claim.",
+          "Notify anyone relying on it.",
+          "Preserve the callback without inventing work approval."
+        ]
+      }
+    }
+  },
+  "dialogues": [
+    {
+      "title": "A concern disappears from a shortened note",
+      "setting": "An advisor and customer clarify a booking summary before assessment.",
+      "dialogue": [
+        [
+          "Advisor",
+          "The summary says rear noise, but your message listed two concerns. What was omitted?"
+        ],
+        [
+          "Customer",
+          "The rattle is one concern. The other is that the cabin display sometimes loses its saved settings."
+        ],
+        [
+          "Advisor",
+          "Thank you. We should keep them separate rather than assume the sound and display issue share a cause."
+        ],
+        [
+          "Customer",
+          "Exactly. They didn't necessarily occur together, and I don't know whether they are connected at all."
+        ],
+        [
+          "Advisor",
+          "I'll add the second reported concern without presenting a connection as a technician's finding or agreed diagnosis."
+        ],
+        [
+          "Customer",
+          "Does adding my description automatically approve assessment of both concerns under today's existing booking and price?"
+        ],
+        [
+          "Advisor",
+          "No. The advisor needs to clarify the actual assessment scope and terms before either additional task is assumed."
+        ],
+        [
+          "Customer",
+          "Then please preserve both reports, but ask about scope separately so I understand what today's booking covers."
+        ],
+        [
+          "Advisor",
+          "I'll distinguish the newly clarified display concern from the originally booked rattle assessment."
+        ],
+        [
+          "Customer",
+          "Also keep both attached to this vehicle. The other car on my account doesn't have these reported concerns."
+        ],
+        [
+          "Advisor",
+          "We'll check the vehicle identification number against the booking record and retain that identity throughout the handoff."
+        ],
+        [
+          "Customer",
+          "That resolves the missing information without turning two descriptions into one diagnosis or a broader approval."
+        ]
+      ],
+      "notes": [
+        "Separate simultaneous records from an unproven shared cause.",
+        "Recording a concern does not itself approve additional assessment work."
+      ]
+    },
+    {
+      "title": "A key drop is not completed intake",
+      "setting": "A receptionist and customer clarify an after-hours arrival record.",
+      "dialogue": [
+        [
+          "Customer",
+          "I used the arranged key-drop service last night. Is intake complete?"
+        ],
+        [
+          "Receptionist",
+          "The key-drop record confirms the deposit was received, but the service desk still needs to complete intake checks."
+        ],
+        [
+          "Customer",
+          "I included my booking reference. I didn't intend the key deposit to authorize any extra work."
+        ],
+        [
+          "Receptionist",
+          "I'll keep that clear. The desk will confirm the vehicle, reported concern, and agreed scope against your booking."
+        ],
+        [
+          "Customer",
+          "Please contact me at the daytime number, because the number on the envelope is my evening contact."
+        ],
+        [
+          "Receptionist",
+          "Let's verify the preferred number through our contact check so today's updates reach the right place."
+        ],
+        [
+          "Customer",
+          "Can you promise the technician has started already, since the car was here before opening this morning?"
+        ],
+        [
+          "Receptionist",
+          "No start is confirmed. Arrival at the property and the beginning of technical work are separate events."
+        ],
+        [
+          "Customer",
+          "Then I need a status update rather than an assumption that being first here guarantees first completion."
+        ],
+        [
+          "Receptionist",
+          "The service desk can confirm a callback arrangement when intake is complete and scheduling has been checked."
+        ],
+        [
+          "Customer",
+          "Please relay my timing question without treating it as a cancellation request."
+        ],
+        [
+          "Receptionist",
+          "I'll pass on your contact preference and timing question while preserving the existing booking and scope."
+        ]
+      ],
+      "notes": [
+        "A key deposit confirms receipt, not necessarily completed intake or approval.",
+        "Distinguish arrival order from a guaranteed workshop schedule."
+      ]
+    },
+    {
+      "title": "An unanswered call is not an approval",
+      "setting": "An advisor and workshop coordinator review a pending additional-work proposal.",
+      "dialogue": [
+        [
+          "Advisor",
+          "I left a message about additional work; the customer hasn't responded."
+        ],
+        [
+          "Coordinator",
+          "The job card says contacted. That could be misread as an actual conversation with a clear decision."
+        ],
+        [
+          "Advisor",
+          "Then I should narrow it to message left, response pending, rather than imply the proposal was discussed."
+        ],
+        [
+          "Coordinator",
+          "Yes. What work remains within the existing authorization, and what new item is awaiting a separate decision?"
+        ],
+        [
+          "Advisor",
+          "The original assessment is authorized. The additional proposal is outside that scope and remains unapproved."
+        ],
+        [
+          "Coordinator",
+          "I'll keep those statuses separate in the workshop handoff instead of treating the whole job as approved."
+        ],
+        [
+          "Advisor",
+          "The customer's contact preference is a phone call after two. My earlier message was only a callback request."
+        ],
+        [
+          "Coordinator",
+          "Then after two is a contact window, not a deadline after which silence becomes permission to proceed."
+        ],
+        [
+          "Advisor",
+          "Exactly. I won't attach consent to the fact that the message was delivered or the call rang."
+        ],
+        [
+          "Coordinator",
+          "Please tell the next advisor which proposal requires discussion, using the actual estimate version and job reference."
+        ],
+        [
+          "Advisor",
+          "I'll identify the proposal and preserve the original authorization without expanding it."
+        ],
+        [
+          "Coordinator",
+          "That gives the next person a precise task: obtain a response about the new scope and record the decision."
+        ]
+      ],
+      "notes": [
+        "'Message left' is narrower than 'customer contacted.'",
+        "A response window does not turn silence into approval."
+      ]
+    },
+    {
+      "title": "An old finding in a new job-card view",
+      "setting": "An advisor and technician separate historical information from current work.",
+      "dialogue": [
+        [
+          "Technician",
+          "This inspection finding appears to date from the previous service visit."
+        ],
+        [
+          "Advisor",
+          "You're right. The system displays historical notes beside today's job, and the date can be easy to miss."
+        ],
+        [
+          "Technician",
+          "Before I rely on it, which statements are current customer reports and which are previous technician findings?"
+        ],
+        [
+          "Advisor",
+          "Today's report is an intermittent cabin buzz. The older entry describes a separate display concern assessed last year."
+        ],
+        [
+          "Technician",
+          "Then the old finding should remain available as history, not appear to establish the cause of today's buzz."
+        ],
+        [
+          "Advisor",
+          "I'll clarify the handoff with dates and source labels so the two visits don't merge in the summary."
+        ],
+        [
+          "Technician",
+          "Does today's authorization include any follow-up on the old display concern, or only the newly booked assessment?"
+        ],
+        [
+          "Advisor",
+          "Only today's stated assessment scope. No additional work on the historical concern has been agreed for this visit."
+        ],
+        [
+          "Technician",
+          "Please explain why historical information remains visible without extending today's agreed scope."
+        ],
+        [
+          "Advisor",
+          "I'll explain that visibility provides context; it doesn't make the old task part of today's approved work."
+        ],
+        [
+          "Technician",
+          "I'll record findings against today's job, leaving the historical result identifiable."
+        ],
+        [
+          "Advisor",
+          "That will keep the service history useful while making the current report, scope, and findings identifiable."
+        ]
+      ],
+      "notes": [
+        "Visible history does not establish current work scope.",
+        "Dates and source labels prevent an older finding being mistaken for a new one."
+      ]
+    },
+    {
+      "title": "A supplier offers an alternative part",
+      "setting": "An advisor and parts clerk clarify an offer while the requested item is unavailable.",
+      "dialogue": [
+        [
+          "Parts clerk",
+          "The requested battery terminal is unavailable; the offered alternative's suitability remains unconfirmed."
+        ],
+        [
+          "Advisor",
+          "Then I shouldn't tell the customer the delay is solved or describe the alternative as approved for this vehicle."
+        ],
+        [
+          "Parts clerk",
+          "Correct. The qualified workshop team needs to review suitability, and any changed proposal needs the appropriate customer discussion."
+        ],
+        [
+          "Advisor",
+          "Does the offer include a confirmed delivery date, or only the supplier's statement that the alternative is available?"
+        ],
+        [
+          "Parts clerk",
+          "Only availability at the supplier. No shipment or arrival date is confirmed for our job at this point."
+        ],
+        [
+          "Advisor",
+          "I'll keep those stages separate: alternative offered, suitability pending, delivery unconfirmed, and vehicle completion still not established."
+        ],
+        [
+          "Parts clerk",
+        "Please describe it to the customer as an option under review, not a promise of faster completion."
+        ],
+        [
+          "Advisor",
+          "I will. The customer can understand an option is being reviewed without hearing an unsupported promise of faster completion."
+        ],
+        [
+          "Parts clerk",
+          "The supplier wants a response today; that doesn't establish suitability or acceptance."
+        ],
+        [
+          "Advisor",
+          "I'll pass the response deadline to the service team as a constraint, not as permission to skip the review."
+        ],
+        [
+          "Parts clerk",
+          "Please return the actual decision so our parts record reflects it."
+        ],
+        [
+          "Advisor",
+          "I'll return that decision once the relevant reviews and customer communication have reached their actual outcomes."
+        ]
+      ],
+      "notes": [
+        "Availability, suitability, acceptance, and delivery are separate claims.",
+        "A supplier deadline is a constraint, not technical approval."
+      ]
+    },
+    {
+      "title": "A brake report uses two names for one component",
+      "setting": "An advisor asks a technician to clarify recorded brake and tire findings for the customer.",
+      "dialogue": [
+        [
+          "Advisor",
+          "The customer thinks rotor means a different system from the brake-disc description."
+        ],
+        [
+          "Technician",
+          "In this note, rotor means brake disc. Please explain that naming equivalence without adding an unsupported condition judgment."
+        ],
+        [
+          "Advisor",
+          "So brake pad and brake disc differ, but rotor means brake disc here."
+        ],
+        [
+          "Technician",
+          "Correct. My note records observed brake-pad wear; it doesn't say replacement has already been approved or completed."
+        ],
+        [
+          "Advisor",
+          "The tire section also records tread depth. Should I turn that number into a roadworthiness statement for the customer?"
+        ],
+        [
+          "Technician",
+          "No. I need to explain the measurement and its significance. Reception shouldn't infer a safety conclusion from an isolated value."
+        ],
+        [
+          "Advisor",
+          "I'll relay your stated observations and ask you to explain what remains uncertain and what you recommend next."
+        ],
+        [
+          "Technician",
+          "Please keep recommendations separate from approval. The customer needs the proposed scope and terms before making any decision."
+        ],
+        [
+          "Advisor",
+          "They also ask whether this report guarantees nothing else needs attention."
+        ],
+        [
+          "Technician",
+        "No. That assurance would go beyond this assessment's scope. I'll explain which findings the report covers and what remains unconfirmed."
+        ],
+        [
+          "Advisor",
+          "I'll clarify the terms and arrange your explanation of findings and proposed options."
+        ],
+        [
+          "Technician",
+          "That preserves the report's meaning while leaving diagnosis, safety interpretation, and work decisions with the appropriate people."
+        ]
+      ],
+      "notes": [
+        "Rotor and brake disc can refer to the same component; brake pad is a different component.",
+        "A recorded measurement or wear observation is not automatic approval, a repair instruction, or a safety guarantee."
+      ]
+    },
+    {
+      "title": "The final bill differs from the estimate",
+      "setting": "An advisor and customer compare two amounts without guessing the reason.",
+      "dialogue": [
+        [
+          "Customer",
+          "The approved estimate totals three hundred, but this invoice says three twenty. Why?"
+        ],
+        [
+          "Advisor",
+          "I can see the difference, but I shouldn't guess its reason. Let's compare the actual lines and approval record."
+        ],
+        [
+          "Customer",
+          "Please don't tell me it must be tax or a standard fee unless that is what this record shows."
+        ],
+        [
+          "Advisor",
+          "Agreed. A common explanation isn't evidence for your invoice. I'll ask the billing contact to identify the changed line."
+        ],
+        [
+          "Customer",
+          "I still want to understand the completed work, but the charge question needs a separate, accurate answer."
+        ],
+        [
+          "Advisor",
+          "I'll keep both questions visible: what the job record says was performed, and why the invoice amount differs."
+        ],
+        [
+          "Customer",
+          "Does requesting that explanation mean you will mark me as refusing all payment or disputing every listed item?"
+        ],
+        [
+          "Advisor",
+          "No. I'll record your specific twenty-dollar query rather than broaden it beyond what you've actually asked."
+        ],
+        [
+          "Customer",
+          "Please compare the approved estimate's date and version, not an earlier proposal."
+        ],
+        [
+          "Advisor",
+          "I'll provide the date and reference alongside this invoice, leaving the reason for the difference unconfirmed until checked."
+        ],
+        [
+          "Customer",
+          "Arrange that explanation before anyone marks my specific charge query resolved."
+        ],
+        [
+          "Advisor",
+          "I will. The record will show a focused billing query awaiting clarification, not an invented justification or outcome."
+        ]
+      ],
+      "notes": [
+        "Do not turn a common billing explanation into an unverified fact.",
+        "Keep a specific amount query narrower than a dispute over every charge."
+      ]
+    },
+    {
+      "title": "A different concern after a previous visit",
+      "setting": "An advisor and customer clarify whether a new call concerns the same symptom.",
+      "dialogue": [
+        [
+          "Customer",
+          "I visited last week and now have another concern. Should they share a case?"
+        ],
+        [
+          "Advisor",
+          "We can link the history, but could you describe what you've noticed so we don't assume the concerns are identical?"
+        ],
+        [
+          "Customer",
+          "Last week's visit concerned a display setting. This time I hear a sound near the rear of the cabin."
+        ],
+        [
+          "Advisor",
+          "Thank you. I'll record a newly reported sound and link the earlier visit as history, without asserting a connection."
+        ],
+        [
+          "Customer",
+          "I'd like the service lead to review whether the two might be related, rather than reception deciding either way."
+        ],
+        [
+          "Advisor",
+          "I can relay that question. The relationship, cause, and any applicable coverage remain unconfirmed until the appropriate review."
+        ],
+        [
+          "Customer",
+          "Does linking the records automatically confirm warranty coverage or waive assessment charges?"
+        ],
+        [
+          "Advisor",
+          "No. Any proposed appointment, scope, and terms need their own explanation; the reference link alone doesn't decide those matters."
+        ],
+        [
+          "Customer",
+          "Then please arrange a callback before any new job is authorized."
+        ],
+        [
+          "Advisor",
+          "I'll ask the service lead to confirm a callback time and use the linked references for context."
+        ],
+        [
+          "Customer",
+          "Keep the display concern and new sound separate in the handoff."
+        ],
+        [
+          "Advisor",
+          "I will. The handoff will show the prior display concern and the new sound report as distinct accounts."
+        ]
+      ],
+      "notes": [
+        "Linking records provides context without proving a relationship.",
+        "A case reference does not itself decide warranty coverage or charges."
+      ]
+    }
+  ]
+}

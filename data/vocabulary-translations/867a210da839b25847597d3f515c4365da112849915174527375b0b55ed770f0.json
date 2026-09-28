@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Leaders from the US and China met.",
+      "They talked about important topics, but they did not say everything.",
+      "China shared what was agreed at the talks last week.",
+      "But they made no big new agreements.",
+      "Both countries said they would talk about AI technology.",
+      "China also said a trade agreement will continue until January.",
+      "Many hard problems between the US and China are still not solved."
+    ],
+    "vocabulary": [
+      {
+        "term": "met",
+        "part_of_speech": "verb",
+        "definition": "To come together with someone, for example, for a meeting. This is the past tense of 'meet'."
+      },
+      {
+        "term": "topics",
+        "part_of_speech": "noun",
+        "definition": "Subjects or things that people talk or write about."
+      },
+      {
+        "term": "agreed",
+        "part_of_speech": "verb",
+        "definition": "To have the same idea or opinion as someone else. This is the past tense of 'agree'."
+      },
+      {
+        "term": "talks",
+        "part_of_speech": "noun",
+        "definition": "Meetings where people discuss important issues."
+      },
+      {
+        "term": "agreements",
+        "part_of_speech": "noun",
+        "definition": "Formal decisions or promises made by two or more groups."
+      },
+      {
+        "term": "continue",
+        "part_of_speech": "verb",
+        "definition": "To keep doing something; not stop."
+      },
+      {
+        "term": "solved",
+        "part_of_speech": "verb",
+        "definition": "To find an answer or a way to fix a problem. This is the past tense of 'solve'."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "誰かと、例えば会議のために一緒になること。「meet」の過去形です。",
+      "ko": "예를 들어 회의를 위해 누군가와 함께 모이는 것. 'meet'의 과거형입니다.",
+      "zh-Hans": "与某人相聚，例如开会。这是“meet”的过去式。",
+      "es": "Reunirse con alguien, por ejemplo, para una reunión. Esta es la forma pasada del verbo 'meet'.",
+      "pt-BR": "Reunir-se com alguém, por exemplo, para uma reunião. Esta é a forma no passado de 'meet'."
+    },
+    {
+      "id": 1,
+      "ja": "人々が話したり書いたりする対象や事柄。",
+      "ko": "사람들이 이야기하거나 글을 쓰는 주제나 내용.",
+      "zh-Hans": "人们谈论或撰写的主题或事物。",
+      "es": "Asuntos o cosas sobre las que la gente habla o escribe.",
+      "pt-BR": "Assuntos ou coisas sobre as quais as pessoas falam ou escrevem."
+    },
+    {
+      "id": 2,
+      "ja": "他の人と同じ考えや意見を持つこと。「agree」の過去形です。",
+      "ko": "다른 사람과 같은 생각이나 의견을 가지는 것. 'agree'의 과거형입니다.",
+      "zh-Hans": "与他人持有相同的想法或意见。这是“agree”的过去式。",
+      "es": "Tener la misma idea u opinión que otra persona. Esta es la forma pasada del verbo 'agree'.",
+      "pt-BR": "Ter a mesma ideia ou opinião que outra pessoa. Esta é a forma no passado de 'agree'."
+    },
+    {
+      "id": 3,
+      "ja": "人々が重要な問題について話し合う会議。",
+      "ko": "사람들이 중요한 사안에 대해 논의하는 회의.",
+      "zh-Hans": "人们讨论重要议题的会议。",
+      "es": "Reuniones en las que la gente discute asuntos importantes.",
+      "pt-BR": "Reuniões nas quais as pessoas discutem questões importantes."
+    },
+    {
+      "id": 4,
+      "ja": "二つ以上のグループによってなされた公式な決定や約束。",
+      "ko": "두 개 이상의 단체에 의해 이루어진 공식적인 결정이나 약속.",
+      "zh-Hans": "由两个或更多团体做出的正式决定或承诺。",
+      "es": "Decisiones formales o promesas hechas por dos o más grupos.",
+      "pt-BR": "Decisões ou promessas formais feitas por dois ou mais grupos."
+    },
+    {
+      "id": 5,
+      "ja": "何かをし続けること。やめないこと。",
+      "ko": "무언가를 계속하는 것; 멈추지 않는 것.",
+      "zh-Hans": "继续做某事；不停下来。",
+      "es": "Seguir haciendo algo; no detenerse.",
+      "pt-BR": "Continuar fazendo algo; não parar."
+    },
+    {
+      "id": 6,
+      "ja": "問題に対する答えや解決策を見つけること。「solve」の過去形です。",
+      "ko": "문제에 대한 답이나 해결책을 찾는 것. 'solve'의 과거형입니다.",
+      "zh-Hans": "找到问题的答案或解决方法。这是“solve”的过去式。",
+      "es": "Encontrar una respuesta o una forma de arreglar un problema. Esta es la forma pasada del verbo 'solve'.",
+      "pt-BR": "Encontrar uma resposta ou uma maneira de resolver um problema. Esta é a forma no passado de 'solve'."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-28T14:11:33.939647+00:00"
+  }
+}

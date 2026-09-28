@@ -1,0 +1,788 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-28",
+  "release_iso": "2026-09-28T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Mon, 28 Sep 2026 07:52:23 GMT",
+    "retrieved_at": "2026-09-28T14:06:26.400581+00:00",
+    "title": "Trump-Xi summit: What wasn't said might matter the most",
+    "summary": "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.",
+    "evidence_text": "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.\nOn Monday, China released more information of what was agreed at the talks between Xi Jinping and Donald Tump last week, shedding light on a handful of concrete outcomes.\nBut there were no joint statements and few major breakthroughs.\nBeijing says it has agreed with Washington to launch a new AI dialogue, with further talks scheduled for the end of November.\nChinese state media confirmed for the first time on Monday that the trade truce has been extended until 10 January.\nThis summit produced more dialogue - but very little decision change for now. The most contentious issues from advanced technology to Taiwan remain unresolved.\nInstead, both governments issued separate accounts of the meeting - perhaps a sign that despite the White House tours and promise of warmer ties, Washington and Beijing remain wary of each other.\nThey have also agreed to establish a communication channel for AI-related incidents, aimed at preventing misunderstandings or unexpected developments from turning into a broader confrontation.\nBut Beijing had hoped for a much longer extension to the truce, making the two month reprieve a modest gain rather than a major breakthrough.\nChina did secure lower tariffs on $30bn (£23bn) of goods entering the US with reciprocal reductions expected from Beijing.\nThere was no mention of increasing exports of China's rare earth minerals to the US nor was there any indication that restrictions on advanced US semiconductors would be eased.\nThe White House factsheet made no mention of Taiwan, but the issue was clearly a priority for Xi Jinping.\nAccording to Beijing's accounts of the talks, Xi urged Donald Trump to formally oppose Taiwan independence and handle the issue with caution.\nMeanwhile the US State Department continues to classify travel to China as a Level 2 advisory urging travellers to \"exercise increased caution\" because of the risk of arbitrary law enforcement, exit bans and detention.\nAs both countries race to develop advanced artificial intelligence, the move suggests they see a need for some guardrails around a technology that is increasingly being used in everything from business to military planning.\nWhat is striking is what was left out.\nAnd while both remain committed to a steady relationship - continued US-China dialogue appears far easier than asking either superpower to compromise.",
+    "evidence_retrieved_at": "2026-09-28T14:06:26.400581+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cxp84g2ly1mjo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "What important problems between the US and China are still not solved, based on the lesson?",
+          "If you could ask leaders to talk about one global topic, what would it be? I would ask them to talk about... because..."
+        ],
+        "title": "US and China Leaders Meet, Talk, But Resolve Few Big Issues",
+        "overview": "Leaders from the US and China met to discuss important topics, but many big problems are still not fixed.",
+        "topic": "US-China relations and high-level talks",
+        "vocabulary": [
+          {
+            "term": "met",
+            "part_of_speech": "verb",
+            "definition": "To come together with someone, for example, for a meeting. This is the past tense of 'meet'."
+          },
+          {
+            "term": "topics",
+            "part_of_speech": "noun",
+            "definition": "Subjects or things that people talk or write about."
+          },
+          {
+            "term": "agreed",
+            "part_of_speech": "verb",
+            "definition": "To have the same idea or opinion as someone else. This is the past tense of 'agree'."
+          },
+          {
+            "term": "talks",
+            "part_of_speech": "noun",
+            "definition": "Meetings where people discuss important issues."
+          },
+          {
+            "term": "agreements",
+            "part_of_speech": "noun",
+            "definition": "Formal decisions or promises made by two or more groups."
+          },
+          {
+            "term": "continue",
+            "part_of_speech": "verb",
+            "definition": "To keep doing something; not stop."
+          },
+          {
+            "term": "solved",
+            "part_of_speech": "verb",
+            "definition": "To find an answer or a way to fix a problem. This is the past tense of 'solve'."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Simple Tense",
+          "explanation": "We use the past simple tense to talk about actions that happened in the past and are now finished. For regular verbs, we often add '-ed'. For irregular verbs, the form changes, like 'meet' becoming 'met'.",
+          "example_quote": "Leaders from the US and China met."
+        },
+        "quiz": [
+          {
+            "question": "What was the main result of the US and China leaders' meeting?",
+            "options": [
+              "They solved all their big problems.",
+              "They made many new, important agreements.",
+              "They talked a lot, but big agreements were few."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the lesson says many hard problems are still not solved.",
+              "No, the lesson states they made no big new agreements, only talked about many things.",
+              "Yes, they talked about important topics, but the lesson says they made no big new agreements."
+            ]
+          },
+          {
+            "question": "What did the two countries agree to talk about in the future?",
+            "options": [
+              "New sports games.",
+              "AI technology.",
+              "Cooking recipes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the lesson does not mention sports games.",
+              "Yes, the lesson says both countries would talk about AI technology.",
+              "No, the lesson does not mention cooking recipes."
+            ]
+          },
+          {
+            "question": "How long will the trade agreement continue?",
+            "options": [
+              "Until next week.",
+              "Until January.",
+              "For a whole year."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the lesson says it will continue until January, not next week.",
+              "Yes, the lesson states the trade agreement will continue until January.",
+              "No, the lesson says it will continue until January, which is not a whole year."
+            ]
+          },
+          {
+            "question": "In the sentence 'But they made no big new agreements,' what does 'agreements' mean?",
+            "options": [
+              "Difficult problems.",
+              "Formal decisions or promises.",
+              "New ideas for sports."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, 'agreements' are not difficult problems.",
+              "Yes, 'agreements' are formal decisions or promises made by groups.",
+              "No, 'agreements' are not new ideas for sports."
+            ]
+          },
+          {
+            "question": "Which sentence uses the past simple tense?",
+            "options": [
+              "Leaders will meet soon.",
+              "They are talking now.",
+              "China shared what was agreed."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, 'will meet' is future tense.",
+              "No, 'are talking' is present continuous tense.",
+              "Yes, 'shared' is the past simple tense of 'share'."
+            ]
+          },
+          {
+            "question": "What does the lesson say about the relationship between the US and China?",
+            "options": [
+              "They solved all their problems.",
+              "They are very good friends now.",
+              "Many hard problems are still not solved."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, the lesson states that many hard problems are still not solved.",
+              "No, the lesson implies they are still careful with each other, and not all problems are solved.",
+              "Yes, the lesson says that many hard problems between the US and China are still not solved."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Leaders from the US and China met.",
+          "They talked about important topics, but they did not say everything.",
+          "China shared what was agreed at the talks last week.",
+          "But they made no big new agreements.",
+          "Both countries said they would talk about AI technology.",
+          "China also said a trade agreement will continue until January.",
+          "Many hard problems between the US and China are still not solved."
+        ],
+        "sentence_evidence": [
+          "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.",
+          "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.",
+          "On Monday, China released more information of what was agreed at the talks between Xi Jinping and Donald Tump last week, shedding light on a handful of concrete outcomes.",
+          "But there were no joint statements and few major breakthroughs.",
+          "Beijing says it has agreed with Washington to launch a new AI dialogue, with further talks scheduled for the end of November.",
+          "Chinese state media confirmed for the first time on Monday that the trade truce has been extended until 10 January.",
+          "This summit produced more dialogue - but very little decision change for now. The most contentious issues from advanced technology to Taiwan remain unresolved."
+        ],
+        "editorial_check": {
+          "date": "2026-09-28T14:07:06.504484+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All selected vocabulary terms like 'met', 'topics', and 'agreed' are common, concrete, and suitable for A1-A2 learners, with clear definitions provided."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses straightforward, neutral everyday English with direct verbs and explicit subjects, appropriate for adult A1-A2 learners."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language uses short clauses and familiar connectors. Reading sentences are concise, grammar explanation is clear, and discussion prompts include a simple sentence frame and hypothetical question, suitable for A1-A2."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests the main idea, clearly stated details, contextual vocabulary, and the taught grammar pattern, with short, plausible answer choices appropriate for A1-A2 learners."
+            }
+          },
+          "content_digest": "c6cc89daf558a56d84bba48351312a63bab28706207780b62c6fbf5ef086ee63"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What do you think is the biggest \"unresolved issue\" that still exists between the US and China after this summit, and why?",
+          "If you were a business owner, how would uncertainties like trade truces and travel advisories affect your decisions about operating in China or the US?"
+        ],
+        "title": "Trump-Xi Summit: What Was Unsaid Matters Most",
+        "overview": "The recent summit between US President Trump and Chinese leader Xi Jinping produced some concrete agreements, but many significant, contentious issues remain unresolved.",
+        "topic": "International relations and trade negotiations",
+        "vocabulary": [
+          {
+            "term": "notable",
+            "part_of_speech": "adjective",
+            "definition": "Important or interesting; deserving attention."
+          },
+          {
+            "term": "concrete outcomes",
+            "part_of_speech": "noun phrase",
+            "definition": "Results or achievements that are definite and clearly visible, not just ideas or plans."
+          },
+          {
+            "term": "breakthroughs",
+            "part_of_speech": "noun",
+            "definition": "Important discoveries or developments that help solve a problem."
+          },
+          {
+            "term": "wary",
+            "part_of_speech": "adjective",
+            "definition": "Feeling or showing caution about possible dangers or problems."
+          },
+          {
+            "term": "dialogue",
+            "part_of_speech": "noun",
+            "definition": "A formal discussion between two groups or countries, especially to resolve problems."
+          },
+          {
+            "term": "confrontation",
+            "part_of_speech": "noun",
+            "definition": "A hostile or argumentative meeting or situation between opposing parties."
+          },
+          {
+            "term": "trade truce",
+            "part_of_speech": "noun phrase",
+            "definition": "A temporary stop or pause in a trade war or disputes between countries."
+          },
+          {
+            "term": "tariffs",
+            "part_of_speech": "noun",
+            "definition": "Taxes imposed by a government on imported or exported goods."
+          },
+          {
+            "term": "priority",
+            "part_of_speech": "noun",
+            "definition": "A thing that is regarded as more important than others."
+          },
+          {
+            "term": "unresolved",
+            "part_of_speech": "adjective",
+            "definition": "Not solved or settled; still needing an answer or a decision."
+          }
+        ],
+        "grammar": {
+          "concept": "Present Perfect Passive",
+          "explanation": "The present perfect passive is used to describe an action that happened at an unspecified time in the past and has a connection to the present, focusing on the action itself rather than who performed it. It is formed with \"has/have been\" + the past participle of the main verb. For example, in the sentence \"The trade truce has been extended,\" we know the truce is now longer, but the focus is on the extension, not specifically on who extended it.",
+          "example_quote": "Chinese state media confirmed the trade truce has been extended until January 10."
+        },
+        "quiz": [
+          {
+            "question": "What does the reading suggest was the most significant aspect of the Trump-Xi summit?",
+            "options": [
+              "The clear agreements made on all major issues.",
+              "What the leaders chose not to say or discuss openly.",
+              "The immediate resolution of all trade disputes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states there were 'few major breakthroughs' and many issues remain 'unresolved', indicating not all issues were clearly agreed upon.",
+              "The first sentence of the reading highlights that the summit was 'notable for what was not explicitly said,' implying this was the most important aspect.",
+              "The reading notes that a 'trade truce has been extended' and some tariffs were lowered, but it does not say all trade disputes were immediately resolved."
+            ]
+          },
+          {
+            "question": "What specific steps did Beijing and Washington agree on regarding artificial intelligence?",
+            "options": [
+              "To immediately stop all AI development.",
+              "To launch a new dialogue and establish a communication channel for AI-related incidents.",
+              "To share all their advanced AI technology with each other."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states they agreed to 'launch a new dialogue' and 'establish a communication channel,' not to stop all development.",
+              "The article explicitly mentions that the countries agreed to 'launch a new dialogue on artificial intelligence' and establish a 'communication channel' to prevent misunderstandings.",
+              "The reading does not mention any agreement to share all advanced AI technology; it focuses on communication and dialogue."
+            ]
+          },
+          {
+            "question": "According to the reading, what does the word \"wary\" mean in the context of the US and China?",
+            "options": [
+              "Excited and enthusiastic about their relationship.",
+              "Showing trust and openness towards each other.",
+              "Cautious and suspicious about each other's intentions."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading suggests separate accounts and unresolved issues, which contradicts excitement or enthusiasm.",
+              "The article states that issuing 'separate accounts' suggests they remain 'wary,' implying a lack of full trust.",
+              "To be 'wary' means to be cautious and suspicious, which fits the context of countries issuing separate statements despite promises of warmer ties."
+            ]
+          },
+          {
+            "question": "What happened with the trade truce between the US and China?",
+            "options": [
+              "It was ended completely at the summit.",
+              "It was extended until January 10.",
+              "It was replaced by a new, permanent trade agreement."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading clearly states that the 'trade truce has been extended,' not ended.",
+              "The article explicitly mentions that 'Chinese state media confirmed the trade truce has been extended until January 10.'",
+              "The reading says it was an 'extension' and that Beijing 'hoped for a much longer extension,' indicating it's not a permanent agreement."
+            ]
+          },
+          {
+            "question": "Which of these issues was explicitly NOT mentioned during the summit, according to the reading?",
+            "options": [
+              "Lowering tariffs on some goods.",
+              "Increasing China's rare earth mineral exports to the US.",
+              "Establishing an AI dialogue."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states China 'secured lower tariffs' on some goods, so this was mentioned.",
+              "The reading specifically notes there was 'no mention of increasing China's rare earth mineral exports' to the US, indicating it was left out.",
+              "The article states that Beijing and Washington 'agreed to launch a new dialogue on artificial intelligence,' so this was mentioned."
+            ]
+          },
+          {
+            "question": "What is the meaning of \"tariffs\" as used in the article?",
+            "options": [
+              "Agreements to increase trade volume.",
+              "Taxes imposed on imported or exported goods.",
+              "Restrictions on travel between countries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Tariffs are not about increasing trade volume; they are taxes on trade.",
+              "The reading explains that 'China secured lower tariffs on $30bn of goods entering the US,' which refers to taxes on trade, not volume.",
+              "While travel advisories are mentioned in the article, tariffs specifically relate to taxes on goods, not travel."
+            ]
+          },
+          {
+            "question": "In the sentence, \"The trade truce has been extended until January 10,\" what does the passive voice highlight?",
+            "options": [
+              "That Chinese state media personally extended the truce.",
+              "The fact that the truce is now longer, without focusing on who did it.",
+              "That Trump was solely responsible for extending the truce."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The sentence says 'Chinese state media confirmed' the extension, not that they performed the action of extending it.",
+              "The passive voice 'has been extended' emphasizes the action and its result (the longer truce) rather than specifying the agent who performed the extension.",
+              "The sentence does not attribute the extension solely to Trump; the passive voice avoids specific attribution."
+            ]
+          },
+          {
+            "question": "What is indicated by the US State Department continuing to classify travel to China as a Level 2 advisory?",
+            "options": [
+              "Travel to China is completely prohibited for US citizens.",
+              "The US government recommends exercising increased caution due to certain risks.",
+              "All previous travel warnings have been lifted, making China completely safe."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "A Level 2 advisory means 'exercise increased caution,' not a complete prohibition on travel.",
+              "The reading states the US State Department continues to classify travel as a Level 2 advisory, urging increased caution due to risks.",
+              "The article says the advisory 'continues,' implying previous warnings are still in place and have not been lifted, due to ongoing risks."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The recent summit between Trump and Xi in Washington was notable for what was not explicitly said.",
+          "On Monday, China released details of some concrete outcomes from the talks.",
+          "However, the summit produced no joint statements and few major breakthroughs.",
+          "Instead, both governments issued separate accounts, suggesting they remain wary of each other.",
+          "Beijing and Washington agreed to launch a new dialogue on artificial intelligence.",
+          "They also established a communication channel for AI-related incidents to prevent broader confrontation.",
+          "Chinese state media confirmed the trade truce has been extended until January 10.",
+          "However, Beijing had hoped for a much longer extension to this truce, making it a modest gain.",
+          "China secured lower tariffs on $30bn of goods entering the US, with reciprocal reductions expected.",
+          "Strikingly, there was no mention of increasing China's rare earth mineral exports to the US.",
+          "The White House factsheet made no mention of Taiwan, although it was clearly a priority for Xi Jinping.",
+          "According to Beijing, Xi urged Trump to formally oppose Taiwan independence.",
+          "The US State Department continues to classify travel to China as a Level 2 advisory, urging increased caution.",
+          "Ultimately, contentious issues from advanced technology to Taiwan remain unresolved after the summit."
+        ],
+        "sentence_evidence": [
+          "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.",
+          "On Monday, China released more information of what was agreed at the talks between Xi Jinping and Donald Tump last week, shedding light on a handful of concrete outcomes.",
+          "But there were no joint statements and few major breakthroughs.",
+          "Instead, both governments issued separate accounts of the meeting - perhaps a sign that despite the White House tours and promise of warmer ties, Washington and Beijing remain wary of each other.",
+          "Beijing says it has agreed with Washington to launch a new AI dialogue, with further talks scheduled for the end of November.",
+          "They have also agreed to establish a communication channel for AI-related incidents, aimed at preventing misunderstandings or unexpected developments from turning into a broader confrontation.",
+          "Chinese state media confirmed for the first time on Monday that the trade truce has been extended until 10 January.",
+          "But Beijing had hoped for a much longer extension to the truce, making the two month reprieve a modest gain rather than a major breakthrough.",
+          "China did secure lower tariffs on $30bn (£23bn) of goods entering the US with reciprocal reductions expected from Beijing.",
+          "There was no mention of increasing exports of China's rare earth minerals to the US nor was there any indication that restrictions on advanced US semiconductors would be eased.",
+          "The White House factsheet made no mention of Taiwan, but the issue was clearly a priority for Xi Jinping.",
+          "According to Beijing's accounts of the talks, Xi urged Donald Trump to formally oppose Taiwan independence and handle the issue with caution.",
+          "Meanwhile the US State Department continues to classify travel to China as a Level 2 advisory urging travellers to \"exercise increased caution\" because of the risk of arbitrary law enforcement, exit bans and detention.",
+          "This summit produced more dialogue - but very little decision change for now. The most contentious issues from advanced technology to Taiwan remain unresolved."
+        ],
+        "editorial_check": {
+          "date": "2026-09-28T14:08:52.689032+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary list includes useful general news and work vocabulary like 'concrete outcomes', 'wary', 'dialogue', and 'tariffs', providing suitable learning value for B1-B2 learners without borrowing reserved terms."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a consistent, natural, and neutral news English register throughout the reading, explanations, and quiz feedback."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses clear sentence structures, precise pronoun references, and explanations in everyday language. Definitions, questions, and feedback are clear and easy to understand."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines reading comprehension with contextual vocabulary and grammar application, including a question about the passive voice's function. It requires inference from details without oversimplifying the source's uncertainty."
+            }
+          },
+          "content_digest": "f29ad0282ca85edfb731224143137f0312ee4ade37044b3a74f75d68b0db3e3d"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain how the concept of \"what was left out\" or \"unsaid\" can be more telling in international diplomacy than formal statements.",
+          "If you were a diplomat, how might you use or interpret non-verbal cues and omissions in high-stakes negotiations?"
+        ],
+        "title": "Trump-Xi Summit: What Was Left Unsaid",
+        "overview": "The recent summit between US President Trump and Chinese President Xi Jinping revealed more through its omissions and the leaders' cautious separate statements than through any explicit, major advancements.",
+        "topic": "US-China diplomatic relations and economic discussions",
+        "vocabulary": [
+          {
+            "part_of_speech": "adjective",
+            "definition": "Providing insights or information that was previously hidden or unknown.",
+            "term": "revealing"
+          },
+          {
+            "part_of_speech": "plural noun",
+            "definition": "Progress or developments in a particular field, often significant.",
+            "term": "advancements"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "Suggesting or showing something, often indirectly.",
+            "term": "indicating"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "To continue to possess or keep in existence a state or condition.",
+            "term": "maintain"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "To cause a process or action to begin; to start.",
+            "term": "initiate"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "Essential or fundamental to the completeness of something; forming a necessary part.",
+            "term": "integral"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "Increasing rapidly in intensity or seriousness; worsening.",
+            "term": "escalating"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "The formal or complete stopping of an activity; an end.",
+            "term": "cessation"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "A temporary escape from an undesirable situation or event; a postponement.",
+            "term": "reprieve"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "Given, felt, or done in return by each of two people or groups; mutual.",
+            "term": "reciprocal"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "Left out or excluded, either intentionally or by oversight.",
+            "term": "omitted"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "The quality of acting with careful good judgment, especially concerning practical matters.",
+            "term": "prudence"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "Causing or likely to cause disagreement or argument; controversial.",
+            "term": "contentious"
+          },
+          {
+            "part_of_speech": "verb",
+            "definition": "To state or assert positively; to declare something to be true.",
+            "term": "affirm"
+          },
+          {
+            "part_of_speech": "adjective",
+            "definition": "Considerable in extent, amount, or importance; significant.",
+            "term": "substantial"
+          }
+        ],
+        "grammar": {
+          "concept": "Modals of Deduction and Speculation",
+          "explanation": "C1-Higher learners often need to express degrees of certainty or possibility in formal contexts. Modals like \"may,\" \"might,\" \"could,\" \"must,\" \"should,\" along with phrases like \"perhaps indicating\" or \"suggests,\" are crucial for expressing deduction or speculation about events or situations when direct evidence is incomplete or ambiguous. These forms allow for nuanced communication, distinguishing between strong likelihood and mere possibility, which is vital in reporting and analysis.",
+          "example_quote": "The most revealing aspect of the recent summit in Washington may be found in what the two leaders chose not to discuss, and what remains unknown."
+        },
+        "quiz": [
+          {
+            "question": "What is identified as the most insightful takeaway from the Trump-Xi summit?",
+            "options": [
+              "The specific agreements formally announced by both sides.",
+              "The subjects that were not addressed and the information that is still undisclosed.",
+              "The detailed joint statements released by the US and China after the meeting."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text suggests that the absence of major formal agreements was itself a significant point.",
+              "Correct. The text states, \"The most revealing aspect...may be found in what the two leaders chose not to discuss, and what remains unknown.\"",
+              "Incorrect. The reading notes, \"However, the talks produced no joint statements,\" making this option factually inaccurate based on the text."
+            ]
+          },
+          {
+            "question": "The phrase \"a degree of caution\" in the context of Washington and Beijing implies what about their relationship?",
+            "options": [
+              "A complete distrust leading to outright hostility.",
+              "A careful watchfulness and reluctance to fully trust each other, despite diplomatic efforts.",
+              "A strong desire for immediate and comprehensive alliance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While there is caution, the text does not imply outright hostility or a complete breakdown of relations, but rather a measured approach.",
+              "Correct. \"A degree of caution\" suggests they are careful and not entirely trusting, aligning with the idea of \"separate accounts\" despite \"initial gestures.\"",
+              "Incorrect. The text describes caution and separate accounts, which contradicts the notion of a strong desire for immediate comprehensive alliance."
+            ]
+          },
+          {
+            "question": "What does Beijing's agreement to \"initiate a new artificial intelligence discussion forum\" signify about AI development?",
+            "options": [
+              "A commitment from both countries to halt AI research and development entirely.",
+              "A recognition of the need for some regulatory frameworks or safety measures for the technology.",
+              "An immediate plan to share all advanced AI technology between the two nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The text indicates a need for \"safeguards\" or \"guardrails,\" not a complete halt to development.",
+              "Correct. The text explains that the move \"suggests both nations recognize the necessity of establishing certain safeguards around AI technology.\"",
+              "Incorrect. The establishment of a discussion forum and communication channel is about managing risks and misunderstandings, not sharing all technology."
+            ]
+          },
+          {
+            "question": "According to the text, what was Beijing's preference regarding the extension of the temporary cessation of new tariffs?",
+            "options": [
+              "Beijing had not expected any extension at all.",
+              "Beijing had hoped for a much shorter extension to quickly resume negotiations.",
+              "Beijing had sought a more substantial extension than the two months granted."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The text explicitly states, \"Beijing, however, had sought a more substantial extension,\" implying they did expect and desire an extension.",
+              "Incorrect. The text clearly states Beijing \"had sought a more substantial extension,\" meaning a longer one, not a shorter one.",
+              "Correct. The reading states, \"Beijing, however, had sought a more substantial extension to the pause in trade disputes, rendering the two-month reprieve a limited concession.\""
+            ]
+          },
+          {
+            "question": "What does \"reciprocal reductions\" imply about the import duties China secured?",
+            "options": [
+              "The US will exclusively benefit from the duty reductions.",
+              "China will reduce its own import duties in return for the US reductions.",
+              "The reductions are permanent and irreversible."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Reciprocal\" means given in return, implying that China would also make reductions, not that the US benefits exclusively.",
+              "Correct. The definition of \"reciprocal\" and the context \"with reciprocal reductions anticipated from Beijing\" confirm this meaning.",
+              "Incorrect. The text does not provide information about the permanence of the reductions, only that they are \"anticipated.\""
+            ]
+          },
+          {
+            "question": "Which topic was \"entirely omitted from public statements\" despite its clear importance to Xi Jinping?",
+            "options": [
+              "The purchase of US coal by China.",
+              "The issue of Taiwan's independence and status.",
+              "Discussions about rare earth mineral exports."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. While other economic matters were discussed, the reading specifically highlights Taiwan's omission from the White House factsheet.",
+              "Correct. The text explicitly states, \"The White House factsheet omitted any reference to Taiwan, yet the issue clearly held significant importance for Xi Jinping.\"",
+              "Incorrect. The reading mentions the omission of rare earth mineral exports, but Taiwan is specifically cited as a priority for Xi Jinping that was omitted from the US statement."
+            ]
+          },
+          {
+            "question": "What does the grammar concept of \"Modals of Deduction and Speculation\" primarily help convey in reporting?",
+            "options": [
+              "Absolute certainty and proven facts.",
+              "Degrees of possibility, probability, or inference when evidence is not absolute.",
+              "Direct commands or requirements for future actions."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. Modals of deduction and speculation are used to express varying levels of certainty, but not absolute, proven facts.",
+              "Correct. As explained in the grammar section, these modals allow for \"nuanced communication, distinguishing between strong likelihood and mere possibility.\"",
+              "Incorrect. Modals expressing commands or requirements are distinct from those used for deduction or speculation."
+            ]
+          },
+          {
+            "question": "The term \"contentious\" describes issues that are:",
+            "options": [
+              "Easily resolved through minor discussions.",
+              "Likely to cause disagreement or argument.",
+              "Universally accepted without debate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The definition states \"likely to cause disagreement or argument,\" which is the opposite of being easily resolved.",
+              "Correct. The vocabulary definition for \"contentious\" is \"likely to cause disagreement or argument; controversial.\"",
+              "Incorrect. Issues that are \"contentious\" are by definition not universally accepted but rather subjects of dispute."
+            ]
+          },
+          {
+            "question": "What does the reading imply about the overall outcome of the summit regarding policy changes?",
+            "options": [
+              "Significant and immediate policy shifts were implemented across all major issues.",
+              "The summit resulted in substantial policy changes, particularly on trade and technology.",
+              "Despite extensive discussions, there were minimal actual shifts in policy for the time being."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Incorrect. The text states, \"This summit generated extensive discussions, yet yielded minimal shifts in policy for the time being.\"",
+              "Incorrect. The reading explicitly states \"minimal shifts in policy,\" not \"substantial.\"",
+              "Correct. The text notes, \"This summit generated extensive discussions, yet yielded minimal shifts in policy for the time being,\" and that \"contentious issues...persist without full resolution.\""
+            ]
+          },
+          {
+            "question": "What does the use of \"appears significantly more straightforward\" in the last sentence suggest about US-China communication versus compromise?",
+            "options": [
+              "Communication and compromise are equally difficult for both superpowers.",
+              "Engaging in communication is easier for both nations than reaching actual compromises on key issues.",
+              "Compromise is preferred by both superpowers over mere communication."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The phrase \"appears significantly more straightforward\" implies a difference in difficulty, not equality.",
+              "Correct. The text concludes that \"ongoing US-China communication appears significantly more straightforward than demanding either superpower to make substantial compromises,\" highlighting the relative ease of talking versus actual concession.",
+              "Incorrect. The sentence structure suggests that communication is easier than compromise, not that compromise is preferred over communication."
+            ]
+          },
+          {
+            "question": "What is the primary purpose of establishing a \"communication channel for AI-related incidents\"?",
+            "options": [
+              "To facilitate the joint development of new AI military applications.",
+              "To prevent minor issues or misunderstandings from escalating into larger conflicts.",
+              "To share all sensitive AI research data between the two nations."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. The reading states its purpose is \"intending to prevent misunderstandings or unforeseen events from escalating into a broader conflict,\" not for joint military development.",
+              "Correct. The text clearly states its aim is \"intending to prevent misunderstandings or unforeseen events from escalating into a broader conflict.\"",
+              "Incorrect. The channel is for incidents and misunderstandings, not for sharing all sensitive research data."
+            ]
+          },
+          {
+            "question": "The word \"reprieve\" as used in the context of the trade disputes refers to:",
+            "options": [
+              "A permanent end to all trade disagreements.",
+              "A temporary delay or suspension of difficulties.",
+              "A complete change in trade policy."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Incorrect. \"Reprieve\" specifically means a temporary postponement or relief, not a permanent end.",
+              "Correct. The definition of \"reprieve\" is \"a temporary postponement or relief from something undesirable,\" which fits the context of a two-month delay in further trade disputes.",
+              "Incorrect. A \"reprieve\" implies a pause or delay, not a fundamental or complete alteration of policy."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The most revealing aspect of the recent summit in Washington may be found in what the two leaders chose not to discuss, and what remains unknown.",
+          "However, the talks produced no joint statements and few significant advancements.",
+          "Instead, both governments issued separate accounts of the meeting, perhaps indicating that despite initial gestures, Washington and Beijing maintain a degree of caution towards each other.",
+          "Beijing announced an agreement with Washington to initiate a new artificial intelligence discussion forum, with further consultations scheduled for late November.",
+          "This move suggests both nations recognize the necessity of establishing certain safeguards around AI technology, which is increasingly integral to sectors from commerce to military planning.",
+          "They also committed to creating a communication channel for AI-related incidents, intending to prevent misunderstandings or unforeseen events from escalating into a broader conflict.",
+          "Chinese state media further confirmed that a temporary cessation of new tariffs has been extended until January 10.",
+          "Beijing, however, had sought a more substantial extension to the pause in trade disputes, rendering the two-month reprieve a limited concession rather than a significant achievement.",
+          "China successfully secured reduced import duties on $30bn (£23bn) of goods entering the US, with reciprocal reductions anticipated from Beijing.",
+          "Strikingly, crucial subjects were entirely omitted from public statements.",
+          "There was no mention of boosting China's rare earth mineral exports to the US, nor any sign that restrictions on advanced US semiconductors would be relaxed.",
+          "The White House factsheet omitted any reference to Taiwan, yet the issue clearly held significant importance for Xi Jinping.",
+          "According to Beijing's reports of the discussions, Xi urged Donald Trump to formally oppose Taiwan independence and manage the situation with prudence.",
+          "This summit generated extensive discussions, yet yielded minimal shifts in policy for the time being.",
+          "The most contentious issues, ranging from advanced technology to Taiwan, persist without full resolution.",
+          "While both leaders affirm their commitment to stable relations, ongoing US-China communication appears significantly more straightforward than demanding either superpower to make substantial compromises."
+        ],
+        "sentence_evidence": [
+          "The most revealing thing about the summit in Washington may be what the two leaders did not say - and what we still don't know.",
+          "But there were no joint statements and few major breakthroughs.",
+          "Instead, both governments issued separate accounts of the meeting - perhaps a sign that despite the White House tours and promise of warmer ties, Washington and Beijing remain wary of each other.",
+          "Beijing says it has agreed with Washington to launch a new AI dialogue, with further talks scheduled for the end of November.",
+          "As both countries race to develop advanced artificial intelligence, the move suggests they see a need for some guardrails around a technology that is increasingly being used in everything from business to military planning.",
+          "They have also agreed to establish a communication channel for AI-related incidents, aimed at preventing misunderstandings or unexpected developments from turning into a broader confrontation.",
+          "Chinese state media confirmed for the first time on Monday that the trade truce has been extended until 10 January.",
+          "But Beijing had hoped for a much longer extension to the truce, making the two month reprieve a modest gain rather than a major breakthrough.",
+          "China did secure lower tariffs on $30bn (£23bn) of goods entering the US with reciprocal reductions expected from Beijing.",
+          "What is striking is what was left out.",
+          "There was no mention of increasing exports of China's rare earth minerals to the US nor was there any indication that restrictions on advanced US semiconductors would be eased.",
+          "The White House factsheet made no mention of Taiwan, but the issue was clearly a priority for Xi Jinping.",
+          "According to Beijing's accounts of the talks, Xi urged Donald Trump to formally oppose Taiwan independence and handle the issue with caution.",
+          "This summit produced more dialogue - but very little decision change for now. The most contentious issues from advanced technology to Taiwan remain unresolved.",
+          "This summit produced more dialogue - but very little decision change for now. The most contentious issues from advanced technology to Taiwan remain unresolved.",
+          "And while both remain committed to a steady relationship - continued US-China dialogue appears far easier than asking either superpower to compromise."
+        ],
+        "editorial_check": {
+          "date": "2026-09-28T14:10:11.273772+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary items are suitable for C1-Higher learners, providing precise terms and concepts relevant to the news context, and none are on the reserved list. Definitions are clear and accurate."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses a polished, formal, and objective register appropriate for C1-Higher news analysis. Certainty is calibrated effectively, and the language is natural for this level of reporting."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Teaching language employs controlled complex sentences and cohesive arguments. Definitions and feedback are concise and illuminating, effectively explaining concepts and their impact on meaning for C1-Higher learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson offers substantive learning by requiring inference, understanding of implications, and nuanced distinctions. Quiz distractors are plausible, and explanations provide clear reasoning beyond mere factual recall for C1-Higher learners."
+            }
+          },
+          "content_digest": "c1fa9dabfa6d1e6fc4454dcdffd05b0b404a154ca89112a8c77b2f739f797c59"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-09-29",
+  "release_iso": "2026-09-29T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Entertainment & Arts",
+    "feed_url": "https://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml",
+    "category": "culture",
+    "published_at": "Tue, 29 Sep 2026 10:20:14 GMT",
+    "retrieved_at": "2026-09-29T12:53:11.155718+00:00",
+    "title": "Celine Dion kicks off Paris Fashion Week with surprise performance",
+    "summary": "The singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.",
+    "evidence_text": "Celine Dion kicks off Paris Fashion Week with surprise performance\nCeline Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.\nThe singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.\nThe Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway at the end of L'Oreal's annual show.\nThe singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.\nParis Fashion Week, showcasing women's spring/summer collections, runs until 6 October.\nOther labels showing in Paris over the next week include Louis Vuitton, Tom Ford, Schiaparelli, Givenchy, Jean Paul Gaultier, Balenciaga and Loewe.\nDion recently performed a comeback show in the city earlier this month, her first since her 2020 concert in New Jersey - the last before the Covid pandemic cut her tour short.\nThe fashion world is keeping a particularly close eye on Dior and Chanel, after both signed up new artistic directors last year.\nKendall Jenner also modelled at the show, wearing a sheer black halterneck dress with thigh split and an ivory corset underneath.\nPop star Rihanna brought her usual fashion credentials to Paris on day one, with a shimmering, glamorous copper two-piece worn over sheer black lingerie.\nThis week should see the pair continue to solidify their strategies for the two brands. Expect some serious aesthetic rivalry on the runways.",
+    "evidence_retrieved_at": "2026-09-29T12:53:11.155718+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cj207qk472zpo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Celine Dion gave a 'surprise performance'. What do you think this means? I think it means...",
+          "If you could go to a fashion show, what kind of clothes would you like to see? Or, what kind of clothes do you usually like to wear?"
+        ],
+        "title": "Celine Dion's Surprise Performance at Paris Fashion Week",
+        "overview": "Celine Dion surprised everyone with a performance at Paris Fashion Week, where many famous brands showed their new designs.",
+        "topic": "Celine Dion, Paris Fashion Week, and famous fashion events",
+        "vocabulary": [
+          {
+            "term": "opened",
+            "part_of_speech": "verb",
+            "definition": "to start an event or something new."
+          },
+          {
+            "term": "surprise",
+            "part_of_speech": "noun",
+            "definition": "an event or thing that is not expected."
+          },
+          {
+            "term": "performance",
+            "part_of_speech": "noun",
+            "definition": "when a singer or actor entertains people."
+          },
+          {
+            "term": "famous",
+            "part_of_speech": "adjective",
+            "definition": "very well known by many people."
+          },
+          {
+            "term": "joined",
+            "part_of_speech": "verb",
+            "definition": "to come together with other people or things."
+          },
+          {
+            "term": "runway",
+            "part_of_speech": "noun",
+            "definition": "a long, narrow stage for models to show clothes."
+          },
+          {
+            "term": "designs",
+            "part_of_speech": "noun",
+            "definition": "new styles or looks for clothes."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. We often add \"-ed\" to regular verbs. Some verbs have different forms.",
+          "example_quote": "Celine Dion opened Paris Fashion Week."
+        },
+        "quiz": [
+          {
+            "question": "What did Celine Dion do at Paris Fashion Week?",
+            "options": [
+              "She cooked food.",
+              "She gave a surprise performance.",
+              "She bought new clothes."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text says she gave a surprise performance, not that she cooked.",
+              "Correct. She sang and surprised everyone.",
+              "The text says she gave a surprise performance, not that she bought clothes."
+            ]
+          },
+          {
+            "question": "Who is Celine Dion?",
+            "options": [
+              "A fashion designer.",
+              "A famous Canadian singer.",
+              "An actress."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The lesson says she is a singer, not a designer.",
+              "Correct. The lesson says she is a famous Canadian singer.",
+              "The lesson says she is a singer, not an actress."
+            ]
+          },
+          {
+            "question": "What is Paris Fashion Week about?",
+            "options": [
+              "Food festivals.",
+              "New clothes and designs.",
+              "Sports events."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The lesson talks about fashion, not food.",
+              "Correct. It is a show for new clothes and fashion designs.",
+              "The lesson talks about fashion, not sports."
+            ]
+          },
+          {
+            "question": "Who joined Celine Dion on the runway?",
+            "options": [
+              "Other famous people.",
+              "Only models.",
+              "Just her family."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The lesson mentions other famous people like Viola Davis joined her.",
+              "Famous people, not just models, joined her.",
+              "The lesson mentions other famous people, not her family."
+            ]
+          },
+          {
+            "question": "What does the word \"surprise\" mean in this lesson?",
+            "options": [
+              "Something expected.",
+              "Something loud.",
+              "Something not expected."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "A surprise is something unexpected.",
+              "A surprise is something unexpected, not necessarily loud.",
+              "Correct. A surprise is an event that is not expected."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past tense correctly?",
+            "options": [
+              "She sings well.",
+              "They will show new clothes.",
+              "She opened Fashion Week."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Sings\" is simple present.",
+              "\"Will show\" is future tense.",
+              "Correct. \"Opened\" is the simple past form of \"open\"."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Celine Dion opened Paris Fashion Week.",
+          "She gave a surprise performance.",
+          "She sang at a show for L'Oreal.",
+          "Celine Dion is a famous Canadian singer.",
+          "Other famous people like Viola Davis joined her on the runway.",
+          "Paris Fashion Week shows new clothes and designs.",
+          "Many big fashion brands show their collections there."
+        ],
+        "sentence_evidence": [
+          "Celine Dion kicks off Paris Fashion Week with surprise performance",
+          "Celine Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.",
+          "The singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.",
+          "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway at the end of L'Oreal's annual show.",
+          "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.",
+          "Paris Fashion Week, showcasing women's spring/summer collections, runs until 6 October.",
+          "Other labels showing in Paris over the next week include Louis Vuitton, Tom Ford, Schiaparelli, Givenchy, Jean Paul Gaultier, Balenciaga and Loewe."
+        ],
+        "editorial_check": {
+          "date": "2026-09-29T12:53:52.923657+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary items are common, concrete words suitable for A1-A2 learners, and their contextual definitions are clear and simple. No reserved vocabulary was used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses straightforward, neutral everyday English with direct verbs and explicit subjects, appropriate for adult A1-A2 learners, avoiding bureaucratic phrasing or idioms."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Reading sentences are concise and easy to understand. Grammar is briefly explained with a clear example, and all instructions, options, and feedback are accessible. Discussion prompts include a simple sentence frame and a hypothetical alternative."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz effectively tests the main idea, clear details, contextual vocabulary, and the grammar pattern with short, plausible answer choices, suitable for the A1-A2 level without relying on outside knowledge."
+            }
+          },
+          "content_digest": "be4392f7316cdde55fb44076a7282f0562be80c74ea6b69718f09f6a447bbf2f"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Describe Celine Dion's recent return to the stage based on the news brief, including details about her health and previous performances.",
+          "Do you enjoy fashion shows, or do you prefer to follow fashion trends in other ways? Explain your preference."
+        ],
+        "title": "Celine Dion Starts Paris Fashion Week with Surprise Performance",
+        "overview": "Celine Dion opened Paris Fashion Week with a musical appearance at L'Oreal's annual show, marking her return to the stage after a health diagnosis.",
+        "topic": "Celine Dion at Paris Fashion Week",
+        "vocabulary": [
+          {
+            "term": "annual",
+            "part_of_speech": "adjective",
+            "definition": "happening once every year"
+          },
+          {
+            "term": "diagnosed",
+            "part_of_speech": "verb",
+            "definition": "identified a medical condition or problem"
+          },
+          {
+            "term": "syndrome",
+            "part_of_speech": "noun",
+            "definition": "a group of symptoms that together show a particular medical condition"
+          },
+          {
+            "term": "took to",
+            "part_of_speech": "phrasal verb",
+            "definition": "began to do something in a public or confident way"
+          },
+          {
+            "term": "ruched",
+            "part_of_speech": "adjective",
+            "definition": "gathered into folds or pleats, usually referring to fabric"
+          },
+          {
+            "term": "ambassadors",
+            "part_of_speech": "noun",
+            "definition": "well-known people chosen to represent a company or product"
+          },
+          {
+            "term": "comeback",
+            "part_of_speech": "noun",
+            "definition": "a return to success, fame, or good health after a period of absence"
+          },
+          {
+            "term": "cut short",
+            "part_of_speech": "phrasal verb",
+            "definition": "ended something earlier than planned"
+          },
+          {
+            "term": "showcasing",
+            "part_of_speech": "verb",
+            "definition": "displaying or presenting something in its best light"
+          },
+          {
+            "term": "artistic directors",
+            "part_of_speech": "noun phrase",
+            "definition": "individuals responsible for the creative vision and artistic decisions of a brand"
+          }
+        ],
+        "grammar": {
+          "concept": "Non-defining relative clauses",
+          "explanation": "Non-defining relative clauses give extra information about a noun. They are placed after the noun they describe and are separated by commas. They use relative pronouns like \"who\" for people, \"which\" for things, or \"whose\" for possession. The sentence would still make sense without this extra information.",
+          "example_quote": "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway."
+        },
+        "quiz": [
+          {
+            "question": "What event did Celine Dion help open with her performance?",
+            "options": [
+              "L'Oreal's annual show",
+              "Paris Fashion Week",
+              "A concert at the Eiffel Tower"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While she performed at L'Oreal's show, the larger event she opened was Paris Fashion Week.",
+              "That's correct! Celine Dion opened Paris Fashion Week with her performance.",
+              "Her performance was underneath the Eiffel Tower, but it was part of opening Paris Fashion Week."
+            ]
+          },
+          {
+            "question": "Which sentence best describes Celine Dion's health status mentioned in the article?",
+            "options": [
+              "She has fully recovered from a serious illness recently.",
+              "She was diagnosed with a rare neurological disease in 2022.",
+              "Her health has been excellent since her 2020 tour."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states she was diagnosed with a disease but does not mention a full recovery.",
+              "That's right. The article states she was diagnosed with stiff person syndrome in 2022.",
+              "The news brief mentions a diagnosis in 2022, indicating a health challenge after 2020."
+            ]
+          },
+          {
+            "question": "What does the word \"comeback\" imply about Dion's recent performance?",
+            "options": [
+              "It was her first performance ever in Paris.",
+              "It marked her return to public performing after a break.",
+              "It was a special charity event for a medical cause."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article says it was her first show since 2020, not her first ever.",
+              "Correct. A \"comeback\" means a return to activity or fame after a period of absence.",
+              "The article mentions her health but doesn't specify it as a charity event."
+            ]
+          },
+          {
+            "question": "Who were some of the famous people who joined Celine Dion on stage at the L'Oreal show?",
+            "options": [
+              "Other fashion designers and supermodels",
+              "Viola Davis and Eva Longoria",
+              "Rihanna and Kendall Jenner"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While other models were present, the article specifically names ambassadors who joined Dion.",
+              "That's right. Viola Davis and Eva Longoria were among the ambassadors who joined her.",
+              "Rihanna and Kendall Jenner were at Paris Fashion Week, but the article mentions Davis and Longoria joining Dion specifically."
+            ]
+          },
+          {
+            "question": "Which of these sentences correctly uses a non-defining relative clause?",
+            "options": [
+              "The dress which was black looked elegant.",
+              "My friend, who lives in Paris, loves fashion.",
+              "Designers that are famous present new collections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is a defining relative clause because \"which was black\" is essential to identify the specific dress.",
+              "Correct. \"who lives in Paris\" provides extra information and is separated by commas, making it a non-defining clause.",
+              "This is a defining relative clause because \"that are famous\" specifies which designers are being discussed."
+            ]
+          },
+          {
+            "question": "Based on the news brief, what is \"stiff person syndrome\"?",
+            "options": [
+              "A type of unique fashion style showcased at the event.",
+              "A rare neurological disease that Celine Dion was diagnosed with.",
+              "A common muscle injury among performers and models."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Stiff person syndrome\" is a medical condition, not a fashion style.",
+              "Correct. The article states it is a rare neurological disease diagnosed in Celine Dion.",
+              "The article describes it as a rare neurological disease, not a common injury."
+            ]
+          },
+          {
+            "question": "Why is the fashion world paying close attention to Dior and Chanel, according to the article?",
+            "options": [
+              "They are presenting their final collections before closing.",
+              "They recently appointed new artistic directors.",
+              "They are rumored to be hosting Celine Dion's next concert."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article indicates they are active and under new artistic leadership, not closing.",
+              "That's correct. New artistic directors were appointed last year, drawing significant attention.",
+              "The article mentions new artistic directors for the brands, not a concert by Celine Dion."
+            ]
+          },
+          {
+            "question": "When did Celine Dion last perform a full concert before her recent comeback show?",
+            "options": [
+              "Earlier this month, before the Paris Fashion Week event.",
+              "In 2022, the year of her diagnosis.",
+              "In 2020, before her tour was cut short by the pandemic."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Her comeback show was earlier this month; her last full concert was much earlier.",
+              "The diagnosis was in 2022, but her last concert was before then.",
+              "Correct. Her 2020 concert was her last before the pandemic cut her tour short."
+            ]
+          },
+          {
+            "question": "What kind of collections are being showcased at this Paris Fashion Week?",
+            "options": [
+              "Men's autumn/winter collections",
+              "Women's spring/summer collections",
+              "Children's holiday wear designs"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article specifies women's collections, not men's.",
+              "That's right. Paris Fashion Week is showcasing women's spring/summer collections.",
+              "The collections are for women's spring/summer, not children's holiday wear."
+            ]
+          },
+          {
+            "question": "What does it mean if a tour was \"cut short\"?",
+            "options": [
+              "It was longer than originally planned.",
+              "It started much earlier than expected.",
+              "It ended sooner than initially scheduled."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Cut short\" means to end earlier, not extend.",
+              "\"Cut short\" refers to an earlier ending, not an earlier start.",
+              "Correct. To \"cut short\" means to stop something before it was meant to finish."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Celine Dion has opened Paris Fashion Week with a performance of her 2002 hit I'm Alive.",
+          "This event took place underneath the city's famous Eiffel Tower.",
+          "The singer appeared at the end of L'Oreal's annual show.",
+          "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway.",
+          "She wore a ruched full-length velvet black gown for the occasion.",
+          "Famous ambassadors for the French brand, including Viola Davis and Eva Longoria, later joined her.",
+          "Dion recently performed a comeback show in the city earlier this month.",
+          "This was her first since her 2020 concert, which was cut short by the Covid pandemic.",
+          "Paris Fashion Week is currently showcasing women's spring/summer collections.",
+          "The event runs until 6 October.",
+          "The fashion world is keeping a close eye on Dior and Chanel.",
+          "Both brands signed up new artistic directors last year."
+        ],
+        "sentence_evidence": [
+          "Celine Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.",
+          "Celine Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.",
+          "The singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.",
+          "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway at the end of L'Oreal's annual show.",
+          "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.",
+          "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.",
+          "Dion recently performed a comeback show in the city earlier this month, her first since her 2020 concert in New Jersey - the last before the Covid pandemic cut her tour short.",
+          "Dion recently performed a comeback show in the city earlier this month, her first since her 2020 concert in New Jersey - the last before the Covid pandemic cut her tour short.",
+          "Paris Fashion Week, showcasing women's spring/summer collections, runs until 6 October.",
+          "Paris Fashion Week, showcasing women's spring/summer collections, runs until 6 October.",
+          "The fashion world is keeping a particularly close eye on Dior and Chanel, after both signed up new artistic directors last year.",
+          "The fashion world is keeping a particularly close eye on Dior and Chanel, after both signed up new artistic directors last year."
+        ],
+        "editorial_check": {
+          "date": "2026-09-29T12:54:50.749763+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selection includes useful general news and work terms such as 'annual', 'diagnosed', 'syndrome', 'took to', 'ruched', 'ambassadors', 'comeback', 'cut short', 'showcasing', and 'artistic directors'. These are appropriate for B1-B2 learners, and their contextual definitions are clear. No reserved vocabulary targets were used from the A1-A2 list."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a consistent, natural, and neutral news English register throughout the reading, vocabulary definitions, grammar explanation, and quiz items. There are no unexplained shifts in tone or inappropriate slang."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses varied and manageable sentences; reading sentences average within the 12-24 word guide. Pronoun references are clear, and grammar explanations like 'give extra information about a noun' are in everyday language with a precise example. Definitions, questions, and feedback are clear and accessible for B1-B2 learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines comprehension of details with contextual vocabulary (e.g., 'comeback', 'cut short') and grammar transfer to new situations (non-defining relative clauses quiz question). It offers more development than a beginner paraphrase while preserving the source's scope and qualifications."
+            }
+          },
+          "content_digest": "02ce81e38be4d2249a9ba1dcc685e86a0f7c4e2cafd65fd4e7507c812f672f67"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Celine Dion's performance at Paris Fashion Week was particularly notable, considering her health condition and recent comeback.",
+          "Beyond fashion, what kind of 'aesthetic rivalry' do you observe in other creative industries, like music or film, and what impact does it have on innovation?"
+        ],
+        "title": "Celine Dion and High Fashion Kick Off Paris Week",
+        "overview": "Celine Dion made a surprise appearance at L'Oreal's show, marking the beginning of Paris Fashion Week, an event closely watched for the strategies of major design houses and the latest styles from various celebrities.",
+        "topic": "Fashion Week, Celebrity Appearances, Luxury Brands",
+        "vocabulary": [
+          {
+            "term": "kicks off",
+            "part_of_speech": "verb phrase",
+            "definition": "To start or begin an event, period, or activity, often with significant energy or fanfare."
+          },
+          {
+            "term": "bonanza",
+            "part_of_speech": "noun",
+            "definition": "A situation or event that creates a sudden increase in wealth, good fortune, or profits, often referring to a spectacular or profitable event."
+          },
+          {
+            "term": "full-length",
+            "part_of_speech": "adjective",
+            "definition": "Reaching to the floor or extending for the entire usual length, typically describing clothing or mirrors."
+          },
+          {
+            "term": "sheer",
+            "part_of_speech": "adjective",
+            "definition": "Referring to a fabric or garment that is very thin, light, and transparent, allowing much to be seen through it."
+          },
+          {
+            "term": "halterneck",
+            "part_of_speech": "noun",
+            "definition": "A style of woman's top or dress in which a strap or straps pass around the back of the neck, leaving the shoulders and often the back bare."
+          },
+          {
+            "term": "thigh split",
+            "part_of_speech": "noun",
+            "definition": "A design feature in a skirt or dress where a cut or opening extends upwards along the side or front of the thigh."
+          },
+          {
+            "term": "credentials",
+            "part_of_speech": "noun",
+            "definition": "Qualifications, achievements, or experiences that establish someone's authority, expertise, or suitability in a particular field."
+          },
+          {
+            "term": "shimmering",
+            "part_of_speech": "adjective",
+            "definition": "Shining with a soft, slightly wavering or trembling light, often giving an impression of subtle movement or sparkle."
+          },
+          {
+            "term": "keeping a particularly close eye on",
+            "part_of_speech": "idiom",
+            "definition": "To monitor something or someone very carefully and attentively, often because it is important, interesting, or potentially problematic."
+          },
+          {
+            "term": "solidify",
+            "part_of_speech": "verb",
+            "definition": "To make something stronger, more definite, or more certain; to establish firmly or permanently."
+          }
+        ],
+        "grammar": {
+          "concept": "Non-restrictive Relative Clauses",
+          "explanation": "Non-restrictive relative clauses provide additional, non-essential information about a noun or noun phrase in the main clause. They are typically set off by commas and use relative pronouns such as 'who,' 'which,' or 'whose.' The sentence's core meaning remains intact even if the non-restrictive clause is removed, distinguishing it from restrictive clauses that are crucial for defining the noun.",
+          "example_quote": "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria."
+        },
+        "quiz": [
+          {
+            "question": "What major event did Celine Dion's performance help initiate?",
+            "options": [
+              "L'Oreal's annual fashion show.",
+              "Paris Fashion Week.",
+              "A private concert tour in the city."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While she appeared at L'Oreal's show, her performance was highlighted as the opening act for the entire Paris Fashion Week.",
+              "The article explicitly states Celine Dion 'kicks off Paris Fashion Week with surprise performance' and 'opened Paris Fashion Week'.",
+              "The article mentions her recent comeback show, but her appearance here was specifically to open Paris Fashion Week, not a private tour."
+            ]
+          },
+          {
+            "question": "Considering Celine Dion's health and recent performance history, what does her appearance at Paris Fashion Week most strongly convey?",
+            "options": [
+              "A shift in her career focus from music to fashion.",
+              "Her determination and return to the public spotlight after a health challenge.",
+              "That her neurological disease has been fully cured."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article highlights her comeback and health diagnosis, suggesting a personal triumph rather than a career shift.",
+              "The reading notes her diagnosis with stiff person syndrome and her first show since 2020, making her performance a significant sign of resilience and a return to public life.",
+              "The article states she was 'diagnosed with a rare neurological disease' but provides no information about a cure, only her return to performing."
+            ]
+          },
+          {
+            "question": "The article refers to the French fashion event as a 'bonanza'. What characteristic does this word emphasize about the event?",
+            "options": [
+              "Its surprising and unexpected nature.",
+              "Its large scale, excitement, and potential for success.",
+              "Its long-standing tradition and historical significance."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While Celine Dion's performance was a surprise, 'bonanza' specifically describes the event's prosperous and spectacular qualities.",
+              "A 'bonanza' implies a source of great wealth, good fortune, or a spectacular event, suggesting it is large, exciting, and highly successful.",
+              "The term 'bonanza' relates to prosperity and excitement, not primarily to tradition or history."
+            ]
+          },
+          {
+            "question": "Which specific items of clothing did Kendall Jenner wear at the show?",
+            "options": [
+              "A shimmering copper two-piece and black lingerie.",
+              "A full-length velvet black gown.",
+              "A sheer black halterneck dress with thigh split and an ivory corset."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Rihanna wore the shimmering two-piece and black lingerie, not Kendall Jenner.",
+              "Celine Dion wore the full-length velvet black gown, not Kendall Jenner.",
+              "The article states Kendall Jenner modelled 'wearing a sheer black halterneck dress with thigh split and an ivory corset underneath'."
+            ]
+          },
+          {
+            "question": "When the text mentions Rihanna brought her usual 'fashion credentials' to Paris, what does this imply about her?",
+            "options": [
+              "She holds formal qualifications in fashion design.",
+              "She is recognized for her established influence and expertise in fashion.",
+              "She was presenting her own new clothing line at the event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While possible, 'credentials' in this context refer to her reputation and authority, not necessarily formal education.",
+              "Her 'fashion credentials' refer to her recognized ability, experience, and authority in the fashion world, demonstrated by her stylish appearances and influence.",
+              "The article does not mention Rihanna presenting her own line; it focuses on her presence and personal style."
+            ]
+          },
+          {
+            "question": "Why is the fashion world 'keeping a particularly close eye on' Dior and Chanel?",
+            "options": [
+              "They are facing financial difficulties and potential mergers.",
+              "They recently appointed new artistic directors whose strategies are anticipated.",
+              "They are introducing entirely new product lines outside of fashion."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article does not mention financial difficulties or mergers for these brands.",
+              "The reading states the fashion world is observing them closely because 'both signed up new artistic directors last year' and are expected to 'solidify their strategies'.",
+              "The focus is on their fashion strategies under new artistic directors, not new product lines unrelated to fashion."
+            ]
+          },
+          {
+            "question": "In the sentence, \"The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand,\" what is the primary role of the clause 'who wore a ruched full-length velvet black gown'?",
+            "options": [
+              "To introduce the singer to the reader.",
+              "To provide supplementary, non-essential descriptive detail about the singer.",
+              "To explain the primary reason for the singer's presence at the event."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Celine Dion is already identified earlier; this clause adds more information but isn't essential for identification.",
+              "This is a non-restrictive relative clause, offering additional, descriptive information that is not critical for understanding the main point of the sentence.",
+              "The clause describes what she wore, not the fundamental reason for her attendance or being joined by ambassadors."
+            ]
+          },
+          {
+            "question": "What is the expected outcome as the newly appointed artistic directors for Dior and Chanel continue to 'solidify their strategies'?",
+            "options": [
+              "An increase in short-term sales through aggressive marketing.",
+              "More stable and clearly defined directions for their respective brands.",
+              "A collaborative effort to merge the creative visions of both brands."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The term 'solidify' implies establishing a firm direction, not just short-term sales boosts.",
+              "To 'solidify' strategies means to make them stronger, more definite, and stable, leading to clearer and more established directions for the brands.",
+              "The article mentions 'aesthetic rivalry' between the two brands, which contradicts a collaborative effort to merge visions."
+            ]
+          },
+          {
+            "question": "The article describes Rihanna's copper two-piece as 'shimmering'. What quality does this word attribute to the outfit?",
+            "options": [
+              "A dull, non-reflective appearance.",
+              "A soft, subtly wavering light.",
+              "An intensely bright and dazzling sparkle."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "'Shimmering' means shining, which is the opposite of dull and non-reflective.",
+              "The word 'shimmering' means shining with a soft, slightly wavering light, accurately describing the outfit's subtle gleam.",
+              "'Shimmering' suggests a softer, more subtle light rather than an intensely bright or dazzling sparkle."
+            ]
+          },
+          {
+            "question": "What kind of competition is anticipated between Dior and Chanel, according to the article?",
+            "options": [
+              "Primarily financial competition for market dominance.",
+              "Competition focused on ethical sourcing and sustainability.",
+              "A contest centered on artistic and visual appeal."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While financial competition is always present, the article specifically highlights 'aesthetic rivalry' among the brands.",
+              "The article does not mention a focus on ethical sourcing or sustainability.",
+              "The reading states, 'Expect some serious aesthetic rivalry on the runways,' indicating competition in their creative and visual designs rather than purely financial or ethical aspects."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Celine Dion kicks off Paris Fashion Week with surprise performance.",
+          "The singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.",
+          "Celine Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.",
+          "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway at the end of L'Oreal's annual show.",
+          "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.",
+          "Dion recently performed a comeback show in the city earlier this month, her first since her 2020 concert in New Jersey - the last before the Covid pandemic cut her tour short.",
+          "Kendall Jenner also modelled at the show, wearing a sheer black halterneck dress with thigh split and an ivory corset underneath.",
+          "Pop star Rihanna brought her usual fashion credentials to Paris on day one, with a shimmering, glamorous copper two-piece worn over sheer black lingerie.",
+          "The fashion world is keeping a particularly close eye on Dior and Chanel, after both signed up new artistic directors last year.",
+          "This week should see the pair continue to solidify their strategies for the two brands. Expect some serious aesthetic rivalry on the runways."
+        ],
+        "sentence_evidence": [
+          "Celine Dion kicks off Paris Fashion Week with surprise performance",
+          "The singer appeared at the end of L'Oreal's annual show as the French fashion bonanza kicked off.",
+          "Celine Dion has opened Paris Fashion Week with a surprise performance of her 2002 hit I'm Alive, underneath the city's famous Eiffel Tower.",
+          "The Canadian star, who was diagnosed with a rare neurological disease called stiff person syndrome in 2022, took to the runway at the end of L'Oreal's annual show.",
+          "The singer, who wore a ruched full-length velvet black gown, was later joined by famous ambassadors for the French brand, including Viola Davis, Simone Ashley, Aja Naomi King and Eva Longoria.",
+          "Dion recently performed a comeback show in the city earlier this month, her first since her 2020 concert in New Jersey - the last before the Covid pandemic cut her tour short.",
+          "Kendall Jenner also modelled at the show, wearing a sheer black halterneck dress with thigh split and an ivory corset underneath.",
+          "Pop star Rihanna brought her usual fashion credentials to Paris on day one, with a shimmering, glamorous copper two-piece worn over sheer black lingerie.",
+          "The fashion world is keeping a particularly close eye on Dior and Chanel, after both signed up new artistic directors last year.",
+          "This week should see the pair continue to solidify their strategies for the two brands. Expect some serious aesthetic rivalry on the runways."
+        ],
+        "editorial_check": {
+          "date": "2026-09-29T12:57:32.917134+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary includes precise terms and phrases such as \"bonanza,\" \"credentials,\" \"halterneck,\" and the idiom \"keeping a particularly close eye on,\" offering meaningful advanced distinctions suitable for C1-Higher learners."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson employs a polished, neutral reporting register with accurate attribution in the news brief and analytical language in explanations, fitting for C1-Higher."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses controlled complex sentences in explanations and provides concise, illuminating feedback that clarifies subtle distinctions, appropriate for C1-Higher learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference (e.g., Q2 about Celine Dion's resilience), contextual vocabulary, and grammar application, providing substantive learning beyond simple recall for C1-Higher."
+            }
+          },
+          "content_digest": "54888990a43e95290d37022117cced1ede814d81bf060e1cd8fbebadbb09404d"
+        }
+      }
+    }
+  }
+}

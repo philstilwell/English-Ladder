@@ -1,0 +1,116 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Celine Dion opened Paris Fashion Week.",
+      "She gave a surprise performance.",
+      "She sang at a show for L'Oreal.",
+      "Celine Dion is a famous Canadian singer.",
+      "Other famous people like Viola Davis joined her on the runway.",
+      "Paris Fashion Week shows new clothes and designs.",
+      "Many big fashion brands show their collections there."
+    ],
+    "vocabulary": [
+      {
+        "term": "opened",
+        "part_of_speech": "verb",
+        "definition": "to start an event or something new."
+      },
+      {
+        "term": "surprise",
+        "part_of_speech": "noun",
+        "definition": "an event or thing that is not expected."
+      },
+      {
+        "term": "performance",
+        "part_of_speech": "noun",
+        "definition": "when a singer or actor entertains people."
+      },
+      {
+        "term": "famous",
+        "part_of_speech": "adjective",
+        "definition": "very well known by many people."
+      },
+      {
+        "term": "joined",
+        "part_of_speech": "verb",
+        "definition": "to come together with other people or things."
+      },
+      {
+        "term": "runway",
+        "part_of_speech": "noun",
+        "definition": "a long, narrow stage for models to show clothes."
+      },
+      {
+        "term": "designs",
+        "part_of_speech": "noun",
+        "definition": "new styles or looks for clothes."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "イベントや何か新しいことを始めること。",
+      "ko": "행사나 새로운 일을 시작하는 것.",
+      "zh-Hans": "开始一项活动或某件新事物。",
+      "es": "Empezar un evento o algo nuevo.",
+      "pt-BR": "Começar um evento ou algo novo."
+    },
+    {
+      "id": 1,
+      "ja": "予期していなかった出来事や物事。",
+      "ko": "예상하지 못했던 사건이나 일.",
+      "zh-Hans": "意想不到的事件或事物。",
+      "es": "Un evento o una cosa que no se esperaba.",
+      "pt-BR": "Um evento ou algo que não era esperado."
+    },
+    {
+      "id": 2,
+      "ja": "歌手や俳優が人々を楽しませること。",
+      "ko": "가수나 배우가 사람들을 즐겁게 하는 것.",
+      "zh-Hans": "歌手或演员表演娱乐大众。",
+      "es": "Cuando un cantante o actor entretiene a la gente.",
+      "pt-BR": "Quando um cantor ou ator entretém as pessoas."
+    },
+    {
+      "id": 3,
+      "ja": "多くの人によく知られていること。",
+      "ko": "많은 사람들에게 매우 잘 알려진.",
+      "zh-Hans": "很多人都非常了解的。",
+      "es": "Muy conocido por mucha gente.",
+      "pt-BR": "Muito conhecido por muitas pessoas."
+    },
+    {
+      "id": 4,
+      "ja": "他の人々や物事と一緒になること。",
+      "ko": "다른 사람이나 사물과 함께하는 것.",
+      "zh-Hans": "与其他人或事物聚在一起。",
+      "es": "Reunirse con otras personas o cosas.",
+      "pt-BR": "Acompanhar outras pessoas ou coisas."
+    },
+    {
+      "id": 5,
+      "ja": "モデルが服を見せるための、細長いステージ。",
+      "ko": "모델들이 옷을 보여주기 위한 길고 좁은 무대.",
+      "zh-Hans": "模特展示服装的又长又窄的T形台。",
+      "es": "Un escenario largo y estrecho para que los modelos muestren ropa.",
+      "pt-BR": "Um palco longo e estreito para modelos mostrarem roupas."
+    },
+    {
+      "id": 6,
+      "ja": "服の新しいスタイルや見た目。",
+      "ko": "옷의 새로운 스타일이나 모양.",
+      "zh-Hans": "服装的新款式或外观。",
+      "es": "Nuevos estilos o apariencias para la ropa.",
+      "pt-BR": "Novos estilos ou visuais para roupas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-29T12:58:42.045552+00:00"
+  }
+}

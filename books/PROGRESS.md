@@ -44,10 +44,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering scheduling, claims, capacity, safety reviews, privacy, patient communication,
   care coordination, and accurate board reporting.
   Output: `output/pdf/healthcare-administration-english-book.pdf`.
+- Nursing and Allied Health English: 102 pages with the same counts and explained keys,
+  covering handoffs, escalation, allergy discrepancies, teach-back, interprofessional
+  rounds, objective records, family communication, and fair safety reviews.
+  Output: `output/pdf/nursing-allied-health-english-book.pdf`.
 
 ## Remaining
 
-55 books remain. The next course in the canonical inventory is `nursing-allied-health`.
+54 books remain. The next course in the canonical inventory is `biotechnology`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -28,10 +28,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering audience strategy, evidence-backed messaging, campaign coordination,
   editorial decisions, attribution, lead handoffs, test results, and publication holds.
   Output: `output/pdf/marketing-english-book.pdf`.
+- Real Estate English: 102 pages with the same counts and explained keys,
+  covering representation, objective searches, comparable sales, fair-housing
+  language, offer conditions, inspection findings, closing, and maintenance follow-up.
+  Output: `output/pdf/real-estate-english-book.pdf`.
 
 ## Remaining
 
-59 books remain. The next course in the canonical inventory is `real-estate`.
+58 books remain. The next course in the canonical inventory is `corporate-strategy`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

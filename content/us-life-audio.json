@@ -1348,5 +1348,133 @@
     "file": "assets/audio/us-life/mailing-address-2e9d94fea3b3.mp3",
     "seconds": 2.84,
     "sha256": "f2f212c5f3ba6bc0dde61daf7dc7aaa6d6de2af8617a56ee74f2b96ac6bb29ca"
+  },
+  "clock in": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: record the time when you start work.\nTerm to speak: clock in",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/clock-in-abb242a7f1d2.mp3",
+    "seconds": 1.44,
+    "sha256": "bddd8c4d39134ad1a004fd1ad4becc88794bad1c9c6b4687d806d023d8e6c9f0",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      0.12,
+      1.56
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "day off": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a day when you do not have to work.\nTerm to speak: day off",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/day-off-0fa1d1634496.mp3",
+    "seconds": 1.48,
+    "sha256": "34d684e1a38857bbe2114358e2797506eb0d23bd84252cc974b0d634faee3dfe",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      5.08,
+      6.56
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "two-factor code": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a second code used to protect an account.\nTerm to speak: two-factor code",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/two-factor-code-dfedbe134b0f.mp3",
+    "seconds": 1.96,
+    "sha256": "e6a1e942fc53556ce81c667c97c5ab60b9912072ee0b8ddc4f4175083c15daae",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      10.12,
+      12.08
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "Wi-Fi": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a wireless connection to the internet.\nTerm to speak: Wi-Fi",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/wi-fi-4209714fffa7.mp3",
+    "seconds": 1.18,
+    "sha256": "05086a6ff9105f29e982fda969c1843fe0ac40292c49436d4fdcbbd563002cfe",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      16.28,
+      17.46
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "ZIP code": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a number code for an area.\nTerm to speak: ZIP code",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/zip-code-66c489edbe7c.mp3",
+    "seconds": 1.28,
+    "sha256": "a3b9d9430d5f4094eec7fff570c6077150ce34243a41fe22960b52031a04f648",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      21.84,
+      23.12
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "apartment number": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the unit number in a building.\nTerm to speak: apartment number",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/apartment-number-4309a5b09e7f.mp3",
+    "seconds": 1.58,
+    "sha256": "9ee324a797bd4a25078e10578d55d71494656005239bcf9c837ae9678240b2bb",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      27.7,
+      29.28
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "tracking number": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a code used to find a package.\nTerm to speak: tracking number",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/tracking-number-0b02ee39fcaa.mp3",
+    "seconds": 1.44,
+    "sha256": "7140d1b1e306cf486f9e3af6a0c3eeed92926ad3761e04350c4a059a339fce7c",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      33.92,
+      35.36
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "forward mail": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: send mail from an old address to a new one.\nTerm to speak: forward mail",
+    "prompt": "Record a pronunciation word list for adult English learners. Use a clear, natural American English accent and a slightly slower teaching pace. Read exactly the 8 terms below, once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\nclock in: record the time when you start work\nday off: a day when you do not have to work\ntwo-factor code: a second code used to protect an account\nWi-Fi: a wireless connection to the internet\nZIP code: a number code for an area\napartment number: the unit number in a building\ntracking number: a code used to find a package\nforward mail: send mail from an old address to a new one\n\nREAD ONLY THESE TERMS, WITH SILENT GAPS:\nclock in.\n\nday off.\n\ntwo-factor code.\n\nWi-Fi.\n\nZIP code.\n\napartment number.\n\ntracking number.\n\nforward mail.",
+    "file": "assets/audio/us-life/forward-mail-c5411c93e17a.mp3",
+    "seconds": 1.54,
+    "sha256": "8c0cfa2b84ac79d0c029c6a6db2ce95d923dadff78ffbf8227c7ce72262fa531",
+    "batch_source": "content/audio-batches/7d61e7507242ead1b7b46226ef8f7072ae9d0b6bbf24e14735bbee1cf5cb096f.json",
+    "batch_interval_seconds": [
+      40.5,
+      42.04
+    ],
+    "silence_gap_seconds": 0.65
   }
 }

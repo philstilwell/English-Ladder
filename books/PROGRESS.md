@@ -12,10 +12,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
 - General IT English: 102 pages with the same counts and explained keys,
   eight field-specific extended conversations, and the matching illustration.
   Output: `output/pdf/general-it-english-book.pdf`.
+- Law English: 102 pages with the same counts and explained keys, covering
+  intake, litigation, discovery, research, contracts, investigations, and
+  settlement alongside factual and legal precision.
+  Output: `output/pdf/law-english-book.pdf`.
 
 ## Remaining
 
-63 books remain. The next course in the canonical inventory is `law`.
+62 books remain. The next course in the canonical inventory is `finance`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 
@@ -23,7 +27,7 @@ order. No other course should be represented as converted or complete.
 
 The new renderer reuses the approved design, embedded fonts, English Ladder
 branding, existing course illustrations, uniform blanks, and page references.
-The leadership book remains unchanged. The new book is stored separately from
+The leadership book remains unchanged. The new books are stored separately from
 published website downloads, which have not been replaced.
 
 Run `python3 -m unittest discover -s tests -p '*book*.py' -v` for the shared

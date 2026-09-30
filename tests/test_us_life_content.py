@@ -4,8 +4,10 @@ import json
 import tempfile
 import unittest
 import wave
+from contextlib import ExitStack
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 from bs4 import BeautifulSoup
 import us_life_content as content
@@ -165,6 +167,36 @@ class EverydayContentTests(unittest.TestCase):
                 budget.request(SimpleNamespace(models=Model()), 'list', 'say these terms',
                                'gemini-3.1-flash-tts-preview', max_tokens=2048)
             self.assertEqual(0, budget.spent)
+
+    def test_incomplete_word_list_recovers_without_repeating_completed_requests(self):
+        pcm = b'\x00\x00' * 4800 + b'\xdc\x05' * 14400 + b'\x00\x00' * 4800
+        calls = []
+        def request(*args, **kwargs):
+            calls.append(kwargs['spoken_text'])
+            return pcm  # The two-term request is intentionally incomplete.
+        def encode(data, destination):
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_bytes(data)
+            return len(data)/48000, hashlib.sha256(data).hexdigest()
+        with tempfile.TemporaryDirectory() as folder, ExitStack() as stack:
+            root = Path(folder)
+            (root/'content').mkdir()
+            records = root/'content/records.json'
+            budget = SimpleNamespace(request=request, spent=0, limit=2)
+            client = SimpleNamespace(close=lambda: None)
+            replacements = {'ROOT': root, 'RECORDS': records, 'terms': lambda: {'first': 'one', 'second': 'two'},
+                'valid_record': lambda t, d, saved: t in saved and (root/saved[t]['file']).is_file(),
+                'AudioBudget': lambda *args: budget, 'encode_mp3': encode}
+            for name, value in replacements.items(): stack.enter_context(patch.object(batch_audio, name, value))
+            stack.enter_context(patch.dict('sys.modules', {'google': SimpleNamespace(genai=SimpleNamespace(Client=lambda **k: client))}))
+            stack.enter_context(patch.dict('os.environ', {'GEMINI_API_KEY': 'test-only'}))
+            stack.enter_context(patch('sys.argv', ['audio', '--batch-size', '2']))
+            stack.enter_context(patch.object(batch_audio.time, 'sleep'))
+            self.assertEqual(0, batch_audio.main())
+            self.assertEqual(['first. <long pause> second.', 'first.', 'second.'], calls)
+            self.assertEqual({'first', 'second'}, set(json.loads(records.read_text())))
+            self.assertEqual(0, batch_audio.main())
+            self.assertEqual(3, len(calls))
 
     def test_missing_audio_check_is_offline_and_daily_build_never_generates_speech(self):
         workflow = (content.ROOT / '.github/workflows/cron.yml').read_text()

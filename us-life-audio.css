@@ -1,9 +1,14 @@
-.life-sentences, .life-vocabulary-block { display: flex; flex-direction: column; }
-.life-sentences ul {
+.life-sentences, .life-vocabulary-block, .life-customs, .life-dialogue { display: flex; flex-direction: column; }
+.life-sentences ol {
     flex: 1; display: flex; flex-direction: column; justify-content: space-between;
-    gap: .45em; font-size: 1.25rem; line-height: 1.65;
+    gap: .45em; font-size: 1.25rem; line-height: 1.65; margin: 0; padding-left: 1.8em;
 }
 .life-sentences li { margin-bottom: 0; }
+.life-sentences li::marker { color: #193cc2; font-weight: 650; font-variant-numeric: tabular-nums; }
+.life-customs ul, .life-dialogue-lines {
+    flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: 10px;
+}
+.life-customs li, .life-dialogue-lines p { margin: 0; }
 .module-block .life-vocabulary {
     flex: 1; align-content: space-between;
     grid-template-columns: minmax(145px, .65fr) minmax(0, 1fr);
@@ -29,7 +34,7 @@
 .life-audio-player audio { display: block; width: 100%; max-width: 100%; margin-bottom: 8px; }
 .life-audio-player a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
 @media (max-width: 800px) {
-    .life-sentences ul { font-size: 1.125rem; }
+    .life-sentences ol { font-size: 1.125rem; }
 }
 @media (max-width: 560px) {
     .module-block .life-vocabulary { grid-template-columns: 1fr; }

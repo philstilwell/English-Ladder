@@ -20,6 +20,11 @@ def content():
             raise ValueError(f'{key}: expected 12 distinct vocabulary terms.')
         if any(not s.strip() for s in sentences) or any(not w['definition'].strip() for w in words):
             raise ValueError(f'{key}: empty learning content.')
+        customs, dialogue = unit['customs'], unit['dialogue']
+        if len(customs) != 7 or len(set(customs)) != 7 or any(not tip.strip() for tip in customs):
+            raise ValueError(f'{key}: expected 7 distinct customs tips.')
+        if len(dialogue) != 10 or any(not turn['speaker'].strip() or not turn['text'].strip() for turn in dialogue):
+            raise ValueError(f'{key}: expected 10 complete dialogue turns.')
     return units
 
 
@@ -39,9 +44,10 @@ def enhance_page(soup):
         raise ValueError('Everyday English page and authored units do not match.')
     for key, unit in units.items():
         blocks = soup.find(id=key).select('.us-life-main .module-block')
-        for block, name in zip(blocks[:2], ('life-sentences', 'life-vocabulary-block')):
+        for block, name in zip(blocks, ('life-sentences', 'life-vocabulary-block', 'life-customs', 'life-dialogue')):
             block['class'] = list(dict.fromkeys([*block.get('class', []), name]))
-        sentences = blocks[0].select_one('ul')
+        sentences = blocks[0].select_one('ul, ol')
+        sentences.name = 'ol'
         sentences.clear()
         for sentence in unit['sentences']:
             li = soup.new_tag('li'); li.string = sentence; sentences.append(li)
@@ -72,8 +78,20 @@ def enhance_page(soup):
         audio = soup.new_tag('audio', controls='', preload='none', attrs={'aria-label': 'Vocabulary pronunciation'})
         fallback = soup.new_tag('a', attrs={'data-pronunciation-fallback': ''}); fallback.string = 'Open audio file'
         player.extend([status, audio, fallback]); vocabulary.insert_after(player)
+        customs = blocks[2].select_one('ul')
+        customs.clear()
+        for tip in unit['customs']:
+            li = soup.new_tag('li'); li.string = tip; customs.append(li)
+        for old in blocks[3].select('p, .life-dialogue-lines'):
+            old.decompose()
+        dialogue = soup.new_tag('div', attrs={'class': 'life-dialogue-lines'})
+        blocks[3].append(dialogue)
+        for turn in unit['dialogue']:
+            paragraph = soup.new_tag('p')
+            speaker = soup.new_tag('strong'); speaker.string = turn['speaker'] + ':'
+            paragraph.extend([speaker, ' ' + turn['text']]); dialogue.append(paragraph)
     if not soup.select_one('script[src^="us-life-audio.js"]'):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
         soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
-    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-compact1'
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-conversations1'

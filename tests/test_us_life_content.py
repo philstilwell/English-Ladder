@@ -23,7 +23,14 @@ class EverydayContentTests(unittest.TestCase):
         records = json.loads(audio.RECORDS.read_text())
         for key, unit in content.content().items():
             blocks = soup.find(id=key).select('.us-life-main .module-block')
+            self.assertIsNotNone(blocks[0].select_one('ol'))
+            self.assertIsNone(blocks[0].select_one('ul'))
             self.assertEqual(unit['sentences'], [li.get_text(' ', strip=True) for li in blocks[0].select('li')])
+            self.assertEqual(unit['customs'], [li.get_text(' ', strip=True) for li in blocks[2].select('li')])
+            self.assertEqual(7, len(blocks[2].select('li')))
+            self.assertEqual([turn['speaker'] + ': ' + turn['text'] for turn in unit['dialogue']],
+                             [p.get_text(' ', strip=True) for p in blocks[3].select('p')])
+            self.assertEqual(10, len(blocks[3].select('p')))
             self.assertEqual(12, len(blocks[1].select('dt')))
             for word, dt in zip(unit['vocabulary'], blocks[1].select('dt')):
                 self.assertEqual(word['term'], dt.select_one('[data-vocabulary-term]').text)
@@ -38,6 +45,7 @@ class EverydayContentTests(unittest.TestCase):
             for prompt in soup.find(id=key).select('.ai-prompt-text'):
                 self.assertNotIn('▶ Listen', prompt.text)
                 self.assertIn(unit['vocabulary'][-1]['term'], prompt.text)
+                self.assertIn(unit['dialogue'][-1]['text'], prompt.text)
         for source in sources(soup).values():
             self.assertIsNotNone(read_record(source), source['unit'])
             self.assertNotIn('Select Listen', source['english_context'])

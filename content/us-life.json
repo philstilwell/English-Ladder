@@ -67,6 +67,57 @@
         "term": "host",
         "definition": "a person who welcomes you into their home"
       }
+    ],
+    "customs": [
+      "People may ask direct questions. Short, clear answers are normal.",
+      "Keep your passport, visa papers, address, and school or work information easy to reach.",
+      "At the airport, ask staff for help if you are lost. Use simple sentences.",
+      "At a service counter, wait for your turn and leave space for the person who is speaking with staff.",
+      "Ask someone to repeat an unfamiliar place name, and check the spelling before following directions or booking a ride.",
+      "Keep your destination written clearly, including the apartment number. Showing it can help when street names sound similar.",
+      "Before leaving an information desk, repeat the terminal, exit, or meeting point to check that you understood correctly."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Officer",
+        "text": "Where will you stay in the US?"
+      },
+      {
+        "speaker": "Student",
+        "text": "I will stay at 125 Oak Street, Apartment 3B."
+      },
+      {
+        "speaker": "Officer",
+        "text": "What is the purpose of your trip?"
+      },
+      {
+        "speaker": "Student",
+        "text": "I am here to study English."
+      },
+      {
+        "speaker": "Officer",
+        "text": "Which school will you attend?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Could you please repeat that slowly?"
+      },
+      {
+        "speaker": "Officer",
+        "text": "What is the name of your school?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Oak Street English School. Here is the address."
+      },
+      {
+        "speaker": "Officer",
+        "text": "Thank you. Is that also your school contact number?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, it is. I have it written here."
+      }
     ]
   },
   "documents": {
@@ -136,6 +187,57 @@
       {
         "term": "official website",
         "definition": "a website run by the organization it represents"
+      }
+    ],
+    "customs": [
+      "Many official websites end in .gov. Be careful with look-alike websites.",
+      "Keep digital and paper copies of key documents in safe places.",
+      "For immigration questions, use official information, your school office, or a qualified lawyer.",
+      "Use the same name and spelling shown on your identification. Ask staff how to enter a name on a form.",
+      "If a question on a form is unclear, ask for an explanation before you write or choose an answer.",
+      "Check the date format and say the month aloud when confirming a deadline. Ask which office handles your question.",
+      "Keep any confirmation message or reference number after submitting a form. It can help you ask about its progress."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I moved to a new apartment."
+      },
+      {
+        "speaker": "Advisor",
+        "text": "Did you update your address?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Not yet. Where should I do that?"
+      },
+      {
+        "speaker": "Advisor",
+        "text": "Use the official government website or your online account."
+      },
+      {
+        "speaker": "Student",
+        "text": "How can I find the correct page?"
+      },
+      {
+        "speaker": "Advisor",
+        "text": "Start with the official agency website and look for address changes."
+      },
+      {
+        "speaker": "Student",
+        "text": "Can I ask you if I do not understand the form?"
+      },
+      {
+        "speaker": "Advisor",
+        "text": "Yes. I can help you find the instructions or the right office."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. I will check the instructions today."
+      },
+      {
+        "speaker": "Advisor",
+        "text": "You are welcome. Keep any confirmation you receive."
       }
     ]
   },
@@ -207,6 +309,57 @@
         "term": "quiet hours",
         "definition": "times when residents are asked to keep noise low"
       }
+    ],
+    "customs": [
+      "Read the lease before you sign. Ask questions in writing.",
+      "Take photos when you move in. Keep proof of damage you did not make.",
+      "Quiet hours, guest rules, parking, pets, and trash rules are common.",
+      "Ask which costs are included in the rent and which you pay separately. Request the details before making plans.",
+      "Roommates may share kitchen and bathroom space. Talk about cleaning, visitors, and shared supplies before problems become frustrating.",
+      "Check how to contact the landlord or manager for routine repairs, and ask which number handles urgent building problems.",
+      "Before moving out, ask about the building's checkout process, key return, and inspection. Keep the written instructions for reference."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Is this room still available?"
+      },
+      {
+        "speaker": "Landlord",
+        "text": "Yes. The rent is $850 a month."
+      },
+      {
+        "speaker": "Student",
+        "text": "Are utilities included?"
+      },
+      {
+        "speaker": "Landlord",
+        "text": "Water is included. Electricity is separate."
+      },
+      {
+        "speaker": "Student",
+        "text": "Can I review the lease tonight?"
+      },
+      {
+        "speaker": "Landlord",
+        "text": "Of course. I can email you a copy."
+      },
+      {
+        "speaker": "Student",
+        "text": "Are there rules about guests and quiet hours?"
+      },
+      {
+        "speaker": "Landlord",
+        "text": "Yes. They are listed on the second page."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. I will read it and send you my questions."
+      },
+      {
+        "speaker": "Landlord",
+        "text": "That is fine. Let me know if anything is unclear."
+      }
     ]
   },
   "utilities": {
@@ -276,6 +429,57 @@
       {
         "term": "thermostat",
         "definition": "a device used to control the temperature in a room"
+      }
+    ],
+    "customs": [
+      "Report repair problems early. Use photos when possible.",
+      "Some apartments require you to sort trash, recycling, and large items.",
+      "Utility bills usually arrive every month. Late payment can add fees.",
+      "When reporting a repair, include your apartment number, the room, and when the problem began so staff understand the request.",
+      "A repair visit may have an arrival window rather than an exact time. Ask how you will receive updates.",
+      "Ask where to report a broken shared appliance or building light. Different problems may go to different service teams.",
+      "Confirm whether a repair request is complete before ending the call. Save the reference number and any appointment message."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Hello, I need to report a repair."
+      },
+      {
+        "speaker": "Manager",
+        "text": "What is the problem?"
+      },
+      {
+        "speaker": "Student",
+        "text": "There is water under the kitchen sink."
+      },
+      {
+        "speaker": "Manager",
+        "text": "Can a technician come tomorrow morning?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. Please send me the time by text."
+      },
+      {
+        "speaker": "Manager",
+        "text": "The visit is between nine and eleven. What is your apartment number?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Apartment 6B. Would a photo of the leak help?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Yes, please send one with your repair request."
+      },
+      {
+        "speaker": "Student",
+        "text": "I will do that. Can I have the request number?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Yes. It is 246, and I will include it in the text."
       }
     ]
   },
@@ -347,6 +551,57 @@
         "term": "PIN",
         "definition": "a secret number used with a bank card or account"
       }
+    ],
+    "customs": [
+      "Keep receipts for returns, rent, deposits, and large payments.",
+      "Never pay a stranger with gift cards, crypto, or wire transfer for an emergency call.",
+      "Ask about monthly fees, ATM fees, minimum balances, and overdraft fees.",
+      "At a bank counter, give other customers space while they discuss their accounts. Wait until a staff member calls you.",
+      "Ask staff to explain an unfamiliar charge in simple words. A written fee list can help you compare the details.",
+      "Before leaving, check the amount on your receipt and ask about anything you do not recognize or understand.",
+      "If an unexpected caller claims to be your bank, contact the bank using a number you already know is genuine."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I want to open a checking account."
+      },
+      {
+        "speaker": "Banker",
+        "text": "Do you have an ID and proof of address?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. I have my passport and lease."
+      },
+      {
+        "speaker": "Banker",
+        "text": "Great. Do you want a debit card?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. Are there monthly fees?"
+      },
+      {
+        "speaker": "Banker",
+        "text": "This account has a monthly fee. Here is the fee list."
+      },
+      {
+        "speaker": "Student",
+        "text": "Could you explain the ATM fees, too?"
+      },
+      {
+        "speaker": "Banker",
+        "text": "Yes. This section explains charges for using other banks' machines."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. May I take the list home before deciding?"
+      },
+      {
+        "speaker": "Banker",
+        "text": "Of course. Please ask if you have more questions."
+      }
     ]
   },
   "shopping": {
@@ -416,6 +671,57 @@
       {
         "term": "gift receipt",
         "definition": "a receipt that usually hides the price and can help with returns"
+      }
+    ],
+    "customs": [
+      "The price tag may not include sales tax. The final price can be higher.",
+      "Return rules are different at each store. Keep the receipt and package.",
+      "It is normal to ask staff, \"Excuse me, where is...?\"",
+      "If you cannot find an item, describe what it is used for or show staff a picture of the product.",
+      "At checkout, wait until the previous customer has finished paying. Some stores use one line for several registers.",
+      "If a shelf price and register price differ, politely ask staff to check the label before you finish paying.",
+      "For a return, start by saying what you bought, when you bought it, and whether you want an exchange or refund."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Excuse me, where is the shampoo?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "It is in aisle 8."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Also, can I return this towel?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Do you have the receipt?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, here it is."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Would you like an exchange or a refund?"
+      },
+      {
+        "speaker": "Student",
+        "text": "A refund, please. It is the wrong size."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Did you pay with this card?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. Do you need me to insert it again?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes, please. Then I will give you the refund receipt."
       }
     ]
   },
@@ -487,6 +793,57 @@
         "term": "service charge",
         "definition": "an extra amount added to a bill for service"
       }
+    ],
+    "customs": [
+      "In many sit-down restaurants, people usually leave a tip for the server.",
+      "Taking leftovers home is normal. Ask for a box.",
+      "Tell restaurant staff about allergies clearly before you order.",
+      "Some restaurants ask you to wait near the entrance for a table. Others have customers order at a counter.",
+      "Ask whether you order and pay at the table or counter if you are unsure how the restaurant works.",
+      "You can ask for separate checks before ordering when eating with a group. Ask whether the restaurant can arrange this.",
+      "When ordering takeout, confirm the pickup name and number of items. Check that you have the complete order before leaving."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Server",
+        "text": "Are you ready to order?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. I would like the chicken salad."
+      },
+      {
+        "speaker": "Server",
+        "text": "Any changes?"
+      },
+      {
+        "speaker": "Student",
+        "text": "No nuts, please. I have a nut allergy."
+      },
+      {
+        "speaker": "Server",
+        "text": "Thank you for telling me. I will check with the kitchen."
+      },
+      {
+        "speaker": "Student",
+        "text": "Could you check the dressing, too?"
+      },
+      {
+        "speaker": "Server",
+        "text": "Yes. I will ask about the ingredients and preparation."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. I will wait until you have checked."
+      },
+      {
+        "speaker": "Server",
+        "text": "Of course. Would you like some water while you wait?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. Water would be great."
+      }
     ]
   },
   "transportation": {
@@ -556,6 +913,57 @@
       {
         "term": "delay",
         "definition": "a situation in which something happens later than planned"
+      }
+    ],
+    "customs": [
+      "Driving rules and license rules are different by state.",
+      "Seat belts are expected. Car insurance is required in many situations.",
+      "For buses, check the route, direction, and last service time.",
+      "Let people leave a bus or train before you board, and keep bags out of the aisle and empty seats.",
+      "Check how to pay before your trip. Different services may use tickets, transit cards, an app, or other payment methods.",
+      "Ask whether a transfer needs another ticket or payment. Do not assume that nearby services use the same fare system.",
+      "Use the stop name as well as a nearby landmark when asking for directions. Repeat unfamiliar names to confirm them."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Excuse me, does this bus go to City College?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Yes, but you need to transfer at Main Street."
+      },
+      {
+        "speaker": "Student",
+        "text": "How much is the fare?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "It is $2.50."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Could you tell me when we get to Main Street?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Yes. Listen for the stop announcement, too."
+      },
+      {
+        "speaker": "Student",
+        "text": "Which bus do I take from there?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Take Route 6 toward City College."
+      },
+      {
+        "speaker": "Student",
+        "text": "Is the transfer stop on the same side of the street?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Yes. Look for the Route 6 sign beside the shelter."
       }
     ]
   },
@@ -627,6 +1035,57 @@
         "term": "follow-up appointment",
         "definition": "a later visit to check how you are doing"
       }
+    ],
+    "customs": [
+      "Call 911 for a serious emergency. Say your address first.",
+      "For non-emergency sickness, a clinic or urgent care may be faster than the ER.",
+      "Ask for an interpreter if medical English is hard. It is important to be exact.",
+      "At reception, give your name and appointment time. Ask where to wait and whether there are forms to complete.",
+      "Bring a written list of your questions so you can explain what you want to discuss during the visit.",
+      "If you do not understand a question or instruction, ask the staff member to explain it again in simpler words.",
+      "Before leaving, ask whom to contact with questions about the visit and how you will receive any follow-up information."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Receptionist",
+        "text": "What seems to be the problem?"
+      },
+      {
+        "speaker": "Student",
+        "text": "I have a fever and a sore throat."
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Do you have insurance?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. Here is my insurance card."
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Thank you. Do you need help with the check-in form?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Can I have an interpreter, please?"
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "Which language do you prefer?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Spanish, please. I want to explain my symptoms clearly."
+      },
+      {
+        "speaker": "Receptionist",
+        "text": "I will ask the team to arrange language help."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. I also brought a list of my medicines."
+      }
     ]
   },
   "appointments": {
@@ -696,6 +1155,57 @@
       {
         "term": "reminder",
         "definition": "a message that helps you remember something"
+      }
+    ],
+    "customs": [
+      "Arrive early for medical, school, legal, and government appointments.",
+      "If you cannot go, call or cancel online as soon as possible.",
+      "Dates may be written month/day/year, like 06/15/2026.",
+      "When booking, repeat the day, date, time, and location. Check whether the appointment is in person, by phone, or online.",
+      "Ask which documents to bring and how early to arrive. Different offices may have different check-in steps for visitors.",
+      "If you expect to be late, contact the office and explain. Ask whether you should still come or choose another time.",
+      "Keep the confirmation message and contact details together. If an appointment changes, ask for a new confirmation with the correct time."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I need to make an appointment."
+      },
+      {
+        "speaker": "Office",
+        "text": "What day works for you?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Tuesday afternoon is good."
+      },
+      {
+        "speaker": "Office",
+        "text": "We have 2:30 p.m. available."
+      },
+      {
+        "speaker": "Student",
+        "text": "That works. Is the appointment at your Main Street office?"
+      },
+      {
+        "speaker": "Office",
+        "text": "Yes. Please come to the reception desk on the second floor."
+      },
+      {
+        "speaker": "Student",
+        "text": "What should I bring with me?"
+      },
+      {
+        "speaker": "Office",
+        "text": "Bring your ID and the completed form we emailed you."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Could you send me a confirmation?"
+      },
+      {
+        "speaker": "Office",
+        "text": "Certainly. I will include the date, time, and address."
       }
     ]
   },
@@ -767,6 +1277,57 @@
         "term": "field trip",
         "definition": "a school visit to a place outside the classroom"
       }
+    ],
+    "customs": [
+      "Schools expect regular attendance and messages when a child is absent.",
+      "Teachers often use email, apps, or paper forms to contact families.",
+      "Ask for language help if school papers are difficult.",
+      "When contacting the school, give your child's full name and class so staff can direct the message to the right person.",
+      "Ask which contact method the teacher prefers for routine questions. A scheduled meeting may work better for a longer discussion.",
+      "Check the school's visitor and pickup instructions before arriving. Ask the office how to report a change in pickup plans.",
+      "Keep permission slips and school messages in one place. If a deadline is unclear, ask which date the form is due."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Parent",
+        "text": "My child was sick yesterday."
+      },
+      {
+        "speaker": "School Office",
+        "text": "Thank you for calling. What is your child's name?"
+      },
+      {
+        "speaker": "Parent",
+        "text": "Her name is Hana Sato."
+      },
+      {
+        "speaker": "School Office",
+        "text": "Please send a note when she returns."
+      },
+      {
+        "speaker": "Parent",
+        "text": "Okay. Should I include her teacher's name?"
+      },
+      {
+        "speaker": "School Office",
+        "text": "Yes, please include her class and the date she was absent."
+      },
+      {
+        "speaker": "Parent",
+        "text": "Can I email the note to the school office?"
+      },
+      {
+        "speaker": "School Office",
+        "text": "Yes. Use the office email address on our website."
+      },
+      {
+        "speaker": "Parent",
+        "text": "Thank you. I will send it this morning."
+      },
+      {
+        "speaker": "School Office",
+        "text": "You are welcome. Please contact us if you need help."
+      }
     ]
   },
   "work": {
@@ -836,6 +1397,57 @@
       {
         "term": "day off",
         "definition": "a day when you do not have to work"
+      }
+    ],
+    "customs": [
+      "Work permission, tax forms, pay rules, and benefits depend on your situation.",
+      "Ask questions early if you do not understand a schedule or task.",
+      "It is normal to confirm instructions: \"Just to make sure, you want me to...\"",
+      "If you expect to be late or absent, use the workplace's contact procedure. Ask your manager who needs to know.",
+      "Write down unfamiliar instructions, then repeat the main steps to check your understanding before you begin a new task.",
+      "Ask how to report a problem with equipment or supplies. Explain what happened and where help is needed.",
+      "Check who can approve a schedule change before making arrangements. Keep a copy of the updated schedule or confirmation message."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Could you show me how to clock in?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Sure. Use this screen and enter your ID."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. What time is my break?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Your break is at 11:00."
+      },
+      {
+        "speaker": "Student",
+        "text": "Got it. Where can I see this week's schedule?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "It is on the noticeboard beside the staff room."
+      },
+      {
+        "speaker": "Student",
+        "text": "Who should I contact if I need to change a shift?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Please speak with me before arranging a change."
+      },
+      {
+        "speaker": "Student",
+        "text": "Just to make sure, I should check with you first?"
+      },
+      {
+        "speaker": "Manager",
+        "text": "Exactly. Then we can update the schedule together."
       }
     ]
   },
@@ -907,6 +1519,57 @@
         "term": "software update",
         "definition": "a newer version of a program installed on a device"
       }
+    ],
+    "customs": [
+      "Many offices leave voicemail. Check it often and call back.",
+      "Do not share passwords or verification codes with callers or strangers.",
+      "Text messages are common for quick plans, but formal issues may use email.",
+      "When leaving voicemail, say your name, reason for calling, and callback number slowly. Repeat the number at the end.",
+      "If a call drops, call back and explain that the connection ended. You can ask the person to repeat anything missed.",
+      "Before choosing a plan, ask which charges are included and whether there are extra costs for the services you need.",
+      "If you need a written record of a service change, ask for an email or text confirming the details."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I need a simple phone plan."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Do you want unlimited data?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Maybe not. I use Wi-Fi at home."
+      },
+      {
+        "speaker": "Staff",
+        "text": "This plan is cheaper and has no contract."
+      },
+      {
+        "speaker": "Student",
+        "text": "Good. What is the monthly cost?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "It is twenty-five dollars before taxes and any extra charges."
+      },
+      {
+        "speaker": "Student",
+        "text": "Can I keep my current phone number?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "We can check that. Please bring your current account details."
+      },
+      {
+        "speaker": "Student",
+        "text": "Could you write down what I need before I decide?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Of course. Here are the details and the complete price list."
+      }
     ]
   },
   "mail": {
@@ -976,6 +1639,57 @@
       {
         "term": "shipping label",
         "definition": "a label with the information needed to send a package"
+      }
+    ],
+    "customs": [
+      "Write the apartment or unit number clearly. Missing numbers can cause lost mail.",
+      "USPS mail forwarding helps with postal mail, but it does not update every company or agency.",
+      "Tell banks, schools, doctors, employers, and important offices your new address directly.",
+      "Write the sender's and recipient's addresses clearly, and ask staff where each address should go if you are unsure.",
+      "At the counter, explain when the item needs to arrive. Ask staff to compare the available mailing options and prices.",
+      "Keep the mailing receipt and any tracking number. Use them when asking the carrier about the status of a package.",
+      "Ask your building manager where deliveries are left and how residents are notified. Buildings may use different package collection systems."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I moved last week."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Do you want to forward your mail?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. What form do I need?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "You can start on the official USPS website or ask here for help."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. My new address includes Apartment 4C."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Please check that the apartment number is included in the address."
+      },
+      {
+        "speaker": "Student",
+        "text": "Does forwarding update my address with my bank, too?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "No. Contact your bank directly to change its records."
+      },
+      {
+        "speaker": "Student",
+        "text": "I understand. I will contact my bank and school separately."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Good. Keep your forwarding confirmation for your records."
       }
     ]
   },
@@ -1047,6 +1761,57 @@
         "term": "charger",
         "definition": "a device that supplies power to a battery"
       }
+    ],
+    "customs": [
+      "Call 911 for fire, serious danger, or urgent medical problems.",
+      "For non-urgent problems, use a local non-emergency number or building manager.",
+      "Keep basic supplies: water, medicine, flashlight, chargers, and copies of documents.",
+      "When calling for emergency help, answer the call-taker's questions about your location and what happened as clearly as you can.",
+      "Be ready to give the phone number you are calling from. Stay on the line until the call-taker tells you to hang up.",
+      "If you call 911 by mistake, explain what happened to the call-taker rather than simply ending the call without speaking.",
+      "Learn the names of nearby streets and building entrances. These details can help you explain where assistance is needed."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Dispatcher",
+        "text": "911. What is your emergency?"
+      },
+      {
+        "speaker": "Student",
+        "text": "There is a fire in my building."
+      },
+      {
+        "speaker": "Dispatcher",
+        "text": "What is your address?"
+      },
+      {
+        "speaker": "Student",
+        "text": "45 Pine Avenue, Apartment 2A."
+      },
+      {
+        "speaker": "Dispatcher",
+        "text": "Leave the building if you can do so safely."
+      },
+      {
+        "speaker": "Student",
+        "text": "I am already outside, across the street."
+      },
+      {
+        "speaker": "Dispatcher",
+        "text": "What phone number are you calling from?"
+      },
+      {
+        "speaker": "Student",
+        "text": "202-555-0146. Do you need me to repeat it?"
+      },
+      {
+        "speaker": "Dispatcher",
+        "text": "I have it. Stay on the line and answer my questions."
+      },
+      {
+        "speaker": "Student",
+        "text": "Okay. I am listening."
+      }
     ]
   },
   "community": {
@@ -1116,6 +1881,57 @@
       {
         "term": "shared space",
         "definition": "an area used by more than one person or group"
+      }
+    ],
+    "customs": [
+      "People often use small talk about weather, weekends, pets, or local places.",
+      "A smile and \"How are you?\" can be a greeting, not a long question.",
+      "Libraries and community centers can help with English, forms, computers, and local information.",
+      "For a first conversation, introduce yourself and keep questions simple. Give the other person room to end the conversation politely.",
+      "Ask before borrowing something or using another person's belongings. Agree on when and how you will return a borrowed item.",
+      "If someone invites you to an event, confirm the time and place. Ask whether you should bring anything with you.",
+      "When discussing a shared-space problem, describe the issue calmly and make a specific request instead of blaming a neighbor."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Hi, I just moved in next door."
+      },
+      {
+        "speaker": "Neighbor",
+        "text": "Welcome to the building."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Do you know when trash pickup is?"
+      },
+      {
+        "speaker": "Neighbor",
+        "text": "Tuesday morning. Put bins outside Monday night."
+      },
+      {
+        "speaker": "Student",
+        "text": "That helps a lot. Where do the recycling bins go?"
+      },
+      {
+        "speaker": "Neighbor",
+        "text": "Beside the blue sign near the back gate."
+      },
+      {
+        "speaker": "Student",
+        "text": "Is there a notice with the building rules?"
+      },
+      {
+        "speaker": "Neighbor",
+        "text": "Yes. There is one in the lobby, next to the mailboxes."
+      },
+      {
+        "speaker": "Student",
+        "text": "Great. I will take a look. My name is Mina, by the way."
+      },
+      {
+        "speaker": "Neighbor",
+        "text": "Nice to meet you, Mina. I am Alex."
       }
     ]
   },
@@ -1187,6 +2003,57 @@
         "term": "out of order",
         "definition": "not working and not available to use"
       }
+    ],
+    "customs": [
+      "Do not leave clothes in a machine for a long time after it stops.",
+      "Clean the lint trap before or after using a dryer if the machine has one.",
+      "Some apartments have shared laundry rooms with posted hours and rules.",
+      "Check the posted payment instructions before loading a machine. A laundry room may use coins, a card, or an app.",
+      "Set a timer so you know when your cycle ends. Take your clothes out promptly when other people are waiting.",
+      "Keep folding tables and walkways clear of bags and baskets. Leave shared surfaces ready for the next person to use.",
+      "If a machine stops or takes your payment without starting, note its number and ask staff how to report the problem."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Excuse me, how do I pay for this washer?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Use the laundry card machine by the door."
+      },
+      {
+        "speaker": "Student",
+        "text": "How much is one wash?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "It is $3.25. The dryer is separate."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Which cycle should I use for regular clothes?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Check the clothing labels. The machine instructions are above the buttons."
+      },
+      {
+        "speaker": "Student",
+        "text": "How long does the regular cycle take?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "About thirty minutes. The screen shows the time remaining."
+      },
+      {
+        "speaker": "Student",
+        "text": "I will set a timer so I can collect my clothes promptly."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Thank you. The folding tables are beside the dryers."
+      }
     ]
   },
   "dry-cleaning": {
@@ -1256,6 +2123,57 @@
       {
         "term": "seam",
         "definition": "a line where two pieces of fabric are joined"
+      }
+    ],
+    "customs": [
+      "Bring the pickup ticket or show the text message when you return.",
+      "Point to the exact stain, missing button, or place that needs alteration.",
+      "Ask the price and ready date before leaving your clothes.",
+      "Check how many items are listed on your ticket before leaving. Ask staff to note any special requests or concerns.",
+      "Point out stains before cleaning and explain what caused them if you know. Ask what results the cleaner expects.",
+      "Confirm whether the ready date includes alterations or other extra work. Different services may have different prices and completion times.",
+      "At pickup, compare the items with your ticket and check the requested work. Ask staff about any concern before leaving."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I need this jacket dry cleaned, please."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Any stains or repairs?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, there is a stain on the sleeve."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "We can try to remove it. It will be ready Friday."
+      },
+      {
+        "speaker": "Student",
+        "text": "How much will the cleaning cost?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "The cleaning is eighteen dollars. There is no repair on this ticket."
+      },
+      {
+        "speaker": "Student",
+        "text": "Could you write the stain request on the ticket, too?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Certainly. Here is your copy with the pickup date."
+      },
+      {
+        "speaker": "Student",
+        "text": "Great. I will bring this ticket for pickup."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Thank you. We close at six on Friday."
       }
     ]
   },
@@ -1327,6 +2245,57 @@
         "term": "estimated arrival time",
         "definition": "the time someone expects to reach a place"
       }
+    ],
+    "customs": [
+      "For app rides, check the car, license plate, and driver's name before getting in.",
+      "At airports, rideshare pickup may be in a special area, not directly outside baggage claim.",
+      "Use the app or meter price. Be careful if a stranger offers a private ride inside the airport.",
+      "Confirm the destination before the trip starts, especially when several nearby buildings or streets have similar names in the app.",
+      "Ask where to wait if the pickup area is crowded. Describe a visible sign or entrance to help the driver find you.",
+      "If you need help with luggage, ask politely and explain which bags belong to you. Keep the pickup area clear.",
+      "Before leaving the car, check the seat and floor for your belongings. Keep the trip receipt for later questions."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Hi, are you Daniel?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Yes. Are you going to 18 Maple Road?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. Can you drop me off at the front entrance?"
+      },
+      {
+        "speaker": "Driver",
+        "text": "Sure. It will take about 20 minutes."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. I have two bags."
+      },
+      {
+        "speaker": "Driver",
+        "text": "There is room in the trunk. Would you like some help?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. The larger bag is quite heavy."
+      },
+      {
+        "speaker": "Driver",
+        "text": "No problem. Is the front entrance beside the pharmacy?"
+      },
+      {
+        "speaker": "Student",
+        "text": "That is right. The door has a blue sign above it."
+      },
+      {
+        "speaker": "Driver",
+        "text": "Thanks for confirming. I know which entrance you mean."
+      }
     ]
   },
   "car-care": {
@@ -1396,6 +2365,57 @@
       {
         "term": "repair estimate",
         "definition": "an expected price for fixing a problem"
+      }
+    ],
+    "customs": [
+      "Read parking signs carefully. Rules may change by time, day, and side of the street.",
+      "Some gas pumps ask for a ZIP code when you pay by card.",
+      "If the car has a serious problem, move to a safe place before calling for help.",
+      "When paying inside a gas station, tell the cashier your pump number and the amount or fuel type you want.",
+      "Ask whether a parking space has a time limit before leaving your car. Check nearby signs as well as the meter.",
+      "When arranging a repair, describe the problem and when it happens. Ask for an estimate before agreeing to the work.",
+      "Keep your parking or repair receipt until you have checked the details. Ask whom to contact if a charge is unclear."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Excuse me, can I pay for gas inside?"
+      },
+      {
+        "speaker": "Cashier",
+        "text": "Yes. Which pump are you using?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Pump 4, please. I need $30 of regular gas."
+      },
+      {
+        "speaker": "Cashier",
+        "text": "Okay. You can start pumping now."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Can I get a receipt when I finish?"
+      },
+      {
+        "speaker": "Cashier",
+        "text": "Yes. Come back and tell me your pump number."
+      },
+      {
+        "speaker": "Student",
+        "text": "Is there a place here to check my tire pressure?"
+      },
+      {
+        "speaker": "Cashier",
+        "text": "The air machine is beside the car wash."
+      },
+      {
+        "speaker": "Student",
+        "text": "Does it take coins or a card?"
+      },
+      {
+        "speaker": "Cashier",
+        "text": "It takes a card. The instructions are on the front."
       }
     ]
   },
@@ -1467,6 +2487,57 @@
         "term": "blow-dry",
         "definition": "dry and style hair with a hair dryer"
       }
+    ],
+    "customs": [
+      "Photos help. Show a picture of the haircut or style you want.",
+      "Some places accept walk-ins, but appointments are safer when you have limited time.",
+      "Many people tip for hair and beauty services. Check the final price before deciding.",
+      "Before the service starts, explain how much hair you want removed. A picture and a length in inches can help.",
+      "Ask whether washing, drying, or styling is included in the quoted price. Extra services may be priced separately at some salons.",
+      "If the stylist suggests a change, ask them to explain it before agreeing. It is fine to request your original plan.",
+      "If you cannot keep an appointment, contact the salon as early as possible and ask about its cancellation or rescheduling policy."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Hi, do you take walk-ins?"
+      },
+      {
+        "speaker": "Stylist",
+        "text": "Yes. What would you like today?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Just a trim, please. About one inch."
+      },
+      {
+        "speaker": "Stylist",
+        "text": "No problem. Do you want layers?"
+      },
+      {
+        "speaker": "Student",
+        "text": "No, thank you. Same style, just shorter."
+      },
+      {
+        "speaker": "Stylist",
+        "text": "Would you like to show me a picture of the length?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. I would like it to look like this."
+      },
+      {
+        "speaker": "Stylist",
+        "text": "I understand. The trim is twenty-eight dollars without a wash."
+      },
+      {
+        "speaker": "Student",
+        "text": "That works for me. Could you leave the front a little longer?"
+      },
+      {
+        "speaker": "Stylist",
+        "text": "Certainly. I will show you the length before I start."
+      }
     ]
   },
   "clothing-services": {
@@ -1536,6 +2607,57 @@
       {
         "term": "fabric",
         "definition": "material used to make clothing"
+      }
+    ],
+    "customs": [
+      "Stores often need the receipt, tags, and unused condition for an exchange.",
+      "Tailors may ask you to try on the clothing so they can mark the correct length.",
+      "Small repairs can cost more than students expect, so ask for the price first.",
+      "For an exchange, explain whether you need a different size, color, or item. Ask staff to check what is available.",
+      "Before alterations begin, confirm the desired length or fit while wearing the item. Ask the tailor to explain the planned change.",
+      "When leaving clothes or shoes for repair, ask for a ticket that identifies your items and the work requested.",
+      "At pickup, check the fit or repair before leaving if possible. Keep the receipt and ask about any remaining concerns."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I bought this shirt yesterday, but it is too small."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Do you have the receipt?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes. Can I exchange it for a medium?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Let me check. Yes, we have one."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. The tags are still on it."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Would you like to try on the medium before we exchange it?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. Where are the fitting rooms?"
+      },
+      {
+        "speaker": "Clerk",
+        "text": "They are at the back, beside the jackets."
+      },
+      {
+        "speaker": "Student",
+        "text": "This size fits well. I would like to take it."
+      },
+      {
+        "speaker": "Clerk",
+        "text": "Great. Here is your exchange receipt. Keep it with your purchase."
       }
     ]
   },
@@ -1607,6 +2729,57 @@
         "term": "joining fee",
         "definition": "a one-time charge for becoming a member"
       }
+    ],
+    "customs": [
+      "Gyms may have contracts, cancellation rules, and extra fees. Read before joining.",
+      "Parks can have rules for pets, alcohol, sports fields, fires, and closing times.",
+      "Shared spaces often expect cleanup. Leave tables, equipment, and rooms ready for the next person.",
+      "Ask whether a class or facility needs a reservation before arriving. Some activities have limited spaces or a separate registration process.",
+      "If you are new to a shared facility, ask staff where to store your belongings and how to use the space.",
+      "At a gym, follow the posted guidance for wiping equipment and returning weights. Let staff know if something is broken.",
+      "Before signing up, ask which activities are included in the price. Request a written explanation of any additional charges."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "I am interested in this gym."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Would you like a tour?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Yes, please. Do you have a month-to-month plan?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes. There is no long contract."
+      },
+      {
+        "speaker": "Student",
+        "text": "Great. Can I try one class first?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes. You can book a trial class at the front desk."
+      },
+      {
+        "speaker": "Student",
+        "text": "Is the class included in the trial price?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "This class is included. Here is the list of other charges."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. How do I cancel if I decide to join later?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "The cancellation steps are here. Please read them before signing up."
+      }
     ]
   },
   "service-problems": {
@@ -1676,6 +2849,57 @@
       {
         "term": "turn in",
         "definition": "give a found item to staff or another responsible person"
+      }
+    ],
+    "customs": [
+      "Stay calm and specific. Say what happened, when it happened, and what you need now.",
+      "Ask for a receipt, email, ticket number, or case number after reporting a problem.",
+      "If the first person cannot help, politely ask who can make the decision.",
+      "Describe a lost item with details such as its color, size, and a distinctive feature. Avoid giving only a general name.",
+      "For a billing or order problem, have the receipt or order number ready. Explain the difference between what you expected and received.",
+      "Ask when and how you should follow up, and write down the contact details so you reach the correct team.",
+      "Before ending the conversation, repeat the agreed next step. A clear summary helps both you and the staff member avoid misunderstandings."
+    ],
+    "dialogue": [
+      {
+        "speaker": "Student",
+        "text": "Excuse me, I left my backpack on the bus."
+      },
+      {
+        "speaker": "Staff",
+        "text": "What bus route and what time?"
+      },
+      {
+        "speaker": "Student",
+        "text": "Route 12 at about 4:30 p.m."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Please fill out this lost item form."
+      },
+      {
+        "speaker": "Student",
+        "text": "Thank you. Can I get a case number?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Yes. It is 318. What does the backpack look like?"
+      },
+      {
+        "speaker": "Student",
+        "text": "It is dark green with a small yellow patch on the front."
+      },
+      {
+        "speaker": "Staff",
+        "text": "Please add that description and your contact number to the form."
+      },
+      {
+        "speaker": "Student",
+        "text": "When should I check back if I have not heard anything?"
+      },
+      {
+        "speaker": "Staff",
+        "text": "Call this office tomorrow afternoon and give us your case number."
       }
     ]
   }

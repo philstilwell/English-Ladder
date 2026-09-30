@@ -66,7 +66,7 @@ def main():
     parser.add_argument('--budget-key', default='everyday-audio-20260929')
     parser.add_argument('--limit', type=int, default=0)
     parser.add_argument('--batch-size', type=int, default=8)
-    parser.add_argument('--model', choices=MODEL_PRICES, default='gemini-3.1-flash-tts-preview')
+    parser.add_argument('--model', choices=MODEL_PRICES, default='gemini-2.5-pro-preview-tts')
     args = parser.parse_args()
     if not 0 < args.budget <= 2 or not 2 <= args.batch_size <= 8 or args.limit < 0 or not re.fullmatch(r'[a-zA-Z0-9-]+', args.budget_key):
         parser.error('Use a budget up to $2, batch size 2–8, and a simple budget key.')

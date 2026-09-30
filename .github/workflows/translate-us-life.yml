@@ -26,12 +26,12 @@ on:
           - gemini-2.5-flash-preview-tts
           - gemini-3.1-flash-tts-preview
           - gemini-2.5-pro-preview-tts
-        default: gemini-2.5-flash-preview-tts
+        default: gemini-2.5-pro-preview-tts
       audio_batch_size:
         description: '1 for individual requests, or 2–8 terms per recording with checked silent boundaries'
         required: false
         type: number
-        default: 1
+        default: 8
       include_vocabulary:
         description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
         required: false
@@ -79,8 +79,8 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
           AUDIO_LIMIT: ${{ github.event.inputs.audio_limit || '0' }}
-          AUDIO_MODEL: ${{ github.event.inputs.audio_model || 'gemini-2.5-flash-preview-tts' }}
-          AUDIO_BATCH_SIZE: ${{ github.event.inputs.audio_batch_size || '1' }}
+          AUDIO_MODEL: ${{ github.event.inputs.audio_model || 'gemini-2.5-pro-preview-tts' }}
+          AUDIO_BATCH_SIZE: ${{ github.event.inputs.audio_batch_size || '8' }}
         run: |
           command -v ffmpeg
           if [ "$AUDIO_BATCH_SIZE" = 1 ]; then

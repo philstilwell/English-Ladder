@@ -173,8 +173,14 @@ def enhance_page(soup, path, prefix):
 
     for unit in soup.select('.us-life-module'):
         terms = [{'term': text(dt.select_one('[data-vocabulary-term]') or dt), 'definition': text(dt.find_next_sibling('dd'))} for dt in unit.select('dt')]
+        panels = unit.select('.dialogue-block [data-life-dialogue]')
+        primary = panels[0] if panels else unit.select_one('.dialogue-block')
         context = {'lesson': text(unit.select_one('h2')), 'study_level': 'A1-A2', 'goal': text(unit.select_one('.module-skill')),
-            'vocabulary': terms, 'sample_dialogue': [text(p) for p in unit.select('.dialogue-block p')]}
+            'vocabulary': terms, 'sample_dialogue': [text(p) for p in primary.select('p')]}
+        if len(panels) > 1:
+            context['additional_dialogues'] = [
+                panel.get('data-dialogue-title', 'Dialogue') + '\n' + '\n'.join(text(p) for p in panel.select('p'))
+                for panel in panels[1:]]
         append(unit, 'ai-life-' + unit['id'], [prompt(mode, context, boundary=WORK_BOUNDARY) for mode in ['vocabulary', 'dialogue', 'message']])
 
     if path.name == 'tools.html':

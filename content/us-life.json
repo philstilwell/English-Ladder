@@ -2417,6 +2417,99 @@
         "speaker": "Cashier",
         "text": "It takes a card. The instructions are on the front."
       }
+    ],
+    "dialogue_title": "Paying for gas",
+    "extra_dialogues": [
+      {
+        "title": "Paying for parking",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, how do I pay for parking here?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Use the machine beside the entrance."
+          },
+          {
+            "speaker": "Student",
+            "text": "I need to park for two hours. Can I pay by card?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Yes. First, enter your license plate number."
+          },
+          {
+            "speaker": "Student",
+            "text": "Then do I choose two hours on the screen?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "That is right. Check the price before you pay."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to put a ticket in my car?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "No. This parking lot uses your license plate number."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Can I get a receipt?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Yes. Choose the receipt option after you pay."
+          }
+        ]
+      },
+      {
+        "title": "Getting help when the car will not start",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. My car will not start. Can you send someone to help?"
+          },
+          {
+            "speaker": "Operator",
+            "text": "Yes. Where is your car?"
+          },
+          {
+            "speaker": "Student",
+            "text": "I am in the supermarket parking lot at 25 Oak Street."
+          },
+          {
+            "speaker": "Operator",
+            "text": "Thank you. What color is your car?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It is a blue sedan. I am near the main entrance."
+          },
+          {
+            "speaker": "Operator",
+            "text": "Okay. A driver can come in about forty minutes."
+          },
+          {
+            "speaker": "Student",
+            "text": "How much does the service cost?"
+          },
+          {
+            "speaker": "Operator",
+            "text": "The visit costs sixty dollars. Any repairs cost extra."
+          },
+          {
+            "speaker": "Student",
+            "text": "Please give me a repair estimate before doing any work."
+          },
+          {
+            "speaker": "Operator",
+            "text": "Of course. The driver will explain the cost before you decide."
+          }
+        ]
+      }
     ]
   },
   "personal-care": {

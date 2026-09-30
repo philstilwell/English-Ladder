@@ -41,6 +41,55 @@
         return element;
     }
 
+    document.querySelectorAll('.life-dialogue').forEach(block => {
+        const panels = [...block.querySelectorAll('[data-life-dialogue]')];
+        if (panels.length < 2) return;
+        const heading = block.querySelector('h3');
+        const header = createElement('div', 'life-dialogue-header');
+        const tabs = createElement('div', 'life-dialogue-tabs');
+        tabs.setAttribute('role', 'tablist');
+        tabs.setAttribute('aria-label', 'Choose a dialogue');
+        tabs.dataset.lifeDialogueControls = '';
+        heading.before(header);
+        header.append(heading, tabs);
+        const buttons = panels.map((panel, index) => {
+            const button = createElement('button', 'life-dialogue-tab', String(index + 1));
+            button.type = 'button';
+            button.id = `${panel.id}-tab`;
+            button.setAttribute('role', 'tab');
+            button.setAttribute('aria-controls', panel.id);
+            button.setAttribute('aria-label', `Dialogue ${index + 1}: ${panel.dataset.dialogueTitle}`);
+            panel.setAttribute('role', 'tabpanel');
+            panel.setAttribute('aria-labelledby', button.id);
+            panel.tabIndex = 0;
+            tabs.append(button);
+            return button;
+        });
+        function selectDialogue(index, focus = false) {
+            buttons.forEach((button, i) => {
+                const active = i === index;
+                button.setAttribute('aria-selected', String(active));
+                button.tabIndex = active ? 0 : -1;
+                panels[i].hidden = !active;
+            });
+            if (focus) buttons[index].focus();
+        }
+        buttons.forEach((button, index) => {
+            button.addEventListener('click', () => selectDialogue(index));
+            button.addEventListener('keydown', event => {
+                let next;
+                if (event.key === 'ArrowRight') next = (index + 1) % buttons.length;
+                else if (event.key === 'ArrowLeft') next = (index + buttons.length - 1) % buttons.length;
+                else if (event.key === 'Home') next = 0;
+                else if (event.key === 'End') next = buttons.length - 1;
+                else return;
+                event.preventDefault();
+                selectDialogue(next, true);
+            });
+        });
+        selectDialogue(0);
+    });
+
     function renderExplanation(container, languageKey) {
         const content = container.querySelector("[data-life-explanation-content]");
         if (!content) return;

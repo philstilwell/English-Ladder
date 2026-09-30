@@ -34,6 +34,21 @@ def content():
             raise ValueError(f'{key}: expected 7 distinct customs tips.')
         if len(dialogue) != 10 or any(not turn['speaker'].strip() or not turn['text'].strip() for turn in dialogue):
             raise ValueError(f'{key}: expected 10 complete dialogue turns.')
+        extra_dialogues = unit.get('extra_dialogues', [])
+        if extra_dialogues:
+            if len(extra_dialogues) != 2 or not unit.get('dialogue_title', '').strip():
+                raise ValueError(f'{key}: expected a dialogue title and two extra dialogues.')
+            titles = [unit['dialogue_title']]
+            conversations = [dialogue]
+            for extra in extra_dialogues:
+                turns = extra['turns']
+                if not extra['title'].strip() or len(turns) != 10 or any(
+                        not turn['speaker'].strip() or not turn['text'].strip() for turn in turns):
+                    raise ValueError(f'{key}: each extra dialogue needs a title and 10 complete turns.')
+                titles.append(extra['title'])
+                conversations.append(turns)
+            if len(set(titles)) != 3 or len({json.dumps(turns, sort_keys=True) for turns in conversations}) != 3:
+                raise ValueError(f'{key}: dialogue titles and conversations must be distinct.')
     return units
 
 
@@ -54,6 +69,33 @@ def unit_icon(soup, key):
         'data-unit-icon': key,
         'style': f'background-position:{(index % 4) * 100 / 3:.6f}% {(index // 4) * 20:.6f}%',
     })
+
+
+def render_dialogues(soup, block, key, unit):
+    """Keep all conversations readable without JavaScript; the browser adds tabs."""
+    block.clear()
+    heading = soup.new_tag('h3')
+    heading.string = 'Dialogue'
+    block.append(heading)
+    conversations = [{'title': unit.get('dialogue_title'), 'turns': unit['dialogue']},
+                     *unit.get('extra_dialogues', [])]
+    for index, conversation in enumerate(conversations):
+        panel = soup.new_tag('div', attrs={'class': 'life-dialogue-panel',
+            'id': f'{key}-dialogue-{index + 1}', 'data-life-dialogue': '',
+            'data-dialogue-title': conversation['title'] or 'Dialogue'})
+        if index:
+            panel['data-life-extra-dialogue'] = ''
+        if conversation['title']:
+            title = soup.new_tag('h4', attrs={'class': 'life-dialogue-title'})
+            title.string = conversation['title']
+            panel.append(title)
+        lines = soup.new_tag('div', attrs={'class': 'life-dialogue-lines'})
+        for turn in conversation['turns']:
+            paragraph = soup.new_tag('p')
+            speaker = soup.new_tag('strong'); speaker.string = turn['speaker'] + ':'
+            paragraph.extend([speaker, ' ' + turn['text']]); lines.append(paragraph)
+        panel.append(lines)
+        block.append(panel)
 
 
 def enhance_page(soup):
@@ -121,16 +163,9 @@ def enhance_page(soup):
         customs.clear()
         for tip in unit['customs']:
             li = soup.new_tag('li'); li.string = tip; customs.append(li)
-        for old in blocks[3].select('p, .life-dialogue-lines'):
-            old.decompose()
-        dialogue = soup.new_tag('div', attrs={'class': 'life-dialogue-lines'})
-        blocks[3].append(dialogue)
-        for turn in unit['dialogue']:
-            paragraph = soup.new_tag('p')
-            speaker = soup.new_tag('strong'); speaker.string = turn['speaker'] + ':'
-            paragraph.extend([speaker, ' ' + turn['text']]); dialogue.append(paragraph)
+        render_dialogues(soup, blocks[3], key, unit)
     if not soup.select_one('script[src^="us-life-audio.js"]'):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
         soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
-    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-colorful-icons1'
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-dialogue-tabs1'

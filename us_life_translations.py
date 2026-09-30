@@ -24,7 +24,10 @@ def sources(soup=None):
     for unit in soup.select('.us-life-module'):
         key = unit['id']
         context = BeautifulSoup(str(unit.select_one('.us-life-main')), 'html.parser')
-        for control in context.select('[data-pronunciation-ui]'):
+        # Sidebar translations explain the original lesson. Supplementary English
+        # practice and its navigation do not change that reviewed source context.
+        for control in context.select('[data-pronunciation-ui], [data-life-dialogue-controls], '
+                                      '[data-life-extra-dialogue], .life-dialogue-title'):
             control.decompose()
         result[key] = {'policy': POLICY, 'unit': key,
                        'english_context': context.get_text(' ', strip=True),

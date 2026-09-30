@@ -36,10 +36,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering mandates, trade-offs, market boundaries, unit economics, capital allocation,
   acquisition logic, scenarios, and bounded board decisions.
   Output: `output/pdf/corporate-strategy-english-book.pdf`.
+- Pharmaceutical English: 102 pages with the same counts and explained keys,
+  covering development evidence, regulatory questions, trial documents, readouts,
+  safety intake, batch review, promotional claims, and access evidence.
+  Output: `output/pdf/pharmaceutical-english-book.pdf`.
 
 ## Remaining
 
-57 books remain. The next course in the canonical inventory is `pharmaceutical`.
+56 books remain. The next course in the canonical inventory is `healthcare-administration`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

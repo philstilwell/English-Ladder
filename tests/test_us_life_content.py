@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 import us_life_content as content
 import us_life_audio as audio
 import us_life_audio_review as review
+import us_life_audio_batch as batch_audio
 from us_life_translations import sources, read_record
 
 
@@ -133,6 +134,28 @@ class EverydayContentTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             audio.decode_audio([SimpleNamespace(mime_type='audio/L16;rate=48000', data=pcm)])
         with self.assertRaises(ValueError): audio.decode_audio([])
+
+    def test_word_list_splits_only_at_silent_boundaries_and_rejects_missing_terms(self):
+        speech = b'\xdc\x05' * 14400
+        silence = b'\x00\x00' * 36000
+        pcm = silence + speech + silence + speech + silence + speech + silence
+        clips, bounds, gap = batch_audio.split_recording(pcm, 3)
+        self.assertEqual(3, len(clips))
+        for clip in clips: self.assertIn(speech, clip)
+        for left, right in zip(bounds, bounds[1:]): self.assertLessEqual(left[1], right[0])
+        with self.assertRaises(ValueError): batch_audio.split_recording(pcm, 4)
+        with self.assertRaises(ValueError): batch_audio.split_recording(silence, 1)
+        with self.assertRaises(ValueError): batch_audio.split_recording(speech[:-1], 1)
+
+    def test_batch_output_limit_is_reserved_before_any_paid_call(self):
+        class Model:
+            def generate_content(self, **kwargs): raise AssertionError('Must not send this request')
+        with tempfile.TemporaryDirectory() as folder:
+            budget = audio.AudioBudget(Path(folder)/'usage.json', .025)
+            with self.assertRaises(RuntimeError):
+                budget.request(SimpleNamespace(models=Model()), 'list', 'say these terms',
+                               'gemini-3.1-flash-tts-preview', max_tokens=2048)
+            self.assertEqual(0, budget.spent)
 
     def test_missing_audio_check_is_offline_and_daily_build_never_generates_speech(self):
         workflow = (content.ROOT / '.github/workflows/cron.yml').read_text()

@@ -1,3 +1,16 @@
+.life-unit-heading {
+    display: grid; grid-template-columns: 112px minmax(0, 1fr);
+    align-items: center; gap: 20px; margin-bottom: 22px;
+}
+.life-unit-heading-text { min-width: 0; }
+.life-unit-heading .module-skill { margin-bottom: 0; }
+/* One cell of the original 3:4 Gemini sheet, divided into four columns and six rows. */
+.life-unit-icon {
+    display: block; width: 112px; aspect-ratio: 9 / 8;
+    background: url("assets/us-life/unit-icons.jpg") no-repeat;
+    background-size: 400% 600%;
+    clip-path: inset(4%);
+}
 .life-sentences, .life-vocabulary-block, .life-customs, .life-dialogue { display: flex; flex-direction: column; }
 .life-sentences ol {
     flex: 1; display: flex; flex-direction: column; justify-content: space-between;
@@ -38,6 +51,8 @@
 }
 @media (max-width: 560px) {
     .module-block .life-vocabulary { grid-template-columns: 1fr; }
+    .life-unit-heading { grid-template-columns: 56px minmax(0, 1fr); gap: 12px; align-items: start; }
+    .life-unit-icon { width: 56px; margin-top: 28px; }
 }
 @media (pointer: coarse) {
     .life-vocabulary dt { grid-template-columns: 36px minmax(0, 1fr); }

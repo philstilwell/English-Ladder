@@ -1,0 +1,80 @@
+{
+  "provider": "Google Gemini",
+  "model": "gemini-3.1-flash-image",
+  "model_version": "gemini-3.1-flash-image",
+  "created_at": "2026-09-30T03:38:03.757847+00:00",
+  "usage": {
+    "promptTokenCount": 510,
+    "candidatesTokenCount": 2244,
+    "totalTokenCount": 2754,
+    "promptTokensDetails": [
+      {
+        "modality": "TEXT",
+        "tokenCount": 510
+      }
+    ],
+    "candidatesTokensDetails": [
+      {
+        "modality": "IMAGE",
+        "tokenCount": 1680
+      }
+    ],
+    "serviceTier": "standard"
+  },
+  "finish_reasons": [
+    "STOP"
+  ],
+  "image_count": 1,
+  "prompt": "Create one polished icon sprite sheet for English Ladder, an adult Everyday English learning website. Output the actual image, not a written prompt. Portrait aspect ratio 3:4. Exactly 24 distinct icons in a perfectly regular invisible grid: 4 equal columns and 6 equal rows. Pure white background. No outer frame, grid lines, labels, letters, words, numerals, captions, logos, people or faces. Use consistent refined vector-like flat illustrations with clean rounded shapes, strong crisp silhouettes, rich cobalt blue #2444c8 and deep teal #287b80 with pale blue fills. Each icon must be centered precisely in its own equal-sized cell and fit within the middle 65 percent of the cell width and 60 percent of its height, leaving ample pure white margin on every side. Uniform visual weight, simple enough to recognize when displayed small. Never merge neighboring subjects or span cells.\nReading order is left to right, then top to bottom. The exact subjects are:\nRow 1: (1) airplane landing beside upright suitcase; (2) folded-corner document with large checkmark; (3) small house with a key; (4) lightbulb beside wrench.\nRow 2: (5) bank building with columns and two plain coins, no currency letters; (6) shopping cart with paper bag; (7) dinner plate with fork and spoon; (8) front-facing city bus.\nRow 3: (9) first-aid bag with plus symbol; (10) blank calendar with small clock without numerals; (11) open book with pencil; (12) briefcase.\nRow 4: (13) smartphone with Wi-Fi symbol; (14) envelope beside parcel; (15) shield with exclamation mark; (16) two neighboring houses with shared garden.\nRow 5: (17) front-loading washing machine; (18) jacket on a hanger; (19) side-view taxi car with blank roof light; (20) gas pump with nozzle and hose.\nRow 6: (21) scissors with comb; (22) needle with thread and button; (23) dumbbell with sports ball; (24) backpack with magnifying glass.\nCheck that all 24 cells contain exactly the requested unique subject in the exact specified position. Keep the entire canvas background pure white and all icons separate.",
+  "generation_config": {
+    "candidateCount": 1,
+    "maxOutputTokens": 4096,
+    "responseModalities": [
+      "IMAGE"
+    ],
+    "imageConfig": {
+      "aspectRatio": "3:4",
+      "imageSize": "2K"
+    }
+  },
+  "mime_type": "image/jpeg",
+  "sha256": "d72ed764037491694d273bac00b096264606332f8cbdf29b76be029e4ee1527f",
+  "bytes": 2037186,
+  "width": 1792,
+  "height": 2400,
+  "asset": "assets/us-life/unit-icons.jpg",
+  "grid": {
+    "columns": 4,
+    "rows": 6,
+    "reading_order": [
+      "arrival",
+      "documents",
+      "housing",
+      "utilities",
+      "money",
+      "shopping",
+      "food",
+      "transportation",
+      "health",
+      "appointments",
+      "school",
+      "work",
+      "phone",
+      "mail",
+      "safety",
+      "community",
+      "laundry",
+      "dry-cleaning",
+      "taxis",
+      "car-care",
+      "personal-care",
+      "clothing-services",
+      "recreation",
+      "service-problems"
+    ]
+  },
+  "generation_run": "https://github.com/philstilwell/English-Ladder/actions/runs/36665254390",
+  "estimated_cost_usd": 0.102747,
+  "cost_note": "Estimate from reported usage and published standard prices; provider billing is authoritative.",
+  "pricing_source": "https://ai.google.dev/gemini-api/docs/pricing"
+}

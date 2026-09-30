@@ -1,68 +1,78 @@
 name: Check daily illustration model (one paid image)
 
-# Temporary feature-branch-only generation of the requested Everyday English icons.
+# Deliberately manual: each run makes one paid image request, about $0.04-$0.05.
+# Test output stays in an artifact and never replaces a published illustration.
 on:
   workflow_dispatch:
+
 permissions:
   contents: read
+
 concurrency:
-  group: everyday-unit-icons-one-request
+  group: check-daily-illustration-model
   cancel-in-progress: false
+
 jobs:
   check_illustration:
-    name: Generate the 24 Everyday English unit icons in one image
+    name: Generate one test illustration and verify reuse
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Generate one Google Gemini image without retries
+          cache: pip
+      - name: Install the same dependencies as daily publishing
+        run: pip install -r requirements.txt
+      - name: Check the production image generator with one paid request
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          ICON_OUTPUT_DIR: ${{ runner.temp }}/everyday-icons
+          ILLUSTRATION_CHECK_DIR: ${{ runner.temp }}/illustration-model-check
         run: |
           python -u - <<'PY'
-          import base64, hashlib, json, os, struct, urllib.request
-          from datetime import datetime, timezone
+          import json
+          import os
           from pathlib import Path
-          root = Path(os.environ['ICON_OUTPUT_DIR'])
-          root.mkdir(parents=True, exist_ok=True)
-          prompt = 'Create one polished icon sprite sheet for English Ladder, an adult Everyday English learning website. Output the actual image, not a written prompt. Portrait aspect ratio 3:4. Exactly 24 distinct icons in a perfectly regular invisible grid: 4 equal columns and 6 equal rows. Pure white background. No outer frame, grid lines, labels, letters, words, numerals, captions, logos, people or faces. Use consistent refined vector-like flat illustrations with clean rounded shapes, strong crisp silhouettes, rich cobalt blue #2444c8 and deep teal #287b80 with pale blue fills. Each icon must be centered precisely in its own equal-sized cell and fit within the middle 65 percent of the cell width and 60 percent of its height, leaving ample pure white margin on every side. Uniform visual weight, simple enough to recognize when displayed small. Never merge neighboring subjects or span cells.\nReading order is left to right, then top to bottom. The exact subjects are:\nRow 1: (1) airplane landing beside upright suitcase; (2) folded-corner document with large checkmark; (3) small house with a key; (4) lightbulb beside wrench.\nRow 2: (5) bank building with columns and two plain coins, no currency letters; (6) shopping cart with paper bag; (7) dinner plate with fork and spoon; (8) front-facing city bus.\nRow 3: (9) first-aid bag with plus symbol; (10) blank calendar with small clock without numerals; (11) open book with pencil; (12) briefcase.\nRow 4: (13) smartphone with Wi-Fi symbol; (14) envelope beside parcel; (15) shield with exclamation mark; (16) two neighboring houses with shared garden.\nRow 5: (17) front-loading washing machine; (18) jacket on a hanger; (19) side-view taxi car with blank roof light; (20) gas pump with nozzle and hose.\nRow 6: (21) scissors with comb; (22) needle with thread and button; (23) dumbbell with sports ball; (24) backpack with magnifying glass.\nCheck that all 24 cells contain exactly the requested unique subject in the exact specified position. Keep the entire canvas background pure white and all icons separate.'
-          model = 'gemini-3.1-flash-image'
-          config = {'candidateCount': 1, 'maxOutputTokens': 4096, 'responseModalities': ['IMAGE'], 'imageConfig': {'aspectRatio': '3:4', 'imageSize': '2K'}}
-          payload = {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': config}
-          (root / 'request.json').write_text(json.dumps({'model': model, **payload}, indent=2) + '\n')
-          request = urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/' + model + ':generateContent', data=json.dumps(payload).encode(), headers={'x-goog-api-key': os.environ['GEMINI_API_KEY'], 'Content-Type': 'application/json'}, method='POST')
-          # Exactly one request; no retries or fallback calls.
-          try:
-              with urllib.request.urlopen(request, timeout=240) as response:
-                  result = json.load(response)
-          except urllib.error.HTTPError as error:
-              body = error.read().decode('utf-8', errors='replace')
-              (root / 'error.json').write_text(body)
-              raise SystemExit('Google image request failed with HTTP ' + str(error.code))
-          parts = [part for candidate in result.get('candidates', []) for part in candidate.get('content', {}).get('parts', [])]
-          images = [part['inlineData'] for part in parts if part.get('inlineData', {}).get('mimeType', '').startswith('image/') and not part.get('thought')]
-          metadata = {'provider': 'Google Gemini', 'model': model, 'model_version': result.get('modelVersion'), 'created_at': datetime.now(timezone.utc).isoformat(), 'usage': result.get('usageMetadata', {}), 'finish_reasons': [c.get('finishReason') for c in result.get('candidates', [])], 'image_count': len(images), 'prompt': prompt, 'generation_config': config}
-          (root / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
-          if len(images) != 1:
-              raise SystemExit('Expected exactly one generated icon sheet; inspect metadata.')
-          item = images[0]
-          suffix = {'image/png': '.png', 'image/jpeg': '.jpg', 'image/webp': '.webp'}[item['mimeType']]
-          image_bytes = base64.b64decode(item['data'], validate=True)
-          (root / ('unit-icons' + suffix)).write_bytes(image_bytes)
-          metadata.update({'mime_type': item['mimeType'], 'sha256': hashlib.sha256(image_bytes).hexdigest(), 'bytes': len(image_bytes)})
-          if item['mimeType'] == 'image/png':
-              metadata['width'], metadata['height'] = struct.unpack('>II', image_bytes[16:24])
-          (root / 'metadata.json').write_text(json.dumps(metadata, indent=2) + '\n')
-          print(json.dumps({k:v for k,v in metadata.items() if k not in ('prompt', 'generation_config')}, indent=2))
+          from types import SimpleNamespace
+          from daily_images import MODEL, ensure_daily_image, image_for_lesson
+
+          root = Path(os.environ['ILLUSTRATION_CHECK_DIR'])
+          archive = root / 'archive/lessons/2000-01-01.json'
+          archive.parent.mkdir(parents=True, exist_ok=True)
+          lesson = {
+              'release_date': '2000-01-01',
+              'source': {'title': 'Synthetic illustration compatibility check'},
+              'levels': {'beginner': {'lesson': {
+                  'title': 'City trees keep streets cool',
+                  'overview': 'Trees provide shade beside a quiet city footpath.',
+                  'news_brief_sentences': ['A leafy tree shades a bench and a city footpath.'],
+              }}},
+          }
+          archive.write_text(json.dumps(lesson))
+          result = ensure_daily_image(archive, root)
+          if not result or result['model'] != MODEL or result['attempts'] != 1:
+              raise SystemExit('The production image request failed; inspect the saved metadata.')
+          if image_for_lesson(lesson, root) != result:
+              raise SystemExit('The generated illustration failed its file and metadata checks.')
+
+          def reject_request(**kwargs):
+              raise AssertionError('Cached image reuse attempted another provider request.')
+
+          offline_client = SimpleNamespace(models=SimpleNamespace(generate_content=reject_request))
+          if ensure_daily_image(archive, root, offline_client) != result:
+              raise SystemExit('Cached illustration reuse failed.')
+          print(f"Verified {MODEL}: {result['width']}x{result['height']} WEBP; one paid request and offline reuse.")
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as summary:
+              summary.write(f"Illustration model **{MODEL}** passed: one image request, valid WEBP and metadata, and cached reuse without another request. Test files were not published.\n")
           PY
-      - name: Save the icon sheet and generation record
+      - name: Keep the test illustration and diagnostics
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: everyday-unit-icons-${{ github.run_id }}
-          path: ${{ runner.temp }}/everyday-icons/
+          name: illustration-model-check-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/illustration-model-check/
           retention-days: 7
-          if-no-files-found: error
+          if-no-files-found: warn

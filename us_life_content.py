@@ -6,6 +6,15 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 AUDIO_POLICY = 'en-US-kore-v1'
+# Reading order in the Google Gemini icon sheet: four columns, six rows.
+ICON_UNITS = (
+    'arrival', 'documents', 'housing', 'utilities',
+    'money', 'shopping', 'food', 'transportation',
+    'health', 'appointments', 'school', 'work',
+    'phone', 'mail', 'safety', 'community',
+    'laundry', 'dry-cleaning', 'taxis', 'car-care',
+    'personal-care', 'clothing-services', 'recreation', 'service-problems',
+)
 
 
 def content():
@@ -42,8 +51,28 @@ def enhance_page(soup):
     units = content()
     if {u['id'] for u in soup.select('.us-life-module')} != set(units):
         raise ValueError('Everyday English page and authored units do not match.')
+    if set(units) != set(ICON_UNITS):
+        raise ValueError('Everyday English units and subject icons do not match.')
     for key, unit in units.items():
-        blocks = soup.find(id=key).select('.us-life-main .module-block')
+        main = soup.find(id=key).select_one('.us-life-main')
+        heading = main.select_one('.life-unit-heading')
+        if heading is None:
+            heading = soup.new_tag('div', attrs={'class': 'life-unit-heading'})
+            text = soup.new_tag('div', attrs={'class': 'life-unit-heading-text'})
+            for node in (main.select_one('.module-kicker'), main.h2, main.select_one('.module-skill')):
+                text.append(node.extract())
+            heading.append(text)
+            main.insert(0, heading)
+        for old in heading.select('.life-unit-icon'):
+            old.decompose()
+        index = ICON_UNITS.index(key)
+        icon = soup.new_tag('span', attrs={
+            'class': 'life-unit-icon', 'aria-hidden': 'true',
+            'data-unit-icon': key,
+            'style': f'background-position:{(index % 4) * 100 / 3:.6f}% {(index // 4) * 20:.6f}%',
+        })
+        heading.insert(0, icon)
+        blocks = main.select('.module-block')
         for block, name in zip(blocks, ('life-sentences', 'life-vocabulary-block', 'life-customs', 'life-dialogue')):
             block['class'] = list(dict.fromkeys([*block.get('class', []), name]))
         sentences = blocks[0].select_one('ul, ol')
@@ -94,4 +123,4 @@ def enhance_page(soup):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
         soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
-    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-conversations1'
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-unit-icons1'

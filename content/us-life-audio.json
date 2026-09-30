@@ -1741,5 +1741,517 @@
       19.56
     ],
     "silence_gap_seconds": 0.65
+  },
+  "icy": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: covered with ice.\nTerm to speak: icy",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/icy-69ccdfabe5a8.mp3",
+    "seconds": 0.98,
+    "sha256": "c86a4d5c9b9139846dea8ce801d95c8aec29a2921edb6819e26f41c98c41427e",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      0.22,
+      1.2
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "charger": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a device that supplies power to a battery.\nTerm to speak: charger",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/charger-06180ff1ae9d.mp3",
+    "seconds": 1.2,
+    "sha256": "64513cadfcfe78a48ae5ee04ab86038ef9476f5b70ab936631ea7ef84862479a",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      2.64,
+      3.84
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "neighbor": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a person who lives near you.\nTerm to speak: neighbor",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/neighbor-ac22ff2412c1.mp3",
+    "seconds": 1.08,
+    "sha256": "1fd62028e591f2f20f2512067455e320c5d740239e4490a502d752c88604768a",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      5.26,
+      6.34
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "library": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a public place with books, computers, and programs.\nTerm to speak: library",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/library-40fde0b04857.mp3",
+    "seconds": 1.36,
+    "sha256": "8017bd0535cc537e2c904dde45212ed7700dd809bb22965131384c46de6935bc",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      7.76,
+      9.12
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "community center": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a place with local services and activities.\nTerm to speak: community center",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/community-center-5ca7814a344e.mp3",
+    "seconds": 1.54,
+    "sha256": "f10c5208530e78c4b0cd4d06285a12c2dfe32d5b159cacd748fb2eba9ff06f5d",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      10.66,
+      12.2
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "recommend": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: say something is good or useful.\nTerm to speak: recommend",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/recommend-3f337372fd32.mp3",
+    "seconds": 1.14,
+    "sha256": "9acaba52522930d9f155f8be4f055d70e6250554f42f042674b249c6585c8041",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      13.6,
+      14.74
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "small talk": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: short friendly conversation.\nTerm to speak: small talk",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/small-talk-95ca30c5f923.mp3",
+    "seconds": 1.18,
+    "sha256": "9e1a1f3a083e4814824d029b83d6f17dcfcd221569384528fc375423fdb08cb0",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      16.02,
+      17.2
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "personal space": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: comfortable distance between people.\nTerm to speak: personal space",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nicy.\n\ncharger.\n\nneighbor.\n\nlibrary.\n\ncommunity center.\n\nrecommend.\n\nsmall talk.\n\npersonal space.",
+    "file": "assets/audio/us-life/personal-space-8da92d3de559.mp3",
+    "seconds": 1.6,
+    "sha256": "59abb00818d841660b909ac7394d44cd7af4a4fc834648a7ec982aa46d355487",
+    "batch_source": "content/audio-batches/528f11e3ab7192bc9e35c4459ac9eaf16815261a40a9f3fe7d9c91331ba47244.json",
+    "batch_interval_seconds": [
+      18.4,
+      20.0
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "library card": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a card used to borrow items from a library.\nTerm to speak: library card",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/library-card-cb9f11cf9c0e.mp3",
+    "seconds": 1.6,
+    "sha256": "e5434c505b25690da5b905483bc10cebf24b6859350af413bd38187d20b540ae",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      0.14,
+      1.74
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "volunteer": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a person who helps without being paid.\nTerm to speak: volunteer",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/volunteer-fd40eb2da463.mp3",
+    "seconds": 1.3,
+    "sha256": "5c80833b589749b97dcc6238ebcdabb016f5c51bbbdd0df0809ffbd50482e235",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      4.54,
+      5.84
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "event": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: an organized activity or gathering.\nTerm to speak: event",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/event-f10815f6b087.mp3",
+    "seconds": 0.98,
+    "sha256": "caf1e8fe4e8b4be244f26cce43eaa052ba34e131e98bc536ed8243daeaadabe0",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      9.94,
+      10.92
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "sign up": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: put your name on a list to join an activity.\nTerm to speak: sign up",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/sign-up-259a0702b33f.mp3",
+    "seconds": 1.12,
+    "sha256": "d044518ca7aee9534880e405e3572f396cc34b4c0753e578afe8ce4c3f14c97d",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      15.08,
+      16.2
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "invitation": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a message asking someone to join you.\nTerm to speak: invitation",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/invitation-e757ae981ce4.mp3",
+    "seconds": 1.2,
+    "sha256": "e4c43222b3501403b9e4fa45c7ffc2d56329c475d5319be3650824fc905f495e",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      20.36,
+      21.56
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "shared space": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: an area used by more than one person or group.\nTerm to speak: shared space",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/shared-space-7c0553db6668.mp3",
+    "seconds": 1.6,
+    "sha256": "48ebb3b680a0813ba272cbc368e3f0eaddce0cfda0fa9cfbbdd3db428bf7b97e",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      25.02,
+      26.62
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "laundromat": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a place with washing machines and dryers.\nTerm to speak: laundromat",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/laundromat-694616355817.mp3",
+    "seconds": 1.36,
+    "sha256": "f0346e32327ac8f2dc398a32bca3549f7e5dfd8ad2e962a3d803a06cf9e45bf0",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      30.68,
+      32.04
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "wash cycle": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the washing program on a machine.\nTerm to speak: wash cycle",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nlibrary card.\n\nvolunteer.\n\nevent.\n\nsign up.\n\ninvitation.\n\nshared space.\n\nlaundromat.\n\nwash cycle.",
+    "file": "assets/audio/us-life/wash-cycle-5dccd8de5695.mp3",
+    "seconds": 1.32,
+    "sha256": "1c40ac965ab3b1e9f85461f1bbbc01730ac9d29e6e277e26e8f8db1fdb6540ea",
+    "batch_source": "content/audio-batches/dfa156f4f9473e3b3d1e27e815e398fc6ec7eeb80909a11439536fcf1570e5e7.json",
+    "batch_interval_seconds": [
+      35.1,
+      36.42
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "dryer": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a machine that dries clothes.\nTerm to speak: dryer",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/dryer-14705ba2b057.mp3",
+    "seconds": 0.92,
+    "sha256": "555de2e92581c34063a4d4c69b832e70b148dab2a565704219358074a703cb63",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      0.14,
+      1.06
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "detergent": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: soap for washing clothes.\nTerm to speak: detergent",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/detergent-aa0751e89401.mp3",
+    "seconds": 1.2,
+    "sha256": "17336e42c7070c63a93e3d58b033130bee5746364222316720de4bdbe5ed060b",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      2.68,
+      3.88
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "quarters": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: 25-cent coins.\nTerm to speak: quarters",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/quarters-b413cf852099.mp3",
+    "seconds": 1.14,
+    "sha256": "6255370e420ad43e32eb2b3ace22be7af3f68f9c5cca4b86f7db0dcc4c5677c4",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      5.5,
+      6.64
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "lint trap": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the screen that catches cloth dust in a dryer.\nTerm to speak: lint trap",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/lint-trap-048ebcb8f6e8.mp3",
+    "seconds": 1.38,
+    "sha256": "f6086c43f76d14ee27ca73b2a15774d5c158802413f4ed330c4d8ded39e78c0e",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      8.36,
+      9.74
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "washer": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a machine that washes clothes.\nTerm to speak: washer",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/washer-1463bc3ff936.mp3",
+    "seconds": 0.96,
+    "sha256": "7545be879cba584455370d93dc832bf66d4ede45f03abfead3efa42b868d787a",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      11.6,
+      12.56
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "load": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the clothes washed or dried together at one time.\nTerm to speak: load",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/load-98bb4e191800.mp3",
+    "seconds": 0.94,
+    "sha256": "69c3eb709bde1251578f2b5ad6008aeb1e118e4a72e91393ad0c052bb5125603",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      14.42,
+      15.36
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "delicate cycle": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a gentle washing program for easily damaged clothes.\nTerm to speak: delicate cycle",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/delicate-cycle-cdd9f6d2fcd8.mp3",
+    "seconds": 1.24,
+    "sha256": "14b888af987d4efb5d9e60f245b4acf8166b5f37cb4c19c2d3c7bc150fcff94d",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      16.94,
+      18.18
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "fabric softener": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a product used to make washed clothes feel softer.\nTerm to speak: fabric softener",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndryer.\n\ndetergent.\n\nquarters.\n\nlint trap.\n\nwasher.\n\nload.\n\ndelicate cycle.\n\nfabric softener.",
+    "file": "assets/audio/us-life/fabric-softener-309a7e195415.mp3",
+    "seconds": 1.3,
+    "sha256": "b6dd461fbd7a8178dd7602ff196d5d842924bfa099833c3434ca02a6041eb0d3",
+    "batch_source": "content/audio-batches/eaaf3fd31ae8eb068baa5039cc950332d56da71818365942db18940472c7056e.json",
+    "batch_interval_seconds": [
+      19.76,
+      21.06
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "fold": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: bend clothing neatly so it takes up less space.\nTerm to speak: fold",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/fold-114a780907e6.mp3",
+    "seconds": 1.06,
+    "sha256": "3def6716b58387c1c3780b7ec72eb99108e0b66beffdefafae099c222c852b15",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      0.16,
+      1.22
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "out of order": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: not working and not available to use.\nTerm to speak: out of order",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/out-of-order-c9f71c1e7bad.mp3",
+    "seconds": 1.12,
+    "sha256": "ea4866200bba213fb0f431cd21f418de53c41f0b5e86a5978c486b3f354fbdc7",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      3.64,
+      4.76
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "dry cleaning": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: special cleaning for delicate clothes.\nTerm to speak: dry cleaning",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/dry-cleaning-b6888df1b8aa.mp3",
+    "seconds": 1.12,
+    "sha256": "dfd0160a6212503f2859dcd54f15096be6dc4f65b7748f9b73bcc67c56c93c8d",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      7.5,
+      8.62
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "stain": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a dirty mark on clothing.\nTerm to speak: stain",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/stain-ccc84c329bfe.mp3",
+    "seconds": 1.08,
+    "sha256": "c2dd8c7f5465600ca0efcd78db24663dc4786321e50861c17305011d16e51c51",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      11.34,
+      12.42
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "alteration": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a change to make clothes fit better.\nTerm to speak: alteration",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/alteration-b83c60366204.mp3",
+    "seconds": 1.24,
+    "sha256": "1050f2fa49b9db9b3136ee4074b03c66f9b870373460bf85ea3d0729050153cd",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      15.58,
+      16.82
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "hem": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: make pants, a skirt, or a dress shorter.\nTerm to speak: hem",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/hem-de14a37d259b.mp3",
+    "seconds": 0.72,
+    "sha256": "6ec232f39053dbdd6302c25602f3408e38daf769bb85a146269a2a5ea303b73c",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      20.04,
+      20.76
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "pickup ticket": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: paper or text used to get your order.\nTerm to speak: pickup ticket",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/pickup-ticket-69b4b1633303.mp3",
+    "seconds": 1.16,
+    "sha256": "6ac2ee004517c9a2ae480d1b1b5d8af9743adf91c2a329c1f48b792abbce028a",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      23.58,
+      24.74
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "ready date": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the date when your order is finished.\nTerm to speak: ready date",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nfold.\n\nout of order.\n\ndry cleaning.\n\nstain.\n\nalteration.\n\nhem.\n\npickup ticket.\n\nready date.",
+    "file": "assets/audio/us-life/ready-date-e5e6cc1d8e85.mp3",
+    "seconds": 1.12,
+    "sha256": "4b79bb0b284949f53fc982299e323d48f311f298ef5f441b7f5c6867b161ae0d",
+    "batch_source": "content/audio-batches/f9515a0f97bff2b51d5e63fc0b88d7d8a570bf159ff34e9550b3fc05218fe96f.json",
+    "batch_interval_seconds": [
+      27.68,
+      28.8
+    ],
+    "silence_gap_seconds": 0.65
   }
 }

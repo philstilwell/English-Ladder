@@ -16,14 +16,10 @@ from vocabulary_translations import atomic_json
 
 
 def batch_prompt(words):
-    meanings = '\n'.join(f'{term}: {definition}' for term, definition in words)
     spoken = '\n\n'.join(term + '.' for term, _ in words)
-    return (f'Record a pronunciation word list for adult English learners. Use a clear, natural American '
-            f'English accent and a slightly slower teaching pace. Read exactly the {len(words)} terms below, '
-            f'once each, in order. Leave TWO SECONDS OF COMPLETE SILENCE between terms so learners can repeat '
-            f'each one. No introductions, labels, numbering, definitions, commentary, music, or sound effects. '
-            f'Do not pronounce punctuation.\nSilent pronunciation reference, DO NOT READ:\n{meanings}\n\n'
-            f'READ ONLY THESE TERMS, WITH SILENT GAPS:\n{spoken}')
+    return ('Read this vocabulary list in clear American English at a relaxed teaching pace. '
+            'Pause silently for two seconds between entries. Read each entry once, '
+            'without an introduction or commentary:\n\n' + spoken)
 
 
 def split_recording(pcm, count):

@@ -916,5 +916,14 @@
     "file": "assets/audio/us-life/dose-5aa0b1f6e405.mp3",
     "seconds": 1.2909583333333334,
     "sha256": "f84eabb0d92369836c3a7ca71cc89b55368dc8838e27ba5a85ef0de97ed3a120"
+  },
+  "pharmacy": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a place where you can get medicine.\nTerm to speak: pharmacy",
+    "file": "assets/audio/us-life/pharmacy-d1f4e871f4d0.mp3",
+    "seconds": 1.1709583333333333,
+    "sha256": "d9b0708d4bf383da1b1da9b2d8552abc11e6ac8620a7935df0ebca5d9219b8b7"
   }
 }

@@ -1,0 +1,98 @@
+{
+  "source": {
+    "policy": "2026-09-08-everyday-explanations-v1",
+    "unit": "phone",
+    "english_context": "Unit 13 Phone, Internet, and Digital Life Goal: set up communication, understand common messages, and stay safe online. Daily Life English I need a phone plan. Is there a contract? Can you text me the address? I think this message is a scam. How much data does this plan include? Can I keep my current phone number? Is there an activation fee? Does this plan include international calls? My phone has no signal. How do I set up my voicemail? I forgot my password. Where can I find the Wi-Fi password? Can you help me connect to the network? How do I cancel this service? Could you send the details by email? Vocabulary phone plan a monthly mobile phone service data internet use on a phone contract a legal agreement voicemail a recorded phone message password a secret word or code for an account two-factor code a second code used to protect an account signal the connection that lets a phone make calls or use data Wi-Fi a wireless connection to the internet SIM card a small card that connects a phone to mobile service activation fee a charge for starting a service unlimited without a stated limit for the feature being described software update a newer version of a program installed on a device US Customs Many offices leave voicemail. Check it often and call back. Do not share passwords or verification codes with callers or strangers. Text messages are common for quick plans, but formal issues may use email. Dialogue Student: I need a simple phone plan. Staff: Do you want unlimited data? Student: Maybe not. I use Wi-Fi at home. Staff: This plan is cheaper and has no contract. Student: Good. What is the monthly cost?",
+    "japanese_explanation": {
+      "heading": "連絡手段を早く整える",
+      "points": [
+        "アメリカでは電話、留守番電話、SMS、メールをよく使います。留守番電話を聞く習慣をつけましょう。",
+        "契約ありのプランと契約なしのプランがあります。月額、データ量、解約料を確認します。",
+        "認証コードやパスワードを電話やメッセージで他人に教えないでください。"
+      ],
+      "practice": "Can you text me the address?"
+    },
+    "existing_simplified_chinese": {
+      "heading": "尽快建立联系方式",
+      "points": [
+        "在美国，电话、语音留言、短信和邮件都常用。要养成听语音留言的习惯。",
+        "手机套餐有合约和无合约。要确认月费、流量和取消费用。",
+        "不要通过电话或信息把验证码、密码告诉别人。"
+      ],
+      "practice": "Can you text me the address?"
+    }
+  },
+  "translations": {
+    "ja": {
+      "heading": "連絡手段を早く整える",
+      "points": [
+        "アメリカでは電話、留守番電話、SMS、メールをよく使います。留守番電話を聞く習慣をつけましょう。",
+        "契約ありのプランと契約なしのプランがあります。月額、データ量、解約料を確認します。",
+        "認証コードやパスワードを電話やメッセージで他人に教えないでください。"
+      ]
+    },
+    "ko": {
+      "heading": "연락 수단을 빠르게 마련하기",
+      "points": [
+        "미국에서는 전화, 음성 메시지, SMS, 이메일을 자주 사용합니다. 음성 메시지를 확인하는 습관을 들이세요.",
+        "계약형 요금제와 무계약형 요금제가 있습니다. 월 요금, 데이터 사용량, 해지 수수료를 확인하세요.",
+        "전화나 메시지로 다른 사람에게 인증 코드나 비밀번호를 알려주지 마세요."
+      ]
+    },
+    "zh-Hans": {
+      "heading": "尽快建立联系方式",
+      "points": [
+        "在美国，电话、语音留言、短信和邮件都常用。要养成听语音留言的习惯。",
+        "手机套餐有合约和无合约。要确认月费、流量和取消费用。",
+        "不要通过电话或信息把验证码、密码告诉别人。"
+      ]
+    },
+    "es": {
+      "heading": "Establecer medios de comunicación rápidamente",
+      "points": [
+        "En Estados Unidos, se usan frecuentemente el teléfono, el buzón de voz, los SMS y el correo electrónico. Acostúmbrese a revisar su buzón de voz.",
+        "Existen planes con y sin contrato. Confirme la cuota mensual, la cantidad de datos y los cargos por cancelación.",
+        "No comparta códigos de verificación ni contraseñas con otras personas por teléfono o mensaje."
+      ]
+    },
+    "pt-BR": {
+      "heading": "Organizar rapidamente os meios de comunicação",
+      "points": [
+        "Nos Estados Unidos, telefone, correio de voz, SMS e e-mail são frequentemente usados. Crie o hábito de verificar seu correio de voz.",
+        "Existem planos com e sem contrato. Verifique o valor mensal, a quantidade de dados e as taxas de cancelamento.",
+        "Não compartilhe códigos de verificação ou senhas com outras pessoas por telefone ou mensagem."
+      ]
+    },
+    "fr": {
+      "heading": "Mettre en place rapidement les moyens de communication",
+      "points": [
+        "Aux États-Unis, le téléphone, la messagerie vocale, les SMS et les e-mails sont couramment utilisés. Prenez l'habitude de consulter votre messagerie vocale.",
+        "Il existe des forfaits avec et sans contrat. Vérifiez le coût mensuel, la quantité de données et les frais de résiliation.",
+        "Ne communiquez jamais de codes de vérification ou de mots de passe à d'autres personnes par téléphone ou par message."
+      ]
+    },
+    "de": {
+      "heading": "Kommunikationsmittel schnell einrichten",
+      "points": [
+        "In den USA werden Telefon, Voicemail, SMS und E-Mails häufig genutzt. Machen Sie es sich zur Gewohnheit, Ihre Voicemail regelmäßig abzurufen.",
+        "Es gibt Tarife mit und ohne Vertrag. Überprüfen Sie die monatlichen Kosten, die Datenmenge und die Kündigungsgebühren.",
+        "Geben Sie niemals Verifizierungscodes oder Passwörter per Telefon oder Nachricht an andere Personen weiter."
+      ]
+    }
+  },
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-09-30T01:06:30.958618+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

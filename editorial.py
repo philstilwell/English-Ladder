@@ -32,6 +32,7 @@ def site_header(prefix="", current=""):
     elif current in {"intermediate.html", "advanced.html"}:
         current = "beginner.html"
     links = [("index.html", "Discover"), ("beginner.html", "Daily news"),
+             ("us-life.html", "Everyday English"),
              ("grammar-concepts.html", "Grammar"), ("efsp.html", "English for Work")]
     nav = "".join(f'<a href="{prefix}{url}"' + (' aria-current="page"' if current == url else '') + f'>{label}</a>' for url, label in links)
     return f'<a class="skip-link" href="#main-content">Skip to content</a><div class="site-masthead"><header class="site-header"><a class="brand" href="{prefix}index.html" aria-label="English Ladder home"><img class="brand-mark" src="{prefix}assets/brand/ladder-mark.png" width="40" height="40" alt="">English Ladder</a><nav class="site-links" aria-label="Main navigation">{nav}</nav></header></div>'

@@ -14,12 +14,11 @@
 .life-unit-heading .life-completion-mark {
     position: absolute; left: calc(100% + 1px); top: 50%; transform: translateY(-50%);
 }
-/* One cell of the original 3:4 Gemini sheet, divided into four columns and six rows. */
+/* Four columns and six rows in the 1696 × 2528 Gemini illustration sheet. */
 .life-unit-icon {
-    display: block; width: 112px; aspect-ratio: 9 / 8;
-    background: url("assets/us-life/unit-icons.jpg") no-repeat;
+    display: block; width: 112px; aspect-ratio: 159 / 158;
+    background: url("assets/us-life/unit-icons-colorful.webp") no-repeat;
     background-size: 400% 600%;
-    clip-path: inset(4%);
 }
 .us-life-jump-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -32,10 +31,10 @@
     text-align: left;
 }
 .us-life-jump-grid .life-unit-icon {
-    flex: 0 0 38px; width: 38px; margin: 0;
+    flex: 0 0 48px; width: 48px; margin: 0;
 }
 .us-life-jump-grid .life-unit-status {
-    display: flex; align-items: center; gap: 5px; flex: 0 0 59px; width: 59px;
+    display: flex; align-items: center; gap: 5px; flex: 0 0 69px; width: 69px;
 }
 .life-completion {
     grid-column: 1 / -1; display: flex; align-items: center; flex-wrap: wrap;

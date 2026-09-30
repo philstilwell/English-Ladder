@@ -23,6 +23,918 @@
       "time": "2026-09-30T01:08:43.685106+00:00",
       "input_tokens": 79,
       "output_tokens": 31
+    },
+    {
+      "term": "baggage claim",
+      "usd": 0.00049,
+      "usage": "reported",
+      "time": "2026-09-30T01:10:26.950734+00:00",
+      "input_tokens": 80,
+      "output_tokens": 45
+    },
+    {
+      "term": "ride",
+      "usd": 0.00032,
+      "usage": "reported",
+      "time": "2026-09-30T01:10:33.750912+00:00",
+      "input_tokens": 80,
+      "output_tokens": 28
+    },
+    {
+      "term": "emergency contact",
+      "usd": 0.0005805,
+      "usage": "reported",
+      "time": "2026-09-30T01:10:40.551025+00:00",
+      "input_tokens": 81,
+      "output_tokens": 54
+    },
+    {
+      "term": "luggage",
+      "usd": 0.000379,
+      "usage": "reported",
+      "time": "2026-09-30T01:10:47.351110+00:00",
+      "input_tokens": 78,
+      "output_tokens": 34
+    },
+    {
+      "term": "terminal",
+      "usd": 0.000421,
+      "usage": "reported",
+      "time": "2026-09-30T01:10:54.151267+00:00",
+      "input_tokens": 82,
+      "output_tokens": 38
+    },
+    {
+      "term": "shuttle",
+      "usd": 0.00035,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:00.951397+00:00",
+      "input_tokens": 80,
+      "output_tokens": 31
+    },
+    {
+      "term": "information desk",
+      "usd": 0.0005305,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:07.751504+00:00",
+      "input_tokens": 81,
+      "output_tokens": 49
+    },
+    {
+      "term": "currency exchange",
+      "usd": 0.000753,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:14.551631+00:00",
+      "input_tokens": 86,
+      "output_tokens": 71
+    },
+    {
+      "term": "host",
+      "usd": 0.00037,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:21.351745+00:00",
+      "input_tokens": 80,
+      "output_tokens": 33
+    },
+    {
+      "term": "ID",
+      "usd": 0.0004905,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:28.151865+00:00",
+      "input_tokens": 81,
+      "output_tokens": 45
+    },
+    {
+      "term": "passport",
+      "usd": 0.000369,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:34.951956+00:00",
+      "input_tokens": 78,
+      "output_tokens": 33
+    },
+    {
+      "term": "visa",
+      "usd": 0.00036,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:41.752063+00:00",
+      "input_tokens": 80,
+      "output_tokens": 32
+    },
+    {
+      "term": "form",
+      "usd": 0.000369,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:48.552167+00:00",
+      "input_tokens": 78,
+      "output_tokens": 33
+    },
+    {
+      "term": "deadline",
+      "usd": 0.000399,
+      "usage": "reported",
+      "time": "2026-09-30T01:11:55.352246+00:00",
+      "input_tokens": 78,
+      "output_tokens": 36
+    },
+    {
+      "term": "copy",
+      "usd": 0.000339,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:02.152419+00:00",
+      "input_tokens": 78,
+      "output_tokens": 30
+    },
+    {
+      "term": "application",
+      "usd": 0.00047,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:08.952517+00:00",
+      "input_tokens": 80,
+      "output_tokens": 43
+    },
+    {
+      "term": "original",
+      "usd": 0.00041,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:15.752616+00:00",
+      "input_tokens": 80,
+      "output_tokens": 37
+    },
+    {
+      "term": "signature",
+      "usd": 0.0005175,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:22.552723+00:00",
+      "input_tokens": 75,
+      "output_tokens": 48
+    },
+    {
+      "term": "supporting document",
+      "usd": 0.0006405,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:29.352817+00:00",
+      "input_tokens": 81,
+      "output_tokens": 60
+    },
+    {
+      "term": "status",
+      "usd": 0.0003895,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:36.152907+00:00",
+      "input_tokens": 79,
+      "output_tokens": 35
+    },
+    {
+      "term": "official website",
+      "usd": 0.0005305,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:42.953042+00:00",
+      "input_tokens": 81,
+      "output_tokens": 49
+    },
+    {
+      "term": "rent",
+      "usd": 0.00036,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:49.753140+00:00",
+      "input_tokens": 80,
+      "output_tokens": 32
+    },
+    {
+      "term": "lease",
+      "usd": 0.0003475,
+      "usage": "reported",
+      "time": "2026-09-30T01:12:56.553251+00:00",
+      "input_tokens": 75,
+      "output_tokens": 31
+    },
+    {
+      "term": "deposit",
+      "usd": 0.0003385,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:03.353338+00:00",
+      "input_tokens": 77,
+      "output_tokens": 30
+    },
+    {
+      "term": "landlord",
+      "usd": 0.00037,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:10.153423+00:00",
+      "input_tokens": 80,
+      "output_tokens": 33
+    },
+    {
+      "term": "tenant",
+      "usd": 0.000319,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:16.953551+00:00",
+      "input_tokens": 78,
+      "output_tokens": 28
+    },
+    {
+      "term": "roommate",
+      "usd": 0.00033,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:23.753664+00:00",
+      "input_tokens": 80,
+      "output_tokens": 29
+    },
+    {
+      "term": "utilities",
+      "usd": 0.000441,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:30.553941+00:00",
+      "input_tokens": 82,
+      "output_tokens": 40
+    },
+    {
+      "term": "furnished",
+      "usd": 0.0003975,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:37.354041+00:00",
+      "input_tokens": 75,
+      "output_tokens": 36
+    },
+    {
+      "term": "move-in date",
+      "usd": 0.0005825,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:44.154135+00:00",
+      "input_tokens": 85,
+      "output_tokens": 54
+    },
+    {
+      "term": "notice",
+      "usd": 0.00039,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:50.954287+00:00",
+      "input_tokens": 80,
+      "output_tokens": 35
+    },
+    {
+      "term": "rental application",
+      "usd": 0.0006015,
+      "usage": "reported",
+      "time": "2026-09-30T01:13:57.754460+00:00",
+      "input_tokens": 83,
+      "output_tokens": 56
+    },
+    {
+      "term": "quiet hours",
+      "usd": 0.000451,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:04.554603+00:00",
+      "input_tokens": 82,
+      "output_tokens": 41
+    },
+    {
+      "term": "utility",
+      "usd": 0.0004095,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:11.354732+00:00",
+      "input_tokens": 79,
+      "output_tokens": 37
+    },
+    {
+      "term": "bill",
+      "usd": 0.000288,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:18.154842+00:00",
+      "input_tokens": 76,
+      "output_tokens": 25
+    },
+    {
+      "term": "maintenance",
+      "usd": 0.0004295,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:24.954940+00:00",
+      "input_tokens": 79,
+      "output_tokens": 39
+    },
+    {
+      "term": "leak",
+      "usd": 0.0003395,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:31.755060+00:00",
+      "input_tokens": 79,
+      "output_tokens": 30
+    },
+    {
+      "term": "appointment window",
+      "usd": 0.00051,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:38.555163+00:00",
+      "input_tokens": 80,
+      "output_tokens": 47
+    },
+    {
+      "term": "trash pickup",
+      "usd": 0.000459,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:45.355313+00:00",
+      "input_tokens": 78,
+      "output_tokens": 42
+    },
+    {
+      "term": "water heater",
+      "usd": 0.0004005,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:52.155407+00:00",
+      "input_tokens": 81,
+      "output_tokens": 36
+    },
+    {
+      "term": "circuit breaker",
+      "usd": 0.0004015,
+      "usage": "reported",
+      "time": "2026-09-30T01:14:58.955571+00:00",
+      "input_tokens": 83,
+      "output_tokens": 36
+    },
+    {
+      "term": "service provider",
+      "usd": 0.0005395,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:05.755706+00:00",
+      "input_tokens": 79,
+      "output_tokens": 50
+    },
+    {
+      "term": "recycling bin",
+      "usd": 0.000491,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:12.555765+00:00",
+      "input_tokens": 82,
+      "output_tokens": 45
+    },
+    {
+      "term": "repair request",
+      "usd": 0.000481,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:19.355882+00:00",
+      "input_tokens": 82,
+      "output_tokens": 44
+    },
+    {
+      "term": "thermostat",
+      "usd": 0.000371,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:26.156012+00:00",
+      "input_tokens": 82,
+      "output_tokens": 33
+    },
+    {
+      "term": "checking account",
+      "usd": 0.0004195,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:32.956154+00:00",
+      "input_tokens": 79,
+      "output_tokens": 38
+    },
+    {
+      "term": "debit card",
+      "usd": 0.0004305,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:39.756309+00:00",
+      "input_tokens": 81,
+      "output_tokens": 39
+    },
+    {
+      "term": "credit card",
+      "usd": 0.000411,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:46.556418+00:00",
+      "input_tokens": 82,
+      "output_tokens": 37
+    },
+    {
+      "term": "fee",
+      "usd": 0.0003185,
+      "usage": "reported",
+      "time": "2026-09-30T01:15:53.356540+00:00",
+      "input_tokens": 77,
+      "output_tokens": 28
+    },
+    {
+      "term": "receipt",
+      "usd": 0.0003085,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:00.156635+00:00",
+      "input_tokens": 77,
+      "output_tokens": 27
+    },
+    {
+      "term": "scam",
+      "usd": 0.000479,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:06.956822+00:00",
+      "input_tokens": 78,
+      "output_tokens": 44
+    },
+    {
+      "term": "ATM",
+      "usd": 0.000442,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:13.756934+00:00",
+      "input_tokens": 84,
+      "output_tokens": 40
+    },
+    {
+      "term": "balance",
+      "usd": 0.0003895,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:20.557140+00:00",
+      "input_tokens": 79,
+      "output_tokens": 35
+    },
+    {
+      "term": "withdraw",
+      "usd": 0.000479,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:27.357230+00:00",
+      "input_tokens": 78,
+      "output_tokens": 44
+    },
+    {
+      "term": "bank statement",
+      "usd": 0.000452,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:34.157311+00:00",
+      "input_tokens": 84,
+      "output_tokens": 41
+    },
+    {
+      "term": "PIN",
+      "usd": 0.000351,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:40.957446+00:00",
+      "input_tokens": 82,
+      "output_tokens": 31
+    },
+    {
+      "term": "aisle",
+      "usd": 0.0002885,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:47.757554+00:00",
+      "input_tokens": 77,
+      "output_tokens": 25
+    },
+    {
+      "term": "size",
+      "usd": 0.000369,
+      "usage": "reported",
+      "time": "2026-09-30T01:16:54.557680+00:00",
+      "input_tokens": 78,
+      "output_tokens": 33
+    },
+    {
+      "term": "refund",
+      "usd": 0.000368,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:01.357781+00:00",
+      "input_tokens": 76,
+      "output_tokens": 33
+    },
+    {
+      "term": "exchange",
+      "usd": 0.000449,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:08.157887+00:00",
+      "input_tokens": 78,
+      "output_tokens": 41
+    },
+    {
+      "term": "sales tax",
+      "usd": 0.0004495,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:14.957971+00:00",
+      "input_tokens": 79,
+      "output_tokens": 41
+    },
+    {
+      "term": "customer service",
+      "usd": 0.00051,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:21.758101+00:00",
+      "input_tokens": 80,
+      "output_tokens": 47
+    },
+    {
+      "term": "price tag",
+      "usd": 0.0003605,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:28.558227+00:00",
+      "input_tokens": 81,
+      "output_tokens": 32
+    },
+    {
+      "term": "fitting room",
+      "usd": 0.0004005,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:35.358337+00:00",
+      "input_tokens": 81,
+      "output_tokens": 36
+    },
+    {
+      "term": "checkout",
+      "usd": 0.00036,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:42.158400+00:00",
+      "input_tokens": 80,
+      "output_tokens": 32
+    },
+    {
+      "term": "return policy",
+      "usd": 0.000501,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:48.958486+00:00",
+      "input_tokens": 82,
+      "output_tokens": 46
+    },
+    {
+      "term": "in stock",
+      "usd": 0.0003885,
+      "usage": "reported",
+      "time": "2026-09-30T01:17:55.758659+00:00",
+      "input_tokens": 77,
+      "output_tokens": 35
+    },
+    {
+      "term": "gift receipt",
+      "usd": 0.0005525,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:02.558764+00:00",
+      "input_tokens": 85,
+      "output_tokens": 51
+    },
+    {
+      "term": "grocery store",
+      "usd": 0.000539,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:09.358883+00:00",
+      "input_tokens": 78,
+      "output_tokens": 50
+    },
+    {
+      "term": "produce",
+      "usd": 0.000448,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:16.158988+00:00",
+      "input_tokens": 76,
+      "output_tokens": 41
+    },
+    {
+      "term": "allergy",
+      "usd": 0.00037,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:22.959093+00:00",
+      "input_tokens": 80,
+      "output_tokens": 33
+    },
+    {
+      "term": "tip",
+      "usd": 0.000268,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:29.759200+00:00",
+      "input_tokens": 76,
+      "output_tokens": 23
+    },
+    {
+      "term": "leftovers",
+      "usd": 0.0004285,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:36.559315+00:00",
+      "input_tokens": 77,
+      "output_tokens": 39
+    },
+    {
+      "term": "separate checks",
+      "usd": 0.000509,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:43.359421+00:00",
+      "input_tokens": 78,
+      "output_tokens": 47
+    },
+    {
+      "term": "menu",
+      "usd": 0.0003205,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:50.159535+00:00",
+      "input_tokens": 81,
+      "output_tokens": 28
+    },
+    {
+      "term": "ingredient",
+      "usd": 0.0005705,
+      "usage": "reported",
+      "time": "2026-09-30T01:18:56.959623+00:00",
+      "input_tokens": 81,
+      "output_tokens": 53
+    },
+    {
+      "term": "to go",
+      "usd": 0.000381,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:03.759730+00:00",
+      "input_tokens": 82,
+      "output_tokens": 34
+    },
+    {
+      "term": "reservation",
+      "usd": 0.0004685,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:10.559859+00:00",
+      "input_tokens": 77,
+      "output_tokens": 43
+    },
+    {
+      "term": "serving",
+      "usd": 0.0004,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:17.359959+00:00",
+      "input_tokens": 80,
+      "output_tokens": 36
+    },
+    {
+      "term": "service charge",
+      "usd": 0.000451,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:24.160074+00:00",
+      "input_tokens": 82,
+      "output_tokens": 41
+    },
+    {
+      "term": "fare",
+      "usd": 0.0003985,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:30.960155+00:00",
+      "input_tokens": 77,
+      "output_tokens": 36
+    },
+    {
+      "term": "route",
+      "usd": 0.000381,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:37.760332+00:00",
+      "input_tokens": 82,
+      "output_tokens": 34
+    },
+    {
+      "term": "stop",
+      "usd": 0.00036,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:44.560416+00:00",
+      "input_tokens": 80,
+      "output_tokens": 32
+    },
+    {
+      "term": "transfer",
+      "usd": 0.00037,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:51.360576+00:00",
+      "input_tokens": 80,
+      "output_tokens": 33
+    },
+    {
+      "term": "driver's license",
+      "usd": 0.0005015,
+      "usage": "reported",
+      "time": "2026-09-30T01:19:58.160685+00:00",
+      "input_tokens": 83,
+      "output_tokens": 46
+    },
+    {
+      "term": "insurance",
+      "usd": 0.000449,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:04.960792+00:00",
+      "input_tokens": 78,
+      "output_tokens": 41
+    },
+    {
+      "term": "transit pass",
+      "usd": 0.0004505,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:11.760868+00:00",
+      "input_tokens": 81,
+      "output_tokens": 41
+    },
+    {
+      "term": "platform",
+      "usd": 0.00038,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:18.561002+00:00",
+      "input_tokens": 80,
+      "output_tokens": 34
+    },
+    {
+      "term": "schedule",
+      "usd": 0.0004005,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:25.361083+00:00",
+      "input_tokens": 81,
+      "output_tokens": 36
+    },
+    {
+      "term": "one-way ticket",
+      "usd": 0.0005315,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:32.161238+00:00",
+      "input_tokens": 83,
+      "output_tokens": 49
+    },
+    {
+      "term": "round-trip ticket",
+      "usd": 0.0006225,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:38.961287+00:00",
+      "input_tokens": 85,
+      "output_tokens": 58
+    },
+    {
+      "term": "delay",
+      "usd": 0.0003705,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:45.761438+00:00",
+      "input_tokens": 81,
+      "output_tokens": 33
+    },
+    {
+      "term": "emergency",
+      "usd": 0.0005195,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:52.561609+00:00",
+      "input_tokens": 79,
+      "output_tokens": 48
+    },
+    {
+      "term": "urgent care",
+      "usd": 0.0004415,
+      "usage": "reported",
+      "time": "2026-09-30T01:20:59.361703+00:00",
+      "input_tokens": 83,
+      "output_tokens": 40
+    },
+    {
+      "term": "ER",
+      "usd": 0.0004085,
+      "usage": "reported",
+      "time": "2026-09-30T01:21:06.161830+00:00",
+      "input_tokens": 77,
+      "output_tokens": 37
+    },
+    {
+      "term": "prescription",
+      "usd": 0.0004085,
+      "usage": "reported",
+      "time": "2026-09-30T01:21:12.962080+00:00",
+      "input_tokens": 77,
+      "output_tokens": 37
+    },
+    {
+      "term": "insurance card",
+      "usd": 0.0005895,
+      "usage": "reported",
+      "time": "2026-09-30T01:21:19.762161+00:00",
+      "input_tokens": 79,
+      "output_tokens": 55
+    },
+    {
+      "term": "symptom",
+      "usd": 0.000469,
+      "usage": "reported",
+      "time": "2026-09-30T01:21:26.562296+00:00",
+      "input_tokens": 78,
+      "output_tokens": 43
+    },
+    {
+      "term": "pharmacy",
+      "usd": 0.006336,
+      "usage": "reserved",
+      "time": "2026-09-30T01:21:33.362377+00:00"
+    },
+    {
+      "term": "refill",
+      "usd": 0.006342,
+      "usage": "reserved",
+      "time": "2026-09-30T01:21:40.162488+00:00"
+    },
+    {
+      "term": "dose",
+      "usd": 0.006337,
+      "usage": "reserved",
+      "time": "2026-09-30T01:21:46.962589+00:00"
+    },
+    {
+      "term": "pharmacy",
+      "usd": 0.006336,
+      "usage": "reserved",
+      "time": "2026-09-30T01:21:58.499495+00:00"
+    },
+    {
+      "term": "refill",
+      "usd": 0.006342,
+      "usage": "reserved",
+      "time": "2026-09-30T01:22:05.314807+00:00"
+    },
+    {
+      "term": "dose",
+      "usd": 0.006337,
+      "usage": "reserved",
+      "time": "2026-09-30T01:22:12.114876+00:00"
+    },
+    {
+      "term": "pharmacy",
+      "usd": 0.006336,
+      "usage": "reserved",
+      "time": "2026-09-30T01:22:48.641327+00:00"
+    },
+    {
+      "term": "side effect",
+      "usd": 0.006343,
+      "usage": "reserved",
+      "time": "2026-09-30T01:22:55.441458+00:00"
+    },
+    {
+      "term": "refill",
+      "usd": 0.006342,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:02.241578+00:00"
+    },
+    {
+      "term": "dose",
+      "usd": 0.00036,
+      "usage": "reported",
+      "time": "2026-09-30T01:23:09.041727+00:00",
+      "input_tokens": 80,
+      "output_tokens": 32
+    },
+    {
+      "term": "medical history",
+      "usd": 0.00635,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:15.841783+00:00"
+    },
+    {
+      "term": "follow-up appointment",
+      "usd": 0.0063455,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:22.641907+00:00"
+    },
+    {
+      "term": "side effect",
+      "usd": 0.006343,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:29.441978+00:00"
+    },
+    {
+      "term": "medical history",
+      "usd": 0.00635,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:40.968865+00:00"
+    },
+    {
+      "term": "follow-up appointment",
+      "usd": 0.0063455,
+      "usage": "reserved",
+      "time": "2026-09-30T01:23:47.807961+00:00"
+    },
+    {
+      "term": "side effect",
+      "usd": 0.006343,
+      "usage": "reserved",
+      "time": "2026-09-30T01:24:19.589586+00:00"
+    },
+    {
+      "term": "appointment",
+      "usd": 0.0063345,
+      "usage": "reserved",
+      "time": "2026-09-30T01:24:26.389684+00:00"
+    },
+    {
+      "term": "medical history",
+      "usd": 0.00635,
+      "usage": "reserved",
+      "time": "2026-09-30T01:24:33.189786+00:00"
+    },
+    {
+      "term": "follow-up appointment",
+      "usd": 0.0063455,
+      "usage": "reserved",
+      "time": "2026-09-30T01:24:39.989896+00:00"
+    },
+    {
+      "term": "appointment",
+      "usd": 0.0063345,
+      "usage": "reserved",
+      "time": "2026-09-30T01:24:51.513256+00:00"
+    },
+    {
+      "term": "appointment",
+      "usd": 0.0063345,
+      "usage": "reserved",
+      "time": "2026-09-30T01:25:41.643604+00:00"
     }
   ]
 }

@@ -77,8 +77,10 @@ def main():
     directory = ROOT/'content/audio-batches'; directory.mkdir(parents=True, exist_ok=True)
     failed = False
     try:
-        for offset in range(0, len(pending), args.batch_size):
-            batch = pending[offset:offset + args.batch_size]
+        queue = [pending[offset:offset + args.batch_size]
+                 for offset in range(0, len(pending), args.batch_size)]
+        while queue:
+            batch = queue.pop(0)
             prompt = batch_prompt(batch)
             identity = {'model': args.model, 'voice': VOICE, 'prompt': prompt, 'words': batch}
             key = hashlib.sha256(json.dumps(identity, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
@@ -93,7 +95,7 @@ def main():
                 for attempt in range(3):
                     try:
                         pcm = budget.request(client, 'Word list: ' + ', '.join(t for t, _ in batch), prompt,
-                            args.model, max_tokens=2048,
+                            args.model, max_tokens=max(512, 256 * len(batch)),
                             spoken_text=' <long pause> '.join(t + '.' for t, _ in batch))
                         raw_path.write_bytes(zlib.compress(pcm))
                         atomic_json(info_path, {**identity, 'pcm_sha256': hashlib.sha256(pcm).hexdigest()})
@@ -107,7 +109,20 @@ def main():
                             raise
                         print(f'Word list: provider {code}; bounded retry {attempt+1}.', flush=True)
                         time.sleep(62 if code == 429 else 10)
-            clips, bounds, gap = split_recording(pcm, len(batch))
+            try:
+                clips, bounds, gap = split_recording(pcm, len(batch))
+            except ValueError:
+                if len(batch) == 1:
+                    raise
+                # A provider can end a word list early with a normal STOP.
+                # Keep the rejected source for diagnostics, then use smaller
+                # lists instead of replaying the same bad cached recording.
+                middle = len(batch) // 2
+                queue[0:0] = [batch[:middle], batch[middle:]]
+                print(f'Incomplete {len(batch)}-term word list; retrying as '
+                      f'{middle} and {len(batch)-middle} terms.', flush=True)
+                time.sleep(7)
+                continue
             for (term, definition), clip, boundary in zip(batch, clips, bounds):
                 seconds, digest = encode_mp3(clip, ROOT/audio_path(term))
                 records[term] = {'policy': AUDIO_POLICY, 'model': args.model, 'voice': VOICE,
@@ -117,7 +132,7 @@ def main():
                     'silence_gap_seconds': gap}
                 print(f'{term}: recording saved from word list', flush=True)
             atomic_json(RECORDS, records)
-            if offset + args.batch_size < len(pending): time.sleep(7)
+            if queue: time.sleep(7)
     except Exception as error:
         failed = True
         print(f'Word-list preparation paused: {type(error).__name__}: {str(error)[:180]}', flush=True)

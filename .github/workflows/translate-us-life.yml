@@ -3,6 +3,16 @@ name: Translate Everyday English explanations
 on:
   workflow_dispatch:
     inputs:
+      include_audio:
+        description: 'Generate missing Everyday English pronunciation files using Google cloud speech (up to $2)'
+        required: false
+        type: boolean
+        default: false
+      audio_limit:
+        description: 'Optional audio pilot count; 0 prepares all missing terms'
+        required: false
+        type: number
+        default: 0
       include_vocabulary:
         description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
         required: false
@@ -35,6 +45,17 @@ jobs:
           python-version: '3.11'
       - name: Install existing project dependencies
         run: pip install -r requirements.txt
+      - name: Publish authored Everyday English content before reviewing explanations
+        run: python -c 'from editorial import decorate_page, ROOT; decorate_page(ROOT / "us-life.html")'
+      - name: Create and save reusable pronunciation recordings
+        if: github.event.inputs.include_audio == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
+          AUDIO_LIMIT: ${{ github.event.inputs.audio_limit || '0' }}
+        run: |
+          command -v ffmpeg
+          python -u us_life_audio.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT"
       - name: Fill and separately review missing vocabulary languages
         if: github.event.inputs.include_vocabulary == 'true'
         env:
@@ -55,6 +76,9 @@ jobs:
           path: |
             data/us-life-translations/
             data/vocabulary-translations/
+            assets/audio/us-life/
+            content/us-life-audio.json
+            content/.audio-usage-*.json
           include-hidden-files: true
           retention-days: 14
       - name: Save reviewed translations and resumable progress
@@ -66,6 +90,11 @@ jobs:
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
           git add data/us-life-translations data/vocabulary-translations
+          if [ -d assets/audio/us-life ]; then git add assets/audio/us-life; fi
+          git add content/
+          # This derived preview may have missing sidebars until the review finishes.
+          # Rebuild it after fetching the completed records; do not publish it here.
+          git restore us-life.html
           if git diff --cached --quiet; then exit 0; fi
           git commit -m 'Prepare reviewed language additions and save translation progress'
           # A branch backfill must stay on that branch until its pages are checked.

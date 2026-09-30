@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, '..');
 const out = path.join(root, '.cf-site');
 const domain = fs.readFileSync(path.join(root, 'CNAME'), 'utf8').trim();
 const publicDirs = new Set(['assets', 'pdf', 'prompts', 'news', 'stories', 'grammar-concepts', 'english-for-work', 'sitemaps', 'archive', 'data']);
-const extensions = new Set(['.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.pdf', '.txt', '.json', '.xml', '.woff', '.woff2', '.ttf']);
+const extensions = new Set(['.html', '.css', '.js', '.svg', '.png', '.jpg', '.jpeg', '.webp', '.ico', '.pdf', '.txt', '.json', '.xml', '.woff', '.woff2', '.ttf', '.mp3']);
 const paths = cp.execFileSync('git', ['ls-files', '-z', '--cached', '--others', '--exclude-standard'], {cwd: root, encoding: 'utf8'}).split('\0').filter(Boolean);
 const files = [...new Set(paths)].filter(file => {
   // Translation records are build inputs. Their reviewed definitions are already

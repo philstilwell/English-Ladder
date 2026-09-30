@@ -23,8 +23,11 @@ def sources(soup=None):
     result = {}
     for unit in soup.select('.us-life-module'):
         key = unit['id']
+        context = BeautifulSoup(str(unit.select_one('.us-life-main')), 'html.parser')
+        for control in context.select('[data-pronunciation-ui]'):
+            control.decompose()
         result[key] = {'policy': POLICY, 'unit': key,
-                       'english_context': unit.select_one('.us-life-main').get_text(' ', strip=True),
+                       'english_context': context.get_text(' ', strip=True),
                        'japanese_explanation': originals[key]['ja'],
                        'existing_simplified_chinese': originals[key]['zh']}
     return result

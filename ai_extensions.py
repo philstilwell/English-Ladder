@@ -172,7 +172,7 @@ def enhance_page(soup, path, prefix):
             [prompt(mode, context) for mode in ['vocabulary', 'reading', 'dialogue']])
 
     for unit in soup.select('.us-life-module'):
-        terms = [{'term': text(dt), 'definition': text(dt.find_next_sibling('dd'))} for dt in unit.select('dt')]
+        terms = [{'term': text(dt.select_one('[data-vocabulary-term]') or dt), 'definition': text(dt.find_next_sibling('dd'))} for dt in unit.select('dt')]
         context = {'lesson': text(unit.select_one('h2')), 'study_level': 'A1-A2', 'goal': text(unit.select_one('.module-skill')),
             'vocabulary': terms, 'sample_dialogue': [text(p) for p in unit.select('.dialogue-block p')]}
         append(unit, 'ai-life-' + unit['id'], [prompt(mode, context, boundary=WORK_BOUNDARY) for mode in ['vocabulary', 'dialogue', 'message']])

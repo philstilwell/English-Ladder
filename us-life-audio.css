@@ -1,0 +1,16 @@
+.life-vocabulary dt { min-width: 0; }
+.life-vocabulary [data-vocabulary-term] { display: block; overflow-wrap: anywhere; }
+.life-vocabulary .life-listen {
+    display: inline-flex; align-items: center; min-height: 44px;
+    font-size: .85rem; font-weight: 650; color: #193cc2;
+    text-decoration: underline; text-underline-offset: 3px;
+}
+.life-listen:focus-visible, .life-audio-player a:focus-visible {
+    outline: 3px solid #193cc2; outline-offset: 3px; border-radius: 3px;
+}
+.life-audio-help { margin: 0 0 18px; font-size: .9rem; color: var(--muted); }
+.life-audio-player { margin-top: 18px; padding-top: 14px; border-top: 1px solid #cad5fa; }
+.life-audio-player[hidden] { display: none; }
+.life-audio-player p { margin: 0 0 8px; }
+.life-audio-player audio { display: block; width: 100%; max-width: 100%; margin-bottom: 8px; }
+.life-audio-player a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }

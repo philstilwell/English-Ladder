@@ -52,6 +52,8 @@ def enhance_page(soup,path,prefix):
     from reading_layout import prepare_reading_layout, finish_reading_layout
     prepare_reading_layout(soup,path,ROOT,prefix)
     if path.name == 'us-life.html':
+        from us_life_content import enhance_page as enhance_life_content
+        enhance_life_content(soup)
         from us_life_language_ui import enhance_page as enhance_life_languages
         enhance_life_languages(soup)
     from ai_extensions import enhance_page as enhance_ai

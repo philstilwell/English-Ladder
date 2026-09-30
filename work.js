@@ -61,7 +61,7 @@
       const dots = steps.map(([, label], index) => {
         const dot = document.createElement('span');
         dot.className = 'work-section-dot';
-        dot.title = `${index + 1}. ${label}`;
+        dot.title = `${String.fromCharCode(65 + index)}. ${label}`;
         markers.append(dot);
         return dot;
       });

@@ -48,6 +48,9 @@ test('six outlined markers follow reading position in both directions without re
   const f = setup();
   assert.equal(f.d.querySelectorAll('.work-section-dot').length, 48);
   assert.equal(f.d.querySelectorAll('[data-work-step]').length, 48);
+  assert.deepEqual([...f.d.querySelectorAll('.work-lesson-links a:first-child .work-section-dot')].map(dot => dot.title),
+    ['A. Read the situation', 'B. Find the words', 'C. Notice the language',
+      'D. Check your understanding', 'E. Conversations', 'F. Say it']);
   assert.equal(f.count(), 0);
   assert.equal(f.d.querySelector('.work-lesson-tools [data-expand-lessons]'), null);
   f.scroll(850);

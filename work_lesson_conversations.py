@@ -69,9 +69,9 @@ def render_activities(track, module):
     workshop = module["workshop"]
     checks = "".join(f"<li>{e(check)}</li>" for check in scenario["success_checks"])
     return f'''<div class="work-practice">
-<section class="work-conversations"><p class="work-kicker">05 · Conversations</p>
+<section class="work-conversations"><p class="work-kicker work-activity-heading"><span class="work-activity-letter">E</span> <span>Conversations</span></p>
 <h4>Three conversations at work</h4><p class="work-small">Original fictional training conversations. Each line is one speaking turn.</p>{''.join(conversations)}</section>
-<section class="work-speaking"><p class="work-kicker">06 · Say it</p><h4>Two scenarios to practice</h4>
+<section class="work-speaking"><p class="work-kicker work-activity-heading"><span class="work-activity-letter">F</span> <span>Say it</span></p><h4>Two scenarios to practice</h4>
 <div class="work-two-column"><section class="work-speaking-scenario"><h5>Scenario 1 · {e(module['title'])}</h5>
 <p>{e(module['brief'])}</p><p>{e(module['speaking_task'])}</p>
 <details><summary>Partner's role and follow-up</summary><p>{e(workshop['role_b'])}</p></details>

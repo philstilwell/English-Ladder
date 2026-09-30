@@ -71,8 +71,11 @@ class WorkCurriculumTests(unittest.TestCase):
                     module = soup.find(id=m['id'])
                     self.assertIn(m['brief'], module.get_text())
                     self.assertIn(m['model'], module.get_text())
-                    self.assertIn('05 · Conversations', module.get_text())
-                    self.assertIn('06 · Say it', module.get_text())
+                    self.assertEqual([label.get_text() for label in module.select('.work-activity-letter')], list('ABCDEF'))
+                    self.assertEqual([label.get_text(' ', strip=True) for label in module.select('.work-activity-heading')],
+                                     ['A Read the situation', 'B Find the words', 'C Notice the language',
+                                      'D Check your understanding', 'E Conversations', 'F Say it'])
+                    self.assertEqual(module.select_one('.work-module-number').get_text(), f'{m["number"]:02d}')
                     self.assertIn(m['workshop']['role_b'], module.get_text())
                 ids = [node['id'] for node in soup.select('[id]')]
                 self.assertEqual(len(ids),len(set(ids)))

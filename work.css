@@ -71,6 +71,9 @@
 .work-module[open] .work-expand { transform:rotate(45deg); }
 .work-module-body { padding:32px; }
 .work-module-body p,.work-module-body li,.work-module-body dd { font-size:.94rem; }
+.work-module-body .work-activity-heading { display:flex; align-items:center; gap:10px; font-size:.78rem; line-height:1.4; letter-spacing:0; }
+.work-activity-letter { display:inline-flex; flex:0 0 1.75rem; align-items:center; justify-content:center; box-sizing:border-box; width:1.75rem; height:1.75rem; border:1px solid var(--work-blue); border-radius:50%; background:var(--work-blue); color:white; font-size:.9rem; line-height:1; letter-spacing:0; }
+@media print { .work-activity-letter { background:transparent; color:var(--work-blue); } }
 .work-module-body section { margin:0; }
 .work-lesson-heading { margin-bottom:25px; }
 .work-lesson-heading h3 { margin:0; max-width:850px; font-size:1.5rem; }

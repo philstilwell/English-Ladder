@@ -149,22 +149,29 @@ def main():
     save_lock, rate_lock = threading.Lock(), threading.Lock()
     next_start = [0.0]
     def generate(term, definition):
+        model = args.model
         for attempt in range(3):
             # TTS has a separate, small rate quota: keep below ten starts/minute.
             with rate_lock:
                 time.sleep(max(0, next_start[0] - time.monotonic()))
                 next_start[0] = time.monotonic() + 6.8
             try:
-                pcm = budget.request(client, term, prompt_for(term, definition), args.model)
+                pcm = budget.request(client, term, prompt_for(term, definition), model)
                 seconds, digest = encode_mp3(pcm, ROOT / audio_path(term))
                 with save_lock:
-                    records[term] = {'policy': AUDIO_POLICY, 'model': args.model, 'voice': VOICE,
+                    records[term] = {'policy': AUDIO_POLICY, 'model': model, 'voice': VOICE,
                                      'prompt': prompt_for(term, definition), 'file': audio_path(term),
                                      'seconds': seconds, 'sha256': digest}
                     atomic_json(RECORDS, records)
                 return
             except Exception as error:
                 code = getattr(error, 'code', None)
+                # The newer preview can reject an otherwise valid short TTS request.
+                # Try the established Google model once for that term, with its own price.
+                if code == 400 and model == 'gemini-3.1-flash-tts-preview' and attempt == 0:
+                    model = MODEL
+                    print(f'{term}: retrying with {MODEL}', flush=True)
+                    continue
                 if code == 429:
                     # Preserve the provider's quota identifiers, without logging request headers or credentials.
                     payload = getattr(error, 'response_json', {}) or {}

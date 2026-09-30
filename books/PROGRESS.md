@@ -16,10 +16,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   intake, litigation, discovery, research, contracts, investigations, and
   settlement alongside factual and legal precision.
   Output: `output/pdf/law-english-book.pdf`.
+- Finance English: 102 pages with the same counts and explained keys,
+  covering financial commentary, close, forecasting, treasury, performance,
+  credit, controls, and valuation with explicit calculation bases.
+  Output: `output/pdf/finance-english-book.pdf`.
 
 ## Remaining
 
-62 books remain. The next course in the canonical inventory is `finance`.
+61 books remain. The next course in the canonical inventory is `financial-advice`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

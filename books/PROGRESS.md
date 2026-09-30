@@ -24,10 +24,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering discovery, fees, risk, retirement illustrations, portfolio reviews,
   product comparisons, family roles, and substantive complaint responses.
   Output: `output/pdf/financial-advice-english-book.pdf`.
+- Marketing English: 102 pages with the same counts and explained keys,
+  covering audience strategy, evidence-backed messaging, campaign coordination,
+  editorial decisions, attribution, lead handoffs, test results, and publication holds.
+  Output: `output/pdf/marketing-english-book.pdf`.
 
 ## Remaining
 
-60 books remain. The next course in the canonical inventory is `marketing`.
+59 books remain. The next course in the canonical inventory is `real-estate`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

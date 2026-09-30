@@ -40,21 +40,26 @@ test('quiz handles no answer, wrong answer, correction, and resets stale feedbac
   assert.equal(feedback.dataset.result,'correct');assert.ok(feedback.textContent.length>35);
   dom.window.close();
 });
-test('speaking progress is opt-in, restores accurately, and remains isolated by course', () => {
-  const dom=setup(),w=dom.window,d=w.document,key='english-ladder-work-v2:manufacturing';
-  const save=d.querySelector('[data-save-notes]');
-  assert.equal(d.querySelector('[data-work-note]'),null);
-  assert.equal(w.localStorage.getItem(key),null);
-  save.click();d.querySelector('[data-work-complete]').click();
-  const state=w.localStorage.getItem(key);
-  assert.deepEqual(JSON.parse(state).complete,['module-1']);
-  const restored=setup(courseFile,win=>win.localStorage.setItem(key,state));
-  assert.match(restored.window.document.querySelector('[data-work-progress]').textContent,/1 of 8/);
-  const other=setup('efsp-law.html',win=>win.localStorage.setItem(key,state));
-  assert.match(other.window.document.querySelector('[data-work-progress]').textContent,/0 of 8/);
-  d.querySelector('[data-clear-work]').click();
-  assert.equal(w.localStorage.getItem(key),null);assert.equal(save.checked,false);
-  [dom,restored,other].forEach(x=>x.window.close());
+test('course activities never save answers, drafts, progress, or orientation state', () => {
+  const dom=setup(),w=dom.window,d=w.document;
+  w.Storage.prototype.setItem=()=>assert.fail('Work activities must not save browser records.');
+  const orientation=d.querySelector('details.work-orientation');
+  assert.equal(orientation.open,false);
+  orientation.querySelector('summary').click();
+  assert.equal(orientation.open,true);
+  const quiz=d.querySelector('[data-work-quiz]');
+  quiz.querySelector(`input[value="${quiz.dataset.correct}"]`).click();
+  quiz.querySelector('[data-check-answer]').click();
+  assert.equal(quiz.querySelector('[data-quiz-feedback]').dataset.result,'correct');
+  d.querySelector('[data-expand-lessons]').click();
+  change(w,d.querySelector('[data-vocabulary-search]'),'downtime');
+  w.dispatchEvent(new w.Event('scroll'));
+  assert.equal(w.localStorage.length,0);
+  assert.equal(w.sessionStorage.length,0);
+  const fresh=setup();
+  assert.equal(fresh.window.document.querySelector('details.work-orientation').open,false);
+  assert.equal(fresh.window.document.querySelector('input:checked'),null);
+  [dom,fresh].forEach(x=>x.window.close());
 });
 test('every occupation question accepts its one answer and explains each distractor', () => {
   const sources=fs.readdirSync(path.join(root,'content/work/occupations')).filter(n=>n.endsWith('.json'));
@@ -79,29 +84,48 @@ test('every occupation question accepts its one answer and explains each distrac
   }
   assert.ok(fourthAnswers>0,'The fourth answer position must be used and checked.');
 });
-test('new progress preserves earlier-edition drafts until an explicit clear and supports undo', () => {
-  const key='english-ladder-work-v2:manufacturing';
-  const legacy={notes:{'module-1':'My earlier draft.'},complete:[]};
-  const dom=setup(courseFile,w=>w.localStorage.setItem(key,JSON.stringify(legacy))),w=dom.window,d=w.document;
-  d.querySelector('[data-work-complete]').click();
-  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).notes,legacy.notes);
-  d.querySelector('[data-clear-work]').click();
-  assert.equal(w.localStorage.getItem(key),null);
-  d.querySelector('[data-undo-work]').click();
-  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).notes,legacy.notes);
-  assert.deepEqual(JSON.parse(w.localStorage.getItem(key)).complete,['module-1']);
-  dom.window.close();
+test('course, directory, and category pages retire all work records but preserve unrelated preferences', () => {
+  const records={
+    'english-ladder-work-v2:manufacturing':JSON.stringify({notes:{'module-1':'Old fictional draft'},complete:['module-1']}),
+    'english-ladder-work-v2:law':'not-json',
+    'english-ladder-work-v2:finance':'{}',
+  };
+  const preserved={
+    'english-ladder-vocabulary-language-v1':'ja',
+    'english-ladder-level':'advanced',
+    'english-ladder-everyday-completed-v1:arrival':'1',
+    'english-ladder-completed-v1:stories/food-market/beginner.html':'1',
+    'unrelated':'keep',
+  };
+  for(const file of [courseFile,'efsp.html','english-for-work/business-professional.html']){
+    const dom=setup(file,w=>{
+      for(const [key,value] of Object.entries({...records,...preserved}))w.localStorage.setItem(key,value);
+      w.Storage.prototype.getItem=()=>assert.fail('Retirement must not read saved drafts or answers.');
+      w.Storage.prototype.setItem=()=>assert.fail('Retirement must not create another saved record.');
+    }),w=dom.window;
+    for(const key of Object.keys(records))assert.equal(Object.hasOwn(w.localStorage,key),false,file);
+    assert.deepEqual(Object.fromEntries(Object.entries(w.localStorage)),preserved,file);
+    dom.window.close();
+  }
 });
-test('blocked or malformed storage does not disable lessons and checks', () => {
-  for (const mode of ['blocked','malformed']) {
+test('blocked storage and failed removal never disable lessons, navigation, or the accordion', () => {
+  for (const mode of ['blocked','failed-removal']) {
     const dom=setup(courseFile,w=>{
       if(mode==='blocked')Object.defineProperty(w,'localStorage',{get(){throw new Error('blocked');}});
-      else w.localStorage.setItem('english-ladder-work-v2:manufacturing','not-json');
+      else {
+        w.localStorage.setItem('english-ladder-work-v2:manufacturing','not-json');
+        w.Storage.prototype.removeItem=()=>{throw new Error('blocked removal');};
+      }
     });
     const d=dom.window.document;
     assert.equal(d.querySelector('[data-check-answer]').hidden,false);
-    d.querySelector('[data-save-notes]').click();
-    assert.ok(d.querySelector('[data-storage-status]').textContent);
+    d.querySelector('[data-check-answer]').click();
+    assert.match(d.querySelector('[data-quiz-feedback]').textContent,/Choose an answer/);
+    d.querySelector('[data-expand-lessons]').click();
+    assert.equal(d.querySelectorAll('.work-module[open]').length,8);
+    d.querySelector('.work-orientation>summary').click();
+    assert.equal(d.querySelector('.work-orientation').open,true);
+    assert.equal(d.querySelector('[data-storage-status]'),null);
     dom.window.close();
   }
 });
@@ -126,6 +150,12 @@ test('all 66 course pages initialize every quiz and preserve static model respon
     assert.equal(d.querySelectorAll('.work-jump a .work-section-dots').length,8,file);
     assert.equal(d.querySelectorAll('.work-section-dot').length,48,file);
     assert.equal(d.querySelectorAll('[data-work-step]').length,48,file);
+    assert.equal(d.querySelector('input[type="checkbox"], [data-work-complete], [data-work-progress], [data-storage-controls], [data-save-notes], [data-clear-work], [data-work-note]'),null,file);
+    const orientation=d.querySelector('details.work-orientation');
+    assert.ok(orientation,file);
+    assert.equal(orientation.open,false,file);
+    assert.deepEqual([...orientation.querySelectorAll('h2')].map(h=>h.textContent),['What you will practice','Choose your pace'],file);
+    assert.equal(orientation.querySelectorAll('ul li').length,5,file);
     const toolbar=d.querySelector('.work-lesson-tools');
     const icon=toolbar.querySelector('.work-lesson-icon .work-card-icon');
     const headingIcon=d.querySelector('.work-hero .work-card-icon');

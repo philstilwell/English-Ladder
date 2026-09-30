@@ -61,7 +61,7 @@ test('six outlined markers follow reading position in both directions without re
   f.scroll(0);
   assert.equal(f.count(), 0);
   assert.equal(f.d.querySelector('.work-jump [aria-current]'), null);
-  assert.equal(f.d.querySelector('[data-work-complete]').checked, false);
+  assert.equal(f.d.querySelector('[data-work-complete]'), null);
   assert.equal(f.w.localStorage.length, 0);
   f.dom.window.close();
 });

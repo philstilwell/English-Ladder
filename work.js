@@ -1,6 +1,14 @@
 /* All lessons and explanations remain readable without JavaScript. */
 (() => {
   'use strict';
+  // Retire course drafts and completion records without touching other site preferences.
+  try {
+    const storage = window.localStorage;
+    for (let index = storage.length - 1; index >= 0; index -= 1) {
+      const key = storage.key(index);
+      if (key?.startsWith('english-ladder-work-v2:')) storage.removeItem(key);
+    }
+  } catch (_) { /* Lessons remain usable when browser storage is blocked. */ }
   const directory = document.querySelector('[data-work-directory]');
   if (directory) {
     const search = directory.querySelector('[data-course-search]');
@@ -115,80 +123,6 @@
     update();
   }
   setupLessonNavigation();
-  const notes = [...course.querySelectorAll('[data-work-note]')];
-  const complete = [...course.querySelectorAll('[data-work-complete]')];
-  const saveToggle = course.querySelector('[data-save-notes]');
-  const storageStatus = course.querySelector('[data-storage-status]');
-  const storageKey = `english-ladder-work-v2:${course.dataset.workCourse}`;
-  let canStore = true;
-  let previousNotes = {};
-  const updateProgress = () => {
-    course.querySelector('[data-work-progress]').textContent = `${complete.filter(input => input.checked).length} of ${complete.length} practiced`;
-  };
-  const updateCount = note => {
-    const words = note.value.trim() ? note.value.trim().split(/\s+/).length : 0;
-    note.parentElement.querySelector('[data-word-count]').textContent = `${words} words · target 70-110`;
-  };
-  const save = () => {
-    if (!saveToggle.checked || !canStore) return;
-    try {
-      localStorage.setItem(storageKey, JSON.stringify({ notes: {...previousNotes, ...Object.fromEntries(notes.map(n => [n.dataset.workNote, n.value]))}, complete: complete.filter(n => n.checked).map(n => n.dataset.workComplete) }));
-      storageStatus.textContent = 'Saved in this browser only. Use fictional details; practice is not submitted or automatically graded.';
-    } catch (_) {
-      canStore = false;
-      storageStatus.textContent = 'This browser could not save your practice. You can continue without saving.';
-    }
-  };
-  try {
-    const raw = localStorage.getItem(storageKey);
-    if (raw) {
-      const stored = JSON.parse(raw);
-      if (stored && typeof stored === 'object' && !Array.isArray(stored)) {
-        // Preserve earlier-edition drafts when a lesson no longer has a writing field.
-        if (stored.notes && typeof stored.notes === 'object' && !Array.isArray(stored.notes)) {
-          previousNotes = Object.fromEntries(Object.entries(stored.notes).filter(([, value]) => typeof value === 'string'));
-        }
-        notes.forEach(note => { const value = stored.notes?.[note.dataset.workNote]; if (typeof value === 'string') note.value = value; });
-        complete.forEach(input => { input.checked = Array.isArray(stored.complete) && stored.complete.includes(input.dataset.workComplete); });
-        saveToggle.checked = true;
-        storageStatus.textContent = 'Restored from this browser. Practice is not submitted or automatically graded.';
-      }
-    }
-  } catch (_) { storageStatus.textContent = 'Saved practice could not be restored. You can still use all the activities.'; }
-  course.querySelector('[data-storage-controls]').hidden = false;
-  saveToggle.addEventListener('change', () => {
-    if (saveToggle.checked) { canStore = true; save(); return; }
-    try {
-      localStorage.removeItem(storageKey);
-      previousNotes = {};
-      storageStatus.textContent = 'Saving is off and the saved copy was removed. Your current progress remains on this page.';
-    } catch (_) { storageStatus.textContent = 'Saving is off, but this browser could not remove the saved copy. Use browser site-data settings to remove it.'; }
-  });
-  course.querySelector('[data-clear-work]').addEventListener('click', event => {
-    const before = {notes: notes.map(n => n.value), previousNotes, complete: complete.map(n => n.checked), enabled: saveToggle.checked};
-    course.querySelector('[data-undo-work]')?.remove();
-    const undo = document.createElement('button'); undo.type='button'; undo.className='work-button work-button-secondary'; undo.dataset.undoWork=''; undo.textContent='Undo clear';
-    undo.addEventListener('click', () => {
-      notes.forEach((note,i) => { note.value=before.notes[i]; updateCount(note); });
-      previousNotes = before.previousNotes;
-      complete.forEach((input,i) => { input.checked=before.complete[i]; });
-      saveToggle.checked=before.enabled; canStore=true; updateProgress();
-      storageStatus.textContent='Saved practice restored.'; save(); undo.remove();
-    });
-    event.target.after(undo);
-    notes.forEach(note => { note.value = ''; updateCount(note); });
-    previousNotes = {};
-    complete.forEach(input => { input.checked = false; });
-    saveToggle.checked = false;
-    try {
-      localStorage.removeItem(storageKey);
-      storageStatus.textContent = 'Progress and any earlier saved drafts cleared for this course. Saving is off.';
-    } catch (_) { storageStatus.textContent = 'The page is cleared, but browser storage could not be cleared. Use browser site-data settings to remove saved data.'; }
-    updateProgress();
-  });
-  notes.forEach(note => { updateCount(note); note.addEventListener('input', () => { updateCount(note); save(); }); });
-  complete.forEach(input => input.addEventListener('change', () => { updateProgress(); save(); }));
-  updateProgress();
   course.querySelectorAll('[data-work-quiz]').forEach(quiz => {
     const check = quiz.querySelector('[data-check-answer]');
     const feedback = quiz.querySelector('[data-quiz-feedback]');

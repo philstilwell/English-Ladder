@@ -61,6 +61,12 @@ class WorkCurriculumTests(unittest.TestCase):
                 self.assertEqual(len(soup.select('.work-module')),8)
                 self.assertEqual(len(soup.select('.work-quiz')),16)
                 self.assertEqual(len(soup.select('textarea[data-work-note]')),0)
+                self.assertIsNone(soup.select_one('input[type="checkbox"], [data-work-progress], [data-storage-controls]'))
+                orientation = soup.select_one('details.work-orientation')
+                self.assertIsNotNone(orientation)
+                self.assertNotIn('open', orientation.attrs)
+                self.assertEqual([heading.get_text() for heading in orientation.select('h2')],
+                                 ['What you will practice', 'Choose your pace'])
                 for m in t['modules']:
                     module = soup.find(id=m['id'])
                     self.assertIn(m['brief'], module.get_text())

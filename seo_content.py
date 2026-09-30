@@ -15,7 +15,7 @@ PAGES = {
     'tools.html': ('English Practice Tools: Grammar, Speaking & Vocabulary', 'Practice English with sentence-repair activities, pronunciation shadowing, workplace phrases, tone exercises and a short learning diagnostic.'),
     'us-life.html': ('Everyday English in the US: 24 Beginner Conversation Units', 'Practice beginner English for housing, shopping, appointments, transport and daily life in the US. Explore 24 units with vocabulary and short dialogues.'),
     'about.html': ('About English Ladder: Lessons, Sources & Corrections', 'Learn how English Ladder creates and reviews its free English lessons, uses source material, explains learning levels and handles corrections.'),
-    'privacy.html': ('Privacy: Your English Practice, Notes & Browser Settings', 'Understand how English Ladder handles practice notes, browser preferences, optional work-course drafts, recordings, AI prompts and site analytics.'),
+    'privacy.html': ('Privacy: Your English Practice, Notes & Browser Settings', 'Understand how English Ladder handles practice activities, browser preferences, recordings, AI prompts and site analytics.'),
     'photo-credits.html': ('Photo Credits & Illustration Sources', 'Find image sources, photographer credits and licensing details for English Ladder, including how AI illustrations are labeled in news lessons.'),
     'continue.html': ('Review Your English: Guided Practice', 'Review useful English expressions, revisit grammar and news lessons, and copy a complete AI prompt for polite requests and clarification practice.'),
     '404.html': ('Page Not Found', 'Find your next English lesson in the news archive, grammar library or English for Work courses, or return to the English Ladder homepage.'),

@@ -20,10 +20,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering financial commentary, close, forecasting, treasury, performance,
   credit, controls, and valuation with explicit calculation bases.
   Output: `output/pdf/finance-english-book.pdf`.
+- Financial Advice English: 102 pages with the same counts and explained keys,
+  covering discovery, fees, risk, retirement illustrations, portfolio reviews,
+  product comparisons, family roles, and substantive complaint responses.
+  Output: `output/pdf/financial-advice-english-book.pdf`.
 
 ## Remaining
 
-61 books remain. The next course in the canonical inventory is `financial-advice`.
+60 books remain. The next course in the canonical inventory is `marketing`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

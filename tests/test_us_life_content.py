@@ -8,6 +8,7 @@ from types import SimpleNamespace
 from bs4 import BeautifulSoup
 import us_life_content as content
 import us_life_audio as audio
+import us_life_audio_review as review
 from us_life_translations import sources, read_record
 
 
@@ -25,6 +26,7 @@ class EverydayContentTests(unittest.TestCase):
                 self.assertEqual(content.audio_path(word['term']), dt.a['href'])
                 self.assertIn(word['term'], dt.a['aria-label'])
                 self.assertTrue(audio.valid_record(word['term'], content.terms()[word['term']], records), word['term'])
+                self.assertTrue(review.reviewed(records[word['term']]), word['term'])
             self.assertEqual('none', blocks[1].audio['preload'])
             self.assertFalse(blocks[1].audio.has_attr('src'))
             self.assertFalse(blocks[1].audio.has_attr('autoplay'))
@@ -81,6 +83,18 @@ class EverydayContentTests(unittest.TestCase):
             with self.assertRaises(RuntimeError): resumed.request(client, 'term', 'say term')
             self.assertEqual(1, client.models.calls)
             self.assertEqual(budget.spent, resumed.spent)
+
+    def test_review_is_bound_to_exact_recording_and_rejects_pending_results(self):
+        record = {'sha256': 'new'}
+        self.assertFalse(review.reviewed(record))
+        record['review'] = {'policy': review.POLICY, 'status': 'passed', 'audio_sha256': 'old'}
+        self.assertFalse(review.reviewed(record))
+        record['review']['audio_sha256'] = 'new'
+        self.assertTrue(review.reviewed(record))
+        record['review']['status'] = 'needs-review'
+        self.assertFalse(review.reviewed(record))
+        self.assertEqual(review.normalized('Wi-Fi'), review.normalized('wifi'))
+        self.assertNotEqual(review.normalized('custom'), review.normalized('customs'))
 
     def test_missing_audio_check_is_offline_and_daily_build_never_generates_speech(self):
         workflow = (content.ROOT / '.github/workflows/cron.yml').read_text()

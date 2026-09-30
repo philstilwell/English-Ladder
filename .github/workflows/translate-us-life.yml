@@ -8,6 +8,11 @@ on:
         required: false
         type: boolean
         default: false
+      review_audio:
+        description: 'Independently transcribe saved recordings; shares the $2 audio cap'
+        required: false
+        type: boolean
+        default: false
       audio_limit:
         description: 'Optional audio pilot count; 0 prepares all missing terms'
         required: false
@@ -75,6 +80,12 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
         run: python -u us_life_translations.py --budget 2 --budget-key "$BACKFILL_KEY"
+      - name: Independently check spoken vocabulary
+        if: github.event.inputs.review_audio == 'true'
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
+        run: python -u us_life_audio_review.py --budget 2 --budget-key "$BACKFILL_KEY"
       - name: Preserve translations and spending records
         if: always()
         uses: actions/upload-artifact@v4

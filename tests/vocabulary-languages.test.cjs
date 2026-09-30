@@ -7,7 +7,7 @@ const root = path.join(__dirname, '..');
 const windows = [];
 afterEach(() => { windows.splice(0).forEach(dom => dom.window.close()); });
 const key = 'english-ladder-vocabulary-language-v1';
-const definitions = { ja: '競技で誰が勝つかを決める人。', ko: '대회에서 누가 이기는지 결정하는 사람.', 'zh-Hans': '决定比赛中谁获胜的人。', es: 'Una persona que decide quién gana una competición.', 'pt-BR': 'Uma pessoa que decide quem vence uma competição.' };
+const definitions = { ja: '競技で誰が勝つかを決める人。', ko: '대회에서 누가 이기는지 결정하는 사람.', 'zh-Hans': '决定比赛中谁获胜的人。', es: 'Una persona que decide quién gana una competición.', 'pt-BR': 'Uma pessoa que decide quem vence uma competição.', fr: 'Une personne qui décide qui gagne une compétition.', de: 'Eine Person, die entscheidet, wer einen Wettbewerb gewinnt.' };
 
 function load(saved, options = {}) {
   const fixture = `<details class="daily-lesson"><div class="lesson-content"><div data-stage="read"><div class="section"><p>A <strong>judge</strong> decides.</p></div><div class="vocab-box"><span class="vocab-term">1. judge (noun):</span> <span class="vocab-definition" lang="en">A person who decides who wins.</span></div><p data-word-hint hidden></p></div><div data-stage="practice"><h2>Practice</h2></div><div data-stage="discuss"><h2>Discuss</h2><p class="completion-message" hidden></p></div></div></details>`;
@@ -23,7 +23,7 @@ function load(saved, options = {}) {
   return dom;
 }
 
-test('all five languages switch definitions and already-open word help across lessons, then reset to English', () => {
+test('all seven languages switch definitions and already-open word help across lessons, then reset to English', () => {
   const dom = load(); const d = dom.window.document;
   const word = d.querySelector('.word-button'); word.click();
   for (const [language, text] of Object.entries(definitions)) {

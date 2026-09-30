@@ -31,7 +31,7 @@ test('dated links open during HTML parsing before external interactions arrive',
   const lesson = document.getElementById(targetId);
   assert.equal(lesson.querySelectorAll('.learning-flow').length, 1);
   assert.equal(lesson.querySelectorAll('.learning-flow button:disabled').length, 3);
-  assert.equal(lesson.querySelectorAll('.vocabulary-language:disabled').length, 6);
+  assert.equal(lesson.querySelectorAll('.vocabulary-language:disabled').length, 8);
   assert.equal(lesson.querySelector('[data-stage="read"] .section').previousElementSibling.dataset.wordHint, '');
   // All content remains in the document; CSS alone selects the initial read view.
   assert.equal(lesson.querySelectorAll('.learning-panel[hidden]').length, 0);

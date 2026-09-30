@@ -9,7 +9,7 @@ const latestNewsDate = (fs.existsSync(archiveDirectory) ? fs.readdirSync(archive
   .filter(file => /^\d{4}-\d{2}-\d{2}\.json$/.test(file)).sort().at(-1)?.slice(0, -5);
 const lessonPage = level => latestNewsDate ? `news/${latestNewsDate}/${level}.html` : `stories/food-market/${level}.html`;
 const key = 'english-ladder-vocabulary-language-v1';
-const languages = { ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese' };
+const languages = { ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese', fr: 'French', de: 'German' };
 const windows = [];
 afterEach(() => windows.splice(0).forEach(dom => dom.window.close()));
 const source = name => fs.readFileSync(path.join(root, name), 'utf8');
@@ -36,7 +36,7 @@ function clickLanguage(w, value) {
   w.document.querySelector(`button[data-definition-language="${value}"]`).click();
 }
 
-test('all five language buttons update every lesson prompt, copy exact previews, and restore the originals', async () => {
+test('all seven language buttons update every lesson prompt, copy exact previews, and restore the originals', async () => {
   const copies = [];
   const w = load(latestNewsDate ? 'beginner.html' : lessonPage('beginner'), { clipboard: { writeText: async text => copies.push(text) } });
   const d = w.document;
@@ -67,13 +67,13 @@ test('all five language buttons update every lesson prompt, copy exact previews,
 
 test('saved language carries into all three levels and non-story curriculum prompts', () => {
   for (const file of [...['beginner', 'intermediate', 'advanced'].map(lessonPage), 'grammar-concepts/concept-35.html', 'us-life.html', 'tools.html']) {
-    const w = load(file, { saved: 'zh-Hans' });
+    const w = load(file, { saved: 'fr' });
     run(w, 'ai-practice.js');
     for (const node of w.document.querySelectorAll('.ai-prompt-text')) {
-      assert.match(node.textContent, /My explanation language is Simplified Chinese\./, file);
+      assert.match(node.textContent, /My explanation language is French\./, file);
     }
-    externalLanguage(w, 'pt-BR');
-    assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Brazilian Portuguese\./);
+    externalLanguage(w, 'de');
+    assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is German\./);
     w.localStorage.setItem(key, 'ko');
     w.dispatchEvent(new w.PageTransitionEvent('pageshow', { persisted: true }));
     assert.match(w.document.querySelector('.ai-prompt-text').textContent, /My explanation language is Korean\./);

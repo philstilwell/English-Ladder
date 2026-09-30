@@ -101,7 +101,8 @@ def prepare_reading_controls(soup):
     if learning_script:
         learning_script['onerror'] = 'document.documentElement.classList.remove("reading-js")'
     languages = [('en', 'English'), ('ja', 'Japanese'), ('ko', 'Korean'),
-                 ('zh-Hans', 'Chinese'), ('es', 'Spanish'), ('pt-BR', 'Portuguese')]
+                 ('zh-Hans', 'Chinese'), ('es', 'Spanish'), ('pt-BR', 'Portuguese'),
+                 ('fr', 'French'), ('de', 'German')]
     for index, lesson in enumerate(soup.select('.daily-lesson')):
         opener = soup.new_tag('script', attrs={'data-reading-open': ''})
         opener.string = ('try{if(decodeURIComponent(location.hash.slice(1))==='

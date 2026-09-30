@@ -21,8 +21,9 @@ def enhance_page(soup):
     if picker:
         (picker.find_parent('label') or picker).decompose()
     for item in soup.select('.us-life-stat-list li'):
-        if item.get_text(strip=True) == 'Japanese or Mandarin explanations':
-            item.string = 'Explanations in five languages'
+        text = item.get_text(strip=True)
+        if text == 'Japanese or Mandarin explanations' or text.startswith('Explanations in '):
+            item.string = f'Explanations in {len(LANGUAGES)} languages'
     for old in soup.select('[data-us-life-translations]'):
         old.decompose()
     introduction = soup.select_one('.us-life-intro > div')
@@ -33,7 +34,7 @@ def enhance_page(soup):
                        for language, label in {'en': 'English only', **LANGUAGE_LABELS}.items())
     introduction.append(BeautifulSoup(f'''<h2>Choose your explanation language</h2><p>{INVITATION}</p>
 <div class="vocabulary-languages" role="group" aria-label="Explanation language">{controls}</div>
-<p class="vocabulary-language-status" data-life-language-status role="status" aria-live="polite">Language help is optional. Choose any of the five languages if you would like it.</p>
+<p class="vocabulary-language-status" data-life-language-status role="status" aria-live="polite">Language help is optional. Choose a language if you would like it.</p>
 <noscript><p>Enable JavaScript to choose an explanation language. You can read all the English lessons without it.</p></noscript>''', 'html.parser'))
     payload = {}
     for key, source in sources(soup).items():
@@ -49,7 +50,7 @@ def enhance_page(soup):
         aside.attrs.pop('lang', None)
         markup = f'''<div id="life-explanation-{key}" data-life-explanation-content lang="en"><p>Choose an explanation language above.</p></div>'''
         aside.append(BeautifulSoup(markup, 'html.parser'))
-        record = read_record(source)
+        record = read_record(source, allow_partial=True)
         payload[key] = {'practice': source['japanese_explanation']['practice'],
                         'translations': record['translations'] if record else {}}
     script = soup.new_tag('script', attrs={'type': 'application/json', 'data-us-life-translations': ''})

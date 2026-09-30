@@ -2,7 +2,7 @@
 (() => {
   "use strict";
   const stages = ["read", "practice", "discuss"];
-  const definitionLanguages = { en: "English", ja: "Japanese", ko: "Korean", "zh-Hans": "Chinese", es: "Spanish", "pt-BR": "Portuguese" };
+  const definitionLanguages = { en: "English", ja: "Japanese", ko: "Korean", "zh-Hans": "Chinese", es: "Spanish", "pt-BR": "Portuguese", fr: "French", de: "German" };
   const languageKey = "english-ladder-vocabulary-language-v1";
   const vocabularyViews = [];
   function supportedLanguage(value) {

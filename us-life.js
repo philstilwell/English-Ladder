@@ -9,6 +9,8 @@
         "zh-Hans": { label: "Chinese", lang: "zh-Hans", rememberLabel: "重点", practiceLabel: "开口练习" },
         es: { label: "Spanish", lang: "es", rememberLabel: "Puntos clave", practiceLabel: "Practica en voz alta" },
         "pt-BR": { label: "Portuguese", lang: "pt-BR", rememberLabel: "Pontos principais", practiceLabel: "Pratique em voz alta" },
+        fr: { label: "French", lang: "fr", rememberLabel: "Points essentiels", practiceLabel: "Entraînez-vous à voix haute" },
+        de: { label: "German", lang: "de", rememberLabel: "Wichtige Punkte", practiceLabel: "Üben Sie laut" },
     };
     const supported = value => Object.hasOwn(languages, value) ? value : "en";
     let explanations = {};
@@ -82,7 +84,7 @@
         document.querySelectorAll("[data-explanation]").forEach(container => renderExplanation(container, selectedLanguage));
         const status = document.querySelector("[data-life-language-status]");
         if (status) status.textContent = selectedLanguage === "en"
-            ? "Language help is optional. Choose any of the five languages if you would like it."
+            ? "Language help is optional. Choose a language if you would like it."
             : `Unit explanations and deeper AI explanations in ${languages[selectedLanguage].label}.`;
         // Keep the ready-to-copy AI prompts and vocabulary buttons on the same preference.
         window.dispatchEvent(new CustomEvent("vocabulary-language-changed", { detail: { language: selectedLanguage } }));

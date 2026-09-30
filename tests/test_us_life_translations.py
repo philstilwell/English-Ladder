@@ -17,7 +17,8 @@ class EverydayTranslationTests(unittest.TestCase):
         self.source = translations.sources()['arrival']
         samples = {'ja': '必要なときに説明を頼みましょう。', 'ko': '필요할 때 설명을 요청하세요.',
                    'zh-Hans': '需要时请对方解释。', 'es': 'Pide una explicación cuando la necesites.',
-                   'pt-BR': 'Peça uma explicação quando precisar.'}
+                   'pt-BR': 'Peça uma explicação quando precisar.',
+                   'fr': 'Demandez une explication si nécessaire.', 'de': 'Bitten Sie bei Bedarf um eine Erklärung.'}
         self.values = {lang: {'heading': text, 'points': [text] * 3} for lang, text in samples.items()}
 
     def test_all_existing_sidebars_have_complete_source_and_unchanged_english_practice(self):
@@ -82,13 +83,49 @@ class EverydayTranslationTests(unittest.TestCase):
         payload = json.loads(soup.select_one('[data-us-life-translations]').string)
         self.assertEqual(24, len(payload))
         for key, source in translations.sources(soup).items():
-            record = translations.read_record(source)
+            record = translations.read_record(source, allow_partial=True)
             self.assertIsNotNone(record, key)
             self.assertEqual(record['translations'], payload[key]['translations'])
             self.assertEqual(source['japanese_explanation']['practice'], payload[key]['practice'])
         self.assertEqual(original, [str(n) for n in soup.select('.us-life-main')])
-        self.assertEqual(6, len(soup.select('[data-definition-language]')))
+        self.assertEqual(8, len(soup.select('[data-definition-language]')))
         self.assertIsNone(soup.select_one('#life-language-select'))
+
+    def test_language_extension_preserves_old_sidebars_and_resumes_a_failed_review(self):
+        original_values = {key: value for key, value in self.values.items() if key not in ('fr', 'de')}
+        path = self.directory / (source_key(self.source) + '.json')
+        atomic_json(path, {'source': self.source, 'translations': original_values,
+                           'review': {'status': 'reviewed', 'model': 'earlier-reviewed-model'}})
+        original = path.read_bytes()
+        self.assertIsNone(translations.read_record(self.source, self.directory))
+        self.assertEqual(original_values, translations.read_record(self.source, self.directory,
+                         allow_partial=True)['translations'])
+        additions = {key: self.values[key] for key in ('fr', 'de')}
+
+        class ExtensionBudget:
+            def __init__(self, fail=False): self.calls = []; self.fail = fail
+            def request(self, client, prompt, schema, thinking):
+                self.calls.append((prompt, schema))
+                if self.fail and 'INDEPENDENT REVIEW:' in prompt:
+                    raise ValueError('Temporary review failure')
+                return {'translations': additions}
+
+        failed = ExtensionBudget(True)
+        with self.assertRaises(RuntimeError):
+            translations.translate(None, self.source, failed, self.directory)
+        self.assertEqual(original, path.read_bytes())
+        resumed = ExtensionBudget()
+        self.assertEqual('translated', translations.translate(None, self.source, resumed, self.directory))
+        self.assertEqual(1, len(resumed.calls))
+        self.assertIn('INDEPENDENT REVIEW:', resumed.calls[0][0])
+        for prompt, schema in failed.calls + resumed.calls:
+            self.assertIn('Requested languages: French (fr), German (de).', prompt)
+            self.assertEqual({'fr', 'de'}, set(schema['properties']['translations']['properties']))
+        record = translations.read_record(self.source, self.directory)
+        self.assertEqual(self.values, record['translations'])
+        self.assertEqual('earlier-reviewed-model', record['review']['retained']['review']['model'])
+        self.assertEqual('cached', translations.translate(None, self.source, resumed, self.directory))
+        self.assertEqual(1, len(resumed.calls))
 
     def test_rebuilding_keeps_one_selector_one_payload_and_the_same_translation_sources(self):
         from us_life_language_ui import enhance_page

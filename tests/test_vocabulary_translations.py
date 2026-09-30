@@ -21,7 +21,8 @@ class VocabularyTranslationTests(unittest.TestCase):
         self.source = translations.source_data(self.lesson, 'beginner')
         self.entries = [dict(id=i, ja='物の大きさや量を小さくすること。', ko='어떤 것의 크기나 양을 줄이는 것.',
                              **{'zh-Hans': '使某事物的大小或数量减少。', 'es': 'Hacer algo más pequeño.',
-                                'pt-BR': 'Tornar algo menor.'}) for i in range(3)]
+                                'pt-BR': 'Tornar algo menor.', 'fr': 'Rendre quelque chose plus petit.',
+                                'de': 'Etwas kleiner machen.'}) for i in range(3)]
 
     def store(self):
         translations.atomic_json(self.directory / (translations.source_key(self.source) + '.json'),
@@ -101,9 +102,57 @@ class VocabularyTranslationTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'spending limit'): restarted.request(client, 'Translate.', {}, 0)
         self.assertEqual(1, len(calls))
 
+    def test_new_languages_preserve_reviewed_definitions_and_resume_only_their_review(self):
+        full = copy.deepcopy(self.entries)
+        self.entries = [{key: value for key, value in entry.items() if key not in ('fr', 'de')}
+                        for entry in full]
+        self.store()
+        path = self.directory / (translations.source_key(self.source) + '.json')
+        original = path.read_bytes()
+        self.assertIsNone(translations.read_record(self.source, self.directory))
+        self.assertEqual({'ja', 'ko', 'zh-Hans', 'es', 'pt-BR'},
+                         set(translations.lesson_definitions(self.lesson, 'beginner', self.directory)[0]))
+
+        class ExtensionBudget:
+            def __init__(self, fail=False): self.calls = []; self.fail = fail
+            def request(self, client, prompt, schema, thinking):
+                self.calls.append((prompt, schema))
+                if self.fail and 'INDEPENDENT REVIEW:' in prompt:
+                    raise ValueError('Review temporarily unavailable')
+                return {'entries': [{key: entry[key] for key in ('id', 'fr', 'de')} for entry in full]}
+
+        failed = ExtensionBudget(True)
+        with self.assertRaises(RuntimeError):
+            translations.translate_lesson(None, self.source, failed, self.directory)
+        self.assertEqual(original, path.read_bytes())
+        resumed = ExtensionBudget()
+        self.assertEqual('translated', translations.translate_lesson(None, self.source, resumed, self.directory))
+        self.assertEqual(1, len(resumed.calls))
+        self.assertIn('INDEPENDENT REVIEW:', resumed.calls[0][0])
+        for prompt, schema in failed.calls + resumed.calls:
+            self.assertIn('Requested languages: French (fr), German (de).', prompt)
+            self.assertEqual({'id', 'fr', 'de'}, set(schema['properties']['entries']['items']['properties']))
+        record = translations.read_record(self.source, self.directory)
+        self.assertEqual(full, record['entries'])
+        self.assertEqual(['fr', 'de'], record['review']['added_languages'])
+        self.assertEqual('reviewed', record['review']['retained']['review']['status'])
+        self.assertEqual('cached', translations.translate_lesson(None, self.source, resumed, self.directory))
+        self.assertEqual(1, len(resumed.calls))
+
+    def test_partial_cache_rejects_unknown_or_inconsistent_language_sets(self):
+        self.store()
+        path = self.directory / (translations.source_key(self.source) + '.json')
+        record = json.loads(path.read_text())
+        record['entries'][0].pop('de')
+        translations.atomic_json(path, record)
+        self.assertIsNone(translations.read_record(self.source, self.directory, allow_partial=True))
+        for entry in record['entries']:
+            entry['unsupported'] = 'Unreviewed language'
+        translations.atomic_json(path, record)
+        self.assertIsNone(translations.read_record(self.source, self.directory, allow_partial=True))
+
     def test_offline_archive_inventory_includes_all_daily_and_evergreen_lessons(self):
         sources = list(translations.lessons_to_translate(True))
         expected = len(list((translations.ROOT / 'archive/lessons').glob('*.json'))) * 3 + len(STORIES) * 3
         self.assertEqual(expected, len(sources))
         self.assertEqual(len(sources), len({translations.source_key(source) for _, source in sources}))
-

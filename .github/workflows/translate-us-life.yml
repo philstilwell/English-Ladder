@@ -2,6 +2,17 @@ name: Translate Everyday English explanations
 
 on:
   workflow_dispatch:
+    inputs:
+      include_vocabulary:
+        description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
+        required: false
+        type: boolean
+        default: false
+      budget_key:
+        description: 'Cumulative spending record; reuse the same key when retrying (Everyday English cap $2)'
+        required: false
+        type: string
+        default: initial
 
 permissions:
   contents: write
@@ -13,33 +24,50 @@ concurrency:
 jobs:
   translate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install existing project dependencies
         run: pip install -r requirements.txt
-      - name: Translate and separately edit the public sidebars
+      - name: Fill and separately review missing vocabulary languages
+        if: github.event.inputs.include_vocabulary == 'true'
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python -u us_life_translations.py --budget 2
+          BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
+        run: python -u vocabulary_translations.py --all --budget 5 --budget-key "$BACKFILL_KEY"
+      - name: Translate and separately edit the public sidebars
+        if: ${{ !cancelled() }}
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
+        run: python -u us_life_translations.py --budget 2 --budget-key "$BACKFILL_KEY"
       - name: Preserve translations and spending records
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: us-life-translations-${{ github.run_id }}
-          path: data/us-life-translations/
+          name: reviewed-translations-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            data/us-life-translations/
+            data/vocabulary-translations/
           include-hidden-files: true
           retention-days: 14
       - name: Save reviewed translations and resumable progress
         if: always()
+        env:
+          GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
         run: |
+          gh auth setup-git --hostname github.com
           git config user.name 'GitHub Actions Bot'
           git config user.email 'actions@github.com'
-          git add data/us-life-translations
+          git add data/us-life-translations data/vocabulary-translations
           if git diff --cached --quiet; then exit 0; fi
-          git commit -m 'Prepare reviewed Everyday English translations'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          git commit -m 'Prepare reviewed language additions and save translation progress'
+          # A branch backfill must stay on that branch until its pages are checked.
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

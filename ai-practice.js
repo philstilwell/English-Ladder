@@ -1,7 +1,7 @@
 /* Copy published, inspectable prompt text. No AI requests, account, or draft access. */
 (() => {
   'use strict';
-  const languages = { en: 'English', ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese' };
+  const languages = { en: 'English', ja: 'Japanese', ko: 'Korean', 'zh-Hans': 'Simplified Chinese', es: 'Spanish', 'pt-BR': 'Brazilian Portuguese', fr: 'French', de: 'German' };
   const languageKey = 'english-ladder-vocabulary-language-v1';
   const supported = value => Object.hasOwn(languages, value) ? value : 'en';
   function savedLanguage() {

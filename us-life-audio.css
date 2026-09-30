@@ -1,3 +1,5 @@
+.us-life-hero-copy > [data-life-start] { margin-top: 24px; }
+
 .life-unit-heading {
     display: grid; grid-template-columns: 112px minmax(0, 1fr);
     align-items: center; gap: 30px; margin-bottom: 22px;

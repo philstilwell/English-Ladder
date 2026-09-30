@@ -47,12 +47,28 @@ def terms():
     return {word['term']: word['definition'] for unit in content().values() for word in unit['vocabulary']}
 
 
+def unit_icon(soup, key):
+    index = ICON_UNITS.index(key)
+    return soup.new_tag('span', attrs={
+        'class': 'life-unit-icon', 'aria-hidden': 'true',
+        'data-unit-icon': key,
+        'style': f'background-position:{(index % 4) * 100 / 3:.6f}% {(index // 4) * 20:.6f}%',
+    })
+
+
 def enhance_page(soup):
     units = content()
     if {u['id'] for u in soup.select('.us-life-module')} != set(units):
         raise ValueError('Everyday English page and authored units do not match.')
     if set(units) != set(ICON_UNITS):
         raise ValueError('Everyday English units and subject icons do not match.')
+    shortcuts = soup.select('.us-life-jump-grid a')
+    if len(shortcuts) != len(units) or {a['href'] for a in shortcuts} != {'#' + key for key in units}:
+        raise ValueError('Everyday English shortcuts and units do not match.')
+    for shortcut in shortcuts:
+        for old in shortcut.select('.life-unit-icon'):
+            old.decompose()
+        shortcut.insert(0, unit_icon(soup, shortcut['href'][1:]))
     for key, unit in units.items():
         main = soup.find(id=key).select_one('.us-life-main')
         heading = main.select_one('.life-unit-heading')
@@ -65,13 +81,7 @@ def enhance_page(soup):
             main.insert(0, heading)
         for old in heading.select('.life-unit-icon'):
             old.decompose()
-        index = ICON_UNITS.index(key)
-        icon = soup.new_tag('span', attrs={
-            'class': 'life-unit-icon', 'aria-hidden': 'true',
-            'data-unit-icon': key,
-            'style': f'background-position:{(index % 4) * 100 / 3:.6f}% {(index // 4) * 20:.6f}%',
-        })
-        heading.insert(0, icon)
+        heading.insert(0, unit_icon(soup, key))
         blocks = main.select('.module-block')
         for block, name in zip(blocks, ('life-sentences', 'life-vocabulary-block', 'life-customs', 'life-dialogue')):
             block['class'] = list(dict.fromkeys([*block.get('class', []), name]))
@@ -123,4 +133,4 @@ def enhance_page(soup):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
         soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
-    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-unit-icons1'
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-shortcut-icons1'

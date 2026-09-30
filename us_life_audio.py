@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import io
 import json
 import os
 import re
@@ -10,6 +11,7 @@ import subprocess
 import tempfile
 import threading
 import time
+import wave
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
@@ -23,6 +25,27 @@ MODEL_PRICES = {MODEL: (.5, 10), 'gemini-2.5-pro-preview-tts': (1, 20),
 VOICE = 'Kore'
 MAX_TOKENS = 512
 RECORDS = ROOT / 'content/us-life-audio.json'
+
+
+def decode_audio(blobs):
+    chunks = []
+    for blob in blobs:
+        mime = blob.mime_type.lower()
+        data = blob.data
+        if data.startswith(b'RIFF') or mime.split(';')[0] in ('audio/wav', 'audio/x-wav', 'audio/wave'):
+            with wave.open(io.BytesIO(data), 'rb') as recording:
+                if (recording.getnchannels(), recording.getsampwidth(), recording.getframerate()) != (1, 2, 24000):
+                    raise ValueError('Expected mono, 16-bit, 24 kHz WAV audio.')
+                chunks.append(recording.readframes(recording.getnframes()))
+        else:
+            parts = [p.strip() for p in mime.split(';')]
+            parameters = dict(p.split('=', 1) for p in parts[1:] if '=' in p)
+            if parts[0] not in ('audio/l16', 'audio/pcm') or parameters.get('rate') != '24000':
+                raise ValueError(f'Unexpected speech audio format: {blob.mime_type}')
+            chunks.append(data)
+    if not chunks:
+        raise ValueError('The provider returned no audio.')
+    return b''.join(chunks)
 
 
 def prompt_for(term, definition):
@@ -78,9 +101,7 @@ class AudioBudget:
             raise ValueError('The pronunciation recording did not finish normally.')
         parts = candidates[0].content.parts or []
         blobs = [p.inline_data for p in parts if p.inline_data]
-        if not blobs or any(not re.fullmatch(r'audio/(?:L16|l16|pcm);(?:codec=pcm;)?rate=24000', b.mime_type) for b in blobs):
-            raise ValueError('Expected 24 kHz PCM audio from the provider.')
-        return b''.join(b.data for b in blobs)
+        return decode_audio(blobs)
 
 
 def encode_mp3(pcm, destination):

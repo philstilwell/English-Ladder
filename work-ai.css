@@ -16,6 +16,7 @@
 .work-ai-invitation nav { display: flex; flex-wrap: wrap; gap: .2rem 1.1rem; }
 .work-ai-invitation a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
 .finished-prompts { margin-top: 1.5rem; }
+.work-module-body .work-ai-invitation + .finished-prompts { margin-top: clamp(24px, 3vw, 36px); }
 .finished-prompt, .finished-dialogue { margin: .7rem 0; border: 1px solid #c7d5de; border-radius: .5rem; padding: .8rem 1rem; background: #f5f8fa; }
 .finished-prompt summary, .finished-dialogue > summary { cursor: pointer; font-weight: 650; line-height: 1.6; }
 .finished-prompt-body { margin-top: .8rem; }

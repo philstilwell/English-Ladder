@@ -61,12 +61,12 @@ def enhance_page(soup,path,prefix):
     from study_routes import enhance_page as enhance_routes
     enhance_routes(soup,relative,prefix)
     # Give returning readers the current controls instead of cached older files.
-    updated_assets={'app.js','learning.js','site.js','tools.js','work.js','us-life.js','styles.css','editorial.css','site.css','work.css','ai-practice.js','work-ai.js','work-ready.js'}
+    updated_assets={'app.js','learning.js','site.js','tools.js','work.js','us-life.js','styles.css','editorial.css','site.css','work.css','work-ai.css','ai-practice.js','work-ai.js','work-ready.js'}
     for tag in soup.select('script[src],link[rel="stylesheet"][href]'):
         attr='src' if tag.name=='script' else 'href'
         asset=tag[attr].split('?',1)[0]
         if not asset.startswith(('https:','http:','//')) and Path(asset).name in updated_assets:
-            version={'site.js':'20260915-stable-reading1','site.css':'20260929-everyday-menu1','us-life.js':'20260930-dialogue-tabs1','learning.js':'20260929-french-german1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260929-french-german1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20260930-work-activity-letters1','work.js':'20260930-work-activity-letters1'}.get(Path(asset).name,'20260906-quality1')
+            version={'work-ai.css':'20260930-prompt-spacing1','site.js':'20260915-stable-reading1','site.css':'20260929-everyday-menu1','us-life.js':'20260930-dialogue-tabs1','learning.js':'20260929-french-german1','app.js':'20260907-plain-titles1','editorial.css':'20260907-plain-titles1','ai-practice.js':'20260929-french-german1','work-ai.js':'20260908-ai-languages1','work-ready.js':'20260908-ai-languages1','work.css':'20260930-work-activity-letters1','work.js':'20260930-work-activity-letters1'}.get(Path(asset).name,'20260906-quality1')
             tag[attr]=asset+'?v='+version
     from seo import enhance_page as enhance_search
     enhance_search(soup,path,prefix)

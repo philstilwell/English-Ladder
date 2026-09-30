@@ -29,7 +29,7 @@ def page(title, content, current):
     result = document(title, content, body_class='theme-efsp work-page', current=current)
     result = result.replace('Learn English with real stories. Read, practice, and discuss at your level.',
                             e(f'Practice {title} with realistic workplace conversations, guided language checks, clear vocabulary, and printable teaching guides.'))
-    return result.replace('</head>', '<link rel="stylesheet" href="work.css?v=20260905"><script defer src="work.js?v=20260905"></script><link rel="stylesheet" href="work-ai.css?v=20260906-ready2"><script defer src="work-ai.js?v=20260906-ai1"></script><script defer src="work-ready.js?v=20260906-ready2"></script></head>')
+    return result.replace('</head>', '<link rel="stylesheet" href="work.css?v=20260905"><script defer src="work.js?v=20260905"></script><link rel="stylesheet" href="work-ai.css?v=20260930-prompt-spacing1"><script defer src="work-ai.js?v=20260906-ai1"></script><script defer src="work-ready.js?v=20260906-ready2"></script></head>')
 
 
 def pdf_links(track):

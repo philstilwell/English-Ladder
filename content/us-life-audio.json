@@ -1485,5 +1485,133 @@
     "file": "assets/audio/us-life/post-office-5df0963f0e21.mp3",
     "seconds": 2.290958333333333,
     "sha256": "99ae9a0a141fc5d02434139a66b72dd689b4e01658a115533cba66dd82c0ecfc"
+  },
+  "stamp": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a small label showing that postage has been paid.\nTerm to speak: stamp",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/stamp-7d3c56059b34.mp3",
+    "seconds": 0.9,
+    "sha256": "8e790879bea5ccbb0d3622f7a3be5557875522e8eb796fdd38163cb7e5bec427",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      0.12,
+      1.02
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "postage": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the price of sending mail.\nTerm to speak: postage",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/postage-0d8c3d40edc9.mp3",
+    "seconds": 1.12,
+    "sha256": "86db1a34506863b48db8bca91b37be12b06b26c4b8c1784b34942901f288ca5c",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      2.0,
+      3.12
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "return address": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the sender's address written on a letter or package.\nTerm to speak: return address",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/return-address-c82370b5fce6.mp3",
+    "seconds": 1.86,
+    "sha256": "87c9cafaa4b4ba5d1cc722883268f96ada7ca076af3a6c89726f5ac799d4f87f",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      3.84,
+      5.7
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "delivery notice": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a message about an attempted or completed delivery.\nTerm to speak: delivery notice",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/delivery-notice-cc9221100972.mp3",
+    "seconds": 1.66,
+    "sha256": "58922d9efda0b6ea63f60d08fe2742d066ea0673af06aa47b6fcc4d40d23d29d",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      6.54,
+      8.2
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "envelope": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a paper cover used to send a letter.\nTerm to speak: envelope",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/envelope-b733c170d510.mp3",
+    "seconds": 0.9,
+    "sha256": "4273ee3eef8ecc6f74936852bb290d5e2b01c8b0834bcd79935b5a202705ccc7",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      9.12,
+      10.02
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "shipping label": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a label with the information needed to send a package.\nTerm to speak: shipping label",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/shipping-label-64fddc98c29a.mp3",
+    "seconds": 1.38,
+    "sha256": "4a9b38fce39d1d14b48261b694f9da714cde7ec637a47079e0b2bc4885677bd2",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      10.98,
+      12.36
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "smoke alarm": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a device that warns about smoke or fire.\nTerm to speak: smoke alarm",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/smoke-alarm-76f56c39858b.mp3",
+    "seconds": 1.38,
+    "sha256": "77f568130f61336a8fc10689d444b21ca2d8379de5db9ee111c52c1cbe392692",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      13.3,
+      14.68
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "power outage": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: when electricity stops working.\nTerm to speak: power outage",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+    "file": "assets/audio/us-life/power-outage-844f2166bbb1.mp3",
+    "seconds": 1.34,
+    "sha256": "b6ae53a16de48019a1f3bfc5854f27cfc569bced2e08339bc7fa607814552ac5",
+    "batch_source": "content/audio-batches/86e93aed1b9cc01db35db157d97ec3f833f760252b43bef3c96f6f921ad95d5a.json",
+    "batch_interval_seconds": [
+      15.5,
+      16.84
+    ],
+    "silence_gap_seconds": 0.65
   }
 }

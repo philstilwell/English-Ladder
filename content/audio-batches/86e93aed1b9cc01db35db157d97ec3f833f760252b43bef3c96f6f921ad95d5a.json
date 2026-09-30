@@ -1,0 +1,40 @@
+{
+  "model": "gemini-2.5-pro-preview-tts",
+  "voice": "Kore",
+  "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nstamp.\n\npostage.\n\nreturn address.\n\ndelivery notice.\n\nenvelope.\n\nshipping label.\n\nsmoke alarm.\n\npower outage.",
+  "words": [
+    [
+      "stamp",
+      "a small label showing that postage has been paid"
+    ],
+    [
+      "postage",
+      "the price of sending mail"
+    ],
+    [
+      "return address",
+      "the sender's address written on a letter or package"
+    ],
+    [
+      "delivery notice",
+      "a message about an attempted or completed delivery"
+    ],
+    [
+      "envelope",
+      "a paper cover used to send a letter"
+    ],
+    [
+      "shipping label",
+      "a label with the information needed to send a package"
+    ],
+    [
+      "smoke alarm",
+      "a device that warns about smoke or fire"
+    ],
+    [
+      "power outage",
+      "when electricity stops working"
+    ]
+  ],
+  "pcm_sha256": "bf615a461a52e496a2e6b51692643fa5a5c31082a2d3ff4c77441e632bd2a28a"
+}

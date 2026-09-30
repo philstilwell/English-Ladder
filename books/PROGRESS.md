@@ -32,10 +32,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering representation, objective searches, comparable sales, fair-housing
   language, offer conditions, inspection findings, closing, and maintenance follow-up.
   Output: `output/pdf/real-estate-english-book.pdf`.
+- Corporate Strategy English: 102 pages with the same counts and explained keys,
+  covering mandates, trade-offs, market boundaries, unit economics, capital allocation,
+  acquisition logic, scenarios, and bounded board decisions.
+  Output: `output/pdf/corporate-strategy-english-book.pdf`.
 
 ## Remaining
 
-58 books remain. The next course in the canonical inventory is `corporate-strategy`.
+57 books remain. The next course in the canonical inventory is `pharmaceutical`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

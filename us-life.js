@@ -103,6 +103,69 @@
     });
     applyLanguage(selectedLanguage);
     const units = [...document.querySelectorAll(".us-life-module")];
+    function setupCompletion() {
+        // One flag per unit keeps changes in other tabs independent. No answers are saved.
+        const prefix = "english-ladder-everyday-completed-v1:";
+        const unsaved = new Map();
+        const views = new Map();
+        function completed(id) {
+            if (unsaved.has(id)) return unsaved.get(id);
+            try { return localStorage.getItem(prefix + id) === "1"; }
+            catch { return false; }
+        }
+        function refresh(changedId) {
+            views.forEach(({ button, status, marks }, id) => {
+                const done = completed(id);
+                button.textContent = done ? "Completed" : "Mark as completed";
+                button.setAttribute("aria-pressed", String(done));
+                button.title = done ? "Mark this unit as not completed" : "Mark this unit as completed";
+                marks.forEach(mark => { mark.hidden = !done; });
+                status.textContent = unsaved.has(id)
+                    ? "Your browser could not save this change; it lasts only on this page."
+                    : done ? "Saved in this browser. Select Completed to undo."
+                    : changedId === id ? "Completion removed. You can mark this unit again anytime."
+                    : "Progress stays in this browser.";
+            });
+        }
+        units.forEach(unit => {
+            const marks = [...document.querySelectorAll(`[data-unit-icon="${unit.id}"]`)].map(icon => {
+                const slot = createElement("span", "life-unit-status");
+                const mark = createElement("span", "life-completion-mark", "✓");
+                mark.setAttribute("role", "img");
+                mark.setAttribute("aria-label", "Completed");
+                mark.title = "Completed";
+                mark.hidden = true;
+                icon.before(slot);
+                slot.append(icon, mark);
+                return mark;
+            });
+            const controls = createElement("div", "life-completion");
+            const button = createElement("button", "life-completion-button");
+            button.type = "button";
+            button.dataset.lifeComplete = unit.id;
+            const status = createElement("p", "life-completion-status");
+            status.id = `life-completion-status-${unit.id}`;
+            status.setAttribute("role", "status");
+            button.setAttribute("aria-describedby", status.id);
+            controls.append(button, status);
+            unit.append(controls);
+            views.set(unit.id, { button, status, marks });
+            button.addEventListener("click", () => {
+                const done = button.getAttribute("aria-pressed") !== "true";
+                try {
+                    if (done) localStorage.setItem(prefix + unit.id, "1");
+                    else localStorage.removeItem(prefix + unit.id);
+                    unsaved.delete(unit.id);
+                } catch { unsaved.set(unit.id, done); }
+                refresh(unit.id);
+            });
+        });
+        window.addEventListener("storage", event => {
+            if (event.key === null || event.key.startsWith(prefix)) refresh();
+        });
+        window.addEventListener("pageshow", () => refresh());
+        refresh();
+    }
     if (units.length) {
         const nav=document.createElement("nav"); nav.className="life-unit-controls"; nav.setAttribute("aria-label","Choose an everyday English unit");
         const label=document.createElement("label"); label.textContent="Study unit ";
@@ -126,6 +189,7 @@
             if(index+1<units.length){const next=document.createElement("a");next.className="primary-button";next.href="#"+units[index+1].id;next.textContent="Next unit →";practice.append(next);}
             unit.append(practice);
         });
+        setupCompletion();
         show(location.hash.slice(1));
     }
 })();

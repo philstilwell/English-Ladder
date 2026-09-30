@@ -118,6 +118,99 @@
         "speaker": "Student",
         "text": "Yes, it is. I have it written here."
       }
+    ],
+    "dialogue_title": "Answering arrival questions",
+    "extra_dialogues": [
+      {
+        "title": "Finding the airport shuttle",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, where can I catch the shuttle to Oak Street Hotel?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "The hotel shuttles leave from exit three."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is exit three in this terminal?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. Go past the information desk and turn left."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. How will I know which shuttle is mine?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Look for the hotel name on the front."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to call the hotel first?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "I am not sure. Let us check the hotel information here."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you write down the phone number for me?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Of course. Here it is, along with the pickup location."
+          }
+        ]
+      },
+      {
+        "title": "Reporting a missing suitcase",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "My suitcase did not arrive at baggage claim."
+          },
+          {
+            "speaker": "Staff",
+            "text": "I can help you make a report. Which flight were you on?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Flight 214 from Toronto. Here is my baggage receipt."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Thank you. What does the suitcase look like?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It is a large red suitcase with a green tag."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Do you have an address where we can contact you?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. I am staying with my host at this address."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Please check the address and phone number on this form."
+          },
+          {
+            "speaker": "Student",
+            "text": "They are correct. How can I check for updates?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Use this report number when you contact our baggage office."
+          }
+        ]
+      }
     ]
   },
   "documents": {
@@ -238,6 +331,99 @@
       {
         "speaker": "Advisor",
         "text": "You are welcome. Keep any confirmation you receive."
+      }
+    ],
+    "dialogue_title": "Asking about an address change",
+    "extra_dialogues": [
+      {
+        "title": "Checking which documents to bring",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I have an appointment at your office on Friday. What should I bring?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Please bring the documents listed in your confirmation email."
+          },
+          {
+            "speaker": "Student",
+            "text": "It says to bring my ID. Do you need the original or a copy?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "For this appointment, bring the original so we can check it."
+          },
+          {
+            "speaker": "Student",
+            "text": "Should I bring a copy of my application, too?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Yes, please. That will help us find your record."
+          },
+          {
+            "speaker": "Student",
+            "text": "One item on the list is unclear to me."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Which item do you mean?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It says supporting document. Could you explain which document you need?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Let me check your application type before I answer."
+          }
+        ]
+      },
+      {
+        "title": "Asking about a form and deadline",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could you help me understand this form?"
+          },
+          {
+            "speaker": "Advisor",
+            "text": "Of course. Which part is difficult?"
+          },
+          {
+            "speaker": "Student",
+            "text": "There are two places for a signature. Should I sign both?"
+          },
+          {
+            "speaker": "Advisor",
+            "text": "Let us read the instructions beside each one."
+          },
+          {
+            "speaker": "Student",
+            "text": "This one says office use only. What does that mean?"
+          },
+          {
+            "speaker": "Advisor",
+            "text": "That part is for the office staff to complete."
+          },
+          {
+            "speaker": "Student",
+            "text": "I see. Where can I find the deadline?"
+          },
+          {
+            "speaker": "Advisor",
+            "text": "Check the notice that came with your application."
+          },
+          {
+            "speaker": "Student",
+            "text": "I cannot find a date on it. Who can I ask?"
+          },
+          {
+            "speaker": "Advisor",
+            "text": "Contact the office listed at the top and ask them to confirm it."
+          }
+        ]
       }
     ]
   },
@@ -360,6 +546,99 @@
         "speaker": "Landlord",
         "text": "That is fine. Let me know if anything is unclear."
       }
+    ],
+    "dialogue_title": "Asking about rent and the lease",
+    "extra_dialogues": [
+      {
+        "title": "Viewing a furnished apartment",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could I see the apartment on Saturday?"
+          },
+          {
+            "speaker": "Landlord",
+            "text": "Yes. Would ten in the morning work for you?"
+          },
+          {
+            "speaker": "Student",
+            "text": "That works. Is the apartment furnished?"
+          },
+          {
+            "speaker": "Landlord",
+            "text": "It has a bed, a table, and two chairs."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a place to do laundry?"
+          },
+          {
+            "speaker": "Landlord",
+            "text": "There is a shared laundry room downstairs."
+          },
+          {
+            "speaker": "Student",
+            "text": "When would the apartment be ready?"
+          },
+          {
+            "speaker": "Landlord",
+            "text": "The move-in date is the first of next month."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. What is the next step if I like it?"
+          },
+          {
+            "speaker": "Landlord",
+            "text": "You can ask for a rental application after the visit."
+          }
+        ]
+      },
+      {
+        "title": "Agreeing on shared-space routines",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could we talk about using the kitchen?"
+          },
+          {
+            "speaker": "Roommate",
+            "text": "Sure. Is something wrong?"
+          },
+          {
+            "speaker": "Student",
+            "text": "I sometimes need to cook early. What time do you usually get up?"
+          },
+          {
+            "speaker": "Roommate",
+            "text": "Around seven. Quiet cooking is fine before then."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thanks. Where should I keep my food?"
+          },
+          {
+            "speaker": "Roommate",
+            "text": "You can use the top shelf in the fridge."
+          },
+          {
+            "speaker": "Student",
+            "text": "Would you like us to take turns cleaning the kitchen?"
+          },
+          {
+            "speaker": "Roommate",
+            "text": "Yes. How about making a weekly list?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Good idea. I can clean on Sunday afternoons."
+          },
+          {
+            "speaker": "Roommate",
+            "text": "That works. I will do it on Wednesdays."
+          }
+        ]
+      }
     ]
   },
   "utilities": {
@@ -480,6 +759,99 @@
       {
         "speaker": "Manager",
         "text": "Yes. It is 246, and I will include it in the text."
+      }
+    ],
+    "dialogue_title": "Reporting a leak",
+    "extra_dialogues": [
+      {
+        "title": "Starting electricity service",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I am moving and need electricity service at my new apartment."
+          },
+          {
+            "speaker": "Agent",
+            "text": "What is the address and your move-in date?"
+          },
+          {
+            "speaker": "Student",
+            "text": "18 Maple Road, Apartment 2B. I move in on October first."
+          },
+          {
+            "speaker": "Agent",
+            "text": "Let me check whether we serve that address."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. What information do you need from me?"
+          },
+          {
+            "speaker": "Agent",
+            "text": "I will explain the application and the documents needed."
+          },
+          {
+            "speaker": "Student",
+            "text": "Are there any charges to start the service?"
+          },
+          {
+            "speaker": "Agent",
+            "text": "I can check the charges for this address before you apply."
+          },
+          {
+            "speaker": "Student",
+            "text": "Please send me the details and the expected start date."
+          },
+          {
+            "speaker": "Agent",
+            "text": "Certainly. You can review them before confirming the application."
+          }
+        ]
+      },
+      {
+        "title": "Finding the recycling and trash area",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, where are the recycling bins for this building?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "They are behind the side gate."
+          },
+          {
+            "speaker": "Student",
+            "text": "I have some cardboard boxes from moving. Can I put them there?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Yes. Please flatten them and use the bin marked cardboard."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where can I find the rules for the other bins?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "There is a notice beside the gate."
+          },
+          {
+            "speaker": "Student",
+            "text": "I also noticed that the trash bin is full."
+          },
+          {
+            "speaker": "Manager",
+            "text": "Thank you for telling me. I will check the pickup schedule."
+          },
+          {
+            "speaker": "Student",
+            "text": "Should I leave my bag somewhere else?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Please wait while I find out where it can go."
+          }
+        ]
       }
     ]
   },
@@ -602,6 +974,99 @@
         "speaker": "Banker",
         "text": "Of course. Please ask if you have more questions."
       }
+    ],
+    "dialogue_title": "Asking about a checking account",
+    "extra_dialogues": [
+      {
+        "title": "Asking about an unfamiliar charge",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "There is a charge on my bank statement that I do not recognize."
+          },
+          {
+            "speaker": "Banker",
+            "text": "I can help you check it. What date is shown?"
+          },
+          {
+            "speaker": "Student",
+            "text": "September twenty-eighth. The amount is twelve dollars."
+          },
+          {
+            "speaker": "Banker",
+            "text": "Do you recognize the company name beside it?"
+          },
+          {
+            "speaker": "Student",
+            "text": "No. Could you explain how I can ask about the charge?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "We have a process for checking unfamiliar transactions."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to complete a form?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "Let me check what information is needed for this charge."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I have a reference number for our conversation?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "Yes. Here it is, with the number to call for an update."
+          }
+        ]
+      },
+      {
+        "title": "Reporting a lost debit card",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I cannot find my debit card. What should I do?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "We can help you report it missing."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can the card be blocked while I look for it?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "Yes. I will explain how that works for your account."
+          },
+          {
+            "speaker": "Student",
+            "text": "If I need a replacement, how long will it take?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "Let me check the delivery options for you."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a fee for a new card?"
+          },
+          {
+            "speaker": "Banker",
+            "text": "I will check that before we order one."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. I would like to review those details first."
+          },
+          {
+            "speaker": "Banker",
+            "text": "Of course. We can go through the options together."
+          }
+        ]
+      }
     ]
   },
   "shopping": {
@@ -722,6 +1187,99 @@
       {
         "speaker": "Staff",
         "text": "Yes, please. Then I will give you the refund receipt."
+      }
+    ],
+    "dialogue_title": "Finding an item and requesting a refund",
+    "extra_dialogues": [
+      {
+        "title": "Checking a price at checkout",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, I think this price is different from the shelf label."
+          },
+          {
+            "speaker": "Cashier",
+            "text": "Which item do you mean?"
+          },
+          {
+            "speaker": "Student",
+            "text": "This bottle of shampoo. The label said six dollars."
+          },
+          {
+            "speaker": "Cashier",
+            "text": "The screen shows eight dollars. Let me check the item number."
+          },
+          {
+            "speaker": "Student",
+            "text": "I took a photo of the shelf label. Would that help?"
+          },
+          {
+            "speaker": "Cashier",
+            "text": "Yes, thank you. That label is for the smaller bottle."
+          },
+          {
+            "speaker": "Student",
+            "text": "Oh, I see. Could I get the smaller one instead?"
+          },
+          {
+            "speaker": "Cashier",
+            "text": "Of course. I can hold your other items here."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Is the smaller bottle in the same aisle?"
+          },
+          {
+            "speaker": "Cashier",
+            "text": "Yes. It is on the shelf just below this one."
+          }
+        ]
+      },
+      {
+        "title": "Looking for a gift that is in stock",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I am looking for this blue mug. Do you have any left?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "There are none on this shelf. I can check our stock."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. I need two for a gift."
+          },
+          {
+            "speaker": "Staff",
+            "text": "We have two at our other store on Pine Street."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could that store hold them until this afternoon?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "I can call and ask."
+          },
+          {
+            "speaker": "Student",
+            "text": "Great. Can I get a gift receipt when I buy them?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. Ask the cashier before you pay."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you write down the other store's address?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Certainly. Here are the address and opening hours."
+          }
+        ]
       }
     ]
   },
@@ -844,6 +1402,99 @@
         "speaker": "Student",
         "text": "Yes, please. Water would be great."
       }
+    ],
+    "dialogue_title": "Checking allergy information before ordering",
+    "extra_dialogues": [
+      {
+        "title": "Making a restaurant reservation",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. Could I reserve a table for Saturday evening?"
+          },
+          {
+            "speaker": "Host",
+            "text": "How many people will be coming?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Four people. Do you have a table at six thirty?"
+          },
+          {
+            "speaker": "Host",
+            "text": "Six thirty is full. We have one at seven."
+          },
+          {
+            "speaker": "Student",
+            "text": "Seven is fine. Could we have a quieter table?"
+          },
+          {
+            "speaker": "Host",
+            "text": "I can note that request, although I cannot promise a particular table."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. The reservation is under Mina Sato."
+          },
+          {
+            "speaker": "Host",
+            "text": "Could you spell your last name, please?"
+          },
+          {
+            "speaker": "Student",
+            "text": "S-A-T-O. May I check the time again?"
+          },
+          {
+            "speaker": "Host",
+            "text": "Yes. Saturday at seven in the evening, for four people."
+          }
+        ]
+      },
+      {
+        "title": "Finding produce for a meal",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, where can I find fresh tomatoes?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "They are in the produce section near the entrance."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Are they sold by weight or by the bag?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "These loose tomatoes are sold by weight."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a scale I can use?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. It is beside the potatoes."
+          },
+          {
+            "speaker": "Student",
+            "text": "I also need a small bag of rice. Which aisle is that in?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Aisle four, on the left."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you show me where aisle four starts?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Certainly. It is just past the bread section."
+          }
+        ]
+      }
     ]
   },
   "transportation": {
@@ -964,6 +1615,99 @@
       {
         "speaker": "Driver",
         "text": "Yes. Look for the Route 6 sign beside the shelter."
+      }
+    ],
+    "dialogue_title": "Asking about a bus transfer",
+    "extra_dialogues": [
+      {
+        "title": "Buying a train ticket",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I would like a ticket to Lakeview, please."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Do you need a one-way ticket or a round-trip ticket?"
+          },
+          {
+            "speaker": "Student",
+            "text": "A round-trip ticket. I want to return this evening."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Which train would you like to take there?"
+          },
+          {
+            "speaker": "Student",
+            "text": "The nine fifteen train. How much is the ticket?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "It is eighteen dollars for this trip."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I use it on any train back this evening?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Let me show you which return trains this ticket covers."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Which platform does the nine fifteen train use?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "The board currently shows platform two. Check it again before boarding."
+          }
+        ]
+      },
+      {
+        "title": "Checking a delayed train",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me, has the train to Riverside been delayed?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. The board shows a delay of about twenty minutes."
+          },
+          {
+            "speaker": "Student",
+            "text": "Does it still leave from platform three?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "It currently does. Please listen for any platform announcements."
+          },
+          {
+            "speaker": "Student",
+            "text": "I may miss my bus connection. Where can I check the next bus?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "The bus schedules are at the information desk."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is the information desk on this floor?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes, beside the main entrance."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Can I come back here if the board is unclear?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Of course. We can help you check the latest information."
+          }
+        ]
       }
     ]
   },
@@ -1086,6 +1830,99 @@
         "speaker": "Student",
         "text": "Thank you. I also brought a list of my medicines."
       }
+    ],
+    "dialogue_title": "Checking in at a clinic",
+    "extra_dialogues": [
+      {
+        "title": "Picking up a prescription",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I am here to pick up a prescription for Maya Chen."
+          },
+          {
+            "speaker": "Pharmacist",
+            "text": "Of course. Could you confirm your date of birth?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It is May 12, 1990. Is the prescription ready?"
+          },
+          {
+            "speaker": "Pharmacist",
+            "text": "Yes, it is. Do you have any questions about it?"
+          },
+          {
+            "speaker": "Student",
+            "text": "I do not understand the label. Could you explain it in simple English?"
+          },
+          {
+            "speaker": "Pharmacist",
+            "text": "Certainly. Let us go through the instructions together."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can you also explain the possible side effects?"
+          },
+          {
+            "speaker": "Pharmacist",
+            "text": "Yes. I will show you that information and answer your questions."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you write down the pharmacy's number in case I have a question later?"
+          },
+          {
+            "speaker": "Pharmacist",
+            "text": "Of course. It is also printed on your prescription label."
+          }
+        ]
+      },
+      {
+        "title": "Arranging a follow-up visit",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "My doctor asked me to make a follow-up appointment."
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "What name is the appointment under?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Maya Chen. I had a visit here yesterday."
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "I see the note. The doctor would like to see you next week."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a time available after three in the afternoon?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "We have Thursday at four. Would that work?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. Do I need to bring anything?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Please bring your insurance card and a current list of your medicines."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Can you send me a reminder?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Yes. Please check that we have the correct phone number."
+          }
+        ]
+      }
     ]
   },
   "appointments": {
@@ -1206,6 +2043,99 @@
       {
         "speaker": "Office",
         "text": "Certainly. I will include the date, time, and address."
+      }
+    ],
+    "dialogue_title": "Making an office appointment",
+    "extra_dialogues": [
+      {
+        "title": "Rescheduling an appointment",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I need to reschedule my appointment on Monday."
+          },
+          {
+            "speaker": "Staff",
+            "text": "I can help. What is your name and appointment time?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Elena Park, at ten in the morning."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Thank you. What day would work better for you?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Do you have anything on Wednesday afternoon?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Wednesday is full, but we have Thursday at two."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thursday at two works. Please book that time."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Done. I have canceled Monday's appointment and booked Thursday."
+          },
+          {
+            "speaker": "Student",
+            "text": "Will I receive a new confirmation?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. I will send it to the email address on your form."
+          }
+        ]
+      },
+      {
+        "title": "Getting help with a form",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could you help me with this form? I am not sure about two questions."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Certainly. Which questions are confusing?"
+          },
+          {
+            "speaker": "Student",
+            "text": "This box asks for a middle name, but I do not have one."
+          },
+          {
+            "speaker": "Staff",
+            "text": "That field is optional. You can leave it blank."
+          },
+          {
+            "speaker": "Student",
+            "text": "What about the box with a star beside it?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "That is a required field. Please enter your phone number there."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to sign at the bottom now?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. Please add today's date beside your signature."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you check that I have completed everything?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Of course. Let us look through the form together."
+          }
+        ]
       }
     ]
   },
@@ -1328,6 +2258,99 @@
         "speaker": "School Office",
         "text": "You are welcome. Please contact us if you need help."
       }
+    ],
+    "dialogue_title": "Reporting a child’s absence",
+    "extra_dialogues": [
+      {
+        "title": "Talking with a teacher about homework",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Thank you for meeting with me. How is my daughter doing in class?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "She joins in well, but she sometimes forgets to turn in her homework."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where can I see what homework she needs to do?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "I post the assignments on the class page each afternoon."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you show me how to find that page?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "Yes. I will write down the address and show you the homework section."
+          },
+          {
+            "speaker": "Student",
+            "text": "About how long should she spend on homework?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "For our class, it is usually about twenty minutes a day."
+          },
+          {
+            "speaker": "Student",
+            "text": "If she does not understand a question, how can we contact you?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "Please send me a message through the class page."
+          }
+        ]
+      },
+      {
+        "title": "Asking about a field trip",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "My son brought home this permission slip. Where is the class going?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "We are visiting the science museum next Friday."
+          },
+          {
+            "speaker": "Student",
+            "text": "What time will the students return?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "We plan to be back before the normal pickup time."
+          },
+          {
+            "speaker": "Student",
+            "text": "Does he need to bring lunch?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "Yes. Please pack lunch and a bottle of water."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a cost for the trip?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "The school is covering the tickets and the bus."
+          },
+          {
+            "speaker": "Student",
+            "text": "When do you need the signed permission slip?"
+          },
+          {
+            "speaker": "Teacher",
+            "text": "Please return it by Tuesday. Let me know if you have any questions."
+          }
+        ]
+      }
     ]
   },
   "work": {
@@ -1448,6 +2471,99 @@
       {
         "speaker": "Manager",
         "text": "Exactly. Then we can update the schedule together."
+      }
+    ],
+    "dialogue_title": "Learning the shift routine",
+    "extra_dialogues": [
+      {
+        "title": "Asking about missing hours",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could you help me understand my pay stub?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Sure. What would you like to check?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It shows thirty hours, but my timesheet shows thirty-four."
+          },
+          {
+            "speaker": "Manager",
+            "text": "Let us compare the dates. Which week are you looking at?"
+          },
+          {
+            "speaker": "Student",
+            "text": "The week ending June 14. I worked an extra four-hour shift on Friday."
+          },
+          {
+            "speaker": "Manager",
+            "text": "I see that shift on the schedule. Did you clock in and out?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. I also wrote the times on this copy of my timesheet."
+          },
+          {
+            "speaker": "Manager",
+            "text": "Thank you. I will ask payroll to check the difference."
+          },
+          {
+            "speaker": "Student",
+            "text": "When should I follow up with you?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Please check with me tomorrow afternoon. I should have an update."
+          }
+        ]
+      },
+      {
+        "title": "Asking a coworker to demonstrate a task",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "This is my first time updating the stock list. Could you show me how?"
+          },
+          {
+            "speaker": "Coworker",
+            "text": "Of course. First, find the item number on the box."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is this the number beside the item name?"
+          },
+          {
+            "speaker": "Coworker",
+            "text": "Yes. Match that number to the same item on the list."
+          },
+          {
+            "speaker": "Student",
+            "text": "Then do I write how many boxes arrived?"
+          },
+          {
+            "speaker": "Coworker",
+            "text": "Right. Enter the number of boxes and today's date."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you watch while I try the next one?"
+          },
+          {
+            "speaker": "Coworker",
+            "text": "Sure. You found the correct item. Now check the number of boxes."
+          },
+          {
+            "speaker": "Student",
+            "text": "There are six. I have entered six and today's date."
+          },
+          {
+            "speaker": "Coworker",
+            "text": "That looks right. Ask me if anything on the delivery is unclear."
+          }
+        ]
       }
     ]
   },
@@ -1570,6 +2686,99 @@
         "speaker": "Staff",
         "text": "Of course. Here are the details and the complete price list."
       }
+    ],
+    "dialogue_title": "Choosing a phone plan",
+    "extra_dialogues": [
+      {
+        "title": "Asking for help with no signal",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "My phone has no signal. Could someone help me check it?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. When did the problem start?"
+          },
+          {
+            "speaker": "Student",
+            "text": "This morning. It was working yesterday."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Does it happen everywhere or only in one place?"
+          },
+          {
+            "speaker": "Student",
+            "text": "At home and here. I can use Wi-Fi, but I cannot make a normal call."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Thank you. May I check the service status and your SIM card?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. Could you tell me before making any changes?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Of course. I will explain what I find first."
+          },
+          {
+            "speaker": "Student",
+            "text": "If I need a new SIM card, is there a charge?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "I will check the price for your plan before we replace anything."
+          }
+        ]
+      },
+      {
+        "title": "Setting up voicemail",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I would like to set up voicemail on my new phone."
+          },
+          {
+            "speaker": "Staff",
+            "text": "I can show you where the voicemail settings are."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Can I record my own greeting?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. Tap this option when you are ready to record."
+          },
+          {
+            "speaker": "Student",
+            "text": "What could I say in a simple greeting?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "You could say, \"Please leave your name and number, and I will call you back.\""
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I listen to it before I save it?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. Use the play button, and record it again if you want."
+          },
+          {
+            "speaker": "Student",
+            "text": "How will I know when someone leaves a message?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "A voicemail notice will appear here. Let me show you an example."
+          }
+        ]
+      }
     ]
   },
   "mail": {
@@ -1690,6 +2899,99 @@
       {
         "speaker": "Clerk",
         "text": "Good. Keep your forwarding confirmation for your records."
+      }
+    ],
+    "dialogue_title": "Forwarding mail after a move",
+    "extra_dialogues": [
+      {
+        "title": "Sending a package with tracking",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I would like to send this package to my sister."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Certainly. Where is it going?"
+          },
+          {
+            "speaker": "Student",
+            "text": "To Denver. I have written the address on this label."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Thank you. Please add your return address in this space."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I get a tracking number?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Yes. Both of these shipping options include tracking."
+          },
+          {
+            "speaker": "Student",
+            "text": "What is the difference between them?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "One costs less, and the other has an earlier estimated delivery date."
+          },
+          {
+            "speaker": "Student",
+            "text": "The less expensive option is fine. Where will I find the tracking number?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "It will be on your receipt. Keep it so you can check the delivery."
+          }
+        ]
+      },
+      {
+        "title": "Collecting a package after a delivery notice",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I found this delivery notice on my door. Can I collect my package here?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Let me check the notice. Yes, it lists this post office."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is the package ready for pickup today?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "I will check the tracking number. May I see your identification?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Here it is. The package should be under Alex Rivera."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Thank you. I found it. Please sign here to confirm pickup."
+          },
+          {
+            "speaker": "Student",
+            "text": "Before I sign, could we check the address on the package?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Of course. It says 42 Pine Street, apartment 3B."
+          },
+          {
+            "speaker": "Student",
+            "text": "That is correct. Thank you for checking."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "You are welcome. Here is your package."
+          }
+        ]
       }
     ]
   },
@@ -1812,6 +3114,99 @@
         "speaker": "Student",
         "text": "Okay. I am listening."
       }
+    ],
+    "dialogue_title": "Reporting a fire",
+    "extra_dialogues": [
+      {
+        "title": "Reporting a power outage",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I live in apartment 2A. The power just went out."
+          },
+          {
+            "speaker": "Manager",
+            "text": "Thank you for calling. Is the hallway dark too?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. My neighbor says their lights are off as well."
+          },
+          {
+            "speaker": "Manager",
+            "text": "I will check whether the utility company has reported an outage."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where can residents find updates?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "I will send an update to the building message group."
+          },
+          {
+            "speaker": "Student",
+            "text": "My phone battery is low. Is there another way to get the information?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Yes. We will also post updates on the notice board by the entrance."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do you know when the power will return?"
+          },
+          {
+            "speaker": "Manager",
+            "text": "Not yet. I will share an estimated time if the utility company provides one."
+          }
+        ]
+      },
+      {
+        "title": "Asking about a weather alert",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I received a weather alert on my phone. Could you help me understand it?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Of course. Let us read the official alert together."
+          },
+          {
+            "speaker": "Student",
+            "text": "It says to go to a shelter area. Where is that in this building?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "The designated shelter is the inside room marked on this building map."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you show me the route from here?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. I will point it out on the map and help you find it."
+          },
+          {
+            "speaker": "Student",
+            "text": "My friend is in the next room. Can a staff member help them too?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. I will ask my colleague to assist them."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where will we hear when the alert has ended?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "We are following official updates and will share them with everyone here."
+          }
+        ]
+      }
     ]
   },
   "community": {
@@ -1932,6 +3327,99 @@
       {
         "speaker": "Neighbor",
         "text": "Nice to meet you, Mina. I am Alex."
+      }
+    ],
+    "dialogue_title": "Meeting a neighbor",
+    "extra_dialogues": [
+      {
+        "title": "Getting a library card",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I recently moved here. How do I get a library card?"
+          },
+          {
+            "speaker": "Librarian",
+            "text": "Welcome. Please fill out this short application."
+          },
+          {
+            "speaker": "Student",
+            "text": "What do I need to show with the application?"
+          },
+          {
+            "speaker": "Librarian",
+            "text": "For this library, please bring a photo ID and proof of your current address."
+          },
+          {
+            "speaker": "Student",
+            "text": "Will a utility bill with my address work?"
+          },
+          {
+            "speaker": "Librarian",
+            "text": "Yes. You can bring that with your ID."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I borrow English-learning books with the card?"
+          },
+          {
+            "speaker": "Librarian",
+            "text": "Certainly. We also have an English conversation group on Wednesdays."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to sign up for the group?"
+          },
+          {
+            "speaker": "Librarian",
+            "text": "Yes. I can show you the sign-up page at the information desk."
+          }
+        ]
+      },
+      {
+        "title": "Volunteering at a community event",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I saw the notice about the neighborhood picnic. Do you need volunteers?"
+          },
+          {
+            "speaker": "Organizer",
+            "text": "Yes. We need help setting up tables and welcoming guests."
+          },
+          {
+            "speaker": "Student",
+            "text": "I can help on Saturday morning. What time should I arrive?"
+          },
+          {
+            "speaker": "Organizer",
+            "text": "Please come to the community center at nine."
+          },
+          {
+            "speaker": "Student",
+            "text": "Should I bring any supplies?"
+          },
+          {
+            "speaker": "Organizer",
+            "text": "No. We will provide everything for the setup."
+          },
+          {
+            "speaker": "Student",
+            "text": "I am still learning English. Could I work with another volunteer?"
+          },
+          {
+            "speaker": "Organizer",
+            "text": "Absolutely. I will introduce you to someone who can explain the tasks."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where do I sign up?"
+          },
+          {
+            "speaker": "Organizer",
+            "text": "Please write your name and contact details on this volunteer form."
+          }
+        ]
       }
     ]
   },
@@ -2054,6 +3542,99 @@
         "speaker": "Staff",
         "text": "Thank you. The folding tables are beside the dryers."
       }
+    ],
+    "dialogue_title": "Using the laundromat",
+    "extra_dialogues": [
+      {
+        "title": "Asking for help with a stopped washer",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me. Washer number six stopped before the cycle finished."
+          },
+          {
+            "speaker": "Attendant",
+            "text": "I am sorry about that. Is there a message on the screen?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It says \"Error,\" and the door is still locked."
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Thank you. Please let me check the machine for you."
+          },
+          {
+            "speaker": "Student",
+            "text": "I already paid for the wash. Will I have to pay again?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "If the machine failed, we will arrange another wash at no extra charge."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can you help me move the clothes when the door opens?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Yes. I will bring a cart and show you an available washer."
+          },
+          {
+            "speaker": "Student",
+            "text": "How will other customers know this washer is not working?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "I will put an out-of-order sign on it while we arrange a repair."
+          }
+        ]
+      },
+      {
+        "title": "Checking dryer time and folding space",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "My dryer cycle has ended, but the towels are still damp."
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Would you like to add more drying time?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. How much does another ten minutes cost?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "On this machine, ten more minutes costs fifty cents."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where do I add the time with my laundry card?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Use this reader. I can show you the steps on the screen."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. Are those tables available for folding?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Yes. Please use the empty table beside the window."
+          },
+          {
+            "speaker": "Student",
+            "text": "May I borrow one of these carts when the towels are dry?"
+          },
+          {
+            "speaker": "Attendant",
+            "text": "Certainly. Please return it to the cart area when you finish."
+          }
+        ]
+      }
     ]
   },
   "dry-cleaning": {
@@ -2175,6 +3756,99 @@
         "speaker": "Clerk",
         "text": "Thank you. We close at six on Friday."
       }
+    ],
+    "dialogue_title": "Dropping off a jacket for cleaning",
+    "extra_dialogues": [
+      {
+        "title": "Checking an item at pickup",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I am here to pick up my coat. Here is my ticket."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Thank you. I will bring the item with that ticket number."
+          },
+          {
+            "speaker": "Student",
+            "text": "I am sorry, but this coat does not look like mine."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Let us check it before you leave. What does your coat look like?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It is dark blue with a red lining and a small button on each sleeve."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Thank you for the description. I will check the rack and the ticket again."
+          },
+          {
+            "speaker": "Student",
+            "text": "Mine also has my name on a label inside."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "I found another coat that matches. Could you check the label?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes, this is mine. Thank you for finding it."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "I am sorry about the mix-up. Please check that everything looks right."
+          }
+        ]
+      },
+      {
+        "title": "Requesting pressing before an interview",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could you press this shirt before my interview tomorrow?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Let me check our schedule. Do you need it cleaned as well?"
+          },
+          {
+            "speaker": "Student",
+            "text": "No, it is already clean. I just need the wrinkles removed."
+          },
+          {
+            "speaker": "Clerk",
+            "text": "We can have it pressed by five this afternoon."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is that considered a rush service?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Yes. The total, including the rush fee, would be twelve dollars."
+          },
+          {
+            "speaker": "Student",
+            "text": "That is fine. Could you put it on a hanger when it is ready?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "Certainly. We will also give you a pickup ticket."
+          },
+          {
+            "speaker": "Student",
+            "text": "What time do you close today?"
+          },
+          {
+            "speaker": "Clerk",
+            "text": "We close at six, so please come between five and six."
+          }
+        ]
+      }
     ]
   },
   "taxis": {
@@ -2295,6 +3969,99 @@
       {
         "speaker": "Driver",
         "text": "Thanks for confirming. I know which entrance you mean."
+      }
+    ],
+    "dialogue_title": "Meeting your rideshare driver",
+    "extra_dialogues": [
+      {
+        "title": "Finding the airport pickup spot",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. I booked a ride, but I cannot find the pickup spot."
+          },
+          {
+            "speaker": "Driver",
+            "text": "Which terminal and exit are you near?"
+          },
+          {
+            "speaker": "Student",
+            "text": "I am at Terminal Two, outside Door Four."
+          },
+          {
+            "speaker": "Driver",
+            "text": "Your app shows the rideshare pickup area on the next level. Can you see a sign?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. I see a sign for rideshare pickup beside the elevator."
+          },
+          {
+            "speaker": "Driver",
+            "text": "Follow the airport signs to that area. I am waiting in Zone B."
+          },
+          {
+            "speaker": "Student",
+            "text": "What car should I look for when I arrive?"
+          },
+          {
+            "speaker": "Driver",
+            "text": "A white sedan. Please match the license plate with the one in your app."
+          },
+          {
+            "speaker": "Student",
+            "text": "Thank you. I have two suitcases. Is there room for them?"
+          },
+          {
+            "speaker": "Driver",
+            "text": "Yes. There is space in the trunk. I will meet you at Zone B."
+          }
+        ]
+      },
+      {
+        "title": "Booking an early taxi",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I would like to book a taxi for tomorrow morning."
+          },
+          {
+            "speaker": "Dispatcher",
+            "text": "Certainly. What time and pickup address?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Five thirty, from 16 Cedar Lane, please."
+          },
+          {
+            "speaker": "Dispatcher",
+            "text": "Where would you like to go?"
+          },
+          {
+            "speaker": "Student",
+            "text": "To the airport, Terminal One. There will be three passengers."
+          },
+          {
+            "speaker": "Dispatcher",
+            "text": "How much luggage will you have?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Three large suitcases. Could you send a car with enough space?"
+          },
+          {
+            "speaker": "Dispatcher",
+            "text": "Yes. I will request a larger vehicle."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can you give me an estimated fare, including any airport charge?"
+          },
+          {
+            "speaker": "Dispatcher",
+            "text": "I will check that for you and send the estimate with your booking confirmation."
+          }
+        ]
       }
     ]
   },
@@ -2631,6 +4398,99 @@
         "speaker": "Stylist",
         "text": "Certainly. I will show you the length before I start."
       }
+    ],
+    "dialogue_title": "Explaining the haircut you want",
+    "extra_dialogues": [
+      {
+        "title": "Booking a wash and blow-dry",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Hello. Do you have an appointment for a wash and blow-dry on Friday?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Yes. We have an opening at eleven or at three."
+          },
+          {
+            "speaker": "Student",
+            "text": "Three would be better. About how long will it take?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Usually forty-five minutes. How long is your hair?"
+          },
+          {
+            "speaker": "Student",
+            "text": "It is just below my shoulders. I do not want a haircut this time."
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "Understood. I will book a wash and blow-dry only."
+          },
+          {
+            "speaker": "Student",
+            "text": "Could you tell me the price before I book?"
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "For that length, it starts at thirty-five dollars. Your stylist will confirm it first."
+          },
+          {
+            "speaker": "Student",
+            "text": "That works for me. Please book three o'clock under Nina Lee."
+          },
+          {
+            "speaker": "Receptionist",
+            "text": "You are booked for Friday at three. We look forward to seeing you."
+          }
+        ]
+      },
+      {
+        "title": "Asking about styling products",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "What product did you use to style my hair today?"
+          },
+          {
+            "speaker": "Stylist",
+            "text": "I used this light styling cream."
+          },
+          {
+            "speaker": "Student",
+            "text": "I prefer products without a strong smell. Do you have an unscented option?"
+          },
+          {
+            "speaker": "Stylist",
+            "text": "We have another cream labeled fragrance-free. Would you like to see it?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes, please. Does it work the same way?"
+          },
+          {
+            "speaker": "Stylist",
+            "text": "It gives a similar soft finish. I can explain the directions on the label."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I use it on wet or dry hair?"
+          },
+          {
+            "speaker": "Stylist",
+            "text": "This label says to use a small amount on damp hair."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there a smaller size I can try first?"
+          },
+          {
+            "speaker": "Stylist",
+            "text": "Yes. We have a travel size beside the full-size bottles."
+          }
+        ]
+      }
     ]
   },
   "clothing-services": {
@@ -2751,6 +4611,99 @@
       {
         "speaker": "Clerk",
         "text": "Great. Here is your exchange receipt. Keep it with your purchase."
+      }
+    ],
+    "dialogue_title": "Exchanging a shirt for another size",
+    "extra_dialogues": [
+      {
+        "title": "Having a waistband altered",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "These trousers fit well in the legs, but the waist is too loose."
+          },
+          {
+            "speaker": "Tailor",
+            "text": "Please try them on so I can check the fit."
+          },
+          {
+            "speaker": "Student",
+            "text": "Here they are. Could you make the waist a little smaller?"
+          },
+          {
+            "speaker": "Tailor",
+            "text": "Yes. I will mark the new size with pins. How does that feel?"
+          },
+          {
+            "speaker": "Student",
+            "text": "That feels comfortable. Will the pockets stay in the same place?"
+          },
+          {
+            "speaker": "Tailor",
+            "text": "Yes. This adjustment will be at the back of the waistband."
+          },
+          {
+            "speaker": "Student",
+            "text": "How much will the alteration cost?"
+          },
+          {
+            "speaker": "Tailor",
+            "text": "It will be twenty dollars, and the trousers will be ready on Wednesday."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I try them on again when I collect them?"
+          },
+          {
+            "speaker": "Tailor",
+            "text": "Of course. We will check the fit together before you take them home."
+          }
+        ]
+      },
+      {
+        "title": "Getting an estimate for shoe repair",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Can you repair this shoe? The sole is coming loose at the front."
+          },
+          {
+            "speaker": "Repairer",
+            "text": "Let me take a look at both shoes."
+          },
+          {
+            "speaker": "Student",
+            "text": "The other one seems fine, but could you check it too?"
+          },
+          {
+            "speaker": "Repairer",
+            "text": "Yes. The other sole is secure. This one needs to be attached again."
+          },
+          {
+            "speaker": "Student",
+            "text": "How much would the repair cost?"
+          },
+          {
+            "speaker": "Repairer",
+            "text": "The estimate is fifteen dollars for this shoe."
+          },
+          {
+            "speaker": "Student",
+            "text": "Please call me before doing any work that would cost more."
+          },
+          {
+            "speaker": "Repairer",
+            "text": "Certainly. I will write that on the repair ticket."
+          },
+          {
+            "speaker": "Student",
+            "text": "When should I come back?"
+          },
+          {
+            "speaker": "Repairer",
+            "text": "It should be ready on Friday. Keep this ticket for pickup."
+          }
+        ]
       }
     ]
   },
@@ -2873,6 +4826,99 @@
         "speaker": "Staff",
         "text": "The cancellation steps are here. Please read them before signing up."
       }
+    ],
+    "dialogue_title": "Asking about a gym membership",
+    "extra_dialogues": [
+      {
+        "title": "Reserving a picnic area",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "I would like to reserve a picnic area for a family gathering."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Which date and how many people are you planning for?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Sunday, July 19, for about twelve people."
+          },
+          {
+            "speaker": "Staff",
+            "text": "The small covered area is available from noon until four."
+          },
+          {
+            "speaker": "Student",
+            "text": "Does it have tables, and is there a fee?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. It has three tables, and the reservation fee is twenty dollars."
+          },
+          {
+            "speaker": "Student",
+            "text": "Are there any rules about food or decorations?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Here is the list of park rules. Let us check the sections that apply to your plans."
+          },
+          {
+            "speaker": "Student",
+            "text": "How do I complete the reservation?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Fill out this form, then we will confirm the date and payment details."
+          }
+        ]
+      },
+      {
+        "title": "Borrowing equipment at a community center",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Is the table tennis room open this afternoon?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. There is a table available now."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do I need to reserve it, or can I play right away?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "You can play now. Please sign in at the desk first."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I borrow paddles and a ball?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. We lend those to visitors. Please return them here when you finish."
+          },
+          {
+            "speaker": "Student",
+            "text": "Where can I put my bag while I play?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "There are lockers beside the changing room. I can explain how they work."
+          },
+          {
+            "speaker": "Student",
+            "text": "How long can we use the table?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "If others are waiting, please take a thirty-minute turn."
+          }
+        ]
+      }
     ]
   },
   "service-problems": {
@@ -2993,6 +5039,99 @@
       {
         "speaker": "Staff",
         "text": "Call this office tomorrow afternoon and give us your case number."
+      }
+    ],
+    "dialogue_title": "Reporting a lost backpack",
+    "extra_dialogues": [
+      {
+        "title": "Questioning an incorrect bill",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Could someone help me check this bill? I think I was charged twice."
+          },
+          {
+            "speaker": "Agent",
+            "text": "I can take a look. Which charge are you asking about?"
+          },
+          {
+            "speaker": "Student",
+            "text": "There are two delivery fees, but I only received one order."
+          },
+          {
+            "speaker": "Agent",
+            "text": "Thank you. Do you have the order confirmation?"
+          },
+          {
+            "speaker": "Student",
+            "text": "Yes. Here is the order number and the receipt."
+          },
+          {
+            "speaker": "Agent",
+            "text": "I can see the two fees. I will ask our billing team to review them."
+          },
+          {
+            "speaker": "Student",
+            "text": "Can I have a case number for this request?"
+          },
+          {
+            "speaker": "Agent",
+            "text": "Certainly. Your case number is 4821."
+          },
+          {
+            "speaker": "Student",
+            "text": "When should I expect an update?"
+          },
+          {
+            "speaker": "Agent",
+            "text": "We expect a reply within two business days. Please use that case number if you follow up."
+          }
+        ]
+      },
+      {
+        "title": "Turning in a found wallet",
+        "turns": [
+          {
+            "speaker": "Student",
+            "text": "Excuse me. I found a wallet on a seat near the entrance."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Thank you for bringing it to the help desk."
+          },
+          {
+            "speaker": "Student",
+            "text": "Do you have a lost-and-found service here?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Yes. We will record it and keep it in our secure storage area."
+          },
+          {
+            "speaker": "Student",
+            "text": "Would you like me to show you exactly where I found it?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "Please describe the seat so we can include that in the record."
+          },
+          {
+            "speaker": "Student",
+            "text": "It was on the blue bench beside the main doors, about five minutes ago."
+          },
+          {
+            "speaker": "Staff",
+            "text": "Thank you. That information will help if the owner asks about it."
+          },
+          {
+            "speaker": "Student",
+            "text": "Is there anything else you need from me?"
+          },
+          {
+            "speaker": "Staff",
+            "text": "No, that is enough. We appreciate your help."
+          }
+        ]
       }
     ]
   }

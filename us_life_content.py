@@ -35,20 +35,19 @@ def content():
         if len(dialogue) != 10 or any(not turn['speaker'].strip() or not turn['text'].strip() for turn in dialogue):
             raise ValueError(f'{key}: expected 10 complete dialogue turns.')
         extra_dialogues = unit.get('extra_dialogues', [])
-        if extra_dialogues:
-            if len(extra_dialogues) != 2 or not unit.get('dialogue_title', '').strip():
-                raise ValueError(f'{key}: expected a dialogue title and two extra dialogues.')
-            titles = [unit['dialogue_title']]
-            conversations = [dialogue]
-            for extra in extra_dialogues:
-                turns = extra['turns']
-                if not extra['title'].strip() or len(turns) != 10 or any(
-                        not turn['speaker'].strip() or not turn['text'].strip() for turn in turns):
-                    raise ValueError(f'{key}: each extra dialogue needs a title and 10 complete turns.')
-                titles.append(extra['title'])
-                conversations.append(turns)
-            if len(set(titles)) != 3 or len({json.dumps(turns, sort_keys=True) for turns in conversations}) != 3:
-                raise ValueError(f'{key}: dialogue titles and conversations must be distinct.')
+        if len(extra_dialogues) != 2 or not unit.get('dialogue_title', '').strip():
+            raise ValueError(f'{key}: expected a dialogue title and two extra dialogues.')
+        titles = [unit['dialogue_title']]
+        conversations = [dialogue]
+        for extra in extra_dialogues:
+            turns = extra['turns']
+            if not extra['title'].strip() or len(turns) != 10 or any(
+                    not turn['speaker'].strip() or not turn['text'].strip() for turn in turns):
+                raise ValueError(f'{key}: each extra dialogue needs a title and 10 complete turns.')
+            titles.append(extra['title'])
+            conversations.append(turns)
+        if len(set(titles)) != 3 or len({json.dumps(turns, sort_keys=True) for turns in conversations}) != 3:
+            raise ValueError(f'{key}: dialogue titles and conversations must be distinct.')
     return units
 
 

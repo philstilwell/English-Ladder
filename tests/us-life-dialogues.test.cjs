@@ -36,7 +36,7 @@ function assertSelected(block, selected) {
 test('numbered buttons show one complete conversation at a time, starting with the original', () => {
   const w = setup(), d = w.document;
   const blocks = [...d.querySelectorAll('.life-dialogue')].filter(b => b.querySelector('[role="tab"]'));
-  assert.ok(blocks.length > 0);
+  assert.equal(blocks.length, 24);
   for (const block of blocks) {
     assertSelected(block, 0);
     assert.ok(block.firstElementChild.classList.contains('life-dialogue-header'));
@@ -79,14 +79,22 @@ test('unit and language changes preserve the selected conversation without chang
     w.dispatchEvent(new w.HashChangeEvent('hashchange'));
   }
   assertSelected(block, 2);
+  const arrival = d.querySelector('#arrival .life-dialogue');
+  assertSelected(arrival, 0);
+  arrival.querySelectorAll('[role="tab"]')[1].click();
+  assertSelected(arrival, 1);
+  assertSelected(block, 2);
   assert.equal(d.querySelector('.us-life-module:not([hidden])').id, 'car-care');
   assert.equal(d.querySelector('[data-life-complete="car-care"]').getAttribute('aria-pressed'), 'false');
 });
 
 test('all three conversations are readable if JavaScript is unavailable', () => {
-  const w = setup(false), block = w.document.querySelector('#car-care .life-dialogue');
-  const panels = [...block.querySelectorAll('[data-life-dialogue]')];
-  assert.equal(panels.length, 3);
-  panels.forEach(panel => assert.equal(panel.hidden, false));
-  assert.equal(block.querySelectorAll('[role="tab"]').length, 0);
+  const w = setup(false), blocks = [...w.document.querySelectorAll('.life-dialogue')];
+  assert.equal(blocks.length, 24);
+  for (const block of blocks) {
+    const panels = [...block.querySelectorAll('[data-life-dialogue]')];
+    assert.equal(panels.length, 3);
+    panels.forEach(panel => assert.equal(panel.hidden, false));
+    assert.equal(block.querySelectorAll('[role="tab"]').length, 0);
+  }
 });

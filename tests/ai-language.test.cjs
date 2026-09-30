@@ -173,7 +173,7 @@ test('workplace chooser, complete cards, printing and text downloads share the c
 });
 
 test('unsupported or malicious preferences fall back to the unmodified English prompt', () => {
-  for (const saved of ['__proto__', 'toString', '<img src=x onerror=alert(1)>', 'fr']) {
+  for (const saved of ['__proto__', 'toString', '<img src=x onerror=alert(1)>', 'it']) {
     const w = load('grammar-concepts/concept-35.html', { saved });
     const original = w.document.querySelector('.ai-prompt-text').textContent;
     run(w, 'ai-practice.js');

@@ -21,5 +21,5 @@ class ReadingLayoutTests(unittest.TestCase):
         self.assertEqual(1, len(soup.select('script[data-reading-open]')))
         self.assertEqual(3, len(soup.select('.learning-flow button')))
         self.assertEqual(3, len(soup.select('.stage-actions')))
-        self.assertEqual(6, len(soup.select('.vocabulary-language')))
+        self.assertEqual(8, len(soup.select('.vocabulary-language')))
         self.assertEqual(0, len(soup.select('.learning-panel[hidden]')))

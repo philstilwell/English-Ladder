@@ -81,8 +81,8 @@ def key_page(index, conversation=False):
     return KEY_START + index * 2 + int(conversation)
 
 
-def content_hash():
-    return hashlib.sha256(json.dumps(UNITS, sort_keys=True).encode('utf-8')).hexdigest()
+def content_hash(units=None):
+    return hashlib.sha256(json.dumps(UNITS if units is None else units, sort_keys=True).encode('utf-8')).hexdigest()
 
 
 def validate_layout(boxes):
@@ -98,10 +98,12 @@ def validate_layout(boxes):
             assert horizontal <= .5 or vertical <= .5, (page, a['text'], b['text'])
 
 
-def validate_content():
-    assert len(UNITS) == 8
-    assert [u['title'] for u in UNITS] == WEB_ORDER
-    for i, u in enumerate(UNITS, 1):
+def validate_content(units=None, web_order=None):
+    units = UNITS if units is None else units
+    web_order = WEB_ORDER if web_order is None else web_order
+    assert len(units) == 8
+    assert [u['title'] for u in units] == web_order
+    for i, u in enumerate(units, 1):
         assert len(u['dialogue']) == 20, i
         assert len(u['gaps']) == 10, i
         assert len(u['vocabulary']) == 24 and len(u['phrases']) == 16, i
@@ -125,18 +127,24 @@ def validate_content():
 
 
 class Book:
-    def __init__(self):
-        OUT.parent.mkdir(parents=True, exist_ok=True)
-        self.c = Canvas(str(OUT), pagesize=(W, H), initialFontName='Book', invariant=1)
-        self.c.setTitle(TITLE + ' | Learner book')
+    def __init__(self, *, title=TITLE, slug=SLUG, units=None, out=OUT):
+        self.title = title
+        self.slug = slug
+        self.units = UNITS if units is None else units
+        self.out = Path(out)
+        self.out.parent.mkdir(parents=True, exist_ok=True)
+        self.c = Canvas(str(self.out), pagesize=(W, H), initialFontName='Book', invariant=1)
+        self.c.setTitle(title + ' | Learner book')
         self.c.setAuthor(AUTHOR)
         self.c.setCreator('English Ladder')
-        self.c.setSubject('Eight workplace scenarios, vocabulary, phrases, and structured practice. Content SHA-256: ' + content_hash())
-        self.c.setKeywords('English Ladder, international managers, workplace English, cross-cultural leadership, B2, C1')
+        self.c.setSubject('Eight workplace scenarios, vocabulary, phrases, and structured practice. Content SHA-256: ' + content_hash(self.units))
+        self.c.setKeywords('English Ladder, ' + title + ', workplace English, B2, C1')
         self.page = 0
         self.y = 0
         self.accent = ACCENTS[0]
         self.boxes = []
+        self.key_gap_spacing = 10
+        self.bank_seed = None
 
     def new_page(self, section, title='', unit=None, anchor=None):
         if self.page:
@@ -155,8 +163,10 @@ class Book:
         c.drawRightString(RIGHT, H - 32, 'ENGLISH FOR WORK  /  ' + section.upper())
         c.setStrokeColor(colors.HexColor(LINE))
         c.line(LEFT, 39, RIGHT, 39)
+        footer_size = min(7.3, 345 / pdfmetrics.stringWidth(self.title, 'Book', 1))
+        c.setFont('Book', footer_size)
+        c.drawString(LEFT, 25, self.title)
         c.setFont('Book', 7.3)
-        c.drawString(LEFT, 25, 'Cross-Cultural Leadership English')
         c.drawRightString(RIGHT, 25, f'Phil Stilwell  |  {self.page:02d}')
         self.y = H - 62
         if anchor:
@@ -241,6 +251,11 @@ class Book:
 
     def bank(self, answers, small=False):
         order = ([5, 2, 8, 0, 9, 4, 7, 1, 6, 3] if len(answers) == 10 else [2, 0, 3, 1])
+        if self.bank_seed is not None:
+            order = sorted(range(len(answers)), key=lambda n: hashlib.sha256(
+                f'{self.bank_seed}:{self.page}:{answers[n]}'.encode()).digest())
+            if order == list(range(len(answers))):
+                order = order[1:] + order[:1]
         words = '   /   '.join(answers[n] for n in order)
         self.panel('Word + phrase bank', words, size=10 if small else 10.5, leading=15, after=12)
 
@@ -270,7 +285,8 @@ class Book:
     def save(self):
         validate_layout(self.boxes)
         self.c.save()
-        qa = ROOT / 'tmp/pdfs/leadership-book-layout.json'
+        qa = ROOT / 'tmp/pdfs' / ('leadership-book-layout.json' if self.slug == SLUG
+                                  else self.slug + '-book-layout.json')
         qa.parent.mkdir(parents=True, exist_ok=True)
         qa.write_text(json.dumps(dict(pages=self.page, boxes=self.boxes), indent=2))
 
@@ -475,7 +491,7 @@ def explanations(b, u, i):
            size=8.8, leading=12, color=MUTED, after=12)
     for n, g in enumerate(u['gaps'], 1):
         b.text(f'<b>{n}. {esc(g["answer"])}.</b> <font color="{MUTED}">Turn {g["turn"]}.</font> {esc(g["reason"])}',
-               rich=True, width=col_width, size=9.2, leading=13.2, after=10)
+               rich=True, width=col_width, size=9.2, leading=13.2, after=b.key_gap_spacing)
     b.y = top
     x = LEFT + col_width + 26
     b.text('F  Transfer conversation', x=x, width=col_width, size=11, leading=15, bold=True, after=5)
@@ -496,14 +512,14 @@ def reference(b):
                    anchor='quick-phrases' if half == 0 else None)
         b.text('Use these as precise language models. Replace details only when you know the actual facts, authority, and agreed conditions.', size=10.2, leading=14.5, after=18)
         for i in range(half * 4, half * 4 + 4):
-            u = UNITS[i]
+            u = b.units[i]
             b.accent = ACCENTS[i]
             b.text(f'{i + 1:02d}  {u["title"]}', size=12, leading=16, color=b.accent, bold=True, after=8)
             for purpose, phrase in [u['phrases'][0], u['phrases'][3], u['phrases'][7]]:
                 b.text(f'<b>{esc(purpose)}:</b> {esc(phrase)}', rich=True, size=10.2, leading=15, after=8)
             b.text(f'Full phrase set: pages {unit_page(i) + 3}-{unit_page(i) + 4}  |  Dialogue: pages {unit_page(i) + 6}-{unit_page(i) + 7}',
                    size=8, leading=11, color=MUTED, after=18)
-    entries = sorted([(term, i, n // 12, collocation) for i, u in enumerate(UNITS)
+    entries = sorted([(term, i, n // 12, collocation) for i, u in enumerate(b.units)
                       for n, (term, _meaning, collocation) in enumerate(u['vocabulary'])], key=lambda item: item[0].lower())
     for page in range(INDEX_PAGES):
         b.new_page('Vocabulary index', 'Find a term and its context', anchor='index' if page == 0 else None)

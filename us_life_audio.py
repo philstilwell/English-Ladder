@@ -103,6 +103,7 @@ def valid_record(term, definition, records, root=ROOT):
     record = records.get(term, {})
     path = root / audio_path(term)
     return (record.get('policy') == AUDIO_POLICY and record.get('model') in MODEL_PRICES
+            and record.get('review', {}).get('status') != 'needs-review'
             and record.get('voice') == VOICE and record.get('term_specification', record.get('prompt')) == prompt_for(term, definition)
             and record.get('file') == audio_path(term) and .25 <= record.get('seconds', 0) <= 12
             and path.is_file() and len(path.read_bytes()) > 1000
@@ -132,7 +133,7 @@ class AudioBudget:
                    'time': datetime.now(timezone.utc).isoformat()}
             self.data['requests'].append(row); atomic_json(self.path, self.data)
         if model == 'gemini-3.8-flash-lite-tts':
-            response = current_speech_request(model, spoken_text or term, max_tokens)
+            response = current_speech_request(model, spoken_text or {'ER': 'E. R.'}.get(term, term), max_tokens)
         else:
             response = client.models.generate_content(model=model, contents=prompt, config={
                 'response_modalities': ['AUDIO'], 'max_output_tokens': max_tokens,

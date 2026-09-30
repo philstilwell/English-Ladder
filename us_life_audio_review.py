@@ -13,10 +13,18 @@ from vocabulary_translations import atomic_json
 
 MODEL = 'gemini-2.5-flash'
 POLICY = 'blind-pronunciation-transcription-v1'
+# A blind transcript cannot distinguish these identical pronunciations.
+# Keep this narrow: missing words, changed endings, and near-matches still fail.
+HOMOPHONES = {'seam': {'seem'}, 'waist': {'waste'}, 'waiver': {'waver'}}
 
 
 def normalized(text):
     return re.sub(r'[^a-z0-9]', '', text.casefold())
+
+
+def transcript_matches(term, transcript):
+    heard = normalized(transcript)
+    return heard == normalized(term) or heard in HOMOPHONES.get(term, set())
 
 
 def reviewed(record):
@@ -94,12 +102,13 @@ def main():
                     try:
                         for result in job.result():
                             term, record = batch[result['id']]
-                            passed = (normalized(term) == normalized(result['text'])
+                            passed = (transcript_matches(term, result['text'])
                                       and result['clear_speech'] and not result['extra_speech'])
                             record['review'] = {'policy': POLICY, 'model': MODEL,
                                 'status': 'passed' if passed else 'needs-review', 'transcript': result['text'],
                                 'clear_speech': result['clear_speech'], 'extra_speech': result['extra_speech'],
-                                'audio_sha256': record['sha256']}
+                                'audio_sha256': record['sha256'],
+                                'match': 'exact' if normalized(term) == normalized(result['text']) else 'homophone' if passed else 'mismatch'}
                             print(f'{term}: {record["review"]["status"]}' + (f' (heard: {result["text"]})' if not passed else ''), flush=True)
                         atomic_json(RECORDS, records)
                     except Exception as error:

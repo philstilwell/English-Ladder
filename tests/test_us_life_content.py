@@ -104,6 +104,11 @@ class EverydayContentTests(unittest.TestCase):
         self.assertFalse(review.reviewed(record))
         self.assertEqual(review.normalized('Wi-Fi'), review.normalized('wifi'))
         self.assertNotEqual(review.normalized('custom'), review.normalized('customs'))
+        for term, heard in [('seam', 'seem'), ('waist', 'waste'), ('waiver', 'waver')]:
+            self.assertTrue(review.transcript_matches(term, heard))
+        for term, heard in [('service charge', 'service'), ('delay', 'a delay'),
+                            ('ER', 'E'), ('walk-in', 'working'), ('seam', 'seems')]:
+            self.assertFalse(review.transcript_matches(term, heard))
 
     def test_speech_model_selection_uses_its_own_price_and_shared_cap(self):
         calls = []

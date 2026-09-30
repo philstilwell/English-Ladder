@@ -4260,11 +4260,13 @@
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
+      "status": "passed",
       "transcript": "seem",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "04c7ed43a37ed8966ecec6cd7f9a9886f9a97defc628fe6a252808ac1460ab46"
+      "audio_sha256": "04c7ed43a37ed8966ecec6cd7f9a9886f9a97defc628fe6a252808ac1460ab46",
+      "match": "homophone",
+      "matching_note": "Identical pronunciation; the independent transcript spelling is preserved."
     }
   },
   "taxi": {
@@ -5185,11 +5187,13 @@
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
+      "status": "passed",
       "transcript": "waste",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "a8e305de60d5a945ff640532600f61539c32284599308e2ca617a7ebe04dad5f"
+      "audio_sha256": "a8e305de60d5a945ff640532600f61539c32284599308e2ca617a7ebe04dad5f",
+      "match": "homophone",
+      "matching_note": "Identical pronunciation; the independent transcript spelling is preserved."
     }
   },
   "heel": {
@@ -5385,11 +5389,13 @@
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
+      "status": "passed",
       "transcript": "waver",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "3e529f781a5d753592a18cfccb571d699be1c84ab4bb5d3b8f27ced96678ef6a"
+      "audio_sha256": "3e529f781a5d753592a18cfccb571d699be1c84ab4bb5d3b8f27ced96678ef6a",
+      "match": "homophone",
+      "matching_note": "Identical pronunciation; the independent transcript spelling is preserved."
     }
   },
   "posted rules": {

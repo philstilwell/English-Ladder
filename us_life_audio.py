@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -12,19 +13,61 @@ import tempfile
 import threading
 import time
 import wave
+import urllib.error
+import urllib.request
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timezone
 from pathlib import Path
+from types import SimpleNamespace
 
 from us_life_content import ROOT, AUDIO_POLICY, audio_path, terms
 from vocabulary_translations import atomic_json
 
 MODEL = 'gemini-2.5-flash-preview-tts'
 MODEL_PRICES = {MODEL: (.5, 10), 'gemini-2.5-pro-preview-tts': (1, 20),
-                'gemini-3.1-flash-tts-preview': (1, 20)}
+                'gemini-3.1-flash-tts-preview': (1, 20),
+                # Reserve at the published 2027 rate, above the 2026 introductory rate.
+                'gemini-3.8-flash-lite-tts': (1, 12)}
 VOICE = 'Kore'
 MAX_TOKENS = 512
 RECORDS = ROOT / 'content/us-life-audio.json'
+
+
+def structured_speech_payload(text, max_tokens):
+    return {'contents': [{'role': 'user', 'parts': [{'text': text,
+            'speechMetadata': {'style': 'Clear, relaxed educational pronunciation'}}]}],
+            'generationConfig': {'responseModalities': ['AUDIO'], 'maxOutputTokens': max_tokens,
+                'speechConfig': {'languageCode': 'en-US',
+                    'voiceConfig': {'prebuiltVoiceConfig': {'voiceName': VOICE}}}}}
+
+
+def current_speech_request(model, text, max_tokens):
+    # The project's pinned SDK predates speechMetadata. Use Google's documented
+    # REST schema without upgrading unrelated daily-generation dependencies.
+    payload = structured_speech_payload(text, max_tokens)
+    request = urllib.request.Request(
+        f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+        data=json.dumps(payload).encode(), method='POST',
+        headers={'Content-Type': 'application/json', 'x-goog-api-key': os.environ['GEMINI_API_KEY']})
+    try:
+        with urllib.request.urlopen(request, timeout=180) as response:
+            data = json.load(response)
+    except urllib.error.HTTPError as error:
+        try: details = json.loads(error.read())
+        except (ValueError, OSError): details = {}
+        failure = RuntimeError(f'Speech provider returned HTTP {error.code}')
+        failure.code, failure.details = error.code, details
+        raise failure from None
+    usage = data.get('usageMetadata', {})
+    candidates = []
+    for candidate in data.get('candidates', []):
+        parts = [SimpleNamespace(inline_data=SimpleNamespace(
+            mime_type=p['inlineData']['mimeType'], data=base64.b64decode(p['inlineData']['data'], validate=True)))
+            for p in candidate.get('content', {}).get('parts', []) if 'inlineData' in p]
+        candidates.append(SimpleNamespace(finish_reason=candidate.get('finishReason'),
+                                         content=SimpleNamespace(parts=parts)))
+    return SimpleNamespace(candidates=candidates, usage_metadata=SimpleNamespace(
+        prompt_token_count=usage.get('promptTokenCount'), candidates_token_count=usage.get('candidatesTokenCount')))
 
 
 def decode_audio(blobs):
@@ -76,7 +119,7 @@ class AudioBudget:
     def spent(self):
         return sum(row['usd'] for row in self.data['requests'])
 
-    def request(self, client, term, prompt, model=MODEL, max_tokens=MAX_TOKENS):
+    def request(self, client, term, prompt, model=MODEL, max_tokens=MAX_TOKENS, spoken_text=None):
         # Reserve before sending. Unknown/failed requests keep their reservation.
         input_price, output_price = MODEL_PRICES[model]
         if not 1 <= max_tokens <= 4096:
@@ -88,9 +131,12 @@ class AudioBudget:
             row = {'term': term, 'model': model, 'usd': reserve, 'usage': 'reserved',
                    'time': datetime.now(timezone.utc).isoformat()}
             self.data['requests'].append(row); atomic_json(self.path, self.data)
-        response = client.models.generate_content(model=model, contents=prompt, config={
-            'response_modalities': ['AUDIO'], 'max_output_tokens': max_tokens,
-            'speech_config': {'voice_config': {'prebuilt_voice_config': {'voice_name': VOICE}}}})
+        if model == 'gemini-3.8-flash-lite-tts':
+            response = current_speech_request(model, spoken_text or term, max_tokens)
+        else:
+            response = client.models.generate_content(model=model, contents=prompt, config={
+                'response_modalities': ['AUDIO'], 'max_output_tokens': max_tokens,
+                'speech_config': {'voice_config': {'prebuilt_voice_config': {'voice_name': VOICE}}}})
         usage = getattr(response, 'usage_metadata', None)
         if usage and usage.prompt_token_count is not None and usage.candidates_token_count is not None:
             with self.lock:

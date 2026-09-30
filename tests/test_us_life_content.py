@@ -135,6 +135,15 @@ class EverydayContentTests(unittest.TestCase):
             audio.decode_audio([SimpleNamespace(mime_type='audio/L16;rate=48000', data=pcm)])
         with self.assertRaises(ValueError): audio.decode_audio([])
 
+    def test_current_speech_separates_delivery_instructions_from_spoken_text(self):
+        payload = audio.structured_speech_payload('weather alert. <long pause> shelter.', 1024)
+        part = payload['contents'][0]['parts'][0]
+        self.assertEqual('weather alert. <long pause> shelter.', part['text'])
+        self.assertNotIn('educational', part['text'])
+        self.assertIn('educational', part['speechMetadata']['style'])
+        self.assertEqual('en-US', payload['generationConfig']['speechConfig']['languageCode'])
+        self.assertEqual(1024, payload['generationConfig']['maxOutputTokens'])
+
     def test_word_list_splits_only_at_silent_boundaries_and_rejects_missing_terms(self):
         speech = b'\xdc\x05' * 14400
         silence = b'\x00\x00' * 36000

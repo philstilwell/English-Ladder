@@ -92,7 +92,9 @@ def main():
             if pcm is None:
                 for attempt in range(3):
                     try:
-                        pcm = budget.request(client, 'Word list: ' + ', '.join(t for t, _ in batch), prompt, args.model, max_tokens=2048)
+                        pcm = budget.request(client, 'Word list: ' + ', '.join(t for t, _ in batch), prompt,
+                            args.model, max_tokens=2048,
+                            spoken_text=' <long pause> '.join(t + '.' for t, _ in batch))
                         raw_path.write_bytes(zlib.compress(pcm))
                         atomic_json(info_path, {**identity, 'pcm_sha256': hashlib.sha256(pcm).hexdigest()})
                         break

@@ -26,6 +26,7 @@ on:
           - gemini-2.5-flash-preview-tts
           - gemini-3.1-flash-tts-preview
           - gemini-2.5-pro-preview-tts
+          - gemini-3.8-flash-lite-tts
         default: gemini-2.5-pro-preview-tts
       audio_batch_size:
         description: '1 for individual requests, or 2–8 terms per recording with checked silent boundaries'

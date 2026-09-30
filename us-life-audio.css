@@ -49,6 +49,10 @@
 .life-completion-button[aria-pressed="true"] { background: #236b51; border-color: #236b51; color: #fff; }
 .life-completion-button:focus-visible { outline: 3px solid #2344c8; outline-offset: 3px; }
 .life-completion-status { flex: 1 1 220px; margin: 0; color: var(--muted); font-size: .875rem; }
+.life-practice { padding: 18px; }
+.life-practice h3 { margin: 0 0 8px; }
+.life-practice p { margin: 0 0 10px; }
+.life-practice > :last-child { margin-bottom: 0; }
 @media (max-width: 1000px) {
     .us-life-jump-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

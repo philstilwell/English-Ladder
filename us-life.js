@@ -182,9 +182,11 @@
         units.forEach((unit,index)=>{
             const practice=document.createElement("section");practice.className="life-practice";
             const heading=document.createElement("h3");heading.textContent="Try the conversation";
-            const prompt=document.createElement("p");prompt.textContent="Read the dialogue with a partner or aloud on your own. Change one detail to fit your life. Then cover it and ask one useful question.";
-            const model=document.createElement("p");model.textContent="Start with: "+(explanations[unit.id]?.practice||"Could you help me, please?");
-            const check=document.createElement("p");check.textContent="Self-check: Did you make your request clear? Could your partner understand the detail you changed?";
+            const prompt=document.createElement("p");prompt.textContent="◉ Read the dialogue with a partner or aloud on your own. Change one detail to fit your life. Then cover it and ask one useful question.";
+            const model=document.createElement("p");
+            model.append(createElement("strong", "", "Start with:"), " "+(explanations[unit.id]?.practice||"Could you help me, please?"));
+            const check=document.createElement("p");
+            check.append(createElement("strong", "", "Self-check:"), " Did you make your request clear? Could your partner understand the detail you changed?");
             practice.append(heading,prompt,model,check);
             if(index+1<units.length){const next=document.createElement("a");next.className="primary-button";next.href="#"+units[index+1].id;next.textContent="Next unit →";practice.append(next);}
             unit.append(practice);

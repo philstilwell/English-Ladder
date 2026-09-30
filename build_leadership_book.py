@@ -1,4 +1,4 @@
-"""Build the standalone approval PDF without changing published course downloads.
+"""Build the standalone learner book without changing published course downloads.
 
 Run: python3 build_leadership_book.py
 Uses the existing embedded fonts and course illustration. No paid services.
@@ -24,19 +24,29 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen.canvas import Canvas
 from reportlab.platypus import Paragraph
 
-from books.cross_cultural_leadership_content import TITLE, EDITION, SLUG, UNITS, WEB_ORDER
+from books.cross_cultural_leadership_content import (
+    TITLE, EDITION, AUTHOR, COPYRIGHT, REPRODUCTION_NOTICE, SLUG, UNITS, WEB_ORDER,
+)
 from work_icons import icon_asset
 
 ROOT = Path(__file__).resolve().parent
-OUT = ROOT / 'output/pdf/cross-cultural-leadership-english-book-approval.pdf'
+OUT = ROOT / 'output/pdf/cross-cultural-leadership-english-book.pdf'
 W, H = 612, 792
 LEFT, RIGHT, BOTTOM = 46, 566, 54
 WIDTH = RIGHT - LEFT
-INK = '#172B39'
-MUTED = '#52616A'
-LINE = '#D6E0E3'
-PAPER = '#F1F6F7'
-ACCENTS = ['#006B72', '#A33B59', '#175F91', '#936000', '#007269', '#784B91', '#126F83', '#A34C31']
+INK = '#22243A'
+MUTED = '#565B70'
+LINE = '#DCE0ED'
+PAPER = '#F2F4FC'
+ACCENTS = ['#294EDB', '#984261', '#4857A6', '#895E10', '#5B4BB2', '#854B96', '#315EB3', '#A24738']
+FRONT_PAGES = 3
+UNIT_PAGES = 9
+KEY_START = FRONT_PAGES + len(UNITS) * UNIT_PAGES + 1
+PHRASES_START = KEY_START + len(UNITS) * 2
+INDEX_START = PHRASES_START + 2
+INDEX_PAGES = math.ceil(sum(len(u['vocabulary']) for u in UNITS) / 24)
+SOURCES_PAGE = INDEX_START + INDEX_PAGES
+TOTAL_PAGES = SOURCES_PAGE
 
 for name, file in [('Book', 'Vera.ttf'), ('BookBold', 'VeraBd.ttf'), ('BookItalic', 'VeraIt.ttf')]:
     pdfmetrics.registerFont(TTFont(name, str(ROOT / 'assets/fonts' / file)))
@@ -63,11 +73,11 @@ def blank(number, answer, accent, size=10):
 
 
 def unit_page(index):
-    return 5 + index * 7
+    return FRONT_PAGES + 1 + index * UNIT_PAGES
 
 
-def key_page(index):
-    return 61 + index
+def key_page(index, conversation=False):
+    return KEY_START + index * 2 + int(conversation)
 
 
 def content_hash():
@@ -93,7 +103,10 @@ def validate_content():
     for i, u in enumerate(UNITS, 1):
         assert len(u['dialogue']) == 20, i
         assert len(u['gaps']) == 10, i
-        assert len(u['vocabulary']) == 12 and len(u['phrases']) == 8, i
+        assert len(u['vocabulary']) == 24 and len(u['phrases']) == 16, i
+        assert len({t.lower() for t, _, _ in u['vocabulary']}) == 24, i
+        assert len({phrase for _, phrase in u['phrases']}) == 16, i
+        assert len(u['language_extra']) == 3 and u['precision_extra'], i
         assert [len(u[k]) for k in ('a', 'd')] == [3, 4], i
         assert len(u['transfer']['lines']) == 4, i
         assert len({g['answer'].lower() for g in u['gaps']}) == 10, i
@@ -114,8 +127,9 @@ class Book:
     def __init__(self):
         OUT.parent.mkdir(parents=True, exist_ok=True)
         self.c = Canvas(str(OUT), pagesize=(W, H), initialFontName='Book', invariant=1)
-        self.c.setTitle(TITLE + ' | Learner book | Approval draft')
-        self.c.setAuthor('English Ladder')
+        self.c.setTitle(TITLE + ' | Learner book')
+        self.c.setAuthor(AUTHOR)
+        self.c.setCreator('English Ladder')
         self.c.setSubject('Eight workplace scenarios, vocabulary, phrases, and structured practice. Content SHA-256: ' + content_hash())
         self.c.setKeywords('English Ladder, international managers, workplace English, cross-cultural leadership, B2, C1')
         self.page = 0
@@ -142,7 +156,7 @@ class Book:
         c.line(LEFT, 39, RIGHT, 39)
         c.setFont('Book', 7.3)
         c.drawString(LEFT, 25, 'Cross-Cultural Leadership English')
-        c.drawRightString(RIGHT, 25, f'Approval draft 01  |  {self.page:02d}')
+        c.drawRightString(RIGHT, 25, f'Phil Stilwell  |  {self.page:02d}')
         self.y = H - 62
         if anchor:
             c.bookmarkPage(anchor)
@@ -229,7 +243,7 @@ class Book:
         words = '   /   '.join(answers[n] for n in order)
         self.panel('Word + phrase bank', words, size=10 if small else 10.5, leading=15, after=12)
 
-    def answer_strip(self, answers, bottom=False):
+    def answer_strip(self, answers, unit, bottom=False):
         text = '   |   '.join(f'{i}. {answer}' for i, answer in enumerate(answers, 1))
         p, h = paragraph(esc(text), WIDTH - 24, 8.8, 12.5)
         height = h + 30
@@ -238,10 +252,19 @@ class Book:
             raise ValueError(f'Answer strip collides with dialogue on page {self.page}')
         self.c.setFillColor(colors.HexColor('#F5F0DF'))
         self.c.rect(LEFT, top - height, WIDTH, height, fill=1, stroke=0)
-        self.block('ANSWERS  /  COVER THIS STRIP UNTIL YOU FINISH', LEFT + 12, top - 8,
+        self.block(f'ANSWERS  /  EXPLANATIONS: PAGE {key_page(unit, True)}', LEFT + 12, top - 8,
                    WIDTH - 24, 7.2, 10, '#765514', True)
+        self.c.linkRect('', f'key-{unit + 1}-conversations',
+                        (LEFT + 12, top - 20, RIGHT - 12, top - 7), relative=0, thickness=0)
         self.block(esc(text), LEFT + 12, top - 23, WIDTH - 24, 8.8, 12.5)
         self.y = top - height - 15
+
+    def answer_link(self, unit):
+        top = self.y
+        self.text(f'Answers and explanations: page {key_page(unit)}.',
+                  size=9.5, leading=14, color=self.accent, after=8)
+        self.c.linkRect('', f'key-{unit + 1}-checks',
+                        (LEFT, self.y + 8, RIGHT, top), relative=0, thickness=0)
 
     def save(self):
         validate_layout(self.boxes)
@@ -264,18 +287,22 @@ def front(b):
         left, top = (index % cols) * cell_w, (index // cols) * cell_h
         cell = atlas.crop((round(left), round(top), round(left + cell_w), round(top + cell_h)))
         b.c.drawImage(ImageReader(cell), RIGHT - 163, 352, 160, 160, mask='auto')
-    b.y = 345
-    b.rule(20)
-    b.text('Eight real-work situations.<br/>Eight extended conversations.<br/>One practical learner\'s book.', rich=True,
-           size=17, leading=24, bold=True, after=22)
-    b.panel('Inside the book', '96 vocabulary entries  /  64 reusable phrases\n160 dialogue turns  /  80 numbered dialogue gaps\nWord banks, precise instructions, and full answer support', size=11, leading=17)
+    b.y = 408
+    b.text(AUTHOR, size=15, leading=20, bold=True, after=6, width=325)
+    b.text(COPYRIGHT, size=8.2, leading=12, color=MUTED, after=4, width=325)
+    b.text(REPRODUCTION_NOTICE, size=8, leading=11, color=MUTED, after=0, width=325)
+    b.y = 306
+    b.rule(18)
+    b.text('Eight scenarios. Eight extended conversations.',
+           size=15, leading=21, bold=True, after=18)
+    b.panel('Inside the book', '192 vocabulary entries  /  128 reusable phrases\n160 dialogue turns  /  80 numbered dialogue gaps\nWord banks and explained answer keys', size=11, leading=17)
     b.text('Upper-intermediate to advanced (B2-C1). For international managers, cross-border teams, and workplace English learners.',
-           size=10, leading=15, color=MUTED, after=18)
-    b.text(EDITION + ' | Review copy. Existing online downloads unchanged.',
+           size=10, leading=15, color=MUTED, after=12)
+    b.text(EDITION,
            size=8.3, leading=12, color=MUTED)
 
     b.new_page('Book map', 'Eight scenarios. Eight skills.', anchor='contents')
-    b.text('The lesson numbers match the website. Within each lesson, circled A-F labels separate the activities from the main lesson number.', after=18)
+    b.text('Build the language of clear decisions, constructive disagreement, and trusted working relationships.', after=18)
     for i, unit in enumerate(UNITS):
         top = b.y
         b.text(f'{i + 1:02d}  {unit["title"]}', size=11.1, leading=15, bold=True, after=5)
@@ -286,36 +313,16 @@ def front(b):
         b.c.drawRightString(RIGHT, top - 11, str(unit_page(i)))
         b.c.linkRect('', f'unit-{i + 1}', (LEFT, b.y + 7, RIGHT, top), relative=0, thickness=0)
     b.rule()
-    for label, page, anchor in [('Using this book', 3, 'using'), ('Directness, disagreement, and boundaries', 4, 'culture'),
-                                ('Answer explanations', 61, 'key-1'), ('Fast-access phrase pages', 69, 'quick-phrases'),
-                                ('Vocabulary index', 71, 'index'), ('Sources and publication notes', 75, 'sources')]:
+    for label, page, anchor in [('Directness, disagreement, and boundaries', 3, 'culture'),
+                                ('Answers and explanations', KEY_START, 'key-1-checks'),
+                                ('Fast-access phrase pages', PHRASES_START, 'quick-phrases'),
+                                ('Vocabulary index', INDEX_START, 'index'),
+                                ('Sources and publication notes', SOURCES_PAGE, 'sources')]:
         top = b.y
         b.text(label, size=9.4, leading=13, after=5)
         b.c.setFont('Book', 9.4)
         b.c.drawRightString(RIGHT, top - 10, str(page))
         b.c.linkRect('', anchor, (LEFT, b.y, RIGHT, top), relative=0, thickness=0)
-
-    b.new_page('Study route', 'Use the book, not a blank page.', anchor='using')
-    b.text('Every task supplies the facts and the language choices. There are no essays, invented business decisions, or unbounded "think about it" prompts.', size=11.2, leading=16, after=17)
-    routes = [('A', 'Read the situation', 'Read the briefing and fixed facts. Circle one answer for each of the three checks.'),
-              ('B', 'Find the words', 'Read each term, its meaning, and its typical word combination. Say the combination aloud once.'),
-              ('C', 'Notice the language', 'Read eight usable phrases and three precise language notes. Keep the intended certainty and authority.'),
-              ('D', 'Check your understanding', 'Select one best answer for each of four language checks. The back-of-book explanations identify the deciding detail.'),
-              ('E', 'Conversations', 'Complete one 20-turn dialogue using its ten-entry word-and-phrase bank. Use each entry once, without changing its form. Small raised numbers identify the gaps. Cover the answer strip at the end until finished.'),
-              ('F', 'Say it', 'Complete a short transfer conversation using a four-entry bank. Then follow the printed read-aloud sequence; use the supplied words and facts, not invented replies.')]
-    for letter, title, text in routes:
-        top = b.y
-        b.c.setFillColor(colors.HexColor(b.accent))
-        b.c.circle(LEFT + 10, top - 11, 10, fill=1, stroke=0)
-        b.c.setFillColor(colors.white)
-        b.c.setFont('BookBold', 10)
-        b.c.drawCentredString(LEFT + 10, top - 14.5, letter)
-        b.text(f'<b>{esc(title)}.</b> {esc(text)}', rich=True, size=10.1, leading=14.2,
-               x=LEFT + 32, width=WIDTH - 32, after=14)
-    b.panel('A cloze example', 'Bank: pending / approved\n"Has the review finished?" "No. Approval is 1 ________."\nAnswer: 1 pending. The unfinished review rules out "approved."', size=9.5, leading=13)
-    b.text('Pace and checking', size=12, leading=16, bold=True, after=7)
-    b.text('Full route: allow 75-90 minutes per lesson. Short route: spend 25 minutes on B, E, and F. Check A and D at the back; E and F answers appear beneath their dialogues. Read any corrected line aloud before repeating the exchange.', size=9.7, leading=14, after=8)
-    b.text('B2-C1 is an intended study range, not a certified assessment. Use the vocabulary pages as support; for a harder repeat, cover the bank but keep the facts visible. All characters, organizations, figures, and conversations are fictional.', size=8.8, leading=12.5, color=MUTED)
 
     b.new_page('Cultural field notes', 'Direct is not the same as hostile.', anchor='culture')
     b.text('A colleague can strongly challenge an idea without disliking its author. A friendly manner can also hide a real objection. Words, follow-up behavior, power, and context matter more than nationality. Ask what a statement means before deciding what the speaker intended.', size=11, leading=16, after=16)
@@ -344,23 +351,25 @@ def briefing(b, u, i):
     b.text('PEOPLE  /  ' + '  |  '.join(f'{name}: {role}' for name, role in u['cast']), size=8.6, leading=12.5, color=MUTED, after=11)
     b.panel(*u['culture'], size=9.7, leading=13.5, after=13)
     b.text('Briefing checks', size=12, leading=16, bold=True, after=5)
-    b.text(f'Circle one answer in each item. Use only the briefing. Explanations: page {key_page(i)}.', size=8.7, leading=12, color=MUTED, after=10)
+    b.text('Circle one answer in each item. Use the briefing.', size=9.2, leading=13, color=MUTED, after=10)
     for number, q in enumerate(u['a'], 1):
         b.mcq(number, q, size=9.7, after=6, compact=True)
+    b.answer_link(i)
 
 
-def vocabulary(b, u, i):
+def vocabulary(b, u, i, part=0):
     b.new_page(f'Lesson {i + 1:02d}', 'The vocabulary that does the work', i)
-    b.c.bookmarkPage(f'vocabulary-{i + 1}')
-    b.label('B', 'Find the words')
-    b.text('Read the meaning, then say the word combination aloud. The combinations show how the term naturally fits into workplace language.', size=10.1, leading=14.5, after=16)
+    b.c.bookmarkPage(f'vocabulary-{i + 1}-{part + 1}')
+    b.label('B', f'Find the words  /  {part + 1} of 2')
+    b.text('Read the definitions and say the common word combinations aloud.', size=10.1, leading=14.5, after=16)
     start = b.y
     col_width = (WIDTH - 28) / 2
     bottoms = []
     for col in range(2):
         b.y = start
         x = LEFT + col * (col_width + 28)
-        for term, meaning, collocation in u['vocabulary'][col * 6:col * 6 + 6]:
+        offset = part * 12 + col * 6
+        for term, meaning, collocation in u['vocabulary'][offset:offset + 6]:
             b.text(term, x=x, width=col_width, size=11.5, leading=15, bold=True, color=b.accent, after=5)
             b.text(meaning, x=x, width=col_width, size=10, leading=14.1, after=6)
             b.text('IN USE  ' + collocation, x=x, width=col_width, size=8.8, leading=12.5, bold=True, after=11)
@@ -371,19 +380,19 @@ def vocabulary(b, u, i):
         raise ValueError(f'Vocabulary footer overlaps a column on page {b.page}')
     b.y = 119
     b.text('Precision check', size=10.5, leading=14, bold=True, color=b.accent, after=5)
-    b.text(u['precision'], size=9.4, leading=13.5)
+    b.text(u['precision'] if part == 0 else u['precision_extra'], size=9.4, leading=13.5)
 
 
-def language(b, u, i):
+def language(b, u, i, part=0):
     b.new_page(f'Lesson {i + 1:02d}', 'Phrases you can actually use', i)
-    b.label('C', 'Notice the language')
-    b.text('Read each complete phrase. The small label names its job in the conversation; the wording remains professional without hiding the point.', size=10.2, leading=14.5, after=19)
+    b.label('C', f'Notice the language  /  {part + 1} of 2')
+    b.y -= 10
     col_width = (WIDTH - 26) / 2
     for row in range(4):
         top = b.y
         bottoms = []
         for col in range(2):
-            purpose, phrase = u['phrases'][row * 2 + col]
+            purpose, phrase = u['phrases'][part * 8 + row * 2 + col]
             x = LEFT + col * (col_width + 26)
             b.block(esc(purpose.upper()), x, top, col_width, 8, 11.2, b.accent, True)
             b.y -= 6
@@ -391,7 +400,7 @@ def language(b, u, i):
             bottoms.append(b.y)
         b.y = min(bottoms)
     b.rule(16)
-    for label, note in u['language']:
+    for label, note in (u['language'] if part == 0 else u['language_extra']):
         b.text(label, size=10.7, leading=14.5, color=b.accent, bold=True, after=4)
         b.text(note, size=10, leading=14.5, after=13)
 
@@ -402,7 +411,7 @@ def checks(b, u, i):
     b.text('Circle one best answer for each item. Use the stated purpose and case facts, not the option that merely sounds most polite.', size=10.3, leading=15, after=20)
     for number, q in enumerate(u['d'], 1):
         b.mcq(number, q, size=11, after=20)
-    b.panel('Check, correct, repeat', f'Check the explanations on page {key_page(i)}. For each error, read the complete corrected message aloud once. Then reread the relevant phrase on page {unit_page(i) + 2}. All four checks must be corrected before you continue.', size=10, leading=14.5)
+    b.answer_link(i)
 
 
 def dialogue(b, u, i, second=False):
@@ -410,10 +419,10 @@ def dialogue(b, u, i, second=False):
     b.label('E', 'Conversations  /  ' + ('turns 11-20' if second else 'turns 1-10'))
     answers = [g['answer'] for g in u['gaps']]
     if not second:
-        b.text('Use each bank entry once, without changing its form. The small raised number identifies the gap, not the turn. Cover the answer strip on the next page.', size=8.9, leading=12.4, after=8)
+        b.text('Complete the numbered gaps. Use each bank entry once, without changing its form. Cover the answers at the end until you finish.', size=9.2, leading=13, after=8)
         b.bank(answers, small=True)
     else:
-        b.text('Continue with the same bank from the previous page. Finish all ten gaps before uncovering the numbered answer strip below.', size=9, leading=12.5, after=15)
+        b.text(f'Continue with the word bank on page {unit_page(i) + 6}.', size=9.2, leading=13, after=15)
     start = 10 if second else 0
     for turn, (speaker, text) in enumerate(u['dialogue'][start:start + 10], start + 1):
         rich = re.sub(r'\{\{(\d+)\}\}', lambda m: blank(m[1], answers[int(m[1]) - 1], b.accent), esc(text))
@@ -422,52 +431,62 @@ def dialogue(b, u, i, second=False):
         b.block(f'<b>{esc(speaker)}:</b> {rich}', LEFT + 26, top, WIDTH - 26,
                 size=10, leading=14, after=10)
     if second:
-        b.answer_strip(answers, bottom=True)
+        b.answer_strip(answers, i, bottom=True)
 
 
 def transfer(b, u, i):
     b.new_page(f'Lesson {i + 1:02d}', u['transfer']['title'], i)
     b.label('F', 'Say it')
     b.text(u['transfer']['setup'], size=10.5, leading=15, after=12)
-    b.text('Complete the four short exchanges using the bank. Each entry is used once. Read the completed conversation aloud; then check the answer strip.', size=9.7, leading=14, after=10)
+    b.text('Complete the four gaps. Use each bank entry once.', size=9.7, leading=14, after=10)
     items = u['transfer']['lines']
     answers = [q['options'][q['answer']] for q in items]
     b.bank(answers)
     for n, q in enumerate(items, 1):
         prompt = esc(q['prompt']).replace('___', blank(n, answers[n - 1], b.accent, size=11))
         b.text(prompt, size=11, leading=16, after=15, rich=True)
-    b.answer_strip(answers)
+    b.answer_strip(answers, i)
     b.text('Rehearse with a fixed script', size=13, leading=18, bold=True, after=10)
     for n, instruction in enumerate(u['rehearsal'], 1):
         b.text(f'{n}. {instruction}', size=10, leading=14.5, after=12)
-    b.panel('Working alone', 'Read both roles aloud. Pause for two seconds at the change of speaker. For the final repeat, cover the bank but keep the case facts and dialogue visible. Restore any missed expression from the answer strip; do not invent replacement facts.', size=9.5, leading=13.5)
+    b.panel('Working alone', 'Read both roles, pausing for two seconds when the speaker changes. Repeat with the bank covered, then check any missed expressions.', size=9.5, leading=13.5)
 
 
 def explanations(b, u, i):
-    b.new_page(f'Answer explanations / {i + 1:02d}', f'{i + 1:02d}  Why these answers fit', i, f'key-{i + 1}')
+    b.new_page(f'Answers / {i + 1:02d}', f'{i + 1:02d}  Briefing and language checks', i, f'key-{i + 1}-checks')
+    b.text(u['title'], size=10.5, leading=15, color=b.accent, bold=True, after=17)
+    for label, items, source_page in [('A  Briefing checks', u['a'], unit_page(i)),
+                                      ('D  Language checks', u['d'], unit_page(i) + 5)]:
+        b.text(f'{label}  /  page {source_page}', size=11, leading=15, bold=True, after=12)
+        for n, q in enumerate(items, 1):
+            b.text(f'<b>{n}.</b> {esc(q["prompt"])}', rich=True, size=9.5, leading=13.5, after=4)
+            b.text(f'<b>{chr(65 + q["answer"])}. {esc(q["options"][q["answer"]])}</b><br/>'
+                   + esc(q['reason']), rich=True, size=9.5, leading=13.5,
+                   x=LEFT + 13, width=WIDTH - 13, after=13)
+        b.y -= 4
+
+    b.new_page(f'Answers / {i + 1:02d}', f'{i + 1:02d}  Conversation answers', i, f'key-{i + 1}-conversations')
     b.text(u['title'], size=10.5, leading=15, color=b.accent, bold=True, after=17)
     top = b.y
     col_width = (WIDTH - 26) / 2
-    b.text('A  Briefing checks', width=col_width, size=11, leading=15, bold=True, after=9)
-    for n, q in enumerate(u['a'], 1):
-        b.text(f'<b>{n} {chr(65 + q["answer"])}.</b> {esc(q["reason"])}', rich=True, width=col_width,
-               size=8.9, leading=12.7, after=9)
-    b.y -= 4
-    b.text('D  Language checks', width=col_width, size=11, leading=15, bold=True, after=9)
-    for n, q in enumerate(u['d'], 1):
-        b.text(f'<b>{n} {chr(65 + q["answer"])}.</b> {esc(q["reason"])}', rich=True, width=col_width,
-               size=8.9, leading=12.7, after=9)
-    b.y -= 4
-    b.text('F  Transfer conversation', width=col_width, size=11, leading=15, bold=True, after=9)
-    for n, q in enumerate(u['transfer']['lines'], 1):
-        b.text(f'<b>{n} {esc(q["options"][q["answer"]])}.</b> {esc(q["reason"])}', rich=True, width=col_width,
-               size=8.9, leading=12.7, after=9)
+    b.text('E  Dialogue gaps', width=col_width, size=11, leading=15, bold=True, after=5)
+    b.text(f'Pages {unit_page(i) + 6}-{unit_page(i) + 7}', width=col_width,
+           size=8.8, leading=12, color=MUTED, after=12)
+    for n, g in enumerate(u['gaps'], 1):
+        b.text(f'<b>{n}. {esc(g["answer"])}.</b> <font color="{MUTED}">Turn {g["turn"]}.</font> {esc(g["reason"])}',
+               rich=True, width=col_width, size=9.2, leading=13.2, after=10)
     b.y = top
     x = LEFT + col_width + 26
-    b.text('E  Dialogue gaps', x=x, width=col_width, size=11, leading=15, bold=True, after=9)
-    for n, g in enumerate(u['gaps'], 1):
-        b.text(f'<b>{n} {esc(g["answer"])}.</b> <font color="{MUTED}">Turn {g["turn"]}.</font> {esc(g["reason"])}',
-               rich=True, x=x, width=col_width, size=8.9, leading=12.7, after=9)
+    b.text('F  Transfer conversation', x=x, width=col_width, size=11, leading=15, bold=True, after=5)
+    b.text(f'Page {unit_page(i) + 8}', x=x, width=col_width,
+           size=8.8, leading=12, color=MUTED, after=12)
+    for n, q in enumerate(u['transfer']['lines'], 1):
+        answer = q['options'][q['answer']]
+        b.text(f'<b>{n}. {esc(answer)}</b>', rich=True, x=x, width=col_width,
+               size=9.2, leading=13.2, after=5)
+        b.text(q['prompt'].replace('___', answer), x=x, width=col_width,
+               size=9.2, leading=13.2, after=6)
+        b.text(q['reason'], x=x, width=col_width, size=9.2, leading=13.2, after=16)
 
 
 def reference(b):
@@ -481,21 +500,21 @@ def reference(b):
             b.text(f'{i + 1:02d}  {u["title"]}', size=12, leading=16, color=b.accent, bold=True, after=8)
             for purpose, phrase in [u['phrases'][0], u['phrases'][3], u['phrases'][7]]:
                 b.text(f'<b>{esc(purpose)}:</b> {esc(phrase)}', rich=True, size=10.2, leading=15, after=8)
-            b.text(f'Full phrase set: page {unit_page(i) + 2}  |  Extended dialogue: pages {unit_page(i) + 4}-{unit_page(i) + 5}',
+            b.text(f'Full phrase set: pages {unit_page(i) + 3}-{unit_page(i) + 4}  |  Dialogue: pages {unit_page(i) + 6}-{unit_page(i) + 7}',
                    size=8, leading=11, color=MUTED, after=18)
-    entries = sorted([(term, i, collocation) for i, u in enumerate(UNITS)
-                      for term, _meaning, collocation in u['vocabulary']], key=lambda item: item[0].lower())
-    for page in range(4):
+    entries = sorted([(term, i, n // 12, collocation) for i, u in enumerate(UNITS)
+                      for n, (term, _meaning, collocation) in enumerate(u['vocabulary'])], key=lambda item: item[0].lower())
+    for page in range(INDEX_PAGES):
         b.new_page('Vocabulary index', 'Find a term and its context', anchor='index' if page == 0 else None)
         b.text('The page number leads to the definition and a typical word combination. Repeated terms have separate entries when they serve different lesson contexts.', size=9.5, leading=13.5, after=20)
-        for term, index, collocation in entries[page * 24:page * 24 + 24]:
+        for term, index, part, collocation in entries[page * 24:page * 24 + 24]:
             top = b.y
             b.text(f'<b>{esc(term)}</b>  <font color="{MUTED}">{esc(collocation)}</font>', rich=True,
                    width=WIDTH - 44, size=9.3, leading=13, after=8)
             b.c.setFont('BookBold', 9.3)
             b.c.setFillColor(colors.HexColor(ACCENTS[index]))
-            b.c.drawRightString(RIGHT, top - 10, str(unit_page(index) + 1))
-            b.c.linkRect('', f'vocabulary-{index + 1}', (LEFT, b.y + 2, RIGHT, top), relative=0, thickness=0)
+            b.c.drawRightString(RIGHT, top - 10, str(unit_page(index) + 1 + part))
+            b.c.linkRect('', f'vocabulary-{index + 1}-{part + 1}', (LEFT, b.y + 2, RIGHT, top), relative=0, thickness=0)
 
 
 def sources(b):
@@ -518,8 +537,10 @@ def sources(b):
                rich=True, size=9.5, leading=13, after=7)
         b.text(note, size=9.5, leading=13.5, after=18)
     b.rule(15)
-    b.text('Publication and reuse', size=12, leading=16, bold=True, after=8)
-    b.text('English Ladder | English for Work | ' + EDITION + '. References checked 30 September 2026. Existing course illustration and ladder mark retained. All fonts are embedded. This approval draft is not yet a replacement for the website\'s downloadable guides.', size=9.4, leading=13.5, after=12)
+    b.text(AUTHOR, size=12, leading=16, bold=True, after=6)
+    b.text(COPYRIGHT, size=9.4, leading=13.5, after=6)
+    b.text(REPRODUCTION_NOTICE, size=9.4, leading=13.5, after=12)
+    b.text('English Ladder | English for Work | ' + EDITION + '. References checked 30 September 2026. All characters, organizations, figures, and conversations are fictional.', size=9.4, leading=13.5, after=12)
     b.text('For workplace conduct, safety, employment, or legal questions, use the appropriate qualified support and current organizational procedures. Do not treat a successful language exercise as authorization for a real decision.', size=9.4, leading=13.5, after=12)
     url = f'https://englishladder.com/efsp-{SLUG}.html'
     b.text(f'<link href="{url}" color="{b.accent}">Open the matching English Ladder course</link>', rich=True, size=10, leading=14)
@@ -533,7 +554,9 @@ def build():
         assert b.page + 1 == unit_page(i)
         briefing(b, u, i)
         vocabulary(b, u, i)
+        vocabulary(b, u, i, part=1)
         language(b, u, i)
+        language(b, u, i, part=1)
         checks(b, u, i)
         dialogue(b, u, i)
         dialogue(b, u, i, second=True)
@@ -541,16 +564,18 @@ def build():
     for i, u in enumerate(UNITS):
         assert b.page + 1 == key_page(i)
         explanations(b, u, i)
+    assert b.page + 1 == PHRASES_START
     reference(b)
+    assert b.page + 1 == SOURCES_PAGE
     sources(b)
-    assert b.page == 75
+    assert b.page == TOTAL_PAGES
     b.save()
     reader = PdfReader(OUT)
-    assert len(reader.pages) == 75
+    assert len(reader.pages) == TOTAL_PAGES
     assert all('English Ladder' in (page.extract_text() or '') for page in reader.pages)
     print(json.dumps(dict(path=str(OUT), pages=len(reader.pages), bytes=OUT.stat().st_size,
                          units=8, extended_dialogue_turns=160, dialogue_gaps=80,
-                         vocabulary_entries=96, set_phrases=64, structured_items=168), indent=2))
+                         vocabulary_entries=192, set_phrases=128, structured_items=168), indent=2))
 
 
 if __name__ == '__main__':

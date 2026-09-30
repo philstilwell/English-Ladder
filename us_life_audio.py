@@ -153,6 +153,11 @@ def main():
                     print('Quota details: ' + json.dumps(quotas), flush=True)
                     if any('PerDay' in q.get('quotaId', '') for q in quotas):
                         raise
+                    # A rate-limit cooldown applies to the entire pool, not only the failed term.
+                    retry_seconds = max([60.0, *[float(str(d['retryDelay']).removesuffix('s'))
+                                                for d in details if re.fullmatch(r'\d+(?:\.\d+)?s', str(d.get('retryDelay', '')))]] )
+                    with rate_lock:
+                        next_start[0] = max(next_start[0], time.monotonic() + min(retry_seconds + 2, 180))
                 # Retry only transient provider failures; do not conceal content/config errors.
                 if code not in (429, 500, 502, 503, 504) or attempt == 2:
                     raise

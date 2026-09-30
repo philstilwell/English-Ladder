@@ -944,6 +944,58 @@
       "time": "2026-09-30T01:29:42.694274+00:00",
       "input_tokens": 79,
       "output_tokens": 29
+    },
+    {
+      "term": "refill",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.00112,
+      "usage": "reported",
+      "time": "2026-09-30T01:31:44.623605+00:00",
+      "input_tokens": 80,
+      "output_tokens": 52
+    },
+    {
+      "term": "side effect",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012686,
+      "usage": "reserved",
+      "time": "2026-09-30T01:31:51.423795+00:00"
+    },
+    {
+      "term": "medical history",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001523,
+      "usage": "reported",
+      "time": "2026-09-30T01:31:58.223928+00:00",
+      "input_tokens": 83,
+      "output_tokens": 72
+    },
+    {
+      "term": "follow-up appointment",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001764,
+      "usage": "reported",
+      "time": "2026-09-30T01:32:05.024075+00:00",
+      "input_tokens": 84,
+      "output_tokens": 84
+    },
+    {
+      "term": "appointment",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001298,
+      "usage": "reported",
+      "time": "2026-09-30T01:32:11.824183+00:00",
+      "input_tokens": 78,
+      "output_tokens": 61
+    },
+    {
+      "term": "available",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001195,
+      "usage": "reported",
+      "time": "2026-09-30T01:32:18.624331+00:00",
+      "input_tokens": 75,
+      "output_tokens": 56
     }
   ]
 }

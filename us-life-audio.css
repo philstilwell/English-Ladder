@@ -1,16 +1,40 @@
-.life-vocabulary dt { min-width: 0; }
+.life-sentences, .life-vocabulary-block { display: flex; flex-direction: column; }
+.life-sentences ul {
+    flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+    gap: .45em; font-size: 1.25rem; line-height: 1.65;
+}
+.life-sentences li { margin-bottom: 0; }
+.module-block .life-vocabulary {
+    flex: 1; align-content: space-between;
+    grid-template-columns: minmax(145px, .65fr) minmax(0, 1fr);
+}
+.life-vocabulary dt {
+    display: grid; grid-template-columns: 28px minmax(0, 1fr);
+    gap: 5px; align-items: start; min-width: 0;
+}
 .life-vocabulary [data-vocabulary-term] { display: block; overflow-wrap: anywhere; }
 .life-vocabulary .life-listen {
-    display: inline-flex; align-items: center; min-height: 44px;
-    font-size: .85rem; font-weight: 650; color: #193cc2;
-    text-decoration: underline; text-underline-offset: 3px;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; min-height: 28px; border-radius: 4px;
+    font-size: .8rem; line-height: 1; color: #193cc2; text-decoration: none;
 }
+.life-listen:hover { background: #e0e7ff; }
 .life-listen:focus-visible, .life-audio-player a:focus-visible {
     outline: 3px solid #193cc2; outline-offset: 3px; border-radius: 3px;
 }
-.life-audio-help { margin: 0 0 18px; font-size: .9rem; color: var(--muted); }
+.life-audio-help { margin: 0 0 12px; font-size: .85rem; color: var(--muted); }
 .life-audio-player { margin-top: 18px; padding-top: 14px; border-top: 1px solid #cad5fa; }
 .life-audio-player[hidden] { display: none; }
 .life-audio-player p { margin: 0 0 8px; }
 .life-audio-player audio { display: block; width: 100%; max-width: 100%; margin-bottom: 8px; }
 .life-audio-player a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9rem; }
+@media (max-width: 800px) {
+    .life-sentences ul { font-size: 1.125rem; }
+}
+@media (max-width: 560px) {
+    .module-block .life-vocabulary { grid-template-columns: 1fr; }
+}
+@media (pointer: coarse) {
+    .life-vocabulary dt { grid-template-columns: 36px minmax(0, 1fr); }
+    .life-vocabulary .life-listen { width: 36px; min-height: 44px; }
+}

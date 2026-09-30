@@ -39,6 +39,8 @@ def enhance_page(soup):
         raise ValueError('Everyday English page and authored units do not match.')
     for key, unit in units.items():
         blocks = soup.find(id=key).select('.us-life-main .module-block')
+        for block, name in zip(blocks[:2], ('life-sentences', 'life-vocabulary-block')):
+            block['class'] = list(dict.fromkeys([*block.get('class', []), name]))
         sentences = blocks[0].select_one('ul')
         sentences.clear()
         for sentence in unit['sentences']:
@@ -49,18 +51,20 @@ def enhance_page(soup):
         for word in unit['vocabulary']:
             dt = soup.new_tag('dt')
             label = soup.new_tag('span', attrs={'data-vocabulary-term': ''})
-            label.string = word['term']; dt.append(label)
+            label.string = word['term']
             link = soup.new_tag('a', href=audio_path(word['term']), attrs={
                 'class': 'life-listen', 'data-pronunciation': word['term'],
                 'data-pronunciation-ui': '', 'type': 'audio/mpeg',
-                'aria-label': f'Listen to {word["term"]} in American English'})
-            link.string = '▶ Listen'; dt.append(link)
+                'aria-label': f'Listen to {word["term"]} in American English',
+                'title': f'Play pronunciation of {word["term"]}'})
+            icon = soup.new_tag('span', attrs={'aria-hidden': 'true'}); icon.string = '▶'
+            link.append(icon); dt.extend([link, label])
             dd = soup.new_tag('dd'); dd.string = word['definition']
             vocabulary.extend([dt, dd])
         for old in blocks[1].select('[data-pronunciation-player], .life-audio-help'):
             old.decompose()
         help_text = soup.new_tag('p', attrs={'class': 'life-audio-help', 'data-pronunciation-ui': ''})
-        help_text.string = '12 useful terms · Select Listen for American English pronunciation.'
+        help_text.string = 'American English pronunciation'
         vocabulary.insert_before(help_text)
         player = soup.new_tag('div', attrs={'class': 'life-audio-player', 'data-pronunciation-player': '',
                                             'data-pronunciation-ui': '', 'hidden': ''})
@@ -71,4 +75,5 @@ def enhance_page(soup):
     if not soup.select_one('script[src^="us-life-audio.js"]'):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
-        soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css?v=20260929-1'))
+        soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-compact1'

@@ -1,0 +1,40 @@
+{
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+  "words": [
+    [
+      "weather alert",
+      "a warning about dangerous weather"
+    ],
+    [
+      "non-emergency number",
+      "a police or city number for problems that are not urgent"
+    ],
+    [
+      "shelter",
+      "a safe place during danger"
+    ],
+    [
+      "flashlight",
+      "a small light you hold in your hand"
+    ],
+    [
+      "exit",
+      "a way out of a building or place"
+    ],
+    [
+      "first-aid kit",
+      "a set of basic supplies for minor injuries"
+    ],
+    [
+      "evacuation",
+      "the act of leaving a place because of danger"
+    ],
+    [
+      "meeting point",
+      "a place where people agree to gather"
+    ]
+  ],
+  "pcm_sha256": "444d18dac5c9966595ae839ae4a8dacce07be73b15020e8c8099d2cccfc82beb"
+}

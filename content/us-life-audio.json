@@ -1613,5 +1613,133 @@
       16.84
     ],
     "silence_gap_seconds": 0.65
+  },
+  "weather alert": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a warning about dangerous weather.\nTerm to speak: weather alert",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/weather-alert-c959ced67dcc.mp3",
+    "seconds": 1.34,
+    "sha256": "1c568eaf8fc32ee7da97e05ce0e57cab73e4f0caf21a79c5d875503076b46810",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      0.08,
+      1.42
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "non-emergency number": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a police or city number for problems that are not urgent.\nTerm to speak: non-emergency number",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/non-emergency-number-8953c117d18c.mp3",
+    "seconds": 2.04,
+    "sha256": "1a1296a2b56d63d031c1005a523eb02cac145f88af579eedcd3f7d03dc46c8a3",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      3.22,
+      5.26
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "shelter": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a safe place during danger.\nTerm to speak: shelter",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/shelter-1156255ef394.mp3",
+    "seconds": 0.96,
+    "sha256": "dd23170dcff8c8e9da144bbcb107bcd1ad560e5a0d57275943dd764f53ef646d",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      6.66,
+      7.62
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "flashlight": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a small light you hold in your hand.\nTerm to speak: flashlight",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/flashlight-ffbbf3ea6e02.mp3",
+    "seconds": 1.28,
+    "sha256": "038baad28ca58dfca9cdd3a4d03fa292beb5161ecf7cecac2de22e1dd09f1584",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      9.14,
+      10.42
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "exit": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a way out of a building or place.\nTerm to speak: exit",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/exit-488dbedce835.mp3",
+    "seconds": 0.94,
+    "sha256": "efc7e53a2b3344b59dd658b25fd72ee3373dab2ecaa770ed7acaf801b6980c08",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      11.68,
+      12.62
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "first-aid kit": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a set of basic supplies for minor injuries.\nTerm to speak: first-aid kit",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/first-aid-kit-b235ae7c40c8.mp3",
+    "seconds": 1.56,
+    "sha256": "a5b671a298fbd018098cfea8fb124f7e8fcf8bb176aff40fd3f4275f04f6429d",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      13.52,
+      15.08
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "evacuation": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the act of leaving a place because of danger.\nTerm to speak: evacuation",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/evacuation-1a8f581acb9c.mp3",
+    "seconds": 1.3,
+    "sha256": "e3e458e210804f8678986c54bdfddbeb95e2df5c652fdb358530baac7ef5997b",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      16.06,
+      17.36
+    ],
+    "silence_gap_seconds": 0.65
+  },
+  "meeting point": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.8-flash-lite-tts",
+    "voice": "Kore",
+    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a place where people agree to gather.\nTerm to speak: meeting point",
+    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nweather alert.\n\nnon-emergency number.\n\nshelter.\n\nflashlight.\n\nexit.\n\nfirst-aid kit.\n\nevacuation.\n\nmeeting point.",
+    "file": "assets/audio/us-life/meeting-point-56930d13a5d4.mp3",
+    "seconds": 1.24,
+    "sha256": "a05078a740adae52870685827b6fd669de3f3d736ef6dce5d5a1ebbf30f34c97",
+    "batch_source": "content/audio-batches/53d90ffd29ad7ff266de23a0c34cfd63de404525af46b0ef7153cf179da78b39.json",
+    "batch_interval_seconds": [
+      18.32,
+      19.56
+    ],
+    "silence_gap_seconds": 0.65
   }
 }

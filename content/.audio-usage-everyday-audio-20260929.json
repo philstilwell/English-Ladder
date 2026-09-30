@@ -2047,6 +2047,50 @@
       "time": "2026-09-30T02:21:20.829166+00:00",
       "input_tokens": 323,
       "output_tokens": 138
+    },
+    {
+      "term": "service charge",
+      "model": "gemini-3.8-flash-lite-tts",
+      "usd": 0.000651,
+      "usage": "reported",
+      "time": "2026-09-30T02:23:47.842739+00:00",
+      "input_tokens": 3,
+      "output_tokens": 54
+    },
+    {
+      "term": "delay",
+      "model": "gemini-3.8-flash-lite-tts",
+      "usd": 0.000482,
+      "usage": "reported",
+      "time": "2026-09-30T02:23:54.642921+00:00",
+      "input_tokens": 2,
+      "output_tokens": 40
+    },
+    {
+      "term": "ER",
+      "model": "gemini-3.8-flash-lite-tts",
+      "usd": 0.000497,
+      "usage": "reported",
+      "time": "2026-09-30T02:24:01.443050+00:00",
+      "input_tokens": 5,
+      "output_tokens": 41
+    },
+    {
+      "term": "walk-in",
+      "model": "gemini-3.8-flash-lite-tts",
+      "usd": 0.000472,
+      "usage": "reported",
+      "time": "2026-09-30T02:24:08.243164+00:00",
+      "input_tokens": 4,
+      "output_tokens": 39
+    },
+    {
+      "phase": "independent-audio-review",
+      "usd": 0.000576,
+      "usage": "reported-tokens-conservative-input-rate",
+      "time": "2026-09-30T02:24:10.791178+00:00",
+      "input_tokens": 296,
+      "output_tokens": 112
     }
   ]
 }

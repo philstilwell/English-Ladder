@@ -1477,20 +1477,21 @@
   },
   "service charge": {
     "policy": "en-US-kore-v1",
-    "model": "gemini-2.5-flash-preview-tts",
+    "model": "gemini-3.8-flash-lite-tts",
     "voice": "Kore",
     "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: an extra amount added to a bill for service.\nTerm to speak: service charge",
     "file": "assets/audio/us-life/service-charge-30c01a211e4f.mp3",
-    "seconds": 1.6509583333333333,
-    "sha256": "621ec122ff575aafb311c3a67a3fb2b8de252926cdbf39ee7451f5005224dd18",
+    "seconds": 1.68,
+    "sha256": "bacac5f0f0c1e8f663302da0a7f6ebdf48a096ef818c1b3dc01270a899aac449",
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
-      "transcript": "service",
+      "status": "passed",
+      "transcript": "service charge",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "621ec122ff575aafb311c3a67a3fb2b8de252926cdbf39ee7451f5005224dd18"
+      "audio_sha256": "bacac5f0f0c1e8f663302da0a7f6ebdf48a096ef818c1b3dc01270a899aac449",
+      "match": "exact"
     }
   },
   "fare": {
@@ -1693,20 +1694,21 @@
   },
   "delay": {
     "policy": "en-US-kore-v1",
-    "model": "gemini-2.5-flash-preview-tts",
+    "model": "gemini-3.8-flash-lite-tts",
     "voice": "Kore",
     "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a situation in which something happens later than planned.\nTerm to speak: delay",
     "file": "assets/audio/us-life/delay-7bf268aa4085.mp3",
-    "seconds": 1.3309583333333332,
-    "sha256": "6279b8f4e96ee84ee63ffade150a1621ad88953ede87644962a3e14d23092c00",
+    "seconds": 1.24,
+    "sha256": "a5582f23e4b492faa2ad05e5dbf33000c98ec56a68bcfceac24e9216ac53a51e",
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
-      "transcript": "a delay",
+      "status": "passed",
+      "transcript": "delay",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "6279b8f4e96ee84ee63ffade150a1621ad88953ede87644962a3e14d23092c00"
+      "audio_sha256": "a5582f23e4b492faa2ad05e5dbf33000c98ec56a68bcfceac24e9216ac53a51e",
+      "match": "exact"
     }
   },
   "emergency": {
@@ -1747,20 +1749,21 @@
   },
   "ER": {
     "policy": "en-US-kore-v1",
-    "model": "gemini-2.5-flash-preview-tts",
+    "model": "gemini-3.8-flash-lite-tts",
     "voice": "Kore",
     "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: emergency room at a hospital.\nTerm to speak: ER",
     "file": "assets/audio/us-life/er-5b7e17a79d71.mp3",
-    "seconds": 1.4909583333333334,
-    "sha256": "6bcf6a7d3cf82ae2eeb943bbf4b5a7aaeab8f6902b0f8da4939de3ea291fb3ed",
+    "seconds": 1.28,
+    "sha256": "b51371dec342847df019b9b55565b27ff3dd9186ec024d456ec6590c9da6c9d2",
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
-      "transcript": "E",
+      "status": "passed",
+      "transcript": "E R",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "6bcf6a7d3cf82ae2eeb943bbf4b5a7aaeab8f6902b0f8da4939de3ea291fb3ed"
+      "audio_sha256": "b51371dec342847df019b9b55565b27ff3dd9186ec024d456ec6590c9da6c9d2",
+      "match": "exact"
     }
   },
   "prescription": {
@@ -4898,25 +4901,19 @@
     "policy": "en-US-kore-v1",
     "model": "gemini-3.8-flash-lite-tts",
     "voice": "Kore",
-    "term_specification": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a customer without an appointment.\nTerm to speak: walk-in",
-    "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\nwarning light.\n\nengine.\n\nrepair estimate.\n\nbarber.\n\nsalon.\n\ntrim.\n\nbangs.\n\nwalk-in.",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a customer without an appointment.\nTerm to speak: walk-in",
     "file": "assets/audio/us-life/walk-in-cbc1a21a1f3d.mp3",
-    "seconds": 0.78,
-    "sha256": "98e3199a418d7cabcbccb3dbf942f99944a43487c0ab9fa10862ed2cf74526e0",
-    "batch_source": "content/audio-batches/24f5662ff3a4b8d79d3c23c9f652cd605f7e5c0ae2feda141930f3fcd524bd50.json",
-    "batch_interval_seconds": [
-      12.38,
-      13.16
-    ],
-    "silence_gap_seconds": 0.65,
+    "seconds": 1.2,
+    "sha256": "a7775a7cc6cb1326d579ce7ff52482cf2efe08146aeeb70d009f0b144b0a1eed",
     "review": {
       "policy": "blind-pronunciation-transcription-v1",
       "model": "gemini-2.5-flash",
-      "status": "needs-review",
-      "transcript": "working",
+      "status": "passed",
+      "transcript": "walk-in",
       "clear_speech": true,
       "extra_speech": false,
-      "audio_sha256": "98e3199a418d7cabcbccb3dbf942f99944a43487c0ab9fa10862ed2cf74526e0"
+      "audio_sha256": "a7775a7cc6cb1326d579ce7ff52482cf2efe08146aeeb70d009f0b144b0a1eed",
+      "match": "exact"
     }
   },
   "shampoo": {

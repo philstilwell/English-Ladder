@@ -14,11 +14,19 @@ from books.cross_cultural_leadership_content import UNITS, SLUG, AUTHOR, COPYRIG
 from build_leadership_book import (
     OUT, content_hash, validate_content, validate_layout, unit_page, key_page,
     TOTAL_PAGES, KEY_START, PHRASES_START, INDEX_START, INDEX_PAGES, SOURCES_PAGE,
+    CLOZE_UNDERSCORES, CLOZE_FONT_SIZE, blank,
 )
 from work_curriculum import load_tracks
 
 
 class LeadershipBookContentTests(unittest.TestCase):
+    def test_cloze_template_has_one_fixed_width(self):
+        for number in range(1, 11):
+            markup = blank(number, '#294EDB')
+            self.assertEqual(re.findall(r'_+', markup), ['_' * CLOZE_UNDERSCORES])
+            self.assertIn(f'size="{CLOZE_FONT_SIZE}">', markup)
+            self.assertIn('&nbsp;', markup)
+
     def test_course_outline_and_content_shape(self):
         validate_content()
         track = next(t for t in load_tracks() if t['slug'] == SLUG)
@@ -160,6 +168,35 @@ class LeadershipBookPDFTests(unittest.TestCase):
                 definition_page = self.reader.pages[unit_page(i) + part]
                 self.assertEqual(targets[definition_page.indirect_reference.idnum], 12)
         self.assertEqual(sum(targets.values()), 192)
+
+    @unittest.skipIf(pdfplumber is None, 'Optional local visual-audit dependency is not installed')
+    def test_rendered_cloze_widths_are_identical_and_unbroken(self):
+        widths = []
+        with pdfplumber.open(OUT) as pdf:
+            for i, unit in enumerate(UNITS):
+                for offset in (6, 7, 8):
+                    page = pdf.pages[unit_page(i) + offset - 1]
+                    spans = []
+                    for char in page.chars:
+                        if char['text'] != '_':
+                            continue
+                        if (spans and abs(spans[-1][-1]['x1'] - char['x0']) < .1
+                                and abs(spans[-1][-1]['top'] - char['top']) < .1):
+                            spans[-1].append(char)
+                        else:
+                            spans.append([char])
+                    if offset == 8:
+                        expected = 4
+                    else:
+                        turns = unit['dialogue'][0:10] if offset == 6 else unit['dialogue'][10:20]
+                        expected = sum(len(re.findall(r'\{\{\d+\}\}', line)) for _, line in turns)
+                    self.assertEqual(len(spans), expected, page.page_number)
+                    for span in spans:
+                        self.assertEqual(len(span), CLOZE_UNDERSCORES, page.page_number)
+                        self.assertTrue(all(abs(char['size'] - CLOZE_FONT_SIZE) < .01 for char in span))
+                        widths.append(span[-1]['x1'] - span[0]['x0'])
+        self.assertEqual(len(widths), 112)
+        self.assertAlmostEqual(min(widths), max(widths), places=3)
 
     @unittest.skipIf(pdfplumber is None, 'Optional local visual-audit dependency is not installed')
     def test_printed_text_stays_on_page(self):

@@ -47,6 +47,8 @@ INDEX_START = PHRASES_START + 2
 INDEX_PAGES = math.ceil(sum(len(u['vocabulary']) for u in UNITS) / 24)
 SOURCES_PAGE = INDEX_START + INDEX_PAGES
 TOTAL_PAGES = SOURCES_PAGE
+CLOZE_UNDERSCORES = 32
+CLOZE_FONT_SIZE = 10
 
 for name, file in [('Book', 'Vera.ttf'), ('BookBold', 'VeraBd.ttf'), ('BookItalic', 'VeraIt.ttf')]:
     pdfmetrics.registerFont(TTFont(name, str(ROOT / 'assets/fonts' / file)))
@@ -65,11 +67,10 @@ def paragraph(text, width, size=10.5, leading=15, color=INK, bold=False):
     return p, height
 
 
-def blank(number, answer, accent, size=10):
-    """Keep each gap number attached and leave enough space for its phrase."""
-    answer_width = pdfmetrics.stringWidth(answer, 'Book', size)
-    count = max(11, math.ceil(answer_width * 1.15 / pdfmetrics.stringWidth('_', 'Book', size)))
-    return f'<super><font size="6.5" color="{accent}">{number}</font></super>&nbsp;' + '_' * count
+def blank(number, accent):
+    """Uniform gaps prevent their width from hinting at the answer."""
+    return (f'<super><font size="6.5" color="{accent}">{number}</font></super>&nbsp;'
+            f'<font name="Book" size="{CLOZE_FONT_SIZE}">' + '_' * CLOZE_UNDERSCORES + '</font>')
 
 
 def unit_page(index):
@@ -425,7 +426,7 @@ def dialogue(b, u, i, second=False):
         b.text(f'Continue with the word bank on page {unit_page(i) + 6}.', size=9.2, leading=13, after=15)
     start = 10 if second else 0
     for turn, (speaker, text) in enumerate(u['dialogue'][start:start + 10], start + 1):
-        rich = re.sub(r'\{\{(\d+)\}\}', lambda m: blank(m[1], answers[int(m[1]) - 1], b.accent), esc(text))
+        rich = re.sub(r'\{\{(\d+)\}\}', lambda m: blank(m[1], b.accent), esc(text))
         top = b.y
         b.block(f'{turn:02d}', LEFT, top - 1, 20, 7.7, 11, MUTED)
         b.block(f'<b>{esc(speaker)}:</b> {rich}', LEFT + 26, top, WIDTH - 26,
@@ -443,7 +444,7 @@ def transfer(b, u, i):
     answers = [q['options'][q['answer']] for q in items]
     b.bank(answers)
     for n, q in enumerate(items, 1):
-        prompt = esc(q['prompt']).replace('___', blank(n, answers[n - 1], b.accent, size=11))
+        prompt = esc(q['prompt']).replace('___', blank(n, b.accent))
         b.text(prompt, size=11, leading=16, after=15, rich=True)
     b.answer_strip(answers, i)
     b.text('Rehearse with a fixed script', size=13, leading=18, bold=True, after=10)

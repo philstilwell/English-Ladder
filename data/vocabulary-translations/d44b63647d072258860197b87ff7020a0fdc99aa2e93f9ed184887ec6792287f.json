@@ -64,7 +64,9 @@
       "ko": "고려를 위해 제안되거나 제출된.",
       "zh-Hans": "提出或提议供考虑的。",
       "es": "Sugerido o presentado para su consideración.",
-      "pt-BR": "Sugerido ou proposto para consideração."
+      "pt-BR": "Sugerido ou proposto para consideração.",
+      "fr": "Suggéré ou présenté pour examen.",
+      "de": "Vorgeschlagen oder zur Prüfung unterbreitet."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "어떤 것이 존재하는 주된 이유나 목표.",
       "zh-Hans": "某事物存在的主要原因或目标。",
       "es": "La razón o el objetivo principal por el cual algo existe.",
-      "pt-BR": "A principal razão ou objetivo para o qual algo existe."
+      "pt-BR": "A principal razão ou objetivo para o qual algo existe.",
+      "fr": "La raison principale ou l'objectif pour lequel quelque chose existe.",
+      "de": "Der Hauptgrund oder das Hauptziel, warum etwas existiert."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "미래의 긴 기간 동안 계속되거나 그와 관련된.",
       "zh-Hans": "持续或关注未来的一个很长时期。",
       "es": "Que continúa durante un largo período en el futuro, o que se ocupa de él.",
-      "pt-BR": "Que continua por um longo período no futuro, ou que se refere a ele."
+      "pt-BR": "Que continua por um longo período no futuro, ou que se refere a ele.",
+      "fr": "Qui se poursuit ou qui est lié à une longue période dans le futur.",
+      "de": "Für einen langen Zeitraum in der Zukunft andauernd oder diesen betreffend."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "집과 그 거주자들과 관련된.",
       "zh-Hans": "与房屋及其居住者相关的。",
       "es": "Relativo a una casa y a sus ocupantes.",
-      "pt-BR": "Relativo a uma casa e aos seus ocupantes."
+      "pt-BR": "Relativo a uma casa e aos seus ocupantes.",
+      "fr": "Relatif à une maison et à ses habitants.",
+      "de": "Ein Haus und seine Bewohner betreffend."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "계획이나 목적을 마음속에 가지고 있다.",
       "zh-Hans": "心中有计划或目的。",
       "es": "Tener un plan o propósito en mente.",
-      "pt-BR": "Ter um plano ou propósito em mente."
+      "pt-BR": "Ter um plano ou propósito em mente.",
+      "fr": "Avoir un plan ou un objectif en tête.",
+      "de": "Einen Plan oder eine Absicht im Sinn haben."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "어떤 것의 일부 또는 지분만을 소유하고 있는 상태.",
       "zh-Hans": "仅拥有某物的一部分或份额的状态。",
       "es": "El estado de poseer solo una porción o una parte de algo.",
-      "pt-BR": "O estado de possuir apenas uma porção ou parte de algo."
+      "pt-BR": "O estado de possuir apenas uma porção ou parte de algo.",
+      "fr": "L'état de ne posséder qu'une partie ou une part de quelque chose.",
+      "de": "Der Zustand, nur einen Teil oder Anteil an etwas zu besitzen."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "현재 일어나고 있거나 존재하는.",
       "zh-Hans": "在当前时间正在发生或存在的。",
       "es": "Que está sucediendo o existe en el momento presente.",
-      "pt-BR": "Acontecendo ou existindo no momento presente."
+      "pt-BR": "Acontecendo ou existindo no momento presente.",
+      "fr": "Qui se produit ou existe au moment présent.",
+      "de": "Zum gegenwärtigen Zeitpunkt geschehend oder existierend."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "사업이나 프로젝트, 특히 어렵거나 중요한 것.",
       "zh-Hans": "一项业务或一个项目，尤其指那些困难或重要的。",
       "es": "Un negocio o un proyecto, especialmente uno que es difícil o importante.",
-      "pt-BR": "Um negócio ou um projeto, especialmente um que é difícil ou importante."
+      "pt-BR": "Um negócio ou um projeto, especialmente um que é difícil ou importante.",
+      "fr": "Une entreprise ou un projet, surtout s'il est difficile ou important.",
+      "de": "Ein Geschäft oder ein Projekt, besonders eines, das schwierig oder wichtig ist."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:09.328365+00:00"
+    "date": "2026-09-30T00:11:26.397044+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:09.328365+00:00"
+      }
+    }
   }
 }

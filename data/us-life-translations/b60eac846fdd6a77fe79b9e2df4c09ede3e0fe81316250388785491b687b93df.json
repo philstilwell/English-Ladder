@@ -62,12 +62,47 @@
         "Se não puder comparecer, em vez de simplesmente não ir, cancele ou reagende o mais cedo possível.",
         "As datas são frequentemente escritas como mês/dia/ano. Tenha cuidado, pois 06/07 geralmente significa 7 de junho."
       ]
+    },
+    "fr": {
+      "heading": "La culture du respect des horaires et des rendez-vous",
+      "points": [
+        "Aux États-Unis, respecter l'heure de vos rendez-vous renforce la confiance. Pour un premier rendez-vous dans un nouvel endroit, il est préférable d'arriver en avance pour vous sentir plus à l'aise.",
+        "Si vous ne pouvez pas vous y rendre, ne vous absentez pas sans prévenir. Annulez ou reportez votre rendez-vous le plus tôt possible.",
+        "Les dates sont souvent écrites au format mois/jour/année. Par exemple, \"06/07\" signifie généralement le 7 juin, soyez-y attentif."
+      ]
+    },
+    "de": {
+      "heading": "Die Kultur der Pünktlichkeit und Termineinhaltung",
+      "points": [
+        "In den USA schafft die Einhaltung von Terminen Vertrauen. Es ist ratsam, zu einem neuen Ort früher zu erscheinen, um sich sicherer zu fühlen.",
+        "Wenn Sie einen Termin nicht wahrnehmen können, erscheinen Sie nicht einfach unentschuldigt. Sagen Sie so früh wie möglich ab oder ändern Sie den Termin.",
+        "Daten werden oft im Format Monat/Tag/Jahr geschrieben. Zum Beispiel bedeutet \"06/07\" meist den 7. Juni, achten Sie darauf."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:39.567637+00:00"
+    "date": "2026-09-30T00:16:35.683350+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:39.567637+00:00"
+      }
+    }
   }
 }

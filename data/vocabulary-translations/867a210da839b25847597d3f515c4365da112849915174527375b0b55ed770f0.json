@@ -56,7 +56,9 @@
       "ko": "예를 들어 회의를 위해 누군가와 함께 모이는 것. 'meet'의 과거형입니다.",
       "zh-Hans": "与某人相聚，例如开会。这是“meet”的过去式。",
       "es": "Reunirse con alguien, por ejemplo, para una reunión. Esta es la forma pasada del verbo 'meet'.",
-      "pt-BR": "Reunir-se com alguém, por exemplo, para uma reunião. Esta é a forma no passado de 'meet'."
+      "pt-BR": "Reunir-se com alguém, por exemplo, para uma reunião. Esta é a forma no passado de 'meet'.",
+      "fr": "Se retrouver avec quelqu'un, par exemple, pour une réunion. C'est le passé du verbe « meet ».",
+      "de": "Mit jemandem zusammenkommen, zum Beispiel für ein Treffen. Dies ist die Vergangenheitsform von „meet“."
     },
     {
       "id": 1,
@@ -64,7 +66,9 @@
       "ko": "사람들이 이야기하거나 글을 쓰는 주제나 내용.",
       "zh-Hans": "人们谈论或撰写的主题或事物。",
       "es": "Asuntos o cosas sobre las que la gente habla o escribe.",
-      "pt-BR": "Assuntos ou coisas sobre as quais as pessoas falam ou escrevem."
+      "pt-BR": "Assuntos ou coisas sobre as quais as pessoas falam ou escrevem.",
+      "fr": "Des sujets ou des choses dont les gens parlent ou écrivent.",
+      "de": "Themen oder Dinge, über die Menschen sprechen oder schreiben."
     },
     {
       "id": 2,
@@ -72,7 +76,9 @@
       "ko": "다른 사람과 같은 생각이나 의견을 가지는 것. 'agree'의 과거형입니다.",
       "zh-Hans": "与他人持有相同的想法或意见。这是“agree”的过去式。",
       "es": "Tener la misma idea u opinión que otra persona. Esta es la forma pasada del verbo 'agree'.",
-      "pt-BR": "Ter a mesma ideia ou opinião que outra pessoa. Esta é a forma no passado de 'agree'."
+      "pt-BR": "Ter a mesma ideia ou opinião que outra pessoa. Esta é a forma no passado de 'agree'.",
+      "fr": "Avoir la même idée ou opinion que quelqu'un d'autre. C'est le passé du verbe « agree ».",
+      "de": "Die gleiche Idee oder Meinung wie jemand anderes haben. Dies ist die Vergangenheitsform von „agree“."
     },
     {
       "id": 3,
@@ -80,7 +86,9 @@
       "ko": "사람들이 중요한 사안에 대해 논의하는 회의.",
       "zh-Hans": "人们讨论重要议题的会议。",
       "es": "Reuniones en las que la gente discute asuntos importantes.",
-      "pt-BR": "Reuniões nas quais as pessoas discutem questões importantes."
+      "pt-BR": "Reuniões nas quais as pessoas discutem questões importantes.",
+      "fr": "Des réunions où les gens discutent de questions importantes.",
+      "de": "Treffen, bei denen Menschen wichtige Themen besprechen."
     },
     {
       "id": 4,
@@ -88,7 +96,9 @@
       "ko": "두 개 이상의 단체에 의해 이루어진 공식적인 결정이나 약속.",
       "zh-Hans": "由两个或更多团体做出的正式决定或承诺。",
       "es": "Decisiones formales o promesas hechas por dos o más grupos.",
-      "pt-BR": "Decisões ou promessas formais feitas por dois ou mais grupos."
+      "pt-BR": "Decisões ou promessas formais feitas por dois ou mais grupos.",
+      "fr": "Des décisions formelles ou des promesses faites par deux groupes ou plus.",
+      "de": "Formelle Entscheidungen oder Versprechen, die von zwei oder mehr Gruppen getroffen wurden."
     },
     {
       "id": 5,
@@ -96,7 +106,9 @@
       "ko": "무언가를 계속하는 것; 멈추지 않는 것.",
       "zh-Hans": "继续做某事；不停下来。",
       "es": "Seguir haciendo algo; no detenerse.",
-      "pt-BR": "Continuar fazendo algo; não parar."
+      "pt-BR": "Continuar fazendo algo; não parar.",
+      "fr": "Continuer à faire quelque chose ; ne pas s'arrêter.",
+      "de": "Etwas weiter tun; nicht aufhören."
     },
     {
       "id": 6,
@@ -104,13 +116,34 @@
       "ko": "문제에 대한 답이나 해결책을 찾는 것. 'solve'의 과거형입니다.",
       "zh-Hans": "找到问题的答案或解决方法。这是“solve”的过去式。",
       "es": "Encontrar una respuesta o una forma de arreglar un problema. Esta es la forma pasada del verbo 'solve'.",
-      "pt-BR": "Encontrar uma resposta ou uma maneira de resolver um problema. Esta é a forma no passado de 'solve'."
+      "pt-BR": "Encontrar uma resposta ou uma maneira de resolver um problema. Esta é a forma no passado de 'solve'.",
+      "fr": "Trouver une réponse ou une solution à un problème. C'est le passé du verbe « solve ».",
+      "de": "Eine Antwort oder einen Weg finden, um ein Problem zu beheben. Dies ist die Vergangenheitsform von „solve“."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-28T14:11:33.939647+00:00"
+    "date": "2026-09-30T00:07:26.948353+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-28T14:11:33.939647+00:00"
+      }
+    }
   }
 }

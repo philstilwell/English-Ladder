@@ -54,7 +54,9 @@
       "ko": "NATO라는 동맹에 속한 여러 나라의 지도자들이 모여 하는 큰 회의.",
       "zh-Hans": "北约（一个联盟）成员国的领导人举行的大型会议。",
       "es": "Una gran reunión de líderes de diferentes países que forman parte de la OTAN, una alianza.",
-      "pt-BR": "Uma grande reunião para líderes de diferentes países que fazem parte da OTAN, uma aliança."
+      "pt-BR": "Uma grande reunião para líderes de diferentes países que fazem parte da OTAN, uma aliança.",
+      "fr": "Une grande réunion pour les dirigeants de différents pays qui font partie de l'OTAN, une alliance.",
+      "de": "Ein großes Treffen für Führungspersonen aus verschiedenen Ländern, die Teil der NATO sind, einem Bündnis."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "미국 대통령이 이동할 때 사용하는 특별한 비행기.",
       "zh-Hans": "美国总统用于出行的专用飞机。",
       "es": "El avión especial que el Presidente de los Estados Unidos utiliza para viajar.",
-      "pt-BR": "O avião especial que o Presidente dos Estados Unidos usa para viajar."
+      "pt-BR": "O avião especial que o Presidente dos Estados Unidos usa para viajar.",
+      "fr": "L'avion spécial que le Président des États-Unis utilise pour voyager.",
+      "de": "Das spezielle Flugzeug, das der Präsident der Vereinigten Staaten für Reisen benutzt."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "누군가가 사실이 아닌 것을 믿게 만들려고 사용하는 속임수나 영리한 계획.",
       "zh-Hans": "一种用来让别人相信不真实事情的诡计或巧妙计划。",
       "es": "Un truco o un plan astuto utilizado para hacer que alguien crea algo que no es verdad.",
-      "pt-BR": "Um truque ou um plano inteligente usado para fazer alguém acreditar em algo que não é verdade."
+      "pt-BR": "Um truque ou um plano inteligente usado para fazer alguém acreditar em algo que não é verdade.",
+      "fr": "Une astuce ou un plan astucieux utilisé pour faire croire à quelqu'un quelque chose qui n'est pas vrai.",
+      "de": "Ein Trick oder ein cleverer Plan, der verwendet wird, um jemanden etwas glauben zu lassen, das nicht wahr ist."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "승객을 위해 비행기에 음식과 음료를 가져다주는 차량.",
       "zh-Hans": "一种将食物和饮料送往飞机供乘客使用的车辆。",
       "es": "Un vehículo que lleva comida y bebida a los aviones para los pasajeros.",
-      "pt-BR": "Um veículo que leva comida e bebida para os aviões para os passageiros."
+      "pt-BR": "Um veículo que leva comida e bebida para os aviões para os passageiros.",
+      "fr": "Un véhicule qui apporte de la nourriture et des boissons aux avions pour les passagers.",
+      "de": "Ein Fahrzeug, das Speisen und Getränke zu Flugzeugen für Passagiere bringt."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "이란이라는 나라에서 오는 위험이나 경고.",
       "zh-Hans": "来自伊朗这个国家的危险或警告。",
       "es": "Un peligro o advertencia que proviene del país de Irán.",
-      "pt-BR": "Um perigo ou aviso vindo do país do Irã."
+      "pt-BR": "Um perigo ou aviso vindo do país do Irã.",
+      "fr": "Un danger ou un avertissement venant du pays d'Iran.",
+      "de": "Eine Gefahr oder Warnung, die vom Land Iran ausgeht."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "위험에 처하지 않거나 해로부터 보호되는 상태.",
       "zh-Hans": "没有危险，或受到保护，免受伤害。",
       "es": "No estar en peligro o estar protegido de cualquier daño.",
-      "pt-BR": "Não estar em perigo ou protegido de danos."
+      "pt-BR": "Não estar em perigo ou protegido de danos.",
+      "fr": "Non en danger ou protégé du mal.",
+      "de": "Nicht in Gefahr oder vor Schaden geschützt."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:57:47.265584+00:00"
+    "date": "2026-09-30T00:15:41.570180+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:57:47.265584+00:00"
+      }
+    }
   }
 }

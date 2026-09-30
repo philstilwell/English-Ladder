@@ -50,7 +50,9 @@
       "ko": "자신이 선택하지 않은 어떤 것을 하도록 만들어진.",
       "zh-Hans": "被迫去做他们不想做的事情。",
       "es": "Obligado a hacer algo que no eligió.",
-      "pt-BR": "Ser obrigado a fazer algo que não escolheu."
+      "pt-BR": "Ser obrigado a fazer algo que não escolheu.",
+      "fr": "obligé de faire quelque chose qu'on n'a pas choisi",
+      "de": "gezwungen sein, etwas zu tun, das man nicht selbst gewählt hat"
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "어떤 장소로 되돌아가다.",
       "zh-Hans": "回到一个地方。",
       "es": "Volver a un lugar.",
-      "pt-BR": "Voltar para um lugar."
+      "pt-BR": "Voltar para um lugar.",
+      "fr": "retourner à un endroit",
+      "de": "an einen Ort zurückkehren"
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "어떤 시간에도 ~하지 않는.",
       "zh-Hans": "在任何时候都不。",
       "es": "En ningún momento.",
-      "pt-BR": "Em nenhum momento."
+      "pt-BR": "Em nenhum momento.",
+      "fr": "à aucun moment",
+      "de": "zu keiner Zeit"
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "두 나라 사이의 경계선.",
       "zh-Hans": "两个国家之间的界线。",
       "es": "La línea entre dos países.",
-      "pt-BR": "A linha que separa dois países."
+      "pt-BR": "A linha que separa dois países.",
+      "fr": "la ligne qui sépare deux pays",
+      "de": "die Linie zwischen zwei Ländern"
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "누군가에게 어떤 것을 가질 수 있다고 말하다.",
       "zh-Hans": "表示某人可以拥有某物。",
       "es": "Decir que alguien puede tener algo.",
-      "pt-BR": "Dizer que alguém pode ter algo."
+      "pt-BR": "Dizer que alguém pode ter algo.",
+      "fr": "dire à quelqu'un qu'il peut avoir quelque chose",
+      "de": "sagen, dass jemand etwas haben kann"
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "자신이 하는 일에 대해 돈을 받다.",
       "zh-Hans": "因所做的工作而获得金钱。",
       "es": "Obtener dinero por el trabajo que se hace.",
-      "pt-BR": "Receber dinheiro pelo trabalho que se faz."
+      "pt-BR": "Receber dinheiro pelo trabalho que se faz.",
+      "fr": "obtenir de l'argent pour le travail qu'on fait",
+      "de": "Geld für geleistete Arbeit bekommen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:18.123593+00:00"
+    "date": "2026-09-30T00:12:19.511123+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:18.123593+00:00"
+      }
+    }
   }
 }

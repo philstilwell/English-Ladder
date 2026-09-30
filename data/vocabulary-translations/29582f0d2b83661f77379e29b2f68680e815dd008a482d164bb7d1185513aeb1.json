@@ -74,7 +74,9 @@
       "ko": "평소와 다르거나 매우 높은 정도로.",
       "zh-Hans": "程度异常或非常高。",
       "es": "En un grado inusual o muy alto.",
-      "pt-BR": "Em um grau incomum ou muito alto."
+      "pt-BR": "Em um grau incomum ou muito alto.",
+      "fr": "à un degré inhabituel ou très élevé",
+      "de": "in einem ungewöhnlichen oder sehr hohen Maße"
     },
     {
       "id": 1,
@@ -82,7 +84,9 @@
       "ko": "관찰될 수 있는 사건이나 과정.",
       "zh-Hans": "可以被观察到的事件或过程。",
       "es": "Un evento o proceso que puede ser observado.",
-      "pt-BR": "Um evento ou processo que pode ser observado."
+      "pt-BR": "Um evento ou processo que pode ser observado.",
+      "fr": "un événement ou un processus qui peut être observé",
+      "de": "ein Ereignis oder Prozess, der beobachtet werden kann"
     },
     {
       "id": 2,
@@ -90,7 +94,9 @@
       "ko": "특정 장소에서 시작되거나 특정 장소에서 비롯되다.",
       "zh-Hans": "在某个特定地点开始或源自某个特定地点。",
       "es": "Empieza o proviene de un lugar en particular.",
-      "pt-BR": "Começa ou vem de um lugar específico."
+      "pt-BR": "Começa ou vem de um lugar específico.",
+      "fr": "commence ou provient d'un lieu particulier",
+      "de": "beginnt oder kommt von einem bestimmten Ort"
     },
     {
       "id": 3,
@@ -98,7 +104,9 @@
       "ko": "지구를 둘러싸고 있는 기체층.",
       "zh-Hans": "围绕地球的气体层。",
       "es": "La capa de gases que rodea la Tierra.",
-      "pt-BR": "A camada de gases que envolve a Terra."
+      "pt-BR": "A camada de gases que envolve a Terra.",
+      "fr": "la couche de gaz qui entoure la Terre",
+      "de": "die Gasschicht, die die Erde umgibt"
     },
     {
       "id": 4,
@@ -106,7 +114,9 @@
       "ko": "양, 크기 또는 중요성 면에서 큰.",
       "zh-Hans": "数量、规模或重要性很大。",
       "es": "Grande en cantidad, tamaño o importancia.",
-      "pt-BR": "Grande em quantidade, tamanho ou importância."
+      "pt-BR": "Grande em quantidade, tamanho ou importância.",
+      "fr": "important en quantité, en taille ou en importance",
+      "de": "groß an Menge, Größe oder Bedeutung"
     },
     {
       "id": 5,
@@ -114,7 +124,9 @@
       "ko": "해로운 것이 어떤 사람이나 사물에 영향을 미칠 수 있는 위치에 있는.",
       "zh-Hans": "处于某种有害事物可能影响到某人或某事的位置。",
       "es": "En una posición donde algo dañino puede afectar a alguien o algo.",
-      "pt-BR": "Em uma posição onde algo prejudicial pode afetar alguém ou algo."
+      "pt-BR": "Em uma posição onde algo prejudicial pode afetar alguém ou algo.",
+      "fr": "dans une position où quelque chose de nuisible peut affecter quelqu'un ou quelque chose",
+      "de": "in einer Position, in der etwas Schädliches jemanden oder etwas beeinträchtigen kann"
     },
     {
       "id": 6,
@@ -122,7 +134,9 @@
       "ko": "물고기를 잡거나 기르는 지역이나 사업.",
       "zh-Hans": "捕捞或养殖鱼类的区域或企业。",
       "es": "Áreas o negocios donde se capturan o crían peces.",
-      "pt-BR": "Áreas ou negócios onde peixes são capturados ou criados."
+      "pt-BR": "Áreas ou negócios onde peixes são capturados ou criados.",
+      "fr": "des zones ou des entreprises où les poissons sont pêchés ou élevés",
+      "de": "Gebiete oder Unternehmen, in denen Fische gefangen oder gezüchtet werden"
     },
     {
       "id": 7,
@@ -130,7 +144,9 @@
       "ko": "바다와 그 안의 활동이나 생명에 영향을 미치는 위험.",
       "zh-Hans": "影响海洋以及其中活动或生命的危险。",
       "es": "Peligros que afectan el mar y las actividades o la vida dentro de él.",
-      "pt-BR": "Perigos que afetam o mar e as atividades ou a vida nele."
+      "pt-BR": "Perigos que afetam o mar e as atividades ou a vida nele.",
+      "fr": "des dangers qui affectent la mer et les activités ou la vie qu'elle contient",
+      "de": "Gefahren, die das Meer und die Aktivitäten oder das Leben darin betreffen"
     },
     {
       "id": 8,
@@ -138,7 +154,9 @@
       "ko": "시간이 지남에 따라 발전하거나 명확해지는.",
       "zh-Hans": "随着时间的推移而发展或变得明显。",
       "es": "Desarrollarse o hacerse evidente con el tiempo.",
-      "pt-BR": "Desenvolvendo-se ou tornando-se aparente ao longo do tempo."
+      "pt-BR": "Desenvolvendo-se ou tornando-se aparente ao longo do tempo.",
+      "fr": "se développer ou devenir apparent avec le temps",
+      "de": "sich im Laufe der Zeit entwickeln oder offensichtlich werden"
     },
     {
       "id": 9,
@@ -146,13 +164,34 @@
       "ko": "활동이나 효과를 더 강하거나 더 광범위하게 만드는 것.",
       "zh-Hans": "使某种活动或影响变得更强或更广泛。",
       "es": "Hacer una actividad o efecto más fuerte o más extenso.",
-      "pt-BR": "Tornar uma atividade ou efeito mais forte ou mais extenso."
+      "pt-BR": "Tornar uma atividade ou efeito mais forte ou mais extenso.",
+      "fr": "rendre une activité ou un effet plus fort ou plus étendu",
+      "de": "eine Aktivität oder Wirkung stärker oder umfassender machen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:04.261372+00:00"
+    "date": "2026-09-30T00:12:09.302954+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:04.261372+00:00"
+      }
+    }
   }
 }

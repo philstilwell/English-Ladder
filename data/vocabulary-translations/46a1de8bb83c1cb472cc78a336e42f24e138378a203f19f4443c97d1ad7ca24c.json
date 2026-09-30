@@ -52,7 +52,9 @@
       "ko": "사람들이 자신의 지도자나 대표자를 뽑기 위해 투표하는 때.",
       "zh-Hans": "人们投票选举他们的领导人或代表的时间。",
       "es": "Un momento en el que las personas votan para elegir a sus líderes o representantes.",
-      "pt-BR": "Um período em que as pessoas votam para escolher seus líderes ou representantes."
+      "pt-BR": "Um período em que as pessoas votam para escolher seus líderes ou representantes.",
+      "fr": "Une période où les gens votent pour choisir leurs dirigeants ou leurs représentants.",
+      "de": "Eine Zeit, in der Menschen abstimmen, um ihre Führer oder Vertreter zu wählen."
     },
     {
       "id": 1,
@@ -60,7 +62,9 @@
       "ko": "어떤 것에 대해 생각한 후에 선택을 하거나 결론에 도달하는 것.",
       "zh-Hans": "在考虑之后，就某事做出选择或得出结论。",
       "es": "Tomar una decisión o llegar a una conclusión sobre algo después de pensarlo.",
-      "pt-BR": "Fazer uma escolha ou chegar a uma conclusão sobre algo depois de pensar a respeito."
+      "pt-BR": "Fazer uma escolha ou chegar a uma conclusão sobre algo depois de pensar a respeito.",
+      "fr": "Faire un choix ou arriver à une conclusion sur quelque chose après y avoir réfléchi.",
+      "de": "Eine Wahl treffen oder nach dem Nachdenken zu einer Schlussfolgerung über etwas kommen."
     },
     {
       "id": 2,
@@ -68,7 +72,9 @@
       "ko": "독일과 같은 일부 국가에서 정부의 지도자.",
       "zh-Hans": "在一些国家（如德国）中担任政府首脑的人。",
       "es": "El líder del gobierno en algunos países, como Alemania.",
-      "pt-BR": "O líder do governo em alguns países, como a Alemanha."
+      "pt-BR": "O líder do governo em alguns países, como a Alemanha.",
+      "fr": "Le chef du gouvernement dans certains pays, comme l'Allemagne.",
+      "de": "Der Regierungschef in einigen Ländern, wie Deutschland."
     },
     {
       "id": 3,
@@ -76,7 +82,9 @@
       "ko": "사람을 걱정하거나 스트레스 받게 하는 어려운 상황이나 감정.",
       "zh-Hans": "一种让人感到担忧或压力的困难处境或感受。",
       "es": "Una situación o sentimiento difícil que te hace sentir preocupado o estresado.",
-      "pt-BR": "Uma situação ou sentimento difícil que faz você se sentir preocupado ou estressado."
+      "pt-BR": "Uma situação ou sentimento difícil que faz você se sentir preocupado ou estressado.",
+      "fr": "Une situation difficile ou un sentiment qui vous rend inquiet ou stressé.",
+      "de": "Eine schwierige Situation oder ein Gefühl, das Sie beunruhigt oder gestresst macht."
     },
     {
       "id": 4,
@@ -84,7 +92,9 @@
       "ko": "문제가 있거나 무엇인가를 하거나 처리하는 데 매우 어려움을 겪는 것.",
       "zh-Hans": "遇到问题，或觉得某事做起来或处理起来非常困难。",
       "es": "Tener problemas o encontrar algo muy difícil de hacer o de manejar.",
-      "pt-BR": "Ter problemas ou achar algo muito difícil de fazer ou lidar."
+      "pt-BR": "Ter problemas ou achar algo muito difícil de fazer ou lidar.",
+      "fr": "A des problèmes ou trouve quelque chose de très difficile à faire ou à gérer.",
+      "de": "Hat Probleme oder findet etwas sehr schwierig zu tun oder damit umzugehen."
     },
     {
       "id": 5,
@@ -92,13 +102,34 @@
       "ko": "어떤 것이나 누군가가 좋거나 받아들일 만하다고 생각하는 것.",
       "zh-Hans": "认为某事或某人是好的或可以接受的。",
       "es": "Pensar que algo o alguien es bueno o aceptable.",
-      "pt-BR": "Achar que algo ou alguém é bom ou aceitável."
+      "pt-BR": "Achar que algo ou alguém é bom ou aceitável.",
+      "fr": "Penser que quelque chose ou quelqu'un est bon ou acceptable.",
+      "de": "Denken, dass etwas oder jemand gut oder akzeptabel ist."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-20T14:35:00.661815+00:00"
+    "date": "2026-09-30T00:09:05.720600+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-20T14:35:00.661815+00:00"
+      }
+    }
   }
 }

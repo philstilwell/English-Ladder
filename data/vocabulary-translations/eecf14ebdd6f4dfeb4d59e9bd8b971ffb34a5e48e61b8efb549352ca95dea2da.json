@@ -54,7 +54,9 @@
       "ko": "보통은 마른 땅을 덮는 너무 많은 물.",
       "zh-Hans": "淹没通常干燥的土地的过量的水。",
       "es": "Demasiada agua que cubre tierra que normalmente está seca.",
-      "pt-BR": "Muita água que cobre terras que geralmente são secas."
+      "pt-BR": "Muita água que cobre terras que geralmente são secas.",
+      "fr": "Trop d'eau qui recouvre des terres habituellement sèches.",
+      "de": "Zu viel Wasser, das normalerweise trockenes Land bedeckt."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "사고, 범죄 또는 재해로 인해 다치거나 고통받는 사람들.",
       "zh-Hans": "因事故、犯罪或灾难而受伤或遭受痛苦的人。",
       "es": "Personas que resultan heridas o sufren a causa de un accidente, un crimen o un desastre.",
-      "pt-BR": "Pessoas que se machucam ou sofrem por causa de um acidente, crime ou desastre."
+      "pt-BR": "Pessoas que se machucam ou sofrem por causa de um acidente, crime ou desastre.",
+      "fr": "Des personnes qui sont blessées ou souffrent à cause d'un accident, d'un crime ou d'une catastrophe.",
+      "de": "Menschen, die durch einen Unfall, ein Verbrechen oder eine Katastrophe verletzt werden oder leiden."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "어떤 사건을 보여주는 영화나 비디오 녹화의 일부.",
       "zh-Hans": "电影或视频录制中显示某个事件的部分。",
       "es": "Parte de una película o grabación de video que muestra un evento.",
-      "pt-BR": "Parte de uma gravação de filme ou vídeo que mostra um evento."
+      "pt-BR": "Parte de uma gravação de filme ou vídeo que mostra um evento.",
+      "fr": "Partie d'un enregistrement de film ou de vidéo qui montre un événement.",
+      "de": "Ein Teil einer Film- oder Videoaufnahme, der ein Ereignis zeigt."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "비밀로 유지되거나 볼 수 없거나 찾을 수 없는 곳에 놓인.",
       "zh-Hans": "被保密或被放在一个看不见或找不到的地方。",
       "es": "Mantenido en secreto o puesto en un lugar donde no se puede ver ni encontrar.",
-      "pt-BR": "Mantido em segredo ou colocado em um lugar onde não pode ser visto ou encontrado."
+      "pt-BR": "Mantido em segredo ou colocado em um lugar onde não pode ser visto ou encontrado.",
+      "fr": "Gardé secret ou mis dans un endroit où il ne peut pas être vu ou trouvé.",
+      "de": "Geheim gehalten oder an einen Ort gebracht, wo es nicht gesehen oder gefunden werden kann."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "어떤 것이 많은 사람들에게 공개되고, 비밀로 유지되거나 사적인 것이 아닌 상태.",
       "zh-Hans": "某物被展示给许多人，而不是被保密或私人占有。",
       "es": "Cuando algo se muestra a muchas personas, no se mantiene en secreto ni en privado.",
-      "pt-BR": "Quando algo é mostrado a muitas pessoas, não é mantido em segredo ou em particular."
+      "pt-BR": "Quando algo é mostrado a muitas pessoas, não é mantido em segredo ou em particular.",
+      "fr": "Quand quelque chose est montré à de nombreuses personnes, non gardé secret ou privé.",
+      "de": "Wenn etwas vielen Menschen gezeigt wird, nicht geheim oder privat gehalten."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "무언가를 부수거나 덜 유용하게 만드는 해로움.",
       "zh-Hans": "使某物破损或失去效用的损害。",
       "es": "El daño que hace que algo esté roto o sea menos útil.",
-      "pt-BR": "Prejuízo que faz com que algo fique quebrado ou menos útil."
+      "pt-BR": "Prejuízo que faz com que algo fique quebrado ou menos útil.",
+      "fr": "Un dommage qui rend quelque chose cassé ou moins utile.",
+      "de": "Schaden, der etwas kaputt oder weniger nützlich macht."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:52.453389+00:00"
+    "date": "2026-09-30T00:12:47.006919+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:52.453389+00:00"
+      }
+    }
   }
 }

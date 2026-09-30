@@ -57,7 +57,9 @@
       "ko": "운동하는 사람들이 자주 마시는, 단백질이 많이 들어있는 음료.",
       "zh-Hans": "一种含有大量蛋白质的饮品，常被运动的人饮用。",
       "es": "Una bebida con mucha proteína, usada a menudo por personas que hacen ejercicio.",
-      "pt-BR": "Uma bebida com muita proteína, geralmente usada por pessoas que se exercitam."
+      "pt-BR": "Uma bebida com muita proteína, geralmente usada por pessoas que se exercitam.",
+      "fr": "Une boisson riche en protéines, souvent consommée par les personnes qui font de l'exercice.",
+      "de": "Ein Getränk mit viel Eiweiß, das oft von Personen getrunken wird, die Sport treiben."
     },
     {
       "id": 1,
@@ -65,7 +67,9 @@
       "ko": "많은 돈이 드는.",
       "zh-Hans": "需要花费很多钱。",
       "es": "Que cuesta mucho dinero.",
-      "pt-BR": "Que custa muito dinheiro."
+      "pt-BR": "Que custa muito dinheiro.",
+      "fr": "Coûte beaucoup d'argent.",
+      "de": "Kostet viel Geld."
     },
     {
       "id": 2,
@@ -73,7 +77,9 @@
       "ko": "어떤 가격을 가지다.",
       "zh-Hans": "具有某个价格。",
       "es": "Tener un precio determinado.",
-      "pt-BR": "Ter um certo preço."
+      "pt-BR": "Ter um certo preço.",
+      "fr": "Avoir un certain prix.",
+      "de": "Einen bestimmten Preis haben."
     },
     {
       "id": 3,
@@ -81,7 +87,9 @@
       "ko": "어떤 것에 대해 지불해야 하는 돈의 액수.",
       "zh-Hans": "你需要为某物支付的金额。",
       "es": "La cantidad de dinero que necesitas pagar por algo.",
-      "pt-BR": "A quantia de dinheiro que você precisa pagar por algo."
+      "pt-BR": "A quantia de dinheiro que você precisa pagar por algo.",
+      "fr": "La somme d'argent que vous devez payer pour quelque chose.",
+      "de": "Der Geldbetrag, den man für etwas bezahlen muss."
     },
     {
       "id": 4,
@@ -89,7 +97,9 @@
       "ko": "음식이나 제품을 만들기 위해 섞는 다양한 식료품이나 재료.",
       "zh-Hans": "你混合在一起制作食物或产品的不同食材或物品。",
       "es": "Diferentes alimentos o cosas que mezclas para hacer comida o un producto.",
-      "pt-BR": "Alimentos ou coisas diferentes que você mistura para fazer comida ou um produto."
+      "pt-BR": "Alimentos ou coisas diferentes que você mistura para fazer comida ou um produto.",
+      "fr": "Différents aliments ou choses que l'on mélange pour faire de la nourriture ou un produit.",
+      "de": "Verschiedene Lebensmittel oder Dinge, die man mischt, um Essen oder ein Produkt herzustellen."
     },
     {
       "id": 5,
@@ -97,7 +107,9 @@
       "ko": "돈이 덜 드는; 그렇게 비싸지 않은.",
       "zh-Hans": "花费更少的钱；没有那么贵。",
       "es": "Cuesta menos dinero; no tan caro.",
-      "pt-BR": "Que custa menos dinheiro; não tão caro."
+      "pt-BR": "Que custa menos dinheiro; não tão caro.",
+      "fr": "Coûte moins cher ; pas aussi cher.",
+      "de": "Kostet weniger Geld; nicht so teuer."
     },
     {
       "id": 6,
@@ -105,13 +117,34 @@
       "ko": "더 이상 지금은 아니다; 앞으로는 일어나지 않을.",
       "zh-Hans": "现在不再；将来也不会发生。",
       "es": "Ya no; que no ocurrirá en el futuro.",
-      "pt-BR": "Não mais; que não acontecerá no futuro."
+      "pt-BR": "Não mais; que não acontecerá no futuro.",
+      "fr": "Plus maintenant ; ne se produit plus à l'avenir.",
+      "de": "Nicht mehr jetzt; geschieht nicht mehr in der Zukunft."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-24T11:51:22.391640+00:00"
+    "date": "2026-09-30T00:08:23.543545+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-24T11:51:22.391640+00:00"
+      }
+    }
   }
 }

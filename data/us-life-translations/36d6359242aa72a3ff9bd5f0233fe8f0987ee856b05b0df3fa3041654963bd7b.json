@@ -62,12 +62,47 @@
         "Existem planos com contrato e sem contrato. Verifique a mensalidade, a quantidade de dados e as taxas de cancelamento.",
         "Não forneça códigos de verificação ou senhas a outras pessoas por telefone ou mensagem."
       ]
+    },
+    "fr": {
+      "heading": "Établir rapidement vos moyens de communication",
+      "points": [
+        "Aux États-Unis, les appels téléphoniques, les messages vocaux, les SMS et les e-mails sont couramment utilisés. Prenez l'habitude de consulter régulièrement votre messagerie vocale.",
+        "Il existe des forfaits avec engagement (contrat) et sans engagement. Vérifiez le coût mensuel, le volume de données et les frais de résiliation.",
+        "Ne communiquez jamais de codes d'authentification ou de mots de passe à d'autres personnes, que ce soit par téléphone ou par message."
+      ]
+    },
+    "de": {
+      "heading": "Kommunikationsmittel schnell einrichten",
+      "points": [
+        "In den USA werden Telefonanrufe, Voicemails (Anrufbeantworter), SMS und E-Mails häufig verwendet. Machen Sie es sich zur Gewohnheit, Ihre Voicemails regelmäßig abzuhören.",
+        "Es gibt Tarife mit und ohne Vertrag. Überprüfen Sie die monatlichen Kosten, das Datenvolumen und eventuelle Kündigungsgebühren.",
+        "Geben Sie niemals Authentifizierungscodes oder Passwörter per Telefon oder Nachricht an Dritte weiter."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:52.270223+00:00"
+    "date": "2026-09-30T00:16:46.286642+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:52.270223+00:00"
+      }
+    }
   }
 }

@@ -50,7 +50,9 @@
       "ko": "한 나라의 가장 높은 지도자.",
       "zh-Hans": "一个国家的最高领导人。",
       "es": "El líder de más alto rango de un país.",
-      "pt-BR": "O líder de mais alta autoridade de um país."
+      "pt-BR": "O líder de mais alta autoridade de um país.",
+      "fr": "Le plus haut dirigeant d'un pays.",
+      "de": "Der höchste Führer eines Landes."
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "하루 중 주된 식사로, 보통 저녁에 먹는 것.",
       "zh-Hans": "一天中的主餐，通常在晚上吃。",
       "es": "La comida principal del día, generalmente consumida por la noche.",
-      "pt-BR": "A principal refeição do dia, geralmente consumida à noite."
+      "pt-BR": "A principal refeição do dia, geralmente consumida à noite.",
+      "fr": "Le repas principal de la journée, généralement pris le soir.",
+      "de": "Die Hauptmahlzeit des Tages, die normalerweise am Abend gegessen wird."
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "어떤 것을 다른 사람에게 주고 그 대가로 어떤 것을 받는 것.",
       "zh-Hans": "将某物给予某人，并作为交换得到某物。",
       "es": "Darle algo a alguien y recibir algo a cambio.",
-      "pt-BR": "Dar algo a alguém e receber algo em troca."
+      "pt-BR": "Dar algo a alguém e receber algo em troca.",
+      "fr": "Donner quelque chose à quelqu'un et recevoir quelque chose en retour.",
+      "de": "Jemandem etwas geben und im Gegenzug etwas erhalten."
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "앞으로 나아가거나 나아지는 것.",
       "zh-Hans": "向前发展或改善。",
       "es": "El movimiento hacia adelante o una mejora.",
-      "pt-BR": "O avanço ou a melhoria."
+      "pt-BR": "O avanço ou a melhoria.",
+      "fr": "Un mouvement en avant ou une amélioration.",
+      "de": "Eine Vorwärtsbewegung oder eine Verbesserung."
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "다른 사람들을 이끌거나 지시하는 사람들.",
       "zh-Hans": "指导或带领他人的人。",
       "es": "Personas que guían o dirigen a otros.",
-      "pt-BR": "Pessoas que guiam ou direcionam outras."
+      "pt-BR": "Pessoas que guiam ou direcionam outras.",
+      "fr": "Des personnes qui guident ou dirigent les autres.",
+      "de": "Personen, die andere anleiten oder führen."
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "다른 사람에게 주어지는 것으로, 주로 우정이나 감사를 표현하기 위해 주는 것.",
       "zh-Hans": "送给别人的东西，通常是为了表达友谊或感谢。",
       "es": "Algo que se le da a alguien, a menudo para mostrar amistad o agradecimiento.",
-      "pt-BR": "Algo dado a alguém, muitas vezes para demonstrar amizade ou agradecimento."
+      "pt-BR": "Algo dado a alguém, muitas vezes para demonstrar amizade ou agradecimento.",
+      "fr": "Quelque chose donné à quelqu'un, souvent pour montrer de l'amitié ou de la gratitude.",
+      "de": "Etwas, das jemandem gegeben wird, oft um Freundschaft oder Dankbarkeit zu zeigen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-25T11:53:44.406172+00:00"
+    "date": "2026-09-30T00:08:12.362498+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-25T11:53:44.406172+00:00"
+      }
+    }
   }
 }

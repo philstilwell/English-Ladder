@@ -54,7 +54,9 @@
       "ko": "사람들이 새로운 지역 등에서 살기 시작하는 곳.",
       "zh-Hans": "人们开始居住的地方，通常是在一个新区域。",
       "es": "Un lugar donde las personas comienzan a vivir, a menudo en un área nueva.",
-      "pt-BR": "Um lugar onde as pessoas começam a viver, muitas vezes em uma área nova."
+      "pt-BR": "Um lugar onde as pessoas começam a viver, muitas vezes em uma área nova.",
+      "fr": "Un endroit où les gens commencent à vivre, souvent dans une nouvelle zone.",
+      "de": "Ein Ort, an dem Menschen anfangen zu leben, oft in einem neuen Gebiet."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "이전에 중단되었거나 폐쇄되었던 것을 다시 시작하는 것.",
       "zh-Hans": "重新开始之前已经停止或关闭的事情。",
       "es": "Volver a empezar algo que se había detenido o cerrado antes.",
-      "pt-BR": "Começar novamente algo que havia sido parado ou fechado antes."
+      "pt-BR": "Começar novamente algo que havia sido parado ou fechado antes.",
+      "fr": "Recommencer quelque chose qui avait été arrêté ou fermé auparavant.",
+      "de": "Etwas wieder beginnen, das zuvor gestoppt oder geschlossen wurde."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "여러 다른 나라 사람들이 어떤 일에 대해 불만을 나타내는 것.",
       "zh-Hans": "当来自不同国家的许多人表达他们对某事的不满时。",
       "es": "Cuando muchas personas de diferentes países muestran que no están contentas con algo.",
-      "pt-BR": "Quando muitas pessoas de diferentes países mostram que estão insatisfeitas com algo."
+      "pt-BR": "Quando muitas pessoas de diferentes países mostram que estão insatisfeitas com algo.",
+      "fr": "Quand de nombreuses personnes de différents pays montrent leur mécontentement à propos de quelque chose.",
+      "de": "Wenn viele Menschen aus verschiedenen Ländern zeigen, dass sie mit etwas unzufrieden sind."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "새로운 지역으로 이주하여 생활하는 최초의 가족들.",
       "zh-Hans": "最先搬到新区域并居住在那里的家庭。",
       "es": "Las primeras familias en mudarse y vivir en un área nueva.",
-      "pt-BR": "As primeiras famílias a se mudar e viver em uma nova área."
+      "pt-BR": "As primeiras famílias a se mudar e viver em uma nova área.",
+      "fr": "Les premières familles à déménager et à vivre dans une nouvelle zone.",
+      "de": "Die ersten Familien, die in ein neues Gebiet ziehen und dort leben."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "나쁜 일이 일어날까 봐 두렵거나 걱정하는 느낌.",
       "zh-Hans": "感到害怕或担心会发生不好的事情。",
       "es": "Sentir miedo o preocupación de que algo malo suceda.",
-      "pt-BR": "Sentir medo ou preocupación de que algo ruim aconteça."
+      "pt-BR": "Sentir medo ou preocupación de que algo ruim aconteça.",
+      "fr": "Ressentir de la peur ou de l'inquiétude à l'idée que quelque chose de mauvais puisse arriver.",
+      "de": "Angst haben oder besorgt sein, dass etwas Schlimmes passieren könnte."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "특정 장소에 사는 사람들.",
       "zh-Hans": "居住在特定地点的人。",
       "es": "Personas que viven en un lugar en particular.",
-      "pt-BR": "Pessoas que moram em um lugar específico."
+      "pt-BR": "Pessoas que moram em um lugar específico.",
+      "fr": "Des personnes qui vivent dans un endroit particulier.",
+      "de": "Personen, die an einem bestimmten Ort leben."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:36.153594+00:00"
+    "date": "2026-09-30T00:14:02.539087+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:36.153594+00:00"
+      }
+    }
   }
 }

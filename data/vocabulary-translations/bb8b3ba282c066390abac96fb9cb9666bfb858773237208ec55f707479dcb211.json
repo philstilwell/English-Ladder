@@ -35,7 +35,9 @@
       "ko": "어떤 것을 덜 극단적으로 만들다.",
       "zh-Hans": "使某事变得不那么极端。",
       "es": "Hacer que algo sea menos extremo.",
-      "pt-BR": "Tornar algo menos extremo."
+      "pt-BR": "Tornar algo menos extremo.",
+      "fr": "rendre quelque chose moins extrême",
+      "de": "etwas weniger extrem machen"
     },
     {
       "id": 1,
@@ -43,7 +45,9 @@
       "ko": "시간의 경과에 따라 책임감 있는 보살핌과 관리.",
       "zh-Hans": "随着时间的推移进行负责任的照料和管理。",
       "es": "El cuidado y la gestión responsables a lo largo del tiempo.",
-      "pt-BR": "Cuidado e gestão responsáveis ao longo do tempo."
+      "pt-BR": "Cuidado e gestão responsáveis ao longo do tempo.",
+      "fr": "la prise en charge et la gestion responsable sur une période prolongée",
+      "de": "verantwortungsvolle Pflege und Verwaltung über einen längeren Zeitraum"
     },
     {
       "id": 2,
@@ -51,13 +55,34 @@
       "ko": "어떤 기간에 걸쳐 계속되는.",
       "zh-Hans": "持续一段时间的。",
       "es": "Que continúa durante un periodo de tiempo.",
-      "pt-BR": "Que continua por um período de tempo."
+      "pt-BR": "Que continua por um período de tempo.",
+      "fr": "qui se poursuit sur une période de temps",
+      "de": "über einen Zeitraum hinweg fortgesetzt"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T16:06:36.213520+00:00"
+    "date": "2026-09-30T00:15:50.568838+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T16:06:36.213520+00:00"
+      }
+    }
   }
 }

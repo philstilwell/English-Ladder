@@ -61,7 +61,9 @@
       "ko": "한 나라나 지역에 사는 모든 사람들.",
       "zh-Hans": "一个国家或地区的所有人。",
       "es": "Todas las personas de un país o una zona.",
-      "pt-BR": "Todas as pessoas em um país ou área."
+      "pt-BR": "Todas as pessoas em um país ou área.",
+      "fr": "toutes les personnes d'un pays ou d'une région.",
+      "de": "alle Menschen in einem Land oder einer Gegend."
     },
     {
       "id": 1,
@@ -69,7 +71,9 @@
       "ko": "다른 사람들에게 자신의 생각이나 감정을 이야기하는 것.",
       "zh-Hans": "把自己的想法或感受告诉其他人。",
       "es": "Contarles a otras personas tus ideas o sentimientos.",
-      "pt-BR": "Contar suas ideias ou sentimentos a outras pessoas."
+      "pt-BR": "Contar suas ideias ou sentimentos a outras pessoas.",
+      "fr": "dire ses idées ou ses sentiments à d'autres personnes.",
+      "de": "anderen Menschen seine Ideen oder Gefühle mitteilen."
     },
     {
       "id": 2,
@@ -77,7 +81,9 @@
       "ko": "바람이나 햇빛처럼 고갈되지 않는 자원에서 얻는 에너지를 설명하는 말.",
       "zh-Hans": "形容来自风能或太阳能等不会耗尽的能源。",
       "es": "Que describe la energía de fuentes que no se agotarán, como el viento o la luz solar.",
-      "pt-BR": "Descreve a energia de fontes que não se esgotam, como o vento ou a luz do sol."
+      "pt-BR": "Descreve a energia de fontes que não se esgotam, como o vento ou a luz do sol.",
+      "fr": "décrivant l'énergie provenant de sources qui ne s'épuiseront pas, comme le vent ou la lumière du soleil.",
+      "de": "Energie beschreibend, die aus Quellen stammt, die nicht versiegen werden, wie Wind oder Sonnenlicht."
     },
     {
       "id": 3,
@@ -85,7 +91,9 @@
       "ko": "물건이나 서비스를 판매하는 조직.",
       "zh-Hans": "销售商品或服务的组织。",
       "es": "Una organización que vende cosas o servicios.",
-      "pt-BR": "Uma organização que vende produtos ou serviços."
+      "pt-BR": "Uma organização que vende produtos ou serviços.",
+      "fr": "une organisation qui vend des biens ou des services.",
+      "de": "eine Organisation, die Waren oder Dienstleistungen verkauft."
     },
     {
       "id": 4,
@@ -93,7 +101,9 @@
       "ko": "새로운 것을 만들거나 건설하는 것.",
       "zh-Hans": "建造或创造新事物。",
       "es": "Construir o crear algo nuevo.",
-      "pt-BR": "Construir ou criar algo novo."
+      "pt-BR": "Construir ou criar algo novo.",
+      "fr": "construire ou créer quelque chose de nouveau.",
+      "de": "etwas Neues bauen oder erschaffen."
     },
     {
       "id": 5,
@@ -101,7 +111,9 @@
       "ko": "돈이 덜 드는.",
       "zh-Hans": "花费更少的钱。",
       "es": "Que cuesta menos dinero.",
-      "pt-BR": "Que custa menos dinheiro."
+      "pt-BR": "Que custa menos dinheiro.",
+      "fr": "qui coûte moins cher.",
+      "de": "weniger Geld kostend."
     },
     {
       "id": 6,
@@ -109,7 +121,9 @@
       "ko": "물건에 대해 지불하는 금액.",
       "zh-Hans": "你为物品支付的金额。",
       "es": "Las cantidades de dinero que pagas por las cosas.",
-      "pt-BR": "As quantias de dinheiro que você paga por algo."
+      "pt-BR": "As quantias de dinheiro que você paga por algo.",
+      "fr": "les sommes d'argent que vous payez pour des choses.",
+      "de": "die Geldbeträge, die man für Dinge bezahlt."
     },
     {
       "id": 7,
@@ -117,13 +131,34 @@
       "ko": "특정 지역이나 동네에 속하는.",
       "zh-Hans": "属于特定区域或社区的。",
       "es": "Que pertenece a un área o barrio en particular.",
-      "pt-BR": "Que pertence a uma área ou vizinhança específica."
+      "pt-BR": "Que pertence a uma área ou vizinhança específica.",
+      "fr": "appartenant à une zone ou un quartier particulier.",
+      "de": "zu einem bestimmten Gebiet oder einer Nachbarschaft gehörend."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:51:56.163437+00:00"
+    "date": "2026-09-30T00:11:24.179912+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:51:56.163437+00:00"
+      }
+    }
   }
 }

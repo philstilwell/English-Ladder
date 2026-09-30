@@ -62,12 +62,47 @@
         "Se alguém ligar ou enviar uma mensagem pedindo para você pagar imediatamente com cartões-presente, criptomoedas ou aplicativos de transferência de dinheiro, desconfie de fraude.",
         "Sempre guarde recibos ou e-mails de confirmação de aluguéis, depósitos e compras grandes."
       ]
+    },
+    "fr": {
+      "heading": "Protégez votre argent",
+      "points": [
+        "Les comptes bancaires, les cartes de débit et les cartes de crédit sont pratiques, mais vérifiez toujours les frais. Faites attention en particulier aux frais mensuels, aux frais de guichet automatique (GAB) et aux frais pour solde insuffisant.",
+        "Si l'on vous demande subitement de payer par téléphone ou par message, en utilisant des cartes-cadeaux, des crypto-monnaies ou des applications de virement, suspectez une arnaque.",
+        "Pour le loyer, les dépôts de garantie et les achats importants, conservez toujours vos reçus ou e-mails de confirmation."
+      ]
+    },
+    "de": {
+      "heading": "Schützen Sie Ihr Geld",
+      "points": [
+        "Bankkonten, Debitkarten und Kreditkarten sind praktisch, aber prüfen Sie immer die Gebühren. Achten Sie besonders auf monatliche Gebühren, ATM-Gebühren und Gebühren für unzureichende Deckung.",
+        "Wenn Sie per Telefon oder Nachricht plötzlich aufgefordert werden, mit Geschenkkarten, Kryptowährungen oder Zahlungs-Apps zu bezahlen, vermuten Sie Betrug.",
+        "Bewahren Sie bei Miete, Kautionen und größeren Einkäufen immer Quittungen oder Bestätigungs-E-Mails auf."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:25.784579+00:00"
+    "date": "2026-09-30T00:16:22.906346+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:25.784579+00:00"
+      }
+    }
   }
 }

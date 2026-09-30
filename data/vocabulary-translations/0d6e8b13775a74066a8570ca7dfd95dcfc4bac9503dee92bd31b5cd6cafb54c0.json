@@ -50,7 +50,9 @@
       "ko": "일어날 수 있는 문제에 대해 사람들에게 알렸다",
       "zh-Hans": "告知人们一个可能出现的问题",
       "es": "informó a la gente sobre un posible problema",
-      "pt-BR": "informou as pessoas sobre um possível problema"
+      "pt-BR": "informou as pessoas sobre um possível problema",
+      "fr": "informer les gens d'un problème possible",
+      "de": "Personen über ein mögliches Problem informieren"
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "준비하고 있는",
       "zh-Hans": "正在做好准备",
       "es": "alistándose",
-      "pt-BR": "ficando pronto(a)"
+      "pt-BR": "ficando pronto(a)",
+      "fr": "se préparer",
+      "de": "sich bereit machen"
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "정상적인 활동을 멈추게 하는 문제",
       "zh-Hans": "阻碍正常活动的问题",
       "es": "un problema que interrumpe la actividad normal",
-      "pt-BR": "um problema que impede a atividade normal"
+      "pt-BR": "um problema que impede a atividade normal",
+      "fr": "un problème qui arrête l'activité normale",
+      "de": "ein Problem, das normale Aktivitäten unterbricht"
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "자연에 존재하거나 자연적으로 발생하는",
       "zh-Hans": "在自然界中存在或发生",
       "es": "que existe u ocurre en la naturaleza",
-      "pt-BR": "que existe ou acontece na natureza"
+      "pt-BR": "que existe ou acontece na natureza",
+      "fr": "qui existe ou se produit dans la nature",
+      "de": "in der Natur existierend oder vorkommend"
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "비, 더위, 바람과 같은 기상 조건",
       "zh-Hans": "雨、热和风等状况",
       "es": "condiciones como lluvia, calor y viento",
-      "pt-BR": "condições como chuva, calor e vento"
+      "pt-BR": "condições como chuva, calor e vento",
+      "fr": "des conditions comme la pluie, la chaleur et le vent",
+      "de": "Bedingungen wie Regen, Hitze und Wind"
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "무엇인가를 더 좋게 만드는 중",
       "zh-Hans": "使某事变得更好",
       "es": "haciendo algo mejor",
-      "pt-BR": "tornando algo melhor"
+      "pt-BR": "tornando algo melhor",
+      "fr": "rendre quelque chose meilleur",
+      "de": "etwas besser machen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:51.538163+00:00"
+    "date": "2026-09-30T00:11:58.720957+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:51.538163+00:00"
+      }
+    }
   }
 }

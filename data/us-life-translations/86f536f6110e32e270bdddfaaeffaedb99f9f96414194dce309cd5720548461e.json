@@ -62,12 +62,47 @@
         "Não é falta de educação pedir para falarem mais devagar quando você não entende. É uma expressão segura que pode ser usada mesmo por estudantes de nível iniciante.",
         "Para a primeira semana, é tranquilizador confirmar com antecedência o meio de transporte, o telefone celular, as chaves de casa, os supermercados próximos e os contatos de emergência."
       ]
+    },
+    "fr": {
+      "heading": "L'anglais essentiel juste après votre arrivée",
+      "points": [
+        "À l'aéroport ou à la gare, il est important de répondre brièvement et honnêtement. Ayez à portée de main l'adresse de votre logement, le nom de votre école ou lieu de travail, et vos contacts d'urgence.",
+        "Il n'est pas impoli de demander à quelqu'un de parler plus lentement si vous ne comprenez pas. C'est une expression sûre que même les apprenants débutants peuvent utiliser.",
+        "Pour votre première semaine, il est rassurant de confirmer à l'avance vos moyens de transport, votre téléphone portable, les clés de votre logement, les supermarchés à proximité et vos contacts d'urgence."
+      ]
+    },
+    "de": {
+      "heading": "Wesentliches Englisch direkt nach Ihrer Ankunft",
+      "points": [
+        "Am Flughafen oder Bahnhof ist es wichtig, kurz und ehrlich zu antworten. Halten Sie die Adresse Ihrer Unterkunft, den Namen Ihrer Schule oder Arbeitsstelle sowie Ihre Notfallkontakte bereit, um sie sofort vorzeigen zu können.",
+        "Es ist nicht unhöflich, jemanden zu bitten, langsamer zu sprechen, wenn Sie ihn nicht verstehen. Dies ist ein sicherer Ausdruck, den auch Lernende auf niedrigem Niveau verwenden können.",
+        "Für die erste Woche ist es beruhigend, im Voraus die Transportmittel, das Mobiltelefon, die Hausschlüssel, den nächsten Supermarkt und die Notfallkontakte zu überprüfen."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:11.293498+00:00"
+    "date": "2026-09-30T00:16:12.329964+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:11.293498+00:00"
+      }
+    }
   }
 }

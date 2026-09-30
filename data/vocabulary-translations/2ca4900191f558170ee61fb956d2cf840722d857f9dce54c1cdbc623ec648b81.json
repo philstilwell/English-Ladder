@@ -56,7 +56,9 @@
       "ko": "공무원들이 어떤 사실을 알아내기 위해 무언가를 확인하는 것.",
       "zh-Hans": "官员为查明某事的事实而进行检查。",
       "es": "revisado por funcionarios para averiguar los hechos sobre algo.",
-      "pt-BR": "verificado por autoridades para descobrir fatos sobre algo."
+      "pt-BR": "verificado por autoridades para descobrir fatos sobre algo.",
+      "fr": "vérifié par des fonctionnaires pour découvrir des faits sur quelque chose.",
+      "de": "von Beamten überprüft, um Fakten über etwas herauszufinden."
     },
     {
       "id": 1,
@@ -64,7 +66,9 @@
       "ko": "사업이나 활동을 공식적으로 통제하는 단체.",
       "zh-Hans": "官方控制某个商业或活动的团体。",
       "es": "un grupo que controla oficialmente un negocio o actividad.",
-      "pt-BR": "um grupo que controla oficialmente um negócio ou atividade."
+      "pt-BR": "um grupo que controla oficialmente um negócio ou atividade.",
+      "fr": "un groupe qui contrôle officiellement une entreprise ou une activité.",
+      "de": "eine Gruppe, die ein Geschäft oder eine Aktivität offiziell kontrolliert."
     },
     {
       "id": 2,
@@ -72,7 +76,9 @@
       "ko": "특정 목적을 위해 함께 작동하는 부품들의 집합.",
       "zh-Hans": "为特定目的协同工作的一组部件。",
       "es": "un conjunto de partes que trabajan juntas para un propósito específico.",
-      "pt-BR": "um conjunto de partes que trabalham juntas para um propósito específico."
+      "pt-BR": "um conjunto de partes que trabalham juntas para um propósito específico.",
+      "fr": "un ensemble de parties qui fonctionnent ensemble dans un but précis.",
+      "de": "eine Reihe von Teilen, die für einen bestimmten Zweck zusammenarbeiten."
     },
     {
       "id": 3,
@@ -80,7 +86,9 @@
       "ko": "어떤 것에 대해 불안하거나 불행하게 느끼는 것.",
       "zh-Hans": "对某事感到焦虑或不开心。",
       "es": "sentir ansiedad o infelicidad por algo.",
-      "pt-BR": "sentir-se ansioso ou infeliz com algo."
+      "pt-BR": "sentir-se ansioso ou infeliz com algo.",
+      "fr": "se sent anxieux ou malheureux à propos de quelque chose.",
+      "de": "sich ängstlich oder unglücklich über etwas fühlen."
     },
     {
       "id": 4,
@@ -88,7 +96,9 @@
       "ko": "18세 이상인 사람들에게만 적합한 사진이나 비디오.",
       "zh-Hans": "仅适合18岁或以上人群观看的图片或视频。",
       "es": "imágenes o videos que solo son adecuados para personas mayores de 18 años.",
-      "pt-BR": "imagens ou vídeos que são adequados apenas para pessoas com 18 anos ou mais."
+      "pt-BR": "imagens ou vídeos que são adequados apenas para pessoas com 18 anos ou mais.",
+      "fr": "des images ou des vidéos qui ne conviennent qu'aux personnes âgées de 18 ans ou plus.",
+      "de": "Bilder oder Videos, die nur für Personen ab 18 Jahren geeignet sind."
     },
     {
       "id": 5,
@@ -96,7 +106,9 @@
       "ko": "규칙이나 법을 어긴 것에 대한 벌금으로 내야 하는 돈.",
       "zh-Hans": "因违反规定或法律而必须支付的罚款。",
       "es": "dinero que se debe pagar como castigo por romper una regla o ley.",
-      "pt-BR": "quantia em dinheiro que se deve pagar como punição por desrespeitar uma regra ou lei."
+      "pt-BR": "quantia em dinheiro que se deve pagar como punição por desrespeitar uma regra ou lei.",
+      "fr": "de l'argent que vous devez payer comme punition pour avoir enfreint une règle ou une loi.",
+      "de": "Geld, das man als Strafe für das Brechen einer Regel oder eines Gesetzes zahlen muss."
     },
     {
       "id": 6,
@@ -104,13 +116,34 @@
       "ko": "규칙, 지시 또는 모범에 따라 행동하거나 복종하는 것.",
       "zh-Hans": "遵守或按照规则、指示或榜样行事。",
       "es": "obedecer o actuar de acuerdo con una regla, instrucción o ejemplo.",
-      "pt-BR": "obedecer ou agir de acordo com uma regra, instrução ou exemplo."
+      "pt-BR": "obedecer ou agir de acordo com uma regra, instrução ou exemplo.",
+      "fr": "obéir ou agir conformément à une règle, une instruction ou un exemple.",
+      "de": "einer Regel, Anweisung oder einem Beispiel gehorchen oder danach handeln."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-23T17:14:11.864984+00:00"
+    "date": "2026-09-30T00:08:30.294779+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-23T17:14:11.864984+00:00"
+      }
+    }
   }
 }

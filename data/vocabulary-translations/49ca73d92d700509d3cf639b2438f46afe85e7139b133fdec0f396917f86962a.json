@@ -50,7 +50,9 @@
       "ko": "정상적인 활동을 방해하는 문제.",
       "zh-Hans": "中断正常活动的问题。",
       "es": "Un problema que interrumpe la actividad normal.",
-      "pt-BR": "Um problema que interrompe a atividade normal."
+      "pt-BR": "Um problema que interrompe a atividade normal.",
+      "fr": "un problème qui interrompt une activité normale",
+      "de": "ein Problem, das eine normale Aktivität unterbricht"
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "어떤 일이 계획보다 늦게 발생하는 시간.",
       "zh-Hans": "事情发生时间比计划晚的时候。",
       "es": "Momentos en los que algo ocurre más tarde de lo previsto.",
-      "pt-BR": "Momentos em que algo acontece mais tarde do que o planejado."
+      "pt-BR": "Momentos em que algo acontece mais tarde do que o planejado.",
+      "fr": "des moments où quelque chose se produit plus tard que prévu",
+      "de": "Zeitpunkte, zu denen etwas später als geplant geschieht"
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "한 장소에서 다른 장소로 이동하는 데 사용되는 길.",
       "zh-Hans": "从一个地方到另一个地方所使用的路线。",
       "es": "Los caminos utilizados para viajar de un lugar a otro.",
-      "pt-BR": "As maneiras usadas para viajar de um lugar para outro."
+      "pt-BR": "As maneiras usadas para viajar de um lugar para outro.",
+      "fr": "les chemins utilisés pour voyager d'un endroit à un autre",
+      "de": "die Wege, die benutzt werden, um von einem Ort zum anderen zu reisen"
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "항공기를 조종하는 사람들.",
       "zh-Hans": "驾驶飞机的人。",
       "es": "Personas que vuelan aeronaves.",
-      "pt-BR": "Pessoas que pilotam aeronaves."
+      "pt-BR": "Pessoas que pilotam aeronaves.",
+      "fr": "des personnes qui pilotent des avions",
+      "de": "Personen, die Flugzeuge fliegen"
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "차량에 탑승했지만 운전하거나 비행하지 않는 사람들.",
       "zh-Hans": "乘坐交通工具但不驾驶或操纵它的人。",
       "es": "Personas que viajan en un vehículo sin conducirlo ni volarlo.",
-      "pt-BR": "Pessoas que viajam em um veículo e não o estão dirigindo ou pilotando."
+      "pt-BR": "Pessoas que viajam em um veículo e não o estão dirigindo ou pilotando.",
+      "fr": "des personnes voyageant dans un véhicule qui ne le conduisent pas ou ne le pilotent pas",
+      "de": "Personen, die in einem Fahrzeug reisen und es nicht selbst fahren oder fliegen"
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "발생할 가능성이 있다고 생각되지 않는 것.",
       "zh-Hans": "未曾预料会发生的事情。",
       "es": "Que no se pensaba que fuera probable que ocurriera.",
-      "pt-BR": "Que não se esperava que fosse acontecer."
+      "pt-BR": "Que não se esperava que fosse acontecer.",
+      "fr": "que l'on ne pensait pas susceptible de se produire",
+      "de": "was man nicht für wahrscheinlich hielt"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:16.435454+00:00"
+    "date": "2026-09-30T00:11:34.943755+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:16.435454+00:00"
+      }
+    }
   }
 }

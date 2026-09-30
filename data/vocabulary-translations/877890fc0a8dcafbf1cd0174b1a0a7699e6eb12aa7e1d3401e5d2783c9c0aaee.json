@@ -54,7 +54,9 @@
       "ko": "선거나 회의에서 투표를 통해 무언가를 선택하는 것.",
       "zh-Hans": "在选举或会议中通过投票来选择某事。",
       "es": "Elegir algo en una elección o reunión emitiendo un voto.",
-      "pt-BR": "Escolher algo em uma eleição ou reunião por meio de um voto."
+      "pt-BR": "Escolher algo em uma eleição ou reunião por meio de um voto.",
+      "fr": "Choisir quelque chose lors d'une élection ou d'une réunion en déposant un bulletin de vote.",
+      "de": "Bei einer Wahl oder Versammlung etwas auswählen, indem man einen Stimmzettel abgibt."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "클럽이나 조합과 같은 그룹이나 조직의 구성원이 되는 것.",
       "zh-Hans": "成为一个团体或组织的成员，比如俱乐部或工会。",
       "es": "Convertirse en miembro de un grupo u organización, como un club o un sindicato.",
-      "pt-BR": "Tornar-se membro de um grupo ou organização, como um clube ou um sindicato."
+      "pt-BR": "Tornar-se membro de um grupo ou organização, como um clube ou um sindicato.",
+      "fr": "Devenir membre d'un groupe ou d'une organisation, comme un club ou un syndicat.",
+      "de": "Mitglied einer Gruppe oder Organisation werden, wie zum Beispiel eines Vereins oder einer Gewerkschaft."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "유럽 연합으로, 함께 협력하는 많은 유럽 국가들의 모임.",
       "zh-Hans": "欧盟，一个由许多欧洲国家组成的、共同合作的组织。",
       "es": "La Unión Europea, un grupo de muchos países europeos que trabajan juntos.",
-      "pt-BR": "A União Europeia, um grupo de muitos países europeus que trabalham juntos."
+      "pt-BR": "A União Europeia, um grupo de muitos países europeus que trabalham juntos.",
+      "fr": "L'Union européenne, un groupe de nombreux pays européens qui travaillent ensemble.",
+      "de": "Die Europäische Union, eine Gruppe vieler europäischer Länder, die zusammenarbeiten."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "무언가를 받아들이기를 거부하는 것. 아이디어나 제안에 '아니요'라고 말하는 것.",
       "zh-Hans": "拒绝接受某事；对一个想法或提议说“不”。",
       "es": "Negarse a aceptar algo; decir 'no' a una idea o propuesta.",
-      "pt-BR": "Recusar-se a aceitar algo; dizer 'não' a uma ideia ou proposta."
+      "pt-BR": "Recusar-se a aceitar algo; dizer 'não' a uma ideia ou proposta.",
+      "fr": "Refuser d'accepter quelque chose; dire \"non\" à une idée ou une proposition.",
+      "de": "Etwas nicht annehmen; zu einer Idee oder einem Vorschlag \"Nein\" sagen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "멈췄던 것을 다시 시작하는 것. 예를 들어, 게임을 다시 시작하는 것처럼.",
       "zh-Hans": "在某事停止后再次开始，就像重新开始一个游戏。",
       "es": "Comenzar algo de nuevo después de que se ha detenido, como empezar un juego otra vez.",
-      "pt-BR": "Começar algo novamente depois de ter parado, como recomeçar um jogo."
+      "pt-BR": "Começar algo novamente depois de ter parado, como recomeçar um jogo.",
+      "fr": "Commencer quelque chose à nouveau après qu'il a été arrêté, comme recommencer une partie.",
+      "de": "Etwas wieder von vorne beginnen, nachdem es aufgehört hat, zum Beispiel ein Spiel neu starten."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "텔레비전이나 라디오 프로그램, 특히 뉴스를 송신하는 것을 사업으로 하는 회사나 사람.",
       "zh-Hans": "一家以传输电视或广播节目（尤其是新闻）为业务的公司或个人。",
       "es": "Una empresa o persona cuyo negocio es transmitir programas de televisión o radio, especialmente noticias.",
-      "pt-BR": "Uma empresa ou pessoa cujo negócio é transmitir programas de televisão ou rádio, especialmente notícias."
+      "pt-BR": "Uma empresa ou pessoa cujo negócio é transmitir programas de televisão ou rádio, especialmente notícias.",
+      "fr": "Une entreprise ou une personne dont le métier est de diffuser des programmes de télévision ou de radio, notamment des informations.",
+      "de": "Ein Unternehmen oder eine Person, deren Geschäft es ist, Fernseh- oder Radioprogramme, insbesondere Nachrichten, zu übertragen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:40.343901+00:00"
+    "date": "2026-09-30T00:12:40.413845+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:40.343901+00:00"
+      }
+    }
   }
 }

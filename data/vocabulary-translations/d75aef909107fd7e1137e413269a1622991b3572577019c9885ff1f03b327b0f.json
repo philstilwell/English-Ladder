@@ -56,7 +56,9 @@
       "ko": "영화, TV 프로그램 또는 연극에서 연기하는 사람.",
       "zh-Hans": "在电影、电视节目或戏剧中表演的人。",
       "es": "Una persona que actúa en películas, programas de televisión u obras de teatro.",
-      "pt-BR": "Uma pessoa que atua em filmes, programas de TV ou peças de teatro."
+      "pt-BR": "Uma pessoa que atua em filmes, programas de TV ou peças de teatro.",
+      "fr": "Une personne qui joue dans des films, des émissions de télévision ou des pièces de théâtre.",
+      "de": "Eine Person, die in Filmen, Fernsehsendungen oder Theaterstücken auftritt."
     },
     {
       "id": 1,
@@ -64,7 +66,9 @@
       "ko": "아주 중요한 일이 처음으로 일어나거나 오랫동안 기억될 때.",
       "zh-Hans": "指某件非常重要的事情首次发生或被长时间铭记的时刻。",
       "es": "Cuando algo muy importante sucede por primera vez o es recordado durante mucho tiempo.",
-      "pt-BR": "Quando algo muito importante acontece pela primeira vez ou é lembrado por muito tempo."
+      "pt-BR": "Quando algo muito importante acontece pela primeira vez ou é lembrado por muito tempo.",
+      "fr": "Quand quelque chose de très important arrive pour la première fois ou reste dans les mémoires pendant longtemps.",
+      "de": "Wenn etwas sehr Wichtiges zum ersten Mal geschieht oder lange Zeit in Erinnerung bleibt."
     },
     {
       "id": 2,
@@ -72,7 +76,9 @@
       "ko": "대회에서 또는 무언가를 아주 잘해서 얻는 상이나 물건.",
       "zh-Hans": "在比赛中或因表现出色而赢得的奖项或物品。",
       "es": "Premios o cosas que se ganan en una competición o por hacer algo muy bien.",
-      "pt-BR": "Prêmios ou coisas que você ganha em uma competição ou por fazer algo muito bem."
+      "pt-BR": "Prêmios ou coisas que você ganha em uma competição ou por fazer algo muito bem.",
+      "fr": "Des récompenses ou des choses que l'on gagne dans une compétition ou pour avoir très bien fait quelque chose.",
+      "de": "Auszeichnungen oder Dinge, die man in einem Wettbewerb oder dafür gewinnt, dass man etwas sehr gut gemacht hat."
     },
     {
       "id": 3,
@@ -80,7 +86,9 @@
       "ko": "결정을 내리기 전에 어떤 것에 대해 신중하게 생각하는 것.",
       "zh-Hans": "在做决定之前仔细思考某事。",
       "es": "Pensar cuidadosamente en algo antes de tomar una decisión.",
-      "pt-BR": "Pensar cuidadosamente sobre algo antes de tomar uma decisão."
+      "pt-BR": "Pensar cuidadosamente sobre algo antes de tomar uma decisão.",
+      "fr": "A réfléchi à quelque chose attentivement avant de prendre une décision.",
+      "de": "Hat sorgfältig über etwas nachgedacht, bevor eine Entscheidung getroffen wurde."
     },
     {
       "id": 4,
@@ -88,7 +96,9 @@
       "ko": "단체, 조직 또는 팀의 일원이 되는 것.",
       "zh-Hans": "成为某个团体、组织或团队的成员。",
       "es": "Convertirse en miembro de un grupo, organización o equipo.",
-      "pt-BR": "Tornar-se membro de um grupo, organização ou equipe."
+      "pt-BR": "Tornar-se membro de um grupo, organização ou equipe.",
+      "fr": "Devenir membre d'un groupe, d'une organisation ou d'une équipe.",
+      "de": "Mitglied einer Gruppe, Organisation oder eines Teams werden."
     },
     {
       "id": 5,
@@ -96,7 +106,9 @@
       "ko": "단어를 사용하여 어떤 언어로 말하는 것.",
       "zh-Hans": "使用语言表达或交流。",
       "es": "Utilizar palabras para comunicarse en un idioma.",
-      "pt-BR": "Usar palavras para se comunicar em um idioma."
+      "pt-BR": "Usar palavras para se comunicar em um idioma.",
+      "fr": "Utilise des mots pour parler dans une langue.",
+      "de": "Verwendet Wörter, um in einer Sprache zu sprechen."
     },
     {
       "id": 6,
@@ -104,13 +116,34 @@
       "ko": "영화, 쇼 또는 게임에서 캐릭터의 목소리를 연기하는 것.",
       "zh-Hans": "为电影、节目或游戏中的角色配音。",
       "es": "Proporcionar la voz de un personaje para una película, programa o juego.",
-      "pt-BR": "Fornecer a voz de um personagem para um filme, programa ou jogo."
+      "pt-BR": "Fornecer a voz de um personagem para um filme, programa ou jogo.",
+      "fr": "Fournit le son d'un personnage pour un film, une émission ou un jeu.",
+      "de": "Liefert die Stimme für eine Figur in einem Film, einer Sendung oder einem Spiel."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-15T15:12:07.748207+00:00"
+    "date": "2026-09-30T00:09:57.982003+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-15T15:12:07.748207+00:00"
+      }
+    }
   }
 }

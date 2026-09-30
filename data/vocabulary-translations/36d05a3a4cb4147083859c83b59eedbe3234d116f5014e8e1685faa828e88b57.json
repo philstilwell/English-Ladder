@@ -62,7 +62,9 @@
       "ko": "물의 움직임을 이용하여 생산되는 전기",
       "zh-Hans": "利用水的运动产生的电",
       "es": "Electricidad producida utilizando el movimiento del agua",
-      "pt-BR": "Eletricidade produzida utilizando o movimento da água"
+      "pt-BR": "Eletricidade produzida utilizando o movimento da água",
+      "fr": "électricité produite en utilisant le mouvement de l'eau",
+      "de": "Elektrizität, die durch die Bewegung von Wasser erzeugt wird"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "기계를 사용하여 공기나 액체를 이동시키는 것",
       "zh-Hans": "用机器移动空气或液体",
       "es": "Mover aire o líquido con una máquina",
-      "pt-BR": "Mover ar ou líquido com uma máquina"
+      "pt-BR": "Mover ar ou líquido com uma máquina",
+      "fr": "déplacer de l'air ou un liquide avec une machine",
+      "de": "Luft oder Flüssigkeit mit einer Maschine bewegen"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "뒤로 물러나거나 어떤 장소를 떠났다",
       "zh-Hans": "后退或离开一个地方",
       "es": "Se retiró o abandonó un lugar",
-      "pt-BR": "Recuou ou saiu de um lugar"
+      "pt-BR": "Recuou ou saiu de um lugar",
+      "fr": "s'est retiré ou a quitté un lieu",
+      "de": "sich zurückgezogen oder einen Ort verlassen"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "같은 가족에 속한 사람들",
       "zh-Hans": "属于同一家族的人",
       "es": "Personas que pertenecen a la misma familia",
-      "pt-BR": "Pessoas que pertencem à mesma família"
+      "pt-BR": "Pessoas que pertencem à mesma família",
+      "fr": "personnes qui appartiennent à la même famille",
+      "de": "Personen, die zur selben Familie gehören"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "무언가를 통해 움직이거나 접근하는 것을 막았다",
       "zh-Hans": "阻止了通过某物的移动或进入",
       "es": "Impidió el movimiento o el acceso a través de algo",
-      "pt-BR": "Impediu o movimento ou o acesso através de algo"
+      "pt-BR": "Impediu o movimento ou o acesso através de algo",
+      "fr": "empêché le mouvement ou l'accès à travers quelque chose",
+      "de": "die Bewegung oder den Zugang durch etwas verhindert"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "특정 목적을 위해 수행되는 조직적인 활동",
       "zh-Hans": "为特定目的而进行的有组织活动",
       "es": "Una actividad organizada llevada a cabo con un propósito particular",
-      "pt-BR": "Uma atividade organizada realizada para um propósito específico"
+      "pt-BR": "Uma atividade organizada realizada para um propósito específico",
+      "fr": "une activité organisée menée dans un but précis",
+      "de": "eine organisierte Aktivität, die zu einem bestimmten Zweck durchgeführt wird"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "특정 분야에서 자세한 지식이나 기술을 가진 사람들",
       "zh-Hans": "在特定领域拥有详细知识或技能的人",
       "es": "Personas con conocimientos o habilidades detalladas en un área particular",
-      "pt-BR": "Pessoas com conhecimento ou habilidades detalhadas em uma área específica"
+      "pt-BR": "Pessoas com conhecimento ou habilidades detalhadas em uma área específica",
+      "fr": "personnes ayant des connaissances ou des compétences détaillées dans un domaine particulier",
+      "de": "Personen mit detailliertem Wissen oder Fähigkeiten in einem bestimmten Bereich"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "매우 심각하거나 강한",
       "zh-Hans": "非常严重或强烈",
       "es": "Muy grave o fuerte",
-      "pt-BR": "Muito sério ou forte"
+      "pt-BR": "Muito sério ou forte",
+      "fr": "très grave ou intense",
+      "de": "sehr ernst oder stark"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:32.814899+00:00"
+    "date": "2026-09-30T00:12:30.868215+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:32.814899+00:00"
+      }
+    }
   }
 }

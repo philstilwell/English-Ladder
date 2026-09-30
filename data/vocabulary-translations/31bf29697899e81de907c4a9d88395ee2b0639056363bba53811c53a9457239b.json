@@ -56,7 +56,9 @@
       "ko": "무언가를 훔치는 행위; 자신의 것이 아닌 것을 가져가는 행위.",
       "zh-Hans": "偷窃物品的行为；拿走不属于自己的东西的行为。",
       "es": "Los actos de robar algo; tomar cosas ajenas.",
-      "pt-BR": "Os atos de roubar algo; pegar coisas que não lhe pertencem."
+      "pt-BR": "Os atos de roubar algo; pegar coisas que não lhe pertencem.",
+      "fr": "Les actions de voler quelque chose ; prendre des choses qui ne vous appartiennent pas.",
+      "de": "Die Handlungen, etwas zu stehlen; Dinge zu nehmen, die nicht Ihnen gehören."
     },
     {
       "id": 1,
@@ -64,7 +66,9 @@
       "ko": "더 용감하거나 위험한 일을 하는 것을 두려워하지 않는.",
       "zh-Hans": "更勇敢，或者不害怕做有风险的事情。",
       "es": "Más valiente o que no tiene miedo de hacer algo arriesgado.",
-      "pt-BR": "Mais corajoso ou que não tem medo de fazer algo arriscado."
+      "pt-BR": "Mais corajoso ou que não tem medo de fazer algo arriscado.",
+      "fr": "Plus courageux ou n'ayant pas peur de faire quelque chose de risqué.",
+      "de": "Mutiger oder keine Angst habend, etwas Riskantes zu tun."
     },
     {
       "id": 2,
@@ -72,7 +76,9 @@
       "ko": "다른 사람이나 장소에 속한 것을 허락 없이 가져갔다 (steal의 과거형).",
       "zh-Hans": "未经允许拿走了属于另一个人或地方的东西（steal的过去式）。",
       "es": "Tomó algo que pertenecía a otra persona o lugar sin permiso (pasado de steal).",
-      "pt-BR": "Pegou algo que pertencia a outra pessoa ou lugar sem permissão (passado de steal)."
+      "pt-BR": "Pegou algo que pertencia a outra pessoa ou lugar sem permissão (passado de steal).",
+      "fr": "A pris quelque chose qui appartenait à une autre personne ou à un autre endroit sans permission (passé du verbe voler).",
+      "de": "Nahm etwas, das einer anderen Person oder einem anderen Ort gehörte, ohne Erlaubnis (Vergangenheitsform von stehlen)."
     },
     {
       "id": 3,
@@ -80,7 +86,9 @@
       "ko": "특정 금액의 가치를 가지는.",
       "zh-Hans": "具有一定金钱价值的。",
       "es": "Que tiene un valor de cierta cantidad de dinero.",
-      "pt-BR": "Que tem um valor de uma certa quantia de dinheiro."
+      "pt-BR": "Que tem um valor de uma certa quantia de dinheiro.",
+      "fr": "Ayant la valeur d'une certaine somme d'argent.",
+      "de": "Einen Wert von einem bestimmten Geldbetrag habend."
     },
     {
       "id": 4,
@@ -88,7 +96,9 @@
       "ko": "누군가 또는 무언가를 위험이나 해로부터 안전하게 지키는 것.",
       "zh-Hans": "保护某人或某物免受危险或伤害。",
       "es": "Mantener a alguien o algo a salvo del peligro o daño.",
-      "pt-BR": "Manter alguém ou algo seguro do perigo ou dano."
+      "pt-BR": "Manter alguém ou algo seguro do perigo ou dano.",
+      "fr": "Garder quelqu'un ou quelque chose en sécurité face au danger ou au mal.",
+      "de": "Jemanden oder etwas vor Gefahr oder Schaden schützen."
     },
     {
       "id": 5,
@@ -96,7 +106,9 @@
       "ko": "장소나 사람을 위험이나 범죄로부터 안전하게 지키기 위해 마련된 조치나 시스템.",
       "zh-Hans": "为保护某个地方或某人免受危险或犯罪而采取的行动或建立的系统。",
       "es": "Acciones o sistemas implementados para mantener un lugar o persona a salvo del peligro o del crimen.",
-      "pt-BR": "Ações ou sistemas implementados para manter um local ou pessoa segura de perigo ou crime."
+      "pt-BR": "Ações ou sistemas implementados para manter um local ou pessoa segura de perigo ou crime.",
+      "fr": "Actions ou systèmes mis en place pour protéger un lieu ou une personne du danger ou du crime.",
+      "de": "Maßnahmen oder Systeme, die eingerichtet werden, um einen Ort oder eine Person vor Gefahr oder Verbrechen zu schützen."
     },
     {
       "id": 6,
@@ -104,13 +116,34 @@
       "ko": "그림이나 조각 같은 예술을 창조하는 사람.",
       "zh-Hans": "创作艺术作品（如绘画或雕塑）的人。",
       "es": "Una persona que crea arte, como pinturas o esculturas.",
-      "pt-BR": "Uma pessoa que cria arte, como pinturas ou esculturas."
+      "pt-BR": "Uma pessoa que cria arte, como pinturas ou esculturas.",
+      "fr": "Une personne qui crée de l'art, comme des peintures ou des sculptures.",
+      "de": "Eine Person, die Kunst schafft, wie zum Beispiel Gemälde oder Skulpturen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-12T13:47:42.196092+00:00"
+    "date": "2026-09-30T00:10:35.044388+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-12T13:47:42.196092+00:00"
+      }
+    }
   }
 }

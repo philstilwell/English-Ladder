@@ -68,7 +68,9 @@
       "ko": "존재하는 것을 알아보거나 찾아낸.",
       "zh-Hans": "识别或发现已经存在的事物。",
       "es": "Reconocer o encontrar algo que existe.",
-      "pt-BR": "Reconhecer ou encontrar algo que existe."
+      "pt-BR": "Reconhecer ou encontrar algo que existe.",
+      "fr": "reconnaître ou trouver quelque chose qui existe.",
+      "de": "etwas erkennen oder finden, das existiert."
     },
     {
       "id": 1,
@@ -76,7 +78,9 @@
       "ko": "어떤 것을 중단시키거나 정상적으로 작동하지 못하게 한.",
       "zh-Hans": "中断某事，或使其停止正常运作。",
       "es": "Interrumpir algo o hacer que deje de funcionar normalmente.",
-      "pt-BR": "Interromper algo ou fazer com que pare de funcionar normalmente."
+      "pt-BR": "Interromper algo ou fazer com que pare de funcionar normalmente.",
+      "fr": "interrompre quelque chose ou le faire cesser de fonctionner normalement.",
+      "de": "etwas unterbrechen oder dazu führen, dass es nicht mehr normal funktioniert."
     },
     {
       "id": 2,
@@ -84,7 +88,9 @@
       "ko": "해를 끼치거나 문제를 일으키려는 의도를 가진, 또는 그러한 의도로 만들어진.",
       "zh-Hans": "意图或旨在造成伤害或麻烦的。",
       "es": "Con la intención de causar daño o problemas, o creado con esa intención.",
-      "pt-BR": "Que tem a intenção ou é feito para causar dano ou problema."
+      "pt-BR": "Que tem a intenção ou é feito para causar dano ou problema.",
+      "fr": "ayant l'intention de causer du tort ou des problèmes, ou conçu dans ce but.",
+      "de": "darauf abzielend oder dazu bestimmt, Schaden oder Schwierigkeiten zu verursachen."
     },
     {
       "id": 3,
@@ -92,7 +98,9 @@
       "ko": "드러난 놀랍거나 중요한 사실들.",
       "zh-Hans": "被揭示的令人惊讶或重要的事实。",
       "es": "Hechos sorprendentes o importantes que se revelan.",
-      "pt-BR": "Fatos surpreendentes ou importantes que são revelados."
+      "pt-BR": "Fatos surpreendentes ou importantes que são revelados.",
+      "fr": "des faits surprenants ou importants qui sont révélés.",
+      "de": "überraschende oder wichtige Fakten, die aufgedeckt werden."
     },
     {
       "id": 4,
@@ -100,7 +108,9 @@
       "ko": "미래에 가능성이 있지만 아직 현실이 아닌.",
       "zh-Hans": "将来可能发生，但尚未成为现实的。",
       "es": "Posible en el futuro, pero aún no real.",
-      "pt-BR": "Possível no futuro, mas ainda não real."
+      "pt-BR": "Possível no futuro, mas ainda não real.",
+      "fr": "possible à l'avenir, mais pas encore réel.",
+      "de": "in der Zukunft möglich, aber noch nicht real."
     },
     {
       "id": 5,
@@ -108,7 +118,9 @@
       "ko": "특히 엄격하게 통제되는 국가에서, 공식적인 정책에 강력히 반대하는 사람들.",
       "zh-Hans": "强烈反对官方政策的人，尤其是在受到严格管控的国家。",
       "es": "Personas que están fuertemente en desacuerdo con las políticas oficiales, especialmente en un país con control estricto.",
-      "pt-BR": "Pessoas que discordam fortemente de políticas oficiais, especialmente em um país com controle rígido."
+      "pt-BR": "Pessoas que discordam fortemente de políticas oficiais, especialmente em um país com controle rígido.",
+      "fr": "des personnes qui sont fortement en désaccord avec les politiques officielles, surtout dans un pays où le contrôle est strict.",
+      "de": "Menschen, die mit offiziellen Richtlinien, insbesondere in einem Land mit strenger Kontrolle, stark nicht einverstanden sind."
     },
     {
       "id": 6,
@@ -116,7 +128,9 @@
       "ko": "무언가나 누군가를 해나 위험으로부터 보호하기 위해 취하는 조치.",
       "zh-Hans": "为保护某物或某人免受伤害或危险而采取的措施。",
       "es": "Medidas tomadas para proteger algo o a alguien de daños o peligros.",
-      "pt-BR": "Medidas tomadas para proteger algo ou alguém de danos ou perigos."
+      "pt-BR": "Medidas tomadas para proteger algo ou alguém de danos ou perigos.",
+      "fr": "des mesures prises pour protéger quelque chose ou quelqu'un d'un préjudice ou d'un danger.",
+      "de": "Maßnahmen, die ergriffen werden, um etwas oder jemanden vor Schaden oder Gefahr zu schützen."
     },
     {
       "id": 7,
@@ -124,7 +138,9 @@
       "ko": "갑작스럽고 큰 손상이나 고통을 야기하는.",
       "zh-Hans": "造成突然的巨大损害或痛苦的。",
       "es": "Que causa daños o sufrimientos grandes y repentinos.",
-      "pt-BR": "Que causa danos ou sofrimentos grandes e repentinos."
+      "pt-BR": "Que causa danos ou sofrimentos grandes e repentinos.",
+      "fr": "causant des dommages ou des souffrances soudains et importants.",
+      "de": "plötzlichen, großen Schaden oder Leid verursachend."
     },
     {
       "id": 8,
@@ -132,13 +148,34 @@
       "ko": "무언가를 더 큰 전체의 일부로 포함시키는 것.",
       "zh-Hans": "将某物作为更大整体的一部分包含在内。",
       "es": "Incluir algo como parte de un todo más grande.",
-      "pt-BR": "Incluir algo como parte de um todo maior."
+      "pt-BR": "Incluir algo como parte de um todo maior.",
+      "fr": "inclure quelque chose comme faisant partie d'un ensemble plus vaste.",
+      "de": "etwas als Teil eines größeren Ganzen einbeziehen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-11T13:15:06.765891+00:00"
+    "date": "2026-09-30T00:10:47.621603+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-11T13:15:06.765891+00:00"
+      }
+    }
   }
 }

@@ -64,7 +64,9 @@
       "ko": "특정 주제에 대해 자세하고 철저하게 진행된 연구나 분석.",
       "zh-Hans": "对特定主题进行详细而彻底的研究或分析。",
       "es": "Un estudio o análisis detallado y exhaustivo sobre un tema particular.",
-      "pt-BR": "Um estudo ou análise detalhada e aprofundada de um tópico específico."
+      "pt-BR": "Um estudo ou análise detalhada e aprofundada de um tópico específico.",
+      "fr": "Une étude ou une analyse détaillée et approfondie d'un sujet particulier.",
+      "de": "Eine detaillierte und gründliche Studie oder Analyse eines bestimmten Themas."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "조직, 국가 또는 시스템이 통제되고 관리되는 방식.",
       "zh-Hans": "组织、国家或系统被控制和管理的方式。",
       "es": "La forma en que una organización, país o sistema es controlado y gestionado.",
-      "pt-BR": "A forma como uma organização, país ou sistema é controlado e gerenciado."
+      "pt-BR": "A forma como uma organização, país ou sistema é controlado e gerenciado.",
+      "fr": "La manière dont une organisation, un pays ou un système est contrôlé et géré.",
+      "de": "Die Art und Weise, wie eine Organisation, ein Land oder ein System kontrolliert und verwaltet wird."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "전통적인 가치를 지지하고 변화에 저항하는 입장이나 태도.",
       "zh-Hans": "一种倾向于传统价值观并抵制改变的立场或态度。",
       "es": "Una posición o actitud que favorece los valores tradicionales y es resistente al cambio.",
-      "pt-BR": "Uma posição ou atitude que favorece valores tradicionais e é resistente a mudanças."
+      "pt-BR": "Uma posição ou atitude que favorece valores tradicionais e é resistente a mudanças.",
+      "fr": "Une position ou une attitude qui favorise les valeurs traditionnelles et résiste au changement.",
+      "de": "Eine Haltung oder Einstellung, die traditionelle Werte bevorzugt und Veränderungen gegenüber widerstandsfähig ist."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "종종 상반되거나 대조되는 두 부분이 동시에 존재하는 상태.",
       "zh-Hans": "两个通常对立或对比的部分同时存在的状态。",
       "es": "El estado de tener dos partes, a menudo opuestas o contrastantes, que existen al mismo tiempo.",
-      "pt-BR": "O estado de ter duas partes, frequentemente opostas ou contrastantes, existiendo ao mesmo tempo."
+      "pt-BR": "O estado de ter duas partes, frequentemente opostas ou contrastantes, existiendo ao mesmo tempo.",
+      "fr": "L'état d'avoir deux parties, souvent opposées ou contrastées, existant en même temps.",
+      "de": "Der Zustand, zwei oft gegensätzliche oder kontrastierende Teile zu haben, die gleichzeitig existieren."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "어떤 것의 의미를 이해하는 방법.",
       "zh-Hans": "理解事物意义的方式。",
       "es": "Formas de entender el significado de algo.",
-      "pt-BR": "Maneiras de entender o significado de algo."
+      "pt-BR": "Maneiras de entender o significado de algo.",
+      "fr": "des façons de comprendre la signification de quelque chose",
+      "de": "Arten, die Bedeutung von etwas zu verstehen"
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "어떤 것, 특히 범죄나 사고에 대한 진실을 밝히기 위해 사실을 공식적으로 조사하는 것.",
       "zh-Hans": "对事实进行的官方审查，旨在发现某事（特别是犯罪或事故）的真相。",
       "es": "Un examen oficial de los hechos para descubrir la verdad sobre algo, especialmente un crimen o accidente.",
-      "pt-BR": "Um exame oficial de fatos para descobrir a verdade sobre algo, especialmente um crime ou acidente."
+      "pt-BR": "Um exame oficial de fatos para descobrir a verdade sobre algo, especialmente um crime ou acidente.",
+      "fr": "Un examen officiel des faits pour découvrir la vérité sur quelque chose, en particulier un crime ou un accident.",
+      "de": "Eine offizielle Untersuchung von Fakten, um die Wahrheit über etwas, insbesondere ein Verbrechen oder einen Unfall, herauszufinden."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "현재 시간에 속하는 것.",
       "zh-Hans": "属于现在的时间。",
       "es": "Perteneciente al tiempo presente.",
-      "pt-BR": "Pertencente ao tempo presente."
+      "pt-BR": "Pertencente ao tempo presente.",
+      "fr": "appartenant à l'époque actuelle",
+      "de": "zur gegenwärtigen Zeit gehörend"
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "계획이나 결정을 실행에 옮기는 것.",
       "zh-Hans": "将计划或决定付诸实施。",
       "es": "Poner en práctica un plan o una decisión.",
-      "pt-BR": "Colocar um plano ou decisão em prática."
+      "pt-BR": "Colocar um plano ou decisão em prática.",
+      "fr": "mettre un plan ou une décision en action",
+      "de": "einen Plan oder eine Entscheidung in die Tat umsetzen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:01.848150+00:00"
+    "date": "2026-09-30T00:13:38.215572+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:01.848150+00:00"
+      }
+    }
   }
 }

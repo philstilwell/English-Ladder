@@ -64,7 +64,9 @@
       "ko": "사람이나 조직이 이행할 것으로 기대되는 의무나 과제.",
       "zh-Hans": "一个人或一个组织被期望完成的职责或任务。",
       "es": "Deberes o tareas que se espera que una persona u organización cumpla.",
-      "pt-BR": "Deveres ou tarefas que se espera que uma pessoa ou organização cumpra."
+      "pt-BR": "Deveres ou tarefas que se espera que uma pessoa ou organização cumpra.",
+      "fr": "des devoirs ou des tâches qu'une personne ou une organisation est censée accomplir",
+      "de": "Pflichten oder Aufgaben, die eine Person oder Organisation erfüllen soll"
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "어떤 것의 중요성이나 진실을 강조하거나 부각시켜 주의를 끄는 것.",
       "zh-Hans": "强调或突出某事的重要性或真实性，引起人们的注意。",
       "es": "Enfatiza o resalta la importancia o la verdad de algo, llamando la atención sobre ello.",
-      "pt-BR": "Enfatiza ou destaca a importância ou a verdade de algo, chamando a atenção para isso."
+      "pt-BR": "Enfatiza ou destaca a importância ou a verdade de algo, chamando a atenção para isso.",
+      "fr": "Met l'accent sur l'importance ou la vérité de quelque chose, attirant l'attention sur cela.",
+      "de": "Betont oder hebt die Wichtigkeit oder Wahrheit von etwas hervor und lenkt die Aufmerksamkeit darauf."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "무엇인가를 하겠다는 확고한 약속.",
       "zh-Hans": "做某事的坚定承诺。",
       "es": "Una promesa firme de hacer algo.",
-      "pt-BR": "Uma promessa firme de fazer algo."
+      "pt-BR": "Uma promessa firme de fazer algo.",
+      "fr": "une promesse ferme de faire quelque chose",
+      "de": "ein festes Versprechen, etwas zu tun"
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "관련된 사람들이 수락한 결정이나 합의.",
       "zh-Hans": "参与者接受的决定或安排。",
       "es": "Una decisión o acuerdo aceptado por las personas involucradas.",
-      "pt-BR": "Uma decisão ou acordo aceito por las personas involucradas."
+      "pt-BR": "Uma decisão ou acordo aceito por las personas involucradas.",
+      "fr": "une décision ou un arrangement accepté par les personnes impliquées",
+      "de": "eine Entscheidung oder Vereinbarung, die von den Beteiligten akzeptiert wurde"
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "자신의 용도를 위해 상품이나 서비스를 구매하는 사람들.",
       "zh-Hans": "购买商品或服务供自己使用的人。",
       "es": "Personas que compran bienes o servicios para su propio uso.",
-      "pt-BR": "Pessoas que compram bens ou serviços para seu próprio uso."
+      "pt-BR": "Pessoas que compram bens ou serviços para seu próprio uso.",
+      "fr": "des personnes qui achètent des biens ou des services pour leur propre usage",
+      "de": "Personen, die Waren oder Dienstleistungen für den eigenen Gebrauch kaufen"
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "어떤 것을 공식적으로, 공개적으로 또는 강하게 언급했다.",
       "zh-Hans": "正式地、公开地或强烈地声明某事。",
       "es": "Declaró algo oficialmente, públicamente o con firmeza.",
-      "pt-BR": "Afirmou algo oficialmente, publicamente ou com força."
+      "pt-BR": "Afirmou algo oficialmente, publicamente ou com força.",
+      "fr": "A déclaré quelque chose officiellement, publiquement ou avec force.",
+      "de": "Hat etwas offiziell, öffentlich oder nachdrücklich erklärt."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "특정 국가 내의 활동과 관련된.",
       "zh-Hans": "与特定国家内部的活动相关的。",
       "es": "Conectado con actividades dentro de un país en particular.",
-      "pt-BR": "Conectado com atividades dentro de um país específico."
+      "pt-BR": "Conectado com atividades dentro de um país específico.",
+      "fr": "lié aux activités à l'intérieur d'un pays particulier",
+      "de": "verbunden mit Aktivitäten innerhalb eines bestimmten Landes"
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "말하거나 행해진 어떤 것에 대한 답변이나 반응.",
       "zh-Hans": "对已经说过或做过的事情的回应或反应。",
       "es": "Una respuesta o reacción a algo que se ha dicho o hecho.",
-      "pt-BR": "Uma resposta ou reação a algo que foi dito ou feito."
+      "pt-BR": "Uma resposta ou reação a algo que foi dito ou feito.",
+      "fr": "Une réponse ou une réaction à quelque chose qui a été dit ou fait.",
+      "de": "Eine Antwort oder Reaktion auf etwas, das gesagt oder getan wurde."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:14.453899+00:00"
+    "date": "2026-09-30T00:13:48.649551+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:14.453899+00:00"
+      }
+    }
   }
 }

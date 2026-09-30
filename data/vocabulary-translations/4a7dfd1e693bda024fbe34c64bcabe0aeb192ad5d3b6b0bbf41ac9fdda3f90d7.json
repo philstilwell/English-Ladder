@@ -54,7 +54,9 @@
       "ko": "어떤 사람에게 있을 수 있는 위험이나 문제에 대해 알려주다.",
       "zh-Hans": "告诉某人可能存在的危险或问题。",
       "es": "Informar a alguien sobre un posible peligro o problema.",
-      "pt-BR": "Informar alguém sobre um possível perigo ou problema."
+      "pt-BR": "Informar alguém sobre um possível perigo ou problema.",
+      "fr": "Informe quelqu'un d'un danger ou d'un problème possible.",
+      "de": "Sagt jemandem, dass es eine mögliche Gefahr oder ein Problem gibt."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "어떤 사람에게 무언가를 주다; 무언가를 제공하다.",
       "zh-Hans": "把某物给某人；提供某物。",
       "es": "Dar algo a alguien; proporcionar algo.",
-      "pt-BR": "Dar algo a alguém; fornecer algo."
+      "pt-BR": "Dar algo a alguém; fornecer algo.",
+      "fr": "A donné quelque chose à quelqu'un; a fourni quelque chose.",
+      "de": "Hat jemandem etwas gegeben; hat etwas bereitgestellt."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "어떤 행동에 대해 결과를 겪거나 처벌을 받게 될 것이다.",
       "zh-Hans": "将会为某个行为承担后果或面临惩罚。",
       "es": "Sufrirá las consecuencias o enfrentará un castigo por una acción.",
-      "pt-BR": "Sofrerá as consequências ou enfrentará punição por uma ação."
+      "pt-BR": "Sofrerá as consequências ou enfrentará punição por uma ação.",
+      "fr": "Subira des conséquences ou fera face à une punition pour une action.",
+      "de": "Wird Konsequenzen tragen oder für eine Handlung bestraft werden."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "어떤 사람이 잘못했거나 나쁜 일에 책임이 있다고 말하다.",
       "zh-Hans": "指出某人做了错事或应该为某件坏事负责。",
       "es": "Decir que alguien hizo algo malo o es responsable de algo negativo.",
-      "pt-BR": "Dizer que alguém fez algo errado ou é responsável por algo ruim."
+      "pt-BR": "Dizer que alguém fez algo errado ou é responsável por algo ruim.",
+      "fr": "Dit que quelqu'un a fait quelque chose de mal ou est responsable de quelque chose de mauvais.",
+      "de": "Sagt, dass jemand etwas Falsches getan hat oder für etwas Schlechtes verantwortlich ist."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "다른 국가나 사람을 향한 화내거나 폭력적인 행동.",
       "zh-Hans": "针对另一个国家或人的愤怒或暴力行为。",
       "es": "Comportamiento agresivo o violento hacia otro país o persona.",
-      "pt-BR": "Comportamento raivoso ou violento em relação a outro país ou pessoa."
+      "pt-BR": "Comportamento raivoso ou violento em relação a outro país ou pessoa.",
+      "fr": "Comportement en colère ou violent envers un autre pays ou une autre personne.",
+      "de": "Wütendes oder gewalttätiges Verhalten gegenüber einem anderen Land oder einer anderen Person."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "조종사 없이 나는 기계. 카메라나 무기를 실을 수 있다.",
       "zh-Hans": "没有飞行员的飞行器。它们可以携带摄像机或武器。",
       "es": "Máquinas voladoras sin piloto. Pueden llevar cámaras o armas.",
-      "pt-BR": "Máquinas voadoras sem piloto. Elas podem carregar câmeras ou armas."
+      "pt-BR": "Máquinas voadoras sem piloto. Elas podem carregar câmeras ou armas.",
+      "fr": "Machines volantes sans pilote. Elles peuvent transporter des caméras ou des armes.",
+      "de": "Flugmaschinen ohne Pilot. Sie können Kameras oder Waffen tragen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:56:19.483419+00:00"
+    "date": "2026-09-30T00:14:35.709576+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:56:19.483419+00:00"
+      }
+    }
   }
 }

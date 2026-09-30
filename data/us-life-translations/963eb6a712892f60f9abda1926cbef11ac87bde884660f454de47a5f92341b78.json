@@ -62,12 +62,47 @@
         "O serviço de reencaminhamento de correspondência do USPS é conveniente, mas você deve notificar a mudança de endereço diretamente a bancos, escolas, médicos, empregadores e agências governamentais.",
         "Verifique as encomendas usando o tracking number. Se não chegar, entre em contato com a empresa de entrega, o administrador do prédio ou o remetente."
       ]
+    },
+    "fr": {
+      "heading": "Votre adresse doit être détaillée et précise.",
+      "points": [
+        "Si le numéro d'appartement, le numéro d'unité ou le code postal (ZIP code) est manquant, votre courrier pourrait ne pas vous parvenir. Écrivez l'adresse avec précision, ligne par ligne.",
+        "Le service de réexpédition de courrier de l'USPS est pratique, mais vous devez informer vous-même les banques, les écoles, les médecins, les employeurs et les agences gouvernementales de votre nouvelle adresse.",
+        "Vérifiez vos colis à l'aide du numéro de suivi (\"tracking number\"). S'il n'arrive pas, veuillez contacter la société de livraison, le gestionnaire de l'immeuble ou l'expéditeur."
+      ]
+    },
+    "de": {
+      "heading": "Ihre Adresse muss detailliert und genau sein.",
+      "points": [
+        "Wenn die Wohnungsnummer, Zimmernummer oder Postleitzahl (ZIP-Code) fehlt, kann Ihre Post möglicherweise nicht zugestellt werden. Schreiben Sie die Adresse Zeile für Zeile genau auf.",
+        "Die Nachsendung von Post durch USPS ist praktisch, aber Sie müssen Banken, Schulen, Ärzte, Arbeitgeber und Behörden selbst über Ihre neue Adresse informieren.",
+        "Verfolgen Sie Pakete mit der Sendungsnummer (\"tracking number\"). Wenn es nicht ankommt, wenden Sie sich bitte an das Lieferunternehmen, den Hausverwalter oder den Absender."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:53.485910+00:00"
+    "date": "2026-09-30T00:16:48.618568+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:53.485910+00:00"
+      }
+    }
   }
 }

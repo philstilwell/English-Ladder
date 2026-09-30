@@ -62,12 +62,47 @@
         "O horário de chegada do técnico de reparos pode ser uma janela, como das 9h às 13h. Certifique-se de ter sua agenda disponível.",
         "As regras para lixo, reciclagem e itens volumosos variam de acordo com a região ou o edifício. É comum perguntar aos vizinhos ou ao síndico/administrador."
       ]
+    },
+    "fr": {
+      "heading": "Signalez les problèmes de la maison rapidement et avec précision",
+      "points": [
+        "Contactez rapidement en cas de fuite d'eau, de problème de chauffage, d'électricité, d'insectes ou de clés. Indiquer brièvement l'emplacement, le problème et le moment où il a commencé permet une intervention plus rapide.",
+        "L'heure d'arrivée du réparateur peut être une plage horaire, par exemple de 9h00 à 13h00. Veuillez vous assurer d'être disponible pendant cette période.",
+        "Les règles concernant les déchets, le recyclage et les gros articles varient selon la région et le bâtiment. Il est courant de demander aux voisins ou au gestionnaire de l'immeuble."
+      ]
+    },
+    "de": {
+      "heading": "Melden Sie Probleme im Haushalt frühzeitig und präzise",
+      "points": [
+        "Melden Sie Probleme wie Wasseraustritt, Heizung, Strom, Insekten oder Schlüssel umgehend. Eine kurze Angabe des Ortes, des Problems und des Zeitpunkts des Beginns beschleunigt die Reaktion.",
+        "Die Ankunftszeit des Reparaturdienstes kann ein Zeitfenster sein, zum Beispiel von 9:00 Uhr bis 13:00 Uhr. Halten Sie sich in dieser Zeit bereit.",
+        "Die Regeln für Müll, Recycling und große Gegenstände variieren je nach Region und Gebäude. Es ist üblich, Nachbarn oder den Hausverwalter zu fragen."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:11.788117+00:00"
+    "date": "2026-09-30T00:16:11.376064+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:11.788117+00:00"
+      }
+    }
   }
 }

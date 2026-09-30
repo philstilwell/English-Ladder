@@ -63,7 +63,9 @@
       "ko": "어떤 것을 바꾸지 않고 그대로 유지한 것.",
       "zh-Hans": "没有改变某物；保持它。",
       "es": "No cambió algo; lo mantuvo.",
-      "pt-BR": "Não mudou algo; manteve-o."
+      "pt-BR": "Não mudou algo; manteve-o.",
+      "fr": "n'a pas changé quelque chose; l'a maintenu.",
+      "de": "hat etwas nicht geändert; hat es beibehalten."
     },
     {
       "id": 1,
@@ -71,7 +73,9 @@
       "ko": "은행이 돈을 빌려줄 때 부과하거나 저축할 때 지불하는 금액.",
       "zh-Hans": "银行向你收取贷款或为你存款支付的金额。",
       "es": "La cantidad de dinero que los bancos te cobran por pedir prestado o te pagan por ahorrar.",
-      "pt-BR": "A quantia de dinheiro que os bancos cobram de você para emprestar ou pagam para você economizar."
+      "pt-BR": "A quantia de dinheiro que os bancos cobram de você para emprestar ou pagam para você economizar.",
+      "fr": "la somme d'argent que les banques vous facturent pour un emprunt ou vous versent pour une épargne.",
+      "de": "der Geldbetrag, den Banken Ihnen für einen Kredit berechnen oder Ihnen für Sparguthaben zahlen."
     },
     {
       "id": 2,
@@ -79,7 +83,9 @@
       "ko": "아마도 사실이거나 일어날 가능성이 있는.",
       "zh-Hans": "可能是真的或即将发生。",
       "es": "Que es probablemente cierto o que va a suceder.",
-      "pt-BR": "Provavelmente verdadeiro ou que vai acontecer."
+      "pt-BR": "Provavelmente verdadeiro ou que vai acontecer.",
+      "fr": "probablement vrai ou qui va arriver.",
+      "de": "wahrscheinlich wahr oder wird passieren."
     },
     {
       "id": 3,
@@ -87,7 +93,9 @@
       "ko": "가스나 전기와 같은 연료의 비용.",
       "zh-Hans": "汽油和电力等燃料的成本。",
       "es": "El costo de combustibles como el gas y la electricidad.",
-      "pt-BR": "O custo de combustíveis como gás e eletricidade."
+      "pt-BR": "O custo de combustíveis como gás e eletricidade.",
+      "fr": "le coût du carburant comme le gaz et l'électricité.",
+      "de": "die Kosten für Brennstoffe wie Gas und Elektrizität."
     },
     {
       "id": 4,
@@ -95,7 +103,9 @@
       "ko": "무언가를 안내하거나 제한하는 것, 하지만 항상 완전히는 아님.",
       "zh-Hans": "引导或限制某物，但不一定能完全控制。",
       "es": "Guiar o limitar algo, pero no siempre por completo.",
-      "pt-BR": "Guiar ou limitar algo, mas nem sempre completamente."
+      "pt-BR": "Guiar ou limitar algo, mas nem sempre completamente.",
+      "fr": "guider ou limiter quelque chose, mais pas toujours complètement.",
+      "de": "etwas lenken oder begrenzen, aber nicht immer vollständig."
     },
     {
       "id": 5,
@@ -103,7 +113,9 @@
       "ko": "많은 물건의 가격이 오르는 것.",
       "zh-Hans": "许多商品价格上涨。",
       "es": "Cuando los precios de muchas cosas suben.",
-      "pt-BR": "Quando os preços de muitas coisas sobem."
+      "pt-BR": "Quando os preços de muitas coisas sobem.",
+      "fr": "quand les prix de beaucoup de choses augmentent.",
+      "de": "wenn die Preise für viele Dinge steigen."
     },
     {
       "id": 6,
@@ -111,7 +123,9 @@
       "ko": "나중에 갚아야 할 돈을 은행에서 빌리는 것.",
       "zh-Hans": "从银行借钱，以后必须还清。",
       "es": "Tomar dinero de un banco que debes devolver más tarde.",
-      "pt-BR": "Pegar dinheiro de um banco que você deve devolver mais tarde."
+      "pt-BR": "Pegar dinheiro de um banco que você deve devolver mais tarde.",
+      "fr": "prendre de l'argent à une banque que vous devez rembourser plus tard.",
+      "de": "Geld von einer Bank nehmen, das man später zurückzahlen muss."
     },
     {
       "id": 7,
@@ -119,13 +133,34 @@
       "ko": "나중에 사용하기 위해 보통 은행에 보관하는 돈.",
       "zh-Hans": "你存放在银行的钱，通常是为了以后使用。",
       "es": "Dinero que guardas en un banco, normalmente para usar más tarde.",
-      "pt-BR": "Dinheiro que você guarda em um banco, geralmente para usar mais tarde."
+      "pt-BR": "Dinheiro que você guarda em um banco, geralmente para usar mais tarde.",
+      "fr": "l'argent que vous gardez dans une banque, généralement pour l'utiliser plus tard.",
+      "de": "Geld, das man bei einer Bank aufbewahrt, normalerweise um es später zu verwenden."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-17T15:13:32.104527+00:00"
+    "date": "2026-09-30T00:09:39.308771+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-17T15:13:32.104527+00:00"
+      }
+    }
   }
 }

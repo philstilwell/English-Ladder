@@ -62,7 +62,9 @@
       "ko": "어려움에 처한 사람들에게 도움을 주는 단체.",
       "zh-Hans": "向有需要的人提供帮助的组织。",
       "es": "Organizaciones que proporcionan ayuda a personas que la necesitan.",
-      "pt-BR": "Organizações que fornecem ajuda a pessoas necessitadas."
+      "pt-BR": "Organizações que fornecem ajuda a pessoas necessitadas.",
+      "fr": "organisations qui apportent de l'aide aux personnes dans le besoin",
+      "de": "Organisationen, die Menschen in Not Hilfe leisten"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "임시적인 보호나 머무를 곳을 제공하는 장소.",
       "zh-Hans": "提供临时保护或住宿的地方。",
       "es": "Lugares que proporcionan protección temporal o un sitio donde quedarse.",
-      "pt-BR": "Lugares que oferecem proteção temporária ou um local para ficar."
+      "pt-BR": "Lugares que oferecem proteção temporária ou um local para ficar.",
+      "fr": "des endroits qui offrent une protection temporaire ou un lieu où rester",
+      "de": "Orte, die vorübergehenden Schutz oder eine Unterkunft bieten"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "누군가 머물거나 살 수 있는 장소.",
       "zh-Hans": "某人可以停留或居住的地方。",
       "es": "Un lugar donde alguien puede alojarse o vivir.",
-      "pt-BR": "Um lugar onde alguém pode ficar ou morar."
+      "pt-BR": "Um lugar onde alguém pode ficar ou morar.",
+      "fr": "un endroit où quelqu'un peut rester ou vivre",
+      "de": "ein Ort, an dem jemand wohnen oder leben kann"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "어떤 사람이 자유롭게 무언가를 하기로 결정했기 때문에.",
       "zh-Hans": "因为某人自由地决定做某事。",
       "es": "Porque alguien decide libremente hacer algo.",
-      "pt-BR": "Porque alguém decide livremente fazer algo."
+      "pt-BR": "Porque alguém decide livremente fazer algo.",
+      "fr": "parce que quelqu'un décide librement de faire quelque chose",
+      "de": "weil jemand freiwillig entscheidet, etwas zu tun"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "모든 사람이 마땅히 받아야 할 가치와 존중.",
       "zh-Hans": "每个人都应得的价值和尊重。",
       "es": "El valor y el respeto que toda persona merece.",
-      "pt-BR": "O valor e o respeito que toda pessoa merece."
+      "pt-BR": "O valor e o respeito que toda pessoa merece.",
+      "fr": "la valeur et le respect que toute personne mérite",
+      "de": "der Wert und der Respekt, den jeder Mensch verdient"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "다른 나라에서 보내는, 주로 돈이나 물품 형태의 지원.",
       "zh-Hans": "从其他国家送来的支持，通常是金钱或物资。",
       "es": "Ayuda, a menudo dinero o suministros, enviada desde otros países.",
-      "pt-BR": "Apoio, geralmente dinheiro ou suprimentos, enviado de outros países."
+      "pt-BR": "Apoio, geralmente dinheiro ou suprimentos, enviado de outros países.",
+      "fr": "un soutien, souvent de l'argent ou des fournitures, envoyé par d'autres pays",
+      "de": "Unterstützung, oft Geld oder Hilfsgüter, die aus anderen Ländern geschickt wird"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "사람들이 사용할 수 있도록 무언가를 설립하거나 조직한.",
       "zh-Hans": "建立或组织了某事，以便人们可以使用它。",
       "es": "Establecido u organizado algo para que la gente pudiera usarlo.",
-      "pt-BR": "Estabeleceu ou organizou algo para que as pessoas pudessem usá-lo."
+      "pt-BR": "Estabeleceu ou organizou algo para que as pessoas pudessem usá-lo.",
+      "fr": "établi ou organisé quelque chose pour que les gens puissent l'utiliser",
+      "de": "etwas eingerichtet oder organisiert, damit Menschen es nutzen konnten"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "무언가를 하기 어렵게 만드는 문제.",
       "zh-Hans": "让事情难以完成的问题。",
       "es": "Problemas que hacen que algo sea difícil de hacer.",
-      "pt-BR": "Problemas que tornam algo difícil de fazer."
+      "pt-BR": "Problemas que tornam algo difícil de fazer.",
+      "fr": "des problèmes qui rendent quelque chose difficile à faire",
+      "de": "Probleme, die etwas schwer zu erledigen machen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:21.182314+00:00"
+    "date": "2026-09-30T00:12:22.882648+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:21.182314+00:00"
+      }
+    }
   }
 }

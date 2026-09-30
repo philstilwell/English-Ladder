@@ -54,7 +54,9 @@
       "ko": "갑자기 작동을 멈추거나 실패했고, 무너졌습니다.",
       "zh-Hans": "突然停止运作或失败；倒塌。",
       "es": "Dejó de funcionar o falló de repente; se cayó.",
-      "pt-BR": "Parou de funcionar ou falhou subitamente; caiu."
+      "pt-BR": "Parou de funcionar ou falhou subitamente; caiu.",
+      "fr": "A cessé de fonctionner ou a échoué subitement ; est tombé.",
+      "de": "Hat plötzlich aufgehört zu funktionieren oder ist gescheitert; ist zusammengebrochen."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "처벌 또는 대응의 형태로 다른 나라에서 수입된 상품에 부과되는 특별 세금.",
       "zh-Hans": "作为一种惩罚或回应，对来自另一个国家的进口商品征收的特殊税款。",
       "es": "Impuestos especiales aplicados a bienes importados de otro país como forma de castigo o respuesta.",
-      "pt-BR": "Impostos especiais aplicados a produtos importados de outro país como forma de punição ou resposta."
+      "pt-BR": "Impostos especiais aplicados a produtos importados de outro país como forma de punição ou resposta.",
+      "fr": "Taxes spéciales imposées sur des marchandises importées d'un autre pays comme forme de pununition ou de réponse.",
+      "de": "Besondere Steuern, die auf importierte Waren aus einem anderen Land als Form der Bestrafung oder Reaktion erhoben werden."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "마지못해 또는 정말로 원하지 않으면서 무엇인가를 하는 것.",
       "zh-Hans": "不情愿地或并非真心想做某事。",
       "es": "Hacer algo de mala gana o sin realmente quererlo.",
-      "pt-BR": "Fazer algo sem vontade ou sem realmente querer."
+      "pt-BR": "Fazer algo sem vontade ou sem realmente querer.",
+      "fr": "Faire quelque chose à contrecœur ou sans vraiment le vouloir.",
+      "de": "Etwas widerwillig oder ohne es wirklich zu wollen tun."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "누군가가 잘못을 저질렀거나 어떤 일에 유죄라고 말했습니다.",
       "zh-Hans": "指责某人做错了事或有罪。",
       "es": "Dijo que alguien hizo algo mal o fue culpable de algo.",
-      "pt-BR": "Disse que alguém fez algo errado ou era culpado de algo."
+      "pt-BR": "Disse que alguém fez algo errado ou era culpado de algo.",
+      "fr": "A dit que quelqu'un avait fait quelque chose de mal ou était coupable de quelque chose.",
+      "de": "Sagte, dass jemand etwas Falsches getan hat oder einer Sache schuldig war."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "국가들이 서로의 상품에 높은 세금이나 제한을 부과하여 경제적 갈등을 일으키는 상황.",
       "zh-Hans": "当国家之间对彼此的商品征收高额关税或施加限制，从而引发经济冲突。",
       "es": "Cuando los países imponen altos impuestos o restricciones a los productos de otros, causando un conflicto económico.",
-      "pt-BR": "Quando países aplicam impostos altos ou restrições aos produtos uns dos outros, causando conflito econômico."
+      "pt-BR": "Quando países aplicam impostos altos ou restrições aos produtos uns dos outros, causando conflito econômico.",
+      "fr": "Quand des pays imposent des taxes élevées ou des restrictions sur les marchandises de l'autre, provoquant un conflit économique.",
+      "de": "Wenn Länder hohe Steuern oder Beschränkungen auf die Waren des jeweils anderen erheben, was zu einem Wirtschaftskonflikt führt."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "어떤 것이 가지는 이점이나 좋은 효과.",
       "zh-Hans": "事物所具有的优势或良好效果。",
       "es": "Ventajas o buenos efectos que algo tiene.",
-      "pt-BR": "Vantagens ou bons efeitos que algo possui."
+      "pt-BR": "Vantagens ou bons efeitos que algo possui.",
+      "fr": "Avantages ou bons effets que quelque chose procure.",
+      "de": "Vorteile oder positive Auswirkungen, die etwas hat."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:12.777892+00:00"
+    "date": "2026-09-30T00:13:46.841068+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:12.777892+00:00"
+      }
+    }
   }
 }

@@ -62,12 +62,47 @@
         "O \"pickup ticket\" é necessário para a retirada. Seja em papel, e-mail ou SMS, certifique-se de não perdê-lo.",
         "A remoção de manchas ou os consertos nem sempre são bem-sucedidos. Confirme o preço, a data de conclusão e o que pode ser feito antecipadamente."
       ]
+    },
+    "fr": {
+      "heading": "Avant de déposer vos vêtements, confirmez le prix et la date",
+      "points": [
+        "Pour le nettoyage à sec, il est plus facile de communiquer en montrant du doigt les taches, les boutons manquants ou les endroits qui nécessitent une retouche.",
+        "Le \"pickup ticket\" (ticket de retrait) est nécessaire pour récupérer votre commande. Qu'il s'agisse d'un reçu papier, d'un e-mail ou d'un SMS, veillez à ne pas le perdre.",
+        "L'enlèvement de taches ou les retouches ne sont pas toujours garantis. Confirmez les frais, la date de disponibilité et ce qui peut être fait avant de laisser vos vêtements."
+      ]
+    },
+    "de": {
+      "heading": "Bestätigen Sie den Preis und das Datum, bevor Sie Ihre Kleidung abgeben",
+      "points": [
+        "Bei der chemischen Reinigung ist es einfacher, sich verständlich zu machen, wenn Sie Flecken, fehlende Knöpfe oder Stellen, die repariert werden müssen, mit dem Finger zeigen.",
+        "Der Abholschein (\"pickup ticket\") ist für die Abholung Ihrer Bestellung erforderlich. Egal ob Papier, E-Mail oder SMS, stellen Sie sicher, dass Sie ihn nicht verlieren.",
+        "Die Fleckenentfernung oder Reparaturen sind nicht immer garantiert erfolgreich. Bestätigen Sie die Kosten, das Fertigstellungsdatum und was getan werden kann, bevor Sie Ihre Kleidung abgeben."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:15:08.649829+00:00"
+    "date": "2026-09-30T00:16:59.485044+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:15:08.649829+00:00"
+      }
+    }
   }
 }

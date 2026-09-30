@@ -54,7 +54,9 @@
       "ko": "다른 나라에서 들어오는 물건에 부과되는 추가 세금.",
       "zh-Hans": "对从其他国家进口的商品征收的额外税费。",
       "es": "Impuestos adicionales sobre productos que provienen de otro país.",
-      "pt-BR": "Impostos adicionais sobre produtos que vêm de outro país."
+      "pt-BR": "Impostos adicionais sobre produtos que vêm de outro país.",
+      "fr": "des taxes supplémentaires sur les produits qui viennent d'un autre pays",
+      "de": "zusätzliche Steuern auf Waren, die aus einem anderen Land kommen"
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "한 나라가 다른 나라로부터 구매하는 상품.",
       "zh-Hans": "一个国家从另一个国家购买的商品。",
       "es": "Productos que un país compra a otro país.",
-      "pt-BR": "Bens que um país compra de outro país."
+      "pt-BR": "Bens que um país compra de outro país.",
+      "fr": "des biens qu'un pays achète à un autre pays",
+      "de": "Waren, die ein Land von einem anderen Land kauft"
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "정부가 사람들에게 납부하도록 하는 세금이나 수수료.",
       "zh-Hans": "政府向人民征收的一种税或费用。",
       "es": "Un impuesto o tarifa que un gobierno exige que la gente pague.",
-      "pt-BR": "Um imposto ou taxa que um governo faz as pessoas pagarem."
+      "pt-BR": "Um imposto ou taxa que um governo faz as pessoas pagarem.",
+      "fr": "une taxe ou un droit que le gouvernement fait payer aux gens",
+      "de": "eine Steuer oder Gebühr, die eine Regierung von den Menschen verlangen lässt"
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "여러 나라가 상품을 어떻게 사고팔지에 대해 논의하는 회의.",
       "zh-Hans": "各国讨论如何买卖商品的会议。",
       "es": "Reuniones donde los países discuten cómo comprarán y venderán bienes.",
-      "pt-BR": "Reuniões onde países discutem como irão comprar e vender produtos."
+      "pt-BR": "Reuniões onde países discutem como irão comprar e vender produtos.",
+      "fr": "des réunions où les pays discutent de la manière dont ils vont acheter et vendre des marchandises",
+      "de": "Treffen, bei denen Länder besprechen, wie sie Waren kaufen und verkaufen werden"
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "실패했거나 작동을 멈춘, 과거의 사건에 사용되는 표현.",
       "zh-Hans": "失败或停止运作，用于描述过去的事件。",
       "es": "Falló o dejó de funcionar, usado para un evento pasado.",
-      "pt-BR": "Falhou ou parou de funcionar, usado para um evento passado."
+      "pt-BR": "Falhou ou parou de funcionar, usado para um evento passado.",
+      "fr": "a échoué ou a cessé de fonctionner, utilisé pour un événement passé",
+      "de": "ist gescheitert oder hat aufgehört zu funktionieren, wird für ein vergangenes Ereignis verwendet"
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "다른 사람이나 국가가 한 것과 비슷한 행동을 하는 것으로, 종종 그에 대한 응답으로 유사한 세금이나 규칙을 부과하는 것과 같다.",
       "zh-Hans": "做与另一个人或国家所做的相似的事情，通常作为回应，例如施加类似的税收或规则。",
       "es": "Hacer algo similar a lo que otra persona o país ha hecho, a menudo en respuesta, como imponer impuestos o reglas similares.",
-      "pt-BR": "Fazer algo similar ao que outra pessoa ou país fez, geralmente em resposta, como impor impostos ou regras semelhantes."
+      "pt-BR": "Fazer algo similar ao que outra pessoa ou país fez, geralmente em resposta, como impor impostos ou regras semelhantes.",
+      "fr": "Faire quelque chose de similaire à ce qu'une autre personne ou un autre pays a fait, souvent en réponse, comme imposer des taxes ou des règles similaires.",
+      "de": "Etwas Ähnliches tun, wie es eine andere Person oder ein anderes Land getan hat, oft als Reaktion, zum Beispiel ähnliche Steuern oder Regeln auferlegen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:28.740648+00:00"
+    "date": "2026-09-30T00:13:58.284203+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:28.740648+00:00"
+      }
+    }
   }
 }

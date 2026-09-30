@@ -54,7 +54,9 @@
       "ko": "지금까지 한 번도 일어난 적이 없는, 매우 특이한.",
       "zh-Hans": "从未发生过；非常不寻常。",
       "es": "Que nunca antes había sucedido; muy inusual.",
-      "pt-BR": "Que nunca aconteceu antes; muito incomum."
+      "pt-BR": "Que nunca aconteceu antes; muito incomum.",
+      "fr": "Jamais arrivé auparavant ; très inhabituel.",
+      "de": "Noch nie zuvor geschehen; sehr ungewöhnlich."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "누군가를 죽게 만들었다.",
       "zh-Hans": "导致某人死亡。",
       "es": "Provocó la muerte de alguien.",
-      "pt-BR": "Fez com que alguém morresse."
+      "pt-BR": "Fez com que alguém morresse.",
+      "fr": "A causé la mort de quelqu'un.",
+      "de": "Verursachte den Tod einer Person."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "강한 바람과 비를 동반한 아주 나쁜 날씨.",
       "zh-Hans": "伴有强风和大雨的非常恶劣的天气。",
       "es": "Clima muy malo con viento y lluvia fuertes.",
-      "pt-BR": "Tempo muito ruim com vento e chuva fortes."
+      "pt-BR": "Tempo muito ruim com vento e chuva fortes.",
+      "fr": "Très mauvais temps avec du vent fort et de la pluie.",
+      "de": "Sehr schlechtes Wetter mit starkem Wind und Regen."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "전기가 작동하는 것을 멈췄다.",
       "zh-Hans": "使电力停止工作。",
       "es": "Hizo que la electricidad dejara de funcionar.",
-      "pt-BR": "Interrompeu o funcionamento da eletricidade."
+      "pt-BR": "Interrompeu o funcionamento da eletricidade.",
+      "fr": "A arrêté le fonctionnement de l'électricité.",
+      "de": "Hat die Stromversorgung unterbrochen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "문제 때문에 어떤 장소를 떠날 수 없는.",
       "zh-Hans": "由于某个问题而无法离开某地。",
       "es": "Imposibilitado de abandonar un lugar debido a un problema.",
-      "pt-BR": "Incapaz de sair de um lugar por causa de um problema."
+      "pt-BR": "Incapaz de sair de um lugar por causa de um problema.",
+      "fr": "Dans l'impossibilité de quitter un endroit à cause d'un problème.",
+      "de": "Nicht in der Lage, einen Ort aufgrund eines Problems zu verlassen."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "한 집이나 아파트에 함께 사는 모든 사람.",
       "zh-Hans": "所有住在一个房子或公寓里的人。",
       "es": "Todas las personas que viven juntas en una casa o piso.",
-      "pt-BR": "Todas as pessoas que vivem juntas em uma casa ou apartamento."
+      "pt-BR": "Todas as pessoas que vivem juntas em uma casa ou apartamento.",
+      "fr": "Toutes les personnes qui vivent ensemble dans une maison ou un appartement.",
+      "de": "Alle Personen, die zusammen in einem Haus oder einer Wohnung leben."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:57:09.019838+00:00"
+    "date": "2026-09-30T00:15:14.764993+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:57:09.019838+00:00"
+      }
+    }
   }
 }

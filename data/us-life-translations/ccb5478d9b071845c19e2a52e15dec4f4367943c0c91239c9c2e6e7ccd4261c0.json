@@ -62,12 +62,47 @@
         "Para tarefas que você não entenda, é melhor confirmar brevemente do que ficar em silêncio e cometer um erro. A frase \"Just to make sure...\" é útil.",
         "A permissão de trabalho, impostos, horas extras e benefícios variam de acordo com a sua situação. Confirme os pontos importantes com seu empregador ou um profissional."
       ]
+    },
+    "fr": {
+      "heading": "La clarification est essentielle au travail",
+      "points": [
+        "Veuillez confirmer vos horaires de travail, vos pauses, le jour de paie, l'uniforme et la procédure pour signaler un retard dès le début.",
+        "Si vous ne comprenez pas une tâche, il est préférable de la confirmer brièvement plutôt que de faire une erreur en silence. L'expression « Just to make sure... » est utile.",
+        "L'autorisation de travail, les impôts, les heures supplémentaires et les avantages sociaux varient en fonction de votre situation. Veuillez confirmer les points importants auprès de votre employeur ou d'un professionnel."
+      ]
+    },
+    "de": {
+      "heading": "Im Arbeitsalltag ist Nachfragen wichtig",
+      "points": [
+        "Klären Sie zu Beginn Ihre Arbeitszeiten, Pausen, den Zahltag, die Arbeitskleidung und wie Sie Verspätungen melden.",
+        "Wenn Sie eine Aufgabe nicht verstehen, ist es besser, kurz nachzufragen, als stillschweigend einen Fehler zu machen. Die Formulierung „Just to make sure...“ ist dabei sehr hilfreich.",
+        "Arbeitserlaubnis, Steuern, Überstunden und Sozialleistungen können je nach Ihrer Situation variieren. Wichtige Punkte sollten Sie mit Ihrem Arbeitgeber oder einem Fachmann klären."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:40.613039+00:00"
+    "date": "2026-09-30T00:16:36.463810+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:40.613039+00:00"
+      }
+    }
   }
 }

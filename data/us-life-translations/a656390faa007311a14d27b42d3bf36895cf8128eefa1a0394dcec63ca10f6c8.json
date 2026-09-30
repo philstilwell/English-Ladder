@@ -62,12 +62,47 @@
         "O case number, receipt, email e ticket number são importantes para futuras verificações. Certifique-se de anotá-los ou fotografá-los.",
         "Se a primeira pessoa não puder ajudar, perguntar Who should I speak with? sem ficar com raiva facilita a conexão com o próximo responsável."
       ]
+    },
+    "fr": {
+      "heading": "Décrivez le problème calmement et précisément",
+      "points": [
+        "Lorsque vous rencontrez un problème, décrivez brièvement ce qui s'est passé, quand cela s'est produit et ce dont vous avez besoin maintenant.",
+        "Un \"case number\", un \"receipt\", un \"email\" ou un \"ticket number\" est important pour un suivi ultérieur. Assurez-vous de les noter ou de les prendre en photo.",
+        "Si la première personne ne peut pas vous aider, demandez calmement \"Who should I speak with?\" (\"À qui devrais-je parler ?\") pour faciliter la suite des démarches."
+      ]
+    },
+    "de": {
+      "heading": "Schildern Sie das Problem ruhig und präzise",
+      "points": [
+        "Wenn Sie ein Problem haben, schildern Sie kurz, was passiert ist, wann es passiert ist und was Sie jetzt benötigen.",
+        "Eine \"case number\", ein \"receipt\", eine E-Mail oder eine \"ticket number\" sind wichtig für die spätere Nachverfolgung. Halten Sie diese unbedingt in Notizen oder Fotos fest.",
+        "Wenn die erste Person Ihnen nicht helfen kann, fragen Sie ruhig \"Who should I speak with?\" (\"Mit wem sollte ich sprechen?\"), um die nächsten Schritte zu erleichtern."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:15:26.379415+00:00"
+    "date": "2026-09-30T00:17:14.298522+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:15:26.379415+00:00"
+      }
+    }
   }
 }

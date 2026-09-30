@@ -62,12 +62,47 @@
         "How are you? muitas vezes não exige uma resposta longa. Good, thanks. How about you? é suficiente.",
         "Bibliotecas e centros comunitários podem ajudar com inglês, computadores, formulários e informações locais."
       ]
+    },
+    "fr": {
+      "heading": "De petites conversations peuvent être utiles",
+      "points": [
+        "De brèves salutations avec les voisins sont importantes. Même si vous n'établissez pas de relation profonde, cela vous permet de poser plus facilement des questions en cas de besoin.",
+        "L'expression \"How are you?\" ne demande souvent pas une longue réponse. \"Good, thanks. How about you?\" est suffisant.",
+        "Les bibliothèques et les centres communautaires peuvent offrir de l'aide pour l'anglais, les ordinateurs, les formulaires et les informations locales."
+      ]
+    },
+    "de": {
+      "heading": "Kleine Gespräche können hilfreich sein",
+      "points": [
+        "Kurze Begrüßungen mit Nachbarn sind wichtig. Auch wenn Sie keine tiefe Beziehung aufbauen, macht es das Fragen in Notfällen einfacher.",
+        "Die Frage \"How are you?\" erfordert oft keine lange Antwort. \"Good, thanks. How about you?\" ist ausreichend.",
+        "Bibliotheken und Gemeindezentren können bei Englisch, Computern, Formularen und lokalen Informationen helfen."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:54.032050+00:00"
+    "date": "2026-09-30T00:16:47.246449+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:54.032050+00:00"
+      }
+    }
   }
 }

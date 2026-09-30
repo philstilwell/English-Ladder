@@ -54,7 +54,9 @@
       "ko": "폭우 후에 빠르게 발생하는 매우 갑작스럽고 강력한 홍수.",
       "zh-Hans": "一种非常突然且强大的洪水，通常在暴雨后迅速发生。",
       "es": "Una inundación muy repentina y potente que ocurre rápidamente, a menudo después de fuertes lluvias.",
-      "pt-BR": "Uma inundação muito repentina e poderosa que acontece rapidamente, geralmente depois de chuva forte."
+      "pt-BR": "Uma inundação muito repentina e poderosa que acontece rapidamente, geralmente depois de chuva forte.",
+      "fr": "Une inondation très soudaine et puissante qui survient rapidement, souvent après de fortes pluies.",
+      "de": "Eine sehr plötzliche und starke Überschwemmung, die schnell auftritt, oft nach starkem Regen."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "누군가 또는 무언가를 죽게 만들었다.",
       "zh-Hans": "使某人或某物死亡。",
       "es": "Hizo que alguien o algo muriera.",
-      "pt-BR": "Causou a morte de alguém ou de algo."
+      "pt-BR": "Causou a morte de alguém ou de algo.",
+      "fr": "A tué quelqu'un ou quelque chose.",
+      "de": "Tötete jemanden oder etwas."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "두 나라, 주 또는 지역을 나누는 선.",
       "zh-Hans": "分隔两个国家、州或区域的界线。",
       "es": "Una línea que separa dos países, estados o áreas.",
-      "pt-BR": "Uma linha que separa dois países, estados ou áreas."
+      "pt-BR": "Uma linha que separa dois países, estados ou áreas.",
+      "fr": "Une ligne qui sépare deux pays, états ou régions.",
+      "de": "Eine Linie, die zwei Länder, Staaten oder Gebiete voneinander trennt."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "물이나 바람에 의해 강한 힘으로 휩쓸려 갔다.",
       "zh-Hans": "被水或风以强大的力量冲走。",
       "es": "Llevado por el agua o el viento con gran fuerza.",
-      "pt-BR": "Levado pela água ou pelo vento com grande força."
+      "pt-BR": "Levado pela água ou pelo vento com grande força.",
+      "fr": "Emporté par l'eau ou le vent avec une grande force.",
+      "de": "Mit großer Kraft von Wasser oder Wind davongetragen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "나쁘거나 위험한 일이 일어날 수도 있다고 생각했다.",
       "zh-Hans": "认为可能发生不好的或危险的事情。",
       "es": "Pensó que algo malo o peligroso podría suceder.",
-      "pt-BR": "Pensou que algo ruim ou perigoso pudesse acontecer."
+      "pt-BR": "Pensou que algo ruim ou perigoso pudesse acontecer.",
+      "fr": "Pensait que quelque chose de mauvais ou de dangereux pourrait arriver.",
+      "de": "Dachte, dass etwas Schlimmes oder Gefährliches passieren könnte."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "발견되지 않았다. 사람들이 그들이 어디에 있는지 모른다.",
       "zh-Hans": "未被找到；人们不知道他们在哪里。",
       "es": "No encontrado; la gente no sabe dónde están.",
-      "pt-BR": "Não encontrado; as pessoas não sabem onde estão."
+      "pt-BR": "Não encontrado; as pessoas não sabem onde estão.",
+      "fr": "Que l'on n'a pas retrouvé; les gens ne savent pas où ils sont.",
+      "de": "Nicht gefunden; die Leute wissen nicht, wo sie sind."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:29.369788+00:00"
+    "date": "2026-09-30T00:13:20.580955+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:29.369788+00:00"
+      }
+    }
   }
 }

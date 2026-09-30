@@ -55,7 +55,9 @@
       "ko": "예정되었던 일이 중단되거나 발생하지 않게 된 상태.",
       "zh-Hans": "已经停止发生；指一个活动将不会举行。",
       "es": "se ha impedido que ocurra; un evento que no se llevará a cabo.",
-      "pt-BR": "impedido de acontecer; um evento que não irá ocorrer."
+      "pt-BR": "impedido de acontecer; um evento que não irá ocorrer.",
+      "fr": "annulé; un événement qui ne se déroulera pas.",
+      "de": "abgesagt; ein Ereignis, das nicht stattfinden wird."
     },
     {
       "id": 1,
@@ -63,7 +65,9 @@
       "ko": "매우 심하거나 심각한 상태로, 예를 들어 매우 강한 폭풍과 같은 상황을 말합니다.",
       "zh-Hans": "非常糟糕或严重，比如一场非常大的暴风雨。",
       "es": "muy malo o grave, como una tormenta muy fuerte.",
-      "pt-BR": "muito ruim ou sério, como uma tempestade muito forte."
+      "pt-BR": "muito ruim ou sério, como uma tempestade muito forte.",
+      "fr": "très mauvais ou grave, comme une très forte tempête.",
+      "de": "sehr schlimm oder ernst, wie ein sehr starker Sturm."
     },
     {
       "id": 2,
@@ -71,7 +75,9 @@
       "ko": "발생할 수 있는 위험이나 문제에 대해 알려주는 메시지.",
       "zh-Hans": "告诉你可能发生的危险或问题的消息。",
       "es": "mensajes que te informan sobre un posible peligro o un problema que podría ocurrir.",
-      "pt-BR": "mensagens que informam sobre um possível perigo ou um problema que pode acontecer."
+      "pt-BR": "mensagens que informam sobre um possível perigo ou um problema que pode acontecer.",
+      "fr": "messages qui vous informent d'un danger possible ou d'un problème qui pourrait arriver.",
+      "de": "Nachrichten, die Sie über eine mögliche Gefahr oder ein Problem informieren, das auftreten könnte."
     },
     {
       "id": 3,
@@ -79,7 +85,9 @@
       "ko": "특정 시간이나 날짜에 발생하도록 계획된 것.",
       "zh-Hans": "计划在某个具体时间或日期发生。",
       "es": "planeado para que suceda en un momento o fecha específicos.",
-      "pt-BR": "planejado para acontecer em uma hora ou data específica."
+      "pt-BR": "planejado para acontecer em uma hora ou data específica.",
+      "fr": "prévu pour se dérouler à une heure ou une date précise.",
+      "de": "geplant, zu einer bestimmten Zeit oder an einem bestimmten Datum stattzufinden."
     },
     {
       "id": 4,
@@ -87,7 +95,9 @@
       "ko": "콘서트나 스포츠 경기와 같은 공개 행사가 열리는 장소.",
       "zh-Hans": "举办音乐会或体育比赛等公共活动的地点。",
       "es": "el lugar donde se lleva a cabo un evento público, como un concierto o un partido deportivo.",
-      "pt-BR": "o local onde um evento público, como um show ou jogo esportivo, acontece."
+      "pt-BR": "o local onde um evento público, como um show ou jogo esportivo, acontece.",
+      "fr": "l'endroit où se déroule un événement public, comme un concert ou un match de sport.",
+      "de": "der Ort, an dem eine öffentliche Veranstaltung, wie ein Konzert oder ein Sportspiel, stattfindet."
     },
     {
       "id": 5,
@@ -95,7 +105,9 @@
       "ko": "위험이나 해로부터 보호받는 상태.",
       "zh-Hans": "免受危险或伤害的状态。",
       "es": "la condición de estar protegido de peligro o daño.",
-      "pt-BR": "a condição de estar protegido de perigo ou dano."
+      "pt-BR": "a condição de estar protegido de perigo ou dano.",
+      "fr": "la condition d'être protégé du danger ou des dommages.",
+      "de": "der Zustand, vor Gefahr oder Schaden geschützt zu sein."
     },
     {
       "id": 6,
@@ -103,13 +115,34 @@
       "ko": "예를 들어, 물건을 반품하거나 행사가 취소되었을 때 돌려받는 돈.",
       "zh-Hans": "退还给你的钱，例如，如果你退回某物或一个活动被取消。",
       "es": "dinero que te devuelven, por ejemplo, si devuelves algo o un evento se cancela.",
-      "pt-BR": "dinheiro que é devolvido a você, por exemplo, se você devolver algo ou um evento é cancelado."
+      "pt-BR": "dinheiro que é devolvido a você, por exemplo, se você devolver algo ou um evento é cancelado.",
+      "fr": "argent qui vous est rendu, par exemple, si vous retournez quelque chose ou si un événement est annulé.",
+      "de": "Geld, das Sie zurückbekommen, zum Beispiel wenn Sie etwas zurückgeben oder eine Veranstaltung abgesagt wird."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-26T11:30:05.886076+00:00"
+    "date": "2026-09-30T00:08:00.422393+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-26T11:30:05.886076+00:00"
+      }
+    }
   }
 }

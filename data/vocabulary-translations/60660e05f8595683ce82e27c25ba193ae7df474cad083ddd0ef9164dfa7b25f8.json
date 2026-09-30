@@ -64,7 +64,9 @@
       "ko": "공식적으로 고려되거나 논의되도록 제시된 제안이나 계획.",
       "zh-Hans": "为供考虑或讨论而正式提出的建议或计划。",
       "es": "Una sugerencia o plan que se presenta formalmente para su consideración o discusión.",
-      "pt-BR": "Uma sugestão ou plano que é formalmente apresentado para consideração ou discussão."
+      "pt-BR": "Uma sugestão ou plano que é formalmente apresentado para consideração ou discussão.",
+      "fr": "Une suggestion ou un plan qui est officiellement présenté pour examen ou discussion.",
+      "de": "Ein Vorschlag oder Plan, der formell zur Prüfung oder Diskussion vorgelegt wird."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "일시적인 중단 후에 논의, 대화 또는 협상을 다시 시작하는 것.",
       "zh-Hans": "在暂时中断后，继续讨论、会谈或谈判。",
       "es": "Continuar discusiones, conversaciones o negociaciones después de una interrupción temporal.",
-      "pt-BR": "Continuar discussões, conversas ou negociações após uma interrupção temporária."
+      "pt-BR": "Continuar discussões, conversas ou negociações após uma interrupção temporária.",
+      "fr": "Continuer des discussions, des conversations ou des négociations après une interruption temporaire.",
+      "de": "Diskussionen, Gespräche oder Verhandlungen nach einer vorübergehenden Unterbrechung fortsetzen."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "미래에 무엇을 할지 생각하고 그것을 위해 준비하는 것.",
       "zh-Hans": "思考你将来要做什么并为此做出安排。",
       "es": "Pensar en lo que harás en el futuro y hacer los preparativos para ello.",
-      "pt-BR": "Pensar no que você fará no futuro e fazer os arranjos para isso."
+      "pt-BR": "Pensar no que você fará no futuro e fazer os arranjos para isso.",
+      "fr": "Réfléchir à ce que l'on fera à l'avenir et prendre des dispositions pour cela.",
+      "de": "Darüber nachdenken, was man in der Zukunft tun wird, und Vorkehrungen dafür treffen."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "어떤 것에 대한 정보를 전달하는 것, 흔히 뉴스에서.",
       "zh-Hans": "提供有关某事的信息，常用于新闻报道。",
       "es": "Dar información sobre algo, a menudo en las noticias.",
-      "pt-BR": "Dar informações sobre algo, frequentemente nas notícias."
+      "pt-BR": "Dar informações sobre algo, frequentemente nas notícias.",
+      "fr": "Donner des informations sur quelque chose, souvent dans les nouvelles.",
+      "de": "Informationen über etwas geben, oft in den Nachrichten."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "양이나 정도가 중요할 정도로 큰.",
       "zh-Hans": "数量或程度大到足以引起重视。",
       "es": "Suficientemente grande en cantidad o grado como para ser importante.",
-      "pt-BR": "Grande o suficiente em quantidade ou grau para ser importante."
+      "pt-BR": "Grande o suficiente em quantidade ou grau para ser importante.",
+      "fr": "Assez grand en quantité ou en degré pour être important.",
+      "de": "Groß genug in Menge oder Ausmaß, um wichtig zu sein."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "활동에 참여했다.",
       "zh-Hans": "参与了一项活动。",
       "es": "Tomó parte en una actividad.",
-      "pt-BR": "Participou de uma atividade."
+      "pt-BR": "Participou de uma atividade.",
+      "fr": "A pris part à une activité.",
+      "de": "An einer Aktivität teilgenommen haben."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "다른 국가, 조직 또는 사람에게 통제받지 않는.",
       "zh-Hans": "不受其他国家、组织或个人控制的。",
       "es": "No controlado por otro país, organización o persona.",
-      "pt-BR": "Não controlado por outro país, organização ou pessoa."
+      "pt-BR": "Não controlado por outro país, organização ou pessoa.",
+      "fr": "Non contrôlé par un autre pays, une organisation ou une personne.",
+      "de": "Nicht von einem anderen Land, einer Organisation oder Person kontrolliert."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "선거에서 투표할 자격이 있는 모든 사람들.",
       "zh-Hans": "所有有权在选举中投票的人。",
       "es": "Todas las personas que tienen derecho a votar en una elección.",
-      "pt-BR": "Todas as pessoas que têm direito a votar em uma eleição."
+      "pt-BR": "Todas as pessoas que têm direito a votar em uma eleição.",
+      "fr": "L'ensemble des personnes qui ont le droit de voter lors d'une élection.",
+      "de": "Alle Personen, die bei einer Wahl wahlberechtigt sind."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:43.237600+00:00"
+    "date": "2026-09-30T00:12:42.364758+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:43.237600+00:00"
+      }
+    }
   }
 }

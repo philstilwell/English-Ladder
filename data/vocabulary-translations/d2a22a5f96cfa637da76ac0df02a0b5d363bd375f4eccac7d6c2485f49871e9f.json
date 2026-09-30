@@ -62,7 +62,9 @@
       "ko": "발생할 수 있는 위험이나 문제에 대해 누군가에게 알려주는 것.",
       "zh-Hans": "告诉某人可能存在的危险或问题。",
       "es": "Advertir a alguien sobre un posible peligro o problema.",
-      "pt-BR": "Informar alguém sobre um possível perigo ou problema."
+      "pt-BR": "Informar alguém sobre um possível perigo ou problema.",
+      "fr": "informe quelqu'un d'un danger ou d'un problème possible.",
+      "de": "jemanden über eine mögliche Gefahr oder ein Problem informieren."
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "무엇이나 누군가를 다치게 하거나 손상시키는 것.",
       "zh-Hans": "伤害或损坏某物或某人。",
       "es": "Lastimar o dañar algo o a alguien.",
-      "pt-BR": "Machucar ou danificar algo ou alguém."
+      "pt-BR": "Machucar ou danificar algo ou alguém.",
+      "fr": "faire du mal ou causer des dommages à quelque chose ou à quelqu'un.",
+      "de": "etwas oder jemanden verletzen oder beschädigen."
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "전 세계의 모든 사람들.",
       "zh-Hans": "世界上所有的人。",
       "es": "Todas las personas del mundo.",
-      "pt-BR": "Todas as pessoas no mundo."
+      "pt-BR": "Todas as pessoas no mundo.",
+      "fr": "l'ensemble des personnes dans le monde.",
+      "de": "alle Menschen auf der Welt."
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "어떤 것이 사실이거나 옳다고 생각하는 것.",
       "zh-Hans": "认为某事是真的或正确的。",
       "es": "Pensar que algo es verdadero o correcto.",
-      "pt-BR": "Achar que algo é verdadeiro ou correto."
+      "pt-BR": "Achar que algo é verdadeiro ou correto.",
+      "fr": "pense que quelque chose est vrai ou correct.",
+      "de": "denken, dass etwas wahr oder richtig ist."
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "생각하고 느끼며, 주변에서 무슨 일이 일어나는지 알 수 있는 상태.",
       "zh-Hans": "能够思考、感受并知道周围正在发生什么。",
       "es": "Capaz de pensar, sentir y saber lo que sucede a su alrededor.",
-      "pt-BR": "Capaz de pensar, sentir e saber o que está acontecendo ao seu redor."
+      "pt-BR": "Capaz de pensar, sentir e saber o que está acontecendo ao seu redor.",
+      "fr": "capable de penser, de ressentir et de savoir ce qui se passe autour de soi.",
+      "de": "fähig zu denken, zu fühlen und zu wissen, was um einen herum geschieht."
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "무엇을 해야 할지 알려주는 명령이나 규칙.",
       "zh-Hans": "告诉你应该做什么的命令或规则。",
       "es": "Órdenes o reglas que te indican qué hacer.",
-      "pt-BR": "Ordens ou regras que informam o que fazer."
+      "pt-BR": "Ordens ou regras que informam o que fazer.",
+      "fr": "des ordres ou des règles qui vous disent quoi faire.",
+      "de": "Anweisungen oder Regeln, die Ihnen sagen, was zu tun ist."
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "누군가나 무엇인가를 위해 일하거나 돕는 것.",
       "zh-Hans": "为某人或某事工作或提供帮助。",
       "es": "Trabajar para o ayudar a alguien o algo.",
-      "pt-BR": "Trabalhar para ou ajudar alguém ou algo."
+      "pt-BR": "Trabalhar para ou ajudar alguém ou algo.",
+      "fr": "travailler pour ou aider quelqu'un ou quelque chose.",
+      "de": "für jemanden oder etwas arbeiten oder helfen."
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "정직하고 분명하게 행동하며, 비밀을 숨기지 않는 것.",
       "zh-Hans": "诚实和清晰，不保守秘密。",
       "es": "Ser honesto y claro, no guardar secretos.",
-      "pt-BR": "Ser honesto e claro, não guardar segredos."
+      "pt-BR": "Ser honesto e claro, não guardar segredos.",
+      "fr": "être honnête et clair, ne pas garder de secrets.",
+      "de": "ehrlich und klar sein, keine Geheimnisse bewahren."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-16T17:52:26.053193+00:00"
+    "date": "2026-09-30T00:09:52.078615+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-16T17:52:26.053193+00:00"
+      }
+    }
   }
 }

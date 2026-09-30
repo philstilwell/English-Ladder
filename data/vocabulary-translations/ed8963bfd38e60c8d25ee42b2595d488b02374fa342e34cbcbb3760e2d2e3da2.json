@@ -62,7 +62,9 @@
       "ko": "어떤 주장이 사실이 아니라고 말하다.",
       "zh-Hans": "声称某种说法不属实。",
       "es": "Decir que una afirmación no es verdad.",
-      "pt-BR": "Dizer que uma afirmação não é verdadeira."
+      "pt-BR": "Dizer que uma afirmação não é verdadeira.",
+      "fr": "dire qu'une affirmation n'est pas vraie",
+      "de": "sagen, dass eine Behauptung nicht wahr ist"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "항공기, 선박 또는 차량으로 운송되는 물품.",
       "zh-Hans": "由飞机、船只或车辆运输的货物。",
       "es": "Mercancías transportadas por una aeronave, barco o vehículo.",
-      "pt-BR": "Mercadorias transportadas por uma aeronave, navio ou veículo."
+      "pt-BR": "Mercadorias transportadas por uma aeronave, navio ou veículo.",
+      "fr": "des marchandises transportées par un avion, un bateau ou un véhicule",
+      "de": "Waren, die mit einem Flugzeug, Schiff oder Fahrzeug transportiert werden"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "교통이나 다른 활동들이 연결되는 중심지.",
       "zh-Hans": "交通或其他活动连接的中心地点。",
       "es": "Un lugar central donde el transporte u otras actividades se conectan.",
-      "pt-BR": "Um lugar central onde transportes ou outras atividades se conectam."
+      "pt-BR": "Um lugar central onde transportes ou outras atividades se conectam.",
+      "fr": "un lieu central où se connectent les transports ou d'autres activités",
+      "de": "ein zentraler Ort, an dem sich Verkehr oder andere Aktivitäten verbinden"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "한 국가, 조직 또는 개인에게 압력을 가하기 위해 사용되는 공식적인 제한.",
       "zh-Hans": "用于对某个国家、组织或个人施加压力的官方限制。",
       "es": "Restricciones oficiales usadas para ejercer presión sobre un país, organización o persona.",
-      "pt-BR": "Restrições oficiais usadas para pressionar um país, organização ou pessoa."
+      "pt-BR": "Restrições oficiais usadas para pressionar um país, organização ou pessoa.",
+      "fr": "des restrictions officielles utilisées pour exercer une pression sur un pays, une organisation ou une personne",
+      "de": "offizielle Beschränkungen, die verwendet werden, um Druck auf ein Land, eine Organisation oder eine Person auszuüben"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "사람들이 할 수 있는 것을 제한하는 규칙。",
       "zh-Hans": "限制人们可以做什么的规则。",
       "es": "Reglas que limitan lo que las personas pueden hacer.",
-      "pt-BR": "Regras que limitam o que as pessoas podem fazer."
+      "pt-BR": "Regras que limitam o que as pessoas podem fazer.",
+      "fr": "des règles qui limitent ce que les gens peuvent faire",
+      "de": "Regeln, die einschränken, was Menschen tun können"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "어떤 감정, 의견 또는 입장을 전달하다.",
       "zh-Hans": "传达某种感觉、观点或立场。",
       "es": "Comunicar un sentimiento, opinión o posición.",
-      "pt-BR": "Comunicar um sentimento, uma opinião ou uma posição."
+      "pt-BR": "Comunicar um sentimento, uma opinião ou uma posição.",
+      "fr": "communiqué un sentiment, une opinion ou une position",
+      "de": "ein Gefühl, eine Meinung oder eine Position mitgeteilt"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "어떤 것의 양, 강도 또는 수준을 더 크게 만들다.",
       "zh-Hans": "使某物的数量、强度或水平变得更大。",
       "es": "Hacer que algo sea mayor en cantidad, fuerza o nivel.",
-      "pt-BR": "Tornar algo maior em quantidade, força ou nível."
+      "pt-BR": "Tornar algo maior em quantidade, força ou nível.",
+      "fr": "rendre quelque chose plus grand en quantité, en force ou en niveau",
+      "de": "etwas in Menge, Stärke oder Niveau größer machen"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "사람이나 물건을 한 장소에서 다른 장소로 옮기는 것.",
       "zh-Hans": "人或货物从一个地方移动到另一个地方。",
       "es": "El movimiento de personas o bienes de un lugar a otro.",
-      "pt-BR": "O movimento de pessoas ou mercadorias de um lugar para outro."
+      "pt-BR": "O movimento de pessoas ou mercadorias de um lugar para outro.",
+      "fr": "le mouvement de personnes ou de marchandises d'un lieu à un autre",
+      "de": "die Bewegung von Personen oder Gütern von einem Ort zum anderen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:07.838403+00:00"
+    "date": "2026-09-30T00:12:15.029503+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:07.838403+00:00"
+      }
+    }
   }
 }

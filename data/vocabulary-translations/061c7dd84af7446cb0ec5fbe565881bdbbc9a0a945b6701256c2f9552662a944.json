@@ -64,7 +64,9 @@
       "ko": "중요한 것에 특별한 주의를 기울이거나 더 눈에 띄게 만드는 것.",
       "zh-Hans": "引起人们对重要事物特别关注或使其更加引人注目。",
       "es": "Llamar la atención de manera especial sobre algo importante o hacerlo más perceptible.",
-      "pt-BR": "Chamar atenção especial para algo importante ou torná-lo mais perceptível."
+      "pt-BR": "Chamar atenção especial para algo importante ou torná-lo mais perceptível.",
+      "fr": "Attirer particulièrement l'attention sur quelque chose d'important ou le rendre plus visible.",
+      "de": "Besondere Aufmerksamkeit auf etwas Wichtiges lenken oder es auffälliger machen."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "고체 상태에서 액체 상태로 매우 빠르게 변하는 것, 주로 고온 때문에.",
       "zh-Hans": "由于高温等原因，从固态非常快速地变为液态。",
       "es": "Cambiar de estado sólido a líquido muy rápidamente, a menudo debido a altas temperaturas.",
-      "pt-BR": "Mudar de um estado sólido para um estado líquido muito rapidamente, frequentemente devido a altas temperaturas."
+      "pt-BR": "Mudar de um estado sólido para um estado líquido muito rapidamente, frequentemente devido a altas temperaturas.",
+      "fr": "Passer très rapidement de l'état solide à l'état liquide, souvent à cause de températures élevées.",
+      "de": "Sehr schnell von einem festen in einen flüssigen Zustand übergehen, oft aufgrund hoher Temperaturen."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "갑작스럽고 광범위하며 재앙적인 손상이나 고통을 포함하거나 유발하는.",
       "zh-Hans": "涉及或导致突然的、广泛的或灾难性的损害或痛苦。",
       "es": "Que implica o causa daños o sufrimientos repentinos, extensos o desastrosos.",
-      "pt-BR": "Que envolve ou causa danos ou sofrimentos súbitos, extensos ou desastrosos."
+      "pt-BR": "Que envolve ou causa danos ou sofrimentos súbitos, extensos ou desastrosos.",
+      "fr": "Qui implique ou cause des dommages ou des souffrances soudains, étendus ou désastreux.",
+      "de": "Plötzliche, weitreichende oder verheerende Schäden oder Leid verursachend oder damit verbunden."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "특히 어렵거나 위험한 시기에 매우 중요한.",
       "zh-Hans": "非常重要，尤其是在困难或危险时期。",
       "es": "Muy importante, especialmente en un momento difícil o peligroso.",
-      "pt-BR": "Muito importante, especialmente em um momento difícil ou perigoso."
+      "pt-BR": "Muito importante, especialmente em um momento difícil ou perigoso.",
+      "fr": "Très important, surtout à un moment difficile ou dangereux.",
+      "de": "Sehr wichtig, besonders in einer schwierigen oder gefährlichen Zeit."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "행동이나 사건의 결과 또는 영향.",
       "zh-Hans": "行动或事件的结果或影响。",
       "es": "Resultados o efectos de acciones o eventos.",
-      "pt-BR": "Resultados ou efeitos de ações ou eventos."
+      "pt-BR": "Resultados ou efeitos de ações ou eventos.",
+      "fr": "Résultats ou effets d'actions ou d'événements.",
+      "de": "Ergebnisse oder Auswirkungen von Handlungen oder Ereignissen."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "이미 말한 것에 또 다른 요점을 덧붙이기 위해 사용되는 말.",
       "zh-Hans": "用于在已经说过的话之外再补充一点。",
       "es": "Se usa para añadir otro punto a lo que ya se ha dicho.",
-      "pt-BR": "Usado para adicionar outro ponto ao que já foi dito."
+      "pt-BR": "Usado para adicionar outro ponto ao que já foi dito.",
+      "fr": "Utilisé pour ajouter un autre point à ce qui a déjà été dit.",
+      "de": "Verwendet, um einen weiteren Punkt zu dem hinzuzufügen, was bereits gesagt wurde."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "도움이 필요한 사람에게 주어지는 도움.",
       "zh-Hans": "给需要帮助的人提供的帮助。",
       "es": "Ayuda que se le da a alguien que la necesita.",
-      "pt-BR": "Ajuda dada a alguém que precisa dela."
+      "pt-BR": "Ajuda dada a alguém que precisa dela.",
+      "fr": "Aide apportée à quelqu'un qui en a besoin.",
+      "de": "Hilfe, die jemandem gegeben wird, der sie braucht."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "정상적인 활동을 멈추게 하는 문제.",
       "zh-Hans": "阻碍正常活动的问题。",
       "es": "Un problema que detiene la actividad normal.",
-      "pt-BR": "Um problema que impede a atividade normal."
+      "pt-BR": "Um problema que impede a atividade normal.",
+      "fr": "Un problème qui arrête l'activité normale.",
+      "de": "Ein Problem, das die normale Aktivität unterbricht."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:25.120989+00:00"
+    "date": "2026-09-30T00:13:09.084385+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:25.120989+00:00"
+      }
+    }
   }
 }

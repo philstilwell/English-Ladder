@@ -62,7 +62,9 @@
       "ko": "매우 심각하거나 강한",
       "zh-Hans": "非常严重或强烈的",
       "es": "muy serio o fuerte",
-      "pt-BR": "muito sério ou forte"
+      "pt-BR": "muito sério ou forte",
+      "fr": "très grave ou fort",
+      "de": "sehr ernst oder stark"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "어떤 장소를 떠나는 비행편이나 여행",
       "zh-Hans": "离开某个地方的航班或旅程",
       "es": "vuelos o viajes que salen de un lugar",
-      "pt-BR": "voos ou viagens que partem de um lugar"
+      "pt-BR": "voos ou viagens que partem de um lugar",
+      "fr": "vols ou voyages qui quittent un lieu",
+      "de": "Flüge oder Reisen, die einen Ort verlassen"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "교통이 원활하게 움직이기에는 너무 붐비는",
       "zh-Hans": "过于拥挤以至于交通无法顺畅通行",
       "es": "demasiado concurrido para que el tráfico se mueva con facilidad",
-      "pt-BR": "muito lotado para o tráfego se mover facilmente"
+      "pt-BR": "muito lotado para o tráfego se mover facilmente",
+      "fr": "trop encombré pour que la circulation puisse se déplacer facilement",
+      "de": "zu überfüllt, als dass sich der Verkehr leicht bewegen könnte"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "어떤 목적을 위해 제공되는 건물, 장비 또는 서비스",
       "zh-Hans": "为特定目的提供的建筑、设备或服务",
       "es": "edificios, equipos o servicios que se proporcionan para un fin",
-      "pt-BR": "edifícios, equipamentos ou serviços fornecidos para um propósito"
+      "pt-BR": "edifícios, equipamentos ou serviços fornecidos para um propósito",
+      "fr": "bâtiments, équipements ou services fournis dans un but précis",
+      "de": "Gebäude, Ausrüstung oder Dienstleistungen, die für einen bestimmten Zweck bereitgestellt werden"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "미래에 일어날 가능성이 있는 일에 대한 진술",
       "zh-Hans": "关于未来可能发生的事情的陈述",
       "es": "declaraciones sobre lo que es probable que suceda en el futuro",
-      "pt-BR": "declarações sobre o que é provável que aconteça no futuro"
+      "pt-BR": "declarações sobre o que é provável que aconteça no futuro",
+      "fr": "déclarations sur ce qui est susceptible de se produire à l'avenir",
+      "de": "Aussagen darüber, was wahrscheinlich in der Zukunft geschehen wird"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "하늘이나 공항 주변에서 항공기가 움직이는 것",
       "zh-Hans": "飞机在空中或机场周围的移动",
       "es": "el movimiento de aeronaves por el cielo o alrededor de los aeropuertos",
-      "pt-BR": "o movimento de aeronaves pelo céu ou ao redor de aeroportos"
+      "pt-BR": "o movimento de aeronaves pelo céu ou ao redor de aeroportos",
+      "fr": "le mouvement des avions dans le ciel ou autour des aéroports",
+      "de": "die Bewegung von Flugzeugen durch den Himmel oder um Flughäfen herum"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "전파를 사용하여 물체나 기상 조건을 찾는 장비",
       "zh-Hans": "利用无线电波定位物体或天气状况的设备",
       "es": "equipo que utiliza ondas de radio para localizar objetos o condiciones meteorológicas",
-      "pt-BR": "equipamento que usa ondas de rádio para localizar objetos ou condições climáticas"
+      "pt-BR": "equipamento que usa ondas de rádio para localizar objetos ou condições climáticas",
+      "fr": "équipement qui utilise des ondes radio pour localiser des objets ou des conditions météorologiques",
+      "de": "Ausrüstung, die Funkwellen verwendet, um Objekte oder Wetterbedingungen zu lokalisieren"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "사용할 준비가 되어 있거나 사용 가능한",
       "zh-Hans": "准备好或可以使用的",
       "es": "listo o posible de usar",
-      "pt-BR": "pronto ou possível de usar"
+      "pt-BR": "pronto ou possível de usar",
+      "fr": "prêt ou possible à utiliser",
+      "de": "bereit oder möglich zu verwenden"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:18.061921+00:00"
+    "date": "2026-09-30T00:11:36.842994+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:18.061921+00:00"
+      }
+    }
   }
 }

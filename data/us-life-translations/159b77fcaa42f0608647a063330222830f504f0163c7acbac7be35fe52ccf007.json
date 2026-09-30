@@ -62,12 +62,47 @@
         "Para doenças ou lesões leves, um médico de família, uma clínica ou um centro de \"urgent care\" podem ser mais adequados do que a emergência (ER).",
         "É tranquilizador levar anotados os sintomas, medicamentos, alergias e informações do seguro. Se o inglês médico for difícil, peça um intérprete."
       ]
+    },
+    "fr": {
+      "heading": "En médecine, la précision est primordiale",
+      "points": [
+        "En cas d'urgence vitale, composez le 911. Entraînez-vous à dire votre adresse en premier.",
+        "Pour les maladies ou blessures mineures, un médecin de famille, une clinique ou un centre de soins d'urgence (urgent care) peut être plus approprié que les urgences de l'hôpital (ER).",
+        "Il est rassurant d'apporter des notes sur vos symptômes, médicaments, allergies et votre assurance. Si l'anglais médical est difficile, demandez un interprète."
+      ]
+    },
+    "de": {
+      "heading": "In der Medizin ist Genauigkeit am wichtigsten",
+      "points": [
+        "Rufen Sie bei einem lebensbedrohlichen Notfall die 911 an. Üben Sie, zuerst Ihre Adresse zu nennen.",
+        "Bei kleineren Krankheiten oder Verletzungen kann ein Hausarzt, eine Klinik oder eine Notfallambulanz (urgent care) besser geeignet sein als die Notaufnahme (ER).",
+        "Es ist beruhigend, Notizen zu Symptomen, Medikamenten, Allergien und Ihrer Versicherung mitzubringen. Wenn medizinisches Englisch schwierig ist, bitten Sie um einen Dolmetscher."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:39.231571+00:00"
+    "date": "2026-09-30T00:16:35.521773+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:39.231571+00:00"
+      }
+    }
   }
 }

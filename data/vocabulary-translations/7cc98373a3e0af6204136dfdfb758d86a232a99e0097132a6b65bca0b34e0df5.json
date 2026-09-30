@@ -57,7 +57,9 @@
       "ko": "숲이나 자연 지역에서 타오르며, 종종 통제할 수 없는 큰불.",
       "zh-Hans": "在森林或自然区域燃烧的大火，通常难以控制。",
       "es": "Incendios grandes que queman en bosques o áreas naturales, a menudo sin control.",
-      "pt-BR": "Grandes incêndios que queimam em florestas ou áreas naturais, muitas vezes fora de controle."
+      "pt-BR": "Grandes incêndios que queimam em florestas ou áreas naturais, muitas vezes fora de controle.",
+      "fr": "De grands incendies qui brûlent dans les forêts ou les zones naturelles, souvent hors de contrôle.",
+      "de": "Große Brände, die in Wäldern oder Naturgebieten wüten, oft außer Kontrolle."
     },
     {
       "id": 1,
@@ -65,7 +67,9 @@
       "ko": "어떤 일이 일어나게 하거나 결과를 만들었다.",
       "zh-Hans": "使某事发生或产生了结果。",
       "es": "Hizo que algo sucediera o creó un resultado.",
-      "pt-BR": "Fez com que algo acontecesse ou criou um resultado."
+      "pt-BR": "Fez com que algo acontecesse ou criou um resultado.",
+      "fr": "A fait en sorte que quelque chose se produise ou a créé un résultat.",
+      "de": "Hat etwas geschehen lassen oder ein Ergebnis hervorgerufen."
     },
     {
       "id": 2,
@@ -73,7 +77,9 @@
       "ko": "어떤 것에 해를 입히거나 손상을 주어, 덜 좋거나 덜 유용하게 만드는 것.",
       "zh-Hans": "对某物造成的伤害或损害，使其变得不那么好或不那么有用。",
       "es": "Daño o perjuicio a algo, haciéndolo menos bueno o útil.",
-      "pt-BR": "Dano ou prejuízo a algo, tornando-o menos bom ou útil."
+      "pt-BR": "Dano ou prejuízo a algo, tornando-o menos bom ou útil.",
+      "fr": "Un préjudice ou une détérioration causé(e) à quelque chose, le rendant moins bon ou moins utile.",
+      "de": "Schaden oder Beeinträchtigung an etwas, wodurch es weniger gut oder nützlich wird."
     },
     {
       "id": 3,
@@ -81,7 +87,9 @@
       "ko": "사물이 어떻게 작동하는지 이해하기 위해 자연과 세상을 연구하는 사람들.",
       "zh-Hans": "通过研究自然和世界来理解事物如何运作的人。",
       "es": "Personas que estudian la naturaleza y el mundo para entender cómo funcionan las cosas.",
-      "pt-BR": "Pessoas que estudam a natureza e o mundo para entender como as coisas funcionam."
+      "pt-BR": "Pessoas que estudam a natureza e o mundo para entender como as coisas funcionam.",
+      "fr": "Des personnes qui étudient la nature et le monde pour comprendre comment les choses fonctionnent.",
+      "de": "Menschen, die die Natur und die Welt studieren, um zu verstehen, wie Dinge funktionieren."
     },
     {
       "id": 4,
@@ -89,7 +97,9 @@
       "ko": "어렵거나 문제를 일으키는 것.",
       "zh-Hans": "困难或引起麻烦的事情。",
       "es": "Algo que es difícil o causa problemas.",
-      "pt-BR": "Algo que é difícil ou causa problemas."
+      "pt-BR": "Algo que é difícil ou causa problemas.",
+      "fr": "Quelque chose qui est difficile ou qui cause des problèmes.",
+      "de": "Etwas, das schwierig ist oder Ärger verursacht."
     },
     {
       "id": 5,
@@ -97,7 +107,9 @@
       "ko": "식물이 자라는 지구의 가장 바깥층.",
       "zh-Hans": "植物生长的地球最表层。",
       "es": "La capa superior de la tierra donde crecen las plantas.",
-      "pt-BR": "A camada superior da terra onde as plantas crescem."
+      "pt-BR": "A camada superior da terra onde as plantas crescem.",
+      "fr": "La couche supérieure de la terre où les plantes poussent.",
+      "de": "Die oberste Erdschicht, in der Pflanzen wachsen."
     },
     {
       "id": 6,
@@ -105,13 +117,34 @@
       "ko": "물건을 보관하거나 연구하기 위해 함께 모으는 것.",
       "zh-Hans": "将物品聚集在一起，通常是为了保存或研究它们。",
       "es": "Juntar cosas, a menudo para guardarlas o estudiarlas.",
-      "pt-BR": "Juntar coisas, muitas vezes para guardá-las ou estudá-las."
+      "pt-BR": "Juntar coisas, muitas vezes para guardá-las ou estudá-las.",
+      "fr": "Rassembler des choses, souvent pour les garder ou les étudier.",
+      "de": "Dinge zusammenbringen, oft um sie aufzubewahren oder zu studieren."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-13T14:37:11.440459+00:00"
+    "date": "2026-09-30T00:10:21.809919+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-13T14:37:11.440459+00:00"
+      }
+    }
   }
 }

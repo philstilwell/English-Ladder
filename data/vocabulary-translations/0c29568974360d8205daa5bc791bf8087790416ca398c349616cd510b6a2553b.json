@@ -57,7 +57,9 @@
       "ko": "매우 혼란스럽고 무질서한 상태. 모든 것이 뒤죽박죽이고 정리되어 있지 않은 것.",
       "zh-Hans": "一种极度混乱和无序的状态；所有事物都混杂在一起，没有组织。",
       "es": "Un estado de gran confusión y desorden; todo está mezclado y sin organizar.",
-      "pt-BR": "Um estado de grande confusão e desordem; tudo está misturado e desorganizado."
+      "pt-BR": "Um estado de grande confusão e desordem; tudo está misturado e desorganizado.",
+      "fr": "un état de grande confusion et de désordre ; tout est mélangé et non organisé.",
+      "de": "ein Zustand großer Verwirrung und Unordnung; alles ist durcheinander und nicht organisiert."
     },
     {
       "id": 1,
@@ -65,7 +67,9 @@
       "ko": "무언가가 정상적으로 또는 계획대로 계속되는 것을 막는 문제.",
       "zh-Hans": "阻止某事物正常或按计划继续进行的问题。",
       "es": "Un problema que impide que algo continúe con normalidad o según lo planeado.",
-      "pt-BR": "Um problema que impede que algo continue normalmente ou como planejado."
+      "pt-BR": "Um problema que impede que algo continue normalmente ou como planejado.",
+      "fr": "un problème qui empêche quelque chose de continuer normalement ou comme prévu.",
+      "de": "ein Problem, das verhindert, dass etwas normal oder wie geplant weitergeht."
     },
     {
       "id": 2,
@@ -73,7 +77,9 @@
       "ko": "자동차, 버스, 기차 또는 비행기에서 여행하지만 운전사나 조종사가 아닌 사람들.",
       "zh-Hans": "乘坐汽车、公共汽车、火车或飞机旅行，但不是司机或飞行员的人。",
       "es": "Personas que viajan en un coche, autobús, tren o avión pero no son el conductor o el piloto.",
-      "pt-BR": "Pessoas que viajam em um carro, ônibus, trem ou avião, mas não são o motorista ou o piloto."
+      "pt-BR": "Pessoas que viajam em um carro, ônibus, trem ou avião, mas não são o motorista ou o piloto.",
+      "fr": "des personnes qui voyagent dans une voiture, un bus, un train ou un avion mais qui ne sont pas le conducteur ou le pilote.",
+      "de": "Personen, die in einem Auto, Bus, Zug oder Flugzeug reisen, aber nicht der Fahrer oder Pilot sind."
     },
     {
       "id": 3,
@@ -81,7 +87,9 @@
       "ko": "중단된. 여행이나 행사처럼 계획되었던 것을 하지 않기로 결정된.",
       "zh-Hans": "停止了；决定不做原计划的事情，例如旅行或活动。",
       "es": "Detenido; se decidió no hacer algo que estaba planeado, como un viaje o un evento.",
-      "pt-BR": "Interrompido; decidiu-se não fazer algo que estava planejado, como uma viagem ou um evento."
+      "pt-BR": "Interrompido; decidiu-se não fazer algo que estava planejado, como uma viagem ou um evento.",
+      "fr": "arrêté ; il a été décidé de ne pas faire quelque chose qui était prévu, comme un voyage ou un événement.",
+      "de": "beendet; entschieden, etwas Geplantes, wie eine Reise oder ein Ereignis, nicht zu tun."
     },
     {
       "id": 4,
@@ -89,7 +97,9 @@
       "ko": "특히 구매한 것을 반환하거나 서비스가 제공되지 않을 때 돌려받는 돈.",
       "zh-Hans": "退还给你的钱，特别是当你退回购买的物品或未获得服务时。",
       "es": "Dinero que se te devuelve, especialmente cuando devuelves algo que compraste o un servicio no es proporcionado.",
-      "pt-BR": "Dinheiro que é devolvido a você, especialmente quando você devolve algo que comprou ou um serviço não é prestado."
+      "pt-BR": "Dinheiro que é devolvido a você, especialmente quando você devolve algo que comprou ou um serviço não é prestado.",
+      "fr": "de l'argent qui vous est rendu, surtout quand vous retournez quelque chose que vous avez acheté ou qu'un service n'est pas fourni.",
+      "de": "Geld, das Ihnen zurückgegeben wird, besonders wenn Sie etwas Gekauftes zurückgeben oder eine Dienstleistung nicht erbracht wird."
     },
     {
       "id": 5,
@@ -97,7 +107,9 @@
       "ko": "다른 것들이나 사람들과 떨어져서, 함께 있지 않은 상태로.",
       "zh-Hans": "与其他事物或人分开；不在一起。",
       "es": "Apartado de otras cosas o personas; no junto.",
-      "pt-BR": "Separado de outras coisas ou pessoas; não junto."
+      "pt-BR": "Separado de outras coisas ou pessoas; não junto.",
+      "fr": "à l'écart d'autres choses ou personnes ; pas ensemble.",
+      "de": "getrennt von anderen Dingen oder Personen; nicht zusammen."
     },
     {
       "id": 6,
@@ -105,13 +117,34 @@
       "ko": "누군가 또는 무언가가 가고 있는 곳.",
       "zh-Hans": "某人或某物要去的地方。",
       "es": "El lugar al que alguien o algo se dirige.",
-      "pt-BR": "O lugar para onde alguém ou algo está indo."
+      "pt-BR": "O lugar para onde alguém ou algo está indo.",
+      "fr": "le lieu où quelqu'un ou quelque chose se rend.",
+      "de": "der Ort, wohin jemand oder etwas fährt oder fliegt."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-10T20:30:01.482538+00:00"
+    "date": "2026-09-30T00:10:55.821133+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-10T20:30:01.482538+00:00"
+      }
+    }
   }
 }

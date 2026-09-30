@@ -50,7 +50,9 @@
       "ko": "다른 사람들을 안전한 곳으로 데려가려고 노력하는 사람들",
       "zh-Hans": "试图将他人带到安全地点的人们",
       "es": "personas que intentan llevar a otros a un lugar seguro",
-      "pt-BR": "pessoas que tentam levar outros para um lugar seguro"
+      "pt-BR": "pessoas que tentam levar outros para um lugar seguro",
+      "fr": "personnes qui essaient de mettre d'autres personnes en sécurité",
+      "de": "Menschen, die versuchen, andere in Sicherheit zu bringen"
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "밖으로 나갈 수 없는",
       "zh-Hans": "无法离开",
       "es": "que no puede salir",
-      "pt-BR": "incapaz de sair"
+      "pt-BR": "incapaz de sair",
+      "fr": "incapable de sortir",
+      "de": "nicht in der Lage, herauszukommen"
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "어떤 일이 일어날 때까지 머무는 것",
       "zh-Hans": "停留在原地直到某事发生",
       "es": "quedarse hasta que algo suceda",
-      "pt-BR": "permanecer até que algo aconteça"
+      "pt-BR": "permanecer até que algo aconteça",
+      "fr": "rester jusqu'à ce que quelque chose se produise",
+      "de": "bleiben, bis etwas passiert"
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "땅 아래에 있는 긴 통로",
       "zh-Hans": "地下长长的通道",
       "es": "pasajes largos debajo de la tierra",
-      "pt-BR": "passagens longas debaixo da terra"
+      "pt-BR": "passagens longas debaixo da terra",
+      "fr": "longs passages sous terre",
+      "de": "lange Gänge unter der Erde"
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "엄청난 힘으로 폭발할 수 있는 물질",
       "zh-Hans": "能以巨大力量爆炸的材料",
       "es": "materiales que pueden estallar con gran fuerza",
-      "pt-BR": "materiais que podem explodir com grande força"
+      "pt-BR": "materiais que podem explodir com grande força",
+      "fr": "matériaux qui peuvent exploser avec une grande force",
+      "de": "Materialien, die mit großer Kraft explodieren können"
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "기계나 구조물을 계획하고 건설하는 사람들",
       "zh-Hans": "规划和建造机器或结构的人",
       "es": "personas que planifican y construyen máquinas o estructuras",
-      "pt-BR": "pessoas que planejam e constroem máquinas ou estruturas"
+      "pt-BR": "pessoas que planejam e constroem máquinas ou estruturas",
+      "fr": "personnes qui planifient et construisent des machines ou des structures",
+      "de": "Menschen, die Maschinen oder Bauwerke planen und bauen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:53:27.996511+00:00"
+    "date": "2026-09-30T00:12:27.926130+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:53:27.996511+00:00"
+      }
+    }
   }
 }

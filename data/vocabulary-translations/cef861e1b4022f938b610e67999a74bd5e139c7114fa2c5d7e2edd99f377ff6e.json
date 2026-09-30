@@ -62,7 +62,9 @@
       "ko": "어떤 것이 밖으로 나가거나 이용 가능하게 만들다.",
       "zh-Hans": "让某物移出或变得可用。",
       "es": "Permitir que algo salga o esté disponible.",
-      "pt-BR": "Permitir que algo se mova para fora ou se torne disponível."
+      "pt-BR": "Permitir que algo se mova para fora ou se torne disponível.",
+      "fr": "laisser quelque chose sortir ou devenir disponible",
+      "de": "etwas herauslassen oder verfügbar machen"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "어떤 장소의 상황이나 물리적인 상태.",
       "zh-Hans": "某个地方的环境或物理状态。",
       "es": "Las circunstancias o el estado físico de un lugar.",
-      "pt-BR": "As circunstâncias ou o estado físico de um local."
+      "pt-BR": "As circunstâncias ou o estado físico de um local.",
+      "fr": "les circonstances ou l'état physique d'un lieu",
+      "de": "die Umstände oder der physische Zustand an einem Ort"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "어떤 것을 더 강하게 만들거나 더 효과적으로 만드는 것.",
       "zh-Hans": "使某物更强或更有效。",
       "es": "Hacer que algo sea más fuerte o más eficaz.",
-      "pt-BR": "Tornar algo mais forte ou mais eficaz."
+      "pt-BR": "Tornar algo mais forte ou mais eficaz.",
+      "fr": "rendre quelque chose plus fort ou plus efficace",
+      "de": "etwas stärker oder wirksamer machen"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "미래에 어떤 일이 일어날 가능성이 있는지에 대한 진술.",
       "zh-Hans": "关于未来可能发生什么事情的陈述。",
       "es": "Declaraciones sobre lo que es probable que suceda en el futuro.",
-      "pt-BR": "Declarações sobre o que provavelmente acontecerá no futuro."
+      "pt-BR": "Declarações sobre o que provavelmente acontecerá no futuro.",
+      "fr": "des déclarations sur ce qui est susceptible de se produire à l'avenir",
+      "de": "Aussagen darüber, was wahrscheinlich in der Zukunft geschehen wird"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "전 세계 평균 기온의 장기적인 상승.",
       "zh-Hans": "全世界平均气温的长期上升。",
       "es": "El aumento a largo plazo de las temperaturas promedio en todo el mundo.",
-      "pt-BR": "O aumento de longo prazo nas temperaturas médias em todo o mundo."
+      "pt-BR": "O aumento de longo prazo nas temperaturas médias em todo o mundo.",
+      "fr": "l'augmentation à long terme des températures moyennes dans le monde",
+      "de": "der langfristige Anstieg der Durchschnittstemperaturen weltweit"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "동쪽으로.",
       "zh-Hans": "朝着东方。",
       "es": "Hacia el este.",
-      "pt-BR": "Na direção leste."
+      "pt-BR": "Na direção leste.",
+      "fr": "vers l'est",
+      "de": "nach Osten"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "필요한 사람들에게 제공되는 건강 관리 및 물품.",
       "zh-Hans": "为有需要的人提供的医疗保健和物资。",
       "es": "Atención médica y suministros proporcionados a las personas que los necesitan.",
-      "pt-BR": "Cuidados de saúde e suprimentos fornecidos às pessoas que precisam deles."
+      "pt-BR": "Cuidados de saúde e suprimentos fornecidos às pessoas que precisam deles.",
+      "fr": "les soins de santé et les fournitures offerts aux personnes qui en ont besoin",
+      "de": "Gesundheitsversorgung und Hilfsgüter, die Menschen zur Verfügung gestellt werden, die sie benötigen"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "이미 존재하는 것에 더하여.",
       "zh-Hans": "除了已经存在的事物之外。",
       "es": "Además de algo que ya existe.",
-      "pt-BR": "Além de algo que já existe."
+      "pt-BR": "Além de algo que já existe.",
+      "fr": "en plus de quelque chose qui existe déjà",
+      "de": "zusätzlich zu etwas, das bereits existiert"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:57.720978+00:00"
+    "date": "2026-09-30T00:12:05.303157+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:57.720978+00:00"
+      }
+    }
   }
 }

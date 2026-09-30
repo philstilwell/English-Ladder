@@ -64,7 +64,9 @@
       "ko": "어떤 장소를 갑자기 그리고 강하게 치거나 영향을 미치는 것.",
       "zh-Hans": "突然而猛烈地撞击或影响一个地方。",
       "es": "golpear o afectar un lugar de forma repentina y con fuerza.",
-      "pt-BR": "atingir ou afetar um lugar de forma repentina e com força."
+      "pt-BR": "atingir ou afetar um lugar de forma repentina e com força.",
+      "fr": "a frappé ou touché un lieu soudainement et avec force",
+      "de": "hat einen Ort plötzlich und kräftig getroffen oder betroffen"
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "도로, 수도 공급, 전력망과 같은 기본적인 시스템과 시설.",
       "zh-Hans": "道路、供水和电网等基本系统和设施。",
       "es": "sistemas y servicios básicos, como carreteras, suministro de agua y redes eléctricas.",
-      "pt-BR": "sistemas e instalações básicas, como estradas, abastecimento de água e redes elétricas."
+      "pt-BR": "sistemas e instalações básicas, como estradas, abastecimento de água e redes elétricas.",
+      "fr": "les systèmes et installations de base, comme les routes, l'approvisionnement en eau et les réseaux électriques",
+      "de": "grundlegende Systeme und Einrichtungen, wie Straßen, Wasserversorgung und Stromnetze"
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "집에 접근할 수 없게 된 후 임시로 안전하게 머무를 수 있는 장소.",
       "zh-Hans": "在失去家园后，一个安全的临时住所。",
       "es": "un lugar seguro y temporal para quedarse después de perder el acceso a la casa.",
-      "pt-BR": "um local temporário e seguro para ficar após perder o acesso à sua casa."
+      "pt-BR": "um local temporário e seguro para ficar após perder o acesso à sua casa.",
+      "fr": "un abri temporaire sûr où rester après avoir perdu l'accès à son domicile",
+      "de": "ein sicherer temporärer Ort zum Bleiben, nachdem man den Zugang zum eigenen Zuhause verloren hat"
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "많은 손상이나 파괴를 일으키는; 극도로 해롭거나 파괴적인.",
       "zh-Hans": "造成巨大损害或破坏的；极具破坏性或危害性的。",
       "es": "Que causa mucho daño o destrucción; extremadamente perjudicial o destructivo.",
-      "pt-BR": "Que causa muito dano ou destruição; extremamente prejudicial ou destrutivo."
+      "pt-BR": "Que causa muito dano ou destruição; extremamente prejudicial ou destrutivo.",
+      "fr": "provoquant beaucoup de dégâts ou de destruction; extrêmement nocif ou destructeur",
+      "de": "viel Schaden oder Zerstörung verursachend; extrem schädlich oder zerstörerisch"
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "많은 사람, 사물 또는 돈이 관련되어 있는; 광범위한.",
       "zh-Hans": "涉及大量人员、事物或资金的；广泛的。",
       "es": "Que involucra a muchas personas, cosas o dinero; extenso.",
-      "pt-BR": "Que envolve muitas pessoas, coisas ou dinheiro; extenso."
+      "pt-BR": "Que envolve muitas pessoas, coisas ou dinheiro; extenso.",
+      "fr": "impliquant beaucoup de personnes, de choses ou d'argent; étendu",
+      "de": "viele Menschen, Dinge oder Geld umfassend; umfangreich"
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "자신이 평소에 살던 곳을 강제로 떠나게 된.",
       "zh-Hans": "被迫离开自己通常居住的地方。",
       "es": "forzado a abandonar el lugar donde uno vive normalmente.",
-      "pt-BR": "forçado a sair do lugar onde se vive normalmente."
+      "pt-BR": "forçado a sair do lugar onde se vive normalmente.",
+      "fr": "forcé de quitter l'endroit où l'on vit normalement",
+      "de": "gezwungen, den Ort zu verlassen, an dem man normalerweise lebt"
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "설명되고 있는 사건에 의해 변화되었거나 피해를 입은.",
       "zh-Hans": "因所描述的事件而发生变化或受到伤害的。",
       "es": "alterado o dañado por el evento que se está describiendo.",
-      "pt-BR": "alterado ou prejudicado pelo evento que está sendo descrito."
+      "pt-BR": "alterado ou prejudicado pelo evento que está sendo descrito.",
+      "fr": "changé ou endommagé par l'événement décrit",
+      "de": "durch das beschriebene Ereignis verändert oder geschädigt"
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "공격과 같이 새로운 것을 시작한.",
       "zh-Hans": "开始了一件新事情，例如一次攻击。",
       "es": "empezó algo nuevo, como un ataque.",
-      "pt-BR": "começou algo novo, como um ataque."
+      "pt-BR": "começou algo novo, como um ataque.",
+      "fr": "a commencé quelque chose de nouveau, comme une attaque",
+      "de": "etwas Neues begonnen, wie einen Angriff"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:57:03.065843+00:00"
+    "date": "2026-09-30T00:15:04.278753+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:57:03.065843+00:00"
+      }
+    }
   }
 }

@@ -35,7 +35,9 @@
       "ko": "어떤 것의 선명한 정신적 이미지를 형성하다",
       "zh-Hans": "在脑海中形成某物的清晰图像",
       "es": "Formar una imagen mental clara de algo.",
-      "pt-BR": "Formar uma imagem mental clara de algo."
+      "pt-BR": "Formar uma imagem mental clara de algo.",
+      "fr": "se former une image mentale claire de quelque chose",
+      "de": "sich ein klares inneres Bild von etwas machen"
     },
     {
       "id": 1,
@@ -43,7 +45,9 @@
       "ko": "구체적이며 직접 보거나 경험할 수 있는",
       "zh-Hans": "具体且可以直接看到或体验到的",
       "es": "Concreto y posible de ver o experimentar directamente.",
-      "pt-BR": "Concreto e possível de ver ou experimentar diretamente."
+      "pt-BR": "Concreto e possível de ver ou experimentar diretamente.",
+      "fr": "concret et qu'on peut voir ou expérimenter directement",
+      "de": "konkret und direkt sichtbar oder erfahrbar"
     },
     {
       "id": 2,
@@ -51,13 +55,34 @@
       "ko": "양쪽 사람이나 측면에서 공유되는",
       "zh-Hans": "由双方或两方共享的",
       "es": "Compartido por ambas personas o partes.",
-      "pt-BR": "Compartilhado por ambas as pessoas ou lados."
+      "pt-BR": "Compartilhado por ambas as pessoas ou lados.",
+      "fr": "partagé par deux personnes ou deux parties",
+      "de": "von zwei Personen oder Seiten geteilt"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T16:06:44.265099+00:00"
+    "date": "2026-09-30T00:15:56.856714+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T16:06:44.265099+00:00"
+      }
+    }
   }
 }

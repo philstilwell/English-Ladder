@@ -52,7 +52,9 @@
       "ko": "개와 같이 함께 살고 사냥하는 야생동물 무리.",
       "zh-Hans": "一群生活在一起并一起捕猎的野生动物，比如狗。",
       "es": "Un grupo de animales salvajes, como perros, que viven y cazan juntos.",
-      "pt-BR": "Um grupo de animais selvagens, como cães, que vivem e caçam juntos."
+      "pt-BR": "Um grupo de animais selvagens, como cães, que vivem e caçam juntos.",
+      "fr": "Un groupe d'animaux sauvages, comme des chiens, qui vivent et chassent ensemble.",
+      "de": "Eine Gruppe wilder Tiere, wie Hunde, die zusammen leben und jagen."
     },
     {
       "id": 1,
@@ -60,7 +62,9 @@
       "ko": "무언가를 하는 것을 마쳤음; 끝을 냈음.",
       "zh-Hans": "完成了某事；使其结束。",
       "es": "Haber terminado de hacer algo; haber puesto fin a algo.",
-      "pt-BR": "Ter terminado de fazer algo; ter levado algo ao fim."
+      "pt-BR": "Ter terminado de fazer algo; ter levado algo ao fim.",
+      "fr": "Avoir terminé de faire quelque chose ; y avoir mis fin.",
+      "de": "Etwas beendet; zu einem Ende gebracht."
     },
     {
       "id": 2,
@@ -68,7 +72,9 @@
       "ko": "한 장소에서 다른 장소로 이동하는 여행, 대개 장거리를 의미합니다.",
       "zh-Hans": "一次旅行，或从一个地方到另一个地方的行程，通常是长距离的。",
       "es": "Un viaje, o el acto de viajar de un lugar a otro, generalmente una distancia larga.",
-      "pt-BR": "Uma viagem, ou o ato de viajar de um lugar para outro, geralmente por uma longa distância."
+      "pt-BR": "Uma viagem, ou o ato de viajar de um lugar para outro, geralmente por uma longa distância.",
+      "fr": "Un déplacement ou le fait de se rendre d'un endroit à un autre, généralement sur une longue distance.",
+      "de": "Eine Reise oder das Reisen von einem Ort zum anderen, normalerweise über eine lange Strecke."
     },
     {
       "id": 3,
@@ -76,7 +82,9 @@
       "ko": "미래에 좋은 일이 일어날 것이라는 느낌.",
       "zh-Hans": "一种对未来会发生好事的感觉。",
       "es": "Un sentimiento de que algo bueno ocurrirá en el futuro.",
-      "pt-BR": "Um sentimento de que algo bom acontecerá no futuro."
+      "pt-BR": "Um sentimento de que algo bom acontecerá no futuro.",
+      "fr": "Un sentiment qu'un événement positif se produira à l'avenir.",
+      "de": "Das Gefühl, dass in der Zukunft etwas Gutes passieren wird."
     },
     {
       "id": 4,
@@ -84,7 +92,9 @@
       "ko": "자연에 살고 인간에 의해 길들여지지 않은 야생 동물, 새, 식물.",
       "zh-Hans": "生活在野外且未被人类驯养的野生动物、鸟类和植物。",
       "es": "Animales salvajes, aves y plantas que viven en la naturaleza y no han sido domesticados por humanos.",
-      "pt-BR": "Animais selvagens, pássaros e plantas que vivem na natureza e não são domesticados por humanos."
+      "pt-BR": "Animais selvagens, pássaros e plantas que vivem na natureza e não são domesticados por humanos.",
+      "fr": "Les animaux sauvages, les oiseaux et les plantes qui vivent dans la nature et ne sont pas domestiqués par les humains.",
+      "de": "Wilde Tiere, Vögel und Pflanzen, die in der Natur leben und nicht von Menschen gezähmt wurden."
     },
     {
       "id": 5,
@@ -92,13 +102,34 @@
       "ko": "어떤 것이나 사람으로부터 멀리 떨어져 있었음; 길을 비켜주거나 가까이 가지 않았음.",
       "zh-Hans": "远离某物或某人；避开或没有靠近。",
       "es": "Haberse mantenido alejado de algo o alguien; haber evitado o no haberse acercado.",
-      "pt-BR": "Ter se mantido afastado de algo ou alguém; ter evitado ou não ter chegado perto."
+      "pt-BR": "Ter se mantido afastado de algo ou alguém; ter evitado ou não ter chegado perto.",
+      "fr": "S'être tenu à l'écart de quelque chose ou de quelqu'un ; ne pas s'en être approché ou être resté hors de sa portée.",
+      "de": "Sich von etwas oder jemandem ferngehalten haben; aus dem Weg gegangen sein oder sich nicht genähert haben."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-14T16:33:36.050960+00:00"
+    "date": "2026-09-30T00:10:09.869431+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-14T16:33:36.050960+00:00"
+      }
+    }
   }
 }

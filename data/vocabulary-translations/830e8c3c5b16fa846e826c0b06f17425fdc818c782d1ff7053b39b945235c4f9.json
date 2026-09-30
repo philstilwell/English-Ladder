@@ -56,7 +56,9 @@
       "ko": "더 강해지거나 더 자주 발생하는 것.",
       "zh-Hans": "变得更强或更频繁地发生。",
       "es": "Volverse más fuerte o suceder con más frecuencia.",
-      "pt-BR": "Ficar mais forte ou acontecer com mais frequência."
+      "pt-BR": "Ficar mais forte ou acontecer com mais frequência.",
+      "fr": "Devenir plus fort ou se produire plus souvent.",
+      "de": "Stärker werden oder häufiger geschehen."
     },
     {
       "id": 1,
@@ -64,7 +66,9 @@
       "ko": "한 나라나 주를 통치하는 사람들의 집단.",
       "zh-Hans": "掌控一个国家或州的一群人。",
       "es": "El grupo de personas que controla un país o estado.",
-      "pt-BR": "O grupo de pessoas que controla um país ou estado."
+      "pt-BR": "O grupo de pessoas que controla um país ou estado.",
+      "fr": "Le groupe de personnes qui contrôlent un pays ou un État.",
+      "de": "Die Gruppe von Menschen, die ein Land oder einen Staat kontrollieren."
     },
     {
       "id": 2,
@@ -72,7 +76,9 @@
       "ko": "누군가 또는 무언가를 해로부터 안전하게 지키는 것.",
       "zh-Hans": "使某人或某物免受伤害，保持安全。",
       "es": "Mantener a alguien o algo a salvo de daño.",
-      "pt-BR": "Manter alguém ou algo seguro e livre de danos."
+      "pt-BR": "Manter alguém ou algo seguro e livre de danos.",
+      "fr": "Garder quelqu'un ou quelque chose en sécurité et à l'abri du mal.",
+      "de": "Jemanden oder etwas vor Schaden bewahren."
     },
     {
       "id": 3,
@@ -80,7 +86,9 @@
       "ko": "도로, 전력, 물과 같이 한 나라가 필요로 하는 매우 중요한 시스템.",
       "zh-Hans": "一个国家所需的路网、电力、水等非常重要的系统。",
       "es": "Sistemas muy importantes que un país necesita, como carreteras, electricidad y agua.",
-      "pt-BR": "Sistemas muito importantes que um país necessita, como estradas, energia e água."
+      "pt-BR": "Sistemas muito importantes que um país necessita, como estradas, energia e água.",
+      "fr": "Des systèmes très importants comme les routes, l'électricité et l'eau dont un pays a besoin.",
+      "de": "Sehr wichtige Systeme wie Straßen, Strom und Wasser, die ein Land benötigt."
     },
     {
       "id": 4,
@@ -88,7 +96,9 @@
       "ko": "특정한 사람이나 장소를 겨냥하는 것; 목표로 삼는 것.",
       "zh-Hans": "将某特定的人或地点作为目标；选定为目的。",
       "es": "Apuntar a una persona o lugar específico; elegir como objetivo.",
-      "pt-BR": "Mirar em uma pessoa ou lugar específico; escolher como um objetivo."
+      "pt-BR": "Mirar em uma pessoa ou lugar específico; escolher como um objetivo.",
+      "fr": "Viser une personne ou un endroit spécifique; choisir comme objectif.",
+      "de": "Auf eine bestimmte Person oder einen bestimmten Ort abzielen; als Ziel auswählen."
     },
     {
       "id": 5,
@@ -96,7 +106,9 @@
       "ko": "무언가를 위해 준비하는 것.",
       "zh-Hans": "为某事做准备。",
       "es": "Hacer los preparativos para algo.",
-      "pt-BR": "Fazer os preparativos para algo."
+      "pt-BR": "Fazer os preparativos para algo.",
+      "fr": "Se préparer à quelque chose.",
+      "de": "Sich auf etwas vorbereiten."
     },
     {
       "id": 6,
@@ -104,13 +116,34 @@
       "ko": "정보를 훔치거나 문제를 일으키기 위해 컴퓨터 시스템을 공격하는 행위.",
       "zh-Hans": "对计算机系统的攻击，通常是为了窃取信息或制造麻烦。",
       "es": "Ataques a sistemas informáticos, a menudo para robar información o causar problemas.",
-      "pt-BR": "Ataques a sistemas de computador, geralmente para roubar informações ou causar problemas."
+      "pt-BR": "Ataques a sistemas de computador, geralmente para roubar informações ou causar problemas.",
+      "fr": "Des attaques contre des systèmes informatiques, souvent pour voler des informations ou causer des problèmes.",
+      "de": "Angriffe auf Computersysteme, oft um Informationen zu stehlen oder Probleme zu verursachen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-18T14:42:22.992195+00:00"
+    "date": "2026-09-30T00:09:26.660826+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-18T14:42:22.992195+00:00"
+      }
+    }
   }
 }

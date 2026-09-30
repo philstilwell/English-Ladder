@@ -64,7 +64,9 @@
       "ko": "어떤 것, 특히 중요하거나 필요한 것을 공개적으로 요구하거나 요청하는 것.",
       "zh-Hans": "公开地要求或请求某事，尤其是重要或必要的事情。",
       "es": "Demandaro solicitar algo públicamente, especialmente algo importante o necesario.",
-      "pt-BR": "Demandar ou solicitar algo publicamente, especialmente algo importante ou necessário."
+      "pt-BR": "Demandar ou solicitar algo publicamente, especialmente algo importante ou necessário.",
+      "fr": "Demander ou exiger quelque chose publiquement, en particulier quelque chose d'important ou de nécessaire.",
+      "de": "Etwas öffentlich fordern oder verlangen, insbesondere etwas Wichtiges oder Notwendiges."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "조직, 국가 또는 활동이 어떻게 운영되는지에 대한 구조를 제공하는 법률, 규칙 및 규정의 체계.",
       "zh-Hans": "为一个组织、国家或活动如何运作提供结构的法律、规章和制度体系。",
       "es": "El sistema de leyes, normas y regulaciones que proporciona la estructura para el funcionamiento de una organización, país o actividad.",
-      "pt-BR": "O sistema de leis, regras e regulamentos que fornece a estrutura para como uma organização, país ou atividade opera."
+      "pt-BR": "O sistema de leis, regras e regulamentos que fornece a estrutura para como uma organização, país ou atividade opera.",
+      "fr": "L'ensemble des lois, règles et réglementations qui fournit la structure de fonctionnement d'une organisation, d'un pays ou d'une activité.",
+      "de": "Das System von Gesetzen, Regeln und Vorschriften, das die Struktur dafür vorgibt, wie eine Organisation, ein Land oder eine Aktivität funktioniert."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "집단이나 국가 간에 종종 장기적인 싸움이나 적대감을 수반하는 심각한 의견 불일치 또는 논쟁.",
       "zh-Hans": "严重的意见分歧或争论，常涉及团体或国家之间长期的战斗或敌对状态。",
       "es": "Un desacuerdo o discusión serio, a menudo que involucra luchas o hostilidades prolongadas entre grupos o naciones.",
-      "pt-BR": "Um desacordo ou argumento sério, frequentemente envolvendo combates ou hostilidades prolongadas entre grupos ou nações."
+      "pt-BR": "Um desacordo ou argumento sério, frequentemente envolvendo combates ou hostilidades prolongadas entre grupos ou nações.",
+      "fr": "Un désaccord ou une dispute sérieux, impliquant souvent des combats ou des hostilités prolongées entre des groupes ou des nations.",
+      "de": "Eine ernsthafte Meinungsverschiedenheit oder Auseinandersetzung, die oft langwierige Kämpfe oder Feindseligkeiten zwischen Gruppen oder Nationen beinhaltet."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "계획을 실행하기 위해 처리해야 할 세부 사항들.",
       "zh-Hans": "为了使计划成功实施而必须处理的细节。",
       "es": "Los detalles que deben ser gestionados para que un plan funcione.",
-      "pt-BR": "Os detalhes que precisam ser tratados para que um plano funcione."
+      "pt-BR": "Os detalhes que precisam ser tratados para que um plano funcione.",
+      "fr": "Les détails qui doivent être traités pour qu'un plan fonctionne.",
+      "de": "Die Details, die berücksichtigt werden müssen, damit ein Plan funktioniert."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "결정을 내리기 전에 어떤 것에 대해 신중하게 생각하는 것.",
       "zh-Hans": "在做出决定之前对某事进行的仔细思考。",
       "es": "El pensamiento cuidadoso sobre algo antes de tomar una decisión.",
-      "pt-BR": "O pensamento cuidadoso sobre algo antes de tomar uma decisão."
+      "pt-BR": "O pensamento cuidadoso sobre algo antes de tomar uma decisão.",
+      "fr": "Une réflexion attentive sur quelque chose avant de prendre une décision.",
+      "de": "Sorgfältiges Nachdenken über etwas, bevor eine Entscheidung getroffen wird."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "양이나 정도가 중요할 정도로 충분히 큰.",
       "zh-Hans": "数量或程度大到足以重要的。",
       "es": "Lo suficientemente grande en cantidad o grado como para ser importante.",
-      "pt-BR": "Grande o suficiente em quantidade ou grau para ser importante."
+      "pt-BR": "Grande o suficiente em quantidade ou grau para ser importante.",
+      "fr": "Assez grand en quantité ou en degré pour être important.",
+      "de": "Ausreichend groß in Menge oder Ausmaß, um wichtig zu sein."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "계획이나 결정을 실행에 옮기는 것.",
       "zh-Hans": "将计划或决定付诸实施。",
       "es": "Poner un plan o una decisión en acción.",
-      "pt-BR": "Colocar um plano ou uma decisão em prática."
+      "pt-BR": "Colocar um plano ou uma decisão em prática.",
+      "fr": "Mettre un plan ou une décision en œuvre.",
+      "de": "Einen Plan oder eine Entscheidung in die Tat umsetzen."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "활동을 조직하고 수행하는 것.",
       "zh-Hans": "组织并执行一项活动。",
       "es": "Organizar y llevar a cabo una actividad.",
-      "pt-BR": "Organizar e realizar uma atividade."
+      "pt-BR": "Organizar e realizar uma atividade.",
+      "fr": "Organiser et réaliser une activité.",
+      "de": "Eine Aktivität organisieren und durchführen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:56:07.901874+00:00"
+    "date": "2026-09-30T00:14:28.213567+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:56:07.901874+00:00"
+      }
+    }
   }
 }

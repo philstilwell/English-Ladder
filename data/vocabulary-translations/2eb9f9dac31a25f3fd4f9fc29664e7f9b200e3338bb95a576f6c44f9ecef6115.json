@@ -54,7 +54,9 @@
       "ko": "장소나 사람들에게 행해지는 강하고 해로운 행동.",
       "zh-Hans": "对某个地方或人群采取的强烈有害的行动。",
       "es": "Una acción fuerte y dañina contra un lugar o personas.",
-      "pt-BR": "Uma ação forte e prejudicial contra um lugar ou pessoas."
+      "pt-BR": "Uma ação forte e prejudicial contra um lugar ou pessoas.",
+      "fr": "Une action forte et nuisible contre un lieu ou des personnes.",
+      "de": "Eine starke, schädliche Handlung gegen einen Ort oder Menschen."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "어떤 사람의 목숨을 빼앗는 것.",
       "zh-Hans": "夺走某个人的生命。",
       "es": "Quitarle la vida a alguien.",
-      "pt-BR": "Tirar a vida de alguém."
+      "pt-BR": "Tirar a vida de alguém.",
+      "fr": "Ôter la vie à quelqu'un.",
+      "de": "Jemandem das Leben nehmen."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "정부나 회사에서 일하는 중요한 사람들.",
       "zh-Hans": "为政府或公司工作的重要人物。",
       "es": "Personas importantes que trabajan para el gobierno o una empresa.",
-      "pt-BR": "Pessoas importantes que trabalham para o governo ou uma empresa."
+      "pt-BR": "Pessoas importantes que trabalham para o governo ou uma empresa.",
+      "fr": "Des personnes importantes qui travaillent pour le gouvernement ou une entreprise.",
+      "de": "Wichtige Personen, die für die Regierung oder ein Unternehmen arbeiten."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "공격하거나 해를 입힐 장소나 대상으로 선택된.",
       "zh-Hans": "被选作打击或伤害的地点或事物。",
       "es": "Elegido como un lugar o una cosa para golpear o dañar.",
-      "pt-BR": "Escolhido como um lugar ou objeto para atingir ou ferir."
+      "pt-BR": "Escolhido como um lugar ou objeto para atingir ou ferir.",
+      "fr": "Choisi comme un lieu ou une chose à frapper ou à blesser.",
+      "de": "Als Ort oder Sache ausgewählt, die getroffen oder verletzt werden soll."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "하늘로부터의 공격으로부터 나라를 보호하는 시스템이나 무기.",
       "zh-Hans": "保护一个国家免受空中袭击的系统或武器。",
       "es": "Sistemas o armas que protegen a un país de ataques desde el cielo.",
-      "pt-BR": "Sistemas ou armas que protegem um país de ataques vindos do céu."
+      "pt-BR": "Sistemas ou armas que protegem um país de ataques vindos do céu.",
+      "fr": "Des systèmes ou des armes qui protègent un pays contre les attaques venant du ciel.",
+      "de": "Systeme oder Waffen, die ein Land vor Angriffen aus dem Himmel schützen."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "매우 크거나 매우 강한.",
       "zh-Hans": "非常大或非常强的。",
       "es": "Muy grande o muy fuerte.",
-      "pt-BR": "Muito grande ou muito forte."
+      "pt-BR": "Muito grande ou muito forte.",
+      "fr": "très grand ou très fort",
+      "de": "sehr groß oder sehr stark"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:55:49.972555+00:00"
+    "date": "2026-09-30T00:14:13.169818+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:55:49.972555+00:00"
+      }
+    }
   }
 }

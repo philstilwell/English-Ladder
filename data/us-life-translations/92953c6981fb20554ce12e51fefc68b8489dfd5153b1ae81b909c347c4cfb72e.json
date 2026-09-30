@@ -62,12 +62,47 @@
         "Um “walk-in” é um cliente sem agendamento. No entanto, o tempo de espera pode ser longo, então, se o seu tempo for limitado, é melhor agendar.",
         "Muitas pessoas dão gorjeta em serviços de cabelo, unhas e beleza. Não há problema em decidir depois de verificar o preço final."
       ]
+    },
+    "fr": {
+      "heading": "Les photos et les expressions courtes sont utiles",
+      "points": [
+        "Pour une coupe de cheveux, il peut être difficile de décrire la longueur ou le style uniquement en anglais. Il est plus sûr de montrer une photo.",
+        "Un \"walk-in\" est un client sans rendez-vous. Cependant, l'attente peut être longue, il est donc préférable de prendre rendez-vous si votre temps est limité.",
+        "De nombreuses personnes donnent un pourboire pour les services de coiffure, d'onglerie et de beauté. Vous pouvez décider après avoir vu le prix final."
+      ]
+    },
+    "de": {
+      "heading": "Fotos und kurze Ausdrücke sind hilfreich",
+      "points": [
+        "Bei einem Haarschnitt kann es schwierig sein, Länge oder Stil nur auf Englisch zu beschreiben. Es ist sicherer, ein Foto zu zeigen.",
+        "Ein \"Walk-in\" ist ein Kunde ohne Termin. Es kann jedoch zu langen Wartezeiten kommen, daher ist es ratsam, einen Termin zu vereinbaren, wenn Ihre Zeit begrenzt ist.",
+        "Viele Leute geben Trinkgeld für Haar-, Nagel- und Schönheitsdienstleistungen. Sie können entscheiden, nachdem Sie den Endpreis gesehen haben."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:15:20.817570+00:00"
+    "date": "2026-09-30T00:17:10.810960+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:15:20.817570+00:00"
+      }
+    }
   }
 }

@@ -62,12 +62,47 @@
         "Para dúvidas sobre imigração, consulte sempre sites oficiais, o escritório da sua escola ou um advogado qualificado. Não confie apenas nas mídias sociais.",
         "Muitos estrangeiros precisam atualizar seu endereço junto ao USCIS após uma mudança. O redirecionamento de correspondência dos correios por si só não altera o endereço no USCIS."
       ]
+    },
+    "fr": {
+      "heading": "Les documents sont la base de la vie quotidienne",
+      "points": [
+        "Aux États-Unis, votre adresse, vos documents d'identité, votre signature et les délais sont très importants. Conservez les versions numériques et les copies papier de vos documents importants dans des endroits sûrs.",
+        "Pour toute information liée à l'immigration, vérifiez toujours les sites web officiels, le bureau de votre établissement scolaire ou un avocat qualifié. Ne faites pas confiance uniquement aux médias sociaux.",
+        "De nombreux non-citoyens doivent mettre à jour leur adresse auprès de l'USCIS après un déménagement. La réexpédition du courrier par la poste seule ne modifie pas votre adresse auprès de l'USCIS."
+      ]
+    },
+    "de": {
+      "heading": "Dokumente sind die Grundlage des Alltagslebens",
+      "points": [
+        "In den USA sind Ihre Adresse, Ihr Ausweis, Ihre Unterschrift und Fristen sehr wichtig. Bewahren Sie sowohl digitale als auch physische Kopien wichtiger Dokumente an sicheren Orten auf.",
+        "Für Informationen zur Einwanderung wenden Sie sich immer an offizielle Websites, das Büro Ihrer Bildungseinrichtung oder einen qualifizierten Anwalt. Verlassen Sie sich nicht allein auf soziale Medien.",
+        "Viele Nicht-Staatsbürger müssen nach einem Umzug ihre Adresse beim USCIS aktualisieren. Eine Adressänderung bei der Post allein ändert nicht Ihre Adresse beim USCIS."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:14:11.948195+00:00"
+    "date": "2026-09-30T00:16:12.091588+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:14:11.948195+00:00"
+      }
+    }
   }
 }

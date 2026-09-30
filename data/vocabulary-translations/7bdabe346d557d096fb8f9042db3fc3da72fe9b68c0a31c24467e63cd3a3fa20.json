@@ -57,7 +57,9 @@
       "ko": "잘못한 일에 대해 \"미안합니다\"라고 말했습니다.",
       "zh-Hans": "为某件错事说了“对不起”。",
       "es": "Dijo \"lo siento\" por algo incorrecto.",
-      "pt-BR": "Disse \"desculpa\" por algo errado."
+      "pt-BR": "Disse \"desculpa\" por algo errado.",
+      "fr": "a dit «désolé» pour quelque chose de mal.",
+      "de": "sich für etwas Falsches entschuldigt."
     },
     {
       "id": 1,
@@ -65,7 +67,9 @@
       "ko": "잘못된 행동이나 오류.",
       "zh-Hans": "错误的行动或差错。",
       "es": "Acciones incorrectas o errores.",
-      "pt-BR": "Ações erradas ou enganos."
+      "pt-BR": "Ações erradas ou enganos.",
+      "fr": "des actions incorrectes ou des erreurs.",
+      "de": "Falsche Handlungen oder Irrtümer."
     },
     {
       "id": 2,
@@ -73,7 +77,9 @@
       "ko": "음악 그룹이 공연하기 위해 여러 장소를 방문하는 여행.",
       "zh-Hans": "音乐团体到许多地方进行表演的旅行。",
       "es": "Un viaje de un grupo de música a muchos lugares para actuar.",
-      "pt-BR": "Uma viagem de um grupo musical a muitos lugares para se apresentar."
+      "pt-BR": "Uma viagem de um grupo musical a muitos lugares para se apresentar.",
+      "fr": "un voyage fait par un groupe de musique dans de nombreux endroits pour se produire.",
+      "de": "Eine Reise einer Musikgruppe zu vielen Orten, um aufzutreten."
     },
     {
       "id": 3,
@@ -81,7 +87,9 @@
       "ko": "그룹이나 장소에서 데리고 나가졌다.",
       "zh-Hans": "从一个团体或地方被带走。",
       "es": "Sacado de un grupo o lugar.",
-      "pt-BR": "Retirado de um grupo ou lugar."
+      "pt-BR": "Retirado de um grupo ou lugar.",
+      "fr": "retiré d'un groupe ou d'un endroit.",
+      "de": "von einer Gruppe oder einem Ort entfernt."
     },
     {
       "id": 4,
@@ -89,7 +97,9 @@
       "ko": "다루기 어려운 것.",
       "zh-Hans": "难以处理的事情。",
       "es": "Algo que es difícil de manejar.",
-      "pt-BR": "Algo que é difícil de lidar."
+      "pt-BR": "Algo que é difícil de lidar.",
+      "fr": "quelque chose de difficile à gérer.",
+      "de": "etwas, das schwierig zu handhaben ist."
     },
     {
       "id": 5,
@@ -97,7 +107,9 @@
       "ko": "물건에 대해 지불하는 돈.",
       "zh-Hans": "你为事物支付的钱。",
       "es": "El dinero que pagas por las cosas.",
-      "pt-BR": "O dinheiro que você paga pelas coisas."
+      "pt-BR": "O dinheiro que você paga pelas coisas.",
+      "fr": "l'argent que l'on paie pour des choses.",
+      "de": "das Geld, das man für Dinge bezahlt."
     },
     {
       "id": 6,
@@ -105,13 +117,34 @@
       "ko": "함께 있고 동의하는 것.",
       "zh-Hans": "团结一致并意见相同。",
       "es": "Estar juntos y de acuerdo.",
-      "pt-BR": "Estar junto e em concordância."
+      "pt-BR": "Estar junto e em concordância.",
+      "fr": "être ensemble et être d'accord.",
+      "de": "zusammen sein und einig sein."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-20T02:06:32.897326+00:00"
+    "date": "2026-09-30T00:09:16.630977+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-20T02:06:32.897326+00:00"
+      }
+    }
   }
 }

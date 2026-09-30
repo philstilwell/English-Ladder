@@ -62,7 +62,9 @@
       "ko": "새로운 사실을 발견하기 위해 어떤 것을 주의 깊게 연구하는 사람",
       "zh-Hans": "仔细研究某事以发现新事实的人",
       "es": "Una persona que estudia algo cuidadosamente para descubrir nuevos hechos",
-      "pt-BR": "Uma pessoa que estuda algo cuidadosamente para descobrir novos fatos"
+      "pt-BR": "Uma pessoa que estuda algo cuidadosamente para descobrir novos fatos",
+      "fr": "Une personne qui étudie quelque chose attentivement pour découvrir de nouveaux faits.",
+      "de": "Eine Person, die etwas sorgfältig studiert, um neue Fakten zu entdecken."
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "안전하지 않은; 해를 끼치거나 부상을 입힐 수 있는",
       "zh-Hans": "不安全；可能造成伤害或损伤的",
       "es": "Que no es seguro; capaz de causar daño o lesión",
-      "pt-BR": "Não seguro; capaz de causar dano ou lesão"
+      "pt-BR": "Não seguro; capaz de causar dano ou lesão",
+      "fr": "Non sûr ; capable de causer du tort ou des blessures.",
+      "de": "Nicht sicher; in der Lage, Schaden oder Verletzungen zu verursachen."
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "어떤 일이 일어날 가능성",
       "zh-Hans": "某事发生的可能性",
       "es": "Una posibilidad de que algo suceda",
-      "pt-BR": "Uma possibilidade de que algo aconteça"
+      "pt-BR": "Uma possibilidade de que algo aconteça",
+      "fr": "Une possibilité que quelque chose se produise.",
+      "de": "Eine Möglichkeit, dass etwas geschehen wird."
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "발생할 수 있는 문제나 위험에 대해 알려주는 메시지나 신호",
       "zh-Hans": "告知你可能存在的问题或危险的信息或信号",
       "es": "Mensajes o señales que te informan sobre un posible problema o peligro",
-      "pt-BR": "Mensagens ou sinais que te informam sobre um possível problema ou perigo"
+      "pt-BR": "Mensagens ou sinais que te informam sobre um possível problema ou perigo",
+      "fr": "Des messages ou des signes qui vous informent d'un problème ou d'un danger possible.",
+      "de": "Mitteilungen oder Anzeichen, die Sie über ein mögliches Problem oder eine Gefahr informieren."
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "특정 분야에서 많은 특별한 지식이나 기술을 가진 사람",
       "zh-Hans": "在特定领域拥有大量专业知识或技能的人",
       "es": "Una persona que tiene mucho conocimiento o habilidad especial en un área particular",
-      "pt-BR": "Uma pessoa que tem muito conhecimento ou habilidade especial em uma área específica"
+      "pt-BR": "Uma pessoa que tem muito conhecimento ou habilidade especial em uma área específica",
+      "fr": "Une personne qui possède beaucoup de connaissances spéciales ou de compétences dans un domaine particulier.",
+      "de": "Eine Person, die viel spezielles Wissen oder Können in einem bestimmten Bereich besitzt."
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "제품이나 서비스를 광고하고 판매하는 것과 관련된 활동",
       "zh-Hans": "涉及产品或服务广告和销售的活动",
       "es": "Las actividades relacionadas con la publicidad y venta de un producto o servicio",
-      "pt-BR": "As atividades envolvidas na publicidade e venda de um produto ou serviço"
+      "pt-BR": "As atividades envolvidas na publicidade e venda de um produto ou serviço",
+      "fr": "Les activités impliquées dans la publicité et la vente d'un produit ou d'un service.",
+      "de": "Die Aktivitäten, die mit der Werbung und dem Verkauf eines Produkts oder einer Dienstleistung verbunden sind."
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "특히 어려운 일을 하기 위한 노력이나 시도",
       "zh-Hans": "为做某事，尤其是困难之事所付出的辛勤工作或尝试",
       "es": "Trabajo duro o intentos de hacer algo, especialmente algo difícil",
-      "pt-BR": "Trabalho duro ou tentativas de fazer algo, especialmente algo difícil"
+      "pt-BR": "Trabalho duro ou tentativas de fazer algo, especialmente algo difícil",
+      "fr": "Un travail acharné ou des tentatives pour faire quelque chose, surtout quelque chose de difficile.",
+      "de": "Harte Arbeit oder Versuche, etwas zu tun, besonders etwas Schwieriges."
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "컴퓨터와 인터넷을 사용하여 정보를 손상시키거나 훔치는 유해한 행위",
       "zh-Hans": "利用计算机和互联网实施的旨在破坏或窃取信息的有害行为",
       "es": "Acciones dañinas realizadas utilizando computadoras e internet para dañar o robar información",
-      "pt-BR": "Ações prejudiciais feitas usando computadores e a internet para danificar ou roubar informações"
+      "pt-BR": "Ações prejudiciais feitas usando computadores e a internet para danificar ou roubar informações",
+      "fr": "Des actions nuisibles effectuées à l'aide d'ordinateurs et d'internet pour endommager ou voler des informations.",
+      "de": "Schädliche Handlungen, die mithilfe von Computern und dem Internet durchgeführt werden, um Informationen zu beschädigen oder zu stehlen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-09T14:11:20.950273+00:00"
+    "date": "2026-09-30T00:11:07.326201+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-09T14:11:20.950273+00:00"
+      }
+    }
   }
 }

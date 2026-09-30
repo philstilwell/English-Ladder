@@ -54,7 +54,9 @@
       "ko": "땅이 갑자기 강하게 흔들리는 현상.",
       "zh-Hans": "地面突然剧烈摇晃。",
       "es": "Cuando la tierra se sacude de repente y con fuerza.",
-      "pt-BR": "Quando o chão treme de repente e com força."
+      "pt-BR": "Quando o chão treme de repente e com força.",
+      "fr": "Quand le sol tremble soudainement et fortement.",
+      "de": "Wenn der Boden plötzlich und stark bebt."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "위험에 처한 다른 사람들을 구하는 것을 돕는 사람들.",
       "zh-Hans": "帮助他人脱离危险的人。",
       "es": "Personas que ayudan a salvar a otros del peligro.",
-      "pt-BR": "Pessoas que ajudam a salvar outras de um perigo."
+      "pt-BR": "Pessoas que ajudam a salvar outras de um perigo.",
+      "fr": "Des personnes qui aident à sauver d'autres gens d'un danger.",
+      "de": "Personen, die helfen, andere aus Gefahr zu retten."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "위험한 사건 후에 여전히 살아있는 사람들.",
       "zh-Hans": "在危险事件后仍然活着的人。",
       "es": "Personas que siguen vivas después de un evento peligroso.",
-      "pt-BR": "Pessoas que ainda estão vivas depois de um evento perigoso."
+      "pt-BR": "Pessoas que ainda estão vivas depois de um evento perigoso.",
+      "fr": "Des personnes qui sont encore en vie après un événement dangereux.",
+      "de": "Personen, die nach einem gefährlichen Ereignis noch am Leben sind."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "움직이거나 어떤 장소에서 벗어날 수 없는 상태.",
       "zh-Hans": "无法移动或从某个地方出来。",
       "es": "Incapaz de moverse o salir de un lugar.",
-      "pt-BR": "Incapaz de se mover ou sair de um lugar."
+      "pt-BR": "Incapaz de se mover ou sair de um lugar.",
+      "fr": "Incapable de bouger ou de sortir d'un endroit.",
+      "de": "Unfähig, sich zu bewegen oder aus einem Ort herauszukommen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "돌이나 벽돌처럼 부서진 건물 조각들.",
       "zh-Hans": "建筑物破碎的碎片，如石头和砖块。",
       "es": "Pedazos rotos de edificios, como piedras y ladrillos.",
-      "pt-BR": "Pedaços quebrados de edifícios, como pedras e tijolos."
+      "pt-BR": "Pedaços quebrados de edifícios, como pedras e tijolos.",
+      "fr": "Des morceaux cassés de bâtiments, comme des pierres et des briques.",
+      "de": "Zerbrochene Teile von Gebäuden, wie Steine und Ziegel."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "같은 지역에서 더 큰 지진 이후에 발생하는 작은 지진들.",
       "zh-Hans": "在同一区域内，一次大地震之后发生的较小地震。",
       "es": "Terremotos más pequeños que siguen a uno más grande en la misma área.",
-      "pt-BR": "Terremotos menores que seguem um terremoto maior na mesma área."
+      "pt-BR": "Terremotos menores que seguem um terremoto maior na mesma área.",
+      "fr": "Des tremblements de terre plus petits qui suivent un tremblement de terre plus important dans la même zone.",
+      "de": "Kleinere Erdbeben, die einem größeren Erdbeben in derselben Gegend folgen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:57:36.370492+00:00"
+    "date": "2026-09-30T00:15:30.001016+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:57:36.370492+00:00"
+      }
+    }
   }
 }

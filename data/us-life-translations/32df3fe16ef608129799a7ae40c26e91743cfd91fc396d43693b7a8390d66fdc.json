@@ -62,12 +62,47 @@
         "Nos postos de gasolina, pode ser solicitado o CEP (código postal, ou ZIP code) ao pagar com cartão. Se não funcionar, você pode pagar dentro da loja.",
         "Em caso de problemas com o carro, primeiro mova-se para um local seguro. Depois, entre em contato com sua seguradora, serviço de assistência na estrada ou oficina mecânica."
       ]
+    },
+    "fr": {
+      "heading": "La conduite automobile exige de savoir lire les panneaux",
+      "points": [
+        "Les panneaux de stationnement peuvent varier selon l'heure, le jour de la semaine et l'endroit. Même si le texte est court, vérifiez toujours les indications comme « No parking » (stationnement interdit) ou « permit only » (avec permis uniquement).",
+        "Aux stations-service, il peut vous être demandé de saisir un code postal (ZIP code) lorsque vous payez par carte. Si la transaction ne fonctionne pas, vous pouvez toujours payer à l'intérieur du magasin.",
+        "En cas de problème avec votre voiture, mettez-vous d'abord en sécurité. Ensuite, contactez votre compagnie d'assurance, un service d'assistance routière ou un atelier de réparation."
+      ]
+    },
+    "de": {
+      "heading": "Im Straßenverkehr müssen Sie Schilder lesen können",
+      "points": [
+        "Parkschilder können je nach Uhrzeit, Wochentag und Ort variieren. Achten Sie, selbst bei kurzem Text, immer auf Hinweise wie „No parking“ (Parken verboten) oder „permit only“ (nur mit Genehmigung).",
+        "An Tankstellen werden Sie beim Bezahlen mit Karte manchmal nach einer Postleitzahl (ZIP code) gefragt. Sollte dies nicht funktionieren, können Sie immer im Laden bezahlen.",
+        "Wenn Sie eine Autopanne haben, begeben Sie sich zuerst an einen sicheren Ort. Danach kontaktieren Sie Ihre Versicherungsgesellschaft, den Pannendienst oder eine Werkstatt."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:15:11.808088+00:00"
+    "date": "2026-09-30T00:17:01.777215+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:15:11.808088+00:00"
+      }
+    }
   }
 }

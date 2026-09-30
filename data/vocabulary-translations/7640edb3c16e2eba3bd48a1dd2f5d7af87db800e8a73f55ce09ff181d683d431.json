@@ -64,7 +64,9 @@
       "ko": "범위나 면적이 더 넓거나 광범위하게 만들어진.",
       "zh-Hans": "在范围或面积上变得更大或更广。",
       "es": "Hecho más grande o más extenso en alcance o área.",
-      "pt-BR": "Tornado maior ou mais extenso em escopo ou área."
+      "pt-BR": "Tornado maior ou mais extenso em escopo ou área.",
+      "fr": "Rendu plus grand ou plus étendu dans sa portée ou sa zone.",
+      "de": "In Umfang oder Bereich größer oder ausgedehnter gemacht."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "시간이 지나면서 발전하거나 발생하다; 명확해지거나 드러나다.",
       "zh-Hans": "随着时间的推移发展或发生；变得清晰或显露出来。",
       "es": "Desarrollarse o suceder durante un período de tiempo; volverse claro o revelarse.",
-      "pt-BR": "Desenvolver-se ou acontecer ao longo do tempo; tornar-se claro ou revelado."
+      "pt-BR": "Desenvolver-se ou acontecer ao longo do tempo; tornar-se claro ou revelado.",
+      "fr": "Se développer ou se produire sur une période de temps ; devenir clair ou révélé.",
+      "de": "Sich über einen Zeitraum entwickeln oder geschehen; klar oder offensichtlich werden."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "무언가를 덜 심각하거나, 덜 중요하거나, 덜 고통스럽게 만들다; 불리한 상황의 영향을 완화하거나 부드럽게 하다.",
       "zh-Hans": "使某事不那么严重、严肃或痛苦；减轻或缓和不利条件的影响。",
       "es": "Hacer que algo sea menos severo, grave o doloroso; aliviar o suavizar el impacto de una condición adversa.",
-      "pt-BR": "Tornar algo menos severo, sério ou doloroso; aliviar ou suavizar o impacto de uma condição adversa."
+      "pt-BR": "Tornar algo menos severo, sério ou doloroso; aliviar ou suavizar o impacto de uma condição adversa.",
+      "fr": "Rendre quelque chose moins sévère, grave ou douloureux ; alléger ou adoucir l'impact d'une condition défavorable.",
+      "de": "Etwas weniger schwerwiegend, ernst oder schmerzhaft machen; die Auswirkungen einer widrigen Bedingung lindern oder abschwächen."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "중요하거나 눈에 띄는 정도로.",
       "zh-Hans": "达到重要或显著的程度。",
       "es": "En un grado que es importante o notorio.",
-      "pt-BR": "Em um grau que é importante ou notável."
+      "pt-BR": "Em um grau que é importante ou notável.",
+      "fr": "À un degré qui est important ou perceptible.",
+      "de": "In einem Maße, das wichtig oder bemerkbar ist."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "사람들이 할 수 있는 것을 제한하는 규칙.",
       "zh-Hans": "限制人们可以做什么的规则。",
       "es": "Reglas que limitan lo que las personas pueden hacer.",
-      "pt-BR": "Regras que limitam o que as pessoas podem fazer."
+      "pt-BR": "Regras que limitam o que as pessoas podem fazer.",
+      "fr": "Des règles qui limitent ce que les gens peuvent faire.",
+      "de": "Regeln, die einschränken, was Menschen tun können."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "조직이나 정부에서 권위나 신뢰를 가지는 위치에 있는 사람들.",
       "zh-Hans": "在组织或政府中担任权威或信任职位的人。",
       "es": "Personas que ocupan un puesto de autoridad o confianza en una organización o gobierno.",
-      "pt-BR": "Pessoas que ocupam uma posição de autoridade ou confiança em uma organização ou governo."
+      "pt-BR": "Pessoas que ocupam uma posição de autoridade ou confiança em uma organização ou governo.",
+      "fr": "Des personnes qui occupent un poste d'autorité ou de confiance dans une organisation ou un gouvernement.",
+      "de": "Personen, die eine Position der Autorität oder des Vertrauens in einer Organisation oder Regierung innehaben."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "어떤 것을 공식적으로, 공개적으로, 또는 강력하게 진술했다.",
       "zh-Hans": "正式地、公开地或强烈地声明了某事。",
       "es": "Declaró algo de manera oficial, pública o enérgica.",
-      "pt-BR": "Afirmou algo oficialmente, publicamente ou com veemência."
+      "pt-BR": "Afirmou algo oficialmente, publicamente ou com veemência.",
+      "fr": "A déclaré quelque chose officiellement, publiquement ou avec force.",
+      "de": "Etwas offiziell, öffentlich oder nachdrücklich geäußert."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "어떤 것의 양, 강도 또는 수준을 더 크게 만들다.",
       "zh-Hans": "使某物的数量、强度或水平变得更大。",
       "es": "Hacer que algo sea mayor en cantidad, fuerza o nivel.",
-      "pt-BR": "Tornar algo maior em quantidade, força ou nível."
+      "pt-BR": "Tornar algo maior em quantidade, força ou nível.",
+      "fr": "Rendre quelque chose plus important en quantité, en force ou en niveau.",
+      "de": "Etwas an Menge, Stärke oder Niveau größer machen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:47.944033+00:00"
+    "date": "2026-09-30T00:13:33.652148+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:47.944033+00:00"
+      }
+    }
   }
 }

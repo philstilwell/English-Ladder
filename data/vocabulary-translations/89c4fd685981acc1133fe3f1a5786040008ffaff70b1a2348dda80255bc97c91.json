@@ -62,7 +62,9 @@
       "ko": "흔하지 않은; 자주 보거나 발견되지 않는.",
       "zh-Hans": "不常见的；不经常看到或发现的。",
       "es": "Que no es común; que no se ve o se encuentra con frecuencia.",
-      "pt-BR": "Não comum; que não é visto ou encontrado com frequência."
+      "pt-BR": "Não comum; que não é visto ou encontrado com frequência.",
+      "fr": "Qui n'est pas courant; qui n'est pas vu ou trouvé souvent.",
+      "de": "Nicht häufig; nicht oft gesehen oder gefunden."
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "우연히 발견된; 어떤 것을 처음으로 보거나 알게 된.",
       "zh-Hans": "偶然发现的；第一次看到或了解某事。",
       "es": "Descubierto por casualidad; visto o aprendido sobre algo por primera vez.",
-      "pt-BR": "Descoberto por acaso; visto ou aprendido sobre algo pela primeira vez."
+      "pt-BR": "Descoberto por acaso; visto ou aprendido sobre algo pela primeira vez.",
+      "fr": "Découvert par hasard; vu ou appris quelque chose pour la première fois.",
+      "de": "Zufällig entdeckt; etwas zum ersten Mal gesehen oder erfahren."
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "물건을 살 수 있는 장소.",
       "zh-Hans": "可以买东西的地方。",
       "es": "Un lugar donde se pueden comprar cosas.",
-      "pt-BR": "Um lugar onde se pode comprar coisas."
+      "pt-BR": "Um lugar onde se pode comprar coisas.",
+      "fr": "Un endroit où l'on peut acheter des choses.",
+      "de": "Ein Ort, an dem man Dinge kaufen kann."
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "돈이나 물건 같은 것을 자선 단체나 도움이 필요한 사람에게 주었다.",
       "zh-Hans": "将金钱或物品等捐赠给慈善机构或需要帮助的人。",
       "es": "Entregó algo, como dinero o bienes, a una organización benéfica o a una persona que necesita ayuda.",
-      "pt-BR": "Deu algo, como dinheiro ou bens, para uma instituição de caridade ou para uma pessoa que precisa de ajuda."
+      "pt-BR": "Deu algo, como dinheiro ou bens, para uma instituição de caridade ou para uma pessoa que precisa de ajuda.",
+      "fr": "A donné quelque chose, comme de l'argent ou des biens, à une œuvre de bienfaisance ou à une personne qui a besoin d'aide.",
+      "de": "Hat etwas gegeben, wie Geld oder Waren, an eine Wohltätigkeitsorganisation oder eine Person, die Hilfe braucht."
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "사업체 또는 사업체의 일부를 책임지는 사람.",
       "zh-Hans": "负责管理某项业务或某部分业务的人。",
       "es": "Una persona que está a cargo de un negocio o de una parte de un negocio.",
-      "pt-BR": "Uma pessoa que está encarregada de um negócio ou de uma parte de um negócio."
+      "pt-BR": "Uma pessoa que está encarregada de um negócio ou de uma parte de um negócio.",
+      "fr": "Une personne qui est responsable d'une entreprise ou d'une partie d'une entreprise.",
+      "de": "Eine Person, die für ein Geschäft oder einen Teil eines Geschäfts verantwortlich ist."
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "평소보다 더 좋거나 더 중요한; 독특한.",
       "zh-Hans": "比平常更好或更重要的；独特的。",
       "es": "Mejor o más importante de lo usual; único.",
-      "pt-BR": "Melhor ou mais importante que o comum; único."
+      "pt-BR": "Melhor ou mais importante que o comum; único.",
+      "fr": "Mieux ou plus important que d'habitude; unique.",
+      "de": "Besser oder wichtiger als üblich; einzigartig."
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "어떤 것의 상태, 얼마나 좋거나 나쁜지.",
       "zh-Hans": "事物所处的状态，它的好坏程度。",
       "es": "El estado de algo, cuán bueno o malo está.",
-      "pt-BR": "O estado de algo, quão bom ou ruim está."
+      "pt-BR": "O estado de algo, quão bom ou ruim está.",
+      "fr": "L'état de quelque chose, à quel point c'est bon ou mauvais.",
+      "de": "Der Zustand von etwas, wie gut oder schlecht es ist."
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "목표를 달성하기 위해 계획된 일련의 행동들, 예를 들어 제품을 팔거나 어떤 목적을 돕는 것.",
       "zh-Hans": "为实现某个目标（例如销售产品或支持一项事业）而计划的一系列行动。",
       "es": "Una serie de acciones planificadas para lograr un objetivo, como vender un producto o apoyar una causa.",
-      "pt-BR": "Uma série de ações planejadas para atingir um objetivo, como vender um produto ou ajudar uma causa."
+      "pt-BR": "Uma série de ações planejadas para atingir um objetivo, como vender um produto ou ajudar uma causa.",
+      "fr": "Une série d'actions planifiées pour atteindre un objectif, comme vendre un produit ou soutenir une cause.",
+      "de": "Eine Reihe von geplanten Aktionen, um ein Ziel zu erreichen, wie zum Beispiel ein Produkt zu verkaufen oder eine Sache zu unterstützen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-22T15:08:28.131831+00:00"
+    "date": "2026-09-30T00:08:43.169328+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-22T15:08:28.131831+00:00"
+      }
+    }
   }
 }

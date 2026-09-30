@@ -54,7 +54,9 @@
       "ko": "군대가 한 나라를 통제할 때, 주로 비상사태 동안 적용되는 특별한 규칙.",
       "zh-Hans": "军队控制一个国家时实行的特别规定，通常在紧急情况下。",
       "es": "Reglas especiales que se aplican cuando el ejército controla un país, a menudo durante una emergencia.",
-      "pt-BR": "Regras especiais aplicadas quando os militares controlam um país, frequentemente durante uma emergência."
+      "pt-BR": "Regras especiais aplicadas quando os militares controlam um país, frequentemente durante uma emergência.",
+      "fr": "Règles spéciales appliquées lorsque l'armée prend le contrôle d'un pays, souvent lors d'une situation d'urgence.",
+      "de": "Besondere Regeln, wenn das Militär ein Land kontrolliert, oft während eines Notstands."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "직장에서 해고되거나, 일을 그만두라고 들음.",
       "zh-Hans": "被解雇；被告知离开工作。",
       "es": "Despedido de un trabajo; se le dijo que dejara el empleo.",
-      "pt-BR": "Demitido de um emprego; mandado sair do trabalho."
+      "pt-BR": "Demitido de um emprego; mandado sair do trabalho.",
+      "fr": "Renvoyé d'un emploi ; on lui a demandé de quitter son poste.",
+      "de": "Von einer Arbeitsstelle entlassen; aufgefordert, die Arbeit zu verlassen."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "사람들이 투표를 통해 자신들의 지도자를 선택하는 시기.",
       "zh-Hans": "人们通过投票选举领导人的时期。",
       "es": "Momentos en los que la gente elige a sus líderes votando.",
-      "pt-BR": "Períodos em que as pessoas escolhem seus líderes por meio de votação."
+      "pt-BR": "Períodos em que as pessoas escolhem seus líderes por meio de votação.",
+      "fr": "Périodes où les gens choisissent leurs dirigeants en votant.",
+      "de": "Zeiten, in denen Menschen ihre Anführer durch Abstimmung wählen."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "특정 기간 동안 일시적으로 중단된.",
       "zh-Hans": "在一定时期内暂时停止了。",
       "es": "Detenido o interrumpido por un período de tiempo determinado.",
-      "pt-BR": "Interrompido ou paralisado por um certo período de tempo."
+      "pt-BR": "Interrompido ou paralisado por um certo período de tempo.",
+      "fr": "Arrêté pour une certaine période de temps.",
+      "de": "Für eine bestimmte Zeitspanne unterbrochen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "국가의 군사 및 안보를 책임지는 고위 정부 관료.",
       "zh-Hans": "负责国家军事和安全的政府高级官员。",
       "es": "Un alto funcionario del gobierno responsable del ejército y la seguridad del país.",
-      "pt-BR": "Um oficial de alto escalão do governo responsável pelas forças armadas e pela segurança do país."
+      "pt-BR": "Um oficial de alto escalão do governo responsável pelas forças armadas e pela segurança do país.",
+      "fr": "Un haut fonctionnaire du gouvernement responsable des affaires militaires et de la sécurité du pays.",
+      "de": "Ein hochrangiger Regierungsbeamter, der für das Militär und die Sicherheit des Landes zuständig ist."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "사람들이 무엇을 할 수 있고 무엇을 할 수 없는지 알려주는 지침이나 규정.",
       "zh-Hans": "说明人们可以或不可以做什么的指示或规定。",
       "es": "Instrucciones o normas que indican lo que la gente puede o no puede hacer.",
-      "pt-BR": "Instruções ou normas que dizem o que as pessoas podem ou não podem fazer."
+      "pt-BR": "Instruções ou normas que dizem o que as pessoas podem ou não podem fazer.",
+      "fr": "Instructions qui indiquent ce que les gens peuvent ou ne peuvent pas faire.",
+      "de": "Anweisungen, die besagen, was Menschen tun oder nicht tun dürfen."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:56:06.272219+00:00"
+    "date": "2026-09-30T00:14:24.892679+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:56:06.272219+00:00"
+      }
+    }
   }
 }

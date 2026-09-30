@@ -62,7 +62,9 @@
       "ko": "증인이 법정에서 증거로 제시하는 진술.",
       "zh-Hans": "证人在法庭上作为证据而作出的陈述。",
       "es": "Declaraciones que los testigos hacen como prueba en un tribunal.",
-      "pt-BR": "Declarações dadas por testemunhas como prova em tribunal."
+      "pt-BR": "Declarações dadas por testemunhas como prova em tribunal.",
+      "fr": "déclarations faites par des témoins comme preuve devant un tribunal",
+      "de": "Aussagen, die von Zeugen als Beweismittel vor Gericht gemacht werden"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "어떤 일이 일어나지 못하게 하다.",
       "zh-Hans": "阻止某事发生。",
       "es": "Impedir que algo ocurra.",
-      "pt-BR": "Impedir que algo aconteça."
+      "pt-BR": "Impedir que algo aconteça.",
+      "fr": "empêcher quelque chose de se produire",
+      "de": "verhindern, dass etwas geschieht"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "법률적인 사안이 검토되는 법정 회의.",
       "zh-Hans": "法庭审理法律事务的会议。",
       "es": "Una sesión judicial en la que se considera un asunto legal.",
-      "pt-BR": "Uma sessão de tribunal onde um assunto legal é considerado."
+      "pt-BR": "Uma sessão de tribunal onde um assunto legal é considerado.",
+      "fr": "une séance de tribunal où une affaire juridique est examinée",
+      "de": "eine Gerichtsverhandlung, bei der eine rechtliche Angelegenheit geprüft wird"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "피고인에 대한 형사 사건을 제기하는 변호사.",
       "zh-Hans": "针对被指控者提出刑事案件的律师。",
       "es": "Un abogado que presenta un caso penal contra una persona acusada.",
-      "pt-BR": "Um advogado que apresenta um caso criminal contra uma pessoa acusada."
+      "pt-BR": "Um advogado que apresenta um caso criminal contra uma pessoa acusada.",
+      "fr": "un avocat qui présente une affaire pénale contre une personne accusée",
+      "de": "ein Rechtsanwalt, der einen Strafprozess gegen eine angeklagte Person führt"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "누군가 범죄를 저질렀다는 공식적인 고발.",
       "zh-Hans": "对某人犯下罪行的正式指控。",
       "es": "Acusaciones formales de que alguien ha cometido un delito.",
-      "pt-BR": "Acusações formais de que alguém cometeu um crime."
+      "pt-BR": "Acusações formais de que alguém cometeu um crime.",
+      "fr": "accusations formelles selon lesquelles quelqu'un a commis un crime",
+      "de": "formelle Anschuldigungen, dass jemand ein Verbrechen begangen hat"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "어떤 것을 공식적으로, 공개적으로, 또는 강력하게 진술했다.",
       "zh-Hans": "官方地、公开地或强烈地声明了某事。",
       "es": "Declaró algo de forma oficial, pública o con firmeza.",
-      "pt-BR": "Declarou algo oficialmente, publicamente ou com veemência."
+      "pt-BR": "Declarou algo oficialmente, publicamente ou com veemência.",
+      "fr": "Déclaré quelque chose officiellement, publiquement ou avec force.",
+      "de": "Etwas offiziell, öffentlich oder nachdrücklich erklärt."
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "특정한 시간에 개최되도록 준비되었다.",
       "zh-Hans": "被安排在特定时间发生。",
       "es": "Dispuesto para que tenga lugar en un momento determinado.",
-      "pt-BR": "Arranjado para acontecer em um horário específico."
+      "pt-BR": "Arranjado para acontecer em um horário específico.",
+      "fr": "organisé pour avoir lieu à un moment précis",
+      "de": "für einen bestimmten Zeitpunkt geplant oder vereinbart"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "무언가를 얻거나 이루려고 노력하다.",
       "zh-Hans": "努力获取或实现某事。",
       "es": "Tratar de obtener o lograr algo.",
-      "pt-BR": "Tentar obter ou alcançar algo."
+      "pt-BR": "Tentar obter ou alcançar algo.",
+      "fr": "essayer d'obtenir ou d'atteindre quelque chose",
+      "de": "versuchen, etwas zu erlangen oder zu erreichen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:34.104497+00:00"
+    "date": "2026-09-30T00:11:49.059893+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:34.104497+00:00"
+      }
+    }
   }
 }

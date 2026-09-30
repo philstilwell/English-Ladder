@@ -54,7 +54,9 @@
       "ko": "산에서 조각조각 부서져 아래로 떨어진 커다란 얼음 덩어리.",
       "zh-Hans": "一大块冰从山上破碎成多块并坠落下来。",
       "es": "Una gran masa de hielo que se rompió en pedazos y se derrumbó desde una montaña.",
-      "pt-BR": "Um grande bloco de gelo que se quebrou em pedaços e caiu de uma montanha."
+      "pt-BR": "Um grande bloco de gelo que se quebrou em pedaços e caiu de uma montanha.",
+      "fr": "Un grand morceau de glace qui s'est brisé en morceaux et est tombé d'une montagne.",
+      "de": "Ein großer Eisblock, der in Stücke zerbrach und von einem Berg herabfiel."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "아마도 어떤 일이 일어나게 했거나 어떤 사건의 주요 원인이었다.",
       "zh-Hans": "很有可能导致了某事的发生，或者是某事件的主要原因。",
       "es": "Probablemente hizo que algo sucediera o fue la razón principal de un evento.",
-      "pt-BR": "Provavelmente fez com que algo acontecesse ou foi a principal razão para um evento."
+      "pt-BR": "Provavelmente fez com que algo acontecesse ou foi a principal razão para um evento.",
+      "fr": "A probablement causé quelque chose ou a été la raison principale d'un événement.",
+      "de": "Hat wahrscheinlich dazu geführt, dass etwas passiert ist, oder war der Hauptgrund für ein Ereignis."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "매우 파괴적이며 큰 피해와 손상을 유발하는 물의 범람.",
       "zh-Hans": "极具破坏性的水灾，造成巨大危害和损失。",
       "es": "Desbordamientos de agua muy destructivos que causan gran daño y perjuicio.",
-      "pt-BR": "Transbordamentos de água muito destrutivos que causam grandes danos e prejuízos."
+      "pt-BR": "Transbordamentos de água muito destrutivos que causam grandes danos e prejuízos.",
+      "fr": "De très destructifs débordements d'eau qui causent de grands préjudices et des dégâts.",
+      "de": "Sehr zerstörerische Wasserüberläufe, die großen Schaden und Zerstörung verursachen."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "연구자나 전문가가 자신들의 연구 결과를 공유하거나 전문적인 의견을 제시한다.",
       "zh-Hans": "研究人员或专家分享他们的发现或给出他们的专业意见。",
       "es": "Investigadores o expertos comparten sus hallazgos o dan sus opiniones profesionales.",
-      "pt-BR": "Pesquisadores ou especialistas compartilham suas descobertas ou dão suas opiniões profissionais."
+      "pt-BR": "Pesquisadores ou especialistas compartilham suas descobertas ou dão suas opiniões profissionais.",
+      "fr": "Des chercheurs ou des experts partagent leurs découvertes ou donnent leurs opinions professionnelles.",
+      "de": "Forscher oder Experten teilen ihre Ergebnisse mit oder äußern ihre professionelle Meinung."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "히말라야 높은 산에 있는 얼어붙은 물이 액체 상태의 물로 변하는 현상.",
       "zh-Hans": "喜马拉雅高山上的冰冻水正在变成液态水。",
       "es": "Agua congelada en las altas montañas del Himalaya que se está convirtiendo en agua líquida.",
-      "pt-BR": "Água congelada nas altas montanhas do Himalaia que está se transformando em água líquida."
+      "pt-BR": "Água congelada nas altas montanhas do Himalaia que está se transformando em água líquida.",
+      "fr": "De l'eau gelée dans les hautes montagnes de l'Himalaya qui se transforme en eau liquide.",
+      "de": "Gefrorenes Wasser in den hohen Bergen des Himalayas, das sich in flüssiges Wasser verwandelt."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "어떤 것을 너무 심하게 손상시켜서 더 이상 사용할 수 없게 만들었다.",
       "zh-Hans": "把某物损坏得非常严重，以至于无法使用。",
       "es": "Dañó algo tan gravemente que no pudo ser usado.",
-      "pt-BR": "Danificou algo tão gravemente que não pôde ser usado."
+      "pt-BR": "Danificou algo tão gravemente que não pôde ser usado.",
+      "fr": "endommagé quelque chose si gravement que cela ne pouvait plus être utilisé",
+      "de": "etwas so stark beschädigt, dass es nicht mehr verwendet werden konnte"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:08.617430+00:00"
+    "date": "2026-09-30T00:12:57.126171+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:08.617430+00:00"
+      }
+    }
   }
 }

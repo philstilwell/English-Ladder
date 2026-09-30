@@ -50,7 +50,9 @@
       "ko": "누군가에게 책임이 있다고 말했다.",
       "zh-Hans": "说某人负有责任。",
       "es": "Dijo que alguien era responsable.",
-      "pt-BR": "Disse que alguém era responsável."
+      "pt-BR": "Disse que alguém era responsável.",
+      "fr": "dire que quelqu'un était responsable",
+      "de": "sagen, dass jemand verantwortlich war"
     },
     {
       "id": 1,
@@ -58,7 +60,9 @@
       "ko": "사람들에게 뭔가 잘못되었을 수도 있다고 생각하게 만드는.",
       "zh-Hans": "让人觉得可能有什么不对劲的。",
       "es": "Que hace que la gente piense que algo puede estar mal.",
-      "pt-BR": "Que faz as pessoas pensarem que algo pode estar errado."
+      "pt-BR": "Que faz as pessoas pensarem que algo pode estar errado.",
+      "fr": "qui donne à penser que quelque chose ne va pas",
+      "de": "was Leute denken lässt, dass etwas nicht stimmen könnte"
     },
     {
       "id": 2,
@@ -66,7 +70,9 @@
       "ko": "책임이 있다고 생각되는 사람이나 단체.",
       "zh-Hans": "被认为是负有责任的个人或团体。",
       "es": "Una persona o parte a la que se considera responsable.",
-      "pt-BR": "Uma pessoa ou parte que se pensa ser responsável."
+      "pt-BR": "Uma pessoa ou parte que se pensa ser responsável.",
+      "fr": "une personne ou une partie que l'on pense être responsable",
+      "de": "eine Person oder Partei, von der man annimmt, dass sie verantwortlich ist"
     },
     {
       "id": 3,
@@ -74,7 +80,9 @@
       "ko": "정부나 조직에서 책임 있는 직책을 맡고 있는 사람들.",
       "zh-Hans": "在政府或组织中担任负责任职务的人。",
       "es": "Personas con trabajos de responsabilidad en un gobierno u organización.",
-      "pt-BR": "Pessoas com cargos de responsabilidade em um governo ou organização."
+      "pt-BR": "Pessoas com cargos de responsabilidade em um governo ou organização.",
+      "fr": "des personnes ayant des postes à responsabilité dans un gouvernement ou une organisation",
+      "de": "Personen mit verantwortungsvollen Aufgaben in einer Regierung oder Organisation"
     },
     {
       "id": 4,
@@ -82,7 +90,9 @@
       "ko": "누군가가 사실이라고 말하는 주장.",
       "zh-Hans": "某人声称是真实的一个说法。",
       "es": "Una declaración que alguien dice que es verdad.",
-      "pt-BR": "Uma declaração que alguém diz ser verdadeira."
+      "pt-BR": "Uma declaração que alguém diz ser verdadeira.",
+      "fr": "une déclaration que quelqu'un dit être vraie",
+      "de": "eine Aussage, von der jemand sagt, dass sie wahr ist"
     },
     {
       "id": 5,
@@ -90,13 +100,34 @@
       "ko": "계획되지 않고 발생하는 해로운 사건.",
       "zh-Hans": "未经计划而发生的有害事件。",
       "es": "Sucesos dañinos que ocurren sin ser planeados.",
-      "pt-BR": "Eventos prejudiciais que acontecem sem serem planejados."
+      "pt-BR": "Eventos prejudiciais que acontecem sem serem planejados.",
+      "fr": "des événements nuisibles qui arrivent sans être planifiés",
+      "de": "schädliche Ereignisse, die ungeplant geschehen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:42.672470+00:00"
+    "date": "2026-09-30T00:11:53.419862+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:42.672470+00:00"
+      }
+    }
   }
 }

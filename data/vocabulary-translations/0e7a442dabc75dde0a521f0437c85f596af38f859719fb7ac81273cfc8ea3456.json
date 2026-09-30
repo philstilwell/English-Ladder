@@ -64,7 +64,9 @@
       "ko": "텔레비전, 영화, 책 또는 기타 창작물에 대해 의견을 제시하는 것을 직업으로 삼는 사람들.",
       "zh-Hans": "那些工作是就电视、电影、书籍或其他创意作品发表意见的人。",
       "es": "Personas cuyo trabajo es dar opiniones sobre televisión, películas, libros u otras obras creativas.",
-      "pt-BR": "Pessoas cujo trabalho é dar opiniões sobre televisão, filmes, livros ou outras obras criativas."
+      "pt-BR": "Pessoas cujo trabalho é dar opiniões sobre televisão, filmes, livros ou outras obras criativas.",
+      "fr": "Personnes dont le métier est de donner leur avis sur la télévision, les films, les livres ou d'autres œuvres créatives.",
+      "de": "Personen, deren Aufgabe es ist, Meinungen zu Fernsehsendungen, Filmen, Büchern oder anderen kreativen Werken abzugeben."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "텔레비전 시리즈의 한 프로그램.",
       "zh-Hans": "电视系列剧中的一集节目。",
       "es": "Un programa de una serie de televisión.",
-      "pt-BR": "Um programa de uma série de televisão."
+      "pt-BR": "Um programa de uma série de televisão.",
+      "fr": "Une émission faisant partie d'une série télévisée.",
+      "de": "Eine Sendung innerhalb einer Fernsehserie."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "강한 인상을 주어 쉽게 기억할 수 있는.",
       "zh-Hans": "因为给人留下深刻印象而容易记住的。",
       "es": "Fácil de recordar porque causa una fuerte impresión.",
-      "pt-BR": "Fácil de lembrar porque causa uma forte impressão."
+      "pt-BR": "Fácil de lembrar porque causa uma forte impressão.",
+      "fr": "Facile à retenir car cela fait une forte impression.",
+      "de": "Leicht zu merken, weil es einen starken Eindruck hinterlässt."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "어떤 활동이나 행사에 참여하는 사람들.",
       "zh-Hans": "参加某项活动或事件的人。",
       "es": "Personas que toman parte en una actividad o evento.",
-      "pt-BR": "Pessoas que participam de uma atividade ou evento."
+      "pt-BR": "Pessoas que participam de uma atividade ou evento.",
+      "fr": "Des personnes qui prennent part à une activité ou un événement.",
+      "de": "Personen, die an einer Aktivität oder einem Ereignis teilnehmen."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "사람들의 삶을 형성해 온 경험, 직업, 장소.",
       "zh-Hans": "塑造人们生活的经历、工作和地点。",
       "es": "Las experiencias, trabajos y lugares que han moldeado la vida de las personas.",
-      "pt-BR": "As experiências, empregos e lugares que moldaram a vida das pessoas."
+      "pt-BR": "As experiências, empregos e lugares que moldaram a vida das pessoas.",
+      "fr": "Les expériences, les emplois et les lieux qui ont façonné la vie des gens.",
+      "de": "Die Erfahrungen, Berufe und Orte, die das Leben von Menschen geprägt haben."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "두 가지 다른 활동에 시간과 주의를 기울여 두 가지 모두 일상생활에 잘 맞도록 하는 것.",
       "zh-Hans": "给予两种不同的活动时间和关注，使两者都能融入日常生活。",
       "es": "Dedicar tiempo y atención a dos actividades diferentes para que ambas encajen en la vida diaria.",
-      "pt-BR": "Dedicar tempo e atenção a duas atividades diferentes para que ambas se encaixem no dia a dia."
+      "pt-BR": "Dedicar tempo e atenção a duas atividades diferentes para que ambas se encaixem no dia a dia.",
+      "fr": "Accorde du temps et de l'attention à deux activités différentes afin que les deux s'intègrent dans la vie quotidienne.",
+      "de": "Widmet zwei verschiedenen Aktivitäten Zeit und Aufmerksamkeit, sodass beide in den Alltag passen."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "사람에게 아이디어를 주는 무언가에 의해 영향을 받는 것.",
       "zh-Hans": "受启发于某种给予人想法的事物。",
       "es": "Influenciado por algo que le da una idea a una persona.",
-      "pt-BR": "Influenciado por algo que dá uma ideia a uma pessoa."
+      "pt-BR": "Influenciado por algo que dá uma ideia a uma pessoa.",
+      "fr": "Influencé par quelque chose qui donne une idée à une personne.",
+      "de": "Beeinflusst von etwas, das einer Person eine Idee gibt."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "어떤 사람의 가족이나 공동체와 관련된 전통과 문화.",
       "zh-Hans": "与个人家庭或社区相关的传统和文化。",
       "es": "Las tradiciones y la cultura relacionadas con la familia o la comunidad de una persona.",
-      "pt-BR": "As tradições e a cultura relacionadas com a família ou comunidade de uma pessoa."
+      "pt-BR": "As tradições e a cultura relacionadas com a família ou comunidade de uma pessoa.",
+      "fr": "Les traditions et la culture liées à la famille ou à la communauté d'une personne.",
+      "de": "Die Traditionen und Kultur, die mit der Familie oder Gemeinschaft einer Person verbunden sind."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T20:14:50.184954+00:00"
+    "date": "2026-09-30T00:11:18.343401+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T20:14:50.184954+00:00"
+      }
+    }
   }
 }

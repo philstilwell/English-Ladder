@@ -64,7 +64,9 @@
       "ko": "사람들이 기술을 연습하는 데 도움이 되는, 특히 군사 훈련을 위한 계획된 활동.",
       "zh-Hans": "帮助人们练习技能的计划性活动，尤指军事训练。",
       "es": "Actividades planificadas, especialmente para entrenamiento militar, que ayudan a las personas a practicar habilidades.",
-      "pt-BR": "Atividades planejadas, especialmente para treinamento militar, que ajudam as pessoas a praticar habilidades."
+      "pt-BR": "Atividades planejadas, especialmente para treinamento militar, que ajudam as pessoas a praticar habilidades.",
+      "fr": "Activités planifiées, particulièrement pour l'entraînement militaire, qui aident les gens à pratiquer des compétences.",
+      "de": "Geplante Aktivitäten, insbesondere für militärisches Training, die Menschen helfen, Fähigkeiten zu üben."
     },
     {
       "id": 1,
@@ -72,7 +74,9 @@
       "ko": "종종 집단이나 국가 간의 장기간에 걸친 싸움이나 적대감을 포함하는 심각한 의견 불일치 또는 논쟁.",
       "zh-Hans": "一种严重的意见不合或争论，常涉及群体或国家之间长期的战斗或敌对行为。",
       "es": "Un desacuerdo o argumento serio, que a menudo implica luchas o hostilidades prolongadas entre grupos o naciones.",
-      "pt-BR": "Um desacordo ou discussão séria, que frequentemente envolve combates prolongados ou hostilidade entre grupos ou nações."
+      "pt-BR": "Um desacordo ou discussão séria, que frequentemente envolve combates prolongados ou hostilidade entre grupos ou nações.",
+      "fr": "Un désaccord ou une dispute sérieuse, impliquant souvent des combats prolongés ou de l'hostilité entre groupes ou nations.",
+      "de": "Eine ernsthafte Meinungsverschiedenheit oder Auseinandersetzung, oft mit länger andauernden Kämpfen oder Feindseligkeiten zwischen Gruppen oder Nationen."
     },
     {
       "id": 2,
@@ -80,7 +84,9 @@
       "ko": "구조 작업이나 군사 행동처럼 특정 목적을 위해 수행되는 계획된 활동.",
       "zh-Hans": "为特定目的而执行的计划性活动，例如救援工作或军事行动。",
       "es": "Actividades planificadas llevadas a cabo con un propósito, como el trabajo de rescate o la acción militar.",
-      "pt-BR": "Atividades planejadas realizadas com um propósito, como trabalho de resgate ou ação militar."
+      "pt-BR": "Atividades planejadas realizadas com um propósito, como trabalho de resgate ou ação militar.",
+      "fr": "Activités planifiées menées dans un but précis, comme des opérations de sauvetage ou une action militaire.",
+      "de": "Geplante Aktivitäten, die zu einem bestimmten Zweck durchgeführt werden, wie Rettungsarbeiten oder militärische Aktionen."
     },
     {
       "id": 3,
@@ -88,7 +94,9 @@
       "ko": "많은 사람, 사물 또는 돈이 관련되어 광범위한.",
       "zh-Hans": "涉及很多人、事物或金钱；范围广泛的。",
       "es": "Que implica a muchas personas, cosas o dinero; extenso.",
-      "pt-BR": "Que envolve muitas pessoas, coisas ou dinheiro; extenso."
+      "pt-BR": "Que envolve muitas pessoas, coisas ou dinheiro; extenso.",
+      "fr": "Impliquant un grand nombre de personnes, de choses ou d'argent ; étendu.",
+      "de": "Viele Menschen, Dinge oder viel Geld umfassend; umfangreich."
     },
     {
       "id": 4,
@@ -96,7 +104,9 @@
       "ko": "어떤 일이 얼마나 자주 발생하는지.",
       "zh-Hans": "某事发生的频率。",
       "es": "La frecuencia con la que ocurre algo.",
-      "pt-BR": "Com que frequência algo acontece."
+      "pt-BR": "Com que frequência algo acontece.",
+      "fr": "La régularité avec laquelle quelque chose se produit.",
+      "de": "Wie oft etwas geschieht."
     },
     {
       "id": 5,
@@ -104,7 +114,9 @@
       "ko": "어떤 것을 보여주거나 알렸다.",
       "zh-Hans": "展示或告知某事。",
       "es": "Mostró o dio a conocer algo.",
-      "pt-BR": "Mostrou ou tornou algo conhecido."
+      "pt-BR": "Mostrou ou tornou algo conhecido.",
+      "fr": "A montré ou fait connaître quelque chose.",
+      "de": "Hat etwas gezeigt oder bekannt gemacht."
     },
     {
       "id": 6,
@@ -112,7 +124,9 @@
       "ko": "어떤 사건의 일부로 누군가 또는 어떤 것을 포함하는 것.",
       "zh-Hans": "将某人或某事作为事件的一部分包含在内。",
       "es": "Incluir a alguien o algo como parte de un evento.",
-      "pt-BR": "Incluir alguém ou algo como parte de um evento."
+      "pt-BR": "Incluir alguém ou algo como parte de um evento.",
+      "fr": "Incluant quelqu'un ou quelque chose comme faisant partie d'un événement.",
+      "de": "Jemanden oder etwas als Teil eines Ereignisses einschließend."
     },
     {
       "id": 7,
@@ -120,13 +134,34 @@
       "ko": "사건을 주의 깊게 지켜보고 자신이 알아차린 것을 보고하는 사람들.",
       "zh-Hans": "仔细观察事件并报告他们所注意到的人。",
       "es": "Personas que observan los acontecimientos cuidadosamente e informan lo que notan.",
-      "pt-BR": "Pessoas que observam eventos cuidadosamente e relatam o que notam."
+      "pt-BR": "Pessoas que observam eventos cuidadosamente e relatam o que notam.",
+      "fr": "Des personnes qui observent attentivement les événements et rapportent ce qu'elles remarquent.",
+      "de": "Personen, die Ereignisse aufmerksam beobachten und berichten, was sie bemerken."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:56:37.173430+00:00"
+    "date": "2026-09-30T00:14:47.540355+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:56:37.173430+00:00"
+      }
+    }
   }
 }

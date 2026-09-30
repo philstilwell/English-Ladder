@@ -62,12 +62,47 @@
         "Ao solicitar um serviço de costura (tailor), pode ser necessário experimentar a roupa para que o profissional marque o comprimento correto. Planeje ir com tempo de sobra.",
         "Mesmo reparos pequenos podem ter um custo alto. É aconselhável perguntar antes: \"Can I get an estimate?\" (Posso ter um orçamento?)."
       ]
+    },
+    "fr": {
+      "heading": "L'importance des justificatifs pour les échanges et les réparations",
+      "points": [
+        "Pour échanger des vêtements, vous aurez souvent besoin du reçu, des étiquettes et du fait que l'article soit inutilisé. Ne les jetez pas tout de suite après l'achat.",
+        "Lorsque vous demandez à un \"tailor\" (couturier) de faire un ajustement, il est possible qu'il vous demande d'essayer le vêtement pour en vérifier la longueur. Prévoyez suffisamment de temps.",
+        "Même les petites réparations peuvent être coûteuses. Il est préférable de demander le prix à l'avance en disant : \"Can I get an estimate?\" (Puis-je avoir un devis ?)."
+      ]
+    },
+    "de": {
+      "heading": "Beweismittel sind wichtig für Umtausch und Reparaturen",
+      "points": [
+        "Für den Umtausch von Kleidung benötigen Sie oft den Kassenbon, die Etiketten und den unbenutzten Zustand des Artikels. Werfen Sie diese nicht sofort nach dem Kauf weg.",
+        "Wenn Sie einen „tailor“ (Schneider) beauftragen, kann es sein, dass Sie das Kleidungsstück anprobieren müssen, damit er die richtige Länge markieren kann. Planen Sie genügend Zeit ein.",
+        "Auch kleine Reparaturen können teuer sein. Es ist ratsam, zuerst nach dem Preis zu fragen, indem Sie sagen: „Can I get an estimate?“ (Kann ich einen Kostenvoranschlag bekommen?)."
+      ]
     }
   },
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T18:15:24.024727+00:00"
+    "date": "2026-09-30T00:17:13.257098+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T18:15:24.024727+00:00"
+      }
+    }
   }
 }

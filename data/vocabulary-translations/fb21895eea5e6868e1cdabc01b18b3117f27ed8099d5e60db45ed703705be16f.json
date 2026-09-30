@@ -54,7 +54,9 @@
       "ko": "떨어져 있던 장소나 지위로 다시 돌아오는 것.",
       "zh-Hans": "在离开后回到某个地方或职位。",
       "es": "Volver a un lugar o una posición después de haber estado fuera.",
-      "pt-BR": "Voltar a um lugar ou a uma posição depois de ter estado ausente."
+      "pt-BR": "Voltar a um lugar ou a uma posição depois de ter estado ausente.",
+      "fr": "Revenir à un endroit ou à une position après avoir été absent.",
+      "de": "An einen Ort oder in eine Position zurückkehren, nachdem man weg war."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "한 장소에 함께 있거나 어떤 식으로든 연결된 여러 사람이나 사물.",
       "zh-Hans": "一些人或物，它们在一个地方或以某种方式相互关联。",
       "es": "Un número de personas o cosas que están juntas en un lugar o están conectadas de alguna manera.",
-      "pt-BR": "Um número de pessoas ou coisas que estão juntas em um só lugar ou estão conectadas de alguma forma."
+      "pt-BR": "Um número de pessoas ou coisas que estão juntas em um só lugar ou estão conectadas de alguma forma.",
+      "fr": "Un ensemble de personnes ou de choses qui sont réunies au même endroit ou qui sont liées d'une certaine manière.",
+      "de": "Eine Anzahl von Personen oder Dingen, die an einem Ort zusammen sind oder in irgendeiner Weise miteinander verbunden sind."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "집단이나 국가를 이끌거나 지시하는 중요한 사람들.",
       "zh-Hans": "指导或领导一个团体或国家的关键人物。",
       "es": "Personas importantes que guían o dirigen un grupo o un país.",
-      "pt-BR": "Pessoas importantes que guiam ou dirigem um grupo ou um país."
+      "pt-BR": "Pessoas importantes que guiam ou dirigem um grupo ou um país.",
+      "fr": "Des personnes importantes qui guident ou dirigent un groupe ou un pays.",
+      "de": "Wichtige Personen, die eine Gruppe oder ein Land führen oder leiten."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "어떤 것에 대해 결정을 내리고 무엇이 일어날지 결정할 권한을 가지는 것.",
       "zh-Hans": "拥有对某事做出决定并决定其结果的权力。",
       "es": "Tener el poder de tomar decisiones sobre algo y decidir lo que sucede.",
-      "pt-BR": "Ter o poder de tomar decisões sobre algo e decidir o que acontece."
+      "pt-BR": "Ter o poder de tomar decisões sobre algo e decidir o que acontece.",
+      "fr": "Avoir le pouvoir de prendre des décisions concernant quelque chose et de décider ce qui se passe.",
+      "de": "Die Macht haben, Entscheidungen über etwas zu treffen und zu bestimmen, was geschieht."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "어떤 것의 형태나 특징을 중요한 방식으로 바꾸는 것.",
       "zh-Hans": "以重要的方式改变某物的形式或性质。",
       "es": "Cambiar la forma o el carácter de algo de una manera significativa.",
-      "pt-BR": "Mudar a forma ou o caráter de algo de uma maneira significativa."
+      "pt-BR": "Mudar a forma ou o caráter de algo de uma maneira significativa.",
+      "fr": "Changer de manière significative la forme ou le caractère de quelque chose.",
+      "de": "Die Form oder den Charakter von etwas auf bedeutende Weise verändern."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "조직이나 정부에서 중요하고 강력한 사람들.",
       "zh-Hans": "组织或政府中重要且有影响力的人物。",
       "es": "Personas importantes y poderosas en una organización o gobierno.",
-      "pt-BR": "Pessoas importantes e poderosas em uma organização ou governo."
+      "pt-BR": "Pessoas importantes e poderosas em uma organização ou governo.",
+      "fr": "Des personnes importantes et puissantes au sein d'une organisation ou d'un gouvernement.",
+      "de": "Wichtige und mächtige Personen in einer Organisation oder Regierung."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:58.424201+00:00"
+    "date": "2026-09-30T00:13:36.015308+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:58.424201+00:00"
+      }
+    }
   }
 }

@@ -54,7 +54,9 @@
       "ko": "한 국가와의 무역이나 금전 거래를 중단하도록 하는 공식적인 명령.",
       "zh-Hans": "停止与一个国家进行贸易或金钱往来的官方命令。",
       "es": "Órdenes oficiales para detener el comercio o el flujo de dinero con un país.",
-      "pt-BR": "Ordens oficiais para interromper o comércio ou o fluxo de dinheiro com um país."
+      "pt-BR": "Ordens oficiais para interromper o comércio ou o fluxo de dinheiro com um país.",
+      "fr": "Ordres officiels d'arrêter le commerce ou les transactions financières avec un pays.",
+      "de": "Offizielle Anordnungen, den Handel oder Geldtransfers mit einem Land einzustellen."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "한 국가가 돈과 상품을 만들고, 쓰고, 관리하는 방식의 체계.",
       "zh-Hans": "一个国家如何生产、花费和管理金钱与商品的系统。",
       "es": "El sistema de cómo un país produce, gasta y administra el dinero y los bienes.",
-      "pt-BR": "O sistema de como um país produz, gasta e administra dinheiro e bens."
+      "pt-BR": "O sistema de como um país produz, gasta e administra dinheiro e bens.",
+      "fr": "Le système par lequel un pays produit, dépense et gère l'argent et les biens.",
+      "de": "Das System, wie ein Land Geld und Güter produziert, ausgibt und verwaltet."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "어떤 일이 일어날 것에 대해 완전히 준비된 상태.",
       "zh-Hans": "完全准备好迎接某事发生。",
       "es": "Completamente listo para que algo suceda.",
-      "pt-BR": "Completamente pronto para que algo aconteça."
+      "pt-BR": "Completamente pronto para que algo aconteça.",
+      "fr": "Complètement prêt à ce que quelque chose se produise.",
+      "de": "Vollständig bereit dafür, dass etwas passiert."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "문제나 상황을 다루다.",
       "zh-Hans": "处理一个问题或局面。",
       "es": "Ocuparse de un problema o una situación.",
-      "pt-BR": "Lidar com um problema ou situação."
+      "pt-BR": "Lidar com um problema ou situação.",
+      "fr": "S'occuper d'un problème ou d'une situation.",
+      "de": "Sich mit einem Problem oder einer Situation befassen."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "무언가의 효과를 줄이거나 멈추기 위해 그것에 맞서 행동하다.",
       "zh-Hans": "采取行动反对某事以减少其影响或阻止它。",
       "es": "Actuar en contra de algo para reducir su efecto o detenerlo.",
-      "pt-BR": "Agir contra algo para reduzir seu efeito ou pará-lo."
+      "pt-BR": "Agir contra algo para reduzir seu efeito ou pará-lo.",
+      "fr": "Agir contre quelque chose pour en réduire l'effet ou l'arrêter.",
+      "de": "Gegen etwas handeln, um dessen Wirkung zu verringern oder es zu stoppen."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "가장 새롭거나 가장 최근의 것.",
       "zh-Hans": "最新或最近的一个。",
       "es": "El más nuevo o el más reciente.",
-      "pt-BR": "O mais novo ou o mais recente."
+      "pt-BR": "O mais novo ou o mais recente.",
+      "fr": "Le plus nouveau ou le plus récent.",
+      "de": "Das Neueste oder Aktuellste."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:54:44.246420+00:00"
+    "date": "2026-09-30T00:13:24.045151+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:54:44.246420+00:00"
+      }
+    }
   }
 }

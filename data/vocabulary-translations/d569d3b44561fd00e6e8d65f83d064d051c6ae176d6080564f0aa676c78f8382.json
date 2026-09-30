@@ -54,7 +54,9 @@
       "ko": "세상의 평화를 위해 노력하여 특별한 국제상을 받는 사람.",
       "zh-Hans": "因致力于世界和平而获得一项特殊国际奖项的人。",
       "es": "Una persona que recibe un premio internacional especial por trabajar para lograr la paz en el mundo.",
-      "pt-BR": "Uma pessoa que recebe um prêmio internacional especial por trabalhar para fazer a paz no mundo."
+      "pt-BR": "Uma pessoa que recebe um prêmio internacional especial por trabalhar para fazer a paz no mundo.",
+      "fr": "Une personne qui reçoit un prix international spécial pour son travail en faveur de la paix dans le monde.",
+      "de": "Eine Person, die eine besondere internationale Auszeichnung für ihre Arbeit zur Förderung des Friedens in der Welt erhält."
     },
     {
       "id": 1,
@@ -62,7 +64,9 @@
       "ko": "정보를 얻기 위해 한 사람이 다른 사람에게 질문을 하는 만남.",
       "zh-Hans": "一个人向另一个人提问以获取信息的会面。",
       "es": "Una reunión en la que alguien hace preguntas a otra persona para obtener información.",
-      "pt-BR": "Um encontro onde alguém faz perguntas a outra pessoa para obter informações."
+      "pt-BR": "Um encontro onde alguém faz perguntas a outra pessoa para obter informações.",
+      "fr": "Une rencontre où quelqu'un pose des questions à une autre personne pour obtenir des informations.",
+      "de": "Ein Treffen, bei dem jemand einer anderen Person Fragen stellt, um Informationen zu erhalten."
     },
     {
       "id": 2,
@@ -70,7 +74,9 @@
       "ko": "국가나 집단 간에, 흔히 군대를 동원하여 싸우는 기간.",
       "zh-Hans": "国家或团体之间进行战斗的一段时间，通常有军队参与。",
       "es": "Un período de lucha entre países o grupos, a menudo con ejércitos.",
-      "pt-BR": "Um período de luta entre países ou grupos, muitas vezes com exércitos."
+      "pt-BR": "Um período de luta entre países ou grupos, muitas vezes com exércitos.",
+      "fr": "Une période de combat entre pays ou groupes, souvent avec des armées.",
+      "de": "Eine Zeit des Kampfes zwischen Ländern oder Gruppen, oft mit Armeen."
     },
     {
       "id": 3,
@@ -78,7 +84,9 @@
       "ko": "어떤 것을 완전히 부수어 더 이상 사용할 수 없거나 존재하지 않게 만드는 것.",
       "zh-Hans": "完全破坏某物，使其无法再使用或存在。",
       "es": "Romper algo por completo para que ya no pueda usarse o existir.",
-      "pt-BR": "Quebrar algo completamente para que não possa mais ser usado ou existir."
+      "pt-BR": "Quebrar algo completamente para que não possa mais ser usado ou existir.",
+      "fr": "Casser quelque chose complètement de sorte qu'il ne puisse plus être utilisé ou exister.",
+      "de": "Etwas vollständig zerbrechen, sodass es nicht mehr benutzt werden oder existieren kann."
     },
     {
       "id": 4,
@@ -86,7 +94,9 @@
       "ko": "싸워서 이김으로써 국가나 도시를 통제하는 것.",
       "zh-Hans": "通过战斗和胜利来控制一个国家或城市。",
       "es": "Tomar el control de un país o una ciudad luchando y ganando.",
-      "pt-BR": "Assumir o controle de um país ou uma cidade lutando e vencendo."
+      "pt-BR": "Assumir o controle de um país ou uma cidade lutando e vencendo.",
+      "fr": "Prendre le contrôle d'un pays ou d'une ville en combattant et en gagnant.",
+      "de": "Die Kontrolle über ein Land oder eine Stadt durch Kampf und Sieg übernehmen."
     },
     {
       "id": 5,
@@ -94,13 +104,34 @@
       "ko": "전투, 경기 또는 경쟁에서 이겼다고 공식적으로 또는 공개적으로 진술하는 것.",
       "zh-Hans": "正式或公开声明自己在战斗、比赛或竞争中获胜。",
       "es": "Declarar oficial o públicamente que se ha ganado una batalla, un juego o una competición.",
-      "pt-BR": "Declarar oficial ou publicamente que se venceu uma batalha, jogo ou competição."
+      "pt-BR": "Declarar oficial ou publicamente que se venceu uma batalha, jogo ou competição.",
+      "fr": "Déclarer officiellement ou publiquement qu'on a gagné une bataille, un match ou une compétition.",
+      "de": "Offiziell oder öffentlich erklären, dass man eine Schlacht, ein Spiel oder einen Wettbewerb gewonnen hat."
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:57:23.833491+00:00"
+    "date": "2026-09-30T00:15:24.098621+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:57:23.833491+00:00"
+      }
+    }
   }
 }

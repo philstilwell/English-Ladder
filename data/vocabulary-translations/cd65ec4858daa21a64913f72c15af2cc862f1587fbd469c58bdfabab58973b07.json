@@ -62,7 +62,9 @@
       "ko": "군사적 보호나 관련 활동에 사용되는 장소",
       "zh-Hans": "用于军事保护或相关活动的地点",
       "es": "Lugares utilizados para la protección militar o actividades relacionadas.",
-      "pt-BR": "Lugares usados para proteção militar ou atividades relacionadas."
+      "pt-BR": "Lugares usados para proteção militar ou atividades relacionadas.",
+      "fr": "des endroits utilisés pour la protection militaire ou des activités connexes",
+      "de": "Orte, die für militärischen Schutz oder verwandte Aktivitäten genutzt werden"
     },
     {
       "id": 1,
@@ -70,7 +72,9 @@
       "ko": "원격으로 조종되는 무인 항공기로, 감시, 정찰 또는 군사 공격에 자주 사용됩니다.",
       "zh-Hans": "通过远程控制的无人驾驶飞机，常用于监视、侦察或军事袭击。",
       "es": "Aeronaves no tripuladas, controladas a distancia, a menudo utilizadas para vigilancia, reconocimiento o ataques militares.",
-      "pt-BR": "Aeronaves não tripuladas, controladas remotamente, frequentemente usadas para vigilância, reconhecimento ou ataques militares."
+      "pt-BR": "Aeronaves não tripuladas, controladas remotamente, frequentemente usadas para vigilância, reconhecimento ou ataques militares.",
+      "fr": "des aéronefs sans pilote, contrôlés à distance, souvent utilisés pour la surveillance, la reconnaissance ou des attaques militaires",
+      "de": "Unbemannte Flugzeuge, ferngesteuert, oft für Überwachung, Aufklärung oder militärische Angriffe eingesetzt"
     },
     {
       "id": 2,
@@ -78,7 +82,9 @@
       "ko": "어떤 활동이나 사람들이 생활하고 일하는 데 필요한 물건들",
       "zh-Hans": "进行某项活动或人们生活和工作所需的东西",
       "es": "Cosas necesarias para una actividad o para que las personas vivan y trabajen.",
-      "pt-BR": "Coisas necessárias para uma atividade ou para as pessoas viverem e trabalharem."
+      "pt-BR": "Coisas necessárias para uma atividade ou para as pessoas viverem e trabalharem.",
+      "fr": "des choses nécessaires à une activité ou pour que des personnes puissent vivre et travailler",
+      "de": "Dinge, die für eine Aktivität oder für Menschen zum Leben und Arbeiten benötigt werden"
     },
     {
       "id": 3,
@@ -86,7 +92,9 @@
       "ko": "어떤 생각, 주장 또는 제안을 받아들이기를 거부하다",
       "zh-Hans": "拒绝接受某个想法、主张或提议",
       "es": "Negarse a aceptar una idea, afirmación o propuesta.",
-      "pt-BR": "Recusar-se a aceitar uma ideia, afirmação ou proposta."
+      "pt-BR": "Recusar-se a aceitar uma ideia, afirmação ou proposta.",
+      "fr": "refuser d'accepter une idée, une affirmation ou une proposition",
+      "de": "eine Idee, einen Anspruch oder einen Vorschlag ablehnen"
     },
     {
       "id": 4,
@@ -94,7 +102,9 @@
       "ko": "어떤 기간이나 일련의 사건이 끝났을 때",
       "zh-Hans": "在一段时期或一系列事件的最终阶段",
       "es": "Al final de un período de tiempo o de una serie de eventos.",
-      "pt-BR": "No final de um período de tempo ou de uma série de eventos."
+      "pt-BR": "No final de um período de tempo ou de uma série de eventos.",
+      "fr": "à la fin d'une période ou d'une série d'événements",
+      "de": "am Ende einer Zeitperiode oder einer Reihe von Ereignissen"
     },
     {
       "id": 5,
@@ -102,7 +112,9 @@
       "ko": "사람이나 물건을 한 장소에서 다른 장소로 옮기는 것",
       "zh-Hans": "将人或货物从一个地方运送到另一个地方",
       "es": "Mover personas o bienes de un lugar a otro.",
-      "pt-BR": "Mover pessoas ou bens de um lugar para outro."
+      "pt-BR": "Mover pessoas ou bens de um lugar para outro.",
+      "fr": "déplacer des personnes ou des marchandises d'un endroit à un autre",
+      "de": "Menschen oder Güter von einem Ort zum anderen bewegen"
     },
     {
       "id": 6,
@@ -110,7 +122,9 @@
       "ko": "무슨 일이 일어났는지 알아내기 위한 신중한 조사",
       "zh-Hans": "旨在查明事件真相的仔细调查",
       "es": "Indagaciones cuidadosas destinadas a averiguar lo que sucedió.",
-      "pt-BR": "Inquéritos cuidadosos destinados a descobrir o que aconteceu."
+      "pt-BR": "Inquéritos cuidadosos destinados a descobrir o que aconteceu.",
+      "fr": "des enquêtes minutieuses destinées à découvrir ce qui s'est passé",
+      "de": "sorgfältige Nachforschungen, die darauf abzielen, herauszufinden, was geschehen ist"
     },
     {
       "id": 7,
@@ -118,13 +132,34 @@
       "ko": "어떤 사건의 일부로 누군가 또는 무엇인가를 포함하는 것",
       "zh-Hans": "将某人或某物作为事件的一部分包含在内",
       "es": "Incluir a alguien o algo como parte de un evento.",
-      "pt-BR": "Incluir alguém ou algo como parte de um evento."
+      "pt-BR": "Incluir alguém ou algo como parte de um evento.",
+      "fr": "inclure quelqu'un ou quelque chose comme partie d'un événement",
+      "de": "jemanden oder etwas als Teil eines Ereignisses einschließen"
     }
   ],
   "review": {
     "status": "reviewed",
     "method": "separate translation-editing call",
     "model": "gemini-2.5-flash",
-    "date": "2026-09-08T15:52:46.531459+00:00"
+    "date": "2026-09-30T00:11:57.228775+00:00",
+    "added_languages": [
+      "fr",
+      "de"
+    ],
+    "retained": {
+      "languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR"
+      ],
+      "review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-09-08T15:52:46.531459+00:00"
+      }
+    }
   }
 }

@@ -37,10 +37,16 @@
 .work-download strong { color:var(--work-ink); font-size:1.1rem; letter-spacing:-.02em; }
 .work-download-action { color:var(--work-blue); margin-top:auto; padding-top:15px; font-weight:650; }
 .work-download:hover,.work-course-card:hover { border-color:#537e91; box-shadow:0 5px 18px #1233480b; }
-.work-lesson-tools { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:15px; margin:20px 0; }
-.work-jump { display:flex; gap:8px; flex-wrap:wrap; }
-.work-jump a { display:flex; align-items:center; justify-content:center; width:44px; height:44px; border:1px solid var(--work-line); border-radius:4px; text-decoration:none; font-size:.85rem; color:var(--work-blue); font-weight:700; }
+.work-lesson-tools { position:sticky; top:var(--masthead-height,0px); z-index:50; margin:20px 0; padding:8px 0; background:var(--page-bg,#faf9f6); border-bottom:1px solid var(--work-line); }
+.work-jump { --action-padding-block:4px; --action-padding-inline:5px; display:grid; grid-template-columns:repeat(8,minmax(0,1fr)); gap:8px; width:100%; max-width:544px; }
+.work-jump a { display:flex; align-items:center; justify-content:center; gap:6px; min-width:0; height:48px; border:1px solid var(--work-line); border-radius:4px; text-decoration:none; font-size:.85rem; letter-spacing:0; color:var(--work-blue); font-weight:700; }
 .work-jump a:hover { background:#e7efef; }
+.work-jump a[aria-current="location"] { border-color:var(--work-blue); background:#e7efef; box-shadow:inset 0 -2px var(--work-blue); }
+.work-section-dots { display:flex; flex:none; flex-direction:column; gap:2px; }
+.work-section-dot { display:block; flex:none; width:4px; height:4px; border:1px solid var(--work-blue); border-radius:50%; background:transparent; }
+.work-section-dot.is-reached { background:var(--work-blue); }
+.work-page .work-module[id],.work-page [data-work-step] { scroll-margin-top:calc(var(--work-navigation-height,65px) + 12px); }
+@media(max-width:480px) { .work-jump { --action-padding-inline:2px; gap:4px; } .work-jump a { gap:3px; font-size:.75rem; } }
 .work-text-button { background:none; border:0; border-bottom:1px solid currentColor; color:var(--work-blue); padding:6px 0; font:inherit; font-size:.84rem; cursor:pointer; min-height:40px; }
 .work-scope { font-size:.86rem; border-left:3px solid #849999; padding:8px 0 8px 17px; max-width:1000px; }
 .work-save-controls { display:flex; flex-wrap:wrap; align-items:center; gap:12px 25px; margin:23px 0; padding:15px 20px; background:var(--work-paper); font-size:.83rem; border-radius:4px; }

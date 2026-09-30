@@ -123,6 +123,9 @@ test('all 66 course pages initialize every quiz and preserve static model respon
     const dom=setup(file),d=dom.window.document;
     assert.equal(d.querySelectorAll('[data-check-answer]:not([hidden])').length,16,file);
     assert.equal(d.querySelectorAll('.work-model blockquote').length,8,file);
+    assert.equal(d.querySelectorAll('.work-jump a .work-section-dots').length,8,file);
+    assert.equal(d.querySelectorAll('.work-section-dot').length,48,file);
+    assert.equal(d.querySelectorAll('[data-work-step]').length,48,file);
     dom.window.close();
   }
 });

@@ -49,9 +49,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   rounds, objective records, family communication, and fair safety reviews.
   Output: `output/pdf/nursing-allied-health-english-book.pdf`.
 
+- Biotechnology English: 102 pages with the same counts and explained keys,
+  covering platform evidence, assay reproducibility, biomarker claims, preclinical
+  findings, scale-up, intellectual property, board updates, and partnering terms.
+  Output: `output/pdf/biotechnology-english-book.pdf`.
+
 ## Remaining
 
-54 books remain. The next course in the canonical inventory is `biotechnology`.
+53 books remain. The next course in the canonical inventory is `medical-devices`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

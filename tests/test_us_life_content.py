@@ -1,7 +1,9 @@
 import hashlib
+import io
 import json
 import tempfile
 import unittest
+import wave
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -118,6 +120,19 @@ class EverydayContentTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 budget.request(client, 'term', 'say term', 'gemini-3.1-flash-tts-preview')
             self.assertEqual(2, len(calls))
+
+    def test_google_pcm_and_wav_formats_decode_to_the_same_samples(self):
+        pcm = b'\x10\x00' * 24000
+        buffer = io.BytesIO()
+        with wave.open(buffer, 'wb') as stream:
+            stream.setnchannels(1); stream.setsampwidth(2); stream.setframerate(24000); stream.writeframes(pcm)
+        for mime, data in [('audio/L16;codec=pcm;rate=24000', pcm),
+                           ('audio/L16; rate=24000; codec=pcm', pcm),
+                           ('audio/wav', buffer.getvalue())]:
+            self.assertEqual(pcm, audio.decode_audio([SimpleNamespace(mime_type=mime, data=data)]))
+        with self.assertRaises(ValueError):
+            audio.decode_audio([SimpleNamespace(mime_type='audio/L16;rate=48000', data=pcm)])
+        with self.assertRaises(ValueError): audio.decode_audio([])
 
     def test_missing_audio_check_is_offline_and_daily_build_never_generates_speech(self):
         workflow = (content.ROOT / '.github/workflows/cron.yml').read_text()

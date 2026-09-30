@@ -40,10 +40,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   covering development evidence, regulatory questions, trial documents, readouts,
   safety intake, batch review, promotional claims, and access evidence.
   Output: `output/pdf/pharmaceutical-english-book.pdf`.
+- Healthcare Administration English: 102 pages with the same counts and explained keys,
+  covering scheduling, claims, capacity, safety reviews, privacy, patient communication,
+  care coordination, and accurate board reporting.
+  Output: `output/pdf/healthcare-administration-english-book.pdf`.
 
 ## Remaining
 
-56 books remain. The next course in the canonical inventory is `healthcare-administration`.
+55 books remain. The next course in the canonical inventory is `nursing-allied-health`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

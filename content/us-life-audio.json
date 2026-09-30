@@ -934,5 +934,419 @@
     "file": "assets/audio/us-life/refill-adca5b991e04.mp3",
     "seconds": 1.56,
     "sha256": "016bd51896c37dc3dc9c80fa918e1a1a76f9a76fa220a54c29854e7445fca3a1"
+  },
+  "side effect": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: an unwanted effect of a medicine or treatment.\nTerm to speak: side effect",
+    "file": "assets/audio/us-life/side-effect-74cf0c793da7.mp3",
+    "seconds": 2.04,
+    "sha256": "a3b02a3076d0772943fdfcb084d0611dea0028493a58f2e4531dcdf6e642f826"
+  },
+  "medical history": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: information about a person's past health and treatments.\nTerm to speak: medical history",
+    "file": "assets/audio/us-life/medical-history-1dec5f9d965b.mp3",
+    "seconds": 2.6,
+    "sha256": "16b557fbfc2b683fa455ed6bc56d25674805812851860d1ac6b20544d81b51ed"
+  },
+  "follow-up appointment": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a later visit to check how you are doing.\nTerm to speak: follow-up appointment",
+    "file": "assets/audio/us-life/follow-up-appointment-267c4d85b102.mp3",
+    "seconds": 2.68,
+    "sha256": "fbc75f7fd6129948e004a32100d7cd4d6da306cbcb96ec0c5540d0134b48162e"
+  },
+  "appointment": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a planned time for a service.\nTerm to speak: appointment",
+    "file": "assets/audio/us-life/appointment-b68a76bdd409.mp3",
+    "seconds": 1.68,
+    "sha256": "e55c84e0c177f674b31b8213577e2bc6bb8ccd85516be1eb259fccf5fbb665b0"
+  },
+  "available": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: free or possible.\nTerm to speak: available",
+    "file": "assets/audio/us-life/available-3d977becf959.mp3",
+    "seconds": 1.72,
+    "sha256": "8cbce2c7043a6aa37ba45d2c8e9df704b7b617361dc98d1bbf1d11d6360544c0"
+  },
+  "reschedule": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: change the time or date.\nTerm to speak: reschedule",
+    "file": "assets/audio/us-life/reschedule-4f2e92676c74.mp3",
+    "seconds": 2.08,
+    "sha256": "4b9143ec2b550d8ef27608b6ba7705d7cf7c07b914a94f75d2c4cdff924cde78"
+  },
+  "cancel": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: stop a plan.\nTerm to speak: cancel",
+    "file": "assets/audio/us-life/cancel-13d140cd0f71.mp3",
+    "seconds": 1.56,
+    "sha256": "9c6fe560bc1ec564d771cf347c969221f0575791e6724532e7325dc00fcfb8af"
+  },
+  "confirmation": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a message showing that a booking or plan is accepted.\nTerm to speak: confirmation",
+    "file": "assets/audio/us-life/confirmation-fb738394bc5c.mp3",
+    "seconds": 1.92,
+    "sha256": "8a7ee29e953507fdd5000159ea1e4408ad3d860d66a8f9f59387446ce5233595"
+  },
+  "waiting list": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a list of people waiting for an available place or time.\nTerm to speak: waiting list",
+    "file": "assets/audio/us-life/waiting-list-0675b7067818.mp3",
+    "seconds": 2.0,
+    "sha256": "7142f8a19d83bf408762bff2e008e7de1ffaf7282fe4e5d2e2b721c78b07a0eb"
+  },
+  "check in": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: tell staff that you have arrived.\nTerm to speak: check in",
+    "file": "assets/audio/us-life/check-in-85aa58313e2e.mp3",
+    "seconds": 1.92,
+    "sha256": "356b7a7bc7c6ff8ab96a2c34fd3ca1162a0177239ff5062869e35ecbc5306aeb"
+  },
+  "required field": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a part of a form that must be completed.\nTerm to speak: required field",
+    "file": "assets/audio/us-life/required-field-826a72c17a12.mp3",
+    "seconds": 2.92,
+    "sha256": "253998b27b442ca952882966dfd22e4bd801d7dc5cbb52fdf6175dd49ea79e42"
+  },
+  "optional": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: something you can choose to do or leave out.\nTerm to speak: optional",
+    "file": "assets/audio/us-life/optional-22e75003e544.mp3",
+    "seconds": 2.0,
+    "sha256": "7d95b1092a5fd10f6d674baf4deb8cf3ccb02d2578a612e7410e4c3aeea7dde8"
+  },
+  "reminder": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a message that helps you remember something.\nTerm to speak: reminder",
+    "file": "assets/audio/us-life/reminder-40df18c55f97.mp3",
+    "seconds": 1.96,
+    "sha256": "eeb20dc0f144f03df9f4f86c4578e236cae74904dc1ec00a2cdfb809e85474e7"
+  },
+  "attendance": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: being present at school.\nTerm to speak: attendance",
+    "file": "assets/audio/us-life/attendance-ad95e2eaf14a.mp3",
+    "seconds": 2.48,
+    "sha256": "4e3cc382c7bf122b6a0e0b447d3dfae708963a4590c41b01d9e66181c0f2ee9a"
+  },
+  "absent": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: not at school or work.\nTerm to speak: absent",
+    "file": "assets/audio/us-life/absent-265babdfc73b.mp3",
+    "seconds": 1.72,
+    "sha256": "8bcd0c2b61d022d58660074e481566f381f9a92ca9958d935e15a0e16a24a183"
+  },
+  "permission slip": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a paper a parent signs to allow something.\nTerm to speak: permission slip",
+    "file": "assets/audio/us-life/permission-slip-dbae03c95ff8.mp3",
+    "seconds": 2.64,
+    "sha256": "a4c52fc05561fd72dc16dde883c6a4f145198327128d7ebfcdd45ad6bf23314c"
+  },
+  "drop-off": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the place where the driver leaves you.\nTerm to speak: drop-off",
+    "file": "assets/audio/us-life/drop-off-f664ecc4ab19.mp3",
+    "seconds": 2.88,
+    "sha256": "0030e0a7cda4a5c8fbb7ef6937256a42d7da830a43bccf9cf63b6a98055f170c"
+  },
+  "parent-teacher conference": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a meeting between family and teacher.\nTerm to speak: parent-teacher conference",
+    "file": "assets/audio/us-life/parent-teacher-conference-724f9e0a3155.mp3",
+    "seconds": 3.92,
+    "sha256": "560f4084667afcff5bb9bde0173971d65ac033307f070c2fbdc912bcf6ed7d5f"
+  },
+  "enrollment": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the process of registering for a school or program.\nTerm to speak: enrollment",
+    "file": "assets/audio/us-life/enrollment-77f1dfc6dc8a.mp3",
+    "seconds": 1.88,
+    "sha256": "05fa3669489a76b0b8c3bc8ec386d05685b4b787ba0183164cadea7efc8e3125"
+  },
+  "pick-up": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the time or place a child leaves.\nTerm to speak: pick-up",
+    "file": "assets/audio/us-life/pick-up-13136cc56333.mp3",
+    "seconds": 1.2109583333333334,
+    "sha256": "7a2e62e43d710909dd7b93d031715c45d8f39af58dee454e2559a39758295cd8"
+  },
+  "homework": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: schoolwork students do outside class.\nTerm to speak: homework",
+    "file": "assets/audio/us-life/homework-8aaf48a6a02a.mp3",
+    "seconds": 1.6,
+    "sha256": "e16e2a25ea7979552741b3fc6cc365a2ff1269f5f061079b5d2439ab4a76f7a6"
+  },
+  "report card": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a record of a student's school progress.\nTerm to speak: report card",
+    "file": "assets/audio/us-life/report-card-d10aa03c5d54.mp3",
+    "seconds": 2.12,
+    "sha256": "513a5edc0cbbda4924924eb5bc195bb4c1728301a86f0e529d540ec14a37708f"
+  },
+  "after-school program": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: organized activities after regular classes end.\nTerm to speak: after-school program",
+    "file": "assets/audio/us-life/after-school-program-1a27caa793bd.mp3",
+    "seconds": 3.12,
+    "sha256": "f7a9f69e9acf255b4c92d3399581ef8bb5e0122b94ab6b8dcb4827d6aad60c83"
+  },
+  "school supplies": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: items such as notebooks and pencils used at school.\nTerm to speak: school supplies",
+    "file": "assets/audio/us-life/school-supplies-ffe55a0c4261.mp3",
+    "seconds": 2.32,
+    "sha256": "ff4116fb26adab43e0a7311abf63ced2b5a16e8faeea8faa06dab8b7648b50d7"
+  },
+  "shift": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the hours a person works.\nTerm to speak: shift",
+    "file": "assets/audio/us-life/shift-450c23b92170.mp3",
+    "seconds": 1.4,
+    "sha256": "169dc978608b9bee3e82952a191c27fbb0a8415e9a115f6a54f908c7fa4c6c31"
+  },
+  "payday": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the day workers are paid.\nTerm to speak: payday",
+    "file": "assets/audio/us-life/payday-cc508520db52.mp3",
+    "seconds": 1.36,
+    "sha256": "1cadeaa8f83ae33f3a19c2d7612fabc50481bef9d7106d12351a0b9bd230096c"
+  },
+  "field trip": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-flash-preview-tts",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a school visit to a place outside the classroom.\nTerm to speak: field trip",
+    "file": "assets/audio/us-life/field-trip-c289027c1503.mp3",
+    "seconds": 1.6909583333333333,
+    "sha256": "eb466ebfef538ecf368ab4c7d1db37b90ea0ce3536d735002b3df30c5baa5470"
+  },
+  "pay stub": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a document showing pay and deductions.\nTerm to speak: pay stub",
+    "file": "assets/audio/us-life/pay-stub-5415a46655de.mp3",
+    "seconds": 1.88,
+    "sha256": "f07afc516625580306cf7281ce36af7807fb1923ae770993ca73ae4769ecda38"
+  },
+  "overtime": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: extra work hours beyond regular hours.\nTerm to speak: overtime",
+    "file": "assets/audio/us-life/overtime-3dca41f68ed2.mp3",
+    "seconds": 1.48,
+    "sha256": "151d68bbc65daa0eed9f256cac99ba8afc9a1bd424a871a08b91e60aa0ce169d"
+  },
+  "manager": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a person who can make decisions.\nTerm to speak: manager",
+    "file": "assets/audio/us-life/manager-b4e5236903df.mp3",
+    "seconds": 1.64,
+    "sha256": "54cd3cda1ac61c208f3dcbb411b29a4572699c21ad53ee8ed5c7abe184c05b74"
+  },
+  "break": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a short rest time at work.\nTerm to speak: break",
+    "file": "assets/audio/us-life/break-1b27b6ff12ab.mp3",
+    "seconds": 1.56,
+    "sha256": "21bb0bbedd51b84a075a77f9b895aaa31d96075c6d12c8a322e8927d8dbd8e0d"
+  },
+  "clock out": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: record the time when you finish work.\nTerm to speak: clock out",
+    "file": "assets/audio/us-life/clock-out-ff81d107a119.mp3",
+    "seconds": 2.16,
+    "sha256": "513ebaafd022990c4ce44fc29f66fc1dae96e0e91cef25c5d39438f288257415"
+  },
+  "time sheet": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a record of the hours you worked.\nTerm to speak: time sheet",
+    "file": "assets/audio/us-life/time-sheet-1a49b30089ee.mp3",
+    "seconds": 1.96,
+    "sha256": "9df3bc1a991aaa3887f026e9e8f87d6139739678e636b07ea99ff2798849f6d4"
+  },
+  "coworker": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a person you work with.\nTerm to speak: coworker",
+    "file": "assets/audio/us-life/coworker-b881133b176e.mp3",
+    "seconds": 1.88,
+    "sha256": "4c39409112a95cfe33f1c12395835674549dd64bdcaac56ce51e01e90fb3c64b"
+  },
+  "training": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: practice or instruction for learning a skill.\nTerm to speak: training",
+    "file": "assets/audio/us-life/training-e5549f3000c4.mp3",
+    "seconds": 1.64,
+    "sha256": "6a234bbc78d8091b749fd8b79e1fea21fdb069b6da1762287a4c9645bf05c235"
+  },
+  "phone plan": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a monthly mobile phone service.\nTerm to speak: phone plan",
+    "file": "assets/audio/us-life/phone-plan-4d7762e08c3e.mp3",
+    "seconds": 2.0,
+    "sha256": "94dfb3fa41e8df6ee747ad8139a9c7dd3b3a5ebed1679f15dbd0a78820d497b7"
+  },
+  "data": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: internet use on a phone.\nTerm to speak: data",
+    "file": "assets/audio/us-life/data-c166e2bdcfcd.mp3",
+    "seconds": 1.4,
+    "sha256": "341fcbb10c3ae4063849cdf232565c22423117035b864e2c5cfcb400953fddd4"
+  },
+  "contract": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a legal agreement.\nTerm to speak: contract",
+    "file": "assets/audio/us-life/contract-ea163d33e711.mp3",
+    "seconds": 1.8,
+    "sha256": "53cfa79e7eae1e80e5b21633aa1a9f0d441e60269ee126692e21dc5e46774970"
+  },
+  "voicemail": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a recorded phone message.\nTerm to speak: voicemail",
+    "file": "assets/audio/us-life/voicemail-b9c239cccd04.mp3",
+    "seconds": 1.88,
+    "sha256": "fa6d87c4639f1d099abda243dff550560ba847a4aab12859c8ac31ca0d3645b7"
+  },
+  "password": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a secret word or code for an account.\nTerm to speak: password",
+    "file": "assets/audio/us-life/password-c66a268855bb.mp3",
+    "seconds": 1.56,
+    "sha256": "b93dabbc2c4114bdfc5ce91b7e6ed484280ed8a13def8ee2d69ea676ae3ca05f"
+  },
+  "signal": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the connection that lets a phone make calls or use data.\nTerm to speak: signal",
+    "file": "assets/audio/us-life/signal-a145a896f843.mp3",
+    "seconds": 1.56,
+    "sha256": "23a77ee00e4a86f38f0ebca2df3283f30e54c2e62532c8214a25381879589735"
+  },
+  "SIM card": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a small card that connects a phone to mobile service.\nTerm to speak: SIM card",
+    "file": "assets/audio/us-life/sim-card-d257195f7f67.mp3",
+    "seconds": 2.08,
+    "sha256": "84d87d51b434ef510525baf9fb4ad93f2ef2f3d068029352bb838e6468f5c5e3"
+  },
+  "activation fee": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a charge for starting a service.\nTerm to speak: activation fee",
+    "file": "assets/audio/us-life/activation-fee-7382a700ffc1.mp3",
+    "seconds": 2.36,
+    "sha256": "eb709c1365a175e510b5eba796a86514b492538a98b08a97795f91996fe6d61a"
+  },
+  "unlimited": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: without a stated limit for the feature being described.\nTerm to speak: unlimited",
+    "file": "assets/audio/us-life/unlimited-2a2f15c312d6.mp3",
+    "seconds": 2.8,
+    "sha256": "6cbcda8c9fee4f86bc1401ad2929981a0b066db5aa55b56af407e6ef2a4da888"
+  },
+  "software update": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a newer version of a program installed on a device.\nTerm to speak: software update",
+    "file": "assets/audio/us-life/software-update-07f8954761cd.mp3",
+    "seconds": 2.8,
+    "sha256": "5e52807af7c3217a05527560aa26aa517e6bc39a901730402a4c4b677b43f8c0"
+  },
+  "mailing address": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-3.1-flash-tts-preview",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: the address where you receive mail.\nTerm to speak: mailing address",
+    "file": "assets/audio/us-life/mailing-address-2e9d94fea3b3.mp3",
+    "seconds": 2.84,
+    "sha256": "f2f212c5f3ba6bc0dde61daf7dc7aaa6d6de2af8617a56ee74f2b96ac6bb29ca"
   }
 }

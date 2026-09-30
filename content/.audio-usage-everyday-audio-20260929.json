@@ -1005,6 +1005,518 @@
       "time": "2026-09-30T01:34:38.356989+00:00",
       "input_tokens": 80,
       "output_tokens": 50
+    },
+    {
+      "term": "side effect",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001401,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:08.303114+00:00",
+      "input_tokens": 81,
+      "output_tokens": 66
+    },
+    {
+      "term": "medical history",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001763,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:15.103314+00:00",
+      "input_tokens": 83,
+      "output_tokens": 84
+    },
+    {
+      "term": "follow-up appointment",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001804,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:21.903451+00:00",
+      "input_tokens": 84,
+      "output_tokens": 86
+    },
+    {
+      "term": "appointment",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001158,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:28.703554+00:00",
+      "input_tokens": 78,
+      "output_tokens": 54
+    },
+    {
+      "term": "available",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001195,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:35.503729+00:00",
+      "input_tokens": 75,
+      "output_tokens": 56
+    },
+    {
+      "term": "reschedule",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001417,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:42.303883+00:00",
+      "input_tokens": 77,
+      "output_tokens": 67
+    },
+    {
+      "term": "cancel",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001075,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:49.103992+00:00",
+      "input_tokens": 75,
+      "output_tokens": 50
+    },
+    {
+      "term": "confirmation",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001322,
+      "usage": "reported",
+      "time": "2026-09-30T01:37:55.904123+00:00",
+      "input_tokens": 82,
+      "output_tokens": 62
+    },
+    {
+      "term": "waiting list",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001364,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:02.704264+00:00",
+      "input_tokens": 84,
+      "output_tokens": 64
+    },
+    {
+      "term": "check in",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001319,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:09.504394+00:00",
+      "input_tokens": 79,
+      "output_tokens": 62
+    },
+    {
+      "term": "required field",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001962,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:16.304508+00:00",
+      "input_tokens": 82,
+      "output_tokens": 94
+    },
+    {
+      "term": "optional",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001361,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:23.104637+00:00",
+      "input_tokens": 81,
+      "output_tokens": 64
+    },
+    {
+      "term": "reminder",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001339,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:29.904755+00:00",
+      "input_tokens": 79,
+      "output_tokens": 63
+    },
+    {
+      "term": "attendance",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001676,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:36.704887+00:00",
+      "input_tokens": 76,
+      "output_tokens": 80
+    },
+    {
+      "term": "absent",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001197,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:43.505005+00:00",
+      "input_tokens": 77,
+      "output_tokens": 56
+    },
+    {
+      "term": "permission slip",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001781,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:50.305135+00:00",
+      "input_tokens": 81,
+      "output_tokens": 85
+    },
+    {
+      "term": "drop-off",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001941,
+      "usage": "reported",
+      "time": "2026-09-30T01:38:57.105277+00:00",
+      "input_tokens": 81,
+      "output_tokens": 93
+    },
+    {
+      "term": "pick-up",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012669,
+      "usage": "reserved",
+      "time": "2026-09-30T01:39:03.905413+00:00"
+    },
+    {
+      "term": "parent-teacher conference",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.002601,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:10.705533+00:00",
+      "input_tokens": 81,
+      "output_tokens": 126
+    },
+    {
+      "term": "enrollment",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001301,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:17.505686+00:00",
+      "input_tokens": 81,
+      "output_tokens": 61
+    },
+    {
+      "term": "pick-up",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0003405,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:24.305826+00:00",
+      "input_tokens": 81,
+      "output_tokens": 30
+    },
+    {
+      "term": "homework",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001118,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:31.105950+00:00",
+      "input_tokens": 78,
+      "output_tokens": 52
+    },
+    {
+      "term": "report card",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001442,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:37.906081+00:00",
+      "input_tokens": 82,
+      "output_tokens": 68
+    },
+    {
+      "term": "after-school program",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.002081,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:44.706193+00:00",
+      "input_tokens": 81,
+      "output_tokens": 100
+    },
+    {
+      "term": "school supplies",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001582,
+      "usage": "reported",
+      "time": "2026-09-30T01:39:51.506369+00:00",
+      "input_tokens": 82,
+      "output_tokens": 75
+    },
+    {
+      "term": "field trip",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012687,
+      "usage": "reserved",
+      "time": "2026-09-30T01:39:58.306498+00:00"
+    },
+    {
+      "term": "shift",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.000977,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:05.106633+00:00",
+      "input_tokens": 77,
+      "output_tokens": 45
+    },
+    {
+      "term": "payday",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.000957,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:11.906748+00:00",
+      "input_tokens": 77,
+      "output_tokens": 44
+    },
+    {
+      "term": "field trip",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.000461,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:18.706907+00:00",
+      "input_tokens": 82,
+      "output_tokens": 42
+    },
+    {
+      "term": "pay stub",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001299,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:25.507096+00:00",
+      "input_tokens": 79,
+      "output_tokens": 61
+    },
+    {
+      "term": "overtime",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001038,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:32.307189+00:00",
+      "input_tokens": 78,
+      "output_tokens": 48
+    },
+    {
+      "term": "manager",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001138,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:39.107325+00:00",
+      "input_tokens": 78,
+      "output_tokens": 53
+    },
+    {
+      "term": "break",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001078,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:45.907494+00:00",
+      "input_tokens": 78,
+      "output_tokens": 50
+    },
+    {
+      "term": "clock in",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012673,
+      "usage": "reserved",
+      "time": "2026-09-30T01:40:52.707649+00:00"
+    },
+    {
+      "term": "clock out",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.00148,
+      "usage": "reported",
+      "time": "2026-09-30T01:40:59.507814+00:00",
+      "input_tokens": 80,
+      "output_tokens": 70
+    },
+    {
+      "term": "time sheet",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.00134,
+      "usage": "reported",
+      "time": "2026-09-30T01:41:06.307942+00:00",
+      "input_tokens": 80,
+      "output_tokens": 63
+    },
+    {
+      "term": "clock in",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063365,
+      "usage": "reserved",
+      "time": "2026-09-30T01:41:13.108112+00:00"
+    },
+    {
+      "term": "coworker",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001297,
+      "usage": "reported",
+      "time": "2026-09-30T01:41:19.908225+00:00",
+      "input_tokens": 77,
+      "output_tokens": 61
+    },
+    {
+      "term": "training",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001139,
+      "usage": "reported",
+      "time": "2026-09-30T01:41:26.708382+00:00",
+      "input_tokens": 79,
+      "output_tokens": 53
+    },
+    {
+      "term": "day off",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012671,
+      "usage": "reserved",
+      "time": "2026-09-30T01:42:28.709821+00:00"
+    },
+    {
+      "term": "phone plan",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001358,
+      "usage": "reported",
+      "time": "2026-09-30T01:42:35.509953+00:00",
+      "input_tokens": 78,
+      "output_tokens": 64
+    },
+    {
+      "term": "clock in",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063365,
+      "usage": "reserved",
+      "time": "2026-09-30T01:42:42.310095+00:00"
+    },
+    {
+      "term": "day off",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063355,
+      "usage": "reserved",
+      "time": "2026-09-30T01:42:49.110220+00:00"
+    },
+    {
+      "term": "data",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.000977,
+      "usage": "reported",
+      "time": "2026-09-30T01:42:55.910377+00:00",
+      "input_tokens": 77,
+      "output_tokens": 45
+    },
+    {
+      "term": "contract",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001235,
+      "usage": "reported",
+      "time": "2026-09-30T01:43:57.912136+00:00",
+      "input_tokens": 75,
+      "output_tokens": 58
+    },
+    {
+      "term": "voicemail",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001296,
+      "usage": "reported",
+      "time": "2026-09-30T01:44:04.712278+00:00",
+      "input_tokens": 76,
+      "output_tokens": 61
+    },
+    {
+      "term": "day off",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063355,
+      "usage": "reserved",
+      "time": "2026-09-30T01:44:11.512405+00:00"
+    },
+    {
+      "term": "password",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.00108,
+      "usage": "reported",
+      "time": "2026-09-30T01:44:18.312531+00:00",
+      "input_tokens": 80,
+      "output_tokens": 50
+    },
+    {
+      "term": "two-factor code",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012685,
+      "usage": "reserved",
+      "time": "2026-09-30T01:44:25.112671+00:00"
+    },
+    {
+      "term": "signal",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001083,
+      "usage": "reported",
+      "time": "2026-09-30T01:45:27.114275+00:00",
+      "input_tokens": 83,
+      "output_tokens": 50
+    },
+    {
+      "term": "Wi-Fi",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.012672,
+      "usage": "reserved",
+      "time": "2026-09-30T01:45:33.914394+00:00"
+    },
+    {
+      "term": "two-factor code",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063425,
+      "usage": "reserved",
+      "time": "2026-09-30T01:45:40.714510+00:00"
+    },
+    {
+      "term": "SIM card",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001423,
+      "usage": "reported",
+      "time": "2026-09-30T01:45:47.514685+00:00",
+      "input_tokens": 83,
+      "output_tokens": 67
+    },
+    {
+      "term": "Wi-Fi",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.006336,
+      "usage": "reserved",
+      "time": "2026-09-30T01:45:54.314847+00:00"
+    },
+    {
+      "term": "activation fee",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001599,
+      "usage": "reported",
+      "time": "2026-09-30T01:46:56.316445+00:00",
+      "input_tokens": 79,
+      "output_tokens": 76
+    },
+    {
+      "term": "two-factor code",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.0063425,
+      "usage": "reserved",
+      "time": "2026-09-30T01:47:58.316779+00:00"
+    },
+    {
+      "term": "unlimited",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001881,
+      "usage": "reported",
+      "time": "2026-09-30T01:48:05.116921+00:00",
+      "input_tokens": 81,
+      "output_tokens": 90
+    },
+    {
+      "term": "Wi-Fi",
+      "model": "gemini-2.5-flash-preview-tts",
+      "usd": 0.006336,
+      "usage": "reserved",
+      "time": "2026-09-30T01:48:11.917070+00:00"
+    },
+    {
+      "term": "software update",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001883,
+      "usage": "reported",
+      "time": "2026-09-30T01:49:13.918821+00:00",
+      "input_tokens": 83,
+      "output_tokens": 90
+    },
+    {
+      "term": "mailing address",
+      "model": "gemini-3.1-flash-tts-preview",
+      "usd": 0.001899,
+      "usage": "reported",
+      "time": "2026-09-30T01:49:20.718949+00:00",
+      "input_tokens": 79,
+      "output_tokens": 91
     }
   ]
 }

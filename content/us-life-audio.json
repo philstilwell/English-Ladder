@@ -1476,5 +1476,14 @@
       42.04
     ],
     "silence_gap_seconds": 0.65
+  },
+  "post office": {
+    "policy": "en-US-kore-v1",
+    "model": "gemini-2.5-pro-preview-tts",
+    "voice": "Kore",
+    "prompt": "Pronunciation reference for an adult English learner. Use a clear, natural American English accent. Say ONLY the term below, once, at a slightly slower teaching pace. Do not say any introduction, definition, label, spelling, or commentary. No music or sound effects. The meaning is supplied only to choose the pronunciation: a place for mail services.\nTerm to speak: post office",
+    "file": "assets/audio/us-life/post-office-5df0963f0e21.mp3",
+    "seconds": 2.290958333333333,
+    "sha256": "99ae9a0a141fc5d02434139a66b72dd689b4e01658a115533cba66dd82c0ecfc"
   }
 }

@@ -166,15 +166,9 @@ def main():
                 return
             except Exception as error:
                 code = getattr(error, 'code', None)
-                # The newer preview can reject an otherwise valid short TTS request.
-                # Try the established Google model once for that term, with its own price.
-                if code == 400 and model == 'gemini-3.1-flash-tts-preview' and attempt == 0:
-                    model = MODEL
-                    print(f'{term}: retrying with {MODEL}', flush=True)
-                    continue
                 if code == 429:
                     # Preserve the provider's quota identifiers, without logging request headers or credentials.
-                    payload = getattr(error, 'response_json', {}) or {}
+                    payload = getattr(error, 'details', {}) or {}
                     details = payload.get('error', payload).get('details', []) if isinstance(payload, dict) else []
                     quotas = [{k: v for k, v in q.items() if k in ('quotaMetric', 'quotaId', 'quotaValue', 'quotaDimensions')}
                               for detail in details for q in detail.get('violations', [])]
@@ -187,7 +181,8 @@ def main():
                     with rate_lock:
                         next_start[0] = max(next_start[0], time.monotonic() + min(retry_seconds + 2, 180))
                 # Retry only transient provider failures; do not conceal content/config errors.
-                if code not in (429, 500, 502, 503, 504) or attempt == 2:
+                retryable = code in (429, 500, 502, 503, 504) or (code == 400 and model == 'gemini-3.1-flash-tts-preview')
+                if not retryable or attempt == 2:
                     raise
                 time.sleep(25 * (attempt + 1))
     errors = []

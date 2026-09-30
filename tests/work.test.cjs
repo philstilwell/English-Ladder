@@ -126,6 +126,14 @@ test('all 66 course pages initialize every quiz and preserve static model respon
     assert.equal(d.querySelectorAll('.work-jump a .work-section-dots').length,8,file);
     assert.equal(d.querySelectorAll('.work-section-dot').length,48,file);
     assert.equal(d.querySelectorAll('[data-work-step]').length,48,file);
+    const toolbar=d.querySelector('.work-lesson-tools');
+    const icon=toolbar.querySelector('.work-lesson-icon .work-card-icon');
+    const headingIcon=d.querySelector('.work-hero .work-card-icon');
+    assert.ok(icon,file);
+    assert.equal(toolbar.firstElementChild,icon.parentElement,file);
+    assert.equal(icon.getAttribute('class'),headingIcon.getAttribute('class'),file);
+    assert.equal(icon.getAttribute('style'),headingIcon.getAttribute('style'),file);
+    assert.equal(icon.parentElement.getAttribute('aria-hidden'),'true',file);
     dom.window.close();
   }
 });

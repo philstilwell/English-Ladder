@@ -18,6 +18,15 @@ on:
         required: false
         type: number
         default: 0
+      audio_model:
+        description: 'Google speech model; existing valid recordings are retained'
+        required: false
+        type: choice
+        options:
+          - gemini-2.5-flash-preview-tts
+          - gemini-3.1-flash-tts-preview
+          - gemini-2.5-pro-preview-tts
+        default: gemini-2.5-flash-preview-tts
       include_vocabulary:
         description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
         required: false
@@ -65,9 +74,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
           AUDIO_LIMIT: ${{ github.event.inputs.audio_limit || '0' }}
+          AUDIO_MODEL: ${{ github.event.inputs.audio_model || 'gemini-2.5-flash-preview-tts' }}
         run: |
           command -v ffmpeg
-          python -u us_life_audio.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT"
+          python -u us_life_audio.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT" --model "$AUDIO_MODEL"
       - name: Fill and separately review missing vocabulary languages
         if: github.event.inputs.include_vocabulary == 'true'
         env:

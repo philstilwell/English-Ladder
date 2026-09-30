@@ -18,6 +18,8 @@ from us_life_content import ROOT, AUDIO_POLICY, audio_path, terms
 from vocabulary_translations import atomic_json
 
 MODEL = 'gemini-2.5-flash-preview-tts'
+MODEL_PRICES = {MODEL: (.5, 10), 'gemini-2.5-pro-preview-tts': (1, 20),
+                'gemini-3.1-flash-tts-preview': (1, 20)}
 VOICE = 'Kore'
 MAX_TOKENS = 512
 RECORDS = ROOT / 'content/us-life-audio.json'
@@ -34,7 +36,7 @@ def prompt_for(term, definition):
 def valid_record(term, definition, records, root=ROOT):
     record = records.get(term, {})
     path = root / audio_path(term)
-    return (record.get('policy') == AUDIO_POLICY and record.get('model') == MODEL
+    return (record.get('policy') == AUDIO_POLICY and record.get('model') in MODEL_PRICES
             and record.get('voice') == VOICE and record.get('prompt') == prompt_for(term, definition)
             and record.get('file') == audio_path(term) and .25 <= record.get('seconds', 0) <= 12
             and path.is_file() and len(path.read_bytes()) > 1000
@@ -51,22 +53,23 @@ class AudioBudget:
     def spent(self):
         return sum(row['usd'] for row in self.data['requests'])
 
-    def request(self, client, term, prompt):
+    def request(self, client, term, prompt, model=MODEL):
         # Reserve before sending. Unknown/failed requests keep their reservation.
-        reserve = ((len(prompt.encode()) + 2048) * .5 + MAX_TOKENS * 10) / 1_000_000
+        input_price, output_price = MODEL_PRICES[model]
+        reserve = ((len(prompt.encode()) + 2048) * input_price + MAX_TOKENS * output_price) / 1_000_000
         with self.lock:
             if self.spent + reserve > self.limit:
                 raise RuntimeError('Audio spending cap reached.')
-            row = {'term': term, 'usd': reserve, 'usage': 'reserved',
+            row = {'term': term, 'model': model, 'usd': reserve, 'usage': 'reserved',
                    'time': datetime.now(timezone.utc).isoformat()}
             self.data['requests'].append(row); atomic_json(self.path, self.data)
-        response = client.models.generate_content(model=MODEL, contents=prompt, config={
+        response = client.models.generate_content(model=model, contents=prompt, config={
             'response_modalities': ['AUDIO'], 'max_output_tokens': MAX_TOKENS,
             'speech_config': {'voice_config': {'prebuilt_voice_config': {'voice_name': VOICE}}}})
         usage = getattr(response, 'usage_metadata', None)
         if usage and usage.prompt_token_count is not None and usage.candidates_token_count is not None:
             with self.lock:
-                row.update(usd=(usage.prompt_token_count * .5 + usage.candidates_token_count * 10) / 1_000_000,
+                row.update(usd=(usage.prompt_token_count * input_price + usage.candidates_token_count * output_price) / 1_000_000,
                            usage='reported', input_tokens=usage.prompt_token_count,
                            output_tokens=usage.candidates_token_count)
                 atomic_json(self.path, self.data)
@@ -104,6 +107,7 @@ def main():
     parser.add_argument('--budget', type=float, default=2)
     parser.add_argument('--budget-key', default='everyday-audio-20260929')
     parser.add_argument('--limit', type=int, default=0, help='Optional small pilot; zero generates all missing terms.')
+    parser.add_argument('--model', choices=MODEL_PRICES, default=MODEL)
     args = parser.parse_args()
     if not 0 < args.budget <= 2 or not re.fullmatch(r'[a-zA-Z0-9-]+', args.budget_key) or args.limit < 0:
         parser.error('Use a budget up to $2, a simple budget key, and a nonnegative limit.')
@@ -130,16 +134,25 @@ def main():
                 time.sleep(max(0, next_start[0] - time.monotonic()))
                 next_start[0] = time.monotonic() + 6.8
             try:
-                pcm = budget.request(client, term, prompt_for(term, definition))
+                pcm = budget.request(client, term, prompt_for(term, definition), args.model)
                 seconds, digest = encode_mp3(pcm, ROOT / audio_path(term))
                 with save_lock:
-                    records[term] = {'policy': AUDIO_POLICY, 'model': MODEL, 'voice': VOICE,
+                    records[term] = {'policy': AUDIO_POLICY, 'model': args.model, 'voice': VOICE,
                                      'prompt': prompt_for(term, definition), 'file': audio_path(term),
                                      'seconds': seconds, 'sha256': digest}
                     atomic_json(RECORDS, records)
                 return
             except Exception as error:
                 code = getattr(error, 'code', None)
+                if code == 429:
+                    # Preserve the provider's quota identifiers, without logging request headers or credentials.
+                    payload = getattr(error, 'response_json', {}) or {}
+                    details = payload.get('error', payload).get('details', []) if isinstance(payload, dict) else []
+                    quotas = [{k: v for k, v in q.items() if k in ('quotaMetric', 'quotaId', 'quotaValue', 'quotaDimensions')}
+                              for detail in details for q in detail.get('violations', [])]
+                    print('Quota details: ' + json.dumps(quotas), flush=True)
+                    if any('PerDay' in q.get('quotaId', '') for q in quotas):
+                        raise
                 # Retry only transient provider failures; do not conceal content/config errors.
                 if code not in (429, 500, 502, 503, 504) or attempt == 2:
                     raise

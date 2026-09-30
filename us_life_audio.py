@@ -60,7 +60,7 @@ def valid_record(term, definition, records, root=ROOT):
     record = records.get(term, {})
     path = root / audio_path(term)
     return (record.get('policy') == AUDIO_POLICY and record.get('model') in MODEL_PRICES
-            and record.get('voice') == VOICE and record.get('prompt') == prompt_for(term, definition)
+            and record.get('voice') == VOICE and record.get('term_specification', record.get('prompt')) == prompt_for(term, definition)
             and record.get('file') == audio_path(term) and .25 <= record.get('seconds', 0) <= 12
             and path.is_file() and len(path.read_bytes()) > 1000
             and hashlib.sha256(path.read_bytes()).hexdigest() == record.get('sha256'))
@@ -76,10 +76,12 @@ class AudioBudget:
     def spent(self):
         return sum(row['usd'] for row in self.data['requests'])
 
-    def request(self, client, term, prompt, model=MODEL):
+    def request(self, client, term, prompt, model=MODEL, max_tokens=MAX_TOKENS):
         # Reserve before sending. Unknown/failed requests keep their reservation.
         input_price, output_price = MODEL_PRICES[model]
-        reserve = ((len(prompt.encode()) + 2048) * input_price + MAX_TOKENS * output_price) / 1_000_000
+        if not 1 <= max_tokens <= 4096:
+            raise ValueError('Invalid speech output limit.')
+        reserve = ((len(prompt.encode()) + 2048) * input_price + max_tokens * output_price) / 1_000_000
         with self.lock:
             if self.spent + reserve > self.limit:
                 raise RuntimeError('Audio spending cap reached.')
@@ -87,7 +89,7 @@ class AudioBudget:
                    'time': datetime.now(timezone.utc).isoformat()}
             self.data['requests'].append(row); atomic_json(self.path, self.data)
         response = client.models.generate_content(model=model, contents=prompt, config={
-            'response_modalities': ['AUDIO'], 'max_output_tokens': MAX_TOKENS,
+            'response_modalities': ['AUDIO'], 'max_output_tokens': max_tokens,
             'speech_config': {'voice_config': {'prebuilt_voice_config': {'voice_name': VOICE}}}})
         usage = getattr(response, 'usage_metadata', None)
         if usage and usage.prompt_token_count is not None and usage.candidates_token_count is not None:

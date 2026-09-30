@@ -27,6 +27,11 @@ on:
           - gemini-3.1-flash-tts-preview
           - gemini-2.5-pro-preview-tts
         default: gemini-2.5-flash-preview-tts
+      audio_batch_size:
+        description: '1 for individual requests, or 2–8 terms per recording with checked silent boundaries'
+        required: false
+        type: number
+        default: 1
       include_vocabulary:
         description: 'Also fill missing languages across the retained news archive and evergreen stories (up to $5)'
         required: false
@@ -75,9 +80,14 @@ jobs:
           BACKFILL_KEY: ${{ github.event.inputs.budget_key || 'initial' }}
           AUDIO_LIMIT: ${{ github.event.inputs.audio_limit || '0' }}
           AUDIO_MODEL: ${{ github.event.inputs.audio_model || 'gemini-2.5-flash-preview-tts' }}
+          AUDIO_BATCH_SIZE: ${{ github.event.inputs.audio_batch_size || '1' }}
         run: |
           command -v ffmpeg
-          python -u us_life_audio.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT" --model "$AUDIO_MODEL"
+          if [ "$AUDIO_BATCH_SIZE" = 1 ]; then
+            python -u us_life_audio.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT" --model "$AUDIO_MODEL"
+          else
+            python -u us_life_audio_batch.py --budget 2 --budget-key "$BACKFILL_KEY" --limit "$AUDIO_LIMIT" --model "$AUDIO_MODEL" --batch-size "$AUDIO_BATCH_SIZE"
+          fi
       - name: Fill and separately review missing vocabulary languages
         if: github.event.inputs.include_vocabulary == 'true'
         env:
@@ -107,6 +117,7 @@ jobs:
             assets/audio/us-life/
             content/us-life-audio.json
             content/.audio-usage-*.json
+            content/audio-batches/
           include-hidden-files: true
           retention-days: 14
       - name: Save reviewed translations and resumable progress

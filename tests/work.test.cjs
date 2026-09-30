@@ -157,6 +157,14 @@ test('all 66 course pages initialize every quiz and preserve static model respon
     assert.deepEqual([...orientation.querySelectorAll('h2')].map(h=>h.textContent),['What you will practice','Choose your pace'],file);
     assert.equal(orientation.querySelectorAll('ul li').length,5,file);
     const toolbar=d.querySelector('.work-lesson-tools');
+    const main=d.querySelector('main[data-work-course]');
+    assert.equal(toolbar.parentElement,main,file);
+    assert.equal(d.querySelector('#finished-dialogue-prompts').parentElement,main,file);
+    const links=[...toolbar.querySelectorAll('a')];
+    assert.equal(links.length,9,file);
+    assert.equal(links[7].hash,'#module-8',file);
+    assert.equal(links[8].textContent,'Prompts',file);
+    assert.equal(links[8].hash,'#finished-dialogue-prompts',file);
     const icon=toolbar.querySelector('.work-lesson-icon .work-card-icon');
     const headingIcon=d.querySelector('.work-hero .work-card-icon');
     assert.ok(icon,file);

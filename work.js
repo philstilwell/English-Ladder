@@ -36,6 +36,8 @@
     const navigation = toolbar?.querySelector('.work-jump');
     if (!navigation) return;
     const masthead = document.querySelector('.site-masthead');
+    const promptsLink = navigation.querySelector('.work-prompts-link');
+    const promptSections = [...course.querySelectorAll('#finished-dialogue-prompts, #ai-practice')];
     const steps = [
       ['.work-case', 'Read the situation'],
       ['.work-module-body > .work-two-column > section:nth-child(2)', 'Find the words'],
@@ -94,6 +96,12 @@
         entry.dots.forEach((dot, index) => dot.classList.toggle('is-reached', index < reached));
         entry.status.textContent = `. ${reached} of 6 subsections reached.`;
       });
+      const inPrompts = promptSections.some(section => {
+        const bounds = section.getBoundingClientRect();
+        return bounds.height > 0 && bounds.top <= readingLine && bounds.bottom > readingLine;
+      });
+      if (inPrompts) promptsLink?.setAttribute('aria-current', 'location');
+      else promptsLink?.removeAttribute('aria-current');
     };
     const schedule = () => {
       if (!pending) { pending = true; frame(update); }

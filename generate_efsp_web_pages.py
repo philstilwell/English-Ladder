@@ -4,6 +4,7 @@ Run generate_work_documents.py first after curriculum changes, then this file.
 """
 import html
 import json
+from bs4 import BeautifulSoup
 from editorial import document
 from work_curriculum import ROOT, REVISION, RUBRIC, load_tracks, related_tracks, validate_tracks
 from work_ai_prompts import web_section, url as ai_url
@@ -109,13 +110,18 @@ def render_industry_page(t, tracks):
 <aside class="work-study-card"><p class="work-kicker">Words into action</p><p class="work-study-phrase">Read the situation.<br>Find your words.<br>Make yourself clear.</p><p>For {e(t['roles']).rstrip('.')}.</p><a href="#downloads">Choose your materials ↓</a><p><a href="#finished-dialogue-prompts">Copy complete AI prompts ↓</a></p></aside></section>
 <details class="work-orientation"><summary>What you will practice · Choose your pace</summary><div class="work-two-column"><div><h2>What you will practice</h2>{ul(t['outcomes'][:5])}</div><div><h2>Choose your pace</h2><p><strong>Quick practice · 15 minutes:</strong> read one conversation, study its useful expressions, and rehearse one scenario aloud.</p><p><strong>Full lesson · 45-60 minutes:</strong> complete the language checks, compare three conversations, and practice both speaking scenarios with feedback.</p><p><strong>Level guide:</strong> designed for intermediate to advanced learners. B1 learners can use the sentence frames; B2 learners can work independently; C1 learners can try the harder second round. These are teaching suggestions, not a certified level assessment.</p></div></div></details>
 <section id="downloads" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Take the lesson with you</p><h2>Four guides. Four useful jobs.</h2></div><span>Revised September 2026</span></div><div class="work-downloads">{pdf_links(t)}</div></section>
-<section id="lessons" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Practice, reflect, repeat</p><h2>Your eight lessons</h2></div></div><div class="work-lesson-tools"><span class="work-lesson-icon" aria-hidden="true">{card_icon(t)}</span><nav class="work-jump" aria-label="Jump to lesson">{jump}</nav></div><button type="button" class="work-text-button" data-expand-lessons hidden>Open all lessons</button><p class="work-scope">{e(t['scope_note'])}</p>
-{modules}</section>
+<div id="lessons" class="work-section"><div class="work-section-heading"><div><p class="work-kicker">Practice, reflect, repeat</p><h2>Your eight lessons</h2></div></div></div><div class="work-lesson-tools"><span class="work-lesson-icon" aria-hidden="true">{card_icon(t)}</span><nav class="work-jump" aria-label="Jump to lesson or prompts"><div class="work-lesson-links">{jump}</div><a class="work-prompts-link" href="#finished-dialogue-prompts">Prompts</a></nav></div><button type="button" class="work-text-button" data-expand-lessons hidden>Open all lessons</button><p class="work-scope">{e(t['scope_note'])}</p>
+{modules}
 <section class="work-section work-capstone"><p class="work-kicker">Put it together</p><h2>Your final workplace challenge</h2><p>Choose a case you have not rehearsed today. Give a one-minute response, answer two follow-up questions, then {final_response}. Have your partner introduce the harder second-round challenge. Review the four criteria used in the lessons and repeat the part that needs improvement.</p><p><strong>Compare your progress:</strong> return to your {first_attempt}. Identify one improvement in clarity, one in accuracy, and one in how you ask for or explain the next step.</p></section>
 <details id="vocabulary" class="work-section work-glossary-disclosure"><summary>Explore your field vocabulary</summary><div class="work-section-heading"><div><p class="work-kicker">Keep the meaning close</p><h2>Your field vocabulary</h2></div><label>Find a term<input type="search" data-vocabulary-search placeholder="Search words and meanings"></label></div><p data-vocabulary-count role="status">{len(t['jargon'])} terms</p><dl class="work-vocabulary work-glossary">{glossary}</dl></details>
 {extra}{dialogue_prompts(t)}{web_section(t)}<section class="work-section work-two-column"><div><h2>For teachers and study partners</h2><p>Ask learners to respond before revealing the model. Give feedback on one meaning issue and one language pattern, then let them repeat. For mixed levels, offer the frames first and remove them in the second round.</p><p>Use the teacher's guide for a 60-minute plan, performance criteria, model answers, and extension tasks.</p><p><a data-ai-preset href="{e(ai_url(t, 'teacher'))}">Adapt an activity with a scripted AI prompt →</a></p></div><div><h2>Language notes and further reading</h2><p>The cases and explanations are original teaching material. The references provide language frameworks and selected professional context; use current local guidance for actual work.</p><ul class="work-sources">{sources}</ul><p class="work-small">Course edition: {t['revision']}.</p></div></section>
 <section class="work-section"><p class="work-kicker">Continue in your field</p><h2>Related courses</h2><div class="work-related">{related}</div></section></div>'''
-    return page(t['title'], content, f'efsp-{t["slug"]}.html')
+    soup = BeautifulSoup(page(t['title'], content, f'efsp-{t["slug"]}.html'), 'html.parser')
+    course = soup.select_one('[data-work-course]')
+    # The main element includes the prompts and footer, keeping the menu sticky to the end.
+    soup.main['data-work-course'] = course['data-work-course']
+    course.unwrap()
+    return str(soup)
 
 
 def render_directory(tracks):

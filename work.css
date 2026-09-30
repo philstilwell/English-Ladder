@@ -44,16 +44,19 @@
 .work-lesson-icon { position:relative; flex:0 0 40px; height:40px; overflow:hidden; }
 /* Scale the atlas cell and its crop together to preserve the course artwork. */
 .work-lesson-icon .work-card-icon { position:absolute; top:0; left:0; margin:0; transform:scale(.3846153846); transform-origin:top left; mix-blend-mode:multiply; }
-.work-jump { --action-padding-block:4px; --action-padding-inline:5px; display:grid; flex:1; min-width:0; grid-template-columns:repeat(8,minmax(0,1fr)); gap:8px; width:100%; max-width:544px; }
-.work-jump a { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; min-width:0; height:40px; border:1px solid var(--work-line); border-radius:4px; text-decoration:none; font-size:.85rem; line-height:1.15; letter-spacing:0; color:var(--work-blue); font-weight:700; }
+.work-jump { --action-padding-block:4px; --action-padding-inline:5px; display:flex; align-items:center; flex:1; min-width:0; gap:8px; width:100%; max-width:628px; }
+.work-lesson-links { display:grid; flex:1; min-width:0; grid-template-columns:repeat(8,minmax(46px,1fr)); gap:8px; overflow-x:auto; scrollbar-width:thin; }
+.work-jump a { display:flex; flex-direction:column; align-items:center; justify-content:center; box-sizing:border-box; gap:3px; min-width:0; height:40px; min-height:var(--action-min-height,40px); padding:var(--action-padding-block) var(--action-padding-inline); border:1px solid var(--work-line); border-radius:4px; text-decoration:none; font-size:.85rem; line-height:1.15; letter-spacing:0; color:var(--work-blue); font-weight:700; }
+.work-page .work-lesson-links a:focus-visible { outline-offset:-3px; }
+.work-prompts-link { flex:0 0 76px; white-space:nowrap; }
 .work-jump a:hover { background:#e7efef; }
 .work-jump a[aria-current="location"] { border-color:var(--work-blue); background:#e7efef; box-shadow:inset 0 -2px var(--work-blue); }
 .work-section-dots { display:flex; flex:none; flex-direction:row; gap:2px; }
 .work-section-dot { display:block; flex:none; width:4px; height:4px; border:1px solid var(--work-blue); border-radius:50%; background:transparent; }
 .work-section-dot.is-reached { background:var(--work-blue); }
-.work-page .work-module[id],.work-page [data-work-step] { scroll-margin-top:calc(var(--work-navigation-height,45px) + 12px); }
-@media(max-width:480px) { .work-lesson-tools { gap:6px; } .work-lesson-icon { flex-basis:28px; height:28px; } .work-lesson-icon .work-card-icon { transform:scale(.2692307692); } .work-jump { --action-padding-inline:2px; gap:4px; } .work-jump a { font-size:.75rem; } .work-section-dots { gap:1px; } }
-@media(max-width:360px) { .work-jump { --action-padding-inline:1px; gap:2px; } .work-section-dot { width:3px; height:3px; } }
+.work-page .work-module[id],.work-page [data-work-step],.work-page #finished-dialogue-prompts,.work-page #ai-practice { scroll-margin-top:calc(var(--work-navigation-height,45px) + 12px); }
+@media(max-width:480px) { .work-lesson-tools { gap:6px; } .work-lesson-icon { flex-basis:28px; height:28px; } .work-lesson-icon .work-card-icon { transform:scale(.2692307692); } .work-jump { --action-padding-inline:2px; gap:4px; } .work-lesson-links { grid-template-columns:repeat(8,minmax(35px,1fr)); gap:4px; } .work-jump a { font-size:.75rem; } .work-prompts-link { flex-basis:60px; } .work-section-dots { gap:1px; } }
+@media(max-width:360px) { .work-jump { --action-padding-inline:1px; } .work-lesson-links { grid-template-columns:repeat(8,minmax(27px,1fr)); gap:2px; } .work-section-dot { width:3px; height:3px; } }
 .work-text-button { background:none; border:0; border-bottom:1px solid currentColor; color:var(--work-blue); padding:6px 0; font:inherit; font-size:.84rem; cursor:pointer; min-height:40px; }
 .work-scope { font-size:.86rem; border-left:3px solid #849999; padding:8px 0 8px 17px; max-width:1000px; }
 .work-module { border:1px solid var(--work-line); border-radius:6px; margin:12px 0; background:white; scroll-margin-top:110px; overflow:clip; }

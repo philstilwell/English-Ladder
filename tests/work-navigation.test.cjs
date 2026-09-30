@@ -20,6 +20,8 @@ function setup(hash = '') {
   };
   d.querySelector('.site-masthead').getBoundingClientRect = () => rect(0, menuHeight);
   d.querySelector('.work-lesson-tools').getBoundingClientRect = () => rect(menuHeight, toolbarHeight);
+  d.querySelector('#finished-dialogue-prompts').getBoundingClientRect = () => rect(33600 - position, 2000);
+  d.querySelector('#ai-practice').getBoundingClientRect = () => rect(36000 - position, 2500);
   const modules = [...d.querySelectorAll('.work-module')];
   const selectors = ['.work-case', '.work-module-body > .work-two-column > section:nth-child(2)',
     '.work-language', '.work-checks', '.work-conversations', '.work-speaking'];
@@ -95,5 +97,42 @@ test('same-lesson links reopen and scroll, deep links work, and resized menus up
   f.resize(180, 100);
   assert.equal(f.count(), 2);
   assert.equal(f.d.querySelector('[data-work-course]').style.getPropertyValue('--work-navigation-height'), '100px');
+  f.dom.window.close();
+});
+
+test('the navigation spans the entire page and Prompts follows lesson 08 without lesson markers', () => {
+  const f = setup('#finished-dialogue-prompts');
+  const toolbar = f.d.querySelector('.work-lesson-tools');
+  const main = f.d.querySelector('main[data-work-course]');
+  assert.equal(toolbar.parentElement, main);
+  assert.equal(f.d.querySelector('#finished-dialogue-prompts').parentElement, main);
+  assert.equal(f.d.querySelector('.site-footer').parentElement, main);
+  assert.equal(toolbar.closest('#lessons'), null);
+  const links = [...toolbar.querySelectorAll('a')];
+  assert.equal(links.length, 9);
+  assert.equal(links[7].hash, '#module-8');
+  assert.equal(links[8].textContent, 'Prompts');
+  assert.equal(links[8].hash, '#finished-dialogue-prompts');
+  assert.equal(links[8].querySelector('.work-section-dots'), null);
+  f.dom.window.close();
+});
+
+test('Prompts stays active across both prompt sections without opening or marking skipped lessons', () => {
+  const f = setup();
+  f.modules.forEach(module => { module.open = false; });
+  const link = f.d.querySelector('.work-prompts-link');
+  link.click();
+  f.flush();
+  f.scroll(34000);
+  assert.equal(f.d.querySelector('.work-jump [aria-current]'), link);
+  f.scroll(36500);
+  assert.equal(link.getAttribute('aria-current'), 'location');
+  assert.equal(f.d.querySelectorAll('.work-module[open]').length, 0);
+  assert.equal(f.d.querySelectorAll('.work-section-dot.is-reached').length, 0);
+  f.scroll(0);
+  assert.equal(link.hasAttribute('aria-current'), false);
+  f.scroll(39000);
+  assert.equal(link.hasAttribute('aria-current'), false);
+  assert.equal(f.w.localStorage.length, 0);
   f.dom.window.close();
 });

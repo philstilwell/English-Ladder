@@ -61,6 +61,10 @@ class EverydayContentTests(unittest.TestCase):
                       'prompt': audio.prompt_for(term, definition), 'file': content.audio_path(term),
                       'seconds': 2, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
             self.assertTrue(audio.valid_record(term, definition, {term: record}, root))
+            record['model'] = 'unknown-speech-model'
+            self.assertFalse(audio.valid_record(term, definition, {term: record}, root))
+            record['model'] = 'gemini-3.1-flash-tts-preview'
+            self.assertTrue(audio.valid_record(term, definition, {term: record}, root))
             self.assertFalse(audio.valid_record(term, definition + ' changed', {term: record}, root))
             path.write_bytes(b'corrupt' * 200)
             self.assertFalse(audio.valid_record(term, definition, {term: record}, root))
@@ -95,6 +99,25 @@ class EverydayContentTests(unittest.TestCase):
         self.assertFalse(review.reviewed(record))
         self.assertEqual(review.normalized('Wi-Fi'), review.normalized('wifi'))
         self.assertNotEqual(review.normalized('custom'), review.normalized('customs'))
+
+    def test_speech_model_selection_uses_its_own_price_and_shared_cap(self):
+        calls = []
+        class Model:
+            def generate_content(self, **kwargs):
+                calls.append(kwargs['model'])
+                raise OSError('temporary failure')
+        client = SimpleNamespace(models=Model())
+        with tempfile.TemporaryDirectory() as folder:
+            budget = audio.AudioBudget(Path(folder) / 'usage.json', .025)
+            with self.assertRaises(OSError): budget.request(client, 'term', 'say term')
+            first = budget.spent
+            with self.assertRaises(OSError):
+                budget.request(client, 'term', 'say term', 'gemini-3.1-flash-tts-preview')
+            self.assertAlmostEqual(first * 3, budget.spent)
+            self.assertEqual([audio.MODEL, 'gemini-3.1-flash-tts-preview'], calls)
+            with self.assertRaises(RuntimeError):
+                budget.request(client, 'term', 'say term', 'gemini-3.1-flash-tts-preview')
+            self.assertEqual(2, len(calls))
 
     def test_missing_audio_check_is_offline_and_daily_build_never_generates_speech(self):
         workflow = (content.ROOT / '.github/workflows/cron.yml').read_text()

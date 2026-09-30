@@ -1,0 +1,32 @@
+{
+  "model": "gemini-3.8-flash-lite-tts",
+  "voice": "Kore",
+  "prompt": "Read this vocabulary list in clear American English at a relaxed teaching pace. Pause silently for two seconds between entries. Read each entry once, without an introduction or commentary:\n\ndescription.\n\ncontact details.\n\nproof of purchase.\n\nreplacement.\n\nresolve.\n\nturn in.",
+  "words": [
+    [
+      "description",
+      "words that explain what something looks like or is like"
+    ],
+    [
+      "contact details",
+      "information such as a phone number or email address"
+    ],
+    [
+      "proof of purchase",
+      "a record showing that you bought an item"
+    ],
+    [
+      "replacement",
+      "something provided in place of a lost or damaged item"
+    ],
+    [
+      "resolve",
+      "find an answer or solution to a problem"
+    ],
+    [
+      "turn in",
+      "give a found item to staff or another responsible person"
+    ]
+  ],
+  "pcm_sha256": "daa8d4418789f4a4f1c871956e8c38baa7e62dde49585ac202b165a0fbc452e3"
+}

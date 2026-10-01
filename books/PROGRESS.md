@@ -149,9 +149,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   debit-card disputes, reconciliation, examination evidence, and historical fee reviews.
   Output: `output/pdf/banking-operations-english-book.pdf`.
 
+- Retail and E-Commerce English: 102 pages with the same counts and explained keys,
+  covering assortment choices, promotion arithmetic, inventory states, delayed deliveries,
+  checkout analysis, supplier scorecards, return reviews, and pickup handoffs.
+  Output: `output/pdf/retail-ecommerce-english-book.pdf`.
+
 ## Remaining
 
-34 books remain. The next course in the canonical inventory is `retail-ecommerce`.
+33 books remain. The next course in the canonical inventory is `media-entertainment`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

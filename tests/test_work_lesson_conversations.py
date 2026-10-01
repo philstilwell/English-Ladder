@@ -54,29 +54,21 @@ class LessonConversationTests(unittest.TestCase):
                 self.assertEqual(len(published.select('.work-speaking-scenario')), 2)
                 self.assertFalse(published.select('textarea'))
 
-    def test_pdf_activity_content_and_artwork_are_current(self):
-        from generate_work_documents import clean
+    def test_learner_book_artwork_and_source_are_current(self):
+        from work_books import book_source
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
         for track in self.tracks:
+            href = track['pdfs'][0][1]
+            meta = manifest[href]
             illustration_hash = hashlib.sha256((ROOT / icon_asset(track['slug'])[0]).read_bytes()).hexdigest()
-            for index, (_, href) in enumerate(track['pdfs']):
-                meta = manifest[href]
-                self.assertEqual(meta['illustration_sha256'], illustration_hash)
-                self.assertLess(meta['bytes'], 1_000_000, 'Embed the course icon, not the entire atlas: ' + href)
-                reader = PdfReader(ROOT / href)
-                images = list(reader.pages[0].images)
-                self.assertGreaterEqual(len(images), 2, href)
-                if index == 3:
-                    continue
-                self.assertEqual(meta['lesson_conversation_hash'], content_hash())
-                text = ' '.join(' '.join(page.extract_text().split()) for page in reader.pages)
-                for lesson in load_course(track['slug']).values():
-                    self.assertIn(' '.join(clean(lesson['additional_scenario']['title']).split()), text)
-                    for conversation in lesson['conversations']:
-                        self.assertIn(' '.join(clean(conversation['title']).split()), text)
-                        if index in (1, 2):
-                            for role, speech in conversation['turns']:
-                                self.assertIn(' '.join(clean(speech).split()), text)
+            self.assertEqual(meta['illustration_sha256'], illustration_hash)
+            self.assertLess(meta['bytes'], 1_000_000, 'Embed the course icon, not the entire atlas: ' + href)
+            reader = PdfReader(ROOT / href)
+            self.assertGreaterEqual(len(list(reader.pages[0].images)), 2, href)
+            self.assertEqual(len(reader.pages), 102)
+            self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
+            self.assertEqual(meta['kind'], 'Learner book')
+            self.assertNotIn('lesson_conversation_hash', meta)
 
 
 if __name__ == '__main__':

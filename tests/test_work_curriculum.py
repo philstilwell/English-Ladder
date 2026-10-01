@@ -16,7 +16,7 @@ class WorkCurriculumTests(unittest.TestCase):
 
     def test_complete_inventory_and_authored_cases(self):
         result = validate_tracks(self.tracks)
-        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (66, 528, 264))
+        self.assertEqual((result['courses'], result['lessons'], result['pdfs']), (66, 528, 66))
         models = [m['model'] for t in self.tracks for m in t['modules']]
         self.assertEqual(len(models), len(set(models)))
 

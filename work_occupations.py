@@ -91,12 +91,7 @@ def occupation_courses():
         course = load_occupation(slug)['course']
         course['is_occupation'] = True
         course['revision'] = EDITION
-        course['pdfs'] = [
-            ["Teacher's guide", f'pdf/efsp/efsp-{slug}-english-instructor-guide.pdf'],
-            ['Learner workbook', f'pdf/efsp/efsp-{slug}-english-participant-workbook.pdf'],
-            ['Conversation lab', f'pdf/efsp/efsp-{slug}-dialogue-lab.pdf'],
-            ['Vocabulary & phrasebook', f'pdf/efsp/efsp-{slug}-jargon-quick-reference.pdf'],
-        ]
+        course['pdfs'] = [['Learner book', f'pdf/efsp/{slug}-english-book.pdf']]
         courses.append(course)
     return courses
 

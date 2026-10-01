@@ -329,8 +329,9 @@ module titles and order in `work_curriculum.load_tracks()`.
 
 The new renderer reuses the approved design, embedded fonts, English Ladder
 branding, existing course illustrations, uniform blanks, and page references.
-The leadership book remains unchanged. The new books are stored separately from
-published website downloads, which have not been replaced.
+The leadership book remains unchanged. All 66 approved books are now published
+under `pdf/efsp/`, replacing the separate legacy guides. The `output/pdf/` copies
+remain the reviewed master files; publication verifies and copies their exact bytes.
 
 All 17 shared and book-specific tests passed with the complete 65-book inventory.
 Every book was rendered and visually inspected, including its cover, dialogue pages,

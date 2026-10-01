@@ -34,12 +34,15 @@
 .work-section-heading { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:26px; }
 .work-section-heading h2 { margin:0; }
 .work-section-heading>span { font-size:.8rem; color:var(--work-muted); }
-.work-downloads { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
-.work-download { display:flex; flex-direction:column; gap:13px; border:1px solid var(--work-line); padding:23px; text-decoration:none; border-radius:6px; background:white; color:var(--work-muted); font-size:.87rem; line-height:1.5; transition:border-color .15s,box-shadow .15s; }
-.work-download .work-kicker { margin:0; font-size:.65rem; }
-.work-download strong { color:var(--work-ink); font-size:1.1rem; letter-spacing:-.02em; }
-.work-download-action { color:var(--work-blue); margin-top:auto; padding-top:15px; font-weight:650; }
-.work-download:hover,.work-course-card:hover { border-color:#537e91; box-shadow:0 5px 18px #1233480b; }
+.work-downloads { display:block; }
+.work-book-download { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:28px; padding:22px 0; border-top:1px solid var(--work-line); border-bottom:1px solid var(--work-line); }
+.work-book-download h3 { margin:0 0 10px; font-size:1.2rem; letter-spacing:0; }
+.work-book-download p:last-child { margin:0; max-width:790px; font-size:.95rem; }
+.work-book-download .work-kicker { margin:0 0 10px; }
+.work-button.work-download { justify-self:start; box-sizing:border-box; min-height:40px; padding:8px 16px; gap:12px; font-size:.9rem; line-height:1.4; letter-spacing:0; }
+.work-book-inline { color:var(--work-blue); font-size:.9rem; font-weight:650; }
+.work-course-card:hover { border-color:#537e91; box-shadow:0 5px 18px #1233480b; }
+@media(max-width:700px) { .work-book-download { grid-template-columns:minmax(0,1fr); gap:18px; } }
 .work-lesson-tools { position:sticky; top:var(--masthead-height,0px); z-index:50; display:flex; align-items:center; gap:12px; margin:6px 0; padding:2px 0; background:var(--page-bg,#faf9f6); border-bottom:1px solid var(--work-line); }
 .work-lesson-icon { position:relative; flex:0 0 40px; height:40px; overflow:hidden; }
 /* Scale the atlas cell and its crop together to preserve the course artwork. */

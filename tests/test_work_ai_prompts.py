@@ -86,43 +86,22 @@ class WorkAIPromptTests(unittest.TestCase):
             self.assertIn('wait', instructions.lower())
             self.assertGreater(len(instructions.split()), 170)
 
-    def test_all_print_guides_contain_only_retained_prompts_and_working_context_links(self):
+    def test_books_link_to_the_course_without_claiming_printed_ai_appendices(self):
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
-        ai_hash = prompt_hash()
         for t in self.tracks:
-            for kind, (_, href) in enumerate(t['pdfs']):
-                with self.subTest(pdf=href):
-                    meta = manifest[href]
-                    self.assertEqual(meta['ai_prompt_hash'], ai_hash)
-                    expected_count = len(PRINT_MODES[kind])
-                    self.assertEqual(meta['ai_prompt_count'], expected_count)
-                    reader = PdfReader(ROOT / href)
-                    texts = [page.extract_text() or '' for page in reader.pages]
-                    text = normalized('\n'.join(texts))
-                    self.assertEqual('Extend your practice with AI' in text, bool(expected_count))
-                    # Starts and ends ensure a long copyable prompt was not silently truncated.
-                    self.assertEqual(text.count('START PROMPT / COPY THROUGH END PROMPT'), expected_count)
-                    lines = [line.strip() for page_text in texts for line in page_text.splitlines()]
-                    self.assertEqual(lines.count('END REFERENCE'), expected_count)
-                    self.assertEqual(lines.count('END PROMPT'), expected_count)
-                    for mode in PRINT_MODES[kind]:
-                        instructions = next(m['instructions'] for m in payload(t, self.dialogues[t['slug']])['modes'] if m['id'] == mode)
-                        self.assertIn(normalized(instructions.splitlines()[-1][-95:]), text)
-                    urls = {str(a.get_object().get('/A', {}).get('/URI', '')) for page in reader.pages for a in page.get('/Annots', [])}
-                    for link in urls:
-                        self.assertFalse(REMOVED_MODES.intersection(parse_qs(urlparse(link).query).get('ai', [])), link)
-                    for title in ('Get feedback on a draft', 'Adjust tone and register', 'Test recall and transfer', 'Adapt a partner or class activity', 'Choose a clear message'):
-                        self.assertNotIn(title, text)
-                    context = 'dialogue-1' if kind == 2 else 'module-1'
-                    for mode in PRINT_MODES[kind]:
-                        self.assertIn(url(t, mode, context, True), urls)
-                    if kind == 2:
-                        for i in range(1, len(self.dialogues[t['slug']]) + 1):
-                            self.assertIn(url(t, 'roleplay', f'dialogue-{i}', True), urls)
-                    if kind != 0:
-                        for m in t['modules']:
-                            mode = {1: 'roleplay', 2: 'roleplay', 3: 'vocabulary'}[kind]
-                            self.assertIn(url(t, mode, m['id'], True), urls)
+            href = t['pdfs'][0][1]
+            with self.subTest(pdf=href):
+                self.assertNotIn('ai_prompt_count', manifest[href])
+                reader = PdfReader(ROOT / href)
+                links = {str(a.get_object().get('/A', {}).get('/URI', ''))
+                         for a in reader.pages[-1].get('/Annots', [])}
+                self.assertIn(f'https://englishladder.com/efsp-{t["slug"]}.html', links)
+                page = BeautifulSoup((ROOT / f'efsp-{t["slug"]}.html').read_text(), 'html.parser')
+                self.assertIsNotNone(page.select_one('#ai-practice'))
+                self.assertIsNotNone(page.select_one('#finished-dialogue-prompts'))
+                download_text = page.select_one('#downloads').get_text(' ', strip=True)
+                self.assertIn('answer keys with explanations', download_text)
+                self.assertNotIn('AI extension prompt', download_text)
 
 
 if __name__ == '__main__':

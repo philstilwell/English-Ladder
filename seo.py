@@ -92,7 +92,7 @@ def profile(path, soup):
             lessons = sum(len(t['modules']) for t in courses)
             pdfs = sum(len(t['pdfs']) for t in courses)
             result['title'] = f'English for Work: {len(courses)} Free Occupational & Professional Courses'
-            result['description'] = f'Choose from {len(courses)} English courses with {lessons} workplace lessons, practical dialogues, vocabulary, guided activities and {pdfs} free printable guides.'
+            result['description'] = f'Choose from {len(courses)} English courses with {lessons} workplace lessons, practical dialogues, vocabulary, guided activities and {pdfs} free printable learner books.'
         if relative in {'index.html', 'efsp.html', 'grammar-concepts.html', 'archive.html', 'sitemap.html', 'ai-practice.html', *[v+'.html' for v in LEVELS]}:
             result['kind'] = 'collection'
         if relative == 'about.html': result['kind'] = 'about'
@@ -100,9 +100,9 @@ def profile(path, soup):
     elif relative.startswith('efsp-'):
         t = tracks()[path.stem.removeprefix('efsp-')]
         result.update(kind='work', track=t, parent=category_url(t['category']), level='B1–C1',
-                      title=t['title'] + ': Dialogues & Free PDFs',
-                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues, exercises and free PDFs.'
-                                   if t['slug'] in WORK_TOPICS else t['summary'] + ' Includes workplace dialogues, guided practice and free PDFs.'),
+                      title=t['title'] + ': Free Learner Book',
+                      description=(f'Learn English for {WORK_TOPICS[t["slug"]]}. Practice with workplace dialogues and a free 102-page learner book with vocabulary, phrases and explained answers.'
+                                   if t['slug'] in WORK_TOPICS else t['summary'] + ' Includes guided practice and a free 102-page learner book.'),
                       teaches=t['outcomes'], pdfs=[(label, href) for label, href in t['pdfs']])
     elif relative.startswith('english-for-work/'):
         name, category = next((n,c) for n,c in CATEGORIES.items() if c['slug'] == path.stem)
@@ -334,7 +334,7 @@ def build_category_pages():
         grammar_links=''.join(f'<li><a href="../{grammar_url(n)}">{html.escape(grammar()[n]["title"])}</a></li>' for n in c['grammar'])
         body=f'''<section class="page-hero"><p class="eyebrow">English for Work · {len(group)} professional fields</p><h1>{html.escape(c['title'])}</h1><p>{html.escape(c['intro'])}</p></section>
 <section class="work-section work-two-column"><div><h2>Choose the work you do</h2><p>{html.escape(c['choose'])}</p></div><div><h2>Make the practice practical</h2><p>{html.escape(c['practice'])}</p></div></section>
-<section class="work-section"><h2>Your professional English courses</h2><p>Each course includes eight cases, vocabulary and grammar, complete professional dialogues, guided language checks, speaking practice, four printable guides and AI extension prompts.</p><div class="work-course-grid">{cards}</div></section>
+<section class="work-section"><h2>Your professional English courses</h2><p>Each course includes eight cases, vocabulary and grammar, complete professional dialogues, guided language checks, speaking practice, one complete printable learner book and AI extension prompts.</p><div class="work-course-grid">{cards}</div></section>
 <section class="work-section work-two-column"><div><h2>Grammar you can use at work</h2><ul>{grammar_links}</ul></div><div><h2>Choose your support</h2><p>These materials suit intermediate to advanced learners. Use B1 sentence frames for support, B2 practice for independence, or C1 challenges for greater precision. These are study suggestions, not certified level assessments.</p><p><a href="../efsp.html">Browse all {len(tracks())} English for Work courses →</a></p></div></section>'''
         page=target/(c['slug']+'.html')
         page.write_text(document(c['title'],body,'theme-efsp work-page','../','efsp.html').replace('</head>','<link rel="stylesheet" href="../work.css?v=20260906-quality1"></head>'))

@@ -111,18 +111,20 @@ class OccupationPublicationTests(unittest.TestCase):
                 self.assertNotIn(unwanted, page.get_text().lower())
 
     def test_new_pdf_collocations_and_no_composition_assignment(self):
-        from generate_work_documents import clean
+        from build_leadership_book import unit_page
+        from work_books import book_units
         for track in self.tracks:
-            for index, (_, href) in enumerate(track['pdfs']):
-                reader = PdfReader(ROOT / href)
-                text = ' '.join(' '.join(page.extract_text().split()) for page in reader.pages)
-                self.assertIn('English Ladder', text)
-                self.assertNotIn('writes a 70-110 word message', text)
-                self.assertNotIn('ask me to write my own sentence', text)
-                if index in (1, 3):
-                    for module in track['modules']:
-                        for expression in module['collocations']:
-                            self.assertIn(' '.join(clean(expression).split()), text)
+            href = track['pdfs'][0][1]
+            reader = PdfReader(ROOT / href)
+            self.assertIn('English Ladder', reader.pages[0].extract_text())
+            for i, unit in enumerate(book_units(track['slug'])):
+                text = ' '.join(' '.join(reader.pages[unit_page(i) + offset].extract_text().split())
+                                for offset in (0, 1))
+                for term, definition, expression in unit['vocabulary']:
+                    self.assertIn(expression, text)
+                rehearsal = ' '.join(unit['rehearsal']).lower()
+                self.assertNotIn('write a', rehearsal)
+                self.assertNotIn('think about', rehearsal)
 
 
 if __name__ == '__main__':

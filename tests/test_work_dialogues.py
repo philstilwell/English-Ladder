@@ -18,25 +18,20 @@ class DialoguePublicationTests(unittest.TestCase):
         self.assertEqual(validate_dialogues(load_dialogues())['courses'], 66)
         self.assertGreaterEqual(validate_dialogues(load_dialogues())['dialogues'], 568)
 
-    def test_all_spoken_turns_and_current_metadata_reach_the_pdf(self):
-        groups=load_dialogues()
-        manifest=json.loads((ROOT/'content/work/documents.json').read_text())['documents']
+    def test_published_books_use_the_new_extended_dialogue_edition(self):
+        from build_leadership_book import content_hash
+        from work_books import book_source, book_units
+        manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
         for track in load_tracks():
-            slug=track['slug']; href=track['pdfs'][2][1]
-            with self.subTest(course=slug):
-                meta=manifest[href]
-                self.assertEqual(meta['dialogue_hash'],dialogue_hash())
-                self.assertEqual(meta['dialogue_count'],len(groups[slug]))
-                self.assertEqual(meta['sha256'],hashlib.sha256((ROOT/href).read_bytes()).hexdigest())
-                reader=PdfReader(ROOT/href)
-                text=normalized(' '.join(page.extract_text() or '' for page in reader.pages))
-                for d in groups[slug]:
-                    self.assertIn(normalized(d['title']),text)
-                    for role,speech in d['dialogue']:
-                        self.assertIn(normalized(role+': '+speech),text)
-                self.assertNotIn('ESL learner:',text)
-                self.assertIn('Eight more situations to make your own',text)
-                self.assertEqual(len(reader.pages),meta['pages'])
+            href = track['pdfs'][0][1]
+            with self.subTest(course=track['slug']):
+                meta = manifest[href]
+                units = book_units(track['slug'])
+                self.assertEqual(meta['book_content_hash'], content_hash(units))
+                self.assertEqual(meta['dialogue_count'], 8)
+                self.assertEqual(meta['dialogue_turns'], 160)
+                self.assertEqual((ROOT / href).read_bytes(), book_source(track['slug']).read_bytes())
+                self.assertEqual(meta['sha256'], hashlib.sha256((ROOT / href).read_bytes()).hexdigest())
 
     def test_course_pages_preserve_shared_site_features(self):
         from bs4 import BeautifulSoup
@@ -47,7 +42,8 @@ class DialoguePublicationTests(unittest.TestCase):
                 self.assertIsNotNone(soup.select_one('link[rel="canonical"]'))
                 self.assertIsNone(soup.select_one('.site-footer a[href="continue.html"]'))
                 self.assertIsNotNone(soup.select_one('.site-footer a[href="archive.html"]'))
-                self.assertIn('extended workplace dialogues plus 24 lesson conversations',soup.select('.work-download')[2].get_text())
+                self.assertEqual(len(soup.select('.work-download')), 1)
+                self.assertIn('20-turn cloze conversations', soup.select_one('#downloads').get_text())
 
     def test_technical_regressions(self):
         groups=load_dialogues()

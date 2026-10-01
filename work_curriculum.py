@@ -11,6 +11,7 @@ import json
 import re
 from pathlib import Path
 from work_occupations import occupation_courses, source_paths
+from work_books import book_href
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / "content" / "work"
@@ -348,7 +349,7 @@ def validate_tracks(tracks):
     """Fail publication when authored cases, definitions, or answer explanations are incomplete."""
     seen = set()
     for t in tracks:
-        assert len(t["pdfs"]) == 4
+        assert t['pdfs'] == [['Learner book', book_href(t['slug'])]]
         if t.get('is_occupation'):
             assert len(t['jargon']) >= 32, t['slug']
             assert len({j['term'].casefold() for j in t['jargon']}) == len(t['jargon']), t['slug']

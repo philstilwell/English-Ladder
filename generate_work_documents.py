@@ -1,7 +1,9 @@
-"""Rebuild the English for Work PDFs from the authored curriculum.
+"""Publish the completed English for Work learner books.
 
 Usage: python3 generate_work_documents.py [--course manufacturing]
 Dependencies: requirements-documents.txt. No network access or paid services.
+Legacy layout helpers remain available to archived content renderers; the command
+line and publication functions only publish the consolidated learner books.
 """
 from __future__ import annotations
 
@@ -379,68 +381,21 @@ KINDS = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Phrasebook'
 
 
 def build_track(track, kinds=None):
-    from work_ai_prompts import pdf_appendix, prompt_hash, PRINT_MODES, EDITION as AI_EDITION
-    result = {}
-    for index, (_label, href) in enumerate(track['pdfs']):
-        if kinds and index not in kinds:
-            continue
-        path = ROOT / href
-        path.parent.mkdir(parents=True, exist_ok=True)
-        handle, temp = tempfile.mkstemp(suffix='.pdf', dir=path.parent)
-        os.close(handle)
-        try:
-            doc = WorkDocument(temp, pagesize=letter, leftMargin=MARGIN, rightMargin=MARGIN,
-                               topMargin=56, bottomMargin=53, title=f'{track["title"]} | {KINDS[index]}',
-                               author='English Ladder', subject=f'English for Work - activity edition {ACTIVITY_EDITION}',
-                               initialFontName='Work', pageCompression=1)
-            doc.course_title, doc.kind = track['title'], KINDS[index]
-            doc.revision = ACTIVITY_EDITION
-            doc.build(BUILDERS[index](track) + pdf_appendix(track, index), onFirstPage=decorate, onLaterPages=decorate, canvasmaker=WorkCanvas)
-            reader = PdfReader(temp)
-            assert len(reader.pages) > 3
-            os.replace(temp, path)
-            result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
-                                bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
-                                content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=len(PRINT_MODES[index]), ai_prompt_edition=AI_EDITION)
-            result[href]['illustration_asset'] = icon_asset(track['slug'])[0]
-            result[href]['illustration_sha256'] = hashlib.sha256((ROOT / result[href]['illustration_asset']).read_bytes()).hexdigest()
-            result[href]['activity_edition'] = ACTIVITY_EDITION
-            if index in (0, 1, 2):
-                result[href]['lesson_conversation_hash'] = conversation_content_hash()
-                result[href]['lesson_conversation_count'] = 24
-            if index == 2:
-                from work_dialogues import dialogue_hash, load_dialogues, EDITION
-                result[href].update(dialogue_hash=dialogue_hash(), dialogue_count=len(load_dialogues()[track['slug']]), dialogue_edition=EDITION)
-        finally:
-            if os.path.exists(temp):
-                os.unlink(temp)
-    return result
+    from work_books import publish_books
+    manifest = publish_books([track['slug']])
+    return {href: meta for href, meta in manifest['documents'].items()
+            if meta['course'] == track['slug']}
 
 
 def main(slugs=None, kinds=None):
-    tracks = load_tracks()
-    validate_tracks(tracks)
-    if slugs:
-        unknown = set(slugs) - {t['slug'] for t in tracks}
-        if unknown:
-            raise ValueError(f'Unknown courses: {sorted(unknown)}')
-        tracks = [t for t in tracks if t['slug'] in slugs]
-    if kinds is None or any(kind in (0, 1, 2) for kind in kinds):
-        for track in tracks:
-            load_course(track['slug'])
-    manifest_path = ROOT / 'content/work/documents.json'
-    documents = json.loads(manifest_path.read_text()).get('documents', {}) if (slugs or kinds) and manifest_path.exists() else {}
-    for t in tracks:
-        result = build_track(t, kinds)
-        documents.update(result)
-        print(f'{t["slug"]}: ' + ', '.join(str(v['pages']) + ' pages' for v in result.values()), flush=True)
-    manifest_path.write_text(json.dumps(dict(revision=ACTIVITY_EDITION, content_hash=content_hash(), documents=documents), indent=2) + '\n')
-    print(f'Built {len(tracks) * (len(kinds) if kinds else 4)} PDFs.', flush=True)
-
+    from work_books import publish_books
+    if kinds is not None:
+        print('Separate guides have been retired; publishing the complete learner book instead.')
+    return publish_books(slugs)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--course', action='append', help='A course slug; repeat to build several courses.')
-    parser.add_argument('--kind', choices=['conversation', 'activities'], help='Rebuild Conversation Labs or all three activity-bearing guides, preserving other PDF assets.')
+    parser.add_argument('--course', action='append', help='A course slug; repeat to publish several completed learner books.')
+    parser.add_argument('--kind', choices=['conversation', 'activities'], help='Legacy option: publishes the complete learner book.')
     args = parser.parse_args()
     main(args.course, [2] if args.kind == 'conversation' else [0, 1, 2] if args.kind == 'activities' else None)

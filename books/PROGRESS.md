@@ -164,9 +164,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   field dispatch, emergency-calling notices, service recovery, and support horizons.
   Output: `output/pdf/telecommunications-english-book.pdf`.
 
+- Government and Public Administration English: 102 pages with the same counts and explained keys,
+  covering current guidance, public meetings, procurement reasoning, grant reconciliation,
+  interagency handoffs, constituent referrals, records review, and outcome-based budget discussions.
+  Output: `output/pdf/government-public-administration-english-book.pdf`.
+
 ## Remaining
 
-31 books remain. The next course in the canonical inventory is `government-public-administration`.
+30 books remain. The next course in the canonical inventory is `nonprofit-ngo`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -69,9 +69,9 @@ def icon_right_trim(slug):
 
 
 def icon_bottom_trim(slug):
-    """Exclude Gemini's caption area from each displayed occupation cell."""
+    """Exclude neighboring artwork and generated captions from displayed cells."""
     if slug not in OCCUPATION_SLUGS:
-        return 0
+        return {"energy-utilities": 6}.get(slug, 0)
     two_line_captions = {
         'hairdressers-barbers', 'hvac-refrigeration', 'bookkeeping-payroll',
         'software-quality-assurance', 'medical-laboratory-technicians',

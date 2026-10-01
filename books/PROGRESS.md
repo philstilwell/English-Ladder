@@ -129,9 +129,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   task briefings, inspection status, closeout handovers, and factual claim records.
   Output: `output/pdf/construction-architecture-english-book.pdf`.
 
+- Energy and Utilities English: 102 pages with the same counts and explained keys,
+  covering outage notices, equipment references, rate proposals, interconnection reviews,
+  asset costs, storm resources, efficiency evidence, and reliability measures.
+  Output: `output/pdf/energy-utilities-english-book.pdf`.
+
 ## Remaining
 
-38 books remain. The next course in the canonical inventory is `energy-utilities`.
+37 books remain. The next course in the canonical inventory is `environmental-consulting`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

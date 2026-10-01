@@ -234,9 +234,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   remakes, gift-coffee terminology, complete price comparisons, and bar-and-till handovers.
   Output: `output/pdf/baristas-cafe-staff-english-book.pdf`.
 
+- Housekeeping and Commercial Cleaning English: 102 pages with the same counts and explained keys,
+  covering assignment limits, occupied-room access, product identification, hazard reports,
+  found-item custody, linen counts, quality concerns, and accurate shift handovers.
+  Output: `output/pdf/housekeeping-commercial-cleaning-english-book.pdf`.
+
 ## Remaining
 
-17 books remain. The next course in the canonical inventory is `housekeeping-commercial-cleaning`.
+16 books remain. The next course in the canonical inventory is `hairdressers-barbers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

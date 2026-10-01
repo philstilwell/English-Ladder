@@ -89,9 +89,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   contamination evidence, tool matching, qualification status, and foundry handoffs.
   Output: `output/pdf/semiconductor-english-book.pdf`.
 
+- Software Product Management English: 102 pages with the same counts and explained keys,
+  covering discovery, prioritization, acceptance criteria, funnel interpretation,
+  experiment decisions, release readiness, API trade-offs, and executive recommendations.
+  Output: `output/pdf/software-product-management-english-book.pdf`.
+
 ## Remaining
 
-46 books remain. The next course in the canonical inventory is `software-product-management`.
+45 books remain. The next course in the canonical inventory is `cybersecurity`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

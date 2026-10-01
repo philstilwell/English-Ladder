@@ -304,9 +304,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   payroll previews, payment stages, period close, and traceable corrections.
   Output: `output/pdf/bookkeeping-payroll-english-book.pdf`.
 
+- Software Development English: 102 pages with the same counts and explained keys,
+  covering interface contracts, debugging evidence, actionable reviews, dependency changes,
+  test boundaries, measured tradeoffs, uncertain retries, and release handovers.
+  Output: `output/pdf/software-developers-english-book.pdf`.
+
 ## Remaining
 
-3 books remain. The next course in the canonical inventory is `software-developers`.
+2 books remain. The next course in the canonical inventory is `software-quality-assurance`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

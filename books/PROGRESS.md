@@ -109,9 +109,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   rubric calibration, student-record access, review evidence, and staffing trade-offs.
   Output: `output/pdf/education-administration-english-book.pdf`.
 
+- Higher Education and Research English: 102 pages with the same counts and explained keys,
+  covering study design, pilot aims, laboratory discrepancies, research ethics,
+  authorship, peer review, reproducible data, and conference challenges.
+  Output: `output/pdf/higher-education-research-english-book.pdf`.
+
 ## Remaining
 
-42 books remain. The next course in the canonical inventory is `higher-education-research`.
+41 books remain. The next course in the canonical inventory is `hospitality-tourism`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

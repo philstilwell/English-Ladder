@@ -46,6 +46,8 @@ class IndustryBookTests(unittest.TestCase):
                     for n, (label, phrase) in enumerate(unit['phrases']):
                         self.assertIn(label.upper(), pages[start + 3 + n // 8])
                         self.assertIn(phrase, pages[start + 3 + n // 8])
+                        if phrase.startswith('"') and phrase.endswith('"'):
+                            self.assertNotIn('"' + phrase + '"', pages[start + 3 + n // 8])
                     for q in unit['a'] + unit['d']:
                         self.assertIn(q['prompt'], key)
                         self.assertIn(q['reason'], key)

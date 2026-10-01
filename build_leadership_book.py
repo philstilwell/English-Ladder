@@ -413,7 +413,8 @@ def language(b, u, i, part=0):
             x = LEFT + col * (col_width + 26)
             b.block(esc(purpose.upper()), x, top, col_width, 8, 11.2, b.accent, True)
             b.y -= 6
-            b.text('"' + phrase + '"', x=x, width=col_width, size=10.6, leading=15, after=18)
+            quoted = phrase if phrase.startswith('"') and phrase.endswith('"') else '"' + phrase + '"'
+            b.text(quoted, x=x, width=col_width, size=10.6, leading=15, after=18)
             bottoms.append(b.y)
         b.y = min(bottoms)
     b.rule(16)

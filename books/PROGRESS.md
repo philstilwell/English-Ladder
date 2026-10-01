@@ -119,9 +119,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   room-release handovers, event coordination, disrupted tours, and individual preferences.
   Output: `output/pdf/hospitality-tourism-english-book.pdf`.
 
+- Aviation English: 102 pages with the same counts and explained keys,
+  covering safety reports, operations updates, maintenance records, passenger notices,
+  ground handling, access control, incident evidence, and audit readiness.
+  Output: `output/pdf/aviation-english-book.pdf`.
+
 ## Remaining
 
-40 books remain. The next course in the canonical inventory is `aviation`.
+39 books remain. The next course in the canonical inventory is `construction-architecture`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

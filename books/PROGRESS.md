@@ -169,9 +169,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   interagency handoffs, constituent referrals, records review, and outcome-based budget discussions.
   Output: `output/pdf/government-public-administration-english-book.pdf`.
 
+- Nonprofit and NGO English: 102 pages with the same counts and explained keys,
+  covering program pathways, grant variations, evaluation limits, field coordination,
+  safeguarding reports, volunteer boundaries, advocacy evidence, and available reserves.
+  Output: `output/pdf/nonprofit-ngo-english-book.pdf`.
+
 ## Remaining
 
-30 books remain. The next course in the canonical inventory is `nonprofit-ngo`.
+29 books remain. The next course in the canonical inventory is `consulting`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

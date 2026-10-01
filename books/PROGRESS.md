@@ -284,9 +284,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   cleanout access, interruption notices, estimate boundaries, and document follow-up.
   Output: `output/pdf/plumbers-english-book.pdf`.
 
+- HVAC and Refrigeration English: 102 pages with the same counts and explained keys,
+  covering setpoints, component identification, supply and return air, equipment ratings,
+  moisture records, cabinet alarms, grille changes, and deferred commissioning checks.
+  Output: `output/pdf/hvac-refrigeration-english-book.pdf`.
+
 ## Remaining
 
-7 books remain. The next course in the canonical inventory is `hvac-refrigeration`.
+6 books remain. The next course in the canonical inventory is `automotive-service`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

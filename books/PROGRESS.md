@@ -154,9 +154,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   checkout analysis, supplier scorecards, return reviews, and pickup handoffs.
   Output: `output/pdf/retail-ecommerce-english-book.pdf`.
 
+- Media and Entertainment English: 102 pages with the same counts and explained keys,
+  covering creative briefs, production budgets, rights clearance, talent approvals,
+  distribution windows, audience measures, sponsorship changes, and crisis statements.
+  Output: `output/pdf/media-entertainment-english-book.pdf`.
+
 ## Remaining
 
-33 books remain. The next course in the canonical inventory is `media-entertainment`.
+32 books remain. The next course in the canonical inventory is `telecommunications`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

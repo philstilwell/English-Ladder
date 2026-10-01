@@ -49,6 +49,7 @@
     const entries = modules.map(module => {
       const link = navigation.querySelector(`a[href="#${module.id}"]`);
       if (!link) return null;
+      link.setAttribute('aria-controls', module.id);
       const sections = steps.map(([selector], index) => {
         const section = module.querySelector(selector);
         if (section) section.dataset.workStep = String(index + 1);
@@ -80,6 +81,8 @@
       course.style.setProperty('--work-navigation-height', `${height}px`);
       const readingLine = (masthead?.getBoundingClientRect().bottom || 0) + height + 24;
       entries.forEach(entry => {
+        entry.link.classList.toggle('is-open', entry.module.open);
+        entry.link.setAttribute('aria-expanded', String(entry.module.open));
         const bounds = entry.module.getBoundingClientRect();
         const active = entry.module.open && bounds.height > 0 && bounds.top <= readingLine && bounds.bottom > readingLine;
         if (active) entry.link.setAttribute('aria-current', 'location');

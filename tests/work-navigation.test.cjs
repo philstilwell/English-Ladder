@@ -87,6 +87,59 @@ test('collapsed lessons retain their last position and skipped lessons are not m
   f.dom.window.close();
 });
 
+test('open lesson markers follow individual toggles independently of the current reading position', () => {
+  const f = setup();
+  const links = [...f.d.querySelectorAll('.work-lesson-links a')];
+  const marked = () => links.map((link, index) => link.classList.contains('is-open') ? index + 1 : null).filter(Boolean);
+  assert.deepEqual(marked(), [1]);
+  links.forEach((link, index) => {
+    assert.equal(link.getAttribute('aria-controls'), f.modules[index].id);
+    assert.equal(link.getAttribute('aria-expanded'), String(index === 0));
+  });
+  f.modules[3].open = true;
+  f.modules[3].dispatchEvent(new f.w.Event('toggle'));
+  f.flush();
+  assert.deepEqual(marked(), [1, 4]);
+  assert.equal(links[3].getAttribute('aria-expanded'), 'true');
+  f.scroll(34000);
+  assert.deepEqual(marked(), [1, 4]);
+  assert.equal(f.d.querySelector('.work-jump [aria-current]'), f.d.querySelector('.work-prompts-link'));
+  f.modules[0].open = false;
+  f.modules[0].dispatchEvent(new f.w.Event('toggle'));
+  f.flush();
+  assert.deepEqual(marked(), [4]);
+  assert.equal(links[0].getAttribute('aria-expanded'), 'false');
+  assert.equal(f.w.localStorage.length, 0);
+  f.dom.window.close();
+});
+
+test('open markers synchronize with menu links, deep links, and open-all and close-all actions', () => {
+  const f = setup('#module-3');
+  const links = [...f.d.querySelectorAll('.work-lesson-links a')];
+  const sync = () => {
+    f.modules.forEach(module => module.dispatchEvent(new f.w.Event('toggle')));
+    f.flush();
+    links.forEach((link, index) => {
+      assert.equal(link.classList.contains('is-open'), f.modules[index].open);
+      assert.equal(link.getAttribute('aria-expanded'), String(f.modules[index].open));
+    });
+  };
+  sync();
+  assert.equal(links[2].classList.contains('is-open'), true);
+  links[5].click();
+  f.flush();
+  assert.equal(links[5].classList.contains('is-open'), true);
+  const expand = f.d.querySelector('[data-expand-lessons]');
+  expand.click();
+  sync();
+  assert.equal(links.filter(link => link.classList.contains('is-open')).length, 8);
+  expand.click();
+  sync();
+  assert.equal(links.filter(link => link.classList.contains('is-open')).length, 0);
+  assert.equal(f.d.querySelector('.work-prompts-link').hasAttribute('aria-expanded'), false);
+  f.dom.window.close();
+});
+
 test('same-lesson links reopen and scroll, deep links work, and resized menus update the reading line', () => {
   const f = setup('#module-3');
   assert.equal(f.modules[2].open, true);

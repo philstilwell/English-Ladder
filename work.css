@@ -54,6 +54,7 @@
 .work-prompts-link { flex:0 0 76px; white-space:nowrap; }
 .work-jump a:hover { background:#e7efef; }
 .work-jump a[aria-current="location"] { border-color:var(--work-blue); background:#e7efef; box-shadow:inset 0 -2px var(--work-blue); }
+.work-jump a.is-open { border:2px solid var(--work-ink); padding:calc(var(--action-padding-block) - 1px) calc(var(--action-padding-inline) - 1px); }
 .work-section-dots { display:flex; flex:none; flex-direction:row; gap:2px; }
 .work-section-dot { display:block; flex:none; width:4px; height:4px; border:1px solid var(--work-blue); border-radius:50%; background:transparent; }
 .work-section-dot.is-reached { background:var(--work-blue); }
@@ -69,6 +70,7 @@
 .work-module>summary small { display:block; margin-top:7px; color:var(--work-muted); font-size:.79rem; }
 .work-module-number { font:400 1.9rem/1 Georgia,serif; color:#587982; min-width:39px; }
 .work-expand { margin-left:auto; font-size:1.5rem; color:var(--work-blue); }
+.work-module[open] { border:4px solid var(--work-ink); }
 .work-module[open]>.work-module-body { border-top:1px solid var(--work-line); }
 .work-module[open]>summary { background:var(--work-paper); }
 .work-module[open] .work-expand { transform:rotate(45deg); }

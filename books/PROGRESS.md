@@ -1,7 +1,7 @@
 # Learner-Book Expansion
 
 Requested scope: all 65 courses other than the approved Cross-Cultural
-Leadership book. Work is sequential; the user declined parallel assistants.
+Leadership book. All 65 books were completed sequentially without parallel assistants.
 
 ## Completed
 
@@ -314,11 +314,16 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   order-dependent automation, defect triage, exploratory findings, and release evidence.
   Output: `output/pdf/software-quality-assurance-english-book.pdf`.
 
-## Remaining
+- Medical Laboratory Technician English: 102 pages with the same counts and explained keys,
+  covering accession identifiers, specimen quantity, quality-control status, service updates,
+  turnaround estimates, report versions, critical notifications, and referral handovers.
+  Output: `output/pdf/medical-laboratory-technicians-english-book.pdf`.
 
-1 book remains. The next course in the canonical inventory is `medical-laboratory-technicians`.
-Use `work_curriculum.load_tracks()` for the complete course list and module
-order. No other course should be represented as converted or complete.
+## Completion
+
+All 65 requested books are complete: 6,630 pages, 520 original extended dialogues,
+12,480 vocabulary entries, and 8,320 phrases. Each book follows its course's eight
+module titles and order in `work_curriculum.load_tracks()`.
 
 ## Checks and Publication
 
@@ -327,6 +332,7 @@ branding, existing course illustrations, uniform blanks, and page references.
 The leadership book remains unchanged. The new books are stored separately from
 published website downloads, which have not been replaced.
 
-Run `python3 -m unittest discover -s tests -p '*book*.py' -v` for the shared
-and book-specific checks. Render and inspect every completed book before
-marking it complete. Keep content sources separate and field-specific.
+All 17 shared and book-specific tests passed with the complete 65-book inventory.
+Every book was rendered and visually inspected, including its cover, dialogue pages,
+and answer keys. Content sources remain separate and field-specific.
+Rerun `python3 -m unittest discover -s tests -p '*book*.py' -v` after future changes.

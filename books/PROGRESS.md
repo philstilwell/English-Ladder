@@ -104,9 +104,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   SQL joins, experiment results, data access, and evidence-based recommendations.
   Output: `output/pdf/data-analytics-business-intelligence-english-book.pdf`.
 
+- Education Administration English: 102 pages with the same counts and explained keys,
+  covering admissions, assessment alignment, support records, guardian communication,
+  rubric calibration, student-record access, review evidence, and staffing trade-offs.
+  Output: `output/pdf/education-administration-english-book.pdf`.
+
 ## Remaining
 
-43 books remain. The next course in the canonical inventory is `education-administration`.
+42 books remain. The next course in the canonical inventory is `higher-education-research`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -59,9 +59,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   regulatory status, complaints, material holds, and training-scope boundaries.
   Output: `output/pdf/medical-devices-english-book.pdf`.
 
+- Manufacturing English: 102 pages with the same counts and explained keys,
+  covering output measures, lean trials, scrap and rework, root-cause evidence,
+  maintenance scheduling, safety clarification, drawing revisions, and shift handoffs.
+  Output: `output/pdf/manufacturing-english-book.pdf`.
+
 ## Remaining
 
-52 books remain. The next course in the canonical inventory is `manufacturing`.
+51 books remain. The next course in the canonical inventory is `supply-chain-logistics`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

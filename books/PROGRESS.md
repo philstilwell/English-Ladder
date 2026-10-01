@@ -249,9 +249,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   health-concern referrals, station readiness, design reviews, and consultation handovers.
   Output: `output/pdf/nail-technicians-english-book.pdf`.
 
+- Retail Associate and Cashier English: 102 pages with the same counts and explained keys,
+  covering product identification, care labels, quantity offers, duplicate scans, exchanges,
+  collection updates, accessible checkout assistance, and unverified till differences.
+  Output: `output/pdf/retail-associates-cashiers-english-book.pdf`.
+
 ## Remaining
 
-14 books remain. The next course in the canonical inventory is `retail-associates-cashiers`.
+13 books remain. The next course in the canonical inventory is `truck-delivery-drivers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

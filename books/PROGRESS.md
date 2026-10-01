@@ -204,9 +204,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   imaging questions, patient comfort, record matching, lab cases, and aftercare calls.
   Output: `output/pdf/dental-assistants-english-book.pdf`.
 
+- Pharmacy Technician English: 102 pages with the same counts and explained keys,
+  covering prescription intake, insurance responses, renewals, stock estimates,
+  pharmacist consultations, private collection, recall queries, and corrected messages.
+  Output: `output/pdf/pharmacy-technicians-english-book.pdf`.
+
 ## Remaining
 
-23 books remain. The next course in the canonical inventory is `pharmacy-technicians`.
+22 books remain. The next course in the canonical inventory is `medical-assistants`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

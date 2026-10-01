@@ -219,9 +219,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   inclusive participation, health-document queries, and verified collection arrangements.
   Output: `output/pdf/childcare-early-education-english-book.pdf`.
 
+- Restaurant Serving English: 102 pages with the same counts and explained keys,
+  covering seat-specific orders, set-menu prices, allergy questions, course delays,
+  wrong-dish recovery, bill splitting, shared-dish clearing, and live-section handovers.
+  Output: `output/pdf/restaurant-servers-english-book.pdf`.
+
 ## Remaining
 
-20 books remain. The next course in the canonical inventory is `restaurant-servers`.
+19 books remain. The next course in the canonical inventory is `cooks-kitchen-staff`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -64,7 +64,7 @@ def icon_right_trim(slug):
         "aviation": 2,
         "banking-operations": 4,
         "retail-ecommerce": 2,
-        "consulting": 2,
+        "consulting": 4,
         "sales-business-development": 2,
     }.get(slug, 0)
 

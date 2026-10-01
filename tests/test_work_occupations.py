@@ -81,7 +81,8 @@ class OccupationSourceTests(unittest.TestCase):
             self.assertLess(icon_bottom_trim(slug), 26)
         for index, slug in enumerate(LEGACY_ICON_SLUGS):
             self.assertEqual(icon_asset(slug), ('assets/work/professional-icons.png', 7, 6, index))
-            self.assertEqual(icon_bottom_trim(slug), 0)
+            # Energy and Utilities needs a small crop to exclude neighboring artwork.
+            self.assertEqual(icon_bottom_trim(slug), 6 if slug == 'energy-utilities' else 0, slug)
 
 
 class OccupationPublicationTests(unittest.TestCase):

@@ -1,6 +1,7 @@
 import unittest
 import json
 from pathlib import Path
+from urllib.parse import parse_qs, urlsplit
 from bs4 import BeautifulSoup
 
 import ai_extensions as ai
@@ -25,7 +26,12 @@ class AIExtensionTests(unittest.TestCase):
             self.assertTrue(soup.select_one('#vocabulary #ai-field-vocabulary'))
             data=json.loads(soup.select_one('[data-ai-data]').text)
             for m in t['modules']:
-                self.assertEqual(4, len(soup.find(id=m['id']).select('[data-ai-preset]')))
+                presets = soup.find(id=m['id']).select('[data-ai-preset]')
+                self.assertEqual(3, len(presets))
+                self.assertEqual(
+                    ['vocabulary', 'grammar', 'roleplay'],
+                    [parse_qs(urlsplit(link['href']).query)['ai'][0] for link in presets],
+                )
                 self.assertFalse(soup.find(id=m['id']).select('[data-ai-extension]'))
                 context=next(c['text'] for c in data['contexts'] if c['id']==m['id'])
                 self.assertIn(m['brief'], context)

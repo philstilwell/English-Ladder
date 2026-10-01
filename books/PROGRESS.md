@@ -309,9 +309,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   test boundaries, measured tradeoffs, uncertain retries, and release handovers.
   Output: `output/pdf/software-developers-english-book.pdf`.
 
+- Software Quality Assurance and Testing English: 102 pages with the same counts and explained keys,
+  covering expected results, reproducible reports, boundary cases, change-impact coverage,
+  order-dependent automation, defect triage, exploratory findings, and release evidence.
+  Output: `output/pdf/software-quality-assurance-english-book.pdf`.
+
 ## Remaining
 
-2 books remain. The next course in the canonical inventory is `software-quality-assurance`.
+1 book remains. The next course in the canonical inventory is `medical-laboratory-technicians`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

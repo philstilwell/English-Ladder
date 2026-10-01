@@ -58,7 +58,7 @@
 .work-section-dots { display:flex; flex:none; flex-direction:row; gap:2px; }
 .work-section-dot { display:block; flex:none; width:4px; height:4px; border:1px solid var(--work-blue); border-radius:50%; background:transparent; }
 .work-section-dot.is-reached { background:var(--work-blue); }
-.work-page .work-module[id],.work-page [data-work-step],.work-page #finished-dialogue-prompts,.work-page #ai-practice { scroll-margin-top:calc(var(--work-navigation-height,45px) + 12px); }
+.work-page .work-module[id],.work-page [data-work-step],.work-page #vocabulary,.work-page .finished-prompt pre[id],.work-page #finished-dialogue-prompts,.work-page #ai-practice { scroll-margin-top:calc(var(--work-navigation-height,45px) + 12px); }
 @media(max-width:480px) { .work-lesson-tools { gap:6px; } .work-lesson-icon { flex-basis:28px; height:28px; } .work-lesson-icon .work-card-icon { transform:scale(.2692307692); } .work-jump { --action-padding-inline:2px; gap:4px; } .work-lesson-links { grid-template-columns:repeat(8,minmax(35px,1fr)); gap:4px; } .work-jump a { font-size:.75rem; } .work-prompts-link { flex-basis:60px; } .work-section-dots { gap:1px; } }
 @media(max-width:360px) { .work-jump { --action-padding-inline:1px; } .work-lesson-links { grid-template-columns:repeat(8,minmax(27px,1fr)); gap:2px; } .work-section-dot { width:3px; height:3px; } }
 .work-text-button { background:none; border:0; border-bottom:1px solid currentColor; color:var(--work-blue); padding:6px 0; font:inherit; font-size:.84rem; cursor:pointer; min-height:40px; }
@@ -136,8 +136,13 @@
 .work-small { font-size:.8rem; }
 .work-related { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
 .work-related a { display:flex; justify-content:space-between; gap:12px; padding:17px; border:1px solid var(--work-line); color:var(--work-blue); text-decoration:none; line-height:1.4; font-size:.92rem; }
-.work-directory-hero { padding:60px 0 50px; border-bottom:1px solid var(--work-line); }
-.work-directory-hero h1 { font-size:clamp(3.4rem,7vw,6.2rem); line-height:1; margin:20px 0 27px; }
+.work-directory-hero { padding:30px 0; border-bottom:1px solid var(--work-line); }
+/* The directory uses the shared .page-hero title size, like Grammar and Everyday English. */
+.work-directory-hero h1 { margin:0 0 25px; }
+.work-directory-hero .work-kicker { font-size:.7rem; margin:0 0 14px; }
+.work-directory-hero .work-intro { font-size:1.17rem; }
+.work-directory-hero .ai-library-link { margin:20px 0 0; }
+.work-filter-reset { margin:0 0 20px; }
 .work-start-paths { display:grid; grid-template-columns:1fr 1fr; gap:65px; padding:40px 0 0; }
 .work-start-paths h2 { font-size:1.8rem; }
 .work-start-paths p { font-size:.95rem; }

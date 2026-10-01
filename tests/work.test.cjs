@@ -29,6 +29,59 @@ test('directory search combines words and category; empty state recovers', () =>
   assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,66);
   dom.window.close();
 });
+test('course search handles accents, punctuation, fields, restored inputs, and clear filters', () => {
+  const dom=setup('efsp.html'),w=dom.window,d=w.document;
+  const search=d.querySelector('[data-course-search]'),category=d.querySelector('[data-course-category]');
+  const reset=d.querySelector('[data-course-reset]');
+  const visible=()=>[...d.querySelectorAll('[data-work-course-link]:not([hidden])')];
+  assert.equal(d.querySelector('.work-directory-filters').hidden,false);
+  assert.equal(reset.hidden,true);
+  for(const query of ['cafe','CAFÉ','café-staff']){
+    change(w,search,query);
+    assert.ok(visible().some(card=>card.href.endsWith('efsp-baristas-cafe-staff.html')),query);
+  }
+  change(w,search,'health life sciences');
+  assert.ok(visible().length>1);
+  assert.ok(visible().every(card=>card.dataset.category==='Health & life sciences'));
+  search.value='nursing';category.value='Technology & data';
+  w.dispatchEvent(new w.Event('pageshow'));
+  assert.equal(visible().length,0);
+  assert.equal(d.querySelector('[data-course-empty]').hidden,false);
+  reset.click();
+  assert.equal(visible().length,66);
+  assert.equal(reset.hidden,true);
+  assert.equal(d.activeElement,search);
+  assert.equal(search.value,'');assert.equal(category.value,'');
+  dom.window.close();
+});
+test('without JavaScript, inert search controls stay hidden and all course links remain available', () => {
+  for(const file of ['efsp.html',courseFile]){
+    const dom=new JSDOM(fs.readFileSync(path.join(root,file),'utf8')),d=dom.window.document;
+    if(file==='efsp.html'){
+      assert.equal(d.querySelector('.work-directory-filters').hidden,true);
+      assert.equal(d.querySelectorAll('[data-work-course-link]:not([hidden])').length,66);
+      assert.equal(d.querySelector('.work-directory-hero a.work-button').hash,'#courses');
+      assert.ok(d.querySelector('#courses'));
+    }else{
+      assert.equal(d.querySelector('[data-vocabulary-filter]').hidden,true);
+      assert.ok(d.querySelectorAll('[data-work-term]:not([hidden])').length>0);
+    }
+    dom.window.close();
+  }
+});
+test('deep links open the glossary and all ancestors of a nested prompt safely', () => {
+  const dom=setup(),w=dom.window,d=w.document;
+  const go=hash=>{w.location.hash=hash;w.dispatchEvent(new w.Event('hashchange'));};
+  go('#vocabulary');assert.equal(d.querySelector('#vocabulary').open,true);
+  const prompt=d.querySelector('#module-4 .finished-prompt pre');
+  assert.equal(d.querySelector('#module-4').open,false);
+  go('#'+encodeURIComponent(prompt.id));
+  assert.equal(d.querySelector('#module-4').open,true);
+  assert.equal(prompt.closest('details').open,true);
+  go('#%E0%A4%A');go('#missing-section');
+  assert.equal(d.querySelector('[data-check-answer]').hidden,false);
+  dom.window.close();
+});
 test('quiz handles no answer, wrong answer, correction, and resets stale feedback', () => {
   const dom=setup(),w=dom.window,d=w.document,q=d.querySelector('[data-work-quiz]');
   const button=q.querySelector('button'),feedback=q.querySelector('[data-quiz-feedback]');

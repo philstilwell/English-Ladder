@@ -113,6 +113,15 @@ class WorkCurriculumTests(unittest.TestCase):
             self.assertTrue(related)
             self.assertTrue(all(r['category']==t['category'] and r['slug']!=t['slug'] for r in related))
 
+    def test_category_cards_describe_the_current_learner_books(self):
+        cards = []
+        for path in (ROOT/'english-for-work').glob('*.html'):
+            soup = BeautifulSoup(path.read_text(), 'html.parser')
+            cards.extend(soup.select('.work-course-card'))
+        self.assertEqual(len(cards), 66)
+        for card in cards:
+            self.assertEqual(card.select_one('.work-kicker').get_text(), '8 lessons · 1 learner book')
+
     def test_answer_positions_are_varied_and_explanations_complete(self):
         positions=set()
         for t in self.tracks:

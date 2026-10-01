@@ -9,24 +9,38 @@
       if (key?.startsWith('english-ladder-work-v2:')) storage.removeItem(key);
     }
   } catch (_) { /* Lessons remain usable when browser storage is blocked. */ }
+  const searchText = value => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
   const directory = document.querySelector('[data-work-directory]');
   if (directory) {
     const search = directory.querySelector('[data-course-search]');
     const category = directory.querySelector('[data-course-category]');
+    const reset = directory.querySelector('[data-course-reset]');
     const cards = [...directory.querySelectorAll('[data-work-course-link]')];
+    const searchable = cards.map(card => searchText(`${card.dataset.search} ${card.dataset.category}`));
     const filter = () => {
-      const terms = search.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
+      const terms = searchText(search.value).split(/\s+/).filter(Boolean);
       let shown = 0;
-      cards.forEach(card => {
-        const match = (!category.value || card.dataset.category === category.value) && terms.every(term => card.dataset.search.toLocaleLowerCase().includes(term));
+      cards.forEach((card, index) => {
+        const match = (!category.value || card.dataset.category === category.value) && terms.every(term => searchable[index].includes(term));
         card.hidden = !match;
         if (match) shown += 1;
       });
       directory.querySelector('[data-course-count]').textContent = `${shown} of ${cards.length} courses`;
       directory.querySelector('[data-course-empty]').hidden = shown !== 0;
+      reset.hidden = !search.value && !category.value;
     };
     search.addEventListener('input', filter);
     category.addEventListener('change', filter);
+    reset.addEventListener('click', () => {
+      search.value = '';
+      category.value = '';
+      filter();
+      search.focus();
+    });
+    directory.querySelector('.work-directory-filters').hidden = false;
+    window.addEventListener('pageshow', filter);
+    filter();
   }
   const course = document.querySelector('[data-work-course]');
   if (!course) return;
@@ -149,7 +163,20 @@
     });
     quiz.querySelectorAll('input').forEach(input => input.addEventListener('change', () => { feedback.textContent = ''; delete feedback.dataset.result; }));
   });
-  const openHash = () => { const target = modules.find(m => m.id === location.hash.slice(1)); if (target) target.open = true; };
+  const openHash = () => {
+    let id;
+    try { id = decodeURIComponent(location.hash.slice(1)); } catch (_) { return; }
+    const target = document.getElementById(id);
+    if (!target || !course.contains(target)) return;
+    let disclosure = target.closest('details');
+    while (disclosure && course.contains(disclosure)) {
+      disclosure.open = true;
+      disclosure = disclosure.parentElement.closest('details');
+    }
+    // Reveal the content before positioning it below both sticky menus.
+    const frame = window.requestAnimationFrame?.bind(window) || (callback => setTimeout(callback, 0));
+    frame(() => target.scrollIntoView?.({block: 'start'}));
+  };
   addEventListener('hashchange', openHash);
   openHash();
   const expand = course.querySelector('[data-expand-lessons]');
@@ -160,10 +187,14 @@
   updateExpand();
   const vocabSearch = course.querySelector('[data-vocabulary-search]');
   const terms = [...course.querySelectorAll('[data-work-term]')];
-  vocabSearch.addEventListener('input', () => {
-    const query = vocabSearch.value.toLocaleLowerCase().trim();
-    terms.forEach(term => { term.hidden = !term.textContent.toLocaleLowerCase().includes(query); });
+  const filterVocabulary = () => {
+    const query = searchText(vocabSearch.value).split(/\s+/).filter(Boolean);
+    terms.forEach(term => { term.hidden = !query.every(word => searchText(term.textContent).includes(word)); });
     const count = terms.filter(term => !term.hidden).length;
     course.querySelector('[data-vocabulary-count]').textContent = count ? `${count} of ${terms.length} terms` : 'No terms match. Try a shorter word.';
-  });
+  };
+  course.querySelector('[data-vocabulary-filter]').hidden = false;
+  vocabSearch.addEventListener('input', filterVocabulary);
+  window.addEventListener('pageshow', filterVocabulary);
+  filterVocabulary();
 })();

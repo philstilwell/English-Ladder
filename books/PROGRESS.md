@@ -289,9 +289,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   moisture records, cabinet alarms, grille changes, and deferred commissioning checks.
   Output: `output/pdf/hvac-refrigeration-english-book.pdf`.
 
+- Automotive Service English: 102 pages with the same counts and explained keys,
+  covering customer concerns, appointment limits, assessment approval, workshop handoffs,
+  parts delays, diagnostic findings, invoice queries, and repeat-complaint recovery.
+  Output: `output/pdf/automotive-service-english-book.pdf`.
+
 ## Remaining
 
-6 books remain. The next course in the canonical inventory is `automotive-service`.
+5 books remain. The next course in the canonical inventory is `office-administrative-assistants`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

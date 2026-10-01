@@ -189,9 +189,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   renewal discovery, responsible expansion, product feedback, and disputed expectations.
   Output: `output/pdf/customer-success-english-book.pdf`.
 
+- Legal Operations and Compliance English: 102 pages with the same counts and explained keys,
+  covering contract intake, operating controls, audit evidence, investigation reports,
+  privacy requests, third-party assessment, training effectiveness, and governance reporting.
+  Output: `output/pdf/legal-operations-compliance-english-book.pdf`.
+
 ## Remaining
 
-26 books remain. The next course in the canonical inventory is `legal-operations-compliance`.
+25 books remain. The next course in the canonical inventory is `home-care-caregivers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

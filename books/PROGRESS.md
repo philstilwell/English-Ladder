@@ -274,9 +274,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   extra-work quotations, trade access, fit-review corrections, and outstanding-part handovers.
   Output: `output/pdf/carpentry-remodeling-english-book.pdf`.
 
+- Electricians' Workplace English: 102 pages with the same counts and explained keys,
+  covering service reports, lighting specifications, device references, trade coordination,
+  outage notices, limited findings, added equipment, and record handovers.
+  Output: `output/pdf/electricians-english-book.pdf`.
+
 ## Remaining
 
-9 books remain. The next course in the canonical inventory is `electricians`.
+8 books remain. The next course in the canonical inventory is `plumbers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

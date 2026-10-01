@@ -244,9 +244,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   comfort checks, complete prices, result concerns, and preference-and-permission handovers.
   Output: `output/pdf/hairdressers-barbers-english-book.pdf`.
 
+- Nail Technician English: 102 pages with the same counts and explained keys,
+  covering overlay requests, shape and length, color coverage and finish, complete art quotes,
+  health-concern referrals, station readiness, design reviews, and consultation handovers.
+  Output: `output/pdf/nail-technicians-english-book.pdf`.
+
 ## Remaining
 
-15 books remain. The next course in the canonical inventory is `nail-technicians`.
+14 books remain. The next course in the canonical inventory is `retail-associates-cashiers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

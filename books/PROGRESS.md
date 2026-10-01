@@ -199,9 +199,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   meal choices, privacy, accurate handoffs, and delayed-visit communication.
   Output: `output/pdf/home-care-caregivers-english-book.pdf`.
 
+- Dental Assisting English: 102 pages with the same counts and explained keys,
+  covering appointment clarification, instrument readiness, chairside read-backs,
+  imaging questions, patient comfort, record matching, lab cases, and aftercare calls.
+  Output: `output/pdf/dental-assistants-english-book.pdf`.
+
 ## Remaining
 
-24 books remain. The next course in the canonical inventory is `dental-assistants`.
+23 books remain. The next course in the canonical inventory is `pharmacy-technicians`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

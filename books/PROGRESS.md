@@ -139,9 +139,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   audit closure, emissions boundaries, community questions, and additional-work proposals.
   Output: `output/pdf/environmental-consulting-english-book.pdf`.
 
+- Insurance English: 102 pages with the same counts and explained keys,
+  covering underwriting submissions, policy documents, claims intake, coverage updates,
+  renewal trade-offs, objective referrals, claim-cost calculations, and fee complaints.
+  Output: `output/pdf/insurance-english-book.pdf`.
+
 ## Remaining
 
-36 books remain. The next course in the canonical inventory is `insurance`.
+35 books remain. The next course in the canonical inventory is `banking-operations`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

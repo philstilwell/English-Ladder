@@ -214,9 +214,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   referral stages, instruction questions, clinical-call routing, and booking corrections.
   Output: `output/pdf/medical-assistants-english-book.pdf`.
 
+- Childcare and Early Education English: 102 pages with the same counts and explained keys,
+  covering arrival plans, play prompts, transitions, peer disagreements, learning observations,
+  inclusive participation, health-document queries, and verified collection arrangements.
+  Output: `output/pdf/childcare-early-education-english-book.pdf`.
+
 ## Remaining
 
-21 books remain. The next course in the canonical inventory is `childcare-early-education`.
+20 books remain. The next course in the canonical inventory is `restaurant-servers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

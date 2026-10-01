@@ -254,9 +254,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   collection updates, accessible checkout assistance, and unverified till differences.
   Output: `output/pdf/retail-associates-cashiers-english-book.pdf`.
 
+- Truck and Delivery Driver English: 102 pages with the same counts and explained keys,
+  covering destination conflicts, carton counts, arrival estimates, visible damage, unavailable
+  recipients, service boundaries, return references, and unfinished route records.
+  Output: `output/pdf/truck-delivery-drivers-english-book.pdf`.
+
 ## Remaining
 
-13 books remain. The next course in the canonical inventory is `truck-delivery-drivers`.
+12 books remain. The next course in the canonical inventory is `warehouse-distribution`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

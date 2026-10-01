@@ -159,9 +159,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   distribution windows, audience measures, sponsorship changes, and crisis statements.
   Output: `output/pdf/media-entertainment-english-book.pdf`.
 
+- Telecommunications English: 102 pages with the same counts and explained keys,
+  covering outage bridges, fiber acceptance, wireless performance, activation requests,
+  field dispatch, emergency-calling notices, service recovery, and support horizons.
+  Output: `output/pdf/telecommunications-english-book.pdf`.
+
 ## Remaining
 
-32 books remain. The next course in the canonical inventory is `telecommunications`.
+31 books remain. The next course in the canonical inventory is `government-public-administration`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

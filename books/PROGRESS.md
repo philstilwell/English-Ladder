@@ -54,9 +54,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   findings, scale-up, intellectual property, board updates, and partnering terms.
   Output: `output/pdf/biotechnology-english-book.pdf`.
 
+- Medical Devices English: 102 pages with the same counts and explained keys,
+  covering design inputs, risk distinctions, verification and validation, usability,
+  regulatory status, complaints, material holds, and training-scope boundaries.
+  Output: `output/pdf/medical-devices-english-book.pdf`.
+
 ## Remaining
 
-53 books remain. The next course in the canonical inventory is `medical-devices`.
+52 books remain. The next course in the canonical inventory is `manufacturing`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -299,9 +299,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   supply discrepancies, visitor reception, travel quotes, and workload priorities.
   Output: `output/pdf/office-administrative-assistants-english-book.pdf`.
 
+- Bookkeeping and Payroll English: 102 pages with the same counts and explained keys,
+  covering invoice matching, receipt allocation, bank timing, time exceptions,
+  payroll previews, payment stages, period close, and traceable corrections.
+  Output: `output/pdf/bookkeeping-payroll-english-book.pdf`.
+
 ## Remaining
 
-4 books remain. The next course in the canonical inventory is `bookkeeping-payroll`.
+3 books remain. The next course in the canonical inventory is `software-developers`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -99,9 +99,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   threat models, control evidence, phishing intake, and executive risk briefings.
   Output: `output/pdf/cybersecurity-english-book.pdf`.
 
+- Data Analytics and Business Intelligence English: 102 pages with the same counts and explained keys,
+  covering metric definitions, data quality, executive dashboards, causal claims,
+  SQL joins, experiment results, data access, and evidence-based recommendations.
+  Output: `output/pdf/data-analytics-business-intelligence-english-book.pdf`.
+
 ## Remaining
 
-44 books remain. The next course in the canonical inventory is `data-analytics-business-intelligence`.
+43 books remain. The next course in the canonical inventory is `education-administration`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

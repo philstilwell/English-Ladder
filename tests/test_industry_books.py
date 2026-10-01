@@ -51,6 +51,7 @@ class IndustryBookTests(unittest.TestCase):
                 self.assertGreaterEqual(len(list(reader.pages[0].images)), 2)
                 for i, text in enumerate(pages, 1):
                     self.assertIn('English Ladder', text)
+                    self.assertEqual(text.count('ENGLISHLADDER.COM'), 1)
                     self.assertIn(f'Phil Stilwell | {i:02d}', text)
                     self.assertNotRegex(text, r'\{\{\d+\}\}|\[\[|\ufffd|review copy|approval draft')
                 for text in (pages[0], pages[-1]):
@@ -89,6 +90,8 @@ class IndustryBookTests(unittest.TestCase):
                 seen = set()
                 page_ids = {p.indirect_reference.idnum for p in reader.pages}
                 for page in reader.pages:
+                    links = [ref.get_object().get('/A', {}).get('/URI') for ref in page.get('/Annots', [])]
+                    self.assertEqual(links.count('https://englishladder.com/'), 1)
                     for ref in page['/Resources']['/Font'].values():
                         font = ref.get_object()
                         if str(font['/BaseFont']) in seen:

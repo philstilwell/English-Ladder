@@ -49,6 +49,10 @@ SOURCES_PAGE = INDEX_START + INDEX_PAGES
 TOTAL_PAGES = SOURCES_PAGE
 CLOZE_UNDERSCORES = 32
 CLOZE_FONT_SIZE = 10
+FOOTER_LABEL = 'ENGLISHLADDER.COM'
+FOOTER_URL = 'https://englishladder.com/'
+FOOTER_FONT_SIZE = 7.3
+FOOTER_BASELINE = 25
 
 for name, file in [('Book', 'Vera.ttf'), ('BookBold', 'VeraBd.ttf'), ('BookItalic', 'VeraIt.ttf')]:
     pdfmetrics.registerFont(TTFont(name, str(ROOT / 'assets/fonts' / file)))
@@ -163,11 +167,18 @@ class Book:
         c.drawRightString(RIGHT, H - 32, 'ENGLISH FOR WORK  /  ' + section.upper())
         c.setStrokeColor(colors.HexColor(LINE))
         c.line(LEFT, 39, RIGHT, 39)
-        footer_size = min(7.3, 345 / pdfmetrics.stringWidth(self.title, 'Book', 1))
+        url_width = pdfmetrics.stringWidth(FOOTER_LABEL, 'Book', FOOTER_FONT_SIZE)
+        url_left = (W - url_width) / 2
+        # Reserve a gap beside the centered URL, including for future longer titles.
+        footer_size = min(FOOTER_FONT_SIZE, (url_left - LEFT - 14) / pdfmetrics.stringWidth(self.title, 'Book', 1))
         c.setFont('Book', footer_size)
-        c.drawString(LEFT, 25, self.title)
-        c.setFont('Book', 7.3)
-        c.drawRightString(RIGHT, 25, f'Phil Stilwell  |  {self.page:02d}')
+        c.drawString(LEFT, FOOTER_BASELINE, self.title)
+        c.setFont('Book', FOOTER_FONT_SIZE)
+        c.drawCentredString(W / 2, FOOTER_BASELINE, FOOTER_LABEL)
+        c.linkURL(FOOTER_URL, (url_left - 3, FOOTER_BASELINE - 3,
+                             url_left + url_width + 3, FOOTER_BASELINE + 9),
+                  relative=0, thickness=0)
+        c.drawRightString(RIGHT, FOOTER_BASELINE, f'Phil Stilwell  |  {self.page:02d}')
         self.y = H - 62
         if anchor:
             c.bookmarkPage(anchor)

@@ -22,6 +22,30 @@ def is_book_margin_tab(char):
             and any(abs(char['top'] - (66.9218752 + unit * 23)) < .01 for unit in range(8)))
 
 
+def audit_book_footer(page):
+    """Check the actual footer text, its alignment, link, and occupied corners."""
+    label, url = 'ENGLISHLADDER.COM', 'https://englishladder.com/'
+    footer = page.crop((0, page.height - 39, page.width, page.height))
+    words = footer.extract_words()
+    matches = [word for word in words if word['text'] == label]
+    if len(matches) != 1:
+        return ['Expected exactly one ENGLISHLADDER.COM footer']
+    word = matches[0]
+    failures = []
+    if abs((word['x0'] + word['x1']) / 2 - page.width / 2) > .5:
+        failures.append('Website footer is not centered')
+    if word['top'] < page.height - 34 or word['bottom'] > page.height - 20:
+        failures.append('Website footer is outside its bottom margin')
+    if any(other is not word and other['x0'] < word['x1'] + 10
+           and other['x1'] > word['x0'] - 10 for other in words):
+        failures.append('Website footer overlaps or crowds corner text')
+    if not any(a.get('uri') == url and a['x0'] <= word['x0']
+               and a['x1'] >= word['x1'] and a['top'] <= word['top']
+               and a['bottom'] >= word['bottom'] for a in page.annots):
+        failures.append('Website footer is missing its clickable link')
+    return failures
+
+
 def audit_one(item):
     relative, metadata = item
     path = ROOT / relative
@@ -40,6 +64,8 @@ def audit_one(item):
     with pdfplumber.open(path) as pdf:
         for i, page in enumerate(pdf.pages, 1):
             text = page.extract_text() or ''
+            if metadata.get('kind') == 'Learner book':
+                failures.extend(f'Page {i}: {issue}' for issue in audit_book_footer(page))
             body = [c for c in page.chars if 44 <= c['top'] < 746 and c['text'].strip()
                     and not (metadata.get('kind') == 'Learner book' and is_book_margin_tab(c))]
             # The approved books allow a two-point optical overhang for inline cloze numbers.
@@ -68,6 +94,8 @@ def main(output='docs/work-document-audit-2026-09-05.json'):
     failures=[{'path':r['path'],'issues':r['failures']} for r in rows if r['failures']]
     summary=dict(files=len(rows),pages=sum(r['pages'] for r in rows),words=sum(r['words'] for r in rows),
                  all_fonts_embedded=all(all(f[1] for f in r['fonts']) for r in rows),failures=failures)
+    summary['centered_website_footers_checked'] = sum(
+        row['pages'] for row in rows if manifest['documents'][row['path']].get('kind') == 'Learner book')
     (ROOT/output).write_text(json.dumps(dict(summary=summary,documents=rows),indent=2)+'\n')
     print(json.dumps(summary,indent=2))
     if failures:raise SystemExit(1)

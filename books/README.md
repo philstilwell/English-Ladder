@@ -19,6 +19,12 @@ linked vocabulary index, sources, and the author's copyright. Fonts are
 embedded. No teacher guide, open-ended writing task, or sea-green background
 is included. Primary references are checked during authoring.
 
+Every page, including the cover and answer keys, has a centered, clickable
+`ENGLISHLADDER.COM` footer. The course title remains on the left, with the author
+and page number on the right. The shared `Book.new_page` template supplies this
+footer; the PDF audit checks its presence, position, link, and corner clearance
+on every page.
+
 Build: `python3 build_industry_books.py ai-development`
 
 Final books are in `output/pdf/`. Existing website downloads are not changed

@@ -145,6 +145,9 @@ class LeadershipBookPDFTests(unittest.TestCase):
     def test_all_fonts_are_embedded(self):
         seen = set()
         for page in self.reader.pages:
+            links = [ref.get_object().get('/A', {}).get('/URI') for ref in page.get('/Annots', [])]
+            self.assertEqual(links.count('https://englishladder.com/'), 1)
+            self.assertEqual(page.extract_text().count('ENGLISHLADDER.COM'), 1)
             for font_ref in page['/Resources']['/Font'].values():
                 font = font_ref.get_object()
                 name = str(font['/BaseFont'])
@@ -161,8 +164,9 @@ class LeadershipBookPDFTests(unittest.TestCase):
         targets = Counter()
         for page in self.reader.pages[INDEX_START - 1:INDEX_START - 1 + INDEX_PAGES]:
             for annotation in page.get('/Annots', []):
-                dest = annotation.get_object()['/Dest']
-                targets[dest[0].idnum] += 1
+                dest = annotation.get_object().get('/Dest')
+                if dest:
+                    targets[dest[0].idnum] += 1
         for i in range(8):
             for part in range(2):
                 definition_page = self.reader.pages[unit_page(i) + part]

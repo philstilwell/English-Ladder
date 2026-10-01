@@ -144,9 +144,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   renewal trade-offs, objective referrals, claim-cost calculations, and fee complaints.
   Output: `output/pdf/insurance-english-book.pdf`.
 
+- Banking Operations English: 102 pages with the same counts and explained keys,
+  covering account-opening checks, monitoring alerts, lending documents, payment queues,
+  debit-card disputes, reconciliation, examination evidence, and historical fee reviews.
+  Output: `output/pdf/banking-operations-english-book.pdf`.
+
 ## Remaining
 
-35 books remain. The next course in the canonical inventory is `banking-operations`.
+34 books remain. The next course in the canonical inventory is `retail-ecommerce`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -21,7 +21,7 @@ COMPLETE = sorted(p.name.removesuffix('-english-book.pdf') for p in (ROOT / 'out
 
 class IndustryBookTests(unittest.TestCase):
     def test_cover_uses_existing_illustration_crop_rules(self):
-        for slug in ('ai-development', 'hospitality-tourism', 'energy-utilities', 'medical-laboratory-technicians'):
+        for slug in ('ai-development', 'hospitality-tourism', 'energy-utilities', 'banking-operations', 'medical-laboratory-technicians'):
             with self.subTest(slug=slug):
                 canvas = MagicMock()
                 illustration(SimpleNamespace(slug=slug, c=canvas))

@@ -62,6 +62,7 @@ def icon_right_trim(slug):
         "pharmaceutical": 2,
         "hospitality-tourism": 12,
         "aviation": 2,
+        "banking-operations": 4,
         "retail-ecommerce": 2,
         "consulting": 2,
         "sales-business-development": 2,

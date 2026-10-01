@@ -69,9 +69,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   freight estimates, customs records, backup readiness, and executive planning decisions.
   Output: `output/pdf/supply-chain-logistics-english-book.pdf`.
 
+- Human Resources English: 102 pages with the same counts and explained keys,
+  covering job-related hiring, onboarding, factual feedback, employee concerns,
+  pay calculations, adjustment requests, task disputes, and restructuring messages.
+  Output: `output/pdf/human-resources-english-book.pdf`.
+
 ## Remaining
 
-50 books remain. The next course in the canonical inventory is `human-resources`.
+49 books remain. The next course in the canonical inventory is `project-management`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

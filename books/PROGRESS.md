@@ -239,9 +239,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   found-item custody, linen counts, quality concerns, and accurate shift handovers.
   Output: `output/pdf/housekeeping-commercial-cleaning-english-book.pdf`.
 
+- Hairdressing and Barbering English: 102 pages with the same counts and explained keys,
+  covering reference-photo consultations, shape comparisons, color expectations, delayed bookings,
+  comfort checks, complete prices, result concerns, and preference-and-permission handovers.
+  Output: `output/pdf/hairdressers-barbers-english-book.pdf`.
+
 ## Remaining
 
-16 books remain. The next course in the canonical inventory is `hairdressers-barbers`.
+15 books remain. The next course in the canonical inventory is `nail-technicians`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

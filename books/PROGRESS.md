@@ -179,9 +179,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   scope changes, corrective feedback, implementation readiness, and steering decisions.
   Output: `output/pdf/consulting-english-book.pdf`.
 
+- Sales and Business Development English: 102 pages with the same counts and explained keys,
+  covering discovery, value hypotheses, competitive comparisons, discount requests,
+  buying committees, contract redlines, channel proposals, and evidence-based forecasts.
+  Output: `output/pdf/sales-business-development-english-book.pdf`.
+
 ## Remaining
 
-28 books remain. The next course in the canonical inventory is `sales-business-development`.
+27 books remain. The next course in the canonical inventory is `customer-success`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

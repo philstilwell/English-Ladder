@@ -279,9 +279,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   outage notices, limited findings, added equipment, and record handovers.
   Output: `output/pdf/electricians-english-book.pdf`.
 
+- Plumbing Workplace English: 102 pages with the same counts and explained keys,
+  covering fixture reports, nominal sizes, drawing references, moisture observations,
+  cleanout access, interruption notices, estimate boundaries, and document follow-up.
+  Output: `output/pdf/plumbers-english-book.pdf`.
+
 ## Remaining
 
-8 books remain. The next course in the canonical inventory is `plumbers`.
+7 books remain. The next course in the canonical inventory is `hvac-refrigeration`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

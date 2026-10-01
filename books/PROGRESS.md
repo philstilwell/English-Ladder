@@ -294,9 +294,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   parts delays, diagnostic findings, invoice queries, and repeat-complaint recovery.
   Output: `output/pdf/automotive-service-english-book.pdf`.
 
+- Office and Administrative Assistant English: 102 pages with the same counts and explained keys,
+  covering time references, telephone messages, meeting actions, document access,
+  supply discrepancies, visitor reception, travel quotes, and workload priorities.
+  Output: `output/pdf/office-administrative-assistants-english-book.pdf`.
+
 ## Remaining
 
-5 books remain. The next course in the canonical inventory is `office-administrative-assistants`.
+4 books remain. The next course in the canonical inventory is `bookkeeping-payroll`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

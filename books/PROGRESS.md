@@ -64,9 +64,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   maintenance scheduling, safety clarification, drawing revisions, and shift handoffs.
   Output: `output/pdf/manufacturing-english-book.pdf`.
 
+- Supply Chain and Logistics English: 102 pages with the same counts and explained keys,
+  covering forecast bias, supplier commitments, stock availability, order balances,
+  freight estimates, customs records, backup readiness, and executive planning decisions.
+  Output: `output/pdf/supply-chain-logistics-english-book.pdf`.
+
 ## Remaining
 
-51 books remain. The next course in the canonical inventory is `supply-chain-logistics`.
+50 books remain. The next course in the canonical inventory is `human-resources`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -229,9 +229,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   substitutions, allergy queries, equipment reports, and unfinished closing checks.
   Output: `output/pdf/cooks-kitchen-staff-english-book.pdf`.
 
+- Baristas and Cafe Staff English: 102 pages with the same counts and explained keys,
+  covering precise drink orders, texture comparisons, allergy queries, pickup matching,
+  remakes, gift-coffee terminology, complete price comparisons, and bar-and-till handovers.
+  Output: `output/pdf/baristas-cafe-staff-english-book.pdf`.
+
 ## Remaining
 
-18 books remain. The next course in the canonical inventory is `baristas-cafe-staff`.
+17 books remain. The next course in the canonical inventory is `housekeeping-commercial-cleaning`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

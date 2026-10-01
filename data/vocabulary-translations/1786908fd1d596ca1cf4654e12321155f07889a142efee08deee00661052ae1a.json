@@ -1,0 +1,125 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Israel's Prime Minister said it is too early to know if Iran was involved in the flight attack.",
+      "A pilot stabbed another pilot on a plane from Dubai to Tel Aviv.",
+      "The plane lost 17,000 feet quickly, but passengers and crew stopped the attacker and landed safely.",
+      "The pilot who was stabbed is Captain Smit Machchhar, and he is now stable in hospital.",
+      "Prime Minister Benjamin Netanyahu called Captain Machchhar a \"true hero.\"",
+      "The attacker was arrested in Saudi Arabia and will go to the UAE.",
+      "Flydubai said two crew members who were traveling landed the plane safely.",
+      "The attacker tried to crash the plane."
+    ],
+    "vocabulary": [
+      {
+        "term": "involved",
+        "part_of_speech": "adjective",
+        "definition": "connected to something or taking part in an event."
+      },
+      {
+        "term": "stabbed",
+        "part_of_speech": "verb",
+        "definition": "hurt someone with a sharp object like a knife."
+      },
+      {
+        "term": "attacker",
+        "part_of_speech": "noun",
+        "definition": "a person who tries to hurt another person."
+      },
+      {
+        "term": "stable",
+        "part_of_speech": "adjective",
+        "definition": "not changing, in a good and steady condition, especially for health."
+      },
+      {
+        "term": "hero",
+        "part_of_speech": "noun",
+        "definition": "a very brave person who helps others in danger."
+      },
+      {
+        "term": "crew",
+        "part_of_speech": "noun",
+        "definition": "the group of people who work on a plane or ship."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かに関係している、またはある出来事に参加していること。",
+      "ko": "어떤 것에 연결되어 있거나 어떤 행사에 참여하고 있는.",
+      "zh-Hans": "与某事有联系或参与到某个事件中。",
+      "es": "Conectado a algo o participando en un evento.",
+      "pt-BR": "Conectado a algo ou participando de um evento.",
+      "fr": "Qui est lié à quelque chose ou qui participe à un événement.",
+      "de": "Mit etwas verbunden oder an einem Ereignis beteiligt."
+    },
+    {
+      "id": 1,
+      "ja": "ナイフのような鋭い物で人を傷つけること。",
+      "ko": "칼과 같은 날카로운 물건으로 누군가를 다치게 하다.",
+      "zh-Hans": "用刀之类的尖锐物体伤害某人。",
+      "es": "Herir a alguien con un objeto afilado como un cuchillo.",
+      "pt-BR": "Machucar alguém com um objeto afiado, como uma faca.",
+      "fr": "Blesser quelqu'un avec un objet pointu comme un couteau.",
+      "de": "Jemanden mit einem scharfen Gegenstand wie einem Messer verletzen."
+    },
+    {
+      "id": 2,
+      "ja": "他の人を傷つけようとする人。",
+      "ko": "다른 사람을 해치려고 하는 사람.",
+      "zh-Hans": "试图伤害他人的人。",
+      "es": "Una persona que intenta hacer daño a otra persona.",
+      "pt-BR": "Uma pessoa que tenta machucar outra pessoa.",
+      "fr": "Une personne qui essaie de blesser une autre personne.",
+      "de": "Eine Person, die versucht, eine andere Person zu verletzen."
+    },
+    {
+      "id": 3,
+      "ja": "特に健康状態について、変化がなく、良好で安定した状態であること。",
+      "ko": "변화하지 않고 좋고 꾸준한 상태인, 특히 건강 상태에 대해 말할 때 쓰는 말.",
+      "zh-Hans": "不发生变化，处于良好稳定的状态，尤其指健康状况。",
+      "es": "Que no cambia, que está en una condición buena y constante, especialmente referido a la salud.",
+      "pt-BR": "Que não muda, em uma condição boa e estável, especialmente para a saúde.",
+      "fr": "Qui ne change pas, qui est dans un état bon et constant, en particulier pour la santé.",
+      "de": "Nicht veränderlich, in einem guten und stabilen Zustand, besonders in Bezug auf die Gesundheit."
+    },
+    {
+      "id": 4,
+      "ja": "危険な状況で他人を助ける非常に勇敢な人。",
+      "ko": "위험에 처한 다른 사람들을 돕는 아주 용감한 사람.",
+      "zh-Hans": "一个非常勇敢、在危险中帮助他人的人。",
+      "es": "Una persona muy valiente que ayuda a otros en peligro.",
+      "pt-BR": "Uma pessoa muito corajosa que ajuda outras em perigo.",
+      "fr": "Une personne très courageuse qui aide les autres en danger.",
+      "de": "Eine sehr mutige Person, die anderen in Gefahr hilft."
+    },
+    {
+      "id": 5,
+      "ja": "飛行機や船で働く人々のグループ。",
+      "ko": "비행기나 배에서 일하는 사람들의 그룹.",
+      "zh-Hans": "在飞机或船上工作的一群人。",
+      "es": "El grupo de personas que trabajan en un avión o un barco.",
+      "pt-BR": "O grupo de pessoas que trabalha em um avião ou navio.",
+      "fr": "Le groupe de personnes qui travaillent sur un avion ou un navire.",
+      "de": "Die Gruppe von Personen, die auf einem Flugzeug oder Schiff arbeiten."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-01T12:32:01.406389+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

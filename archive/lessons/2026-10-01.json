@@ -1,0 +1,793 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-01",
+  "release_iso": "2026-10-01T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Thu, 01 Oct 2026 11:26:46 GMT",
+    "retrieved_at": "2026-10-01T12:27:02.480602+00:00",
+    "title": "Too early to say if Iran involved in Dubai-Tel Aviv flight attack, Israeli PM says",
+    "summary": "A pilot who stabbed another pilot on an Israel-bound plane is being investigated in Saudi Arabia, Benjamin Netanyahu says.",
+    "evidence_text": "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.\nThe Flydubai plane plunged more than 17,000ft (5,200m) two hours into its journey on Wednesday, before passengers and crew overpowered the attacker and retook control to land safely.\nThe stabbed pilot, Indian national Captain Smit Machchhar, is in hospital in a stable condition, and has been hailed a \"true hero\" by Prime Minister Benjamin Netanyahu.\nThe alleged attacker, who was arrested in Saudi Arabia, is expected to be transferred to the United Arab Emirates (UAE), where the plane took off from, Netanyahu told Fox News.\nAirline Flydubai confirmed two on-duty crew travelling on the flight landed the plane.\nPreliminary findings from a separate Israeli investigation, suggest that the alleged attacker intended to crash the plane, an Israeli security source told BBC Arabic.\n\"Despite being stabbed and seriously injured, he fought back, resisted, opened the cockpit door, and enabled passengers and crew to overpower the attacker - preventing a catastrophic mid-air disaster,\" Netanyahu wrote on X.\nOne passenger, Yaniv Hayun, described how he put the attacker, who was trying to disable the plane, in a chokehold before other passengers helped pin him down.\nTwo hours later, the 17,000ft drop in altitude was reported on the plane tracking website Flightradar24 and minutes later the plane signalled an emergency code - squawk 7700 - before switching it to a squawk 7500 code reporting a hijacking.\nAll of the airline's flights to and from Israel will be suspended during the investigation, a spokesperson said in a statement.\nAsked whether there was any indication as of now of Iran's involvement, he replied: \"It's too early to say\". He added that the pilot was \"now being investigated in Saudi Arabia\".\nEyewitness accounts and a statement by Netanyahu confirmed one of the pilots had stabbed the other and, according to the Israeli prime minister, \"apparently tried to crash\" the aircraft.\nOne passenger, Hayun, described how he and others on the flight had restrained the attacker.\nHe added that he \"pulled the controls\" of the plane and after it levelled out, another pilot took over control.\nFlydubai said \"an altercation occurred in the flight deck\" and the flight was \"successfully secured by on-duty Flydubai crew travelling on the flight, who diverted and landed the aircraft safely at Tabuk airport\".",
+    "evidence_retrieved_at": "2026-10-01T12:27:02.480602+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cqgmrm7xd8wyo?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think the passengers and crew called Captain Machchhar a hero?",
+          "Imagine you are on a plane and see a problem. What would you do? I would try to stay calm because..."
+        ],
+        "title": "Pilot Stabbed on Flight, Passengers Help Land Plane",
+        "overview": "A pilot stabbed another pilot on a plane, but passengers and crew helped to stop the attacker and land the plane safely.",
+        "topic": "Airline Security and Heroism",
+        "vocabulary": [
+          {
+            "term": "involved",
+            "part_of_speech": "adjective",
+            "definition": "connected to something or taking part in an event."
+          },
+          {
+            "term": "stabbed",
+            "part_of_speech": "verb",
+            "definition": "hurt someone with a sharp object like a knife."
+          },
+          {
+            "term": "attacker",
+            "part_of_speech": "noun",
+            "definition": "a person who tries to hurt another person."
+          },
+          {
+            "term": "stable",
+            "part_of_speech": "adjective",
+            "definition": "not changing, in a good and steady condition, especially for health."
+          },
+          {
+            "term": "hero",
+            "part_of_speech": "noun",
+            "definition": "a very brave person who helps others in danger."
+          },
+          {
+            "term": "crew",
+            "part_of_speech": "noun",
+            "definition": "the group of people who work on a plane or ship."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that started and finished in the past. It tells us something happened at a specific time before now.",
+          "example_quote": "A pilot stabbed another pilot on a plane from Dubai to Tel Aviv."
+        },
+        "quiz": [
+          {
+            "question": "What was the main event on the flight from Dubai to Tel Aviv?",
+            "options": [
+              "A pilot stabbed another pilot.",
+              "The plane landed in Iran.",
+              "The flight was canceled."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the news is about one pilot stabbing another on a flight.",
+              "This is incorrect; the plane landed in Saudi Arabia, not Iran.",
+              "This is not correct; the flight was not canceled but landed safely."
+            ]
+          },
+          {
+            "question": "Who helped to stop the attacker on the plane?",
+            "options": [
+              "Only the stabbed pilot.",
+              "Passengers and crew.",
+              "The Prime Minister."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the pilot was stabbed; passengers and crew stopped the attacker.",
+              "Yes, the news states that passengers and crew worked together to stop the attacker.",
+              "The Prime Minister was not on the plane; he spoke about the event later."
+            ]
+          },
+          {
+            "question": "What does \"stabbed\" mean in this story?",
+            "options": [
+              "To hit someone with a hand.",
+              "To hurt someone with a sharp knife.",
+              "To push someone lightly."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, to hit with a hand is not the meaning of \"stabbed.\"",
+              "Yes, \"stabbed\" means to wound someone with a sharp object like a knife.",
+              "No, \"stabbed\" means to hurt severely with a sharp object, not lightly push."
+            ]
+          },
+          {
+            "question": "What does it mean that Captain Machchhar is in \"stable\" condition?",
+            "options": [
+              "He can go home now.",
+              "His health is not changing and is good now.",
+              "He is sitting very still."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The news says he is in hospital; \"stable\" means his condition is steady, not that he can go home.",
+              "Yes, \"stable\" means his medical condition is steady and not getting worse.",
+              "His physical position does not explain his medical \"stable\" condition."
+            ]
+          },
+          {
+            "question": "Choose the correct past tense verb: The plane ____ 17,000 feet quickly.",
+            "options": [
+              "lose",
+              "lost",
+              "losing"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"lose\" is the base form; we need the past tense for a finished action.",
+              "Yes, \"lost\" is the simple past tense of \"to lose,\" used for actions that finished in the past.",
+              "\"losing\" is for continuous actions; we need a past tense for a finished action."
+            ]
+          },
+          {
+            "question": "Where was the attacker arrested after the plane landed?",
+            "options": [
+              "In Dubai.",
+              "In Saudi Arabia.",
+              "In Tel Aviv."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the plane took off from Dubai, but the attacker was arrested elsewhere.",
+              "Yes, the attacker was arrested in Saudi Arabia after the plane made an emergency landing.",
+              "No, Tel Aviv was the destination, but the attacker was arrested in Saudi Arabia."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Israel's Prime Minister said it is too early to know if Iran was involved in the flight attack.",
+          "A pilot stabbed another pilot on a plane from Dubai to Tel Aviv.",
+          "The plane lost 17,000 feet quickly, but passengers and crew stopped the attacker and landed safely.",
+          "The pilot who was stabbed is Captain Smit Machchhar, and he is now stable in hospital.",
+          "Prime Minister Benjamin Netanyahu called Captain Machchhar a \"true hero.\"",
+          "The attacker was arrested in Saudi Arabia and will go to the UAE.",
+          "Flydubai said two crew members who were traveling landed the plane safely.",
+          "The attacker tried to crash the plane."
+        ],
+        "sentence_evidence": [
+          "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.",
+          "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.",
+          "The Flydubai plane plunged more than 17,000ft (5,200m) two hours into its journey on Wednesday, before passengers and crew overpowered the attacker and retook control to land safely.",
+          "The stabbed pilot, Indian national Captain Smit Machchhar, is in hospital in a stable condition, and has been hailed a \"true hero\" by Prime Minister Benjamin Netanyahu.",
+          "The stabbed pilot, Indian national Captain Smit Machchhar, is in hospital in a stable condition, and has been hailed a \"true hero\" by Prime Minister Benjamin Netanyahu.",
+          "The alleged attacker, who was arrested in Saudi Arabia, is expected to be transferred to the United Arab Emirates (UAE), where the plane took off from, Netanyahu told Fox News.",
+          "Airline Flydubai confirmed two on-duty crew travelling on the flight landed the plane.",
+          "Preliminary findings from a separate Israeli investigation, suggest that the alleged attacker intended to crash the plane, an Israeli security source told BBC Arabic."
+        ],
+        "editorial_check": {
+          "date": "2026-10-01T12:27:45.674878+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary items are common, concrete words directly used in the reading and have clear, simple definitions appropriate for A1-A2 learners. No reserved vocabulary was used. Examples: \"involved\", \"stabbed\", \"attacker\", \"stable\", \"hero\", \"crew\"."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English suitable for adults, with direct verbs and explicit subjects. It avoids bureaucratic phrasing, compressed headline language, or idioms. Examples: \"A pilot stabbed another pilot\", \"The attacker was arrested\", \"passengers and crew helped to stop\"."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Instructions, options, and feedback are accessible. Reading sentences are concise. The grammar explanation is clear, and a simple sentence frame is included in the discussion prompt. Examples: \"hurt someone with a sharp object like a knife\", \"Yes, \\\"lost\\\" is the simple past tense of \\\"to lose\\\"\", \"I would try to stay calm because...\"."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson tests main ideas, clearly stated details, basic contextual meaning of vocabulary, and a useful grammar pattern (Simple Past Tense). Quiz options are short and plausible, avoiding complex reasoning or outside knowledge."
+            }
+          },
+          "content_digest": "be9162eb5662cb8a3a3a807b69b51d2e44514022a84985c9d249a9a7cf47d532"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "How do you think the passengers and cabin staff managed to remain calm and work together during such a frightening incident?",
+          "If you were planning a trip, what steps would you take to feel more secure about air travel after hearing news like this?"
+        ],
+        "title": "Pilot Attempts Hijacking on Dubai-Tel Aviv Flight",
+        "overview": "An investigation is underway after a pilot attempted to hijack a flight from Dubai to Tel Aviv, leading to a dramatic mid-air incident.",
+        "topic": "Airline incident and investigation",
+        "vocabulary": [
+          {
+            "term": "incident",
+            "part_of_speech": "noun",
+            "definition": "an event or occurrence, often one that is unpleasant or unusual"
+          },
+          {
+            "term": "attempted",
+            "part_of_speech": "verb (past participle)",
+            "definition": "tried to do something, especially something difficult or that was not completed"
+          },
+          {
+            "term": "hijack",
+            "part_of_speech": "verb",
+            "definition": "to illegally take control of a vehicle, especially an aircraft, using force or threats"
+          },
+          {
+            "term": "suddenly",
+            "part_of_speech": "adverb",
+            "definition": "quickly and unexpectedly"
+          },
+          {
+            "term": "overpower",
+            "part_of_speech": "verb",
+            "definition": "to defeat someone or something by using greater strength or power"
+          },
+          {
+            "term": "catastrophic",
+            "part_of_speech": "adjective",
+            "definition": "causing a lot of damage, destruction, or suffering"
+          },
+          {
+            "term": "recovering",
+            "part_of_speech": "verb",
+            "definition": "getting better after an illness, injury, or shock"
+          },
+          {
+            "term": "originated",
+            "part_of_speech": "verb",
+            "definition": "started or came from a particular place or source"
+          },
+          {
+            "term": "investigation",
+            "part_of_speech": "noun",
+            "definition": "an official examination of the facts about a situation or crime to find out the truth"
+          },
+          {
+            "term": "suspended",
+            "part_of_speech": "verb (past participle)",
+            "definition": "temporarily stopped or made inactive"
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the action of the verb is more important than who or what performed the action, or when the doer is unknown or obvious. The structure is 'be' + past participle. For example, 'The person accused of the attack was arrested,' where the focus is on the arrest, not on who did the arresting.",
+          "example_quote": "The person accused of the attack was arrested in Saudi Arabia and is expected to be moved to the UAE, where the flight originated."
+        },
+        "quiz": [
+          {
+            "question": "What was the initial claim made by Israel's Prime Minister regarding the incident?",
+            "options": [
+              "Iran was definitely connected to the hijacking attempt.",
+              "It was too early to determine if Iran was connected to the incident.",
+              "The pilot acted alone without any external connections."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Prime Minister stated it was not yet clear, not that Iran was definitely connected.",
+              "Correct. The Prime Minister explicitly said it was not yet clear if Iran was connected.",
+              "The Prime Minister only said it was too early to tell about Iran's connection, not that the pilot acted alone."
+            ]
+          },
+          {
+            "question": "Where was the individual accused of the attack initially taken into custody?",
+            "options": [
+              "In the United Arab Emirates (UAE).",
+              "In Saudi Arabia.",
+              "In Tel Aviv, Israel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The individual is expected to be moved to the UAE, but was arrested elsewhere.",
+              "Correct. The person accused of the attack was arrested in Saudi Arabia.",
+              "Passengers arrived in Tel Aviv, but the accused individual was arrested in Saudi Arabia."
+            ]
+          },
+          {
+            "question": "What happened to the Flydubai plane's altitude during the journey?",
+            "options": [
+              "It maintained a steady altitude throughout the flight.",
+              "It ascended rapidly before descending.",
+              "It suddenly dropped over 5,200 meters."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading states that the plane suddenly dropped significantly, not that it maintained a steady altitude.",
+              "The text mentions a sudden drop, not an ascent before descending.",
+              "Correct. The plane suddenly dropped over 5,200 meters two hours into its trip."
+            ]
+          },
+          {
+            "question": "Who or what helped to prevent a catastrophic mid-air disaster?",
+            "options": [
+              "Only the injured pilot.",
+              "The combined efforts of passengers and cabin staff.",
+              "Air traffic control from the ground."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the injured pilot fought back, the reading states passengers and cabin staff also helped to overpower the individual.",
+              "Correct. Passengers and cabin staff worked together to overpower the individual and prevent a disaster.",
+              "The text does not mention air traffic control directly preventing the disaster, but rather the actions on board the plane."
+            ]
+          },
+          {
+            "question": "What does it mean for flights to be 'suspended' during an investigation?",
+            "options": [
+              "They will operate as usual but with extra security checks.",
+              "They are permanently cancelled and will not resume.",
+              "They are temporarily stopped while the investigation is ongoing."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "If flights are suspended, they are not operating as usual.",
+              "The word 'suspended' implies a temporary halt, not a permanent cancellation.",
+              "Correct. 'Suspended' means they are temporarily stopped for the duration of the investigation."
+            ]
+          },
+          {
+            "question": "What did preliminary Israeli investigation findings suggest about the individual's intention?",
+            "options": [
+              "The individual intended to divert the plane to another country.",
+              "The individual intended to crash the aircraft.",
+              "The individual intended to take the pilot hostage."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The early findings suggested a more severe intention than just diverting the plane.",
+              "Correct. Early findings suggested the individual intended to crash the aircraft.",
+              "The text highlights the intention to crash, not to take the pilot hostage, though that might have been a step towards it."
+            ]
+          },
+          {
+            "question": "Which sentence uses the passive voice, similar to how the grammar explanation describes it?",
+            "options": [
+              "Passengers and cabin staff managed to overpower the individual.",
+              "The Flydubai plane suddenly dropped over 5,200 meters.",
+              "All of the airline's flights to and from Israel will be suspended."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence uses the active voice, with 'passengers and cabin staff' as the subject performing the action.",
+              "This sentence is in the active voice; the plane is the subject doing the action.",
+              "Correct. 'Will be suspended' is an example of the passive voice, focusing on the action being done to the flights."
+            ]
+          },
+          {
+            "question": "What is the current condition of the injured pilot, Captain Smit Machchhar?",
+            "options": [
+              "He has been discharged and is back at work.",
+              "He is recovering in hospital.",
+              "His condition is critical."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states he is recovering in hospital, not back at work.",
+              "Correct. Captain Smit Machchhar is recovering in hospital.",
+              "The text indicates he is recovering, which suggests his condition is no longer critical."
+            ]
+          },
+          {
+            "question": "What does the word 'catastrophic' imply about the potential outcome if the incident hadn't been stopped?",
+            "options": [
+              "It would have caused minor delays.",
+              "It would have resulted in serious injury but not death.",
+              "It would have led to an extremely severe disaster."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Catastrophic implies a far more serious outcome than minor delays.",
+              "Catastrophic suggests a disaster involving more than just serious injury.",
+              "Correct. 'Catastrophic' means causing immense damage, loss, or suffering, indicating an extremely severe disaster."
+            ]
+          },
+          {
+            "question": "Why did the Prime Minister initially state it was 'not yet clear if Iran was connected' to the incident?",
+            "options": [
+              "He was trying to prevent panic among the public.",
+              "Investigations were still in their early stages and no definitive links were found.",
+              "He had secret intelligence that pointed away from Iran."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While calming the public might be a side effect, the primary reason given was the early stage of the investigation.",
+              "Correct. The Prime Minister's comment reflected that the investigation had just begun and specific connections were not yet established.",
+              "The text explicitly states it was 'too early to say' if Iran was connected, not that there was intelligence against it."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Israel's Prime Minister stated it is not yet clear if Iran was connected to an incident where a pilot attempted to hijack a flight from Dubai to Tel Aviv.",
+          "The Flydubai plane suddenly dropped over 5,200 meters two hours into its trip on Wednesday.",
+          "Passengers and cabin staff then managed to overpower the individual causing the disturbance, preventing a catastrophic mid-air disaster.",
+          "The injured pilot, Captain Smit Machchhar, is recovering in hospital.",
+          "A passenger, Yaniv Hayun, explained how he stopped the individual trying to disable the plane, with help from others.",
+          "The person accused of the attack was arrested in Saudi Arabia and is expected to be moved to the UAE, where the flight originated.",
+          "Early findings from an Israeli investigation suggest the individual intended to crash the aircraft.",
+          "Two hours into the journey, the aircraft dropped significantly and then signaled an emergency, followed by a hijacking code.",
+          "Flydubai confirmed that two on-duty cabin staff travelling on the flight landed the plane safely.",
+          "All of the airline's flights to and from Israel will be suspended during the ongoing investigation."
+        ],
+        "sentence_evidence": [
+          "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.",
+          "The Flydubai plane plunged more than 17,000ft (5,200m) two hours into its journey on Wednesday, before passengers and crew overpowered the attacker and retook control to land safely.",
+          "\"Despite being stabbed and seriously injured, he fought back, resisted, opened the cockpit door, and enabled passengers and crew to overpower the attacker - preventing a catastrophic mid-air disaster,\" Netanyahu wrote on X.",
+          "The stabbed pilot, Indian national Captain Smit Machchhar, is in hospital in a stable condition, and has been hailed a \"true hero\" by Prime Minister Benjamin Netanyahu.",
+          "One passenger, Yaniv Hayun, described how he put the attacker, who was trying to disable the plane, in a chokehold before other passengers helped pin him down.",
+          "The alleged attacker, who was arrested in Saudi Arabia, is expected to be transferred to the United Arab Emirates (UAE), where the plane took off from, Netanyahu told Fox News.",
+          "Preliminary findings from a separate Israeli investigation, suggest that the alleged attacker intended to crash the plane, an Israeli security source told BBC Arabic.",
+          "Two hours later, the 17,000ft drop in altitude was reported on the plane tracking website Flightradar24 and minutes later the plane signalled an emergency code - squawk 7700 - before switching it to a squawk 7500 code reporting a hijacking.",
+          "Airline Flydubai confirmed two on-duty crew travelling on the flight landed the plane.",
+          "All of the airline's flights to and from Israel will be suspended during the investigation, a spokesperson said in a statement."
+        ],
+        "editorial_check": {
+          "date": "2026-10-01T12:28:30.710895+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The selected vocabulary items such as \"incident\", \"hijack\", \"overpower\", and \"catastrophic\" are appropriate for B1-B2 learners, offering useful general news and moderately abstract terms with clear contextual definitions. None of the reserved vocabulary items were used as targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The language maintains a consistent natural, neutral news English register across all learner-facing sections, appropriate for reporting on an airline incident."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses varied and manageable sentence structures, clear grammar explanations, and precise vocabulary definitions, making the content accessible and effective for B1-B2 learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively combines reading comprehension with contextual vocabulary and grammar application, providing suitable challenge for B1-B2 learners, including supported inference in quiz questions and discussion prompts."
+            }
+          },
+          "content_digest": "9cf42c191d3e15be705519e5e73f847ddead0cb09a0265fd0abc61e1c46ddc28"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Prime Minister Benjamin Netanyahu praised Captain Smit Machchhar, the injured pilot, as a \"true hero\" following the incident on the Flydubai flight.",
+          "Considering the sudden and severe nature of the mid-air emergency, what do you believe are the most crucial qualities for passengers and crew to exhibit in such a crisis?"
+        ],
+        "title": "Pilot Hailed a Hero After Foiling Mid-Air Attack on Dubai-Tel Aviv Flight",
+        "overview": "Israel's Prime Minister reported that authorities are investigating a pilot who attacked another pilot on a flight from Dubai to Tel Aviv, while acknowledging it is too early to determine if Iran was involved.",
+        "topic": "International Relations, Aviation Security, Heroism",
+        "vocabulary": [
+          {
+            "term": "involvement",
+            "part_of_speech": "noun",
+            "definition": "The act or state of being connected or implicated in an event, activity, or situation."
+          },
+          {
+            "term": "plunged",
+            "part_of_speech": "verb",
+            "definition": "Fell or dropped sharply and rapidly from a great height or into a difficult situation."
+          },
+          {
+            "term": "chokehold",
+            "part_of_speech": "noun",
+            "definition": "A wrestling or self-defense hold that applies pressure to a person's neck, restricting their breathing or blood flow."
+          },
+          {
+            "term": "pin him down",
+            "part_of_speech": "phrasal verb",
+            "definition": "To hold someone firmly against a surface, preventing them from moving or escaping."
+          },
+          {
+            "term": "alleged",
+            "part_of_speech": "adjective",
+            "definition": "Stated as a fact but without definite proof; often implying that a suspected wrongdoing has taken place."
+          },
+          {
+            "term": "indication",
+            "part_of_speech": "noun",
+            "definition": "A sign or piece of information that suggests something is true or exists, but is not conclusive evidence."
+          },
+          {
+            "term": "preliminary",
+            "part_of_speech": "adjective",
+            "definition": "Denoting an action or event preceding or done in preparation for something fuller, more important, or conclusive."
+          },
+          {
+            "term": "intended",
+            "part_of_speech": "verb",
+            "definition": "Had a particular purpose, aim, or plan in mind; meant to do something."
+          },
+          {
+            "term": "aircraft",
+            "part_of_speech": "noun",
+            "definition": "Any machine capable of flight, such as an airplane, helicopter, or glider."
+          },
+          {
+            "term": "restrained",
+            "part_of_speech": "verb",
+            "definition": "Held back or kept under control by physical force, preventing someone from moving or acting freely."
+          },
+          {
+            "term": "levelled out",
+            "part_of_speech": "phrasal verb",
+            "definition": "Reached a stable or horizontal position after ascending or descending, or became steady after a period of change."
+          },
+          {
+            "term": "altercation",
+            "part_of_speech": "noun",
+            "definition": "A noisy argument or dispute, often public or minor in scale."
+          },
+          {
+            "term": "flight deck",
+            "part_of_speech": "noun",
+            "definition": "The cockpit of an aircraft, where the pilots operate the controls."
+          },
+          {
+            "term": "diverted",
+            "part_of_speech": "verb",
+            "definition": "Caused a journey, course, or attention to turn aside from an intended route or destination."
+          },
+          {
+            "term": "secured",
+            "part_of_speech": "verb",
+            "definition": "Successfully gained control of something, making it safe, stable, or protected from danger."
+          }
+        ],
+        "grammar": {
+          "concept": "Impersonal \"It\" for General Statements",
+          "explanation": "The impersonal pronoun \"It\" is frequently used at the beginning of a sentence to introduce general statements, observations, or assessments without a specific subject. This construction, common with expressions of time, weather, or evaluation, allows for a more formal, objective, or delayed introduction of the main clause, making the statement sound less personal and more broadly applicable. It helps to foreground the statement itself rather than who is making it.",
+          "example_quote": "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said."
+        },
+        "quiz": [
+          {
+            "question": "What primary aspect of the Dubai-Tel Aviv flight attack did the Israeli Prime Minister state was too early to determine?",
+            "options": [
+              "The identity of the alleged attacker.",
+              "The overall cost of the damage incurred.",
+              "Iran's potential involvement in the incident."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While important, Netanyahu's specific comment referred to Iran's potential involvement, not the attacker's identity.",
+              "The article does not mention the cost of damage, and this was not the focus of Netanyahu's 'too early to say' remark.",
+              "Netanyahu explicitly stated it was \"too early to say\" if Iran had any involvement in the attack, as mentioned in the reading."
+            ]
+          },
+          {
+            "question": "According to the reading, what was the approximate altitude loss experienced by the Flydubai plane during the attack?",
+            "options": [
+              "About 5,200 meters (17,000 feet).",
+              "Less than 1,000 meters (3,280 feet).",
+              "Over 10,000 meters (32,800 feet)."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The reading explicitly states the plane \"plunged more than 17,000ft (5,200m)\" two hours into its journey.",
+              "This option significantly underestimates the reported altitude loss.",
+              "This option significantly overestimates the reported altitude loss, which was stated as over 17,000ft or 5,200m."
+            ]
+          },
+          {
+            "question": "The term \"alleged\" in \"The alleged attacker\" (sentence 3) most strongly implies which of the following?",
+            "options": [
+              "The person has been officially convicted of the crime.",
+              "The person's guilt is stated but not yet proven.",
+              "The person's identity is currently unknown to authorities."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Alleged\" means a claim has been made, but conviction requires a legal process and proof, which is not stated.",
+              "\"Alleged\" indicates that an accusation has been made, but proof of guilt is still pending or not yet established.",
+              "The article mentions the attacker was arrested and is expected to be transferred, suggesting their identity is known, but the charges are still allegations."
+            ]
+          },
+          {
+            "question": "What action did Yaniv Hayun take to subdue the attacker on the plane?",
+            "options": [
+              "He opened the cockpit door and called for help.",
+              "He put the attacker in a chokehold.",
+              "He activated an emergency signal."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the stabbed pilot opened the door, Hayun's specific action was putting the attacker in a chokehold.",
+              "The reading states that Yaniv Hayun \"put the attacker... in a chokehold before other passengers helped pin him down.\"",
+              "The plane signalled an emergency code, but Hayun's action was physical restraint, not activating a signal."
+            ]
+          },
+          {
+            "question": "In the sentence \"It is too early to say if Iran had any involvement...\", what grammatical function does the impersonal \"It\" serve?",
+            "options": [
+              "It refers directly to the Prime Minister, Benjamin Netanyahu.",
+              "It emphasizes a specific object or piece of information.",
+              "It introduces a general statement without a definite subject."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The impersonal \"It\" does not refer to a person; it functions as a grammatical placeholder for a general statement.",
+              "While the statement provides information, the impersonal \"It\" is not used to emphasize a specific object but to generalize the situation.",
+              "The impersonal \"It\" is used here to make a general statement about the timing of a conclusion, rather than attributing the statement to a specific, tangible subject."
+            ]
+          },
+          {
+            "question": "What crucial action by Captain Smit Machchhar enabled passengers and crew to regain control of the aircraft?",
+            "options": [
+              "He managed to land the plane safely despite his injuries.",
+              "He fought back and opened the cockpit door.",
+              "He contacted external intelligence agencies."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the plane landed safely, it was by \"on-duty Flydubai crew travelling on the flight,\" not solely by Captain Machchhar, whose key action was opening the door.",
+              "The reading states that despite being stabbed, he \"fought back, resisted, opened the cockpit door, and enabled passengers and crew to overpower the attacker.\"",
+              "The article does not state that Captain Machchhar contacted external intelligence agencies during the crisis."
+            ]
+          },
+          {
+            "question": "Where was the alleged attacker arrested, and to which country is he expected to be transferred?",
+            "options": [
+              "Arrested in the UAE, transferred to Israel.",
+              "Arrested in Saudi Arabia, transferred to the UAE.",
+              "Arrested in Israel, transferred to Saudi Arabia."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article indicates he was arrested in Saudi Arabia, and his expected transfer is to the UAE, not Israel.",
+              "The reading specifies that the alleged attacker \"was arrested in Saudi Arabia, [and] is expected to be transferred to the United Arab Emirates (UAE).\"",
+              "The attacker was arrested in Saudi Arabia, not Israel, and transferred to the UAE, not Saudi Arabia."
+            ]
+          },
+          {
+            "question": "What is the primary concern being investigated by the UAE's chief prosecutor regarding the incident?",
+            "options": [
+              "The airline's compliance with safety regulations.",
+              "The technical malfunction of the aircraft's controls.",
+              "Any potential link to 'terrorist' activity."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While airline compliance is always a factor in investigations, the specific detail mentioned for the UAE prosecutor was a link to terrorism.",
+              "The article does not specify an investigation into technical malfunctions by the UAE's chief prosecutor.",
+              "The UAE's chief prosecutor specifically stated that an investigation had been launched to determine \"if there was any link to 'terrorist' activity.\""
+            ]
+          },
+          {
+            "question": "What does it mean if an aircraft has \"levelled out\" (sentence 8) after an emergency descent?",
+            "options": [
+              "It has resumed climbing rapidly.",
+              "It has reached a steady, horizontal flight path.",
+              "It has initiated another rapid descent."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Levelled out\" means to stop ascending or descending and fly horizontally, not to climb rapidly.",
+              "To \"level out\" means the aircraft has stopped its vertical movement and is now flying on a consistent horizontal plane.",
+              "This is the opposite of \"levelled out,\" which indicates a stabilization of altitude."
+            ]
+          },
+          {
+            "question": "According to Israeli security sources, what was the alleged attacker's suspected intention regarding the plane?",
+            "options": [
+              "To divert it to a different country for negotiations.",
+              "To simply create an altercation on the flight deck.",
+              "To crash the aircraft."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The preliminary findings suggest a more dire intention than merely diverting the plane.",
+              "Creating an altercation was a means, not the ultimate suspected goal, which was more destructive.",
+              "Preliminary findings from an Israeli investigation suggest the alleged attacker \"intended to crash the plane.\""
+            ]
+          },
+          {
+            "question": "How did Flydubai confirm the plane was landed after the altercation?",
+            "options": [
+              "By stating that Captain Machchhar, despite his injuries, managed to land it alone.",
+              "By confirming that two on-duty crew members travelling on the flight landed it.",
+              "By crediting passengers for successfully landing the aircraft."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states that Captain Machchhar enabled others to act, but Flydubai's statement specifies two *other* on-duty crew.",
+              "Flydubai confirmed that the flight was \"successfully secured by on-duty Flydubai crew travelling on the flight, who diverted and landed the aircraft safely.\"",
+              "While passengers helped subdue the attacker, the airline statement credits on-duty crew for landing the plane, not passengers."
+            ]
+          },
+          {
+            "question": "What does the term \"altercation\" in \"an altercation occurred in the flight deck\" (sentence 9) refer to?",
+            "options": [
+              "A technical malfunction.",
+              "A sudden, noisy argument or dispute.",
+              "A routine flight procedure."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Altercation\" refers to a human disagreement or fight, not a technical problem.",
+              "An \"altercation\" is a noisy argument or disagreement, perfectly describing the conflict on the flight deck.",
+              "An altercation is far from a routine procedure; it indicates a serious disruptive event."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.",
+          "The Flydubai plane plunged more than 17,000ft (5,200m) two hours into its journey on Wednesday, before passengers and crew overpowered the attacker and retook control to land safely.",
+          "One passenger, Yaniv Hayun, described how he put the attacker, who was trying to disable the plane, in a chokehold before other passengers helped pin him down.",
+          "The alleged attacker, who was arrested in Saudi Arabia, is expected to be transferred to the United Arab Emirates (UAE), where the plane took off from, Netanyahu told Fox News.",
+          "Asked whether there was any indication as of now of Iran's involvement, he replied: \"It's too early to say\".",
+          "Preliminary findings from a separate Israeli investigation, suggest that the alleged attacker intended to crash the plane, an Israeli security source told BBC Arabic.",
+          "Eyewitness accounts and a statement by Netanyahu confirmed one of the pilots had stabbed the other and, according to the Israeli prime minister, \"apparently tried to crash\" the aircraft.",
+          "One passenger, Hayun, described how he and others on the flight had restrained the attacker.",
+          "He added that he \"pulled the controls\" of the plane and after it levelled out, another pilot took over control.",
+          "Flydubai said \"an altercation occurred in the flight deck\" and the flight was \"successfully secured by on-duty Flydubai crew travelling on the flight, who diverted and landed the aircraft safely at Tabuk airport\".",
+          "All of the airline's flights to and from Israel will be suspended during the investigation, a spokesperson said in a statement."
+        ],
+        "sentence_evidence": [
+          "It is too early to say if Iran had any involvement in an attack by a pilot who stabbed another pilot and tried to take over a flight from Dubai to Tel Aviv, Israel's prime minister has said.",
+          "The Flydubai plane plunged more than 17,000ft (5,200m) two hours into its journey on Wednesday, before passengers and crew overpowered the attacker and retook control to land safely.",
+          "One passenger, Yaniv Hayun, described how he put the attacker, who was trying to disable the plane, in a chokehold before other passengers helped pin him down.",
+          "The alleged attacker, who was arrested in Saudi Arabia, is expected to be transferred to the United Arab Emirates (UAE), where the plane took off from, Netanyahu told Fox News.",
+          "Asked whether there was any indication as of now of Iran's involvement, he replied: \"It's too early to say\". He added that the pilot was \"now being investigated in Saudi Arabia\".",
+          "Preliminary findings from a separate Israeli investigation, suggest that the alleged attacker intended to crash the plane, an Israeli security source told BBC Arabic.",
+          "Eyewitness accounts and a statement by Netanyahu confirmed one of the pilots had stabbed the other and, according to the Israeli prime minister, \"apparently tried to crash\" the aircraft.",
+          "One passenger, Hayun, described how he and others on the flight had restrained the attacker.",
+          "He added that he \"pulled the controls\" of the plane and after it levelled out, another pilot took over control.",
+          "Flydubai said \"an altercation occurred in the flight deck\" and the flight was \"successfully secured by on-duty Flydubai crew travelling on the flight, who diverted and landed the aircraft safely at Tabuk airport\".",
+          "All of the airline's flights to and from Israel will be suspended during the investigation, a spokesperson said in a statement."
+        ],
+        "editorial_check": {
+          "date": "2026-10-01T12:30:30.171181+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items selected are precise and transferable terms, including useful phrasal verbs like 'pin him down' and 'levelled out', and words crucial for news context such as 'alleged' and 'preliminary'. Definitions are clear and appropriate for C1-Higher, and no reserved vocabulary from other levels has been borrowed, ensuring distinct learning value."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently maintains a polished, neutral reporting register suitable for C1-Higher, especially in the news brief, overview, and explanations. Attributions are clear and certainty is calibrated appropriately, reflecting advanced English usage without being overly academic or informal."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The explanations for grammar and vocabulary are concise, illuminating, and use controlled complex sentences appropriate for C1-Higher learners. Feedback for quiz questions is detailed, clearly explaining subtle differences and reasons for correctness or incorrectness, rather than just exchanging difficult words."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference and understanding of nuanced language through vocabulary items like 'alleged' and 'indication', and the grammar point on impersonal 'It'. Quiz questions require critical reading and contextual understanding, offering substantive learning beyond simple recall, with plausible distractors and clear explanations."
+            }
+          },
+          "content_digest": "bf3547a0c453db42a82e90bce2d5492124777c8a8514ce4c019486a3827159d0"
+        }
+      }
+    }
+  }
+}

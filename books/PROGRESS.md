@@ -259,9 +259,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   recipients, service boundaries, return references, and unfinished route records.
   Output: `output/pdf/truck-delivery-drivers-english-book.pdf`.
 
+- Warehouse and Distribution English: 102 pages with the same counts and explained keys,
+  covering inbound overages, item-code conflicts, each-versus-case quantities, replenishment,
+  label matching, manifest gaps, return reviews, and verified inventory-count handoffs.
+  Output: `output/pdf/warehouse-distribution-english-book.pdf`.
+
 ## Remaining
 
-12 books remain. The next course in the canonical inventory is `warehouse-distribution`.
+11 books remain. The next course in the canonical inventory is `landscaping-grounds`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

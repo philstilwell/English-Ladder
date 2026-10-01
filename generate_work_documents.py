@@ -180,7 +180,7 @@ def course_map(t):
         story += [p(f'{m["number"]:02d}  {m["title"]}', 'term'), p(m['workshop']['goal'], 'small')]
     story += [p('Choose your pace', 'h2'), p('Quick practice: spend 15 minutes reading one conversation and rehearsing one scenario. Full lesson: allow 45-60 minutes for language work, three conversations, two speaking scenarios, and feedback.'),
               p('Level support', 'h2'), p('B1 learners can use the frames and a partner. B2 learners can try a response before reading the model. C1 learners can add the harder follow-up and reduce preparation time. These are teaching suggestions, not certified CEFR level ratings.'),
-              pdf_link(t, 'roleplay', 'module-1', 'After practicing: open the AI prompt workshop, or use the prompts at the end of this guide.'), PageBreak()]
+              pdf_link(t, 'roleplay', 'module-1', 'After practicing: open the AI prompt workshop to choose a vocabulary, grammar, role-play, or new-dialogue activity.'), PageBreak()]
     return story
 
 
@@ -209,7 +209,6 @@ def assessment_page(track=None):
 
 
 def teacher(t):
-    from work_ai_prompts import pdf_link
     story = cover(t, "Teacher's guide", 'Teach practical workplace communication with specific cases, clear language targets, and a repeatable feedback process.')
     story += course_map(t)
     story += [heading('A 60-minute lesson that works', 'teaching-plan'), p('Prepare the case and the learner pages. Keep the model response hidden until learners have attempted their own. Choose two field terms that are important to understanding the case.')]
@@ -238,7 +237,7 @@ def teacher(t):
         story += [p('05 · Conversations', 'h2'), *[p(f'{i}. {d["title"]} - {d["setting"]}', 'small') for i, d in enumerate(activities['conversations'], 1)],
                   p('Use the complete ten-turn scripts in the learner workbook and conversation lab. Read with roles, identify the decision or open question, then replay without reading.', 'small')]
         story += additional_speaking_scenario(activities['additional_scenario'], '06 · Say it: second scenario')
-        story += [pdf_link(t, 'teacher', m['id'], 'AI extension: adapt this lesson for your learners and available time.'), PageBreak()]
+        story += [PageBreak()]
     story += assessment_page(t) + [PageBreak()] + reference_page(t)
     return story
 
@@ -380,7 +379,7 @@ KINDS = ["Teacher's guide", 'Learner workbook', 'Conversation lab', 'Phrasebook'
 
 
 def build_track(track, kinds=None):
-    from work_ai_prompts import pdf_appendix, prompt_hash, EDITION as AI_EDITION
+    from work_ai_prompts import pdf_appendix, prompt_hash, PRINT_MODES, EDITION as AI_EDITION
     result = {}
     for index, (_label, href) in enumerate(track['pdfs']):
         if kinds and index not in kinds:
@@ -402,7 +401,7 @@ def build_track(track, kinds=None):
             os.replace(temp, path)
             result[href] = dict(course=track['slug'], kind=KINDS[index], pages=len(reader.pages),
                                 bytes=path.stat().st_size, sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
-                                content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=2, ai_prompt_edition=AI_EDITION)
+                                content_hash=content_hash(), ai_prompt_hash=prompt_hash(), ai_prompt_count=len(PRINT_MODES[index]), ai_prompt_edition=AI_EDITION)
             result[href]['illustration_asset'] = icon_asset(track['slug'])[0]
             result[href]['illustration_sha256'] = hashlib.sha256((ROOT / result[href]['illustration_asset']).read_bytes()).hexdigest()
             result[href]['activity_edition'] = ACTIVITY_EDITION

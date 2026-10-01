@@ -4,7 +4,7 @@ from work_ai_prompts import COMMON, LEVELS, MODE_BY_ID, payload
 from work_dialogues import load_dialogues
 from work_curriculum import ROOT
 
-LESSON_MODES = ('vocabulary', 'grammar', 'roleplay', 'writing')
+LESSON_MODES = ('vocabulary', 'grammar', 'roleplay')
 DIALOGUE_MODES = ('roleplay', 'dialogues')
 
 

@@ -9,6 +9,9 @@ from work_curriculum import ROOT, load_tracks
 from work_dialogues import load_dialogues
 from work_ai_prompts import MODES, PRINT_MODES, compose, payload, prompt_hash, url
 
+RETAINED_MODES = ['vocabulary', 'grammar', 'roleplay', 'dialogues']
+REMOVED_MODES = {'writing', 'register', 'review', 'teacher'}
+
 
 def normalized(value):
     # Match typographic punctuation used by the print edition without importing
@@ -57,12 +60,15 @@ class WorkAIPromptTests(unittest.TestCase):
                 expected = payload(t, self.dialogues[t['slug']])
                 self.assertEqual(published, expected)
                 self.assertEqual(section.select_one('[data-ai-prompt]').text, compose(expected))
-                self.assertEqual(len(section.select('[data-ai-mode] option')), 8)
+                self.assertEqual([option['value'] for option in section.select('[data-ai-mode] option')], RETAINED_MODES)
+                self.assertEqual([mode['id'] for mode in published['modes']], RETAINED_MODES)
+                for link in soup.select('a[href]'):
+                    self.assertFalse(REMOVED_MODES.intersection(parse_qs(urlparse(link['href']).query).get('ai', [])), link['href'])
                 self.assertEqual(len(section.select('[data-ai-context] option')), len(expected['contexts']))
                 self.assertTrue(soup.select_one('script[src^="work-ai.js"]'))
                 for m in t['modules']:
                     links = soup.select(f'#{m["id"]} [data-ai-preset]')
-                    self.assertEqual(len(links), 4)
+                    self.assertEqual(len(links), 3)
                     for link in links:
                         params = parse_qs(urlparse(link['href']).query)
                         self.assertEqual(params['context'], [m['id']])
@@ -75,14 +81,12 @@ class WorkAIPromptTests(unittest.TestCase):
         self.assertIn('12-18 substantial speaking turns', modes['dialogues'])
         self.assertIn('six distinct, common scenarios', modes['dialogues'])
         self.assertIn('two or three professionals', modes['dialogues'])
-        self.assertIn('Stop and wait', modes['writing'])
-        self.assertIn('Do not write the message for me first', modes['writing'])
         self.assertIn('context-dependent choices', modes['grammar'])
         for instructions in modes.values():
             self.assertIn('wait', instructions.lower())
             self.assertGreater(len(instructions.split()), 170)
 
-    def test_all_print_guides_contain_two_complete_prompt_endings_and_working_context_links(self):
+    def test_all_print_guides_contain_only_retained_prompts_and_working_context_links(self):
         manifest = json.loads((ROOT / 'content/work/documents.json').read_text())['documents']
         ai_hash = prompt_hash()
         for t in self.tracks:
@@ -90,29 +94,35 @@ class WorkAIPromptTests(unittest.TestCase):
                 with self.subTest(pdf=href):
                     meta = manifest[href]
                     self.assertEqual(meta['ai_prompt_hash'], ai_hash)
-                    self.assertEqual(meta['ai_prompt_count'], 2)
+                    expected_count = len(PRINT_MODES[kind])
+                    self.assertEqual(meta['ai_prompt_count'], expected_count)
                     reader = PdfReader(ROOT / href)
                     texts = [page.extract_text() or '' for page in reader.pages]
                     text = normalized('\n'.join(texts))
-                    self.assertIn('Extend your practice with AI', text)
+                    self.assertEqual('Extend your practice with AI' in text, bool(expected_count))
                     # Starts and ends ensure a long copyable prompt was not silently truncated.
-                    self.assertEqual(text.count('START PROMPT / COPY THROUGH END PROMPT'), 2)
+                    self.assertEqual(text.count('START PROMPT / COPY THROUGH END PROMPT'), expected_count)
                     lines = [line.strip() for page_text in texts for line in page_text.splitlines()]
-                    self.assertEqual(lines.count('END REFERENCE'), 2)
-                    self.assertEqual(lines.count('END PROMPT'), 2)
+                    self.assertEqual(lines.count('END REFERENCE'), expected_count)
+                    self.assertEqual(lines.count('END PROMPT'), expected_count)
                     for mode in PRINT_MODES[kind]:
                         instructions = next(m['instructions'] for m in payload(t, self.dialogues[t['slug']])['modes'] if m['id'] == mode)
                         self.assertIn(normalized(instructions.splitlines()[-1][-95:]), text)
                     urls = {str(a.get_object().get('/A', {}).get('/URI', '')) for page in reader.pages for a in page.get('/Annots', [])}
+                    for link in urls:
+                        self.assertFalse(REMOVED_MODES.intersection(parse_qs(urlparse(link).query).get('ai', [])), link)
+                    for title in ('Get feedback on a draft', 'Adjust tone and register', 'Test recall and transfer', 'Adapt a partner or class activity', 'Choose a clear message'):
+                        self.assertNotIn(title, text)
                     context = 'dialogue-1' if kind == 2 else 'module-1'
                     for mode in PRINT_MODES[kind]:
                         self.assertIn(url(t, mode, context, True), urls)
                     if kind == 2:
                         for i in range(1, len(self.dialogues[t['slug']]) + 1):
                             self.assertIn(url(t, 'roleplay', f'dialogue-{i}', True), urls)
-                    for m in t['modules']:
-                        mode = ['teacher', 'roleplay', 'roleplay', 'vocabulary'][kind]
-                        self.assertIn(url(t, mode, m['id'], True), urls)
+                    if kind != 0:
+                        for m in t['modules']:
+                            mode = {1: 'roleplay', 2: 'roleplay', 3: 'vocabulary'}[kind]
+                            self.assertIn(url(t, mode, m['id'], True), urls)
 
 
 if __name__ == '__main__':

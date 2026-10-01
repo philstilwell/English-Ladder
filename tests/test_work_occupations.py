@@ -103,8 +103,8 @@ class OccupationPublicationTests(unittest.TestCase):
                     self.assertIn(expression, text)
             data = json.loads(page.select_one('[data-ai-data]').string)
             modes = {mode['id']: mode for mode in data['modes']}
-            self.assertEqual(modes['writing']['title'], 'Choose a clear message')
-            for name in ('vocabulary', 'grammar', 'writing', 'register', 'review', 'teacher'):
+            self.assertEqual(set(modes), {'vocabulary', 'grammar', 'roleplay', 'dialogues'})
+            for name in ('vocabulary', 'grammar'):
                 self.assertIn('four', modes[name]['instructions'].lower())
             for unwanted in ('write a 70-110 word', 'ask me to write my own sentence', 'paste my own fictional or anonymized draft'):
                 self.assertNotIn(unwanted, page.get_text().lower())

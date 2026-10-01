@@ -13,7 +13,7 @@ class ReadyPromptTests(unittest.TestCase):
             soup = BeautifulSoup((ROOT / f'efsp-{track["slug"]}.html').read_text(), 'html.parser')
             for module in track['modules']:
                 prompts = soup.select(f'#{module["id"]} .finished-prompt pre')
-                self.assertEqual(4, len(prompts))
+                self.assertEqual(3, len(prompts))
                 for prompt in prompts:
                     text = prompt.get_text()
                     self.assertTrue(text.startswith('TASK:'))
@@ -33,15 +33,17 @@ class ReadyPromptTests(unittest.TestCase):
                         self.assertIn(f'{role}: {speech}', text)
                     self.assertIn(track['scope_note'], text)
                     count += 1
-        self.assertEqual(3248, count)
+        self.assertEqual(2720, count)
 
-    def test_downloads_contain_all_eight_tasks_for_each_lesson_and_both_dialogue_tasks(self):
+    def test_downloads_contain_only_four_tasks_for_each_lesson_and_both_dialogue_tasks(self):
         total = 0
         scripts = load_dialogues()
         for track in load_tracks():
             text = (ROOT / 'prompts/work' / (track['slug'] + '.txt')).read_text()
+            for title in ('Get feedback on a draft', 'Adjust tone and register', 'Test recall and transfer', 'Adapt a partner or class activity', 'Choose a clear message'):
+                self.assertNotIn(' | ' + title, text)
             blocks = text.split('\nSTART PROMPT\n')[1:]
-            self.assertEqual(64 + 2 * len(scripts[track['slug']]), len(blocks))
+            self.assertEqual(32 + 2 * len(scripts[track['slug']]), len(blocks))
             self.assertEqual(len(blocks), text.splitlines().count('END PROMPT'))
             for block in blocks:
                 self.assertTrue(block.startswith('TASK:'))
@@ -49,7 +51,7 @@ class ReadyPromptTests(unittest.TestCase):
                 self.assertIn(track['title'], block)
                 self.assertIn(track['scope_note'], block)
                 total += 1
-        self.assertEqual(5360, total)
+        self.assertEqual(3248, total)
 
 
 if __name__ == '__main__':

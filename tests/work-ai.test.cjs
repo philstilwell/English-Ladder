@@ -29,9 +29,10 @@ test('all courses preserve the static prompt and expose every complete dialogue'
     assert.equal(area.value, area.textContent, file);
     assert.equal(d.querySelector('[data-ai-controls]').hidden, false);
     const data = JSON.parse(d.querySelector('[data-ai-data]').textContent);
+    assert.deepEqual(data.modes.map(mode => mode.id), ['vocabulary', 'grammar', 'roleplay', 'dialogues']);
     for (const [i, context] of data.contexts.entries()) {
       choose(w, '[data-ai-context]', context.id);
-      choose(w, '[data-ai-mode]', data.modes[i % 8].id);
+      choose(w, '[data-ai-mode]', data.modes[i % data.modes.length].id);
       assert.ok(prompt(d).includes(context.text), `${file}: ${context.id}`);
       assert.ok(prompt(d).includes(data.course));
       assert.equal(d.querySelector('[data-ai-print]').textContent, prompt(d));
@@ -54,6 +55,18 @@ test('deep links restore goal, dialogue and support; malformed options safely fa
   dom.window.close();
 });
 
+test('retired activity links fall back to a retained prompt while preserving lesson and support', () => {
+  for (const mode of ['writing', 'register', 'review', 'teacher']) {
+    const dom = setup(`?ai=${mode}&context=module-5&level=B1#ai-practice`), d = dom.window.document;
+    assert.equal(d.querySelector('[data-ai-mode]').value, 'roleplay');
+    assert.equal(d.querySelector('[data-ai-context]').value, 'module-5');
+    assert.equal(d.querySelector('[data-ai-level]').value, 'B1');
+    assert.match(prompt(d), /TASK: Interactive workplace role-play/);
+    assert.equal(new URL(d.querySelector('[data-ai-link]').href).searchParams.get('ai'), 'roleplay');
+    dom.window.close();
+  }
+});
+
 test('copy and downloadable text contain the selected prompt and never learner drafts', async () => {
   let copied = '';
   const dom = setup('', w => Object.defineProperty(w.navigator, 'clipboard', {value: {writeText: async text => { copied = text; }}}));
@@ -61,7 +74,7 @@ test('copy and downloadable text contain the selected prompt and never learner d
   const legacyNote = d.createElement('textarea');
   legacyNote.dataset.workNote = 'module-1'; legacyNote.value = 'PRIVATE LEARNER DRAFT MUST STAY HERE';
   d.body.append(legacyNote);
-  choose(w, '[data-ai-mode]', 'writing');
+  choose(w, '[data-ai-mode]', 'grammar');
   choose(w, '[data-ai-context]', 'module-5');
   choose(w, '[data-ai-level]', 'B1');
   d.querySelector('[data-ai-copy]').click(); await tick();
@@ -71,7 +84,7 @@ test('copy and downloadable text contain the selected prompt and never learner d
   assert.match(copied, /Stop and wait/);
   const download = d.querySelector('[data-ai-download]');
   assert.equal(decodeURIComponent(download.href.split(',').slice(1).join(',')), copied);
-  assert.match(download.download, /module-5-writing-B1-prompt\.txt$/);
+  assert.match(download.download, /module-5-grammar-B1-prompt\.txt$/);
   assert.match(d.querySelector('[data-ai-status]').textContent, /Prompt copied/);
   const link = new URL(d.querySelector('[data-ai-link]').href);
   assert.equal(link.searchParams.get('context'), 'module-5');
@@ -99,15 +112,15 @@ test('denied or unavailable clipboard selects the prompt and gives a usable alte
 });
 
 test('lesson links select their exact case; browser Back restores the previous selection', () => {
-  const dom = setup('?ai=review&context=dialogue-2&level=C1#ai-practice'), w = dom.window, d = w.document;
+  const dom = setup('?ai=dialogues&context=dialogue-2&level=C1#ai-practice'), w = dom.window, d = w.document;
   d.querySelector('#module-6 [data-ai-preset]').click();
   assert.equal(d.querySelector('[data-ai-mode]').value, 'vocabulary');
   assert.equal(d.querySelector('[data-ai-context]').value, 'module-6');
   assert.match(w.location.href, /context=module-6/);
   assert.equal(d.activeElement, d.querySelector('[data-ai-mode]'));
-  w.history.replaceState(null, '', '?ai=review&context=dialogue-2&level=C1#ai-practice');
+  w.history.replaceState(null, '', '?ai=dialogues&context=dialogue-2&level=C1#ai-practice');
   w.dispatchEvent(new w.PopStateEvent('popstate'));
-  assert.equal(d.querySelector('[data-ai-mode]').value, 'review');
+  assert.equal(d.querySelector('[data-ai-mode]').value, 'dialogues');
   assert.equal(d.querySelector('[data-ai-context]').value, 'dialogue-2');
   dom.window.close();
 });
@@ -134,6 +147,6 @@ test('all tasks and support settings produce distinct prompts without requesting
       outputs.add(prompt(d));
     }
   }
-  assert.equal(outputs.size, 24);
+  assert.equal(outputs.size, 12);
   dom.window.close();
 });

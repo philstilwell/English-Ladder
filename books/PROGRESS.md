@@ -124,9 +124,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   ground handling, access control, incident evidence, and audit readiness.
   Output: `output/pdf/aviation-english-book.pdf`.
 
+- Construction and Architecture English: 102 pages with the same counts and explained keys,
+  covering client briefs, document discrepancies, change proposals, schedule dependencies,
+  task briefings, inspection status, closeout handovers, and factual claim records.
+  Output: `output/pdf/construction-architecture-english-book.pdf`.
+
 ## Remaining
 
-39 books remain. The next course in the canonical inventory is `construction-architecture`.
+38 books remain. The next course in the canonical inventory is `energy-utilities`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

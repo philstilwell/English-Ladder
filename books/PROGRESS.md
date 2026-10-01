@@ -264,9 +264,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   label matching, manifest gaps, return reviews, and verified inventory-count handoffs.
   Output: `output/pdf/warehouse-distribution-english-book.pdf`.
 
+- Landscaping and Grounds English: 102 pages with the same counts and explained keys,
+  covering booked scope, property limits, plant requests, weather pauses, standing water,
+  material discrepancies, missed cleanup, and unfinished grounds-work handovers.
+  Output: `output/pdf/landscaping-grounds-english-book.pdf`.
+
 ## Remaining
 
-11 books remain. The next course in the canonical inventory is `landscaping-grounds`.
+10 books remain. The next course in the canonical inventory is `carpentry-remodeling`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

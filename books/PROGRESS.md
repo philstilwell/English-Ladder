@@ -79,9 +79,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   executive reporting, acceptance evidence, and measurable delivery improvements.
   Output: `output/pdf/project-management-english-book.pdf`.
 
+- Engineering English: 102 pages with the same counts and explained keys,
+  covering measurable requirements, tolerance evidence, failure investigations,
+  prototype claims, cost trade-offs, compliance scope, field updates, and interfaces.
+  Output: `output/pdf/engineering-english-book.pdf`.
+
 ## Remaining
 
-48 books remain. The next course in the canonical inventory is `engineering`.
+47 books remain. The next course in the canonical inventory is `semiconductor`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -209,9 +209,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   pharmacist consultations, private collection, recall queries, and corrected messages.
   Output: `output/pdf/pharmacy-technicians-english-book.pdf`.
 
+- Medical Assisting English: 102 pages with the same counts and explained keys,
+  covering check-in, factual patient reports, medication histories, specimen timestamps,
+  referral stages, instruction questions, clinical-call routing, and booking corrections.
+  Output: `output/pdf/medical-assistants-english-book.pdf`.
+
 ## Remaining
 
-22 books remain. The next course in the canonical inventory is `medical-assistants`.
+21 books remain. The next course in the canonical inventory is `childcare-early-education`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

@@ -74,9 +74,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   pay calculations, adjustment requests, task disputes, and restructuring messages.
   Output: `output/pdf/human-resources-english-book.pdf`.
 
+- Project Management English: 102 pages with the same counts and explained keys,
+  covering scope, dependencies, risk and issues, governance, change decisions,
+  executive reporting, acceptance evidence, and measurable delivery improvements.
+  Output: `output/pdf/project-management-english-book.pdf`.
+
 ## Remaining
 
-49 books remain. The next course in the canonical inventory is `project-management`.
+48 books remain. The next course in the canonical inventory is `engineering`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

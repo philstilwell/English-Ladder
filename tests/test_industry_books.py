@@ -1,14 +1,17 @@
 """Quality checks for the complete, authored learner books currently on disk."""
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import MagicMock
 
 import pdfplumber
 from pypdf import PdfReader
 
 import build_leadership_book as design
-from build_industry_books import load_book, validate_book
+from build_industry_books import illustration, load_book, validate_book
 from books.cross_cultural_leadership_content import COPYRIGHT, REPRODUCTION_NOTICE
 from work_curriculum import load_tracks
+from work_icons import icon_bottom_trim, icon_right_trim
 
 ROOT = Path(__file__).resolve().parents[1]
 TRACKS = {t['slug']: t for t in load_tracks()[1:]}
@@ -17,6 +20,23 @@ COMPLETE = sorted(p.name.removesuffix('-english-book.pdf') for p in (ROOT / 'out
 
 
 class IndustryBookTests(unittest.TestCase):
+    def test_cover_uses_existing_illustration_crop_rules(self):
+        for slug in ('ai-development', 'hospitality-tourism', 'medical-laboratory-technicians'):
+            with self.subTest(slug=slug):
+                canvas = MagicMock()
+                illustration(SimpleNamespace(slug=slug, c=canvas))
+                right = icon_right_trim(slug) * 160 / 104
+                bottom = icon_bottom_trim(slug) * 160 / 104
+                if right or bottom:
+                    canvas.beginPath.return_value.rect.assert_called_once_with(
+                        design.RIGHT - 163, 352 + bottom, 160 - right, 160 - bottom)
+                    canvas.clipPath.assert_called_once()
+                else:
+                    canvas.clipPath.assert_not_called()
+                canvas.drawImage.assert_called_once()
+                canvas.saveState.assert_called_once()
+                canvas.restoreState.assert_called_once()
+
     def test_complete_sources_and_rendered_content(self):
         self.assertTrue(COMPLETE)
         for slug in COMPLETE:

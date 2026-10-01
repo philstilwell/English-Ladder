@@ -114,9 +114,14 @@ Leadership book. Work is sequential; the user declined parallel assistants.
   authorship, peer review, reproducible data, and conference challenges.
   Output: `output/pdf/higher-education-research-english-book.pdf`.
 
+- Hospitality and Tourism English: 102 pages with the same counts and explained keys,
+  covering guest arrivals, public complaints, room alternatives, revenue metrics,
+  room-release handovers, event coordination, disrupted tours, and individual preferences.
+  Output: `output/pdf/hospitality-tourism-english-book.pdf`.
+
 ## Remaining
 
-41 books remain. The next course in the canonical inventory is `hospitality-tourism`.
+40 books remain. The next course in the canonical inventory is `aviation`.
 Use `work_curriculum.load_tracks()` for the complete course list and module
 order. No other course should be represented as converted or complete.
 

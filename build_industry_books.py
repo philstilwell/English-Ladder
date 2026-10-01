@@ -20,7 +20,7 @@ from reportlab.lib.utils import ImageReader
 import build_leadership_book as design
 from books.cross_cultural_leadership_content import AUTHOR, COPYRIGHT, REPRODUCTION_NOTICE, EDITION
 from work_curriculum import load_tracks
-from work_icons import icon_asset
+from work_icons import icon_asset, icon_bottom_trim, icon_right_trim
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'output/pdf'
@@ -60,7 +60,15 @@ def illustration(b):
         cw, ch = atlas.width / cols, atlas.height / rows
         left, top = index % cols * cw, index // cols * ch
         cell = atlas.crop((round(left), round(top), round(left + cw), round(top + ch)))
+        right_trim = icon_right_trim(b.slug) * 160 / 104
+        bottom_trim = icon_bottom_trim(b.slug) * 160 / 104
+        b.c.saveState()
+        if right_trim or bottom_trim:
+            clip = b.c.beginPath()
+            clip.rect(design.RIGHT - 163, 352 + bottom_trim, 160 - right_trim, 160 - bottom_trim)
+            b.c.clipPath(clip, stroke=0, fill=0)
         b.c.drawImage(ImageReader(cell), design.RIGHT - 163, 352, 160, 160, mask='auto')
+        b.c.restoreState()
 
 
 def front(b, book):

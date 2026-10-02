@@ -1,0 +1,745 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-02",
+  "release_iso": "2026-10-02T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 02 Oct 2026 09:08:06 GMT",
+    "retrieved_at": "2026-10-02T12:37:30.573659+00:00",
+    "title": "'I was not going to let others die' - pilot of Flydubai flight describes cockpit attack by co-pilot",
+    "summary": "Capt Smit Machchhar tells Indian Prime Minister Narendra Modi he opened the cockpit door to let others in during the attack.",
+    "evidence_text": "The Indian pilot of the Flydubai plane who was stabbed by his co-pilot and opened the cockpit door to let others in has said he was determined not to let others die.\n\"Others came in and also played a role [in controlling the situation]. I was of course fighting for my own life but at the same time I knew I was not going to let others die,\" he added.\nFlydubai's flight FZ1073, which was bound for Tel Aviv from Dubai early on Wednesday morning, plunged more than 17,000ft (5,200m) two and a half hours into its journey.\nAfter fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia at 06:58 local time.\nThe prime minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him.\nCapt Smit Machchhar said he was on the floor and still being attacked when he realised the plane carrying more than 170 passengers was sinking and he had to do something.\nIt first sent an emergency signal to air traffic controllers before switching to code squawk 7500, which indicates hijacking.\nIsraeli Prime Minister Benjamin Netanyahu later told the media that one pilot had stabbed the other before \"apparently trying to crash\" the plane.\nMachchhar, who has been hailed as a \"true hero\" by Netanyahu, was taken to hospital in Tabuk before being airlifted to Abu Dhabi, where he is reported to be in a stable condition.\n\"I am looking at it as a journey which is slowly going on and will take time but I am confident that the recovery will be there and I will become fit and healthy again.\"\n\"I was lying on the floor injured but I told myself to go for one last push to open the door from inside,\" he said in a video call with Indian Prime Minister Narendra Modi.\nNetanyahu told Fox News the attacker was an Omani national and said investigations suggested he had undergone \"Islamist radical indoctrination\" .\nHe said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\".\nThe United Arab Emirates has begun investigating \"whether the incident was linked to any terrorist activity or purpose\", according to the country's state news agency.\nIndian social media has been awash with praise for Machchhar since his identity emerged.\nThe Indian embassy in the UAE on Thursday said Machchhar was \"in good health and recovering well\". Ambassador Deepak Mittal said he was \"proud of Capt Smit for his bravery\" and \"very reassured\" to meet him.\n\"I am not looking at this wound like a wound because that would make my recovery even more difficult,\" Machchhar said.",
+    "evidence_retrieved_at": "2026-10-02T12:37:30.573659+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c639m98gde00o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Captain Machchhar did a very brave thing. What did he do after the co-pilot attacked him?",
+          "Imagine you see someone who needs help. What is one thing you can do? I think I can help by..."
+        ],
+        "title": "Pilot Saves Lives During Attack",
+        "overview": "A pilot was attacked on a plane but showed great courage and saved all the passengers.",
+        "topic": "Airline incident, bravery, quick thinking",
+        "vocabulary": [
+          {
+            "term": "pilot",
+            "part_of_speech": "noun",
+            "definition": "a person who flies an aircraft."
+          },
+          {
+            "term": "attacked",
+            "part_of_speech": "verb",
+            "definition": "tried to hurt someone with force."
+          },
+          {
+            "term": "cockpit",
+            "part_of_speech": "noun",
+            "definition": "the front part of a plane where the pilot sits and controls it."
+          },
+          {
+            "term": "others",
+            "part_of_speech": "pronoun",
+            "definition": "different people from the ones already mentioned."
+          },
+          {
+            "term": "fell",
+            "part_of_speech": "verb",
+            "definition": "moved quickly downwards."
+          },
+          {
+            "term": "safely",
+            "part_of_speech": "adverb",
+            "definition": "without danger or harm."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense: Regular Verbs",
+          "explanation": "We use the simple past tense to talk about actions that finished in the past. For regular verbs, we often add \"-ed\" to the base form. For example, \"attack\" becomes \"attacked\", and \"open\" becomes \"opened\".",
+          "example_quote": "His co-pilot attacked him in the cockpit during the flight."
+        },
+        "quiz": [
+          {
+            "question": "What happened to the pilot of the Flydubai plane?",
+            "options": [
+              "He landed the plane quickly.",
+              "His co-pilot attacked him.",
+              "He helped other pilots."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The pilot was attacked first, and reserve pilots landed the plane later.",
+              "Yes, the co-pilot attacked Captain Machchhar in the cockpit.",
+              "The pilot was attacked; other people helped him."
+            ]
+          },
+          {
+            "question": "What did Captain Machchhar do after he was attacked?",
+            "options": [
+              "He called his family.",
+              "He opened the cockpit door.",
+              "He landed the plane alone."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The story does not say he called his family.",
+              "Yes, he opened the door to let others in for help.",
+              "Reserve pilots landed the plane later, after the attacker was stopped."
+            ]
+          },
+          {
+            "question": "What is a \"cockpit\"?",
+            "options": [
+              "The place where passengers sit.",
+              "The place where the pilot flies the plane.",
+              "The back of the plane."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Passengers sit in the cabin, not the cockpit.",
+              "Yes, the cockpit is the front part of a plane where the pilot controls it.",
+              "The cockpit is at the front of the plane, not the back."
+            ]
+          },
+          {
+            "question": "How did the plane's height change during the attack?",
+            "options": [
+              "It flew higher.",
+              "It stayed at the same height.",
+              "It fell more than 17,000 feet."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The plane did not fly higher; it lost altitude.",
+              "The plane's height changed a lot during the incident.",
+              "Yes, the plane fell more than 17,000 feet."
+            ]
+          },
+          {
+            "question": "Who helped to stop the attacker?",
+            "options": [
+              "Only the pilot.",
+              "Other passengers.",
+              "Air traffic controllers."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The pilot was attacked, and others helped him. He was not alone.",
+              "Yes, other passengers helped to stop the attacker.",
+              "Air traffic controllers received signals but did not stop the attacker inside the plane."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past tense correctly for a regular verb?",
+            "options": [
+              "The pilot open the door.",
+              "The pilot opened the door.",
+              "The pilot opening the door."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Open\" is the base form, not the simple past tense.",
+              "Yes, \"opened\" is the correct simple past tense form of the regular verb \"open\".",
+              "\"Opening\" is a present participle, not the simple past tense."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Capt Smit Machchhar was the pilot of a Flydubai plane.",
+          "His co-pilot attacked him in the cockpit during the flight.",
+          "Captain Machchhar opened the door to let other people in.",
+          "He did not want others to die on the plane.",
+          "The plane fell more than 17,000 feet during the attack.",
+          "Other passengers helped to stop the attacker.",
+          "Two reserve pilots then landed the plane safely.",
+          "Many people now praise Captain Machchhar for his courage."
+        ],
+        "sentence_evidence": [
+          "The Indian pilot of the Flydubai plane who was stabbed by his co-pilot and opened the cockpit door to let others in has said he was determined not to let others die.",
+          "The Indian pilot of the Flydubai plane who was stabbed by his co-pilot and opened the cockpit door to let others in has said he was determined not to let others die.",
+          "\"Others came in and also played a role [in controlling the situation]. I was of course fighting for my own life but at the same time I knew I was not going to let others die,\" he added.",
+          "\"Others came in and also played a role [in controlling the situation]. I was of course fighting for my own life but at the same time I knew I was not going to let others die,\" he added.",
+          "Flydubai's flight FZ1073, which was bound for Tel Aviv from Dubai early on Wednesday morning, plunged more than 17,000ft (5,200m) two and a half hours into its journey.",
+          "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia at 06:58 local time.",
+          "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia at 06:58 local time.",
+          "The prime minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him."
+        ],
+        "editorial_check": {
+          "date": "2026-10-02T12:38:06.781931+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selected, such as \"pilot\", \"attacked\", \"cockpit\", and \"fell\", are common, concrete words useful for A1-A2 learners. Definitions are clear and contextually appropriate, using simple language. No reserved vocabulary is used, and the list provides suitable learning value for the target level."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults. Sentences employ direct verbs and explicit subjects, avoiding bureaucratic phrasing, compressed headlines, or idioms. The tone is respectful and appropriate for news reporting at this level."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading sentences, explanations, and quiz feedback use short clauses and familiar connectors, making the teaching language accessible. Grammar terms are briefly defined, and discussion prompts include a simple sentence frame and a hypothetical scenario as required."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively tests main ideas and clearly stated details from the reading, along with contextual vocabulary and the taught simple past tense grammar pattern. Quiz options are short and plausible, avoiding dense reasoning, trick wording, or dependence on external knowledge, providing appropriate challenge for A1-A2 learners."
+            }
+          },
+          "content_digest": "7057ddb162f307c1229ba8d091b13a8a90a8a0d5644be98f93e736cf3ac6003e"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What are some qualities or skills that Captain Machchhar showed during the incident, and how did these help save lives?",
+          "If you were a passenger on a flight and something went wrong, what do you think would be the most important thing for passengers to do?"
+        ],
+        "title": "Pilot's Heroism on Flydubai Flight During Co-pilot Attack",
+        "overview": "An Indian pilot was stabbed by his co-pilot during a Flydubai flight but bravely opened the cockpit door for help, saving over 170 passengers.",
+        "topic": "Aviation Incident and Heroism",
+        "vocabulary": [
+          {
+            "term": "determined",
+            "part_of_speech": "adjective",
+            "definition": "having made a firm decision and being resolved not to change it."
+          },
+          {
+            "term": "sinking",
+            "part_of_speech": "verb (present participle)",
+            "definition": "going down to a lower level, often quickly and unexpectedly."
+          },
+          {
+            "term": "plunged",
+            "part_of_speech": "verb (past tense)",
+            "definition": "dropped or fell very quickly and suddenly."
+          },
+          {
+            "term": "emergency signal",
+            "part_of_speech": "noun phrase",
+            "definition": "a sign or message sent to ask for help in a dangerous or critical situation."
+          },
+          {
+            "term": "indicating",
+            "part_of_speech": "verb (present participle)",
+            "definition": "showing or pointing out something; serving as a sign of something."
+          },
+          {
+            "term": "hijacking",
+            "part_of_speech": "noun",
+            "definition": "the illegal seizure of a vehicle, especially an aircraft, while it is traveling."
+          },
+          {
+            "term": "overpowered",
+            "part_of_speech": "verb (past tense)",
+            "definition": "gained control over someone or something by using greater strength or force."
+          },
+          {
+            "term": "hailed",
+            "part_of_speech": "verb (past tense)",
+            "definition": "publicly praised someone or something as being excellent or special."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice",
+          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the person or thing performing the action. It is often formed with a form of the verb 'to be' (e.g., is, was, has been) followed by the past participle of the main verb. For example, instead of 'The co-pilot stabbed Machchhar,' we can say 'Machchhar was stabbed by the co-pilot' to emphasize Machchhar.",
+          "example_quote": "Capt Smit Machchhar, an Indian pilot, was stabbed by his co-pilot during a Flydubai flight."
+        },
+        "quiz": [
+          {
+            "question": "What was Captain Machchhar determined to do despite being injured?",
+            "options": [
+              "To land the plane by himself.",
+              "Not to let other people die.",
+              "To fight his co-pilot alone."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While he acted heroically, the text states he opened the door for help, implying he wasn't trying to land it completely alone. His determination was focused on saving lives.",
+              "Correct! The article explicitly states that he was determined not to let others die, even while fighting for his own life.",
+              "The text focuses on his efforts to save others and get help, not to continue fighting the co-pilot in isolation after being injured."
+            ]
+          },
+          {
+            "question": "Which of the following describes the plane's movement during the incident?",
+            "options": [
+              "It slowly climbed higher.",
+              "It remained at a steady altitude.",
+              "It plunged over 17,000 feet."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading states the opposite; the plane experienced a significant drop in altitude.",
+              "The reading does not mention the plane remaining at a steady altitude during the crisis.",
+              "Correct! The text states, 'Flydubai's flight FZ1073, bound for Tel Aviv from Dubai, plunged over 17,000 feet during its journey.'"
+            ]
+          },
+          {
+            "question": "What did the plane's code squawk 7500 indicate?",
+            "options": [
+              "A medical emergency onboard.",
+              "A successful landing.",
+              "A hijacking situation."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The emergency signal was sent, but the squawk code specifically indicated something more severe than a medical emergency.",
+              "A successful landing occurred later, but the squawk code was sent during the incident itself.",
+              "Correct! The reading states that the plane 'switched to a code indicating hijacking'."
+            ]
+          },
+          {
+            "question": "How was Captain Machchhar described by Israeli Prime Minister Benjamin Netanyahu?",
+            "options": [
+              "As a brave survivor.",
+              "As a true hero.",
+              "As a careful pilot."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While he was a survivor, Netanyahu used stronger language to describe his actions.",
+              "Correct! The reading states, 'Machchhar, hailed as a \"true hero\" by Netanyahu...' indicating strong praise.",
+              "The description went beyond merely careful to acknowledge his extraordinary actions during a crisis."
+            ]
+          },
+          {
+            "question": "What does the word \"plunged\" mean in the context of the reading?",
+            "options": [
+              "To land smoothly.",
+              "To climb quickly.",
+              "To fall very quickly and suddenly."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The plane did not land smoothly; it experienced a rapid drop in altitude.",
+              "The word \"plunged\" indicates a rapid descent, not an ascent.",
+              "Correct! In this context, \"plunged\" means the plane dropped significantly and suddenly."
+            ]
+          },
+          {
+            "question": "The passengers helped to control the situation. What happened to the attacker after the passengers intervened?",
+            "options": [
+              "The attacker escaped.",
+              "The attacker was overpowered.",
+              "The attacker apologized."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The text states that passengers intervened, implying the attacker did not escape.",
+              "Correct! The reading states, 'After passengers overpowered the attacker...' showing they gained control of him.",
+              "The text does not mention the attacker apologizing; it describes the physical intervention by passengers."
+            ]
+          },
+          {
+            "question": "Which sentence uses the passive voice to describe an action on the flight?",
+            "options": [
+              "Captain Machchhar opened the door.",
+              "The plane plunged over 17,000 feet.",
+              "The attacker was overpowered by passengers."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "This sentence is in the active voice, focusing on Captain Machchhar as the one performing the action.",
+              "This sentence is in the active voice, focusing on the plane as the subject performing the action.",
+              "Correct! 'Was overpowered' is a form of 'to be' + a past participle, and it focuses on the attacker (the receiver of the action) rather than the passengers (the doers)."
+            ]
+          },
+          {
+            "question": "What was Captain Machchhar's general attitude towards his recovery?",
+            "options": [
+              "He felt hopeless and defeated.",
+              "He was confident and viewed it as a journey.",
+              "He blamed others for his injuries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading suggests the opposite, with Machchhar expressing a positive outlook.",
+              "Correct! He stated he views his wound 'as a journey' and is confident in his recovery.",
+              "The text does not indicate that he blamed anyone; his focus was on his own recovery."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Capt Smit Machchhar, an Indian pilot, was stabbed by his co-pilot during a Flydubai flight.",
+          "Despite his injuries, Machchhar was determined not to let others die and opened the cockpit door for help.",
+          "He realized the plane, carrying over 170 passengers, was sinking and knew he had to act.",
+          "Flydubai's flight FZ1073, bound for Tel Aviv from Dubai, plunged over 17,000 feet during its journey.",
+          "The plane sent an emergency signal to air traffic controllers, then switched to a code indicating hijacking.",
+          "Israeli Prime Minister Benjamin Netanyahu reported that one pilot stabbed the other, apparently trying to crash the plane.",
+          "After passengers overpowered the attacker, two reserve pilots onboard safely landed the plane in Saudi Arabia.",
+          "Machchhar, hailed as a \"true hero\" by Netanyahu, is now recovering in a stable condition in Abu Dhabi.",
+          "Machchhar said he views his wound \"as a journey which is slowly going on and will take time.\"",
+          "He is confident that his recovery will happen and he will become fit and healthy again."
+        ],
+        "sentence_evidence": [
+          "The Indian pilot of the Flydubai plane who was stabbed by his co-pilot and opened the cockpit door to let others in has said he was determined not to let others die.",
+          "\"Others came in and also played a role [in controlling the situation]. I was of course fighting for my own life but at the same time I knew I was not going to let others die,\" he added.",
+          "Capt Smit Machchhar said he was on the floor and still being attacked when he realised the plane carrying more than 170 passengers was sinking and he had to do something.",
+          "Flydubai's flight FZ1073, which was bound for Tel Aviv from Dubai early on Wednesday morning, plunged more than 17,000ft (5,200m) two and a half hours into its journey.",
+          "It first sent an emergency signal to air traffic controllers before switching to code squawk 7500, which indicates hijacking.",
+          "Israeli Prime Minister Benjamin Netanyahu later told the media that one pilot had stabbed the other before \"apparently trying to crash\" the plane.",
+          "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia at 06:58 local time.",
+          "Machchhar, who has been hailed as a \"true hero\" by Netanyahu, was taken to hospital in Tabuk before being airlifted to Abu Dhabi, where he is reported to be in a stable condition.",
+          "\"I am looking at it as a journey which is slowly going on and will take time but I am confident that the recovery will be there and I will become fit and healthy again.\"",
+          "\"I am looking at it as a journey which is slowly going on and will take time but I am confident that the recovery will be there and I will become fit and healthy again.\""
+        ],
+        "editorial_check": {
+          "date": "2026-10-02T12:40:18.403987+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items like 'determined', 'plunged', 'hijacking', and 'overpowered' are appropriate general news terms for the B1-B2 level, providing clear contextual definitions and avoiding reserved vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses natural, neutral news English appropriate for the B1-B2 level, maintaining a consistent voice across all learner-facing content."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses varied but manageable sentences, clear explanations for grammar and vocabulary, and questions and feedback are easy to understand, fitting the B1-B2 target."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively challenges B1-B2 learners by combining reading comprehension with contextual vocabulary and grammar application, offering sufficient development beyond beginner-level material."
+            }
+          },
+          "content_digest": "4a22a751645b101369138ce5c2a6cd42b61da49c9de905865c5893116e309ba9"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "What aspects of Captain Machchhar's actions and statements demonstrate extraordinary 'courage, patience, and quick decision-making' during the in-flight emergency?",
+          "If you were in a crisis and had to 'go for one last push' to overcome a challenge, what personal qualities would you rely on most, and why?"
+        ],
+        "title": "Pilot's Heroism on Flydubai Flight After Co-Pilot Attack",
+        "overview": "Captain Smit Machchhar of a Flydubai flight recounted his experience of being stabbed by his co-pilot and his courageous actions to save over 170 passengers by opening the cockpit door, leading to the attacker's eventual subdue and the plane's safe landing.",
+        "topic": "Air Travel Safety, Heroism, Terrorism Investigations",
+        "vocabulary": [
+          {
+            "term": "played a role",
+            "part_of_speech": "verb phrase",
+            "definition": "To have been involved in or contributed to a particular action or situation."
+          },
+          {
+            "term": "airlifted",
+            "part_of_speech": "verb",
+            "definition": "Transported by aircraft, typically a helicopter, especially from an inaccessible area or in an emergency."
+          },
+          {
+            "term": "stable condition",
+            "part_of_speech": "noun phrase",
+            "definition": "A medical status indicating that a patient's vital signs are normal and their condition is not deteriorating, although they may still be seriously ill."
+          },
+          {
+            "term": "undergone",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Experienced or subjected to something, typically something unpleasant, challenging, or transformative."
+          },
+          {
+            "term": "radical indoctrination",
+            "part_of_speech": "noun phrase",
+            "definition": "The process of teaching someone a set of beliefs or principles in a way that is intense, thorough, and often resistant to change, leading to extreme views."
+          },
+          {
+            "term": "subdued",
+            "part_of_speech": "verb (past participle)",
+            "definition": "Overpowered and brought under control, typically by force."
+          },
+          {
+            "term": "suicidal",
+            "part_of_speech": "adjective",
+            "definition": "Having or expressing the intention of taking one's own life."
+          },
+          {
+            "term": "awash with praise",
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Completely covered or overwhelmed with expressions of approval, admiration, or commendation."
+          },
+          {
+            "term": "decision-making",
+            "part_of_speech": "noun",
+            "definition": "The process of making choices, especially important ones, often in a complex situation."
+          },
+          {
+            "term": "recovering well",
+            "part_of_speech": "verb phrase",
+            "definition": "Making good progress in regaining health or strength after an illness or injury."
+          },
+          {
+            "term": "recovery",
+            "part_of_speech": "noun",
+            "definition": "The process of regaining health, strength, or a normal state after an injury or illness."
+          }
+        ],
+        "grammar": {
+          "concept": "Past Perfect Passive Voice",
+          "explanation": "The past perfect passive voice is used to describe an action that was completed before another past action, where the subject of the sentence is the receiver of the action. It is formed using 'had been' followed by the past participle of the main verb. This structure emphasizes the state or result of a past action that occurred before another point in the past.",
+          "example_quote": "He said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\"."
+        },
+        "quiz": [
+          {
+            "question": "What primary motivation did Captain Machchhar express for his actions during the attack?",
+            "options": [
+              "To ensure his own survival above all else.",
+              "To prevent further damage to the aircraft's controls.",
+              "To ensure the survival of others on board the plane."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While self-preservation is natural, the captain explicitly stated his determination not to let 'others die' as a key motivator for his 'last push'.",
+              "The captain's focus was on human lives, not primarily on the aircraft's mechanical integrity, although that was a consequence of his actions.",
+              "The captain explicitly stated, \"I was not going to let others die,\" indicating his primary motivation was to protect the passengers and crew."
+            ]
+          },
+          {
+            "question": "Which of the following best describes the initial response of the aircraft to the incident?",
+            "options": [
+              "It sent a standard distress signal before descending significantly.",
+              "It sent an emergency signal and then transmitted a code for hijacking.",
+              "It immediately switched to a hijacking code, causing an abrupt descent."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The plane did send an emergency signal and then descended, but the sequence and specific codes are important for accuracy.",
+              "The plane first sent an 'emergency signal' and *then* switched to code squawk 7500, which 'indicates hijacking', providing a clear sequence of events.",
+              "The plane first sent an emergency signal and only *then* switched to the hijacking code, and the descent was a separate event though related."
+            ]
+          },
+          {
+            "question": "In the context of the reading, what does the phrase \"played a role\" imply about the 'others' who came into the cockpit?",
+            "options": [
+              "They were solely responsible for controlling the situation.",
+              "They made minor contributions that were ultimately insignificant.",
+              "They actively contributed to resolving the crisis alongside the captain."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The captain stated that 'Others came in and also played a role', indicating shared responsibility, not sole control.",
+              "The phrase 'played a role' suggests a contribution of importance, not an insignificant one, in controlling a critical situation.",
+              "To 'play a role' means to contribute significantly to an outcome, indicating the others actively helped manage the situation."
+            ]
+          },
+          {
+            "question": "What information did Prime Minister Netanyahu share regarding the attacker?",
+            "options": [
+              "The attacker had a history of mental health issues and was known to be suicidal.",
+              "Investigations suggested the attacker was an Omani national who underwent Islamist radical indoctrination.",
+              "The attacker was confirmed to be part of an organized terrorist cell targeting specific flights."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Netanyahu mentioned the attacker was suicidal based on his calls after being subdued, but did not specify a history of mental health issues.",
+              "Netanyahu explicitly stated the attacker was an Omani national and that investigations pointed to 'Islamist radical indoctrination'.",
+              "While terrorism links are being investigated by the UAE, Netanyahu's statement focused on radical indoctrination, not a confirmed organized cell."
+            ]
+          },
+          {
+            "question": "The term \"radical indoctrination\" in the context of the news brief refers to:",
+            "options": [
+              "Intense training in flight simulation techniques.",
+              "Learning advanced aviation protocols and safety measures.",
+              "Thorough and extreme instruction in ideological beliefs."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The term \"radical indoctrination\" is used in conjunction with 'Islamist' beliefs, not technical flight training.",
+              "This definition refers to general aviation education, which is not what 'radical indoctrination' signifies in this context.",
+              "\"Radical indoctrination\" implies an intense process of teaching extreme ideological beliefs, as suggested by the 'Islamist' qualifier in the context of the article."
+            ]
+          },
+          {
+            "question": "What was the significance of the aircraft's switch to code squawk 7500?",
+            "options": [
+              "It indicated a sudden technical malfunction.",
+              "It communicated to air traffic controllers that the plane was being hijacked.",
+              "It signaled an urgent need for medical assistance on board."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While a malfunction is an emergency, code squawk 7500 has a specific meaning.",
+              "The text explicitly states that code squawk 7500 'indicates hijacking', making this the correct interpretation.",
+              "This code is specifically for hijacking, not for medical emergencies, which have a different code."
+            ]
+          },
+          {
+            "question": "Consider the sentence: \"He said that once the attacker had been subdued and tied up by passengers and crew, he was 'calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question'.\" What does the past perfect passive structure emphasize?",
+            "options": [
+              "The ongoing nature of the attacker's struggle during the event.",
+              "The state of the attacker after being brought under control, prior to his verbal outbursts.",
+              "The immediate reaction of the passengers and crew to the attacker's cries."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The past perfect passive describes an action completed before another past event, not an ongoing struggle.",
+              "The past perfect passive \"had been subdued and tied up\" highlights that these actions were completed *before* the attacker started calling out, establishing his state at that preceding point.",
+              "The past perfect passive describes an action completed before the attacker's cries, not the reaction *to* them."
+            ]
+          },
+          {
+            "question": "Captain Machchhar's statements about his wound and recovery suggest what about his outlook?",
+            "options": [
+              "He is resigned to a slow and difficult recovery.",
+              "He views his injury as a temporary setback that he will actively overcome.",
+              "He is worried that his injury will prevent him from flying again."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "He acknowledges the difficulty and time required for recovery but also expresses confidence in becoming 'fit and healthy again'.",
+              "Machchhar's statements, \"I am not looking at this wound like a wound... I am looking at it as a journey... I am confident that the recovery will be there,\" indicate an active and positive mindset toward overcoming his injury.",
+              "The captain's statements convey confidence in his full recovery, not worry about his future ability to fly."
+            ]
+          },
+          {
+            "question": "How did Indian social media respond to Captain Machchhar's actions?",
+            "options": [
+              "It expressed mixed reactions regarding the incident's handling.",
+              "It was \"awash with praise\" for his bravery.",
+              "It largely ignored the story, focusing on other news."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article explicitly states that Indian social media was 'awash with praise', not mixed reactions.",
+              "The text states, \"Indian social media has been awash with praise for Machchhar since his identity emerged,\" indicating widespread commendation.",
+              "The article clearly states the opposite, highlighting the significant positive attention he received."
+            ]
+          },
+          {
+            "question": "Who ultimately landed the plane safely after the attack?",
+            "options": [
+              "Captain Machchhar, despite his injuries.",
+              "The passengers who subdued the attacker.",
+              "Two reserve pilots who were onboard the flight."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "Captain Machchhar was injured and on the floor when the plane was landed.",
+              "Passengers helped to subdue the attacker, but the actual landing was performed by trained pilots.",
+              "The text specifies, \"After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane.\""
+            ]
+          },
+          {
+            "question": "What does it mean for the attacker to have been \"subdued\" by passengers and crew?",
+            "options": [
+              "He was convinced to surrender peacefully.",
+              "He was overpowered and brought under control by force.",
+              "He was calmed down and made to cooperate."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While he was brought under control, the context of an attack suggests force was used, not peaceful persuasion.",
+              "The text implies physical action (\"tied up\") was involved, meaning he was forcefully brought under control, which aligns with the definition of \"subdued\".",
+              "The attacker was calling out to 'kill me, kill me' after being subdued, indicating he was not calmed down or cooperating."
+            ]
+          },
+          {
+            "question": "The United Arab Emirates initiated an investigation into the incident to determine:",
+            "options": [
+              "The specific mechanical failure that led to the plane's descent.",
+              "If the incident was linked to any terrorist activity or purpose.",
+              "The captain's medical history prior to the flight."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The plane's descent was linked to the attack and hijacking signal, not stated as a mechanical failure under investigation.",
+              "The UAE's investigation is specifically focused on \"whether the incident was linked to any terrorist activity or purpose.\"",
+              "The investigation mentioned in the text concerns potential terrorist links, not the captain's personal medical history."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "The Indian pilot of the Flydubai plane, who was stabbed by his co-pilot and opened the cockpit door to let others in, has said he was determined not to let others die.",
+          "Capt Smit Machchhar said he was on the floor and still being attacked when he realised the plane carrying more than 170 passengers was sinking and he had to do something.",
+          "\"I was lying on the floor injured but I told myself to go for one last push to open the door from inside,\" he said in a video call with Indian Prime Minister Narendra Modi.",
+          "Others came in and also played a role in controlling the situation.",
+          "Flydubai's flight FZ1073, bound for Tel Aviv from Dubai, plunged more than 17,000ft (5,200m) two and a half hours into its journey.",
+          "It first sent an emergency signal to air traffic controllers before switching to code squawk 7500, which indicates hijacking.",
+          "Israeli Prime Minister Benjamin Netanyahu later told the media that one pilot had stabbed the other before \"apparently trying to crash\" the plane.",
+          "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia.",
+          "Machchhar, who has been hailed as a \"true hero\" by Netanyahu, was taken to hospital before being airlifted to Abu Dhabi, where he is reported to be in a stable condition.",
+          "Netanyahu told Fox News the attacker was an Omani national and said investigations suggested he had undergone \"Islamist radical indoctrination\".",
+          "He said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\".",
+          "The United Arab Emirates has begun investigating \"whether the incident was linked to any terrorist activity or purpose\", according to the country's state news agency.",
+          "Indian social media has been awash with praise for Machchhar since his identity emerged.",
+          "The Indian Prime Minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him.",
+          "The Indian embassy in the UAE said Machchhar was \"in good health and recovering well\".",
+          "\"I am not looking at this wound like a wound because that would make my recovery even more difficult,\" Machchhar said."
+        ],
+        "sentence_evidence": [
+          "The Indian pilot of the Flydubai plane who was stabbed by his co-pilot and opened the cockpit door to let others in has said he was determined not to let others die.",
+          "Capt Smit Machchhar said he was on the floor and still being attacked when he realised the plane carrying more than 170 passengers was sinking and he had to do something.",
+          "\"I was lying on the floor injured but I told myself to go for one last push to open the door from inside,\" he said in a video call with Indian Prime Minister Narendra Modi.",
+          "\"Others came in and also played a role [in controlling the situation]. I was of course fighting for my own life but at the same time I knew I was not going to let others die,\" he added.",
+          "Flydubai's flight FZ1073, which was bound for Tel Aviv from Dubai early on Wednesday morning, plunged more than 17,000ft (5,200m) two and a half hours into its journey.",
+          "It first sent an emergency signal to air traffic controllers before switching to code squawk 7500, which indicates hijacking.",
+          "Israeli Prime Minister Benjamin Netanyahu later told the media that one pilot had stabbed the other before \"apparently trying to crash\" the plane.",
+          "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia at 06:58 local time.",
+          "Machchhar, who has been hailed as a \"true hero\" by Netanyahu, was taken to hospital in Tabuk before being airlifted to Abu Dhabi, where he is reported to be in a stable condition.",
+          "Netanyahu told Fox News the attacker was an Omani national and said investigations suggested he had undergone \"Islamist radical indoctrination\" .",
+          "He said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\".",
+          "The United Arab Emirates has begun investigating \"whether the incident was linked to any terrorist activity or purpose\", according to the country's state news agency.",
+          "Indian social media has been awash with praise for Machchhar since his identity emerged.",
+          "The prime minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him.",
+          "The Indian embassy in the UAE on Thursday said Machchhar was \"in good health and recovering well\". Ambassador Deepak Mittal said he was \"proud of Capt Smit for his bravery\" and \"very reassured\" to meet him.",
+          "\"I am not looking at this wound like a wound because that would make my recovery even more difficult,\" Machchhar said."
+        ],
+        "editorial_check": {
+          "date": "2026-10-02T12:41:24.933793+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 1,
+          "repaired_sections": [],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selection includes precise terms, idiomatic phrases, and collocations such as \"radical indoctrination,\" \"awash with praise,\" and \"stable condition\" that are appropriate for C1-Higher learners. These terms offer meaningful advanced distinctions and contextual understanding, aligning with the target level's focus on abstract and specialized vocabulary."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson employs a polished and natural reporting register, accurately attributing information to sources like Prime Minister Netanyahu and the UAE state news agency. It maintains calibrated certainty (e.g., \"suggested he had undergone\") appropriate for news analysis, without sensationalism or overly academic language, fitting the C1-Higher target."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses controlled complex sentences in explanations and feedback, such as the detailed grammar explanation for the Past Perfect Passive Voice. Definitions are concise and illuminating, like that for \"radical indoctrination,\" and the quiz feedback clearly explains subtle differences and reasoning, providing substantive learning for C1-Higher learners."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson develops supported inference, as seen in questions about Captain Machchhar's primary motivation and outlook on recovery. It includes contextual vocabulary and grammar application, requiring learners to distinguish between plausible distractors and offering substantive learning beyond simple fact recall, which is appropriate for C1-Higher challenge."
+            }
+          },
+          "content_digest": "a085df856c1c9d808cc4a60fef23fed3e426e945770a2f245203b6372c6c3e05"
+        }
+      }
+    }
+  }
+}

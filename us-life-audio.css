@@ -98,18 +98,19 @@
 .life-dialogue-header ~ .life-dialogue-panel { margin-top: 0; }
 .module-block .life-vocabulary {
     flex: 1; align-content: space-between;
-    grid-template-columns: minmax(145px, .65fr) minmax(0, 1fr);
+    grid-template-columns: minmax(180px, .7fr) minmax(0, 1fr);
 }
 .life-vocabulary dt {
-    display: grid; grid-template-columns: 28px minmax(0, 1fr);
-    gap: 5px; align-items: start; min-width: 0;
+    display: grid; grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px; align-items: start; min-width: 0;
 }
 .life-vocabulary [data-vocabulary-term] { display: block; overflow-wrap: anywhere; }
 .life-vocabulary .life-listen {
     display: inline-flex; align-items: center; justify-content: center;
-    width: 28px; min-height: 28px; border-radius: 4px;
-    font-size: .8rem; line-height: 1; color: #193cc2; text-decoration: none;
+    width: 36px; min-height: 36px; border-radius: 4px;
+    line-height: 1; color: var(--accent); text-decoration: none;
 }
+.life-speaker-icon { display: block; flex: none; width: 32px; height: 32px; }
 .life-listen:hover { background: #e0e7ff; }
 .life-listen:focus-visible, .life-audio-player a:focus-visible {
     outline: 3px solid #193cc2; outline-offset: 3px; border-radius: 3px;
@@ -132,6 +133,6 @@
     .life-unit-status .life-unit-icon { margin-top: 0; }
 }
 @media (pointer: coarse) {
-    .life-vocabulary dt { grid-template-columns: 36px minmax(0, 1fr); }
-    .life-vocabulary .life-listen { width: 36px; min-height: 44px; }
+    .life-vocabulary dt { grid-template-columns: 44px minmax(0, 1fr); }
+    .life-vocabulary .life-listen { width: 44px; min-height: 44px; }
 }

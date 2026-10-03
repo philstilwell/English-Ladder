@@ -143,7 +143,16 @@ def enhance_page(soup):
                 'data-pronunciation-ui': '', 'type': 'audio/mpeg',
                 'aria-label': f'Listen to {word["term"]} in American English',
                 'title': f'Play pronunciation of {word["term"]}'})
-            icon = soup.new_tag('span', attrs={'aria-hidden': 'true'}); icon.string = '▶'
+            icon = soup.new_tag('svg', attrs={'class': 'life-speaker-icon',
+                'xmlns': 'http://www.w3.org/2000/svg', 'viewBox': '0 0 24 24',
+                'width': '32', 'height': '32', 'aria-hidden': 'true', 'focusable': 'false'})
+            icon.append(soup.new_tag('path', attrs={
+                'd': 'M11 4 6 8H3v8h3l5 4V4Z', 'fill': 'currentColor',
+                'stroke': 'currentColor', 'stroke-linejoin': 'round'}))
+            icon.append(soup.new_tag('path', attrs={
+                'd': 'M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14',
+                'fill': 'none', 'stroke': 'currentColor', 'stroke-width': '2',
+                'stroke-linecap': 'round'}))
             link.append(icon); dt.extend([link, label])
             dd = soup.new_tag('dd'); dd.string = word['definition']
             vocabulary.extend([dt, dd])
@@ -167,4 +176,4 @@ def enhance_page(soup):
         soup.head.append(soup.new_tag('script', src='us-life-audio.js?v=20260929-1', defer=True))
     if not soup.select_one('link[href^="us-life-audio.css"]'):
         soup.head.append(soup.new_tag('link', rel='stylesheet', href='us-life-audio.css'))
-    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20260930-blue-completion1'
+    soup.select_one('link[href^="us-life-audio.css"]')['href'] = 'us-life-audio.css?v=20261002-speaker-icons1'

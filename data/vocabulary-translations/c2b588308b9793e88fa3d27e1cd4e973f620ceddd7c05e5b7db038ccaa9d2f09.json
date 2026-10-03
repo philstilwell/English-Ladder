@@ -1,0 +1,124 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Social media can sometimes spoil big concert surprises for fans.",
+      "Many people see special moments from concerts online before they go.",
+      "They might already know the songs and how the stage looks.",
+      "Some fans try to avoid these spoilers to keep the excitement.",
+      "Aurélia Collins tries not to see videos about her favorite artists.",
+      "But other fans like to know everything before they attend a show.",
+      "Some artists change their shows a little each night for new surprises."
+    ],
+    "vocabulary": [
+      {
+        "term": "spoil",
+        "part_of_speech": "verb",
+        "definition": "to ruin something good, often by telling a secret or making it less fun"
+      },
+      {
+        "term": "concert",
+        "part_of_speech": "noun",
+        "definition": "a live music show, usually with one or more singers or bands"
+      },
+      {
+        "term": "online",
+        "part_of_speech": "adverb",
+        "definition": "on the internet, using a computer or phone to see information"
+      },
+      {
+        "term": "moments",
+        "part_of_speech": "noun",
+        "definition": "special, short times or parts of an event"
+      },
+      {
+        "term": "avoid",
+        "part_of_speech": "verb",
+        "definition": "to keep away from something or someone; to prevent something from happening"
+      },
+      {
+        "term": "surprises",
+        "part_of_speech": "noun",
+        "definition": "things that happen or are found unexpectedly, often making you feel amazed"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "良いものを台無しにする、特に秘密を話したり、面白くなくしたりして。",
+      "ko": "좋은 것을 망치다, 주로 비밀을 말하거나 재미를 덜하게 함으로써.",
+      "zh-Hans": "毁掉美好的事物，通常是通过泄露秘密或使其失去乐趣。",
+      "es": "arruinar algo bueno, a menudo al contar un secreto o al hacer que sea menos divertido.",
+      "pt-BR": "estragar algo bom, geralmente contando um segredo ou tornando a experiência menos divertida.",
+      "fr": "gâcher quelque chose de bien, souvent en révélant un secret ou en le rendant moins amusant.",
+      "de": "etwas Gutes ruinieren, oft indem man ein Geheimnis verrät oder es weniger spaßig macht."
+    },
+    {
+      "id": 1,
+      "ja": "一人または複数の歌手やバンドによる、生演奏の音楽ショー。",
+      "ko": "주로 한 명 이상의 가수나 밴드가 출연하는 라이브 음악 공연.",
+      "zh-Hans": "一场现场音乐表演，通常由一位或多位歌手或乐队演出。",
+      "es": "un espectáculo de música en vivo, normalmente con uno o más cantantes o bandas.",
+      "pt-BR": "um show de música ao vivo, geralmente com um ou mais cantores ou bandas.",
+      "fr": "un spectacle de musique en direct, généralement avec un ou plusieurs chanteurs ou groupes.",
+      "de": "eine Live-Musikshow, gewöhnlich mit einem oder mehreren Sängern oder Bands."
+    },
+    {
+      "id": 2,
+      "ja": "インターネット上で、コンピューターや電話を使って情報を見ること。",
+      "ko": "인터넷을 통해 컴퓨터나 휴대폰으로 정보를 보는 것.",
+      "zh-Hans": "在互联网上，使用电脑或手机查看信息。",
+      "es": "en internet, usando una computadora o teléfono para ver información.",
+      "pt-BR": "na internet, usando um computador ou telefone para ver informações.",
+      "fr": "sur internet, en utilisant un ordinateur ou un téléphone pour consulter des informations.",
+      "de": "im Internet, mithilfe eines Computers oder Telefons Informationen einsehen."
+    },
+    {
+      "id": 3,
+      "ja": "イベントの中の特別な、短い時間や部分。",
+      "ko": "이벤트의 특별하고 짧은 시간이나 부분.",
+      "zh-Hans": "事件中特殊的、短暂的时间或部分。",
+      "es": "momentos o partes especiales y breves de un evento.",
+      "pt-BR": "períodos ou partes curtas e especiais de um evento.",
+      "fr": "des moments ou des parties courtes et spéciales d'un événement.",
+      "de": "besondere, kurze Zeiten oder Teile eines Ereignisses."
+    },
+    {
+      "id": 4,
+      "ja": "何かや誰かに近づかないようにすること。何かが起こるのを防ぐこと。",
+      "ko": "어떤 것이나 사람으로부터 멀리 떨어져 있다. 어떤 일이 일어나는 것을 막다.",
+      "zh-Hans": "远离某事或某人；阻止某事发生。",
+      "es": "mantenerse alejado de algo o alguien; evitar que algo suceda.",
+      "pt-BR": "manter-se longe de algo ou alguém; impedir que algo aconteça.",
+      "fr": "rester à l'écart de quelque chose ou de quelqu'un ; empêcher quelque chose d'arriver.",
+      "de": "sich von etwas oder jemandem fernhalten; verhindern, dass etwas geschieht."
+    },
+    {
+      "id": 5,
+      "ja": "予期せず起こったり、見つかったりするもので、しばしば人を驚かせるもの。",
+      "ko": "예상치 못하게 일어나거나 발견되어, 종종 놀라움을 주는 것들.",
+      "zh-Hans": "意想不到发生或被发现的事情，常让人感到惊讶。",
+      "es": "cosas que ocurren o se encuentran inesperadamente, a menudo causando asombro.",
+      "pt-BR": "coisas que acontecem ou são descobertas inesperadamente, muitas vezes causando admiração.",
+      "fr": "des choses qui arrivent ou sont découvertes de manière inattendue, souvent en vous étonnant.",
+      "de": "Dinge, die unerwartet geschehen oder gefunden werden und oft Erstaunen hervorrufen."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-03T11:54:54.853558+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

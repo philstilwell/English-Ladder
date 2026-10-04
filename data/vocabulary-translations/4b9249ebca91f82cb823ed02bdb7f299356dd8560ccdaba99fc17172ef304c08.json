@@ -1,0 +1,125 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A bridge in Kyiv was hit by a Russian drone.",
+      "Vehicles were moving on the bridge when it was hit.",
+      "The drone attack created a large fireball and black smoke.",
+      "Major bridges in Kyiv have been hit by drones for four days.",
+      "Two people were injured in the latest attack.",
+      "German Chancellor Friedrich Merz visited Kyiv to show support.",
+      "He met with Ukrainian President Volodymyr Zelensky.",
+      "The damaged bridges are still standing, but traffic is difficult."
+    ],
+    "vocabulary": [
+      {
+        "term": "hit",
+        "part_of_speech": "verb",
+        "definition": "to strike something with force"
+      },
+      {
+        "term": "drone",
+        "part_of_speech": "noun",
+        "definition": "a small aircraft that flies without a person inside"
+      },
+      {
+        "term": "vehicles",
+        "part_of_speech": "noun",
+        "definition": "machines like cars or trucks that carry people or things"
+      },
+      {
+        "term": "fireball",
+        "part_of_speech": "noun",
+        "definition": "a large, bright ball of fire"
+      },
+      {
+        "term": "injured",
+        "part_of_speech": "adjective",
+        "definition": "hurt or harmed physically"
+      },
+      {
+        "term": "support",
+        "part_of_speech": "noun",
+        "definition": "help or agreement for someone or something"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かを力強く打つこと。",
+      "ko": "무언가를 힘껏 치다.",
+      "zh-Hans": "用力撞击某物。",
+      "es": "Golpear algo con fuerza.",
+      "pt-BR": "Atingir algo com força.",
+      "fr": "Frapper quelque chose avec force.",
+      "de": "Etwas mit Wucht treffen."
+    },
+    {
+      "id": 1,
+      "ja": "人が中に乗らずに飛ぶ小型の航空機。",
+      "ko": "사람이 타지 않고 비행하는 작은 항공기.",
+      "zh-Hans": "一种没有人在里面驾驶的小型飞机。",
+      "es": "Un pequeño avión que vuela sin una persona dentro.",
+      "pt-BR": "Uma pequena aeronave que voa sem uma pessoa dentro.",
+      "fr": "Un petit aéronef qui vole sans personne à l'intérieur.",
+      "de": "Ein kleines Flugzeug, das ohne eine Person im Inneren fliegt."
+    },
+    {
+      "id": 2,
+      "ja": "人や物を運ぶ、車やトラックのような機械。",
+      "ko": "사람이나 물건을 운반하는 자동차나 트럭 같은 기계.",
+      "zh-Hans": "像汽车或卡车一样运载人或物品的机器。",
+      "es": "Máquinas como coches o camiones que transportan personas o cosas.",
+      "pt-BR": "Máquinas como carros ou caminhões que transportam pessoas ou coisas.",
+      "fr": "Des machines comme des voitures ou des camions qui transportent des personnes ou des objets.",
+      "de": "Maschinen wie Autos oder Lastwagen, die Personen oder Dinge transportieren."
+    },
+    {
+      "id": 3,
+      "ja": "大きくて明るい火の玉。",
+      "ko": "크고 밝은 불덩이.",
+      "zh-Hans": "一个巨大、明亮的火球。",
+      "es": "Una gran y brillante bola de fuego.",
+      "pt-BR": "Uma grande e brilhante bola de fogo.",
+      "fr": "Une grande boule de feu lumineuse.",
+      "de": "Eine große, helle Feuerkugel."
+    },
+    {
+      "id": 4,
+      "ja": "身体的に傷つけられたり、害を受けたりすること。",
+      "ko": "신체적으로 다치거나 해를 입은.",
+      "zh-Hans": "身体上受到伤害或损伤。",
+      "es": "Dañado o lastimado físicamente.",
+      "pt-BR": "Machucado ou ferido fisicamente.",
+      "fr": "Blessé ou physiquement atteint.",
+      "de": "Körperlich verletzt oder geschädigt."
+    },
+    {
+      "id": 5,
+      "ja": "誰かや何かに対する助けや同意。",
+      "ko": "누군가나 무언가에 대한 도움이나 동의.",
+      "zh-Hans": "对某人或某事提供的帮助或同意。",
+      "es": "Ayuda o acuerdo para alguien o algo.",
+      "pt-BR": "Ajuda ou concordância para alguém ou algo.",
+      "fr": "Aide ou soutien pour quelqu'un ou quelque chose.",
+      "de": "Hilfe oder Unterstützung für jemanden oder etwas."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-04T12:41:25.370679+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

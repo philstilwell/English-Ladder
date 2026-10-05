@@ -6,6 +6,27 @@ import re
 MAX_EXCERPT_CHARS = 1200
 
 
+def archive_evidence(news, lessons):
+    """Retain cited excerpts plus source passages for reviewed reading quantities.
+
+    The independent review sees the full source. A short selected excerpt may
+    omit a quantity supported elsewhere, so discarding that passage would make
+    the same reviewed lesson fail its post-archive evidence check.
+    """
+    excerpts = list(dict.fromkeys(quote for lesson in lessons.values()
+                                 for quote in lesson.get('sentence_evidence', [])
+                                 if isinstance(quote, str)))
+    retained = ' '.join(excerpts)
+    numbers = set(number for lesson in lessons.values()
+                  for sentence in lesson.get('news_brief_sentences', [])
+                  for number in re.findall(r'(?<!\w)\d+(?:[.,]\d+)*%?', sentence))
+    for excerpt in evidence_choices(news):
+        if any(number not in retained and number in excerpt for number in numbers):
+            excerpts.append(excerpt)
+            retained += ' ' + excerpt
+    return '\n'.join(dict.fromkeys(excerpts))
+
+
 def _paragraph_excerpts(text):
     """Keep paragraphs intact where practical and split long ones at sentence ends."""
     while len(text) > MAX_EXCERPT_CHARS:

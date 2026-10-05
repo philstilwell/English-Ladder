@@ -1,0 +1,763 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-05",
+  "release_iso": "2026-10-05T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC Science & Environment",
+    "feed_url": "https://feeds.bbci.co.uk/news/science_and_environment/rss.xml",
+    "category": "science",
+    "published_at": "Mon, 05 Oct 2026 10:04:08 GMT",
+    "retrieved_at": "2026-10-05T14:42:27.717490+00:00",
+    "title": "Why are data centres such a big deal in Scotland?",
+    "summary": "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+    "evidence_text": "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.\nNow Scotland is part of a global race to build many more of them - on a massive scale.\nThe explosion in artificial intelligence (AI) over the past few years has seen tech firms scrambling to build new \"hyperscale\" data centres, including some which would rank among the biggest in the world.\nSupporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.\nOpponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.\nAt Auchtertool, the planned 600MW data centre would be the same size as the neighbouring village.\nOne of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.\nLanarkshire has been designated an AI growth zone by the UK government, with data centres at its heart.\nThe type of jobs a data centre creates has also been debated.\nThe Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.\nIn August, it announced that ministers would have to be notified of proposed centres over 50MW in capacity.\nEvery time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.\nFrom the outside, data centres look like a factory or a warehouse.\nOn the inside, thousands of flashing lights blink and fans whirr as rows of computer servers power AI.\nDuring periods of low wind or when clouds are blocking the sun, it may mean having to fire up fossil fuel power stations to provide the energy required to keep the servers blinking.\nIf one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW - making it one of the largest data centres in the world.\nThe Scottish government has so far refused to impose a moratorium.\nAs well as using huge amounts of electricity, the giant data centres can require large quantities of water to prevent them from overheating.\nAs well as having a stake in a key future technology, those behind AI data centres say they will create jobs.\nThe site would span 60 hectares (150 acres) - about the size of 84 football pitches.\nWhen it was announced in January , external , £8bn of investment and 3,400 jobs were promised.",
+    "evidence_retrieved_at": "2026-10-05T14:42:27.717490+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c6qxv55882z1o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Explain one reason why data centres are a big topic in Scotland.",
+          "Do you think building more data centres is a good idea for Scotland? I think ... because ... (If you prefer, imagine you are a local resident: would you want one near your home?)"
+        ],
+        "editorial_check": {
+          "content_digest": "6e8492ec87d48c3dec6509fd02bc0c786a1c4889f0c48b2c8f18861baa7581dc",
+          "date": "2026-10-05T14:43:12.004994+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-09-08-level-calibration",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson provides appropriate challenge for A1-A2 learners by testing clearly stated details, contextual vocabulary, and the taught grammar pattern, using short and plausible answer choices."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults, with direct verbs and explicit subjects across all learner-facing sections."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses short clauses and familiar connectors, with accessible grammar explanations and clear instructions. The discussion prompt includes a simple sentence frame and a hypothetical alternative as required."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary items 'planned', 'centres', 'online', 'factory', 'noise', 'energy', and 'renewable' are common, concrete terms suitable for A1-A2 learners, with clear and simple definitions relevant to the news topic."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-2.5-flash",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Using \"can\" for possibility",
+          "example_quote": "Supporters say data centres can bring jobs and investment.",
+          "explanation": "We use the word \"can\" to talk about what is possible or what people are able to do. It shows that something might happen or is allowed."
+        },
+        "news_brief_sentences": [
+          "Many huge data centres are planned for Scotland.",
+          "These centres help with online tasks like bank payments or using AI.",
+          "From the outside, data centres look like a factory.",
+          "Inside, thousands of computers work and make noise.",
+          "Supporters say data centres can bring jobs and investment.",
+          "But opponents worry about the energy they use and their size.",
+          "Scotland has strong renewable energy, which data centres need.",
+          "However, some centres might use fossil fuels if there is not enough wind power."
+        ],
+        "overview": "Scotland plans to build many large data centres, which causes different opinions.",
+        "quiz": [
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Many huge data centres are planned for Scotland.",
+              "This is not correct. New data centres are being planned, not closing.",
+              "This is incorrect. Many data centres, not just one, are planned."
+            ],
+            "options": [
+              "Many new data centres are being built.",
+              "All data centres are closing down.",
+              "Only one small data centre is planned."
+            ],
+            "question": "What is happening with data centres in Scotland?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is not mentioned in the reading. Data centres help with online tasks.",
+              "Correct! Data centres help with online tasks like bank payments or using AI.",
+              "The reading does not say data centres help with going to school."
+            ],
+            "options": [
+              "Buy food at a market.",
+              "Make online bank payments.",
+              "Go to school."
+            ],
+            "question": "What do data centres help people do?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading says they look like a factory, not a house.",
+              "This is incorrect. Data centres look like a factory.",
+              "Correct! Data centres look like a factory or a warehouse from the outside."
+            ],
+            "options": [
+              "A house.",
+              "A park.",
+              "A factory."
+            ],
+            "question": "From the outside, what do data centres look like?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not mention food. Opponents worry about other things.",
+              "Correct! Opponents worry about the energy data centres use and their big size.",
+              "Opponents worry about negative impacts, not the new jobs."
+            ],
+            "options": [
+              "They worry about the food they eat.",
+              "They worry about the energy they use and their size.",
+              "They worry about new jobs."
+            ],
+            "question": "Why do opponents worry about data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Planned\" means something is decided for the future, not already built.",
+              "Correct! \"Planned\" means people have made a decision to do it in the future.",
+              "This is incorrect. \"Planned\" does not mean broken."
+            ],
+            "options": [
+              "Already built.",
+              "Decided for the future.",
+              "Broken."
+            ],
+            "question": "What does \"planned\" mean in \"Many huge data centres are planned\"?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading says Scotland has strong renewable energy, not coal.",
+              "Correct! Scotland has a lot of strong renewable energy.",
+              "This is not correct. Scotland has strong renewable energy."
+            ],
+            "options": [
+              "Coal energy.",
+              "Renewable energy.",
+              "Gas energy."
+            ],
+            "question": "Which kind of energy does Scotland have a lot of for data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Can\" shows possibility, so it means it is not impossible.",
+              "Correct! \"Can\" shows that it is possible for data centres to bring jobs.",
+              "\"Can\" shows possibility, not that something is forbidden."
+            ],
+            "options": [
+              "It means it is impossible.",
+              "It means it is possible.",
+              "It means it is forbidden."
+            ],
+            "question": "What does \"can\" mean in \"Supporters say data centres can bring jobs\"?"
+          }
+        ],
+        "sentence_evidence": [
+          "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+          "Every time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.",
+          "From the outside, data centres look like a factory or a warehouse.",
+          "On the inside, thousands of flashing lights blink and fans whirr as rows of computer servers power AI.",
+          "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
+          "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
+          "One of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.",
+          "During periods of low wind or when clouds are blocking the sun, it may mean having to fire up fossil fuel power stations to provide the energy required to keep the servers blinking."
+        ],
+        "title": "Data Centres in Scotland: Plans and Worries",
+        "topic": "Technology and Environment in Scotland",
+        "vocabulary": [
+          {
+            "definition": "decided for the future; arranged beforehand",
+            "part_of_speech": "verb (past participle)",
+            "term": "planned"
+          },
+          {
+            "definition": "main places for a specific activity or business",
+            "part_of_speech": "noun",
+            "term": "centres"
+          },
+          {
+            "definition": "connected to the internet",
+            "part_of_speech": "adjective",
+            "term": "online"
+          },
+          {
+            "definition": "a large building where machines make things",
+            "part_of_speech": "noun",
+            "term": "factory"
+          },
+          {
+            "definition": "a loud or unwanted sound",
+            "part_of_speech": "noun",
+            "term": "noise"
+          },
+          {
+            "definition": "power from fuel or the sun to make things work",
+            "part_of_speech": "noun",
+            "term": "energy"
+          },
+          {
+            "definition": "energy that comes from natural sources and can be used again",
+            "part_of_speech": "adjective",
+            "term": "renewable"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What are some of the main arguments for and against building large data centres in Scotland, as discussed in the article?",
+          "Do you think the potential economic benefits of data centres outweigh the environmental concerns? Why or why not?"
+        ],
+        "editorial_check": {
+          "content_digest": "8c68b65401f1207816dad2c4471a61c6a1f2315c0e70d6d057ca973f27fcffd2",
+          "date": "2026-10-05T14:44:59.811407+00:00",
+          "generation_attempts": 2,
+          "language_policy_version": "2026-09-08-level-calibration",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson combines comprehension of details with contextual vocabulary and grammar application. Questions require understanding relationships between ideas and applying the first conditional in a new context, suitable for B1-B2 learners."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a natural, neutral news English register throughout the reading, explanations, and quiz feedback, which is appropriate for the B1-B2 level."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The explanations for grammar and vocabulary are clear and use everyday language. Quiz questions, options, and feedback are precise and easy to understand. Sentence structures are varied but manageable."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets such as \"explosion\" (metaphorical), \"scrambling\", \"hyperscale\", \"vital\", \"moratorium\", and \"undermine\" are appropriate for B1-B2, offering useful terms for news reporting. No reserved vocabulary was used. Definitions are clear and contextual."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-2.5-flash",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "First Conditional",
+          "example_quote": "If one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW, making it one of the largest data centres in the world.",
+          "explanation": "The first conditional is used to talk about possible future situations and their likely results. We form it with \"If + present simple, will + base form of verb.\" It suggests a real possibility that can happen in the future."
+        },
+        "news_brief_sentences": [
+          "Every time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.",
+          "Now Scotland is part of a global race to build many more of them - on a massive scale.",
+          "The explosion in artificial intelligence (AI) over the past few years has seen tech firms scrambling to build new 'hyperscale' data centres.",
+          "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
+          "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
+          "If one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW, making it one of the largest data centres in the world.",
+          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
+          "The Scottish government has so far refused to impose a moratorium.",
+          "As well as using huge amounts of electricity, the giant data centres can require large quantities of water to prevent them from overheating.",
+          "Those behind AI data centres say they will create jobs and offer a stake in a key future technology."
+        ],
+        "overview": "Scotland is facing a major debate over proposals for many large data centres, with promises of economic investment balanced against environmental concerns and community impact.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The discussion is about large 'hyperscale' data centres, not small ones.",
+              "This option correctly identifies the core tension between economic growth and environmental concerns.",
+              "The article states the debate is not really about the technology inside the building, but its scale and impact."
+            ],
+            "options": [
+              "The disagreement over where to build small, local data centres.",
+              "The balance between economic benefits and environmental worries for very large data centres.",
+              "The debate about whether AI technology itself is safe for human use."
+            ],
+            "question": "What is the main conflict described regarding data centres in Scotland?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While cooling systems are mentioned, \"hyperscale\" refers to the massive scale, not just the cooling.",
+              "\"Hyperscale\" refers to data centres that are extremely large, some ranking among the biggest in the world.",
+              "The definition provided focuses on size and capacity, not the type of data stored."
+            ],
+            "options": [
+              "Their advanced cooling systems.",
+              "Their extremely large size and capacity.",
+              "Their ability to store personal data."
+            ],
+            "question": "What does \"hyperscale\" describe in the context of the new data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Opponents, not supporters, are concerned about electricity use and noise.",
+              "Supporters believe the centres could bring billions of pounds in investment and thousands of jobs.",
+              "The reading focuses on 'hyperscale' data centres, which are immense, not smaller ones."
+            ],
+            "options": [
+              "Reduced electricity consumption and quieter communities.",
+              "Significant financial investment and job creation.",
+              "The development of smaller, more efficient local data centres."
+            ],
+            "question": "According to the reading, what positive outcomes do supporters expect from the new data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The concern is about the impact of their size and resource use, not their power for AI.",
+              "Opponents are concerned about the centres' size, their use of energy, and the noise they will make.",
+              "While job types are debated, the primary concern of opponents mentioned here is impact on communities and resource use."
+            ],
+            "options": [
+              "They fear the data centres will not be powerful enough for future AI needs.",
+              "They are worried about the impact of their size on communities and the vast amounts of energy they use and even the noise they will make.",
+              "They believe the centres will primarily create temporary construction jobs."
+            ],
+            "question": "What is one major concern expressed by opponents regarding the proposed data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Greens called for a pause, not a new law about electricity sources, though they are concerned about renewable energy supplies.",
+              "A \"moratorium\" is a temporary stop or ban on an activity, in this case, on constructing large data centres.",
+              "The request was for a pause in construction, not a tax."
+            ],
+            "options": [
+              "A new law requiring data centres to use only green electricity.",
+              "A temporary ban or pause on building large data centres.",
+              "A special tax applied to all new data centre developments."
+            ],
+            "question": "What does the term \"moratorium\" mean in the context of the Scottish Greens' request?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states that the Scottish government has so far refused to impose a moratorium.",
+              "This is directly stated in the reading: \"The Scottish government has so far refused to impose a moratorium.\"",
+              "While new guidance is expected, the government has not said it is reviewing proposals to reduce their size in response to the moratorium call."
+            ],
+            "options": [
+              "They have fully supported the call and paused all new applications.",
+              "They have refused to impose a moratorium so far.",
+              "They are currently reviewing all proposals to reduce their size."
+            ],
+            "question": "How has the Scottish government reacted to the call for a moratorium on large data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This is an example of the third conditional, used for hypothetical past situations.",
+              "This sentence correctly uses \"If + present simple\" and \"will + base verb\" to describe a real possibility in the future.",
+              "The present continuous is not typically used in the 'if' clause for the first conditional when talking about a general condition."
+            ],
+            "options": [
+              "If they had built the data centre, it would have created jobs.",
+              "If they build the data centre, it will create jobs.",
+              "If they are building the data centre, it will create jobs."
+            ],
+            "question": "Which sentence uses the first conditional correctly to express a likely future outcome?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Undermine\" means to weaken, not to strengthen.",
+              "To \"undermine\" something means to make it gradually weaker or less effective, which is a concern regarding climate targets.",
+              "Supporting climate targets is the opposite of undermining them."
+            ],
+            "options": [
+              "To make climate targets stronger.",
+              "To weaken or make climate targets less effective.",
+              "To publicly support climate targets."
+            ],
+            "question": "In the phrase \"undermine climate targets,\" what does \"undermine\" mean?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While jobs are mentioned, water is specifically highlighted as a resource requirement for cooling.",
+              "The reading states that giant data centres can require large quantities of water to prevent them from overheating.",
+              "Land is mentioned for the size of the centres, but not specifically for solar panel installations as a resource requirement."
+            ],
+            "options": [
+              "A large workforce for daily operations.",
+              "Huge quantities of water for cooling.",
+              "Extensive land for solar panel installations."
+            ],
+            "question": "What is another significant resource requirement for giant data centres, in addition to electricity, as mentioned in the reading?"
+          }
+        ],
+        "sentence_evidence": [
+          "Every time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.",
+          "Now Scotland is part of a global race to build many more of them - on a massive scale.",
+          "The explosion in artificial intelligence (AI) over the past few years has seen tech firms scrambling to build new \"hyperscale\" data centres, including some which would rank among the biggest in the world.",
+          "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
+          "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
+          "If one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW - making it one of the largest data centres in the world.",
+          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
+          "The Scottish government has so far refused to impose a moratorium.",
+          "As well as using huge amounts of electricity, the giant data centres can require large quantities of water to prevent them from overheating.",
+          "As well as having a stake in a key future technology, those behind AI data centres say they will create jobs."
+        ],
+        "title": "Scotland's Data Centre Boom: Investment vs. Environmental Concerns",
+        "topic": "Technology and Environment",
+        "vocabulary": [
+          {
+            "definition": "working secretly or without being seen by the public, often to make something else possible.",
+            "part_of_speech": "adverbial phrase",
+            "term": "behind the scenes"
+          },
+          {
+            "definition": "on a very large size or extent, much larger than usual.",
+            "part_of_speech": "noun phrase",
+            "term": "massive scale"
+          },
+          {
+            "definition": "a sudden and rapid increase in something, like a quick growth.",
+            "part_of_speech": "noun",
+            "term": "explosion"
+          },
+          {
+            "definition": "moving or trying to do something quickly and with difficulty, often in a hurry.",
+            "part_of_speech": "verb",
+            "term": "scrambling"
+          },
+          {
+            "definition": "describing something, especially a data centre, that is extremely large in size and capacity.",
+            "part_of_speech": "adjective",
+            "term": "hyperscale"
+          },
+          {
+            "definition": "extremely important or necessary for something to exist or be successful.",
+            "part_of_speech": "adjective",
+            "term": "vital"
+          },
+          {
+            "definition": "a temporary ban or stopping of an activity, usually by official order.",
+            "part_of_speech": "noun",
+            "term": "moratorium"
+          },
+          {
+            "definition": "to make something weaker or less effective, often gradually or secretly.",
+            "part_of_speech": "verb",
+            "term": "undermine"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "According to the article, what are the primary advantages and disadvantages associated with the development of large data centres in Scotland?",
+          "Considering the debate around data centres, how do you think communities should balance economic growth with environmental and social impacts?"
+        ],
+        "editorial_check": {
+          "content_digest": "df957d0b54eaba6b989cb5ef3339baf79569d5ca782571ee9f947d34b10bd501",
+          "date": "2026-10-05T14:47:54.928643+00:00",
+          "generation_attempts": 3,
+          "language_policy_version": "2026-09-08-level-calibration",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson promotes supported inference, particularly in quiz item 5, and distinguishes between near-synonyms or register in vocabulary definitions and quiz items 4, 11, and 12. Distractors are plausible, and feedback explains why each option fails, ensuring substantive learning beyond basic recall."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished, natural reporting register throughout the title, overview, reading, and explanations. The language is objective and balanced, accurately reflecting the source's calibrated certainty without sensationalism, which is appropriate for a C1-Higher news analysis."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The definitions are concise and illuminating, using controlled complex sentences for explanations while maintaining clarity. The grammar explanation is advanced, discussing the effect on meaning and conciseness, suitable for C1-Higher learners without being overly academic or obscure."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selections such as 'significant concern,' 'immense,' 'spurred,' 'physical footprint,' 'operational drone,' 'encompass,' 'robust,' 'necessitating,' and 'mandated' are precise, transferable, and offer meaningful distinctions suitable for C1-Higher learners. None of the terms are from the reserved vocabulary list, and all are defined clearly in context."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-2.5-flash",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "C1-Higher"
+        },
+        "grammar": {
+          "concept": "Participle Clauses (present participle for consequence)",
+          "example_quote": "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+          "explanation": "Participle clauses starting with a present participle (e.g., 'causing') can be used to describe an action that happens at the same time as, or as a result of, the main clause. They often add information about cause, effect, or a simultaneous action, making sentences more concise and advanced. Here, 'causing significant concern' describes the direct consequence of the data centres being planned."
+        },
+        "news_brief_sentences": [
+          "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+          "Scotland is currently involved in a global race to construct many more of these facilities on a truly immense scale.",
+          "The rapid rise of artificial intelligence has spurred tech firms to build \"hyperscale\" data centres, some of which could rank among the largest globally.",
+          "Supporters claim these centres are crucial for the future, potentially attracting billions in investment and creating thousands of jobs.",
+          "Conversely, opponents are worried about their immense physical footprint, the vast quantities of electricity and water they consume, and the constant operational drone they might generate.",
+          "For instance, one proposed 600MW data centre at Auchtertool would encompass an area comparable in size to the entire adjacent village.",
+          "While Scotland boasts a robust renewable energy sector, experts caution that these facilities might not operate entirely on green power, potentially necessitating fossil fuels during periods of low wind.",
+          "The UK government has designated Lanarkshire as an AI growth zone, positioning data centres at its heart and projecting £8bn of investment and 3,400 jobs.",
+          "However, the types of jobs created have been debated, with a substantial portion anticipated in construction rather than directly in AI.",
+          "Despite calls for a halt from environmental groups, the Scottish government has so far refused to impose a suspension on applications but has mandated environmental impact assessments.",
+          "Ministers will also need to be notified of any proposed centres exceeding 50MW in capacity, though comprehensive national guidance is still pending."
+        ],
+        "overview": "Scotland is witnessing a surge in proposals for immense 'hyperscale' data centres, prompting debates over their economic benefits, vast resource consumption, and environmental consequences.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article does not discuss local taxes in relation to data centres.",
+              "The core conflict highlighted is the tension between potential investment/jobs and concerns about environmental impact, resource use, and community effects.",
+              "While jobs are mentioned, the primary dilemma is not about finding workers but the broader societal and environmental trade-offs."
+            ],
+            "options": [
+              "Whether they can be built without increasing local taxes.",
+              "Balancing economic benefits with environmental and social impacts.",
+              "Finding enough skilled workers to staff the new facilities."
+            ],
+            "question": "What is the central dilemma surrounding the data centre proposals in Scotland, according to the article?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions current centres are small, but the main driver for new hyperscale ones is AI, not consolidation.",
+              "Sentence 3 states, 'The rapid rise of artificial intelligence has spurred tech firms to build \"hyperscale\" data centres.'",
+              "While green credentials are mentioned, the primary reason given for the boom is AI, and there are concerns about their actual environmental impact, not a guaranteed reduction."
+            ],
+            "options": [
+              "To consolidate existing smaller data facilities.",
+              "The rapid rise and demands of artificial intelligence.",
+              "To reduce their overall carbon emissions significantly."
+            ],
+            "question": "According to the article, what is one key reason tech firms are building \"hyperscale\" data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article does not compare it to Edinburgh.",
+              "Sentence 6 explicitly states, 'one proposed 600MW data centre at Auchtertool would encompass an area comparable in size to the entire adjacent village.'",
+              "While the source article mentions the Auchtertool site would span 60 hectares, about the size of 84 football pitches, sentence 6 of the News Brief specifically compares its size to 'the entire adjacent village' for local context, which is what the question tests."
+            ],
+            "options": [
+              "It would be approximately half the size of Edinburgh.",
+              "It would encompass an area comparable to the entire adjacent village.",
+              "It would be equivalent to 84 football pitches."
+            ],
+            "question": "How large would the proposed Auchtertool data centre be in comparison to a local area?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "To 'spur' means to encourage or motivate, not to hold back or prevent.",
+              "To 'coerce' means to persuade someone to do something by using force or threats, which is stronger than what 'spurred' implies in this context.",
+              "In this context, 'spurred' means that the rise of AI provided the impetus or motivation for tech firms to build these centres."
+            ],
+            "options": [
+              "Hindered.",
+              "Coerced.",
+              "Motivated."
+            ],
+            "question": "In the sentence, \"The rapid rise of artificial intelligence has **spurred** tech firms to build 'hyperscale' data centres,\" what is the closest meaning of \"spurred\"?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Sentence 7 notes experts 'caution that these facilities might not operate entirely on green power,' contradicting a guarantee.",
+              "Sentence 7 explains Scotland 'boasts a robust renewable energy sector' but experts 'caution that these facilities might not operate entirely on green power,' necessitating fossil fuels at times. This indicates it's attractive but not a guarantee.",
+              "The article states Scotland's sector is 'robust' and generates 'huge amounts' of electricity, implying it's a strong selling point, not insufficient, although its full utilization by data centres is debated."
+            ],
+            "options": [
+              "It guarantees that all data centres will run exclusively on green power.",
+              "It is a major attraction for developers but doesn't assure 100% renewable operation.",
+              "The sector is currently insufficient to meet the data centres' demands."
+            ],
+            "question": "What inference can be drawn about Scotland's claim to a robust renewable energy sector in the context of data centre operations?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The article does not mention any requirement for data centres to be located underground.",
+              "The Scottish government's actions are discussed, not a specific UK government license requirement.",
+              "Sentence 10 states the Scottish government 'has mandated environmental impact assessments,' even while refusing a full suspension."
+            ],
+            "options": [
+              "Data centres must be located entirely underground.",
+              "They must obtain a special license from the UK government.",
+              "Environmental impact assessments have been mandated."
+            ],
+            "question": "What is one specific requirement the Scottish government has imposed on data centre applications, despite refusing a full suspension?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The phrase describes an outcome, not a prerequisite condition.",
+              "The participle clause clearly describes a direct outcome of the main clause, making the link very direct.",
+              "The present participle clause 'causing significant concern' functions to show the immediate effect or result of the data centres being planned."
+            ],
+            "options": [
+              "A condition that must be met before planning can proceed.",
+              "A simultaneous action that has no direct link to the main clause.",
+              "A consequence or result of the data centres being planned."
+            ],
+            "question": "In the sentence \"At least 23 huge data centres are planned in Scotland, **causing significant concern for campaigners**,\" what does the bolded phrase primarily indicate?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While AI jobs are mentioned, the article specifically notes a 'substantial portion' are expected elsewhere.",
+              "Sentence 9 discusses the debate over job types, noting 'a substantial portion anticipated in construction rather than directly in AI.'",
+              "The article does not specify renewable energy engineers as a substantial portion of the jobs created by the data centres themselves."
+            ],
+            "options": [
+              "High-level AI research positions.",
+              "Construction jobs.",
+              "Renewable energy engineers."
+            ],
+            "question": "Which type of jobs is expected to form a \"substantial portion\" of those created by the new data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "Attracting competitors is not listed as a concern of opponents in the article.",
+              "Sentence 5 states opponents are worried about 'the constant operational drone they might generate,' referring to the noise from servers and cooling systems.",
+              "The article focuses on environmental and community impacts, not the risk of data breaches as a major concern for opponents."
+            ],
+            "options": [
+              "Their potential to attract foreign competitors to Scotland.",
+              "The constant operational drone they might generate.",
+              "The risk of data breaches due to their size."
+            ],
+            "question": "What is one major concern opponents have regarding the operational aspects of the proposed data centres?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The measures are about large centres and scrutiny, not speeding up smaller projects.",
+              "These measures, as mentioned in sentences 10 and 11, indicate a desire for more oversight and to assess the environmental consequences of larger developments, rather than halting all construction.",
+              "The government has explicitly 'refused to impose a suspension on applications,' indicating they are not trying to prevent all new centres, but rather to regulate them."
+            ],
+            "options": [
+              "To fast-track approval for smaller data centre projects.",
+              "To ensure greater scrutiny and address potential significant impacts of large projects.",
+              "To prevent any new data centres from being built in Scotland."
+            ],
+            "question": "Why might the government mandate notification for centres over 50MW and require environmental impact assessments?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "While wildlife is mentioned in relation to noise, 'physical footprint' refers specifically to the space taken up.",
+              "The 'physical footprint' refers to the land area, while energy consumption is a separate concern.",
+              "In sentence 5, 'physical footprint' refers to the considerable size and land area these data centre buildings will occupy, causing concern for opponents."
+            ],
+            "options": [
+              "The impact on local wildlife's migration patterns.",
+              "The amount of energy they consume.",
+              "The large area of land the buildings will occupy."
+            ],
+            "question": "The article mentions opponents are worried about the \"immense physical footprint\" of data centres. What does \"physical footprint\" refer to in this context?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "To 'rank among' means to be included in a group of top entities, not necessarily to be the very top one.",
+              "The phrase 'rank among' indicates inclusion in a top category, meaning they would be considered some of the biggest, but not necessarily the single largest worldwide.",
+              "This contradicts the meaning of 'rank among the largest,' which implies a significant global presence, not relative smallness."
+            ],
+            "options": [
+              "They would be the absolute largest in the world.",
+              "They would be considered among the biggest, but not necessarily the single largest.",
+              "They would be larger than most, but still relatively small on a global scale."
+            ],
+            "question": "Supporters claim these centres could \"rank among\" the largest globally. What does \"rank among\" imply about their size?"
+          }
+        ],
+        "sentence_evidence": [
+          "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+          "Now Scotland is part of a global race to build many more of them - on a massive scale.",
+          "The explosion in artificial intelligence (AI) over the past few years has seen tech firms scrambling to build new \"hyperscale\" data centres, including some which would rank among the biggest in the world.",
+          "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
+          "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
+          "At Auchtertool, the planned 600MW data centre would be the same size as the neighbouring village.",
+          "One of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.",
+          "Lanarkshire has been designated an AI growth zone by the UK government, with data centres at its heart.",
+          "The type of jobs a data centre creates has also been debated.",
+          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
+          "In August, it announced that ministers would have to be notified of proposed centres over 50MW in capacity."
+        ],
+        "title": "Scotland's Data Centre Boom: Growth, Controversy, and Environmental Impact",
+        "topic": "The economic and environmental implications of large-scale data centre development in Scotland.",
+        "vocabulary": [
+          {
+            "definition": "A major worry or apprehension about something, indicating a strong degree of importance or seriousness regarding an issue.",
+            "part_of_speech": "noun phrase",
+            "term": "significant concern"
+          },
+          {
+            "definition": "Extremely large or great, often used to emphasize the scale or size of something, such as a physical object or an abstract concept like a challenge.",
+            "part_of_speech": "adjective",
+            "term": "immense"
+          },
+          {
+            "definition": "To be included in a particular group or category, often implying that something is considered to be one of the best, largest, or most significant of its kind.",
+            "part_of_speech": "phrasal verb",
+            "term": "rank among"
+          },
+          {
+            "definition": "Prompted or encouraged someone to do something, often by providing motivation or by being the direct cause of an action or development.",
+            "part_of_speech": "verb",
+            "term": "spurred"
+          },
+          {
+            "definition": "The area of land or space occupied by a building, facility, or organization; often used to describe the environmental impact of its construction and operation.",
+            "part_of_speech": "noun phrase",
+            "term": "physical footprint"
+          },
+          {
+            "definition": "A continuous low humming sound produced by machinery or systems when they are running or functioning.",
+            "part_of_speech": "noun phrase",
+            "term": "operational drone"
+          },
+          {
+            "definition": "To completely surround or include a wide range of things; to form a circle or boundary around something.",
+            "part_of_speech": "verb",
+            "term": "encompass"
+          },
+          {
+            "definition": "Strong and healthy; capable of withstanding adverse conditions or difficult situations without breaking down.",
+            "part_of_speech": "adjective",
+            "term": "robust"
+          },
+          {
+            "definition": "Making something necessary as a result or consequence, indicating that an action or condition requires another action or condition to occur.",
+            "part_of_speech": "verb",
+            "term": "necessitating"
+          },
+          {
+            "definition": "Officially ordered or made compulsory; to be required by an authority or law.",
+            "part_of_speech": "verb",
+            "term": "mandated"
+          }
+        ]
+      }
+    }
+  }
+}

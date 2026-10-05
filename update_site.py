@@ -1497,6 +1497,7 @@ def generate_lesson_html(client, news_item, level, release_dt):
 
 
 def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCHIVE_DIR):
+    from lesson_evidence import archive_evidence
     overlap_issues = validate_edition_vocabulary(level_lessons)
     if overlap_issues:
         raise ValueError("Refusing to archive overlapping vocabulary: " + "; ".join(overlap_issues))
@@ -1533,8 +1534,8 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
             "retrieved_at": news_item.get("retrieved_at", ""),
             "title": normalize_text(news_item.get("title", "")),
             "summary": normalize_text(news_item.get("summary", "")),
-            # Retain only evidence actually used in the lesson, not a copy of the article.
-            "evidence_text": "\n".join(dict.fromkeys(quote for lesson in level_lessons.values() for quote in lesson.get("sentence_evidence", []) if isinstance(quote, str))),
+            # Retain excerpts and the source passages supporting reviewed quantities.
+            "evidence_text": archive_evidence(news_item, level_lessons),
             "evidence_retrieved_at": news_item.get("evidence_retrieved_at", ""),
             "link": normalize_text(news_item.get("link", "")),
         },

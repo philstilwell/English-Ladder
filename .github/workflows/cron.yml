@@ -374,6 +374,22 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
 
+      - name: Retain completed edition for publication recovery
+        # A page audit or push failure must not lose paid work (including the
+        # illustration). This is a recovery bundle, not permission to bypass
+        # the quality gate: validate and rebuild it before publishing.
+        if: always() && env.LESSON_GENERATION_NEEDED == '1'
+        uses: actions/upload-artifact@v4
+        with:
+          name: lesson-publication-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            archive/lessons/${{ env.RELEASE_DATE }}.json
+            assets/news/${{ env.RELEASE_DATE }}-*
+            data/vocabulary-translations/
+          include-hidden-files: true
+          retention-days: 7
+          if-no-files-found: ignore
+
       - name: Check generated pages
         run: |
           # audit_site includes the complete search audit.

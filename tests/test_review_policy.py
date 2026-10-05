@@ -84,6 +84,23 @@ class ReviewPolicyTests(unittest.TestCase):
         self.assertTrue(update_site.validate_reading_length(
             ['The library opened on Monday.'] * 6, update_site.LEVELS[0]))
 
+    def test_review_uses_only_evidence_that_survives_archiving(self):
+        self.source['evidence_text'] += '\n\nAn unrelated swimming pool opened.'
+        request, issues, _ = self.capture_review()
+        payload = json.loads(request['contents'].rsplit('\nDATA:\n', 1)[1])
+        self.assertEqual([], issues)
+        self.assertNotIn('swimming pool', payload['evidence'])
+        self.assertIn('Visitors can borrow books.', payload['evidence'])
+
+    def test_retained_source_failure_does_not_call_paid_reviewer(self):
+        self.lesson['news_brief_sentences'][0] = 'The library opened with 9,999 books.'
+        generate = Mock()
+        client = SimpleNamespace(models=SimpleNamespace(generate_content=generate))
+        issues = news_quality.review_lesson(client, self.source, self.lesson,
+                                           update_site.LEVELS[0], 'synthetic-reviewer')
+        self.assertTrue(any('unsupported number 9,999' in issue for issue in issues))
+        generate.assert_not_called()
+
     def test_grammar_quote_is_required_reuse_and_changes_are_rejected(self):
         self.assertEqual([], update_site.validate_grammar_section(self.lesson))
         request, _, _ = self.capture_review()

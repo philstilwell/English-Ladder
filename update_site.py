@@ -1542,6 +1542,17 @@ def archive_daily_lessons(news_item, level_lessons, release_dt, archive_dir=ARCH
         "levels": archived_levels,
     }
 
+    # Exercise the publication evidence gate before creating the completed-date
+    # marker. A failed archive must never be mistaken for a finished edition by
+    # --skip-existing on the next scheduled attempt.
+    from news_quality import validate_evidence
+    for key, entry in archived_levels.items():
+        lesson = entry['lesson']
+        if lesson.get('editorial_check'):
+            issues = validate_evidence(lesson, archive_data['source'])
+            if issues:
+                raise ValueError(f"Refusing to archive unsupported {key} lesson: " + "; ".join(issues))
+
     archive_path = archive_path_for_release_dt(release_dt, archive_dir=archive_dir)
     with archive_path.open("w", encoding="utf-8") as file:
         json.dump(archive_data, file, ensure_ascii=False, indent=2)

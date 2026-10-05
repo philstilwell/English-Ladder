@@ -201,7 +201,9 @@ def enhance_page(soup, path, prefix):
         hero = soup.select_one('.page-hero, .work-directory-hero, .study-paths')
         if hero:
             link = soup.new_tag('p', attrs={'data-ai-library-link': '', 'class': 'ai-library-link'})
-            a = soup.new_tag('a', href=prefix+'ai-practice.html'); a.string = 'Go further with guided AI practice →'; link.append(a); hero.append(link)
+            a = soup.new_tag('a', href=prefix+'ai-practice.html'); a.string = 'Go further with guided AI practice →'; link.append(a)
+            copy = hero.select_one('.work-directory-copy')
+            (copy if copy is not None else hero).append(link)
     if soup.select_one('[data-ai-extension]') and not soup.select_one('script[src*="ai-practice.js"]'):
         soup.head.append(soup.new_tag('script', src=prefix+'ai-practice.js?v='+REVISION, defer=True))
 

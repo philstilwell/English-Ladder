@@ -20,3 +20,16 @@ navy outlines, blue and teal objects, and restrained coral highlights on white.
 Gemini retained captions despite revision requests. `icon_bottom_trim` excludes
 those captions in both the web and PDF presentation without altering the source
 artwork. Keep the shared crop mapping with the atlas when updating it.
+
+## Directory hero collage
+
+`industry-collage-66.png` is a single transparent illustration generated with
+the built-in OpenAI Imagegen tool on 5 October 2026. It combines all 41
+professional fields and 25 occupations into eleven rows of six, without captions.
+The reference atlases and course-card illustrations remain unchanged.
+
+The directory uses `industry-collage-66.webp`, a smaller web copy with the same
+1196 × 1315 dimensions and transparency. The artwork takes 42% of the hero width
+on desktop and stacks below the introduction at widths of 900 pixels or less.
+See [the generation prompt](hero-collage-prompt.md) for the full icon order and
+art direction.

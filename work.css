@@ -136,7 +136,9 @@
 .work-small { font-size:.8rem; }
 .work-related { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; }
 .work-related a { display:flex; justify-content:space-between; gap:12px; padding:17px; border:1px solid var(--work-line); color:var(--work-blue); text-decoration:none; line-height:1.4; font-size:.92rem; }
-.work-directory-hero { padding:30px 0; border-bottom:1px solid var(--work-line); }
+.work-directory-hero { display:grid; grid-template-columns:minmax(0,1fr) 42%; align-items:center; gap:clamp(28px,4vw,60px); padding:30px 0; border-bottom:1px solid var(--work-line); }
+.work-directory-copy { min-width:0; }
+.work-directory-collage { display:block; width:100%; height:auto; }
 /* The directory uses the shared .page-hero title size, like Grammar and Everyday English. */
 .work-directory-hero h1 { margin:0 0 25px; }
 .work-directory-hero .work-kicker { font-size:.7rem; margin:0 0 14px; }
@@ -159,6 +161,7 @@
 .work-page :focus-visible { outline:3px solid #b96b29; outline-offset:4px; }
 .work-page .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 @media(max-width:1000px) { .work-hero { gap:30px; } .work-downloads,.work-course-grid,.work-glossary,.work-related { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:900px) { .work-directory-hero { grid-template-columns:minmax(0,1fr); gap:32px; } .work-directory-collage { max-width:520px; justify-self:center; } }
 @media(max-width:700px) { .work-hero,.work-two-column,.work-start-paths { grid-template-columns:1fr; gap:26px; } .work-hero { padding-top:10px; } .work-study-card { padding:24px; } .work-study-card .work-study-phrase { font-size:1.7rem; } .work-orientation>.work-two-column { gap:24px; } .work-section { margin-top:42px; } .work-section-heading { flex-direction:column; align-items:flex-start; gap:18px; } .work-section-heading label { min-width:0; width:100%; } .work-section-heading input { width:100%; box-sizing:border-box; } .work-module>summary { padding:20px 17px; gap:14px; } .work-module>summary strong { font-size:1rem; } .work-module-number { font-size:1.6rem; min-width:30px; } .work-module-body { padding:22px 17px; } .work-reflect ul { grid-template-columns:1fr; } .work-download { padding:18px; } .work-download strong { font-size:1rem; } .work-capstone { padding:24px; } .work-glossary,.work-course-grid,.work-directory-filters { grid-template-columns:1fr; } .work-directory-hero { padding-top:35px; } .work-start-paths { padding-top:30px; } .work-page textarea { font-size:16px; } }
 @media(max-width:400px) { .work-downloads,.work-related { grid-template-columns:1fr; } }
 @media(prefers-reduced-motion:reduce) { .work-page * { transition:none !important; scroll-behavior:auto !important; } }

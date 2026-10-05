@@ -60,7 +60,7 @@ jobs:
         with:
           ref: ${{ github.ref_name }}
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Install existing project dependencies
@@ -109,7 +109,7 @@ jobs:
         run: python -u us_life_audio_review.py --budget 2 --budget-key "$BACKFILL_KEY"
       - name: Preserve translations and spending records
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: reviewed-translations-${{ github.run_id }}-${{ github.run_attempt }}
           path: |

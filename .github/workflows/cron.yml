@@ -130,7 +130,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: pip
@@ -178,7 +178,9 @@ jobs:
             if git diff --cached --quiet; then
               exit 0
             fi
-            git commit -m "Retain the latest 50 calendar days of news lessons"
+            # This push must reach the hosting integration, but it must not
+            # enqueue another full daily workflow behind the current run.
+            git commit -m "Retain the latest 50 calendar days of news lessons [skip-daily-workflow]"
             if git push origin "HEAD:${GITHUB_REF_NAME}"; then
               exit 0
             fi
@@ -195,7 +197,7 @@ jobs:
   build_and_deploy:
     name: Generate and save checked lessons
     needs: maintain_archive
-    if: always() && github.event.inputs.test_email != 'true' && github.event.inputs.maintenance_only != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped')
+    if: always() && github.event.inputs.test_email != 'true' && github.event.inputs.maintenance_only != 'true' && (needs.maintain_archive.result == 'success' || needs.maintain_archive.result == 'skipped') && (github.event_name != 'push' || !contains(github.event.head_commit.message, '[skip-daily-workflow]'))
     outputs:
       publishing_revision: ${{ steps.saved_revision.outputs.revision }}
       release_date: ${{ steps.release.outputs.date }}
@@ -242,7 +244,7 @@ jobs:
           exit 1
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: pip
@@ -253,7 +255,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Set up Node for interaction checks
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
           cache: npm
@@ -344,7 +346,7 @@ jobs:
 
       - name: Retain vocabulary translation progress
         if: always() && steps.translations.outcome != 'skipped'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: vocabulary-translations-${{ github.run_id }}-${{ github.run_attempt }}
           path: data/vocabulary-translations/
@@ -358,7 +360,7 @@ jobs:
 
       - name: Retain unfinished daily edition
         if: always() && env.LESSON_GENERATION_NEEDED == '1'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: lesson-state-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/lesson-state/*.json
@@ -367,7 +369,7 @@ jobs:
 
       - name: Retain lesson review diagnostics
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: lesson-review-${{ github.run_id }}-${{ github.run_attempt }}
           path: ${{ runner.temp }}/lesson-diagnostics
@@ -379,7 +381,7 @@ jobs:
         # illustration). This is a recovery bundle, not permission to bypass
         # the quality gate: validate and rebuild it before publishing.
         if: always() && env.LESSON_GENERATION_NEEDED == '1'
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: lesson-publication-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
@@ -429,9 +431,12 @@ jobs:
               exit 0
             fi
 
-            # GITHUB_TOKEN pushes do not start another GitHub Actions run.
             # Keep this commit visible to the Cloudflare GitHub integration.
-            git commit -m "Auto-update daily lessons"
+            # If GitHub emits a push workflow anyway, the marker below makes
+            # the expensive generation job exit at the routing condition.
+            # Cloudflare still sees the branch update, while this workflow
+            # recognizes its own publication commit and exits immediately.
+            git commit -m "Auto-update daily lessons [skip-daily-workflow]"
             if git push origin "HEAD:${GITHUB_REF_NAME}"; then
               exit 0
             fi
@@ -484,12 +489,12 @@ jobs:
           ref: ${{ needs.build_and_deploy.outputs.publishing_revision || needs.maintain_archive.outputs.publishing_revision }}
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: '22'
 
@@ -527,7 +532,7 @@ jobs:
 
       - name: Retain publishing diagnostics
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: publishing-${{ github.run_id }}-${{ github.run_attempt }}
           path: |

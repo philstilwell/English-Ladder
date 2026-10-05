@@ -26,10 +26,11 @@ def step_script(name):
 def job_condition(job, values):
     section = WORKFLOW.split('\n  ' + job + ':\n', 1)[1]
     expression = next(line[8:] for line in section.splitlines() if line.startswith('    if: '))
-    expression = expression.replace('always()', 'True').replace('&&', ' and ').replace('||', ' or ')
+    expression = (expression.replace('always()', 'True').replace('&&', ' and ')
+                  .replace('||', ' or ').replace('!contains', 'not contains'))
     for key in sorted(values, key=len, reverse=True):
         expression = expression.replace(key, repr(values[key]))
-    return eval(expression, {'__builtins__': {}}, {})
+    return eval(expression, {'__builtins__': {}, 'contains': lambda value, needle: needle in value}, {})
 
 
 @unittest.skipUnless(shutil.which('git') and shutil.which('gh'), 'Git and GitHub CLI are required')
@@ -163,11 +164,37 @@ class WorkflowRoutingTests(unittest.TestCase):
             ('push', '', '', 'skipped', (False, True)),
             ('workflow_dispatch', 'false', 'false', 'skipped', (False, True)),
         ):
-            values = {'github.event_name': event, 'github.event.inputs.maintenance_only': maintenance,
+            values = {'github.event_name': event, 'github.event.head_commit.message': '',
+                      'github.event.inputs.maintenance_only': maintenance,
                       'github.event.inputs.test_email': email, 'needs.maintain_archive.result': result}
             with self.subTest(event=event, maintenance=maintenance, email=email, result=result):
                 self.assertEqual(expected, tuple(job_condition(job, values)
                                  for job in ('maintain_archive', 'build_and_deploy')))
+
+    def test_workflow_generated_pushes_do_not_enqueue_another_full_build(self):
+        for message in (
+            'Retain the latest 50 calendar days of news lessons [skip-daily-workflow]',
+            'Auto-update daily lessons [skip-daily-workflow]',
+        ):
+            values = {
+                'github.event_name': 'push',
+                'github.event.head_commit.message': message,
+                'github.event.inputs.maintenance_only': '',
+                'github.event.inputs.test_email': '',
+                'needs.maintain_archive.result': 'skipped',
+            }
+            with self.subTest(message=message):
+                self.assertFalse(job_condition('build_and_deploy', values))
+
+    def test_human_push_still_runs_validation_and_publication_checks(self):
+        values = {
+            'github.event_name': 'push',
+            'github.event.head_commit.message': 'Improve lesson generation',
+            'github.event.inputs.maintenance_only': '',
+            'github.event.inputs.test_email': '',
+            'needs.maintain_archive.result': 'skipped',
+        }
+        self.assertTrue(job_condition('build_and_deploy', values))
 
 
 if __name__ == '__main__':

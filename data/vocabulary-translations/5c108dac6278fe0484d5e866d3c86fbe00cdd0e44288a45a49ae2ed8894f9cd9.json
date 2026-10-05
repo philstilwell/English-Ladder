@@ -1,0 +1,188 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "advanced",
+    "reading": [
+      "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
+      "Scotland is currently involved in a global race to construct many more of these facilities on a truly immense scale.",
+      "The rapid rise of artificial intelligence has spurred tech firms to build \"hyperscale\" data centres, some of which could rank among the largest globally.",
+      "Supporters claim these centres are crucial for the future, potentially attracting billions in investment and creating thousands of jobs.",
+      "Conversely, opponents are worried about their immense physical footprint, the vast quantities of electricity and water they consume, and the constant operational drone they might generate.",
+      "For instance, one proposed 600MW data centre at Auchtertool would encompass an area comparable in size to the entire adjacent village.",
+      "While Scotland boasts a robust renewable energy sector, experts caution that these facilities might not operate entirely on green power, potentially necessitating fossil fuels during periods of low wind.",
+      "The UK government has designated Lanarkshire as an AI growth zone, positioning data centres at its heart and projecting £8bn of investment and 3,400 jobs.",
+      "However, the types of jobs created have been debated, with a substantial portion anticipated in construction rather than directly in AI.",
+      "Despite calls for a halt from environmental groups, the Scottish government has so far refused to impose a suspension on applications but has mandated environmental impact assessments.",
+      "Ministers will also need to be notified of any proposed centres exceeding 50MW in capacity, though comprehensive national guidance is still pending."
+    ],
+    "vocabulary": [
+      {
+        "term": "significant concern",
+        "part_of_speech": "noun phrase",
+        "definition": "A major worry or apprehension about something, indicating a strong degree of importance or seriousness regarding an issue."
+      },
+      {
+        "term": "immense",
+        "part_of_speech": "adjective",
+        "definition": "Extremely large or great, often used to emphasize the scale or size of something, such as a physical object or an abstract concept like a challenge."
+      },
+      {
+        "term": "rank among",
+        "part_of_speech": "phrasal verb",
+        "definition": "To be included in a particular group or category, often implying that something is considered to be one of the best, largest, or most significant of its kind."
+      },
+      {
+        "term": "spurred",
+        "part_of_speech": "verb",
+        "definition": "Prompted or encouraged someone to do something, often by providing motivation or by being the direct cause of an action or development."
+      },
+      {
+        "term": "physical footprint",
+        "part_of_speech": "noun phrase",
+        "definition": "The area of land or space occupied by a building, facility, or organization; often used to describe the environmental impact of its construction and operation."
+      },
+      {
+        "term": "operational drone",
+        "part_of_speech": "noun phrase",
+        "definition": "A continuous low humming sound produced by machinery or systems when they are running or functioning."
+      },
+      {
+        "term": "encompass",
+        "part_of_speech": "verb",
+        "definition": "To completely surround or include a wide range of things; to form a circle or boundary around something."
+      },
+      {
+        "term": "robust",
+        "part_of_speech": "adjective",
+        "definition": "Strong and healthy; capable of withstanding adverse conditions or difficult situations without breaking down."
+      },
+      {
+        "term": "necessitating",
+        "part_of_speech": "verb",
+        "definition": "Making something necessary as a result or consequence, indicating that an action or condition requires another action or condition to occur."
+      },
+      {
+        "term": "mandated",
+        "part_of_speech": "verb",
+        "definition": "Officially ordered or made compulsory; to be required by an authority or law."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "何かについて大きな心配や懸念があり、その問題に関して非常に重要であるか深刻であることを示します。",
+      "ko": "어떤 일에 대해 큰 걱정이나 우려를 가지는 것으로, 해당 문제에 대한 중요성이나 심각성의 정도가 높다는 것을 나타냅니다.",
+      "zh-Hans": "对某事抱有重大担忧或顾虑，表明某项议题具有高度重要性或严重性。",
+      "es": "Una preocupación o aprensión importante sobre algo, que indica un alto grado de importancia o seriedad con respecto a un problema.",
+      "pt-BR": "Uma grande preocupação ou apreensão sobre algo, indicando um alto grau de importância ou seriedade em relação a uma questão.",
+      "fr": "Une inquiétude ou une appréhension majeure à propos de quelque chose, indiquant un degré élevé d'importance ou de gravité concernant un problème.",
+      "de": "Eine große Sorge oder Besorgnis über etwas, die einen hohen Grad an Wichtigkeit oder Ernsthaftigkeit bezüglich eines Themas anzeigt."
+    },
+    {
+      "id": 1,
+      "ja": "非常に大きい、または偉大であること。物理的な物や課題のような抽象的な概念など、何かの規模や大きさを強調するためによく使われます。",
+      "ko": "극도로 크거나 위대한 것을 의미하며, 물리적인 대상이나 도전과 같은 추상적인 개념의 규모나 크기를 강조할 때 자주 사용됩니다.",
+      "zh-Hans": "极其巨大或庞大，常用于强调某物的规模或大小，例如实体物体或挑战等抽象概念。",
+      "es": "Extremadamente grande o inmenso, a menudo usado para enfatizar la escala o el tamaño de algo, como un objeto físico o un concepto abstracto como un desafío.",
+      "pt-BR": "Extremamente grande ou imenso, frequentemente usado para enfatizar a escala ou o tamanho de algo, como um objeto físico ou um conceito abstrato como um desafio.",
+      "fr": "Extrêmement grand ou vaste, souvent utilisé pour souligner l'échelle ou la taille de quelque chose, comme un objet physique ou un concept abstrait tel qu'un défi.",
+      "de": "Extrem groß oder gewaltig, oft verwendet, um das Ausmaß oder die Größe von etwas zu betonen, wie einem physischen Objekt oder einem abstrakten Konzept wie einer Herausforderung."
+    },
+    {
+      "id": 2,
+      "ja": "特定のグループやカテゴリーに含まれること。しばしば、何かがその種類の中で最も優れている、大きい、または最も重要なものの一つであると見なされることを意味します。",
+      "ko": "특정 그룹이나 범주에 포함되는 것을 의미하며, 종종 어떤 것이 해당 종류에서 가장 좋거나, 크거나, 가장 중요한 것 중 하나로 간주된다는 것을 암시합니다.",
+      "zh-Hans": "被包含在某个特定群体或类别中，通常暗示某事物被认为是其种类中最好、最大或最重要的之一。",
+      "es": "Ser incluido en un grupo o categoría particular, a menudo implicando que algo es considerado uno de los mejores, más grandes o más significativos de su tipo.",
+      "pt-BR": "Ser incluído em um grupo ou categoria específica, muitas vezes implicando que algo é considerado um dos mejores, maiores o más significativos de su especie.",
+      "fr": "Être inclus dans un groupe ou une catégorie particulière, impliquant souvent que quelque chose est considéré comme l'un des meilleurs, des plus grands ou des plus significatifs de son genre.",
+      "de": "In eine bestimmte Gruppe oder Kategorie eingeordnet zu werden, oft implizierend, dass etwas als eines der besten, größten oder bedeutendsten seiner Art gilt."
+    },
+    {
+      "id": 3,
+      "ja": "誰かに何かをするように促したり奨励したりすること。多くの場合、動機付けを提供したり、行動や発展の直接的な原因となったりすることによって。",
+      "ko": "누군가에게 어떤 행동을 하도록 촉발하거나 격려한 것으로, 종종 동기를 부여하거나 행동 또는 발전의 직접적인 원인이 되는 경우를 말합니다.",
+      "zh-Hans": "促使或鼓励某人做某事，通常通过提供动力或作为某一行动或发展的直接原因。",
+      "es": "Impulsar o alentar a alguien a hacer algo, a menudo proporcionando motivación o siendo la causa directa de una acción o desarrollo.",
+      "pt-BR": "Impulsionar ou encorajar alguém a fazer algo, muitas vezes fornecendo motivação ou sendo a causa direta de uma ação ou desenvolvimento.",
+      "fr": "Inciter ou encourager quelqu'un à faire quelque chose, souvent en fournissant une motivation ou en étant la cause directe d'une action ou d'un développement.",
+      "de": "Jemanden zu etwas anregen oder ermutigen, oft indem Motivation bereitgestellt oder die direkte Ursache einer Handlung oder Entwicklung ist."
+    },
+    {
+      "id": 4,
+      "ja": "建物、施設、または組織が占める土地または空間の面積。その建設と運営による環境への影響を説明するためによく使用されます。",
+      "ko": "건물, 시설 또는 조직이 차지하는 토지나 공간의 면적을 의미하며, 종종 건설 및 운영으로 인한 환경 영향을 설명하는 데 사용됩니다.",
+      "zh-Hans": "建筑物、设施或组织所占用的土地或空间面积；常用于描述其建设和运营对环境的影响。",
+      "es": "El área de tierra o espacio ocupado por un edificio, instalación u organización; a menudo se usa para describir el impacto ambiental de su construcción y operación.",
+      "pt-BR": "A área de terra ou espaço ocupada por um edifício, instalação ou organização; frequentemente usada para descrever o impacto ambiental de sua construção e operação.",
+      "fr": "La surface de terrain ou l'espace occupé par un bâtiment, une installation ou une organisation ; souvent utilisé pour décrire l'impact environnemental de sa construction et de son fonctionnement.",
+      "de": "Die Fläche oder der Raum, der von einem Gebäude, einer Einrichtung oder einer Organisation eingenommen wird; oft verwendet, um die Umweltauswirkungen ihrer Errichtung und ihres Betriebs zu beschreiben."
+    },
+    {
+      "id": 5,
+      "ja": "機械やシステムが稼働または機能しているときに発生する、連続的な低いハミング音。",
+      "ko": "기계나 시스템이 작동하거나 기능할 때 발생하는 지속적이고 낮은 윙윙거리는 소리.",
+      "zh-Hans": "机器或系统运行时产生的持续低沉的嗡嗡声。",
+      "es": "Un sonido de zumbido bajo y continuo producido por maquinaria o sistemas cuando están funcionando o en operación.",
+      "pt-BR": "Um som contínuo e baixo de zumbido produzido por máquinas ou sistemas quando estão funcionando ou em operação.",
+      "fr": "Un bourdonnement continu et de basse fréquence produit par des machines ou des systèmes lorsqu'ils sont en marche ou en fonctionnement.",
+      "de": "Ein kontinuierliches, tiefes Brummgeräusch, das von Maschinen oder Systemen erzeugt wird, wenn diese laufen oder funktionieren."
+    },
+    {
+      "id": 6,
+      "ja": "完全に囲む、または広範囲のものを包含すること。何かの周りに円や境界線を形成すること。",
+      "ko": "완전히 둘러싸거나 다양한 것을 포함하는 것을 의미합니다. 어떤 것 주위에 원이나 경계를 형성하는 것입니다.",
+      "zh-Hans": "完全包围或包含广泛事物；在某物周围形成一个圆形或边界。",
+      "es": "Rodear completamente o incluir una amplia gama de cosas; formar un círculo o límite alrededor de algo.",
+      "pt-BR": "Rodear completamente ou incluir uma ampla gama de coisas; formar um círculo o un límite alrededor de algo.",
+      "fr": "Entourer complètement ou inclure un large éventail de choses ; former un cercle ou une limite autour de quelque chose.",
+      "de": "Etwas vollständig umgeben oder eine breite Palette von Dingen einschließen; einen Kreis oder eine Grenze um etwas bilden."
+    },
+    {
+      "id": 7,
+      "ja": "丈夫で健康であること。困難な状況や厳しい条件にも耐え、機能不全に陥らない能力があること。",
+      "ko": "강하고 건강하며, 어려운 조건이나 힘든 상황에서도 고장 나지 않고 견딜 수 있는 능력이 있는 상태.",
+      "zh-Hans": "强壮健康；能够承受恶劣条件或困难局面而不崩溃。",
+      "es": "Fuerte y saludable; capaz de soportar condiciones adversas o situaciones difíciles sin descomponerse.",
+      "pt-BR": "Forte e saudável; capaz de suportar condições adversas ou situações difíceis sem falhar.",
+      "fr": "Fort et sain ; capable de résister à des conditions défavorables ou à des situations difficiles sans céder.",
+      "de": "Stark und gesund; fähig, widrigen Bedingungen oder schwierigen Situationen standzuhalten, ohne zusammenzubrechen."
+    },
+    {
+      "id": 8,
+      "ja": "結果として何かを必要とさせること。ある行動や状況が別の行動や状況を発生させる必要があることを示します。",
+      "ko": "결과적으로 어떤 것을 필요하게 만드는 것으로, 어떤 행동이나 조건이 다른 행동이나 조건의 발생을 요구한다는 것을 나타냅니다.",
+      "zh-Hans": "作为结果或后果，使某事成为必要，表明某一行动或条件需要另一个行动或条件的发生。",
+      "es": "Hacer que algo sea necesario como resultado o consecuencia, indicando que una acción o condición requiere que otra acción o condición ocurra.",
+      "pt-BR": "Tornar algo necessário como resultado ou consequência, indicando que uma ação ou condição requer que outra ação ou condição ocorra.",
+      "fr": "Rendre quelque chose nécessaire à la suite ou en conséquence, indiquant qu'une action ou une condition en exige une autre.",
+      "de": "Etwas als Ergebnis oder Konsequenz notwendig machen, was anzeigt, dass eine Handlung oder Bedingung eine andere Handlung oder Bedingung erfordert."
+    },
+    {
+      "id": 9,
+      "ja": "公的に命令された、または義務付けられた。当局や法律によって要求されること。",
+      "ko": "공식적으로 명령되거나 의무화된 것으로, 권위나 법률에 의해 요구되는 것을 의미합니다.",
+      "zh-Hans": "经官方命令或强制执行的；被当局或法律要求。",
+      "es": "Ordenado oficialmente o hecho obligatorio; ser requerido por una autoridad o ley.",
+      "pt-BR": "Oficialmente ordenado ou tornado obrigatório; ser exigido por uma autoridade ou lei.",
+      "fr": "Officiellement ordonné ou rendu obligatoire ; être exigé par une autorité ou une loi.",
+      "de": "Offiziell angeordnet oder verpflichtend gemacht; von einer Behörde oder einem Gesetz vorgeschrieben zu sein."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-05T14:49:51.758980+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

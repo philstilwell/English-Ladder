@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Many huge data centres are planned for Scotland.",
+      "These centres help with online tasks like bank payments or using AI.",
+      "From the outside, data centres look like a factory.",
+      "Inside, thousands of computers work and make noise.",
+      "Supporters say data centres can bring jobs and investment.",
+      "But opponents worry about the energy they use and their size.",
+      "Scotland has strong renewable energy, which data centres need.",
+      "However, some centres might use fossil fuels if there is not enough wind power."
+    ],
+    "vocabulary": [
+      {
+        "term": "planned",
+        "part_of_speech": "verb (past participle)",
+        "definition": "decided for the future; arranged beforehand"
+      },
+      {
+        "term": "centres",
+        "part_of_speech": "noun",
+        "definition": "main places for a specific activity or business"
+      },
+      {
+        "term": "online",
+        "part_of_speech": "adjective",
+        "definition": "connected to the internet"
+      },
+      {
+        "term": "factory",
+        "part_of_speech": "noun",
+        "definition": "a large building where machines make things"
+      },
+      {
+        "term": "noise",
+        "part_of_speech": "noun",
+        "definition": "a loud or unwanted sound"
+      },
+      {
+        "term": "energy",
+        "part_of_speech": "noun",
+        "definition": "power from fuel or the sun to make things work"
+      },
+      {
+        "term": "renewable",
+        "part_of_speech": "adjective",
+        "definition": "energy that comes from natural sources and can be used again"
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "将来のために決定されたこと、または事前に手配されたこと。",
+      "ko": "미래를 위해 결정되거나 미리 준비된.",
+      "zh-Hans": "已为将来做出决定；事先安排好的。",
+      "es": "Decidido para el futuro; organizado con antelación.",
+      "pt-BR": "Decidido para o futuro; organizado com antecedência.",
+      "fr": "Décidé pour l'avenir ; organisé à l'avance.",
+      "de": "Für die Zukunft entschieden; im Voraus geplant."
+    },
+    {
+      "id": 1,
+      "ja": "特定の活動やビジネスのための主要な場所。",
+      "ko": "특정 활동이나 사업의 주요 장소.",
+      "zh-Hans": "进行特定活动或业务的主要场所。",
+      "es": "Lugares principales para una actividad o negocio específico.",
+      "pt-BR": "Locais principais para uma atividade ou negócio específico.",
+      "fr": "Lieux principaux pour une activité ou une entreprise spécifique.",
+      "de": "Hauptorte für eine bestimmte Aktivität oder ein Geschäft."
+    },
+    {
+      "id": 2,
+      "ja": "インターネットに接続されている状態。",
+      "ko": "인터넷에 연결된.",
+      "zh-Hans": "连接到互联网的。",
+      "es": "Conectado a internet.",
+      "pt-BR": "Conectado à internet.",
+      "fr": "Connecté à internet.",
+      "de": "Mit dem Internet verbunden."
+    },
+    {
+      "id": 3,
+      "ja": "機械が物を作るための大きな建物。",
+      "ko": "기계들이 물건을 만드는 큰 건물.",
+      "zh-Hans": "机器制造物品的大型建筑物。",
+      "es": "Un edificio grande donde las máquinas fabrican cosas.",
+      "pt-BR": "Um grande edifício onde máquinas fabricam coisas.",
+      "fr": "Un grand bâtiment où des machines fabriquent des choses.",
+      "de": "Ein großes Gebäude, in dem Maschinen Dinge herstellen."
+    },
+    {
+      "id": 4,
+      "ja": "大きくて不快な音。",
+      "ko": "크거나 원치 않는 소리.",
+      "zh-Hans": "响亮或不想要的噪音。",
+      "es": "Un sonido fuerte o no deseado.",
+      "pt-BR": "Um som alto ou indesejado.",
+      "fr": "Un son fort ou indésirable.",
+      "de": "Ein lautes oder unerwünschtes Geräusch."
+    },
+    {
+      "id": 5,
+      "ja": "燃料や太陽から得られ、物を動かす力。",
+      "ko": "연료나 태양으로부터 얻어져 물건을 작동시키는 힘.",
+      "zh-Hans": "来自燃料或太阳的，使事物运转的动力。",
+      "es": "La energía que proviene del combustible o del sol para hacer funcionar las cosas.",
+      "pt-BR": "A energia que vem do combustível ou do sol para fazer as coisas funcionarem.",
+      "fr": "La puissance provenant du carburant ou du soleil pour faire fonctionner les choses.",
+      "de": "Kraft aus Brennstoff oder der Sonne, um Dinge zum Laufen zu bringen."
+    },
+    {
+      "id": 6,
+      "ja": "自然源から得られ、繰り返し利用できるエネルギー。",
+      "ko": "자연 자원에서 얻어지며 다시 사용될 수 있는 에너지.",
+      "zh-Hans": "来自自然资源并可再次利用的能源。",
+      "es": "Energía que proviene de fuentes naturales y puede ser utilizada de nuevo.",
+      "pt-BR": "Energia que vem de fontes naturais e pode ser usada novamente.",
+      "fr": "Énergie provenant de sources naturelles et qui peut être réutilisée.",
+      "de": "Energie, die aus natürlichen Quellen stammt und wiederverwendet werden kann."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-05T14:49:38.902531+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

@@ -158,6 +158,20 @@
 .work-course-card h3 { margin:5px 0 10px; font-size:1.35rem; }
 .work-course-card p { font-size:.9rem; margin:0 0 24px; }
 .work-card-footer { margin-top:auto; display:flex; justify-content:space-between; font-size:.77rem; color:var(--work-blue); padding-top:18px; border-top:1px solid var(--work-line); }
+/* Keep the directory compact without changing the spacing inside lessons. */
+.work-directory-page .work-directory-hero { padding:22px 0; margin-bottom:0; }
+.work-directory-page .work-start-paths { gap:24px 48px; padding-top:22px; }
+.work-directory-page .work-start-paths .work-kicker { margin:0 0 8px; }
+.work-directory-page .work-start-paths h2 { margin:0 0 10px; }
+.work-directory-page .work-start-paths p { margin:0; }
+.work-directory-page .work-section { margin-top:30px; }
+.work-directory-page .work-section>h2,
+.work-directory-page .work-two-column h2 { margin:0 0 14px; }
+.work-directory-page .seo-category-links { margin:0; gap:8px 10px; }
+.work-directory-page .work-section-heading { margin-bottom:16px; gap:10px 24px; }
+.work-directory-page .work-section-heading .work-kicker { margin:0 0 6px; }
+.work-directory-page .work-section-heading>p { margin:0; }
+.work-directory-page .work-directory-filters { margin-bottom:16px; padding:16px; gap:16px; }
 .work-page :focus-visible { outline:3px solid #b96b29; outline-offset:4px; }
 .work-page .sr-only { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; }
 @media(max-width:1000px) { .work-hero { gap:30px; } .work-downloads,.work-course-grid,.work-glossary,.work-related { grid-template-columns:repeat(2,minmax(0,1fr)); } }

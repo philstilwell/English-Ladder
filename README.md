@@ -113,6 +113,8 @@ See the [25-occupation expansion review](docs/occupation-expansion-2026-09-28.md
 - `.github/workflows/cron.yml`
   Runs daily at **01:15, 02:15, and 03:15 fixed EST (UTC−5)**, corresponding to `06:15`, `07:15`, and `08:15 UTC` throughout the year. These are requested start times; GitHub can delay scheduled runs. During daylight saving time, these appear as 02:15, 03:15, and 04:15 on an Eastern local clock. Later runs resume saved progress or preserve an already published edition. Pending runs queue instead of replacing each other, so an automated push cannot discard the final scheduled attempt. It supports manual runs with `workflow_dispatch`, installs pinned dependencies, and runs the test suite before publishing lesson updates.
 
+  An [independent recovery timer](docs/daily-recovery.md) on Phil's Mac checks every 15 minutes from 02:45 America/New_York. It starts a missed daily job, waits for active jobs, and can request a fresh publication of saved lessons without paid generation. It uses bounded retries and existing account access; the Mac must be awake and connected.
+
 - `update_site.py`
   Rotates BBC feeds through science (Monday/Sunday), culture (Tuesday/Saturday), technology (Wednesday), business (Thursday), and world news (Friday). It avoids recently used source links and prefers less distressing stories within each feed, falling back to world news if necessary. It requests structured JSON lesson data from Gemini, renders and validates the lessons locally, and updates the three rolling archive pages plus the homepage.
 

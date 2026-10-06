@@ -96,6 +96,11 @@ on:
         required: false
         type: boolean
         default: false
+      retry_publishing:
+        description: 'With deploy_only, request a fresh Cloudflare build even if public files have not changed; no paid generation'
+        required: false
+        type: boolean
+        default: false
       release_date:
         description: 'Optional backfill release date in YYYY-MM-DD format'
         required: false
@@ -210,6 +215,16 @@ jobs:
       actions: read # Restore checkpoints from this workflow's earlier runs.
       
     steps:
+      - name: Validate publishing retry request
+        env:
+          RETRY_PUBLISHING: ${{ github.event.inputs.retry_publishing || 'false' }}
+          DEPLOY_ONLY: ${{ github.event.inputs.deploy_only || 'false' }}
+        run: |
+          if [ "${RETRY_PUBLISHING}" = "true" ] && [ "${DEPLOY_ONLY}" != "true" ]; then
+            echo "::error::retry_publishing requires deploy_only=true so recovery cannot start paid generation."
+            exit 1
+          fi
+
       - name: Checkout repository
         id: checkout
         uses: actions/checkout@v6
@@ -404,6 +419,8 @@ jobs:
           # publishing token for lesson commits so Cloudflare sees an ordinary
           # branch update; fall back only for local copies without the secret.
           GH_TOKEN: ${{ secrets.LESSON_PUBLISH_TOKEN || github.token }}
+          RETRY_PUBLISHING: ${{ github.event.inputs.retry_publishing || 'false' }}
+          REQUESTED_RELEASE_DATE: ${{ github.event.inputs.release_date || '' }}
         run: |
           gh auth setup-git --hostname github.com
           git config --global user.name "GitHub Actions Bot"
@@ -426,6 +443,20 @@ jobs:
             python update_site.py --refresh-pages
             python audit_site.py
             git add -A -- '*.html' archive news assets/news data/vocabulary-translations lesson-data.json sitemap.xml sitemaps content/seo-index.json robots.txt
+            if [ "${RETRY_PUBLISHING}" = "true" ]; then
+              # An unchanged deploy_only run cannot wake a failed hosting build.
+              # This private, tracked request makes Cloudflare retry the saved
+              # edition. It is excluded from the public asset package.
+              python - <<'PY'
+          import json, os
+          from pathlib import Path
+          request = {'release_date': os.environ['REQUESTED_RELEASE_DATE'],
+                     'run_id': os.environ['GITHUB_RUN_ID'],
+                     'run_attempt': os.environ['GITHUB_RUN_ATTEMPT']}
+          Path('cloudflare/publication-request.json').write_text(json.dumps(request, indent=2) + '\n')
+          PY
+              git add cloudflare/publication-request.json
+            fi
             if git diff --cached --quiet; then
               echo "No changes to commit"
               exit 0

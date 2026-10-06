@@ -1,6 +1,8 @@
 """Exercise runner authentication and the real cleanup shell with disposable Git repos."""
 import os
 from pathlib import Path
+import re
+import shlex
 import shutil
 import subprocess
 import sys
@@ -155,6 +157,31 @@ else:
 
 
 class WorkflowRoutingTests(unittest.TestCase):
+    def test_publication_retry_stages_a_private_request_even_without_lesson_changes(self):
+        source = step_script('Commit updated lesson pages')
+        marker = re.search(r'(?sm)^\s*if \[ "\$\{RETRY_PUBLISHING\}".*?^\s*fi$', source).group()
+        marker = marker.replace("python - <<'PY'", shlex.quote(sys.executable) + " - <<'PY'")
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            (root / 'cloudflare').mkdir()
+            subprocess.run(['git', 'init', '-q', temporary], check=True, capture_output=True)
+            env = {**os.environ, 'RETRY_PUBLISHING': 'true', 'REQUESTED_RELEASE_DATE': '2026-10-06',
+                   'GITHUB_RUN_ID': '123', 'GITHUB_RUN_ATTEMPT': '1'}
+            result = subprocess.run(['bash', '-e', '-c', marker], cwd=root, env=env, text=True, capture_output=True)
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+            staged = subprocess.check_output(['git', 'diff', '--cached', '--name-only'], cwd=root, text=True)
+            self.assertEqual('cloudflare/publication-request.json\n', staged)
+            self.assertIn('"release_date": "2026-10-06"', (root / staged.strip()).read_text())
+
+    def test_publication_retry_refuses_generation_mode(self):
+        for retry, deploy, expected in (("true", "false", 1), ("true", "true", 0),
+                                         ("false", "false", 0)):
+            with self.subTest(retry=retry, deploy=deploy):
+                result = subprocess.run(['bash', '-e', '-c', step_script('Validate publishing retry request')],
+                                        env={**os.environ, 'RETRY_PUBLISHING': retry, 'DEPLOY_ONLY': deploy},
+                                        text=True, capture_output=True)
+                self.assertEqual(expected, result.returncode)
+
     def test_manual_maintenance_never_enters_content_generation(self):
         for event, maintenance, email, result, expected in (
             ('workflow_dispatch', 'true', 'false', 'success', (True, False)),

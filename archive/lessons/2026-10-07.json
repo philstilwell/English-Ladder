@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-07",
+  "release_iso": "2026-10-07T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Tue, 06 Oct 2026 18:03:19 GMT",
+    "retrieved_at": "2026-10-07T07:08:55.066150+00:00",
+    "title": "Tear gas in Paris and Marseille as school protests grow across France",
+    "summary": "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.",
+    "evidence_text": "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.\nHundreds of thousands of people have taken to the streets across France, as a wave of protests by high-school pupils spread to their parents, university students and unions.\nPolice clashed with demonstrators in Lyon, used tear gas in Paris and Marseille and water cannon in Rennes, but there was little of the serious trouble that marred previous protests.\nPrime Minister Sébastien Lecornu condemned the earlier violence and said since the protests had begun 215 students and 85 staff had been hurt as well as 715 police officers.\n\"Most of us aren't violent,\" said Alissa, a student in Marseille. \"We're going to the streets because they've closed our schools... schools are falling apart.\"\nHer friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were generally rather poor, \"so we can't really work a lot of time\". \"We will keep doing this until good measures are taken,\" he added.\nTear gas in Paris and Marseille as school protests grow across France\nThe government said there had been disruption in 891 high schools on Tuesday - almost a quarter of all lycées - and said more than 250,000 demonstrators had taken to the streets during the day.\nHe is now under pressure to respond to the students' demands. What has been offered, including a website for students to express their grievances and an afternoon of internal discussion in schools on Friday, has made little impression so far.\nThere is widespread concern over allegations of \"disproportionate force\" by police, and France's IGPN police inspectorate has been investigating a number of cases.\nEden, 14, was part of a group blockading the Château d'Épluches lycée for 15-18-year-olds when he was hit in the face. His lawyer said he suffered a fractured jaw, and that his upper teeth were broken and four of his lower teeth were gone.\nWhat began with local anger at overcrowded classrooms, a lack of teaching staff and dilapidated school buildings in the northern Paris suburb of Seine-Saint-Denis in mid-September has since spread across the country, and extended to some universities too.\nStudents' unions put the number at 450,000, and said the number of high schools blockaded was 1,800 on what the protesters dubbed \"Act Three\" of their movement.\nEducation Minister Édouard Geffray said that from the start he had appealed for dialogue rather than school blockades and complained that \"ultra-violent elements infiltrated the high-school student movements\".\nOne police officer who fired a tear-gas grenade at a high school student at Saint-Ouen-l'Aumône, north-west of Paris, last week has now been charged by prosecutors with \"violence... resulting in mutilation or permanent disability\".\nOn Monday, a 15-year-old's hand was torn off after a so-called anti-encirclement grenade was fired in unclear circumstances near a school in the northern city of Lens.\nThere seems little chance of the protests coming to an end just yet. France's biggest union, the CGT, has said that further protests involving school and university students are being planned for Thursday.\nTuesday's protests drew people of all ages. One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing.",
+    "evidence_retrieved_at": "2026-10-07T07:08:55.066150+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/c8x23706pvz3o?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "What problems did the students in France want to change? What did they ask for?",
+          "Imagine you are a student. Would you join a protest if your school had problems? Why or why not? I think... because..."
+        ],
+        "editorial_check": {
+          "content_digest": "51d75eef0ee066919e7a65330b92eaa613ea918ec26c7fc0c3c1d429a5b4a068",
+          "date": "2026-10-07T07:09:27.559528+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-09-08-level-calibration",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson appropriately challenges A1-A2 learners by testing clear reading details, contextual vocabulary, and the simple past tense, with plausible and straightforward answer options."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The language throughout the lesson is straightforward, neutral, and uses everyday English suitable for adults, consistent with the A1-A2 register requirements."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses short clauses, familiar connectors, and accessible vocabulary. Grammar explanations are brief, and a sentence frame is provided in the discussion prompts, meeting all specified requirements."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary terms are common, concrete, and well-defined, appropriate for A1-A2 learners. No reserved vocabulary targets were borrowed."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-2.5-flash",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "A1-A2"
+        },
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "example_quote": "Crowds of mainly teenagers called for more resources for schools.",
+          "explanation": "The Simple Past Tense shows actions that happened and finished in the past. We often add \"-ed\" to regular verbs to make them past tense, like \"called\" or \"clashed.\" Irregular verbs change in different ways, like \"spread.\""
+        },
+        "news_brief_sentences": [
+          "Crowds of mainly teenagers called for more resources for schools.",
+          "They also wanted an end to what they called police repression.",
+          "A wave of protests by high-school pupils spread to their parents, university students and unions.",
+          "Police clashed with demonstrators in Lyon.",
+          "Police used tear gas in Paris and Marseille.",
+          "The government said that 215 students and 85 staff had been hurt.",
+          "Alissa, a student, said that schools were falling apart.",
+          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were poor.",
+          "Students will keep protesting until good measures are taken."
+        ],
+        "overview": "Students and other people protested across France to ask for better schools and an end to police actions.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, the students asked for more resources for schools, not more police officers.",
+              "Yes, the students called for more resources to improve their schools.",
+              "The reading says they wanted 'more resources,' which can include staff, but 'new teachers' is not directly stated as their main request."
+            ],
+            "options": [
+              "More police officers.",
+              "More resources.",
+              "New teachers."
+            ],
+            "question": "What did the crowds of teenagers want for schools?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The police used tear gas in Paris and Marseille, not only Lyon.",
+              "That's right! Police used tear gas in both Paris and Marseille.",
+              "Police used water cannon in Rennes, but tear gas was used in Paris and Marseille."
+            ],
+            "options": [
+              "Only in Lyon.",
+              "In Paris and Marseille.",
+              "Only in Rennes."
+            ],
+            "question": "Where did the police use tear gas?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "No, \"protests\" are not parties. They are serious events.",
+              "Correct. People participate in protests to show they are unhappy about a situation.",
+              "While some meetings discuss new ideas, protests are specifically to show disagreement or unhappiness."
+            ],
+            "options": [
+              "Parties or celebrations.",
+              "Events to show anger or unhappiness.",
+              "Meetings for new ideas."
+            ],
+            "question": "What does the word \"protests\" mean in this story?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses the Simple Present Tense (\"says\" and \"is\") to describe a current situation.",
+              "Yes, \"clashed\" is a verb in the Simple Past Tense, showing an action that happened in the past.",
+              "This sentence uses the Simple Present Tense (\"are falling\") to describe something happening now."
+            ],
+            "options": [
+              "The government says there is disruption.",
+              "Police clashed with demonstrators.",
+              "Schools are falling apart."
+            ],
+            "question": "Which sentence uses the Simple Past Tense to talk about an action that happened?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "No, a student said the conditions were generally rather poor.",
+              "The student said conditions were poor, so they couldn't really work a lot.",
+              "Yes, Sacha said the ceilings were leaking and conditions were generally poor."
+            ],
+            "options": [
+              "Very good.",
+              "Perfect for working.",
+              "Poor, with leaking ceilings."
+            ],
+            "question": "What were the conditions like in Marseille's schools, according to a student?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While teachers might support, the reading states parents, university students, and unions joined the protests.",
+              "Correct. The protests spread to include parents, university students, and unions.",
+              "Government officials were not reported as joining the protests; they were responding to them."
+            ],
+            "options": [
+              "Only teachers.",
+              "Parents, university students, and unions.",
+              "Only government officials."
+            ],
+            "question": "Who joined the protests in France besides students?"
+          }
+        ],
+        "sentence_evidence": [
+          "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.",
+          "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.",
+          "Hundreds of thousands of people have taken to the streets across France, as a wave of protests by high-school pupils spread to their parents, university students and unions.",
+          "Police clashed with demonstrators in Lyon, used tear gas in Paris and Marseille and water cannon in Rennes, but there was little of the serious trouble that marred previous protests.",
+          "Police clashed with demonstrators in Lyon, used tear gas in Paris and Marseille and water cannon in Rennes, but there was little of the serious trouble that marred previous protests.",
+          "Prime Minister Sébastien Lecornu condemned the earlier violence and said since the protests had begun 215 students and 85 staff had been hurt as well as 715 police officers.",
+          "\"Most of us aren't violent,\" said Alissa, a student in Marseille. \"We're going to the streets because they've closed our schools... schools are falling apart.\"",
+          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were generally rather poor, \"so we can't really work a lot of time\". \"We will keep doing this until good measures are taken,\" he added.",
+          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were generally rather poor, \"so we can't really work a lot of time\". \"We will keep doing this until good measures are taken,\" he added."
+        ],
+        "title": "Students Protest for Better Schools in France",
+        "topic": "Student Protests in France",
+        "vocabulary": [
+          {
+            "definition": "events where people show they are unhappy about something, often in a public place",
+            "part_of_speech": "noun",
+            "term": "protests"
+          },
+          {
+            "definition": "things that are available and can be used, like money, staff, or materials for schools",
+            "part_of_speech": "noun",
+            "term": "resources"
+          },
+          {
+            "definition": "the official organization that makes sure people follow the law and catches criminals",
+            "part_of_speech": "noun",
+            "term": "police"
+          },
+          {
+            "definition": "to move and cover a larger area, or to become known by more people",
+            "part_of_speech": "verb",
+            "term": "spread"
+          },
+          {
+            "definition": "had a fight or argument with someone, often between groups of people",
+            "part_of_speech": "verb",
+            "term": "clashed"
+          },
+          {
+            "definition": "to cause pain or injury to a person or animal",
+            "part_of_speech": "verb",
+            "term": "hurt"
+          },
+          {
+            "definition": "the state of something, especially regarding its quality or health",
+            "part_of_speech": "noun",
+            "term": "conditions"
+          }
+        ]
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "What specific demands are the students making of the French government regarding their schools?",
+          "Do you think public demonstrations are an effective way to bring about change in a country? Why or why not?"
+        ],
+        "editorial_check": {
+          "content_digest": "6fba23fa9b885325c32b73bbef8402922d655ba84a4b3d5699e1cce52a7ef341",
+          "date": "2026-10-07T07:10:17.366048+00:00",
+          "generation_attempts": 1,
+          "language_policy_version": "2026-09-08-level-calibration",
+          "level_checks": {
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson appropriately challenges B1-B2 learners through its detailed news comprehension, contextual vocabulary, application of a relevant grammar point, and questions requiring inference and understanding of relationships between details."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently maintains a natural, neutral news English register suitable for B1-B2 learners throughout all learner-facing content."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language uses varied and clear sentence structures, provides explicit grammar explanation with a relevant example, and ensures definitions, questions, and feedback are easy to understand for the target level."
+            },
+            "vocabulary": {
+              "passed": true,
+              "reason": "Vocabulary items are relevant to the news context, present in the reading, and defined clearly with appropriate contextual meanings for the B1-B2 level. No reserved vocabulary is used as a target."
+            }
+          },
+          "method": "separate evidence, teaching and level suitability review",
+          "model": "gemini-2.5-flash",
+          "repaired_sections": [],
+          "status": "passed",
+          "target_level": "B1-B2"
+        },
+        "grammar": {
+          "concept": "Present Perfect Simple",
+          "example_quote": "What began with local anger at overcrowded classrooms and dilapidated school buildings has since extended across the country, reaching some universities.",
+          "explanation": "The Present Perfect Simple connects an action or state from the past to the present. It is used to describe an action that started in the past and continues into the present, or an action completed in the past but with a result that is relevant now. The structure is 'have/has' + past participle. In the example, \"has since extended\" shows the spread began in the past and continues or affects the present situation."
+        },
+        "news_brief_sentences": [
+          "Tear gas was used in Paris and Marseille as school demonstrations increased across France.",
+          "Large gatherings of mostly teenagers demanded better funding for schools and an end to what they called severe actions by officers.",
+          "Hundreds of thousands of people joined the street actions across France, with high-school pupils, parents, university students, and unions participating.",
+          "Police encountered demonstrators in Lyon and used tear gas in Paris and Marseille.",
+          "The government stated that 891 high schools experienced disruption on Tuesday, representing almost a quarter of all lycées.",
+          "Students explained that school buildings were often dilapidated, with leaking ceilings making it difficult to study.",
+          "Official offers, such as a website for students to express their grievances, have made little impact so far.",
+          "There is significant worry about claims of \"disproportionate force\" used by officers, with investigations now ongoing.",
+          "A 14-year-old student suffered a fractured jaw and lost teeth after being hit in the face during a school blockade.",
+          "What began with local anger at overcrowded classrooms and dilapidated school buildings has since extended across the country, reaching some universities."
+        ],
+        "overview": "Across France, large gatherings of students, parents, and union members are protesting school conditions and demanding changes from the government.",
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not mention anything about school uniforms.",
+              "Students complained about dilapidated buildings and leaking ceilings, indicating poor school conditions.",
+              "The article does not state that students are protesting against longer school days."
+            ],
+            "options": [
+              "They want new school uniforms.",
+              "They are unhappy with school building conditions.",
+              "They are protesting against longer school days."
+            ],
+            "question": "What is one of the main reasons students are demonstrating in France?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading states police encountered demonstrators and used tear gas, not that they handed out food.",
+              "The reading clearly states that police used tear gas in Paris and Marseille during the demonstrations.",
+              "Police encountered demonstrators and used tear gas; they were not described as organizing peaceful discussions."
+            ],
+            "options": [
+              "They handed out free food.",
+              "They used tear gas.",
+              "They organized peaceful discussions."
+            ],
+            "question": "What action did police take during some of the demonstrations?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Dilapidated\" means old and in bad condition, not modern or well-equipped.",
+              "The word \"dilapidated\" describes buildings that are old, neglected, and in poor condition, matching the students' complaints.",
+              "\"Dilapidated\" refers to buildings that are old and falling apart, not newly constructed."
+            ],
+            "options": [
+              "Modern and well-equipped.",
+              "In a state of disrepair or ruin.",
+              "Newly constructed and strong."
+            ],
+            "question": "What does the word \"dilapidated\" mean in the context of school buildings?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading indicates that the government's offers have made little impact, suggesting the protests did not end quickly.",
+              "The article states that the offers have made little impact, meaning school conditions were not significantly improved by them.",
+              "The text explicitly says that official offers, such as a website for grievances, \"have made little impact so far.\""
+            ],
+            "options": [
+              "They quickly ended the protests.",
+              "They significantly improved school conditions.",
+              "They made little impact so far."
+            ],
+            "question": "How did the government's offers to address student grievances impact the situation?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While teachers might support the cause, the reading specifies parents, university students, and unions as participants.",
+              "The reading states that \"high-school pupils, parents, university students, and unions participating\" in the street actions.",
+              "The article does not mention local business owners as key participants in the street actions."
+            ],
+            "options": [
+              "Only teachers.",
+              "Parents, university students, and unions.",
+              "Only local business owners."
+            ],
+            "question": "Which group is also participating in the street actions, alongside high-school pupils?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Disproportionate force\" suggests the force used was not balanced or appropriate, not that it was exactly right.",
+              "\"Disproportionate\" means too large in comparison to something else, implying the force was excessive or unfair.",
+              "The concern is that the force was too great, not that it was insufficient."
+            ],
+            "options": [
+              "The police used exactly the right amount of force.",
+              "The police used too much force for the situation.",
+              "The police did not use enough force to control the situation."
+            ],
+            "question": "What does the phrase \"disproportionate force\" imply about the police actions?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Present Perfect Simple often emphasizes a connection to the present, not a completed past action with no current relevance.",
+              "The Present Perfect Simple describes an event that began in the past and continues or has an ongoing effect or relevance in the present.",
+              "The Present Perfect Simple refers to past actions with present relevance, not future plans."
+            ],
+            "options": [
+              "The action happened once in the past and is now completely finished.",
+              "The action started in the past and is continuing or has a current result.",
+              "The action is a future plan that will start soon."
+            ],
+            "question": "When an action described by the Present Perfect Simple \"has since extended\" connects to the present, what does it mean?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading describes an injury to the student, not an award.",
+              "The article states that a 14-year-old student \"suffered a fractured jaw and lost teeth after being hit in the face.\"",
+              "The reading details an injury suffered by the student, not an election to a leadership role."
+            ],
+            "options": [
+              "He received a new award.",
+              "He suffered a fractured jaw and lost teeth.",
+              "He was elected as a student leader."
+            ],
+            "question": "What happened to a 14-year-old student during a school blockade?"
+          }
+        ],
+        "sentence_evidence": [
+          "Tear gas in Paris and Marseille as school protests grow across France",
+          "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.",
+          "Hundreds of thousands of people have taken to the streets across France, as a wave of protests by high-school pupils spread to their parents, university students and unions.",
+          "Police clashed with demonstrators in Lyon, used tear gas in Paris and Marseille and water cannon in Rennes, but there was little of the serious trouble that marred previous protests.",
+          "The government said there had been disruption in 891 high schools on Tuesday - almost a quarter of all lycées - and said more than 250,000 demonstrators had taken to the streets during the day.",
+          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were generally rather poor, \"so we can't really work a lot of time\". \"We will keep doing this until good measures are taken,\" he added.",
+          "He is now under pressure to respond to the students' demands. What has been offered, including a website for students to express their grievances and an afternoon of internal discussion in schools on Friday, has made little impression so far.",
+          "There is widespread concern over allegations of \"disproportionate force\" by police, and France's IGPN police inspectorate has been investigating a number of cases.",
+          "Eden, 14, was part of a group blockading the Château d'Épluches lycée for 15-18-year-olds when he was hit in the face. His lawyer said he suffered a fractured jaw, and that his upper teeth were broken and four of his lower teeth were gone.",
+          "What began with local anger at overcrowded classrooms, a lack of teaching staff and dilapidated school buildings in the northern Paris suburb of Seine-Saint-Denis in mid-September has since spread across the country, and extended to some universities too."
+        ],
+        "title": "School Demonstrations Grow Across France Over Conditions and Police Actions",
+        "topic": "Social Issues and Education",
+        "vocabulary": [
+          {
+            "definition": "became greater in size, number, or degree.",
+            "part_of_speech": "verb",
+            "term": "increased"
+          },
+          {
+            "definition": "meetings or assemblies of people, often for a specific purpose.",
+            "part_of_speech": "noun",
+            "term": "gatherings"
+          },
+          {
+            "definition": "the process of doing something, typically to achieve an aim or in response to a situation.",
+            "part_of_speech": "noun",
+            "term": "actions"
+          },
+          {
+            "definition": "an interruption in the normal process or activity of something.",
+            "part_of_speech": "noun",
+            "term": "disruption"
+          },
+          {
+            "definition": "in a state of disrepair or ruin, often due to age or neglect.",
+            "part_of_speech": "adjective",
+            "term": "dilapidated"
+          },
+          {
+            "definition": "formal complaints about something considered unfair or wrong.",
+            "part_of_speech": "noun",
+            "term": "grievances"
+          },
+          {
+            "definition": "too large or too small in comparison with something else; not fair or balanced.",
+            "part_of_speech": "adjective",
+            "term": "disproportionate"
+          },
+          {
+            "definition": "broken or cracked, typically used to describe a bone.",
+            "part_of_speech": "adjective",
+            "term": "fractured"
+          },
+          {
+            "definition": "an act or means of sealing off a place to prevent goods or people from entering or leaving.",
+            "part_of_speech": "noun",
+            "term": "blockade"
+          }
+        ]
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "sentence_evidence": [
+          "Tear gas in Paris and Marseille as school protests grow across France",
+          "Crowds of mainly teenagers called for more resources for schools and an end to what they called police repression.",
+          "Hundreds of thousands of people have taken to the streets across France, as a wave of protests by high-school pupils spread to their parents, university students and unions.",
+          "The government said there had been disruption in 891 high schools on Tuesday - almost a quarter of all lycées - and said more than 250,000 demonstrators had taken to the streets during the day.",
+          "Students' unions put the number at 450,000, and said the number of high schools blockaded was 1,800 on what the protesters dubbed \"Act Three\" of their movement.",
+          "Police clashed with demonstrators in Lyon, used tear gas in Paris and Marseille and water cannon in Rennes, but there was little of the serious trouble that marred previous protests.",
+          "Prime Minister Sébastien Lecornu condemned the earlier violence and said since the protests had begun 215 students and 85 staff had been hurt as well as 715 police officers.",
+          "Education Minister Édouard Geffray said that from the start he had appealed for dialogue rather than school blockades and complained that \"ultra-violent elements infiltrated the high-school student movements\".",
+          "\"Most of us aren't violent,\" said Alissa, a student in Marseille. \"We're going to the streets because they've closed our schools... schools are falling apart.\"",
+          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were generally rather poor, \"so we can't really work a lot of time\". \"We will keep doing this until good measures are taken,\" he added.",
+          "There is widespread concern over allegations of \"disproportionate force\" by police, and France's IGPN police inspectorate has been investigating a number of cases.",
+          "One police officer who fired a tear-gas grenade at a high school student at Saint-Ouen-l'Aumône, north-west of Paris, last week has now been charged by prosecutors with \"violence... resulting in mutilation or permanent disability\".",
+          "On Monday, a 15-year-old's hand was torn off after a so-called anti-encirclement grenade was fired in unclear circumstances near a school in the northern city of Lens.",
+          "He is now under pressure to respond to the students' demands. What has been offered, including a website for students to express their grievances and an afternoon of internal discussion in schools on Friday, has made little impression so far.",
+          "There seems little chance of the protests coming to an end just yet. France's biggest union, the CGT, has said that further protests involving school and university students are being planned for Thursday.",
+          "Tuesday's protests drew people of all ages. One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing."
+        ],
+        "discussion": [
+          "Explain the underlying issues and triggers that initially led to the widespread school demonstrations in France, as detailed in the news brief.",
+          "Considering the government's response and the students' resolve, what strategies do you think are most effective for resolving large-scale public demonstrations like these?"
+        ],
+        "title": "French School Demonstrations Intensify: Demands for Reform and Police Concerns",
+        "overview": "Across France, a wave of high school demonstrations has broadened to include university students and unions, driven by demands for better educational funding and mounting concerns over police conduct.",
+        "topic": "Social Unrest and Education Reform in France",
+        "news_brief_sentences": [
+          "Tear gas was used in Paris and Marseille as school protests grew across France.",
+          "Initially, crowds consisting mainly of teenagers called for more resources for schools and an end to what they characterized as police repression.",
+          "Hundreds of thousands of people have taken to the streets across France, as a wave of protests by high-school pupils spread to their parents, university students and unions.",
+          "The government reported that over 250,000 demonstrators participated on Tuesday, with disruptions in almost a quarter of all lycées.",
+          "Students' unions, however, claimed significantly higher numbers, putting total demonstrators at 450,000 and blockaded high schools at 1,800 on what the protesters dubbed \"Act Three\" of their movement.",
+          "Police clashed with demonstrators in Lyon, using tear gas in Paris and Marseille and water cannon in Rennes, though serious trouble was less severe than in previous protests.",
+          "Prime Minister Sébastien Lecornu condemned earlier violence, reporting 215 students, 85 staff, and 715 police officers had been hurt since the protests began.",
+          "Education Minister Édouard Geffray appealed for dialogue over school blockades and warned against \"ultra-violent elements\" infiltrating student movements.",
+          "Student accounts, such as Alissa's from Marseille, describe schools as \"falling apart,\" necessitating their presence in street protests.",
+          "Her friend, Sacha, further detailed poor conditions, including leaking ceilings in Marseille's schools, hindering effective study.",
+          "Widespread concern exists over allegations of \"disproportionate force\" by police, with France's IGPN police inspectorate investigating multiple cases.",
+          "One police officer has been charged by prosecutors with \"violence... resulting in mutilation or permanent disability\" after firing a tear-gas grenade at a high school student.",
+          "Another alarming incident involved a 15-year-old's hand being torn off after a so-called anti-encirclement grenade was fired in unclear circumstances near a school in Lens.",
+          "Government efforts, including a website for grievances and internal school discussions, have made little impression on the students so far.",
+          "With further union-backed mobilisations anticipated, the current wave of discontent appears unlikely to abate in the near future.",
+          "One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing."
+        ],
+        "vocabulary": [
+          {
+            "part_of_speech": "verb, past tense",
+            "definition": "Described the distinctive nature or features of something or someone.",
+            "term": "characterized"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "The act of suppressing something or someone by force, often with a sense of injustice or oppression.",
+            "term": "repression"
+          },
+          {
+            "part_of_speech": "verb, past tense",
+            "definition": "Given a particular name or nickname to something or someone.",
+            "term": "dubbed"
+          },
+          {
+            "part_of_speech": "verb phrase",
+            "definition": "Made a serious and urgent request for discussion and negotiation to resolve a situation.",
+            "term": "appealed for dialogue"
+          },
+          {
+            "part_of_speech": "verb, present participle",
+            "definition": "Entering or gaining access to an organization or place surreptitiously and often with hostile intent.",
+            "term": "infiltrating"
+          },
+          {
+            "part_of_speech": "verb, present participle",
+            "definition": "Making something necessary as a result or consequence of a particular situation.",
+            "term": "necessitating"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "Claims or assertions that someone has done something illegal or wrong, typically without proof.",
+            "term": "allegations"
+          },
+          {
+            "part_of_speech": "verb phrase",
+            "definition": "Formally accused by legal officials of committing a crime, leading to legal proceedings.",
+            "term": "charged by prosecutors"
+          },
+          {
+            "part_of_speech": "noun phrase",
+            "definition": "Conditions or details surrounding an event that are not fully known, understood, or transparent.",
+            "term": "unclear circumstances"
+          },
+          {
+            "part_of_speech": "noun",
+            "definition": "An effect or feeling produced on someone's mind, often initially or subtly, by an experience or event.",
+            "term": "impression"
+          },
+          {
+            "part_of_speech": "idiomatic phrase",
+            "definition": "Not likely to become less intense, widespread, or severe in the near future.",
+            "term": "unlikely to abate"
+          }
+        ],
+        "grammar": {
+          "concept": "Present Participle Clauses (Adverbial)",
+          "example_quote": "One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing.",
+          "explanation": "A present participle clause can function as an adverbial clause, providing additional information about the main verb or clause. It describes an action happening at the same time as, or immediately before or after, the main verb, often indicating cause, reason, result, or an accompanying circumstance. It adds detail concisely and links related events smoothly."
+        },
+        "quiz": [
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading focuses on general school conditions and police conduct, not specific curriculum or exam reforms.",
+              "Correct. The core demands include more resources for schools and addressing what students and unions characterize as police repression.",
+              "While important, extracurricular activities are not highlighted as a primary driver for these extensive demonstrations."
+            ],
+            "options": [
+              "Opposition to specific curriculum changes and examination reforms.",
+              "Demands for increased educational funding and an end to perceived police repression.",
+              "Protest against a lack of extracurricular activities in public schools."
+            ],
+            "question": "What is the primary motivation for the widespread school demonstrations across France?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While teachers might be sympathetic, the reading does not state they have joined the protests as an official group, nor have government officials.",
+              "Correct. The movement has broadened significantly to include parents, university students, and powerful trade unions.",
+              "The reading does not mention the involvement of local business owners or community leaders in these specific demonstrations."
+            ],
+            "options": [
+              "Teachers' associations and government officials.",
+              "Parents, university students, and major trade unions.",
+              "Local business owners and community leaders."
+            ],
+            "question": "Beyond high-school pupils, which groups have now joined the protest wave?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Characterized\" implies a description or interpretation, not necessarily universal acknowledgment of a fact.",
+              "Correct. \"Characterized\" indicates that the protestors are presenting their interpretation of police actions, suggesting a specific viewpoint rather than objective fact.",
+              "The term \"characterized\" refers to how something is described or represented, not an official confirmation from authorities."
+            ],
+            "options": [
+              "That the police repression was universally acknowledged as factual.",
+              "That the protestors described police actions in a particular way, from their perspective.",
+              "That official reports confirmed the police actions as acts of repression."
+            ],
+            "question": "In the sentence, \"Initially, crowds consisting mainly of teenagers called for more resources for schools and an end to what they characterized as police repression,\" what does \"characterized\" imply?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading states the students' unions used the term, not the government.",
+              "\"Dubbed\" indicates an informal naming by a group, not a formal legal classification.",
+              "Correct. To \"dub\" means to give a specific name or nickname, indicating this was a term coined by the protestors."
+            ],
+            "options": [
+              "It was the official government designation for the protest phase.",
+              "It was a formal legal classification for the ongoing unrest.",
+              "It was a name or title given to it by the protestors themselves."
+            ],
+            "question": "The students' unions claimed 450,000 demonstrators on what they \"dubbed\" \"Act Three\" of their movement. What does \"dubbed\" convey about this term?"
+          },
+          {
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The clause 'considering all perspectives carefully' uses a present participle to describe the manner or a simultaneous action of the committee finalizing its decision.",
+              "This uses a perfect participle clause ('Having finished'), which indicates an action completed before the main verb, not a simultaneous action or consequence of the main verb as a simple present participle clause would.",
+              "This uses a past participle ('broken down') to describe the car, functioning as an adjective, not an adverbial present participle clause describing an action."
+            ],
+            "options": [
+              "The committee finalized its decision, considering all perspectives carefully.",
+              "Having finished their work, the team celebrated their success.",
+              "Her car, broken down on the side of the road, needed towing."
+            ],
+            "question": "Which sentence correctly demonstrates a present participle clause functioning adverbially to explain a consequence or simultaneous action?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While police took action, the Minister's stated approach was dialogue and identifying specific elements, not blanket strict enforcement.",
+              "Correct. The Minister \"appealed for dialogue\" and voiced concern about \"ultra-violent elements infiltrating\" the student movements, suggesting a nuanced stance.",
+              "The government's offers, mentioned later in the reading, made little impression, indicating no immediate, full concessions were made."
+            ],
+            "options": [
+              "He advocated for strict enforcement against all demonstrators.",
+              "He appealed for dialogue and expressed concern about \"ultra-violent elements\" infiltrating the movement.",
+              "He offered immediate concessions to meet all student demands."
+            ],
+            "question": "What was Education Minister Édouard Geffray's approach to the demonstrations, according to the news brief?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While political context exists, Alissa's specific quote highlights school conditions as the direct prompt for her protest.",
+              "Correct. Alissa explicitly states, \"schools are falling apart,\" indicating the poor state of educational infrastructure as a primary motivator for their protests, thus necessitating action.",
+              "The reading mentions poor learning environments but does not specifically cite excessively difficult workloads as a student grievance."
+            ],
+            "options": [
+              "A desire to influence upcoming presidential elections.",
+              "Their feeling that schools are \"falling apart,\" necessitating public action.",
+              "Frustration over excessively difficult academic workloads."
+            ],
+            "question": "According to student accounts like Alissa's, what is a key reason for their participation in street protests?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While possible, \"unlikely to abate\" primarily means unlikely to lessen, not necessarily a guarantee of significant escalation.",
+              "Correct. \"Unlikely to abate\" means the demonstrations are not predicted to become less severe, widespread, or intense in the foreseeable future.",
+              "The reading states that government efforts have made little impression, indicating immediate resolution is not expected, making the protests unlikely to abate."
+            ],
+            "options": [
+              "They are expected to escalate significantly and uncontrollably.",
+              "They are not expected to decrease in intensity or frequency soon.",
+              "They will likely be resolved through immediate government intervention."
+            ],
+            "question": "If the current wave of discontent appears \"unlikely to abate\" in the near future, what does this suggest about the protests?"
+          },
+          {
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Allegations\" implies claims without definitive proof, and the IGPN is investigating, not officially condemning yet.",
+              "Correct. \"Allegations\" are claims made without proof, and the IGPN police inspectorate is actively investigating these cases, confirming they are not yet proven.",
+              "The reading states there are \"allegations\" and an ongoing investigation, not definitive findings of police brutality."
+            ],
+            "options": [
+              "These are proven instances of police misconduct leading to official condemnations.",
+              "These are unproven claims of excessive force that are currently under investigation.",
+              "These are definitive findings by an independent body confirming police brutality."
+            ],
+            "question": "What is the nature of the concern surrounding \"allegations\" of disproportionate force by police?"
+          },
+          {
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The consequences were more severe than a warning or retraining; the officer faced legal charges.",
+              "While suspension might occur, the reading specifically states the officer was \"charged by prosecutors,\" indicating a more serious legal action.",
+              "Correct. The news brief explicitly states the officer \"has been charged by prosecutors with \\\"violence... resulting in mutilation or permanent disability\\\" after firing a tear-gas grenade.\""
+            ],
+            "options": [
+              "The officer received a formal warning and mandatory retraining.",
+              "The officer was suspended from duty pending an internal police review.",
+              "The officer was charged by prosecutors with violence resulting in \"mutilation or permanent disability.\""
+            ],
+            "question": "What specific consequence did one police officer face after firing a tear-gas grenade at a high school student?"
+          }
+        ],
+        "editorial_check": {
+          "date": "2026-10-07T07:55:31.889664+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 4,
+          "repaired_sections": [
+            "vocabulary"
+          ],
+          "language_policy_version": "2026-09-08-level-calibration",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners, such as \"characterized,\" \"repression,\" \"infiltrating,\" and \"unlikely to abate.\" No reserved vocabulary items are present in the taught list, nor are simple inflections or superficial variations used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a polished, natural reporting register with accurate attribution (e.g., \"The government reported,\" \"Students' unions claimed,\" \"Prime Minister Sébastien Lecornu condemned\"). The language used throughout is appropriate for a C1-Higher news analysis, balancing formality with clarity."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "Explanations for vocabulary and grammar are concise, illuminating, and use controlled complex sentences suitable for C1-Higher learners. For instance, the grammar explanation clearly articulates the function of present participle clauses as adverbial. Feedback for quiz questions elaborates on why options are correct or incorrect, discussing nuances effectively."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson encourages substantive learning beyond factual recall, including contextual vocabulary questions (Q3, Q4, Q8, Q9) that demand nuanced understanding of terms like \"characterized\" and \"allegations.\" The grammar question (Q5) requires distinguishing between different participle clause types, and comprehension questions involve synthesizing information and inferring meaning. Distractors are plausible, ensuring a meaningful challenge."
+            }
+          },
+          "content_digest": "b984ed44f39e0b7372d81be8db58b00ad95738ce90c770a2174d440bc3b51b21"
+        }
+      }
+    }
+  }
+}

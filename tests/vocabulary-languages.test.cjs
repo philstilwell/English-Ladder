@@ -78,3 +78,27 @@ test('definition content is displayed as text without executing markup', () => {
   assert.match(dom.window.document.querySelector('.vocab-definition').textContent, /^<img/);
   assert.equal(dom.window.unwanted, undefined);
 });
+
+test('opening a definition announces its actual language and Escape keeps keyboard focus on the word', () => {
+  const dom = load('ko'); const d = dom.window.document;
+  const lesson = d.querySelector('.daily-lesson'); lesson.open = true;
+  const word = lesson.querySelector('.word-button');
+  const announcement = lesson.querySelector('.word-announcement');
+  assert.equal(announcement.getAttribute('role'), 'status');
+  assert.equal(announcement.textContent, '');
+  word.focus(); word.click();
+  assert.equal(d.activeElement, word);
+  assert.equal(announcement.lang, 'ko');
+  assert.ok(announcement.textContent.includes(definitions.ko));
+  assert.equal(word.getAttribute('aria-describedby'), word.getAttribute('aria-controls'));
+  word.dispatchEvent(new dom.window.KeyboardEvent('keydown', {key: 'Escape'}));
+  assert.equal(d.activeElement, word);
+  assert.equal(announcement.textContent, '');
+  assert.equal(word.hasAttribute('aria-describedby'), false);
+  assert.equal(lesson.querySelector('.word-definition').hidden, true);
+  word.click();
+  d.querySelector('[data-definition-language="en"]').click();
+  assert.equal(announcement.textContent, '');
+  assert.equal(lesson.querySelector('.word-definition').lang, 'en');
+  assert.equal(word.getAttribute('aria-describedby'), word.getAttribute('aria-controls'));
+});

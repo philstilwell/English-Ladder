@@ -179,9 +179,9 @@
               "feedback": "“Museum” is a noun naming a destination."
             },
             {
-              "text": "in",
+              "text": "of",
               "correct": false,
-              "feedback": "Use “to” for this destination after “went”."
+              "feedback": "“Went of” does not name a destination. Use “went to the museum”."
             }
           ]
         },
@@ -210,7 +210,7 @@
         "concept-02-understanding-how-to-express-going-places-in-english-student-workbook.pdf",
         "concept-02-understanding-how-to-express-going-places-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "Which pair correctly describes a daily journey to work and back home?",
         "options": [
@@ -531,7 +531,7 @@
           ]
         },
         {
-          "prompt": "Is “by” always followed “by” an “-ing” verb? Choose the statement with a valid example.",
+          "prompt": "Is “by” always followed by an “-ing” verb? Choose the statement with a valid example.",
           "options": [
             {
               "text": "No. By can only be followed by a person.",
@@ -555,7 +555,7 @@
         "concept-05-grammar-concepts-using-by-and-through-student-workbook.pdf",
         "concept-05-grammar-concepts-using-by-and-through-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "Which pair correctly describes a learning method and a process that builds confidence?",
         "options": [
@@ -670,14 +670,14 @@
         "concept-06-noun-verb-confusion-understanding-the-difference-student-workbook.pdf",
         "concept-06-noun-verb-confusion-understanding-the-difference-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "Which pair uses a verb and its related noun correctly?",
         "options": [
           {
             "text": "We discussion the problem. The discussion was useful.",
             "correct": false,
-            "feedback": "The first sentence needs the verb “discussed”."
+            "feedback": "The first sentence needs a verb, such as “discuss” or “discussed”, rather than the noun “discussion”."
           },
           {
             "text": "We discussed the problem. The discuss was useful.",
@@ -856,7 +856,7 @@
           ]
         },
         {
-          "prompt": "Choose the sentence that expresses possibility: “The office will close early.”",
+          "prompt": "Change this prediction to express an uncertain possibility: “The office will close early.”",
           "options": [
             {
               "text": "The office must close early.",
@@ -900,7 +900,7 @@
         "concept-08-expressing-optimism-or-pessimism-in-english-student-workbook.pdf",
         "concept-08-expressing-optimism-or-pessimism-in-english-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "The forecast is uncertain. Which pair separates a wish from a cautious prediction?",
         "options": [
@@ -2654,7 +2654,7 @@
       "category": "Everyday communication",
       "goal": "Distinguish an allegation from an assignment of responsibility.",
       "rules": [
-        "“Accuse someone of something” means say that the person did something wrong: “accuse someone of lying”. “Blame someone for something” assigns responsibility: “blame the supplier for a delay”.",
+        "“Accuse someone of something” means say that the person did something wrong: “accuse someone of lying”. “Blame someone for something” assigns responsibility: “blame the supplier for a delay”. Another pattern is “blame something on someone or something”: “blame the delay on a missed delivery”.",
         "An accusation is a claim, not proof. Use “alleged”, “said”, or “according to” when reporting an unestablished claim. In a practical discussion, describing an observed problem and asking for an explanation can be more useful than assigning blame."
       ],
       "cards": [
@@ -2664,7 +2664,7 @@
           "note": "They claimed he did something wrong."
         },
         {
-          "label": "BLAME FOR",
+          "label": "BLAME ON",
           "example": "They blamed the delay on a missed delivery.",
           "note": "This assigns a cause."
         },
@@ -2740,7 +2740,7 @@
         "concept-24-accusing-blaming-student-workbook.pdf",
         "concept-24-accusing-blaming-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "You only know that the report arrived late. Which response gives that observation and asks for missing information?",
         "options": [
@@ -3756,7 +3756,7 @@
             {
               "text": "Either restaurant is fine with me.",
               "correct": true,
-              "feedback": "This states a preference without sounding dismissive."
+              "feedback": "This makes it clear that you have no preference between the two restaurants, without sounding dismissive."
             },
             {
               "text": "Neither restaurant is acceptable.",
@@ -3775,7 +3775,7 @@
         "concept-33-the-use-of-care-student-workbook.pdf",
         "concept-33-the-use-of-care-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "Punctuality matters to you, but you accept either cafe. Which pair communicates both points?",
         "options": [
@@ -4845,7 +4845,7 @@
       "cards": [
         {
           "label": "START AND END",
-          "example": "Attendance rose from 40 to 50 in June.",
+          "example": "Attendance rose from 40 people to 50 people in June.",
           "note": "The unit is people; the period is June."
         },
         {
@@ -4881,7 +4881,7 @@
           ]
         },
         {
-          "prompt": "Choose the correction: “Sales rose by 500 to 600.”",
+          "prompt": "Sales increased from 500 units to 600 units. Which sentence gives those starting and ending values correctly?",
           "options": [
             {
               "text": "Sales rose to 500 from 600.",
@@ -4891,7 +4891,7 @@
             {
               "text": "Sales rose from 500 to 600.",
               "correct": true,
-              "feedback": "“From” and “to” give the starting and ending values."
+              "feedback": "“From 500 to 600” gives the stated starting and ending values. “By 500 to 600” is grammatical for a different change: from 100 to 600."
             },
             {
               "text": "Sales rose from 500 by 600.",
@@ -4925,7 +4925,7 @@
         "concept-43-describing-trends-student-workbook.pdf",
         "concept-43-describing-trends-teaching-guide.pdf"
       ],
-      "reviewed": "2026-09-06",
+      "reviewed": "2026-10-08",
       "application": {
         "prompt": "Bus use increased from 80 to 100 journeys per day in July. The cause is unknown. Which report preserves those facts?",
         "options": [

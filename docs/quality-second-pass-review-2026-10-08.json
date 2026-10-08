@@ -1,0 +1,1444 @@
+{
+  "date": "2026-10-08",
+  "scope": "Second approved quality pass; existing features only",
+  "base_revision": "d20a33c36c4e10316a39e0d6a6ee60901707df26",
+  "grammar": {
+    "reviewed_concepts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44
+    ],
+    "changed_concepts": [
+      2,
+      5,
+      6,
+      8,
+      24,
+      33,
+      43
+    ],
+    "scope": "Rules, comparison cards, all questions, answer choices and feedback, and application questions."
+  },
+  "work": {
+    "reviewed_courses": [
+      "project-management",
+      "software-developers",
+      "medical-assistants",
+      "restaurant-servers",
+      "childcare-early-education",
+      "warehouse-distribution"
+    ],
+    "lessons_per_course": 8,
+    "scope": "All 48 cases, model responses, workshop notes, quiz prompts, options and keys. Project management and software development also received detailed vocabulary and every-answer-feedback review. This was not a full line-by-line review of six learner books.",
+    "changed_occupation_sources": [
+      "medical-assistants",
+      "warehouse-distribution"
+    ],
+    "shared_changes": [
+      "Specific document-version request question",
+      "Willingness exception to if/will rule"
+    ],
+    "books": "Checked corresponding time references; they already give explicit numeric or afternoon times. The 66 published work PDF byte contents are unchanged."
+  },
+  "translations": {
+    "languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ],
+    "news_review": "All 25 vocabulary entries across three levels for 2026-10-08: 175 translations. Known mixed Spanish/Portuguese patterns were also checked across 156 active news/story source records, finding one additional current record on 2026-10-05 advanced.",
+    "everyday_review": {
+      "units": [
+        "arrival",
+        "housing",
+        "appointments",
+        "work",
+        "laundry",
+        "service-problems"
+      ],
+      "segments": 168,
+      "scope": "Headings and three explanation points in seven languages; appointments retained unchanged."
+    },
+    "method": "Codex editorial review; prior review history retained. No fresh independent model or native-speaker certification.",
+    "changed_records": [
+      {
+        "file": "data/vocabulary-translations/d263588ea7647343e9ed87d1937682684974c2a208f61fd873b0a71b0ba264dc.json",
+        "changes": {
+          "protected": [
+            "fr"
+          ],
+          "information": [
+            "zh-Hans"
+          ],
+          "disappeared": [
+            "es",
+            "pt-BR"
+          ]
+        }
+      },
+      {
+        "file": "data/vocabulary-translations/47a8121c8ca964eb8208e2929651d0551a1c67f984cce5fd3f6a9b032f60b432.json",
+        "changes": {
+          "chain of command": [
+            "pt-BR"
+          ],
+          "harboured": [
+            "ko"
+          ],
+          "abduction": [
+            "es"
+          ]
+        }
+      },
+      {
+        "file": "data/vocabulary-translations/054dc3e9b5f561a8a67241a7b224d62442b6d3455b4d71c821ebf11557912db1.json",
+        "changes": {
+          "bankrolled": [
+            "ko",
+            "zh-Hans"
+          ],
+          "supervised": [
+            "ja",
+            "ko",
+            "zh-Hans",
+            "es",
+            "pt-BR",
+            "fr",
+            "de"
+          ],
+          "constitutes": [
+            "de"
+          ]
+        }
+      },
+      {
+        "file": "data/us-life-translations/5332544eaa972b7f9a91dd756ecc9c9bba45fbeb26bcc5c8f4869c9e94e7420f.json",
+        "changes": [
+          {
+            "language": "ja",
+            "point": 2
+          },
+          {
+            "language": "es",
+            "point": 2
+          },
+          {
+            "language": "fr",
+            "point": 2
+          },
+          {
+            "language": "de",
+            "point": 2
+          }
+        ]
+      },
+      {
+        "file": "data/us-life-translations/030e11ac1c3f581e10e30a50e8b049a5c00de6669547a7422b57e01a02bb4ed8.json",
+        "changes": [
+          {
+            "language": "ko",
+            "point": 1
+          },
+          {
+            "language": "es",
+            "point": 2
+          }
+        ]
+      },
+      {
+        "file": "data/us-life-translations/d37818885085d27380f0421e75d047b569aeaf9ab8898691f9d52f370ccb7dd1.json",
+        "changes": [
+          {
+            "language": "fr",
+            "point": 3
+          }
+        ]
+      },
+      {
+        "file": "data/us-life-translations/9b50ed5cb0e592f3ef78f2bedf7cab1a8bd7f35a7b347600d6af5c1e150acca0.json",
+        "changes": [
+          {
+            "language": "fr",
+            "point": 3
+          }
+        ]
+      },
+      {
+        "file": "data/us-life-translations/84f09571fd3a3e6134e6b401ecc7c918b7519d344597b6f75418c3bf8b7fafa7.json",
+        "changes": [
+          {
+            "language": "ja",
+            "point": 2
+          },
+          {
+            "language": "ko",
+            "point": 2
+          },
+          {
+            "language": "zh-Hans",
+            "point": 2
+          },
+          {
+            "language": "es",
+            "point": 2
+          },
+          {
+            "language": "pt-BR",
+            "point": 2
+          },
+          {
+            "language": "fr",
+            "point": 2
+          },
+          {
+            "language": "de",
+            "point": 2
+          }
+        ]
+      },
+      {
+        "file": "data/vocabulary-translations/3e6f4a2496f199ab62139f4f387e39328a5d8138843aab3b7925716eb839050a.json",
+        "changes": {
+          "rank among": [
+            "pt-BR"
+          ]
+        },
+        "lesson": "2026-10-05 advanced"
+      }
+    ]
+  },
+  "pdfs": [
+    {
+      "path": "pdf/students/concept-02-understanding-how-to-express-going-places-in-english-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-02-understanding-how-to-express-going-places-in-english-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-05-grammar-concepts-using-by-and-through-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-05-grammar-concepts-using-by-and-through-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-06-noun-verb-confusion-understanding-the-difference-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-06-noun-verb-confusion-understanding-the-difference-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-08-expressing-optimism-or-pessimism-in-english-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-08-expressing-optimism-or-pessimism-in-english-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-24-accusing-blaming-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-24-accusing-blaming-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-33-the-use-of-care-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-33-the-use-of-care-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/students/concept-43-describing-trends-student-workbook.pdf",
+      "pages": 7,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    },
+    {
+      "path": "pdf/teachers/concept-43-describing-trends-teaching-guide.pdf",
+      "pages": 8,
+      "embedded_fonts": 2,
+      "bounds": "passed"
+    }
+  ],
+  "pdf_visual_check": "28 rendered sample pages inspected in four contact sheets; no clipping/overlap. All 105 pages in 14 changed PDFs passed text bounds and font embedding checks.",
+  "performance": {
+    "conditions": {
+      "browser": "Codex in-app Chromium",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cpuSlowdown": 4,
+      "latencyMs": 150,
+      "downloadBytesPerSecond": 200000,
+      "cacheDisabled": true,
+      "server": "Python localhost; uncompressed HTTP"
+    },
+    "before": [
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 475641.264209
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9161
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 15443
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 223
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 278
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.308693
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.165892
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000115
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.118637
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0.000759
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.187986
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.59389
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.719415
+          },
+          {
+            "name": "ProcessTime",
+            "value": 19.862185
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 5953716
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 9420800
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 475641.202149
+          },
+          {
+            "name": "NavigationStart",
+            "value": 475631.688285
+          }
+        ]
+      },
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 475650.863803
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9161
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 15481
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 227
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 276
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.324058
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.1974
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000137
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.13323
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 6.6e-05
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.45847
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.803579
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.80433
+          },
+          {
+            "name": "ProcessTime",
+            "value": 28.218521
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 6163108
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 9158656
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 475650.790975
+          },
+          {
+            "name": "NavigationStart",
+            "value": 475641.26763
+          }
+        ]
+      },
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 475660.410243
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9165
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 15490
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 225
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 278
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.345843
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.180263
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000232
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.148223
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0.000735
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.444092
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.768796
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.776011
+          },
+          {
+            "name": "ProcessTime",
+            "value": 36.610109
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 6160180
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 9682944
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 475660.35158
+          },
+          {
+            "name": "NavigationStart",
+            "value": 475650.868372
+          }
+        ]
+      }
+    ],
+    "after": [
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 476417.318783
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9741
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 16288
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 194
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 248
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.33822
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.207002
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.001448
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.15136
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0.000615
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.61426
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.915615
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.531928
+          },
+          {
+            "name": "ProcessTime",
+            "value": 423.160658
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 5433276
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 8634368
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 476417.203098
+          },
+          {
+            "name": "NavigationStart",
+            "value": 476408.137329
+          }
+        ]
+      },
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 476426.482667
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9741
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 16249
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 190
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 238
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.314706
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.20705
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000208
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.142097
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 0.00147
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.48291
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.817379
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.47405
+          },
+          {
+            "name": "ProcessTime",
+            "value": 431.199888
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 5928404
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 8372224
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 476426.415532
+          },
+          {
+            "name": "NavigationStart",
+            "value": 476417.324216
+          }
+        ]
+      },
+      {
+        "metrics": [
+          {
+            "name": "Timestamp",
+            "value": 476435.831171
+          },
+          {
+            "name": "AudioHandlers",
+            "value": 0
+          },
+          {
+            "name": "AudioWorkletProcessors",
+            "value": 0
+          },
+          {
+            "name": "Documents",
+            "value": 1
+          },
+          {
+            "name": "Frames",
+            "value": 1
+          },
+          {
+            "name": "JSEventListeners",
+            "value": 762
+          },
+          {
+            "name": "LayoutObjects",
+            "value": 9741
+          },
+          {
+            "name": "MediaKeySessions",
+            "value": 0
+          },
+          {
+            "name": "MediaKeys",
+            "value": 0
+          },
+          {
+            "name": "Nodes",
+            "value": 16291
+          },
+          {
+            "name": "Resources",
+            "value": 13
+          },
+          {
+            "name": "ContextLifecycleStateObservers",
+            "value": 259
+          },
+          {
+            "name": "V8PerContextDatas",
+            "value": 5
+          },
+          {
+            "name": "WorkerGlobalScopes",
+            "value": 0
+          },
+          {
+            "name": "UACSSResources",
+            "value": 0
+          },
+          {
+            "name": "RTCPeerConnections",
+            "value": 0
+          },
+          {
+            "name": "ResourceFetchers",
+            "value": 1
+          },
+          {
+            "name": "AdSubframes",
+            "value": 0
+          },
+          {
+            "name": "DetachedScriptStates",
+            "value": 0
+          },
+          {
+            "name": "ArrayBufferContents",
+            "value": 0
+          },
+          {
+            "name": "LayoutCount",
+            "value": 190
+          },
+          {
+            "name": "RecalcStyleCount",
+            "value": 244
+          },
+          {
+            "name": "LayoutDuration",
+            "value": 0.320125
+          },
+          {
+            "name": "RecalcStyleDuration",
+            "value": 0.188142
+          },
+          {
+            "name": "DevToolsCommandDuration",
+            "value": 0.000177
+          },
+          {
+            "name": "ScriptDuration",
+            "value": 0.129267
+          },
+          {
+            "name": "V8CompileDuration",
+            "value": 5.7e-05
+          },
+          {
+            "name": "TaskDuration",
+            "value": 2.407673
+          },
+          {
+            "name": "TaskOtherDuration",
+            "value": 1.769905
+          },
+          {
+            "name": "ThreadTime",
+            "value": 7.418446
+          },
+          {
+            "name": "ProcessTime",
+            "value": 439.34661
+          },
+          {
+            "name": "JSHeapUsedSize",
+            "value": 5471068
+          },
+          {
+            "name": "JSHeapTotalSize",
+            "value": 8372224
+          },
+          {
+            "name": "FirstMeaningfulPaint",
+            "value": 0
+          },
+          {
+            "name": "DomContentLoaded",
+            "value": 476435.770157
+          },
+          {
+            "name": "NavigationStart",
+            "value": 476426.48731
+          }
+        ]
+      }
+    ],
+    "summary": {
+      "TaskDuration": {
+        "before_median": 2.444092,
+        "after_median": 2.48291
+      },
+      "ScriptDuration": {
+        "before_median": 0.13323,
+        "after_median": 0.142097
+      },
+      "LayoutDuration": {
+        "before_median": 0.324058,
+        "after_median": 0.320125
+      },
+      "RecalcStyleDuration": {
+        "before_median": 0.180263,
+        "after_median": 0.207002
+      },
+      "JSHeapUsedSize": {
+        "before_median": 6160180,
+        "after_median": 5471068
+      },
+      "Nodes": {
+        "before_median": 15481,
+        "after_median": 16288
+      },
+      "DOMContentLoaded_seconds": {
+        "before": [
+          9.513864,
+          9.523345,
+          9.483208
+        ],
+        "after": [
+          9.065769,
+          9.091316,
+          9.282847
+        ]
+      }
+    },
+    "payload_bytes": {
+      "before_raw": 966537,
+      "after_raw": 875918,
+      "before_gzip": 146151,
+      "after_gzip": 106502
+    }
+  },
+  "layouts": [
+    {
+      "page": "/us-life.html",
+      "scrollWidth": 320,
+      "title": "Everyday English in the US: 24 Beginner Conversation Units | English Ladder",
+      "width": 320
+    },
+    {
+      "page": "/news/2026-10-08/beginner.html",
+      "scrollWidth": 320,
+      "title": "US and Lebanon Protect Wanted Syrian General | Beginner English · 2026-10-08 | English Ladder",
+      "width": 320
+    },
+    {
+      "page": "/grammar-concepts/concept-43.html",
+      "scrollWidth": 320,
+      "title": "Describing trends: English Grammar Practice | English Ladder",
+      "width": 320
+    },
+    {
+      "page": "/tools.html",
+      "scrollWidth": 320,
+      "title": "English Practice Tools: Grammar, Speaking & Vocabulary | English Ladder",
+      "width": 320
+    },
+    {
+      "page": "/us-life.html",
+      "scrollWidth": 390,
+      "title": "Everyday English in the US: 24 Beginner Conversation Units | English Ladder",
+      "width": 390
+    },
+    {
+      "page": "/news/2026-10-08/beginner.html",
+      "scrollWidth": 390,
+      "title": "US and Lebanon Protect Wanted Syrian General | Beginner English · 2026-10-08 | English Ladder",
+      "width": 390
+    },
+    {
+      "page": "/grammar-concepts/concept-43.html",
+      "scrollWidth": 390,
+      "title": "Describing trends: English Grammar Practice | English Ladder",
+      "width": 390
+    },
+    {
+      "page": "/tools.html",
+      "scrollWidth": 390,
+      "title": "English Practice Tools: Grammar, Speaking & Vocabulary | English Ladder",
+      "width": 390
+    },
+    {
+      "page": "/us-life.html",
+      "scrollWidth": 768,
+      "title": "Everyday English in the US: 24 Beginner Conversation Units | English Ladder",
+      "width": 768
+    },
+    {
+      "page": "/news/2026-10-08/beginner.html",
+      "scrollWidth": 768,
+      "title": "US and Lebanon Protect Wanted Syrian General | Beginner English · 2026-10-08 | English Ladder",
+      "width": 768
+    },
+    {
+      "page": "/grammar-concepts/concept-43.html",
+      "scrollWidth": 768,
+      "title": "Describing trends: English Grammar Practice | English Ladder",
+      "width": 768
+    },
+    {
+      "page": "/tools.html",
+      "scrollWidth": 768,
+      "title": "English Practice Tools: Grammar, Speaking & Vocabulary | English Ladder",
+      "width": 768
+    },
+    {
+      "page": "/us-life.html",
+      "scrollWidth": 1280,
+      "title": "Everyday English in the US: 24 Beginner Conversation Units | English Ladder",
+      "width": 1280
+    },
+    {
+      "page": "/news/2026-10-08/beginner.html",
+      "scrollWidth": 1280,
+      "title": "US and Lebanon Protect Wanted Syrian General | Beginner English · 2026-10-08 | English Ladder",
+      "width": 1280
+    },
+    {
+      "page": "/grammar-concepts/concept-43.html",
+      "scrollWidth": 1280,
+      "title": "Describing trends: English Grammar Practice | English Ladder",
+      "width": 1280
+    },
+    {
+      "page": "/tools.html",
+      "scrollWidth": 1280,
+      "title": "English Practice Tools: Grammar, Speaking & Vocabulary | English Ladder",
+      "width": 1280
+    },
+    {
+      "page": "/efsp-medical-assistants.html",
+      "scrollWidth": 320,
+      "title": "Medical Assisting English: Free Learner Book | English Ladder",
+      "width": 320
+    },
+    {
+      "page": "/efsp-medical-assistants.html",
+      "scrollWidth": 390,
+      "title": "Medical Assisting English: Free Learner Book | English Ladder",
+      "width": 390
+    },
+    {
+      "page": "/efsp-medical-assistants.html",
+      "scrollWidth": 768,
+      "title": "Medical Assisting English: Free Learner Book | English Ladder",
+      "width": 768
+    },
+    {
+      "page": "/efsp-medical-assistants.html",
+      "scrollWidth": 1280,
+      "title": "Medical Assisting English: Free Learner Book | English Ladder",
+      "width": 1280
+    }
+  ],
+  "verification": {
+    "python_suite": 370,
+    "javascript_suite": 194,
+    "post_final_edits": {
+      "javascript_focused": 14,
+      "vocabulary_translation_python": 8,
+      "everyday_translation_python": 7
+    },
+    "site_audit": {
+      "pages": 289,
+      "indexable_pages": 287,
+      "pdfs": 154,
+      "public_files": 1008
+    },
+    "browsers": [
+      "Chromium in-app browser",
+      "native Safari"
+    ],
+    "keyboard": "Skip link, word open/Escape/focus retention, Read/Practice/Discuss, wrong answer and retry, all six answers, completion and undo.",
+    "safari": "Recorded MP3 playback, Spanish explanations, keyboard dialogue tabs, copy success status, same-page Back restoration, navigation to grammar and Back, enlarged text and SVG speaker rendering. Zoom restored and own tab closed. Exact clipboard bytes were verified in automated tests; Safari UI only confirmed its success status.",
+    "limitations": [
+      "No physical phone; user requested phone-size simulations.",
+      "Firefox was unavailable and was not installed.",
+      "Accessibility tree, live regions and keyboard behavior checked; no full screen-reader certification or actual VoiceOver/NVDA reading session.",
+      "No microphone recording or synthesized audio production.",
+      "Safari zoom was tested at four zoom-in steps; the exact percentage was not measured.",
+      "No measured CPU-time improvement; the payload is smaller but the timing sample is small."
+    ]
+  },
+  "additional_paid_generation_cost_usd": 0
+}

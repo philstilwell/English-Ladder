@@ -99,6 +99,23 @@ def render_dialogues(soup, block, key, unit):
 
 def enhance_page(soup):
     units = content()
+    # Reuse the existing drawing across 288 pronunciation links. Keep the
+    # definition in this document so it also works offline and without scripts.
+    for old in soup.select('[data-life-speaker-definitions]'):
+        old.decompose()
+    definitions = soup.new_tag('svg', attrs={'data-life-speaker-definitions': '',
+        'xmlns': 'http://www.w3.org/2000/svg', 'width': '0', 'height': '0',
+        'aria-hidden': 'true', 'focusable': 'false', 'style': 'position:absolute'})
+    symbol = soup.new_tag('symbol', id='life-speaker-shape', attrs={'viewBox': '0 0 24 24'})
+    symbol.append(soup.new_tag('path', attrs={
+        'd': 'M11 4 6 8H3v8h3l5 4V4Z', 'fill': 'currentColor',
+        'stroke': 'currentColor', 'stroke-linejoin': 'round'}))
+    symbol.append(soup.new_tag('path', attrs={
+        'd': 'M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14',
+        'fill': 'none', 'stroke': 'currentColor', 'stroke-width': '2',
+        'stroke-linecap': 'round'}))
+    definitions.append(symbol)
+    soup.body.insert(0, definitions)
     if {u['id'] for u in soup.select('.us-life-module')} != set(units):
         raise ValueError('Everyday English page and authored units do not match.')
     if set(units) != set(ICON_UNITS):
@@ -146,13 +163,7 @@ def enhance_page(soup):
             icon = soup.new_tag('svg', attrs={'class': 'life-speaker-icon',
                 'xmlns': 'http://www.w3.org/2000/svg', 'viewBox': '0 0 24 24',
                 'width': '32', 'height': '32', 'aria-hidden': 'true', 'focusable': 'false'})
-            icon.append(soup.new_tag('path', attrs={
-                'd': 'M11 4 6 8H3v8h3l5 4V4Z', 'fill': 'currentColor',
-                'stroke': 'currentColor', 'stroke-linejoin': 'round'}))
-            icon.append(soup.new_tag('path', attrs={
-                'd': 'M15 8a6 6 0 0 1 0 8M18 5a10 10 0 0 1 0 14',
-                'fill': 'none', 'stroke': 'currentColor', 'stroke-width': '2',
-                'stroke-linecap': 'round'}))
+            icon.append(soup.new_tag('use', href='#life-speaker-shape'))
             link.append(icon); dt.extend([link, label])
             dd = soup.new_tag('dd'); dd.string = word['definition']
             vocabulary.extend([dt, dd])

@@ -183,6 +183,13 @@
       if (label && definitions.en) vocabulary.set(label.toLowerCase(), { definitions, span, popups: [] });
     });
     const reading = panels[0].querySelector(".section");
+    // The live region exists before any definition is revealed, so a reader
+    // hears the result without having to move focus away from the word.
+    const wordAnnouncement = document.createElement("span");
+    wordAnnouncement.className = "word-announcement";
+    wordAnnouncement.setAttribute("role", "status");
+    wordAnnouncement.setAttribute("aria-live", "polite");
+    wordAnnouncement.setAttribute("aria-atomic", "true");
     let wordCount = 0;
     reading?.querySelectorAll("p strong").forEach((word, index) => {
       const entry = vocabulary.get(word.textContent.trim().toLowerCase());
@@ -203,13 +210,27 @@
       button.addEventListener("click", () => {
         explanation.hidden = !explanation.hidden;
         button.setAttribute("aria-expanded", String(!explanation.hidden));
+        if (explanation.hidden) {
+          button.removeAttribute("aria-describedby");
+          wordAnnouncement.textContent = "";
+        } else {
+          button.setAttribute("aria-describedby", explanation.id);
+          wordAnnouncement.lang = explanation.lang;
+          wordAnnouncement.textContent = explanation.textContent.trim();
+        }
       });
       button.addEventListener("keydown", (event) => {
-        if (event.key === "Escape") { explanation.hidden = true; button.setAttribute("aria-expanded", "false"); }
+        if (event.key === "Escape") {
+          explanation.hidden = true;
+          button.setAttribute("aria-expanded", "false");
+          button.removeAttribute("aria-describedby");
+          wordAnnouncement.textContent = "";
+        }
       });
       word.replaceWith(button, explanation);
       wordCount += 1;
     });
+    if (wordCount) panels[0].append(wordAnnouncement);
     const vocabularyBox = lesson.querySelector(".vocab-box");
     if (vocabularyBox && [...vocabulary.values()].some(entry => entry.span)) {
       vocabularyBox.id = `vocabulary-${lessonIndex}`;
@@ -243,6 +264,9 @@
       if (!controls.parentElement) vocabularyBox.before(controls);
       if (!status.parentElement) vocabularyBox.before(status);
       function updateVocabulary(language) {
+        // The language status announces this change; discard the prior word's
+        // announcement so it cannot contradict the newly translated popup.
+        wordAnnouncement.textContent = "";
         let missing = 0;
         for (const entry of vocabulary.values()) {
           const actualLanguage = entry.definitions[language] ? language : "en";

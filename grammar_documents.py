@@ -29,7 +29,7 @@ class Doc(SimpleDocTemplate):
 def page(canvas,doc):
     canvas.saveState();canvas.setFont('Ladder-Bold',9);canvas.setFillColor(BLUE)
     canvas.drawString(54,letter[1]-30,'ENGLISH LADDER');canvas.setStrokeColor(LINE);canvas.line(54,43,558,43)
-    canvas.setFont('Ladder',8);canvas.setFillColor(MUTED);canvas.drawString(54,29,'englishladder.com | Grammar | Revised September 2026');canvas.drawRightString(558,29,str(doc.page));canvas.restoreState()
+    canvas.setFont('Ladder',8);canvas.setFillColor(MUTED);canvas.drawString(54,29,f'englishladder.com | Grammar | Revised {doc.revision}');canvas.drawRightString(558,29,str(doc.page));canvas.restoreState()
 def box(card):
     table=Table([[p(card['label'],'label')],[p(card['example'])],[p(card['note'],'small')]],colWidths=[492])
     table.setStyle(TableStyle([('FONTNAME',(0,0),(-1,-1),'Ladder'),('BACKGROUND',(0,0),(-1,-1),colors.HexColor('#f0f3ff')),('LEFTPADDING',(0,0),(-1,-1),14),('RIGHTPADDING',(0,0),(-1,-1),14),('TOPPADDING',(0,0),(-1,0),12),('BOTTOMPADDING',(0,-1),(-1,-1),10)]))
@@ -70,6 +70,7 @@ def build(c,teacher=False):
     story.append(KeepTogether([p('LESSON MATERIAL','label'),*[prompt_paragraph(part) for part in material.split('\n\n')]]))
     folder='teachers' if teacher else 'students';name=c['pdfs'][1 if teacher else 0];path=ROOT/'pdf'/folder/name;path.parent.mkdir(parents=True,exist_ok=True)
     doc=Doc(str(path),pagesize=letter,leftMargin=54,rightMargin=54,topMargin=54,bottomMargin=54,title=c['title']+(' - Teaching guide' if teacher else ' - Learner workbook'),author='English Ladder',subject=c['goal'],initialFontName='Ladder')
+    doc.revision = c['reviewed']
     doc.build(story,onFirstPage=page,onLaterPages=page,canvasmaker=partial(Canvas,initialFontName='Ladder'))
     return path
 

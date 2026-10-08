@@ -65,7 +65,7 @@
       "zh-Hans": "免受危险或伤害，处于安全状态。",
       "es": "Mantenido a salvo de peligro o daño.",
       "pt-BR": "Mantido(a) em segurança contra perigo ou dano.",
-      "fr": "Qui est maintenu en sécurité face au danger ou au mal.",
+      "fr": "Gardé à l’abri du danger ou de ce qui pourrait faire du mal.",
       "de": "Vor Gefahr oder Schaden bewahrt."
     },
     {
@@ -82,7 +82,7 @@
       "id": 3,
       "ja": "何かについての事実や詳細。",
       "ko": "어떤 것에 대한 사실이나 자세한 내용.",
-      "zh-Hans": "关于某事的真相或细节。",
+      "zh-Hans": "关于某事的事实或细节。",
       "es": "Datos o detalles sobre algo.",
       "pt-BR": "Fatos ou detalhes sobre algo.",
       "fr": "Des faits ou des détails sur quelque chose.",
@@ -103,8 +103,8 @@
       "ja": "行方不明になり、見つからなかった。",
       "ko": "실종되어 찾을 수 없게 되다.",
       "zh-Hans": "失踪了，找不到了。",
-      "es": "Se perdió y no pudo ser encontrado.",
-      "pt-BR": "Sumir; não poder ser encontrado(a).",
+      "es": "Desapareció y no se pudo encontrar.",
+      "pt-BR": "Desapareceu; não pôde ser encontrado(a).",
       "fr": "A disparu et n'a pas pu être retrouvé.",
       "de": "Ist verschwunden und konnte nicht gefunden werden."
     }
@@ -112,32 +112,49 @@
   "review": {
     "status": "reviewed",
     "date": "2026-10-08",
-    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
-    "changed_terms": [
-      "general",
-      "wanted"
-    ],
-    "retained_terms": [
-      "protected",
-      "information",
-      "journalist",
-      "disappeared"
-    ],
-    "previous_source_key": "e608c6ee056622ef9403e32cb2f60b4ba4eaa1b22300fd38c25c255b54dc3f9b",
+    "method": "Codex editorial review of all seven languages against the English source; no new paid call, independent review, or native-speaker certification",
+    "changed_translations": {
+      "protected": [
+        "fr"
+      ],
+      "information": [
+        "zh-Hans"
+      ],
+      "disappeared": [
+        "es",
+        "pt-BR"
+      ]
+    },
     "previous_review": {
       "status": "reviewed",
-      "method": "separate translation-editing call",
-      "model": "gemini-2.5-flash",
-      "date": "2026-10-08T07:03:28.401058+00:00",
-      "added_languages": [
-        "ja",
-        "ko",
-        "zh-Hans",
-        "es",
-        "pt-BR",
-        "fr",
-        "de"
-      ]
+      "date": "2026-10-08",
+      "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+      "changed_terms": [
+        "general",
+        "wanted"
+      ],
+      "retained_terms": [
+        "protected",
+        "information",
+        "journalist",
+        "disappeared"
+      ],
+      "previous_source_key": "e608c6ee056622ef9403e32cb2f60b4ba4eaa1b22300fd38c25c255b54dc3f9b",
+      "previous_review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-10-08T07:03:28.401058+00:00",
+        "added_languages": [
+          "ja",
+          "ko",
+          "zh-Hans",
+          "es",
+          "pt-BR",
+          "fr",
+          "de"
+        ]
+      }
     }
   }
 }

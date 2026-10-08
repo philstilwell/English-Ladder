@@ -68,7 +68,7 @@
       "points": [
         "À la laverie, retirez vos vêtements rapidement une fois que la machine s'arrête. D'autres personnes peuvent attendre.",
         "Les méthodes de paiement varient selon les endroits. Il peut s'agir de pièces de monnaie, de cartes, d'applications ou de cartes de laverie dédiées.",
-        "Dans le sèche-linge, vérifiez le bac à charpie (lint trap). L'élimination des charpies facilite le séchage et réduit le risque d'incendie."
+        "Dans le sèche-linge, vérifiez le filtre à peluches (lint trap). Retirer les peluches facilite le séchage et réduit le risque d’incendie."
       ]
     },
     "de": {
@@ -82,18 +82,29 @@
   },
   "review": {
     "status": "reviewed",
-    "method": "separate translation-editing call",
-    "model": "gemini-2.5-flash",
-    "date": "2026-09-30T01:06:49.571730+00:00",
-    "added_languages": [
-      "ja",
-      "ko",
-      "zh-Hans",
-      "es",
-      "pt-BR",
-      "fr",
-      "de"
-    ]
+    "date": "2026-10-08",
+    "method": "Codex editorial review for naturalness, respectful address and clear terminology in all seven languages; source meaning retained; no new paid call or native-speaker certification",
+    "changed_points": [
+      {
+        "language": "fr",
+        "point": 3
+      }
+    ],
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-09-30T01:06:49.571730+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
   },
   "context_review": {
     "method": "editorial review of expanded English context",

@@ -34,7 +34,7 @@
     "ko": {
       "heading": "계약 전 확인 사항",
       "points": [
-        "월세뿐만 아니라 보증금, 공과금, 주차, 세탁, 반려동물, 계약 해지 조건도 확인하십시오. 영어가 어렵다면 서명하기 전에 시간을 달라고 요청하세요.",
+        "월세뿐 아니라 보증금, 공과금, 주차, 세탁, 반려동물, 계약 해지 조건도 확인하세요. 영어가 어렵다면 서명하기 전에 시간을 달라고 요청하세요.",
         "미국에서는 서면 기록이 중요합니다. 질문, 수리 요청, 지불 증거를 이메일이나 사진으로 남겨두면 안전합니다.",
         "룸메이트와 함께 살 경우, 청소, 조용한 시간, 손님, 공용 물품 규칙에 대해 미리 논의하세요."
       ]
@@ -51,7 +51,7 @@
       "heading": "Qué revisar antes de firmar el contrato",
       "points": [
         "No solo confirme el alquiler, sino también el depósito, los servicios públicos, el estacionamiento, la lavandería, las mascotas y las condiciones de cancelación. Si el inglés le resulta difícil, pida tiempo antes de firmar.",
-        "En Estados Unidos, los registros escritos son importantes. Es seguro guardar pruebas de preguntas, solicitudes de reparación y pagos mediante correo electrónico o fotografías.",
+        "En Estados Unidos, los registros escritos son importantes. Conviene guardar un registro de las preguntas, las solicitudes de reparación y los pagos mediante correos electrónicos o fotografías.",
         "Si vive con compañeros de piso, hable con antelación sobre las normas de limpieza, las horas de silencio, las visitas y los artículos compartidos."
       ]
     },
@@ -82,18 +82,33 @@
   },
   "review": {
     "status": "reviewed",
-    "method": "separate translation-editing call",
-    "model": "gemini-2.5-flash",
-    "date": "2026-09-30T01:05:40.312368+00:00",
-    "added_languages": [
-      "ja",
-      "ko",
-      "zh-Hans",
-      "es",
-      "pt-BR",
-      "fr",
-      "de"
-    ]
+    "date": "2026-10-08",
+    "method": "Codex editorial review for naturalness, respectful address and clear terminology in all seven languages; source meaning retained; no new paid call or native-speaker certification",
+    "changed_points": [
+      {
+        "language": "ko",
+        "point": 1
+      },
+      {
+        "language": "es",
+        "point": 2
+      }
+    ],
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-09-30T01:05:40.312368+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
   },
   "context_review": {
     "method": "editorial review of expanded English context",

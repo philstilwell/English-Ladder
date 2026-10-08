@@ -75,8 +75,8 @@
     {
       "id": 0,
       "ja": "誰かや何かに対して、しばしば多額の財政的支援を提供すること。",
-      "ko": "어떤 사람이나 무언가에 대해 상당한 방식으로 재정적 지원을 제공하는 것.",
-      "zh-Hans": "为某人或某事提供经济支持，通常是以一种重要的、大笔的方式。",
+      "ko": "사람이나 활동 등에 재정적으로 지원하는 것. 흔히 큰 규모의 지원을 뜻한다.",
+      "zh-Hans": "为某人或某事提供资金支持，通常数额较大。",
       "es": "Proporcionar apoyo financiero a alguien o algo, a menudo de manera significativa.",
       "pt-BR": "Fornecer apoio financeiro a alguém ou algo, geralmente de forma significativa.",
       "fr": "Fournir un soutien financier à quelqu'un ou à quelque chose, souvent de manière significative.",
@@ -84,13 +84,13 @@
     },
     {
       "id": 1,
-      "ja": "タスク、活動、またはグループの実行を観察し指揮し、それが正しく行われることを確認すること。",
-      "ko": "작업, 활동 또는 집단의 실행을 관찰하고 지시하여 정확하게 수행되도록 하는 것.",
-      "zh-Hans": "观察并指导某项任务、活动或某个团队的执行，确保其正确完成。",
-      "es": "Observar y dirigir la ejecución de una tarea, actividad o grupo, asegurándose de que se realice correctamente.",
-      "pt-BR": "Observar e direcionar a execução de uma tarefa, atividade ou grupo, garantindo que seja realizada corretamente.",
-      "fr": "Observer et diriger l'exécution d'une tâche, d'une activité ou d'un groupe, en s'assurant que cela est fait correctement.",
-      "de": "Die Ausführung einer Aufgabe, Tätigkeit oder Gruppe zu beobachten und zu leiten, um sicherzustellen, dass sie korrekt ausgeführt wird."
+      "ja": "仕事や活動、チームの作業を見守り、正しく進むよう指示・監督すること。",
+      "ko": "업무나 활동, 집단의 작업이 올바르게 이루어지도록 살피고 지시하는 것.",
+      "zh-Hans": "监督并指导一项任务、活动或团队的工作，确保其正确完成。",
+      "es": "Supervisar y dirigir una tarea, una actividad o el trabajo de un grupo para que se realice correctamente.",
+      "pt-BR": "Supervisionar e orientar uma tarefa, uma atividade ou o trabalho de um grupo para que seja realizado corretamente.",
+      "fr": "Surveiller et diriger une tâche, une activité ou le travail d’un groupe pour veiller à sa bonne réalisation.",
+      "de": "Eine Aufgabe, eine Tätigkeit oder die Arbeit einer Gruppe überwachen und leiten, damit sie korrekt ausgeführt wird."
     },
     {
       "id": 2,
@@ -160,7 +160,7 @@
       "es": "Ser o considerarse como; formar o componer una parte particular de algo.",
       "pt-BR": "Ser ou ser considerado como; formar ou compor uma parte específica de algo.",
       "fr": "Être ou être considéré comme ; former ou constituer une partie particulière de quelque chose.",
-      "de": "Als etwas sein oder betrachtet werden; einen bestimmten Teil von etwas bilden oder ausmachen."
+      "de": "Etwas sein oder als etwas gelten; einen bestimmten Teil von etwas bilden oder ausmachen."
     },
     {
       "id": 9,
@@ -176,27 +176,13 @@
   "review": {
     "status": "reviewed",
     "date": "2026-10-08",
-    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
-    "changed_terms": [],
-    "retained_terms": [
-      "bankrolled",
-      "supervised",
-      "entities",
-      "seizure",
-      "underpins",
-      "leadership structure",
-      "limited recourse",
-      "asserted",
-      "constitutes",
-      "intermediary"
-    ],
-    "previous_source_key": "38835db858281170e24706be4184a1dae8e1a1bbd60971548d06d6ac198de9d1",
-    "previous_review": {
-      "status": "reviewed",
-      "method": "separate translation-editing call",
-      "model": "gemini-2.5-flash",
-      "date": "2026-10-08T07:03:37.903186+00:00",
-      "added_languages": [
+    "method": "Codex editorial review of all seven languages against the English source; no new paid call, independent review, or native-speaker certification",
+    "changed_translations": {
+      "bankrolled": [
+        "ko",
+        "zh-Hans"
+      ],
+      "supervised": [
         "ja",
         "ko",
         "zh-Hans",
@@ -204,7 +190,44 @@
         "pt-BR",
         "fr",
         "de"
+      ],
+      "constitutes": [
+        "de"
       ]
+    },
+    "previous_review": {
+      "status": "reviewed",
+      "date": "2026-10-08",
+      "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+      "changed_terms": [],
+      "retained_terms": [
+        "bankrolled",
+        "supervised",
+        "entities",
+        "seizure",
+        "underpins",
+        "leadership structure",
+        "limited recourse",
+        "asserted",
+        "constitutes",
+        "intermediary"
+      ],
+      "previous_source_key": "38835db858281170e24706be4184a1dae8e1a1bbd60971548d06d6ac198de9d1",
+      "previous_review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-10-08T07:03:37.903186+00:00",
+        "added_languages": [
+          "ja",
+          "ko",
+          "zh-Hans",
+          "es",
+          "pt-BR",
+          "fr",
+          "de"
+        ]
+      }
     }
   }
 }

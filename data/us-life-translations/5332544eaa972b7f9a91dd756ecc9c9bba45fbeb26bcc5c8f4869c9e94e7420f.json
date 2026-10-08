@@ -27,7 +27,7 @@
       "heading": "到着後すぐに必要な英語",
       "points": [
         "空港や駅では、短く正直に答えることが大切です。滞在先の住所、学校名、勤務先、緊急連絡先をすぐ見せられるようにしましょう。",
-        "聞き取れないときに、ゆっくり話してほしいと頼むのは失礼ではありません。低いレベルの学習者でも使える安全な表現です。",
+        "聞き取れないときに、ゆっくり話してほしいと頼むのは失礼ではありません。英語を学び始めたばかりの人でも、安心して使える表現です。",
         "最初の一週間は、移動方法、携帯電話、家の鍵、近くのスーパー、緊急連絡先を先に確認すると安心です。"
       ]
     },
@@ -51,7 +51,7 @@
       "heading": "Inglés esencial justo después de llegar",
       "points": [
         "En aeropuertos o estaciones, es importante responder de forma breve y honesta. Tenga lista la dirección de su estancia, la información de su escuela o trabajo y los contactos de emergencia para poder mostrarlos de inmediato.",
-        "Cuando no entienda, pedir que le hablen despacio no es de mala educación. Es una expresión segura que incluso los estudiantes de nivel bajo pueden usar.",
+        "Si no entiende, no es de mala educación pedir que le hablen más despacio. Incluso quienes están empezando a aprender inglés pueden usar esta expresión con confianza.",
         "Durante la primera semana, le dará tranquilidad si verifica con antelación los métodos de transporte, el teléfono móvil, las llaves de casa, los supermercados cercanos y los contactos de emergencia."
       ]
     },
@@ -67,7 +67,7 @@
       "heading": "Anglais essentiel juste après l'arrivée",
       "points": [
         "Dans les aéroports et les gares, il est important de répondre brièvement et honnêtement. Ayez l'adresse de votre lieu de séjour, les informations de votre école ou de votre travail et vos contacts d'urgence à portée de main pour les montrer immédiatement.",
-        "Si vous ne comprenez pas, demander de parler lentement n'est pas impoli. C'est une expression sûre que même les apprenants de niveau débutant peuvent utiliser.",
+        "Si vous ne comprenez pas, il n’est pas impoli de demander à la personne de parler plus lentement. Même les débutants peuvent utiliser cette formule sans crainte d’être impolis.",
         "Pendant la première semaine, vous vous sentirez plus en sécurité si vous vérifiez à l'avance les modes de transport, le téléphone portable, les clés de la maison, les supermarchés proches et les contacts d'urgence."
       ]
     },
@@ -75,25 +75,48 @@
       "heading": "Wichtiges Englisch direkt nach der Ankunft",
       "points": [
         "An Flughäfen oder Bahnhöfen ist es wichtig, kurz und ehrlich zu antworten. Halten Sie die Adresse Ihres Aufenthaltsortes, Ihre Schul- oder Arbeitsinformationen und Ihre Notfallkontakte bereit, um sie sofort zeigen zu können.",
-        "Wenn Sie etwas nicht verstehen, ist es nicht unhöflich, darum zu bitten, langsamer zu sprechen. Dies ist eine sichere Formulierung, die auch Lernende mit geringen Sprachkenntnissen verwenden können.",
+        "Wenn Sie etwas nicht verstehen, ist es nicht unhöflich, um langsameres Sprechen zu bitten. Auch wer gerade erst Englisch lernt, kann diese Formulierung bedenkenlos verwenden.",
         "Für die erste Woche ist es beruhigend, die Transportmittel, das Mobiltelefon, die Hausschlüssel, nahegelegene Supermärkte und Notfallkontakte im Voraus zu überprüfen."
       ]
     }
   },
   "review": {
     "status": "reviewed",
-    "method": "separate translation-editing call",
-    "model": "gemini-2.5-flash",
-    "date": "2026-09-30T01:05:41.009988+00:00",
-    "added_languages": [
-      "ja",
-      "ko",
-      "zh-Hans",
-      "es",
-      "pt-BR",
-      "fr",
-      "de"
-    ]
+    "date": "2026-10-08",
+    "method": "Codex editorial review for naturalness, respectful address and clear terminology in all seven languages; source meaning retained; no new paid call or native-speaker certification",
+    "changed_points": [
+      {
+        "language": "ja",
+        "point": 2
+      },
+      {
+        "language": "es",
+        "point": 2
+      },
+      {
+        "language": "fr",
+        "point": 2
+      },
+      {
+        "language": "de",
+        "point": 2
+      }
+    ],
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-09-30T01:05:41.009988+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
   },
   "context_review": {
     "method": "editorial review of expanded English context",

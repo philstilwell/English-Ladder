@@ -241,7 +241,7 @@
         "case": {
           "function": "request",
           "brief": "Order D55 needs ten baskets; pick face B04 has four. System lists twelve in reserve, but allocation and availability have not been checked. Replenishment desk can review; cutoff is 15:00.",
-          "model": "Order D55 needs ten baskets, and B04 currently has four, leaving a six-unit short pick. The system lists twelve in reserve, but I haven't confirmed whether they are available to this order. Could you check allocation and replenishment status before the three o'clock cutoff and tell me whether the remaining six can be supplied?"
+          "model": "Order D55 needs ten baskets, and B04 currently has four, leaving a six-unit short pick. The system lists twelve in reserve, but I haven't confirmed whether they are available to this order. Could you check allocation and replenishment status before the three p.m. cutoff and tell me whether the remaining six can be supplied?"
         },
         "workshop": {
           "title": "Ask for the missing stock information",
@@ -379,7 +379,7 @@
         "case": {
           "function": "update",
           "brief": "Three cartons for order L66 are staged in lane 2. Manifest lists only two. Carrier cutoff is 16:00; goods have not departed. Dispatch clerk can investigate the missing carton entry.",
-          "model": "L66 has three cartons staged in lane two, but the load manifest lists only two. Nothing has departed yet, so the order is staged, not dispatched. Could dispatch check the missing carton entry before the four o'clock carrier cutoff? I can confirm the physical count without claiming that the load list is complete."
+          "model": "L66 has three cartons staged in lane two, but the load manifest lists only two. Nothing has departed yet, so the order is staged, not dispatched. Could dispatch check the missing carton entry before the four p.m. carrier cutoff? I can confirm the physical count without claiming that the load list is complete."
         },
         "workshop": {
           "title": "Name the stage accurately",
@@ -1537,7 +1537,7 @@
             ],
             [
               "Dispatch clerk",
-              "I'll check that entry before the four o'clock cutoff. Please keep the physical count distinct."
+              "I'll check that entry before the four p.m. cutoff. Please keep the physical count distinct."
             ],
             [
               "Associate",

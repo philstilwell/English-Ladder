@@ -7,7 +7,7 @@
         ja: { label: "Japanese", lang: "ja", rememberLabel: "大切なポイント", practiceLabel: "声に出す練習" },
         ko: { label: "Korean", lang: "ko", rememberLabel: "핵심 내용", practiceLabel: "소리 내어 연습하기" },
         "zh-Hans": { label: "Chinese", lang: "zh-Hans", rememberLabel: "重点", practiceLabel: "开口练习" },
-        es: { label: "Spanish", lang: "es", rememberLabel: "Puntos clave", practiceLabel: "Practica en voz alta" },
+        es: { label: "Spanish", lang: "es", rememberLabel: "Puntos clave", practiceLabel: "Practique en voz alta" },
         "pt-BR": { label: "Portuguese", lang: "pt-BR", rememberLabel: "Pontos principais", practiceLabel: "Pratique em voz alta" },
         fr: { label: "French", lang: "fr", rememberLabel: "Points essentiels", practiceLabel: "Entraînez-vous à voix haute" },
         de: { label: "German", lang: "de", rememberLabel: "Wichtige Punkte", practiceLabel: "Üben Sie laut" },

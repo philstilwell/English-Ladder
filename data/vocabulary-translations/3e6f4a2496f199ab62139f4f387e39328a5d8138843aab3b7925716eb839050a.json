@@ -95,7 +95,7 @@
       "ko": "특정 그룹이나 범주에 포함되는 것을 의미하며, 종종 어떤 것이 해당 종류에서 가장 좋거나, 크거나, 가장 중요한 것 중 하나로 간주된다는 것을 암시합니다.",
       "zh-Hans": "被包含在某个特定群体或类别中，通常暗示某事物被认为是其种类中最好、最大或最重要的之一。",
       "es": "Ser incluido en un grupo o categoría particular, a menudo implicando que algo es considerado uno de los mejores, más grandes o más significativos de su tipo.",
-      "pt-BR": "Ser incluído em um grupo ou categoria específica, muitas vezes implicando que algo é considerado um dos mejores, maiores o más significativos de su especie.",
+      "pt-BR": "Ser incluído em um grupo ou categoria específica, muitas vezes indicando que algo é considerado um dos melhores, maiores ou mais importantes de seu tipo.",
       "fr": "Être inclus dans un groupe ou une catégorie particulière, impliquant souvent que quelque chose est considéré comme l'un des meilleurs, des plus grands ou des plus significatifs de son genre.",
       "de": "In eine bestimmte Gruppe oder Kategorie eingeordnet zu werden, oft implizierend, dass etwas als eines der besten, größten oder bedeutendsten seiner Art gilt."
     },
@@ -173,36 +173,44 @@
   "review": {
     "status": "reviewed",
     "date": "2026-10-08",
-    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+    "method": "Codex correction of mixed Spanish in Brazilian Portuguese; other translations unchanged; no new independent model review",
     "changed_terms": [
-      "encompass"
+      "rank among"
     ],
-    "retained_terms": [
-      "significant concern",
-      "immense",
-      "rank among",
-      "spurred",
-      "physical footprint",
-      "operational drone",
-      "robust",
-      "necessitating",
-      "mandated"
-    ],
-    "previous_source_key": "5c108dac6278fe0484d5e866d3c86fbe00cdd0e44288a45a49ae2ed8894f9cd9",
     "previous_review": {
       "status": "reviewed",
-      "method": "separate translation-editing call",
-      "model": "gemini-2.5-flash",
-      "date": "2026-10-05T14:49:51.758980+00:00",
-      "added_languages": [
-        "ja",
-        "ko",
-        "zh-Hans",
-        "es",
-        "pt-BR",
-        "fr",
-        "de"
-      ]
+      "date": "2026-10-08",
+      "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+      "changed_terms": [
+        "encompass"
+      ],
+      "retained_terms": [
+        "significant concern",
+        "immense",
+        "rank among",
+        "spurred",
+        "physical footprint",
+        "operational drone",
+        "robust",
+        "necessitating",
+        "mandated"
+      ],
+      "previous_source_key": "5c108dac6278fe0484d5e866d3c86fbe00cdd0e44288a45a49ae2ed8894f9cd9",
+      "previous_review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-10-05T14:49:51.758980+00:00",
+        "added_languages": [
+          "ja",
+          "ko",
+          "zh-Hans",
+          "es",
+          "pt-BR",
+          "fr",
+          "de"
+        ]
+      }
     }
   }
 }

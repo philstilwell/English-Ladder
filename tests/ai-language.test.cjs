@@ -36,6 +36,19 @@ function clickLanguage(w, value) {
   w.document.querySelector(`button[data-definition-language="${value}"]`).click();
 }
 
+test('English initialization preserves the published prompt and an existing text selection', () => {
+  const w = load('us-life.html'), d = w.document;
+  const prompt = d.querySelector('.ai-prompt-text');
+  const original = prompt.firstChild;
+  const range = d.createRange();
+  range.setStart(original, 0); range.setEnd(original, 12);
+  w.getSelection().addRange(range);
+  const selected = w.getSelection().toString();
+  run(w, 'ai-practice.js');
+  assert.equal(prompt.firstChild, original);
+  assert.equal(w.getSelection().toString(), selected);
+});
+
 test('all seven language buttons update every lesson prompt, copy exact previews, and restore the originals', async () => {
   const copies = [];
   const w = load(latestNewsDate ? 'beginner.html' : lessonPage('beginner'), { clipboard: { writeText: async text => copies.push(text) } });

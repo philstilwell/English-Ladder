@@ -85,7 +85,7 @@
     {
       "id": 2,
       "ja": "特に当局に捜されている人に、住む場所と保護が与えられていること。この語には否定的な響きがあることが多い。",
-      "ko": "특히 당국이 찾는 사람에게 거처와 보호를 제공하는 것. 이 단어는 부정적인 어감을 띠는 경우가 많다.",
+      "ko": "특히 당국의 추적을 받는 사람이 거처와 보호를 제공받은 상태. 이 단어는 부정적인 어감을 띠는 경우가 많다.",
       "zh-Hans": "获得庇护和保护，尤其指受到当局追查的人；这个词常带有负面语气。",
       "es": "Recibió refugio y protección, especialmente cuando lo buscaban las autoridades; la palabra suele tener un matiz negativo.",
       "pt-BR": "Recebeu abrigo e proteção, especialmente quando era procurado pelas autoridades; a palavra costuma ter uma conotação negativa.",
@@ -107,7 +107,7 @@
       "ja": "力ずくで、通常は身代金や他の目的のために、誰かを不法に連れ去る行為。",
       "ko": "강제로 누군가를 불법적으로 데려가는 행위로, 일반적으로 몸값이나 다른 목적을 위해서이다.",
       "zh-Hans": "以武力非法带走某人的行为，通常是为了赎金或其他目的。",
-      "es": "El acto de llevarse a alguien ilegalmente por la fuerza, típicamente para un rescate u otro propósito.",
+      "es": "El acto de llevarse a alguien ilegalmente por la fuerza, normalmente para exigir un rescate o con otro propósito.",
       "pt-BR": "O ato de levar alguém ilegalmente à força, geralmente para um resgate ou outro propósito.",
       "fr": "L'acte d'enlever illégalement quelqu'un par la force, généralement pour une rançon ou un autre motif.",
       "de": "Die Entführung einer Person, typischerweise für Lösegeld oder andere Zwecke."
@@ -118,7 +118,7 @@
       "ko": "조직 내에서 지시가 최고 권위자부터 최하위까지 전달되는 시스템.",
       "zh-Hans": "组织中指令从最高权力层级传递到最低层级的系统。",
       "es": "Un sistema en una organización donde las instrucciones se transmiten desde el nivel más alto de autoridad hasta el más bajo.",
-      "pt-BR": "Um sistema em uma organización donde las instrucciones son pasadas del nivel más alto de autoridad al más bajo.",
+      "pt-BR": "Um sistema em uma organização no qual as instruções passam do nível mais alto de autoridade para os níveis inferiores.",
       "fr": "Un système au sein d'une organisation où les instructions sont transmises du plus haut niveau d'autorité au plus bas.",
       "de": "Ein System in einer Organisation, bei dem Anweisungen von der höchsten Autoritätsebene an die niedrigste weitergegeben werden."
     },
@@ -156,35 +156,51 @@
   "review": {
     "status": "reviewed",
     "date": "2026-10-08",
-    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
-    "changed_terms": [
-      "sheltered",
-      "harboured",
-      "significant"
-    ],
-    "retained_terms": [
-      "military official",
-      "arrangement",
-      "abduction",
-      "chain of command",
-      "residency",
-      "indefinitely"
-    ],
-    "previous_source_key": "ec656b79d6ceb6feeefa6934e3b8a58ec118a1d925518c01381c5c5ebe8f77ce",
+    "method": "Codex editorial review of all seven languages against the English source; no new paid call, independent review, or native-speaker certification",
+    "changed_translations": {
+      "chain of command": [
+        "pt-BR"
+      ],
+      "harboured": [
+        "ko"
+      ],
+      "abduction": [
+        "es"
+      ]
+    },
     "previous_review": {
       "status": "reviewed",
-      "method": "separate translation-editing call",
-      "model": "gemini-2.5-flash",
-      "date": "2026-10-08T07:03:33.265418+00:00",
-      "added_languages": [
-        "ja",
-        "ko",
-        "zh-Hans",
-        "es",
-        "pt-BR",
-        "fr",
-        "de"
-      ]
+      "date": "2026-10-08",
+      "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+      "changed_terms": [
+        "sheltered",
+        "harboured",
+        "significant"
+      ],
+      "retained_terms": [
+        "military official",
+        "arrangement",
+        "abduction",
+        "chain of command",
+        "residency",
+        "indefinitely"
+      ],
+      "previous_source_key": "ec656b79d6ceb6feeefa6934e3b8a58ec118a1d925518c01381c5c5ebe8f77ce",
+      "previous_review": {
+        "status": "reviewed",
+        "method": "separate translation-editing call",
+        "model": "gemini-2.5-flash",
+        "date": "2026-10-08T07:03:33.265418+00:00",
+        "added_languages": [
+          "ja",
+          "ko",
+          "zh-Hans",
+          "es",
+          "pt-BR",
+          "fr",
+          "de"
+        ]
+      }
     }
   }
 }

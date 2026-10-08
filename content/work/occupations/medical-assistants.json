@@ -511,7 +511,7 @@
         "case": {
           "function": "repair",
           "brief": "The assistant's message incorrectly says a results discussion is booked Tuesday. The schedule confirms Thursday at 14:00 with Dr Chen. The patient rearranged work. The assistant can correct the message and confirm the booking; no results are discussed in this exercise.",
-          "model": "I'm sorry my message gave Tuesday for your results discussion. The confirmed appointment is Thursday at two with Dr Chen. I understand you changed your work plans because of my message. I'll correct that message in the record and check that you have the Thursday details; I cannot interpret the results during this scheduling call."
+          "model": "I'm sorry my message gave Tuesday for your results discussion. The confirmed appointment is Thursday at two in the afternoon with Dr Chen. I understand you changed your work plans because of my message. I'll correct that message in the record and check that you have the Thursday details; I cannot interpret the results during this scheduling call."
         },
         "workshop": {
           "title": "Correct the information and acknowledge its impact",
@@ -523,13 +523,13 @@
             "The correction is recorded; ___ still needs to happen."
           ],
           "before": "Sorry for the confusion; check the portal.",
-          "after": "I gave the wrong day. Your confirmed discussion is Thursday at two with Dr Chen.",
+          "after": "I gave the wrong day. Your confirmed discussion is Thursday at two in the afternoon with Dr Chen.",
           "reason": "A specific correction is more useful than a vague apology.",
           "role_b": "Patient: you rearranged work based on Tuesday and want the verified details.",
           "challenge": "Ask whether the wrong date says anything about the clinical importance of the results.",
           "questions": [
             {
-              "prompt": "Patient: Which day is correct?\nAssistant: My message was wrong. The ____ appointment is Thursday at two.",
+              "prompt": "Patient: Which day is correct?\nAssistant: My message was wrong. The ____ appointment is Thursday at two in the afternoon.",
               "options": [
                 "provisional",
                 "requested",
@@ -1827,7 +1827,7 @@
           "turns": [
             [
               "Assistant",
-              "My message gave Tuesday incorrectly. Your electronic health record confirms Thursday at two with Dr Chen."
+              "My message gave Tuesday incorrectly. Your electronic health record confirms Thursday at two in the afternoon with Dr Chen."
             ],
             [
               "Patient",
@@ -1835,7 +1835,7 @@
             ],
             [
               "Assistant",
-              "I've checked the appointment schedule directly. Thursday at two is the confirmed entry."
+              "I've checked the appointment schedule directly. Thursday at two in the afternoon is the confirmed entry."
             ],
             [
               "Patient",
@@ -2396,7 +2396,7 @@
         ],
         [
           "Outgoing assistant",
-          "The patient and the transport coordinator received Tuesday. The verified booking is Thursday at two."
+          "The patient and the transport coordinator received Tuesday. The verified booking is Thursday at two in the afternoon."
         ],
         [
           "Incoming assistant",

@@ -27,7 +27,7 @@
       "heading": "問題は落ち着いて、具体的に伝える",
       "points": [
         "困った時は、何が起きたか、いつ起きたか、今何をしてほしいかを短く伝えます。",
-        "case number、receipt、email、ticket number は後で確認するために大切です。必ずメモや写真で残しましょう。",
+        "case number（問い合わせの案件番号）、receipt（領収書）、email（メール）、ticket number（問い合わせ受付番号）は、後で確認するために大切です。必ずメモや写真で残しましょう。",
         "最初の人が助けられない時は、怒らずに Who should I speak with? と聞くと次につながりやすいです。"
       ]
     },
@@ -35,7 +35,7 @@
       "heading": "문제를 침착하게 구체적으로 설명하기",
       "points": [
         "문제가 생겼을 때는 무엇이 일어났는지, 언제 일어났는지, 지금 무엇을 원하는지 간결하게 설명하세요.",
-        "case number, receipt, email, ticket number는 나중에 확인하기 위해 중요합니다. 반드시 메모하거나 사진으로 남겨두세요.",
+        "case number(문의 건 번호), receipt(영수증), email(이메일), ticket number(문의 접수 번호)는 나중에 확인할 때 중요합니다. 반드시 메모하거나 사진으로 남겨 두세요.",
         "첫 번째 담당자가 도와줄 수 없을 때는 화내지 않고 Who should I speak with? 라고 물으면 다음 단계로 나아가기 쉽습니다."
       ]
     },
@@ -43,7 +43,7 @@
       "heading": "遇到问题要冷静、具体地说明",
       "points": [
         "有问题时，简短说明发生了什么、什么时候发生、现在需要对方做什么。",
-        "case number、receipt、email 和 ticket number 对后续查询很重要，要保存或拍照。",
+        "case number（问题处理编号）、receipt（收据）、email（电子邮件）和 ticket number（服务工单号）对后续查询很重要，要保存或拍照。",
         "如果第一个人不能帮忙，不要生气。问 Who should I speak with? 会更容易找到负责的人。"
       ]
     },
@@ -51,7 +51,7 @@
       "heading": "Comunique el problema con calma y de forma específica",
       "points": [
         "Cuando tenga un problema, explique brevemente qué pasó, cuándo pasó y qué necesita ahora.",
-        "Los datos como case number, receipt, email o ticket number son importantes para futuras referencias. Asegúrese de anotarlos o tomarles una foto.",
+        "El case number (número de caso), el receipt (recibo), el email (correo electrónico) y el ticket number (número de solicitud de asistencia) son importantes para consultar el asunto después. Asegúrese de guardarlos, anotarlos o fotografiarlos.",
         "Si la primera persona no puede ayudarle, pregunte con calma \"Who should I speak with?\" (¿Con quién debo hablar?) para que le deriven a la persona adecuada."
       ]
     },
@@ -59,7 +59,7 @@
       "heading": "Comunique o problema com calma e de forma específica",
       "points": [
         "Quando tiver um problema, explique brevemente o que aconteceu, quando aconteceu e o que você precisa agora.",
-        "O case number, o receipt, o email e o ticket number são importantes para consultas futuras. Certifique-se de anotá-los ou tirar uma foto.",
+        "O case number (número do caso), o receipt (recibo), o email (e-mail) e o ticket number (número do chamado) são importantes para consultar o assunto depois. Guarde-os, anote-os ou tire uma foto.",
         "Se a primeira pessoa não puder ajudar, pergunte calmamente \"Who should I speak with?\" (Com quem devo falar?) para facilitar o próximo passo."
       ]
     },
@@ -67,7 +67,7 @@
       "heading": "Décrire le problème calmement et précisément",
       "points": [
         "Lorsque vous rencontrez un problème, expliquez brièvement ce qui s'est passé, quand cela s'est produit et ce dont vous avez besoin maintenant.",
-        "Des éléments comme le case number, le receipt, l'email ou le ticket number sont importants pour un suivi ultérieur. Assurez-vous de les noter ou de les photographier.",
+        "Le case number (numéro de dossier), le receipt (reçu), l’email (courriel) et le ticket number (numéro de demande d’assistance) sont importants pour le suivi. Pensez à les conserver, à les noter ou à les photographier.",
         "Si la première personne ne peut pas vous aider, demandez calmement « Who should I speak with? » (À qui dois-je parler ?) pour faciliter la progression."
       ]
     },
@@ -75,25 +75,60 @@
       "heading": "Schildern Sie das Problem ruhig und präzise",
       "points": [
         "Wenn Sie ein Problem haben, beschreiben Sie kurz, was passiert ist, wann es passiert ist und was Sie jetzt brauchen.",
-        "Eine case number, ein receipt, eine email oder eine ticket number sind für spätere Nachfragen wichtig. Stellen Sie sicher, dass Sie diese notieren oder fotografieren.",
+        "Die case number (Fallnummer), der receipt (Beleg), die email (E-Mail) und die ticket number (Nummer der Serviceanfrage) sind für spätere Nachfragen wichtig. Bewahren Sie diese auf, notieren oder fotografieren Sie sie.",
         "Wenn die erste Person Ihnen nicht helfen kann, fragen Sie ruhig „Who should I speak with?“ (Mit wem sollte ich sprechen?), um den nächsten Schritt zu erleichtern."
       ]
     }
   },
   "review": {
     "status": "reviewed",
-    "method": "separate translation-editing call",
-    "model": "gemini-2.5-flash",
-    "date": "2026-09-30T01:07:12.783439+00:00",
-    "added_languages": [
-      "ja",
-      "ko",
-      "zh-Hans",
-      "es",
-      "pt-BR",
-      "fr",
-      "de"
-    ]
+    "date": "2026-10-08",
+    "method": "Codex editorial review for naturalness, respectful address and clear terminology in all seven languages; source meaning retained; no new paid call or native-speaker certification",
+    "changed_points": [
+      {
+        "language": "ja",
+        "point": 2
+      },
+      {
+        "language": "ko",
+        "point": 2
+      },
+      {
+        "language": "zh-Hans",
+        "point": 2
+      },
+      {
+        "language": "es",
+        "point": 2
+      },
+      {
+        "language": "pt-BR",
+        "point": 2
+      },
+      {
+        "language": "fr",
+        "point": 2
+      },
+      {
+        "language": "de",
+        "point": 2
+      }
+    ],
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-09-30T01:07:12.783439+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
   },
   "context_review": {
     "method": "editorial review of expanded English context",

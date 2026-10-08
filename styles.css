@@ -2231,7 +2231,7 @@ body.lightbox-open {
     border-color: rgba(37, 99, 235, 0.22);
 }
 
-.tool-panel summary {
+.tool-panel > summary {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -2242,7 +2242,7 @@ body.lightbox-open {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(249, 251, 255, 0.78));
 }
 
-.tool-panel summary::after {
+.tool-panel > summary::after {
     content: "+";
     position: absolute;
     right: 20px;
@@ -2260,22 +2260,22 @@ body.lightbox-open {
     transform: translateY(-50%);
 }
 
-.tool-panel[open] summary::after {
+.tool-panel[open] > summary::after {
     content: "-";
 }
 
-.tool-panel summary::-webkit-details-marker {
+.tool-panel > summary::-webkit-details-marker {
     display: none;
 }
 
-.tool-panel summary strong {
+.tool-panel > summary strong {
     display: block;
     color: #20253a;
     font-size: 1.16rem;
     line-height: 1.2;
 }
 
-.tool-panel summary small {
+.tool-panel > summary small {
     display: block;
     margin-top: 3px;
     color: var(--muted);
@@ -3324,7 +3324,7 @@ body.lightbox-open {
         border-radius: 18px;
     }
 
-    .tool-panel summary {
+    .tool-panel > summary {
         align-items: flex-start;
         padding: 15px 52px 15px 15px;
     }

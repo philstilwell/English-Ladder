@@ -36,7 +36,10 @@ After my attempt, explain why my actual choice or wording works or needs revisio
   });
   function renderLanguage() {
     prompts.forEach(({ node, original, status }) => {
-      node.textContent = localizePrompt(original);
+      const text = localizePrompt(original);
+      // Keep the published English text in place on first load. Replacing it
+      // needlessly reparses every long prompt and can clear a text selection.
+      if (node.textContent !== text) node.textContent = text;
       if (status) status.textContent = '';
     });
     notices.forEach(notice => {

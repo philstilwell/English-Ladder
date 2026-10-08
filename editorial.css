@@ -163,7 +163,7 @@ details[open] > summary.lesson-date::after { content: "−"; }
 .tool-button:hover, .hub-resource-link:hover, .grammar-cta:hover, .efsp-download-link:hover { background: var(--accent-strong); color: #fff; box-shadow: none; transform: none; }
 .tool-button-secondary, .grammar-cta-secondary { background: #fff; color: var(--accent-strong); border: 1px solid var(--border); }
 .tool-button-secondary:hover, .grammar-cta-secondary:hover { background: #edf1ff; color: var(--accent-strong); }
-.tool-panel summary, .tool-panel[open] summary, .efsp-expansion-panel, .efsp-stat-list li, .us-life-stat-list li, .tool-result-card, .diagnostic-card { background: #fff; border-radius: 8px; box-shadow: none; }
+.tool-panel > summary, .tool-panel[open] > summary, .efsp-expansion-panel, .efsp-stat-list li, .us-life-stat-list li, .tool-result-card, .diagnostic-card { background: #fff; border-radius: 8px; box-shadow: none; }
 .tools-jump-grid a:hover, .us-life-jump-grid a:hover, .us-life-module:hover { transform: none; box-shadow: none; }
 .tool-results:not(:empty), .tool-note, .phrase-output, .module-block { background: #f0f3f8; border-radius: 8px; box-shadow: none; }
 .photo-context { color: var(--muted); font-size: .75rem; line-height: 1.5; max-width: 290px; }
@@ -259,9 +259,9 @@ h1, h2, h3 { text-wrap: pretty; }
 .tools-jump-grid a { justify-content: flex-start; font-weight: 600; line-height: 1.4; border-color: var(--border); }
 .tools-jump-number { background: #edf1ff; color: var(--accent-strong); border: 0; border-radius: 6px; font-weight: 600; }
 .tool-panel:hover, .tool-panel[open] { box-shadow: none; transform: none; border-color: #afbedf; }
-.tool-panel summary strong { font-weight: 600; }
-.tool-panel summary::after { border: 0; background: #edf1ff; color: var(--accent-strong); }
-.tool-panel summary:focus-visible { outline-offset: -4px; }
+.tool-panel > summary strong { font-weight: 600; }
+.tool-panel > summary::after { border: 0; background: #edf1ff; color: var(--accent-strong); }
+.tool-panel > summary:focus-visible { outline-offset: -4px; }
 .us-life-main h2, .us-life-intro h2, .us-life-reference h2, .dialogue-block strong, .module-block dt { color: var(--text); }
 .module-block { padding: 18px; }
 .module-block h3 { color: var(--accent-strong); text-transform: none; letter-spacing: 0; }

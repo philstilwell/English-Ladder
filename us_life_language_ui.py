@@ -55,5 +55,5 @@ def enhance_page(soup):
                         'translations': record['translations'] if record else {}}
     script = soup.new_tag('script', attrs={'type': 'application/json', 'data-us-life-translations': ''})
     # Prevent source text from ending its JSON script element.
-    script.string = json.dumps(payload, ensure_ascii=True).replace('<', '\\u003c')
+    script.string = json.dumps(payload, ensure_ascii=False, separators=(',', ':')).replace('<', '\\u003c')
     soup.body.append(script)

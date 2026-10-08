@@ -23,16 +23,16 @@
       "lesson": {
         "discussion": [
           "Why is it important for countries to share information about missing people?",
-          "What do you think about protecting someone wanted for crimes if they give important information? I think ... because ..."
+          "Imagine a friend asks what “wanted” means here. Explain the word. You can start: “The authorities want…”"
         ],
         "title": "US and Lebanon Protect Wanted Syrian General",
-        "overview": "The US and Lebanon are protecting a Syrian general wanted for crimes in return for information.",
+        "overview": "A BBC report says the US and Lebanon are protecting a former Syrian general in return for information.",
         "topic": "International protection and wanted individuals",
         "vocabulary": [
           {
             "term": "general",
             "part_of_speech": "noun",
-            "definition": "A high-ranking officer in the army."
+            "definition": "An officer with a high position in an army."
           },
           {
             "term": "protected",
@@ -42,7 +42,7 @@
           {
             "term": "wanted",
             "part_of_speech": "verb, past participle",
-            "definition": "Sought by police because of a crime."
+            "definition": "Being looked for by the authorities over a possible crime; this does not mean a court has found the person guilty."
           },
           {
             "term": "information",
@@ -83,29 +83,29 @@
           {
             "question": "Why is Bassam al-Hassan being protected by the US and Lebanon?",
             "options": [
-              "Because he is innocent of crimes.",
-              "Because he provides important information.",
-              "Because he is a famous general."
+              "Because a court has found him innocent.",
+              "Because he gives information about Tice.",
+              "Because he has become a journalist."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The news states he is wanted for crimes, not innocent.",
-              "This is correct. He gives information about Austin Tice and other intelligence.",
-              "His fame is not the reason for his protection; it is about the information he gives."
+              "The reading does not report a court decision about guilt or innocence.",
+              "The report links his protection to the information he gives.",
+              "Hassan is a former general; Tice is the journalist."
             ]
           },
           {
             "question": "What does it mean that General Hassan is 'wanted' for crimes?",
             "options": [
-              "He is popular and liked by many people.",
-              "The police or authorities are looking for him for illegal actions.",
-              "He needs help from the US and Lebanon."
+              "He is popular with many people.",
+              "Authorities want to question or arrest him over crimes.",
+              "A court has already found him guilty."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "'Wanted' in this context means he is sought by authorities, not popular.",
-              "This is correct. 'Wanted' means he is sought for committing crimes.",
-              "While he receives protection, 'wanted' refers to being sought for crimes, not needing help."
+              "“Wanted” has a crime-related meaning here.",
+              "Yes. “Wanted” concerns the authorities seeking him.",
+              "Being wanted does not establish a court decision."
             ]
           },
           {
@@ -123,45 +123,45 @@
             ]
           },
           {
-            "question": "Which of these sentences correctly uses 'because' to show a reason?",
+            "question": "Which sentence gives a reason that the reading supports?",
             "options": [
-              "The general is wanted, because he is protected.",
-              "Syria's government wants General Hassan back because they want him to face trial.",
-              "The journalist disappeared because he was in Syria."
+              "Hassan is wanted because he is protected.",
+              "Hassan is protected because he gives information.",
+              "Tice disappeared because he was in Syria."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "This does not make sense. He is protected because he gives information, not because he is wanted.",
-              "This is correct. The reason Syria's government wants him back is because they want a trial.",
-              "While true he disappeared in Syria, 'because' explains the reason for an event, not just where it happened."
+              "This uses “because” grammatically, but the reading does not give protection as the reason he is wanted.",
+              "This matches the reason stated in the reading.",
+              "This is grammatical, but being in Syria does not explain the disappearance in the reading."
             ]
           },
           {
-            "question": "How does Austin Tice's family feel about General Hassan's protection?",
+            "question": "How did the family spokesperson respond to the reported protection?",
             "options": [
-              "They are happy about it.",
-              "They are upset about it.",
-              "They don't know about it."
+              "The spokesperson welcomed it.",
+              "The spokesperson said it was wrong.",
+              "The spokesperson asked for more protection for Hassan."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "No, the family expressed that they are upset.",
-              "This is correct. The family spokesperson said they find it 'offensive'.",
-              "The family has responded to the findings, so they do know about it."
+              "The response opposed the reported protection.",
+              "The spokesperson objected to it.",
+              "The reading does not report that request."
             ]
           }
         ],
         "news_brief_sentences": [
-          "A former Syrian general is being protected by the US and Lebanon.",
+          "The US and Lebanon are protecting a former Syrian general, a BBC report says.",
           "His name is Bassam al-Hassan.",
-          "He is wanted for crimes against humanity.",
+          "He is wanted over serious crimes.",
           "Mr. Hassan is in Lebanon.",
           "He is protected because he gives information to the US.",
           "This information is about an American journalist, Austin Tice, who disappeared in Syria.",
-          "Mr. Hassan is linked to Mr. Tice being taken by force in 2012.",
-          "Syria's new government wants General Hassan to return for a trial.",
+          "The BBC says Hassan was involved when Tice was taken by force in 2012.",
+          "Syria’s new government wants Hassan to return and face a trial in court.",
           "But US authorities want him to stay in Lebanon.",
-          "Austin Tice's family is upset about this protection."
+          "A spokesperson for Tice’s family said the reported protection was wrong."
         ],
         "sentence_evidence": [
           "A former Syrian general wanted for crimes against humanity , external is being bankrolled and protected by the US and Lebanese authorities, a BBC News investigation has found.",
@@ -176,33 +176,41 @@
           "In response to our findings, Phil Elwood, spokesperson for the Tice family said: \"If what you are saying is true, the fact that our tax dollars are being used to furnish a comfortable life for someone associated with the use of chemical weapons on Syrian civilians, who claims to have had Austin Tice executed, is offensive."
         ],
         "editorial_check": {
-          "date": "2026-10-08T06:59:01.183169+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "A1-A2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary selected, such as \"general\", \"protected\", and \"information\", is common, concrete, and directly relevant to the news story, providing good learning value for A1-A2 learners with clear contextual definitions."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Simplified difficult reporting, clarified wanted versus convicted, preserved source attribution and made the because question explicitly about supported reasons."
+          ],
+          "previous_review": {
+            "date": "2026-10-08T06:59:01.183169+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "A1-A2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary selected, such as \"general\", \"protected\", and \"information\", is common, concrete, and directly relevant to the news story, providing good learning value for A1-A2 learners with clear contextual definitions."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses straightforward, neutral everyday English throughout the reading, vocabulary definitions, grammar explanations, and quiz feedback, which is appropriate for adult A1-A2 learners."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language is clear and accessible, utilizing short clauses, familiar connectors, a brief grammar explanation with an example from the reading, and includes a simple sentence frame in the discussion prompt."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson appropriately challenges A1-A2 learners by testing clear details from the reading, contextual vocabulary, and the taught grammar pattern, using short, plausible answer choices without requiring outside knowledge."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses straightforward, neutral everyday English throughout the reading, vocabulary definitions, grammar explanations, and quiz feedback, which is appropriate for adult A1-A2 learners."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language is clear and accessible, utilizing short clauses, familiar connectors, a brief grammar explanation with an example from the reading, and includes a simple sentence frame in the discussion prompt."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson appropriately challenges A1-A2 learners by testing clear details from the reading, contextual vocabulary, and the taught grammar pattern, using short, plausible answer choices without requiring outside knowledge."
-            }
-          },
-          "content_digest": "0a80e45b1025633fcd41d7b386c6f0aa96b08ee88eff3be323e6f579b473721f"
+            "content_digest": "0a80e45b1025633fcd41d7b386c6f0aa96b08ee88eff3be323e6f579b473721f"
+          }
         }
       }
     },
@@ -212,7 +220,7 @@
       "file_path": "intermediate.html",
       "lesson": {
         "discussion": [
-          "Why are the US and Lebanese authorities reportedly sheltering Bassam al-Hassan, despite objections from Syria's new government and the Tice family?",
+          "What do US and Lebanese authorities offer Hassan, and what do they expect in return? Keep your answer to the details in the reading.",
           "If you were involved in a negotiation like this, what ethical considerations would be most important to you when deciding to offer protection to someone accused of serious crimes?"
         ],
         "title": "US and Lebanon Shelter Syrian Official Linked to Abduction",
@@ -227,12 +235,12 @@
           {
             "term": "sheltered",
             "part_of_speech": "verb",
-            "definition": "provided with protection from danger or unpleasant weather."
+            "definition": "Given a place to stay and protection; here, protection from being sent back to face trial."
           },
           {
             "term": "harboured",
             "part_of_speech": "verb",
-            "definition": "secretly kept and protected a person, especially a criminal or fugitive."
+            "definition": "Given shelter and protection, especially when being sought by authorities; the word often carries a negative tone."
           },
           {
             "term": "arrangement",
@@ -257,7 +265,7 @@
           {
             "term": "significant",
             "part_of_speech": "adjective",
-            "definition": "important, notable, or having a special meaning."
+            "definition": "Large or important enough to matter; here, meaningful progress in the investigation."
           },
           {
             "term": "indefinitely",
@@ -267,8 +275,8 @@
         ],
         "grammar": {
           "concept": "The Passive Voice",
-          "explanation": "The passive voice is used when the focus is on the action and the object receiving the action, rather than the subject performing the action. It is often formed with a form of 'to be' (e.g., is, was, were) followed by the past participle of the main verb. We use it when the performer of the action is unknown, unimportant, or when we want to emphasize the recipient of the action.",
-          "example_quote": "Bassam al-Hassan, who oversaw Syria's chemical weapons program and advised former President Bashar al-Assad, is being harboured in Lebanon."
+          "explanation": "The passive uses a form of “be” + a past participle. “Is being harboured” puts Hassan, the person receiving shelter, in the subject position. An active version would name those sheltering him: “The authorities are harbouring Hassan”.",
+          "example_quote": "Bassam al-Hassan ran Syria’s chemical weapons programme and advised former President Assad; he is now being harboured in Lebanon."
         },
         "quiz": [
           {
@@ -300,31 +308,31 @@
             ]
           },
           {
-            "question": "Why are US and Lebanese authorities reportedly sheltering Bassam al-Hassan?",
+            "question": "Which exchange underlies the arrangement described in the reading?",
             "options": [
-              "To protect him from Syria's new government.",
-              "Because he has provided information about Austin Tice's abduction and other intelligence.",
-              "To offer him political asylum in exchange for public testimony."
+              "Protection in exchange for public testimony in court.",
+              "Protection in exchange for information and intelligence.",
+              "Protection in exchange for a new military appointment."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "While his safety might be a factor, the primary reason given in the reading is about information exchange.",
-              "That's right! Authorities are sheltering him because he is willing to provide information related to Austin Tice and other intelligence.",
-              "The reading mentions he provides 'information' and 'intelligence', but not specifically 'public testimony' or political asylum."
+              "The reading does not describe public testimony as the exchange.",
+              "The arrangement provides protection while he supplies information.",
+              "No new military appointment is reported."
             ]
           },
           {
             "question": "What does it mean if Bassam al-Hassan 'is being harboured' in Lebanon?",
             "options": [
-              "He is openly welcomed as a diplomatic guest.",
-              "He is publicly working for the Lebanese government.",
-              "He is secretly being kept and protected in Lebanon."
+              "He has received an official diplomatic appointment.",
+              "He has been cleared of all accusations.",
+              "He is being given shelter and protection."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "To be 'harboured' implies secrecy and protection, not an open welcome.",
-              "The term 'harboured' suggests secrecy rather than a public role.",
-              "Correct! 'Harboured' means someone is being secretly kept and protected, often with negative connotations."
+              "Harbouring does not establish diplomatic status.",
+              "Harbouring does not mean acquittal.",
+              "This is the meaning here; the word alone does not establish how secret the arrangement is."
             ]
           },
           {
@@ -384,25 +392,25 @@
             ]
           },
           {
-            "question": "In which sentence is the passive voice used to emphasize the recipient of the action?",
+            "question": "In which sentence is the MAIN clause passive?",
             "options": [
-              "The BBC revealed Tice's abduction was a planned operation.",
-              "Syria's new government wants Hassan returned to face trial.",
-              "Hassan was offered 'residency', 'protection', and help with his 'living needs' in exchange for information."
+              "The BBC revealed that the abduction was planned.",
+              "Syria’s government wants Hassan returned for trial.",
+              "Hassan was offered protection in exchange for information."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "This sentence uses an active construction focusing on the BBC's action.",
-              "This sentence is active, with 'Syria's new government' as the subject performing the action.",
-              "Correct! 'Hassan was offered' emphasizes what Hassan received, rather than who made the offer, which is typical of the passive voice."
+              "The main clause, “The BBC revealed”, is active; “the abduction was planned” is passive inside the reported clause.",
+              "“Syria’s government wants” is the active main clause. “Hassan returned” contains an embedded passive idea.",
+              "“Hassan was offered” is the passive main clause, with Hassan receiving the offer."
             ]
           }
         ],
         "news_brief_sentences": [
-          "A former Syrian military official, linked to crimes against humanity, is being sheltered by US and Lebanese authorities, a BBC investigation has found.",
-          "Bassam al-Hassan, who oversaw Syria's chemical weapons program and advised former President Bashar al-Assad, is being harboured in Lebanon.",
+          "A BBC investigation says a former Syrian military official wanted over serious crimes is being sheltered by US and Lebanese authorities.",
+          "Bassam al-Hassan ran Syria’s chemical weapons programme and advised former President Assad; he is now being harboured in Lebanon.",
           "An investigation found Hassan can remain there under an arrangement with the FBI and other US and Lebanese authorities.",
-          "This is due to his willingness to provide information about the abduction of American journalist Austin Tice in 2012, and other intelligence.",
+          "He is willing to provide information about the abduction of American journalist Austin Tice in 2012, and other intelligence.",
           "The BBC revealed Tice's abduction was a planned operation, with Hassan in the chain of command.",
           "Syria's new government wants Hassan returned to face trial, but US authorities wish him to remain in Lebanon.",
           "Hassan was offered 'residency', 'protection', and help with his 'living needs' in exchange for information, mainly about Tice.",
@@ -421,33 +429,41 @@
           "Sources with knowledge of the investigation have expressed concerns that Hassan's arrangement with the US could continue indefinitely, at significant expense but with little gain."
         ],
         "editorial_check": {
-          "date": "2026-10-08T07:01:02.457182+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets are appropriate for B1-B2, including useful news terms like 'abduction', 'chain of command', and 'indefinitely', with clear contextual definitions. No reserved vocabulary terms were used as teaching targets."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Improved context-specific definitions, avoided treating secrecy or guilt as part of harbouring, and distinguished main-clause passive from embedded passive constructions."
+          ],
+          "previous_review": {
+            "date": "2026-10-08T07:01:02.457182+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets are appropriate for B1-B2, including useful news terms like 'abduction', 'chain of command', and 'indefinitely', with clear contextual definitions. No reserved vocabulary terms were used as teaching targets."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a consistent neutral news register throughout all learner-facing content, using natural and appropriate English without slang or overly academic language."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language is clear and accessible, with varied sentence structures within the recommended length range. Explanations, questions, and feedback are precise and easy to understand for the target level."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson effectively challenges learners by combining reading comprehension with contextual vocabulary and grammar application. Discussion prompts encourage deeper thought and analysis of the information presented."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a consistent neutral news register throughout all learner-facing content, using natural and appropriate English without slang or overly academic language."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language is clear and accessible, with varied sentence structures within the recommended length range. Explanations, questions, and feedback are precise and easy to understand for the target level."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson effectively challenges learners by combining reading comprehension with contextual vocabulary and grammar application. Discussion prompts encourage deeper thought and analysis of the information presented."
-            }
-          },
-          "content_digest": "3e4b95beca7ee51cf23f523364c0933d492fa5acb2108b00bccde5f75e7a105a"
+            "content_digest": "3e4b95beca7ee51cf23f523364c0933d492fa5acb2108b00bccde5f75e7a105a"
+          }
         }
       }
     },
@@ -517,7 +533,7 @@
         ],
         "grammar": {
           "concept": "Participial Phrases of Consequence",
-          "explanation": "A participial phrase, often beginning with a present participle (e.g., \"leaving,\" \"resulting,\" \"making\"), can be used at the end of a sentence to concisely express a result, consequence, or additional information related to the main clause. This construction adds sophistication and flow to writing, allowing for the integration of secondary actions or outcomes without forming a separate clause with a conjunction like \"and this leaves\" or \"which results in.\"",
+          "explanation": "An “-ing” clause can express the result of the preceding situation. Here, “leaving Damascus with limited recourse” describes the effect of the US position on Syria’s options. Replacing it with “because” would make the limited options a reason instead of a result; an “-ing” form by itself does not always express a result.",
           "example_quote": "Officials from Syria's new government seek Hassan's return for trial, but US authorities prefer he remains in Lebanon, leaving Damascus with limited recourse."
         },
         "quiz": [
@@ -536,17 +552,17 @@
             ]
           },
           {
-            "question": "According to the Tice family spokesperson, what is the ethical implication of the US supporting Bassam al-Hassan?",
+            "question": "Which response is explicitly attributed to the Tice family’s spokesperson?",
             "options": [
-              "It demonstrates a regrettable compromise of justice for national security interests.",
-              "It is \"offensive\" and \"aiding and abetting the escape of a war criminal.\"",
-              "It suggests a tacit approval of chemical weapons use by the Assad regime."
+              "Approval of the arrangement as necessary for national security.",
+              "Condemnation of the reported support and a call for Hassan to face trial.",
+              "A claim that the arrangement proved Tice was still alive."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "While this is an inference, the direct quote from the spokesperson is much stronger and more specific in the reading.",
-              "The spokesperson explicitly stated it was \"offensive\" and \"aiding and abetting the escape of a war criminal,\" reflecting their strong condemnation.",
-              "The spokesperson linked Hassan to chemical weapons use, but did not directly claim the US was approving such use; their concern was the US supporting Hassan himself."
+              "The spokesperson condemned the reported arrangement.",
+              "The passage attributes this view to the spokesperson; it is not a court ruling.",
+              "That conclusion is not attributed to the spokesperson."
             ]
           },
           {
@@ -564,7 +580,7 @@
             ]
           },
           {
-            "question": "How does the practice of Hassan receiving funds via an \"intermediary\" affect the US authorities?",
+            "question": "According to the reported sources, what effect does paying Hassan through an intermediary have?",
             "options": [
               "It streamlines the payment process, making it more efficient for US agencies.",
               "It enhances accountability by adding another layer of oversight to financial transactions.",
@@ -572,9 +588,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The reading does not suggest efficiency as the purpose of an intermediary for these payments.",
-              "An intermediary, in this context, makes tracing harder, which typically reduces transparency and accountability.",
-              "The text explicitly states that receiving funds via an \"intermediary\" makes the payments \"harder to track\" for the US authorities."
+              "The passage does not establish greater efficiency.",
+              "The passage says the payments become harder to trace, not more transparent.",
+              "The reported effect is to make the money harder to trace; it does not specify that US authorities themselves cannot trace it."
             ]
           },
           {
@@ -614,9 +630,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text states \"leaving Damascus with limited recourse,\" directly contradicting the idea of \"several legal avenues.\"",
-              "\"Limited recourse\" means having few options or inadequate means to obtain remedy or assistance, which accurately reflects Damascus's inability to force Hassan's return given the US stance.",
-              "The reading does not specify international law as the barrier, but rather the US preference for Hassan to remain in Lebanon and Damascus's subsequent lack of leverage."
+              "The phrase emphasizes few effective options, rather than ample ways to compel his return.",
+              "“Limited” means restricted, not necessarily no options at all.",
+              "The passage does not identify such a rule of international law."
             ]
           },
           {
@@ -642,9 +658,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Hassan claimed Tice was executed on Assad's orders, not that he personally executed him.",
-              "No remains were found at all, not that they were found elsewhere, which is a key detail.",
-              "The reading explicitly states, \"when the site was searched, nothing was found - according to multiple sources familiar with the dig - casting doubt on the validity of some of Hassan's information.\""
+              "Hassan’s account concerned an execution on Assad’s orders; the reading does not say he admitted personally carrying it out.",
+              "The reading does not report remains being found at a different site.",
+              "Nothing was found at the suggested site. That result raised doubts but does not, by itself, settle what happened to Tice."
             ]
           },
           {
@@ -683,14 +699,14 @@
           "His willingness to provide intelligence, particularly concerning the 2012 seizure of American journalist Austin Tice, underpins this arrangement.",
           "It was previously reported that Tice's capture was a planned operation, with Hassan involved in the leadership structure.",
           "Officials from Syria's new government seek Hassan's return for trial, but US authorities prefer he remains in Lebanon, leaving Damascus with limited recourse.",
-          "A spokesperson for the Tice family found it \"offensive\" that US tax dollars support a comfortable life for someone linked to chemical weapons use and who claimed Tice was executed.",
-          "They asserted that this practice constitutes \"aiding and abetting the escape of a war criminal,\" arguing that Syrians \"deserve justice.\"",
+          "The Tice family’s spokesperson said that, if the findings were true, using US taxes to support Hassan was offensive.",
+          "He asserted that this constitutes assistance to a wanted war criminal’s escape and called for Hassan to be returned for trial.",
           "Sources confirm Hassan receives funds from US authorities via an intermediary, making the payments harder to track despite his US sanctions.",
           "However, individuals involved in the Tice investigation express concerns that Hassan's deal may continue for an unspecified duration with little discernible progress.",
           "He is considered valuable for his alleged knowledge of Tice's fate, Syria's chemical weapons program, and its military ties with Iran.",
           "Though Hassan told investigators Tice was executed and suggested a burial site, searches found nothing, casting doubt on his account's validity.",
           "Questions remain over the thoroughness of the search, with sources suggesting US authorities halted digging prematurely.",
-          "Other Syrian officials, including Mohammad Makhlouf and Sakr Rustom, also connected to the Tice case, are believed to have found refuge abroad."
+          "The investigation also found that other Syrian officials connected to the Tice case had apparently found refuge abroad."
         ],
         "sentence_evidence": [
           "A former Syrian general wanted for crimes against humanity , external is being bankrolled and protected by the US and Lebanese authorities, a BBC News investigation has found.",
@@ -709,33 +725,41 @@
           "Our investigation has found that other Syrian officials connected to the Tice case have also apparently found refuge abroad."
         ],
         "editorial_check": {
-          "date": "2026-10-08T07:02:24.372614+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets like \"bankrolled\", \"entities\", \"seizure\", \"underpins\", \"limited recourse\", \"asserted\", \"constitutes\", and \"intermediary\" are precise and offer meaningful learning value at the C1-Higher level. The lesson successfully avoids reserved vocabulary from lower levels by using appropriate synonyms or more complex phrasing."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Restored conditional attribution and accurate paraphrases, removed unsupported names and narrowed claims about payments, search results and available options."
+          ],
+          "previous_review": {
+            "date": "2026-10-08T07:02:24.372614+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets like \"bankrolled\", \"entities\", \"seizure\", \"underpins\", \"limited recourse\", \"asserted\", \"constitutes\", and \"intermediary\" are precise and offer meaningful learning value at the C1-Higher level. The lesson successfully avoids reserved vocabulary from lower levels by using appropriate synonyms or more complex phrasing."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a polished, natural reporting register throughout the title, overview, reading, and explanations. Attributions are clear, and certainty is calibrated appropriately, reflecting the C1-Higher target level."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The definitions and explanations for vocabulary and grammar are concise, illuminating, and use controlled complex sentences suitable for C1-Higher learners, explaining subtle differences in meaning or implications."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson encourages supported inference, distinguishing nuances in meaning (e.g., in quiz feedback for \"offensive\" vs. \"regrettable compromise\"). Quiz distractors are plausible, and questions go beyond elementary fact recall, providing substantive learning for C1-Higher."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a polished, natural reporting register throughout the title, overview, reading, and explanations. Attributions are clear, and certainty is calibrated appropriately, reflecting the C1-Higher target level."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The definitions and explanations for vocabulary and grammar are concise, illuminating, and use controlled complex sentences suitable for C1-Higher learners, explaining subtle differences in meaning or implications."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson encourages supported inference, distinguishing nuances in meaning (e.g., in quiz feedback for \"offensive\" vs. \"regrettable compromise\"). Quiz distractors are plausible, and questions go beyond elementary fact recall, providing substantive learning for C1-Higher."
-            }
-          },
-          "content_digest": "b893dd166c4355c31de39aa7e5b7d242e3781c90eeec698c42eb57aeb7be4f4c"
+            "content_digest": "b893dd166c4355c31de39aa7e5b7d242e3781c90eeec698c42eb57aeb7be4f4c"
+          }
         }
       }
     }

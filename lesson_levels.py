@@ -7,7 +7,7 @@ They are contextual editorial judgements, not an automatic CEFR certification or
 an assertion that every word has a single fixed proficiency level.
 """
 
-LANGUAGE_POLICY_VERSION = '2026-09-08-level-calibration'
+LANGUAGE_POLICY_VERSION = '2026-10-08-teaching-quality'
 LEVEL_CHECKS = ('vocabulary', 'register', 'teaching_language', 'challenge')
 
 STORY_TITLE_GUIDANCE = (
@@ -50,6 +50,24 @@ COMMON_LANGUAGE_POLICY = (
     'Write an original, concise lesson from the source facts rather than reproducing '
     'long passages of the article. Keep any direct quotations brief and necessary; '
     'paraphrase the surrounding reporting and preserve attribution. '
+    'Before accepting a quiz, distinguish grammatical form, intended meaning, and '
+    'a claim supported by this reading. A grammatical sentence can be factually '
+    'unsupported; do not label its grammar wrong. Ask explicitly for a supported '
+    'reason when testing because against the story. If testing a specific verb '
+    'pattern, name it: an if-clause in the present continuous can be grammatical '
+    'even when the exercise requests present simple. A sentence with an active '
+    'main clause may contain an embedded passive; specify which clause is tested. '
+    'Challenge each distractor, including partial truths and overlapping categories '
+    'such as resources and teachers. Feedback must be answerable from the learner '
+    'reading or the taught language point, not unseen source-only passages. Do not '
+    'add a new factual claim merely to explain a wrong answer. '
+    'Calibration examples: planned is not already being built; remaining standing '
+    'does not establish that a damaged bridge is structurally sound; wanted or '
+    'arrested does not mean convicted; an allegation does not mean there is no '
+    'evidence. Keep claims, speculation and assessments attributed to their speakers. '
+    'Shorten dense sentences without replacing ordinary words with unnatural '
+    'synonyms merely to separate levels. Explain essential specialist language, '
+    'and make advanced questions test nuance rather than repetition or inflated prose. '
 )
 
 LANGUAGE_PROFILES = {

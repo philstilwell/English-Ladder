@@ -131,6 +131,23 @@ class ReviewPolicyTests(unittest.TestCase):
         self.assertIn('not a useful B1-B2 target list merely because definitions', prompt)
         self.assertIn('original, concise lesson', prompt)
 
+    def test_writer_and_reviewer_receive_the_same_teaching_quality_boundaries(self):
+        # This guards the request contract, not the quality of a model's judgment.
+        for level in update_site.LEVELS:
+            request, _, _ = self.capture_review(level)
+            for prompt in (request['contents'], update_site.build_prompt(self.source, level)):
+                for boundary in (
+                    'distinguish grammatical form, intended meaning',
+                    'an if-clause in the present continuous can be grammatical',
+                    'main clause may contain an embedded passive',
+                    'overlapping categories such as resources and teachers',
+                    'not unseen source-only passages',
+                    'planned is not already being built',
+                    'arrested does not mean convicted',
+                    'an allegation does not mean there is no evidence',
+                ):
+                    self.assertIn(boundary, prompt)
+
     def test_review_boundaries_do_not_filter_out_a_returned_rejection(self):
         # Prevent a prompt calibration from becoming a failed-review bypass.
         for issue in (

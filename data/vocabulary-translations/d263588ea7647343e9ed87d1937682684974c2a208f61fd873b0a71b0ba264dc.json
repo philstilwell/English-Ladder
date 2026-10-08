@@ -1,0 +1,143 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "The US and Lebanon are protecting a former Syrian general, a BBC report says.",
+      "His name is Bassam al-Hassan.",
+      "He is wanted over serious crimes.",
+      "Mr. Hassan is in Lebanon.",
+      "He is protected because he gives information to the US.",
+      "This information is about an American journalist, Austin Tice, who disappeared in Syria.",
+      "The BBC says Hassan was involved when Tice was taken by force in 2012.",
+      "Syria’s new government wants Hassan to return and face a trial in court.",
+      "But US authorities want him to stay in Lebanon.",
+      "A spokesperson for Tice’s family said the reported protection was wrong."
+    ],
+    "vocabulary": [
+      {
+        "term": "general",
+        "part_of_speech": "noun",
+        "definition": "An officer with a high position in an army."
+      },
+      {
+        "term": "protected",
+        "part_of_speech": "verb, past participle",
+        "definition": "Kept safe from danger or harm."
+      },
+      {
+        "term": "wanted",
+        "part_of_speech": "verb, past participle",
+        "definition": "Being looked for by the authorities over a possible crime; this does not mean a court has found the person guilty."
+      },
+      {
+        "term": "information",
+        "part_of_speech": "noun",
+        "definition": "Facts or details about something."
+      },
+      {
+        "term": "journalist",
+        "part_of_speech": "noun",
+        "definition": "A person who writes news stories for others to read or watch."
+      },
+      {
+        "term": "disappeared",
+        "part_of_speech": "verb, past tense",
+        "definition": "Went missing; could not be found."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "軍の中で高い地位にある将校。",
+      "ko": "군대에서 높은 지위에 있는 장교.",
+      "zh-Hans": "军队中职位很高的军官。",
+      "es": "Un oficial de alto rango en un ejército.",
+      "pt-BR": "Um oficial de alta patente em um exército.",
+      "fr": "Un officier de haut rang dans une armée.",
+      "de": "Ein Offizier mit hohem Rang in einer Armee."
+    },
+    {
+      "id": 1,
+      "ja": "危険や危害から安全に保たれること。",
+      "ko": "위험이나 해로부터 안전하게 지켜진 상태.",
+      "zh-Hans": "免受危险或伤害，处于安全状态。",
+      "es": "Mantenido a salvo de peligro o daño.",
+      "pt-BR": "Mantido(a) em segurança contra perigo ou dano.",
+      "fr": "Qui est maintenu en sécurité face au danger ou au mal.",
+      "de": "Vor Gefahr oder Schaden bewahrt."
+    },
+    {
+      "id": 2,
+      "ja": "犯罪の疑いに関して当局が行方を捜していること。裁判所が有罪と認めたという意味ではない。",
+      "ko": "범죄 혐의와 관련하여 당국이 찾고 있는 상태. 법원이 유죄를 인정했다는 뜻은 아니다.",
+      "zh-Hans": "因涉嫌犯罪而被当局寻找；这并不表示法院已经判定其有罪。",
+      "es": "Buscado por las autoridades por un posible delito; no significa que un tribunal lo haya declarado culpable.",
+      "pt-BR": "Procurado pelas autoridades por um possível crime; isso não significa que um tribunal tenha considerado a pessoa culpada.",
+      "fr": "Recherché par les autorités au sujet d’un possible crime ; cela ne signifie pas qu’un tribunal a déclaré la personne coupable.",
+      "de": "Von den Behörden wegen einer möglichen Straftat gesucht; das bedeutet nicht, dass ein Gericht die Person schuldig gesprochen hat."
+    },
+    {
+      "id": 3,
+      "ja": "何かについての事実や詳細。",
+      "ko": "어떤 것에 대한 사실이나 자세한 내용.",
+      "zh-Hans": "关于某事的真相或细节。",
+      "es": "Datos o detalles sobre algo.",
+      "pt-BR": "Fatos ou detalhes sobre algo.",
+      "fr": "Des faits ou des détails sur quelque chose.",
+      "de": "Fakten oder Einzelheiten über etwas."
+    },
+    {
+      "id": 4,
+      "ja": "他の人が読んだり見たりするためのニュース記事を書く人。",
+      "ko": "다른 사람들이 읽거나 볼 뉴스를 쓰는 사람.",
+      "zh-Hans": "为他人撰写新闻报道的人。",
+      "es": "Una persona que escribe noticias para que otros las lean o vean.",
+      "pt-BR": "Uma pessoa que escreve notícias para outros lerem ou assistirem.",
+      "fr": "Une personne qui écrit des articles d'actualité pour que d'autres les lisent ou les regardent.",
+      "de": "Eine Person, die Nachrichtenartikel für andere zum Lesen oder Ansehen schreibt."
+    },
+    {
+      "id": 5,
+      "ja": "行方不明になり、見つからなかった。",
+      "ko": "실종되어 찾을 수 없게 되다.",
+      "zh-Hans": "失踪了，找不到了。",
+      "es": "Se perdió y no pudo ser encontrado.",
+      "pt-BR": "Sumir; não poder ser encontrado(a).",
+      "fr": "A disparu et n'a pas pu être retrouvé.",
+      "de": "Ist verschwunden und konnte nicht gefunden werden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "date": "2026-10-08",
+    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+    "changed_terms": [
+      "general",
+      "wanted"
+    ],
+    "retained_terms": [
+      "protected",
+      "information",
+      "journalist",
+      "disappeared"
+    ],
+    "previous_source_key": "e608c6ee056622ef9403e32cb2f60b4ba4eaa1b22300fd38c25c255b54dc3f9b",
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-10-08T07:03:28.401058+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
+  }
+}

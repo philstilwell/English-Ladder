@@ -25,48 +25,19 @@
           "Explain one reason why data centres are a big topic in Scotland.",
           "Do you think building more data centres is a good idea for Scotland? I think ... because ... (If you prefer, imagine you are a local resident: would you want one near your home?)"
         ],
-        "editorial_check": {
-          "content_digest": "6e8492ec87d48c3dec6509fd02bc0c786a1c4889f0c48b2c8f18861baa7581dc",
-          "date": "2026-10-05T14:43:12.004994+00:00",
-          "generation_attempts": 1,
-          "language_policy_version": "2026-09-08-level-calibration",
-          "level_checks": {
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson provides appropriate challenge for A1-A2 learners by testing clearly stated details, contextual vocabulary, and the taught grammar pattern, using short and plausible answer choices."
-            },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults, with direct verbs and explicit subjects across all learner-facing sections."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses short clauses and familiar connectors, with accessible grammar explanations and clear instructions. The discussion prompt includes a simple sentence frame and a hypothetical alternative as required."
-            },
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary items 'planned', 'centres', 'online', 'factory', 'noise', 'energy', and 'renewable' are common, concrete terms suitable for A1-A2 learners, with clear and simple definitions relevant to the news topic."
-            }
-          },
-          "method": "separate evidence, teaching and level suitability review",
-          "model": "gemini-2.5-flash",
-          "repaired_sections": [],
-          "status": "passed",
-          "target_level": "A1-A2"
-        },
         "grammar": {
           "concept": "Using \"can\" for possibility",
           "example_quote": "Supporters say data centres can bring jobs and investment.",
-          "explanation": "We use the word \"can\" to talk about what is possible or what people are able to do. It shows that something might happen or is allowed."
+          "explanation": "Here, “can” shows a possible result: data centres may bring jobs. It does not promise that this will happen, and it does not mean permission."
         },
         "news_brief_sentences": [
           "Many huge data centres are planned for Scotland.",
           "These centres help with online tasks like bank payments or using AI.",
-          "From the outside, data centres look like a factory.",
+          "A data centre can look like a factory from the outside.",
           "Inside, thousands of computers work and make noise.",
           "Supporters say data centres can bring jobs and investment.",
           "But opponents worry about the energy they use and their size.",
-          "Scotland has strong renewable energy, which data centres need.",
+          "Scotland makes a lot of renewable energy from sources such as wind.",
           "However, some centres might use fossil fuels if there is not enough wind power."
         ],
         "overview": "Scotland plans to build many large data centres, which causes different opinions.",
@@ -74,13 +45,13 @@
           {
             "correct_option_index": 0,
             "option_feedback": [
-              "Correct! Many huge data centres are planned for Scotland.",
-              "This is not correct. New data centres are being planned, not closing.",
-              "This is incorrect. Many data centres, not just one, are planned."
+              "Yes. They are planned; the reading does not say all of them are already being built.",
+              "The passage describes new plans, not all centres closing.",
+              "The plans involve many large centres."
             ],
             "options": [
-              "Many new data centres are being built.",
-              "All data centres are closing down.",
+              "Many large data centres are planned.",
+              "All data centres are closing.",
               "Only one small data centre is planned."
             ],
             "question": "What is happening with data centres in Scotland?"
@@ -102,9 +73,9 @@
           {
             "correct_option_index": 2,
             "option_feedback": [
-              "The reading says they look like a factory, not a house.",
-              "This is incorrect. Data centres look like a factory.",
-              "Correct! Data centres look like a factory or a warehouse from the outside."
+              "The reading compares them to factories.",
+              "They look like industrial buildings, not parks.",
+              "Yes. The reading says they look like factories."
             ],
             "options": [
               "A house.",
@@ -116,14 +87,14 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading does not mention food. Opponents worry about other things.",
-              "Correct! Opponents worry about the energy data centres use and their big size.",
-              "Opponents worry about negative impacts, not the new jobs."
+              "They worry about how large the centres are.",
+              "These are the concerns stated in the passage.",
+              "The worry is how much energy centres need, not that they need none."
             ],
             "options": [
-              "They worry about the food they eat.",
-              "They worry about the energy they use and their size.",
-              "They worry about new jobs."
+              "They worry that the buildings will be too small.",
+              "They worry about the energy used and the size of the buildings.",
+              "They worry that the centres will not need electricity."
             ],
             "question": "Why do opponents worry about data centres?"
           },
@@ -144,16 +115,16 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading says Scotland has strong renewable energy, not coal.",
-              "Correct! Scotland has a lot of strong renewable energy.",
-              "This is not correct. Scotland has strong renewable energy."
+              "Coal is not the renewable source named here.",
+              "The passage gives wind as a renewable source.",
+              "Gas is not the renewable source named here."
             ],
             "options": [
-              "Coal energy.",
-              "Renewable energy.",
-              "Gas energy."
+              "Coal.",
+              "Wind.",
+              "Gas."
             ],
-            "question": "Which kind of energy does Scotland have a lot of for data centres?"
+            "question": "Which energy source is named as renewable in the reading?"
           },
           {
             "correct_option_index": 1,
@@ -177,7 +148,7 @@
           "On the inside, thousands of flashing lights blink and fans whirr as rows of computer servers power AI.",
           "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
           "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
-          "One of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.",
+          "One of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.\nLanarkshire has been designated an AI growth zone by the UK government, with data centres at its heart.\nThe type of jobs a data centre creates has also been debated.\nThe Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.\nIn August, it announced that ministers would have to be notified of proposed centres over 50MW in capacity.\nEvery time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.\nFrom the outside, data centres look like a factory or a warehouse.\nOn the inside, thousands of flashing lights blink and fans whirr as rows of computer servers power AI.\nDuring periods of low wind or when clouds are blocking the sun, it may mean having to fire up fossil fuel power stations to provide the energy required to keep the servers blinking.",
           "During periods of low wind or when clouds are blocking the sun, it may mean having to fire up fossil fuel power stations to provide the energy required to keep the servers blinking."
         ],
         "title": "Data Centres in Scotland: Plans and Worries",
@@ -214,11 +185,48 @@
             "term": "energy"
           },
           {
-            "definition": "energy that comes from natural sources and can be used again",
+            "definition": "Describes energy from sources that nature replaces, such as wind and sunlight.",
             "part_of_speech": "adjective",
             "term": "renewable"
           }
-        ]
+        ],
+        "editorial_check": {
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Distinguished planned centres from construction, clarified renewable energy and possibility, and improved plausible answer choices."
+          ],
+          "previous_review": {
+            "content_digest": "6e8492ec87d48c3dec6509fd02bc0c786a1c4889f0c48b2c8f18861baa7581dc",
+            "date": "2026-10-05T14:43:12.004994+00:00",
+            "generation_attempts": 1,
+            "language_policy_version": "2026-09-08-level-calibration",
+            "level_checks": {
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson provides appropriate challenge for A1-A2 learners by testing clearly stated details, contextual vocabulary, and the taught grammar pattern, using short and plausible answer choices."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults, with direct verbs and explicit subjects across all learner-facing sections."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses short clauses and familiar connectors, with accessible grammar explanations and clear instructions. The discussion prompt includes a simple sentence frame and a hypothetical alternative as required."
+              },
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary items 'planned', 'centres', 'online', 'factory', 'noise', 'energy', and 'renewable' are common, concrete terms suitable for A1-A2 learners, with clear and simple definitions relevant to the news topic."
+              }
+            },
+            "method": "separate evidence, teaching and level suitability review",
+            "model": "gemini-2.5-flash",
+            "repaired_sections": [],
+            "status": "passed",
+            "target_level": "A1-A2"
+          }
+        }
       }
     },
     "intermediate": {
@@ -230,51 +238,23 @@
           "What are some of the main arguments for and against building large data centres in Scotland, as discussed in the article?",
           "Do you think the potential economic benefits of data centres outweigh the environmental concerns? Why or why not?"
         ],
-        "editorial_check": {
-          "content_digest": "8c68b65401f1207816dad2c4471a61c6a1f2315c0e70d6d057ca973f27fcffd2",
-          "date": "2026-10-05T14:44:59.811407+00:00",
-          "generation_attempts": 2,
-          "language_policy_version": "2026-09-08-level-calibration",
-          "level_checks": {
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson combines comprehension of details with contextual vocabulary and grammar application. Questions require understanding relationships between ideas and applying the first conditional in a new context, suitable for B1-B2 learners."
-            },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a natural, neutral news English register throughout the reading, explanations, and quiz feedback, which is appropriate for the B1-B2 level."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The explanations for grammar and vocabulary are clear and use everyday language. Quiz questions, options, and feedback are precise and easy to understand. Sentence structures are varied but manageable."
-            },
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets such as \"explosion\" (metaphorical), \"scrambling\", \"hyperscale\", \"vital\", \"moratorium\", and \"undermine\" are appropriate for B1-B2, offering useful terms for news reporting. No reserved vocabulary was used. Definitions are clear and contextual."
-            }
-          },
-          "method": "separate evidence, teaching and level suitability review",
-          "model": "gemini-2.5-flash",
-          "repaired_sections": [],
-          "status": "passed",
-          "target_level": "B1-B2"
-        },
         "grammar": {
           "concept": "First Conditional",
-          "example_quote": "If one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW, making it one of the largest data centres in the world.",
-          "explanation": "The first conditional is used to talk about possible future situations and their likely results. We form it with \"If + present simple, will + base form of verb.\" It suggests a real possibility that can happen in the future."
+          "example_quote": "If the planned Chapelcross centre goes ahead, it will have a capacity of 1,000MW, among the largest worldwide.",
+          "explanation": "A common first-conditional pattern is “if” + present simple, followed by “will” + a verb. It links a possible future condition to its result. This is a useful pattern, not the only grammatical conditional: other verb forms can be appropriate when the meaning changes."
         },
         "news_brief_sentences": [
-          "Every time you ask ChatGPT a question, read a Google summary or make an online bank payment, a data centre is working behind the scenes.",
-          "Now Scotland is part of a global race to build many more of them - on a massive scale.",
-          "The explosion in artificial intelligence (AI) over the past few years has seen tech firms scrambling to build new 'hyperscale' data centres.",
-          "Supporters say they are vital for the future and could bring billions of pounds in investment, as well as thousands of jobs.",
-          "Opponents fear the impact of their size on local communities, the vast amounts of energy they use and even the noise they will make.",
-          "If one planned for Chapelcross in Dumfries and Galloway goes ahead, it will have a capacity of 1,000MW, making it one of the largest data centres in the world.",
-          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
+          "Data centres work behind the scenes when people use online banking, search tools or artificial intelligence.",
+          "Scotland has joined a worldwide race to build these facilities on a massive scale.",
+          "The explosion in artificial intelligence has left technology firms scrambling to build “hyperscale”, or extremely large, data centres.",
+          "Supporters call them vital for the future and say they could attract billions of pounds and thousands of jobs.",
+          "Opponents worry about the size of the buildings, their electricity use and the noise affecting nearby communities.",
+          "If the planned Chapelcross centre goes ahead, it will have a capacity of 1,000MW, among the largest worldwide.",
+          "The Scottish Greens and campaigners want a moratorium, or temporary stop, on large data centres.",
           "The Scottish government has so far refused to impose a moratorium.",
-          "As well as using huge amounts of electricity, the giant data centres can require large quantities of water to prevent them from overheating.",
-          "Those behind AI data centres say they will create jobs and offer a stake in a key future technology."
+          "Large centres can also need substantial amounts of water to keep their equipment cool.",
+          "Supporters also want a stake in a technology they believe will be important in the future.",
+          "Campaigners argue that the centres could undermine climate targets and put more pressure on renewable electricity supplies."
         ],
         "overview": "Scotland is facing a major debate over proposals for many large data centres, with promises of economic investment balanced against environmental concerns and community impact.",
         "quiz": [
@@ -323,14 +303,14 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The concern is about the impact of their size and resource use, not their power for AI.",
-              "Opponents are concerned about the centres' size, their use of energy, and the noise they will make.",
-              "While job types are debated, the primary concern of opponents mentioned here is impact on communities and resource use."
+              "The concern is about very large centres.",
+              "The passage identifies these community and resource concerns.",
+              "The reading says centres can need water for cooling."
             ],
             "options": [
-              "They fear the data centres will not be powerful enough for future AI needs.",
-              "They are worried about the impact of their size on communities and the vast amounts of energy they use and even the noise they will make.",
-              "They believe the centres will primarily create temporary construction jobs."
+              "The centres may be too small for modern computers.",
+              "Their size, electricity use and noise may affect communities.",
+              "They may require no cooling at all."
             ],
             "question": "What is one major concern expressed by opponents regarding the proposed data centres?"
           },
@@ -351,9 +331,9 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading states that the Scottish government has so far refused to impose a moratorium.",
-              "This is directly stated in the reading: \"The Scottish government has so far refused to impose a moratorium.\"",
-              "While new guidance is expected, the government has not said it is reviewing proposals to reduce their size in response to the moratorium call."
+              "The government has so far refused to impose the pause.",
+              "The reading says it has refused a moratorium.",
+              "The passage does not say all proposals are being reduced in size."
             ],
             "options": [
               "They have fully supported the call and paused all new applications.",
@@ -365,16 +345,16 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "This is an example of the third conditional, used for hypothetical past situations.",
-              "This sentence correctly uses \"If + present simple\" and \"will + base verb\" to describe a real possibility in the future.",
-              "The present continuous is not typically used in the 'if' clause for the first conditional when talking about a general condition."
+              "This is grammatical, but “had built … would have created” refers to an imagined past.",
+              "“Build” is present simple and “will create” matches the requested pattern.",
+              "This can be grammatical, but “are building” is present continuous, not the specific pattern requested."
             ],
             "options": [
-              "If they had built the data centre, it would have created jobs.",
-              "If they build the data centre, it will create jobs.",
-              "If they are building the data centre, it will create jobs."
+              "If they had built the centre, it would have created jobs.",
+              "If they build the centre, it will create jobs.",
+              "If they are building the centre, it will create jobs."
             ],
-            "question": "Which sentence uses the first conditional correctly to express a likely future outcome?"
+            "question": "Which sentence uses the specific pattern “if + present simple, will + verb”?"
           },
           {
             "correct_option_index": 1,
@@ -415,13 +395,14 @@
           "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
           "The Scottish government has so far refused to impose a moratorium.",
           "As well as using huge amounts of electricity, the giant data centres can require large quantities of water to prevent them from overheating.",
-          "As well as having a stake in a key future technology, those behind AI data centres say they will create jobs."
+          "As well as having a stake in a key future technology, those behind AI data centres say they will create jobs.",
+          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies."
         ],
         "title": "Scotland's Data Centre Boom: Investment vs. Environmental Concerns",
         "topic": "Technology and Environment",
         "vocabulary": [
           {
-            "definition": "working secretly or without being seen by the public, often to make something else possible.",
+            "definition": "Out of public view; here, doing the computing that makes online services work.",
             "part_of_speech": "adverbial phrase",
             "term": "behind the scenes"
           },
@@ -460,7 +441,44 @@
             "part_of_speech": "verb",
             "term": "undermine"
           }
-        ]
+        ],
+        "editorial_check": {
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Shortened dense reading, explained specialist terms in context and stopped rejecting a valid conditional variant."
+          ],
+          "previous_review": {
+            "content_digest": "8c68b65401f1207816dad2c4471a61c6a1f2315c0e70d6d057ca973f27fcffd2",
+            "date": "2026-10-05T14:44:59.811407+00:00",
+            "generation_attempts": 2,
+            "language_policy_version": "2026-09-08-level-calibration",
+            "level_checks": {
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson combines comprehension of details with contextual vocabulary and grammar application. Questions require understanding relationships between ideas and applying the first conditional in a new context, suitable for B1-B2 learners."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a natural, neutral news English register throughout the reading, explanations, and quiz feedback, which is appropriate for the B1-B2 level."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The explanations for grammar and vocabulary are clear and use everyday language. Quiz questions, options, and feedback are precise and easy to understand. Sentence structures are varied but manageable."
+              },
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets such as \"explosion\" (metaphorical), \"scrambling\", \"hyperscale\", \"vital\", \"moratorium\", and \"undermine\" are appropriate for B1-B2, offering useful terms for news reporting. No reserved vocabulary was used. Definitions are clear and contextual."
+              }
+            },
+            "method": "separate evidence, teaching and level suitability review",
+            "model": "gemini-2.5-flash",
+            "repaired_sections": [],
+            "status": "passed",
+            "target_level": "B1-B2"
+          }
+        }
       }
     },
     "advanced": {
@@ -472,39 +490,10 @@
           "According to the article, what are the primary advantages and disadvantages associated with the development of large data centres in Scotland?",
           "Considering the debate around data centres, how do you think communities should balance economic growth with environmental and social impacts?"
         ],
-        "editorial_check": {
-          "content_digest": "df957d0b54eaba6b989cb5ef3339baf79569d5ca782571ee9f947d34b10bd501",
-          "date": "2026-10-05T14:47:54.928643+00:00",
-          "generation_attempts": 3,
-          "language_policy_version": "2026-09-08-level-calibration",
-          "level_checks": {
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson promotes supported inference, particularly in quiz item 5, and distinguishes between near-synonyms or register in vocabulary definitions and quiz items 4, 11, and 12. Distractors are plausible, and feedback explains why each option fails, ensuring substantive learning beyond basic recall."
-            },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a polished, natural reporting register throughout the title, overview, reading, and explanations. The language is objective and balanced, accurately reflecting the source's calibrated certainty without sensationalism, which is appropriate for a C1-Higher news analysis."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The definitions are concise and illuminating, using controlled complex sentences for explanations while maintaining clarity. The grammar explanation is advanced, discussing the effect on meaning and conciseness, suitable for C1-Higher learners without being overly academic or obscure."
-            },
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary selections such as 'significant concern,' 'immense,' 'spurred,' 'physical footprint,' 'operational drone,' 'encompass,' 'robust,' 'necessitating,' and 'mandated' are precise, transferable, and offer meaningful distinctions suitable for C1-Higher learners. None of the terms are from the reserved vocabulary list, and all are defined clearly in context."
-            }
-          },
-          "method": "separate evidence, teaching and level suitability review",
-          "model": "gemini-2.5-flash",
-          "repaired_sections": [],
-          "status": "passed",
-          "target_level": "C1-Higher"
-        },
         "grammar": {
           "concept": "Participle Clauses (present participle for consequence)",
           "example_quote": "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
-          "explanation": "Participle clauses starting with a present participle (e.g., 'causing') can be used to describe an action that happens at the same time as, or as a result of, the main clause. They often add information about cause, effect, or a simultaneous action, making sentences more concise and advanced. Here, 'causing significant concern' describes the direct consequence of the data centres being planned."
+          "explanation": "An “-ing” clause can express a result. Here, “causing significant concern for campaigners” describes the reaction to the plans. Other participle clauses can express time, reason or an accompanying action; the context determines the relationship."
         },
         "news_brief_sentences": [
           "At least 23 huge data centres are planned in Scotland, causing significant concern for campaigners.",
@@ -516,8 +505,8 @@
           "While Scotland boasts a robust renewable energy sector, experts caution that these facilities might not operate entirely on green power, potentially necessitating fossil fuels during periods of low wind.",
           "The UK government has designated Lanarkshire as an AI growth zone, positioning data centres at its heart and projecting £8bn of investment and 3,400 jobs.",
           "However, the types of jobs created have been debated, with a substantial portion anticipated in construction rather than directly in AI.",
-          "Despite calls for a halt from environmental groups, the Scottish government has so far refused to impose a suspension on applications but has mandated environmental impact assessments.",
-          "Ministers will also need to be notified of any proposed centres exceeding 50MW in capacity, though comprehensive national guidance is still pending."
+          "The Scottish government has so far refused campaigners’ calls for a moratorium on large data centres.",
+          "It has, however, mandated that ministers be notified of proposals for centres exceeding 50MW in capacity."
         ],
         "overview": "Scotland is witnessing a surge in proposals for immense 'hyperscale' data centres, prompting debates over their economic benefits, vast resource consumption, and environmental consequences.",
         "quiz": [
@@ -552,14 +541,14 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The article does not compare it to Edinburgh.",
-              "Sentence 6 explicitly states, 'one proposed 600MW data centre at Auchtertool would encompass an area comparable in size to the entire adjacent village.'",
-              "While the source article mentions the Auchtertool site would span 60 hectares, about the size of 84 football pitches, sentence 6 of the News Brief specifically compares its size to 'the entire adjacent village' for local context, which is what the question tests."
+              "The comparison is with the whole village.",
+              "The reading compares the planned centre with the adjacent village.",
+              "The passage does not say twice the size."
             ],
             "options": [
-              "It would be approximately half the size of Edinburgh.",
-              "It would encompass an area comparable to the entire adjacent village.",
-              "It would be equivalent to 84 football pitches."
+              "About half the neighbouring village’s size.",
+              "About the same size as the neighbouring village.",
+              "About twice the neighbouring village’s size."
             ],
             "question": "How large would the proposed Auchtertool data centre be in comparison to a local area?"
           },
@@ -580,30 +569,30 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "Sentence 7 notes experts 'caution that these facilities might not operate entirely on green power,' contradicting a guarantee.",
-              "Sentence 7 explains Scotland 'boasts a robust renewable energy sector' but experts 'caution that these facilities might not operate entirely on green power,' necessitating fossil fuels at times. This indicates it's attractive but not a guarantee.",
-              "The article states Scotland's sector is 'robust' and generates 'huge amounts' of electricity, implying it's a strong selling point, not insufficient, although its full utilization by data centres is debated."
+              "The passage explicitly warns against assuming exclusively green power.",
+              "Low-wind periods may require fossil-fuel generation.",
+              "The passage does not establish an absolute inability to supply new facilities."
             ],
             "options": [
-              "It guarantees that all data centres will run exclusively on green power.",
-              "It is a major attraction for developers but doesn't assure 100% renewable operation.",
-              "The sector is currently insufficient to meet the data centres' demands."
+              "It guarantees continuous renewable power for every centre.",
+              "Centres may still need fossil-fuel electricity during low-wind periods.",
+              "The reading proves the sector cannot supply any new centres."
             ],
-            "question": "What inference can be drawn about Scotland's claim to a robust renewable energy sector in the context of data centre operations?"
+            "question": "What limitation accompanies Scotland’s strong renewable energy sector in the reading?"
           },
           {
             "correct_option_index": 2,
             "option_feedback": [
-              "The article does not mention any requirement for data centres to be located underground.",
-              "The Scottish government's actions are discussed, not a specific UK government license requirement.",
-              "Sentence 10 states the Scottish government 'has mandated environmental impact assessments,' even while refusing a full suspension."
+              "No such closure rule is reported.",
+              "The passage does not state a referendum requirement.",
+              "This is the reported requirement; it does not itself mean that a project has been approved."
             ],
             "options": [
-              "Data centres must be located entirely underground.",
-              "They must obtain a special license from the UK government.",
-              "Environmental impact assessments have been mandated."
+              "All centres must close during low-wind periods.",
+              "Every centre must first be approved by a village referendum.",
+              "Ministers must be notified of proposals exceeding 50MW."
             ],
-            "question": "What is one specific requirement the Scottish government has imposed on data centre applications, despite refusing a full suspension?"
+            "question": "What notification requirement does the reading report?"
           },
           {
             "correct_option_index": 2,
@@ -650,16 +639,16 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The measures are about large centres and scrutiny, not speeding up smaller projects.",
-              "These measures, as mentioned in sentences 10 and 11, indicate a desire for more oversight and to assess the environmental consequences of larger developments, rather than halting all construction.",
-              "The government has explicitly 'refused to impose a suspension on applications,' indicating they are not trying to prevent all new centres, but rather to regulate them."
+              "Notification is not a promise of approval.",
+              "This follows from the requirement without adding a new policy claim.",
+              "The government refused a moratorium; the reading does not announce a total ban."
             ],
             "options": [
-              "To fast-track approval for smaller data centre projects.",
-              "To ensure greater scrutiny and address potential significant impacts of large projects.",
-              "To prevent any new data centres from being built in Scotland."
+              "Notification guarantees that a project will be approved.",
+              "Ministers must be informed about proposals above the stated capacity.",
+              "No new centres can now be built."
             ],
-            "question": "Why might the government mandate notification for centres over 50MW and require environmental impact assessments?"
+            "question": "What can be concluded from the requirement to notify ministers?"
           },
           {
             "correct_option_index": 2,
@@ -700,7 +689,7 @@
           "One of Scotland's biggest selling points for data centre developers is its strong renewable energy sector.",
           "Lanarkshire has been designated an AI growth zone by the UK government, with data centres at its heart.",
           "The type of jobs a data centre creates has also been debated.",
-          "The Scottish Greens and campaign groups have called for a moratorium on large data centres, arguing they could undermine climate targets and place additional pressure on renewable energy supplies.",
+          "The Scottish government has so far refused to impose a moratorium.",
           "In August, it announced that ministers would have to be notified of proposed centres over 50MW in capacity."
         ],
         "title": "Scotland's Data Centre Boom: Growth, Controversy, and Environmental Impact",
@@ -737,7 +726,7 @@
             "term": "operational drone"
           },
           {
-            "definition": "To completely surround or include a wide range of things; to form a circle or boundary around something.",
+            "definition": "To include or cover an area; here, the land that the proposed centre would occupy.",
             "part_of_speech": "verb",
             "term": "encompass"
           },
@@ -756,7 +745,44 @@
             "part_of_speech": "verb",
             "term": "mandated"
           }
-        ]
+        ],
+        "editorial_check": {
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Removed an environmental-assessment mandate absent from the saved evidence, corrected a contextual definition and eliminated two defensible answers to the size question."
+          ],
+          "previous_review": {
+            "content_digest": "df957d0b54eaba6b989cb5ef3339baf79569d5ca782571ee9f947d34b10bd501",
+            "date": "2026-10-05T14:47:54.928643+00:00",
+            "generation_attempts": 3,
+            "language_policy_version": "2026-09-08-level-calibration",
+            "level_checks": {
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson promotes supported inference, particularly in quiz item 5, and distinguishes between near-synonyms or register in vocabulary definitions and quiz items 4, 11, and 12. Distractors are plausible, and feedback explains why each option fails, ensuring substantive learning beyond basic recall."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a polished, natural reporting register throughout the title, overview, reading, and explanations. The language is objective and balanced, accurately reflecting the source's calibrated certainty without sensationalism, which is appropriate for a C1-Higher news analysis."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The definitions are concise and illuminating, using controlled complex sentences for explanations while maintaining clarity. The grammar explanation is advanced, discussing the effect on meaning and conciseness, suitable for C1-Higher learners without being overly academic or obscure."
+              },
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary selections such as 'significant concern,' 'immense,' 'spurred,' 'physical footprint,' 'operational drone,' 'encompass,' 'robust,' 'necessitating,' and 'mandated' are precise, transferable, and offer meaningful distinctions suitable for C1-Higher learners. None of the terms are from the reserved vocabulary list, and all are defined clearly in context."
+              }
+            },
+            "method": "separate evidence, teaching and level suitability review",
+            "model": "gemini-2.5-flash",
+            "repaired_sections": [],
+            "status": "passed",
+            "target_level": "C1-Higher"
+          }
+        }
       }
     }
   }

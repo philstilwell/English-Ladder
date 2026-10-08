@@ -75,17 +75,17 @@
         {
             prompt: "Choose the natural sentence.",
             options: [
-                { text: "I have been working a lot lately.", correct: true },
-                { text: "I worked a lot lately.", weakness: "tense" },
-                { text: "I am working a lot since Monday.", weakness: "tense" },
+                { text: "I have worked here since Monday.", correct: true },
+                { text: "I working here since Monday.", weakness: "tense" },
+                { text: "I am work here since Monday.", weakness: "tense" },
             ],
         },
         {
-            prompt: "Choose the natural sentence.",
+            prompt: "Which sentence means that nobody except John called Maria?",
             options: [
                 { text: "Only John called Maria.", correct: true },
-                { text: "John called only Maria only.", weakness: "clauses" },
-                { text: "John only called to Maria.", weakness: "prepositions" },
+                { text: "John called only Maria.", weakness: "clauses" },
+                { text: "John called Maria only yesterday.", weakness: "clauses" },
             ],
         },
         {
@@ -128,6 +128,20 @@
                 { text: "The call is in Monday on 3:00.", weakness: "prepositions" },
             ],
         },
+    ];
+
+    // Explanations follow the authored option order, before display shuffling.
+    const diagnosticExplanations = [
+        ['Use “in” for a city: “in New York”.', 'Use “in” for a city; “at” usually identifies a point or place such as a station.', 'Use “in” for a city. “On” is used with surfaces, such as “on the table”.'],
+        ['“Suggested that I apply” is a natural way to suggest an action.', 'For an action, use “suggested that I apply”, not “suggested me to apply”.', 'After “suggested to me”, add a clause: “She suggested to me that I apply”.'],
+        ['“Because of” introduces a noun phrase: “the storm”.', 'Use “because of the storm” or a full clause such as “because there was a storm”.', '“During” takes a noun phrase: “during the storm”. For a reason, use “because of the storm”.'],
+        ['“Have worked” links the starting time, Monday, to now.', '“I working” needs a helping verb. Here, use “I have worked here since Monday”.', '“Am work” is not a verb form. Here, use “I have worked here since Monday”.'],
+        ['“Only” before “John” limits who called: nobody else did.', 'This is grammatical, but “only Maria” limits whom John called, not who called her.', 'This is grammatical, but “only yesterday” describes how recently the call happened.'],
+        ['“Few” works with a plural countable noun, such as “people”.', 'After “a few”, use a plural noun: “a few people”.', 'Use “many” with plural countable nouns: “many people”.'],
+        ['The presentation causes interest, so it is “interesting”; the person feels “interested”.', 'These adjectives reverse the intended meanings. Say “The presentation was interesting, so I felt interested”.', 'Use adjectives here: “interesting” for the presentation and “interested” for the feeling.'],
+        ['“Which” can introduce extra information between commas.', 'For extra information between commas, use “which”, not “that”.', 'Do not place a comma immediately after “which”. Put the extra information between commas: “The report, which includes new data, is ready”.'],
+        ['“Successful” is the adjective describing the project.', '“Success” is a noun. Say “was a success” or “was successful”.', 'Use a noun after “had”: “The project had success”. “Successful” is an adjective.'],
+        ['Use “on” for a day and “at” for an exact time.', 'Say “on Monday at 3:00”: “on” for the day, “at” for the time.', 'Say “on Monday at 3:00”: “on” for the day, “at” for the time.'],
     ];
 
     const phraseData = {
@@ -301,15 +315,25 @@
             return;
         }
         const ranked = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        const answers = `<div class="result-list">${diagnosticQuestions.map((question, index) => {
+            const selected = Number($(`input[name="diagnostic-${index}"]:checked`).value);
+            const option = question.options[selected];
+            const correct = question.options.find(item => item.correct);
+            return `<article><h4>Question ${index + 1}: ${option.correct ? 'Correct' : 'Try this pattern'}</h4>
+                <p>Your choice: ${escapeHtml(option.text)}</p>
+                <p>${escapeHtml(diagnosticExplanations[index][selected])}</p>
+                ${option.correct ? '' : `<p>Answer: ${escapeHtml(correct.text)}</p>`}</article>`;
+        }).join('')}</div>`;
         if (!ranked.length) {
             result.innerHTML = `
                 <h3>All 10 questions correct</h3>
-                <p class="result-note">You answered this short practice check correctly. It is not a placement test. Choose a lesson that feels useful and try applying the grammar in your own writing.</p>
+                <p class="result-note">You answered this short practice check correctly. It is not a placement test. Choose a lesson that feels useful and try applying the grammar in your own writing.</p>${answers}
             `;
             return;
         }
         result.innerHTML = `
             <h3>Your study path</h3>
+            <p>This short check suggests topics to practice; it is not a placement test.</p>
             <div class="result-list">
                 ${ranked.map(([key, count]) => `
                     <article>
@@ -320,7 +344,7 @@
                         </div>
                     </article>
                 `).join("")}
-            </div>
+            </div>${answers}
         `;
     }
 
@@ -359,7 +383,6 @@
 
     function runSentenceRepair() {
         const original = $("#repair-input")?.value.trim() || "";
-        let revised = original;
         const level = $("#repair-level")?.value || "intermediate";
         const issues = [];
 
@@ -367,68 +390,62 @@
             issues.push({ label, message, href });
         }
 
-        function apply(pattern, replacement, issue) {
-            if (pattern.test(revised)) {
-                addIssue(issue.label, issue.message + " Possible wording: “" + revised.replace(pattern, replacement) + "” Check that this keeps your meaning.", issue.href);
+        function apply(pattern, issue) {
+            if (pattern.test(original)) {
+                addIssue(issue.label, issue.message, issue.href);
             }
         }
 
-        apply(/\binteresting in\b/gi, "interested in", {
+        apply(/\b(?:I am|I'm|you are|you're|he is|he's|she is|she's|we are|we're|they are|they're) (?:very |really )?interesting in\b/i, {
             label: "Emotion adjectives",
-            message: "Use “interested” for the person's feeling and “interesting” for the thing that creates the feeling.",
+            message: "If you mean that someone wants to know or do something, use “interested in”: “I am interested in learning English”. “Interesting” means that someone or something holds our attention: “She is interesting in this film” can be correct. Choose the meaning you intend.",
             href: "grammar-concepts/concept-03.html",
         });
-        apply(/\binterested in improve\b/gi, "interested in improving", {
+        apply(/\b(?:interested|interesting) in improve\b/i, {
             label: "Verb after preposition",
             message: "After “in”, use the “-ing” form: “interested in improving”.",
             href: "grammar-concepts/concept-03.html",
         });
-        apply(/\binterested in learn\b/gi, "interested in learning", {
+        apply(/\b(?:interested|interesting) in learn\b/i, {
             label: "Verb after preposition",
             message: "After “in”, use the “-ing” form: “interested in learning”.",
             href: "grammar-concepts/concept-03.html",
         });
-        apply(/\b(suggested|recommended) that (I|you|he|she|we|they) to ([a-z]+)\b/gi, "$1 that $2 $3", {
+        apply(/\b(suggested|recommended) that (I|you|he|she|we|they) to ([a-z]+)\b/i, {
             label: "Verb pattern after “suggested”/“recommended”",
             message: "After “suggested” or “recommended” + “that” + subject, use the base verb without “to”: “suggested that I apply”.",
             href: "grammar-concepts/concept-17.html",
         });
-        apply(/\bsuggested me to\b/gi, "suggested that I", {
+        apply(/\bsuggested me to (?:apply|study|learn|take|try|go|join|wait|ask|use)\b/i, {
             label: "Verb pattern after “suggested”",
             message: "Use “suggested that” + subject + base verb: “suggested that I apply”.",
             href: "grammar-concepts/concept-17.html",
         });
-        apply(/\brecommended me to\b/gi, "recommended that I", {
-            label: "Verb pattern after “recommended”",
-            message: "Use “recommended that” + subject + base verb: “recommended that I apply”.",
-            href: "grammar-concepts/concept-17.html",
-        });
-        apply(/\bdiscuss about\b/gi, "discuss", {
+        // “Recommended me to the team” is valid; recommend + object + infinitive
+        // also occurs in standard varieties. Do not label either an error.
+        apply(/\bdiscuss about (?:the|this|that|my|your|our|their|his|her)\b(?! same)/i, {
             label: "Verb pattern",
             message: "“Discuss” normally takes a direct object: “discuss the issue”.",
             href: "grammar-concepts/concept-07.html",
         });
-        apply(/\bexplain me\b/gi, "explain to me", {
+        apply(/\bexplain me (?:the|this|that|how|why|what|where|when|whether|a|an)\b/i, {
             label: "Verb pattern",
             message: "Use “explain something to someone” or “explain to someone”.",
             href: "grammar-concepts/concept-36.html",
         });
-        apply(/\bat (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/gi, "on $1", {
+        apply(/\bat (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)(?=\s*(?:[.!?,;:]|$))/i, {
             label: "Dates and days",
             message: "Use “on” with days of the week.",
             href: "grammar-concepts/concept-01.html",
         });
-        apply(/\bin (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b/gi, "on $1", {
+        apply(/\bin (Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)(?=\s*(?:[.!?,;:]|$))/i, {
             label: "Dates and days",
             message: "Use “on” with days of the week.",
             href: "grammar-concepts/concept-01.html",
         });
-        apply(/\bon (\d{4})\b/g, "in $1", {
-            label: "Years",
-            message: "Use “in” with years.",
-            href: "grammar-concepts/concept-15.html",
-        });
-        apply(/\bmuch people\b/gi, "many people", {
+        // “A report on 2026” and “how much people care” are valid. A short
+        // pattern cannot establish their intended meaning, so leave them alone.
+        apply(/\b(?:there (?:are|were)|too) much people\b/i, {
             label: "Countable nouns",
             message: "Use “many” or “few” with countable plural nouns such as “people”.",
             href: "grammar-concepts/concept-27.html",
@@ -436,7 +453,8 @@
         if (/\blittle people\b/i.test(original)) {
             addIssue("“Few” or “little”?", "“Little people” can mean small people. If you mean a small number of people, use “few people” or “a few people”. Keep “little” if size is your meaning.", "grammar-concepts/concept-27.html");
         }
-        apply(/\ba advice\b/gi, "some advice", {
+        // Do not flag compounds such as “an advice column”.
+        apply(/\b(?:a|an) advice(?=\s*(?:[.!?,;:]|$)|\s+(?:about|on|from|for)\b)/i, {
             label: "Uncountable noun",
             message: "“Advice” is usually uncountable, so use “some advice” or “a piece of advice”.",
             href: "grammar-concepts/concept-21.html",
@@ -446,7 +464,7 @@
         if (!result) {
             return;
         }
-        if (!revised) {
+        if (!original) {
             result.innerHTML = `<p class="result-note">Enter a sentence first.</p>`;
             return;
         }
@@ -631,6 +649,7 @@
             <div class="phrase-list">
                 ${phrases.map((phrase) => `<button class="phrase-chip" type="button" data-copy-text="${escapeHtml(phrase)}">${escapeHtml(phrase)}</button>`).join("")}
             </div>
+            <p role="status" data-phrase-copy-status></p>
             <div class="result-list">
                 <article>
                     <strong>Mini dialogue</strong>
@@ -725,7 +744,7 @@
                 if (!panel.open) {
                     return;
                 }
-                if (panel.id === "shadowing-studio") hydrateLessons();
+                if (panel.id === "pronunciation-shadowing") hydrateLessons();
                 toolPanels.forEach((otherPanel) => {
                     if (otherPanel !== panel) {
                         otherPanel.open = false;
@@ -735,6 +754,10 @@
         });
         $("#diagnostic-submit")?.addEventListener("click", runDiagnostic);
         $("#diagnostic-reset")?.addEventListener("click", resetDiagnostic);
+        $("#diagnostic-questions")?.addEventListener("change", () => {
+            const result = $("#diagnostic-results");
+            if (result?.textContent) result.textContent = 'Answers changed. Select “Show what to practice” to update your feedback.';
+        });
         $("#repair-run")?.addEventListener("click", runSentenceRepair);
         $("#shadow-speak")?.addEventListener("click", playShadowModel);
         $("#shadow-record")?.addEventListener("click", startRecording);
@@ -763,15 +786,39 @@
                 }
             });
         });
-        document.addEventListener("click", (event) => {
+        document.addEventListener("click", async (event) => {
             const chip = event.target.closest(".phrase-chip");
             if (!chip) {
                 return;
             }
-            navigator.clipboard?.writeText(chip.dataset.copyText || chip.textContent || "");
-            chip.classList.add("phrase-chip-copied");
-            window.setTimeout(() => chip.classList.remove("phrase-chip-copied"), 900);
+            const status = $("[data-phrase-copy-status]");
+            try {
+                if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+                await navigator.clipboard.writeText(chip.dataset.copyText || chip.textContent || "");
+                if (status) status.textContent = 'Phrase copied.';
+                chip.classList.add("phrase-chip-copied");
+                window.setTimeout(() => chip.classList.remove("phrase-chip-copied"), 900);
+            } catch {
+                const range = document.createRange();
+                range.selectNodeContents(chip);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                if (status) status.textContent = 'Automatic copying is unavailable. The phrase is selected; use your device’s Copy command.';
+            }
         });
+        function revealLinkedTool() {
+            let id;
+            try { id = decodeURIComponent(location.hash.slice(1)); } catch { return; }
+            const target = id ? document.getElementById(id) : null;
+            const panel = target?.closest('.tool-panel');
+            if (panel) {
+                toolPanels.forEach(other => { if (other !== panel) other.open = false; });
+                panel.open = true;
+            }
+        }
+        window.addEventListener('hashchange', revealLinkedTool);
+        revealLinkedTool();
     }
 
     document.addEventListener("DOMContentLoaded", () => {

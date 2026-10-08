@@ -25,73 +25,44 @@
           "What problems did the students in France want to change? What did they ask for?",
           "Imagine you are a student. Would you join a protest if your school had problems? Why or why not? I think... because..."
         ],
-        "editorial_check": {
-          "content_digest": "51d75eef0ee066919e7a65330b92eaa613ea918ec26c7fc0c3c1d429a5b4a068",
-          "date": "2026-10-07T07:09:27.559528+00:00",
-          "generation_attempts": 1,
-          "language_policy_version": "2026-09-08-level-calibration",
-          "level_checks": {
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson appropriately challenges A1-A2 learners by testing clear reading details, contextual vocabulary, and the simple past tense, with plausible and straightforward answer options."
-            },
-            "register": {
-              "passed": true,
-              "reason": "The language throughout the lesson is straightforward, neutral, and uses everyday English suitable for adults, consistent with the A1-A2 register requirements."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses short clauses, familiar connectors, and accessible vocabulary. Grammar explanations are brief, and a sentence frame is provided in the discussion prompts, meeting all specified requirements."
-            },
-            "vocabulary": {
-              "passed": true,
-              "reason": "All vocabulary terms are common, concrete, and well-defined, appropriate for A1-A2 learners. No reserved vocabulary targets were borrowed."
-            }
-          },
-          "method": "separate evidence, teaching and level suitability review",
-          "model": "gemini-2.5-flash",
-          "repaired_sections": [],
-          "status": "passed",
-          "target_level": "A1-A2"
-        },
         "grammar": {
           "concept": "Simple Past Tense",
-          "example_quote": "Crowds of mainly teenagers called for more resources for schools.",
-          "explanation": "The Simple Past Tense shows actions that happened and finished in the past. We often add \"-ed\" to regular verbs to make them past tense, like \"called\" or \"clashed.\" Irregular verbs change in different ways, like \"spread.\""
+          "example_quote": "Teenagers in France asked for more resources to improve their schools.",
+          "explanation": "The simple past describes a finished action. Regular verbs usually add “-ed”: “ask” becomes “asked”. Some irregular verbs keep the same form: “spread” is both present and past. The other words in a sentence help show the time."
         },
         "news_brief_sentences": [
-          "Crowds of mainly teenagers called for more resources for schools.",
-          "They also wanted an end to what they called police repression.",
-          "A wave of protests by high-school pupils spread to their parents, university students and unions.",
-          "Police clashed with demonstrators in Lyon.",
+          "Teenagers in France asked for more resources to improve their schools.",
+          "They also said the police were using too much force.",
+          "The protests spread to parents, university students and unions, which are groups that speak for workers.",
+          "Police clashed with protesters in Lyon.",
           "Police used tear gas in Paris and Marseille.",
-          "The government said that 215 students and 85 staff had been hurt.",
-          "Alissa, a student, said that schools were falling apart.",
-          "Her friend, Sacha, said the ceilings in Marseille's schools were leaking and conditions were poor.",
-          "Students will keep protesting until good measures are taken."
+          "The government said 215 students and 85 school staff had been hurt since the protests began.",
+          "Alissa, a student, said schools were in very poor condition.",
+          "Her friend Sacha said school ceilings leaked and these poor conditions made studying difficult.",
+          "Sacha said they would keep protesting until leaders took action."
         ],
         "overview": "Students and other people protested across France to ask for better schools and an end to police actions.",
         "quiz": [
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "No, the students asked for more resources for schools, not more police officers.",
-              "Yes, the students called for more resources to improve their schools.",
-              "The reading says they wanted 'more resources,' which can include staff, but 'new teachers' is not directly stated as their main request."
+              "They asked for school resources, not more police.",
+              "Yes. They wanted resources to improve their schools.",
+              "Longer holidays are not given as their request."
             ],
             "options": [
               "More police officers.",
-              "More resources.",
-              "New teachers."
+              "More resources for their schools.",
+              "Longer school holidays."
             ],
             "question": "What did the crowds of teenagers want for schools?"
           },
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The police used tear gas in Paris and Marseille, not only Lyon.",
-              "That's right! Police used tear gas in both Paris and Marseille.",
-              "Police used water cannon in Rennes, but tear gas was used in Paris and Marseille."
+              "The reading names Paris and Marseille for tear gas.",
+              "Yes. These two cities are named.",
+              "The reading does not say tear gas was used only in Rennes."
             ],
             "options": [
               "Only in Lyon.",
@@ -117,13 +88,13 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "This sentence uses the Simple Present Tense (\"says\" and \"is\") to describe a current situation.",
-              "Yes, \"clashed\" is a verb in the Simple Past Tense, showing an action that happened in the past.",
-              "This sentence uses the Simple Present Tense (\"are falling\") to describe something happening now."
+              "“Says” is present simple.",
+              "“Clashed” is simple past; it describes a finished action.",
+              "“Are falling” is present continuous, not simple past."
             ],
             "options": [
               "The government says there is disruption.",
-              "Police clashed with demonstrators.",
+              "Police clashed with protesters.",
               "Schools are falling apart."
             ],
             "question": "Which sentence uses the Simple Past Tense to talk about an action that happened?"
@@ -131,13 +102,13 @@
           {
             "correct_option_index": 2,
             "option_feedback": [
-              "No, a student said the conditions were generally rather poor.",
-              "The student said conditions were poor, so they couldn't really work a lot.",
-              "Yes, Sacha said the ceilings were leaking and conditions were generally poor."
+              "Sacha said the conditions made studying difficult.",
+              "He said the ceilings leaked.",
+              "Yes. He described leaking ceilings and poor conditions."
             ],
             "options": [
-              "Very good.",
-              "Perfect for working.",
+              "Good enough for all their needs.",
+              "Recently repaired and dry.",
               "Poor, with leaking ceilings."
             ],
             "question": "What were the conditions like in Marseille's schools, according to a student?"
@@ -145,9 +116,9 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "While teachers might support, the reading states parents, university students, and unions joined the protests.",
-              "Correct. The protests spread to include parents, university students, and unions.",
-              "Government officials were not reported as joining the protests; they were responding to them."
+              "The reading also names parents, university students and unions.",
+              "These are the groups named in the reading.",
+              "Government officials are not named as joining."
             ],
             "options": [
               "Only teachers.",
@@ -206,7 +177,44 @@
             "part_of_speech": "noun",
             "term": "conditions"
           }
-        ]
+        ],
+        "editorial_check": {
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Simplified dense reporting, explained unions, restored Sacha’s attribution, corrected a tense label and removed an overlapping answer."
+          ],
+          "previous_review": {
+            "content_digest": "51d75eef0ee066919e7a65330b92eaa613ea918ec26c7fc0c3c1d429a5b4a068",
+            "date": "2026-10-07T07:09:27.559528+00:00",
+            "generation_attempts": 1,
+            "language_policy_version": "2026-09-08-level-calibration",
+            "level_checks": {
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson appropriately challenges A1-A2 learners by testing clear reading details, contextual vocabulary, and the simple past tense, with plausible and straightforward answer options."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The language throughout the lesson is straightforward, neutral, and uses everyday English suitable for adults, consistent with the A1-A2 register requirements."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses short clauses, familiar connectors, and accessible vocabulary. Grammar explanations are brief, and a sentence frame is provided in the discussion prompts, meeting all specified requirements."
+              },
+              "vocabulary": {
+                "passed": true,
+                "reason": "All vocabulary terms are common, concrete, and well-defined, appropriate for A1-A2 learners. No reserved vocabulary targets were borrowed."
+              }
+            },
+            "method": "separate evidence, teaching and level suitability review",
+            "model": "gemini-2.5-flash",
+            "repaired_sections": [],
+            "status": "passed",
+            "target_level": "A1-A2"
+          }
+        }
       }
     },
     "intermediate": {
@@ -218,51 +226,22 @@
           "What specific demands are the students making of the French government regarding their schools?",
           "Do you think public demonstrations are an effective way to bring about change in a country? Why or why not?"
         ],
-        "editorial_check": {
-          "content_digest": "6fba23fa9b885325c32b73bbef8402922d655ba84a4b3d5699e1cce52a7ef341",
-          "date": "2026-10-07T07:10:17.366048+00:00",
-          "generation_attempts": 1,
-          "language_policy_version": "2026-09-08-level-calibration",
-          "level_checks": {
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson appropriately challenges B1-B2 learners through its detailed news comprehension, contextual vocabulary, application of a relevant grammar point, and questions requiring inference and understanding of relationships between details."
-            },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently maintains a natural, neutral news English register suitable for B1-B2 learners throughout all learner-facing content."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses varied and clear sentence structures, provides explicit grammar explanation with a relevant example, and ensures definitions, questions, and feedback are easy to understand for the target level."
-            },
-            "vocabulary": {
-              "passed": true,
-              "reason": "Vocabulary items are relevant to the news context, present in the reading, and defined clearly with appropriate contextual meanings for the B1-B2 level. No reserved vocabulary is used as a target."
-            }
-          },
-          "method": "separate evidence, teaching and level suitability review",
-          "model": "gemini-2.5-flash",
-          "repaired_sections": [],
-          "status": "passed",
-          "target_level": "B1-B2"
-        },
         "grammar": {
           "concept": "Present Perfect Simple",
-          "example_quote": "What began with local anger at overcrowded classrooms and dilapidated school buildings has since extended across the country, reaching some universities.",
-          "explanation": "The Present Perfect Simple connects an action or state from the past to the present. It is used to describe an action that started in the past and continues into the present, or an action completed in the past but with a result that is relevant now. The structure is 'have/has' + past participle. In the example, \"has since extended\" shows the spread began in the past and continues or affects the present situation."
+          "example_quote": "Anger at overcrowded classrooms and dilapidated buildings has since extended across France, reaching some universities.",
+          "explanation": "The present perfect uses “have” or “has” + a past participle. “Has since extended” links an earlier start with the current spread across France. It does not tell us that the spread will continue indefinitely."
         },
         "news_brief_sentences": [
           "Tear gas was used in Paris and Marseille as school demonstrations increased across France.",
-          "Large gatherings of mostly teenagers demanded better funding for schools and an end to what they called severe actions by officers.",
+          "Large gatherings of teenagers demanded better school resources and an end to police actions they described as too violent.",
           "Hundreds of thousands of people joined the street actions across France, with high-school pupils, parents, university students, and unions participating.",
-          "Police encountered demonstrators in Lyon and used tear gas in Paris and Marseille.",
-          "The government stated that 891 high schools experienced disruption on Tuesday, representing almost a quarter of all lycées.",
-          "Students explained that school buildings were often dilapidated, with leaking ceilings making it difficult to study.",
-          "Official offers, such as a website for students to express their grievances, have made little impact so far.",
-          "There is significant worry about claims of \"disproportionate force\" used by officers, with investigations now ongoing.",
+          "Police clashed with demonstrators in Lyon and used tear gas in Paris and Marseille.",
+          "The government reported disruption in 891 high schools on Tuesday, almost a quarter of the country’s high schools.",
+          "Students described dilapidated school buildings, meaning buildings in very poor condition, with leaking ceilings that made studying difficult.",
+          "Official offers, including a website for students to express their grievances, or complaints, have made little impression so far.",
+          "Claims of disproportionate force, meaning more force than the situation justified, have led to concern and police investigations.",
           "A 14-year-old student suffered a fractured jaw and lost teeth after being hit in the face during a school blockade.",
-          "What began with local anger at overcrowded classrooms and dilapidated school buildings has since extended across the country, reaching some universities."
+          "Anger at overcrowded classrooms and dilapidated buildings has since extended across France, reaching some universities."
         ],
         "overview": "Across France, large gatherings of students, parents, and union members are protesting school conditions and demanding changes from the government.",
         "quiz": [
@@ -283,14 +262,14 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading states police encountered demonstrators and used tear gas, not that they handed out food.",
-              "The reading clearly states that police used tear gas in Paris and Marseille during the demonstrations.",
-              "Police encountered demonstrators and used tear gas; they were not described as organizing peaceful discussions."
+              "The passage reports clashes and tear gas.",
+              "Paris and Marseille are named as places where tear gas was used.",
+              "It does not report police closing every school."
             ],
             "options": [
-              "They handed out free food.",
-              "They used tear gas.",
-              "They organized peaceful discussions."
+              "They withdrew from every protest.",
+              "They used tear gas in some cities.",
+              "They closed every school in France."
             ],
             "question": "What action did police take during some of the demonstrations?"
           },
@@ -311,16 +290,16 @@
           {
             "correct_option_index": 2,
             "option_feedback": [
-              "The reading indicates that the government's offers have made little impact, suggesting the protests did not end quickly.",
-              "The article states that the offers have made little impact, meaning school conditions were not significantly improved by them.",
-              "The text explicitly says that official offers, such as a website for grievances, \"have made little impact so far.\""
+              "The passage does not report an immediate end to protests.",
+              "The passage does not say their demands were fully met.",
+              "The offers have had little effect on the students’ response; this is not a measured assessment of repairs."
             ],
             "options": [
-              "They quickly ended the protests.",
-              "They significantly improved school conditions.",
-              "They made little impact so far."
+              "The offers ended the protests immediately.",
+              "The offers met all the students’ demands.",
+              "The offers have made little impression."
             ],
-            "question": "How did the government's offers to address student grievances impact the situation?"
+            "question": "How have students responded to the government’s offers so far?"
           },
           {
             "correct_option_index": 1,
@@ -353,28 +332,28 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The Present Perfect Simple often emphasizes a connection to the present, not a completed past action with no current relevance.",
-              "The Present Perfect Simple describes an event that began in the past and continues or has an ongoing effect or relevance in the present.",
-              "The Present Perfect Simple refers to past actions with present relevance, not future plans."
+              "The spread has already happened.",
+              "The earlier local anger now reaches across the country.",
+              "The wording connects past developments to the present."
             ],
             "options": [
-              "The action happened once in the past and is now completely finished.",
-              "The action started in the past and is continuing or has a current result.",
-              "The action is a future plan that will start soon."
+              "A future plan that has not begun.",
+              "A past development with a result visible now.",
+              "An event located only in one finished past year."
             ],
-            "question": "When an action described by the Present Perfect Simple \"has since extended\" connects to the present, what does it mean?"
+            "question": "What does “has since extended” emphasize in this reading?"
           },
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading describes an injury to the student, not an award.",
-              "The article states that a 14-year-old student \"suffered a fractured jaw and lost teeth after being hit in the face.\"",
-              "The reading details an injury suffered by the student, not an election to a leadership role."
+              "The reading reports a jaw injury and lost teeth.",
+              "Those are the injuries described.",
+              "An ankle injury is not reported for this student."
             ],
             "options": [
-              "He received a new award.",
+              "He suffered a broken arm.",
               "He suffered a fractured jaw and lost teeth.",
-              "He was elected as a student leader."
+              "He suffered an ankle injury."
             ],
             "question": "What happened to a 14-year-old student during a school blockade?"
           }
@@ -391,7 +370,7 @@
           "Eden, 14, was part of a group blockading the Château d'Épluches lycée for 15-18-year-olds when he was hit in the face. His lawyer said he suffered a fractured jaw, and that his upper teeth were broken and four of his lower teeth were gone.",
           "What began with local anger at overcrowded classrooms, a lack of teaching staff and dilapidated school buildings in the northern Paris suburb of Seine-Saint-Denis in mid-September has since spread across the country, and extended to some universities too."
         ],
-        "title": "School Demonstrations Grow Across France Over Conditions and Police Actions",
+        "title": "French School Protests Grow Over Conditions and Police Actions",
         "topic": "Social Issues and Education",
         "vocabulary": [
           {
@@ -439,7 +418,44 @@
             "part_of_speech": "noun",
             "term": "blockade"
           }
-        ]
+        ],
+        "editorial_check": {
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Explained specialist terms in place, reduced sentence burden, improved implausible options and removed a claim about completed school improvements."
+          ],
+          "previous_review": {
+            "content_digest": "6fba23fa9b885325c32b73bbef8402922d655ba84a4b3d5699e1cce52a7ef341",
+            "date": "2026-10-07T07:10:17.366048+00:00",
+            "generation_attempts": 1,
+            "language_policy_version": "2026-09-08-level-calibration",
+            "level_checks": {
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson appropriately challenges B1-B2 learners through its detailed news comprehension, contextual vocabulary, application of a relevant grammar point, and questions requiring inference and understanding of relationships between details."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently maintains a natural, neutral news English register suitable for B1-B2 learners throughout all learner-facing content."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses varied and clear sentence structures, provides explicit grammar explanation with a relevant example, and ensures definitions, questions, and feedback are easy to understand for the target level."
+              },
+              "vocabulary": {
+                "passed": true,
+                "reason": "Vocabulary items are relevant to the news context, present in the reading, and defined clearly with appropriate contextual meanings for the B1-B2 level. No reserved vocabulary is used as a target."
+              }
+            },
+            "method": "separate evidence, teaching and level suitability review",
+            "model": "gemini-2.5-flash",
+            "repaired_sections": [],
+            "status": "passed",
+            "target_level": "B1-B2"
+          }
+        }
       }
     },
     "advanced": {
@@ -481,14 +497,14 @@
           "Police clashed with demonstrators in Lyon, using tear gas in Paris and Marseille and water cannon in Rennes, though serious trouble was less severe than in previous protests.",
           "Prime Minister Sébastien Lecornu condemned earlier violence, reporting 215 students, 85 staff, and 715 police officers had been hurt since the protests began.",
           "Education Minister Édouard Geffray appealed for dialogue over school blockades and warned against \"ultra-violent elements\" infiltrating student movements.",
-          "Student accounts, such as Alissa's from Marseille, describe schools as \"falling apart,\" necessitating their presence in street protests.",
+          "Alissa described schools as “falling apart”, conditions she saw as necessitating protests.",
           "Her friend, Sacha, further detailed poor conditions, including leaking ceilings in Marseille's schools, hindering effective study.",
           "Widespread concern exists over allegations of \"disproportionate force\" by police, with France's IGPN police inspectorate investigating multiple cases.",
           "One police officer has been charged by prosecutors with \"violence... resulting in mutilation or permanent disability\" after firing a tear-gas grenade at a high school student.",
           "Another alarming incident involved a 15-year-old's hand being torn off after a so-called anti-encirclement grenade was fired in unclear circumstances near a school in Lens.",
           "Government efforts, including a website for grievances and internal school discussions, have made little impression on the students so far.",
           "With further union-backed mobilisations anticipated, the current wave of discontent appears unlikely to abate in the near future.",
-          "One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing."
+          "Alain and Michèle, former teachers in their seventies, joined the Paris march, explaining that they understood the education system’s problems."
         ],
         "vocabulary": [
           {
@@ -523,7 +539,7 @@
           },
           {
             "part_of_speech": "noun",
-            "definition": "Claims or assertions that someone has done something illegal or wrong, typically without proof.",
+            "definition": "Claims that someone has done something wrong; the word itself does not establish whether the claims are supported or proved.",
             "term": "allegations"
           },
           {
@@ -549,8 +565,8 @@
         ],
         "grammar": {
           "concept": "Present Participle Clauses (Adverbial)",
-          "example_quote": "One couple in their 70s, Alain and Michèle, joined the march in central Paris, to show their support for young students, explaining that as former teachers they understood the problems that France's education system was facing.",
-          "explanation": "A present participle clause can function as an adverbial clause, providing additional information about the main verb or clause. It describes an action happening at the same time as, or immediately before or after, the main verb, often indicating cause, reason, result, or an accompanying circumstance. It adds detail concisely and links related events smoothly."
+          "example_quote": "Alain and Michèle, former teachers in their seventies, joined the Paris march, explaining that they understood the education system’s problems.",
+          "explanation": "The “-ing” clause “explaining that…” adds what Alain and Michèle said alongside the main report that they joined the march. Its understood subject is the couple. Such clauses can express accompanying actions, reasons or results; “-ing” alone does not establish exact timing."
         },
         "quiz": [
           {
@@ -612,23 +628,23 @@
           {
             "correct_option_index": 0,
             "option_feedback": [
-              "Correct. The clause 'considering all perspectives carefully' uses a present participle to describe the manner or a simultaneous action of the committee finalizing its decision.",
-              "This uses a perfect participle clause ('Having finished'), which indicates an action completed before the main verb, not a simultaneous action or consequence of the main verb as a simple present participle clause would.",
-              "This uses a past participle ('broken down') to describe the car, functioning as an adjective, not an adverbial present participle clause describing an action."
+              "“Carrying signs” describes what the students did while marching.",
+              "“Having finished” marks a completed earlier action, not the requested accompanying action.",
+              "“Carried by the students” modifies “signs”; it does not describe an accompanying action by the main-clause subject."
             ],
             "options": [
-              "The committee finalized its decision, considering all perspectives carefully.",
-              "Having finished their work, the team celebrated their success.",
-              "Her car, broken down on the side of the road, needed towing."
+              "The students marched through Paris, carrying signs.",
+              "Having finished the march, the students went home.",
+              "The signs carried by the students were blue."
             ],
-            "question": "Which sentence correctly demonstrates a present participle clause functioning adverbially to explain a consequence or simultaneous action?"
+            "question": "Which sentence uses a simple “-ing” clause to describe an action accompanying the main action?"
           },
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "While police took action, the Minister's stated approach was dialogue and identifying specific elements, not blanket strict enforcement.",
-              "Correct. The Minister \"appealed for dialogue\" and voiced concern about \"ultra-violent elements infiltrating\" the student movements, suggesting a nuanced stance.",
-              "The government's offers, mentioned later in the reading, made little impression, indicating no immediate, full concessions were made."
+              "He appealed for dialogue; the text does not attribute this blanket policy to him.",
+              "He called for discussion and spoke about violent elements entering the movement.",
+              "The passage does not report full concessions."
             ],
             "options": [
               "He advocated for strict enforcement against all demonstrators.",
@@ -640,9 +656,9 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "While political context exists, Alissa's specific quote highlights school conditions as the direct prompt for her protest.",
-              "Correct. Alissa explicitly states, \"schools are falling apart,\" indicating the poor state of educational infrastructure as a primary motivator for their protests, thus necessitating action.",
-              "The reading mentions poor learning environments but does not specifically cite excessively difficult workloads as a student grievance."
+              "The reading does not attribute an electoral motive to Alissa.",
+              "She presents poor school conditions as a reason to protest; this is her account.",
+              "Her complaint concerns buildings and learning conditions, not the difficulty of academic tasks."
             ],
             "options": [
               "A desire to influence upcoming presidential elections.",
@@ -668,16 +684,16 @@
           {
             "correct_option_index": 1,
             "option_feedback": [
-              "\"Allegations\" implies claims without definitive proof, and the IGPN is investigating, not officially condemning yet.",
-              "Correct. \"Allegations\" are claims made without proof, and the IGPN police inspectorate is actively investigating these cases, confirming they are not yet proven.",
-              "The reading states there are \"allegations\" and an ongoing investigation, not definitive findings of police brutality."
+              "The word “allegations” does not establish a finding of guilt.",
+              "It identifies claims; the reading also reports investigations.",
+              "An allegation can have evidence. The word does not tell us how much evidence exists."
             ],
             "options": [
-              "These are proven instances of police misconduct leading to official condemnations.",
-              "These are unproven claims of excessive force that are currently under investigation.",
-              "These are definitive findings by an independent body confirming police brutality."
+              "That every allegation has already been proved.",
+              "That claims of excessive force have been made.",
+              "That the claims have no supporting evidence."
             ],
-            "question": "What is the nature of the concern surrounding \"allegations\" of disproportionate force by police?"
+            "question": "What does “allegations of disproportionate force” establish by itself?"
           },
           {
             "correct_option_index": 2,
@@ -695,35 +711,43 @@
           }
         ],
         "editorial_check": {
-          "date": "2026-10-07T07:55:31.889664+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 4,
-          "repaired_sections": [
-            "vocabulary"
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Distinguished allegations from absence of evidence, repaired attribution and clarified the participle task without inventing timing rules."
           ],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners, such as \"characterized,\" \"repression,\" \"infiltrating,\" and \"unlikely to abate.\" No reserved vocabulary items are present in the taught list, nor are simple inflections or superficial variations used."
+          "previous_review": {
+            "date": "2026-10-07T07:55:31.889664+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 4,
+            "repaired_sections": [
+              "vocabulary"
+            ],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets are precise, transferable, and offer meaningful advanced distinctions suitable for C1-Higher learners, such as \"characterized,\" \"repression,\" \"infiltrating,\" and \"unlikely to abate.\" No reserved vocabulary items are present in the taught list, nor are simple inflections or superficial variations used."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a polished, natural reporting register with accurate attribution (e.g., \"The government reported,\" \"Students' unions claimed,\" \"Prime Minister Sébastien Lecornu condemned\"). The language used throughout is appropriate for a C1-Higher news analysis, balancing formality with clarity."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Explanations for vocabulary and grammar are concise, illuminating, and use controlled complex sentences suitable for C1-Higher learners. For instance, the grammar explanation clearly articulates the function of present participle clauses as adverbial. Feedback for quiz questions elaborates on why options are correct or incorrect, discussing nuances effectively."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson encourages substantive learning beyond factual recall, including contextual vocabulary questions (Q3, Q4, Q8, Q9) that demand nuanced understanding of terms like \"characterized\" and \"allegations.\" The grammar question (Q5) requires distinguishing between different participle clause types, and comprehension questions involve synthesizing information and inferring meaning. Distractors are plausible, ensuring a meaningful challenge."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a polished, natural reporting register with accurate attribution (e.g., \"The government reported,\" \"Students' unions claimed,\" \"Prime Minister Sébastien Lecornu condemned\"). The language used throughout is appropriate for a C1-Higher news analysis, balancing formality with clarity."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Explanations for vocabulary and grammar are concise, illuminating, and use controlled complex sentences suitable for C1-Higher learners. For instance, the grammar explanation clearly articulates the function of present participle clauses as adverbial. Feedback for quiz questions elaborates on why options are correct or incorrect, discussing nuances effectively."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson encourages substantive learning beyond factual recall, including contextual vocabulary questions (Q3, Q4, Q8, Q9) that demand nuanced understanding of terms like \"characterized\" and \"allegations.\" The grammar question (Q5) requires distinguishing between different participle clause types, and comprehension questions involve synthesizing information and inferring meaning. Distractors are plausible, ensuring a meaningful challenge."
-            }
-          },
-          "content_digest": "b984ed44f39e0b7372d81be8db58b00ad95738ce90c770a2174d440bc3b51b21"
+            "content_digest": "b984ed44f39e0b7372d81be8db58b00ad95738ce90c770a2174d440bc3b51b21"
+          }
         }
       }
     }

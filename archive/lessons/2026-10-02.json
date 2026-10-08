@@ -26,7 +26,7 @@
           "Imagine you see someone who needs help. What is one thing you can do? I think I can help by..."
         ],
         "title": "Pilot Saves Lives During Attack",
-        "overview": "A pilot was attacked on a plane but showed great courage and saved all the passengers.",
+        "overview": "An injured pilot opened the cockpit door for help. Passengers stopped the attacker, and two other pilots landed the plane.",
         "topic": "Airline incident, bravery, quick thinking",
         "vocabulary": [
           {
@@ -117,9 +117,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The plane did not fly higher; it lost altitude.",
-              "The plane's height changed a lot during the incident.",
-              "Yes, the plane fell more than 17,000 feet."
+              "The plane went down, not up.",
+              "The plane did not stay at the same height.",
+              "Yes. The plane fell more than 17,000 feet."
             ]
           },
           {
@@ -131,9 +131,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The pilot was attacked, and others helped him. He was not alone.",
-              "Yes, other passengers helped to stop the attacker.",
-              "Air traffic controllers received signals but did not stop the attacker inside the plane."
+              "Other passengers helped; the pilot was not alone.",
+              "Yes. Other passengers helped to stop the attacker.",
+              "The reading says passengers helped to stop the attacker."
             ]
           },
           {
@@ -145,9 +145,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "\"Open\" is the base form, not the simple past tense.",
-              "Yes, \"opened\" is the correct simple past tense form of the regular verb \"open\".",
-              "\"Opening\" is a present participle, not the simple past tense."
+              "Use “opened” to talk about this finished action.",
+              "Yes. Add “-ed” to “open”: “The pilot opened the door”.",
+              "“The pilot opening the door” is not a complete sentence. Use “opened” here."
             ]
           }
         ],
@@ -158,7 +158,7 @@
           "He did not want others to die on the plane.",
           "The plane fell more than 17,000 feet during the attack.",
           "Other passengers helped to stop the attacker.",
-          "Two reserve pilots then landed the plane safely.",
+          "Two reserve pilots, who were also on the plane, landed it safely.",
           "Many people now praise Captain Machchhar for his courage."
         ],
         "sentence_evidence": [
@@ -172,33 +172,41 @@
           "The prime minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him."
         ],
         "editorial_check": {
-          "date": "2026-10-02T12:38:06.781931+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "A1-A2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary selected, such as \"pilot\", \"attacked\", \"cockpit\", and \"fell\", are common, concrete words useful for A1-A2 learners. Definitions are clear and contextually appropriate, using simple language. No reserved vocabulary is used, and the list provides suitable learning value for the target level."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Shared credit among the pilot, passengers and reserve pilots; explained reserve pilots and simplified feedback."
+          ],
+          "previous_review": {
+            "date": "2026-10-02T12:38:06.781931+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "A1-A2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary selected, such as \"pilot\", \"attacked\", \"cockpit\", and \"fell\", are common, concrete words useful for A1-A2 learners. Definitions are clear and contextually appropriate, using simple language. No reserved vocabulary is used, and the list provides suitable learning value for the target level."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults. Sentences employ direct verbs and explicit subjects, avoiding bureaucratic phrasing, compressed headlines, or idioms. The tone is respectful and appropriate for news reporting at this level."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The reading sentences, explanations, and quiz feedback use short clauses and familiar connectors, making the teaching language accessible. Grammar terms are briefly defined, and discussion prompts include a simple sentence frame and a hypothetical scenario as required."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson effectively tests main ideas and clearly stated details from the reading, along with contextual vocabulary and the taught simple past tense grammar pattern. Quiz options are short and plausible, avoiding dense reasoning, trick wording, or dependence on external knowledge, providing appropriate challenge for A1-A2 learners."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses straightforward, neutral everyday English suitable for adults. Sentences employ direct verbs and explicit subjects, avoiding bureaucratic phrasing, compressed headlines, or idioms. The tone is respectful and appropriate for news reporting at this level."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The reading sentences, explanations, and quiz feedback use short clauses and familiar connectors, making the teaching language accessible. Grammar terms are briefly defined, and discussion prompts include a simple sentence frame and a hypothetical scenario as required."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson effectively tests main ideas and clearly stated details from the reading, along with contextual vocabulary and the taught simple past tense grammar pattern. Quiz options are short and plausible, avoiding dense reasoning, trick wording, or dependence on external knowledge, providing appropriate challenge for A1-A2 learners."
-            }
-          },
-          "content_digest": "7057ddb162f307c1229ba8d091b13a8a90a8a0d5644be98f93e736cf3ac6003e"
+            "content_digest": "7057ddb162f307c1229ba8d091b13a8a90a8a0d5644be98f93e736cf3ac6003e"
+          }
         }
       }
     },
@@ -291,7 +299,7 @@
             ]
           },
           {
-            "question": "What did the plane's code squawk 7500 indicate?",
+            "question": "What did the code sent after the first emergency signal indicate?",
             "options": [
               "A medical emergency onboard.",
               "A successful landing.",
@@ -299,9 +307,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The emergency signal was sent, but the squawk code specifically indicated something more severe than a medical emergency.",
-              "A successful landing occurred later, but the squawk code was sent during the incident itself.",
-              "Correct! The reading states that the plane 'switched to a code indicating hijacking'."
+              "The reading identifies the later code as a hijacking signal. It does not compare the severity of different emergencies.",
+              "The code was sent during the incident; it was not a landing report.",
+              "The later code indicated hijacking."
             ]
           },
           {
@@ -327,9 +335,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The plane did not land smoothly; it experienced a rapid drop in altitude.",
-              "The word \"plunged\" indicates a rapid descent, not an ascent.",
-              "Correct! In this context, \"plunged\" means the plane dropped significantly and suddenly."
+              "“Plunged” describes a sudden drop during the flight, not the quality of the later landing.",
+              "“Plunged” means moved quickly down, not up.",
+              "Here, “plunged” describes a rapid, sudden drop."
             ]
           },
           {
@@ -341,9 +349,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text states that passengers intervened, implying the attacker did not escape.",
-              "Correct! The reading states, 'After passengers overpowered the attacker...' showing they gained control of him.",
-              "The text does not mention the attacker apologizing; it describes the physical intervention by passengers."
+              "The reading says the passengers gained control of the attacker.",
+              "“Overpowered” means they used greater strength to gain control.",
+              "The reading does not report an apology."
             ]
           },
           {
@@ -369,9 +377,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The reading suggests the opposite, with Machchhar expressing a positive outlook.",
-              "Correct! He stated he views his wound 'as a journey' and is confident in his recovery.",
-              "The text does not indicate that he blamed anyone; his focus was on his own recovery."
+              "He expressed confidence in recovering.",
+              "He described recovery as a journey and expected to become healthy again.",
+              "The passage describes his view of recovery, not whom he blamed."
             ]
           }
         ],
@@ -384,7 +392,7 @@
           "Israeli Prime Minister Benjamin Netanyahu reported that one pilot stabbed the other, apparently trying to crash the plane.",
           "After passengers overpowered the attacker, two reserve pilots onboard safely landed the plane in Saudi Arabia.",
           "Machchhar, hailed as a \"true hero\" by Netanyahu, is now recovering in a stable condition in Abu Dhabi.",
-          "Machchhar said he views his wound \"as a journey which is slowly going on and will take time.\"",
+          "Machchhar described his recovery as a journey that would take time.",
           "He is confident that his recovery will happen and he will become fit and healthy again."
         ],
         "sentence_evidence": [
@@ -400,33 +408,41 @@
           "\"I am looking at it as a journey which is slowly going on and will take time but I am confident that the recovery will be there and I will become fit and healthy again.\""
         ],
         "editorial_check": {
-          "date": "2026-10-02T12:40:18.403987+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 3,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary items like 'determined', 'plunged', 'hijacking', and 'overpowered' are appropriate general news terms for the B1-B2 level, providing clear contextual definitions and avoiding reserved vocabulary."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Corrected the recovery paraphrase, removed a code number absent from the reading and unsupported feedback claims."
+          ],
+          "previous_review": {
+            "date": "2026-10-02T12:40:18.403987+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 3,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary items like 'determined', 'plunged', 'hijacking', and 'overpowered' are appropriate general news terms for the B1-B2 level, providing clear contextual definitions and avoiding reserved vocabulary."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses natural, neutral news English appropriate for the B1-B2 level, maintaining a consistent voice across all learner-facing content."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses varied but manageable sentences, clear explanations for grammar and vocabulary, and questions and feedback are easy to understand, fitting the B1-B2 target."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson effectively challenges B1-B2 learners by combining reading comprehension with contextual vocabulary and grammar application, offering sufficient development beyond beginner-level material."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses natural, neutral news English appropriate for the B1-B2 level, maintaining a consistent voice across all learner-facing content."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses varied but manageable sentences, clear explanations for grammar and vocabulary, and questions and feedback are easy to understand, fitting the B1-B2 target."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson effectively challenges B1-B2 learners by combining reading comprehension with contextual vocabulary and grammar application, offering sufficient development beyond beginner-level material."
-            }
-          },
-          "content_digest": "4a22a751645b101369138ce5c2a6cd42b61da49c9de905865c5893116e309ba9"
+            "content_digest": "4a22a751645b101369138ce5c2a6cd42b61da49c9de905865c5893116e309ba9"
+          }
         }
       }
     },
@@ -440,7 +456,7 @@
           "If you were in a crisis and had to 'go for one last push' to overcome a challenge, what personal qualities would you rely on most, and why?"
         ],
         "title": "Pilot's Heroism on Flydubai Flight After Co-Pilot Attack",
-        "overview": "Captain Smit Machchhar of a Flydubai flight recounted his experience of being stabbed by his co-pilot and his courageous actions to save over 170 passengers by opening the cockpit door, leading to the attacker's eventual subdue and the plane's safe landing.",
+        "overview": "Captain Smit Machchhar described opening the cockpit door while injured. Passengers helped stop the attacker, and reserve pilots brought the flight to a safe landing.",
         "topic": "Air Travel Safety, Heroism, Terrorism Investigations",
         "vocabulary": [
           {
@@ -456,7 +472,7 @@
           {
             "term": "stable condition",
             "part_of_speech": "noun phrase",
-            "definition": "A medical status indicating that a patient's vital signs are normal and their condition is not deteriorating, although they may still be seriously ill."
+            "definition": "A reported condition that is not changing significantly; it does not by itself mean that the person is well or uninjured."
           },
           {
             "term": "undergone",
@@ -501,8 +517,8 @@
         ],
         "grammar": {
           "concept": "Past Perfect Passive Voice",
-          "explanation": "The past perfect passive voice is used to describe an action that was completed before another past action, where the subject of the sentence is the receiver of the action. It is formed using 'had been' followed by the past participle of the main verb. This structure emphasizes the state or result of a past action that occurred before another point in the past.",
-          "example_quote": "He said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\"."
+          "explanation": "The past perfect passive uses “had been” + past participle. In “had been subdued and tied up”, it puts the attacker in the receiving role and places those actions before the later request. It does not itself tell us who acted; “by passengers and crew” can supply that information.",
+          "example_quote": "Netanyahu said the attacker had been subdued and tied up before asking the crew to kill him, remarks Netanyahu interpreted as suicidal."
         },
         "quiz": [
           {
@@ -514,13 +530,13 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "While self-preservation is natural, the captain explicitly stated his determination not to let 'others die' as a key motivator for his 'last push'.",
-              "The captain's focus was on human lives, not primarily on the aircraft's mechanical integrity, although that was a consequence of his actions.",
-              "The captain explicitly stated, \"I was not going to let others die,\" indicating his primary motivation was to protect the passengers and crew."
+              "The captain acknowledged fighting for his own life but also stressed saving others.",
+              "The passage reports his concern for lives, not a stated goal of protecting the controls.",
+              "He said he was determined not to let others die."
             ]
           },
           {
-            "question": "Which of the following best describes the initial response of the aircraft to the incident?",
+            "question": "Which sequence of signals does the reading explicitly report?",
             "options": [
               "It sent a standard distress signal before descending significantly.",
               "It sent an emergency signal and then transmitted a code for hijacking.",
@@ -528,9 +544,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The plane did send an emergency signal and then descended, but the sequence and specific codes are important for accuracy.",
-              "The plane first sent an 'emergency signal' and *then* switched to code squawk 7500, which 'indicates hijacking', providing a clear sequence of events.",
-              "The plane first sent an emergency signal and only *then* switched to the hijacking code, and the descent was a separate event though related."
+              "The reading does not establish when the descent began relative to the first signal.",
+              "It reports an emergency signal followed by the hijacking code.",
+              "The emergency signal came first; the reading does not say the code caused the descent."
             ]
           },
           {
@@ -542,23 +558,23 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "The captain stated that 'Others came in and also played a role', indicating shared responsibility, not sole control.",
-              "The phrase 'played a role' suggests a contribution of importance, not an insignificant one, in controlling a critical situation.",
-              "To 'play a role' means to contribute significantly to an outcome, indicating the others actively helped manage the situation."
+              "“Also played a role” describes shared involvement, not sole responsibility.",
+              "The phrase does not rate the size of their contribution as insignificant.",
+              "They contributed alongside the captain; the phrase itself does not quantify their contribution."
             ]
           },
           {
             "question": "What information did Prime Minister Netanyahu share regarding the attacker?",
             "options": [
-              "The attacker had a history of mental health issues and was known to be suicidal.",
-              "Investigations suggested the attacker was an Omani national who underwent Islamist radical indoctrination.",
-              "The attacker was confirmed to be part of an organized terrorist cell targeting specific flights."
+              "He had a documented history of mental illness.",
+              "He was an Omani national, and investigations suggested ideological indoctrination.",
+              "He was a confirmed member of an organized terrorist cell."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Netanyahu mentioned the attacker was suicidal based on his calls after being subdued, but did not specify a history of mental health issues.",
-              "Netanyahu explicitly stated the attacker was an Omani national and that investigations pointed to 'Islamist radical indoctrination'.",
-              "While terrorism links are being investigated by the UAE, Netanyahu's statement focused on radical indoctrination, not a confirmed organized cell."
+              "No medical history is established in this reading.",
+              "These were statements attributed to Netanyahu, including the qualification “suggested”.",
+              "The passage reports an investigation into possible terrorist links, not a confirmed cell."
             ]
           },
           {
@@ -584,13 +600,13 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "While a malfunction is an emergency, code squawk 7500 has a specific meaning.",
-              "The text explicitly states that code squawk 7500 'indicates hijacking', making this the correct interpretation.",
-              "This code is specifically for hijacking, not for medical emergencies, which have a different code."
+              "The reading identifies this code with hijacking, not a mechanical fault.",
+              "The code communicated a hijacking situation to controllers.",
+              "The reading does not identify this as a request for medical help."
             ]
           },
           {
-            "question": "Consider the sentence: \"He said that once the attacker had been subdued and tied up by passengers and crew, he was 'calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question'.\" What does the past perfect passive structure emphasize?",
+            "question": "In “the attacker had been subdued and tied up before asking the crew to kill him”, what does “had been subdued and tied up” establish?",
             "options": [
               "The ongoing nature of the attacker's struggle during the event.",
               "The state of the attacker after being brought under control, prior to his verbal outbursts.",
@@ -598,23 +614,23 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The past perfect passive describes an action completed before another past event, not an ongoing struggle.",
-              "The past perfect passive \"had been subdued and tied up\" highlights that these actions were completed *before* the attacker started calling out, establishing his state at that preceding point.",
-              "The past perfect passive describes an action completed before the attacker's cries, not the reaction *to* them."
+              "It presents the restraint as completed before the later request, not as an ongoing struggle.",
+              "The restraint happened before the request, and the attacker received those actions.",
+              "It places the restraint before the request, not as a response to it."
             ]
           },
           {
-            "question": "Captain Machchhar's statements about his wound and recovery suggest what about his outlook?",
+            "question": "What does Machchhar say about the way he thinks about his wound?",
             "options": [
-              "He is resigned to a slow and difficult recovery.",
-              "He views his injury as a temporary setback that he will actively overcome.",
-              "He is worried that his injury will prevent him from flying again."
+              "He thinks focusing on it as a wound could make recovery harder.",
+              "He says the wound needs no further medical attention.",
+              "He says he has already fully recovered."
             ],
-            "correct_option_index": 1,
+            "correct_option_index": 0,
             "option_feedback": [
-              "He acknowledges the difficulty and time required for recovery but also expresses confidence in becoming 'fit and healthy again'.",
-              "Machchhar's statements, \"I am not looking at this wound like a wound... I am looking at it as a journey... I am confident that the recovery will be there,\" indicate an active and positive mindset toward overcoming his injury.",
-              "The captain's statements convey confidence in his full recovery, not worry about his future ability to fly."
+              "He links his way of thinking about the wound to the difficulty of recovery.",
+              "The passage makes no such claim about medical care.",
+              "The passage says he is recovering, not that recovery is complete."
             ]
           },
           {
@@ -675,17 +691,17 @@
           }
         ],
         "news_brief_sentences": [
-          "The Indian pilot of the Flydubai plane, who was stabbed by his co-pilot and opened the cockpit door to let others in, has said he was determined not to let others die.",
-          "Capt Smit Machchhar said he was on the floor and still being attacked when he realised the plane carrying more than 170 passengers was sinking and he had to do something.",
+          "After being stabbed by his co-pilot, Captain Smit Machchhar said he opened the cockpit door because he was determined to save others.",
+          "He recalled lying injured on the floor as the aircraft, carrying more than 170 passengers, lost height.",
           "\"I was lying on the floor injured but I told myself to go for one last push to open the door from inside,\" he said in a video call with Indian Prime Minister Narendra Modi.",
-          "Others came in and also played a role in controlling the situation.",
+          "People who entered the cockpit also played a role in bringing the situation under control.",
           "Flydubai's flight FZ1073, bound for Tel Aviv from Dubai, plunged more than 17,000ft (5,200m) two and a half hours into its journey.",
           "It first sent an emergency signal to air traffic controllers before switching to code squawk 7500, which indicates hijacking.",
           "Israeli Prime Minister Benjamin Netanyahu later told the media that one pilot had stabbed the other before \"apparently trying to crash\" the plane.",
           "After fellow passengers overpowered the attacker, two reserve pilots, who were onboard, safely landed the plane at Tabuk Airport in north-western Saudi Arabia.",
           "Machchhar, who has been hailed as a \"true hero\" by Netanyahu, was taken to hospital before being airlifted to Abu Dhabi, where he is reported to be in a stable condition.",
           "Netanyahu told Fox News the attacker was an Omani national and said investigations suggested he had undergone \"Islamist radical indoctrination\".",
-          "He said that once the attacker had been subdued and tied up by passengers and crew, he was \"calling out to the aircrew 'kill me, kill me', so it's clear he was suicidal - that's not a question\".",
+          "Netanyahu said the attacker had been subdued and tied up before asking the crew to kill him, remarks Netanyahu interpreted as suicidal.",
           "The United Arab Emirates has begun investigating \"whether the incident was linked to any terrorist activity or purpose\", according to the country's state news agency.",
           "Indian social media has been awash with praise for Machchhar since his identity emerged.",
           "The Indian Prime Minister told him that \"his courage, patience and quick decision-making saved the lives of so many people\" and the whole country was proud of him.",
@@ -711,33 +727,41 @@
           "\"I am not looking at this wound like a wound because that would make my recovery even more difficult,\" Machchhar said."
         ],
         "editorial_check": {
-          "date": "2026-10-02T12:41:24.933793+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary selection includes precise terms, idiomatic phrases, and collocations such as \"radical indoctrination,\" \"awash with praise,\" and \"stable condition\" that are appropriate for C1-Higher learners. These terms offer meaningful advanced distinctions and contextual understanding, aligning with the target level's focus on abstract and specialized vocabulary."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Removed overclaims about signal timing, contribution size, medical condition and recovery; shortened dense prose and the grammar example."
+          ],
+          "previous_review": {
+            "date": "2026-10-02T12:41:24.933793+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary selection includes precise terms, idiomatic phrases, and collocations such as \"radical indoctrination,\" \"awash with praise,\" and \"stable condition\" that are appropriate for C1-Higher learners. These terms offer meaningful advanced distinctions and contextual understanding, aligning with the target level's focus on abstract and specialized vocabulary."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson employs a polished and natural reporting register, accurately attributing information to sources like Prime Minister Netanyahu and the UAE state news agency. It maintains calibrated certainty (e.g., \"suggested he had undergone\") appropriate for news analysis, without sensationalism or overly academic language, fitting the C1-Higher target."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses controlled complex sentences in explanations and feedback, such as the detailed grammar explanation for the Past Perfect Passive Voice. Definitions are concise and illuminating, like that for \"radical indoctrination,\" and the quiz feedback clearly explains subtle differences and reasoning, providing substantive learning for C1-Higher learners."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson develops supported inference, as seen in questions about Captain Machchhar's primary motivation and outlook on recovery. It includes contextual vocabulary and grammar application, requiring learners to distinguish between plausible distractors and offering substantive learning beyond simple fact recall, which is appropriate for C1-Higher challenge."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson employs a polished and natural reporting register, accurately attributing information to sources like Prime Minister Netanyahu and the UAE state news agency. It maintains calibrated certainty (e.g., \"suggested he had undergone\") appropriate for news analysis, without sensationalism or overly academic language, fitting the C1-Higher target."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses controlled complex sentences in explanations and feedback, such as the detailed grammar explanation for the Past Perfect Passive Voice. Definitions are concise and illuminating, like that for \"radical indoctrination,\" and the quiz feedback clearly explains subtle differences and reasoning, providing substantive learning for C1-Higher learners."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson develops supported inference, as seen in questions about Captain Machchhar's primary motivation and outlook on recovery. It includes contextual vocabulary and grammar application, requiring learners to distinguish between plausible distractors and offering substantive learning beyond simple fact recall, which is appropriate for C1-Higher challenge."
-            }
-          },
-          "content_digest": "a085df856c1c9d808cc4a60fef23fed3e426e945770a2f245203b6372c6c3e05"
+            "content_digest": "a085df856c1c9d808cc4a60fef23fed3e426e945770a2f245203b6372c6c3e05"
+          }
         }
       }
     }

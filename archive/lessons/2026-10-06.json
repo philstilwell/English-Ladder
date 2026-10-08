@@ -26,7 +26,7 @@
           "Imagine you are a security guard. What is one thing you do to protect a place? You can start: \"I protect a place by...\" or \"A security guard protects a place by...\""
         ],
         "title": "US Moves Bombers from UK Base After Threat",
-        "overview": "The US moved its bombers from England because of a security threat.",
+        "overview": "President Trump said threats led the US to move bombers from England back to America.",
         "topic": "Military security and threats",
         "vocabulary": [
           {
@@ -47,7 +47,7 @@
           {
             "term": "Pentagon",
             "part_of_speech": "proper noun",
-            "definition": "The US military's main office in America."
+            "definition": "The US government department responsible for the armed forces; also the name of its main building."
           },
           {
             "term": "confirmed",
@@ -68,11 +68,16 @@
             "term": "incident",
             "part_of_speech": "noun",
             "definition": "An event or happening, often something unpleasant."
+          },
+          {
+            "term": "bail",
+            "part_of_speech": "noun",
+            "definition": "Permission for an arrested person to leave custody while the case continues, usually with conditions."
           }
         ],
         "grammar": {
           "concept": "Using \"because of\"",
-          "explanation": "We use the phrase \"because of\" to show the reason for something. It always comes before a noun or a noun phrase.",
+          "explanation": "Use “because of” before a noun or noun phrase to give a reason: “because of some threats”. Use “because” before a clause: “because there were threats”.",
           "example_quote": "President Trump said this was because of 'some threats'."
         },
         "quiz": [
@@ -119,7 +124,7 @@
             ]
           },
           {
-            "question": "Who arrested some men near the base before the bombers moved?",
+            "question": "Who arrested several men during the investigation?",
             "options": [
               "US soldiers",
               "The police",
@@ -127,9 +132,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text says \"Police arrested some men,\" not US soldiers.",
-              "Correct. The police arrested some men near the base.",
-              "President Trump is mentioned in the story, but he did not arrest the men."
+              "The reading identifies the police.",
+              "The police arrested them; an arrest does not mean that guilt has been proved.",
+              "The reading identifies the police, not the president."
             ]
           },
           {
@@ -161,7 +166,7 @@
             ]
           },
           {
-            "question": "According to the story, what do US leaders still trust?",
+            "question": "According to the reading, what did Marco Rubio say he still trusted?",
             "options": [
               "The security of their bases.",
               "The weather forecasts.",
@@ -180,9 +185,10 @@
           "President Trump said this was because of 'some threats'.",
           "The Pentagon confirmed the bombers went back to America.",
           "Mr Trump said they moved the planes to avoid danger.",
-          "Police arrested some men near the base before.",
-          "This decision was a response to that incident.",
-          "US leaders still trust the security of their bases."
+          "Police arrested several men during an investigation linked to the base.",
+          "Police were investigating an incident linked to RAF Fairford, the base in England.",
+          "US official Marco Rubio said he still trusted the security of US bases.",
+          "The arrested men were later released on bail."
         ],
         "sentence_evidence": [
           "Trump says 'threat' led US to pull bombers from RAF Fairford",
@@ -190,37 +196,46 @@
           "The Pentagon confirmed on Sunday it had removed the B1 bombers from the base in England back to their home stations in America.",
           "\"There were some threats. And rather than tempting the enemy, we'll capture the enemy and beat the enemy. But why should we leave them there? So we moved them around a little bit. Not very far.\"",
           "Five men were initially arrested on suspicion of terror offences and subsequently released on bail. A sixth man, a UK-Iranian national, was also later arrested and released on bail.",
-          "Whitehall sources have not disputed that the decision from Washington to remove the bombers was in response to the incident at the airbase in Gloucestershire.",
-          "Rubio said the US still had full confidence in the security of all its bases and that British authorities had been very co-operative since the incident."
+          "RAF Fairford - in the Cotswolds in Gloucestershire - has been at the centre of an incident being investigated by counter-terror police.",
+          "Rubio said the US still had full confidence in the security of all its bases and that British authorities had been very co-operative since the incident.",
+          "Five men were initially arrested on suspicion of terror offences and subsequently released on bail. A sixth man, a UK-Iranian national, was also later arrested and released on bail."
         ],
         "editorial_check": {
-          "date": "2026-10-06T12:24:42.922484+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "A1-A2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "All vocabulary terms are appropriate for A1-A2 learners in this news context, with clear and simple definitions. No reserved vocabulary is used."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Removed an unsupported arrest location and unqualified cause; attributed the security claim and included the reported release on bail."
+          ],
+          "previous_review": {
+            "date": "2026-10-06T12:24:42.922484+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "A1-A2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "All vocabulary terms are appropriate for A1-A2 learners in this news context, with clear and simple definitions. No reserved vocabulary is used."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses straightforward, neutral everyday English, suitable for adult A1-A2 learners."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses short clauses, familiar connectors, and accessible instructions, definitions, and feedback, meeting A1-A2 requirements. Discussion prompts include the required elements."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson appropriately challenges A1-A2 learners by testing clearly stated details, contextual vocabulary, and the taught grammar pattern with clear, plausible options."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses straightforward, neutral everyday English, suitable for adult A1-A2 learners."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses short clauses, familiar connectors, and accessible instructions, definitions, and feedback, meeting A1-A2 requirements. Discussion prompts include the required elements."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson appropriately challenges A1-A2 learners by testing clearly stated details, contextual vocabulary, and the taught grammar pattern with clear, plausible options."
-            }
-          },
-          "content_digest": "99655ab0183fd246f4a1004e13147e2524745d36b045e99c46d6bc25507bd607"
+            "content_digest": "99655ab0183fd246f4a1004e13147e2524745d36b045e99c46d6bc25507bd607"
+          }
         }
       }
     },
@@ -285,8 +300,8 @@
         ],
         "grammar": {
           "concept": "Passive Voice",
-          "explanation": "The passive voice is used when the focus is on the action itself and the object that receives the action, rather than on the subject that performs the action. It is formed using a form of the verb \"to be\" followed by the past participle of the main verb. For example, in \"the decision was made,\" the focus is on the decision and the fact that it was made, not necessarily on who made it.",
-          "example_quote": "US media reports suggested that the decision was made due to intelligence indicating that Iran was plotting a drone attack."
+          "explanation": "The passive uses a form of “be” + a past participle. “Were removed” and “were sent” put the aircraft, which receive the actions, first. Compare “The US removed the aircraft”, where the US performs the action.",
+          "example_quote": "The Pentagon confirmed on Sunday that the B-1s were removed from the base and sent back to their home stations in America."
         },
         "quiz": [
           {
@@ -304,7 +319,7 @@
             ]
           },
           {
-            "question": "What does the word \"plotting\" mean in the sentence: \"Iran was plotting a drone attack\"?",
+            "question": "In the unconfirmed media report, what does “plotting a drone attack” mean?",
             "options": [
               "Drawing a diagram of.",
               "Planning secretly to carry out.",
@@ -318,7 +333,7 @@
             ]
           },
           {
-            "question": "Who previously insisted that RAF Fairford was safe, despite the threats mentioned by Trump?",
+            "question": "Which speaker is described as having “insisted that RAF Fairford was safe”?",
             "options": [
               "President Trump himself.",
               "Marco Rubio.",
@@ -326,9 +341,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "President Trump mentioned threats, not insisted the base was safe.",
-              "Rubio spoke about routine movements but didn't insist the base was safe in response to Trump's comments.",
-              "Correct. A No 10 spokesperson had previously insisted that RAF Fairford was safe."
+              "Trump is quoted discussing threats; this specific wording is attributed to No 10.",
+              "Rubio described routine movements. The quoted “safe” statement is attributed to No 10.",
+              "The reading attributes it to the British prime minister’s office."
             ]
           },
           {
@@ -346,17 +361,17 @@
             ]
           },
           {
-            "question": "In the sentence: \"US media reports suggested that the decision was made due to intelligence indicating that Iran was plotting a drone attack.\" Which part is an example of the passive voice?",
+            "question": "In “the B-1s were removed from the base and sent back”, which phrase is passive?",
             "options": [
-              "\"US media reports suggested\"",
-              "\"the decision was made\"",
-              "\"Iran was plotting\""
+              "the B-1s",
+              "were removed",
+              "from the base"
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "\"US media reports suggested\" is in the active voice, with \"reports\" as the subject performing the action.",
-              "Correct. \"was made\" is an example of the passive voice, focusing on the action and the object (the decision).",
-              "\"Iran was plotting\" is in the active voice, with \"Iran\" as the subject performing the action."
+              "This names the aircraft receiving the action.",
+              "“Were” + the past participle “removed” is passive.",
+              "This phrase identifies a location."
             ]
           },
           {
@@ -368,9 +383,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "Rubio noted they were 'not unusual' and could be for various reasons, not necessarily escalating tensions.",
-              "Correct. Rubio noted that it was 'not unusual' for military units and assets to rotate and be moved globally.",
-              "The text implies these movements are often part of normal operations, not always requiring a direct presidential order for every instance."
+              "Rubio said such movements were not unusual; he did not say they always signal escalation.",
+              "He described rotation and movement as not unusual.",
+              "The reading says nothing about the authorization required for each move."
             ]
           },
           {
@@ -388,7 +403,7 @@
             ]
           },
           {
-            "question": "How will the redeployment from RAF Fairford impact America's \"capacity\" to act against Iran?",
+            "question": "According to analyst Christoph Bergs, how would moving the aircraft affect the ability to rapidly increase combat flights against Iran?",
             "options": [
               "It will increase America's capacity.",
               "It will reduce America's capacity.",
@@ -396,37 +411,37 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text states that the redeployment will 'reduce' America's capacity, not increase it.",
-              "Correct. The text explains that the redeployment 'will reduce America's capacity to quickly surge sorties against Iran'.",
-              "The article clearly states there will be a reduction in capacity, not no effect."
+              "Bergs predicted a reduction in this ability.",
+              "That is the analyst’s assessment, not an independently established outcome.",
+              "Bergs predicted an effect, rather than no change."
             ]
           },
           {
-            "question": "What are counter-terror police investigating at RAF Fairford?",
+            "question": "What does the reading establish about reports of an Iranian drone plot?",
             "options": [
-              "A large public protest.",
-              "A general incident.",
-              "An accidental fire on the base."
+              "The BBC independently confirmed the plot.",
+              "US media reported it, but the BBC had not confirmed it.",
+              "All officials agreed that no threat existed."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text mentions an investigation into an incident, not a protest.",
-              "Correct. The text states that counter-terror police are investigating 'an incident' at RAF Fairford.",
-              "The text mentions an investigation into an incident, not an accidental fire."
+              "The reading explicitly says the BBC had not confirmed it.",
+              "This preserves the difference between a reported claim and confirmation.",
+              "Officials offered different explanations; the reading does not establish such agreement."
             ]
           }
         ],
         "news_brief_sentences": [
           "President Donald Trump stated that the US moved its aircraft out of RAF Fairford because of \"some threats\" to the base.",
           "The Pentagon confirmed on Sunday that the B-1s were removed from the base and sent back to their home stations in America.",
-          "US media reports suggested that the decision was made due to intelligence indicating that Iran was plotting a drone attack.",
-          "One source close to the White House mentioned Ukraine's Operation Spiderweb as an example of what an enemy force could potentially do, even from a distance.",
+          "US media suggested intelligence showed Iran was plotting a drone attack, but the BBC had not confirmed this.",
+          "A source close to the White House cited Ukraine’s Operation Spiderweb as an example of attacks launched from a distance.",
           "This operation involved Ukraine smuggling drones into Russia on lorries driven by people unaware of their cargo.",
-          "A No 10 spokesperson had previously insisted that RAF Fairford was safe.",
+          "A spokesperson for the British prime minister’s office, known as No 10, had insisted that RAF Fairford was safe.",
           "Trump later indicated that the US \"actually knows the people that made the threat\" and suggested they would be \"linked to Iran\".",
           "Marco Rubio noted it was \"not unusual\" for military units and assets to rotate and be moved globally.",
           "Counter-terror police are investigating an incident at RAF Fairford.",
-          "The redeployment from RAF Fairford will reduce America's capacity to \"quickly surge sorties against Iran\"."
+          "Analyst Christoph Bergs said the redeployment would reduce America’s capacity to rapidly increase combat flights against Iran."
         ],
         "sentence_evidence": [
           "President Donald Trump has said the US moved its bombers out of RAF Fairford because of \"some threats\" to the base.",
@@ -441,33 +456,41 @@
           "The redeployment from RAF Fairford will reduce America's capacity to \"quickly surge sorties against Iran, reducing the threat level somewhat\", Christoph Bergs, research analyst at defence think tank the Royal United Services Institute told the Reuters news agency."
         ],
         "editorial_check": {
-          "date": "2026-10-06T12:26:28.027563+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets are appropriate for B1-B2, focusing on useful news and general terms like \"intelligence,\" \"plotting,\" and \"redeployment,\" with clear contextual definitions. No reserved vocabulary was used."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Restored the BBC’s non-confirmation, explained No 10 and combat flights, attributed the analyst’s assessment and revised dependent questions."
+          ],
+          "previous_review": {
+            "date": "2026-10-06T12:26:28.027563+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets are appropriate for B1-B2, focusing on useful news and general terms like \"intelligence,\" \"plotting,\" and \"redeployment,\" with clear contextual definitions. No reserved vocabulary was used."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses natural, neutral news English appropriate for the B1-B2 level in all learner-facing content, avoiding slang or overly academic tones."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language is clear and accessible, with manageable sentence structures. Grammar explanations use everyday language, and all instructions, questions, and feedback are easy to understand for B1-B2 learners."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson provides appropriate challenge for B1-B2 by combining detailed comprehension, contextual vocabulary, and grammar application. Supported inferences are required, and the content offers more depth than a simple beginner paraphrase."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses natural, neutral news English appropriate for the B1-B2 level in all learner-facing content, avoiding slang or overly academic tones."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language is clear and accessible, with manageable sentence structures. Grammar explanations use everyday language, and all instructions, questions, and feedback are easy to understand for B1-B2 learners."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson provides appropriate challenge for B1-B2 by combining detailed comprehension, contextual vocabulary, and grammar application. Supported inferences are required, and the content offers more depth than a simple beginner paraphrase."
-            }
-          },
-          "content_digest": "41a95d17d90df4a37993c823e8b090e13b01cb309cfca8f3f186d27ee8dcdd3e"
+            "content_digest": "41a95d17d90df4a37993c823e8b090e13b01cb309cfca8f3f186d27ee8dcdd3e"
+          }
         }
       }
     },
@@ -532,7 +555,7 @@
           {
             "term": "constitutes a legitimate target",
             "part_of_speech": "verb phrase",
-            "definition": "To form or be considered a valid, justified, or acceptable object for attack or action, especially in a military context."
+            "definition": "Means “counts as an acceptable target”; here, a claim attributed to Iran, not a legal conclusion established by the lesson."
           },
           {
             "term": "surge",
@@ -542,22 +565,22 @@
         ],
         "grammar": {
           "concept": "Participle Clauses (Adverbial)",
-          "explanation": "Participle clauses can function as adverbial clauses, adding extra information about time, reason, result, or manner to the main clause. They often replace a full adverbial clause, making sentences more concise and sophisticated. For example, 'noting that it was \"not unusual\"' provides the reason or manner for Rubio being 'guarded in his language'. These clauses can use present participles (verb-ing) or past participles (verb-ed).",
-          "example_quote": "While both Trump and Vance pointed to an unspecified threat, Rubio was much more guarded in his language, noting that it was \"not unusual\" for military units and assets to rotate and be moved around the world."
+          "explanation": "The “-ing” clause beginning “noting” adds the content of Rubio’s statement. Rubio is the understood subject of both “was guarded” and “noting”. The construction links the ideas without a separate “and he noted” clause; it does not prove his private motive.",
+          "example_quote": "Rubio was guarded in his language, noting that it was not unusual for military units and equipment to move between locations."
         },
         "quiz": [
           {
             "question": "What was President Trump's stated primary reason for the US pulling its bombers from RAF Fairford?",
             "options": [
-              "A routine rotation of military assets around the globe.",
-              "Concerns about specific threats to the base.",
-              "A mutual agreement with the UK to reduce military presence."
+              "A routine training rotation, with no threat mentioned.",
+              "Threats to the base whose precise nature was not disclosed.",
+              "A publicly announced agreement to give the aircraft to Britain."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "While routine rotations were mentioned by another official, Trump explicitly cited \"some threats\" as the reason for the withdrawal.",
-              "Trump directly stated that the US moved its bombers due to \"some threats\" to the base and the knowledge of a \"threat\".",
-              "The article does not mention a mutual agreement with the UK as the reason for the bomber withdrawal."
+              "Routine movements were discussed by Rubio, but Trump cited threats.",
+              "This keeps the reason attributed to Trump and preserves its unspecified nature.",
+              "The passage reports a return to the US, not a transfer of ownership."
             ]
           },
           {
@@ -589,7 +612,7 @@
             ]
           },
           {
-            "question": "According to a source close to the White House, how seriously was the perceived threat taken?",
+            "question": "How did a source describe the authorities’ treatment of the perceived threat?",
             "options": [
               "With some concern, but not excessively so.",
               "As a routine security matter with standard protocols.",
@@ -603,21 +626,21 @@
             ]
           },
           {
-            "question": "The potential threats mentioned included \"sabotage attempts\" or \"attempts to strike the sensitive, expensive aircraft\". What do these terms suggest about the nature of the danger?",
+            "question": "What status does the reading give the suggestions of sabotage or attacks on aircraft?",
             "options": [
-              "It primarily involved cyberattacks on communication systems.",
-              "It pointed to direct physical harm or disruption to the aircraft.",
-              "It referred to espionage and information gathering activities."
+              "They are independently confirmed descriptions of the plot.",
+              "They are possibilities suggested by sources in Washington.",
+              "They are findings announced by a court."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "\"Sabotage attempts\" and \"attempts to strike\" specifically refer to physical damage or attack, not cyberattacks.",
-              "\"Sabotage attempts\" involve intentional destruction or damage, and \"attempts to strike\" refer to direct physical attacks, both indicating physical harm to the aircraft.",
-              "These terms focus on physical destruction or attack, not on the covert collection of intelligence or secrets."
+              "The precise threat remains unclear.",
+              "The passage labels these suggestions as speculation.",
+              "No court finding is reported."
             ]
           },
           {
-            "question": "What is the function of the participle clause \"noting that it was 'not unusual' for military units...\" in the sentence: \"While both Trump and Vance pointed to an unspecified threat, Rubio was much more guarded in his language, noting that it was 'not unusual' for military units and assets to rotate and be moved around the world.\"?",
+            "question": "What does “noting that it was not unusual…” add to the sentence about Rubio?",
             "options": [
               "It provides a contrasting opinion to the main clause.",
               "It describes the purpose or intention behind Rubio's guarded language.",
@@ -625,23 +648,23 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "While it introduces a contrasting idea to Trump's statement, the participle clause's primary function here is to explain why Rubio was guarded or what additional information he provided.",
-              "The participle clause \"noting\" provides the content or the manner of Rubio's guarded language, not a separate purpose for being guarded.",
-              "The participle clause \"noting\" elaborates on Rubio's cautious statement, giving more detail about what he said and thus providing additional explanatory information."
+              "The clause supplies the content of Rubio’s remarks, not a contradiction of the main clause.",
+              "It tells us what Rubio said, not why he privately chose those words.",
+              "It adds explanatory detail about his statement."
             ]
           },
           {
-            "question": "Why did Christoph Bergs suggest the redeployment from RAF Fairford would \"reduce the threat level somewhat\"?",
+            "question": "What effect on US operations did Christoph Bergs predict?",
             "options": [
-              "The bombers were inherently vulnerable targets.",
-              "It would lessen America's ability to quickly launch attacks against Iran.",
-              "The UK's security measures at the base were insufficient."
+              "The aircraft would become impossible to redeploy elsewhere.",
+              "The US would have less ability to rapidly increase combat flights against Iran.",
+              "All American military operations would stop."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "While the aircraft are described as sensitive, the reason given by Bergs is about reducing offensive capability, not inherent vulnerability.",
-              "Bergs explicitly stated that the redeployment would \"reduce America's capacity to 'quickly surge sorties against Iran,' reducing the threat level somewhat.\"",
-              "The article does not state that the UK's security measures were insufficient; rather, it focuses on the strategic implications of the bombers' removal."
+              "The reading does not establish that limitation.",
+              "That is the specific reduction in capacity attributed to Bergs.",
+              "The analyst’s claim is narrower than a total halt."
             ]
           },
           {
@@ -667,9 +690,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "\"Abundance of caution\" indicates extreme carefulness, not recklessness.",
-              "While there may be strategic implications, the phrase primarily emphasizes the defensive and risk-averse nature of the decision.",
-              "The phrase \"abundance of caution\" directly means taking extensive precautionary steps, even if the risk seems small, to ensure safety."
+              "The phrase presents a decision as especially careful, not reckless.",
+              "The phrase describes precaution, not solely an offensive advantage.",
+              "It describes additional precautions when there may be a risk; it does not prove they were unnecessary."
             ]
           },
           {
@@ -688,24 +711,24 @@
           }
         ],
         "news_brief_sentences": [
-          "Trump says 'threat' led US to pull bombers from RAF Fairford.",
+          "President Trump said unspecified threats led the US to pull its bombers from RAF Fairford in England.",
           "The Pentagon confirmed on Sunday it had removed the B1 bombers from the base in England back to their home stations in America.",
-          "President Donald Trump has said the US moved its bombers out of RAF Fairford because of \"some threats\" to the base.",
-          "Speaking to reporters as he departed for Nebraska on Monday, Trump said the US had known of a \"threat\", which led them to move the bombers.",
-          "The exact nature of the threat that prompted the aircraft's removal from RAF Fairford remains unclear, but sources in Washington speculated to the BBC it might have revolved around sabotage attempts or attempts to strike the sensitive, expensive aircraft in the event of resumed hostilities with Iran.",
-          "The source added: \"Whatever they thought it was, it was taken extremely seriously.\"",
-          "He added Washington \"actually knows the people that made the threat\", but he did not confirm who - though later said \"they would be linked to Iran\" when asked.",
-          "While both Trump and Vance pointed to an unspecified threat, Rubio was much more guarded in his language, noting that it was \"not unusual\" for military units and assets to rotate and be moved around the world.",
+          "The aircraft were thought to number about a dozen B-1 bombers.",
+          "Rubio said the US retained full confidence in base security and praised British cooperation since the incident.",
+          "The precise threat that prompted the withdrawal remains unclear; Washington sources speculated about sabotage attempts or attacks on aircraft during resumed hostilities with Iran.",
+          "A source said the perceived threat had been taken extremely seriously.",
+          "Trump said Washington knew who had made the threat and suggested a link to Iran, without identifying those responsible.",
+          "Rubio was guarded in his language, noting that it was not unusual for military units and equipment to move between locations.",
           "RAF Fairford - in the Cotswolds in Gloucestershire - has been at the centre of an incident being investigated by counter-terror police.",
-          "Vance later said the bombers had been moved out of an \"abundance of caution\", adding Washington felt Iran was doing what it had \"done for 49 years... which is engage in acts of terrorism against the US and against a lot of other people\".",
+          "Vance described the move as an “abundance of caution” and accused Iran of engaging in terrorism.",
           "In July, Iran said \"any base used for aggression against Iranian territory constitutes a legitimate target for our forces\".",
-          "The redeployment from RAF Fairford will reduce America's capacity to \"quickly surge sorties against Iran, reducing the threat level somewhat\", Christoph Bergs, research analyst at defence think tank the Royal United Services Institute told the Reuters news agency."
+          "Analyst Christoph Bergs told Reuters the redeployment would reduce the US ability to surge combat flights against Iran."
         ],
         "sentence_evidence": [
           "Trump says 'threat' led US to pull bombers from RAF Fairford",
           "The Pentagon confirmed on Sunday it had removed the B1 bombers from the base in England back to their home stations in America.",
-          "President Donald Trump has said the US moved its bombers out of RAF Fairford because of \"some threats\" to the base.",
-          "Speaking to reporters as he departed for Nebraska on Monday, Trump said the US had known of a \"threat\", which led them to move the bombers.",
+          "The Pentagon confirmed on Sunday it had removed its bombers - thought to be about a dozen B-1s - from the base back to their home stations in America.",
+          "Rubio said the US still had full confidence in the security of all its bases and that British authorities had been very co-operative since the incident.",
           "The exact nature of the threat that prompted the aircraft's removal from RAF Fairford remains unclear, but sources in Washington speculated to the BBC it might have revolved around sabotage attempts or attempts to strike the sensitive, expensive aircraft in the event of resumed hostilities with Iran.",
           "The source added: \"Whatever they thought it was, it was taken extremely seriously.\"",
           "He added Washington \"actually knows the people that made the threat\", but he did not confirm who - though later said \"they would be linked to Iran\" when asked.",
@@ -716,33 +739,41 @@
           "The redeployment from RAF Fairford will reduce America's capacity to \"quickly surge sorties against Iran, reducing the threat level somewhat\", Christoph Bergs, research analyst at defence think tank the Royal United Services Institute told the Reuters news agency."
         ],
         "editorial_check": {
-          "date": "2026-10-06T12:27:44.898691+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The selected vocabulary terms and phrases are precise, often idiomatic or formal, and their contextual meanings are well-explained, suitable for C1-Higher learners. No reserved vocabulary was used as a target."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Replaced repeated headline material with distinct supported facts; clarified speakers, speculation, operational scope and the attributed nature of a target claim."
+          ],
+          "previous_review": {
+            "date": "2026-10-06T12:27:44.898691+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The selected vocabulary terms and phrases are precise, often idiomatic or formal, and their contextual meanings are well-explained, suitable for C1-Higher learners. No reserved vocabulary was used as a target."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson maintains a consistently polished, neutral, and formal register suitable for news reporting and analysis at the C1-Higher level, with clear attribution."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language uses controlled complex sentences in explanations and feedback, clearly articulating subtle differences in meaning and grammatical function for C1-Higher learners."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson provides substantive learning through contextual vocabulary, an advanced grammar concept, and quiz questions that require inference and understanding of nuanced language beyond elementary fact recall."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson maintains a consistently polished, neutral, and formal register suitable for news reporting and analysis at the C1-Higher level, with clear attribution."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language uses controlled complex sentences in explanations and feedback, clearly articulating subtle differences in meaning and grammatical function for C1-Higher learners."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson provides substantive learning through contextual vocabulary, an advanced grammar concept, and quiz questions that require inference and understanding of nuanced language beyond elementary fact recall."
-            }
-          },
-          "content_digest": "4131d47dfd8917e09586919c57a32d6d23fae78e2f96b11512e5d0c2aa397f41"
+            "content_digest": "4131d47dfd8917e09586919c57a32d6d23fae78e2f96b11512e5d0c2aa397f41"
+          }
         }
       }
     }

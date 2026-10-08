@@ -23,7 +23,7 @@
       "lesson": {
         "discussion": [
           "Why do you think some people want to avoid seeing concert spoilers online?",
-          "What do you think about knowing all the details for a concert or movie beforehand? I think it is ... because .... (My friend thinks it is better to see everything beforehand.)"
+          "Imagine a friend wants a concert to be a surprise. What could the friend do online? You can start: “My friend could…”"
         ],
         "title": "Social Media and Concert Surprises",
         "overview": "Fans sometimes see big concert moments online before they attend the live show, which can spoil surprises.",
@@ -62,7 +62,7 @@
         ],
         "grammar": {
           "concept": "Using 'can' for possibility",
-          "explanation": "We use 'can' to talk about things that are possible or things that are able to happen. It shows that something might happen or is allowed to happen.",
+          "explanation": "Here, “can” means that something is possible: social media sometimes spoils a surprise. It does not mean this always happens or that someone gives permission.",
           "example_quote": "Social media can sometimes spoil big concert surprises for fans."
         },
         "quiz": [
@@ -111,9 +111,9 @@
           {
             "question": "Which sentence from the text uses 'can' to show that something is possible?",
             "options": [
-              "'Many people see special moments from concerts online...'",
-              "'Social media can sometimes spoil big concert surprises...'",
-              "'But other fans like to know everything before they attend a show.'"
+              "Many people see special moments from concerts online.",
+              "Social media can sometimes spoil big concert surprises for fans.",
+              "Other fans enjoy seeing some details before they attend a show."
             ],
             "correct_option_index": 1,
             "option_feedback": [
@@ -131,23 +131,23 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text mentions banning phones at some shows, but not stopping all online videos generally.",
-              "That's right! Artists might change songs or stage designs to keep things fresh.",
-              "The text says they change their shows, not that they only play new songs."
+              "The reading does not say artists stop all videos.",
+              "Yes. Some artists make small changes each night.",
+              "They change parts of a show; the reading does not say all the songs are new."
             ]
           },
           {
-            "question": "According to the text, what do some fans like Georgia McAdam enjoy doing before a concert?",
+            "question": "What might fans already know before a show, according to the reading?",
             "options": [
-              "They like to buy last-minute tickets.",
-              "They like to know what the stage looks like.",
-              "They prefer to read books about the artist."
+              "The exact ending time.",
+              "The songs and how the stage looks.",
+              "How many tickets remain."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The text doesn't mention last-minute tickets for Georgia McAdam.",
-              "Yes, Georgia McAdam likes to be prepared and know details like the stage design.",
-              "The text does not say she prefers to read books about the artist."
+              "The ending time is not mentioned.",
+              "Yes. The reading mentions songs and the appearance of the stage.",
+              "The number of tickets left is not mentioned."
             ]
           }
         ],
@@ -157,7 +157,7 @@
           "They might already know the songs and how the stage looks.",
           "Some fans try to avoid these spoilers to keep the excitement.",
           "Aurélia Collins tries not to see videos about her favorite artists.",
-          "But other fans like to know everything before they attend a show.",
+          "Other fans enjoy seeing some details before they attend a show.",
           "Some artists change their shows a little each night for new surprises."
         ],
         "sentence_evidence": [
@@ -170,33 +170,41 @@
           "Some artists have reacted by switching up their sets in small ways each night to make sure fans coming to later dates still see something unexpected."
         ],
         "editorial_check": {
-          "date": "2026-10-03T11:48:42.420977+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 1,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "A1-A2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "Teaches common, concrete words directly from the reading, with clear definitions using accessible language. No reserved vocabulary used."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Removed an unsupported absolute and a question about a person absent from this reading; clarified possibility versus permission."
+          ],
+          "previous_review": {
+            "date": "2026-10-03T11:48:42.420977+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 1,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "A1-A2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "Teaches common, concrete words directly from the reading, with clear definitions using accessible language. No reserved vocabulary used."
+              },
+              "register": {
+                "passed": true,
+                "reason": "Uses straightforward, neutral everyday English throughout the lesson, with direct verbs and explicit subjects, appropriate for adults."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Uses short clauses, familiar connectors, clear grammar explanation, accessible instructions, and appropriate discussion prompts including a sentence frame and hypothetical alternative."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "Tests main ideas, clearly stated details, contextual vocabulary, and the taught grammar pattern with plausible choices, suitable for A1-A2 learners."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "Uses straightforward, neutral everyday English throughout the lesson, with direct verbs and explicit subjects, appropriate for adults."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Uses short clauses, familiar connectors, clear grammar explanation, accessible instructions, and appropriate discussion prompts including a sentence frame and hypothetical alternative."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "Tests main ideas, clearly stated details, contextual vocabulary, and the taught grammar pattern with plausible choices, suitable for A1-A2 learners."
-            }
-          },
-          "content_digest": "81f23a9670662376c3e186f968e158c574b0c3e5967e9ffddb1ce2ed64b86e81"
+            "content_digest": "81f23a9670662376c3e186f968e158c574b0c3e5967e9ffddb1ce2ed64b86e81"
+          }
         }
       }
     },
@@ -256,8 +264,8 @@
         ],
         "grammar": {
           "concept": "Passive Voice",
-          "explanation": "The passive voice is used when the focus is on the action or the receiver of the action, rather than the performer. It is formed with a form of the verb 'to be' (e.g., 'is,' 'are,' 'was,' 'were,' 'been,' 'being') and the past participle of the main verb. For example, in the sentence 'key moments from her show were quickly discussed widely online,' the focus is on the 'key moments' and the action 'discussed,' rather than who did the discussing.",
-          "example_quote": "Recently, US pop star Olivia Rodrigo began her Unraveled tour, and key moments from her show were quickly discussed widely online."
+          "explanation": "The passive uses a form of “be” + a past participle. “Were discussed” focuses on the moments being discussed rather than on the people discussing them. Compare the active version: “Fans discussed key moments online”.",
+          "example_quote": "Olivia Rodrigo began her Unraveled tour, and key moments were discussed widely online soon after the opening show."
         },
         "quiz": [
           {
@@ -283,9 +291,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The article does not mention artists' travel plans.",
-              "The reading states fans might know \"the songs, the stage setup, and even the best viewing spots.\"",
-              "The article does not discuss ticket sales numbers."
+              "Travel plans are not mentioned.",
+              "The reading names the songs and stage design as details fans may know.",
+              "Ticket sales numbers are not mentioned."
             ]
           },
           {
@@ -339,9 +347,9 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "The article states she's a huge fan and \"it hurts my soul\" to mark content as \"not interested,\" indicating she still loves the artists.",
-              "The text clearly states she \"finds this effort worth it to maintain the unexpected nature of live performances.\"",
-              "Her actions are about avoiding spoilers, not saving money."
+              "Collins is trying to avoid spoilers, not the music itself.",
+              "She wants to preserve the surprise of seeing a show live.",
+              "The passage does not connect her filtering choices to saving money."
             ]
           },
           {
@@ -353,13 +361,13 @@
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "This is incorrect; McAdam likes to be prepared and sees spoilers as teasers.",
-              "The article states McAdam \"actually enjoys them\" and sees them as \"teasers,\" which is the opposite of Collins's desire for surprise.",
-              "The text does not specify that McAdam only watches spoilers for certain artists."
+              "This reverses their views: McAdam enjoys spoilers; Collins avoids them.",
+              "McAdam welcomes previews, while Collins wants a surprise.",
+              "The reading does not make that distinction."
             ]
           },
           {
-            "question": "What is one way some artists are trying to ensure fans still experience something new at their shows?",
+            "question": "Which response involves changing the performance itself each night?",
             "options": [
               "They are banning all phones from venues.",
               "They are performing entirely new songs each night.",
@@ -367,66 +375,74 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "While Phoebe Bridgers banned phones, the text says \"some artists\" change small parts of their shows, implying this is a broader trend.",
-              "The text says \"small ways,\" not entirely new songs.",
-              "The reading states, \"some artists change small parts of their shows each night to create new surprises.\""
+              "A phone ban changes audience rules, not the performance itself.",
+              "The text describes small changes, not an entirely new set of songs.",
+              "Small nightly changes give later audiences something unexpected."
             ]
           }
         ],
         "news_brief_sentences": [
           "Important performances by famous musicians are often shared quickly on social media before many fans get to see them live.",
-          "Long before attending a show, fans might already know about key moments planned by their favorite artists.",
+          "Before attending a show, fans may already know key details, including the songs and stage design.",
           "However, it is hard to avoid a continuous flow of videos from live shows if you use social media.",
-          "Recently, US pop star Olivia Rodrigo began her Unraveled tour, and key moments from her show were quickly discussed widely online.",
+          "Olivia Rodrigo began her Unraveled tour, and key moments were discussed widely online soon after the opening show.",
           "While some fans enjoy seeing what is coming, others go to great lengths to keep the element of surprise.",
           "For example, Aurélia Collins tries to stop her social media feed from showing content about her favorite musicians.",
-          "Not all fans dislike spoilers; Georgia McAdam, for instance, actually enjoys them.",
+          "Georgia McAdam enjoys spoilers and sees them as previews that add to her excitement.",
           "In response, some artists change small parts of their shows each night to create new surprises for later audiences.",
           "Music editor Laura Snapes notes that artists also benefit from these changes.",
           "Phoebe Bridgers has even banned phones from her shows to ensure fans experience true surprise."
         ],
         "sentence_evidence": [
           "Big moments from headline acts are shared online long before many fans see their favourite artists.",
-          "Months before you have a chance to see your favourite artist, chances are you already know some of the big moments they have planned.",
+          "You'll also probably know the set list, the stage design, and - if you've really been paying attention - where to stand to get the best view.",
           "But for many major gigs, there's no escaping a stream of fan videos from the shows if you're online, whether you like it or not.",
           "Last week, US pop star Olivia Rodrigo kicked off her Unraveled tour, and surprises from the show, which scores of fans have paid a lot of money to see, have already been dissected online.",
           "While some fans lap up the opportunity to see what's coming, others are taking extreme measures to preserve the element of surprise.",
           "Aurélia Collins is one of them, spending weeks trying to trick her algorithm into not serving her content about her favourite artists and tapping \"not interested\" when videos come up, even though she says \"it hurts my soul\".",
-          "Not all fans think spoilers are a bad thing, though. In fact, Georgia McAdam claims she loves them.",
+          "McAdam's a huge Olivia Rodrigo fan and sees online spoilers more as \"teasers\". She feels no amount of online videos can ever really take away from the excitement of the real thing.",
           "Some artists have reacted by switching up their sets in small ways each night to make sure fans coming to later dates still see something unexpected.",
           "\"One way that they can make sure they're staying in the press is by having something different happen in their show every night,\" Snapes says. \"Obviously, it'll be all over TikTok.\"",
           "Phoebe Bridgers is taking things one step further to make sure fans are surprised at her shows - she's banning phones altogether."
         ],
         "editorial_check": {
-          "date": "2026-10-03T11:50:45.206267+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 3,
-          "repaired_sections": [
-            "vocabulary"
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Added source-supported details needed by the questions, removed invented quotations and distinguished show changes from phone rules."
           ],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "B1-B2",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets 'performances', 'attending', 'key', 'continuous flow', 'live shows', 'discussed widely', 'go to great lengths', and 'feed' are all appropriate for B1-B2 learners. They are useful general news/work vocabulary, common phrasal verbs, or moderately abstract terms. Definitions are clear and contextual, and no reserved vocabulary items or simple inflections thereof have been used."
+          "previous_review": {
+            "date": "2026-10-03T11:50:45.206267+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 3,
+            "repaired_sections": [
+              "vocabulary"
+            ],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "B1-B2",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets 'performances', 'attending', 'key', 'continuous flow', 'live shows', 'discussed widely', 'go to great lengths', and 'feed' are all appropriate for B1-B2 learners. They are useful general news/work vocabulary, common phrasal verbs, or moderately abstract terms. Definitions are clear and contextual, and no reserved vocabulary items or simple inflections thereof have been used."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses a natural, neutral news English register across all learner-facing fields, including the reading, explanations, and quiz. There are no unexplained shifts into slang or overly academic language, maintaining an appropriate tone for the target level."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "The teaching language is clear and accessible for B1-B2 learners. Sentence structures are varied but manageable, pronoun references are clear, and the grammar explanation uses everyday language with a precise, quoted example. Definitions, questions, and feedback are straightforward, ensuring the instructions themselves are not a barrier to understanding."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson effectively combines reading comprehension with understanding relationships between details (e.g., different fan opinions, artist reactions). It tests vocabulary in context and includes a grammar transfer question (passive voice application), providing suitable challenge for B1-B2 learners beyond simple paraphrasing. Supported inference is present in quiz questions, and the source's nuances are preserved."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses a natural, neutral news English register across all learner-facing fields, including the reading, explanations, and quiz. There are no unexplained shifts into slang or overly academic language, maintaining an appropriate tone for the target level."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "The teaching language is clear and accessible for B1-B2 learners. Sentence structures are varied but manageable, pronoun references are clear, and the grammar explanation uses everyday language with a precise, quoted example. Definitions, questions, and feedback are straightforward, ensuring the instructions themselves are not a barrier to understanding."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson effectively combines reading comprehension with understanding relationships between details (e.g., different fan opinions, artist reactions). It tests vocabulary in context and includes a grammar transfer question (passive voice application), providing suitable challenge for B1-B2 learners beyond simple paraphrasing. Supported inference is present in quiz questions, and the source's nuances are preserved."
-            }
-          },
-          "content_digest": "56e86917e072b753ad502573bde3abbdb4335c84f7387cca27e7fc479889eb73"
+            "content_digest": "56e86917e072b753ad502573bde3abbdb4335c84f7387cca27e7fc479889eb73"
+          }
         }
       }
     },
@@ -559,29 +575,29 @@
           {
             "question": "Which of the following sentences uses a reduced relative clause, similar to \"Anyone found breaking the rules will be escorted out\"?",
             "options": [
-              "The fan who had bought tickets early was excited for the show.",
-              "Security, alerted by the commotion, quickly intervened.",
-              "The artist's manager, who is known for strict policies, issued a statement."
+              "Fans who are waiting outside can hear the music.",
+              "Fans waiting outside can hear the music.",
+              "Fans wait outside until the doors open."
             ],
             "correct_option_index": 1,
             "option_feedback": [
-              "This sentence uses a full relative clause: \"who had bought tickets early.\" A reduced clause would omit \"who had.\"",
-              "Correct. \"Alerted by the commotion\" is a reduced relative clause, meaning \"Security, [who was] alerted by the commotion, quickly intervened.\" This matches the structure in the example.",
-              "This sentence uses a full relative clause: \"who is known for strict policies.\" A reduced clause would omit \"who is.\""
+              "“Who are waiting outside” is a full relative clause.",
+              "“Waiting outside” modifies “fans” and corresponds to “who are waiting outside”.",
+              "“Wait” is the main verb; there is no relative clause modifying “fans”."
             ]
           },
           {
-            "question": "What can be inferred about artists' motivations for \"switching up\" their sets and incorporating \"bespoke outfits\"?",
+            "question": "What benefit of nightly show changes does Laura Snapes explicitly identify?",
             "options": [
-              "They are trying to reduce production costs.",
-              "They aim to avoid negative fan feedback about predictable shows.",
-              "They seek to maintain novelty and generate continued media buzz."
+              "Lower production costs.",
+              "Guaranteed increases in ticket sales.",
+              "Continued press attention."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Customizing outfits and varying sets would likely increase, not reduce, production costs. This inference is incorrect.",
-              "While avoiding negative feedback might be a minor factor, the article emphasizes the proactive goal of creating new content for social media and press. This is not the main motivation presented.",
-              "Correct. The article suggests artists like Taylor Swift and Sabrina Carpenter use \"bespoke outfits\" and \"switching up\" sets to ensure \"they're staying in the press\" and generating new, viral content, indicating a desire to maintain novelty and buzz."
+              "The reading does not establish how changes affect costs.",
+              "It makes no guarantee about sales.",
+              "Snapes says something different each night can keep an artist in the press."
             ]
           },
           {
@@ -593,9 +609,9 @@
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "While attending opening night might help, Snapes' advice is more general about online behavior, not specific to ticket purchasing strategy. This is not her core recommendation.",
-              "Snapes specifically advises against looking at TikTok and absorbing the culture, which is broader than just unfollowing artists. This option is too narrow.",
-              "Correct. Snapes explicitly states that if fans want to be surprised, they \"have to protect yourself from absorbing any of that culture\" by staying offline, emphasizing a comprehensive digital detox from show-related content."
+              "Her advice concerns avoiding content; it does not require an opening-night ticket.",
+              "Unfollowing artists alone would not exclude other people’s show content.",
+              "She recommends avoiding show-related content, not abandoning all internet use."
             ]
           },
           {
@@ -627,17 +643,17 @@
             ]
           },
           {
-            "question": "What is Phoebe Bridgers' definitive policy regarding phones at her shows?",
+            "question": "What must attendees do with phones and recording devices at the shows described?",
             "options": [
-              "Phones are permitted, but recording is strictly prohibited.",
-              "Attendees must keep their phones in silent mode throughout the performance.",
-              "Phones and recording devices are entirely banned and must be locked in a pouch."
+              "Keep them available, but turn off flash photography.",
+              "Keep them in silent mode while recording.",
+              "Lock them in a special pouch on entry."
             ],
             "correct_option_index": 2,
             "option_feedback": [
-              "Bridgers' policy is more stringent; it's not just about recording, but a complete ban on devices. This option is partially true but not fully accurate.",
-              "The article specifies a ban and locking away devices, not just putting them on silent mode. This option is incorrect.",
-              "Correct. The article explicitly states that Bridgers is \"banning phones altogether,\" requiring attendees to \"lock their phones and any recording devices in a special pouch\" upon entry."
+              "The rule requires devices to be locked away.",
+              "Silent mode alone does not meet the rule.",
+              "The devices are locked in a pouch; this does not mean they cannot be brought to the venue."
             ]
           }
         ],
@@ -651,7 +667,7 @@
           "Aurélia Collins, a dedicated fan, spends weeks trying to \"trick her algorithm\" into not serving her content about favourite artists.",
           "She finds this effort \"worth it for the surprise,\" even if it means her social media feed is a bit bland.",
           "Collins was \"gutted\" when a spoiler about Niall Horan slipped through, just before her first live show after 16 years of fandom.",
-          "She explains that because she couldn't afford live music when younger, she now really wants to \"take it in\" such a moment.",
+          "Having missed live music when she was younger because of the cost, Collins now wants to take it in without advance spoilers.",
           "She wants the \"full experience,\" emphasizing the element of surprise that people attending the opening night can get.",
           "Not all fans view spoilers negatively; Georgia McAdam claims she loves them.",
           "McAdam sees online spoilers more as \"teasers\" and believes no amount of videos can diminish the excitement of the real thing.",
@@ -659,7 +675,7 @@
           "Some artists react by \"switching up\" their sets in small ways each night to ensure fans coming to later dates still see something unexpected.",
           "For example, Taylor Swift featured \"bespoke outfits\" and surprise songs, while Sabrina Carpenter and Jay-Z also varied their shows.",
           "Laura Snapes, deputy music editor for The Guardian, notes that artists can ensure \"they're staying in the press\" by having something different happen nightly.",
-          "Snapes adds that if fans want to be surprised, they \"have to protect yourself from absorbing any of that culture\" by avoiding online content.",
+          "Snapes advises fans seeking surprise to avoid absorbing online content about the shows.",
           "Phoebe Bridgers is taking things further by banning phones altogether at her shows.",
           "Attendees must lock their phones and recording devices in a special pouch when they enter the venue to see the US singer.",
           "Anyone found breaking the rules will be escorted out.",
@@ -698,33 +714,41 @@
           "\"I went to the Edinburgh Eras show where Taylor Swift was really snotty and she had to blow her nose. That's not part of the script."
         ],
         "editorial_check": {
-          "date": "2026-10-03T11:53:20.665474+00:00",
-          "model": "gemini-2.5-flash",
-          "status": "passed",
-          "method": "separate evidence, teaching and level suitability review",
-          "generation_attempts": 2,
-          "repaired_sections": [],
-          "language_policy_version": "2026-09-08-level-calibration",
-          "target_level": "C1-Higher",
-          "level_checks": {
-            "vocabulary": {
-              "passed": true,
-              "reason": "The vocabulary targets terms like \"dissected,\" \"lap up,\" and \"bespoke outfits,\" which offer precise contextual meanings, useful collocations, and register awareness (e.g., \"gutted\" informal), suitable for C1-Higher learners."
+          "date": "2026-10-08",
+          "status": "revised",
+          "method": "Codex editorial review against saved source evidence; no new independent model approval",
+          "changes": [
+            "Repaired unnatural quotation framing and the reduced-clause example; removed invented cost effects, digital-detox advice and an overstatement of the phone rule."
+          ],
+          "previous_review": {
+            "date": "2026-10-03T11:53:20.665474+00:00",
+            "model": "gemini-2.5-flash",
+            "status": "passed",
+            "method": "separate evidence, teaching and level suitability review",
+            "generation_attempts": 2,
+            "repaired_sections": [],
+            "language_policy_version": "2026-09-08-level-calibration",
+            "target_level": "C1-Higher",
+            "level_checks": {
+              "vocabulary": {
+                "passed": true,
+                "reason": "The vocabulary targets terms like \"dissected,\" \"lap up,\" and \"bespoke outfits,\" which offer precise contextual meanings, useful collocations, and register awareness (e.g., \"gutted\" informal), suitable for C1-Higher learners."
+              },
+              "register": {
+                "passed": true,
+                "reason": "The lesson consistently uses polished, natural reporting and analytical language, with appropriate attribution and calibrated certainty, aligning with the C1-Higher register requirements."
+              },
+              "teaching_language": {
+                "passed": true,
+                "reason": "Definitions and feedback are concise and illuminating. The grammar explanation is clear and effectively uses an example from the reading to demonstrate the concept, suitable for C1-Higher learners."
+              },
+              "challenge": {
+                "passed": true,
+                "reason": "The lesson challenges learners through questions requiring inference (e.g., artists' motivations), contextual vocabulary analysis, and practical grammar application, with plausible distractors and substantive learning value beyond basic recall."
+              }
             },
-            "register": {
-              "passed": true,
-              "reason": "The lesson consistently uses polished, natural reporting and analytical language, with appropriate attribution and calibrated certainty, aligning with the C1-Higher register requirements."
-            },
-            "teaching_language": {
-              "passed": true,
-              "reason": "Definitions and feedback are concise and illuminating. The grammar explanation is clear and effectively uses an example from the reading to demonstrate the concept, suitable for C1-Higher learners."
-            },
-            "challenge": {
-              "passed": true,
-              "reason": "The lesson challenges learners through questions requiring inference (e.g., artists' motivations), contextual vocabulary analysis, and practical grammar application, with plausible distractors and substantive learning value beyond basic recall."
-            }
-          },
-          "content_digest": "72651f74bee0e2d5e6a04d73f3f7b7d501369c3d774ad709b7567ef532f2b3b5"
+            "content_digest": "72651f74bee0e2d5e6a04d73f3f7b7d501369c3d774ad709b7567ef532f2b3b5"
+          }
         }
       }
     }

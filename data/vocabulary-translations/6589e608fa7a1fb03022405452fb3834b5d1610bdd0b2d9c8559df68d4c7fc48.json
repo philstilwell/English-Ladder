@@ -1,0 +1,140 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "Capt Smit Machchhar was the pilot of a Flydubai plane.",
+      "His co-pilot attacked him in the cockpit during the flight.",
+      "Captain Machchhar opened the door to let other people in.",
+      "He did not want others to die on the plane.",
+      "The plane fell more than 17,000 feet during the attack.",
+      "Other passengers helped to stop the attacker.",
+      "Two reserve pilots, who were also on the plane, landed it safely.",
+      "Many people now praise Captain Machchhar for his courage."
+    ],
+    "vocabulary": [
+      {
+        "term": "pilot",
+        "part_of_speech": "noun",
+        "definition": "a person who flies an aircraft."
+      },
+      {
+        "term": "attacked",
+        "part_of_speech": "verb",
+        "definition": "tried to hurt someone with force."
+      },
+      {
+        "term": "cockpit",
+        "part_of_speech": "noun",
+        "definition": "the front part of a plane where the pilot sits and controls it."
+      },
+      {
+        "term": "others",
+        "part_of_speech": "pronoun",
+        "definition": "different people from the ones already mentioned."
+      },
+      {
+        "term": "fell",
+        "part_of_speech": "verb",
+        "definition": "moved quickly downwards."
+      },
+      {
+        "term": "safely",
+        "part_of_speech": "adverb",
+        "definition": "without danger or harm."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "航空機を操縦する人。",
+      "ko": "항공기를 조종하는 사람.",
+      "zh-Hans": "驾驶飞机的人。",
+      "es": "Una persona que pilota una aeronave.",
+      "pt-BR": "Uma pessoa que pilota uma aeronave.",
+      "fr": "Une personne qui pilote un avion.",
+      "de": "Eine Person, die ein Flugzeug fliegt."
+    },
+    {
+      "id": 1,
+      "ja": "力をふるって誰かを傷つけようとした。",
+      "ko": "힘을 사용하여 누군가를 해치려고 했다.",
+      "zh-Hans": "试图用武力伤害某人。",
+      "es": "Intentó lastimar a alguien con fuerza.",
+      "pt-BR": "Tentou ferir alguém com força.",
+      "fr": "A essayé de blesser quelqu'un par la force.",
+      "de": "Versuchte, jemanden mit Gewalt zu verletzen."
+    },
+    {
+      "id": 2,
+      "ja": "パイロットが座って航空機を操縦する、飛行機の前の部分。",
+      "ko": "조종사가 앉아서 항공기를 조종하는 비행기의 앞부분.",
+      "zh-Hans": "飞机的前部，飞行员坐在那里并控制飞机。",
+      "es": "La parte delantera de un avión donde el piloto se sienta y lo controla.",
+      "pt-BR": "A parte dianteira de um avião onde o piloto se senta e o controla.",
+      "fr": "La partie avant d'un avion où le pilote s'assied et le contrôle.",
+      "de": "Der vordere Teil eines Flugzeugs, wo der Pilot sitzt und es steuert."
+    },
+    {
+      "id": 3,
+      "ja": "すでに言及された人たちとは異なる人たち。",
+      "ko": "이미 언급된 사람들과 다른 사람들.",
+      "zh-Hans": "与已经提到的人不同的其他人。",
+      "es": "Personas diferentes de las ya mencionadas.",
+      "pt-BR": "Pessoas diferentes das que já foram mencionadas.",
+      "fr": "Des personnes différentes de celles déjà mentionnées.",
+      "de": "Andere Personen als die bereits erwähnten."
+    },
+    {
+      "id": 4,
+      "ja": "素早く下へ移動した。",
+      "ko": "빠르게 아래로 움직였다.",
+      "zh-Hans": "迅速向下移动。",
+      "es": "Se movió rápidamente hacia abajo.",
+      "pt-BR": "Moveu-se rapidamente para baixo.",
+      "fr": "S'est déplacé rapidement vers le bas.",
+      "de": "Bewegte sich schnell abwärts."
+    },
+    {
+      "id": 5,
+      "ja": "危険や危害なしに。",
+      "ko": "위험이나 해로움 없이.",
+      "zh-Hans": "没有危险或伤害。",
+      "es": "Sin peligro ni daño.",
+      "pt-BR": "Sem perigo ou dano.",
+      "fr": "Sans danger ni mal.",
+      "de": "Ohne Gefahr oder Schaden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "date": "2026-10-08",
+    "method": "Codex multilingual editorial update; unchanged definitions retained after review of their use in the revised reading; no paid translation or new independent model review",
+    "changed_terms": [],
+    "retained_terms": [
+      "pilot",
+      "attacked",
+      "cockpit",
+      "others",
+      "fell",
+      "safely"
+    ],
+    "previous_source_key": "65ba3f62450edae1184e72ed1ae66f5bb9a0e3d0f899e60b606346fbe3915196",
+    "previous_review": {
+      "status": "reviewed",
+      "method": "separate translation-editing call",
+      "model": "gemini-2.5-flash",
+      "date": "2026-10-02T12:42:32.372980+00:00",
+      "added_languages": [
+        "ja",
+        "ko",
+        "zh-Hans",
+        "es",
+        "pt-BR",
+        "fr",
+        "de"
+      ]
+    }
+  }
+}

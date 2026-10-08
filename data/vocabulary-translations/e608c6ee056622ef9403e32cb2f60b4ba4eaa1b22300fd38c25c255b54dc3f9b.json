@@ -1,0 +1,127 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "beginner",
+    "reading": [
+      "A former Syrian general is being protected by the US and Lebanon.",
+      "His name is Bassam al-Hassan.",
+      "He is wanted for crimes against humanity.",
+      "Mr. Hassan is in Lebanon.",
+      "He is protected because he gives information to the US.",
+      "This information is about an American journalist, Austin Tice, who disappeared in Syria.",
+      "Mr. Hassan is linked to Mr. Tice being taken by force in 2012.",
+      "Syria's new government wants General Hassan to return for a trial.",
+      "But US authorities want him to stay in Lebanon.",
+      "Austin Tice's family is upset about this protection."
+    ],
+    "vocabulary": [
+      {
+        "term": "general",
+        "part_of_speech": "noun",
+        "definition": "A high-ranking officer in the army."
+      },
+      {
+        "term": "protected",
+        "part_of_speech": "verb, past participle",
+        "definition": "Kept safe from danger or harm."
+      },
+      {
+        "term": "wanted",
+        "part_of_speech": "verb, past participle",
+        "definition": "Sought by police because of a crime."
+      },
+      {
+        "term": "information",
+        "part_of_speech": "noun",
+        "definition": "Facts or details about something."
+      },
+      {
+        "term": "journalist",
+        "part_of_speech": "noun",
+        "definition": "A person who writes news stories for others to read or watch."
+      },
+      {
+        "term": "disappeared",
+        "part_of_speech": "verb, past tense",
+        "definition": "Went missing; could not be found."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "陸軍の階級の高い士官。",
+      "ko": "육군에서 지위가 높은 장교.",
+      "zh-Hans": "军队中级别很高的军官。",
+      "es": "Un oficial de alto rango en el ejército.",
+      "pt-BR": "Um oficial de alta patente no exército.",
+      "fr": "Un officier de haut rang dans l'armée.",
+      "de": "Ein hochrangiger Offizier im Heer."
+    },
+    {
+      "id": 1,
+      "ja": "危険や危害から安全に保たれること。",
+      "ko": "위험이나 해로부터 안전하게 지켜진 상태.",
+      "zh-Hans": "免受危险或伤害，处于安全状态。",
+      "es": "Mantenido a salvo de peligro o daño.",
+      "pt-BR": "Mantido(a) em segurança contra perigo ou dano.",
+      "fr": "Qui est maintenu en sécurité face au danger ou au mal.",
+      "de": "Vor Gefahr oder Schaden bewahrt."
+    },
+    {
+      "id": 2,
+      "ja": "犯罪のために警察に捜索されている。",
+      "ko": "범죄 때문에 경찰이 찾고 있는 상태.",
+      "zh-Hans": "因犯罪而被警方通缉。",
+      "es": "Buscado por la policía debido a un crimen.",
+      "pt-BR": "Procurado(a) pela polícia por causa de um crime.",
+      "fr": "Recherché par la police à cause d'un crime.",
+      "de": "Von der Polizei wegen eines Verbrechens gesucht."
+    },
+    {
+      "id": 3,
+      "ja": "何かについての事実や詳細。",
+      "ko": "어떤 것에 대한 사실이나 자세한 내용.",
+      "zh-Hans": "关于某事的真相或细节。",
+      "es": "Datos o detalles sobre algo.",
+      "pt-BR": "Fatos ou detalhes sobre algo.",
+      "fr": "Des faits ou des détails sur quelque chose.",
+      "de": "Fakten oder Einzelheiten über etwas."
+    },
+    {
+      "id": 4,
+      "ja": "他の人が読んだり見たりするためのニュース記事を書く人。",
+      "ko": "다른 사람들이 읽거나 볼 뉴스를 쓰는 사람.",
+      "zh-Hans": "为他人撰写新闻报道的人。",
+      "es": "Una persona que escribe noticias para que otros las lean o vean.",
+      "pt-BR": "Uma pessoa que escreve notícias para outros lerem ou assistirem.",
+      "fr": "Une personne qui écrit des articles d'actualité pour que d'autres les lisent ou les regardent.",
+      "de": "Eine Person, die Nachrichtenartikel für andere zum Lesen oder Ansehen schreibt."
+    },
+    {
+      "id": 5,
+      "ja": "行方不明になり、見つからなかった。",
+      "ko": "실종되어 찾을 수 없게 되다.",
+      "zh-Hans": "失踪了，找不到了。",
+      "es": "Se perdió y no pudo ser encontrado.",
+      "pt-BR": "Sumir; não poder ser encontrado(a).",
+      "fr": "A disparu et n'a pas pu être retrouvé.",
+      "de": "Ist verschwunden und konnte nicht gefunden werden."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-08T07:03:28.401058+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "release_date": "2026-10-09",
+  "release_iso": "2026-10-09T06:15:00Z",
+  "model": "gemini-2.5-flash",
+  "source": {
+    "name": "BBC World News RSS",
+    "feed_url": "https://feeds.bbci.co.uk/news/world/rss.xml",
+    "category": "world",
+    "published_at": "Fri, 09 Oct 2026 09:09:03 GMT",
+    "retrieved_at": "2026-10-09T11:39:45.973859+00:00",
+    "title": "Thieves steal 30,000 wine bottles worth €5m in Italy, reports say",
+    "summary": "The heist at the Florence-based winery is believed to be one of the largest thefts of its kind in Italy.",
+    "evidence_text": "Thieves steal 30,000 wine bottles worth €5m in Italy, reports say\nThieves have stolen 30,000 bottles of wine collectively worth about €5m (£4.2m) from a prestigious Italian winery, Italian media reports.\nThe heist at the Florence-based winery is believed to be one of the largest thefts of its kind in Italy.\nMarchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.\nAt least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.\nHe added that he was hopeful the authorities would be able to trace the stolen wine.\nThe theft was only discovered on Monday morning as staff arrived on site. No arrests have been made.\n\"A theft of this scale and value has certainly never occurred in Italy,\" he said.\nThe company believes the selection of bottles, which usually sell for between €150 and €500 each, suggests the thieves were wine connoisseurs and had inside knowledge.\nRenzo Cotarella, the chief executive, told Corriere della Sera this was the largest theft of its kind in Italy.\n\"Two trucks full of merchandise can't just disappear into thin air. The Tuscan roads are full of cameras; perhaps with a bit of luck we'll be able to recover at least some of the bottles stolen from us.\"\nMarchesi Antinori was founded in 1385 and exports to 170 countries. It had a revenue of €263m (£223m) last year.\nThere has been a spate of wine thefts in Italy this year, including two in the northern Piedmont region where hundreds of thousands of euros worth of bottles were reportedly taken.",
+    "evidence_retrieved_at": "2026-10-09T11:39:45.973859+00:00",
+    "link": "https://www.bbc.co.uk/news/articles/cme3xl8ln2vko?at_medium=RSS&at_campaign=rss"
+  },
+  "levels": {
+    "beginner": {
+      "name": "Beginner",
+      "cefr": "A1-A2",
+      "file_path": "beginner.html",
+      "lesson": {
+        "discussion": [
+          "Why do you think the company hopes police can find the stolen wine?",
+          "If someone stole something valuable from your home, what would you do? I would... because... Or, imagine your friend's bicycle was stolen. What advice could you give them?"
+        ],
+        "title": "Thieves Steal Many Wine Bottles in Italy",
+        "overview": "A large number of expensive wine bottles were stolen from a winery in Italy.",
+        "topic": "Crime and Theft",
+        "vocabulary": [
+          {
+            "term": "stole",
+            "part_of_speech": "verb",
+            "definition": "took something from a person or place without permission."
+          },
+          {
+            "term": "bottles",
+            "part_of_speech": "noun",
+            "definition": "glass or plastic containers with a narrow neck, often used for liquids."
+          },
+          {
+            "term": "worth",
+            "part_of_speech": "adjective",
+            "definition": "having a certain value in money or importance."
+          },
+          {
+            "term": "winery",
+            "part_of_speech": "noun",
+            "definition": "a place where wine is made, often from grapes grown there."
+          },
+          {
+            "term": "company",
+            "part_of_speech": "noun",
+            "definition": "a business organization that makes or sells goods or services."
+          },
+          {
+            "term": "hopes",
+            "part_of_speech": "verb",
+            "definition": "wants something good to happen in the future."
+          },
+          {
+            "term": "theft",
+            "part_of_speech": "noun",
+            "definition": "the act of stealing something."
+          }
+        ],
+        "grammar": {
+          "concept": "Simple Past Tense",
+          "explanation": "We use the simple past tense to talk about actions that finished at a specific time in the past. For regular verbs, we often add '-ed'. For many common verbs, the form changes (e.g., 'steal' becomes 'stole').",
+          "example_quote": "Thieves stole 30,000 wine bottles in Italy."
+        },
+        "quiz": [
+          {
+            "question": "What did thieves steal in Italy?",
+            "options": [
+              "Many wine bottles.",
+              "A lot of money.",
+              "Two big trucks."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct! Thieves stole 30,000 wine bottles.",
+              "No, they stole bottles, and the bottles were worth a lot of money.",
+              "The thieves used trucks, but they stole wine bottles."
+            ]
+          },
+          {
+            "question": "How much money were the stolen bottles worth?",
+            "options": [
+              "About €5m.",
+              "About 30,000 euros.",
+              "About €150."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Yes, the 30,000 bottles were worth about €5m.",
+              "30,000 is the number of bottles, not the worth in euros.",
+              "This amount is not mentioned as the total worth of the stolen bottles in the story."
+            ]
+          },
+          {
+            "question": "Where did the theft take place?",
+            "options": [
+              "At a winery near Florence.",
+              "On a road in Tuscany.",
+              "In a busy market."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "That's right! The theft happened at a winery near Florence.",
+              "The trucks might have been on roads later, but the theft happened at the winery.",
+              "The story does not mention a market."
+            ]
+          },
+          {
+            "question": "What does the word \"winery\" mean in this story?",
+            "options": [
+              "A place where wine is made.",
+              "A shop where wine is sold.",
+              "A large parking lot for trucks."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. A winery is a place where wine is produced.",
+              "While wine is sold, a winery's main purpose is to make wine.",
+              "The thieves used trucks, but a winery is about making wine."
+            ]
+          },
+          {
+            "question": "Who discovered the theft?",
+            "options": [
+              "The staff of the winery.",
+              "The police.",
+              "The thieves."
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "Correct. The staff found out about the theft on Monday morning.",
+              "The police were called after the staff discovered the theft.",
+              "The thieves committed the theft, they did not discover it."
+            ]
+          },
+          {
+            "question": "What is true about the company's feelings about the stolen wine?",
+            "options": [
+              "The company is sure they will get all the wine back.",
+              "The company hopes the police can find the wine.",
+              "The company thinks the wine has disappeared forever."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The company 'hopes' the police can find it, but it is not sure.",
+              "Yes, the company hopes police can find the wine.",
+              "No, the company hopes the police can trace and recover some of the wine."
+            ]
+          },
+          {
+            "question": "Which sentence uses the simple past tense?",
+            "options": [
+              "\"Thieves steal 30,000 wine bottles.\"",
+              "\"Thieves stole 30,000 wine bottles.\"",
+              "\"Thieves will steal 30,000 wine bottles.\""
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence uses the present simple tense, which is for actions that happen regularly or are generally true.",
+              "Correct! \"Stole\" is the past tense form of \"steal\", showing an action that finished in the past.",
+              "This sentence uses the future simple tense, which is for actions that will happen later."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Thieves stole 30,000 wine bottles in Italy.",
+          "These bottles are worth about €5m.",
+          "The theft happened at a winery near Florence.",
+          "The winery is called Marchesi Antinori.",
+          "Thieves used forklifts to load trucks.",
+          "The company hopes police can find the wine.",
+          "Staff discovered the theft on Monday morning."
+        ],
+        "sentence_evidence": [
+          "Thieves steal 30,000 wine bottles worth €5m in Italy, reports say",
+          "Thieves have stolen 30,000 bottles of wine collectively worth about €5m (£4.2m) from a prestigious Italian winery, Italian media reports.",
+          "The heist at the Florence-based winery is believed to be one of the largest thefts of its kind in Italy.",
+          "Marchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.",
+          "At least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.",
+          "He added that he was hopeful the authorities would be able to trace the stolen wine.",
+          "The theft was only discovered on Monday morning as staff arrived on site. No arrests have been made."
+        ],
+        "editorial_check": {
+          "date": "2026-10-09T11:41:05.639878+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "A1-A2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "All vocabulary items like \"stole\" and \"theft\" are suitable for the A1-A2 level and are defined clearly using accessible language."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson uses straightforward, neutral everyday English throughout the reading, explanations, and quiz, which is appropriate for A1-A2."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language is clear and uses short sentences, like \"Thieves stole 30,000 wine bottles in Italy.\", and the discussion prompt offers a simple sentence frame."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz questions test clearly stated details and a basic grammar pattern, such as identifying the simple past tense, with short and plausible answer choices."
+            }
+          },
+          "content_digest": "79399ac5eb0db011df333b66987f02c9bee4cc2ac328d7a1dd8c0fe0dcff317d"
+        }
+      }
+    },
+    "intermediate": {
+      "name": "Intermediate",
+      "cefr": "B1-B2",
+      "file_path": "intermediate.html",
+      "lesson": {
+        "discussion": [
+          "Explain why Marchesi Antinori believes the thieves were \"wine connoisseurs\" and had \"inside knowledge\" based on the reading.",
+          "Imagine you are a security expert advising a high-value storage facility like a wine producer. What three security measures would you recommend to prevent a similar heist?"
+        ],
+        "title": "€5 Million Wine Heist at Italian Producer Marchesi Antinori",
+        "overview": "Thieves recently took 30,000 bottles of valuable wine from Marchesi Antinori, a prestigious Italian producer, in what is believed to be the largest such robbery in Italy.",
+        "topic": "Major wine robbery in Italy",
+        "vocabulary": [
+          {
+            "term": "Reports indicate",
+            "part_of_speech": "verb phrase",
+            "definition": "To show or suggest something based on available information or news."
+          },
+          {
+            "term": "valued at",
+            "part_of_speech": "prepositional phrase",
+            "definition": "Having a particular monetary amount or worth."
+          },
+          {
+            "term": "prestigious",
+            "part_of_speech": "adjective",
+            "definition": "Highly respected and admired because of its importance or high quality."
+          },
+          {
+            "term": "consignment",
+            "part_of_speech": "noun",
+            "definition": "A batch of goods that is sent or delivered for sale or storage."
+          },
+          {
+            "term": "deactivated",
+            "part_of_speech": "verb",
+            "definition": "Made a device or system stop working or become inactive."
+          },
+          {
+            "term": "disabled",
+            "part_of_speech": "verb",
+            "definition": "Made a machine, system, or security feature unable to function."
+          },
+          {
+            "term": "forklifts",
+            "part_of_speech": "noun",
+            "definition": "Powerful industrial vehicles used for lifting and moving heavy loads, often on pallets."
+          },
+          {
+            "term": "connoisseurs",
+            "part_of_speech": "noun",
+            "definition": "People who have expert knowledge and appreciation of a particular subject, especially fine food, drink, or art."
+          }
+        ],
+        "grammar": {
+          "concept": "Passive Voice: 'be believed to have'",
+          "explanation": "The passive voice is used when the focus is on the action rather than who performed it. When reporting beliefs or opinions about past events, we can use the structure 'subject + be + believed + to have + past participle'. This construction is common in news reporting to talk about what people think happened.",
+          "example_quote": "At least seven masked men are believed to have deactivated alarms and disabled cameras during the heist."
+        },
+        "quiz": [
+          {
+            "question": "What is the main topic of the news brief?",
+            "options": [
+              "A history of Italian wine production",
+              "A large-scale wine robbery in Italy",
+              "New security measures at Marchesi Antinori"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While the text mentions an Italian producer, the main focus is on the crime.",
+              "The brief primarily reports on a major wine heist at an Italian producer.",
+              "The text discusses a past robbery, not new security measures or their implementation."
+            ]
+          },
+          {
+            "question": "Approximately how much was the stolen wine valued at?",
+            "options": [
+              "Around €150 to €500",
+              "Exactly €4.2 million",
+              "Approximately €5 million"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "€150 to €500 is the typical price per individual bottle, not the total value.",
+              "This value is not mentioned in the reading or evidence.",
+              "The reading states the 30,000 bottles were valued at €5 million."
+            ]
+          },
+          {
+            "question": "Where did the large-scale wine heist take place?",
+            "options": [
+              "In the Piedmont region",
+              "At a storage facility in Tuscany",
+              "At an international shipping port"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The Piedmont region is not mentioned in the reading related to this theft.",
+              "The incident occurred at Marchesi Antinori's storage facility, located in Tuscany.",
+              "The wine was being prepared for international customers, but the heist happened at the facility, not a port."
+            ]
+          },
+          {
+            "question": "What does the word 'prestigious' mean as used in the reading?",
+            "options": [
+              "Old or historic",
+              "Highly respected and admired",
+              "Luxurious and expensive"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While Marchesi Antinori is old, 'prestigious' specifically means highly respected, not just old.",
+              "A 'prestigious' producer is highly respected and admired for its quality and importance.",
+              "While its wines are valuable, 'prestigious' describes its reputation, not just its cost."
+            ]
+          },
+          {
+            "question": "What was the producer doing when the incident occurred?",
+            "options": [
+              "Preparing a consignment for international customers",
+              "Conducting an annual inventory check",
+              "Receiving a new shipment of valuable wines"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The text states the producer was preparing 'a consignment for international customers' when the heist happened.",
+              "The reading does not mention an inventory check happening at that time.",
+              "The reading states the producer was sending wine out, not receiving a new shipment."
+            ]
+          },
+          {
+            "question": "What tools did the thieves reportedly use to load the valuable wines?",
+            "options": [
+              "Cranes and winches",
+              "Hand trucks and carts",
+              "Forklifts belonging to the producer"
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "The reading does not mention cranes or winches being used.",
+              "The scale of the heist suggests more substantial equipment than hand trucks.",
+              "The criminals reportedly used 'forklifts belonging to the producer' to load the trucks."
+            ]
+          },
+          {
+            "question": "Why does the producer suspect the criminals were 'wine connoisseurs'?",
+            "options": [
+              "Because they left a note praising the wine quality",
+              "Because they chose specific valuable bottles",
+              "Because they were seen tasting the wines during the heist"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading does not mention any note left by the thieves.",
+              "The producer believes their selection of specific, valuable bottles suggests they were 'wine connoisseurs'.",
+              "There is no information in the text about the thieves tasting the wines."
+            ]
+          },
+          {
+            "question": "Which of the following sentences correctly uses the grammar concept 'passive voice: be believed to have'?",
+            "options": [
+              "The chief executive believed to have stated it was the largest heist.",
+              "At least seven masked men are believed to have deactivated alarms.",
+              "The producer believes the thieves to have had inside knowledge."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "This sentence is missing 'is' or 'was' before 'believed' and doesn't fully fit the structure for reporting beliefs about a past action.",
+              "This sentence correctly uses the structure 'are believed to have + past participle' to report what people think happened in the past.",
+              "While similar, this structure is less common for reporting beliefs about a past action performed by the subject in a general statement."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Reports indicate that thieves took 30,000 bottles of wine valued at €5 million from an Italian producer.",
+          "This large-scale robbery, or \"heist,\" happened at a prestigious wine producer based in Florence, Italy.",
+          "Marchesi Antinori, a family-owned producer, confirmed the incident at its storage facility in Tuscany.",
+          "The incident occurred on a Saturday as the producer was preparing a consignment for international customers.",
+          "At least seven masked men are believed to have deactivated alarms and disabled cameras during the heist.",
+          "They reportedly used forklifts belonging to the producer to load valuable Tuscan red wines onto two large trucks.",
+          "The chief executive stated this was the largest heist of its kind in Italy.",
+          "The producer suspects the criminals were wine connoisseurs and had inside knowledge, given the specific bottles chosen."
+        ],
+        "sentence_evidence": [
+          "Thieves have stolen 30,000 bottles of wine collectively worth about €5m (£4.2m) from a prestigious Italian winery, Italian media reports.",
+          "The heist at the Florence-based winery is believed to be one of the largest thefts of its kind in Italy.",
+          "Marchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.",
+          "Marchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.",
+          "At least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.",
+          "At least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.",
+          "\"A theft of this scale and value has certainly never occurred in Italy,\" he said.",
+          "The company believes the selection of bottles, which usually sell for between €150 and €500 each, suggests the thieves were wine connoisseurs and had inside knowledge."
+        ],
+        "editorial_check": {
+          "date": "2026-10-09T11:43:27.110070+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 3,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "B1-B2",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary targets are a good mix of general news terms, useful phrases, and specific contextual words, with clear definitions suitable for B1-B2 learners. None of the reserved beginner vocabulary words are taught as targets."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson maintains a consistent, natural, and neutral news register throughout all learner-facing content, avoiding slang or overly academic language."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The reading sentences are varied and manageable, within the suggested word count range. The grammar explanation is clear and uses an exact quote from the reading. All teaching language is accessible and precise for the B1-B2 level."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The lesson effectively combines factual comprehension with contextual vocabulary, grammatical application, and supported inference in the quiz and discussion, offering appropriate challenge for B1-B2 learners."
+            }
+          },
+          "content_digest": "3cd74df4017d92350bfaaf37a80b5d81b81ac227953b0d943366c41ef3711bbe"
+        }
+      }
+    },
+    "advanced": {
+      "name": "Advanced",
+      "cefr": "C1-Higher",
+      "file_path": "advanced.html",
+      "lesson": {
+        "discussion": [
+          "Why did the chief executive suggest that the perpetrators likely possessed 'inside knowledge' about the winery?",
+          "If you were responsible for security at a high-value storage facility, what specific measures would you implement to deter or prevent such elaborate heists?"
+        ],
+        "title": "€5m Wine Heist: Thieves Target Prestigious Italian Winery",
+        "overview": "Thieves executed an elaborate plan, stealing 30,000 bottles of high-value wine from a renowned Italian winery, raising questions about insider knowledge and security vulnerabilities.",
+        "topic": "International Crime and Business Security",
+        "vocabulary": [
+          {
+            "term": "heist",
+            "part_of_speech": "noun",
+            "definition": "A robbery, especially one involving a large sum of money or valuable items."
+          },
+          {
+            "term": "facility",
+            "part_of_speech": "noun",
+            "definition": "A place, amenity, or piece of equipment provided for a particular purpose."
+          },
+          {
+            "term": "collectively",
+            "part_of_speech": "adverb",
+            "definition": "As a group; as a whole."
+          },
+          {
+            "term": "dispatch",
+            "part_of_speech": "verb",
+            "definition": "To send off to a destination or for a purpose."
+          },
+          {
+            "term": "substantial",
+            "part_of_speech": "adjective",
+            "definition": "Of considerable importance, size, or worth."
+          },
+          {
+            "term": "utilized",
+            "part_of_speech": "verb",
+            "definition": "To make practical and effective use of something."
+          },
+          {
+            "term": "prized",
+            "part_of_speech": "adjective",
+            "definition": "Regarded as very valuable or important."
+          },
+          {
+            "term": "affirmed",
+            "part_of_speech": "verb",
+            "definition": "Stated or asserted strongly and publicly."
+          },
+          {
+            "term": "unprecedented",
+            "part_of_speech": "adjective",
+            "definition": "Never done or known before; unparalleled."
+          },
+          {
+            "term": "optimism",
+            "part_of_speech": "noun",
+            "definition": "Hopefulness and confidence about the future or the success of something."
+          },
+          {
+            "term": "merchandise",
+            "part_of_speech": "noun",
+            "definition": "Goods to be bought and sold."
+          },
+          {
+            "term": "perpetrators",
+            "part_of_speech": "noun",
+            "definition": "People who carry out a harmful, illegal, or immoral act."
+          }
+        ],
+        "grammar": {
+          "concept": "Reporting Adverbs (e.g., \"reportedly\")",
+          "explanation": "Reporting adverbs like \"reportedly,\" \"allegedly,\" or \"supposedly\" are used in news reporting to attribute information to others without directly quoting them. They allow writers to convey facts or claims while maintaining a degree of distance or indicating that the information comes from a secondary source and might not be fully confirmed by the writer. This practice is crucial for maintaining journalistic impartiality and signaling the certainty level of the information.",
+          "example_quote": "At least seven masked individuals reportedly deactivated the security alarms and disabled the cameras during the operation."
+        },
+        "quiz": [
+          {
+            "question": "Which detail most strongly suggests the thieves had specialized knowledge?",
+            "options": [
+              "They loaded two large trucks with wine.",
+              "They selected specific, high-value wine brands.",
+              "They deactivated alarms and cameras."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "While loading trucks is a practical aspect of the heist, it does not specifically indicate specialized wine knowledge.",
+              "The selection of specific, highly-priced wines like Tignanello and Solaia suggests a detailed understanding of the market and the winery's prized inventory, indicating specialized knowledge.",
+              "Deactivating security systems shows planning and technical skill, but not necessarily expertise in wine itself or specific insider information about the product selection."
+            ]
+          },
+          {
+            "question": "What is implied by Renzo Cotarella's statement that the heist was \"unprecedented\"?",
+            "options": [
+              "No wine has ever been stolen in Italy before.",
+              "This is the largest wine heist of its kind in Italy's history.",
+              "He believes the thieves will never be caught."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions a 'spate of wine thefts' in Italy this year, contradicting the idea that no wine has ever been stolen before. 'Unprecedented' refers to the scale and value.",
+              "Cotarella explicitly stated that a theft of this scale and value has \"certainly never occurred in Italy,\" indicating it is the largest of its kind.",
+              "While Cotarella acknowledged the difficulty, he also expressed optimism about tracing the wine, so this inference is not supported."
+            ]
+          },
+          {
+            "question": "The word \"dispatch\" in the reading most closely means:",
+            "options": [
+              "to receive goods",
+              "to send out goods",
+              "to store goods"
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Dispatch\" means to send something, not to receive it. Receiving would be the opposite action.",
+              "The context indicates the company was \"preparing to dispatch a substantial shipment to international customers,\" meaning they were getting ready to send the wine to its destination.",
+              "While storage precedes dispatch, the act of \"dispatching\" refers specifically to the process of sending goods, not just holding them in storage."
+            ]
+          },
+          {
+            "question": "What was the estimated total financial value of the stolen wine bottles?",
+            "options": [
+              "Approximately £4.2 million",
+              "Precisely €5 million",
+              "Between €150 and €500"
+            ],
+            "correct_option_index": 0,
+            "option_feedback": [
+              "The article states the bottles were \"collectively worth about €5m (£4.2m),\" making £4.2 million the correct estimated total value in British pounds.",
+              "The value is stated as \"about €5m,\" implying an approximation, not a precise figure. The quiz option requires the value in British pounds.",
+              "€150 and €500 represent the individual bottle prices, not the total value of the entire stolen collection."
+            ]
+          },
+          {
+            "question": "According to the reading, what role did the winery's own equipment play in the heist?",
+            "options": [
+              "It was used by the thieves to break into the facility.",
+              "It was used to transport the stolen wine onto trucks.",
+              "It was damaged by the thieves to prevent pursuit."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article mentions thieves \"used company forklifts to load two large trucks,\" not to break in.",
+              "The reading states that the masked individuals \"utilized company forklifts to load two large trucks of the company's prized Tuscan reds,\" directly indicating its use for transport.",
+              "The text does not mention any damage to the forklifts; rather, they were utilized by the perpetrators."
+            ]
+          },
+          {
+            "question": "What does the use of \"reportedly\" in \"At least seven masked individuals reportedly deactivated security alarms\" primarily convey?",
+            "options": [
+              "The information is confirmed by direct eyewitness accounts.",
+              "The information is an official statement from the police.",
+              "The information is from an unverified source or implies some uncertainty."
+            ],
+            "correct_option_index": 2,
+            "option_feedback": [
+              "\"Reportedly\" implies the information is attributed, not necessarily directly confirmed by eyewitnesses, which would require stronger phrasing.",
+              "While media reports are sources, \"reportedly\" often signals that the information might not be a definitive official police statement, but rather what is being said or heard.",
+              "\"Reportedly\" acts as a hedging device, indicating that the claim is based on reports from others, allowing the writer to convey the information without fully endorsing its absolute certainty or identifying the specific source."
+            ]
+          },
+          {
+            "question": "The word \"perpetrators\" refers to the individuals who:",
+            "options": [
+              "reported the theft to the police.",
+              "committed the crime.",
+              "investigated the crime scene."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "\"Perpetrators\" are those who commit an act, not those who report it.",
+              "In the context of a crime, \"perpetrators\" is a formal term for the individuals responsible for carrying out the illegal act.",
+              "\"Perpetrators\" are the ones who committed the crime, not the ones who investigate it. Investigators are typically law enforcement."
+            ]
+          },
+          {
+            "question": "When was the wine heist discovered by the winery staff?",
+            "options": [
+              "On Saturday, during the preparation for shipment.",
+              "On Monday morning, upon staff arrival.",
+              "During the heist itself by security personnel."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The theft took place on Saturday, but it was not discovered then; staff were preparing for shipment at that time.",
+              "The reading explicitly states, \"The elaborate operation was only discovered on Monday morning when staff arrived on site.\"",
+              "The reading indicates that alarms were deactivated and cameras disabled, suggesting the heist was not discovered while in progress by security personnel."
+            ]
+          },
+          {
+            "question": "Based on his statements in the reading, what reason did the chief executive provide for his optimism about tracing the stolen merchandise?",
+            "options": [
+              "The unique characteristics and high market value of the wines make them easily identifiable if sold.",
+              "He believes that such a substantial volume of goods cannot simply vanish without a trace.",
+              "He is confident that law enforcement has sophisticated technology to track the stolen items."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The reading attributes Cotarella's optimism about tracing to the large volume of stolen goods, not specifically to the wines' unique characteristics or how they would be identified in the market after sale, though he might imply that elsewhere.",
+              "Cotarella explicitly stated, \"Two trucks full of merchandise can't just disappear into thin air,\" directly linking the large quantity to the expectation of traceability.",
+              "The reading does not provide any information about the chief executive's confidence in law enforcement's specific tracking technology."
+            ]
+          },
+          {
+            "question": "What is the primary characteristic of the Marchesi Antinori winery, as highlighted in the article?",
+            "options": [
+              "It is a newly established, rapidly growing business.",
+              "It is a historic, family-owned winery with significant global reach.",
+              "It is a small, local producer focused solely on the Italian market."
+            ],
+            "correct_option_index": 1,
+            "option_feedback": [
+              "The article states Marchesi Antinori was \"Established in 1385,\" making it very old, not newly established.",
+              "The article identifies it as \"one of Italy's biggest family-owned wineries\" and notes it was \"Established in 1385\" and \"exports its products to 170 countries,\" highlighting its historical significance and global presence.",
+              "The winery is described as \"one of Italy's biggest\" and exports \"to 170 countries,\" which contradicts the idea of it being small or focused only on the local market."
+            ]
+          }
+        ],
+        "news_brief_sentences": [
+          "Thieves executed an elaborate heist, stealing 30,000 wine bottles worth €5m in Italy, according to media reports.",
+          "The incident at the Florence-based winery, Marchesi Antinori, is believed to be one of the largest heists of its kind in Italy.",
+          "Italian media further reported that 30,000 bottles of wine were collectively valued at approximately €5m (£4.2m) from the prestigious facility.",
+          "Marchesi Antinori, recognized as one of Italy's biggest family-owned wineries, stated the theft occurred at its storage facility in Tuscany on a Saturday.",
+          "This happened as the company was preparing to dispatch a substantial consignment to international customers abroad.",
+          "At least seven masked individuals reportedly deactivated the security alarms and disabled the cameras during the operation.",
+          "The perpetrators then utilized company forklifts to load two large trucks with the winery's prized Tignanello, Solaia, and Guado al Tasso Tuscan reds.",
+          "Renzo Cotarella, the chief executive, affirmed to Corriere della Sera that a theft of this magnitude and value was unprecedented in Italy.",
+          "He also expressed optimism that authorities would ultimately be able to trace the stolen merchandise.",
+          "Cotarella underscored this optimism by stating that 'Two trucks full of merchandise can't just disappear into thin air.'",
+          "He also suggested the specific selection of bottles, typically selling for between €150 and €500 each, implied the perpetrators were expert wine connoisseurs with potential insider knowledge.",
+          "The elaborate operation was only discovered on Monday morning when staff arrived on site, and no arrests have been made.",
+          "Established in 1385, Marchesi Antinori exports its products to 170 countries and recorded a revenue of €263 million (£223m) last year.",
+          "Italy has seen a surge in wine thefts this year, including recent incidents in the northern Piedmont region where hundreds of thousands of euros worth of bottles were taken."
+        ],
+        "sentence_evidence": [
+          "Thieves steal 30,000 wine bottles worth €5m in Italy, reports say",
+          "The heist at the Florence-based winery is believed to be one of the largest thefts of its kind in Italy.",
+          "Thieves have stolen 30,000 bottles of wine collectively worth about €5m (£4.2m) from a prestigious Italian winery, Italian media reports.",
+          "Marchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.",
+          "Marchesi Antinori, one of Italy's biggest family-owned wineries, said the theft at its storage facility in Tuscany took place on Saturday as the company was preparing to ship a consignment to customers abroad.",
+          "At least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.",
+          "At least seven masked men are believed to have deactivated the alarms, disabled the cameras and used company forklifts to load two large trucks of the company's prized Tignanello, Solaia and Guado al Tasso Tuscan reds.",
+          "Renzo Cotarella, the chief executive, told Corriere della Sera this was the largest theft of its kind in Italy.",
+          "He added that he was hopeful the authorities would be able to trace the stolen wine.",
+          "\"Two trucks full of merchandise can't just disappear into thin air. The Tuscan roads are full of cameras; perhaps with a bit of luck we'll be able to recover at least some of the bottles stolen from us.\"",
+          "The company believes the selection of bottles, which usually sell for between €150 and €500 each, suggests the thieves were wine connoisseurs and had inside knowledge.",
+          "The theft was only discovered on Monday morning as staff arrived on site. No arrests have been made.",
+          "Marchesi Antinori was founded in 1385 and exports to 170 countries. It had a revenue of €263m (£223m) last year.",
+          "There has been a spate of wine thefts in Italy this year, including two in the northern Piedmont region where hundreds of thousands of euros worth of bottles were reportedly taken."
+        ],
+        "editorial_check": {
+          "date": "2026-10-09T11:45:23.622398+00:00",
+          "model": "gemini-2.5-flash",
+          "status": "passed",
+          "method": "separate evidence, teaching and level suitability review",
+          "generation_attempts": 2,
+          "repaired_sections": [],
+          "language_policy_version": "2026-10-08-teaching-quality",
+          "target_level": "C1-Higher",
+          "level_checks": {
+            "vocabulary": {
+              "passed": true,
+              "reason": "The vocabulary selected like \"heist,\" \"dispatch,\" \"unprecedented,\" and \"perpetrators\" provides precise, transferable terms appropriate for C1-Higher learners, with clear contextual definitions. No reserved vocabulary was used."
+            },
+            "register": {
+              "passed": true,
+              "reason": "The lesson consistently uses a polished, neutral reporting register with accurate attribution and calibrated certainty, as seen in phrases like \"according to media reports\" and \"reportedly,\" which is appropriate for C1-Higher news analysis."
+            },
+            "teaching_language": {
+              "passed": true,
+              "reason": "The teaching language employs controlled complex sentences and cohesive arguments in explanations and feedback, such as in the grammar section on \"Reporting Adverbs,\" effectively clarifying meaning for C1-Higher learners without being overly simplistic or circular."
+            },
+            "challenge": {
+              "passed": true,
+              "reason": "The quiz challenges learners with questions requiring supported inference (e.g., Q1, Q2, Q9), contextual vocabulary, and the application of taught grammar (Q6). Distractors are plausible, and feedback is substantive, fostering learning beyond basic recall for C1-Higher."
+            }
+          },
+          "content_digest": "b438821347abff92fb9b2c38ad994217b9a99470192f20bb471710cea4e40bb6"
+        }
+      }
+    }
+  }
+}

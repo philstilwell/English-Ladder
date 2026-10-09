@@ -1,0 +1,155 @@
+{
+  "source": {
+    "policy": "2026-09-08-context-definitions-v1",
+    "level": "intermediate",
+    "reading": [
+      "Reports indicate that thieves took 30,000 bottles of wine valued at €5 million from an Italian producer.",
+      "This large-scale robbery, or \"heist,\" happened at a prestigious wine producer based in Florence, Italy.",
+      "Marchesi Antinori, a family-owned producer, confirmed the incident at its storage facility in Tuscany.",
+      "The incident occurred on a Saturday as the producer was preparing a consignment for international customers.",
+      "At least seven masked men are believed to have deactivated alarms and disabled cameras during the heist.",
+      "They reportedly used forklifts belonging to the producer to load valuable Tuscan red wines onto two large trucks.",
+      "The chief executive stated this was the largest heist of its kind in Italy.",
+      "The producer suspects the criminals were wine connoisseurs and had inside knowledge, given the specific bottles chosen."
+    ],
+    "vocabulary": [
+      {
+        "term": "Reports indicate",
+        "part_of_speech": "verb phrase",
+        "definition": "To show or suggest something based on available information or news."
+      },
+      {
+        "term": "valued at",
+        "part_of_speech": "prepositional phrase",
+        "definition": "Having a particular monetary amount or worth."
+      },
+      {
+        "term": "prestigious",
+        "part_of_speech": "adjective",
+        "definition": "Highly respected and admired because of its importance or high quality."
+      },
+      {
+        "term": "consignment",
+        "part_of_speech": "noun",
+        "definition": "A batch of goods that is sent or delivered for sale or storage."
+      },
+      {
+        "term": "deactivated",
+        "part_of_speech": "verb",
+        "definition": "Made a device or system stop working or become inactive."
+      },
+      {
+        "term": "disabled",
+        "part_of_speech": "verb",
+        "definition": "Made a machine, system, or security feature unable to function."
+      },
+      {
+        "term": "forklifts",
+        "part_of_speech": "noun",
+        "definition": "Powerful industrial vehicles used for lifting and moving heavy loads, often on pallets."
+      },
+      {
+        "term": "connoisseurs",
+        "part_of_speech": "noun",
+        "definition": "People who have expert knowledge and appreciation of a particular subject, especially fine food, drink, or art."
+      }
+    ]
+  },
+  "entries": [
+    {
+      "id": 0,
+      "ja": "入手可能な情報やニュースに基づいて、何かを示したり示唆したりすること。",
+      "ko": "이용 가능한 정보나 뉴스에 근거하여 어떤 것을 보여주거나 암시하다.",
+      "zh-Hans": "根据现有信息或新闻显示或暗示某事。",
+      "es": "Mostrar o sugerir algo basándose en la información o las noticias disponibles.",
+      "pt-BR": "Mostrar ou sugerir algo com base em informações ou notícias disponíveis.",
+      "fr": "Montrer ou suggérer quelque chose en se basant sur les informations ou les nouvelles disponibles.",
+      "de": "Etwas auf der Grundlage verfügbarer Informationen oder Nachrichten zeigen oder andeuten."
+    },
+    {
+      "id": 1,
+      "ja": "特定の金銭的な金額や価値を持つこと。",
+      "ko": "특정한 금전적 액수나 가치를 가짐.",
+      "zh-Hans": "具有特定的金钱数量或价值。",
+      "es": "Que tiene una cantidad monetaria o un valor particular.",
+      "pt-BR": "Ter um valor ou quantia monetária específica.",
+      "fr": "Ayant une certaine valeur ou un certain montant monétaire.",
+      "de": "Einen bestimmten Geldwert oder Preis haben."
+    },
+    {
+      "id": 2,
+      "ja": "その重要性や質の高さから、非常に尊敬され賞賛されていること。",
+      "ko": "중요성이나 높은 품질 때문에 매우 존경받고 칭송받는.",
+      "zh-Hans": "因其重要性或高质量而备受尊敬和钦佩。",
+      "es": "Muy respetado y admirado debido a su importancia o alta calidad.",
+      "pt-BR": "Muito respeitado e admirado por sua importância ou alta qualidade.",
+      "fr": "Très respecté et admiré en raison de son importance ou de sa grande qualité.",
+      "de": "Hoch angesehen und bewundert aufgrund seiner Bedeutung oder hohen Qualität."
+    },
+    {
+      "id": 3,
+      "ja": "販売または保管のために送られたり届けられたりする商品のひとまとまり。",
+      "ko": "판매 또는 보관을 위해 보내지거나 배달되는 상품 묶음.",
+      "zh-Hans": "为销售或储存而发送或交付的一批货物。",
+      "es": "Un lote de mercancías que se envía o entrega para su venta o almacenamiento.",
+      "pt-BR": "Um lote de mercadorias que é enviado ou entregue para venda ou armazenamento.",
+      "fr": "Un lot de marchandises envoyé ou livré pour la vente ou le stockage.",
+      "de": "Eine Warenmenge, die zum Verkauf oder zur Lagerung versandt oder geliefert wird."
+    },
+    {
+      "id": 4,
+      "ja": "デバイスやシステムを動作不能にするか、非アクティブにすること。",
+      "ko": "장치나 시스템이 작동을 멈추거나 비활성화되도록 만들다.",
+      "zh-Hans": "使设备或系统停止工作或变得不活跃。",
+      "es": "Hacer que un dispositivo o sistema deje de funcionar o se vuelva inactivo.",
+      "pt-BR": "Fazer com que um dispositivo ou sistema pare de funcionar ou se torne inativo.",
+      "fr": "Rendre un appareil ou un système inopérant ou inactif.",
+      "de": "Ein Gerät oder System außer Betrieb setzen oder inaktiv machen."
+    },
+    {
+      "id": 5,
+      "ja": "機械、システム、またはセキュリティ機能を動作不能にすること。",
+      "ko": "기계, 시스템 또는 보안 기능이 작동하지 못하게 만들다.",
+      "zh-Hans": "使机器、系统或安全功能无法运行。",
+      "es": "Hacer que una máquina, un sistema o una función de seguridad no puedan funcionar.",
+      "pt-BR": "Fazer com que uma máquina, um sistema ou um recurso de segurança não consiga funcionar.",
+      "fr": "Rendre une machine, un système ou une fonction de sécurité incapable de fonctionner.",
+      "de": "Eine Maschine, ein System oder eine Sicherheitsfunktion funktionsunfähig machen."
+    },
+    {
+      "id": 6,
+      "ja": "パレットに載せられた重い荷物を持ち上げたり移動させたりするために使用される強力な産業車両。",
+      "ko": "무거운 짐을 들어 올리고 옮기는 데 사용되는 강력한 산업용 차량으로, 종종 팔레트에 실린 짐을 다룹니다.",
+      "zh-Hans": "用于升降和搬运重物（通常是托盘上的货物）的强大工业车辆。",
+      "es": "Vehículos industriales potentes que se utilizan para levantar y mover cargas pesadas, a menudo sobre palés.",
+      "pt-BR": "Veículos industriais potentes usados para levantar e mover cargas pesadas, frequentemente em paletes.",
+      "fr": "Des véhicules industriels puissants utilisés pour soulever et déplacer des charges lourdes, souvent sur des palettes.",
+      "de": "Leistungsstarke Industriefahrzeuge, die zum Heben und Bewegen schwerer Lasten, oft auf Paletten, verwendet werden."
+    },
+    {
+      "id": 7,
+      "ja": "特定の主題、特に高級食品、飲み物、または芸術について専門的な知識と鑑識眼を持つ人々。",
+      "ko": "특정 분야, 특히 고급 음식, 음료 또는 예술에 대한 전문 지식과 감식 능력을 가진 사람.",
+      "zh-Hans": "对特定主题，尤其是美食、美酒或艺术，具有专业知识和鉴赏力的人。",
+      "es": "Personas que tienen conocimientos expertos y aprecian un tema particular, especialmente la buena comida, la bebida o el arte.",
+      "pt-BR": "Pessoas que possuem conhecimento especializado e apreciação por um determinado assunto, especialmente boa comida, bebida ou arte.",
+      "fr": "Des personnes qui ont une connaissance experte et une appréciation d'un sujet particulier, notamment la bonne cuisine, les boissons ou l'art.",
+      "de": "Personen, die über Fachwissen und Wertschätzung für ein bestimmtes Thema verfügen, insbesondere für feine Speisen, Getränke oder Kunst."
+    }
+  ],
+  "review": {
+    "status": "reviewed",
+    "method": "separate translation-editing call",
+    "model": "gemini-2.5-flash",
+    "date": "2026-10-09T11:47:18.677796+00:00",
+    "added_languages": [
+      "ja",
+      "ko",
+      "zh-Hans",
+      "es",
+      "pt-BR",
+      "fr",
+      "de"
+    ]
+  }
+}

@@ -46,6 +46,47 @@ LEGACY_ICON_SLUGS = (
 )
 ICON_SLUGS = LEGACY_ICON_SLUGS + OCCUPATION_SLUGS
 
+# Bounds of each complete illustration in the generated directory artwork.
+# The webpage supplies the equal cells; generated spacing is not a layout contract.
+DIRECTORY_COLLAGE_SIZE = (1196, 1315)
+DIRECTORY_COLLAGE_CROPS = (
+    ((33, 23, 179, 114), (247, 38, 154, 102), (437, 25, 144, 114), (623, 18, 149, 121), (805, 31, 145, 108), (996, 31, 176, 105)),
+    ((35, 154, 160, 99), (232, 147, 169, 113), (431, 147, 143, 106), (618, 148, 121, 111), (802, 152, 161, 108), (1005, 152, 150, 110)),
+    ((44, 265, 137, 114), (245, 270, 155, 112), (427, 261, 147, 116), (614, 271, 159, 98), (809, 270, 155, 96), (1010, 272, 159, 104)),
+    ((33, 385, 169, 113), (243, 383, 150, 114), (434, 386, 140, 109), (612, 379, 156, 120), (819, 387, 145, 113), (996, 381, 174, 115)),
+    ((30, 505, 170, 108), (233, 505, 155, 109), (412, 509, 169, 106), (617, 508, 157, 111), (806, 502, 153, 112), (996, 510, 171, 103)),
+    ((35, 615, 159, 121), (241, 620, 150, 114), (430, 627, 140, 109), (624, 626, 142, 109), (814, 625, 158, 112), (1000, 624, 175, 112)),
+    ((44, 740, 134, 107), (239, 743, 142, 107), (432, 745, 149, 98), (627, 744, 147, 100), (823, 742, 139, 102), (1013, 743, 155, 105)),
+    ((43, 851, 137, 93), (247, 852, 139, 98), (437, 844, 137, 104), (622, 848, 154, 104), (811, 852, 154, 104), (1009, 852, 164, 102)),
+    ((46, 948, 140, 110), (244, 957, 132, 104), (425, 958, 146, 102), (634, 960, 124, 96), (813, 956, 153, 100), (1008, 962, 159, 92)),
+    ((44, 1064, 142, 93), (231, 1065, 163, 93), (425, 1066, 152, 90), (623, 1065, 152, 92), (820, 1065, 140, 90), (1005, 1067, 161, 88)),
+    ((38, 1166, 157, 97), (236, 1169, 158, 92), (432, 1176, 147, 84), (621, 1175, 144, 91), (820, 1172, 139, 95), (1011, 1166, 147, 101)),
+)
+
+
+def directory_collage():
+    """Center the native-generated artwork in 66 identical responsive cells."""
+    image_width, image_height = DIRECTORY_COLLAGE_SIZE
+    crops = [crop for row in DIRECTORY_COLLAGE_CROPS for crop in row]
+    cells = []
+    for slug, (x, y, width, height) in zip(ICON_SLUGS, crops, strict=True):
+        scale = min(160 / width, 96 / height)
+        style = (
+            f'width:{width * scale / 200 * 100:.6f}%;'
+            f'height:{height * scale / 120 * 100:.6f}%;'
+            f'background-size:{image_width / width * 100:.6f}% {image_height / height * 100:.6f}%;'
+            f'background-position:{x / (image_width - width) * 100:.6f}% {y / (image_height - height) * 100:.6f}%'
+        )
+        cells.append(
+            f'<span class="work-collage-cell" aria-hidden="true" data-collage-field="{slug}">'
+            f'<span class="work-collage-art" style="{style}"></span></span>'
+        )
+    return (
+        '<div class="work-directory-collage" role="img" '
+        'aria-label="Illustrated tools and people representing all 66 professional fields and occupations.">'
+        + ''.join(cells) + '</div>'
+    )
+
 
 def icon_asset(slug):
     if slug in OCCUPATION_SLUGS:

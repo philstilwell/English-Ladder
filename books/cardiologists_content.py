@@ -87,8 +87,8 @@ Dr Vale | Understood. Reported symptoms, active response, unresolved cause, and 
 Dr Chen | Correct. Continue communicating the [[symptom trajectory::Symptom trajectory describes how symptoms change over time and should be reported accurately as new information becomes available.]] as verified information becomes available, alongside the real clinical response.''',
     rehearsal=['Read the corrected urgent handoff. Lead with the symptom report and emergency action.', 'Swap roles. Repeat the acceptance and missing-information statements without inserting measurements or a diagnosis.'],
     transfer_title='A corrected onset time', transfer_setup='During an active emergency handoff, the patient clarifies that symptoms began at 09:10, not 09:40. The receiving clinician acknowledges the correction. No cause is established.',
-    transfer='''Referrer: "The corrected reported onset is ___." | 09:10 | The patient corrects the reported onset to 09:10 in the supplied facts.
-Receiver: "The earlier time of ___ is superseded." | 09:40 | The earlier report is corrected rather than retained as the current onset.
+    transfer='''Referrer: "The corrected reported onset is ___." | 09:10 | 09:10 is the corrected onset time; it replaces the original report of 09:40.
+Receiver: "The previously reported onset time of ___ has been superseded." | 09:40 | 09:40 was reported first but is now replaced by 09:10. "Previously reported" refers to the order of the reports, not which clock time is earlier.
 Referrer: "The emergency response remains ___." | active | Correcting the history does not interrupt the active emergency response.
 Receiver: "The cause remains ___." | unestablished | The timing correction does not itself establish a diagnosis.'''))
 

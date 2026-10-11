@@ -6,6 +6,7 @@ from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 from PIL import Image
+from pypdf import PdfReader
 
 from books.supplements import load_supplements
 from build_industry_books import validate_book
@@ -142,6 +143,31 @@ class MedicalProfessionTests(unittest.TestCase):
             for source in data['sources']:
                 self.assertTrue(source['url'].startswith('https://'))
                 self.assertEqual(source['checked'], '10 October 2026')
+
+    def test_cardiology_onset_correction_distinguishes_reporting_order_from_clock_time(self):
+        lines = book('cardiologists')['units'][0]['transfer']['lines']
+        self.assertEqual([q['options'][q['answer']] for q in lines[:2]], ['09:10', '09:40'])
+        prompt = 'Receiver: "The previously reported onset time of ___ has been superseded."'
+        self.assertEqual(lines[1]['prompt'], prompt)
+        self.assertIn('not which clock time is earlier', lines[1]['reason'])
+
+        page = BeautifulSoup((ROOT / 'efsp-cardiologists.html').read_text(), 'html.parser')
+        question = page.select_one('input[name="module-1-transfer-2"]').find_parent('div', class_='work-quiz')
+        self.assertEqual(question.legend.get_text(), '2. ' + prompt)
+        self.assertEqual(question['data-explanation'], lines[1]['reason'])
+        correct = question.select_one(f'input[value="{question["data-correct"]}"]')
+        self.assertEqual(correct.find_next_sibling('span').get_text(), '09:40')
+        for q in lines[:2]:
+            self.assertIn(q['reason'], page.get_text())
+
+        pdf = PdfReader(ROOT / 'pdf/efsp/cardiologists-english-book.pdf')
+        exercise = ' '.join(pdf.pages[11].extract_text().split())
+        key = ' '.join(pdf.pages[85].extract_text().split())
+        self.assertIn('previously reported onset time of', exercise)
+        self.assertIn('1. 09:10 | 2. 09:40', exercise)
+        self.assertIn(prompt.replace('___', '09:40'), key)
+        for q in lines[:2]:
+            self.assertIn(q['reason'], key)
 
     def test_fictional_cardiology_risk_comparisons_keep_units_clear(self):
         unit = book('cardiologists')['units'][6]

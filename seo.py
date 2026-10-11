@@ -88,6 +88,10 @@ def profile(path, soup):
                   title='', description='', level='', teaches=[], pdfs=[], date='')
     if relative in PAGES:
         result['title'], result['description'] = PAGES[relative]
+        if relative == 'grammar-concepts.html':
+            count = len(grammar())
+            result['title'] = f'English Grammar Practice: {count} Lessons & Free PDFs'
+            result['description'] = f'Study {count} English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'
         if relative == 'efsp.html':
             courses = list(tracks().values())
             lessons = sum(len(t['modules']) for t in courses)
@@ -259,7 +263,7 @@ def add_navigation(soup, path, p):
         soup.main.insert(0,nav)
     links = []
     if p['kind'] == 'grammar':
-        links=[(grammar()[n]['title'],grammar_url(n)) for n in RELATED_GRAMMAR[p['concept']['number']]]
+        links=[(grammar()[n]['title'],grammar_url(n)) for n in p['concept'].get('related', RELATED_GRAMMAR.get(p['concept']['number'], []))]
         heading,intro='Build on this grammar','Compare a related pattern, then apply it in a new situation.'
     elif p['kind'] == 'work':
         numbers = []
@@ -274,7 +278,7 @@ def add_navigation(soup, path, p):
         for term,number in [('recently',16),('lately',16),('past perfect',26),('even if',32),('even though',32),('relative clause',12),('causal',9),('cause and effect',9),('could',35),('able to',35),('might',8),('suggest',17),('recommend',17)]:
             if term in target and (grammar()[number]['title'],grammar_url(number)) not in links:
                 links.append((grammar()[number]['title'],grammar_url(number)))
-        if not links: links=[('Explore all 44 grammar lessons', 'grammar-concepts.html')]
+        if not links: links=[('Explore all grammar lessons', 'grammar-concepts.html')]
         links += [('Choose another news lesson', 'archive.html'), ('Practice everyday conversations', 'us-life.html')]
         heading, intro = 'Keep practicing your English', 'Choose a grammar lesson or another reading activity for your next session.'
     if links:
@@ -347,7 +351,7 @@ def build_html_sitemap():
     def links(items):return '<ul>'+''.join(f'<li><a href="{href}">{html.escape(name)}</a></li>' for name,href in items)+'</ul>'
     body='<section class="page-hero"><p class="eyebrow">Find your next lesson</p><h1>Browse all English lessons</h1><p>Choose a subject, profession or reading level. Lessons and printable guides are free to use without an English Ladder account.</p></section>'
     body+='<section class="seo-directory"><h2>Reading, conversation and practice</h2>'+links([(PAGES[p][0],p) for p in ['study-routes.html','beginner.html','intermediate.html','advanced.html','archive.html','us-life.html','tools.html','ai-practice.html']])+links([('Food market: beginner reading','stories/food-market/beginner.html'),('Food market: intermediate reading','stories/food-market/intermediate.html'),('Food market: advanced reading','stories/food-market/advanced.html'),('City trees: beginner reading','stories/city-trees/beginner.html'),('City trees: intermediate reading','stories/city-trees/intermediate.html'),('City trees: advanced reading','stories/city-trees/advanced.html')])+'</section>'
-    body+='<section class="seo-directory"><h2>English grammar lessons</h2><p><a href="grammar-concepts.html">Search and filter all 44 grammar topics</a></p>'+links([(c['title'],grammar_url(n))for n,c in grammar().items()])+'</section>'
+    body+='<section class="seo-directory"><h2>English grammar lessons</h2><p><a href="grammar-concepts.html">Search and filter all grammar topics</a></p>'+links([(c['title'],grammar_url(n))for n,c in grammar().items()])+'</section>'
     body+='<section class="seo-directory"><h2>English for Work</h2>'
     for name,c in CATEGORIES.items():
         body+=f'<h3><a href="{category_url(name)}">{html.escape(c["title"])}</a></h3>'+links([(t['title'],f'efsp-{t["slug"]}.html')for t in tracks().values()if t['category']==name])

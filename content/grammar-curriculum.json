@@ -5061,6 +5061,131 @@
           }
         ]
       }
+    },
+    {
+      "number": 45,
+      "title": "To + verb or to + -ing?",
+      "level": "B1–B2",
+      "category": "Time and verbs",
+      "goal": "Choose the verb form that fits the complete expression.",
+      "rules": [
+        "After “want to”, “plan to”, and “hope to”, use the base verb: “want to learn”, “plan to study”, “hope to improve”. The base verb is the plain form, such as “learn”. The combination “to learn” is called a to-infinitive.",
+        "In “look forward to”, “object to”, and “refer to”, “to” is a preposition: a linking word that can introduce a noun or an -ing form. Compare “I look forward to the lesson” and “I look forward to learning”. Say “This refers to meeting the requirements”, not “This refers to meet the requirements”.",
+        "Learn the complete expression. Seeing “to” alone does not tell you which verb form comes next. These examples show two common patterns; they are not a rule for every phrase containing “to”. An -ing form after a preposition does not by itself mean the action is happening now: “I look forward to meeting you next week” refers to a future meeting."
+      ],
+      "cards": [
+        {
+          "label": "TO + BASE VERB",
+          "example": "I want to learn. We plan to study. They hope to improve.",
+          "note": "Keep the base form after “want to”, “plan to”, and “hope to”."
+        },
+        {
+          "label": "TO + -ING",
+          "example": "I look forward to learning. She objects to working late.",
+          "note": "Here, “to” belongs to the expression before it. Follow it with an -ing form when naming an action."
+        },
+        {
+          "label": "REFER TO + -ING",
+          "example": "This refers to meeting the requirements.",
+          "note": "“Meeting” means satisfying the requirements. “Refer to” can also take a noun: “This refers to the requirements”."
+        }
+      ],
+      "checks": [
+        {
+          "prompt": "Complete: “They hope to ___ more next year.”",
+          "options": [
+            {
+              "text": "learning",
+              "correct": false,
+              "feedback": "After “hope to”, use the base verb “learn”, without -ing."
+            },
+            {
+              "text": "learn",
+              "correct": true,
+              "feedback": "“Hope to” takes the base verb: “hope to learn”."
+            },
+            {
+              "text": "learned",
+              "correct": false,
+              "feedback": "“Learned” is a past form. After “hope to”, use “learn”."
+            }
+          ]
+        },
+        {
+          "prompt": "Complete: “This refers to ___ the requirements.”",
+          "options": [
+            {
+              "text": "meet",
+              "correct": false,
+              "feedback": "In “refer to”, “to” is a preposition. Use “meeting” to name the action."
+            },
+            {
+              "text": "met",
+              "correct": false,
+              "feedback": "“Met” is a past form. The required form here is “meeting”."
+            },
+            {
+              "text": "meeting",
+              "correct": true,
+              "feedback": "“Refer to” can take an -ing form. Here, “meeting the requirements” means satisfying them."
+            }
+          ]
+        },
+        {
+          "prompt": "Which sentence correctly uses a noun after “look forward to”?",
+          "options": [
+            {
+              "text": "I look forward to the lesson.",
+              "correct": true,
+              "feedback": "“The lesson” is a noun phrase. Both a noun phrase and an -ing form can follow “look forward to”."
+            },
+            {
+              "text": "I look forward the lesson.",
+              "correct": false,
+              "feedback": "Keep “to” in the expression: “look forward to the lesson”."
+            },
+            {
+              "text": "I look forward to learn.",
+              "correct": false,
+              "feedback": "“Learn” is a base verb, not a noun here. Use “learning” or the noun phrase “the lesson”."
+            }
+          ]
+        }
+      ],
+      "application": {
+        "prompt": "You will meet a new colleague next week and want to express positive anticipation. Which closing sentence fits a work email?",
+        "options": [
+          {
+            "text": "We look forward to meet you next week.",
+            "correct": false,
+            "feedback": "After “look forward to”, use “meeting”, not the base verb “meet”."
+          },
+          {
+            "text": "We look forward to meeting you next week.",
+            "correct": true,
+            "feedback": "“Look forward to meeting” is the correct pattern. “Next week” makes the future timing clear."
+          },
+          {
+            "text": "We look forward meeting you next week.",
+            "correct": false,
+            "feedback": "The expression needs “to”: “look forward to meeting you”."
+          }
+        ]
+      },
+      "pdfs": [
+        "concept-45-to-verb-or-ing-student-workbook.pdf",
+        "concept-45-to-verb-or-ing-teaching-guide.pdf"
+      ],
+      "reviewed": "2026-10-11",
+      "related": [
+        17,
+        29,
+        13
+      ],
+      "sources": [
+        "https://dictionary.cambridge.org/grammar/british-grammar/to",
+        "https://dictionary.cambridge.org/grammar/british-grammar/word-patterns-look-forward-to"
+      ]
     }
   ],
   "interaction": "multiple-choice-only"

@@ -19,7 +19,7 @@ class EditorialTests(unittest.TestCase):
         from grammar_curriculum import load_curriculum
         directory=BeautifulSoup((ROOT/'grammar-concepts.html').read_text(),'html.parser')
         previews=directory.select('[data-library-item] .grammar-thumb img')
-        self.assertEqual(44,len(previews))
+        self.assertEqual(len(load_curriculum()),len(previews))
         for concept,preview in zip(load_curriculum(),previews):
             number=concept['number']
             image=f'assets/grammar-concepts/concept-{number:02}.png'
@@ -28,7 +28,9 @@ class EditorialTests(unittest.TestCase):
                 images=page.select('.concept-graphic img')
                 self.assertEqual(1,len(images))
                 self.assertEqual('../'+image,images[0]['src'])
-                self.assertEqual(('1880','1576'),(images[0]['width'],images[0]['height']))
+                from PIL import Image
+                with Image.open(ROOT/image) as graphic:
+                    self.assertEqual(tuple(map(str,graphic.size)),(images[0]['width'],images[0]['height']))
                 self.assertIn(concept['title'],images[0]['alt'])
                 trigger=images[0].parent
                 self.assertEqual('../'+image,trigger['href'])

@@ -1,7 +1,8 @@
 const {test,afterEach}=require('node:test');
 const assert=require('node:assert/strict');
 const fs=require('node:fs');const path=require('node:path');const {JSDOM}=require('jsdom');
-const root=path.join(__dirname,'..');const open=[];const key='english-ladder-study-v1';
+const root=path.join(__dirname,'..');
+const concepts=JSON.parse(fs.readFileSync(path.join(root,'content/grammar-curriculum.json'),'utf8')).concepts;const open=[];const key='english-ladder-study-v1';
 afterEach(()=>open.splice(0).forEach(d=>d.window.close()));
 function load(number=35,stored){
  const file=`grammar-concepts/concept-${String(number).padStart(2,'0')}.html`;
@@ -12,7 +13,7 @@ function load(number=35,stored){
 }
 function choice(question,text){return [...question.querySelectorAll('input')].find(input=>input.closest('label').textContent.trim()===text);}
 test('original graphics enlarge and keep keyboard focus without redundant text links',()=>{
- for(const number of [1,5,35,44]){
+ for(const number of [1,5,35,concepts.at(-1).number]){
   const d=load(number);const doc=d.window.document;
   d.window.eval(fs.readFileSync(path.join(root,'app.js'),'utf8'));
   const trigger=doc.querySelector('.grammar-image-trigger');const box=doc.querySelector('.image-lightbox');
@@ -44,9 +45,9 @@ test('wanting or trying to get tickets is not graded as an actual success',()=>{
  for(const text of ['hoped to','tried to']){choice(q,text).click();assert.equal(q.querySelector('.choice-feedback').dataset.result,'incorrect');}
  choice(q,'managed to').click();assert.equal(q.querySelector('.choice-feedback').dataset.result,'correct');
 });
-test('all 44 grammar lessons expose only choices and all 528 options report the selected explanation',()=>{
+test('all grammar lessons expose only choices and every option reports the selected explanation',()=>{
  let count=0;
- for(let n=1;n<=44;n++){
+ for(const {number:n} of concepts){
   const d=load(n);const doc=d.window.document;
   assert.equal(doc.querySelector('textarea,input[type="text"],[contenteditable="true"]'),null,`concept ${n}`);
   const qs=[...doc.querySelectorAll('[data-choice-question]')];assert.equal(qs.length,4);
@@ -57,7 +58,7 @@ test('all 44 grammar lessons expose only choices and all 528 options report the 
   }
   d.window.close();open.pop();
  }
- assert.equal(count,528);
+ assert.equal(count,concepts.reduce((total,c)=>total+3*(c.checks.length+1),0));
 });
 test('completion waits for all four correct choices and a changed answer updates the count',()=>{
  const d=load();const doc=d.window.document;const complete=doc.querySelector('[data-complete-study]');const qs=[...doc.querySelectorAll('[data-choice-question]')];

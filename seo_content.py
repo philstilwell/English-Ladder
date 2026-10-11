@@ -5,9 +5,9 @@ from update_site import LESSON_LIMIT
 PAGES = {
     'study-routes.html': ('English Study Routes: Everyday Life, Reading & Work', 'Choose a three-activity English study route for everyday life in the US, reading practice or workplace communication, with clear starting points and next steps.'),
     'ai-practice.html': ('Copy-and-Paste AI Prompts for English Practice', 'Copy complete AI prompts for English vocabulary, grammar, reading, workplace dialogues and everyday conversation. Every prompt includes the learning material.'),
-    'index.html': ('Free English Lessons, Grammar & Workplace English', 'Learn English with free news lessons at three levels, 44 grammar guides, workplace dialogues, printable PDFs and practical everyday conversation activities.'),
+    'index.html': ('Free English Lessons, Grammar & Workplace English', 'Learn English with free news lessons at three levels, illustrated grammar guides, workplace dialogues, printable PDFs and practical everyday conversation activities.'),
     'efsp.html': ('English for Work: Occupational & Professional English Courses', 'Choose practical English courses with workplace lessons, dialogues, vocabulary, guided activities and free printable guides.'),
-    'grammar-concepts.html': ('English Grammar Practice: 44 Lessons & Free PDFs', 'Study 44 English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'),
+    'grammar-concepts.html': ('English Grammar Practice & Free PDFs', 'Study English grammar topics with clear examples, multiple-choice exercises, answer feedback, printable workbooks and teaching guides.'),
     'archive.html': ('English News Lessons Archive: Read at Three Levels', 'Find English news lessons by date, topic or vocabulary. Read beginner, intermediate and advanced versions with grammar, comprehension questions and discussion.'),
     'beginner.html': ('Beginner English News Lessons: A1–A2 Reading Practice', f'Read the latest {LESSON_LIMIT} news lessons in beginner English. Build A1–A2 vocabulary, practice simple grammar and check your understanding with questions.'),
     'intermediate.html': ('Intermediate English News Lessons: B1–B2 Practice', f'Practice B1–B2 English with the latest {LESSON_LIMIT} news lessons. Explore useful vocabulary, grammar, comprehension questions and guided discussion.'),

@@ -236,7 +236,7 @@ def decorate_page(path):
     intro_copy = {
         "tools.html": (".tools-hero-copy > p:not(.eyebrow)", "Choose a quick activity. Improve a sentence, practice pronunciation, or find words for a conversation."),
         "efsp.html": (".efsp-hero-copy > p:not(.eyebrow)", "Find your field and practice the conversations you have at work. Explore useful phrases, real situations, and printable workbooks."),
-        "grammar-concepts.html": (".grammar-hero-copy > p:not(.eyebrow)", "Explore 44 visual guides to English grammar. Choose a topic, see how it works, and try a short exercise."),
+        "grammar-concepts.html": (".grammar-hero-copy > p:not(.eyebrow)", "Explore visual guides to English grammar. Choose a topic, see how it works, and try a short exercise."),
     }
     if path.parent == ROOT and path.name in intro_copy:
         selector, copy = intro_copy[path.name]
@@ -337,7 +337,7 @@ def build_homepage():
 <a class="explore-story" data-completion-story="stories/city-trees" href="stories/city-trees/beginner.html"><img src="assets/editorial/city-trees.webp" width="1600" height="1199" alt="Trees surround a green urban park." loading="lazy"><div><span class="eyebrow">Nature &amp; city life</span><h3><span class="lesson-title-text">Can trees cool a city?</span></h3><p>Explore how a little shade changes the places we live.</p><span class="text-link">Try the lesson →</span></div></a></div></section>
 <section class="study-paths" aria-labelledby="paths-heading"><div class="section-heading"><h2 id="paths-heading">What would you like to practice?</h2></div><div class="path-grid">
 <a class="path-link" href="tools.html"><span class="path-number">01 / Practice</span><h3>Build your confidence →</h3><p>Improve sentences, pronunciation, and conversation.</p></a>
-<a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>44 lessons with examples, exercises, and free PDFs.</p></a>
+<a class="path-link" href="grammar-concepts.html"><span class="path-number">02 / Grammar</span><h3>Understand grammar →</h3><p>Lessons with examples, exercises, and free PDFs.</p></a>
 <a class="path-link" href="efsp.html"><span class="path-number">03 / Work</span><h3>Speak up at work →</h3><p>Practice meetings and conversations for your job.</p></a>
 <a class="path-link" href="us-life.html"><span class="path-number">04 / Daily life</span><h3>Feel more at home →</h3><p>Useful English for getting settled in the US.</p></a></div></section>'''
     page = document("Discover a world of English", content, current="index.html")
